@@ -1,0 +1,28 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "iograph"
+version = "0.0.1"
+authors = [
+  { name="Kevin Eskandari", email="kevin@intellio.com.au" },
+]
+dependencies = [
+  "httpx>=0.28.1",
+  "pydantic>=2.10",
+
+]
+description = "A collection of MS graph API models"
+readme = "readme.md"
+requires-python = ">=3.12"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Operating System :: OS Independent",
+]
+license = "MIT"
+license-files = ["LICEN[CS]E*"]
+
+[project.urls]
+Homepage = "https://github.com/intellio/io-graph-models"
+Issues = "https://github.com/intellio/io-graph-models/issues"
