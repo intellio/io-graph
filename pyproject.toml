@@ -14,7 +14,7 @@ dependencies = [
 
 ]
 description = "A collection of MS graph API models"
-readme = "README.md"
+readme = "readme.md"
 requires-python = ">=3.12"
 classifiers = [
     "Programming Language :: Python :: 3",
