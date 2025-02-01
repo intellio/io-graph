@@ -22,7 +22,8 @@ datamodel-codegen --url https://github.com/microsoftgraph/msgraph-metadata/raw/r
    before where model_rebuilds are defined
 2. in other files inside graph folder, fix the relative imports
 3. One post-generation task is to remove patterns from datetime fields in generated models as it 
-causes issues until we find a proper solution
+   causes issues until we find a proper solution. use this regular expression to find all of them 
+   ^.*(xxxxx).*\n? and replace xxxxx with pat tern=
 
 ## Build package
 run this command to create the python package:
