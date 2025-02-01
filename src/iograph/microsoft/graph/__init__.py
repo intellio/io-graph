@@ -61652,7 +61652,7 @@ class SitePage(BaseSitePage):
 
 
 from . import callRecords, identityGovernance, search, security, termStore
-from .partners import billing
+from . import billing
 
 WorkbookRangeView.model_rebuild()
 WorkbookOperationError.model_rebuild()
