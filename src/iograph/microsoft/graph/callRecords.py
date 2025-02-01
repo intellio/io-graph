@@ -72,14 +72,14 @@ class DirectRoutingLogRow(BaseModel):
         datetime | None,
         Field(
             description='Only exists for successful (fully established) calls. Time when call ended.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+
         ),
     ] = None
     failure_date_time: Annotated[
         datetime | None,
         Field(
             description='Only exists for failed (not fully established) calls.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+
         ),
     ] = None
     final_sip_code: Annotated[
@@ -99,7 +99,7 @@ class DirectRoutingLogRow(BaseModel):
         datetime | None,
         Field(
             description='The date and time when the initial invite was sent.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+
         ),
     ] = None
     media_bypass_enabled: Annotated[
@@ -120,7 +120,7 @@ class DirectRoutingLogRow(BaseModel):
         datetime | None,
         Field(
             description='Call start time.For failed and unanswered calls, this value can be equal to the invite or failure time.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+
         ),
     ] = None
     successful_call: Annotated[
@@ -171,7 +171,7 @@ class TraceRouteHop(BaseModel):
         timedelta | None,
         Field(
             description='The time from when the trace route packet was sent from the client to this hop and back to the client, denoted in ISO 8601 format. For example, 1 second is denoted as PT1S, where P is the duration designator, T is the time designator, and S is the second designator.',
-            pattern='^-?P([0-9]+D)?(T([0-9]+H)?([0-9]+M)?([0-9]+([.][0-9]+)?S)?)?$',
+
         ),
     ] = None
     field_odata_type: str
@@ -569,7 +569,7 @@ class MediaStream(BaseModel):
         timedelta | None,
         Field(
             description="Average jitter for the stream computed as specified in RFC 3550, denoted in ISO 8601 format. For example, 1 second is denoted as 'PT1S', where 'P' is the duration designator, 'T' is the time designator, and 'S' is the second designator.",
-            pattern='^-?P([0-9]+D)?(T([0-9]+H)?([0-9]+M)?([0-9]+([.][0-9]+)?S)?)?$',
+
         ),
     ] = None
     average_bandwidth_estimate: Annotated[
@@ -582,14 +582,14 @@ class MediaStream(BaseModel):
         timedelta | None,
         Field(
             description='Average duration of the received freezing time in the video stream.',
-            pattern='^-?P([0-9]+D)?(T([0-9]+H)?([0-9]+M)?([0-9]+([.][0-9]+)?S)?)?$',
+
         ),
     ] = None
     average_jitter: Annotated[
         timedelta | None,
         Field(
             description="Average jitter for the stream computed as specified in RFC 3550, denoted in ISO 8601 format. For example, 1 second is denoted as 'PT1S', where 'P' is the duration designator, 'T' is the time designator, and 'S' is the second designator.",
-            pattern='^-?P([0-9]+D)?(T([0-9]+H)?([0-9]+M)?([0-9]+([.][0-9]+)?S)?)?$',
+
         ),
     ] = None
     average_packet_loss_rate: Annotated[
@@ -612,7 +612,7 @@ class MediaStream(BaseModel):
         timedelta | None,
         Field(
             description="Average network propagation round-trip time computed as specified in RFC 3550, denoted in ISO 8601 format. For example, 1 second is denoted as 'PT1S', where 'P' is the duration designator, 'T' is the time designator, and 'S' is the second designator.",
-            pattern='^-?P([0-9]+D)?(T([0-9]+H)?([0-9]+M)?([0-9]+([.][0-9]+)?S)?)?$',
+
         ),
     ] = None
     average_video_frame_loss_percentage: Annotated[
@@ -637,7 +637,7 @@ class MediaStream(BaseModel):
         datetime | None,
         Field(
             description='UTC time when the stream ended. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. This field is only available for streams that use the SIP protocol.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+
         ),
     ] = None
     is_audio_forward_error_correction_used: Annotated[
@@ -662,14 +662,14 @@ class MediaStream(BaseModel):
         timedelta | None,
         Field(
             description="Maximum of audio network jitter computed over each of the 20 second windows during the session, denoted in ISO 8601 format. For example, 1 second is denoted as 'PT1S', where 'P' is the duration designator, 'T' is the time designator, and 'S' is the second designator.",
-            pattern='^-?P([0-9]+D)?(T([0-9]+H)?([0-9]+M)?([0-9]+([.][0-9]+)?S)?)?$',
+
         ),
     ] = None
     max_jitter: Annotated[
         timedelta | None,
         Field(
             description="Maximum jitter for the stream computed as specified in RFC 3550, denoted in ISO 8601 format. For example, 1 second is denoted as 'PT1S', where 'P' is the duration designator, 'T' is the time designator, and 'S' is the second designator.",
-            pattern='^-?P([0-9]+D)?(T([0-9]+H)?([0-9]+M)?([0-9]+([.][0-9]+)?S)?)?$',
+
         ),
     ] = None
     max_packet_loss_rate: Annotated[
@@ -684,7 +684,7 @@ class MediaStream(BaseModel):
         timedelta | None,
         Field(
             description="Maximum network propagation round-trip time computed as specified in RFC 3550, denoted in ISO 8601 format. For example, 1 second is denoted as 'PT1S', where 'P' is the duration designator, 'T' is the time designator, and 'S' is the second designator.",
-            pattern='^-?P([0-9]+D)?(T([0-9]+H)?([0-9]+M)?([0-9]+([.][0-9]+)?S)?)?$',
+
         ),
     ] = None
     packet_utilization: Annotated[
@@ -700,14 +700,14 @@ class MediaStream(BaseModel):
         timedelta | None,
         Field(
             description='Average duration of the received freezing time in the video stream represented in root mean square.',
-            pattern='^-?P([0-9]+D)?(T([0-9]+H)?([0-9]+M)?([0-9]+([.][0-9]+)?S)?)?$',
+
         ),
     ] = None
     start_date_time: Annotated[
         datetime | None,
         Field(
             description='UTC time when the stream started. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. This field is only available for streams that use the SIP protocol.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+
         ),
     ] = None
     stream_direction: MediaStreamDirection | None = None
@@ -936,7 +936,7 @@ class PstnCallLogRow(BaseModel):
         datetime | None,
         Field(
             description='Call end time.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+
         ),
     ] = None
     id: Annotated[str | None, Field(description='Unique call identifier. GUID.')] = None
@@ -959,7 +959,7 @@ class PstnCallLogRow(BaseModel):
         datetime | None,
         Field(
             description='Call start time.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+
         ),
     ] = None
     tenant_country_code: Annotated[
@@ -1139,7 +1139,7 @@ class Segment(Entity):
         datetime | None,
         Field(
             description='UTC time when the segment ended. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+
         ),
     ] = None
     failure_info: Annotated[
@@ -1155,7 +1155,7 @@ class Segment(Entity):
         datetime | None,
         Field(
             description='UTC time when the segment started. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+
         ),
     ] = None
     field_odata_type: str
@@ -1174,7 +1174,7 @@ class Session(Entity):
         datetime | None,
         Field(
             description='UTC time when the last user left the session. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+
         ),
     ] = None
     failure_info: Annotated[
@@ -1196,7 +1196,7 @@ class Session(Entity):
         datetime | None,
         Field(
             description='UTC time when the first user joined the session. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+
         ),
     ] = None
     segments: Annotated[
@@ -1221,7 +1221,7 @@ class CallRecord(Entity):
         datetime | None,
         Field(
             description='UTC time when the last user left the call. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+
         ),
     ] = None
     join_web_url: Annotated[
@@ -1234,7 +1234,7 @@ class CallRecord(Entity):
         datetime | None,
         Field(
             description='UTC time when the call record was created. The DatetimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+
         ),
     ] = None
     modalities: Annotated[
@@ -1259,7 +1259,7 @@ class CallRecord(Entity):
         datetime | None,
         Field(
             description='UTC time when the first user joined the call. The DatetimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+
         ),
     ] = None
     type: CallType | None = None

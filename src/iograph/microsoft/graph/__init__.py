@@ -89,7 +89,7 @@ class GovernanceInsight(Entity):
         datetime | None,
         Field(
             description='Indicates when the insight was created.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     field_odata_type: str
@@ -215,7 +215,7 @@ class LocalizedNotificationMessage(Entity):
         datetime | None,
         Field(
             description='DateTime the object was last modified.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     locale: Annotated[
@@ -236,7 +236,7 @@ class ManagedAppOperation(Entity):
         datetime | None,
         Field(
             description='The last time the app operation was modified.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     state: Annotated[
@@ -251,7 +251,7 @@ class ManagedAppPolicy(Entity):
         datetime | None,
         Field(
             description='The date and time the policy was created.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     description: Annotated[
@@ -264,7 +264,7 @@ class ManagedAppPolicy(Entity):
         datetime | None,
         Field(
             description='Last time the policy was modified.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     version: Annotated[str | None, Field(description='Version of the entity.')] = None
@@ -307,7 +307,7 @@ class ManagedDeviceMobileAppConfigurationDeviceSummary(Entity):
         datetime | None,
         Field(
             description='Last update time',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     not_applicable_count: Annotated[
@@ -354,7 +354,7 @@ class ManagedDeviceMobileAppConfigurationUserSummary(Entity):
         datetime | None,
         Field(
             description='Last update time',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     not_applicable_count: Annotated[
@@ -386,7 +386,7 @@ class MobileAppCategory(Entity):
         datetime | None,
         Field(
             description='The date and time the mobileAppCategory was last modified.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     field_odata_type: str
@@ -408,7 +408,7 @@ class NamedLocation(Entity):
         datetime | None,
         Field(
             description='The Timestamp type represents creation date and time of the location using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     display_name: Annotated[
@@ -418,7 +418,7 @@ class NamedLocation(Entity):
         datetime | None,
         Field(
             description='The Timestamp type represents last modified date and time of the location using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     field_odata_type: str
@@ -473,7 +473,7 @@ class OnenoteEntitySchemaObjectModel(OnenoteEntityBaseModel):
         datetime | None,
         Field(
             description='The date and time when the page was created. The timestamp represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     field_odata_type: str
@@ -491,7 +491,7 @@ class ExcludedGroup(RootModel[UUID]):
     root: Annotated[
         UUID,
         Field(
-            pattern='^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$'
+            
         ),
     ]
 
@@ -500,7 +500,7 @@ class IncludedGroup(RootModel[UUID]):
     root: Annotated[
         UUID,
         Field(
-            pattern='^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$'
+            
         ),
     ]
 
@@ -557,14 +557,14 @@ class OutlookItem(Entity):
         datetime | None,
         Field(
             description='The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     last_modified_date_time: Annotated[
         datetime | None,
         Field(
             description='The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     field_odata_type: str
@@ -626,7 +626,7 @@ class PrintUsage(Entity):
     single_sided_sheet_count: float | None = None
     usage_date: Annotated[
         date | None,
-        Field(pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'),
+        Field(),
     ] = None
     field_odata_type: str
 
@@ -656,14 +656,14 @@ class PrivilegedAccessScheduleInstance(Entity):
         datetime | None,
         Field(
             description='When the schedule instance ends. Required.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     start_date_time: Annotated[
         datetime | None,
         Field(
             description='When this instance starts. Required.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     field_odata_type: str
@@ -729,7 +729,7 @@ class ServiceAnnouncementAttachment(Entity):
     last_modified_date_time: Annotated[
         datetime | None,
         Field(
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+            
         ),
     ] = None
     name: str | None = None
@@ -805,7 +805,7 @@ class AllowedDomainGuidsForSyncAppItem(RootModel[UUID | None]):
     root: Annotated[
         UUID | None,
         Field(
-            pattern='^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$'
+            
         ),
     ] = None
 
@@ -990,7 +990,7 @@ class Subscription(Entity):
         datetime | None,
         Field(
             description='Required. Specifies the date and time when the webhook subscription expires. The time is in UTC, and can be an amount of time from subscription creation that varies for the resource subscribed to. For the maximum supported subscription length of time, see Subscription lifetime.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     include_resource_data: Annotated[
@@ -1115,7 +1115,7 @@ class TelecomExpenseManagementPartner(Entity):
         datetime | None,
         Field(
             description='Timestamp of the last request sent to Intune by the TEM partner.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     url: Annotated[
@@ -1224,7 +1224,7 @@ class UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDeviceId(Entity)
         datetime | None,
         Field(
             description="The date and time when the statistics were last computed. The value cannot be modified and is automatically populated when the statistics are computed. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2022 would look like this: '2022-01-01T00:00:00Z'. Returned by default. Read-only.",
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     field_odata_type: str
@@ -1331,7 +1331,7 @@ class UserExperienceAnalyticsAppHealthDevicePerformanceDetails(Entity):
         datetime | None,
         Field(
             description="The time the event occurred. The value cannot be modified and is automatically populated when the statistics are computed. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2022 would look like this: '2022-01-01T00:00:00Z'. Returned by default. Read-only.",
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     event_type: Annotated[
@@ -1427,7 +1427,7 @@ class UserExperienceAnalyticsMetricHistory(Entity):
         datetime | None,
         Field(
             description="The metric date time. The value cannot be modified and is automatically populated when the metric is created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: '2014-01-01T00:00:00Z'. Returned by default.",
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     metric_type: Annotated[
@@ -1441,7 +1441,7 @@ class UserExperienceAnalyticsScoreHistory(Entity):
         datetime | None,
         Field(
             description="The device startup date time. The value cannot be modified and is automatically populated. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: '2014-01-01T00:00:00Z'. Returned by default.",
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     field_odata_type: str
@@ -1466,7 +1466,7 @@ class UserSignInInsight(GovernanceInsight):
         datetime | None,
         Field(
             description='Indicates when the user last signed in.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     field_odata_type: str
@@ -1517,21 +1517,21 @@ class WindowsSettingInstance(Entity):
         datetime | None,
         Field(
             description='Set by the server. Represents the dateTime in UTC when the object was created on the server.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     expiration_date_time: Annotated[
         datetime | None,
         Field(
             description='Set by the server. The object expires at the specified dateTime in UTC, making it unavailable after that time.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     last_modified_date_time: Annotated[
         datetime | None,
         Field(
             description="Set by the server if not provided in the request from the Windows client device. Refers to the user's Windows device that modified the object at the specified dateTime in UTC.",
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     payload: Annotated[
@@ -1774,7 +1774,7 @@ class AccessPackageAutomaticRequestSettings(BaseModel):
         timedelta | None,
         Field(
             description="The duration for which access must be retained before the target's access is revoked once they leave the allowed target scope.",
-            pattern='^-?P([0-9]+D)?(T([0-9]+H)?([0-9]+M)?([0-9]+([.][0-9]+)?S)?)?$',
+
         ),
     ] = None
     remove_access_when_target_leaves_allowed_targets: Annotated[
@@ -2116,7 +2116,7 @@ class KnownClientApplication(RootModel[UUID | None]):
     root: Annotated[
         UUID | None,
         Field(
-            pattern='^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$'
+            
         ),
     ] = None
 
@@ -2198,7 +2198,7 @@ class AppRole(BaseModel):
         UUID | None,
         Field(
             description='Unique role identifier inside the appRoles collection. When creating a new app role, a new GUID identifier must be provided.',
-            pattern='^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$',
+            
         ),
     ] = None
     is_enabled: Annotated[
@@ -2280,7 +2280,7 @@ class DisabledPlan(RootModel[UUID]):
     root: Annotated[
         UUID,
         Field(
-            pattern='^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$'
+            
         ),
     ]
 
@@ -2296,7 +2296,7 @@ class AssignedLicense(BaseModel):
         UUID | None,
         Field(
             description='The unique identifier for the SKU. Corresponds to the skuId from subscribedSkus or companySubscription.',
-            pattern='^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$',
+            
         ),
     ] = None
     field_odata_type: str
@@ -2307,7 +2307,7 @@ class AssignedPlan(BaseModel):
         datetime | None,
         Field(
             description='The date and time at which the plan was assigned. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     capability_status: Annotated[
@@ -2323,7 +2323,7 @@ class AssignedPlan(BaseModel):
         UUID | None,
         Field(
             description='A GUID that identifies the service plan. For a complete list of GUIDs and their equivalent friendly service names, see Product names and service plan identifiers for licensing.',
-            pattern='^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$',
+            
         ),
     ] = None
     field_odata_type: str
@@ -2392,14 +2392,14 @@ class AttendanceInterval(BaseModel):
         datetime | None,
         Field(
             description='The time the attendee joined in UTC.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     leave_date_time: Annotated[
         datetime | None,
         Field(
             description='The time the attendee left in UTC.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     field_odata_type: str
@@ -2635,14 +2635,14 @@ class BookingWorkTimeSlot(BaseModel):
         time | None,
         Field(
             description='The time of the day when work stops. For example, 17:00:00.0000000.',
-            pattern='^([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?$',
+            
         ),
     ] = None
     start_time: Annotated[
         time | None,
         Field(
             description='The time of the day when work starts. For example, 08:00:00.0000000.',
-            pattern='^([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?$',
+            
         ),
     ] = None
     field_odata_type: str
@@ -2789,7 +2789,7 @@ class Certification(BaseModel):
         datetime | None,
         Field(
             description='The timestamp when the current certification for the application expires.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     is_certified_by_microsoft: Annotated[
@@ -2808,7 +2808,7 @@ class Certification(BaseModel):
         datetime | None,
         Field(
             description='The timestamp when the certification for the application was most recently added or updated.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     field_odata_type: str
@@ -2993,7 +2993,7 @@ class ChatViewpoint(BaseModel):
         datetime | None,
         Field(
             description='Represents the dateTime up until which the current user has read chatMessages in a specific chat.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     field_odata_type: str
@@ -3335,7 +3335,7 @@ class CustomExtensionCallbackConfiguration(BaseModel):
         timedelta | None,
         Field(
             description='The maximum duration in ISO 8601 format that Microsoft Entra ID will wait for a resume action for the callout it sent to the logic app. The valid range for custom extensions in lifecycle workflows is five minutes to three hours. The valid range for custom extensions in entitlement management is between 5 minutes and 14 days. For example, PT3H refers to three hours, P3D refers to three days, PT10M refers to ten minutes.',
-            pattern='^-?P([0-9]+D)?(T([0-9]+H)?([0-9]+M)?([0-9]+([.][0-9]+)?S)?)?$',
+
         ),
     ] = None
     field_odata_type: str
@@ -3719,7 +3719,7 @@ class DeviceHealthAttestationState(BaseModel):
         datetime | None,
         Field(
             description='The DateTime when device was evaluated or issued to MDM',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     last_update_date_time: Annotated[
@@ -3811,7 +3811,7 @@ class DeviceLocalCredential(Entity):
         datetime | None,
         Field(
             description='When the local administrator account credential for the device object was backed up to Azure Active Directory.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     password_base64: Annotated[
@@ -4111,7 +4111,7 @@ class DomainState(BaseModel):
         datetime | None,
         Field(
             description='Timestamp for when the last activity occurred. The value is updated when an operation is scheduled, the asynchronous task starts, and when the operation completes.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     operation: Annotated[
@@ -4218,7 +4218,6 @@ class EducationTerm(BaseModel):
         date | None,
         Field(
             description='End of the term.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$',
         ),
     ] = None
     external_id: Annotated[
@@ -4228,7 +4227,6 @@ class EducationTerm(BaseModel):
         date | None,
         Field(
             description='Start of the term.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$',
         ),
     ] = None
     field_odata_type: str
@@ -4403,21 +4401,21 @@ class FileSystemInfo(BaseModel):
         datetime | None,
         Field(
             description='The UTC date and time the file was created on a client.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     last_accessed_date_time: Annotated[
         datetime | None,
         Field(
             description='The UTC date and time the file was last accessed. Available for the recent file list only.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     last_modified_date_time: Annotated[
         datetime | None,
         Field(
             description='The UTC date and time the file was last modified on a client.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     field_odata_type: str
@@ -4742,7 +4740,7 @@ class IncompleteData(BaseModel):
         datetime | None,
         Field(
             description='The service does not have source data before the specified time.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     was_throttled: Annotated[
@@ -5047,7 +5045,7 @@ class KeyCredential(BaseModel):
         datetime | None,
         Field(
             description='The date and time at which the credential expires. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     key: Annotated[
@@ -5060,14 +5058,14 @@ class KeyCredential(BaseModel):
         UUID | None,
         Field(
             description='The unique identifier (GUID) for the key.',
-            pattern='^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$',
+            
         ),
     ] = None
     start_date_time: Annotated[
         datetime | None,
         Field(
             description='The date and time at which the credential becomes valid.The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     type: Annotated[
@@ -5107,7 +5105,7 @@ class DisabledPlanModel(RootModel[UUID | None]):
     root: Annotated[
         UUID | None,
         Field(
-            pattern='^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$'
+            
         ),
     ] = None
 
@@ -5119,13 +5117,13 @@ class LicenseAssignmentState(BaseModel):
     last_updated_date_time: Annotated[
         datetime | None,
         Field(
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+            
         ),
     ] = None
     sku_id: Annotated[
         UUID | None,
         Field(
-            pattern='^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$'
+            
         ),
     ] = None
     state: str | None = None
@@ -5518,7 +5516,7 @@ class MessagePinnedEventMessageDetail(EventMessageDetail):
         datetime | None,
         Field(
             description='Date and time when the event occurred.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     initiator: Annotated[
@@ -5538,7 +5536,7 @@ class MessageSecurityState(BaseModel):
     message_received_date_time: Annotated[
         datetime | None,
         Field(
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+            
         ),
     ] = None
     message_subject: str | None = None
@@ -5551,7 +5549,7 @@ class MessageUnpinnedEventMessageDetail(EventMessageDetail):
         datetime | None,
         Field(
             description='Date and time when the event occurred.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     initiator: Annotated[
@@ -5599,14 +5597,14 @@ class MobileAppInstallTimeSettings(BaseModel):
         datetime | None,
         Field(
             description='The time at which the app should be installed.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     start_date_time: Annotated[
         datetime | None,
         Field(
             description='The time at which the app should be available for installation.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     use_local_time: Annotated[
@@ -5716,7 +5714,7 @@ class OmaSettingDateTime(OmaSetting):
         datetime | None,
         Field(
             description='Value.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     field_odata_type: str
@@ -5940,7 +5938,7 @@ class OnPremisesProvisioningError(BaseModel):
         datetime | None,
         Field(
             description='The date and time at which the error occurred.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     property_causing_error: Annotated[
@@ -6038,7 +6036,7 @@ class OsVersionCount(BaseModel):
         datetime | None,
         Field(
             description='The Timestamp of the last update for the device count in UTC',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     os_version: Annotated[str | None, Field(description='OS version')] = None
@@ -6104,7 +6102,7 @@ class PasswordCredential(BaseModel):
         datetime | None,
         Field(
             description='The date and time at which the password expires represented using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Optional.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     hint: Annotated[
@@ -6117,7 +6115,7 @@ class PasswordCredential(BaseModel):
         UUID | None,
         Field(
             description='The unique identifier for the password.',
-            pattern='^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$',
+            
         ),
     ] = None
     secret_text: Annotated[
@@ -6130,7 +6128,7 @@ class PasswordCredential(BaseModel):
         datetime | None,
         Field(
             description='The date and time at which the password becomes valid. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Optional.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     field_odata_type: str
@@ -6170,7 +6168,7 @@ class PendingContentUpdate(BaseModel):
         datetime | None,
         Field(
             description='Date and time the pending binary operation was queued in UTC time. Read-only.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     field_odata_type: str
@@ -6203,7 +6201,7 @@ class PermissionScope(BaseModel):
         UUID | None,
         Field(
             description='Unique delegated permission identifier inside the collection of delegated permissions defined for a resource application.',
-            pattern='^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$',
+            
         ),
     ] = None
     is_enabled: Annotated[
@@ -6365,7 +6363,7 @@ class PlannerAssignment(BaseModel):
         datetime | None,
         Field(
             description='The time when the task was assigned. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     order_hint: Annotated[
@@ -6473,7 +6471,7 @@ class PlannerChecklistItem(BaseModel):
         datetime | None,
         Field(
             description='Read-only. Date and time at which this is last modified. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     order_hint: Annotated[
@@ -6504,7 +6502,7 @@ class PlannerExternalReference(BaseModel):
         datetime | None,
         Field(
             description='Read-only. Date and time at which this is last modified. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     preview_priority: Annotated[
@@ -6619,7 +6617,7 @@ class PrinterShareViewpoint(BaseModel):
         datetime | None,
         Field(
             description='Date and time when the printer was last used by the signed-in user. The timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     field_odata_type: str
@@ -6919,7 +6917,7 @@ class ResourceAccess(BaseModel):
         UUID | None,
         Field(
             description="The unique identifier of an app role or delegated permission exposed by the resource application. For delegated permissions, this should match the id property of one of the delegated permissions in the oauth2PermissionScopes collection of the resource application's service principal. For app roles (application permissions), this should match the id property of an app role in the appRoles collection of the resource application's service principal.",
-            pattern='^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$',
+            
         ),
     ] = None
     type: Annotated[
@@ -6980,7 +6978,7 @@ class ResourceSpecificPermission(BaseModel):
         UUID | None,
         Field(
             description='The unique identifier for the resource-specific application permission.',
-            pattern='^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$',
+            
         ),
     ] = None
     is_enabled: Annotated[
@@ -7081,7 +7079,7 @@ class RetentionSetting(BaseModel):
         timedelta | None,
         Field(
             description='The period of time to retain the protected data for a single Microsoft 365 service.',
-            pattern='^-?P([0-9]+D)?(T([0-9]+H)?([0-9]+M)?([0-9]+([.][0-9]+)?S)?)?$',
+
         ),
     ] = None
     field_odata_type: str
@@ -7288,7 +7286,7 @@ class SecureScoreControlStateUpdate(BaseModel):
         datetime | None,
         Field(
             description='Time at which the control state was updated.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     field_odata_type: str
@@ -7343,7 +7341,7 @@ class SelfSignedCertificate(BaseModel):
         datetime | None,
         Field(
             description='The date and time at which the credential expires. The timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on January 1, 2014 is 2014-01-01T00:00:00Z.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     key: Annotated[
@@ -7356,14 +7354,14 @@ class SelfSignedCertificate(BaseModel):
         UUID | None,
         Field(
             description='The unique identifier (GUID) for the key.',
-            pattern='^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$',
+            
         ),
     ] = None
     start_date_time: Annotated[
         datetime | None,
         Field(
             description='The date and time at which the credential becomes valid. The timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on January 1, 2014 is 2014-01-01T00:00:00Z.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     thumbprint: Annotated[
@@ -7433,7 +7431,7 @@ class ServicePlanInfo(BaseModel):
         UUID | None,
         Field(
             description='The unique identifier of the service plan.',
-            pattern='^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$',
+            
         ),
     ] = None
     service_plan_name: Annotated[
@@ -7489,7 +7487,7 @@ class ServiceProvisioningError(BaseModel):
         datetime | None,
         Field(
             description='The date and time at which the error occurred.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     is_resolved: Annotated[
@@ -7580,7 +7578,7 @@ class Shared(BaseModel):
         datetime | None,
         Field(
             description='The UTC date and time when the item was shared. Read-only.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     field_odata_type: str
@@ -7659,7 +7657,7 @@ class SharingDetail(BaseModel):
         datetime | None,
         Field(
             description='The date and time the file was last shared. The timestamp represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     sharing_reference: Annotated[
@@ -7743,7 +7741,7 @@ class SignInActivity(BaseModel):
         datetime | None,
         Field(
             description='The last non-interactive sign-in date for a specific user. You can use this field to calculate the last time a client attempted (either successfully or unsuccessfully) to sign in to the directory on behalf of a user. Because some users may use clients to access tenant resources rather than signing into your tenant directly, you can use the non-interactive sign-in date to along with lastSignInDateTime to identify inactive users. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Microsoft Entra ID maintains non-interactive sign-ins going back to May 2020. For more information about using the value of this property, see Manage inactive user accounts in Microsoft Entra ID.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     last_non_interactive_sign_in_request_id: Annotated[
@@ -7756,7 +7754,7 @@ class SignInActivity(BaseModel):
         datetime | None,
         Field(
             description='The last interactive sign-in date and time for a specific user. You can use this field to calculate the last time a user attempted (either successfully or unsuccessfully) to sign in to the directory with an interactive authentication method. This field can be used to build reports, such as inactive users. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Microsoft Entra ID maintains interactive sign-ins going back to April 2020. For more information about using the value of this property, see Manage inactive user accounts in Microsoft Entra ID.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     last_sign_in_request_id: Annotated[
@@ -7769,7 +7767,7 @@ class SignInActivity(BaseModel):
         datetime | None,
         Field(
             description="The date and time of the user's most recent successful sign-in activity. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.",
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     last_successful_sign_in_request_id: Annotated[
@@ -7789,7 +7787,7 @@ class SigningCertificateUpdateStatus(BaseModel):
         datetime | None,
         Field(
             description='Date and time in ISO 8601 format and in UTC time when the certificate was last updated. Read-only.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     field_odata_type: str
@@ -7997,7 +7995,7 @@ class SynchronizationProgress(BaseModel):
         datetime | None,
         Field(
             description='The time of a progress observation as an offset in minutes from UTC.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     total_units: Annotated[
@@ -8336,14 +8334,14 @@ class TermsExpiration(BaseModel):
         timedelta | None,
         Field(
             description='Represents the frequency at which the terms will expire, after its first expiration as set in startDateTime. The value is represented in ISO 8601 format for durations. For example, PT1M represents a time period of one month.',
-            pattern='^-?P([0-9]+D)?(T([0-9]+H)?([0-9]+M)?([0-9]+([.][0-9]+)?S)?)?$',
+
         ),
     ] = None
     start_date_time: Annotated[
         datetime | None,
         Field(
             description='The DateTime when the agreement is set to expire for all users. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     field_odata_type: str
@@ -8431,14 +8429,14 @@ class TimePeriod(BaseModel):
         datetime | None,
         Field(
             description='The date time of the end of the time period.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     start_date_time: Annotated[
         datetime | None,
         Field(
             description='The date time of the start of the time period.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     field_odata_type: str
@@ -8449,14 +8447,14 @@ class TimeRange(BaseModel):
         time | None,
         Field(
             description='End time for the time range.',
-            pattern='^([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?$',
+            
         ),
     ] = None
     start_time: Annotated[
         time | None,
         Field(
             description='Start time for the time range.',
-            pattern='^([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?$',
+            
         ),
     ] = None
     field_odata_type: str
@@ -8589,7 +8587,7 @@ class UploadSession(BaseModel):
         datetime | None,
         Field(
             description='The date and time in UTC that the upload session will expire. The complete file must be uploaded before this expiration time is reached.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     next_expected_ranges: Annotated[
@@ -8612,7 +8610,7 @@ class UriClickSecurityState(BaseModel):
     click_date_time: Annotated[
         datetime | None,
         Field(
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+            
         ),
     ] = None
     id: str | None = None
@@ -8627,14 +8625,14 @@ class UsageDetails(BaseModel):
         datetime | None,
         Field(
             description='The date and time the resource was last accessed by the user. The timestamp represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     last_modified_date_time: Annotated[
         datetime | None,
         Field(
             description='The date and time the resource was last modified by the user. The timestamp represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     field_odata_type: str
@@ -8911,7 +8909,7 @@ class VerifiedPublisher(BaseModel):
         datetime | None,
         Field(
             description='The timestamp when the verified publisher was first added or most recently updated.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     display_name: Annotated[
@@ -9247,7 +9245,7 @@ class WindowsInformationProtectionDataRecoveryCertificate(BaseModel):
         datetime | None,
         Field(
             description='Data recovery Certificate expiration datetime',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     subject_name: Annotated[
@@ -9308,7 +9306,7 @@ class WindowsMalwareNameCount(BaseModel):
         datetime | None,
         Field(
             description='The Timestamp of the last update for the device count in UTC',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     malware_identifier: Annotated[
@@ -15702,35 +15700,35 @@ class AccessReviewHistoryInstance(Entity):
         datetime | None,
         Field(
             description='Timestamp when this instance and associated data expires and the history is deleted. Required.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     fulfilled_date_time: Annotated[
         datetime | None,
         Field(
             description="Timestamp when all of the available data for this instance was collected and is set after this instance's status is set to done. Required.",
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     review_history_period_end_date_time: Annotated[
         datetime | None,
         Field(
             description='Timestamp reviews ending on or before this date will be included in the fetched history data.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     review_history_period_start_date_time: Annotated[
         datetime | None,
         Field(
             description='Timestamp reviews starting on or after this date will be included in the fetched history data.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     run_date_time: Annotated[
         datetime | None,
         Field(
             description="Timestamp when the instance's history data is scheduled to be generated.",
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     status: Annotated[
@@ -15759,7 +15757,7 @@ class AccessReviewInstanceDecisionItem(Entity):
         datetime | None,
         Field(
             description="The timestamp when the approval decision was applied.00000000-0000-0000-0000-000000000000 if the assigned reviewer hasn't applied the decision or it was automatically applied. The DatetimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.  Supports $select. Read-only.",
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     apply_result: Annotated[
@@ -15820,7 +15818,7 @@ class AccessReviewInstanceDecisionItem(Entity):
         datetime | None,
         Field(
             description='The timestamp when the review decision occurred. Supports $select. Read-only.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     insights: Annotated[
@@ -15837,7 +15835,7 @@ class AccessReviewReviewer(Entity):
         datetime | None,
         Field(
             description='The date when the reviewer was added for the access review.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     display_name: Annotated[str | None, Field(description='Name of reviewer.')] = None
@@ -15852,7 +15850,7 @@ class AccessReviewStage(Entity):
         datetime | None,
         Field(
             description='The date and time in ISO 8601 format and UTC time when the review stage is scheduled to end. This property is the cumulative total of the durationInDays for all stages. Read-only.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     fallback_reviewers: Annotated[
@@ -15871,7 +15869,7 @@ class AccessReviewStage(Entity):
         datetime | None,
         Field(
             description='The date and time in ISO 8601 format and UTC time when the review stage is scheduled to start. Read-only.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     status: Annotated[
@@ -15975,14 +15973,14 @@ class AgreementAcceptance(Entity):
         datetime | None,
         Field(
             description='The expiration date time of the acceptance. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Supports $filter (eq, ge, le) and eq for null values.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     recorded_date_time: Annotated[
         datetime | None,
         Field(
             description='The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     state: Annotated[
@@ -16017,7 +16015,7 @@ class AgreementFileProperties(Entity):
         datetime | None,
         Field(
             description='The date time representing when the file was created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     display_name: Annotated[
@@ -16114,14 +16112,14 @@ class ApplePushNotificationCertificate(Entity):
         datetime | None,
         Field(
             description='The expiration date and time for Apple push notification certificate.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     last_modified_date_time: Annotated[
         datetime | None,
         Field(
             description='Last modified date and time for Apple push notification certificate.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     topic_identifier: Annotated[str | None, Field(description='Topic Id.')] = None
@@ -16170,7 +16168,7 @@ class AppLogCollectionRequest(Entity):
         datetime | None,
         Field(
             description='Time at which the upload log request reached a completed state if not completed yet NULL will be returned.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     custom_log_folders: Annotated[
@@ -16213,7 +16211,7 @@ class ApprovalStage(Entity):
         datetime | None,
         Field(
             description='The date and time when a decision was recorded. The date and time information uses ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     review_result: Annotated[
@@ -16259,7 +16257,7 @@ class Attachment(Entity):
         datetime | None,
         Field(
             description='The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     name: Annotated[str | None, Field(description="The attachment's file name.")] = None
@@ -16280,7 +16278,7 @@ class AttachmentBase(Entity):
         datetime | None,
         Field(
             description='The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     name: Annotated[
@@ -16308,7 +16306,7 @@ class AttachmentSession(Entity):
         datetime | None,
         Field(
             description='The date and time in UTC when the upload session will expire. The complete file must be uploaded before this expiration time is reached.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     next_expected_ranges: Annotated[
@@ -16393,7 +16391,7 @@ class AuditEvent(Entity):
         datetime | None,
         Field(
             description='The date time in UTC when the activity was performed.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     activity_operation_type: Annotated[
@@ -16417,7 +16415,7 @@ class AuditEvent(Entity):
         UUID | None,
         Field(
             description='The client request Id that is used to correlate activity within the system.',
-            pattern='^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$',
+            
         ),
     ] = None
     display_name: Annotated[str | None, Field(description='Event display name.')] = None
@@ -16515,7 +16513,7 @@ class AuthenticationStrengthPolicy(Entity):
         datetime | None,
         Field(
             description='The datetime when this policy was created.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     description: Annotated[
@@ -16531,7 +16529,7 @@ class AuthenticationStrengthPolicy(Entity):
         datetime | None,
         Field(
             description='The datetime when this policy was last modified.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     policy_type: AuthenticationStrengthPolicyType | None = None
@@ -16573,7 +16571,7 @@ class BaseItemVersion(Entity):
         datetime | None,
         Field(
             description='Date and time the version was last modified. Read-only.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     publication: Annotated[
@@ -16590,7 +16588,7 @@ class BitlockerRecoveryKey(Entity):
         datetime | None,
         Field(
             description='The date and time when the key was originally backed up to Microsoft Entra ID. Not nullable.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     device_id: Annotated[
@@ -16642,7 +16640,7 @@ class BookingCustomQuestion(Entity):
         datetime | None,
         Field(
             description='The date, time, and time zone when the custom question was created. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     display_name: Annotated[str | None, Field(description='The question.')] = None
@@ -16650,7 +16648,7 @@ class BookingCustomQuestion(Entity):
         datetime | None,
         Field(
             description='The date, time, and time zone when the custom question was last updated. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     field_odata_type: str
@@ -16728,14 +16726,14 @@ class CallRecording(Entity):
         datetime | None,
         Field(
             description='Date and time at which the recording was created. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     end_date_time: Annotated[
         datetime | None,
         Field(
             description='Date and time at which the recording ends. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     meeting_id: Annotated[
@@ -16779,14 +16777,14 @@ class CallTranscript(Entity):
         datetime | None,
         Field(
             description='Date and time at which the transcript was created. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     end_date_time: Annotated[
         datetime | None,
         Field(
             description='Date and time at which the transcription ends. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     meeting_id: Annotated[
@@ -16831,7 +16829,7 @@ class ChangeTrackedEntity(Entity):
         datetime | None,
         Field(
             description='The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     last_modified_by: Annotated[
@@ -16842,7 +16840,7 @@ class ChangeTrackedEntity(Entity):
         datetime | None,
         Field(
             description='The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     field_odata_type: str
@@ -16857,14 +16855,14 @@ class ChecklistItem(Entity):
         datetime | None,
         Field(
             description='The date and time when the checklistItem was finished.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     created_date_time: Annotated[
         datetime | None,
         Field(
             description='The date and time when the checklistItem was created.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     display_name: Annotated[
@@ -16884,21 +16882,21 @@ class CloudClipboardItem(Entity):
         datetime | None,
         Field(
             description='Set by the server. DateTime in UTC when the object was created on the server.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     expiration_date_time: Annotated[
         datetime | None,
         Field(
             description='Set by the server. DateTime in UTC when the object expires and after that the object is no longer available. The default and also maximum TTL is 12 hours after the creation, but it might change for performance optimization.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     last_modified_date_time: Annotated[
         datetime | None,
         Field(
             description="Set by the server if not provided in the client's request. DateTime in UTC when the object was modified by the client.",
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     payloads: Annotated[
@@ -16935,7 +16933,7 @@ class CloudPC(Entity):
         datetime | None,
         Field(
             description='The date and time when the grace period ends and reprovisioning or deprovisioning happen. Required only if the status is inGracePeriod. The timestamp is shown in ISO 8601 format and Coordinated Universal Time (UTC). For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     image_display_name: Annotated[
@@ -16948,7 +16946,7 @@ class CloudPC(Entity):
         datetime | None,
         Field(
             description='The last modified date and time of the Cloud PC. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     managed_device_id: Annotated[
@@ -17025,14 +17023,13 @@ class CloudPcDeviceImage(Entity):
         date | None,
         Field(
             description='The date when the image became unavailable. Read-only.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$',
         ),
     ] = None
     last_modified_date_time: Annotated[
         datetime | None,
         Field(
             description='The data and time when the image was last modified. The timestamp represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     operating_system: Annotated[
@@ -17085,14 +17082,13 @@ class CloudPcGalleryImage(Entity):
         date | None,
         Field(
             description='The date when the status of the image becomes supportedWithWarning. Users can still provision new Cloud PCs if the current time is later than endDate and earlier than expirationDate. For example, assume the endDate of a gallery image is 2023-9-14 and expirationDate is 2024-3-14, users are able to provision new Cloud PCs if today is 2023-10-01. Read-only.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$',
         ),
     ] = None
     expiration_date: Annotated[
         date | None,
         Field(
             description='The date when the image is no longer available. Users are unable to provision new Cloud PCs if the current time is later than expirationDate. The value is usually endDate plus six months. For example, if the startDate is 2025-10-14, the expirationDate is usually 2026-04-14. Read-only.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$',
+
         ),
     ] = None
     offer_name: Annotated[
@@ -17125,7 +17121,7 @@ class CloudPcGalleryImage(Entity):
         date | None,
         Field(
             description='The date when the Cloud PC image is available for provisioning new Cloud PCs. For example, 2022-09-20. Read-only.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$',
+
         ),
     ] = None
     status: Annotated[
@@ -17142,7 +17138,7 @@ class CloudPcUserSettingAssignment(Entity):
         datetime | None,
         Field(
             description='The date and time when this assignment was created. The timestamp type represents the date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     target: Annotated[
@@ -17185,7 +17181,7 @@ class CompanySubscription(Entity):
         datetime | None,
         Field(
             description='The date and time when this subscription was created. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     is_trial: Annotated[
@@ -17196,7 +17192,7 @@ class CompanySubscription(Entity):
         datetime | None,
         Field(
             description='The date and time when the subscription will move to the next state (as defined by the status property) if not renewed by the tenant. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     owner_id: Annotated[
@@ -17254,7 +17250,7 @@ class Contact(OutlookItem):
         datetime | None,
         Field(
             description="The contact's birthday. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z",
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     business_address: Annotated[
@@ -17433,7 +17429,7 @@ class ConversationMember(Entity):
         datetime | None,
         Field(
             description="The timestamp denoting how far back a conversation's history is shared with the conversation member. This property is settable only for members of a chat.",
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     field_odata_type: str
@@ -17584,7 +17580,7 @@ class DataPolicyOperation(Entity):
         datetime | None,
         Field(
             description='Represents when the request for this data policy operation was completed, in UTC time, using the ISO 8601 format. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Null until the operation completes.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     progress: Annotated[
@@ -17607,7 +17603,7 @@ class DataPolicyOperation(Entity):
         datetime | None,
         Field(
             description='Represents when the request for this data operation was submitted, in UTC time, using the ISO 8601 format. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     user_id: Annotated[
@@ -17622,7 +17618,7 @@ class DelegatedAdminRelationshipOperation(Entity):
         datetime | None,
         Field(
             description='The time in ISO 8601 format and in UTC time when the long-running operation was created. Read-only.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     data: Annotated[
@@ -17633,7 +17629,7 @@ class DelegatedAdminRelationshipOperation(Entity):
         datetime | None,
         Field(
             description='The time in ISO 8601 format and in UTC time when the long-running operation was last modified. Read-only.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     operation_type: DelegatedAdminRelationshipOperationType | None = None
@@ -17647,14 +17643,14 @@ class DelegatedAdminRelationshipRequest(Entity):
         datetime | None,
         Field(
             description='The date and time in ISO 8601 format and in UTC time when the relationship request was created. Read-only.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     last_modified_date_time: Annotated[
         datetime | None,
         Field(
             description='The date and time in ISO 8601 format and UTC time when this relationship request was last modified. Read-only.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     status: Annotated[
@@ -17760,7 +17756,7 @@ class DeviceComplianceDeviceOverview(Entity):
         datetime | None,
         Field(
             description='Last update time',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     not_applicable_count: Annotated[
@@ -17791,7 +17787,7 @@ class DeviceComplianceDeviceStatus(Entity):
         datetime | None,
         Field(
             description='The DateTime when device compliance grace period expires',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     device_display_name: Annotated[
@@ -17804,7 +17800,7 @@ class DeviceComplianceDeviceStatus(Entity):
         datetime | None,
         Field(
             description='Last modified date time of the policy report.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     status: ComplianceStatus | None = None
@@ -17912,7 +17908,7 @@ class DeviceComplianceSettingState(Entity):
         datetime | None,
         Field(
             description='The DateTime when device compliance grace period expires',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     device_id: Annotated[
@@ -17967,7 +17963,7 @@ class DeviceComplianceUserOverview(Entity):
         datetime | None,
         Field(
             description='Last update time',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     not_applicable_count: Annotated[
@@ -18004,7 +18000,7 @@ class DeviceComplianceUserStatus(Entity):
         datetime | None,
         Field(
             description='Last modified date time of the policy report.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     status: ComplianceStatus | None = None
@@ -18048,7 +18044,7 @@ class DeviceConfigurationDeviceOverview(Entity):
         datetime | None,
         Field(
             description='Last update time',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     not_applicable_count: Annotated[
@@ -18129,7 +18125,7 @@ class DeviceConfigurationDeviceStatus(Entity):
         datetime | None,
         Field(
             description='The DateTime when device compliance grace period expires',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     device_display_name: Annotated[
@@ -18142,7 +18138,7 @@ class DeviceConfigurationDeviceStatus(Entity):
         datetime | None,
         Field(
             description='Last modified date time of the policy report.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     status: ComplianceStatus | None = None
@@ -18176,7 +18172,7 @@ class DeviceConfigurationUserOverview(Entity):
         datetime | None,
         Field(
             description='Last update time',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     not_applicable_count: Annotated[
@@ -18213,7 +18209,7 @@ class DeviceConfigurationUserStatus(Entity):
         datetime | None,
         Field(
             description='Last modified date time of the policy report.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     status: ComplianceStatus | None = None
@@ -18237,7 +18233,7 @@ class DeviceInstallState(Entity):
         datetime | None,
         Field(
             description='Last sync date and time.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     os_description: Annotated[str | None, Field(description='OS Description.')] = None
@@ -18263,14 +18259,14 @@ class DeviceLocalCredentialInfo(Entity):
         datetime | None,
         Field(
             description='When the local administrator account credential was backed up to Azure Active Directory.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     refresh_date_time: Annotated[
         datetime | None,
         Field(
             description='When the local administrator account credential will be refreshed and backed up to Azure Active Directory.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     field_odata_type: str
@@ -18287,7 +18283,7 @@ class DeviceLogCollectionResponse(Entity):
         datetime | None,
         Field(
             description='The DateTime of the expiration of the logs.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     initiated_by_user_principal_name: Annotated[
@@ -18297,21 +18293,21 @@ class DeviceLogCollectionResponse(Entity):
         UUID | None,
         Field(
             description='Indicates Intune device unique identifier.',
-            pattern='^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$',
+            
         ),
     ] = None
     received_date_time_utc: Annotated[
         datetime | None,
         Field(
             description='The DateTime the request was received.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     requested_date_time_utc: Annotated[
         datetime | None,
         Field(
             description='The DateTime of the request.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     size_in_kb: Annotated[
@@ -18344,7 +18340,7 @@ class DeviceManagementExchangeConnector(Entity):
         datetime | None,
         Field(
             description='Last sync time for the Exchange Connector',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     primary_smtp_address: Annotated[
@@ -18368,7 +18364,7 @@ class DeviceManagementExportJob(Entity):
         datetime | None,
         Field(
             description='Time that the exported report expires',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     filter: Annotated[
@@ -18381,7 +18377,7 @@ class DeviceManagementExportJob(Entity):
         datetime | None,
         Field(
             description='Time that the exported report was requested',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     select: Annotated[
@@ -18418,7 +18414,7 @@ class DeviceManagementPartner(Entity):
         datetime | None,
         Field(
             description='Timestamp of last heartbeat after admin enabled option Connect to Device management Partner',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     partner_app_type: DeviceManagementPartnerAppType | None = None
@@ -18430,14 +18426,14 @@ class DeviceManagementPartner(Entity):
         datetime | None,
         Field(
             description='DateTime in UTC when PartnerDevices will be marked as NonCompliant',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     when_partner_devices_will_be_removed_date_time: Annotated[
         datetime | None,
         Field(
             description='DateTime in UTC when PartnerDevices will be removed',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     field_odata_type: str
@@ -18459,7 +18455,7 @@ class DeviceManagementTroubleshootingEvent(Entity):
         datetime | None,
         Field(
             description='Time when the event occurred .',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     field_odata_type: str
@@ -18470,7 +18466,7 @@ class DirectoryObject(Entity):
         datetime | None,
         Field(
             description="Date and time when this object was deleted. Always null when the object hasn't been deleted.",
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     field_odata_type: str
@@ -18490,7 +18486,7 @@ class DirectoryObjectPartnerReference(DirectoryObject):
         UUID | None,
         Field(
             description='The tenant identifier for the partner tenant. Read-only.',
-            pattern='^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$',
+            
         ),
     ] = None
     object_type: Annotated[
@@ -18699,7 +18695,7 @@ class EducationAssignmentDefaults(Entity):
         time | None,
         Field(
             description='Class-level default value for due time field. Default value is 23:59:00.',
-            pattern='^([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?$',
+            
         ),
     ] = None
     notification_channel_url: Annotated[
@@ -18764,7 +18760,7 @@ class EducationOutcome(Entity):
         datetime | None,
         Field(
             description='The moment in time when the resource was last modified. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2021 is 2021-01-01T00:00:00Z.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     field_odata_type: str
@@ -18829,7 +18825,7 @@ class EnterpriseCodeSigningCertificate(Entity):
         datetime | None,
         Field(
             description='The cert expiration date and time (using ISO 8601 format, in UTC time). Uploading a valid cert file through the Intune admin console will automatically populate this value in the HTTP response. Supports: $filter, $select, $top, $OrderBy, $skip. $Search is not supported.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     issuer: Annotated[
@@ -18861,7 +18857,7 @@ class EnterpriseCodeSigningCertificate(Entity):
         datetime | None,
         Field(
             description='The date time of CodeSigning Cert when it is uploaded (using ISO 8601 format, in UTC time). Uploading a valid cert file through the Intune admin console will automatically populate this value in the HTTP response. Supports: $filter, $select, $top, $OrderBy, $skip. $Search is not supported.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     field_odata_type: str
@@ -18872,7 +18868,7 @@ class EntitlementManagementSettings(Entity):
         timedelta | None,
         Field(
             description='If externalUserLifecycleAction is blockSignInAndDelete, the duration, typically many days, after an external user is blocked from sign in before their account is deleted.',
-            pattern='^-?P([0-9]+D)?(T([0-9]+H)?([0-9]+M)?([0-9]+([.][0-9]+)?S)?)?$',
+
         ),
     ] = None
     external_user_lifecycle_action: Annotated[
@@ -18975,7 +18971,7 @@ class Fido2AuthenticationMethod(AuthenticationMethod):
         datetime | None,
         Field(
             description='The timestamp when this key was registered to the user.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     display_name: Annotated[
@@ -19191,7 +19187,7 @@ class IosUpdateDeviceStatus(Entity):
         datetime | None,
         Field(
             description='The DateTime when device compliance grace period expires',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     device_display_name: Annotated[
@@ -19208,7 +19204,7 @@ class IosUpdateDeviceStatus(Entity):
         datetime | None,
         Field(
             description='Last modified date time of the policy report.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     os_version: Annotated[
@@ -19272,7 +19268,7 @@ class LearningContent(Entity):
         datetime | None,
         Field(
             description='The date and time when the learning content was created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Optional.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     description: Annotated[
@@ -19285,7 +19281,7 @@ class LearningContent(Entity):
         timedelta | None,
         Field(
             description='The duration of the learning content in seconds. The value is represented in ISO 8601 format for durations. Optional.',
-            pattern='^-?P([0-9]+D)?(T([0-9]+H)?([0-9]+M)?([0-9]+([.][0-9]+)?S)?)?$',
+
         ),
     ] = None
     external_id: Annotated[
@@ -19328,7 +19324,7 @@ class LearningContent(Entity):
         datetime | None,
         Field(
             description='The date and time when the learning content was last modified. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Optional.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     level: Annotated[
@@ -19372,7 +19368,7 @@ class LearningCourseActivity(Entity):
         datetime | None,
         Field(
             description='Date and time when the assignment was completed. Optional.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     completion_percentage: Annotated[
@@ -19462,7 +19458,7 @@ class LearningSelfInitiatedCourse(LearningCourseActivity):
         datetime | None,
         Field(
             description='The date and time on which the learner started the self-initiated course. Optional.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     field_odata_type: str
@@ -19479,7 +19475,7 @@ class LicenseDetails(Entity):
         UUID | None,
         Field(
             description='Unique identifier (GUID) for the service SKU. Equal to the skuId property on the related subscribedSku object. Read-only.',
-            pattern='^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$',
+            
         ),
     ] = None
     sku_part_number: Annotated[
@@ -19506,14 +19502,14 @@ class LongRunningOperation(Entity):
         datetime | None,
         Field(
             description='The start time of the operation. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     last_action_date_time: Annotated[
         datetime | None,
         Field(
             description='The time of the last action in the operation. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     resource_location: Annotated[
@@ -19564,14 +19560,14 @@ class MalwareStateForWindowsDevice(Entity):
         datetime | None,
         Field(
             description='Initial detection datetime of the malware',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     last_state_change_date_time: Annotated[
         datetime | None,
         Field(
             description='The last time this particular threat was changed',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     threat_state: Annotated[
@@ -19692,28 +19688,28 @@ class ManagedAppProtection(ManagedAppPolicy):
         timedelta | None,
         Field(
             description='TimePeriod before the all-level pin must be reset if PinRequired is set to True.',
-            pattern='^-?P([0-9]+D)?(T([0-9]+H)?([0-9]+M)?([0-9]+([.][0-9]+)?S)?)?$',
+
         ),
     ] = None
     period_offline_before_access_check: Annotated[
         timedelta | None,
         Field(
             description='The period after which access is checked when the device is not connected to the internet.',
-            pattern='^-?P([0-9]+D)?(T([0-9]+H)?([0-9]+M)?([0-9]+([.][0-9]+)?S)?)?$',
+
         ),
     ] = None
     period_offline_before_wipe_is_enforced: Annotated[
         timedelta | None,
         Field(
             description='The amount of time an app is allowed to remain disconnected from the internet before all managed data it is wiped.',
-            pattern='^-?P([0-9]+D)?(T([0-9]+H)?([0-9]+M)?([0-9]+([.][0-9]+)?S)?)?$',
+
         ),
     ] = None
     period_online_before_access_check: Annotated[
         timedelta | None,
         Field(
             description='The period after which access is checked when the device is connected to the internet.',
-            pattern='^-?P([0-9]+D)?(T([0-9]+H)?([0-9]+M)?([0-9]+([.][0-9]+)?S)?)?$',
+
         ),
     ] = None
     pin_character_set: ManagedAppPinCharacterSet | None = None
@@ -19747,7 +19743,7 @@ class ManagedAppRegistration(Entity):
         datetime | None,
         Field(
             description='Date and time of creation',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     device_name: Annotated[str | None, Field(description='Host device name')] = None
@@ -19768,7 +19764,7 @@ class ManagedAppRegistration(Entity):
         datetime | None,
         Field(
             description='Date and time of last the app synced with management service.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     management_sdk_version: Annotated[
@@ -19816,7 +19812,7 @@ class ManagedDeviceMobileAppConfigurationDeviceStatus(Entity):
         datetime | None,
         Field(
             description='The DateTime when device compliance grace period expires',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     device_display_name: Annotated[
@@ -19829,7 +19825,7 @@ class ManagedDeviceMobileAppConfigurationDeviceStatus(Entity):
         datetime | None,
         Field(
             description='Last modified date time of the policy report.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     status: ComplianceStatus | None = None
@@ -19855,7 +19851,7 @@ class ManagedDeviceMobileAppConfigurationUserStatus(Entity):
         datetime | None,
         Field(
             description='Last modified date time of the policy report.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     status: ComplianceStatus | None = None
@@ -19927,14 +19923,14 @@ class MeetingAttendanceReport(Entity):
         datetime | None,
         Field(
             description='UTC time when the meeting ended. Read-only.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     meeting_start_date_time: Annotated[
         datetime | None,
         Field(
             description='UTC time when the meeting started. Read-only.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     total_participant_count: Annotated[
@@ -19987,14 +19983,14 @@ class MobileAppContentFile(Entity):
         datetime | None,
         Field(
             description='The time the Azure storage Uri expires.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     created_date_time: Annotated[
         datetime | None,
         Field(
             description='The time the file was created.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     is_committed: Annotated[
@@ -20082,7 +20078,7 @@ class MobileThreatDefenseConnector(Entity):
         datetime | None,
         Field(
             description='DateTime of last Heartbeat recieved from the Mobile Threat Defense partner',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     microsoft_defender_for_endpoint_attach_enabled: Annotated[
@@ -20152,7 +20148,7 @@ class NotificationMessageTemplate(Entity):
         datetime | None,
         Field(
             description='DateTime the object was last modified.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     role_scope_tag_ids: Annotated[
@@ -20188,7 +20184,7 @@ class OnenoteEntityHierarchyModel(OnenoteEntitySchemaObjectModel):
         datetime | None,
         Field(
             description='The date and time when the notebook was last modified. The timestamp represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     field_odata_type: str
@@ -20199,14 +20195,14 @@ class Operation(Entity):
         datetime | None,
         Field(
             description='The start time of the operation.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     last_action_date_time: Annotated[
         datetime | None,
         Field(
             description='The time of the last action of the operation.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     status: Annotated[
@@ -20247,7 +20243,7 @@ class PasswordAuthenticationMethod(AuthenticationMethod):
         datetime | None,
         Field(
             description='The date and time when this password was last updated. This property is currently not populated. Read-only. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     password: Annotated[
@@ -20435,7 +20431,7 @@ class ProtectionPolicyBase(Entity):
         datetime | None,
         Field(
             description='The time of creation of the policy.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     display_name: Annotated[
@@ -20449,7 +20445,7 @@ class ProtectionPolicyBase(Entity):
         datetime | None,
         Field(
             description='The timestamp of the last modification of the policy.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     retention_settings: Annotated[
@@ -20553,7 +20549,7 @@ class RemoteAssistancePartner(Entity):
         datetime | None,
         Field(
             description='Timestamp of the last request sent to Intune by the TEM partner.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     onboarding_status: RemoteAssistanceOnboardingStatus | None = None
@@ -20590,7 +20586,7 @@ class Request(Entity):
         datetime | None,
         Field(
             description='The request completion date time.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     created_by: Annotated[
@@ -20601,7 +20597,7 @@ class Request(Entity):
         datetime | None,
         Field(
             description='The request creation date time.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     custom_data: Annotated[
@@ -20687,7 +20683,7 @@ class ScheduleChangeRequest(ChangeTrackedEntity):
     manager_action_date_time: Annotated[
         datetime | None,
         Field(
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+            
         ),
     ] = None
     manager_action_message: str | None = None
@@ -20695,7 +20691,7 @@ class ScheduleChangeRequest(ChangeTrackedEntity):
     sender_date_time: Annotated[
         datetime | None,
         Field(
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+            
         ),
     ] = None
     sender_message: str | None = None
@@ -20816,7 +20812,7 @@ class SecureScoreControlProfile(Entity):
         datetime | None,
         Field(
             description='Time at which the control profile entity was last modified. The Timestamp type represents date and time',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     max_score: Annotated[
@@ -20890,21 +20886,21 @@ class ServiceAnnouncementBase(Entity):
         datetime | None,
         Field(
             description='The end time of the service event.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     last_modified_date_time: Annotated[
         datetime | None,
         Field(
             description='The last modified time of the service event.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     start_date_time: Annotated[
         datetime | None,
         Field(
             description='The start time of the service event.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     title: Annotated[
@@ -20922,7 +20918,7 @@ class ServiceApp(Entity):
         datetime | None,
         Field(
             description='Timestamp of the effective activation of the service app.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     last_modified_by: Annotated[
@@ -20933,14 +20929,14 @@ class ServiceApp(Entity):
         datetime | None,
         Field(
             description='Timestamp of the last modification of the entity.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     registration_date_time: Annotated[
         datetime | None,
         Field(
             description='Timestamp of the creation of the service app entity.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     status: Annotated[
@@ -21167,7 +21163,7 @@ class SimulationAutomationRun(Entity):
         datetime | None,
         Field(
             description='Date and time when the run ends in an attack simulation automation.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     simulation_id: Annotated[
@@ -21180,7 +21176,7 @@ class SimulationAutomationRun(Entity):
         datetime | None,
         Field(
             description='Date and time when the run starts in an attack simulation automation.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     status: Annotated[
@@ -21310,7 +21306,7 @@ class SubscribedSku(Entity):
         UUID | None,
         Field(
             description='The unique identifier (GUID) for the service SKU.',
-            pattern='^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$',
+            
         ),
     ] = None
     sku_part_number: Annotated[
@@ -21374,7 +21370,7 @@ class TeamsAsyncOperation(Entity):
         datetime | None,
         Field(
             description='Time when the operation was created.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     error: Annotated[
@@ -21385,7 +21381,7 @@ class TeamsAsyncOperation(Entity):
         datetime | None,
         Field(
             description='Time when the async operation was last updated.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     operation_type: TeamsAsyncOperationType | None = None
@@ -21444,7 +21440,7 @@ class TemporaryAccessPassAuthenticationMethod(AuthenticationMethod):
         datetime | None,
         Field(
             description='The date and time when the Temporary Access Pass was created.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     is_usable: Annotated[
@@ -21477,7 +21473,7 @@ class TemporaryAccessPassAuthenticationMethod(AuthenticationMethod):
         datetime | None,
         Field(
             description='The date and time when the Temporary Access Pass becomes available to use and when isUsable is true is enforced.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     temporary_access_pass: Annotated[
@@ -21509,7 +21505,7 @@ class ThreatAssessmentResult(Entity):
         datetime | None,
         Field(
             description='The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     message: Annotated[
@@ -21570,14 +21566,14 @@ class TimeOffRequest(ScheduleChangeRequest):
         datetime | None,
         Field(
             description='The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     start_date_time: Annotated[
         datetime | None,
         Field(
             description='The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     time_off_reason_id: Annotated[
@@ -21599,7 +21595,7 @@ class Trending(Entity):
         datetime | None,
         Field(
             description='The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     resource_reference: Annotated[
@@ -21696,7 +21692,7 @@ class UnifiedRoleScheduleBase(Entity):
         datetime | None,
         Field(
             description='When the schedule was created.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     created_using: Annotated[
@@ -21715,7 +21711,7 @@ class UnifiedRoleScheduleBase(Entity):
         datetime | None,
         Field(
             description='When the schedule was last modified.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     principal_id: Annotated[
@@ -22035,7 +22031,7 @@ class UserExperienceAnalyticsAppHealthDevicePerformance(Entity):
         datetime | None,
         Field(
             description="The date and time when the statistics were last computed. The value cannot be modified and is automatically populated when the statistics are computed. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2022 would look like this: '2022-01-01T00:00:00Z'. Returned by default. Read-only.",
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     field_odata_type: str
@@ -22346,7 +22342,7 @@ class UserExperienceAnalyticsDeviceStartupHistory(Entity):
         datetime | None,
         Field(
             description="The device boot start time. The value cannot be modified and is automatically populated when the device performs a reboot. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2022 would look like this: '2022-01-01T00:00:00Z'. Returned by default. Read-only.",
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     total_boot_time_in_ms: Annotated[
@@ -22872,7 +22868,7 @@ class UserRegistrationDetails(Entity):
         datetime | None,
         Field(
             description='The date and time (UTC) when the report was last updated. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     methods_registered: Annotated[
@@ -23018,21 +23014,21 @@ class VppToken(Entity):
         datetime | None,
         Field(
             description='The expiration date time of the Apple Volume Purchase Program Token.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     last_modified_date_time: Annotated[
         datetime | None,
         Field(
             description='Last modification date time associated with the Apple Volume Purchase Program Token.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     last_sync_date_time: Annotated[
         datetime | None,
         Field(
             description='The last time when an application sync was done with the Apple volume purchase program service using the the Apple Volume Purchase Program Token.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     last_sync_status: VppTokenSyncStatus | None = None
@@ -23069,7 +23065,7 @@ class WindowsAutopilotDeviceIdentity(Entity):
         datetime | None,
         Field(
             description='Intune Last Contacted Date Time of the Windows autopilot device.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     managed_device_id: Annotated[str | None, Field(description='Managed Device ID')] = (
@@ -23130,14 +23126,14 @@ class WindowsDeviceMalwareState(Entity):
         datetime | None,
         Field(
             description='Initial detection datetime of the malware',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     last_state_change_date_time: Annotated[
         datetime | None,
         Field(
             description='The last time this particular threat was changed',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     severity: Annotated[
@@ -23274,7 +23270,7 @@ class WindowsInformationProtection(ManagedAppPolicy):
         UUID | None,
         Field(
             description='TemplateID GUID to use for RMS encryption. The RMS template allows the IT admin to configure the details about who has access to RMS-protected file and how long they have access',
-            pattern='^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$',
+            
         ),
     ] = None
     smb_auto_encrypted_file_extensions: Annotated[
@@ -23405,7 +23401,7 @@ class WindowsMalwareInformation(Entity):
         datetime | None,
         Field(
             description='Indicates the last time the malware was detected in UTC',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     severity: Annotated[
@@ -23458,7 +23454,7 @@ class WindowsProtectionState(Entity):
         datetime | None,
         Field(
             description='Last quick scan datetime',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     last_full_scan_signature_version: Annotated[
@@ -23468,7 +23464,7 @@ class WindowsProtectionState(Entity):
         datetime | None,
         Field(
             description='Last quick scan datetime',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     last_quick_scan_signature_version: Annotated[
@@ -23478,7 +23474,7 @@ class WindowsProtectionState(Entity):
         datetime | None,
         Field(
             description='Last device health status reported time',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     malware_protection_enabled: Annotated[
@@ -23875,14 +23871,14 @@ class AccessPackageApprovalStage(BaseModel):
         timedelta | None,
         Field(
             description='The number of days that a request can be pending a response before it is automatically denied.',
-            pattern='^-?P([0-9]+D)?(T([0-9]+H)?([0-9]+M)?([0-9]+([.][0-9]+)?S)?)?$',
+
         ),
     ] = None
     duration_before_escalation: Annotated[
         timedelta | None,
         Field(
             description='If escalation is required, the time a request can be pending a response from a primary approver.',
-            pattern='^-?P([0-9]+D)?(T([0-9]+H)?([0-9]+M)?([0-9]+([.][0-9]+)?S)?)?$',
+
         ),
     ] = None
     escalation_approvers: Annotated[
@@ -24151,7 +24147,7 @@ class AddIn(BaseModel):
         UUID | None,
         Field(
             description='The unique identifier for the addIn object.',
-            pattern='^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$',
+            
         ),
     ] = None
     properties: Annotated[
@@ -24186,7 +24182,7 @@ class AlertHistoryState(BaseModel):
     updated_date_time: Annotated[
         datetime | None,
         Field(
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+            
         ),
     ] = None
     user: str | None = None
@@ -24386,14 +24382,14 @@ class ArchivedPrintJob(BaseModel):
         datetime | None,
         Field(
             description='The dateTimeOffset when the job was acquired by the printer, if any. Read-only.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     completion_date_time: Annotated[
         datetime | None,
         Field(
             description='The dateTimeOffset when the job was completed, canceled, or aborted. Read-only.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     copies_printed: Annotated[
@@ -24412,7 +24408,7 @@ class ArchivedPrintJob(BaseModel):
         datetime | None,
         Field(
             description='The dateTimeOffset when the job was created. Read-only.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     id: Annotated[
@@ -24544,7 +24540,7 @@ class AttackSimulationSimulationUserCoverage(BaseModel):
         datetime | None,
         Field(
             description='Date and time of the latest attack simulation and training campaign that the user was included in.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     simulation_count: Annotated[
@@ -25004,7 +25000,7 @@ class BookingReminder(BaseModel):
         timedelta | None,
         Field(
             description="The amount of time before the start of an appointment that the reminder should be sent. It's denoted in ISO 8601 format.",
-            pattern='^-?P([0-9]+D)?(T([0-9]+H)?([0-9]+M)?([0-9]+([.][0-9]+)?S)?)?$',
+
         ),
     ] = None
     recipients: BookingReminderRecipients | None = None
@@ -25078,7 +25074,7 @@ class BrowserSharedCookieHistory(BaseModel):
         datetime | None,
         Field(
             description='The date and time when the cookie was last published.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     source_environment: Annotated[
@@ -25120,7 +25116,7 @@ class BrowserSiteHistory(BaseModel):
         datetime | None,
         Field(
             description='The date and time when the site was last published.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     target_environment: Annotated[
@@ -25199,7 +25195,7 @@ class CallRecordingEventMessageDetail(EventMessageDetail):
         timedelta | None,
         Field(
             description='Duration of the call recording.',
-            pattern='^-?P([0-9]+D)?(T([0-9]+H)?([0-9]+M)?([0-9]+([.][0-9]+)?S)?)?$',
+
         ),
     ] = None
     call_recording_status: Annotated[
@@ -25265,7 +25261,7 @@ class CallTranscriptionInfo(BaseModel):
         datetime | None,
         Field(
             description='The state modified time in UTC.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     state: CallTranscriptionState | None = None
@@ -25311,21 +25307,21 @@ class ChangeNotification(BaseModel):
         datetime | None,
         Field(
             description='The expiration time for the subscription. Required.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     subscription_id: Annotated[
         UUID | None,
         Field(
             description='The unique identifier of the subscription that generated the notification.Required.',
-            pattern='^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$',
+            
         ),
     ] = None
     tenant_id: Annotated[
         UUID | None,
         Field(
             description='The unique identifier of the tenant from which the change notification originated. Required.',
-            pattern='^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$',
+            
         ),
     ] = None
     field_odata_type: str
@@ -25607,7 +25603,7 @@ class CloudPcOnPremisesConnectionHealthCheck(BaseModel):
         datetime | None,
         Field(
             description="The value cannot be modified and is automatically populated when the health check ends. The Timestamp type represents date and time information using ISO 8601 format and is in Coordinated Universal Time (UTC). For example, midnight UTC on Jan 1, 2024 would look like this: '2024-01-01T00:00:00Z'. Returned by default. Read-only.",
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     error_type: Annotated[
@@ -25626,7 +25622,7 @@ class CloudPcOnPremisesConnectionHealthCheck(BaseModel):
         datetime | None,
         Field(
             description="The value cannot be modified and is automatically populated when the health check starts. The Timestamp type represents date and time information using ISO 8601 format and is in  Coordinated Universal Time (UTC). For example, midnight UTC on Jan 1, 2024 would look like this: '2024-01-01T00:00:00Z'. Returned by default. Read-only.",
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     status: CloudPcOnPremisesConnectionStatus | None = None
@@ -25638,7 +25634,7 @@ class CloudPcOnPremisesConnectionStatusDetail(BaseModel):
         datetime | None,
         Field(
             description='The end time of the connection health check. The Timestamp  is shown in ISO 8601 format and Coordinated Universal Time (UTC). For example, midnight UTC on Jan 1, 2014 appears as 2014-01-01T00:00:00Z. Read-Only.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     health_checks: Annotated[
@@ -25651,7 +25647,7 @@ class CloudPcOnPremisesConnectionStatusDetail(BaseModel):
         datetime | None,
         Field(
             description='The start time of the health check. The timestamp is shown in ISO 8601 format and Coordinated Universal Time (UTC). For example, midnight UTC on Jan 1, 2014 appear as 2014-01-01T00:00:00Z. Read-Only.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     field_odata_type: str
@@ -26070,7 +26066,7 @@ class CopyNotebookModel(BaseModel):
     created_time: Annotated[
         datetime | None,
         Field(
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+            
         ),
     ] = None
     id: str | None = None
@@ -26081,7 +26077,7 @@ class CopyNotebookModel(BaseModel):
     last_modified_time: Annotated[
         datetime | None,
         Field(
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+            
         ),
     ] = None
     links: NotebookLinks | Dict[str, Any] | None = None
@@ -26250,14 +26246,14 @@ class DeviceActionResult(BaseModel):
         datetime | None,
         Field(
             description='Time the action state was last updated',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     start_date_time: Annotated[
         datetime | None,
         Field(
             description='Time the action was initiated',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     field_odata_type: str
@@ -26280,7 +26276,7 @@ class DeviceGeoLocation(BaseModel):
         datetime | None,
         Field(
             description='Time at which location was recorded, relative to UTC',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     latitude: Annotated[
@@ -26365,7 +26361,7 @@ class EducationAssignmentGrade(BaseModel):
         datetime | None,
         Field(
             description='Moment in time when the grade was applied to this submission object. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     field_odata_type: str
@@ -26415,7 +26411,7 @@ class EducationResource(BaseModel):
         datetime | None,
         Field(
             description='Moment in time when the resource was created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     display_name: Annotated[
@@ -26429,7 +26425,7 @@ class EducationResource(BaseModel):
         datetime | None,
         Field(
             description='Moment in time when the resource was last modified.  The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     field_odata_type: str
@@ -26440,7 +26436,7 @@ class EducationStudent(BaseModel):
         date | None,
         Field(
             description='Birth date of the student.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$',
+
         ),
     ] = None
     external_id: Annotated[
@@ -26520,14 +26516,14 @@ class ExpirationPattern(BaseModel):
         timedelta | None,
         Field(
             description="The requestor's desired duration of access represented in ISO 8601 format for durations. For example, PT3H refers to three hours.  If specified in a request, endDateTime should not be present and the type property should be set to afterDuration.",
-            pattern='^-?P([0-9]+D)?(T([0-9]+H)?([0-9]+M)?([0-9]+([.][0-9]+)?S)?)?$',
+
         ),
     ] = None
     end_date_time: Annotated[
         datetime | None,
         Field(
             description='Timestamp of date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     type: Annotated[
@@ -27154,14 +27150,14 @@ class KeyCredentialConfiguration(BaseModel):
         timedelta | None,
         Field(
             description='String value that indicates the maximum lifetime for key expiration, defined as an ISO 8601 duration. For example, P4DT12H30M5S represents four days, 12 hours, 30 minutes, and five seconds. This property is required when restrictionType is set to keyLifetime.',
-            pattern='^-?P([0-9]+D)?(T([0-9]+H)?([0-9]+M)?([0-9]+([.][0-9]+)?S)?)?$',
+
         ),
     ] = None
     restrict_for_apps_created_after_date_time: Annotated[
         datetime | None,
         Field(
             description='Specifies the date from which the policy restriction applies to newly created applications. For existing applications, the enforcement date can be retroactively applied.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     restriction_type: Annotated[
@@ -27783,7 +27779,7 @@ class NetworkConnection(BaseModel):
         datetime | None,
         Field(
             description='Date when the destination domain was registered. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     local_dns_name: Annotated[
@@ -28109,14 +28105,14 @@ class PasswordCredentialConfiguration(BaseModel):
         timedelta | None,
         Field(
             description='String value that indicates the maximum lifetime for password expiration, defined as an ISO 8601 duration. For example, P4DT12H30M5S represents four days, 12 hours, 30 minutes, and five seconds. This property is required when restrictionType is set to passwordLifetime.',
-            pattern='^-?P([0-9]+D)?(T([0-9]+H)?([0-9]+M)?([0-9]+([.][0-9]+)?S)?)?$',
+
         ),
     ] = None
     restrict_for_apps_created_after_date_time: Annotated[
         datetime | None,
         Field(
             description='Specifies the date from which the policy restriction applies to newly created applications. For existing applications, the enforcement date can be retroactively applied.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     restriction_type: Annotated[
@@ -28226,7 +28222,7 @@ class Photo(BaseModel):
         datetime | None,
         Field(
             description='Represents the date and time the photo was taken. Read-only.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     field_odata_type: str
@@ -28269,7 +28265,7 @@ class PresenceStatusMessage(BaseModel):
         datetime | None,
         Field(
             description="Time in which the status message was published.Read-only.publishedDateTime isn't available when you request the presence of another user.",
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     field_odata_type: str
@@ -28801,7 +28797,7 @@ class Process(BaseModel):
         datetime | None,
         Field(
             description='Time at which the process was started. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     file_hash: Annotated[
@@ -28826,7 +28822,7 @@ class Process(BaseModel):
         datetime | None,
         Field(
             description='DateTime at which the parent process was started. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     parent_process_id: Annotated[
@@ -28985,7 +28981,7 @@ class RecentNotebook(BaseModel):
         datetime | None,
         Field(
             description='The date and time when the notebook was last modified. The timestamp represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     links: Annotated[
@@ -29085,7 +29081,7 @@ class RecurrenceRange(BaseModel):
         date | None,
         Field(
             description='The date to stop applying the recurrence pattern. Depending on the recurrence pattern of the event, the last occurrence of the meeting may not be this date. Required if type is endDate.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$',
+
         ),
     ] = None
     number_of_occurrences: Annotated[
@@ -29106,7 +29102,7 @@ class RecurrenceRange(BaseModel):
         date | None,
         Field(
             description='The date to start applying the recurrence pattern. The first occurrence of the meeting may be this date or later, depending on the recurrence pattern of the event. Must be the same value as the start property of the recurring event. Required.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$',
+
         ),
     ] = None
     type: Annotated[
@@ -29277,7 +29273,7 @@ class ResponseStatus(BaseModel):
         datetime | None,
         Field(
             description='The date and time when the response was returned. It uses ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     field_odata_type: str
@@ -29432,13 +29428,13 @@ class ScheduleEntity(BaseModel):
     end_date_time: Annotated[
         datetime | None,
         Field(
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+            
         ),
     ] = None
     start_date_time: Annotated[
         datetime | None,
         Field(
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+            
         ),
     ] = None
     theme: ScheduleEntityTheme | None = None
@@ -29588,7 +29584,7 @@ class ServiceHealthIssuePost(BaseModel):
         datetime | None,
         Field(
             description='The published time of the post.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     description: Annotated[
@@ -29623,7 +29619,7 @@ class ServiceStatus(BaseModel):
         datetime | None,
         Field(
             description='The expiration time of the grace period.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     last_modified_by: Annotated[
@@ -29634,14 +29630,14 @@ class ServiceStatus(BaseModel):
         datetime | None,
         Field(
             description='Timestamp of the last modification of the entity.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     restore_allowed_till_date_time: Annotated[
         datetime | None,
         Field(
             description='The expiration time of the restoration allowed period.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     status: Annotated[
@@ -29711,7 +29707,7 @@ class ShiftActivity(BaseModel):
         datetime | None,
         Field(
             description='The end date and time for the shiftActivity. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Required.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     is_paid: Annotated[
@@ -29724,7 +29720,7 @@ class ShiftActivity(BaseModel):
         datetime | None,
         Field(
             description='The start date and time for the shiftActivity. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Required.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     theme: ScheduleEntityTheme | None = None
@@ -29952,7 +29948,7 @@ class StandardTimeZoneOffset(BaseModel):
         time | None,
         Field(
             description='Represents the time of day when the transition from daylight saving time to standard time occurs.',
-            pattern='^([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?$',
+            
         ),
     ] = None
     year: Annotated[
@@ -30007,7 +30003,7 @@ class SubjectRightsRequestHistory(BaseModel):
         datetime | None,
         Field(
             description='Data and time when the entity was changed.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     stage: Annotated[
@@ -30074,7 +30070,7 @@ class SynchronizationQuarantine(BaseModel):
         datetime | None,
         Field(
             description='Date and time when the quarantine was last evaluated and imposed. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     error: Annotated[
@@ -30087,7 +30083,7 @@ class SynchronizationQuarantine(BaseModel):
         datetime | None,
         Field(
             description='Date and time when the next attempt to re-evaluate the quarantine will be made. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     reason: QuarantineReason | None = None
@@ -30095,7 +30091,7 @@ class SynchronizationQuarantine(BaseModel):
         datetime | None,
         Field(
             description='Date and time when the quarantine was first imposed in this series (a series starts when a quarantine is first imposed, and is reset as soon as the quarantine is lifted). The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     series_count: Annotated[
@@ -30112,14 +30108,14 @@ class SynchronizationSchedule(BaseModel):
         datetime | None,
         Field(
             description='Date and time when this job expires. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     interval: Annotated[
         timedelta | None,
         Field(
             description='The interval between synchronization iterations. The value is represented in ISO 8601  format for durations. For example, P1M represents a period of one month and PT1M represents a period of one minute.',
-            pattern='^-?P([0-9]+D)?(T([0-9]+H)?([0-9]+M)?([0-9]+([.][0-9]+)?S)?)?$',
+
         ),
     ] = None
     state: SynchronizationScheduleState | None = None
@@ -30187,14 +30183,14 @@ class SynchronizationTaskExecution(BaseModel):
         datetime | None,
         Field(
             description='Time when this job run began. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     time_ended: Annotated[
         datetime | None,
         Field(
             description='Time when this job run ended. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     field_odata_type: str
@@ -30338,7 +30334,7 @@ class TeleconferenceDeviceMediaQuality(BaseModel):
         timedelta | None,
         Field(
             description='The average inbound stream network jitter.',
-            pattern='^-?P([0-9]+D)?(T([0-9]+H)?([0-9]+M)?([0-9]+([.][0-9]+)?S)?)?$',
+
         ),
     ] = None
     average_inbound_packet_loss_rate_in_percentage: Annotated[
@@ -30351,14 +30347,14 @@ class TeleconferenceDeviceMediaQuality(BaseModel):
         timedelta | None,
         Field(
             description='The average inbound stream network round trip delay.',
-            pattern='^-?P([0-9]+D)?(T([0-9]+H)?([0-9]+M)?([0-9]+([.][0-9]+)?S)?)?$',
+
         ),
     ] = None
     average_outbound_jitter: Annotated[
         timedelta | None,
         Field(
             description='The average outbound stream network jitter.',
-            pattern='^-?P([0-9]+D)?(T([0-9]+H)?([0-9]+M)?([0-9]+([.][0-9]+)?S)?)?$',
+
         ),
     ] = None
     average_outbound_packet_loss_rate_in_percentage: Annotated[
@@ -30371,7 +30367,7 @@ class TeleconferenceDeviceMediaQuality(BaseModel):
         timedelta | None,
         Field(
             description='The average outbound stream network round trip delay.',
-            pattern='^-?P([0-9]+D)?(T([0-9]+H)?([0-9]+M)?([0-9]+([.][0-9]+)?S)?)?$',
+
         ),
     ] = None
     channel_index: Annotated[
@@ -30396,7 +30392,7 @@ class TeleconferenceDeviceMediaQuality(BaseModel):
         timedelta | None,
         Field(
             description='The maximum inbound stream network jitter.',
-            pattern='^-?P([0-9]+D)?(T([0-9]+H)?([0-9]+M)?([0-9]+([.][0-9]+)?S)?)?$',
+
         ),
     ] = None
     maximum_inbound_packet_loss_rate_in_percentage: Annotated[
@@ -30409,14 +30405,14 @@ class TeleconferenceDeviceMediaQuality(BaseModel):
         timedelta | None,
         Field(
             description='The maximum inbound stream network round trip delay.',
-            pattern='^-?P([0-9]+D)?(T([0-9]+H)?([0-9]+M)?([0-9]+([.][0-9]+)?S)?)?$',
+
         ),
     ] = None
     maximum_outbound_jitter: Annotated[
         timedelta | None,
         Field(
             description='The maximum outbound stream network jitter.',
-            pattern='^-?P([0-9]+D)?(T([0-9]+H)?([0-9]+M)?([0-9]+([.][0-9]+)?S)?)?$',
+
         ),
     ] = None
     maximum_outbound_packet_loss_rate_in_percentage: Annotated[
@@ -30429,14 +30425,14 @@ class TeleconferenceDeviceMediaQuality(BaseModel):
         timedelta | None,
         Field(
             description='The maximum outbound stream network round trip delay.',
-            pattern='^-?P([0-9]+D)?(T([0-9]+H)?([0-9]+M)?([0-9]+([.][0-9]+)?S)?)?$',
+
         ),
     ] = None
     media_duration: Annotated[
         timedelta | None,
         Field(
             description='The total modality duration. If the media enabled and disabled multiple times, MediaDuration will the summation of all of the durations.',
-            pattern='^-?P([0-9]+D)?(T([0-9]+H)?([0-9]+M)?([0-9]+([.][0-9]+)?S)?)?$',
+
         ),
     ] = None
     network_link_speed_in_bytes: Annotated[
@@ -30460,7 +30456,7 @@ class TeleconferenceDeviceQuality(BaseModel):
         UUID | None,
         Field(
             description='A unique identifier for all  the participant calls in a conference or a unique identifier for two participant calls in P2P call. This needs to be copied over from Microsoft.Graph.Call.CallChainId.',
-            pattern='^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$',
+            
         ),
     ] = None
     cloud_service_deployment_environment: Annotated[
@@ -30496,7 +30492,7 @@ class TeleconferenceDeviceQuality(BaseModel):
         UUID | None,
         Field(
             description='A unique identifier for a specific media leg of a participant in a conference.  One participant can have multiple media leg identifiers if retargeting happens. CVI partner assigns this value.',
-            pattern='^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$',
+            
         ),
     ] = None
     media_quality_list: Annotated[
@@ -30509,7 +30505,7 @@ class TeleconferenceDeviceQuality(BaseModel):
         UUID | None,
         Field(
             description='A unique identifier for a specific participant in a conference. The CVI partner needs to copy over Call.MyParticipantId to this property.',
-            pattern='^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$',
+            
         ),
     ] = None
     field_odata_type: str
@@ -30748,7 +30744,7 @@ class UserLastSignInRecommendationInsightSetting(
         timedelta | None,
         Field(
             description='Optional. Indicates the time period of inactivity (with respect to the start date of the review instance) that recommendations will be configured from. The recommendation will be to deny if the user is inactive during the look-back duration. For reviews of groups and Microsoft Entra roles, any duration is accepted. For reviews of applications, 30 days is the maximum duration. If not specified, the duration is 30 days.',
-            pattern='^-?P([0-9]+D)?(T([0-9]+H)?([0-9]+M)?([0-9]+([.][0-9]+)?S)?)?$',
+
         ),
     ] = None
     sign_in_scope: Annotated[
@@ -30850,7 +30846,7 @@ class UserSecurityState(BaseModel):
         datetime | None,
         Field(
             description='Time at which the sign-in occurred. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     logon_id: Annotated[str | None, Field(description='User sign-in ID.')] = None
@@ -30908,7 +30904,7 @@ class UserSimulationEventInfo(BaseModel):
         datetime | None,
         Field(
             description='Date and time of the simulation event by a user in an attack simulation and training campaign.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     event_name: Annotated[
@@ -30943,7 +30939,7 @@ class UserTrainingContentEventInfo(BaseModel):
         datetime | None,
         Field(
             description='Date and time of the training content playback by the user.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     ip_address: Annotated[
@@ -31000,14 +30996,14 @@ class UserTrainingStatusInfo(BaseModel):
         datetime | None,
         Field(
             description='Date and time of assignment of the training to the user.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     completion_date_time: Annotated[
         datetime | None,
         Field(
             description='Date and time of completion of the training by the user.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     display_name: Annotated[
@@ -31314,7 +31310,7 @@ class WindowsMalwareCategoryCount(BaseModel):
         datetime | None,
         Field(
             description='The Timestamp of the last update for the device count in UTC',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     field_odata_type: str
@@ -31334,7 +31330,7 @@ class WindowsMalwareExecutionStateCount(BaseModel):
         datetime | None,
         Field(
             description='The Timestamp of the last update for the device count in UTC',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     field_odata_type: str
@@ -31353,7 +31349,7 @@ class WindowsMalwareSeverityCount(BaseModel):
         datetime | None,
         Field(
             description='The Timestamp of the last update for the WindowsMalwareSeverityCount in UTC',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     malware_detection_count: Annotated[
@@ -31389,7 +31385,7 @@ class WindowsMalwareStateCount(BaseModel):
         datetime | None,
         Field(
             description='The Timestamp of the last update for the device count in UTC',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     malware_detection_count: Annotated[
@@ -31409,14 +31405,14 @@ class WindowsUpdateActiveHoursInstall(WindowsUpdateInstallScheduleType):
         time | None,
         Field(
             description='Active Hours End',
-            pattern='^([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?$',
+            
         ),
     ] = None
     active_hours_start: Annotated[
         time | None,
         Field(
             description='Active Hours Start',
-            pattern='^([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?$',
+            
         ),
     ] = None
     field_odata_type: str
@@ -31428,7 +31424,7 @@ class WindowsUpdateScheduledInstall(WindowsUpdateInstallScheduleType):
         time | None,
         Field(
             description='Scheduled Install Time during day',
-            pattern='^([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?$',
+            
         ),
     ] = None
     field_odata_type: str
@@ -31479,14 +31475,14 @@ class WorkingHours(BaseModel):
         time | None,
         Field(
             description='The time of the day that the user stops working.',
-            pattern='^([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?$',
+            
         ),
     ] = None
     start_time: Annotated[
         time | None,
         Field(
             description='The time of the day that the user starts working.',
-            pattern='^([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?$',
+            
         ),
     ] = None
     time_zone: Annotated[
@@ -33907,7 +33903,7 @@ class AccessPackageAssignmentRequestWorkflowExtension(CustomCalloutExtension):
         datetime | None,
         Field(
             description='When the object was created.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     last_modified_by: Annotated[
@@ -33920,7 +33916,7 @@ class AccessPackageAssignmentRequestWorkflowExtension(CustomCalloutExtension):
         datetime | None,
         Field(
             description='When the object was last modified.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     field_odata_type: str
@@ -33941,7 +33937,7 @@ class AccessPackageAssignmentWorkflowExtension(CustomCalloutExtension):
         datetime | None,
         Field(
             description='When the entity was created.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     last_modified_by: Annotated[
@@ -33954,7 +33950,7 @@ class AccessPackageAssignmentWorkflowExtension(CustomCalloutExtension):
         datetime | None,
         Field(
             description='When the entity was last modified.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     field_odata_type: str
@@ -33979,7 +33975,7 @@ class AccessReviewInstance(Entity):
         datetime | None,
         Field(
             description='DateTime when review instance is scheduled to end.The DatetimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Supports $select. Read-only.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     fallback_reviewers: Annotated[
@@ -34004,7 +34000,7 @@ class AccessReviewInstance(Entity):
         datetime | None,
         Field(
             description='DateTime when review instance is scheduled to start. May be in the future. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Supports $select. Read-only.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     status: Annotated[
@@ -34152,7 +34148,7 @@ class Alert(Entity):
         datetime | None,
         Field(
             description='Time at which the alert was closed. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z (supports update).',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     cloud_app_states: Annotated[
@@ -34179,7 +34175,7 @@ class Alert(Entity):
         datetime | None,
         Field(
             description='Time at which the alert was created by the alert provider. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Required.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     description: Annotated[str | None, Field(description='Alert description.')] = None
@@ -34193,7 +34189,7 @@ class Alert(Entity):
         datetime | None,
         Field(
             description='Time at which the event or events that served as the trigger to generate the alert occurred. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Required.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     feedback: Annotated[
@@ -34223,14 +34219,14 @@ class Alert(Entity):
     last_event_date_time: Annotated[
         datetime | None,
         Field(
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+            
         ),
     ] = None
     last_modified_date_time: Annotated[
         datetime | None,
         Field(
             description='Time at which the alert entity was last modified. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     malware_states: Annotated[
@@ -34332,14 +34328,14 @@ class AppRoleAssignment(DirectoryObject):
         UUID | None,
         Field(
             description="The identifier (id) for the app role that's assigned to the principal. This app role must be exposed in the appRoles property on the resource application's service principal (resourceId). If the resource application hasn't declared any app roles, a default app role ID of 00000000-0000-0000-0000-000000000000 can be specified to signal that the principal is assigned to the resource app without any specific app roles. Required on create.",
-            pattern='^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$',
+            
         ),
     ] = None
     created_date_time: Annotated[
         datetime | None,
         Field(
             description='The time when the app role assignment was created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     principal_display_name: Annotated[
@@ -34352,7 +34348,7 @@ class AppRoleAssignment(DirectoryObject):
         UUID | None,
         Field(
             description='The unique identifier (id) for the user, security group, or service principal being granted the app role. Security groups with dynamic memberships are supported. Required on create.',
-            pattern='^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$',
+            
         ),
     ] = None
     principal_type: Annotated[
@@ -34371,7 +34367,7 @@ class AppRoleAssignment(DirectoryObject):
         UUID | None,
         Field(
             description='The unique identifier (id) for the resource service principal for which the assignment is made. Required on create. Supports $filter (eq only).',
-            pattern='^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$',
+            
         ),
     ] = None
     field_odata_type: str
@@ -34481,7 +34477,7 @@ class AuthoredNote(Entity):
         datetime | None,
         Field(
             description='The date and time when the entity was created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     field_odata_type: str
@@ -34529,7 +34525,7 @@ class AuthorizationPolicy(PolicyBase):
         UUID | None,
         Field(
             description='Represents role templateId for the role that should be granted to guests. Currently following roles are supported:  User (a0b1b346-4d3e-4e8b-98f8-753987be4970), Guest User (10dae51f-b6af-4016-8d66-8c2a99b929b3), and Restricted Guest User (2af84b1e-32c8-42b7-82bc-daa82404023b).',
-            pattern='^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$',
+            
         ),
     ] = None
     field_odata_type: str
@@ -34586,7 +34582,7 @@ class BookingCustomer(BookingCustomerBase):
         datetime | None,
         Field(
             description='The date, time, and time zone when the customer was created. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     display_name: Annotated[
@@ -34599,7 +34595,7 @@ class BookingCustomer(BookingCustomerBase):
         datetime | None,
         Field(
             description='The date, time, and time zone when the customer was last updated. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     phones: Annotated[
@@ -34622,7 +34618,7 @@ class BookingStaffMember(BookingStaffMemberBase):
         datetime | None,
         Field(
             description='The date, time, and time zone when the staff member was created. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     display_name: Annotated[
@@ -34647,7 +34643,7 @@ class BookingStaffMember(BookingStaffMemberBase):
         datetime | None,
         Field(
             description='The date, time, and time zone when the staff member was last updated. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     membership_status: BookingStaffMembershipStatus | None = None
@@ -34681,14 +34677,14 @@ class BrowserSharedCookie(Entity):
         datetime | None,
         Field(
             description='The date and time when the shared cookie was created.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     deleted_date_time: Annotated[
         datetime | None,
         Field(
             description='The date and time when the shared cookie was deleted.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     display_name: Annotated[
@@ -34713,7 +34709,7 @@ class BrowserSharedCookie(Entity):
         datetime | None,
         Field(
             description='The date and time when the cookie was last modified.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     path: Annotated[str | None, Field(description='The path of the cookie.')] = None
@@ -34737,14 +34733,14 @@ class BrowserSite(Entity):
         datetime | None,
         Field(
             description='The date and time when the site was created.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     deleted_date_time: Annotated[
         datetime | None,
         Field(
             description='The date and time when the site was deleted.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     history: Annotated[
@@ -34759,7 +34755,7 @@ class BrowserSite(Entity):
         datetime | None,
         Field(
             description='The date and time when the site was last modified.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     merge_type: BrowserSiteMergeType | None = None
@@ -34784,7 +34780,7 @@ class BrowserSiteList(Entity):
         datetime | None,
         Field(
             description='The date and time when the site list was last modified.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     published_by: Annotated[
@@ -34795,7 +34791,7 @@ class BrowserSiteList(Entity):
         datetime | None,
         Field(
             description='The date and time when the site list was published.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     revision: Annotated[
@@ -34828,7 +34824,7 @@ class ChatMessageInfo(Entity):
         datetime | None,
         Field(
             description='Date time object representing the time at which message was created.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     event_detail: Annotated[
@@ -34861,7 +34857,7 @@ class CloudPcAuditEvent(Entity):
         datetime | None,
         Field(
             description='The date time in UTC when the activity was performed.\u202fRead-only.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     activity_operation_type: CloudPcAuditActivityOperationType | None = None
@@ -34991,7 +34987,7 @@ class CloudPcUserSetting(Entity):
         datetime | None,
         Field(
             description='The date and time when the setting was created. The timestamp type represents the date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     display_name: Annotated[
@@ -35002,7 +34998,7 @@ class CloudPcUserSetting(Entity):
         datetime | None,
         Field(
             description='The date and time when the setting was last modified. The timestamp type represents the date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     local_admin_enabled: Annotated[
@@ -35054,7 +35050,7 @@ class ComplianceManagementPartner(Entity):
         datetime | None,
         Field(
             description='Timestamp of last heartbeat after admin onboarded to the compliance management partner',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     mac_os_enrollment_assignments: Annotated[
@@ -35073,7 +35069,7 @@ class ConnectedOrganization(Entity):
         datetime | None,
         Field(
             description='The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     description: Annotated[
@@ -35095,7 +35091,7 @@ class ConnectedOrganization(Entity):
         datetime | None,
         Field(
             description='The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     state: Annotated[
@@ -35120,7 +35116,7 @@ class Contract(DirectoryObject):
         UUID | None,
         Field(
             description="The unique identifier for the customer tenant referenced by this partnership. Corresponds to the id property of the customer tenant's organization resource.",
-            pattern='^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$',
+            
         ),
     ] = None
     default_domain_name: Annotated[
@@ -35149,14 +35145,14 @@ class DelegatedAdminAccessAssignment(Entity):
         datetime | None,
         Field(
             description='The date and time in ISO 8601 format and in UTC time when the access assignment was created. Read-only.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     last_modified_date_time: Annotated[
         datetime | None,
         Field(
             description='The date and time in ISO 8601 and in UTC time when this access assignment was last modified. Read-only.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     status: Annotated[
@@ -35196,21 +35192,21 @@ class DelegatedAdminRelationship(Entity):
         datetime | None,
         Field(
             description='The date and time in ISO 8601 format and in UTC time when the relationship became active. Read-only.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     auto_extend_duration: Annotated[
         timedelta | None,
         Field(
             description="The duration by which the validity of the relationship is automatically extended, denoted in ISO 8601 format. Supported values are: P0D, PT0S, P180D. The default value is PT0S. PT0S indicates that the relationship expires when the endDateTime is reached and it isn't automatically extended.",
-            pattern='^-?P([0-9]+D)?(T([0-9]+H)?([0-9]+M)?([0-9]+([.][0-9]+)?S)?)?$',
+
         ),
     ] = None
     created_date_time: Annotated[
         datetime | None,
         Field(
             description='The date and time in ISO 8601 format and in UTC time when the relationship was created. Read-only.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     customer: Annotated[
@@ -35229,21 +35225,21 @@ class DelegatedAdminRelationship(Entity):
         timedelta | None,
         Field(
             description="The duration of the relationship in ISO 8601 format. Must be a value between P1D and P2Y inclusive. This is set by the partner only when the relationship is in the created status and can't be changed by the customer.",
-            pattern='^-?P([0-9]+D)?(T([0-9]+H)?([0-9]+M)?([0-9]+([.][0-9]+)?S)?)?$',
+
         ),
     ] = None
     end_date_time: Annotated[
         datetime | None,
         Field(
             description='The date and time in ISO 8601 format and in UTC time when the status of relationship changes to either terminated or expired. Calculated as endDateTime = activatedDateTime + duration. Read-only.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     last_modified_date_time: Annotated[
         datetime | None,
         Field(
             description='The date and time in ISO 8601 format and in UTC time when the relationship was last modified. Read-only.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     status: Annotated[
@@ -35290,14 +35286,14 @@ class Device(DirectoryObject):
         datetime | None,
         Field(
             description='The timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only. Supports $filter (eq, ne, not, ge, le, and eq on null values) and $orderby.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     compliance_expiration_date_time: Annotated[
         datetime | None,
         Field(
             description='The timestamp when the device is no longer deemed compliant. The timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     device_category: Annotated[
@@ -35384,7 +35380,7 @@ class Device(DirectoryObject):
         datetime | None,
         Field(
             description='The last time at which the object was synced with the on-premises directory. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z Read-only. Supports $filter (eq, ne, not, ge, le, in).',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     on_premises_security_identifier: Annotated[
@@ -35427,7 +35423,7 @@ class Device(DirectoryObject):
         datetime | None,
         Field(
             description='Date and time of when the device was registered. The timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     system_labels: Annotated[
@@ -35480,7 +35476,7 @@ class DeviceCompliancePolicy(Entity):
         datetime | None,
         Field(
             description='DateTime the object was created.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     description: Annotated[
@@ -35495,7 +35491,7 @@ class DeviceCompliancePolicy(Entity):
         datetime | None,
         Field(
             description='DateTime the object was last modified.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     version: Annotated[
@@ -35605,7 +35601,7 @@ class DeviceConfiguration(Entity):
         datetime | None,
         Field(
             description='DateTime the object was created.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     description: Annotated[
@@ -35620,7 +35616,7 @@ class DeviceConfiguration(Entity):
         datetime | None,
         Field(
             description='DateTime the object was last modified.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     version: Annotated[
@@ -35665,7 +35661,7 @@ class DeviceEnrollmentConfiguration(Entity):
         datetime | None,
         Field(
             description='Created date time in UTC of the device enrollment configuration',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     description: Annotated[
@@ -35680,7 +35676,7 @@ class DeviceEnrollmentConfiguration(Entity):
         datetime | None,
         Field(
             description='Last modified date time in UTC of the device enrollment configuration',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     priority: Annotated[
@@ -35833,7 +35829,7 @@ class DirectoryAudit(Entity):
         datetime | None,
         Field(
             description='Indicates the date and time the activity was performed. The Timestamp type is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Supports $filter (eq, ge, le) and $orderby.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     activity_display_name: Annotated[
@@ -35938,7 +35934,7 @@ class DocumentSetVersion(ListItemVersion):
         datetime | None,
         Field(
             description='Date and time when this version was created.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     items: Annotated[
@@ -36075,7 +36071,7 @@ class EducationRubric(Entity):
         datetime | None,
         Field(
             description='The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     description: Annotated[
@@ -36099,7 +36095,7 @@ class EducationRubric(Entity):
         datetime | None,
         Field(
             description='Moment in time when the resource was last modified. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     levels: Annotated[
@@ -36330,7 +36326,7 @@ class ImportedWindowsAutopilotDeviceIdentityUpload(Entity):
         datetime | None,
         Field(
             description='DateTime when the entity is created.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     status: ImportedWindowsAutopilotDeviceIdentityUploadStatus | None = None
@@ -37250,14 +37246,14 @@ class IosUpdateConfiguration(DeviceConfiguration):
         time | None,
         Field(
             description='Active Hours End (active hours mean the time window when updates install should not happen)',
-            pattern='^([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?$',
+            
         ),
     ] = None
     active_hours_start: Annotated[
         time | None,
         Field(
             description='Active Hours Start (active hours mean the time window when updates install should not happen)',
-            pattern='^([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?$',
+            
         ),
     ] = None
     scheduled_install_days: Annotated[
@@ -37296,7 +37292,7 @@ class ItemRetentionLabel(Entity):
         datetime | None,
         Field(
             description='The date and time when the label was applied on the item. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     name: Annotated[
@@ -37319,7 +37315,7 @@ class LandingPage(Entity):
         datetime | None,
         Field(
             description='Date and time when the landing page was created. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     description: Annotated[
@@ -37339,7 +37335,7 @@ class LandingPage(Entity):
         datetime | None,
         Field(
             description='Date and time when the landing page was last modified. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     locale: Annotated[str | None, Field(description='Content locale.')] = None
@@ -37372,7 +37368,7 @@ class LearningAssignment(LearningCourseActivity):
         datetime | None,
         Field(
             description='Assigned date for the course activity. Optional.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     assigner_user_id: Annotated[
@@ -37402,7 +37398,7 @@ class LoginPage(Entity):
         datetime | None,
         Field(
             description='Date and time when the login page was created. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     description: Annotated[
@@ -37422,7 +37418,7 @@ class LoginPage(Entity):
         datetime | None,
         Field(
             description='Date and time when the login page was last modified. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     source: Annotated[
@@ -37627,7 +37623,7 @@ class ManagedAppPolicyDeploymentSummary(Entity):
         datetime | None,
         Field(
             description='Not yet documented',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     version: Annotated[str | None, Field(description='Version of the entity.')] = None
@@ -37639,7 +37635,7 @@ class ManagedDeviceMobileAppConfiguration(Entity):
         datetime | None,
         Field(
             description='DateTime the object was created.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     description: Annotated[
@@ -37654,7 +37650,7 @@ class ManagedDeviceMobileAppConfiguration(Entity):
         datetime | None,
         Field(
             description='DateTime the object was last modified.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     targeted_mobile_apps: Annotated[
@@ -37696,7 +37692,7 @@ class ManagedEBook(Entity):
         datetime | None,
         Field(
             description='The date and time when the eBook file was created.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     description: Annotated[str | None, Field(description='Description.')] = None
@@ -37711,7 +37707,7 @@ class ManagedEBook(Entity):
         datetime | None,
         Field(
             description='The date and time when the eBook was last modified.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     privacy_information_url: Annotated[
@@ -37721,7 +37717,7 @@ class ManagedEBook(Entity):
         datetime | None,
         Field(
             description='The date and time when the eBook was published.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     publisher: Annotated[str | None, Field(description='Publisher.')] = None
@@ -37847,7 +37843,7 @@ class Message(OutlookItem):
         datetime | None,
         Field(
             description='The date and time the message was received.  The date and time information uses ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     reply_to: Annotated[
@@ -37864,7 +37860,7 @@ class Message(OutlookItem):
         datetime | None,
         Field(
             description='The date and time the message was sent.  The date and time information uses ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     subject: Annotated[str | None, Field(description='The subject of the message.')] = (
@@ -37966,7 +37962,7 @@ class MicrosoftAuthenticatorAuthenticationMethod(AuthenticationMethod):
         datetime | None,
         Field(
             description="The date and time that this app was registered. This property is null if the device isn't registered for passwordless Phone Sign-In.",
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     device_tag: Annotated[
@@ -37996,7 +37992,7 @@ class MobileApp(Entity):
         datetime | None,
         Field(
             description='The date and time the app was created.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     description: Annotated[
@@ -38028,7 +38024,7 @@ class MobileApp(Entity):
         datetime | None,
         Field(
             description='The date and time the app was last modified.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     notes: Annotated[str | None, Field(description='Notes for the app.')] = None
@@ -38115,14 +38111,14 @@ class MultiTenantOrganizationMember(DirectoryObject):
         UUID | None,
         Field(
             description='Tenant ID of the tenant that added the tenant to the multitenant organization. Read-only.',
-            pattern='^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$',
+            
         ),
     ] = None
     added_date_time: Annotated[
         datetime | None,
         Field(
             description='Date and time when the tenant was added to the multitenant organization. Read-only.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     display_name: Annotated[
@@ -38135,7 +38131,7 @@ class MultiTenantOrganizationMember(DirectoryObject):
         datetime | None,
         Field(
             description='Date and time when the tenant joined the multitenant organization. Read-only.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     role: Annotated[
@@ -38170,7 +38166,7 @@ class OfferShiftRequest(ScheduleChangeRequest):
         datetime | None,
         Field(
             description='The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     recipient_action_message: Annotated[
@@ -38659,7 +38655,7 @@ class OrgContact(DirectoryObject):
         datetime | None,
         Field(
             description='Date and time when this organizational contact was last synchronized from on-premises AD. This date and time information uses ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Supports $filter (eq, ne, not, ge, le, in).',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     on_premises_provisioning_errors: Annotated[
@@ -38791,7 +38787,7 @@ class Payload(Entity):
         datetime | None,
         Field(
             description='Date and time when the attack simulation and training campaign payload. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     description: Annotated[
@@ -38841,7 +38837,7 @@ class Payload(Entity):
         datetime | None,
         Field(
             description='Date and time when the attack simulation and training campaign payload was last modified. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     payload_tags: Annotated[
@@ -38914,7 +38910,7 @@ class Permission(Entity):
         datetime | None,
         Field(
             description="A format of yyyy-MM-ddTHH:mm:ssZ of DateTimeOffset indicates the expiration time of the permission. DateTime.MinValue indicates there's no expiration set for this permission. Optional.",
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     granted_to: Annotated[
@@ -39063,7 +39059,7 @@ class PlannerTask(Entity):
         datetime | None,
         Field(
             description="Read-only. Date and time at which the 'percentComplete' of the task is set to '100'. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z",
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     conversation_thread_id: Annotated[
@@ -39080,14 +39076,14 @@ class PlannerTask(Entity):
         datetime | None,
         Field(
             description='Read-only. Date and time at which the task is created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     due_date_time: Annotated[
         datetime | None,
         Field(
             description='Date and time at which the task is due. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     has_description: Annotated[
@@ -39139,7 +39135,7 @@ class PlannerTask(Entity):
         datetime | None,
         Field(
             description='Date and time at which the task starts. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     title: Annotated[str | None, Field(description='Title of the task.')] = None
@@ -39199,7 +39195,7 @@ class Post(OutlookItem):
         datetime | None,
         Field(
             description='Specifies when the post was received. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     sender: Annotated[
@@ -39280,7 +39276,7 @@ class PrintConnector(Entity):
         datetime | None,
         Field(
             description='The DateTimeOffset when the connector was registered.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     field_odata_type: str
@@ -39291,7 +39287,7 @@ class PrintOperation(Entity):
         datetime | None,
         Field(
             description='The DateTimeOffset when the operation was created. Read-only.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     status: PrintOperationStatus | None = None
@@ -39307,7 +39303,7 @@ class ProtectionRuleBase(Entity):
         datetime | None,
         Field(
             description='The time of creation of the rule.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     error: Annotated[
@@ -39328,7 +39324,7 @@ class ProtectionRuleBase(Entity):
         datetime | None,
         Field(
             description='Timestamp of the last modification made to the rule.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     status: Annotated[
@@ -39349,7 +39345,7 @@ class ProtectionUnitBase(Entity):
         datetime | None,
         Field(
             description='The time of creation of the protection unit.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     error: Annotated[
@@ -39368,7 +39364,7 @@ class ProtectionUnitBase(Entity):
         datetime | None,
         Field(
             description='Timestamp of the last modification of this protection unit.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     policy_id: Annotated[
@@ -39391,7 +39387,7 @@ class ProvisioningObjectSummary(Entity):
         datetime | None,
         Field(
             description='Represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.  SUpports $filter (eq, gt, lt) and orderby.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     change_id: Annotated[
@@ -39506,14 +39502,14 @@ class RestorePoint(Entity):
         datetime | None,
         Field(
             description='Expiration date time of the restore point.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     protection_date_time: Annotated[
         datetime | None,
         Field(
             description='Date time when the restore point was created.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     tags: Annotated[
@@ -39536,7 +39532,7 @@ class RestoreSessionBase(Entity):
         datetime | None,
         Field(
             description='The time of completion of the restore session.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     created_by: Annotated[
@@ -39547,7 +39543,7 @@ class RestoreSessionBase(Entity):
         datetime | None,
         Field(
             description='The time of creation of the restore session.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     error: Annotated[
@@ -39566,7 +39562,7 @@ class RestoreSessionBase(Entity):
         datetime | None,
         Field(
             description='Timestamp of the last modification of the restore session.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     status: Annotated[
@@ -39609,7 +39605,7 @@ class RiskDetection(Entity):
         datetime | None,
         Field(
             description='Date and time that the risky activity occurred. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is look like this: 2014-01-01T00:00:00Z',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     additional_info: Annotated[
@@ -39628,7 +39624,7 @@ class RiskDetection(Entity):
         datetime | None,
         Field(
             description='Date and time that the risk was detected. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 looks like this: 2014-01-01T00:00:00Z',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     detection_timing_type: Annotated[
@@ -39647,7 +39643,7 @@ class RiskDetection(Entity):
         datetime | None,
         Field(
             description='Date and time that the risk detection was last updated. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is look like this: 2014-01-01T00:00:00Z',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     location: Annotated[
@@ -39823,7 +39819,7 @@ class SecureScore(Entity):
         datetime | None,
         Field(
             description='When the report was created.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     current_score: Annotated[
@@ -39894,7 +39890,7 @@ class ServicePrincipalRiskDetection(Entity):
         datetime | None,
         Field(
             description='Date and time when the risky activity occurred. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     additional_info: Annotated[
@@ -39917,7 +39913,7 @@ class ServicePrincipalRiskDetection(Entity):
         datetime | None,
         Field(
             description='Date and time when the risk was detected. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     detection_timing_type: Annotated[
@@ -39942,7 +39938,7 @@ class ServicePrincipalRiskDetection(Entity):
         datetime | None,
         Field(
             description='Date and time when the risk detection was last updated.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     location: Annotated[
@@ -40008,7 +40004,7 @@ class ServiceUpdateMessage(ServiceAnnouncementBase):
         datetime | None,
         Field(
             description='The expected deadline of the action for the message.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     attachments_archive: Annotated[
@@ -40113,7 +40109,7 @@ class SharedPCConfiguration(DeviceConfiguration):
         time | None,
         Field(
             description='Specifies the daily start time of maintenance hour.',
-            pattern='^([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?$',
+            
         ),
     ] = None
     field_odata_type: str
@@ -40194,7 +40190,7 @@ class SignIn(Entity):
         datetime | None,
         Field(
             description='Date and time (UTC) the sign-in was initiated. Example: midnight on Jan 1, 2014 is reported as 2014-01-01T00:00:00Z.  Supports $orderby, $filter (eq, le, and ge).',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     device_detail: Annotated[
@@ -40299,7 +40295,7 @@ class SimulationAutomation(Entity):
         datetime | None,
         Field(
             description='Date and time when the attack simulation automation was created.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     description: Annotated[
@@ -40322,21 +40318,21 @@ class SimulationAutomation(Entity):
         datetime | None,
         Field(
             description='Date and time when the attack simulation automation was most recently modified.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     last_run_date_time: Annotated[
         datetime | None,
         Field(
             description='Date and time of the latest run of the attack simulation automation.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     next_run_date_time: Annotated[
         datetime | None,
         Field(
             description='Date and time of the upcoming run of the attack simulation automation.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     status: Annotated[
@@ -40510,7 +40506,7 @@ class ThreatAssessmentRequest(Entity):
         datetime | None,
         Field(
             description='The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     expected_assessment: ThreatExpectedAssessment | None = None
@@ -40573,7 +40569,7 @@ class TrainingLanguageDetail(Entity):
         datetime | None,
         Field(
             description='Date and time when the language details were created. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     description: Annotated[
@@ -40594,7 +40590,7 @@ class TrainingLanguageDetail(Entity):
         datetime | None,
         Field(
             description='Date and time when the trainingLanguageDetail was last modified. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     locale: Annotated[
@@ -40661,7 +40657,7 @@ class UnifiedRoleEligibilityScheduleInstance(UnifiedRoleScheduleInstanceBase):
         datetime | None,
         Field(
             description='The end date of the schedule instance.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     member_type: Annotated[
@@ -40680,7 +40676,7 @@ class UnifiedRoleEligibilityScheduleInstance(UnifiedRoleScheduleInstanceBase):
         datetime | None,
         Field(
             description='When this instance starts.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     field_odata_type: str
@@ -41371,14 +41367,14 @@ class Windows10GeneralConfiguration(DeviceConfiguration):
         time | None,
         Field(
             description='The time to perform a daily quick scan.',
-            pattern='^([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?$',
+            
         ),
     ] = None
     defender_scheduled_scan_time: Annotated[
         time | None,
         Field(
             description='The defender time for the system scan.',
-            pattern='^([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?$',
+            
         ),
     ] = None
     defender_signature_update_interval_in_hours: Annotated[
@@ -42386,7 +42382,7 @@ class Windows10TeamGeneralConfiguration(DeviceConfiguration):
         time | None,
         Field(
             description='Maintenance window start time for device updates.',
-            pattern='^([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?$',
+            
         ),
     ] = None
     miracast_blocked: Annotated[
@@ -42735,7 +42731,7 @@ class WindowsAutopilotDeploymentProfile(Entity):
         datetime | None,
         Field(
             description="The date and time of when the deployment profile was created. The value cannot be modified and is automatically populated when the profile was created. The timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: '2014-01-01T00:00:00Z'. Supports: $select, $top, $skip. $Search, $orderBy and $filter are not supported. Read-Only.",
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     description: Annotated[
@@ -42767,7 +42763,7 @@ class WindowsAutopilotDeploymentProfile(Entity):
         datetime | None,
         Field(
             description="The date and time of when the deployment profile was last modified. The value cannot be updated manually and is automatically populated when any changes are made to the profile. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: '2014-01-01T00:00:00Z'. Supports: $select, $top, $skip. $Search, $orderBy and $filter are not supported Read-Only.",
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     locale: Annotated[
@@ -42826,7 +42822,7 @@ class WindowsHelloForBusinessAuthenticationMethod(AuthenticationMethod):
         datetime | None,
         Field(
             description='The date and time that this Windows Hello for Business key was registered.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     display_name: Annotated[
@@ -43209,21 +43205,21 @@ class WindowsUpdateForBusinessConfiguration(DeviceConfiguration):
         datetime | None,
         Field(
             description='The Feature Updates Pause Expiry datetime. This value is 35 days from the time admin paused or extended the pause for the ring. Returned by default. Query parameters are not supported.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     feature_updates_pause_start_date: Annotated[
         date | None,
         Field(
             description='The Feature Updates Pause start date. This value is the time when the admin paused or extended the pause for the ring. Returned by default. Query parameters are not supported. This property is read-only.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$',
+
         ),
     ] = None
     feature_updates_rollback_start_date_time: Annotated[
         datetime | None,
         Field(
             description='The Feature Updates Rollback Start datetime.This value is the time when the admin rolled back the Feature update for the ring.Returned by default.Query parameters are not supported.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     feature_updates_rollback_window_in_days: Annotated[
@@ -43277,21 +43273,21 @@ class WindowsUpdateForBusinessConfiguration(DeviceConfiguration):
         datetime | None,
         Field(
             description='The Quality Updates Pause Expiry datetime. This value is 35 days from the time admin paused or extended the pause for the ring. Returned by default. Query parameters are not supported.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     quality_updates_pause_start_date: Annotated[
         date | None,
         Field(
             description='The Quality Updates Pause start date. This value is the time when the admin paused or extended the pause for the ring. Returned by default. Query parameters are not supported. This property is read-only.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$',
+
         ),
     ] = None
     quality_updates_rollback_start_date_time: Annotated[
         datetime | None,
         Field(
             description='The Quality Updates Rollback Start datetime. This value is the time when the admin rolled back the Quality update for the ring. Returned by default. Query parameters are not supported.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     quality_updates_will_be_rolled_back: Annotated[
@@ -43600,7 +43596,7 @@ class AccessReviewInactiveUsersQueryScope(AccessReviewQueryScope):
         timedelta | None,
         Field(
             description="Defines the duration of inactivity. Inactivity is based on the last sign in date of the user compared to the access review instance's start date. If this property is not specified, it's assigned the default value PT0S.",
-            pattern='^-?P([0-9]+D)?(T([0-9]+H)?([0-9]+M)?([0-9]+([.][0-9]+)?S)?)?$',
+
         ),
     ] = None
     field_odata_type: str
@@ -43821,14 +43817,14 @@ class BookingsAvailabilityWindow(BookingsAvailability):
         date | None,
         Field(
             description='End date of the availability window.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$',
+
         ),
     ] = None
     start_date: Annotated[
         date | None,
         Field(
             description='Start date of the availability window.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$',
+
         ),
     ] = None
     field_odata_type: str
@@ -43861,14 +43857,14 @@ class BookingSchedulingPolicy(BaseModel):
         timedelta | None,
         Field(
             description='Maximum number of days in advance that a booking can be made. It follows the ISO 8601 format.',
-            pattern='^-?P([0-9]+D)?(T([0-9]+H)?([0-9]+M)?([0-9]+([.][0-9]+)?S)?)?$',
+
         ),
     ] = None
     minimum_lead_time: Annotated[
         timedelta | None,
         Field(
             description='The minimum amount of time before which bookings and cancellations must be made. It follows the ISO 8601 format.',
-            pattern='^-?P([0-9]+D)?(T([0-9]+H)?([0-9]+M)?([0-9]+([.][0-9]+)?S)?)?$',
+
         ),
     ] = None
     send_confirmations_to_owner: Annotated[
@@ -43881,7 +43877,7 @@ class BookingSchedulingPolicy(BaseModel):
         timedelta | None,
         Field(
             description='Duration of each time slot, denoted in ISO 8601 format.',
-            pattern='^-?P([0-9]+D)?(T([0-9]+H)?([0-9]+M)?([0-9]+([.][0-9]+)?S)?)?$',
+
         ),
     ] = None
     field_odata_type: str
@@ -43892,7 +43888,7 @@ class CallEndedEventMessageDetail(EventMessageDetail):
         timedelta | None,
         Field(
             description='Duration of the call.',
-            pattern='^-?P([0-9]+D)?(T([0-9]+H)?([0-9]+M)?([0-9]+([.][0-9]+)?S)?)?$',
+
         ),
     ] = None
     call_event_type: Annotated[
@@ -43930,7 +43926,7 @@ class ChatMessageReaction(BaseModel):
         datetime | None,
         Field(
             description='The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     display_name: Annotated[
@@ -44276,7 +44272,7 @@ class EducationFeedback(BaseModel):
         datetime | None,
         Field(
             description='Moment in time when the feedback was given. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     text: Annotated[
@@ -44536,7 +44532,7 @@ class MembersAddedEventMessageDetail(EventMessageDetail):
         datetime | None,
         Field(
             description="The timestamp that denotes how far back a conversation's history is shared with the conversation members.",
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     field_odata_type: str
@@ -44598,7 +44594,7 @@ class MicrosoftManagedTrainingSetting(TrainingSetting):
         datetime | None,
         Field(
             description='The completion date for the training. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     training_completion_duration: Annotated[
@@ -44772,7 +44768,7 @@ class RemoteItem(BaseModel):
         datetime | None,
         Field(
             description='Date and time of item creation. Read-only.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     file: Annotated[
@@ -44809,7 +44805,7 @@ class RemoteItem(BaseModel):
         datetime | None,
         Field(
             description='Date and time the item was last modified. Read-only.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     name: Annotated[
@@ -44876,7 +44872,7 @@ class RequestSchedule(BaseModel):
         datetime | None,
         Field(
             description='When the  eligible or active assignment becomes active.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     field_odata_type: str
@@ -45073,14 +45069,14 @@ class SynchronizationStatus(BaseModel):
         datetime | None,
         Field(
             description='The time when steady state (no more changes to the process) was first achieved. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     steady_state_last_achieved_time: Annotated[
         datetime | None,
         Field(
             description='The time when steady state (no more changes to the process) was last achieved. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     synchronized_entry_count_by_type: Annotated[
@@ -45153,7 +45149,7 @@ class UserSimulationDetails(BaseModel):
         datetime | None,
         Field(
             description='Date and time of the compromising online action by a user in an attack simulation and training campaign.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     in_progress_trainings_count: Annotated[
@@ -45174,7 +45170,7 @@ class UserSimulationDetails(BaseModel):
         datetime | None,
         Field(
             description='Date and time when a user reported the delivered payload as phishing in the attack simulation and training campaign.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     simulation_events: Annotated[
@@ -47277,7 +47273,7 @@ class AuthenticationMethodsPolicy(Entity):
         datetime | None,
         Field(
             description='The date and time of the last update to the policy. Read-only.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     policy_migration_state: Annotated[
@@ -47327,7 +47323,7 @@ class BookingAppointment(Entity):
         datetime | None,
         Field(
             description='The date, time, and time zone when the appointment was created. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     customer_email_address: Annotated[
@@ -47364,7 +47360,7 @@ class BookingAppointment(Entity):
         timedelta | None,
         Field(
             description='The length of the appointment, denoted in ISO8601 format.',
-            pattern='^-?P([0-9]+D)?(T([0-9]+H)?([0-9]+M)?([0-9]+([.][0-9]+)?S)?)?$',
+
         ),
     ] = None
     end_date_time: DateTimeTimeZone | None = None
@@ -47396,7 +47392,7 @@ class BookingAppointment(Entity):
         datetime | None,
         Field(
             description='The date, time, and time zone when the booking business was last updated. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     maximum_attendees_count: Annotated[
@@ -47417,14 +47413,14 @@ class BookingAppointment(Entity):
         timedelta | None,
         Field(
             description='The amount of time to reserve after the appointment ends, for cleaning up, as an example. The value is expressed in ISO8601 format.',
-            pattern='^-?P([0-9]+D)?(T([0-9]+H)?([0-9]+M)?([0-9]+([.][0-9]+)?S)?)?$',
+
         ),
     ] = None
     pre_buffer: Annotated[
         timedelta | None,
         Field(
             description='The amount of time to reserve before the appointment begins, for preparation, as an example. The value is expressed in ISO8601 format.',
-            pattern='^-?P([0-9]+D)?(T([0-9]+H)?([0-9]+M)?([0-9]+([.][0-9]+)?S)?)?$',
+
         ),
     ] = None
     price: Annotated[
@@ -47495,7 +47491,7 @@ class BookingService(Entity):
         datetime | None,
         Field(
             description='The date, time, and time zone when the service was created. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     custom_questions: Annotated[
@@ -47508,7 +47504,7 @@ class BookingService(Entity):
         timedelta | None,
         Field(
             description='The default length of the service, represented in numbers of days, hours, minutes, and seconds. For example, P11D23H59M59.999999999999S.',
-            pattern='^-?P([0-9]+D)?(T([0-9]+H)?([0-9]+M)?([0-9]+([.][0-9]+)?S)?)?$',
+
         ),
     ] = None
     default_location: Annotated[
@@ -47561,7 +47557,7 @@ class BookingService(Entity):
         datetime | None,
         Field(
             description='The date, time, and time zone when the service was last updated. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     maximum_attendees_count: Annotated[
@@ -47579,14 +47575,14 @@ class BookingService(Entity):
         timedelta | None,
         Field(
             description='The time to buffer after an appointment for this service ends, and before the next customer appointment can be booked.',
-            pattern='^-?P([0-9]+D)?(T([0-9]+H)?([0-9]+M)?([0-9]+([.][0-9]+)?S)?)?$',
+
         ),
     ] = None
     pre_buffer: Annotated[
         timedelta | None,
         Field(
             description='The time to buffer before an appointment for this service can start.',
-            pattern='^-?P([0-9]+D)?(T([0-9]+H)?([0-9]+M)?([0-9]+([.][0-9]+)?S)?)?$',
+
         ),
     ] = None
     scheduling_policy: Annotated[
@@ -47750,7 +47746,7 @@ class ConversationThread(Entity):
         datetime | None,
         Field(
             description='The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.Returned by default.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     preview: Annotated[
@@ -48096,7 +48092,7 @@ class DirectoryDefinition(Entity):
         datetime | None,
         Field(
             description='Represents the discovery date and time using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     name: Annotated[
@@ -48281,7 +48277,7 @@ class EducationModule(Entity):
         datetime | None,
         Field(
             description='Date time the module was created. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014, is 2014-01-01T00:00:00Z',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     description: Annotated[
@@ -48299,7 +48295,7 @@ class EducationModule(Entity):
         datetime | None,
         Field(
             description='Date time the module was last modified. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014, is 2014-01-01T00:00:00Z',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     resources_folder_url: Annotated[
@@ -48332,7 +48328,7 @@ class EducationSubmission(Entity):
         datetime | None,
         Field(
             description='The time that the submission was excused. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     reassigned_by: Annotated[
@@ -48345,7 +48341,7 @@ class EducationSubmission(Entity):
         datetime | None,
         Field(
             description='Moment in time when the submission was reassigned. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     recipient: Annotated[
@@ -48366,7 +48362,7 @@ class EducationSubmission(Entity):
         datetime | None,
         Field(
             description='Moment in time when the submission was returned. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     status: Annotated[
@@ -48383,7 +48379,7 @@ class EducationSubmission(Entity):
         datetime | None,
         Field(
             description='Moment in time when the submission was moved into the submitted state. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     unsubmitted_by: Annotated[
@@ -48396,7 +48392,7 @@ class EducationSubmission(Entity):
         datetime | None,
         Field(
             description='Moment in time when the submission was moved from submitted into the working state. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     web_url: Annotated[
@@ -48439,7 +48435,7 @@ class EndUserNotification(Entity):
         datetime | None,
         Field(
             description='Date and time when the notification was created. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     description: Annotated[
@@ -48458,7 +48454,7 @@ class EndUserNotification(Entity):
         datetime | None,
         Field(
             description='Date and time when the notification was last modified. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     notification_type: Annotated[
@@ -48565,7 +48561,7 @@ class IosLobApp(MobileLobApp):
         datetime | None,
         Field(
             description='The expiration time.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     minimum_supported_operating_system: Annotated[
@@ -48659,7 +48655,7 @@ class IosVppApp(MobileApp):
         datetime | None,
         Field(
             description='The VPP application release date and time.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     total_license_count: Annotated[
@@ -48716,7 +48712,7 @@ class IosVppEBook(ManagedEBook):
         UUID | None,
         Field(
             description='The Vpp token ID.',
-            pattern='^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$',
+            
         ),
     ] = None
     field_odata_type: str
@@ -49053,7 +49049,7 @@ class MultiTenantOrganization(Entity):
         datetime | None,
         Field(
             description='Date when multitenant organization was created. Read-only.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     description: Annotated[
@@ -49153,14 +49149,14 @@ class OnlineMeeting(OnlineMeetingBase):
         datetime | None,
         Field(
             description='The meeting creation time in UTC. Read-only.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     end_date_time: Annotated[
         datetime | None,
         Field(
             description='The meeting end time in UTC. Required when you create an online meeting.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     external_id: str | None = None
@@ -49181,7 +49177,7 @@ class OnlineMeeting(OnlineMeetingBase):
         datetime | None,
         Field(
             description='The meeting start time in UTC.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     recordings: Annotated[
@@ -49351,7 +49347,7 @@ class PlannerPlan(Entity):
         datetime | None,
         Field(
             description='Read-only. Date and time at which the plan is created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     owner: Annotated[
@@ -49415,7 +49411,7 @@ class PrivilegedAccessSchedule(Entity):
         datetime | None,
         Field(
             description='When the schedule was created. Optional.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     created_using: Annotated[
@@ -49428,7 +49424,7 @@ class PrivilegedAccessSchedule(Entity):
         datetime | None,
         Field(
             description='When the schedule was last modified. Optional.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     schedule_info: Annotated[
@@ -49529,7 +49525,7 @@ class RestoreArtifactBase(Entity):
         datetime | None,
         Field(
             description='The time when restoration of restore artifact is completed.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     destination_type: Annotated[
@@ -49548,7 +49544,7 @@ class RestoreArtifactBase(Entity):
         datetime | None,
         Field(
             description='The time when restoration of restore artifact is started.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     status: Annotated[
@@ -49776,7 +49772,7 @@ class TodoTask(Entity):
         datetime | None,
         Field(
             description="The date and time when the task body was last modified. By default, it is in UTC. You can provide a custom time zone in the request header. The property value uses ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2020 would look like this: '2020-01-01T00:00:00Z'.",
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     categories: Annotated[
@@ -49795,7 +49791,7 @@ class TodoTask(Entity):
         datetime | None,
         Field(
             description="The date and time when the task was created. By default, it is in UTC. You can provide a custom time zone in the request header. The property value uses ISO 8601 format. For example, midnight UTC on Jan 1, 2020 would look like this: '2020-01-01T00:00:00Z'.",
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     due_date_time: Annotated[
@@ -49818,7 +49814,7 @@ class TodoTask(Entity):
         datetime | None,
         Field(
             description="The date and time when the task was last modified. By default, it is in UTC. You can provide a custom time zone in the request header. The property value uses ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2020 would look like this: '2020-01-01T00:00:00Z'.",
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     recurrence: Annotated[
@@ -49904,7 +49900,7 @@ class Training(Entity):
         datetime | None,
         Field(
             description='Date and time when the training was created. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     description: Annotated[
@@ -49929,7 +49925,7 @@ class Training(Entity):
         datetime | None,
         Field(
             description='Date and time when the training was last modified. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     source: Annotated[
@@ -49967,7 +49963,7 @@ class UnifiedRoleAssignmentScheduleInstance(UnifiedRoleScheduleInstanceBase):
         datetime | None,
         Field(
             description='The end date of the schedule instance.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     member_type: Annotated[
@@ -49992,7 +49988,7 @@ class UnifiedRoleAssignmentScheduleInstance(UnifiedRoleScheduleInstanceBase):
         datetime | None,
         Field(
             description='When this instance starts.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     activated_using: Annotated[
@@ -50133,7 +50129,7 @@ class UnifiedRoleManagementPolicy(Entity):
         datetime | None,
         Field(
             description='The time when the role setting was last modified.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     scope_id: Annotated[
@@ -50235,7 +50231,7 @@ class UnifiedRoleManagementPolicyExpirationRule(UnifiedRoleManagementPolicyRule)
         timedelta | None,
         Field(
             description="The maximum duration allowed for eligibility or assignment that isn't permanent. Required when isExpirationRequired is true.",
-            pattern='^-?P([0-9]+D)?(T([0-9]+H)?([0-9]+M)?([0-9]+([.][0-9]+)?S)?)?$',
+
         ),
     ] = None
     field_odata_type: str
@@ -50276,7 +50272,7 @@ class UserExperienceAnalyticsBaseline(Entity):
         datetime | None,
         Field(
             description="The date the custom baseline was created. The value cannot be modified and is automatically populated when the baseline is created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: '2014-01-01T00:00:00Z'. Returned by default.",
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     display_name: Annotated[
@@ -50410,7 +50406,7 @@ class VirtualEventRegistration(Entity):
         datetime | None,
         Field(
             description='Date and time when the registrant cancels their registration for the virtual event. Only appears when applicable. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     email: Annotated[
@@ -50436,7 +50432,7 @@ class VirtualEventRegistration(Entity):
         datetime | None,
         Field(
             description='Date and time when the registrant registers for the virtual event. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     registration_question_answers: Annotated[
@@ -50627,7 +50623,7 @@ class AccessReviewScheduleSettings(BaseModel):
         timedelta | None,
         Field(
             description='Optional field. Indicates the period of inactivity (with respect to the start date of the review instance) that recommendations will be configured from. The recommendation will be to deny if the user is inactive during the look-back duration. For reviews of groups and Microsoft Entra roles, any duration is accepted. For reviews of applications, 30 days is the maximum duration. If not specified, the duration is 30 days. NOTE: If the stageSettings of the accessReviewScheduleDefinition object is defined, its recommendationLookBackDuration setting will be used instead of the value of this property.',
-            pattern='^-?P([0-9]+D)?(T([0-9]+H)?([0-9]+M)?([0-9]+([.][0-9]+)?S)?)?$',
+
         ),
     ] = None
     recommendations_enabled: Annotated[
@@ -50714,7 +50710,7 @@ class ChatMessageHistoryItem(BaseModel):
         datetime | None,
         Field(
             description='The date and time when the message was modified.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     reaction: Annotated[
@@ -50872,7 +50868,7 @@ class EntitlementManagementSchedule(BaseModel):
         datetime | None,
         Field(
             description='The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     field_odata_type: str
@@ -51418,7 +51414,7 @@ class AccessReviewHistoryDefinition(Entity):
         datetime | None,
         Field(
             description='Timestamp when the access review definition was created.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     decisions: Annotated[
@@ -51437,14 +51433,14 @@ class AccessReviewHistoryDefinition(Entity):
         datetime | None,
         Field(
             description="A timestamp. Reviews ending on or before this date will be included in the fetched history data. Only required if scheduleSettings isn't defined.",
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     review_history_period_start_date_time: Annotated[
         datetime | None,
         Field(
             description="A timestamp. Reviews starting on or before this date will be included in the fetched history data. Only required if scheduleSettings isn't defined.",
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     schedule_settings: Annotated[
@@ -51489,7 +51485,7 @@ class AccessReviewScheduleDefinition(Entity):
         datetime | None,
         Field(
             description='Timestamp when the access review series was created. Supports $select. Read-only.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     description_for_admins: Annotated[
@@ -51526,7 +51522,7 @@ class AccessReviewScheduleDefinition(Entity):
         datetime | None,
         Field(
             description='Timestamp when the access review series was last modified. Supports $select. Read-only.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     reviewers: Annotated[
@@ -51613,7 +51609,7 @@ class Agreement(Entity):
         timedelta | None,
         Field(
             description='The duration after which the user must reaccept the terms of use. The value is represented in ISO 8601 format for durations. Supports $filter (eq).',
-            pattern='^-?P([0-9]+D)?(T([0-9]+H)?([0-9]+M)?([0-9]+([.][0-9]+)?S)?)?$',
+
         ),
     ] = None
     acceptances: Annotated[
@@ -51667,7 +51663,7 @@ class BookingBusiness(Entity):
         datetime | None,
         Field(
             description='The date, time, and time zone when the booking business was created. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     default_currency_iso: Annotated[
@@ -51698,7 +51694,7 @@ class BookingBusiness(Entity):
         datetime | None,
         Field(
             description='The date, time, and time zone when the booking business was last updated. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     phone: Annotated[
@@ -51784,14 +51780,14 @@ class ChatMessage(Entity):
         datetime | None,
         Field(
             description='Timestamp of when the chat message was created.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     deleted_date_time: Annotated[
         datetime | None,
         Field(
             description='Read only. Timestamp at which the chat message was deleted, or null if not deleted.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     etag: Annotated[
@@ -51814,14 +51810,14 @@ class ChatMessage(Entity):
         datetime | None,
         Field(
             description="Read only. Timestamp when edits to the chat message were made. Triggers an 'Edited' flag in the Teams UI. If no edits are made the value is null.",
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     last_modified_date_time: Annotated[
         datetime | None,
         Field(
             description='Read only. Timestamp when the chat message is created (initial setting) or modified, including when a reaction is added or removed.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     locale: Annotated[
@@ -51893,7 +51889,7 @@ class ConditionalAccessPolicy(Entity):
         datetime | None,
         Field(
             description='The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Readonly.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     description: str | None = None
@@ -51913,7 +51909,7 @@ class ConditionalAccessPolicy(Entity):
         datetime | None,
         Field(
             description='The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Readonly.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     session_controls: Annotated[
@@ -51950,7 +51946,7 @@ class Conversation(Entity):
         datetime | None,
         Field(
             description='The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     preview: Annotated[
@@ -52023,14 +52019,14 @@ class DeviceAppManagement(Entity):
         datetime | None,
         Field(
             description='The last time an application sync from the Microsoft Store for Business was completed.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     microsoft_store_for_business_last_successful_sync_date_time: Annotated[
         datetime | None,
         Field(
             description='The last time the apps from the Microsoft Store for Business were synced successfully for the account.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     android_managed_app_protections: Annotated[
@@ -52136,14 +52132,14 @@ class EducationAssignment(Entity):
         datetime | None,
         Field(
             description="The date when the assignment should become active. If in the future, the assignment isn't shown to the student until this date. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z",
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     assigned_date_time: Annotated[
         datetime | None,
         Field(
             description='The moment that the assignment was published to students and the assignment shows up on the students timeline. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     assign_to: Annotated[
@@ -52159,7 +52155,7 @@ class EducationAssignment(Entity):
         datetime | None,
         Field(
             description="Date when the assignment is closed for submissions. This is an optional field that can be null if the assignment doesn't allowLateSubmissions or when the closeDateTime is the same as the dueDateTime. But if specified, then the closeDateTime must be greater than or equal to the dueDateTime. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z",
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     created_by: Annotated[
@@ -52170,7 +52166,7 @@ class EducationAssignment(Entity):
         datetime | None,
         Field(
             description='Moment when the assignment was created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     display_name: Annotated[
@@ -52180,7 +52176,7 @@ class EducationAssignment(Entity):
         datetime | None,
         Field(
             description='Date when the students assignment is due. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     feedback_resources_folder_url: Annotated[
@@ -52207,7 +52203,7 @@ class EducationAssignment(Entity):
         datetime | None,
         Field(
             description="The date and time on which the assignment was modified. A student submission doesn't modify the assignment; only teachers can update assignments. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z",
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     module_url: Annotated[
@@ -52336,7 +52332,7 @@ class ManagedIOSLobApp(ManagedMobileLobApp):
         datetime | None,
         Field(
             description='The expiration time.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     minimum_supported_operating_system: Annotated[
@@ -52460,7 +52456,7 @@ class TeamsAppDefinition(Entity):
     last_modified_date_time: Annotated[
         datetime | None,
         Field(
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+            
         ),
     ] = None
     publishing_state: Annotated[
@@ -52852,7 +52848,7 @@ class MicrosoftCustomTrainingSetting(TrainingSetting):
         datetime | None,
         Field(
             description='The completion date and time of the training. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     training_assignment_mappings: Annotated[
@@ -53149,7 +53145,7 @@ class Organization(DirectoryObject):
         datetime | None,
         Field(
             description="Timestamp of when the organization was created. The value can't be modified and is automatically populated when the organization is created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.",
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     default_usage_location: Annotated[
@@ -53169,7 +53165,7 @@ class Organization(DirectoryObject):
         datetime | None,
         Field(
             description='The time and date at which the tenant was last synced with the on-premises directory. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     on_premises_sync_enabled: Annotated[
@@ -53439,7 +53435,7 @@ class Simulation(Entity):
         datetime | None,
         Field(
             description='Date and time of completion of the attack simulation and training campaign. Supports $filter and $orderby.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     created_by: Annotated[
@@ -53452,7 +53448,7 @@ class Simulation(Entity):
         datetime | None,
         Field(
             description='Date and time of creation of the attack simulation and training campaign.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     description: Annotated[
@@ -53503,14 +53499,14 @@ class Simulation(Entity):
         datetime | None,
         Field(
             description='Date and time of the most recent modification of the attack simulation and training campaign.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     launch_date_time: Annotated[
         datetime | None,
         Field(
             description='Date and time of the launch/start of the attack simulation and training campaign. Supports $filter and $orderby.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     o_auth_consent_app_detail: Annotated[
@@ -53719,7 +53715,7 @@ class Chat(Entity):
         datetime | None,
         Field(
             description='Date and time at which the chat was created. Read-only.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     is_hidden_for_all_members: Annotated[
@@ -53732,7 +53728,7 @@ class Chat(Entity):
         datetime | None,
         Field(
             description='Date and time at which the chat was renamed or the list of members was last changed. Read-only.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     online_meeting_info: Annotated[
@@ -53947,7 +53943,7 @@ class AccessPackage(Entity):
         datetime | None,
         Field(
             description='The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     description: Annotated[
@@ -53969,7 +53965,7 @@ class AccessPackage(Entity):
         datetime | None,
         Field(
             description='The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     access_packages_incompatible_with: Annotated[
@@ -54018,7 +54014,7 @@ class AccessPackageAssignment(Entity):
         datetime | None,
         Field(
             description='The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     schedule: Annotated[
@@ -54075,7 +54071,7 @@ class AccessPackageAssignmentPolicy(Entity):
         datetime | None,
         Field(
             description='The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     description: Annotated[
@@ -54094,7 +54090,7 @@ class AccessPackageAssignmentPolicy(Entity):
         datetime | None,
         Field(
             description='The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     request_approval_settings: Annotated[
@@ -54157,14 +54153,14 @@ class AccessPackageAssignmentRequest(Entity):
         datetime | None,
         Field(
             description='The date of the end of processing, either successful or failure, of a request. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     created_date_time: Annotated[
         datetime | None,
         Field(
             description='The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only. Supports $filter.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     custom_extension_callout_instances: Annotated[
@@ -54229,7 +54225,7 @@ class AccessPackageCatalog(Entity):
         datetime | None,
         Field(
             description='The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     description: Annotated[
@@ -54248,7 +54244,7 @@ class AccessPackageCatalog(Entity):
         datetime | None,
         Field(
             description='The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     state: Annotated[
@@ -54282,7 +54278,7 @@ class AccessPackageResource(Entity):
         datetime | None,
         Field(
             description='The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     description: Annotated[
@@ -54298,7 +54294,7 @@ class AccessPackageResource(Entity):
         datetime | None,
         Field(
             description='The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     origin_id: Annotated[
@@ -54341,7 +54337,7 @@ class AccessPackageResourceEnvironment(Entity):
         datetime | None,
         Field(
             description='The date and time that this object was created. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     description: Annotated[
@@ -54360,7 +54356,7 @@ class AccessPackageResourceEnvironment(Entity):
         datetime | None,
         Field(
             description='The date and time that this object was last modified. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     origin_id: Annotated[
@@ -54386,7 +54382,7 @@ class AccessPackageResourceRequest(Entity):
         datetime | None,
         Field(
             description='The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     request_type: Annotated[
@@ -54437,7 +54433,7 @@ class AccessPackageResourceRoleScope(Entity):
         datetime | None,
         Field(
             description='The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     role: AccessPackageResourceRole | Dict[str, Any] | None = None
@@ -54484,35 +54480,35 @@ class ActivityHistoryItem(Entity):
         datetime | None,
         Field(
             description='Set by the server. DateTime in UTC when the object was created on the server.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     expiration_date_time: Annotated[
         datetime | None,
         Field(
             description='Optional. UTC DateTime when the activityHistoryItem will undergo hard-delete. Can be set by the client.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     last_active_date_time: Annotated[
         datetime | None,
         Field(
             description='Optional. UTC DateTime when the activityHistoryItem (activity session) was last understood as active or finished - if null, activityHistoryItem status should be Ongoing.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     last_modified_date_time: Annotated[
         datetime | None,
         Field(
             description='Set by the server. DateTime in UTC when the object was modified on the server.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     started_date_time: Annotated[
         datetime | None,
         Field(
             description='Required. UTC DateTime when the activityHistoryItem (activity session) was started. Required for timeline history.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     status: Annotated[
@@ -54570,7 +54566,7 @@ class Application(DirectoryObject):
         datetime | None,
         Field(
             description='The date and time the application was registered. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.  Supports $filter (eq, ne, not, ge, le, in, and eq on null values) and $orderby.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     default_redirect_uri: str | None = None
@@ -54723,7 +54719,7 @@ class Application(DirectoryObject):
         UUID | None,
         Field(
             description='Specifies the keyId of a public key from the keyCredentials collection. When configured, Microsoft Entra ID encrypts all the tokens it emits by using the key this property points to. The application code that receives the encrypted token must use the matching private key to decrypt the token before it can be used for the signed-in user.',
-            pattern='^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$',
+            
         ),
     ] = None
     unique_name: Annotated[
@@ -54791,7 +54787,7 @@ class BaseItem(Entity):
         datetime | None,
         Field(
             description='Date and time of item creation. Read-only.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     description: Annotated[
@@ -54811,7 +54807,7 @@ class BaseItem(Entity):
         datetime | None,
         Field(
             description='Date and time the item was last modified. Read-only.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     name: Annotated[
@@ -54958,7 +54954,7 @@ class CalendarGroup(Entity):
         UUID | None,
         Field(
             description='The class identifier. Read-only.',
-            pattern='^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$',
+            
         ),
     ] = None
     name: Annotated[str | None, Field(description='The group name.')] = None
@@ -54976,7 +54972,7 @@ class Channel(Entity):
         datetime | None,
         Field(
             description='Read only. Timestamp at which the channel was created.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     description: Annotated[
@@ -55515,7 +55511,7 @@ class DeviceManagement(Entity):
         UUID | None,
         Field(
             description='Intune Account Id for given tenant',
-            pattern='^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$',
+            
         ),
     ] = None
     intune_brand: Annotated[
@@ -56054,7 +56050,7 @@ class EducationUser(Entity):
         datetime | None,
         Field(
             description='Any refresh tokens or sessions tokens (session cookies) issued before this time are invalid, and applications get an error when using an invalid refresh or sessions token to acquire a delegated access token (to access APIs such as Microsoft Graph).  If this happens, the application needs to acquire a new refresh token by requesting the authorized endpoint. Returned only on $select. Read-only.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     related_contacts: Annotated[
@@ -56345,7 +56341,7 @@ class Event(OutlookItem):
         datetime | None,
         Field(
             description='Represents the start time of an event when it is initially created as an occurrence or exception in a recurring series. This property is not returned for events that are single instances. Its date and time information is expressed in ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     original_start_time_zone: Annotated[
@@ -56502,14 +56498,14 @@ class FileStorageContainer(Entity):
         UUID | None,
         Field(
             description='Container type ID of the fileStorageContainer. For details about container types, see Container Types. Each container must have only one container type. Read-only.',
-            pattern='^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$',
+            
         ),
     ] = None
     created_date_time: Annotated[
         datetime | None,
         Field(
             description='Date and time of the fileStorageContainer creation. Read-only.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     custom_properties: Annotated[
@@ -56597,7 +56593,7 @@ class Group(DirectoryObject):
         datetime | None,
         Field(
             description="Timestamp of when the group was created. The value can't be modified and is automatically populated when the group is created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on January 1, 2014 is 2014-01-01T00:00:00Z. Returned by default. Read-only.",
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     description: Annotated[
@@ -56616,7 +56612,7 @@ class Group(DirectoryObject):
         datetime | None,
         Field(
             description="Timestamp of when the group is set to expire. It's null for security groups, but for Microsoft 365 groups, it represents when the group is set to expire as defined in the groupLifecyclePolicy. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on January 1, 2014 is 2014-01-01T00:00:00Z. Returned by default. Supports $filter (eq, ne, not, ge, le, in). Read-only.",
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     group_types: Annotated[
@@ -56708,7 +56704,7 @@ class Group(DirectoryObject):
         datetime | None,
         Field(
             description='Indicates the last time at which the group was synced with the on-premises directory. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on January 1, 2014 is 2014-01-01T00:00:00Z. Returned by default. Read-only. Supports $filter (eq, ne, not, ge, le, in).',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     on_premises_net_bios_name: Annotated[
@@ -56763,7 +56759,7 @@ class Group(DirectoryObject):
         datetime | None,
         Field(
             description="Timestamp of when the group was last renewed. This value can't be modified directly and is only updated via the renew service action. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on January 1, 2014 is 2014-01-01T00:00:00Z. Returned by default. Supports $filter (eq, ne, not, ge, le, in). Read-only.",
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     security_enabled: Annotated[
@@ -57055,7 +57051,7 @@ class ItemActivity(Entity):
         datetime | None,
         Field(
             description='Details about when the activity took place. Read-only.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     actor: Annotated[
@@ -57100,7 +57096,7 @@ class ItemActivityStat(Entity):
         datetime | None,
         Field(
             description='When the interval ends. Read-only.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     incomplete_data: Annotated[
@@ -57123,7 +57119,7 @@ class ItemActivityStat(Entity):
         datetime | None,
         Field(
             description='When the interval starts. Read-only.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     activities: Annotated[
@@ -57169,7 +57165,7 @@ class ManagedDevice(Entity):
         datetime | None,
         Field(
             description='The DateTime when device compliance grace period expires. This property is read-only.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     compliance_state: ComplianceState | None = None
@@ -57212,7 +57208,7 @@ class ManagedDevice(Entity):
         datetime | None,
         Field(
             description='Exchange ActivationSync activation time of the device. This property is read-only.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     eas_device_id: Annotated[
@@ -57231,7 +57227,7 @@ class ManagedDevice(Entity):
         datetime | None,
         Field(
             description="Enrollment time of the device. Supports $filter operator 'lt' and 'gt'. This property is read-only.",
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     enrollment_profile_name: Annotated[
@@ -57254,7 +57250,7 @@ class ManagedDevice(Entity):
         datetime | None,
         Field(
             description='Last time the device contacted Exchange. This property is read-only.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     free_storage_space_in_bytes: Annotated[
@@ -57290,7 +57286,7 @@ class ManagedDevice(Entity):
         datetime | None,
         Field(
             description="The date and time that the device last completed a successful sync with Intune. Supports $filter operator 'lt' and 'gt'. This property is read-only.",
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     managed_device_name: Annotated[
@@ -57305,7 +57301,7 @@ class ManagedDevice(Entity):
         datetime | None,
         Field(
             description='Reports device management certificate expiration date. This property is read-only.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     manufacturer: Annotated[
@@ -57561,7 +57557,7 @@ class OnenotePage(OnenoteEntitySchemaObjectModel):
         datetime | None,
         Field(
             description='The date and time when the page was last modified. The timestamp represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     level: Annotated[
@@ -57730,7 +57726,7 @@ class PrintJob(Entity):
         datetime | None,
         Field(
             description='The DateTimeOffset when the job was created. Read-only.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     is_fetchable: Annotated[
@@ -58172,7 +58168,7 @@ class RiskyServicePrincipal(Entity):
         datetime | None,
         Field(
             description='The date and time that the risk state was last updated. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2021 is 2021-01-01T00:00:00Z. Supports $filter (eq).',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     risk_level: Annotated[
@@ -58225,7 +58221,7 @@ class RiskyUser(Entity):
         datetime | None,
         Field(
             description='The date and time that the risky user was last updated. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     risk_level: Annotated[
@@ -58407,7 +58403,7 @@ class ServicePrincipal(DirectoryObject):
         UUID | None,
         Field(
             description='Contains the tenant ID where the application is registered. This is applicable only to service principals backed by applications. Supports $filter (eq, ne, NOT, ge, le).',
-            pattern='^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$',
+            
         ),
     ] = None
     app_role_assignment_required: Annotated[
@@ -58555,7 +58551,7 @@ class ServicePrincipal(DirectoryObject):
         UUID | None,
         Field(
             description='Specifies the keyId of a public key from the keyCredentials collection. When configured, Microsoft Entra ID issues tokens for this application encrypted using the key specified by this property. The application code that receives the encrypted token must use the matching private key to decrypt the token before it can be used for the signed-in user.',
-            pattern='^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$',
+            
         ),
     ] = None
     verified_publisher: Annotated[
@@ -58675,7 +58671,7 @@ class SubjectRightsRequest(Entity):
         datetime | None,
         Field(
             description='The date and time when the request was closed. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     content_query: Annotated[
@@ -58694,7 +58690,7 @@ class SubjectRightsRequest(Entity):
         datetime | None,
         Field(
             description='The date and time when the request was created. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     data_subject: Annotated[
@@ -58743,7 +58739,7 @@ class SubjectRightsRequest(Entity):
         datetime | None,
         Field(
             description='The date and time when the request is internally due. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     last_modified_by: Annotated[
@@ -58756,7 +58752,7 @@ class SubjectRightsRequest(Entity):
         datetime | None,
         Field(
             description='The date and time when the request was last modified. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     mailbox_locations: Annotated[
@@ -58903,7 +58899,7 @@ class SynchronizationTemplate(Entity):
         UUID | None,
         Field(
             description='Identifier of the application this template belongs to.',
-            pattern='^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$',
+            
         ),
     ] = None
     default: Annotated[
@@ -58953,7 +58949,7 @@ class Team(Entity):
         datetime | None,
         Field(
             description='Timestamp at which the team was created.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     description: Annotated[
@@ -59138,7 +59134,7 @@ class TermsAndConditions(Entity):
         datetime | None,
         Field(
             description='DateTime the object was created.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     description: Annotated[
@@ -59152,7 +59148,7 @@ class TermsAndConditions(Entity):
         datetime | None,
         Field(
             description='DateTime the object was last modified.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     title: Annotated[
@@ -59185,7 +59181,7 @@ class TermsAndConditionsAcceptanceStatus(Entity):
         datetime | None,
         Field(
             description='DateTime when the terms were last accepted by the user.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     accepted_version: Annotated[
@@ -59251,7 +59247,7 @@ class User(DirectoryObject):
         datetime | None,
         Field(
             description='The birthday of the user. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014, is 2014-01-01T00:00:00Z. Returned only on $select.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     business_phones: Annotated[
@@ -59288,7 +59284,7 @@ class User(DirectoryObject):
         datetime | None,
         Field(
             description="The date and time the user was created, in ISO 8601 format and UTC. The value can't be modified and is automatically populated when the entity is created. Nullable. For on-premises users, the value represents when they were first created in Microsoft Entra ID. Property is null for some users created before June 2018 and on-premises users that were synced to Microsoft Entra ID before June 2018. Read-only. Returned only on $select. Supports $filter (eq, ne, not , ge, le, in).",
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     creation_type: Annotated[
@@ -59327,7 +59323,7 @@ class User(DirectoryObject):
         datetime | None,
         Field(
             description='The date and time when the user was hired or will start work in a future hire. Returned only on $select. Supports $filter (eq, ne, not , ge, le, in).',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     employee_id: Annotated[
@@ -59340,7 +59336,7 @@ class User(DirectoryObject):
         datetime | None,
         Field(
             description='The date and time when the user left or will leave the organization. To read this property, the calling app must be assigned the User-LifeCycleInfo.Read.All permission. To write this property, the calling app must be assigned the User.Read.All and User-LifeCycleInfo.ReadWrite.All permissions. To read this property in delegated scenarios, the admin needs at least one of the following Microsoft Entra roles: Lifecycle Workflows Administrator (least privilege), Global Reader. To write this property in delegated scenarios, the admin needs the Global Administrator role. Supports $filter (eq, ne, not , ge, le, in). For more information, see Configure the employeeLeaveDateTime property for a user.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     employee_org_data: Annotated[
@@ -59365,7 +59361,7 @@ class User(DirectoryObject):
         datetime | None,
         Field(
             description='Shows the timestamp for the latest change to the externalUserState property. Returned only on $select. Supports $filter (eq, ne, not , in).',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     fax_number: Annotated[
@@ -59384,7 +59380,7 @@ class User(DirectoryObject):
         datetime | None,
         Field(
             description='The hire date of the user. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014, is 2014-01-01T00:00:00Z. Returned only on $select.  Note: This property is specific to SharePoint in Microsoft 365. We recommend using the native employeeHireDate property to set and update hire date values using Microsoft Graph APIs.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     identities: Annotated[
@@ -59419,7 +59415,7 @@ class User(DirectoryObject):
         datetime | None,
         Field(
             description='The time when this Microsoft Entra user last changed their password or when their password was created, whichever date the latest action was performed. The date and time information uses ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Returned only on $select.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     legal_age_group_classification: Annotated[
@@ -59496,7 +59492,7 @@ class User(DirectoryObject):
         datetime | None,
         Field(
             description='Indicates the last time at which the object was synced with the on-premises directory; for example: 2013-02-16T03:04:54Z. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only. Returned only on $select. Supports $filter (eq, ne, not, ge, le, in).',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     on_premises_provisioning_errors: Annotated[
@@ -59630,7 +59626,7 @@ class User(DirectoryObject):
         datetime | None,
         Field(
             description='Any refresh tokens or session tokens (session cookies) issued before this time are invalid. Applications get an error when using an invalid refresh or session token to acquire a delegated access token (to access APIs such as Microsoft Graph). If this happens, the application needs to acquire a new refresh token by requesting the authorized endpoint. Read-only. Use revokeSignInSessions to reset. Returned only on $select.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     skills: Annotated[
@@ -59934,14 +59930,14 @@ class UserActivity(Entity):
         datetime | None,
         Field(
             description='Set by the server. DateTime in UTC when the object was created on the server.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     expiration_date_time: Annotated[
         datetime | None,
         Field(
             description='Set by the server. DateTime in UTC when the object expired on the server.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     fallback_url: Annotated[
@@ -59954,7 +59950,7 @@ class UserActivity(Entity):
         datetime | None,
         Field(
             description='Set by the server. DateTime in UTC when the object was modified on the server.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     status: Annotated[
@@ -61503,7 +61499,7 @@ class RecycleBinItem(BaseItem):
         datetime | None,
         Field(
             description='Date and time when the item was deleted. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     deleted_from_location: Annotated[
@@ -61725,14 +61721,14 @@ class Printer(PrinterBase):
         datetime | None,
         Field(
             description='The most recent dateTimeOffset when a printer interacted with Universal Print. Read-only.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     registered_date_time: Annotated[
         datetime | None,
         Field(
             description='The DateTimeOffset when the printer was registered. Read-only.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     connectors: Annotated[
@@ -61765,7 +61761,7 @@ class PrinterShare(PrinterBase):
         datetime | None,
         Field(
             description='The DateTimeOffset when the printer share was created. Read-only.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+            
         ),
     ] = None
     view_point: Annotated[

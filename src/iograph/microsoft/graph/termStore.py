@@ -80,7 +80,7 @@ class Group(Entity):
         datetime | None,
         Field(
             description='Date and time of the group creation. Read-only.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+
         ),
     ] = None
     description: Annotated[
@@ -133,7 +133,7 @@ class Set(Entity):
         datetime | None,
         Field(
             description='Date and time of set creation. Read-only.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+
         ),
     ] = None
     description: Annotated[
@@ -188,7 +188,7 @@ class Term(Entity):
         datetime | None,
         Field(
             description='Date and time of term creation. Read-only.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+
         ),
     ] = None
     descriptions: Annotated[
@@ -204,7 +204,7 @@ class Term(Entity):
         datetime | None,
         Field(
             description='Last date and time of term modification. Read-only.',
-            pattern='^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$',
+
         ),
     ] = None
     properties: Annotated[
