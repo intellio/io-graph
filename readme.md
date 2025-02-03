@@ -14,7 +14,7 @@ datamodel-codegen --input ./openapi.yaml --input-file-type openapi --output ./sr
 ```
 to generte pydantic models from url: 
 ```
-datamodel-codegen --url https://github.com/microsoftgraph/msgraph-metadata/raw/refs/heads/master/openapi/v1.0/openapi.yaml --input-file-type openapi --output ./src/iograph --output-model-type pydantic_v2.BaseModel --use-annotated --use-union-operator --snake-case-field --no-alias    
+datamodel-codegen --url https://github.com/microsoftgraph/msgraph-metadata/raw/refs/heads/master/openapi/v1.0/openapi.yaml --input-file-type openapi --output ./src/iograph --output-model-type pydantic_v2.BaseModel --use-annotated    --snake-case-field --no-alias    
 ```
 ## Post process
 
