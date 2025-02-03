@@ -12,6 +12,20 @@ from uuid import UUID
 from pydantic import BaseModel, Field, RootModel
 from typing_extensions import Annotated
 
+
+class Entity(BaseModel):
+    field_odata_type: str
+    id: Annotated[
+        str | None, Field(description='The unique identifier for an entity. Read-only.')
+    ] = None
+
+class KeyValue(BaseModel):
+    field_odata_type: str
+    key: Annotated[str | None, Field(description='Key for the key-value pair.')] = None
+    value: Annotated[str | None, Field(description='Value for the key-value pair.')] = (
+        None
+    )
+
 from ... import ReferenceNumeric
 from . import security, termStore
 
@@ -1395,11 +1409,6 @@ class EmployeeOrgData(BaseModel):
     ] = None
 
 
-class Entity(BaseModel):
-    field_odata_type: str
-    id: Annotated[
-        str | None, Field(description='The unique identifier for an entity. Read-only.')
-    ] = None
 
 
 class EventMessageDetail(BaseModel):
@@ -1782,12 +1791,7 @@ class JoinMeetingIdSettings(BaseModel):
     ] = None
 
 
-class KeyValue(BaseModel):
-    field_odata_type: str
-    key: Annotated[str | None, Field(description='Key for the key-value pair.')] = None
-    value: Annotated[str | None, Field(description='Value for the key-value pair.')] = (
-        None
-    )
+
 
 
 class LearningCourseActivity(Entity):
