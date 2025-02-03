@@ -109,6 +109,7 @@ required_component = [
     'microsoft.graph.unifiedRoleDefinition',
     'microsoft.graph.tenantInformation',
     'microsoft.graph.authenticationContextClassReference',
+    'microsoft.graph.conditionalAccessTargetResourceApp',
 
     ]
 
