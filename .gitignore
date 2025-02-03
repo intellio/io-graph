@@ -14,7 +14,7 @@ local-creds/
 openapi_client/
 # mkdocs documentation
 /site
-
+openapi.yaml
 # mypy
 .mypy_cache/
 .dmypy.json
