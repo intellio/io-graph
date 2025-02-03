@@ -11,9 +11,7 @@ from typing import Any, Dict, List, Optional, Union
 from pydantic import BaseModel, Field
 from typing_extensions import Annotated
 
-from . import BinaryOperator, PublicError
-from .BaseCollectionPaginationCountResponse import BaseCollectionPaginationCountResponse
-from .Entity import Entity
+
 
 
 class Configuration(BaseModel):
@@ -510,3 +508,8 @@ class ExternalConnectionCollectionResponse(BaseCollectionPaginationCountResponse
 class External(BaseModel):
     connections: Optional[List[ExternalConnection]] = None
     field_odata_type: str
+
+
+from . import BinaryOperator, PublicError
+from . import BaseCollectionPaginationCountResponse
+from . import Entity

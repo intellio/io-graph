@@ -12,12 +12,7 @@ from typing import Any, Dict, List, Optional, Union
 from pydantic import BaseModel, Field
 from typing_extensions import Annotated
 
-from . import CommunicationsIdentitySet
-from . import Identity as Identity_1
-from . import IdentitySet, ReferenceNumeric
-from .BaseCollectionPaginationCountResponse import BaseCollectionPaginationCountResponse
-from .Entity import Entity
-from .Identity import Identity
+
 
 
 class AdministrativeUnitInfo(BaseModel):
@@ -1294,3 +1289,11 @@ class CallRecord(Entity):
 
 class CallRecordCollectionResponse(BaseCollectionPaginationCountResponse):
     value: Optional[List[CallRecord]] = None
+
+
+from . import CommunicationsIdentitySet
+from . import Identity as Identity_1
+from . import IdentitySet, ReferenceNumeric
+from . import BaseCollectionPaginationCountResponse
+from . import Entity
+from . import Identity

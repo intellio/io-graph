@@ -11,24 +11,7 @@ from typing import Any, Dict, List, Optional, Union
 from pydantic import BaseModel, Field
 from typing_extensions import Annotated
 
-from . import (
-    Application,
-    CustomExtensionCallbackConfiguration,
-    DeletedItemContainer,
-    EmailSettings,
-    Group,
-    KeyValuePair,
-)
-from . import SubjectSet as SubjectSet_1
-from . import User
-from .BaseCollectionPaginationCountResponse import BaseCollectionPaginationCountResponse
-from .CustomCalloutExtension import CustomCalloutExtension
-from .CustomExtensionCallbackConfiguration import (
-    CustomExtensionCallbackConfiguration as CustomExtensionCallbackConfiguration_1,
-)
-from .CustomExtensionData import CustomExtensionData
-from .Entity import Entity
-from .SubjectSet import SubjectSet
+
 
 
 class Insights(Entity):
@@ -1236,6 +1219,27 @@ class WorkflowVersion(WorkflowBase):
         ),
     ] = None
     field_odata_type: str
+
+
+
+from . import (
+    Application,
+    CustomExtensionCallbackConfiguration,
+    DeletedItemContainer,
+    EmailSettings,
+    Group,
+    KeyValuePair,
+)
+from . import SubjectSet as SubjectSet_1
+from . import User
+from . import BaseCollectionPaginationCountResponse
+from . import CustomCalloutExtension
+from . import (
+    CustomExtensionCallbackConfiguration as CustomExtensionCallbackConfiguration_1,
+)
+from . import CustomExtensionData
+from . import Entity
+from . import SubjectSet
 
 
 LifecycleWorkflowsContainer.model_rebuild()

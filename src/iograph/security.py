@@ -12,17 +12,7 @@ from uuid import UUID
 from pydantic import BaseModel, Field
 from typing_extensions import Annotated
 
-from . import (
-    Group,
-    IdentitySet,
-    PhysicalAddress,
-    PublicError,
-    ReferenceNumeric,
-    ResultInfo,
-    Site,
-)
-from .BaseCollectionPaginationCountResponse import BaseCollectionPaginationCountResponse
-from .Entity import Entity
+
 
 
 class Artifact(Entity):
@@ -4996,6 +4986,20 @@ class WhoisRecord(WhoisBaseRecord):
         ),
     ] = None
     field_odata_type: str
+
+
+
+from . import (
+    Group,
+    IdentitySet,
+    PhysicalAddress,
+    PublicError,
+    ReferenceNumeric,
+    ResultInfo,
+    Site,
+)
+from . import BaseCollectionPaginationCountResponse
+from . import Entity
 
 
 EdiscoveryReviewTag.model_rebuild()

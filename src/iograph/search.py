@@ -11,9 +11,7 @@ from typing import Any, Dict, List, Optional, Union
 from pydantic import BaseModel, Field
 from typing_extensions import Annotated
 
-from . import DevicePlatformType
-from .BaseCollectionPaginationCountResponse import BaseCollectionPaginationCountResponse
-from .Entity import Entity
+
 
 
 class AnswerKeyword(BaseModel):
@@ -269,3 +267,8 @@ class BookmarkCollectionResponse(BaseCollectionPaginationCountResponse):
 
 class QnaCollectionResponse(BaseCollectionPaginationCountResponse):
     value: Optional[List[Qna]] = None
+
+
+from . import DevicePlatformType
+from . import BaseCollectionPaginationCountResponse
+from . import Entity

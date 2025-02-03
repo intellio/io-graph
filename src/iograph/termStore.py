@@ -11,9 +11,7 @@ from typing import Any, Dict, List, Optional, Union
 from pydantic import BaseModel, Field
 from typing_extensions import Annotated
 
-from . import KeyValue
-from .BaseCollectionPaginationCountResponse import BaseCollectionPaginationCountResponse
-from .Entity import Entity
+
 
 
 class LocalizedDescription(BaseModel):
@@ -247,6 +245,11 @@ class RelationCollectionResponse(BaseCollectionPaginationCountResponse):
 class GroupCollectionResponse(BaseCollectionPaginationCountResponse):
     value: Optional[List[Group]] = None
 
+
+
+from . import KeyValue
+from . import BaseCollectionPaginationCountResponse
+from . import Entity
 
 Group.model_rebuild()
 Relation.model_rebuild()
