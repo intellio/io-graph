@@ -20,12 +20,15 @@ datamodel-codegen --url https://github.com/microsoftgraph/msgraph-metadata/raw/r
 ```
 ## Post process
 
-1. inside graph.__init__.py, move any line that imports from graph folder to bottom of file just 
-   before where model_rebuilds are defined
-2. in other files inside graph folder, fix the relative imports
-3. One post-generation task is to remove patterns from datetime fields in generated models as it 
+1. in all files fix the relative imports
+2. remove all model_rebuild() calls from all files. rebuilds cause issue with ForwardRef annotations
+   and Pydantic has builting mechanisms to handle it. https://docs.pydantic.dev/latest/internals/resolving_annotations/
+3. in microsoft.graph._init__ move models that are imported in other files before the import statements.
+   for instance, class Entity is imported by multiple other files, so we should move it before any 
+   relative import in __init__ file.
+4. One post-generation task is to remove patterns from datetime fields in generated models as it 
    causes issues until we find a proper solution. use this regular expression to find all of them 
-   ^.*(xxxxx).*\n? and replace xxxxx with pat tern=
+   ^.*(pattern=).*\n?
 
 ## Build package
 run this command to create the python package:
