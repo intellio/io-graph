@@ -7,6 +7,8 @@ python autogen.py
 
 Note that list of components that are required are set in the script
 
+If you choose to go this path, then we can only generate the models from local file as explained below
+
 ## Generate Pydantic models
 to generte pydantic models from local file:  
 ```

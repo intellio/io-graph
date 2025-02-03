@@ -1,4 +1,7 @@
 import yaml
+import requests
+
+
 
 
 def extract_component_references(component_name, components, visited, new_components):
@@ -65,9 +68,9 @@ def extract_component_references(component_name, components, visited, new_compon
             else:
                 process_component(item)
 
-def generate_new_openapi_file(input_file, output_file, required_components):
-    with open(input_file, 'r') as f:
-        openapi_data = yaml.safe_load(f)
+def generate_new_openapi_file(openapi_data, output_file, required_components):
+    # with open(input_file, 'r') as f:
+    #     openapi_data = yaml.safe_load(f)
     
     components = openapi_data.get('components', {}).get('schemas', {})
     new_components = {}
@@ -92,8 +95,11 @@ def generate_new_openapi_file(input_file, output_file, required_components):
         yaml.safe_dump(new_openapi_data, f, default_flow_style=False)
 
 # Example usage
+
+url = 'https://github.com/microsoftgraph/msgraph-metadata/raw/refs/heads/master/openapi/v1.0/openapi.yaml'
 input_file = 'openapi-full.yaml'
-output_file = 'new_openapi.yaml'
+output_file = 'openapi.yaml'
+
 required_component = [
     'microsoft.graph.user',
     'microsoft.graph.group',
@@ -104,7 +110,15 @@ required_component = [
     'microsoft.graph.tenantInformation',
     'microsoft.graph.authenticationContextClassReference',
 
-    
-    
     ]
-generate_new_openapi_file(input_file, output_file, required_component)
+
+# Retrieve the file content from the URL
+response = requests.get(url, allow_redirects=True)
+# Convert bytes to string
+content = response.content.decode("utf-8")
+# Load the yaml
+input = yaml.safe_load(content)
+
+
+
+generate_new_openapi_file(input, output_file, required_component)
