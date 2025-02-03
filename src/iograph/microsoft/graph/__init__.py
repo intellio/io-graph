@@ -49059,7 +49059,7 @@ class ParticipantLeftNotification(Entity):
 
 class Partners(Entity):
     billing: Annotated[
-        Optional[Union[billing.Billing, Dict[str, Any]]],
+        Optional[Union[Billing, Dict[str, Any]]],
         Field(description='Represents billing details for billed and unbilled data.'),
     ] = None
     field_odata_type: str
@@ -61652,7 +61652,7 @@ class SitePage(BaseSitePage):
 
 
 from . import callRecords, identityGovernance, search, security, termStore
-from . import billing
+from .billing import Billing
 
 WorkbookRangeView.model_rebuild()
 WorkbookOperationError.model_rebuild()
