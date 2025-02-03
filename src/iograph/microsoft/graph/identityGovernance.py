@@ -1240,10 +1240,10 @@ class WorkflowVersion(WorkflowBase):
     field_odata_type: str
 
 
-# LifecycleWorkflowsContainer.model_rebuild()
-# Run.model_rebuild()
-# Task.model_rebuild()
-# CustomTaskExtensionCalloutData.model_rebuild()
-# WorkflowCollectionResponse.model_rebuild()
-# WorkflowVersionCollectionResponse.model_rebuild()
-# Workflow.model_rebuild()
+LifecycleWorkflowsContainer.model_rebuild()
+Run.model_rebuild()
+Task.model_rebuild()
+CustomTaskExtensionCalloutData.model_rebuild()
+WorkflowCollectionResponse.model_rebuild()
+WorkflowVersionCollectionResponse.model_rebuild()
+Workflow.model_rebuild()

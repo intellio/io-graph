@@ -250,6 +250,6 @@ class GroupCollectionResponse(BaseCollectionPaginationCountResponse):
     value: Optional[List[Group]] = None
 
 
-# Group.model_rebuild()
-# Relation.model_rebuild()
-# Set.model_rebuild()
+Group.model_rebuild()
+Relation.model_rebuild()
+Set.model_rebuild()

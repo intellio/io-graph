@@ -16,8 +16,9 @@ from ... import ReferenceNumeric
 from ... import (
     BaseCollectionPaginationCountResponse,
 )
-from . import callRecords, identityGovernance, search, security, termStore
-from .partners import billing
+
+
+
 
 
 class AuthenticationConditionApplication(BaseModel):
@@ -29502,7 +29503,7 @@ class ResponseStatus(BaseModel):
 
 class RetentionLabelSettings(BaseModel):
     behavior_during_retention_period: Annotated[
-        Optional[Union[security.BehaviorDuringRetentionPeriod, Dict[str, Any]]],
+        Optional[Union['securityBehaviorDuringRetentionPeriod', Dict[str, Any]]],
         Field(
             description='Describes the item behavior during retention period. Possible values are: doNotRetain, retain, retainAsRecord, retainAsRegulatoryRecord, unknownFutureValue. Read-only.'
         ),
@@ -49597,7 +49598,7 @@ class ParticipantLeftNotification(Entity):
 
 class Partners(Entity):
     billing: Annotated[
-        Optional[Union[billing.Billing, Dict[str, Any]]],
+        Optional[Union['billingBilling', Dict[str, Any]]],
         Field(description='Represents billing details for billed and unbilled data.'),
     ] = None
     field_odata_type: str
@@ -50025,19 +50026,19 @@ class Schedule(Entity):
 
 class SearchEntity(Entity):
     acronyms: Annotated[
-        Optional[List[search.Acronym]],
+        Optional[List['searchAcronym']],
         Field(
             description='Administrative answer in Microsoft Search results to define common acronyms in an organization.'
         ),
     ] = None
     bookmarks: Annotated[
-        Optional[List[search.Bookmark]],
+        Optional[List['searchBookmark']],
         Field(
             description='Administrative answer in Microsoft Search results for common search queries in an organization.'
         ),
     ] = None
     qnas: Annotated[
-        Optional[List[search.Qna]],
+        Optional[List['searchQna']],
         Field(
             description='Administrative answer in Microsoft Search results that provide answers for specific search keywords in an organization.'
         ),
@@ -53403,7 +53404,7 @@ class Admin(BaseModel):
 
 
 class CloudCommunications(BaseModel):
-    call_records: Optional[List[callRecords.CallRecord]] = None
+    call_records: Optional[List["callRecordsCallRecord"]] = None
     calls: Optional[List[Call]] = None
     online_meetings: Optional[List[OnlineMeeting]] = None
     presences: Optional[List[Presence]] = None
@@ -55843,7 +55844,7 @@ class ContentType(Entity):
 
 class DeletedItemContainer(Entity):
     workflows: Annotated[
-        Optional[List[identityGovernance.Workflow]],
+        Optional[List['identityGovernanceWorkflow']],
         Field(
             description='Deleted workflows that end up in the deletedItemsContainer.'
         ),
@@ -57353,7 +57354,7 @@ class IdentityGovernance(BaseModel):
         None
     )
     lifecycle_workflows: Optional[
-        Union[identityGovernance.LifecycleWorkflowsContainer, Dict[str, Any]]
+        Union['identityGovernanceLifecycleWorkflowsContainer', Dict[str, Any]]
     ] = None
     privileged_access: Optional[Union[PrivilegedAccessRoot, Dict[str, Any]]] = None
     terms_of_use: Optional[Union[TermsOfUseContainer, Dict[str, Any]]] = None
@@ -58756,30 +58757,30 @@ class SectionGroup(OnenoteEntityHierarchyModel):
 class Security(Entity):
     alerts: Optional[List[Alert]] = None
     alerts_v2: Annotated[
-        Optional[List[security.Alert]],
+        Optional[List['securityAlert']],
         Field(description='A collection of alerts in Microsoft 365 Defender.'),
     ] = None
     attack_simulation: Optional[Union[AttackSimulationRoot, Dict[str, Any]]] = None
-    cases: Optional[Union[security.CasesRoot, Dict[str, Any]]] = None
+    cases: Optional[Union['securityCasesRoot', Dict[str, Any]]] = None
     identities: Annotated[
-        Optional[Union[security.IdentityContainer, Dict[str, Any]]],
+        Optional[Union['securityIdentityContainer', Dict[str, Any]]],
         Field(description='A container for security identities APIs.'),
     ] = None
     incidents: Annotated[
-        Optional[List[security.Incident]],
+        Optional[List['securityIncident']],
         Field(
             description='A collection of incidents in Microsoft 365 Defender, each of which is a set of correlated alerts and associated metadata that reflects the story of an attack.'
         ),
     ] = None
-    labels: Optional[Union[security.LabelsRoot, Dict[str, Any]]] = None
+    labels: Optional[Union['securityLabelsRoot', Dict[str, Any]]] = None
     secure_score_control_profiles: Optional[List[SecureScoreControlProfile]] = None
     secure_scores: Optional[List[SecureScore]] = None
     subject_rights_requests: Optional[List[SubjectRightsRequest]] = None
     threat_intelligence: Optional[
-        Union[security.ThreatIntelligence, Dict[str, Any]]
+        Union['securityThreatIntelligence', Dict[str, Any]]
     ] = None
-    triggers: Optional[Union[security.TriggersRoot, Dict[str, Any]]] = None
-    trigger_types: Optional[Union[security.TriggerTypesRoot, Dict[str, Any]]] = None
+    triggers: Optional[Union['securityTriggersRoot', Dict[str, Any]]] = None
+    trigger_types: Optional[Union['securityTriggerTypesRoot', Dict[str, Any]]] = None
     field_odata_type: str
 
 
@@ -61139,8 +61140,8 @@ class TermColumn(BaseModel):
             description='Specifies whether to display the entire term path or only the term label.'
         ),
     ] = None
-    parent_term: Optional[Union[termStore.Term, Dict[str, Any]]] = None
-    term_set: Optional[Union[termStore.Set, Dict[str, Any]]] = None
+    parent_term: Optional[Union['termStoreTerm', Dict[str, Any]]] = None
+    term_set: Optional[Union['termStoreSet', Dict[str, Any]]] = None
     field_odata_type: str
 
 
@@ -62075,11 +62076,11 @@ class Site(BaseItem):
         Field(description='The collection of the sub-sites under this site.'),
     ] = None
     term_store: Annotated[
-        Optional[Union[termStore.Store, Dict[str, Any]]],
+        Optional[Union['termStoreStore', Dict[str, Any]]],
         Field(description='The default termStore under this site.'),
     ] = None
     term_stores: Annotated[
-        Optional[List[termStore.Store]],
+        Optional[List['termStoreStore']],
         Field(description='The collection of termStores under this site.'),
     ] = None
     field_odata_type: str
@@ -62316,6 +62317,41 @@ class SitePage(BaseSitePage):
         Field(description='Collection of webparts on the SharePoint page.'),
     ] = None
     field_odata_type: str
+
+
+
+from .callRecords import CallRecord as callRecordsCallRecord
+
+from .identityGovernance import (
+    Workflow as identityGovernanceWorkflow,
+    LifecycleWorkflowsContainer as  identityGovernanceLifecycleWorkflowsContainer
+)
+
+from .partners.billing import Billing as billingBilling
+
+from .search import(
+    Acronym as searchAcronym,
+    Bookmark as searchBookmark,
+    Qna as searchQna,
+)
+from .security import (
+    BehaviorDuringRetentionPeriod as securityBehaviorDuringRetentionPeriod,
+    Alert as securityAlert,
+    CasesRoot as securityCasesRoot,
+    IdentityContainer as securityIdentityContainer,
+    Incident as securityIncident,
+    LabelsRoot as securityLabelsRoot,
+    ThreatIntelligence as securityThreatIntelligence,
+    TriggersRoot as securityTriggersRoot,
+    TriggerTypesRoot as securityTriggerTypesRoot
+)
+from .termStore import (
+    Term as termStoreTerm,
+    Set as termStoreSet,
+    Store as termStoreStore,
+)
+
+
 
 
 WorkbookRangeView.model_rebuild()
