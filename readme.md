@@ -12,11 +12,11 @@ If you choose to go this path, then we can only generate the models from local f
 ## Generate Pydantic models
 to generte pydantic models from local file:  
 ```
-datamodel-codegen --input ./openapi.yaml --input-file-type openapi --output ./src/iograph --output-model-type pydantic_v2.BaseModel --snake-case-field --no-alias --target-python-version 3.13 --use-standard-collections --field-constraints
+datamodel-codegen --input ./openapi.yaml --input-file-type openapi --output ./src/iograph --output-model-type pydantic_v2.BaseModel --snake-case-field --no-alias --target-python-version 3.13 --use-standard-collections  --use-union-operator
 ```
 to generte pydantic models from url: 
 ```
-datamodel-codegen --url https://github.com/microsoftgraph/msgraph-metadata/raw/refs/heads/master/openapi/v1.0/openapi.yaml --input-file-type openapi --output ./src/iograph --output-model-type pydantic_v2.BaseModel --snake-case-field --no-alias --target-python-version 3.13 --use-standard-collections --field-constraints
+datamodel-codegen --url https://github.com/microsoftgraph/msgraph-metadata/raw/refs/heads/master/openapi/v1.0/openapi.yaml --input-file-type openapi --output ./src/iograph --output-model-type pydantic_v2.BaseModel --snake-case-field --no-alias --target-python-version 3.13 --use-standard-collections --field-constraints --use-union-operator 
 ```
 ## Post process
 
