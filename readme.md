@@ -31,7 +31,7 @@ datamodel-codegen --url https://github.com/microsoftgraph/msgraph-metadata/raw/r
    ^.*(pattern=).*\n?
 5. remove Dict[str, Any] or dict[str, Any] from all models where it is part of a union e.g SomeModel | Dict[str, Any] | None
    the reason for this is that msgspec doesn't allow it. more info https://jcristharif.com/msgspec/supported-types.html#union-optional
-
+6. Change field_odata_type: str to Optional by replacing it with field_odata_type: str | None = None
 ## Build package
 run this command to create the python package:
 ```

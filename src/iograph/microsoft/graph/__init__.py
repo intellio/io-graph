@@ -13,12 +13,12 @@ from pydantic import BaseModel, Field, confloat
 
 
 class Entity(BaseModel):
-    field_odata_type: str
+    field_odata_type: str | None = None
     id: str | None = Field(
         None, description='The unique identifier for an entity. Read-only.'
     )
 class KeyValue(BaseModel):
-    field_odata_type: str
+    field_odata_type: str | None = None
     key: str | None = Field(None, description='Key for the key-value pair.')
     value: str | None = Field(None, description='Value for the key-value pair.')
 
@@ -27,7 +27,7 @@ from . import security, termStore
 
 
 class AccessAction(BaseModel):
-    field_odata_type: str
+    field_odata_type: str | None = None
 
 
 class ActionState(Enum):
@@ -47,7 +47,7 @@ class AgreementAcceptanceState(Enum):
 
 
 class Album(BaseModel):
-    field_odata_type: str
+    field_odata_type: str | None = None
     cover_image_item_id: str | None = Field(
         None,
         description='Unique identifier of the driveItem that is the cover of the album.',
@@ -55,7 +55,7 @@ class Album(BaseModel):
 
 
 class AlternativeSecurityId(BaseModel):
-    field_odata_type: str
+    field_odata_type: str | None = None
     identity_provider: str | None = Field(None, description='For internal use only.')
     key: str | None = Field(None, description='For internal use only.')
     type: float | None = Field(
@@ -64,7 +64,7 @@ class AlternativeSecurityId(BaseModel):
 
 
 class AppIdentity(BaseModel):
-    field_odata_type: str
+    field_odata_type: str | None = None
     app_id: str | None = Field(
         None,
         description='Refers to the unique ID representing application in Microsoft Entra ID.',
@@ -91,7 +91,7 @@ class AppLogUploadState(Enum):
 
 
 class AssignedLabel(BaseModel):
-    field_odata_type: str
+    field_odata_type: str | None = None
     display_name: str | None = Field(
         None, description='The display name of the label. Read-only.'
     )
@@ -101,7 +101,7 @@ class AssignedLabel(BaseModel):
 
 
 class AssignedLicense(BaseModel):
-    field_odata_type: str
+    field_odata_type: str | None = None
     disabled_plans: List[UUID] | None = Field(
         None,
         description="A collection of the unique identifiers for plans that have been disabled. IDs are available in servicePlans > servicePlanId in the tenant's subscribedSkus or serviceStatus > servicePlanId in the tenant's companySubscription.",
@@ -113,7 +113,7 @@ class AssignedLicense(BaseModel):
 
 
 class AssignedPlan(BaseModel):
-    field_odata_type: str
+    field_odata_type: str | None = None
     assigned_date_time: datetime | None = Field(
         None,
         description='The date and time at which the plan was assigned. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.',
@@ -132,7 +132,7 @@ class AssignedPlan(BaseModel):
 
 
 class AttendanceInterval(BaseModel):
-    field_odata_type: str
+    field_odata_type: str | None = None
     duration_in_seconds: float | None = Field(
         None,
         description='Duration of the meeting interval in seconds; that is, the difference between joinDateTime and leaveDateTime.',
@@ -158,7 +158,7 @@ class AttestationLevel(Enum):
 
 
 class Audio(BaseModel):
-    field_odata_type: str
+    field_odata_type: str | None = None
     album: str | None = Field(
         None, description='The title of the album for this audio file.'
     )
@@ -207,7 +207,7 @@ class Audio(BaseModel):
 
 
 class AudioConferencing(BaseModel):
-    field_odata_type: str
+    field_odata_type: str | None = None
     conference_id: str | None = Field(
         None, description='The conference id of the online meeting.'
     )
@@ -289,7 +289,7 @@ class AuthenticationStrengthRequirements(Enum):
 
 
 class AuthorizationInfo(BaseModel):
-    field_odata_type: str
+    field_odata_type: str | None = None
     certificate_user_ids: List[str] | None = None
 
 
@@ -305,7 +305,7 @@ class BodyType(Enum):
 
 
 class BooleanColumn(BaseModel):
-    field_odata_type: str
+    field_odata_type: str | None = None
 
 
 class BroadcastMeetingAudience(Enum):
@@ -316,7 +316,7 @@ class BroadcastMeetingAudience(Enum):
 
 
 class BroadcastMeetingCaptionSettings(BaseModel):
-    field_odata_type: str
+    field_odata_type: str | None = None
     is_caption_enabled: bool | None = Field(
         None,
         description='Indicates whether captions are enabled for this Teams live event.',
@@ -328,7 +328,7 @@ class BroadcastMeetingCaptionSettings(BaseModel):
 
 
 class BroadcastMeetingSettings(BaseModel):
-    field_odata_type: str
+    field_odata_type: str | None = None
     allowed_audience: BroadcastMeetingAudience | None = Field(
         None,
         description='Defines who can join the Teams live event. Possible values are listed in the following table.',
@@ -355,7 +355,7 @@ class BroadcastMeetingSettings(BaseModel):
 
 
 class Bundle(BaseModel):
-    field_odata_type: str
+    field_odata_type: str | None = None
     album: Album | None = Field(
         None,
         description='If the bundle is an album, then the album property is included',
@@ -367,7 +367,7 @@ class Bundle(BaseModel):
 
 
 class CalculatedColumn(BaseModel):
-    field_odata_type: str
+    field_odata_type: str | None = None
     format: str | None = Field(
         None,
         description='For dateTime output types, the format of the value. Possible values are: dateOnly or dateTime.',
@@ -436,7 +436,7 @@ class CategoryColor(Enum):
 
 
 class ChannelIdentity(BaseModel):
-    field_odata_type: str
+    field_odata_type: str | None = None
     channel_id: str | None = Field(
         None, description='The identity of the channel in which the message was posted.'
     )
@@ -453,7 +453,7 @@ class ChannelMembershipType(Enum):
 
 
 class ChannelSummary(BaseModel):
-    field_odata_type: str
+    field_odata_type: str | None = None
     guests_count: float | None = Field(
         None, description='Count of guests in a channel.'
     )
@@ -470,7 +470,7 @@ class ChannelSummary(BaseModel):
 
 
 class ChatInfo(BaseModel):
-    field_odata_type: str
+    field_odata_type: str | None = None
     message_id: str | None = Field(
         None,
         description='The unique identifier of a message in a Microsoft Teams channel.',
@@ -491,7 +491,7 @@ class ChatMessageActions(Enum):
 
 
 class ChatMessageAttachment(BaseModel):
-    field_odata_type: str
+    field_odata_type: str | None = None
     content: str | None = Field(
         None,
         description='The content of the attachment. If the attachment is a rich card, set the property to the rich card object. This property and contentUrl are mutually exclusive.',
@@ -532,7 +532,7 @@ class ChatMessagePolicyViolationDlpActionTypes(Enum):
 
 
 class ChatMessagePolicyViolationPolicyTip(BaseModel):
-    field_odata_type: str
+    field_odata_type: str | None = None
     compliance_url: str | None = Field(
         None,
         description="The URL a user can visit to read about the data loss prevention policies for the organization. (ie, policies about what users shouldn't say in chats)",
@@ -568,7 +568,7 @@ class ChatMessageType(Enum):
 
 
 class ChatRestrictions(BaseModel):
-    field_odata_type: str
+    field_odata_type: str | None = None
     allow_text_only: bool | None = Field(
         None,
         description='Indicates whether only text is allowed in the meeting chat. Optional.',
@@ -583,7 +583,7 @@ class ChatType(Enum):
 
 
 class ChatViewpoint(BaseModel):
-    field_odata_type: str
+    field_odata_type: str | None = None
     is_hidden: bool | None = Field(
         None, description='Indicates whether the chat is hidden for the current user.'
     )
@@ -594,7 +594,7 @@ class ChatViewpoint(BaseModel):
 
 
 class ChoiceColumn(BaseModel):
-    field_odata_type: str
+    field_odata_type: str | None = None
     allow_text_entry: bool | None = Field(
         None,
         description="If true, allows custom values that aren't in the configured choices.",
@@ -616,7 +616,7 @@ class CloudAppSecuritySessionControlType(Enum):
 
 
 class CloudClipboardItemPayload(BaseModel):
-    field_odata_type: str
+    field_odata_type: str | None = None
     content: str | None = Field(
         None,
         description='The formatName version of the value of a cloud clipboard encoded in base64.',
@@ -726,7 +726,7 @@ class ConditionalAccessInsiderRiskLevels(Enum):
 
 
 class ConditionalAccessLocations(BaseModel):
-    field_odata_type: str
+    field_odata_type: str | None = None
     exclude_locations: List[str] | None = Field(
         None, description='Location IDs excluded from scope of policy.'
     )
@@ -737,7 +737,7 @@ class ConditionalAccessLocations(BaseModel):
 
 
 class ConditionalAccessPlatforms(BaseModel):
-    field_odata_type: str
+    field_odata_type: str | None = None
     exclude_platforms: List[ConditionalAccessDevicePlatform] | None = Field(
         None,
         description='Possible values are: android, iOS, windows, windowsPhone, macOS, linux, all, unknownFutureValue.',
@@ -755,7 +755,7 @@ class ConditionalAccessPolicyState(Enum):
 
 
 class ConditionalAccessSessionControl(BaseModel):
-    field_odata_type: str
+    field_odata_type: str | None = None
     is_enabled: bool | None = Field(
         None, description='Specifies whether the session control is enabled.'
     )
@@ -769,7 +769,7 @@ class ConditionalAccessTransferMethods(Enum):
 
 
 class ConfigurationManagerClientEnabledFeatures(BaseModel):
-    field_odata_type: str
+    field_odata_type: str | None = None
     compliance_policy: bool | None = Field(
         None, description='Whether compliance policy is managed by Intune'
     )
@@ -791,17 +791,17 @@ class ConfigurationManagerClientEnabledFeatures(BaseModel):
 
 
 class ContentApprovalStatusColumn(BaseModel):
-    field_odata_type: str
+    field_odata_type: str | None = None
 
 
 class ContentTypeInfo(BaseModel):
-    field_odata_type: str
+    field_odata_type: str | None = None
     id: str | None = Field(None, description='The ID of the content type.')
     name: str | None = Field(None, description='The name of the content type.')
 
 
 class ContentTypeOrder(BaseModel):
-    field_odata_type: str
+    field_odata_type: str | None = None
     default: bool | None = Field(
         None, description='Indicates whether this is the default content type'
     )
@@ -825,7 +825,7 @@ class CourseStatus(Enum):
 
 
 class CurrencyColumn(BaseModel):
-    field_odata_type: str
+    field_odata_type: str | None = None
     locale: str | None = Field(
         None,
         description='Specifies the locale from which to infer the currency symbol.',
@@ -833,11 +833,11 @@ class CurrencyColumn(BaseModel):
 
 
 class CustomSecurityAttributeValue(BaseModel):
-    field_odata_type: str
+    field_odata_type: str | None = None
 
 
 class DateTimeColumn(BaseModel):
-    field_odata_type: str
+    field_odata_type: str | None = None
     display_as: str | None = Field(
         None,
         description='How the value should be presented in the UX. Must be one of default, friendly, or standard. See below for more details. If unspecified, treated as default.',
@@ -849,7 +849,7 @@ class DateTimeColumn(BaseModel):
 
 
 class DateTimeTimeZone(BaseModel):
-    field_odata_type: str
+    field_odata_type: str | None = None
     date_time: str | None = Field(
         None,
         description='A single point of time in a combined date and time representation ({date}T{time}; for example, 2017-08-29T04:00:00.0000000).',
@@ -871,7 +871,7 @@ class DayOfWeek(Enum):
 
 
 class DefaultColumnValue(BaseModel):
-    field_odata_type: str
+    field_odata_type: str | None = None
     formula: str | None = Field(
         None,
         description='The formula used to compute the default value for the column.',
@@ -890,14 +890,14 @@ class DelegateMeetingMessageDeliveryOptions(Enum):
 
 
 class Deleted(BaseModel):
-    field_odata_type: str
+    field_odata_type: str | None = None
     state: str | None = Field(
         None, description='Represents the state of the deleted item.'
     )
 
 
 class DeviceActionResult(BaseModel):
-    field_odata_type: str
+    field_odata_type: str | None = None
     action_name: str | None = Field(None, description='Action name')
     action_state: ActionState | None = None
     last_updated_date_time: datetime | None = Field(
@@ -925,7 +925,7 @@ class DeviceEnrollmentType(Enum):
 
 
 class DeviceHealthAttestationState(BaseModel):
-    field_odata_type: str
+    field_odata_type: str | None = None
     attestation_identity_key: str | None = Field(
         None,
         description='TWhen an Attestation Identity Key (AIK) is present on a device, it indicates that the device has an endorsement key (EK) certificate.',
@@ -1079,7 +1079,7 @@ class DeviceRegistrationState(Enum):
 
 
 class DisplayNameLocalization(BaseModel):
-    field_odata_type: str
+    field_odata_type: str | None = None
     display_name: str | None = Field(
         None,
         description='If present, the value of this field contains the displayName string that has been set for the language present in the languageTag field.',
@@ -1091,7 +1091,7 @@ class DisplayNameLocalization(BaseModel):
 
 
 class DocumentSetContent(BaseModel):
-    field_odata_type: str
+    field_odata_type: str | None = None
     content_type: ContentTypeInfo | None = Field(
         None, description='Content type information of the file.'
     )
@@ -1106,14 +1106,14 @@ class DocumentSetContent(BaseModel):
 
 
 class DocumentSetVersionItem(BaseModel):
-    field_odata_type: str
+    field_odata_type: str | None = None
     item_id: str | None = Field(None, description='The unique identifier for the item.')
     title: str | None = Field(None, description='The title of the item.')
     version_id: str | None = Field(None, description='The version ID of the item.')
 
 
 class EmailAddress(BaseModel):
-    field_odata_type: str
+    field_odata_type: str | None = None
     address: str | None = Field(
         None, description='The email address of the person or entity.'
     )
@@ -1123,7 +1123,7 @@ class EmailAddress(BaseModel):
 
 
 class EmployeeOrgData(BaseModel):
-    field_odata_type: str
+    field_odata_type: str | None = None
     cost_center: str | None = Field(
         None,
         description='The cost center associated with the user. Returned only on $select. Supports $filter.',
@@ -1136,7 +1136,7 @@ class EmployeeOrgData(BaseModel):
 
 
 class EventMessageDetail(BaseModel):
-    field_odata_type: str
+    field_odata_type: str | None = None
 
 
 class EventType(Enum):
@@ -1147,7 +1147,7 @@ class EventType(Enum):
 
 
 class Extension(Entity):
-    field_odata_type: str
+    field_odata_type: str | None = None
 
 
 class ExternalAudienceScope(Enum):
@@ -1157,16 +1157,16 @@ class ExternalAudienceScope(Enum):
 
 
 class ExternalLink(BaseModel):
-    field_odata_type: str
+    field_odata_type: str | None = None
     href: str | None = Field(None, description='The URL of the link.')
 
 
 class FieldValueSet(Entity):
-    field_odata_type: str
+    field_odata_type: str | None = None
 
 
 class FileSystemInfo(BaseModel):
-    field_odata_type: str
+    field_odata_type: str | None = None
     created_date_time: datetime | None = Field(
         None, description='The UTC date and time the file was created on a client.'
     )
@@ -1186,7 +1186,7 @@ class FilterMode(Enum):
 
 
 class FolderView(BaseModel):
-    field_odata_type: str
+    field_odata_type: str | None = None
     sort_by: str | None = Field(
         None, description='The method by which the folder should be sorted.'
     )
@@ -1216,7 +1216,7 @@ class FreeBusyStatus(Enum):
 
 
 class GeoCoordinates(BaseModel):
-    field_odata_type: str
+    field_odata_type: str | None = None
     altitude: float | str | ReferenceNumeric | None = Field(
         None,
         description='Optional. The altitude (height), in feet,  above sea level for the item. Read-only.',
@@ -1231,7 +1231,7 @@ class GeoCoordinates(BaseModel):
 
 
 class GeolocationColumn(BaseModel):
-    field_odata_type: str
+    field_odata_type: str | None = None
 
 
 class GiphyRatingType(Enum):
@@ -1241,7 +1241,7 @@ class GiphyRatingType(Enum):
 
 
 class GroupLifecyclePolicy(Entity):
-    field_odata_type: str
+    field_odata_type: str | None = None
     alternate_notification_emails: str | None = Field(
         None,
         description='List of email address to send notifications for groups without owners. Multiple email address can be defined by separating email address with a semicolon.',
@@ -1257,7 +1257,7 @@ class GroupLifecyclePolicy(Entity):
 
 
 class Hashes(BaseModel):
-    field_odata_type: str
+    field_odata_type: str | None = None
     crc32_hash: str | None = Field(
         None,
         description='The CRC32 value of the file in little endian (if available). Read-only.',
@@ -1277,7 +1277,7 @@ class Hashes(BaseModel):
 
 
 class HyperlinkOrPictureColumn(BaseModel):
-    field_odata_type: str
+    field_odata_type: str | None = None
     is_picture: bool | None = Field(
         None,
         description='Specifies whether the display format used for URL columns is an image or a hyperlink.',
@@ -1285,7 +1285,7 @@ class HyperlinkOrPictureColumn(BaseModel):
 
 
 class Identity(BaseModel):
-    field_odata_type: str
+    field_odata_type: str | None = None
     display_name: str | None = Field(
         None,
         description="The display name of the identity.For drive items, the display name might not always be available or up to date. For example, if a user changes their display name the API might show the new value in a future response, but the items associated with the user don't show up as changed when using delta.",
@@ -1297,7 +1297,7 @@ class Identity(BaseModel):
 
 
 class IdentitySet(BaseModel):
-    field_odata_type: str
+    field_odata_type: str | None = None
     application: Identity | None = Field(
         None, description='Optional. The application associated with this action.'
     )
@@ -1310,7 +1310,7 @@ class IdentitySet(BaseModel):
 
 
 class Image(BaseModel):
-    field_odata_type: str
+    field_odata_type: str | None = None
     height: float | None = Field(
         None, description='Optional. Height of the image, in pixels. Read-only.'
     )
@@ -1320,7 +1320,7 @@ class Image(BaseModel):
 
 
 class ImageInfo(BaseModel):
-    field_odata_type: str
+    field_odata_type: str | None = None
     add_image_query: bool | None = Field(
         None,
         description='Optional; parameter used to indicate the server is able to render image dynamically in response to parameterization. For example – a high contrast image',
@@ -1342,7 +1342,7 @@ class Importance(Enum):
 
 
 class IncompleteData(BaseModel):
-    field_odata_type: str
+    field_odata_type: str | None = None
     missing_data_before_date_time: datetime | None = Field(
         None,
         description='The service does not have source data before the specified time.',
@@ -1358,7 +1358,7 @@ class InferenceClassificationType(Enum):
 
 
 class InsightIdentity(BaseModel):
-    field_odata_type: str
+    field_odata_type: str | None = None
     address: str | None = Field(
         None, description='The email address of the user who shared the item.'
     )
@@ -1369,7 +1369,7 @@ class InsightIdentity(BaseModel):
 
 
 class IntegerRange(BaseModel):
-    field_odata_type: str
+    field_odata_type: str | None = None
     end: float | None = Field(
         None, description='The inclusive upper bound of the integer range.'
     )
@@ -1379,7 +1379,7 @@ class IntegerRange(BaseModel):
 
 
 class InternetMessageHeader(BaseModel):
-    field_odata_type: str
+    field_odata_type: str | None = None
     name: str | None = Field(
         None, description='Represents the key in a key-value pair.'
     )
@@ -1387,11 +1387,11 @@ class InternetMessageHeader(BaseModel):
 
 
 class IpRange(BaseModel):
-    field_odata_type: str
+    field_odata_type: str | None = None
 
 
 class ItemActionStat(BaseModel):
-    field_odata_type: str
+    field_odata_type: str | None = None
     action_count: float | None = Field(
         None, description='The number of times the action took place. Read-only.'
     )
@@ -1402,7 +1402,7 @@ class ItemActionStat(BaseModel):
 
 
 class ItemBody(BaseModel):
-    field_odata_type: str
+    field_odata_type: str | None = None
     content: str | None = Field(None, description='The content of the item.')
     content_type: BodyType | None = Field(
         None, description='The type of the content. Possible values are text and html.'
@@ -1410,7 +1410,7 @@ class ItemBody(BaseModel):
 
 
 class JoinMeetingIdSettings(BaseModel):
-    field_odata_type: str
+    field_odata_type: str | None = None
     is_passcode_required: bool | None = Field(
         None,
         description='Indicates whether a passcode is required to join a meeting when using joinMeetingId. Optional.',
@@ -1426,7 +1426,7 @@ class JoinMeetingIdSettings(BaseModel):
 
 
 class LearningCourseActivity(Entity):
-    field_odata_type: str
+    field_odata_type: str | None = None
     completed_date_time: datetime | None = Field(
         None, description='Date and time when the assignment was completed. Optional.'
     )
@@ -1453,7 +1453,7 @@ class LearningCourseActivity(Entity):
 
 
 class LicenseAssignmentState(BaseModel):
-    field_odata_type: str
+    field_odata_type: str | None = None
     assigned_by_group: str | None = None
     disabled_plans: List[UUID] | None = None
     error: str | None = None
@@ -1463,12 +1463,12 @@ class LicenseAssignmentState(BaseModel):
 
 
 class LicenseProcessingState(BaseModel):
-    field_odata_type: str
+    field_odata_type: str | None = None
     state: str | None = None
 
 
 class LicenseUnitsDetail(BaseModel):
-    field_odata_type: str
+    field_odata_type: str | None = None
     enabled: float | None = Field(
         None,
         description='The number of units that are enabled for the active subscription of the service SKU.',
@@ -1488,7 +1488,7 @@ class LicenseUnitsDetail(BaseModel):
 
 
 class LinkedResource(Entity):
-    field_odata_type: str
+    field_odata_type: str | None = None
     application_name: str | None = Field(
         None, description='The app name of the source that sends the linkedResource.'
     )
@@ -1503,7 +1503,7 @@ class LinkedResource(Entity):
 
 
 class ListInfo(BaseModel):
-    field_odata_type: str
+    field_odata_type: str | None = None
     content_types_enabled: bool | None = Field(
         None,
         description='If true, indicates that content types are enabled for this list.',
@@ -1529,7 +1529,7 @@ class LobbyBypassScope(Enum):
 
 
 class LobbyBypassSettings(BaseModel):
-    field_odata_type: str
+    field_odata_type: str | None = None
     is_dial_in_bypass_enabled: bool | None = Field(
         None,
         description='Specifies whether or not to always let dial-in callers bypass the lobby. Optional.',
@@ -1541,7 +1541,7 @@ class LobbyBypassSettings(BaseModel):
 
 
 class LocaleInfo(BaseModel):
-    field_odata_type: str
+    field_odata_type: str | None = None
     display_name: str | None = Field(
         None,
         description="A name representing the user's locale in natural language, for example, 'English (United States)'.",
@@ -1582,7 +1582,7 @@ class LongRunningOperationStatus(Enum):
 
 
 class LookupColumn(BaseModel):
-    field_odata_type: str
+    field_odata_type: str | None = None
     allow_multiple_values: bool | None = Field(
         None,
         description='Indicates whether multiple values can be selected from the source.',
@@ -1604,7 +1604,7 @@ class LookupColumn(BaseModel):
 
 
 class Malware(BaseModel):
-    field_odata_type: str
+    field_odata_type: str | None = None
     description: str | None = Field(
         None, description='Contains the virus details for the malware facet.'
     )
@@ -1616,7 +1616,7 @@ class ManagedAppFlaggedReason(Enum):
 
 
 class ManagedAppOperation(Entity):
-    field_odata_type: str
+    field_odata_type: str | None = None
     display_name: str | None = Field(None, description='The operation name.')
     last_modified_date_time: datetime | None = Field(
         None, description='The last time the app operation was modified.'
@@ -1626,7 +1626,7 @@ class ManagedAppOperation(Entity):
 
 
 class ManagedAppPolicy(Entity):
-    field_odata_type: str
+    field_odata_type: str | None = None
     created_date_time: datetime | None = Field(
         None, description='The date and time the policy was created.'
     )
@@ -1702,18 +1702,18 @@ class MessageActionFlag(Enum):
 
 
 class MobileAppIdentifier(BaseModel):
-    field_odata_type: str
+    field_odata_type: str | None = None
 
 
 class MultiValueLegacyExtendedProperty(Entity):
-    field_odata_type: str
+    field_odata_type: str | None = None
     value: List[str] | None = Field(
         None, description='A collection of property values.'
     )
 
 
 class NamedLocation(Entity):
-    field_odata_type: str
+    field_odata_type: str | None = None
     created_date_time: datetime | None = Field(
         None,
         description='The Timestamp type represents creation date and time of the location using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.',
@@ -1728,7 +1728,7 @@ class NamedLocation(Entity):
 
 
 class NotebookLinks(BaseModel):
-    field_odata_type: str
+    field_odata_type: str | None = None
     one_note_client_url: ExternalLink | None = Field(
         None,
         description="Opens the notebook in the OneNote native client if it's installed.",
@@ -1739,7 +1739,7 @@ class NotebookLinks(BaseModel):
 
 
 class NumberColumn(BaseModel):
-    field_odata_type: str
+    field_odata_type: str | None = None
     decimal_places: str | None = Field(
         None,
         description='How many decimal places to display. See below for information about the possible values.',
@@ -1757,7 +1757,7 @@ class NumberColumn(BaseModel):
 
 
 class OAuth2PermissionGrant(Entity):
-    field_odata_type: str
+    field_odata_type: str | None = None
     client_id: str | None = Field(
         None,
         description="The object id (not appId) of the client service principal for the application that's authorized to act on behalf of a signed-in user when accessing an API. Required. Supports $filter (eq only).",
@@ -1781,7 +1781,7 @@ class OAuth2PermissionGrant(Entity):
 
 
 class ObjectIdentity(BaseModel):
-    field_odata_type: str
+    field_odata_type: str | None = None
     issuer: str | None = Field(
         None,
         description="Specifies the issuer of the identity, for example facebook.com. 512 character limit. For local accounts (where signInType isn't federated), this property is the local default domain name for the tenant, for example contoso.com.  For guests from other Microsoft Entra organizations, this is the domain of the federated organization, for example contoso.com. For more information about filtering behavior for this property, see Filtering on the identities property of a user.",
@@ -1797,7 +1797,7 @@ class ObjectIdentity(BaseModel):
 
 
 class OnPremisesExtensionAttributes(BaseModel):
-    field_odata_type: str
+    field_odata_type: str | None = None
     extension_attribute1: str | None = Field(
         None, description='First customizable extension attribute.'
     )
@@ -1846,7 +1846,7 @@ class OnPremisesExtensionAttributes(BaseModel):
 
 
 class OnPremisesProvisioningError(BaseModel):
-    field_odata_type: str
+    field_odata_type: str | None = None
     category: str | None = Field(
         None,
         description='Category of the provisioning error. Note: Currently, there is only one possible value. Possible value: PropertyConflict - indicates a property value is not unique. Other objects contain the same value for the property.',
@@ -1864,7 +1864,7 @@ class OnPremisesProvisioningError(BaseModel):
 
 
 class OnenoteEntityBaseModel(Entity):
-    field_odata_type: str
+    field_odata_type: str | None = None
     self: str | None = Field(
         None,
         description='The endpoint where you can get details about the page. Read-only.',
@@ -1872,7 +1872,7 @@ class OnenoteEntityBaseModel(Entity):
 
 
 class OnenoteEntitySchemaObjectModel(OnenoteEntityBaseModel):
-    field_odata_type: str
+    field_odata_type: str | None = None
     created_date_time: datetime | None = Field(
         None,
         description='The date and time when the page was created. The timestamp represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.',
@@ -1880,13 +1880,13 @@ class OnenoteEntitySchemaObjectModel(OnenoteEntityBaseModel):
 
 
 class OnenoteOperationError(BaseModel):
-    field_odata_type: str
+    field_odata_type: str | None = None
     code: str | None = Field(None, description='The error code.')
     message: str | None = Field(None, description='The error message.')
 
 
 class OnenoteResource(OnenoteEntityBaseModel):
-    field_odata_type: str
+    field_odata_type: str | None = None
     content: str | None = Field(None, description='The content stream')
     content_url: str | None = Field(
         None, description='The URL for downloading the content'
@@ -1924,7 +1924,7 @@ class OnlineMeetingRole(Enum):
 
 
 class OperationError(BaseModel):
-    field_odata_type: str
+    field_odata_type: str | None = None
     code: str | None = Field(None, description='Operation error code.')
     message: str | None = Field(None, description='Operation error message.')
 
@@ -1937,7 +1937,7 @@ class OperationStatus(Enum):
 
 
 class OutlookCategory(Entity):
-    field_odata_type: str
+    field_odata_type: str | None = None
     color: CategoryColor | None = Field(
         None,
         description='A pre-set color constant that characterizes a category, and that is mapped to one of 25 predefined colors. For more details, see the following note.',
@@ -1949,7 +1949,7 @@ class OutlookCategory(Entity):
 
 
 class OutlookGeoCoordinates(BaseModel):
-    field_odata_type: str
+    field_odata_type: str | None = None
     accuracy: float | str | ReferenceNumeric | None = Field(
         None,
         description='The accuracy of the latitude and longitude. As an example, the accuracy can be measured in meters, such as the latitude and longitude are accurate to within 50 meters.',
@@ -1969,7 +1969,7 @@ class OutlookGeoCoordinates(BaseModel):
 
 
 class OutlookItem(Entity):
-    field_odata_type: str
+    field_odata_type: str | None = None
     categories: List[str] | None = Field(
         None, description='The categories associated with the item'
     )
@@ -1988,14 +1988,14 @@ class OutlookItem(Entity):
 
 
 class OutlookUser(Entity):
-    field_odata_type: str
+    field_odata_type: str | None = None
     master_categories: List[OutlookCategory] | None = Field(
         None, description='A list of categories defined for the user.'
     )
 
 
 class Package(BaseModel):
-    field_odata_type: str
+    field_odata_type: str | None = None
     type: str | None = Field(
         None,
         description='A string indicating the type of package. While oneNote is the only currently defined value, you should expect other package types to be returned and handle them accordingly.',
@@ -2010,7 +2010,7 @@ class PageLayoutType(Enum):
 
 
 class PageLinks(BaseModel):
-    field_odata_type: str
+    field_odata_type: str | None = None
     one_note_client_url: ExternalLink | None = Field(
         None,
         description="Opens the page in the OneNote native client if it's installed.",
@@ -2021,7 +2021,7 @@ class PageLinks(BaseModel):
 
 
 class PasswordProfile(BaseModel):
-    field_odata_type: str
+    field_odata_type: str | None = None
     force_change_password_next_sign_in: bool | None = Field(
         None,
         description='true if the user must change their password on the next sign-in; otherwise false.',
@@ -2037,7 +2037,7 @@ class PasswordProfile(BaseModel):
 
 
 class PendingContentUpdate(BaseModel):
-    field_odata_type: str
+    field_odata_type: str | None = None
     queued_date_time: datetime | None = Field(
         None,
         description='Date and time the pending binary operation was queued in UTC time. Read-only.',
@@ -2045,7 +2045,7 @@ class PendingContentUpdate(BaseModel):
 
 
 class PendingOperations(BaseModel):
-    field_odata_type: str
+    field_odata_type: str | None = None
     pending_content_update: PendingContentUpdate | None = Field(
         None,
         description='A property that indicates that an operation that might update the binary content of a file is pending completion.',
@@ -2058,7 +2058,7 @@ class PersistentBrowserSessionMode(Enum):
 
 
 class PersonOrGroupColumn(BaseModel):
-    field_odata_type: str
+    field_odata_type: str | None = None
     allow_multiple_selection: bool | None = Field(
         None,
         description='Indicates whether multiple values can be selected from the source.',
@@ -2074,7 +2074,7 @@ class PersonOrGroupColumn(BaseModel):
 
 
 class PersonType(BaseModel):
-    field_odata_type: str
+    field_odata_type: str | None = None
     class_: str | None = Field(
         None, description='The type of data source, such as Person.'
     )
@@ -2097,7 +2097,7 @@ class PhoneType(Enum):
 
 
 class Photo(BaseModel):
-    field_odata_type: str
+    field_odata_type: str | None = None
     camera_make: str | None = Field(None, description='Camera manufacturer. Read-only.')
     camera_model: str | None = Field(None, description='Camera model. Read-only.')
     exposure_denominator: float | str | ReferenceNumeric | None = Field(
@@ -2127,7 +2127,7 @@ class Photo(BaseModel):
 
 
 class PhysicalAddress(BaseModel):
-    field_odata_type: str
+    field_odata_type: str | None = None
     city: str | None = Field(None, description='The city.')
     country_or_region: str | None = Field(
         None,
@@ -2139,15 +2139,15 @@ class PhysicalAddress(BaseModel):
 
 
 class PlannerAppliedCategories(BaseModel):
-    field_odata_type: str
+    field_odata_type: str | None = None
 
 
 class PlannerAssignments(BaseModel):
-    field_odata_type: str
+    field_odata_type: str | None = None
 
 
 class PlannerBucketTaskBoardTaskFormat(Entity):
-    field_odata_type: str
+    field_odata_type: str | None = None
     order_hint: str | None = Field(
         None,
         description='Hint used to order tasks in the bucket view of the task board. For details about the supported format, see Using order hints in Planner.',
@@ -2155,7 +2155,7 @@ class PlannerBucketTaskBoardTaskFormat(Entity):
 
 
 class PlannerCategoryDescriptions(BaseModel):
-    field_odata_type: str
+    field_odata_type: str | None = None
     category1: str | None = Field(
         None, description='The label associated with Category 1'
     )
@@ -2234,7 +2234,7 @@ class PlannerCategoryDescriptions(BaseModel):
 
 
 class PlannerChecklistItems(BaseModel):
-    field_odata_type: str
+    field_odata_type: str | None = None
 
 
 class PlannerContainerType(Enum):
@@ -2244,15 +2244,15 @@ class PlannerContainerType(Enum):
 
 
 class PlannerExternalReferences(BaseModel):
-    field_odata_type: str
+    field_odata_type: str | None = None
 
 
 class PlannerOrderHintsByAssignee(BaseModel):
-    field_odata_type: str
+    field_odata_type: str | None = None
 
 
 class PlannerPlanContainer(BaseModel):
-    field_odata_type: str
+    field_odata_type: str | None = None
     container_id: str | None = Field(
         None,
         description='The identifier of the resource that contains the plan. Optional.',
@@ -2275,7 +2275,7 @@ class PlannerPreviewType(Enum):
 
 
 class PlannerProgressTaskBoardTaskFormat(Entity):
-    field_odata_type: str
+    field_odata_type: str | None = None
     order_hint: str | None = Field(
         None,
         description='Hint value used to order the task on the progress view of the task board. For details about the supported format, see Using order hints in Planner.',
@@ -2283,7 +2283,7 @@ class PlannerProgressTaskBoardTaskFormat(Entity):
 
 
 class PlannerTaskDetails(Entity):
-    field_odata_type: str
+    field_odata_type: str | None = None
     checklist: PlannerChecklistItems | None = Field(
         None, description='The collection of checklist items on the task.'
     )
@@ -2298,7 +2298,7 @@ class PlannerTaskDetails(Entity):
 
 
 class PlannerUserIds(BaseModel):
-    field_odata_type: str
+    field_odata_type: str | None = None
 
 
 class PolicyPlatformType(Enum):
@@ -2313,7 +2313,7 @@ class PolicyPlatformType(Enum):
 
 
 class PresenceStatusMessage(BaseModel):
-    field_odata_type: str
+    field_odata_type: str | None = None
     expiry_date_time: DateTimeTimeZone | None = Field(
         None,
         description="Time in which the status message expires.If not provided, the status message doesn't expire.expiryDateTime.dateTime shouldn't include time zone.expiryDateTime isn't available when you request the presence of another user.",
@@ -2337,7 +2337,7 @@ class PrintColorMode(Enum):
 
 
 class PrintDocument(Entity):
-    field_odata_type: str
+    field_odata_type: str | None = None
     content_type: str | None = Field(
         None, description="The document's content (MIME) type. Read-only."
     )
@@ -2454,7 +2454,7 @@ class PrintJobStateDetail(Enum):
 
 
 class PrintJobStatus(BaseModel):
-    field_odata_type: str
+    field_odata_type: str | None = None
     description: str | None = Field(
         None,
         description="A human-readable description of the print job's current processing state. Read-only.",
@@ -2471,7 +2471,7 @@ class PrintJobStatus(BaseModel):
 
 
 class PrintMargin(BaseModel):
-    field_odata_type: str
+    field_odata_type: str | None = None
     bottom: float | None = Field(
         None, description='The margin in microns from the bottom edge.'
     )
@@ -2531,7 +2531,7 @@ class PrintTaskProcessingState(Enum):
 
 
 class PrintTaskStatus(BaseModel):
-    field_odata_type: str
+    field_odata_type: str | None = None
     description: str | None = Field(
         None,
         description='A human-readable description of the current processing state of the printTask.',
@@ -2540,7 +2540,7 @@ class PrintTaskStatus(BaseModel):
 
 
 class PrinterDefaults(BaseModel):
-    field_odata_type: str
+    field_odata_type: str | None = None
     color_mode: PrintColorMode | None = Field(
         None,
         description='The default color mode to use when printing the document. Valid values are described in the following table.',
@@ -2614,7 +2614,7 @@ class PrinterFeedOrientation(Enum):
 
 
 class PrinterLocation(BaseModel):
-    field_odata_type: str
+    field_odata_type: str | None = None
     altitude_in_meters: float | None = Field(
         None, description='The altitude, in meters, that the printer is located at.'
     )
@@ -3510,7 +3510,7 @@ class PrinterProcessingStateDetail(Enum):
 
 
 class PrinterShareViewpoint(BaseModel):
-    field_odata_type: str
+    field_odata_type: str | None = None
     last_used_date_time: datetime | None = Field(
         None,
         description='Date and time when the printer was last used by the signed-in user. The timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.',
@@ -3518,7 +3518,7 @@ class PrinterShareViewpoint(BaseModel):
 
 
 class PrinterStatus(BaseModel):
-    field_odata_type: str
+    field_odata_type: str | None = None
     description: str | None = Field(
         None,
         description="A human-readable description of the printer's current processing state. Read-only.",
@@ -3531,7 +3531,7 @@ class PrinterStatus(BaseModel):
 
 
 class ProfilePhoto(Entity):
-    field_odata_type: str
+    field_odata_type: str | None = None
     height: float | None = Field(
         None, description='The height of the photo. Read-only.'
     )
@@ -3541,7 +3541,7 @@ class ProfilePhoto(Entity):
 
 
 class ProvisionedPlan(BaseModel):
-    field_odata_type: str
+    field_odata_type: str | None = None
     capability_status: str | None = Field(
         None,
         description='Condition of the capability assignment. The possible values are Enabled, Warning, Suspended, Deleted, LockedOut. See a detailed description of each value.',
@@ -3556,14 +3556,14 @@ class ProvisionedPlan(BaseModel):
 
 
 class PublicErrorDetail(BaseModel):
-    field_odata_type: str
+    field_odata_type: str | None = None
     code: str | None = Field(None, description='The error code.')
     message: str | None = Field(None, description='The error message.')
     target: str | None = Field(None, description='The target of the error.')
 
 
 class PublicInnerError(BaseModel):
-    field_odata_type: str
+    field_odata_type: str | None = None
     code: str | None = Field(None, description='The error code.')
     details: List[PublicErrorDetail] | None = Field(
         None, description='A collection of error details.'
@@ -3573,7 +3573,7 @@ class PublicInnerError(BaseModel):
 
 
 class PublicationFacet(BaseModel):
-    field_odata_type: str
+    field_odata_type: str | None = None
     checked_out_by: IdentitySet | None = Field(
         None, description='The user who checked out the file.'
     )
@@ -3588,7 +3588,7 @@ class PublicationFacet(BaseModel):
 
 
 class Recipient(BaseModel):
-    field_odata_type: str
+    field_odata_type: str | None = None
     email_address: EmailAddress | None = Field(
         None, description="The recipient's email address."
     )
@@ -3610,7 +3610,7 @@ class RecurrenceRangeType(Enum):
 
 
 class ResourceReference(BaseModel):
-    field_odata_type: str
+    field_odata_type: str | None = None
     id: str | None = Field(None, description="The item's unique identifier.")
     type: str | None = Field(
         None,
@@ -3622,7 +3622,7 @@ class ResourceReference(BaseModel):
 
 
 class ResourceVisualization(BaseModel):
-    field_odata_type: str
+    field_odata_type: str | None = None
     container_display_name: str | None = Field(
         None,
         description='A string describing where the item is stored. For example, the name of a SharePoint site or the user name identifying the owner of the OneDrive storing the item.',
@@ -3668,7 +3668,7 @@ class RiskLevel(Enum):
 
 
 class Root(BaseModel):
-    field_odata_type: str
+    field_odata_type: str | None = None
 
 
 class ScheduleChangeRequestActor(Enum):
@@ -3703,7 +3703,7 @@ class ScheduleEntityTheme(Enum):
 
 
 class ScopedRoleMembership(Entity):
-    field_odata_type: str
+    field_odata_type: str | None = None
     administrative_unit_id: str | None = Field(
         None,
         description='Unique identifier for the administrative unit that the directory role is scoped to',
@@ -3716,7 +3716,7 @@ class ScopedRoleMembership(Entity):
 
 
 class SearchResult(BaseModel):
-    field_odata_type: str
+    field_odata_type: str | None = None
     on_click_telemetry_url: str | None = Field(
         None,
         description='A callback URL that can be used to record telemetry information. The application should issue a GET on this URL if the user interacts with this item to improve the quality of results.',
@@ -3724,7 +3724,7 @@ class SearchResult(BaseModel):
 
 
 class SectionLinks(BaseModel):
-    field_odata_type: str
+    field_odata_type: str | None = None
     one_note_client_url: ExternalLink | None = Field(
         None,
         description="Opens the section in the OneNote native client if it's installed.",
@@ -3747,7 +3747,7 @@ class Sensitivity(Enum):
 
 
 class ServicePlanInfo(BaseModel):
-    field_odata_type: str
+    field_odata_type: str | None = None
     applies_to: str | None = Field(
         None,
         description='The object the service plan can be assigned to. The possible values are:User - service plan can be assigned to individual users.Company - service plan can be assigned to the entire tenant.',
@@ -3765,7 +3765,7 @@ class ServicePlanInfo(BaseModel):
 
 
 class ServiceProvisioningError(BaseModel):
-    field_odata_type: str
+    field_odata_type: str | None = None
     created_date_time: datetime | None = Field(
         None, description='The date and time at which the error occurred.'
     )
@@ -3784,7 +3784,7 @@ class SettingSourceType(Enum):
 
 
 class SettingValue(BaseModel):
-    field_odata_type: str
+    field_odata_type: str | None = None
     name: str | None = Field(
         None,
         description='Name of the setting (as defined by the groupSettingTemplate).',
@@ -3793,14 +3793,14 @@ class SettingValue(BaseModel):
 
 
 class SharePointIdentity(Identity):
-    field_odata_type: str
+    field_odata_type: str | None = None
     login_name: str | None = Field(
         None, description='The sign in name of the SharePoint identity.'
     )
 
 
 class SharePointIdentitySet(IdentitySet):
-    field_odata_type: str
+    field_odata_type: str | None = None
     group: Identity | None = Field(
         None, description='The group associated with this action. Optional.'
     )
@@ -3813,7 +3813,7 @@ class SharePointIdentitySet(IdentitySet):
 
 
 class Shared(BaseModel):
-    field_odata_type: str
+    field_odata_type: str | None = None
     owner: IdentitySet | None = Field(
         None, description='The identity of the owner of the shared item. Read-only.'
     )
@@ -3830,7 +3830,7 @@ class Shared(BaseModel):
 
 
 class SharepointIds(BaseModel):
-    field_odata_type: str
+    field_odata_type: str | None = None
     list_id: str | None = Field(
         None,
         description="The unique identifier (guid) for the item's list in SharePoint.",
@@ -3859,7 +3859,7 @@ class SharepointIds(BaseModel):
 
 
 class SharingDetail(BaseModel):
-    field_odata_type: str
+    field_odata_type: str | None = None
     shared_by: InsightIdentity | None = Field(
         None, description='The user who shared the document.'
     )
@@ -3881,7 +3881,7 @@ class SharingDetail(BaseModel):
 
 
 class SharingInvitation(BaseModel):
-    field_odata_type: str
+    field_odata_type: str | None = None
     email: str | None = Field(
         None,
         description='The email address provided for the recipient of the sharing invitation. Read-only.',
@@ -3898,7 +3898,7 @@ class SharingInvitation(BaseModel):
 
 
 class SharingLink(BaseModel):
-    field_odata_type: str
+    field_odata_type: str | None = None
     application: Identity | None = Field(
         None, description='The app the link is associated with.'
     )
@@ -3922,7 +3922,7 @@ class SharingLink(BaseModel):
 
 
 class ShiftActivity(BaseModel):
-    field_odata_type: str
+    field_odata_type: str | None = None
     code: str | None = Field(
         None, description='Customer defined code for the shiftActivity. Required.'
     )
@@ -3945,7 +3945,7 @@ class ShiftActivity(BaseModel):
 
 
 class SignInActivity(BaseModel):
-    field_odata_type: str
+    field_odata_type: str | None = None
     last_non_interactive_sign_in_date_time: datetime | None = Field(
         None,
         description='The last non-interactive sign-in date for a specific user. You can use this field to calculate the last time a client attempted (either successfully or unsuccessfully) to sign in to the directory on behalf of a user. Because some users may use clients to access tenant resources rather than signing into your tenant directly, you can use the non-interactive sign-in date to along with lastSignInDateTime to identify inactive users. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Microsoft Entra ID maintains non-interactive sign-ins going back to May 2020. For more information about using the value of this property, see Manage inactive user accounts in Microsoft Entra ID.',
@@ -3989,7 +3989,7 @@ class SigninFrequencyType(Enum):
 
 
 class SingleValueLegacyExtendedProperty(Entity):
-    field_odata_type: str
+    field_odata_type: str | None = None
     value: str | None = Field(None, description='A property value.')
 
 
@@ -4001,7 +4001,7 @@ class SiteArchiveStatus(Enum):
 
 
 class SizeRange(BaseModel):
-    field_odata_type: str
+    field_odata_type: str | None = None
     maximum_size: float | None = Field(
         None,
         description='The maximum size (in kilobytes) that an incoming message must have in order for a condition or exception to apply.',
@@ -4013,7 +4013,7 @@ class SizeRange(BaseModel):
 
 
 class SpecialFolder(BaseModel):
-    field_odata_type: str
+    field_odata_type: str | None = None
     name: str | None = Field(
         None,
         description='The unique identifier for this item in the /drive/special collection',
@@ -4029,7 +4029,7 @@ class Status(Enum):
 
 
 class StoragePlanInformation(BaseModel):
-    field_odata_type: str
+    field_odata_type: str | None = None
     upgrade_available: bool | None = Field(
         None,
         description='Indicates whether there are higher storage quota plans available. Read-only.',
@@ -4037,14 +4037,14 @@ class StoragePlanInformation(BaseModel):
 
 
 class StorageQuotaBreakdown(Entity):
-    field_odata_type: str
+    field_odata_type: str | None = None
     display_name: str | None = None
     manage_web_url: str | None = None
     used: float | None = None
 
 
 class SubscribedSku(Entity):
-    field_odata_type: str
+    field_odata_type: str | None = None
     account_id: str | None = Field(
         None, description='The unique ID of the account this SKU belongs to.'
     )
@@ -4082,7 +4082,7 @@ class SubscribedSku(Entity):
 
 
 class Subscription(Entity):
-    field_odata_type: str
+    field_odata_type: str | None = None
     application_id: str | None = Field(
         None,
         description='Optional. Identifier of the application used to create the subscription. Read-only.',
@@ -4142,7 +4142,7 @@ class Subscription(Entity):
 
 
 class SystemFacet(BaseModel):
-    field_odata_type: str
+    field_odata_type: str | None = None
 
 
 class TaskStatus(Enum):
@@ -4154,7 +4154,7 @@ class TaskStatus(Enum):
 
 
 class TeamFunSettings(BaseModel):
-    field_odata_type: str
+    field_odata_type: str | None = None
     allow_custom_memes: bool | None = Field(
         None, description='If set to true, enables users to include custom memes.'
     )
@@ -4170,7 +4170,7 @@ class TeamFunSettings(BaseModel):
 
 
 class TeamGuestSettings(BaseModel):
-    field_odata_type: str
+    field_odata_type: str | None = None
     allow_create_update_channels: bool | None = Field(
         None, description='If set to true, guests can add and update channels.'
     )
@@ -4180,7 +4180,7 @@ class TeamGuestSettings(BaseModel):
 
 
 class TeamMemberSettings(BaseModel):
-    field_odata_type: str
+    field_odata_type: str | None = None
     allow_add_remove_apps: bool | None = Field(
         None, description='If set to true, members can add and remove apps.'
     )
@@ -4203,7 +4203,7 @@ class TeamMemberSettings(BaseModel):
 
 
 class TeamMessagingSettings(BaseModel):
-    field_odata_type: str
+    field_odata_type: str | None = None
     allow_channel_mentions: bool | None = Field(
         None, description='If set to true, @channel mentions are allowed.'
     )
@@ -4233,7 +4233,7 @@ class TeamSpecialization(Enum):
 
 
 class TeamSummary(BaseModel):
-    field_odata_type: str
+    field_odata_type: str | None = None
     guests_count: float | None = Field(
         None, description='Count of guests in a team.'
     )
@@ -4295,7 +4295,7 @@ class TeamsAsyncOperationType(Enum):
 
 
 class TeamsTabConfiguration(BaseModel):
-    field_odata_type: str
+    field_odata_type: str | None = None
     content_url: str | None = Field(
         None, description='Url used for rendering tab contents in Teams. Required.'
     )
@@ -4312,11 +4312,11 @@ class TeamsTabConfiguration(BaseModel):
 
 
 class TeamsTemplate(Entity):
-    field_odata_type: str
+    field_odata_type: str | None = None
 
 
 class TeamworkBot(Entity):
-    field_odata_type: str
+    field_odata_type: str | None = None
 
 
 class TeamworkConversationIdentityType(Enum):
@@ -4327,7 +4327,7 @@ class TeamworkConversationIdentityType(Enum):
 
 
 class TeamworkHostedContent(Entity):
-    field_odata_type: str
+    field_odata_type: str | None = None
     content_bytes: str | None = Field(
         None, description='Write only. Bytes for the hosted content (such as images).'
     )
@@ -4337,7 +4337,7 @@ class TeamworkHostedContent(Entity):
 
 
 class TeamworkTagMember(Entity):
-    field_odata_type: str
+    field_odata_type: str | None = None
     display_name: str | None = Field(None, description="The member's display name.")
     tenant_id: str | None = Field(
         None, description='The ID of the tenant that the tag member is a part of.'
@@ -4363,7 +4363,7 @@ class TeamworkUserIdentityType(Enum):
 
 
 class TenantInformation(BaseModel):
-    field_odata_type: str
+    field_odata_type: str | None = None
     default_domain_name: str | None = Field(
         None, description='Primary domain name of a Microsoft Entra tenant.'
     )
@@ -4380,7 +4380,7 @@ class TenantInformation(BaseModel):
 
 
 class TextColumn(BaseModel):
-    field_odata_type: str
+    field_odata_type: str | None = None
     allow_multiple_lines: bool | None = Field(
         None, description='Whether to allow multiple lines of text.'
     )
@@ -4401,7 +4401,7 @@ class TextColumn(BaseModel):
 
 
 class Thumbnail(BaseModel):
-    field_odata_type: str
+    field_odata_type: str | None = None
     content: str | None = Field(
         None, description='The content stream for the thumbnail.'
     )
@@ -4421,11 +4421,11 @@ class Thumbnail(BaseModel):
 
 
 class ThumbnailColumn(BaseModel):
-    field_odata_type: str
+    field_odata_type: str | None = None
 
 
 class ThumbnailSet(Entity):
-    field_odata_type: str
+    field_odata_type: str | None = None
     large: Thumbnail | None = Field(
         None, description='A 1920x1920 scaled thumbnail.'
     )
@@ -4467,19 +4467,19 @@ class TimeOffReasonIconType(Enum):
 
 
 class TimeRange(BaseModel):
-    field_odata_type: str
+    field_odata_type: str | None = None
     end_time: time | None = Field(None, description='End time for the time range.')
     start_time: time | None = Field(None, description='Start time for the time range.')
 
 
 class TimeSlot(BaseModel):
-    field_odata_type: str
+    field_odata_type: str | None = None
     end: DateTimeTimeZone | None = None
     start: DateTimeTimeZone | None = None
 
 
 class TimeZoneBase(BaseModel):
-    field_odata_type: str
+    field_odata_type: str | None = None
     name: str | None = Field(
         None,
         description="The name of a time zone. It can be a standard time zone name such as 'Hawaii-Aleutian Standard Time', or 'Customized Time Zone' for a custom time zone.",
@@ -4487,7 +4487,7 @@ class TimeZoneBase(BaseModel):
 
 
 class Trending(Entity):
-    field_odata_type: str
+    field_odata_type: str | None = None
     last_modified_date_time: datetime | None = Field(
         None,
         description='The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z',
@@ -4510,7 +4510,7 @@ class Trending(Entity):
 
 
 class UnifiedRolePermission(BaseModel):
-    field_odata_type: str
+    field_odata_type: str | None = None
     allowed_resource_actions: List[str] | None = Field(
         None, description='Set of tasks that can be performed on a resource. Required.'
     )
@@ -4525,7 +4525,7 @@ class UnifiedRolePermission(BaseModel):
 
 
 class UsageDetails(BaseModel):
-    field_odata_type: str
+    field_odata_type: str | None = None
     last_accessed_date_time: datetime | None = Field(
         None,
         description='The date and time the resource was last accessed by the user. The timestamp represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.',
@@ -4537,7 +4537,7 @@ class UsageDetails(BaseModel):
 
 
 class UsedInsight(Entity):
-    field_odata_type: str
+    field_odata_type: str | None = None
     last_used: UsageDetails | None = Field(
         None,
         description='Information about when the item was last viewed or modified by the user. Read only.',
@@ -4557,7 +4557,7 @@ class UsedInsight(Entity):
 
 
 class UserIdentity(Identity):
-    field_odata_type: str
+    field_odata_type: str | None = None
     ip_address: str | None = Field(
         None,
         description='Indicates the client IP address associated with the user performing the activity (audit log only).',
@@ -4568,7 +4568,7 @@ class UserIdentity(Identity):
 
 
 class UserInsightsSettings(Entity):
-    field_odata_type: str
+    field_odata_type: str | None = None
     is_enabled: bool | None = Field(
         None,
         description="True if the user's itemInsights and meeting hours insights are enabled; false if the user's itemInsights and meeting hours insights are disabled. The default value is true. Optional.",
@@ -4586,7 +4586,7 @@ class UserPurpose(Enum):
 
 
 class Video(BaseModel):
-    field_odata_type: str
+    field_odata_type: str | None = None
     audio_bits_per_sample: float | None = Field(
         None, description='Number of audio bits per sample.'
     )
@@ -4620,7 +4620,7 @@ class Video(BaseModel):
 
 
 class VisualInfo(BaseModel):
-    field_odata_type: str
+    field_odata_type: str | None = None
     attribution: ImageInfo | None = Field(
         None,
         description='Optional. JSON object used to represent an icon which represents the application used to generate the activity',
@@ -4644,7 +4644,7 @@ class VisualInfo(BaseModel):
 
 
 class WatermarkProtectionValues(BaseModel):
-    field_odata_type: str
+    field_odata_type: str | None = None
     is_enabled_for_content_sharing: bool | None = Field(
         None,
         description='Indicates whether to apply a watermark to any shared content.',
@@ -4826,7 +4826,7 @@ class WindowsMalwareThreatState(Enum):
 
 
 class WindowsSettingInstance(Entity):
-    field_odata_type: str
+    field_odata_type: str | None = None
     created_date_time: datetime | None = Field(
         None,
         description='Set by the server. Represents the dateTime in UTC when the object was created on the server.',
@@ -4849,7 +4849,7 @@ class WindowsSettingType(Enum):
 
 
 class WorkbookApplication(Entity):
-    field_odata_type: str
+    field_odata_type: str | None = None
     calculation_mode: str | None = Field(
         None,
         description='Returns the calculation mode used in the workbook. Possible values are: Automatic, AutomaticExceptTables, Manual.',
@@ -4857,11 +4857,11 @@ class WorkbookApplication(Entity):
 
 
 class WorkbookChartFill(Entity):
-    field_odata_type: str
+    field_odata_type: str | None = None
 
 
 class WorkbookChartFont(Entity):
-    field_odata_type: str
+    field_odata_type: str | None = None
     bold: bool | None = Field(None, description='Indicates whether the fond is bold.')
     color: str | None = Field(
         None,
@@ -4881,7 +4881,7 @@ class WorkbookChartFont(Entity):
 
 
 class WorkbookChartLegendFormat(Entity):
-    field_odata_type: str
+    field_odata_type: str | None = None
     fill: WorkbookChartFill | None = Field(
         None,
         description='Represents the fill format of an object, which includes background formating information. Read-only.',
@@ -4893,7 +4893,7 @@ class WorkbookChartLegendFormat(Entity):
 
 
 class WorkbookChartLineFormat(Entity):
-    field_odata_type: str
+    field_odata_type: str | None = None
     color: str | None = Field(
         None,
         description='The HTML color code that represents the color of lines in the chart.',
@@ -4901,7 +4901,7 @@ class WorkbookChartLineFormat(Entity):
 
 
 class WorkbookChartPointFormat(Entity):
-    field_odata_type: str
+    field_odata_type: str | None = None
     fill: WorkbookChartFill | None = Field(
         None,
         description='Represents the fill format of a chart, which includes background formatting information. Read-only.',
@@ -4909,7 +4909,7 @@ class WorkbookChartPointFormat(Entity):
 
 
 class WorkbookChartSeriesFormat(Entity):
-    field_odata_type: str
+    field_odata_type: str | None = None
     fill: WorkbookChartFill | None = Field(
         None,
         description='Represents the fill format of a chart series, which includes background formatting information. Read-only.',
@@ -4920,7 +4920,7 @@ class WorkbookChartSeriesFormat(Entity):
 
 
 class WorkbookChartTitleFormat(Entity):
-    field_odata_type: str
+    field_odata_type: str | None = None
     fill: WorkbookChartFill | None = Field(
         None,
         description='Represents the fill format of an object, which includes background formatting information. Read-only.',
@@ -4932,7 +4932,7 @@ class WorkbookChartTitleFormat(Entity):
 
 
 class WorkbookCommentReply(Entity):
-    field_odata_type: str
+    field_odata_type: str | None = None
     content: str | None = Field(None, description='The content of the reply.')
     content_type: str | None = Field(
         None, description='The content type for the reply.'
@@ -4940,11 +4940,11 @@ class WorkbookCommentReply(Entity):
 
 
 class WorkbookFunctions(Entity):
-    field_odata_type: str
+    field_odata_type: str | None = None
 
 
 class WorkbookIcon(BaseModel):
-    field_odata_type: str
+    field_odata_type: str | None = None
     index: float | None = Field(
         None, description='The index of the icon in the given set.'
     )
@@ -4955,7 +4955,7 @@ class WorkbookIcon(BaseModel):
 
 
 class WorkbookOperationError(BaseModel):
-    field_odata_type: str
+    field_odata_type: str | None = None
     code: str | None = Field(None, description='The error code.')
     inner_error: WorkbookOperationError | None = None
     message: str | None = Field(None, description='The error message.')
@@ -4969,7 +4969,7 @@ class WorkbookOperationStatus(Enum):
 
 
 class WorkbookSortField(BaseModel):
-    field_odata_type: str
+    field_odata_type: str | None = None
     ascending: bool | None = Field(
         None,
         description='Represents whether the sorting is done in an ascending fashion.',
@@ -4997,7 +4997,7 @@ class WorkbookSortField(BaseModel):
 
 
 class WorkbookTableRow(Entity):
-    field_odata_type: str
+    field_odata_type: str | None = None
     index: float | None = Field(
         None,
         description='The index of the row within the rows collection of the table. Zero-based. Read-only.',
@@ -5009,7 +5009,7 @@ class WorkbookTableRow(Entity):
 
 
 class WorkbookTableSort(Entity):
-    field_odata_type: str
+    field_odata_type: str | None = None
     fields: List[WorkbookSortField] | None = Field(
         None,
         description='The list of the current conditions last used to sort the table. Read-only.',
@@ -5025,7 +5025,7 @@ class WorkbookTableSort(Entity):
 
 
 class WorkbookWorksheetProtectionOptions(BaseModel):
-    field_odata_type: str
+    field_odata_type: str | None = None
     allow_auto_filter: bool | None = Field(
         None,
         description='Represents the worksheet protection option of allowing using auto filter feature.',
@@ -5073,7 +5073,7 @@ class WorkbookWorksheetProtectionOptions(BaseModel):
 
 
 class WorkingHours(BaseModel):
-    field_odata_type: str
+    field_odata_type: str | None = None
     days_of_week: List[DayOfWeek] | None = Field(
         None, description='The days of the week on which the user works.'
     )
@@ -5089,11 +5089,11 @@ class WorkingHours(BaseModel):
 
 
 class WorkingTimeSchedule(Entity):
-    field_odata_type: str
+    field_odata_type: str | None = None
 
 
 class AgreementAcceptance(Entity):
-    field_odata_type: str
+    field_odata_type: str | None = None
     agreement_file_id: str | None = Field(
         None, description='The identifier of the agreement file accepted by the user.'
     )
@@ -5143,11 +5143,11 @@ class AgreementAcceptance(Entity):
 
 
 class ApplicationEnforcedRestrictionsSessionControl(ConditionalAccessSessionControl):
-    field_odata_type: str
+    field_odata_type: str | None = None
 
 
 class Attachment(Entity):
-    field_odata_type: str
+    field_odata_type: str | None = None
     content_type: str | None = Field(None, description='The MIME type.')
     is_inline: bool | None = Field(
         None,
@@ -5164,7 +5164,7 @@ class Attachment(Entity):
 
 
 class AttachmentBase(Entity):
-    field_odata_type: str
+    field_odata_type: str | None = None
     content_type: str | None = Field(None, description='The MIME type.')
     last_modified_date_time: datetime | None = Field(
         None,
@@ -5180,7 +5180,7 @@ class AttachmentBase(Entity):
 
 
 class AttachmentSession(Entity):
-    field_odata_type: str
+    field_odata_type: str | None = None
     content: str | None = Field(
         None, description='The content streams that are uploaded.'
     )
@@ -5195,7 +5195,7 @@ class AttachmentSession(Entity):
 
 
 class AttendanceRecord(Entity):
-    field_odata_type: str
+    field_odata_type: str | None = None
     attendance_intervals: List[AttendanceInterval] | None = Field(
         None, description='List of time periods between joining and leaving a meeting.'
     )
@@ -5216,7 +5216,7 @@ class AttendanceRecord(Entity):
 
 
 class AttendeeBase(Recipient):
-    field_odata_type: str
+    field_odata_type: str | None = None
     type: AttendeeType | None = Field(
         None,
         description='The type of attendee. The possible values are: required, optional, resource. Currently if the attendee is a person, findMeetingTimes always considers the person is of the Required type.',
@@ -5224,7 +5224,7 @@ class AttendeeBase(Recipient):
 
 
 class AuthenticationCombinationConfiguration(Entity):
-    field_odata_type: str
+    field_odata_type: str | None = None
     applies_to_combinations: List[AuthenticationMethodModes] | None = Field(
         None,
         description="Which authentication method combinations this configuration applies to. Must be an allowedCombinations object, part of the authenticationStrengthPolicy. The only possible value for fido2combinationConfigurations is 'fido2'.",
@@ -5232,7 +5232,7 @@ class AuthenticationCombinationConfiguration(Entity):
 
 
 class AuthenticationContextClassReference(Entity):
-    field_odata_type: str
+    field_odata_type: str | None = None
     description: str | None = Field(
         None,
         description='A short explanation of the policies that are enforced by authenticationContextClassReference. This value should be used to provide secondary text to describe the authentication context class reference when building user-facing admin experiences. For example, a selection UX.',
@@ -5248,11 +5248,11 @@ class AuthenticationContextClassReference(Entity):
 
 
 class AuthenticationMethod(Entity):
-    field_odata_type: str
+    field_odata_type: str | None = None
 
 
 class AuthenticationStrengthPolicy(Entity):
-    field_odata_type: str
+    field_odata_type: str | None = None
     allowed_combinations: List[AuthenticationMethodModes] | None = Field(
         None,
         description='A collection of authentication method modes that are required be used to satify this authentication strength.',
@@ -5281,7 +5281,7 @@ class AuthenticationStrengthPolicy(Entity):
 
 
 class AutomaticRepliesSetting(BaseModel):
-    field_odata_type: str
+    field_odata_type: str | None = None
     external_audience: ExternalAudienceScope | None = Field(
         None,
         description="The set of audience external to the signed-in user's organization who will receive the ExternalReplyMessage, if Status is AlwaysEnabled or Scheduled. The possible values are: none, contactsOnly, all.",
@@ -5309,7 +5309,7 @@ class AutomaticRepliesSetting(BaseModel):
 
 
 class BaseItemVersion(Entity):
-    field_odata_type: str
+    field_odata_type: str | None = None
     last_modified_by: IdentitySet | None = Field(
         None,
         description='Identity of the user which last modified the version. Read-only.',
@@ -5324,7 +5324,7 @@ class BaseItemVersion(Entity):
 
 
 class CalendarPermission(Entity):
-    field_odata_type: str
+    field_odata_type: str | None = None
     allowed_roles: List[CalendarRoleType] | None = Field(
         None,
         description='List of allowed sharing or delegating permission levels for the calendar. Possible values are: none, freeBusyRead, limitedRead, read, write, delegateWithoutPrivateEventAccess, delegateWithPrivateEventAccess, custom.',
@@ -5348,7 +5348,7 @@ class CalendarPermission(Entity):
 
 
 class CallRecording(Entity):
-    field_odata_type: str
+    field_odata_type: str | None = None
     call_id: str | None = Field(
         None,
         description='The unique identifier for the call that is related to this recording. Read-only.',
@@ -5383,7 +5383,7 @@ class CallRecording(Entity):
 
 
 class CallTranscript(Entity):
-    field_odata_type: str
+    field_odata_type: str | None = None
     call_id: str | None = Field(
         None,
         description='The unique identifier for the call that is related to this transcript. Read-only.',
@@ -5422,7 +5422,7 @@ class CallTranscript(Entity):
 
 
 class ChangeTrackedEntity(Entity):
-    field_odata_type: str
+    field_odata_type: str | None = None
     created_date_time: datetime | None = Field(
         None,
         description='The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z',
@@ -5437,15 +5437,15 @@ class ChangeTrackedEntity(Entity):
 
 
 class ChatMessageFromIdentitySet(IdentitySet):
-    field_odata_type: str
+    field_odata_type: str | None = None
 
 
 class ChatMessageHostedContent(TeamworkHostedContent):
-    field_odata_type: str
+    field_odata_type: str | None = None
 
 
 class ChatMessageInfo(Entity):
-    field_odata_type: str
+    field_odata_type: str | None = None
     body: ItemBody | None = Field(
         None,
         description="Body of the chatMessage. This will still contain markers for @mentions and attachments even though the object doesn't return @mentions and attachments.",
@@ -5468,7 +5468,7 @@ class ChatMessageInfo(Entity):
 
 
 class ChatMessagePolicyViolation(BaseModel):
-    field_odata_type: str
+    field_odata_type: str | None = None
     dlp_action: ChatMessagePolicyViolationDlpActionTypes | None = (
         Field(
             None,
@@ -5498,11 +5498,11 @@ class ChatMessagePolicyViolation(BaseModel):
 
 
 class ChatMessageReactionIdentitySet(IdentitySet):
-    field_odata_type: str
+    field_odata_type: str | None = None
 
 
 class ChecklistItem(Entity):
-    field_odata_type: str
+    field_odata_type: str | None = None
     checked_date_time: datetime | None = Field(
         None, description='The date and time when the checklistItem was finished.'
     )
@@ -5518,7 +5518,7 @@ class ChecklistItem(Entity):
 
 
 class CloudAppSecuritySessionControl(ConditionalAccessSessionControl):
-    field_odata_type: str
+    field_odata_type: str | None = None
     cloud_app_security_type: (
         CloudAppSecuritySessionControlType | None
     ) = Field(
@@ -5528,7 +5528,7 @@ class CloudAppSecuritySessionControl(ConditionalAccessSessionControl):
 
 
 class CloudClipboardItem(Entity):
-    field_odata_type: str
+    field_odata_type: str | None = None
     created_date_time: datetime | None = Field(
         None,
         description='Set by the server. DateTime in UTC when the object was created on the server.',
@@ -5548,21 +5548,21 @@ class CloudClipboardItem(Entity):
 
 
 class CloudClipboardRoot(Entity):
-    field_odata_type: str
+    field_odata_type: str | None = None
     items: List[CloudClipboardItem] | None = Field(
         None, description='Represents a collection of Cloud Clipboard items.'
     )
 
 
 class ColumnLink(Entity):
-    field_odata_type: str
+    field_odata_type: str | None = None
     name: str | None = Field(
         None, description='The name of the column  in this content type.'
     )
 
 
 class ColumnValidation(BaseModel):
-    field_odata_type: str
+    field_odata_type: str | None = None
     default_language: str | None = Field(
         None, description='Default BCP 47 language tag for the description.'
     )
@@ -5577,12 +5577,12 @@ class ColumnValidation(BaseModel):
 
 
 class ConditionalAccessAuthenticationFlows(BaseModel):
-    field_odata_type: str
+    field_odata_type: str | None = None
     transfer_methods: ConditionalAccessTransferMethods | None = None
 
 
 class ConditionalAccessExternalTenants(BaseModel):
-    field_odata_type: str
+    field_odata_type: str | None = None
     membership_kind: (
         ConditionalAccessExternalTenantsMembershipKind | None
     ) = Field(
@@ -5592,7 +5592,7 @@ class ConditionalAccessExternalTenants(BaseModel):
 
 
 class ConditionalAccessFilter(BaseModel):
-    field_odata_type: str
+    field_odata_type: str | None = None
     mode: FilterMode | None = None
     rule: str | None = Field(
         None,
@@ -5601,7 +5601,7 @@ class ConditionalAccessFilter(BaseModel):
 
 
 class ConditionalAccessGrantControls(BaseModel):
-    field_odata_type: str
+    field_odata_type: str | None = None
     authentication_strength: AuthenticationStrengthPolicy | None = None
     built_in_controls: List[ConditionalAccessGrantControl] | None = Field(
         None,
@@ -5621,7 +5621,7 @@ class ConditionalAccessGrantControls(BaseModel):
 
 
 class ConditionalAccessGuestsOrExternalUsers(BaseModel):
-    field_odata_type: str
+    field_odata_type: str | None = None
     external_tenants: ConditionalAccessExternalTenants | None = Field(
         None,
         description="The tenant IDs of the selected types of external users. Either all B2B tenant or a collection of tenant IDs. External tenants can be specified only when the property guestOrExternalUserTypes isn't null or an empty String.",
@@ -5632,7 +5632,7 @@ class ConditionalAccessGuestsOrExternalUsers(BaseModel):
 
 
 class ConditionalAccessUsers(BaseModel):
-    field_odata_type: str
+    field_odata_type: str | None = None
     exclude_groups: List[str] | None = Field(
         None, description='Group IDs excluded from scope of policy.'
     )
@@ -5668,7 +5668,7 @@ class ConditionalAccessUsers(BaseModel):
 
 
 class Contact(OutlookItem):
-    field_odata_type: str
+    field_odata_type: str | None = None
     assistant_name: str | None = Field(
         None, description="The name of the contact's assistant."
     )
@@ -5772,7 +5772,7 @@ class Contact(OutlookItem):
 
 
 class ContactFolder(Entity):
-    field_odata_type: str
+    field_odata_type: str | None = None
     child_folders: List[ContactFolder] | None = Field(
         None,
         description='The collection of child folders in the folder. Navigation property. Read-only. Nullable.',
@@ -5800,7 +5800,7 @@ class ContactFolder(Entity):
 
 
 class ConversationMember(Entity):
-    field_odata_type: str
+    field_odata_type: str | None = None
     display_name: str | None = Field(None, description='The display name of the user.')
     roles: List[str] | None = Field(
         None,
@@ -5813,7 +5813,7 @@ class ConversationMember(Entity):
 
 
 class CountryNamedLocation(NamedLocation):
-    field_odata_type: str
+    field_odata_type: str | None = None
     countries_and_regions: List[str] | None = Field(
         None,
         description='List of countries and/or regions in two-letter format specified by ISO 3166-2. Required.',
@@ -5829,7 +5829,7 @@ class CountryNamedLocation(NamedLocation):
 
 
 class DeviceCategory(Entity):
-    field_odata_type: str
+    field_odata_type: str | None = None
     description: str | None = Field(
         None, description='Optional description for the device category.'
     )
@@ -5839,7 +5839,7 @@ class DeviceCategory(Entity):
 
 
 class DeviceLogCollectionResponse(Entity):
-    field_odata_type: str
+    field_odata_type: str | None = None
     enrolled_by_user: str | None = Field(
         None,
         description='The User Principal Name (UPN) of the user that enrolled the device.',
@@ -5867,7 +5867,7 @@ class DeviceLogCollectionResponse(Entity):
 
 
 class DeviceManagementTroubleshootingEvent(Entity):
-    field_odata_type: str
+    field_odata_type: str | None = None
     correlation_id: str | None = Field(
         None, description='Id used for tracing the failure in the service.'
     )
@@ -5877,7 +5877,7 @@ class DeviceManagementTroubleshootingEvent(Entity):
 
 
 class DirectoryObject(Entity):
-    field_odata_type: str
+    field_odata_type: str | None = None
     deleted_date_time: datetime | None = Field(
         None,
         description="Date and time when this object was deleted. Always null when the object hasn't been deleted.",
@@ -5885,7 +5885,7 @@ class DirectoryObject(Entity):
 
 
 class DriveItemVersion(BaseItemVersion):
-    field_odata_type: str
+    field_odata_type: str | None = None
     content: str | None = Field(
         None, description='The content stream for this version of the item.'
     )
@@ -5896,19 +5896,19 @@ class DriveItemVersion(BaseItemVersion):
 
 
 class EmailAuthenticationMethod(AuthenticationMethod):
-    field_odata_type: str
+    field_odata_type: str | None = None
     email_address: str | None = Field(
         None, description='The email address registered to this user.'
     )
 
 
 class EmployeeExperienceUser(Entity):
-    field_odata_type: str
+    field_odata_type: str | None = None
     learning_course_activities: List[LearningCourseActivity] | None = None
 
 
 class Fido2AuthenticationMethod(AuthenticationMethod):
-    field_odata_type: str
+    field_odata_type: str | None = None
     aa_guid: str | None = Field(
         None,
         description='Authenticator Attestation GUID, an identifier that indicates the type (e.g. make and model) of the authenticator.',
@@ -5933,7 +5933,7 @@ class Fido2AuthenticationMethod(AuthenticationMethod):
 
 
 class File(BaseModel):
-    field_odata_type: str
+    field_odata_type: str | None = None
     hashes: Hashes | None = Field(
         None,
         description="Hashes of the file's binary content, if available. Read-only.",
@@ -5946,7 +5946,7 @@ class File(BaseModel):
 
 
 class Folder(BaseModel):
-    field_odata_type: str
+    field_odata_type: str | None = None
     child_count: float | None = Field(
         None,
         description='Number of children contained immediately within this container.',
@@ -5958,7 +5958,7 @@ class Folder(BaseModel):
 
 
 class FollowupFlag(BaseModel):
-    field_odata_type: str
+    field_odata_type: str | None = None
     completed_date_time: DateTimeTimeZone | None = Field(
         None, description='The date and time that the follow-up was finished.'
     )
@@ -5976,7 +5976,7 @@ class FollowupFlag(BaseModel):
 
 
 class GroupSetting(Entity):
-    field_odata_type: str
+    field_odata_type: str | None = None
     display_name: str | None = Field(
         None,
         description='Display name of this group of settings, which comes from the associated template.',
@@ -5992,7 +5992,7 @@ class GroupSetting(Entity):
 
 
 class InferenceClassificationOverride(Entity):
-    field_odata_type: str
+    field_odata_type: str | None = None
     classify_as: InferenceClassificationType | None = Field(
         None,
         description='Specifies how incoming messages from a specific sender should always be classified as. The possible values are: focused, other.',
@@ -6004,7 +6004,7 @@ class InferenceClassificationOverride(Entity):
 
 
 class IpNamedLocation(NamedLocation):
-    field_odata_type: str
+    field_odata_type: str | None = None
     ip_ranges: List[IpRange] | None = Field(
         None,
         description='List of IP address ranges in IPv4 CIDR format (for example, 1.2.3.4/32) or any allowable IPv6 format from IETF RFC5969. Required.',
@@ -6016,7 +6016,7 @@ class IpNamedLocation(NamedLocation):
 
 
 class ItemReference(BaseModel):
-    field_odata_type: str
+    field_odata_type: str | None = None
     drive_id: str | None = Field(
         None,
         description='Unique identifier of the drive instance that contains the driveItem. Only returned if the item is located in a drive. Read-only.',
@@ -6051,7 +6051,7 @@ class ItemReference(BaseModel):
 
 
 class LicenseDetails(Entity):
-    field_odata_type: str
+    field_odata_type: str | None = None
     service_plans: List[ServicePlanInfo] | None = Field(
         None,
         description='Information about the service plans assigned with the license. Read-only. Not nullable.',
@@ -6067,7 +6067,7 @@ class LicenseDetails(Entity):
 
 
 class ListItemVersion(BaseItemVersion):
-    field_odata_type: str
+    field_odata_type: str | None = None
     fields: FieldValueSet | None = Field(
         None,
         description='A collection of the fields and values for this version of the list item.',
@@ -6075,7 +6075,7 @@ class ListItemVersion(BaseItemVersion):
 
 
 class Location(BaseModel):
-    field_odata_type: str
+    field_odata_type: str | None = None
     address: PhysicalAddress | None = Field(
         None, description='The street address of the location.'
     )
@@ -6102,7 +6102,7 @@ class Location(BaseModel):
 
 
 class LongRunningOperation(Entity):
-    field_odata_type: str
+    field_odata_type: str | None = None
     created_date_time: datetime | None = Field(
         None,
         description='The start time of the operation. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.',
@@ -6124,7 +6124,7 @@ class LongRunningOperation(Entity):
 
 
 class MailboxSettings(BaseModel):
-    field_odata_type: str
+    field_odata_type: str | None = None
     archive_folder: str | None = Field(
         None, description='Folder ID of an archive folder for the user.'
     )
@@ -6162,7 +6162,7 @@ class MailboxSettings(BaseModel):
 
 
 class ManagedAppRegistration(Entity):
-    field_odata_type: str
+    field_odata_type: str | None = None
     app_identifier: MobileAppIdentifier | None = Field(
         None, description='The app package Identifier'
     )
@@ -6206,7 +6206,7 @@ class ManagedAppRegistration(Entity):
 
 
 class MeetingAttendanceReport(Entity):
-    field_odata_type: str
+    field_odata_type: str | None = None
     attendance_records: List[AttendanceRecord] | None = Field(
         None,
         description='List of attendance records of an attendance report. Read-only.',
@@ -6223,7 +6223,7 @@ class MeetingAttendanceReport(Entity):
 
 
 class MeetingParticipantInfo(BaseModel):
-    field_odata_type: str
+    field_odata_type: str | None = None
     identity: IdentitySet | None = Field(
         None, description='Identity information of the participant.'
     )
@@ -6234,7 +6234,7 @@ class MeetingParticipantInfo(BaseModel):
 
 
 class MeetingParticipants(BaseModel):
-    field_odata_type: str
+    field_odata_type: str | None = None
     attendees: List[MeetingParticipantInfo] | None = Field(
         None, description='Information about the meeting attendees.'
     )
@@ -6244,7 +6244,7 @@ class MeetingParticipants(BaseModel):
 
 
 class Message(OutlookItem):
-    field_odata_type: str
+    field_odata_type: str | None = None
     attachments: List[Attachment] | None = Field(
         None,
         description='The fileAttachment and itemAttachment attachments for the message.',
@@ -6363,7 +6363,7 @@ class Message(OutlookItem):
 
 
 class MessageRuleActions(BaseModel):
-    field_odata_type: str
+    field_odata_type: str | None = None
     assign_categories: List[str] | None = Field(
         None, description='A list of categories to be assigned to a message.'
     )
@@ -6405,7 +6405,7 @@ class MessageRuleActions(BaseModel):
 
 
 class MessageRulePredicates(BaseModel):
-    field_odata_type: str
+    field_odata_type: str | None = None
     body_contains: List[str] | None = Field(
         None,
         description='Represents the strings that should appear in the body of an incoming message in order for the condition or exception to apply.',
@@ -6529,7 +6529,7 @@ class MessageRulePredicates(BaseModel):
 
 
 class OnenoteEntityHierarchyModel(OnenoteEntitySchemaObjectModel):
-    field_odata_type: str
+    field_odata_type: str | None = None
     created_by: IdentitySet | None = Field(
         None,
         description='Identity of the user, device, and application that created the item. Read-only.',
@@ -6546,7 +6546,7 @@ class OnenoteEntityHierarchyModel(OnenoteEntitySchemaObjectModel):
 
 
 class OnlineMeetingBase(Entity):
-    field_odata_type: str
+    field_odata_type: str | None = None
     allow_attendee_to_enable_camera: bool | None = Field(
         None, description='Indicates whether attendees can turn on their camera.'
     )
@@ -6623,7 +6623,7 @@ class OnlineMeetingBase(Entity):
 
 
 class Operation(Entity):
-    field_odata_type: str
+    field_odata_type: str | None = None
     created_date_time: datetime | None = Field(
         None, description='The start time of the operation.'
     )
@@ -6637,7 +6637,7 @@ class Operation(Entity):
 
 
 class PasswordAuthenticationMethod(AuthenticationMethod):
-    field_odata_type: str
+    field_odata_type: str | None = None
     created_date_time: datetime | None = Field(
         None,
         description='The date and time when this password was last updated. This property is currently not populated. Read-only. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.',
@@ -6649,7 +6649,7 @@ class PasswordAuthenticationMethod(AuthenticationMethod):
 
 
 class Permission(Entity):
-    field_odata_type: str
+    field_odata_type: str | None = None
     expiration_date_time: datetime | None = Field(
         None,
         description="A format of yyyy-MM-ddTHH:mm:ssZ of DateTimeOffset indicates the expiration time of the permission. DateTime.MinValue indicates there's no expiration set for this permission. Optional.",
@@ -6697,14 +6697,14 @@ class Permission(Entity):
 
 
 class PersistentBrowserSessionControl(ConditionalAccessSessionControl):
-    field_odata_type: str
+    field_odata_type: str | None = None
     mode: PersistentBrowserSessionMode | None = Field(
         None, description='Possible values are: always, never.'
     )
 
 
 class Phone(BaseModel):
-    field_odata_type: str
+    field_odata_type: str | None = None
     language: str | None = None
     number: str | None = Field(None, description='The phone number.')
     region: str | None = None
@@ -6715,7 +6715,7 @@ class Phone(BaseModel):
 
 
 class PhoneAuthenticationMethod(AuthenticationMethod):
-    field_odata_type: str
+    field_odata_type: str | None = None
     phone_number: str | None = Field(
         None,
         description="The phone number to text or call for authentication. Phone numbers use the format +{country code} {number}x{extension}, with extension optional. For example, +1 5555551234 or +1 5555551234x123 are valid. Numbers are rejected when creating or updating if they don't match the required format.",
@@ -6731,7 +6731,7 @@ class PhoneAuthenticationMethod(AuthenticationMethod):
 
 
 class PlannerAssignedToTaskBoardTaskFormat(Entity):
-    field_odata_type: str
+    field_odata_type: str | None = None
     order_hints_by_assignee: PlannerOrderHintsByAssignee | None = (
         Field(
             None,
@@ -6745,7 +6745,7 @@ class PlannerAssignedToTaskBoardTaskFormat(Entity):
 
 
 class PlannerPlanDetails(Entity):
-    field_odata_type: str
+    field_odata_type: str | None = None
     category_descriptions: PlannerCategoryDescriptions | None = Field(
         None,
         description='An object that specifies the descriptions of the 25 categories that can be associated with tasks in the plan.',
@@ -6757,7 +6757,7 @@ class PlannerPlanDetails(Entity):
 
 
 class PlannerTask(Entity):
-    field_odata_type: str
+    field_odata_type: str | None = None
     active_checklist_item_count: float | None = (
         Field(
             None,
@@ -6857,7 +6857,7 @@ class PlannerTask(Entity):
 
 
 class Post(OutlookItem):
-    field_odata_type: str
+    field_odata_type: str | None = None
     attachments: List[Attachment] | None = Field(
         None, description='Read-only. Nullable. Supports $expand.'
     )
@@ -6910,7 +6910,7 @@ class Post(OutlookItem):
 
 
 class Presence(Entity):
-    field_odata_type: str
+    field_odata_type: str | None = None
     activity: str | None = Field(
         None,
         description="The supplemental information to a user's availability. Possible values are Available, Away, BeRightBack, Busy, DoNotDisturb, InACall, InAConferenceCall, Inactive, InAMeeting, Offline, OffWork, OutOfOffice, PresenceUnknown, Presenting, UrgentInterruptionsOnly.",
@@ -6925,7 +6925,7 @@ class Presence(Entity):
 
 
 class PrintConnector(Entity):
-    field_odata_type: str
+    field_odata_type: str | None = None
     app_version: str | None = Field(None, description="The connector's version.")
     display_name: str | None = Field(None, description='The name of the connector.')
     fully_qualified_domain_name: str | None = Field(
@@ -6944,7 +6944,7 @@ class PrintConnector(Entity):
 
 
 class PrintJobConfiguration(BaseModel):
-    field_odata_type: str
+    field_odata_type: str | None = None
     collate: bool | None = Field(
         None,
         description='Whether the printer should collate pages wehen printing multiple copies of a multi-page document.',
@@ -7019,7 +7019,7 @@ class PrintJobConfiguration(BaseModel):
 
 
 class PrinterCapabilities(BaseModel):
-    field_odata_type: str
+    field_odata_type: str | None = None
     bottom_margins: List[float] | None = Field(
         None,
         description='A list of supported bottom margins(in microns) for the printer.',
@@ -7115,7 +7115,7 @@ class PrinterCapabilities(BaseModel):
 
 
 class PublicError(BaseModel):
-    field_odata_type: str
+    field_odata_type: str | None = None
     code: str | None = Field(None, description='Represents the error code.')
     details: List[PublicErrorDetail] | None = Field(
         None, description='Details of the error.'
@@ -7130,7 +7130,7 @@ class PublicError(BaseModel):
 
 
 class Quota(BaseModel):
-    field_odata_type: str
+    field_odata_type: str | None = None
     deleted: float | None = Field(
         None,
         description='Total space consumed by files in the recycle bin, in bytes. Read-only.',
@@ -7156,7 +7156,7 @@ class Quota(BaseModel):
 
 
 class RecurrencePattern(BaseModel):
-    field_odata_type: str
+    field_odata_type: str | None = None
     day_of_month: float | None = Field(
         None,
         description='The day of the month on which the event occurs. Required if type is absoluteMonthly or absoluteYearly.',
@@ -7188,7 +7188,7 @@ class RecurrencePattern(BaseModel):
 
 
 class RecurrenceRange(BaseModel):
-    field_odata_type: str
+    field_odata_type: str | None = None
     end_date: date | None = Field(
         None,
         description='The date to stop applying the recurrence pattern. Depending on the recurrence pattern of the event, the last occurrence of the meeting may not be this date. Required if type is endDate.',
@@ -7212,7 +7212,7 @@ class RecurrenceRange(BaseModel):
 
 
 class RemoteItem(BaseModel):
-    field_odata_type: str
+    field_odata_type: str | None = None
     created_by: IdentitySet | None = Field(
         None,
         description='Identity of the user, device, and application which created the item. Read-only.',
@@ -7279,7 +7279,7 @@ class RemoteItem(BaseModel):
 
 
 class ResourceSpecificPermissionGrant(DirectoryObject):
-    field_odata_type: str
+    field_odata_type: str | None = None
     client_app_id: str | None = Field(
         None,
         description='ID of the service principal of the Microsoft Entra app that has been granted access. Read-only.',
@@ -7302,7 +7302,7 @@ class ResourceSpecificPermissionGrant(DirectoryObject):
 
 
 class ResponseStatus(BaseModel):
-    field_odata_type: str
+    field_odata_type: str | None = None
     response: ResponseType | None = Field(
         None,
         description="The response type. Possible values are: none, organizer, tentativelyAccepted, accepted, declined, notResponded.To differentiate between none and notResponded:  none – from organizer's perspective. This value is used when the status of an attendee/participant is reported to the organizer of a meeting.  notResponded – from attendee's perspective. Indicates the attendee has not responded to the meeting request.  Clients can treat notResponded == none.  As an example, if attendee Alex hasn't responded to a meeting request, getting Alex' response status for that event in Alex' calendar returns notResponded. Getting Alex' response from the calendar of any other attendee or the organizer's returns none. Getting the organizer's response for the event in anybody's calendar also returns none.",
@@ -7314,7 +7314,7 @@ class ResponseStatus(BaseModel):
 
 
 class RetentionLabelSettings(BaseModel):
-    field_odata_type: str
+    field_odata_type: str | None = None
     behavior_during_retention_period: (
         security.BehaviorDuringRetentionPeriod | None
     ) = Field(
@@ -7343,7 +7343,7 @@ class RetentionLabelSettings(BaseModel):
 
 
 class RichLongRunningOperation(LongRunningOperation):
-    field_odata_type: str
+    field_odata_type: str | None = None
     error: PublicError | None = Field(
         None, description='Error that caused the operation to fail.'
     )
@@ -7358,7 +7358,7 @@ class RichLongRunningOperation(LongRunningOperation):
 
 
 class ScheduleChangeRequest(ChangeTrackedEntity):
-    field_odata_type: str
+    field_odata_type: str | None = None
     assigned_to: ScheduleChangeRequestActor | None = None
     manager_action_date_time: datetime | None = None
     manager_action_message: str | None = None
@@ -7370,14 +7370,14 @@ class ScheduleChangeRequest(ChangeTrackedEntity):
 
 
 class ScheduleEntity(BaseModel):
-    field_odata_type: str
+    field_odata_type: str | None = None
     end_date_time: datetime | None = None
     start_date_time: datetime | None = None
     theme: ScheduleEntityTheme | None = None
 
 
 class SchedulingGroup(ChangeTrackedEntity):
-    field_odata_type: str
+    field_odata_type: str | None = None
     display_name: str | None = Field(
         None, description='The display name for the schedulingGroup. Required.'
     )
@@ -7392,7 +7392,7 @@ class SchedulingGroup(ChangeTrackedEntity):
 
 
 class ScoredEmailAddress(BaseModel):
-    field_odata_type: str
+    field_odata_type: str | None = None
     address: str | None = Field(None, description='The email address.')
     item_id: str | None = None
     relevance_score: float | str | ReferenceNumeric | None = Field(
@@ -7403,18 +7403,18 @@ class ScoredEmailAddress(BaseModel):
 
 
 class ServiceStorageQuotaBreakdown(StorageQuotaBreakdown):
-    field_odata_type: str
+    field_odata_type: str | None = None
 
 
 class SettingSource(BaseModel):
-    field_odata_type: str
+    field_odata_type: str | None = None
     display_name: str | None = Field(None, description='Not yet documented')
     id: str | None = Field(None, description='Not yet documented')
     source_type: SettingSourceType | None = None
 
 
 class SharedInsight(Entity):
-    field_odata_type: str
+    field_odata_type: str | None = None
     last_shared: SharingDetail | None = Field(
         None, description='Details about the shared item. Read only.'
     )
@@ -7435,7 +7435,7 @@ class SharedInsight(Entity):
 
 
 class ShiftItem(ScheduleEntity):
-    field_odata_type: str
+    field_odata_type: str | None = None
     activities: List[ShiftActivity] | None = Field(
         None,
         description='An incremental part of a shift which can cover details of when and where an employee is during their shift. For example, an assignment or a scheduled break or lunch. Required.',
@@ -7447,7 +7447,7 @@ class ShiftItem(ScheduleEntity):
 
 
 class SignInFrequencySessionControl(ConditionalAccessSessionControl):
-    field_odata_type: str
+    field_odata_type: str | None = None
     authentication_type: SignInFrequencyAuthenticationType | None = (
         Field(
             None,
@@ -7467,7 +7467,7 @@ class SignInFrequencySessionControl(ConditionalAccessSessionControl):
 
 
 class SiteArchivalDetails(BaseModel):
-    field_odata_type: str
+    field_odata_type: str | None = None
     archive_status: SiteArchiveStatus | None = Field(
         None,
         description='Represents the current archive status of the site collection. Returned only on $select. The possible values are: recentlyArchived, fullyArchived, reactivating, unknownFutureValue.',
@@ -7475,7 +7475,7 @@ class SiteArchivalDetails(BaseModel):
 
 
 class SiteCollection(BaseModel):
-    field_odata_type: str
+    field_odata_type: str | None = None
     archival_details: SiteArchivalDetails | None = Field(
         None,
         description='Represents whether the site collection is recently archived, fully archived, or reactivating. Possible values are: recentlyArchived, fullyArchived, reactivating, unknownFutureValue.',
@@ -7494,14 +7494,14 @@ class SiteCollection(BaseModel):
 
 
 class SoftwareOathAuthenticationMethod(AuthenticationMethod):
-    field_odata_type: str
+    field_odata_type: str | None = None
     secret_key: str | None = Field(
         None, description='The secret key of the method. Always returns null.'
     )
 
 
 class TeamsAppResourceSpecificPermission(BaseModel):
-    field_odata_type: str
+    field_odata_type: str | None = None
     permission_type: TeamsAppResourceSpecificPermissionType | None = (
         Field(None, description='The type of resource-specific permission.')
     )
@@ -7511,7 +7511,7 @@ class TeamsAppResourceSpecificPermission(BaseModel):
 
 
 class TeamsAsyncOperation(Entity):
-    field_odata_type: str
+    field_odata_type: str | None = None
     attempts_count: float | None = Field(
         None,
         description='Number of times the operation was attempted before being marked successful or failed.',
@@ -7538,7 +7538,7 @@ class TeamsAsyncOperation(Entity):
 
 
 class TeamworkConversationIdentity(Identity):
-    field_odata_type: str
+    field_odata_type: str | None = None
     conversation_identity_type: (
         TeamworkConversationIdentityType | None
     ) = Field(
@@ -7548,7 +7548,7 @@ class TeamworkConversationIdentity(Identity):
 
 
 class TeamworkTag(Entity):
-    field_odata_type: str
+    field_odata_type: str | None = None
     description: str | None = Field(
         None,
         description="The description of the tag as it appears to the user in Microsoft Teams. A teamworkTag can't have more than 200 teamworkTagMembers.",
@@ -7572,7 +7572,7 @@ class TeamworkTag(Entity):
 
 
 class TeamworkUserIdentity(Identity):
-    field_odata_type: str
+    field_odata_type: str | None = None
     user_identity_type: TeamworkUserIdentityType | None = Field(
         None,
         description='Type of user. Possible values are: aadUser, onPremiseAadUser, anonymousGuest, federatedUser, personalMicrosoftAccountUser, skypeUser, phoneUser, unknownFutureValue and emailUser.',
@@ -7580,7 +7580,7 @@ class TeamworkUserIdentity(Identity):
 
 
 class TemporaryAccessPassAuthenticationMethod(AuthenticationMethod):
-    field_odata_type: str
+    field_odata_type: str | None = None
     created_date_time: datetime | None = Field(
         None,
         description='The date and time when the Temporary Access Pass was created.',
@@ -7612,14 +7612,14 @@ class TemporaryAccessPassAuthenticationMethod(AuthenticationMethod):
 
 
 class TimeOffItem(ScheduleEntity):
-    field_odata_type: str
+    field_odata_type: str | None = None
     time_off_reason_id: str | None = Field(
         None, description='ID of the timeOffReason for this timeOffItem. Required.'
     )
 
 
 class TimeOffReason(ChangeTrackedEntity):
-    field_odata_type: str
+    field_odata_type: str | None = None
     display_name: str | None = Field(
         None, description='The name of the timeOffReason. Required.'
     )
@@ -7634,7 +7634,7 @@ class TimeOffReason(ChangeTrackedEntity):
 
 
 class TimeOffRequest(ScheduleChangeRequest):
-    field_odata_type: str
+    field_odata_type: str | None = None
     end_date_time: datetime | None = Field(
         None,
         description='The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z',
@@ -7649,7 +7649,7 @@ class TimeOffRequest(ScheduleChangeRequest):
 
 
 class UnifiedRoleDefinition(Entity):
-    field_odata_type: str
+    field_odata_type: str | None = None
     description: str | None = Field(
         None,
         description='The description for the unifiedRoleDefinition. Read-only when isBuiltIn is true.',
@@ -7689,7 +7689,7 @@ class UnifiedRoleDefinition(Entity):
 
 
 class UnifiedStorageQuota(Entity):
-    field_odata_type: str
+    field_odata_type: str | None = None
     deleted: float | None = None
     manage_web_url: str | None = None
     remaining: float | None = None
@@ -7700,7 +7700,7 @@ class UnifiedStorageQuota(Entity):
 
 
 class UserSolutionRoot(Entity):
-    field_odata_type: str
+    field_odata_type: str | None = None
     working_time_schedule: WorkingTimeSchedule | None = Field(
         None,
         description='The working time schedule entity associated with the solution.',
@@ -7708,12 +7708,12 @@ class UserSolutionRoot(Entity):
 
 
 class UserStorage(Entity):
-    field_odata_type: str
+    field_odata_type: str | None = None
     quota: UnifiedStorageQuota | None = None
 
 
 class Website(BaseModel):
-    field_odata_type: str
+    field_odata_type: str | None = None
     address: str | None = Field(None, description='The URL of the website.')
     display_name: str | None = Field(
         None, description='The display name of the web site.'
@@ -7724,7 +7724,7 @@ class Website(BaseModel):
 
 
 class WindowsDeviceMalwareState(Entity):
-    field_odata_type: str
+    field_odata_type: str | None = None
     additional_information_url: str | None = Field(
         None, description='Information URL to learn more about the malware'
     )
@@ -7761,7 +7761,7 @@ class WindowsDeviceMalwareState(Entity):
 
 
 class WindowsProtectionState(Entity):
-    field_odata_type: str
+    field_odata_type: str | None = None
     anti_malware_version: str | None = Field(
         None, description='Current anti malware version'
     )
@@ -7840,7 +7840,7 @@ class WindowsProtectionState(Entity):
 
 
 class WindowsSetting(Entity):
-    field_odata_type: str
+    field_odata_type: str | None = None
     instances: List[WindowsSettingInstance] | None = Field(
         None, description='A collection of setting values for a given windowsSetting.'
     )
@@ -7856,7 +7856,7 @@ class WindowsSetting(Entity):
 
 
 class WorkbookChartAreaFormat(Entity):
-    field_odata_type: str
+    field_odata_type: str | None = None
     fill: WorkbookChartFill | None = Field(
         None,
         description='Represents the fill format of an object, which includes background formatting information. Read-only.',
@@ -7868,7 +7868,7 @@ class WorkbookChartAreaFormat(Entity):
 
 
 class WorkbookChartAxisFormat(Entity):
-    field_odata_type: str
+    field_odata_type: str | None = None
     font: WorkbookChartFont | None = Field(
         None,
         description='Represents the font attributes (font name, font size, color, etc.) for a chart axis element. Read-only.',
@@ -7879,7 +7879,7 @@ class WorkbookChartAxisFormat(Entity):
 
 
 class WorkbookChartAxisTitleFormat(Entity):
-    field_odata_type: str
+    field_odata_type: str | None = None
     font: WorkbookChartFont | None = Field(
         None,
         description='Represents the font attributes, such as font name, font size, color, etc. of chart axis title object. Read-only.',
@@ -7887,7 +7887,7 @@ class WorkbookChartAxisTitleFormat(Entity):
 
 
 class WorkbookChartDataLabelFormat(Entity):
-    field_odata_type: str
+    field_odata_type: str | None = None
     fill: WorkbookChartFill | None = Field(
         None,
         description='Represents the fill format of the current chart data label. Read-only.',
@@ -7899,7 +7899,7 @@ class WorkbookChartDataLabelFormat(Entity):
 
 
 class WorkbookChartDataLabels(Entity):
-    field_odata_type: str
+    field_odata_type: str | None = None
     format: WorkbookChartDataLabelFormat | None = Field(
         None,
         description='Represents the format of chart data labels, which includes fill and font formatting. Read-only.',
@@ -7939,14 +7939,14 @@ class WorkbookChartDataLabels(Entity):
 
 
 class WorkbookChartGridlinesFormat(Entity):
-    field_odata_type: str
+    field_odata_type: str | None = None
     line: WorkbookChartLineFormat | None = Field(
         None, description='Represents chart line formatting. Read-only.'
     )
 
 
 class WorkbookChartLegend(Entity):
-    field_odata_type: str
+    field_odata_type: str | None = None
     format: WorkbookChartLegendFormat | None = Field(
         None,
         description='Represents the formatting of a chart legend, which includes fill and font formatting. Read-only.',
@@ -7965,7 +7965,7 @@ class WorkbookChartLegend(Entity):
 
 
 class WorkbookChartPoint(Entity):
-    field_odata_type: str
+    field_odata_type: str | None = None
     format: WorkbookChartPointFormat | None = Field(
         None, description='The format properties of the chart point. Read-only.'
     )
@@ -7975,7 +7975,7 @@ class WorkbookChartPoint(Entity):
 
 
 class WorkbookChartSeries(Entity):
-    field_odata_type: str
+    field_odata_type: str | None = None
     format: WorkbookChartSeriesFormat | None = Field(
         None,
         description='The formatting of a chart series, which includes fill and line formatting. Read-only.',
@@ -7987,7 +7987,7 @@ class WorkbookChartSeries(Entity):
 
 
 class WorkbookChartTitle(Entity):
-    field_odata_type: str
+    field_odata_type: str | None = None
     format: WorkbookChartTitleFormat | None = Field(
         None,
         description='The formatting of a chart title, which includes fill and font formatting. Read-only.',
@@ -8003,7 +8003,7 @@ class WorkbookChartTitle(Entity):
 
 
 class WorkbookComment(Entity):
-    field_odata_type: str
+    field_odata_type: str | None = None
     content: str | None = Field(None, description='The content of the comment.')
     content_type: str | None = Field(
         None, description='The content type of the comment.'
@@ -8014,7 +8014,7 @@ class WorkbookComment(Entity):
 
 
 class WorkbookFilterCriteria(BaseModel):
-    field_odata_type: str
+    field_odata_type: str | None = None
     color: str | None = Field(None, description='The color applied to the cell.')
     criterion1: str | None = Field(None, description='A custom criterion.')
     criterion2: str | None = Field(None, description='A custom criterion.')
@@ -8034,7 +8034,7 @@ class WorkbookFilterCriteria(BaseModel):
 
 
 class WorkbookOperation(Entity):
-    field_odata_type: str
+    field_odata_type: str | None = None
     error: WorkbookOperationError | None = Field(
         None, description='The error returned by the operation.'
     )
@@ -8045,7 +8045,7 @@ class WorkbookOperation(Entity):
 
 
 class WorkbookWorksheetProtection(Entity):
-    field_odata_type: str
+    field_odata_type: str | None = None
     options: WorkbookWorksheetProtectionOptions | None = Field(
         None, description='Worksheet protection options. Read-only.'
     )
@@ -8055,7 +8055,7 @@ class WorkbookWorksheetProtection(Entity):
 
 
 class AppRoleAssignment(DirectoryObject):
-    field_odata_type: str
+    field_odata_type: str | None = None
     app_role_id: UUID | None = Field(
         None,
         description="The identifier (id) for the app role that's assigned to the principal. This app role must be exposed in the appRoles property on the resource application's service principal (resourceId). If the resource application hasn't declared any app roles, a default app role ID of 00000000-0000-0000-0000-000000000000 can be specified to signal that the principal is assigned to the resource app without any specific app roles. Required on create.",
@@ -8087,7 +8087,7 @@ class AppRoleAssignment(DirectoryObject):
 
 
 class Attendee(AttendeeBase):
-    field_odata_type: str
+    field_odata_type: str | None = None
     proposed_new_time: TimeSlot | None = Field(
         None,
         description="An alternate date/time proposed by the attendee for a meeting request to start and end. If the attendee hasn't proposed another time, then this property isn't included in a response of a GET event.",
@@ -8099,7 +8099,7 @@ class Attendee(AttendeeBase):
 
 
 class ChatMessageMentionedIdentitySet(IdentitySet):
-    field_odata_type: str
+    field_odata_type: str | None = None
     conversation: TeamworkConversationIdentity | None = Field(
         None,
         description='If present, represents a conversation (for example, team, channel, or chat) @mentioned in a message.',
@@ -8107,7 +8107,7 @@ class ChatMessageMentionedIdentitySet(IdentitySet):
 
 
 class ChatMessageReaction(BaseModel):
-    field_odata_type: str
+    field_odata_type: str | None = None
     created_date_time: datetime | None = Field(
         None,
         description='The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.',
@@ -8124,7 +8124,7 @@ class ChatMessageReaction(BaseModel):
 
 
 class ConditionalAccessApplications(BaseModel):
-    field_odata_type: str
+    field_odata_type: str | None = None
     application_filter: ConditionalAccessFilter | None = None
     exclude_applications: List[str] | None = Field(
         None,
@@ -8142,7 +8142,7 @@ class ConditionalAccessApplications(BaseModel):
 
 
 class ConditionalAccessClientApplications(BaseModel):
-    field_odata_type: str
+    field_odata_type: str | None = None
     exclude_service_principals: List[str] | None = Field(
         None, description='Service principal IDs excluded from the policy scope.'
     )
@@ -8157,7 +8157,7 @@ class ConditionalAccessClientApplications(BaseModel):
 
 
 class ConditionalAccessDevices(BaseModel):
-    field_odata_type: str
+    field_odata_type: str | None = None
     device_filter: ConditionalAccessFilter | None = Field(
         None,
         description='Filter that defines the dynamic-device-syntax rule to include/exclude devices. A filter can use device properties (such as extension attributes) to include/exclude them.',
@@ -8165,7 +8165,7 @@ class ConditionalAccessDevices(BaseModel):
 
 
 class ConditionalAccessSessionControls(BaseModel):
-    field_odata_type: str
+    field_odata_type: str | None = None
     application_enforced_restrictions: (
         ApplicationEnforcedRestrictionsSessionControl | None
     ) = Field(
@@ -8189,7 +8189,7 @@ class ConditionalAccessSessionControls(BaseModel):
 
 
 class ConversationThread(Entity):
-    field_odata_type: str
+    field_odata_type: str | None = None
     cc_recipients: List[Recipient] | None = Field(
         None, description='The Cc: recipients for the thread. Returned only on $select.'
     )
@@ -8223,7 +8223,7 @@ class ConversationThread(Entity):
 
 
 class Device(DirectoryObject):
-    field_odata_type: str
+    field_odata_type: str | None = None
     account_enabled: bool | None = Field(
         None,
         description='true if the account is enabled; otherwise, false. Required. Default is true.  Supports $filter (eq, ne, not, in). Only callers with at least the Cloud Device Administrator role can set this property.',
@@ -8358,7 +8358,7 @@ class Device(DirectoryObject):
 
 
 class DeviceCompliancePolicySettingState(BaseModel):
-    field_odata_type: str
+    field_odata_type: str | None = None
     current_value: str | None = Field(
         None, description='Current value of setting on device'
     )
@@ -8382,7 +8382,7 @@ class DeviceCompliancePolicySettingState(BaseModel):
 
 
 class DeviceCompliancePolicyState(Entity):
-    field_odata_type: str
+    field_odata_type: str | None = None
     display_name: str | None = Field(
         None, description='The name of the policy for this policyBase'
     )
@@ -8398,7 +8398,7 @@ class DeviceCompliancePolicyState(Entity):
 
 
 class DeviceConfigurationSettingState(BaseModel):
-    field_odata_type: str
+    field_odata_type: str | None = None
     current_value: str | None = Field(
         None, description='Current value of setting on device'
     )
@@ -8422,7 +8422,7 @@ class DeviceConfigurationSettingState(BaseModel):
 
 
 class DeviceConfigurationState(Entity):
-    field_odata_type: str
+    field_odata_type: str | None = None
     display_name: str | None = Field(
         None, description='The name of the policy for this policyBase'
     )
@@ -8438,7 +8438,7 @@ class DeviceConfigurationState(Entity):
 
 
 class DocumentSetVersion(ListItemVersion):
-    field_odata_type: str
+    field_odata_type: str | None = None
     comment: str | None = Field(None, description='Comment about the captured version.')
     created_by: IdentitySet | None = Field(
         None, description='User who captured the version.'
@@ -8457,7 +8457,7 @@ class DocumentSetVersion(ListItemVersion):
 
 
 class InferenceClassification(Entity):
-    field_odata_type: str
+    field_odata_type: str | None = None
     overrides: List[InferenceClassificationOverride] | None = Field(
         None,
         description='A set of overrides for a user to always classify messages from specific senders in certain ways: focused, or other. Read-only. Nullable.',
@@ -8465,7 +8465,7 @@ class InferenceClassification(Entity):
 
 
 class ItemRetentionLabel(Entity):
-    field_odata_type: str
+    field_odata_type: str | None = None
     is_label_applied_explicitly: bool | None = Field(
         None,
         description='Specifies whether the label is applied explicitly on the item. True indicates that the label is applied explicitly; otherwise, the label is inherited from its parent. Read-only.',
@@ -8486,7 +8486,7 @@ class ItemRetentionLabel(Entity):
 
 
 class MessageRule(Entity):
-    field_odata_type: str
+    field_odata_type: str | None = None
     actions: MessageRuleActions | None = Field(
         None,
         description='Actions to be taken on a message when the corresponding conditions are fulfilled.',
@@ -8518,7 +8518,7 @@ class MessageRule(Entity):
 
 
 class MicrosoftAuthenticatorAuthenticationMethod(AuthenticationMethod):
-    field_odata_type: str
+    field_odata_type: str | None = None
     created_date_time: datetime | None = Field(
         None,
         description="The date and time that this app was registered. This property is null if the device isn't registered for passwordless Phone Sign-In.",
@@ -8537,7 +8537,7 @@ class MicrosoftAuthenticatorAuthenticationMethod(AuthenticationMethod):
 
 
 class OfferShiftRequest(ScheduleChangeRequest):
-    field_odata_type: str
+    field_odata_type: str | None = None
     recipient_action_date_time: datetime | None = Field(
         None,
         description='The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z',
@@ -8554,7 +8554,7 @@ class OfferShiftRequest(ScheduleChangeRequest):
 
 
 class OfficeGraphInsights(Entity):
-    field_odata_type: str
+    field_odata_type: str | None = None
     shared: List[SharedInsight] | None = Field(
         None,
         description='Calculated relationship that identifies documents shared with or by the user. This includes URLs, file attachments, and reference attachments to OneDrive for work or school and SharePoint files found in Outlook messages and meetings. This also includes URLs and reference attachments to Teams conversations. Ordered by recency of share.',
@@ -8570,7 +8570,7 @@ class OfficeGraphInsights(Entity):
 
 
 class OnenoteOperation(Operation):
-    field_odata_type: str
+    field_odata_type: str | None = None
     error: OnenoteOperationError | None = Field(
         None, description='The error returned by the operation.'
     )
@@ -8586,7 +8586,7 @@ class OnenoteOperation(Operation):
 
 
 class OnlineMeeting(OnlineMeetingBase):
-    field_odata_type: str
+    field_odata_type: str | None = None
     attendee_report: str | None = Field(
         None,
         description='The content stream of the attendee report of a Microsoft Teams live event. Read-only.',
@@ -8624,7 +8624,7 @@ class OnlineMeeting(OnlineMeetingBase):
 
 
 class OnlineMeetingInfo(BaseModel):
-    field_odata_type: str
+    field_odata_type: str | None = None
     conference_id: str | None = Field(None, description='The ID of the conference.')
     join_url: str | None = Field(
         None,
@@ -8646,19 +8646,19 @@ class OnlineMeetingInfo(BaseModel):
 
 
 class OpenShiftChangeRequest(ScheduleChangeRequest):
-    field_odata_type: str
+    field_odata_type: str | None = None
     open_shift_id: str | None = Field(None, description='ID for the open shift.')
 
 
 class OpenShiftItem(ShiftItem):
-    field_odata_type: str
+    field_odata_type: str | None = None
     open_slot_count: float | None = Field(
         None, description='Count of the number of slots for the given open shift.'
     )
 
 
 class PatternedRecurrence(BaseModel):
-    field_odata_type: str
+    field_odata_type: str | None = None
     pattern: RecurrencePattern | None = Field(
         None,
         description='The frequency of an event.  For access reviews: Do not specify this property for a one-time access review.  Only interval, dayOfMonth, and type (weekly, absoluteMonthly) properties of recurrencePattern are supported.',
@@ -8669,7 +8669,7 @@ class PatternedRecurrence(BaseModel):
 
 
 class Person(Entity):
-    field_odata_type: str
+    field_odata_type: str | None = None
     birthday: str | None = Field(None, description="The person's birthday.")
     company_name: str | None = Field(
         None, description="The name of the person's company."
@@ -8714,7 +8714,7 @@ class Person(Entity):
 
 
 class PlannerBucket(Entity):
-    field_odata_type: str
+    field_odata_type: str | None = None
     name: str | None = Field(None, description='Name of the bucket.')
     order_hint: str | None = Field(
         None,
@@ -8729,7 +8729,7 @@ class PlannerBucket(Entity):
 
 
 class PlannerPlan(Entity):
-    field_odata_type: str
+    field_odata_type: str | None = None
     buckets: List[PlannerBucket] | None = Field(
         None, description='Read-only. Nullable. Collection of buckets in the plan.'
     )
@@ -8758,7 +8758,7 @@ class PlannerPlan(Entity):
 
 
 class PlannerUser(Entity):
-    field_odata_type: str
+    field_odata_type: str | None = None
     plans: List[PlannerPlan] | None = Field(
         None,
         description='Read-only. Nullable. Returns the plannerTasks assigned to the user.',
@@ -8770,7 +8770,7 @@ class PlannerUser(Entity):
 
 
 class Shift(ChangeTrackedEntity):
-    field_odata_type: str
+    field_odata_type: str | None = None
     draft_shift: ShiftItem | None = Field(
         None,
         description='Draft changes in the shift. Draft changes are only visible to managers. The changes are visible to employees when they are shared, which copies the changes from the draftShift to the sharedShift property.',
@@ -8792,7 +8792,7 @@ class Shift(ChangeTrackedEntity):
 
 
 class ShiftAvailability(BaseModel):
-    field_odata_type: str
+    field_odata_type: str | None = None
     recurrence: PatternedRecurrence | None = Field(
         None, description='Specifies the pattern for recurrence'
     )
@@ -8805,7 +8805,7 @@ class ShiftAvailability(BaseModel):
 
 
 class ShiftPreferences(ChangeTrackedEntity):
-    field_odata_type: str
+    field_odata_type: str | None = None
     availability: List[ShiftAvailability] | None = Field(
         None,
         description='Availability of the user to be scheduled for work and its recurrence pattern.',
@@ -8813,7 +8813,7 @@ class ShiftPreferences(ChangeTrackedEntity):
 
 
 class SwapShiftsChangeRequest(OfferShiftRequest):
-    field_odata_type: str
+    field_odata_type: str | None = None
     recipient_shift_id: str | None = Field(
         None,
         description='ShiftId for the recipient user with whom the request is to swap.',
@@ -8821,14 +8821,14 @@ class SwapShiftsChangeRequest(OfferShiftRequest):
 
 
 class TeamsAppPermissionSet(BaseModel):
-    field_odata_type: str
+    field_odata_type: str | None = None
     resource_specific_permissions: List[TeamsAppResourceSpecificPermission] | None = (
         Field(None, description='A collection of resource-specific permissions.')
     )
 
 
 class TeamworkOnlineMeetingInfo(BaseModel):
-    field_odata_type: str
+    field_odata_type: str | None = None
     calendar_event_id: str | None = Field(
         None,
         description='The identifier of the calendar event associated with the meeting.',
@@ -8843,7 +8843,7 @@ class TeamworkOnlineMeetingInfo(BaseModel):
 
 
 class TimeOff(ChangeTrackedEntity):
-    field_odata_type: str
+    field_odata_type: str | None = None
     draft_time_off: TimeOffItem | None = Field(
         None,
         description="The draft version of this timeOff item that is viewable by managers. It must be shared before it's visible to team members. Required.",
@@ -8862,7 +8862,7 @@ class TimeOff(ChangeTrackedEntity):
 
 
 class TodoTask(Entity):
-    field_odata_type: str
+    field_odata_type: str | None = None
     attachment_sessions: List[AttachmentSession] | None = None
     attachments: List[AttachmentBase] | None = Field(
         None, description='A collection of file attachments for the task.'
@@ -8929,7 +8929,7 @@ class TodoTask(Entity):
 
 
 class TodoTaskList(Entity):
-    field_odata_type: str
+    field_odata_type: str | None = None
     display_name: str | None = Field(None, description='The name of the task list.')
     extensions: List[Extension] | None = Field(
         None,
@@ -8948,7 +8948,7 @@ class TodoTaskList(Entity):
 
 
 class UserSettings(Entity):
-    field_odata_type: str
+    field_odata_type: str | None = None
     contribution_to_content_discovery_as_organization_disabled: bool | None = Field(
         None,
         description="Reflects the organization level setting controlling delegate access to the trending API. When set to true, the organization doesn't have access to Office Delve. The relevancy of the content displayed in Microsoft 365, for example in Suggested sites in SharePoint Home and the Discover view in OneDrive for work or school is affected for the whole organization. This setting is read-only and can only be changed by administrators in the SharePoint admin center.",
@@ -8967,7 +8967,7 @@ class UserSettings(Entity):
 
 
 class WindowsHelloForBusinessAuthenticationMethod(AuthenticationMethod):
-    field_odata_type: str
+    field_odata_type: str | None = None
     created_date_time: datetime | None = Field(
         None,
         description='The date and time that this Windows Hello for Business key was registered.',
@@ -8987,7 +8987,7 @@ class WindowsHelloForBusinessAuthenticationMethod(AuthenticationMethod):
 
 
 class WorkbookChartAxisTitle(Entity):
-    field_odata_type: str
+    field_odata_type: str | None = None
     format: WorkbookChartAxisTitleFormat | None = Field(
         None, description='Represents the formatting of chart axis title. Read-only.'
     )
@@ -8998,7 +8998,7 @@ class WorkbookChartAxisTitle(Entity):
 
 
 class WorkbookChartGridlines(Entity):
-    field_odata_type: str
+    field_odata_type: str | None = None
     format: WorkbookChartGridlinesFormat | None = Field(
         None, description='Represents the formatting of chart gridlines. Read-only.'
     )
@@ -9008,14 +9008,14 @@ class WorkbookChartGridlines(Entity):
 
 
 class WorkbookFilter(Entity):
-    field_odata_type: str
+    field_odata_type: str | None = None
     criteria: WorkbookFilterCriteria | None = Field(
         None, description='The currently applied filter on the given column. Read-only.'
     )
 
 
 class WorkbookTableColumn(Entity):
-    field_odata_type: str
+    field_odata_type: str | None = None
     filter: WorkbookFilter | None = Field(
         None, description='The filter applied to the column. Read-only.'
     )
@@ -9031,7 +9031,7 @@ class WorkbookTableColumn(Entity):
 
 
 class Authentication(Entity):
-    field_odata_type: str
+    field_odata_type: str | None = None
     email_methods: List[EmailAuthenticationMethod] | None = Field(
         None, description='The email address registered to a user for authentication.'
     )
@@ -9078,7 +9078,7 @@ class Authentication(Entity):
 
 
 class ChatMessageHistoryItem(BaseModel):
-    field_odata_type: str
+    field_odata_type: str | None = None
     actions: ChatMessageActions | None = None
     modified_date_time: datetime | None = Field(
         None, description='The date and time when the message was modified.'
@@ -9089,7 +9089,7 @@ class ChatMessageHistoryItem(BaseModel):
 
 
 class ChatMessageMention(BaseModel):
-    field_odata_type: str
+    field_odata_type: str | None = None
     id: float | None = Field(
         None,
         description="Index of an entity being mentioned in the specified chatMessage. Matches the {index} value in the corresponding <at id='{index}'> tag in the message body.",
@@ -9105,7 +9105,7 @@ class ChatMessageMention(BaseModel):
 
 
 class ConditionalAccessConditionSet(BaseModel):
-    field_odata_type: str
+    field_odata_type: str | None = None
     applications: ConditionalAccessApplications | None = Field(
         None,
         description='Applications and user actions included in and excluded from the policy. Required.',
@@ -9157,7 +9157,7 @@ class ConditionalAccessConditionSet(BaseModel):
 
 
 class ConditionalAccessPolicy(Entity):
-    field_odata_type: str
+    field_odata_type: str | None = None
     conditions: ConditionalAccessConditionSet | None = None
     created_date_time: datetime | None = Field(
         None,
@@ -9185,7 +9185,7 @@ class ConditionalAccessPolicy(Entity):
 
 
 class Conversation(Entity):
-    field_odata_type: str
+    field_odata_type: str | None = None
     has_attachments: bool | None = Field(
         None,
         description='Indicates whether any of the posts within this Conversation has at least one attachment. Supports $filter (eq, ne) and $search.',
@@ -9212,11 +9212,11 @@ class Conversation(Entity):
 
 
 class ItemInsights(OfficeGraphInsights):
-    field_odata_type: str
+    field_odata_type: str | None = None
 
 
 class MailFolder(Entity):
-    field_odata_type: str
+    field_odata_type: str | None = None
     child_folder_count: float | None = Field(
         None,
         description='The number of immediate child mailFolders in the current mailFolder.',
@@ -9261,7 +9261,7 @@ class MailFolder(Entity):
 
 
 class OpenShift(ChangeTrackedEntity):
-    field_odata_type: str
+    field_odata_type: str | None = None
     draft_open_shift: OpenShiftItem | None = Field(
         None,
         description="Draft changes in the openShift are only visible to managers until they're shared.",
@@ -9280,7 +9280,7 @@ class OpenShift(ChangeTrackedEntity):
 
 
 class PlannerGroup(Entity):
-    field_odata_type: str
+    field_odata_type: str | None = None
     plans: List[PlannerPlan] | None = Field(
         None,
         description='Read-only. Nullable. Returns the plannerPlans owned by the group.',
@@ -9288,7 +9288,7 @@ class PlannerGroup(Entity):
 
 
 class Schedule(Entity):
-    field_odata_type: str
+    field_odata_type: str | None = None
     enabled: bool | None = Field(
         None,
         description='Indicates whether the schedule is enabled for the team. Required.',
@@ -9354,7 +9354,7 @@ class Schedule(Entity):
 
 
 class TeamsAppAuthorization(BaseModel):
-    field_odata_type: str
+    field_odata_type: str | None = None
     client_app_id: str | None = Field(
         None,
         description='The registration ID of the Microsoft Entra app ID associated with the teamsApp.',
@@ -9365,7 +9365,7 @@ class TeamsAppAuthorization(BaseModel):
 
 
 class TeamsAppDefinition(Entity):
-    field_odata_type: str
+    field_odata_type: str | None = None
     authorization: TeamsAppAuthorization | None = Field(
         None,
         description='Authorization requirements specified in the Teams app manifest.',
@@ -9397,14 +9397,14 @@ class TeamsAppDefinition(Entity):
 
 
 class Todo(Entity):
-    field_odata_type: str
+    field_odata_type: str | None = None
     lists: List[TodoTaskList] | None = Field(
         None, description='The task lists in the users mailbox.'
     )
 
 
 class WorkbookChartAxis(Entity):
-    field_odata_type: str
+    field_odata_type: str | None = None
     format: WorkbookChartAxisFormat | None = Field(
         None,
         description='Represents the formatting of a chart object, which includes line and font formatting. Read-only.',
@@ -9439,7 +9439,7 @@ class WorkbookChartAxis(Entity):
 
 
 class ChatMessage(Entity):
-    field_odata_type: str
+    field_odata_type: str | None = None
     attachments: List[ChatMessageAttachment] | None = Field(
         None,
         description='References to attached objects like files, tabs, meetings etc.',
@@ -9525,14 +9525,14 @@ class ChatMessage(Entity):
 
 
 class PinnedChatMessageInfo(Entity):
-    field_odata_type: str
+    field_odata_type: str | None = None
     message: ChatMessage | None = Field(
         None, description='Represents details about the chat message that is pinned.'
     )
 
 
 class TeamsApp(Entity):
-    field_odata_type: str
+    field_odata_type: str | None = None
     app_definitions: List[TeamsAppDefinition] | None = Field(
         None, description='The details for each version of the app.'
     )
@@ -9550,7 +9550,7 @@ class TeamsApp(Entity):
 
 
 class TeamsAppInstallation(Entity):
-    field_odata_type: str
+    field_odata_type: str | None = None
     consented_permission_set: TeamsAppPermissionSet | None = Field(
         None,
         description='The set of resource-specific permissions consented to while installing or upgrading the teamsApp.',
@@ -9564,7 +9564,7 @@ class TeamsAppInstallation(Entity):
 
 
 class TeamsTab(Entity):
-    field_odata_type: str
+    field_odata_type: str | None = None
     configuration: TeamsTabConfiguration | None = Field(
         None,
         description='Container for custom settings applied to a tab. The tab is considered configured only once this property is set.',
@@ -9580,7 +9580,7 @@ class TeamsTab(Entity):
 
 
 class WorkbookChartAxes(Entity):
-    field_odata_type: str
+    field_odata_type: str | None = None
     category_axis: WorkbookChartAxis | None = Field(
         None, description='Represents the category axis in a chart. Read-only.'
     )
@@ -9594,7 +9594,7 @@ class WorkbookChartAxes(Entity):
 
 
 class Chat(Entity):
-    field_odata_type: str
+    field_odata_type: str | None = None
     chat_type: ChatType | None = None
     created_date_time: datetime | None = Field(
         None, description='Date and time at which the chat was created. Read-only.'
@@ -9653,14 +9653,14 @@ class Chat(Entity):
 
 
 class UserScopeTeamsAppInstallation(TeamsAppInstallation):
-    field_odata_type: str
+    field_odata_type: str | None = None
     chat: Chat | None = Field(
         None, description='The chat between the user and Teams app.'
     )
 
 
 class ActivityHistoryItem(Entity):
-    field_odata_type: str
+    field_odata_type: str | None = None
     active_duration_seconds: float | None = Field(
         None,
         description='Optional. The duration of active user engagement. if not supplied, this is calculated from the startedDateTime and lastActiveDateTime.',
@@ -9697,7 +9697,7 @@ class ActivityHistoryItem(Entity):
 
 
 class BaseItem(Entity):
-    field_odata_type: str
+    field_odata_type: str | None = None
     created_by: IdentitySet | None = Field(
         None,
         description='Identity of the user, device, or application that created the item. Read-only.',
@@ -9733,7 +9733,7 @@ class BaseItem(Entity):
 
 
 class Calendar(Entity):
-    field_odata_type: str
+    field_odata_type: str | None = None
     allowed_online_meeting_providers: (
         List[OnlineMeetingProviderType] | None
     ) = Field(
@@ -9813,7 +9813,7 @@ class Calendar(Entity):
 
 
 class CalendarGroup(Entity):
-    field_odata_type: str
+    field_odata_type: str | None = None
     calendars: List[Calendar] | None = Field(
         None,
         description='The calendars in the calendar group. Navigation property. Read-only. Nullable.',
@@ -9827,7 +9827,7 @@ class CalendarGroup(Entity):
 
 
 class Channel(Entity):
-    field_odata_type: str
+    field_odata_type: str | None = None
     created_date_time: datetime | None = Field(
         None, description='Read only. Timestamp at which the channel was created.'
     )
@@ -9886,7 +9886,7 @@ class Channel(Entity):
 
 
 class ColumnDefinition(Entity):
-    field_odata_type: str
+    field_odata_type: str | None = None
     boolean: BooleanColumn | None = Field(
         None, description='This column stores Boolean values.'
     )
@@ -9996,7 +9996,7 @@ class ColumnDefinition(Entity):
 
 
 class ContentType(Entity):
-    field_odata_type: str
+    field_odata_type: str | None = None
     associated_hubs_urls: List[str] | None = Field(
         None,
         description='List of canonical URLs for hub sites with which this content type is associated to. This will contain all hub sites where this content type is queued to be enforced or is already enforced. Enforcing a content type means that the content type is applied to the lists in the enforced sites.',
@@ -10066,7 +10066,7 @@ class ContentType(Entity):
 
 
 class DocumentSet(BaseModel):
-    field_odata_type: str
+    field_odata_type: str | None = None
     allowed_content_types: List[ContentTypeInfo] | None = Field(
         None, description='Content types allowed in document set.'
     )
@@ -10087,7 +10087,7 @@ class DocumentSet(BaseModel):
 
 
 class Event(OutlookItem):
-    field_odata_type: str
+    field_odata_type: str | None = None
     allow_new_time_proposals: bool | None = Field(
         None,
         description='true if the meeting organizer allows invitees to propose a new time when responding; otherwise, false. Optional. Default is true.',
@@ -10258,7 +10258,7 @@ class Event(OutlookItem):
 
 
 class Group(DirectoryObject):
-    field_odata_type: str
+    field_odata_type: str | None = None
     accepted_senders: List[DirectoryObject] | None = Field(
         None,
         description='The list of users or groups allowed to create posts or calendar events in this group. If this list is nonempty, then only users or groups listed here are allowed to post.',
@@ -10512,7 +10512,7 @@ class Group(DirectoryObject):
 
 
 class ItemActivity(Entity):
-    field_odata_type: str
+    field_odata_type: str | None = None
     access: AccessAction | None = Field(
         None, description='An item was accessed.'
     )
@@ -10528,7 +10528,7 @@ class ItemActivity(Entity):
 
 
 class ItemActivityStat(Entity):
-    field_odata_type: str
+    field_odata_type: str | None = None
     access: ItemActionStat | None = Field(
         None,
         description='Statistics about the access actions in this interval. Read-only.',
@@ -10569,14 +10569,14 @@ class ItemActivityStat(Entity):
 
 
 class ItemAnalytics(Entity):
-    field_odata_type: str
+    field_odata_type: str | None = None
     all_time: ItemActivityStat | None = None
     item_activity_stats: List[ItemActivityStat] | None = None
     last_seven_days: ItemActivityStat | None = None
 
 
 class ManagedDevice(Entity):
-    field_odata_type: str
+    field_odata_type: str | None = None
     activation_lock_bypass_code: str | None = Field(
         None,
         description='The code that allows the Activation Lock on managed device to be bypassed. Default, is Null (Non-Default property) for this property when returned as part of managedDevice entity in LIST call. To retrieve actual values GET call needs to be made, with device id and included in select parameter. Supports: $select. $Search is not supported. Read-only. This property is read-only.',
@@ -10777,7 +10777,7 @@ class ManagedDevice(Entity):
 
 
 class Notebook(OnenoteEntityHierarchyModel):
-    field_odata_type: str
+    field_odata_type: str | None = None
     is_default: bool | None = Field(
         None,
         description="Indicates whether this is the user's default notebook. Read-only.",
@@ -10811,7 +10811,7 @@ class Notebook(OnenoteEntityHierarchyModel):
 
 
 class Onenote(Entity):
-    field_odata_type: str
+    field_odata_type: str | None = None
     notebooks: List[Notebook] | None = Field(
         None,
         description='The collection of OneNote notebooks that are owned by the user or group. Read-only. Nullable.',
@@ -10839,7 +10839,7 @@ class Onenote(Entity):
 
 
 class OnenotePage(OnenoteEntitySchemaObjectModel):
-    field_odata_type: str
+    field_odata_type: str | None = None
     content: str | None = Field(None, description="The page's HTML content.")
     content_url: str | None = Field(
         None, description="The URL for the page's HTML content.  Read-only."
@@ -10873,7 +10873,7 @@ class OnenotePage(OnenoteEntitySchemaObjectModel):
 
 
 class OnenoteSection(OnenoteEntityHierarchyModel):
-    field_odata_type: str
+    field_odata_type: str | None = None
     is_default: bool | None = Field(
         None,
         description="Indicates whether this is the user's default section. Read-only.",
@@ -10899,7 +10899,7 @@ class OnenoteSection(OnenoteEntityHierarchyModel):
 
 
 class PrintJob(Entity):
-    field_odata_type: str
+    field_odata_type: str | None = None
     configuration: PrintJobConfiguration | None = None
     created_by: UserIdentity | None = None
     created_date_time: datetime | None = Field(
@@ -10924,7 +10924,7 @@ class PrintJob(Entity):
 
 
 class PrintTask(Entity):
-    field_odata_type: str
+    field_odata_type: str | None = None
     definition: PrintTaskDefinition | None = None
     parent_url: str | None = Field(
         None,
@@ -10935,7 +10935,7 @@ class PrintTask(Entity):
 
 
 class PrintTaskDefinition(Entity):
-    field_odata_type: str
+    field_odata_type: str | None = None
     created_by: AppIdentity | None = None
     display_name: str | None = Field(
         None, description='The name of the printTaskDefinition.'
@@ -10947,13 +10947,13 @@ class PrintTaskDefinition(Entity):
 
 
 class PrintTaskTrigger(Entity):
-    field_odata_type: str
+    field_odata_type: str | None = None
     definition: PrintTaskDefinition | None = None
     event: PrintEvent | None = None
 
 
 class PrinterBase(Entity):
-    field_odata_type: str
+    field_odata_type: str | None = None
     capabilities: PrinterCapabilities | None = Field(
         None, description='The capabilities of the printer/printerShare.'
     )
@@ -10985,7 +10985,7 @@ class PrinterBase(Entity):
 
 
 class SectionGroup(OnenoteEntityHierarchyModel):
-    field_odata_type: str
+    field_odata_type: str | None = None
     parent_notebook: Notebook | None = Field(
         None, description='The notebook that contains the section group. Read-only.'
     )
@@ -11010,7 +11010,7 @@ class SectionGroup(OnenoteEntityHierarchyModel):
 
 
 class Team(Entity):
-    field_odata_type: str
+    field_odata_type: str | None = None
     all_channels: List[Channel] | None = Field(
         None,
         description='List of channels either hosted in or shared with the team (incoming channels).',
@@ -11107,7 +11107,7 @@ class Team(Entity):
 
 
 class TeamInfo(Entity):
-    field_odata_type: str
+    field_odata_type: str | None = None
     display_name: str | None = Field(None, description='The name of the team.')
     team: Team | None = None
     tenant_id: str | None = Field(
@@ -11116,7 +11116,7 @@ class TeamInfo(Entity):
 
 
 class TermColumn(BaseModel):
-    field_odata_type: str
+    field_odata_type: str | None = None
     allow_multiple_values: bool | None = Field(
         None, description='Specifies whether the column allows more than one value.'
     )
@@ -11129,7 +11129,7 @@ class TermColumn(BaseModel):
 
 
 class User(DirectoryObject):
-    field_odata_type: str
+    field_odata_type: str | None = None
     about_me: str | None = Field(
         None,
         description='A freeform text entry field for the user to describe themselves. Returned only on $select.',
@@ -11590,7 +11590,7 @@ class User(DirectoryObject):
 
 
 class UserActivity(Entity):
-    field_odata_type: str
+    field_odata_type: str | None = None
     activation_url: str | None = Field(
         None,
         description='Required. URL used to launch the activity in the best native experience represented by the appId. Might launch a web-based app if no native app exists.',
@@ -11647,12 +11647,12 @@ class UserActivity(Entity):
 
 
 class UserPrint(BaseModel):
-    field_odata_type: str
+    field_odata_type: str | None = None
     recent_printer_shares: List[PrinterShare] | None = None
 
 
 class UserTeamwork(Entity):
-    field_odata_type: str
+    field_odata_type: str | None = None
     associated_teams: List[AssociatedTeamInfo] | None = Field(
         None,
         description='The list of associatedTeamInfo objects that a user is associated with.',
@@ -11671,7 +11671,7 @@ class UserTeamwork(Entity):
 
 
 class Workbook(Entity):
-    field_odata_type: str
+    field_odata_type: str | None = None
     application: WorkbookApplication | None = None
     comments: List[WorkbookComment] | None = Field(
         None, description='Represents a collection of comments in a workbook.'
@@ -11696,7 +11696,7 @@ class Workbook(Entity):
 
 
 class WorkbookChart(Entity):
-    field_odata_type: str
+    field_odata_type: str | None = None
     axes: WorkbookChartAxes | None = Field(
         None, description='Represents chart axes. Read-only.'
     )
@@ -11739,7 +11739,7 @@ class WorkbookChart(Entity):
 
 
 class WorkbookNamedItem(Entity):
-    field_odata_type: str
+    field_odata_type: str | None = None
     comment: str | None = Field(
         None, description='The comment associated with this name.'
     )
@@ -11766,7 +11766,7 @@ class WorkbookNamedItem(Entity):
 
 
 class WorkbookPivotTable(Entity):
-    field_odata_type: str
+    field_odata_type: str | None = None
     name: str | None = Field(None, description='The name of the pivot table.')
     worksheet: WorkbookWorksheet | None = Field(
         None,
@@ -11775,7 +11775,7 @@ class WorkbookPivotTable(Entity):
 
 
 class WorkbookTable(Entity):
-    field_odata_type: str
+    field_odata_type: str | None = None
     columns: List[WorkbookTableColumn] | None = Field(
         None, description='The list of all the columns in the table. Read-only.'
     )
@@ -11828,7 +11828,7 @@ class WorkbookTable(Entity):
 
 
 class WorkbookWorksheet(Entity):
-    field_odata_type: str
+    field_odata_type: str | None = None
     charts: List[WorkbookChart] | None = Field(
         None,
         description='The list of charts that are part of the worksheet. Read-only.',
@@ -11859,7 +11859,7 @@ class WorkbookWorksheet(Entity):
 
 
 class BaseSitePage(BaseItem):
-    field_odata_type: str
+    field_odata_type: str | None = None
     page_layout: PageLayoutType | None = Field(
         None,
         description='The name of the page layout of the page. The possible values are: microsoftReserved, article, home, unknownFutureValue.',
@@ -11871,7 +11871,7 @@ class BaseSitePage(BaseItem):
 
 
 class Drive(BaseItem):
-    field_odata_type: str
+    field_odata_type: str | None = None
     bundles: List[DriveItem] | None = Field(
         None,
         description='Collection of bundles (albums and multi-select-shared sets of items). Only in personal OneDrive.',
@@ -11913,7 +11913,7 @@ class Drive(BaseItem):
 
 
 class DriveItem(BaseItem):
-    field_odata_type: str
+    field_odata_type: str | None = None
     analytics: ItemAnalytics | None = Field(
         None,
         description='Analytics about the view activities that took place on this item.',
@@ -12036,7 +12036,7 @@ class DriveItem(BaseItem):
 
 
 class ListModel(BaseItem):
-    field_odata_type: str
+    field_odata_type: str | None = None
     columns: List[ColumnDefinition] | None = Field(
         None, description='The collection of field definitions for this list.'
     )
@@ -12073,7 +12073,7 @@ class ListModel(BaseItem):
 
 
 class ListItem(BaseItem):
-    field_odata_type: str
+    field_odata_type: str | None = None
     analytics: ItemAnalytics | None = Field(
         None,
         description='Analytics about the view activities that took place on this item.',
@@ -12102,7 +12102,7 @@ class ListItem(BaseItem):
 
 
 class Site(BaseItem):
-    field_odata_type: str
+    field_odata_type: str | None = None
     analytics: ItemAnalytics | None = Field(
         None,
         description='Analytics about the view activities that took place on this site.',
@@ -12173,7 +12173,7 @@ class Site(BaseItem):
 
 
 class Printer(PrinterBase):
-    field_odata_type: str
+    field_odata_type: str | None = None
     connectors: List[PrintConnector] | None = Field(
         None, description='The connectors that are associated with the printer.'
     )
@@ -12203,7 +12203,7 @@ class Printer(PrinterBase):
 
 
 class PrinterShare(PrinterBase):
-    field_odata_type: str
+    field_odata_type: str | None = None
     allow_all_users: bool | None = Field(
         None,
         description='If true, all users and groups will be granted access to this printer share. This supersedes the allow lists defined by the allowedUsers and allowedGroups navigation properties.',
@@ -12229,11 +12229,11 @@ class PrinterShare(PrinterBase):
 
 
 class AssociatedTeamInfo(TeamInfo):
-    field_odata_type: str
+    field_odata_type: str | None = None
 
 
 class SharedWithChannelTeamInfo(TeamInfo):
-    field_odata_type: str
+    field_odata_type: str | None = None
     allowed_members: List[ConversationMember] | None = Field(
         None,
         description='A collection of team members who have access to the shared channel.',

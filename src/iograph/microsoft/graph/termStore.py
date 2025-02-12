@@ -15,7 +15,7 @@ from . import Entity
 
 
 class LocalizedDescription(BaseModel):
-    field_odata_type: str
+    field_odata_type: str | None = None
     description: str | None = Field(
         None, description='The description in the localized language.'
     )
@@ -25,7 +25,7 @@ class LocalizedDescription(BaseModel):
 
 
 class LocalizedLabel(BaseModel):
-    field_odata_type: str
+    field_odata_type: str | None = None
     is_default: bool | None = Field(
         None, description='Indicates whether the label is the default label.'
     )
@@ -36,7 +36,7 @@ class LocalizedLabel(BaseModel):
 
 
 class LocalizedName(BaseModel):
-    field_odata_type: str
+    field_odata_type: str | None = None
     language_tag: str | None = Field(
         None, description='The language tag for the label.'
     )
@@ -57,7 +57,7 @@ class TermGroupScope(Enum):
 
 
 class Group(Entity):
-    field_odata_type: str
+    field_odata_type: str | None = None
     created_date_time: datetime | None = Field(
         None, description='Date and time of the group creation. Read-only.'
     )
@@ -78,7 +78,7 @@ class Group(Entity):
 
 
 class Relation(Entity):
-    field_odata_type: str
+    field_odata_type: str | None = None
     from_term: Term | None = Field(
         None,
         description='The from [term] of the relation. The term from which the relationship is defined. A null value would indicate the relation is directly with the [set].',
@@ -96,7 +96,7 @@ class Relation(Entity):
 
 
 class Set(Entity):
-    field_odata_type: str
+    field_odata_type: str | None = None
     children: List[Term] | None = Field(
         None, description='Children terms of set in term [store].'
     )
@@ -121,7 +121,7 @@ class Set(Entity):
 
 
 class Store(Entity):
-    field_odata_type: str
+    field_odata_type: str | None = None
     default_language_tag: str | None = Field(
         None, description='Default language of the term store.'
     )
@@ -138,7 +138,7 @@ class Store(Entity):
 
 
 class Term(Entity):
-    field_odata_type: str
+    field_odata_type: str | None = None
     children: List[Term] | None = Field(None, description='Children of current term.')
     created_date_time: datetime | None = Field(
         None, description='Date and time of term creation. Read-only.'
