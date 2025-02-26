@@ -11,7 +11,12 @@ authors = [
 dependencies = [
   "httpx>=0.28.1",
   "pydantic>=2.10",
-
+  "h2>=3,<5",
+  "socksio==1.*",
+  "zstandard>=0.18.0",
+  "azure-core>=1.32.0",
+  "microsoft-kiota-abstractions>=1.9.2",
+  "microsoft-kiota-authentication-azure>=1.9.2",
 ]
 description = "A collection of MS graph API models"
 readme = "readme.md"

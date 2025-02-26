@@ -1,0 +1,86 @@
+from __future__ import annotations
+from uuid import UUID
+from typing import Optional
+from datetime import datetime
+from pydantic import BaseModel, Field
+
+
+class Application(BaseModel):
+	id: Optional[str] = Field(default=None,alias="id",)
+	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
+	deletedDateTime: Optional[datetime] = Field(default=None,alias="deletedDateTime",)
+	addIns: list[AddIn] = Field(alias="addIns",)
+	api: Optional[ApiApplication] = Field(default=None,alias="api",)
+	appId: Optional[str] = Field(default=None,alias="appId",)
+	applicationTemplateId: Optional[str] = Field(default=None,alias="applicationTemplateId",)
+	appRoles: list[AppRole] = Field(alias="appRoles",)
+	certification: Optional[Certification] = Field(default=None,alias="certification",)
+	createdDateTime: Optional[datetime] = Field(default=None,alias="createdDateTime",)
+	defaultRedirectUri: Optional[str] = Field(default=None,alias="defaultRedirectUri",)
+	description: Optional[str] = Field(default=None,alias="description",)
+	disabledByMicrosoftStatus: Optional[str] = Field(default=None,alias="disabledByMicrosoftStatus",)
+	displayName: Optional[str] = Field(default=None,alias="displayName",)
+	groupMembershipClaims: Optional[str] = Field(default=None,alias="groupMembershipClaims",)
+	identifierUris: list[str] = Field(alias="identifierUris",)
+	info: Optional[InformationalUrl] = Field(default=None,alias="info",)
+	isDeviceOnlyAuthSupported: Optional[bool] = Field(default=None,alias="isDeviceOnlyAuthSupported",)
+	isFallbackPublicClient: Optional[bool] = Field(default=None,alias="isFallbackPublicClient",)
+	keyCredentials: list[KeyCredential] = Field(alias="keyCredentials",)
+	logo: Optional[str] = Field(default=None,alias="logo",)
+	nativeAuthenticationApisEnabled: Optional[NativeAuthenticationApisEnabled] = Field(default=None,alias="nativeAuthenticationApisEnabled",)
+	notes: Optional[str] = Field(default=None,alias="notes",)
+	oauth2RequirePostResponse: Optional[bool] = Field(default=None,alias="oauth2RequirePostResponse",)
+	optionalClaims: Optional[OptionalClaims] = Field(default=None,alias="optionalClaims",)
+	parentalControlSettings: Optional[ParentalControlSettings] = Field(default=None,alias="parentalControlSettings",)
+	passwordCredentials: list[PasswordCredential] = Field(alias="passwordCredentials",)
+	publicClient: Optional[PublicClientApplication] = Field(default=None,alias="publicClient",)
+	publisherDomain: Optional[str] = Field(default=None,alias="publisherDomain",)
+	requestSignatureVerification: Optional[RequestSignatureVerification] = Field(default=None,alias="requestSignatureVerification",)
+	requiredResourceAccess: list[RequiredResourceAccess] = Field(alias="requiredResourceAccess",)
+	samlMetadataUrl: Optional[str] = Field(default=None,alias="samlMetadataUrl",)
+	serviceManagementReference: Optional[str] = Field(default=None,alias="serviceManagementReference",)
+	servicePrincipalLockConfiguration: Optional[ServicePrincipalLockConfiguration] = Field(default=None,alias="servicePrincipalLockConfiguration",)
+	signInAudience: Optional[str] = Field(default=None,alias="signInAudience",)
+	spa: Optional[SpaApplication] = Field(default=None,alias="spa",)
+	tags: list[str] = Field(alias="tags",)
+	tokenEncryptionKeyId: Optional[UUID] = Field(default=None,alias="tokenEncryptionKeyId",)
+	uniqueName: Optional[str] = Field(default=None,alias="uniqueName",)
+	verifiedPublisher: Optional[VerifiedPublisher] = Field(default=None,alias="verifiedPublisher",)
+	web: Optional[WebApplication] = Field(default=None,alias="web",)
+	appManagementPolicies: list[AppManagementPolicy] = Field(alias="appManagementPolicies",)
+	createdOnBehalfOf: Optional[DirectoryObject] = Field(default=None,alias="createdOnBehalfOf",)
+	extensionProperties: list[ExtensionProperty] = Field(alias="extensionProperties",)
+	federatedIdentityCredentials: list[FederatedIdentityCredential] = Field(alias="federatedIdentityCredentials",)
+	homeRealmDiscoveryPolicies: list[HomeRealmDiscoveryPolicy] = Field(alias="homeRealmDiscoveryPolicies",)
+	owners: list[DirectoryObject] = Field(alias="owners",)
+	synchronization: Optional[Synchronization] = Field(default=None,alias="synchronization",)
+	tokenIssuancePolicies: list[TokenIssuancePolicy] = Field(alias="tokenIssuancePolicies",)
+	tokenLifetimePolicies: list[TokenLifetimePolicy] = Field(alias="tokenLifetimePolicies",)
+
+from .add_in import AddIn
+from .api_application import ApiApplication
+from .app_role import AppRole
+from .certification import Certification
+from .informational_url import InformationalUrl
+from .key_credential import KeyCredential
+from .native_authentication_apis_enabled import NativeAuthenticationApisEnabled
+from .optional_claims import OptionalClaims
+from .parental_control_settings import ParentalControlSettings
+from .password_credential import PasswordCredential
+from .public_client_application import PublicClientApplication
+from .request_signature_verification import RequestSignatureVerification
+from .required_resource_access import RequiredResourceAccess
+from .service_principal_lock_configuration import ServicePrincipalLockConfiguration
+from .spa_application import SpaApplication
+from .verified_publisher import VerifiedPublisher
+from .web_application import WebApplication
+from .app_management_policy import AppManagementPolicy
+from .directory_object import DirectoryObject
+from .extension_property import ExtensionProperty
+from .federated_identity_credential import FederatedIdentityCredential
+from .home_realm_discovery_policy import HomeRealmDiscoveryPolicy
+from .directory_object import DirectoryObject
+from .synchronization import Synchronization
+from .token_issuance_policy import TokenIssuancePolicy
+from .token_lifetime_policy import TokenLifetimePolicy
+

@@ -1,0 +1,44 @@
+[build-system]
+requires = [ "hatchling",]
+build-backend = "hatchling.build"
+
+[project]
+name = "iograph-models"
+version = "0.2.0"
+description = "This package contains all  schemas from 'Microsoft Graph Api'.openapi.components.schemas."
+readme = "README.md"
+requires-python = ">=3.12"
+license = "MIT"
+keywords = []
+classifiers = [ "Development Status :: 4 - Beta", "Programming Language :: Python", "Programming Language :: Python :: 3.12", "Programming Language :: Python :: Implementation :: CPython", "Programming Language :: Python :: Implementation :: PyPy",]
+dependencies = [ "pydantic>=2.10.6",]
+[[project.authors]]
+name = "Kevin Es"
+email = "kevin@intellio.com.au"
+
+[project.urls]
+Documentation = "https://github.com/intellio/iograph-models#readme"
+Issues = "https://github.com/intellio/iograph-models/issues"
+Source = "https://github.com/intellio/iograph-models"
+
+[tool.coverage.run]
+source_pkgs = [ "iograph_models", "tests",]
+branch = true
+parallel = true
+omit = [ "src/iograph_models/__about__.py",]
+
+[tool.coverage.paths]
+iograph_models = [ "src/iograph_models", "*/iograph-models/src/iograph_models",]
+tests = [ "tests", "*/iograph-models/tests",]
+
+[tool.coverage.report]
+exclude_lines = [ "no cov", "if __name__ == .__main__.:", "if TYPE_CHECKING:",]
+
+[tool.hatch.envs.types]
+extra-dependencies = [ "mypy>=1.0.0",]
+
+[tool.hatch.envs.types.scripts]
+check = "mypy --install-types --non-interactive {args:src/iograph_models tests}"
+
+[tool.hatch.build.targets.wheel]
+packages = [ "src/iograph_models",]

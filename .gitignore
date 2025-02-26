@@ -15,6 +15,7 @@ openapi_client/
 # mkdocs documentation
 /site
 openapi.yaml
+openapi*.yaml
 # mypy
 .mypy_cache/
 .dmypy.json

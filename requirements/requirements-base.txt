@@ -4,3 +4,4 @@ tzdata >= 2024.2
 datamodel-code-generator[http] >= 0.26.5
 requests >= 2.32.3
 httpx >= 0.28.1 
+toml >= 0.10.2

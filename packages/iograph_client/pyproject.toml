@@ -1,0 +1,41 @@
+[build-system]
+requires = [ "hatchling",]
+build-backend = "hatchling.build"
+
+[project]
+name = "iograph-client"
+version = "0.2.0"
+description = "Microsoft Graph Python SDK. Heavily influenced ny the official released SDK client by Microsoft, but better!"
+readme = "README.md"
+requires-python = ">=3.12"
+license = "MIT"
+keywords = []
+classifiers = [ "Development Status :: 4 - Beta", "Programming Language :: Python", "Programming Language :: Python :: 3.12", "Programming Language :: Python :: Implementation :: CPython", "Programming Language :: Python :: Implementation :: PyPy",]
+dependencies = [ "httpx>=0.28.1", "pydantic>=2.10", "h2>=3,<5", "socksio==1.*", "zstandard>=0.18.0", "azure-core>=1.32.0", "microsoft-kiota-abstractions>=1.9.2", "microsoft-kiota-authentication-azure>=1.9.2", "msgraph-core>=1.3.1",]
+[[project.authors]]
+name = "Kevin Es"
+email = "kevin@intellio.com.au"
+
+[project.urls]
+Documentation = "https://github.com/intellio/iograph-client#readme"
+Issues = "https://github.com/intellio/iograph-client/issues"
+Source = "https://github.com/intellio/iograph-client"
+
+[tool.coverage.run]
+source_pkgs = [ "iograph_client", "tests",]
+branch = true
+parallel = true
+omit = [ "src/iograph_client/__about__.py",]
+
+[tool.coverage.paths]
+iograph_client = [ "src/iograph_client", "*/iograph-client/src/iograph_client",]
+tests = [ "tests", "*/iograph-client/tests",]
+
+[tool.coverage.report]
+exclude_lines = [ "no cov", "if __name__ == .__main__.:", "if TYPE_CHECKING:",]
+
+[tool.hatch.envs.types]
+extra-dependencies = [ "mypy>=1.0.0",]
+
+[tool.hatch.envs.types.scripts]
+check = "mypy --install-types --non-interactive {args:src/iograph_client tests}"

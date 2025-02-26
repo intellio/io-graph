@@ -1,0 +1,50 @@
+# Auto-generated client
+
+from __future__ import annotations
+from kiota_abstractions.method import Method
+from kiota_abstractions.base_request_configuration import RequestConfiguration
+from .....request_information import RequestInformation
+from pydantic import BaseModel, Field
+from typing import Union, Any, Optional
+from typing import TYPE_CHECKING
+
+if TYPE_CHECKING:
+	from .....request_adapter import HttpxRequestAdapter
+from iograph_models.models.assign_license_response import AssignLicenseResponse
+from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.models.assign_license_post_request import Assign_licensePostRequest
+
+
+class AssignLicenseRequest:
+	def __init__(self,request_adapter: HttpxRequestAdapter, path_parameters: Optional[Union[dict[str, Any], str]]) -> None:
+		self.request_adapter = request_adapter
+		self.url_template: str = "{+baseurl}/users/{user%2Did}/assignLicense"
+		self.path_parameters: dict[str, Any] = path_parameters
+
+	async def post(
+		self,
+		body: Assign_licensePostRequest,
+		request_configuration: Optional[RequestConfiguration[BaseModel]] = None,
+	) -> AssignLicenseResponse:
+		"""
+		Invoke action assignLicense
+		Add or remove licenses for the user to enable or disable their use of Microsoft cloud offerings that the company has licenses to. For example, an organization can have a Microsoft 365 Enterprise E3 subscription with 100 licenses, and this request assigns one of those licenses to a specific user. You can also enable and disable specific plans associated with a subscription. Direct user licensing method is an alternative to group-based licensing.
+		Find more info here: https://learn.microsoft.com/graph/api/user-assignlicense?view=graph-rest-1.0
+		"""
+		tags = ['users.user.Actions']
+
+		error_mapping: dict[str, type[BaseModel]] = {
+			"XXX": ODataErrorsODataError,
+		}
+
+		request_info: RequestInformation = RequestInformation(
+			method = Method.POST,
+			url_template = self.url_template,
+			path_parameters = self.path_parameters,
+		)
+		request_info.configure(request_configuration)
+		request_info.headers.try_add("Accept", "application/json")
+		request_info.set_content(body, "application/json")
+		return await self.request_adapter.send_async(request_info, AssignLicenseResponse, error_mapping)
+
+

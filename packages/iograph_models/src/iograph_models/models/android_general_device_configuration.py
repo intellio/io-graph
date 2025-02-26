@@ -1,0 +1,84 @@
+from __future__ import annotations
+from typing import Optional
+from datetime import datetime
+from pydantic import BaseModel, Field
+
+
+class AndroidGeneralDeviceConfiguration(BaseModel):
+	id: Optional[str] = Field(default=None,alias="id",)
+	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
+	createdDateTime: Optional[datetime] = Field(default=None,alias="createdDateTime",)
+	description: Optional[str] = Field(default=None,alias="description",)
+	displayName: Optional[str] = Field(default=None,alias="displayName",)
+	lastModifiedDateTime: Optional[datetime] = Field(default=None,alias="lastModifiedDateTime",)
+	version: Optional[int] = Field(default=None,alias="version",)
+	assignments: list[DeviceConfigurationAssignment] = Field(alias="assignments",)
+	deviceSettingStateSummaries: list[SettingStateDeviceSummary] = Field(alias="deviceSettingStateSummaries",)
+	deviceStatuses: list[DeviceConfigurationDeviceStatus] = Field(alias="deviceStatuses",)
+	deviceStatusOverview: Optional[DeviceConfigurationDeviceOverview] = Field(default=None,alias="deviceStatusOverview",)
+	userStatuses: list[DeviceConfigurationUserStatus] = Field(alias="userStatuses",)
+	userStatusOverview: Optional[DeviceConfigurationUserOverview] = Field(default=None,alias="userStatusOverview",)
+	appsBlockClipboardSharing: Optional[bool] = Field(default=None,alias="appsBlockClipboardSharing",)
+	appsBlockCopyPaste: Optional[bool] = Field(default=None,alias="appsBlockCopyPaste",)
+	appsBlockYouTube: Optional[bool] = Field(default=None,alias="appsBlockYouTube",)
+	appsHideList: list[AppListItem] = Field(alias="appsHideList",)
+	appsInstallAllowList: list[AppListItem] = Field(alias="appsInstallAllowList",)
+	appsLaunchBlockList: list[AppListItem] = Field(alias="appsLaunchBlockList",)
+	bluetoothBlocked: Optional[bool] = Field(default=None,alias="bluetoothBlocked",)
+	cameraBlocked: Optional[bool] = Field(default=None,alias="cameraBlocked",)
+	cellularBlockDataRoaming: Optional[bool] = Field(default=None,alias="cellularBlockDataRoaming",)
+	cellularBlockMessaging: Optional[bool] = Field(default=None,alias="cellularBlockMessaging",)
+	cellularBlockVoiceRoaming: Optional[bool] = Field(default=None,alias="cellularBlockVoiceRoaming",)
+	cellularBlockWiFiTethering: Optional[bool] = Field(default=None,alias="cellularBlockWiFiTethering",)
+	compliantAppListType: Optional[AppListType] = Field(default=None,alias="compliantAppListType",)
+	compliantAppsList: list[AppListItem] = Field(alias="compliantAppsList",)
+	deviceSharingAllowed: Optional[bool] = Field(default=None,alias="deviceSharingAllowed",)
+	diagnosticDataBlockSubmission: Optional[bool] = Field(default=None,alias="diagnosticDataBlockSubmission",)
+	factoryResetBlocked: Optional[bool] = Field(default=None,alias="factoryResetBlocked",)
+	googleAccountBlockAutoSync: Optional[bool] = Field(default=None,alias="googleAccountBlockAutoSync",)
+	googlePlayStoreBlocked: Optional[bool] = Field(default=None,alias="googlePlayStoreBlocked",)
+	kioskModeApps: list[AppListItem] = Field(alias="kioskModeApps",)
+	kioskModeBlockSleepButton: Optional[bool] = Field(default=None,alias="kioskModeBlockSleepButton",)
+	kioskModeBlockVolumeButtons: Optional[bool] = Field(default=None,alias="kioskModeBlockVolumeButtons",)
+	locationServicesBlocked: Optional[bool] = Field(default=None,alias="locationServicesBlocked",)
+	nfcBlocked: Optional[bool] = Field(default=None,alias="nfcBlocked",)
+	passwordBlockFingerprintUnlock: Optional[bool] = Field(default=None,alias="passwordBlockFingerprintUnlock",)
+	passwordBlockTrustAgents: Optional[bool] = Field(default=None,alias="passwordBlockTrustAgents",)
+	passwordExpirationDays: Optional[int] = Field(default=None,alias="passwordExpirationDays",)
+	passwordMinimumLength: Optional[int] = Field(default=None,alias="passwordMinimumLength",)
+	passwordMinutesOfInactivityBeforeScreenTimeout: Optional[int] = Field(default=None,alias="passwordMinutesOfInactivityBeforeScreenTimeout",)
+	passwordPreviousPasswordBlockCount: Optional[int] = Field(default=None,alias="passwordPreviousPasswordBlockCount",)
+	passwordRequired: Optional[bool] = Field(default=None,alias="passwordRequired",)
+	passwordRequiredType: Optional[AndroidRequiredPasswordType] = Field(default=None,alias="passwordRequiredType",)
+	passwordSignInFailureCountBeforeFactoryReset: Optional[int] = Field(default=None,alias="passwordSignInFailureCountBeforeFactoryReset",)
+	powerOffBlocked: Optional[bool] = Field(default=None,alias="powerOffBlocked",)
+	screenCaptureBlocked: Optional[bool] = Field(default=None,alias="screenCaptureBlocked",)
+	securityRequireVerifyApps: Optional[bool] = Field(default=None,alias="securityRequireVerifyApps",)
+	storageBlockGoogleBackup: Optional[bool] = Field(default=None,alias="storageBlockGoogleBackup",)
+	storageBlockRemovableStorage: Optional[bool] = Field(default=None,alias="storageBlockRemovableStorage",)
+	storageRequireDeviceEncryption: Optional[bool] = Field(default=None,alias="storageRequireDeviceEncryption",)
+	storageRequireRemovableStorageEncryption: Optional[bool] = Field(default=None,alias="storageRequireRemovableStorageEncryption",)
+	voiceAssistantBlocked: Optional[bool] = Field(default=None,alias="voiceAssistantBlocked",)
+	voiceDialingBlocked: Optional[bool] = Field(default=None,alias="voiceDialingBlocked",)
+	webBrowserBlockAutofill: Optional[bool] = Field(default=None,alias="webBrowserBlockAutofill",)
+	webBrowserBlocked: Optional[bool] = Field(default=None,alias="webBrowserBlocked",)
+	webBrowserBlockJavaScript: Optional[bool] = Field(default=None,alias="webBrowserBlockJavaScript",)
+	webBrowserBlockPopups: Optional[bool] = Field(default=None,alias="webBrowserBlockPopups",)
+	webBrowserCookieSettings: Optional[WebBrowserCookieSettings] = Field(default=None,alias="webBrowserCookieSettings",)
+	wiFiBlocked: Optional[bool] = Field(default=None,alias="wiFiBlocked",)
+
+from .device_configuration_assignment import DeviceConfigurationAssignment
+from .setting_state_device_summary import SettingStateDeviceSummary
+from .device_configuration_device_status import DeviceConfigurationDeviceStatus
+from .device_configuration_device_overview import DeviceConfigurationDeviceOverview
+from .device_configuration_user_status import DeviceConfigurationUserStatus
+from .device_configuration_user_overview import DeviceConfigurationUserOverview
+from .app_list_item import AppListItem
+from .app_list_item import AppListItem
+from .app_list_item import AppListItem
+from .app_list_type import AppListType
+from .app_list_item import AppListItem
+from .app_list_item import AppListItem
+from .android_required_password_type import AndroidRequiredPasswordType
+from .web_browser_cookie_settings import WebBrowserCookieSettings
+
