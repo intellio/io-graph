@@ -1,5 +1,6 @@
 # Microsoft Graph Python SDK
-Microsoft Graph Python SDK. Heavily influenced ny the official released SDK client by Microsoft, but better!  
+Microsoft Graph Python SDK. Heavily influenced by the official released SDK client by Microsoft, but better!
+Main difference with the official package is using Pydantic models instead of dataclasses and use its powerful features e.g validation, serialisation, discrimination ...
 
 
 Quick Start:
