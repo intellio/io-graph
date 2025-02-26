@@ -1,0 +1,74 @@
+from __future__ import annotations
+from typing import Optional
+from datetime import datetime
+from pydantic import BaseModel, Field
+
+
+class WindowsUpdateForBusinessConfiguration(BaseModel):
+	id: Optional[str] = Field(default=None,alias="id",)
+	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
+	createdDateTime: Optional[datetime] = Field(default=None,alias="createdDateTime",)
+	description: Optional[str] = Field(default=None,alias="description",)
+	displayName: Optional[str] = Field(default=None,alias="displayName",)
+	lastModifiedDateTime: Optional[datetime] = Field(default=None,alias="lastModifiedDateTime",)
+	version: Optional[int] = Field(default=None,alias="version",)
+	assignments: list[DeviceConfigurationAssignment] = Field(alias="assignments",)
+	deviceSettingStateSummaries: list[SettingStateDeviceSummary] = Field(alias="deviceSettingStateSummaries",)
+	deviceStatuses: list[DeviceConfigurationDeviceStatus] = Field(alias="deviceStatuses",)
+	deviceStatusOverview: Optional[DeviceConfigurationDeviceOverview] = Field(default=None,alias="deviceStatusOverview",)
+	userStatuses: list[DeviceConfigurationUserStatus] = Field(alias="userStatuses",)
+	userStatusOverview: Optional[DeviceConfigurationUserOverview] = Field(default=None,alias="userStatusOverview",)
+	allowWindows11Upgrade: Optional[bool] = Field(default=None,alias="allowWindows11Upgrade",)
+	automaticUpdateMode: Optional[AutomaticUpdateMode] = Field(default=None,alias="automaticUpdateMode",)
+	autoRestartNotificationDismissal: Optional[AutoRestartNotificationDismissalMethod] = Field(default=None,alias="autoRestartNotificationDismissal",)
+	businessReadyUpdatesOnly: Optional[WindowsUpdateType] = Field(default=None,alias="businessReadyUpdatesOnly",)
+	deadlineForFeatureUpdatesInDays: Optional[int] = Field(default=None,alias="deadlineForFeatureUpdatesInDays",)
+	deadlineForQualityUpdatesInDays: Optional[int] = Field(default=None,alias="deadlineForQualityUpdatesInDays",)
+	deadlineGracePeriodInDays: Optional[int] = Field(default=None,alias="deadlineGracePeriodInDays",)
+	deliveryOptimizationMode: Optional[WindowsDeliveryOptimizationMode] = Field(default=None,alias="deliveryOptimizationMode",)
+	driversExcluded: Optional[bool] = Field(default=None,alias="driversExcluded",)
+	engagedRestartDeadlineInDays: Optional[int] = Field(default=None,alias="engagedRestartDeadlineInDays",)
+	engagedRestartSnoozeScheduleInDays: Optional[int] = Field(default=None,alias="engagedRestartSnoozeScheduleInDays",)
+	engagedRestartTransitionScheduleInDays: Optional[int] = Field(default=None,alias="engagedRestartTransitionScheduleInDays",)
+	featureUpdatesDeferralPeriodInDays: Optional[int] = Field(default=None,alias="featureUpdatesDeferralPeriodInDays",)
+	featureUpdatesPaused: Optional[bool] = Field(default=None,alias="featureUpdatesPaused",)
+	featureUpdatesPauseExpiryDateTime: Optional[datetime] = Field(default=None,alias="featureUpdatesPauseExpiryDateTime",)
+	featureUpdatesPauseStartDate: Optional[str] = Field(default=None,alias="featureUpdatesPauseStartDate",)
+	featureUpdatesRollbackStartDateTime: Optional[datetime] = Field(default=None,alias="featureUpdatesRollbackStartDateTime",)
+	featureUpdatesRollbackWindowInDays: Optional[int] = Field(default=None,alias="featureUpdatesRollbackWindowInDays",)
+	featureUpdatesWillBeRolledBack: Optional[bool] = Field(default=None,alias="featureUpdatesWillBeRolledBack",)
+	installationSchedule: Optional[WindowsUpdateInstallScheduleType] = Field(default=None,alias="installationSchedule",)
+	microsoftUpdateServiceAllowed: Optional[bool] = Field(default=None,alias="microsoftUpdateServiceAllowed",)
+	postponeRebootUntilAfterDeadline: Optional[bool] = Field(default=None,alias="postponeRebootUntilAfterDeadline",)
+	prereleaseFeatures: Optional[PrereleaseFeatures] = Field(default=None,alias="prereleaseFeatures",)
+	qualityUpdatesDeferralPeriodInDays: Optional[int] = Field(default=None,alias="qualityUpdatesDeferralPeriodInDays",)
+	qualityUpdatesPaused: Optional[bool] = Field(default=None,alias="qualityUpdatesPaused",)
+	qualityUpdatesPauseExpiryDateTime: Optional[datetime] = Field(default=None,alias="qualityUpdatesPauseExpiryDateTime",)
+	qualityUpdatesPauseStartDate: Optional[str] = Field(default=None,alias="qualityUpdatesPauseStartDate",)
+	qualityUpdatesRollbackStartDateTime: Optional[datetime] = Field(default=None,alias="qualityUpdatesRollbackStartDateTime",)
+	qualityUpdatesWillBeRolledBack: Optional[bool] = Field(default=None,alias="qualityUpdatesWillBeRolledBack",)
+	scheduleImminentRestartWarningInMinutes: Optional[int] = Field(default=None,alias="scheduleImminentRestartWarningInMinutes",)
+	scheduleRestartWarningInHours: Optional[int] = Field(default=None,alias="scheduleRestartWarningInHours",)
+	skipChecksBeforeRestart: Optional[bool] = Field(default=None,alias="skipChecksBeforeRestart",)
+	updateNotificationLevel: Optional[WindowsUpdateNotificationDisplayOption] = Field(default=None,alias="updateNotificationLevel",)
+	updateWeeks: Optional[WindowsUpdateForBusinessUpdateWeeks] = Field(default=None,alias="updateWeeks",)
+	userPauseAccess: Optional[Enablement] = Field(default=None,alias="userPauseAccess",)
+	userWindowsUpdateScanAccess: Optional[Enablement] = Field(default=None,alias="userWindowsUpdateScanAccess",)
+
+from .device_configuration_assignment import DeviceConfigurationAssignment
+from .setting_state_device_summary import SettingStateDeviceSummary
+from .device_configuration_device_status import DeviceConfigurationDeviceStatus
+from .device_configuration_device_overview import DeviceConfigurationDeviceOverview
+from .device_configuration_user_status import DeviceConfigurationUserStatus
+from .device_configuration_user_overview import DeviceConfigurationUserOverview
+from .automatic_update_mode import AutomaticUpdateMode
+from .auto_restart_notification_dismissal_method import AutoRestartNotificationDismissalMethod
+from .windows_update_type import WindowsUpdateType
+from .windows_delivery_optimization_mode import WindowsDeliveryOptimizationMode
+from .windows_update_install_schedule_type import WindowsUpdateInstallScheduleType
+from .prerelease_features import PrereleaseFeatures
+from .windows_update_notification_display_option import WindowsUpdateNotificationDisplayOption
+from .windows_update_for_business_update_weeks import WindowsUpdateForBusinessUpdateWeeks
+from .enablement import Enablement
+from .enablement import Enablement
+

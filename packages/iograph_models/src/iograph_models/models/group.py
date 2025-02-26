@@ -1,0 +1,112 @@
+from __future__ import annotations
+from typing import Optional
+from datetime import datetime
+from pydantic import BaseModel, Field
+
+
+class Group(BaseModel):
+	id: Optional[str] = Field(default=None,alias="id",)
+	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
+	deletedDateTime: Optional[datetime] = Field(default=None,alias="deletedDateTime",)
+	allowExternalSenders: Optional[bool] = Field(default=None,alias="allowExternalSenders",)
+	assignedLabels: list[AssignedLabel] = Field(alias="assignedLabels",)
+	assignedLicenses: list[AssignedLicense] = Field(alias="assignedLicenses",)
+	autoSubscribeNewMembers: Optional[bool] = Field(default=None,alias="autoSubscribeNewMembers",)
+	classification: Optional[str] = Field(default=None,alias="classification",)
+	createdDateTime: Optional[datetime] = Field(default=None,alias="createdDateTime",)
+	description: Optional[str] = Field(default=None,alias="description",)
+	displayName: Optional[str] = Field(default=None,alias="displayName",)
+	expirationDateTime: Optional[datetime] = Field(default=None,alias="expirationDateTime",)
+	groupTypes: list[str] = Field(alias="groupTypes",)
+	hasMembersWithLicenseErrors: Optional[bool] = Field(default=None,alias="hasMembersWithLicenseErrors",)
+	hideFromAddressLists: Optional[bool] = Field(default=None,alias="hideFromAddressLists",)
+	hideFromOutlookClients: Optional[bool] = Field(default=None,alias="hideFromOutlookClients",)
+	isArchived: Optional[bool] = Field(default=None,alias="isArchived",)
+	isAssignableToRole: Optional[bool] = Field(default=None,alias="isAssignableToRole",)
+	isManagementRestricted: Optional[bool] = Field(default=None,alias="isManagementRestricted",)
+	isSubscribedByMail: Optional[bool] = Field(default=None,alias="isSubscribedByMail",)
+	licenseProcessingState: Optional[LicenseProcessingState] = Field(default=None,alias="licenseProcessingState",)
+	mail: Optional[str] = Field(default=None,alias="mail",)
+	mailEnabled: Optional[bool] = Field(default=None,alias="mailEnabled",)
+	mailNickname: Optional[str] = Field(default=None,alias="mailNickname",)
+	membershipRule: Optional[str] = Field(default=None,alias="membershipRule",)
+	membershipRuleProcessingState: Optional[str] = Field(default=None,alias="membershipRuleProcessingState",)
+	onPremisesDomainName: Optional[str] = Field(default=None,alias="onPremisesDomainName",)
+	onPremisesLastSyncDateTime: Optional[datetime] = Field(default=None,alias="onPremisesLastSyncDateTime",)
+	onPremisesNetBiosName: Optional[str] = Field(default=None,alias="onPremisesNetBiosName",)
+	onPremisesProvisioningErrors: list[OnPremisesProvisioningError] = Field(alias="onPremisesProvisioningErrors",)
+	onPremisesSamAccountName: Optional[str] = Field(default=None,alias="onPremisesSamAccountName",)
+	onPremisesSecurityIdentifier: Optional[str] = Field(default=None,alias="onPremisesSecurityIdentifier",)
+	onPremisesSyncEnabled: Optional[bool] = Field(default=None,alias="onPremisesSyncEnabled",)
+	preferredDataLocation: Optional[str] = Field(default=None,alias="preferredDataLocation",)
+	preferredLanguage: Optional[str] = Field(default=None,alias="preferredLanguage",)
+	proxyAddresses: list[str] = Field(alias="proxyAddresses",)
+	renewedDateTime: Optional[datetime] = Field(default=None,alias="renewedDateTime",)
+	securityEnabled: Optional[bool] = Field(default=None,alias="securityEnabled",)
+	securityIdentifier: Optional[str] = Field(default=None,alias="securityIdentifier",)
+	serviceProvisioningErrors: list[ServiceProvisioningError] = Field(alias="serviceProvisioningErrors",)
+	theme: Optional[str] = Field(default=None,alias="theme",)
+	uniqueName: Optional[str] = Field(default=None,alias="uniqueName",)
+	unseenCount: Optional[int] = Field(default=None,alias="unseenCount",)
+	visibility: Optional[str] = Field(default=None,alias="visibility",)
+	acceptedSenders: list[DirectoryObject] = Field(alias="acceptedSenders",)
+	appRoleAssignments: list[AppRoleAssignment] = Field(alias="appRoleAssignments",)
+	calendar: Optional[Calendar] = Field(default=None,alias="calendar",)
+	calendarView: list[Event] = Field(alias="calendarView",)
+	conversations: list[Conversation] = Field(alias="conversations",)
+	createdOnBehalfOf: Optional[DirectoryObject] = Field(default=None,alias="createdOnBehalfOf",)
+	drive: Optional[Drive] = Field(default=None,alias="drive",)
+	drives: list[Drive] = Field(alias="drives",)
+	events: list[Event] = Field(alias="events",)
+	extensions: list[Extension] = Field(alias="extensions",)
+	groupLifecyclePolicies: list[GroupLifecyclePolicy] = Field(alias="groupLifecyclePolicies",)
+	memberOf: list[DirectoryObject] = Field(alias="memberOf",)
+	members: list[DirectoryObject] = Field(alias="members",)
+	membersWithLicenseErrors: list[DirectoryObject] = Field(alias="membersWithLicenseErrors",)
+	onenote: Optional[Onenote] = Field(default=None,alias="onenote",)
+	owners: list[DirectoryObject] = Field(alias="owners",)
+	permissionGrants: list[ResourceSpecificPermissionGrant] = Field(alias="permissionGrants",)
+	photo: Optional[ProfilePhoto] = Field(default=None,alias="photo",)
+	photos: list[ProfilePhoto] = Field(alias="photos",)
+	planner: Optional[PlannerGroup] = Field(default=None,alias="planner",)
+	rejectedSenders: list[DirectoryObject] = Field(alias="rejectedSenders",)
+	settings: list[GroupSetting] = Field(alias="settings",)
+	sites: list[Site] = Field(alias="sites",)
+	team: Optional[Team] = Field(default=None,alias="team",)
+	threads: list[ConversationThread] = Field(alias="threads",)
+	transitiveMemberOf: list[DirectoryObject] = Field(alias="transitiveMemberOf",)
+	transitiveMembers: list[DirectoryObject] = Field(alias="transitiveMembers",)
+
+from .assigned_label import AssignedLabel
+from .assigned_license import AssignedLicense
+from .license_processing_state import LicenseProcessingState
+from .on_premises_provisioning_error import OnPremisesProvisioningError
+from .service_provisioning_error import ServiceProvisioningError
+from .directory_object import DirectoryObject
+from .app_role_assignment import AppRoleAssignment
+from .calendar import Calendar
+from .event import Event
+from .conversation import Conversation
+from .directory_object import DirectoryObject
+from .drive import Drive
+from .drive import Drive
+from .event import Event
+from .extension import Extension
+from .group_lifecycle_policy import GroupLifecyclePolicy
+from .directory_object import DirectoryObject
+from .directory_object import DirectoryObject
+from .directory_object import DirectoryObject
+from .onenote import Onenote
+from .directory_object import DirectoryObject
+from .resource_specific_permission_grant import ResourceSpecificPermissionGrant
+from .profile_photo import ProfilePhoto
+from .profile_photo import ProfilePhoto
+from .planner_group import PlannerGroup
+from .directory_object import DirectoryObject
+from .group_setting import GroupSetting
+from .site import Site
+from .team import Team
+from .conversation_thread import ConversationThread
+from .directory_object import DirectoryObject
+from .directory_object import DirectoryObject
+

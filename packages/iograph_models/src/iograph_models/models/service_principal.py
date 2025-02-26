@@ -1,0 +1,93 @@
+from __future__ import annotations
+from uuid import UUID
+from typing import Optional
+from datetime import datetime
+from pydantic import BaseModel, Field
+
+
+class ServicePrincipal(BaseModel):
+	id: Optional[str] = Field(default=None,alias="id",)
+	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
+	deletedDateTime: Optional[datetime] = Field(default=None,alias="deletedDateTime",)
+	accountEnabled: Optional[bool] = Field(default=None,alias="accountEnabled",)
+	addIns: list[AddIn] = Field(alias="addIns",)
+	alternativeNames: list[str] = Field(alias="alternativeNames",)
+	appDescription: Optional[str] = Field(default=None,alias="appDescription",)
+	appDisplayName: Optional[str] = Field(default=None,alias="appDisplayName",)
+	appId: Optional[str] = Field(default=None,alias="appId",)
+	applicationTemplateId: Optional[str] = Field(default=None,alias="applicationTemplateId",)
+	appOwnerOrganizationId: Optional[UUID] = Field(default=None,alias="appOwnerOrganizationId",)
+	appRoleAssignmentRequired: Optional[bool] = Field(default=None,alias="appRoleAssignmentRequired",)
+	appRoles: list[AppRole] = Field(alias="appRoles",)
+	customSecurityAttributes: Optional[CustomSecurityAttributeValue] = Field(default=None,alias="customSecurityAttributes",)
+	description: Optional[str] = Field(default=None,alias="description",)
+	disabledByMicrosoftStatus: Optional[str] = Field(default=None,alias="disabledByMicrosoftStatus",)
+	displayName: Optional[str] = Field(default=None,alias="displayName",)
+	homepage: Optional[str] = Field(default=None,alias="homepage",)
+	info: Optional[InformationalUrl] = Field(default=None,alias="info",)
+	keyCredentials: list[KeyCredential] = Field(alias="keyCredentials",)
+	loginUrl: Optional[str] = Field(default=None,alias="loginUrl",)
+	logoutUrl: Optional[str] = Field(default=None,alias="logoutUrl",)
+	notes: Optional[str] = Field(default=None,alias="notes",)
+	notificationEmailAddresses: list[str] = Field(alias="notificationEmailAddresses",)
+	oauth2PermissionScopes: list[PermissionScope] = Field(alias="oauth2PermissionScopes",)
+	passwordCredentials: list[PasswordCredential] = Field(alias="passwordCredentials",)
+	preferredSingleSignOnMode: Optional[str] = Field(default=None,alias="preferredSingleSignOnMode",)
+	preferredTokenSigningKeyThumbprint: Optional[str] = Field(default=None,alias="preferredTokenSigningKeyThumbprint",)
+	replyUrls: list[str] = Field(alias="replyUrls",)
+	resourceSpecificApplicationPermissions: list[ResourceSpecificPermission] = Field(alias="resourceSpecificApplicationPermissions",)
+	samlSingleSignOnSettings: Optional[SamlSingleSignOnSettings] = Field(default=None,alias="samlSingleSignOnSettings",)
+	servicePrincipalNames: list[str] = Field(alias="servicePrincipalNames",)
+	servicePrincipalType: Optional[str] = Field(default=None,alias="servicePrincipalType",)
+	signInAudience: Optional[str] = Field(default=None,alias="signInAudience",)
+	tags: list[str] = Field(alias="tags",)
+	tokenEncryptionKeyId: Optional[UUID] = Field(default=None,alias="tokenEncryptionKeyId",)
+	verifiedPublisher: Optional[VerifiedPublisher] = Field(default=None,alias="verifiedPublisher",)
+	appManagementPolicies: list[AppManagementPolicy] = Field(alias="appManagementPolicies",)
+	appRoleAssignedTo: list[AppRoleAssignment] = Field(alias="appRoleAssignedTo",)
+	appRoleAssignments: list[AppRoleAssignment] = Field(alias="appRoleAssignments",)
+	claimsMappingPolicies: list[ClaimsMappingPolicy] = Field(alias="claimsMappingPolicies",)
+	createdObjects: list[DirectoryObject] = Field(alias="createdObjects",)
+	delegatedPermissionClassifications: list[DelegatedPermissionClassification] = Field(alias="delegatedPermissionClassifications",)
+	endpoints: list[Endpoint] = Field(alias="endpoints",)
+	federatedIdentityCredentials: list[FederatedIdentityCredential] = Field(alias="federatedIdentityCredentials",)
+	homeRealmDiscoveryPolicies: list[HomeRealmDiscoveryPolicy] = Field(alias="homeRealmDiscoveryPolicies",)
+	memberOf: list[DirectoryObject] = Field(alias="memberOf",)
+	oauth2PermissionGrants: list[OAuth2PermissionGrant] = Field(alias="oauth2PermissionGrants",)
+	ownedObjects: list[DirectoryObject] = Field(alias="ownedObjects",)
+	owners: list[DirectoryObject] = Field(alias="owners",)
+	remoteDesktopSecurityConfiguration: Optional[RemoteDesktopSecurityConfiguration] = Field(default=None,alias="remoteDesktopSecurityConfiguration",)
+	synchronization: Optional[Synchronization] = Field(default=None,alias="synchronization",)
+	tokenIssuancePolicies: list[TokenIssuancePolicy] = Field(alias="tokenIssuancePolicies",)
+	tokenLifetimePolicies: list[TokenLifetimePolicy] = Field(alias="tokenLifetimePolicies",)
+	transitiveMemberOf: list[DirectoryObject] = Field(alias="transitiveMemberOf",)
+
+from .add_in import AddIn
+from .app_role import AppRole
+from .custom_security_attribute_value import CustomSecurityAttributeValue
+from .informational_url import InformationalUrl
+from .key_credential import KeyCredential
+from .permission_scope import PermissionScope
+from .password_credential import PasswordCredential
+from .resource_specific_permission import ResourceSpecificPermission
+from .saml_single_sign_on_settings import SamlSingleSignOnSettings
+from .verified_publisher import VerifiedPublisher
+from .app_management_policy import AppManagementPolicy
+from .app_role_assignment import AppRoleAssignment
+from .app_role_assignment import AppRoleAssignment
+from .claims_mapping_policy import ClaimsMappingPolicy
+from .directory_object import DirectoryObject
+from .delegated_permission_classification import DelegatedPermissionClassification
+from .endpoint import Endpoint
+from .federated_identity_credential import FederatedIdentityCredential
+from .home_realm_discovery_policy import HomeRealmDiscoveryPolicy
+from .directory_object import DirectoryObject
+from .o_auth2_permission_grant import OAuth2PermissionGrant
+from .directory_object import DirectoryObject
+from .directory_object import DirectoryObject
+from .remote_desktop_security_configuration import RemoteDesktopSecurityConfiguration
+from .synchronization import Synchronization
+from .token_issuance_policy import TokenIssuancePolicy
+from .token_lifetime_policy import TokenLifetimePolicy
+from .directory_object import DirectoryObject
+

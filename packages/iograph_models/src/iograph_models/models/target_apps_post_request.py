@@ -1,0 +1,12 @@
+from __future__ import annotations
+from typing import Optional
+from pydantic import BaseModel, Field
+
+
+class Target_appsPostRequest(BaseModel):
+	apps: list[ManagedMobileApp] = Field(alias="apps",)
+	appGroupType: Optional[TargetedManagedAppGroupType] = Field(default=None,alias="appGroupType",)
+
+from .managed_mobile_app import ManagedMobileApp
+from .targeted_managed_app_group_type import TargetedManagedAppGroupType
+

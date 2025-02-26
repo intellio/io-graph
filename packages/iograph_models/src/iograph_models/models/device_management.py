@@ -1,0 +1,140 @@
+from __future__ import annotations
+from uuid import UUID
+from typing import Optional
+from pydantic import BaseModel, Field
+
+
+class DeviceManagement(BaseModel):
+	id: Optional[str] = Field(default=None,alias="id",)
+	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
+	deviceProtectionOverview: Optional[DeviceProtectionOverview] = Field(default=None,alias="deviceProtectionOverview",)
+	intuneAccountId: Optional[UUID] = Field(default=None,alias="intuneAccountId",)
+	intuneBrand: Optional[IntuneBrand] = Field(default=None,alias="intuneBrand",)
+	settings: Optional[DeviceManagementSettings] = Field(default=None,alias="settings",)
+	subscriptionState: Optional[DeviceManagementSubscriptionState] = Field(default=None,alias="subscriptionState",)
+	userExperienceAnalyticsSettings: Optional[UserExperienceAnalyticsSettings] = Field(default=None,alias="userExperienceAnalyticsSettings",)
+	windowsMalwareOverview: Optional[WindowsMalwareOverview] = Field(default=None,alias="windowsMalwareOverview",)
+	applePushNotificationCertificate: Optional[ApplePushNotificationCertificate] = Field(default=None,alias="applePushNotificationCertificate",)
+	auditEvents: list[AuditEvent] = Field(alias="auditEvents",)
+	complianceManagementPartners: list[ComplianceManagementPartner] = Field(alias="complianceManagementPartners",)
+	conditionalAccessSettings: Optional[OnPremisesConditionalAccessSettings] = Field(default=None,alias="conditionalAccessSettings",)
+	detectedApps: list[DetectedApp] = Field(alias="detectedApps",)
+	deviceCategories: list[DeviceCategory] = Field(alias="deviceCategories",)
+	deviceCompliancePolicies: list[DeviceCompliancePolicy] = Field(alias="deviceCompliancePolicies",)
+	deviceCompliancePolicyDeviceStateSummary: Optional[DeviceCompliancePolicyDeviceStateSummary] = Field(default=None,alias="deviceCompliancePolicyDeviceStateSummary",)
+	deviceCompliancePolicySettingStateSummaries: list[DeviceCompliancePolicySettingStateSummary] = Field(alias="deviceCompliancePolicySettingStateSummaries",)
+	deviceConfigurationDeviceStateSummaries: Optional[DeviceConfigurationDeviceStateSummary] = Field(default=None,alias="deviceConfigurationDeviceStateSummaries",)
+	deviceConfigurations: list[DeviceConfiguration] = Field(alias="deviceConfigurations",)
+	deviceEnrollmentConfigurations: list[DeviceEnrollmentConfiguration] = Field(alias="deviceEnrollmentConfigurations",)
+	deviceManagementPartners: list[DeviceManagementPartner] = Field(alias="deviceManagementPartners",)
+	exchangeConnectors: list[DeviceManagementExchangeConnector] = Field(alias="exchangeConnectors",)
+	importedWindowsAutopilotDeviceIdentities: list[ImportedWindowsAutopilotDeviceIdentity] = Field(alias="importedWindowsAutopilotDeviceIdentities",)
+	iosUpdateStatuses: list[IosUpdateDeviceStatus] = Field(alias="iosUpdateStatuses",)
+	managedDeviceOverview: Optional[ManagedDeviceOverview] = Field(default=None,alias="managedDeviceOverview",)
+	managedDevices: list[ManagedDevice] = Field(alias="managedDevices",)
+	mobileAppTroubleshootingEvents: list[MobileAppTroubleshootingEvent] = Field(alias="mobileAppTroubleshootingEvents",)
+	mobileThreatDefenseConnectors: list[MobileThreatDefenseConnector] = Field(alias="mobileThreatDefenseConnectors",)
+	notificationMessageTemplates: list[NotificationMessageTemplate] = Field(alias="notificationMessageTemplates",)
+	remoteAssistancePartners: list[RemoteAssistancePartner] = Field(alias="remoteAssistancePartners",)
+	reports: Optional[DeviceManagementReports] = Field(default=None,alias="reports",)
+	resourceOperations: list[ResourceOperation] = Field(alias="resourceOperations",)
+	roleAssignments: list[DeviceAndAppManagementRoleAssignment] = Field(alias="roleAssignments",)
+	roleDefinitions: list[RoleDefinition] = Field(alias="roleDefinitions",)
+	softwareUpdateStatusSummary: Optional[SoftwareUpdateStatusSummary] = Field(default=None,alias="softwareUpdateStatusSummary",)
+	telecomExpenseManagementPartners: list[TelecomExpenseManagementPartner] = Field(alias="telecomExpenseManagementPartners",)
+	termsAndConditions: list[TermsAndConditions] = Field(alias="termsAndConditions",)
+	troubleshootingEvents: list[DeviceManagementTroubleshootingEvent] = Field(alias="troubleshootingEvents",)
+	userExperienceAnalyticsAppHealthApplicationPerformance: list[UserExperienceAnalyticsAppHealthApplicationPerformance] = Field(alias="userExperienceAnalyticsAppHealthApplicationPerformance",)
+	userExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionDetails: list[UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetails] = Field(alias="userExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionDetails",)
+	userExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionDeviceId: list[UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDeviceId] = Field(alias="userExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionDeviceId",)
+	userExperienceAnalyticsAppHealthApplicationPerformanceByOSVersion: list[UserExperienceAnalyticsAppHealthAppPerformanceByOSVersion] = Field(alias="userExperienceAnalyticsAppHealthApplicationPerformanceByOSVersion",)
+	userExperienceAnalyticsAppHealthDeviceModelPerformance: list[UserExperienceAnalyticsAppHealthDeviceModelPerformance] = Field(alias="userExperienceAnalyticsAppHealthDeviceModelPerformance",)
+	userExperienceAnalyticsAppHealthDevicePerformance: list[UserExperienceAnalyticsAppHealthDevicePerformance] = Field(alias="userExperienceAnalyticsAppHealthDevicePerformance",)
+	userExperienceAnalyticsAppHealthDevicePerformanceDetails: list[UserExperienceAnalyticsAppHealthDevicePerformanceDetails] = Field(alias="userExperienceAnalyticsAppHealthDevicePerformanceDetails",)
+	userExperienceAnalyticsAppHealthOSVersionPerformance: list[UserExperienceAnalyticsAppHealthOSVersionPerformance] = Field(alias="userExperienceAnalyticsAppHealthOSVersionPerformance",)
+	userExperienceAnalyticsAppHealthOverview: Optional[UserExperienceAnalyticsCategory] = Field(default=None,alias="userExperienceAnalyticsAppHealthOverview",)
+	userExperienceAnalyticsBaselines: list[UserExperienceAnalyticsBaseline] = Field(alias="userExperienceAnalyticsBaselines",)
+	userExperienceAnalyticsCategories: list[UserExperienceAnalyticsCategory] = Field(alias="userExperienceAnalyticsCategories",)
+	userExperienceAnalyticsDevicePerformance: list[UserExperienceAnalyticsDevicePerformance] = Field(alias="userExperienceAnalyticsDevicePerformance",)
+	userExperienceAnalyticsDeviceScores: list[UserExperienceAnalyticsDeviceScores] = Field(alias="userExperienceAnalyticsDeviceScores",)
+	userExperienceAnalyticsDeviceStartupHistory: list[UserExperienceAnalyticsDeviceStartupHistory] = Field(alias="userExperienceAnalyticsDeviceStartupHistory",)
+	userExperienceAnalyticsDeviceStartupProcesses: list[UserExperienceAnalyticsDeviceStartupProcess] = Field(alias="userExperienceAnalyticsDeviceStartupProcesses",)
+	userExperienceAnalyticsDeviceStartupProcessPerformance: list[UserExperienceAnalyticsDeviceStartupProcessPerformance] = Field(alias="userExperienceAnalyticsDeviceStartupProcessPerformance",)
+	userExperienceAnalyticsMetricHistory: list[UserExperienceAnalyticsMetricHistory] = Field(alias="userExperienceAnalyticsMetricHistory",)
+	userExperienceAnalyticsModelScores: list[UserExperienceAnalyticsModelScores] = Field(alias="userExperienceAnalyticsModelScores",)
+	userExperienceAnalyticsOverview: Optional[UserExperienceAnalyticsOverview] = Field(default=None,alias="userExperienceAnalyticsOverview",)
+	userExperienceAnalyticsScoreHistory: list[UserExperienceAnalyticsScoreHistory] = Field(alias="userExperienceAnalyticsScoreHistory",)
+	userExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetric: Optional[UserExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetric] = Field(default=None,alias="userExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetric",)
+	userExperienceAnalyticsWorkFromAnywhereMetrics: list[UserExperienceAnalyticsWorkFromAnywhereMetric] = Field(alias="userExperienceAnalyticsWorkFromAnywhereMetrics",)
+	userExperienceAnalyticsWorkFromAnywhereModelPerformance: list[UserExperienceAnalyticsWorkFromAnywhereModelPerformance] = Field(alias="userExperienceAnalyticsWorkFromAnywhereModelPerformance",)
+	virtualEndpoint: Optional[VirtualEndpoint] = Field(default=None,alias="virtualEndpoint",)
+	windowsAutopilotDeviceIdentities: list[WindowsAutopilotDeviceIdentity] = Field(alias="windowsAutopilotDeviceIdentities",)
+	windowsInformationProtectionAppLearningSummaries: list[WindowsInformationProtectionAppLearningSummary] = Field(alias="windowsInformationProtectionAppLearningSummaries",)
+	windowsInformationProtectionNetworkLearningSummaries: list[WindowsInformationProtectionNetworkLearningSummary] = Field(alias="windowsInformationProtectionNetworkLearningSummaries",)
+	windowsMalwareInformation: list[WindowsMalwareInformation] = Field(alias="windowsMalwareInformation",)
+
+from .device_protection_overview import DeviceProtectionOverview
+from .intune_brand import IntuneBrand
+from .device_management_settings import DeviceManagementSettings
+from .device_management_subscription_state import DeviceManagementSubscriptionState
+from .user_experience_analytics_settings import UserExperienceAnalyticsSettings
+from .windows_malware_overview import WindowsMalwareOverview
+from .apple_push_notification_certificate import ApplePushNotificationCertificate
+from .audit_event import AuditEvent
+from .compliance_management_partner import ComplianceManagementPartner
+from .on_premises_conditional_access_settings import OnPremisesConditionalAccessSettings
+from .detected_app import DetectedApp
+from .device_category import DeviceCategory
+from .device_compliance_policy import DeviceCompliancePolicy
+from .device_compliance_policy_device_state_summary import DeviceCompliancePolicyDeviceStateSummary
+from .device_compliance_policy_setting_state_summary import DeviceCompliancePolicySettingStateSummary
+from .device_configuration_device_state_summary import DeviceConfigurationDeviceStateSummary
+from .device_configuration import DeviceConfiguration
+from .device_enrollment_configuration import DeviceEnrollmentConfiguration
+from .device_management_partner import DeviceManagementPartner
+from .device_management_exchange_connector import DeviceManagementExchangeConnector
+from .imported_windows_autopilot_device_identity import ImportedWindowsAutopilotDeviceIdentity
+from .ios_update_device_status import IosUpdateDeviceStatus
+from .managed_device_overview import ManagedDeviceOverview
+from .managed_device import ManagedDevice
+from .mobile_app_troubleshooting_event import MobileAppTroubleshootingEvent
+from .mobile_threat_defense_connector import MobileThreatDefenseConnector
+from .notification_message_template import NotificationMessageTemplate
+from .remote_assistance_partner import RemoteAssistancePartner
+from .device_management_reports import DeviceManagementReports
+from .resource_operation import ResourceOperation
+from .device_and_app_management_role_assignment import DeviceAndAppManagementRoleAssignment
+from .role_definition import RoleDefinition
+from .software_update_status_summary import SoftwareUpdateStatusSummary
+from .telecom_expense_management_partner import TelecomExpenseManagementPartner
+from .terms_and_conditions import TermsAndConditions
+from .device_management_troubleshooting_event import DeviceManagementTroubleshootingEvent
+from .user_experience_analytics_app_health_application_performance import UserExperienceAnalyticsAppHealthApplicationPerformance
+from .user_experience_analytics_app_health_app_performance_by_app_version_details import UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetails
+from .user_experience_analytics_app_health_app_performance_by_app_version_device_id import UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDeviceId
+from .user_experience_analytics_app_health_app_performance_by_o_s_version import UserExperienceAnalyticsAppHealthAppPerformanceByOSVersion
+from .user_experience_analytics_app_health_device_model_performance import UserExperienceAnalyticsAppHealthDeviceModelPerformance
+from .user_experience_analytics_app_health_device_performance import UserExperienceAnalyticsAppHealthDevicePerformance
+from .user_experience_analytics_app_health_device_performance_details import UserExperienceAnalyticsAppHealthDevicePerformanceDetails
+from .user_experience_analytics_app_health_o_s_version_performance import UserExperienceAnalyticsAppHealthOSVersionPerformance
+from .user_experience_analytics_category import UserExperienceAnalyticsCategory
+from .user_experience_analytics_baseline import UserExperienceAnalyticsBaseline
+from .user_experience_analytics_category import UserExperienceAnalyticsCategory
+from .user_experience_analytics_device_performance import UserExperienceAnalyticsDevicePerformance
+from .user_experience_analytics_device_scores import UserExperienceAnalyticsDeviceScores
+from .user_experience_analytics_device_startup_history import UserExperienceAnalyticsDeviceStartupHistory
+from .user_experience_analytics_device_startup_process import UserExperienceAnalyticsDeviceStartupProcess
+from .user_experience_analytics_device_startup_process_performance import UserExperienceAnalyticsDeviceStartupProcessPerformance
+from .user_experience_analytics_metric_history import UserExperienceAnalyticsMetricHistory
+from .user_experience_analytics_model_scores import UserExperienceAnalyticsModelScores
+from .user_experience_analytics_overview import UserExperienceAnalyticsOverview
+from .user_experience_analytics_score_history import UserExperienceAnalyticsScoreHistory
+from .user_experience_analytics_work_from_anywhere_hardware_readiness_metric import UserExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetric
+from .user_experience_analytics_work_from_anywhere_metric import UserExperienceAnalyticsWorkFromAnywhereMetric
+from .user_experience_analytics_work_from_anywhere_model_performance import UserExperienceAnalyticsWorkFromAnywhereModelPerformance
+from .virtual_endpoint import VirtualEndpoint
+from .windows_autopilot_device_identity import WindowsAutopilotDeviceIdentity
+from .windows_information_protection_app_learning_summary import WindowsInformationProtectionAppLearningSummary
+from .windows_information_protection_network_learning_summary import WindowsInformationProtectionNetworkLearningSummary
+from .windows_malware_information import WindowsMalwareInformation
+

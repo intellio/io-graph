@@ -1,0 +1,77 @@
+from __future__ import annotations
+from typing import Optional
+from datetime import datetime
+from pydantic import BaseModel, Field
+
+
+class Event(BaseModel):
+	id: Optional[str] = Field(default=None,alias="id",)
+	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
+	categories: list[Optional[str]] = Field(alias="categories",)
+	changeKey: Optional[str] = Field(default=None,alias="changeKey",)
+	createdDateTime: Optional[datetime] = Field(default=None,alias="createdDateTime",)
+	lastModifiedDateTime: Optional[datetime] = Field(default=None,alias="lastModifiedDateTime",)
+	allowNewTimeProposals: Optional[bool] = Field(default=None,alias="allowNewTimeProposals",)
+	attendees: list[Attendee] = Field(alias="attendees",)
+	body: Optional[ItemBody] = Field(default=None,alias="body",)
+	bodyPreview: Optional[str] = Field(default=None,alias="bodyPreview",)
+	end: Optional[DateTimeTimeZone] = Field(default=None,alias="end",)
+	hasAttachments: Optional[bool] = Field(default=None,alias="hasAttachments",)
+	hideAttendees: Optional[bool] = Field(default=None,alias="hideAttendees",)
+	iCalUId: Optional[str] = Field(default=None,alias="iCalUId",)
+	importance: Optional[Importance] = Field(default=None,alias="importance",)
+	isAllDay: Optional[bool] = Field(default=None,alias="isAllDay",)
+	isCancelled: Optional[bool] = Field(default=None,alias="isCancelled",)
+	isDraft: Optional[bool] = Field(default=None,alias="isDraft",)
+	isOnlineMeeting: Optional[bool] = Field(default=None,alias="isOnlineMeeting",)
+	isOrganizer: Optional[bool] = Field(default=None,alias="isOrganizer",)
+	isReminderOn: Optional[bool] = Field(default=None,alias="isReminderOn",)
+	location: Optional[Location] = Field(default=None,alias="location",)
+	locations: list[Location] = Field(alias="locations",)
+	onlineMeeting: Optional[OnlineMeetingInfo] = Field(default=None,alias="onlineMeeting",)
+	onlineMeetingProvider: Optional[OnlineMeetingProviderType] = Field(default=None,alias="onlineMeetingProvider",)
+	onlineMeetingUrl: Optional[str] = Field(default=None,alias="onlineMeetingUrl",)
+	organizer: Optional[Recipient] = Field(default=None,alias="organizer",)
+	originalEndTimeZone: Optional[str] = Field(default=None,alias="originalEndTimeZone",)
+	originalStart: Optional[datetime] = Field(default=None,alias="originalStart",)
+	originalStartTimeZone: Optional[str] = Field(default=None,alias="originalStartTimeZone",)
+	recurrence: Optional[PatternedRecurrence] = Field(default=None,alias="recurrence",)
+	reminderMinutesBeforeStart: Optional[int] = Field(default=None,alias="reminderMinutesBeforeStart",)
+	responseRequested: Optional[bool] = Field(default=None,alias="responseRequested",)
+	responseStatus: Optional[ResponseStatus] = Field(default=None,alias="responseStatus",)
+	sensitivity: Optional[Sensitivity] = Field(default=None,alias="sensitivity",)
+	seriesMasterId: Optional[str] = Field(default=None,alias="seriesMasterId",)
+	showAs: Optional[FreeBusyStatus] = Field(default=None,alias="showAs",)
+	start: Optional[DateTimeTimeZone] = Field(default=None,alias="start",)
+	subject: Optional[str] = Field(default=None,alias="subject",)
+	transactionId: Optional[str] = Field(default=None,alias="transactionId",)
+	type: Optional[EventType] = Field(default=None,alias="type",)
+	webLink: Optional[str] = Field(default=None,alias="webLink",)
+	attachments: list[Attachment] = Field(alias="attachments",)
+	calendar: Optional[Calendar] = Field(default=None,alias="calendar",)
+	extensions: list[Extension] = Field(alias="extensions",)
+	instances: list[Event] = Field(alias="instances",)
+	multiValueExtendedProperties: list[MultiValueLegacyExtendedProperty] = Field(alias="multiValueExtendedProperties",)
+	singleValueExtendedProperties: list[SingleValueLegacyExtendedProperty] = Field(alias="singleValueExtendedProperties",)
+
+from .attendee import Attendee
+from .item_body import ItemBody
+from .date_time_time_zone import DateTimeTimeZone
+from .importance import Importance
+from .location import Location
+from .location import Location
+from .online_meeting_info import OnlineMeetingInfo
+from .online_meeting_provider_type import OnlineMeetingProviderType
+from .recipient import Recipient
+from .patterned_recurrence import PatternedRecurrence
+from .response_status import ResponseStatus
+from .sensitivity import Sensitivity
+from .free_busy_status import FreeBusyStatus
+from .date_time_time_zone import DateTimeTimeZone
+from .event_type import EventType
+from .attachment import Attachment
+from .calendar import Calendar
+from .extension import Extension
+from .multi_value_legacy_extended_property import MultiValueLegacyExtendedProperty
+from .single_value_legacy_extended_property import SingleValueLegacyExtendedProperty
+

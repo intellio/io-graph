@@ -1,0 +1,88 @@
+from __future__ import annotations
+from typing import Optional
+from datetime import datetime
+from pydantic import BaseModel, Field
+
+
+class ManagedDevice(BaseModel):
+	id: Optional[str] = Field(default=None,alias="id",)
+	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
+	activationLockBypassCode: Optional[str] = Field(default=None,alias="activationLockBypassCode",)
+	androidSecurityPatchLevel: Optional[str] = Field(default=None,alias="androidSecurityPatchLevel",)
+	azureADDeviceId: Optional[str] = Field(default=None,alias="azureADDeviceId",)
+	azureADRegistered: Optional[bool] = Field(default=None,alias="azureADRegistered",)
+	complianceGracePeriodExpirationDateTime: Optional[datetime] = Field(default=None,alias="complianceGracePeriodExpirationDateTime",)
+	complianceState: Optional[ComplianceState] = Field(default=None,alias="complianceState",)
+	configurationManagerClientEnabledFeatures: Optional[ConfigurationManagerClientEnabledFeatures] = Field(default=None,alias="configurationManagerClientEnabledFeatures",)
+	deviceActionResults: list[DeviceActionResult] = Field(alias="deviceActionResults",)
+	deviceCategoryDisplayName: Optional[str] = Field(default=None,alias="deviceCategoryDisplayName",)
+	deviceEnrollmentType: Optional[DeviceEnrollmentType] = Field(default=None,alias="deviceEnrollmentType",)
+	deviceHealthAttestationState: Optional[DeviceHealthAttestationState] = Field(default=None,alias="deviceHealthAttestationState",)
+	deviceName: Optional[str] = Field(default=None,alias="deviceName",)
+	deviceRegistrationState: Optional[DeviceRegistrationState] = Field(default=None,alias="deviceRegistrationState",)
+	easActivated: Optional[bool] = Field(default=None,alias="easActivated",)
+	easActivationDateTime: Optional[datetime] = Field(default=None,alias="easActivationDateTime",)
+	easDeviceId: Optional[str] = Field(default=None,alias="easDeviceId",)
+	emailAddress: Optional[str] = Field(default=None,alias="emailAddress",)
+	enrolledDateTime: Optional[datetime] = Field(default=None,alias="enrolledDateTime",)
+	enrollmentProfileName: Optional[str] = Field(default=None,alias="enrollmentProfileName",)
+	ethernetMacAddress: Optional[str] = Field(default=None,alias="ethernetMacAddress",)
+	exchangeAccessState: Optional[DeviceManagementExchangeAccessState] = Field(default=None,alias="exchangeAccessState",)
+	exchangeAccessStateReason: Optional[DeviceManagementExchangeAccessStateReason] = Field(default=None,alias="exchangeAccessStateReason",)
+	exchangeLastSuccessfulSyncDateTime: Optional[datetime] = Field(default=None,alias="exchangeLastSuccessfulSyncDateTime",)
+	freeStorageSpaceInBytes: Optional[int] = Field(default=None,alias="freeStorageSpaceInBytes",)
+	iccid: Optional[str] = Field(default=None,alias="iccid",)
+	imei: Optional[str] = Field(default=None,alias="imei",)
+	isEncrypted: Optional[bool] = Field(default=None,alias="isEncrypted",)
+	isSupervised: Optional[bool] = Field(default=None,alias="isSupervised",)
+	jailBroken: Optional[str] = Field(default=None,alias="jailBroken",)
+	lastSyncDateTime: Optional[datetime] = Field(default=None,alias="lastSyncDateTime",)
+	managedDeviceName: Optional[str] = Field(default=None,alias="managedDeviceName",)
+	managedDeviceOwnerType: Optional[ManagedDeviceOwnerType] = Field(default=None,alias="managedDeviceOwnerType",)
+	managementAgent: Optional[ManagementAgentType] = Field(default=None,alias="managementAgent",)
+	managementCertificateExpirationDate: Optional[datetime] = Field(default=None,alias="managementCertificateExpirationDate",)
+	manufacturer: Optional[str] = Field(default=None,alias="manufacturer",)
+	meid: Optional[str] = Field(default=None,alias="meid",)
+	model: Optional[str] = Field(default=None,alias="model",)
+	notes: Optional[str] = Field(default=None,alias="notes",)
+	operatingSystem: Optional[str] = Field(default=None,alias="operatingSystem",)
+	osVersion: Optional[str] = Field(default=None,alias="osVersion",)
+	partnerReportedThreatState: Optional[ManagedDevicePartnerReportedHealthState] = Field(default=None,alias="partnerReportedThreatState",)
+	phoneNumber: Optional[str] = Field(default=None,alias="phoneNumber",)
+	physicalMemoryInBytes: Optional[int] = Field(default=None,alias="physicalMemoryInBytes",)
+	remoteAssistanceSessionErrorDetails: Optional[str] = Field(default=None,alias="remoteAssistanceSessionErrorDetails",)
+	remoteAssistanceSessionUrl: Optional[str] = Field(default=None,alias="remoteAssistanceSessionUrl",)
+	requireUserEnrollmentApproval: Optional[bool] = Field(default=None,alias="requireUserEnrollmentApproval",)
+	serialNumber: Optional[str] = Field(default=None,alias="serialNumber",)
+	subscriberCarrier: Optional[str] = Field(default=None,alias="subscriberCarrier",)
+	totalStorageSpaceInBytes: Optional[int] = Field(default=None,alias="totalStorageSpaceInBytes",)
+	udid: Optional[str] = Field(default=None,alias="udid",)
+	userDisplayName: Optional[str] = Field(default=None,alias="userDisplayName",)
+	userId: Optional[str] = Field(default=None,alias="userId",)
+	userPrincipalName: Optional[str] = Field(default=None,alias="userPrincipalName",)
+	wiFiMacAddress: Optional[str] = Field(default=None,alias="wiFiMacAddress",)
+	deviceCategory: Optional[DeviceCategory] = Field(default=None,alias="deviceCategory",)
+	deviceCompliancePolicyStates: list[DeviceCompliancePolicyState] = Field(alias="deviceCompliancePolicyStates",)
+	deviceConfigurationStates: list[DeviceConfigurationState] = Field(alias="deviceConfigurationStates",)
+	logCollectionRequests: list[DeviceLogCollectionResponse] = Field(alias="logCollectionRequests",)
+	users: list[User] = Field(alias="users",)
+	windowsProtectionState: Optional[WindowsProtectionState] = Field(default=None,alias="windowsProtectionState",)
+
+from .compliance_state import ComplianceState
+from .configuration_manager_client_enabled_features import ConfigurationManagerClientEnabledFeatures
+from .device_action_result import DeviceActionResult
+from .device_enrollment_type import DeviceEnrollmentType
+from .device_health_attestation_state import DeviceHealthAttestationState
+from .device_registration_state import DeviceRegistrationState
+from .device_management_exchange_access_state import DeviceManagementExchangeAccessState
+from .device_management_exchange_access_state_reason import DeviceManagementExchangeAccessStateReason
+from .managed_device_owner_type import ManagedDeviceOwnerType
+from .management_agent_type import ManagementAgentType
+from .managed_device_partner_reported_health_state import ManagedDevicePartnerReportedHealthState
+from .device_category import DeviceCategory
+from .device_compliance_policy_state import DeviceCompliancePolicyState
+from .device_configuration_state import DeviceConfigurationState
+from .device_log_collection_response import DeviceLogCollectionResponse
+from .user import User
+from .windows_protection_state import WindowsProtectionState
+

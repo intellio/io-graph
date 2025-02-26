@@ -1,0 +1,74 @@
+from __future__ import annotations
+from typing import Optional
+from datetime import datetime
+from pydantic import BaseModel, Field
+
+
+class Windows10EndpointProtectionConfiguration(BaseModel):
+	id: Optional[str] = Field(default=None,alias="id",)
+	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
+	createdDateTime: Optional[datetime] = Field(default=None,alias="createdDateTime",)
+	description: Optional[str] = Field(default=None,alias="description",)
+	displayName: Optional[str] = Field(default=None,alias="displayName",)
+	lastModifiedDateTime: Optional[datetime] = Field(default=None,alias="lastModifiedDateTime",)
+	version: Optional[int] = Field(default=None,alias="version",)
+	assignments: list[DeviceConfigurationAssignment] = Field(alias="assignments",)
+	deviceSettingStateSummaries: list[SettingStateDeviceSummary] = Field(alias="deviceSettingStateSummaries",)
+	deviceStatuses: list[DeviceConfigurationDeviceStatus] = Field(alias="deviceStatuses",)
+	deviceStatusOverview: Optional[DeviceConfigurationDeviceOverview] = Field(default=None,alias="deviceStatusOverview",)
+	userStatuses: list[DeviceConfigurationUserStatus] = Field(alias="userStatuses",)
+	userStatusOverview: Optional[DeviceConfigurationUserOverview] = Field(default=None,alias="userStatusOverview",)
+	applicationGuardAllowPersistence: Optional[bool] = Field(default=None,alias="applicationGuardAllowPersistence",)
+	applicationGuardAllowPrintToLocalPrinters: Optional[bool] = Field(default=None,alias="applicationGuardAllowPrintToLocalPrinters",)
+	applicationGuardAllowPrintToNetworkPrinters: Optional[bool] = Field(default=None,alias="applicationGuardAllowPrintToNetworkPrinters",)
+	applicationGuardAllowPrintToPDF: Optional[bool] = Field(default=None,alias="applicationGuardAllowPrintToPDF",)
+	applicationGuardAllowPrintToXPS: Optional[bool] = Field(default=None,alias="applicationGuardAllowPrintToXPS",)
+	applicationGuardBlockClipboardSharing: Optional[ApplicationGuardBlockClipboardSharingType] = Field(default=None,alias="applicationGuardBlockClipboardSharing",)
+	applicationGuardBlockFileTransfer: Optional[ApplicationGuardBlockFileTransferType] = Field(default=None,alias="applicationGuardBlockFileTransfer",)
+	applicationGuardBlockNonEnterpriseContent: Optional[bool] = Field(default=None,alias="applicationGuardBlockNonEnterpriseContent",)
+	applicationGuardEnabled: Optional[bool] = Field(default=None,alias="applicationGuardEnabled",)
+	applicationGuardForceAuditing: Optional[bool] = Field(default=None,alias="applicationGuardForceAuditing",)
+	appLockerApplicationControl: Optional[AppLockerApplicationControlType] = Field(default=None,alias="appLockerApplicationControl",)
+	bitLockerDisableWarningForOtherDiskEncryption: Optional[bool] = Field(default=None,alias="bitLockerDisableWarningForOtherDiskEncryption",)
+	bitLockerEnableStorageCardEncryptionOnMobile: Optional[bool] = Field(default=None,alias="bitLockerEnableStorageCardEncryptionOnMobile",)
+	bitLockerEncryptDevice: Optional[bool] = Field(default=None,alias="bitLockerEncryptDevice",)
+	bitLockerRemovableDrivePolicy: Optional[BitLockerRemovableDrivePolicy] = Field(default=None,alias="bitLockerRemovableDrivePolicy",)
+	defenderAdditionalGuardedFolders: list[Optional[str]] = Field(alias="defenderAdditionalGuardedFolders",)
+	defenderAttackSurfaceReductionExcludedPaths: list[Optional[str]] = Field(alias="defenderAttackSurfaceReductionExcludedPaths",)
+	defenderExploitProtectionXml: Optional[str] = Field(default=None,alias="defenderExploitProtectionXml",)
+	defenderExploitProtectionXmlFileName: Optional[str] = Field(default=None,alias="defenderExploitProtectionXmlFileName",)
+	defenderGuardedFoldersAllowedAppPaths: list[Optional[str]] = Field(alias="defenderGuardedFoldersAllowedAppPaths",)
+	defenderSecurityCenterBlockExploitProtectionOverride: Optional[bool] = Field(default=None,alias="defenderSecurityCenterBlockExploitProtectionOverride",)
+	firewallBlockStatefulFTP: Optional[bool] = Field(default=None,alias="firewallBlockStatefulFTP",)
+	firewallCertificateRevocationListCheckMethod: Optional[FirewallCertificateRevocationListCheckMethodType] = Field(default=None,alias="firewallCertificateRevocationListCheckMethod",)
+	firewallIdleTimeoutForSecurityAssociationInSeconds: Optional[int] = Field(default=None,alias="firewallIdleTimeoutForSecurityAssociationInSeconds",)
+	firewallIPSecExemptionsAllowDHCP: Optional[bool] = Field(default=None,alias="firewallIPSecExemptionsAllowDHCP",)
+	firewallIPSecExemptionsAllowICMP: Optional[bool] = Field(default=None,alias="firewallIPSecExemptionsAllowICMP",)
+	firewallIPSecExemptionsAllowNeighborDiscovery: Optional[bool] = Field(default=None,alias="firewallIPSecExemptionsAllowNeighborDiscovery",)
+	firewallIPSecExemptionsAllowRouterDiscovery: Optional[bool] = Field(default=None,alias="firewallIPSecExemptionsAllowRouterDiscovery",)
+	firewallMergeKeyingModuleSettings: Optional[bool] = Field(default=None,alias="firewallMergeKeyingModuleSettings",)
+	firewallPacketQueueingMethod: Optional[FirewallPacketQueueingMethodType] = Field(default=None,alias="firewallPacketQueueingMethod",)
+	firewallPreSharedKeyEncodingMethod: Optional[FirewallPreSharedKeyEncodingMethodType] = Field(default=None,alias="firewallPreSharedKeyEncodingMethod",)
+	firewallProfileDomain: Optional[WindowsFirewallNetworkProfile] = Field(default=None,alias="firewallProfileDomain",)
+	firewallProfilePrivate: Optional[WindowsFirewallNetworkProfile] = Field(default=None,alias="firewallProfilePrivate",)
+	firewallProfilePublic: Optional[WindowsFirewallNetworkProfile] = Field(default=None,alias="firewallProfilePublic",)
+	smartScreenBlockOverrideForFiles: Optional[bool] = Field(default=None,alias="smartScreenBlockOverrideForFiles",)
+	smartScreenEnableInShell: Optional[bool] = Field(default=None,alias="smartScreenEnableInShell",)
+
+from .device_configuration_assignment import DeviceConfigurationAssignment
+from .setting_state_device_summary import SettingStateDeviceSummary
+from .device_configuration_device_status import DeviceConfigurationDeviceStatus
+from .device_configuration_device_overview import DeviceConfigurationDeviceOverview
+from .device_configuration_user_status import DeviceConfigurationUserStatus
+from .device_configuration_user_overview import DeviceConfigurationUserOverview
+from .application_guard_block_clipboard_sharing_type import ApplicationGuardBlockClipboardSharingType
+from .application_guard_block_file_transfer_type import ApplicationGuardBlockFileTransferType
+from .app_locker_application_control_type import AppLockerApplicationControlType
+from .bit_locker_removable_drive_policy import BitLockerRemovableDrivePolicy
+from .firewall_certificate_revocation_list_check_method_type import FirewallCertificateRevocationListCheckMethodType
+from .firewall_packet_queueing_method_type import FirewallPacketQueueingMethodType
+from .firewall_pre_shared_key_encoding_method_type import FirewallPreSharedKeyEncodingMethodType
+from .windows_firewall_network_profile import WindowsFirewallNetworkProfile
+from .windows_firewall_network_profile import WindowsFirewallNetworkProfile
+from .windows_firewall_network_profile import WindowsFirewallNetworkProfile
+
