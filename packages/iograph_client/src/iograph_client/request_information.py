@@ -5,12 +5,9 @@
 # ------------------------------------
 from __future__ import annotations
 
-from collections.abc import Callable
+
 from pydantic import BaseModel
-from dataclasses import fields, is_dataclass
-from datetime import date, datetime, time, timedelta, timezone
-from enum import Enum
-from typing import TYPE_CHECKING, Any, Optional, TypeVar, Union, Generic
+from typing import Any, Optional, TypeVar
 from urllib.parse import unquote
 from uuid import UUID
 
@@ -21,7 +18,6 @@ from kiota_abstractions._version import VERSION
 from kiota_abstractions.base_request_configuration import RequestConfiguration
 from kiota_abstractions.headers_collection import HeadersCollection
 from kiota_abstractions.method import Method
-from kiota_abstractions.multipart_body import MultipartBody
 from kiota_abstractions.request_option import RequestOption
 
 
@@ -63,6 +59,10 @@ class RequestInformation:
 
         # The path parameters for the current request
         self.path_parameters: dict[str, Any] = path_parameters
+        # Convert UUIDs to strings in path parameter values
+        for key, value in self.path_parameters.items():
+            if isinstance(value, UUID):
+                self.path_parameters[key] = str(value)
 
         # The URL template for the request
         self.url_template: Optional[str] = url_template
