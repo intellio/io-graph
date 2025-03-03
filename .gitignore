@@ -9,7 +9,8 @@ ENV/
 env.bak/
 venv.bak/
 *.code-workspace
-*test*
+test.py
+test/
 local-creds/
 openapi_client/
 # mkdocs documentation
