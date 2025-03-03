@@ -9,7 +9,7 @@ class PlannerBucket(BaseModel):
 	name: Optional[str] = Field(default=None,alias="name",)
 	orderHint: Optional[str] = Field(default=None,alias="orderHint",)
 	planId: Optional[str] = Field(default=None,alias="planId",)
-	tasks: list[PlannerTask] = Field(alias="tasks",)
+	tasks: Optional[list[PlannerTask]] = Field(default=None,alias="tasks",)
 
 from .planner_task import PlannerTask
 

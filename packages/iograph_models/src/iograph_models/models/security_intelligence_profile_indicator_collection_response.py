@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field
 class SecurityIntelligenceProfileIndicatorCollectionResponse(BaseModel):
 	odata_count: Optional[int] = Field(default=None,alias="@odata.count",)
 	odata_nextLink: Optional[str] = Field(default=None,alias="@odata.nextLink",)
-	value: list[SecurityIntelligenceProfileIndicator] = Field(alias="value",)
+	value: Optional[list[SecurityIntelligenceProfileIndicator]] = Field(default=None,alias="value",)
 
 from .security_intelligence_profile_indicator import SecurityIntelligenceProfileIndicator
 

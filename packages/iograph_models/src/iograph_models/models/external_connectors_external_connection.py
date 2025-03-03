@@ -13,9 +13,9 @@ class ExternalConnectorsExternalConnection(BaseModel):
 	name: Optional[str] = Field(default=None,alias="name",)
 	searchSettings: Optional[ExternalConnectorsSearchSettings] = Field(default=None,alias="searchSettings",)
 	state: Optional[ExternalConnectorsConnectionState] = Field(default=None,alias="state",)
-	groups: list[ExternalConnectorsExternalGroup] = Field(alias="groups",)
-	items: list[ExternalConnectorsExternalItem] = Field(alias="items",)
-	operations: list[ExternalConnectorsConnectionOperation] = Field(alias="operations",)
+	groups: Optional[list[ExternalConnectorsExternalGroup]] = Field(default=None,alias="groups",)
+	items: Optional[list[ExternalConnectorsExternalItem]] = Field(default=None,alias="items",)
+	operations: Optional[list[ExternalConnectorsConnectionOperation]] = Field(default=None,alias="operations",)
 	schema: Optional[ExternalConnectorsSchema] = Field(default=None,alias="schema",)
 
 from .external_connectors_activity_settings import ExternalConnectorsActivitySettings

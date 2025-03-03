@@ -5,7 +5,7 @@ from pydantic import BaseModel, Field
 
 class ClientCertificateAuthentication(BaseModel):
 	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	certificateList: list[Pkcs12CertificateInformation] = Field(alias="certificateList",)
+	certificateList: Optional[list[Pkcs12CertificateInformation]] = Field(default=None,alias="certificateList",)
 
 from .pkcs12_certificate_information import Pkcs12CertificateInformation
 

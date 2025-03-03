@@ -4,7 +4,7 @@ from pydantic import BaseModel, Field
 
 
 class IosHomeScreenFolderPage(BaseModel):
-	apps: list[IosHomeScreenApp] = Field(alias="apps",)
+	apps: Optional[list[IosHomeScreenApp]] = Field(default=None,alias="apps",)
 	displayName: Optional[str] = Field(default=None,alias="displayName",)
 	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
 

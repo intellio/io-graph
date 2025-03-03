@@ -8,7 +8,7 @@ class ServiceHealth(BaseModel):
 	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
 	service: Optional[str] = Field(default=None,alias="service",)
 	status: Optional[ServiceHealthStatus] = Field(default=None,alias="status",)
-	issues: list[ServiceHealthIssue] = Field(alias="issues",)
+	issues: Optional[list[ServiceHealthIssue]] = Field(default=None,alias="issues",)
 
 from .service_health_status import ServiceHealthStatus
 from .service_health_issue import ServiceHealthIssue

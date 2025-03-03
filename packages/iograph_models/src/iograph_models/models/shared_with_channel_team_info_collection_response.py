@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field
 class SharedWithChannelTeamInfoCollectionResponse(BaseModel):
 	odata_count: Optional[int] = Field(default=None,alias="@odata.count",)
 	odata_nextLink: Optional[str] = Field(default=None,alias="@odata.nextLink",)
-	value: list[SharedWithChannelTeamInfo] = Field(alias="value",)
+	value: Optional[list[SharedWithChannelTeamInfo]] = Field(default=None,alias="value",)
 
 from .shared_with_channel_team_info import SharedWithChannelTeamInfo
 

@@ -13,7 +13,7 @@ class Windows10EnrollmentCompletionPageConfiguration(BaseModel):
 	lastModifiedDateTime: Optional[datetime] = Field(default=None,alias="lastModifiedDateTime",)
 	priority: Optional[int] = Field(default=None,alias="priority",)
 	version: Optional[int] = Field(default=None,alias="version",)
-	assignments: list[EnrollmentConfigurationAssignment] = Field(alias="assignments",)
+	assignments: Optional[list[EnrollmentConfigurationAssignment]] = Field(default=None,alias="assignments",)
 	allowNonBlockingAppInstallation: Optional[bool] = Field(default=None,alias="allowNonBlockingAppInstallation",)
 
 from .enrollment_configuration_assignment import EnrollmentConfigurationAssignment

@@ -22,8 +22,8 @@ class EducationSchool(BaseModel):
 	principalName: Optional[str] = Field(default=None,alias="principalName",)
 	schoolNumber: Optional[str] = Field(default=None,alias="schoolNumber",)
 	administrativeUnit: Optional[AdministrativeUnit] = Field(default=None,alias="administrativeUnit",)
-	classes: list[EducationClass] = Field(alias="classes",)
-	users: list[EducationUser] = Field(alias="users",)
+	classes: Optional[list[EducationClass]] = Field(default=None,alias="classes",)
+	users: Optional[list[EducationUser]] = Field(default=None,alias="users",)
 
 from .education_external_source import EducationExternalSource
 from .physical_address import PhysicalAddress

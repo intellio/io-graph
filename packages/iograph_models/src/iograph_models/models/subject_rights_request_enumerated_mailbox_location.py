@@ -5,6 +5,6 @@ from pydantic import BaseModel, Field
 
 class SubjectRightsRequestEnumeratedMailboxLocation(BaseModel):
 	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	userPrincipalNames: list[Optional[str]] = Field(alias="userPrincipalNames",)
+	userPrincipalNames: Optional[list[str]] = Field(default=None,alias="userPrincipalNames",)
 
 

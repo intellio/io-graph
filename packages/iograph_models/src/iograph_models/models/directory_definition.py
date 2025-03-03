@@ -10,7 +10,7 @@ class DirectoryDefinition(BaseModel):
 	discoverabilities: Optional[DirectoryDefinitionDiscoverabilities] = Field(default=None,alias="discoverabilities",)
 	discoveryDateTime: Optional[datetime] = Field(default=None,alias="discoveryDateTime",)
 	name: Optional[str] = Field(default=None,alias="name",)
-	objects: list[ObjectDefinition] = Field(alias="objects",)
+	objects: Optional[list[ObjectDefinition]] = Field(default=None,alias="objects",)
 	readOnly: Optional[bool] = Field(default=None,alias="readOnly",)
 	version: Optional[str] = Field(default=None,alias="version",)
 

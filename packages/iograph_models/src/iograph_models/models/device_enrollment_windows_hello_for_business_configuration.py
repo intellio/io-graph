@@ -13,7 +13,7 @@ class DeviceEnrollmentWindowsHelloForBusinessConfiguration(BaseModel):
 	lastModifiedDateTime: Optional[datetime] = Field(default=None,alias="lastModifiedDateTime",)
 	priority: Optional[int] = Field(default=None,alias="priority",)
 	version: Optional[int] = Field(default=None,alias="version",)
-	assignments: list[EnrollmentConfigurationAssignment] = Field(alias="assignments",)
+	assignments: Optional[list[EnrollmentConfigurationAssignment]] = Field(default=None,alias="assignments",)
 	enhancedBiometricsState: Optional[Enablement] = Field(default=None,alias="enhancedBiometricsState",)
 	pinExpirationInDays: Optional[int] = Field(default=None,alias="pinExpirationInDays",)
 	pinLowercaseCharactersUsage: Optional[WindowsHelloForBusinessPinUsage] = Field(default=None,alias="pinLowercaseCharactersUsage",)

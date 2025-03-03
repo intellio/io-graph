@@ -4,7 +4,7 @@ from pydantic import BaseModel, Field
 
 
 class MeetingParticipants(BaseModel):
-	attendees: list[MeetingParticipantInfo] = Field(alias="attendees",)
+	attendees: Optional[list[MeetingParticipantInfo]] = Field(default=None,alias="attendees",)
 	organizer: Optional[MeetingParticipantInfo] = Field(default=None,alias="organizer",)
 	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
 

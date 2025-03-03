@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field
 
 class AddIn(BaseModel):
 	id: Optional[UUID] = Field(default=None,alias="id",)
-	properties: list[KeyValue] = Field(alias="properties",)
+	properties: Optional[list[KeyValue]] = Field(default=None,alias="properties",)
 	type: Optional[str] = Field(default=None,alias="type",)
 	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
 

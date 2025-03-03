@@ -20,12 +20,12 @@ class WindowsUniversalAppX(BaseModel):
 	privacyInformationUrl: Optional[str] = Field(default=None,alias="privacyInformationUrl",)
 	publisher: Optional[str] = Field(default=None,alias="publisher",)
 	publishingState: Optional[MobileAppPublishingState] = Field(default=None,alias="publishingState",)
-	assignments: list[MobileAppAssignment] = Field(alias="assignments",)
-	categories: list[MobileAppCategory] = Field(alias="categories",)
+	assignments: Optional[list[MobileAppAssignment]] = Field(default=None,alias="assignments",)
+	categories: Optional[list[MobileAppCategory]] = Field(default=None,alias="categories",)
 	committedContentVersion: Optional[str] = Field(default=None,alias="committedContentVersion",)
 	fileName: Optional[str] = Field(default=None,alias="fileName",)
 	size: Optional[int] = Field(default=None,alias="size",)
-	contentVersions: list[MobileAppContent] = Field(alias="contentVersions",)
+	contentVersions: Optional[list[MobileAppContent]] = Field(default=None,alias="contentVersions",)
 	applicableArchitectures: Optional[WindowsArchitecture] = Field(default=None,alias="applicableArchitectures",)
 	applicableDeviceTypes: Optional[WindowsDeviceType] = Field(default=None,alias="applicableDeviceTypes",)
 	identityName: Optional[str] = Field(default=None,alias="identityName",)
@@ -34,7 +34,7 @@ class WindowsUniversalAppX(BaseModel):
 	identityVersion: Optional[str] = Field(default=None,alias="identityVersion",)
 	isBundle: Optional[bool] = Field(default=None,alias="isBundle",)
 	minimumSupportedOperatingSystem: Optional[WindowsMinimumOperatingSystem] = Field(default=None,alias="minimumSupportedOperatingSystem",)
-	committedContainedApps: list[MobileContainedApp] = Field(alias="committedContainedApps",)
+	committedContainedApps: Optional[list[MobileContainedApp]] = Field(default=None,alias="committedContainedApps",)
 
 from .mime_content import MimeContent
 from .mobile_app_publishing_state import MobileAppPublishingState

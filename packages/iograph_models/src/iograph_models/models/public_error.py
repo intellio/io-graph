@@ -5,7 +5,7 @@ from pydantic import BaseModel, Field
 
 class PublicError(BaseModel):
 	code: Optional[str] = Field(default=None,alias="code",)
-	details: list[PublicErrorDetail] = Field(alias="details",)
+	details: Optional[list[PublicErrorDetail]] = Field(default=None,alias="details",)
 	innerError: Optional[PublicInnerError] = Field(default=None,alias="innerError",)
 	message: Optional[str] = Field(default=None,alias="message",)
 	target: Optional[str] = Field(default=None,alias="target",)

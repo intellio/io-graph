@@ -13,7 +13,7 @@ class CloudPcUserSetting(BaseModel):
 	localAdminEnabled: Optional[bool] = Field(default=None,alias="localAdminEnabled",)
 	resetEnabled: Optional[bool] = Field(default=None,alias="resetEnabled",)
 	restorePointSetting: Optional[CloudPcRestorePointSetting] = Field(default=None,alias="restorePointSetting",)
-	assignments: list[CloudPcUserSettingAssignment] = Field(alias="assignments",)
+	assignments: Optional[list[CloudPcUserSettingAssignment]] = Field(default=None,alias="assignments",)
 
 from .cloud_pc_restore_point_setting import CloudPcRestorePointSetting
 from .cloud_pc_user_setting_assignment import CloudPcUserSettingAssignment

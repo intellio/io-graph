@@ -10,7 +10,7 @@ class CloudClipboardItem(BaseModel):
 	createdDateTime: Optional[datetime] = Field(default=None,alias="createdDateTime",)
 	expirationDateTime: Optional[datetime] = Field(default=None,alias="expirationDateTime",)
 	lastModifiedDateTime: Optional[datetime] = Field(default=None,alias="lastModifiedDateTime",)
-	payloads: list[CloudClipboardItemPayload] = Field(alias="payloads",)
+	payloads: Optional[list[CloudClipboardItemPayload]] = Field(default=None,alias="payloads",)
 
 from .cloud_clipboard_item_payload import CloudClipboardItemPayload
 

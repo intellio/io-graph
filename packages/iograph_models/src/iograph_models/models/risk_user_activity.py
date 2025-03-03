@@ -5,7 +5,7 @@ from pydantic import BaseModel, Field
 
 class RiskUserActivity(BaseModel):
 	detail: Optional[RiskDetail] = Field(default=None,alias="detail",)
-	riskEventTypes: list[Optional[str]] = Field(alias="riskEventTypes",)
+	riskEventTypes: Optional[list[str]] = Field(default=None,alias="riskEventTypes",)
 	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
 
 from .risk_detail import RiskDetail

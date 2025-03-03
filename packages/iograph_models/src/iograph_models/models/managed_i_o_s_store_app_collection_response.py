@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field
 class ManagedIOSStoreAppCollectionResponse(BaseModel):
 	odata_count: Optional[int] = Field(default=None,alias="@odata.count",)
 	odata_nextLink: Optional[str] = Field(default=None,alias="@odata.nextLink",)
-	value: list[ManagedIOSStoreApp] = Field(alias="value",)
+	value: Optional[list[ManagedIOSStoreApp]] = Field(default=None,alias="value",)
 
 from .managed_i_o_s_store_app import ManagedIOSStoreApp
 

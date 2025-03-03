@@ -16,7 +16,7 @@ class OnenoteSection(BaseModel):
 	isDefault: Optional[bool] = Field(default=None,alias="isDefault",)
 	links: Optional[SectionLinks] = Field(default=None,alias="links",)
 	pagesUrl: Optional[str] = Field(default=None,alias="pagesUrl",)
-	pages: list[OnenotePage] = Field(alias="pages",)
+	pages: Optional[list[OnenotePage]] = Field(default=None,alias="pages",)
 	parentNotebook: Optional[Notebook] = Field(default=None,alias="parentNotebook",)
 	parentSectionGroup: Optional[SectionGroup] = Field(default=None,alias="parentSectionGroup",)
 

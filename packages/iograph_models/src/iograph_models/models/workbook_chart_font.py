@@ -10,7 +10,7 @@ class WorkbookChartFont(BaseModel):
 	color: Optional[str] = Field(default=None,alias="color",)
 	italic: Optional[bool] = Field(default=None,alias="italic",)
 	name: Optional[str] = Field(default=None,alias="name",)
-	size: Optional[float] | Optional[str] | ReferenceNumeric
+	size: float | str | ReferenceNumeric
 	underline: Optional[str] = Field(default=None,alias="underline",)
 
 from .reference_numeric import ReferenceNumeric

@@ -16,13 +16,13 @@ class SecurityEdiscoveryCase(BaseModel):
 	closedBy: Optional[IdentitySet] = Field(default=None,alias="closedBy",)
 	closedDateTime: Optional[datetime] = Field(default=None,alias="closedDateTime",)
 	externalId: Optional[str] = Field(default=None,alias="externalId",)
-	custodians: list[SecurityEdiscoveryCustodian] = Field(alias="custodians",)
-	noncustodialDataSources: list[SecurityEdiscoveryNoncustodialDataSource] = Field(alias="noncustodialDataSources",)
-	operations: list[SecurityCaseOperation] = Field(alias="operations",)
-	reviewSets: list[SecurityEdiscoveryReviewSet] = Field(alias="reviewSets",)
-	searches: list[SecurityEdiscoverySearch] = Field(alias="searches",)
+	custodians: Optional[list[SecurityEdiscoveryCustodian]] = Field(default=None,alias="custodians",)
+	noncustodialDataSources: Optional[list[SecurityEdiscoveryNoncustodialDataSource]] = Field(default=None,alias="noncustodialDataSources",)
+	operations: Optional[list[SecurityCaseOperation]] = Field(default=None,alias="operations",)
+	reviewSets: Optional[list[SecurityEdiscoveryReviewSet]] = Field(default=None,alias="reviewSets",)
+	searches: Optional[list[SecurityEdiscoverySearch]] = Field(default=None,alias="searches",)
 	settings: Optional[SecurityEdiscoveryCaseSettings] = Field(default=None,alias="settings",)
-	tags: list[SecurityEdiscoveryReviewTag] = Field(alias="tags",)
+	tags: Optional[list[SecurityEdiscoveryReviewTag]] = Field(default=None,alias="tags",)
 
 from .identity_set import IdentitySet
 from .security_case_status import SecurityCaseStatus

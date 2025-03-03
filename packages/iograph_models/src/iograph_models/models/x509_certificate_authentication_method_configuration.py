@@ -6,12 +6,12 @@ from pydantic import BaseModel, Field
 class X509CertificateAuthenticationMethodConfiguration(BaseModel):
 	id: Optional[str] = Field(default=None,alias="id",)
 	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	excludeTargets: list[ExcludeTarget] = Field(alias="excludeTargets",)
+	excludeTargets: Optional[list[ExcludeTarget]] = Field(default=None,alias="excludeTargets",)
 	state: Optional[AuthenticationMethodState] = Field(default=None,alias="state",)
 	authenticationModeConfiguration: Optional[X509CertificateAuthenticationModeConfiguration] = Field(default=None,alias="authenticationModeConfiguration",)
-	certificateUserBindings: list[X509CertificateUserBinding] = Field(alias="certificateUserBindings",)
+	certificateUserBindings: Optional[list[X509CertificateUserBinding]] = Field(default=None,alias="certificateUserBindings",)
 	crlValidationConfiguration: Optional[X509CertificateCRLValidationConfiguration] = Field(default=None,alias="crlValidationConfiguration",)
-	includeTargets: list[AuthenticationMethodTarget] = Field(alias="includeTargets",)
+	includeTargets: Optional[list[AuthenticationMethodTarget]] = Field(default=None,alias="includeTargets",)
 
 from .exclude_target import ExcludeTarget
 from .authentication_method_state import AuthenticationMethodState

@@ -6,16 +6,16 @@ from pydantic import BaseModel, Field
 
 class SecurityNicEvidence(BaseModel):
 	createdDateTime: Optional[datetime] = Field(default=None,alias="createdDateTime",)
-	detailedRoles: list[Optional[str]] = Field(alias="detailedRoles",)
+	detailedRoles: Optional[list[str]] = Field(default=None,alias="detailedRoles",)
 	remediationStatus: Optional[SecurityEvidenceRemediationStatus] = Field(default=None,alias="remediationStatus",)
 	remediationStatusDetails: Optional[str] = Field(default=None,alias="remediationStatusDetails",)
-	roles: list[SecurityEvidenceRole] = Field(alias="roles",)
-	tags: list[Optional[str]] = Field(alias="tags",)
+	roles: Optional[list[SecurityEvidenceRole]] = Field(default=None,alias="roles",)
+	tags: Optional[list[str]] = Field(default=None,alias="tags",)
 	verdict: Optional[SecurityEvidenceVerdict] = Field(default=None,alias="verdict",)
 	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
 	ipAddress: Optional[SecurityIpEvidence] = Field(default=None,alias="ipAddress",)
 	macAddress: Optional[str] = Field(default=None,alias="macAddress",)
-	vlans: list[Optional[str]] = Field(alias="vlans",)
+	vlans: Optional[list[str]] = Field(default=None,alias="vlans",)
 
 from .security_evidence_remediation_status import SecurityEvidenceRemediationStatus
 from .security_evidence_role import SecurityEvidenceRole

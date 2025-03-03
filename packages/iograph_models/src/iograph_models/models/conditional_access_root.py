@@ -6,11 +6,11 @@ from pydantic import BaseModel, Field
 class ConditionalAccessRoot(BaseModel):
 	id: Optional[str] = Field(default=None,alias="id",)
 	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	authenticationContextClassReferences: list[AuthenticationContextClassReference] = Field(alias="authenticationContextClassReferences",)
+	authenticationContextClassReferences: Optional[list[AuthenticationContextClassReference]] = Field(default=None,alias="authenticationContextClassReferences",)
 	authenticationStrength: Optional[AuthenticationStrengthRoot] = Field(default=None,alias="authenticationStrength",)
-	namedLocations: list[NamedLocation] = Field(alias="namedLocations",)
-	policies: list[ConditionalAccessPolicy] = Field(alias="policies",)
-	templates: list[ConditionalAccessTemplate] = Field(alias="templates",)
+	namedLocations: Optional[list[NamedLocation]] = Field(default=None,alias="namedLocations",)
+	policies: Optional[list[ConditionalAccessPolicy]] = Field(default=None,alias="policies",)
+	templates: Optional[list[ConditionalAccessTemplate]] = Field(default=None,alias="templates",)
 
 from .authentication_context_class_reference import AuthenticationContextClassReference
 from .authentication_strength_root import AuthenticationStrengthRoot

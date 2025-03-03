@@ -4,8 +4,8 @@ from pydantic import BaseModel, Field
 
 
 class AuthenticationMethodsRegistrationCampaign(BaseModel):
-	excludeTargets: list[ExcludeTarget] = Field(alias="excludeTargets",)
-	includeTargets: list[AuthenticationMethodsRegistrationCampaignIncludeTarget] = Field(alias="includeTargets",)
+	excludeTargets: Optional[list[ExcludeTarget]] = Field(default=None,alias="excludeTargets",)
+	includeTargets: Optional[list[AuthenticationMethodsRegistrationCampaignIncludeTarget]] = Field(default=None,alias="includeTargets",)
 	snoozeDurationInDays: Optional[int] = Field(default=None,alias="snoozeDurationInDays",)
 	state: Optional[AdvancedConfigState] = Field(default=None,alias="state",)
 	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)

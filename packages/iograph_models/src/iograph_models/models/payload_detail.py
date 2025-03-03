@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field
 
 
 class PayloadDetail(BaseModel):
-	coachmarks: list[PayloadCoachmark] = Field(alias="coachmarks",)
+	coachmarks: Optional[list[PayloadCoachmark]] = Field(default=None,alias="coachmarks",)
 	content: Optional[str] = Field(default=None,alias="content",)
 	phishingUrl: Optional[str] = Field(default=None,alias="phishingUrl",)
 	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)

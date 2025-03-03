@@ -4,8 +4,8 @@ from pydantic import BaseModel, Field
 
 
 class CustomAppManagementConfiguration(BaseModel):
-	keyCredentials: list[KeyCredentialConfiguration] = Field(alias="keyCredentials",)
-	passwordCredentials: list[PasswordCredentialConfiguration] = Field(alias="passwordCredentials",)
+	keyCredentials: Optional[list[KeyCredentialConfiguration]] = Field(default=None,alias="keyCredentials",)
+	passwordCredentials: Optional[list[PasswordCredentialConfiguration]] = Field(default=None,alias="passwordCredentials",)
 	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
 
 from .key_credential_configuration import KeyCredentialConfiguration

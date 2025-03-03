@@ -17,7 +17,7 @@ class RiskyUser(BaseModel):
 	riskState: Optional[RiskState] = Field(default=None,alias="riskState",)
 	userDisplayName: Optional[str] = Field(default=None,alias="userDisplayName",)
 	userPrincipalName: Optional[str] = Field(default=None,alias="userPrincipalName",)
-	history: list[RiskyUserHistoryItem] = Field(alias="history",)
+	history: Optional[list[RiskyUserHistoryItem]] = Field(default=None,alias="history",)
 
 	@model_validator(mode="wrap")
 	def convert_discriminator_class(cls, data: Any, handler: ModelWrapValidatorHandler[Self]) -> Self:

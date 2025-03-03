@@ -6,16 +6,16 @@ from pydantic import BaseModel, Field
 class Authentication(BaseModel):
 	id: Optional[str] = Field(default=None,alias="id",)
 	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	emailMethods: list[EmailAuthenticationMethod] = Field(alias="emailMethods",)
-	fido2Methods: list[Fido2AuthenticationMethod] = Field(alias="fido2Methods",)
-	methods: list[AuthenticationMethod] = Field(alias="methods",)
-	microsoftAuthenticatorMethods: list[MicrosoftAuthenticatorAuthenticationMethod] = Field(alias="microsoftAuthenticatorMethods",)
-	operations: list[LongRunningOperation] = Field(alias="operations",)
-	passwordMethods: list[PasswordAuthenticationMethod] = Field(alias="passwordMethods",)
-	phoneMethods: list[PhoneAuthenticationMethod] = Field(alias="phoneMethods",)
-	softwareOathMethods: list[SoftwareOathAuthenticationMethod] = Field(alias="softwareOathMethods",)
-	temporaryAccessPassMethods: list[TemporaryAccessPassAuthenticationMethod] = Field(alias="temporaryAccessPassMethods",)
-	windowsHelloForBusinessMethods: list[WindowsHelloForBusinessAuthenticationMethod] = Field(alias="windowsHelloForBusinessMethods",)
+	emailMethods: Optional[list[EmailAuthenticationMethod]] = Field(default=None,alias="emailMethods",)
+	fido2Methods: Optional[list[Fido2AuthenticationMethod]] = Field(default=None,alias="fido2Methods",)
+	methods: Optional[list[AuthenticationMethod]] = Field(default=None,alias="methods",)
+	microsoftAuthenticatorMethods: Optional[list[MicrosoftAuthenticatorAuthenticationMethod]] = Field(default=None,alias="microsoftAuthenticatorMethods",)
+	operations: Optional[list[LongRunningOperation]] = Field(default=None,alias="operations",)
+	passwordMethods: Optional[list[PasswordAuthenticationMethod]] = Field(default=None,alias="passwordMethods",)
+	phoneMethods: Optional[list[PhoneAuthenticationMethod]] = Field(default=None,alias="phoneMethods",)
+	softwareOathMethods: Optional[list[SoftwareOathAuthenticationMethod]] = Field(default=None,alias="softwareOathMethods",)
+	temporaryAccessPassMethods: Optional[list[TemporaryAccessPassAuthenticationMethod]] = Field(default=None,alias="temporaryAccessPassMethods",)
+	windowsHelloForBusinessMethods: Optional[list[WindowsHelloForBusinessAuthenticationMethod]] = Field(default=None,alias="windowsHelloForBusinessMethods",)
 
 from .email_authentication_method import EmailAuthenticationMethod
 from .fido2_authentication_method import Fido2AuthenticationMethod

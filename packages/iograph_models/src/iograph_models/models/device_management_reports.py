@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field
 class DeviceManagementReports(BaseModel):
 	id: Optional[str] = Field(default=None,alias="id",)
 	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	exportJobs: list[DeviceManagementExportJob] = Field(alias="exportJobs",)
+	exportJobs: Optional[list[DeviceManagementExportJob]] = Field(default=None,alias="exportJobs",)
 
 from .device_management_export_job import DeviceManagementExportJob
 

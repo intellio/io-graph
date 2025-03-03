@@ -5,9 +5,9 @@ from pydantic import BaseModel, Field
 
 class SecuritySensorSettings(BaseModel):
 	description: Optional[str] = Field(default=None,alias="description",)
-	domainControllerDnsNames: list[Optional[str]] = Field(alias="domainControllerDnsNames",)
+	domainControllerDnsNames: Optional[list[str]] = Field(default=None,alias="domainControllerDnsNames",)
 	isDelayedDeploymentEnabled: Optional[bool] = Field(default=None,alias="isDelayedDeploymentEnabled",)
-	networkAdapters: list[SecurityNetworkAdapter] = Field(alias="networkAdapters",)
+	networkAdapters: Optional[list[SecurityNetworkAdapter]] = Field(default=None,alias="networkAdapters",)
 	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
 
 from .security_network_adapter import SecurityNetworkAdapter

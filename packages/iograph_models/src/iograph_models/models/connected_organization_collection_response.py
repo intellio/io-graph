@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field
 class ConnectedOrganizationCollectionResponse(BaseModel):
 	odata_count: Optional[int] = Field(default=None,alias="@odata.count",)
 	odata_nextLink: Optional[str] = Field(default=None,alias="@odata.nextLink",)
-	value: list[ConnectedOrganization] = Field(alias="value",)
+	value: Optional[list[ConnectedOrganization]] = Field(default=None,alias="value",)
 
 from .connected_organization import ConnectedOrganization
 

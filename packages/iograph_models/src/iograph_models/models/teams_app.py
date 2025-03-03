@@ -9,7 +9,7 @@ class TeamsApp(BaseModel):
 	displayName: Optional[str] = Field(default=None,alias="displayName",)
 	distributionMethod: Optional[TeamsAppDistributionMethod] = Field(default=None,alias="distributionMethod",)
 	externalId: Optional[str] = Field(default=None,alias="externalId",)
-	appDefinitions: list[TeamsAppDefinition] = Field(alias="appDefinitions",)
+	appDefinitions: Optional[list[TeamsAppDefinition]] = Field(default=None,alias="appDefinitions",)
 
 from .teams_app_distribution_method import TeamsAppDistributionMethod
 from .teams_app_definition import TeamsAppDefinition

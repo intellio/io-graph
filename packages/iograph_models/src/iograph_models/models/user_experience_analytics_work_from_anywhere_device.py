@@ -11,9 +11,9 @@ class UserExperienceAnalyticsWorkFromAnywhereDevice(BaseModel):
 	azureAdDeviceId: Optional[str] = Field(default=None,alias="azureAdDeviceId",)
 	azureAdJoinType: Optional[str] = Field(default=None,alias="azureAdJoinType",)
 	azureAdRegistered: Optional[bool] = Field(default=None,alias="azureAdRegistered",)
-	cloudIdentityScore: Optional[float] | Optional[str] | ReferenceNumeric
-	cloudManagementScore: Optional[float] | Optional[str] | ReferenceNumeric
-	cloudProvisioningScore: Optional[float] | Optional[str] | ReferenceNumeric
+	cloudIdentityScore: float | str | ReferenceNumeric
+	cloudManagementScore: float | str | ReferenceNumeric
+	cloudProvisioningScore: float | str | ReferenceNumeric
 	compliancePolicySetToIntune: Optional[bool] = Field(default=None,alias="compliancePolicySetToIntune",)
 	deviceId: Optional[str] = Field(default=None,alias="deviceId",)
 	deviceName: Optional[str] = Field(default=None,alias="deviceName",)
@@ -38,8 +38,8 @@ class UserExperienceAnalyticsWorkFromAnywhereDevice(BaseModel):
 	tenantAttached: Optional[bool] = Field(default=None,alias="tenantAttached",)
 	tpmCheckFailed: Optional[bool] = Field(default=None,alias="tpmCheckFailed",)
 	upgradeEligibility: Optional[OperatingSystemUpgradeEligibility] = Field(default=None,alias="upgradeEligibility",)
-	windowsScore: Optional[float] | Optional[str] | ReferenceNumeric
-	workFromAnywhereScore: Optional[float] | Optional[str] | ReferenceNumeric
+	windowsScore: float | str | ReferenceNumeric
+	workFromAnywhereScore: float | str | ReferenceNumeric
 
 from .reference_numeric import ReferenceNumeric
 from .reference_numeric import ReferenceNumeric

@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 from kiota_abstractions.method import Method
+from kiota_abstractions.base_request_builder import BaseRequestBuilder
 from kiota_abstractions.base_request_configuration import RequestConfiguration
 from ........request_information import RequestInformation
 from pydantic import BaseModel, Field
@@ -10,16 +11,14 @@ from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:
 	from ........request_adapter import HttpxRequestAdapter
-from iograph_models.models.mute_participant_operation import MuteParticipantOperation
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.models.mute_participant_operation import MuteParticipantOperation
 from iograph_models.models.mute_post_request import MutePostRequest
 
 
-class MuteRequest:
+class MuteRequest(BaseRequestBuilder):
 	def __init__(self,request_adapter: HttpxRequestAdapter, path_parameters: Optional[Union[dict[str, Any], str]]) -> None:
-		self.request_adapter = request_adapter
-		self.url_template: str = "{+baseurl}/communications/calls/{call%2Did}/participants/{participant%2Did}/mute"
-		self.path_parameters: dict[str, Any] = path_parameters
+		super().__init__(request_adapter, "{+baseurl}/communications/calls/{call%2Did}/participants/{participant%2Did}/mute", path_parameters)
 
 	async def post(
 		self,
@@ -47,4 +46,14 @@ class MuteRequest:
 		request_info.set_content(body, "application/json")
 		return await self.request_adapter.send_async(request_info, MuteParticipantOperation, error_mapping)
 
+
+	def with_url(self, raw_url: str) -> MuteRequest:
+		"""
+		Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+		param raw_url: The raw URL to use for the request builder.
+		Returns: MuteRequest
+		"""
+		if raw_url is None:
+			raise TypeError("raw_url cannot be None.")
+		return MuteRequest(self.request_adapter, self.path_parameters)
 

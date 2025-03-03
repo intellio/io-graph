@@ -4,14 +4,14 @@ from pydantic import BaseModel, Field
 
 
 class ConditionalAccessUsers(BaseModel):
-	excludeGroups: list[str] = Field(alias="excludeGroups",)
+	excludeGroups: Optional[list[str]] = Field(default=None,alias="excludeGroups",)
 	excludeGuestsOrExternalUsers: Optional[ConditionalAccessGuestsOrExternalUsers] = Field(default=None,alias="excludeGuestsOrExternalUsers",)
-	excludeRoles: list[str] = Field(alias="excludeRoles",)
-	excludeUsers: list[str] = Field(alias="excludeUsers",)
-	includeGroups: list[str] = Field(alias="includeGroups",)
+	excludeRoles: Optional[list[str]] = Field(default=None,alias="excludeRoles",)
+	excludeUsers: Optional[list[str]] = Field(default=None,alias="excludeUsers",)
+	includeGroups: Optional[list[str]] = Field(default=None,alias="includeGroups",)
 	includeGuestsOrExternalUsers: Optional[ConditionalAccessGuestsOrExternalUsers] = Field(default=None,alias="includeGuestsOrExternalUsers",)
-	includeRoles: list[str] = Field(alias="includeRoles",)
-	includeUsers: list[str] = Field(alias="includeUsers",)
+	includeRoles: Optional[list[str]] = Field(default=None,alias="includeRoles",)
+	includeUsers: Optional[list[str]] = Field(default=None,alias="includeUsers",)
 	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
 
 from .conditional_access_guests_or_external_users import ConditionalAccessGuestsOrExternalUsers

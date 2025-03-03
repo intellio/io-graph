@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field
 class CloudPcOnPremisesConnectionCollectionResponse(BaseModel):
 	odata_count: Optional[int] = Field(default=None,alias="@odata.count",)
 	odata_nextLink: Optional[str] = Field(default=None,alias="@odata.nextLink",)
-	value: list[CloudPcOnPremisesConnection] = Field(alias="value",)
+	value: Optional[list[CloudPcOnPremisesConnection]] = Field(default=None,alias="value",)
 
 from .cloud_pc_on_premises_connection import CloudPcOnPremisesConnection
 

@@ -15,17 +15,17 @@ class IdentityGovernanceWorkflow(BaseModel):
 	lastModifiedDateTime: Optional[datetime] = Field(default=None,alias="lastModifiedDateTime",)
 	createdBy: Optional[User] = Field(default=None,alias="createdBy",)
 	lastModifiedBy: Optional[User] = Field(default=None,alias="lastModifiedBy",)
-	tasks: list[IdentityGovernanceTask] = Field(alias="tasks",)
+	tasks: Optional[list[IdentityGovernanceTask]] = Field(default=None,alias="tasks",)
 	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
 	deletedDateTime: Optional[datetime] = Field(default=None,alias="deletedDateTime",)
 	id: Optional[str] = Field(default=None,alias="id",)
 	nextScheduleRunDateTime: Optional[datetime] = Field(default=None,alias="nextScheduleRunDateTime",)
 	version: Optional[int] = Field(default=None,alias="version",)
-	executionScope: list[IdentityGovernanceUserProcessingResult] = Field(alias="executionScope",)
-	runs: list[IdentityGovernanceRun] = Field(alias="runs",)
-	taskReports: list[IdentityGovernanceTaskReport] = Field(alias="taskReports",)
-	userProcessingResults: list[IdentityGovernanceUserProcessingResult] = Field(alias="userProcessingResults",)
-	versions: list[IdentityGovernanceWorkflowVersion] = Field(alias="versions",)
+	executionScope: Optional[list[IdentityGovernanceUserProcessingResult]] = Field(default=None,alias="executionScope",)
+	runs: Optional[list[IdentityGovernanceRun]] = Field(default=None,alias="runs",)
+	taskReports: Optional[list[IdentityGovernanceTaskReport]] = Field(default=None,alias="taskReports",)
+	userProcessingResults: Optional[list[IdentityGovernanceUserProcessingResult]] = Field(default=None,alias="userProcessingResults",)
+	versions: Optional[list[IdentityGovernanceWorkflowVersion]] = Field(default=None,alias="versions",)
 
 from .identity_governance_lifecycle_workflow_category import IdentityGovernanceLifecycleWorkflowCategory
 from .identity_governance_workflow_execution_conditions import IdentityGovernanceWorkflowExecutionConditions

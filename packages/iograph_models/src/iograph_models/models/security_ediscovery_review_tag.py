@@ -12,7 +12,7 @@ class SecurityEdiscoveryReviewTag(BaseModel):
 	displayName: Optional[str] = Field(default=None,alias="displayName",)
 	lastModifiedDateTime: Optional[datetime] = Field(default=None,alias="lastModifiedDateTime",)
 	childSelectability: Optional[SecurityChildSelectability] = Field(default=None,alias="childSelectability",)
-	childTags: list[SecurityEdiscoveryReviewTag] = Field(alias="childTags",)
+	childTags: Optional[list[SecurityEdiscoveryReviewTag]] = Field(default=None,alias="childTags",)
 	parent: Optional[SecurityEdiscoveryReviewTag] = Field(default=None,alias="parent",)
 
 from .identity_set import IdentitySet

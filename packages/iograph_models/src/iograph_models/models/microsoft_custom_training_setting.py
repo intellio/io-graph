@@ -8,7 +8,7 @@ class MicrosoftCustomTrainingSetting(BaseModel):
 	settingType: Optional[TrainingSettingType] = Field(default=None,alias="settingType",)
 	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
 	completionDateTime: Optional[datetime] = Field(default=None,alias="completionDateTime",)
-	trainingAssignmentMappings: list[MicrosoftTrainingAssignmentMapping] = Field(alias="trainingAssignmentMappings",)
+	trainingAssignmentMappings: Optional[list[MicrosoftTrainingAssignmentMapping]] = Field(default=None,alias="trainingAssignmentMappings",)
 	trainingCompletionDuration: Optional[TrainingCompletionDuration] = Field(default=None,alias="trainingCompletionDuration",)
 
 from .training_setting_type import TrainingSettingType

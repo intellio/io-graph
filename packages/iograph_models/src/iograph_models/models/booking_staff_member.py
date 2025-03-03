@@ -17,7 +17,7 @@ class BookingStaffMember(BaseModel):
 	role: Optional[BookingStaffRole] = Field(default=None,alias="role",)
 	timeZone: Optional[str] = Field(default=None,alias="timeZone",)
 	useBusinessHours: Optional[bool] = Field(default=None,alias="useBusinessHours",)
-	workingHours: list[BookingWorkHours] = Field(alias="workingHours",)
+	workingHours: Optional[list[BookingWorkHours]] = Field(default=None,alias="workingHours",)
 
 from .booking_staff_membership_status import BookingStaffMembershipStatus
 from .booking_staff_role import BookingStaffRole

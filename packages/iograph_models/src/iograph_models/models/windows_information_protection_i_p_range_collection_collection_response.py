@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field
 class WindowsInformationProtectionIPRangeCollectionCollectionResponse(BaseModel):
 	odata_count: Optional[int] = Field(default=None,alias="@odata.count",)
 	odata_nextLink: Optional[str] = Field(default=None,alias="@odata.nextLink",)
-	value: list[WindowsInformationProtectionIPRangeCollection] = Field(alias="value",)
+	value: Optional[list[WindowsInformationProtectionIPRangeCollection]] = Field(default=None,alias="value",)
 
 from .windows_information_protection_i_p_range_collection import WindowsInformationProtectionIPRangeCollection
 

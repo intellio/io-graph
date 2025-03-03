@@ -5,7 +5,7 @@ from pydantic import BaseModel, Field
 
 class SimulationReport(BaseModel):
 	overview: Optional[SimulationReportOverview] = Field(default=None,alias="overview",)
-	simulationUsers: list[UserSimulationDetails] = Field(alias="simulationUsers",)
+	simulationUsers: Optional[list[UserSimulationDetails]] = Field(default=None,alias="simulationUsers",)
 	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
 
 from .simulation_report_overview import SimulationReportOverview

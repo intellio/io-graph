@@ -21,9 +21,9 @@ class Payload(BaseModel):
 	language: Optional[str] = Field(default=None,alias="language",)
 	lastModifiedBy: Optional[EmailIdentity] = Field(default=None,alias="lastModifiedBy",)
 	lastModifiedDateTime: Optional[datetime] = Field(default=None,alias="lastModifiedDateTime",)
-	payloadTags: list[Optional[str]] = Field(alias="payloadTags",)
+	payloadTags: Optional[list[str]] = Field(default=None,alias="payloadTags",)
 	platform: Optional[PayloadDeliveryPlatform] = Field(default=None,alias="platform",)
-	predictedCompromiseRate: Optional[float] | Optional[str] | ReferenceNumeric
+	predictedCompromiseRate: float | str | ReferenceNumeric
 	simulationAttackType: Optional[SimulationAttackType] = Field(default=None,alias="simulationAttackType",)
 	source: Optional[SimulationContentSource] = Field(default=None,alias="source",)
 	status: Optional[SimulationContentStatus] = Field(default=None,alias="status",)

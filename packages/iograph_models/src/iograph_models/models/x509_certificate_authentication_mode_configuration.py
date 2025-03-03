@@ -4,7 +4,7 @@ from pydantic import BaseModel, Field
 
 
 class X509CertificateAuthenticationModeConfiguration(BaseModel):
-	rules: list[X509CertificateRule] = Field(alias="rules",)
+	rules: Optional[list[X509CertificateRule]] = Field(default=None,alias="rules",)
 	x509CertificateAuthenticationDefaultMode: Optional[X509CertificateAuthenticationMode] = Field(default=None,alias="x509CertificateAuthenticationDefaultMode",)
 	x509CertificateDefaultRequiredAffinityLevel: Optional[X509CertificateAffinityLevel] = Field(default=None,alias="x509CertificateDefaultRequiredAffinityLevel",)
 	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)

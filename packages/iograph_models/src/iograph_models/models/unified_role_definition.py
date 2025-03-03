@@ -10,11 +10,11 @@ class UnifiedRoleDefinition(BaseModel):
 	displayName: Optional[str] = Field(default=None,alias="displayName",)
 	isBuiltIn: Optional[bool] = Field(default=None,alias="isBuiltIn",)
 	isEnabled: Optional[bool] = Field(default=None,alias="isEnabled",)
-	resourceScopes: list[str] = Field(alias="resourceScopes",)
-	rolePermissions: list[UnifiedRolePermission] = Field(alias="rolePermissions",)
+	resourceScopes: Optional[list[str]] = Field(default=None,alias="resourceScopes",)
+	rolePermissions: Optional[list[UnifiedRolePermission]] = Field(default=None,alias="rolePermissions",)
 	templateId: Optional[str] = Field(default=None,alias="templateId",)
 	version: Optional[str] = Field(default=None,alias="version",)
-	inheritsPermissionsFrom: list[UnifiedRoleDefinition] = Field(alias="inheritsPermissionsFrom",)
+	inheritsPermissionsFrom: Optional[list[UnifiedRoleDefinition]] = Field(default=None,alias="inheritsPermissionsFrom",)
 
 from .unified_role_permission import UnifiedRolePermission
 

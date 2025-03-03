@@ -4,7 +4,7 @@ from pydantic import BaseModel, Field
 
 
 class AssignmentOrder(BaseModel):
-	order: list[Optional[str]] = Field(alias="order",)
+	order: Optional[list[str]] = Field(default=None,alias="order",)
 	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
 
 

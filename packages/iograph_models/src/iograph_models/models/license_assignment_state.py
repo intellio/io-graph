@@ -7,7 +7,7 @@ from pydantic import BaseModel, Field
 
 class LicenseAssignmentState(BaseModel):
 	assignedByGroup: Optional[str] = Field(default=None,alias="assignedByGroup",)
-	disabledPlans: list[Optional[UUID]] = Field(alias="disabledPlans",)
+	disabledPlans: Optional[list[UUID]] = Field(default=None,alias="disabledPlans",)
 	error: Optional[str] = Field(default=None,alias="error",)
 	lastUpdatedDateTime: Optional[datetime] = Field(default=None,alias="lastUpdatedDateTime",)
 	skuId: Optional[UUID] = Field(default=None,alias="skuId",)

@@ -101,6 +101,50 @@ def resolve_ref_in_components(ref, components):
         ref_obj = ref_obj.get(part, {})
     return ref_obj
 
+# def get_field_type(prop_schema):
+#     if 'type' not in prop_schema:
+#         raise Exception('No type in schema: ' + str(prop_schema))
+    
+#     if prop_schema['type'] == 'string':
+#         type = 'str'
+#         if 'format' in prop_schema:
+#             if prop_schema['format'] == 'date-time':
+#                 type= 'datetime'
+#             elif prop_schema['format'] == 'uri':
+#                 type = 'str'
+#             elif prop_schema['format'] == 'uuid':
+#                 type = 'UUID'
+#         if 'nullable' in prop_schema and prop_schema['nullable']:
+#             return f"Optional[{type}]"
+#         else:
+#             return type
+#     elif prop_schema['type'] in ['integer', 'number']:
+#         type = 'int'
+#         if 'format' in prop_schema and prop_schema['format'] in ['float', 'double']:
+#             type = 'float'
+#         if 'format' in prop_schema and prop_schema['format'] in ['int64', 'int32']:
+#             type = 'int'
+        
+#         if 'nullable' in prop_schema and prop_schema['nullable']:
+#             return f"Optional[{type}]"
+#         else:
+#             return type
+#     elif prop_schema['type'] == 'boolean':
+#         type = 'bool'
+#         if 'nullable' in prop_schema and prop_schema['nullable']:
+#             return f"Optional[{type}]"
+#         else:
+#             return type
+#     elif prop_schema['type'] == 'array':
+#         type= f"list[{get_field_type(prop_schema['items'])}]"
+#         if 'nullable' in prop_schema and prop_schema['nullable']:
+#             return f"Optional[{type}]"
+#         else:
+#             return type
+#     elif prop_schema['type'] == 'object':
+#         raise Exception('Object type in schema: ' + str(prop_schema))
+#         return 'Dict[str, Any]'
+
 def get_field_type(prop_schema):
     if 'type' not in prop_schema:
         raise Exception('No type in schema: ' + str(prop_schema))
@@ -114,54 +158,49 @@ def get_field_type(prop_schema):
                 type = 'str'
             elif prop_schema['format'] == 'uuid':
                 type = 'UUID'
-        if 'nullable' in prop_schema and prop_schema['nullable']:
-            return f"Optional[{type}]"
-        else:
-            return type
+        return type
+
     elif prop_schema['type'] in ['integer', 'number']:
         type = 'int'
         if 'format' in prop_schema and prop_schema['format'] in ['float', 'double']:
             type = 'float'
         if 'format' in prop_schema and prop_schema['format'] in ['int64', 'int32']:
             type = 'int'
-        
-        if 'nullable' in prop_schema and prop_schema['nullable']:
-            return f"Optional[{type}]"
-        else:
-            return type
+        return type
+
     elif prop_schema['type'] == 'boolean':
         type = 'bool'
-        if 'nullable' in prop_schema and prop_schema['nullable']:
-            return f"Optional[{type}]"
-        else:
-            return type
+        return type
+
     elif prop_schema['type'] == 'array':
         type= f"list[{get_field_type(prop_schema['items'])}]"
-        if 'nullable' in prop_schema and prop_schema['nullable']:
-            return f"Optional[{type}]"
-        else:
-            return type
+        return type
+
     elif prop_schema['type'] == 'object':
         raise Exception('Object type in schema: ' + str(prop_schema))
         return 'Dict[str, Any]'
-
+    
 def _pydantic_field_type_write(field_model_name:str, field_type:str, nullable:bool =True):
     python_builtin_types = ['str', 'int', 'float', 'bool', 'datetime', 'UUID']
 
-    if field_type.startswith('list['):
-        return f'{field_type} = Field(alias="{field_model_name}",)'
-
-        # if not nullable:
-        #     return f'{field_type} = Field(alias="{field_model_name}",)'
-        # else:
-        #     return f'Optional[{field_type}] = Field(default=None, alias="{field_model_name}",)'
+    # if field_type.startswith('list['):
+    #     if 'list[Optional[' in field_type:
+    #         raise Exception(f'list[Optional[ in field_type not supported for type: {field_type} model_name: {field_model_name}')
         
+    #     if 'Optional[' in field_type:
+    #         return f'{field_type} = Field(default=None, alias="{field_model_name}",)'
+
+    #     # we will always assume that lists are nullable
+    #     return f'Optional[{field_type}] = Field(default=None, alias="{field_model_name}",)'
+
+
     if not nullable:
         return f'{field_type} = Field(alias="{field_model_name}",)'
 
     else:
         if 'Optional[' in field_type:
-            return f'{field_type} = Field(default=None,alias="{field_model_name}",)'
+            # return f'{field_type} = Field(default=None,alias="{field_model_name}",)'
+            raise Exception(f'Optional[ in field_type not supported for type: {field_type} model_name: {field_model_name}')
         else:
             return f'Optional[{field_type}] = Field(default=None,alias="{field_model_name}",)'
 
@@ -251,8 +290,10 @@ def get_schema_fields(name:str, schema, components,dependencies:list):
                     model_name = prop_schema['items']['$ref'].split('/')[-1]
                     fields[clean_field_name(prop_name)] = _pydantic_field_type_write(
                         field_model_name=prop_name,
+
                         field_type=f"list[{module_class_name_from_name(model_name)}]",
-                        nullable= prop_schema.get('nullable', True)
+                        nullable = True,
+                        # nullable= prop_schema.get('nullable', True)
                     )
                     dependencies.append(model_name)
 
@@ -272,7 +313,8 @@ def get_schema_fields(name:str, schema, components,dependencies:list):
                         fields[clean_field_name(prop_name)] = _pydantic_field_type_write(
                             field_model_name=prop_name,
                             field_type=module_class_name_from_name(model_name),
-                            nullable= prop_schema.get('nullable', True)
+                            nullable= True
+                            # nullable= prop_schema.get('nullable', True)
                         )
                 else:
                     fields[clean_field_name(prop_name)] = _pydantic_field_type_write(
@@ -749,6 +791,7 @@ def write_init_file(
         init_file_obj.write((f'# Auto-generated client\n\n').encode())
         init_file_obj.write(('from __future__ import annotations\n').encode())
         init_file_obj.write(('from kiota_abstractions.method import Method\n').encode())
+        init_file_obj.write(('from kiota_abstractions.base_request_builder import BaseRequestBuilder\n').encode())
         init_file_obj.write(('from kiota_abstractions.base_request_configuration import RequestConfiguration\n').encode())
         init_file_obj.write((f'from {relative_path_to_root}..request_information import RequestInformation\n').encode())
         init_file_obj.write(('from pydantic import BaseModel, Field\n').encode())
@@ -766,11 +809,13 @@ def write_init_file(
         init_file_obj.write((f'\n\n').encode())
 
         # write the endpoint class name
-        init_file_obj.write((f'class {module_class_name_from_name(model_name)}Request:\n').encode())
+        init_file_obj.write((f'class {module_class_name_from_name(model_name)}Request(BaseRequestBuilder):\n').encode())
         init_file_obj.write(('\tdef __init__(self,request_adapter: HttpxRequestAdapter, path_parameters: Optional[Union[dict[str, Any], str]]) -> None:\n').encode())
-        init_file_obj.write(('\t\tself.request_adapter = request_adapter\n').encode())
-        init_file_obj.write(('\t\tself.url_template: str = "{+baseurl}'+f'{http_path}"\n').encode())
-        init_file_obj.write((f'\t\tself.path_parameters: dict[str, Any] = path_parameters\n').encode())
+        url_template = "{+baseurl}"+http_path
+        init_file_obj.write(f'\t\tsuper().__init__(request_adapter, "{url_template}", path_parameters)\n'.encode())
+        # init_file_obj.write(('\t\tself.request_adapter = request_adapter\n').encode())
+        # init_file_obj.write(('\t\tself.url_template: str = "{+baseurl}'+f'{http_path}"\n').encode())
+        # init_file_obj.write((f'\t\tself.path_parameters: dict[str, Any] = path_parameters\n').encode())
         init_file_obj.write(('\n').encode())
         
         if method_functions:
@@ -786,6 +831,18 @@ def write_init_file(
                 for query in query_param:
                     init_file_obj.write((query).encode())
                 init_file_obj.write(('\n').encode())
+
+        # write with_url function
+        init_file_obj.write((f'\tdef with_url(self, raw_url: str) -> {module_class_name_from_name(model_name)}Request:\n').encode())
+        init_file_obj.write(('\t\t"""\n').encode())
+        init_file_obj.write(('\t\tReturns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.\n').encode())
+        init_file_obj.write(('\t\tparam raw_url: The raw URL to use for the request builder.\n').encode())
+        init_file_obj.write((f'\t\tReturns: {module_class_name_from_name(model_name)}Request\n').encode())
+        init_file_obj.write(('\t\t"""\n').encode())
+        init_file_obj.write(('\t\tif raw_url is None:\n').encode())
+        init_file_obj.write(('\t\t\traise TypeError("raw_url cannot be None.")\n').encode())
+        init_file_obj.write((f'\t\treturn {module_class_name_from_name(model_name)}Request(self.request_adapter, self.path_parameters)\n').encode())
+        init_file_obj.write(('\n').encode())
 
 def _child_in_parent_writes(parent_file_content: list, model_name: str, child_path_parameters: dict):
 

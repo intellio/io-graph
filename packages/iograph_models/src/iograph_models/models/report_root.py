@@ -5,10 +5,10 @@ from pydantic import BaseModel, Field
 
 class ReportRoot(BaseModel):
 	authenticationMethods: Optional[AuthenticationMethodsRoot] = Field(default=None,alias="authenticationMethods",)
-	dailyPrintUsageByPrinter: list[PrintUsageByPrinter] = Field(alias="dailyPrintUsageByPrinter",)
-	dailyPrintUsageByUser: list[PrintUsageByUser] = Field(alias="dailyPrintUsageByUser",)
-	monthlyPrintUsageByPrinter: list[PrintUsageByPrinter] = Field(alias="monthlyPrintUsageByPrinter",)
-	monthlyPrintUsageByUser: list[PrintUsageByUser] = Field(alias="monthlyPrintUsageByUser",)
+	dailyPrintUsageByPrinter: Optional[list[PrintUsageByPrinter]] = Field(default=None,alias="dailyPrintUsageByPrinter",)
+	dailyPrintUsageByUser: Optional[list[PrintUsageByUser]] = Field(default=None,alias="dailyPrintUsageByUser",)
+	monthlyPrintUsageByPrinter: Optional[list[PrintUsageByPrinter]] = Field(default=None,alias="monthlyPrintUsageByPrinter",)
+	monthlyPrintUsageByUser: Optional[list[PrintUsageByUser]] = Field(default=None,alias="monthlyPrintUsageByUser",)
 	partners: Optional[Partners] = Field(default=None,alias="partners",)
 	security: Optional[SecurityReportsRoot] = Field(default=None,alias="security",)
 	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)

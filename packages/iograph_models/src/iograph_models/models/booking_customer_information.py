@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field
 class BookingCustomerInformation(BaseModel):
 	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
 	customerId: Optional[str] = Field(default=None,alias="customerId",)
-	customQuestionAnswers: list[BookingQuestionAnswer] = Field(alias="customQuestionAnswers",)
+	customQuestionAnswers: Optional[list[BookingQuestionAnswer]] = Field(default=None,alias="customQuestionAnswers",)
 	emailAddress: Optional[str] = Field(default=None,alias="emailAddress",)
 	location: Optional[Location] = Field(default=None,alias="location",)
 	name: Optional[str] = Field(default=None,alias="name",)

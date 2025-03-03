@@ -6,13 +6,13 @@ from pydantic import BaseModel, Field
 class PrivilegedAccessGroup(BaseModel):
 	id: Optional[str] = Field(default=None,alias="id",)
 	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	assignmentApprovals: list[Approval] = Field(alias="assignmentApprovals",)
-	assignmentScheduleInstances: list[PrivilegedAccessGroupAssignmentScheduleInstance] = Field(alias="assignmentScheduleInstances",)
-	assignmentScheduleRequests: list[PrivilegedAccessGroupAssignmentScheduleRequest] = Field(alias="assignmentScheduleRequests",)
-	assignmentSchedules: list[PrivilegedAccessGroupAssignmentSchedule] = Field(alias="assignmentSchedules",)
-	eligibilityScheduleInstances: list[PrivilegedAccessGroupEligibilityScheduleInstance] = Field(alias="eligibilityScheduleInstances",)
-	eligibilityScheduleRequests: list[PrivilegedAccessGroupEligibilityScheduleRequest] = Field(alias="eligibilityScheduleRequests",)
-	eligibilitySchedules: list[PrivilegedAccessGroupEligibilitySchedule] = Field(alias="eligibilitySchedules",)
+	assignmentApprovals: Optional[list[Approval]] = Field(default=None,alias="assignmentApprovals",)
+	assignmentScheduleInstances: Optional[list[PrivilegedAccessGroupAssignmentScheduleInstance]] = Field(default=None,alias="assignmentScheduleInstances",)
+	assignmentScheduleRequests: Optional[list[PrivilegedAccessGroupAssignmentScheduleRequest]] = Field(default=None,alias="assignmentScheduleRequests",)
+	assignmentSchedules: Optional[list[PrivilegedAccessGroupAssignmentSchedule]] = Field(default=None,alias="assignmentSchedules",)
+	eligibilityScheduleInstances: Optional[list[PrivilegedAccessGroupEligibilityScheduleInstance]] = Field(default=None,alias="eligibilityScheduleInstances",)
+	eligibilityScheduleRequests: Optional[list[PrivilegedAccessGroupEligibilityScheduleRequest]] = Field(default=None,alias="eligibilityScheduleRequests",)
+	eligibilitySchedules: Optional[list[PrivilegedAccessGroupEligibilitySchedule]] = Field(default=None,alias="eligibilitySchedules",)
 
 from .approval import Approval
 from .privileged_access_group_assignment_schedule_instance import PrivilegedAccessGroupAssignmentScheduleInstance

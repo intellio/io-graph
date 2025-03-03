@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field
 class CloudPcAuditResourceCollectionResponse(BaseModel):
 	odata_count: Optional[int] = Field(default=None,alias="@odata.count",)
 	odata_nextLink: Optional[str] = Field(default=None,alias="@odata.nextLink",)
-	value: list[CloudPcAuditResource] = Field(alias="value",)
+	value: Optional[list[CloudPcAuditResource]] = Field(default=None,alias="value",)
 
 from .cloud_pc_audit_resource import CloudPcAuditResource
 

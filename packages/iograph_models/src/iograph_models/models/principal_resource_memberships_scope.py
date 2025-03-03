@@ -5,8 +5,8 @@ from pydantic import BaseModel, Field
 
 class PrincipalResourceMembershipsScope(BaseModel):
 	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	principalScopes: list[AccessReviewScope] = Field(alias="principalScopes",)
-	resourceScopes: list[AccessReviewScope] = Field(alias="resourceScopes",)
+	principalScopes: Optional[list[AccessReviewScope]] = Field(default=None,alias="principalScopes",)
+	resourceScopes: Optional[list[AccessReviewScope]] = Field(default=None,alias="resourceScopes",)
 
 from .access_review_scope import AccessReviewScope
 from .access_review_scope import AccessReviewScope

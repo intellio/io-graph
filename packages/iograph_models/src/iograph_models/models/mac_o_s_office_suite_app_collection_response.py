@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field
 class MacOSOfficeSuiteAppCollectionResponse(BaseModel):
 	odata_count: Optional[int] = Field(default=None,alias="@odata.count",)
 	odata_nextLink: Optional[str] = Field(default=None,alias="@odata.nextLink",)
-	value: list[MacOSOfficeSuiteApp] = Field(alias="value",)
+	value: Optional[list[MacOSOfficeSuiteApp]] = Field(default=None,alias="value",)
 
 from .mac_o_s_office_suite_app import MacOSOfficeSuiteApp
 

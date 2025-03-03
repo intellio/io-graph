@@ -4,8 +4,8 @@ from pydantic import BaseModel, Field
 
 
 class GrantPostRequest(BaseModel):
-	roles: list[Optional[str]] = Field(alias="roles",)
-	recipients: list[DriveRecipient] = Field(alias="recipients",)
+	roles: Optional[list[str]] = Field(default=None,alias="roles",)
+	recipients: Optional[list[DriveRecipient]] = Field(default=None,alias="recipients",)
 
 from .drive_recipient import DriveRecipient
 

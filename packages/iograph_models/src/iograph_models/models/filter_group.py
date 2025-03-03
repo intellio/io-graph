@@ -4,7 +4,7 @@ from pydantic import BaseModel, Field
 
 
 class FilterGroup(BaseModel):
-	clauses: list[FilterClause] = Field(alias="clauses",)
+	clauses: Optional[list[FilterClause]] = Field(default=None,alias="clauses",)
 	name: Optional[str] = Field(default=None,alias="name",)
 	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
 

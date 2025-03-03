@@ -4,10 +4,10 @@ from pydantic import BaseModel, Field
 
 
 class ObjectDefinition(BaseModel):
-	attributes: list[AttributeDefinition] = Field(alias="attributes",)
-	metadata: list[ObjectDefinitionMetadataEntry] = Field(alias="metadata",)
+	attributes: Optional[list[AttributeDefinition]] = Field(default=None,alias="attributes",)
+	metadata: Optional[list[ObjectDefinitionMetadataEntry]] = Field(default=None,alias="metadata",)
 	name: Optional[str] = Field(default=None,alias="name",)
-	supportedApis: list[Optional[str]] = Field(alias="supportedApis",)
+	supportedApis: Optional[list[str]] = Field(default=None,alias="supportedApis",)
 	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
 
 from .attribute_definition import AttributeDefinition

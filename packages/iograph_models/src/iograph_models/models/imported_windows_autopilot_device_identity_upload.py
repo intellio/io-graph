@@ -9,7 +9,7 @@ class ImportedWindowsAutopilotDeviceIdentityUpload(BaseModel):
 	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
 	createdDateTimeUtc: Optional[datetime] = Field(default=None,alias="createdDateTimeUtc",)
 	status: Optional[ImportedWindowsAutopilotDeviceIdentityUploadStatus] = Field(default=None,alias="status",)
-	deviceIdentities: list[ImportedWindowsAutopilotDeviceIdentity] = Field(alias="deviceIdentities",)
+	deviceIdentities: Optional[list[ImportedWindowsAutopilotDeviceIdentity]] = Field(default=None,alias="deviceIdentities",)
 
 from .imported_windows_autopilot_device_identity_upload_status import ImportedWindowsAutopilotDeviceIdentityUploadStatus
 from .imported_windows_autopilot_device_identity import ImportedWindowsAutopilotDeviceIdentity

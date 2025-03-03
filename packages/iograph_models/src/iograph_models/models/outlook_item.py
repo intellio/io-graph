@@ -9,7 +9,7 @@ from pydantic import BaseModel, Field
 class OutlookItem(BaseModel):
 	id: Optional[str] = Field(default=None,alias="id",)
 	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	categories: list[Optional[str]] = Field(alias="categories",)
+	categories: Optional[list[str]] = Field(default=None,alias="categories",)
 	changeKey: Optional[str] = Field(default=None,alias="changeKey",)
 	createdDateTime: Optional[datetime] = Field(default=None,alias="createdDateTime",)
 	lastModifiedDateTime: Optional[datetime] = Field(default=None,alias="lastModifiedDateTime",)

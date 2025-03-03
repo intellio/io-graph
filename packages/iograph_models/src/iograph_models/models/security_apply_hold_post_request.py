@@ -4,6 +4,6 @@ from pydantic import BaseModel, Field
 
 
 class Security_apply_holdPostRequest(BaseModel):
-	ids: list[Optional[str]] = Field(alias="ids",)
+	ids: Optional[list[str]] = Field(default=None,alias="ids",)
 
 

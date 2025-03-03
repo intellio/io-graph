@@ -5,12 +5,12 @@ from pydantic import BaseModel, Field
 
 class Print(BaseModel):
 	settings: Optional[PrintSettings] = Field(default=None,alias="settings",)
-	connectors: list[PrintConnector] = Field(alias="connectors",)
-	operations: list[PrintOperation] = Field(alias="operations",)
-	printers: list[Printer] = Field(alias="printers",)
-	services: list[PrintService] = Field(alias="services",)
-	shares: list[PrinterShare] = Field(alias="shares",)
-	taskDefinitions: list[PrintTaskDefinition] = Field(alias="taskDefinitions",)
+	connectors: Optional[list[PrintConnector]] = Field(default=None,alias="connectors",)
+	operations: Optional[list[PrintOperation]] = Field(default=None,alias="operations",)
+	printers: Optional[list[Printer]] = Field(default=None,alias="printers",)
+	services: Optional[list[PrintService]] = Field(default=None,alias="services",)
+	shares: Optional[list[PrinterShare]] = Field(default=None,alias="shares",)
+	taskDefinitions: Optional[list[PrintTaskDefinition]] = Field(default=None,alias="taskDefinitions",)
 	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
 
 from .print_settings import PrintSettings

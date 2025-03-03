@@ -11,7 +11,7 @@ class TeamworkTag(BaseModel):
 	memberCount: Optional[int] = Field(default=None,alias="memberCount",)
 	tagType: Optional[TeamworkTagType] = Field(default=None,alias="tagType",)
 	teamId: Optional[str] = Field(default=None,alias="teamId",)
-	members: list[TeamworkTagMember] = Field(alias="members",)
+	members: Optional[list[TeamworkTagMember]] = Field(default=None,alias="members",)
 
 from .teamwork_tag_type import TeamworkTagType
 from .teamwork_tag_member import TeamworkTagMember

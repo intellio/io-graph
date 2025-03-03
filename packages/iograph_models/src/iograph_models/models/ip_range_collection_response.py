@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field
 class IpRangeCollectionResponse(BaseModel):
 	odata_count: Optional[int] = Field(default=None,alias="@odata.count",)
 	odata_nextLink: Optional[str] = Field(default=None,alias="@odata.nextLink",)
-	value: list[IpRange] = Field(alias="value",)
+	value: Optional[list[IpRange]] = Field(default=None,alias="value",)
 
 from .ip_range import IpRange
 

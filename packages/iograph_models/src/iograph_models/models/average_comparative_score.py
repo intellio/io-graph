@@ -4,7 +4,7 @@ from pydantic import BaseModel, Field
 
 
 class AverageComparativeScore(BaseModel):
-	averageScore: Optional[float] | Optional[str] | ReferenceNumeric
+	averageScore: float | str | ReferenceNumeric
 	basis: Optional[str] = Field(default=None,alias="basis",)
 	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
 

@@ -11,7 +11,7 @@ class OrganizationalBranding(BaseModel):
 	backgroundImageRelativeUrl: Optional[str] = Field(default=None,alias="backgroundImageRelativeUrl",)
 	bannerLogo: Optional[str] = Field(default=None,alias="bannerLogo",)
 	bannerLogoRelativeUrl: Optional[str] = Field(default=None,alias="bannerLogoRelativeUrl",)
-	cdnList: list[Optional[str]] = Field(alias="cdnList",)
+	cdnList: Optional[list[str]] = Field(default=None,alias="cdnList",)
 	contentCustomization: Optional[ContentCustomization] = Field(default=None,alias="contentCustomization",)
 	customAccountResetCredentialsUrl: Optional[str] = Field(default=None,alias="customAccountResetCredentialsUrl",)
 	customCannotAccessYourAccountText: Optional[str] = Field(default=None,alias="customCannotAccessYourAccountText",)
@@ -37,7 +37,7 @@ class OrganizationalBranding(BaseModel):
 	squareLogoDarkRelativeUrl: Optional[str] = Field(default=None,alias="squareLogoDarkRelativeUrl",)
 	squareLogoRelativeUrl: Optional[str] = Field(default=None,alias="squareLogoRelativeUrl",)
 	usernameHintText: Optional[str] = Field(default=None,alias="usernameHintText",)
-	localizations: list[OrganizationalBrandingLocalization] = Field(alias="localizations",)
+	localizations: Optional[list[OrganizationalBrandingLocalization]] = Field(default=None,alias="localizations",)
 
 from .content_customization import ContentCustomization
 from .login_page_layout_configuration import LoginPageLayoutConfiguration

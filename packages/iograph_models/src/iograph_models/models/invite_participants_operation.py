@@ -9,7 +9,7 @@ class InviteParticipantsOperation(BaseModel):
 	clientContext: Optional[str] = Field(default=None,alias="clientContext",)
 	resultInfo: Optional[ResultInfo] = Field(default=None,alias="resultInfo",)
 	status: Optional[OperationStatus] = Field(default=None,alias="status",)
-	participants: list[InvitationParticipantInfo] = Field(alias="participants",)
+	participants: Optional[list[InvitationParticipantInfo]] = Field(default=None,alias="participants",)
 
 from .result_info import ResultInfo
 from .operation_status import OperationStatus

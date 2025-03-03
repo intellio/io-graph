@@ -14,7 +14,7 @@ class DocumentSetVersion(BaseModel):
 	comment: Optional[str] = Field(default=None,alias="comment",)
 	createdBy: Optional[IdentitySet] = Field(default=None,alias="createdBy",)
 	createdDateTime: Optional[datetime] = Field(default=None,alias="createdDateTime",)
-	items: list[DocumentSetVersionItem] = Field(alias="items",)
+	items: Optional[list[DocumentSetVersionItem]] = Field(default=None,alias="items",)
 	shouldCaptureMinorVersion: Optional[bool] = Field(default=None,alias="shouldCaptureMinorVersion",)
 
 from .identity_set import IdentitySet

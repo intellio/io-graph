@@ -21,7 +21,7 @@ class Room(BaseModel):
 	isWheelChairAccessible: Optional[bool] = Field(default=None,alias="isWheelChairAccessible",)
 	label: Optional[str] = Field(default=None,alias="label",)
 	nickname: Optional[str] = Field(default=None,alias="nickname",)
-	tags: list[Optional[str]] = Field(alias="tags",)
+	tags: Optional[list[str]] = Field(default=None,alias="tags",)
 	videoDeviceName: Optional[str] = Field(default=None,alias="videoDeviceName",)
 
 from .physical_address import PhysicalAddress

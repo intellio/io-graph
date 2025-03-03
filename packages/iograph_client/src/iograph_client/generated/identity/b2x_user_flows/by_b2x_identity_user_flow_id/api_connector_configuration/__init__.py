@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 from kiota_abstractions.method import Method
+from kiota_abstractions.base_request_builder import BaseRequestBuilder
 from kiota_abstractions.base_request_configuration import RequestConfiguration
 from ......request_information import RequestInformation
 from pydantic import BaseModel, Field
@@ -16,11 +17,9 @@ from iograph_models.models.user_flow_api_connector_configuration import UserFlow
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
 
 
-class ApiConnectorConfigurationRequest:
+class ApiConnectorConfigurationRequest(BaseRequestBuilder):
 	def __init__(self,request_adapter: HttpxRequestAdapter, path_parameters: Optional[Union[dict[str, Any], str]]) -> None:
-		self.request_adapter = request_adapter
-		self.url_template: str = "{+baseurl}/identity/b2xUserFlows/{b2xIdentityUserFlow%2Did}/apiConnectorConfiguration"
-		self.path_parameters: dict[str, Any] = path_parameters
+		super().__init__(request_adapter, "{+baseurl}/identity/b2xUserFlows/{b2xIdentityUserFlow%2Did}/apiConnectorConfiguration", path_parameters)
 
 	async def get(
 		self,
@@ -49,6 +48,16 @@ class ApiConnectorConfigurationRequest:
 	class GetQueryParams(BaseModel):
 		select: list[str] = Field(default=None,serialization_alias="%24select")
 		expand: list[str] = Field(default=None,serialization_alias="%24expand")
+
+	def with_url(self, raw_url: str) -> ApiConnectorConfigurationRequest:
+		"""
+		Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+		param raw_url: The raw URL to use for the request builder.
+		Returns: ApiConnectorConfigurationRequest
+		"""
+		if raw_url is None:
+			raise TypeError("raw_url cannot be None.")
+		return ApiConnectorConfigurationRequest(self.request_adapter, self.path_parameters)
 
 	@property
 	def post_attribute_collection(self,

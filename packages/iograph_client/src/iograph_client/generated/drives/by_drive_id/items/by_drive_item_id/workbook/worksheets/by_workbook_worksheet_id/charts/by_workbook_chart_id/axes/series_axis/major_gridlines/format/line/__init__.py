@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 from kiota_abstractions.method import Method
+from kiota_abstractions.base_request_builder import BaseRequestBuilder
 from kiota_abstractions.base_request_configuration import RequestConfiguration
 from ................request_information import RequestInformation
 from pydantic import BaseModel, Field
@@ -11,15 +12,13 @@ from typing import TYPE_CHECKING
 if TYPE_CHECKING:
 	from .clear import ClearRequest
 	from ................request_adapter import HttpxRequestAdapter
-from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.models.workbook_chart_line_format import WorkbookChartLineFormat
+from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
 
 
-class LineRequest:
+class LineRequest(BaseRequestBuilder):
 	def __init__(self,request_adapter: HttpxRequestAdapter, path_parameters: Optional[Union[dict[str, Any], str]]) -> None:
-		self.request_adapter = request_adapter
-		self.url_template: str = "{+baseurl}/drives/{drive%2Did}/items/{driveItem%2Did}/workbook/worksheets/{workbookWorksheet%2Did}/charts/{workbookChart%2Did}/axes/seriesAxis/majorGridlines/format/line"
-		self.path_parameters: dict[str, Any] = path_parameters
+		super().__init__(request_adapter, "{+baseurl}/drives/{drive%2Did}/items/{driveItem%2Did}/workbook/worksheets/{workbookWorksheet%2Did}/charts/{workbookChart%2Did}/axes/seriesAxis/majorGridlines/format/line", path_parameters)
 
 	async def get(
 		self,
@@ -98,6 +97,16 @@ class LineRequest:
 		expand: list[str] = Field(default=None,serialization_alias="%24expand")
 
 
+
+	def with_url(self, raw_url: str) -> LineRequest:
+		"""
+		Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+		param raw_url: The raw URL to use for the request builder.
+		Returns: LineRequest
+		"""
+		if raw_url is None:
+			raise TypeError("raw_url cannot be None.")
+		return LineRequest(self.request_adapter, self.path_parameters)
 
 	@property
 	def clear(self,

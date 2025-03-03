@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field
 class SecurityEdiscoveryEstimateOperationCollectionResponse(BaseModel):
 	odata_count: Optional[int] = Field(default=None,alias="@odata.count",)
 	odata_nextLink: Optional[str] = Field(default=None,alias="@odata.nextLink",)
-	value: list[SecurityEdiscoveryEstimateOperation] = Field(alias="value",)
+	value: Optional[list[SecurityEdiscoveryEstimateOperation]] = Field(default=None,alias="value",)
 
 from .security_ediscovery_estimate_operation import SecurityEdiscoveryEstimateOperation
 

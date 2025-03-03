@@ -12,10 +12,10 @@ class OneDriveForBusinessProtectionPolicy(BaseModel):
 	displayName: Optional[str] = Field(default=None,alias="displayName",)
 	lastModifiedBy: Optional[IdentitySet] = Field(default=None,alias="lastModifiedBy",)
 	lastModifiedDateTime: Optional[datetime] = Field(default=None,alias="lastModifiedDateTime",)
-	retentionSettings: list[RetentionSetting] = Field(alias="retentionSettings",)
+	retentionSettings: Optional[list[RetentionSetting]] = Field(default=None,alias="retentionSettings",)
 	status: Optional[ProtectionPolicyStatus] = Field(default=None,alias="status",)
-	driveInclusionRules: list[DriveProtectionRule] = Field(alias="driveInclusionRules",)
-	driveProtectionUnits: list[DriveProtectionUnit] = Field(alias="driveProtectionUnits",)
+	driveInclusionRules: Optional[list[DriveProtectionRule]] = Field(default=None,alias="driveInclusionRules",)
+	driveProtectionUnits: Optional[list[DriveProtectionUnit]] = Field(default=None,alias="driveProtectionUnits",)
 
 from .identity_set import IdentitySet
 from .identity_set import IdentitySet

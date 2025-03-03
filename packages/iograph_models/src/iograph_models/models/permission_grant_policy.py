@@ -10,8 +10,8 @@ class PermissionGrantPolicy(BaseModel):
 	deletedDateTime: Optional[datetime] = Field(default=None,alias="deletedDateTime",)
 	description: Optional[str] = Field(default=None,alias="description",)
 	displayName: Optional[str] = Field(default=None,alias="displayName",)
-	excludes: list[PermissionGrantConditionSet] = Field(alias="excludes",)
-	includes: list[PermissionGrantConditionSet] = Field(alias="includes",)
+	excludes: Optional[list[PermissionGrantConditionSet]] = Field(default=None,alias="excludes",)
+	includes: Optional[list[PermissionGrantConditionSet]] = Field(default=None,alias="includes",)
 
 from .permission_grant_condition_set import PermissionGrantConditionSet
 from .permission_grant_condition_set import PermissionGrantConditionSet

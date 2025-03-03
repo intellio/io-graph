@@ -4,7 +4,7 @@ from pydantic import BaseModel, Field
 
 
 class AuthorizationInfo(BaseModel):
-	certificateUserIds: list[Optional[str]] = Field(alias="certificateUserIds",)
+	certificateUserIds: Optional[list[str]] = Field(default=None,alias="certificateUserIds",)
 	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
 
 

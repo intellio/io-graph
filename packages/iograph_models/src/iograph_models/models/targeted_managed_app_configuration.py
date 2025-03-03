@@ -12,11 +12,11 @@ class TargetedManagedAppConfiguration(BaseModel):
 	displayName: Optional[str] = Field(default=None,alias="displayName",)
 	lastModifiedDateTime: Optional[datetime] = Field(default=None,alias="lastModifiedDateTime",)
 	version: Optional[str] = Field(default=None,alias="version",)
-	customSettings: list[KeyValuePair] = Field(alias="customSettings",)
+	customSettings: Optional[list[KeyValuePair]] = Field(default=None,alias="customSettings",)
 	deployedAppCount: Optional[int] = Field(default=None,alias="deployedAppCount",)
 	isAssigned: Optional[bool] = Field(default=None,alias="isAssigned",)
-	apps: list[ManagedMobileApp] = Field(alias="apps",)
-	assignments: list[TargetedManagedAppPolicyAssignment] = Field(alias="assignments",)
+	apps: Optional[list[ManagedMobileApp]] = Field(default=None,alias="apps",)
+	assignments: Optional[list[TargetedManagedAppPolicyAssignment]] = Field(default=None,alias="assignments",)
 	deploymentSummary: Optional[ManagedAppPolicyDeploymentSummary] = Field(default=None,alias="deploymentSummary",)
 
 from .key_value_pair import KeyValuePair

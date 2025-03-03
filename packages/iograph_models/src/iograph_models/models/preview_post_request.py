@@ -5,7 +5,7 @@ from pydantic import BaseModel, Field
 
 class PreviewPostRequest(BaseModel):
 	page: Optional[str] = Field(default=None,alias="page",)
-	zoom: Optional[float] | Optional[str] | ReferenceNumeric
+	zoom: float | str | ReferenceNumeric
 
 from .reference_numeric import ReferenceNumeric
 

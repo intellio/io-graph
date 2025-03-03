@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field
 class ColumnLinkCollectionResponse(BaseModel):
 	odata_count: Optional[int] = Field(default=None,alias="@odata.count",)
 	odata_nextLink: Optional[str] = Field(default=None,alias="@odata.nextLink",)
-	value: list[ColumnLink] = Field(alias="value",)
+	value: Optional[list[ColumnLink]] = Field(default=None,alias="value",)
 
 from .column_link import ColumnLink
 

@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field
 class AlertTriggerCollectionResponse(BaseModel):
 	odata_count: Optional[int] = Field(default=None,alias="@odata.count",)
 	odata_nextLink: Optional[str] = Field(default=None,alias="@odata.nextLink",)
-	value: list[AlertTrigger] = Field(alias="value",)
+	value: Optional[list[AlertTrigger]] = Field(default=None,alias="value",)
 
 from .alert_trigger import AlertTrigger
 

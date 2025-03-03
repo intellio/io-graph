@@ -4,7 +4,7 @@ from pydantic import BaseModel, Field
 
 
 class Create_forwardPostRequest(BaseModel):
-	ToRecipients: list[Recipient] = Field(alias="ToRecipients",)
+	ToRecipients: Optional[list[Recipient]] = Field(default=None,alias="ToRecipients",)
 	Message: Optional[Message] = Field(default=None,alias="Message",)
 	Comment: Optional[str] = Field(default=None,alias="Comment",)
 

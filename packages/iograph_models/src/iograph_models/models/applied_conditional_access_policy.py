@@ -5,8 +5,8 @@ from pydantic import BaseModel, Field
 
 class AppliedConditionalAccessPolicy(BaseModel):
 	displayName: Optional[str] = Field(default=None,alias="displayName",)
-	enforcedGrantControls: list[Optional[str]] = Field(alias="enforcedGrantControls",)
-	enforcedSessionControls: list[Optional[str]] = Field(alias="enforcedSessionControls",)
+	enforcedGrantControls: Optional[list[str]] = Field(default=None,alias="enforcedGrantControls",)
+	enforcedSessionControls: Optional[list[str]] = Field(default=None,alias="enforcedSessionControls",)
 	id: Optional[str] = Field(default=None,alias="id",)
 	result: Optional[AppliedConditionalAccessPolicyResult] = Field(default=None,alias="result",)
 	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)

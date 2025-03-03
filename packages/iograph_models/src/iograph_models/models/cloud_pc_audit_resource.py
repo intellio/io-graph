@@ -5,7 +5,7 @@ from pydantic import BaseModel, Field
 
 class CloudPcAuditResource(BaseModel):
 	displayName: Optional[str] = Field(default=None,alias="displayName",)
-	modifiedProperties: list[CloudPcAuditProperty] = Field(alias="modifiedProperties",)
+	modifiedProperties: Optional[list[CloudPcAuditProperty]] = Field(default=None,alias="modifiedProperties",)
 	resourceId: Optional[str] = Field(default=None,alias="resourceId",)
 	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
 

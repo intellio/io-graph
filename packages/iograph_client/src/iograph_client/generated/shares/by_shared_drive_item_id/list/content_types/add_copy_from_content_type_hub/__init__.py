@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 from kiota_abstractions.method import Method
+from kiota_abstractions.base_request_builder import BaseRequestBuilder
 from kiota_abstractions.base_request_configuration import RequestConfiguration
 from .......request_information import RequestInformation
 from pydantic import BaseModel, Field
@@ -11,15 +12,13 @@ from typing import TYPE_CHECKING
 if TYPE_CHECKING:
 	from .......request_adapter import HttpxRequestAdapter
 from iograph_models.models.content_type import ContentType
-from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.models.add_copy_from_content_type_hub_post_request import Add_copy_from_content_type_hubPostRequest
+from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
 
 
-class AddCopyFromContentTypeHubRequest:
+class AddCopyFromContentTypeHubRequest(BaseRequestBuilder):
 	def __init__(self,request_adapter: HttpxRequestAdapter, path_parameters: Optional[Union[dict[str, Any], str]]) -> None:
-		self.request_adapter = request_adapter
-		self.url_template: str = "{+baseurl}/shares/{sharedDriveItem%2Did}/list/contentTypes/addCopyFromContentTypeHub"
-		self.path_parameters: dict[str, Any] = path_parameters
+		super().__init__(request_adapter, "{+baseurl}/shares/{sharedDriveItem%2Did}/list/contentTypes/addCopyFromContentTypeHub", path_parameters)
 
 	async def post(
 		self,
@@ -47,4 +46,14 @@ class AddCopyFromContentTypeHubRequest:
 		request_info.set_content(body, "application/json")
 		return await self.request_adapter.send_async(request_info, ContentType, error_mapping)
 
+
+	def with_url(self, raw_url: str) -> AddCopyFromContentTypeHubRequest:
+		"""
+		Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+		param raw_url: The raw URL to use for the request builder.
+		Returns: AddCopyFromContentTypeHubRequest
+		"""
+		if raw_url is None:
+			raise TypeError("raw_url cannot be None.")
+		return AddCopyFromContentTypeHubRequest(self.request_adapter, self.path_parameters)
 

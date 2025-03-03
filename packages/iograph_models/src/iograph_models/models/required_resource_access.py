@@ -4,7 +4,7 @@ from pydantic import BaseModel, Field
 
 
 class RequiredResourceAccess(BaseModel):
-	resourceAccess: list[ResourceAccess] = Field(alias="resourceAccess",)
+	resourceAccess: Optional[list[ResourceAccess]] = Field(default=None,alias="resourceAccess",)
 	resourceAppId: Optional[str] = Field(default=None,alias="resourceAppId",)
 	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
 

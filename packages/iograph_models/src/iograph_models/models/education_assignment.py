@@ -30,11 +30,11 @@ class EducationAssignment(BaseModel):
 	resourcesFolderUrl: Optional[str] = Field(default=None,alias="resourcesFolderUrl",)
 	status: Optional[EducationAssignmentStatus] = Field(default=None,alias="status",)
 	webUrl: Optional[str] = Field(default=None,alias="webUrl",)
-	categories: list[EducationCategory] = Field(alias="categories",)
+	categories: Optional[list[EducationCategory]] = Field(default=None,alias="categories",)
 	gradingCategory: Optional[EducationGradingCategory] = Field(default=None,alias="gradingCategory",)
-	resources: list[EducationAssignmentResource] = Field(alias="resources",)
+	resources: Optional[list[EducationAssignmentResource]] = Field(default=None,alias="resources",)
 	rubric: Optional[EducationRubric] = Field(default=None,alias="rubric",)
-	submissions: list[EducationSubmission] = Field(alias="submissions",)
+	submissions: Optional[list[EducationSubmission]] = Field(default=None,alias="submissions",)
 
 from .education_added_student_action import EducationAddedStudentAction
 from .education_add_to_calendar_options import EducationAddToCalendarOptions

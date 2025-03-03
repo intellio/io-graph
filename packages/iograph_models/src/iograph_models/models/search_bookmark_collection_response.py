@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field
 class SearchBookmarkCollectionResponse(BaseModel):
 	odata_count: Optional[int] = Field(default=None,alias="@odata.count",)
 	odata_nextLink: Optional[str] = Field(default=None,alias="@odata.nextLink",)
-	value: list[SearchBookmark] = Field(alias="value",)
+	value: Optional[list[SearchBookmark]] = Field(default=None,alias="value",)
 
 from .search_bookmark import SearchBookmark
 

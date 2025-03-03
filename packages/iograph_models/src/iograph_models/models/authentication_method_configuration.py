@@ -8,7 +8,7 @@ from pydantic import BaseModel, Field
 class AuthenticationMethodConfiguration(BaseModel):
 	id: Optional[str] = Field(default=None,alias="id",)
 	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	excludeTargets: list[ExcludeTarget] = Field(alias="excludeTargets",)
+	excludeTargets: Optional[list[ExcludeTarget]] = Field(default=None,alias="excludeTargets",)
 	state: Optional[AuthenticationMethodState] = Field(default=None,alias="state",)
 
 	@model_validator(mode="wrap")

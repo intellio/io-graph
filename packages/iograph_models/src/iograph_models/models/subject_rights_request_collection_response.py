@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field
 class SubjectRightsRequestCollectionResponse(BaseModel):
 	odata_count: Optional[int] = Field(default=None,alias="@odata.count",)
 	odata_nextLink: Optional[str] = Field(default=None,alias="@odata.nextLink",)
-	value: list[SubjectRightsRequest] = Field(alias="value",)
+	value: Optional[list[SubjectRightsRequest]] = Field(default=None,alias="value",)
 
 from .subject_rights_request import SubjectRightsRequest
 

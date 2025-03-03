@@ -34,7 +34,7 @@ class OnlineMeetingBase(BaseModel):
 	subject: Optional[str] = Field(default=None,alias="subject",)
 	videoTeleconferenceId: Optional[str] = Field(default=None,alias="videoTeleconferenceId",)
 	watermarkProtection: Optional[WatermarkProtectionValues] = Field(default=None,alias="watermarkProtection",)
-	attendanceReports: list[MeetingAttendanceReport] = Field(alias="attendanceReports",)
+	attendanceReports: Optional[list[MeetingAttendanceReport]] = Field(default=None,alias="attendanceReports",)
 
 	@model_validator(mode="wrap")
 	def convert_discriminator_class(cls, data: Any, handler: ModelWrapValidatorHandler[Self]) -> Self:

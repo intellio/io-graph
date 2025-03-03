@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field
 class ContentSharingSessionCollectionResponse(BaseModel):
 	odata_count: Optional[int] = Field(default=None,alias="@odata.count",)
 	odata_nextLink: Optional[str] = Field(default=None,alias="@odata.nextLink",)
-	value: list[ContentSharingSession] = Field(alias="value",)
+	value: Optional[list[ContentSharingSession]] = Field(default=None,alias="value",)
 
 from .content_sharing_session import ContentSharingSession
 

@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field
 class TimeOffCollectionResponse(BaseModel):
 	odata_count: Optional[int] = Field(default=None,alias="@odata.count",)
 	odata_nextLink: Optional[str] = Field(default=None,alias="@odata.nextLink",)
-	value: list[TimeOff] = Field(alias="value",)
+	value: Optional[list[TimeOff]] = Field(default=None,alias="value",)
 
 from .time_off import TimeOff
 

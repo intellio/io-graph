@@ -5,7 +5,7 @@ from pydantic import BaseModel, Field
 
 class ConversationMemberRoleUpdatedEventMessageDetail(BaseModel):
 	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	conversationMemberRoles: list[Optional[str]] = Field(alias="conversationMemberRoles",)
+	conversationMemberRoles: Optional[list[str]] = Field(default=None,alias="conversationMemberRoles",)
 	conversationMemberUser: Optional[TeamworkUserIdentity] = Field(default=None,alias="conversationMemberUser",)
 	initiator: Optional[IdentitySet] = Field(default=None,alias="initiator",)
 

@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 from kiota_abstractions.method import Method
+from kiota_abstractions.base_request_builder import BaseRequestBuilder
 from kiota_abstractions.base_request_configuration import RequestConfiguration
 from ......request_information import RequestInformation
 from pydantic import BaseModel, Field
@@ -14,11 +15,9 @@ from iograph_models.models.vpp_token import VppToken
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
 
 
-class SyncLicensesRequest:
+class SyncLicensesRequest(BaseRequestBuilder):
 	def __init__(self,request_adapter: HttpxRequestAdapter, path_parameters: Optional[Union[dict[str, Any], str]]) -> None:
-		self.request_adapter = request_adapter
-		self.url_template: str = "{+baseurl}/deviceAppManagement/vppTokens/{vppToken%2Did}/syncLicenses"
-		self.path_parameters: dict[str, Any] = path_parameters
+		super().__init__(request_adapter, "{+baseurl}/deviceAppManagement/vppTokens/{vppToken%2Did}/syncLicenses", path_parameters)
 
 	async def post(
 		self,
@@ -44,4 +43,14 @@ class SyncLicensesRequest:
 		request_info.headers.try_add("Accept", "application/json")
 		return await self.request_adapter.send_async(request_info, VppToken, error_mapping)
 
+
+	def with_url(self, raw_url: str) -> SyncLicensesRequest:
+		"""
+		Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+		param raw_url: The raw URL to use for the request builder.
+		Returns: SyncLicensesRequest
+		"""
+		if raw_url is None:
+			raise TypeError("raw_url cannot be None.")
+		return SyncLicensesRequest(self.request_adapter, self.path_parameters)
 

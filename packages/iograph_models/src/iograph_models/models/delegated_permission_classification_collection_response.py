@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field
 class DelegatedPermissionClassificationCollectionResponse(BaseModel):
 	odata_count: Optional[int] = Field(default=None,alias="@odata.count",)
 	odata_nextLink: Optional[str] = Field(default=None,alias="@odata.nextLink",)
-	value: list[DelegatedPermissionClassification] = Field(alias="value",)
+	value: Optional[list[DelegatedPermissionClassification]] = Field(default=None,alias="value",)
 
 from .delegated_permission_classification import DelegatedPermissionClassification
 

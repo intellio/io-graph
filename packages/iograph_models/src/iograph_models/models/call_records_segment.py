@@ -11,7 +11,7 @@ class CallRecordsSegment(BaseModel):
 	caller: Optional[CallRecordsEndpoint] = Field(default=None,alias="caller",)
 	endDateTime: Optional[datetime] = Field(default=None,alias="endDateTime",)
 	failureInfo: Optional[CallRecordsFailureInfo] = Field(default=None,alias="failureInfo",)
-	media: list[CallRecordsMedia] = Field(alias="media",)
+	media: Optional[list[CallRecordsMedia]] = Field(default=None,alias="media",)
 	startDateTime: Optional[datetime] = Field(default=None,alias="startDateTime",)
 
 from .call_records_endpoint import CallRecordsEndpoint

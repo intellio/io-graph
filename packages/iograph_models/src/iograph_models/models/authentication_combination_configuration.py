@@ -8,7 +8,7 @@ from pydantic import BaseModel, Field
 class AuthenticationCombinationConfiguration(BaseModel):
 	id: Optional[str] = Field(default=None,alias="id",)
 	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	appliesToCombinations: list[AuthenticationMethodModes] = Field(alias="appliesToCombinations",)
+	appliesToCombinations: Optional[list[AuthenticationMethodModes]] = Field(default=None,alias="appliesToCombinations",)
 
 	@model_validator(mode="wrap")
 	def convert_discriminator_class(cls, data: Any, handler: ModelWrapValidatorHandler[Self]) -> Self:

@@ -11,7 +11,7 @@ class SecurityEdiscoveryReviewSet(BaseModel):
 	createdDateTime: Optional[datetime] = Field(default=None,alias="createdDateTime",)
 	description: Optional[str] = Field(default=None,alias="description",)
 	displayName: Optional[str] = Field(default=None,alias="displayName",)
-	queries: list[SecurityEdiscoveryReviewSetQuery] = Field(alias="queries",)
+	queries: Optional[list[SecurityEdiscoveryReviewSetQuery]] = Field(default=None,alias="queries",)
 
 from .identity_set import IdentitySet
 from .security_ediscovery_review_set_query import SecurityEdiscoveryReviewSetQuery

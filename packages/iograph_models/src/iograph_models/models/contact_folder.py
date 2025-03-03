@@ -8,10 +8,10 @@ class ContactFolder(BaseModel):
 	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
 	displayName: Optional[str] = Field(default=None,alias="displayName",)
 	parentFolderId: Optional[str] = Field(default=None,alias="parentFolderId",)
-	childFolders: list[ContactFolder] = Field(alias="childFolders",)
-	contacts: list[Contact] = Field(alias="contacts",)
-	multiValueExtendedProperties: list[MultiValueLegacyExtendedProperty] = Field(alias="multiValueExtendedProperties",)
-	singleValueExtendedProperties: list[SingleValueLegacyExtendedProperty] = Field(alias="singleValueExtendedProperties",)
+	childFolders: Optional[list[ContactFolder]] = Field(default=None,alias="childFolders",)
+	contacts: Optional[list[Contact]] = Field(default=None,alias="contacts",)
+	multiValueExtendedProperties: Optional[list[MultiValueLegacyExtendedProperty]] = Field(default=None,alias="multiValueExtendedProperties",)
+	singleValueExtendedProperties: Optional[list[SingleValueLegacyExtendedProperty]] = Field(default=None,alias="singleValueExtendedProperties",)
 
 from .contact import Contact
 from .multi_value_legacy_extended_property import MultiValueLegacyExtendedProperty

@@ -14,7 +14,7 @@ class ManagedAppConfiguration(BaseModel):
 	displayName: Optional[str] = Field(default=None,alias="displayName",)
 	lastModifiedDateTime: Optional[datetime] = Field(default=None,alias="lastModifiedDateTime",)
 	version: Optional[str] = Field(default=None,alias="version",)
-	customSettings: list[KeyValuePair] = Field(alias="customSettings",)
+	customSettings: Optional[list[KeyValuePair]] = Field(default=None,alias="customSettings",)
 
 	@model_validator(mode="wrap")
 	def convert_discriminator_class(cls, data: Any, handler: ModelWrapValidatorHandler[Self]) -> Self:

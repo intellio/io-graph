@@ -14,8 +14,8 @@ class EducationRubric(BaseModel):
 	grading: Optional[EducationAssignmentGradeType] = Field(default=None,alias="grading",)
 	lastModifiedBy: Optional[IdentitySet] = Field(default=None,alias="lastModifiedBy",)
 	lastModifiedDateTime: Optional[datetime] = Field(default=None,alias="lastModifiedDateTime",)
-	levels: list[RubricLevel] = Field(alias="levels",)
-	qualities: list[RubricQuality] = Field(alias="qualities",)
+	levels: Optional[list[RubricLevel]] = Field(default=None,alias="levels",)
+	qualities: Optional[list[RubricQuality]] = Field(default=None,alias="qualities",)
 
 from .identity_set import IdentitySet
 from .education_item_body import EducationItemBody

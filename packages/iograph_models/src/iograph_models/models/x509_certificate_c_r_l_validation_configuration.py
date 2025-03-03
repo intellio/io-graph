@@ -4,7 +4,7 @@ from pydantic import BaseModel, Field
 
 
 class X509CertificateCRLValidationConfiguration(BaseModel):
-	exemptedCertificateAuthoritiesSubjectKeyIdentifiers: list[Optional[str]] = Field(alias="exemptedCertificateAuthoritiesSubjectKeyIdentifiers",)
+	exemptedCertificateAuthoritiesSubjectKeyIdentifiers: Optional[list[str]] = Field(default=None,alias="exemptedCertificateAuthoritiesSubjectKeyIdentifiers",)
 	state: Optional[X509CertificateCRLValidationConfigurationState] = Field(default=None,alias="state",)
 	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
 

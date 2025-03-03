@@ -10,7 +10,7 @@ class UserExperienceAnalyticsAppHealthDevicePerformance(BaseModel):
 	appCrashCount: Optional[int] = Field(default=None,alias="appCrashCount",)
 	appHangCount: Optional[int] = Field(default=None,alias="appHangCount",)
 	crashedAppCount: Optional[int] = Field(default=None,alias="crashedAppCount",)
-	deviceAppHealthScore: Optional[float] | Optional[str] | ReferenceNumeric
+	deviceAppHealthScore: float | str | ReferenceNumeric
 	deviceDisplayName: Optional[str] = Field(default=None,alias="deviceDisplayName",)
 	deviceId: Optional[str] = Field(default=None,alias="deviceId",)
 	deviceManufacturer: Optional[str] = Field(default=None,alias="deviceManufacturer",)

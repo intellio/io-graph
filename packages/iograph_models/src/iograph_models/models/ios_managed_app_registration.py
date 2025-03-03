@@ -13,15 +13,15 @@ class IosManagedAppRegistration(BaseModel):
 	deviceName: Optional[str] = Field(default=None,alias="deviceName",)
 	deviceTag: Optional[str] = Field(default=None,alias="deviceTag",)
 	deviceType: Optional[str] = Field(default=None,alias="deviceType",)
-	flaggedReasons: list[ManagedAppFlaggedReason] = Field(alias="flaggedReasons",)
+	flaggedReasons: Optional[list[ManagedAppFlaggedReason]] = Field(default=None,alias="flaggedReasons",)
 	lastSyncDateTime: Optional[datetime] = Field(default=None,alias="lastSyncDateTime",)
 	managementSdkVersion: Optional[str] = Field(default=None,alias="managementSdkVersion",)
 	platformVersion: Optional[str] = Field(default=None,alias="platformVersion",)
 	userId: Optional[str] = Field(default=None,alias="userId",)
 	version: Optional[str] = Field(default=None,alias="version",)
-	appliedPolicies: list[ManagedAppPolicy] = Field(alias="appliedPolicies",)
-	intendedPolicies: list[ManagedAppPolicy] = Field(alias="intendedPolicies",)
-	operations: list[ManagedAppOperation] = Field(alias="operations",)
+	appliedPolicies: Optional[list[ManagedAppPolicy]] = Field(default=None,alias="appliedPolicies",)
+	intendedPolicies: Optional[list[ManagedAppPolicy]] = Field(default=None,alias="intendedPolicies",)
+	operations: Optional[list[ManagedAppOperation]] = Field(default=None,alias="operations",)
 
 from .mobile_app_identifier import MobileAppIdentifier
 from .managed_app_flagged_reason import ManagedAppFlaggedReason

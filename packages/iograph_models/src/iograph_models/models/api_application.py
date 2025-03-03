@@ -6,9 +6,9 @@ from pydantic import BaseModel, Field
 
 class ApiApplication(BaseModel):
 	acceptMappedClaims: Optional[bool] = Field(default=None,alias="acceptMappedClaims",)
-	knownClientApplications: list[Optional[UUID]] = Field(alias="knownClientApplications",)
-	oauth2PermissionScopes: list[PermissionScope] = Field(alias="oauth2PermissionScopes",)
-	preAuthorizedApplications: list[PreAuthorizedApplication] = Field(alias="preAuthorizedApplications",)
+	knownClientApplications: Optional[list[UUID]] = Field(default=None,alias="knownClientApplications",)
+	oauth2PermissionScopes: Optional[list[PermissionScope]] = Field(default=None,alias="oauth2PermissionScopes",)
+	preAuthorizedApplications: Optional[list[PreAuthorizedApplication]] = Field(default=None,alias="preAuthorizedApplications",)
 	requestedAccessTokenVersion: Optional[int] = Field(default=None,alias="requestedAccessTokenVersion",)
 	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
 

@@ -7,9 +7,9 @@ class TermStoreStore(BaseModel):
 	id: Optional[str] = Field(default=None,alias="id",)
 	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
 	defaultLanguageTag: Optional[str] = Field(default=None,alias="defaultLanguageTag",)
-	languageTags: list[str] = Field(alias="languageTags",)
-	groups: list[TermStoreGroup] = Field(alias="groups",)
-	sets: list[TermStoreSet] = Field(alias="sets",)
+	languageTags: Optional[list[str]] = Field(default=None,alias="languageTags",)
+	groups: Optional[list[TermStoreGroup]] = Field(default=None,alias="groups",)
+	sets: Optional[list[TermStoreSet]] = Field(default=None,alias="sets",)
 
 from .term_store_group import TermStoreGroup
 from .term_store_set import TermStoreSet

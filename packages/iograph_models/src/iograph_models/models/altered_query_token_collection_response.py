@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field
 class AlteredQueryTokenCollectionResponse(BaseModel):
 	odata_count: Optional[int] = Field(default=None,alias="@odata.count",)
 	odata_nextLink: Optional[str] = Field(default=None,alias="@odata.nextLink",)
-	value: list[AlteredQueryToken] = Field(alias="value",)
+	value: Optional[list[AlteredQueryToken]] = Field(default=None,alias="value",)
 
 from .altered_query_token import AlteredQueryToken
 

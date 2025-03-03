@@ -5,6 +5,6 @@ from pydantic import BaseModel, Field
 
 class SubjectRightsRequestEnumeratedSiteLocation(BaseModel):
 	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	urls: list[Optional[str]] = Field(alias="urls",)
+	urls: Optional[list[str]] = Field(default=None,alias="urls",)
 
 

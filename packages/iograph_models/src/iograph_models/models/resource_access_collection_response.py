@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field
 class ResourceAccessCollectionResponse(BaseModel):
 	odata_count: Optional[int] = Field(default=None,alias="@odata.count",)
 	odata_nextLink: Optional[str] = Field(default=None,alias="@odata.nextLink",)
-	value: list[ResourceAccess] = Field(alias="value",)
+	value: Optional[list[ResourceAccess]] = Field(default=None,alias="value",)
 
 from .resource_access import ResourceAccess
 

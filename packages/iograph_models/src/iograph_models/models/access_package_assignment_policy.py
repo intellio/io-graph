@@ -17,11 +17,11 @@ class AccessPackageAssignmentPolicy(BaseModel):
 	requestApprovalSettings: Optional[AccessPackageAssignmentApprovalSettings] = Field(default=None,alias="requestApprovalSettings",)
 	requestorSettings: Optional[AccessPackageAssignmentRequestorSettings] = Field(default=None,alias="requestorSettings",)
 	reviewSettings: Optional[AccessPackageAssignmentReviewSettings] = Field(default=None,alias="reviewSettings",)
-	specificAllowedTargets: list[SubjectSet] = Field(alias="specificAllowedTargets",)
+	specificAllowedTargets: Optional[list[SubjectSet]] = Field(default=None,alias="specificAllowedTargets",)
 	accessPackage: Optional[AccessPackage] = Field(default=None,alias="accessPackage",)
 	catalog: Optional[AccessPackageCatalog] = Field(default=None,alias="catalog",)
-	customExtensionStageSettings: list[CustomExtensionStageSetting] = Field(alias="customExtensionStageSettings",)
-	questions: list[AccessPackageQuestion] = Field(alias="questions",)
+	customExtensionStageSettings: Optional[list[CustomExtensionStageSetting]] = Field(default=None,alias="customExtensionStageSettings",)
+	questions: Optional[list[AccessPackageQuestion]] = Field(default=None,alias="questions",)
 
 from .allowed_target_scope import AllowedTargetScope
 from .access_package_automatic_request_settings import AccessPackageAutomaticRequestSettings

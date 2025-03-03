@@ -14,7 +14,7 @@ class ManagedAppProtection(BaseModel):
 	displayName: Optional[str] = Field(default=None,alias="displayName",)
 	lastModifiedDateTime: Optional[datetime] = Field(default=None,alias="lastModifiedDateTime",)
 	version: Optional[str] = Field(default=None,alias="version",)
-	allowedDataStorageLocations: list[ManagedAppDataStorageLocation] = Field(alias="allowedDataStorageLocations",)
+	allowedDataStorageLocations: Optional[list[ManagedAppDataStorageLocation]] = Field(default=None,alias="allowedDataStorageLocations",)
 	allowedInboundDataTransferSources: Optional[ManagedAppDataTransferLevel] = Field(default=None,alias="allowedInboundDataTransferSources",)
 	allowedOutboundClipboardSharingLevel: Optional[ManagedAppClipboardSharingLevel] = Field(default=None,alias="allowedOutboundClipboardSharingLevel",)
 	allowedOutboundDataTransferDestinations: Optional[ManagedAppDataTransferLevel] = Field(default=None,alias="allowedOutboundDataTransferDestinations",)

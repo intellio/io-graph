@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field
 
 class UploadSession(BaseModel):
 	expirationDateTime: Optional[datetime] = Field(default=None,alias="expirationDateTime",)
-	nextExpectedRanges: list[Optional[str]] = Field(alias="nextExpectedRanges",)
+	nextExpectedRanges: Optional[list[str]] = Field(default=None,alias="nextExpectedRanges",)
 	uploadUrl: Optional[str] = Field(default=None,alias="uploadUrl",)
 	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
 

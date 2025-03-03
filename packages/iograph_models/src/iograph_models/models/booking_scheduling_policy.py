@@ -5,7 +5,7 @@ from pydantic import BaseModel, Field
 
 class BookingSchedulingPolicy(BaseModel):
 	allowStaffSelection: Optional[bool] = Field(default=None,alias="allowStaffSelection",)
-	customAvailabilities: list[BookingsAvailabilityWindow] = Field(alias="customAvailabilities",)
+	customAvailabilities: Optional[list[BookingsAvailabilityWindow]] = Field(default=None,alias="customAvailabilities",)
 	generalAvailability: Optional[BookingsAvailability] = Field(default=None,alias="generalAvailability",)
 	isMeetingInviteToCustomersEnabled: Optional[bool] = Field(default=None,alias="isMeetingInviteToCustomersEnabled",)
 	maximumAdvance: Optional[str] = Field(default=None,alias="maximumAdvance",)

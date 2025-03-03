@@ -4,6 +4,6 @@ from pydantic import BaseModel, Field
 
 
 class Mark_unreadPostRequest(BaseModel):
-	messageIds: list[Optional[str]] = Field(alias="messageIds",)
+	messageIds: Optional[list[str]] = Field(default=None,alias="messageIds",)
 
 

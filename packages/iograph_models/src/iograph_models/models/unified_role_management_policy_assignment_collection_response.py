@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field
 class UnifiedRoleManagementPolicyAssignmentCollectionResponse(BaseModel):
 	odata_count: Optional[int] = Field(default=None,alias="@odata.count",)
 	odata_nextLink: Optional[str] = Field(default=None,alias="@odata.nextLink",)
-	value: list[UnifiedRoleManagementPolicyAssignment] = Field(alias="value",)
+	value: Optional[list[UnifiedRoleManagementPolicyAssignment]] = Field(default=None,alias="value",)
 
 from .unified_role_management_policy_assignment import UnifiedRoleManagementPolicyAssignment
 

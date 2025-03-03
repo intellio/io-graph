@@ -4,7 +4,7 @@ from pydantic import BaseModel, Field
 
 
 class Get_schedulePostRequest(BaseModel):
-	Schedules: list[Optional[str]] = Field(alias="Schedules",)
+	Schedules: Optional[list[str]] = Field(default=None,alias="Schedules",)
 	EndTime: Optional[DateTimeTimeZone] = Field(default=None,alias="EndTime",)
 	StartTime: Optional[DateTimeTimeZone] = Field(default=None,alias="StartTime",)
 	AvailabilityViewInterval: Optional[int] = Field(default=None,alias="AvailabilityViewInterval",)

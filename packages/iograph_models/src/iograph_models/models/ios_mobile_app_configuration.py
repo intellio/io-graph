@@ -11,15 +11,15 @@ class IosMobileAppConfiguration(BaseModel):
 	description: Optional[str] = Field(default=None,alias="description",)
 	displayName: Optional[str] = Field(default=None,alias="displayName",)
 	lastModifiedDateTime: Optional[datetime] = Field(default=None,alias="lastModifiedDateTime",)
-	targetedMobileApps: list[Optional[str]] = Field(alias="targetedMobileApps",)
+	targetedMobileApps: Optional[list[str]] = Field(default=None,alias="targetedMobileApps",)
 	version: Optional[int] = Field(default=None,alias="version",)
-	assignments: list[ManagedDeviceMobileAppConfigurationAssignment] = Field(alias="assignments",)
-	deviceStatuses: list[ManagedDeviceMobileAppConfigurationDeviceStatus] = Field(alias="deviceStatuses",)
+	assignments: Optional[list[ManagedDeviceMobileAppConfigurationAssignment]] = Field(default=None,alias="assignments",)
+	deviceStatuses: Optional[list[ManagedDeviceMobileAppConfigurationDeviceStatus]] = Field(default=None,alias="deviceStatuses",)
 	deviceStatusSummary: Optional[ManagedDeviceMobileAppConfigurationDeviceSummary] = Field(default=None,alias="deviceStatusSummary",)
-	userStatuses: list[ManagedDeviceMobileAppConfigurationUserStatus] = Field(alias="userStatuses",)
+	userStatuses: Optional[list[ManagedDeviceMobileAppConfigurationUserStatus]] = Field(default=None,alias="userStatuses",)
 	userStatusSummary: Optional[ManagedDeviceMobileAppConfigurationUserSummary] = Field(default=None,alias="userStatusSummary",)
 	encodedSettingXml: Optional[str] = Field(default=None,alias="encodedSettingXml",)
-	settings: list[AppConfigurationSettingItem] = Field(alias="settings",)
+	settings: Optional[list[AppConfigurationSettingItem]] = Field(default=None,alias="settings",)
 
 from .managed_device_mobile_app_configuration_assignment import ManagedDeviceMobileAppConfigurationAssignment
 from .managed_device_mobile_app_configuration_device_status import ManagedDeviceMobileAppConfigurationDeviceStatus

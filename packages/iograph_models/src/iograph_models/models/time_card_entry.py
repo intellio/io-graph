@@ -4,7 +4,7 @@ from pydantic import BaseModel, Field
 
 
 class TimeCardEntry(BaseModel):
-	breaks: list[TimeCardBreak] = Field(alias="breaks",)
+	breaks: Optional[list[TimeCardBreak]] = Field(default=None,alias="breaks",)
 	clockInEvent: Optional[TimeCardEvent] = Field(default=None,alias="clockInEvent",)
 	clockOutEvent: Optional[TimeCardEvent] = Field(default=None,alias="clockOutEvent",)
 	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)

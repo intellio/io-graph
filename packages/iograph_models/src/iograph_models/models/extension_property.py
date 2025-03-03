@@ -13,6 +13,6 @@ class ExtensionProperty(BaseModel):
 	isMultiValued: Optional[bool] = Field(default=None,alias="isMultiValued",)
 	isSyncedFromOnPremises: Optional[bool] = Field(default=None,alias="isSyncedFromOnPremises",)
 	name: Optional[str] = Field(default=None,alias="name",)
-	targetObjects: list[str] = Field(alias="targetObjects",)
+	targetObjects: Optional[list[str]] = Field(default=None,alias="targetObjects",)
 
 

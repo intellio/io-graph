@@ -4,23 +4,23 @@ from pydantic import BaseModel, Field
 
 
 class CallRecordsNetworkInfo(BaseModel):
-	bandwidthLowEventRatio: Optional[float] | Optional[str] | ReferenceNumeric
+	bandwidthLowEventRatio: float | str | ReferenceNumeric
 	basicServiceSetIdentifier: Optional[str] = Field(default=None,alias="basicServiceSetIdentifier",)
 	connectionType: Optional[CallRecordsNetworkConnectionType] = Field(default=None,alias="connectionType",)
-	delayEventRatio: Optional[float] | Optional[str] | ReferenceNumeric
+	delayEventRatio: float | str | ReferenceNumeric
 	dnsSuffix: Optional[str] = Field(default=None,alias="dnsSuffix",)
 	ipAddress: Optional[str] = Field(default=None,alias="ipAddress",)
 	linkSpeed: Optional[int] = Field(default=None,alias="linkSpeed",)
 	macAddress: Optional[str] = Field(default=None,alias="macAddress",)
 	networkTransportProtocol: Optional[CallRecordsNetworkTransportProtocol] = Field(default=None,alias="networkTransportProtocol",)
 	port: Optional[int] = Field(default=None,alias="port",)
-	receivedQualityEventRatio: Optional[float] | Optional[str] | ReferenceNumeric
+	receivedQualityEventRatio: float | str | ReferenceNumeric
 	reflexiveIPAddress: Optional[str] = Field(default=None,alias="reflexiveIPAddress",)
 	relayIPAddress: Optional[str] = Field(default=None,alias="relayIPAddress",)
 	relayPort: Optional[int] = Field(default=None,alias="relayPort",)
-	sentQualityEventRatio: Optional[float] | Optional[str] | ReferenceNumeric
+	sentQualityEventRatio: float | str | ReferenceNumeric
 	subnet: Optional[str] = Field(default=None,alias="subnet",)
-	traceRouteHops: list[CallRecordsTraceRouteHop] = Field(alias="traceRouteHops",)
+	traceRouteHops: Optional[list[CallRecordsTraceRouteHop]] = Field(default=None,alias="traceRouteHops",)
 	wifiBand: Optional[CallRecordsWifiBand] = Field(default=None,alias="wifiBand",)
 	wifiBatteryCharge: Optional[int] = Field(default=None,alias="wifiBatteryCharge",)
 	wifiChannel: Optional[int] = Field(default=None,alias="wifiChannel",)

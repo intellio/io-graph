@@ -5,7 +5,7 @@ from pydantic import BaseModel, Field
 
 class IdentityGovernanceParameter(BaseModel):
 	name: Optional[str] = Field(default=None,alias="name",)
-	values: list[Optional[str]] = Field(alias="values",)
+	values: Optional[list[str]] = Field(default=None,alias="values",)
 	valueType: Optional[IdentityGovernanceValueType] = Field(default=None,alias="valueType",)
 	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
 

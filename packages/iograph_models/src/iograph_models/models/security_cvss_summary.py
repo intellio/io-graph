@@ -4,7 +4,7 @@ from pydantic import BaseModel, Field
 
 
 class SecurityCvssSummary(BaseModel):
-	score: Optional[float] | Optional[str] | ReferenceNumeric
+	score: float | str | ReferenceNumeric
 	severity: Optional[SecurityVulnerabilitySeverity] = Field(default=None,alias="severity",)
 	vectorString: Optional[str] = Field(default=None,alias="vectorString",)
 	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)

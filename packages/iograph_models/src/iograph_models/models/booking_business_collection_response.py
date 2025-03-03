@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field
 class BookingBusinessCollectionResponse(BaseModel):
 	odata_count: Optional[int] = Field(default=None,alias="@odata.count",)
 	odata_nextLink: Optional[str] = Field(default=None,alias="@odata.nextLink",)
-	value: list[BookingBusiness] = Field(alias="value",)
+	value: Optional[list[BookingBusiness]] = Field(default=None,alias="value",)
 
 from .booking_business import BookingBusiness
 

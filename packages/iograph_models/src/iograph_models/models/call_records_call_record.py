@@ -10,15 +10,15 @@ class CallRecordsCallRecord(BaseModel):
 	endDateTime: Optional[datetime] = Field(default=None,alias="endDateTime",)
 	joinWebUrl: Optional[str] = Field(default=None,alias="joinWebUrl",)
 	lastModifiedDateTime: Optional[datetime] = Field(default=None,alias="lastModifiedDateTime",)
-	modalities: list[CallRecordsModality] = Field(alias="modalities",)
+	modalities: Optional[list[CallRecordsModality]] = Field(default=None,alias="modalities",)
 	organizer: Optional[IdentitySet] = Field(default=None,alias="organizer",)
-	participants: list[IdentitySet] = Field(alias="participants",)
+	participants: Optional[list[IdentitySet]] = Field(default=None,alias="participants",)
 	startDateTime: Optional[datetime] = Field(default=None,alias="startDateTime",)
 	type: Optional[CallRecordsCallType] = Field(default=None,alias="type",)
 	version: Optional[int] = Field(default=None,alias="version",)
 	organizer_v2: Optional[CallRecordsOrganizer] = Field(default=None,alias="organizer_v2",)
-	participants_v2: list[CallRecordsParticipant] = Field(alias="participants_v2",)
-	sessions: list[CallRecordsSession] = Field(alias="sessions",)
+	participants_v2: Optional[list[CallRecordsParticipant]] = Field(default=None,alias="participants_v2",)
+	sessions: Optional[list[CallRecordsSession]] = Field(default=None,alias="sessions",)
 
 from .call_records_modality import CallRecordsModality
 from .identity_set import IdentitySet

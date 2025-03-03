@@ -7,7 +7,7 @@ from pydantic import BaseModel, Field
 
 class BookingsAvailability(BaseModel):
 	availabilityType: Optional[BookingsServiceAvailabilityType] = Field(default=None,alias="availabilityType",)
-	businessHours: list[BookingWorkHours] = Field(alias="businessHours",)
+	businessHours: Optional[list[BookingWorkHours]] = Field(default=None,alias="businessHours",)
 	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
 
 	@model_validator(mode="wrap")

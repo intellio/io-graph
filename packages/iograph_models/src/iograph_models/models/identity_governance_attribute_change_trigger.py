@@ -5,7 +5,7 @@ from pydantic import BaseModel, Field
 
 class IdentityGovernanceAttributeChangeTrigger(BaseModel):
 	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	triggerAttributes: list[IdentityGovernanceTriggerAttribute] = Field(alias="triggerAttributes",)
+	triggerAttributes: Optional[list[IdentityGovernanceTriggerAttribute]] = Field(default=None,alias="triggerAttributes",)
 
 from .identity_governance_trigger_attribute import IdentityGovernanceTriggerAttribute
 

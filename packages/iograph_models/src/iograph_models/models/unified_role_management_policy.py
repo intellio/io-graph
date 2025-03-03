@@ -14,8 +14,8 @@ class UnifiedRoleManagementPolicy(BaseModel):
 	lastModifiedDateTime: Optional[datetime] = Field(default=None,alias="lastModifiedDateTime",)
 	scopeId: Optional[str] = Field(default=None,alias="scopeId",)
 	scopeType: Optional[str] = Field(default=None,alias="scopeType",)
-	effectiveRules: list[UnifiedRoleManagementPolicyRule] = Field(alias="effectiveRules",)
-	rules: list[UnifiedRoleManagementPolicyRule] = Field(alias="rules",)
+	effectiveRules: Optional[list[UnifiedRoleManagementPolicyRule]] = Field(default=None,alias="effectiveRules",)
+	rules: Optional[list[UnifiedRoleManagementPolicyRule]] = Field(default=None,alias="rules",)
 
 from .identity import Identity
 from .unified_role_management_policy_rule import UnifiedRoleManagementPolicyRule

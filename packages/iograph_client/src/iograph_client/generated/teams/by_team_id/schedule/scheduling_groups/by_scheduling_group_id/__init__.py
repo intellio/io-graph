@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 from kiota_abstractions.method import Method
+from kiota_abstractions.base_request_builder import BaseRequestBuilder
 from kiota_abstractions.base_request_configuration import RequestConfiguration
 from .......request_information import RequestInformation
 from pydantic import BaseModel, Field
@@ -10,15 +11,13 @@ from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:
 	from .......request_adapter import HttpxRequestAdapter
-from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.models.scheduling_group import SchedulingGroup
+from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
 
 
-class BySchedulingGroupIdRequest:
+class BySchedulingGroupIdRequest(BaseRequestBuilder):
 	def __init__(self,request_adapter: HttpxRequestAdapter, path_parameters: Optional[Union[dict[str, Any], str]]) -> None:
-		self.request_adapter = request_adapter
-		self.url_template: str = "{+baseurl}/teams/{team%2Did}/schedule/schedulingGroups/{schedulingGroup%2Did}"
-		self.path_parameters: dict[str, Any] = path_parameters
+		super().__init__(request_adapter, "{+baseurl}/teams/{team%2Did}/schedule/schedulingGroups/{schedulingGroup%2Did}", path_parameters)
 
 	async def get(
 		self,
@@ -101,4 +100,14 @@ This method does not remove the schedulingGroup from the schedule. Existing shif
 		expand: list[str] = Field(default=None,serialization_alias="%24expand")
 
 
+
+	def with_url(self, raw_url: str) -> BySchedulingGroupIdRequest:
+		"""
+		Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+		param raw_url: The raw URL to use for the request builder.
+		Returns: BySchedulingGroupIdRequest
+		"""
+		if raw_url is None:
+			raise TypeError("raw_url cannot be None.")
+		return BySchedulingGroupIdRequest(self.request_adapter, self.path_parameters)
 

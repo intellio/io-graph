@@ -6,9 +6,9 @@ from pydantic import BaseModel, Field
 class ServiceAnnouncement(BaseModel):
 	id: Optional[str] = Field(default=None,alias="id",)
 	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	healthOverviews: list[ServiceHealth] = Field(alias="healthOverviews",)
-	issues: list[ServiceHealthIssue] = Field(alias="issues",)
-	messages: list[ServiceUpdateMessage] = Field(alias="messages",)
+	healthOverviews: Optional[list[ServiceHealth]] = Field(default=None,alias="healthOverviews",)
+	issues: Optional[list[ServiceHealthIssue]] = Field(default=None,alias="issues",)
+	messages: Optional[list[ServiceUpdateMessage]] = Field(default=None,alias="messages",)
 
 from .service_health import ServiceHealth
 from .service_health_issue import ServiceHealthIssue

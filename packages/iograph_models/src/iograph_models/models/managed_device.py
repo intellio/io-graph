@@ -14,7 +14,7 @@ class ManagedDevice(BaseModel):
 	complianceGracePeriodExpirationDateTime: Optional[datetime] = Field(default=None,alias="complianceGracePeriodExpirationDateTime",)
 	complianceState: Optional[ComplianceState] = Field(default=None,alias="complianceState",)
 	configurationManagerClientEnabledFeatures: Optional[ConfigurationManagerClientEnabledFeatures] = Field(default=None,alias="configurationManagerClientEnabledFeatures",)
-	deviceActionResults: list[DeviceActionResult] = Field(alias="deviceActionResults",)
+	deviceActionResults: Optional[list[DeviceActionResult]] = Field(default=None,alias="deviceActionResults",)
 	deviceCategoryDisplayName: Optional[str] = Field(default=None,alias="deviceCategoryDisplayName",)
 	deviceEnrollmentType: Optional[DeviceEnrollmentType] = Field(default=None,alias="deviceEnrollmentType",)
 	deviceHealthAttestationState: Optional[DeviceHealthAttestationState] = Field(default=None,alias="deviceHealthAttestationState",)
@@ -62,10 +62,10 @@ class ManagedDevice(BaseModel):
 	userPrincipalName: Optional[str] = Field(default=None,alias="userPrincipalName",)
 	wiFiMacAddress: Optional[str] = Field(default=None,alias="wiFiMacAddress",)
 	deviceCategory: Optional[DeviceCategory] = Field(default=None,alias="deviceCategory",)
-	deviceCompliancePolicyStates: list[DeviceCompliancePolicyState] = Field(alias="deviceCompliancePolicyStates",)
-	deviceConfigurationStates: list[DeviceConfigurationState] = Field(alias="deviceConfigurationStates",)
-	logCollectionRequests: list[DeviceLogCollectionResponse] = Field(alias="logCollectionRequests",)
-	users: list[User] = Field(alias="users",)
+	deviceCompliancePolicyStates: Optional[list[DeviceCompliancePolicyState]] = Field(default=None,alias="deviceCompliancePolicyStates",)
+	deviceConfigurationStates: Optional[list[DeviceConfigurationState]] = Field(default=None,alias="deviceConfigurationStates",)
+	logCollectionRequests: Optional[list[DeviceLogCollectionResponse]] = Field(default=None,alias="logCollectionRequests",)
+	users: Optional[list[User]] = Field(default=None,alias="users",)
 	windowsProtectionState: Optional[WindowsProtectionState] = Field(default=None,alias="windowsProtectionState",)
 
 from .compliance_state import ComplianceState

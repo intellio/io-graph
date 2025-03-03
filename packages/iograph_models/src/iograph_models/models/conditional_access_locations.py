@@ -4,8 +4,8 @@ from pydantic import BaseModel, Field
 
 
 class ConditionalAccessLocations(BaseModel):
-	excludeLocations: list[str] = Field(alias="excludeLocations",)
-	includeLocations: list[str] = Field(alias="includeLocations",)
+	excludeLocations: Optional[list[str]] = Field(default=None,alias="excludeLocations",)
+	includeLocations: Optional[list[str]] = Field(default=None,alias="includeLocations",)
 	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
 
 

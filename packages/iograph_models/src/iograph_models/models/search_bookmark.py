@@ -14,15 +14,15 @@ class SearchBookmark(BaseModel):
 	webUrl: Optional[str] = Field(default=None,alias="webUrl",)
 	availabilityEndDateTime: Optional[datetime] = Field(default=None,alias="availabilityEndDateTime",)
 	availabilityStartDateTime: Optional[datetime] = Field(default=None,alias="availabilityStartDateTime",)
-	categories: list[Optional[str]] = Field(alias="categories",)
-	groupIds: list[Optional[str]] = Field(alias="groupIds",)
+	categories: Optional[list[str]] = Field(default=None,alias="categories",)
+	groupIds: Optional[list[str]] = Field(default=None,alias="groupIds",)
 	isSuggested: Optional[bool] = Field(default=None,alias="isSuggested",)
 	keywords: Optional[SearchAnswerKeyword] = Field(default=None,alias="keywords",)
-	languageTags: list[Optional[str]] = Field(alias="languageTags",)
-	platforms: list[DevicePlatformType] = Field(alias="platforms",)
-	powerAppIds: list[Optional[str]] = Field(alias="powerAppIds",)
+	languageTags: Optional[list[str]] = Field(default=None,alias="languageTags",)
+	platforms: Optional[list[DevicePlatformType]] = Field(default=None,alias="platforms",)
+	powerAppIds: Optional[list[str]] = Field(default=None,alias="powerAppIds",)
 	state: Optional[SearchAnswerState] = Field(default=None,alias="state",)
-	targetedVariations: list[SearchAnswerVariant] = Field(alias="targetedVariations",)
+	targetedVariations: Optional[list[SearchAnswerVariant]] = Field(default=None,alias="targetedVariations",)
 
 from .search_identity_set import SearchIdentitySet
 from .search_answer_keyword import SearchAnswerKeyword

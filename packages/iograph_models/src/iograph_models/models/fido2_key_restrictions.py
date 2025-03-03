@@ -4,7 +4,7 @@ from pydantic import BaseModel, Field
 
 
 class Fido2KeyRestrictions(BaseModel):
-	aaGuids: list[Optional[str]] = Field(alias="aaGuids",)
+	aaGuids: Optional[list[str]] = Field(default=None,alias="aaGuids",)
 	enforcementType: Optional[Fido2RestrictionEnforcementType] = Field(default=None,alias="enforcementType",)
 	isEnforced: Optional[bool] = Field(default=None,alias="isEnforced",)
 	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)

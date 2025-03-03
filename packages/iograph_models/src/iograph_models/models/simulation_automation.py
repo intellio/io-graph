@@ -16,7 +16,7 @@ class SimulationAutomation(BaseModel):
 	lastRunDateTime: Optional[datetime] = Field(default=None,alias="lastRunDateTime",)
 	nextRunDateTime: Optional[datetime] = Field(default=None,alias="nextRunDateTime",)
 	status: Optional[SimulationAutomationStatus] = Field(default=None,alias="status",)
-	runs: list[SimulationAutomationRun] = Field(alias="runs",)
+	runs: Optional[list[SimulationAutomationRun]] = Field(default=None,alias="runs",)
 
 from .email_identity import EmailIdentity
 from .email_identity import EmailIdentity

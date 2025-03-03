@@ -8,8 +8,8 @@ class OnPremisesConditionalAccessSettings(BaseModel):
 	id: Optional[str] = Field(default=None,alias="id",)
 	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
 	enabled: Optional[bool] = Field(default=None,alias="enabled",)
-	excludedGroups: list[UUID] = Field(alias="excludedGroups",)
-	includedGroups: list[UUID] = Field(alias="includedGroups",)
+	excludedGroups: Optional[list[UUID]] = Field(default=None,alias="excludedGroups",)
+	includedGroups: Optional[list[UUID]] = Field(default=None,alias="includedGroups",)
 	overrideDefaultRule: Optional[bool] = Field(default=None,alias="overrideDefaultRule",)
 
 

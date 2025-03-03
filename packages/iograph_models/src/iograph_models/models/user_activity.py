@@ -20,7 +20,7 @@ class UserActivity(BaseModel):
 	status: Optional[Status] = Field(default=None,alias="status",)
 	userTimezone: Optional[str] = Field(default=None,alias="userTimezone",)
 	visualElements: Optional[VisualInfo] = Field(default=None,alias="visualElements",)
-	historyItems: list[ActivityHistoryItem] = Field(alias="historyItems",)
+	historyItems: Optional[list[ActivityHistoryItem]] = Field(default=None,alias="historyItems",)
 
 from .status import Status
 from .visual_info import VisualInfo

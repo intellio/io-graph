@@ -8,7 +8,7 @@ class Fido2AuthenticationMethod(BaseModel):
 	id: Optional[str] = Field(default=None,alias="id",)
 	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
 	aaGuid: Optional[str] = Field(default=None,alias="aaGuid",)
-	attestationCertificates: list[Optional[str]] = Field(alias="attestationCertificates",)
+	attestationCertificates: Optional[list[str]] = Field(default=None,alias="attestationCertificates",)
 	attestationLevel: Optional[AttestationLevel] = Field(default=None,alias="attestationLevel",)
 	createdDateTime: Optional[datetime] = Field(default=None,alias="createdDateTime",)
 	displayName: Optional[str] = Field(default=None,alias="displayName",)

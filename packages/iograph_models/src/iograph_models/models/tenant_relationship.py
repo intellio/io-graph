@@ -4,8 +4,8 @@ from pydantic import BaseModel, Field
 
 
 class TenantRelationship(BaseModel):
-	delegatedAdminCustomers: list[DelegatedAdminCustomer] = Field(alias="delegatedAdminCustomers",)
-	delegatedAdminRelationships: list[DelegatedAdminRelationship] = Field(alias="delegatedAdminRelationships",)
+	delegatedAdminCustomers: Optional[list[DelegatedAdminCustomer]] = Field(default=None,alias="delegatedAdminCustomers",)
+	delegatedAdminRelationships: Optional[list[DelegatedAdminRelationship]] = Field(default=None,alias="delegatedAdminRelationships",)
 	multiTenantOrganization: Optional[MultiTenantOrganization] = Field(default=None,alias="multiTenantOrganization",)
 	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
 

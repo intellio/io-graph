@@ -10,7 +10,7 @@ class AuditActor(BaseModel):
 	ipAddress: Optional[str] = Field(default=None,alias="ipAddress",)
 	servicePrincipalName: Optional[str] = Field(default=None,alias="servicePrincipalName",)
 	userId: Optional[str] = Field(default=None,alias="userId",)
-	userPermissions: list[Optional[str]] = Field(alias="userPermissions",)
+	userPermissions: Optional[list[str]] = Field(default=None,alias="userPermissions",)
 	userPrincipalName: Optional[str] = Field(default=None,alias="userPrincipalName",)
 	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
 

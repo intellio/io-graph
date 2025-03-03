@@ -5,14 +5,14 @@ from pydantic import BaseModel, Field
 
 
 class DeviceGeoLocation(BaseModel):
-	altitude: Optional[float] | Optional[str] | ReferenceNumeric
-	heading: Optional[float] | Optional[str] | ReferenceNumeric
-	horizontalAccuracy: Optional[float] | Optional[str] | ReferenceNumeric
+	altitude: float | str | ReferenceNumeric
+	heading: float | str | ReferenceNumeric
+	horizontalAccuracy: float | str | ReferenceNumeric
 	lastCollectedDateTime: Optional[datetime] = Field(default=None,alias="lastCollectedDateTime",)
-	latitude: Optional[float] | Optional[str] | ReferenceNumeric
-	longitude: Optional[float] | Optional[str] | ReferenceNumeric
-	speed: Optional[float] | Optional[str] | ReferenceNumeric
-	verticalAccuracy: Optional[float] | Optional[str] | ReferenceNumeric
+	latitude: float | str | ReferenceNumeric
+	longitude: float | str | ReferenceNumeric
+	speed: float | str | ReferenceNumeric
+	verticalAccuracy: float | str | ReferenceNumeric
 	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
 
 from .reference_numeric import ReferenceNumeric

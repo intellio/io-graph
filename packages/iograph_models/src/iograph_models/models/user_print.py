@@ -4,7 +4,7 @@ from pydantic import BaseModel, Field
 
 
 class UserPrint(BaseModel):
-	recentPrinterShares: list[PrinterShare] = Field(alias="recentPrinterShares",)
+	recentPrinterShares: Optional[list[PrinterShare]] = Field(default=None,alias="recentPrinterShares",)
 	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
 
 from .printer_share import PrinterShare

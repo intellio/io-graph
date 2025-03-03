@@ -14,7 +14,7 @@ class CompanySubscription(BaseModel):
 	ownerId: Optional[str] = Field(default=None,alias="ownerId",)
 	ownerTenantId: Optional[str] = Field(default=None,alias="ownerTenantId",)
 	ownerType: Optional[str] = Field(default=None,alias="ownerType",)
-	serviceStatus: list[ServicePlanInfo] = Field(alias="serviceStatus",)
+	serviceStatus: Optional[list[ServicePlanInfo]] = Field(default=None,alias="serviceStatus",)
 	skuId: Optional[str] = Field(default=None,alias="skuId",)
 	skuPartNumber: Optional[str] = Field(default=None,alias="skuPartNumber",)
 	status: Optional[str] = Field(default=None,alias="status",)

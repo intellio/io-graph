@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field
 class IdentityGovernanceUserProcessingResultCollectionResponse(BaseModel):
 	odata_count: Optional[int] = Field(default=None,alias="@odata.count",)
 	odata_nextLink: Optional[str] = Field(default=None,alias="@odata.nextLink",)
-	value: list[IdentityGovernanceUserProcessingResult] = Field(alias="value",)
+	value: Optional[list[IdentityGovernanceUserProcessingResult]] = Field(default=None,alias="value",)
 
 from .identity_governance_user_processing_result import IdentityGovernanceUserProcessingResult
 

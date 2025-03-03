@@ -7,7 +7,7 @@ class BucketAggregationDefinition(BaseModel):
 	isDescending: Optional[bool] = Field(default=None,alias="isDescending",)
 	minimumCount: Optional[int] = Field(default=None,alias="minimumCount",)
 	prefixFilter: Optional[str] = Field(default=None,alias="prefixFilter",)
-	ranges: list[BucketAggregationRange] = Field(alias="ranges",)
+	ranges: Optional[list[BucketAggregationRange]] = Field(default=None,alias="ranges",)
 	sortBy: Optional[BucketAggregationSortProperty] = Field(default=None,alias="sortBy",)
 	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
 

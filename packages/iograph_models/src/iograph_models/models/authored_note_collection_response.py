@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field
 class AuthoredNoteCollectionResponse(BaseModel):
 	odata_count: Optional[int] = Field(default=None,alias="@odata.count",)
 	odata_nextLink: Optional[str] = Field(default=None,alias="@odata.nextLink",)
-	value: list[AuthoredNote] = Field(alias="value",)
+	value: Optional[list[AuthoredNote]] = Field(default=None,alias="value",)
 
 from .authored_note import AuthoredNote
 

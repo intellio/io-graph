@@ -5,7 +5,7 @@ from pydantic import BaseModel, Field
 
 class InsightValueDouble(BaseModel):
 	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	value: Optional[float] | Optional[str] | ReferenceNumeric
+	value: float | str | ReferenceNumeric
 
 from .reference_numeric import ReferenceNumeric
 

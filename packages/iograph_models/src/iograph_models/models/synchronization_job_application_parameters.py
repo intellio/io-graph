@@ -5,7 +5,7 @@ from pydantic import BaseModel, Field
 
 class SynchronizationJobApplicationParameters(BaseModel):
 	ruleId: Optional[str] = Field(default=None,alias="ruleId",)
-	subjects: list[SynchronizationJobSubject] = Field(alias="subjects",)
+	subjects: Optional[list[SynchronizationJobSubject]] = Field(default=None,alias="subjects",)
 	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
 
 from .synchronization_job_subject import SynchronizationJobSubject

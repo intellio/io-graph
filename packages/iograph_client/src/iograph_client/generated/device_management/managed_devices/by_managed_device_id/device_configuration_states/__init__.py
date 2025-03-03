@@ -3,6 +3,7 @@
 from __future__ import annotations
 from kiota_abstractions.get_path_parameters import get_path_parameters
 from kiota_abstractions.method import Method
+from kiota_abstractions.base_request_builder import BaseRequestBuilder
 from kiota_abstractions.base_request_configuration import RequestConfiguration
 from ......request_information import RequestInformation
 from pydantic import BaseModel, Field
@@ -18,11 +19,9 @@ from iograph_models.models.device_configuration_state import DeviceConfiguration
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
 
 
-class DeviceConfigurationStatesRequest:
+class DeviceConfigurationStatesRequest(BaseRequestBuilder):
 	def __init__(self,request_adapter: HttpxRequestAdapter, path_parameters: Optional[Union[dict[str, Any], str]]) -> None:
-		self.request_adapter = request_adapter
-		self.url_template: str = "{+baseurl}/deviceManagement/managedDevices/{managedDevice%2Did}/deviceConfigurationStates"
-		self.path_parameters: dict[str, Any] = path_parameters
+		super().__init__(request_adapter, "{+baseurl}/deviceManagement/managedDevices/{managedDevice%2Did}/deviceConfigurationStates", path_parameters)
 
 	async def get(
 		self,
@@ -82,6 +81,16 @@ class DeviceConfigurationStatesRequest:
 		select: list[str] = Field(default=None,serialization_alias="%24select")
 		expand: list[str] = Field(default=None,serialization_alias="%24expand")
 
+
+	def with_url(self, raw_url: str) -> DeviceConfigurationStatesRequest:
+		"""
+		Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+		param raw_url: The raw URL to use for the request builder.
+		Returns: DeviceConfigurationStatesRequest
+		"""
+		if raw_url is None:
+			raise TypeError("raw_url cannot be None.")
+		return DeviceConfigurationStatesRequest(self.request_adapter, self.path_parameters)
 
 	def by_device_configuration_state_id(self,
 		managedDevice_id: str,

@@ -8,7 +8,7 @@ class HorizontalSection(BaseModel):
 	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
 	emphasis: Optional[SectionEmphasisType] = Field(default=None,alias="emphasis",)
 	layout: Optional[HorizontalSectionLayoutType] = Field(default=None,alias="layout",)
-	columns: list[HorizontalSectionColumn] = Field(alias="columns",)
+	columns: Optional[list[HorizontalSectionColumn]] = Field(default=None,alias="columns",)
 
 from .section_emphasis_type import SectionEmphasisType
 from .horizontal_section_layout_type import HorizontalSectionLayoutType

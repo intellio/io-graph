@@ -11,8 +11,8 @@ class Conversation(BaseModel):
 	lastDeliveredDateTime: Optional[datetime] = Field(default=None,alias="lastDeliveredDateTime",)
 	preview: Optional[str] = Field(default=None,alias="preview",)
 	topic: Optional[str] = Field(default=None,alias="topic",)
-	uniqueSenders: list[str] = Field(alias="uniqueSenders",)
-	threads: list[ConversationThread] = Field(alias="threads",)
+	uniqueSenders: Optional[list[str]] = Field(default=None,alias="uniqueSenders",)
+	threads: Optional[list[ConversationThread]] = Field(default=None,alias="threads",)
 
 from .conversation_thread import ConversationThread
 

@@ -6,16 +6,16 @@ from pydantic import BaseModel, Field
 class WorkbookChart(BaseModel):
 	id: Optional[str] = Field(default=None,alias="id",)
 	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	height: Optional[float] | Optional[str] | ReferenceNumeric
-	left: Optional[float] | Optional[str] | ReferenceNumeric
+	height: float | str | ReferenceNumeric
+	left: float | str | ReferenceNumeric
 	name: Optional[str] = Field(default=None,alias="name",)
-	top: Optional[float] | Optional[str] | ReferenceNumeric
-	width: Optional[float] | Optional[str] | ReferenceNumeric
+	top: float | str | ReferenceNumeric
+	width: float | str | ReferenceNumeric
 	axes: Optional[WorkbookChartAxes] = Field(default=None,alias="axes",)
 	dataLabels: Optional[WorkbookChartDataLabels] = Field(default=None,alias="dataLabels",)
 	format: Optional[WorkbookChartAreaFormat] = Field(default=None,alias="format",)
 	legend: Optional[WorkbookChartLegend] = Field(default=None,alias="legend",)
-	series: list[WorkbookChartSeries] = Field(alias="series",)
+	series: Optional[list[WorkbookChartSeries]] = Field(default=None,alias="series",)
 	title: Optional[WorkbookChartTitle] = Field(default=None,alias="title",)
 	worksheet: Optional[WorkbookWorksheet] = Field(default=None,alias="worksheet",)
 

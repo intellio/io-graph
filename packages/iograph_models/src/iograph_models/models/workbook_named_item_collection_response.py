@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field
 class WorkbookNamedItemCollectionResponse(BaseModel):
 	odata_count: Optional[int] = Field(default=None,alias="@odata.count",)
 	odata_nextLink: Optional[str] = Field(default=None,alias="@odata.nextLink",)
-	value: list[WorkbookNamedItem] = Field(alias="value",)
+	value: Optional[list[WorkbookNamedItem]] = Field(default=None,alias="value",)
 
 from .workbook_named_item import WorkbookNamedItem
 

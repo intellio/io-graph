@@ -4,13 +4,13 @@ from pydantic import BaseModel, Field
 
 
 class SearchRequest(BaseModel):
-	aggregationFilters: list[Optional[str]] = Field(alias="aggregationFilters",)
-	aggregations: list[AggregationOption] = Field(alias="aggregations",)
-	collapseProperties: list[CollapseProperty] = Field(alias="collapseProperties",)
-	contentSources: list[Optional[str]] = Field(alias="contentSources",)
+	aggregationFilters: Optional[list[str]] = Field(default=None,alias="aggregationFilters",)
+	aggregations: Optional[list[AggregationOption]] = Field(default=None,alias="aggregations",)
+	collapseProperties: Optional[list[CollapseProperty]] = Field(default=None,alias="collapseProperties",)
+	contentSources: Optional[list[str]] = Field(default=None,alias="contentSources",)
 	enableTopResults: Optional[bool] = Field(default=None,alias="enableTopResults",)
 	entityTypes: Optional[EntityType] = Field(default=None,alias="entityTypes",)
-	fields: list[Optional[str]] = Field(alias="fields",)
+	fields: Optional[list[str]] = Field(default=None,alias="fields",)
 	from_: Optional[int] = Field(default=None,alias="from",)
 	query: Optional[SearchQuery] = Field(default=None,alias="query",)
 	queryAlterationOptions: Optional[SearchAlterationOptions] = Field(default=None,alias="queryAlterationOptions",)
@@ -18,7 +18,7 @@ class SearchRequest(BaseModel):
 	resultTemplateOptions: Optional[ResultTemplateOption] = Field(default=None,alias="resultTemplateOptions",)
 	sharePointOneDriveOptions: Optional[SharePointOneDriveOptions] = Field(default=None,alias="sharePointOneDriveOptions",)
 	size: Optional[int] = Field(default=None,alias="size",)
-	sortProperties: list[SortProperty] = Field(alias="sortProperties",)
+	sortProperties: Optional[list[SortProperty]] = Field(default=None,alias="sortProperties",)
 	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
 
 from .aggregation_option import AggregationOption

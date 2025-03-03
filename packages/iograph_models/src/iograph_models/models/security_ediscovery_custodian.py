@@ -16,9 +16,9 @@ class SecurityEdiscoveryCustodian(BaseModel):
 	acknowledgedDateTime: Optional[datetime] = Field(default=None,alias="acknowledgedDateTime",)
 	email: Optional[str] = Field(default=None,alias="email",)
 	lastIndexOperation: Optional[SecurityEdiscoveryIndexOperation] = Field(default=None,alias="lastIndexOperation",)
-	siteSources: list[SecuritySiteSource] = Field(alias="siteSources",)
-	unifiedGroupSources: list[SecurityUnifiedGroupSource] = Field(alias="unifiedGroupSources",)
-	userSources: list[SecurityUserSource] = Field(alias="userSources",)
+	siteSources: Optional[list[SecuritySiteSource]] = Field(default=None,alias="siteSources",)
+	unifiedGroupSources: Optional[list[SecurityUnifiedGroupSource]] = Field(default=None,alias="unifiedGroupSources",)
+	userSources: Optional[list[SecurityUserSource]] = Field(default=None,alias="userSources",)
 
 from .security_data_source_hold_status import SecurityDataSourceHoldStatus
 from .security_data_source_container_status import SecurityDataSourceContainerStatus

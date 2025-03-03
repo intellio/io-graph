@@ -9,6 +9,6 @@ class AttachmentSession(BaseModel):
 	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
 	content: Optional[str] = Field(default=None,alias="content",)
 	expirationDateTime: Optional[datetime] = Field(default=None,alias="expirationDateTime",)
-	nextExpectedRanges: list[Optional[str]] = Field(alias="nextExpectedRanges",)
+	nextExpectedRanges: Optional[list[str]] = Field(default=None,alias="nextExpectedRanges",)
 
 

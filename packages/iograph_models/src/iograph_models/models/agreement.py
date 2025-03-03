@@ -11,9 +11,9 @@ class Agreement(BaseModel):
 	isViewingBeforeAcceptanceRequired: Optional[bool] = Field(default=None,alias="isViewingBeforeAcceptanceRequired",)
 	termsExpiration: Optional[TermsExpiration] = Field(default=None,alias="termsExpiration",)
 	userReacceptRequiredFrequency: Optional[str] = Field(default=None,alias="userReacceptRequiredFrequency",)
-	acceptances: list[AgreementAcceptance] = Field(alias="acceptances",)
+	acceptances: Optional[list[AgreementAcceptance]] = Field(default=None,alias="acceptances",)
 	file: Optional[AgreementFile] = Field(default=None,alias="file",)
-	files: list[AgreementFileLocalization] = Field(alias="files",)
+	files: Optional[list[AgreementFileLocalization]] = Field(default=None,alias="files",)
 
 from .terms_expiration import TermsExpiration
 from .agreement_acceptance import AgreementAcceptance

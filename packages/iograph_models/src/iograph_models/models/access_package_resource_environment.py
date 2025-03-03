@@ -15,7 +15,7 @@ class AccessPackageResourceEnvironment(BaseModel):
 	modifiedDateTime: Optional[datetime] = Field(default=None,alias="modifiedDateTime",)
 	originId: Optional[str] = Field(default=None,alias="originId",)
 	originSystem: Optional[str] = Field(default=None,alias="originSystem",)
-	resources: list[AccessPackageResource] = Field(alias="resources",)
+	resources: Optional[list[AccessPackageResource]] = Field(default=None,alias="resources",)
 
 from .connection_info import ConnectionInfo
 from .access_package_resource import AccessPackageResource

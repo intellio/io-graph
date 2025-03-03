@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field
 class RecordOperationCollectionResponse(BaseModel):
 	odata_count: Optional[int] = Field(default=None,alias="@odata.count",)
 	odata_nextLink: Optional[str] = Field(default=None,alias="@odata.nextLink",)
-	value: list[RecordOperation] = Field(alias="value",)
+	value: Optional[list[RecordOperation]] = Field(default=None,alias="value",)
 
 from .record_operation import RecordOperation
 

@@ -13,7 +13,7 @@ class DeviceManagementExportJob(BaseModel):
 	localizationType: Optional[DeviceManagementExportJobLocalizationType] = Field(default=None,alias="localizationType",)
 	reportName: Optional[str] = Field(default=None,alias="reportName",)
 	requestDateTime: Optional[datetime] = Field(default=None,alias="requestDateTime",)
-	select: list[Optional[str]] = Field(alias="select",)
+	select: Optional[list[str]] = Field(default=None,alias="select",)
 	snapshotId: Optional[str] = Field(default=None,alias="snapshotId",)
 	status: Optional[DeviceManagementReportStatus] = Field(default=None,alias="status",)
 	url: Optional[str] = Field(default=None,alias="url",)

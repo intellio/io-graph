@@ -12,9 +12,9 @@ class StsPolicy(BaseModel):
 	deletedDateTime: Optional[datetime] = Field(default=None,alias="deletedDateTime",)
 	description: Optional[str] = Field(default=None,alias="description",)
 	displayName: Optional[str] = Field(default=None,alias="displayName",)
-	definition: list[str] = Field(alias="definition",)
+	definition: Optional[list[str]] = Field(default=None,alias="definition",)
 	isOrganizationDefault: Optional[bool] = Field(default=None,alias="isOrganizationDefault",)
-	appliesTo: list[DirectoryObject] = Field(alias="appliesTo",)
+	appliesTo: Optional[list[DirectoryObject]] = Field(default=None,alias="appliesTo",)
 
 	@model_validator(mode="wrap")
 	def convert_discriminator_class(cls, data: Any, handler: ModelWrapValidatorHandler[Self]) -> Self:

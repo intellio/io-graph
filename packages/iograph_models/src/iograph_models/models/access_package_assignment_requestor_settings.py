@@ -11,7 +11,7 @@ class AccessPackageAssignmentRequestorSettings(BaseModel):
 	enableTargetsToSelfAddAccess: Optional[bool] = Field(default=None,alias="enableTargetsToSelfAddAccess",)
 	enableTargetsToSelfRemoveAccess: Optional[bool] = Field(default=None,alias="enableTargetsToSelfRemoveAccess",)
 	enableTargetsToSelfUpdateAccess: Optional[bool] = Field(default=None,alias="enableTargetsToSelfUpdateAccess",)
-	onBehalfRequestors: list[SubjectSet] = Field(alias="onBehalfRequestors",)
+	onBehalfRequestors: Optional[list[SubjectSet]] = Field(default=None,alias="onBehalfRequestors",)
 	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
 
 from .subject_set import SubjectSet

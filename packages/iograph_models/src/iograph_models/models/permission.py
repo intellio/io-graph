@@ -9,14 +9,14 @@ class Permission(BaseModel):
 	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
 	expirationDateTime: Optional[datetime] = Field(default=None,alias="expirationDateTime",)
 	grantedTo: Optional[IdentitySet] = Field(default=None,alias="grantedTo",)
-	grantedToIdentities: list[IdentitySet] = Field(alias="grantedToIdentities",)
-	grantedToIdentitiesV2: list[SharePointIdentitySet] = Field(alias="grantedToIdentitiesV2",)
+	grantedToIdentities: Optional[list[IdentitySet]] = Field(default=None,alias="grantedToIdentities",)
+	grantedToIdentitiesV2: Optional[list[SharePointIdentitySet]] = Field(default=None,alias="grantedToIdentitiesV2",)
 	grantedToV2: Optional[SharePointIdentitySet] = Field(default=None,alias="grantedToV2",)
 	hasPassword: Optional[bool] = Field(default=None,alias="hasPassword",)
 	inheritedFrom: Optional[ItemReference] = Field(default=None,alias="inheritedFrom",)
 	invitation: Optional[SharingInvitation] = Field(default=None,alias="invitation",)
 	link: Optional[SharingLink] = Field(default=None,alias="link",)
-	roles: list[Optional[str]] = Field(alias="roles",)
+	roles: Optional[list[str]] = Field(default=None,alias="roles",)
 	shareId: Optional[str] = Field(default=None,alias="shareId",)
 
 from .identity_set import IdentitySet

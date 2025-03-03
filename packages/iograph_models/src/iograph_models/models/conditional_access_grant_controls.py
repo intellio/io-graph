@@ -4,10 +4,10 @@ from pydantic import BaseModel, Field
 
 
 class ConditionalAccessGrantControls(BaseModel):
-	builtInControls: list[ConditionalAccessGrantControl] = Field(alias="builtInControls",)
-	customAuthenticationFactors: list[str] = Field(alias="customAuthenticationFactors",)
+	builtInControls: Optional[list[ConditionalAccessGrantControl]] = Field(default=None,alias="builtInControls",)
+	customAuthenticationFactors: Optional[list[str]] = Field(default=None,alias="customAuthenticationFactors",)
 	operator: Optional[str] = Field(default=None,alias="operator",)
-	termsOfUse: list[str] = Field(alias="termsOfUse",)
+	termsOfUse: Optional[list[str]] = Field(default=None,alias="termsOfUse",)
 	authenticationStrength: Optional[AuthenticationStrengthPolicy] = Field(default=None,alias="authenticationStrength",)
 	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
 

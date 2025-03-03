@@ -14,7 +14,7 @@ class MailAssessmentRequest(BaseModel):
 	expectedAssessment: Optional[ThreatExpectedAssessment] = Field(default=None,alias="expectedAssessment",)
 	requestSource: Optional[ThreatAssessmentRequestSource] = Field(default=None,alias="requestSource",)
 	status: Optional[ThreatAssessmentStatus] = Field(default=None,alias="status",)
-	results: list[ThreatAssessmentResult] = Field(alias="results",)
+	results: Optional[list[ThreatAssessmentResult]] = Field(default=None,alias="results",)
 	destinationRoutingReason: Optional[MailDestinationRoutingReason] = Field(default=None,alias="destinationRoutingReason",)
 	messageUri: Optional[str] = Field(default=None,alias="messageUri",)
 	recipientEmail: Optional[str] = Field(default=None,alias="recipientEmail",)

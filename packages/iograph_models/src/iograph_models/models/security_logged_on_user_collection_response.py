@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field
 class SecurityLoggedOnUserCollectionResponse(BaseModel):
 	odata_count: Optional[int] = Field(default=None,alias="@odata.count",)
 	odata_nextLink: Optional[str] = Field(default=None,alias="@odata.nextLink",)
-	value: list[SecurityLoggedOnUser] = Field(alias="value",)
+	value: Optional[list[SecurityLoggedOnUser]] = Field(default=None,alias="value",)
 
 from .security_logged_on_user import SecurityLoggedOnUser
 

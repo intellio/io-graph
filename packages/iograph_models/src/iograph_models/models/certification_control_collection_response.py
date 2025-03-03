@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field
 class CertificationControlCollectionResponse(BaseModel):
 	odata_count: Optional[int] = Field(default=None,alias="@odata.count",)
 	odata_nextLink: Optional[str] = Field(default=None,alias="@odata.nextLink",)
-	value: list[CertificationControl] = Field(alias="value",)
+	value: Optional[list[CertificationControl]] = Field(default=None,alias="value",)
 
 from .certification_control import CertificationControl
 

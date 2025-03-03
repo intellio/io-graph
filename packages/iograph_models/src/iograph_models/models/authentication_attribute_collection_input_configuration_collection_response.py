@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field
 class AuthenticationAttributeCollectionInputConfigurationCollectionResponse(BaseModel):
 	odata_count: Optional[int] = Field(default=None,alias="@odata.count",)
 	odata_nextLink: Optional[str] = Field(default=None,alias="@odata.nextLink",)
-	value: list[AuthenticationAttributeCollectionInputConfiguration] = Field(alias="value",)
+	value: Optional[list[AuthenticationAttributeCollectionInputConfiguration]] = Field(default=None,alias="value",)
 
 from .authentication_attribute_collection_input_configuration import AuthenticationAttributeCollectionInputConfiguration
 

@@ -14,7 +14,7 @@ class OneDriveForBusinessRestoreSession(BaseModel):
 	lastModifiedBy: Optional[IdentitySet] = Field(default=None,alias="lastModifiedBy",)
 	lastModifiedDateTime: Optional[datetime] = Field(default=None,alias="lastModifiedDateTime",)
 	status: Optional[RestoreSessionStatus] = Field(default=None,alias="status",)
-	driveRestoreArtifacts: list[DriveRestoreArtifact] = Field(alias="driveRestoreArtifacts",)
+	driveRestoreArtifacts: Optional[list[DriveRestoreArtifact]] = Field(default=None,alias="driveRestoreArtifacts",)
 
 from .identity_set import IdentitySet
 from .public_error import PublicError

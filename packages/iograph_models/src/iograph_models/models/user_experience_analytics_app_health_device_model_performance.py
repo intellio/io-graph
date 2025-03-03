@@ -11,7 +11,7 @@ class UserExperienceAnalyticsAppHealthDeviceModelPerformance(BaseModel):
 	deviceModel: Optional[str] = Field(default=None,alias="deviceModel",)
 	healthStatus: Optional[UserExperienceAnalyticsHealthState] = Field(default=None,alias="healthStatus",)
 	meanTimeToFailureInMinutes: Optional[int] = Field(default=None,alias="meanTimeToFailureInMinutes",)
-	modelAppHealthScore: Optional[float] | Optional[str] | ReferenceNumeric
+	modelAppHealthScore: float | str | ReferenceNumeric
 
 from .user_experience_analytics_health_state import UserExperienceAnalyticsHealthState
 from .reference_numeric import ReferenceNumeric

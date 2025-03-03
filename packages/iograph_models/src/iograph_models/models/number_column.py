@@ -6,8 +6,8 @@ from pydantic import BaseModel, Field
 class NumberColumn(BaseModel):
 	decimalPlaces: Optional[str] = Field(default=None,alias="decimalPlaces",)
 	displayAs: Optional[str] = Field(default=None,alias="displayAs",)
-	maximum: Optional[float] | Optional[str] | ReferenceNumeric
-	minimum: Optional[float] | Optional[str] | ReferenceNumeric
+	maximum: float | str | ReferenceNumeric
+	minimum: float | str | ReferenceNumeric
 	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
 
 from .reference_numeric import ReferenceNumeric

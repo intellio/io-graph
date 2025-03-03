@@ -4,7 +4,7 @@ from pydantic import BaseModel, Field
 
 
 class ExternalConnectorsProperty(BaseModel):
-	aliases: list[Optional[str]] = Field(alias="aliases",)
+	aliases: Optional[list[str]] = Field(default=None,alias="aliases",)
 	isQueryable: Optional[bool] = Field(default=None,alias="isQueryable",)
 	isRefinable: Optional[bool] = Field(default=None,alias="isRefinable",)
 	isRetrievable: Optional[bool] = Field(default=None,alias="isRetrievable",)

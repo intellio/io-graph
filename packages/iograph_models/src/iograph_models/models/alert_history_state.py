@@ -7,7 +7,7 @@ from pydantic import BaseModel, Field
 class AlertHistoryState(BaseModel):
 	appId: Optional[str] = Field(default=None,alias="appId",)
 	assignedTo: Optional[str] = Field(default=None,alias="assignedTo",)
-	comments: list[Optional[str]] = Field(alias="comments",)
+	comments: Optional[list[str]] = Field(default=None,alias="comments",)
 	feedback: Optional[AlertFeedback] = Field(default=None,alias="feedback",)
 	status: Optional[AlertStatus] = Field(default=None,alias="status",)
 	updatedDateTime: Optional[datetime] = Field(default=None,alias="updatedDateTime",)

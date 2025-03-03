@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 from kiota_abstractions.method import Method
+from kiota_abstractions.base_request_builder import BaseRequestBuilder
 from kiota_abstractions.base_request_configuration import RequestConfiguration
 from .......request_information import RequestInformation
 from pydantic import BaseModel, Field
@@ -13,11 +14,19 @@ if TYPE_CHECKING:
 	from .......request_adapter import HttpxRequestAdapter
 
 
-class ByIdentityProviderBaseIdRequest:
+class ByIdentityProviderBaseIdRequest(BaseRequestBuilder):
 	def __init__(self,request_adapter: HttpxRequestAdapter, path_parameters: Optional[Union[dict[str, Any], str]]) -> None:
-		self.request_adapter = request_adapter
-		self.url_template: str = "{+baseurl}/identity/b2xUserFlows/{b2xIdentityUserFlow-id}/userFlowIdentityProviders/{identityProviderBase-id}"
-		self.path_parameters: dict[str, Any] = path_parameters
+		super().__init__(request_adapter, "{+baseurl}/identity/b2xUserFlows/{b2xIdentityUserFlow-id}/userFlowIdentityProviders/{identityProviderBase-id}", path_parameters)
+
+	def with_url(self, raw_url: str) -> ByIdentityProviderBaseIdRequest:
+		"""
+		Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+		param raw_url: The raw URL to use for the request builder.
+		Returns: ByIdentityProviderBaseIdRequest
+		"""
+		if raw_url is None:
+			raise TypeError("raw_url cannot be None.")
+		return ByIdentityProviderBaseIdRequest(self.request_adapter, self.path_parameters)
 
 	@property
 	def ref(self,

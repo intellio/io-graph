@@ -5,7 +5,7 @@ from pydantic import BaseModel, Field
 
 
 class AppRole(BaseModel):
-	allowedMemberTypes: list[str] = Field(alias="allowedMemberTypes",)
+	allowedMemberTypes: Optional[list[str]] = Field(default=None,alias="allowedMemberTypes",)
 	description: Optional[str] = Field(default=None,alias="description",)
 	displayName: Optional[str] = Field(default=None,alias="displayName",)
 	id: Optional[UUID] = Field(default=None,alias="id",)

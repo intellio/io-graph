@@ -6,9 +6,9 @@ from pydantic import BaseModel, Field
 class SynchronizationSchema(BaseModel):
 	id: Optional[str] = Field(default=None,alias="id",)
 	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	synchronizationRules: list[SynchronizationRule] = Field(alias="synchronizationRules",)
+	synchronizationRules: Optional[list[SynchronizationRule]] = Field(default=None,alias="synchronizationRules",)
 	version: Optional[str] = Field(default=None,alias="version",)
-	directories: list[DirectoryDefinition] = Field(alias="directories",)
+	directories: Optional[list[DirectoryDefinition]] = Field(default=None,alias="directories",)
 
 from .synchronization_rule import SynchronizationRule
 from .directory_definition import DirectoryDefinition

@@ -7,7 +7,7 @@ class ODataErrorsMainError(BaseModel):
 	code: Optional[str] = Field(default=None,alias="code",)
 	message: Optional[str] = Field(default=None,alias="message",)
 	target: Optional[str] = Field(default=None,alias="target",)
-	details: list[ODataErrorsErrorDetails] = Field(alias="details",)
+	details: Optional[list[ODataErrorsErrorDetails]] = Field(default=None,alias="details",)
 	innerError: Optional[ODataErrorsInnerError] = Field(default=None,alias="innerError",)
 
 from .o_data_errors__error_details import ODataErrorsErrorDetails

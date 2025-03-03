@@ -8,9 +8,9 @@ class DeviceAndAppManagementRoleAssignment(BaseModel):
 	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
 	description: Optional[str] = Field(default=None,alias="description",)
 	displayName: Optional[str] = Field(default=None,alias="displayName",)
-	resourceScopes: list[Optional[str]] = Field(alias="resourceScopes",)
+	resourceScopes: Optional[list[str]] = Field(default=None,alias="resourceScopes",)
 	roleDefinition: Optional[RoleDefinition] = Field(default=None,alias="roleDefinition",)
-	members: list[Optional[str]] = Field(alias="members",)
+	members: Optional[list[str]] = Field(default=None,alias="members",)
 
 from .role_definition import RoleDefinition
 

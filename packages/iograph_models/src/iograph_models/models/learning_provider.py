@@ -13,8 +13,8 @@ class LearningProvider(BaseModel):
 	longLogoWebUrlForLightTheme: Optional[str] = Field(default=None,alias="longLogoWebUrlForLightTheme",)
 	squareLogoWebUrlForDarkTheme: Optional[str] = Field(default=None,alias="squareLogoWebUrlForDarkTheme",)
 	squareLogoWebUrlForLightTheme: Optional[str] = Field(default=None,alias="squareLogoWebUrlForLightTheme",)
-	learningContents: list[LearningContent] = Field(alias="learningContents",)
-	learningCourseActivities: list[LearningCourseActivity] = Field(alias="learningCourseActivities",)
+	learningContents: Optional[list[LearningContent]] = Field(default=None,alias="learningContents",)
+	learningCourseActivities: Optional[list[LearningCourseActivity]] = Field(default=None,alias="learningCourseActivities",)
 
 from .learning_content import LearningContent
 from .learning_course_activity import LearningCourseActivity

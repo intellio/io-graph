@@ -16,8 +16,8 @@ class WorkbookTable(BaseModel):
 	showHeaders: Optional[bool] = Field(default=None,alias="showHeaders",)
 	showTotals: Optional[bool] = Field(default=None,alias="showTotals",)
 	style: Optional[str] = Field(default=None,alias="style",)
-	columns: list[WorkbookTableColumn] = Field(alias="columns",)
-	rows: list[WorkbookTableRow] = Field(alias="rows",)
+	columns: Optional[list[WorkbookTableColumn]] = Field(default=None,alias="columns",)
+	rows: Optional[list[WorkbookTableRow]] = Field(default=None,alias="rows",)
 	sort: Optional[WorkbookTableSort] = Field(default=None,alias="sort",)
 	worksheet: Optional[WorkbookWorksheet] = Field(default=None,alias="worksheet",)
 

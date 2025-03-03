@@ -5,7 +5,7 @@ from pydantic import BaseModel, Field
 
 class EducationAssignmentPointsGradeType(BaseModel):
 	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	maxPoints: Optional[float] | Optional[str] | ReferenceNumeric
+	maxPoints: float | str | ReferenceNumeric
 
 from .reference_numeric import ReferenceNumeric
 

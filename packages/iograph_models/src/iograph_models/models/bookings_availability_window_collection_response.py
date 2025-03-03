@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field
 class BookingsAvailabilityWindowCollectionResponse(BaseModel):
 	odata_count: Optional[int] = Field(default=None,alias="@odata.count",)
 	odata_nextLink: Optional[str] = Field(default=None,alias="@odata.nextLink",)
-	value: list[BookingsAvailabilityWindow] = Field(alias="value",)
+	value: Optional[list[BookingsAvailabilityWindow]] = Field(default=None,alias="value",)
 
 from .bookings_availability_window import BookingsAvailabilityWindow
 

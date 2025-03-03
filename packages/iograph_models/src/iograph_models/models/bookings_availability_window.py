@@ -5,7 +5,7 @@ from pydantic import BaseModel, Field
 
 class BookingsAvailabilityWindow(BaseModel):
 	availabilityType: Optional[BookingsServiceAvailabilityType] = Field(default=None,alias="availabilityType",)
-	businessHours: list[BookingWorkHours] = Field(alias="businessHours",)
+	businessHours: Optional[list[BookingWorkHours]] = Field(default=None,alias="businessHours",)
 	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
 	endDate: Optional[str] = Field(default=None,alias="endDate",)
 	startDate: Optional[str] = Field(default=None,alias="startDate",)

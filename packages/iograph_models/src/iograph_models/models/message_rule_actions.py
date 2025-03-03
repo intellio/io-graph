@@ -4,16 +4,16 @@ from pydantic import BaseModel, Field
 
 
 class MessageRuleActions(BaseModel):
-	assignCategories: list[Optional[str]] = Field(alias="assignCategories",)
+	assignCategories: Optional[list[str]] = Field(default=None,alias="assignCategories",)
 	copyToFolder: Optional[str] = Field(default=None,alias="copyToFolder",)
 	delete: Optional[bool] = Field(default=None,alias="delete",)
-	forwardAsAttachmentTo: list[Recipient] = Field(alias="forwardAsAttachmentTo",)
-	forwardTo: list[Recipient] = Field(alias="forwardTo",)
+	forwardAsAttachmentTo: Optional[list[Recipient]] = Field(default=None,alias="forwardAsAttachmentTo",)
+	forwardTo: Optional[list[Recipient]] = Field(default=None,alias="forwardTo",)
 	markAsRead: Optional[bool] = Field(default=None,alias="markAsRead",)
 	markImportance: Optional[Importance] = Field(default=None,alias="markImportance",)
 	moveToFolder: Optional[str] = Field(default=None,alias="moveToFolder",)
 	permanentDelete: Optional[bool] = Field(default=None,alias="permanentDelete",)
-	redirectTo: list[Recipient] = Field(alias="redirectTo",)
+	redirectTo: Optional[list[Recipient]] = Field(default=None,alias="redirectTo",)
 	stopProcessingRules: Optional[bool] = Field(default=None,alias="stopProcessingRules",)
 	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
 

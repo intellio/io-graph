@@ -5,7 +5,7 @@ from pydantic import BaseModel, Field
 
 class OnAuthenticationMethodLoadStartExternalUsersSelfServiceSignUp(BaseModel):
 	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	identityProviders: list[IdentityProviderBase] = Field(alias="identityProviders",)
+	identityProviders: Optional[list[IdentityProviderBase]] = Field(default=None,alias="identityProviders",)
 
 from .identity_provider_base import IdentityProviderBase
 

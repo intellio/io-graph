@@ -8,7 +8,7 @@ class PartnersBillingManifest(BaseModel):
 	id: Optional[str] = Field(default=None,alias="id",)
 	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
 	blobCount: Optional[int] = Field(default=None,alias="blobCount",)
-	blobs: list[PartnersBillingBlob] = Field(alias="blobs",)
+	blobs: Optional[list[PartnersBillingBlob]] = Field(default=None,alias="blobs",)
 	createdDateTime: Optional[datetime] = Field(default=None,alias="createdDateTime",)
 	dataFormat: Optional[str] = Field(default=None,alias="dataFormat",)
 	eTag: Optional[str] = Field(default=None,alias="eTag",)

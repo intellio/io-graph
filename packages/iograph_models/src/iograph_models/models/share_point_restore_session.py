@@ -14,7 +14,7 @@ class SharePointRestoreSession(BaseModel):
 	lastModifiedBy: Optional[IdentitySet] = Field(default=None,alias="lastModifiedBy",)
 	lastModifiedDateTime: Optional[datetime] = Field(default=None,alias="lastModifiedDateTime",)
 	status: Optional[RestoreSessionStatus] = Field(default=None,alias="status",)
-	siteRestoreArtifacts: list[SiteRestoreArtifact] = Field(alias="siteRestoreArtifacts",)
+	siteRestoreArtifacts: Optional[list[SiteRestoreArtifact]] = Field(default=None,alias="siteRestoreArtifacts",)
 
 from .identity_set import IdentitySet
 from .public_error import PublicError

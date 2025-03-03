@@ -4,10 +4,10 @@ from pydantic import BaseModel, Field
 
 
 class EducationRoot(BaseModel):
-	classes: list[EducationClass] = Field(alias="classes",)
+	classes: Optional[list[EducationClass]] = Field(default=None,alias="classes",)
 	me: Optional[EducationUser] = Field(default=None,alias="me",)
-	schools: list[EducationSchool] = Field(alias="schools",)
-	users: list[EducationUser] = Field(alias="users",)
+	schools: Optional[list[EducationSchool]] = Field(default=None,alias="schools",)
+	users: Optional[list[EducationUser]] = Field(default=None,alias="users",)
 	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
 
 from .education_class import EducationClass

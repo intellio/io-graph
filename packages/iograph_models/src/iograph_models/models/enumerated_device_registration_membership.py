@@ -5,7 +5,7 @@ from pydantic import BaseModel, Field
 
 class EnumeratedDeviceRegistrationMembership(BaseModel):
 	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	groups: list[Optional[str]] = Field(alias="groups",)
-	users: list[Optional[str]] = Field(alias="users",)
+	groups: Optional[list[str]] = Field(default=None,alias="groups",)
+	users: Optional[list[str]] = Field(default=None,alias="users",)
 
 

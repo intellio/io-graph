@@ -9,7 +9,7 @@ class Participant(BaseModel):
 	info: Optional[ParticipantInfo] = Field(default=None,alias="info",)
 	isInLobby: Optional[bool] = Field(default=None,alias="isInLobby",)
 	isMuted: Optional[bool] = Field(default=None,alias="isMuted",)
-	mediaStreams: list[MediaStream] = Field(alias="mediaStreams",)
+	mediaStreams: Optional[list[MediaStream]] = Field(default=None,alias="mediaStreams",)
 	metadata: Optional[str] = Field(default=None,alias="metadata",)
 	recordingInfo: Optional[RecordingInfo] = Field(default=None,alias="recordingInfo",)
 	removedState: Optional[RemovedState] = Field(default=None,alias="removedState",)

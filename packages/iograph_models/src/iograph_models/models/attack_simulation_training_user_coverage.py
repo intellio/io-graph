@@ -5,7 +5,7 @@ from pydantic import BaseModel, Field
 
 class AttackSimulationTrainingUserCoverage(BaseModel):
 	attackSimulationUser: Optional[AttackSimulationUser] = Field(default=None,alias="attackSimulationUser",)
-	userTrainings: list[UserTrainingStatusInfo] = Field(alias="userTrainings",)
+	userTrainings: Optional[list[UserTrainingStatusInfo]] = Field(default=None,alias="userTrainings",)
 	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
 
 from .attack_simulation_user import AttackSimulationUser

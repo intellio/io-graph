@@ -3,6 +3,7 @@
 from __future__ import annotations
 from kiota_abstractions.get_path_parameters import get_path_parameters
 from kiota_abstractions.method import Method
+from kiota_abstractions.base_request_builder import BaseRequestBuilder
 from kiota_abstractions.base_request_configuration import RequestConfiguration
 from ............request_information import RequestInformation
 from pydantic import BaseModel, Field
@@ -13,16 +14,14 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_access_package_resource_role_id import ByAccessPackageResourceRoleIdRequest
 	from ............request_adapter import HttpxRequestAdapter
+from iograph_models.models.access_package_resource_role import AccessPackageResourceRole
 from iograph_models.models.access_package_resource_role_collection_response import AccessPackageResourceRoleCollectionResponse
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
-from iograph_models.models.access_package_resource_role import AccessPackageResourceRole
 
 
-class RolesRequest:
+class RolesRequest(BaseRequestBuilder):
 	def __init__(self,request_adapter: HttpxRequestAdapter, path_parameters: Optional[Union[dict[str, Any], str]]) -> None:
-		self.request_adapter = request_adapter
-		self.url_template: str = "{+baseurl}/identityGovernance/entitlementManagement/catalogs/{accessPackageCatalog%2Did}/resources/{accessPackageResource%2Did}/scopes/{accessPackageResourceScope%2Did}/resource/roles"
-		self.path_parameters: dict[str, Any] = path_parameters
+		super().__init__(request_adapter, "{+baseurl}/identityGovernance/entitlementManagement/catalogs/{accessPackageCatalog%2Did}/resources/{accessPackageResource%2Did}/scopes/{accessPackageResourceScope%2Did}/resource/roles", path_parameters)
 
 	async def get(
 		self,
@@ -82,6 +81,16 @@ class RolesRequest:
 		select: list[str] = Field(default=None,serialization_alias="%24select")
 		expand: list[str] = Field(default=None,serialization_alias="%24expand")
 
+
+	def with_url(self, raw_url: str) -> RolesRequest:
+		"""
+		Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+		param raw_url: The raw URL to use for the request builder.
+		Returns: RolesRequest
+		"""
+		if raw_url is None:
+			raise TypeError("raw_url cannot be None.")
+		return RolesRequest(self.request_adapter, self.path_parameters)
 
 	def by_access_package_resource_role_id(self,
 		accessPackageCatalog_id: str,

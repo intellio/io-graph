@@ -12,7 +12,7 @@ class SamlOrWsFedExternalDomainFederation(BaseModel):
 	passiveSignInUri: Optional[str] = Field(default=None,alias="passiveSignInUri",)
 	preferredAuthenticationProtocol: Optional[AuthenticationProtocol] = Field(default=None,alias="preferredAuthenticationProtocol",)
 	signingCertificate: Optional[str] = Field(default=None,alias="signingCertificate",)
-	domains: list[ExternalDomainName] = Field(alias="domains",)
+	domains: Optional[list[ExternalDomainName]] = Field(default=None,alias="domains",)
 
 from .authentication_protocol import AuthenticationProtocol
 from .external_domain_name import ExternalDomainName

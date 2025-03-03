@@ -33,7 +33,7 @@ class OnlineMeeting(BaseModel):
 	subject: Optional[str] = Field(default=None,alias="subject",)
 	videoTeleconferenceId: Optional[str] = Field(default=None,alias="videoTeleconferenceId",)
 	watermarkProtection: Optional[WatermarkProtectionValues] = Field(default=None,alias="watermarkProtection",)
-	attendanceReports: list[MeetingAttendanceReport] = Field(alias="attendanceReports",)
+	attendanceReports: Optional[list[MeetingAttendanceReport]] = Field(default=None,alias="attendanceReports",)
 	attendeeReport: Optional[str] = Field(default=None,alias="attendeeReport",)
 	broadcastSettings: Optional[BroadcastMeetingSettings] = Field(default=None,alias="broadcastSettings",)
 	creationDateTime: Optional[datetime] = Field(default=None,alias="creationDateTime",)
@@ -43,8 +43,8 @@ class OnlineMeeting(BaseModel):
 	meetingTemplateId: Optional[str] = Field(default=None,alias="meetingTemplateId",)
 	participants: Optional[MeetingParticipants] = Field(default=None,alias="participants",)
 	startDateTime: Optional[datetime] = Field(default=None,alias="startDateTime",)
-	recordings: list[CallRecording] = Field(alias="recordings",)
-	transcripts: list[CallTranscript] = Field(alias="transcripts",)
+	recordings: Optional[list[CallRecording]] = Field(default=None,alias="recordings",)
+	transcripts: Optional[list[CallTranscript]] = Field(default=None,alias="transcripts",)
 
 from .allowed_lobby_admitter_roles import AllowedLobbyAdmitterRoles
 from .online_meeting_presenters import OnlineMeetingPresenters

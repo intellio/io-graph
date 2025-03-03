@@ -8,10 +8,10 @@ class AccessPackageMultipleChoiceQuestion(BaseModel):
 	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
 	isAnswerEditable: Optional[bool] = Field(default=None,alias="isAnswerEditable",)
 	isRequired: Optional[bool] = Field(default=None,alias="isRequired",)
-	localizations: list[AccessPackageLocalizedText] = Field(alias="localizations",)
+	localizations: Optional[list[AccessPackageLocalizedText]] = Field(default=None,alias="localizations",)
 	sequence: Optional[int] = Field(default=None,alias="sequence",)
 	text: Optional[str] = Field(default=None,alias="text",)
-	choices: list[AccessPackageAnswerChoice] = Field(alias="choices",)
+	choices: Optional[list[AccessPackageAnswerChoice]] = Field(default=None,alias="choices",)
 	isMultipleSelectionAllowed: Optional[bool] = Field(default=None,alias="isMultipleSelectionAllowed",)
 
 from .access_package_localized_text import AccessPackageLocalizedText

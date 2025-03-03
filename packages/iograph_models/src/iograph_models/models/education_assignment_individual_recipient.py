@@ -5,6 +5,6 @@ from pydantic import BaseModel, Field
 
 class EducationAssignmentIndividualRecipient(BaseModel):
 	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	recipients: list[Optional[str]] = Field(alias="recipients",)
+	recipients: Optional[list[str]] = Field(default=None,alias="recipients",)
 
 

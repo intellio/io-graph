@@ -14,7 +14,7 @@ class DeviceLogCollectionResponse(BaseModel):
 	managedDeviceId: Optional[UUID] = Field(default=None,alias="managedDeviceId",)
 	receivedDateTimeUTC: Optional[datetime] = Field(default=None,alias="receivedDateTimeUTC",)
 	requestedDateTimeUTC: Optional[datetime] = Field(default=None,alias="requestedDateTimeUTC",)
-	sizeInKB: Optional[float] | Optional[str] | ReferenceNumeric
+	sizeInKB: float | str | ReferenceNumeric
 	status: Optional[AppLogUploadState] = Field(default=None,alias="status",)
 
 from .reference_numeric import ReferenceNumeric

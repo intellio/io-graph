@@ -4,7 +4,7 @@ from pydantic import BaseModel, Field
 
 
 class SimulationReportOverview(BaseModel):
-	recommendedActions: list[RecommendedAction] = Field(alias="recommendedActions",)
+	recommendedActions: Optional[list[RecommendedAction]] = Field(default=None,alias="recommendedActions",)
 	resolvedTargetsCount: Optional[int] = Field(default=None,alias="resolvedTargetsCount",)
 	simulationEventsContent: Optional[SimulationEventsContent] = Field(default=None,alias="simulationEventsContent",)
 	trainingEventsContent: Optional[TrainingEventsContent] = Field(default=None,alias="trainingEventsContent",)

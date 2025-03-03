@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field
 class SecurityHostSslCertificatePortCollectionResponse(BaseModel):
 	odata_count: Optional[int] = Field(default=None,alias="@odata.count",)
 	odata_nextLink: Optional[str] = Field(default=None,alias="@odata.nextLink",)
-	value: list[SecurityHostSslCertificatePort] = Field(alias="value",)
+	value: Optional[list[SecurityHostSslCertificatePort]] = Field(default=None,alias="value",)
 
 from .security_host_ssl_certificate_port import SecurityHostSslCertificatePort
 

@@ -18,7 +18,7 @@ class SecurityEdiscoverySearchExportOperation(BaseModel):
 	description: Optional[str] = Field(default=None,alias="description",)
 	displayName: Optional[str] = Field(default=None,alias="displayName",)
 	exportCriteria: Optional[SecurityExportCriteria] = Field(default=None,alias="exportCriteria",)
-	exportFileMetadata: list[SecurityExportFileMetadata] = Field(alias="exportFileMetadata",)
+	exportFileMetadata: Optional[list[SecurityExportFileMetadata]] = Field(default=None,alias="exportFileMetadata",)
 	exportFormat: Optional[SecurityExportFormat] = Field(default=None,alias="exportFormat",)
 	exportLocation: Optional[SecurityExportLocation] = Field(default=None,alias="exportLocation",)
 	exportSingleItems: Optional[bool] = Field(default=None,alias="exportSingleItems",)

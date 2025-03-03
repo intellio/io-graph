@@ -17,8 +17,8 @@ class SectionGroup(BaseModel):
 	sectionsUrl: Optional[str] = Field(default=None,alias="sectionsUrl",)
 	parentNotebook: Optional[Notebook] = Field(default=None,alias="parentNotebook",)
 	parentSectionGroup: Optional[SectionGroup] = Field(default=None,alias="parentSectionGroup",)
-	sectionGroups: list[SectionGroup] = Field(alias="sectionGroups",)
-	sections: list[OnenoteSection] = Field(alias="sections",)
+	sectionGroups: Optional[list[SectionGroup]] = Field(default=None,alias="sectionGroups",)
+	sections: Optional[list[OnenoteSection]] = Field(default=None,alias="sections",)
 
 from .identity_set import IdentitySet
 from .identity_set import IdentitySet

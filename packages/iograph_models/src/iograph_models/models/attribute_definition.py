@@ -5,15 +5,15 @@ from pydantic import BaseModel, Field
 
 class AttributeDefinition(BaseModel):
 	anchor: Optional[bool] = Field(default=None,alias="anchor",)
-	apiExpressions: list[StringKeyStringValuePair] = Field(alias="apiExpressions",)
+	apiExpressions: Optional[list[StringKeyStringValuePair]] = Field(default=None,alias="apiExpressions",)
 	caseExact: Optional[bool] = Field(default=None,alias="caseExact",)
 	defaultValue: Optional[str] = Field(default=None,alias="defaultValue",)
 	flowNullValues: Optional[bool] = Field(default=None,alias="flowNullValues",)
-	metadata: list[AttributeDefinitionMetadataEntry] = Field(alias="metadata",)
+	metadata: Optional[list[AttributeDefinitionMetadataEntry]] = Field(default=None,alias="metadata",)
 	multivalued: Optional[bool] = Field(default=None,alias="multivalued",)
 	mutability: Optional[Mutability] = Field(default=None,alias="mutability",)
 	name: Optional[str] = Field(default=None,alias="name",)
-	referencedObjects: list[ReferencedObject] = Field(alias="referencedObjects",)
+	referencedObjects: Optional[list[ReferencedObject]] = Field(default=None,alias="referencedObjects",)
 	required: Optional[bool] = Field(default=None,alias="required",)
 	type: Optional[AttributeType] = Field(default=None,alias="type",)
 	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)

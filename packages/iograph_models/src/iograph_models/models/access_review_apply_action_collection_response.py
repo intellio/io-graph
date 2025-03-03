@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field
 class AccessReviewApplyActionCollectionResponse(BaseModel):
 	odata_count: Optional[int] = Field(default=None,alias="@odata.count",)
 	odata_nextLink: Optional[str] = Field(default=None,alias="@odata.nextLink",)
-	value: list[AccessReviewApplyAction] = Field(alias="value",)
+	value: Optional[list[AccessReviewApplyAction]] = Field(default=None,alias="value",)
 
 from .access_review_apply_action import AccessReviewApplyAction
 

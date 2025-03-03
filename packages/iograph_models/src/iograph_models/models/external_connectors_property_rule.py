@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field
 class ExternalConnectorsPropertyRule(BaseModel):
 	operation: Optional[ExternalConnectorsRuleOperation] = Field(default=None,alias="operation",)
 	property: Optional[str] = Field(default=None,alias="property",)
-	values: list[str] = Field(alias="values",)
+	values: Optional[list[str]] = Field(default=None,alias="values",)
 	valuesJoinedBy: Optional[BinaryOperator] = Field(default=None,alias="valuesJoinedBy",)
 	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
 

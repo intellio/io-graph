@@ -5,7 +5,7 @@ from pydantic import BaseModel, Field
 
 class BookingWorkHours(BaseModel):
 	day: Optional[DayOfWeek] = Field(default=None,alias="day",)
-	timeSlots: list[BookingWorkTimeSlot] = Field(alias="timeSlots",)
+	timeSlots: Optional[list[BookingWorkTimeSlot]] = Field(default=None,alias="timeSlots",)
 	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
 
 from .day_of_week import DayOfWeek

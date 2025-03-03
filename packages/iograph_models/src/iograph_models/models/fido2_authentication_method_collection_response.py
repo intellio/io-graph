@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field
 class Fido2AuthenticationMethodCollectionResponse(BaseModel):
 	odata_count: Optional[int] = Field(default=None,alias="@odata.count",)
 	odata_nextLink: Optional[str] = Field(default=None,alias="@odata.nextLink",)
-	value: list[Fido2AuthenticationMethod] = Field(alias="value",)
+	value: Optional[list[Fido2AuthenticationMethod]] = Field(default=None,alias="value",)
 
 from .fido2_authentication_method import Fido2AuthenticationMethod
 

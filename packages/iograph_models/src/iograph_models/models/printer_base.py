@@ -16,7 +16,7 @@ class PrinterBase(BaseModel):
 	manufacturer: Optional[str] = Field(default=None,alias="manufacturer",)
 	model: Optional[str] = Field(default=None,alias="model",)
 	status: Optional[PrinterStatus] = Field(default=None,alias="status",)
-	jobs: list[PrintJob] = Field(alias="jobs",)
+	jobs: Optional[list[PrintJob]] = Field(default=None,alias="jobs",)
 
 	@model_validator(mode="wrap")
 	def convert_discriminator_class(cls, data: Any, handler: ModelWrapValidatorHandler[Self]) -> Self:

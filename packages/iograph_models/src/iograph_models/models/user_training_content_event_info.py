@@ -9,7 +9,7 @@ class UserTrainingContentEventInfo(BaseModel):
 	contentDateTime: Optional[datetime] = Field(default=None,alias="contentDateTime",)
 	ipAddress: Optional[str] = Field(default=None,alias="ipAddress",)
 	osPlatformDeviceDetails: Optional[str] = Field(default=None,alias="osPlatformDeviceDetails",)
-	potentialScoreImpact: Optional[float] | Optional[str] | ReferenceNumeric
+	potentialScoreImpact: float | str | ReferenceNumeric
 	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
 
 from .reference_numeric import ReferenceNumeric

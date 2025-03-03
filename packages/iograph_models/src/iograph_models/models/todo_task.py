@@ -9,7 +9,7 @@ class TodoTask(BaseModel):
 	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
 	body: Optional[ItemBody] = Field(default=None,alias="body",)
 	bodyLastModifiedDateTime: Optional[datetime] = Field(default=None,alias="bodyLastModifiedDateTime",)
-	categories: list[Optional[str]] = Field(alias="categories",)
+	categories: Optional[list[str]] = Field(default=None,alias="categories",)
 	completedDateTime: Optional[DateTimeTimeZone] = Field(default=None,alias="completedDateTime",)
 	createdDateTime: Optional[datetime] = Field(default=None,alias="createdDateTime",)
 	dueDateTime: Optional[DateTimeTimeZone] = Field(default=None,alias="dueDateTime",)
@@ -22,11 +22,11 @@ class TodoTask(BaseModel):
 	startDateTime: Optional[DateTimeTimeZone] = Field(default=None,alias="startDateTime",)
 	status: Optional[TaskStatus] = Field(default=None,alias="status",)
 	title: Optional[str] = Field(default=None,alias="title",)
-	attachments: list[AttachmentBase] = Field(alias="attachments",)
-	attachmentSessions: list[AttachmentSession] = Field(alias="attachmentSessions",)
-	checklistItems: list[ChecklistItem] = Field(alias="checklistItems",)
-	extensions: list[Extension] = Field(alias="extensions",)
-	linkedResources: list[LinkedResource] = Field(alias="linkedResources",)
+	attachments: Optional[list[AttachmentBase]] = Field(default=None,alias="attachments",)
+	attachmentSessions: Optional[list[AttachmentSession]] = Field(default=None,alias="attachmentSessions",)
+	checklistItems: Optional[list[ChecklistItem]] = Field(default=None,alias="checklistItems",)
+	extensions: Optional[list[Extension]] = Field(default=None,alias="extensions",)
+	linkedResources: Optional[list[LinkedResource]] = Field(default=None,alias="linkedResources",)
 
 from .item_body import ItemBody
 from .date_time_time_zone import DateTimeTimeZone

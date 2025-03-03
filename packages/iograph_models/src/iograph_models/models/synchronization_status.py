@@ -11,11 +11,11 @@ class SynchronizationStatus(BaseModel):
 	lastExecution: Optional[SynchronizationTaskExecution] = Field(default=None,alias="lastExecution",)
 	lastSuccessfulExecution: Optional[SynchronizationTaskExecution] = Field(default=None,alias="lastSuccessfulExecution",)
 	lastSuccessfulExecutionWithExports: Optional[SynchronizationTaskExecution] = Field(default=None,alias="lastSuccessfulExecutionWithExports",)
-	progress: list[SynchronizationProgress] = Field(alias="progress",)
+	progress: Optional[list[SynchronizationProgress]] = Field(default=None,alias="progress",)
 	quarantine: Optional[SynchronizationQuarantine] = Field(default=None,alias="quarantine",)
 	steadyStateFirstAchievedTime: Optional[datetime] = Field(default=None,alias="steadyStateFirstAchievedTime",)
 	steadyStateLastAchievedTime: Optional[datetime] = Field(default=None,alias="steadyStateLastAchievedTime",)
-	synchronizedEntryCountByType: list[StringKeyLongValuePair] = Field(alias="synchronizedEntryCountByType",)
+	synchronizedEntryCountByType: Optional[list[StringKeyLongValuePair]] = Field(default=None,alias="synchronizedEntryCountByType",)
 	troubleshootingUrl: Optional[str] = Field(default=None,alias="troubleshootingUrl",)
 	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
 

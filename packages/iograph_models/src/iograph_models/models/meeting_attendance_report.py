@@ -10,7 +10,7 @@ class MeetingAttendanceReport(BaseModel):
 	meetingEndDateTime: Optional[datetime] = Field(default=None,alias="meetingEndDateTime",)
 	meetingStartDateTime: Optional[datetime] = Field(default=None,alias="meetingStartDateTime",)
 	totalParticipantCount: Optional[int] = Field(default=None,alias="totalParticipantCount",)
-	attendanceRecords: list[AttendanceRecord] = Field(alias="attendanceRecords",)
+	attendanceRecords: Optional[list[AttendanceRecord]] = Field(default=None,alias="attendanceRecords",)
 
 from .attendance_record import AttendanceRecord
 

@@ -8,12 +8,12 @@ class TermStoreTerm(BaseModel):
 	id: Optional[str] = Field(default=None,alias="id",)
 	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
 	createdDateTime: Optional[datetime] = Field(default=None,alias="createdDateTime",)
-	descriptions: list[TermStoreLocalizedDescription] = Field(alias="descriptions",)
-	labels: list[TermStoreLocalizedLabel] = Field(alias="labels",)
+	descriptions: Optional[list[TermStoreLocalizedDescription]] = Field(default=None,alias="descriptions",)
+	labels: Optional[list[TermStoreLocalizedLabel]] = Field(default=None,alias="labels",)
 	lastModifiedDateTime: Optional[datetime] = Field(default=None,alias="lastModifiedDateTime",)
-	properties: list[KeyValue] = Field(alias="properties",)
-	children: list[TermStoreTerm] = Field(alias="children",)
-	relations: list[TermStoreRelation] = Field(alias="relations",)
+	properties: Optional[list[KeyValue]] = Field(default=None,alias="properties",)
+	children: Optional[list[TermStoreTerm]] = Field(default=None,alias="children",)
+	relations: Optional[list[TermStoreRelation]] = Field(default=None,alias="relations",)
 	set: Optional[TermStoreSet] = Field(default=None,alias="set",)
 
 from .term_store_localized_description import TermStoreLocalizedDescription

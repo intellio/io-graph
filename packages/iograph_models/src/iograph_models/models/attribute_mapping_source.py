@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field
 class AttributeMappingSource(BaseModel):
 	expression: Optional[str] = Field(default=None,alias="expression",)
 	name: Optional[str] = Field(default=None,alias="name",)
-	parameters: list[StringKeyAttributeMappingSourceValuePair] = Field(alias="parameters",)
+	parameters: Optional[list[StringKeyAttributeMappingSourceValuePair]] = Field(default=None,alias="parameters",)
 	type: Optional[AttributeMappingSourceType] = Field(default=None,alias="type",)
 	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
 

@@ -10,7 +10,7 @@ class Create_linkPostRequest(BaseModel):
 	expirationDateTime: Optional[datetime] = Field(default=None,alias="expirationDateTime",)
 	password: Optional[str] = Field(default=None,alias="password",)
 	message: Optional[str] = Field(default=None,alias="message",)
-	recipients: list[DriveRecipient] = Field(alias="recipients",)
+	recipients: Optional[list[DriveRecipient]] = Field(default=None,alias="recipients",)
 	retainInheritedPermissions: Optional[bool] = Field(default=None,alias="retainInheritedPermissions",)
 	sendNotification: Optional[bool] = Field(default=None,alias="sendNotification",)
 

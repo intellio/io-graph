@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field
 class ScheduleItemCollectionResponse(BaseModel):
 	odata_count: Optional[int] = Field(default=None,alias="@odata.count",)
 	odata_nextLink: Optional[str] = Field(default=None,alias="@odata.nextLink",)
-	value: list[ScheduleItem] = Field(alias="value",)
+	value: Optional[list[ScheduleItem]] = Field(default=None,alias="value",)
 
 from .schedule_item import ScheduleItem
 

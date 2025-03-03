@@ -15,8 +15,8 @@ class TermsAndConditions(BaseModel):
 	lastModifiedDateTime: Optional[datetime] = Field(default=None,alias="lastModifiedDateTime",)
 	title: Optional[str] = Field(default=None,alias="title",)
 	version: Optional[int] = Field(default=None,alias="version",)
-	acceptanceStatuses: list[TermsAndConditionsAcceptanceStatus] = Field(alias="acceptanceStatuses",)
-	assignments: list[TermsAndConditionsAssignment] = Field(alias="assignments",)
+	acceptanceStatuses: Optional[list[TermsAndConditionsAcceptanceStatus]] = Field(default=None,alias="acceptanceStatuses",)
+	assignments: Optional[list[TermsAndConditionsAssignment]] = Field(default=None,alias="assignments",)
 
 from .terms_and_conditions_acceptance_status import TermsAndConditionsAcceptanceStatus
 from .terms_and_conditions_assignment import TermsAndConditionsAssignment

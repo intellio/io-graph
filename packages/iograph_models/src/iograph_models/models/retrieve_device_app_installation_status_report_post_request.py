@@ -5,10 +5,10 @@ from pydantic import BaseModel, Field
 
 class Retrieve_device_app_installation_status_reportPostRequest(BaseModel):
 	name: Optional[str] = Field(default=None,alias="name",)
-	select: list[Optional[str]] = Field(alias="select",)
+	select: Optional[list[str]] = Field(default=None,alias="select",)
 	search: Optional[str] = Field(default=None,alias="search",)
-	groupBy: list[Optional[str]] = Field(alias="groupBy",)
-	orderBy: list[Optional[str]] = Field(alias="orderBy",)
+	groupBy: Optional[list[str]] = Field(default=None,alias="groupBy",)
+	orderBy: Optional[list[str]] = Field(default=None,alias="orderBy",)
 	skip: Optional[int] = Field(default=None,alias="skip",)
 	top: Optional[int] = Field(default=None,alias="top",)
 	sessionId: Optional[str] = Field(default=None,alias="sessionId",)

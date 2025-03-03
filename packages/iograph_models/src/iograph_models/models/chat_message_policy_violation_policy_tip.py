@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field
 class ChatMessagePolicyViolationPolicyTip(BaseModel):
 	complianceUrl: Optional[str] = Field(default=None,alias="complianceUrl",)
 	generalText: Optional[str] = Field(default=None,alias="generalText",)
-	matchedConditionDescriptions: list[Optional[str]] = Field(alias="matchedConditionDescriptions",)
+	matchedConditionDescriptions: Optional[list[str]] = Field(default=None,alias="matchedConditionDescriptions",)
 	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
 
 

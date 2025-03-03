@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field
 class ContentType(BaseModel):
 	id: Optional[str] = Field(default=None,alias="id",)
 	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	associatedHubsUrls: list[Optional[str]] = Field(alias="associatedHubsUrls",)
+	associatedHubsUrls: Optional[list[str]] = Field(default=None,alias="associatedHubsUrls",)
 	description: Optional[str] = Field(default=None,alias="description",)
 	documentSet: Optional[DocumentSet] = Field(default=None,alias="documentSet",)
 	documentTemplate: Optional[DocumentSetContent] = Field(default=None,alias="documentTemplate",)
@@ -21,10 +21,10 @@ class ContentType(BaseModel):
 	readOnly: Optional[bool] = Field(default=None,alias="readOnly",)
 	sealed: Optional[bool] = Field(default=None,alias="sealed",)
 	base: Optional[ContentType] = Field(default=None,alias="base",)
-	baseTypes: list[ContentType] = Field(alias="baseTypes",)
-	columnLinks: list[ColumnLink] = Field(alias="columnLinks",)
-	columnPositions: list[ColumnDefinition] = Field(alias="columnPositions",)
-	columns: list[ColumnDefinition] = Field(alias="columns",)
+	baseTypes: Optional[list[ContentType]] = Field(default=None,alias="baseTypes",)
+	columnLinks: Optional[list[ColumnLink]] = Field(default=None,alias="columnLinks",)
+	columnPositions: Optional[list[ColumnDefinition]] = Field(default=None,alias="columnPositions",)
+	columns: Optional[list[ColumnDefinition]] = Field(default=None,alias="columns",)
 
 from .document_set import DocumentSet
 from .document_set_content import DocumentSetContent

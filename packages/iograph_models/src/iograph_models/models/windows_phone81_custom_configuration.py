@@ -12,13 +12,13 @@ class WindowsPhone81CustomConfiguration(BaseModel):
 	displayName: Optional[str] = Field(default=None,alias="displayName",)
 	lastModifiedDateTime: Optional[datetime] = Field(default=None,alias="lastModifiedDateTime",)
 	version: Optional[int] = Field(default=None,alias="version",)
-	assignments: list[DeviceConfigurationAssignment] = Field(alias="assignments",)
-	deviceSettingStateSummaries: list[SettingStateDeviceSummary] = Field(alias="deviceSettingStateSummaries",)
-	deviceStatuses: list[DeviceConfigurationDeviceStatus] = Field(alias="deviceStatuses",)
+	assignments: Optional[list[DeviceConfigurationAssignment]] = Field(default=None,alias="assignments",)
+	deviceSettingStateSummaries: Optional[list[SettingStateDeviceSummary]] = Field(default=None,alias="deviceSettingStateSummaries",)
+	deviceStatuses: Optional[list[DeviceConfigurationDeviceStatus]] = Field(default=None,alias="deviceStatuses",)
 	deviceStatusOverview: Optional[DeviceConfigurationDeviceOverview] = Field(default=None,alias="deviceStatusOverview",)
-	userStatuses: list[DeviceConfigurationUserStatus] = Field(alias="userStatuses",)
+	userStatuses: Optional[list[DeviceConfigurationUserStatus]] = Field(default=None,alias="userStatuses",)
 	userStatusOverview: Optional[DeviceConfigurationUserOverview] = Field(default=None,alias="userStatusOverview",)
-	omaSettings: list[OmaSetting] = Field(alias="omaSettings",)
+	omaSettings: Optional[list[OmaSetting]] = Field(default=None,alias="omaSettings",)
 
 from .device_configuration_assignment import DeviceConfigurationAssignment
 from .setting_state_device_summary import SettingStateDeviceSummary

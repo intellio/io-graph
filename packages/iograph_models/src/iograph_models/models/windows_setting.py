@@ -9,7 +9,7 @@ class WindowsSetting(BaseModel):
 	payloadType: Optional[str] = Field(default=None,alias="payloadType",)
 	settingType: Optional[WindowsSettingType] = Field(default=None,alias="settingType",)
 	windowsDeviceId: Optional[str] = Field(default=None,alias="windowsDeviceId",)
-	instances: list[WindowsSettingInstance] = Field(alias="instances",)
+	instances: Optional[list[WindowsSettingInstance]] = Field(default=None,alias="instances",)
 
 from .windows_setting_type import WindowsSettingType
 from .windows_setting_instance import WindowsSettingInstance

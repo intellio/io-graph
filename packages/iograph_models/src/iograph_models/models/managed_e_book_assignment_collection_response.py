@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field
 class ManagedEBookAssignmentCollectionResponse(BaseModel):
 	odata_count: Optional[int] = Field(default=None,alias="@odata.count",)
 	odata_nextLink: Optional[str] = Field(default=None,alias="@odata.nextLink",)
-	value: list[ManagedEBookAssignment] = Field(alias="value",)
+	value: Optional[list[ManagedEBookAssignment]] = Field(default=None,alias="value",)
 
 from .managed_e_book_assignment import ManagedEBookAssignment
 

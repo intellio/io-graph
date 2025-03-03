@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field
 class SecurityTriggerTypesRoot(BaseModel):
 	id: Optional[str] = Field(default=None,alias="id",)
 	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	retentionEventTypes: list[SecurityRetentionEventType] = Field(alias="retentionEventTypes",)
+	retentionEventTypes: Optional[list[SecurityRetentionEventType]] = Field(default=None,alias="retentionEventTypes",)
 
 from .security_retention_event_type import SecurityRetentionEventType
 

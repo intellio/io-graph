@@ -5,7 +5,7 @@ from pydantic import BaseModel, Field
 
 class WindowsInformationProtectionResourceCollection(BaseModel):
 	displayName: Optional[str] = Field(default=None,alias="displayName",)
-	resources: list[Optional[str]] = Field(alias="resources",)
+	resources: Optional[list[str]] = Field(default=None,alias="resources",)
 	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
 
 

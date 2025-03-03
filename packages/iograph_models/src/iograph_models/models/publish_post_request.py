@@ -5,8 +5,8 @@ from pydantic import BaseModel, Field
 
 class PublishPostRequest(BaseModel):
 	revision: Optional[str] = Field(default=None,alias="revision",)
-	sites: list[BrowserSite] = Field(alias="sites",)
-	sharedCookies: list[BrowserSharedCookie] = Field(alias="sharedCookies",)
+	sites: Optional[list[BrowserSite]] = Field(default=None,alias="sites",)
+	sharedCookies: Optional[list[BrowserSharedCookie]] = Field(default=None,alias="sharedCookies",)
 
 from .browser_site import BrowserSite
 from .browser_shared_cookie import BrowserSharedCookie

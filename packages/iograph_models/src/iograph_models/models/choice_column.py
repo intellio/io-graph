@@ -5,7 +5,7 @@ from pydantic import BaseModel, Field
 
 class ChoiceColumn(BaseModel):
 	allowTextEntry: Optional[bool] = Field(default=None,alias="allowTextEntry",)
-	choices: list[Optional[str]] = Field(alias="choices",)
+	choices: Optional[list[str]] = Field(default=None,alias="choices",)
 	displayAs: Optional[str] = Field(default=None,alias="displayAs",)
 	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
 

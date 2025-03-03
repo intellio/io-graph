@@ -9,7 +9,7 @@ class IdentityUserFlow(BaseModel):
 	id: Optional[str] = Field(default=None,alias="id",)
 	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
 	userFlowType: Optional[UserFlowType] = Field(default=None,alias="userFlowType",)
-	userFlowTypeVersion: Optional[float] | Optional[str] | ReferenceNumeric
+	userFlowTypeVersion: float | str | ReferenceNumeric
 
 	@model_validator(mode="wrap")
 	def convert_discriminator_class(cls, data: Any, handler: ModelWrapValidatorHandler[Self]) -> Self:

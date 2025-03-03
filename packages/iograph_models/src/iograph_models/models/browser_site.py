@@ -12,7 +12,7 @@ class BrowserSite(BaseModel):
 	compatibilityMode: Optional[BrowserSiteCompatibilityMode] = Field(default=None,alias="compatibilityMode",)
 	createdDateTime: Optional[datetime] = Field(default=None,alias="createdDateTime",)
 	deletedDateTime: Optional[datetime] = Field(default=None,alias="deletedDateTime",)
-	history: list[BrowserSiteHistory] = Field(alias="history",)
+	history: Optional[list[BrowserSiteHistory]] = Field(default=None,alias="history",)
 	lastModifiedBy: Optional[IdentitySet] = Field(default=None,alias="lastModifiedBy",)
 	lastModifiedDateTime: Optional[datetime] = Field(default=None,alias="lastModifiedDateTime",)
 	mergeType: Optional[BrowserSiteMergeType] = Field(default=None,alias="mergeType",)

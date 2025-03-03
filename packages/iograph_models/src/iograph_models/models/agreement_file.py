@@ -14,7 +14,7 @@ class AgreementFile(BaseModel):
 	isDefault: Optional[bool] = Field(default=None,alias="isDefault",)
 	isMajorVersion: Optional[bool] = Field(default=None,alias="isMajorVersion",)
 	language: Optional[str] = Field(default=None,alias="language",)
-	localizations: list[AgreementFileLocalization] = Field(alias="localizations",)
+	localizations: Optional[list[AgreementFileLocalization]] = Field(default=None,alias="localizations",)
 
 from .agreement_file_data import AgreementFileData
 from .agreement_file_localization import AgreementFileLocalization

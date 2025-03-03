@@ -9,7 +9,7 @@ class SharedInsight(BaseModel):
 	lastShared: Optional[SharingDetail] = Field(default=None,alias="lastShared",)
 	resourceReference: Optional[ResourceReference] = Field(default=None,alias="resourceReference",)
 	resourceVisualization: Optional[ResourceVisualization] = Field(default=None,alias="resourceVisualization",)
-	sharingHistory: list[SharingDetail] = Field(alias="sharingHistory",)
+	sharingHistory: Optional[list[SharingDetail]] = Field(default=None,alias="sharingHistory",)
 	lastSharedMethod: Optional[Entity] = Field(default=None,alias="lastSharedMethod",)
 	resource: Optional[Entity] = Field(default=None,alias="resource",)
 

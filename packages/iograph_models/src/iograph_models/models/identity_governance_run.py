@@ -19,8 +19,8 @@ class IdentityGovernanceRun(BaseModel):
 	totalUnprocessedTasksCount: Optional[int] = Field(default=None,alias="totalUnprocessedTasksCount",)
 	totalUsersCount: Optional[int] = Field(default=None,alias="totalUsersCount",)
 	workflowExecutionType: Optional[IdentityGovernanceWorkflowExecutionType] = Field(default=None,alias="workflowExecutionType",)
-	taskProcessingResults: list[IdentityGovernanceTaskProcessingResult] = Field(alias="taskProcessingResults",)
-	userProcessingResults: list[IdentityGovernanceUserProcessingResult] = Field(alias="userProcessingResults",)
+	taskProcessingResults: Optional[list[IdentityGovernanceTaskProcessingResult]] = Field(default=None,alias="taskProcessingResults",)
+	userProcessingResults: Optional[list[IdentityGovernanceUserProcessingResult]] = Field(default=None,alias="userProcessingResults",)
 
 from .identity_governance_lifecycle_workflow_processing_status import IdentityGovernanceLifecycleWorkflowProcessingStatus
 from .identity_governance_workflow_execution_type import IdentityGovernanceWorkflowExecutionType

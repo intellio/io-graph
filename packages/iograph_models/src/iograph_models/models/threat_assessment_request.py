@@ -16,7 +16,7 @@ class ThreatAssessmentRequest(BaseModel):
 	expectedAssessment: Optional[ThreatExpectedAssessment] = Field(default=None,alias="expectedAssessment",)
 	requestSource: Optional[ThreatAssessmentRequestSource] = Field(default=None,alias="requestSource",)
 	status: Optional[ThreatAssessmentStatus] = Field(default=None,alias="status",)
-	results: list[ThreatAssessmentResult] = Field(alias="results",)
+	results: Optional[list[ThreatAssessmentResult]] = Field(default=None,alias="results",)
 
 	@model_validator(mode="wrap")
 	def convert_discriminator_class(cls, data: Any, handler: ModelWrapValidatorHandler[Self]) -> Self:

@@ -4,7 +4,7 @@ from pydantic import BaseModel, Field
 
 
 class OptionalClaim(BaseModel):
-	additionalProperties: list[Optional[str]] = Field(alias="additionalProperties",)
+	additionalProperties: Optional[list[str]] = Field(default=None,alias="additionalProperties",)
 	essential: Optional[bool] = Field(default=None,alias="essential",)
 	name: Optional[str] = Field(default=None,alias="name",)
 	source: Optional[str] = Field(default=None,alias="source",)

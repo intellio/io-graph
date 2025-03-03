@@ -10,7 +10,7 @@ class CalendarGroup(BaseModel):
 	changeKey: Optional[str] = Field(default=None,alias="changeKey",)
 	classId: Optional[UUID] = Field(default=None,alias="classId",)
 	name: Optional[str] = Field(default=None,alias="name",)
-	calendars: list[Calendar] = Field(alias="calendars",)
+	calendars: Optional[list[Calendar]] = Field(default=None,alias="calendars",)
 
 from .calendar import Calendar
 

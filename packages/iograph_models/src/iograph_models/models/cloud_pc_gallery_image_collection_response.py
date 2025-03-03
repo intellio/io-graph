@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field
 class CloudPcGalleryImageCollectionResponse(BaseModel):
 	odata_count: Optional[int] = Field(default=None,alias="@odata.count",)
 	odata_nextLink: Optional[str] = Field(default=None,alias="@odata.nextLink",)
-	value: list[CloudPcGalleryImage] = Field(alias="value",)
+	value: Optional[list[CloudPcGalleryImage]] = Field(default=None,alias="value",)
 
 from .cloud_pc_gallery_image import CloudPcGalleryImage
 

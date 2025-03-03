@@ -14,7 +14,7 @@ class SchedulingGroup(BaseModel):
 	code: Optional[str] = Field(default=None,alias="code",)
 	displayName: Optional[str] = Field(default=None,alias="displayName",)
 	isActive: Optional[bool] = Field(default=None,alias="isActive",)
-	userIds: list[Optional[str]] = Field(alias="userIds",)
+	userIds: Optional[list[str]] = Field(default=None,alias="userIds",)
 
 from .identity_set import IdentitySet
 from .identity_set import IdentitySet

@@ -8,7 +8,7 @@ class ExternalConnectorsExternalGroup(BaseModel):
 	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
 	description: Optional[str] = Field(default=None,alias="description",)
 	displayName: Optional[str] = Field(default=None,alias="displayName",)
-	members: list[ExternalConnectorsIdentity] = Field(alias="members",)
+	members: Optional[list[ExternalConnectorsIdentity]] = Field(default=None,alias="members",)
 
 from .external_connectors_identity import ExternalConnectorsIdentity
 

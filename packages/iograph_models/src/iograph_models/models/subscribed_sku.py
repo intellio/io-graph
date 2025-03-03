@@ -13,10 +13,10 @@ class SubscribedSku(BaseModel):
 	capabilityStatus: Optional[str] = Field(default=None,alias="capabilityStatus",)
 	consumedUnits: Optional[int] = Field(default=None,alias="consumedUnits",)
 	prepaidUnits: Optional[LicenseUnitsDetail] = Field(default=None,alias="prepaidUnits",)
-	servicePlans: list[ServicePlanInfo] = Field(alias="servicePlans",)
+	servicePlans: Optional[list[ServicePlanInfo]] = Field(default=None,alias="servicePlans",)
 	skuId: Optional[UUID] = Field(default=None,alias="skuId",)
 	skuPartNumber: Optional[str] = Field(default=None,alias="skuPartNumber",)
-	subscriptionIds: list[Optional[str]] = Field(alias="subscriptionIds",)
+	subscriptionIds: Optional[list[str]] = Field(default=None,alias="subscriptionIds",)
 
 from .license_units_detail import LicenseUnitsDetail
 from .service_plan_info import ServicePlanInfo

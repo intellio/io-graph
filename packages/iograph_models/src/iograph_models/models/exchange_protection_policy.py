@@ -12,10 +12,10 @@ class ExchangeProtectionPolicy(BaseModel):
 	displayName: Optional[str] = Field(default=None,alias="displayName",)
 	lastModifiedBy: Optional[IdentitySet] = Field(default=None,alias="lastModifiedBy",)
 	lastModifiedDateTime: Optional[datetime] = Field(default=None,alias="lastModifiedDateTime",)
-	retentionSettings: list[RetentionSetting] = Field(alias="retentionSettings",)
+	retentionSettings: Optional[list[RetentionSetting]] = Field(default=None,alias="retentionSettings",)
 	status: Optional[ProtectionPolicyStatus] = Field(default=None,alias="status",)
-	mailboxInclusionRules: list[MailboxProtectionRule] = Field(alias="mailboxInclusionRules",)
-	mailboxProtectionUnits: list[MailboxProtectionUnit] = Field(alias="mailboxProtectionUnits",)
+	mailboxInclusionRules: Optional[list[MailboxProtectionRule]] = Field(default=None,alias="mailboxInclusionRules",)
+	mailboxProtectionUnits: Optional[list[MailboxProtectionUnit]] = Field(default=None,alias="mailboxProtectionUnits",)
 
 from .identity_set import IdentitySet
 from .identity_set import IdentitySet

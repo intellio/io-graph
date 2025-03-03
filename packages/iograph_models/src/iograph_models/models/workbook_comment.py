@@ -8,7 +8,7 @@ class WorkbookComment(BaseModel):
 	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
 	content: Optional[str] = Field(default=None,alias="content",)
 	contentType: Optional[str] = Field(default=None,alias="contentType",)
-	replies: list[WorkbookCommentReply] = Field(alias="replies",)
+	replies: Optional[list[WorkbookCommentReply]] = Field(default=None,alias="replies",)
 
 from .workbook_comment_reply import WorkbookCommentReply
 

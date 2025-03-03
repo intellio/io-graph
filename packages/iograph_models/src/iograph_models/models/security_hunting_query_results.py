@@ -4,8 +4,8 @@ from pydantic import BaseModel, Field
 
 
 class SecurityHuntingQueryResults(BaseModel):
-	results: list[SecurityHuntingRowResult] = Field(alias="results",)
-	schema: list[SecuritySinglePropertySchema] = Field(alias="schema",)
+	results: Optional[list[SecurityHuntingRowResult]] = Field(default=None,alias="results",)
+	schema: Optional[list[SecuritySinglePropertySchema]] = Field(default=None,alias="schema",)
 	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
 
 from .security_hunting_row_result import SecurityHuntingRowResult

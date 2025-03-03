@@ -15,7 +15,7 @@ class BookingAppointment(BaseModel):
 	customerName: Optional[str] = Field(default=None,alias="customerName",)
 	customerNotes: Optional[str] = Field(default=None,alias="customerNotes",)
 	customerPhone: Optional[str] = Field(default=None,alias="customerPhone",)
-	customers: list[BookingCustomerInformationBase] = Field(alias="customers",)
+	customers: Optional[list[BookingCustomerInformationBase]] = Field(default=None,alias="customers",)
 	customerTimeZone: Optional[str] = Field(default=None,alias="customerTimeZone",)
 	duration: Optional[str] = Field(default=None,alias="duration",)
 	endDateTime: Optional[DateTimeTimeZone] = Field(default=None,alias="endDateTime",)
@@ -28,16 +28,16 @@ class BookingAppointment(BaseModel):
 	optOutOfCustomerEmail: Optional[bool] = Field(default=None,alias="optOutOfCustomerEmail",)
 	postBuffer: Optional[str] = Field(default=None,alias="postBuffer",)
 	preBuffer: Optional[str] = Field(default=None,alias="preBuffer",)
-	price: Optional[float] | Optional[str] | ReferenceNumeric
+	price: float | str | ReferenceNumeric
 	priceType: Optional[BookingPriceType] = Field(default=None,alias="priceType",)
-	reminders: list[BookingReminder] = Field(alias="reminders",)
+	reminders: Optional[list[BookingReminder]] = Field(default=None,alias="reminders",)
 	selfServiceAppointmentId: Optional[str] = Field(default=None,alias="selfServiceAppointmentId",)
 	serviceId: Optional[str] = Field(default=None,alias="serviceId",)
 	serviceLocation: Optional[Location] = Field(default=None,alias="serviceLocation",)
 	serviceName: Optional[str] = Field(default=None,alias="serviceName",)
 	serviceNotes: Optional[str] = Field(default=None,alias="serviceNotes",)
 	smsNotificationsEnabled: Optional[bool] = Field(default=None,alias="smsNotificationsEnabled",)
-	staffMemberIds: list[Optional[str]] = Field(alias="staffMemberIds",)
+	staffMemberIds: Optional[list[str]] = Field(default=None,alias="staffMemberIds",)
 	startDateTime: Optional[DateTimeTimeZone] = Field(default=None,alias="startDateTime",)
 
 from .booking_customer_information_base import BookingCustomerInformationBase

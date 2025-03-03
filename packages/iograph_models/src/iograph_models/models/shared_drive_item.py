@@ -20,7 +20,7 @@ class SharedDriveItem(BaseModel):
 	lastModifiedByUser: Optional[User] = Field(default=None,alias="lastModifiedByUser",)
 	owner: Optional[IdentitySet] = Field(default=None,alias="owner",)
 	driveItem: Optional[DriveItem] = Field(default=None,alias="driveItem",)
-	items: list[DriveItem] = Field(alias="items",)
+	items: Optional[list[DriveItem]] = Field(default=None,alias="items",)
 	list: Optional[List] = Field(default=None,alias="list",)
 	listItem: Optional[ListItem] = Field(default=None,alias="listItem",)
 	permission: Optional[Permission] = Field(default=None,alias="permission",)

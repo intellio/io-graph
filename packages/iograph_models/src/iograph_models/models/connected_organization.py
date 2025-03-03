@@ -10,11 +10,11 @@ class ConnectedOrganization(BaseModel):
 	createdDateTime: Optional[datetime] = Field(default=None,alias="createdDateTime",)
 	description: Optional[str] = Field(default=None,alias="description",)
 	displayName: Optional[str] = Field(default=None,alias="displayName",)
-	identitySources: list[IdentitySource] = Field(alias="identitySources",)
+	identitySources: Optional[list[IdentitySource]] = Field(default=None,alias="identitySources",)
 	modifiedDateTime: Optional[datetime] = Field(default=None,alias="modifiedDateTime",)
 	state: Optional[ConnectedOrganizationState] = Field(default=None,alias="state",)
-	externalSponsors: list[DirectoryObject] = Field(alias="externalSponsors",)
-	internalSponsors: list[DirectoryObject] = Field(alias="internalSponsors",)
+	externalSponsors: Optional[list[DirectoryObject]] = Field(default=None,alias="externalSponsors",)
+	internalSponsors: Optional[list[DirectoryObject]] = Field(default=None,alias="internalSponsors",)
 
 from .identity_source import IdentitySource
 from .connected_organization_state import ConnectedOrganizationState

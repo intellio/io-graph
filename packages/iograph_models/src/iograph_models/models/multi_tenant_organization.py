@@ -12,7 +12,7 @@ class MultiTenantOrganization(BaseModel):
 	displayName: Optional[str] = Field(default=None,alias="displayName",)
 	state: Optional[MultiTenantOrganizationState] = Field(default=None,alias="state",)
 	joinRequest: Optional[MultiTenantOrganizationJoinRequestRecord] = Field(default=None,alias="joinRequest",)
-	tenants: list[MultiTenantOrganizationMember] = Field(alias="tenants",)
+	tenants: Optional[list[MultiTenantOrganizationMember]] = Field(default=None,alias="tenants",)
 
 from .multi_tenant_organization_state import MultiTenantOrganizationState
 from .multi_tenant_organization_join_request_record import MultiTenantOrganizationJoinRequestRecord

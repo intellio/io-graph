@@ -7,7 +7,7 @@ from pydantic import BaseModel, Field
 class ServiceHealthIssue(BaseModel):
 	id: Optional[str] = Field(default=None,alias="id",)
 	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	details: list[KeyValuePair] = Field(alias="details",)
+	details: Optional[list[KeyValuePair]] = Field(default=None,alias="details",)
 	endDateTime: Optional[datetime] = Field(default=None,alias="endDateTime",)
 	lastModifiedDateTime: Optional[datetime] = Field(default=None,alias="lastModifiedDateTime",)
 	startDateTime: Optional[datetime] = Field(default=None,alias="startDateTime",)
@@ -18,7 +18,7 @@ class ServiceHealthIssue(BaseModel):
 	impactDescription: Optional[str] = Field(default=None,alias="impactDescription",)
 	isResolved: Optional[bool] = Field(default=None,alias="isResolved",)
 	origin: Optional[ServiceHealthOrigin] = Field(default=None,alias="origin",)
-	posts: list[ServiceHealthIssuePost] = Field(alias="posts",)
+	posts: Optional[list[ServiceHealthIssuePost]] = Field(default=None,alias="posts",)
 	service: Optional[str] = Field(default=None,alias="service",)
 	status: Optional[ServiceHealthStatus] = Field(default=None,alias="status",)
 

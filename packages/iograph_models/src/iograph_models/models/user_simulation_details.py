@@ -11,9 +11,9 @@ class UserSimulationDetails(BaseModel):
 	inProgressTrainingsCount: Optional[int] = Field(default=None,alias="inProgressTrainingsCount",)
 	isCompromised: Optional[bool] = Field(default=None,alias="isCompromised",)
 	reportedPhishDateTime: Optional[datetime] = Field(default=None,alias="reportedPhishDateTime",)
-	simulationEvents: list[UserSimulationEventInfo] = Field(alias="simulationEvents",)
+	simulationEvents: Optional[list[UserSimulationEventInfo]] = Field(default=None,alias="simulationEvents",)
 	simulationUser: Optional[AttackSimulationUser] = Field(default=None,alias="simulationUser",)
-	trainingEvents: list[UserTrainingEventInfo] = Field(alias="trainingEvents",)
+	trainingEvents: Optional[list[UserTrainingEventInfo]] = Field(default=None,alias="trainingEvents",)
 	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
 
 from .user_simulation_event_info import UserSimulationEventInfo

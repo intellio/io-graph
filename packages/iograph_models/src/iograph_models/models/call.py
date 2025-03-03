@@ -9,7 +9,7 @@ class Call(BaseModel):
 	callbackUri: Optional[str] = Field(default=None,alias="callbackUri",)
 	callChainId: Optional[str] = Field(default=None,alias="callChainId",)
 	callOptions: Optional[CallOptions] = Field(default=None,alias="callOptions",)
-	callRoutes: list[CallRoute] = Field(alias="callRoutes",)
+	callRoutes: Optional[list[CallRoute]] = Field(default=None,alias="callRoutes",)
 	chatInfo: Optional[ChatInfo] = Field(default=None,alias="chatInfo",)
 	direction: Optional[CallDirection] = Field(default=None,alias="direction",)
 	incomingContext: Optional[IncomingContext] = Field(default=None,alias="incomingContext",)
@@ -22,14 +22,14 @@ class Call(BaseModel):
 	source: Optional[ParticipantInfo] = Field(default=None,alias="source",)
 	state: Optional[CallState] = Field(default=None,alias="state",)
 	subject: Optional[str] = Field(default=None,alias="subject",)
-	targets: list[InvitationParticipantInfo] = Field(alias="targets",)
+	targets: Optional[list[InvitationParticipantInfo]] = Field(default=None,alias="targets",)
 	tenantId: Optional[str] = Field(default=None,alias="tenantId",)
 	toneInfo: Optional[ToneInfo] = Field(default=None,alias="toneInfo",)
 	transcription: Optional[CallTranscriptionInfo] = Field(default=None,alias="transcription",)
-	audioRoutingGroups: list[AudioRoutingGroup] = Field(alias="audioRoutingGroups",)
-	contentSharingSessions: list[ContentSharingSession] = Field(alias="contentSharingSessions",)
-	operations: list[CommsOperation] = Field(alias="operations",)
-	participants: list[Participant] = Field(alias="participants",)
+	audioRoutingGroups: Optional[list[AudioRoutingGroup]] = Field(default=None,alias="audioRoutingGroups",)
+	contentSharingSessions: Optional[list[ContentSharingSession]] = Field(default=None,alias="contentSharingSessions",)
+	operations: Optional[list[CommsOperation]] = Field(default=None,alias="operations",)
+	participants: Optional[list[Participant]] = Field(default=None,alias="participants",)
 
 from .call_options import CallOptions
 from .call_route import CallRoute

@@ -16,8 +16,8 @@ class EndUserNotification(BaseModel):
 	notificationType: Optional[EndUserNotificationType] = Field(default=None,alias="notificationType",)
 	source: Optional[SimulationContentSource] = Field(default=None,alias="source",)
 	status: Optional[SimulationContentStatus] = Field(default=None,alias="status",)
-	supportedLocales: list[Optional[str]] = Field(alias="supportedLocales",)
-	details: list[EndUserNotificationDetail] = Field(alias="details",)
+	supportedLocales: Optional[list[str]] = Field(default=None,alias="supportedLocales",)
+	details: Optional[list[EndUserNotificationDetail]] = Field(default=None,alias="details",)
 
 from .email_identity import EmailIdentity
 from .email_identity import EmailIdentity

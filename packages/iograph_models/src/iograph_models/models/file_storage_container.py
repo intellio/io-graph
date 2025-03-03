@@ -18,7 +18,7 @@ class FileStorageContainer(BaseModel):
 	status: Optional[FileStorageContainerStatus] = Field(default=None,alias="status",)
 	viewpoint: Optional[FileStorageContainerViewpoint] = Field(default=None,alias="viewpoint",)
 	drive: Optional[Drive] = Field(default=None,alias="drive",)
-	permissions: list[Permission] = Field(alias="permissions",)
+	permissions: Optional[list[Permission]] = Field(default=None,alias="permissions",)
 	recycleBin: Optional[RecycleBin] = Field(default=None,alias="recycleBin",)
 
 from .file_storage_container_custom_property_dictionary import FileStorageContainerCustomPropertyDictionary

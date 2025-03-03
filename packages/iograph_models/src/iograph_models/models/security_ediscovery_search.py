@@ -15,11 +15,11 @@ class SecurityEdiscoverySearch(BaseModel):
 	lastModifiedBy: Optional[IdentitySet] = Field(default=None,alias="lastModifiedBy",)
 	lastModifiedDateTime: Optional[datetime] = Field(default=None,alias="lastModifiedDateTime",)
 	dataSourceScopes: Optional[SecurityDataSourceScopes] = Field(default=None,alias="dataSourceScopes",)
-	additionalSources: list[SecurityDataSource] = Field(alias="additionalSources",)
+	additionalSources: Optional[list[SecurityDataSource]] = Field(default=None,alias="additionalSources",)
 	addToReviewSetOperation: Optional[SecurityEdiscoveryAddToReviewSetOperation] = Field(default=None,alias="addToReviewSetOperation",)
-	custodianSources: list[SecurityDataSource] = Field(alias="custodianSources",)
+	custodianSources: Optional[list[SecurityDataSource]] = Field(default=None,alias="custodianSources",)
 	lastEstimateStatisticsOperation: Optional[SecurityEdiscoveryEstimateOperation] = Field(default=None,alias="lastEstimateStatisticsOperation",)
-	noncustodialSources: list[SecurityEdiscoveryNoncustodialDataSource] = Field(alias="noncustodialSources",)
+	noncustodialSources: Optional[list[SecurityEdiscoveryNoncustodialDataSource]] = Field(default=None,alias="noncustodialSources",)
 
 from .identity_set import IdentitySet
 from .identity_set import IdentitySet

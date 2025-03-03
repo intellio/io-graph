@@ -4,7 +4,7 @@ from pydantic import BaseModel, Field
 
 
 class Get_staff_availabilityPostRequest(BaseModel):
-	staffIds: list[str] = Field(alias="staffIds",)
+	staffIds: Optional[list[str]] = Field(default=None,alias="staffIds",)
 	startDateTime: Optional[DateTimeTimeZone] = Field(default=None,alias="startDateTime",)
 	endDateTime: Optional[DateTimeTimeZone] = Field(default=None,alias="endDateTime",)
 

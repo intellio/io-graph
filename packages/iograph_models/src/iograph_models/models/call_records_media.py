@@ -9,7 +9,7 @@ class CallRecordsMedia(BaseModel):
 	callerDevice: Optional[CallRecordsDeviceInfo] = Field(default=None,alias="callerDevice",)
 	callerNetwork: Optional[CallRecordsNetworkInfo] = Field(default=None,alias="callerNetwork",)
 	label: Optional[str] = Field(default=None,alias="label",)
-	streams: list[CallRecordsMediaStream] = Field(alias="streams",)
+	streams: Optional[list[CallRecordsMediaStream]] = Field(default=None,alias="streams",)
 	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
 
 from .call_records_device_info import CallRecordsDeviceInfo

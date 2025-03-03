@@ -4,8 +4,8 @@ from pydantic import BaseModel, Field
 
 
 class SearchHitsContainer(BaseModel):
-	aggregations: list[SearchAggregation] = Field(alias="aggregations",)
-	hits: list[SearchHit] = Field(alias="hits",)
+	aggregations: Optional[list[SearchAggregation]] = Field(default=None,alias="aggregations",)
+	hits: Optional[list[SearchHit]] = Field(default=None,alias="hits",)
 	moreResultsAvailable: Optional[bool] = Field(default=None,alias="moreResultsAvailable",)
 	total: Optional[int] = Field(default=None,alias="total",)
 	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)

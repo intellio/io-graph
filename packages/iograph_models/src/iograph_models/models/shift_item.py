@@ -11,7 +11,7 @@ class ShiftItem(BaseModel):
 	startDateTime: Optional[datetime] = Field(default=None,alias="startDateTime",)
 	theme: Optional[ScheduleEntityTheme] = Field(default=None,alias="theme",)
 	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	activities: list[ShiftActivity] = Field(alias="activities",)
+	activities: Optional[list[ShiftActivity]] = Field(default=None,alias="activities",)
 	displayName: Optional[str] = Field(default=None,alias="displayName",)
 	notes: Optional[str] = Field(default=None,alias="notes",)
 

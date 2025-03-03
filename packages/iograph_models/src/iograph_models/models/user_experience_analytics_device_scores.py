@@ -6,15 +6,15 @@ from pydantic import BaseModel, Field
 class UserExperienceAnalyticsDeviceScores(BaseModel):
 	id: Optional[str] = Field(default=None,alias="id",)
 	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	appReliabilityScore: Optional[float] | Optional[str] | ReferenceNumeric
-	batteryHealthScore: Optional[float] | Optional[str] | ReferenceNumeric
+	appReliabilityScore: float | str | ReferenceNumeric
+	batteryHealthScore: float | str | ReferenceNumeric
 	deviceName: Optional[str] = Field(default=None,alias="deviceName",)
-	endpointAnalyticsScore: Optional[float] | Optional[str] | ReferenceNumeric
+	endpointAnalyticsScore: float | str | ReferenceNumeric
 	healthStatus: Optional[UserExperienceAnalyticsHealthState] = Field(default=None,alias="healthStatus",)
 	manufacturer: Optional[str] = Field(default=None,alias="manufacturer",)
 	model: Optional[str] = Field(default=None,alias="model",)
-	startupPerformanceScore: Optional[float] | Optional[str] | ReferenceNumeric
-	workFromAnywhereScore: Optional[float] | Optional[str] | ReferenceNumeric
+	startupPerformanceScore: float | str | ReferenceNumeric
+	workFromAnywhereScore: float | str | ReferenceNumeric
 
 from .reference_numeric import ReferenceNumeric
 from .reference_numeric import ReferenceNumeric

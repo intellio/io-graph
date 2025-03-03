@@ -5,7 +5,7 @@ from pydantic import BaseModel, Field
 
 class UserRegistrationMethodSummary(BaseModel):
 	totalUserCount: Optional[int] = Field(default=None,alias="totalUserCount",)
-	userRegistrationMethodCounts: list[UserRegistrationMethodCount] = Field(alias="userRegistrationMethodCounts",)
+	userRegistrationMethodCounts: Optional[list[UserRegistrationMethodCount]] = Field(default=None,alias="userRegistrationMethodCounts",)
 	userRoles: Optional[IncludedUserRoles] = Field(default=None,alias="userRoles",)
 	userTypes: Optional[IncludedUserTypes] = Field(default=None,alias="userTypes",)
 	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)

@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field
 class AttributeMappingFunctionSchema(BaseModel):
 	id: Optional[str] = Field(default=None,alias="id",)
 	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	parameters: list[AttributeMappingParameterSchema] = Field(alias="parameters",)
+	parameters: Optional[list[AttributeMappingParameterSchema]] = Field(default=None,alias="parameters",)
 
 from .attribute_mapping_parameter_schema import AttributeMappingParameterSchema
 

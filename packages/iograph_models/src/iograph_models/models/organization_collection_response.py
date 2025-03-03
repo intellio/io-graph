@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field
 class OrganizationCollectionResponse(BaseModel):
 	odata_count: Optional[int] = Field(default=None,alias="@odata.count",)
 	odata_nextLink: Optional[str] = Field(default=None,alias="@odata.nextLink",)
-	value: list[Organization] = Field(alias="value",)
+	value: Optional[list[Organization]] = Field(default=None,alias="value",)
 
 from .organization import Organization
 

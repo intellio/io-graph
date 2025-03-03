@@ -16,7 +16,7 @@ class SecuritySensor(BaseModel):
 	sensorType: Optional[SecuritySensorType] = Field(default=None,alias="sensorType",)
 	settings: Optional[SecuritySensorSettings] = Field(default=None,alias="settings",)
 	version: Optional[str] = Field(default=None,alias="version",)
-	healthIssues: list[SecurityHealthIssue] = Field(alias="healthIssues",)
+	healthIssues: Optional[list[SecurityHealthIssue]] = Field(default=None,alias="healthIssues",)
 
 from .security_deployment_status import SecurityDeploymentStatus
 from .security_sensor_health_status import SecuritySensorHealthStatus

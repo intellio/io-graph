@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field
 class IdentityGovernanceCustomTaskExtensionCollectionResponse(BaseModel):
 	odata_count: Optional[int] = Field(default=None,alias="@odata.count",)
 	odata_nextLink: Optional[str] = Field(default=None,alias="@odata.nextLink",)
-	value: list[IdentityGovernanceCustomTaskExtension] = Field(alias="value",)
+	value: Optional[list[IdentityGovernanceCustomTaskExtension]] = Field(default=None,alias="value",)
 
 from .identity_governance_custom_task_extension import IdentityGovernanceCustomTaskExtension
 

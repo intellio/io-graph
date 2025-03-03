@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field
 class DataPolicyOperationCollectionResponse(BaseModel):
 	odata_count: Optional[int] = Field(default=None,alias="@odata.count",)
 	odata_nextLink: Optional[str] = Field(default=None,alias="@odata.nextLink",)
-	value: list[DataPolicyOperation] = Field(alias="value",)
+	value: Optional[list[DataPolicyOperation]] = Field(default=None,alias="value",)
 
 from .data_policy_operation import DataPolicyOperation
 

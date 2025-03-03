@@ -4,9 +4,9 @@ from pydantic import BaseModel, Field
 
 
 class SearchAnswerKeyword(BaseModel):
-	keywords: list[Optional[str]] = Field(alias="keywords",)
+	keywords: Optional[list[str]] = Field(default=None,alias="keywords",)
 	matchSimilarKeywords: Optional[bool] = Field(default=None,alias="matchSimilarKeywords",)
-	reservedKeywords: list[Optional[str]] = Field(alias="reservedKeywords",)
+	reservedKeywords: Optional[list[str]] = Field(default=None,alias="reservedKeywords",)
 	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
 
 

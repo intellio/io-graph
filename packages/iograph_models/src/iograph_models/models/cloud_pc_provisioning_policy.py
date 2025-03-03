@@ -12,7 +12,7 @@ class CloudPcProvisioningPolicy(BaseModel):
 	cloudPcNamingTemplate: Optional[str] = Field(default=None,alias="cloudPcNamingTemplate",)
 	description: Optional[str] = Field(default=None,alias="description",)
 	displayName: Optional[str] = Field(default=None,alias="displayName",)
-	domainJoinConfigurations: list[CloudPcDomainJoinConfiguration] = Field(alias="domainJoinConfigurations",)
+	domainJoinConfigurations: Optional[list[CloudPcDomainJoinConfiguration]] = Field(default=None,alias="domainJoinConfigurations",)
 	enableSingleSignOn: Optional[bool] = Field(default=None,alias="enableSingleSignOn",)
 	gracePeriodInHours: Optional[int] = Field(default=None,alias="gracePeriodInHours",)
 	imageDisplayName: Optional[str] = Field(default=None,alias="imageDisplayName",)
@@ -22,7 +22,7 @@ class CloudPcProvisioningPolicy(BaseModel):
 	microsoftManagedDesktop: Optional[MicrosoftManagedDesktop] = Field(default=None,alias="microsoftManagedDesktop",)
 	provisioningType: Optional[CloudPcProvisioningType] = Field(default=None,alias="provisioningType",)
 	windowsSetting: Optional[CloudPcWindowsSetting] = Field(default=None,alias="windowsSetting",)
-	assignments: list[CloudPcProvisioningPolicyAssignment] = Field(alias="assignments",)
+	assignments: Optional[list[CloudPcProvisioningPolicyAssignment]] = Field(default=None,alias="assignments",)
 
 from .cloud_pc_provisioning_policy_autopatch import CloudPcProvisioningPolicyAutopatch
 from .cloud_pc_domain_join_configuration import CloudPcDomainJoinConfiguration

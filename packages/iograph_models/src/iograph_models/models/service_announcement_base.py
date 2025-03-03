@@ -9,7 +9,7 @@ from pydantic import BaseModel, Field
 class ServiceAnnouncementBase(BaseModel):
 	id: Optional[str] = Field(default=None,alias="id",)
 	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	details: list[KeyValuePair] = Field(alias="details",)
+	details: Optional[list[KeyValuePair]] = Field(default=None,alias="details",)
 	endDateTime: Optional[datetime] = Field(default=None,alias="endDateTime",)
 	lastModifiedDateTime: Optional[datetime] = Field(default=None,alias="lastModifiedDateTime",)
 	startDateTime: Optional[datetime] = Field(default=None,alias="startDateTime",)

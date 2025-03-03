@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field
 class ExternalConnectorsPropertyRuleCollectionResponse(BaseModel):
 	odata_count: Optional[int] = Field(default=None,alias="@odata.count",)
 	odata_nextLink: Optional[str] = Field(default=None,alias="@odata.nextLink",)
-	value: list[ExternalConnectorsPropertyRule] = Field(alias="value",)
+	value: Optional[list[ExternalConnectorsPropertyRule]] = Field(default=None,alias="value",)
 
 from .external_connectors_property_rule import ExternalConnectorsPropertyRule
 

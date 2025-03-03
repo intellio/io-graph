@@ -18,10 +18,10 @@ class ManagedEBook(BaseModel):
 	privacyInformationUrl: Optional[str] = Field(default=None,alias="privacyInformationUrl",)
 	publishedDateTime: Optional[datetime] = Field(default=None,alias="publishedDateTime",)
 	publisher: Optional[str] = Field(default=None,alias="publisher",)
-	assignments: list[ManagedEBookAssignment] = Field(alias="assignments",)
-	deviceStates: list[DeviceInstallState] = Field(alias="deviceStates",)
+	assignments: Optional[list[ManagedEBookAssignment]] = Field(default=None,alias="assignments",)
+	deviceStates: Optional[list[DeviceInstallState]] = Field(default=None,alias="deviceStates",)
 	installSummary: Optional[EBookInstallSummary] = Field(default=None,alias="installSummary",)
-	userStateSummary: list[UserInstallStateSummary] = Field(alias="userStateSummary",)
+	userStateSummary: Optional[list[UserInstallStateSummary]] = Field(default=None,alias="userStateSummary",)
 
 	@model_validator(mode="wrap")
 	def convert_discriminator_class(cls, data: Any, handler: ModelWrapValidatorHandler[Self]) -> Self:

@@ -11,7 +11,7 @@ class UserSettings(BaseModel):
 	itemInsights: Optional[UserInsightsSettings] = Field(default=None,alias="itemInsights",)
 	shiftPreferences: Optional[ShiftPreferences] = Field(default=None,alias="shiftPreferences",)
 	storage: Optional[UserStorage] = Field(default=None,alias="storage",)
-	windows: list[WindowsSetting] = Field(alias="windows",)
+	windows: Optional[list[WindowsSetting]] = Field(default=None,alias="windows",)
 
 from .user_insights_settings import UserInsightsSettings
 from .shift_preferences import ShiftPreferences

@@ -43,13 +43,13 @@ class DriveItem(BaseModel):
 	video: Optional[Video] = Field(default=None,alias="video",)
 	webDavUrl: Optional[str] = Field(default=None,alias="webDavUrl",)
 	analytics: Optional[ItemAnalytics] = Field(default=None,alias="analytics",)
-	children: list[DriveItem] = Field(alias="children",)
+	children: Optional[list[DriveItem]] = Field(default=None,alias="children",)
 	listItem: Optional[ListItem] = Field(default=None,alias="listItem",)
-	permissions: list[Permission] = Field(alias="permissions",)
+	permissions: Optional[list[Permission]] = Field(default=None,alias="permissions",)
 	retentionLabel: Optional[ItemRetentionLabel] = Field(default=None,alias="retentionLabel",)
-	subscriptions: list[Subscription] = Field(alias="subscriptions",)
-	thumbnails: list[ThumbnailSet] = Field(alias="thumbnails",)
-	versions: list[DriveItemVersion] = Field(alias="versions",)
+	subscriptions: Optional[list[Subscription]] = Field(default=None,alias="subscriptions",)
+	thumbnails: Optional[list[ThumbnailSet]] = Field(default=None,alias="thumbnails",)
+	versions: Optional[list[DriveItemVersion]] = Field(default=None,alias="versions",)
 	workbook: Optional[Workbook] = Field(default=None,alias="workbook",)
 
 from .identity_set import IdentitySet

@@ -4,9 +4,9 @@ from pydantic import BaseModel, Field
 
 
 class ContentCustomization(BaseModel):
-	attributeCollection: list[KeyValue] = Field(alias="attributeCollection",)
+	attributeCollection: Optional[list[KeyValue]] = Field(default=None,alias="attributeCollection",)
 	attributeCollectionRelativeUrl: Optional[str] = Field(default=None,alias="attributeCollectionRelativeUrl",)
-	registrationCampaign: list[KeyValue] = Field(alias="registrationCampaign",)
+	registrationCampaign: Optional[list[KeyValue]] = Field(default=None,alias="registrationCampaign",)
 	registrationCampaignRelativeUrl: Optional[str] = Field(default=None,alias="registrationCampaignRelativeUrl",)
 	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
 

@@ -5,7 +5,7 @@ from pydantic import BaseModel, Field
 
 class ApprovalSettings(BaseModel):
 	approvalMode: Optional[str] = Field(default=None,alias="approvalMode",)
-	approvalStages: list[UnifiedApprovalStage] = Field(alias="approvalStages",)
+	approvalStages: Optional[list[UnifiedApprovalStage]] = Field(default=None,alias="approvalStages",)
 	isApprovalRequired: Optional[bool] = Field(default=None,alias="isApprovalRequired",)
 	isApprovalRequiredForExtension: Optional[bool] = Field(default=None,alias="isApprovalRequiredForExtension",)
 	isRequestorJustificationRequired: Optional[bool] = Field(default=None,alias="isRequestorJustificationRequired",)

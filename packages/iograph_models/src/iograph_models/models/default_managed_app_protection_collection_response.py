@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field
 class DefaultManagedAppProtectionCollectionResponse(BaseModel):
 	odata_count: Optional[int] = Field(default=None,alias="@odata.count",)
 	odata_nextLink: Optional[str] = Field(default=None,alias="@odata.nextLink",)
-	value: list[DefaultManagedAppProtection] = Field(alias="value",)
+	value: Optional[list[DefaultManagedAppProtection]] = Field(default=None,alias="value",)
 
 from .default_managed_app_protection import DefaultManagedAppProtection
 

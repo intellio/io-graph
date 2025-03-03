@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field
 class EmployeeExperienceUser(BaseModel):
 	id: Optional[str] = Field(default=None,alias="id",)
 	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	learningCourseActivities: list[LearningCourseActivity] = Field(alias="learningCourseActivities",)
+	learningCourseActivities: Optional[list[LearningCourseActivity]] = Field(default=None,alias="learningCourseActivities",)
 
 from .learning_course_activity import LearningCourseActivity
 

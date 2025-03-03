@@ -4,9 +4,9 @@ from pydantic import BaseModel, Field
 
 
 class RestorePointSearchResponse(BaseModel):
-	noResultProtectionUnitIds: list[Optional[str]] = Field(alias="noResultProtectionUnitIds",)
+	noResultProtectionUnitIds: Optional[list[str]] = Field(default=None,alias="noResultProtectionUnitIds",)
 	searchResponseId: Optional[str] = Field(default=None,alias="searchResponseId",)
-	searchResults: list[RestorePointSearchResult] = Field(alias="searchResults",)
+	searchResults: Optional[list[RestorePointSearchResult]] = Field(default=None,alias="searchResults",)
 	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
 
 from .restore_point_search_result import RestorePointSearchResult

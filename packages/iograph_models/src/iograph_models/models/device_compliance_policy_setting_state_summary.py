@@ -16,7 +16,7 @@ class DeviceCompliancePolicySettingStateSummary(BaseModel):
 	setting: Optional[str] = Field(default=None,alias="setting",)
 	settingName: Optional[str] = Field(default=None,alias="settingName",)
 	unknownDeviceCount: Optional[int] = Field(default=None,alias="unknownDeviceCount",)
-	deviceComplianceSettingStates: list[DeviceComplianceSettingState] = Field(alias="deviceComplianceSettingStates",)
+	deviceComplianceSettingStates: Optional[list[DeviceComplianceSettingState]] = Field(default=None,alias="deviceComplianceSettingStates",)
 
 from .policy_platform_type import PolicyPlatformType
 from .device_compliance_setting_state import DeviceComplianceSettingState

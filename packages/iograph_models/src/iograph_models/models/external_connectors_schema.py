@@ -7,7 +7,7 @@ class ExternalConnectorsSchema(BaseModel):
 	id: Optional[str] = Field(default=None,alias="id",)
 	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
 	baseType: Optional[str] = Field(default=None,alias="baseType",)
-	properties: list[ExternalConnectorsProperty] = Field(alias="properties",)
+	properties: Optional[list[ExternalConnectorsProperty]] = Field(default=None,alias="properties",)
 
 from .external_connectors_property import ExternalConnectorsProperty
 

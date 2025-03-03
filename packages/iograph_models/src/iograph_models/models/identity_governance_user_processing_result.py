@@ -17,7 +17,7 @@ class IdentityGovernanceUserProcessingResult(BaseModel):
 	workflowExecutionType: Optional[IdentityGovernanceWorkflowExecutionType] = Field(default=None,alias="workflowExecutionType",)
 	workflowVersion: Optional[int] = Field(default=None,alias="workflowVersion",)
 	subject: Optional[User] = Field(default=None,alias="subject",)
-	taskProcessingResults: list[IdentityGovernanceTaskProcessingResult] = Field(alias="taskProcessingResults",)
+	taskProcessingResults: Optional[list[IdentityGovernanceTaskProcessingResult]] = Field(default=None,alias="taskProcessingResults",)
 
 from .identity_governance_lifecycle_workflow_processing_status import IdentityGovernanceLifecycleWorkflowProcessingStatus
 from .identity_governance_workflow_execution_type import IdentityGovernanceWorkflowExecutionType

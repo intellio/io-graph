@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field
 class AssignedLicenseCollectionResponse(BaseModel):
 	odata_count: Optional[int] = Field(default=None,alias="@odata.count",)
 	odata_nextLink: Optional[str] = Field(default=None,alias="@odata.nextLink",)
-	value: list[AssignedLicense] = Field(alias="value",)
+	value: Optional[list[AssignedLicense]] = Field(default=None,alias="value",)
 
 from .assigned_license import AssignedLicense
 

@@ -12,7 +12,7 @@ class DetectedApp(BaseModel):
 	publisher: Optional[str] = Field(default=None,alias="publisher",)
 	sizeInByte: Optional[int] = Field(default=None,alias="sizeInByte",)
 	version: Optional[str] = Field(default=None,alias="version",)
-	managedDevices: list[ManagedDevice] = Field(alias="managedDevices",)
+	managedDevices: Optional[list[ManagedDevice]] = Field(default=None,alias="managedDevices",)
 
 from .detected_app_platform_type import DetectedAppPlatformType
 from .managed_device import ManagedDevice

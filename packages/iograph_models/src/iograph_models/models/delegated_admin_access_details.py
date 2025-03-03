@@ -4,7 +4,7 @@ from pydantic import BaseModel, Field
 
 
 class DelegatedAdminAccessDetails(BaseModel):
-	unifiedRoles: list[UnifiedRole] = Field(alias="unifiedRoles",)
+	unifiedRoles: Optional[list[UnifiedRole]] = Field(default=None,alias="unifiedRoles",)
 	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
 
 from .unified_role import UnifiedRole

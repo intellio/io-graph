@@ -8,14 +8,14 @@ class SecureScore(BaseModel):
 	id: Optional[str] = Field(default=None,alias="id",)
 	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
 	activeUserCount: Optional[int] = Field(default=None,alias="activeUserCount",)
-	averageComparativeScores: list[AverageComparativeScore] = Field(alias="averageComparativeScores",)
+	averageComparativeScores: Optional[list[AverageComparativeScore]] = Field(default=None,alias="averageComparativeScores",)
 	azureTenantId: Optional[str] = Field(default=None,alias="azureTenantId",)
-	controlScores: list[ControlScore] = Field(alias="controlScores",)
+	controlScores: Optional[list[ControlScore]] = Field(default=None,alias="controlScores",)
 	createdDateTime: Optional[datetime] = Field(default=None,alias="createdDateTime",)
-	currentScore: Optional[float] | Optional[str] | ReferenceNumeric
-	enabledServices: list[Optional[str]] = Field(alias="enabledServices",)
+	currentScore: float | str | ReferenceNumeric
+	enabledServices: Optional[list[str]] = Field(default=None,alias="enabledServices",)
 	licensedUserCount: Optional[int] = Field(default=None,alias="licensedUserCount",)
-	maxScore: Optional[float] | Optional[str] | ReferenceNumeric
+	maxScore: float | str | ReferenceNumeric
 	vendorInformation: Optional[SecurityVendorInformation] = Field(default=None,alias="vendorInformation",)
 
 from .average_comparative_score import AverageComparativeScore

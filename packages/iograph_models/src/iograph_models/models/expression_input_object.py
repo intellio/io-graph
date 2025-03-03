@@ -5,7 +5,7 @@ from pydantic import BaseModel, Field
 
 class ExpressionInputObject(BaseModel):
 	definition: Optional[ObjectDefinition] = Field(default=None,alias="definition",)
-	properties: list[StringKeyObjectValuePair] = Field(alias="properties",)
+	properties: Optional[list[StringKeyObjectValuePair]] = Field(default=None,alias="properties",)
 	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
 
 from .object_definition import ObjectDefinition

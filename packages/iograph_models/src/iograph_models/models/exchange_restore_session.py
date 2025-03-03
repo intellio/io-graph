@@ -14,8 +14,8 @@ class ExchangeRestoreSession(BaseModel):
 	lastModifiedBy: Optional[IdentitySet] = Field(default=None,alias="lastModifiedBy",)
 	lastModifiedDateTime: Optional[datetime] = Field(default=None,alias="lastModifiedDateTime",)
 	status: Optional[RestoreSessionStatus] = Field(default=None,alias="status",)
-	granularMailboxRestoreArtifacts: list[GranularMailboxRestoreArtifact] = Field(alias="granularMailboxRestoreArtifacts",)
-	mailboxRestoreArtifacts: list[MailboxRestoreArtifact] = Field(alias="mailboxRestoreArtifacts",)
+	granularMailboxRestoreArtifacts: Optional[list[GranularMailboxRestoreArtifact]] = Field(default=None,alias="granularMailboxRestoreArtifacts",)
+	mailboxRestoreArtifacts: Optional[list[MailboxRestoreArtifact]] = Field(default=None,alias="mailboxRestoreArtifacts",)
 
 from .identity_set import IdentitySet
 from .public_error import PublicError

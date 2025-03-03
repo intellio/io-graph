@@ -10,7 +10,7 @@ class CountryNamedLocation(BaseModel):
 	createdDateTime: Optional[datetime] = Field(default=None,alias="createdDateTime",)
 	displayName: Optional[str] = Field(default=None,alias="displayName",)
 	modifiedDateTime: Optional[datetime] = Field(default=None,alias="modifiedDateTime",)
-	countriesAndRegions: list[str] = Field(alias="countriesAndRegions",)
+	countriesAndRegions: Optional[list[str]] = Field(default=None,alias="countriesAndRegions",)
 	countryLookupMethod: Optional[CountryLookupMethodType] = Field(default=None,alias="countryLookupMethod",)
 	includeUnknownCountriesAndRegions: Optional[bool] = Field(default=None,alias="includeUnknownCountriesAndRegions",)
 

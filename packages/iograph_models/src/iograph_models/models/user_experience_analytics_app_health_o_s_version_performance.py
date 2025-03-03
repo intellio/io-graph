@@ -10,7 +10,7 @@ class UserExperienceAnalyticsAppHealthOSVersionPerformance(BaseModel):
 	meanTimeToFailureInMinutes: Optional[int] = Field(default=None,alias="meanTimeToFailureInMinutes",)
 	osBuildNumber: Optional[str] = Field(default=None,alias="osBuildNumber",)
 	osVersion: Optional[str] = Field(default=None,alias="osVersion",)
-	osVersionAppHealthScore: Optional[float] | Optional[str] | ReferenceNumeric
+	osVersionAppHealthScore: float | str | ReferenceNumeric
 
 from .reference_numeric import ReferenceNumeric
 

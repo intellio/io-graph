@@ -4,8 +4,8 @@ from pydantic import BaseModel, Field
 
 
 class ResourceAction(BaseModel):
-	allowedResourceActions: list[Optional[str]] = Field(alias="allowedResourceActions",)
-	notAllowedResourceActions: list[Optional[str]] = Field(alias="notAllowedResourceActions",)
+	allowedResourceActions: Optional[list[str]] = Field(default=None,alias="allowedResourceActions",)
+	notAllowedResourceActions: Optional[list[str]] = Field(default=None,alias="notAllowedResourceActions",)
 	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
 
 

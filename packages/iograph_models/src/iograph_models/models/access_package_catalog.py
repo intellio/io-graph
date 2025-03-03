@@ -14,11 +14,11 @@ class AccessPackageCatalog(BaseModel):
 	isExternallyVisible: Optional[bool] = Field(default=None,alias="isExternallyVisible",)
 	modifiedDateTime: Optional[datetime] = Field(default=None,alias="modifiedDateTime",)
 	state: Optional[AccessPackageCatalogState] = Field(default=None,alias="state",)
-	accessPackages: list[AccessPackage] = Field(alias="accessPackages",)
-	customWorkflowExtensions: list[CustomCalloutExtension] = Field(alias="customWorkflowExtensions",)
-	resourceRoles: list[AccessPackageResourceRole] = Field(alias="resourceRoles",)
-	resources: list[AccessPackageResource] = Field(alias="resources",)
-	resourceScopes: list[AccessPackageResourceScope] = Field(alias="resourceScopes",)
+	accessPackages: Optional[list[AccessPackage]] = Field(default=None,alias="accessPackages",)
+	customWorkflowExtensions: Optional[list[CustomCalloutExtension]] = Field(default=None,alias="customWorkflowExtensions",)
+	resourceRoles: Optional[list[AccessPackageResourceRole]] = Field(default=None,alias="resourceRoles",)
+	resources: Optional[list[AccessPackageResource]] = Field(default=None,alias="resources",)
+	resourceScopes: Optional[list[AccessPackageResourceScope]] = Field(default=None,alias="resourceScopes",)
 
 from .access_package_catalog_type import AccessPackageCatalogType
 from .access_package_catalog_state import AccessPackageCatalogState

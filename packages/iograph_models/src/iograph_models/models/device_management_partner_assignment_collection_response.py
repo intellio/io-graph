@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field
 class DeviceManagementPartnerAssignmentCollectionResponse(BaseModel):
 	odata_count: Optional[int] = Field(default=None,alias="@odata.count",)
 	odata_nextLink: Optional[str] = Field(default=None,alias="@odata.nextLink",)
-	value: list[DeviceManagementPartnerAssignment] = Field(alias="value",)
+	value: Optional[list[DeviceManagementPartnerAssignment]] = Field(default=None,alias="value",)
 
 from .device_management_partner_assignment import DeviceManagementPartnerAssignment
 

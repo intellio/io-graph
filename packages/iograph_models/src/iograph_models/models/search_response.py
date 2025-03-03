@@ -4,10 +4,10 @@ from pydantic import BaseModel, Field
 
 
 class SearchResponse(BaseModel):
-	hitsContainers: list[SearchHitsContainer] = Field(alias="hitsContainers",)
+	hitsContainers: Optional[list[SearchHitsContainer]] = Field(default=None,alias="hitsContainers",)
 	queryAlterationResponse: Optional[AlterationResponse] = Field(default=None,alias="queryAlterationResponse",)
 	resultTemplates: Optional[ResultTemplateDictionary] = Field(default=None,alias="resultTemplates",)
-	searchTerms: list[Optional[str]] = Field(alias="searchTerms",)
+	searchTerms: Optional[list[str]] = Field(default=None,alias="searchTerms",)
 	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
 
 from .search_hits_container import SearchHitsContainer

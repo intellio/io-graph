@@ -6,9 +6,9 @@ from pydantic import BaseModel, Field
 class OnlineMeetingInfo(BaseModel):
 	conferenceId: Optional[str] = Field(default=None,alias="conferenceId",)
 	joinUrl: Optional[str] = Field(default=None,alias="joinUrl",)
-	phones: list[Phone] = Field(alias="phones",)
+	phones: Optional[list[Phone]] = Field(default=None,alias="phones",)
 	quickDial: Optional[str] = Field(default=None,alias="quickDial",)
-	tollFreeNumbers: list[Optional[str]] = Field(alias="tollFreeNumbers",)
+	tollFreeNumbers: Optional[list[str]] = Field(default=None,alias="tollFreeNumbers",)
 	tollNumber: Optional[str] = Field(default=None,alias="tollNumber",)
 	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
 

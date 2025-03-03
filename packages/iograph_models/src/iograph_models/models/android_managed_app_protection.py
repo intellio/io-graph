@@ -12,7 +12,7 @@ class AndroidManagedAppProtection(BaseModel):
 	displayName: Optional[str] = Field(default=None,alias="displayName",)
 	lastModifiedDateTime: Optional[datetime] = Field(default=None,alias="lastModifiedDateTime",)
 	version: Optional[str] = Field(default=None,alias="version",)
-	allowedDataStorageLocations: list[ManagedAppDataStorageLocation] = Field(alias="allowedDataStorageLocations",)
+	allowedDataStorageLocations: Optional[list[ManagedAppDataStorageLocation]] = Field(default=None,alias="allowedDataStorageLocations",)
 	allowedInboundDataTransferSources: Optional[ManagedAppDataTransferLevel] = Field(default=None,alias="allowedInboundDataTransferSources",)
 	allowedOutboundClipboardSharingLevel: Optional[ManagedAppClipboardSharingLevel] = Field(default=None,alias="allowedOutboundClipboardSharingLevel",)
 	allowedOutboundDataTransferDestinations: Optional[ManagedAppDataTransferLevel] = Field(default=None,alias="allowedOutboundDataTransferDestinations",)
@@ -40,7 +40,7 @@ class AndroidManagedAppProtection(BaseModel):
 	saveAsBlocked: Optional[bool] = Field(default=None,alias="saveAsBlocked",)
 	simplePinBlocked: Optional[bool] = Field(default=None,alias="simplePinBlocked",)
 	isAssigned: Optional[bool] = Field(default=None,alias="isAssigned",)
-	assignments: list[TargetedManagedAppPolicyAssignment] = Field(alias="assignments",)
+	assignments: Optional[list[TargetedManagedAppPolicyAssignment]] = Field(default=None,alias="assignments",)
 	customBrowserDisplayName: Optional[str] = Field(default=None,alias="customBrowserDisplayName",)
 	customBrowserPackageId: Optional[str] = Field(default=None,alias="customBrowserPackageId",)
 	deployedAppCount: Optional[int] = Field(default=None,alias="deployedAppCount",)
@@ -49,7 +49,7 @@ class AndroidManagedAppProtection(BaseModel):
 	minimumRequiredPatchVersion: Optional[str] = Field(default=None,alias="minimumRequiredPatchVersion",)
 	minimumWarningPatchVersion: Optional[str] = Field(default=None,alias="minimumWarningPatchVersion",)
 	screenCaptureBlocked: Optional[bool] = Field(default=None,alias="screenCaptureBlocked",)
-	apps: list[ManagedMobileApp] = Field(alias="apps",)
+	apps: Optional[list[ManagedMobileApp]] = Field(default=None,alias="apps",)
 	deploymentSummary: Optional[ManagedAppPolicyDeploymentSummary] = Field(default=None,alias="deploymentSummary",)
 
 from .managed_app_data_storage_location import ManagedAppDataStorageLocation

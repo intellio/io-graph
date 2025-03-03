@@ -4,7 +4,7 @@ from pydantic import BaseModel, Field
 
 
 class Get_mail_tipsPostRequest(BaseModel):
-	EmailAddresses: list[str] = Field(alias="EmailAddresses",)
+	EmailAddresses: Optional[list[str]] = Field(default=None,alias="EmailAddresses",)
 	MailTipsOptions: Optional[MailTipsType] = Field(default=None,alias="MailTipsOptions",)
 
 from .mail_tips_type import MailTipsType

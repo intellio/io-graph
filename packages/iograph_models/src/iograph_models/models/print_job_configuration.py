@@ -19,7 +19,7 @@ class PrintJobConfiguration(BaseModel):
 	multipageLayout: Optional[PrintMultipageLayout] = Field(default=None,alias="multipageLayout",)
 	orientation: Optional[PrintOrientation] = Field(default=None,alias="orientation",)
 	outputBin: Optional[str] = Field(default=None,alias="outputBin",)
-	pageRanges: list[IntegerRange] = Field(alias="pageRanges",)
+	pageRanges: Optional[list[IntegerRange]] = Field(default=None,alias="pageRanges",)
 	pagesPerSheet: Optional[int] = Field(default=None,alias="pagesPerSheet",)
 	quality: Optional[PrintQuality] = Field(default=None,alias="quality",)
 	scaling: Optional[PrintScaling] = Field(default=None,alias="scaling",)

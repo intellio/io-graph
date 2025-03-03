@@ -27,7 +27,7 @@ class WindowsProtectionState(BaseModel):
 	signatureUpdateOverdue: Optional[bool] = Field(default=None,alias="signatureUpdateOverdue",)
 	signatureVersion: Optional[str] = Field(default=None,alias="signatureVersion",)
 	tamperProtectionEnabled: Optional[bool] = Field(default=None,alias="tamperProtectionEnabled",)
-	detectedMalwareState: list[WindowsDeviceMalwareState] = Field(alias="detectedMalwareState",)
+	detectedMalwareState: Optional[list[WindowsDeviceMalwareState]] = Field(default=None,alias="detectedMalwareState",)
 
 from .windows_device_health_state import WindowsDeviceHealthState
 from .windows_defender_product_status import WindowsDefenderProductStatus

@@ -15,8 +15,8 @@ class BrowserSiteList(BaseModel):
 	publishedDateTime: Optional[datetime] = Field(default=None,alias="publishedDateTime",)
 	revision: Optional[str] = Field(default=None,alias="revision",)
 	status: Optional[BrowserSiteListStatus] = Field(default=None,alias="status",)
-	sharedCookies: list[BrowserSharedCookie] = Field(alias="sharedCookies",)
-	sites: list[BrowserSite] = Field(alias="sites",)
+	sharedCookies: Optional[list[BrowserSharedCookie]] = Field(default=None,alias="sharedCookies",)
+	sites: Optional[list[BrowserSite]] = Field(default=None,alias="sites",)
 
 from .identity_set import IdentitySet
 from .identity_set import IdentitySet

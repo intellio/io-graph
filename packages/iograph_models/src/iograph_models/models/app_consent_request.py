@@ -8,8 +8,8 @@ class AppConsentRequest(BaseModel):
 	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
 	appDisplayName: Optional[str] = Field(default=None,alias="appDisplayName",)
 	appId: Optional[str] = Field(default=None,alias="appId",)
-	pendingScopes: list[AppConsentRequestScope] = Field(alias="pendingScopes",)
-	userConsentRequests: list[UserConsentRequest] = Field(alias="userConsentRequests",)
+	pendingScopes: Optional[list[AppConsentRequestScope]] = Field(default=None,alias="pendingScopes",)
+	userConsentRequests: Optional[list[UserConsentRequest]] = Field(default=None,alias="userConsentRequests",)
 
 from .app_consent_request_scope import AppConsentRequestScope
 from .user_consent_request import UserConsentRequest

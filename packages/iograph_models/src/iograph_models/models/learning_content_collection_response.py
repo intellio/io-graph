@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field
 class LearningContentCollectionResponse(BaseModel):
 	odata_count: Optional[int] = Field(default=None,alias="@odata.count",)
 	odata_nextLink: Optional[str] = Field(default=None,alias="@odata.nextLink",)
-	value: list[LearningContent] = Field(alias="value",)
+	value: Optional[list[LearningContent]] = Field(default=None,alias="value",)
 
 from .learning_content import LearningContent
 

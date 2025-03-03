@@ -13,7 +13,7 @@ class TeleconferenceDeviceQuality(BaseModel):
 	deviceDescription: Optional[str] = Field(default=None,alias="deviceDescription",)
 	deviceName: Optional[str] = Field(default=None,alias="deviceName",)
 	mediaLegId: Optional[UUID] = Field(default=None,alias="mediaLegId",)
-	mediaQualityList: list[TeleconferenceDeviceMediaQuality] = Field(alias="mediaQualityList",)
+	mediaQualityList: Optional[list[TeleconferenceDeviceMediaQuality]] = Field(default=None,alias="mediaQualityList",)
 	participantId: Optional[UUID] = Field(default=None,alias="participantId",)
 	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
 

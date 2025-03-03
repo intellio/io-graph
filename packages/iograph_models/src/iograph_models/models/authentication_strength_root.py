@@ -6,9 +6,9 @@ from pydantic import BaseModel, Field
 class AuthenticationStrengthRoot(BaseModel):
 	id: Optional[str] = Field(default=None,alias="id",)
 	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	combinations: list[AuthenticationMethodModes] = Field(alias="combinations",)
-	authenticationMethodModes: list[AuthenticationMethodModeDetail] = Field(alias="authenticationMethodModes",)
-	policies: list[AuthenticationStrengthPolicy] = Field(alias="policies",)
+	combinations: Optional[list[AuthenticationMethodModes]] = Field(default=None,alias="combinations",)
+	authenticationMethodModes: Optional[list[AuthenticationMethodModeDetail]] = Field(default=None,alias="authenticationMethodModes",)
+	policies: Optional[list[AuthenticationStrengthPolicy]] = Field(default=None,alias="policies",)
 
 from .authentication_method_modes import AuthenticationMethodModes
 from .authentication_method_mode_detail import AuthenticationMethodModeDetail

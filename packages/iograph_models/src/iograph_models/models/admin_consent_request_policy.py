@@ -10,7 +10,7 @@ class AdminConsentRequestPolicy(BaseModel):
 	notifyReviewers: Optional[bool] = Field(default=None,alias="notifyReviewers",)
 	remindersEnabled: Optional[bool] = Field(default=None,alias="remindersEnabled",)
 	requestDurationInDays: Optional[int] = Field(default=None,alias="requestDurationInDays",)
-	reviewers: list[AccessReviewReviewerScope] = Field(alias="reviewers",)
+	reviewers: Optional[list[AccessReviewReviewerScope]] = Field(default=None,alias="reviewers",)
 	version: Optional[int] = Field(default=None,alias="version",)
 
 from .access_review_reviewer_scope import AccessReviewReviewerScope

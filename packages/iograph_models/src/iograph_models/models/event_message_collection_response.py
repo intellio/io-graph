@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field
 class EventMessageCollectionResponse(BaseModel):
 	odata_count: Optional[int] = Field(default=None,alias="@odata.count",)
 	odata_nextLink: Optional[str] = Field(default=None,alias="@odata.nextLink",)
-	value: list[EventMessage] = Field(alias="value",)
+	value: Optional[list[EventMessage]] = Field(default=None,alias="value",)
 
 from .event_message import EventMessage
 

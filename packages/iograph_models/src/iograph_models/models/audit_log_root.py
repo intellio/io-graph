@@ -6,9 +6,9 @@ from pydantic import BaseModel, Field
 class AuditLogRoot(BaseModel):
 	id: Optional[str] = Field(default=None,alias="id",)
 	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	directoryAudits: list[DirectoryAudit] = Field(alias="directoryAudits",)
-	provisioning: list[ProvisioningObjectSummary] = Field(alias="provisioning",)
-	signIns: list[SignIn] = Field(alias="signIns",)
+	directoryAudits: Optional[list[DirectoryAudit]] = Field(default=None,alias="directoryAudits",)
+	provisioning: Optional[list[ProvisioningObjectSummary]] = Field(default=None,alias="provisioning",)
+	signIns: Optional[list[SignIn]] = Field(default=None,alias="signIns",)
 
 from .directory_audit import DirectoryAudit
 from .provisioning_object_summary import ProvisioningObjectSummary

@@ -4,7 +4,7 @@ from pydantic import BaseModel, Field
 
 
 class ParentalControlSettings(BaseModel):
-	countriesBlockedForMinors: list[Optional[str]] = Field(alias="countriesBlockedForMinors",)
+	countriesBlockedForMinors: Optional[list[str]] = Field(default=None,alias="countriesBlockedForMinors",)
 	legalAgeGroupRule: Optional[str] = Field(default=None,alias="legalAgeGroupRule",)
 	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
 

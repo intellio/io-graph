@@ -5,12 +5,12 @@ from pydantic import BaseModel, Field
 
 class AccessPackageAssignmentReviewSettings(BaseModel):
 	expirationBehavior: Optional[AccessReviewExpirationBehavior] = Field(default=None,alias="expirationBehavior",)
-	fallbackReviewers: list[SubjectSet] = Field(alias="fallbackReviewers",)
+	fallbackReviewers: Optional[list[SubjectSet]] = Field(default=None,alias="fallbackReviewers",)
 	isEnabled: Optional[bool] = Field(default=None,alias="isEnabled",)
 	isRecommendationEnabled: Optional[bool] = Field(default=None,alias="isRecommendationEnabled",)
 	isReviewerJustificationRequired: Optional[bool] = Field(default=None,alias="isReviewerJustificationRequired",)
 	isSelfReview: Optional[bool] = Field(default=None,alias="isSelfReview",)
-	primaryReviewers: list[SubjectSet] = Field(alias="primaryReviewers",)
+	primaryReviewers: Optional[list[SubjectSet]] = Field(default=None,alias="primaryReviewers",)
 	schedule: Optional[EntitlementManagementSchedule] = Field(default=None,alias="schedule",)
 	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
 

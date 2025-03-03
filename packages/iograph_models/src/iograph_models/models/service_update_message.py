@@ -7,7 +7,7 @@ from pydantic import BaseModel, Field
 class ServiceUpdateMessage(BaseModel):
 	id: Optional[str] = Field(default=None,alias="id",)
 	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	details: list[KeyValuePair] = Field(alias="details",)
+	details: Optional[list[KeyValuePair]] = Field(default=None,alias="details",)
 	endDateTime: Optional[datetime] = Field(default=None,alias="endDateTime",)
 	lastModifiedDateTime: Optional[datetime] = Field(default=None,alias="lastModifiedDateTime",)
 	startDateTime: Optional[datetime] = Field(default=None,alias="startDateTime",)
@@ -18,11 +18,11 @@ class ServiceUpdateMessage(BaseModel):
 	category: Optional[ServiceUpdateCategory] = Field(default=None,alias="category",)
 	hasAttachments: Optional[bool] = Field(default=None,alias="hasAttachments",)
 	isMajorChange: Optional[bool] = Field(default=None,alias="isMajorChange",)
-	services: list[Optional[str]] = Field(alias="services",)
+	services: Optional[list[str]] = Field(default=None,alias="services",)
 	severity: Optional[ServiceUpdateSeverity] = Field(default=None,alias="severity",)
-	tags: list[Optional[str]] = Field(alias="tags",)
+	tags: Optional[list[str]] = Field(default=None,alias="tags",)
 	viewPoint: Optional[ServiceUpdateMessageViewpoint] = Field(default=None,alias="viewPoint",)
-	attachments: list[ServiceAnnouncementAttachment] = Field(alias="attachments",)
+	attachments: Optional[list[ServiceAnnouncementAttachment]] = Field(default=None,alias="attachments",)
 
 from .key_value_pair import KeyValuePair
 from .item_body import ItemBody

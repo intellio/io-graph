@@ -18,8 +18,8 @@ class WindowsAutopilotDeploymentProfile(BaseModel):
 	managementServiceAppId: Optional[str] = Field(default=None,alias="managementServiceAppId",)
 	outOfBoxExperienceSetting: Optional[OutOfBoxExperienceSetting] = Field(default=None,alias="outOfBoxExperienceSetting",)
 	preprovisioningAllowed: Optional[bool] = Field(default=None,alias="preprovisioningAllowed",)
-	roleScopeTagIds: list[Optional[str]] = Field(alias="roleScopeTagIds",)
-	assignedDevices: list[WindowsAutopilotDeviceIdentity] = Field(alias="assignedDevices",)
+	roleScopeTagIds: Optional[list[str]] = Field(default=None,alias="roleScopeTagIds",)
+	assignedDevices: Optional[list[WindowsAutopilotDeviceIdentity]] = Field(default=None,alias="assignedDevices",)
 
 from .windows_autopilot_device_type import WindowsAutopilotDeviceType
 from .out_of_box_experience_setting import OutOfBoxExperienceSetting

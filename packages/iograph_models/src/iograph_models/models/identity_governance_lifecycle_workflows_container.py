@@ -6,13 +6,13 @@ from pydantic import BaseModel, Field
 class IdentityGovernanceLifecycleWorkflowsContainer(BaseModel):
 	id: Optional[str] = Field(default=None,alias="id",)
 	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	customTaskExtensions: list[IdentityGovernanceCustomTaskExtension] = Field(alias="customTaskExtensions",)
+	customTaskExtensions: Optional[list[IdentityGovernanceCustomTaskExtension]] = Field(default=None,alias="customTaskExtensions",)
 	deletedItems: Optional[DeletedItemContainer] = Field(default=None,alias="deletedItems",)
 	insights: Optional[IdentityGovernanceInsights] = Field(default=None,alias="insights",)
 	settings: Optional[IdentityGovernanceLifecycleManagementSettings] = Field(default=None,alias="settings",)
-	taskDefinitions: list[IdentityGovernanceTaskDefinition] = Field(alias="taskDefinitions",)
-	workflows: list[IdentityGovernanceWorkflow] = Field(alias="workflows",)
-	workflowTemplates: list[IdentityGovernanceWorkflowTemplate] = Field(alias="workflowTemplates",)
+	taskDefinitions: Optional[list[IdentityGovernanceTaskDefinition]] = Field(default=None,alias="taskDefinitions",)
+	workflows: Optional[list[IdentityGovernanceWorkflow]] = Field(default=None,alias="workflows",)
+	workflowTemplates: Optional[list[IdentityGovernanceWorkflowTemplate]] = Field(default=None,alias="workflowTemplates",)
 
 from .identity_governance_custom_task_extension import IdentityGovernanceCustomTaskExtension
 from .deleted_item_container import DeletedItemContainer

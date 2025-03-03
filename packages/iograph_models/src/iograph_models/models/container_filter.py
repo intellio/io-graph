@@ -4,7 +4,7 @@ from pydantic import BaseModel, Field
 
 
 class ContainerFilter(BaseModel):
-	includedContainers: list[Optional[str]] = Field(alias="includedContainers",)
+	includedContainers: Optional[list[str]] = Field(default=None,alias="includedContainers",)
 	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
 
 

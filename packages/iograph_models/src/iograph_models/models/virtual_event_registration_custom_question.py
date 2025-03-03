@@ -8,7 +8,7 @@ class VirtualEventRegistrationCustomQuestion(BaseModel):
 	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
 	displayName: Optional[str] = Field(default=None,alias="displayName",)
 	isRequired: Optional[bool] = Field(default=None,alias="isRequired",)
-	answerChoices: list[Optional[str]] = Field(alias="answerChoices",)
+	answerChoices: Optional[list[str]] = Field(default=None,alias="answerChoices",)
 	answerInputType: Optional[VirtualEventRegistrationQuestionAnswerInputType] = Field(default=None,alias="answerInputType",)
 
 from .virtual_event_registration_question_answer_input_type import VirtualEventRegistrationQuestionAnswerInputType

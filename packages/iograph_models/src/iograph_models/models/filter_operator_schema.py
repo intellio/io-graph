@@ -8,7 +8,7 @@ class FilterOperatorSchema(BaseModel):
 	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
 	arity: Optional[ScopeOperatorType] = Field(default=None,alias="arity",)
 	multivaluedComparisonType: Optional[ScopeOperatorMultiValuedComparisonType] = Field(default=None,alias="multivaluedComparisonType",)
-	supportedAttributeTypes: list[AttributeType] = Field(alias="supportedAttributeTypes",)
+	supportedAttributeTypes: Optional[list[AttributeType]] = Field(default=None,alias="supportedAttributeTypes",)
 
 from .scope_operator_type import ScopeOperatorType
 from .scope_operator_multi_valued_comparison_type import ScopeOperatorMultiValuedComparisonType

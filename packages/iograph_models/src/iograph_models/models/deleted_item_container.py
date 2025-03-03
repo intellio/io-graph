@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field
 class DeletedItemContainer(BaseModel):
 	id: Optional[str] = Field(default=None,alias="id",)
 	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	workflows: list[IdentityGovernanceWorkflow] = Field(alias="workflows",)
+	workflows: Optional[list[IdentityGovernanceWorkflow]] = Field(default=None,alias="workflows",)
 
 from .identity_governance_workflow import IdentityGovernanceWorkflow
 

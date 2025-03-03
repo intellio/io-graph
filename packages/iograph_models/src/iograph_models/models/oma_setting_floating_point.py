@@ -8,7 +8,7 @@ class OmaSettingFloatingPoint(BaseModel):
 	displayName: Optional[str] = Field(default=None,alias="displayName",)
 	omaUri: Optional[str] = Field(default=None,alias="omaUri",)
 	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	value: Optional[float] | Optional[str] | ReferenceNumeric
+	value: float | str | ReferenceNumeric
 
 from .reference_numeric import ReferenceNumeric
 

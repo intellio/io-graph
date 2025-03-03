@@ -9,7 +9,7 @@ class DefaultUserRolePermissions(BaseModel):
 	allowedToCreateTenants: Optional[bool] = Field(default=None,alias="allowedToCreateTenants",)
 	allowedToReadBitlockerKeysForOwnedDevice: Optional[bool] = Field(default=None,alias="allowedToReadBitlockerKeysForOwnedDevice",)
 	allowedToReadOtherUsers: Optional[bool] = Field(default=None,alias="allowedToReadOtherUsers",)
-	permissionGrantPoliciesAssigned: list[Optional[str]] = Field(alias="permissionGrantPoliciesAssigned",)
+	permissionGrantPoliciesAssigned: Optional[list[str]] = Field(default=None,alias="permissionGrantPoliciesAssigned",)
 	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
 
 

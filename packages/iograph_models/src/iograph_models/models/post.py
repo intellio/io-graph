@@ -7,7 +7,7 @@ from pydantic import BaseModel, Field
 class Post(BaseModel):
 	id: Optional[str] = Field(default=None,alias="id",)
 	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	categories: list[Optional[str]] = Field(alias="categories",)
+	categories: Optional[list[str]] = Field(default=None,alias="categories",)
 	changeKey: Optional[str] = Field(default=None,alias="changeKey",)
 	createdDateTime: Optional[datetime] = Field(default=None,alias="createdDateTime",)
 	lastModifiedDateTime: Optional[datetime] = Field(default=None,alias="lastModifiedDateTime",)
@@ -16,14 +16,14 @@ class Post(BaseModel):
 	conversationThreadId: Optional[str] = Field(default=None,alias="conversationThreadId",)
 	from_: Optional[Recipient] = Field(default=None,alias="from",)
 	hasAttachments: Optional[bool] = Field(default=None,alias="hasAttachments",)
-	newParticipants: list[Recipient] = Field(alias="newParticipants",)
+	newParticipants: Optional[list[Recipient]] = Field(default=None,alias="newParticipants",)
 	receivedDateTime: Optional[datetime] = Field(default=None,alias="receivedDateTime",)
 	sender: Optional[Recipient] = Field(default=None,alias="sender",)
-	attachments: list[Attachment] = Field(alias="attachments",)
-	extensions: list[Extension] = Field(alias="extensions",)
+	attachments: Optional[list[Attachment]] = Field(default=None,alias="attachments",)
+	extensions: Optional[list[Extension]] = Field(default=None,alias="extensions",)
 	inReplyTo: Optional[Post] = Field(default=None,alias="inReplyTo",)
-	multiValueExtendedProperties: list[MultiValueLegacyExtendedProperty] = Field(alias="multiValueExtendedProperties",)
-	singleValueExtendedProperties: list[SingleValueLegacyExtendedProperty] = Field(alias="singleValueExtendedProperties",)
+	multiValueExtendedProperties: Optional[list[MultiValueLegacyExtendedProperty]] = Field(default=None,alias="multiValueExtendedProperties",)
+	singleValueExtendedProperties: Optional[list[SingleValueLegacyExtendedProperty]] = Field(default=None,alias="singleValueExtendedProperties",)
 
 from .item_body import ItemBody
 from .recipient import Recipient

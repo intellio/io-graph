@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field
 class ChatMessageReactionCollectionResponse(BaseModel):
 	odata_count: Optional[int] = Field(default=None,alias="@odata.count",)
 	odata_nextLink: Optional[str] = Field(default=None,alias="@odata.nextLink",)
-	value: list[ChatMessageReaction] = Field(alias="value",)
+	value: Optional[list[ChatMessageReaction]] = Field(default=None,alias="value",)
 
 from .chat_message_reaction import ChatMessageReaction
 

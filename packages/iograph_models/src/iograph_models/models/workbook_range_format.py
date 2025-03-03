@@ -6,12 +6,12 @@ from pydantic import BaseModel, Field
 class WorkbookRangeFormat(BaseModel):
 	id: Optional[str] = Field(default=None,alias="id",)
 	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	columnWidth: Optional[float] | Optional[str] | ReferenceNumeric
+	columnWidth: float | str | ReferenceNumeric
 	horizontalAlignment: Optional[str] = Field(default=None,alias="horizontalAlignment",)
-	rowHeight: Optional[float] | Optional[str] | ReferenceNumeric
+	rowHeight: float | str | ReferenceNumeric
 	verticalAlignment: Optional[str] = Field(default=None,alias="verticalAlignment",)
 	wrapText: Optional[bool] = Field(default=None,alias="wrapText",)
-	borders: list[WorkbookRangeBorder] = Field(alias="borders",)
+	borders: Optional[list[WorkbookRangeBorder]] = Field(default=None,alias="borders",)
 	fill: Optional[WorkbookRangeFill] = Field(default=None,alias="fill",)
 	font: Optional[WorkbookRangeFont] = Field(default=None,alias="font",)
 	protection: Optional[WorkbookFormatProtection] = Field(default=None,alias="protection",)

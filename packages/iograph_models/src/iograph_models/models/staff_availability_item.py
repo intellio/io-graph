@@ -4,7 +4,7 @@ from pydantic import BaseModel, Field
 
 
 class StaffAvailabilityItem(BaseModel):
-	availabilityItems: list[AvailabilityItem] = Field(alias="availabilityItems",)
+	availabilityItems: Optional[list[AvailabilityItem]] = Field(default=None,alias="availabilityItems",)
 	staffId: Optional[str] = Field(default=None,alias="staffId",)
 	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
 

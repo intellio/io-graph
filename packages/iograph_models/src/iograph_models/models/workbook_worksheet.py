@@ -9,11 +9,11 @@ class WorkbookWorksheet(BaseModel):
 	name: Optional[str] = Field(default=None,alias="name",)
 	position: Optional[int] = Field(default=None,alias="position",)
 	visibility: Optional[str] = Field(default=None,alias="visibility",)
-	charts: list[WorkbookChart] = Field(alias="charts",)
-	names: list[WorkbookNamedItem] = Field(alias="names",)
-	pivotTables: list[WorkbookPivotTable] = Field(alias="pivotTables",)
+	charts: Optional[list[WorkbookChart]] = Field(default=None,alias="charts",)
+	names: Optional[list[WorkbookNamedItem]] = Field(default=None,alias="names",)
+	pivotTables: Optional[list[WorkbookPivotTable]] = Field(default=None,alias="pivotTables",)
 	protection: Optional[WorkbookWorksheetProtection] = Field(default=None,alias="protection",)
-	tables: list[WorkbookTable] = Field(alias="tables",)
+	tables: Optional[list[WorkbookTable]] = Field(default=None,alias="tables",)
 
 from .workbook_chart import WorkbookChart
 from .workbook_named_item import WorkbookNamedItem

@@ -4,10 +4,10 @@ from pydantic import BaseModel, Field
 
 
 class EmployeeExperience(BaseModel):
-	communities: list[Community] = Field(alias="communities",)
-	engagementAsyncOperations: list[EngagementAsyncOperation] = Field(alias="engagementAsyncOperations",)
-	learningCourseActivities: list[LearningCourseActivity] = Field(alias="learningCourseActivities",)
-	learningProviders: list[LearningProvider] = Field(alias="learningProviders",)
+	communities: Optional[list[Community]] = Field(default=None,alias="communities",)
+	engagementAsyncOperations: Optional[list[EngagementAsyncOperation]] = Field(default=None,alias="engagementAsyncOperations",)
+	learningCourseActivities: Optional[list[LearningCourseActivity]] = Field(default=None,alias="learningCourseActivities",)
+	learningProviders: Optional[list[LearningProvider]] = Field(default=None,alias="learningProviders",)
 	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
 
 from .community import Community

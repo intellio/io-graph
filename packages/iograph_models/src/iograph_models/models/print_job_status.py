@@ -5,7 +5,7 @@ from pydantic import BaseModel, Field
 
 class PrintJobStatus(BaseModel):
 	description: Optional[str] = Field(default=None,alias="description",)
-	details: list[PrintJobStateDetail] = Field(alias="details",)
+	details: Optional[list[PrintJobStateDetail]] = Field(default=None,alias="details",)
 	isAcquiredByPrinter: Optional[bool] = Field(default=None,alias="isAcquiredByPrinter",)
 	state: Optional[PrintJobProcessingState] = Field(default=None,alias="state",)
 	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)

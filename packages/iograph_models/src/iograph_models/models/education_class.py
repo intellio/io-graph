@@ -18,15 +18,15 @@ class EducationClass(BaseModel):
 	grade: Optional[str] = Field(default=None,alias="grade",)
 	mailNickname: Optional[str] = Field(default=None,alias="mailNickname",)
 	term: Optional[EducationTerm] = Field(default=None,alias="term",)
-	assignmentCategories: list[EducationCategory] = Field(alias="assignmentCategories",)
+	assignmentCategories: Optional[list[EducationCategory]] = Field(default=None,alias="assignmentCategories",)
 	assignmentDefaults: Optional[EducationAssignmentDefaults] = Field(default=None,alias="assignmentDefaults",)
-	assignments: list[EducationAssignment] = Field(alias="assignments",)
+	assignments: Optional[list[EducationAssignment]] = Field(default=None,alias="assignments",)
 	assignmentSettings: Optional[EducationAssignmentSettings] = Field(default=None,alias="assignmentSettings",)
 	group: Optional[Group] = Field(default=None,alias="group",)
-	members: list[EducationUser] = Field(alias="members",)
-	modules: list[EducationModule] = Field(alias="modules",)
-	schools: list[EducationSchool] = Field(alias="schools",)
-	teachers: list[EducationUser] = Field(alias="teachers",)
+	members: Optional[list[EducationUser]] = Field(default=None,alias="members",)
+	modules: Optional[list[EducationModule]] = Field(default=None,alias="modules",)
+	schools: Optional[list[EducationSchool]] = Field(default=None,alias="schools",)
+	teachers: Optional[list[EducationUser]] = Field(default=None,alias="teachers",)
 
 from .education_course import EducationCourse
 from .identity_set import IdentitySet

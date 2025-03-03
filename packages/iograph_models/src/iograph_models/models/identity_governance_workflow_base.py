@@ -17,7 +17,7 @@ class IdentityGovernanceWorkflowBase(BaseModel):
 	lastModifiedDateTime: Optional[datetime] = Field(default=None,alias="lastModifiedDateTime",)
 	createdBy: Optional[User] = Field(default=None,alias="createdBy",)
 	lastModifiedBy: Optional[User] = Field(default=None,alias="lastModifiedBy",)
-	tasks: list[IdentityGovernanceTask] = Field(alias="tasks",)
+	tasks: Optional[list[IdentityGovernanceTask]] = Field(default=None,alias="tasks",)
 	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
 
 	@model_validator(mode="wrap")

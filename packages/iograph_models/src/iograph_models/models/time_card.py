@@ -11,7 +11,7 @@ class TimeCard(BaseModel):
 	createdDateTime: Optional[datetime] = Field(default=None,alias="createdDateTime",)
 	lastModifiedBy: Optional[IdentitySet] = Field(default=None,alias="lastModifiedBy",)
 	lastModifiedDateTime: Optional[datetime] = Field(default=None,alias="lastModifiedDateTime",)
-	breaks: list[TimeCardBreak] = Field(alias="breaks",)
+	breaks: Optional[list[TimeCardBreak]] = Field(default=None,alias="breaks",)
 	clockInEvent: Optional[TimeCardEvent] = Field(default=None,alias="clockInEvent",)
 	clockOutEvent: Optional[TimeCardEvent] = Field(default=None,alias="clockOutEvent",)
 	confirmedBy: Optional[ConfirmedBy] = Field(default=None,alias="confirmedBy",)

@@ -6,9 +6,9 @@ from pydantic import BaseModel, Field
 class ItemInsights(BaseModel):
 	id: Optional[str] = Field(default=None,alias="id",)
 	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	shared: list[SharedInsight] = Field(alias="shared",)
-	trending: list[Trending] = Field(alias="trending",)
-	used: list[UsedInsight] = Field(alias="used",)
+	shared: Optional[list[SharedInsight]] = Field(default=None,alias="shared",)
+	trending: Optional[list[Trending]] = Field(default=None,alias="trending",)
+	used: Optional[list[UsedInsight]] = Field(default=None,alias="used",)
 
 from .shared_insight import SharedInsight
 from .trending import Trending

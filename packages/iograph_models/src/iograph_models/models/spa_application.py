@@ -4,7 +4,7 @@ from pydantic import BaseModel, Field
 
 
 class SpaApplication(BaseModel):
-	redirectUris: list[str] = Field(alias="redirectUris",)
+	redirectUris: Optional[list[str]] = Field(default=None,alias="redirectUris",)
 	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
 
 

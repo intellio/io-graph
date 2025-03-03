@@ -5,7 +5,7 @@ from pydantic import BaseModel, Field
 
 class ServiceHostedMediaConfig(BaseModel):
 	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	preFetchMedia: list[MediaInfo] = Field(alias="preFetchMedia",)
+	preFetchMedia: Optional[list[MediaInfo]] = Field(default=None,alias="preFetchMedia",)
 
 from .media_info import MediaInfo
 

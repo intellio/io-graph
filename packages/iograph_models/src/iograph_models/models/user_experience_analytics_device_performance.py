@@ -6,8 +6,8 @@ from pydantic import BaseModel, Field
 class UserExperienceAnalyticsDevicePerformance(BaseModel):
 	id: Optional[str] = Field(default=None,alias="id",)
 	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	averageBlueScreens: Optional[float] | Optional[str] | ReferenceNumeric
-	averageRestarts: Optional[float] | Optional[str] | ReferenceNumeric
+	averageBlueScreens: float | str | ReferenceNumeric
+	averageRestarts: float | str | ReferenceNumeric
 	blueScreenCount: Optional[int] = Field(default=None,alias="blueScreenCount",)
 	bootScore: Optional[int] = Field(default=None,alias="bootScore",)
 	coreBootTimeInMs: Optional[int] = Field(default=None,alias="coreBootTimeInMs",)
@@ -21,11 +21,11 @@ class UserExperienceAnalyticsDevicePerformance(BaseModel):
 	loginScore: Optional[int] = Field(default=None,alias="loginScore",)
 	manufacturer: Optional[str] = Field(default=None,alias="manufacturer",)
 	model: Optional[str] = Field(default=None,alias="model",)
-	modelStartupPerformanceScore: Optional[float] | Optional[str] | ReferenceNumeric
+	modelStartupPerformanceScore: float | str | ReferenceNumeric
 	operatingSystemVersion: Optional[str] = Field(default=None,alias="operatingSystemVersion",)
 	responsiveDesktopTimeInMs: Optional[int] = Field(default=None,alias="responsiveDesktopTimeInMs",)
 	restartCount: Optional[int] = Field(default=None,alias="restartCount",)
-	startupPerformanceScore: Optional[float] | Optional[str] | ReferenceNumeric
+	startupPerformanceScore: float | str | ReferenceNumeric
 
 from .reference_numeric import ReferenceNumeric
 from .reference_numeric import ReferenceNumeric

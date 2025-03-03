@@ -10,7 +10,7 @@ class UserInstallStateSummary(BaseModel):
 	installedDeviceCount: Optional[int] = Field(default=None,alias="installedDeviceCount",)
 	notInstalledDeviceCount: Optional[int] = Field(default=None,alias="notInstalledDeviceCount",)
 	userName: Optional[str] = Field(default=None,alias="userName",)
-	deviceStates: list[DeviceInstallState] = Field(alias="deviceStates",)
+	deviceStates: Optional[list[DeviceInstallState]] = Field(default=None,alias="deviceStates",)
 
 from .device_install_state import DeviceInstallState
 

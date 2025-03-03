@@ -7,7 +7,7 @@ class UnifiedRbacResourceNamespace(BaseModel):
 	id: Optional[str] = Field(default=None,alias="id",)
 	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
 	name: Optional[str] = Field(default=None,alias="name",)
-	resourceActions: list[UnifiedRbacResourceAction] = Field(alias="resourceActions",)
+	resourceActions: Optional[list[UnifiedRbacResourceAction]] = Field(default=None,alias="resourceActions",)
 
 from .unified_rbac_resource_action import UnifiedRbacResourceAction
 

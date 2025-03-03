@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field
 class DriveProtectionRuleCollectionResponse(BaseModel):
 	odata_count: Optional[int] = Field(default=None,alias="@odata.count",)
 	odata_nextLink: Optional[str] = Field(default=None,alias="@odata.nextLink",)
-	value: list[DriveProtectionRule] = Field(alias="value",)
+	value: Optional[list[DriveProtectionRule]] = Field(default=None,alias="value",)
 
 from .drive_protection_rule import DriveProtectionRule
 

@@ -14,7 +14,7 @@ class CustomSecurityAttributeDefinition(BaseModel):
 	status: Optional[str] = Field(default=None,alias="status",)
 	type: Optional[str] = Field(default=None,alias="type",)
 	usePreDefinedValuesOnly: Optional[bool] = Field(default=None,alias="usePreDefinedValuesOnly",)
-	allowedValues: list[AllowedValue] = Field(alias="allowedValues",)
+	allowedValues: Optional[list[AllowedValue]] = Field(default=None,alias="allowedValues",)
 
 from .allowed_value import AllowedValue
 

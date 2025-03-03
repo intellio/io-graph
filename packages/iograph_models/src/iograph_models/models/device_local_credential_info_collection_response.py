@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field
 class DeviceLocalCredentialInfoCollectionResponse(BaseModel):
 	odata_count: Optional[int] = Field(default=None,alias="@odata.count",)
 	odata_nextLink: Optional[str] = Field(default=None,alias="@odata.nextLink",)
-	value: list[DeviceLocalCredentialInfo] = Field(alias="value",)
+	value: Optional[list[DeviceLocalCredentialInfo]] = Field(default=None,alias="value",)
 
 from .device_local_credential_info import DeviceLocalCredentialInfo
 

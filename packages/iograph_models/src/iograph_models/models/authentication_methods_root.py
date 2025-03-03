@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field
 class AuthenticationMethodsRoot(BaseModel):
 	id: Optional[str] = Field(default=None,alias="id",)
 	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	userRegistrationDetails: list[UserRegistrationDetails] = Field(alias="userRegistrationDetails",)
+	userRegistrationDetails: Optional[list[UserRegistrationDetails]] = Field(default=None,alias="userRegistrationDetails",)
 
 from .user_registration_details import UserRegistrationDetails
 

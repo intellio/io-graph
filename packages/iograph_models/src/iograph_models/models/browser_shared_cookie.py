@@ -11,7 +11,7 @@ class BrowserSharedCookie(BaseModel):
 	createdDateTime: Optional[datetime] = Field(default=None,alias="createdDateTime",)
 	deletedDateTime: Optional[datetime] = Field(default=None,alias="deletedDateTime",)
 	displayName: Optional[str] = Field(default=None,alias="displayName",)
-	history: list[BrowserSharedCookieHistory] = Field(alias="history",)
+	history: Optional[list[BrowserSharedCookieHistory]] = Field(default=None,alias="history",)
 	hostOnly: Optional[bool] = Field(default=None,alias="hostOnly",)
 	hostOrDomain: Optional[str] = Field(default=None,alias="hostOrDomain",)
 	lastModifiedBy: Optional[IdentitySet] = Field(default=None,alias="lastModifiedBy",)

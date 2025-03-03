@@ -8,7 +8,7 @@ class DeviceManagementPartner(BaseModel):
 	id: Optional[str] = Field(default=None,alias="id",)
 	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
 	displayName: Optional[str] = Field(default=None,alias="displayName",)
-	groupsRequiringPartnerEnrollment: list[DeviceManagementPartnerAssignment] = Field(alias="groupsRequiringPartnerEnrollment",)
+	groupsRequiringPartnerEnrollment: Optional[list[DeviceManagementPartnerAssignment]] = Field(default=None,alias="groupsRequiringPartnerEnrollment",)
 	isConfigured: Optional[bool] = Field(default=None,alias="isConfigured",)
 	lastHeartbeatDateTime: Optional[datetime] = Field(default=None,alias="lastHeartbeatDateTime",)
 	partnerAppType: Optional[DeviceManagementPartnerAppType] = Field(default=None,alias="partnerAppType",)

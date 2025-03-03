@@ -4,10 +4,10 @@ from pydantic import BaseModel, Field
 
 
 class ObjectMapping(BaseModel):
-	attributeMappings: list[AttributeMapping] = Field(alias="attributeMappings",)
+	attributeMappings: Optional[list[AttributeMapping]] = Field(default=None,alias="attributeMappings",)
 	enabled: Optional[bool] = Field(default=None,alias="enabled",)
 	flowTypes: Optional[ObjectFlowTypes] = Field(default=None,alias="flowTypes",)
-	metadata: list[ObjectMappingMetadataEntry] = Field(alias="metadata",)
+	metadata: Optional[list[ObjectMappingMetadataEntry]] = Field(default=None,alias="metadata",)
 	name: Optional[str] = Field(default=None,alias="name",)
 	scope: Optional[Filter] = Field(default=None,alias="scope",)
 	sourceObjectName: Optional[str] = Field(default=None,alias="sourceObjectName",)

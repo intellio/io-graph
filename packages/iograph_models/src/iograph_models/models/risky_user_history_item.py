@@ -15,7 +15,7 @@ class RiskyUserHistoryItem(BaseModel):
 	riskState: Optional[RiskState] = Field(default=None,alias="riskState",)
 	userDisplayName: Optional[str] = Field(default=None,alias="userDisplayName",)
 	userPrincipalName: Optional[str] = Field(default=None,alias="userPrincipalName",)
-	history: list[RiskyUserHistoryItem] = Field(alias="history",)
+	history: Optional[list[RiskyUserHistoryItem]] = Field(default=None,alias="history",)
 	activity: Optional[RiskUserActivity] = Field(default=None,alias="activity",)
 	initiatedBy: Optional[str] = Field(default=None,alias="initiatedBy",)
 	userId: Optional[str] = Field(default=None,alias="userId",)

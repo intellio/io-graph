@@ -4,7 +4,7 @@ from pydantic import BaseModel, Field
 
 
 class Translate_exchange_idsPostRequest(BaseModel):
-	InputIds: list[str] = Field(alias="InputIds",)
+	InputIds: Optional[list[str]] = Field(default=None,alias="InputIds",)
 	TargetIdType: Optional[ExchangeIdFormat] = Field(default=None,alias="TargetIdType",)
 	SourceIdType: Optional[ExchangeIdFormat] = Field(default=None,alias="SourceIdType",)
 

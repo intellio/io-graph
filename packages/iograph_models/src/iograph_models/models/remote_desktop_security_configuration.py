@@ -7,7 +7,7 @@ class RemoteDesktopSecurityConfiguration(BaseModel):
 	id: Optional[str] = Field(default=None,alias="id",)
 	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
 	isRemoteDesktopProtocolEnabled: Optional[bool] = Field(default=None,alias="isRemoteDesktopProtocolEnabled",)
-	targetDeviceGroups: list[TargetDeviceGroup] = Field(alias="targetDeviceGroups",)
+	targetDeviceGroups: Optional[list[TargetDeviceGroup]] = Field(default=None,alias="targetDeviceGroups",)
 
 from .target_device_group import TargetDeviceGroup
 

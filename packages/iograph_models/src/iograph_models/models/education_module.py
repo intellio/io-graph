@@ -16,7 +16,7 @@ class EducationModule(BaseModel):
 	lastModifiedDateTime: Optional[datetime] = Field(default=None,alias="lastModifiedDateTime",)
 	resourcesFolderUrl: Optional[str] = Field(default=None,alias="resourcesFolderUrl",)
 	status: Optional[EducationModuleStatus] = Field(default=None,alias="status",)
-	resources: list[EducationModuleResource] = Field(alias="resources",)
+	resources: Optional[list[EducationModuleResource]] = Field(default=None,alias="resources",)
 
 from .identity_set import IdentitySet
 from .identity_set import IdentitySet

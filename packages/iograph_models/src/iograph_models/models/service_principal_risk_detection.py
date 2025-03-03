@@ -15,7 +15,7 @@ class ServicePrincipalRiskDetection(BaseModel):
 	detectedDateTime: Optional[datetime] = Field(default=None,alias="detectedDateTime",)
 	detectionTimingType: Optional[RiskDetectionTimingType] = Field(default=None,alias="detectionTimingType",)
 	ipAddress: Optional[str] = Field(default=None,alias="ipAddress",)
-	keyIds: list[Optional[str]] = Field(alias="keyIds",)
+	keyIds: Optional[list[str]] = Field(default=None,alias="keyIds",)
 	lastUpdatedDateTime: Optional[datetime] = Field(default=None,alias="lastUpdatedDateTime",)
 	location: Optional[SignInLocation] = Field(default=None,alias="location",)
 	requestId: Optional[str] = Field(default=None,alias="requestId",)

@@ -4,7 +4,7 @@ from pydantic import BaseModel, Field
 
 
 class ApplyPostRequest(BaseModel):
-	fields: list[WorkbookSortField] = Field(alias="fields",)
+	fields: Optional[list[WorkbookSortField]] = Field(default=None,alias="fields",)
 	matchCase: Optional[bool] = Field(default=None,alias="matchCase",)
 	method: Optional[str] = Field(default=None,alias="method",)
 

@@ -22,12 +22,12 @@ class MobileLobApp(BaseModel):
 	privacyInformationUrl: Optional[str] = Field(default=None,alias="privacyInformationUrl",)
 	publisher: Optional[str] = Field(default=None,alias="publisher",)
 	publishingState: Optional[MobileAppPublishingState] = Field(default=None,alias="publishingState",)
-	assignments: list[MobileAppAssignment] = Field(alias="assignments",)
-	categories: list[MobileAppCategory] = Field(alias="categories",)
+	assignments: Optional[list[MobileAppAssignment]] = Field(default=None,alias="assignments",)
+	categories: Optional[list[MobileAppCategory]] = Field(default=None,alias="categories",)
 	committedContentVersion: Optional[str] = Field(default=None,alias="committedContentVersion",)
 	fileName: Optional[str] = Field(default=None,alias="fileName",)
 	size: Optional[int] = Field(default=None,alias="size",)
-	contentVersions: list[MobileAppContent] = Field(alias="contentVersions",)
+	contentVersions: Optional[list[MobileAppContent]] = Field(default=None,alias="contentVersions",)
 
 	@model_validator(mode="wrap")
 	def convert_discriminator_class(cls, data: Any, handler: ModelWrapValidatorHandler[Self]) -> Self:

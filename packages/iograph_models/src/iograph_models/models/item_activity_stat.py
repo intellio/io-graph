@@ -16,7 +16,7 @@ class ItemActivityStat(BaseModel):
 	isTrending: Optional[bool] = Field(default=None,alias="isTrending",)
 	move: Optional[ItemActionStat] = Field(default=None,alias="move",)
 	startDateTime: Optional[datetime] = Field(default=None,alias="startDateTime",)
-	activities: list[ItemActivity] = Field(alias="activities",)
+	activities: Optional[list[ItemActivity]] = Field(default=None,alias="activities",)
 
 from .item_action_stat import ItemActionStat
 from .item_action_stat import ItemActionStat

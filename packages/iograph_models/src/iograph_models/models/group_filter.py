@@ -4,7 +4,7 @@ from pydantic import BaseModel, Field
 
 
 class GroupFilter(BaseModel):
-	includedGroups: list[Optional[str]] = Field(alias="includedGroups",)
+	includedGroups: Optional[list[str]] = Field(default=None,alias="includedGroups",)
 	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
 
 

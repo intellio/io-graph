@@ -10,7 +10,7 @@ class IdentityGovernanceWorkflowTemplate(BaseModel):
 	description: Optional[str] = Field(default=None,alias="description",)
 	displayName: Optional[str] = Field(default=None,alias="displayName",)
 	executionConditions: Optional[IdentityGovernanceWorkflowExecutionConditions] = Field(default=None,alias="executionConditions",)
-	tasks: list[IdentityGovernanceTask] = Field(alias="tasks",)
+	tasks: Optional[list[IdentityGovernanceTask]] = Field(default=None,alias="tasks",)
 
 from .identity_governance_lifecycle_workflow_category import IdentityGovernanceLifecycleWorkflowCategory
 from .identity_governance_workflow_execution_conditions import IdentityGovernanceWorkflowExecutionConditions

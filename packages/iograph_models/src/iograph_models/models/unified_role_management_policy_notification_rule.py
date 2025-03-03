@@ -9,7 +9,7 @@ class UnifiedRoleManagementPolicyNotificationRule(BaseModel):
 	target: Optional[UnifiedRoleManagementPolicyRuleTarget] = Field(default=None,alias="target",)
 	isDefaultRecipientsEnabled: Optional[bool] = Field(default=None,alias="isDefaultRecipientsEnabled",)
 	notificationLevel: Optional[str] = Field(default=None,alias="notificationLevel",)
-	notificationRecipients: list[Optional[str]] = Field(alias="notificationRecipients",)
+	notificationRecipients: Optional[list[str]] = Field(default=None,alias="notificationRecipients",)
 	notificationType: Optional[str] = Field(default=None,alias="notificationType",)
 	recipientType: Optional[str] = Field(default=None,alias="recipientType",)
 

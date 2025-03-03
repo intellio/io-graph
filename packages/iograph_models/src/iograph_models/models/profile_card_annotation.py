@@ -5,7 +5,7 @@ from pydantic import BaseModel, Field
 
 class ProfileCardAnnotation(BaseModel):
 	displayName: Optional[str] = Field(default=None,alias="displayName",)
-	localizations: list[DisplayNameLocalization] = Field(alias="localizations",)
+	localizations: Optional[list[DisplayNameLocalization]] = Field(default=None,alias="localizations",)
 	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
 
 from .display_name_localization import DisplayNameLocalization

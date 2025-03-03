@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field
 class AlternativeSecurityIdCollectionResponse(BaseModel):
 	odata_count: Optional[int] = Field(default=None,alias="@odata.count",)
 	odata_nextLink: Optional[str] = Field(default=None,alias="@odata.nextLink",)
-	value: list[AlternativeSecurityId] = Field(alias="value",)
+	value: Optional[list[AlternativeSecurityId]] = Field(default=None,alias="value",)
 
 from .alternative_security_id import AlternativeSecurityId
 

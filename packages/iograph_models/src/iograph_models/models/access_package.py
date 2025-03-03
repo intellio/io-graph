@@ -12,12 +12,12 @@ class AccessPackage(BaseModel):
 	displayName: Optional[str] = Field(default=None,alias="displayName",)
 	isHidden: Optional[bool] = Field(default=None,alias="isHidden",)
 	modifiedDateTime: Optional[datetime] = Field(default=None,alias="modifiedDateTime",)
-	accessPackagesIncompatibleWith: list[AccessPackage] = Field(alias="accessPackagesIncompatibleWith",)
-	assignmentPolicies: list[AccessPackageAssignmentPolicy] = Field(alias="assignmentPolicies",)
+	accessPackagesIncompatibleWith: Optional[list[AccessPackage]] = Field(default=None,alias="accessPackagesIncompatibleWith",)
+	assignmentPolicies: Optional[list[AccessPackageAssignmentPolicy]] = Field(default=None,alias="assignmentPolicies",)
 	catalog: Optional[AccessPackageCatalog] = Field(default=None,alias="catalog",)
-	incompatibleAccessPackages: list[AccessPackage] = Field(alias="incompatibleAccessPackages",)
-	incompatibleGroups: list[Group] = Field(alias="incompatibleGroups",)
-	resourceRoleScopes: list[AccessPackageResourceRoleScope] = Field(alias="resourceRoleScopes",)
+	incompatibleAccessPackages: Optional[list[AccessPackage]] = Field(default=None,alias="incompatibleAccessPackages",)
+	incompatibleGroups: Optional[list[Group]] = Field(default=None,alias="incompatibleGroups",)
+	resourceRoleScopes: Optional[list[AccessPackageResourceRoleScope]] = Field(default=None,alias="resourceRoleScopes",)
 
 from .access_package_assignment_policy import AccessPackageAssignmentPolicy
 from .access_package_catalog import AccessPackageCatalog

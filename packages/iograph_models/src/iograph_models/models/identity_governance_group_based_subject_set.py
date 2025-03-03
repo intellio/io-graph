@@ -5,7 +5,7 @@ from pydantic import BaseModel, Field
 
 class IdentityGovernanceGroupBasedSubjectSet(BaseModel):
 	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	groups: list[Group] = Field(alias="groups",)
+	groups: Optional[list[Group]] = Field(default=None,alias="groups",)
 
 from .group import Group
 

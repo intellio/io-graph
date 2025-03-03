@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field
 class DocumentSetContentCollectionResponse(BaseModel):
 	odata_count: Optional[int] = Field(default=None,alias="@odata.count",)
 	odata_nextLink: Optional[str] = Field(default=None,alias="@odata.nextLink",)
-	value: list[DocumentSetContent] = Field(alias="value",)
+	value: Optional[list[DocumentSetContent]] = Field(default=None,alias="value",)
 
 from .document_set_content import DocumentSetContent
 

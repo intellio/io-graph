@@ -8,9 +8,9 @@ class SchemaExtension(BaseModel):
 	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
 	description: Optional[str] = Field(default=None,alias="description",)
 	owner: Optional[str] = Field(default=None,alias="owner",)
-	properties: list[ExtensionSchemaProperty] = Field(alias="properties",)
+	properties: Optional[list[ExtensionSchemaProperty]] = Field(default=None,alias="properties",)
 	status: Optional[str] = Field(default=None,alias="status",)
-	targetTypes: list[str] = Field(alias="targetTypes",)
+	targetTypes: Optional[list[str]] = Field(default=None,alias="targetTypes",)
 
 from .extension_schema_property import ExtensionSchemaProperty
 

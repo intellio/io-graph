@@ -13,9 +13,9 @@ class SecurityArticle(BaseModel):
 	isFeatured: Optional[bool] = Field(default=None,alias="isFeatured",)
 	lastUpdatedDateTime: Optional[datetime] = Field(default=None,alias="lastUpdatedDateTime",)
 	summary: Optional[SecurityFormattedContent] = Field(default=None,alias="summary",)
-	tags: list[Optional[str]] = Field(alias="tags",)
+	tags: Optional[list[str]] = Field(default=None,alias="tags",)
 	title: Optional[str] = Field(default=None,alias="title",)
-	indicators: list[SecurityArticleIndicator] = Field(alias="indicators",)
+	indicators: Optional[list[SecurityArticleIndicator]] = Field(default=None,alias="indicators",)
 
 from .security_formatted_content import SecurityFormattedContent
 from .security_formatted_content import SecurityFormattedContent

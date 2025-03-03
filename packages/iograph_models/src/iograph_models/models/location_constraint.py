@@ -5,7 +5,7 @@ from pydantic import BaseModel, Field
 
 class LocationConstraint(BaseModel):
 	isRequired: Optional[bool] = Field(default=None,alias="isRequired",)
-	locations: list[LocationConstraintItem] = Field(alias="locations",)
+	locations: Optional[list[LocationConstraintItem]] = Field(default=None,alias="locations",)
 	suggestLocation: Optional[bool] = Field(default=None,alias="suggestLocation",)
 	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
 

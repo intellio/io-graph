@@ -6,12 +6,12 @@ from pydantic import BaseModel, Field
 class Onenote(BaseModel):
 	id: Optional[str] = Field(default=None,alias="id",)
 	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	notebooks: list[Notebook] = Field(alias="notebooks",)
-	operations: list[OnenoteOperation] = Field(alias="operations",)
-	pages: list[OnenotePage] = Field(alias="pages",)
-	resources: list[OnenoteResource] = Field(alias="resources",)
-	sectionGroups: list[SectionGroup] = Field(alias="sectionGroups",)
-	sections: list[OnenoteSection] = Field(alias="sections",)
+	notebooks: Optional[list[Notebook]] = Field(default=None,alias="notebooks",)
+	operations: Optional[list[OnenoteOperation]] = Field(default=None,alias="operations",)
+	pages: Optional[list[OnenotePage]] = Field(default=None,alias="pages",)
+	resources: Optional[list[OnenoteResource]] = Field(default=None,alias="resources",)
+	sectionGroups: Optional[list[SectionGroup]] = Field(default=None,alias="sectionGroups",)
+	sections: Optional[list[OnenoteSection]] = Field(default=None,alias="sections",)
 
 from .notebook import Notebook
 from .onenote_operation import OnenoteOperation

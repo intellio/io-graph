@@ -10,7 +10,7 @@ class AuthenticationAttributeCollectionInputConfiguration(BaseModel):
 	hidden: Optional[bool] = Field(default=None,alias="hidden",)
 	inputType: Optional[AuthenticationAttributeCollectionInputType] = Field(default=None,alias="inputType",)
 	label: Optional[str] = Field(default=None,alias="label",)
-	options: list[AuthenticationAttributeCollectionOptionConfiguration] = Field(alias="options",)
+	options: Optional[list[AuthenticationAttributeCollectionOptionConfiguration]] = Field(default=None,alias="options",)
 	required: Optional[bool] = Field(default=None,alias="required",)
 	validationRegEx: Optional[str] = Field(default=None,alias="validationRegEx",)
 	writeToDirectory: Optional[bool] = Field(default=None,alias="writeToDirectory",)

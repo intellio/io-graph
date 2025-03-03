@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field
 class AuditResource(BaseModel):
 	auditResourceType: Optional[str] = Field(default=None,alias="auditResourceType",)
 	displayName: Optional[str] = Field(default=None,alias="displayName",)
-	modifiedProperties: list[AuditProperty] = Field(alias="modifiedProperties",)
+	modifiedProperties: Optional[list[AuditProperty]] = Field(default=None,alias="modifiedProperties",)
 	resourceId: Optional[str] = Field(default=None,alias="resourceId",)
 	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
 

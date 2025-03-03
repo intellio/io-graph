@@ -11,7 +11,7 @@ class Community(BaseModel):
 	groupId: Optional[str] = Field(default=None,alias="groupId",)
 	privacy: Optional[CommunityPrivacy] = Field(default=None,alias="privacy",)
 	group: Optional[Group] = Field(default=None,alias="group",)
-	owners: list[User] = Field(alias="owners",)
+	owners: Optional[list[User]] = Field(default=None,alias="owners",)
 
 from .community_privacy import CommunityPrivacy
 from .group import Group

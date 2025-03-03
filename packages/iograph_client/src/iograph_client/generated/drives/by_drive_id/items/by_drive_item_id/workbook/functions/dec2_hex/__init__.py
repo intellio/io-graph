@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 from kiota_abstractions.method import Method
+from kiota_abstractions.base_request_builder import BaseRequestBuilder
 from kiota_abstractions.base_request_configuration import RequestConfiguration
 from .........request_information import RequestInformation
 from pydantic import BaseModel, Field
@@ -15,11 +16,9 @@ from iograph_models.models.dec2_hex_post_request import Dec2_hexPostRequest
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
 
 
-class Dec2HexRequest:
+class Dec2HexRequest(BaseRequestBuilder):
 	def __init__(self,request_adapter: HttpxRequestAdapter, path_parameters: Optional[Union[dict[str, Any], str]]) -> None:
-		self.request_adapter = request_adapter
-		self.url_template: str = "{+baseurl}/drives/{drive%2Did}/items/{driveItem%2Did}/workbook/functions/dec2Hex"
-		self.path_parameters: dict[str, Any] = path_parameters
+		super().__init__(request_adapter, "{+baseurl}/drives/{drive%2Did}/items/{driveItem%2Did}/workbook/functions/dec2Hex", path_parameters)
 
 	async def post(
 		self,
@@ -46,4 +45,14 @@ class Dec2HexRequest:
 		request_info.set_content(body, "application/json")
 		return await self.request_adapter.send_async(request_info, WorkbookFunctionResult, error_mapping)
 
+
+	def with_url(self, raw_url: str) -> Dec2HexRequest:
+		"""
+		Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+		param raw_url: The raw URL to use for the request builder.
+		Returns: Dec2HexRequest
+		"""
+		if raw_url is None:
+			raise TypeError("raw_url cannot be None.")
+		return Dec2HexRequest(self.request_adapter, self.path_parameters)
 

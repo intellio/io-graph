@@ -1,9 +1,10 @@
 from __future__ import annotations
+from typing import Optional
 from pydantic import BaseModel, Field
 
 
 class Onenote_patch_contentPostRequest(BaseModel):
-	commands: list[OnenotePatchContentCommand] = Field(alias="commands",)
+	commands: Optional[list[OnenotePatchContentCommand]] = Field(default=None,alias="commands",)
 
 from .onenote_patch_content_command import OnenotePatchContentCommand
 

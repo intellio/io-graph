@@ -10,7 +10,7 @@ class DeviceCompliancePolicySettingState(BaseModel):
 	instanceDisplayName: Optional[str] = Field(default=None,alias="instanceDisplayName",)
 	setting: Optional[str] = Field(default=None,alias="setting",)
 	settingName: Optional[str] = Field(default=None,alias="settingName",)
-	sources: list[SettingSource] = Field(alias="sources",)
+	sources: Optional[list[SettingSource]] = Field(default=None,alias="sources",)
 	state: Optional[ComplianceStatus] = Field(default=None,alias="state",)
 	userEmail: Optional[str] = Field(default=None,alias="userEmail",)
 	userId: Optional[str] = Field(default=None,alias="userId",)

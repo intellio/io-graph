@@ -8,10 +8,10 @@ class Teamwork(BaseModel):
 	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
 	isTeamsEnabled: Optional[bool] = Field(default=None,alias="isTeamsEnabled",)
 	region: Optional[str] = Field(default=None,alias="region",)
-	deletedChats: list[DeletedChat] = Field(alias="deletedChats",)
-	deletedTeams: list[DeletedTeam] = Field(alias="deletedTeams",)
+	deletedChats: Optional[list[DeletedChat]] = Field(default=None,alias="deletedChats",)
+	deletedTeams: Optional[list[DeletedTeam]] = Field(default=None,alias="deletedTeams",)
 	teamsAppSettings: Optional[TeamsAppSettings] = Field(default=None,alias="teamsAppSettings",)
-	workforceIntegrations: list[WorkforceIntegration] = Field(alias="workforceIntegrations",)
+	workforceIntegrations: Optional[list[WorkforceIntegration]] = Field(default=None,alias="workforceIntegrations",)
 
 from .deleted_chat import DeletedChat
 from .deleted_team import DeletedTeam

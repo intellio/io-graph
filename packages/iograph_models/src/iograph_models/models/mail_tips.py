@@ -14,7 +14,7 @@ class MailTips(BaseModel):
 	mailboxFull: Optional[bool] = Field(default=None,alias="mailboxFull",)
 	maxMessageSize: Optional[int] = Field(default=None,alias="maxMessageSize",)
 	recipientScope: Optional[RecipientScopeType] = Field(default=None,alias="recipientScope",)
-	recipientSuggestions: list[Recipient] = Field(alias="recipientSuggestions",)
+	recipientSuggestions: Optional[list[Recipient]] = Field(default=None,alias="recipientSuggestions",)
 	totalMemberCount: Optional[int] = Field(default=None,alias="totalMemberCount",)
 	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
 

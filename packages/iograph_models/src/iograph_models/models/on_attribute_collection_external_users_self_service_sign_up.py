@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field
 class OnAttributeCollectionExternalUsersSelfServiceSignUp(BaseModel):
 	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
 	attributeCollectionPage: Optional[AuthenticationAttributeCollectionPage] = Field(default=None,alias="attributeCollectionPage",)
-	attributes: list[IdentityUserFlowAttribute] = Field(alias="attributes",)
+	attributes: Optional[list[IdentityUserFlowAttribute]] = Field(default=None,alias="attributes",)
 
 from .authentication_attribute_collection_page import AuthenticationAttributeCollectionPage
 from .identity_user_flow_attribute import IdentityUserFlowAttribute

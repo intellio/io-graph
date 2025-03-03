@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 from kiota_abstractions.method import Method
+from kiota_abstractions.base_request_builder import BaseRequestBuilder
 from kiota_abstractions.base_request_configuration import RequestConfiguration
 from ...........request_information import RequestInformation
 from pydantic import BaseModel, Field
@@ -14,11 +15,9 @@ from iograph_models.models.directory_definition import DirectoryDefinition
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
 
 
-class DiscoverRequest:
+class DiscoverRequest(BaseRequestBuilder):
 	def __init__(self,request_adapter: HttpxRequestAdapter, path_parameters: Optional[Union[dict[str, Any], str]]) -> None:
-		self.request_adapter = request_adapter
-		self.url_template: str = "{+baseurl}/servicePrincipals/{servicePrincipal%2Did}/synchronization/templates/{synchronizationTemplate%2Did}/schema/directories/{directoryDefinition%2Did}/discover"
-		self.path_parameters: dict[str, Any] = path_parameters
+		super().__init__(request_adapter, "{+baseurl}/servicePrincipals/{servicePrincipal%2Did}/synchronization/templates/{synchronizationTemplate%2Did}/schema/directories/{directoryDefinition%2Did}/discover", path_parameters)
 
 	async def post(
 		self,
@@ -44,4 +43,14 @@ class DiscoverRequest:
 		request_info.headers.try_add("Accept", "application/json")
 		return await self.request_adapter.send_async(request_info, DirectoryDefinition, error_mapping)
 
+
+	def with_url(self, raw_url: str) -> DiscoverRequest:
+		"""
+		Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+		param raw_url: The raw URL to use for the request builder.
+		Returns: DiscoverRequest
+		"""
+		if raw_url is None:
+			raise TypeError("raw_url cannot be None.")
+		return DiscoverRequest(self.request_adapter, self.path_parameters)
 

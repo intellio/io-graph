@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field
 class WorkbookTableSort(BaseModel):
 	id: Optional[str] = Field(default=None,alias="id",)
 	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	fields: list[WorkbookSortField] = Field(alias="fields",)
+	fields: Optional[list[WorkbookSortField]] = Field(default=None,alias="fields",)
 	matchCase: Optional[bool] = Field(default=None,alias="matchCase",)
 	method: Optional[str] = Field(default=None,alias="method",)
 

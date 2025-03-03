@@ -6,8 +6,8 @@ from pydantic import BaseModel, Field
 class SecurityGeoLocation(BaseModel):
 	city: Optional[str] = Field(default=None,alias="city",)
 	countryName: Optional[str] = Field(default=None,alias="countryName",)
-	latitude: Optional[float] | Optional[str] | ReferenceNumeric
-	longitude: Optional[float] | Optional[str] | ReferenceNumeric
+	latitude: float | str | ReferenceNumeric
+	longitude: float | str | ReferenceNumeric
 	state: Optional[str] = Field(default=None,alias="state",)
 	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
 

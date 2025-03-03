@@ -9,7 +9,7 @@ class BookingBusiness(BaseModel):
 	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
 	address: Optional[PhysicalAddress] = Field(default=None,alias="address",)
 	bookingPageSettings: Optional[BookingPageSettings] = Field(default=None,alias="bookingPageSettings",)
-	businessHours: list[BookingWorkHours] = Field(alias="businessHours",)
+	businessHours: Optional[list[BookingWorkHours]] = Field(default=None,alias="businessHours",)
 	businessType: Optional[str] = Field(default=None,alias="businessType",)
 	createdDateTime: Optional[datetime] = Field(default=None,alias="createdDateTime",)
 	defaultCurrencyIso: Optional[str] = Field(default=None,alias="defaultCurrencyIso",)
@@ -22,12 +22,12 @@ class BookingBusiness(BaseModel):
 	publicUrl: Optional[str] = Field(default=None,alias="publicUrl",)
 	schedulingPolicy: Optional[BookingSchedulingPolicy] = Field(default=None,alias="schedulingPolicy",)
 	webSiteUrl: Optional[str] = Field(default=None,alias="webSiteUrl",)
-	appointments: list[BookingAppointment] = Field(alias="appointments",)
-	calendarView: list[BookingAppointment] = Field(alias="calendarView",)
-	customers: list[BookingCustomerBase] = Field(alias="customers",)
-	customQuestions: list[BookingCustomQuestion] = Field(alias="customQuestions",)
-	services: list[BookingService] = Field(alias="services",)
-	staffMembers: list[BookingStaffMemberBase] = Field(alias="staffMembers",)
+	appointments: Optional[list[BookingAppointment]] = Field(default=None,alias="appointments",)
+	calendarView: Optional[list[BookingAppointment]] = Field(default=None,alias="calendarView",)
+	customers: Optional[list[BookingCustomerBase]] = Field(default=None,alias="customers",)
+	customQuestions: Optional[list[BookingCustomQuestion]] = Field(default=None,alias="customQuestions",)
+	services: Optional[list[BookingService]] = Field(default=None,alias="services",)
+	staffMembers: Optional[list[BookingStaffMemberBase]] = Field(default=None,alias="staffMembers",)
 
 from .physical_address import PhysicalAddress
 from .booking_page_settings import BookingPageSettings

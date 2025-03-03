@@ -5,7 +5,7 @@ from pydantic import BaseModel, Field
 
 
 class AssignedLicense(BaseModel):
-	disabledPlans: list[UUID] = Field(alias="disabledPlans",)
+	disabledPlans: Optional[list[UUID]] = Field(default=None,alias="disabledPlans",)
 	skuId: Optional[UUID] = Field(default=None,alias="skuId",)
 	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
 

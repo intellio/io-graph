@@ -4,7 +4,7 @@ from pydantic import BaseModel, Field
 
 
 class ComplianceInformation(BaseModel):
-	certificationControls: list[CertificationControl] = Field(alias="certificationControls",)
+	certificationControls: Optional[list[CertificationControl]] = Field(default=None,alias="certificationControls",)
 	certificationName: Optional[str] = Field(default=None,alias="certificationName",)
 	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
 

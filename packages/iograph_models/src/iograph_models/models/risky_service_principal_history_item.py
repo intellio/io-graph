@@ -16,7 +16,7 @@ class RiskyServicePrincipalHistoryItem(BaseModel):
 	riskLevel: Optional[RiskLevel] = Field(default=None,alias="riskLevel",)
 	riskState: Optional[RiskState] = Field(default=None,alias="riskState",)
 	servicePrincipalType: Optional[str] = Field(default=None,alias="servicePrincipalType",)
-	history: list[RiskyServicePrincipalHistoryItem] = Field(alias="history",)
+	history: Optional[list[RiskyServicePrincipalHistoryItem]] = Field(default=None,alias="history",)
 	activity: Optional[RiskServicePrincipalActivity] = Field(default=None,alias="activity",)
 	initiatedBy: Optional[str] = Field(default=None,alias="initiatedBy",)
 

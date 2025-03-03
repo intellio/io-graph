@@ -13,7 +13,7 @@ class DeviceEnrollmentPlatformRestrictionsConfiguration(BaseModel):
 	lastModifiedDateTime: Optional[datetime] = Field(default=None,alias="lastModifiedDateTime",)
 	priority: Optional[int] = Field(default=None,alias="priority",)
 	version: Optional[int] = Field(default=None,alias="version",)
-	assignments: list[EnrollmentConfigurationAssignment] = Field(alias="assignments",)
+	assignments: Optional[list[EnrollmentConfigurationAssignment]] = Field(default=None,alias="assignments",)
 	androidRestriction: Optional[DeviceEnrollmentPlatformRestriction] = Field(default=None,alias="androidRestriction",)
 	iosRestriction: Optional[DeviceEnrollmentPlatformRestriction] = Field(default=None,alias="iosRestriction",)
 	macOSRestriction: Optional[DeviceEnrollmentPlatformRestriction] = Field(default=None,alias="macOSRestriction",)

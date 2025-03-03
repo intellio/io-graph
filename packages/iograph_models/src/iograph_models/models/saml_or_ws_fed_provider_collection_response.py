@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field
 class SamlOrWsFedProviderCollectionResponse(BaseModel):
 	odata_count: Optional[int] = Field(default=None,alias="@odata.count",)
 	odata_nextLink: Optional[str] = Field(default=None,alias="@odata.nextLink",)
-	value: list[SamlOrWsFedProvider] = Field(alias="value",)
+	value: Optional[list[SamlOrWsFedProvider]] = Field(default=None,alias="value",)
 
 from .saml_or_ws_fed_provider import SamlOrWsFedProvider
 

@@ -8,7 +8,7 @@ class EducationAssignmentPointsGrade(BaseModel):
 	gradedBy: Optional[IdentitySet] = Field(default=None,alias="gradedBy",)
 	gradedDateTime: Optional[datetime] = Field(default=None,alias="gradedDateTime",)
 	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	points: Optional[float] | Optional[str] | ReferenceNumeric
+	points: float | str | ReferenceNumeric
 
 from .identity_set import IdentitySet
 from .reference_numeric import ReferenceNumeric

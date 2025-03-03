@@ -15,10 +15,10 @@ class VirtualEventRegistration(BaseModel):
 	preferredLanguage: Optional[str] = Field(default=None,alias="preferredLanguage",)
 	preferredTimezone: Optional[str] = Field(default=None,alias="preferredTimezone",)
 	registrationDateTime: Optional[datetime] = Field(default=None,alias="registrationDateTime",)
-	registrationQuestionAnswers: list[VirtualEventRegistrationQuestionAnswer] = Field(alias="registrationQuestionAnswers",)
+	registrationQuestionAnswers: Optional[list[VirtualEventRegistrationQuestionAnswer]] = Field(default=None,alias="registrationQuestionAnswers",)
 	status: Optional[VirtualEventAttendeeRegistrationStatus] = Field(default=None,alias="status",)
 	userId: Optional[str] = Field(default=None,alias="userId",)
-	sessions: list[VirtualEventSession] = Field(alias="sessions",)
+	sessions: Optional[list[VirtualEventSession]] = Field(default=None,alias="sessions",)
 
 from .virtual_event_external_registration_information import VirtualEventExternalRegistrationInformation
 from .virtual_event_registration_question_answer import VirtualEventRegistrationQuestionAnswer

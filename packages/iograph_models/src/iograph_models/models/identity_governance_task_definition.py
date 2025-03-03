@@ -10,7 +10,7 @@ class IdentityGovernanceTaskDefinition(BaseModel):
 	continueOnError: Optional[bool] = Field(default=None,alias="continueOnError",)
 	description: Optional[str] = Field(default=None,alias="description",)
 	displayName: Optional[str] = Field(default=None,alias="displayName",)
-	parameters: list[IdentityGovernanceParameter] = Field(alias="parameters",)
+	parameters: Optional[list[IdentityGovernanceParameter]] = Field(default=None,alias="parameters",)
 	version: Optional[int] = Field(default=None,alias="version",)
 
 from .identity_governance_lifecycle_task_category import IdentityGovernanceLifecycleTaskCategory

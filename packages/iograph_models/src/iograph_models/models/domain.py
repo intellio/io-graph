@@ -18,12 +18,12 @@ class Domain(BaseModel):
 	passwordNotificationWindowInDays: Optional[int] = Field(default=None,alias="passwordNotificationWindowInDays",)
 	passwordValidityPeriodInDays: Optional[int] = Field(default=None,alias="passwordValidityPeriodInDays",)
 	state: Optional[DomainState] = Field(default=None,alias="state",)
-	supportedServices: list[str] = Field(alias="supportedServices",)
-	domainNameReferences: list[DirectoryObject] = Field(alias="domainNameReferences",)
-	federationConfiguration: list[InternalDomainFederation] = Field(alias="federationConfiguration",)
+	supportedServices: Optional[list[str]] = Field(default=None,alias="supportedServices",)
+	domainNameReferences: Optional[list[DirectoryObject]] = Field(default=None,alias="domainNameReferences",)
+	federationConfiguration: Optional[list[InternalDomainFederation]] = Field(default=None,alias="federationConfiguration",)
 	rootDomain: Optional[Domain] = Field(default=None,alias="rootDomain",)
-	serviceConfigurationRecords: list[DomainDnsRecord] = Field(alias="serviceConfigurationRecords",)
-	verificationDnsRecords: list[DomainDnsRecord] = Field(alias="verificationDnsRecords",)
+	serviceConfigurationRecords: Optional[list[DomainDnsRecord]] = Field(default=None,alias="serviceConfigurationRecords",)
+	verificationDnsRecords: Optional[list[DomainDnsRecord]] = Field(default=None,alias="verificationDnsRecords",)
 
 from .domain_state import DomainState
 from .directory_object import DirectoryObject

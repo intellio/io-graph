@@ -23,12 +23,12 @@ class Drive(BaseModel):
 	quota: Optional[Quota] = Field(default=None,alias="quota",)
 	sharePointIds: Optional[SharepointIds] = Field(default=None,alias="sharePointIds",)
 	system: Optional[SystemFacet] = Field(default=None,alias="system",)
-	bundles: list[DriveItem] = Field(alias="bundles",)
-	following: list[DriveItem] = Field(alias="following",)
-	items: list[DriveItem] = Field(alias="items",)
+	bundles: Optional[list[DriveItem]] = Field(default=None,alias="bundles",)
+	following: Optional[list[DriveItem]] = Field(default=None,alias="following",)
+	items: Optional[list[DriveItem]] = Field(default=None,alias="items",)
 	list: Optional[List] = Field(default=None,alias="list",)
 	root: Optional[DriveItem] = Field(default=None,alias="root",)
-	special: list[DriveItem] = Field(alias="special",)
+	special: Optional[list[DriveItem]] = Field(default=None,alias="special",)
 
 from .identity_set import IdentitySet
 from .identity_set import IdentitySet

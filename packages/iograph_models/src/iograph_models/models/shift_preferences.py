@@ -11,7 +11,7 @@ class ShiftPreferences(BaseModel):
 	createdDateTime: Optional[datetime] = Field(default=None,alias="createdDateTime",)
 	lastModifiedBy: Optional[IdentitySet] = Field(default=None,alias="lastModifiedBy",)
 	lastModifiedDateTime: Optional[datetime] = Field(default=None,alias="lastModifiedDateTime",)
-	availability: list[ShiftAvailability] = Field(alias="availability",)
+	availability: Optional[list[ShiftAvailability]] = Field(default=None,alias="availability",)
 
 from .identity_set import IdentitySet
 from .identity_set import IdentitySet

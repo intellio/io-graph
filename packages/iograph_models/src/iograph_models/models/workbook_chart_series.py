@@ -8,7 +8,7 @@ class WorkbookChartSeries(BaseModel):
 	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
 	name: Optional[str] = Field(default=None,alias="name",)
 	format: Optional[WorkbookChartSeriesFormat] = Field(default=None,alias="format",)
-	points: list[WorkbookChartPoint] = Field(alias="points",)
+	points: Optional[list[WorkbookChartPoint]] = Field(default=None,alias="points",)
 
 from .workbook_chart_series_format import WorkbookChartSeriesFormat
 from .workbook_chart_point import WorkbookChartPoint

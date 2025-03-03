@@ -21,9 +21,9 @@ class EducationSubmission(BaseModel):
 	unsubmittedBy: Optional[IdentitySet] = Field(default=None,alias="unsubmittedBy",)
 	unsubmittedDateTime: Optional[datetime] = Field(default=None,alias="unsubmittedDateTime",)
 	webUrl: Optional[str] = Field(default=None,alias="webUrl",)
-	outcomes: list[EducationOutcome] = Field(alias="outcomes",)
-	resources: list[EducationSubmissionResource] = Field(alias="resources",)
-	submittedResources: list[EducationSubmissionResource] = Field(alias="submittedResources",)
+	outcomes: Optional[list[EducationOutcome]] = Field(default=None,alias="outcomes",)
+	resources: Optional[list[EducationSubmissionResource]] = Field(default=None,alias="resources",)
+	submittedResources: Optional[list[EducationSubmissionResource]] = Field(default=None,alias="submittedResources",)
 
 from .identity_set import IdentitySet
 from .identity_set import IdentitySet

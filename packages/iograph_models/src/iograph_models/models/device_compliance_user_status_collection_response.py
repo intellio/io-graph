@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field
 class DeviceComplianceUserStatusCollectionResponse(BaseModel):
 	odata_count: Optional[int] = Field(default=None,alias="@odata.count",)
 	odata_nextLink: Optional[str] = Field(default=None,alias="@odata.nextLink",)
-	value: list[DeviceComplianceUserStatus] = Field(alias="value",)
+	value: Optional[list[DeviceComplianceUserStatus]] = Field(default=None,alias="value",)
 
 from .device_compliance_user_status import DeviceComplianceUserStatus
 

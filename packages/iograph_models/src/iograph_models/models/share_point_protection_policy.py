@@ -12,10 +12,10 @@ class SharePointProtectionPolicy(BaseModel):
 	displayName: Optional[str] = Field(default=None,alias="displayName",)
 	lastModifiedBy: Optional[IdentitySet] = Field(default=None,alias="lastModifiedBy",)
 	lastModifiedDateTime: Optional[datetime] = Field(default=None,alias="lastModifiedDateTime",)
-	retentionSettings: list[RetentionSetting] = Field(alias="retentionSettings",)
+	retentionSettings: Optional[list[RetentionSetting]] = Field(default=None,alias="retentionSettings",)
 	status: Optional[ProtectionPolicyStatus] = Field(default=None,alias="status",)
-	siteInclusionRules: list[SiteProtectionRule] = Field(alias="siteInclusionRules",)
-	siteProtectionUnits: list[SiteProtectionUnit] = Field(alias="siteProtectionUnits",)
+	siteInclusionRules: Optional[list[SiteProtectionRule]] = Field(default=None,alias="siteInclusionRules",)
+	siteProtectionUnits: Optional[list[SiteProtectionUnit]] = Field(default=None,alias="siteProtectionUnits",)
 
 from .identity_set import IdentitySet
 from .identity_set import IdentitySet

@@ -5,7 +5,7 @@ from pydantic import BaseModel, Field
 
 class ShiftAvailability(BaseModel):
 	recurrence: Optional[PatternedRecurrence] = Field(default=None,alias="recurrence",)
-	timeSlots: list[TimeRange] = Field(alias="timeSlots",)
+	timeSlots: Optional[list[TimeRange]] = Field(default=None,alias="timeSlots",)
 	timeZone: Optional[str] = Field(default=None,alias="timeZone",)
 	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
 

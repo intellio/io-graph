@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field
 class IdentityGovernanceTask(BaseModel):
 	id: Optional[str] = Field(default=None,alias="id",)
 	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	arguments: list[KeyValuePair] = Field(alias="arguments",)
+	arguments: Optional[list[KeyValuePair]] = Field(default=None,alias="arguments",)
 	category: Optional[IdentityGovernanceLifecycleTaskCategory] = Field(default=None,alias="category",)
 	continueOnError: Optional[bool] = Field(default=None,alias="continueOnError",)
 	description: Optional[str] = Field(default=None,alias="description",)
@@ -14,7 +14,7 @@ class IdentityGovernanceTask(BaseModel):
 	executionSequence: Optional[int] = Field(default=None,alias="executionSequence",)
 	isEnabled: Optional[bool] = Field(default=None,alias="isEnabled",)
 	taskDefinitionId: Optional[str] = Field(default=None,alias="taskDefinitionId",)
-	taskProcessingResults: list[IdentityGovernanceTaskProcessingResult] = Field(alias="taskProcessingResults",)
+	taskProcessingResults: Optional[list[IdentityGovernanceTaskProcessingResult]] = Field(default=None,alias="taskProcessingResults",)
 
 from .key_value_pair import KeyValuePair
 from .identity_governance_lifecycle_task_category import IdentityGovernanceLifecycleTaskCategory

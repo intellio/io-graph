@@ -5,11 +5,11 @@ from pydantic import BaseModel, Field
 
 class UnifiedApprovalStage(BaseModel):
 	approvalStageTimeOutInDays: Optional[int] = Field(default=None,alias="approvalStageTimeOutInDays",)
-	escalationApprovers: list[SubjectSet] = Field(alias="escalationApprovers",)
+	escalationApprovers: Optional[list[SubjectSet]] = Field(default=None,alias="escalationApprovers",)
 	escalationTimeInMinutes: Optional[int] = Field(default=None,alias="escalationTimeInMinutes",)
 	isApproverJustificationRequired: Optional[bool] = Field(default=None,alias="isApproverJustificationRequired",)
 	isEscalationEnabled: Optional[bool] = Field(default=None,alias="isEscalationEnabled",)
-	primaryApprovers: list[SubjectSet] = Field(alias="primaryApprovers",)
+	primaryApprovers: Optional[list[SubjectSet]] = Field(default=None,alias="primaryApprovers",)
 	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
 
 from .subject_set import SubjectSet

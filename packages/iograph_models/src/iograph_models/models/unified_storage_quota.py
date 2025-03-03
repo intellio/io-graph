@@ -12,7 +12,7 @@ class UnifiedStorageQuota(BaseModel):
 	state: Optional[str] = Field(default=None,alias="state",)
 	total: Optional[int] = Field(default=None,alias="total",)
 	used: Optional[int] = Field(default=None,alias="used",)
-	services: list[ServiceStorageQuotaBreakdown] = Field(alias="services",)
+	services: Optional[list[ServiceStorageQuotaBreakdown]] = Field(default=None,alias="services",)
 
 from .service_storage_quota_breakdown import ServiceStorageQuotaBreakdown
 

@@ -7,7 +7,7 @@ class DeltaParticipants(BaseModel):
 	id: Optional[str] = Field(default=None,alias="id",)
 	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
 	sequenceNumber: Optional[int] = Field(default=None,alias="sequenceNumber",)
-	participants: list[Participant] = Field(alias="participants",)
+	participants: Optional[list[Participant]] = Field(default=None,alias="participants",)
 
 from .participant import Participant
 

@@ -3,6 +3,7 @@
 from __future__ import annotations
 from kiota_abstractions.get_path_parameters import get_path_parameters
 from kiota_abstractions.method import Method
+from kiota_abstractions.base_request_builder import BaseRequestBuilder
 from kiota_abstractions.base_request_configuration import RequestConfiguration
 from .....request_information import RequestInformation
 from pydantic import BaseModel, Field
@@ -13,16 +14,14 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_list_id import ByListIdRequest
 	from .....request_adapter import HttpxRequestAdapter
-from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.models.list_collection_response import ListCollectionResponse
 from iograph_models.models.list import List
+from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
 
 
-class ListsRequest:
+class ListsRequest(BaseRequestBuilder):
 	def __init__(self,request_adapter: HttpxRequestAdapter, path_parameters: Optional[Union[dict[str, Any], str]]) -> None:
-		self.request_adapter = request_adapter
-		self.url_template: str = "{+baseurl}/sites/{site%2Did}/lists"
-		self.path_parameters: dict[str, Any] = path_parameters
+		super().__init__(request_adapter, "{+baseurl}/sites/{site%2Did}/lists", path_parameters)
 
 	async def get(
 		self,
@@ -85,6 +84,16 @@ To list them, include system in your $select statement.
 		select: list[str] = Field(default=None,serialization_alias="%24select")
 		expand: list[str] = Field(default=None,serialization_alias="%24expand")
 
+
+	def with_url(self, raw_url: str) -> ListsRequest:
+		"""
+		Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+		param raw_url: The raw URL to use for the request builder.
+		Returns: ListsRequest
+		"""
+		if raw_url is None:
+			raise TypeError("raw_url cannot be None.")
+		return ListsRequest(self.request_adapter, self.path_parameters)
 
 	def by_list_id(self,
 		site_id: str,

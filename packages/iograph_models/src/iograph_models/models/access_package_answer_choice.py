@@ -5,7 +5,7 @@ from pydantic import BaseModel, Field
 
 class AccessPackageAnswerChoice(BaseModel):
 	actualValue: Optional[str] = Field(default=None,alias="actualValue",)
-	localizations: list[AccessPackageLocalizedText] = Field(alias="localizations",)
+	localizations: Optional[list[AccessPackageLocalizedText]] = Field(default=None,alias="localizations",)
 	text: Optional[str] = Field(default=None,alias="text",)
 	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
 

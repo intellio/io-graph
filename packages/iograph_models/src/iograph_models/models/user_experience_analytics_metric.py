@@ -7,7 +7,7 @@ class UserExperienceAnalyticsMetric(BaseModel):
 	id: Optional[str] = Field(default=None,alias="id",)
 	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
 	unit: Optional[str] = Field(default=None,alias="unit",)
-	value: Optional[float] | Optional[str] | ReferenceNumeric
+	value: float | str | ReferenceNumeric
 
 from .reference_numeric import ReferenceNumeric
 

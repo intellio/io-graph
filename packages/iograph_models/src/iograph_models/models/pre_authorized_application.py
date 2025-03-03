@@ -5,7 +5,7 @@ from pydantic import BaseModel, Field
 
 class PreAuthorizedApplication(BaseModel):
 	appId: Optional[str] = Field(default=None,alias="appId",)
-	delegatedPermissionIds: list[str] = Field(alias="delegatedPermissionIds",)
+	delegatedPermissionIds: Optional[list[str]] = Field(default=None,alias="delegatedPermissionIds",)
 	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
 
 

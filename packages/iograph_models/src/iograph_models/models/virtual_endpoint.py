@@ -6,13 +6,13 @@ from pydantic import BaseModel, Field
 class VirtualEndpoint(BaseModel):
 	id: Optional[str] = Field(default=None,alias="id",)
 	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	auditEvents: list[CloudPcAuditEvent] = Field(alias="auditEvents",)
-	cloudPCs: list[CloudPC] = Field(alias="cloudPCs",)
-	deviceImages: list[CloudPcDeviceImage] = Field(alias="deviceImages",)
-	galleryImages: list[CloudPcGalleryImage] = Field(alias="galleryImages",)
-	onPremisesConnections: list[CloudPcOnPremisesConnection] = Field(alias="onPremisesConnections",)
-	provisioningPolicies: list[CloudPcProvisioningPolicy] = Field(alias="provisioningPolicies",)
-	userSettings: list[CloudPcUserSetting] = Field(alias="userSettings",)
+	auditEvents: Optional[list[CloudPcAuditEvent]] = Field(default=None,alias="auditEvents",)
+	cloudPCs: Optional[list[CloudPC]] = Field(default=None,alias="cloudPCs",)
+	deviceImages: Optional[list[CloudPcDeviceImage]] = Field(default=None,alias="deviceImages",)
+	galleryImages: Optional[list[CloudPcGalleryImage]] = Field(default=None,alias="galleryImages",)
+	onPremisesConnections: Optional[list[CloudPcOnPremisesConnection]] = Field(default=None,alias="onPremisesConnections",)
+	provisioningPolicies: Optional[list[CloudPcProvisioningPolicy]] = Field(default=None,alias="provisioningPolicies",)
+	userSettings: Optional[list[CloudPcUserSetting]] = Field(default=None,alias="userSettings",)
 
 from .cloud_pc_audit_event import CloudPcAuditEvent
 from .cloud_p_c import CloudPC

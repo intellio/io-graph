@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field
 class WebAppCollectionResponse(BaseModel):
 	odata_count: Optional[int] = Field(default=None,alias="@odata.count",)
 	odata_nextLink: Optional[str] = Field(default=None,alias="@odata.nextLink",)
-	value: list[WebApp] = Field(alias="value",)
+	value: Optional[list[WebApp]] = Field(default=None,alias="value",)
 
 from .web_app import WebApp
 

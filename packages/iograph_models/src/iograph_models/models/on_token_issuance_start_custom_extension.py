@@ -11,7 +11,7 @@ class OnTokenIssuanceStartCustomExtension(BaseModel):
 	description: Optional[str] = Field(default=None,alias="description",)
 	displayName: Optional[str] = Field(default=None,alias="displayName",)
 	endpointConfiguration: Optional[CustomExtensionEndpointConfiguration] = Field(default=None,alias="endpointConfiguration",)
-	claimsForTokenConfiguration: list[OnTokenIssuanceStartReturnClaim] = Field(alias="claimsForTokenConfiguration",)
+	claimsForTokenConfiguration: Optional[list[OnTokenIssuanceStartReturnClaim]] = Field(default=None,alias="claimsForTokenConfiguration",)
 
 from .custom_extension_authentication_configuration import CustomExtensionAuthenticationConfiguration
 from .custom_extension_client_configuration import CustomExtensionClientConfiguration

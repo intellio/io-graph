@@ -18,7 +18,7 @@ class AuditEvent(BaseModel):
 	componentName: Optional[str] = Field(default=None,alias="componentName",)
 	correlationId: Optional[UUID] = Field(default=None,alias="correlationId",)
 	displayName: Optional[str] = Field(default=None,alias="displayName",)
-	resources: list[AuditResource] = Field(alias="resources",)
+	resources: Optional[list[AuditResource]] = Field(default=None,alias="resources",)
 
 from .audit_actor import AuditActor
 from .audit_resource import AuditResource

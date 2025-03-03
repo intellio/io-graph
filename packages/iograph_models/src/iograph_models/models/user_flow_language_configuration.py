@@ -8,8 +8,8 @@ class UserFlowLanguageConfiguration(BaseModel):
 	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
 	displayName: Optional[str] = Field(default=None,alias="displayName",)
 	isEnabled: Optional[bool] = Field(default=None,alias="isEnabled",)
-	defaultPages: list[UserFlowLanguagePage] = Field(alias="defaultPages",)
-	overridesPages: list[UserFlowLanguagePage] = Field(alias="overridesPages",)
+	defaultPages: Optional[list[UserFlowLanguagePage]] = Field(default=None,alias="defaultPages",)
+	overridesPages: Optional[list[UserFlowLanguagePage]] = Field(default=None,alias="overridesPages",)
 
 from .user_flow_language_page import UserFlowLanguagePage
 from .user_flow_language_page import UserFlowLanguagePage

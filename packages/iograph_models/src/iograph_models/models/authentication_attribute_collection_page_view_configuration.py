@@ -5,7 +5,7 @@ from pydantic import BaseModel, Field
 
 class AuthenticationAttributeCollectionPageViewConfiguration(BaseModel):
 	description: Optional[str] = Field(default=None,alias="description",)
-	inputs: list[AuthenticationAttributeCollectionInputConfiguration] = Field(alias="inputs",)
+	inputs: Optional[list[AuthenticationAttributeCollectionInputConfiguration]] = Field(default=None,alias="inputs",)
 	title: Optional[str] = Field(default=None,alias="title",)
 	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
 

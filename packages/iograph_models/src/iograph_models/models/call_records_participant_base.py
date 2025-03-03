@@ -8,7 +8,7 @@ from pydantic import BaseModel, Field
 class CallRecordsParticipantBase(BaseModel):
 	id: Optional[str] = Field(default=None,alias="id",)
 	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	administrativeUnitInfos: list[CallRecordsAdministrativeUnitInfo] = Field(alias="administrativeUnitInfos",)
+	administrativeUnitInfos: Optional[list[CallRecordsAdministrativeUnitInfo]] = Field(default=None,alias="administrativeUnitInfos",)
 	identity: Optional[CommunicationsIdentitySet] = Field(default=None,alias="identity",)
 
 	@model_validator(mode="wrap")

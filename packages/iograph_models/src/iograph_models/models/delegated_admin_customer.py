@@ -8,7 +8,7 @@ class DelegatedAdminCustomer(BaseModel):
 	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
 	displayName: Optional[str] = Field(default=None,alias="displayName",)
 	tenantId: Optional[str] = Field(default=None,alias="tenantId",)
-	serviceManagementDetails: list[DelegatedAdminServiceManagementDetail] = Field(alias="serviceManagementDetails",)
+	serviceManagementDetails: Optional[list[DelegatedAdminServiceManagementDetail]] = Field(default=None,alias="serviceManagementDetails",)
 
 from .delegated_admin_service_management_detail import DelegatedAdminServiceManagementDetail
 

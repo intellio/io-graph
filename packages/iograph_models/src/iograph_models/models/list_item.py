@@ -21,10 +21,10 @@ class ListItem(BaseModel):
 	contentType: Optional[ContentTypeInfo] = Field(default=None,alias="contentType",)
 	sharepointIds: Optional[SharepointIds] = Field(default=None,alias="sharepointIds",)
 	analytics: Optional[ItemAnalytics] = Field(default=None,alias="analytics",)
-	documentSetVersions: list[DocumentSetVersion] = Field(alias="documentSetVersions",)
+	documentSetVersions: Optional[list[DocumentSetVersion]] = Field(default=None,alias="documentSetVersions",)
 	driveItem: Optional[DriveItem] = Field(default=None,alias="driveItem",)
 	fields: Optional[FieldValueSet] = Field(default=None,alias="fields",)
-	versions: list[ListItemVersion] = Field(alias="versions",)
+	versions: Optional[list[ListItemVersion]] = Field(default=None,alias="versions",)
 
 from .identity_set import IdentitySet
 from .identity_set import IdentitySet

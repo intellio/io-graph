@@ -10,7 +10,7 @@ class Trending(BaseModel):
 	lastModifiedDateTime: Optional[datetime] = Field(default=None,alias="lastModifiedDateTime",)
 	resourceReference: Optional[ResourceReference] = Field(default=None,alias="resourceReference",)
 	resourceVisualization: Optional[ResourceVisualization] = Field(default=None,alias="resourceVisualization",)
-	weight: Optional[float] | Optional[str] | ReferenceNumeric
+	weight: float | str | ReferenceNumeric
 	resource: Optional[Entity] = Field(default=None,alias="resource",)
 
 from .resource_reference import ResourceReference

@@ -7,7 +7,7 @@ from pydantic import BaseModel, Field
 class ChatMessage(BaseModel):
 	id: Optional[str] = Field(default=None,alias="id",)
 	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	attachments: list[ChatMessageAttachment] = Field(alias="attachments",)
+	attachments: Optional[list[ChatMessageAttachment]] = Field(default=None,alias="attachments",)
 	body: Optional[ItemBody] = Field(default=None,alias="body",)
 	channelIdentity: Optional[ChannelIdentity] = Field(default=None,alias="channelIdentity",)
 	chatId: Optional[str] = Field(default=None,alias="chatId",)
@@ -20,17 +20,17 @@ class ChatMessage(BaseModel):
 	lastEditedDateTime: Optional[datetime] = Field(default=None,alias="lastEditedDateTime",)
 	lastModifiedDateTime: Optional[datetime] = Field(default=None,alias="lastModifiedDateTime",)
 	locale: Optional[str] = Field(default=None,alias="locale",)
-	mentions: list[ChatMessageMention] = Field(alias="mentions",)
-	messageHistory: list[ChatMessageHistoryItem] = Field(alias="messageHistory",)
+	mentions: Optional[list[ChatMessageMention]] = Field(default=None,alias="mentions",)
+	messageHistory: Optional[list[ChatMessageHistoryItem]] = Field(default=None,alias="messageHistory",)
 	messageType: Optional[ChatMessageType] = Field(default=None,alias="messageType",)
 	policyViolation: Optional[ChatMessagePolicyViolation] = Field(default=None,alias="policyViolation",)
-	reactions: list[ChatMessageReaction] = Field(alias="reactions",)
+	reactions: Optional[list[ChatMessageReaction]] = Field(default=None,alias="reactions",)
 	replyToId: Optional[str] = Field(default=None,alias="replyToId",)
 	subject: Optional[str] = Field(default=None,alias="subject",)
 	summary: Optional[str] = Field(default=None,alias="summary",)
 	webUrl: Optional[str] = Field(default=None,alias="webUrl",)
-	hostedContents: list[ChatMessageHostedContent] = Field(alias="hostedContents",)
-	replies: list[ChatMessage] = Field(alias="replies",)
+	hostedContents: Optional[list[ChatMessageHostedContent]] = Field(default=None,alias="hostedContents",)
+	replies: Optional[list[ChatMessage]] = Field(default=None,alias="replies",)
 
 from .chat_message_attachment import ChatMessageAttachment
 from .item_body import ItemBody

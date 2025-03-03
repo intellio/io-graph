@@ -10,9 +10,9 @@ class CrossTenantAccessPolicy(BaseModel):
 	deletedDateTime: Optional[datetime] = Field(default=None,alias="deletedDateTime",)
 	description: Optional[str] = Field(default=None,alias="description",)
 	displayName: Optional[str] = Field(default=None,alias="displayName",)
-	allowedCloudEndpoints: list[str] = Field(alias="allowedCloudEndpoints",)
+	allowedCloudEndpoints: Optional[list[str]] = Field(default=None,alias="allowedCloudEndpoints",)
 	default: Optional[CrossTenantAccessPolicyConfigurationDefault] = Field(default=None,alias="default",)
-	partners: list[CrossTenantAccessPolicyConfigurationPartner] = Field(alias="partners",)
+	partners: Optional[list[CrossTenantAccessPolicyConfigurationPartner]] = Field(default=None,alias="partners",)
 	templates: Optional[PolicyTemplate] = Field(default=None,alias="templates",)
 
 from .cross_tenant_access_policy_configuration_default import CrossTenantAccessPolicyConfigurationDefault

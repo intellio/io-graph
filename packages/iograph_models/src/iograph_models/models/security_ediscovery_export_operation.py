@@ -15,7 +15,7 @@ class SecurityEdiscoveryExportOperation(BaseModel):
 	resultInfo: Optional[ResultInfo] = Field(default=None,alias="resultInfo",)
 	status: Optional[SecurityCaseOperationStatus] = Field(default=None,alias="status",)
 	description: Optional[str] = Field(default=None,alias="description",)
-	exportFileMetadata: list[SecurityExportFileMetadata] = Field(alias="exportFileMetadata",)
+	exportFileMetadata: Optional[list[SecurityExportFileMetadata]] = Field(default=None,alias="exportFileMetadata",)
 	exportOptions: Optional[SecurityExportOptions] = Field(default=None,alias="exportOptions",)
 	exportStructure: Optional[SecurityExportFileStructure] = Field(default=None,alias="exportStructure",)
 	outputName: Optional[str] = Field(default=None,alias="outputName",)

@@ -7,7 +7,7 @@ from pydantic import BaseModel, Field
 class AccessPackageResource(BaseModel):
 	id: Optional[str] = Field(default=None,alias="id",)
 	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	attributes: list[AccessPackageResourceAttribute] = Field(alias="attributes",)
+	attributes: Optional[list[AccessPackageResourceAttribute]] = Field(default=None,alias="attributes",)
 	createdDateTime: Optional[datetime] = Field(default=None,alias="createdDateTime",)
 	description: Optional[str] = Field(default=None,alias="description",)
 	displayName: Optional[str] = Field(default=None,alias="displayName",)
@@ -15,8 +15,8 @@ class AccessPackageResource(BaseModel):
 	originId: Optional[str] = Field(default=None,alias="originId",)
 	originSystem: Optional[str] = Field(default=None,alias="originSystem",)
 	environment: Optional[AccessPackageResourceEnvironment] = Field(default=None,alias="environment",)
-	roles: list[AccessPackageResourceRole] = Field(alias="roles",)
-	scopes: list[AccessPackageResourceScope] = Field(alias="scopes",)
+	roles: Optional[list[AccessPackageResourceRole]] = Field(default=None,alias="roles",)
+	scopes: Optional[list[AccessPackageResourceScope]] = Field(default=None,alias="scopes",)
 
 from .access_package_resource_attribute import AccessPackageResourceAttribute
 from .access_package_resource_environment import AccessPackageResourceEnvironment

@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field
 class PrintOperationCollectionResponse(BaseModel):
 	odata_count: Optional[int] = Field(default=None,alias="@odata.count",)
 	odata_nextLink: Optional[str] = Field(default=None,alias="@odata.nextLink",)
-	value: list[PrintOperation] = Field(alias="value",)
+	value: Optional[list[PrintOperation]] = Field(default=None,alias="value",)
 
 from .print_operation import PrintOperation
 

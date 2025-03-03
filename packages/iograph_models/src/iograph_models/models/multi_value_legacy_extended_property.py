@@ -6,6 +6,6 @@ from pydantic import BaseModel, Field
 class MultiValueLegacyExtendedProperty(BaseModel):
 	id: Optional[str] = Field(default=None,alias="id",)
 	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	value: list[Optional[str]] = Field(alias="value",)
+	value: Optional[list[str]] = Field(default=None,alias="value",)
 
 

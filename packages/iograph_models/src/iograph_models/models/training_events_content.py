@@ -4,7 +4,7 @@ from pydantic import BaseModel, Field
 
 
 class TrainingEventsContent(BaseModel):
-	assignedTrainingsInfos: list[AssignedTrainingInfo] = Field(alias="assignedTrainingsInfos",)
+	assignedTrainingsInfos: Optional[list[AssignedTrainingInfo]] = Field(default=None,alias="assignedTrainingsInfos",)
 	trainingsAssignedUserCount: Optional[int] = Field(default=None,alias="trainingsAssignedUserCount",)
 	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
 

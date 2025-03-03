@@ -14,7 +14,7 @@ class ProtectionPolicyBase(BaseModel):
 	displayName: Optional[str] = Field(default=None,alias="displayName",)
 	lastModifiedBy: Optional[IdentitySet] = Field(default=None,alias="lastModifiedBy",)
 	lastModifiedDateTime: Optional[datetime] = Field(default=None,alias="lastModifiedDateTime",)
-	retentionSettings: list[RetentionSetting] = Field(alias="retentionSettings",)
+	retentionSettings: Optional[list[RetentionSetting]] = Field(default=None,alias="retentionSettings",)
 	status: Optional[ProtectionPolicyStatus] = Field(default=None,alias="status",)
 
 	@model_validator(mode="wrap")

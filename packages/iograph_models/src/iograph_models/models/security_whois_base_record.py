@@ -17,7 +17,7 @@ class SecurityWhoisBaseRecord(BaseModel):
 	firstSeenDateTime: Optional[datetime] = Field(default=None,alias="firstSeenDateTime",)
 	lastSeenDateTime: Optional[datetime] = Field(default=None,alias="lastSeenDateTime",)
 	lastUpdateDateTime: Optional[datetime] = Field(default=None,alias="lastUpdateDateTime",)
-	nameservers: list[SecurityWhoisNameserver] = Field(alias="nameservers",)
+	nameservers: Optional[list[SecurityWhoisNameserver]] = Field(default=None,alias="nameservers",)
 	noc: Optional[SecurityWhoisContact] = Field(default=None,alias="noc",)
 	rawWhoisText: Optional[str] = Field(default=None,alias="rawWhoisText",)
 	registrant: Optional[SecurityWhoisContact] = Field(default=None,alias="registrant",)

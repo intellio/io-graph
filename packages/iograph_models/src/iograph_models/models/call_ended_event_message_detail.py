@@ -8,7 +8,7 @@ class CallEndedEventMessageDetail(BaseModel):
 	callDuration: Optional[str] = Field(default=None,alias="callDuration",)
 	callEventType: Optional[TeamworkCallEventType] = Field(default=None,alias="callEventType",)
 	callId: Optional[str] = Field(default=None,alias="callId",)
-	callParticipants: list[CallParticipantInfo] = Field(alias="callParticipants",)
+	callParticipants: Optional[list[CallParticipantInfo]] = Field(default=None,alias="callParticipants",)
 	initiator: Optional[IdentitySet] = Field(default=None,alias="initiator",)
 
 from .teamwork_call_event_type import TeamworkCallEventType

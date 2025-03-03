@@ -5,7 +5,7 @@ from pydantic import BaseModel, Field
 
 class SecuritySslCertificateEntity(BaseModel):
 	address: Optional[PhysicalAddress] = Field(default=None,alias="address",)
-	alternateNames: list[Optional[str]] = Field(alias="alternateNames",)
+	alternateNames: Optional[list[str]] = Field(default=None,alias="alternateNames",)
 	commonName: Optional[str] = Field(default=None,alias="commonName",)
 	email: Optional[str] = Field(default=None,alias="email",)
 	givenName: Optional[str] = Field(default=None,alias="givenName",)

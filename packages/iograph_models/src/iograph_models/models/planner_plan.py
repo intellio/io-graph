@@ -12,9 +12,9 @@ class PlannerPlan(BaseModel):
 	createdDateTime: Optional[datetime] = Field(default=None,alias="createdDateTime",)
 	owner: Optional[str] = Field(default=None,alias="owner",)
 	title: Optional[str] = Field(default=None,alias="title",)
-	buckets: list[PlannerBucket] = Field(alias="buckets",)
+	buckets: Optional[list[PlannerBucket]] = Field(default=None,alias="buckets",)
 	details: Optional[PlannerPlanDetails] = Field(default=None,alias="details",)
-	tasks: list[PlannerTask] = Field(alias="tasks",)
+	tasks: Optional[list[PlannerTask]] = Field(default=None,alias="tasks",)
 
 from .planner_plan_container import PlannerPlanContainer
 from .identity_set import IdentitySet

@@ -7,7 +7,7 @@ from pydantic import BaseModel, Field
 class AccessPackageAssignment(BaseModel):
 	id: Optional[str] = Field(default=None,alias="id",)
 	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	customExtensionCalloutInstances: list[CustomExtensionCalloutInstance] = Field(alias="customExtensionCalloutInstances",)
+	customExtensionCalloutInstances: Optional[list[CustomExtensionCalloutInstance]] = Field(default=None,alias="customExtensionCalloutInstances",)
 	expiredDateTime: Optional[datetime] = Field(default=None,alias="expiredDateTime",)
 	schedule: Optional[EntitlementManagementSchedule] = Field(default=None,alias="schedule",)
 	state: Optional[AccessPackageAssignmentState] = Field(default=None,alias="state",)

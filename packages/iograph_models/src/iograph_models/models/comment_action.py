@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field
 class CommentAction(BaseModel):
 	isReply: Optional[bool] = Field(default=None,alias="isReply",)
 	parentAuthor: Optional[IdentitySet] = Field(default=None,alias="parentAuthor",)
-	participants: list[IdentitySet] = Field(alias="participants",)
+	participants: Optional[list[IdentitySet]] = Field(default=None,alias="participants",)
 	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
 
 from .identity_set import IdentitySet

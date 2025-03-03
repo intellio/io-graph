@@ -9,7 +9,7 @@ class DirectoryAudit(BaseModel):
 	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
 	activityDateTime: Optional[datetime] = Field(default=None,alias="activityDateTime",)
 	activityDisplayName: Optional[str] = Field(default=None,alias="activityDisplayName",)
-	additionalDetails: list[KeyValue] = Field(alias="additionalDetails",)
+	additionalDetails: Optional[list[KeyValue]] = Field(default=None,alias="additionalDetails",)
 	category: Optional[str] = Field(default=None,alias="category",)
 	correlationId: Optional[str] = Field(default=None,alias="correlationId",)
 	initiatedBy: Optional[AuditActivityInitiator] = Field(default=None,alias="initiatedBy",)
@@ -17,7 +17,7 @@ class DirectoryAudit(BaseModel):
 	operationType: Optional[str] = Field(default=None,alias="operationType",)
 	result: Optional[OperationResult] = Field(default=None,alias="result",)
 	resultReason: Optional[str] = Field(default=None,alias="resultReason",)
-	targetResources: list[TargetResource] = Field(alias="targetResources",)
+	targetResources: Optional[list[TargetResource]] = Field(default=None,alias="targetResources",)
 
 from .key_value import KeyValue
 from .audit_activity_initiator import AuditActivityInitiator

@@ -12,12 +12,12 @@ class VirtualEvent(BaseModel):
 	description: Optional[ItemBody] = Field(default=None,alias="description",)
 	displayName: Optional[str] = Field(default=None,alias="displayName",)
 	endDateTime: Optional[DateTimeTimeZone] = Field(default=None,alias="endDateTime",)
-	externalEventInformation: list[VirtualEventExternalInformation] = Field(alias="externalEventInformation",)
+	externalEventInformation: Optional[list[VirtualEventExternalInformation]] = Field(default=None,alias="externalEventInformation",)
 	settings: Optional[VirtualEventSettings] = Field(default=None,alias="settings",)
 	startDateTime: Optional[DateTimeTimeZone] = Field(default=None,alias="startDateTime",)
 	status: Optional[VirtualEventStatus] = Field(default=None,alias="status",)
-	presenters: list[VirtualEventPresenter] = Field(alias="presenters",)
-	sessions: list[VirtualEventSession] = Field(alias="sessions",)
+	presenters: Optional[list[VirtualEventPresenter]] = Field(default=None,alias="presenters",)
+	sessions: Optional[list[VirtualEventSession]] = Field(default=None,alias="sessions",)
 
 	@model_validator(mode="wrap")
 	def convert_discriminator_class(cls, data: Any, handler: ModelWrapValidatorHandler[Self]) -> Self:

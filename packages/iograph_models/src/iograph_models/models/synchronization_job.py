@@ -8,7 +8,7 @@ class SynchronizationJob(BaseModel):
 	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
 	schedule: Optional[SynchronizationSchedule] = Field(default=None,alias="schedule",)
 	status: Optional[SynchronizationStatus] = Field(default=None,alias="status",)
-	synchronizationJobSettings: list[KeyValuePair] = Field(alias="synchronizationJobSettings",)
+	synchronizationJobSettings: Optional[list[KeyValuePair]] = Field(default=None,alias="synchronizationJobSettings",)
 	templateId: Optional[str] = Field(default=None,alias="templateId",)
 	bulkUpload: Optional[BulkUpload] = Field(default=None,alias="bulkUpload",)
 	schema: Optional[SynchronizationSchema] = Field(default=None,alias="schema",)

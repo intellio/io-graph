@@ -4,7 +4,7 @@ from pydantic import BaseModel, Field
 
 
 class SearchPostRequest(BaseModel):
-	protectionUnitIds: list[Optional[str]] = Field(alias="protectionUnitIds",)
+	protectionUnitIds: Optional[list[str]] = Field(default=None,alias="protectionUnitIds",)
 	protectionTimePeriod: Optional[TimePeriod] = Field(default=None,alias="protectionTimePeriod",)
 	restorePointPreference: Optional[RestorePointPreference] = Field(default=None,alias="restorePointPreference",)
 	tags: Optional[RestorePointTags] = Field(default=None,alias="tags",)

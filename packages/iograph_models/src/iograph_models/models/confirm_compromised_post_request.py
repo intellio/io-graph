@@ -4,6 +4,6 @@ from pydantic import BaseModel, Field
 
 
 class Confirm_compromisedPostRequest(BaseModel):
-	userIds: list[Optional[str]] = Field(alias="userIds",)
+	userIds: Optional[list[str]] = Field(default=None,alias="userIds",)
 
 

@@ -10,7 +10,7 @@ class GroupSettingTemplate(BaseModel):
 	deletedDateTime: Optional[datetime] = Field(default=None,alias="deletedDateTime",)
 	description: Optional[str] = Field(default=None,alias="description",)
 	displayName: Optional[str] = Field(default=None,alias="displayName",)
-	values: list[SettingTemplateValue] = Field(alias="values",)
+	values: Optional[list[SettingTemplateValue]] = Field(default=None,alias="values",)
 
 from .setting_template_value import SettingTemplateValue
 

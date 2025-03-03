@@ -9,9 +9,9 @@ class SecurityIncident(BaseModel):
 	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
 	assignedTo: Optional[str] = Field(default=None,alias="assignedTo",)
 	classification: Optional[SecurityAlertClassification] = Field(default=None,alias="classification",)
-	comments: list[SecurityAlertComment] = Field(alias="comments",)
+	comments: Optional[list[SecurityAlertComment]] = Field(default=None,alias="comments",)
 	createdDateTime: Optional[datetime] = Field(default=None,alias="createdDateTime",)
-	customTags: list[Optional[str]] = Field(alias="customTags",)
+	customTags: Optional[list[str]] = Field(default=None,alias="customTags",)
 	description: Optional[str] = Field(default=None,alias="description",)
 	determination: Optional[SecurityAlertDetermination] = Field(default=None,alias="determination",)
 	displayName: Optional[str] = Field(default=None,alias="displayName",)
@@ -23,9 +23,9 @@ class SecurityIncident(BaseModel):
 	severity: Optional[SecurityAlertSeverity] = Field(default=None,alias="severity",)
 	status: Optional[SecurityIncidentStatus] = Field(default=None,alias="status",)
 	summary: Optional[str] = Field(default=None,alias="summary",)
-	systemTags: list[Optional[str]] = Field(alias="systemTags",)
+	systemTags: Optional[list[str]] = Field(default=None,alias="systemTags",)
 	tenantId: Optional[str] = Field(default=None,alias="tenantId",)
-	alerts: list[SecurityAlert] = Field(alias="alerts",)
+	alerts: Optional[list[SecurityAlert]] = Field(default=None,alias="alerts",)
 
 from .security_alert_classification import SecurityAlertClassification
 from .security_alert_comment import SecurityAlertComment

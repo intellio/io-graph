@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field
 class SynchronizationJobCollectionResponse(BaseModel):
 	odata_count: Optional[int] = Field(default=None,alias="@odata.count",)
 	odata_nextLink: Optional[str] = Field(default=None,alias="@odata.nextLink",)
-	value: list[SynchronizationJob] = Field(alias="value",)
+	value: Optional[list[SynchronizationJob]] = Field(default=None,alias="value",)
 
 from .synchronization_job import SynchronizationJob
 

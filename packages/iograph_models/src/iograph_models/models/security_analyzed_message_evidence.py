@@ -6,11 +6,11 @@ from pydantic import BaseModel, Field
 
 class SecurityAnalyzedMessageEvidence(BaseModel):
 	createdDateTime: Optional[datetime] = Field(default=None,alias="createdDateTime",)
-	detailedRoles: list[Optional[str]] = Field(alias="detailedRoles",)
+	detailedRoles: Optional[list[str]] = Field(default=None,alias="detailedRoles",)
 	remediationStatus: Optional[SecurityEvidenceRemediationStatus] = Field(default=None,alias="remediationStatus",)
 	remediationStatusDetails: Optional[str] = Field(default=None,alias="remediationStatusDetails",)
-	roles: list[SecurityEvidenceRole] = Field(alias="roles",)
-	tags: list[Optional[str]] = Field(alias="tags",)
+	roles: Optional[list[SecurityEvidenceRole]] = Field(default=None,alias="roles",)
+	tags: Optional[list[str]] = Field(default=None,alias="tags",)
 	verdict: Optional[SecurityEvidenceVerdict] = Field(default=None,alias="verdict",)
 	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
 	antiSpamDirection: Optional[str] = Field(default=None,alias="antiSpamDirection",)
@@ -26,10 +26,10 @@ class SecurityAnalyzedMessageEvidence(BaseModel):
 	recipientEmailAddress: Optional[str] = Field(default=None,alias="recipientEmailAddress",)
 	senderIp: Optional[str] = Field(default=None,alias="senderIp",)
 	subject: Optional[str] = Field(default=None,alias="subject",)
-	threatDetectionMethods: list[Optional[str]] = Field(alias="threatDetectionMethods",)
-	threats: list[Optional[str]] = Field(alias="threats",)
+	threatDetectionMethods: Optional[list[str]] = Field(default=None,alias="threatDetectionMethods",)
+	threats: Optional[list[str]] = Field(default=None,alias="threats",)
 	urlCount: Optional[int] = Field(default=None,alias="urlCount",)
-	urls: list[Optional[str]] = Field(alias="urls",)
+	urls: Optional[list[str]] = Field(default=None,alias="urls",)
 	urn: Optional[str] = Field(default=None,alias="urn",)
 
 from .security_evidence_remediation_status import SecurityEvidenceRemediationStatus

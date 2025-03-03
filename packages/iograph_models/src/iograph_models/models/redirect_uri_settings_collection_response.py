@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field
 class RedirectUriSettingsCollectionResponse(BaseModel):
 	odata_count: Optional[int] = Field(default=None,alias="@odata.count",)
 	odata_nextLink: Optional[str] = Field(default=None,alias="@odata.nextLink",)
-	value: list[RedirectUriSettings] = Field(alias="value",)
+	value: Optional[list[RedirectUriSettings]] = Field(default=None,alias="value",)
 
 from .redirect_uri_settings import RedirectUriSettings
 

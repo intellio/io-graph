@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field
 class InferenceClassification(BaseModel):
 	id: Optional[str] = Field(default=None,alias="id",)
 	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	overrides: list[InferenceClassificationOverride] = Field(alias="overrides",)
+	overrides: Optional[list[InferenceClassificationOverride]] = Field(default=None,alias="overrides",)
 
 from .inference_classification_override import InferenceClassificationOverride
 

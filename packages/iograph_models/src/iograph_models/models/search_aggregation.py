@@ -4,7 +4,7 @@ from pydantic import BaseModel, Field
 
 
 class SearchAggregation(BaseModel):
-	buckets: list[SearchBucket] = Field(alias="buckets",)
+	buckets: Optional[list[SearchBucket]] = Field(default=None,alias="buckets",)
 	field: Optional[str] = Field(default=None,alias="field",)
 	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
 

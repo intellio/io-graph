@@ -4,9 +4,9 @@ from pydantic import BaseModel, Field
 
 
 class OptionalClaims(BaseModel):
-	accessToken: list[OptionalClaim] = Field(alias="accessToken",)
-	idToken: list[OptionalClaim] = Field(alias="idToken",)
-	saml2Token: list[OptionalClaim] = Field(alias="saml2Token",)
+	accessToken: Optional[list[OptionalClaim]] = Field(default=None,alias="accessToken",)
+	idToken: Optional[list[OptionalClaim]] = Field(default=None,alias="idToken",)
+	saml2Token: Optional[list[OptionalClaim]] = Field(default=None,alias="saml2Token",)
 	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
 
 from .optional_claim import OptionalClaim

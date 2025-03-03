@@ -19,7 +19,7 @@ class RecycleBin(BaseModel):
 	createdByUser: Optional[User] = Field(default=None,alias="createdByUser",)
 	lastModifiedByUser: Optional[User] = Field(default=None,alias="lastModifiedByUser",)
 	settings: Optional[RecycleBinSettings] = Field(default=None,alias="settings",)
-	items: list[RecycleBinItem] = Field(alias="items",)
+	items: Optional[list[RecycleBinItem]] = Field(default=None,alias="items",)
 
 from .identity_set import IdentitySet
 from .identity_set import IdentitySet

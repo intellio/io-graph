@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field
 class ReferencedObjectCollectionResponse(BaseModel):
 	odata_count: Optional[int] = Field(default=None,alias="@odata.count",)
 	odata_nextLink: Optional[str] = Field(default=None,alias="@odata.nextLink",)
-	value: list[ReferencedObject] = Field(alias="value",)
+	value: Optional[list[ReferencedObject]] = Field(default=None,alias="value",)
 
 from .referenced_object import ReferencedObject
 

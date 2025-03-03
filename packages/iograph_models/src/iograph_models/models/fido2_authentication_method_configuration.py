@@ -6,12 +6,12 @@ from pydantic import BaseModel, Field
 class Fido2AuthenticationMethodConfiguration(BaseModel):
 	id: Optional[str] = Field(default=None,alias="id",)
 	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	excludeTargets: list[ExcludeTarget] = Field(alias="excludeTargets",)
+	excludeTargets: Optional[list[ExcludeTarget]] = Field(default=None,alias="excludeTargets",)
 	state: Optional[AuthenticationMethodState] = Field(default=None,alias="state",)
 	isAttestationEnforced: Optional[bool] = Field(default=None,alias="isAttestationEnforced",)
 	isSelfServiceRegistrationAllowed: Optional[bool] = Field(default=None,alias="isSelfServiceRegistrationAllowed",)
 	keyRestrictions: Optional[Fido2KeyRestrictions] = Field(default=None,alias="keyRestrictions",)
-	includeTargets: list[AuthenticationMethodTarget] = Field(alias="includeTargets",)
+	includeTargets: Optional[list[AuthenticationMethodTarget]] = Field(default=None,alias="includeTargets",)
 
 from .exclude_target import ExcludeTarget
 from .authentication_method_state import AuthenticationMethodState

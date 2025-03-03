@@ -9,7 +9,7 @@ class Send_activity_notificationPostRequest(BaseModel):
 	chainId: Optional[int] = Field(default=None,alias="chainId",)
 	previewText: Optional[ItemBody] = Field(default=None,alias="previewText",)
 	teamsAppId: Optional[str] = Field(default=None,alias="teamsAppId",)
-	templateParameters: list[KeyValuePair] = Field(alias="templateParameters",)
+	templateParameters: Optional[list[KeyValuePair]] = Field(default=None,alias="templateParameters",)
 
 from .teamwork_activity_topic import TeamworkActivityTopic
 from .item_body import ItemBody

@@ -7,7 +7,7 @@ class UserExperienceAnalyticsInsight(BaseModel):
 	insightId: Optional[str] = Field(default=None,alias="insightId",)
 	severity: Optional[UserExperienceAnalyticsInsightSeverity] = Field(default=None,alias="severity",)
 	userExperienceAnalyticsMetricId: Optional[str] = Field(default=None,alias="userExperienceAnalyticsMetricId",)
-	values: list[UserExperienceAnalyticsInsightValue] = Field(alias="values",)
+	values: Optional[list[UserExperienceAnalyticsInsightValue]] = Field(default=None,alias="values",)
 	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
 
 from .user_experience_analytics_insight_severity import UserExperienceAnalyticsInsightSeverity

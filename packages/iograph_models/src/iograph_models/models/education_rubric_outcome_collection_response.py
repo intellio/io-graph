@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field
 class EducationRubricOutcomeCollectionResponse(BaseModel):
 	odata_count: Optional[int] = Field(default=None,alias="@odata.count",)
 	odata_nextLink: Optional[str] = Field(default=None,alias="@odata.nextLink",)
-	value: list[EducationRubricOutcome] = Field(alias="value",)
+	value: Optional[list[EducationRubricOutcome]] = Field(default=None,alias="value",)
 
 from .education_rubric_outcome import EducationRubricOutcome
 

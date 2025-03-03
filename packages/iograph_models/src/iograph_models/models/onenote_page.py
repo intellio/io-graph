@@ -17,7 +17,7 @@ class OnenotePage(BaseModel):
 	links: Optional[PageLinks] = Field(default=None,alias="links",)
 	order: Optional[int] = Field(default=None,alias="order",)
 	title: Optional[str] = Field(default=None,alias="title",)
-	userTags: list[Optional[str]] = Field(alias="userTags",)
+	userTags: Optional[list[str]] = Field(default=None,alias="userTags",)
 	parentNotebook: Optional[Notebook] = Field(default=None,alias="parentNotebook",)
 	parentSection: Optional[OnenoteSection] = Field(default=None,alias="parentSection",)
 

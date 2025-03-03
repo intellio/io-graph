@@ -8,7 +8,7 @@ class DataPolicyOperation(BaseModel):
 	id: Optional[str] = Field(default=None,alias="id",)
 	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
 	completedDateTime: Optional[datetime] = Field(default=None,alias="completedDateTime",)
-	progress: Optional[float] | Optional[str] | ReferenceNumeric
+	progress: float | str | ReferenceNumeric
 	status: Optional[DataPolicyOperationStatus] = Field(default=None,alias="status",)
 	storageLocation: Optional[str] = Field(default=None,alias="storageLocation",)
 	submittedDateTime: Optional[datetime] = Field(default=None,alias="submittedDateTime",)

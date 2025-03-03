@@ -6,9 +6,9 @@ from pydantic import BaseModel, Field
 class Planner(BaseModel):
 	id: Optional[str] = Field(default=None,alias="id",)
 	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	buckets: list[PlannerBucket] = Field(alias="buckets",)
-	plans: list[PlannerPlan] = Field(alias="plans",)
-	tasks: list[PlannerTask] = Field(alias="tasks",)
+	buckets: Optional[list[PlannerBucket]] = Field(default=None,alias="buckets",)
+	plans: Optional[list[PlannerPlan]] = Field(default=None,alias="plans",)
+	tasks: Optional[list[PlannerTask]] = Field(default=None,alias="tasks",)
 
 from .planner_bucket import PlannerBucket
 from .planner_plan import PlannerPlan

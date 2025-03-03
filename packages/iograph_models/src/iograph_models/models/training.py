@@ -17,10 +17,10 @@ class Training(BaseModel):
 	lastModifiedBy: Optional[EmailIdentity] = Field(default=None,alias="lastModifiedBy",)
 	lastModifiedDateTime: Optional[datetime] = Field(default=None,alias="lastModifiedDateTime",)
 	source: Optional[SimulationContentSource] = Field(default=None,alias="source",)
-	supportedLocales: list[Optional[str]] = Field(alias="supportedLocales",)
-	tags: list[Optional[str]] = Field(alias="tags",)
+	supportedLocales: Optional[list[str]] = Field(default=None,alias="supportedLocales",)
+	tags: Optional[list[str]] = Field(default=None,alias="tags",)
 	type: Optional[TrainingType] = Field(default=None,alias="type",)
-	languageDetails: list[TrainingLanguageDetail] = Field(alias="languageDetails",)
+	languageDetails: Optional[list[TrainingLanguageDetail]] = Field(default=None,alias="languageDetails",)
 
 from .training_availability_status import TrainingAvailabilityStatus
 from .email_identity import EmailIdentity

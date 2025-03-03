@@ -17,13 +17,13 @@ class Person(BaseModel):
 	officeLocation: Optional[str] = Field(default=None,alias="officeLocation",)
 	personNotes: Optional[str] = Field(default=None,alias="personNotes",)
 	personType: Optional[PersonType] = Field(default=None,alias="personType",)
-	phones: list[Phone] = Field(alias="phones",)
-	postalAddresses: list[Location] = Field(alias="postalAddresses",)
+	phones: Optional[list[Phone]] = Field(default=None,alias="phones",)
+	postalAddresses: Optional[list[Location]] = Field(default=None,alias="postalAddresses",)
 	profession: Optional[str] = Field(default=None,alias="profession",)
-	scoredEmailAddresses: list[ScoredEmailAddress] = Field(alias="scoredEmailAddresses",)
+	scoredEmailAddresses: Optional[list[ScoredEmailAddress]] = Field(default=None,alias="scoredEmailAddresses",)
 	surname: Optional[str] = Field(default=None,alias="surname",)
 	userPrincipalName: Optional[str] = Field(default=None,alias="userPrincipalName",)
-	websites: list[Website] = Field(alias="websites",)
+	websites: Optional[list[Website]] = Field(default=None,alias="websites",)
 	yomiCompany: Optional[str] = Field(default=None,alias="yomiCompany",)
 
 from .person_type import PersonType

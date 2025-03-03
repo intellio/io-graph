@@ -9,7 +9,7 @@ class DeviceConfigurationState(BaseModel):
 	displayName: Optional[str] = Field(default=None,alias="displayName",)
 	platformType: Optional[PolicyPlatformType] = Field(default=None,alias="platformType",)
 	settingCount: Optional[int] = Field(default=None,alias="settingCount",)
-	settingStates: list[DeviceConfigurationSettingState] = Field(alias="settingStates",)
+	settingStates: Optional[list[DeviceConfigurationSettingState]] = Field(default=None,alias="settingStates",)
 	state: Optional[ComplianceStatus] = Field(default=None,alias="state",)
 	version: Optional[int] = Field(default=None,alias="version",)
 

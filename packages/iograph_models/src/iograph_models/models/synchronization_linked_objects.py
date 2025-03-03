@@ -5,8 +5,8 @@ from pydantic import BaseModel, Field
 
 class SynchronizationLinkedObjects(BaseModel):
 	manager: Optional[SynchronizationJobSubject] = Field(default=None,alias="manager",)
-	members: list[SynchronizationJobSubject] = Field(alias="members",)
-	owners: list[SynchronizationJobSubject] = Field(alias="owners",)
+	members: Optional[list[SynchronizationJobSubject]] = Field(default=None,alias="members",)
+	owners: Optional[list[SynchronizationJobSubject]] = Field(default=None,alias="owners",)
 	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
 
 from .synchronization_job_subject import SynchronizationJobSubject

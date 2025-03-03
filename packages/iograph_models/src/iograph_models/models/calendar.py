@@ -19,11 +19,11 @@ class Calendar(BaseModel):
 	isTallyingResponses: Optional[bool] = Field(default=None,alias="isTallyingResponses",)
 	name: Optional[str] = Field(default=None,alias="name",)
 	owner: Optional[EmailAddress] = Field(default=None,alias="owner",)
-	calendarPermissions: list[CalendarPermission] = Field(alias="calendarPermissions",)
-	calendarView: list[Event] = Field(alias="calendarView",)
-	events: list[Event] = Field(alias="events",)
-	multiValueExtendedProperties: list[MultiValueLegacyExtendedProperty] = Field(alias="multiValueExtendedProperties",)
-	singleValueExtendedProperties: list[SingleValueLegacyExtendedProperty] = Field(alias="singleValueExtendedProperties",)
+	calendarPermissions: Optional[list[CalendarPermission]] = Field(default=None,alias="calendarPermissions",)
+	calendarView: Optional[list[Event]] = Field(default=None,alias="calendarView",)
+	events: Optional[list[Event]] = Field(default=None,alias="events",)
+	multiValueExtendedProperties: Optional[list[MultiValueLegacyExtendedProperty]] = Field(default=None,alias="multiValueExtendedProperties",)
+	singleValueExtendedProperties: Optional[list[SingleValueLegacyExtendedProperty]] = Field(default=None,alias="singleValueExtendedProperties",)
 
 from .online_meeting_provider_type import OnlineMeetingProviderType
 from .calendar_color import CalendarColor

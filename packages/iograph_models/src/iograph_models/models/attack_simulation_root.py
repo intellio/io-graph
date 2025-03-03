@@ -6,14 +6,14 @@ from pydantic import BaseModel, Field
 class AttackSimulationRoot(BaseModel):
 	id: Optional[str] = Field(default=None,alias="id",)
 	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	endUserNotifications: list[EndUserNotification] = Field(alias="endUserNotifications",)
-	landingPages: list[LandingPage] = Field(alias="landingPages",)
-	loginPages: list[LoginPage] = Field(alias="loginPages",)
-	operations: list[AttackSimulationOperation] = Field(alias="operations",)
-	payloads: list[Payload] = Field(alias="payloads",)
-	simulationAutomations: list[SimulationAutomation] = Field(alias="simulationAutomations",)
-	simulations: list[Simulation] = Field(alias="simulations",)
-	trainings: list[Training] = Field(alias="trainings",)
+	endUserNotifications: Optional[list[EndUserNotification]] = Field(default=None,alias="endUserNotifications",)
+	landingPages: Optional[list[LandingPage]] = Field(default=None,alias="landingPages",)
+	loginPages: Optional[list[LoginPage]] = Field(default=None,alias="loginPages",)
+	operations: Optional[list[AttackSimulationOperation]] = Field(default=None,alias="operations",)
+	payloads: Optional[list[Payload]] = Field(default=None,alias="payloads",)
+	simulationAutomations: Optional[list[SimulationAutomation]] = Field(default=None,alias="simulationAutomations",)
+	simulations: Optional[list[Simulation]] = Field(default=None,alias="simulations",)
+	trainings: Optional[list[Training]] = Field(default=None,alias="trainings",)
 
 from .end_user_notification import EndUserNotification
 from .landing_page import LandingPage

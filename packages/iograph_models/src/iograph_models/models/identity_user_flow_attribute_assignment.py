@@ -9,7 +9,7 @@ class IdentityUserFlowAttributeAssignment(BaseModel):
 	displayName: Optional[str] = Field(default=None,alias="displayName",)
 	isOptional: Optional[bool] = Field(default=None,alias="isOptional",)
 	requiresVerification: Optional[bool] = Field(default=None,alias="requiresVerification",)
-	userAttributeValues: list[UserAttributeValuesItem] = Field(alias="userAttributeValues",)
+	userAttributeValues: Optional[list[UserAttributeValuesItem]] = Field(default=None,alias="userAttributeValues",)
 	userInputType: Optional[IdentityUserFlowAttributeInputType] = Field(default=None,alias="userInputType",)
 	userAttribute: Optional[IdentityUserFlowAttribute] = Field(default=None,alias="userAttribute",)
 

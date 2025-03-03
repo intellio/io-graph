@@ -8,7 +8,7 @@ class GroupSetting(BaseModel):
 	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
 	displayName: Optional[str] = Field(default=None,alias="displayName",)
 	templateId: Optional[str] = Field(default=None,alias="templateId",)
-	values: list[SettingValue] = Field(alias="values",)
+	values: Optional[list[SettingValue]] = Field(default=None,alias="values",)
 
 from .setting_value import SettingValue
 

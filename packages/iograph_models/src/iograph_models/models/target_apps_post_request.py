@@ -4,7 +4,7 @@ from pydantic import BaseModel, Field
 
 
 class Target_appsPostRequest(BaseModel):
-	apps: list[ManagedMobileApp] = Field(alias="apps",)
+	apps: Optional[list[ManagedMobileApp]] = Field(default=None,alias="apps",)
 	appGroupType: Optional[TargetedManagedAppGroupType] = Field(default=None,alias="appGroupType",)
 
 from .managed_mobile_app import ManagedMobileApp

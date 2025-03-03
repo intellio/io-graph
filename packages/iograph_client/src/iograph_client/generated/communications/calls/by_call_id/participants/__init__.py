@@ -3,6 +3,7 @@
 from __future__ import annotations
 from kiota_abstractions.get_path_parameters import get_path_parameters
 from kiota_abstractions.method import Method
+from kiota_abstractions.base_request_builder import BaseRequestBuilder
 from kiota_abstractions.base_request_configuration import RequestConfiguration
 from ......request_information import RequestInformation
 from pydantic import BaseModel, Field
@@ -19,11 +20,9 @@ from iograph_models.models.participant_collection_response import ParticipantCol
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
 
 
-class ParticipantsRequest:
+class ParticipantsRequest(BaseRequestBuilder):
 	def __init__(self,request_adapter: HttpxRequestAdapter, path_parameters: Optional[Union[dict[str, Any], str]]) -> None:
-		self.request_adapter = request_adapter
-		self.url_template: str = "{+baseurl}/communications/calls/{call%2Did}/participants"
-		self.path_parameters: dict[str, Any] = path_parameters
+		super().__init__(request_adapter, "{+baseurl}/communications/calls/{call%2Did}/participants", path_parameters)
 
 	async def get(
 		self,
@@ -84,6 +83,16 @@ class ParticipantsRequest:
 		select: list[str] = Field(default=None,serialization_alias="%24select")
 		expand: list[str] = Field(default=None,serialization_alias="%24expand")
 
+
+	def with_url(self, raw_url: str) -> ParticipantsRequest:
+		"""
+		Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+		param raw_url: The raw URL to use for the request builder.
+		Returns: ParticipantsRequest
+		"""
+		if raw_url is None:
+			raise TypeError("raw_url cannot be None.")
+		return ParticipantsRequest(self.request_adapter, self.path_parameters)
 
 	def by_participant_id(self,
 		call_id: str,

@@ -14,7 +14,7 @@ class TargetedManagedAppProtection(BaseModel):
 	displayName: Optional[str] = Field(default=None,alias="displayName",)
 	lastModifiedDateTime: Optional[datetime] = Field(default=None,alias="lastModifiedDateTime",)
 	version: Optional[str] = Field(default=None,alias="version",)
-	allowedDataStorageLocations: list[ManagedAppDataStorageLocation] = Field(alias="allowedDataStorageLocations",)
+	allowedDataStorageLocations: Optional[list[ManagedAppDataStorageLocation]] = Field(default=None,alias="allowedDataStorageLocations",)
 	allowedInboundDataTransferSources: Optional[ManagedAppDataTransferLevel] = Field(default=None,alias="allowedInboundDataTransferSources",)
 	allowedOutboundClipboardSharingLevel: Optional[ManagedAppClipboardSharingLevel] = Field(default=None,alias="allowedOutboundClipboardSharingLevel",)
 	allowedOutboundDataTransferDestinations: Optional[ManagedAppDataTransferLevel] = Field(default=None,alias="allowedOutboundDataTransferDestinations",)
@@ -42,7 +42,7 @@ class TargetedManagedAppProtection(BaseModel):
 	saveAsBlocked: Optional[bool] = Field(default=None,alias="saveAsBlocked",)
 	simplePinBlocked: Optional[bool] = Field(default=None,alias="simplePinBlocked",)
 	isAssigned: Optional[bool] = Field(default=None,alias="isAssigned",)
-	assignments: list[TargetedManagedAppPolicyAssignment] = Field(alias="assignments",)
+	assignments: Optional[list[TargetedManagedAppPolicyAssignment]] = Field(default=None,alias="assignments",)
 
 	@model_validator(mode="wrap")
 	def convert_discriminator_class(cls, data: Any, handler: ModelWrapValidatorHandler[Self]) -> Self:

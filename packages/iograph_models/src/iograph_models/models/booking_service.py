@@ -9,12 +9,12 @@ class BookingService(BaseModel):
 	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
 	additionalInformation: Optional[str] = Field(default=None,alias="additionalInformation",)
 	createdDateTime: Optional[datetime] = Field(default=None,alias="createdDateTime",)
-	customQuestions: list[BookingQuestionAssignment] = Field(alias="customQuestions",)
+	customQuestions: Optional[list[BookingQuestionAssignment]] = Field(default=None,alias="customQuestions",)
 	defaultDuration: Optional[str] = Field(default=None,alias="defaultDuration",)
 	defaultLocation: Optional[Location] = Field(default=None,alias="defaultLocation",)
-	defaultPrice: Optional[float] | Optional[str] | ReferenceNumeric
+	defaultPrice: float | str | ReferenceNumeric
 	defaultPriceType: Optional[BookingPriceType] = Field(default=None,alias="defaultPriceType",)
-	defaultReminders: list[BookingReminder] = Field(alias="defaultReminders",)
+	defaultReminders: Optional[list[BookingReminder]] = Field(default=None,alias="defaultReminders",)
 	description: Optional[str] = Field(default=None,alias="description",)
 	displayName: Optional[str] = Field(default=None,alias="displayName",)
 	isAnonymousJoinEnabled: Optional[bool] = Field(default=None,alias="isAnonymousJoinEnabled",)
@@ -29,7 +29,7 @@ class BookingService(BaseModel):
 	preBuffer: Optional[str] = Field(default=None,alias="preBuffer",)
 	schedulingPolicy: Optional[BookingSchedulingPolicy] = Field(default=None,alias="schedulingPolicy",)
 	smsNotificationsEnabled: Optional[bool] = Field(default=None,alias="smsNotificationsEnabled",)
-	staffMemberIds: list[Optional[str]] = Field(alias="staffMemberIds",)
+	staffMemberIds: Optional[list[str]] = Field(default=None,alias="staffMemberIds",)
 	webUrl: Optional[str] = Field(default=None,alias="webUrl",)
 
 from .booking_question_assignment import BookingQuestionAssignment

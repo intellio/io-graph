@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field
 class CallRecordsParticipant(BaseModel):
 	id: Optional[str] = Field(default=None,alias="id",)
 	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	administrativeUnitInfos: list[CallRecordsAdministrativeUnitInfo] = Field(alias="administrativeUnitInfos",)
+	administrativeUnitInfos: Optional[list[CallRecordsAdministrativeUnitInfo]] = Field(default=None,alias="administrativeUnitInfos",)
 	identity: Optional[CommunicationsIdentitySet] = Field(default=None,alias="identity",)
 
 from .call_records_administrative_unit_info import CallRecordsAdministrativeUnitInfo

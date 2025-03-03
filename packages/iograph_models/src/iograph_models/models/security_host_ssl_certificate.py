@@ -9,7 +9,7 @@ class SecurityHostSslCertificate(BaseModel):
 	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
 	firstSeenDateTime: Optional[datetime] = Field(default=None,alias="firstSeenDateTime",)
 	lastSeenDateTime: Optional[datetime] = Field(default=None,alias="lastSeenDateTime",)
-	ports: list[SecurityHostSslCertificatePort] = Field(alias="ports",)
+	ports: Optional[list[SecurityHostSslCertificatePort]] = Field(default=None,alias="ports",)
 	host: Optional[SecurityHost] = Field(default=None,alias="host",)
 	sslCertificate: Optional[SecuritySslCertificate] = Field(default=None,alias="sslCertificate",)
 

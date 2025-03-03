@@ -6,10 +6,10 @@ from pydantic import BaseModel, Field
 class ExternalConnectorsExternalItem(BaseModel):
 	id: Optional[str] = Field(default=None,alias="id",)
 	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	acl: list[ExternalConnectorsAcl] = Field(alias="acl",)
+	acl: Optional[list[ExternalConnectorsAcl]] = Field(default=None,alias="acl",)
 	content: Optional[ExternalConnectorsExternalItemContent] = Field(default=None,alias="content",)
 	properties: Optional[ExternalConnectorsProperties] = Field(default=None,alias="properties",)
-	activities: list[ExternalConnectorsExternalActivity] = Field(alias="activities",)
+	activities: Optional[list[ExternalConnectorsExternalActivity]] = Field(default=None,alias="activities",)
 
 from .external_connectors_acl import ExternalConnectorsAcl
 from .external_connectors_external_item_content import ExternalConnectorsExternalItemContent

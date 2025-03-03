@@ -22,12 +22,12 @@ class List(BaseModel):
 	list: Optional[ListInfo] = Field(default=None,alias="list",)
 	sharepointIds: Optional[SharepointIds] = Field(default=None,alias="sharepointIds",)
 	system: Optional[SystemFacet] = Field(default=None,alias="system",)
-	columns: list[ColumnDefinition] = Field(alias="columns",)
-	contentTypes: list[ContentType] = Field(alias="contentTypes",)
+	columns: Optional[list[ColumnDefinition]] = Field(default=None,alias="columns",)
+	contentTypes: Optional[list[ContentType]] = Field(default=None,alias="contentTypes",)
 	drive: Optional[Drive] = Field(default=None,alias="drive",)
-	items: list[ListItem] = Field(alias="items",)
-	operations: list[RichLongRunningOperation] = Field(alias="operations",)
-	subscriptions: list[Subscription] = Field(alias="subscriptions",)
+	items: Optional[list[ListItem]] = Field(default=None,alias="items",)
+	operations: Optional[list[RichLongRunningOperation]] = Field(default=None,alias="operations",)
+	subscriptions: Optional[list[Subscription]] = Field(default=None,alias="subscriptions",)
 
 from .identity_set import IdentitySet
 from .identity_set import IdentitySet

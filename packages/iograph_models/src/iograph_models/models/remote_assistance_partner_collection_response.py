@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field
 class RemoteAssistancePartnerCollectionResponse(BaseModel):
 	odata_count: Optional[int] = Field(default=None,alias="@odata.count",)
 	odata_nextLink: Optional[str] = Field(default=None,alias="@odata.nextLink",)
-	value: list[RemoteAssistancePartner] = Field(alias="value",)
+	value: Optional[list[RemoteAssistancePartner]] = Field(default=None,alias="value",)
 
 from .remote_assistance_partner import RemoteAssistancePartner
 

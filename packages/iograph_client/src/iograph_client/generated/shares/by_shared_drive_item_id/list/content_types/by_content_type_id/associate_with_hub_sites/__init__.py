@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 from kiota_abstractions.method import Method
+from kiota_abstractions.base_request_builder import BaseRequestBuilder
 from kiota_abstractions.base_request_configuration import RequestConfiguration
 from ........request_information import RequestInformation
 from pydantic import BaseModel, Field
@@ -10,15 +11,13 @@ from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:
 	from ........request_adapter import HttpxRequestAdapter
-from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.models.associate_with_hub_sites_post_request import Associate_with_hub_sitesPostRequest
+from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
 
 
-class AssociateWithHubSitesRequest:
+class AssociateWithHubSitesRequest(BaseRequestBuilder):
 	def __init__(self,request_adapter: HttpxRequestAdapter, path_parameters: Optional[Union[dict[str, Any], str]]) -> None:
-		self.request_adapter = request_adapter
-		self.url_template: str = "{+baseurl}/shares/{sharedDriveItem%2Did}/list/contentTypes/{contentType%2Did}/associateWithHubSites"
-		self.path_parameters: dict[str, Any] = path_parameters
+		super().__init__(request_adapter, "{+baseurl}/shares/{sharedDriveItem%2Did}/list/contentTypes/{contentType%2Did}/associateWithHubSites", path_parameters)
 
 	async def post(
 		self,
@@ -46,4 +45,14 @@ class AssociateWithHubSitesRequest:
 		request_info.set_content(body, "application/json")
 		return await self.request_adapter.send_no_response_content_async(request_info, error_mapping)
 
+
+	def with_url(self, raw_url: str) -> AssociateWithHubSitesRequest:
+		"""
+		Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+		param raw_url: The raw URL to use for the request builder.
+		Returns: AssociateWithHubSitesRequest
+		"""
+		if raw_url is None:
+			raise TypeError("raw_url cannot be None.")
+		return AssociateWithHubSitesRequest(self.request_adapter, self.path_parameters)
 

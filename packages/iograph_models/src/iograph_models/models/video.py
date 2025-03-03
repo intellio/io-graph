@@ -11,7 +11,7 @@ class Video(BaseModel):
 	bitrate: Optional[int] = Field(default=None,alias="bitrate",)
 	duration: Optional[int] = Field(default=None,alias="duration",)
 	fourCC: Optional[str] = Field(default=None,alias="fourCC",)
-	frameRate: Optional[float] | Optional[str] | ReferenceNumeric
+	frameRate: float | str | ReferenceNumeric
 	height: Optional[int] = Field(default=None,alias="height",)
 	width: Optional[int] = Field(default=None,alias="width",)
 	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)

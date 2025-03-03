@@ -13,7 +13,7 @@ class OrganizationalBrandingProperties(BaseModel):
 	backgroundImageRelativeUrl: Optional[str] = Field(default=None,alias="backgroundImageRelativeUrl",)
 	bannerLogo: Optional[str] = Field(default=None,alias="bannerLogo",)
 	bannerLogoRelativeUrl: Optional[str] = Field(default=None,alias="bannerLogoRelativeUrl",)
-	cdnList: list[Optional[str]] = Field(alias="cdnList",)
+	cdnList: Optional[list[str]] = Field(default=None,alias="cdnList",)
 	contentCustomization: Optional[ContentCustomization] = Field(default=None,alias="contentCustomization",)
 	customAccountResetCredentialsUrl: Optional[str] = Field(default=None,alias="customAccountResetCredentialsUrl",)
 	customCannotAccessYourAccountText: Optional[str] = Field(default=None,alias="customCannotAccessYourAccountText",)

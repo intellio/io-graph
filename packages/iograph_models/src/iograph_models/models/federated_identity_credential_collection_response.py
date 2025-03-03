@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field
 class FederatedIdentityCredentialCollectionResponse(BaseModel):
 	odata_count: Optional[int] = Field(default=None,alias="@odata.count",)
 	odata_nextLink: Optional[str] = Field(default=None,alias="@odata.nextLink",)
-	value: list[FederatedIdentityCredential] = Field(alias="value",)
+	value: Optional[list[FederatedIdentityCredential]] = Field(default=None,alias="value",)
 
 from .federated_identity_credential import FederatedIdentityCredential
 

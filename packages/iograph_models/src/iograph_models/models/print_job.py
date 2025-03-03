@@ -14,8 +14,8 @@ class PrintJob(BaseModel):
 	redirectedFrom: Optional[str] = Field(default=None,alias="redirectedFrom",)
 	redirectedTo: Optional[str] = Field(default=None,alias="redirectedTo",)
 	status: Optional[PrintJobStatus] = Field(default=None,alias="status",)
-	documents: list[PrintDocument] = Field(alias="documents",)
-	tasks: list[PrintTask] = Field(alias="tasks",)
+	documents: Optional[list[PrintDocument]] = Field(default=None,alias="documents",)
+	tasks: Optional[list[PrintTask]] = Field(default=None,alias="tasks",)
 
 from .print_job_configuration import PrintJobConfiguration
 from .user_identity import UserIdentity

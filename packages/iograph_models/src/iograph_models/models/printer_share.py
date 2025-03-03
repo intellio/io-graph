@@ -15,12 +15,12 @@ class PrinterShare(BaseModel):
 	manufacturer: Optional[str] = Field(default=None,alias="manufacturer",)
 	model: Optional[str] = Field(default=None,alias="model",)
 	status: Optional[PrinterStatus] = Field(default=None,alias="status",)
-	jobs: list[PrintJob] = Field(alias="jobs",)
+	jobs: Optional[list[PrintJob]] = Field(default=None,alias="jobs",)
 	allowAllUsers: Optional[bool] = Field(default=None,alias="allowAllUsers",)
 	createdDateTime: Optional[datetime] = Field(default=None,alias="createdDateTime",)
 	viewPoint: Optional[PrinterShareViewpoint] = Field(default=None,alias="viewPoint",)
-	allowedGroups: list[Group] = Field(alias="allowedGroups",)
-	allowedUsers: list[User] = Field(alias="allowedUsers",)
+	allowedGroups: Optional[list[Group]] = Field(default=None,alias="allowedGroups",)
+	allowedUsers: Optional[list[User]] = Field(default=None,alias="allowedUsers",)
 	printer: Optional[Printer] = Field(default=None,alias="printer",)
 
 from .printer_capabilities import PrinterCapabilities

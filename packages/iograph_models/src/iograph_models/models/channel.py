@@ -17,12 +17,12 @@ class Channel(BaseModel):
 	summary: Optional[ChannelSummary] = Field(default=None,alias="summary",)
 	tenantId: Optional[str] = Field(default=None,alias="tenantId",)
 	webUrl: Optional[str] = Field(default=None,alias="webUrl",)
-	allMembers: list[ConversationMember] = Field(alias="allMembers",)
+	allMembers: Optional[list[ConversationMember]] = Field(default=None,alias="allMembers",)
 	filesFolder: Optional[DriveItem] = Field(default=None,alias="filesFolder",)
-	members: list[ConversationMember] = Field(alias="members",)
-	messages: list[ChatMessage] = Field(alias="messages",)
-	sharedWithTeams: list[SharedWithChannelTeamInfo] = Field(alias="sharedWithTeams",)
-	tabs: list[TeamsTab] = Field(alias="tabs",)
+	members: Optional[list[ConversationMember]] = Field(default=None,alias="members",)
+	messages: Optional[list[ChatMessage]] = Field(default=None,alias="messages",)
+	sharedWithTeams: Optional[list[SharedWithChannelTeamInfo]] = Field(default=None,alias="sharedWithTeams",)
+	tabs: Optional[list[TeamsTab]] = Field(default=None,alias="tabs",)
 
 from .channel_membership_type import ChannelMembershipType
 from .channel_summary import ChannelSummary

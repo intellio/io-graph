@@ -7,7 +7,7 @@ class SecurityDispositionReviewStage(BaseModel):
 	id: Optional[str] = Field(default=None,alias="id",)
 	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
 	name: Optional[str] = Field(default=None,alias="name",)
-	reviewersEmailAddresses: list[Optional[str]] = Field(alias="reviewersEmailAddresses",)
+	reviewersEmailAddresses: Optional[list[str]] = Field(default=None,alias="reviewersEmailAddresses",)
 	stageNumber: Optional[str] = Field(default=None,alias="stageNumber",)
 
 

@@ -17,6 +17,6 @@ class WorkbookRangeView(BaseModel):
 	text: Optional[str] = Field(default=None,alias="text",)
 	values: Optional[str] = Field(default=None,alias="values",)
 	valueTypes: Optional[str] = Field(default=None,alias="valueTypes",)
-	rows: list[WorkbookRangeView] = Field(alias="rows",)
+	rows: Optional[list[WorkbookRangeView]] = Field(default=None,alias="rows",)
 
 

@@ -16,13 +16,13 @@ class Chat(BaseModel):
 	topic: Optional[str] = Field(default=None,alias="topic",)
 	viewpoint: Optional[ChatViewpoint] = Field(default=None,alias="viewpoint",)
 	webUrl: Optional[str] = Field(default=None,alias="webUrl",)
-	installedApps: list[TeamsAppInstallation] = Field(alias="installedApps",)
+	installedApps: Optional[list[TeamsAppInstallation]] = Field(default=None,alias="installedApps",)
 	lastMessagePreview: Optional[ChatMessageInfo] = Field(default=None,alias="lastMessagePreview",)
-	members: list[ConversationMember] = Field(alias="members",)
-	messages: list[ChatMessage] = Field(alias="messages",)
-	permissionGrants: list[ResourceSpecificPermissionGrant] = Field(alias="permissionGrants",)
-	pinnedMessages: list[PinnedChatMessageInfo] = Field(alias="pinnedMessages",)
-	tabs: list[TeamsTab] = Field(alias="tabs",)
+	members: Optional[list[ConversationMember]] = Field(default=None,alias="members",)
+	messages: Optional[list[ChatMessage]] = Field(default=None,alias="messages",)
+	permissionGrants: Optional[list[ResourceSpecificPermissionGrant]] = Field(default=None,alias="permissionGrants",)
+	pinnedMessages: Optional[list[PinnedChatMessageInfo]] = Field(default=None,alias="pinnedMessages",)
+	tabs: Optional[list[TeamsTab]] = Field(default=None,alias="tabs",)
 
 from .chat_type import ChatType
 from .teamwork_online_meeting_info import TeamworkOnlineMeetingInfo

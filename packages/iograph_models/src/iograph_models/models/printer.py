@@ -15,14 +15,14 @@ class Printer(BaseModel):
 	manufacturer: Optional[str] = Field(default=None,alias="manufacturer",)
 	model: Optional[str] = Field(default=None,alias="model",)
 	status: Optional[PrinterStatus] = Field(default=None,alias="status",)
-	jobs: list[PrintJob] = Field(alias="jobs",)
+	jobs: Optional[list[PrintJob]] = Field(default=None,alias="jobs",)
 	hasPhysicalDevice: Optional[bool] = Field(default=None,alias="hasPhysicalDevice",)
 	isShared: Optional[bool] = Field(default=None,alias="isShared",)
 	lastSeenDateTime: Optional[datetime] = Field(default=None,alias="lastSeenDateTime",)
 	registeredDateTime: Optional[datetime] = Field(default=None,alias="registeredDateTime",)
-	connectors: list[PrintConnector] = Field(alias="connectors",)
-	shares: list[PrinterShare] = Field(alias="shares",)
-	taskTriggers: list[PrintTaskTrigger] = Field(alias="taskTriggers",)
+	connectors: Optional[list[PrintConnector]] = Field(default=None,alias="connectors",)
+	shares: Optional[list[PrinterShare]] = Field(default=None,alias="shares",)
+	taskTriggers: Optional[list[PrintTaskTrigger]] = Field(default=None,alias="taskTriggers",)
 
 from .printer_capabilities import PrinterCapabilities
 from .printer_defaults import PrinterDefaults

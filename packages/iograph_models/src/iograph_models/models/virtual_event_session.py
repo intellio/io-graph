@@ -32,7 +32,7 @@ class VirtualEventSession(BaseModel):
 	subject: Optional[str] = Field(default=None,alias="subject",)
 	videoTeleconferenceId: Optional[str] = Field(default=None,alias="videoTeleconferenceId",)
 	watermarkProtection: Optional[WatermarkProtectionValues] = Field(default=None,alias="watermarkProtection",)
-	attendanceReports: list[MeetingAttendanceReport] = Field(alias="attendanceReports",)
+	attendanceReports: Optional[list[MeetingAttendanceReport]] = Field(default=None,alias="attendanceReports",)
 	endDateTime: Optional[DateTimeTimeZone] = Field(default=None,alias="endDateTime",)
 	startDateTime: Optional[DateTimeTimeZone] = Field(default=None,alias="startDateTime",)
 

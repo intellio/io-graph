@@ -4,7 +4,7 @@ from pydantic import BaseModel, Field
 
 
 class RolePermission(BaseModel):
-	resourceActions: list[ResourceAction] = Field(alias="resourceActions",)
+	resourceActions: Optional[list[ResourceAction]] = Field(default=None,alias="resourceActions",)
 	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
 
 from .resource_action import ResourceAction

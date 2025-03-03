@@ -17,7 +17,7 @@ class CloudPcAuditEvent(BaseModel):
 	componentName: Optional[str] = Field(default=None,alias="componentName",)
 	correlationId: Optional[str] = Field(default=None,alias="correlationId",)
 	displayName: Optional[str] = Field(default=None,alias="displayName",)
-	resources: list[CloudPcAuditResource] = Field(alias="resources",)
+	resources: Optional[list[CloudPcAuditResource]] = Field(default=None,alias="resources",)
 
 from .cloud_pc_audit_activity_operation_type import CloudPcAuditActivityOperationType
 from .cloud_pc_audit_activity_result import CloudPcAuditActivityResult

@@ -22,7 +22,7 @@ class SecurityRetentionLabel(BaseModel):
 	retentionDuration: Optional[SecurityRetentionDuration] = Field(default=None,alias="retentionDuration",)
 	retentionTrigger: Optional[SecurityRetentionTrigger] = Field(default=None,alias="retentionTrigger",)
 	descriptors: Optional[SecurityFilePlanDescriptor] = Field(default=None,alias="descriptors",)
-	dispositionReviewStages: list[SecurityDispositionReviewStage] = Field(alias="dispositionReviewStages",)
+	dispositionReviewStages: Optional[list[SecurityDispositionReviewStage]] = Field(default=None,alias="dispositionReviewStages",)
 	retentionEventType: Optional[SecurityRetentionEventType] = Field(default=None,alias="retentionEventType",)
 
 from .security_action_after_retention_period import SecurityActionAfterRetentionPeriod

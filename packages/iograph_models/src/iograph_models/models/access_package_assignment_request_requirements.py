@@ -11,7 +11,7 @@ class AccessPackageAssignmentRequestRequirements(BaseModel):
 	policyDisplayName: Optional[str] = Field(default=None,alias="policyDisplayName",)
 	policyId: Optional[str] = Field(default=None,alias="policyId",)
 	schedule: Optional[EntitlementManagementSchedule] = Field(default=None,alias="schedule",)
-	questions: list[AccessPackageQuestion] = Field(alias="questions",)
+	questions: Optional[list[AccessPackageQuestion]] = Field(default=None,alias="questions",)
 	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
 
 from .entitlement_management_schedule import EntitlementManagementSchedule

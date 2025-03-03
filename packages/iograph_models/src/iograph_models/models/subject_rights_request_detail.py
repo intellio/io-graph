@@ -5,10 +5,10 @@ from pydantic import BaseModel, Field
 
 class SubjectRightsRequestDetail(BaseModel):
 	excludedItemCount: Optional[int] = Field(default=None,alias="excludedItemCount",)
-	insightCounts: list[KeyValuePair] = Field(alias="insightCounts",)
+	insightCounts: Optional[list[KeyValuePair]] = Field(default=None,alias="insightCounts",)
 	itemCount: Optional[int] = Field(default=None,alias="itemCount",)
 	itemNeedReview: Optional[int] = Field(default=None,alias="itemNeedReview",)
-	productItemCounts: list[KeyValuePair] = Field(alias="productItemCounts",)
+	productItemCounts: Optional[list[KeyValuePair]] = Field(default=None,alias="productItemCounts",)
 	signedOffItemCount: Optional[int] = Field(default=None,alias="signedOffItemCount",)
 	totalItemSize: Optional[int] = Field(default=None,alias="totalItemSize",)
 	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)

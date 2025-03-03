@@ -11,7 +11,7 @@ class RoomList(BaseModel):
 	geoCoordinates: Optional[OutlookGeoCoordinates] = Field(default=None,alias="geoCoordinates",)
 	phone: Optional[str] = Field(default=None,alias="phone",)
 	emailAddress: Optional[str] = Field(default=None,alias="emailAddress",)
-	rooms: list[Room] = Field(alias="rooms",)
+	rooms: Optional[list[Room]] = Field(default=None,alias="rooms",)
 
 from .physical_address import PhysicalAddress
 from .outlook_geo_coordinates import OutlookGeoCoordinates

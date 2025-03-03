@@ -12,9 +12,9 @@ class CallRecordsSession(BaseModel):
 	endDateTime: Optional[datetime] = Field(default=None,alias="endDateTime",)
 	failureInfo: Optional[CallRecordsFailureInfo] = Field(default=None,alias="failureInfo",)
 	isTest: Optional[bool] = Field(default=None,alias="isTest",)
-	modalities: list[CallRecordsModality] = Field(alias="modalities",)
+	modalities: Optional[list[CallRecordsModality]] = Field(default=None,alias="modalities",)
 	startDateTime: Optional[datetime] = Field(default=None,alias="startDateTime",)
-	segments: list[CallRecordsSegment] = Field(alias="segments",)
+	segments: Optional[list[CallRecordsSegment]] = Field(default=None,alias="segments",)
 
 from .call_records_endpoint import CallRecordsEndpoint
 from .call_records_endpoint import CallRecordsEndpoint

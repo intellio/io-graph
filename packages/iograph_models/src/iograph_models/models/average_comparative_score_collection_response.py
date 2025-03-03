@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field
 class AverageComparativeScoreCollectionResponse(BaseModel):
 	odata_count: Optional[int] = Field(default=None,alias="@odata.count",)
 	odata_nextLink: Optional[str] = Field(default=None,alias="@odata.nextLink",)
-	value: list[AverageComparativeScore] = Field(alias="value",)
+	value: Optional[list[AverageComparativeScore]] = Field(default=None,alias="value",)
 
 from .average_comparative_score import AverageComparativeScore
 

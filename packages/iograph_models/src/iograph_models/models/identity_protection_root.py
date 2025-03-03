@@ -4,10 +4,10 @@ from pydantic import BaseModel, Field
 
 
 class IdentityProtectionRoot(BaseModel):
-	riskDetections: list[RiskDetection] = Field(alias="riskDetections",)
-	riskyServicePrincipals: list[RiskyServicePrincipal] = Field(alias="riskyServicePrincipals",)
-	riskyUsers: list[RiskyUser] = Field(alias="riskyUsers",)
-	servicePrincipalRiskDetections: list[ServicePrincipalRiskDetection] = Field(alias="servicePrincipalRiskDetections",)
+	riskDetections: Optional[list[RiskDetection]] = Field(default=None,alias="riskDetections",)
+	riskyServicePrincipals: Optional[list[RiskyServicePrincipal]] = Field(default=None,alias="riskyServicePrincipals",)
+	riskyUsers: Optional[list[RiskyUser]] = Field(default=None,alias="riskyUsers",)
+	servicePrincipalRiskDetections: Optional[list[ServicePrincipalRiskDetection]] = Field(default=None,alias="servicePrincipalRiskDetections",)
 	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
 
 from .risk_detection import RiskDetection

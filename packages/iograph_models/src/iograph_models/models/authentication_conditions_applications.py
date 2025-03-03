@@ -4,7 +4,7 @@ from pydantic import BaseModel, Field
 
 
 class AuthenticationConditionsApplications(BaseModel):
-	includeApplications: list[AuthenticationConditionApplication] = Field(alias="includeApplications",)
+	includeApplications: Optional[list[AuthenticationConditionApplication]] = Field(default=None,alias="includeApplications",)
 	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
 
 from .authentication_condition_application import AuthenticationConditionApplication

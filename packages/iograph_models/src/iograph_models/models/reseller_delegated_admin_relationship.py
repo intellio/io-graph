@@ -17,9 +17,9 @@ class ResellerDelegatedAdminRelationship(BaseModel):
 	endDateTime: Optional[datetime] = Field(default=None,alias="endDateTime",)
 	lastModifiedDateTime: Optional[datetime] = Field(default=None,alias="lastModifiedDateTime",)
 	status: Optional[DelegatedAdminRelationshipStatus] = Field(default=None,alias="status",)
-	accessAssignments: list[DelegatedAdminAccessAssignment] = Field(alias="accessAssignments",)
-	operations: list[DelegatedAdminRelationshipOperation] = Field(alias="operations",)
-	requests: list[DelegatedAdminRelationshipRequest] = Field(alias="requests",)
+	accessAssignments: Optional[list[DelegatedAdminAccessAssignment]] = Field(default=None,alias="accessAssignments",)
+	operations: Optional[list[DelegatedAdminRelationshipOperation]] = Field(default=None,alias="operations",)
+	requests: Optional[list[DelegatedAdminRelationshipRequest]] = Field(default=None,alias="requests",)
 	indirectProviderTenantId: Optional[str] = Field(default=None,alias="indirectProviderTenantId",)
 	isPartnerConsentPending: Optional[bool] = Field(default=None,alias="isPartnerConsentPending",)
 

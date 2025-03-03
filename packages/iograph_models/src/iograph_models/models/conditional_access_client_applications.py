@@ -4,8 +4,8 @@ from pydantic import BaseModel, Field
 
 
 class ConditionalAccessClientApplications(BaseModel):
-	excludeServicePrincipals: list[str] = Field(alias="excludeServicePrincipals",)
-	includeServicePrincipals: list[str] = Field(alias="includeServicePrincipals",)
+	excludeServicePrincipals: Optional[list[str]] = Field(default=None,alias="excludeServicePrincipals",)
+	includeServicePrincipals: Optional[list[str]] = Field(default=None,alias="includeServicePrincipals",)
 	servicePrincipalFilter: Optional[ConditionalAccessFilter] = Field(default=None,alias="servicePrincipalFilter",)
 	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
 

@@ -4,7 +4,7 @@ from pydantic import BaseModel, Field
 
 
 class InstanceResourceAccess(BaseModel):
-	permissions: list[ResourcePermission] = Field(alias="permissions",)
+	permissions: Optional[list[ResourcePermission]] = Field(default=None,alias="permissions",)
 	resourceAppId: Optional[str] = Field(default=None,alias="resourceAppId",)
 	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
 

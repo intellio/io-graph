@@ -22,8 +22,8 @@ class ManagedApp(BaseModel):
 	privacyInformationUrl: Optional[str] = Field(default=None,alias="privacyInformationUrl",)
 	publisher: Optional[str] = Field(default=None,alias="publisher",)
 	publishingState: Optional[MobileAppPublishingState] = Field(default=None,alias="publishingState",)
-	assignments: list[MobileAppAssignment] = Field(alias="assignments",)
-	categories: list[MobileAppCategory] = Field(alias="categories",)
+	assignments: Optional[list[MobileAppAssignment]] = Field(default=None,alias="assignments",)
+	categories: Optional[list[MobileAppCategory]] = Field(default=None,alias="categories",)
 	appAvailability: Optional[ManagedAppAvailability] = Field(default=None,alias="appAvailability",)
 	version: Optional[str] = Field(default=None,alias="version",)
 
