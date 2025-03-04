@@ -1,6 +1,7 @@
 # Auto-generated client
 
 from __future__ import annotations
+from kiota_abstractions.get_path_parameters import get_path_parameters
 from kiota_abstractions.method import Method
 from kiota_abstractions.base_request_builder import BaseRequestBuilder
 from kiota_abstractions.base_request_configuration import RequestConfiguration
@@ -11,6 +12,7 @@ from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:
 	from .versions import VersionsRequest
+	from .get_activities_by_interval import GetActivitiesByIntervalRequest
 	from .create_link import CreateLinkRequest
 	from .last_modified_by_user import LastModifiedByUserRequest
 	from .fields import FieldsRequest
@@ -115,51 +117,147 @@ class ByListItemIdRequest(BaseRequestBuilder):
 			raise TypeError("raw_url cannot be None.")
 		return ByListItemIdRequest(self.request_adapter, self.path_parameters)
 
-	@property
 	def analytics(self,
+		drive_id: str,
+		listItem_id: str,
 	) -> AnalyticsRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if listItem_id is None:
+			raise TypeError("listItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["listItem%2Did"] =  listItem_id
+
 		from .analytics import AnalyticsRequest
-		return AnalyticsRequest(self.request_adapter, self.path_parameters)
+		return AnalyticsRequest(self.request_adapter, path_parameters)
 
-	@property
 	def created_by_user(self,
+		drive_id: str,
+		listItem_id: str,
 	) -> CreatedByUserRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if listItem_id is None:
+			raise TypeError("listItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["listItem%2Did"] =  listItem_id
+
 		from .created_by_user import CreatedByUserRequest
-		return CreatedByUserRequest(self.request_adapter, self.path_parameters)
+		return CreatedByUserRequest(self.request_adapter, path_parameters)
 
-	@property
 	def document_set_versions(self,
+		drive_id: str,
+		listItem_id: str,
 	) -> DocumentSetVersionsRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if listItem_id is None:
+			raise TypeError("listItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["listItem%2Did"] =  listItem_id
+
 		from .document_set_versions import DocumentSetVersionsRequest
-		return DocumentSetVersionsRequest(self.request_adapter, self.path_parameters)
+		return DocumentSetVersionsRequest(self.request_adapter, path_parameters)
 
-	@property
 	def drive_item(self,
+		drive_id: str,
+		listItem_id: str,
 	) -> DriveItemRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if listItem_id is None:
+			raise TypeError("listItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["listItem%2Did"] =  listItem_id
+
 		from .drive_item import DriveItemRequest
-		return DriveItemRequest(self.request_adapter, self.path_parameters)
+		return DriveItemRequest(self.request_adapter, path_parameters)
 
-	@property
 	def fields(self,
+		drive_id: str,
+		listItem_id: str,
 	) -> FieldsRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if listItem_id is None:
+			raise TypeError("listItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["listItem%2Did"] =  listItem_id
+
 		from .fields import FieldsRequest
-		return FieldsRequest(self.request_adapter, self.path_parameters)
+		return FieldsRequest(self.request_adapter, path_parameters)
 
-	@property
 	def last_modified_by_user(self,
+		drive_id: str,
+		listItem_id: str,
 	) -> LastModifiedByUserRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if listItem_id is None:
+			raise TypeError("listItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["listItem%2Did"] =  listItem_id
+
 		from .last_modified_by_user import LastModifiedByUserRequest
-		return LastModifiedByUserRequest(self.request_adapter, self.path_parameters)
+		return LastModifiedByUserRequest(self.request_adapter, path_parameters)
 
-	@property
 	def create_link(self,
+		drive_id: str,
+		listItem_id: str,
 	) -> CreateLinkRequest:
-		from .create_link import CreateLinkRequest
-		return CreateLinkRequest(self.request_adapter, self.path_parameters)
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if listItem_id is None:
+			raise TypeError("listItem_id cannot be null.")
 
-	@property
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["listItem%2Did"] =  listItem_id
+
+		from .create_link import CreateLinkRequest
+		return CreateLinkRequest(self.request_adapter, path_parameters)
+
+	def get_activities_by_interval(self,
+		drive_id: str,
+		listItem_id: str,
+	) -> GetActivitiesByIntervalRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if listItem_id is None:
+			raise TypeError("listItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["listItem%2Did"] =  listItem_id
+
+		from .get_activities_by_interval import GetActivitiesByIntervalRequest
+		return GetActivitiesByIntervalRequest(self.request_adapter, path_parameters)
+
 	def versions(self,
+		drive_id: str,
+		listItem_id: str,
 	) -> VersionsRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if listItem_id is None:
+			raise TypeError("listItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["listItem%2Did"] =  listItem_id
+
 		from .versions import VersionsRequest
-		return VersionsRequest(self.request_adapter, self.path_parameters)
+		return VersionsRequest(self.request_adapter, path_parameters)
 

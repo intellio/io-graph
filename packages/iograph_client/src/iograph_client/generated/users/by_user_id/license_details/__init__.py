@@ -11,12 +11,13 @@ from typing import Union, Any, Optional
 from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:
+	from .get_teams_licensing_details import GetTeamsLicensingDetailsRequest
 	from .count import CountRequest
 	from .by_license_details_id import ByLicenseDetailsIdRequest
 	from .....request_adapter import HttpxRequestAdapter
 from iograph_models.models.license_details_collection_response import LicenseDetailsCollectionResponse
-from iograph_models.models.license_details import LicenseDetails
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.models.license_details import LicenseDetails
 
 
 class LicenseDetailsRequest(BaseRequestBuilder):
@@ -108,9 +109,27 @@ class LicenseDetailsRequest(BaseRequestBuilder):
 		from .by_license_details_id import ByLicenseDetailsIdRequest
 		return ByLicenseDetailsIdRequest(self.request_adapter, path_parameters)
 
-	@property
 	def count(self,
+		user_id: str,
 	) -> CountRequest:
+		if user_id is None:
+			raise TypeError("user_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["user%2Did"] =  user_id
+
 		from .count import CountRequest
-		return CountRequest(self.request_adapter, self.path_parameters)
+		return CountRequest(self.request_adapter, path_parameters)
+
+	def get_teams_licensing_details(self,
+		user_id: str,
+	) -> GetTeamsLicensingDetailsRequest:
+		if user_id is None:
+			raise TypeError("user_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["user%2Did"] =  user_id
+
+		from .get_teams_licensing_details import GetTeamsLicensingDetailsRequest
+		return GetTeamsLicensingDetailsRequest(self.request_adapter, path_parameters)
 

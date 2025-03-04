@@ -1,6 +1,7 @@
 # Auto-generated client
 
 from __future__ import annotations
+from kiota_abstractions.get_path_parameters import get_path_parameters
 from kiota_abstractions.method import Method
 from kiota_abstractions.base_request_builder import BaseRequestBuilder
 from kiota_abstractions.base_request_configuration import RequestConfiguration
@@ -17,8 +18,8 @@ if TYPE_CHECKING:
 	from .device_statuses import DeviceStatusesRequest
 	from .assignments import AssignmentsRequest
 	from .....request_adapter import HttpxRequestAdapter
-from iograph_models.models.managed_device_mobile_app_configuration import ManagedDeviceMobileAppConfiguration
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.models.managed_device_mobile_app_configuration import ManagedDeviceMobileAppConfiguration
 
 
 class ByManagedDeviceMobileAppConfigurationIdRequest(BaseRequestBuilder):
@@ -116,39 +117,75 @@ class ByManagedDeviceMobileAppConfigurationIdRequest(BaseRequestBuilder):
 			raise TypeError("raw_url cannot be None.")
 		return ByManagedDeviceMobileAppConfigurationIdRequest(self.request_adapter, self.path_parameters)
 
-	@property
 	def assignments(self,
+		managedDeviceMobileAppConfiguration_id: str,
 	) -> AssignmentsRequest:
+		if managedDeviceMobileAppConfiguration_id is None:
+			raise TypeError("managedDeviceMobileAppConfiguration_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["managedDeviceMobileAppConfiguration%2Did"] =  managedDeviceMobileAppConfiguration_id
+
 		from .assignments import AssignmentsRequest
-		return AssignmentsRequest(self.request_adapter, self.path_parameters)
+		return AssignmentsRequest(self.request_adapter, path_parameters)
 
-	@property
 	def device_statuses(self,
+		managedDeviceMobileAppConfiguration_id: str,
 	) -> DeviceStatusesRequest:
+		if managedDeviceMobileAppConfiguration_id is None:
+			raise TypeError("managedDeviceMobileAppConfiguration_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["managedDeviceMobileAppConfiguration%2Did"] =  managedDeviceMobileAppConfiguration_id
+
 		from .device_statuses import DeviceStatusesRequest
-		return DeviceStatusesRequest(self.request_adapter, self.path_parameters)
+		return DeviceStatusesRequest(self.request_adapter, path_parameters)
 
-	@property
 	def device_status_summary(self,
+		managedDeviceMobileAppConfiguration_id: str,
 	) -> DeviceStatusSummaryRequest:
+		if managedDeviceMobileAppConfiguration_id is None:
+			raise TypeError("managedDeviceMobileAppConfiguration_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["managedDeviceMobileAppConfiguration%2Did"] =  managedDeviceMobileAppConfiguration_id
+
 		from .device_status_summary import DeviceStatusSummaryRequest
-		return DeviceStatusSummaryRequest(self.request_adapter, self.path_parameters)
+		return DeviceStatusSummaryRequest(self.request_adapter, path_parameters)
 
-	@property
 	def assign(self,
+		managedDeviceMobileAppConfiguration_id: str,
 	) -> AssignRequest:
+		if managedDeviceMobileAppConfiguration_id is None:
+			raise TypeError("managedDeviceMobileAppConfiguration_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["managedDeviceMobileAppConfiguration%2Did"] =  managedDeviceMobileAppConfiguration_id
+
 		from .assign import AssignRequest
-		return AssignRequest(self.request_adapter, self.path_parameters)
+		return AssignRequest(self.request_adapter, path_parameters)
 
-	@property
 	def user_statuses(self,
+		managedDeviceMobileAppConfiguration_id: str,
 	) -> UserStatusesRequest:
-		from .user_statuses import UserStatusesRequest
-		return UserStatusesRequest(self.request_adapter, self.path_parameters)
+		if managedDeviceMobileAppConfiguration_id is None:
+			raise TypeError("managedDeviceMobileAppConfiguration_id cannot be null.")
 
-	@property
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["managedDeviceMobileAppConfiguration%2Did"] =  managedDeviceMobileAppConfiguration_id
+
+		from .user_statuses import UserStatusesRequest
+		return UserStatusesRequest(self.request_adapter, path_parameters)
+
 	def user_status_summary(self,
+		managedDeviceMobileAppConfiguration_id: str,
 	) -> UserStatusSummaryRequest:
+		if managedDeviceMobileAppConfiguration_id is None:
+			raise TypeError("managedDeviceMobileAppConfiguration_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["managedDeviceMobileAppConfiguration%2Did"] =  managedDeviceMobileAppConfiguration_id
+
 		from .user_status_summary import UserStatusSummaryRequest
-		return UserStatusSummaryRequest(self.request_adapter, self.path_parameters)
+		return UserStatusSummaryRequest(self.request_adapter, path_parameters)
 

@@ -1,6 +1,7 @@
 # Auto-generated client
 
 from __future__ import annotations
+from kiota_abstractions.get_path_parameters import get_path_parameters
 from kiota_abstractions.method import Method
 from kiota_abstractions.base_request_builder import BaseRequestBuilder
 from kiota_abstractions.base_request_configuration import RequestConfiguration
@@ -108,9 +109,15 @@ class ByApprovalIdRequest(BaseRequestBuilder):
 			raise TypeError("raw_url cannot be None.")
 		return ByApprovalIdRequest(self.request_adapter, self.path_parameters)
 
-	@property
 	def stages(self,
+		approval_id: str,
 	) -> StagesRequest:
+		if approval_id is None:
+			raise TypeError("approval_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["approval%2Did"] =  approval_id
+
 		from .stages import StagesRequest
-		return StagesRequest(self.request_adapter, self.path_parameters)
+		return StagesRequest(self.request_adapter, path_parameters)
 

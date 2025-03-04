@@ -1,6 +1,7 @@
 # Auto-generated client
 
 from __future__ import annotations
+from kiota_abstractions.get_path_parameters import get_path_parameters
 from kiota_abstractions.method import Method
 from kiota_abstractions.base_request_builder import BaseRequestBuilder
 from kiota_abstractions.base_request_configuration import RequestConfiguration
@@ -57,9 +58,15 @@ class ByProfilePhotoIdRequest(BaseRequestBuilder):
 			raise TypeError("raw_url cannot be None.")
 		return ByProfilePhotoIdRequest(self.request_adapter, self.path_parameters)
 
-	@property
 	def value(self,
+		profilePhoto_id: str,
 	) -> ValueRequest:
+		if profilePhoto_id is None:
+			raise TypeError("profilePhoto_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["profilePhoto%2Did"] =  profilePhoto_id
+
 		from .value import ValueRequest
-		return ValueRequest(self.request_adapter, self.path_parameters)
+		return ValueRequest(self.request_adapter, path_parameters)
 

@@ -1,6 +1,7 @@
 # Auto-generated client
 
 from __future__ import annotations
+from kiota_abstractions.get_path_parameters import get_path_parameters
 from kiota_abstractions.method import Method
 from kiota_abstractions.base_request_builder import BaseRequestBuilder
 from kiota_abstractions.base_request_configuration import RequestConfiguration
@@ -121,81 +122,159 @@ class ByHostIdRequest(BaseRequestBuilder):
 			raise TypeError("raw_url cannot be None.")
 		return ByHostIdRequest(self.request_adapter, self.path_parameters)
 
-	@property
 	def child_host_pairs(self,
+		host_id: str,
 	) -> ChildHostPairsRequest:
+		if host_id is None:
+			raise TypeError("host_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["host%2Did"] =  host_id
+
 		from .child_host_pairs import ChildHostPairsRequest
-		return ChildHostPairsRequest(self.request_adapter, self.path_parameters)
+		return ChildHostPairsRequest(self.request_adapter, path_parameters)
 
-	@property
 	def components(self,
+		host_id: str,
 	) -> ComponentsRequest:
+		if host_id is None:
+			raise TypeError("host_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["host%2Did"] =  host_id
+
 		from .components import ComponentsRequest
-		return ComponentsRequest(self.request_adapter, self.path_parameters)
+		return ComponentsRequest(self.request_adapter, path_parameters)
 
-	@property
 	def cookies(self,
+		host_id: str,
 	) -> CookiesRequest:
+		if host_id is None:
+			raise TypeError("host_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["host%2Did"] =  host_id
+
 		from .cookies import CookiesRequest
-		return CookiesRequest(self.request_adapter, self.path_parameters)
+		return CookiesRequest(self.request_adapter, path_parameters)
 
-	@property
 	def host_pairs(self,
+		host_id: str,
 	) -> HostPairsRequest:
+		if host_id is None:
+			raise TypeError("host_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["host%2Did"] =  host_id
+
 		from .host_pairs import HostPairsRequest
-		return HostPairsRequest(self.request_adapter, self.path_parameters)
+		return HostPairsRequest(self.request_adapter, path_parameters)
 
-	@property
 	def parent_host_pairs(self,
+		host_id: str,
 	) -> ParentHostPairsRequest:
+		if host_id is None:
+			raise TypeError("host_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["host%2Did"] =  host_id
+
 		from .parent_host_pairs import ParentHostPairsRequest
-		return ParentHostPairsRequest(self.request_adapter, self.path_parameters)
+		return ParentHostPairsRequest(self.request_adapter, path_parameters)
 
-	@property
 	def passive_dns(self,
+		host_id: str,
 	) -> PassiveDnsRequest:
+		if host_id is None:
+			raise TypeError("host_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["host%2Did"] =  host_id
+
 		from .passive_dns import PassiveDnsRequest
-		return PassiveDnsRequest(self.request_adapter, self.path_parameters)
+		return PassiveDnsRequest(self.request_adapter, path_parameters)
 
-	@property
 	def passive_dns_reverse(self,
+		host_id: str,
 	) -> PassiveDnsReverseRequest:
+		if host_id is None:
+			raise TypeError("host_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["host%2Did"] =  host_id
+
 		from .passive_dns_reverse import PassiveDnsReverseRequest
-		return PassiveDnsReverseRequest(self.request_adapter, self.path_parameters)
+		return PassiveDnsReverseRequest(self.request_adapter, path_parameters)
 
-	@property
 	def ports(self,
+		host_id: str,
 	) -> PortsRequest:
+		if host_id is None:
+			raise TypeError("host_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["host%2Did"] =  host_id
+
 		from .ports import PortsRequest
-		return PortsRequest(self.request_adapter, self.path_parameters)
+		return PortsRequest(self.request_adapter, path_parameters)
 
-	@property
 	def reputation(self,
+		host_id: str,
 	) -> ReputationRequest:
+		if host_id is None:
+			raise TypeError("host_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["host%2Did"] =  host_id
+
 		from .reputation import ReputationRequest
-		return ReputationRequest(self.request_adapter, self.path_parameters)
+		return ReputationRequest(self.request_adapter, path_parameters)
 
-	@property
 	def ssl_certificates(self,
+		host_id: str,
 	) -> SslCertificatesRequest:
+		if host_id is None:
+			raise TypeError("host_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["host%2Did"] =  host_id
+
 		from .ssl_certificates import SslCertificatesRequest
-		return SslCertificatesRequest(self.request_adapter, self.path_parameters)
+		return SslCertificatesRequest(self.request_adapter, path_parameters)
 
-	@property
 	def subdomains(self,
+		host_id: str,
 	) -> SubdomainsRequest:
+		if host_id is None:
+			raise TypeError("host_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["host%2Did"] =  host_id
+
 		from .subdomains import SubdomainsRequest
-		return SubdomainsRequest(self.request_adapter, self.path_parameters)
+		return SubdomainsRequest(self.request_adapter, path_parameters)
 
-	@property
 	def trackers(self,
+		host_id: str,
 	) -> TrackersRequest:
-		from .trackers import TrackersRequest
-		return TrackersRequest(self.request_adapter, self.path_parameters)
+		if host_id is None:
+			raise TypeError("host_id cannot be null.")
 
-	@property
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["host%2Did"] =  host_id
+
+		from .trackers import TrackersRequest
+		return TrackersRequest(self.request_adapter, path_parameters)
+
 	def whois(self,
+		host_id: str,
 	) -> WhoisRequest:
+		if host_id is None:
+			raise TypeError("host_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["host%2Did"] =  host_id
+
 		from .whois import WhoisRequest
-		return WhoisRequest(self.request_adapter, self.path_parameters)
+		return WhoisRequest(self.request_adapter, path_parameters)
 

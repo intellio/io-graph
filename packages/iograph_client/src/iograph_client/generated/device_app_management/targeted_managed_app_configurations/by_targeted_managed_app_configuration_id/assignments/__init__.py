@@ -108,9 +108,15 @@ class AssignmentsRequest(BaseRequestBuilder):
 		from .by_targeted_managed_app_policy_assignment_id import ByTargetedManagedAppPolicyAssignmentIdRequest
 		return ByTargetedManagedAppPolicyAssignmentIdRequest(self.request_adapter, path_parameters)
 
-	@property
 	def count(self,
+		targetedManagedAppConfiguration_id: str,
 	) -> CountRequest:
+		if targetedManagedAppConfiguration_id is None:
+			raise TypeError("targetedManagedAppConfiguration_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["targetedManagedAppConfiguration%2Did"] =  targetedManagedAppConfiguration_id
+
 		from .count import CountRequest
-		return CountRequest(self.request_adapter, self.path_parameters)
+		return CountRequest(self.request_adapter, path_parameters)
 

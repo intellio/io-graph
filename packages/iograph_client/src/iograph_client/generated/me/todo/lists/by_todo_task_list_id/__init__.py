@@ -1,6 +1,7 @@
 # Auto-generated client
 
 from __future__ import annotations
+from kiota_abstractions.get_path_parameters import get_path_parameters
 from kiota_abstractions.method import Method
 from kiota_abstractions.base_request_builder import BaseRequestBuilder
 from kiota_abstractions.base_request_configuration import RequestConfiguration
@@ -112,15 +113,27 @@ class ByTodoTaskListIdRequest(BaseRequestBuilder):
 			raise TypeError("raw_url cannot be None.")
 		return ByTodoTaskListIdRequest(self.request_adapter, self.path_parameters)
 
-	@property
 	def extensions(self,
+		todoTaskList_id: str,
 	) -> ExtensionsRequest:
-		from .extensions import ExtensionsRequest
-		return ExtensionsRequest(self.request_adapter, self.path_parameters)
+		if todoTaskList_id is None:
+			raise TypeError("todoTaskList_id cannot be null.")
 
-	@property
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["todoTaskList%2Did"] =  todoTaskList_id
+
+		from .extensions import ExtensionsRequest
+		return ExtensionsRequest(self.request_adapter, path_parameters)
+
 	def tasks(self,
+		todoTaskList_id: str,
 	) -> TasksRequest:
+		if todoTaskList_id is None:
+			raise TypeError("todoTaskList_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["todoTaskList%2Did"] =  todoTaskList_id
+
 		from .tasks import TasksRequest
-		return TasksRequest(self.request_adapter, self.path_parameters)
+		return TasksRequest(self.request_adapter, path_parameters)
 

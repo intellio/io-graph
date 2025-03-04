@@ -14,9 +14,9 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_workflow_id import ByWorkflowIdRequest
 	from .....request_adapter import HttpxRequestAdapter
+from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.models.identity_governance_workflow import IdentityGovernanceWorkflow
 from iograph_models.models.identity_governance_workflow_collection_response import IdentityGovernanceWorkflowCollectionResponse
-from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
 
 
 class WorkflowsRequest(BaseRequestBuilder):

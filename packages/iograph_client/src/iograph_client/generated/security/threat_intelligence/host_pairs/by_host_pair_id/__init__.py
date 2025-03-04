@@ -1,6 +1,7 @@
 # Auto-generated client
 
 from __future__ import annotations
+from kiota_abstractions.get_path_parameters import get_path_parameters
 from kiota_abstractions.method import Method
 from kiota_abstractions.base_request_builder import BaseRequestBuilder
 from kiota_abstractions.base_request_configuration import RequestConfiguration
@@ -110,15 +111,27 @@ class ByHostPairIdRequest(BaseRequestBuilder):
 			raise TypeError("raw_url cannot be None.")
 		return ByHostPairIdRequest(self.request_adapter, self.path_parameters)
 
-	@property
 	def child_host(self,
+		hostPair_id: str,
 	) -> ChildHostRequest:
-		from .child_host import ChildHostRequest
-		return ChildHostRequest(self.request_adapter, self.path_parameters)
+		if hostPair_id is None:
+			raise TypeError("hostPair_id cannot be null.")
 
-	@property
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["hostPair%2Did"] =  hostPair_id
+
+		from .child_host import ChildHostRequest
+		return ChildHostRequest(self.request_adapter, path_parameters)
+
 	def parent_host(self,
+		hostPair_id: str,
 	) -> ParentHostRequest:
+		if hostPair_id is None:
+			raise TypeError("hostPair_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["hostPair%2Did"] =  hostPair_id
+
 		from .parent_host import ParentHostRequest
-		return ParentHostRequest(self.request_adapter, self.path_parameters)
+		return ParentHostRequest(self.request_adapter, path_parameters)
 

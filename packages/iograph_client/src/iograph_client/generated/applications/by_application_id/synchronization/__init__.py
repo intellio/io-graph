@@ -1,6 +1,7 @@
 # Auto-generated client
 
 from __future__ import annotations
+from kiota_abstractions.get_path_parameters import get_path_parameters
 from kiota_abstractions.method import Method
 from kiota_abstractions.base_request_builder import BaseRequestBuilder
 from kiota_abstractions.base_request_configuration import RequestConfiguration
@@ -111,27 +112,51 @@ class SynchronizationRequest(BaseRequestBuilder):
 			raise TypeError("raw_url cannot be None.")
 		return SynchronizationRequest(self.request_adapter, self.path_parameters)
 
-	@property
 	def jobs(self,
+		application_id: str,
 	) -> JobsRequest:
+		if application_id is None:
+			raise TypeError("application_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["application%2Did"] =  application_id
+
 		from .jobs import JobsRequest
-		return JobsRequest(self.request_adapter, self.path_parameters)
+		return JobsRequest(self.request_adapter, path_parameters)
 
-	@property
 	def acquire_access_token(self,
+		application_id: str,
 	) -> AcquireAccessTokenRequest:
+		if application_id is None:
+			raise TypeError("application_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["application%2Did"] =  application_id
+
 		from .acquire_access_token import AcquireAccessTokenRequest
-		return AcquireAccessTokenRequest(self.request_adapter, self.path_parameters)
+		return AcquireAccessTokenRequest(self.request_adapter, path_parameters)
 
-	@property
 	def secrets(self,
+		application_id: str,
 	) -> SecretsRequest:
-		from .secrets import SecretsRequest
-		return SecretsRequest(self.request_adapter, self.path_parameters)
+		if application_id is None:
+			raise TypeError("application_id cannot be null.")
 
-	@property
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["application%2Did"] =  application_id
+
+		from .secrets import SecretsRequest
+		return SecretsRequest(self.request_adapter, path_parameters)
+
 	def templates(self,
+		application_id: str,
 	) -> TemplatesRequest:
+		if application_id is None:
+			raise TypeError("application_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["application%2Did"] =  application_id
+
 		from .templates import TemplatesRequest
-		return TemplatesRequest(self.request_adapter, self.path_parameters)
+		return TemplatesRequest(self.request_adapter, path_parameters)
 

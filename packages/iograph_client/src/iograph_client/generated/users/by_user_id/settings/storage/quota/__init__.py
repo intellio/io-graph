@@ -1,6 +1,7 @@
 # Auto-generated client
 
 from __future__ import annotations
+from kiota_abstractions.get_path_parameters import get_path_parameters
 from kiota_abstractions.method import Method
 from kiota_abstractions.base_request_builder import BaseRequestBuilder
 from kiota_abstractions.base_request_configuration import RequestConfiguration
@@ -12,8 +13,8 @@ from typing import TYPE_CHECKING
 if TYPE_CHECKING:
 	from .services import ServicesRequest
 	from .......request_adapter import HttpxRequestAdapter
-from iograph_models.models.unified_storage_quota import UnifiedStorageQuota
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.models.unified_storage_quota import UnifiedStorageQuota
 
 
 class QuotaRequest(BaseRequestBuilder):
@@ -108,9 +109,15 @@ class QuotaRequest(BaseRequestBuilder):
 			raise TypeError("raw_url cannot be None.")
 		return QuotaRequest(self.request_adapter, self.path_parameters)
 
-	@property
 	def services(self,
+		user_id: str,
 	) -> ServicesRequest:
+		if user_id is None:
+			raise TypeError("user_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["user%2Did"] =  user_id
+
 		from .services import ServicesRequest
-		return ServicesRequest(self.request_adapter, self.path_parameters)
+		return ServicesRequest(self.request_adapter, path_parameters)
 

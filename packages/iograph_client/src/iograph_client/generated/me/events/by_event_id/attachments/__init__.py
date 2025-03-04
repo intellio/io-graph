@@ -16,8 +16,8 @@ if TYPE_CHECKING:
 	from .by_attachment_id import ByAttachmentIdRequest
 	from ......request_adapter import HttpxRequestAdapter
 from iograph_models.models.attachment import Attachment
-from iograph_models.models.attachment_collection_response import AttachmentCollectionResponse
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.models.attachment_collection_response import AttachmentCollectionResponse
 
 
 class AttachmentsRequest(BaseRequestBuilder):
@@ -55,8 +55,9 @@ class AttachmentsRequest(BaseRequestBuilder):
 	) -> Attachment:
 		"""
 		Add attachment
-		Use this API to add an attachment to an existing event. This operation limits the size of the attachment you can add to under 3 MB. If an organizer adds an attachment to a meeting event, the organizer can subsequently update the event to send the attachment and update the event for each attendee as well.
-		Find more info here: https://learn.microsoft.com/graph/api/event-post-attachments?view=graph-rest-1.0
+		Use this API to create a new Attachment. An attachment can be one of the following types: All these types of attachment resources are derived from the attachment
+resource.
+		Find more info here: https://learn.microsoft.com/graph/api/eventmessage-post-attachments?view=graph-rest-1.0
 		"""
 		tags = ['me.event']
 
@@ -111,15 +112,27 @@ class AttachmentsRequest(BaseRequestBuilder):
 		from .by_attachment_id import ByAttachmentIdRequest
 		return ByAttachmentIdRequest(self.request_adapter, path_parameters)
 
-	@property
 	def count(self,
+		event_id: str,
 	) -> CountRequest:
-		from .count import CountRequest
-		return CountRequest(self.request_adapter, self.path_parameters)
+		if event_id is None:
+			raise TypeError("event_id cannot be null.")
 
-	@property
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["event%2Did"] =  event_id
+
+		from .count import CountRequest
+		return CountRequest(self.request_adapter, path_parameters)
+
 	def create_upload_session(self,
+		event_id: str,
 	) -> CreateUploadSessionRequest:
+		if event_id is None:
+			raise TypeError("event_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["event%2Did"] =  event_id
+
 		from .create_upload_session import CreateUploadSessionRequest
-		return CreateUploadSessionRequest(self.request_adapter, self.path_parameters)
+		return CreateUploadSessionRequest(self.request_adapter, path_parameters)
 

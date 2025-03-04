@@ -81,9 +81,15 @@ class ClassesRequest(BaseRequestBuilder):
 		from .by_education_class_id import ByEducationClassIdRequest
 		return ByEducationClassIdRequest(self.request_adapter, path_parameters)
 
-	@property
 	def count(self,
+		educationUser_id: str,
 	) -> CountRequest:
+		if educationUser_id is None:
+			raise TypeError("educationUser_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["educationUser%2Did"] =  educationUser_id
+
 		from .count import CountRequest
-		return CountRequest(self.request_adapter, self.path_parameters)
+		return CountRequest(self.request_adapter, path_parameters)
 

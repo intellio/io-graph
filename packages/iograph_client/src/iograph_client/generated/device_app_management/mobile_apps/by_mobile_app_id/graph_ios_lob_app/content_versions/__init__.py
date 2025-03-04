@@ -15,8 +15,8 @@ if TYPE_CHECKING:
 	from .by_mobile_app_content_id import ByMobileAppContentIdRequest
 	from .......request_adapter import HttpxRequestAdapter
 from iograph_models.models.mobile_app_content import MobileAppContent
-from iograph_models.models.mobile_app_content_collection_response import MobileAppContentCollectionResponse
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.models.mobile_app_content_collection_response import MobileAppContentCollectionResponse
 
 
 class ContentVersionsRequest(BaseRequestBuilder):
@@ -108,9 +108,15 @@ class ContentVersionsRequest(BaseRequestBuilder):
 		from .by_mobile_app_content_id import ByMobileAppContentIdRequest
 		return ByMobileAppContentIdRequest(self.request_adapter, path_parameters)
 
-	@property
 	def count(self,
+		mobileApp_id: str,
 	) -> CountRequest:
+		if mobileApp_id is None:
+			raise TypeError("mobileApp_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["mobileApp%2Did"] =  mobileApp_id
+
 		from .count import CountRequest
-		return CountRequest(self.request_adapter, self.path_parameters)
+		return CountRequest(self.request_adapter, path_parameters)
 

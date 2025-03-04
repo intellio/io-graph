@@ -1,6 +1,7 @@
 # Auto-generated client
 
 from __future__ import annotations
+from kiota_abstractions.get_path_parameters import get_path_parameters
 from kiota_abstractions.method import Method
 from kiota_abstractions.base_request_builder import BaseRequestBuilder
 from kiota_abstractions.base_request_configuration import RequestConfiguration
@@ -13,8 +14,8 @@ if TYPE_CHECKING:
 	from .task_processing_results import TaskProcessingResultsRequest
 	from .subject import SubjectRequest
 	from .........request_adapter import HttpxRequestAdapter
-from iograph_models.models.identity_governance_user_processing_result import IdentityGovernanceUserProcessingResult
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.models.identity_governance_user_processing_result import IdentityGovernanceUserProcessingResult
 
 
 class ByUserProcessingResultIdRequest(BaseRequestBuilder):
@@ -58,15 +59,35 @@ class ByUserProcessingResultIdRequest(BaseRequestBuilder):
 			raise TypeError("raw_url cannot be None.")
 		return ByUserProcessingResultIdRequest(self.request_adapter, self.path_parameters)
 
-	@property
 	def subject(self,
+		workflow_id: str,
+		userProcessingResult_id: str,
 	) -> SubjectRequest:
-		from .subject import SubjectRequest
-		return SubjectRequest(self.request_adapter, self.path_parameters)
+		if workflow_id is None:
+			raise TypeError("workflow_id cannot be null.")
+		if userProcessingResult_id is None:
+			raise TypeError("userProcessingResult_id cannot be null.")
 
-	@property
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["workflow%2Did"] =  workflow_id
+		path_parameters["userProcessingResult%2Did"] =  userProcessingResult_id
+
+		from .subject import SubjectRequest
+		return SubjectRequest(self.request_adapter, path_parameters)
+
 	def task_processing_results(self,
+		workflow_id: str,
+		userProcessingResult_id: str,
 	) -> TaskProcessingResultsRequest:
+		if workflow_id is None:
+			raise TypeError("workflow_id cannot be null.")
+		if userProcessingResult_id is None:
+			raise TypeError("userProcessingResult_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["workflow%2Did"] =  workflow_id
+		path_parameters["userProcessingResult%2Did"] =  userProcessingResult_id
+
 		from .task_processing_results import TaskProcessingResultsRequest
-		return TaskProcessingResultsRequest(self.request_adapter, self.path_parameters)
+		return TaskProcessingResultsRequest(self.request_adapter, path_parameters)
 

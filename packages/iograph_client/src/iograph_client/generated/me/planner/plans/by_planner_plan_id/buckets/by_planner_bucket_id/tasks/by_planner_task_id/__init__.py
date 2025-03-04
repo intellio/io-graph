@@ -1,6 +1,7 @@
 # Auto-generated client
 
 from __future__ import annotations
+from kiota_abstractions.get_path_parameters import get_path_parameters
 from kiota_abstractions.method import Method
 from kiota_abstractions.base_request_builder import BaseRequestBuilder
 from kiota_abstractions.base_request_configuration import RequestConfiguration
@@ -111,27 +112,83 @@ class ByPlannerTaskIdRequest(BaseRequestBuilder):
 			raise TypeError("raw_url cannot be None.")
 		return ByPlannerTaskIdRequest(self.request_adapter, self.path_parameters)
 
-	@property
 	def assigned_to_task_board_format(self,
+		plannerPlan_id: str,
+		plannerBucket_id: str,
+		plannerTask_id: str,
 	) -> AssignedToTaskBoardFormatRequest:
+		if plannerPlan_id is None:
+			raise TypeError("plannerPlan_id cannot be null.")
+		if plannerBucket_id is None:
+			raise TypeError("plannerBucket_id cannot be null.")
+		if plannerTask_id is None:
+			raise TypeError("plannerTask_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["plannerPlan%2Did"] =  plannerPlan_id
+		path_parameters["plannerBucket%2Did"] =  plannerBucket_id
+		path_parameters["plannerTask%2Did"] =  plannerTask_id
+
 		from .assigned_to_task_board_format import AssignedToTaskBoardFormatRequest
-		return AssignedToTaskBoardFormatRequest(self.request_adapter, self.path_parameters)
+		return AssignedToTaskBoardFormatRequest(self.request_adapter, path_parameters)
 
-	@property
 	def bucket_task_board_format(self,
+		plannerPlan_id: str,
+		plannerBucket_id: str,
+		plannerTask_id: str,
 	) -> BucketTaskBoardFormatRequest:
+		if plannerPlan_id is None:
+			raise TypeError("plannerPlan_id cannot be null.")
+		if plannerBucket_id is None:
+			raise TypeError("plannerBucket_id cannot be null.")
+		if plannerTask_id is None:
+			raise TypeError("plannerTask_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["plannerPlan%2Did"] =  plannerPlan_id
+		path_parameters["plannerBucket%2Did"] =  plannerBucket_id
+		path_parameters["plannerTask%2Did"] =  plannerTask_id
+
 		from .bucket_task_board_format import BucketTaskBoardFormatRequest
-		return BucketTaskBoardFormatRequest(self.request_adapter, self.path_parameters)
+		return BucketTaskBoardFormatRequest(self.request_adapter, path_parameters)
 
-	@property
 	def details(self,
+		plannerPlan_id: str,
+		plannerBucket_id: str,
+		plannerTask_id: str,
 	) -> DetailsRequest:
-		from .details import DetailsRequest
-		return DetailsRequest(self.request_adapter, self.path_parameters)
+		if plannerPlan_id is None:
+			raise TypeError("plannerPlan_id cannot be null.")
+		if plannerBucket_id is None:
+			raise TypeError("plannerBucket_id cannot be null.")
+		if plannerTask_id is None:
+			raise TypeError("plannerTask_id cannot be null.")
 
-	@property
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["plannerPlan%2Did"] =  plannerPlan_id
+		path_parameters["plannerBucket%2Did"] =  plannerBucket_id
+		path_parameters["plannerTask%2Did"] =  plannerTask_id
+
+		from .details import DetailsRequest
+		return DetailsRequest(self.request_adapter, path_parameters)
+
 	def progress_task_board_format(self,
+		plannerPlan_id: str,
+		plannerBucket_id: str,
+		plannerTask_id: str,
 	) -> ProgressTaskBoardFormatRequest:
+		if plannerPlan_id is None:
+			raise TypeError("plannerPlan_id cannot be null.")
+		if plannerBucket_id is None:
+			raise TypeError("plannerBucket_id cannot be null.")
+		if plannerTask_id is None:
+			raise TypeError("plannerTask_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["plannerPlan%2Did"] =  plannerPlan_id
+		path_parameters["plannerBucket%2Did"] =  plannerBucket_id
+		path_parameters["plannerTask%2Did"] =  plannerTask_id
+
 		from .progress_task_board_format import ProgressTaskBoardFormatRequest
-		return ProgressTaskBoardFormatRequest(self.request_adapter, self.path_parameters)
+		return ProgressTaskBoardFormatRequest(self.request_adapter, path_parameters)
 

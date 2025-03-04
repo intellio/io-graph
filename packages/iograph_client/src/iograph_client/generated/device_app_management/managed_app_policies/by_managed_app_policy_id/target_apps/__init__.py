@@ -27,7 +27,7 @@ class TargetAppsRequest(BaseRequestBuilder):
 		"""
 		Invoke action targetApps
 		Not yet documented
-		Find more info here: https://learn.microsoft.com/graph/api/intune-mam-targetedmanagedappprotection-targetapps?view=graph-rest-1.0
+		Find more info here: https://learn.microsoft.com/graph/api/intune-mam-managedapppolicy-targetapps?view=graph-rest-1.0
 		"""
 		tags = ['deviceAppManagement.managedAppPolicy']
 

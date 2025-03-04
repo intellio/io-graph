@@ -1,6 +1,7 @@
 # Auto-generated client
 
 from __future__ import annotations
+from kiota_abstractions.get_path_parameters import get_path_parameters
 from kiota_abstractions.method import Method
 from kiota_abstractions.base_request_builder import BaseRequestBuilder
 from kiota_abstractions.base_request_configuration import RequestConfiguration
@@ -32,8 +33,8 @@ if TYPE_CHECKING:
 	from .created_on_behalf_of import CreatedOnBehalfOfRequest
 	from .app_management_policies import AppManagementPoliciesRequest
 	from ....request_adapter import HttpxRequestAdapter
-from iograph_models.models.application import Application
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.models.application import Application
 
 
 class ByApplicationIdRequest(BaseRequestBuilder):
@@ -131,129 +132,255 @@ class ByApplicationIdRequest(BaseRequestBuilder):
 			raise TypeError("raw_url cannot be None.")
 		return ByApplicationIdRequest(self.request_adapter, self.path_parameters)
 
-	@property
 	def app_management_policies(self,
+		application_id: str,
 	) -> AppManagementPoliciesRequest:
+		if application_id is None:
+			raise TypeError("application_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["application%2Did"] =  application_id
+
 		from .app_management_policies import AppManagementPoliciesRequest
-		return AppManagementPoliciesRequest(self.request_adapter, self.path_parameters)
+		return AppManagementPoliciesRequest(self.request_adapter, path_parameters)
 
-	@property
 	def created_on_behalf_of(self,
+		application_id: str,
 	) -> CreatedOnBehalfOfRequest:
+		if application_id is None:
+			raise TypeError("application_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["application%2Did"] =  application_id
+
 		from .created_on_behalf_of import CreatedOnBehalfOfRequest
-		return CreatedOnBehalfOfRequest(self.request_adapter, self.path_parameters)
+		return CreatedOnBehalfOfRequest(self.request_adapter, path_parameters)
 
-	@property
 	def extension_properties(self,
+		application_id: str,
 	) -> ExtensionPropertiesRequest:
+		if application_id is None:
+			raise TypeError("application_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["application%2Did"] =  application_id
+
 		from .extension_properties import ExtensionPropertiesRequest
-		return ExtensionPropertiesRequest(self.request_adapter, self.path_parameters)
+		return ExtensionPropertiesRequest(self.request_adapter, path_parameters)
 
-	@property
 	def federated_identity_credentials(self,
+		application_id: str,
 	) -> FederatedIdentityCredentialsRequest:
+		if application_id is None:
+			raise TypeError("application_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["application%2Did"] =  application_id
+
 		from .federated_identity_credentials import FederatedIdentityCredentialsRequest
-		return FederatedIdentityCredentialsRequest(self.request_adapter, self.path_parameters)
+		return FederatedIdentityCredentialsRequest(self.request_adapter, path_parameters)
 
-	@property
 	def home_realm_discovery_policies(self,
+		application_id: str,
 	) -> HomeRealmDiscoveryPoliciesRequest:
+		if application_id is None:
+			raise TypeError("application_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["application%2Did"] =  application_id
+
 		from .home_realm_discovery_policies import HomeRealmDiscoveryPoliciesRequest
-		return HomeRealmDiscoveryPoliciesRequest(self.request_adapter, self.path_parameters)
+		return HomeRealmDiscoveryPoliciesRequest(self.request_adapter, path_parameters)
 
-	@property
 	def logo(self,
+		application_id: str,
 	) -> LogoRequest:
+		if application_id is None:
+			raise TypeError("application_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["application%2Did"] =  application_id
+
 		from .logo import LogoRequest
-		return LogoRequest(self.request_adapter, self.path_parameters)
+		return LogoRequest(self.request_adapter, path_parameters)
 
-	@property
 	def add_key(self,
+		application_id: str,
 	) -> AddKeyRequest:
+		if application_id is None:
+			raise TypeError("application_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["application%2Did"] =  application_id
+
 		from .add_key import AddKeyRequest
-		return AddKeyRequest(self.request_adapter, self.path_parameters)
+		return AddKeyRequest(self.request_adapter, path_parameters)
 
-	@property
 	def add_password(self,
+		application_id: str,
 	) -> AddPasswordRequest:
+		if application_id is None:
+			raise TypeError("application_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["application%2Did"] =  application_id
+
 		from .add_password import AddPasswordRequest
-		return AddPasswordRequest(self.request_adapter, self.path_parameters)
+		return AddPasswordRequest(self.request_adapter, path_parameters)
 
-	@property
 	def check_member_groups(self,
+		application_id: str,
 	) -> CheckMemberGroupsRequest:
+		if application_id is None:
+			raise TypeError("application_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["application%2Did"] =  application_id
+
 		from .check_member_groups import CheckMemberGroupsRequest
-		return CheckMemberGroupsRequest(self.request_adapter, self.path_parameters)
+		return CheckMemberGroupsRequest(self.request_adapter, path_parameters)
 
-	@property
 	def check_member_objects(self,
+		application_id: str,
 	) -> CheckMemberObjectsRequest:
+		if application_id is None:
+			raise TypeError("application_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["application%2Did"] =  application_id
+
 		from .check_member_objects import CheckMemberObjectsRequest
-		return CheckMemberObjectsRequest(self.request_adapter, self.path_parameters)
+		return CheckMemberObjectsRequest(self.request_adapter, path_parameters)
 
-	@property
 	def get_member_groups(self,
+		application_id: str,
 	) -> GetMemberGroupsRequest:
+		if application_id is None:
+			raise TypeError("application_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["application%2Did"] =  application_id
+
 		from .get_member_groups import GetMemberGroupsRequest
-		return GetMemberGroupsRequest(self.request_adapter, self.path_parameters)
+		return GetMemberGroupsRequest(self.request_adapter, path_parameters)
 
-	@property
 	def get_member_objects(self,
+		application_id: str,
 	) -> GetMemberObjectsRequest:
+		if application_id is None:
+			raise TypeError("application_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["application%2Did"] =  application_id
+
 		from .get_member_objects import GetMemberObjectsRequest
-		return GetMemberObjectsRequest(self.request_adapter, self.path_parameters)
+		return GetMemberObjectsRequest(self.request_adapter, path_parameters)
 
-	@property
 	def remove_key(self,
+		application_id: str,
 	) -> RemoveKeyRequest:
+		if application_id is None:
+			raise TypeError("application_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["application%2Did"] =  application_id
+
 		from .remove_key import RemoveKeyRequest
-		return RemoveKeyRequest(self.request_adapter, self.path_parameters)
+		return RemoveKeyRequest(self.request_adapter, path_parameters)
 
-	@property
 	def remove_password(self,
+		application_id: str,
 	) -> RemovePasswordRequest:
+		if application_id is None:
+			raise TypeError("application_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["application%2Did"] =  application_id
+
 		from .remove_password import RemovePasswordRequest
-		return RemovePasswordRequest(self.request_adapter, self.path_parameters)
+		return RemovePasswordRequest(self.request_adapter, path_parameters)
 
-	@property
 	def restore(self,
+		application_id: str,
 	) -> RestoreRequest:
+		if application_id is None:
+			raise TypeError("application_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["application%2Did"] =  application_id
+
 		from .restore import RestoreRequest
-		return RestoreRequest(self.request_adapter, self.path_parameters)
+		return RestoreRequest(self.request_adapter, path_parameters)
 
-	@property
 	def set_verified_publisher(self,
+		application_id: str,
 	) -> SetVerifiedPublisherRequest:
+		if application_id is None:
+			raise TypeError("application_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["application%2Did"] =  application_id
+
 		from .set_verified_publisher import SetVerifiedPublisherRequest
-		return SetVerifiedPublisherRequest(self.request_adapter, self.path_parameters)
+		return SetVerifiedPublisherRequest(self.request_adapter, path_parameters)
 
-	@property
 	def unset_verified_publisher(self,
+		application_id: str,
 	) -> UnsetVerifiedPublisherRequest:
+		if application_id is None:
+			raise TypeError("application_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["application%2Did"] =  application_id
+
 		from .unset_verified_publisher import UnsetVerifiedPublisherRequest
-		return UnsetVerifiedPublisherRequest(self.request_adapter, self.path_parameters)
+		return UnsetVerifiedPublisherRequest(self.request_adapter, path_parameters)
 
-	@property
 	def owners(self,
+		application_id: str,
 	) -> OwnersRequest:
+		if application_id is None:
+			raise TypeError("application_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["application%2Did"] =  application_id
+
 		from .owners import OwnersRequest
-		return OwnersRequest(self.request_adapter, self.path_parameters)
+		return OwnersRequest(self.request_adapter, path_parameters)
 
-	@property
 	def synchronization(self,
+		application_id: str,
 	) -> SynchronizationRequest:
+		if application_id is None:
+			raise TypeError("application_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["application%2Did"] =  application_id
+
 		from .synchronization import SynchronizationRequest
-		return SynchronizationRequest(self.request_adapter, self.path_parameters)
+		return SynchronizationRequest(self.request_adapter, path_parameters)
 
-	@property
 	def token_issuance_policies(self,
+		application_id: str,
 	) -> TokenIssuancePoliciesRequest:
-		from .token_issuance_policies import TokenIssuancePoliciesRequest
-		return TokenIssuancePoliciesRequest(self.request_adapter, self.path_parameters)
+		if application_id is None:
+			raise TypeError("application_id cannot be null.")
 
-	@property
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["application%2Did"] =  application_id
+
+		from .token_issuance_policies import TokenIssuancePoliciesRequest
+		return TokenIssuancePoliciesRequest(self.request_adapter, path_parameters)
+
 	def token_lifetime_policies(self,
+		application_id: str,
 	) -> TokenLifetimePoliciesRequest:
+		if application_id is None:
+			raise TypeError("application_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["application%2Did"] =  application_id
+
 		from .token_lifetime_policies import TokenLifetimePoliciesRequest
-		return TokenLifetimePoliciesRequest(self.request_adapter, self.path_parameters)
+		return TokenLifetimePoliciesRequest(self.request_adapter, path_parameters)
 

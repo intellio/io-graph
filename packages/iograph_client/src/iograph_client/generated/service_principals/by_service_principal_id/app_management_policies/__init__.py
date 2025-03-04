@@ -81,9 +81,15 @@ class AppManagementPoliciesRequest(BaseRequestBuilder):
 		from .by_app_management_policy_id import ByAppManagementPolicyIdRequest
 		return ByAppManagementPolicyIdRequest(self.request_adapter, path_parameters)
 
-	@property
 	def count(self,
+		servicePrincipal_id: str,
 	) -> CountRequest:
+		if servicePrincipal_id is None:
+			raise TypeError("servicePrincipal_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["servicePrincipal%2Did"] =  servicePrincipal_id
+
 		from .count import CountRequest
-		return CountRequest(self.request_adapter, self.path_parameters)
+		return CountRequest(self.request_adapter, path_parameters)
 

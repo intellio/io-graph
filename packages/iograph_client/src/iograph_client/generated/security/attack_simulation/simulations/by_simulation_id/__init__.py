@@ -1,6 +1,7 @@
 # Auto-generated client
 
 from __future__ import annotations
+from kiota_abstractions.get_path_parameters import get_path_parameters
 from kiota_abstractions.method import Method
 from kiota_abstractions.base_request_builder import BaseRequestBuilder
 from kiota_abstractions.base_request_configuration import RequestConfiguration
@@ -113,21 +114,39 @@ class BySimulationIdRequest(BaseRequestBuilder):
 			raise TypeError("raw_url cannot be None.")
 		return BySimulationIdRequest(self.request_adapter, self.path_parameters)
 
-	@property
 	def landing_page(self,
+		simulation_id: str,
 	) -> LandingPageRequest:
+		if simulation_id is None:
+			raise TypeError("simulation_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["simulation%2Did"] =  simulation_id
+
 		from .landing_page import LandingPageRequest
-		return LandingPageRequest(self.request_adapter, self.path_parameters)
+		return LandingPageRequest(self.request_adapter, path_parameters)
 
-	@property
 	def login_page(self,
+		simulation_id: str,
 	) -> LoginPageRequest:
-		from .login_page import LoginPageRequest
-		return LoginPageRequest(self.request_adapter, self.path_parameters)
+		if simulation_id is None:
+			raise TypeError("simulation_id cannot be null.")
 
-	@property
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["simulation%2Did"] =  simulation_id
+
+		from .login_page import LoginPageRequest
+		return LoginPageRequest(self.request_adapter, path_parameters)
+
 	def payload(self,
+		simulation_id: str,
 	) -> PayloadRequest:
+		if simulation_id is None:
+			raise TypeError("simulation_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["simulation%2Did"] =  simulation_id
+
 		from .payload import PayloadRequest
-		return PayloadRequest(self.request_adapter, self.path_parameters)
+		return PayloadRequest(self.request_adapter, path_parameters)
 

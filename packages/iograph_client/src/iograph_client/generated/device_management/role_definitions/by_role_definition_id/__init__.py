@@ -1,6 +1,7 @@
 # Auto-generated client
 
 from __future__ import annotations
+from kiota_abstractions.get_path_parameters import get_path_parameters
 from kiota_abstractions.method import Method
 from kiota_abstractions.base_request_builder import BaseRequestBuilder
 from kiota_abstractions.base_request_configuration import RequestConfiguration
@@ -12,8 +13,8 @@ from typing import TYPE_CHECKING
 if TYPE_CHECKING:
 	from .role_assignments import RoleAssignmentsRequest
 	from .....request_adapter import HttpxRequestAdapter
-from iograph_models.models.role_definition import RoleDefinition
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.models.role_definition import RoleDefinition
 
 
 class ByRoleDefinitionIdRequest(BaseRequestBuilder):
@@ -25,9 +26,9 @@ class ByRoleDefinitionIdRequest(BaseRequestBuilder):
 		request_configuration: Optional[RequestConfiguration[GetQueryParams]] = None,
 	) -> RoleDefinition:
 		"""
-		Get roleDefinition
-		Read properties and relationships of the roleDefinition object.
-		Find more info here: https://learn.microsoft.com/graph/api/intune-rbac-roledefinition-get?view=graph-rest-1.0
+		Get deviceAndAppManagementRoleDefinition
+		Read properties and relationships of the deviceAndAppManagementRoleDefinition object.
+		Find more info here: https://learn.microsoft.com/graph/api/intune-rbac-deviceandappmanagementroledefinition-get?view=graph-rest-1.0
 		"""
 		tags = ['deviceManagement.roleDefinition']
 
@@ -50,9 +51,9 @@ class ByRoleDefinitionIdRequest(BaseRequestBuilder):
 		request_configuration: Optional[RequestConfiguration[BaseModel]] = None,
 	) -> RoleDefinition:
 		"""
-		Update roleDefinition
-		Update the properties of a roleDefinition object.
-		Find more info here: https://learn.microsoft.com/graph/api/intune-rbac-roledefinition-update?view=graph-rest-1.0
+		Update deviceAndAppManagementRoleDefinition
+		Update the properties of a deviceAndAppManagementRoleDefinition object.
+		Find more info here: https://learn.microsoft.com/graph/api/intune-rbac-deviceandappmanagementroledefinition-update?view=graph-rest-1.0
 		"""
 		tags = ['deviceManagement.roleDefinition']
 
@@ -111,9 +112,15 @@ class ByRoleDefinitionIdRequest(BaseRequestBuilder):
 			raise TypeError("raw_url cannot be None.")
 		return ByRoleDefinitionIdRequest(self.request_adapter, self.path_parameters)
 
-	@property
 	def role_assignments(self,
+		roleDefinition_id: str,
 	) -> RoleAssignmentsRequest:
+		if roleDefinition_id is None:
+			raise TypeError("roleDefinition_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["roleDefinition%2Did"] =  roleDefinition_id
+
 		from .role_assignments import RoleAssignmentsRequest
-		return RoleAssignmentsRequest(self.request_adapter, self.path_parameters)
+		return RoleAssignmentsRequest(self.request_adapter, path_parameters)
 

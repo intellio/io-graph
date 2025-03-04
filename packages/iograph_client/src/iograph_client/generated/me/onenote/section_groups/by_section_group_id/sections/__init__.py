@@ -14,9 +14,9 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_onenote_section_id import ByOnenoteSectionIdRequest
 	from .......request_adapter import HttpxRequestAdapter
-from iograph_models.models.onenote_section import OnenoteSection
 from iograph_models.models.onenote_section_collection_response import OnenoteSectionCollectionResponse
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.models.onenote_section import OnenoteSection
 
 
 class SectionsRequest(BaseRequestBuilder):
@@ -110,9 +110,15 @@ class SectionsRequest(BaseRequestBuilder):
 		from .by_onenote_section_id import ByOnenoteSectionIdRequest
 		return ByOnenoteSectionIdRequest(self.request_adapter, path_parameters)
 
-	@property
 	def count(self,
+		sectionGroup_id: str,
 	) -> CountRequest:
+		if sectionGroup_id is None:
+			raise TypeError("sectionGroup_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["sectionGroup%2Did"] =  sectionGroup_id
+
 		from .count import CountRequest
-		return CountRequest(self.request_adapter, self.path_parameters)
+		return CountRequest(self.request_adapter, path_parameters)
 

@@ -1,6 +1,7 @@
 # Auto-generated client
 
 from __future__ import annotations
+from kiota_abstractions.get_path_parameters import get_path_parameters
 from kiota_abstractions.method import Method
 from kiota_abstractions.base_request_builder import BaseRequestBuilder
 from kiota_abstractions.base_request_configuration import RequestConfiguration
@@ -117,63 +118,123 @@ class AuthenticationRequest(BaseRequestBuilder):
 			raise TypeError("raw_url cannot be None.")
 		return AuthenticationRequest(self.request_adapter, self.path_parameters)
 
-	@property
 	def email_methods(self,
+		user_id: str,
 	) -> EmailMethodsRequest:
+		if user_id is None:
+			raise TypeError("user_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["user%2Did"] =  user_id
+
 		from .email_methods import EmailMethodsRequest
-		return EmailMethodsRequest(self.request_adapter, self.path_parameters)
+		return EmailMethodsRequest(self.request_adapter, path_parameters)
 
-	@property
 	def fido2_methods(self,
+		user_id: str,
 	) -> Fido2MethodsRequest:
+		if user_id is None:
+			raise TypeError("user_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["user%2Did"] =  user_id
+
 		from .fido2_methods import Fido2MethodsRequest
-		return Fido2MethodsRequest(self.request_adapter, self.path_parameters)
+		return Fido2MethodsRequest(self.request_adapter, path_parameters)
 
-	@property
 	def methods(self,
+		user_id: str,
 	) -> MethodsRequest:
+		if user_id is None:
+			raise TypeError("user_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["user%2Did"] =  user_id
+
 		from .methods import MethodsRequest
-		return MethodsRequest(self.request_adapter, self.path_parameters)
+		return MethodsRequest(self.request_adapter, path_parameters)
 
-	@property
 	def microsoft_authenticator_methods(self,
+		user_id: str,
 	) -> MicrosoftAuthenticatorMethodsRequest:
+		if user_id is None:
+			raise TypeError("user_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["user%2Did"] =  user_id
+
 		from .microsoft_authenticator_methods import MicrosoftAuthenticatorMethodsRequest
-		return MicrosoftAuthenticatorMethodsRequest(self.request_adapter, self.path_parameters)
+		return MicrosoftAuthenticatorMethodsRequest(self.request_adapter, path_parameters)
 
-	@property
 	def operations(self,
+		user_id: str,
 	) -> OperationsRequest:
+		if user_id is None:
+			raise TypeError("user_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["user%2Did"] =  user_id
+
 		from .operations import OperationsRequest
-		return OperationsRequest(self.request_adapter, self.path_parameters)
+		return OperationsRequest(self.request_adapter, path_parameters)
 
-	@property
 	def password_methods(self,
+		user_id: str,
 	) -> PasswordMethodsRequest:
+		if user_id is None:
+			raise TypeError("user_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["user%2Did"] =  user_id
+
 		from .password_methods import PasswordMethodsRequest
-		return PasswordMethodsRequest(self.request_adapter, self.path_parameters)
+		return PasswordMethodsRequest(self.request_adapter, path_parameters)
 
-	@property
 	def phone_methods(self,
+		user_id: str,
 	) -> PhoneMethodsRequest:
+		if user_id is None:
+			raise TypeError("user_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["user%2Did"] =  user_id
+
 		from .phone_methods import PhoneMethodsRequest
-		return PhoneMethodsRequest(self.request_adapter, self.path_parameters)
+		return PhoneMethodsRequest(self.request_adapter, path_parameters)
 
-	@property
 	def software_oath_methods(self,
+		user_id: str,
 	) -> SoftwareOathMethodsRequest:
+		if user_id is None:
+			raise TypeError("user_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["user%2Did"] =  user_id
+
 		from .software_oath_methods import SoftwareOathMethodsRequest
-		return SoftwareOathMethodsRequest(self.request_adapter, self.path_parameters)
+		return SoftwareOathMethodsRequest(self.request_adapter, path_parameters)
 
-	@property
 	def temporary_access_pass_methods(self,
+		user_id: str,
 	) -> TemporaryAccessPassMethodsRequest:
-		from .temporary_access_pass_methods import TemporaryAccessPassMethodsRequest
-		return TemporaryAccessPassMethodsRequest(self.request_adapter, self.path_parameters)
+		if user_id is None:
+			raise TypeError("user_id cannot be null.")
 
-	@property
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["user%2Did"] =  user_id
+
+		from .temporary_access_pass_methods import TemporaryAccessPassMethodsRequest
+		return TemporaryAccessPassMethodsRequest(self.request_adapter, path_parameters)
+
 	def windows_hello_for_business_methods(self,
+		user_id: str,
 	) -> WindowsHelloForBusinessMethodsRequest:
+		if user_id is None:
+			raise TypeError("user_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["user%2Did"] =  user_id
+
 		from .windows_hello_for_business_methods import WindowsHelloForBusinessMethodsRequest
-		return WindowsHelloForBusinessMethodsRequest(self.request_adapter, self.path_parameters)
+		return WindowsHelloForBusinessMethodsRequest(self.request_adapter, path_parameters)
 

@@ -14,9 +14,9 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_attribute_mapping_function_schema_id import ByAttributeMappingFunctionSchemaIdRequest
 	from ...request_adapter import HttpxRequestAdapter
-from iograph_models.models.attribute_mapping_function_schema import AttributeMappingFunctionSchema
 from iograph_models.models.attribute_mapping_function_schema_collection_response import AttributeMappingFunctionSchemaCollectionResponse
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.models.attribute_mapping_function_schema import AttributeMappingFunctionSchema
 
 
 class FunctionsRequest(BaseRequestBuilder):

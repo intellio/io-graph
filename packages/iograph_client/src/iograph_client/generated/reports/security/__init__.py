@@ -10,6 +10,9 @@ from typing import Union, Any, Optional
 from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:
+	from .get_attack_simulation_training_user_coverage import GetAttackSimulationTrainingUserCoverageRequest
+	from .get_attack_simulation_simulation_user_coverage import GetAttackSimulationSimulationUserCoverageRequest
+	from .get_attack_simulation_repeat_offenders import GetAttackSimulationRepeatOffendersRequest
 	from ....request_adapter import HttpxRequestAdapter
 from iograph_models.models.security_reports_root import SecurityReportsRoot
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
@@ -106,4 +109,22 @@ class SecurityRequest(BaseRequestBuilder):
 		if raw_url is None:
 			raise TypeError("raw_url cannot be None.")
 		return SecurityRequest(self.request_adapter, self.path_parameters)
+
+	@property
+	def get_attack_simulation_repeat_offenders(self,
+	) -> GetAttackSimulationRepeatOffendersRequest:
+		from .get_attack_simulation_repeat_offenders import GetAttackSimulationRepeatOffendersRequest
+		return GetAttackSimulationRepeatOffendersRequest(self.request_adapter, self.path_parameters)
+
+	@property
+	def get_attack_simulation_simulation_user_coverage(self,
+	) -> GetAttackSimulationSimulationUserCoverageRequest:
+		from .get_attack_simulation_simulation_user_coverage import GetAttackSimulationSimulationUserCoverageRequest
+		return GetAttackSimulationSimulationUserCoverageRequest(self.request_adapter, self.path_parameters)
+
+	@property
+	def get_attack_simulation_training_user_coverage(self,
+	) -> GetAttackSimulationTrainingUserCoverageRequest:
+		from .get_attack_simulation_training_user_coverage import GetAttackSimulationTrainingUserCoverageRequest
+		return GetAttackSimulationTrainingUserCoverageRequest(self.request_adapter, self.path_parameters)
 

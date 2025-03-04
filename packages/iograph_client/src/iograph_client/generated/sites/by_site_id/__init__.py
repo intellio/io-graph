@@ -1,6 +1,7 @@
 # Auto-generated client
 
 from __future__ import annotations
+from kiota_abstractions.get_path_parameters import get_path_parameters
 from kiota_abstractions.method import Method
 from kiota_abstractions.base_request_builder import BaseRequestBuilder
 from kiota_abstractions.base_request_configuration import RequestConfiguration
@@ -17,6 +18,9 @@ if TYPE_CHECKING:
 	from .pages import PagesRequest
 	from .operations import OperationsRequest
 	from .onenote import OnenoteRequest
+	from .get_by_path import GetByPathRequest
+	from .get_applicable_content_types_for_list import GetApplicableContentTypesForListRequest
+	from .get_activities_by_interval import GetActivitiesByIntervalRequest
 	from .lists import ListsRequest
 	from .last_modified_by_user import LastModifiedByUserRequest
 	from .items import ItemsRequest
@@ -28,8 +32,8 @@ if TYPE_CHECKING:
 	from .columns import ColumnsRequest
 	from .analytics import AnalyticsRequest
 	from ....request_adapter import HttpxRequestAdapter
-from iograph_models.models.site import Site
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.models.site import Site
 
 
 class BySiteIdRequest(BaseRequestBuilder):
@@ -101,105 +105,251 @@ A site resource represents a team site in SharePoint.
 			raise TypeError("raw_url cannot be None.")
 		return BySiteIdRequest(self.request_adapter, self.path_parameters)
 
-	@property
 	def analytics(self,
+		site_id: str,
 	) -> AnalyticsRequest:
+		if site_id is None:
+			raise TypeError("site_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["site%2Did"] =  site_id
+
 		from .analytics import AnalyticsRequest
-		return AnalyticsRequest(self.request_adapter, self.path_parameters)
+		return AnalyticsRequest(self.request_adapter, path_parameters)
 
-	@property
 	def columns(self,
+		site_id: str,
 	) -> ColumnsRequest:
+		if site_id is None:
+			raise TypeError("site_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["site%2Did"] =  site_id
+
 		from .columns import ColumnsRequest
-		return ColumnsRequest(self.request_adapter, self.path_parameters)
+		return ColumnsRequest(self.request_adapter, path_parameters)
 
-	@property
 	def content_types(self,
+		site_id: str,
 	) -> ContentTypesRequest:
+		if site_id is None:
+			raise TypeError("site_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["site%2Did"] =  site_id
+
 		from .content_types import ContentTypesRequest
-		return ContentTypesRequest(self.request_adapter, self.path_parameters)
+		return ContentTypesRequest(self.request_adapter, path_parameters)
 
-	@property
 	def created_by_user(self,
+		site_id: str,
 	) -> CreatedByUserRequest:
+		if site_id is None:
+			raise TypeError("site_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["site%2Did"] =  site_id
+
 		from .created_by_user import CreatedByUserRequest
-		return CreatedByUserRequest(self.request_adapter, self.path_parameters)
+		return CreatedByUserRequest(self.request_adapter, path_parameters)
 
-	@property
 	def drive(self,
+		site_id: str,
 	) -> DriveRequest:
+		if site_id is None:
+			raise TypeError("site_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["site%2Did"] =  site_id
+
 		from .drive import DriveRequest
-		return DriveRequest(self.request_adapter, self.path_parameters)
+		return DriveRequest(self.request_adapter, path_parameters)
 
-	@property
 	def drives(self,
+		site_id: str,
 	) -> DrivesRequest:
+		if site_id is None:
+			raise TypeError("site_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["site%2Did"] =  site_id
+
 		from .drives import DrivesRequest
-		return DrivesRequest(self.request_adapter, self.path_parameters)
+		return DrivesRequest(self.request_adapter, path_parameters)
 
-	@property
 	def external_columns(self,
+		site_id: str,
 	) -> ExternalColumnsRequest:
+		if site_id is None:
+			raise TypeError("site_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["site%2Did"] =  site_id
+
 		from .external_columns import ExternalColumnsRequest
-		return ExternalColumnsRequest(self.request_adapter, self.path_parameters)
+		return ExternalColumnsRequest(self.request_adapter, path_parameters)
 
-	@property
 	def items(self,
+		site_id: str,
 	) -> ItemsRequest:
+		if site_id is None:
+			raise TypeError("site_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["site%2Did"] =  site_id
+
 		from .items import ItemsRequest
-		return ItemsRequest(self.request_adapter, self.path_parameters)
+		return ItemsRequest(self.request_adapter, path_parameters)
 
-	@property
 	def last_modified_by_user(self,
+		site_id: str,
 	) -> LastModifiedByUserRequest:
+		if site_id is None:
+			raise TypeError("site_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["site%2Did"] =  site_id
+
 		from .last_modified_by_user import LastModifiedByUserRequest
-		return LastModifiedByUserRequest(self.request_adapter, self.path_parameters)
+		return LastModifiedByUserRequest(self.request_adapter, path_parameters)
 
-	@property
 	def lists(self,
+		site_id: str,
 	) -> ListsRequest:
+		if site_id is None:
+			raise TypeError("site_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["site%2Did"] =  site_id
+
 		from .lists import ListsRequest
-		return ListsRequest(self.request_adapter, self.path_parameters)
+		return ListsRequest(self.request_adapter, path_parameters)
 
-	@property
+	def get_activities_by_interval(self,
+		site_id: str,
+	) -> GetActivitiesByIntervalRequest:
+		if site_id is None:
+			raise TypeError("site_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["site%2Did"] =  site_id
+
+		from .get_activities_by_interval import GetActivitiesByIntervalRequest
+		return GetActivitiesByIntervalRequest(self.request_adapter, path_parameters)
+
+	def get_applicable_content_types_for_list(self,
+		site_id: str,
+		listId: str,
+	) -> GetApplicableContentTypesForListRequest:
+		if site_id is None:
+			raise TypeError("site_id cannot be null.")
+		if listId is None:
+			raise TypeError("listId cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["site%2Did"] =  site_id
+		path_parameters["listId"] =  listId
+
+		from .get_applicable_content_types_for_list import GetApplicableContentTypesForListRequest
+		return GetApplicableContentTypesForListRequest(self.request_adapter, path_parameters)
+
+	def get_by_path(self,
+		site_id: str,
+		path: str,
+	) -> GetByPathRequest:
+		if site_id is None:
+			raise TypeError("site_id cannot be null.")
+		if path is None:
+			raise TypeError("path cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["site%2Did"] =  site_id
+		path_parameters["path"] =  path
+
+		from .get_by_path import GetByPathRequest
+		return GetByPathRequest(self.request_adapter, path_parameters)
+
 	def onenote(self,
+		site_id: str,
 	) -> OnenoteRequest:
+		if site_id is None:
+			raise TypeError("site_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["site%2Did"] =  site_id
+
 		from .onenote import OnenoteRequest
-		return OnenoteRequest(self.request_adapter, self.path_parameters)
+		return OnenoteRequest(self.request_adapter, path_parameters)
 
-	@property
 	def operations(self,
+		site_id: str,
 	) -> OperationsRequest:
+		if site_id is None:
+			raise TypeError("site_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["site%2Did"] =  site_id
+
 		from .operations import OperationsRequest
-		return OperationsRequest(self.request_adapter, self.path_parameters)
+		return OperationsRequest(self.request_adapter, path_parameters)
 
-	@property
 	def pages(self,
+		site_id: str,
 	) -> PagesRequest:
+		if site_id is None:
+			raise TypeError("site_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["site%2Did"] =  site_id
+
 		from .pages import PagesRequest
-		return PagesRequest(self.request_adapter, self.path_parameters)
+		return PagesRequest(self.request_adapter, path_parameters)
 
-	@property
 	def permissions(self,
+		site_id: str,
 	) -> PermissionsRequest:
+		if site_id is None:
+			raise TypeError("site_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["site%2Did"] =  site_id
+
 		from .permissions import PermissionsRequest
-		return PermissionsRequest(self.request_adapter, self.path_parameters)
+		return PermissionsRequest(self.request_adapter, path_parameters)
 
-	@property
 	def sites(self,
+		site_id: str,
 	) -> SitesRequest:
+		if site_id is None:
+			raise TypeError("site_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["site%2Did"] =  site_id
+
 		from .sites import SitesRequest
-		return SitesRequest(self.request_adapter, self.path_parameters)
+		return SitesRequest(self.request_adapter, path_parameters)
 
-	@property
 	def term_store(self,
+		site_id: str,
 	) -> TermStoreRequest:
-		from .term_store import TermStoreRequest
-		return TermStoreRequest(self.request_adapter, self.path_parameters)
+		if site_id is None:
+			raise TypeError("site_id cannot be null.")
 
-	@property
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["site%2Did"] =  site_id
+
+		from .term_store import TermStoreRequest
+		return TermStoreRequest(self.request_adapter, path_parameters)
+
 	def term_stores(self,
+		site_id: str,
 	) -> TermStoresRequest:
+		if site_id is None:
+			raise TypeError("site_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["site%2Did"] =  site_id
+
 		from .term_stores import TermStoresRequest
-		return TermStoresRequest(self.request_adapter, self.path_parameters)
+		return TermStoresRequest(self.request_adapter, path_parameters)
 

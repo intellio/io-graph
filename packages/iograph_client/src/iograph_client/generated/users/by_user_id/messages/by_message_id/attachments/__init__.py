@@ -16,8 +16,8 @@ if TYPE_CHECKING:
 	from .by_attachment_id import ByAttachmentIdRequest
 	from .......request_adapter import HttpxRequestAdapter
 from iograph_models.models.attachment import Attachment
-from iograph_models.models.attachment_collection_response import AttachmentCollectionResponse
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.models.attachment_collection_response import AttachmentCollectionResponse
 
 
 class AttachmentsRequest(BaseRequestBuilder):
@@ -113,15 +113,35 @@ class AttachmentsRequest(BaseRequestBuilder):
 		from .by_attachment_id import ByAttachmentIdRequest
 		return ByAttachmentIdRequest(self.request_adapter, path_parameters)
 
-	@property
 	def count(self,
+		user_id: str,
+		message_id: str,
 	) -> CountRequest:
-		from .count import CountRequest
-		return CountRequest(self.request_adapter, self.path_parameters)
+		if user_id is None:
+			raise TypeError("user_id cannot be null.")
+		if message_id is None:
+			raise TypeError("message_id cannot be null.")
 
-	@property
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["user%2Did"] =  user_id
+		path_parameters["message%2Did"] =  message_id
+
+		from .count import CountRequest
+		return CountRequest(self.request_adapter, path_parameters)
+
 	def create_upload_session(self,
+		user_id: str,
+		message_id: str,
 	) -> CreateUploadSessionRequest:
+		if user_id is None:
+			raise TypeError("user_id cannot be null.")
+		if message_id is None:
+			raise TypeError("message_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["user%2Did"] =  user_id
+		path_parameters["message%2Did"] =  message_id
+
 		from .create_upload_session import CreateUploadSessionRequest
-		return CreateUploadSessionRequest(self.request_adapter, self.path_parameters)
+		return CreateUploadSessionRequest(self.request_adapter, path_parameters)
 

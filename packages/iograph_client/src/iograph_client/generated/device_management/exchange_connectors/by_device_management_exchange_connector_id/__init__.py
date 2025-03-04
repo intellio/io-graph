@@ -1,6 +1,7 @@
 # Auto-generated client
 
 from __future__ import annotations
+from kiota_abstractions.get_path_parameters import get_path_parameters
 from kiota_abstractions.method import Method
 from kiota_abstractions.base_request_builder import BaseRequestBuilder
 from kiota_abstractions.base_request_configuration import RequestConfiguration
@@ -111,9 +112,15 @@ class ByDeviceManagementExchangeConnectorIdRequest(BaseRequestBuilder):
 			raise TypeError("raw_url cannot be None.")
 		return ByDeviceManagementExchangeConnectorIdRequest(self.request_adapter, self.path_parameters)
 
-	@property
 	def sync(self,
+		deviceManagementExchangeConnector_id: str,
 	) -> SyncRequest:
+		if deviceManagementExchangeConnector_id is None:
+			raise TypeError("deviceManagementExchangeConnector_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["deviceManagementExchangeConnector%2Did"] =  deviceManagementExchangeConnector_id
+
 		from .sync import SyncRequest
-		return SyncRequest(self.request_adapter, self.path_parameters)
+		return SyncRequest(self.request_adapter, path_parameters)
 

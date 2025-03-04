@@ -1,6 +1,7 @@
 # Auto-generated client
 
 from __future__ import annotations
+from kiota_abstractions.get_path_parameters import get_path_parameters
 from kiota_abstractions.method import Method
 from kiota_abstractions.base_request_builder import BaseRequestBuilder
 from kiota_abstractions.base_request_configuration import RequestConfiguration
@@ -114,45 +115,87 @@ class ByUserExperienceAnalyticsBaselineIdRequest(BaseRequestBuilder):
 			raise TypeError("raw_url cannot be None.")
 		return ByUserExperienceAnalyticsBaselineIdRequest(self.request_adapter, self.path_parameters)
 
-	@property
 	def app_health_metrics(self,
+		userExperienceAnalyticsBaseline_id: str,
 	) -> AppHealthMetricsRequest:
+		if userExperienceAnalyticsBaseline_id is None:
+			raise TypeError("userExperienceAnalyticsBaseline_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["userExperienceAnalyticsBaseline%2Did"] =  userExperienceAnalyticsBaseline_id
+
 		from .app_health_metrics import AppHealthMetricsRequest
-		return AppHealthMetricsRequest(self.request_adapter, self.path_parameters)
+		return AppHealthMetricsRequest(self.request_adapter, path_parameters)
 
-	@property
 	def battery_health_metrics(self,
+		userExperienceAnalyticsBaseline_id: str,
 	) -> BatteryHealthMetricsRequest:
+		if userExperienceAnalyticsBaseline_id is None:
+			raise TypeError("userExperienceAnalyticsBaseline_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["userExperienceAnalyticsBaseline%2Did"] =  userExperienceAnalyticsBaseline_id
+
 		from .battery_health_metrics import BatteryHealthMetricsRequest
-		return BatteryHealthMetricsRequest(self.request_adapter, self.path_parameters)
+		return BatteryHealthMetricsRequest(self.request_adapter, path_parameters)
 
-	@property
 	def best_practices_metrics(self,
+		userExperienceAnalyticsBaseline_id: str,
 	) -> BestPracticesMetricsRequest:
+		if userExperienceAnalyticsBaseline_id is None:
+			raise TypeError("userExperienceAnalyticsBaseline_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["userExperienceAnalyticsBaseline%2Did"] =  userExperienceAnalyticsBaseline_id
+
 		from .best_practices_metrics import BestPracticesMetricsRequest
-		return BestPracticesMetricsRequest(self.request_adapter, self.path_parameters)
+		return BestPracticesMetricsRequest(self.request_adapter, path_parameters)
 
-	@property
 	def device_boot_performance_metrics(self,
+		userExperienceAnalyticsBaseline_id: str,
 	) -> DeviceBootPerformanceMetricsRequest:
+		if userExperienceAnalyticsBaseline_id is None:
+			raise TypeError("userExperienceAnalyticsBaseline_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["userExperienceAnalyticsBaseline%2Did"] =  userExperienceAnalyticsBaseline_id
+
 		from .device_boot_performance_metrics import DeviceBootPerformanceMetricsRequest
-		return DeviceBootPerformanceMetricsRequest(self.request_adapter, self.path_parameters)
+		return DeviceBootPerformanceMetricsRequest(self.request_adapter, path_parameters)
 
-	@property
 	def reboot_analytics_metrics(self,
+		userExperienceAnalyticsBaseline_id: str,
 	) -> RebootAnalyticsMetricsRequest:
+		if userExperienceAnalyticsBaseline_id is None:
+			raise TypeError("userExperienceAnalyticsBaseline_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["userExperienceAnalyticsBaseline%2Did"] =  userExperienceAnalyticsBaseline_id
+
 		from .reboot_analytics_metrics import RebootAnalyticsMetricsRequest
-		return RebootAnalyticsMetricsRequest(self.request_adapter, self.path_parameters)
+		return RebootAnalyticsMetricsRequest(self.request_adapter, path_parameters)
 
-	@property
 	def resource_performance_metrics(self,
+		userExperienceAnalyticsBaseline_id: str,
 	) -> ResourcePerformanceMetricsRequest:
-		from .resource_performance_metrics import ResourcePerformanceMetricsRequest
-		return ResourcePerformanceMetricsRequest(self.request_adapter, self.path_parameters)
+		if userExperienceAnalyticsBaseline_id is None:
+			raise TypeError("userExperienceAnalyticsBaseline_id cannot be null.")
 
-	@property
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["userExperienceAnalyticsBaseline%2Did"] =  userExperienceAnalyticsBaseline_id
+
+		from .resource_performance_metrics import ResourcePerformanceMetricsRequest
+		return ResourcePerformanceMetricsRequest(self.request_adapter, path_parameters)
+
 	def work_from_anywhere_metrics(self,
+		userExperienceAnalyticsBaseline_id: str,
 	) -> WorkFromAnywhereMetricsRequest:
+		if userExperienceAnalyticsBaseline_id is None:
+			raise TypeError("userExperienceAnalyticsBaseline_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["userExperienceAnalyticsBaseline%2Did"] =  userExperienceAnalyticsBaseline_id
+
 		from .work_from_anywhere_metrics import WorkFromAnywhereMetricsRequest
-		return WorkFromAnywhereMetricsRequest(self.request_adapter, self.path_parameters)
+		return WorkFromAnywhereMetricsRequest(self.request_adapter, path_parameters)
 

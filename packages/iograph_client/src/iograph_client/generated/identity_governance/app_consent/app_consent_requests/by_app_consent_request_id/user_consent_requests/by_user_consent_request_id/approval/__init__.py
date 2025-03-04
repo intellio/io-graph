@@ -1,6 +1,7 @@
 # Auto-generated client
 
 from __future__ import annotations
+from kiota_abstractions.get_path_parameters import get_path_parameters
 from kiota_abstractions.method import Method
 from kiota_abstractions.base_request_builder import BaseRequestBuilder
 from kiota_abstractions.base_request_configuration import RequestConfiguration
@@ -108,9 +109,19 @@ class ApprovalRequest(BaseRequestBuilder):
 			raise TypeError("raw_url cannot be None.")
 		return ApprovalRequest(self.request_adapter, self.path_parameters)
 
-	@property
 	def stages(self,
+		appConsentRequest_id: str,
+		userConsentRequest_id: str,
 	) -> StagesRequest:
+		if appConsentRequest_id is None:
+			raise TypeError("appConsentRequest_id cannot be null.")
+		if userConsentRequest_id is None:
+			raise TypeError("userConsentRequest_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["appConsentRequest%2Did"] =  appConsentRequest_id
+		path_parameters["userConsentRequest%2Did"] =  userConsentRequest_id
+
 		from .stages import StagesRequest
-		return StagesRequest(self.request_adapter, self.path_parameters)
+		return StagesRequest(self.request_adapter, path_parameters)
 

@@ -14,9 +14,9 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_role_definition_id import ByRoleDefinitionIdRequest
 	from ....request_adapter import HttpxRequestAdapter
-from iograph_models.models.role_definition_collection_response import RoleDefinitionCollectionResponse
-from iograph_models.models.role_definition import RoleDefinition
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.models.role_definition import RoleDefinition
+from iograph_models.models.role_definition_collection_response import RoleDefinitionCollectionResponse
 
 
 class RoleDefinitionsRequest(BaseRequestBuilder):
@@ -28,9 +28,9 @@ class RoleDefinitionsRequest(BaseRequestBuilder):
 		request_configuration: Optional[RequestConfiguration[GetQueryParams]] = None,
 	) -> RoleDefinitionCollectionResponse:
 		"""
-		List deviceAndAppManagementRoleDefinitions
-		List properties and relationships of the deviceAndAppManagementRoleDefinition objects.
-		Find more info here: https://learn.microsoft.com/graph/api/intune-rbac-deviceandappmanagementroledefinition-list?view=graph-rest-1.0
+		List roleDefinitions
+		List properties and relationships of the roleDefinition objects.
+		Find more info here: https://learn.microsoft.com/graph/api/intune-rbac-roledefinition-list?view=graph-rest-1.0
 		"""
 		tags = ['deviceManagement.roleDefinition']
 

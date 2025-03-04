@@ -14,9 +14,9 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_extension_id import ByExtensionIdRequest
 	from ......request_adapter import HttpxRequestAdapter
-from iograph_models.models.extension_collection_response import ExtensionCollectionResponse
 from iograph_models.models.extension import Extension
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.models.extension_collection_response import ExtensionCollectionResponse
 
 
 class ExtensionsRequest(BaseRequestBuilder):
@@ -108,9 +108,15 @@ class ExtensionsRequest(BaseRequestBuilder):
 		from .by_extension_id import ByExtensionIdRequest
 		return ByExtensionIdRequest(self.request_adapter, path_parameters)
 
-	@property
 	def count(self,
+		event_id: str,
 	) -> CountRequest:
+		if event_id is None:
+			raise TypeError("event_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["event%2Did"] =  event_id
+
 		from .count import CountRequest
-		return CountRequest(self.request_adapter, self.path_parameters)
+		return CountRequest(self.request_adapter, path_parameters)
 

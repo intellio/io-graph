@@ -1,6 +1,7 @@
 # Auto-generated client
 
 from __future__ import annotations
+from kiota_abstractions.get_path_parameters import get_path_parameters
 from kiota_abstractions.method import Method
 from kiota_abstractions.base_request_builder import BaseRequestBuilder
 from kiota_abstractions.base_request_configuration import RequestConfiguration
@@ -12,8 +13,8 @@ from typing import TYPE_CHECKING
 if TYPE_CHECKING:
 	from .indicators import IndicatorsRequest
 	from ......request_adapter import HttpxRequestAdapter
-from iograph_models.models.security_intelligence_profile import SecurityIntelligenceProfile
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.models.security_intelligence_profile import SecurityIntelligenceProfile
 
 
 class ByIntelligenceProfileIdRequest(BaseRequestBuilder):
@@ -109,9 +110,15 @@ class ByIntelligenceProfileIdRequest(BaseRequestBuilder):
 			raise TypeError("raw_url cannot be None.")
 		return ByIntelligenceProfileIdRequest(self.request_adapter, self.path_parameters)
 
-	@property
 	def indicators(self,
+		intelligenceProfile_id: str,
 	) -> IndicatorsRequest:
+		if intelligenceProfile_id is None:
+			raise TypeError("intelligenceProfile_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["intelligenceProfile%2Did"] =  intelligenceProfile_id
+
 		from .indicators import IndicatorsRequest
-		return IndicatorsRequest(self.request_adapter, self.path_parameters)
+		return IndicatorsRequest(self.request_adapter, path_parameters)
 

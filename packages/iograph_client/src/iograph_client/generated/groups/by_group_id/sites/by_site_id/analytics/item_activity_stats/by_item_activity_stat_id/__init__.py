@@ -1,6 +1,7 @@
 # Auto-generated client
 
 from __future__ import annotations
+from kiota_abstractions.get_path_parameters import get_path_parameters
 from kiota_abstractions.method import Method
 from kiota_abstractions.base_request_builder import BaseRequestBuilder
 from kiota_abstractions.base_request_configuration import RequestConfiguration
@@ -108,9 +109,23 @@ class ByItemActivityStatIdRequest(BaseRequestBuilder):
 			raise TypeError("raw_url cannot be None.")
 		return ByItemActivityStatIdRequest(self.request_adapter, self.path_parameters)
 
-	@property
 	def activities(self,
+		group_id: str,
+		site_id: str,
+		itemActivityStat_id: str,
 	) -> ActivitiesRequest:
+		if group_id is None:
+			raise TypeError("group_id cannot be null.")
+		if site_id is None:
+			raise TypeError("site_id cannot be null.")
+		if itemActivityStat_id is None:
+			raise TypeError("itemActivityStat_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["group%2Did"] =  group_id
+		path_parameters["site%2Did"] =  site_id
+		path_parameters["itemActivityStat%2Did"] =  itemActivityStat_id
+
 		from .activities import ActivitiesRequest
-		return ActivitiesRequest(self.request_adapter, self.path_parameters)
+		return ActivitiesRequest(self.request_adapter, path_parameters)
 

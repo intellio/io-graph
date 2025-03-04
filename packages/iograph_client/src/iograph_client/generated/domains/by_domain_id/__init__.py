@@ -1,6 +1,7 @@
 # Auto-generated client
 
 from __future__ import annotations
+from kiota_abstractions.get_path_parameters import get_path_parameters
 from kiota_abstractions.method import Method
 from kiota_abstractions.base_request_builder import BaseRequestBuilder
 from kiota_abstractions.base_request_configuration import RequestConfiguration
@@ -118,51 +119,99 @@ class ByDomainIdRequest(BaseRequestBuilder):
 			raise TypeError("raw_url cannot be None.")
 		return ByDomainIdRequest(self.request_adapter, self.path_parameters)
 
-	@property
 	def domain_name_references(self,
+		domain_id: str,
 	) -> DomainNameReferencesRequest:
+		if domain_id is None:
+			raise TypeError("domain_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["domain%2Did"] =  domain_id
+
 		from .domain_name_references import DomainNameReferencesRequest
-		return DomainNameReferencesRequest(self.request_adapter, self.path_parameters)
+		return DomainNameReferencesRequest(self.request_adapter, path_parameters)
 
-	@property
 	def federation_configuration(self,
+		domain_id: str,
 	) -> FederationConfigurationRequest:
+		if domain_id is None:
+			raise TypeError("domain_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["domain%2Did"] =  domain_id
+
 		from .federation_configuration import FederationConfigurationRequest
-		return FederationConfigurationRequest(self.request_adapter, self.path_parameters)
+		return FederationConfigurationRequest(self.request_adapter, path_parameters)
 
-	@property
 	def force_delete(self,
+		domain_id: str,
 	) -> ForceDeleteRequest:
+		if domain_id is None:
+			raise TypeError("domain_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["domain%2Did"] =  domain_id
+
 		from .force_delete import ForceDeleteRequest
-		return ForceDeleteRequest(self.request_adapter, self.path_parameters)
+		return ForceDeleteRequest(self.request_adapter, path_parameters)
 
-	@property
 	def promote(self,
+		domain_id: str,
 	) -> PromoteRequest:
+		if domain_id is None:
+			raise TypeError("domain_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["domain%2Did"] =  domain_id
+
 		from .promote import PromoteRequest
-		return PromoteRequest(self.request_adapter, self.path_parameters)
+		return PromoteRequest(self.request_adapter, path_parameters)
 
-	@property
 	def verify(self,
+		domain_id: str,
 	) -> VerifyRequest:
+		if domain_id is None:
+			raise TypeError("domain_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["domain%2Did"] =  domain_id
+
 		from .verify import VerifyRequest
-		return VerifyRequest(self.request_adapter, self.path_parameters)
+		return VerifyRequest(self.request_adapter, path_parameters)
 
-	@property
 	def root_domain(self,
+		domain_id: str,
 	) -> RootDomainRequest:
+		if domain_id is None:
+			raise TypeError("domain_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["domain%2Did"] =  domain_id
+
 		from .root_domain import RootDomainRequest
-		return RootDomainRequest(self.request_adapter, self.path_parameters)
+		return RootDomainRequest(self.request_adapter, path_parameters)
 
-	@property
 	def service_configuration_records(self,
+		domain_id: str,
 	) -> ServiceConfigurationRecordsRequest:
-		from .service_configuration_records import ServiceConfigurationRecordsRequest
-		return ServiceConfigurationRecordsRequest(self.request_adapter, self.path_parameters)
+		if domain_id is None:
+			raise TypeError("domain_id cannot be null.")
 
-	@property
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["domain%2Did"] =  domain_id
+
+		from .service_configuration_records import ServiceConfigurationRecordsRequest
+		return ServiceConfigurationRecordsRequest(self.request_adapter, path_parameters)
+
 	def verification_dns_records(self,
+		domain_id: str,
 	) -> VerificationDnsRecordsRequest:
+		if domain_id is None:
+			raise TypeError("domain_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["domain%2Did"] =  domain_id
+
 		from .verification_dns_records import VerificationDnsRecordsRequest
-		return VerificationDnsRecordsRequest(self.request_adapter, self.path_parameters)
+		return VerificationDnsRecordsRequest(self.request_adapter, path_parameters)
 

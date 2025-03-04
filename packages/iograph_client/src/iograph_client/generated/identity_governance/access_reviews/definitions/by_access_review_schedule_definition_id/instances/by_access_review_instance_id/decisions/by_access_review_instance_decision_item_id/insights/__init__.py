@@ -116,9 +116,23 @@ class InsightsRequest(BaseRequestBuilder):
 		from .by_governance_insight_id import ByGovernanceInsightIdRequest
 		return ByGovernanceInsightIdRequest(self.request_adapter, path_parameters)
 
-	@property
 	def count(self,
+		accessReviewScheduleDefinition_id: str,
+		accessReviewInstance_id: str,
+		accessReviewInstanceDecisionItem_id: str,
 	) -> CountRequest:
+		if accessReviewScheduleDefinition_id is None:
+			raise TypeError("accessReviewScheduleDefinition_id cannot be null.")
+		if accessReviewInstance_id is None:
+			raise TypeError("accessReviewInstance_id cannot be null.")
+		if accessReviewInstanceDecisionItem_id is None:
+			raise TypeError("accessReviewInstanceDecisionItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["accessReviewScheduleDefinition%2Did"] =  accessReviewScheduleDefinition_id
+		path_parameters["accessReviewInstance%2Did"] =  accessReviewInstance_id
+		path_parameters["accessReviewInstanceDecisionItem%2Did"] =  accessReviewInstanceDecisionItem_id
+
 		from .count import CountRequest
-		return CountRequest(self.request_adapter, self.path_parameters)
+		return CountRequest(self.request_adapter, path_parameters)
 

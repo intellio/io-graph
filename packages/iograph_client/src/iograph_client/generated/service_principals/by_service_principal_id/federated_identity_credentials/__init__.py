@@ -14,19 +14,18 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_federated_identity_credential_id import ByFederatedIdentityCredentialIdRequest
 	from .....request_adapter import HttpxRequestAdapter
-from iograph_models.models.federated_identity_credential import FederatedIdentityCredential
-from iograph_models.models.federated_identity_credential_collection_response import FederatedIdentityCredentialCollectionResponse
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.models.federated_identity_credential import FederatedIdentityCredential
 
 
 class FederatedIdentityCredentialsRequest(BaseRequestBuilder):
 	def __init__(self,request_adapter: HttpxRequestAdapter, path_parameters: Optional[Union[dict[str, Any], str]]) -> None:
-		super().__init__(request_adapter, "{+baseurl}/servicePrincipals/{servicePrincipal%2Did}/federatedIdentityCredentials", path_parameters)
+		super().__init__(request_adapter, "{+baseurl}/servicePrincipals/{servicePrincipal%2Did}/federatedIdentityCredentials(name='{name}')", path_parameters)
 
 	async def get(
 		self,
 		request_configuration: Optional[RequestConfiguration[GetQueryParams]] = None,
-	) -> FederatedIdentityCredentialCollectionResponse:
+	) -> FederatedIdentityCredential:
 		"""
 		Get federatedIdentityCredentials from servicePrincipals
 		Federated identities for a specific type of service principal - managed identity. Supports $expand and $filter (/$count eq 0, /$count ne 0).
@@ -44,15 +43,15 @@ class FederatedIdentityCredentialsRequest(BaseRequestBuilder):
 		)
 		request_info.configure(request_configuration)
 		request_info.headers.try_add("Accept", "application/json")
-		return await self.request_adapter.send_async(request_info, FederatedIdentityCredentialCollectionResponse, error_mapping)
+		return await self.request_adapter.send_async(request_info, FederatedIdentityCredential, error_mapping)
 
-	async def post(
+	async def patch(
 		self,
 		body: FederatedIdentityCredential,
 		request_configuration: Optional[RequestConfiguration[BaseModel]] = None,
 	) -> FederatedIdentityCredential:
 		"""
-		Create new navigation property to federatedIdentityCredentials for servicePrincipals
+		Update the navigation property federatedIdentityCredentials in servicePrincipals
 		
 		"""
 		tags = ['servicePrincipals.federatedIdentityCredential']
@@ -62,7 +61,7 @@ class FederatedIdentityCredentialsRequest(BaseRequestBuilder):
 		}
 
 		request_info: RequestInformation = RequestInformation(
-			method = Method.POST,
+			method = Method.PATCH,
 			url_template = self.url_template,
 			path_parameters = self.path_parameters,
 		)
@@ -71,15 +70,34 @@ class FederatedIdentityCredentialsRequest(BaseRequestBuilder):
 		request_info.set_content(body, "application/json")
 		return await self.request_adapter.send_async(request_info, FederatedIdentityCredential, error_mapping)
 
+	async def delete(
+		self,
+		request_configuration: Optional[RequestConfiguration[BaseModel]] = None,
+	) -> None:
+		"""
+		Delete navigation property federatedIdentityCredentials for servicePrincipals
+		
+		"""
+		tags = ['servicePrincipals.federatedIdentityCredential']
+		header_parameters = [{'name': 'If-Match', 'in': 'header', 'description': 'ETag', 'schema': {'type': 'string'}}]
+
+		error_mapping: dict[str, type[BaseModel]] = {
+			"XXX": ODataErrorsODataError,
+		}
+
+		request_info: RequestInformation = RequestInformation(
+			method = Method.DELETE,
+			url_template = self.url_template,
+			path_parameters = self.path_parameters,
+		)
+		request_info.configure(request_configuration)
+		request_info.headers.try_add("Accept", "application/json")
+		return await self.request_adapter.send_no_response_content_async(request_info, error_mapping)
+
 	class GetQueryParams(BaseModel):
-		top: int = Field(default=None,serialization_alias="%24top")
-		skip: int = Field(default=None,serialization_alias="%24skip")
-		search: str = Field(default=None,serialization_alias="%24search")
-		filter: str = Field(default=None,serialization_alias="%24filter")
-		count: bool = Field(default=None,serialization_alias="%24count")
-		orderby: list[str] = Field(default=None,serialization_alias="%24orderby")
 		select: list[str] = Field(default=None,serialization_alias="%24select")
 		expand: list[str] = Field(default=None,serialization_alias="%24expand")
+
 
 
 	def with_url(self, raw_url: str) -> FederatedIdentityCredentialsRequest:
@@ -108,9 +126,15 @@ class FederatedIdentityCredentialsRequest(BaseRequestBuilder):
 		from .by_federated_identity_credential_id import ByFederatedIdentityCredentialIdRequest
 		return ByFederatedIdentityCredentialIdRequest(self.request_adapter, path_parameters)
 
-	@property
 	def count(self,
+		servicePrincipal_id: str,
 	) -> CountRequest:
+		if servicePrincipal_id is None:
+			raise TypeError("servicePrincipal_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["servicePrincipal%2Did"] =  servicePrincipal_id
+
 		from .count import CountRequest
-		return CountRequest(self.request_adapter, self.path_parameters)
+		return CountRequest(self.request_adapter, path_parameters)
 

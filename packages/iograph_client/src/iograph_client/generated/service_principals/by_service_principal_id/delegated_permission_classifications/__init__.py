@@ -15,8 +15,8 @@ if TYPE_CHECKING:
 	from .by_delegated_permission_classification_id import ByDelegatedPermissionClassificationIdRequest
 	from .....request_adapter import HttpxRequestAdapter
 from iograph_models.models.delegated_permission_classification_collection_response import DelegatedPermissionClassificationCollectionResponse
-from iograph_models.models.delegated_permission_classification import DelegatedPermissionClassification
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.models.delegated_permission_classification import DelegatedPermissionClassification
 
 
 class DelegatedPermissionClassificationsRequest(BaseRequestBuilder):
@@ -110,9 +110,15 @@ class DelegatedPermissionClassificationsRequest(BaseRequestBuilder):
 		from .by_delegated_permission_classification_id import ByDelegatedPermissionClassificationIdRequest
 		return ByDelegatedPermissionClassificationIdRequest(self.request_adapter, path_parameters)
 
-	@property
 	def count(self,
+		servicePrincipal_id: str,
 	) -> CountRequest:
+		if servicePrincipal_id is None:
+			raise TypeError("servicePrincipal_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["servicePrincipal%2Did"] =  servicePrincipal_id
+
 		from .count import CountRequest
-		return CountRequest(self.request_adapter, self.path_parameters)
+		return CountRequest(self.request_adapter, path_parameters)
 

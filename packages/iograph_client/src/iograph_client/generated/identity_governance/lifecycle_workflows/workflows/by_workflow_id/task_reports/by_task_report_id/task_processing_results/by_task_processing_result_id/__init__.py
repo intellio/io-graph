@@ -1,6 +1,7 @@
 # Auto-generated client
 
 from __future__ import annotations
+from kiota_abstractions.get_path_parameters import get_path_parameters
 from kiota_abstractions.method import Method
 from kiota_abstractions.base_request_builder import BaseRequestBuilder
 from kiota_abstractions.base_request_configuration import RequestConfiguration
@@ -14,8 +15,8 @@ if TYPE_CHECKING:
 	from .subject import SubjectRequest
 	from .identity_governance_resume import IdentityGovernanceResumeRequest
 	from ..........request_adapter import HttpxRequestAdapter
-from iograph_models.models.identity_governance_task_processing_result import IdentityGovernanceTaskProcessingResult
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.models.identity_governance_task_processing_result import IdentityGovernanceTaskProcessingResult
 
 
 class ByTaskProcessingResultIdRequest(BaseRequestBuilder):
@@ -59,21 +60,63 @@ class ByTaskProcessingResultIdRequest(BaseRequestBuilder):
 			raise TypeError("raw_url cannot be None.")
 		return ByTaskProcessingResultIdRequest(self.request_adapter, self.path_parameters)
 
-	@property
 	def identity_governance_resume(self,
+		workflow_id: str,
+		taskReport_id: str,
+		taskProcessingResult_id: str,
 	) -> IdentityGovernanceResumeRequest:
+		if workflow_id is None:
+			raise TypeError("workflow_id cannot be null.")
+		if taskReport_id is None:
+			raise TypeError("taskReport_id cannot be null.")
+		if taskProcessingResult_id is None:
+			raise TypeError("taskProcessingResult_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["workflow%2Did"] =  workflow_id
+		path_parameters["taskReport%2Did"] =  taskReport_id
+		path_parameters["taskProcessingResult%2Did"] =  taskProcessingResult_id
+
 		from .identity_governance_resume import IdentityGovernanceResumeRequest
-		return IdentityGovernanceResumeRequest(self.request_adapter, self.path_parameters)
+		return IdentityGovernanceResumeRequest(self.request_adapter, path_parameters)
 
-	@property
 	def subject(self,
+		workflow_id: str,
+		taskReport_id: str,
+		taskProcessingResult_id: str,
 	) -> SubjectRequest:
-		from .subject import SubjectRequest
-		return SubjectRequest(self.request_adapter, self.path_parameters)
+		if workflow_id is None:
+			raise TypeError("workflow_id cannot be null.")
+		if taskReport_id is None:
+			raise TypeError("taskReport_id cannot be null.")
+		if taskProcessingResult_id is None:
+			raise TypeError("taskProcessingResult_id cannot be null.")
 
-	@property
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["workflow%2Did"] =  workflow_id
+		path_parameters["taskReport%2Did"] =  taskReport_id
+		path_parameters["taskProcessingResult%2Did"] =  taskProcessingResult_id
+
+		from .subject import SubjectRequest
+		return SubjectRequest(self.request_adapter, path_parameters)
+
 	def task(self,
+		workflow_id: str,
+		taskReport_id: str,
+		taskProcessingResult_id: str,
 	) -> TaskRequest:
+		if workflow_id is None:
+			raise TypeError("workflow_id cannot be null.")
+		if taskReport_id is None:
+			raise TypeError("taskReport_id cannot be null.")
+		if taskProcessingResult_id is None:
+			raise TypeError("taskProcessingResult_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["workflow%2Did"] =  workflow_id
+		path_parameters["taskReport%2Did"] =  taskReport_id
+		path_parameters["taskProcessingResult%2Did"] =  taskProcessingResult_id
+
 		from .task import TaskRequest
-		return TaskRequest(self.request_adapter, self.path_parameters)
+		return TaskRequest(self.request_adapter, path_parameters)
 

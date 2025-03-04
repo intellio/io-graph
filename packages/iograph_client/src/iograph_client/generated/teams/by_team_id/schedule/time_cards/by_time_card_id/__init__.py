@@ -1,6 +1,7 @@
 # Auto-generated client
 
 from __future__ import annotations
+from kiota_abstractions.get_path_parameters import get_path_parameters
 from kiota_abstractions.method import Method
 from kiota_abstractions.base_request_builder import BaseRequestBuilder
 from kiota_abstractions.base_request_configuration import RequestConfiguration
@@ -15,8 +16,8 @@ if TYPE_CHECKING:
 	from .confirm import ConfirmRequest
 	from .clock_out import ClockOutRequest
 	from .......request_adapter import HttpxRequestAdapter
-from iograph_models.models.time_card import TimeCard
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.models.time_card import TimeCard
 
 
 class ByTimeCardIdRequest(BaseRequestBuilder):
@@ -112,27 +113,67 @@ class ByTimeCardIdRequest(BaseRequestBuilder):
 			raise TypeError("raw_url cannot be None.")
 		return ByTimeCardIdRequest(self.request_adapter, self.path_parameters)
 
-	@property
 	def clock_out(self,
+		team_id: str,
+		timeCard_id: str,
 	) -> ClockOutRequest:
+		if team_id is None:
+			raise TypeError("team_id cannot be null.")
+		if timeCard_id is None:
+			raise TypeError("timeCard_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["team%2Did"] =  team_id
+		path_parameters["timeCard%2Did"] =  timeCard_id
+
 		from .clock_out import ClockOutRequest
-		return ClockOutRequest(self.request_adapter, self.path_parameters)
+		return ClockOutRequest(self.request_adapter, path_parameters)
 
-	@property
 	def confirm(self,
+		team_id: str,
+		timeCard_id: str,
 	) -> ConfirmRequest:
+		if team_id is None:
+			raise TypeError("team_id cannot be null.")
+		if timeCard_id is None:
+			raise TypeError("timeCard_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["team%2Did"] =  team_id
+		path_parameters["timeCard%2Did"] =  timeCard_id
+
 		from .confirm import ConfirmRequest
-		return ConfirmRequest(self.request_adapter, self.path_parameters)
+		return ConfirmRequest(self.request_adapter, path_parameters)
 
-	@property
 	def end_break(self,
+		team_id: str,
+		timeCard_id: str,
 	) -> EndBreakRequest:
-		from .end_break import EndBreakRequest
-		return EndBreakRequest(self.request_adapter, self.path_parameters)
+		if team_id is None:
+			raise TypeError("team_id cannot be null.")
+		if timeCard_id is None:
+			raise TypeError("timeCard_id cannot be null.")
 
-	@property
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["team%2Did"] =  team_id
+		path_parameters["timeCard%2Did"] =  timeCard_id
+
+		from .end_break import EndBreakRequest
+		return EndBreakRequest(self.request_adapter, path_parameters)
+
 	def start_break(self,
+		team_id: str,
+		timeCard_id: str,
 	) -> StartBreakRequest:
+		if team_id is None:
+			raise TypeError("team_id cannot be null.")
+		if timeCard_id is None:
+			raise TypeError("timeCard_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["team%2Did"] =  team_id
+		path_parameters["timeCard%2Did"] =  timeCard_id
+
 		from .start_break import StartBreakRequest
-		return StartBreakRequest(self.request_adapter, self.path_parameters)
+		return StartBreakRequest(self.request_adapter, path_parameters)
 

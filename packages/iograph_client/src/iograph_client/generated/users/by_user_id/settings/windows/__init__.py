@@ -14,9 +14,9 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_windows_setting_id import ByWindowsSettingIdRequest
 	from ......request_adapter import HttpxRequestAdapter
-from iograph_models.models.windows_setting import WindowsSetting
 from iograph_models.models.windows_setting_collection_response import WindowsSettingCollectionResponse
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.models.windows_setting import WindowsSetting
 
 
 class WindowsRequest(BaseRequestBuilder):
@@ -108,9 +108,15 @@ class WindowsRequest(BaseRequestBuilder):
 		from .by_windows_setting_id import ByWindowsSettingIdRequest
 		return ByWindowsSettingIdRequest(self.request_adapter, path_parameters)
 
-	@property
 	def count(self,
+		user_id: str,
 	) -> CountRequest:
+		if user_id is None:
+			raise TypeError("user_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["user%2Did"] =  user_id
+
 		from .count import CountRequest
-		return CountRequest(self.request_adapter, self.path_parameters)
+		return CountRequest(self.request_adapter, path_parameters)
 

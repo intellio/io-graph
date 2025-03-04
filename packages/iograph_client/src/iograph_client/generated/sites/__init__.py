@@ -12,6 +12,8 @@ from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:
 	from .remove import RemoveRequest
+	from .get_all_sites import GetAllSitesRequest
+	from .delta import DeltaRequest
 	from .add import AddRequest
 	from .count import CountRequest
 	from .by_site_id import BySiteIdRequest
@@ -29,9 +31,10 @@ class SitesRequest(BaseRequestBuilder):
 		request_configuration: Optional[RequestConfiguration[GetQueryParams]] = None,
 	) -> SiteCollectionResponse:
 		"""
-		Search for sites
-		Search across a SharePoint tenant for sites that match keywords provided. The only property that works for sorting is createdDateTime. The search filter is a free text search that uses multiple properties when retrieving the search results.
-		Find more info here: https://learn.microsoft.com/graph/api/site-search?view=graph-rest-1.0
+		List sites
+		List all available sites in an organization. Specific filter criteria and query options are also supported and described below: In addition, you can use a $search query against the /sites collection to find sites matching given keywords.
+If you want to list all sites across all geographies, refer to getAllSites. For more guidance about building applications that use site discovery for scanning purposes, see Best practices for discovering files and detecting changes at scale.
+		Find more info here: https://learn.microsoft.com/graph/api/site-list?view=graph-rest-1.0
 		"""
 		tags = ['sites.site']
 
@@ -91,6 +94,18 @@ class SitesRequest(BaseRequestBuilder):
 	) -> AddRequest:
 		from .add import AddRequest
 		return AddRequest(self.request_adapter, self.path_parameters)
+
+	@property
+	def delta(self,
+	) -> DeltaRequest:
+		from .delta import DeltaRequest
+		return DeltaRequest(self.request_adapter, self.path_parameters)
+
+	@property
+	def get_all_sites(self,
+	) -> GetAllSitesRequest:
+		from .get_all_sites import GetAllSitesRequest
+		return GetAllSitesRequest(self.request_adapter, self.path_parameters)
 
 	@property
 	def remove(self,

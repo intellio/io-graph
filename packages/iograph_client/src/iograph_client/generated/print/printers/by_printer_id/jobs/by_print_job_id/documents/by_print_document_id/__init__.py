@@ -1,6 +1,7 @@
 # Auto-generated client
 
 from __future__ import annotations
+from kiota_abstractions.get_path_parameters import get_path_parameters
 from kiota_abstractions.method import Method
 from kiota_abstractions.base_request_builder import BaseRequestBuilder
 from kiota_abstractions.base_request_configuration import RequestConfiguration
@@ -13,8 +14,8 @@ if TYPE_CHECKING:
 	from .create_upload_session import CreateUploadSessionRequest
 	from .value import ValueRequest
 	from .........request_adapter import HttpxRequestAdapter
-from iograph_models.models.print_document import PrintDocument
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.models.print_document import PrintDocument
 
 
 class ByPrintDocumentIdRequest(BaseRequestBuilder):
@@ -109,15 +110,43 @@ class ByPrintDocumentIdRequest(BaseRequestBuilder):
 			raise TypeError("raw_url cannot be None.")
 		return ByPrintDocumentIdRequest(self.request_adapter, self.path_parameters)
 
-	@property
 	def value(self,
+		printer_id: str,
+		printJob_id: str,
+		printDocument_id: str,
 	) -> ValueRequest:
-		from .value import ValueRequest
-		return ValueRequest(self.request_adapter, self.path_parameters)
+		if printer_id is None:
+			raise TypeError("printer_id cannot be null.")
+		if printJob_id is None:
+			raise TypeError("printJob_id cannot be null.")
+		if printDocument_id is None:
+			raise TypeError("printDocument_id cannot be null.")
 
-	@property
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["printer%2Did"] =  printer_id
+		path_parameters["printJob%2Did"] =  printJob_id
+		path_parameters["printDocument%2Did"] =  printDocument_id
+
+		from .value import ValueRequest
+		return ValueRequest(self.request_adapter, path_parameters)
+
 	def create_upload_session(self,
+		printer_id: str,
+		printJob_id: str,
+		printDocument_id: str,
 	) -> CreateUploadSessionRequest:
+		if printer_id is None:
+			raise TypeError("printer_id cannot be null.")
+		if printJob_id is None:
+			raise TypeError("printJob_id cannot be null.")
+		if printDocument_id is None:
+			raise TypeError("printDocument_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["printer%2Did"] =  printer_id
+		path_parameters["printJob%2Did"] =  printJob_id
+		path_parameters["printDocument%2Did"] =  printDocument_id
+
 		from .create_upload_session import CreateUploadSessionRequest
-		return CreateUploadSessionRequest(self.request_adapter, self.path_parameters)
+		return CreateUploadSessionRequest(self.request_adapter, path_parameters)
 

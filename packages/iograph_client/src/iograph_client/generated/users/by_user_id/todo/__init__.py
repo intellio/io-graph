@@ -1,6 +1,7 @@
 # Auto-generated client
 
 from __future__ import annotations
+from kiota_abstractions.get_path_parameters import get_path_parameters
 from kiota_abstractions.method import Method
 from kiota_abstractions.base_request_builder import BaseRequestBuilder
 from kiota_abstractions.base_request_configuration import RequestConfiguration
@@ -108,9 +109,15 @@ class TodoRequest(BaseRequestBuilder):
 			raise TypeError("raw_url cannot be None.")
 		return TodoRequest(self.request_adapter, self.path_parameters)
 
-	@property
 	def lists(self,
+		user_id: str,
 	) -> ListsRequest:
+		if user_id is None:
+			raise TypeError("user_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["user%2Did"] =  user_id
+
 		from .lists import ListsRequest
-		return ListsRequest(self.request_adapter, self.path_parameters)
+		return ListsRequest(self.request_adapter, path_parameters)
 

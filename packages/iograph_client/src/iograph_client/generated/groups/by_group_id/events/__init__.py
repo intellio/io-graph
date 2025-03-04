@@ -11,12 +11,13 @@ from typing import Union, Any, Optional
 from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:
+	from .delta import DeltaRequest
 	from .count import CountRequest
 	from .by_event_id import ByEventIdRequest
 	from .....request_adapter import HttpxRequestAdapter
-from iograph_models.models.event import Event
 from iograph_models.models.event_collection_response import EventCollectionResponse
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.models.event import Event
 
 
 class EventsRequest(BaseRequestBuilder):
@@ -110,9 +111,27 @@ class EventsRequest(BaseRequestBuilder):
 		from .by_event_id import ByEventIdRequest
 		return ByEventIdRequest(self.request_adapter, path_parameters)
 
-	@property
 	def count(self,
+		group_id: str,
 	) -> CountRequest:
+		if group_id is None:
+			raise TypeError("group_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["group%2Did"] =  group_id
+
 		from .count import CountRequest
-		return CountRequest(self.request_adapter, self.path_parameters)
+		return CountRequest(self.request_adapter, path_parameters)
+
+	def delta(self,
+		group_id: str,
+	) -> DeltaRequest:
+		if group_id is None:
+			raise TypeError("group_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["group%2Did"] =  group_id
+
+		from .delta import DeltaRequest
+		return DeltaRequest(self.request_adapter, path_parameters)
 

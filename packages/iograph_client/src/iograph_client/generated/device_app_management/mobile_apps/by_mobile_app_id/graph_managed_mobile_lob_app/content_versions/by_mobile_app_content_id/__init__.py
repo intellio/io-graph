@@ -1,6 +1,7 @@
 # Auto-generated client
 
 from __future__ import annotations
+from kiota_abstractions.get_path_parameters import get_path_parameters
 from kiota_abstractions.method import Method
 from kiota_abstractions.base_request_builder import BaseRequestBuilder
 from kiota_abstractions.base_request_configuration import RequestConfiguration
@@ -109,15 +110,35 @@ class ByMobileAppContentIdRequest(BaseRequestBuilder):
 			raise TypeError("raw_url cannot be None.")
 		return ByMobileAppContentIdRequest(self.request_adapter, self.path_parameters)
 
-	@property
 	def contained_apps(self,
+		mobileApp_id: str,
+		mobileAppContent_id: str,
 	) -> ContainedAppsRequest:
-		from .contained_apps import ContainedAppsRequest
-		return ContainedAppsRequest(self.request_adapter, self.path_parameters)
+		if mobileApp_id is None:
+			raise TypeError("mobileApp_id cannot be null.")
+		if mobileAppContent_id is None:
+			raise TypeError("mobileAppContent_id cannot be null.")
 
-	@property
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["mobileApp%2Did"] =  mobileApp_id
+		path_parameters["mobileAppContent%2Did"] =  mobileAppContent_id
+
+		from .contained_apps import ContainedAppsRequest
+		return ContainedAppsRequest(self.request_adapter, path_parameters)
+
 	def files(self,
+		mobileApp_id: str,
+		mobileAppContent_id: str,
 	) -> FilesRequest:
+		if mobileApp_id is None:
+			raise TypeError("mobileApp_id cannot be null.")
+		if mobileAppContent_id is None:
+			raise TypeError("mobileAppContent_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["mobileApp%2Did"] =  mobileApp_id
+		path_parameters["mobileAppContent%2Did"] =  mobileAppContent_id
+
 		from .files import FilesRequest
-		return FilesRequest(self.request_adapter, self.path_parameters)
+		return FilesRequest(self.request_adapter, path_parameters)
 

@@ -1,6 +1,7 @@
 # Auto-generated client
 
 from __future__ import annotations
+from kiota_abstractions.get_path_parameters import get_path_parameters
 from kiota_abstractions.method import Method
 from kiota_abstractions.base_request_builder import BaseRequestBuilder
 from kiota_abstractions.base_request_configuration import RequestConfiguration
@@ -110,9 +111,19 @@ class ByPrintTaskTriggerIdRequest(BaseRequestBuilder):
 			raise TypeError("raw_url cannot be None.")
 		return ByPrintTaskTriggerIdRequest(self.request_adapter, self.path_parameters)
 
-	@property
 	def definition(self,
+		printer_id: str,
+		printTaskTrigger_id: str,
 	) -> DefinitionRequest:
+		if printer_id is None:
+			raise TypeError("printer_id cannot be null.")
+		if printTaskTrigger_id is None:
+			raise TypeError("printTaskTrigger_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["printer%2Did"] =  printer_id
+		path_parameters["printTaskTrigger%2Did"] =  printTaskTrigger_id
+
 		from .definition import DefinitionRequest
-		return DefinitionRequest(self.request_adapter, self.path_parameters)
+		return DefinitionRequest(self.request_adapter, path_parameters)
 

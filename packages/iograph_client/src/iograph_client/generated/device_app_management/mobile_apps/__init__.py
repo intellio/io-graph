@@ -30,8 +30,8 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_mobile_app_id import ByMobileAppIdRequest
 	from ....request_adapter import HttpxRequestAdapter
-from iograph_models.models.mobile_app import MobileApp
 from iograph_models.models.mobile_app_collection_response import MobileAppCollectionResponse
+from iograph_models.models.mobile_app import MobileApp
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
 
 
@@ -44,9 +44,9 @@ class MobileAppsRequest(BaseRequestBuilder):
 		request_configuration: Optional[RequestConfiguration[GetQueryParams]] = None,
 	) -> MobileAppCollectionResponse:
 		"""
-		List windowsUniversalAppXs
-		List properties and relationships of the windowsUniversalAppX objects.
-		Find more info here: https://learn.microsoft.com/graph/api/intune-apps-windowsuniversalappx-list?view=graph-rest-1.0
+		List windowsMobileMSIs
+		List properties and relationships of the windowsMobileMSI objects.
+		Find more info here: https://learn.microsoft.com/graph/api/intune-apps-windowsmobilemsi-list?view=graph-rest-1.0
 		"""
 		tags = ['deviceAppManagement.mobileApp']
 
@@ -69,9 +69,9 @@ class MobileAppsRequest(BaseRequestBuilder):
 		request_configuration: Optional[RequestConfiguration[BaseModel]] = None,
 	) -> MobileApp:
 		"""
-		Create windowsUniversalAppX
-		Create a new windowsUniversalAppX object.
-		Find more info here: https://learn.microsoft.com/graph/api/intune-apps-windowsuniversalappx-create?view=graph-rest-1.0
+		Create managedIOSStoreApp
+		Create a new managedIOSStoreApp object.
+		Find more info here: https://learn.microsoft.com/graph/api/intune-apps-managediosstoreapp-create?view=graph-rest-1.0
 		"""
 		tags = ['deviceAppManagement.mobileApp']
 

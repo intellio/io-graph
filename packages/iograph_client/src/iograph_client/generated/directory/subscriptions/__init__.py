@@ -14,23 +14,22 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_company_subscription_id import ByCompanySubscriptionIdRequest
 	from ....request_adapter import HttpxRequestAdapter
-from iograph_models.models.company_subscription_collection_response import CompanySubscriptionCollectionResponse
-from iograph_models.models.company_subscription import CompanySubscription
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.models.company_subscription import CompanySubscription
 
 
 class SubscriptionsRequest(BaseRequestBuilder):
 	def __init__(self,request_adapter: HttpxRequestAdapter, path_parameters: Optional[Union[dict[str, Any], str]]) -> None:
-		super().__init__(request_adapter, "{+baseurl}/directory/subscriptions", path_parameters)
+		super().__init__(request_adapter, "{+baseurl}/directory/subscriptions(commerceSubscriptionId='{commerceSubscriptionId}')", path_parameters)
 
 	async def get(
 		self,
 		request_configuration: Optional[RequestConfiguration[GetQueryParams]] = None,
-	) -> CompanySubscriptionCollectionResponse:
+	) -> CompanySubscription:
 		"""
-		List subscriptions
-		Get the list of commercial subscriptions that an organization acquired.
-		Find more info here: https://learn.microsoft.com/graph/api/directory-list-subscriptions?view=graph-rest-1.0
+		Get companySubscription
+		Get a specific commercial subscription that an organization acquired.
+		Find more info here: https://learn.microsoft.com/graph/api/companysubscription-get?view=graph-rest-1.0
 		"""
 		tags = ['directory.companySubscription']
 
@@ -45,15 +44,15 @@ class SubscriptionsRequest(BaseRequestBuilder):
 		)
 		request_info.configure(request_configuration)
 		request_info.headers.try_add("Accept", "application/json")
-		return await self.request_adapter.send_async(request_info, CompanySubscriptionCollectionResponse, error_mapping)
+		return await self.request_adapter.send_async(request_info, CompanySubscription, error_mapping)
 
-	async def post(
+	async def patch(
 		self,
 		body: CompanySubscription,
 		request_configuration: Optional[RequestConfiguration[BaseModel]] = None,
 	) -> CompanySubscription:
 		"""
-		Create new navigation property to subscriptions for directory
+		Update the navigation property subscriptions in directory
 		
 		"""
 		tags = ['directory.companySubscription']
@@ -63,7 +62,7 @@ class SubscriptionsRequest(BaseRequestBuilder):
 		}
 
 		request_info: RequestInformation = RequestInformation(
-			method = Method.POST,
+			method = Method.PATCH,
 			url_template = self.url_template,
 			path_parameters = self.path_parameters,
 		)
@@ -72,15 +71,34 @@ class SubscriptionsRequest(BaseRequestBuilder):
 		request_info.set_content(body, "application/json")
 		return await self.request_adapter.send_async(request_info, CompanySubscription, error_mapping)
 
+	async def delete(
+		self,
+		request_configuration: Optional[RequestConfiguration[BaseModel]] = None,
+	) -> None:
+		"""
+		Delete navigation property subscriptions for directory
+		
+		"""
+		tags = ['directory.companySubscription']
+		header_parameters = [{'name': 'If-Match', 'in': 'header', 'description': 'ETag', 'schema': {'type': 'string'}}]
+
+		error_mapping: dict[str, type[BaseModel]] = {
+			"XXX": ODataErrorsODataError,
+		}
+
+		request_info: RequestInformation = RequestInformation(
+			method = Method.DELETE,
+			url_template = self.url_template,
+			path_parameters = self.path_parameters,
+		)
+		request_info.configure(request_configuration)
+		request_info.headers.try_add("Accept", "application/json")
+		return await self.request_adapter.send_no_response_content_async(request_info, error_mapping)
+
 	class GetQueryParams(BaseModel):
-		top: int = Field(default=None,serialization_alias="%24top")
-		skip: int = Field(default=None,serialization_alias="%24skip")
-		search: str = Field(default=None,serialization_alias="%24search")
-		filter: str = Field(default=None,serialization_alias="%24filter")
-		count: bool = Field(default=None,serialization_alias="%24count")
-		orderby: list[str] = Field(default=None,serialization_alias="%24orderby")
 		select: list[str] = Field(default=None,serialization_alias="%24select")
 		expand: list[str] = Field(default=None,serialization_alias="%24expand")
+
 
 
 	def with_url(self, raw_url: str) -> SubscriptionsRequest:

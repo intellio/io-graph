@@ -14,8 +14,8 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_section_group_id1 import BySectionGroupId1Request
 	from ..........request_adapter import HttpxRequestAdapter
-from iograph_models.models.section_group_collection_response import SectionGroupCollectionResponse
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.models.section_group_collection_response import SectionGroupCollectionResponse
 
 
 class SectionGroupsRequest(BaseRequestBuilder):
@@ -89,9 +89,23 @@ class SectionGroupsRequest(BaseRequestBuilder):
 		from .by_section_group_id1 import BySectionGroupId1Request
 		return BySectionGroupId1Request(self.request_adapter, path_parameters)
 
-	@property
 	def count(self,
+		user_id: str,
+		notebook_id: str,
+		sectionGroup_id: str,
 	) -> CountRequest:
+		if user_id is None:
+			raise TypeError("user_id cannot be null.")
+		if notebook_id is None:
+			raise TypeError("notebook_id cannot be null.")
+		if sectionGroup_id is None:
+			raise TypeError("sectionGroup_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["user%2Did"] =  user_id
+		path_parameters["notebook%2Did"] =  notebook_id
+		path_parameters["sectionGroup%2Did"] =  sectionGroup_id
+
 		from .count import CountRequest
-		return CountRequest(self.request_adapter, self.path_parameters)
+		return CountRequest(self.request_adapter, path_parameters)
 

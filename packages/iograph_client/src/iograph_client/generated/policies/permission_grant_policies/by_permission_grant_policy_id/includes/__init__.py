@@ -14,9 +14,9 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_permission_grant_condition_set_id import ByPermissionGrantConditionSetIdRequest
 	from ......request_adapter import HttpxRequestAdapter
-from iograph_models.models.permission_grant_condition_set import PermissionGrantConditionSet
-from iograph_models.models.permission_grant_condition_set_collection_response import PermissionGrantConditionSetCollectionResponse
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.models.permission_grant_condition_set_collection_response import PermissionGrantConditionSetCollectionResponse
+from iograph_models.models.permission_grant_condition_set import PermissionGrantConditionSet
 
 
 class IncludesRequest(BaseRequestBuilder):
@@ -110,9 +110,15 @@ class IncludesRequest(BaseRequestBuilder):
 		from .by_permission_grant_condition_set_id import ByPermissionGrantConditionSetIdRequest
 		return ByPermissionGrantConditionSetIdRequest(self.request_adapter, path_parameters)
 
-	@property
 	def count(self,
+		permissionGrantPolicy_id: str,
 	) -> CountRequest:
+		if permissionGrantPolicy_id is None:
+			raise TypeError("permissionGrantPolicy_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["permissionGrantPolicy%2Did"] =  permissionGrantPolicy_id
+
 		from .count import CountRequest
-		return CountRequest(self.request_adapter, self.path_parameters)
+		return CountRequest(self.request_adapter, path_parameters)
 

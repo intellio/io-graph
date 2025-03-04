@@ -1,6 +1,7 @@
 # Auto-generated client
 
 from __future__ import annotations
+from kiota_abstractions.get_path_parameters import get_path_parameters
 from kiota_abstractions.method import Method
 from kiota_abstractions.base_request_builder import BaseRequestBuilder
 from kiota_abstractions.base_request_configuration import RequestConfiguration
@@ -112,15 +113,35 @@ class ByEdiscoveryReviewTagIdRequest(BaseRequestBuilder):
 			raise TypeError("raw_url cannot be None.")
 		return ByEdiscoveryReviewTagIdRequest(self.request_adapter, self.path_parameters)
 
-	@property
 	def child_tags(self,
+		ediscoveryCase_id: str,
+		ediscoveryReviewTag_id: str,
 	) -> ChildTagsRequest:
-		from .child_tags import ChildTagsRequest
-		return ChildTagsRequest(self.request_adapter, self.path_parameters)
+		if ediscoveryCase_id is None:
+			raise TypeError("ediscoveryCase_id cannot be null.")
+		if ediscoveryReviewTag_id is None:
+			raise TypeError("ediscoveryReviewTag_id cannot be null.")
 
-	@property
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["ediscoveryCase%2Did"] =  ediscoveryCase_id
+		path_parameters["ediscoveryReviewTag%2Did"] =  ediscoveryReviewTag_id
+
+		from .child_tags import ChildTagsRequest
+		return ChildTagsRequest(self.request_adapter, path_parameters)
+
 	def parent(self,
+		ediscoveryCase_id: str,
+		ediscoveryReviewTag_id: str,
 	) -> ParentRequest:
+		if ediscoveryCase_id is None:
+			raise TypeError("ediscoveryCase_id cannot be null.")
+		if ediscoveryReviewTag_id is None:
+			raise TypeError("ediscoveryReviewTag_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["ediscoveryCase%2Did"] =  ediscoveryCase_id
+		path_parameters["ediscoveryReviewTag%2Did"] =  ediscoveryReviewTag_id
+
 		from .parent import ParentRequest
-		return ParentRequest(self.request_adapter, self.path_parameters)
+		return ParentRequest(self.request_adapter, path_parameters)
 

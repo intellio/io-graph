@@ -15,9 +15,9 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_time_card_id import ByTimeCardIdRequest
 	from .......request_adapter import HttpxRequestAdapter
-from iograph_models.models.time_card import TimeCard
 from iograph_models.models.time_card_collection_response import TimeCardCollectionResponse
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.models.time_card import TimeCard
 
 
 class TimeCardsRequest(BaseRequestBuilder):
@@ -109,15 +109,27 @@ class TimeCardsRequest(BaseRequestBuilder):
 		from .by_time_card_id import ByTimeCardIdRequest
 		return ByTimeCardIdRequest(self.request_adapter, path_parameters)
 
-	@property
 	def count(self,
+		group_id: str,
 	) -> CountRequest:
-		from .count import CountRequest
-		return CountRequest(self.request_adapter, self.path_parameters)
+		if group_id is None:
+			raise TypeError("group_id cannot be null.")
 
-	@property
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["group%2Did"] =  group_id
+
+		from .count import CountRequest
+		return CountRequest(self.request_adapter, path_parameters)
+
 	def clock_in(self,
+		group_id: str,
 	) -> ClockInRequest:
+		if group_id is None:
+			raise TypeError("group_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["group%2Did"] =  group_id
+
 		from .clock_in import ClockInRequest
-		return ClockInRequest(self.request_adapter, self.path_parameters)
+		return ClockInRequest(self.request_adapter, path_parameters)
 

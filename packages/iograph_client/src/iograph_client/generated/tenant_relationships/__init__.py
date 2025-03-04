@@ -1,6 +1,7 @@
 # Auto-generated client
 
 from __future__ import annotations
+from kiota_abstractions.get_path_parameters import get_path_parameters
 from kiota_abstractions.method import Method
 from kiota_abstractions.base_request_builder import BaseRequestBuilder
 from kiota_abstractions.base_request_configuration import RequestConfiguration
@@ -11,6 +12,8 @@ from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:
 	from .multi_tenant_organization import MultiTenantOrganizationRequest
+	from .find_tenant_information_by_tenant_id import FindTenantInformationByTenantIdRequest
+	from .find_tenant_information_by_domain_name import FindTenantInformationByDomainNameRequest
 	from .delegated_admin_relationships import DelegatedAdminRelationshipsRequest
 	from .delegated_admin_customers import DelegatedAdminCustomersRequest
 	from ...request_adapter import HttpxRequestAdapter
@@ -96,6 +99,30 @@ class TenantRelationshipsRequest(BaseRequestBuilder):
 	) -> DelegatedAdminRelationshipsRequest:
 		from .delegated_admin_relationships import DelegatedAdminRelationshipsRequest
 		return DelegatedAdminRelationshipsRequest(self.request_adapter, self.path_parameters)
+
+	def find_tenant_information_by_domain_name(self,
+		domainName: str,
+	) -> FindTenantInformationByDomainNameRequest:
+		if domainName is None:
+			raise TypeError("domainName cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["domainName"] =  domainName
+
+		from .find_tenant_information_by_domain_name import FindTenantInformationByDomainNameRequest
+		return FindTenantInformationByDomainNameRequest(self.request_adapter, path_parameters)
+
+	def find_tenant_information_by_tenant_id(self,
+		tenantId: str,
+	) -> FindTenantInformationByTenantIdRequest:
+		if tenantId is None:
+			raise TypeError("tenantId cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["tenantId"] =  tenantId
+
+		from .find_tenant_information_by_tenant_id import FindTenantInformationByTenantIdRequest
+		return FindTenantInformationByTenantIdRequest(self.request_adapter, path_parameters)
 
 	@property
 	def multi_tenant_organization(self,

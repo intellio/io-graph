@@ -11,11 +11,12 @@ from typing import Union, Any, Optional
 from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:
+	from .available_provider_types import AvailableProviderTypesRequest
 	from .count import CountRequest
 	from .by_identity_provider_id import ByIdentityProviderIdRequest
 	from ...request_adapter import HttpxRequestAdapter
-from iograph_models.models.identity_provider_collection_response import IdentityProviderCollectionResponse
 from iograph_models.models.identity_provider import IdentityProvider
+from iograph_models.models.identity_provider_collection_response import IdentityProviderCollectionResponse
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
 
 
@@ -111,4 +112,10 @@ class IdentityProvidersRequest(BaseRequestBuilder):
 	) -> CountRequest:
 		from .count import CountRequest
 		return CountRequest(self.request_adapter, self.path_parameters)
+
+	@property
+	def available_provider_types(self,
+	) -> AvailableProviderTypesRequest:
+		from .available_provider_types import AvailableProviderTypesRequest
+		return AvailableProviderTypesRequest(self.request_adapter, self.path_parameters)
 

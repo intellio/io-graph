@@ -1,6 +1,7 @@
 # Auto-generated client
 
 from __future__ import annotations
+from kiota_abstractions.get_path_parameters import get_path_parameters
 from kiota_abstractions.method import Method
 from kiota_abstractions.base_request_builder import BaseRequestBuilder
 from kiota_abstractions.base_request_configuration import RequestConfiguration
@@ -29,8 +30,8 @@ if TYPE_CHECKING:
 	from .channels import ChannelsRequest
 	from .all_channels import AllChannelsRequest
 	from ......request_adapter import HttpxRequestAdapter
-from iograph_models.models.team import Team
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.models.team import Team
 
 
 class ByTeamIdRequest(BaseRequestBuilder):
@@ -125,111 +126,291 @@ class ByTeamIdRequest(BaseRequestBuilder):
 			raise TypeError("raw_url cannot be None.")
 		return ByTeamIdRequest(self.request_adapter, self.path_parameters)
 
-	@property
 	def all_channels(self,
+		user_id: str,
+		team_id: str,
 	) -> AllChannelsRequest:
+		if user_id is None:
+			raise TypeError("user_id cannot be null.")
+		if team_id is None:
+			raise TypeError("team_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["user%2Did"] =  user_id
+		path_parameters["team%2Did"] =  team_id
+
 		from .all_channels import AllChannelsRequest
-		return AllChannelsRequest(self.request_adapter, self.path_parameters)
+		return AllChannelsRequest(self.request_adapter, path_parameters)
 
-	@property
 	def channels(self,
+		user_id: str,
+		team_id: str,
 	) -> ChannelsRequest:
+		if user_id is None:
+			raise TypeError("user_id cannot be null.")
+		if team_id is None:
+			raise TypeError("team_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["user%2Did"] =  user_id
+		path_parameters["team%2Did"] =  team_id
+
 		from .channels import ChannelsRequest
-		return ChannelsRequest(self.request_adapter, self.path_parameters)
+		return ChannelsRequest(self.request_adapter, path_parameters)
 
-	@property
 	def group(self,
+		user_id: str,
+		team_id: str,
 	) -> GroupRequest:
+		if user_id is None:
+			raise TypeError("user_id cannot be null.")
+		if team_id is None:
+			raise TypeError("team_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["user%2Did"] =  user_id
+		path_parameters["team%2Did"] =  team_id
+
 		from .group import GroupRequest
-		return GroupRequest(self.request_adapter, self.path_parameters)
+		return GroupRequest(self.request_adapter, path_parameters)
 
-	@property
 	def incoming_channels(self,
+		user_id: str,
+		team_id: str,
 	) -> IncomingChannelsRequest:
+		if user_id is None:
+			raise TypeError("user_id cannot be null.")
+		if team_id is None:
+			raise TypeError("team_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["user%2Did"] =  user_id
+		path_parameters["team%2Did"] =  team_id
+
 		from .incoming_channels import IncomingChannelsRequest
-		return IncomingChannelsRequest(self.request_adapter, self.path_parameters)
+		return IncomingChannelsRequest(self.request_adapter, path_parameters)
 
-	@property
 	def installed_apps(self,
+		user_id: str,
+		team_id: str,
 	) -> InstalledAppsRequest:
+		if user_id is None:
+			raise TypeError("user_id cannot be null.")
+		if team_id is None:
+			raise TypeError("team_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["user%2Did"] =  user_id
+		path_parameters["team%2Did"] =  team_id
+
 		from .installed_apps import InstalledAppsRequest
-		return InstalledAppsRequest(self.request_adapter, self.path_parameters)
+		return InstalledAppsRequest(self.request_adapter, path_parameters)
 
-	@property
 	def members(self,
+		user_id: str,
+		team_id: str,
 	) -> MembersRequest:
+		if user_id is None:
+			raise TypeError("user_id cannot be null.")
+		if team_id is None:
+			raise TypeError("team_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["user%2Did"] =  user_id
+		path_parameters["team%2Did"] =  team_id
+
 		from .members import MembersRequest
-		return MembersRequest(self.request_adapter, self.path_parameters)
+		return MembersRequest(self.request_adapter, path_parameters)
 
-	@property
 	def archive(self,
+		user_id: str,
+		team_id: str,
 	) -> ArchiveRequest:
+		if user_id is None:
+			raise TypeError("user_id cannot be null.")
+		if team_id is None:
+			raise TypeError("team_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["user%2Did"] =  user_id
+		path_parameters["team%2Did"] =  team_id
+
 		from .archive import ArchiveRequest
-		return ArchiveRequest(self.request_adapter, self.path_parameters)
+		return ArchiveRequest(self.request_adapter, path_parameters)
 
-	@property
 	def clone(self,
+		user_id: str,
+		team_id: str,
 	) -> CloneRequest:
+		if user_id is None:
+			raise TypeError("user_id cannot be null.")
+		if team_id is None:
+			raise TypeError("team_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["user%2Did"] =  user_id
+		path_parameters["team%2Did"] =  team_id
+
 		from .clone import CloneRequest
-		return CloneRequest(self.request_adapter, self.path_parameters)
+		return CloneRequest(self.request_adapter, path_parameters)
 
-	@property
 	def complete_migration(self,
+		user_id: str,
+		team_id: str,
 	) -> CompleteMigrationRequest:
+		if user_id is None:
+			raise TypeError("user_id cannot be null.")
+		if team_id is None:
+			raise TypeError("team_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["user%2Did"] =  user_id
+		path_parameters["team%2Did"] =  team_id
+
 		from .complete_migration import CompleteMigrationRequest
-		return CompleteMigrationRequest(self.request_adapter, self.path_parameters)
+		return CompleteMigrationRequest(self.request_adapter, path_parameters)
 
-	@property
 	def send_activity_notification(self,
+		user_id: str,
+		team_id: str,
 	) -> SendActivityNotificationRequest:
+		if user_id is None:
+			raise TypeError("user_id cannot be null.")
+		if team_id is None:
+			raise TypeError("team_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["user%2Did"] =  user_id
+		path_parameters["team%2Did"] =  team_id
+
 		from .send_activity_notification import SendActivityNotificationRequest
-		return SendActivityNotificationRequest(self.request_adapter, self.path_parameters)
+		return SendActivityNotificationRequest(self.request_adapter, path_parameters)
 
-	@property
 	def unarchive(self,
+		user_id: str,
+		team_id: str,
 	) -> UnarchiveRequest:
+		if user_id is None:
+			raise TypeError("user_id cannot be null.")
+		if team_id is None:
+			raise TypeError("team_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["user%2Did"] =  user_id
+		path_parameters["team%2Did"] =  team_id
+
 		from .unarchive import UnarchiveRequest
-		return UnarchiveRequest(self.request_adapter, self.path_parameters)
+		return UnarchiveRequest(self.request_adapter, path_parameters)
 
-	@property
 	def operations(self,
+		user_id: str,
+		team_id: str,
 	) -> OperationsRequest:
+		if user_id is None:
+			raise TypeError("user_id cannot be null.")
+		if team_id is None:
+			raise TypeError("team_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["user%2Did"] =  user_id
+		path_parameters["team%2Did"] =  team_id
+
 		from .operations import OperationsRequest
-		return OperationsRequest(self.request_adapter, self.path_parameters)
+		return OperationsRequest(self.request_adapter, path_parameters)
 
-	@property
 	def permission_grants(self,
+		user_id: str,
+		team_id: str,
 	) -> PermissionGrantsRequest:
+		if user_id is None:
+			raise TypeError("user_id cannot be null.")
+		if team_id is None:
+			raise TypeError("team_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["user%2Did"] =  user_id
+		path_parameters["team%2Did"] =  team_id
+
 		from .permission_grants import PermissionGrantsRequest
-		return PermissionGrantsRequest(self.request_adapter, self.path_parameters)
+		return PermissionGrantsRequest(self.request_adapter, path_parameters)
 
-	@property
 	def photo(self,
+		user_id: str,
+		team_id: str,
 	) -> PhotoRequest:
+		if user_id is None:
+			raise TypeError("user_id cannot be null.")
+		if team_id is None:
+			raise TypeError("team_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["user%2Did"] =  user_id
+		path_parameters["team%2Did"] =  team_id
+
 		from .photo import PhotoRequest
-		return PhotoRequest(self.request_adapter, self.path_parameters)
+		return PhotoRequest(self.request_adapter, path_parameters)
 
-	@property
 	def primary_channel(self,
+		user_id: str,
+		team_id: str,
 	) -> PrimaryChannelRequest:
+		if user_id is None:
+			raise TypeError("user_id cannot be null.")
+		if team_id is None:
+			raise TypeError("team_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["user%2Did"] =  user_id
+		path_parameters["team%2Did"] =  team_id
+
 		from .primary_channel import PrimaryChannelRequest
-		return PrimaryChannelRequest(self.request_adapter, self.path_parameters)
+		return PrimaryChannelRequest(self.request_adapter, path_parameters)
 
-	@property
 	def schedule(self,
+		user_id: str,
+		team_id: str,
 	) -> ScheduleRequest:
+		if user_id is None:
+			raise TypeError("user_id cannot be null.")
+		if team_id is None:
+			raise TypeError("team_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["user%2Did"] =  user_id
+		path_parameters["team%2Did"] =  team_id
+
 		from .schedule import ScheduleRequest
-		return ScheduleRequest(self.request_adapter, self.path_parameters)
+		return ScheduleRequest(self.request_adapter, path_parameters)
 
-	@property
 	def tags(self,
+		user_id: str,
+		team_id: str,
 	) -> TagsRequest:
-		from .tags import TagsRequest
-		return TagsRequest(self.request_adapter, self.path_parameters)
+		if user_id is None:
+			raise TypeError("user_id cannot be null.")
+		if team_id is None:
+			raise TypeError("team_id cannot be null.")
 
-	@property
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["user%2Did"] =  user_id
+		path_parameters["team%2Did"] =  team_id
+
+		from .tags import TagsRequest
+		return TagsRequest(self.request_adapter, path_parameters)
+
 	def template(self,
+		user_id: str,
+		team_id: str,
 	) -> TemplateRequest:
+		if user_id is None:
+			raise TypeError("user_id cannot be null.")
+		if team_id is None:
+			raise TypeError("team_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["user%2Did"] =  user_id
+		path_parameters["team%2Did"] =  team_id
+
 		from .template import TemplateRequest
-		return TemplateRequest(self.request_adapter, self.path_parameters)
+		return TemplateRequest(self.request_adapter, path_parameters)
 

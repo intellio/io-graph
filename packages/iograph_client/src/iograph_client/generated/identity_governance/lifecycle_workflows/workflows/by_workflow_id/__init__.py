@@ -1,6 +1,7 @@
 # Auto-generated client
 
 from __future__ import annotations
+from kiota_abstractions.get_path_parameters import get_path_parameters
 from kiota_abstractions.method import Method
 from kiota_abstractions.base_request_builder import BaseRequestBuilder
 from kiota_abstractions.base_request_configuration import RequestConfiguration
@@ -22,8 +23,8 @@ if TYPE_CHECKING:
 	from .execution_scope import ExecutionScopeRequest
 	from .created_by import CreatedByRequest
 	from ......request_adapter import HttpxRequestAdapter
-from iograph_models.models.identity_governance_workflow import IdentityGovernanceWorkflow
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.models.identity_governance_workflow import IdentityGovernanceWorkflow
 
 
 class ByWorkflowIdRequest(BaseRequestBuilder):
@@ -121,69 +122,135 @@ class ByWorkflowIdRequest(BaseRequestBuilder):
 			raise TypeError("raw_url cannot be None.")
 		return ByWorkflowIdRequest(self.request_adapter, self.path_parameters)
 
-	@property
 	def created_by(self,
+		workflow_id: str,
 	) -> CreatedByRequest:
+		if workflow_id is None:
+			raise TypeError("workflow_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["workflow%2Did"] =  workflow_id
+
 		from .created_by import CreatedByRequest
-		return CreatedByRequest(self.request_adapter, self.path_parameters)
+		return CreatedByRequest(self.request_adapter, path_parameters)
 
-	@property
 	def execution_scope(self,
+		workflow_id: str,
 	) -> ExecutionScopeRequest:
+		if workflow_id is None:
+			raise TypeError("workflow_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["workflow%2Did"] =  workflow_id
+
 		from .execution_scope import ExecutionScopeRequest
-		return ExecutionScopeRequest(self.request_adapter, self.path_parameters)
+		return ExecutionScopeRequest(self.request_adapter, path_parameters)
 
-	@property
 	def last_modified_by(self,
+		workflow_id: str,
 	) -> LastModifiedByRequest:
+		if workflow_id is None:
+			raise TypeError("workflow_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["workflow%2Did"] =  workflow_id
+
 		from .last_modified_by import LastModifiedByRequest
-		return LastModifiedByRequest(self.request_adapter, self.path_parameters)
+		return LastModifiedByRequest(self.request_adapter, path_parameters)
 
-	@property
 	def identity_governance_activate(self,
+		workflow_id: str,
 	) -> IdentityGovernanceActivateRequest:
+		if workflow_id is None:
+			raise TypeError("workflow_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["workflow%2Did"] =  workflow_id
+
 		from .identity_governance_activate import IdentityGovernanceActivateRequest
-		return IdentityGovernanceActivateRequest(self.request_adapter, self.path_parameters)
+		return IdentityGovernanceActivateRequest(self.request_adapter, path_parameters)
 
-	@property
 	def identity_governance_create_new_version(self,
+		workflow_id: str,
 	) -> IdentityGovernanceCreateNewVersionRequest:
+		if workflow_id is None:
+			raise TypeError("workflow_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["workflow%2Did"] =  workflow_id
+
 		from .identity_governance_create_new_version import IdentityGovernanceCreateNewVersionRequest
-		return IdentityGovernanceCreateNewVersionRequest(self.request_adapter, self.path_parameters)
+		return IdentityGovernanceCreateNewVersionRequest(self.request_adapter, path_parameters)
 
-	@property
 	def identity_governance_restore(self,
+		workflow_id: str,
 	) -> IdentityGovernanceRestoreRequest:
+		if workflow_id is None:
+			raise TypeError("workflow_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["workflow%2Did"] =  workflow_id
+
 		from .identity_governance_restore import IdentityGovernanceRestoreRequest
-		return IdentityGovernanceRestoreRequest(self.request_adapter, self.path_parameters)
+		return IdentityGovernanceRestoreRequest(self.request_adapter, path_parameters)
 
-	@property
 	def runs(self,
+		workflow_id: str,
 	) -> RunsRequest:
+		if workflow_id is None:
+			raise TypeError("workflow_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["workflow%2Did"] =  workflow_id
+
 		from .runs import RunsRequest
-		return RunsRequest(self.request_adapter, self.path_parameters)
+		return RunsRequest(self.request_adapter, path_parameters)
 
-	@property
 	def task_reports(self,
+		workflow_id: str,
 	) -> TaskReportsRequest:
+		if workflow_id is None:
+			raise TypeError("workflow_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["workflow%2Did"] =  workflow_id
+
 		from .task_reports import TaskReportsRequest
-		return TaskReportsRequest(self.request_adapter, self.path_parameters)
+		return TaskReportsRequest(self.request_adapter, path_parameters)
 
-	@property
 	def tasks(self,
+		workflow_id: str,
 	) -> TasksRequest:
+		if workflow_id is None:
+			raise TypeError("workflow_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["workflow%2Did"] =  workflow_id
+
 		from .tasks import TasksRequest
-		return TasksRequest(self.request_adapter, self.path_parameters)
+		return TasksRequest(self.request_adapter, path_parameters)
 
-	@property
 	def user_processing_results(self,
+		workflow_id: str,
 	) -> UserProcessingResultsRequest:
-		from .user_processing_results import UserProcessingResultsRequest
-		return UserProcessingResultsRequest(self.request_adapter, self.path_parameters)
+		if workflow_id is None:
+			raise TypeError("workflow_id cannot be null.")
 
-	@property
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["workflow%2Did"] =  workflow_id
+
+		from .user_processing_results import UserProcessingResultsRequest
+		return UserProcessingResultsRequest(self.request_adapter, path_parameters)
+
 	def versions(self,
+		workflow_id: str,
 	) -> VersionsRequest:
+		if workflow_id is None:
+			raise TypeError("workflow_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["workflow%2Did"] =  workflow_id
+
 		from .versions import VersionsRequest
-		return VersionsRequest(self.request_adapter, self.path_parameters)
+		return VersionsRequest(self.request_adapter, path_parameters)
 

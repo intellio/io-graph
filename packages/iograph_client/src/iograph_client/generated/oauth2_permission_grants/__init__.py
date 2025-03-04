@@ -11,12 +11,13 @@ from typing import Union, Any, Optional
 from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:
+	from .delta import DeltaRequest
 	from .count import CountRequest
 	from .by_o_auth2_permission_grant_id import ByOAuth2PermissionGrantIdRequest
 	from ...request_adapter import HttpxRequestAdapter
 from iograph_models.models.o_auth2_permission_grant import OAuth2PermissionGrant
-from iograph_models.models.o_auth2_permission_grant_collection_response import OAuth2PermissionGrantCollectionResponse
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.models.o_auth2_permission_grant_collection_response import OAuth2PermissionGrantCollectionResponse
 
 
 class Oauth2PermissionGrantsRequest(BaseRequestBuilder):
@@ -111,4 +112,10 @@ class Oauth2PermissionGrantsRequest(BaseRequestBuilder):
 	) -> CountRequest:
 		from .count import CountRequest
 		return CountRequest(self.request_adapter, self.path_parameters)
+
+	@property
+	def delta(self,
+	) -> DeltaRequest:
+		from .delta import DeltaRequest
+		return DeltaRequest(self.request_adapter, self.path_parameters)
 

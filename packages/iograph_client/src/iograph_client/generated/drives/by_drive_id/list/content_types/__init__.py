@@ -11,6 +11,7 @@ from typing import Union, Any, Optional
 from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:
+	from .get_compatible_hub_content_types import GetCompatibleHubContentTypesRequest
 	from .add_copy_from_content_type_hub import AddCopyFromContentTypeHubRequest
 	from .add_copy import AddCopyRequest
 	from .count import CountRequest
@@ -110,21 +111,51 @@ class ContentTypesRequest(BaseRequestBuilder):
 		from .by_content_type_id import ByContentTypeIdRequest
 		return ByContentTypeIdRequest(self.request_adapter, path_parameters)
 
-	@property
 	def count(self,
+		drive_id: str,
 	) -> CountRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+
 		from .count import CountRequest
-		return CountRequest(self.request_adapter, self.path_parameters)
+		return CountRequest(self.request_adapter, path_parameters)
 
-	@property
 	def add_copy(self,
+		drive_id: str,
 	) -> AddCopyRequest:
-		from .add_copy import AddCopyRequest
-		return AddCopyRequest(self.request_adapter, self.path_parameters)
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
 
-	@property
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+
+		from .add_copy import AddCopyRequest
+		return AddCopyRequest(self.request_adapter, path_parameters)
+
 	def add_copy_from_content_type_hub(self,
+		drive_id: str,
 	) -> AddCopyFromContentTypeHubRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+
 		from .add_copy_from_content_type_hub import AddCopyFromContentTypeHubRequest
-		return AddCopyFromContentTypeHubRequest(self.request_adapter, self.path_parameters)
+		return AddCopyFromContentTypeHubRequest(self.request_adapter, path_parameters)
+
+	def get_compatible_hub_content_types(self,
+		drive_id: str,
+	) -> GetCompatibleHubContentTypesRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+
+		from .get_compatible_hub_content_types import GetCompatibleHubContentTypesRequest
+		return GetCompatibleHubContentTypesRequest(self.request_adapter, path_parameters)
 

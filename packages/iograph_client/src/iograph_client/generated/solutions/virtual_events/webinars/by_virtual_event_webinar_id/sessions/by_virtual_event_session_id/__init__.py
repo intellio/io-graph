@@ -1,6 +1,7 @@
 # Auto-generated client
 
 from __future__ import annotations
+from kiota_abstractions.get_path_parameters import get_path_parameters
 from kiota_abstractions.method import Method
 from kiota_abstractions.base_request_builder import BaseRequestBuilder
 from kiota_abstractions.base_request_configuration import RequestConfiguration
@@ -111,9 +112,19 @@ class ByVirtualEventSessionIdRequest(BaseRequestBuilder):
 			raise TypeError("raw_url cannot be None.")
 		return ByVirtualEventSessionIdRequest(self.request_adapter, self.path_parameters)
 
-	@property
 	def attendance_reports(self,
+		virtualEventWebinar_id: str,
+		virtualEventSession_id: str,
 	) -> AttendanceReportsRequest:
+		if virtualEventWebinar_id is None:
+			raise TypeError("virtualEventWebinar_id cannot be null.")
+		if virtualEventSession_id is None:
+			raise TypeError("virtualEventSession_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["virtualEventWebinar%2Did"] =  virtualEventWebinar_id
+		path_parameters["virtualEventSession%2Did"] =  virtualEventSession_id
+
 		from .attendance_reports import AttendanceReportsRequest
-		return AttendanceReportsRequest(self.request_adapter, self.path_parameters)
+		return AttendanceReportsRequest(self.request_adapter, path_parameters)
 

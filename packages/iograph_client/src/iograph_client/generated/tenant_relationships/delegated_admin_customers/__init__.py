@@ -15,8 +15,8 @@ if TYPE_CHECKING:
 	from .by_delegated_admin_customer_id import ByDelegatedAdminCustomerIdRequest
 	from ....request_adapter import HttpxRequestAdapter
 from iograph_models.models.delegated_admin_customer import DelegatedAdminCustomer
-from iograph_models.models.delegated_admin_customer_collection_response import DelegatedAdminCustomerCollectionResponse
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.models.delegated_admin_customer_collection_response import DelegatedAdminCustomerCollectionResponse
 
 
 class DelegatedAdminCustomersRequest(BaseRequestBuilder):

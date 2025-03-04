@@ -1,6 +1,7 @@
 # Auto-generated client
 
 from __future__ import annotations
+from kiota_abstractions.get_path_parameters import get_path_parameters
 from kiota_abstractions.method import Method
 from kiota_abstractions.base_request_builder import BaseRequestBuilder
 from kiota_abstractions.base_request_configuration import RequestConfiguration
@@ -11,12 +12,13 @@ from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:
 	from .get_schedule import GetScheduleRequest
+	from .allowed_calendar_sharing_roles import AllowedCalendarSharingRolesRequest
 	from .events import EventsRequest
 	from .calendar_view import CalendarViewRequest
 	from .calendar_permissions import CalendarPermissionsRequest
 	from .....request_adapter import HttpxRequestAdapter
-from iograph_models.models.calendar import Calendar
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.models.calendar import Calendar
 
 
 class CalendarRequest(BaseRequestBuilder):
@@ -86,27 +88,67 @@ class CalendarRequest(BaseRequestBuilder):
 			raise TypeError("raw_url cannot be None.")
 		return CalendarRequest(self.request_adapter, self.path_parameters)
 
-	@property
 	def calendar_permissions(self,
+		user_id: str,
 	) -> CalendarPermissionsRequest:
+		if user_id is None:
+			raise TypeError("user_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["user%2Did"] =  user_id
+
 		from .calendar_permissions import CalendarPermissionsRequest
-		return CalendarPermissionsRequest(self.request_adapter, self.path_parameters)
+		return CalendarPermissionsRequest(self.request_adapter, path_parameters)
 
-	@property
 	def calendar_view(self,
+		user_id: str,
 	) -> CalendarViewRequest:
+		if user_id is None:
+			raise TypeError("user_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["user%2Did"] =  user_id
+
 		from .calendar_view import CalendarViewRequest
-		return CalendarViewRequest(self.request_adapter, self.path_parameters)
+		return CalendarViewRequest(self.request_adapter, path_parameters)
 
-	@property
 	def events(self,
+		user_id: str,
 	) -> EventsRequest:
-		from .events import EventsRequest
-		return EventsRequest(self.request_adapter, self.path_parameters)
+		if user_id is None:
+			raise TypeError("user_id cannot be null.")
 
-	@property
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["user%2Did"] =  user_id
+
+		from .events import EventsRequest
+		return EventsRequest(self.request_adapter, path_parameters)
+
+	def allowed_calendar_sharing_roles(self,
+		user_id: str,
+		User: str,
+	) -> AllowedCalendarSharingRolesRequest:
+		if user_id is None:
+			raise TypeError("user_id cannot be null.")
+		if User is None:
+			raise TypeError("User cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["user%2Did"] =  user_id
+		path_parameters["User"] =  User
+
+		from .allowed_calendar_sharing_roles import AllowedCalendarSharingRolesRequest
+		return AllowedCalendarSharingRolesRequest(self.request_adapter, path_parameters)
+
 	def get_schedule(self,
+		user_id: str,
 	) -> GetScheduleRequest:
+		if user_id is None:
+			raise TypeError("user_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["user%2Did"] =  user_id
+
 		from .get_schedule import GetScheduleRequest
-		return GetScheduleRequest(self.request_adapter, self.path_parameters)
+		return GetScheduleRequest(self.request_adapter, path_parameters)
 

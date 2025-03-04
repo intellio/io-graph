@@ -11,13 +11,14 @@ from typing import Union, Any, Optional
 from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:
+	from .get_recent_notebooks import GetRecentNotebooksRequest
 	from .get_notebook_from_web_url import GetNotebookFromWebUrlRequest
 	from .count import CountRequest
 	from .by_notebook_id import ByNotebookIdRequest
 	from ........request_adapter import HttpxRequestAdapter
+from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.models.notebook_collection_response import NotebookCollectionResponse
 from iograph_models.models.notebook import Notebook
-from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
 
 
 class NotebooksRequest(BaseRequestBuilder):
@@ -113,15 +114,55 @@ class NotebooksRequest(BaseRequestBuilder):
 		from .by_notebook_id import ByNotebookIdRequest
 		return ByNotebookIdRequest(self.request_adapter, path_parameters)
 
-	@property
 	def count(self,
+		group_id: str,
+		site_id: str,
 	) -> CountRequest:
-		from .count import CountRequest
-		return CountRequest(self.request_adapter, self.path_parameters)
+		if group_id is None:
+			raise TypeError("group_id cannot be null.")
+		if site_id is None:
+			raise TypeError("site_id cannot be null.")
 
-	@property
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["group%2Did"] =  group_id
+		path_parameters["site%2Did"] =  site_id
+
+		from .count import CountRequest
+		return CountRequest(self.request_adapter, path_parameters)
+
 	def get_notebook_from_web_url(self,
+		group_id: str,
+		site_id: str,
 	) -> GetNotebookFromWebUrlRequest:
+		if group_id is None:
+			raise TypeError("group_id cannot be null.")
+		if site_id is None:
+			raise TypeError("site_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["group%2Did"] =  group_id
+		path_parameters["site%2Did"] =  site_id
+
 		from .get_notebook_from_web_url import GetNotebookFromWebUrlRequest
-		return GetNotebookFromWebUrlRequest(self.request_adapter, self.path_parameters)
+		return GetNotebookFromWebUrlRequest(self.request_adapter, path_parameters)
+
+	def get_recent_notebooks(self,
+		group_id: str,
+		site_id: str,
+		includePersonalNotebooks: bool,
+	) -> GetRecentNotebooksRequest:
+		if group_id is None:
+			raise TypeError("group_id cannot be null.")
+		if site_id is None:
+			raise TypeError("site_id cannot be null.")
+		if includePersonalNotebooks is None:
+			raise TypeError("includePersonalNotebooks cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["group%2Did"] =  group_id
+		path_parameters["site%2Did"] =  site_id
+		path_parameters["includePersonalNotebooks"] =  includePersonalNotebooks
+
+		from .get_recent_notebooks import GetRecentNotebooksRequest
+		return GetRecentNotebooksRequest(self.request_adapter, path_parameters)
 

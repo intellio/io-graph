@@ -1,6 +1,7 @@
 # Auto-generated client
 
 from __future__ import annotations
+from kiota_abstractions.get_path_parameters import get_path_parameters
 from kiota_abstractions.method import Method
 from kiota_abstractions.base_request_builder import BaseRequestBuilder
 from kiota_abstractions.base_request_configuration import RequestConfiguration
@@ -112,27 +113,51 @@ class ByAccessPackageAssignmentIdRequest(BaseRequestBuilder):
 			raise TypeError("raw_url cannot be None.")
 		return ByAccessPackageAssignmentIdRequest(self.request_adapter, self.path_parameters)
 
-	@property
 	def access_package(self,
+		accessPackageAssignment_id: str,
 	) -> AccessPackageRequest:
+		if accessPackageAssignment_id is None:
+			raise TypeError("accessPackageAssignment_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["accessPackageAssignment%2Did"] =  accessPackageAssignment_id
+
 		from .access_package import AccessPackageRequest
-		return AccessPackageRequest(self.request_adapter, self.path_parameters)
+		return AccessPackageRequest(self.request_adapter, path_parameters)
 
-	@property
 	def assignment_policy(self,
+		accessPackageAssignment_id: str,
 	) -> AssignmentPolicyRequest:
+		if accessPackageAssignment_id is None:
+			raise TypeError("accessPackageAssignment_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["accessPackageAssignment%2Did"] =  accessPackageAssignment_id
+
 		from .assignment_policy import AssignmentPolicyRequest
-		return AssignmentPolicyRequest(self.request_adapter, self.path_parameters)
+		return AssignmentPolicyRequest(self.request_adapter, path_parameters)
 
-	@property
 	def reprocess(self,
+		accessPackageAssignment_id: str,
 	) -> ReprocessRequest:
-		from .reprocess import ReprocessRequest
-		return ReprocessRequest(self.request_adapter, self.path_parameters)
+		if accessPackageAssignment_id is None:
+			raise TypeError("accessPackageAssignment_id cannot be null.")
 
-	@property
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["accessPackageAssignment%2Did"] =  accessPackageAssignment_id
+
+		from .reprocess import ReprocessRequest
+		return ReprocessRequest(self.request_adapter, path_parameters)
+
 	def target(self,
+		accessPackageAssignment_id: str,
 	) -> TargetRequest:
+		if accessPackageAssignment_id is None:
+			raise TypeError("accessPackageAssignment_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["accessPackageAssignment%2Did"] =  accessPackageAssignment_id
+
 		from .target import TargetRequest
-		return TargetRequest(self.request_adapter, self.path_parameters)
+		return TargetRequest(self.request_adapter, path_parameters)
 

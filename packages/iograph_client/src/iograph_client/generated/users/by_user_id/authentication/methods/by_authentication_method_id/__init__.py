@@ -1,6 +1,7 @@
 # Auto-generated client
 
 from __future__ import annotations
+from kiota_abstractions.get_path_parameters import get_path_parameters
 from kiota_abstractions.method import Method
 from kiota_abstractions.base_request_builder import BaseRequestBuilder
 from kiota_abstractions.base_request_configuration import RequestConfiguration
@@ -12,8 +13,8 @@ from typing import TYPE_CHECKING
 if TYPE_CHECKING:
 	from .reset_password import ResetPasswordRequest
 	from .......request_adapter import HttpxRequestAdapter
-from iograph_models.models.authentication_method import AuthenticationMethod
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.models.authentication_method import AuthenticationMethod
 
 
 class ByAuthenticationMethodIdRequest(BaseRequestBuilder):
@@ -83,9 +84,19 @@ class ByAuthenticationMethodIdRequest(BaseRequestBuilder):
 			raise TypeError("raw_url cannot be None.")
 		return ByAuthenticationMethodIdRequest(self.request_adapter, self.path_parameters)
 
-	@property
 	def reset_password(self,
+		user_id: str,
+		authenticationMethod_id: str,
 	) -> ResetPasswordRequest:
+		if user_id is None:
+			raise TypeError("user_id cannot be null.")
+		if authenticationMethod_id is None:
+			raise TypeError("authenticationMethod_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["user%2Did"] =  user_id
+		path_parameters["authenticationMethod%2Did"] =  authenticationMethod_id
+
 		from .reset_password import ResetPasswordRequest
-		return ResetPasswordRequest(self.request_adapter, self.path_parameters)
+		return ResetPasswordRequest(self.request_adapter, path_parameters)
 

@@ -14,8 +14,8 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_intelligence_profile_indicator_id import ByIntelligenceProfileIndicatorIdRequest
 	from .......request_adapter import HttpxRequestAdapter
-from iograph_models.models.security_intelligence_profile_indicator_collection_response import SecurityIntelligenceProfileIndicatorCollectionResponse
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.models.security_intelligence_profile_indicator_collection_response import SecurityIntelligenceProfileIndicatorCollectionResponse
 
 
 class IndicatorsRequest(BaseRequestBuilder):
@@ -82,9 +82,15 @@ class IndicatorsRequest(BaseRequestBuilder):
 		from .by_intelligence_profile_indicator_id import ByIntelligenceProfileIndicatorIdRequest
 		return ByIntelligenceProfileIndicatorIdRequest(self.request_adapter, path_parameters)
 
-	@property
 	def count(self,
+		intelligenceProfile_id: str,
 	) -> CountRequest:
+		if intelligenceProfile_id is None:
+			raise TypeError("intelligenceProfile_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["intelligenceProfile%2Did"] =  intelligenceProfile_id
+
 		from .count import CountRequest
-		return CountRequest(self.request_adapter, self.path_parameters)
+		return CountRequest(self.request_adapter, path_parameters)
 

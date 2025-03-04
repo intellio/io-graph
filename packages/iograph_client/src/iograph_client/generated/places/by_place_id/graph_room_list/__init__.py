@@ -1,6 +1,7 @@
 # Auto-generated client
 
 from __future__ import annotations
+from kiota_abstractions.get_path_parameters import get_path_parameters
 from kiota_abstractions.method import Method
 from kiota_abstractions.base_request_builder import BaseRequestBuilder
 from kiota_abstractions.base_request_configuration import RequestConfiguration
@@ -57,9 +58,15 @@ class GraphRoomListRequest(BaseRequestBuilder):
 			raise TypeError("raw_url cannot be None.")
 		return GraphRoomListRequest(self.request_adapter, self.path_parameters)
 
-	@property
 	def rooms(self,
+		place_id: str,
 	) -> RoomsRequest:
+		if place_id is None:
+			raise TypeError("place_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["place%2Did"] =  place_id
+
 		from .rooms import RoomsRequest
-		return RoomsRequest(self.request_adapter, self.path_parameters)
+		return RoomsRequest(self.request_adapter, path_parameters)
 

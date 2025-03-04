@@ -1,6 +1,7 @@
 # Auto-generated client
 
 from __future__ import annotations
+from kiota_abstractions.get_path_parameters import get_path_parameters
 from kiota_abstractions.method import Method
 from kiota_abstractions.base_request_builder import BaseRequestBuilder
 from kiota_abstractions.base_request_configuration import RequestConfiguration
@@ -108,9 +109,15 @@ class ByUserExperienceAnalyticsCategoryIdRequest(BaseRequestBuilder):
 			raise TypeError("raw_url cannot be None.")
 		return ByUserExperienceAnalyticsCategoryIdRequest(self.request_adapter, self.path_parameters)
 
-	@property
 	def metric_values(self,
+		userExperienceAnalyticsCategory_id: str,
 	) -> MetricValuesRequest:
+		if userExperienceAnalyticsCategory_id is None:
+			raise TypeError("userExperienceAnalyticsCategory_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["userExperienceAnalyticsCategory%2Did"] =  userExperienceAnalyticsCategory_id
+
 		from .metric_values import MetricValuesRequest
-		return MetricValuesRequest(self.request_adapter, self.path_parameters)
+		return MetricValuesRequest(self.request_adapter, path_parameters)
 

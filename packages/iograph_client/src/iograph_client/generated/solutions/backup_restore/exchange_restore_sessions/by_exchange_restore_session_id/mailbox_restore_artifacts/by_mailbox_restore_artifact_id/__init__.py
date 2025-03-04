@@ -1,6 +1,7 @@
 # Auto-generated client
 
 from __future__ import annotations
+from kiota_abstractions.get_path_parameters import get_path_parameters
 from kiota_abstractions.method import Method
 from kiota_abstractions.base_request_builder import BaseRequestBuilder
 from kiota_abstractions.base_request_configuration import RequestConfiguration
@@ -108,9 +109,19 @@ class ByMailboxRestoreArtifactIdRequest(BaseRequestBuilder):
 			raise TypeError("raw_url cannot be None.")
 		return ByMailboxRestoreArtifactIdRequest(self.request_adapter, self.path_parameters)
 
-	@property
 	def restore_point(self,
+		exchangeRestoreSession_id: str,
+		mailboxRestoreArtifact_id: str,
 	) -> RestorePointRequest:
+		if exchangeRestoreSession_id is None:
+			raise TypeError("exchangeRestoreSession_id cannot be null.")
+		if mailboxRestoreArtifact_id is None:
+			raise TypeError("mailboxRestoreArtifact_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["exchangeRestoreSession%2Did"] =  exchangeRestoreSession_id
+		path_parameters["mailboxRestoreArtifact%2Did"] =  mailboxRestoreArtifact_id
+
 		from .restore_point import RestorePointRequest
-		return RestorePointRequest(self.request_adapter, self.path_parameters)
+		return RestorePointRequest(self.request_adapter, path_parameters)
 

@@ -14,12 +14,13 @@ if TYPE_CHECKING:
 	from .validate_properties import ValidatePropertiesRequest
 	from .get_by_ids import GetByIdsRequest
 	from .get_available_extension_properties import GetAvailableExtensionPropertiesRequest
+	from .delta import DeltaRequest
 	from .count import CountRequest
 	from .by_contract_id import ByContractIdRequest
 	from ...request_adapter import HttpxRequestAdapter
-from iograph_models.models.contract_collection_response import ContractCollectionResponse
 from iograph_models.models.contract import Contract
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.models.contract_collection_response import ContractCollectionResponse
 
 
 class ContractsRequest(BaseRequestBuilder):
@@ -113,6 +114,12 @@ class ContractsRequest(BaseRequestBuilder):
 	) -> CountRequest:
 		from .count import CountRequest
 		return CountRequest(self.request_adapter, self.path_parameters)
+
+	@property
+	def delta(self,
+	) -> DeltaRequest:
+		from .delta import DeltaRequest
+		return DeltaRequest(self.request_adapter, self.path_parameters)
 
 	@property
 	def get_available_extension_properties(self,

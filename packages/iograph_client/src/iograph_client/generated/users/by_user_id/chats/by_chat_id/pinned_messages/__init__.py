@@ -15,8 +15,8 @@ if TYPE_CHECKING:
 	from .by_pinned_chat_message_info_id import ByPinnedChatMessageInfoIdRequest
 	from .......request_adapter import HttpxRequestAdapter
 from iograph_models.models.pinned_chat_message_info_collection_response import PinnedChatMessageInfoCollectionResponse
-from iograph_models.models.pinned_chat_message_info import PinnedChatMessageInfo
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.models.pinned_chat_message_info import PinnedChatMessageInfo
 
 
 class PinnedMessagesRequest(BaseRequestBuilder):
@@ -112,9 +112,19 @@ class PinnedMessagesRequest(BaseRequestBuilder):
 		from .by_pinned_chat_message_info_id import ByPinnedChatMessageInfoIdRequest
 		return ByPinnedChatMessageInfoIdRequest(self.request_adapter, path_parameters)
 
-	@property
 	def count(self,
+		user_id: str,
+		chat_id: str,
 	) -> CountRequest:
+		if user_id is None:
+			raise TypeError("user_id cannot be null.")
+		if chat_id is None:
+			raise TypeError("chat_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["user%2Did"] =  user_id
+		path_parameters["chat%2Did"] =  chat_id
+
 		from .count import CountRequest
-		return CountRequest(self.request_adapter, self.path_parameters)
+		return CountRequest(self.request_adapter, path_parameters)
 

@@ -1,6 +1,7 @@
 # Auto-generated client
 
 from __future__ import annotations
+from kiota_abstractions.get_path_parameters import get_path_parameters
 from kiota_abstractions.method import Method
 from kiota_abstractions.base_request_builder import BaseRequestBuilder
 from kiota_abstractions.base_request_configuration import RequestConfiguration
@@ -111,9 +112,15 @@ class BySensorIdRequest(BaseRequestBuilder):
 			raise TypeError("raw_url cannot be None.")
 		return BySensorIdRequest(self.request_adapter, self.path_parameters)
 
-	@property
 	def health_issues(self,
+		sensor_id: str,
 	) -> HealthIssuesRequest:
+		if sensor_id is None:
+			raise TypeError("sensor_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["sensor%2Did"] =  sensor_id
+
 		from .health_issues import HealthIssuesRequest
-		return HealthIssuesRequest(self.request_adapter, self.path_parameters)
+		return HealthIssuesRequest(self.request_adapter, path_parameters)
 

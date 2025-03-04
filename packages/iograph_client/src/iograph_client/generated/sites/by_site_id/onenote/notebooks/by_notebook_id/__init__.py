@@ -1,6 +1,7 @@
 # Auto-generated client
 
 from __future__ import annotations
+from kiota_abstractions.get_path_parameters import get_path_parameters
 from kiota_abstractions.method import Method
 from kiota_abstractions.base_request_builder import BaseRequestBuilder
 from kiota_abstractions.base_request_configuration import RequestConfiguration
@@ -14,8 +15,8 @@ if TYPE_CHECKING:
 	from .section_groups import SectionGroupsRequest
 	from .copy_notebook import CopyNotebookRequest
 	from .......request_adapter import HttpxRequestAdapter
-from iograph_models.models.notebook import Notebook
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.models.notebook import Notebook
 
 
 class ByNotebookIdRequest(BaseRequestBuilder):
@@ -110,21 +111,51 @@ class ByNotebookIdRequest(BaseRequestBuilder):
 			raise TypeError("raw_url cannot be None.")
 		return ByNotebookIdRequest(self.request_adapter, self.path_parameters)
 
-	@property
 	def copy_notebook(self,
+		site_id: str,
+		notebook_id: str,
 	) -> CopyNotebookRequest:
+		if site_id is None:
+			raise TypeError("site_id cannot be null.")
+		if notebook_id is None:
+			raise TypeError("notebook_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["site%2Did"] =  site_id
+		path_parameters["notebook%2Did"] =  notebook_id
+
 		from .copy_notebook import CopyNotebookRequest
-		return CopyNotebookRequest(self.request_adapter, self.path_parameters)
+		return CopyNotebookRequest(self.request_adapter, path_parameters)
 
-	@property
 	def section_groups(self,
+		site_id: str,
+		notebook_id: str,
 	) -> SectionGroupsRequest:
-		from .section_groups import SectionGroupsRequest
-		return SectionGroupsRequest(self.request_adapter, self.path_parameters)
+		if site_id is None:
+			raise TypeError("site_id cannot be null.")
+		if notebook_id is None:
+			raise TypeError("notebook_id cannot be null.")
 
-	@property
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["site%2Did"] =  site_id
+		path_parameters["notebook%2Did"] =  notebook_id
+
+		from .section_groups import SectionGroupsRequest
+		return SectionGroupsRequest(self.request_adapter, path_parameters)
+
 	def sections(self,
+		site_id: str,
+		notebook_id: str,
 	) -> SectionsRequest:
+		if site_id is None:
+			raise TypeError("site_id cannot be null.")
+		if notebook_id is None:
+			raise TypeError("notebook_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["site%2Did"] =  site_id
+		path_parameters["notebook%2Did"] =  notebook_id
+
 		from .sections import SectionsRequest
-		return SectionsRequest(self.request_adapter, self.path_parameters)
+		return SectionsRequest(self.request_adapter, path_parameters)
 

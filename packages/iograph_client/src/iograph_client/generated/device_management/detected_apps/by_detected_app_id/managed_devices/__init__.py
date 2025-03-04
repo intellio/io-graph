@@ -81,9 +81,15 @@ class ManagedDevicesRequest(BaseRequestBuilder):
 		from .by_managed_device_id import ByManagedDeviceIdRequest
 		return ByManagedDeviceIdRequest(self.request_adapter, path_parameters)
 
-	@property
 	def count(self,
+		detectedApp_id: str,
 	) -> CountRequest:
+		if detectedApp_id is None:
+			raise TypeError("detectedApp_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["detectedApp%2Did"] =  detectedApp_id
+
 		from .count import CountRequest
-		return CountRequest(self.request_adapter, self.path_parameters)
+		return CountRequest(self.request_adapter, path_parameters)
 

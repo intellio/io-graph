@@ -1,6 +1,7 @@
 # Auto-generated client
 
 from __future__ import annotations
+from kiota_abstractions.get_path_parameters import get_path_parameters
 from kiota_abstractions.method import Method
 from kiota_abstractions.base_request_builder import BaseRequestBuilder
 from kiota_abstractions.base_request_configuration import RequestConfiguration
@@ -22,8 +23,8 @@ if TYPE_CHECKING:
 	from .graph_application import GraphApplicationRequest
 	from .graph_administrative_unit import GraphAdministrativeUnitRequest
 	from .....request_adapter import HttpxRequestAdapter
-from iograph_models.models.directory_object import DirectoryObject
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.models.directory_object import DirectoryObject
 
 
 class ByDirectoryObjectIdRequest(BaseRequestBuilder):
@@ -94,69 +95,135 @@ class ByDirectoryObjectIdRequest(BaseRequestBuilder):
 			raise TypeError("raw_url cannot be None.")
 		return ByDirectoryObjectIdRequest(self.request_adapter, self.path_parameters)
 
-	@property
 	def graph_administrative_unit(self,
+		directoryObject_id: str,
 	) -> GraphAdministrativeUnitRequest:
+		if directoryObject_id is None:
+			raise TypeError("directoryObject_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["directoryObject%2Did"] =  directoryObject_id
+
 		from .graph_administrative_unit import GraphAdministrativeUnitRequest
-		return GraphAdministrativeUnitRequest(self.request_adapter, self.path_parameters)
+		return GraphAdministrativeUnitRequest(self.request_adapter, path_parameters)
 
-	@property
 	def graph_application(self,
+		directoryObject_id: str,
 	) -> GraphApplicationRequest:
+		if directoryObject_id is None:
+			raise TypeError("directoryObject_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["directoryObject%2Did"] =  directoryObject_id
+
 		from .graph_application import GraphApplicationRequest
-		return GraphApplicationRequest(self.request_adapter, self.path_parameters)
+		return GraphApplicationRequest(self.request_adapter, path_parameters)
 
-	@property
 	def check_member_groups(self,
+		directoryObject_id: str,
 	) -> CheckMemberGroupsRequest:
+		if directoryObject_id is None:
+			raise TypeError("directoryObject_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["directoryObject%2Did"] =  directoryObject_id
+
 		from .check_member_groups import CheckMemberGroupsRequest
-		return CheckMemberGroupsRequest(self.request_adapter, self.path_parameters)
+		return CheckMemberGroupsRequest(self.request_adapter, path_parameters)
 
-	@property
 	def check_member_objects(self,
+		directoryObject_id: str,
 	) -> CheckMemberObjectsRequest:
+		if directoryObject_id is None:
+			raise TypeError("directoryObject_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["directoryObject%2Did"] =  directoryObject_id
+
 		from .check_member_objects import CheckMemberObjectsRequest
-		return CheckMemberObjectsRequest(self.request_adapter, self.path_parameters)
+		return CheckMemberObjectsRequest(self.request_adapter, path_parameters)
 
-	@property
 	def graph_device(self,
+		directoryObject_id: str,
 	) -> GraphDeviceRequest:
+		if directoryObject_id is None:
+			raise TypeError("directoryObject_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["directoryObject%2Did"] =  directoryObject_id
+
 		from .graph_device import GraphDeviceRequest
-		return GraphDeviceRequest(self.request_adapter, self.path_parameters)
+		return GraphDeviceRequest(self.request_adapter, path_parameters)
 
-	@property
 	def get_member_groups(self,
+		directoryObject_id: str,
 	) -> GetMemberGroupsRequest:
+		if directoryObject_id is None:
+			raise TypeError("directoryObject_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["directoryObject%2Did"] =  directoryObject_id
+
 		from .get_member_groups import GetMemberGroupsRequest
-		return GetMemberGroupsRequest(self.request_adapter, self.path_parameters)
+		return GetMemberGroupsRequest(self.request_adapter, path_parameters)
 
-	@property
 	def get_member_objects(self,
+		directoryObject_id: str,
 	) -> GetMemberObjectsRequest:
+		if directoryObject_id is None:
+			raise TypeError("directoryObject_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["directoryObject%2Did"] =  directoryObject_id
+
 		from .get_member_objects import GetMemberObjectsRequest
-		return GetMemberObjectsRequest(self.request_adapter, self.path_parameters)
+		return GetMemberObjectsRequest(self.request_adapter, path_parameters)
 
-	@property
 	def graph_group(self,
+		directoryObject_id: str,
 	) -> GraphGroupRequest:
+		if directoryObject_id is None:
+			raise TypeError("directoryObject_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["directoryObject%2Did"] =  directoryObject_id
+
 		from .graph_group import GraphGroupRequest
-		return GraphGroupRequest(self.request_adapter, self.path_parameters)
+		return GraphGroupRequest(self.request_adapter, path_parameters)
 
-	@property
 	def restore(self,
+		directoryObject_id: str,
 	) -> RestoreRequest:
+		if directoryObject_id is None:
+			raise TypeError("directoryObject_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["directoryObject%2Did"] =  directoryObject_id
+
 		from .restore import RestoreRequest
-		return RestoreRequest(self.request_adapter, self.path_parameters)
+		return RestoreRequest(self.request_adapter, path_parameters)
 
-	@property
 	def graph_service_principal(self,
+		directoryObject_id: str,
 	) -> GraphServicePrincipalRequest:
-		from .graph_service_principal import GraphServicePrincipalRequest
-		return GraphServicePrincipalRequest(self.request_adapter, self.path_parameters)
+		if directoryObject_id is None:
+			raise TypeError("directoryObject_id cannot be null.")
 
-	@property
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["directoryObject%2Did"] =  directoryObject_id
+
+		from .graph_service_principal import GraphServicePrincipalRequest
+		return GraphServicePrincipalRequest(self.request_adapter, path_parameters)
+
 	def graph_user(self,
+		directoryObject_id: str,
 	) -> GraphUserRequest:
+		if directoryObject_id is None:
+			raise TypeError("directoryObject_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["directoryObject%2Did"] =  directoryObject_id
+
 		from .graph_user import GraphUserRequest
-		return GraphUserRequest(self.request_adapter, self.path_parameters)
+		return GraphUserRequest(self.request_adapter, path_parameters)
 

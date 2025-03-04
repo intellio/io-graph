@@ -1,6 +1,7 @@
 # Auto-generated client
 
 from __future__ import annotations
+from kiota_abstractions.get_path_parameters import get_path_parameters
 from kiota_abstractions.method import Method
 from kiota_abstractions.base_request_builder import BaseRequestBuilder
 from kiota_abstractions.base_request_configuration import RequestConfiguration
@@ -13,8 +14,8 @@ if TYPE_CHECKING:
 	from .overrides_pages import OverridesPagesRequest
 	from .default_pages import DefaultPagesRequest
 	from .......request_adapter import HttpxRequestAdapter
-from iograph_models.models.user_flow_language_configuration import UserFlowLanguageConfiguration
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.models.user_flow_language_configuration import UserFlowLanguageConfiguration
 
 
 class ByUserFlowLanguageConfigurationIdRequest(BaseRequestBuilder):
@@ -110,15 +111,35 @@ class ByUserFlowLanguageConfigurationIdRequest(BaseRequestBuilder):
 			raise TypeError("raw_url cannot be None.")
 		return ByUserFlowLanguageConfigurationIdRequest(self.request_adapter, self.path_parameters)
 
-	@property
 	def default_pages(self,
+		b2xIdentityUserFlow_id: str,
+		userFlowLanguageConfiguration_id: str,
 	) -> DefaultPagesRequest:
-		from .default_pages import DefaultPagesRequest
-		return DefaultPagesRequest(self.request_adapter, self.path_parameters)
+		if b2xIdentityUserFlow_id is None:
+			raise TypeError("b2xIdentityUserFlow_id cannot be null.")
+		if userFlowLanguageConfiguration_id is None:
+			raise TypeError("userFlowLanguageConfiguration_id cannot be null.")
 
-	@property
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["b2xIdentityUserFlow%2Did"] =  b2xIdentityUserFlow_id
+		path_parameters["userFlowLanguageConfiguration%2Did"] =  userFlowLanguageConfiguration_id
+
+		from .default_pages import DefaultPagesRequest
+		return DefaultPagesRequest(self.request_adapter, path_parameters)
+
 	def overrides_pages(self,
+		b2xIdentityUserFlow_id: str,
+		userFlowLanguageConfiguration_id: str,
 	) -> OverridesPagesRequest:
+		if b2xIdentityUserFlow_id is None:
+			raise TypeError("b2xIdentityUserFlow_id cannot be null.")
+		if userFlowLanguageConfiguration_id is None:
+			raise TypeError("userFlowLanguageConfiguration_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["b2xIdentityUserFlow%2Did"] =  b2xIdentityUserFlow_id
+		path_parameters["userFlowLanguageConfiguration%2Did"] =  userFlowLanguageConfiguration_id
+
 		from .overrides_pages import OverridesPagesRequest
-		return OverridesPagesRequest(self.request_adapter, self.path_parameters)
+		return OverridesPagesRequest(self.request_adapter, path_parameters)
 

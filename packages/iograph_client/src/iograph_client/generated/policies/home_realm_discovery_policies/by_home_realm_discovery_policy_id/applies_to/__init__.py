@@ -82,9 +82,15 @@ class AppliesToRequest(BaseRequestBuilder):
 		from .by_directory_object_id import ByDirectoryObjectIdRequest
 		return ByDirectoryObjectIdRequest(self.request_adapter, path_parameters)
 
-	@property
 	def count(self,
+		homeRealmDiscoveryPolicy_id: str,
 	) -> CountRequest:
+		if homeRealmDiscoveryPolicy_id is None:
+			raise TypeError("homeRealmDiscoveryPolicy_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["homeRealmDiscoveryPolicy%2Did"] =  homeRealmDiscoveryPolicy_id
+
 		from .count import CountRequest
-		return CountRequest(self.request_adapter, self.path_parameters)
+		return CountRequest(self.request_adapter, path_parameters)
 

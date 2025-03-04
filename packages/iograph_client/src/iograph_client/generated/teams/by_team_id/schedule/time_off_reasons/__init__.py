@@ -15,8 +15,8 @@ if TYPE_CHECKING:
 	from .by_time_off_reason_id import ByTimeOffReasonIdRequest
 	from ......request_adapter import HttpxRequestAdapter
 from iograph_models.models.time_off_reason_collection_response import TimeOffReasonCollectionResponse
-from iograph_models.models.time_off_reason import TimeOffReason
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.models.time_off_reason import TimeOffReason
 
 
 class TimeOffReasonsRequest(BaseRequestBuilder):
@@ -110,9 +110,15 @@ class TimeOffReasonsRequest(BaseRequestBuilder):
 		from .by_time_off_reason_id import ByTimeOffReasonIdRequest
 		return ByTimeOffReasonIdRequest(self.request_adapter, path_parameters)
 
-	@property
 	def count(self,
+		team_id: str,
 	) -> CountRequest:
+		if team_id is None:
+			raise TypeError("team_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["team%2Did"] =  team_id
+
 		from .count import CountRequest
-		return CountRequest(self.request_adapter, self.path_parameters)
+		return CountRequest(self.request_adapter, path_parameters)
 

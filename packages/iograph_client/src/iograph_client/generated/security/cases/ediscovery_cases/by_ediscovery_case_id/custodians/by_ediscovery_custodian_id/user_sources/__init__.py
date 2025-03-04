@@ -15,8 +15,8 @@ if TYPE_CHECKING:
 	from .by_user_source_id import ByUserSourceIdRequest
 	from .........request_adapter import HttpxRequestAdapter
 from iograph_models.models.security_user_source import SecurityUserSource
-from iograph_models.models.security_user_source_collection_response import SecurityUserSourceCollectionResponse
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.models.security_user_source_collection_response import SecurityUserSourceCollectionResponse
 
 
 class UserSourcesRequest(BaseRequestBuilder):
@@ -114,9 +114,19 @@ class UserSourcesRequest(BaseRequestBuilder):
 		from .by_user_source_id import ByUserSourceIdRequest
 		return ByUserSourceIdRequest(self.request_adapter, path_parameters)
 
-	@property
 	def count(self,
+		ediscoveryCase_id: str,
+		ediscoveryCustodian_id: str,
 	) -> CountRequest:
+		if ediscoveryCase_id is None:
+			raise TypeError("ediscoveryCase_id cannot be null.")
+		if ediscoveryCustodian_id is None:
+			raise TypeError("ediscoveryCustodian_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["ediscoveryCase%2Did"] =  ediscoveryCase_id
+		path_parameters["ediscoveryCustodian%2Did"] =  ediscoveryCustodian_id
+
 		from .count import CountRequest
-		return CountRequest(self.request_adapter, self.path_parameters)
+		return CountRequest(self.request_adapter, path_parameters)
 

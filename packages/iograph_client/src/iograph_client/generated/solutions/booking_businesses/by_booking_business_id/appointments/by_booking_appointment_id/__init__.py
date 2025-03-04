@@ -1,6 +1,7 @@
 # Auto-generated client
 
 from __future__ import annotations
+from kiota_abstractions.get_path_parameters import get_path_parameters
 from kiota_abstractions.method import Method
 from kiota_abstractions.base_request_builder import BaseRequestBuilder
 from kiota_abstractions.base_request_configuration import RequestConfiguration
@@ -12,8 +13,8 @@ from typing import TYPE_CHECKING
 if TYPE_CHECKING:
 	from .cancel import CancelRequest
 	from .......request_adapter import HttpxRequestAdapter
-from iograph_models.models.booking_appointment import BookingAppointment
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.models.booking_appointment import BookingAppointment
 
 
 class ByBookingAppointmentIdRequest(BaseRequestBuilder):
@@ -111,9 +112,19 @@ class ByBookingAppointmentIdRequest(BaseRequestBuilder):
 			raise TypeError("raw_url cannot be None.")
 		return ByBookingAppointmentIdRequest(self.request_adapter, self.path_parameters)
 
-	@property
 	def cancel(self,
+		bookingBusiness_id: str,
+		bookingAppointment_id: str,
 	) -> CancelRequest:
+		if bookingBusiness_id is None:
+			raise TypeError("bookingBusiness_id cannot be null.")
+		if bookingAppointment_id is None:
+			raise TypeError("bookingAppointment_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["bookingBusiness%2Did"] =  bookingBusiness_id
+		path_parameters["bookingAppointment%2Did"] =  bookingAppointment_id
+
 		from .cancel import CancelRequest
-		return CancelRequest(self.request_adapter, self.path_parameters)
+		return CancelRequest(self.request_adapter, path_parameters)
 

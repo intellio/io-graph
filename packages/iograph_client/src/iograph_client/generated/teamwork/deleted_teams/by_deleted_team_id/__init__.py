@@ -1,6 +1,7 @@
 # Auto-generated client
 
 from __future__ import annotations
+from kiota_abstractions.get_path_parameters import get_path_parameters
 from kiota_abstractions.method import Method
 from kiota_abstractions.base_request_builder import BaseRequestBuilder
 from kiota_abstractions.base_request_configuration import RequestConfiguration
@@ -12,8 +13,8 @@ from typing import TYPE_CHECKING
 if TYPE_CHECKING:
 	from .channels import ChannelsRequest
 	from .....request_adapter import HttpxRequestAdapter
-from iograph_models.models.deleted_team import DeletedTeam
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.models.deleted_team import DeletedTeam
 
 
 class ByDeletedTeamIdRequest(BaseRequestBuilder):
@@ -108,9 +109,15 @@ class ByDeletedTeamIdRequest(BaseRequestBuilder):
 			raise TypeError("raw_url cannot be None.")
 		return ByDeletedTeamIdRequest(self.request_adapter, self.path_parameters)
 
-	@property
 	def channels(self,
+		deletedTeam_id: str,
 	) -> ChannelsRequest:
+		if deletedTeam_id is None:
+			raise TypeError("deletedTeam_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["deletedTeam%2Did"] =  deletedTeam_id
+
 		from .channels import ChannelsRequest
-		return ChannelsRequest(self.request_adapter, self.path_parameters)
+		return ChannelsRequest(self.request_adapter, path_parameters)
 

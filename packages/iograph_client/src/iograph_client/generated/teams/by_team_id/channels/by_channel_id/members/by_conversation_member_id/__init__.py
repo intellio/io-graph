@@ -49,9 +49,9 @@ class ByConversationMemberIdRequest(BaseRequestBuilder):
 		request_configuration: Optional[RequestConfiguration[BaseModel]] = None,
 	) -> ConversationMember:
 		"""
-		Update conversationMember
-		Update the role of a conversationMember in a team or channel.
-		Find more info here: https://learn.microsoft.com/graph/api/conversationmember-update?view=graph-rest-1.0
+		Update member in channel
+		Update the role of a conversationMember in a channel. This operation is allowed only for channels with a membershipType value of private or shared.
+		Find more info here: https://learn.microsoft.com/graph/api/channel-update-members?view=graph-rest-1.0
 		"""
 		tags = ['teams.channel']
 
@@ -74,9 +74,9 @@ class ByConversationMemberIdRequest(BaseRequestBuilder):
 		request_configuration: Optional[RequestConfiguration[BaseModel]] = None,
 	) -> None:
 		"""
-		Delete conversationMember
-		Delete a conversationMember from a channel.
-		Find more info here: https://learn.microsoft.com/graph/api/conversationmember-delete?view=graph-rest-1.0
+		Remove member from channel
+		Delete a conversationMember from a channel. This operation is allowed only for channels with a membershipType value of private or shared.
+		Find more info here: https://learn.microsoft.com/graph/api/channel-delete-members?view=graph-rest-1.0
 		"""
 		tags = ['teams.channel']
 		header_parameters = [{'name': 'If-Match', 'in': 'header', 'description': 'ETag', 'schema': {'type': 'string'}}]

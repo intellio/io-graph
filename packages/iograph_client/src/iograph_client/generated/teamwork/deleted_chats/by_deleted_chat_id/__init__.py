@@ -1,6 +1,7 @@
 # Auto-generated client
 
 from __future__ import annotations
+from kiota_abstractions.get_path_parameters import get_path_parameters
 from kiota_abstractions.method import Method
 from kiota_abstractions.base_request_builder import BaseRequestBuilder
 from kiota_abstractions.base_request_configuration import RequestConfiguration
@@ -12,8 +13,8 @@ from typing import TYPE_CHECKING
 if TYPE_CHECKING:
 	from .undo_delete import UndoDeleteRequest
 	from .....request_adapter import HttpxRequestAdapter
-from iograph_models.models.deleted_chat import DeletedChat
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.models.deleted_chat import DeletedChat
 
 
 class ByDeletedChatIdRequest(BaseRequestBuilder):
@@ -109,9 +110,15 @@ class ByDeletedChatIdRequest(BaseRequestBuilder):
 			raise TypeError("raw_url cannot be None.")
 		return ByDeletedChatIdRequest(self.request_adapter, self.path_parameters)
 
-	@property
 	def undo_delete(self,
+		deletedChat_id: str,
 	) -> UndoDeleteRequest:
+		if deletedChat_id is None:
+			raise TypeError("deletedChat_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["deletedChat%2Did"] =  deletedChat_id
+
 		from .undo_delete import UndoDeleteRequest
-		return UndoDeleteRequest(self.request_adapter, self.path_parameters)
+		return UndoDeleteRequest(self.request_adapter, path_parameters)
 

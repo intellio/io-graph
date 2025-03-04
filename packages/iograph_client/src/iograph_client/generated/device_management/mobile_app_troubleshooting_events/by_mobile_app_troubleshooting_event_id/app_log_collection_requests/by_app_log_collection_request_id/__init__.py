@@ -1,6 +1,7 @@
 # Auto-generated client
 
 from __future__ import annotations
+from kiota_abstractions.get_path_parameters import get_path_parameters
 from kiota_abstractions.method import Method
 from kiota_abstractions.base_request_builder import BaseRequestBuilder
 from kiota_abstractions.base_request_configuration import RequestConfiguration
@@ -12,8 +13,8 @@ from typing import TYPE_CHECKING
 if TYPE_CHECKING:
 	from .create_download_url import CreateDownloadUrlRequest
 	from .......request_adapter import HttpxRequestAdapter
-from iograph_models.models.app_log_collection_request import AppLogCollectionRequest
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.models.app_log_collection_request import AppLogCollectionRequest
 
 
 class ByAppLogCollectionRequestIdRequest(BaseRequestBuilder):
@@ -111,9 +112,19 @@ class ByAppLogCollectionRequestIdRequest(BaseRequestBuilder):
 			raise TypeError("raw_url cannot be None.")
 		return ByAppLogCollectionRequestIdRequest(self.request_adapter, self.path_parameters)
 
-	@property
 	def create_download_url(self,
+		mobileAppTroubleshootingEvent_id: str,
+		appLogCollectionRequest_id: str,
 	) -> CreateDownloadUrlRequest:
+		if mobileAppTroubleshootingEvent_id is None:
+			raise TypeError("mobileAppTroubleshootingEvent_id cannot be null.")
+		if appLogCollectionRequest_id is None:
+			raise TypeError("appLogCollectionRequest_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["mobileAppTroubleshootingEvent%2Did"] =  mobileAppTroubleshootingEvent_id
+		path_parameters["appLogCollectionRequest%2Did"] =  appLogCollectionRequest_id
+
 		from .create_download_url import CreateDownloadUrlRequest
-		return CreateDownloadUrlRequest(self.request_adapter, self.path_parameters)
+		return CreateDownloadUrlRequest(self.request_adapter, path_parameters)
 

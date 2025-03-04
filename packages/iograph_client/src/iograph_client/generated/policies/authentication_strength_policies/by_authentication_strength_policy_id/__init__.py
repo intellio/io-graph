@@ -1,6 +1,7 @@
 # Auto-generated client
 
 from __future__ import annotations
+from kiota_abstractions.get_path_parameters import get_path_parameters
 from kiota_abstractions.method import Method
 from kiota_abstractions.base_request_builder import BaseRequestBuilder
 from kiota_abstractions.base_request_configuration import RequestConfiguration
@@ -10,11 +11,12 @@ from typing import Union, Any, Optional
 from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:
+	from .usage import UsageRequest
 	from .update_allowed_combinations import UpdateAllowedCombinationsRequest
 	from .combination_configurations import CombinationConfigurationsRequest
 	from .....request_adapter import HttpxRequestAdapter
-from iograph_models.models.authentication_strength_policy import AuthenticationStrengthPolicy
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.models.authentication_strength_policy import AuthenticationStrengthPolicy
 
 
 class ByAuthenticationStrengthPolicyIdRequest(BaseRequestBuilder):
@@ -112,15 +114,39 @@ class ByAuthenticationStrengthPolicyIdRequest(BaseRequestBuilder):
 			raise TypeError("raw_url cannot be None.")
 		return ByAuthenticationStrengthPolicyIdRequest(self.request_adapter, self.path_parameters)
 
-	@property
 	def combination_configurations(self,
+		authenticationStrengthPolicy_id: str,
 	) -> CombinationConfigurationsRequest:
-		from .combination_configurations import CombinationConfigurationsRequest
-		return CombinationConfigurationsRequest(self.request_adapter, self.path_parameters)
+		if authenticationStrengthPolicy_id is None:
+			raise TypeError("authenticationStrengthPolicy_id cannot be null.")
 
-	@property
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["authenticationStrengthPolicy%2Did"] =  authenticationStrengthPolicy_id
+
+		from .combination_configurations import CombinationConfigurationsRequest
+		return CombinationConfigurationsRequest(self.request_adapter, path_parameters)
+
 	def update_allowed_combinations(self,
+		authenticationStrengthPolicy_id: str,
 	) -> UpdateAllowedCombinationsRequest:
+		if authenticationStrengthPolicy_id is None:
+			raise TypeError("authenticationStrengthPolicy_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["authenticationStrengthPolicy%2Did"] =  authenticationStrengthPolicy_id
+
 		from .update_allowed_combinations import UpdateAllowedCombinationsRequest
-		return UpdateAllowedCombinationsRequest(self.request_adapter, self.path_parameters)
+		return UpdateAllowedCombinationsRequest(self.request_adapter, path_parameters)
+
+	def usage(self,
+		authenticationStrengthPolicy_id: str,
+	) -> UsageRequest:
+		if authenticationStrengthPolicy_id is None:
+			raise TypeError("authenticationStrengthPolicy_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["authenticationStrengthPolicy%2Did"] =  authenticationStrengthPolicy_id
+
+		from .usage import UsageRequest
+		return UsageRequest(self.request_adapter, path_parameters)
 

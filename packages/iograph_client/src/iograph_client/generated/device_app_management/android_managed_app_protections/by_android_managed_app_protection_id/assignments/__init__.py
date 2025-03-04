@@ -108,9 +108,15 @@ class AssignmentsRequest(BaseRequestBuilder):
 		from .by_targeted_managed_app_policy_assignment_id import ByTargetedManagedAppPolicyAssignmentIdRequest
 		return ByTargetedManagedAppPolicyAssignmentIdRequest(self.request_adapter, path_parameters)
 
-	@property
 	def count(self,
+		androidManagedAppProtection_id: str,
 	) -> CountRequest:
+		if androidManagedAppProtection_id is None:
+			raise TypeError("androidManagedAppProtection_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["androidManagedAppProtection%2Did"] =  androidManagedAppProtection_id
+
 		from .count import CountRequest
-		return CountRequest(self.request_adapter, self.path_parameters)
+		return CountRequest(self.request_adapter, path_parameters)
 

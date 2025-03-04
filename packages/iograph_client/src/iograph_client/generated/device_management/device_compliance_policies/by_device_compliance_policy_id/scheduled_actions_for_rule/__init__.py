@@ -110,9 +110,15 @@ class ScheduledActionsForRuleRequest(BaseRequestBuilder):
 		from .by_device_compliance_scheduled_action_for_rule_id import ByDeviceComplianceScheduledActionForRuleIdRequest
 		return ByDeviceComplianceScheduledActionForRuleIdRequest(self.request_adapter, path_parameters)
 
-	@property
 	def count(self,
+		deviceCompliancePolicy_id: str,
 	) -> CountRequest:
+		if deviceCompliancePolicy_id is None:
+			raise TypeError("deviceCompliancePolicy_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["deviceCompliancePolicy%2Did"] =  deviceCompliancePolicy_id
+
 		from .count import CountRequest
-		return CountRequest(self.request_adapter, self.path_parameters)
+		return CountRequest(self.request_adapter, path_parameters)
 

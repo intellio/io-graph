@@ -11,12 +11,13 @@ from typing import Union, Any, Optional
 from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:
+	from .delta import DeltaRequest
 	from .count import CountRequest
 	from .by_chat_message_id1 import ByChatMessageId1Request
 	from .........request_adapter import HttpxRequestAdapter
-from iograph_models.models.chat_message import ChatMessage
-from iograph_models.models.chat_message_collection_response import ChatMessageCollectionResponse
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.models.chat_message_collection_response import ChatMessageCollectionResponse
+from iograph_models.models.chat_message import ChatMessage
 
 
 class RepliesRequest(BaseRequestBuilder):
@@ -53,9 +54,9 @@ class RepliesRequest(BaseRequestBuilder):
 		request_configuration: Optional[RequestConfiguration[BaseModel]] = None,
 	) -> ChatMessage:
 		"""
-		Send replies to a message in a channel
-		Send a new reply to a chatMessage in a specified channel.
-		Find more info here: https://learn.microsoft.com/graph/api/chatmessage-post-replies?view=graph-rest-1.0
+		Reply to a message in a channel
+		Create a new reply to a chatMessage in a specified channel.
+		Find more info here: https://learn.microsoft.com/graph/api/channel-post-messagereply?view=graph-rest-1.0
 		"""
 		tags = ['teams.channel']
 
@@ -118,9 +119,43 @@ class RepliesRequest(BaseRequestBuilder):
 		from .by_chat_message_id1 import ByChatMessageId1Request
 		return ByChatMessageId1Request(self.request_adapter, path_parameters)
 
-	@property
 	def count(self,
+		team_id: str,
+		channel_id: str,
+		chatMessage_id: str,
 	) -> CountRequest:
+		if team_id is None:
+			raise TypeError("team_id cannot be null.")
+		if channel_id is None:
+			raise TypeError("channel_id cannot be null.")
+		if chatMessage_id is None:
+			raise TypeError("chatMessage_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["team%2Did"] =  team_id
+		path_parameters["channel%2Did"] =  channel_id
+		path_parameters["chatMessage%2Did"] =  chatMessage_id
+
 		from .count import CountRequest
-		return CountRequest(self.request_adapter, self.path_parameters)
+		return CountRequest(self.request_adapter, path_parameters)
+
+	def delta(self,
+		team_id: str,
+		channel_id: str,
+		chatMessage_id: str,
+	) -> DeltaRequest:
+		if team_id is None:
+			raise TypeError("team_id cannot be null.")
+		if channel_id is None:
+			raise TypeError("channel_id cannot be null.")
+		if chatMessage_id is None:
+			raise TypeError("chatMessage_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["team%2Did"] =  team_id
+		path_parameters["channel%2Did"] =  channel_id
+		path_parameters["chatMessage%2Did"] =  chatMessage_id
+
+		from .delta import DeltaRequest
+		return DeltaRequest(self.request_adapter, path_parameters)
 

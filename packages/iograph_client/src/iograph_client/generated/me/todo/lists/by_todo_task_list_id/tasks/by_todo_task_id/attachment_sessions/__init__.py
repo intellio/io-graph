@@ -85,9 +85,19 @@ class AttachmentSessionsRequest(BaseRequestBuilder):
 		from .by_attachment_session_id import ByAttachmentSessionIdRequest
 		return ByAttachmentSessionIdRequest(self.request_adapter, path_parameters)
 
-	@property
 	def count(self,
+		todoTaskList_id: str,
+		todoTask_id: str,
 	) -> CountRequest:
+		if todoTaskList_id is None:
+			raise TypeError("todoTaskList_id cannot be null.")
+		if todoTask_id is None:
+			raise TypeError("todoTask_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["todoTaskList%2Did"] =  todoTaskList_id
+		path_parameters["todoTask%2Did"] =  todoTask_id
+
 		from .count import CountRequest
-		return CountRequest(self.request_adapter, self.path_parameters)
+		return CountRequest(self.request_adapter, path_parameters)
 

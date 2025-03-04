@@ -11,12 +11,14 @@ from typing import Union, Any, Optional
 from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:
+	from .item_at import ItemAtRequest
+	from .count import CountRequest
 	from .add import AddRequest
 	from .by_workbook_table_column_id import ByWorkbookTableColumnIdRequest
 	from ..........request_adapter import HttpxRequestAdapter
 from iograph_models.models.workbook_table_column import WorkbookTableColumn
-from iograph_models.models.workbook_table_column_collection_response import WorkbookTableColumnCollectionResponse
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.models.workbook_table_column_collection_response import WorkbookTableColumnCollectionResponse
 
 
 class ColumnsRequest(BaseRequestBuilder):
@@ -116,9 +118,67 @@ class ColumnsRequest(BaseRequestBuilder):
 		from .by_workbook_table_column_id import ByWorkbookTableColumnIdRequest
 		return ByWorkbookTableColumnIdRequest(self.request_adapter, path_parameters)
 
-	@property
 	def add(self,
+		drive_id: str,
+		driveItem_id: str,
+		workbookTable_id: str,
 	) -> AddRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+		if workbookTable_id is None:
+			raise TypeError("workbookTable_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+		path_parameters["workbookTable%2Did"] =  workbookTable_id
+
 		from .add import AddRequest
-		return AddRequest(self.request_adapter, self.path_parameters)
+		return AddRequest(self.request_adapter, path_parameters)
+
+	def count(self,
+		drive_id: str,
+		driveItem_id: str,
+		workbookTable_id: str,
+	) -> CountRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+		if workbookTable_id is None:
+			raise TypeError("workbookTable_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+		path_parameters["workbookTable%2Did"] =  workbookTable_id
+
+		from .count import CountRequest
+		return CountRequest(self.request_adapter, path_parameters)
+
+	def item_at(self,
+		drive_id: str,
+		driveItem_id: str,
+		workbookTable_id: str,
+		index: int,
+	) -> ItemAtRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+		if workbookTable_id is None:
+			raise TypeError("workbookTable_id cannot be null.")
+		if index is None:
+			raise TypeError("index cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+		path_parameters["workbookTable%2Did"] =  workbookTable_id
+		path_parameters["index"] =  index
+
+		from .item_at import ItemAtRequest
+		return ItemAtRequest(self.request_adapter, path_parameters)
 

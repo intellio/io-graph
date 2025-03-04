@@ -1,6 +1,7 @@
 # Auto-generated client
 
 from __future__ import annotations
+from kiota_abstractions.get_path_parameters import get_path_parameters
 from kiota_abstractions.method import Method
 from kiota_abstractions.base_request_builder import BaseRequestBuilder
 from kiota_abstractions.base_request_configuration import RequestConfiguration
@@ -115,33 +116,63 @@ class ByPrinterIdRequest(BaseRequestBuilder):
 			raise TypeError("raw_url cannot be None.")
 		return ByPrinterIdRequest(self.request_adapter, self.path_parameters)
 
-	@property
 	def connectors(self,
+		printer_id: str,
 	) -> ConnectorsRequest:
+		if printer_id is None:
+			raise TypeError("printer_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["printer%2Did"] =  printer_id
+
 		from .connectors import ConnectorsRequest
-		return ConnectorsRequest(self.request_adapter, self.path_parameters)
+		return ConnectorsRequest(self.request_adapter, path_parameters)
 
-	@property
 	def jobs(self,
+		printer_id: str,
 	) -> JobsRequest:
+		if printer_id is None:
+			raise TypeError("printer_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["printer%2Did"] =  printer_id
+
 		from .jobs import JobsRequest
-		return JobsRequest(self.request_adapter, self.path_parameters)
+		return JobsRequest(self.request_adapter, path_parameters)
 
-	@property
 	def restore_factory_defaults(self,
+		printer_id: str,
 	) -> RestoreFactoryDefaultsRequest:
+		if printer_id is None:
+			raise TypeError("printer_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["printer%2Did"] =  printer_id
+
 		from .restore_factory_defaults import RestoreFactoryDefaultsRequest
-		return RestoreFactoryDefaultsRequest(self.request_adapter, self.path_parameters)
+		return RestoreFactoryDefaultsRequest(self.request_adapter, path_parameters)
 
-	@property
 	def shares(self,
+		printer_id: str,
 	) -> SharesRequest:
-		from .shares import SharesRequest
-		return SharesRequest(self.request_adapter, self.path_parameters)
+		if printer_id is None:
+			raise TypeError("printer_id cannot be null.")
 
-	@property
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["printer%2Did"] =  printer_id
+
+		from .shares import SharesRequest
+		return SharesRequest(self.request_adapter, path_parameters)
+
 	def task_triggers(self,
+		printer_id: str,
 	) -> TaskTriggersRequest:
+		if printer_id is None:
+			raise TypeError("printer_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["printer%2Did"] =  printer_id
+
 		from .task_triggers import TaskTriggersRequest
-		return TaskTriggersRequest(self.request_adapter, self.path_parameters)
+		return TaskTriggersRequest(self.request_adapter, path_parameters)
 

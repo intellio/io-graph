@@ -1,6 +1,7 @@
 # Auto-generated client
 
 from __future__ import annotations
+from kiota_abstractions.get_path_parameters import get_path_parameters
 from kiota_abstractions.method import Method
 from kiota_abstractions.base_request_builder import BaseRequestBuilder
 from kiota_abstractions.base_request_configuration import RequestConfiguration
@@ -58,9 +59,15 @@ class ByApplicationTemplateIdRequest(BaseRequestBuilder):
 			raise TypeError("raw_url cannot be None.")
 		return ByApplicationTemplateIdRequest(self.request_adapter, self.path_parameters)
 
-	@property
 	def instantiate(self,
+		applicationTemplate_id: str,
 	) -> InstantiateRequest:
+		if applicationTemplate_id is None:
+			raise TypeError("applicationTemplate_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["applicationTemplate%2Did"] =  applicationTemplate_id
+
 		from .instantiate import InstantiateRequest
-		return InstantiateRequest(self.request_adapter, self.path_parameters)
+		return InstantiateRequest(self.request_adapter, path_parameters)
 

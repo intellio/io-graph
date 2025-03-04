@@ -1,6 +1,7 @@
 # Auto-generated client
 
 from __future__ import annotations
+from kiota_abstractions.get_path_parameters import get_path_parameters
 from kiota_abstractions.method import Method
 from kiota_abstractions.base_request_builder import BaseRequestBuilder
 from kiota_abstractions.base_request_configuration import RequestConfiguration
@@ -115,51 +116,99 @@ class ListRequest(BaseRequestBuilder):
 			raise TypeError("raw_url cannot be None.")
 		return ListRequest(self.request_adapter, self.path_parameters)
 
-	@property
 	def columns(self,
+		sharedDriveItem_id: str,
 	) -> ColumnsRequest:
+		if sharedDriveItem_id is None:
+			raise TypeError("sharedDriveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["sharedDriveItem%2Did"] =  sharedDriveItem_id
+
 		from .columns import ColumnsRequest
-		return ColumnsRequest(self.request_adapter, self.path_parameters)
+		return ColumnsRequest(self.request_adapter, path_parameters)
 
-	@property
 	def content_types(self,
+		sharedDriveItem_id: str,
 	) -> ContentTypesRequest:
+		if sharedDriveItem_id is None:
+			raise TypeError("sharedDriveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["sharedDriveItem%2Did"] =  sharedDriveItem_id
+
 		from .content_types import ContentTypesRequest
-		return ContentTypesRequest(self.request_adapter, self.path_parameters)
+		return ContentTypesRequest(self.request_adapter, path_parameters)
 
-	@property
 	def created_by_user(self,
+		sharedDriveItem_id: str,
 	) -> CreatedByUserRequest:
+		if sharedDriveItem_id is None:
+			raise TypeError("sharedDriveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["sharedDriveItem%2Did"] =  sharedDriveItem_id
+
 		from .created_by_user import CreatedByUserRequest
-		return CreatedByUserRequest(self.request_adapter, self.path_parameters)
+		return CreatedByUserRequest(self.request_adapter, path_parameters)
 
-	@property
 	def drive(self,
+		sharedDriveItem_id: str,
 	) -> DriveRequest:
+		if sharedDriveItem_id is None:
+			raise TypeError("sharedDriveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["sharedDriveItem%2Did"] =  sharedDriveItem_id
+
 		from .drive import DriveRequest
-		return DriveRequest(self.request_adapter, self.path_parameters)
+		return DriveRequest(self.request_adapter, path_parameters)
 
-	@property
 	def items(self,
+		sharedDriveItem_id: str,
 	) -> ItemsRequest:
+		if sharedDriveItem_id is None:
+			raise TypeError("sharedDriveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["sharedDriveItem%2Did"] =  sharedDriveItem_id
+
 		from .items import ItemsRequest
-		return ItemsRequest(self.request_adapter, self.path_parameters)
+		return ItemsRequest(self.request_adapter, path_parameters)
 
-	@property
 	def last_modified_by_user(self,
+		sharedDriveItem_id: str,
 	) -> LastModifiedByUserRequest:
+		if sharedDriveItem_id is None:
+			raise TypeError("sharedDriveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["sharedDriveItem%2Did"] =  sharedDriveItem_id
+
 		from .last_modified_by_user import LastModifiedByUserRequest
-		return LastModifiedByUserRequest(self.request_adapter, self.path_parameters)
+		return LastModifiedByUserRequest(self.request_adapter, path_parameters)
 
-	@property
 	def operations(self,
+		sharedDriveItem_id: str,
 	) -> OperationsRequest:
-		from .operations import OperationsRequest
-		return OperationsRequest(self.request_adapter, self.path_parameters)
+		if sharedDriveItem_id is None:
+			raise TypeError("sharedDriveItem_id cannot be null.")
 
-	@property
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["sharedDriveItem%2Did"] =  sharedDriveItem_id
+
+		from .operations import OperationsRequest
+		return OperationsRequest(self.request_adapter, path_parameters)
+
 	def subscriptions(self,
+		sharedDriveItem_id: str,
 	) -> SubscriptionsRequest:
+		if sharedDriveItem_id is None:
+			raise TypeError("sharedDriveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["sharedDriveItem%2Did"] =  sharedDriveItem_id
+
 		from .subscriptions import SubscriptionsRequest
-		return SubscriptionsRequest(self.request_adapter, self.path_parameters)
+		return SubscriptionsRequest(self.request_adapter, path_parameters)
 

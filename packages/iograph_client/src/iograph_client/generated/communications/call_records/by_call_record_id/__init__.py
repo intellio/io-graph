@@ -1,6 +1,7 @@
 # Auto-generated client
 
 from __future__ import annotations
+from kiota_abstractions.get_path_parameters import get_path_parameters
 from kiota_abstractions.method import Method
 from kiota_abstractions.base_request_builder import BaseRequestBuilder
 from kiota_abstractions.base_request_configuration import RequestConfiguration
@@ -14,8 +15,8 @@ if TYPE_CHECKING:
 	from .participants_v2 import Participants_v2Request
 	from .organizer_v2 import Organizer_v2Request
 	from .....request_adapter import HttpxRequestAdapter
-from iograph_models.models.call_records_call_record import CallRecordsCallRecord
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.models.call_records_call_record import CallRecordsCallRecord
 
 
 class ByCallRecordIdRequest(BaseRequestBuilder):
@@ -113,21 +114,39 @@ class ByCallRecordIdRequest(BaseRequestBuilder):
 			raise TypeError("raw_url cannot be None.")
 		return ByCallRecordIdRequest(self.request_adapter, self.path_parameters)
 
-	@property
 	def organizer_v2(self,
+		callRecord_id: str,
 	) -> Organizer_v2Request:
+		if callRecord_id is None:
+			raise TypeError("callRecord_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["callRecord%2Did"] =  callRecord_id
+
 		from .organizer_v2 import Organizer_v2Request
-		return Organizer_v2Request(self.request_adapter, self.path_parameters)
+		return Organizer_v2Request(self.request_adapter, path_parameters)
 
-	@property
 	def participants_v2(self,
+		callRecord_id: str,
 	) -> Participants_v2Request:
-		from .participants_v2 import Participants_v2Request
-		return Participants_v2Request(self.request_adapter, self.path_parameters)
+		if callRecord_id is None:
+			raise TypeError("callRecord_id cannot be null.")
 
-	@property
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["callRecord%2Did"] =  callRecord_id
+
+		from .participants_v2 import Participants_v2Request
+		return Participants_v2Request(self.request_adapter, path_parameters)
+
 	def sessions(self,
+		callRecord_id: str,
 	) -> SessionsRequest:
+		if callRecord_id is None:
+			raise TypeError("callRecord_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["callRecord%2Did"] =  callRecord_id
+
 		from .sessions import SessionsRequest
-		return SessionsRequest(self.request_adapter, self.path_parameters)
+		return SessionsRequest(self.request_adapter, path_parameters)
 

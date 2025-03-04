@@ -1,6 +1,7 @@
 # Auto-generated client
 
 from __future__ import annotations
+from kiota_abstractions.get_path_parameters import get_path_parameters
 from kiota_abstractions.method import Method
 from kiota_abstractions.base_request_builder import BaseRequestBuilder
 from kiota_abstractions.base_request_configuration import RequestConfiguration
@@ -110,15 +111,27 @@ class ByPrivilegedAccessGroupEligibilityScheduleInstanceIdRequest(BaseRequestBui
 			raise TypeError("raw_url cannot be None.")
 		return ByPrivilegedAccessGroupEligibilityScheduleInstanceIdRequest(self.request_adapter, self.path_parameters)
 
-	@property
 	def group(self,
+		privilegedAccessGroupEligibilityScheduleInstance_id: str,
 	) -> GroupRequest:
-		from .group import GroupRequest
-		return GroupRequest(self.request_adapter, self.path_parameters)
+		if privilegedAccessGroupEligibilityScheduleInstance_id is None:
+			raise TypeError("privilegedAccessGroupEligibilityScheduleInstance_id cannot be null.")
 
-	@property
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["privilegedAccessGroupEligibilityScheduleInstance%2Did"] =  privilegedAccessGroupEligibilityScheduleInstance_id
+
+		from .group import GroupRequest
+		return GroupRequest(self.request_adapter, path_parameters)
+
 	def principal(self,
+		privilegedAccessGroupEligibilityScheduleInstance_id: str,
 	) -> PrincipalRequest:
+		if privilegedAccessGroupEligibilityScheduleInstance_id is None:
+			raise TypeError("privilegedAccessGroupEligibilityScheduleInstance_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["privilegedAccessGroupEligibilityScheduleInstance%2Did"] =  privilegedAccessGroupEligibilityScheduleInstance_id
+
 		from .principal import PrincipalRequest
-		return PrincipalRequest(self.request_adapter, self.path_parameters)
+		return PrincipalRequest(self.request_adapter, path_parameters)
 

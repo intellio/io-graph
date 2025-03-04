@@ -14,9 +14,9 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_conversation_id import ByConversationIdRequest
 	from .....request_adapter import HttpxRequestAdapter
-from iograph_models.models.conversation_collection_response import ConversationCollectionResponse
 from iograph_models.models.conversation import Conversation
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.models.conversation_collection_response import ConversationCollectionResponse
 
 
 class ConversationsRequest(BaseRequestBuilder):
@@ -53,9 +53,9 @@ class ConversationsRequest(BaseRequestBuilder):
 		request_configuration: Optional[RequestConfiguration[BaseModel]] = None,
 	) -> Conversation:
 		"""
-		Create open extension
-		Create an open extension (openTypeExtension object) and add custom properties in a new or existing instance of a resource. You can create an open extension in a resource instance and store custom data to it all in the same operation, except for specific resources. The table in the Permissions section lists the resources that support open extensions.
-		Find more info here: https://learn.microsoft.com/graph/api/opentypeextension-post-opentypeextension?view=graph-rest-1.0
+		Create conversation
+		Use reply thread or reply post to further post to that conversation.
+		Find more info here: https://learn.microsoft.com/graph/api/group-post-conversations?view=graph-rest-1.0
 		"""
 		tags = ['groups.conversation']
 
@@ -110,9 +110,15 @@ class ConversationsRequest(BaseRequestBuilder):
 		from .by_conversation_id import ByConversationIdRequest
 		return ByConversationIdRequest(self.request_adapter, path_parameters)
 
-	@property
 	def count(self,
+		group_id: str,
 	) -> CountRequest:
+		if group_id is None:
+			raise TypeError("group_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["group%2Did"] =  group_id
+
 		from .count import CountRequest
-		return CountRequest(self.request_adapter, self.path_parameters)
+		return CountRequest(self.request_adapter, path_parameters)
 

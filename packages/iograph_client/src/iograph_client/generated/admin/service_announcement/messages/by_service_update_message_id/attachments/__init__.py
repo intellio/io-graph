@@ -109,9 +109,15 @@ class AttachmentsRequest(BaseRequestBuilder):
 		from .by_service_announcement_attachment_id import ByServiceAnnouncementAttachmentIdRequest
 		return ByServiceAnnouncementAttachmentIdRequest(self.request_adapter, path_parameters)
 
-	@property
 	def count(self,
+		serviceUpdateMessage_id: str,
 	) -> CountRequest:
+		if serviceUpdateMessage_id is None:
+			raise TypeError("serviceUpdateMessage_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["serviceUpdateMessage%2Did"] =  serviceUpdateMessage_id
+
 		from .count import CountRequest
-		return CountRequest(self.request_adapter, self.path_parameters)
+		return CountRequest(self.request_adapter, path_parameters)
 

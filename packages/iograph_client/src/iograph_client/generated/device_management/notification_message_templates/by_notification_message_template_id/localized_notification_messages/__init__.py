@@ -110,9 +110,15 @@ class LocalizedNotificationMessagesRequest(BaseRequestBuilder):
 		from .by_localized_notification_message_id import ByLocalizedNotificationMessageIdRequest
 		return ByLocalizedNotificationMessageIdRequest(self.request_adapter, path_parameters)
 
-	@property
 	def count(self,
+		notificationMessageTemplate_id: str,
 	) -> CountRequest:
+		if notificationMessageTemplate_id is None:
+			raise TypeError("notificationMessageTemplate_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["notificationMessageTemplate%2Did"] =  notificationMessageTemplate_id
+
 		from .count import CountRequest
-		return CountRequest(self.request_adapter, self.path_parameters)
+		return CountRequest(self.request_adapter, path_parameters)
 

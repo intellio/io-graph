@@ -16,9 +16,9 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_ediscovery_noncustodial_data_source_id import ByEdiscoveryNoncustodialDataSourceIdRequest
 	from .......request_adapter import HttpxRequestAdapter
-from iograph_models.models.security_ediscovery_noncustodial_data_source import SecurityEdiscoveryNoncustodialDataSource
-from iograph_models.models.security_ediscovery_noncustodial_data_source_collection_response import SecurityEdiscoveryNoncustodialDataSourceCollectionResponse
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.models.security_ediscovery_noncustodial_data_source_collection_response import SecurityEdiscoveryNoncustodialDataSourceCollectionResponse
+from iograph_models.models.security_ediscovery_noncustodial_data_source import SecurityEdiscoveryNoncustodialDataSource
 
 
 class NoncustodialDataSourcesRequest(BaseRequestBuilder):
@@ -111,21 +111,39 @@ class NoncustodialDataSourcesRequest(BaseRequestBuilder):
 		from .by_ediscovery_noncustodial_data_source_id import ByEdiscoveryNoncustodialDataSourceIdRequest
 		return ByEdiscoveryNoncustodialDataSourceIdRequest(self.request_adapter, path_parameters)
 
-	@property
 	def count(self,
+		ediscoveryCase_id: str,
 	) -> CountRequest:
+		if ediscoveryCase_id is None:
+			raise TypeError("ediscoveryCase_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["ediscoveryCase%2Did"] =  ediscoveryCase_id
+
 		from .count import CountRequest
-		return CountRequest(self.request_adapter, self.path_parameters)
+		return CountRequest(self.request_adapter, path_parameters)
 
-	@property
 	def security_apply_hold(self,
+		ediscoveryCase_id: str,
 	) -> SecurityApplyHoldRequest:
-		from .security_apply_hold import SecurityApplyHoldRequest
-		return SecurityApplyHoldRequest(self.request_adapter, self.path_parameters)
+		if ediscoveryCase_id is None:
+			raise TypeError("ediscoveryCase_id cannot be null.")
 
-	@property
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["ediscoveryCase%2Did"] =  ediscoveryCase_id
+
+		from .security_apply_hold import SecurityApplyHoldRequest
+		return SecurityApplyHoldRequest(self.request_adapter, path_parameters)
+
 	def security_remove_hold(self,
+		ediscoveryCase_id: str,
 	) -> SecurityRemoveHoldRequest:
+		if ediscoveryCase_id is None:
+			raise TypeError("ediscoveryCase_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["ediscoveryCase%2Did"] =  ediscoveryCase_id
+
 		from .security_remove_hold import SecurityRemoveHoldRequest
-		return SecurityRemoveHoldRequest(self.request_adapter, self.path_parameters)
+		return SecurityRemoveHoldRequest(self.request_adapter, path_parameters)
 

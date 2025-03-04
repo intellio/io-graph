@@ -15,8 +15,8 @@ if TYPE_CHECKING:
 	from .by_shared_with_channel_team_info_id import BySharedWithChannelTeamInfoIdRequest
 	from .......request_adapter import HttpxRequestAdapter
 from iograph_models.models.shared_with_channel_team_info import SharedWithChannelTeamInfo
-from iograph_models.models.shared_with_channel_team_info_collection_response import SharedWithChannelTeamInfoCollectionResponse
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.models.shared_with_channel_team_info_collection_response import SharedWithChannelTeamInfoCollectionResponse
 
 
 class SharedWithTeamsRequest(BaseRequestBuilder):
@@ -113,9 +113,19 @@ class SharedWithTeamsRequest(BaseRequestBuilder):
 		from .by_shared_with_channel_team_info_id import BySharedWithChannelTeamInfoIdRequest
 		return BySharedWithChannelTeamInfoIdRequest(self.request_adapter, path_parameters)
 
-	@property
 	def count(self,
+		team_id: str,
+		channel_id: str,
 	) -> CountRequest:
+		if team_id is None:
+			raise TypeError("team_id cannot be null.")
+		if channel_id is None:
+			raise TypeError("channel_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["team%2Did"] =  team_id
+		path_parameters["channel%2Did"] =  channel_id
+
 		from .count import CountRequest
-		return CountRequest(self.request_adapter, self.path_parameters)
+		return CountRequest(self.request_adapter, path_parameters)
 

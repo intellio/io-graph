@@ -1,6 +1,7 @@
 # Auto-generated client
 
 from __future__ import annotations
+from kiota_abstractions.get_path_parameters import get_path_parameters
 from kiota_abstractions.method import Method
 from kiota_abstractions.base_request_builder import BaseRequestBuilder
 from kiota_abstractions.base_request_configuration import RequestConfiguration
@@ -12,6 +13,9 @@ from typing import TYPE_CHECKING
 if TYPE_CHECKING:
 	from .special import SpecialRequest
 	from .root import RootRequest
+	from .shared_with_me import SharedWithMeRequest
+	from .search import SearchRequest
+	from .recent import RecentRequest
 	from .list import ListRequest
 	from .last_modified_by_user import LastModifiedByUserRequest
 	from .items import ItemsRequest
@@ -115,51 +119,139 @@ class ByDriveIdRequest(BaseRequestBuilder):
 			raise TypeError("raw_url cannot be None.")
 		return ByDriveIdRequest(self.request_adapter, self.path_parameters)
 
-	@property
 	def bundles(self,
+		drive_id: str,
 	) -> BundlesRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+
 		from .bundles import BundlesRequest
-		return BundlesRequest(self.request_adapter, self.path_parameters)
+		return BundlesRequest(self.request_adapter, path_parameters)
 
-	@property
 	def created_by_user(self,
+		drive_id: str,
 	) -> CreatedByUserRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+
 		from .created_by_user import CreatedByUserRequest
-		return CreatedByUserRequest(self.request_adapter, self.path_parameters)
+		return CreatedByUserRequest(self.request_adapter, path_parameters)
 
-	@property
 	def following(self,
+		drive_id: str,
 	) -> FollowingRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+
 		from .following import FollowingRequest
-		return FollowingRequest(self.request_adapter, self.path_parameters)
+		return FollowingRequest(self.request_adapter, path_parameters)
 
-	@property
 	def items(self,
+		drive_id: str,
 	) -> ItemsRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+
 		from .items import ItemsRequest
-		return ItemsRequest(self.request_adapter, self.path_parameters)
+		return ItemsRequest(self.request_adapter, path_parameters)
 
-	@property
 	def last_modified_by_user(self,
+		drive_id: str,
 	) -> LastModifiedByUserRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+
 		from .last_modified_by_user import LastModifiedByUserRequest
-		return LastModifiedByUserRequest(self.request_adapter, self.path_parameters)
+		return LastModifiedByUserRequest(self.request_adapter, path_parameters)
 
-	@property
 	def list(self,
+		drive_id: str,
 	) -> ListRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+
 		from .list import ListRequest
-		return ListRequest(self.request_adapter, self.path_parameters)
+		return ListRequest(self.request_adapter, path_parameters)
 
-	@property
+	def recent(self,
+		drive_id: str,
+	) -> RecentRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+
+		from .recent import RecentRequest
+		return RecentRequest(self.request_adapter, path_parameters)
+
+	def search(self,
+		drive_id: str,
+		q: str,
+	) -> SearchRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if q is None:
+			raise TypeError("q cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["q"] =  q
+
+		from .search import SearchRequest
+		return SearchRequest(self.request_adapter, path_parameters)
+
+	def shared_with_me(self,
+		drive_id: str,
+	) -> SharedWithMeRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+
+		from .shared_with_me import SharedWithMeRequest
+		return SharedWithMeRequest(self.request_adapter, path_parameters)
+
 	def root(self,
+		drive_id: str,
 	) -> RootRequest:
-		from .root import RootRequest
-		return RootRequest(self.request_adapter, self.path_parameters)
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
 
-	@property
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+
+		from .root import RootRequest
+		return RootRequest(self.request_adapter, path_parameters)
+
 	def special(self,
+		drive_id: str,
 	) -> SpecialRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+
 		from .special import SpecialRequest
-		return SpecialRequest(self.request_adapter, self.path_parameters)
+		return SpecialRequest(self.request_adapter, path_parameters)
 

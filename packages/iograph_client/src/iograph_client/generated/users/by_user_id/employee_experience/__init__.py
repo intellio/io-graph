@@ -1,6 +1,7 @@
 # Auto-generated client
 
 from __future__ import annotations
+from kiota_abstractions.get_path_parameters import get_path_parameters
 from kiota_abstractions.method import Method
 from kiota_abstractions.base_request_builder import BaseRequestBuilder
 from kiota_abstractions.base_request_configuration import RequestConfiguration
@@ -12,8 +13,8 @@ from typing import TYPE_CHECKING
 if TYPE_CHECKING:
 	from .learning_course_activities import LearningCourseActivitiesRequest
 	from .....request_adapter import HttpxRequestAdapter
-from iograph_models.models.employee_experience_user import EmployeeExperienceUser
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.models.employee_experience_user import EmployeeExperienceUser
 
 
 class EmployeeExperienceRequest(BaseRequestBuilder):
@@ -108,9 +109,15 @@ class EmployeeExperienceRequest(BaseRequestBuilder):
 			raise TypeError("raw_url cannot be None.")
 		return EmployeeExperienceRequest(self.request_adapter, self.path_parameters)
 
-	@property
 	def learning_course_activities(self,
+		user_id: str,
 	) -> LearningCourseActivitiesRequest:
+		if user_id is None:
+			raise TypeError("user_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["user%2Did"] =  user_id
+
 		from .learning_course_activities import LearningCourseActivitiesRequest
-		return LearningCourseActivitiesRequest(self.request_adapter, self.path_parameters)
+		return LearningCourseActivitiesRequest(self.request_adapter, path_parameters)
 

@@ -1,6 +1,7 @@
 # Auto-generated client
 
 from __future__ import annotations
+from kiota_abstractions.get_path_parameters import get_path_parameters
 from kiota_abstractions.method import Method
 from kiota_abstractions.base_request_builder import BaseRequestBuilder
 from kiota_abstractions.base_request_configuration import RequestConfiguration
@@ -113,21 +114,39 @@ class ByEducationSchoolIdRequest(BaseRequestBuilder):
 			raise TypeError("raw_url cannot be None.")
 		return ByEducationSchoolIdRequest(self.request_adapter, self.path_parameters)
 
-	@property
 	def administrative_unit(self,
+		educationSchool_id: str,
 	) -> AdministrativeUnitRequest:
+		if educationSchool_id is None:
+			raise TypeError("educationSchool_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["educationSchool%2Did"] =  educationSchool_id
+
 		from .administrative_unit import AdministrativeUnitRequest
-		return AdministrativeUnitRequest(self.request_adapter, self.path_parameters)
+		return AdministrativeUnitRequest(self.request_adapter, path_parameters)
 
-	@property
 	def classes(self,
+		educationSchool_id: str,
 	) -> ClassesRequest:
-		from .classes import ClassesRequest
-		return ClassesRequest(self.request_adapter, self.path_parameters)
+		if educationSchool_id is None:
+			raise TypeError("educationSchool_id cannot be null.")
 
-	@property
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["educationSchool%2Did"] =  educationSchool_id
+
+		from .classes import ClassesRequest
+		return ClassesRequest(self.request_adapter, path_parameters)
+
 	def users(self,
+		educationSchool_id: str,
 	) -> UsersRequest:
+		if educationSchool_id is None:
+			raise TypeError("educationSchool_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["educationSchool%2Did"] =  educationSchool_id
+
 		from .users import UsersRequest
-		return UsersRequest(self.request_adapter, self.path_parameters)
+		return UsersRequest(self.request_adapter, path_parameters)
 

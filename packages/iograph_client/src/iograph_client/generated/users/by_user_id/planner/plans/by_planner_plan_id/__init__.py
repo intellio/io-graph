@@ -1,6 +1,7 @@
 # Auto-generated client
 
 from __future__ import annotations
+from kiota_abstractions.get_path_parameters import get_path_parameters
 from kiota_abstractions.method import Method
 from kiota_abstractions.base_request_builder import BaseRequestBuilder
 from kiota_abstractions.base_request_configuration import RequestConfiguration
@@ -110,21 +111,51 @@ class ByPlannerPlanIdRequest(BaseRequestBuilder):
 			raise TypeError("raw_url cannot be None.")
 		return ByPlannerPlanIdRequest(self.request_adapter, self.path_parameters)
 
-	@property
 	def buckets(self,
+		user_id: str,
+		plannerPlan_id: str,
 	) -> BucketsRequest:
+		if user_id is None:
+			raise TypeError("user_id cannot be null.")
+		if plannerPlan_id is None:
+			raise TypeError("plannerPlan_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["user%2Did"] =  user_id
+		path_parameters["plannerPlan%2Did"] =  plannerPlan_id
+
 		from .buckets import BucketsRequest
-		return BucketsRequest(self.request_adapter, self.path_parameters)
+		return BucketsRequest(self.request_adapter, path_parameters)
 
-	@property
 	def details(self,
+		user_id: str,
+		plannerPlan_id: str,
 	) -> DetailsRequest:
-		from .details import DetailsRequest
-		return DetailsRequest(self.request_adapter, self.path_parameters)
+		if user_id is None:
+			raise TypeError("user_id cannot be null.")
+		if plannerPlan_id is None:
+			raise TypeError("plannerPlan_id cannot be null.")
 
-	@property
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["user%2Did"] =  user_id
+		path_parameters["plannerPlan%2Did"] =  plannerPlan_id
+
+		from .details import DetailsRequest
+		return DetailsRequest(self.request_adapter, path_parameters)
+
 	def tasks(self,
+		user_id: str,
+		plannerPlan_id: str,
 	) -> TasksRequest:
+		if user_id is None:
+			raise TypeError("user_id cannot be null.")
+		if plannerPlan_id is None:
+			raise TypeError("plannerPlan_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["user%2Did"] =  user_id
+		path_parameters["plannerPlan%2Did"] =  plannerPlan_id
+
 		from .tasks import TasksRequest
-		return TasksRequest(self.request_adapter, self.path_parameters)
+		return TasksRequest(self.request_adapter, path_parameters)
 

@@ -15,8 +15,8 @@ if TYPE_CHECKING:
 	from .by_user_flow_language_page_id import ByUserFlowLanguagePageIdRequest
 	from ........request_adapter import HttpxRequestAdapter
 from iograph_models.models.user_flow_language_page import UserFlowLanguagePage
-from iograph_models.models.user_flow_language_page_collection_response import UserFlowLanguagePageCollectionResponse
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.models.user_flow_language_page_collection_response import UserFlowLanguagePageCollectionResponse
 
 
 class OverridesPagesRequest(BaseRequestBuilder):
@@ -113,9 +113,19 @@ class OverridesPagesRequest(BaseRequestBuilder):
 		from .by_user_flow_language_page_id import ByUserFlowLanguagePageIdRequest
 		return ByUserFlowLanguagePageIdRequest(self.request_adapter, path_parameters)
 
-	@property
 	def count(self,
+		b2xIdentityUserFlow_id: str,
+		userFlowLanguageConfiguration_id: str,
 	) -> CountRequest:
+		if b2xIdentityUserFlow_id is None:
+			raise TypeError("b2xIdentityUserFlow_id cannot be null.")
+		if userFlowLanguageConfiguration_id is None:
+			raise TypeError("userFlowLanguageConfiguration_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["b2xIdentityUserFlow%2Did"] =  b2xIdentityUserFlow_id
+		path_parameters["userFlowLanguageConfiguration%2Did"] =  userFlowLanguageConfiguration_id
+
 		from .count import CountRequest
-		return CountRequest(self.request_adapter, self.path_parameters)
+		return CountRequest(self.request_adapter, path_parameters)
 

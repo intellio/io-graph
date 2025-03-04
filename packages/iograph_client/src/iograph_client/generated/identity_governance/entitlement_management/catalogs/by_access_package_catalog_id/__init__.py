@@ -1,6 +1,7 @@
 # Auto-generated client
 
 from __future__ import annotations
+from kiota_abstractions.get_path_parameters import get_path_parameters
 from kiota_abstractions.method import Method
 from kiota_abstractions.base_request_builder import BaseRequestBuilder
 from kiota_abstractions.base_request_configuration import RequestConfiguration
@@ -16,8 +17,8 @@ if TYPE_CHECKING:
 	from .custom_workflow_extensions import CustomWorkflowExtensionsRequest
 	from .access_packages import AccessPackagesRequest
 	from ......request_adapter import HttpxRequestAdapter
-from iograph_models.models.access_package_catalog import AccessPackageCatalog
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.models.access_package_catalog import AccessPackageCatalog
 
 
 class ByAccessPackageCatalogIdRequest(BaseRequestBuilder):
@@ -115,33 +116,63 @@ class ByAccessPackageCatalogIdRequest(BaseRequestBuilder):
 			raise TypeError("raw_url cannot be None.")
 		return ByAccessPackageCatalogIdRequest(self.request_adapter, self.path_parameters)
 
-	@property
 	def access_packages(self,
+		accessPackageCatalog_id: str,
 	) -> AccessPackagesRequest:
+		if accessPackageCatalog_id is None:
+			raise TypeError("accessPackageCatalog_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["accessPackageCatalog%2Did"] =  accessPackageCatalog_id
+
 		from .access_packages import AccessPackagesRequest
-		return AccessPackagesRequest(self.request_adapter, self.path_parameters)
+		return AccessPackagesRequest(self.request_adapter, path_parameters)
 
-	@property
 	def custom_workflow_extensions(self,
+		accessPackageCatalog_id: str,
 	) -> CustomWorkflowExtensionsRequest:
+		if accessPackageCatalog_id is None:
+			raise TypeError("accessPackageCatalog_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["accessPackageCatalog%2Did"] =  accessPackageCatalog_id
+
 		from .custom_workflow_extensions import CustomWorkflowExtensionsRequest
-		return CustomWorkflowExtensionsRequest(self.request_adapter, self.path_parameters)
+		return CustomWorkflowExtensionsRequest(self.request_adapter, path_parameters)
 
-	@property
 	def resource_roles(self,
+		accessPackageCatalog_id: str,
 	) -> ResourceRolesRequest:
+		if accessPackageCatalog_id is None:
+			raise TypeError("accessPackageCatalog_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["accessPackageCatalog%2Did"] =  accessPackageCatalog_id
+
 		from .resource_roles import ResourceRolesRequest
-		return ResourceRolesRequest(self.request_adapter, self.path_parameters)
+		return ResourceRolesRequest(self.request_adapter, path_parameters)
 
-	@property
 	def resources(self,
+		accessPackageCatalog_id: str,
 	) -> ResourcesRequest:
-		from .resources import ResourcesRequest
-		return ResourcesRequest(self.request_adapter, self.path_parameters)
+		if accessPackageCatalog_id is None:
+			raise TypeError("accessPackageCatalog_id cannot be null.")
 
-	@property
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["accessPackageCatalog%2Did"] =  accessPackageCatalog_id
+
+		from .resources import ResourcesRequest
+		return ResourcesRequest(self.request_adapter, path_parameters)
+
 	def resource_scopes(self,
+		accessPackageCatalog_id: str,
 	) -> ResourceScopesRequest:
+		if accessPackageCatalog_id is None:
+			raise TypeError("accessPackageCatalog_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["accessPackageCatalog%2Did"] =  accessPackageCatalog_id
+
 		from .resource_scopes import ResourceScopesRequest
-		return ResourceScopesRequest(self.request_adapter, self.path_parameters)
+		return ResourceScopesRequest(self.request_adapter, path_parameters)
 

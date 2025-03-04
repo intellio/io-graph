@@ -1,6 +1,7 @@
 # Auto-generated client
 
 from __future__ import annotations
+from kiota_abstractions.get_path_parameters import get_path_parameters
 from kiota_abstractions.method import Method
 from kiota_abstractions.base_request_builder import BaseRequestBuilder
 from kiota_abstractions.base_request_configuration import RequestConfiguration
@@ -12,8 +13,8 @@ from typing import TYPE_CHECKING
 if TYPE_CHECKING:
 	from .source_column import SourceColumnRequest
 	from ........request_adapter import HttpxRequestAdapter
-from iograph_models.models.column_definition import ColumnDefinition
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.models.column_definition import ColumnDefinition
 
 
 class ByColumnDefinitionIdRequest(BaseRequestBuilder):
@@ -108,9 +109,23 @@ class ByColumnDefinitionIdRequest(BaseRequestBuilder):
 			raise TypeError("raw_url cannot be None.")
 		return ByColumnDefinitionIdRequest(self.request_adapter, self.path_parameters)
 
-	@property
 	def source_column(self,
+		group_id: str,
+		site_id: str,
+		columnDefinition_id: str,
 	) -> SourceColumnRequest:
+		if group_id is None:
+			raise TypeError("group_id cannot be null.")
+		if site_id is None:
+			raise TypeError("site_id cannot be null.")
+		if columnDefinition_id is None:
+			raise TypeError("columnDefinition_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["group%2Did"] =  group_id
+		path_parameters["site%2Did"] =  site_id
+		path_parameters["columnDefinition%2Did"] =  columnDefinition_id
+
 		from .source_column import SourceColumnRequest
-		return SourceColumnRequest(self.request_adapter, self.path_parameters)
+		return SourceColumnRequest(self.request_adapter, path_parameters)
 

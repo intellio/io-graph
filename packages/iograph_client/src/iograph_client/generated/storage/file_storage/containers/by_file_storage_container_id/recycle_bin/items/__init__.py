@@ -14,9 +14,9 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_recycle_bin_item_id import ByRecycleBinItemIdRequest
 	from ........request_adapter import HttpxRequestAdapter
-from iograph_models.models.recycle_bin_item_collection_response import RecycleBinItemCollectionResponse
 from iograph_models.models.recycle_bin_item import RecycleBinItem
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.models.recycle_bin_item_collection_response import RecycleBinItemCollectionResponse
 
 
 class ItemsRequest(BaseRequestBuilder):
@@ -108,9 +108,15 @@ class ItemsRequest(BaseRequestBuilder):
 		from .by_recycle_bin_item_id import ByRecycleBinItemIdRequest
 		return ByRecycleBinItemIdRequest(self.request_adapter, path_parameters)
 
-	@property
 	def count(self,
+		fileStorageContainer_id: str,
 	) -> CountRequest:
+		if fileStorageContainer_id is None:
+			raise TypeError("fileStorageContainer_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["fileStorageContainer%2Did"] =  fileStorageContainer_id
+
 		from .count import CountRequest
-		return CountRequest(self.request_adapter, self.path_parameters)
+		return CountRequest(self.request_adapter, path_parameters)
 

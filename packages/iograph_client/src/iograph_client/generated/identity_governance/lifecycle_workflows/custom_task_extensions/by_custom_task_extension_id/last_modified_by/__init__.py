@@ -1,6 +1,7 @@
 # Auto-generated client
 
 from __future__ import annotations
+from kiota_abstractions.get_path_parameters import get_path_parameters
 from kiota_abstractions.method import Method
 from kiota_abstractions.base_request_builder import BaseRequestBuilder
 from kiota_abstractions.base_request_configuration import RequestConfiguration
@@ -58,15 +59,27 @@ class LastModifiedByRequest(BaseRequestBuilder):
 			raise TypeError("raw_url cannot be None.")
 		return LastModifiedByRequest(self.request_adapter, self.path_parameters)
 
-	@property
 	def mailbox_settings(self,
+		customTaskExtension_id: str,
 	) -> MailboxSettingsRequest:
-		from .mailbox_settings import MailboxSettingsRequest
-		return MailboxSettingsRequest(self.request_adapter, self.path_parameters)
+		if customTaskExtension_id is None:
+			raise TypeError("customTaskExtension_id cannot be null.")
 
-	@property
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["customTaskExtension%2Did"] =  customTaskExtension_id
+
+		from .mailbox_settings import MailboxSettingsRequest
+		return MailboxSettingsRequest(self.request_adapter, path_parameters)
+
 	def service_provisioning_errors(self,
+		customTaskExtension_id: str,
 	) -> ServiceProvisioningErrorsRequest:
+		if customTaskExtension_id is None:
+			raise TypeError("customTaskExtension_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["customTaskExtension%2Did"] =  customTaskExtension_id
+
 		from .service_provisioning_errors import ServiceProvisioningErrorsRequest
-		return ServiceProvisioningErrorsRequest(self.request_adapter, self.path_parameters)
+		return ServiceProvisioningErrorsRequest(self.request_adapter, path_parameters)
 

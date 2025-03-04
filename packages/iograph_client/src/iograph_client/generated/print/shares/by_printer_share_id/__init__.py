@@ -1,6 +1,7 @@
 # Auto-generated client
 
 from __future__ import annotations
+from kiota_abstractions.get_path_parameters import get_path_parameters
 from kiota_abstractions.method import Method
 from kiota_abstractions.base_request_builder import BaseRequestBuilder
 from kiota_abstractions.base_request_configuration import RequestConfiguration
@@ -114,27 +115,51 @@ class ByPrinterShareIdRequest(BaseRequestBuilder):
 			raise TypeError("raw_url cannot be None.")
 		return ByPrinterShareIdRequest(self.request_adapter, self.path_parameters)
 
-	@property
 	def allowed_groups(self,
+		printerShare_id: str,
 	) -> AllowedGroupsRequest:
+		if printerShare_id is None:
+			raise TypeError("printerShare_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["printerShare%2Did"] =  printerShare_id
+
 		from .allowed_groups import AllowedGroupsRequest
-		return AllowedGroupsRequest(self.request_adapter, self.path_parameters)
+		return AllowedGroupsRequest(self.request_adapter, path_parameters)
 
-	@property
 	def allowed_users(self,
+		printerShare_id: str,
 	) -> AllowedUsersRequest:
+		if printerShare_id is None:
+			raise TypeError("printerShare_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["printerShare%2Did"] =  printerShare_id
+
 		from .allowed_users import AllowedUsersRequest
-		return AllowedUsersRequest(self.request_adapter, self.path_parameters)
+		return AllowedUsersRequest(self.request_adapter, path_parameters)
 
-	@property
 	def jobs(self,
+		printerShare_id: str,
 	) -> JobsRequest:
-		from .jobs import JobsRequest
-		return JobsRequest(self.request_adapter, self.path_parameters)
+		if printerShare_id is None:
+			raise TypeError("printerShare_id cannot be null.")
 
-	@property
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["printerShare%2Did"] =  printerShare_id
+
+		from .jobs import JobsRequest
+		return JobsRequest(self.request_adapter, path_parameters)
+
 	def printer(self,
+		printerShare_id: str,
 	) -> PrinterRequest:
+		if printerShare_id is None:
+			raise TypeError("printerShare_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["printerShare%2Did"] =  printerShare_id
+
 		from .printer import PrinterRequest
-		return PrinterRequest(self.request_adapter, self.path_parameters)
+		return PrinterRequest(self.request_adapter, path_parameters)
 

@@ -108,9 +108,15 @@ class DispositionReviewStagesRequest(BaseRequestBuilder):
 		from .by_disposition_review_stage_stage_number import ByDispositionReviewStageStageNumberRequest
 		return ByDispositionReviewStageStageNumberRequest(self.request_adapter, path_parameters)
 
-	@property
 	def count(self,
+		retentionLabel_id: str,
 	) -> CountRequest:
+		if retentionLabel_id is None:
+			raise TypeError("retentionLabel_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["retentionLabel%2Did"] =  retentionLabel_id
+
 		from .count import CountRequest
-		return CountRequest(self.request_adapter, self.path_parameters)
+		return CountRequest(self.request_adapter, path_parameters)
 

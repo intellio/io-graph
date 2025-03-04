@@ -1,6 +1,7 @@
 # Auto-generated client
 
 from __future__ import annotations
+from kiota_abstractions.get_path_parameters import get_path_parameters
 from kiota_abstractions.method import Method
 from kiota_abstractions.base_request_builder import BaseRequestBuilder
 from kiota_abstractions.base_request_configuration import RequestConfiguration
@@ -109,15 +110,35 @@ class ByRecycleBinItemIdRequest(BaseRequestBuilder):
 			raise TypeError("raw_url cannot be None.")
 		return ByRecycleBinItemIdRequest(self.request_adapter, self.path_parameters)
 
-	@property
 	def created_by_user(self,
+		fileStorageContainer_id: str,
+		recycleBinItem_id: str,
 	) -> CreatedByUserRequest:
-		from .created_by_user import CreatedByUserRequest
-		return CreatedByUserRequest(self.request_adapter, self.path_parameters)
+		if fileStorageContainer_id is None:
+			raise TypeError("fileStorageContainer_id cannot be null.")
+		if recycleBinItem_id is None:
+			raise TypeError("recycleBinItem_id cannot be null.")
 
-	@property
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["fileStorageContainer%2Did"] =  fileStorageContainer_id
+		path_parameters["recycleBinItem%2Did"] =  recycleBinItem_id
+
+		from .created_by_user import CreatedByUserRequest
+		return CreatedByUserRequest(self.request_adapter, path_parameters)
+
 	def last_modified_by_user(self,
+		fileStorageContainer_id: str,
+		recycleBinItem_id: str,
 	) -> LastModifiedByUserRequest:
+		if fileStorageContainer_id is None:
+			raise TypeError("fileStorageContainer_id cannot be null.")
+		if recycleBinItem_id is None:
+			raise TypeError("recycleBinItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["fileStorageContainer%2Did"] =  fileStorageContainer_id
+		path_parameters["recycleBinItem%2Did"] =  recycleBinItem_id
+
 		from .last_modified_by_user import LastModifiedByUserRequest
-		return LastModifiedByUserRequest(self.request_adapter, self.path_parameters)
+		return LastModifiedByUserRequest(self.request_adapter, path_parameters)
 

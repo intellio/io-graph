@@ -1,6 +1,7 @@
 # Auto-generated client
 
 from __future__ import annotations
+from kiota_abstractions.get_path_parameters import get_path_parameters
 from kiota_abstractions.method import Method
 from kiota_abstractions.base_request_builder import BaseRequestBuilder
 from kiota_abstractions.base_request_configuration import RequestConfiguration
@@ -115,27 +116,51 @@ class ByPlannerTaskIdRequest(BaseRequestBuilder):
 			raise TypeError("raw_url cannot be None.")
 		return ByPlannerTaskIdRequest(self.request_adapter, self.path_parameters)
 
-	@property
 	def assigned_to_task_board_format(self,
+		plannerTask_id: str,
 	) -> AssignedToTaskBoardFormatRequest:
+		if plannerTask_id is None:
+			raise TypeError("plannerTask_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["plannerTask%2Did"] =  plannerTask_id
+
 		from .assigned_to_task_board_format import AssignedToTaskBoardFormatRequest
-		return AssignedToTaskBoardFormatRequest(self.request_adapter, self.path_parameters)
+		return AssignedToTaskBoardFormatRequest(self.request_adapter, path_parameters)
 
-	@property
 	def bucket_task_board_format(self,
+		plannerTask_id: str,
 	) -> BucketTaskBoardFormatRequest:
+		if plannerTask_id is None:
+			raise TypeError("plannerTask_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["plannerTask%2Did"] =  plannerTask_id
+
 		from .bucket_task_board_format import BucketTaskBoardFormatRequest
-		return BucketTaskBoardFormatRequest(self.request_adapter, self.path_parameters)
+		return BucketTaskBoardFormatRequest(self.request_adapter, path_parameters)
 
-	@property
 	def details(self,
+		plannerTask_id: str,
 	) -> DetailsRequest:
-		from .details import DetailsRequest
-		return DetailsRequest(self.request_adapter, self.path_parameters)
+		if plannerTask_id is None:
+			raise TypeError("plannerTask_id cannot be null.")
 
-	@property
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["plannerTask%2Did"] =  plannerTask_id
+
+		from .details import DetailsRequest
+		return DetailsRequest(self.request_adapter, path_parameters)
+
 	def progress_task_board_format(self,
+		plannerTask_id: str,
 	) -> ProgressTaskBoardFormatRequest:
+		if plannerTask_id is None:
+			raise TypeError("plannerTask_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["plannerTask%2Did"] =  plannerTask_id
+
 		from .progress_task_board_format import ProgressTaskBoardFormatRequest
-		return ProgressTaskBoardFormatRequest(self.request_adapter, self.path_parameters)
+		return ProgressTaskBoardFormatRequest(self.request_adapter, path_parameters)
 

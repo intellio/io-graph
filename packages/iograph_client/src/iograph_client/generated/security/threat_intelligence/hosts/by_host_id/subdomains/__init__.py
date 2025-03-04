@@ -14,8 +14,8 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_subdomain_id import BySubdomainIdRequest
 	from .......request_adapter import HttpxRequestAdapter
-from iograph_models.models.security_subdomain_collection_response import SecuritySubdomainCollectionResponse
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.models.security_subdomain_collection_response import SecuritySubdomainCollectionResponse
 
 
 class SubdomainsRequest(BaseRequestBuilder):
@@ -82,9 +82,15 @@ class SubdomainsRequest(BaseRequestBuilder):
 		from .by_subdomain_id import BySubdomainIdRequest
 		return BySubdomainIdRequest(self.request_adapter, path_parameters)
 
-	@property
 	def count(self,
+		host_id: str,
 	) -> CountRequest:
+		if host_id is None:
+			raise TypeError("host_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["host%2Did"] =  host_id
+
 		from .count import CountRequest
-		return CountRequest(self.request_adapter, self.path_parameters)
+		return CountRequest(self.request_adapter, path_parameters)
 

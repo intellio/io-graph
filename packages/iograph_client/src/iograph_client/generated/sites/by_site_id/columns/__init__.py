@@ -14,9 +14,9 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_column_definition_id import ByColumnDefinitionIdRequest
 	from .....request_adapter import HttpxRequestAdapter
-from iograph_models.models.column_definition import ColumnDefinition
 from iograph_models.models.column_definition_collection_response import ColumnDefinitionCollectionResponse
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.models.column_definition import ColumnDefinition
 
 
 class ColumnsRequest(BaseRequestBuilder):
@@ -110,9 +110,15 @@ class ColumnsRequest(BaseRequestBuilder):
 		from .by_column_definition_id import ByColumnDefinitionIdRequest
 		return ByColumnDefinitionIdRequest(self.request_adapter, path_parameters)
 
-	@property
 	def count(self,
+		site_id: str,
 	) -> CountRequest:
+		if site_id is None:
+			raise TypeError("site_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["site%2Did"] =  site_id
+
 		from .count import CountRequest
-		return CountRequest(self.request_adapter, self.path_parameters)
+		return CountRequest(self.request_adapter, path_parameters)
 

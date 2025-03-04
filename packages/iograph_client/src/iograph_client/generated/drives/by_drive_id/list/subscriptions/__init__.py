@@ -14,9 +14,9 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_subscription_id import BySubscriptionIdRequest
 	from ......request_adapter import HttpxRequestAdapter
-from iograph_models.models.subscription_collection_response import SubscriptionCollectionResponse
-from iograph_models.models.subscription import Subscription
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.models.subscription import Subscription
+from iograph_models.models.subscription_collection_response import SubscriptionCollectionResponse
 
 
 class SubscriptionsRequest(BaseRequestBuilder):
@@ -108,9 +108,15 @@ class SubscriptionsRequest(BaseRequestBuilder):
 		from .by_subscription_id import BySubscriptionIdRequest
 		return BySubscriptionIdRequest(self.request_adapter, path_parameters)
 
-	@property
 	def count(self,
+		drive_id: str,
 	) -> CountRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+
 		from .count import CountRequest
-		return CountRequest(self.request_adapter, self.path_parameters)
+		return CountRequest(self.request_adapter, path_parameters)
 

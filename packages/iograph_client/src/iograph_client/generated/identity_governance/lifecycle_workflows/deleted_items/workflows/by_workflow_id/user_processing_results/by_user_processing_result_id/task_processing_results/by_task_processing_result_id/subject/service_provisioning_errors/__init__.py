@@ -1,6 +1,7 @@
 # Auto-generated client
 
 from __future__ import annotations
+from kiota_abstractions.get_path_parameters import get_path_parameters
 from kiota_abstractions.method import Method
 from kiota_abstractions.base_request_builder import BaseRequestBuilder
 from kiota_abstractions.base_request_configuration import RequestConfiguration
@@ -63,9 +64,23 @@ class ServiceProvisioningErrorsRequest(BaseRequestBuilder):
 			raise TypeError("raw_url cannot be None.")
 		return ServiceProvisioningErrorsRequest(self.request_adapter, self.path_parameters)
 
-	@property
 	def count(self,
+		workflow_id: str,
+		userProcessingResult_id: str,
+		taskProcessingResult_id: str,
 	) -> CountRequest:
+		if workflow_id is None:
+			raise TypeError("workflow_id cannot be null.")
+		if userProcessingResult_id is None:
+			raise TypeError("userProcessingResult_id cannot be null.")
+		if taskProcessingResult_id is None:
+			raise TypeError("taskProcessingResult_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["workflow%2Did"] =  workflow_id
+		path_parameters["userProcessingResult%2Did"] =  userProcessingResult_id
+		path_parameters["taskProcessingResult%2Did"] =  taskProcessingResult_id
+
 		from .count import CountRequest
-		return CountRequest(self.request_adapter, self.path_parameters)
+		return CountRequest(self.request_adapter, path_parameters)
 

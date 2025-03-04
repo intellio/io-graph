@@ -108,9 +108,15 @@ class BundlesRequest(BaseRequestBuilder):
 		from .by_drive_item_id import ByDriveItemIdRequest
 		return ByDriveItemIdRequest(self.request_adapter, path_parameters)
 
-	@property
 	def count(self,
+		drive_id: str,
 	) -> CountRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+
 		from .count import CountRequest
-		return CountRequest(self.request_adapter, self.path_parameters)
+		return CountRequest(self.request_adapter, path_parameters)
 

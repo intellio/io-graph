@@ -1,6 +1,7 @@
 # Auto-generated client
 
 from __future__ import annotations
+from kiota_abstractions.get_path_parameters import get_path_parameters
 from kiota_abstractions.method import Method
 from kiota_abstractions.base_request_builder import BaseRequestBuilder
 from kiota_abstractions.base_request_configuration import RequestConfiguration
@@ -13,8 +14,8 @@ if TYPE_CHECKING:
 	from .user_processing_results import UserProcessingResultsRequest
 	from .task_processing_results import TaskProcessingResultsRequest
 	from ........request_adapter import HttpxRequestAdapter
-from iograph_models.models.identity_governance_run import IdentityGovernanceRun
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.models.identity_governance_run import IdentityGovernanceRun
 
 
 class ByRunIdRequest(BaseRequestBuilder):
@@ -59,15 +60,35 @@ class ByRunIdRequest(BaseRequestBuilder):
 			raise TypeError("raw_url cannot be None.")
 		return ByRunIdRequest(self.request_adapter, self.path_parameters)
 
-	@property
 	def task_processing_results(self,
+		workflow_id: str,
+		run_id: str,
 	) -> TaskProcessingResultsRequest:
-		from .task_processing_results import TaskProcessingResultsRequest
-		return TaskProcessingResultsRequest(self.request_adapter, self.path_parameters)
+		if workflow_id is None:
+			raise TypeError("workflow_id cannot be null.")
+		if run_id is None:
+			raise TypeError("run_id cannot be null.")
 
-	@property
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["workflow%2Did"] =  workflow_id
+		path_parameters["run%2Did"] =  run_id
+
+		from .task_processing_results import TaskProcessingResultsRequest
+		return TaskProcessingResultsRequest(self.request_adapter, path_parameters)
+
 	def user_processing_results(self,
+		workflow_id: str,
+		run_id: str,
 	) -> UserProcessingResultsRequest:
+		if workflow_id is None:
+			raise TypeError("workflow_id cannot be null.")
+		if run_id is None:
+			raise TypeError("run_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["workflow%2Did"] =  workflow_id
+		path_parameters["run%2Did"] =  run_id
+
 		from .user_processing_results import UserProcessingResultsRequest
-		return UserProcessingResultsRequest(self.request_adapter, self.path_parameters)
+		return UserProcessingResultsRequest(self.request_adapter, path_parameters)
 

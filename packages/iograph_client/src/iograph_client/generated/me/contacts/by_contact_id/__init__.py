@@ -1,6 +1,7 @@
 # Auto-generated client
 
 from __future__ import annotations
+from kiota_abstractions.get_path_parameters import get_path_parameters
 from kiota_abstractions.method import Method
 from kiota_abstractions.base_request_builder import BaseRequestBuilder
 from kiota_abstractions.base_request_configuration import RequestConfiguration
@@ -112,15 +113,27 @@ class ByContactIdRequest(BaseRequestBuilder):
 			raise TypeError("raw_url cannot be None.")
 		return ByContactIdRequest(self.request_adapter, self.path_parameters)
 
-	@property
 	def extensions(self,
+		contact_id: str,
 	) -> ExtensionsRequest:
-		from .extensions import ExtensionsRequest
-		return ExtensionsRequest(self.request_adapter, self.path_parameters)
+		if contact_id is None:
+			raise TypeError("contact_id cannot be null.")
 
-	@property
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["contact%2Did"] =  contact_id
+
+		from .extensions import ExtensionsRequest
+		return ExtensionsRequest(self.request_adapter, path_parameters)
+
 	def photo(self,
+		contact_id: str,
 	) -> PhotoRequest:
+		if contact_id is None:
+			raise TypeError("contact_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["contact%2Did"] =  contact_id
+
 		from .photo import PhotoRequest
-		return PhotoRequest(self.request_adapter, self.path_parameters)
+		return PhotoRequest(self.request_adapter, path_parameters)
 

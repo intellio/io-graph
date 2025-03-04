@@ -11,12 +11,13 @@ from typing import Union, Any, Optional
 from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:
+	from .delta import DeltaRequest
 	from .count import CountRequest
 	from .by_administrative_unit_id import ByAdministrativeUnitIdRequest
 	from ....request_adapter import HttpxRequestAdapter
-from iograph_models.models.administrative_unit import AdministrativeUnit
 from iograph_models.models.administrative_unit_collection_response import AdministrativeUnitCollectionResponse
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.models.administrative_unit import AdministrativeUnit
 
 
 class AdministrativeUnitsRequest(BaseRequestBuilder):
@@ -111,4 +112,10 @@ class AdministrativeUnitsRequest(BaseRequestBuilder):
 	) -> CountRequest:
 		from .count import CountRequest
 		return CountRequest(self.request_adapter, self.path_parameters)
+
+	@property
+	def delta(self,
+	) -> DeltaRequest:
+		from .delta import DeltaRequest
+		return DeltaRequest(self.request_adapter, self.path_parameters)
 

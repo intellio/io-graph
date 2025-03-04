@@ -1,6 +1,7 @@
 # Auto-generated client
 
 from __future__ import annotations
+from kiota_abstractions.get_path_parameters import get_path_parameters
 from kiota_abstractions.method import Method
 from kiota_abstractions.base_request_builder import BaseRequestBuilder
 from kiota_abstractions.base_request_configuration import RequestConfiguration
@@ -112,21 +113,51 @@ class ByUserScopeTeamsAppInstallationIdRequest(BaseRequestBuilder):
 			raise TypeError("raw_url cannot be None.")
 		return ByUserScopeTeamsAppInstallationIdRequest(self.request_adapter, self.path_parameters)
 
-	@property
 	def chat(self,
+		user_id: str,
+		userScopeTeamsAppInstallation_id: str,
 	) -> ChatRequest:
+		if user_id is None:
+			raise TypeError("user_id cannot be null.")
+		if userScopeTeamsAppInstallation_id is None:
+			raise TypeError("userScopeTeamsAppInstallation_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["user%2Did"] =  user_id
+		path_parameters["userScopeTeamsAppInstallation%2Did"] =  userScopeTeamsAppInstallation_id
+
 		from .chat import ChatRequest
-		return ChatRequest(self.request_adapter, self.path_parameters)
+		return ChatRequest(self.request_adapter, path_parameters)
 
-	@property
 	def teams_app(self,
+		user_id: str,
+		userScopeTeamsAppInstallation_id: str,
 	) -> TeamsAppRequest:
-		from .teams_app import TeamsAppRequest
-		return TeamsAppRequest(self.request_adapter, self.path_parameters)
+		if user_id is None:
+			raise TypeError("user_id cannot be null.")
+		if userScopeTeamsAppInstallation_id is None:
+			raise TypeError("userScopeTeamsAppInstallation_id cannot be null.")
 
-	@property
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["user%2Did"] =  user_id
+		path_parameters["userScopeTeamsAppInstallation%2Did"] =  userScopeTeamsAppInstallation_id
+
+		from .teams_app import TeamsAppRequest
+		return TeamsAppRequest(self.request_adapter, path_parameters)
+
 	def teams_app_definition(self,
+		user_id: str,
+		userScopeTeamsAppInstallation_id: str,
 	) -> TeamsAppDefinitionRequest:
+		if user_id is None:
+			raise TypeError("user_id cannot be null.")
+		if userScopeTeamsAppInstallation_id is None:
+			raise TypeError("userScopeTeamsAppInstallation_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["user%2Did"] =  user_id
+		path_parameters["userScopeTeamsAppInstallation%2Did"] =  userScopeTeamsAppInstallation_id
+
 		from .teams_app_definition import TeamsAppDefinitionRequest
-		return TeamsAppDefinitionRequest(self.request_adapter, self.path_parameters)
+		return TeamsAppDefinitionRequest(self.request_adapter, path_parameters)
 

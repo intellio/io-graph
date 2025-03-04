@@ -1,6 +1,7 @@
 # Auto-generated client
 
 from __future__ import annotations
+from kiota_abstractions.get_path_parameters import get_path_parameters
 from kiota_abstractions.method import Method
 from kiota_abstractions.base_request_builder import BaseRequestBuilder
 from kiota_abstractions.base_request_configuration import RequestConfiguration
@@ -11,9 +12,10 @@ from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:
 	from .worksheet import WorksheetRequest
+	from .range import RangeRequest
 	from ...........request_adapter import HttpxRequestAdapter
-from iograph_models.models.workbook_named_item import WorkbookNamedItem
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.models.workbook_named_item import WorkbookNamedItem
 
 
 class ByWorkbookNamedItemIdRequest(BaseRequestBuilder):
@@ -108,9 +110,51 @@ class ByWorkbookNamedItemIdRequest(BaseRequestBuilder):
 			raise TypeError("raw_url cannot be None.")
 		return ByWorkbookNamedItemIdRequest(self.request_adapter, self.path_parameters)
 
-	@property
+	def range(self,
+		drive_id: str,
+		driveItem_id: str,
+		workbookWorksheet_id: str,
+		workbookNamedItem_id: str,
+	) -> RangeRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+		if workbookWorksheet_id is None:
+			raise TypeError("workbookWorksheet_id cannot be null.")
+		if workbookNamedItem_id is None:
+			raise TypeError("workbookNamedItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+		path_parameters["workbookWorksheet%2Did"] =  workbookWorksheet_id
+		path_parameters["workbookNamedItem%2Did"] =  workbookNamedItem_id
+
+		from .range import RangeRequest
+		return RangeRequest(self.request_adapter, path_parameters)
+
 	def worksheet(self,
+		drive_id: str,
+		driveItem_id: str,
+		workbookWorksheet_id: str,
+		workbookNamedItem_id: str,
 	) -> WorksheetRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+		if workbookWorksheet_id is None:
+			raise TypeError("workbookWorksheet_id cannot be null.")
+		if workbookNamedItem_id is None:
+			raise TypeError("workbookNamedItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+		path_parameters["workbookWorksheet%2Did"] =  workbookWorksheet_id
+		path_parameters["workbookNamedItem%2Did"] =  workbookNamedItem_id
+
 		from .worksheet import WorksheetRequest
-		return WorksheetRequest(self.request_adapter, self.path_parameters)
+		return WorksheetRequest(self.request_adapter, path_parameters)
 

@@ -86,27 +86,51 @@ class MemberOfRequest(BaseRequestBuilder):
 		from .by_directory_object_id import ByDirectoryObjectIdRequest
 		return ByDirectoryObjectIdRequest(self.request_adapter, path_parameters)
 
-	@property
 	def count(self,
+		user_id: str,
 	) -> CountRequest:
+		if user_id is None:
+			raise TypeError("user_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["user%2Did"] =  user_id
+
 		from .count import CountRequest
-		return CountRequest(self.request_adapter, self.path_parameters)
+		return CountRequest(self.request_adapter, path_parameters)
 
-	@property
 	def graph_administrative_unit(self,
+		user_id: str,
 	) -> GraphAdministrativeUnitRequest:
+		if user_id is None:
+			raise TypeError("user_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["user%2Did"] =  user_id
+
 		from .graph_administrative_unit import GraphAdministrativeUnitRequest
-		return GraphAdministrativeUnitRequest(self.request_adapter, self.path_parameters)
+		return GraphAdministrativeUnitRequest(self.request_adapter, path_parameters)
 
-	@property
 	def graph_directory_role(self,
+		user_id: str,
 	) -> GraphDirectoryRoleRequest:
-		from .graph_directory_role import GraphDirectoryRoleRequest
-		return GraphDirectoryRoleRequest(self.request_adapter, self.path_parameters)
+		if user_id is None:
+			raise TypeError("user_id cannot be null.")
 
-	@property
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["user%2Did"] =  user_id
+
+		from .graph_directory_role import GraphDirectoryRoleRequest
+		return GraphDirectoryRoleRequest(self.request_adapter, path_parameters)
+
 	def graph_group(self,
+		user_id: str,
 	) -> GraphGroupRequest:
+		if user_id is None:
+			raise TypeError("user_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["user%2Did"] =  user_id
+
 		from .graph_group import GraphGroupRequest
-		return GraphGroupRequest(self.request_adapter, self.path_parameters)
+		return GraphGroupRequest(self.request_adapter, path_parameters)
 

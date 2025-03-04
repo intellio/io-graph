@@ -1,6 +1,7 @@
 # Auto-generated client
 
 from __future__ import annotations
+from kiota_abstractions.get_path_parameters import get_path_parameters
 from kiota_abstractions.method import Method
 from kiota_abstractions.base_request_builder import BaseRequestBuilder
 from kiota_abstractions.base_request_configuration import RequestConfiguration
@@ -22,8 +23,8 @@ if TYPE_CHECKING:
 	from .calendar import CalendarRequest
 	from .attachments import AttachmentsRequest
 	from ........request_adapter import HttpxRequestAdapter
-from iograph_models.models.event import Event
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.models.event import Event
 
 
 class ByEventIdRequest(BaseRequestBuilder):
@@ -118,69 +119,223 @@ class ByEventIdRequest(BaseRequestBuilder):
 			raise TypeError("raw_url cannot be None.")
 		return ByEventIdRequest(self.request_adapter, self.path_parameters)
 
-	@property
 	def attachments(self,
+		user_id: str,
+		calendar_id: str,
+		event_id: str,
 	) -> AttachmentsRequest:
+		if user_id is None:
+			raise TypeError("user_id cannot be null.")
+		if calendar_id is None:
+			raise TypeError("calendar_id cannot be null.")
+		if event_id is None:
+			raise TypeError("event_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["user%2Did"] =  user_id
+		path_parameters["calendar%2Did"] =  calendar_id
+		path_parameters["event%2Did"] =  event_id
+
 		from .attachments import AttachmentsRequest
-		return AttachmentsRequest(self.request_adapter, self.path_parameters)
+		return AttachmentsRequest(self.request_adapter, path_parameters)
 
-	@property
 	def calendar(self,
+		user_id: str,
+		calendar_id: str,
+		event_id: str,
 	) -> CalendarRequest:
+		if user_id is None:
+			raise TypeError("user_id cannot be null.")
+		if calendar_id is None:
+			raise TypeError("calendar_id cannot be null.")
+		if event_id is None:
+			raise TypeError("event_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["user%2Did"] =  user_id
+		path_parameters["calendar%2Did"] =  calendar_id
+		path_parameters["event%2Did"] =  event_id
+
 		from .calendar import CalendarRequest
-		return CalendarRequest(self.request_adapter, self.path_parameters)
+		return CalendarRequest(self.request_adapter, path_parameters)
 
-	@property
 	def extensions(self,
+		user_id: str,
+		calendar_id: str,
+		event_id: str,
 	) -> ExtensionsRequest:
+		if user_id is None:
+			raise TypeError("user_id cannot be null.")
+		if calendar_id is None:
+			raise TypeError("calendar_id cannot be null.")
+		if event_id is None:
+			raise TypeError("event_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["user%2Did"] =  user_id
+		path_parameters["calendar%2Did"] =  calendar_id
+		path_parameters["event%2Did"] =  event_id
+
 		from .extensions import ExtensionsRequest
-		return ExtensionsRequest(self.request_adapter, self.path_parameters)
+		return ExtensionsRequest(self.request_adapter, path_parameters)
 
-	@property
 	def instances(self,
+		user_id: str,
+		calendar_id: str,
+		event_id: str,
 	) -> InstancesRequest:
+		if user_id is None:
+			raise TypeError("user_id cannot be null.")
+		if calendar_id is None:
+			raise TypeError("calendar_id cannot be null.")
+		if event_id is None:
+			raise TypeError("event_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["user%2Did"] =  user_id
+		path_parameters["calendar%2Did"] =  calendar_id
+		path_parameters["event%2Did"] =  event_id
+
 		from .instances import InstancesRequest
-		return InstancesRequest(self.request_adapter, self.path_parameters)
+		return InstancesRequest(self.request_adapter, path_parameters)
 
-	@property
 	def accept(self,
+		user_id: str,
+		calendar_id: str,
+		event_id: str,
 	) -> AcceptRequest:
+		if user_id is None:
+			raise TypeError("user_id cannot be null.")
+		if calendar_id is None:
+			raise TypeError("calendar_id cannot be null.")
+		if event_id is None:
+			raise TypeError("event_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["user%2Did"] =  user_id
+		path_parameters["calendar%2Did"] =  calendar_id
+		path_parameters["event%2Did"] =  event_id
+
 		from .accept import AcceptRequest
-		return AcceptRequest(self.request_adapter, self.path_parameters)
+		return AcceptRequest(self.request_adapter, path_parameters)
 
-	@property
 	def cancel(self,
+		user_id: str,
+		calendar_id: str,
+		event_id: str,
 	) -> CancelRequest:
+		if user_id is None:
+			raise TypeError("user_id cannot be null.")
+		if calendar_id is None:
+			raise TypeError("calendar_id cannot be null.")
+		if event_id is None:
+			raise TypeError("event_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["user%2Did"] =  user_id
+		path_parameters["calendar%2Did"] =  calendar_id
+		path_parameters["event%2Did"] =  event_id
+
 		from .cancel import CancelRequest
-		return CancelRequest(self.request_adapter, self.path_parameters)
+		return CancelRequest(self.request_adapter, path_parameters)
 
-	@property
 	def decline(self,
+		user_id: str,
+		calendar_id: str,
+		event_id: str,
 	) -> DeclineRequest:
+		if user_id is None:
+			raise TypeError("user_id cannot be null.")
+		if calendar_id is None:
+			raise TypeError("calendar_id cannot be null.")
+		if event_id is None:
+			raise TypeError("event_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["user%2Did"] =  user_id
+		path_parameters["calendar%2Did"] =  calendar_id
+		path_parameters["event%2Did"] =  event_id
+
 		from .decline import DeclineRequest
-		return DeclineRequest(self.request_adapter, self.path_parameters)
+		return DeclineRequest(self.request_adapter, path_parameters)
 
-	@property
 	def dismiss_reminder(self,
+		user_id: str,
+		calendar_id: str,
+		event_id: str,
 	) -> DismissReminderRequest:
+		if user_id is None:
+			raise TypeError("user_id cannot be null.")
+		if calendar_id is None:
+			raise TypeError("calendar_id cannot be null.")
+		if event_id is None:
+			raise TypeError("event_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["user%2Did"] =  user_id
+		path_parameters["calendar%2Did"] =  calendar_id
+		path_parameters["event%2Did"] =  event_id
+
 		from .dismiss_reminder import DismissReminderRequest
-		return DismissReminderRequest(self.request_adapter, self.path_parameters)
+		return DismissReminderRequest(self.request_adapter, path_parameters)
 
-	@property
 	def forward(self,
+		user_id: str,
+		calendar_id: str,
+		event_id: str,
 	) -> ForwardRequest:
+		if user_id is None:
+			raise TypeError("user_id cannot be null.")
+		if calendar_id is None:
+			raise TypeError("calendar_id cannot be null.")
+		if event_id is None:
+			raise TypeError("event_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["user%2Did"] =  user_id
+		path_parameters["calendar%2Did"] =  calendar_id
+		path_parameters["event%2Did"] =  event_id
+
 		from .forward import ForwardRequest
-		return ForwardRequest(self.request_adapter, self.path_parameters)
+		return ForwardRequest(self.request_adapter, path_parameters)
 
-	@property
 	def snooze_reminder(self,
+		user_id: str,
+		calendar_id: str,
+		event_id: str,
 	) -> SnoozeReminderRequest:
-		from .snooze_reminder import SnoozeReminderRequest
-		return SnoozeReminderRequest(self.request_adapter, self.path_parameters)
+		if user_id is None:
+			raise TypeError("user_id cannot be null.")
+		if calendar_id is None:
+			raise TypeError("calendar_id cannot be null.")
+		if event_id is None:
+			raise TypeError("event_id cannot be null.")
 
-	@property
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["user%2Did"] =  user_id
+		path_parameters["calendar%2Did"] =  calendar_id
+		path_parameters["event%2Did"] =  event_id
+
+		from .snooze_reminder import SnoozeReminderRequest
+		return SnoozeReminderRequest(self.request_adapter, path_parameters)
+
 	def tentatively_accept(self,
+		user_id: str,
+		calendar_id: str,
+		event_id: str,
 	) -> TentativelyAcceptRequest:
+		if user_id is None:
+			raise TypeError("user_id cannot be null.")
+		if calendar_id is None:
+			raise TypeError("calendar_id cannot be null.")
+		if event_id is None:
+			raise TypeError("event_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["user%2Did"] =  user_id
+		path_parameters["calendar%2Did"] =  calendar_id
+		path_parameters["event%2Did"] =  event_id
+
 		from .tentatively_accept import TentativelyAcceptRequest
-		return TentativelyAcceptRequest(self.request_adapter, self.path_parameters)
+		return TentativelyAcceptRequest(self.request_adapter, path_parameters)
 

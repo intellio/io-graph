@@ -14,9 +14,9 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_managed_app_policy_id import ByManagedAppPolicyIdRequest
 	from ......request_adapter import HttpxRequestAdapter
-from iograph_models.models.managed_app_policy_collection_response import ManagedAppPolicyCollectionResponse
 from iograph_models.models.managed_app_policy import ManagedAppPolicy
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.models.managed_app_policy_collection_response import ManagedAppPolicyCollectionResponse
 
 
 class IntendedPoliciesRequest(BaseRequestBuilder):
@@ -108,9 +108,15 @@ class IntendedPoliciesRequest(BaseRequestBuilder):
 		from .by_managed_app_policy_id import ByManagedAppPolicyIdRequest
 		return ByManagedAppPolicyIdRequest(self.request_adapter, path_parameters)
 
-	@property
 	def count(self,
+		managedAppRegistration_id: str,
 	) -> CountRequest:
+		if managedAppRegistration_id is None:
+			raise TypeError("managedAppRegistration_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["managedAppRegistration%2Did"] =  managedAppRegistration_id
+
 		from .count import CountRequest
-		return CountRequest(self.request_adapter, self.path_parameters)
+		return CountRequest(self.request_adapter, path_parameters)
 

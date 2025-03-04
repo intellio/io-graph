@@ -1,6 +1,7 @@
 # Auto-generated client
 
 from __future__ import annotations
+from kiota_abstractions.get_path_parameters import get_path_parameters
 from kiota_abstractions.method import Method
 from kiota_abstractions.base_request_builder import BaseRequestBuilder
 from kiota_abstractions.base_request_configuration import RequestConfiguration
@@ -12,8 +13,8 @@ from typing import TYPE_CHECKING
 if TYPE_CHECKING:
 	from .restore_point import RestorePointRequest
 	from ........request_adapter import HttpxRequestAdapter
-from iograph_models.models.site_restore_artifact import SiteRestoreArtifact
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.models.site_restore_artifact import SiteRestoreArtifact
 
 
 class BySiteRestoreArtifactIdRequest(BaseRequestBuilder):
@@ -108,9 +109,19 @@ class BySiteRestoreArtifactIdRequest(BaseRequestBuilder):
 			raise TypeError("raw_url cannot be None.")
 		return BySiteRestoreArtifactIdRequest(self.request_adapter, self.path_parameters)
 
-	@property
 	def restore_point(self,
+		sharePointRestoreSession_id: str,
+		siteRestoreArtifact_id: str,
 	) -> RestorePointRequest:
+		if sharePointRestoreSession_id is None:
+			raise TypeError("sharePointRestoreSession_id cannot be null.")
+		if siteRestoreArtifact_id is None:
+			raise TypeError("siteRestoreArtifact_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["sharePointRestoreSession%2Did"] =  sharePointRestoreSession_id
+		path_parameters["siteRestoreArtifact%2Did"] =  siteRestoreArtifact_id
+
 		from .restore_point import RestorePointRequest
-		return RestorePointRequest(self.request_adapter, self.path_parameters)
+		return RestorePointRequest(self.request_adapter, path_parameters)
 

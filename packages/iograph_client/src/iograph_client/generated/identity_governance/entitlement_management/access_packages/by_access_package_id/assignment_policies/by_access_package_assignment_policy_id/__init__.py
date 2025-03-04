@@ -1,6 +1,7 @@
 # Auto-generated client
 
 from __future__ import annotations
+from kiota_abstractions.get_path_parameters import get_path_parameters
 from kiota_abstractions.method import Method
 from kiota_abstractions.base_request_builder import BaseRequestBuilder
 from kiota_abstractions.base_request_configuration import RequestConfiguration
@@ -15,8 +16,8 @@ if TYPE_CHECKING:
 	from .catalog import CatalogRequest
 	from .access_package import AccessPackageRequest
 	from ........request_adapter import HttpxRequestAdapter
-from iograph_models.models.access_package_assignment_policy import AccessPackageAssignmentPolicy
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.models.access_package_assignment_policy import AccessPackageAssignmentPolicy
 
 
 class ByAccessPackageAssignmentPolicyIdRequest(BaseRequestBuilder):
@@ -111,27 +112,67 @@ class ByAccessPackageAssignmentPolicyIdRequest(BaseRequestBuilder):
 			raise TypeError("raw_url cannot be None.")
 		return ByAccessPackageAssignmentPolicyIdRequest(self.request_adapter, self.path_parameters)
 
-	@property
 	def access_package(self,
+		accessPackage_id: str,
+		accessPackageAssignmentPolicy_id: str,
 	) -> AccessPackageRequest:
+		if accessPackage_id is None:
+			raise TypeError("accessPackage_id cannot be null.")
+		if accessPackageAssignmentPolicy_id is None:
+			raise TypeError("accessPackageAssignmentPolicy_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["accessPackage%2Did"] =  accessPackage_id
+		path_parameters["accessPackageAssignmentPolicy%2Did"] =  accessPackageAssignmentPolicy_id
+
 		from .access_package import AccessPackageRequest
-		return AccessPackageRequest(self.request_adapter, self.path_parameters)
+		return AccessPackageRequest(self.request_adapter, path_parameters)
 
-	@property
 	def catalog(self,
+		accessPackage_id: str,
+		accessPackageAssignmentPolicy_id: str,
 	) -> CatalogRequest:
+		if accessPackage_id is None:
+			raise TypeError("accessPackage_id cannot be null.")
+		if accessPackageAssignmentPolicy_id is None:
+			raise TypeError("accessPackageAssignmentPolicy_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["accessPackage%2Did"] =  accessPackage_id
+		path_parameters["accessPackageAssignmentPolicy%2Did"] =  accessPackageAssignmentPolicy_id
+
 		from .catalog import CatalogRequest
-		return CatalogRequest(self.request_adapter, self.path_parameters)
+		return CatalogRequest(self.request_adapter, path_parameters)
 
-	@property
 	def custom_extension_stage_settings(self,
+		accessPackage_id: str,
+		accessPackageAssignmentPolicy_id: str,
 	) -> CustomExtensionStageSettingsRequest:
-		from .custom_extension_stage_settings import CustomExtensionStageSettingsRequest
-		return CustomExtensionStageSettingsRequest(self.request_adapter, self.path_parameters)
+		if accessPackage_id is None:
+			raise TypeError("accessPackage_id cannot be null.")
+		if accessPackageAssignmentPolicy_id is None:
+			raise TypeError("accessPackageAssignmentPolicy_id cannot be null.")
 
-	@property
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["accessPackage%2Did"] =  accessPackage_id
+		path_parameters["accessPackageAssignmentPolicy%2Did"] =  accessPackageAssignmentPolicy_id
+
+		from .custom_extension_stage_settings import CustomExtensionStageSettingsRequest
+		return CustomExtensionStageSettingsRequest(self.request_adapter, path_parameters)
+
 	def questions(self,
+		accessPackage_id: str,
+		accessPackageAssignmentPolicy_id: str,
 	) -> QuestionsRequest:
+		if accessPackage_id is None:
+			raise TypeError("accessPackage_id cannot be null.")
+		if accessPackageAssignmentPolicy_id is None:
+			raise TypeError("accessPackageAssignmentPolicy_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["accessPackage%2Did"] =  accessPackage_id
+		path_parameters["accessPackageAssignmentPolicy%2Did"] =  accessPackageAssignmentPolicy_id
+
 		from .questions import QuestionsRequest
-		return QuestionsRequest(self.request_adapter, self.path_parameters)
+		return QuestionsRequest(self.request_adapter, path_parameters)
 

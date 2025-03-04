@@ -1,6 +1,7 @@
 # Auto-generated client
 
 from __future__ import annotations
+from kiota_abstractions.get_path_parameters import get_path_parameters
 from kiota_abstractions.method import Method
 from kiota_abstractions.base_request_builder import BaseRequestBuilder
 from kiota_abstractions.base_request_configuration import RequestConfiguration
@@ -12,11 +13,13 @@ from typing import TYPE_CHECKING
 if TYPE_CHECKING:
 	from .team import TeamRequest
 	from .notes import NotesRequest
+	from .get_final_report import GetFinalReportRequest
+	from .get_final_attachment import GetFinalAttachmentRequest
 	from .collaborators import CollaboratorsRequest
 	from .approvers import ApproversRequest
 	from .....request_adapter import HttpxRequestAdapter
-from iograph_models.models.subject_rights_request import SubjectRightsRequest
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.models.subject_rights_request import SubjectRightsRequest
 
 
 class BySubjectRightsRequestIdRequest(BaseRequestBuilder):
@@ -113,27 +116,75 @@ class BySubjectRightsRequestIdRequest(BaseRequestBuilder):
 			raise TypeError("raw_url cannot be None.")
 		return BySubjectRightsRequestIdRequest(self.request_adapter, self.path_parameters)
 
-	@property
 	def approvers(self,
+		subjectRightsRequest_id: str,
 	) -> ApproversRequest:
+		if subjectRightsRequest_id is None:
+			raise TypeError("subjectRightsRequest_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["subjectRightsRequest%2Did"] =  subjectRightsRequest_id
+
 		from .approvers import ApproversRequest
-		return ApproversRequest(self.request_adapter, self.path_parameters)
+		return ApproversRequest(self.request_adapter, path_parameters)
 
-	@property
 	def collaborators(self,
+		subjectRightsRequest_id: str,
 	) -> CollaboratorsRequest:
+		if subjectRightsRequest_id is None:
+			raise TypeError("subjectRightsRequest_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["subjectRightsRequest%2Did"] =  subjectRightsRequest_id
+
 		from .collaborators import CollaboratorsRequest
-		return CollaboratorsRequest(self.request_adapter, self.path_parameters)
+		return CollaboratorsRequest(self.request_adapter, path_parameters)
 
-	@property
+	def get_final_attachment(self,
+		subjectRightsRequest_id: str,
+	) -> GetFinalAttachmentRequest:
+		if subjectRightsRequest_id is None:
+			raise TypeError("subjectRightsRequest_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["subjectRightsRequest%2Did"] =  subjectRightsRequest_id
+
+		from .get_final_attachment import GetFinalAttachmentRequest
+		return GetFinalAttachmentRequest(self.request_adapter, path_parameters)
+
+	def get_final_report(self,
+		subjectRightsRequest_id: str,
+	) -> GetFinalReportRequest:
+		if subjectRightsRequest_id is None:
+			raise TypeError("subjectRightsRequest_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["subjectRightsRequest%2Did"] =  subjectRightsRequest_id
+
+		from .get_final_report import GetFinalReportRequest
+		return GetFinalReportRequest(self.request_adapter, path_parameters)
+
 	def notes(self,
+		subjectRightsRequest_id: str,
 	) -> NotesRequest:
-		from .notes import NotesRequest
-		return NotesRequest(self.request_adapter, self.path_parameters)
+		if subjectRightsRequest_id is None:
+			raise TypeError("subjectRightsRequest_id cannot be null.")
 
-	@property
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["subjectRightsRequest%2Did"] =  subjectRightsRequest_id
+
+		from .notes import NotesRequest
+		return NotesRequest(self.request_adapter, path_parameters)
+
 	def team(self,
+		subjectRightsRequest_id: str,
 	) -> TeamRequest:
+		if subjectRightsRequest_id is None:
+			raise TypeError("subjectRightsRequest_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["subjectRightsRequest%2Did"] =  subjectRightsRequest_id
+
 		from .team import TeamRequest
-		return TeamRequest(self.request_adapter, self.path_parameters)
+		return TeamRequest(self.request_adapter, path_parameters)
 

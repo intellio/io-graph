@@ -1,6 +1,7 @@
 # Auto-generated client
 
 from __future__ import annotations
+from kiota_abstractions.get_path_parameters import get_path_parameters
 from kiota_abstractions.method import Method
 from kiota_abstractions.base_request_builder import BaseRequestBuilder
 from kiota_abstractions.base_request_configuration import RequestConfiguration
@@ -13,8 +14,8 @@ if TYPE_CHECKING:
 	from .graph_room_list import GraphRoomListRequest
 	from .graph_room import GraphRoomRequest
 	from ....request_adapter import HttpxRequestAdapter
-from iograph_models.models.place import Place
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.models.place import Place
 
 
 class ByPlaceIdRequest(BaseRequestBuilder):
@@ -83,15 +84,27 @@ class ByPlaceIdRequest(BaseRequestBuilder):
 			raise TypeError("raw_url cannot be None.")
 		return ByPlaceIdRequest(self.request_adapter, self.path_parameters)
 
-	@property
 	def graph_room(self,
+		place_id: str,
 	) -> GraphRoomRequest:
-		from .graph_room import GraphRoomRequest
-		return GraphRoomRequest(self.request_adapter, self.path_parameters)
+		if place_id is None:
+			raise TypeError("place_id cannot be null.")
 
-	@property
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["place%2Did"] =  place_id
+
+		from .graph_room import GraphRoomRequest
+		return GraphRoomRequest(self.request_adapter, path_parameters)
+
 	def graph_room_list(self,
+		place_id: str,
 	) -> GraphRoomListRequest:
+		if place_id is None:
+			raise TypeError("place_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["place%2Did"] =  place_id
+
 		from .graph_room_list import GraphRoomListRequest
-		return GraphRoomListRequest(self.request_adapter, self.path_parameters)
+		return GraphRoomListRequest(self.request_adapter, path_parameters)
 

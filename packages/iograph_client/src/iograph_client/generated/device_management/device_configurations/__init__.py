@@ -14,8 +14,8 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_device_configuration_id import ByDeviceConfigurationIdRequest
 	from ....request_adapter import HttpxRequestAdapter
-from iograph_models.models.device_configuration_collection_response import DeviceConfigurationCollectionResponse
 from iograph_models.models.device_configuration import DeviceConfiguration
+from iograph_models.models.device_configuration_collection_response import DeviceConfigurationCollectionResponse
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
 
 
@@ -28,9 +28,9 @@ class DeviceConfigurationsRequest(BaseRequestBuilder):
 		request_configuration: Optional[RequestConfiguration[GetQueryParams]] = None,
 	) -> DeviceConfigurationCollectionResponse:
 		"""
-		List androidWorkProfileCustomConfigurations
-		List properties and relationships of the androidWorkProfileCustomConfiguration objects.
-		Find more info here: https://learn.microsoft.com/graph/api/intune-deviceconfig-androidworkprofilecustomconfiguration-list?view=graph-rest-1.0
+		List iosDeviceFeaturesConfigurations
+		List properties and relationships of the iosDeviceFeaturesConfiguration objects.
+		Find more info here: https://learn.microsoft.com/graph/api/intune-deviceconfig-iosdevicefeaturesconfiguration-list?view=graph-rest-1.0
 		"""
 		tags = ['deviceManagement.deviceConfiguration']
 
@@ -53,9 +53,9 @@ class DeviceConfigurationsRequest(BaseRequestBuilder):
 		request_configuration: Optional[RequestConfiguration[BaseModel]] = None,
 	) -> DeviceConfiguration:
 		"""
-		Create iosDeviceFeaturesConfiguration
-		Create a new iosDeviceFeaturesConfiguration object.
-		Find more info here: https://learn.microsoft.com/graph/api/intune-deviceconfig-iosdevicefeaturesconfiguration-create?view=graph-rest-1.0
+		Create iosGeneralDeviceConfiguration
+		Create a new iosGeneralDeviceConfiguration object.
+		Find more info here: https://learn.microsoft.com/graph/api/intune-deviceconfig-iosgeneraldeviceconfiguration-create?view=graph-rest-1.0
 		"""
 		tags = ['deviceManagement.deviceConfiguration']
 

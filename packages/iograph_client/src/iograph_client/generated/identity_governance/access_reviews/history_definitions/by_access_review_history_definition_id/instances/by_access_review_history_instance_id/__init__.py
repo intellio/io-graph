@@ -1,6 +1,7 @@
 # Auto-generated client
 
 from __future__ import annotations
+from kiota_abstractions.get_path_parameters import get_path_parameters
 from kiota_abstractions.method import Method
 from kiota_abstractions.base_request_builder import BaseRequestBuilder
 from kiota_abstractions.base_request_configuration import RequestConfiguration
@@ -108,9 +109,19 @@ class ByAccessReviewHistoryInstanceIdRequest(BaseRequestBuilder):
 			raise TypeError("raw_url cannot be None.")
 		return ByAccessReviewHistoryInstanceIdRequest(self.request_adapter, self.path_parameters)
 
-	@property
 	def generate_download_uri(self,
+		accessReviewHistoryDefinition_id: str,
+		accessReviewHistoryInstance_id: str,
 	) -> GenerateDownloadUriRequest:
+		if accessReviewHistoryDefinition_id is None:
+			raise TypeError("accessReviewHistoryDefinition_id cannot be null.")
+		if accessReviewHistoryInstance_id is None:
+			raise TypeError("accessReviewHistoryInstance_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["accessReviewHistoryDefinition%2Did"] =  accessReviewHistoryDefinition_id
+		path_parameters["accessReviewHistoryInstance%2Did"] =  accessReviewHistoryInstance_id
+
 		from .generate_download_uri import GenerateDownloadUriRequest
-		return GenerateDownloadUriRequest(self.request_adapter, self.path_parameters)
+		return GenerateDownloadUriRequest(self.request_adapter, path_parameters)
 

@@ -14,9 +14,9 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_windows_information_protection_app_locker_file_id import ByWindowsInformationProtectionAppLockerFileIdRequest
 	from ......request_adapter import HttpxRequestAdapter
-from iograph_models.models.windows_information_protection_app_locker_file import WindowsInformationProtectionAppLockerFile
 from iograph_models.models.windows_information_protection_app_locker_file_collection_response import WindowsInformationProtectionAppLockerFileCollectionResponse
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.models.windows_information_protection_app_locker_file import WindowsInformationProtectionAppLockerFile
 
 
 class ProtectedAppLockerFilesRequest(BaseRequestBuilder):
@@ -108,9 +108,15 @@ class ProtectedAppLockerFilesRequest(BaseRequestBuilder):
 		from .by_windows_information_protection_app_locker_file_id import ByWindowsInformationProtectionAppLockerFileIdRequest
 		return ByWindowsInformationProtectionAppLockerFileIdRequest(self.request_adapter, path_parameters)
 
-	@property
 	def count(self,
+		windowsInformationProtectionPolicy_id: str,
 	) -> CountRequest:
+		if windowsInformationProtectionPolicy_id is None:
+			raise TypeError("windowsInformationProtectionPolicy_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["windowsInformationProtectionPolicy%2Did"] =  windowsInformationProtectionPolicy_id
+
 		from .count import CountRequest
-		return CountRequest(self.request_adapter, self.path_parameters)
+		return CountRequest(self.request_adapter, path_parameters)
 

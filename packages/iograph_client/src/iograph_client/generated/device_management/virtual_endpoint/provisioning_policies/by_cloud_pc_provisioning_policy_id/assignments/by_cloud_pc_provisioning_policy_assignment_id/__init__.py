@@ -1,6 +1,7 @@
 # Auto-generated client
 
 from __future__ import annotations
+from kiota_abstractions.get_path_parameters import get_path_parameters
 from kiota_abstractions.method import Method
 from kiota_abstractions.base_request_builder import BaseRequestBuilder
 from kiota_abstractions.base_request_configuration import RequestConfiguration
@@ -108,9 +109,19 @@ class ByCloudPcProvisioningPolicyAssignmentIdRequest(BaseRequestBuilder):
 			raise TypeError("raw_url cannot be None.")
 		return ByCloudPcProvisioningPolicyAssignmentIdRequest(self.request_adapter, self.path_parameters)
 
-	@property
 	def assigned_users(self,
+		cloudPcProvisioningPolicy_id: str,
+		cloudPcProvisioningPolicyAssignment_id: str,
 	) -> AssignedUsersRequest:
+		if cloudPcProvisioningPolicy_id is None:
+			raise TypeError("cloudPcProvisioningPolicy_id cannot be null.")
+		if cloudPcProvisioningPolicyAssignment_id is None:
+			raise TypeError("cloudPcProvisioningPolicyAssignment_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["cloudPcProvisioningPolicy%2Did"] =  cloudPcProvisioningPolicy_id
+		path_parameters["cloudPcProvisioningPolicyAssignment%2Did"] =  cloudPcProvisioningPolicyAssignment_id
+
 		from .assigned_users import AssignedUsersRequest
-		return AssignedUsersRequest(self.request_adapter, self.path_parameters)
+		return AssignedUsersRequest(self.request_adapter, path_parameters)
 

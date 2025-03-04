@@ -110,15 +110,27 @@ class ParticipantsRequest(BaseRequestBuilder):
 		from .by_participant_id import ByParticipantIdRequest
 		return ByParticipantIdRequest(self.request_adapter, path_parameters)
 
-	@property
 	def count(self,
+		call_id: str,
 	) -> CountRequest:
-		from .count import CountRequest
-		return CountRequest(self.request_adapter, self.path_parameters)
+		if call_id is None:
+			raise TypeError("call_id cannot be null.")
 
-	@property
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["call%2Did"] =  call_id
+
+		from .count import CountRequest
+		return CountRequest(self.request_adapter, path_parameters)
+
 	def invite(self,
+		call_id: str,
 	) -> InviteRequest:
+		if call_id is None:
+			raise TypeError("call_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["call%2Did"] =  call_id
+
 		from .invite import InviteRequest
-		return InviteRequest(self.request_adapter, self.path_parameters)
+		return InviteRequest(self.request_adapter, path_parameters)
 

@@ -15,9 +15,9 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_base_site_page_id import ByBaseSitePageIdRequest
 	from .....request_adapter import HttpxRequestAdapter
-from iograph_models.models.base_site_page_collection_response import BaseSitePageCollectionResponse
 from iograph_models.models.base_site_page import BaseSitePage
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.models.base_site_page_collection_response import BaseSitePageCollectionResponse
 
 
 class PagesRequest(BaseRequestBuilder):
@@ -111,15 +111,27 @@ class PagesRequest(BaseRequestBuilder):
 		from .by_base_site_page_id import ByBaseSitePageIdRequest
 		return ByBaseSitePageIdRequest(self.request_adapter, path_parameters)
 
-	@property
 	def count(self,
+		site_id: str,
 	) -> CountRequest:
-		from .count import CountRequest
-		return CountRequest(self.request_adapter, self.path_parameters)
+		if site_id is None:
+			raise TypeError("site_id cannot be null.")
 
-	@property
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["site%2Did"] =  site_id
+
+		from .count import CountRequest
+		return CountRequest(self.request_adapter, path_parameters)
+
 	def graph_site_page(self,
+		site_id: str,
 	) -> GraphSitePageRequest:
+		if site_id is None:
+			raise TypeError("site_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["site%2Did"] =  site_id
+
 		from .graph_site_page import GraphSitePageRequest
-		return GraphSitePageRequest(self.request_adapter, self.path_parameters)
+		return GraphSitePageRequest(self.request_adapter, path_parameters)
 

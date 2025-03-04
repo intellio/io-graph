@@ -1,6 +1,7 @@
 # Auto-generated client
 
 from __future__ import annotations
+from kiota_abstractions.get_path_parameters import get_path_parameters
 from kiota_abstractions.method import Method
 from kiota_abstractions.base_request_builder import BaseRequestBuilder
 from kiota_abstractions.base_request_configuration import RequestConfiguration
@@ -109,9 +110,15 @@ class FileRequest(BaseRequestBuilder):
 			raise TypeError("raw_url cannot be None.")
 		return FileRequest(self.request_adapter, self.path_parameters)
 
-	@property
 	def localizations(self,
+		agreement_id: str,
 	) -> LocalizationsRequest:
+		if agreement_id is None:
+			raise TypeError("agreement_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["agreement%2Did"] =  agreement_id
+
 		from .localizations import LocalizationsRequest
-		return LocalizationsRequest(self.request_adapter, self.path_parameters)
+		return LocalizationsRequest(self.request_adapter, path_parameters)
 

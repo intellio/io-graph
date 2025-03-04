@@ -11,12 +11,14 @@ from typing import Union, Any, Optional
 from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:
+	from .call_records_get_pstn_calls import CallRecordsGetPstnCallsRequest
+	from .call_records_get_direct_routing_calls import CallRecordsGetDirectRoutingCallsRequest
 	from .count import CountRequest
 	from .by_call_record_id import ByCallRecordIdRequest
 	from ....request_adapter import HttpxRequestAdapter
+from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.models.call_records_call_record_collection_response import CallRecordsCallRecordCollectionResponse
 from iograph_models.models.call_records_call_record import CallRecordsCallRecord
-from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
 
 
 class CallRecordsRequest(BaseRequestBuilder):
@@ -110,4 +112,36 @@ class CallRecordsRequest(BaseRequestBuilder):
 	) -> CountRequest:
 		from .count import CountRequest
 		return CountRequest(self.request_adapter, self.path_parameters)
+
+	def call_records_get_direct_routing_calls(self,
+		fromDateTime: datetime,
+		toDateTime: datetime,
+	) -> CallRecordsGetDirectRoutingCallsRequest:
+		if fromDateTime is None:
+			raise TypeError("fromDateTime cannot be null.")
+		if toDateTime is None:
+			raise TypeError("toDateTime cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["fromDateTime"] =  fromDateTime
+		path_parameters["toDateTime"] =  toDateTime
+
+		from .call_records_get_direct_routing_calls import CallRecordsGetDirectRoutingCallsRequest
+		return CallRecordsGetDirectRoutingCallsRequest(self.request_adapter, path_parameters)
+
+	def call_records_get_pstn_calls(self,
+		fromDateTime: datetime,
+		toDateTime: datetime,
+	) -> CallRecordsGetPstnCallsRequest:
+		if fromDateTime is None:
+			raise TypeError("fromDateTime cannot be null.")
+		if toDateTime is None:
+			raise TypeError("toDateTime cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["fromDateTime"] =  fromDateTime
+		path_parameters["toDateTime"] =  toDateTime
+
+		from .call_records_get_pstn_calls import CallRecordsGetPstnCallsRequest
+		return CallRecordsGetPstnCallsRequest(self.request_adapter, path_parameters)
 

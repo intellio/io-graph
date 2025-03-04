@@ -1,6 +1,7 @@
 # Auto-generated client
 
 from __future__ import annotations
+from kiota_abstractions.get_path_parameters import get_path_parameters
 from kiota_abstractions.method import Method
 from kiota_abstractions.base_request_builder import BaseRequestBuilder
 from kiota_abstractions.base_request_configuration import RequestConfiguration
@@ -111,9 +112,19 @@ the created resource has a distributionMethod property value of organization. Th
 			raise TypeError("raw_url cannot be None.")
 		return ByTeamsAppDefinitionIdRequest(self.request_adapter, self.path_parameters)
 
-	@property
 	def bot(self,
+		teamsApp_id: str,
+		teamsAppDefinition_id: str,
 	) -> BotRequest:
+		if teamsApp_id is None:
+			raise TypeError("teamsApp_id cannot be null.")
+		if teamsAppDefinition_id is None:
+			raise TypeError("teamsAppDefinition_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["teamsApp%2Did"] =  teamsApp_id
+		path_parameters["teamsAppDefinition%2Did"] =  teamsAppDefinition_id
+
 		from .bot import BotRequest
-		return BotRequest(self.request_adapter, self.path_parameters)
+		return BotRequest(self.request_adapter, path_parameters)
 

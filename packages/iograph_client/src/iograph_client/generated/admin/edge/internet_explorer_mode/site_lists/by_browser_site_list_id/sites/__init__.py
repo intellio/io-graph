@@ -15,8 +15,8 @@ if TYPE_CHECKING:
 	from .by_browser_site_id import ByBrowserSiteIdRequest
 	from ........request_adapter import HttpxRequestAdapter
 from iograph_models.models.browser_site import BrowserSite
-from iograph_models.models.browser_site_collection_response import BrowserSiteCollectionResponse
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.models.browser_site_collection_response import BrowserSiteCollectionResponse
 
 
 class SitesRequest(BaseRequestBuilder):
@@ -110,9 +110,15 @@ class SitesRequest(BaseRequestBuilder):
 		from .by_browser_site_id import ByBrowserSiteIdRequest
 		return ByBrowserSiteIdRequest(self.request_adapter, path_parameters)
 
-	@property
 	def count(self,
+		browserSiteList_id: str,
 	) -> CountRequest:
+		if browserSiteList_id is None:
+			raise TypeError("browserSiteList_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["browserSiteList%2Did"] =  browserSiteList_id
+
 		from .count import CountRequest
-		return CountRequest(self.request_adapter, self.path_parameters)
+		return CountRequest(self.request_adapter, path_parameters)
 

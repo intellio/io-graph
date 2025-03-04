@@ -1,6 +1,7 @@
 # Auto-generated client
 
 from __future__ import annotations
+from kiota_abstractions.get_path_parameters import get_path_parameters
 from kiota_abstractions.method import Method
 from kiota_abstractions.base_request_builder import BaseRequestBuilder
 from kiota_abstractions.base_request_configuration import RequestConfiguration
@@ -111,21 +112,51 @@ class ByEdiscoveryReviewSetIdRequest(BaseRequestBuilder):
 			raise TypeError("raw_url cannot be None.")
 		return ByEdiscoveryReviewSetIdRequest(self.request_adapter, self.path_parameters)
 
-	@property
 	def security_add_to_review_set(self,
+		ediscoveryCase_id: str,
+		ediscoveryReviewSet_id: str,
 	) -> SecurityAddToReviewSetRequest:
+		if ediscoveryCase_id is None:
+			raise TypeError("ediscoveryCase_id cannot be null.")
+		if ediscoveryReviewSet_id is None:
+			raise TypeError("ediscoveryReviewSet_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["ediscoveryCase%2Did"] =  ediscoveryCase_id
+		path_parameters["ediscoveryReviewSet%2Did"] =  ediscoveryReviewSet_id
+
 		from .security_add_to_review_set import SecurityAddToReviewSetRequest
-		return SecurityAddToReviewSetRequest(self.request_adapter, self.path_parameters)
+		return SecurityAddToReviewSetRequest(self.request_adapter, path_parameters)
 
-	@property
 	def security_export(self,
+		ediscoveryCase_id: str,
+		ediscoveryReviewSet_id: str,
 	) -> SecurityExportRequest:
-		from .security_export import SecurityExportRequest
-		return SecurityExportRequest(self.request_adapter, self.path_parameters)
+		if ediscoveryCase_id is None:
+			raise TypeError("ediscoveryCase_id cannot be null.")
+		if ediscoveryReviewSet_id is None:
+			raise TypeError("ediscoveryReviewSet_id cannot be null.")
 
-	@property
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["ediscoveryCase%2Did"] =  ediscoveryCase_id
+		path_parameters["ediscoveryReviewSet%2Did"] =  ediscoveryReviewSet_id
+
+		from .security_export import SecurityExportRequest
+		return SecurityExportRequest(self.request_adapter, path_parameters)
+
 	def queries(self,
+		ediscoveryCase_id: str,
+		ediscoveryReviewSet_id: str,
 	) -> QueriesRequest:
+		if ediscoveryCase_id is None:
+			raise TypeError("ediscoveryCase_id cannot be null.")
+		if ediscoveryReviewSet_id is None:
+			raise TypeError("ediscoveryReviewSet_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["ediscoveryCase%2Did"] =  ediscoveryCase_id
+		path_parameters["ediscoveryReviewSet%2Did"] =  ediscoveryReviewSet_id
+
 		from .queries import QueriesRequest
-		return QueriesRequest(self.request_adapter, self.path_parameters)
+		return QueriesRequest(self.request_adapter, path_parameters)
 

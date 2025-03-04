@@ -1,6 +1,7 @@
 # Auto-generated client
 
 from __future__ import annotations
+from kiota_abstractions.get_path_parameters import get_path_parameters
 from kiota_abstractions.method import Method
 from kiota_abstractions.base_request_builder import BaseRequestBuilder
 from kiota_abstractions.base_request_configuration import RequestConfiguration
@@ -128,117 +129,231 @@ class ByCallIdRequest(BaseRequestBuilder):
 			raise TypeError("raw_url cannot be None.")
 		return ByCallIdRequest(self.request_adapter, self.path_parameters)
 
-	@property
 	def audio_routing_groups(self,
+		call_id: str,
 	) -> AudioRoutingGroupsRequest:
+		if call_id is None:
+			raise TypeError("call_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["call%2Did"] =  call_id
+
 		from .audio_routing_groups import AudioRoutingGroupsRequest
-		return AudioRoutingGroupsRequest(self.request_adapter, self.path_parameters)
+		return AudioRoutingGroupsRequest(self.request_adapter, path_parameters)
 
-	@property
 	def content_sharing_sessions(self,
+		call_id: str,
 	) -> ContentSharingSessionsRequest:
+		if call_id is None:
+			raise TypeError("call_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["call%2Did"] =  call_id
+
 		from .content_sharing_sessions import ContentSharingSessionsRequest
-		return ContentSharingSessionsRequest(self.request_adapter, self.path_parameters)
+		return ContentSharingSessionsRequest(self.request_adapter, path_parameters)
 
-	@property
 	def add_large_gallery_view(self,
+		call_id: str,
 	) -> AddLargeGalleryViewRequest:
+		if call_id is None:
+			raise TypeError("call_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["call%2Did"] =  call_id
+
 		from .add_large_gallery_view import AddLargeGalleryViewRequest
-		return AddLargeGalleryViewRequest(self.request_adapter, self.path_parameters)
+		return AddLargeGalleryViewRequest(self.request_adapter, path_parameters)
 
-	@property
 	def answer(self,
+		call_id: str,
 	) -> AnswerRequest:
+		if call_id is None:
+			raise TypeError("call_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["call%2Did"] =  call_id
+
 		from .answer import AnswerRequest
-		return AnswerRequest(self.request_adapter, self.path_parameters)
+		return AnswerRequest(self.request_adapter, path_parameters)
 
-	@property
 	def cancel_media_processing(self,
+		call_id: str,
 	) -> CancelMediaProcessingRequest:
+		if call_id is None:
+			raise TypeError("call_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["call%2Did"] =  call_id
+
 		from .cancel_media_processing import CancelMediaProcessingRequest
-		return CancelMediaProcessingRequest(self.request_adapter, self.path_parameters)
+		return CancelMediaProcessingRequest(self.request_adapter, path_parameters)
 
-	@property
 	def change_screen_sharing_role(self,
+		call_id: str,
 	) -> ChangeScreenSharingRoleRequest:
+		if call_id is None:
+			raise TypeError("call_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["call%2Did"] =  call_id
+
 		from .change_screen_sharing_role import ChangeScreenSharingRoleRequest
-		return ChangeScreenSharingRoleRequest(self.request_adapter, self.path_parameters)
+		return ChangeScreenSharingRoleRequest(self.request_adapter, path_parameters)
 
-	@property
 	def keep_alive(self,
+		call_id: str,
 	) -> KeepAliveRequest:
+		if call_id is None:
+			raise TypeError("call_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["call%2Did"] =  call_id
+
 		from .keep_alive import KeepAliveRequest
-		return KeepAliveRequest(self.request_adapter, self.path_parameters)
+		return KeepAliveRequest(self.request_adapter, path_parameters)
 
-	@property
 	def mute(self,
+		call_id: str,
 	) -> MuteRequest:
+		if call_id is None:
+			raise TypeError("call_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["call%2Did"] =  call_id
+
 		from .mute import MuteRequest
-		return MuteRequest(self.request_adapter, self.path_parameters)
+		return MuteRequest(self.request_adapter, path_parameters)
 
-	@property
 	def play_prompt(self,
+		call_id: str,
 	) -> PlayPromptRequest:
+		if call_id is None:
+			raise TypeError("call_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["call%2Did"] =  call_id
+
 		from .play_prompt import PlayPromptRequest
-		return PlayPromptRequest(self.request_adapter, self.path_parameters)
+		return PlayPromptRequest(self.request_adapter, path_parameters)
 
-	@property
 	def record_response(self,
+		call_id: str,
 	) -> RecordResponseRequest:
+		if call_id is None:
+			raise TypeError("call_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["call%2Did"] =  call_id
+
 		from .record_response import RecordResponseRequest
-		return RecordResponseRequest(self.request_adapter, self.path_parameters)
+		return RecordResponseRequest(self.request_adapter, path_parameters)
 
-	@property
 	def redirect(self,
+		call_id: str,
 	) -> RedirectRequest:
+		if call_id is None:
+			raise TypeError("call_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["call%2Did"] =  call_id
+
 		from .redirect import RedirectRequest
-		return RedirectRequest(self.request_adapter, self.path_parameters)
+		return RedirectRequest(self.request_adapter, path_parameters)
 
-	@property
 	def reject(self,
+		call_id: str,
 	) -> RejectRequest:
+		if call_id is None:
+			raise TypeError("call_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["call%2Did"] =  call_id
+
 		from .reject import RejectRequest
-		return RejectRequest(self.request_adapter, self.path_parameters)
+		return RejectRequest(self.request_adapter, path_parameters)
 
-	@property
 	def send_dtmf_tones(self,
+		call_id: str,
 	) -> SendDtmfTonesRequest:
+		if call_id is None:
+			raise TypeError("call_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["call%2Did"] =  call_id
+
 		from .send_dtmf_tones import SendDtmfTonesRequest
-		return SendDtmfTonesRequest(self.request_adapter, self.path_parameters)
+		return SendDtmfTonesRequest(self.request_adapter, path_parameters)
 
-	@property
 	def subscribe_to_tone(self,
+		call_id: str,
 	) -> SubscribeToToneRequest:
+		if call_id is None:
+			raise TypeError("call_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["call%2Did"] =  call_id
+
 		from .subscribe_to_tone import SubscribeToToneRequest
-		return SubscribeToToneRequest(self.request_adapter, self.path_parameters)
+		return SubscribeToToneRequest(self.request_adapter, path_parameters)
 
-	@property
 	def transfer(self,
+		call_id: str,
 	) -> TransferRequest:
+		if call_id is None:
+			raise TypeError("call_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["call%2Did"] =  call_id
+
 		from .transfer import TransferRequest
-		return TransferRequest(self.request_adapter, self.path_parameters)
+		return TransferRequest(self.request_adapter, path_parameters)
 
-	@property
 	def unmute(self,
+		call_id: str,
 	) -> UnmuteRequest:
+		if call_id is None:
+			raise TypeError("call_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["call%2Did"] =  call_id
+
 		from .unmute import UnmuteRequest
-		return UnmuteRequest(self.request_adapter, self.path_parameters)
+		return UnmuteRequest(self.request_adapter, path_parameters)
 
-	@property
 	def update_recording_status(self,
+		call_id: str,
 	) -> UpdateRecordingStatusRequest:
+		if call_id is None:
+			raise TypeError("call_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["call%2Did"] =  call_id
+
 		from .update_recording_status import UpdateRecordingStatusRequest
-		return UpdateRecordingStatusRequest(self.request_adapter, self.path_parameters)
+		return UpdateRecordingStatusRequest(self.request_adapter, path_parameters)
 
-	@property
 	def operations(self,
+		call_id: str,
 	) -> OperationsRequest:
-		from .operations import OperationsRequest
-		return OperationsRequest(self.request_adapter, self.path_parameters)
+		if call_id is None:
+			raise TypeError("call_id cannot be null.")
 
-	@property
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["call%2Did"] =  call_id
+
+		from .operations import OperationsRequest
+		return OperationsRequest(self.request_adapter, path_parameters)
+
 	def participants(self,
+		call_id: str,
 	) -> ParticipantsRequest:
+		if call_id is None:
+			raise TypeError("call_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["call%2Did"] =  call_id
+
 		from .participants import ParticipantsRequest
-		return ParticipantsRequest(self.request_adapter, self.path_parameters)
+		return ParticipantsRequest(self.request_adapter, path_parameters)
 

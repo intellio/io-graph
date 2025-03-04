@@ -14,12 +14,13 @@ if TYPE_CHECKING:
 	from .validate_properties import ValidatePropertiesRequest
 	from .get_by_ids import GetByIdsRequest
 	from .get_available_extension_properties import GetAvailableExtensionPropertiesRequest
+	from .delta import DeltaRequest
 	from .count import CountRequest
 	from .by_organization_id import ByOrganizationIdRequest
 	from ...request_adapter import HttpxRequestAdapter
-from iograph_models.models.organization_collection_response import OrganizationCollectionResponse
 from iograph_models.models.organization import Organization
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.models.organization_collection_response import OrganizationCollectionResponse
 
 
 class OrganizationRequest(BaseRequestBuilder):
@@ -32,8 +33,8 @@ class OrganizationRequest(BaseRequestBuilder):
 	) -> OrganizationCollectionResponse:
 		"""
 		List organizations
-		List properties and relationships of the organization objects.
-		Find more info here: https://learn.microsoft.com/graph/api/intune-onboarding-organization-list?view=graph-rest-1.0
+		Retrieve a list of organization objects. There's only one organization object in the collection.
+		Find more info here: https://learn.microsoft.com/graph/api/organization-list?view=graph-rest-1.0
 		"""
 		tags = ['organization.organization']
 
@@ -113,6 +114,12 @@ class OrganizationRequest(BaseRequestBuilder):
 	) -> CountRequest:
 		from .count import CountRequest
 		return CountRequest(self.request_adapter, self.path_parameters)
+
+	@property
+	def delta(self,
+	) -> DeltaRequest:
+		from .delta import DeltaRequest
+		return DeltaRequest(self.request_adapter, self.path_parameters)
 
 	@property
 	def get_available_extension_properties(self,

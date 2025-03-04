@@ -1,6 +1,7 @@
 # Auto-generated client
 
 from __future__ import annotations
+from kiota_abstractions.get_path_parameters import get_path_parameters
 from kiota_abstractions.method import Method
 from kiota_abstractions.base_request_builder import BaseRequestBuilder
 from kiota_abstractions.base_request_configuration import RequestConfiguration
@@ -12,8 +13,8 @@ from typing import TYPE_CHECKING
 if TYPE_CHECKING:
 	from .calendars import CalendarsRequest
 	from ......request_adapter import HttpxRequestAdapter
-from iograph_models.models.calendar_group import CalendarGroup
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.models.calendar_group import CalendarGroup
 
 
 class ByCalendarGroupIdRequest(BaseRequestBuilder):
@@ -108,9 +109,19 @@ class ByCalendarGroupIdRequest(BaseRequestBuilder):
 			raise TypeError("raw_url cannot be None.")
 		return ByCalendarGroupIdRequest(self.request_adapter, self.path_parameters)
 
-	@property
 	def calendars(self,
+		user_id: str,
+		calendarGroup_id: str,
 	) -> CalendarsRequest:
+		if user_id is None:
+			raise TypeError("user_id cannot be null.")
+		if calendarGroup_id is None:
+			raise TypeError("calendarGroup_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["user%2Did"] =  user_id
+		path_parameters["calendarGroup%2Did"] =  calendarGroup_id
+
 		from .calendars import CalendarsRequest
-		return CalendarsRequest(self.request_adapter, self.path_parameters)
+		return CalendarsRequest(self.request_adapter, path_parameters)
 

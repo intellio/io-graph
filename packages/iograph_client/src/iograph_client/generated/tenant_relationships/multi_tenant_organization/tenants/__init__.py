@@ -15,8 +15,8 @@ if TYPE_CHECKING:
 	from .by_multi_tenant_organization_member_id import ByMultiTenantOrganizationMemberIdRequest
 	from .....request_adapter import HttpxRequestAdapter
 from iograph_models.models.multi_tenant_organization_member_collection_response import MultiTenantOrganizationMemberCollectionResponse
-from iograph_models.models.multi_tenant_organization_member import MultiTenantOrganizationMember
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.models.multi_tenant_organization_member import MultiTenantOrganizationMember
 
 
 class TenantsRequest(BaseRequestBuilder):

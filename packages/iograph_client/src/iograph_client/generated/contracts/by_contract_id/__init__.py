@@ -1,6 +1,7 @@
 # Auto-generated client
 
 from __future__ import annotations
+from kiota_abstractions.get_path_parameters import get_path_parameters
 from kiota_abstractions.method import Method
 from kiota_abstractions.base_request_builder import BaseRequestBuilder
 from kiota_abstractions.base_request_configuration import RequestConfiguration
@@ -113,33 +114,63 @@ class ByContractIdRequest(BaseRequestBuilder):
 			raise TypeError("raw_url cannot be None.")
 		return ByContractIdRequest(self.request_adapter, self.path_parameters)
 
-	@property
 	def check_member_groups(self,
+		contract_id: str,
 	) -> CheckMemberGroupsRequest:
+		if contract_id is None:
+			raise TypeError("contract_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["contract%2Did"] =  contract_id
+
 		from .check_member_groups import CheckMemberGroupsRequest
-		return CheckMemberGroupsRequest(self.request_adapter, self.path_parameters)
+		return CheckMemberGroupsRequest(self.request_adapter, path_parameters)
 
-	@property
 	def check_member_objects(self,
+		contract_id: str,
 	) -> CheckMemberObjectsRequest:
+		if contract_id is None:
+			raise TypeError("contract_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["contract%2Did"] =  contract_id
+
 		from .check_member_objects import CheckMemberObjectsRequest
-		return CheckMemberObjectsRequest(self.request_adapter, self.path_parameters)
+		return CheckMemberObjectsRequest(self.request_adapter, path_parameters)
 
-	@property
 	def get_member_groups(self,
+		contract_id: str,
 	) -> GetMemberGroupsRequest:
+		if contract_id is None:
+			raise TypeError("contract_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["contract%2Did"] =  contract_id
+
 		from .get_member_groups import GetMemberGroupsRequest
-		return GetMemberGroupsRequest(self.request_adapter, self.path_parameters)
+		return GetMemberGroupsRequest(self.request_adapter, path_parameters)
 
-	@property
 	def get_member_objects(self,
+		contract_id: str,
 	) -> GetMemberObjectsRequest:
-		from .get_member_objects import GetMemberObjectsRequest
-		return GetMemberObjectsRequest(self.request_adapter, self.path_parameters)
+		if contract_id is None:
+			raise TypeError("contract_id cannot be null.")
 
-	@property
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["contract%2Did"] =  contract_id
+
+		from .get_member_objects import GetMemberObjectsRequest
+		return GetMemberObjectsRequest(self.request_adapter, path_parameters)
+
 	def restore(self,
+		contract_id: str,
 	) -> RestoreRequest:
+		if contract_id is None:
+			raise TypeError("contract_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["contract%2Did"] =  contract_id
+
 		from .restore import RestoreRequest
-		return RestoreRequest(self.request_adapter, self.path_parameters)
+		return RestoreRequest(self.request_adapter, path_parameters)
 

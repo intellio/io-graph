@@ -14,8 +14,8 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_unified_rbac_resource_action_id import ByUnifiedRbacResourceActionIdRequest
 	from .......request_adapter import HttpxRequestAdapter
-from iograph_models.models.unified_rbac_resource_action_collection_response import UnifiedRbacResourceActionCollectionResponse
 from iograph_models.models.unified_rbac_resource_action import UnifiedRbacResourceAction
+from iograph_models.models.unified_rbac_resource_action_collection_response import UnifiedRbacResourceActionCollectionResponse
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
 
 
@@ -108,9 +108,15 @@ class ResourceActionsRequest(BaseRequestBuilder):
 		from .by_unified_rbac_resource_action_id import ByUnifiedRbacResourceActionIdRequest
 		return ByUnifiedRbacResourceActionIdRequest(self.request_adapter, path_parameters)
 
-	@property
 	def count(self,
+		unifiedRbacResourceNamespace_id: str,
 	) -> CountRequest:
+		if unifiedRbacResourceNamespace_id is None:
+			raise TypeError("unifiedRbacResourceNamespace_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["unifiedRbacResourceNamespace%2Did"] =  unifiedRbacResourceNamespace_id
+
 		from .count import CountRequest
-		return CountRequest(self.request_adapter, self.path_parameters)
+		return CountRequest(self.request_adapter, path_parameters)
 

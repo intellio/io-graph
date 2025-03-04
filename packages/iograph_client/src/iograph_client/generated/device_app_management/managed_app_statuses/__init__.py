@@ -15,8 +15,8 @@ if TYPE_CHECKING:
 	from .by_managed_app_status_id import ByManagedAppStatusIdRequest
 	from ....request_adapter import HttpxRequestAdapter
 from iograph_models.models.managed_app_status import ManagedAppStatus
-from iograph_models.models.managed_app_status_collection_response import ManagedAppStatusCollectionResponse
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.models.managed_app_status_collection_response import ManagedAppStatusCollectionResponse
 
 
 class ManagedAppStatusesRequest(BaseRequestBuilder):
@@ -28,9 +28,9 @@ class ManagedAppStatusesRequest(BaseRequestBuilder):
 		request_configuration: Optional[RequestConfiguration[GetQueryParams]] = None,
 	) -> ManagedAppStatusCollectionResponse:
 		"""
-		List managedAppStatusRaws
-		List properties and relationships of the managedAppStatusRaw objects.
-		Find more info here: https://learn.microsoft.com/graph/api/intune-mam-managedappstatusraw-list?view=graph-rest-1.0
+		List managedAppStatuses
+		List properties and relationships of the managedAppStatus objects.
+		Find more info here: https://learn.microsoft.com/graph/api/intune-mam-managedappstatus-list?view=graph-rest-1.0
 		"""
 		tags = ['deviceAppManagement.managedAppStatus']
 

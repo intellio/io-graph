@@ -1,6 +1,7 @@
 # Auto-generated client
 
 from __future__ import annotations
+from kiota_abstractions.get_path_parameters import get_path_parameters
 from kiota_abstractions.method import Method
 from kiota_abstractions.base_request_builder import BaseRequestBuilder
 from kiota_abstractions.base_request_configuration import RequestConfiguration
@@ -12,8 +13,8 @@ from typing import TYPE_CHECKING
 if TYPE_CHECKING:
 	from .user_attribute import UserAttributeRequest
 	from .......request_adapter import HttpxRequestAdapter
-from iograph_models.models.identity_user_flow_attribute_assignment import IdentityUserFlowAttributeAssignment
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.models.identity_user_flow_attribute_assignment import IdentityUserFlowAttributeAssignment
 
 
 class ByIdentityUserFlowAttributeAssignmentIdRequest(BaseRequestBuilder):
@@ -111,9 +112,19 @@ class ByIdentityUserFlowAttributeAssignmentIdRequest(BaseRequestBuilder):
 			raise TypeError("raw_url cannot be None.")
 		return ByIdentityUserFlowAttributeAssignmentIdRequest(self.request_adapter, self.path_parameters)
 
-	@property
 	def user_attribute(self,
+		b2xIdentityUserFlow_id: str,
+		identityUserFlowAttributeAssignment_id: str,
 	) -> UserAttributeRequest:
+		if b2xIdentityUserFlow_id is None:
+			raise TypeError("b2xIdentityUserFlow_id cannot be null.")
+		if identityUserFlowAttributeAssignment_id is None:
+			raise TypeError("identityUserFlowAttributeAssignment_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["b2xIdentityUserFlow%2Did"] =  b2xIdentityUserFlow_id
+		path_parameters["identityUserFlowAttributeAssignment%2Did"] =  identityUserFlowAttributeAssignment_id
+
 		from .user_attribute import UserAttributeRequest
-		return UserAttributeRequest(self.request_adapter, self.path_parameters)
+		return UserAttributeRequest(self.request_adapter, path_parameters)
 

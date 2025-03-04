@@ -112,9 +112,19 @@ class CalendarPermissionsRequest(BaseRequestBuilder):
 		from .by_calendar_permission_id import ByCalendarPermissionIdRequest
 		return ByCalendarPermissionIdRequest(self.request_adapter, path_parameters)
 
-	@property
 	def count(self,
+		calendarGroup_id: str,
+		calendar_id: str,
 	) -> CountRequest:
+		if calendarGroup_id is None:
+			raise TypeError("calendarGroup_id cannot be null.")
+		if calendar_id is None:
+			raise TypeError("calendar_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["calendarGroup%2Did"] =  calendarGroup_id
+		path_parameters["calendar%2Did"] =  calendar_id
+
 		from .count import CountRequest
-		return CountRequest(self.request_adapter, self.path_parameters)
+		return CountRequest(self.request_adapter, path_parameters)
 

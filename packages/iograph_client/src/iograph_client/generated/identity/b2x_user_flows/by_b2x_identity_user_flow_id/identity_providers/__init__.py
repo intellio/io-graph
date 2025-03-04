@@ -82,9 +82,15 @@ class IdentityProvidersRequest(BaseRequestBuilder):
 		from .by_identity_provider_id import ByIdentityProviderIdRequest
 		return ByIdentityProviderIdRequest(self.request_adapter, path_parameters)
 
-	@property
 	def count(self,
+		b2xIdentityUserFlow_id: str,
 	) -> CountRequest:
+		if b2xIdentityUserFlow_id is None:
+			raise TypeError("b2xIdentityUserFlow_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["b2xIdentityUserFlow%2Did"] =  b2xIdentityUserFlow_id
+
 		from .count import CountRequest
-		return CountRequest(self.request_adapter, self.path_parameters)
+		return CountRequest(self.request_adapter, path_parameters)
 

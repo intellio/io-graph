@@ -86,39 +86,75 @@ class OwnedObjectsRequest(BaseRequestBuilder):
 		from .by_directory_object_id import ByDirectoryObjectIdRequest
 		return ByDirectoryObjectIdRequest(self.request_adapter, path_parameters)
 
-	@property
 	def count(self,
+		servicePrincipal_id: str,
 	) -> CountRequest:
+		if servicePrincipal_id is None:
+			raise TypeError("servicePrincipal_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["servicePrincipal%2Did"] =  servicePrincipal_id
+
 		from .count import CountRequest
-		return CountRequest(self.request_adapter, self.path_parameters)
+		return CountRequest(self.request_adapter, path_parameters)
 
-	@property
 	def graph_application(self,
+		servicePrincipal_id: str,
 	) -> GraphApplicationRequest:
+		if servicePrincipal_id is None:
+			raise TypeError("servicePrincipal_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["servicePrincipal%2Did"] =  servicePrincipal_id
+
 		from .graph_application import GraphApplicationRequest
-		return GraphApplicationRequest(self.request_adapter, self.path_parameters)
+		return GraphApplicationRequest(self.request_adapter, path_parameters)
 
-	@property
 	def graph_app_role_assignment(self,
+		servicePrincipal_id: str,
 	) -> GraphAppRoleAssignmentRequest:
+		if servicePrincipal_id is None:
+			raise TypeError("servicePrincipal_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["servicePrincipal%2Did"] =  servicePrincipal_id
+
 		from .graph_app_role_assignment import GraphAppRoleAssignmentRequest
-		return GraphAppRoleAssignmentRequest(self.request_adapter, self.path_parameters)
+		return GraphAppRoleAssignmentRequest(self.request_adapter, path_parameters)
 
-	@property
 	def graph_endpoint(self,
+		servicePrincipal_id: str,
 	) -> GraphEndpointRequest:
+		if servicePrincipal_id is None:
+			raise TypeError("servicePrincipal_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["servicePrincipal%2Did"] =  servicePrincipal_id
+
 		from .graph_endpoint import GraphEndpointRequest
-		return GraphEndpointRequest(self.request_adapter, self.path_parameters)
+		return GraphEndpointRequest(self.request_adapter, path_parameters)
 
-	@property
 	def graph_group(self,
+		servicePrincipal_id: str,
 	) -> GraphGroupRequest:
-		from .graph_group import GraphGroupRequest
-		return GraphGroupRequest(self.request_adapter, self.path_parameters)
+		if servicePrincipal_id is None:
+			raise TypeError("servicePrincipal_id cannot be null.")
 
-	@property
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["servicePrincipal%2Did"] =  servicePrincipal_id
+
+		from .graph_group import GraphGroupRequest
+		return GraphGroupRequest(self.request_adapter, path_parameters)
+
 	def graph_service_principal(self,
+		servicePrincipal_id: str,
 	) -> GraphServicePrincipalRequest:
+		if servicePrincipal_id is None:
+			raise TypeError("servicePrincipal_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["servicePrincipal%2Did"] =  servicePrincipal_id
+
 		from .graph_service_principal import GraphServicePrincipalRequest
-		return GraphServicePrincipalRequest(self.request_adapter, self.path_parameters)
+		return GraphServicePrincipalRequest(self.request_adapter, path_parameters)
 

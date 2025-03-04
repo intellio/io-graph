@@ -1,6 +1,7 @@
 # Auto-generated client
 
 from __future__ import annotations
+from kiota_abstractions.get_path_parameters import get_path_parameters
 from kiota_abstractions.method import Method
 from kiota_abstractions.base_request_builder import BaseRequestBuilder
 from kiota_abstractions.base_request_configuration import RequestConfiguration
@@ -12,8 +13,8 @@ from typing import TYPE_CHECKING
 if TYPE_CHECKING:
 	from .attributes import AttributesRequest
 	from ........request_adapter import HttpxRequestAdapter
-from iograph_models.models.on_attribute_collection_external_users_self_service_sign_up import OnAttributeCollectionExternalUsersSelfServiceSignUp
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.models.on_attribute_collection_external_users_self_service_sign_up import OnAttributeCollectionExternalUsersSelfServiceSignUp
 
 
 class GraphOnAttributeCollectionExternalUsersSelfServiceSignUpRequest(BaseRequestBuilder):
@@ -54,9 +55,15 @@ class GraphOnAttributeCollectionExternalUsersSelfServiceSignUpRequest(BaseReques
 			raise TypeError("raw_url cannot be None.")
 		return GraphOnAttributeCollectionExternalUsersSelfServiceSignUpRequest(self.request_adapter, self.path_parameters)
 
-	@property
 	def attributes(self,
+		authenticationEventsFlow_id: str,
 	) -> AttributesRequest:
+		if authenticationEventsFlow_id is None:
+			raise TypeError("authenticationEventsFlow_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["authenticationEventsFlow%2Did"] =  authenticationEventsFlow_id
+
 		from .attributes import AttributesRequest
-		return AttributesRequest(self.request_adapter, self.path_parameters)
+		return AttributesRequest(self.request_adapter, path_parameters)
 

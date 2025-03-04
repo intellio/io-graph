@@ -1,6 +1,7 @@
 # Auto-generated client
 
 from __future__ import annotations
+from kiota_abstractions.get_path_parameters import get_path_parameters
 from kiota_abstractions.method import Method
 from kiota_abstractions.base_request_builder import BaseRequestBuilder
 from kiota_abstractions.base_request_configuration import RequestConfiguration
@@ -110,15 +111,27 @@ class BySharePointProtectionPolicyIdRequest(BaseRequestBuilder):
 			raise TypeError("raw_url cannot be None.")
 		return BySharePointProtectionPolicyIdRequest(self.request_adapter, self.path_parameters)
 
-	@property
 	def site_inclusion_rules(self,
+		sharePointProtectionPolicy_id: str,
 	) -> SiteInclusionRulesRequest:
-		from .site_inclusion_rules import SiteInclusionRulesRequest
-		return SiteInclusionRulesRequest(self.request_adapter, self.path_parameters)
+		if sharePointProtectionPolicy_id is None:
+			raise TypeError("sharePointProtectionPolicy_id cannot be null.")
 
-	@property
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["sharePointProtectionPolicy%2Did"] =  sharePointProtectionPolicy_id
+
+		from .site_inclusion_rules import SiteInclusionRulesRequest
+		return SiteInclusionRulesRequest(self.request_adapter, path_parameters)
+
 	def site_protection_units(self,
+		sharePointProtectionPolicy_id: str,
 	) -> SiteProtectionUnitsRequest:
+		if sharePointProtectionPolicy_id is None:
+			raise TypeError("sharePointProtectionPolicy_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["sharePointProtectionPolicy%2Did"] =  sharePointProtectionPolicy_id
+
 		from .site_protection_units import SiteProtectionUnitsRequest
-		return SiteProtectionUnitsRequest(self.request_adapter, self.path_parameters)
+		return SiteProtectionUnitsRequest(self.request_adapter, path_parameters)
 

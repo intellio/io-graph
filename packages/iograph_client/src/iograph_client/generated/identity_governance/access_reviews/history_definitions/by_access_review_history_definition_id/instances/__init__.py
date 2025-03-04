@@ -15,8 +15,8 @@ if TYPE_CHECKING:
 	from .by_access_review_history_instance_id import ByAccessReviewHistoryInstanceIdRequest
 	from .......request_adapter import HttpxRequestAdapter
 from iograph_models.models.access_review_history_instance import AccessReviewHistoryInstance
-from iograph_models.models.access_review_history_instance_collection_response import AccessReviewHistoryInstanceCollectionResponse
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.models.access_review_history_instance_collection_response import AccessReviewHistoryInstanceCollectionResponse
 
 
 class InstancesRequest(BaseRequestBuilder):
@@ -109,9 +109,15 @@ class InstancesRequest(BaseRequestBuilder):
 		from .by_access_review_history_instance_id import ByAccessReviewHistoryInstanceIdRequest
 		return ByAccessReviewHistoryInstanceIdRequest(self.request_adapter, path_parameters)
 
-	@property
 	def count(self,
+		accessReviewHistoryDefinition_id: str,
 	) -> CountRequest:
+		if accessReviewHistoryDefinition_id is None:
+			raise TypeError("accessReviewHistoryDefinition_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["accessReviewHistoryDefinition%2Did"] =  accessReviewHistoryDefinition_id
+
 		from .count import CountRequest
-		return CountRequest(self.request_adapter, self.path_parameters)
+		return CountRequest(self.request_adapter, path_parameters)
 

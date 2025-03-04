@@ -1,6 +1,7 @@
 # Auto-generated client
 
 from __future__ import annotations
+from kiota_abstractions.get_path_parameters import get_path_parameters
 from kiota_abstractions.method import Method
 from kiota_abstractions.base_request_builder import BaseRequestBuilder
 from kiota_abstractions.base_request_configuration import RequestConfiguration
@@ -108,9 +109,27 @@ class ByChatMessageHostedContentIdRequest(BaseRequestBuilder):
 			raise TypeError("raw_url cannot be None.")
 		return ByChatMessageHostedContentIdRequest(self.request_adapter, self.path_parameters)
 
-	@property
 	def value(self,
+		team_id: str,
+		channel_id: str,
+		chatMessage_id: str,
+		chatMessageHostedContent_id: str,
 	) -> ValueRequest:
+		if team_id is None:
+			raise TypeError("team_id cannot be null.")
+		if channel_id is None:
+			raise TypeError("channel_id cannot be null.")
+		if chatMessage_id is None:
+			raise TypeError("chatMessage_id cannot be null.")
+		if chatMessageHostedContent_id is None:
+			raise TypeError("chatMessageHostedContent_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["team%2Did"] =  team_id
+		path_parameters["channel%2Did"] =  channel_id
+		path_parameters["chatMessage%2Did"] =  chatMessage_id
+		path_parameters["chatMessageHostedContent%2Did"] =  chatMessageHostedContent_id
+
 		from .value import ValueRequest
-		return ValueRequest(self.request_adapter, self.path_parameters)
+		return ValueRequest(self.request_adapter, path_parameters)
 

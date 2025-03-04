@@ -1,6 +1,7 @@
 # Auto-generated client
 
 from __future__ import annotations
+from kiota_abstractions.get_path_parameters import get_path_parameters
 from kiota_abstractions.method import Method
 from kiota_abstractions.base_request_builder import BaseRequestBuilder
 from kiota_abstractions.base_request_configuration import RequestConfiguration
@@ -16,8 +17,8 @@ if TYPE_CHECKING:
 	from .app_scope import AppScopeRequest
 	from .activated_using import ActivatedUsingRequest
 	from ......request_adapter import HttpxRequestAdapter
-from iograph_models.models.unified_role_assignment_schedule import UnifiedRoleAssignmentSchedule
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.models.unified_role_assignment_schedule import UnifiedRoleAssignmentSchedule
 
 
 class ByUnifiedRoleAssignmentScheduleIdRequest(BaseRequestBuilder):
@@ -113,33 +114,63 @@ class ByUnifiedRoleAssignmentScheduleIdRequest(BaseRequestBuilder):
 			raise TypeError("raw_url cannot be None.")
 		return ByUnifiedRoleAssignmentScheduleIdRequest(self.request_adapter, self.path_parameters)
 
-	@property
 	def activated_using(self,
+		unifiedRoleAssignmentSchedule_id: str,
 	) -> ActivatedUsingRequest:
+		if unifiedRoleAssignmentSchedule_id is None:
+			raise TypeError("unifiedRoleAssignmentSchedule_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["unifiedRoleAssignmentSchedule%2Did"] =  unifiedRoleAssignmentSchedule_id
+
 		from .activated_using import ActivatedUsingRequest
-		return ActivatedUsingRequest(self.request_adapter, self.path_parameters)
+		return ActivatedUsingRequest(self.request_adapter, path_parameters)
 
-	@property
 	def app_scope(self,
+		unifiedRoleAssignmentSchedule_id: str,
 	) -> AppScopeRequest:
+		if unifiedRoleAssignmentSchedule_id is None:
+			raise TypeError("unifiedRoleAssignmentSchedule_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["unifiedRoleAssignmentSchedule%2Did"] =  unifiedRoleAssignmentSchedule_id
+
 		from .app_scope import AppScopeRequest
-		return AppScopeRequest(self.request_adapter, self.path_parameters)
+		return AppScopeRequest(self.request_adapter, path_parameters)
 
-	@property
 	def directory_scope(self,
+		unifiedRoleAssignmentSchedule_id: str,
 	) -> DirectoryScopeRequest:
+		if unifiedRoleAssignmentSchedule_id is None:
+			raise TypeError("unifiedRoleAssignmentSchedule_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["unifiedRoleAssignmentSchedule%2Did"] =  unifiedRoleAssignmentSchedule_id
+
 		from .directory_scope import DirectoryScopeRequest
-		return DirectoryScopeRequest(self.request_adapter, self.path_parameters)
+		return DirectoryScopeRequest(self.request_adapter, path_parameters)
 
-	@property
 	def principal(self,
+		unifiedRoleAssignmentSchedule_id: str,
 	) -> PrincipalRequest:
-		from .principal import PrincipalRequest
-		return PrincipalRequest(self.request_adapter, self.path_parameters)
+		if unifiedRoleAssignmentSchedule_id is None:
+			raise TypeError("unifiedRoleAssignmentSchedule_id cannot be null.")
 
-	@property
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["unifiedRoleAssignmentSchedule%2Did"] =  unifiedRoleAssignmentSchedule_id
+
+		from .principal import PrincipalRequest
+		return PrincipalRequest(self.request_adapter, path_parameters)
+
 	def role_definition(self,
+		unifiedRoleAssignmentSchedule_id: str,
 	) -> RoleDefinitionRequest:
+		if unifiedRoleAssignmentSchedule_id is None:
+			raise TypeError("unifiedRoleAssignmentSchedule_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["unifiedRoleAssignmentSchedule%2Did"] =  unifiedRoleAssignmentSchedule_id
+
 		from .role_definition import RoleDefinitionRequest
-		return RoleDefinitionRequest(self.request_adapter, self.path_parameters)
+		return RoleDefinitionRequest(self.request_adapter, path_parameters)
 

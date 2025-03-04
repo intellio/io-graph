@@ -14,9 +14,9 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_attendance_record_id import ByAttendanceRecordIdRequest
 	from ...........request_adapter import HttpxRequestAdapter
-from iograph_models.models.attendance_record import AttendanceRecord
 from iograph_models.models.attendance_record_collection_response import AttendanceRecordCollectionResponse
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.models.attendance_record import AttendanceRecord
 
 
 class AttendanceRecordsRequest(BaseRequestBuilder):
@@ -116,9 +116,23 @@ class AttendanceRecordsRequest(BaseRequestBuilder):
 		from .by_attendance_record_id import ByAttendanceRecordIdRequest
 		return ByAttendanceRecordIdRequest(self.request_adapter, path_parameters)
 
-	@property
 	def count(self,
+		virtualEventWebinar_id: str,
+		virtualEventSession_id: str,
+		meetingAttendanceReport_id: str,
 	) -> CountRequest:
+		if virtualEventWebinar_id is None:
+			raise TypeError("virtualEventWebinar_id cannot be null.")
+		if virtualEventSession_id is None:
+			raise TypeError("virtualEventSession_id cannot be null.")
+		if meetingAttendanceReport_id is None:
+			raise TypeError("meetingAttendanceReport_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["virtualEventWebinar%2Did"] =  virtualEventWebinar_id
+		path_parameters["virtualEventSession%2Did"] =  virtualEventSession_id
+		path_parameters["meetingAttendanceReport%2Did"] =  meetingAttendanceReport_id
+
 		from .count import CountRequest
-		return CountRequest(self.request_adapter, self.path_parameters)
+		return CountRequest(self.request_adapter, path_parameters)
 

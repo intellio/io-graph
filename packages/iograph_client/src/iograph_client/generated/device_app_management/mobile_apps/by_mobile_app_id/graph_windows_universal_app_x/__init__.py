@@ -1,6 +1,7 @@
 # Auto-generated client
 
 from __future__ import annotations
+from kiota_abstractions.get_path_parameters import get_path_parameters
 from kiota_abstractions.method import Method
 from kiota_abstractions.base_request_builder import BaseRequestBuilder
 from kiota_abstractions.base_request_configuration import RequestConfiguration
@@ -15,8 +16,8 @@ if TYPE_CHECKING:
 	from .categories import CategoriesRequest
 	from .assignments import AssignmentsRequest
 	from ......request_adapter import HttpxRequestAdapter
-from iograph_models.models.windows_universal_app_x import WindowsUniversalAppX
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.models.windows_universal_app_x import WindowsUniversalAppX
 
 
 class GraphWindowsUniversalAppXRequest(BaseRequestBuilder):
@@ -60,27 +61,51 @@ class GraphWindowsUniversalAppXRequest(BaseRequestBuilder):
 			raise TypeError("raw_url cannot be None.")
 		return GraphWindowsUniversalAppXRequest(self.request_adapter, self.path_parameters)
 
-	@property
 	def assignments(self,
+		mobileApp_id: str,
 	) -> AssignmentsRequest:
+		if mobileApp_id is None:
+			raise TypeError("mobileApp_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["mobileApp%2Did"] =  mobileApp_id
+
 		from .assignments import AssignmentsRequest
-		return AssignmentsRequest(self.request_adapter, self.path_parameters)
+		return AssignmentsRequest(self.request_adapter, path_parameters)
 
-	@property
 	def categories(self,
+		mobileApp_id: str,
 	) -> CategoriesRequest:
+		if mobileApp_id is None:
+			raise TypeError("mobileApp_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["mobileApp%2Did"] =  mobileApp_id
+
 		from .categories import CategoriesRequest
-		return CategoriesRequest(self.request_adapter, self.path_parameters)
+		return CategoriesRequest(self.request_adapter, path_parameters)
 
-	@property
 	def committed_contained_apps(self,
+		mobileApp_id: str,
 	) -> CommittedContainedAppsRequest:
-		from .committed_contained_apps import CommittedContainedAppsRequest
-		return CommittedContainedAppsRequest(self.request_adapter, self.path_parameters)
+		if mobileApp_id is None:
+			raise TypeError("mobileApp_id cannot be null.")
 
-	@property
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["mobileApp%2Did"] =  mobileApp_id
+
+		from .committed_contained_apps import CommittedContainedAppsRequest
+		return CommittedContainedAppsRequest(self.request_adapter, path_parameters)
+
 	def content_versions(self,
+		mobileApp_id: str,
 	) -> ContentVersionsRequest:
+		if mobileApp_id is None:
+			raise TypeError("mobileApp_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["mobileApp%2Did"] =  mobileApp_id
+
 		from .content_versions import ContentVersionsRequest
-		return ContentVersionsRequest(self.request_adapter, self.path_parameters)
+		return ContentVersionsRequest(self.request_adapter, path_parameters)
 

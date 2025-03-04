@@ -11,6 +11,7 @@ from typing import Union, Any, Optional
 from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:
+	from .get_user_ids_with_flagged_app_registration import GetUserIdsWithFlaggedAppRegistrationRequest
 	from .count import CountRequest
 	from .by_managed_app_registration_id import ByManagedAppRegistrationIdRequest
 	from ....request_adapter import HttpxRequestAdapter
@@ -111,4 +112,10 @@ class ManagedAppRegistrationsRequest(BaseRequestBuilder):
 	) -> CountRequest:
 		from .count import CountRequest
 		return CountRequest(self.request_adapter, self.path_parameters)
+
+	@property
+	def get_user_ids_with_flagged_app_registration(self,
+	) -> GetUserIdsWithFlaggedAppRegistrationRequest:
+		from .get_user_ids_with_flagged_app_registration import GetUserIdsWithFlaggedAppRegistrationRequest
+		return GetUserIdsWithFlaggedAppRegistrationRequest(self.request_adapter, self.path_parameters)
 

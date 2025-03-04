@@ -1,6 +1,7 @@
 # Auto-generated client
 
 from __future__ import annotations
+from kiota_abstractions.get_path_parameters import get_path_parameters
 from kiota_abstractions.method import Method
 from kiota_abstractions.base_request_builder import BaseRequestBuilder
 from kiota_abstractions.base_request_configuration import RequestConfiguration
@@ -118,69 +119,135 @@ class PrimaryChannelRequest(BaseRequestBuilder):
 			raise TypeError("raw_url cannot be None.")
 		return PrimaryChannelRequest(self.request_adapter, self.path_parameters)
 
-	@property
 	def all_members(self,
+		team_id: str,
 	) -> AllMembersRequest:
+		if team_id is None:
+			raise TypeError("team_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["team%2Did"] =  team_id
+
 		from .all_members import AllMembersRequest
-		return AllMembersRequest(self.request_adapter, self.path_parameters)
+		return AllMembersRequest(self.request_adapter, path_parameters)
 
-	@property
 	def files_folder(self,
+		team_id: str,
 	) -> FilesFolderRequest:
+		if team_id is None:
+			raise TypeError("team_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["team%2Did"] =  team_id
+
 		from .files_folder import FilesFolderRequest
-		return FilesFolderRequest(self.request_adapter, self.path_parameters)
+		return FilesFolderRequest(self.request_adapter, path_parameters)
 
-	@property
 	def members(self,
+		team_id: str,
 	) -> MembersRequest:
+		if team_id is None:
+			raise TypeError("team_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["team%2Did"] =  team_id
+
 		from .members import MembersRequest
-		return MembersRequest(self.request_adapter, self.path_parameters)
+		return MembersRequest(self.request_adapter, path_parameters)
 
-	@property
 	def messages(self,
+		team_id: str,
 	) -> MessagesRequest:
+		if team_id is None:
+			raise TypeError("team_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["team%2Did"] =  team_id
+
 		from .messages import MessagesRequest
-		return MessagesRequest(self.request_adapter, self.path_parameters)
+		return MessagesRequest(self.request_adapter, path_parameters)
 
-	@property
 	def archive(self,
+		team_id: str,
 	) -> ArchiveRequest:
+		if team_id is None:
+			raise TypeError("team_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["team%2Did"] =  team_id
+
 		from .archive import ArchiveRequest
-		return ArchiveRequest(self.request_adapter, self.path_parameters)
+		return ArchiveRequest(self.request_adapter, path_parameters)
 
-	@property
 	def complete_migration(self,
+		team_id: str,
 	) -> CompleteMigrationRequest:
+		if team_id is None:
+			raise TypeError("team_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["team%2Did"] =  team_id
+
 		from .complete_migration import CompleteMigrationRequest
-		return CompleteMigrationRequest(self.request_adapter, self.path_parameters)
+		return CompleteMigrationRequest(self.request_adapter, path_parameters)
 
-	@property
 	def provision_email(self,
+		team_id: str,
 	) -> ProvisionEmailRequest:
+		if team_id is None:
+			raise TypeError("team_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["team%2Did"] =  team_id
+
 		from .provision_email import ProvisionEmailRequest
-		return ProvisionEmailRequest(self.request_adapter, self.path_parameters)
+		return ProvisionEmailRequest(self.request_adapter, path_parameters)
 
-	@property
 	def remove_email(self,
+		team_id: str,
 	) -> RemoveEmailRequest:
+		if team_id is None:
+			raise TypeError("team_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["team%2Did"] =  team_id
+
 		from .remove_email import RemoveEmailRequest
-		return RemoveEmailRequest(self.request_adapter, self.path_parameters)
+		return RemoveEmailRequest(self.request_adapter, path_parameters)
 
-	@property
 	def unarchive(self,
+		team_id: str,
 	) -> UnarchiveRequest:
+		if team_id is None:
+			raise TypeError("team_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["team%2Did"] =  team_id
+
 		from .unarchive import UnarchiveRequest
-		return UnarchiveRequest(self.request_adapter, self.path_parameters)
+		return UnarchiveRequest(self.request_adapter, path_parameters)
 
-	@property
 	def shared_with_teams(self,
+		team_id: str,
 	) -> SharedWithTeamsRequest:
-		from .shared_with_teams import SharedWithTeamsRequest
-		return SharedWithTeamsRequest(self.request_adapter, self.path_parameters)
+		if team_id is None:
+			raise TypeError("team_id cannot be null.")
 
-	@property
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["team%2Did"] =  team_id
+
+		from .shared_with_teams import SharedWithTeamsRequest
+		return SharedWithTeamsRequest(self.request_adapter, path_parameters)
+
 	def tabs(self,
+		team_id: str,
 	) -> TabsRequest:
+		if team_id is None:
+			raise TypeError("team_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["team%2Did"] =  team_id
+
 		from .tabs import TabsRequest
-		return TabsRequest(self.request_adapter, self.path_parameters)
+		return TabsRequest(self.request_adapter, path_parameters)
 

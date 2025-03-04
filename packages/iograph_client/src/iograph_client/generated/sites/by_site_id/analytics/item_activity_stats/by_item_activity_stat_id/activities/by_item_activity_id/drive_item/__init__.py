@@ -1,6 +1,7 @@
 # Auto-generated client
 
 from __future__ import annotations
+from kiota_abstractions.get_path_parameters import get_path_parameters
 from kiota_abstractions.method import Method
 from kiota_abstractions.base_request_builder import BaseRequestBuilder
 from kiota_abstractions.base_request_configuration import RequestConfiguration
@@ -57,9 +58,23 @@ class DriveItemRequest(BaseRequestBuilder):
 			raise TypeError("raw_url cannot be None.")
 		return DriveItemRequest(self.request_adapter, self.path_parameters)
 
-	@property
 	def content(self,
+		site_id: str,
+		itemActivityStat_id: str,
+		itemActivity_id: str,
 	) -> ContentRequest:
+		if site_id is None:
+			raise TypeError("site_id cannot be null.")
+		if itemActivityStat_id is None:
+			raise TypeError("itemActivityStat_id cannot be null.")
+		if itemActivity_id is None:
+			raise TypeError("itemActivity_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["site%2Did"] =  site_id
+		path_parameters["itemActivityStat%2Did"] =  itemActivityStat_id
+		path_parameters["itemActivity%2Did"] =  itemActivity_id
+
 		from .content import ContentRequest
-		return ContentRequest(self.request_adapter, self.path_parameters)
+		return ContentRequest(self.request_adapter, path_parameters)
 

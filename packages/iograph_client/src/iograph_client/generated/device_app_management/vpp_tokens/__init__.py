@@ -14,8 +14,8 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_vpp_token_id import ByVppTokenIdRequest
 	from ....request_adapter import HttpxRequestAdapter
-from iograph_models.models.vpp_token_collection_response import VppTokenCollectionResponse
 from iograph_models.models.vpp_token import VppToken
+from iograph_models.models.vpp_token_collection_response import VppTokenCollectionResponse
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
 
 

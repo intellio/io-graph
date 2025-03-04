@@ -85,9 +85,19 @@ class TaskProcessingResultsRequest(BaseRequestBuilder):
 		from .by_task_processing_result_id import ByTaskProcessingResultIdRequest
 		return ByTaskProcessingResultIdRequest(self.request_adapter, path_parameters)
 
-	@property
 	def count(self,
+		workflow_id: str,
+		taskReport_id: str,
 	) -> CountRequest:
+		if workflow_id is None:
+			raise TypeError("workflow_id cannot be null.")
+		if taskReport_id is None:
+			raise TypeError("taskReport_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["workflow%2Did"] =  workflow_id
+		path_parameters["taskReport%2Did"] =  taskReport_id
+
 		from .count import CountRequest
-		return CountRequest(self.request_adapter, self.path_parameters)
+		return CountRequest(self.request_adapter, path_parameters)
 

@@ -1,6 +1,7 @@
 # Auto-generated client
 
 from __future__ import annotations
+from kiota_abstractions.get_path_parameters import get_path_parameters
 from kiota_abstractions.method import Method
 from kiota_abstractions.base_request_builder import BaseRequestBuilder
 from kiota_abstractions.base_request_configuration import RequestConfiguration
@@ -14,6 +15,8 @@ if TYPE_CHECKING:
 	from .tables import TablesRequest
 	from .operations import OperationsRequest
 	from .names import NamesRequest
+	from .table_row_operation_result import TableRowOperationResultRequest
+	from .session_info_resource import SessionInfoResourceRequest
 	from .refresh_session import RefreshSessionRequest
 	from .create_session import CreateSessionRequest
 	from .close_session import CloseSessionRequest
@@ -21,8 +24,8 @@ if TYPE_CHECKING:
 	from .comments import CommentsRequest
 	from .application import ApplicationRequest
 	from .......request_adapter import HttpxRequestAdapter
-from iograph_models.models.workbook import Workbook
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.models.workbook import Workbook
 
 
 class WorkbookRequest(BaseRequestBuilder):
@@ -117,63 +120,203 @@ class WorkbookRequest(BaseRequestBuilder):
 			raise TypeError("raw_url cannot be None.")
 		return WorkbookRequest(self.request_adapter, self.path_parameters)
 
-	@property
 	def application(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> ApplicationRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .application import ApplicationRequest
-		return ApplicationRequest(self.request_adapter, self.path_parameters)
+		return ApplicationRequest(self.request_adapter, path_parameters)
 
-	@property
 	def comments(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> CommentsRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .comments import CommentsRequest
-		return CommentsRequest(self.request_adapter, self.path_parameters)
+		return CommentsRequest(self.request_adapter, path_parameters)
 
-	@property
 	def functions(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> FunctionsRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .functions import FunctionsRequest
-		return FunctionsRequest(self.request_adapter, self.path_parameters)
+		return FunctionsRequest(self.request_adapter, path_parameters)
 
-	@property
 	def close_session(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> CloseSessionRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .close_session import CloseSessionRequest
-		return CloseSessionRequest(self.request_adapter, self.path_parameters)
+		return CloseSessionRequest(self.request_adapter, path_parameters)
 
-	@property
 	def create_session(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> CreateSessionRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .create_session import CreateSessionRequest
-		return CreateSessionRequest(self.request_adapter, self.path_parameters)
+		return CreateSessionRequest(self.request_adapter, path_parameters)
 
-	@property
 	def refresh_session(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> RefreshSessionRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .refresh_session import RefreshSessionRequest
-		return RefreshSessionRequest(self.request_adapter, self.path_parameters)
+		return RefreshSessionRequest(self.request_adapter, path_parameters)
 
-	@property
+	def session_info_resource(self,
+		drive_id: str,
+		driveItem_id: str,
+		key: str,
+	) -> SessionInfoResourceRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+		if key is None:
+			raise TypeError("key cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+		path_parameters["key"] =  key
+
+		from .session_info_resource import SessionInfoResourceRequest
+		return SessionInfoResourceRequest(self.request_adapter, path_parameters)
+
+	def table_row_operation_result(self,
+		drive_id: str,
+		driveItem_id: str,
+		key: str,
+	) -> TableRowOperationResultRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+		if key is None:
+			raise TypeError("key cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+		path_parameters["key"] =  key
+
+		from .table_row_operation_result import TableRowOperationResultRequest
+		return TableRowOperationResultRequest(self.request_adapter, path_parameters)
+
 	def names(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> NamesRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .names import NamesRequest
-		return NamesRequest(self.request_adapter, self.path_parameters)
+		return NamesRequest(self.request_adapter, path_parameters)
 
-	@property
 	def operations(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> OperationsRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .operations import OperationsRequest
-		return OperationsRequest(self.request_adapter, self.path_parameters)
+		return OperationsRequest(self.request_adapter, path_parameters)
 
-	@property
 	def tables(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> TablesRequest:
-		from .tables import TablesRequest
-		return TablesRequest(self.request_adapter, self.path_parameters)
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
 
-	@property
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
+		from .tables import TablesRequest
+		return TablesRequest(self.request_adapter, path_parameters)
+
 	def worksheets(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> WorksheetsRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .worksheets import WorksheetsRequest
-		return WorksheetsRequest(self.request_adapter, self.path_parameters)
+		return WorksheetsRequest(self.request_adapter, path_parameters)
 

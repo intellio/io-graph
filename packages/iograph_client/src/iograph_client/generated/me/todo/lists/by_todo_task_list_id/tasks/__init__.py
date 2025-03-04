@@ -11,11 +11,12 @@ from typing import Union, Any, Optional
 from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:
+	from .delta import DeltaRequest
 	from .count import CountRequest
 	from .by_todo_task_id import ByTodoTaskIdRequest
 	from .......request_adapter import HttpxRequestAdapter
-from iograph_models.models.todo_task import TodoTask
 from iograph_models.models.todo_task_collection_response import TodoTaskCollectionResponse
+from iograph_models.models.todo_task import TodoTask
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
 
 
@@ -110,9 +111,27 @@ class TasksRequest(BaseRequestBuilder):
 		from .by_todo_task_id import ByTodoTaskIdRequest
 		return ByTodoTaskIdRequest(self.request_adapter, path_parameters)
 
-	@property
 	def count(self,
+		todoTaskList_id: str,
 	) -> CountRequest:
+		if todoTaskList_id is None:
+			raise TypeError("todoTaskList_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["todoTaskList%2Did"] =  todoTaskList_id
+
 		from .count import CountRequest
-		return CountRequest(self.request_adapter, self.path_parameters)
+		return CountRequest(self.request_adapter, path_parameters)
+
+	def delta(self,
+		todoTaskList_id: str,
+	) -> DeltaRequest:
+		if todoTaskList_id is None:
+			raise TypeError("todoTaskList_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["todoTaskList%2Did"] =  todoTaskList_id
+
+		from .delta import DeltaRequest
+		return DeltaRequest(self.request_adapter, path_parameters)
 

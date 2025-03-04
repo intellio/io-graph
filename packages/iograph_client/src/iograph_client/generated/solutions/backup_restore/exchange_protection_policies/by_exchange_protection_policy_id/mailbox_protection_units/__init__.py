@@ -14,8 +14,8 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_mailbox_protection_unit_id import ByMailboxProtectionUnitIdRequest
 	from .......request_adapter import HttpxRequestAdapter
-from iograph_models.models.mailbox_protection_unit_collection_response import MailboxProtectionUnitCollectionResponse
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.models.mailbox_protection_unit_collection_response import MailboxProtectionUnitCollectionResponse
 
 
 class MailboxProtectionUnitsRequest(BaseRequestBuilder):
@@ -81,9 +81,15 @@ class MailboxProtectionUnitsRequest(BaseRequestBuilder):
 		from .by_mailbox_protection_unit_id import ByMailboxProtectionUnitIdRequest
 		return ByMailboxProtectionUnitIdRequest(self.request_adapter, path_parameters)
 
-	@property
 	def count(self,
+		exchangeProtectionPolicy_id: str,
 	) -> CountRequest:
+		if exchangeProtectionPolicy_id is None:
+			raise TypeError("exchangeProtectionPolicy_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["exchangeProtectionPolicy%2Did"] =  exchangeProtectionPolicy_id
+
 		from .count import CountRequest
-		return CountRequest(self.request_adapter, self.path_parameters)
+		return CountRequest(self.request_adapter, path_parameters)
 

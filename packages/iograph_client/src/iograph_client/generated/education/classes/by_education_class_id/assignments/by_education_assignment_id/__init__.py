@@ -1,6 +1,7 @@
 # Auto-generated client
 
 from __future__ import annotations
+from kiota_abstractions.get_path_parameters import get_path_parameters
 from kiota_abstractions.method import Method
 from kiota_abstractions.base_request_builder import BaseRequestBuilder
 from kiota_abstractions.base_request_configuration import RequestConfiguration
@@ -120,63 +121,163 @@ class ByEducationAssignmentIdRequest(BaseRequestBuilder):
 			raise TypeError("raw_url cannot be None.")
 		return ByEducationAssignmentIdRequest(self.request_adapter, self.path_parameters)
 
-	@property
 	def categories(self,
+		educationClass_id: str,
+		educationAssignment_id: str,
 	) -> CategoriesRequest:
+		if educationClass_id is None:
+			raise TypeError("educationClass_id cannot be null.")
+		if educationAssignment_id is None:
+			raise TypeError("educationAssignment_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["educationClass%2Did"] =  educationClass_id
+		path_parameters["educationAssignment%2Did"] =  educationAssignment_id
+
 		from .categories import CategoriesRequest
-		return CategoriesRequest(self.request_adapter, self.path_parameters)
+		return CategoriesRequest(self.request_adapter, path_parameters)
 
-	@property
 	def grading_category(self,
+		educationClass_id: str,
+		educationAssignment_id: str,
 	) -> GradingCategoryRequest:
+		if educationClass_id is None:
+			raise TypeError("educationClass_id cannot be null.")
+		if educationAssignment_id is None:
+			raise TypeError("educationAssignment_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["educationClass%2Did"] =  educationClass_id
+		path_parameters["educationAssignment%2Did"] =  educationAssignment_id
+
 		from .grading_category import GradingCategoryRequest
-		return GradingCategoryRequest(self.request_adapter, self.path_parameters)
+		return GradingCategoryRequest(self.request_adapter, path_parameters)
 
-	@property
 	def activate(self,
+		educationClass_id: str,
+		educationAssignment_id: str,
 	) -> ActivateRequest:
+		if educationClass_id is None:
+			raise TypeError("educationClass_id cannot be null.")
+		if educationAssignment_id is None:
+			raise TypeError("educationAssignment_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["educationClass%2Did"] =  educationClass_id
+		path_parameters["educationAssignment%2Did"] =  educationAssignment_id
+
 		from .activate import ActivateRequest
-		return ActivateRequest(self.request_adapter, self.path_parameters)
+		return ActivateRequest(self.request_adapter, path_parameters)
 
-	@property
 	def deactivate(self,
+		educationClass_id: str,
+		educationAssignment_id: str,
 	) -> DeactivateRequest:
+		if educationClass_id is None:
+			raise TypeError("educationClass_id cannot be null.")
+		if educationAssignment_id is None:
+			raise TypeError("educationAssignment_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["educationClass%2Did"] =  educationClass_id
+		path_parameters["educationAssignment%2Did"] =  educationAssignment_id
+
 		from .deactivate import DeactivateRequest
-		return DeactivateRequest(self.request_adapter, self.path_parameters)
+		return DeactivateRequest(self.request_adapter, path_parameters)
 
-	@property
 	def publish(self,
+		educationClass_id: str,
+		educationAssignment_id: str,
 	) -> PublishRequest:
+		if educationClass_id is None:
+			raise TypeError("educationClass_id cannot be null.")
+		if educationAssignment_id is None:
+			raise TypeError("educationAssignment_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["educationClass%2Did"] =  educationClass_id
+		path_parameters["educationAssignment%2Did"] =  educationAssignment_id
+
 		from .publish import PublishRequest
-		return PublishRequest(self.request_adapter, self.path_parameters)
+		return PublishRequest(self.request_adapter, path_parameters)
 
-	@property
 	def set_up_feedback_resources_folder(self,
+		educationClass_id: str,
+		educationAssignment_id: str,
 	) -> SetUpFeedbackResourcesFolderRequest:
+		if educationClass_id is None:
+			raise TypeError("educationClass_id cannot be null.")
+		if educationAssignment_id is None:
+			raise TypeError("educationAssignment_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["educationClass%2Did"] =  educationClass_id
+		path_parameters["educationAssignment%2Did"] =  educationAssignment_id
+
 		from .set_up_feedback_resources_folder import SetUpFeedbackResourcesFolderRequest
-		return SetUpFeedbackResourcesFolderRequest(self.request_adapter, self.path_parameters)
+		return SetUpFeedbackResourcesFolderRequest(self.request_adapter, path_parameters)
 
-	@property
 	def set_up_resources_folder(self,
+		educationClass_id: str,
+		educationAssignment_id: str,
 	) -> SetUpResourcesFolderRequest:
+		if educationClass_id is None:
+			raise TypeError("educationClass_id cannot be null.")
+		if educationAssignment_id is None:
+			raise TypeError("educationAssignment_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["educationClass%2Did"] =  educationClass_id
+		path_parameters["educationAssignment%2Did"] =  educationAssignment_id
+
 		from .set_up_resources_folder import SetUpResourcesFolderRequest
-		return SetUpResourcesFolderRequest(self.request_adapter, self.path_parameters)
+		return SetUpResourcesFolderRequest(self.request_adapter, path_parameters)
 
-	@property
 	def resources(self,
+		educationClass_id: str,
+		educationAssignment_id: str,
 	) -> ResourcesRequest:
+		if educationClass_id is None:
+			raise TypeError("educationClass_id cannot be null.")
+		if educationAssignment_id is None:
+			raise TypeError("educationAssignment_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["educationClass%2Did"] =  educationClass_id
+		path_parameters["educationAssignment%2Did"] =  educationAssignment_id
+
 		from .resources import ResourcesRequest
-		return ResourcesRequest(self.request_adapter, self.path_parameters)
+		return ResourcesRequest(self.request_adapter, path_parameters)
 
-	@property
 	def rubric(self,
+		educationClass_id: str,
+		educationAssignment_id: str,
 	) -> RubricRequest:
-		from .rubric import RubricRequest
-		return RubricRequest(self.request_adapter, self.path_parameters)
+		if educationClass_id is None:
+			raise TypeError("educationClass_id cannot be null.")
+		if educationAssignment_id is None:
+			raise TypeError("educationAssignment_id cannot be null.")
 
-	@property
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["educationClass%2Did"] =  educationClass_id
+		path_parameters["educationAssignment%2Did"] =  educationAssignment_id
+
+		from .rubric import RubricRequest
+		return RubricRequest(self.request_adapter, path_parameters)
+
 	def submissions(self,
+		educationClass_id: str,
+		educationAssignment_id: str,
 	) -> SubmissionsRequest:
+		if educationClass_id is None:
+			raise TypeError("educationClass_id cannot be null.")
+		if educationAssignment_id is None:
+			raise TypeError("educationAssignment_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["educationClass%2Did"] =  educationClass_id
+		path_parameters["educationAssignment%2Did"] =  educationAssignment_id
+
 		from .submissions import SubmissionsRequest
-		return SubmissionsRequest(self.request_adapter, self.path_parameters)
+		return SubmissionsRequest(self.request_adapter, path_parameters)
 

@@ -15,8 +15,8 @@ if TYPE_CHECKING:
 	from .by_identity_id import ByIdentityIdRequest
 	from .......request_adapter import HttpxRequestAdapter
 from iograph_models.models.external_connectors_identity import ExternalConnectorsIdentity
-from iograph_models.models.external_connectors_identity_collection_response import ExternalConnectorsIdentityCollectionResponse
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.models.external_connectors_identity_collection_response import ExternalConnectorsIdentityCollectionResponse
 
 
 class MembersRequest(BaseRequestBuilder):
@@ -112,9 +112,19 @@ class MembersRequest(BaseRequestBuilder):
 		from .by_identity_id import ByIdentityIdRequest
 		return ByIdentityIdRequest(self.request_adapter, path_parameters)
 
-	@property
 	def count(self,
+		externalConnection_id: str,
+		externalGroup_id: str,
 	) -> CountRequest:
+		if externalConnection_id is None:
+			raise TypeError("externalConnection_id cannot be null.")
+		if externalGroup_id is None:
+			raise TypeError("externalGroup_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["externalConnection%2Did"] =  externalConnection_id
+		path_parameters["externalGroup%2Did"] =  externalGroup_id
+
 		from .count import CountRequest
-		return CountRequest(self.request_adapter, self.path_parameters)
+		return CountRequest(self.request_adapter, path_parameters)
 

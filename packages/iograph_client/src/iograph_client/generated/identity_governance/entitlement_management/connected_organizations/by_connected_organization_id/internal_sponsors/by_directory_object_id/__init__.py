@@ -1,6 +1,7 @@
 # Auto-generated client
 
 from __future__ import annotations
+from kiota_abstractions.get_path_parameters import get_path_parameters
 from kiota_abstractions.method import Method
 from kiota_abstractions.base_request_builder import BaseRequestBuilder
 from kiota_abstractions.base_request_configuration import RequestConfiguration
@@ -28,9 +29,19 @@ class ByDirectoryObjectIdRequest(BaseRequestBuilder):
 			raise TypeError("raw_url cannot be None.")
 		return ByDirectoryObjectIdRequest(self.request_adapter, self.path_parameters)
 
-	@property
 	def ref(self,
+		connectedOrganization_id: str,
+		directoryObject_id: str,
 	) -> RefRequest:
+		if connectedOrganization_id is None:
+			raise TypeError("connectedOrganization_id cannot be null.")
+		if directoryObject_id is None:
+			raise TypeError("directoryObject_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["connectedOrganization%2Did"] =  connectedOrganization_id
+		path_parameters["directoryObject%2Did"] =  directoryObject_id
+
 		from .ref import RefRequest
-		return RefRequest(self.request_adapter, self.path_parameters)
+		return RefRequest(self.request_adapter, path_parameters)
 

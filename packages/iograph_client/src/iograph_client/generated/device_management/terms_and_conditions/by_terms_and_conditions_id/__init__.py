@@ -1,6 +1,7 @@
 # Auto-generated client
 
 from __future__ import annotations
+from kiota_abstractions.get_path_parameters import get_path_parameters
 from kiota_abstractions.method import Method
 from kiota_abstractions.base_request_builder import BaseRequestBuilder
 from kiota_abstractions.base_request_configuration import RequestConfiguration
@@ -112,15 +113,27 @@ class ByTermsAndConditionsIdRequest(BaseRequestBuilder):
 			raise TypeError("raw_url cannot be None.")
 		return ByTermsAndConditionsIdRequest(self.request_adapter, self.path_parameters)
 
-	@property
 	def acceptance_statuses(self,
+		termsAndConditions_id: str,
 	) -> AcceptanceStatusesRequest:
-		from .acceptance_statuses import AcceptanceStatusesRequest
-		return AcceptanceStatusesRequest(self.request_adapter, self.path_parameters)
+		if termsAndConditions_id is None:
+			raise TypeError("termsAndConditions_id cannot be null.")
 
-	@property
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["termsAndConditions%2Did"] =  termsAndConditions_id
+
+		from .acceptance_statuses import AcceptanceStatusesRequest
+		return AcceptanceStatusesRequest(self.request_adapter, path_parameters)
+
 	def assignments(self,
+		termsAndConditions_id: str,
 	) -> AssignmentsRequest:
+		if termsAndConditions_id is None:
+			raise TypeError("termsAndConditions_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["termsAndConditions%2Did"] =  termsAndConditions_id
+
 		from .assignments import AssignmentsRequest
-		return AssignmentsRequest(self.request_adapter, self.path_parameters)
+		return AssignmentsRequest(self.request_adapter, path_parameters)
 

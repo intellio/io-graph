@@ -14,9 +14,9 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_planner_bucket_id import ByPlannerBucketIdRequest
 	from .......request_adapter import HttpxRequestAdapter
-from iograph_models.models.planner_bucket_collection_response import PlannerBucketCollectionResponse
-from iograph_models.models.planner_bucket import PlannerBucket
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.models.planner_bucket import PlannerBucket
+from iograph_models.models.planner_bucket_collection_response import PlannerBucketCollectionResponse
 
 
 class BucketsRequest(BaseRequestBuilder):
@@ -108,9 +108,15 @@ class BucketsRequest(BaseRequestBuilder):
 		from .by_planner_bucket_id import ByPlannerBucketIdRequest
 		return ByPlannerBucketIdRequest(self.request_adapter, path_parameters)
 
-	@property
 	def count(self,
+		plannerPlan_id: str,
 	) -> CountRequest:
+		if plannerPlan_id is None:
+			raise TypeError("plannerPlan_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["plannerPlan%2Did"] =  plannerPlan_id
+
 		from .count import CountRequest
-		return CountRequest(self.request_adapter, self.path_parameters)
+		return CountRequest(self.request_adapter, path_parameters)
 

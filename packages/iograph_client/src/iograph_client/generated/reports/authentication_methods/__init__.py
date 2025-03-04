@@ -1,6 +1,7 @@
 # Auto-generated client
 
 from __future__ import annotations
+from kiota_abstractions.get_path_parameters import get_path_parameters
 from kiota_abstractions.method import Method
 from kiota_abstractions.base_request_builder import BaseRequestBuilder
 from kiota_abstractions.base_request_configuration import RequestConfiguration
@@ -11,9 +12,11 @@ from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:
 	from .user_registration_details import UserRegistrationDetailsRequest
+	from .users_registered_by_method import UsersRegisteredByMethodRequest
+	from .users_registered_by_feature import UsersRegisteredByFeatureRequest
 	from ....request_adapter import HttpxRequestAdapter
-from iograph_models.models.authentication_methods_root import AuthenticationMethodsRoot
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.models.authentication_methods_root import AuthenticationMethodsRoot
 
 
 class AuthenticationMethodsRequest(BaseRequestBuilder):
@@ -107,6 +110,18 @@ class AuthenticationMethodsRequest(BaseRequestBuilder):
 		if raw_url is None:
 			raise TypeError("raw_url cannot be None.")
 		return AuthenticationMethodsRequest(self.request_adapter, self.path_parameters)
+
+	@property
+	def users_registered_by_feature(self,
+	) -> UsersRegisteredByFeatureRequest:
+		from .users_registered_by_feature import UsersRegisteredByFeatureRequest
+		return UsersRegisteredByFeatureRequest(self.request_adapter, self.path_parameters)
+
+	@property
+	def users_registered_by_method(self,
+	) -> UsersRegisteredByMethodRequest:
+		from .users_registered_by_method import UsersRegisteredByMethodRequest
+		return UsersRegisteredByMethodRequest(self.request_adapter, self.path_parameters)
 
 	@property
 	def user_registration_details(self,

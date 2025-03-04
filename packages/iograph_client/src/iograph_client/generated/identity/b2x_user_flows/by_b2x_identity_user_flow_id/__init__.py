@@ -1,6 +1,7 @@
 # Auto-generated client
 
 from __future__ import annotations
+from kiota_abstractions.get_path_parameters import get_path_parameters
 from kiota_abstractions.method import Method
 from kiota_abstractions.base_request_builder import BaseRequestBuilder
 from kiota_abstractions.base_request_configuration import RequestConfiguration
@@ -114,33 +115,63 @@ class ByB2xIdentityUserFlowIdRequest(BaseRequestBuilder):
 			raise TypeError("raw_url cannot be None.")
 		return ByB2xIdentityUserFlowIdRequest(self.request_adapter, self.path_parameters)
 
-	@property
 	def api_connector_configuration(self,
+		b2xIdentityUserFlow_id: str,
 	) -> ApiConnectorConfigurationRequest:
+		if b2xIdentityUserFlow_id is None:
+			raise TypeError("b2xIdentityUserFlow_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["b2xIdentityUserFlow%2Did"] =  b2xIdentityUserFlow_id
+
 		from .api_connector_configuration import ApiConnectorConfigurationRequest
-		return ApiConnectorConfigurationRequest(self.request_adapter, self.path_parameters)
+		return ApiConnectorConfigurationRequest(self.request_adapter, path_parameters)
 
-	@property
 	def identity_providers(self,
+		b2xIdentityUserFlow_id: str,
 	) -> IdentityProvidersRequest:
+		if b2xIdentityUserFlow_id is None:
+			raise TypeError("b2xIdentityUserFlow_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["b2xIdentityUserFlow%2Did"] =  b2xIdentityUserFlow_id
+
 		from .identity_providers import IdentityProvidersRequest
-		return IdentityProvidersRequest(self.request_adapter, self.path_parameters)
+		return IdentityProvidersRequest(self.request_adapter, path_parameters)
 
-	@property
 	def languages(self,
+		b2xIdentityUserFlow_id: str,
 	) -> LanguagesRequest:
+		if b2xIdentityUserFlow_id is None:
+			raise TypeError("b2xIdentityUserFlow_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["b2xIdentityUserFlow%2Did"] =  b2xIdentityUserFlow_id
+
 		from .languages import LanguagesRequest
-		return LanguagesRequest(self.request_adapter, self.path_parameters)
+		return LanguagesRequest(self.request_adapter, path_parameters)
 
-	@property
 	def user_attribute_assignments(self,
+		b2xIdentityUserFlow_id: str,
 	) -> UserAttributeAssignmentsRequest:
-		from .user_attribute_assignments import UserAttributeAssignmentsRequest
-		return UserAttributeAssignmentsRequest(self.request_adapter, self.path_parameters)
+		if b2xIdentityUserFlow_id is None:
+			raise TypeError("b2xIdentityUserFlow_id cannot be null.")
 
-	@property
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["b2xIdentityUserFlow%2Did"] =  b2xIdentityUserFlow_id
+
+		from .user_attribute_assignments import UserAttributeAssignmentsRequest
+		return UserAttributeAssignmentsRequest(self.request_adapter, path_parameters)
+
 	def user_flow_identity_providers(self,
+		b2xIdentityUserFlow_id: str,
 	) -> UserFlowIdentityProvidersRequest:
+		if b2xIdentityUserFlow_id is None:
+			raise TypeError("b2xIdentityUserFlow_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["b2xIdentityUserFlow%2Did"] =  b2xIdentityUserFlow_id
+
 		from .user_flow_identity_providers import UserFlowIdentityProvidersRequest
-		return UserFlowIdentityProvidersRequest(self.request_adapter, self.path_parameters)
+		return UserFlowIdentityProvidersRequest(self.request_adapter, path_parameters)
 

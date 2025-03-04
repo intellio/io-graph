@@ -15,8 +15,8 @@ if TYPE_CHECKING:
 	from .by_agreement_file_version_id import ByAgreementFileVersionIdRequest
 	from ........request_adapter import HttpxRequestAdapter
 from iograph_models.models.agreement_file_version import AgreementFileVersion
-from iograph_models.models.agreement_file_version_collection_response import AgreementFileVersionCollectionResponse
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.models.agreement_file_version_collection_response import AgreementFileVersionCollectionResponse
 
 
 class VersionsRequest(BaseRequestBuilder):
@@ -112,9 +112,19 @@ class VersionsRequest(BaseRequestBuilder):
 		from .by_agreement_file_version_id import ByAgreementFileVersionIdRequest
 		return ByAgreementFileVersionIdRequest(self.request_adapter, path_parameters)
 
-	@property
 	def count(self,
+		agreement_id: str,
+		agreementFileLocalization_id: str,
 	) -> CountRequest:
+		if agreement_id is None:
+			raise TypeError("agreement_id cannot be null.")
+		if agreementFileLocalization_id is None:
+			raise TypeError("agreementFileLocalization_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["agreement%2Did"] =  agreement_id
+		path_parameters["agreementFileLocalization%2Did"] =  agreementFileLocalization_id
+
 		from .count import CountRequest
-		return CountRequest(self.request_adapter, self.path_parameters)
+		return CountRequest(self.request_adapter, path_parameters)
 

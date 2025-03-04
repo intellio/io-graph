@@ -1,6 +1,7 @@
 # Auto-generated client
 
 from __future__ import annotations
+from kiota_abstractions.get_path_parameters import get_path_parameters
 from kiota_abstractions.method import Method
 from kiota_abstractions.base_request_builder import BaseRequestBuilder
 from kiota_abstractions.base_request_configuration import RequestConfiguration
@@ -14,8 +15,8 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_access_package_id1 import ByAccessPackageId1Request
 	from .......request_adapter import HttpxRequestAdapter
-from iograph_models.models.access_package_collection_response import AccessPackageCollectionResponse
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.models.access_package_collection_response import AccessPackageCollectionResponse
 
 
 class IncompatibleAccessPackagesRequest(BaseRequestBuilder):
@@ -72,15 +73,27 @@ class IncompatibleAccessPackagesRequest(BaseRequestBuilder):
 		from .by_access_package_id1 import ByAccessPackageId1Request
 		return ByAccessPackageId1Request(self.request_adapter, self.path_parameters)
 
-	@property
 	def count(self,
+		accessPackage_id: str,
 	) -> CountRequest:
-		from .count import CountRequest
-		return CountRequest(self.request_adapter, self.path_parameters)
+		if accessPackage_id is None:
+			raise TypeError("accessPackage_id cannot be null.")
 
-	@property
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["accessPackage%2Did"] =  accessPackage_id
+
+		from .count import CountRequest
+		return CountRequest(self.request_adapter, path_parameters)
+
 	def ref(self,
+		accessPackage_id: str,
 	) -> RefRequest:
+		if accessPackage_id is None:
+			raise TypeError("accessPackage_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["accessPackage%2Did"] =  accessPackage_id
+
 		from .ref import RefRequest
-		return RefRequest(self.request_adapter, self.path_parameters)
+		return RefRequest(self.request_adapter, path_parameters)
 

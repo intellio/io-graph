@@ -1,6 +1,7 @@
 # Auto-generated client
 
 from __future__ import annotations
+from kiota_abstractions.get_path_parameters import get_path_parameters
 from kiota_abstractions.method import Method
 from kiota_abstractions.base_request_builder import BaseRequestBuilder
 from kiota_abstractions.base_request_configuration import RequestConfiguration
@@ -16,8 +17,8 @@ if TYPE_CHECKING:
 	from .message_rules import MessageRulesRequest
 	from .child_folders import ChildFoldersRequest
 	from .....request_adapter import HttpxRequestAdapter
-from iograph_models.models.mail_folder import MailFolder
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.models.mail_folder import MailFolder
 
 
 class ByMailFolderIdRequest(BaseRequestBuilder):
@@ -54,9 +55,9 @@ class ByMailFolderIdRequest(BaseRequestBuilder):
 		request_configuration: Optional[RequestConfiguration[BaseModel]] = None,
 	) -> MailFolder:
 		"""
-		Update mailfolder
-		Update the properties of mailfolder object.
-		Find more info here: https://learn.microsoft.com/graph/api/mailfolder-update?view=graph-rest-1.0
+		Update mailSearchFolder
+		Update the writable properties of a mailSearchFolder object.
+		Find more info here: https://learn.microsoft.com/graph/api/mailsearchfolder-update?view=graph-rest-1.0
 		"""
 		tags = ['me.mailFolder']
 
@@ -115,33 +116,63 @@ class ByMailFolderIdRequest(BaseRequestBuilder):
 			raise TypeError("raw_url cannot be None.")
 		return ByMailFolderIdRequest(self.request_adapter, self.path_parameters)
 
-	@property
 	def child_folders(self,
+		mailFolder_id: str,
 	) -> ChildFoldersRequest:
+		if mailFolder_id is None:
+			raise TypeError("mailFolder_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["mailFolder%2Did"] =  mailFolder_id
+
 		from .child_folders import ChildFoldersRequest
-		return ChildFoldersRequest(self.request_adapter, self.path_parameters)
+		return ChildFoldersRequest(self.request_adapter, path_parameters)
 
-	@property
 	def message_rules(self,
+		mailFolder_id: str,
 	) -> MessageRulesRequest:
+		if mailFolder_id is None:
+			raise TypeError("mailFolder_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["mailFolder%2Did"] =  mailFolder_id
+
 		from .message_rules import MessageRulesRequest
-		return MessageRulesRequest(self.request_adapter, self.path_parameters)
+		return MessageRulesRequest(self.request_adapter, path_parameters)
 
-	@property
 	def messages(self,
+		mailFolder_id: str,
 	) -> MessagesRequest:
+		if mailFolder_id is None:
+			raise TypeError("mailFolder_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["mailFolder%2Did"] =  mailFolder_id
+
 		from .messages import MessagesRequest
-		return MessagesRequest(self.request_adapter, self.path_parameters)
+		return MessagesRequest(self.request_adapter, path_parameters)
 
-	@property
 	def copy(self,
+		mailFolder_id: str,
 	) -> CopyRequest:
-		from .copy import CopyRequest
-		return CopyRequest(self.request_adapter, self.path_parameters)
+		if mailFolder_id is None:
+			raise TypeError("mailFolder_id cannot be null.")
 
-	@property
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["mailFolder%2Did"] =  mailFolder_id
+
+		from .copy import CopyRequest
+		return CopyRequest(self.request_adapter, path_parameters)
+
 	def move(self,
+		mailFolder_id: str,
 	) -> MoveRequest:
+		if mailFolder_id is None:
+			raise TypeError("mailFolder_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["mailFolder%2Did"] =  mailFolder_id
+
 		from .move import MoveRequest
-		return MoveRequest(self.request_adapter, self.path_parameters)
+		return MoveRequest(self.request_adapter, path_parameters)
 

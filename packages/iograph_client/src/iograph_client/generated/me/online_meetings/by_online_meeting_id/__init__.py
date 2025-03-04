@@ -1,6 +1,7 @@
 # Auto-generated client
 
 from __future__ import annotations
+from kiota_abstractions.get_path_parameters import get_path_parameters
 from kiota_abstractions.method import Method
 from kiota_abstractions.base_request_builder import BaseRequestBuilder
 from kiota_abstractions.base_request_configuration import RequestConfiguration
@@ -14,6 +15,7 @@ if TYPE_CHECKING:
 	from .recordings import RecordingsRequest
 	from .send_virtual_appointment_sms import SendVirtualAppointmentSmsRequest
 	from .send_virtual_appointment_reminder_sms import SendVirtualAppointmentReminderSmsRequest
+	from .get_virtual_appointment_join_web_url import GetVirtualAppointmentJoinWebUrlRequest
 	from .attendee_report import AttendeeReportRequest
 	from .attendance_reports import AttendanceReportsRequest
 	from .....request_adapter import HttpxRequestAdapter
@@ -116,39 +118,87 @@ class ByOnlineMeetingIdRequest(BaseRequestBuilder):
 			raise TypeError("raw_url cannot be None.")
 		return ByOnlineMeetingIdRequest(self.request_adapter, self.path_parameters)
 
-	@property
 	def attendance_reports(self,
+		onlineMeeting_id: str,
 	) -> AttendanceReportsRequest:
+		if onlineMeeting_id is None:
+			raise TypeError("onlineMeeting_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["onlineMeeting%2Did"] =  onlineMeeting_id
+
 		from .attendance_reports import AttendanceReportsRequest
-		return AttendanceReportsRequest(self.request_adapter, self.path_parameters)
+		return AttendanceReportsRequest(self.request_adapter, path_parameters)
 
-	@property
 	def attendee_report(self,
+		onlineMeeting_id: str,
 	) -> AttendeeReportRequest:
+		if onlineMeeting_id is None:
+			raise TypeError("onlineMeeting_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["onlineMeeting%2Did"] =  onlineMeeting_id
+
 		from .attendee_report import AttendeeReportRequest
-		return AttendeeReportRequest(self.request_adapter, self.path_parameters)
+		return AttendeeReportRequest(self.request_adapter, path_parameters)
 
-	@property
+	def get_virtual_appointment_join_web_url(self,
+		onlineMeeting_id: str,
+	) -> GetVirtualAppointmentJoinWebUrlRequest:
+		if onlineMeeting_id is None:
+			raise TypeError("onlineMeeting_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["onlineMeeting%2Did"] =  onlineMeeting_id
+
+		from .get_virtual_appointment_join_web_url import GetVirtualAppointmentJoinWebUrlRequest
+		return GetVirtualAppointmentJoinWebUrlRequest(self.request_adapter, path_parameters)
+
 	def send_virtual_appointment_reminder_sms(self,
+		onlineMeeting_id: str,
 	) -> SendVirtualAppointmentReminderSmsRequest:
+		if onlineMeeting_id is None:
+			raise TypeError("onlineMeeting_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["onlineMeeting%2Did"] =  onlineMeeting_id
+
 		from .send_virtual_appointment_reminder_sms import SendVirtualAppointmentReminderSmsRequest
-		return SendVirtualAppointmentReminderSmsRequest(self.request_adapter, self.path_parameters)
+		return SendVirtualAppointmentReminderSmsRequest(self.request_adapter, path_parameters)
 
-	@property
 	def send_virtual_appointment_sms(self,
+		onlineMeeting_id: str,
 	) -> SendVirtualAppointmentSmsRequest:
+		if onlineMeeting_id is None:
+			raise TypeError("onlineMeeting_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["onlineMeeting%2Did"] =  onlineMeeting_id
+
 		from .send_virtual_appointment_sms import SendVirtualAppointmentSmsRequest
-		return SendVirtualAppointmentSmsRequest(self.request_adapter, self.path_parameters)
+		return SendVirtualAppointmentSmsRequest(self.request_adapter, path_parameters)
 
-	@property
 	def recordings(self,
+		onlineMeeting_id: str,
 	) -> RecordingsRequest:
-		from .recordings import RecordingsRequest
-		return RecordingsRequest(self.request_adapter, self.path_parameters)
+		if onlineMeeting_id is None:
+			raise TypeError("onlineMeeting_id cannot be null.")
 
-	@property
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["onlineMeeting%2Did"] =  onlineMeeting_id
+
+		from .recordings import RecordingsRequest
+		return RecordingsRequest(self.request_adapter, path_parameters)
+
 	def transcripts(self,
+		onlineMeeting_id: str,
 	) -> TranscriptsRequest:
+		if onlineMeeting_id is None:
+			raise TypeError("onlineMeeting_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["onlineMeeting%2Did"] =  onlineMeeting_id
+
 		from .transcripts import TranscriptsRequest
-		return TranscriptsRequest(self.request_adapter, self.path_parameters)
+		return TranscriptsRequest(self.request_adapter, path_parameters)
 

@@ -15,8 +15,8 @@ if TYPE_CHECKING:
 	from .by_segment_id import BySegmentIdRequest
 	from ........request_adapter import HttpxRequestAdapter
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
-from iograph_models.models.call_records_segment import CallRecordsSegment
 from iograph_models.models.call_records_segment_collection_response import CallRecordsSegmentCollectionResponse
+from iograph_models.models.call_records_segment import CallRecordsSegment
 
 
 class SegmentsRequest(BaseRequestBuilder):
@@ -112,9 +112,19 @@ class SegmentsRequest(BaseRequestBuilder):
 		from .by_segment_id import BySegmentIdRequest
 		return BySegmentIdRequest(self.request_adapter, path_parameters)
 
-	@property
 	def count(self,
+		callRecord_id: str,
+		session_id: str,
 	) -> CountRequest:
+		if callRecord_id is None:
+			raise TypeError("callRecord_id cannot be null.")
+		if session_id is None:
+			raise TypeError("session_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["callRecord%2Did"] =  callRecord_id
+		path_parameters["session%2Did"] =  session_id
+
 		from .count import CountRequest
-		return CountRequest(self.request_adapter, self.path_parameters)
+		return CountRequest(self.request_adapter, path_parameters)
 

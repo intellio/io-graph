@@ -1,6 +1,7 @@
 # Auto-generated client
 
 from __future__ import annotations
+from kiota_abstractions.get_path_parameters import get_path_parameters
 from kiota_abstractions.method import Method
 from kiota_abstractions.base_request_builder import BaseRequestBuilder
 from kiota_abstractions.base_request_configuration import RequestConfiguration
@@ -111,27 +112,99 @@ class BySetIdRequest(BaseRequestBuilder):
 			raise TypeError("raw_url cannot be None.")
 		return BySetIdRequest(self.request_adapter, self.path_parameters)
 
-	@property
 	def children(self,
+		site_id: str,
+		store_id: str,
+		group_id: str,
+		set_id: str,
 	) -> ChildrenRequest:
+		if site_id is None:
+			raise TypeError("site_id cannot be null.")
+		if store_id is None:
+			raise TypeError("store_id cannot be null.")
+		if group_id is None:
+			raise TypeError("group_id cannot be null.")
+		if set_id is None:
+			raise TypeError("set_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["site%2Did"] =  site_id
+		path_parameters["store%2Did"] =  store_id
+		path_parameters["group%2Did"] =  group_id
+		path_parameters["set%2Did"] =  set_id
+
 		from .children import ChildrenRequest
-		return ChildrenRequest(self.request_adapter, self.path_parameters)
+		return ChildrenRequest(self.request_adapter, path_parameters)
 
-	@property
 	def parent_group(self,
+		site_id: str,
+		store_id: str,
+		group_id: str,
+		set_id: str,
 	) -> ParentGroupRequest:
+		if site_id is None:
+			raise TypeError("site_id cannot be null.")
+		if store_id is None:
+			raise TypeError("store_id cannot be null.")
+		if group_id is None:
+			raise TypeError("group_id cannot be null.")
+		if set_id is None:
+			raise TypeError("set_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["site%2Did"] =  site_id
+		path_parameters["store%2Did"] =  store_id
+		path_parameters["group%2Did"] =  group_id
+		path_parameters["set%2Did"] =  set_id
+
 		from .parent_group import ParentGroupRequest
-		return ParentGroupRequest(self.request_adapter, self.path_parameters)
+		return ParentGroupRequest(self.request_adapter, path_parameters)
 
-	@property
 	def relations(self,
+		site_id: str,
+		store_id: str,
+		group_id: str,
+		set_id: str,
 	) -> RelationsRequest:
-		from .relations import RelationsRequest
-		return RelationsRequest(self.request_adapter, self.path_parameters)
+		if site_id is None:
+			raise TypeError("site_id cannot be null.")
+		if store_id is None:
+			raise TypeError("store_id cannot be null.")
+		if group_id is None:
+			raise TypeError("group_id cannot be null.")
+		if set_id is None:
+			raise TypeError("set_id cannot be null.")
 
-	@property
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["site%2Did"] =  site_id
+		path_parameters["store%2Did"] =  store_id
+		path_parameters["group%2Did"] =  group_id
+		path_parameters["set%2Did"] =  set_id
+
+		from .relations import RelationsRequest
+		return RelationsRequest(self.request_adapter, path_parameters)
+
 	def terms(self,
+		site_id: str,
+		store_id: str,
+		group_id: str,
+		set_id: str,
 	) -> TermsRequest:
+		if site_id is None:
+			raise TypeError("site_id cannot be null.")
+		if store_id is None:
+			raise TypeError("store_id cannot be null.")
+		if group_id is None:
+			raise TypeError("group_id cannot be null.")
+		if set_id is None:
+			raise TypeError("set_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["site%2Did"] =  site_id
+		path_parameters["store%2Did"] =  store_id
+		path_parameters["group%2Did"] =  group_id
+		path_parameters["set%2Did"] =  set_id
+
 		from .terms import TermsRequest
-		return TermsRequest(self.request_adapter, self.path_parameters)
+		return TermsRequest(self.request_adapter, path_parameters)
 

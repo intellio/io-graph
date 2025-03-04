@@ -1,6 +1,7 @@
 # Auto-generated client
 
 from __future__ import annotations
+from kiota_abstractions.get_path_parameters import get_path_parameters
 from kiota_abstractions.method import Method
 from kiota_abstractions.base_request_builder import BaseRequestBuilder
 from kiota_abstractions.base_request_configuration import RequestConfiguration
@@ -108,9 +109,23 @@ class ByCustomExtensionStageSettingIdRequest(BaseRequestBuilder):
 			raise TypeError("raw_url cannot be None.")
 		return ByCustomExtensionStageSettingIdRequest(self.request_adapter, self.path_parameters)
 
-	@property
 	def custom_extension(self,
+		accessPackage_id: str,
+		accessPackageAssignmentPolicy_id: str,
+		customExtensionStageSetting_id: str,
 	) -> CustomExtensionRequest:
+		if accessPackage_id is None:
+			raise TypeError("accessPackage_id cannot be null.")
+		if accessPackageAssignmentPolicy_id is None:
+			raise TypeError("accessPackageAssignmentPolicy_id cannot be null.")
+		if customExtensionStageSetting_id is None:
+			raise TypeError("customExtensionStageSetting_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["accessPackage%2Did"] =  accessPackage_id
+		path_parameters["accessPackageAssignmentPolicy%2Did"] =  accessPackageAssignmentPolicy_id
+		path_parameters["customExtensionStageSetting%2Did"] =  customExtensionStageSetting_id
+
 		from .custom_extension import CustomExtensionRequest
-		return CustomExtensionRequest(self.request_adapter, self.path_parameters)
+		return CustomExtensionRequest(self.request_adapter, path_parameters)
 

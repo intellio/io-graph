@@ -1,6 +1,7 @@
 # Auto-generated client
 
 from __future__ import annotations
+from kiota_abstractions.get_path_parameters import get_path_parameters
 from kiota_abstractions.method import Method
 from kiota_abstractions.base_request_builder import BaseRequestBuilder
 from kiota_abstractions.base_request_configuration import RequestConfiguration
@@ -13,8 +14,8 @@ if TYPE_CHECKING:
 	from .sessions import SessionsRequest
 	from .cancel import CancelRequest
 	from ........request_adapter import HttpxRequestAdapter
-from iograph_models.models.virtual_event_registration import VirtualEventRegistration
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.models.virtual_event_registration import VirtualEventRegistration
 
 
 class ByVirtualEventRegistrationIdRequest(BaseRequestBuilder):
@@ -110,15 +111,35 @@ class ByVirtualEventRegistrationIdRequest(BaseRequestBuilder):
 			raise TypeError("raw_url cannot be None.")
 		return ByVirtualEventRegistrationIdRequest(self.request_adapter, self.path_parameters)
 
-	@property
 	def cancel(self,
+		virtualEventWebinar_id: str,
+		virtualEventRegistration_id: str,
 	) -> CancelRequest:
-		from .cancel import CancelRequest
-		return CancelRequest(self.request_adapter, self.path_parameters)
+		if virtualEventWebinar_id is None:
+			raise TypeError("virtualEventWebinar_id cannot be null.")
+		if virtualEventRegistration_id is None:
+			raise TypeError("virtualEventRegistration_id cannot be null.")
 
-	@property
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["virtualEventWebinar%2Did"] =  virtualEventWebinar_id
+		path_parameters["virtualEventRegistration%2Did"] =  virtualEventRegistration_id
+
+		from .cancel import CancelRequest
+		return CancelRequest(self.request_adapter, path_parameters)
+
 	def sessions(self,
+		virtualEventWebinar_id: str,
+		virtualEventRegistration_id: str,
 	) -> SessionsRequest:
+		if virtualEventWebinar_id is None:
+			raise TypeError("virtualEventWebinar_id cannot be null.")
+		if virtualEventRegistration_id is None:
+			raise TypeError("virtualEventRegistration_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["virtualEventWebinar%2Did"] =  virtualEventWebinar_id
+		path_parameters["virtualEventRegistration%2Did"] =  virtualEventRegistration_id
+
 		from .sessions import SessionsRequest
-		return SessionsRequest(self.request_adapter, self.path_parameters)
+		return SessionsRequest(self.request_adapter, path_parameters)
 

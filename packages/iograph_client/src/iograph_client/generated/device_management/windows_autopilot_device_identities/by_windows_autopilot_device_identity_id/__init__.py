@@ -1,6 +1,7 @@
 # Auto-generated client
 
 from __future__ import annotations
+from kiota_abstractions.get_path_parameters import get_path_parameters
 from kiota_abstractions.method import Method
 from kiota_abstractions.base_request_builder import BaseRequestBuilder
 from kiota_abstractions.base_request_configuration import RequestConfiguration
@@ -112,21 +113,39 @@ class ByWindowsAutopilotDeviceIdentityIdRequest(BaseRequestBuilder):
 			raise TypeError("raw_url cannot be None.")
 		return ByWindowsAutopilotDeviceIdentityIdRequest(self.request_adapter, self.path_parameters)
 
-	@property
 	def assign_user_to_device(self,
+		windowsAutopilotDeviceIdentity_id: str,
 	) -> AssignUserToDeviceRequest:
+		if windowsAutopilotDeviceIdentity_id is None:
+			raise TypeError("windowsAutopilotDeviceIdentity_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["windowsAutopilotDeviceIdentity%2Did"] =  windowsAutopilotDeviceIdentity_id
+
 		from .assign_user_to_device import AssignUserToDeviceRequest
-		return AssignUserToDeviceRequest(self.request_adapter, self.path_parameters)
+		return AssignUserToDeviceRequest(self.request_adapter, path_parameters)
 
-	@property
 	def unassign_user_from_device(self,
+		windowsAutopilotDeviceIdentity_id: str,
 	) -> UnassignUserFromDeviceRequest:
-		from .unassign_user_from_device import UnassignUserFromDeviceRequest
-		return UnassignUserFromDeviceRequest(self.request_adapter, self.path_parameters)
+		if windowsAutopilotDeviceIdentity_id is None:
+			raise TypeError("windowsAutopilotDeviceIdentity_id cannot be null.")
 
-	@property
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["windowsAutopilotDeviceIdentity%2Did"] =  windowsAutopilotDeviceIdentity_id
+
+		from .unassign_user_from_device import UnassignUserFromDeviceRequest
+		return UnassignUserFromDeviceRequest(self.request_adapter, path_parameters)
+
 	def update_device_properties(self,
+		windowsAutopilotDeviceIdentity_id: str,
 	) -> UpdateDevicePropertiesRequest:
+		if windowsAutopilotDeviceIdentity_id is None:
+			raise TypeError("windowsAutopilotDeviceIdentity_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["windowsAutopilotDeviceIdentity%2Did"] =  windowsAutopilotDeviceIdentity_id
+
 		from .update_device_properties import UpdateDevicePropertiesRequest
-		return UpdateDevicePropertiesRequest(self.request_adapter, self.path_parameters)
+		return UpdateDevicePropertiesRequest(self.request_adapter, path_parameters)
 

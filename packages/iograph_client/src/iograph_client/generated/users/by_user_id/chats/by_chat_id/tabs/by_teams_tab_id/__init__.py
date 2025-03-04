@@ -1,6 +1,7 @@
 # Auto-generated client
 
 from __future__ import annotations
+from kiota_abstractions.get_path_parameters import get_path_parameters
 from kiota_abstractions.method import Method
 from kiota_abstractions.base_request_builder import BaseRequestBuilder
 from kiota_abstractions.base_request_configuration import RequestConfiguration
@@ -12,8 +13,8 @@ from typing import TYPE_CHECKING
 if TYPE_CHECKING:
 	from .teams_app import TeamsAppRequest
 	from ........request_adapter import HttpxRequestAdapter
-from iograph_models.models.teams_tab import TeamsTab
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.models.teams_tab import TeamsTab
 
 
 class ByTeamsTabIdRequest(BaseRequestBuilder):
@@ -108,9 +109,23 @@ class ByTeamsTabIdRequest(BaseRequestBuilder):
 			raise TypeError("raw_url cannot be None.")
 		return ByTeamsTabIdRequest(self.request_adapter, self.path_parameters)
 
-	@property
 	def teams_app(self,
+		user_id: str,
+		chat_id: str,
+		teamsTab_id: str,
 	) -> TeamsAppRequest:
+		if user_id is None:
+			raise TypeError("user_id cannot be null.")
+		if chat_id is None:
+			raise TypeError("chat_id cannot be null.")
+		if teamsTab_id is None:
+			raise TypeError("teamsTab_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["user%2Did"] =  user_id
+		path_parameters["chat%2Did"] =  chat_id
+		path_parameters["teamsTab%2Did"] =  teamsTab_id
+
 		from .teams_app import TeamsAppRequest
-		return TeamsAppRequest(self.request_adapter, self.path_parameters)
+		return TeamsAppRequest(self.request_adapter, path_parameters)
 

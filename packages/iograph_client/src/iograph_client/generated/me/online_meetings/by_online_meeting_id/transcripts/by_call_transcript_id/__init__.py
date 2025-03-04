@@ -1,6 +1,7 @@
 # Auto-generated client
 
 from __future__ import annotations
+from kiota_abstractions.get_path_parameters import get_path_parameters
 from kiota_abstractions.method import Method
 from kiota_abstractions.base_request_builder import BaseRequestBuilder
 from kiota_abstractions.base_request_configuration import RequestConfiguration
@@ -109,15 +110,35 @@ class ByCallTranscriptIdRequest(BaseRequestBuilder):
 			raise TypeError("raw_url cannot be None.")
 		return ByCallTranscriptIdRequest(self.request_adapter, self.path_parameters)
 
-	@property
 	def content(self,
+		onlineMeeting_id: str,
+		callTranscript_id: str,
 	) -> ContentRequest:
-		from .content import ContentRequest
-		return ContentRequest(self.request_adapter, self.path_parameters)
+		if onlineMeeting_id is None:
+			raise TypeError("onlineMeeting_id cannot be null.")
+		if callTranscript_id is None:
+			raise TypeError("callTranscript_id cannot be null.")
 
-	@property
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["onlineMeeting%2Did"] =  onlineMeeting_id
+		path_parameters["callTranscript%2Did"] =  callTranscript_id
+
+		from .content import ContentRequest
+		return ContentRequest(self.request_adapter, path_parameters)
+
 	def metadata_content(self,
+		onlineMeeting_id: str,
+		callTranscript_id: str,
 	) -> MetadataContentRequest:
+		if onlineMeeting_id is None:
+			raise TypeError("onlineMeeting_id cannot be null.")
+		if callTranscript_id is None:
+			raise TypeError("callTranscript_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["onlineMeeting%2Did"] =  onlineMeeting_id
+		path_parameters["callTranscript%2Did"] =  callTranscript_id
+
 		from .metadata_content import MetadataContentRequest
-		return MetadataContentRequest(self.request_adapter, self.path_parameters)
+		return MetadataContentRequest(self.request_adapter, path_parameters)
 

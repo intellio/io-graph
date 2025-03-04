@@ -11,6 +11,8 @@ from typing import Union, Any, Optional
 from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:
+	from .get_by_user_role import GetByUserRoleRequest
+	from .get_by_user_id_and_role import GetByUserIdAndRoleRequest
 	from .count import CountRequest
 	from .by_virtual_event_townhall_id import ByVirtualEventTownhallIdRequest
 	from .....request_adapter import HttpxRequestAdapter
@@ -110,4 +112,32 @@ class TownhallsRequest(BaseRequestBuilder):
 	) -> CountRequest:
 		from .count import CountRequest
 		return CountRequest(self.request_adapter, self.path_parameters)
+
+	def get_by_user_id_and_role(self,
+		userId: str,
+		role: str,
+	) -> GetByUserIdAndRoleRequest:
+		if userId is None:
+			raise TypeError("userId cannot be null.")
+		if role is None:
+			raise TypeError("role cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["userId"] =  userId
+		path_parameters["role"] =  role
+
+		from .get_by_user_id_and_role import GetByUserIdAndRoleRequest
+		return GetByUserIdAndRoleRequest(self.request_adapter, path_parameters)
+
+	def get_by_user_role(self,
+		role: str,
+	) -> GetByUserRoleRequest:
+		if role is None:
+			raise TypeError("role cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["role"] =  role
+
+		from .get_by_user_role import GetByUserRoleRequest
+		return GetByUserRoleRequest(self.request_adapter, path_parameters)
 

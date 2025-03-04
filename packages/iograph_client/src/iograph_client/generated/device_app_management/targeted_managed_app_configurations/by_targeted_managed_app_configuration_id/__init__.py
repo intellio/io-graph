@@ -1,6 +1,7 @@
 # Auto-generated client
 
 from __future__ import annotations
+from kiota_abstractions.get_path_parameters import get_path_parameters
 from kiota_abstractions.method import Method
 from kiota_abstractions.base_request_builder import BaseRequestBuilder
 from kiota_abstractions.base_request_configuration import RequestConfiguration
@@ -16,8 +17,8 @@ if TYPE_CHECKING:
 	from .assignments import AssignmentsRequest
 	from .apps import AppsRequest
 	from .....request_adapter import HttpxRequestAdapter
-from iograph_models.models.targeted_managed_app_configuration import TargetedManagedAppConfiguration
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.models.targeted_managed_app_configuration import TargetedManagedAppConfiguration
 
 
 class ByTargetedManagedAppConfigurationIdRequest(BaseRequestBuilder):
@@ -115,33 +116,63 @@ class ByTargetedManagedAppConfigurationIdRequest(BaseRequestBuilder):
 			raise TypeError("raw_url cannot be None.")
 		return ByTargetedManagedAppConfigurationIdRequest(self.request_adapter, self.path_parameters)
 
-	@property
 	def apps(self,
+		targetedManagedAppConfiguration_id: str,
 	) -> AppsRequest:
+		if targetedManagedAppConfiguration_id is None:
+			raise TypeError("targetedManagedAppConfiguration_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["targetedManagedAppConfiguration%2Did"] =  targetedManagedAppConfiguration_id
+
 		from .apps import AppsRequest
-		return AppsRequest(self.request_adapter, self.path_parameters)
+		return AppsRequest(self.request_adapter, path_parameters)
 
-	@property
 	def assignments(self,
+		targetedManagedAppConfiguration_id: str,
 	) -> AssignmentsRequest:
+		if targetedManagedAppConfiguration_id is None:
+			raise TypeError("targetedManagedAppConfiguration_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["targetedManagedAppConfiguration%2Did"] =  targetedManagedAppConfiguration_id
+
 		from .assignments import AssignmentsRequest
-		return AssignmentsRequest(self.request_adapter, self.path_parameters)
+		return AssignmentsRequest(self.request_adapter, path_parameters)
 
-	@property
 	def deployment_summary(self,
+		targetedManagedAppConfiguration_id: str,
 	) -> DeploymentSummaryRequest:
+		if targetedManagedAppConfiguration_id is None:
+			raise TypeError("targetedManagedAppConfiguration_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["targetedManagedAppConfiguration%2Did"] =  targetedManagedAppConfiguration_id
+
 		from .deployment_summary import DeploymentSummaryRequest
-		return DeploymentSummaryRequest(self.request_adapter, self.path_parameters)
+		return DeploymentSummaryRequest(self.request_adapter, path_parameters)
 
-	@property
 	def assign(self,
+		targetedManagedAppConfiguration_id: str,
 	) -> AssignRequest:
-		from .assign import AssignRequest
-		return AssignRequest(self.request_adapter, self.path_parameters)
+		if targetedManagedAppConfiguration_id is None:
+			raise TypeError("targetedManagedAppConfiguration_id cannot be null.")
 
-	@property
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["targetedManagedAppConfiguration%2Did"] =  targetedManagedAppConfiguration_id
+
+		from .assign import AssignRequest
+		return AssignRequest(self.request_adapter, path_parameters)
+
 	def target_apps(self,
+		targetedManagedAppConfiguration_id: str,
 	) -> TargetAppsRequest:
+		if targetedManagedAppConfiguration_id is None:
+			raise TypeError("targetedManagedAppConfiguration_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["targetedManagedAppConfiguration%2Did"] =  targetedManagedAppConfiguration_id
+
 		from .target_apps import TargetAppsRequest
-		return TargetAppsRequest(self.request_adapter, self.path_parameters)
+		return TargetAppsRequest(self.request_adapter, path_parameters)
 

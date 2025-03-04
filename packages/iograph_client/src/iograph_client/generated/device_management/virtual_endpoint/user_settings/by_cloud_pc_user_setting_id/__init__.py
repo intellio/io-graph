@@ -1,6 +1,7 @@
 # Auto-generated client
 
 from __future__ import annotations
+from kiota_abstractions.get_path_parameters import get_path_parameters
 from kiota_abstractions.method import Method
 from kiota_abstractions.base_request_builder import BaseRequestBuilder
 from kiota_abstractions.base_request_configuration import RequestConfiguration
@@ -13,8 +14,8 @@ if TYPE_CHECKING:
 	from .assign import AssignRequest
 	from .assignments import AssignmentsRequest
 	from ......request_adapter import HttpxRequestAdapter
-from iograph_models.models.cloud_pc_user_setting import CloudPcUserSetting
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.models.cloud_pc_user_setting import CloudPcUserSetting
 
 
 class ByCloudPcUserSettingIdRequest(BaseRequestBuilder):
@@ -112,15 +113,27 @@ class ByCloudPcUserSettingIdRequest(BaseRequestBuilder):
 			raise TypeError("raw_url cannot be None.")
 		return ByCloudPcUserSettingIdRequest(self.request_adapter, self.path_parameters)
 
-	@property
 	def assignments(self,
+		cloudPcUserSetting_id: str,
 	) -> AssignmentsRequest:
-		from .assignments import AssignmentsRequest
-		return AssignmentsRequest(self.request_adapter, self.path_parameters)
+		if cloudPcUserSetting_id is None:
+			raise TypeError("cloudPcUserSetting_id cannot be null.")
 
-	@property
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["cloudPcUserSetting%2Did"] =  cloudPcUserSetting_id
+
+		from .assignments import AssignmentsRequest
+		return AssignmentsRequest(self.request_adapter, path_parameters)
+
 	def assign(self,
+		cloudPcUserSetting_id: str,
 	) -> AssignRequest:
+		if cloudPcUserSetting_id is None:
+			raise TypeError("cloudPcUserSetting_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["cloudPcUserSetting%2Did"] =  cloudPcUserSetting_id
+
 		from .assign import AssignRequest
-		return AssignRequest(self.request_adapter, self.path_parameters)
+		return AssignRequest(self.request_adapter, path_parameters)
 

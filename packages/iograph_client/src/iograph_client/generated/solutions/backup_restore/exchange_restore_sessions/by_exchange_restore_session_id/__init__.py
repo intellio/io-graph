@@ -1,6 +1,7 @@
 # Auto-generated client
 
 from __future__ import annotations
+from kiota_abstractions.get_path_parameters import get_path_parameters
 from kiota_abstractions.method import Method
 from kiota_abstractions.base_request_builder import BaseRequestBuilder
 from kiota_abstractions.base_request_configuration import RequestConfiguration
@@ -13,8 +14,8 @@ if TYPE_CHECKING:
 	from .mailbox_restore_artifacts import MailboxRestoreArtifactsRequest
 	from .granular_mailbox_restore_artifacts import GranularMailboxRestoreArtifactsRequest
 	from ......request_adapter import HttpxRequestAdapter
-from iograph_models.models.exchange_restore_session import ExchangeRestoreSession
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.models.exchange_restore_session import ExchangeRestoreSession
 
 
 class ByExchangeRestoreSessionIdRequest(BaseRequestBuilder):
@@ -110,15 +111,27 @@ class ByExchangeRestoreSessionIdRequest(BaseRequestBuilder):
 			raise TypeError("raw_url cannot be None.")
 		return ByExchangeRestoreSessionIdRequest(self.request_adapter, self.path_parameters)
 
-	@property
 	def granular_mailbox_restore_artifacts(self,
+		exchangeRestoreSession_id: str,
 	) -> GranularMailboxRestoreArtifactsRequest:
-		from .granular_mailbox_restore_artifacts import GranularMailboxRestoreArtifactsRequest
-		return GranularMailboxRestoreArtifactsRequest(self.request_adapter, self.path_parameters)
+		if exchangeRestoreSession_id is None:
+			raise TypeError("exchangeRestoreSession_id cannot be null.")
 
-	@property
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["exchangeRestoreSession%2Did"] =  exchangeRestoreSession_id
+
+		from .granular_mailbox_restore_artifacts import GranularMailboxRestoreArtifactsRequest
+		return GranularMailboxRestoreArtifactsRequest(self.request_adapter, path_parameters)
+
 	def mailbox_restore_artifacts(self,
+		exchangeRestoreSession_id: str,
 	) -> MailboxRestoreArtifactsRequest:
+		if exchangeRestoreSession_id is None:
+			raise TypeError("exchangeRestoreSession_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["exchangeRestoreSession%2Did"] =  exchangeRestoreSession_id
+
 		from .mailbox_restore_artifacts import MailboxRestoreArtifactsRequest
-		return MailboxRestoreArtifactsRequest(self.request_adapter, self.path_parameters)
+		return MailboxRestoreArtifactsRequest(self.request_adapter, path_parameters)
 

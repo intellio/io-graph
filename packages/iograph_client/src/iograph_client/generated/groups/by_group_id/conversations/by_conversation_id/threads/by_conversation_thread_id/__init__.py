@@ -1,6 +1,7 @@
 # Auto-generated client
 
 from __future__ import annotations
+from kiota_abstractions.get_path_parameters import get_path_parameters
 from kiota_abstractions.method import Method
 from kiota_abstractions.base_request_builder import BaseRequestBuilder
 from kiota_abstractions.base_request_configuration import RequestConfiguration
@@ -109,15 +110,43 @@ class ByConversationThreadIdRequest(BaseRequestBuilder):
 			raise TypeError("raw_url cannot be None.")
 		return ByConversationThreadIdRequest(self.request_adapter, self.path_parameters)
 
-	@property
 	def reply(self,
+		group_id: str,
+		conversation_id: str,
+		conversationThread_id: str,
 	) -> ReplyRequest:
-		from .reply import ReplyRequest
-		return ReplyRequest(self.request_adapter, self.path_parameters)
+		if group_id is None:
+			raise TypeError("group_id cannot be null.")
+		if conversation_id is None:
+			raise TypeError("conversation_id cannot be null.")
+		if conversationThread_id is None:
+			raise TypeError("conversationThread_id cannot be null.")
 
-	@property
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["group%2Did"] =  group_id
+		path_parameters["conversation%2Did"] =  conversation_id
+		path_parameters["conversationThread%2Did"] =  conversationThread_id
+
+		from .reply import ReplyRequest
+		return ReplyRequest(self.request_adapter, path_parameters)
+
 	def posts(self,
+		group_id: str,
+		conversation_id: str,
+		conversationThread_id: str,
 	) -> PostsRequest:
+		if group_id is None:
+			raise TypeError("group_id cannot be null.")
+		if conversation_id is None:
+			raise TypeError("conversation_id cannot be null.")
+		if conversationThread_id is None:
+			raise TypeError("conversationThread_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["group%2Did"] =  group_id
+		path_parameters["conversation%2Did"] =  conversation_id
+		path_parameters["conversationThread%2Did"] =  conversationThread_id
+
 		from .posts import PostsRequest
-		return PostsRequest(self.request_adapter, self.path_parameters)
+		return PostsRequest(self.request_adapter, path_parameters)
 

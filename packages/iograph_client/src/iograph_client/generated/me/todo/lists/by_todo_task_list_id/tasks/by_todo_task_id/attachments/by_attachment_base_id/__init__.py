@@ -1,6 +1,7 @@
 # Auto-generated client
 
 from __future__ import annotations
+from kiota_abstractions.get_path_parameters import get_path_parameters
 from kiota_abstractions.method import Method
 from kiota_abstractions.base_request_builder import BaseRequestBuilder
 from kiota_abstractions.base_request_configuration import RequestConfiguration
@@ -12,8 +13,8 @@ from typing import TYPE_CHECKING
 if TYPE_CHECKING:
 	from .value import ValueRequest
 	from ..........request_adapter import HttpxRequestAdapter
-from iograph_models.models.attachment_base import AttachmentBase
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.models.attachment_base import AttachmentBase
 
 
 class ByAttachmentBaseIdRequest(BaseRequestBuilder):
@@ -84,9 +85,23 @@ class ByAttachmentBaseIdRequest(BaseRequestBuilder):
 			raise TypeError("raw_url cannot be None.")
 		return ByAttachmentBaseIdRequest(self.request_adapter, self.path_parameters)
 
-	@property
 	def value(self,
+		todoTaskList_id: str,
+		todoTask_id: str,
+		attachmentBase_id: str,
 	) -> ValueRequest:
+		if todoTaskList_id is None:
+			raise TypeError("todoTaskList_id cannot be null.")
+		if todoTask_id is None:
+			raise TypeError("todoTask_id cannot be null.")
+		if attachmentBase_id is None:
+			raise TypeError("attachmentBase_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["todoTaskList%2Did"] =  todoTaskList_id
+		path_parameters["todoTask%2Did"] =  todoTask_id
+		path_parameters["attachmentBase%2Did"] =  attachmentBase_id
+
 		from .value import ValueRequest
-		return ValueRequest(self.request_adapter, self.path_parameters)
+		return ValueRequest(self.request_adapter, path_parameters)
 

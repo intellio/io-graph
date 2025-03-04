@@ -11,6 +11,7 @@ from typing import Union, Any, Optional
 from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:
+	from .available_provider_types import AvailableProviderTypesRequest
 	from .count import CountRequest
 	from .by_identity_provider_base_id import ByIdentityProviderBaseIdRequest
 	from ....request_adapter import HttpxRequestAdapter
@@ -109,4 +110,10 @@ class FederationConfigurationsRequest(BaseRequestBuilder):
 	) -> CountRequest:
 		from .count import CountRequest
 		return CountRequest(self.request_adapter, self.path_parameters)
+
+	@property
+	def available_provider_types(self,
+	) -> AvailableProviderTypesRequest:
+		from .available_provider_types import AvailableProviderTypesRequest
+		return AvailableProviderTypesRequest(self.request_adapter, self.path_parameters)
 

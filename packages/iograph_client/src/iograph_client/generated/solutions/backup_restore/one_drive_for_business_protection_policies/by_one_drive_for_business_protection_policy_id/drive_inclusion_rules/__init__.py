@@ -82,9 +82,15 @@ class DriveInclusionRulesRequest(BaseRequestBuilder):
 		from .by_drive_protection_rule_id import ByDriveProtectionRuleIdRequest
 		return ByDriveProtectionRuleIdRequest(self.request_adapter, path_parameters)
 
-	@property
 	def count(self,
+		oneDriveForBusinessProtectionPolicy_id: str,
 	) -> CountRequest:
+		if oneDriveForBusinessProtectionPolicy_id is None:
+			raise TypeError("oneDriveForBusinessProtectionPolicy_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["oneDriveForBusinessProtectionPolicy%2Did"] =  oneDriveForBusinessProtectionPolicy_id
+
 		from .count import CountRequest
-		return CountRequest(self.request_adapter, self.path_parameters)
+		return CountRequest(self.request_adapter, path_parameters)
 

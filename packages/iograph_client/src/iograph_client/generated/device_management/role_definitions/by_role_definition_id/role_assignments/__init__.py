@@ -14,8 +14,8 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_role_assignment_id import ByRoleAssignmentIdRequest
 	from ......request_adapter import HttpxRequestAdapter
-from iograph_models.models.role_assignment import RoleAssignment
 from iograph_models.models.role_assignment_collection_response import RoleAssignmentCollectionResponse
+from iograph_models.models.role_assignment import RoleAssignment
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
 
 
@@ -110,9 +110,15 @@ class RoleAssignmentsRequest(BaseRequestBuilder):
 		from .by_role_assignment_id import ByRoleAssignmentIdRequest
 		return ByRoleAssignmentIdRequest(self.request_adapter, path_parameters)
 
-	@property
 	def count(self,
+		roleDefinition_id: str,
 	) -> CountRequest:
+		if roleDefinition_id is None:
+			raise TypeError("roleDefinition_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["roleDefinition%2Did"] =  roleDefinition_id
+
 		from .count import CountRequest
-		return CountRequest(self.request_adapter, self.path_parameters)
+		return CountRequest(self.request_adapter, path_parameters)
 

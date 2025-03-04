@@ -1,6 +1,7 @@
 # Auto-generated client
 
 from __future__ import annotations
+from kiota_abstractions.get_path_parameters import get_path_parameters
 from kiota_abstractions.method import Method
 from kiota_abstractions.base_request_builder import BaseRequestBuilder
 from kiota_abstractions.base_request_configuration import RequestConfiguration
@@ -13,8 +14,8 @@ if TYPE_CHECKING:
 	from .external_connectors_add_activities import ExternalConnectorsAddActivitiesRequest
 	from .activities import ActivitiesRequest
 	from .......request_adapter import HttpxRequestAdapter
-from iograph_models.models.external_connectors_external_item import ExternalConnectorsExternalItem
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.models.external_connectors_external_item import ExternalConnectorsExternalItem
 
 
 class ByExternalItemIdRequest(BaseRequestBuilder):
@@ -51,9 +52,9 @@ class ByExternalItemIdRequest(BaseRequestBuilder):
 		request_configuration: Optional[RequestConfiguration[BaseModel]] = None,
 	) -> ExternalConnectorsExternalItem:
 		"""
-		Update externalItem
-		Update the properties of an externalItem object.
-		Find more info here: https://learn.microsoft.com/graph/api/externalconnectors-externalitem-update?view=graph-rest-1.0
+		Create externalItem
+		Create a new externalItem object.
+		Find more info here: https://learn.microsoft.com/graph/api/externalconnectors-externalconnection-put-items?view=graph-rest-1.0
 		"""
 		tags = ['external.externalConnection']
 
@@ -112,15 +113,35 @@ class ByExternalItemIdRequest(BaseRequestBuilder):
 			raise TypeError("raw_url cannot be None.")
 		return ByExternalItemIdRequest(self.request_adapter, self.path_parameters)
 
-	@property
 	def activities(self,
+		externalConnection_id: str,
+		externalItem_id: str,
 	) -> ActivitiesRequest:
-		from .activities import ActivitiesRequest
-		return ActivitiesRequest(self.request_adapter, self.path_parameters)
+		if externalConnection_id is None:
+			raise TypeError("externalConnection_id cannot be null.")
+		if externalItem_id is None:
+			raise TypeError("externalItem_id cannot be null.")
 
-	@property
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["externalConnection%2Did"] =  externalConnection_id
+		path_parameters["externalItem%2Did"] =  externalItem_id
+
+		from .activities import ActivitiesRequest
+		return ActivitiesRequest(self.request_adapter, path_parameters)
+
 	def external_connectors_add_activities(self,
+		externalConnection_id: str,
+		externalItem_id: str,
 	) -> ExternalConnectorsAddActivitiesRequest:
+		if externalConnection_id is None:
+			raise TypeError("externalConnection_id cannot be null.")
+		if externalItem_id is None:
+			raise TypeError("externalItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["externalConnection%2Did"] =  externalConnection_id
+		path_parameters["externalItem%2Did"] =  externalItem_id
+
 		from .external_connectors_add_activities import ExternalConnectorsAddActivitiesRequest
-		return ExternalConnectorsAddActivitiesRequest(self.request_adapter, self.path_parameters)
+		return ExternalConnectorsAddActivitiesRequest(self.request_adapter, path_parameters)
 

@@ -14,8 +14,8 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_ediscovery_review_set_query_id import ByEdiscoveryReviewSetQueryIdRequest
 	from .........request_adapter import HttpxRequestAdapter
-from iograph_models.models.security_ediscovery_review_set_query import SecurityEdiscoveryReviewSetQuery
 from iograph_models.models.security_ediscovery_review_set_query_collection_response import SecurityEdiscoveryReviewSetQueryCollectionResponse
+from iograph_models.models.security_ediscovery_review_set_query import SecurityEdiscoveryReviewSetQuery
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
 
 
@@ -114,9 +114,19 @@ class QueriesRequest(BaseRequestBuilder):
 		from .by_ediscovery_review_set_query_id import ByEdiscoveryReviewSetQueryIdRequest
 		return ByEdiscoveryReviewSetQueryIdRequest(self.request_adapter, path_parameters)
 
-	@property
 	def count(self,
+		ediscoveryCase_id: str,
+		ediscoveryReviewSet_id: str,
 	) -> CountRequest:
+		if ediscoveryCase_id is None:
+			raise TypeError("ediscoveryCase_id cannot be null.")
+		if ediscoveryReviewSet_id is None:
+			raise TypeError("ediscoveryReviewSet_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["ediscoveryCase%2Did"] =  ediscoveryCase_id
+		path_parameters["ediscoveryReviewSet%2Did"] =  ediscoveryReviewSet_id
+
 		from .count import CountRequest
-		return CountRequest(self.request_adapter, self.path_parameters)
+		return CountRequest(self.request_adapter, path_parameters)
 

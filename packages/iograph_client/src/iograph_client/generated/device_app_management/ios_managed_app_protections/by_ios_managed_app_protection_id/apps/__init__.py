@@ -110,9 +110,15 @@ class AppsRequest(BaseRequestBuilder):
 		from .by_managed_mobile_app_id import ByManagedMobileAppIdRequest
 		return ByManagedMobileAppIdRequest(self.request_adapter, path_parameters)
 
-	@property
 	def count(self,
+		iosManagedAppProtection_id: str,
 	) -> CountRequest:
+		if iosManagedAppProtection_id is None:
+			raise TypeError("iosManagedAppProtection_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["iosManagedAppProtection%2Did"] =  iosManagedAppProtection_id
+
 		from .count import CountRequest
-		return CountRequest(self.request_adapter, self.path_parameters)
+		return CountRequest(self.request_adapter, path_parameters)
 

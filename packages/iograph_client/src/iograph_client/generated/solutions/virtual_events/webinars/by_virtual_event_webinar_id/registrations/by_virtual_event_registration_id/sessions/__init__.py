@@ -86,9 +86,19 @@ class SessionsRequest(BaseRequestBuilder):
 		from .by_virtual_event_session_id import ByVirtualEventSessionIdRequest
 		return ByVirtualEventSessionIdRequest(self.request_adapter, path_parameters)
 
-	@property
 	def count(self,
+		virtualEventWebinar_id: str,
+		virtualEventRegistration_id: str,
 	) -> CountRequest:
+		if virtualEventWebinar_id is None:
+			raise TypeError("virtualEventWebinar_id cannot be null.")
+		if virtualEventRegistration_id is None:
+			raise TypeError("virtualEventRegistration_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["virtualEventWebinar%2Did"] =  virtualEventWebinar_id
+		path_parameters["virtualEventRegistration%2Did"] =  virtualEventRegistration_id
+
 		from .count import CountRequest
-		return CountRequest(self.request_adapter, self.path_parameters)
+		return CountRequest(self.request_adapter, path_parameters)
 

@@ -1,6 +1,7 @@
 # Auto-generated client
 
 from __future__ import annotations
+from kiota_abstractions.get_path_parameters import get_path_parameters
 from kiota_abstractions.method import Method
 from kiota_abstractions.base_request_builder import BaseRequestBuilder
 from kiota_abstractions.base_request_configuration import RequestConfiguration
@@ -12,8 +13,8 @@ from typing import TYPE_CHECKING
 if TYPE_CHECKING:
 	from .activity import ActivityRequest
 	from ........request_adapter import HttpxRequestAdapter
-from iograph_models.models.activity_history_item import ActivityHistoryItem
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.models.activity_history_item import ActivityHistoryItem
 
 
 class ByActivityHistoryItemIdRequest(BaseRequestBuilder):
@@ -108,9 +109,23 @@ class ByActivityHistoryItemIdRequest(BaseRequestBuilder):
 			raise TypeError("raw_url cannot be None.")
 		return ByActivityHistoryItemIdRequest(self.request_adapter, self.path_parameters)
 
-	@property
 	def activity(self,
+		user_id: str,
+		userActivity_id: str,
+		activityHistoryItem_id: str,
 	) -> ActivityRequest:
+		if user_id is None:
+			raise TypeError("user_id cannot be null.")
+		if userActivity_id is None:
+			raise TypeError("userActivity_id cannot be null.")
+		if activityHistoryItem_id is None:
+			raise TypeError("activityHistoryItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["user%2Did"] =  user_id
+		path_parameters["userActivity%2Did"] =  userActivity_id
+		path_parameters["activityHistoryItem%2Did"] =  activityHistoryItem_id
+
 		from .activity import ActivityRequest
-		return ActivityRequest(self.request_adapter, self.path_parameters)
+		return ActivityRequest(self.request_adapter, path_parameters)
 

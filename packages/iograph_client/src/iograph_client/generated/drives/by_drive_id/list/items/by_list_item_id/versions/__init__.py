@@ -112,9 +112,19 @@ class VersionsRequest(BaseRequestBuilder):
 		from .by_list_item_version_id import ByListItemVersionIdRequest
 		return ByListItemVersionIdRequest(self.request_adapter, path_parameters)
 
-	@property
 	def count(self,
+		drive_id: str,
+		listItem_id: str,
 	) -> CountRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if listItem_id is None:
+			raise TypeError("listItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["listItem%2Did"] =  listItem_id
+
 		from .count import CountRequest
-		return CountRequest(self.request_adapter, self.path_parameters)
+		return CountRequest(self.request_adapter, path_parameters)
 

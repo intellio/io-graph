@@ -14,8 +14,8 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_access_package_resource_role_id import ByAccessPackageResourceRoleIdRequest
 	from ...........request_adapter import HttpxRequestAdapter
-from iograph_models.models.access_package_resource_role import AccessPackageResourceRole
 from iograph_models.models.access_package_resource_role_collection_response import AccessPackageResourceRoleCollectionResponse
+from iograph_models.models.access_package_resource_role import AccessPackageResourceRole
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
 
 
@@ -112,9 +112,19 @@ class RolesRequest(BaseRequestBuilder):
 		from .by_access_package_resource_role_id import ByAccessPackageResourceRoleIdRequest
 		return ByAccessPackageResourceRoleIdRequest(self.request_adapter, path_parameters)
 
-	@property
 	def count(self,
+		accessPackage_id: str,
+		accessPackageResourceRoleScope_id: str,
 	) -> CountRequest:
+		if accessPackage_id is None:
+			raise TypeError("accessPackage_id cannot be null.")
+		if accessPackageResourceRoleScope_id is None:
+			raise TypeError("accessPackageResourceRoleScope_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["accessPackage%2Did"] =  accessPackage_id
+		path_parameters["accessPackageResourceRoleScope%2Did"] =  accessPackageResourceRoleScope_id
+
 		from .count import CountRequest
-		return CountRequest(self.request_adapter, self.path_parameters)
+		return CountRequest(self.request_adapter, path_parameters)
 

@@ -1,6 +1,7 @@
 # Auto-generated client
 
 from __future__ import annotations
+from kiota_abstractions.get_path_parameters import get_path_parameters
 from kiota_abstractions.method import Method
 from kiota_abstractions.base_request_builder import BaseRequestBuilder
 from kiota_abstractions.base_request_configuration import RequestConfiguration
@@ -113,33 +114,63 @@ class ByPrivilegedAccessGroupAssignmentScheduleRequestIdRequest(BaseRequestBuild
 			raise TypeError("raw_url cannot be None.")
 		return ByPrivilegedAccessGroupAssignmentScheduleRequestIdRequest(self.request_adapter, self.path_parameters)
 
-	@property
 	def activated_using(self,
+		privilegedAccessGroupAssignmentScheduleRequest_id: str,
 	) -> ActivatedUsingRequest:
+		if privilegedAccessGroupAssignmentScheduleRequest_id is None:
+			raise TypeError("privilegedAccessGroupAssignmentScheduleRequest_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["privilegedAccessGroupAssignmentScheduleRequest%2Did"] =  privilegedAccessGroupAssignmentScheduleRequest_id
+
 		from .activated_using import ActivatedUsingRequest
-		return ActivatedUsingRequest(self.request_adapter, self.path_parameters)
+		return ActivatedUsingRequest(self.request_adapter, path_parameters)
 
-	@property
 	def group(self,
+		privilegedAccessGroupAssignmentScheduleRequest_id: str,
 	) -> GroupRequest:
+		if privilegedAccessGroupAssignmentScheduleRequest_id is None:
+			raise TypeError("privilegedAccessGroupAssignmentScheduleRequest_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["privilegedAccessGroupAssignmentScheduleRequest%2Did"] =  privilegedAccessGroupAssignmentScheduleRequest_id
+
 		from .group import GroupRequest
-		return GroupRequest(self.request_adapter, self.path_parameters)
+		return GroupRequest(self.request_adapter, path_parameters)
 
-	@property
 	def cancel(self,
+		privilegedAccessGroupAssignmentScheduleRequest_id: str,
 	) -> CancelRequest:
+		if privilegedAccessGroupAssignmentScheduleRequest_id is None:
+			raise TypeError("privilegedAccessGroupAssignmentScheduleRequest_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["privilegedAccessGroupAssignmentScheduleRequest%2Did"] =  privilegedAccessGroupAssignmentScheduleRequest_id
+
 		from .cancel import CancelRequest
-		return CancelRequest(self.request_adapter, self.path_parameters)
+		return CancelRequest(self.request_adapter, path_parameters)
 
-	@property
 	def principal(self,
+		privilegedAccessGroupAssignmentScheduleRequest_id: str,
 	) -> PrincipalRequest:
-		from .principal import PrincipalRequest
-		return PrincipalRequest(self.request_adapter, self.path_parameters)
+		if privilegedAccessGroupAssignmentScheduleRequest_id is None:
+			raise TypeError("privilegedAccessGroupAssignmentScheduleRequest_id cannot be null.")
 
-	@property
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["privilegedAccessGroupAssignmentScheduleRequest%2Did"] =  privilegedAccessGroupAssignmentScheduleRequest_id
+
+		from .principal import PrincipalRequest
+		return PrincipalRequest(self.request_adapter, path_parameters)
+
 	def target_schedule(self,
+		privilegedAccessGroupAssignmentScheduleRequest_id: str,
 	) -> TargetScheduleRequest:
+		if privilegedAccessGroupAssignmentScheduleRequest_id is None:
+			raise TypeError("privilegedAccessGroupAssignmentScheduleRequest_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["privilegedAccessGroupAssignmentScheduleRequest%2Did"] =  privilegedAccessGroupAssignmentScheduleRequest_id
+
 		from .target_schedule import TargetScheduleRequest
-		return TargetScheduleRequest(self.request_adapter, self.path_parameters)
+		return TargetScheduleRequest(self.request_adapter, path_parameters)
 

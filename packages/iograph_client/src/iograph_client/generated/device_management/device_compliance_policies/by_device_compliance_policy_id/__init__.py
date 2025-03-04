@@ -1,6 +1,7 @@
 # Auto-generated client
 
 from __future__ import annotations
+from kiota_abstractions.get_path_parameters import get_path_parameters
 from kiota_abstractions.method import Method
 from kiota_abstractions.base_request_builder import BaseRequestBuilder
 from kiota_abstractions.base_request_configuration import RequestConfiguration
@@ -33,9 +34,9 @@ class ByDeviceCompliancePolicyIdRequest(BaseRequestBuilder):
 		request_configuration: Optional[RequestConfiguration[GetQueryParams]] = None,
 	) -> DeviceCompliancePolicy:
 		"""
-		Get deviceCompliancePolicy
-		Read properties and relationships of the deviceCompliancePolicy object.
-		Find more info here: https://learn.microsoft.com/graph/api/intune-deviceconfig-devicecompliancepolicy-get?view=graph-rest-1.0
+		Get windows10MobileCompliancePolicy
+		Read properties and relationships of the windows10MobileCompliancePolicy object.
+		Find more info here: https://learn.microsoft.com/graph/api/intune-deviceconfig-windows10mobilecompliancepolicy-get?view=graph-rest-1.0
 		"""
 		tags = ['deviceManagement.deviceCompliancePolicy']
 
@@ -58,9 +59,9 @@ class ByDeviceCompliancePolicyIdRequest(BaseRequestBuilder):
 		request_configuration: Optional[RequestConfiguration[BaseModel]] = None,
 	) -> DeviceCompliancePolicy:
 		"""
-		Update androidCompliancePolicy
-		Update the properties of a androidCompliancePolicy object.
-		Find more info here: https://learn.microsoft.com/graph/api/intune-deviceconfig-androidcompliancepolicy-update?view=graph-rest-1.0
+		Update iosCompliancePolicy
+		Update the properties of a iosCompliancePolicy object.
+		Find more info here: https://learn.microsoft.com/graph/api/intune-deviceconfig-ioscompliancepolicy-update?view=graph-rest-1.0
 		"""
 		tags = ['deviceManagement.deviceCompliancePolicy']
 
@@ -83,9 +84,9 @@ class ByDeviceCompliancePolicyIdRequest(BaseRequestBuilder):
 		request_configuration: Optional[RequestConfiguration[BaseModel]] = None,
 	) -> None:
 		"""
-		Delete iosCompliancePolicy
-		Deletes a iosCompliancePolicy.
-		Find more info here: https://learn.microsoft.com/graph/api/intune-deviceconfig-ioscompliancepolicy-delete?view=graph-rest-1.0
+		Delete windows81CompliancePolicy
+		Deletes a windows81CompliancePolicy.
+		Find more info here: https://learn.microsoft.com/graph/api/intune-deviceconfig-windows81compliancepolicy-delete?view=graph-rest-1.0
 		"""
 		tags = ['deviceManagement.deviceCompliancePolicy']
 		header_parameters = [{'name': 'If-Match', 'in': 'header', 'description': 'ETag', 'schema': {'type': 'string'}}]
@@ -119,57 +120,111 @@ class ByDeviceCompliancePolicyIdRequest(BaseRequestBuilder):
 			raise TypeError("raw_url cannot be None.")
 		return ByDeviceCompliancePolicyIdRequest(self.request_adapter, self.path_parameters)
 
-	@property
 	def assignments(self,
+		deviceCompliancePolicy_id: str,
 	) -> AssignmentsRequest:
+		if deviceCompliancePolicy_id is None:
+			raise TypeError("deviceCompliancePolicy_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["deviceCompliancePolicy%2Did"] =  deviceCompliancePolicy_id
+
 		from .assignments import AssignmentsRequest
-		return AssignmentsRequest(self.request_adapter, self.path_parameters)
+		return AssignmentsRequest(self.request_adapter, path_parameters)
 
-	@property
 	def device_setting_state_summaries(self,
+		deviceCompliancePolicy_id: str,
 	) -> DeviceSettingStateSummariesRequest:
+		if deviceCompliancePolicy_id is None:
+			raise TypeError("deviceCompliancePolicy_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["deviceCompliancePolicy%2Did"] =  deviceCompliancePolicy_id
+
 		from .device_setting_state_summaries import DeviceSettingStateSummariesRequest
-		return DeviceSettingStateSummariesRequest(self.request_adapter, self.path_parameters)
+		return DeviceSettingStateSummariesRequest(self.request_adapter, path_parameters)
 
-	@property
 	def device_statuses(self,
+		deviceCompliancePolicy_id: str,
 	) -> DeviceStatusesRequest:
+		if deviceCompliancePolicy_id is None:
+			raise TypeError("deviceCompliancePolicy_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["deviceCompliancePolicy%2Did"] =  deviceCompliancePolicy_id
+
 		from .device_statuses import DeviceStatusesRequest
-		return DeviceStatusesRequest(self.request_adapter, self.path_parameters)
+		return DeviceStatusesRequest(self.request_adapter, path_parameters)
 
-	@property
 	def device_status_overview(self,
+		deviceCompliancePolicy_id: str,
 	) -> DeviceStatusOverviewRequest:
+		if deviceCompliancePolicy_id is None:
+			raise TypeError("deviceCompliancePolicy_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["deviceCompliancePolicy%2Did"] =  deviceCompliancePolicy_id
+
 		from .device_status_overview import DeviceStatusOverviewRequest
-		return DeviceStatusOverviewRequest(self.request_adapter, self.path_parameters)
+		return DeviceStatusOverviewRequest(self.request_adapter, path_parameters)
 
-	@property
 	def assign(self,
+		deviceCompliancePolicy_id: str,
 	) -> AssignRequest:
+		if deviceCompliancePolicy_id is None:
+			raise TypeError("deviceCompliancePolicy_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["deviceCompliancePolicy%2Did"] =  deviceCompliancePolicy_id
+
 		from .assign import AssignRequest
-		return AssignRequest(self.request_adapter, self.path_parameters)
+		return AssignRequest(self.request_adapter, path_parameters)
 
-	@property
 	def schedule_actions_for_rules(self,
+		deviceCompliancePolicy_id: str,
 	) -> ScheduleActionsForRulesRequest:
+		if deviceCompliancePolicy_id is None:
+			raise TypeError("deviceCompliancePolicy_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["deviceCompliancePolicy%2Did"] =  deviceCompliancePolicy_id
+
 		from .schedule_actions_for_rules import ScheduleActionsForRulesRequest
-		return ScheduleActionsForRulesRequest(self.request_adapter, self.path_parameters)
+		return ScheduleActionsForRulesRequest(self.request_adapter, path_parameters)
 
-	@property
 	def scheduled_actions_for_rule(self,
+		deviceCompliancePolicy_id: str,
 	) -> ScheduledActionsForRuleRequest:
+		if deviceCompliancePolicy_id is None:
+			raise TypeError("deviceCompliancePolicy_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["deviceCompliancePolicy%2Did"] =  deviceCompliancePolicy_id
+
 		from .scheduled_actions_for_rule import ScheduledActionsForRuleRequest
-		return ScheduledActionsForRuleRequest(self.request_adapter, self.path_parameters)
+		return ScheduledActionsForRuleRequest(self.request_adapter, path_parameters)
 
-	@property
 	def user_statuses(self,
+		deviceCompliancePolicy_id: str,
 	) -> UserStatusesRequest:
-		from .user_statuses import UserStatusesRequest
-		return UserStatusesRequest(self.request_adapter, self.path_parameters)
+		if deviceCompliancePolicy_id is None:
+			raise TypeError("deviceCompliancePolicy_id cannot be null.")
 
-	@property
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["deviceCompliancePolicy%2Did"] =  deviceCompliancePolicy_id
+
+		from .user_statuses import UserStatusesRequest
+		return UserStatusesRequest(self.request_adapter, path_parameters)
+
 	def user_status_overview(self,
+		deviceCompliancePolicy_id: str,
 	) -> UserStatusOverviewRequest:
+		if deviceCompliancePolicy_id is None:
+			raise TypeError("deviceCompliancePolicy_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["deviceCompliancePolicy%2Did"] =  deviceCompliancePolicy_id
+
 		from .user_status_overview import UserStatusOverviewRequest
-		return UserStatusOverviewRequest(self.request_adapter, self.path_parameters)
+		return UserStatusOverviewRequest(self.request_adapter, path_parameters)
 

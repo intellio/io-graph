@@ -111,15 +111,27 @@ class JobsRequest(BaseRequestBuilder):
 		from .by_synchronization_job_id import BySynchronizationJobIdRequest
 		return BySynchronizationJobIdRequest(self.request_adapter, path_parameters)
 
-	@property
 	def count(self,
+		servicePrincipal_id: str,
 	) -> CountRequest:
-		from .count import CountRequest
-		return CountRequest(self.request_adapter, self.path_parameters)
+		if servicePrincipal_id is None:
+			raise TypeError("servicePrincipal_id cannot be null.")
 
-	@property
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["servicePrincipal%2Did"] =  servicePrincipal_id
+
+		from .count import CountRequest
+		return CountRequest(self.request_adapter, path_parameters)
+
 	def validate_credentials(self,
+		servicePrincipal_id: str,
 	) -> ValidateCredentialsRequest:
+		if servicePrincipal_id is None:
+			raise TypeError("servicePrincipal_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["servicePrincipal%2Did"] =  servicePrincipal_id
+
 		from .validate_credentials import ValidateCredentialsRequest
-		return ValidateCredentialsRequest(self.request_adapter, self.path_parameters)
+		return ValidateCredentialsRequest(self.request_adapter, path_parameters)
 

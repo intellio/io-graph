@@ -1,6 +1,7 @@
 # Auto-generated client
 
 from __future__ import annotations
+from kiota_abstractions.get_path_parameters import get_path_parameters
 from kiota_abstractions.method import Method
 from kiota_abstractions.base_request_builder import BaseRequestBuilder
 from kiota_abstractions.base_request_configuration import RequestConfiguration
@@ -12,8 +13,8 @@ from typing import TYPE_CHECKING
 if TYPE_CHECKING:
 	from .resource import ResourceRequest
 	from .......request_adapter import HttpxRequestAdapter
-from iograph_models.models.access_package_resource_role import AccessPackageResourceRole
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.models.access_package_resource_role import AccessPackageResourceRole
 
 
 class RoleRequest(BaseRequestBuilder):
@@ -108,9 +109,15 @@ class RoleRequest(BaseRequestBuilder):
 			raise TypeError("raw_url cannot be None.")
 		return RoleRequest(self.request_adapter, self.path_parameters)
 
-	@property
 	def resource(self,
+		accessPackageResourceRoleScope_id: str,
 	) -> ResourceRequest:
+		if accessPackageResourceRoleScope_id is None:
+			raise TypeError("accessPackageResourceRoleScope_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["accessPackageResourceRoleScope%2Did"] =  accessPackageResourceRoleScope_id
+
 		from .resource import ResourceRequest
-		return ResourceRequest(self.request_adapter, self.path_parameters)
+		return ResourceRequest(self.request_adapter, path_parameters)
 

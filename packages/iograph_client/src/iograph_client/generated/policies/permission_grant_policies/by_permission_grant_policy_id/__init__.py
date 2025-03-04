@@ -1,6 +1,7 @@
 # Auto-generated client
 
 from __future__ import annotations
+from kiota_abstractions.get_path_parameters import get_path_parameters
 from kiota_abstractions.method import Method
 from kiota_abstractions.base_request_builder import BaseRequestBuilder
 from kiota_abstractions.base_request_configuration import RequestConfiguration
@@ -13,8 +14,8 @@ if TYPE_CHECKING:
 	from .includes import IncludesRequest
 	from .excludes import ExcludesRequest
 	from .....request_adapter import HttpxRequestAdapter
-from iograph_models.models.permission_grant_policy import PermissionGrantPolicy
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.models.permission_grant_policy import PermissionGrantPolicy
 
 
 class ByPermissionGrantPolicyIdRequest(BaseRequestBuilder):
@@ -112,15 +113,27 @@ class ByPermissionGrantPolicyIdRequest(BaseRequestBuilder):
 			raise TypeError("raw_url cannot be None.")
 		return ByPermissionGrantPolicyIdRequest(self.request_adapter, self.path_parameters)
 
-	@property
 	def excludes(self,
+		permissionGrantPolicy_id: str,
 	) -> ExcludesRequest:
-		from .excludes import ExcludesRequest
-		return ExcludesRequest(self.request_adapter, self.path_parameters)
+		if permissionGrantPolicy_id is None:
+			raise TypeError("permissionGrantPolicy_id cannot be null.")
 
-	@property
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["permissionGrantPolicy%2Did"] =  permissionGrantPolicy_id
+
+		from .excludes import ExcludesRequest
+		return ExcludesRequest(self.request_adapter, path_parameters)
+
 	def includes(self,
+		permissionGrantPolicy_id: str,
 	) -> IncludesRequest:
+		if permissionGrantPolicy_id is None:
+			raise TypeError("permissionGrantPolicy_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["permissionGrantPolicy%2Did"] =  permissionGrantPolicy_id
+
 		from .includes import IncludesRequest
-		return IncludesRequest(self.request_adapter, self.path_parameters)
+		return IncludesRequest(self.request_adapter, path_parameters)
 

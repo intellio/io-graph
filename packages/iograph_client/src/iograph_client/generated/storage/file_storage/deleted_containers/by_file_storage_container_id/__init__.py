@@ -1,6 +1,7 @@
 # Auto-generated client
 
 from __future__ import annotations
+from kiota_abstractions.get_path_parameters import get_path_parameters
 from kiota_abstractions.method import Method
 from kiota_abstractions.base_request_builder import BaseRequestBuilder
 from kiota_abstractions.base_request_configuration import RequestConfiguration
@@ -115,51 +116,99 @@ class ByFileStorageContainerIdRequest(BaseRequestBuilder):
 			raise TypeError("raw_url cannot be None.")
 		return ByFileStorageContainerIdRequest(self.request_adapter, self.path_parameters)
 
-	@property
 	def drive(self,
+		fileStorageContainer_id: str,
 	) -> DriveRequest:
+		if fileStorageContainer_id is None:
+			raise TypeError("fileStorageContainer_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["fileStorageContainer%2Did"] =  fileStorageContainer_id
+
 		from .drive import DriveRequest
-		return DriveRequest(self.request_adapter, self.path_parameters)
+		return DriveRequest(self.request_adapter, path_parameters)
 
-	@property
 	def activate(self,
+		fileStorageContainer_id: str,
 	) -> ActivateRequest:
+		if fileStorageContainer_id is None:
+			raise TypeError("fileStorageContainer_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["fileStorageContainer%2Did"] =  fileStorageContainer_id
+
 		from .activate import ActivateRequest
-		return ActivateRequest(self.request_adapter, self.path_parameters)
+		return ActivateRequest(self.request_adapter, path_parameters)
 
-	@property
 	def lock(self,
+		fileStorageContainer_id: str,
 	) -> LockRequest:
+		if fileStorageContainer_id is None:
+			raise TypeError("fileStorageContainer_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["fileStorageContainer%2Did"] =  fileStorageContainer_id
+
 		from .lock import LockRequest
-		return LockRequest(self.request_adapter, self.path_parameters)
+		return LockRequest(self.request_adapter, path_parameters)
 
-	@property
 	def permanent_delete(self,
+		fileStorageContainer_id: str,
 	) -> PermanentDeleteRequest:
+		if fileStorageContainer_id is None:
+			raise TypeError("fileStorageContainer_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["fileStorageContainer%2Did"] =  fileStorageContainer_id
+
 		from .permanent_delete import PermanentDeleteRequest
-		return PermanentDeleteRequest(self.request_adapter, self.path_parameters)
+		return PermanentDeleteRequest(self.request_adapter, path_parameters)
 
-	@property
 	def restore(self,
+		fileStorageContainer_id: str,
 	) -> RestoreRequest:
+		if fileStorageContainer_id is None:
+			raise TypeError("fileStorageContainer_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["fileStorageContainer%2Did"] =  fileStorageContainer_id
+
 		from .restore import RestoreRequest
-		return RestoreRequest(self.request_adapter, self.path_parameters)
+		return RestoreRequest(self.request_adapter, path_parameters)
 
-	@property
 	def unlock(self,
+		fileStorageContainer_id: str,
 	) -> UnlockRequest:
+		if fileStorageContainer_id is None:
+			raise TypeError("fileStorageContainer_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["fileStorageContainer%2Did"] =  fileStorageContainer_id
+
 		from .unlock import UnlockRequest
-		return UnlockRequest(self.request_adapter, self.path_parameters)
+		return UnlockRequest(self.request_adapter, path_parameters)
 
-	@property
 	def permissions(self,
+		fileStorageContainer_id: str,
 	) -> PermissionsRequest:
-		from .permissions import PermissionsRequest
-		return PermissionsRequest(self.request_adapter, self.path_parameters)
+		if fileStorageContainer_id is None:
+			raise TypeError("fileStorageContainer_id cannot be null.")
 
-	@property
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["fileStorageContainer%2Did"] =  fileStorageContainer_id
+
+		from .permissions import PermissionsRequest
+		return PermissionsRequest(self.request_adapter, path_parameters)
+
 	def recycle_bin(self,
+		fileStorageContainer_id: str,
 	) -> RecycleBinRequest:
+		if fileStorageContainer_id is None:
+			raise TypeError("fileStorageContainer_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["fileStorageContainer%2Did"] =  fileStorageContainer_id
+
 		from .recycle_bin import RecycleBinRequest
-		return RecycleBinRequest(self.request_adapter, self.path_parameters)
+		return RecycleBinRequest(self.request_adapter, path_parameters)
 

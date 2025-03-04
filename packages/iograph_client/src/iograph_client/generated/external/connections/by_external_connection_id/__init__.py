@@ -1,6 +1,7 @@
 # Auto-generated client
 
 from __future__ import annotations
+from kiota_abstractions.get_path_parameters import get_path_parameters
 from kiota_abstractions.method import Method
 from kiota_abstractions.base_request_builder import BaseRequestBuilder
 from kiota_abstractions.base_request_configuration import RequestConfiguration
@@ -114,27 +115,51 @@ class ByExternalConnectionIdRequest(BaseRequestBuilder):
 			raise TypeError("raw_url cannot be None.")
 		return ByExternalConnectionIdRequest(self.request_adapter, self.path_parameters)
 
-	@property
 	def groups(self,
+		externalConnection_id: str,
 	) -> GroupsRequest:
+		if externalConnection_id is None:
+			raise TypeError("externalConnection_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["externalConnection%2Did"] =  externalConnection_id
+
 		from .groups import GroupsRequest
-		return GroupsRequest(self.request_adapter, self.path_parameters)
+		return GroupsRequest(self.request_adapter, path_parameters)
 
-	@property
 	def items(self,
+		externalConnection_id: str,
 	) -> ItemsRequest:
+		if externalConnection_id is None:
+			raise TypeError("externalConnection_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["externalConnection%2Did"] =  externalConnection_id
+
 		from .items import ItemsRequest
-		return ItemsRequest(self.request_adapter, self.path_parameters)
+		return ItemsRequest(self.request_adapter, path_parameters)
 
-	@property
 	def operations(self,
+		externalConnection_id: str,
 	) -> OperationsRequest:
-		from .operations import OperationsRequest
-		return OperationsRequest(self.request_adapter, self.path_parameters)
+		if externalConnection_id is None:
+			raise TypeError("externalConnection_id cannot be null.")
 
-	@property
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["externalConnection%2Did"] =  externalConnection_id
+
+		from .operations import OperationsRequest
+		return OperationsRequest(self.request_adapter, path_parameters)
+
 	def schema(self,
+		externalConnection_id: str,
 	) -> SchemaRequest:
+		if externalConnection_id is None:
+			raise TypeError("externalConnection_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["externalConnection%2Did"] =  externalConnection_id
+
 		from .schema import SchemaRequest
-		return SchemaRequest(self.request_adapter, self.path_parameters)
+		return SchemaRequest(self.request_adapter, path_parameters)
 

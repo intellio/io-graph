@@ -14,8 +14,8 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_unified_role_definition_id import ByUnifiedRoleDefinitionIdRequest
 	from .....request_adapter import HttpxRequestAdapter
-from iograph_models.models.unified_role_definition import UnifiedRoleDefinition
 from iograph_models.models.unified_role_definition_collection_response import UnifiedRoleDefinitionCollectionResponse
+from iograph_models.models.unified_role_definition import UnifiedRoleDefinition
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
 
 

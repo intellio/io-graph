@@ -11,6 +11,7 @@ from typing import Union, Any, Optional
 from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:
+	from .delta import DeltaRequest
 	from .count import CountRequest
 	from .by_call_transcript_id import ByCallTranscriptIdRequest
 	from .......request_adapter import HttpxRequestAdapter
@@ -113,9 +114,35 @@ class TranscriptsRequest(BaseRequestBuilder):
 		from .by_call_transcript_id import ByCallTranscriptIdRequest
 		return ByCallTranscriptIdRequest(self.request_adapter, path_parameters)
 
-	@property
 	def count(self,
+		user_id: str,
+		onlineMeeting_id: str,
 	) -> CountRequest:
+		if user_id is None:
+			raise TypeError("user_id cannot be null.")
+		if onlineMeeting_id is None:
+			raise TypeError("onlineMeeting_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["user%2Did"] =  user_id
+		path_parameters["onlineMeeting%2Did"] =  onlineMeeting_id
+
 		from .count import CountRequest
-		return CountRequest(self.request_adapter, self.path_parameters)
+		return CountRequest(self.request_adapter, path_parameters)
+
+	def delta(self,
+		user_id: str,
+		onlineMeeting_id: str,
+	) -> DeltaRequest:
+		if user_id is None:
+			raise TypeError("user_id cannot be null.")
+		if onlineMeeting_id is None:
+			raise TypeError("onlineMeeting_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["user%2Did"] =  user_id
+		path_parameters["onlineMeeting%2Did"] =  onlineMeeting_id
+
+		from .delta import DeltaRequest
+		return DeltaRequest(self.request_adapter, path_parameters)
 

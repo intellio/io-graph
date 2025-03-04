@@ -11,6 +11,7 @@ from typing import Union, Any, Optional
 from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:
+	from .get_audit_activity_types import GetAuditActivityTypesRequest
 	from .count import CountRequest
 	from .by_cloud_pc_audit_event_id import ByCloudPcAuditEventIdRequest
 	from .....request_adapter import HttpxRequestAdapter
@@ -110,4 +111,10 @@ class AuditEventsRequest(BaseRequestBuilder):
 	) -> CountRequest:
 		from .count import CountRequest
 		return CountRequest(self.request_adapter, self.path_parameters)
+
+	@property
+	def get_audit_activity_types(self,
+	) -> GetAuditActivityTypesRequest:
+		from .get_audit_activity_types import GetAuditActivityTypesRequest
+		return GetAuditActivityTypesRequest(self.request_adapter, self.path_parameters)
 

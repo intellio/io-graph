@@ -12,8 +12,8 @@ from typing import TYPE_CHECKING
 if TYPE_CHECKING:
 	from .installation_options import InstallationOptionsRequest
 	from ....request_adapter import HttpxRequestAdapter
-from iograph_models.models.admin_microsoft365_apps import AdminMicrosoft365Apps
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.models.admin_microsoft365_apps import AdminMicrosoft365Apps
 
 
 class Microsoft365AppsRequest(BaseRequestBuilder):

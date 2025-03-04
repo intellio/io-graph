@@ -10,6 +10,7 @@ from typing import Union, Any, Optional
 from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:
+	from .download_apple_push_notification_certificate_signing_request import DownloadApplePushNotificationCertificateSigningRequestRequest
 	from ....request_adapter import HttpxRequestAdapter
 from iograph_models.models.apple_push_notification_certificate import ApplePushNotificationCertificate
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
@@ -108,4 +109,10 @@ class ApplePushNotificationCertificateRequest(BaseRequestBuilder):
 		if raw_url is None:
 			raise TypeError("raw_url cannot be None.")
 		return ApplePushNotificationCertificateRequest(self.request_adapter, self.path_parameters)
+
+	@property
+	def download_apple_push_notification_certificate_signing_request(self,
+	) -> DownloadApplePushNotificationCertificateSigningRequestRequest:
+		from .download_apple_push_notification_certificate_signing_request import DownloadApplePushNotificationCertificateSigningRequestRequest
+		return DownloadApplePushNotificationCertificateSigningRequestRequest(self.request_adapter, self.path_parameters)
 

@@ -14,9 +14,9 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_attendance_record_id import ByAttendanceRecordIdRequest
 	from .........request_adapter import HttpxRequestAdapter
-from iograph_models.models.attendance_record import AttendanceRecord
 from iograph_models.models.attendance_record_collection_response import AttendanceRecordCollectionResponse
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.models.attendance_record import AttendanceRecord
 
 
 class AttendanceRecordsRequest(BaseRequestBuilder):
@@ -116,9 +116,23 @@ class AttendanceRecordsRequest(BaseRequestBuilder):
 		from .by_attendance_record_id import ByAttendanceRecordIdRequest
 		return ByAttendanceRecordIdRequest(self.request_adapter, path_parameters)
 
-	@property
 	def count(self,
+		user_id: str,
+		onlineMeeting_id: str,
+		meetingAttendanceReport_id: str,
 	) -> CountRequest:
+		if user_id is None:
+			raise TypeError("user_id cannot be null.")
+		if onlineMeeting_id is None:
+			raise TypeError("onlineMeeting_id cannot be null.")
+		if meetingAttendanceReport_id is None:
+			raise TypeError("meetingAttendanceReport_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["user%2Did"] =  user_id
+		path_parameters["onlineMeeting%2Did"] =  onlineMeeting_id
+		path_parameters["meetingAttendanceReport%2Did"] =  meetingAttendanceReport_id
+
 		from .count import CountRequest
-		return CountRequest(self.request_adapter, self.path_parameters)
+		return CountRequest(self.request_adapter, path_parameters)
 

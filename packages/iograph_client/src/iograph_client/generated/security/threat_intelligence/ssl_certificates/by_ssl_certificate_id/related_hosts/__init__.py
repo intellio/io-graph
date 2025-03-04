@@ -82,9 +82,15 @@ class RelatedHostsRequest(BaseRequestBuilder):
 		from .by_host_id import ByHostIdRequest
 		return ByHostIdRequest(self.request_adapter, path_parameters)
 
-	@property
 	def count(self,
+		sslCertificate_id: str,
 	) -> CountRequest:
+		if sslCertificate_id is None:
+			raise TypeError("sslCertificate_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["sslCertificate%2Did"] =  sslCertificate_id
+
 		from .count import CountRequest
-		return CountRequest(self.request_adapter, self.path_parameters)
+		return CountRequest(self.request_adapter, path_parameters)
 

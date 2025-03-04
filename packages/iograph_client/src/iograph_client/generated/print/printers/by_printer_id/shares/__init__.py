@@ -82,9 +82,15 @@ class SharesRequest(BaseRequestBuilder):
 		from .by_printer_share_id import ByPrinterShareIdRequest
 		return ByPrinterShareIdRequest(self.request_adapter, path_parameters)
 
-	@property
 	def count(self,
+		printer_id: str,
 	) -> CountRequest:
+		if printer_id is None:
+			raise TypeError("printer_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["printer%2Did"] =  printer_id
+
 		from .count import CountRequest
-		return CountRequest(self.request_adapter, self.path_parameters)
+		return CountRequest(self.request_adapter, path_parameters)
 

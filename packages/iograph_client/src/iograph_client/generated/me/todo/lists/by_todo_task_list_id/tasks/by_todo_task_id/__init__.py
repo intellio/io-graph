@@ -1,6 +1,7 @@
 # Auto-generated client
 
 from __future__ import annotations
+from kiota_abstractions.get_path_parameters import get_path_parameters
 from kiota_abstractions.method import Method
 from kiota_abstractions.base_request_builder import BaseRequestBuilder
 from kiota_abstractions.base_request_configuration import RequestConfiguration
@@ -115,33 +116,83 @@ class ByTodoTaskIdRequest(BaseRequestBuilder):
 			raise TypeError("raw_url cannot be None.")
 		return ByTodoTaskIdRequest(self.request_adapter, self.path_parameters)
 
-	@property
 	def attachments(self,
+		todoTaskList_id: str,
+		todoTask_id: str,
 	) -> AttachmentsRequest:
+		if todoTaskList_id is None:
+			raise TypeError("todoTaskList_id cannot be null.")
+		if todoTask_id is None:
+			raise TypeError("todoTask_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["todoTaskList%2Did"] =  todoTaskList_id
+		path_parameters["todoTask%2Did"] =  todoTask_id
+
 		from .attachments import AttachmentsRequest
-		return AttachmentsRequest(self.request_adapter, self.path_parameters)
+		return AttachmentsRequest(self.request_adapter, path_parameters)
 
-	@property
 	def attachment_sessions(self,
+		todoTaskList_id: str,
+		todoTask_id: str,
 	) -> AttachmentSessionsRequest:
+		if todoTaskList_id is None:
+			raise TypeError("todoTaskList_id cannot be null.")
+		if todoTask_id is None:
+			raise TypeError("todoTask_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["todoTaskList%2Did"] =  todoTaskList_id
+		path_parameters["todoTask%2Did"] =  todoTask_id
+
 		from .attachment_sessions import AttachmentSessionsRequest
-		return AttachmentSessionsRequest(self.request_adapter, self.path_parameters)
+		return AttachmentSessionsRequest(self.request_adapter, path_parameters)
 
-	@property
 	def checklist_items(self,
+		todoTaskList_id: str,
+		todoTask_id: str,
 	) -> ChecklistItemsRequest:
+		if todoTaskList_id is None:
+			raise TypeError("todoTaskList_id cannot be null.")
+		if todoTask_id is None:
+			raise TypeError("todoTask_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["todoTaskList%2Did"] =  todoTaskList_id
+		path_parameters["todoTask%2Did"] =  todoTask_id
+
 		from .checklist_items import ChecklistItemsRequest
-		return ChecklistItemsRequest(self.request_adapter, self.path_parameters)
+		return ChecklistItemsRequest(self.request_adapter, path_parameters)
 
-	@property
 	def extensions(self,
+		todoTaskList_id: str,
+		todoTask_id: str,
 	) -> ExtensionsRequest:
-		from .extensions import ExtensionsRequest
-		return ExtensionsRequest(self.request_adapter, self.path_parameters)
+		if todoTaskList_id is None:
+			raise TypeError("todoTaskList_id cannot be null.")
+		if todoTask_id is None:
+			raise TypeError("todoTask_id cannot be null.")
 
-	@property
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["todoTaskList%2Did"] =  todoTaskList_id
+		path_parameters["todoTask%2Did"] =  todoTask_id
+
+		from .extensions import ExtensionsRequest
+		return ExtensionsRequest(self.request_adapter, path_parameters)
+
 	def linked_resources(self,
+		todoTaskList_id: str,
+		todoTask_id: str,
 	) -> LinkedResourcesRequest:
+		if todoTaskList_id is None:
+			raise TypeError("todoTaskList_id cannot be null.")
+		if todoTask_id is None:
+			raise TypeError("todoTask_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["todoTaskList%2Did"] =  todoTaskList_id
+		path_parameters["todoTask%2Did"] =  todoTask_id
+
 		from .linked_resources import LinkedResourcesRequest
-		return LinkedResourcesRequest(self.request_adapter, self.path_parameters)
+		return LinkedResourcesRequest(self.request_adapter, path_parameters)
 

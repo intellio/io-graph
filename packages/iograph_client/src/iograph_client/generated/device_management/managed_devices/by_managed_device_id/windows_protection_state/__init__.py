@@ -1,6 +1,7 @@
 # Auto-generated client
 
 from __future__ import annotations
+from kiota_abstractions.get_path_parameters import get_path_parameters
 from kiota_abstractions.method import Method
 from kiota_abstractions.base_request_builder import BaseRequestBuilder
 from kiota_abstractions.base_request_configuration import RequestConfiguration
@@ -12,8 +13,8 @@ from typing import TYPE_CHECKING
 if TYPE_CHECKING:
 	from .detected_malware_state import DetectedMalwareStateRequest
 	from ......request_adapter import HttpxRequestAdapter
-from iograph_models.models.windows_protection_state import WindowsProtectionState
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.models.windows_protection_state import WindowsProtectionState
 
 
 class WindowsProtectionStateRequest(BaseRequestBuilder):
@@ -108,9 +109,15 @@ class WindowsProtectionStateRequest(BaseRequestBuilder):
 			raise TypeError("raw_url cannot be None.")
 		return WindowsProtectionStateRequest(self.request_adapter, self.path_parameters)
 
-	@property
 	def detected_malware_state(self,
+		managedDevice_id: str,
 	) -> DetectedMalwareStateRequest:
+		if managedDevice_id is None:
+			raise TypeError("managedDevice_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["managedDevice%2Did"] =  managedDevice_id
+
 		from .detected_malware_state import DetectedMalwareStateRequest
-		return DetectedMalwareStateRequest(self.request_adapter, self.path_parameters)
+		return DetectedMalwareStateRequest(self.request_adapter, path_parameters)
 

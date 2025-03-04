@@ -1,6 +1,7 @@
 # Auto-generated client
 
 from __future__ import annotations
+from kiota_abstractions.get_path_parameters import get_path_parameters
 from kiota_abstractions.method import Method
 from kiota_abstractions.base_request_builder import BaseRequestBuilder
 from kiota_abstractions.base_request_configuration import RequestConfiguration
@@ -119,75 +120,291 @@ class FilterRequest(BaseRequestBuilder):
 			raise TypeError("raw_url cannot be None.")
 		return FilterRequest(self.request_adapter, self.path_parameters)
 
-	@property
 	def apply(self,
+		drive_id: str,
+		driveItem_id: str,
+		workbookTable_id: str,
+		workbookTableColumn_id: str,
 	) -> ApplyRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+		if workbookTable_id is None:
+			raise TypeError("workbookTable_id cannot be null.")
+		if workbookTableColumn_id is None:
+			raise TypeError("workbookTableColumn_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+		path_parameters["workbookTable%2Did"] =  workbookTable_id
+		path_parameters["workbookTableColumn%2Did"] =  workbookTableColumn_id
+
 		from .apply import ApplyRequest
-		return ApplyRequest(self.request_adapter, self.path_parameters)
+		return ApplyRequest(self.request_adapter, path_parameters)
 
-	@property
 	def apply_bottom_items_filter(self,
+		drive_id: str,
+		driveItem_id: str,
+		workbookTable_id: str,
+		workbookTableColumn_id: str,
 	) -> ApplyBottomItemsFilterRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+		if workbookTable_id is None:
+			raise TypeError("workbookTable_id cannot be null.")
+		if workbookTableColumn_id is None:
+			raise TypeError("workbookTableColumn_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+		path_parameters["workbookTable%2Did"] =  workbookTable_id
+		path_parameters["workbookTableColumn%2Did"] =  workbookTableColumn_id
+
 		from .apply_bottom_items_filter import ApplyBottomItemsFilterRequest
-		return ApplyBottomItemsFilterRequest(self.request_adapter, self.path_parameters)
+		return ApplyBottomItemsFilterRequest(self.request_adapter, path_parameters)
 
-	@property
 	def apply_bottom_percent_filter(self,
+		drive_id: str,
+		driveItem_id: str,
+		workbookTable_id: str,
+		workbookTableColumn_id: str,
 	) -> ApplyBottomPercentFilterRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+		if workbookTable_id is None:
+			raise TypeError("workbookTable_id cannot be null.")
+		if workbookTableColumn_id is None:
+			raise TypeError("workbookTableColumn_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+		path_parameters["workbookTable%2Did"] =  workbookTable_id
+		path_parameters["workbookTableColumn%2Did"] =  workbookTableColumn_id
+
 		from .apply_bottom_percent_filter import ApplyBottomPercentFilterRequest
-		return ApplyBottomPercentFilterRequest(self.request_adapter, self.path_parameters)
+		return ApplyBottomPercentFilterRequest(self.request_adapter, path_parameters)
 
-	@property
 	def apply_cell_color_filter(self,
+		drive_id: str,
+		driveItem_id: str,
+		workbookTable_id: str,
+		workbookTableColumn_id: str,
 	) -> ApplyCellColorFilterRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+		if workbookTable_id is None:
+			raise TypeError("workbookTable_id cannot be null.")
+		if workbookTableColumn_id is None:
+			raise TypeError("workbookTableColumn_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+		path_parameters["workbookTable%2Did"] =  workbookTable_id
+		path_parameters["workbookTableColumn%2Did"] =  workbookTableColumn_id
+
 		from .apply_cell_color_filter import ApplyCellColorFilterRequest
-		return ApplyCellColorFilterRequest(self.request_adapter, self.path_parameters)
+		return ApplyCellColorFilterRequest(self.request_adapter, path_parameters)
 
-	@property
 	def apply_custom_filter(self,
+		drive_id: str,
+		driveItem_id: str,
+		workbookTable_id: str,
+		workbookTableColumn_id: str,
 	) -> ApplyCustomFilterRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+		if workbookTable_id is None:
+			raise TypeError("workbookTable_id cannot be null.")
+		if workbookTableColumn_id is None:
+			raise TypeError("workbookTableColumn_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+		path_parameters["workbookTable%2Did"] =  workbookTable_id
+		path_parameters["workbookTableColumn%2Did"] =  workbookTableColumn_id
+
 		from .apply_custom_filter import ApplyCustomFilterRequest
-		return ApplyCustomFilterRequest(self.request_adapter, self.path_parameters)
+		return ApplyCustomFilterRequest(self.request_adapter, path_parameters)
 
-	@property
 	def apply_dynamic_filter(self,
+		drive_id: str,
+		driveItem_id: str,
+		workbookTable_id: str,
+		workbookTableColumn_id: str,
 	) -> ApplyDynamicFilterRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+		if workbookTable_id is None:
+			raise TypeError("workbookTable_id cannot be null.")
+		if workbookTableColumn_id is None:
+			raise TypeError("workbookTableColumn_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+		path_parameters["workbookTable%2Did"] =  workbookTable_id
+		path_parameters["workbookTableColumn%2Did"] =  workbookTableColumn_id
+
 		from .apply_dynamic_filter import ApplyDynamicFilterRequest
-		return ApplyDynamicFilterRequest(self.request_adapter, self.path_parameters)
+		return ApplyDynamicFilterRequest(self.request_adapter, path_parameters)
 
-	@property
 	def apply_font_color_filter(self,
+		drive_id: str,
+		driveItem_id: str,
+		workbookTable_id: str,
+		workbookTableColumn_id: str,
 	) -> ApplyFontColorFilterRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+		if workbookTable_id is None:
+			raise TypeError("workbookTable_id cannot be null.")
+		if workbookTableColumn_id is None:
+			raise TypeError("workbookTableColumn_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+		path_parameters["workbookTable%2Did"] =  workbookTable_id
+		path_parameters["workbookTableColumn%2Did"] =  workbookTableColumn_id
+
 		from .apply_font_color_filter import ApplyFontColorFilterRequest
-		return ApplyFontColorFilterRequest(self.request_adapter, self.path_parameters)
+		return ApplyFontColorFilterRequest(self.request_adapter, path_parameters)
 
-	@property
 	def apply_icon_filter(self,
+		drive_id: str,
+		driveItem_id: str,
+		workbookTable_id: str,
+		workbookTableColumn_id: str,
 	) -> ApplyIconFilterRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+		if workbookTable_id is None:
+			raise TypeError("workbookTable_id cannot be null.")
+		if workbookTableColumn_id is None:
+			raise TypeError("workbookTableColumn_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+		path_parameters["workbookTable%2Did"] =  workbookTable_id
+		path_parameters["workbookTableColumn%2Did"] =  workbookTableColumn_id
+
 		from .apply_icon_filter import ApplyIconFilterRequest
-		return ApplyIconFilterRequest(self.request_adapter, self.path_parameters)
+		return ApplyIconFilterRequest(self.request_adapter, path_parameters)
 
-	@property
 	def apply_top_items_filter(self,
+		drive_id: str,
+		driveItem_id: str,
+		workbookTable_id: str,
+		workbookTableColumn_id: str,
 	) -> ApplyTopItemsFilterRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+		if workbookTable_id is None:
+			raise TypeError("workbookTable_id cannot be null.")
+		if workbookTableColumn_id is None:
+			raise TypeError("workbookTableColumn_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+		path_parameters["workbookTable%2Did"] =  workbookTable_id
+		path_parameters["workbookTableColumn%2Did"] =  workbookTableColumn_id
+
 		from .apply_top_items_filter import ApplyTopItemsFilterRequest
-		return ApplyTopItemsFilterRequest(self.request_adapter, self.path_parameters)
+		return ApplyTopItemsFilterRequest(self.request_adapter, path_parameters)
 
-	@property
 	def apply_top_percent_filter(self,
+		drive_id: str,
+		driveItem_id: str,
+		workbookTable_id: str,
+		workbookTableColumn_id: str,
 	) -> ApplyTopPercentFilterRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+		if workbookTable_id is None:
+			raise TypeError("workbookTable_id cannot be null.")
+		if workbookTableColumn_id is None:
+			raise TypeError("workbookTableColumn_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+		path_parameters["workbookTable%2Did"] =  workbookTable_id
+		path_parameters["workbookTableColumn%2Did"] =  workbookTableColumn_id
+
 		from .apply_top_percent_filter import ApplyTopPercentFilterRequest
-		return ApplyTopPercentFilterRequest(self.request_adapter, self.path_parameters)
+		return ApplyTopPercentFilterRequest(self.request_adapter, path_parameters)
 
-	@property
 	def apply_values_filter(self,
+		drive_id: str,
+		driveItem_id: str,
+		workbookTable_id: str,
+		workbookTableColumn_id: str,
 	) -> ApplyValuesFilterRequest:
-		from .apply_values_filter import ApplyValuesFilterRequest
-		return ApplyValuesFilterRequest(self.request_adapter, self.path_parameters)
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+		if workbookTable_id is None:
+			raise TypeError("workbookTable_id cannot be null.")
+		if workbookTableColumn_id is None:
+			raise TypeError("workbookTableColumn_id cannot be null.")
 
-	@property
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+		path_parameters["workbookTable%2Did"] =  workbookTable_id
+		path_parameters["workbookTableColumn%2Did"] =  workbookTableColumn_id
+
+		from .apply_values_filter import ApplyValuesFilterRequest
+		return ApplyValuesFilterRequest(self.request_adapter, path_parameters)
+
 	def clear(self,
+		drive_id: str,
+		driveItem_id: str,
+		workbookTable_id: str,
+		workbookTableColumn_id: str,
 	) -> ClearRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+		if workbookTable_id is None:
+			raise TypeError("workbookTable_id cannot be null.")
+		if workbookTableColumn_id is None:
+			raise TypeError("workbookTableColumn_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+		path_parameters["workbookTable%2Did"] =  workbookTable_id
+		path_parameters["workbookTableColumn%2Did"] =  workbookTableColumn_id
+
 		from .clear import ClearRequest
-		return ClearRequest(self.request_adapter, self.path_parameters)
+		return ClearRequest(self.request_adapter, path_parameters)
 

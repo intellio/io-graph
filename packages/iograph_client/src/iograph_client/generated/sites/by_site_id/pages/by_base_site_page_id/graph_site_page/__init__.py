@@ -1,6 +1,7 @@
 # Auto-generated client
 
 from __future__ import annotations
+from kiota_abstractions.get_path_parameters import get_path_parameters
 from kiota_abstractions.method import Method
 from kiota_abstractions.base_request_builder import BaseRequestBuilder
 from kiota_abstractions.base_request_configuration import RequestConfiguration
@@ -61,27 +62,67 @@ class GraphSitePageRequest(BaseRequestBuilder):
 			raise TypeError("raw_url cannot be None.")
 		return GraphSitePageRequest(self.request_adapter, self.path_parameters)
 
-	@property
 	def canvas_layout(self,
+		site_id: str,
+		baseSitePage_id: str,
 	) -> CanvasLayoutRequest:
+		if site_id is None:
+			raise TypeError("site_id cannot be null.")
+		if baseSitePage_id is None:
+			raise TypeError("baseSitePage_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["site%2Did"] =  site_id
+		path_parameters["baseSitePage%2Did"] =  baseSitePage_id
+
 		from .canvas_layout import CanvasLayoutRequest
-		return CanvasLayoutRequest(self.request_adapter, self.path_parameters)
+		return CanvasLayoutRequest(self.request_adapter, path_parameters)
 
-	@property
 	def created_by_user(self,
+		site_id: str,
+		baseSitePage_id: str,
 	) -> CreatedByUserRequest:
+		if site_id is None:
+			raise TypeError("site_id cannot be null.")
+		if baseSitePage_id is None:
+			raise TypeError("baseSitePage_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["site%2Did"] =  site_id
+		path_parameters["baseSitePage%2Did"] =  baseSitePage_id
+
 		from .created_by_user import CreatedByUserRequest
-		return CreatedByUserRequest(self.request_adapter, self.path_parameters)
+		return CreatedByUserRequest(self.request_adapter, path_parameters)
 
-	@property
 	def last_modified_by_user(self,
+		site_id: str,
+		baseSitePage_id: str,
 	) -> LastModifiedByUserRequest:
-		from .last_modified_by_user import LastModifiedByUserRequest
-		return LastModifiedByUserRequest(self.request_adapter, self.path_parameters)
+		if site_id is None:
+			raise TypeError("site_id cannot be null.")
+		if baseSitePage_id is None:
+			raise TypeError("baseSitePage_id cannot be null.")
 
-	@property
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["site%2Did"] =  site_id
+		path_parameters["baseSitePage%2Did"] =  baseSitePage_id
+
+		from .last_modified_by_user import LastModifiedByUserRequest
+		return LastModifiedByUserRequest(self.request_adapter, path_parameters)
+
 	def web_parts(self,
+		site_id: str,
+		baseSitePage_id: str,
 	) -> WebPartsRequest:
+		if site_id is None:
+			raise TypeError("site_id cannot be null.")
+		if baseSitePage_id is None:
+			raise TypeError("baseSitePage_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["site%2Did"] =  site_id
+		path_parameters["baseSitePage%2Did"] =  baseSitePage_id
+
 		from .web_parts import WebPartsRequest
-		return WebPartsRequest(self.request_adapter, self.path_parameters)
+		return WebPartsRequest(self.request_adapter, path_parameters)
 

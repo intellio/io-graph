@@ -11,8 +11,8 @@ from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:
 	from ......request_adapter import HttpxRequestAdapter
-from iograph_models.models.named_location import NamedLocation
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.models.named_location import NamedLocation
 
 
 class ByNamedLocationIdRequest(BaseRequestBuilder):
@@ -74,9 +74,9 @@ class ByNamedLocationIdRequest(BaseRequestBuilder):
 		request_configuration: Optional[RequestConfiguration[BaseModel]] = None,
 	) -> None:
 		"""
-		Delete ipNamedLocation
-		Delete an ipNamedLocation object.
-		Find more info here: https://learn.microsoft.com/graph/api/ipnamedlocation-delete?view=graph-rest-1.0
+		Delete countryNamedLocation
+		Delete a countryNamedLocation object.
+		Find more info here: https://learn.microsoft.com/graph/api/countrynamedlocation-delete?view=graph-rest-1.0
 		"""
 		tags = ['identity.conditionalAccessRoot']
 		header_parameters = [{'name': 'If-Match', 'in': 'header', 'description': 'ETag', 'schema': {'type': 'string'}}]

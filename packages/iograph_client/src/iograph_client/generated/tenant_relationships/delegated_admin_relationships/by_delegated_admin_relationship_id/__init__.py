@@ -1,6 +1,7 @@
 # Auto-generated client
 
 from __future__ import annotations
+from kiota_abstractions.get_path_parameters import get_path_parameters
 from kiota_abstractions.method import Method
 from kiota_abstractions.base_request_builder import BaseRequestBuilder
 from kiota_abstractions.base_request_configuration import RequestConfiguration
@@ -14,8 +15,8 @@ if TYPE_CHECKING:
 	from .operations import OperationsRequest
 	from .access_assignments import AccessAssignmentsRequest
 	from .....request_adapter import HttpxRequestAdapter
-from iograph_models.models.delegated_admin_relationship import DelegatedAdminRelationship
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.models.delegated_admin_relationship import DelegatedAdminRelationship
 
 
 class ByDelegatedAdminRelationshipIdRequest(BaseRequestBuilder):
@@ -116,21 +117,39 @@ class ByDelegatedAdminRelationshipIdRequest(BaseRequestBuilder):
 			raise TypeError("raw_url cannot be None.")
 		return ByDelegatedAdminRelationshipIdRequest(self.request_adapter, self.path_parameters)
 
-	@property
 	def access_assignments(self,
+		delegatedAdminRelationship_id: str,
 	) -> AccessAssignmentsRequest:
+		if delegatedAdminRelationship_id is None:
+			raise TypeError("delegatedAdminRelationship_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["delegatedAdminRelationship%2Did"] =  delegatedAdminRelationship_id
+
 		from .access_assignments import AccessAssignmentsRequest
-		return AccessAssignmentsRequest(self.request_adapter, self.path_parameters)
+		return AccessAssignmentsRequest(self.request_adapter, path_parameters)
 
-	@property
 	def operations(self,
+		delegatedAdminRelationship_id: str,
 	) -> OperationsRequest:
-		from .operations import OperationsRequest
-		return OperationsRequest(self.request_adapter, self.path_parameters)
+		if delegatedAdminRelationship_id is None:
+			raise TypeError("delegatedAdminRelationship_id cannot be null.")
 
-	@property
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["delegatedAdminRelationship%2Did"] =  delegatedAdminRelationship_id
+
+		from .operations import OperationsRequest
+		return OperationsRequest(self.request_adapter, path_parameters)
+
 	def requests(self,
+		delegatedAdminRelationship_id: str,
 	) -> RequestsRequest:
+		if delegatedAdminRelationship_id is None:
+			raise TypeError("delegatedAdminRelationship_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["delegatedAdminRelationship%2Did"] =  delegatedAdminRelationship_id
+
 		from .requests import RequestsRequest
-		return RequestsRequest(self.request_adapter, self.path_parameters)
+		return RequestsRequest(self.request_adapter, path_parameters)
 

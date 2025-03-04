@@ -1,6 +1,7 @@
 # Auto-generated client
 
 from __future__ import annotations
+from kiota_abstractions.get_path_parameters import get_path_parameters
 from kiota_abstractions.method import Method
 from kiota_abstractions.base_request_builder import BaseRequestBuilder
 from kiota_abstractions.base_request_configuration import RequestConfiguration
@@ -119,57 +120,147 @@ class ByEdiscoverySearchIdRequest(BaseRequestBuilder):
 			raise TypeError("raw_url cannot be None.")
 		return ByEdiscoverySearchIdRequest(self.request_adapter, self.path_parameters)
 
-	@property
 	def additional_sources(self,
+		ediscoveryCase_id: str,
+		ediscoverySearch_id: str,
 	) -> AdditionalSourcesRequest:
+		if ediscoveryCase_id is None:
+			raise TypeError("ediscoveryCase_id cannot be null.")
+		if ediscoverySearch_id is None:
+			raise TypeError("ediscoverySearch_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["ediscoveryCase%2Did"] =  ediscoveryCase_id
+		path_parameters["ediscoverySearch%2Did"] =  ediscoverySearch_id
+
 		from .additional_sources import AdditionalSourcesRequest
-		return AdditionalSourcesRequest(self.request_adapter, self.path_parameters)
+		return AdditionalSourcesRequest(self.request_adapter, path_parameters)
 
-	@property
 	def add_to_review_set_operation(self,
+		ediscoveryCase_id: str,
+		ediscoverySearch_id: str,
 	) -> AddToReviewSetOperationRequest:
+		if ediscoveryCase_id is None:
+			raise TypeError("ediscoveryCase_id cannot be null.")
+		if ediscoverySearch_id is None:
+			raise TypeError("ediscoverySearch_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["ediscoveryCase%2Did"] =  ediscoveryCase_id
+		path_parameters["ediscoverySearch%2Did"] =  ediscoverySearch_id
+
 		from .add_to_review_set_operation import AddToReviewSetOperationRequest
-		return AddToReviewSetOperationRequest(self.request_adapter, self.path_parameters)
+		return AddToReviewSetOperationRequest(self.request_adapter, path_parameters)
 
-	@property
 	def custodian_sources(self,
+		ediscoveryCase_id: str,
+		ediscoverySearch_id: str,
 	) -> CustodianSourcesRequest:
+		if ediscoveryCase_id is None:
+			raise TypeError("ediscoveryCase_id cannot be null.")
+		if ediscoverySearch_id is None:
+			raise TypeError("ediscoverySearch_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["ediscoveryCase%2Did"] =  ediscoveryCase_id
+		path_parameters["ediscoverySearch%2Did"] =  ediscoverySearch_id
+
 		from .custodian_sources import CustodianSourcesRequest
-		return CustodianSourcesRequest(self.request_adapter, self.path_parameters)
+		return CustodianSourcesRequest(self.request_adapter, path_parameters)
 
-	@property
 	def last_estimate_statistics_operation(self,
+		ediscoveryCase_id: str,
+		ediscoverySearch_id: str,
 	) -> LastEstimateStatisticsOperationRequest:
+		if ediscoveryCase_id is None:
+			raise TypeError("ediscoveryCase_id cannot be null.")
+		if ediscoverySearch_id is None:
+			raise TypeError("ediscoverySearch_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["ediscoveryCase%2Did"] =  ediscoveryCase_id
+		path_parameters["ediscoverySearch%2Did"] =  ediscoverySearch_id
+
 		from .last_estimate_statistics_operation import LastEstimateStatisticsOperationRequest
-		return LastEstimateStatisticsOperationRequest(self.request_adapter, self.path_parameters)
+		return LastEstimateStatisticsOperationRequest(self.request_adapter, path_parameters)
 
-	@property
 	def security_estimate_statistics(self,
+		ediscoveryCase_id: str,
+		ediscoverySearch_id: str,
 	) -> SecurityEstimateStatisticsRequest:
+		if ediscoveryCase_id is None:
+			raise TypeError("ediscoveryCase_id cannot be null.")
+		if ediscoverySearch_id is None:
+			raise TypeError("ediscoverySearch_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["ediscoveryCase%2Did"] =  ediscoveryCase_id
+		path_parameters["ediscoverySearch%2Did"] =  ediscoverySearch_id
+
 		from .security_estimate_statistics import SecurityEstimateStatisticsRequest
-		return SecurityEstimateStatisticsRequest(self.request_adapter, self.path_parameters)
+		return SecurityEstimateStatisticsRequest(self.request_adapter, path_parameters)
 
-	@property
 	def security_export_report(self,
+		ediscoveryCase_id: str,
+		ediscoverySearch_id: str,
 	) -> SecurityExportReportRequest:
+		if ediscoveryCase_id is None:
+			raise TypeError("ediscoveryCase_id cannot be null.")
+		if ediscoverySearch_id is None:
+			raise TypeError("ediscoverySearch_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["ediscoveryCase%2Did"] =  ediscoveryCase_id
+		path_parameters["ediscoverySearch%2Did"] =  ediscoverySearch_id
+
 		from .security_export_report import SecurityExportReportRequest
-		return SecurityExportReportRequest(self.request_adapter, self.path_parameters)
+		return SecurityExportReportRequest(self.request_adapter, path_parameters)
 
-	@property
 	def security_export_result(self,
+		ediscoveryCase_id: str,
+		ediscoverySearch_id: str,
 	) -> SecurityExportResultRequest:
+		if ediscoveryCase_id is None:
+			raise TypeError("ediscoveryCase_id cannot be null.")
+		if ediscoverySearch_id is None:
+			raise TypeError("ediscoverySearch_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["ediscoveryCase%2Did"] =  ediscoveryCase_id
+		path_parameters["ediscoverySearch%2Did"] =  ediscoverySearch_id
+
 		from .security_export_result import SecurityExportResultRequest
-		return SecurityExportResultRequest(self.request_adapter, self.path_parameters)
+		return SecurityExportResultRequest(self.request_adapter, path_parameters)
 
-	@property
 	def security_purge_data(self,
+		ediscoveryCase_id: str,
+		ediscoverySearch_id: str,
 	) -> SecurityPurgeDataRequest:
-		from .security_purge_data import SecurityPurgeDataRequest
-		return SecurityPurgeDataRequest(self.request_adapter, self.path_parameters)
+		if ediscoveryCase_id is None:
+			raise TypeError("ediscoveryCase_id cannot be null.")
+		if ediscoverySearch_id is None:
+			raise TypeError("ediscoverySearch_id cannot be null.")
 
-	@property
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["ediscoveryCase%2Did"] =  ediscoveryCase_id
+		path_parameters["ediscoverySearch%2Did"] =  ediscoverySearch_id
+
+		from .security_purge_data import SecurityPurgeDataRequest
+		return SecurityPurgeDataRequest(self.request_adapter, path_parameters)
+
 	def noncustodial_sources(self,
+		ediscoveryCase_id: str,
+		ediscoverySearch_id: str,
 	) -> NoncustodialSourcesRequest:
+		if ediscoveryCase_id is None:
+			raise TypeError("ediscoveryCase_id cannot be null.")
+		if ediscoverySearch_id is None:
+			raise TypeError("ediscoverySearch_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["ediscoveryCase%2Did"] =  ediscoveryCase_id
+		path_parameters["ediscoverySearch%2Did"] =  ediscoverySearch_id
+
 		from .noncustodial_sources import NoncustodialSourcesRequest
-		return NoncustodialSourcesRequest(self.request_adapter, self.path_parameters)
+		return NoncustodialSourcesRequest(self.request_adapter, path_parameters)
 

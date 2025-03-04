@@ -1,6 +1,7 @@
 # Auto-generated client
 
 from __future__ import annotations
+from kiota_abstractions.get_path_parameters import get_path_parameters
 from kiota_abstractions.method import Method
 from kiota_abstractions.base_request_builder import BaseRequestBuilder
 from kiota_abstractions.base_request_configuration import RequestConfiguration
@@ -57,9 +58,15 @@ class OnAttributeCollectionRequest(BaseRequestBuilder):
 			raise TypeError("raw_url cannot be None.")
 		return OnAttributeCollectionRequest(self.request_adapter, self.path_parameters)
 
-	@property
 	def graph_on_attribute_collection_external_users_self_service_sign_up(self,
+		authenticationEventsFlow_id: str,
 	) -> GraphOnAttributeCollectionExternalUsersSelfServiceSignUpRequest:
+		if authenticationEventsFlow_id is None:
+			raise TypeError("authenticationEventsFlow_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["authenticationEventsFlow%2Did"] =  authenticationEventsFlow_id
+
 		from .graph_on_attribute_collection_external_users_self_service_sign_up import GraphOnAttributeCollectionExternalUsersSelfServiceSignUpRequest
-		return GraphOnAttributeCollectionExternalUsersSelfServiceSignUpRequest(self.request_adapter, self.path_parameters)
+		return GraphOnAttributeCollectionExternalUsersSelfServiceSignUpRequest(self.request_adapter, path_parameters)
 

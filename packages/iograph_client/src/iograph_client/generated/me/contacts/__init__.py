@@ -11,12 +11,13 @@ from typing import Union, Any, Optional
 from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:
+	from .delta import DeltaRequest
 	from .count import CountRequest
 	from .by_contact_id import ByContactIdRequest
 	from ....request_adapter import HttpxRequestAdapter
 from iograph_models.models.contact_collection_response import ContactCollectionResponse
-from iograph_models.models.contact import Contact
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.models.contact import Contact
 
 
 class ContactsRequest(BaseRequestBuilder):
@@ -111,4 +112,10 @@ class ContactsRequest(BaseRequestBuilder):
 	) -> CountRequest:
 		from .count import CountRequest
 		return CountRequest(self.request_adapter, self.path_parameters)
+
+	@property
+	def delta(self,
+	) -> DeltaRequest:
+		from .delta import DeltaRequest
+		return DeltaRequest(self.request_adapter, self.path_parameters)
 

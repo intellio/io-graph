@@ -15,9 +15,9 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_attachment_base_id import ByAttachmentBaseIdRequest
 	from .........request_adapter import HttpxRequestAdapter
-from iograph_models.models.attachment_base_collection_response import AttachmentBaseCollectionResponse
-from iograph_models.models.attachment_base import AttachmentBase
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.models.attachment_base import AttachmentBase
+from iograph_models.models.attachment_base_collection_response import AttachmentBaseCollectionResponse
 
 
 class AttachmentsRequest(BaseRequestBuilder):
@@ -115,15 +115,35 @@ class AttachmentsRequest(BaseRequestBuilder):
 		from .by_attachment_base_id import ByAttachmentBaseIdRequest
 		return ByAttachmentBaseIdRequest(self.request_adapter, path_parameters)
 
-	@property
 	def count(self,
+		todoTaskList_id: str,
+		todoTask_id: str,
 	) -> CountRequest:
-		from .count import CountRequest
-		return CountRequest(self.request_adapter, self.path_parameters)
+		if todoTaskList_id is None:
+			raise TypeError("todoTaskList_id cannot be null.")
+		if todoTask_id is None:
+			raise TypeError("todoTask_id cannot be null.")
 
-	@property
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["todoTaskList%2Did"] =  todoTaskList_id
+		path_parameters["todoTask%2Did"] =  todoTask_id
+
+		from .count import CountRequest
+		return CountRequest(self.request_adapter, path_parameters)
+
 	def create_upload_session(self,
+		todoTaskList_id: str,
+		todoTask_id: str,
 	) -> CreateUploadSessionRequest:
+		if todoTaskList_id is None:
+			raise TypeError("todoTaskList_id cannot be null.")
+		if todoTask_id is None:
+			raise TypeError("todoTask_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["todoTaskList%2Did"] =  todoTaskList_id
+		path_parameters["todoTask%2Did"] =  todoTask_id
+
 		from .create_upload_session import CreateUploadSessionRequest
-		return CreateUploadSessionRequest(self.request_adapter, self.path_parameters)
+		return CreateUploadSessionRequest(self.request_adapter, path_parameters)
 

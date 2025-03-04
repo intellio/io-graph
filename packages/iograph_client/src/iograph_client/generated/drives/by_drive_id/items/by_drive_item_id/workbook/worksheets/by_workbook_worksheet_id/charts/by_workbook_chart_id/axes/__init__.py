@@ -1,6 +1,7 @@
 # Auto-generated client
 
 from __future__ import annotations
+from kiota_abstractions.get_path_parameters import get_path_parameters
 from kiota_abstractions.method import Method
 from kiota_abstractions.base_request_builder import BaseRequestBuilder
 from kiota_abstractions.base_request_configuration import RequestConfiguration
@@ -110,21 +111,75 @@ class AxesRequest(BaseRequestBuilder):
 			raise TypeError("raw_url cannot be None.")
 		return AxesRequest(self.request_adapter, self.path_parameters)
 
-	@property
 	def category_axis(self,
+		drive_id: str,
+		driveItem_id: str,
+		workbookWorksheet_id: str,
+		workbookChart_id: str,
 	) -> CategoryAxisRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+		if workbookWorksheet_id is None:
+			raise TypeError("workbookWorksheet_id cannot be null.")
+		if workbookChart_id is None:
+			raise TypeError("workbookChart_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+		path_parameters["workbookWorksheet%2Did"] =  workbookWorksheet_id
+		path_parameters["workbookChart%2Did"] =  workbookChart_id
+
 		from .category_axis import CategoryAxisRequest
-		return CategoryAxisRequest(self.request_adapter, self.path_parameters)
+		return CategoryAxisRequest(self.request_adapter, path_parameters)
 
-	@property
 	def series_axis(self,
+		drive_id: str,
+		driveItem_id: str,
+		workbookWorksheet_id: str,
+		workbookChart_id: str,
 	) -> SeriesAxisRequest:
-		from .series_axis import SeriesAxisRequest
-		return SeriesAxisRequest(self.request_adapter, self.path_parameters)
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+		if workbookWorksheet_id is None:
+			raise TypeError("workbookWorksheet_id cannot be null.")
+		if workbookChart_id is None:
+			raise TypeError("workbookChart_id cannot be null.")
 
-	@property
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+		path_parameters["workbookWorksheet%2Did"] =  workbookWorksheet_id
+		path_parameters["workbookChart%2Did"] =  workbookChart_id
+
+		from .series_axis import SeriesAxisRequest
+		return SeriesAxisRequest(self.request_adapter, path_parameters)
+
 	def value_axis(self,
+		drive_id: str,
+		driveItem_id: str,
+		workbookWorksheet_id: str,
+		workbookChart_id: str,
 	) -> ValueAxisRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+		if workbookWorksheet_id is None:
+			raise TypeError("workbookWorksheet_id cannot be null.")
+		if workbookChart_id is None:
+			raise TypeError("workbookChart_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+		path_parameters["workbookWorksheet%2Did"] =  workbookWorksheet_id
+		path_parameters["workbookChart%2Did"] =  workbookChart_id
+
 		from .value_axis import ValueAxisRequest
-		return ValueAxisRequest(self.request_adapter, self.path_parameters)
+		return ValueAxisRequest(self.request_adapter, path_parameters)
 

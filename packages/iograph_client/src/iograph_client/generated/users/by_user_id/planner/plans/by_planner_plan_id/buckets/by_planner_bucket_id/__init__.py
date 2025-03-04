@@ -1,6 +1,7 @@
 # Auto-generated client
 
 from __future__ import annotations
+from kiota_abstractions.get_path_parameters import get_path_parameters
 from kiota_abstractions.method import Method
 from kiota_abstractions.base_request_builder import BaseRequestBuilder
 from kiota_abstractions.base_request_configuration import RequestConfiguration
@@ -12,8 +13,8 @@ from typing import TYPE_CHECKING
 if TYPE_CHECKING:
 	from .tasks import TasksRequest
 	from .........request_adapter import HttpxRequestAdapter
-from iograph_models.models.planner_bucket import PlannerBucket
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.models.planner_bucket import PlannerBucket
 
 
 class ByPlannerBucketIdRequest(BaseRequestBuilder):
@@ -108,9 +109,23 @@ class ByPlannerBucketIdRequest(BaseRequestBuilder):
 			raise TypeError("raw_url cannot be None.")
 		return ByPlannerBucketIdRequest(self.request_adapter, self.path_parameters)
 
-	@property
 	def tasks(self,
+		user_id: str,
+		plannerPlan_id: str,
+		plannerBucket_id: str,
 	) -> TasksRequest:
+		if user_id is None:
+			raise TypeError("user_id cannot be null.")
+		if plannerPlan_id is None:
+			raise TypeError("plannerPlan_id cannot be null.")
+		if plannerBucket_id is None:
+			raise TypeError("plannerBucket_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["user%2Did"] =  user_id
+		path_parameters["plannerPlan%2Did"] =  plannerPlan_id
+		path_parameters["plannerBucket%2Did"] =  plannerBucket_id
+
 		from .tasks import TasksRequest
-		return TasksRequest(self.request_adapter, self.path_parameters)
+		return TasksRequest(self.request_adapter, path_parameters)
 

@@ -1,6 +1,7 @@
 # Auto-generated client
 
 from __future__ import annotations
+from kiota_abstractions.get_path_parameters import get_path_parameters
 from kiota_abstractions.method import Method
 from kiota_abstractions.base_request_builder import BaseRequestBuilder
 from kiota_abstractions.base_request_configuration import RequestConfiguration
@@ -12,8 +13,8 @@ from typing import TYPE_CHECKING
 if TYPE_CHECKING:
 	from .value import ValueRequest
 	from ........request_adapter import HttpxRequestAdapter
-from iograph_models.models.bulk_upload import BulkUpload
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.models.bulk_upload import BulkUpload
 
 
 class BulkUploadRequest(BaseRequestBuilder):
@@ -108,9 +109,19 @@ class BulkUploadRequest(BaseRequestBuilder):
 			raise TypeError("raw_url cannot be None.")
 		return BulkUploadRequest(self.request_adapter, self.path_parameters)
 
-	@property
 	def value(self,
+		servicePrincipal_id: str,
+		synchronizationJob_id: str,
 	) -> ValueRequest:
+		if servicePrincipal_id is None:
+			raise TypeError("servicePrincipal_id cannot be null.")
+		if synchronizationJob_id is None:
+			raise TypeError("synchronizationJob_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["servicePrincipal%2Did"] =  servicePrincipal_id
+		path_parameters["synchronizationJob%2Did"] =  synchronizationJob_id
+
 		from .value import ValueRequest
-		return ValueRequest(self.request_adapter, self.path_parameters)
+		return ValueRequest(self.request_adapter, path_parameters)
 

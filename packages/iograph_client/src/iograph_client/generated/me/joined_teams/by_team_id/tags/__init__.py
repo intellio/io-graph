@@ -14,9 +14,9 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_teamwork_tag_id import ByTeamworkTagIdRequest
 	from ......request_adapter import HttpxRequestAdapter
-from iograph_models.models.teamwork_tag_collection_response import TeamworkTagCollectionResponse
 from iograph_models.models.teamwork_tag import TeamworkTag
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.models.teamwork_tag_collection_response import TeamworkTagCollectionResponse
 
 
 class TagsRequest(BaseRequestBuilder):
@@ -108,9 +108,15 @@ class TagsRequest(BaseRequestBuilder):
 		from .by_teamwork_tag_id import ByTeamworkTagIdRequest
 		return ByTeamworkTagIdRequest(self.request_adapter, path_parameters)
 
-	@property
 	def count(self,
+		team_id: str,
 	) -> CountRequest:
+		if team_id is None:
+			raise TypeError("team_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["team%2Did"] =  team_id
+
 		from .count import CountRequest
-		return CountRequest(self.request_adapter, self.path_parameters)
+		return CountRequest(self.request_adapter, path_parameters)
 

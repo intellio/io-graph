@@ -11,6 +11,7 @@ from typing import Union, Any, Optional
 from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:
+	from .delta import DeltaRequest
 	from .count import CountRequest
 	from .by_event_id1 import ByEventId1Request
 	from ......request_adapter import HttpxRequestAdapter
@@ -28,7 +29,7 @@ class InstancesRequest(BaseRequestBuilder):
 	) -> EventCollectionResponse:
 		"""
 		Get instances from me
-		The occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern, and exceptions that have been modified, but does not include occurrences that have been cancelled from the series. Navigation property. Read-only. Nullable.
+		The occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern, and exceptions modified, but doesn't include occurrences cancelled from the series. Navigation property. Read-only. Nullable.
 		"""
 		tags = ['me.event']
 
@@ -83,9 +84,27 @@ class InstancesRequest(BaseRequestBuilder):
 		from .by_event_id1 import ByEventId1Request
 		return ByEventId1Request(self.request_adapter, path_parameters)
 
-	@property
 	def count(self,
+		event_id: str,
 	) -> CountRequest:
+		if event_id is None:
+			raise TypeError("event_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["event%2Did"] =  event_id
+
 		from .count import CountRequest
-		return CountRequest(self.request_adapter, self.path_parameters)
+		return CountRequest(self.request_adapter, path_parameters)
+
+	def delta(self,
+		event_id: str,
+	) -> DeltaRequest:
+		if event_id is None:
+			raise TypeError("event_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["event%2Did"] =  event_id
+
+		from .delta import DeltaRequest
+		return DeltaRequest(self.request_adapter, path_parameters)
 

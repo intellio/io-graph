@@ -1,6 +1,7 @@
 # Auto-generated client
 
 from __future__ import annotations
+from kiota_abstractions.get_path_parameters import get_path_parameters
 from kiota_abstractions.method import Method
 from kiota_abstractions.base_request_builder import BaseRequestBuilder
 from kiota_abstractions.base_request_configuration import RequestConfiguration
@@ -14,8 +15,8 @@ if TYPE_CHECKING:
 	from .assign import AssignRequest
 	from .assignments import AssignmentsRequest
 	from .....request_adapter import HttpxRequestAdapter
-from iograph_models.models.device_enrollment_configuration import DeviceEnrollmentConfiguration
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.models.device_enrollment_configuration import DeviceEnrollmentConfiguration
 
 
 class ByDeviceEnrollmentConfigurationIdRequest(BaseRequestBuilder):
@@ -27,9 +28,9 @@ class ByDeviceEnrollmentConfigurationIdRequest(BaseRequestBuilder):
 		request_configuration: Optional[RequestConfiguration[GetQueryParams]] = None,
 	) -> DeviceEnrollmentConfiguration:
 		"""
-		Get deviceEnrollmentPlatformRestrictionsConfiguration
-		Read properties and relationships of the deviceEnrollmentPlatformRestrictionsConfiguration object.
-		Find more info here: https://learn.microsoft.com/graph/api/intune-onboarding-deviceenrollmentplatformrestrictionsconfiguration-get?view=graph-rest-1.0
+		Get deviceEnrollmentLimitConfiguration
+		Read properties and relationships of the deviceEnrollmentLimitConfiguration object.
+		Find more info here: https://learn.microsoft.com/graph/api/intune-onboarding-deviceenrollmentlimitconfiguration-get?view=graph-rest-1.0
 		"""
 		tags = ['deviceManagement.deviceEnrollmentConfiguration']
 
@@ -77,9 +78,9 @@ class ByDeviceEnrollmentConfigurationIdRequest(BaseRequestBuilder):
 		request_configuration: Optional[RequestConfiguration[BaseModel]] = None,
 	) -> None:
 		"""
-		Delete deviceEnrollmentLimitConfiguration
-		Deletes a deviceEnrollmentLimitConfiguration.
-		Find more info here: https://learn.microsoft.com/graph/api/intune-onboarding-deviceenrollmentlimitconfiguration-delete?view=graph-rest-1.0
+		Delete deviceEnrollmentPlatformRestrictionsConfiguration
+		Deletes a deviceEnrollmentPlatformRestrictionsConfiguration.
+		Find more info here: https://learn.microsoft.com/graph/api/intune-onboarding-deviceenrollmentplatformrestrictionsconfiguration-delete?view=graph-rest-1.0
 		"""
 		tags = ['deviceManagement.deviceEnrollmentConfiguration']
 		header_parameters = [{'name': 'If-Match', 'in': 'header', 'description': 'ETag', 'schema': {'type': 'string'}}]
@@ -113,21 +114,39 @@ class ByDeviceEnrollmentConfigurationIdRequest(BaseRequestBuilder):
 			raise TypeError("raw_url cannot be None.")
 		return ByDeviceEnrollmentConfigurationIdRequest(self.request_adapter, self.path_parameters)
 
-	@property
 	def assignments(self,
+		deviceEnrollmentConfiguration_id: str,
 	) -> AssignmentsRequest:
+		if deviceEnrollmentConfiguration_id is None:
+			raise TypeError("deviceEnrollmentConfiguration_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["deviceEnrollmentConfiguration%2Did"] =  deviceEnrollmentConfiguration_id
+
 		from .assignments import AssignmentsRequest
-		return AssignmentsRequest(self.request_adapter, self.path_parameters)
+		return AssignmentsRequest(self.request_adapter, path_parameters)
 
-	@property
 	def assign(self,
+		deviceEnrollmentConfiguration_id: str,
 	) -> AssignRequest:
-		from .assign import AssignRequest
-		return AssignRequest(self.request_adapter, self.path_parameters)
+		if deviceEnrollmentConfiguration_id is None:
+			raise TypeError("deviceEnrollmentConfiguration_id cannot be null.")
 
-	@property
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["deviceEnrollmentConfiguration%2Did"] =  deviceEnrollmentConfiguration_id
+
+		from .assign import AssignRequest
+		return AssignRequest(self.request_adapter, path_parameters)
+
 	def set_priority(self,
+		deviceEnrollmentConfiguration_id: str,
 	) -> SetPriorityRequest:
+		if deviceEnrollmentConfiguration_id is None:
+			raise TypeError("deviceEnrollmentConfiguration_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["deviceEnrollmentConfiguration%2Did"] =  deviceEnrollmentConfiguration_id
+
 		from .set_priority import SetPriorityRequest
-		return SetPriorityRequest(self.request_adapter, self.path_parameters)
+		return SetPriorityRequest(self.request_adapter, path_parameters)
 

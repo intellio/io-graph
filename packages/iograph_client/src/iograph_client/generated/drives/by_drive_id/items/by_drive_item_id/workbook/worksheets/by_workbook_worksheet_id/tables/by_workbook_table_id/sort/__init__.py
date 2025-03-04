@@ -1,6 +1,7 @@
 # Auto-generated client
 
 from __future__ import annotations
+from kiota_abstractions.get_path_parameters import get_path_parameters
 from kiota_abstractions.method import Method
 from kiota_abstractions.base_request_builder import BaseRequestBuilder
 from kiota_abstractions.base_request_configuration import RequestConfiguration
@@ -14,8 +15,8 @@ if TYPE_CHECKING:
 	from .clear import ClearRequest
 	from .apply import ApplyRequest
 	from ............request_adapter import HttpxRequestAdapter
-from iograph_models.models.workbook_table_sort import WorkbookTableSort
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.models.workbook_table_sort import WorkbookTableSort
 
 
 class SortRequest(BaseRequestBuilder):
@@ -110,21 +111,75 @@ class SortRequest(BaseRequestBuilder):
 			raise TypeError("raw_url cannot be None.")
 		return SortRequest(self.request_adapter, self.path_parameters)
 
-	@property
 	def apply(self,
+		drive_id: str,
+		driveItem_id: str,
+		workbookWorksheet_id: str,
+		workbookTable_id: str,
 	) -> ApplyRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+		if workbookWorksheet_id is None:
+			raise TypeError("workbookWorksheet_id cannot be null.")
+		if workbookTable_id is None:
+			raise TypeError("workbookTable_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+		path_parameters["workbookWorksheet%2Did"] =  workbookWorksheet_id
+		path_parameters["workbookTable%2Did"] =  workbookTable_id
+
 		from .apply import ApplyRequest
-		return ApplyRequest(self.request_adapter, self.path_parameters)
+		return ApplyRequest(self.request_adapter, path_parameters)
 
-	@property
 	def clear(self,
+		drive_id: str,
+		driveItem_id: str,
+		workbookWorksheet_id: str,
+		workbookTable_id: str,
 	) -> ClearRequest:
-		from .clear import ClearRequest
-		return ClearRequest(self.request_adapter, self.path_parameters)
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+		if workbookWorksheet_id is None:
+			raise TypeError("workbookWorksheet_id cannot be null.")
+		if workbookTable_id is None:
+			raise TypeError("workbookTable_id cannot be null.")
 
-	@property
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+		path_parameters["workbookWorksheet%2Did"] =  workbookWorksheet_id
+		path_parameters["workbookTable%2Did"] =  workbookTable_id
+
+		from .clear import ClearRequest
+		return ClearRequest(self.request_adapter, path_parameters)
+
 	def reapply(self,
+		drive_id: str,
+		driveItem_id: str,
+		workbookWorksheet_id: str,
+		workbookTable_id: str,
 	) -> ReapplyRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+		if workbookWorksheet_id is None:
+			raise TypeError("workbookWorksheet_id cannot be null.")
+		if workbookTable_id is None:
+			raise TypeError("workbookTable_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+		path_parameters["workbookWorksheet%2Did"] =  workbookWorksheet_id
+		path_parameters["workbookTable%2Did"] =  workbookTable_id
+
 		from .reapply import ReapplyRequest
-		return ReapplyRequest(self.request_adapter, self.path_parameters)
+		return ReapplyRequest(self.request_adapter, path_parameters)
 

@@ -1,6 +1,7 @@
 # Auto-generated client
 
 from __future__ import annotations
+from kiota_abstractions.get_path_parameters import get_path_parameters
 from kiota_abstractions.method import Method
 from kiota_abstractions.base_request_builder import BaseRequestBuilder
 from kiota_abstractions.base_request_configuration import RequestConfiguration
@@ -23,8 +24,8 @@ if TYPE_CHECKING:
 	from .last_message_preview import LastMessagePreviewRequest
 	from .installed_apps import InstalledAppsRequest
 	from ......request_adapter import HttpxRequestAdapter
-from iograph_models.models.chat import Chat
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.models.chat import Chat
 
 
 class ByChatIdRequest(BaseRequestBuilder):
@@ -120,75 +121,195 @@ class ByChatIdRequest(BaseRequestBuilder):
 			raise TypeError("raw_url cannot be None.")
 		return ByChatIdRequest(self.request_adapter, self.path_parameters)
 
-	@property
 	def installed_apps(self,
+		user_id: str,
+		chat_id: str,
 	) -> InstalledAppsRequest:
+		if user_id is None:
+			raise TypeError("user_id cannot be null.")
+		if chat_id is None:
+			raise TypeError("chat_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["user%2Did"] =  user_id
+		path_parameters["chat%2Did"] =  chat_id
+
 		from .installed_apps import InstalledAppsRequest
-		return InstalledAppsRequest(self.request_adapter, self.path_parameters)
+		return InstalledAppsRequest(self.request_adapter, path_parameters)
 
-	@property
 	def last_message_preview(self,
+		user_id: str,
+		chat_id: str,
 	) -> LastMessagePreviewRequest:
+		if user_id is None:
+			raise TypeError("user_id cannot be null.")
+		if chat_id is None:
+			raise TypeError("chat_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["user%2Did"] =  user_id
+		path_parameters["chat%2Did"] =  chat_id
+
 		from .last_message_preview import LastMessagePreviewRequest
-		return LastMessagePreviewRequest(self.request_adapter, self.path_parameters)
+		return LastMessagePreviewRequest(self.request_adapter, path_parameters)
 
-	@property
 	def members(self,
+		user_id: str,
+		chat_id: str,
 	) -> MembersRequest:
+		if user_id is None:
+			raise TypeError("user_id cannot be null.")
+		if chat_id is None:
+			raise TypeError("chat_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["user%2Did"] =  user_id
+		path_parameters["chat%2Did"] =  chat_id
+
 		from .members import MembersRequest
-		return MembersRequest(self.request_adapter, self.path_parameters)
+		return MembersRequest(self.request_adapter, path_parameters)
 
-	@property
 	def messages(self,
+		user_id: str,
+		chat_id: str,
 	) -> MessagesRequest:
+		if user_id is None:
+			raise TypeError("user_id cannot be null.")
+		if chat_id is None:
+			raise TypeError("chat_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["user%2Did"] =  user_id
+		path_parameters["chat%2Did"] =  chat_id
+
 		from .messages import MessagesRequest
-		return MessagesRequest(self.request_adapter, self.path_parameters)
+		return MessagesRequest(self.request_adapter, path_parameters)
 
-	@property
 	def hide_for_user(self,
+		user_id: str,
+		chat_id: str,
 	) -> HideForUserRequest:
+		if user_id is None:
+			raise TypeError("user_id cannot be null.")
+		if chat_id is None:
+			raise TypeError("chat_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["user%2Did"] =  user_id
+		path_parameters["chat%2Did"] =  chat_id
+
 		from .hide_for_user import HideForUserRequest
-		return HideForUserRequest(self.request_adapter, self.path_parameters)
+		return HideForUserRequest(self.request_adapter, path_parameters)
 
-	@property
 	def mark_chat_read_for_user(self,
+		user_id: str,
+		chat_id: str,
 	) -> MarkChatReadForUserRequest:
+		if user_id is None:
+			raise TypeError("user_id cannot be null.")
+		if chat_id is None:
+			raise TypeError("chat_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["user%2Did"] =  user_id
+		path_parameters["chat%2Did"] =  chat_id
+
 		from .mark_chat_read_for_user import MarkChatReadForUserRequest
-		return MarkChatReadForUserRequest(self.request_adapter, self.path_parameters)
+		return MarkChatReadForUserRequest(self.request_adapter, path_parameters)
 
-	@property
 	def mark_chat_unread_for_user(self,
+		user_id: str,
+		chat_id: str,
 	) -> MarkChatUnreadForUserRequest:
+		if user_id is None:
+			raise TypeError("user_id cannot be null.")
+		if chat_id is None:
+			raise TypeError("chat_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["user%2Did"] =  user_id
+		path_parameters["chat%2Did"] =  chat_id
+
 		from .mark_chat_unread_for_user import MarkChatUnreadForUserRequest
-		return MarkChatUnreadForUserRequest(self.request_adapter, self.path_parameters)
+		return MarkChatUnreadForUserRequest(self.request_adapter, path_parameters)
 
-	@property
 	def send_activity_notification(self,
+		user_id: str,
+		chat_id: str,
 	) -> SendActivityNotificationRequest:
+		if user_id is None:
+			raise TypeError("user_id cannot be null.")
+		if chat_id is None:
+			raise TypeError("chat_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["user%2Did"] =  user_id
+		path_parameters["chat%2Did"] =  chat_id
+
 		from .send_activity_notification import SendActivityNotificationRequest
-		return SendActivityNotificationRequest(self.request_adapter, self.path_parameters)
+		return SendActivityNotificationRequest(self.request_adapter, path_parameters)
 
-	@property
 	def unhide_for_user(self,
+		user_id: str,
+		chat_id: str,
 	) -> UnhideForUserRequest:
+		if user_id is None:
+			raise TypeError("user_id cannot be null.")
+		if chat_id is None:
+			raise TypeError("chat_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["user%2Did"] =  user_id
+		path_parameters["chat%2Did"] =  chat_id
+
 		from .unhide_for_user import UnhideForUserRequest
-		return UnhideForUserRequest(self.request_adapter, self.path_parameters)
+		return UnhideForUserRequest(self.request_adapter, path_parameters)
 
-	@property
 	def permission_grants(self,
+		user_id: str,
+		chat_id: str,
 	) -> PermissionGrantsRequest:
+		if user_id is None:
+			raise TypeError("user_id cannot be null.")
+		if chat_id is None:
+			raise TypeError("chat_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["user%2Did"] =  user_id
+		path_parameters["chat%2Did"] =  chat_id
+
 		from .permission_grants import PermissionGrantsRequest
-		return PermissionGrantsRequest(self.request_adapter, self.path_parameters)
+		return PermissionGrantsRequest(self.request_adapter, path_parameters)
 
-	@property
 	def pinned_messages(self,
+		user_id: str,
+		chat_id: str,
 	) -> PinnedMessagesRequest:
-		from .pinned_messages import PinnedMessagesRequest
-		return PinnedMessagesRequest(self.request_adapter, self.path_parameters)
+		if user_id is None:
+			raise TypeError("user_id cannot be null.")
+		if chat_id is None:
+			raise TypeError("chat_id cannot be null.")
 
-	@property
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["user%2Did"] =  user_id
+		path_parameters["chat%2Did"] =  chat_id
+
+		from .pinned_messages import PinnedMessagesRequest
+		return PinnedMessagesRequest(self.request_adapter, path_parameters)
+
 	def tabs(self,
+		user_id: str,
+		chat_id: str,
 	) -> TabsRequest:
+		if user_id is None:
+			raise TypeError("user_id cannot be null.")
+		if chat_id is None:
+			raise TypeError("chat_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["user%2Did"] =  user_id
+		path_parameters["chat%2Did"] =  chat_id
+
 		from .tabs import TabsRequest
-		return TabsRequest(self.request_adapter, self.path_parameters)
+		return TabsRequest(self.request_adapter, path_parameters)
 

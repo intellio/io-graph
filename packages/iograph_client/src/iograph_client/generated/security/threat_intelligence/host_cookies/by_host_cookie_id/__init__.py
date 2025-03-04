@@ -1,6 +1,7 @@
 # Auto-generated client
 
 from __future__ import annotations
+from kiota_abstractions.get_path_parameters import get_path_parameters
 from kiota_abstractions.method import Method
 from kiota_abstractions.base_request_builder import BaseRequestBuilder
 from kiota_abstractions.base_request_configuration import RequestConfiguration
@@ -12,8 +13,8 @@ from typing import TYPE_CHECKING
 if TYPE_CHECKING:
 	from .host import HostRequest
 	from ......request_adapter import HttpxRequestAdapter
-from iograph_models.models.security_host_cookie import SecurityHostCookie
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.models.security_host_cookie import SecurityHostCookie
 
 
 class ByHostCookieIdRequest(BaseRequestBuilder):
@@ -109,9 +110,15 @@ class ByHostCookieIdRequest(BaseRequestBuilder):
 			raise TypeError("raw_url cannot be None.")
 		return ByHostCookieIdRequest(self.request_adapter, self.path_parameters)
 
-	@property
 	def host(self,
+		hostCookie_id: str,
 	) -> HostRequest:
+		if hostCookie_id is None:
+			raise TypeError("hostCookie_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["hostCookie%2Did"] =  hostCookie_id
+
 		from .host import HostRequest
-		return HostRequest(self.request_adapter, self.path_parameters)
+		return HostRequest(self.request_adapter, path_parameters)
 

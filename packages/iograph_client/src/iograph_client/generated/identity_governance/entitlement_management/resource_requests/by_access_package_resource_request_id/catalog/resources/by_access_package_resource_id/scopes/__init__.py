@@ -15,8 +15,8 @@ if TYPE_CHECKING:
 	from .by_access_package_resource_scope_id import ByAccessPackageResourceScopeIdRequest
 	from ..........request_adapter import HttpxRequestAdapter
 from iograph_models.models.access_package_resource_scope_collection_response import AccessPackageResourceScopeCollectionResponse
-from iograph_models.models.access_package_resource_scope import AccessPackageResourceScope
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.models.access_package_resource_scope import AccessPackageResourceScope
 
 
 class ScopesRequest(BaseRequestBuilder):
@@ -112,9 +112,19 @@ class ScopesRequest(BaseRequestBuilder):
 		from .by_access_package_resource_scope_id import ByAccessPackageResourceScopeIdRequest
 		return ByAccessPackageResourceScopeIdRequest(self.request_adapter, path_parameters)
 
-	@property
 	def count(self,
+		accessPackageResourceRequest_id: str,
+		accessPackageResource_id: str,
 	) -> CountRequest:
+		if accessPackageResourceRequest_id is None:
+			raise TypeError("accessPackageResourceRequest_id cannot be null.")
+		if accessPackageResource_id is None:
+			raise TypeError("accessPackageResource_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["accessPackageResourceRequest%2Did"] =  accessPackageResourceRequest_id
+		path_parameters["accessPackageResource%2Did"] =  accessPackageResource_id
+
 		from .count import CountRequest
-		return CountRequest(self.request_adapter, self.path_parameters)
+		return CountRequest(self.request_adapter, path_parameters)
 

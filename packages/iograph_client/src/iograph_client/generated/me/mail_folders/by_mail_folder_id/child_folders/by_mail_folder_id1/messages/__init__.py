@@ -11,12 +11,13 @@ from typing import Union, Any, Optional
 from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:
+	from .delta import DeltaRequest
 	from .count import CountRequest
 	from .by_message_id import ByMessageIdRequest
 	from ........request_adapter import HttpxRequestAdapter
-from iograph_models.models.message_collection_response import MessageCollectionResponse
 from iograph_models.models.message import Message
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.models.message_collection_response import MessageCollectionResponse
 
 
 class MessagesRequest(BaseRequestBuilder):
@@ -112,9 +113,35 @@ class MessagesRequest(BaseRequestBuilder):
 		from .by_message_id import ByMessageIdRequest
 		return ByMessageIdRequest(self.request_adapter, path_parameters)
 
-	@property
 	def count(self,
+		mailFolder_id: str,
+		mailFolder_id1: str,
 	) -> CountRequest:
+		if mailFolder_id is None:
+			raise TypeError("mailFolder_id cannot be null.")
+		if mailFolder_id1 is None:
+			raise TypeError("mailFolder_id1 cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["mailFolder%2Did"] =  mailFolder_id
+		path_parameters["mailFolder%2Did1"] =  mailFolder_id1
+
 		from .count import CountRequest
-		return CountRequest(self.request_adapter, self.path_parameters)
+		return CountRequest(self.request_adapter, path_parameters)
+
+	def delta(self,
+		mailFolder_id: str,
+		mailFolder_id1: str,
+	) -> DeltaRequest:
+		if mailFolder_id is None:
+			raise TypeError("mailFolder_id cannot be null.")
+		if mailFolder_id1 is None:
+			raise TypeError("mailFolder_id1 cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["mailFolder%2Did"] =  mailFolder_id
+		path_parameters["mailFolder%2Did1"] =  mailFolder_id1
+
+		from .delta import DeltaRequest
+		return DeltaRequest(self.request_adapter, path_parameters)
 

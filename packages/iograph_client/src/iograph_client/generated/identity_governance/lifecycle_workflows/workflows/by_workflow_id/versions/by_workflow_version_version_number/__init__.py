@@ -1,6 +1,7 @@
 # Auto-generated client
 
 from __future__ import annotations
+from kiota_abstractions.get_path_parameters import get_path_parameters
 from kiota_abstractions.method import Method
 from kiota_abstractions.base_request_builder import BaseRequestBuilder
 from kiota_abstractions.base_request_configuration import RequestConfiguration
@@ -60,21 +61,51 @@ class ByWorkflowVersionVersionNumberRequest(BaseRequestBuilder):
 			raise TypeError("raw_url cannot be None.")
 		return ByWorkflowVersionVersionNumberRequest(self.request_adapter, self.path_parameters)
 
-	@property
 	def created_by(self,
+		workflow_id: str,
+		workflowVersion_versionNumber: int,
 	) -> CreatedByRequest:
+		if workflow_id is None:
+			raise TypeError("workflow_id cannot be null.")
+		if workflowVersion_versionNumber is None:
+			raise TypeError("workflowVersion_versionNumber cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["workflow%2Did"] =  workflow_id
+		path_parameters["workflowVersion%2DversionNumber"] =  workflowVersion_versionNumber
+
 		from .created_by import CreatedByRequest
-		return CreatedByRequest(self.request_adapter, self.path_parameters)
+		return CreatedByRequest(self.request_adapter, path_parameters)
 
-	@property
 	def last_modified_by(self,
+		workflow_id: str,
+		workflowVersion_versionNumber: int,
 	) -> LastModifiedByRequest:
-		from .last_modified_by import LastModifiedByRequest
-		return LastModifiedByRequest(self.request_adapter, self.path_parameters)
+		if workflow_id is None:
+			raise TypeError("workflow_id cannot be null.")
+		if workflowVersion_versionNumber is None:
+			raise TypeError("workflowVersion_versionNumber cannot be null.")
 
-	@property
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["workflow%2Did"] =  workflow_id
+		path_parameters["workflowVersion%2DversionNumber"] =  workflowVersion_versionNumber
+
+		from .last_modified_by import LastModifiedByRequest
+		return LastModifiedByRequest(self.request_adapter, path_parameters)
+
 	def tasks(self,
+		workflow_id: str,
+		workflowVersion_versionNumber: int,
 	) -> TasksRequest:
+		if workflow_id is None:
+			raise TypeError("workflow_id cannot be null.")
+		if workflowVersion_versionNumber is None:
+			raise TypeError("workflowVersion_versionNumber cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["workflow%2Did"] =  workflow_id
+		path_parameters["workflowVersion%2DversionNumber"] =  workflowVersion_versionNumber
+
 		from .tasks import TasksRequest
-		return TasksRequest(self.request_adapter, self.path_parameters)
+		return TasksRequest(self.request_adapter, path_parameters)
 

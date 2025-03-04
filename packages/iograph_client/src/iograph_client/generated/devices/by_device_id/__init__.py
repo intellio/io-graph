@@ -1,6 +1,7 @@
 # Auto-generated client
 
 from __future__ import annotations
+from kiota_abstractions.get_path_parameters import get_path_parameters
 from kiota_abstractions.method import Method
 from kiota_abstractions.base_request_builder import BaseRequestBuilder
 from kiota_abstractions.base_request_configuration import RequestConfiguration
@@ -120,63 +121,123 @@ class ByDeviceIdRequest(BaseRequestBuilder):
 			raise TypeError("raw_url cannot be None.")
 		return ByDeviceIdRequest(self.request_adapter, self.path_parameters)
 
-	@property
 	def extensions(self,
+		device_id: str,
 	) -> ExtensionsRequest:
+		if device_id is None:
+			raise TypeError("device_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["device%2Did"] =  device_id
+
 		from .extensions import ExtensionsRequest
-		return ExtensionsRequest(self.request_adapter, self.path_parameters)
+		return ExtensionsRequest(self.request_adapter, path_parameters)
 
-	@property
 	def member_of(self,
+		device_id: str,
 	) -> MemberOfRequest:
+		if device_id is None:
+			raise TypeError("device_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["device%2Did"] =  device_id
+
 		from .member_of import MemberOfRequest
-		return MemberOfRequest(self.request_adapter, self.path_parameters)
+		return MemberOfRequest(self.request_adapter, path_parameters)
 
-	@property
 	def check_member_groups(self,
+		device_id: str,
 	) -> CheckMemberGroupsRequest:
+		if device_id is None:
+			raise TypeError("device_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["device%2Did"] =  device_id
+
 		from .check_member_groups import CheckMemberGroupsRequest
-		return CheckMemberGroupsRequest(self.request_adapter, self.path_parameters)
+		return CheckMemberGroupsRequest(self.request_adapter, path_parameters)
 
-	@property
 	def check_member_objects(self,
+		device_id: str,
 	) -> CheckMemberObjectsRequest:
+		if device_id is None:
+			raise TypeError("device_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["device%2Did"] =  device_id
+
 		from .check_member_objects import CheckMemberObjectsRequest
-		return CheckMemberObjectsRequest(self.request_adapter, self.path_parameters)
+		return CheckMemberObjectsRequest(self.request_adapter, path_parameters)
 
-	@property
 	def get_member_groups(self,
+		device_id: str,
 	) -> GetMemberGroupsRequest:
+		if device_id is None:
+			raise TypeError("device_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["device%2Did"] =  device_id
+
 		from .get_member_groups import GetMemberGroupsRequest
-		return GetMemberGroupsRequest(self.request_adapter, self.path_parameters)
+		return GetMemberGroupsRequest(self.request_adapter, path_parameters)
 
-	@property
 	def get_member_objects(self,
+		device_id: str,
 	) -> GetMemberObjectsRequest:
+		if device_id is None:
+			raise TypeError("device_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["device%2Did"] =  device_id
+
 		from .get_member_objects import GetMemberObjectsRequest
-		return GetMemberObjectsRequest(self.request_adapter, self.path_parameters)
+		return GetMemberObjectsRequest(self.request_adapter, path_parameters)
 
-	@property
 	def restore(self,
+		device_id: str,
 	) -> RestoreRequest:
+		if device_id is None:
+			raise TypeError("device_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["device%2Did"] =  device_id
+
 		from .restore import RestoreRequest
-		return RestoreRequest(self.request_adapter, self.path_parameters)
+		return RestoreRequest(self.request_adapter, path_parameters)
 
-	@property
 	def registered_owners(self,
+		device_id: str,
 	) -> RegisteredOwnersRequest:
+		if device_id is None:
+			raise TypeError("device_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["device%2Did"] =  device_id
+
 		from .registered_owners import RegisteredOwnersRequest
-		return RegisteredOwnersRequest(self.request_adapter, self.path_parameters)
+		return RegisteredOwnersRequest(self.request_adapter, path_parameters)
 
-	@property
 	def registered_users(self,
+		device_id: str,
 	) -> RegisteredUsersRequest:
-		from .registered_users import RegisteredUsersRequest
-		return RegisteredUsersRequest(self.request_adapter, self.path_parameters)
+		if device_id is None:
+			raise TypeError("device_id cannot be null.")
 
-	@property
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["device%2Did"] =  device_id
+
+		from .registered_users import RegisteredUsersRequest
+		return RegisteredUsersRequest(self.request_adapter, path_parameters)
+
 	def transitive_member_of(self,
+		device_id: str,
 	) -> TransitiveMemberOfRequest:
+		if device_id is None:
+			raise TypeError("device_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["device%2Did"] =  device_id
+
 		from .transitive_member_of import TransitiveMemberOfRequest
-		return TransitiveMemberOfRequest(self.request_adapter, self.path_parameters)
+		return TransitiveMemberOfRequest(self.request_adapter, path_parameters)
 

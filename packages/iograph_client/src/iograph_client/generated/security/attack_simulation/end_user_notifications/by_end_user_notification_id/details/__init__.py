@@ -108,9 +108,15 @@ class DetailsRequest(BaseRequestBuilder):
 		from .by_end_user_notification_detail_id import ByEndUserNotificationDetailIdRequest
 		return ByEndUserNotificationDetailIdRequest(self.request_adapter, path_parameters)
 
-	@property
 	def count(self,
+		endUserNotification_id: str,
 	) -> CountRequest:
+		if endUserNotification_id is None:
+			raise TypeError("endUserNotification_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["endUserNotification%2Did"] =  endUserNotification_id
+
 		from .count import CountRequest
-		return CountRequest(self.request_adapter, self.path_parameters)
+		return CountRequest(self.request_adapter, path_parameters)
 

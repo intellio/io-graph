@@ -1,6 +1,7 @@
 # Auto-generated client
 
 from __future__ import annotations
+from kiota_abstractions.get_path_parameters import get_path_parameters
 from kiota_abstractions.method import Method
 from kiota_abstractions.base_request_builder import BaseRequestBuilder
 from kiota_abstractions.base_request_configuration import RequestConfiguration
@@ -112,15 +113,27 @@ class ByConnectedOrganizationIdRequest(BaseRequestBuilder):
 			raise TypeError("raw_url cannot be None.")
 		return ByConnectedOrganizationIdRequest(self.request_adapter, self.path_parameters)
 
-	@property
 	def external_sponsors(self,
+		connectedOrganization_id: str,
 	) -> ExternalSponsorsRequest:
-		from .external_sponsors import ExternalSponsorsRequest
-		return ExternalSponsorsRequest(self.request_adapter, self.path_parameters)
+		if connectedOrganization_id is None:
+			raise TypeError("connectedOrganization_id cannot be null.")
 
-	@property
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["connectedOrganization%2Did"] =  connectedOrganization_id
+
+		from .external_sponsors import ExternalSponsorsRequest
+		return ExternalSponsorsRequest(self.request_adapter, path_parameters)
+
 	def internal_sponsors(self,
+		connectedOrganization_id: str,
 	) -> InternalSponsorsRequest:
+		if connectedOrganization_id is None:
+			raise TypeError("connectedOrganization_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["connectedOrganization%2Did"] =  connectedOrganization_id
+
 		from .internal_sponsors import InternalSponsorsRequest
-		return InternalSponsorsRequest(self.request_adapter, self.path_parameters)
+		return InternalSponsorsRequest(self.request_adapter, path_parameters)
 

@@ -11,12 +11,13 @@ from typing import Union, Any, Optional
 from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:
+	from .recent import RecentRequest
 	from .count import CountRequest
 	from .by_user_activity_id import ByUserActivityIdRequest
 	from .....request_adapter import HttpxRequestAdapter
-from iograph_models.models.user_activity import UserActivity
 from iograph_models.models.user_activity_collection_response import UserActivityCollectionResponse
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.models.user_activity import UserActivity
 
 
 class ActivitiesRequest(BaseRequestBuilder):
@@ -108,9 +109,27 @@ class ActivitiesRequest(BaseRequestBuilder):
 		from .by_user_activity_id import ByUserActivityIdRequest
 		return ByUserActivityIdRequest(self.request_adapter, path_parameters)
 
-	@property
 	def count(self,
+		user_id: str,
 	) -> CountRequest:
+		if user_id is None:
+			raise TypeError("user_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["user%2Did"] =  user_id
+
 		from .count import CountRequest
-		return CountRequest(self.request_adapter, self.path_parameters)
+		return CountRequest(self.request_adapter, path_parameters)
+
+	def recent(self,
+		user_id: str,
+	) -> RecentRequest:
+		if user_id is None:
+			raise TypeError("user_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["user%2Did"] =  user_id
+
+		from .recent import RecentRequest
+		return RecentRequest(self.request_adapter, path_parameters)
 

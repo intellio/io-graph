@@ -110,9 +110,15 @@ class UserStatusesRequest(BaseRequestBuilder):
 		from .by_device_configuration_user_status_id import ByDeviceConfigurationUserStatusIdRequest
 		return ByDeviceConfigurationUserStatusIdRequest(self.request_adapter, path_parameters)
 
-	@property
 	def count(self,
+		deviceConfiguration_id: str,
 	) -> CountRequest:
+		if deviceConfiguration_id is None:
+			raise TypeError("deviceConfiguration_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["deviceConfiguration%2Did"] =  deviceConfiguration_id
+
 		from .count import CountRequest
-		return CountRequest(self.request_adapter, self.path_parameters)
+		return CountRequest(self.request_adapter, path_parameters)
 

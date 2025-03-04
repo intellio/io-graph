@@ -1,6 +1,7 @@
 # Auto-generated client
 
 from __future__ import annotations
+from kiota_abstractions.get_path_parameters import get_path_parameters
 from kiota_abstractions.method import Method
 from kiota_abstractions.base_request_builder import BaseRequestBuilder
 from kiota_abstractions.base_request_configuration import RequestConfiguration
@@ -108,9 +109,19 @@ class ByManagedAppPolicyIdRequest(BaseRequestBuilder):
 			raise TypeError("raw_url cannot be None.")
 		return ByManagedAppPolicyIdRequest(self.request_adapter, self.path_parameters)
 
-	@property
 	def target_apps(self,
+		managedAppRegistration_id: str,
+		managedAppPolicy_id: str,
 	) -> TargetAppsRequest:
+		if managedAppRegistration_id is None:
+			raise TypeError("managedAppRegistration_id cannot be null.")
+		if managedAppPolicy_id is None:
+			raise TypeError("managedAppPolicy_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["managedAppRegistration%2Did"] =  managedAppRegistration_id
+		path_parameters["managedAppPolicy%2Did"] =  managedAppPolicy_id
+
 		from .target_apps import TargetAppsRequest
-		return TargetAppsRequest(self.request_adapter, self.path_parameters)
+		return TargetAppsRequest(self.request_adapter, path_parameters)
 

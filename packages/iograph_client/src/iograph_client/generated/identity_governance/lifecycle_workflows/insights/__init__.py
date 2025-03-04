@@ -1,6 +1,7 @@
 # Auto-generated client
 
 from __future__ import annotations
+from kiota_abstractions.get_path_parameters import get_path_parameters
 from kiota_abstractions.method import Method
 from kiota_abstractions.base_request_builder import BaseRequestBuilder
 from kiota_abstractions.base_request_configuration import RequestConfiguration
@@ -10,9 +11,13 @@ from typing import Union, Any, Optional
 from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:
+	from .identity_governance_workflows_processed_summary import IdentityGovernanceWorkflowsProcessedSummaryRequest
+	from .identity_governance_workflows_processed_by_category import IdentityGovernanceWorkflowsProcessedByCategoryRequest
+	from .identity_governance_top_workflows_processed_summary import IdentityGovernanceTopWorkflowsProcessedSummaryRequest
+	from .identity_governance_top_tasks_processed_summary import IdentityGovernanceTopTasksProcessedSummaryRequest
 	from .....request_adapter import HttpxRequestAdapter
-from iograph_models.models.identity_governance_insights import IdentityGovernanceInsights
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.models.identity_governance_insights import IdentityGovernanceInsights
 
 
 class InsightsRequest(BaseRequestBuilder):
@@ -106,4 +111,68 @@ class InsightsRequest(BaseRequestBuilder):
 		if raw_url is None:
 			raise TypeError("raw_url cannot be None.")
 		return InsightsRequest(self.request_adapter, self.path_parameters)
+
+	def identity_governance_top_tasks_processed_summary(self,
+		startDateTime: datetime,
+		endDateTime: datetime,
+	) -> IdentityGovernanceTopTasksProcessedSummaryRequest:
+		if startDateTime is None:
+			raise TypeError("startDateTime cannot be null.")
+		if endDateTime is None:
+			raise TypeError("endDateTime cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["startDateTime"] =  startDateTime
+		path_parameters["endDateTime"] =  endDateTime
+
+		from .identity_governance_top_tasks_processed_summary import IdentityGovernanceTopTasksProcessedSummaryRequest
+		return IdentityGovernanceTopTasksProcessedSummaryRequest(self.request_adapter, path_parameters)
+
+	def identity_governance_top_workflows_processed_summary(self,
+		startDateTime: datetime,
+		endDateTime: datetime,
+	) -> IdentityGovernanceTopWorkflowsProcessedSummaryRequest:
+		if startDateTime is None:
+			raise TypeError("startDateTime cannot be null.")
+		if endDateTime is None:
+			raise TypeError("endDateTime cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["startDateTime"] =  startDateTime
+		path_parameters["endDateTime"] =  endDateTime
+
+		from .identity_governance_top_workflows_processed_summary import IdentityGovernanceTopWorkflowsProcessedSummaryRequest
+		return IdentityGovernanceTopWorkflowsProcessedSummaryRequest(self.request_adapter, path_parameters)
+
+	def identity_governance_workflows_processed_by_category(self,
+		startDateTime: datetime,
+		endDateTime: datetime,
+	) -> IdentityGovernanceWorkflowsProcessedByCategoryRequest:
+		if startDateTime is None:
+			raise TypeError("startDateTime cannot be null.")
+		if endDateTime is None:
+			raise TypeError("endDateTime cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["startDateTime"] =  startDateTime
+		path_parameters["endDateTime"] =  endDateTime
+
+		from .identity_governance_workflows_processed_by_category import IdentityGovernanceWorkflowsProcessedByCategoryRequest
+		return IdentityGovernanceWorkflowsProcessedByCategoryRequest(self.request_adapter, path_parameters)
+
+	def identity_governance_workflows_processed_summary(self,
+		startDateTime: datetime,
+		endDateTime: datetime,
+	) -> IdentityGovernanceWorkflowsProcessedSummaryRequest:
+		if startDateTime is None:
+			raise TypeError("startDateTime cannot be null.")
+		if endDateTime is None:
+			raise TypeError("endDateTime cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["startDateTime"] =  startDateTime
+		path_parameters["endDateTime"] =  endDateTime
+
+		from .identity_governance_workflows_processed_summary import IdentityGovernanceWorkflowsProcessedSummaryRequest
+		return IdentityGovernanceWorkflowsProcessedSummaryRequest(self.request_adapter, path_parameters)
 

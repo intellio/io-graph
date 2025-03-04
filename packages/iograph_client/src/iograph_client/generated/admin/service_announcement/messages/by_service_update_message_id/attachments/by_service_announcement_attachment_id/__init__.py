@@ -1,6 +1,7 @@
 # Auto-generated client
 
 from __future__ import annotations
+from kiota_abstractions.get_path_parameters import get_path_parameters
 from kiota_abstractions.method import Method
 from kiota_abstractions.base_request_builder import BaseRequestBuilder
 from kiota_abstractions.base_request_configuration import RequestConfiguration
@@ -109,9 +110,19 @@ class ByServiceAnnouncementAttachmentIdRequest(BaseRequestBuilder):
 			raise TypeError("raw_url cannot be None.")
 		return ByServiceAnnouncementAttachmentIdRequest(self.request_adapter, self.path_parameters)
 
-	@property
 	def content(self,
+		serviceUpdateMessage_id: str,
+		serviceAnnouncementAttachment_id: str,
 	) -> ContentRequest:
+		if serviceUpdateMessage_id is None:
+			raise TypeError("serviceUpdateMessage_id cannot be null.")
+		if serviceAnnouncementAttachment_id is None:
+			raise TypeError("serviceAnnouncementAttachment_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["serviceUpdateMessage%2Did"] =  serviceUpdateMessage_id
+		path_parameters["serviceAnnouncementAttachment%2Did"] =  serviceAnnouncementAttachment_id
+
 		from .content import ContentRequest
-		return ContentRequest(self.request_adapter, self.path_parameters)
+		return ContentRequest(self.request_adapter, path_parameters)
 

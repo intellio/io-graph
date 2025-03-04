@@ -1,6 +1,7 @@
 # Auto-generated client
 
 from __future__ import annotations
+from kiota_abstractions.get_path_parameters import get_path_parameters
 from kiota_abstractions.method import Method
 from kiota_abstractions.base_request_builder import BaseRequestBuilder
 from kiota_abstractions.base_request_configuration import RequestConfiguration
@@ -12,8 +13,8 @@ from typing import TYPE_CHECKING
 if TYPE_CHECKING:
 	from .message import MessageRequest
 	from .......request_adapter import HttpxRequestAdapter
-from iograph_models.models.pinned_chat_message_info import PinnedChatMessageInfo
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.models.pinned_chat_message_info import PinnedChatMessageInfo
 
 
 class ByPinnedChatMessageInfoIdRequest(BaseRequestBuilder):
@@ -108,9 +109,19 @@ class ByPinnedChatMessageInfoIdRequest(BaseRequestBuilder):
 			raise TypeError("raw_url cannot be None.")
 		return ByPinnedChatMessageInfoIdRequest(self.request_adapter, self.path_parameters)
 
-	@property
 	def message(self,
+		chat_id: str,
+		pinnedChatMessageInfo_id: str,
 	) -> MessageRequest:
+		if chat_id is None:
+			raise TypeError("chat_id cannot be null.")
+		if pinnedChatMessageInfo_id is None:
+			raise TypeError("pinnedChatMessageInfo_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["chat%2Did"] =  chat_id
+		path_parameters["pinnedChatMessageInfo%2Did"] =  pinnedChatMessageInfo_id
+
 		from .message import MessageRequest
-		return MessageRequest(self.request_adapter, self.path_parameters)
+		return MessageRequest(self.request_adapter, path_parameters)
 

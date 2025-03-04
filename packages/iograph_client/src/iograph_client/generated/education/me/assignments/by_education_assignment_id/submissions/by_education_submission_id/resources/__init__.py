@@ -15,8 +15,8 @@ if TYPE_CHECKING:
 	from .by_education_submission_resource_id import ByEducationSubmissionResourceIdRequest
 	from .........request_adapter import HttpxRequestAdapter
 from iograph_models.models.education_submission_resource import EducationSubmissionResource
-from iograph_models.models.education_submission_resource_collection_response import EducationSubmissionResourceCollectionResponse
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.models.education_submission_resource_collection_response import EducationSubmissionResourceCollectionResponse
 
 
 class ResourcesRequest(BaseRequestBuilder):
@@ -112,9 +112,19 @@ class ResourcesRequest(BaseRequestBuilder):
 		from .by_education_submission_resource_id import ByEducationSubmissionResourceIdRequest
 		return ByEducationSubmissionResourceIdRequest(self.request_adapter, path_parameters)
 
-	@property
 	def count(self,
+		educationAssignment_id: str,
+		educationSubmission_id: str,
 	) -> CountRequest:
+		if educationAssignment_id is None:
+			raise TypeError("educationAssignment_id cannot be null.")
+		if educationSubmission_id is None:
+			raise TypeError("educationSubmission_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["educationAssignment%2Did"] =  educationAssignment_id
+		path_parameters["educationSubmission%2Did"] =  educationSubmission_id
+
 		from .count import CountRequest
-		return CountRequest(self.request_adapter, self.path_parameters)
+		return CountRequest(self.request_adapter, path_parameters)
 

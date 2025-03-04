@@ -1,6 +1,7 @@
 # Auto-generated client
 
 from __future__ import annotations
+from kiota_abstractions.get_path_parameters import get_path_parameters
 from kiota_abstractions.method import Method
 from kiota_abstractions.base_request_builder import BaseRequestBuilder
 from kiota_abstractions.base_request_configuration import RequestConfiguration
@@ -14,8 +15,8 @@ if TYPE_CHECKING:
 	from .item_activity_stats import ItemActivityStatsRequest
 	from .all_time import AllTimeRequest
 	from .......request_adapter import HttpxRequestAdapter
-from iograph_models.models.item_analytics import ItemAnalytics
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.models.item_analytics import ItemAnalytics
 
 
 class AnalyticsRequest(BaseRequestBuilder):
@@ -110,21 +111,51 @@ class AnalyticsRequest(BaseRequestBuilder):
 			raise TypeError("raw_url cannot be None.")
 		return AnalyticsRequest(self.request_adapter, self.path_parameters)
 
-	@property
 	def all_time(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> AllTimeRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .all_time import AllTimeRequest
-		return AllTimeRequest(self.request_adapter, self.path_parameters)
+		return AllTimeRequest(self.request_adapter, path_parameters)
 
-	@property
 	def item_activity_stats(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> ItemActivityStatsRequest:
-		from .item_activity_stats import ItemActivityStatsRequest
-		return ItemActivityStatsRequest(self.request_adapter, self.path_parameters)
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
 
-	@property
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
+		from .item_activity_stats import ItemActivityStatsRequest
+		return ItemActivityStatsRequest(self.request_adapter, path_parameters)
+
 	def last_seven_days(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> LastSevenDaysRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .last_seven_days import LastSevenDaysRequest
-		return LastSevenDaysRequest(self.request_adapter, self.path_parameters)
+		return LastSevenDaysRequest(self.request_adapter, path_parameters)
 

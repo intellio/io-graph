@@ -1,6 +1,7 @@
 # Auto-generated client
 
 from __future__ import annotations
+from kiota_abstractions.get_path_parameters import get_path_parameters
 from kiota_abstractions.method import Method
 from kiota_abstractions.base_request_builder import BaseRequestBuilder
 from kiota_abstractions.base_request_configuration import RequestConfiguration
@@ -108,9 +109,23 @@ class ByWorkbookCommentIdRequest(BaseRequestBuilder):
 			raise TypeError("raw_url cannot be None.")
 		return ByWorkbookCommentIdRequest(self.request_adapter, self.path_parameters)
 
-	@property
 	def replies(self,
+		drive_id: str,
+		driveItem_id: str,
+		workbookComment_id: str,
 	) -> RepliesRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+		if workbookComment_id is None:
+			raise TypeError("workbookComment_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+		path_parameters["workbookComment%2Did"] =  workbookComment_id
+
 		from .replies import RepliesRequest
-		return RepliesRequest(self.request_adapter, self.path_parameters)
+		return RepliesRequest(self.request_adapter, path_parameters)
 

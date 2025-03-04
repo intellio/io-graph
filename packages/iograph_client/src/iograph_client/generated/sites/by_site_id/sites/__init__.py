@@ -82,9 +82,15 @@ class SitesRequest(BaseRequestBuilder):
 		from .by_site_id1 import BySiteId1Request
 		return BySiteId1Request(self.request_adapter, path_parameters)
 
-	@property
 	def count(self,
+		site_id: str,
 	) -> CountRequest:
+		if site_id is None:
+			raise TypeError("site_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["site%2Did"] =  site_id
+
 		from .count import CountRequest
-		return CountRequest(self.request_adapter, self.path_parameters)
+		return CountRequest(self.request_adapter, path_parameters)
 

@@ -114,9 +114,19 @@ class UnifiedGroupSourcesRequest(BaseRequestBuilder):
 		from .by_unified_group_source_id import ByUnifiedGroupSourceIdRequest
 		return ByUnifiedGroupSourceIdRequest(self.request_adapter, path_parameters)
 
-	@property
 	def count(self,
+		ediscoveryCase_id: str,
+		ediscoveryCustodian_id: str,
 	) -> CountRequest:
+		if ediscoveryCase_id is None:
+			raise TypeError("ediscoveryCase_id cannot be null.")
+		if ediscoveryCustodian_id is None:
+			raise TypeError("ediscoveryCustodian_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["ediscoveryCase%2Did"] =  ediscoveryCase_id
+		path_parameters["ediscoveryCustodian%2Did"] =  ediscoveryCustodian_id
+
 		from .count import CountRequest
-		return CountRequest(self.request_adapter, self.path_parameters)
+		return CountRequest(self.request_adapter, path_parameters)
 

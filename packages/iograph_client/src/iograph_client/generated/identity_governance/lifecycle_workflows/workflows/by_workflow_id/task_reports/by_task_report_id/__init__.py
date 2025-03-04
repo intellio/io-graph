@@ -1,6 +1,7 @@
 # Auto-generated client
 
 from __future__ import annotations
+from kiota_abstractions.get_path_parameters import get_path_parameters
 from kiota_abstractions.method import Method
 from kiota_abstractions.base_request_builder import BaseRequestBuilder
 from kiota_abstractions.base_request_configuration import RequestConfiguration
@@ -59,21 +60,51 @@ class ByTaskReportIdRequest(BaseRequestBuilder):
 			raise TypeError("raw_url cannot be None.")
 		return ByTaskReportIdRequest(self.request_adapter, self.path_parameters)
 
-	@property
 	def task(self,
+		workflow_id: str,
+		taskReport_id: str,
 	) -> TaskRequest:
+		if workflow_id is None:
+			raise TypeError("workflow_id cannot be null.")
+		if taskReport_id is None:
+			raise TypeError("taskReport_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["workflow%2Did"] =  workflow_id
+		path_parameters["taskReport%2Did"] =  taskReport_id
+
 		from .task import TaskRequest
-		return TaskRequest(self.request_adapter, self.path_parameters)
+		return TaskRequest(self.request_adapter, path_parameters)
 
-	@property
 	def task_definition(self,
+		workflow_id: str,
+		taskReport_id: str,
 	) -> TaskDefinitionRequest:
-		from .task_definition import TaskDefinitionRequest
-		return TaskDefinitionRequest(self.request_adapter, self.path_parameters)
+		if workflow_id is None:
+			raise TypeError("workflow_id cannot be null.")
+		if taskReport_id is None:
+			raise TypeError("taskReport_id cannot be null.")
 
-	@property
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["workflow%2Did"] =  workflow_id
+		path_parameters["taskReport%2Did"] =  taskReport_id
+
+		from .task_definition import TaskDefinitionRequest
+		return TaskDefinitionRequest(self.request_adapter, path_parameters)
+
 	def task_processing_results(self,
+		workflow_id: str,
+		taskReport_id: str,
 	) -> TaskProcessingResultsRequest:
+		if workflow_id is None:
+			raise TypeError("workflow_id cannot be null.")
+		if taskReport_id is None:
+			raise TypeError("taskReport_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["workflow%2Did"] =  workflow_id
+		path_parameters["taskReport%2Did"] =  taskReport_id
+
 		from .task_processing_results import TaskProcessingResultsRequest
-		return TaskProcessingResultsRequest(self.request_adapter, self.path_parameters)
+		return TaskProcessingResultsRequest(self.request_adapter, path_parameters)
 

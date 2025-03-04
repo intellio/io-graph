@@ -15,8 +15,8 @@ if TYPE_CHECKING:
 	from .by_cloud_pc_provisioning_policy_assignment_id import ByCloudPcProvisioningPolicyAssignmentIdRequest
 	from .......request_adapter import HttpxRequestAdapter
 from iograph_models.models.cloud_pc_provisioning_policy_assignment import CloudPcProvisioningPolicyAssignment
-from iograph_models.models.cloud_pc_provisioning_policy_assignment_collection_response import CloudPcProvisioningPolicyAssignmentCollectionResponse
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.models.cloud_pc_provisioning_policy_assignment_collection_response import CloudPcProvisioningPolicyAssignmentCollectionResponse
 
 
 class AssignmentsRequest(BaseRequestBuilder):
@@ -108,9 +108,15 @@ class AssignmentsRequest(BaseRequestBuilder):
 		from .by_cloud_pc_provisioning_policy_assignment_id import ByCloudPcProvisioningPolicyAssignmentIdRequest
 		return ByCloudPcProvisioningPolicyAssignmentIdRequest(self.request_adapter, path_parameters)
 
-	@property
 	def count(self,
+		cloudPcProvisioningPolicy_id: str,
 	) -> CountRequest:
+		if cloudPcProvisioningPolicy_id is None:
+			raise TypeError("cloudPcProvisioningPolicy_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["cloudPcProvisioningPolicy%2Did"] =  cloudPcProvisioningPolicy_id
+
 		from .count import CountRequest
-		return CountRequest(self.request_adapter, self.path_parameters)
+		return CountRequest(self.request_adapter, path_parameters)
 

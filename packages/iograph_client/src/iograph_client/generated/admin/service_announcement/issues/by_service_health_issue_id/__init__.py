@@ -1,6 +1,7 @@
 # Auto-generated client
 
 from __future__ import annotations
+from kiota_abstractions.get_path_parameters import get_path_parameters
 from kiota_abstractions.method import Method
 from kiota_abstractions.base_request_builder import BaseRequestBuilder
 from kiota_abstractions.base_request_configuration import RequestConfiguration
@@ -10,9 +11,10 @@ from typing import Union, Any, Optional
 from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:
+	from .incident_report import IncidentReportRequest
 	from ......request_adapter import HttpxRequestAdapter
-from iograph_models.models.service_health_issue import ServiceHealthIssue
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.models.service_health_issue import ServiceHealthIssue
 
 
 class ByServiceHealthIssueIdRequest(BaseRequestBuilder):
@@ -107,4 +109,16 @@ class ByServiceHealthIssueIdRequest(BaseRequestBuilder):
 		if raw_url is None:
 			raise TypeError("raw_url cannot be None.")
 		return ByServiceHealthIssueIdRequest(self.request_adapter, self.path_parameters)
+
+	def incident_report(self,
+		serviceHealthIssue_id: str,
+	) -> IncidentReportRequest:
+		if serviceHealthIssue_id is None:
+			raise TypeError("serviceHealthIssue_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["serviceHealthIssue%2Did"] =  serviceHealthIssue_id
+
+		from .incident_report import IncidentReportRequest
+		return IncidentReportRequest(self.request_adapter, path_parameters)
 

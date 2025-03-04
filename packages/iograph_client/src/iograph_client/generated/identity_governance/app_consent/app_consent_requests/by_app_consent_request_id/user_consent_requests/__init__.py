@@ -11,12 +11,13 @@ from typing import Union, Any, Optional
 from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:
+	from .filter_by_current_user import FilterByCurrentUserRequest
 	from .count import CountRequest
 	from .by_user_consent_request_id import ByUserConsentRequestIdRequest
 	from .......request_adapter import HttpxRequestAdapter
-from iograph_models.models.user_consent_request_collection_response import UserConsentRequestCollectionResponse
 from iograph_models.models.user_consent_request import UserConsentRequest
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.models.user_consent_request_collection_response import UserConsentRequestCollectionResponse
 
 
 class UserConsentRequestsRequest(BaseRequestBuilder):
@@ -109,9 +110,31 @@ class UserConsentRequestsRequest(BaseRequestBuilder):
 		from .by_user_consent_request_id import ByUserConsentRequestIdRequest
 		return ByUserConsentRequestIdRequest(self.request_adapter, path_parameters)
 
-	@property
 	def count(self,
+		appConsentRequest_id: str,
 	) -> CountRequest:
+		if appConsentRequest_id is None:
+			raise TypeError("appConsentRequest_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["appConsentRequest%2Did"] =  appConsentRequest_id
+
 		from .count import CountRequest
-		return CountRequest(self.request_adapter, self.path_parameters)
+		return CountRequest(self.request_adapter, path_parameters)
+
+	def filter_by_current_user(self,
+		appConsentRequest_id: str,
+		on: str,
+	) -> FilterByCurrentUserRequest:
+		if appConsentRequest_id is None:
+			raise TypeError("appConsentRequest_id cannot be null.")
+		if on is None:
+			raise TypeError("on cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["appConsentRequest%2Did"] =  appConsentRequest_id
+		path_parameters["on"] =  on
+
+		from .filter_by_current_user import FilterByCurrentUserRequest
+		return FilterByCurrentUserRequest(self.request_adapter, path_parameters)
 

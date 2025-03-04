@@ -11,13 +11,14 @@ from typing import Union, Any, Optional
 from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:
+	from .get_recent_notebooks import GetRecentNotebooksRequest
 	from .get_notebook_from_web_url import GetNotebookFromWebUrlRequest
 	from .count import CountRequest
 	from .by_notebook_id import ByNotebookIdRequest
 	from .....request_adapter import HttpxRequestAdapter
+from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.models.notebook_collection_response import NotebookCollectionResponse
 from iograph_models.models.notebook import Notebook
-from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
 
 
 class NotebooksRequest(BaseRequestBuilder):
@@ -118,4 +119,16 @@ class NotebooksRequest(BaseRequestBuilder):
 	) -> GetNotebookFromWebUrlRequest:
 		from .get_notebook_from_web_url import GetNotebookFromWebUrlRequest
 		return GetNotebookFromWebUrlRequest(self.request_adapter, self.path_parameters)
+
+	def get_recent_notebooks(self,
+		includePersonalNotebooks: bool,
+	) -> GetRecentNotebooksRequest:
+		if includePersonalNotebooks is None:
+			raise TypeError("includePersonalNotebooks cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["includePersonalNotebooks"] =  includePersonalNotebooks
+
+		from .get_recent_notebooks import GetRecentNotebooksRequest
+		return GetRecentNotebooksRequest(self.request_adapter, path_parameters)
 

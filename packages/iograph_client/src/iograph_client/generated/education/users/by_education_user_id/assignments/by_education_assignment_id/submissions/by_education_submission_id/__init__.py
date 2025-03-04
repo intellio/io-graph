@@ -1,6 +1,7 @@
 # Auto-generated client
 
 from __future__ import annotations
+from kiota_abstractions.get_path_parameters import get_path_parameters
 from kiota_abstractions.method import Method
 from kiota_abstractions.base_request_builder import BaseRequestBuilder
 from kiota_abstractions.base_request_configuration import RequestConfiguration
@@ -20,8 +21,8 @@ if TYPE_CHECKING:
 	from .reassign import ReassignRequest
 	from .excuse import ExcuseRequest
 	from .........request_adapter import HttpxRequestAdapter
-from iograph_models.models.education_submission import EducationSubmission
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.models.education_submission import EducationSubmission
 
 
 class ByEducationSubmissionIdRequest(BaseRequestBuilder):
@@ -116,57 +117,183 @@ class ByEducationSubmissionIdRequest(BaseRequestBuilder):
 			raise TypeError("raw_url cannot be None.")
 		return ByEducationSubmissionIdRequest(self.request_adapter, self.path_parameters)
 
-	@property
 	def excuse(self,
+		educationUser_id: str,
+		educationAssignment_id: str,
+		educationSubmission_id: str,
 	) -> ExcuseRequest:
+		if educationUser_id is None:
+			raise TypeError("educationUser_id cannot be null.")
+		if educationAssignment_id is None:
+			raise TypeError("educationAssignment_id cannot be null.")
+		if educationSubmission_id is None:
+			raise TypeError("educationSubmission_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["educationUser%2Did"] =  educationUser_id
+		path_parameters["educationAssignment%2Did"] =  educationAssignment_id
+		path_parameters["educationSubmission%2Did"] =  educationSubmission_id
+
 		from .excuse import ExcuseRequest
-		return ExcuseRequest(self.request_adapter, self.path_parameters)
+		return ExcuseRequest(self.request_adapter, path_parameters)
 
-	@property
 	def reassign(self,
+		educationUser_id: str,
+		educationAssignment_id: str,
+		educationSubmission_id: str,
 	) -> ReassignRequest:
+		if educationUser_id is None:
+			raise TypeError("educationUser_id cannot be null.")
+		if educationAssignment_id is None:
+			raise TypeError("educationAssignment_id cannot be null.")
+		if educationSubmission_id is None:
+			raise TypeError("educationSubmission_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["educationUser%2Did"] =  educationUser_id
+		path_parameters["educationAssignment%2Did"] =  educationAssignment_id
+		path_parameters["educationSubmission%2Did"] =  educationSubmission_id
+
 		from .reassign import ReassignRequest
-		return ReassignRequest(self.request_adapter, self.path_parameters)
+		return ReassignRequest(self.request_adapter, path_parameters)
 
-	@property
 	def return(self,
+		educationUser_id: str,
+		educationAssignment_id: str,
+		educationSubmission_id: str,
 	) -> ReturnRequest:
+		if educationUser_id is None:
+			raise TypeError("educationUser_id cannot be null.")
+		if educationAssignment_id is None:
+			raise TypeError("educationAssignment_id cannot be null.")
+		if educationSubmission_id is None:
+			raise TypeError("educationSubmission_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["educationUser%2Did"] =  educationUser_id
+		path_parameters["educationAssignment%2Did"] =  educationAssignment_id
+		path_parameters["educationSubmission%2Did"] =  educationSubmission_id
+
 		from .return import ReturnRequest
-		return ReturnRequest(self.request_adapter, self.path_parameters)
+		return ReturnRequest(self.request_adapter, path_parameters)
 
-	@property
 	def set_up_resources_folder(self,
+		educationUser_id: str,
+		educationAssignment_id: str,
+		educationSubmission_id: str,
 	) -> SetUpResourcesFolderRequest:
+		if educationUser_id is None:
+			raise TypeError("educationUser_id cannot be null.")
+		if educationAssignment_id is None:
+			raise TypeError("educationAssignment_id cannot be null.")
+		if educationSubmission_id is None:
+			raise TypeError("educationSubmission_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["educationUser%2Did"] =  educationUser_id
+		path_parameters["educationAssignment%2Did"] =  educationAssignment_id
+		path_parameters["educationSubmission%2Did"] =  educationSubmission_id
+
 		from .set_up_resources_folder import SetUpResourcesFolderRequest
-		return SetUpResourcesFolderRequest(self.request_adapter, self.path_parameters)
+		return SetUpResourcesFolderRequest(self.request_adapter, path_parameters)
 
-	@property
 	def submit(self,
+		educationUser_id: str,
+		educationAssignment_id: str,
+		educationSubmission_id: str,
 	) -> SubmitRequest:
+		if educationUser_id is None:
+			raise TypeError("educationUser_id cannot be null.")
+		if educationAssignment_id is None:
+			raise TypeError("educationAssignment_id cannot be null.")
+		if educationSubmission_id is None:
+			raise TypeError("educationSubmission_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["educationUser%2Did"] =  educationUser_id
+		path_parameters["educationAssignment%2Did"] =  educationAssignment_id
+		path_parameters["educationSubmission%2Did"] =  educationSubmission_id
+
 		from .submit import SubmitRequest
-		return SubmitRequest(self.request_adapter, self.path_parameters)
+		return SubmitRequest(self.request_adapter, path_parameters)
 
-	@property
 	def unsubmit(self,
+		educationUser_id: str,
+		educationAssignment_id: str,
+		educationSubmission_id: str,
 	) -> UnsubmitRequest:
+		if educationUser_id is None:
+			raise TypeError("educationUser_id cannot be null.")
+		if educationAssignment_id is None:
+			raise TypeError("educationAssignment_id cannot be null.")
+		if educationSubmission_id is None:
+			raise TypeError("educationSubmission_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["educationUser%2Did"] =  educationUser_id
+		path_parameters["educationAssignment%2Did"] =  educationAssignment_id
+		path_parameters["educationSubmission%2Did"] =  educationSubmission_id
+
 		from .unsubmit import UnsubmitRequest
-		return UnsubmitRequest(self.request_adapter, self.path_parameters)
+		return UnsubmitRequest(self.request_adapter, path_parameters)
 
-	@property
 	def outcomes(self,
+		educationUser_id: str,
+		educationAssignment_id: str,
+		educationSubmission_id: str,
 	) -> OutcomesRequest:
+		if educationUser_id is None:
+			raise TypeError("educationUser_id cannot be null.")
+		if educationAssignment_id is None:
+			raise TypeError("educationAssignment_id cannot be null.")
+		if educationSubmission_id is None:
+			raise TypeError("educationSubmission_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["educationUser%2Did"] =  educationUser_id
+		path_parameters["educationAssignment%2Did"] =  educationAssignment_id
+		path_parameters["educationSubmission%2Did"] =  educationSubmission_id
+
 		from .outcomes import OutcomesRequest
-		return OutcomesRequest(self.request_adapter, self.path_parameters)
+		return OutcomesRequest(self.request_adapter, path_parameters)
 
-	@property
 	def resources(self,
+		educationUser_id: str,
+		educationAssignment_id: str,
+		educationSubmission_id: str,
 	) -> ResourcesRequest:
-		from .resources import ResourcesRequest
-		return ResourcesRequest(self.request_adapter, self.path_parameters)
+		if educationUser_id is None:
+			raise TypeError("educationUser_id cannot be null.")
+		if educationAssignment_id is None:
+			raise TypeError("educationAssignment_id cannot be null.")
+		if educationSubmission_id is None:
+			raise TypeError("educationSubmission_id cannot be null.")
 
-	@property
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["educationUser%2Did"] =  educationUser_id
+		path_parameters["educationAssignment%2Did"] =  educationAssignment_id
+		path_parameters["educationSubmission%2Did"] =  educationSubmission_id
+
+		from .resources import ResourcesRequest
+		return ResourcesRequest(self.request_adapter, path_parameters)
+
 	def submitted_resources(self,
+		educationUser_id: str,
+		educationAssignment_id: str,
+		educationSubmission_id: str,
 	) -> SubmittedResourcesRequest:
+		if educationUser_id is None:
+			raise TypeError("educationUser_id cannot be null.")
+		if educationAssignment_id is None:
+			raise TypeError("educationAssignment_id cannot be null.")
+		if educationSubmission_id is None:
+			raise TypeError("educationSubmission_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["educationUser%2Did"] =  educationUser_id
+		path_parameters["educationAssignment%2Did"] =  educationAssignment_id
+		path_parameters["educationSubmission%2Did"] =  educationSubmission_id
+
 		from .submitted_resources import SubmittedResourcesRequest
-		return SubmittedResourcesRequest(self.request_adapter, self.path_parameters)
+		return SubmittedResourcesRequest(self.request_adapter, path_parameters)
 

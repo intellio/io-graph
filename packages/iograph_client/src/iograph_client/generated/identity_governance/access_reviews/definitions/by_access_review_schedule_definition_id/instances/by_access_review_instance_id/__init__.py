@@ -1,6 +1,7 @@
 # Auto-generated client
 
 from __future__ import annotations
+from kiota_abstractions.get_path_parameters import get_path_parameters
 from kiota_abstractions.method import Method
 from kiota_abstractions.base_request_builder import BaseRequestBuilder
 from kiota_abstractions.base_request_configuration import RequestConfiguration
@@ -20,8 +21,8 @@ if TYPE_CHECKING:
 	from .decisions import DecisionsRequest
 	from .contacted_reviewers import ContactedReviewersRequest
 	from ........request_adapter import HttpxRequestAdapter
-from iograph_models.models.access_review_instance import AccessReviewInstance
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.models.access_review_instance import AccessReviewInstance
 
 
 class ByAccessReviewInstanceIdRequest(BaseRequestBuilder):
@@ -118,57 +119,147 @@ class ByAccessReviewInstanceIdRequest(BaseRequestBuilder):
 			raise TypeError("raw_url cannot be None.")
 		return ByAccessReviewInstanceIdRequest(self.request_adapter, self.path_parameters)
 
-	@property
 	def contacted_reviewers(self,
+		accessReviewScheduleDefinition_id: str,
+		accessReviewInstance_id: str,
 	) -> ContactedReviewersRequest:
+		if accessReviewScheduleDefinition_id is None:
+			raise TypeError("accessReviewScheduleDefinition_id cannot be null.")
+		if accessReviewInstance_id is None:
+			raise TypeError("accessReviewInstance_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["accessReviewScheduleDefinition%2Did"] =  accessReviewScheduleDefinition_id
+		path_parameters["accessReviewInstance%2Did"] =  accessReviewInstance_id
+
 		from .contacted_reviewers import ContactedReviewersRequest
-		return ContactedReviewersRequest(self.request_adapter, self.path_parameters)
+		return ContactedReviewersRequest(self.request_adapter, path_parameters)
 
-	@property
 	def decisions(self,
+		accessReviewScheduleDefinition_id: str,
+		accessReviewInstance_id: str,
 	) -> DecisionsRequest:
+		if accessReviewScheduleDefinition_id is None:
+			raise TypeError("accessReviewScheduleDefinition_id cannot be null.")
+		if accessReviewInstance_id is None:
+			raise TypeError("accessReviewInstance_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["accessReviewScheduleDefinition%2Did"] =  accessReviewScheduleDefinition_id
+		path_parameters["accessReviewInstance%2Did"] =  accessReviewInstance_id
+
 		from .decisions import DecisionsRequest
-		return DecisionsRequest(self.request_adapter, self.path_parameters)
+		return DecisionsRequest(self.request_adapter, path_parameters)
 
-	@property
 	def accept_recommendations(self,
+		accessReviewScheduleDefinition_id: str,
+		accessReviewInstance_id: str,
 	) -> AcceptRecommendationsRequest:
+		if accessReviewScheduleDefinition_id is None:
+			raise TypeError("accessReviewScheduleDefinition_id cannot be null.")
+		if accessReviewInstance_id is None:
+			raise TypeError("accessReviewInstance_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["accessReviewScheduleDefinition%2Did"] =  accessReviewScheduleDefinition_id
+		path_parameters["accessReviewInstance%2Did"] =  accessReviewInstance_id
+
 		from .accept_recommendations import AcceptRecommendationsRequest
-		return AcceptRecommendationsRequest(self.request_adapter, self.path_parameters)
+		return AcceptRecommendationsRequest(self.request_adapter, path_parameters)
 
-	@property
 	def apply_decisions(self,
+		accessReviewScheduleDefinition_id: str,
+		accessReviewInstance_id: str,
 	) -> ApplyDecisionsRequest:
+		if accessReviewScheduleDefinition_id is None:
+			raise TypeError("accessReviewScheduleDefinition_id cannot be null.")
+		if accessReviewInstance_id is None:
+			raise TypeError("accessReviewInstance_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["accessReviewScheduleDefinition%2Did"] =  accessReviewScheduleDefinition_id
+		path_parameters["accessReviewInstance%2Did"] =  accessReviewInstance_id
+
 		from .apply_decisions import ApplyDecisionsRequest
-		return ApplyDecisionsRequest(self.request_adapter, self.path_parameters)
+		return ApplyDecisionsRequest(self.request_adapter, path_parameters)
 
-	@property
 	def batch_record_decisions(self,
+		accessReviewScheduleDefinition_id: str,
+		accessReviewInstance_id: str,
 	) -> BatchRecordDecisionsRequest:
+		if accessReviewScheduleDefinition_id is None:
+			raise TypeError("accessReviewScheduleDefinition_id cannot be null.")
+		if accessReviewInstance_id is None:
+			raise TypeError("accessReviewInstance_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["accessReviewScheduleDefinition%2Did"] =  accessReviewScheduleDefinition_id
+		path_parameters["accessReviewInstance%2Did"] =  accessReviewInstance_id
+
 		from .batch_record_decisions import BatchRecordDecisionsRequest
-		return BatchRecordDecisionsRequest(self.request_adapter, self.path_parameters)
+		return BatchRecordDecisionsRequest(self.request_adapter, path_parameters)
 
-	@property
 	def reset_decisions(self,
+		accessReviewScheduleDefinition_id: str,
+		accessReviewInstance_id: str,
 	) -> ResetDecisionsRequest:
+		if accessReviewScheduleDefinition_id is None:
+			raise TypeError("accessReviewScheduleDefinition_id cannot be null.")
+		if accessReviewInstance_id is None:
+			raise TypeError("accessReviewInstance_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["accessReviewScheduleDefinition%2Did"] =  accessReviewScheduleDefinition_id
+		path_parameters["accessReviewInstance%2Did"] =  accessReviewInstance_id
+
 		from .reset_decisions import ResetDecisionsRequest
-		return ResetDecisionsRequest(self.request_adapter, self.path_parameters)
+		return ResetDecisionsRequest(self.request_adapter, path_parameters)
 
-	@property
 	def send_reminder(self,
+		accessReviewScheduleDefinition_id: str,
+		accessReviewInstance_id: str,
 	) -> SendReminderRequest:
+		if accessReviewScheduleDefinition_id is None:
+			raise TypeError("accessReviewScheduleDefinition_id cannot be null.")
+		if accessReviewInstance_id is None:
+			raise TypeError("accessReviewInstance_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["accessReviewScheduleDefinition%2Did"] =  accessReviewScheduleDefinition_id
+		path_parameters["accessReviewInstance%2Did"] =  accessReviewInstance_id
+
 		from .send_reminder import SendReminderRequest
-		return SendReminderRequest(self.request_adapter, self.path_parameters)
+		return SendReminderRequest(self.request_adapter, path_parameters)
 
-	@property
 	def stop(self,
+		accessReviewScheduleDefinition_id: str,
+		accessReviewInstance_id: str,
 	) -> StopRequest:
-		from .stop import StopRequest
-		return StopRequest(self.request_adapter, self.path_parameters)
+		if accessReviewScheduleDefinition_id is None:
+			raise TypeError("accessReviewScheduleDefinition_id cannot be null.")
+		if accessReviewInstance_id is None:
+			raise TypeError("accessReviewInstance_id cannot be null.")
 
-	@property
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["accessReviewScheduleDefinition%2Did"] =  accessReviewScheduleDefinition_id
+		path_parameters["accessReviewInstance%2Did"] =  accessReviewInstance_id
+
+		from .stop import StopRequest
+		return StopRequest(self.request_adapter, path_parameters)
+
 	def stages(self,
+		accessReviewScheduleDefinition_id: str,
+		accessReviewInstance_id: str,
 	) -> StagesRequest:
+		if accessReviewScheduleDefinition_id is None:
+			raise TypeError("accessReviewScheduleDefinition_id cannot be null.")
+		if accessReviewInstance_id is None:
+			raise TypeError("accessReviewInstance_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["accessReviewScheduleDefinition%2Did"] =  accessReviewScheduleDefinition_id
+		path_parameters["accessReviewInstance%2Did"] =  accessReviewInstance_id
+
 		from .stages import StagesRequest
-		return StagesRequest(self.request_adapter, self.path_parameters)
+		return StagesRequest(self.request_adapter, path_parameters)
 

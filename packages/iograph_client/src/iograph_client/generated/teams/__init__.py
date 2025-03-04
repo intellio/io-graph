@@ -11,12 +11,13 @@ from typing import Union, Any, Optional
 from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:
+	from .get_all_messages import GetAllMessagesRequest
 	from .count import CountRequest
 	from .by_team_id import ByTeamIdRequest
 	from ...request_adapter import HttpxRequestAdapter
-from iograph_models.models.team import Team
 from iograph_models.models.team_collection_response import TeamCollectionResponse
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.models.team import Team
 
 
 class TeamsRequest(BaseRequestBuilder):
@@ -111,4 +112,10 @@ class TeamsRequest(BaseRequestBuilder):
 	) -> CountRequest:
 		from .count import CountRequest
 		return CountRequest(self.request_adapter, self.path_parameters)
+
+	@property
+	def get_all_messages(self,
+	) -> GetAllMessagesRequest:
+		from .get_all_messages import GetAllMessagesRequest
+		return GetAllMessagesRequest(self.request_adapter, self.path_parameters)
 

@@ -1,6 +1,7 @@
 # Auto-generated client
 
 from __future__ import annotations
+from kiota_abstractions.get_path_parameters import get_path_parameters
 from kiota_abstractions.method import Method
 from kiota_abstractions.base_request_builder import BaseRequestBuilder
 from kiota_abstractions.base_request_configuration import RequestConfiguration
@@ -15,8 +16,8 @@ if TYPE_CHECKING:
 	from .shift_preferences import ShiftPreferencesRequest
 	from .item_insights import ItemInsightsRequest
 	from .....request_adapter import HttpxRequestAdapter
-from iograph_models.models.user_settings import UserSettings
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.models.user_settings import UserSettings
 
 
 class SettingsRequest(BaseRequestBuilder):
@@ -111,27 +112,51 @@ class SettingsRequest(BaseRequestBuilder):
 			raise TypeError("raw_url cannot be None.")
 		return SettingsRequest(self.request_adapter, self.path_parameters)
 
-	@property
 	def item_insights(self,
+		user_id: str,
 	) -> ItemInsightsRequest:
+		if user_id is None:
+			raise TypeError("user_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["user%2Did"] =  user_id
+
 		from .item_insights import ItemInsightsRequest
-		return ItemInsightsRequest(self.request_adapter, self.path_parameters)
+		return ItemInsightsRequest(self.request_adapter, path_parameters)
 
-	@property
 	def shift_preferences(self,
+		user_id: str,
 	) -> ShiftPreferencesRequest:
+		if user_id is None:
+			raise TypeError("user_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["user%2Did"] =  user_id
+
 		from .shift_preferences import ShiftPreferencesRequest
-		return ShiftPreferencesRequest(self.request_adapter, self.path_parameters)
+		return ShiftPreferencesRequest(self.request_adapter, path_parameters)
 
-	@property
 	def storage(self,
+		user_id: str,
 	) -> StorageRequest:
-		from .storage import StorageRequest
-		return StorageRequest(self.request_adapter, self.path_parameters)
+		if user_id is None:
+			raise TypeError("user_id cannot be null.")
 
-	@property
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["user%2Did"] =  user_id
+
+		from .storage import StorageRequest
+		return StorageRequest(self.request_adapter, path_parameters)
+
 	def windows(self,
+		user_id: str,
 	) -> WindowsRequest:
+		if user_id is None:
+			raise TypeError("user_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["user%2Did"] =  user_id
+
 		from .windows import WindowsRequest
-		return WindowsRequest(self.request_adapter, self.path_parameters)
+		return WindowsRequest(self.request_adapter, path_parameters)
 

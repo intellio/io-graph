@@ -11,12 +11,13 @@ from typing import Union, Any, Optional
 from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:
+	from .get_source_images import GetSourceImagesRequest
 	from .count import CountRequest
 	from .by_cloud_pc_device_image_id import ByCloudPcDeviceImageIdRequest
 	from .....request_adapter import HttpxRequestAdapter
 from iograph_models.models.cloud_pc_device_image import CloudPcDeviceImage
-from iograph_models.models.cloud_pc_device_image_collection_response import CloudPcDeviceImageCollectionResponse
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.models.cloud_pc_device_image_collection_response import CloudPcDeviceImageCollectionResponse
 
 
 class DeviceImagesRequest(BaseRequestBuilder):
@@ -111,4 +112,10 @@ class DeviceImagesRequest(BaseRequestBuilder):
 	) -> CountRequest:
 		from .count import CountRequest
 		return CountRequest(self.request_adapter, self.path_parameters)
+
+	@property
+	def get_source_images(self,
+	) -> GetSourceImagesRequest:
+		from .get_source_images import GetSourceImagesRequest
+		return GetSourceImagesRequest(self.request_adapter, self.path_parameters)
 

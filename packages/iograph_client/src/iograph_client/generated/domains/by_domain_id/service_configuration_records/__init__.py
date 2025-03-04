@@ -14,9 +14,9 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_domain_dns_record_id import ByDomainDnsRecordIdRequest
 	from .....request_adapter import HttpxRequestAdapter
-from iograph_models.models.domain_dns_record_collection_response import DomainDnsRecordCollectionResponse
 from iograph_models.models.domain_dns_record import DomainDnsRecord
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.models.domain_dns_record_collection_response import DomainDnsRecordCollectionResponse
 
 
 class ServiceConfigurationRecordsRequest(BaseRequestBuilder):
@@ -109,9 +109,15 @@ class ServiceConfigurationRecordsRequest(BaseRequestBuilder):
 		from .by_domain_dns_record_id import ByDomainDnsRecordIdRequest
 		return ByDomainDnsRecordIdRequest(self.request_adapter, path_parameters)
 
-	@property
 	def count(self,
+		domain_id: str,
 	) -> CountRequest:
+		if domain_id is None:
+			raise TypeError("domain_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["domain%2Did"] =  domain_id
+
 		from .count import CountRequest
-		return CountRequest(self.request_adapter, self.path_parameters)
+		return CountRequest(self.request_adapter, path_parameters)
 

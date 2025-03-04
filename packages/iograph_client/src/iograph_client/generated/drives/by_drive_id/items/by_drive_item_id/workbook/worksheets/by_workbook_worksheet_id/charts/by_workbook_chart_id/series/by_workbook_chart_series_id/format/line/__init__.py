@@ -1,6 +1,7 @@
 # Auto-generated client
 
 from __future__ import annotations
+from kiota_abstractions.get_path_parameters import get_path_parameters
 from kiota_abstractions.method import Method
 from kiota_abstractions.base_request_builder import BaseRequestBuilder
 from kiota_abstractions.base_request_configuration import RequestConfiguration
@@ -108,9 +109,31 @@ class LineRequest(BaseRequestBuilder):
 			raise TypeError("raw_url cannot be None.")
 		return LineRequest(self.request_adapter, self.path_parameters)
 
-	@property
 	def clear(self,
+		drive_id: str,
+		driveItem_id: str,
+		workbookWorksheet_id: str,
+		workbookChart_id: str,
+		workbookChartSeries_id: str,
 	) -> ClearRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+		if workbookWorksheet_id is None:
+			raise TypeError("workbookWorksheet_id cannot be null.")
+		if workbookChart_id is None:
+			raise TypeError("workbookChart_id cannot be null.")
+		if workbookChartSeries_id is None:
+			raise TypeError("workbookChartSeries_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+		path_parameters["workbookWorksheet%2Did"] =  workbookWorksheet_id
+		path_parameters["workbookChart%2Did"] =  workbookChart_id
+		path_parameters["workbookChartSeries%2Did"] =  workbookChartSeries_id
+
 		from .clear import ClearRequest
-		return ClearRequest(self.request_adapter, self.path_parameters)
+		return ClearRequest(self.request_adapter, path_parameters)
 

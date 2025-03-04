@@ -1,6 +1,7 @@
 # Auto-generated client
 
 from __future__ import annotations
+from kiota_abstractions.get_path_parameters import get_path_parameters
 from kiota_abstractions.method import Method
 from kiota_abstractions.base_request_builder import BaseRequestBuilder
 from kiota_abstractions.base_request_configuration import RequestConfiguration
@@ -16,8 +17,8 @@ if TYPE_CHECKING:
 	from .publish import PublishRequest
 	from .pin import PinRequest
 	from .......request_adapter import HttpxRequestAdapter
-from iograph_models.models.education_module import EducationModule
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.models.education_module import EducationModule
 
 
 class ByEducationModuleIdRequest(BaseRequestBuilder):
@@ -115,33 +116,83 @@ class ByEducationModuleIdRequest(BaseRequestBuilder):
 			raise TypeError("raw_url cannot be None.")
 		return ByEducationModuleIdRequest(self.request_adapter, self.path_parameters)
 
-	@property
 	def pin(self,
+		educationClass_id: str,
+		educationModule_id: str,
 	) -> PinRequest:
+		if educationClass_id is None:
+			raise TypeError("educationClass_id cannot be null.")
+		if educationModule_id is None:
+			raise TypeError("educationModule_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["educationClass%2Did"] =  educationClass_id
+		path_parameters["educationModule%2Did"] =  educationModule_id
+
 		from .pin import PinRequest
-		return PinRequest(self.request_adapter, self.path_parameters)
+		return PinRequest(self.request_adapter, path_parameters)
 
-	@property
 	def publish(self,
+		educationClass_id: str,
+		educationModule_id: str,
 	) -> PublishRequest:
+		if educationClass_id is None:
+			raise TypeError("educationClass_id cannot be null.")
+		if educationModule_id is None:
+			raise TypeError("educationModule_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["educationClass%2Did"] =  educationClass_id
+		path_parameters["educationModule%2Did"] =  educationModule_id
+
 		from .publish import PublishRequest
-		return PublishRequest(self.request_adapter, self.path_parameters)
+		return PublishRequest(self.request_adapter, path_parameters)
 
-	@property
 	def set_up_resources_folder(self,
+		educationClass_id: str,
+		educationModule_id: str,
 	) -> SetUpResourcesFolderRequest:
+		if educationClass_id is None:
+			raise TypeError("educationClass_id cannot be null.")
+		if educationModule_id is None:
+			raise TypeError("educationModule_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["educationClass%2Did"] =  educationClass_id
+		path_parameters["educationModule%2Did"] =  educationModule_id
+
 		from .set_up_resources_folder import SetUpResourcesFolderRequest
-		return SetUpResourcesFolderRequest(self.request_adapter, self.path_parameters)
+		return SetUpResourcesFolderRequest(self.request_adapter, path_parameters)
 
-	@property
 	def unpin(self,
+		educationClass_id: str,
+		educationModule_id: str,
 	) -> UnpinRequest:
-		from .unpin import UnpinRequest
-		return UnpinRequest(self.request_adapter, self.path_parameters)
+		if educationClass_id is None:
+			raise TypeError("educationClass_id cannot be null.")
+		if educationModule_id is None:
+			raise TypeError("educationModule_id cannot be null.")
 
-	@property
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["educationClass%2Did"] =  educationClass_id
+		path_parameters["educationModule%2Did"] =  educationModule_id
+
+		from .unpin import UnpinRequest
+		return UnpinRequest(self.request_adapter, path_parameters)
+
 	def resources(self,
+		educationClass_id: str,
+		educationModule_id: str,
 	) -> ResourcesRequest:
+		if educationClass_id is None:
+			raise TypeError("educationClass_id cannot be null.")
+		if educationModule_id is None:
+			raise TypeError("educationModule_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["educationClass%2Did"] =  educationClass_id
+		path_parameters["educationModule%2Did"] =  educationModule_id
+
 		from .resources import ResourcesRequest
-		return ResourcesRequest(self.request_adapter, self.path_parameters)
+		return ResourcesRequest(self.request_adapter, path_parameters)
 

@@ -1,6 +1,7 @@
 # Auto-generated client
 
 from __future__ import annotations
+from kiota_abstractions.get_path_parameters import get_path_parameters
 from kiota_abstractions.method import Method
 from kiota_abstractions.base_request_builder import BaseRequestBuilder
 from kiota_abstractions.base_request_configuration import RequestConfiguration
@@ -112,21 +113,51 @@ class ByParticipantIdRequest(BaseRequestBuilder):
 			raise TypeError("raw_url cannot be None.")
 		return ByParticipantIdRequest(self.request_adapter, self.path_parameters)
 
-	@property
 	def mute(self,
+		call_id: str,
+		participant_id: str,
 	) -> MuteRequest:
+		if call_id is None:
+			raise TypeError("call_id cannot be null.")
+		if participant_id is None:
+			raise TypeError("participant_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["call%2Did"] =  call_id
+		path_parameters["participant%2Did"] =  participant_id
+
 		from .mute import MuteRequest
-		return MuteRequest(self.request_adapter, self.path_parameters)
+		return MuteRequest(self.request_adapter, path_parameters)
 
-	@property
 	def start_hold_music(self,
+		call_id: str,
+		participant_id: str,
 	) -> StartHoldMusicRequest:
-		from .start_hold_music import StartHoldMusicRequest
-		return StartHoldMusicRequest(self.request_adapter, self.path_parameters)
+		if call_id is None:
+			raise TypeError("call_id cannot be null.")
+		if participant_id is None:
+			raise TypeError("participant_id cannot be null.")
 
-	@property
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["call%2Did"] =  call_id
+		path_parameters["participant%2Did"] =  participant_id
+
+		from .start_hold_music import StartHoldMusicRequest
+		return StartHoldMusicRequest(self.request_adapter, path_parameters)
+
 	def stop_hold_music(self,
+		call_id: str,
+		participant_id: str,
 	) -> StopHoldMusicRequest:
+		if call_id is None:
+			raise TypeError("call_id cannot be null.")
+		if participant_id is None:
+			raise TypeError("participant_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["call%2Did"] =  call_id
+		path_parameters["participant%2Did"] =  participant_id
+
 		from .stop_hold_music import StopHoldMusicRequest
-		return StopHoldMusicRequest(self.request_adapter, self.path_parameters)
+		return StopHoldMusicRequest(self.request_adapter, path_parameters)
 

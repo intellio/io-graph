@@ -14,6 +14,7 @@ class Application(BaseModel):
 	appId: Optional[str] = Field(default=None,alias="appId",)
 	applicationTemplateId: Optional[str] = Field(default=None,alias="applicationTemplateId",)
 	appRoles: Optional[list[AppRole]] = Field(default=None,alias="appRoles",)
+	authenticationBehaviors: Optional[AuthenticationBehaviors] = Field(default=None,alias="authenticationBehaviors",)
 	certification: Optional[Certification] = Field(default=None,alias="certification",)
 	createdDateTime: Optional[datetime] = Field(default=None,alias="createdDateTime",)
 	defaultRedirectUri: Optional[str] = Field(default=None,alias="defaultRedirectUri",)
@@ -60,6 +61,7 @@ class Application(BaseModel):
 from .add_in import AddIn
 from .api_application import ApiApplication
 from .app_role import AppRole
+from .authentication_behaviors import AuthenticationBehaviors
 from .certification import Certification
 from .informational_url import InformationalUrl
 from .key_credential import KeyCredential

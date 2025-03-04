@@ -1,6 +1,7 @@
 # Auto-generated client
 
 from __future__ import annotations
+from kiota_abstractions.get_path_parameters import get_path_parameters
 from kiota_abstractions.method import Method
 from kiota_abstractions.base_request_builder import BaseRequestBuilder
 from kiota_abstractions.base_request_configuration import RequestConfiguration
@@ -108,9 +109,23 @@ class ByExternalActivityIdRequest(BaseRequestBuilder):
 			raise TypeError("raw_url cannot be None.")
 		return ByExternalActivityIdRequest(self.request_adapter, self.path_parameters)
 
-	@property
 	def performed_by(self,
+		externalConnection_id: str,
+		externalItem_id: str,
+		externalActivity_id: str,
 	) -> PerformedByRequest:
+		if externalConnection_id is None:
+			raise TypeError("externalConnection_id cannot be null.")
+		if externalItem_id is None:
+			raise TypeError("externalItem_id cannot be null.")
+		if externalActivity_id is None:
+			raise TypeError("externalActivity_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["externalConnection%2Did"] =  externalConnection_id
+		path_parameters["externalItem%2Did"] =  externalItem_id
+		path_parameters["externalActivity%2Did"] =  externalActivity_id
+
 		from .performed_by import PerformedByRequest
-		return PerformedByRequest(self.request_adapter, self.path_parameters)
+		return PerformedByRequest(self.request_adapter, path_parameters)
 

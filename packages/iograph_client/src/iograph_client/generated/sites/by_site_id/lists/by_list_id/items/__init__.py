@@ -11,10 +11,11 @@ from typing import Union, Any, Optional
 from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:
+	from .delta import DeltaRequest
 	from .by_list_item_id import ByListItemIdRequest
 	from .......request_adapter import HttpxRequestAdapter
-from iograph_models.models.list_item_collection_response import ListItemCollectionResponse
 from iograph_models.models.list_item import ListItem
+from iograph_models.models.list_item_collection_response import ListItemCollectionResponse
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
 
 
@@ -112,4 +113,20 @@ class ItemsRequest(BaseRequestBuilder):
 
 		from .by_list_item_id import ByListItemIdRequest
 		return ByListItemIdRequest(self.request_adapter, path_parameters)
+
+	def delta(self,
+		site_id: str,
+		list_id: str,
+	) -> DeltaRequest:
+		if site_id is None:
+			raise TypeError("site_id cannot be null.")
+		if list_id is None:
+			raise TypeError("list_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["site%2Did"] =  site_id
+		path_parameters["list%2Did"] =  list_id
+
+		from .delta import DeltaRequest
+		return DeltaRequest(self.request_adapter, path_parameters)
 

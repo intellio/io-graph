@@ -1,6 +1,7 @@
 # Auto-generated client
 
 from __future__ import annotations
+from kiota_abstractions.get_path_parameters import get_path_parameters
 from kiota_abstractions.method import Method
 from kiota_abstractions.base_request_builder import BaseRequestBuilder
 from kiota_abstractions.base_request_configuration import RequestConfiguration
@@ -112,15 +113,27 @@ class ByCommunityIdRequest(BaseRequestBuilder):
 			raise TypeError("raw_url cannot be None.")
 		return ByCommunityIdRequest(self.request_adapter, self.path_parameters)
 
-	@property
 	def group(self,
+		community_id: str,
 	) -> GroupRequest:
-		from .group import GroupRequest
-		return GroupRequest(self.request_adapter, self.path_parameters)
+		if community_id is None:
+			raise TypeError("community_id cannot be null.")
 
-	@property
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["community%2Did"] =  community_id
+
+		from .group import GroupRequest
+		return GroupRequest(self.request_adapter, path_parameters)
+
 	def owners(self,
+		community_id: str,
 	) -> OwnersRequest:
+		if community_id is None:
+			raise TypeError("community_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["community%2Did"] =  community_id
+
 		from .owners import OwnersRequest
-		return OwnersRequest(self.request_adapter, self.path_parameters)
+		return OwnersRequest(self.request_adapter, path_parameters)
 

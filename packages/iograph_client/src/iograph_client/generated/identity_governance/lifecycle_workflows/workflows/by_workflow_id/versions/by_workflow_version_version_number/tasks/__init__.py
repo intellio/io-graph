@@ -14,9 +14,9 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_task_id import ByTaskIdRequest
 	from .........request_adapter import HttpxRequestAdapter
-from iograph_models.models.identity_governance_task import IdentityGovernanceTask
 from iograph_models.models.identity_governance_task_collection_response import IdentityGovernanceTaskCollectionResponse
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.models.identity_governance_task import IdentityGovernanceTask
 
 
 class TasksRequest(BaseRequestBuilder):
@@ -113,9 +113,19 @@ class TasksRequest(BaseRequestBuilder):
 		from .by_task_id import ByTaskIdRequest
 		return ByTaskIdRequest(self.request_adapter, path_parameters)
 
-	@property
 	def count(self,
+		workflow_id: str,
+		workflowVersion_versionNumber: int,
 	) -> CountRequest:
+		if workflow_id is None:
+			raise TypeError("workflow_id cannot be null.")
+		if workflowVersion_versionNumber is None:
+			raise TypeError("workflowVersion_versionNumber cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["workflow%2Did"] =  workflow_id
+		path_parameters["workflowVersion%2DversionNumber"] =  workflowVersion_versionNumber
+
 		from .count import CountRequest
-		return CountRequest(self.request_adapter, self.path_parameters)
+		return CountRequest(self.request_adapter, path_parameters)
 

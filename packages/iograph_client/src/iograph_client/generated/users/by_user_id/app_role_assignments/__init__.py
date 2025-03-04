@@ -15,8 +15,8 @@ if TYPE_CHECKING:
 	from .by_app_role_assignment_id import ByAppRoleAssignmentIdRequest
 	from .....request_adapter import HttpxRequestAdapter
 from iograph_models.models.app_role_assignment_collection_response import AppRoleAssignmentCollectionResponse
-from iograph_models.models.app_role_assignment import AppRoleAssignment
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.models.app_role_assignment import AppRoleAssignment
 
 
 class AppRoleAssignmentsRequest(BaseRequestBuilder):
@@ -111,9 +111,15 @@ class AppRoleAssignmentsRequest(BaseRequestBuilder):
 		from .by_app_role_assignment_id import ByAppRoleAssignmentIdRequest
 		return ByAppRoleAssignmentIdRequest(self.request_adapter, path_parameters)
 
-	@property
 	def count(self,
+		user_id: str,
 	) -> CountRequest:
+		if user_id is None:
+			raise TypeError("user_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["user%2Did"] =  user_id
+
 		from .count import CountRequest
-		return CountRequest(self.request_adapter, self.path_parameters)
+		return CountRequest(self.request_adapter, path_parameters)
 

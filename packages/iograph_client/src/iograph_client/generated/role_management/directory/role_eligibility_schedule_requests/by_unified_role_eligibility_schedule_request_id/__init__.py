@@ -1,6 +1,7 @@
 # Auto-generated client
 
 from __future__ import annotations
+from kiota_abstractions.get_path_parameters import get_path_parameters
 from kiota_abstractions.method import Method
 from kiota_abstractions.base_request_builder import BaseRequestBuilder
 from kiota_abstractions.base_request_configuration import RequestConfiguration
@@ -114,39 +115,75 @@ class ByUnifiedRoleEligibilityScheduleRequestIdRequest(BaseRequestBuilder):
 			raise TypeError("raw_url cannot be None.")
 		return ByUnifiedRoleEligibilityScheduleRequestIdRequest(self.request_adapter, self.path_parameters)
 
-	@property
 	def app_scope(self,
+		unifiedRoleEligibilityScheduleRequest_id: str,
 	) -> AppScopeRequest:
+		if unifiedRoleEligibilityScheduleRequest_id is None:
+			raise TypeError("unifiedRoleEligibilityScheduleRequest_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["unifiedRoleEligibilityScheduleRequest%2Did"] =  unifiedRoleEligibilityScheduleRequest_id
+
 		from .app_scope import AppScopeRequest
-		return AppScopeRequest(self.request_adapter, self.path_parameters)
+		return AppScopeRequest(self.request_adapter, path_parameters)
 
-	@property
 	def directory_scope(self,
+		unifiedRoleEligibilityScheduleRequest_id: str,
 	) -> DirectoryScopeRequest:
+		if unifiedRoleEligibilityScheduleRequest_id is None:
+			raise TypeError("unifiedRoleEligibilityScheduleRequest_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["unifiedRoleEligibilityScheduleRequest%2Did"] =  unifiedRoleEligibilityScheduleRequest_id
+
 		from .directory_scope import DirectoryScopeRequest
-		return DirectoryScopeRequest(self.request_adapter, self.path_parameters)
+		return DirectoryScopeRequest(self.request_adapter, path_parameters)
 
-	@property
 	def cancel(self,
+		unifiedRoleEligibilityScheduleRequest_id: str,
 	) -> CancelRequest:
+		if unifiedRoleEligibilityScheduleRequest_id is None:
+			raise TypeError("unifiedRoleEligibilityScheduleRequest_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["unifiedRoleEligibilityScheduleRequest%2Did"] =  unifiedRoleEligibilityScheduleRequest_id
+
 		from .cancel import CancelRequest
-		return CancelRequest(self.request_adapter, self.path_parameters)
+		return CancelRequest(self.request_adapter, path_parameters)
 
-	@property
 	def principal(self,
+		unifiedRoleEligibilityScheduleRequest_id: str,
 	) -> PrincipalRequest:
+		if unifiedRoleEligibilityScheduleRequest_id is None:
+			raise TypeError("unifiedRoleEligibilityScheduleRequest_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["unifiedRoleEligibilityScheduleRequest%2Did"] =  unifiedRoleEligibilityScheduleRequest_id
+
 		from .principal import PrincipalRequest
-		return PrincipalRequest(self.request_adapter, self.path_parameters)
+		return PrincipalRequest(self.request_adapter, path_parameters)
 
-	@property
 	def role_definition(self,
+		unifiedRoleEligibilityScheduleRequest_id: str,
 	) -> RoleDefinitionRequest:
-		from .role_definition import RoleDefinitionRequest
-		return RoleDefinitionRequest(self.request_adapter, self.path_parameters)
+		if unifiedRoleEligibilityScheduleRequest_id is None:
+			raise TypeError("unifiedRoleEligibilityScheduleRequest_id cannot be null.")
 
-	@property
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["unifiedRoleEligibilityScheduleRequest%2Did"] =  unifiedRoleEligibilityScheduleRequest_id
+
+		from .role_definition import RoleDefinitionRequest
+		return RoleDefinitionRequest(self.request_adapter, path_parameters)
+
 	def target_schedule(self,
+		unifiedRoleEligibilityScheduleRequest_id: str,
 	) -> TargetScheduleRequest:
+		if unifiedRoleEligibilityScheduleRequest_id is None:
+			raise TypeError("unifiedRoleEligibilityScheduleRequest_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["unifiedRoleEligibilityScheduleRequest%2Did"] =  unifiedRoleEligibilityScheduleRequest_id
+
 		from .target_schedule import TargetScheduleRequest
-		return TargetScheduleRequest(self.request_adapter, self.path_parameters)
+		return TargetScheduleRequest(self.request_adapter, path_parameters)
 

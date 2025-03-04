@@ -109,9 +109,15 @@ class RulesRequest(BaseRequestBuilder):
 		from .by_unified_role_management_policy_rule_id import ByUnifiedRoleManagementPolicyRuleIdRequest
 		return ByUnifiedRoleManagementPolicyRuleIdRequest(self.request_adapter, path_parameters)
 
-	@property
 	def count(self,
+		unifiedRoleManagementPolicy_id: str,
 	) -> CountRequest:
+		if unifiedRoleManagementPolicy_id is None:
+			raise TypeError("unifiedRoleManagementPolicy_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["unifiedRoleManagementPolicy%2Did"] =  unifiedRoleManagementPolicy_id
+
 		from .count import CountRequest
-		return CountRequest(self.request_adapter, self.path_parameters)
+		return CountRequest(self.request_adapter, path_parameters)
 

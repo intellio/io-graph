@@ -15,8 +15,8 @@ if TYPE_CHECKING:
 	from .by_alert_id import ByAlertIdRequest
 	from ....request_adapter import HttpxRequestAdapter
 from iograph_models.models.security_alert_collection_response import SecurityAlertCollectionResponse
-from iograph_models.models.security_alert import SecurityAlert
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.models.security_alert import SecurityAlert
 
 
 class Alerts_v2Request(BaseRequestBuilder):

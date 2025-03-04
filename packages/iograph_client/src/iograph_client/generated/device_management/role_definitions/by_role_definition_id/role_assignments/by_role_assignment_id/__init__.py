@@ -1,6 +1,7 @@
 # Auto-generated client
 
 from __future__ import annotations
+from kiota_abstractions.get_path_parameters import get_path_parameters
 from kiota_abstractions.method import Method
 from kiota_abstractions.base_request_builder import BaseRequestBuilder
 from kiota_abstractions.base_request_configuration import RequestConfiguration
@@ -111,9 +112,19 @@ class ByRoleAssignmentIdRequest(BaseRequestBuilder):
 			raise TypeError("raw_url cannot be None.")
 		return ByRoleAssignmentIdRequest(self.request_adapter, self.path_parameters)
 
-	@property
 	def role_definition(self,
+		roleDefinition_id: str,
+		roleAssignment_id: str,
 	) -> RoleDefinitionRequest:
+		if roleDefinition_id is None:
+			raise TypeError("roleDefinition_id cannot be null.")
+		if roleAssignment_id is None:
+			raise TypeError("roleAssignment_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["roleDefinition%2Did"] =  roleDefinition_id
+		path_parameters["roleAssignment%2Did"] =  roleAssignment_id
+
 		from .role_definition import RoleDefinitionRequest
-		return RoleDefinitionRequest(self.request_adapter, self.path_parameters)
+		return RoleDefinitionRequest(self.request_adapter, path_parameters)
 

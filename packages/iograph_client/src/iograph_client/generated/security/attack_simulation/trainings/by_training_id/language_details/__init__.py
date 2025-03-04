@@ -108,9 +108,15 @@ class LanguageDetailsRequest(BaseRequestBuilder):
 		from .by_training_language_detail_id import ByTrainingLanguageDetailIdRequest
 		return ByTrainingLanguageDetailIdRequest(self.request_adapter, path_parameters)
 
-	@property
 	def count(self,
+		training_id: str,
 	) -> CountRequest:
+		if training_id is None:
+			raise TypeError("training_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["training%2Did"] =  training_id
+
 		from .count import CountRequest
-		return CountRequest(self.request_adapter, self.path_parameters)
+		return CountRequest(self.request_adapter, path_parameters)
 

@@ -88,45 +88,87 @@ class MembersWithLicenseErrorsRequest(BaseRequestBuilder):
 		from .by_directory_object_id import ByDirectoryObjectIdRequest
 		return ByDirectoryObjectIdRequest(self.request_adapter, path_parameters)
 
-	@property
 	def count(self,
+		group_id: str,
 	) -> CountRequest:
+		if group_id is None:
+			raise TypeError("group_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["group%2Did"] =  group_id
+
 		from .count import CountRequest
-		return CountRequest(self.request_adapter, self.path_parameters)
+		return CountRequest(self.request_adapter, path_parameters)
 
-	@property
 	def graph_application(self,
+		group_id: str,
 	) -> GraphApplicationRequest:
+		if group_id is None:
+			raise TypeError("group_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["group%2Did"] =  group_id
+
 		from .graph_application import GraphApplicationRequest
-		return GraphApplicationRequest(self.request_adapter, self.path_parameters)
+		return GraphApplicationRequest(self.request_adapter, path_parameters)
 
-	@property
 	def graph_device(self,
+		group_id: str,
 	) -> GraphDeviceRequest:
+		if group_id is None:
+			raise TypeError("group_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["group%2Did"] =  group_id
+
 		from .graph_device import GraphDeviceRequest
-		return GraphDeviceRequest(self.request_adapter, self.path_parameters)
+		return GraphDeviceRequest(self.request_adapter, path_parameters)
 
-	@property
 	def graph_group(self,
+		group_id: str,
 	) -> GraphGroupRequest:
+		if group_id is None:
+			raise TypeError("group_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["group%2Did"] =  group_id
+
 		from .graph_group import GraphGroupRequest
-		return GraphGroupRequest(self.request_adapter, self.path_parameters)
+		return GraphGroupRequest(self.request_adapter, path_parameters)
 
-	@property
 	def graph_org_contact(self,
+		group_id: str,
 	) -> GraphOrgContactRequest:
+		if group_id is None:
+			raise TypeError("group_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["group%2Did"] =  group_id
+
 		from .graph_org_contact import GraphOrgContactRequest
-		return GraphOrgContactRequest(self.request_adapter, self.path_parameters)
+		return GraphOrgContactRequest(self.request_adapter, path_parameters)
 
-	@property
 	def graph_service_principal(self,
+		group_id: str,
 	) -> GraphServicePrincipalRequest:
-		from .graph_service_principal import GraphServicePrincipalRequest
-		return GraphServicePrincipalRequest(self.request_adapter, self.path_parameters)
+		if group_id is None:
+			raise TypeError("group_id cannot be null.")
 
-	@property
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["group%2Did"] =  group_id
+
+		from .graph_service_principal import GraphServicePrincipalRequest
+		return GraphServicePrincipalRequest(self.request_adapter, path_parameters)
+
 	def graph_user(self,
+		group_id: str,
 	) -> GraphUserRequest:
+		if group_id is None:
+			raise TypeError("group_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["group%2Did"] =  group_id
+
 		from .graph_user import GraphUserRequest
-		return GraphUserRequest(self.request_adapter, self.path_parameters)
+		return GraphUserRequest(self.request_adapter, path_parameters)
 

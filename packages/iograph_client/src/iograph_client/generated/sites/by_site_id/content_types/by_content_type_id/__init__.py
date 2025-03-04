@@ -1,6 +1,7 @@
 # Auto-generated client
 
 from __future__ import annotations
+from kiota_abstractions.get_path_parameters import get_path_parameters
 from kiota_abstractions.method import Method
 from kiota_abstractions.base_request_builder import BaseRequestBuilder
 from kiota_abstractions.base_request_configuration import RequestConfiguration
@@ -12,6 +13,7 @@ from typing import TYPE_CHECKING
 if TYPE_CHECKING:
 	from .unpublish import UnpublishRequest
 	from .publish import PublishRequest
+	from .is_published import IsPublishedRequest
 	from .copy_to_default_content_location import CopyToDefaultContentLocationRequest
 	from .associate_with_hub_sites import AssociateWithHubSitesRequest
 	from .columns import ColumnsRequest
@@ -119,57 +121,163 @@ class ByContentTypeIdRequest(BaseRequestBuilder):
 			raise TypeError("raw_url cannot be None.")
 		return ByContentTypeIdRequest(self.request_adapter, self.path_parameters)
 
-	@property
 	def base(self,
+		site_id: str,
+		contentType_id: str,
 	) -> BaseRequest:
+		if site_id is None:
+			raise TypeError("site_id cannot be null.")
+		if contentType_id is None:
+			raise TypeError("contentType_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["site%2Did"] =  site_id
+		path_parameters["contentType%2Did"] =  contentType_id
+
 		from .base import BaseRequest
-		return BaseRequest(self.request_adapter, self.path_parameters)
+		return BaseRequest(self.request_adapter, path_parameters)
 
-	@property
 	def base_types(self,
+		site_id: str,
+		contentType_id: str,
 	) -> BaseTypesRequest:
+		if site_id is None:
+			raise TypeError("site_id cannot be null.")
+		if contentType_id is None:
+			raise TypeError("contentType_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["site%2Did"] =  site_id
+		path_parameters["contentType%2Did"] =  contentType_id
+
 		from .base_types import BaseTypesRequest
-		return BaseTypesRequest(self.request_adapter, self.path_parameters)
+		return BaseTypesRequest(self.request_adapter, path_parameters)
 
-	@property
 	def column_links(self,
+		site_id: str,
+		contentType_id: str,
 	) -> ColumnLinksRequest:
+		if site_id is None:
+			raise TypeError("site_id cannot be null.")
+		if contentType_id is None:
+			raise TypeError("contentType_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["site%2Did"] =  site_id
+		path_parameters["contentType%2Did"] =  contentType_id
+
 		from .column_links import ColumnLinksRequest
-		return ColumnLinksRequest(self.request_adapter, self.path_parameters)
+		return ColumnLinksRequest(self.request_adapter, path_parameters)
 
-	@property
 	def column_positions(self,
+		site_id: str,
+		contentType_id: str,
 	) -> ColumnPositionsRequest:
+		if site_id is None:
+			raise TypeError("site_id cannot be null.")
+		if contentType_id is None:
+			raise TypeError("contentType_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["site%2Did"] =  site_id
+		path_parameters["contentType%2Did"] =  contentType_id
+
 		from .column_positions import ColumnPositionsRequest
-		return ColumnPositionsRequest(self.request_adapter, self.path_parameters)
+		return ColumnPositionsRequest(self.request_adapter, path_parameters)
 
-	@property
 	def columns(self,
+		site_id: str,
+		contentType_id: str,
 	) -> ColumnsRequest:
+		if site_id is None:
+			raise TypeError("site_id cannot be null.")
+		if contentType_id is None:
+			raise TypeError("contentType_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["site%2Did"] =  site_id
+		path_parameters["contentType%2Did"] =  contentType_id
+
 		from .columns import ColumnsRequest
-		return ColumnsRequest(self.request_adapter, self.path_parameters)
+		return ColumnsRequest(self.request_adapter, path_parameters)
 
-	@property
 	def associate_with_hub_sites(self,
+		site_id: str,
+		contentType_id: str,
 	) -> AssociateWithHubSitesRequest:
+		if site_id is None:
+			raise TypeError("site_id cannot be null.")
+		if contentType_id is None:
+			raise TypeError("contentType_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["site%2Did"] =  site_id
+		path_parameters["contentType%2Did"] =  contentType_id
+
 		from .associate_with_hub_sites import AssociateWithHubSitesRequest
-		return AssociateWithHubSitesRequest(self.request_adapter, self.path_parameters)
+		return AssociateWithHubSitesRequest(self.request_adapter, path_parameters)
 
-	@property
 	def copy_to_default_content_location(self,
+		site_id: str,
+		contentType_id: str,
 	) -> CopyToDefaultContentLocationRequest:
+		if site_id is None:
+			raise TypeError("site_id cannot be null.")
+		if contentType_id is None:
+			raise TypeError("contentType_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["site%2Did"] =  site_id
+		path_parameters["contentType%2Did"] =  contentType_id
+
 		from .copy_to_default_content_location import CopyToDefaultContentLocationRequest
-		return CopyToDefaultContentLocationRequest(self.request_adapter, self.path_parameters)
+		return CopyToDefaultContentLocationRequest(self.request_adapter, path_parameters)
 
-	@property
+	def is_published(self,
+		site_id: str,
+		contentType_id: str,
+	) -> IsPublishedRequest:
+		if site_id is None:
+			raise TypeError("site_id cannot be null.")
+		if contentType_id is None:
+			raise TypeError("contentType_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["site%2Did"] =  site_id
+		path_parameters["contentType%2Did"] =  contentType_id
+
+		from .is_published import IsPublishedRequest
+		return IsPublishedRequest(self.request_adapter, path_parameters)
+
 	def publish(self,
+		site_id: str,
+		contentType_id: str,
 	) -> PublishRequest:
-		from .publish import PublishRequest
-		return PublishRequest(self.request_adapter, self.path_parameters)
+		if site_id is None:
+			raise TypeError("site_id cannot be null.")
+		if contentType_id is None:
+			raise TypeError("contentType_id cannot be null.")
 
-	@property
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["site%2Did"] =  site_id
+		path_parameters["contentType%2Did"] =  contentType_id
+
+		from .publish import PublishRequest
+		return PublishRequest(self.request_adapter, path_parameters)
+
 	def unpublish(self,
+		site_id: str,
+		contentType_id: str,
 	) -> UnpublishRequest:
+		if site_id is None:
+			raise TypeError("site_id cannot be null.")
+		if contentType_id is None:
+			raise TypeError("contentType_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["site%2Did"] =  site_id
+		path_parameters["contentType%2Did"] =  contentType_id
+
 		from .unpublish import UnpublishRequest
-		return UnpublishRequest(self.request_adapter, self.path_parameters)
+		return UnpublishRequest(self.request_adapter, path_parameters)
 

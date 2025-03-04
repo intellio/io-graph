@@ -13,8 +13,8 @@ if TYPE_CHECKING:
 	from .multi_tenant_organization_partner_configuration import MultiTenantOrganizationPartnerConfigurationRequest
 	from .multi_tenant_organization_identity_synchronization import MultiTenantOrganizationIdentitySynchronizationRequest
 	from .....request_adapter import HttpxRequestAdapter
-from iograph_models.models.policy_template import PolicyTemplate
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.models.policy_template import PolicyTemplate
 
 
 class TemplatesRequest(BaseRequestBuilder):

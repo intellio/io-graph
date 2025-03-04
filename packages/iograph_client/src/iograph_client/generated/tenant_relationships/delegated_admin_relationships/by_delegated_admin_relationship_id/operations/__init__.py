@@ -14,8 +14,8 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_delegated_admin_relationship_operation_id import ByDelegatedAdminRelationshipOperationIdRequest
 	from ......request_adapter import HttpxRequestAdapter
-from iograph_models.models.delegated_admin_relationship_operation_collection_response import DelegatedAdminRelationshipOperationCollectionResponse
 from iograph_models.models.delegated_admin_relationship_operation import DelegatedAdminRelationshipOperation
+from iograph_models.models.delegated_admin_relationship_operation_collection_response import DelegatedAdminRelationshipOperationCollectionResponse
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
 
 
@@ -109,9 +109,15 @@ class OperationsRequest(BaseRequestBuilder):
 		from .by_delegated_admin_relationship_operation_id import ByDelegatedAdminRelationshipOperationIdRequest
 		return ByDelegatedAdminRelationshipOperationIdRequest(self.request_adapter, path_parameters)
 
-	@property
 	def count(self,
+		delegatedAdminRelationship_id: str,
 	) -> CountRequest:
+		if delegatedAdminRelationship_id is None:
+			raise TypeError("delegatedAdminRelationship_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["delegatedAdminRelationship%2Did"] =  delegatedAdminRelationship_id
+
 		from .count import CountRequest
-		return CountRequest(self.request_adapter, self.path_parameters)
+		return CountRequest(self.request_adapter, path_parameters)
 

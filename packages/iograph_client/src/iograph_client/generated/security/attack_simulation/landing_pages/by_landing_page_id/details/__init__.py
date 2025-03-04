@@ -14,9 +14,9 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_landing_page_detail_id import ByLandingPageDetailIdRequest
 	from .......request_adapter import HttpxRequestAdapter
-from iograph_models.models.landing_page_detail import LandingPageDetail
 from iograph_models.models.landing_page_detail_collection_response import LandingPageDetailCollectionResponse
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.models.landing_page_detail import LandingPageDetail
 
 
 class DetailsRequest(BaseRequestBuilder):
@@ -108,9 +108,15 @@ class DetailsRequest(BaseRequestBuilder):
 		from .by_landing_page_detail_id import ByLandingPageDetailIdRequest
 		return ByLandingPageDetailIdRequest(self.request_adapter, path_parameters)
 
-	@property
 	def count(self,
+		landingPage_id: str,
 	) -> CountRequest:
+		if landingPage_id is None:
+			raise TypeError("landingPage_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["landingPage%2Did"] =  landingPage_id
+
 		from .count import CountRequest
-		return CountRequest(self.request_adapter, self.path_parameters)
+		return CountRequest(self.request_adapter, path_parameters)
 

@@ -1,6 +1,7 @@
 # Auto-generated client
 
 from __future__ import annotations
+from kiota_abstractions.get_path_parameters import get_path_parameters
 from kiota_abstractions.method import Method
 from kiota_abstractions.base_request_builder import BaseRequestBuilder
 from kiota_abstractions.base_request_configuration import RequestConfiguration
@@ -132,147 +133,291 @@ class ByManagedDeviceIdRequest(BaseRequestBuilder):
 			raise TypeError("raw_url cannot be None.")
 		return ByManagedDeviceIdRequest(self.request_adapter, self.path_parameters)
 
-	@property
 	def device_category(self,
+		managedDevice_id: str,
 	) -> DeviceCategoryRequest:
+		if managedDevice_id is None:
+			raise TypeError("managedDevice_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["managedDevice%2Did"] =  managedDevice_id
+
 		from .device_category import DeviceCategoryRequest
-		return DeviceCategoryRequest(self.request_adapter, self.path_parameters)
+		return DeviceCategoryRequest(self.request_adapter, path_parameters)
 
-	@property
 	def device_compliance_policy_states(self,
+		managedDevice_id: str,
 	) -> DeviceCompliancePolicyStatesRequest:
+		if managedDevice_id is None:
+			raise TypeError("managedDevice_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["managedDevice%2Did"] =  managedDevice_id
+
 		from .device_compliance_policy_states import DeviceCompliancePolicyStatesRequest
-		return DeviceCompliancePolicyStatesRequest(self.request_adapter, self.path_parameters)
+		return DeviceCompliancePolicyStatesRequest(self.request_adapter, path_parameters)
 
-	@property
 	def device_configuration_states(self,
+		managedDevice_id: str,
 	) -> DeviceConfigurationStatesRequest:
+		if managedDevice_id is None:
+			raise TypeError("managedDevice_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["managedDevice%2Did"] =  managedDevice_id
+
 		from .device_configuration_states import DeviceConfigurationStatesRequest
-		return DeviceConfigurationStatesRequest(self.request_adapter, self.path_parameters)
+		return DeviceConfigurationStatesRequest(self.request_adapter, path_parameters)
 
-	@property
 	def log_collection_requests(self,
+		managedDevice_id: str,
 	) -> LogCollectionRequestsRequest:
+		if managedDevice_id is None:
+			raise TypeError("managedDevice_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["managedDevice%2Did"] =  managedDevice_id
+
 		from .log_collection_requests import LogCollectionRequestsRequest
-		return LogCollectionRequestsRequest(self.request_adapter, self.path_parameters)
+		return LogCollectionRequestsRequest(self.request_adapter, path_parameters)
 
-	@property
 	def bypass_activation_lock(self,
+		managedDevice_id: str,
 	) -> BypassActivationLockRequest:
+		if managedDevice_id is None:
+			raise TypeError("managedDevice_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["managedDevice%2Did"] =  managedDevice_id
+
 		from .bypass_activation_lock import BypassActivationLockRequest
-		return BypassActivationLockRequest(self.request_adapter, self.path_parameters)
+		return BypassActivationLockRequest(self.request_adapter, path_parameters)
 
-	@property
 	def clean_windows_device(self,
+		managedDevice_id: str,
 	) -> CleanWindowsDeviceRequest:
+		if managedDevice_id is None:
+			raise TypeError("managedDevice_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["managedDevice%2Did"] =  managedDevice_id
+
 		from .clean_windows_device import CleanWindowsDeviceRequest
-		return CleanWindowsDeviceRequest(self.request_adapter, self.path_parameters)
+		return CleanWindowsDeviceRequest(self.request_adapter, path_parameters)
 
-	@property
 	def delete_user_from_shared_apple_device(self,
+		managedDevice_id: str,
 	) -> DeleteUserFromSharedAppleDeviceRequest:
+		if managedDevice_id is None:
+			raise TypeError("managedDevice_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["managedDevice%2Did"] =  managedDevice_id
+
 		from .delete_user_from_shared_apple_device import DeleteUserFromSharedAppleDeviceRequest
-		return DeleteUserFromSharedAppleDeviceRequest(self.request_adapter, self.path_parameters)
+		return DeleteUserFromSharedAppleDeviceRequest(self.request_adapter, path_parameters)
 
-	@property
 	def disable_lost_mode(self,
+		managedDevice_id: str,
 	) -> DisableLostModeRequest:
+		if managedDevice_id is None:
+			raise TypeError("managedDevice_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["managedDevice%2Did"] =  managedDevice_id
+
 		from .disable_lost_mode import DisableLostModeRequest
-		return DisableLostModeRequest(self.request_adapter, self.path_parameters)
+		return DisableLostModeRequest(self.request_adapter, path_parameters)
 
-	@property
 	def locate_device(self,
+		managedDevice_id: str,
 	) -> LocateDeviceRequest:
+		if managedDevice_id is None:
+			raise TypeError("managedDevice_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["managedDevice%2Did"] =  managedDevice_id
+
 		from .locate_device import LocateDeviceRequest
-		return LocateDeviceRequest(self.request_adapter, self.path_parameters)
+		return LocateDeviceRequest(self.request_adapter, path_parameters)
 
-	@property
 	def logout_shared_apple_device_active_user(self,
+		managedDevice_id: str,
 	) -> LogoutSharedAppleDeviceActiveUserRequest:
+		if managedDevice_id is None:
+			raise TypeError("managedDevice_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["managedDevice%2Did"] =  managedDevice_id
+
 		from .logout_shared_apple_device_active_user import LogoutSharedAppleDeviceActiveUserRequest
-		return LogoutSharedAppleDeviceActiveUserRequest(self.request_adapter, self.path_parameters)
+		return LogoutSharedAppleDeviceActiveUserRequest(self.request_adapter, path_parameters)
 
-	@property
 	def reboot_now(self,
+		managedDevice_id: str,
 	) -> RebootNowRequest:
+		if managedDevice_id is None:
+			raise TypeError("managedDevice_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["managedDevice%2Did"] =  managedDevice_id
+
 		from .reboot_now import RebootNowRequest
-		return RebootNowRequest(self.request_adapter, self.path_parameters)
+		return RebootNowRequest(self.request_adapter, path_parameters)
 
-	@property
 	def recover_passcode(self,
+		managedDevice_id: str,
 	) -> RecoverPasscodeRequest:
+		if managedDevice_id is None:
+			raise TypeError("managedDevice_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["managedDevice%2Did"] =  managedDevice_id
+
 		from .recover_passcode import RecoverPasscodeRequest
-		return RecoverPasscodeRequest(self.request_adapter, self.path_parameters)
+		return RecoverPasscodeRequest(self.request_adapter, path_parameters)
 
-	@property
 	def remote_lock(self,
+		managedDevice_id: str,
 	) -> RemoteLockRequest:
+		if managedDevice_id is None:
+			raise TypeError("managedDevice_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["managedDevice%2Did"] =  managedDevice_id
+
 		from .remote_lock import RemoteLockRequest
-		return RemoteLockRequest(self.request_adapter, self.path_parameters)
+		return RemoteLockRequest(self.request_adapter, path_parameters)
 
-	@property
 	def request_remote_assistance(self,
+		managedDevice_id: str,
 	) -> RequestRemoteAssistanceRequest:
+		if managedDevice_id is None:
+			raise TypeError("managedDevice_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["managedDevice%2Did"] =  managedDevice_id
+
 		from .request_remote_assistance import RequestRemoteAssistanceRequest
-		return RequestRemoteAssistanceRequest(self.request_adapter, self.path_parameters)
+		return RequestRemoteAssistanceRequest(self.request_adapter, path_parameters)
 
-	@property
 	def reset_passcode(self,
+		managedDevice_id: str,
 	) -> ResetPasscodeRequest:
+		if managedDevice_id is None:
+			raise TypeError("managedDevice_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["managedDevice%2Did"] =  managedDevice_id
+
 		from .reset_passcode import ResetPasscodeRequest
-		return ResetPasscodeRequest(self.request_adapter, self.path_parameters)
+		return ResetPasscodeRequest(self.request_adapter, path_parameters)
 
-	@property
 	def retire(self,
+		managedDevice_id: str,
 	) -> RetireRequest:
+		if managedDevice_id is None:
+			raise TypeError("managedDevice_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["managedDevice%2Did"] =  managedDevice_id
+
 		from .retire import RetireRequest
-		return RetireRequest(self.request_adapter, self.path_parameters)
+		return RetireRequest(self.request_adapter, path_parameters)
 
-	@property
 	def shut_down(self,
+		managedDevice_id: str,
 	) -> ShutDownRequest:
+		if managedDevice_id is None:
+			raise TypeError("managedDevice_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["managedDevice%2Did"] =  managedDevice_id
+
 		from .shut_down import ShutDownRequest
-		return ShutDownRequest(self.request_adapter, self.path_parameters)
+		return ShutDownRequest(self.request_adapter, path_parameters)
 
-	@property
 	def sync_device(self,
+		managedDevice_id: str,
 	) -> SyncDeviceRequest:
+		if managedDevice_id is None:
+			raise TypeError("managedDevice_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["managedDevice%2Did"] =  managedDevice_id
+
 		from .sync_device import SyncDeviceRequest
-		return SyncDeviceRequest(self.request_adapter, self.path_parameters)
+		return SyncDeviceRequest(self.request_adapter, path_parameters)
 
-	@property
 	def update_windows_device_account(self,
+		managedDevice_id: str,
 	) -> UpdateWindowsDeviceAccountRequest:
+		if managedDevice_id is None:
+			raise TypeError("managedDevice_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["managedDevice%2Did"] =  managedDevice_id
+
 		from .update_windows_device_account import UpdateWindowsDeviceAccountRequest
-		return UpdateWindowsDeviceAccountRequest(self.request_adapter, self.path_parameters)
+		return UpdateWindowsDeviceAccountRequest(self.request_adapter, path_parameters)
 
-	@property
 	def windows_defender_scan(self,
+		managedDevice_id: str,
 	) -> WindowsDefenderScanRequest:
+		if managedDevice_id is None:
+			raise TypeError("managedDevice_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["managedDevice%2Did"] =  managedDevice_id
+
 		from .windows_defender_scan import WindowsDefenderScanRequest
-		return WindowsDefenderScanRequest(self.request_adapter, self.path_parameters)
+		return WindowsDefenderScanRequest(self.request_adapter, path_parameters)
 
-	@property
 	def windows_defender_update_signatures(self,
+		managedDevice_id: str,
 	) -> WindowsDefenderUpdateSignaturesRequest:
+		if managedDevice_id is None:
+			raise TypeError("managedDevice_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["managedDevice%2Did"] =  managedDevice_id
+
 		from .windows_defender_update_signatures import WindowsDefenderUpdateSignaturesRequest
-		return WindowsDefenderUpdateSignaturesRequest(self.request_adapter, self.path_parameters)
+		return WindowsDefenderUpdateSignaturesRequest(self.request_adapter, path_parameters)
 
-	@property
 	def wipe(self,
+		managedDevice_id: str,
 	) -> WipeRequest:
+		if managedDevice_id is None:
+			raise TypeError("managedDevice_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["managedDevice%2Did"] =  managedDevice_id
+
 		from .wipe import WipeRequest
-		return WipeRequest(self.request_adapter, self.path_parameters)
+		return WipeRequest(self.request_adapter, path_parameters)
 
-	@property
 	def users(self,
+		managedDevice_id: str,
 	) -> UsersRequest:
-		from .users import UsersRequest
-		return UsersRequest(self.request_adapter, self.path_parameters)
+		if managedDevice_id is None:
+			raise TypeError("managedDevice_id cannot be null.")
 
-	@property
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["managedDevice%2Did"] =  managedDevice_id
+
+		from .users import UsersRequest
+		return UsersRequest(self.request_adapter, path_parameters)
+
 	def windows_protection_state(self,
+		managedDevice_id: str,
 	) -> WindowsProtectionStateRequest:
+		if managedDevice_id is None:
+			raise TypeError("managedDevice_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["managedDevice%2Did"] =  managedDevice_id
+
 		from .windows_protection_state import WindowsProtectionStateRequest
-		return WindowsProtectionStateRequest(self.request_adapter, self.path_parameters)
+		return WindowsProtectionStateRequest(self.request_adapter, path_parameters)
 

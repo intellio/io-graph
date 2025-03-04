@@ -1,6 +1,7 @@
 # Auto-generated client
 
 from __future__ import annotations
+from kiota_abstractions.get_path_parameters import get_path_parameters
 from kiota_abstractions.method import Method
 from kiota_abstractions.base_request_builder import BaseRequestBuilder
 from kiota_abstractions.base_request_configuration import RequestConfiguration
@@ -108,9 +109,27 @@ class ByAttachmentSessionIdRequest(BaseRequestBuilder):
 			raise TypeError("raw_url cannot be None.")
 		return ByAttachmentSessionIdRequest(self.request_adapter, self.path_parameters)
 
-	@property
 	def content(self,
+		user_id: str,
+		todoTaskList_id: str,
+		todoTask_id: str,
+		attachmentSession_id: str,
 	) -> ContentRequest:
+		if user_id is None:
+			raise TypeError("user_id cannot be null.")
+		if todoTaskList_id is None:
+			raise TypeError("todoTaskList_id cannot be null.")
+		if todoTask_id is None:
+			raise TypeError("todoTask_id cannot be null.")
+		if attachmentSession_id is None:
+			raise TypeError("attachmentSession_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["user%2Did"] =  user_id
+		path_parameters["todoTaskList%2Did"] =  todoTaskList_id
+		path_parameters["todoTask%2Did"] =  todoTask_id
+		path_parameters["attachmentSession%2Did"] =  attachmentSession_id
+
 		from .content import ContentRequest
-		return ContentRequest(self.request_adapter, self.path_parameters)
+		return ContentRequest(self.request_adapter, path_parameters)
 

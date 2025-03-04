@@ -12,12 +12,14 @@ from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:
 	from .security_regenerate_deployment_access_key import SecurityRegenerateDeploymentAccessKeyRequest
+	from .security_get_deployment_package_uri import SecurityGetDeploymentPackageUriRequest
+	from .security_get_deployment_access_key import SecurityGetDeploymentAccessKeyRequest
 	from .count import CountRequest
 	from .by_sensor_id import BySensorIdRequest
 	from .....request_adapter import HttpxRequestAdapter
 from iograph_models.models.security_sensor import SecuritySensor
-from iograph_models.models.security_sensor_collection_response import SecuritySensorCollectionResponse
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.models.security_sensor_collection_response import SecuritySensorCollectionResponse
 
 
 class SensorsRequest(BaseRequestBuilder):
@@ -111,6 +113,18 @@ class SensorsRequest(BaseRequestBuilder):
 	) -> CountRequest:
 		from .count import CountRequest
 		return CountRequest(self.request_adapter, self.path_parameters)
+
+	@property
+	def security_get_deployment_access_key(self,
+	) -> SecurityGetDeploymentAccessKeyRequest:
+		from .security_get_deployment_access_key import SecurityGetDeploymentAccessKeyRequest
+		return SecurityGetDeploymentAccessKeyRequest(self.request_adapter, self.path_parameters)
+
+	@property
+	def security_get_deployment_package_uri(self,
+	) -> SecurityGetDeploymentPackageUriRequest:
+		from .security_get_deployment_package_uri import SecurityGetDeploymentPackageUriRequest
+		return SecurityGetDeploymentPackageUriRequest(self.request_adapter, self.path_parameters)
 
 	@property
 	def security_regenerate_deployment_access_key(self,

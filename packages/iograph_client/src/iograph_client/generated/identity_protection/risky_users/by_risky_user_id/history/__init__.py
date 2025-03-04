@@ -14,9 +14,9 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_risky_user_history_item_id import ByRiskyUserHistoryItemIdRequest
 	from ......request_adapter import HttpxRequestAdapter
-from iograph_models.models.risky_user_history_item import RiskyUserHistoryItem
 from iograph_models.models.risky_user_history_item_collection_response import RiskyUserHistoryItemCollectionResponse
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.models.risky_user_history_item import RiskyUserHistoryItem
 
 
 class HistoryRequest(BaseRequestBuilder):
@@ -109,9 +109,15 @@ class HistoryRequest(BaseRequestBuilder):
 		from .by_risky_user_history_item_id import ByRiskyUserHistoryItemIdRequest
 		return ByRiskyUserHistoryItemIdRequest(self.request_adapter, path_parameters)
 
-	@property
 	def count(self,
+		riskyUser_id: str,
 	) -> CountRequest:
+		if riskyUser_id is None:
+			raise TypeError("riskyUser_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["riskyUser%2Did"] =  riskyUser_id
+
 		from .count import CountRequest
-		return CountRequest(self.request_adapter, self.path_parameters)
+		return CountRequest(self.request_adapter, path_parameters)
 

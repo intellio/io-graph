@@ -1,6 +1,7 @@
 # Auto-generated client
 
 from __future__ import annotations
+from kiota_abstractions.get_path_parameters import get_path_parameters
 from kiota_abstractions.method import Method
 from kiota_abstractions.base_request_builder import BaseRequestBuilder
 from kiota_abstractions.base_request_configuration import RequestConfiguration
@@ -12,8 +13,8 @@ from typing import TYPE_CHECKING
 if TYPE_CHECKING:
 	from .run_health_checks import RunHealthChecksRequest
 	from ......request_adapter import HttpxRequestAdapter
-from iograph_models.models.cloud_pc_on_premises_connection import CloudPcOnPremisesConnection
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.models.cloud_pc_on_premises_connection import CloudPcOnPremisesConnection
 
 
 class ByCloudPcOnPremisesConnectionIdRequest(BaseRequestBuilder):
@@ -111,9 +112,15 @@ class ByCloudPcOnPremisesConnectionIdRequest(BaseRequestBuilder):
 			raise TypeError("raw_url cannot be None.")
 		return ByCloudPcOnPremisesConnectionIdRequest(self.request_adapter, self.path_parameters)
 
-	@property
 	def run_health_checks(self,
+		cloudPcOnPremisesConnection_id: str,
 	) -> RunHealthChecksRequest:
+		if cloudPcOnPremisesConnection_id is None:
+			raise TypeError("cloudPcOnPremisesConnection_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["cloudPcOnPremisesConnection%2Did"] =  cloudPcOnPremisesConnection_id
+
 		from .run_health_checks import RunHealthChecksRequest
-		return RunHealthChecksRequest(self.request_adapter, self.path_parameters)
+		return RunHealthChecksRequest(self.request_adapter, path_parameters)
 

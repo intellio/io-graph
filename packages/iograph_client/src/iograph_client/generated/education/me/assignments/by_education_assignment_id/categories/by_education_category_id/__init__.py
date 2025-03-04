@@ -1,6 +1,7 @@
 # Auto-generated client
 
 from __future__ import annotations
+from kiota_abstractions.get_path_parameters import get_path_parameters
 from kiota_abstractions.method import Method
 from kiota_abstractions.base_request_builder import BaseRequestBuilder
 from kiota_abstractions.base_request_configuration import RequestConfiguration
@@ -28,9 +29,19 @@ class ByEducationCategoryIdRequest(BaseRequestBuilder):
 			raise TypeError("raw_url cannot be None.")
 		return ByEducationCategoryIdRequest(self.request_adapter, self.path_parameters)
 
-	@property
 	def ref(self,
+		educationAssignment_id: str,
+		educationCategory_id: str,
 	) -> RefRequest:
+		if educationAssignment_id is None:
+			raise TypeError("educationAssignment_id cannot be null.")
+		if educationCategory_id is None:
+			raise TypeError("educationCategory_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["educationAssignment%2Did"] =  educationAssignment_id
+		path_parameters["educationCategory%2Did"] =  educationCategory_id
+
 		from .ref import RefRequest
-		return RefRequest(self.request_adapter, self.path_parameters)
+		return RefRequest(self.request_adapter, path_parameters)
 

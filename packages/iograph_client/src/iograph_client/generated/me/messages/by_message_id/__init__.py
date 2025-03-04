@@ -1,6 +1,7 @@
 # Auto-generated client
 
 from __future__ import annotations
+from kiota_abstractions.get_path_parameters import get_path_parameters
 from kiota_abstractions.method import Method
 from kiota_abstractions.base_request_builder import BaseRequestBuilder
 from kiota_abstractions.base_request_configuration import RequestConfiguration
@@ -36,9 +37,15 @@ class ByMessageIdRequest(BaseRequestBuilder):
 		request_configuration: Optional[RequestConfiguration[GetQueryParams]] = None,
 	) -> Message:
 		"""
-		Get message
-		Retrieve the properties and relationships of a message object. You can use the $value parameter to get the MIME content of a message. See also an example below. There are two scenarios where an app can get a message in another user's mail folder: Since the message resource supports extensions, you can also use the GET operation to get custom properties and extension data in a message instance.
-		Find more info here: https://learn.microsoft.com/graph/api/message-get?view=graph-rest-1.0
+		Get singleValueLegacyExtendedProperty
+		You can get a single resource instance expanded with a specific extended property, or a collection of resource instances
+that include extended properties matching a filter. Using the query parameter $expand allows you to get the specified resource instance expanded with a specific extended
+property. Use a $filter and eq operator on the id property to specify the extended property. This is currently the only way to get the singleValueLegacyExtendedProperty object that represents an extended property. To get resource instances that have certain extended properties, use the $filter query parameter and apply an eq operator
+on the id property. In addition, for numeric extended properties, apply one of the following operators on the value property:
+eq, ne,ge, gt, le, or lt. For string-typed extended properties, apply a contains, startswith, eq, or ne operator on value. The filter is applied to all instances of the resource in the signed-in user's mailbox. Filtering the string name (Name) in the id of an extended property is case-sensitive. Filtering the value property of an extended
+property is case-insensitive. The following user resources are supported: As well as the following group resources: See Extended properties overview for more information about when to use
+open extensions or extended properties, and how to specify extended properties.
+		Find more info here: https://learn.microsoft.com/graph/api/singlevaluelegacyextendedproperty-get?view=graph-rest-1.0
 		"""
 		tags = ['me.message']
 
@@ -122,75 +129,147 @@ class ByMessageIdRequest(BaseRequestBuilder):
 			raise TypeError("raw_url cannot be None.")
 		return ByMessageIdRequest(self.request_adapter, self.path_parameters)
 
-	@property
 	def value(self,
+		message_id: str,
 	) -> ValueRequest:
+		if message_id is None:
+			raise TypeError("message_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["message%2Did"] =  message_id
+
 		from .value import ValueRequest
-		return ValueRequest(self.request_adapter, self.path_parameters)
+		return ValueRequest(self.request_adapter, path_parameters)
 
-	@property
 	def attachments(self,
+		message_id: str,
 	) -> AttachmentsRequest:
+		if message_id is None:
+			raise TypeError("message_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["message%2Did"] =  message_id
+
 		from .attachments import AttachmentsRequest
-		return AttachmentsRequest(self.request_adapter, self.path_parameters)
+		return AttachmentsRequest(self.request_adapter, path_parameters)
 
-	@property
 	def extensions(self,
+		message_id: str,
 	) -> ExtensionsRequest:
+		if message_id is None:
+			raise TypeError("message_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["message%2Did"] =  message_id
+
 		from .extensions import ExtensionsRequest
-		return ExtensionsRequest(self.request_adapter, self.path_parameters)
+		return ExtensionsRequest(self.request_adapter, path_parameters)
 
-	@property
 	def copy(self,
+		message_id: str,
 	) -> CopyRequest:
+		if message_id is None:
+			raise TypeError("message_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["message%2Did"] =  message_id
+
 		from .copy import CopyRequest
-		return CopyRequest(self.request_adapter, self.path_parameters)
+		return CopyRequest(self.request_adapter, path_parameters)
 
-	@property
 	def create_forward(self,
+		message_id: str,
 	) -> CreateForwardRequest:
+		if message_id is None:
+			raise TypeError("message_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["message%2Did"] =  message_id
+
 		from .create_forward import CreateForwardRequest
-		return CreateForwardRequest(self.request_adapter, self.path_parameters)
+		return CreateForwardRequest(self.request_adapter, path_parameters)
 
-	@property
 	def create_reply(self,
+		message_id: str,
 	) -> CreateReplyRequest:
+		if message_id is None:
+			raise TypeError("message_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["message%2Did"] =  message_id
+
 		from .create_reply import CreateReplyRequest
-		return CreateReplyRequest(self.request_adapter, self.path_parameters)
+		return CreateReplyRequest(self.request_adapter, path_parameters)
 
-	@property
 	def create_reply_all(self,
+		message_id: str,
 	) -> CreateReplyAllRequest:
+		if message_id is None:
+			raise TypeError("message_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["message%2Did"] =  message_id
+
 		from .create_reply_all import CreateReplyAllRequest
-		return CreateReplyAllRequest(self.request_adapter, self.path_parameters)
+		return CreateReplyAllRequest(self.request_adapter, path_parameters)
 
-	@property
 	def forward(self,
+		message_id: str,
 	) -> ForwardRequest:
+		if message_id is None:
+			raise TypeError("message_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["message%2Did"] =  message_id
+
 		from .forward import ForwardRequest
-		return ForwardRequest(self.request_adapter, self.path_parameters)
+		return ForwardRequest(self.request_adapter, path_parameters)
 
-	@property
 	def move(self,
+		message_id: str,
 	) -> MoveRequest:
+		if message_id is None:
+			raise TypeError("message_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["message%2Did"] =  message_id
+
 		from .move import MoveRequest
-		return MoveRequest(self.request_adapter, self.path_parameters)
+		return MoveRequest(self.request_adapter, path_parameters)
 
-	@property
 	def reply(self,
+		message_id: str,
 	) -> ReplyRequest:
+		if message_id is None:
+			raise TypeError("message_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["message%2Did"] =  message_id
+
 		from .reply import ReplyRequest
-		return ReplyRequest(self.request_adapter, self.path_parameters)
+		return ReplyRequest(self.request_adapter, path_parameters)
 
-	@property
 	def reply_all(self,
+		message_id: str,
 	) -> ReplyAllRequest:
-		from .reply_all import ReplyAllRequest
-		return ReplyAllRequest(self.request_adapter, self.path_parameters)
+		if message_id is None:
+			raise TypeError("message_id cannot be null.")
 
-	@property
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["message%2Did"] =  message_id
+
+		from .reply_all import ReplyAllRequest
+		return ReplyAllRequest(self.request_adapter, path_parameters)
+
 	def send(self,
+		message_id: str,
 	) -> SendRequest:
+		if message_id is None:
+			raise TypeError("message_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["message%2Did"] =  message_id
+
 		from .send import SendRequest
-		return SendRequest(self.request_adapter, self.path_parameters)
+		return SendRequest(self.request_adapter, path_parameters)
 

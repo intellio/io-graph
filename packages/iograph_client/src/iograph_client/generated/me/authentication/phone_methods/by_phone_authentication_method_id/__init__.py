@@ -1,6 +1,7 @@
 # Auto-generated client
 
 from __future__ import annotations
+from kiota_abstractions.get_path_parameters import get_path_parameters
 from kiota_abstractions.method import Method
 from kiota_abstractions.base_request_builder import BaseRequestBuilder
 from kiota_abstractions.base_request_configuration import RequestConfiguration
@@ -13,8 +14,8 @@ if TYPE_CHECKING:
 	from .enable_sms_sign_in import EnableSmsSignInRequest
 	from .disable_sms_sign_in import DisableSmsSignInRequest
 	from ......request_adapter import HttpxRequestAdapter
-from iograph_models.models.phone_authentication_method import PhoneAuthenticationMethod
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.models.phone_authentication_method import PhoneAuthenticationMethod
 
 
 class ByPhoneAuthenticationMethodIdRequest(BaseRequestBuilder):
@@ -111,15 +112,27 @@ class ByPhoneAuthenticationMethodIdRequest(BaseRequestBuilder):
 			raise TypeError("raw_url cannot be None.")
 		return ByPhoneAuthenticationMethodIdRequest(self.request_adapter, self.path_parameters)
 
-	@property
 	def disable_sms_sign_in(self,
+		phoneAuthenticationMethod_id: str,
 	) -> DisableSmsSignInRequest:
-		from .disable_sms_sign_in import DisableSmsSignInRequest
-		return DisableSmsSignInRequest(self.request_adapter, self.path_parameters)
+		if phoneAuthenticationMethod_id is None:
+			raise TypeError("phoneAuthenticationMethod_id cannot be null.")
 
-	@property
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["phoneAuthenticationMethod%2Did"] =  phoneAuthenticationMethod_id
+
+		from .disable_sms_sign_in import DisableSmsSignInRequest
+		return DisableSmsSignInRequest(self.request_adapter, path_parameters)
+
 	def enable_sms_sign_in(self,
+		phoneAuthenticationMethod_id: str,
 	) -> EnableSmsSignInRequest:
+		if phoneAuthenticationMethod_id is None:
+			raise TypeError("phoneAuthenticationMethod_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["phoneAuthenticationMethod%2Did"] =  phoneAuthenticationMethod_id
+
 		from .enable_sms_sign_in import EnableSmsSignInRequest
-		return EnableSmsSignInRequest(self.request_adapter, self.path_parameters)
+		return EnableSmsSignInRequest(self.request_adapter, path_parameters)
 

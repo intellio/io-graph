@@ -15,8 +15,8 @@ if TYPE_CHECKING:
 	from .by_thumbnail_set_id import ByThumbnailSetIdRequest
 	from .......request_adapter import HttpxRequestAdapter
 from iograph_models.models.thumbnail_set_collection_response import ThumbnailSetCollectionResponse
-from iograph_models.models.thumbnail_set import ThumbnailSet
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.models.thumbnail_set import ThumbnailSet
 
 
 class ThumbnailsRequest(BaseRequestBuilder):
@@ -112,9 +112,19 @@ class ThumbnailsRequest(BaseRequestBuilder):
 		from .by_thumbnail_set_id import ByThumbnailSetIdRequest
 		return ByThumbnailSetIdRequest(self.request_adapter, path_parameters)
 
-	@property
 	def count(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> CountRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .count import CountRequest
-		return CountRequest(self.request_adapter, self.path_parameters)
+		return CountRequest(self.request_adapter, path_parameters)
 

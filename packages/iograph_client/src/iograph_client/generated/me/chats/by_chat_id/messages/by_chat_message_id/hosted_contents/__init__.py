@@ -15,8 +15,8 @@ if TYPE_CHECKING:
 	from .by_chat_message_hosted_content_id import ByChatMessageHostedContentIdRequest
 	from ........request_adapter import HttpxRequestAdapter
 from iograph_models.models.chat_message_hosted_content import ChatMessageHostedContent
-from iograph_models.models.chat_message_hosted_content_collection_response import ChatMessageHostedContentCollectionResponse
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.models.chat_message_hosted_content_collection_response import ChatMessageHostedContentCollectionResponse
 
 
 class HostedContentsRequest(BaseRequestBuilder):
@@ -112,9 +112,19 @@ class HostedContentsRequest(BaseRequestBuilder):
 		from .by_chat_message_hosted_content_id import ByChatMessageHostedContentIdRequest
 		return ByChatMessageHostedContentIdRequest(self.request_adapter, path_parameters)
 
-	@property
 	def count(self,
+		chat_id: str,
+		chatMessage_id: str,
 	) -> CountRequest:
+		if chat_id is None:
+			raise TypeError("chat_id cannot be null.")
+		if chatMessage_id is None:
+			raise TypeError("chatMessage_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["chat%2Did"] =  chat_id
+		path_parameters["chatMessage%2Did"] =  chatMessage_id
+
 		from .count import CountRequest
-		return CountRequest(self.request_adapter, self.path_parameters)
+		return CountRequest(self.request_adapter, path_parameters)
 

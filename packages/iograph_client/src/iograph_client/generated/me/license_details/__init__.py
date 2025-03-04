@@ -11,12 +11,13 @@ from typing import Union, Any, Optional
 from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:
+	from .get_teams_licensing_details import GetTeamsLicensingDetailsRequest
 	from .count import CountRequest
 	from .by_license_details_id import ByLicenseDetailsIdRequest
 	from ....request_adapter import HttpxRequestAdapter
 from iograph_models.models.license_details_collection_response import LicenseDetailsCollectionResponse
-from iograph_models.models.license_details import LicenseDetails
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.models.license_details import LicenseDetails
 
 
 class LicenseDetailsRequest(BaseRequestBuilder):
@@ -110,4 +111,10 @@ class LicenseDetailsRequest(BaseRequestBuilder):
 	) -> CountRequest:
 		from .count import CountRequest
 		return CountRequest(self.request_adapter, self.path_parameters)
+
+	@property
+	def get_teams_licensing_details(self,
+	) -> GetTeamsLicensingDetailsRequest:
+		from .get_teams_licensing_details import GetTeamsLicensingDetailsRequest
+		return GetTeamsLicensingDetailsRequest(self.request_adapter, self.path_parameters)
 

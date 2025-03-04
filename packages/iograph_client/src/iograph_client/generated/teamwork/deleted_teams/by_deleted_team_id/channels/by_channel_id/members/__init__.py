@@ -16,9 +16,9 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_conversation_member_id import ByConversationMemberIdRequest
 	from ........request_adapter import HttpxRequestAdapter
-from iograph_models.models.conversation_member_collection_response import ConversationMemberCollectionResponse
 from iograph_models.models.conversation_member import ConversationMember
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.models.conversation_member_collection_response import ConversationMemberCollectionResponse
 
 
 class MembersRequest(BaseRequestBuilder):
@@ -114,21 +114,51 @@ class MembersRequest(BaseRequestBuilder):
 		from .by_conversation_member_id import ByConversationMemberIdRequest
 		return ByConversationMemberIdRequest(self.request_adapter, path_parameters)
 
-	@property
 	def count(self,
+		deletedTeam_id: str,
+		channel_id: str,
 	) -> CountRequest:
+		if deletedTeam_id is None:
+			raise TypeError("deletedTeam_id cannot be null.")
+		if channel_id is None:
+			raise TypeError("channel_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["deletedTeam%2Did"] =  deletedTeam_id
+		path_parameters["channel%2Did"] =  channel_id
+
 		from .count import CountRequest
-		return CountRequest(self.request_adapter, self.path_parameters)
+		return CountRequest(self.request_adapter, path_parameters)
 
-	@property
 	def add(self,
+		deletedTeam_id: str,
+		channel_id: str,
 	) -> AddRequest:
-		from .add import AddRequest
-		return AddRequest(self.request_adapter, self.path_parameters)
+		if deletedTeam_id is None:
+			raise TypeError("deletedTeam_id cannot be null.")
+		if channel_id is None:
+			raise TypeError("channel_id cannot be null.")
 
-	@property
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["deletedTeam%2Did"] =  deletedTeam_id
+		path_parameters["channel%2Did"] =  channel_id
+
+		from .add import AddRequest
+		return AddRequest(self.request_adapter, path_parameters)
+
 	def remove(self,
+		deletedTeam_id: str,
+		channel_id: str,
 	) -> RemoveRequest:
+		if deletedTeam_id is None:
+			raise TypeError("deletedTeam_id cannot be null.")
+		if channel_id is None:
+			raise TypeError("channel_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["deletedTeam%2Did"] =  deletedTeam_id
+		path_parameters["channel%2Did"] =  channel_id
+
 		from .remove import RemoveRequest
-		return RemoveRequest(self.request_adapter, self.path_parameters)
+		return RemoveRequest(self.request_adapter, path_parameters)
 

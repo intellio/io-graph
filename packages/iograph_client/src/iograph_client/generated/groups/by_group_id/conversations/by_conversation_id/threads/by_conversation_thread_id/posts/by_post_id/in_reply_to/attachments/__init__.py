@@ -16,8 +16,8 @@ if TYPE_CHECKING:
 	from .by_attachment_id import ByAttachmentIdRequest
 	from ............request_adapter import HttpxRequestAdapter
 from iograph_models.models.attachment import Attachment
-from iograph_models.models.attachment_collection_response import AttachmentCollectionResponse
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.models.attachment_collection_response import AttachmentCollectionResponse
 
 
 class AttachmentsRequest(BaseRequestBuilder):
@@ -121,15 +121,51 @@ class AttachmentsRequest(BaseRequestBuilder):
 		from .by_attachment_id import ByAttachmentIdRequest
 		return ByAttachmentIdRequest(self.request_adapter, path_parameters)
 
-	@property
 	def count(self,
+		group_id: str,
+		conversation_id: str,
+		conversationThread_id: str,
+		post_id: str,
 	) -> CountRequest:
-		from .count import CountRequest
-		return CountRequest(self.request_adapter, self.path_parameters)
+		if group_id is None:
+			raise TypeError("group_id cannot be null.")
+		if conversation_id is None:
+			raise TypeError("conversation_id cannot be null.")
+		if conversationThread_id is None:
+			raise TypeError("conversationThread_id cannot be null.")
+		if post_id is None:
+			raise TypeError("post_id cannot be null.")
 
-	@property
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["group%2Did"] =  group_id
+		path_parameters["conversation%2Did"] =  conversation_id
+		path_parameters["conversationThread%2Did"] =  conversationThread_id
+		path_parameters["post%2Did"] =  post_id
+
+		from .count import CountRequest
+		return CountRequest(self.request_adapter, path_parameters)
+
 	def create_upload_session(self,
+		group_id: str,
+		conversation_id: str,
+		conversationThread_id: str,
+		post_id: str,
 	) -> CreateUploadSessionRequest:
+		if group_id is None:
+			raise TypeError("group_id cannot be null.")
+		if conversation_id is None:
+			raise TypeError("conversation_id cannot be null.")
+		if conversationThread_id is None:
+			raise TypeError("conversationThread_id cannot be null.")
+		if post_id is None:
+			raise TypeError("post_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["group%2Did"] =  group_id
+		path_parameters["conversation%2Did"] =  conversation_id
+		path_parameters["conversationThread%2Did"] =  conversationThread_id
+		path_parameters["post%2Did"] =  post_id
+
 		from .create_upload_session import CreateUploadSessionRequest
-		return CreateUploadSessionRequest(self.request_adapter, self.path_parameters)
+		return CreateUploadSessionRequest(self.request_adapter, path_parameters)
 

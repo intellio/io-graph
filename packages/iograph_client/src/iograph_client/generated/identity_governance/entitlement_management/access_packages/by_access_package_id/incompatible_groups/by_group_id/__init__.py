@@ -1,6 +1,7 @@
 # Auto-generated client
 
 from __future__ import annotations
+from kiota_abstractions.get_path_parameters import get_path_parameters
 from kiota_abstractions.method import Method
 from kiota_abstractions.base_request_builder import BaseRequestBuilder
 from kiota_abstractions.base_request_configuration import RequestConfiguration
@@ -29,15 +30,35 @@ class ByGroupIdRequest(BaseRequestBuilder):
 			raise TypeError("raw_url cannot be None.")
 		return ByGroupIdRequest(self.request_adapter, self.path_parameters)
 
-	@property
 	def ref(self,
+		accessPackage_id: str,
+		group_id: str,
 	) -> RefRequest:
-		from .ref import RefRequest
-		return RefRequest(self.request_adapter, self.path_parameters)
+		if accessPackage_id is None:
+			raise TypeError("accessPackage_id cannot be null.")
+		if group_id is None:
+			raise TypeError("group_id cannot be null.")
 
-	@property
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["accessPackage%2Did"] =  accessPackage_id
+		path_parameters["group%2Did"] =  group_id
+
+		from .ref import RefRequest
+		return RefRequest(self.request_adapter, path_parameters)
+
 	def service_provisioning_errors(self,
+		accessPackage_id: str,
+		group_id: str,
 	) -> ServiceProvisioningErrorsRequest:
+		if accessPackage_id is None:
+			raise TypeError("accessPackage_id cannot be null.")
+		if group_id is None:
+			raise TypeError("group_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["accessPackage%2Did"] =  accessPackage_id
+		path_parameters["group%2Did"] =  group_id
+
 		from .service_provisioning_errors import ServiceProvisioningErrorsRequest
-		return ServiceProvisioningErrorsRequest(self.request_adapter, self.path_parameters)
+		return ServiceProvisioningErrorsRequest(self.request_adapter, path_parameters)
 

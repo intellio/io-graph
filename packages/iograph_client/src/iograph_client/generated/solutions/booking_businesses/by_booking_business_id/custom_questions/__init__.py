@@ -15,8 +15,8 @@ if TYPE_CHECKING:
 	from .by_booking_custom_question_id import ByBookingCustomQuestionIdRequest
 	from ......request_adapter import HttpxRequestAdapter
 from iograph_models.models.booking_custom_question_collection_response import BookingCustomQuestionCollectionResponse
-from iograph_models.models.booking_custom_question import BookingCustomQuestion
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.models.booking_custom_question import BookingCustomQuestion
 
 
 class CustomQuestionsRequest(BaseRequestBuilder):
@@ -110,9 +110,15 @@ class CustomQuestionsRequest(BaseRequestBuilder):
 		from .by_booking_custom_question_id import ByBookingCustomQuestionIdRequest
 		return ByBookingCustomQuestionIdRequest(self.request_adapter, path_parameters)
 
-	@property
 	def count(self,
+		bookingBusiness_id: str,
 	) -> CountRequest:
+		if bookingBusiness_id is None:
+			raise TypeError("bookingBusiness_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["bookingBusiness%2Did"] =  bookingBusiness_id
+
 		from .count import CountRequest
-		return CountRequest(self.request_adapter, self.path_parameters)
+		return CountRequest(self.request_adapter, path_parameters)
 

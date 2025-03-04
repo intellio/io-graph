@@ -14,22 +14,22 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_learning_course_activity_id import ByLearningCourseActivityIdRequest
 	from ......request_adapter import HttpxRequestAdapter
-from iograph_models.models.learning_course_activity_collection_response import LearningCourseActivityCollectionResponse
+from iograph_models.models.learning_course_activity import LearningCourseActivity
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
 
 
 class LearningCourseActivitiesRequest(BaseRequestBuilder):
 	def __init__(self,request_adapter: HttpxRequestAdapter, path_parameters: Optional[Union[dict[str, Any], str]]) -> None:
-		super().__init__(request_adapter, "{+baseurl}/users/{user%2Did}/employeeExperience/learningCourseActivities", path_parameters)
+		super().__init__(request_adapter, "{+baseurl}/users/{user%2Did}/employeeExperience/learningCourseActivities(externalcourseActivityId='{externalcourseActivityId}')", path_parameters)
 
 	async def get(
 		self,
 		request_configuration: Optional[RequestConfiguration[GetQueryParams]] = None,
-	) -> LearningCourseActivityCollectionResponse:
+	) -> LearningCourseActivity:
 		"""
-		List learningCourseActivities
-		Get a list of the learningCourseActivity objects (assigned or self-initiated) for a user.
-		Find more info here: https://learn.microsoft.com/graph/api/learningcourseactivity-list?view=graph-rest-1.0
+		Get learningCourseActivity
+		Get the specified learningCourseActivity object using either an ID or an externalCourseActivityId of the learning provider, or a courseActivityId of a user.
+		Find more info here: https://learn.microsoft.com/graph/api/learningcourseactivity-get?view=graph-rest-1.0
 		"""
 		tags = ['users.employeeExperienceUser']
 
@@ -44,15 +44,9 @@ class LearningCourseActivitiesRequest(BaseRequestBuilder):
 		)
 		request_info.configure(request_configuration)
 		request_info.headers.try_add("Accept", "application/json")
-		return await self.request_adapter.send_async(request_info, LearningCourseActivityCollectionResponse, error_mapping)
+		return await self.request_adapter.send_async(request_info, LearningCourseActivity, error_mapping)
 
 	class GetQueryParams(BaseModel):
-		top: int = Field(default=None,serialization_alias="%24top")
-		skip: int = Field(default=None,serialization_alias="%24skip")
-		search: str = Field(default=None,serialization_alias="%24search")
-		filter: str = Field(default=None,serialization_alias="%24filter")
-		count: bool = Field(default=None,serialization_alias="%24count")
-		orderby: list[str] = Field(default=None,serialization_alias="%24orderby")
 		select: list[str] = Field(default=None,serialization_alias="%24select")
 		expand: list[str] = Field(default=None,serialization_alias="%24expand")
 
@@ -82,9 +76,15 @@ class LearningCourseActivitiesRequest(BaseRequestBuilder):
 		from .by_learning_course_activity_id import ByLearningCourseActivityIdRequest
 		return ByLearningCourseActivityIdRequest(self.request_adapter, path_parameters)
 
-	@property
 	def count(self,
+		user_id: str,
 	) -> CountRequest:
+		if user_id is None:
+			raise TypeError("user_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["user%2Did"] =  user_id
+
 		from .count import CountRequest
-		return CountRequest(self.request_adapter, self.path_parameters)
+		return CountRequest(self.request_adapter, path_parameters)
 

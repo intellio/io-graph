@@ -1,6 +1,7 @@
 # Auto-generated client
 
 from __future__ import annotations
+from kiota_abstractions.get_path_parameters import get_path_parameters
 from kiota_abstractions.method import Method
 from kiota_abstractions.base_request_builder import BaseRequestBuilder
 from kiota_abstractions.base_request_configuration import RequestConfiguration
@@ -12,8 +13,8 @@ from typing import TYPE_CHECKING
 if TYPE_CHECKING:
 	from .reauthorize import ReauthorizeRequest
 	from ..........request_adapter import HttpxRequestAdapter
-from iograph_models.models.subscription import Subscription
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.models.subscription import Subscription
 
 
 class BySubscriptionIdRequest(BaseRequestBuilder):
@@ -108,9 +109,27 @@ class BySubscriptionIdRequest(BaseRequestBuilder):
 			raise TypeError("raw_url cannot be None.")
 		return BySubscriptionIdRequest(self.request_adapter, self.path_parameters)
 
-	@property
 	def reauthorize(self,
+		group_id: str,
+		site_id: str,
+		list_id: str,
+		subscription_id: str,
 	) -> ReauthorizeRequest:
+		if group_id is None:
+			raise TypeError("group_id cannot be null.")
+		if site_id is None:
+			raise TypeError("site_id cannot be null.")
+		if list_id is None:
+			raise TypeError("list_id cannot be null.")
+		if subscription_id is None:
+			raise TypeError("subscription_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["group%2Did"] =  group_id
+		path_parameters["site%2Did"] =  site_id
+		path_parameters["list%2Did"] =  list_id
+		path_parameters["subscription%2Did"] =  subscription_id
+
 		from .reauthorize import ReauthorizeRequest
-		return ReauthorizeRequest(self.request_adapter, self.path_parameters)
+		return ReauthorizeRequest(self.request_adapter, path_parameters)
 

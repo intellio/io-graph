@@ -1,6 +1,7 @@
 # Auto-generated client
 
 from __future__ import annotations
+from kiota_abstractions.get_path_parameters import get_path_parameters
 from kiota_abstractions.method import Method
 from kiota_abstractions.base_request_builder import BaseRequestBuilder
 from kiota_abstractions.base_request_configuration import RequestConfiguration
@@ -39,8 +40,8 @@ if TYPE_CHECKING:
 	from .app_role_assigned_to import AppRoleAssignedToRequest
 	from .app_management_policies import AppManagementPoliciesRequest
 	from ....request_adapter import HttpxRequestAdapter
-from iograph_models.models.service_principal import ServicePrincipal
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.models.service_principal import ServicePrincipal
 
 
 class ByServicePrincipalIdRequest(BaseRequestBuilder):
@@ -138,171 +139,339 @@ class ByServicePrincipalIdRequest(BaseRequestBuilder):
 			raise TypeError("raw_url cannot be None.")
 		return ByServicePrincipalIdRequest(self.request_adapter, self.path_parameters)
 
-	@property
 	def app_management_policies(self,
+		servicePrincipal_id: str,
 	) -> AppManagementPoliciesRequest:
+		if servicePrincipal_id is None:
+			raise TypeError("servicePrincipal_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["servicePrincipal%2Did"] =  servicePrincipal_id
+
 		from .app_management_policies import AppManagementPoliciesRequest
-		return AppManagementPoliciesRequest(self.request_adapter, self.path_parameters)
+		return AppManagementPoliciesRequest(self.request_adapter, path_parameters)
 
-	@property
 	def app_role_assigned_to(self,
+		servicePrincipal_id: str,
 	) -> AppRoleAssignedToRequest:
+		if servicePrincipal_id is None:
+			raise TypeError("servicePrincipal_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["servicePrincipal%2Did"] =  servicePrincipal_id
+
 		from .app_role_assigned_to import AppRoleAssignedToRequest
-		return AppRoleAssignedToRequest(self.request_adapter, self.path_parameters)
+		return AppRoleAssignedToRequest(self.request_adapter, path_parameters)
 
-	@property
 	def app_role_assignments(self,
+		servicePrincipal_id: str,
 	) -> AppRoleAssignmentsRequest:
+		if servicePrincipal_id is None:
+			raise TypeError("servicePrincipal_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["servicePrincipal%2Did"] =  servicePrincipal_id
+
 		from .app_role_assignments import AppRoleAssignmentsRequest
-		return AppRoleAssignmentsRequest(self.request_adapter, self.path_parameters)
+		return AppRoleAssignmentsRequest(self.request_adapter, path_parameters)
 
-	@property
 	def claims_mapping_policies(self,
+		servicePrincipal_id: str,
 	) -> ClaimsMappingPoliciesRequest:
+		if servicePrincipal_id is None:
+			raise TypeError("servicePrincipal_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["servicePrincipal%2Did"] =  servicePrincipal_id
+
 		from .claims_mapping_policies import ClaimsMappingPoliciesRequest
-		return ClaimsMappingPoliciesRequest(self.request_adapter, self.path_parameters)
+		return ClaimsMappingPoliciesRequest(self.request_adapter, path_parameters)
 
-	@property
 	def created_objects(self,
+		servicePrincipal_id: str,
 	) -> CreatedObjectsRequest:
+		if servicePrincipal_id is None:
+			raise TypeError("servicePrincipal_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["servicePrincipal%2Did"] =  servicePrincipal_id
+
 		from .created_objects import CreatedObjectsRequest
-		return CreatedObjectsRequest(self.request_adapter, self.path_parameters)
+		return CreatedObjectsRequest(self.request_adapter, path_parameters)
 
-	@property
 	def delegated_permission_classifications(self,
+		servicePrincipal_id: str,
 	) -> DelegatedPermissionClassificationsRequest:
+		if servicePrincipal_id is None:
+			raise TypeError("servicePrincipal_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["servicePrincipal%2Did"] =  servicePrincipal_id
+
 		from .delegated_permission_classifications import DelegatedPermissionClassificationsRequest
-		return DelegatedPermissionClassificationsRequest(self.request_adapter, self.path_parameters)
+		return DelegatedPermissionClassificationsRequest(self.request_adapter, path_parameters)
 
-	@property
 	def endpoints(self,
+		servicePrincipal_id: str,
 	) -> EndpointsRequest:
+		if servicePrincipal_id is None:
+			raise TypeError("servicePrincipal_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["servicePrincipal%2Did"] =  servicePrincipal_id
+
 		from .endpoints import EndpointsRequest
-		return EndpointsRequest(self.request_adapter, self.path_parameters)
+		return EndpointsRequest(self.request_adapter, path_parameters)
 
-	@property
 	def federated_identity_credentials(self,
+		servicePrincipal_id: str,
 	) -> FederatedIdentityCredentialsRequest:
+		if servicePrincipal_id is None:
+			raise TypeError("servicePrincipal_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["servicePrincipal%2Did"] =  servicePrincipal_id
+
 		from .federated_identity_credentials import FederatedIdentityCredentialsRequest
-		return FederatedIdentityCredentialsRequest(self.request_adapter, self.path_parameters)
+		return FederatedIdentityCredentialsRequest(self.request_adapter, path_parameters)
 
-	@property
 	def home_realm_discovery_policies(self,
+		servicePrincipal_id: str,
 	) -> HomeRealmDiscoveryPoliciesRequest:
+		if servicePrincipal_id is None:
+			raise TypeError("servicePrincipal_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["servicePrincipal%2Did"] =  servicePrincipal_id
+
 		from .home_realm_discovery_policies import HomeRealmDiscoveryPoliciesRequest
-		return HomeRealmDiscoveryPoliciesRequest(self.request_adapter, self.path_parameters)
+		return HomeRealmDiscoveryPoliciesRequest(self.request_adapter, path_parameters)
 
-	@property
 	def member_of(self,
+		servicePrincipal_id: str,
 	) -> MemberOfRequest:
+		if servicePrincipal_id is None:
+			raise TypeError("servicePrincipal_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["servicePrincipal%2Did"] =  servicePrincipal_id
+
 		from .member_of import MemberOfRequest
-		return MemberOfRequest(self.request_adapter, self.path_parameters)
+		return MemberOfRequest(self.request_adapter, path_parameters)
 
-	@property
 	def add_key(self,
+		servicePrincipal_id: str,
 	) -> AddKeyRequest:
+		if servicePrincipal_id is None:
+			raise TypeError("servicePrincipal_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["servicePrincipal%2Did"] =  servicePrincipal_id
+
 		from .add_key import AddKeyRequest
-		return AddKeyRequest(self.request_adapter, self.path_parameters)
+		return AddKeyRequest(self.request_adapter, path_parameters)
 
-	@property
 	def add_password(self,
+		servicePrincipal_id: str,
 	) -> AddPasswordRequest:
+		if servicePrincipal_id is None:
+			raise TypeError("servicePrincipal_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["servicePrincipal%2Did"] =  servicePrincipal_id
+
 		from .add_password import AddPasswordRequest
-		return AddPasswordRequest(self.request_adapter, self.path_parameters)
+		return AddPasswordRequest(self.request_adapter, path_parameters)
 
-	@property
 	def add_token_signing_certificate(self,
+		servicePrincipal_id: str,
 	) -> AddTokenSigningCertificateRequest:
+		if servicePrincipal_id is None:
+			raise TypeError("servicePrincipal_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["servicePrincipal%2Did"] =  servicePrincipal_id
+
 		from .add_token_signing_certificate import AddTokenSigningCertificateRequest
-		return AddTokenSigningCertificateRequest(self.request_adapter, self.path_parameters)
+		return AddTokenSigningCertificateRequest(self.request_adapter, path_parameters)
 
-	@property
 	def check_member_groups(self,
+		servicePrincipal_id: str,
 	) -> CheckMemberGroupsRequest:
+		if servicePrincipal_id is None:
+			raise TypeError("servicePrincipal_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["servicePrincipal%2Did"] =  servicePrincipal_id
+
 		from .check_member_groups import CheckMemberGroupsRequest
-		return CheckMemberGroupsRequest(self.request_adapter, self.path_parameters)
+		return CheckMemberGroupsRequest(self.request_adapter, path_parameters)
 
-	@property
 	def check_member_objects(self,
+		servicePrincipal_id: str,
 	) -> CheckMemberObjectsRequest:
+		if servicePrincipal_id is None:
+			raise TypeError("servicePrincipal_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["servicePrincipal%2Did"] =  servicePrincipal_id
+
 		from .check_member_objects import CheckMemberObjectsRequest
-		return CheckMemberObjectsRequest(self.request_adapter, self.path_parameters)
+		return CheckMemberObjectsRequest(self.request_adapter, path_parameters)
 
-	@property
 	def get_member_groups(self,
+		servicePrincipal_id: str,
 	) -> GetMemberGroupsRequest:
+		if servicePrincipal_id is None:
+			raise TypeError("servicePrincipal_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["servicePrincipal%2Did"] =  servicePrincipal_id
+
 		from .get_member_groups import GetMemberGroupsRequest
-		return GetMemberGroupsRequest(self.request_adapter, self.path_parameters)
+		return GetMemberGroupsRequest(self.request_adapter, path_parameters)
 
-	@property
 	def get_member_objects(self,
+		servicePrincipal_id: str,
 	) -> GetMemberObjectsRequest:
+		if servicePrincipal_id is None:
+			raise TypeError("servicePrincipal_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["servicePrincipal%2Did"] =  servicePrincipal_id
+
 		from .get_member_objects import GetMemberObjectsRequest
-		return GetMemberObjectsRequest(self.request_adapter, self.path_parameters)
+		return GetMemberObjectsRequest(self.request_adapter, path_parameters)
 
-	@property
 	def remove_key(self,
+		servicePrincipal_id: str,
 	) -> RemoveKeyRequest:
+		if servicePrincipal_id is None:
+			raise TypeError("servicePrincipal_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["servicePrincipal%2Did"] =  servicePrincipal_id
+
 		from .remove_key import RemoveKeyRequest
-		return RemoveKeyRequest(self.request_adapter, self.path_parameters)
+		return RemoveKeyRequest(self.request_adapter, path_parameters)
 
-	@property
 	def remove_password(self,
+		servicePrincipal_id: str,
 	) -> RemovePasswordRequest:
+		if servicePrincipal_id is None:
+			raise TypeError("servicePrincipal_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["servicePrincipal%2Did"] =  servicePrincipal_id
+
 		from .remove_password import RemovePasswordRequest
-		return RemovePasswordRequest(self.request_adapter, self.path_parameters)
+		return RemovePasswordRequest(self.request_adapter, path_parameters)
 
-	@property
 	def restore(self,
+		servicePrincipal_id: str,
 	) -> RestoreRequest:
+		if servicePrincipal_id is None:
+			raise TypeError("servicePrincipal_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["servicePrincipal%2Did"] =  servicePrincipal_id
+
 		from .restore import RestoreRequest
-		return RestoreRequest(self.request_adapter, self.path_parameters)
+		return RestoreRequest(self.request_adapter, path_parameters)
 
-	@property
 	def oauth2_permission_grants(self,
+		servicePrincipal_id: str,
 	) -> Oauth2PermissionGrantsRequest:
+		if servicePrincipal_id is None:
+			raise TypeError("servicePrincipal_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["servicePrincipal%2Did"] =  servicePrincipal_id
+
 		from .oauth2_permission_grants import Oauth2PermissionGrantsRequest
-		return Oauth2PermissionGrantsRequest(self.request_adapter, self.path_parameters)
+		return Oauth2PermissionGrantsRequest(self.request_adapter, path_parameters)
 
-	@property
 	def owned_objects(self,
+		servicePrincipal_id: str,
 	) -> OwnedObjectsRequest:
+		if servicePrincipal_id is None:
+			raise TypeError("servicePrincipal_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["servicePrincipal%2Did"] =  servicePrincipal_id
+
 		from .owned_objects import OwnedObjectsRequest
-		return OwnedObjectsRequest(self.request_adapter, self.path_parameters)
+		return OwnedObjectsRequest(self.request_adapter, path_parameters)
 
-	@property
 	def owners(self,
+		servicePrincipal_id: str,
 	) -> OwnersRequest:
+		if servicePrincipal_id is None:
+			raise TypeError("servicePrincipal_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["servicePrincipal%2Did"] =  servicePrincipal_id
+
 		from .owners import OwnersRequest
-		return OwnersRequest(self.request_adapter, self.path_parameters)
+		return OwnersRequest(self.request_adapter, path_parameters)
 
-	@property
 	def remote_desktop_security_configuration(self,
+		servicePrincipal_id: str,
 	) -> RemoteDesktopSecurityConfigurationRequest:
+		if servicePrincipal_id is None:
+			raise TypeError("servicePrincipal_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["servicePrincipal%2Did"] =  servicePrincipal_id
+
 		from .remote_desktop_security_configuration import RemoteDesktopSecurityConfigurationRequest
-		return RemoteDesktopSecurityConfigurationRequest(self.request_adapter, self.path_parameters)
+		return RemoteDesktopSecurityConfigurationRequest(self.request_adapter, path_parameters)
 
-	@property
 	def synchronization(self,
+		servicePrincipal_id: str,
 	) -> SynchronizationRequest:
+		if servicePrincipal_id is None:
+			raise TypeError("servicePrincipal_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["servicePrincipal%2Did"] =  servicePrincipal_id
+
 		from .synchronization import SynchronizationRequest
-		return SynchronizationRequest(self.request_adapter, self.path_parameters)
+		return SynchronizationRequest(self.request_adapter, path_parameters)
 
-	@property
 	def token_issuance_policies(self,
+		servicePrincipal_id: str,
 	) -> TokenIssuancePoliciesRequest:
+		if servicePrincipal_id is None:
+			raise TypeError("servicePrincipal_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["servicePrincipal%2Did"] =  servicePrincipal_id
+
 		from .token_issuance_policies import TokenIssuancePoliciesRequest
-		return TokenIssuancePoliciesRequest(self.request_adapter, self.path_parameters)
+		return TokenIssuancePoliciesRequest(self.request_adapter, path_parameters)
 
-	@property
 	def token_lifetime_policies(self,
+		servicePrincipal_id: str,
 	) -> TokenLifetimePoliciesRequest:
-		from .token_lifetime_policies import TokenLifetimePoliciesRequest
-		return TokenLifetimePoliciesRequest(self.request_adapter, self.path_parameters)
+		if servicePrincipal_id is None:
+			raise TypeError("servicePrincipal_id cannot be null.")
 
-	@property
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["servicePrincipal%2Did"] =  servicePrincipal_id
+
+		from .token_lifetime_policies import TokenLifetimePoliciesRequest
+		return TokenLifetimePoliciesRequest(self.request_adapter, path_parameters)
+
 	def transitive_member_of(self,
+		servicePrincipal_id: str,
 	) -> TransitiveMemberOfRequest:
+		if servicePrincipal_id is None:
+			raise TypeError("servicePrincipal_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["servicePrincipal%2Did"] =  servicePrincipal_id
+
 		from .transitive_member_of import TransitiveMemberOfRequest
-		return TransitiveMemberOfRequest(self.request_adapter, self.path_parameters)
+		return TransitiveMemberOfRequest(self.request_adapter, path_parameters)
 

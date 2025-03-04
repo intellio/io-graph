@@ -1,6 +1,7 @@
 # Auto-generated client
 
 from __future__ import annotations
+from kiota_abstractions.get_path_parameters import get_path_parameters
 from kiota_abstractions.method import Method
 from kiota_abstractions.base_request_builder import BaseRequestBuilder
 from kiota_abstractions.base_request_configuration import RequestConfiguration
@@ -13,8 +14,8 @@ if TYPE_CHECKING:
 	from .set import SetRequest
 	from .relations import RelationsRequest
 	from ...............request_adapter import HttpxRequestAdapter
-from iograph_models.models.term_store_term import TermStoreTerm
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.models.term_store_term import TermStoreTerm
 
 
 class ByTermId1Request(BaseRequestBuilder):
@@ -109,15 +110,67 @@ class ByTermId1Request(BaseRequestBuilder):
 			raise TypeError("raw_url cannot be None.")
 		return ByTermId1Request(self.request_adapter, self.path_parameters)
 
-	@property
 	def relations(self,
+		site_id: str,
+		store_id: str,
+		set_id: str,
+		set_id1: str,
+		term_id: str,
+		term_id1: str,
 	) -> RelationsRequest:
-		from .relations import RelationsRequest
-		return RelationsRequest(self.request_adapter, self.path_parameters)
+		if site_id is None:
+			raise TypeError("site_id cannot be null.")
+		if store_id is None:
+			raise TypeError("store_id cannot be null.")
+		if set_id is None:
+			raise TypeError("set_id cannot be null.")
+		if set_id1 is None:
+			raise TypeError("set_id1 cannot be null.")
+		if term_id is None:
+			raise TypeError("term_id cannot be null.")
+		if term_id1 is None:
+			raise TypeError("term_id1 cannot be null.")
 
-	@property
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["site%2Did"] =  site_id
+		path_parameters["store%2Did"] =  store_id
+		path_parameters["set%2Did"] =  set_id
+		path_parameters["set%2Did1"] =  set_id1
+		path_parameters["term%2Did"] =  term_id
+		path_parameters["term%2Did1"] =  term_id1
+
+		from .relations import RelationsRequest
+		return RelationsRequest(self.request_adapter, path_parameters)
+
 	def set(self,
+		site_id: str,
+		store_id: str,
+		set_id: str,
+		set_id1: str,
+		term_id: str,
+		term_id1: str,
 	) -> SetRequest:
+		if site_id is None:
+			raise TypeError("site_id cannot be null.")
+		if store_id is None:
+			raise TypeError("store_id cannot be null.")
+		if set_id is None:
+			raise TypeError("set_id cannot be null.")
+		if set_id1 is None:
+			raise TypeError("set_id1 cannot be null.")
+		if term_id is None:
+			raise TypeError("term_id cannot be null.")
+		if term_id1 is None:
+			raise TypeError("term_id1 cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["site%2Did"] =  site_id
+		path_parameters["store%2Did"] =  store_id
+		path_parameters["set%2Did"] =  set_id
+		path_parameters["set%2Did1"] =  set_id1
+		path_parameters["term%2Did"] =  term_id
+		path_parameters["term%2Did1"] =  term_id1
+
 		from .set import SetRequest
-		return SetRequest(self.request_adapter, self.path_parameters)
+		return SetRequest(self.request_adapter, path_parameters)
 

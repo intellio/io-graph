@@ -14,8 +14,8 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_teams_app_definition_id import ByTeamsAppDefinitionIdRequest
 	from ......request_adapter import HttpxRequestAdapter
-from iograph_models.models.teams_app_definition import TeamsAppDefinition
 from iograph_models.models.teams_app_definition_collection_response import TeamsAppDefinitionCollectionResponse
+from iograph_models.models.teams_app_definition import TeamsAppDefinition
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
 
 
@@ -109,9 +109,15 @@ class AppDefinitionsRequest(BaseRequestBuilder):
 		from .by_teams_app_definition_id import ByTeamsAppDefinitionIdRequest
 		return ByTeamsAppDefinitionIdRequest(self.request_adapter, path_parameters)
 
-	@property
 	def count(self,
+		teamsApp_id: str,
 	) -> CountRequest:
+		if teamsApp_id is None:
+			raise TypeError("teamsApp_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["teamsApp%2Did"] =  teamsApp_id
+
 		from .count import CountRequest
-		return CountRequest(self.request_adapter, self.path_parameters)
+		return CountRequest(self.request_adapter, path_parameters)
 

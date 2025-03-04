@@ -1,6 +1,7 @@
 # Auto-generated client
 
 from __future__ import annotations
+from kiota_abstractions.get_path_parameters import get_path_parameters
 from kiota_abstractions.method import Method
 from kiota_abstractions.base_request_builder import BaseRequestBuilder
 from kiota_abstractions.base_request_configuration import RequestConfiguration
@@ -64,9 +65,15 @@ class GraphServicePrincipalRequest(BaseRequestBuilder):
 			raise TypeError("raw_url cannot be None.")
 		return GraphServicePrincipalRequest(self.request_adapter, self.path_parameters)
 
-	@property
 	def count(self,
+		application_id: str,
 	) -> CountRequest:
+		if application_id is None:
+			raise TypeError("application_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["application%2Did"] =  application_id
+
 		from .count import CountRequest
-		return CountRequest(self.request_adapter, self.path_parameters)
+		return CountRequest(self.request_adapter, path_parameters)
 

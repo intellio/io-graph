@@ -14,9 +14,9 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_open_shift_id import ByOpenShiftIdRequest
 	from .......request_adapter import HttpxRequestAdapter
-from iograph_models.models.open_shift import OpenShift
 from iograph_models.models.open_shift_collection_response import OpenShiftCollectionResponse
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.models.open_shift import OpenShift
 
 
 class OpenShiftsRequest(BaseRequestBuilder):
@@ -108,9 +108,15 @@ class OpenShiftsRequest(BaseRequestBuilder):
 		from .by_open_shift_id import ByOpenShiftIdRequest
 		return ByOpenShiftIdRequest(self.request_adapter, path_parameters)
 
-	@property
 	def count(self,
+		group_id: str,
 	) -> CountRequest:
+		if group_id is None:
+			raise TypeError("group_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["group%2Did"] =  group_id
+
 		from .count import CountRequest
-		return CountRequest(self.request_adapter, self.path_parameters)
+		return CountRequest(self.request_adapter, path_parameters)
 

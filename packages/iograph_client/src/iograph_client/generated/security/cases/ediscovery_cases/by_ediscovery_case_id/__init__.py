@@ -1,6 +1,7 @@
 # Auto-generated client
 
 from __future__ import annotations
+from kiota_abstractions.get_path_parameters import get_path_parameters
 from kiota_abstractions.method import Method
 from kiota_abstractions.base_request_builder import BaseRequestBuilder
 from kiota_abstractions.base_request_configuration import RequestConfiguration
@@ -20,8 +21,8 @@ if TYPE_CHECKING:
 	from .security_close import SecurityCloseRequest
 	from .custodians import CustodiansRequest
 	from ......request_adapter import HttpxRequestAdapter
-from iograph_models.models.security_ediscovery_case import SecurityEdiscoveryCase
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.models.security_ediscovery_case import SecurityEdiscoveryCase
 
 
 class ByEdiscoveryCaseIdRequest(BaseRequestBuilder):
@@ -119,57 +120,111 @@ class ByEdiscoveryCaseIdRequest(BaseRequestBuilder):
 			raise TypeError("raw_url cannot be None.")
 		return ByEdiscoveryCaseIdRequest(self.request_adapter, self.path_parameters)
 
-	@property
 	def custodians(self,
+		ediscoveryCase_id: str,
 	) -> CustodiansRequest:
+		if ediscoveryCase_id is None:
+			raise TypeError("ediscoveryCase_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["ediscoveryCase%2Did"] =  ediscoveryCase_id
+
 		from .custodians import CustodiansRequest
-		return CustodiansRequest(self.request_adapter, self.path_parameters)
+		return CustodiansRequest(self.request_adapter, path_parameters)
 
-	@property
 	def security_close(self,
+		ediscoveryCase_id: str,
 	) -> SecurityCloseRequest:
+		if ediscoveryCase_id is None:
+			raise TypeError("ediscoveryCase_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["ediscoveryCase%2Did"] =  ediscoveryCase_id
+
 		from .security_close import SecurityCloseRequest
-		return SecurityCloseRequest(self.request_adapter, self.path_parameters)
+		return SecurityCloseRequest(self.request_adapter, path_parameters)
 
-	@property
 	def security_reopen(self,
+		ediscoveryCase_id: str,
 	) -> SecurityReopenRequest:
+		if ediscoveryCase_id is None:
+			raise TypeError("ediscoveryCase_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["ediscoveryCase%2Did"] =  ediscoveryCase_id
+
 		from .security_reopen import SecurityReopenRequest
-		return SecurityReopenRequest(self.request_adapter, self.path_parameters)
+		return SecurityReopenRequest(self.request_adapter, path_parameters)
 
-	@property
 	def noncustodial_data_sources(self,
+		ediscoveryCase_id: str,
 	) -> NoncustodialDataSourcesRequest:
+		if ediscoveryCase_id is None:
+			raise TypeError("ediscoveryCase_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["ediscoveryCase%2Did"] =  ediscoveryCase_id
+
 		from .noncustodial_data_sources import NoncustodialDataSourcesRequest
-		return NoncustodialDataSourcesRequest(self.request_adapter, self.path_parameters)
+		return NoncustodialDataSourcesRequest(self.request_adapter, path_parameters)
 
-	@property
 	def operations(self,
+		ediscoveryCase_id: str,
 	) -> OperationsRequest:
+		if ediscoveryCase_id is None:
+			raise TypeError("ediscoveryCase_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["ediscoveryCase%2Did"] =  ediscoveryCase_id
+
 		from .operations import OperationsRequest
-		return OperationsRequest(self.request_adapter, self.path_parameters)
+		return OperationsRequest(self.request_adapter, path_parameters)
 
-	@property
 	def review_sets(self,
+		ediscoveryCase_id: str,
 	) -> ReviewSetsRequest:
+		if ediscoveryCase_id is None:
+			raise TypeError("ediscoveryCase_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["ediscoveryCase%2Did"] =  ediscoveryCase_id
+
 		from .review_sets import ReviewSetsRequest
-		return ReviewSetsRequest(self.request_adapter, self.path_parameters)
+		return ReviewSetsRequest(self.request_adapter, path_parameters)
 
-	@property
 	def searches(self,
+		ediscoveryCase_id: str,
 	) -> SearchesRequest:
+		if ediscoveryCase_id is None:
+			raise TypeError("ediscoveryCase_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["ediscoveryCase%2Did"] =  ediscoveryCase_id
+
 		from .searches import SearchesRequest
-		return SearchesRequest(self.request_adapter, self.path_parameters)
+		return SearchesRequest(self.request_adapter, path_parameters)
 
-	@property
 	def settings(self,
+		ediscoveryCase_id: str,
 	) -> SettingsRequest:
-		from .settings import SettingsRequest
-		return SettingsRequest(self.request_adapter, self.path_parameters)
+		if ediscoveryCase_id is None:
+			raise TypeError("ediscoveryCase_id cannot be null.")
 
-	@property
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["ediscoveryCase%2Did"] =  ediscoveryCase_id
+
+		from .settings import SettingsRequest
+		return SettingsRequest(self.request_adapter, path_parameters)
+
 	def tags(self,
+		ediscoveryCase_id: str,
 	) -> TagsRequest:
+		if ediscoveryCase_id is None:
+			raise TypeError("ediscoveryCase_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["ediscoveryCase%2Did"] =  ediscoveryCase_id
+
 		from .tags import TagsRequest
-		return TagsRequest(self.request_adapter, self.path_parameters)
+		return TagsRequest(self.request_adapter, path_parameters)
 

@@ -14,8 +14,8 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_access_package_id1 import ByAccessPackageId1Request
 	from .......request_adapter import HttpxRequestAdapter
-from iograph_models.models.access_package_collection_response import AccessPackageCollectionResponse
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.models.access_package_collection_response import AccessPackageCollectionResponse
 
 
 class AccessPackagesIncompatibleWithRequest(BaseRequestBuilder):
@@ -82,9 +82,15 @@ class AccessPackagesIncompatibleWithRequest(BaseRequestBuilder):
 		from .by_access_package_id1 import ByAccessPackageId1Request
 		return ByAccessPackageId1Request(self.request_adapter, path_parameters)
 
-	@property
 	def count(self,
+		accessPackage_id: str,
 	) -> CountRequest:
+		if accessPackage_id is None:
+			raise TypeError("accessPackage_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["accessPackage%2Did"] =  accessPackage_id
+
 		from .count import CountRequest
-		return CountRequest(self.request_adapter, self.path_parameters)
+		return CountRequest(self.request_adapter, path_parameters)
 

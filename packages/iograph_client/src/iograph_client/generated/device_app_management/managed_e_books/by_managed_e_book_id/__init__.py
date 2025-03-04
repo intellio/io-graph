@@ -1,6 +1,7 @@
 # Auto-generated client
 
 from __future__ import annotations
+from kiota_abstractions.get_path_parameters import get_path_parameters
 from kiota_abstractions.method import Method
 from kiota_abstractions.base_request_builder import BaseRequestBuilder
 from kiota_abstractions.base_request_configuration import RequestConfiguration
@@ -16,8 +17,8 @@ if TYPE_CHECKING:
 	from .device_states import DeviceStatesRequest
 	from .assignments import AssignmentsRequest
 	from .....request_adapter import HttpxRequestAdapter
-from iograph_models.models.managed_e_book import ManagedEBook
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.models.managed_e_book import ManagedEBook
 
 
 class ByManagedEBookIdRequest(BaseRequestBuilder):
@@ -115,33 +116,63 @@ class ByManagedEBookIdRequest(BaseRequestBuilder):
 			raise TypeError("raw_url cannot be None.")
 		return ByManagedEBookIdRequest(self.request_adapter, self.path_parameters)
 
-	@property
 	def assignments(self,
+		managedEBook_id: str,
 	) -> AssignmentsRequest:
+		if managedEBook_id is None:
+			raise TypeError("managedEBook_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["managedEBook%2Did"] =  managedEBook_id
+
 		from .assignments import AssignmentsRequest
-		return AssignmentsRequest(self.request_adapter, self.path_parameters)
+		return AssignmentsRequest(self.request_adapter, path_parameters)
 
-	@property
 	def device_states(self,
+		managedEBook_id: str,
 	) -> DeviceStatesRequest:
+		if managedEBook_id is None:
+			raise TypeError("managedEBook_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["managedEBook%2Did"] =  managedEBook_id
+
 		from .device_states import DeviceStatesRequest
-		return DeviceStatesRequest(self.request_adapter, self.path_parameters)
+		return DeviceStatesRequest(self.request_adapter, path_parameters)
 
-	@property
 	def install_summary(self,
+		managedEBook_id: str,
 	) -> InstallSummaryRequest:
+		if managedEBook_id is None:
+			raise TypeError("managedEBook_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["managedEBook%2Did"] =  managedEBook_id
+
 		from .install_summary import InstallSummaryRequest
-		return InstallSummaryRequest(self.request_adapter, self.path_parameters)
+		return InstallSummaryRequest(self.request_adapter, path_parameters)
 
-	@property
 	def assign(self,
+		managedEBook_id: str,
 	) -> AssignRequest:
-		from .assign import AssignRequest
-		return AssignRequest(self.request_adapter, self.path_parameters)
+		if managedEBook_id is None:
+			raise TypeError("managedEBook_id cannot be null.")
 
-	@property
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["managedEBook%2Did"] =  managedEBook_id
+
+		from .assign import AssignRequest
+		return AssignRequest(self.request_adapter, path_parameters)
+
 	def user_state_summary(self,
+		managedEBook_id: str,
 	) -> UserStateSummaryRequest:
+		if managedEBook_id is None:
+			raise TypeError("managedEBook_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["managedEBook%2Did"] =  managedEBook_id
+
 		from .user_state_summary import UserStateSummaryRequest
-		return UserStateSummaryRequest(self.request_adapter, self.path_parameters)
+		return UserStateSummaryRequest(self.request_adapter, path_parameters)
 

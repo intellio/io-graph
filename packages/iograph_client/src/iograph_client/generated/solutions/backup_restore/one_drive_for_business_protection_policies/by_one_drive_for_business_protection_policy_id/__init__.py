@@ -1,6 +1,7 @@
 # Auto-generated client
 
 from __future__ import annotations
+from kiota_abstractions.get_path_parameters import get_path_parameters
 from kiota_abstractions.method import Method
 from kiota_abstractions.base_request_builder import BaseRequestBuilder
 from kiota_abstractions.base_request_configuration import RequestConfiguration
@@ -110,15 +111,27 @@ class ByOneDriveForBusinessProtectionPolicyIdRequest(BaseRequestBuilder):
 			raise TypeError("raw_url cannot be None.")
 		return ByOneDriveForBusinessProtectionPolicyIdRequest(self.request_adapter, self.path_parameters)
 
-	@property
 	def drive_inclusion_rules(self,
+		oneDriveForBusinessProtectionPolicy_id: str,
 	) -> DriveInclusionRulesRequest:
-		from .drive_inclusion_rules import DriveInclusionRulesRequest
-		return DriveInclusionRulesRequest(self.request_adapter, self.path_parameters)
+		if oneDriveForBusinessProtectionPolicy_id is None:
+			raise TypeError("oneDriveForBusinessProtectionPolicy_id cannot be null.")
 
-	@property
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["oneDriveForBusinessProtectionPolicy%2Did"] =  oneDriveForBusinessProtectionPolicy_id
+
+		from .drive_inclusion_rules import DriveInclusionRulesRequest
+		return DriveInclusionRulesRequest(self.request_adapter, path_parameters)
+
 	def drive_protection_units(self,
+		oneDriveForBusinessProtectionPolicy_id: str,
 	) -> DriveProtectionUnitsRequest:
+		if oneDriveForBusinessProtectionPolicy_id is None:
+			raise TypeError("oneDriveForBusinessProtectionPolicy_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["oneDriveForBusinessProtectionPolicy%2Did"] =  oneDriveForBusinessProtectionPolicy_id
+
 		from .drive_protection_units import DriveProtectionUnitsRequest
-		return DriveProtectionUnitsRequest(self.request_adapter, self.path_parameters)
+		return DriveProtectionUnitsRequest(self.request_adapter, path_parameters)
 

@@ -1,6 +1,7 @@
 # Auto-generated client
 
 from __future__ import annotations
+from kiota_abstractions.get_path_parameters import get_path_parameters
 from kiota_abstractions.method import Method
 from kiota_abstractions.base_request_builder import BaseRequestBuilder
 from kiota_abstractions.base_request_configuration import RequestConfiguration
@@ -12,8 +13,8 @@ from typing import TYPE_CHECKING
 if TYPE_CHECKING:
 	from .task_processing_results import TaskProcessingResultsRequest
 	from ........request_adapter import HttpxRequestAdapter
-from iograph_models.models.identity_governance_task import IdentityGovernanceTask
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.models.identity_governance_task import IdentityGovernanceTask
 
 
 class ByTaskIdRequest(BaseRequestBuilder):
@@ -57,9 +58,19 @@ class ByTaskIdRequest(BaseRequestBuilder):
 			raise TypeError("raw_url cannot be None.")
 		return ByTaskIdRequest(self.request_adapter, self.path_parameters)
 
-	@property
 	def task_processing_results(self,
+		workflowTemplate_id: str,
+		task_id: str,
 	) -> TaskProcessingResultsRequest:
+		if workflowTemplate_id is None:
+			raise TypeError("workflowTemplate_id cannot be null.")
+		if task_id is None:
+			raise TypeError("task_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["workflowTemplate%2Did"] =  workflowTemplate_id
+		path_parameters["task%2Did"] =  task_id
+
 		from .task_processing_results import TaskProcessingResultsRequest
-		return TaskProcessingResultsRequest(self.request_adapter, self.path_parameters)
+		return TaskProcessingResultsRequest(self.request_adapter, path_parameters)
 

@@ -1,6 +1,7 @@
 # Auto-generated client
 
 from __future__ import annotations
+from kiota_abstractions.get_path_parameters import get_path_parameters
 from kiota_abstractions.method import Method
 from kiota_abstractions.base_request_builder import BaseRequestBuilder
 from kiota_abstractions.base_request_configuration import RequestConfiguration
@@ -110,9 +111,15 @@ class ByCustomSecurityAttributeDefinitionIdRequest(BaseRequestBuilder):
 			raise TypeError("raw_url cannot be None.")
 		return ByCustomSecurityAttributeDefinitionIdRequest(self.request_adapter, self.path_parameters)
 
-	@property
 	def allowed_values(self,
+		customSecurityAttributeDefinition_id: str,
 	) -> AllowedValuesRequest:
+		if customSecurityAttributeDefinition_id is None:
+			raise TypeError("customSecurityAttributeDefinition_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["customSecurityAttributeDefinition%2Did"] =  customSecurityAttributeDefinition_id
+
 		from .allowed_values import AllowedValuesRequest
-		return AllowedValuesRequest(self.request_adapter, self.path_parameters)
+		return AllowedValuesRequest(self.request_adapter, path_parameters)
 

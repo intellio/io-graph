@@ -1,6 +1,7 @@
 # Auto-generated client
 
 from __future__ import annotations
+from kiota_abstractions.get_path_parameters import get_path_parameters
 from kiota_abstractions.method import Method
 from kiota_abstractions.base_request_builder import BaseRequestBuilder
 from kiota_abstractions.base_request_configuration import RequestConfiguration
@@ -108,9 +109,23 @@ class ByUnifiedGroupSourceIdRequest(BaseRequestBuilder):
 			raise TypeError("raw_url cannot be None.")
 		return ByUnifiedGroupSourceIdRequest(self.request_adapter, self.path_parameters)
 
-	@property
 	def group(self,
+		ediscoveryCase_id: str,
+		ediscoveryCustodian_id: str,
+		unifiedGroupSource_id: str,
 	) -> GroupRequest:
+		if ediscoveryCase_id is None:
+			raise TypeError("ediscoveryCase_id cannot be null.")
+		if ediscoveryCustodian_id is None:
+			raise TypeError("ediscoveryCustodian_id cannot be null.")
+		if unifiedGroupSource_id is None:
+			raise TypeError("unifiedGroupSource_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["ediscoveryCase%2Did"] =  ediscoveryCase_id
+		path_parameters["ediscoveryCustodian%2Did"] =  ediscoveryCustodian_id
+		path_parameters["unifiedGroupSource%2Did"] =  unifiedGroupSource_id
+
 		from .group import GroupRequest
-		return GroupRequest(self.request_adapter, self.path_parameters)
+		return GroupRequest(self.request_adapter, path_parameters)
 

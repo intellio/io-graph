@@ -1,6 +1,7 @@
 # Auto-generated client
 
 from __future__ import annotations
+from kiota_abstractions.get_path_parameters import get_path_parameters
 from kiota_abstractions.method import Method
 from kiota_abstractions.base_request_builder import BaseRequestBuilder
 from kiota_abstractions.base_request_configuration import RequestConfiguration
@@ -108,9 +109,23 @@ class ByDeviceLogCollectionResponseIdRequest(BaseRequestBuilder):
 			raise TypeError("raw_url cannot be None.")
 		return ByDeviceLogCollectionResponseIdRequest(self.request_adapter, self.path_parameters)
 
-	@property
 	def create_download_url(self,
+		user_id: str,
+		managedDevice_id: str,
+		deviceLogCollectionResponse_id: str,
 	) -> CreateDownloadUrlRequest:
+		if user_id is None:
+			raise TypeError("user_id cannot be null.")
+		if managedDevice_id is None:
+			raise TypeError("managedDevice_id cannot be null.")
+		if deviceLogCollectionResponse_id is None:
+			raise TypeError("deviceLogCollectionResponse_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["user%2Did"] =  user_id
+		path_parameters["managedDevice%2Did"] =  managedDevice_id
+		path_parameters["deviceLogCollectionResponse%2Did"] =  deviceLogCollectionResponse_id
+
 		from .create_download_url import CreateDownloadUrlRequest
-		return CreateDownloadUrlRequest(self.request_adapter, self.path_parameters)
+		return CreateDownloadUrlRequest(self.request_adapter, path_parameters)
 

@@ -81,9 +81,15 @@ class AppliesToRequest(BaseRequestBuilder):
 		from .by_directory_object_id import ByDirectoryObjectIdRequest
 		return ByDirectoryObjectIdRequest(self.request_adapter, path_parameters)
 
-	@property
 	def count(self,
+		activityBasedTimeoutPolicy_id: str,
 	) -> CountRequest:
+		if activityBasedTimeoutPolicy_id is None:
+			raise TypeError("activityBasedTimeoutPolicy_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["activityBasedTimeoutPolicy%2Did"] =  activityBasedTimeoutPolicy_id
+
 		from .count import CountRequest
-		return CountRequest(self.request_adapter, self.path_parameters)
+		return CountRequest(self.request_adapter, path_parameters)
 

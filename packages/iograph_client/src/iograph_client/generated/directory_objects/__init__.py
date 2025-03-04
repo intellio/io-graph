@@ -14,12 +14,13 @@ if TYPE_CHECKING:
 	from .validate_properties import ValidatePropertiesRequest
 	from .get_by_ids import GetByIdsRequest
 	from .get_available_extension_properties import GetAvailableExtensionPropertiesRequest
+	from .delta import DeltaRequest
 	from .count import CountRequest
 	from .by_directory_object_id import ByDirectoryObjectIdRequest
 	from ...request_adapter import HttpxRequestAdapter
 from iograph_models.models.directory_object_collection_response import DirectoryObjectCollectionResponse
-from iograph_models.models.directory_object import DirectoryObject
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.models.directory_object import DirectoryObject
 
 
 class DirectoryObjectsRequest(BaseRequestBuilder):
@@ -113,6 +114,12 @@ class DirectoryObjectsRequest(BaseRequestBuilder):
 	) -> CountRequest:
 		from .count import CountRequest
 		return CountRequest(self.request_adapter, self.path_parameters)
+
+	@property
+	def delta(self,
+	) -> DeltaRequest:
+		from .delta import DeltaRequest
+		return DeltaRequest(self.request_adapter, self.path_parameters)
 
 	@property
 	def get_available_extension_properties(self,

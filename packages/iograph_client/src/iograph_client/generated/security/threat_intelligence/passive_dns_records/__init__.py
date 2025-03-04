@@ -14,9 +14,9 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_passive_dns_record_id import ByPassiveDnsRecordIdRequest
 	from .....request_adapter import HttpxRequestAdapter
+from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.models.security_passive_dns_record import SecurityPassiveDnsRecord
 from iograph_models.models.security_passive_dns_record_collection_response import SecurityPassiveDnsRecordCollectionResponse
-from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
 
 
 class PassiveDnsRecordsRequest(BaseRequestBuilder):

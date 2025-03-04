@@ -14,8 +14,8 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_day_note_id import ByDayNoteIdRequest
 	from .......request_adapter import HttpxRequestAdapter
-from iograph_models.models.day_note_collection_response import DayNoteCollectionResponse
 from iograph_models.models.day_note import DayNote
+from iograph_models.models.day_note_collection_response import DayNoteCollectionResponse
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
 
 
@@ -108,9 +108,15 @@ class DayNotesRequest(BaseRequestBuilder):
 		from .by_day_note_id import ByDayNoteIdRequest
 		return ByDayNoteIdRequest(self.request_adapter, path_parameters)
 
-	@property
 	def count(self,
+		group_id: str,
 	) -> CountRequest:
+		if group_id is None:
+			raise TypeError("group_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["group%2Did"] =  group_id
+
 		from .count import CountRequest
-		return CountRequest(self.request_adapter, self.path_parameters)
+		return CountRequest(self.request_adapter, path_parameters)
 

@@ -1,6 +1,7 @@
 # Auto-generated client
 
 from __future__ import annotations
+from kiota_abstractions.get_path_parameters import get_path_parameters
 from kiota_abstractions.method import Method
 from kiota_abstractions.base_request_builder import BaseRequestBuilder
 from kiota_abstractions.base_request_configuration import RequestConfiguration
@@ -109,15 +110,43 @@ class ByPrintTaskIdRequest(BaseRequestBuilder):
 			raise TypeError("raw_url cannot be None.")
 		return ByPrintTaskIdRequest(self.request_adapter, self.path_parameters)
 
-	@property
 	def definition(self,
+		printer_id: str,
+		printJob_id: str,
+		printTask_id: str,
 	) -> DefinitionRequest:
-		from .definition import DefinitionRequest
-		return DefinitionRequest(self.request_adapter, self.path_parameters)
+		if printer_id is None:
+			raise TypeError("printer_id cannot be null.")
+		if printJob_id is None:
+			raise TypeError("printJob_id cannot be null.")
+		if printTask_id is None:
+			raise TypeError("printTask_id cannot be null.")
 
-	@property
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["printer%2Did"] =  printer_id
+		path_parameters["printJob%2Did"] =  printJob_id
+		path_parameters["printTask%2Did"] =  printTask_id
+
+		from .definition import DefinitionRequest
+		return DefinitionRequest(self.request_adapter, path_parameters)
+
 	def trigger(self,
+		printer_id: str,
+		printJob_id: str,
+		printTask_id: str,
 	) -> TriggerRequest:
+		if printer_id is None:
+			raise TypeError("printer_id cannot be null.")
+		if printJob_id is None:
+			raise TypeError("printJob_id cannot be null.")
+		if printTask_id is None:
+			raise TypeError("printTask_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["printer%2Did"] =  printer_id
+		path_parameters["printJob%2Did"] =  printJob_id
+		path_parameters["printTask%2Did"] =  printTask_id
+
 		from .trigger import TriggerRequest
-		return TriggerRequest(self.request_adapter, self.path_parameters)
+		return TriggerRequest(self.request_adapter, path_parameters)
 

@@ -11,12 +11,14 @@ from typing import Union, Any, Optional
 from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:
+	from .filter_by_current_user import FilterByCurrentUserRequest
+	from .additional_access import AdditionalAccessRequest
 	from .count import CountRequest
 	from .by_access_package_assignment_id import ByAccessPackageAssignmentIdRequest
 	from .....request_adapter import HttpxRequestAdapter
 from iograph_models.models.access_package_assignment import AccessPackageAssignment
-from iograph_models.models.access_package_assignment_collection_response import AccessPackageAssignmentCollectionResponse
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.models.access_package_assignment_collection_response import AccessPackageAssignmentCollectionResponse
 
 
 class AssignmentsRequest(BaseRequestBuilder):
@@ -110,4 +112,22 @@ class AssignmentsRequest(BaseRequestBuilder):
 	) -> CountRequest:
 		from .count import CountRequest
 		return CountRequest(self.request_adapter, self.path_parameters)
+
+	@property
+	def additional_access(self,
+	) -> AdditionalAccessRequest:
+		from .additional_access import AdditionalAccessRequest
+		return AdditionalAccessRequest(self.request_adapter, self.path_parameters)
+
+	def filter_by_current_user(self,
+		on: str,
+	) -> FilterByCurrentUserRequest:
+		if on is None:
+			raise TypeError("on cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["on"] =  on
+
+		from .filter_by_current_user import FilterByCurrentUserRequest
+		return FilterByCurrentUserRequest(self.request_adapter, path_parameters)
 

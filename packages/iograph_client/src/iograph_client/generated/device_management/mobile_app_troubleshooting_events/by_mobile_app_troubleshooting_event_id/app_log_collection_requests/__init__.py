@@ -14,9 +14,9 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_app_log_collection_request_id import ByAppLogCollectionRequestIdRequest
 	from ......request_adapter import HttpxRequestAdapter
-from iograph_models.models.app_log_collection_request import AppLogCollectionRequest
 from iograph_models.models.app_log_collection_request_collection_response import AppLogCollectionRequestCollectionResponse
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.models.app_log_collection_request import AppLogCollectionRequest
 
 
 class AppLogCollectionRequestsRequest(BaseRequestBuilder):
@@ -110,9 +110,15 @@ class AppLogCollectionRequestsRequest(BaseRequestBuilder):
 		from .by_app_log_collection_request_id import ByAppLogCollectionRequestIdRequest
 		return ByAppLogCollectionRequestIdRequest(self.request_adapter, path_parameters)
 
-	@property
 	def count(self,
+		mobileAppTroubleshootingEvent_id: str,
 	) -> CountRequest:
+		if mobileAppTroubleshootingEvent_id is None:
+			raise TypeError("mobileAppTroubleshootingEvent_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["mobileAppTroubleshootingEvent%2Did"] =  mobileAppTroubleshootingEvent_id
+
 		from .count import CountRequest
-		return CountRequest(self.request_adapter, self.path_parameters)
+		return CountRequest(self.request_adapter, path_parameters)
 

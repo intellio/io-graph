@@ -1,6 +1,7 @@
 # Auto-generated client
 
 from __future__ import annotations
+from kiota_abstractions.get_path_parameters import get_path_parameters
 from kiota_abstractions.method import Method
 from kiota_abstractions.base_request_builder import BaseRequestBuilder
 from kiota_abstractions.base_request_configuration import RequestConfiguration
@@ -108,9 +109,15 @@ class DeviceCategoryRequest(BaseRequestBuilder):
 			raise TypeError("raw_url cannot be None.")
 		return DeviceCategoryRequest(self.request_adapter, self.path_parameters)
 
-	@property
 	def ref(self,
+		managedDevice_id: str,
 	) -> RefRequest:
+		if managedDevice_id is None:
+			raise TypeError("managedDevice_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["managedDevice%2Did"] =  managedDevice_id
+
 		from .ref import RefRequest
-		return RefRequest(self.request_adapter, self.path_parameters)
+		return RefRequest(self.request_adapter, path_parameters)
 

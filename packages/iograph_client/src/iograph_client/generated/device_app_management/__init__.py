@@ -41,7 +41,7 @@ class DeviceAppManagementRequest(BaseRequestBuilder):
 		"""
 		Get deviceAppManagement
 		Read properties and relationships of the deviceAppManagement object.
-		Find more info here: https://learn.microsoft.com/graph/api/intune-policyset-deviceappmanagement-get?view=graph-rest-1.0
+		Find more info here: https://learn.microsoft.com/graph/api/intune-onboarding-deviceappmanagement-get?view=graph-rest-1.0
 		"""
 		tags = ['deviceAppManagement.deviceAppManagement']
 
@@ -66,7 +66,7 @@ class DeviceAppManagementRequest(BaseRequestBuilder):
 		"""
 		Update deviceAppManagement
 		Update the properties of a deviceAppManagement object.
-		Find more info here: https://learn.microsoft.com/graph/api/intune-unlock-deviceappmanagement-update?view=graph-rest-1.0
+		Find more info here: https://learn.microsoft.com/graph/api/intune-books-deviceappmanagement-update?view=graph-rest-1.0
 		"""
 		tags = ['deviceAppManagement.deviceAppManagement']
 

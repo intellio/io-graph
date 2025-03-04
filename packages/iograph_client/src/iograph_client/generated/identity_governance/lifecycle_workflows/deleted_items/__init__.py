@@ -12,8 +12,8 @@ from typing import TYPE_CHECKING
 if TYPE_CHECKING:
 	from .workflows import WorkflowsRequest
 	from .....request_adapter import HttpxRequestAdapter
-from iograph_models.models.deleted_item_container import DeletedItemContainer
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.models.deleted_item_container import DeletedItemContainer
 
 
 class DeletedItemsRequest(BaseRequestBuilder):

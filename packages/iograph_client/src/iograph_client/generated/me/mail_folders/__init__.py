@@ -11,12 +11,13 @@ from typing import Union, Any, Optional
 from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:
+	from .delta import DeltaRequest
 	from .count import CountRequest
 	from .by_mail_folder_id import ByMailFolderIdRequest
 	from ....request_adapter import HttpxRequestAdapter
-from iograph_models.models.mail_folder import MailFolder
 from iograph_models.models.mail_folder_collection_response import MailFolderCollectionResponse
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.models.mail_folder import MailFolder
 
 
 class MailFoldersRequest(BaseRequestBuilder):
@@ -112,4 +113,10 @@ class MailFoldersRequest(BaseRequestBuilder):
 	) -> CountRequest:
 		from .count import CountRequest
 		return CountRequest(self.request_adapter, self.path_parameters)
+
+	@property
+	def delta(self,
+	) -> DeltaRequest:
+		from .delta import DeltaRequest
+		return DeltaRequest(self.request_adapter, self.path_parameters)
 

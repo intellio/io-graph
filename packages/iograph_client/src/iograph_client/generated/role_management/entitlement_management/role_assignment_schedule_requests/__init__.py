@@ -11,6 +11,7 @@ from typing import Union, Any, Optional
 from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:
+	from .filter_by_current_user import FilterByCurrentUserRequest
 	from .count import CountRequest
 	from .by_unified_role_assignment_schedule_request_id import ByUnifiedRoleAssignmentScheduleRequestIdRequest
 	from .....request_adapter import HttpxRequestAdapter
@@ -109,4 +110,16 @@ class RoleAssignmentScheduleRequestsRequest(BaseRequestBuilder):
 	) -> CountRequest:
 		from .count import CountRequest
 		return CountRequest(self.request_adapter, self.path_parameters)
+
+	def filter_by_current_user(self,
+		on: str,
+	) -> FilterByCurrentUserRequest:
+		if on is None:
+			raise TypeError("on cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["on"] =  on
+
+		from .filter_by_current_user import FilterByCurrentUserRequest
+		return FilterByCurrentUserRequest(self.request_adapter, path_parameters)
 

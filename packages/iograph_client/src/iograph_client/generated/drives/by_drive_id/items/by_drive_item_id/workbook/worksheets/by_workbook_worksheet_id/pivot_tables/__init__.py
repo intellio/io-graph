@@ -16,8 +16,8 @@ if TYPE_CHECKING:
 	from .by_workbook_pivot_table_id import ByWorkbookPivotTableIdRequest
 	from ..........request_adapter import HttpxRequestAdapter
 from iograph_models.models.workbook_pivot_table import WorkbookPivotTable
-from iograph_models.models.workbook_pivot_table_collection_response import WorkbookPivotTableCollectionResponse
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.models.workbook_pivot_table_collection_response import WorkbookPivotTableCollectionResponse
 
 
 class PivotTablesRequest(BaseRequestBuilder):
@@ -117,15 +117,43 @@ class PivotTablesRequest(BaseRequestBuilder):
 		from .by_workbook_pivot_table_id import ByWorkbookPivotTableIdRequest
 		return ByWorkbookPivotTableIdRequest(self.request_adapter, path_parameters)
 
-	@property
 	def count(self,
+		drive_id: str,
+		driveItem_id: str,
+		workbookWorksheet_id: str,
 	) -> CountRequest:
-		from .count import CountRequest
-		return CountRequest(self.request_adapter, self.path_parameters)
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+		if workbookWorksheet_id is None:
+			raise TypeError("workbookWorksheet_id cannot be null.")
 
-	@property
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+		path_parameters["workbookWorksheet%2Did"] =  workbookWorksheet_id
+
+		from .count import CountRequest
+		return CountRequest(self.request_adapter, path_parameters)
+
 	def refresh_all(self,
+		drive_id: str,
+		driveItem_id: str,
+		workbookWorksheet_id: str,
 	) -> RefreshAllRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+		if workbookWorksheet_id is None:
+			raise TypeError("workbookWorksheet_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+		path_parameters["workbookWorksheet%2Did"] =  workbookWorksheet_id
+
 		from .refresh_all import RefreshAllRequest
-		return RefreshAllRequest(self.request_adapter, self.path_parameters)
+		return RefreshAllRequest(self.request_adapter, path_parameters)
 

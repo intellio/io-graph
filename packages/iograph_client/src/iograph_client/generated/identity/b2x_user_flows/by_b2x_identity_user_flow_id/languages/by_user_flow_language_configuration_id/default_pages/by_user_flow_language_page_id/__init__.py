@@ -1,6 +1,7 @@
 # Auto-generated client
 
 from __future__ import annotations
+from kiota_abstractions.get_path_parameters import get_path_parameters
 from kiota_abstractions.method import Method
 from kiota_abstractions.base_request_builder import BaseRequestBuilder
 from kiota_abstractions.base_request_configuration import RequestConfiguration
@@ -108,9 +109,23 @@ class ByUserFlowLanguagePageIdRequest(BaseRequestBuilder):
 			raise TypeError("raw_url cannot be None.")
 		return ByUserFlowLanguagePageIdRequest(self.request_adapter, self.path_parameters)
 
-	@property
 	def value(self,
+		b2xIdentityUserFlow_id: str,
+		userFlowLanguageConfiguration_id: str,
+		userFlowLanguagePage_id: str,
 	) -> ValueRequest:
+		if b2xIdentityUserFlow_id is None:
+			raise TypeError("b2xIdentityUserFlow_id cannot be null.")
+		if userFlowLanguageConfiguration_id is None:
+			raise TypeError("userFlowLanguageConfiguration_id cannot be null.")
+		if userFlowLanguagePage_id is None:
+			raise TypeError("userFlowLanguagePage_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["b2xIdentityUserFlow%2Did"] =  b2xIdentityUserFlow_id
+		path_parameters["userFlowLanguageConfiguration%2Did"] =  userFlowLanguageConfiguration_id
+		path_parameters["userFlowLanguagePage%2Did"] =  userFlowLanguagePage_id
+
 		from .value import ValueRequest
-		return ValueRequest(self.request_adapter, self.path_parameters)
+		return ValueRequest(self.request_adapter, path_parameters)
 

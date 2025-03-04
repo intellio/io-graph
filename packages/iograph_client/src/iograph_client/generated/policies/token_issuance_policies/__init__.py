@@ -14,9 +14,9 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_token_issuance_policy_id import ByTokenIssuancePolicyIdRequest
 	from ....request_adapter import HttpxRequestAdapter
+from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.models.token_issuance_policy import TokenIssuancePolicy
 from iograph_models.models.token_issuance_policy_collection_response import TokenIssuancePolicyCollectionResponse
-from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
 
 
 class TokenIssuancePoliciesRequest(BaseRequestBuilder):

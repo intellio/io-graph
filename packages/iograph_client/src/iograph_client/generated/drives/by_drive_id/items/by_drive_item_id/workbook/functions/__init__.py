@@ -1,6 +1,7 @@
 # Auto-generated client
 
 from __future__ import annotations
+from kiota_abstractions.get_path_parameters import get_path_parameters
 from kiota_abstractions.method import Method
 from kiota_abstractions.base_request_builder import BaseRequestBuilder
 from kiota_abstractions.base_request_configuration import RequestConfiguration
@@ -377,8 +378,8 @@ if TYPE_CHECKING:
 	from .accr_int import AccrIntRequest
 	from .abs import AbsRequest
 	from ........request_adapter import HttpxRequestAdapter
-from iograph_models.models.workbook_functions import WorkbookFunctions
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.models.workbook_functions import WorkbookFunctions
 
 
 class FunctionsRequest(BaseRequestBuilder):
@@ -473,2199 +474,5859 @@ class FunctionsRequest(BaseRequestBuilder):
 			raise TypeError("raw_url cannot be None.")
 		return FunctionsRequest(self.request_adapter, self.path_parameters)
 
-	@property
 	def abs(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> AbsRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .abs import AbsRequest
-		return AbsRequest(self.request_adapter, self.path_parameters)
+		return AbsRequest(self.request_adapter, path_parameters)
 
-	@property
 	def accr_int(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> AccrIntRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .accr_int import AccrIntRequest
-		return AccrIntRequest(self.request_adapter, self.path_parameters)
+		return AccrIntRequest(self.request_adapter, path_parameters)
 
-	@property
 	def accr_int_m(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> AccrIntMRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .accr_int_m import AccrIntMRequest
-		return AccrIntMRequest(self.request_adapter, self.path_parameters)
+		return AccrIntMRequest(self.request_adapter, path_parameters)
 
-	@property
 	def acos(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> AcosRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .acos import AcosRequest
-		return AcosRequest(self.request_adapter, self.path_parameters)
+		return AcosRequest(self.request_adapter, path_parameters)
 
-	@property
 	def acosh(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> AcoshRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .acosh import AcoshRequest
-		return AcoshRequest(self.request_adapter, self.path_parameters)
+		return AcoshRequest(self.request_adapter, path_parameters)
 
-	@property
 	def acot(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> AcotRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .acot import AcotRequest
-		return AcotRequest(self.request_adapter, self.path_parameters)
+		return AcotRequest(self.request_adapter, path_parameters)
 
-	@property
 	def acoth(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> AcothRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .acoth import AcothRequest
-		return AcothRequest(self.request_adapter, self.path_parameters)
+		return AcothRequest(self.request_adapter, path_parameters)
 
-	@property
 	def amor_degrc(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> AmorDegrcRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .amor_degrc import AmorDegrcRequest
-		return AmorDegrcRequest(self.request_adapter, self.path_parameters)
+		return AmorDegrcRequest(self.request_adapter, path_parameters)
 
-	@property
 	def amor_linc(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> AmorLincRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .amor_linc import AmorLincRequest
-		return AmorLincRequest(self.request_adapter, self.path_parameters)
+		return AmorLincRequest(self.request_adapter, path_parameters)
 
-	@property
 	def and(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> AndRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .and import AndRequest
-		return AndRequest(self.request_adapter, self.path_parameters)
+		return AndRequest(self.request_adapter, path_parameters)
 
-	@property
 	def arabic(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> ArabicRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .arabic import ArabicRequest
-		return ArabicRequest(self.request_adapter, self.path_parameters)
+		return ArabicRequest(self.request_adapter, path_parameters)
 
-	@property
 	def areas(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> AreasRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .areas import AreasRequest
-		return AreasRequest(self.request_adapter, self.path_parameters)
+		return AreasRequest(self.request_adapter, path_parameters)
 
-	@property
 	def asc(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> AscRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .asc import AscRequest
-		return AscRequest(self.request_adapter, self.path_parameters)
+		return AscRequest(self.request_adapter, path_parameters)
 
-	@property
 	def asin(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> AsinRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .asin import AsinRequest
-		return AsinRequest(self.request_adapter, self.path_parameters)
+		return AsinRequest(self.request_adapter, path_parameters)
 
-	@property
 	def asinh(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> AsinhRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .asinh import AsinhRequest
-		return AsinhRequest(self.request_adapter, self.path_parameters)
+		return AsinhRequest(self.request_adapter, path_parameters)
 
-	@property
 	def atan(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> AtanRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .atan import AtanRequest
-		return AtanRequest(self.request_adapter, self.path_parameters)
+		return AtanRequest(self.request_adapter, path_parameters)
 
-	@property
 	def atan2(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> Atan2Request:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .atan2 import Atan2Request
-		return Atan2Request(self.request_adapter, self.path_parameters)
+		return Atan2Request(self.request_adapter, path_parameters)
 
-	@property
 	def atanh(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> AtanhRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .atanh import AtanhRequest
-		return AtanhRequest(self.request_adapter, self.path_parameters)
+		return AtanhRequest(self.request_adapter, path_parameters)
 
-	@property
 	def ave_dev(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> AveDevRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .ave_dev import AveDevRequest
-		return AveDevRequest(self.request_adapter, self.path_parameters)
+		return AveDevRequest(self.request_adapter, path_parameters)
 
-	@property
 	def average(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> AverageRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .average import AverageRequest
-		return AverageRequest(self.request_adapter, self.path_parameters)
+		return AverageRequest(self.request_adapter, path_parameters)
 
-	@property
 	def average_a(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> AverageARequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .average_a import AverageARequest
-		return AverageARequest(self.request_adapter, self.path_parameters)
+		return AverageARequest(self.request_adapter, path_parameters)
 
-	@property
 	def average_if(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> AverageIfRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .average_if import AverageIfRequest
-		return AverageIfRequest(self.request_adapter, self.path_parameters)
+		return AverageIfRequest(self.request_adapter, path_parameters)
 
-	@property
 	def average_ifs(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> AverageIfsRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .average_ifs import AverageIfsRequest
-		return AverageIfsRequest(self.request_adapter, self.path_parameters)
+		return AverageIfsRequest(self.request_adapter, path_parameters)
 
-	@property
 	def baht_text(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> BahtTextRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .baht_text import BahtTextRequest
-		return BahtTextRequest(self.request_adapter, self.path_parameters)
+		return BahtTextRequest(self.request_adapter, path_parameters)
 
-	@property
 	def base(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> BaseRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .base import BaseRequest
-		return BaseRequest(self.request_adapter, self.path_parameters)
+		return BaseRequest(self.request_adapter, path_parameters)
 
-	@property
 	def bessel_i(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> BesselIRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .bessel_i import BesselIRequest
-		return BesselIRequest(self.request_adapter, self.path_parameters)
+		return BesselIRequest(self.request_adapter, path_parameters)
 
-	@property
 	def bessel_j(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> BesselJRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .bessel_j import BesselJRequest
-		return BesselJRequest(self.request_adapter, self.path_parameters)
+		return BesselJRequest(self.request_adapter, path_parameters)
 
-	@property
 	def bessel_k(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> BesselKRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .bessel_k import BesselKRequest
-		return BesselKRequest(self.request_adapter, self.path_parameters)
+		return BesselKRequest(self.request_adapter, path_parameters)
 
-	@property
 	def bessel_y(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> BesselYRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .bessel_y import BesselYRequest
-		return BesselYRequest(self.request_adapter, self.path_parameters)
+		return BesselYRequest(self.request_adapter, path_parameters)
 
-	@property
 	def beta__dist(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> Beta_DistRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .beta__dist import Beta_DistRequest
-		return Beta_DistRequest(self.request_adapter, self.path_parameters)
+		return Beta_DistRequest(self.request_adapter, path_parameters)
 
-	@property
 	def beta__inv(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> Beta_InvRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .beta__inv import Beta_InvRequest
-		return Beta_InvRequest(self.request_adapter, self.path_parameters)
+		return Beta_InvRequest(self.request_adapter, path_parameters)
 
-	@property
 	def bin2_dec(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> Bin2DecRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .bin2_dec import Bin2DecRequest
-		return Bin2DecRequest(self.request_adapter, self.path_parameters)
+		return Bin2DecRequest(self.request_adapter, path_parameters)
 
-	@property
 	def bin2_hex(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> Bin2HexRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .bin2_hex import Bin2HexRequest
-		return Bin2HexRequest(self.request_adapter, self.path_parameters)
+		return Bin2HexRequest(self.request_adapter, path_parameters)
 
-	@property
 	def bin2_oct(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> Bin2OctRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .bin2_oct import Bin2OctRequest
-		return Bin2OctRequest(self.request_adapter, self.path_parameters)
+		return Bin2OctRequest(self.request_adapter, path_parameters)
 
-	@property
 	def binom__dist(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> Binom_DistRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .binom__dist import Binom_DistRequest
-		return Binom_DistRequest(self.request_adapter, self.path_parameters)
+		return Binom_DistRequest(self.request_adapter, path_parameters)
 
-	@property
 	def binom__dist__range(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> Binom_Dist_RangeRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .binom__dist__range import Binom_Dist_RangeRequest
-		return Binom_Dist_RangeRequest(self.request_adapter, self.path_parameters)
+		return Binom_Dist_RangeRequest(self.request_adapter, path_parameters)
 
-	@property
 	def binom__inv(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> Binom_InvRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .binom__inv import Binom_InvRequest
-		return Binom_InvRequest(self.request_adapter, self.path_parameters)
+		return Binom_InvRequest(self.request_adapter, path_parameters)
 
-	@property
 	def bitand(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> BitandRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .bitand import BitandRequest
-		return BitandRequest(self.request_adapter, self.path_parameters)
+		return BitandRequest(self.request_adapter, path_parameters)
 
-	@property
 	def bitlshift(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> BitlshiftRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .bitlshift import BitlshiftRequest
-		return BitlshiftRequest(self.request_adapter, self.path_parameters)
+		return BitlshiftRequest(self.request_adapter, path_parameters)
 
-	@property
 	def bitor(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> BitorRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .bitor import BitorRequest
-		return BitorRequest(self.request_adapter, self.path_parameters)
+		return BitorRequest(self.request_adapter, path_parameters)
 
-	@property
 	def bitrshift(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> BitrshiftRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .bitrshift import BitrshiftRequest
-		return BitrshiftRequest(self.request_adapter, self.path_parameters)
+		return BitrshiftRequest(self.request_adapter, path_parameters)
 
-	@property
 	def bitxor(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> BitxorRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .bitxor import BitxorRequest
-		return BitxorRequest(self.request_adapter, self.path_parameters)
+		return BitxorRequest(self.request_adapter, path_parameters)
 
-	@property
 	def ceiling__math(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> Ceiling_MathRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .ceiling__math import Ceiling_MathRequest
-		return Ceiling_MathRequest(self.request_adapter, self.path_parameters)
+		return Ceiling_MathRequest(self.request_adapter, path_parameters)
 
-	@property
 	def ceiling__precise(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> Ceiling_PreciseRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .ceiling__precise import Ceiling_PreciseRequest
-		return Ceiling_PreciseRequest(self.request_adapter, self.path_parameters)
+		return Ceiling_PreciseRequest(self.request_adapter, path_parameters)
 
-	@property
 	def char(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> CharRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .char import CharRequest
-		return CharRequest(self.request_adapter, self.path_parameters)
+		return CharRequest(self.request_adapter, path_parameters)
 
-	@property
 	def chi_sq__dist(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> ChiSq_DistRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .chi_sq__dist import ChiSq_DistRequest
-		return ChiSq_DistRequest(self.request_adapter, self.path_parameters)
+		return ChiSq_DistRequest(self.request_adapter, path_parameters)
 
-	@property
 	def chi_sq__dist__r_t(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> ChiSq_Dist_RTRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .chi_sq__dist__r_t import ChiSq_Dist_RTRequest
-		return ChiSq_Dist_RTRequest(self.request_adapter, self.path_parameters)
+		return ChiSq_Dist_RTRequest(self.request_adapter, path_parameters)
 
-	@property
 	def chi_sq__inv(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> ChiSq_InvRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .chi_sq__inv import ChiSq_InvRequest
-		return ChiSq_InvRequest(self.request_adapter, self.path_parameters)
+		return ChiSq_InvRequest(self.request_adapter, path_parameters)
 
-	@property
 	def chi_sq__inv__r_t(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> ChiSq_Inv_RTRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .chi_sq__inv__r_t import ChiSq_Inv_RTRequest
-		return ChiSq_Inv_RTRequest(self.request_adapter, self.path_parameters)
+		return ChiSq_Inv_RTRequest(self.request_adapter, path_parameters)
 
-	@property
 	def choose(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> ChooseRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .choose import ChooseRequest
-		return ChooseRequest(self.request_adapter, self.path_parameters)
+		return ChooseRequest(self.request_adapter, path_parameters)
 
-	@property
 	def clean(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> CleanRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .clean import CleanRequest
-		return CleanRequest(self.request_adapter, self.path_parameters)
+		return CleanRequest(self.request_adapter, path_parameters)
 
-	@property
 	def code(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> CodeRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .code import CodeRequest
-		return CodeRequest(self.request_adapter, self.path_parameters)
+		return CodeRequest(self.request_adapter, path_parameters)
 
-	@property
 	def columns(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> ColumnsRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .columns import ColumnsRequest
-		return ColumnsRequest(self.request_adapter, self.path_parameters)
+		return ColumnsRequest(self.request_adapter, path_parameters)
 
-	@property
 	def combin(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> CombinRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .combin import CombinRequest
-		return CombinRequest(self.request_adapter, self.path_parameters)
+		return CombinRequest(self.request_adapter, path_parameters)
 
-	@property
 	def combina(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> CombinaRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .combina import CombinaRequest
-		return CombinaRequest(self.request_adapter, self.path_parameters)
+		return CombinaRequest(self.request_adapter, path_parameters)
 
-	@property
 	def complex(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> ComplexRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .complex import ComplexRequest
-		return ComplexRequest(self.request_adapter, self.path_parameters)
+		return ComplexRequest(self.request_adapter, path_parameters)
 
-	@property
 	def concatenate(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> ConcatenateRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .concatenate import ConcatenateRequest
-		return ConcatenateRequest(self.request_adapter, self.path_parameters)
+		return ConcatenateRequest(self.request_adapter, path_parameters)
 
-	@property
 	def confidence__norm(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> Confidence_NormRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .confidence__norm import Confidence_NormRequest
-		return Confidence_NormRequest(self.request_adapter, self.path_parameters)
+		return Confidence_NormRequest(self.request_adapter, path_parameters)
 
-	@property
 	def confidence__t(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> Confidence_TRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .confidence__t import Confidence_TRequest
-		return Confidence_TRequest(self.request_adapter, self.path_parameters)
+		return Confidence_TRequest(self.request_adapter, path_parameters)
 
-	@property
 	def convert(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> ConvertRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .convert import ConvertRequest
-		return ConvertRequest(self.request_adapter, self.path_parameters)
+		return ConvertRequest(self.request_adapter, path_parameters)
 
-	@property
 	def cos(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> CosRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .cos import CosRequest
-		return CosRequest(self.request_adapter, self.path_parameters)
+		return CosRequest(self.request_adapter, path_parameters)
 
-	@property
 	def cosh(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> CoshRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .cosh import CoshRequest
-		return CoshRequest(self.request_adapter, self.path_parameters)
+		return CoshRequest(self.request_adapter, path_parameters)
 
-	@property
 	def cot(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> CotRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .cot import CotRequest
-		return CotRequest(self.request_adapter, self.path_parameters)
+		return CotRequest(self.request_adapter, path_parameters)
 
-	@property
 	def coth(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> CothRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .coth import CothRequest
-		return CothRequest(self.request_adapter, self.path_parameters)
+		return CothRequest(self.request_adapter, path_parameters)
 
-	@property
 	def count(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> CountRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .count import CountRequest
-		return CountRequest(self.request_adapter, self.path_parameters)
+		return CountRequest(self.request_adapter, path_parameters)
 
-	@property
 	def count_a(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> CountARequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .count_a import CountARequest
-		return CountARequest(self.request_adapter, self.path_parameters)
+		return CountARequest(self.request_adapter, path_parameters)
 
-	@property
 	def count_blank(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> CountBlankRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .count_blank import CountBlankRequest
-		return CountBlankRequest(self.request_adapter, self.path_parameters)
+		return CountBlankRequest(self.request_adapter, path_parameters)
 
-	@property
 	def count_if(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> CountIfRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .count_if import CountIfRequest
-		return CountIfRequest(self.request_adapter, self.path_parameters)
+		return CountIfRequest(self.request_adapter, path_parameters)
 
-	@property
 	def count_ifs(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> CountIfsRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .count_ifs import CountIfsRequest
-		return CountIfsRequest(self.request_adapter, self.path_parameters)
+		return CountIfsRequest(self.request_adapter, path_parameters)
 
-	@property
 	def coup_day_bs(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> CoupDayBsRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .coup_day_bs import CoupDayBsRequest
-		return CoupDayBsRequest(self.request_adapter, self.path_parameters)
+		return CoupDayBsRequest(self.request_adapter, path_parameters)
 
-	@property
 	def coup_days(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> CoupDaysRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .coup_days import CoupDaysRequest
-		return CoupDaysRequest(self.request_adapter, self.path_parameters)
+		return CoupDaysRequest(self.request_adapter, path_parameters)
 
-	@property
 	def coup_days_nc(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> CoupDaysNcRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .coup_days_nc import CoupDaysNcRequest
-		return CoupDaysNcRequest(self.request_adapter, self.path_parameters)
+		return CoupDaysNcRequest(self.request_adapter, path_parameters)
 
-	@property
 	def coup_ncd(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> CoupNcdRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .coup_ncd import CoupNcdRequest
-		return CoupNcdRequest(self.request_adapter, self.path_parameters)
+		return CoupNcdRequest(self.request_adapter, path_parameters)
 
-	@property
 	def coup_num(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> CoupNumRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .coup_num import CoupNumRequest
-		return CoupNumRequest(self.request_adapter, self.path_parameters)
+		return CoupNumRequest(self.request_adapter, path_parameters)
 
-	@property
 	def coup_pcd(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> CoupPcdRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .coup_pcd import CoupPcdRequest
-		return CoupPcdRequest(self.request_adapter, self.path_parameters)
+		return CoupPcdRequest(self.request_adapter, path_parameters)
 
-	@property
 	def csc(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> CscRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .csc import CscRequest
-		return CscRequest(self.request_adapter, self.path_parameters)
+		return CscRequest(self.request_adapter, path_parameters)
 
-	@property
 	def csch(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> CschRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .csch import CschRequest
-		return CschRequest(self.request_adapter, self.path_parameters)
+		return CschRequest(self.request_adapter, path_parameters)
 
-	@property
 	def cum_i_pmt(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> CumIPmtRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .cum_i_pmt import CumIPmtRequest
-		return CumIPmtRequest(self.request_adapter, self.path_parameters)
+		return CumIPmtRequest(self.request_adapter, path_parameters)
 
-	@property
 	def cum_princ(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> CumPrincRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .cum_princ import CumPrincRequest
-		return CumPrincRequest(self.request_adapter, self.path_parameters)
+		return CumPrincRequest(self.request_adapter, path_parameters)
 
-	@property
 	def date(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> DateRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .date import DateRequest
-		return DateRequest(self.request_adapter, self.path_parameters)
+		return DateRequest(self.request_adapter, path_parameters)
 
-	@property
 	def datevalue(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> DatevalueRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .datevalue import DatevalueRequest
-		return DatevalueRequest(self.request_adapter, self.path_parameters)
+		return DatevalueRequest(self.request_adapter, path_parameters)
 
-	@property
 	def daverage(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> DaverageRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .daverage import DaverageRequest
-		return DaverageRequest(self.request_adapter, self.path_parameters)
+		return DaverageRequest(self.request_adapter, path_parameters)
 
-	@property
 	def day(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> DayRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .day import DayRequest
-		return DayRequest(self.request_adapter, self.path_parameters)
+		return DayRequest(self.request_adapter, path_parameters)
 
-	@property
 	def days(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> DaysRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .days import DaysRequest
-		return DaysRequest(self.request_adapter, self.path_parameters)
+		return DaysRequest(self.request_adapter, path_parameters)
 
-	@property
 	def days360(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> Days360Request:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .days360 import Days360Request
-		return Days360Request(self.request_adapter, self.path_parameters)
+		return Days360Request(self.request_adapter, path_parameters)
 
-	@property
 	def db(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> DbRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .db import DbRequest
-		return DbRequest(self.request_adapter, self.path_parameters)
+		return DbRequest(self.request_adapter, path_parameters)
 
-	@property
 	def dbcs(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> DbcsRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .dbcs import DbcsRequest
-		return DbcsRequest(self.request_adapter, self.path_parameters)
+		return DbcsRequest(self.request_adapter, path_parameters)
 
-	@property
 	def dcount(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> DcountRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .dcount import DcountRequest
-		return DcountRequest(self.request_adapter, self.path_parameters)
+		return DcountRequest(self.request_adapter, path_parameters)
 
-	@property
 	def dcount_a(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> DcountARequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .dcount_a import DcountARequest
-		return DcountARequest(self.request_adapter, self.path_parameters)
+		return DcountARequest(self.request_adapter, path_parameters)
 
-	@property
 	def ddb(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> DdbRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .ddb import DdbRequest
-		return DdbRequest(self.request_adapter, self.path_parameters)
+		return DdbRequest(self.request_adapter, path_parameters)
 
-	@property
 	def dec2_bin(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> Dec2BinRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .dec2_bin import Dec2BinRequest
-		return Dec2BinRequest(self.request_adapter, self.path_parameters)
+		return Dec2BinRequest(self.request_adapter, path_parameters)
 
-	@property
 	def dec2_hex(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> Dec2HexRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .dec2_hex import Dec2HexRequest
-		return Dec2HexRequest(self.request_adapter, self.path_parameters)
+		return Dec2HexRequest(self.request_adapter, path_parameters)
 
-	@property
 	def dec2_oct(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> Dec2OctRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .dec2_oct import Dec2OctRequest
-		return Dec2OctRequest(self.request_adapter, self.path_parameters)
+		return Dec2OctRequest(self.request_adapter, path_parameters)
 
-	@property
 	def decimal(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> DecimalRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .decimal import DecimalRequest
-		return DecimalRequest(self.request_adapter, self.path_parameters)
+		return DecimalRequest(self.request_adapter, path_parameters)
 
-	@property
 	def degrees(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> DegreesRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .degrees import DegreesRequest
-		return DegreesRequest(self.request_adapter, self.path_parameters)
+		return DegreesRequest(self.request_adapter, path_parameters)
 
-	@property
 	def delta(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> DeltaRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .delta import DeltaRequest
-		return DeltaRequest(self.request_adapter, self.path_parameters)
+		return DeltaRequest(self.request_adapter, path_parameters)
 
-	@property
 	def dev_sq(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> DevSqRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .dev_sq import DevSqRequest
-		return DevSqRequest(self.request_adapter, self.path_parameters)
+		return DevSqRequest(self.request_adapter, path_parameters)
 
-	@property
 	def dget(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> DgetRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .dget import DgetRequest
-		return DgetRequest(self.request_adapter, self.path_parameters)
+		return DgetRequest(self.request_adapter, path_parameters)
 
-	@property
 	def disc(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> DiscRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .disc import DiscRequest
-		return DiscRequest(self.request_adapter, self.path_parameters)
+		return DiscRequest(self.request_adapter, path_parameters)
 
-	@property
 	def dmax(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> DmaxRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .dmax import DmaxRequest
-		return DmaxRequest(self.request_adapter, self.path_parameters)
+		return DmaxRequest(self.request_adapter, path_parameters)
 
-	@property
 	def dmin(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> DminRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .dmin import DminRequest
-		return DminRequest(self.request_adapter, self.path_parameters)
+		return DminRequest(self.request_adapter, path_parameters)
 
-	@property
 	def dollar(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> DollarRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .dollar import DollarRequest
-		return DollarRequest(self.request_adapter, self.path_parameters)
+		return DollarRequest(self.request_adapter, path_parameters)
 
-	@property
 	def dollar_de(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> DollarDeRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .dollar_de import DollarDeRequest
-		return DollarDeRequest(self.request_adapter, self.path_parameters)
+		return DollarDeRequest(self.request_adapter, path_parameters)
 
-	@property
 	def dollar_fr(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> DollarFrRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .dollar_fr import DollarFrRequest
-		return DollarFrRequest(self.request_adapter, self.path_parameters)
+		return DollarFrRequest(self.request_adapter, path_parameters)
 
-	@property
 	def dproduct(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> DproductRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .dproduct import DproductRequest
-		return DproductRequest(self.request_adapter, self.path_parameters)
+		return DproductRequest(self.request_adapter, path_parameters)
 
-	@property
 	def dst_dev(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> DstDevRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .dst_dev import DstDevRequest
-		return DstDevRequest(self.request_adapter, self.path_parameters)
+		return DstDevRequest(self.request_adapter, path_parameters)
 
-	@property
 	def dst_dev_p(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> DstDevPRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .dst_dev_p import DstDevPRequest
-		return DstDevPRequest(self.request_adapter, self.path_parameters)
+		return DstDevPRequest(self.request_adapter, path_parameters)
 
-	@property
 	def dsum(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> DsumRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .dsum import DsumRequest
-		return DsumRequest(self.request_adapter, self.path_parameters)
+		return DsumRequest(self.request_adapter, path_parameters)
 
-	@property
 	def duration(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> DurationRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .duration import DurationRequest
-		return DurationRequest(self.request_adapter, self.path_parameters)
+		return DurationRequest(self.request_adapter, path_parameters)
 
-	@property
 	def dvar(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> DvarRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .dvar import DvarRequest
-		return DvarRequest(self.request_adapter, self.path_parameters)
+		return DvarRequest(self.request_adapter, path_parameters)
 
-	@property
 	def dvar_p(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> DvarPRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .dvar_p import DvarPRequest
-		return DvarPRequest(self.request_adapter, self.path_parameters)
+		return DvarPRequest(self.request_adapter, path_parameters)
 
-	@property
 	def ecma__ceiling(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> Ecma_CeilingRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .ecma__ceiling import Ecma_CeilingRequest
-		return Ecma_CeilingRequest(self.request_adapter, self.path_parameters)
+		return Ecma_CeilingRequest(self.request_adapter, path_parameters)
 
-	@property
 	def edate(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> EdateRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .edate import EdateRequest
-		return EdateRequest(self.request_adapter, self.path_parameters)
+		return EdateRequest(self.request_adapter, path_parameters)
 
-	@property
 	def effect(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> EffectRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .effect import EffectRequest
-		return EffectRequest(self.request_adapter, self.path_parameters)
+		return EffectRequest(self.request_adapter, path_parameters)
 
-	@property
 	def eo_month(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> EoMonthRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .eo_month import EoMonthRequest
-		return EoMonthRequest(self.request_adapter, self.path_parameters)
+		return EoMonthRequest(self.request_adapter, path_parameters)
 
-	@property
 	def erf(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> ErfRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .erf import ErfRequest
-		return ErfRequest(self.request_adapter, self.path_parameters)
+		return ErfRequest(self.request_adapter, path_parameters)
 
-	@property
 	def erf__precise(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> Erf_PreciseRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .erf__precise import Erf_PreciseRequest
-		return Erf_PreciseRequest(self.request_adapter, self.path_parameters)
+		return Erf_PreciseRequest(self.request_adapter, path_parameters)
 
-	@property
 	def erf_c(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> ErfCRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .erf_c import ErfCRequest
-		return ErfCRequest(self.request_adapter, self.path_parameters)
+		return ErfCRequest(self.request_adapter, path_parameters)
 
-	@property
 	def erf_c__precise(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> ErfC_PreciseRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .erf_c__precise import ErfC_PreciseRequest
-		return ErfC_PreciseRequest(self.request_adapter, self.path_parameters)
+		return ErfC_PreciseRequest(self.request_adapter, path_parameters)
 
-	@property
 	def error__type(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> Error_TypeRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .error__type import Error_TypeRequest
-		return Error_TypeRequest(self.request_adapter, self.path_parameters)
+		return Error_TypeRequest(self.request_adapter, path_parameters)
 
-	@property
 	def even(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> EvenRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .even import EvenRequest
-		return EvenRequest(self.request_adapter, self.path_parameters)
+		return EvenRequest(self.request_adapter, path_parameters)
 
-	@property
 	def exact(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> ExactRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .exact import ExactRequest
-		return ExactRequest(self.request_adapter, self.path_parameters)
+		return ExactRequest(self.request_adapter, path_parameters)
 
-	@property
 	def exp(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> ExpRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .exp import ExpRequest
-		return ExpRequest(self.request_adapter, self.path_parameters)
+		return ExpRequest(self.request_adapter, path_parameters)
 
-	@property
 	def expon__dist(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> Expon_DistRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .expon__dist import Expon_DistRequest
-		return Expon_DistRequest(self.request_adapter, self.path_parameters)
+		return Expon_DistRequest(self.request_adapter, path_parameters)
 
-	@property
 	def f__dist(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> F_DistRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .f__dist import F_DistRequest
-		return F_DistRequest(self.request_adapter, self.path_parameters)
+		return F_DistRequest(self.request_adapter, path_parameters)
 
-	@property
 	def f__dist__r_t(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> F_Dist_RTRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .f__dist__r_t import F_Dist_RTRequest
-		return F_Dist_RTRequest(self.request_adapter, self.path_parameters)
+		return F_Dist_RTRequest(self.request_adapter, path_parameters)
 
-	@property
 	def f__inv(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> F_InvRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .f__inv import F_InvRequest
-		return F_InvRequest(self.request_adapter, self.path_parameters)
+		return F_InvRequest(self.request_adapter, path_parameters)
 
-	@property
 	def f__inv__r_t(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> F_Inv_RTRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .f__inv__r_t import F_Inv_RTRequest
-		return F_Inv_RTRequest(self.request_adapter, self.path_parameters)
+		return F_Inv_RTRequest(self.request_adapter, path_parameters)
 
-	@property
 	def fact(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> FactRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .fact import FactRequest
-		return FactRequest(self.request_adapter, self.path_parameters)
+		return FactRequest(self.request_adapter, path_parameters)
 
-	@property
 	def fact_double(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> FactDoubleRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .fact_double import FactDoubleRequest
-		return FactDoubleRequest(self.request_adapter, self.path_parameters)
+		return FactDoubleRequest(self.request_adapter, path_parameters)
 
-	@property
 	def false(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> FalseRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .false import FalseRequest
-		return FalseRequest(self.request_adapter, self.path_parameters)
+		return FalseRequest(self.request_adapter, path_parameters)
 
-	@property
 	def find(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> FindRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .find import FindRequest
-		return FindRequest(self.request_adapter, self.path_parameters)
+		return FindRequest(self.request_adapter, path_parameters)
 
-	@property
 	def find_b(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> FindBRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .find_b import FindBRequest
-		return FindBRequest(self.request_adapter, self.path_parameters)
+		return FindBRequest(self.request_adapter, path_parameters)
 
-	@property
 	def fisher(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> FisherRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .fisher import FisherRequest
-		return FisherRequest(self.request_adapter, self.path_parameters)
+		return FisherRequest(self.request_adapter, path_parameters)
 
-	@property
 	def fisher_inv(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> FisherInvRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .fisher_inv import FisherInvRequest
-		return FisherInvRequest(self.request_adapter, self.path_parameters)
+		return FisherInvRequest(self.request_adapter, path_parameters)
 
-	@property
 	def fixed(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> FixedRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .fixed import FixedRequest
-		return FixedRequest(self.request_adapter, self.path_parameters)
+		return FixedRequest(self.request_adapter, path_parameters)
 
-	@property
 	def floor__math(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> Floor_MathRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .floor__math import Floor_MathRequest
-		return Floor_MathRequest(self.request_adapter, self.path_parameters)
+		return Floor_MathRequest(self.request_adapter, path_parameters)
 
-	@property
 	def floor__precise(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> Floor_PreciseRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .floor__precise import Floor_PreciseRequest
-		return Floor_PreciseRequest(self.request_adapter, self.path_parameters)
+		return Floor_PreciseRequest(self.request_adapter, path_parameters)
 
-	@property
 	def fv(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> FvRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .fv import FvRequest
-		return FvRequest(self.request_adapter, self.path_parameters)
+		return FvRequest(self.request_adapter, path_parameters)
 
-	@property
 	def fvschedule(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> FvscheduleRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .fvschedule import FvscheduleRequest
-		return FvscheduleRequest(self.request_adapter, self.path_parameters)
+		return FvscheduleRequest(self.request_adapter, path_parameters)
 
-	@property
 	def gamma(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> GammaRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .gamma import GammaRequest
-		return GammaRequest(self.request_adapter, self.path_parameters)
+		return GammaRequest(self.request_adapter, path_parameters)
 
-	@property
 	def gamma__dist(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> Gamma_DistRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .gamma__dist import Gamma_DistRequest
-		return Gamma_DistRequest(self.request_adapter, self.path_parameters)
+		return Gamma_DistRequest(self.request_adapter, path_parameters)
 
-	@property
 	def gamma__inv(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> Gamma_InvRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .gamma__inv import Gamma_InvRequest
-		return Gamma_InvRequest(self.request_adapter, self.path_parameters)
+		return Gamma_InvRequest(self.request_adapter, path_parameters)
 
-	@property
 	def gamma_ln(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> GammaLnRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .gamma_ln import GammaLnRequest
-		return GammaLnRequest(self.request_adapter, self.path_parameters)
+		return GammaLnRequest(self.request_adapter, path_parameters)
 
-	@property
 	def gamma_ln__precise(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> GammaLn_PreciseRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .gamma_ln__precise import GammaLn_PreciseRequest
-		return GammaLn_PreciseRequest(self.request_adapter, self.path_parameters)
+		return GammaLn_PreciseRequest(self.request_adapter, path_parameters)
 
-	@property
 	def gauss(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> GaussRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .gauss import GaussRequest
-		return GaussRequest(self.request_adapter, self.path_parameters)
+		return GaussRequest(self.request_adapter, path_parameters)
 
-	@property
 	def gcd(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> GcdRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .gcd import GcdRequest
-		return GcdRequest(self.request_adapter, self.path_parameters)
+		return GcdRequest(self.request_adapter, path_parameters)
 
-	@property
 	def geo_mean(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> GeoMeanRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .geo_mean import GeoMeanRequest
-		return GeoMeanRequest(self.request_adapter, self.path_parameters)
+		return GeoMeanRequest(self.request_adapter, path_parameters)
 
-	@property
 	def ge_step(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> GeStepRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .ge_step import GeStepRequest
-		return GeStepRequest(self.request_adapter, self.path_parameters)
+		return GeStepRequest(self.request_adapter, path_parameters)
 
-	@property
 	def har_mean(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> HarMeanRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .har_mean import HarMeanRequest
-		return HarMeanRequest(self.request_adapter, self.path_parameters)
+		return HarMeanRequest(self.request_adapter, path_parameters)
 
-	@property
 	def hex2_bin(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> Hex2BinRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .hex2_bin import Hex2BinRequest
-		return Hex2BinRequest(self.request_adapter, self.path_parameters)
+		return Hex2BinRequest(self.request_adapter, path_parameters)
 
-	@property
 	def hex2_dec(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> Hex2DecRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .hex2_dec import Hex2DecRequest
-		return Hex2DecRequest(self.request_adapter, self.path_parameters)
+		return Hex2DecRequest(self.request_adapter, path_parameters)
 
-	@property
 	def hex2_oct(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> Hex2OctRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .hex2_oct import Hex2OctRequest
-		return Hex2OctRequest(self.request_adapter, self.path_parameters)
+		return Hex2OctRequest(self.request_adapter, path_parameters)
 
-	@property
 	def hlookup(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> HlookupRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .hlookup import HlookupRequest
-		return HlookupRequest(self.request_adapter, self.path_parameters)
+		return HlookupRequest(self.request_adapter, path_parameters)
 
-	@property
 	def hour(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> HourRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .hour import HourRequest
-		return HourRequest(self.request_adapter, self.path_parameters)
+		return HourRequest(self.request_adapter, path_parameters)
 
-	@property
 	def hyperlink(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> HyperlinkRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .hyperlink import HyperlinkRequest
-		return HyperlinkRequest(self.request_adapter, self.path_parameters)
+		return HyperlinkRequest(self.request_adapter, path_parameters)
 
-	@property
 	def hyp_geom__dist(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> HypGeom_DistRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .hyp_geom__dist import HypGeom_DistRequest
-		return HypGeom_DistRequest(self.request_adapter, self.path_parameters)
+		return HypGeom_DistRequest(self.request_adapter, path_parameters)
 
-	@property
 	def if(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> IfRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .if import IfRequest
-		return IfRequest(self.request_adapter, self.path_parameters)
+		return IfRequest(self.request_adapter, path_parameters)
 
-	@property
 	def im_abs(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> ImAbsRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .im_abs import ImAbsRequest
-		return ImAbsRequest(self.request_adapter, self.path_parameters)
+		return ImAbsRequest(self.request_adapter, path_parameters)
 
-	@property
 	def imaginary(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> ImaginaryRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .imaginary import ImaginaryRequest
-		return ImaginaryRequest(self.request_adapter, self.path_parameters)
+		return ImaginaryRequest(self.request_adapter, path_parameters)
 
-	@property
 	def im_argument(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> ImArgumentRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .im_argument import ImArgumentRequest
-		return ImArgumentRequest(self.request_adapter, self.path_parameters)
+		return ImArgumentRequest(self.request_adapter, path_parameters)
 
-	@property
 	def im_conjugate(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> ImConjugateRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .im_conjugate import ImConjugateRequest
-		return ImConjugateRequest(self.request_adapter, self.path_parameters)
+		return ImConjugateRequest(self.request_adapter, path_parameters)
 
-	@property
 	def im_cos(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> ImCosRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .im_cos import ImCosRequest
-		return ImCosRequest(self.request_adapter, self.path_parameters)
+		return ImCosRequest(self.request_adapter, path_parameters)
 
-	@property
 	def im_cosh(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> ImCoshRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .im_cosh import ImCoshRequest
-		return ImCoshRequest(self.request_adapter, self.path_parameters)
+		return ImCoshRequest(self.request_adapter, path_parameters)
 
-	@property
 	def im_cot(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> ImCotRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .im_cot import ImCotRequest
-		return ImCotRequest(self.request_adapter, self.path_parameters)
+		return ImCotRequest(self.request_adapter, path_parameters)
 
-	@property
 	def im_csc(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> ImCscRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .im_csc import ImCscRequest
-		return ImCscRequest(self.request_adapter, self.path_parameters)
+		return ImCscRequest(self.request_adapter, path_parameters)
 
-	@property
 	def im_csch(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> ImCschRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .im_csch import ImCschRequest
-		return ImCschRequest(self.request_adapter, self.path_parameters)
+		return ImCschRequest(self.request_adapter, path_parameters)
 
-	@property
 	def im_div(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> ImDivRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .im_div import ImDivRequest
-		return ImDivRequest(self.request_adapter, self.path_parameters)
+		return ImDivRequest(self.request_adapter, path_parameters)
 
-	@property
 	def im_exp(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> ImExpRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .im_exp import ImExpRequest
-		return ImExpRequest(self.request_adapter, self.path_parameters)
+		return ImExpRequest(self.request_adapter, path_parameters)
 
-	@property
 	def im_ln(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> ImLnRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .im_ln import ImLnRequest
-		return ImLnRequest(self.request_adapter, self.path_parameters)
+		return ImLnRequest(self.request_adapter, path_parameters)
 
-	@property
 	def im_log10(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> ImLog10Request:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .im_log10 import ImLog10Request
-		return ImLog10Request(self.request_adapter, self.path_parameters)
+		return ImLog10Request(self.request_adapter, path_parameters)
 
-	@property
 	def im_log2(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> ImLog2Request:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .im_log2 import ImLog2Request
-		return ImLog2Request(self.request_adapter, self.path_parameters)
+		return ImLog2Request(self.request_adapter, path_parameters)
 
-	@property
 	def im_power(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> ImPowerRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .im_power import ImPowerRequest
-		return ImPowerRequest(self.request_adapter, self.path_parameters)
+		return ImPowerRequest(self.request_adapter, path_parameters)
 
-	@property
 	def im_product(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> ImProductRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .im_product import ImProductRequest
-		return ImProductRequest(self.request_adapter, self.path_parameters)
+		return ImProductRequest(self.request_adapter, path_parameters)
 
-	@property
 	def im_real(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> ImRealRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .im_real import ImRealRequest
-		return ImRealRequest(self.request_adapter, self.path_parameters)
+		return ImRealRequest(self.request_adapter, path_parameters)
 
-	@property
 	def im_sec(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> ImSecRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .im_sec import ImSecRequest
-		return ImSecRequest(self.request_adapter, self.path_parameters)
+		return ImSecRequest(self.request_adapter, path_parameters)
 
-	@property
 	def im_sech(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> ImSechRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .im_sech import ImSechRequest
-		return ImSechRequest(self.request_adapter, self.path_parameters)
+		return ImSechRequest(self.request_adapter, path_parameters)
 
-	@property
 	def im_sin(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> ImSinRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .im_sin import ImSinRequest
-		return ImSinRequest(self.request_adapter, self.path_parameters)
+		return ImSinRequest(self.request_adapter, path_parameters)
 
-	@property
 	def im_sinh(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> ImSinhRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .im_sinh import ImSinhRequest
-		return ImSinhRequest(self.request_adapter, self.path_parameters)
+		return ImSinhRequest(self.request_adapter, path_parameters)
 
-	@property
 	def im_sqrt(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> ImSqrtRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .im_sqrt import ImSqrtRequest
-		return ImSqrtRequest(self.request_adapter, self.path_parameters)
+		return ImSqrtRequest(self.request_adapter, path_parameters)
 
-	@property
 	def im_sub(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> ImSubRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .im_sub import ImSubRequest
-		return ImSubRequest(self.request_adapter, self.path_parameters)
+		return ImSubRequest(self.request_adapter, path_parameters)
 
-	@property
 	def im_sum(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> ImSumRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .im_sum import ImSumRequest
-		return ImSumRequest(self.request_adapter, self.path_parameters)
+		return ImSumRequest(self.request_adapter, path_parameters)
 
-	@property
 	def im_tan(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> ImTanRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .im_tan import ImTanRequest
-		return ImTanRequest(self.request_adapter, self.path_parameters)
+		return ImTanRequest(self.request_adapter, path_parameters)
 
-	@property
 	def int(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> IntRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .int import IntRequest
-		return IntRequest(self.request_adapter, self.path_parameters)
+		return IntRequest(self.request_adapter, path_parameters)
 
-	@property
 	def int_rate(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> IntRateRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .int_rate import IntRateRequest
-		return IntRateRequest(self.request_adapter, self.path_parameters)
+		return IntRateRequest(self.request_adapter, path_parameters)
 
-	@property
 	def ipmt(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> IpmtRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .ipmt import IpmtRequest
-		return IpmtRequest(self.request_adapter, self.path_parameters)
+		return IpmtRequest(self.request_adapter, path_parameters)
 
-	@property
 	def irr(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> IrrRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .irr import IrrRequest
-		return IrrRequest(self.request_adapter, self.path_parameters)
+		return IrrRequest(self.request_adapter, path_parameters)
 
-	@property
 	def is_err(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> IsErrRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .is_err import IsErrRequest
-		return IsErrRequest(self.request_adapter, self.path_parameters)
+		return IsErrRequest(self.request_adapter, path_parameters)
 
-	@property
 	def is_error(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> IsErrorRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .is_error import IsErrorRequest
-		return IsErrorRequest(self.request_adapter, self.path_parameters)
+		return IsErrorRequest(self.request_adapter, path_parameters)
 
-	@property
 	def is_even(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> IsEvenRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .is_even import IsEvenRequest
-		return IsEvenRequest(self.request_adapter, self.path_parameters)
+		return IsEvenRequest(self.request_adapter, path_parameters)
 
-	@property
 	def is_formula(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> IsFormulaRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .is_formula import IsFormulaRequest
-		return IsFormulaRequest(self.request_adapter, self.path_parameters)
+		return IsFormulaRequest(self.request_adapter, path_parameters)
 
-	@property
 	def is_logical(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> IsLogicalRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .is_logical import IsLogicalRequest
-		return IsLogicalRequest(self.request_adapter, self.path_parameters)
+		return IsLogicalRequest(self.request_adapter, path_parameters)
 
-	@property
 	def is_n_a(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> IsNARequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .is_n_a import IsNARequest
-		return IsNARequest(self.request_adapter, self.path_parameters)
+		return IsNARequest(self.request_adapter, path_parameters)
 
-	@property
 	def is_non_text(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> IsNonTextRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .is_non_text import IsNonTextRequest
-		return IsNonTextRequest(self.request_adapter, self.path_parameters)
+		return IsNonTextRequest(self.request_adapter, path_parameters)
 
-	@property
 	def is_number(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> IsNumberRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .is_number import IsNumberRequest
-		return IsNumberRequest(self.request_adapter, self.path_parameters)
+		return IsNumberRequest(self.request_adapter, path_parameters)
 
-	@property
 	def iso__ceiling(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> Iso_CeilingRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .iso__ceiling import Iso_CeilingRequest
-		return Iso_CeilingRequest(self.request_adapter, self.path_parameters)
+		return Iso_CeilingRequest(self.request_adapter, path_parameters)
 
-	@property
 	def is_odd(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> IsOddRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .is_odd import IsOddRequest
-		return IsOddRequest(self.request_adapter, self.path_parameters)
+		return IsOddRequest(self.request_adapter, path_parameters)
 
-	@property
 	def iso_week_num(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> IsoWeekNumRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .iso_week_num import IsoWeekNumRequest
-		return IsoWeekNumRequest(self.request_adapter, self.path_parameters)
+		return IsoWeekNumRequest(self.request_adapter, path_parameters)
 
-	@property
 	def ispmt(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> IspmtRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .ispmt import IspmtRequest
-		return IspmtRequest(self.request_adapter, self.path_parameters)
+		return IspmtRequest(self.request_adapter, path_parameters)
 
-	@property
 	def isref(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> IsrefRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .isref import IsrefRequest
-		return IsrefRequest(self.request_adapter, self.path_parameters)
+		return IsrefRequest(self.request_adapter, path_parameters)
 
-	@property
 	def is_text(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> IsTextRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .is_text import IsTextRequest
-		return IsTextRequest(self.request_adapter, self.path_parameters)
+		return IsTextRequest(self.request_adapter, path_parameters)
 
-	@property
 	def kurt(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> KurtRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .kurt import KurtRequest
-		return KurtRequest(self.request_adapter, self.path_parameters)
+		return KurtRequest(self.request_adapter, path_parameters)
 
-	@property
 	def large(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> LargeRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .large import LargeRequest
-		return LargeRequest(self.request_adapter, self.path_parameters)
+		return LargeRequest(self.request_adapter, path_parameters)
 
-	@property
 	def lcm(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> LcmRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .lcm import LcmRequest
-		return LcmRequest(self.request_adapter, self.path_parameters)
+		return LcmRequest(self.request_adapter, path_parameters)
 
-	@property
 	def left(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> LeftRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .left import LeftRequest
-		return LeftRequest(self.request_adapter, self.path_parameters)
+		return LeftRequest(self.request_adapter, path_parameters)
 
-	@property
 	def leftb(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> LeftbRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .leftb import LeftbRequest
-		return LeftbRequest(self.request_adapter, self.path_parameters)
+		return LeftbRequest(self.request_adapter, path_parameters)
 
-	@property
 	def len(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> LenRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .len import LenRequest
-		return LenRequest(self.request_adapter, self.path_parameters)
+		return LenRequest(self.request_adapter, path_parameters)
 
-	@property
 	def lenb(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> LenbRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .lenb import LenbRequest
-		return LenbRequest(self.request_adapter, self.path_parameters)
+		return LenbRequest(self.request_adapter, path_parameters)
 
-	@property
 	def ln(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> LnRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .ln import LnRequest
-		return LnRequest(self.request_adapter, self.path_parameters)
+		return LnRequest(self.request_adapter, path_parameters)
 
-	@property
 	def log(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> LogRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .log import LogRequest
-		return LogRequest(self.request_adapter, self.path_parameters)
+		return LogRequest(self.request_adapter, path_parameters)
 
-	@property
 	def log10(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> Log10Request:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .log10 import Log10Request
-		return Log10Request(self.request_adapter, self.path_parameters)
+		return Log10Request(self.request_adapter, path_parameters)
 
-	@property
 	def log_norm__dist(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> LogNorm_DistRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .log_norm__dist import LogNorm_DistRequest
-		return LogNorm_DistRequest(self.request_adapter, self.path_parameters)
+		return LogNorm_DistRequest(self.request_adapter, path_parameters)
 
-	@property
 	def log_norm__inv(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> LogNorm_InvRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .log_norm__inv import LogNorm_InvRequest
-		return LogNorm_InvRequest(self.request_adapter, self.path_parameters)
+		return LogNorm_InvRequest(self.request_adapter, path_parameters)
 
-	@property
 	def lookup(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> LookupRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .lookup import LookupRequest
-		return LookupRequest(self.request_adapter, self.path_parameters)
+		return LookupRequest(self.request_adapter, path_parameters)
 
-	@property
 	def lower(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> LowerRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .lower import LowerRequest
-		return LowerRequest(self.request_adapter, self.path_parameters)
+		return LowerRequest(self.request_adapter, path_parameters)
 
-	@property
 	def match(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> MatchRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .match import MatchRequest
-		return MatchRequest(self.request_adapter, self.path_parameters)
+		return MatchRequest(self.request_adapter, path_parameters)
 
-	@property
 	def max(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> MaxRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .max import MaxRequest
-		return MaxRequest(self.request_adapter, self.path_parameters)
+		return MaxRequest(self.request_adapter, path_parameters)
 
-	@property
 	def max_a(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> MaxARequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .max_a import MaxARequest
-		return MaxARequest(self.request_adapter, self.path_parameters)
+		return MaxARequest(self.request_adapter, path_parameters)
 
-	@property
 	def mduration(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> MdurationRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .mduration import MdurationRequest
-		return MdurationRequest(self.request_adapter, self.path_parameters)
+		return MdurationRequest(self.request_adapter, path_parameters)
 
-	@property
 	def median(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> MedianRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .median import MedianRequest
-		return MedianRequest(self.request_adapter, self.path_parameters)
+		return MedianRequest(self.request_adapter, path_parameters)
 
-	@property
 	def mid(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> MidRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .mid import MidRequest
-		return MidRequest(self.request_adapter, self.path_parameters)
+		return MidRequest(self.request_adapter, path_parameters)
 
-	@property
 	def midb(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> MidbRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .midb import MidbRequest
-		return MidbRequest(self.request_adapter, self.path_parameters)
+		return MidbRequest(self.request_adapter, path_parameters)
 
-	@property
 	def min(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> MinRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .min import MinRequest
-		return MinRequest(self.request_adapter, self.path_parameters)
+		return MinRequest(self.request_adapter, path_parameters)
 
-	@property
 	def min_a(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> MinARequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .min_a import MinARequest
-		return MinARequest(self.request_adapter, self.path_parameters)
+		return MinARequest(self.request_adapter, path_parameters)
 
-	@property
 	def minute(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> MinuteRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .minute import MinuteRequest
-		return MinuteRequest(self.request_adapter, self.path_parameters)
+		return MinuteRequest(self.request_adapter, path_parameters)
 
-	@property
 	def mirr(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> MirrRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .mirr import MirrRequest
-		return MirrRequest(self.request_adapter, self.path_parameters)
+		return MirrRequest(self.request_adapter, path_parameters)
 
-	@property
 	def mod(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> ModRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .mod import ModRequest
-		return ModRequest(self.request_adapter, self.path_parameters)
+		return ModRequest(self.request_adapter, path_parameters)
 
-	@property
 	def month(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> MonthRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .month import MonthRequest
-		return MonthRequest(self.request_adapter, self.path_parameters)
+		return MonthRequest(self.request_adapter, path_parameters)
 
-	@property
 	def mround(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> MroundRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .mround import MroundRequest
-		return MroundRequest(self.request_adapter, self.path_parameters)
+		return MroundRequest(self.request_adapter, path_parameters)
 
-	@property
 	def multi_nomial(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> MultiNomialRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .multi_nomial import MultiNomialRequest
-		return MultiNomialRequest(self.request_adapter, self.path_parameters)
+		return MultiNomialRequest(self.request_adapter, path_parameters)
 
-	@property
 	def n(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> NRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .n import NRequest
-		return NRequest(self.request_adapter, self.path_parameters)
+		return NRequest(self.request_adapter, path_parameters)
 
-	@property
 	def na(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> NaRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .na import NaRequest
-		return NaRequest(self.request_adapter, self.path_parameters)
+		return NaRequest(self.request_adapter, path_parameters)
 
-	@property
 	def neg_binom__dist(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> NegBinom_DistRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .neg_binom__dist import NegBinom_DistRequest
-		return NegBinom_DistRequest(self.request_adapter, self.path_parameters)
+		return NegBinom_DistRequest(self.request_adapter, path_parameters)
 
-	@property
 	def network_days(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> NetworkDaysRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .network_days import NetworkDaysRequest
-		return NetworkDaysRequest(self.request_adapter, self.path_parameters)
+		return NetworkDaysRequest(self.request_adapter, path_parameters)
 
-	@property
 	def network_days__intl(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> NetworkDays_IntlRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .network_days__intl import NetworkDays_IntlRequest
-		return NetworkDays_IntlRequest(self.request_adapter, self.path_parameters)
+		return NetworkDays_IntlRequest(self.request_adapter, path_parameters)
 
-	@property
 	def nominal(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> NominalRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .nominal import NominalRequest
-		return NominalRequest(self.request_adapter, self.path_parameters)
+		return NominalRequest(self.request_adapter, path_parameters)
 
-	@property
 	def norm__dist(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> Norm_DistRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .norm__dist import Norm_DistRequest
-		return Norm_DistRequest(self.request_adapter, self.path_parameters)
+		return Norm_DistRequest(self.request_adapter, path_parameters)
 
-	@property
 	def norm__inv(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> Norm_InvRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .norm__inv import Norm_InvRequest
-		return Norm_InvRequest(self.request_adapter, self.path_parameters)
+		return Norm_InvRequest(self.request_adapter, path_parameters)
 
-	@property
 	def norm__s__dist(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> Norm_S_DistRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .norm__s__dist import Norm_S_DistRequest
-		return Norm_S_DistRequest(self.request_adapter, self.path_parameters)
+		return Norm_S_DistRequest(self.request_adapter, path_parameters)
 
-	@property
 	def norm__s__inv(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> Norm_S_InvRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .norm__s__inv import Norm_S_InvRequest
-		return Norm_S_InvRequest(self.request_adapter, self.path_parameters)
+		return Norm_S_InvRequest(self.request_adapter, path_parameters)
 
-	@property
 	def not(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> NotRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .not import NotRequest
-		return NotRequest(self.request_adapter, self.path_parameters)
+		return NotRequest(self.request_adapter, path_parameters)
 
-	@property
 	def now(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> NowRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .now import NowRequest
-		return NowRequest(self.request_adapter, self.path_parameters)
+		return NowRequest(self.request_adapter, path_parameters)
 
-	@property
 	def nper(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> NperRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .nper import NperRequest
-		return NperRequest(self.request_adapter, self.path_parameters)
+		return NperRequest(self.request_adapter, path_parameters)
 
-	@property
 	def npv(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> NpvRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .npv import NpvRequest
-		return NpvRequest(self.request_adapter, self.path_parameters)
+		return NpvRequest(self.request_adapter, path_parameters)
 
-	@property
 	def number_value(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> NumberValueRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .number_value import NumberValueRequest
-		return NumberValueRequest(self.request_adapter, self.path_parameters)
+		return NumberValueRequest(self.request_adapter, path_parameters)
 
-	@property
 	def oct2_bin(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> Oct2BinRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .oct2_bin import Oct2BinRequest
-		return Oct2BinRequest(self.request_adapter, self.path_parameters)
+		return Oct2BinRequest(self.request_adapter, path_parameters)
 
-	@property
 	def oct2_dec(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> Oct2DecRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .oct2_dec import Oct2DecRequest
-		return Oct2DecRequest(self.request_adapter, self.path_parameters)
+		return Oct2DecRequest(self.request_adapter, path_parameters)
 
-	@property
 	def oct2_hex(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> Oct2HexRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .oct2_hex import Oct2HexRequest
-		return Oct2HexRequest(self.request_adapter, self.path_parameters)
+		return Oct2HexRequest(self.request_adapter, path_parameters)
 
-	@property
 	def odd(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> OddRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .odd import OddRequest
-		return OddRequest(self.request_adapter, self.path_parameters)
+		return OddRequest(self.request_adapter, path_parameters)
 
-	@property
 	def odd_f_price(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> OddFPriceRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .odd_f_price import OddFPriceRequest
-		return OddFPriceRequest(self.request_adapter, self.path_parameters)
+		return OddFPriceRequest(self.request_adapter, path_parameters)
 
-	@property
 	def odd_f_yield(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> OddFYieldRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .odd_f_yield import OddFYieldRequest
-		return OddFYieldRequest(self.request_adapter, self.path_parameters)
+		return OddFYieldRequest(self.request_adapter, path_parameters)
 
-	@property
 	def odd_l_price(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> OddLPriceRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .odd_l_price import OddLPriceRequest
-		return OddLPriceRequest(self.request_adapter, self.path_parameters)
+		return OddLPriceRequest(self.request_adapter, path_parameters)
 
-	@property
 	def odd_l_yield(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> OddLYieldRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .odd_l_yield import OddLYieldRequest
-		return OddLYieldRequest(self.request_adapter, self.path_parameters)
+		return OddLYieldRequest(self.request_adapter, path_parameters)
 
-	@property
 	def or(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> OrRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .or import OrRequest
-		return OrRequest(self.request_adapter, self.path_parameters)
+		return OrRequest(self.request_adapter, path_parameters)
 
-	@property
 	def pduration(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> PdurationRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .pduration import PdurationRequest
-		return PdurationRequest(self.request_adapter, self.path_parameters)
+		return PdurationRequest(self.request_adapter, path_parameters)
 
-	@property
 	def percentile__exc(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> Percentile_ExcRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .percentile__exc import Percentile_ExcRequest
-		return Percentile_ExcRequest(self.request_adapter, self.path_parameters)
+		return Percentile_ExcRequest(self.request_adapter, path_parameters)
 
-	@property
 	def percentile__inc(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> Percentile_IncRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .percentile__inc import Percentile_IncRequest
-		return Percentile_IncRequest(self.request_adapter, self.path_parameters)
+		return Percentile_IncRequest(self.request_adapter, path_parameters)
 
-	@property
 	def percent_rank__exc(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> PercentRank_ExcRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .percent_rank__exc import PercentRank_ExcRequest
-		return PercentRank_ExcRequest(self.request_adapter, self.path_parameters)
+		return PercentRank_ExcRequest(self.request_adapter, path_parameters)
 
-	@property
 	def percent_rank__inc(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> PercentRank_IncRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .percent_rank__inc import PercentRank_IncRequest
-		return PercentRank_IncRequest(self.request_adapter, self.path_parameters)
+		return PercentRank_IncRequest(self.request_adapter, path_parameters)
 
-	@property
 	def permut(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> PermutRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .permut import PermutRequest
-		return PermutRequest(self.request_adapter, self.path_parameters)
+		return PermutRequest(self.request_adapter, path_parameters)
 
-	@property
 	def permutationa(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> PermutationaRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .permutationa import PermutationaRequest
-		return PermutationaRequest(self.request_adapter, self.path_parameters)
+		return PermutationaRequest(self.request_adapter, path_parameters)
 
-	@property
 	def phi(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> PhiRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .phi import PhiRequest
-		return PhiRequest(self.request_adapter, self.path_parameters)
+		return PhiRequest(self.request_adapter, path_parameters)
 
-	@property
 	def pi(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> PiRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .pi import PiRequest
-		return PiRequest(self.request_adapter, self.path_parameters)
+		return PiRequest(self.request_adapter, path_parameters)
 
-	@property
 	def pmt(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> PmtRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .pmt import PmtRequest
-		return PmtRequest(self.request_adapter, self.path_parameters)
+		return PmtRequest(self.request_adapter, path_parameters)
 
-	@property
 	def poisson__dist(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> Poisson_DistRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .poisson__dist import Poisson_DistRequest
-		return Poisson_DistRequest(self.request_adapter, self.path_parameters)
+		return Poisson_DistRequest(self.request_adapter, path_parameters)
 
-	@property
 	def power(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> PowerRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .power import PowerRequest
-		return PowerRequest(self.request_adapter, self.path_parameters)
+		return PowerRequest(self.request_adapter, path_parameters)
 
-	@property
 	def ppmt(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> PpmtRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .ppmt import PpmtRequest
-		return PpmtRequest(self.request_adapter, self.path_parameters)
+		return PpmtRequest(self.request_adapter, path_parameters)
 
-	@property
 	def price(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> PriceRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .price import PriceRequest
-		return PriceRequest(self.request_adapter, self.path_parameters)
+		return PriceRequest(self.request_adapter, path_parameters)
 
-	@property
 	def price_disc(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> PriceDiscRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .price_disc import PriceDiscRequest
-		return PriceDiscRequest(self.request_adapter, self.path_parameters)
+		return PriceDiscRequest(self.request_adapter, path_parameters)
 
-	@property
 	def price_mat(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> PriceMatRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .price_mat import PriceMatRequest
-		return PriceMatRequest(self.request_adapter, self.path_parameters)
+		return PriceMatRequest(self.request_adapter, path_parameters)
 
-	@property
 	def product(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> ProductRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .product import ProductRequest
-		return ProductRequest(self.request_adapter, self.path_parameters)
+		return ProductRequest(self.request_adapter, path_parameters)
 
-	@property
 	def proper(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> ProperRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .proper import ProperRequest
-		return ProperRequest(self.request_adapter, self.path_parameters)
+		return ProperRequest(self.request_adapter, path_parameters)
 
-	@property
 	def pv(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> PvRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .pv import PvRequest
-		return PvRequest(self.request_adapter, self.path_parameters)
+		return PvRequest(self.request_adapter, path_parameters)
 
-	@property
 	def quartile__exc(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> Quartile_ExcRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .quartile__exc import Quartile_ExcRequest
-		return Quartile_ExcRequest(self.request_adapter, self.path_parameters)
+		return Quartile_ExcRequest(self.request_adapter, path_parameters)
 
-	@property
 	def quartile__inc(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> Quartile_IncRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .quartile__inc import Quartile_IncRequest
-		return Quartile_IncRequest(self.request_adapter, self.path_parameters)
+		return Quartile_IncRequest(self.request_adapter, path_parameters)
 
-	@property
 	def quotient(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> QuotientRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .quotient import QuotientRequest
-		return QuotientRequest(self.request_adapter, self.path_parameters)
+		return QuotientRequest(self.request_adapter, path_parameters)
 
-	@property
 	def radians(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> RadiansRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .radians import RadiansRequest
-		return RadiansRequest(self.request_adapter, self.path_parameters)
+		return RadiansRequest(self.request_adapter, path_parameters)
 
-	@property
 	def rand(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> RandRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .rand import RandRequest
-		return RandRequest(self.request_adapter, self.path_parameters)
+		return RandRequest(self.request_adapter, path_parameters)
 
-	@property
 	def rand_between(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> RandBetweenRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .rand_between import RandBetweenRequest
-		return RandBetweenRequest(self.request_adapter, self.path_parameters)
+		return RandBetweenRequest(self.request_adapter, path_parameters)
 
-	@property
 	def rank__avg(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> Rank_AvgRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .rank__avg import Rank_AvgRequest
-		return Rank_AvgRequest(self.request_adapter, self.path_parameters)
+		return Rank_AvgRequest(self.request_adapter, path_parameters)
 
-	@property
 	def rank__eq(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> Rank_EqRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .rank__eq import Rank_EqRequest
-		return Rank_EqRequest(self.request_adapter, self.path_parameters)
+		return Rank_EqRequest(self.request_adapter, path_parameters)
 
-	@property
 	def rate(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> RateRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .rate import RateRequest
-		return RateRequest(self.request_adapter, self.path_parameters)
+		return RateRequest(self.request_adapter, path_parameters)
 
-	@property
 	def received(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> ReceivedRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .received import ReceivedRequest
-		return ReceivedRequest(self.request_adapter, self.path_parameters)
+		return ReceivedRequest(self.request_adapter, path_parameters)
 
-	@property
 	def replace(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> ReplaceRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .replace import ReplaceRequest
-		return ReplaceRequest(self.request_adapter, self.path_parameters)
+		return ReplaceRequest(self.request_adapter, path_parameters)
 
-	@property
 	def replace_b(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> ReplaceBRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .replace_b import ReplaceBRequest
-		return ReplaceBRequest(self.request_adapter, self.path_parameters)
+		return ReplaceBRequest(self.request_adapter, path_parameters)
 
-	@property
 	def rept(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> ReptRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .rept import ReptRequest
-		return ReptRequest(self.request_adapter, self.path_parameters)
+		return ReptRequest(self.request_adapter, path_parameters)
 
-	@property
 	def right(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> RightRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .right import RightRequest
-		return RightRequest(self.request_adapter, self.path_parameters)
+		return RightRequest(self.request_adapter, path_parameters)
 
-	@property
 	def rightb(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> RightbRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .rightb import RightbRequest
-		return RightbRequest(self.request_adapter, self.path_parameters)
+		return RightbRequest(self.request_adapter, path_parameters)
 
-	@property
 	def roman(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> RomanRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .roman import RomanRequest
-		return RomanRequest(self.request_adapter, self.path_parameters)
+		return RomanRequest(self.request_adapter, path_parameters)
 
-	@property
 	def round(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> RoundRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .round import RoundRequest
-		return RoundRequest(self.request_adapter, self.path_parameters)
+		return RoundRequest(self.request_adapter, path_parameters)
 
-	@property
 	def round_down(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> RoundDownRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .round_down import RoundDownRequest
-		return RoundDownRequest(self.request_adapter, self.path_parameters)
+		return RoundDownRequest(self.request_adapter, path_parameters)
 
-	@property
 	def round_up(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> RoundUpRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .round_up import RoundUpRequest
-		return RoundUpRequest(self.request_adapter, self.path_parameters)
+		return RoundUpRequest(self.request_adapter, path_parameters)
 
-	@property
 	def rows(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> RowsRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .rows import RowsRequest
-		return RowsRequest(self.request_adapter, self.path_parameters)
+		return RowsRequest(self.request_adapter, path_parameters)
 
-	@property
 	def rri(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> RriRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .rri import RriRequest
-		return RriRequest(self.request_adapter, self.path_parameters)
+		return RriRequest(self.request_adapter, path_parameters)
 
-	@property
 	def sec(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> SecRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .sec import SecRequest
-		return SecRequest(self.request_adapter, self.path_parameters)
+		return SecRequest(self.request_adapter, path_parameters)
 
-	@property
 	def sech(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> SechRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .sech import SechRequest
-		return SechRequest(self.request_adapter, self.path_parameters)
+		return SechRequest(self.request_adapter, path_parameters)
 
-	@property
 	def second(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> SecondRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .second import SecondRequest
-		return SecondRequest(self.request_adapter, self.path_parameters)
+		return SecondRequest(self.request_adapter, path_parameters)
 
-	@property
 	def series_sum(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> SeriesSumRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .series_sum import SeriesSumRequest
-		return SeriesSumRequest(self.request_adapter, self.path_parameters)
+		return SeriesSumRequest(self.request_adapter, path_parameters)
 
-	@property
 	def sheet(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> SheetRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .sheet import SheetRequest
-		return SheetRequest(self.request_adapter, self.path_parameters)
+		return SheetRequest(self.request_adapter, path_parameters)
 
-	@property
 	def sheets(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> SheetsRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .sheets import SheetsRequest
-		return SheetsRequest(self.request_adapter, self.path_parameters)
+		return SheetsRequest(self.request_adapter, path_parameters)
 
-	@property
 	def sign(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> SignRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .sign import SignRequest
-		return SignRequest(self.request_adapter, self.path_parameters)
+		return SignRequest(self.request_adapter, path_parameters)
 
-	@property
 	def sin(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> SinRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .sin import SinRequest
-		return SinRequest(self.request_adapter, self.path_parameters)
+		return SinRequest(self.request_adapter, path_parameters)
 
-	@property
 	def sinh(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> SinhRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .sinh import SinhRequest
-		return SinhRequest(self.request_adapter, self.path_parameters)
+		return SinhRequest(self.request_adapter, path_parameters)
 
-	@property
 	def skew(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> SkewRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .skew import SkewRequest
-		return SkewRequest(self.request_adapter, self.path_parameters)
+		return SkewRequest(self.request_adapter, path_parameters)
 
-	@property
 	def skew_p(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> Skew_pRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .skew_p import Skew_pRequest
-		return Skew_pRequest(self.request_adapter, self.path_parameters)
+		return Skew_pRequest(self.request_adapter, path_parameters)
 
-	@property
 	def sln(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> SlnRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .sln import SlnRequest
-		return SlnRequest(self.request_adapter, self.path_parameters)
+		return SlnRequest(self.request_adapter, path_parameters)
 
-	@property
 	def small(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> SmallRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .small import SmallRequest
-		return SmallRequest(self.request_adapter, self.path_parameters)
+		return SmallRequest(self.request_adapter, path_parameters)
 
-	@property
 	def sqrt(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> SqrtRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .sqrt import SqrtRequest
-		return SqrtRequest(self.request_adapter, self.path_parameters)
+		return SqrtRequest(self.request_adapter, path_parameters)
 
-	@property
 	def sqrt_pi(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> SqrtPiRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .sqrt_pi import SqrtPiRequest
-		return SqrtPiRequest(self.request_adapter, self.path_parameters)
+		return SqrtPiRequest(self.request_adapter, path_parameters)
 
-	@property
 	def standardize(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> StandardizeRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .standardize import StandardizeRequest
-		return StandardizeRequest(self.request_adapter, self.path_parameters)
+		return StandardizeRequest(self.request_adapter, path_parameters)
 
-	@property
 	def st_dev__p(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> StDev_PRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .st_dev__p import StDev_PRequest
-		return StDev_PRequest(self.request_adapter, self.path_parameters)
+		return StDev_PRequest(self.request_adapter, path_parameters)
 
-	@property
 	def st_dev__s(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> StDev_SRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .st_dev__s import StDev_SRequest
-		return StDev_SRequest(self.request_adapter, self.path_parameters)
+		return StDev_SRequest(self.request_adapter, path_parameters)
 
-	@property
 	def st_dev_a(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> StDevARequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .st_dev_a import StDevARequest
-		return StDevARequest(self.request_adapter, self.path_parameters)
+		return StDevARequest(self.request_adapter, path_parameters)
 
-	@property
 	def st_dev_p_a(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> StDevPARequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .st_dev_p_a import StDevPARequest
-		return StDevPARequest(self.request_adapter, self.path_parameters)
+		return StDevPARequest(self.request_adapter, path_parameters)
 
-	@property
 	def substitute(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> SubstituteRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .substitute import SubstituteRequest
-		return SubstituteRequest(self.request_adapter, self.path_parameters)
+		return SubstituteRequest(self.request_adapter, path_parameters)
 
-	@property
 	def subtotal(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> SubtotalRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .subtotal import SubtotalRequest
-		return SubtotalRequest(self.request_adapter, self.path_parameters)
+		return SubtotalRequest(self.request_adapter, path_parameters)
 
-	@property
 	def sum(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> SumRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .sum import SumRequest
-		return SumRequest(self.request_adapter, self.path_parameters)
+		return SumRequest(self.request_adapter, path_parameters)
 
-	@property
 	def sum_if(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> SumIfRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .sum_if import SumIfRequest
-		return SumIfRequest(self.request_adapter, self.path_parameters)
+		return SumIfRequest(self.request_adapter, path_parameters)
 
-	@property
 	def sum_ifs(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> SumIfsRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .sum_ifs import SumIfsRequest
-		return SumIfsRequest(self.request_adapter, self.path_parameters)
+		return SumIfsRequest(self.request_adapter, path_parameters)
 
-	@property
 	def sum_sq(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> SumSqRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .sum_sq import SumSqRequest
-		return SumSqRequest(self.request_adapter, self.path_parameters)
+		return SumSqRequest(self.request_adapter, path_parameters)
 
-	@property
 	def syd(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> SydRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .syd import SydRequest
-		return SydRequest(self.request_adapter, self.path_parameters)
+		return SydRequest(self.request_adapter, path_parameters)
 
-	@property
 	def t(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> TRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .t import TRequest
-		return TRequest(self.request_adapter, self.path_parameters)
+		return TRequest(self.request_adapter, path_parameters)
 
-	@property
 	def t__dist(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> T_DistRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .t__dist import T_DistRequest
-		return T_DistRequest(self.request_adapter, self.path_parameters)
+		return T_DistRequest(self.request_adapter, path_parameters)
 
-	@property
 	def t__dist_2_t(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> T_Dist_2TRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .t__dist_2_t import T_Dist_2TRequest
-		return T_Dist_2TRequest(self.request_adapter, self.path_parameters)
+		return T_Dist_2TRequest(self.request_adapter, path_parameters)
 
-	@property
 	def t__dist__r_t(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> T_Dist_RTRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .t__dist__r_t import T_Dist_RTRequest
-		return T_Dist_RTRequest(self.request_adapter, self.path_parameters)
+		return T_Dist_RTRequest(self.request_adapter, path_parameters)
 
-	@property
 	def t__inv(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> T_InvRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .t__inv import T_InvRequest
-		return T_InvRequest(self.request_adapter, self.path_parameters)
+		return T_InvRequest(self.request_adapter, path_parameters)
 
-	@property
 	def t__inv_2_t(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> T_Inv_2TRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .t__inv_2_t import T_Inv_2TRequest
-		return T_Inv_2TRequest(self.request_adapter, self.path_parameters)
+		return T_Inv_2TRequest(self.request_adapter, path_parameters)
 
-	@property
 	def tan(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> TanRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .tan import TanRequest
-		return TanRequest(self.request_adapter, self.path_parameters)
+		return TanRequest(self.request_adapter, path_parameters)
 
-	@property
 	def tanh(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> TanhRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .tanh import TanhRequest
-		return TanhRequest(self.request_adapter, self.path_parameters)
+		return TanhRequest(self.request_adapter, path_parameters)
 
-	@property
 	def tbill_eq(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> TbillEqRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .tbill_eq import TbillEqRequest
-		return TbillEqRequest(self.request_adapter, self.path_parameters)
+		return TbillEqRequest(self.request_adapter, path_parameters)
 
-	@property
 	def tbill_price(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> TbillPriceRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .tbill_price import TbillPriceRequest
-		return TbillPriceRequest(self.request_adapter, self.path_parameters)
+		return TbillPriceRequest(self.request_adapter, path_parameters)
 
-	@property
 	def tbill_yield(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> TbillYieldRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .tbill_yield import TbillYieldRequest
-		return TbillYieldRequest(self.request_adapter, self.path_parameters)
+		return TbillYieldRequest(self.request_adapter, path_parameters)
 
-	@property
 	def text(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> TextRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .text import TextRequest
-		return TextRequest(self.request_adapter, self.path_parameters)
+		return TextRequest(self.request_adapter, path_parameters)
 
-	@property
 	def time(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> TimeRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .time import TimeRequest
-		return TimeRequest(self.request_adapter, self.path_parameters)
+		return TimeRequest(self.request_adapter, path_parameters)
 
-	@property
 	def timevalue(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> TimevalueRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .timevalue import TimevalueRequest
-		return TimevalueRequest(self.request_adapter, self.path_parameters)
+		return TimevalueRequest(self.request_adapter, path_parameters)
 
-	@property
 	def today(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> TodayRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .today import TodayRequest
-		return TodayRequest(self.request_adapter, self.path_parameters)
+		return TodayRequest(self.request_adapter, path_parameters)
 
-	@property
 	def trim(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> TrimRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .trim import TrimRequest
-		return TrimRequest(self.request_adapter, self.path_parameters)
+		return TrimRequest(self.request_adapter, path_parameters)
 
-	@property
 	def trim_mean(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> TrimMeanRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .trim_mean import TrimMeanRequest
-		return TrimMeanRequest(self.request_adapter, self.path_parameters)
+		return TrimMeanRequest(self.request_adapter, path_parameters)
 
-	@property
 	def true(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> TrueRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .true import TrueRequest
-		return TrueRequest(self.request_adapter, self.path_parameters)
+		return TrueRequest(self.request_adapter, path_parameters)
 
-	@property
 	def trunc(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> TruncRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .trunc import TruncRequest
-		return TruncRequest(self.request_adapter, self.path_parameters)
+		return TruncRequest(self.request_adapter, path_parameters)
 
-	@property
 	def type(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> TypeRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .type import TypeRequest
-		return TypeRequest(self.request_adapter, self.path_parameters)
+		return TypeRequest(self.request_adapter, path_parameters)
 
-	@property
 	def unichar(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> UnicharRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .unichar import UnicharRequest
-		return UnicharRequest(self.request_adapter, self.path_parameters)
+		return UnicharRequest(self.request_adapter, path_parameters)
 
-	@property
 	def unicode(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> UnicodeRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .unicode import UnicodeRequest
-		return UnicodeRequest(self.request_adapter, self.path_parameters)
+		return UnicodeRequest(self.request_adapter, path_parameters)
 
-	@property
 	def upper(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> UpperRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .upper import UpperRequest
-		return UpperRequest(self.request_adapter, self.path_parameters)
+		return UpperRequest(self.request_adapter, path_parameters)
 
-	@property
 	def usdollar(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> UsdollarRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .usdollar import UsdollarRequest
-		return UsdollarRequest(self.request_adapter, self.path_parameters)
+		return UsdollarRequest(self.request_adapter, path_parameters)
 
-	@property
 	def value(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> ValueRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .value import ValueRequest
-		return ValueRequest(self.request_adapter, self.path_parameters)
+		return ValueRequest(self.request_adapter, path_parameters)
 
-	@property
 	def var__p(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> Var_PRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .var__p import Var_PRequest
-		return Var_PRequest(self.request_adapter, self.path_parameters)
+		return Var_PRequest(self.request_adapter, path_parameters)
 
-	@property
 	def var__s(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> Var_SRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .var__s import Var_SRequest
-		return Var_SRequest(self.request_adapter, self.path_parameters)
+		return Var_SRequest(self.request_adapter, path_parameters)
 
-	@property
 	def var_a(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> VarARequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .var_a import VarARequest
-		return VarARequest(self.request_adapter, self.path_parameters)
+		return VarARequest(self.request_adapter, path_parameters)
 
-	@property
 	def var_p_a(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> VarPARequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .var_p_a import VarPARequest
-		return VarPARequest(self.request_adapter, self.path_parameters)
+		return VarPARequest(self.request_adapter, path_parameters)
 
-	@property
 	def vdb(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> VdbRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .vdb import VdbRequest
-		return VdbRequest(self.request_adapter, self.path_parameters)
+		return VdbRequest(self.request_adapter, path_parameters)
 
-	@property
 	def vlookup(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> VlookupRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .vlookup import VlookupRequest
-		return VlookupRequest(self.request_adapter, self.path_parameters)
+		return VlookupRequest(self.request_adapter, path_parameters)
 
-	@property
 	def weekday(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> WeekdayRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .weekday import WeekdayRequest
-		return WeekdayRequest(self.request_adapter, self.path_parameters)
+		return WeekdayRequest(self.request_adapter, path_parameters)
 
-	@property
 	def week_num(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> WeekNumRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .week_num import WeekNumRequest
-		return WeekNumRequest(self.request_adapter, self.path_parameters)
+		return WeekNumRequest(self.request_adapter, path_parameters)
 
-	@property
 	def weibull__dist(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> Weibull_DistRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .weibull__dist import Weibull_DistRequest
-		return Weibull_DistRequest(self.request_adapter, self.path_parameters)
+		return Weibull_DistRequest(self.request_adapter, path_parameters)
 
-	@property
 	def work_day(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> WorkDayRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .work_day import WorkDayRequest
-		return WorkDayRequest(self.request_adapter, self.path_parameters)
+		return WorkDayRequest(self.request_adapter, path_parameters)
 
-	@property
 	def work_day__intl(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> WorkDay_IntlRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .work_day__intl import WorkDay_IntlRequest
-		return WorkDay_IntlRequest(self.request_adapter, self.path_parameters)
+		return WorkDay_IntlRequest(self.request_adapter, path_parameters)
 
-	@property
 	def xirr(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> XirrRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .xirr import XirrRequest
-		return XirrRequest(self.request_adapter, self.path_parameters)
+		return XirrRequest(self.request_adapter, path_parameters)
 
-	@property
 	def xnpv(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> XnpvRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .xnpv import XnpvRequest
-		return XnpvRequest(self.request_adapter, self.path_parameters)
+		return XnpvRequest(self.request_adapter, path_parameters)
 
-	@property
 	def xor(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> XorRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .xor import XorRequest
-		return XorRequest(self.request_adapter, self.path_parameters)
+		return XorRequest(self.request_adapter, path_parameters)
 
-	@property
 	def year(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> YearRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .year import YearRequest
-		return YearRequest(self.request_adapter, self.path_parameters)
+		return YearRequest(self.request_adapter, path_parameters)
 
-	@property
 	def year_frac(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> YearFracRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .year_frac import YearFracRequest
-		return YearFracRequest(self.request_adapter, self.path_parameters)
+		return YearFracRequest(self.request_adapter, path_parameters)
 
-	@property
 	def yield(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> YieldRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .yield import YieldRequest
-		return YieldRequest(self.request_adapter, self.path_parameters)
+		return YieldRequest(self.request_adapter, path_parameters)
 
-	@property
 	def yield_disc(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> YieldDiscRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .yield_disc import YieldDiscRequest
-		return YieldDiscRequest(self.request_adapter, self.path_parameters)
+		return YieldDiscRequest(self.request_adapter, path_parameters)
 
-	@property
 	def yield_mat(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> YieldMatRequest:
-		from .yield_mat import YieldMatRequest
-		return YieldMatRequest(self.request_adapter, self.path_parameters)
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
 
-	@property
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
+		from .yield_mat import YieldMatRequest
+		return YieldMatRequest(self.request_adapter, path_parameters)
+
 	def z__test(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> Z_TestRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .z__test import Z_TestRequest
-		return Z_TestRequest(self.request_adapter, self.path_parameters)
+		return Z_TestRequest(self.request_adapter, path_parameters)
 

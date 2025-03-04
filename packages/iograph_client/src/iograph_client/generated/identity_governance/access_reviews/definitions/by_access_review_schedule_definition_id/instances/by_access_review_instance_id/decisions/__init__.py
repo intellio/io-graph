@@ -14,8 +14,8 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_access_review_instance_decision_item_id import ByAccessReviewInstanceDecisionItemIdRequest
 	from .........request_adapter import HttpxRequestAdapter
-from iograph_models.models.access_review_instance_decision_item_collection_response import AccessReviewInstanceDecisionItemCollectionResponse
 from iograph_models.models.access_review_instance_decision_item import AccessReviewInstanceDecisionItem
+from iograph_models.models.access_review_instance_decision_item_collection_response import AccessReviewInstanceDecisionItemCollectionResponse
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
 
 
@@ -113,9 +113,19 @@ class DecisionsRequest(BaseRequestBuilder):
 		from .by_access_review_instance_decision_item_id import ByAccessReviewInstanceDecisionItemIdRequest
 		return ByAccessReviewInstanceDecisionItemIdRequest(self.request_adapter, path_parameters)
 
-	@property
 	def count(self,
+		accessReviewScheduleDefinition_id: str,
+		accessReviewInstance_id: str,
 	) -> CountRequest:
+		if accessReviewScheduleDefinition_id is None:
+			raise TypeError("accessReviewScheduleDefinition_id cannot be null.")
+		if accessReviewInstance_id is None:
+			raise TypeError("accessReviewInstance_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["accessReviewScheduleDefinition%2Did"] =  accessReviewScheduleDefinition_id
+		path_parameters["accessReviewInstance%2Did"] =  accessReviewInstance_id
+
 		from .count import CountRequest
-		return CountRequest(self.request_adapter, self.path_parameters)
+		return CountRequest(self.request_adapter, path_parameters)
 

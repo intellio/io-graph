@@ -1,6 +1,7 @@
 # Auto-generated client
 
 from __future__ import annotations
+from kiota_abstractions.get_path_parameters import get_path_parameters
 from kiota_abstractions.method import Method
 from kiota_abstractions.base_request_builder import BaseRequestBuilder
 from kiota_abstractions.base_request_configuration import RequestConfiguration
@@ -119,75 +120,195 @@ class ByMessageIdRequest(BaseRequestBuilder):
 			raise TypeError("raw_url cannot be None.")
 		return ByMessageIdRequest(self.request_adapter, self.path_parameters)
 
-	@property
 	def value(self,
+		mailFolder_id: str,
+		message_id: str,
 	) -> ValueRequest:
+		if mailFolder_id is None:
+			raise TypeError("mailFolder_id cannot be null.")
+		if message_id is None:
+			raise TypeError("message_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["mailFolder%2Did"] =  mailFolder_id
+		path_parameters["message%2Did"] =  message_id
+
 		from .value import ValueRequest
-		return ValueRequest(self.request_adapter, self.path_parameters)
+		return ValueRequest(self.request_adapter, path_parameters)
 
-	@property
 	def attachments(self,
+		mailFolder_id: str,
+		message_id: str,
 	) -> AttachmentsRequest:
+		if mailFolder_id is None:
+			raise TypeError("mailFolder_id cannot be null.")
+		if message_id is None:
+			raise TypeError("message_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["mailFolder%2Did"] =  mailFolder_id
+		path_parameters["message%2Did"] =  message_id
+
 		from .attachments import AttachmentsRequest
-		return AttachmentsRequest(self.request_adapter, self.path_parameters)
+		return AttachmentsRequest(self.request_adapter, path_parameters)
 
-	@property
 	def extensions(self,
+		mailFolder_id: str,
+		message_id: str,
 	) -> ExtensionsRequest:
+		if mailFolder_id is None:
+			raise TypeError("mailFolder_id cannot be null.")
+		if message_id is None:
+			raise TypeError("message_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["mailFolder%2Did"] =  mailFolder_id
+		path_parameters["message%2Did"] =  message_id
+
 		from .extensions import ExtensionsRequest
-		return ExtensionsRequest(self.request_adapter, self.path_parameters)
+		return ExtensionsRequest(self.request_adapter, path_parameters)
 
-	@property
 	def copy(self,
+		mailFolder_id: str,
+		message_id: str,
 	) -> CopyRequest:
+		if mailFolder_id is None:
+			raise TypeError("mailFolder_id cannot be null.")
+		if message_id is None:
+			raise TypeError("message_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["mailFolder%2Did"] =  mailFolder_id
+		path_parameters["message%2Did"] =  message_id
+
 		from .copy import CopyRequest
-		return CopyRequest(self.request_adapter, self.path_parameters)
+		return CopyRequest(self.request_adapter, path_parameters)
 
-	@property
 	def create_forward(self,
+		mailFolder_id: str,
+		message_id: str,
 	) -> CreateForwardRequest:
+		if mailFolder_id is None:
+			raise TypeError("mailFolder_id cannot be null.")
+		if message_id is None:
+			raise TypeError("message_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["mailFolder%2Did"] =  mailFolder_id
+		path_parameters["message%2Did"] =  message_id
+
 		from .create_forward import CreateForwardRequest
-		return CreateForwardRequest(self.request_adapter, self.path_parameters)
+		return CreateForwardRequest(self.request_adapter, path_parameters)
 
-	@property
 	def create_reply(self,
+		mailFolder_id: str,
+		message_id: str,
 	) -> CreateReplyRequest:
+		if mailFolder_id is None:
+			raise TypeError("mailFolder_id cannot be null.")
+		if message_id is None:
+			raise TypeError("message_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["mailFolder%2Did"] =  mailFolder_id
+		path_parameters["message%2Did"] =  message_id
+
 		from .create_reply import CreateReplyRequest
-		return CreateReplyRequest(self.request_adapter, self.path_parameters)
+		return CreateReplyRequest(self.request_adapter, path_parameters)
 
-	@property
 	def create_reply_all(self,
+		mailFolder_id: str,
+		message_id: str,
 	) -> CreateReplyAllRequest:
+		if mailFolder_id is None:
+			raise TypeError("mailFolder_id cannot be null.")
+		if message_id is None:
+			raise TypeError("message_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["mailFolder%2Did"] =  mailFolder_id
+		path_parameters["message%2Did"] =  message_id
+
 		from .create_reply_all import CreateReplyAllRequest
-		return CreateReplyAllRequest(self.request_adapter, self.path_parameters)
+		return CreateReplyAllRequest(self.request_adapter, path_parameters)
 
-	@property
 	def forward(self,
+		mailFolder_id: str,
+		message_id: str,
 	) -> ForwardRequest:
+		if mailFolder_id is None:
+			raise TypeError("mailFolder_id cannot be null.")
+		if message_id is None:
+			raise TypeError("message_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["mailFolder%2Did"] =  mailFolder_id
+		path_parameters["message%2Did"] =  message_id
+
 		from .forward import ForwardRequest
-		return ForwardRequest(self.request_adapter, self.path_parameters)
+		return ForwardRequest(self.request_adapter, path_parameters)
 
-	@property
 	def move(self,
+		mailFolder_id: str,
+		message_id: str,
 	) -> MoveRequest:
+		if mailFolder_id is None:
+			raise TypeError("mailFolder_id cannot be null.")
+		if message_id is None:
+			raise TypeError("message_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["mailFolder%2Did"] =  mailFolder_id
+		path_parameters["message%2Did"] =  message_id
+
 		from .move import MoveRequest
-		return MoveRequest(self.request_adapter, self.path_parameters)
+		return MoveRequest(self.request_adapter, path_parameters)
 
-	@property
 	def reply(self,
+		mailFolder_id: str,
+		message_id: str,
 	) -> ReplyRequest:
+		if mailFolder_id is None:
+			raise TypeError("mailFolder_id cannot be null.")
+		if message_id is None:
+			raise TypeError("message_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["mailFolder%2Did"] =  mailFolder_id
+		path_parameters["message%2Did"] =  message_id
+
 		from .reply import ReplyRequest
-		return ReplyRequest(self.request_adapter, self.path_parameters)
+		return ReplyRequest(self.request_adapter, path_parameters)
 
-	@property
 	def reply_all(self,
+		mailFolder_id: str,
+		message_id: str,
 	) -> ReplyAllRequest:
-		from .reply_all import ReplyAllRequest
-		return ReplyAllRequest(self.request_adapter, self.path_parameters)
+		if mailFolder_id is None:
+			raise TypeError("mailFolder_id cannot be null.")
+		if message_id is None:
+			raise TypeError("message_id cannot be null.")
 
-	@property
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["mailFolder%2Did"] =  mailFolder_id
+		path_parameters["message%2Did"] =  message_id
+
+		from .reply_all import ReplyAllRequest
+		return ReplyAllRequest(self.request_adapter, path_parameters)
+
 	def send(self,
+		mailFolder_id: str,
+		message_id: str,
 	) -> SendRequest:
+		if mailFolder_id is None:
+			raise TypeError("mailFolder_id cannot be null.")
+		if message_id is None:
+			raise TypeError("message_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["mailFolder%2Did"] =  mailFolder_id
+		path_parameters["message%2Did"] =  message_id
+
 		from .send import SendRequest
-		return SendRequest(self.request_adapter, self.path_parameters)
+		return SendRequest(self.request_adapter, path_parameters)
 

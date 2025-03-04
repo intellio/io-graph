@@ -1,6 +1,7 @@
 # Auto-generated client
 
 from __future__ import annotations
+from kiota_abstractions.get_path_parameters import get_path_parameters
 from kiota_abstractions.method import Method
 from kiota_abstractions.base_request_builder import BaseRequestBuilder
 from kiota_abstractions.base_request_configuration import RequestConfiguration
@@ -12,8 +13,8 @@ from typing import TYPE_CHECKING
 if TYPE_CHECKING:
 	from .site_restore_artifacts import SiteRestoreArtifactsRequest
 	from ......request_adapter import HttpxRequestAdapter
-from iograph_models.models.share_point_restore_session import SharePointRestoreSession
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.models.share_point_restore_session import SharePointRestoreSession
 
 
 class BySharePointRestoreSessionIdRequest(BaseRequestBuilder):
@@ -108,9 +109,15 @@ class BySharePointRestoreSessionIdRequest(BaseRequestBuilder):
 			raise TypeError("raw_url cannot be None.")
 		return BySharePointRestoreSessionIdRequest(self.request_adapter, self.path_parameters)
 
-	@property
 	def site_restore_artifacts(self,
+		sharePointRestoreSession_id: str,
 	) -> SiteRestoreArtifactsRequest:
+		if sharePointRestoreSession_id is None:
+			raise TypeError("sharePointRestoreSession_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["sharePointRestoreSession%2Did"] =  sharePointRestoreSession_id
+
 		from .site_restore_artifacts import SiteRestoreArtifactsRequest
-		return SiteRestoreArtifactsRequest(self.request_adapter, self.path_parameters)
+		return SiteRestoreArtifactsRequest(self.request_adapter, path_parameters)
 

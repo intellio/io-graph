@@ -1,6 +1,7 @@
 # Auto-generated client
 
 from __future__ import annotations
+from kiota_abstractions.get_path_parameters import get_path_parameters
 from kiota_abstractions.method import Method
 from kiota_abstractions.base_request_builder import BaseRequestBuilder
 from kiota_abstractions.base_request_configuration import RequestConfiguration
@@ -10,6 +11,10 @@ from typing import Union, Any, Optional
 from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:
+	from .total_row_range import TotalRowRangeRequest
+	from .range import RangeRequest
+	from .header_row_range import HeaderRowRangeRequest
+	from .data_body_range import DataBodyRangeRequest
 	from .filter import FilterRequest
 	from .............request_adapter import HttpxRequestAdapter
 from iograph_models.models.workbook_table_column import WorkbookTableColumn
@@ -108,9 +113,143 @@ class ByWorkbookTableColumnIdRequest(BaseRequestBuilder):
 			raise TypeError("raw_url cannot be None.")
 		return ByWorkbookTableColumnIdRequest(self.request_adapter, self.path_parameters)
 
-	@property
 	def filter(self,
+		drive_id: str,
+		driveItem_id: str,
+		workbookWorksheet_id: str,
+		workbookTable_id: str,
+		workbookTableColumn_id: str,
 	) -> FilterRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+		if workbookWorksheet_id is None:
+			raise TypeError("workbookWorksheet_id cannot be null.")
+		if workbookTable_id is None:
+			raise TypeError("workbookTable_id cannot be null.")
+		if workbookTableColumn_id is None:
+			raise TypeError("workbookTableColumn_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+		path_parameters["workbookWorksheet%2Did"] =  workbookWorksheet_id
+		path_parameters["workbookTable%2Did"] =  workbookTable_id
+		path_parameters["workbookTableColumn%2Did"] =  workbookTableColumn_id
+
 		from .filter import FilterRequest
-		return FilterRequest(self.request_adapter, self.path_parameters)
+		return FilterRequest(self.request_adapter, path_parameters)
+
+	def data_body_range(self,
+		drive_id: str,
+		driveItem_id: str,
+		workbookWorksheet_id: str,
+		workbookTable_id: str,
+		workbookTableColumn_id: str,
+	) -> DataBodyRangeRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+		if workbookWorksheet_id is None:
+			raise TypeError("workbookWorksheet_id cannot be null.")
+		if workbookTable_id is None:
+			raise TypeError("workbookTable_id cannot be null.")
+		if workbookTableColumn_id is None:
+			raise TypeError("workbookTableColumn_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+		path_parameters["workbookWorksheet%2Did"] =  workbookWorksheet_id
+		path_parameters["workbookTable%2Did"] =  workbookTable_id
+		path_parameters["workbookTableColumn%2Did"] =  workbookTableColumn_id
+
+		from .data_body_range import DataBodyRangeRequest
+		return DataBodyRangeRequest(self.request_adapter, path_parameters)
+
+	def header_row_range(self,
+		drive_id: str,
+		driveItem_id: str,
+		workbookWorksheet_id: str,
+		workbookTable_id: str,
+		workbookTableColumn_id: str,
+	) -> HeaderRowRangeRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+		if workbookWorksheet_id is None:
+			raise TypeError("workbookWorksheet_id cannot be null.")
+		if workbookTable_id is None:
+			raise TypeError("workbookTable_id cannot be null.")
+		if workbookTableColumn_id is None:
+			raise TypeError("workbookTableColumn_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+		path_parameters["workbookWorksheet%2Did"] =  workbookWorksheet_id
+		path_parameters["workbookTable%2Did"] =  workbookTable_id
+		path_parameters["workbookTableColumn%2Did"] =  workbookTableColumn_id
+
+		from .header_row_range import HeaderRowRangeRequest
+		return HeaderRowRangeRequest(self.request_adapter, path_parameters)
+
+	def range(self,
+		drive_id: str,
+		driveItem_id: str,
+		workbookWorksheet_id: str,
+		workbookTable_id: str,
+		workbookTableColumn_id: str,
+	) -> RangeRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+		if workbookWorksheet_id is None:
+			raise TypeError("workbookWorksheet_id cannot be null.")
+		if workbookTable_id is None:
+			raise TypeError("workbookTable_id cannot be null.")
+		if workbookTableColumn_id is None:
+			raise TypeError("workbookTableColumn_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+		path_parameters["workbookWorksheet%2Did"] =  workbookWorksheet_id
+		path_parameters["workbookTable%2Did"] =  workbookTable_id
+		path_parameters["workbookTableColumn%2Did"] =  workbookTableColumn_id
+
+		from .range import RangeRequest
+		return RangeRequest(self.request_adapter, path_parameters)
+
+	def total_row_range(self,
+		drive_id: str,
+		driveItem_id: str,
+		workbookWorksheet_id: str,
+		workbookTable_id: str,
+		workbookTableColumn_id: str,
+	) -> TotalRowRangeRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+		if workbookWorksheet_id is None:
+			raise TypeError("workbookWorksheet_id cannot be null.")
+		if workbookTable_id is None:
+			raise TypeError("workbookTable_id cannot be null.")
+		if workbookTableColumn_id is None:
+			raise TypeError("workbookTableColumn_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+		path_parameters["workbookWorksheet%2Did"] =  workbookWorksheet_id
+		path_parameters["workbookTable%2Did"] =  workbookTable_id
+		path_parameters["workbookTableColumn%2Did"] =  workbookTableColumn_id
+
+		from .total_row_range import TotalRowRangeRequest
+		return TotalRowRangeRequest(self.request_adapter, path_parameters)
 

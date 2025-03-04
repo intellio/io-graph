@@ -1,6 +1,7 @@
 # Auto-generated client
 
 from __future__ import annotations
+from kiota_abstractions.get_path_parameters import get_path_parameters
 from kiota_abstractions.method import Method
 from kiota_abstractions.base_request_builder import BaseRequestBuilder
 from kiota_abstractions.base_request_configuration import RequestConfiguration
@@ -12,8 +13,8 @@ from typing import TYPE_CHECKING
 if TYPE_CHECKING:
 	from .identity_synchronization import IdentitySynchronizationRequest
 	from ......request_adapter import HttpxRequestAdapter
-from iograph_models.models.cross_tenant_access_policy_configuration_partner import CrossTenantAccessPolicyConfigurationPartner
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.models.cross_tenant_access_policy_configuration_partner import CrossTenantAccessPolicyConfigurationPartner
 
 
 class ByCrossTenantAccessPolicyConfigurationPartnerTenantIdRequest(BaseRequestBuilder):
@@ -111,9 +112,15 @@ class ByCrossTenantAccessPolicyConfigurationPartnerTenantIdRequest(BaseRequestBu
 			raise TypeError("raw_url cannot be None.")
 		return ByCrossTenantAccessPolicyConfigurationPartnerTenantIdRequest(self.request_adapter, self.path_parameters)
 
-	@property
 	def identity_synchronization(self,
+		crossTenantAccessPolicyConfigurationPartner_tenantId: str,
 	) -> IdentitySynchronizationRequest:
+		if crossTenantAccessPolicyConfigurationPartner_tenantId is None:
+			raise TypeError("crossTenantAccessPolicyConfigurationPartner_tenantId cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["crossTenantAccessPolicyConfigurationPartner%2DtenantId"] =  crossTenantAccessPolicyConfigurationPartner_tenantId
+
 		from .identity_synchronization import IdentitySynchronizationRequest
-		return IdentitySynchronizationRequest(self.request_adapter, self.path_parameters)
+		return IdentitySynchronizationRequest(self.request_adapter, path_parameters)
 

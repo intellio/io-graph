@@ -1,6 +1,7 @@
 # Auto-generated client
 
 from __future__ import annotations
+from kiota_abstractions.get_path_parameters import get_path_parameters
 from kiota_abstractions.method import Method
 from kiota_abstractions.base_request_builder import BaseRequestBuilder
 from kiota_abstractions.base_request_configuration import RequestConfiguration
@@ -14,8 +15,8 @@ if TYPE_CHECKING:
 	from .exempt_app_locker_files import ExemptAppLockerFilesRequest
 	from .assignments import AssignmentsRequest
 	from .....request_adapter import HttpxRequestAdapter
-from iograph_models.models.windows_information_protection_policy import WindowsInformationProtectionPolicy
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.models.windows_information_protection_policy import WindowsInformationProtectionPolicy
 
 
 class ByWindowsInformationProtectionPolicyIdRequest(BaseRequestBuilder):
@@ -113,21 +114,39 @@ class ByWindowsInformationProtectionPolicyIdRequest(BaseRequestBuilder):
 			raise TypeError("raw_url cannot be None.")
 		return ByWindowsInformationProtectionPolicyIdRequest(self.request_adapter, self.path_parameters)
 
-	@property
 	def assignments(self,
+		windowsInformationProtectionPolicy_id: str,
 	) -> AssignmentsRequest:
+		if windowsInformationProtectionPolicy_id is None:
+			raise TypeError("windowsInformationProtectionPolicy_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["windowsInformationProtectionPolicy%2Did"] =  windowsInformationProtectionPolicy_id
+
 		from .assignments import AssignmentsRequest
-		return AssignmentsRequest(self.request_adapter, self.path_parameters)
+		return AssignmentsRequest(self.request_adapter, path_parameters)
 
-	@property
 	def exempt_app_locker_files(self,
+		windowsInformationProtectionPolicy_id: str,
 	) -> ExemptAppLockerFilesRequest:
-		from .exempt_app_locker_files import ExemptAppLockerFilesRequest
-		return ExemptAppLockerFilesRequest(self.request_adapter, self.path_parameters)
+		if windowsInformationProtectionPolicy_id is None:
+			raise TypeError("windowsInformationProtectionPolicy_id cannot be null.")
 
-	@property
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["windowsInformationProtectionPolicy%2Did"] =  windowsInformationProtectionPolicy_id
+
+		from .exempt_app_locker_files import ExemptAppLockerFilesRequest
+		return ExemptAppLockerFilesRequest(self.request_adapter, path_parameters)
+
 	def protected_app_locker_files(self,
+		windowsInformationProtectionPolicy_id: str,
 	) -> ProtectedAppLockerFilesRequest:
+		if windowsInformationProtectionPolicy_id is None:
+			raise TypeError("windowsInformationProtectionPolicy_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["windowsInformationProtectionPolicy%2Did"] =  windowsInformationProtectionPolicy_id
+
 		from .protected_app_locker_files import ProtectedAppLockerFilesRequest
-		return ProtectedAppLockerFilesRequest(self.request_adapter, self.path_parameters)
+		return ProtectedAppLockerFilesRequest(self.request_adapter, path_parameters)
 

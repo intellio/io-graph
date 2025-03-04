@@ -1,6 +1,7 @@
 # Auto-generated client
 
 from __future__ import annotations
+from kiota_abstractions.get_path_parameters import get_path_parameters
 from kiota_abstractions.method import Method
 from kiota_abstractions.base_request_builder import BaseRequestBuilder
 from kiota_abstractions.base_request_configuration import RequestConfiguration
@@ -110,15 +111,27 @@ class ByHostPortIdRequest(BaseRequestBuilder):
 			raise TypeError("raw_url cannot be None.")
 		return ByHostPortIdRequest(self.request_adapter, self.path_parameters)
 
-	@property
 	def host(self,
+		hostPort_id: str,
 	) -> HostRequest:
-		from .host import HostRequest
-		return HostRequest(self.request_adapter, self.path_parameters)
+		if hostPort_id is None:
+			raise TypeError("hostPort_id cannot be null.")
 
-	@property
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["hostPort%2Did"] =  hostPort_id
+
+		from .host import HostRequest
+		return HostRequest(self.request_adapter, path_parameters)
+
 	def most_recent_ssl_certificate(self,
+		hostPort_id: str,
 	) -> MostRecentSslCertificateRequest:
+		if hostPort_id is None:
+			raise TypeError("hostPort_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["hostPort%2Did"] =  hostPort_id
+
 		from .most_recent_ssl_certificate import MostRecentSslCertificateRequest
-		return MostRecentSslCertificateRequest(self.request_adapter, self.path_parameters)
+		return MostRecentSslCertificateRequest(self.request_adapter, path_parameters)
 

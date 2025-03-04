@@ -1,6 +1,7 @@
 # Auto-generated client
 
 from __future__ import annotations
+from kiota_abstractions.get_path_parameters import get_path_parameters
 from kiota_abstractions.method import Method
 from kiota_abstractions.base_request_builder import BaseRequestBuilder
 from kiota_abstractions.base_request_configuration import RequestConfiguration
@@ -15,6 +16,7 @@ if TYPE_CHECKING:
 	from .series import SeriesRequest
 	from .set_position import SetPositionRequest
 	from .set_data import SetDataRequest
+	from .image import ImageRequest
 	from .legend import LegendRequest
 	from .format import FormatRequest
 	from .data_labels import DataLabelsRequest
@@ -116,57 +118,243 @@ class ByWorkbookChartIdRequest(BaseRequestBuilder):
 			raise TypeError("raw_url cannot be None.")
 		return ByWorkbookChartIdRequest(self.request_adapter, self.path_parameters)
 
-	@property
 	def axes(self,
+		drive_id: str,
+		driveItem_id: str,
+		workbookWorksheet_id: str,
+		workbookChart_id: str,
 	) -> AxesRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+		if workbookWorksheet_id is None:
+			raise TypeError("workbookWorksheet_id cannot be null.")
+		if workbookChart_id is None:
+			raise TypeError("workbookChart_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+		path_parameters["workbookWorksheet%2Did"] =  workbookWorksheet_id
+		path_parameters["workbookChart%2Did"] =  workbookChart_id
+
 		from .axes import AxesRequest
-		return AxesRequest(self.request_adapter, self.path_parameters)
+		return AxesRequest(self.request_adapter, path_parameters)
 
-	@property
 	def data_labels(self,
+		drive_id: str,
+		driveItem_id: str,
+		workbookWorksheet_id: str,
+		workbookChart_id: str,
 	) -> DataLabelsRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+		if workbookWorksheet_id is None:
+			raise TypeError("workbookWorksheet_id cannot be null.")
+		if workbookChart_id is None:
+			raise TypeError("workbookChart_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+		path_parameters["workbookWorksheet%2Did"] =  workbookWorksheet_id
+		path_parameters["workbookChart%2Did"] =  workbookChart_id
+
 		from .data_labels import DataLabelsRequest
-		return DataLabelsRequest(self.request_adapter, self.path_parameters)
+		return DataLabelsRequest(self.request_adapter, path_parameters)
 
-	@property
 	def format(self,
+		drive_id: str,
+		driveItem_id: str,
+		workbookWorksheet_id: str,
+		workbookChart_id: str,
 	) -> FormatRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+		if workbookWorksheet_id is None:
+			raise TypeError("workbookWorksheet_id cannot be null.")
+		if workbookChart_id is None:
+			raise TypeError("workbookChart_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+		path_parameters["workbookWorksheet%2Did"] =  workbookWorksheet_id
+		path_parameters["workbookChart%2Did"] =  workbookChart_id
+
 		from .format import FormatRequest
-		return FormatRequest(self.request_adapter, self.path_parameters)
+		return FormatRequest(self.request_adapter, path_parameters)
 
-	@property
 	def legend(self,
+		drive_id: str,
+		driveItem_id: str,
+		workbookWorksheet_id: str,
+		workbookChart_id: str,
 	) -> LegendRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+		if workbookWorksheet_id is None:
+			raise TypeError("workbookWorksheet_id cannot be null.")
+		if workbookChart_id is None:
+			raise TypeError("workbookChart_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+		path_parameters["workbookWorksheet%2Did"] =  workbookWorksheet_id
+		path_parameters["workbookChart%2Did"] =  workbookChart_id
+
 		from .legend import LegendRequest
-		return LegendRequest(self.request_adapter, self.path_parameters)
+		return LegendRequest(self.request_adapter, path_parameters)
 
-	@property
+	def image(self,
+		drive_id: str,
+		driveItem_id: str,
+		workbookWorksheet_id: str,
+		workbookChart_id: str,
+	) -> ImageRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+		if workbookWorksheet_id is None:
+			raise TypeError("workbookWorksheet_id cannot be null.")
+		if workbookChart_id is None:
+			raise TypeError("workbookChart_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+		path_parameters["workbookWorksheet%2Did"] =  workbookWorksheet_id
+		path_parameters["workbookChart%2Did"] =  workbookChart_id
+
+		from .image import ImageRequest
+		return ImageRequest(self.request_adapter, path_parameters)
+
 	def set_data(self,
+		drive_id: str,
+		driveItem_id: str,
+		workbookWorksheet_id: str,
+		workbookChart_id: str,
 	) -> SetDataRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+		if workbookWorksheet_id is None:
+			raise TypeError("workbookWorksheet_id cannot be null.")
+		if workbookChart_id is None:
+			raise TypeError("workbookChart_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+		path_parameters["workbookWorksheet%2Did"] =  workbookWorksheet_id
+		path_parameters["workbookChart%2Did"] =  workbookChart_id
+
 		from .set_data import SetDataRequest
-		return SetDataRequest(self.request_adapter, self.path_parameters)
+		return SetDataRequest(self.request_adapter, path_parameters)
 
-	@property
 	def set_position(self,
+		drive_id: str,
+		driveItem_id: str,
+		workbookWorksheet_id: str,
+		workbookChart_id: str,
 	) -> SetPositionRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+		if workbookWorksheet_id is None:
+			raise TypeError("workbookWorksheet_id cannot be null.")
+		if workbookChart_id is None:
+			raise TypeError("workbookChart_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+		path_parameters["workbookWorksheet%2Did"] =  workbookWorksheet_id
+		path_parameters["workbookChart%2Did"] =  workbookChart_id
+
 		from .set_position import SetPositionRequest
-		return SetPositionRequest(self.request_adapter, self.path_parameters)
+		return SetPositionRequest(self.request_adapter, path_parameters)
 
-	@property
 	def series(self,
+		drive_id: str,
+		driveItem_id: str,
+		workbookWorksheet_id: str,
+		workbookChart_id: str,
 	) -> SeriesRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+		if workbookWorksheet_id is None:
+			raise TypeError("workbookWorksheet_id cannot be null.")
+		if workbookChart_id is None:
+			raise TypeError("workbookChart_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+		path_parameters["workbookWorksheet%2Did"] =  workbookWorksheet_id
+		path_parameters["workbookChart%2Did"] =  workbookChart_id
+
 		from .series import SeriesRequest
-		return SeriesRequest(self.request_adapter, self.path_parameters)
+		return SeriesRequest(self.request_adapter, path_parameters)
 
-	@property
 	def title(self,
+		drive_id: str,
+		driveItem_id: str,
+		workbookWorksheet_id: str,
+		workbookChart_id: str,
 	) -> TitleRequest:
-		from .title import TitleRequest
-		return TitleRequest(self.request_adapter, self.path_parameters)
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+		if workbookWorksheet_id is None:
+			raise TypeError("workbookWorksheet_id cannot be null.")
+		if workbookChart_id is None:
+			raise TypeError("workbookChart_id cannot be null.")
 
-	@property
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+		path_parameters["workbookWorksheet%2Did"] =  workbookWorksheet_id
+		path_parameters["workbookChart%2Did"] =  workbookChart_id
+
+		from .title import TitleRequest
+		return TitleRequest(self.request_adapter, path_parameters)
+
 	def worksheet(self,
+		drive_id: str,
+		driveItem_id: str,
+		workbookWorksheet_id: str,
+		workbookChart_id: str,
 	) -> WorksheetRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+		if workbookWorksheet_id is None:
+			raise TypeError("workbookWorksheet_id cannot be null.")
+		if workbookChart_id is None:
+			raise TypeError("workbookChart_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+		path_parameters["workbookWorksheet%2Did"] =  workbookWorksheet_id
+		path_parameters["workbookChart%2Did"] =  workbookChart_id
+
 		from .worksheet import WorksheetRequest
-		return WorksheetRequest(self.request_adapter, self.path_parameters)
+		return WorksheetRequest(self.request_adapter, path_parameters)
 

@@ -85,21 +85,39 @@ class DirectReportsRequest(BaseRequestBuilder):
 		from .by_directory_object_id import ByDirectoryObjectIdRequest
 		return ByDirectoryObjectIdRequest(self.request_adapter, path_parameters)
 
-	@property
 	def count(self,
+		orgContact_id: str,
 	) -> CountRequest:
+		if orgContact_id is None:
+			raise TypeError("orgContact_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["orgContact%2Did"] =  orgContact_id
+
 		from .count import CountRequest
-		return CountRequest(self.request_adapter, self.path_parameters)
+		return CountRequest(self.request_adapter, path_parameters)
 
-	@property
 	def graph_org_contact(self,
+		orgContact_id: str,
 	) -> GraphOrgContactRequest:
-		from .graph_org_contact import GraphOrgContactRequest
-		return GraphOrgContactRequest(self.request_adapter, self.path_parameters)
+		if orgContact_id is None:
+			raise TypeError("orgContact_id cannot be null.")
 
-	@property
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["orgContact%2Did"] =  orgContact_id
+
+		from .graph_org_contact import GraphOrgContactRequest
+		return GraphOrgContactRequest(self.request_adapter, path_parameters)
+
 	def graph_user(self,
+		orgContact_id: str,
 	) -> GraphUserRequest:
+		if orgContact_id is None:
+			raise TypeError("orgContact_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["orgContact%2Did"] =  orgContact_id
+
 		from .graph_user import GraphUserRequest
-		return GraphUserRequest(self.request_adapter, self.path_parameters)
+		return GraphUserRequest(self.request_adapter, path_parameters)
 

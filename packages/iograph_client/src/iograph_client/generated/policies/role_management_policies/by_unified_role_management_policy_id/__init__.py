@@ -1,6 +1,7 @@
 # Auto-generated client
 
 from __future__ import annotations
+from kiota_abstractions.get_path_parameters import get_path_parameters
 from kiota_abstractions.method import Method
 from kiota_abstractions.base_request_builder import BaseRequestBuilder
 from kiota_abstractions.base_request_configuration import RequestConfiguration
@@ -13,8 +14,8 @@ if TYPE_CHECKING:
 	from .rules import RulesRequest
 	from .effective_rules import EffectiveRulesRequest
 	from .....request_adapter import HttpxRequestAdapter
-from iograph_models.models.unified_role_management_policy import UnifiedRoleManagementPolicy
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.models.unified_role_management_policy import UnifiedRoleManagementPolicy
 
 
 class ByUnifiedRoleManagementPolicyIdRequest(BaseRequestBuilder):
@@ -110,15 +111,27 @@ class ByUnifiedRoleManagementPolicyIdRequest(BaseRequestBuilder):
 			raise TypeError("raw_url cannot be None.")
 		return ByUnifiedRoleManagementPolicyIdRequest(self.request_adapter, self.path_parameters)
 
-	@property
 	def effective_rules(self,
+		unifiedRoleManagementPolicy_id: str,
 	) -> EffectiveRulesRequest:
-		from .effective_rules import EffectiveRulesRequest
-		return EffectiveRulesRequest(self.request_adapter, self.path_parameters)
+		if unifiedRoleManagementPolicy_id is None:
+			raise TypeError("unifiedRoleManagementPolicy_id cannot be null.")
 
-	@property
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["unifiedRoleManagementPolicy%2Did"] =  unifiedRoleManagementPolicy_id
+
+		from .effective_rules import EffectiveRulesRequest
+		return EffectiveRulesRequest(self.request_adapter, path_parameters)
+
 	def rules(self,
+		unifiedRoleManagementPolicy_id: str,
 	) -> RulesRequest:
+		if unifiedRoleManagementPolicy_id is None:
+			raise TypeError("unifiedRoleManagementPolicy_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["unifiedRoleManagementPolicy%2Did"] =  unifiedRoleManagementPolicy_id
+
 		from .rules import RulesRequest
-		return RulesRequest(self.request_adapter, self.path_parameters)
+		return RulesRequest(self.request_adapter, path_parameters)
 

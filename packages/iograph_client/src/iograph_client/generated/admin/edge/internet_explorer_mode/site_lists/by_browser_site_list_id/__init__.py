@@ -1,6 +1,7 @@
 # Auto-generated client
 
 from __future__ import annotations
+from kiota_abstractions.get_path_parameters import get_path_parameters
 from kiota_abstractions.method import Method
 from kiota_abstractions.base_request_builder import BaseRequestBuilder
 from kiota_abstractions.base_request_configuration import RequestConfiguration
@@ -113,21 +114,39 @@ class ByBrowserSiteListIdRequest(BaseRequestBuilder):
 			raise TypeError("raw_url cannot be None.")
 		return ByBrowserSiteListIdRequest(self.request_adapter, self.path_parameters)
 
-	@property
 	def publish(self,
+		browserSiteList_id: str,
 	) -> PublishRequest:
+		if browserSiteList_id is None:
+			raise TypeError("browserSiteList_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["browserSiteList%2Did"] =  browserSiteList_id
+
 		from .publish import PublishRequest
-		return PublishRequest(self.request_adapter, self.path_parameters)
+		return PublishRequest(self.request_adapter, path_parameters)
 
-	@property
 	def shared_cookies(self,
+		browserSiteList_id: str,
 	) -> SharedCookiesRequest:
-		from .shared_cookies import SharedCookiesRequest
-		return SharedCookiesRequest(self.request_adapter, self.path_parameters)
+		if browserSiteList_id is None:
+			raise TypeError("browserSiteList_id cannot be null.")
 
-	@property
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["browserSiteList%2Did"] =  browserSiteList_id
+
+		from .shared_cookies import SharedCookiesRequest
+		return SharedCookiesRequest(self.request_adapter, path_parameters)
+
 	def sites(self,
+		browserSiteList_id: str,
 	) -> SitesRequest:
+		if browserSiteList_id is None:
+			raise TypeError("browserSiteList_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["browserSiteList%2Did"] =  browserSiteList_id
+
 		from .sites import SitesRequest
-		return SitesRequest(self.request_adapter, self.path_parameters)
+		return SitesRequest(self.request_adapter, path_parameters)
 

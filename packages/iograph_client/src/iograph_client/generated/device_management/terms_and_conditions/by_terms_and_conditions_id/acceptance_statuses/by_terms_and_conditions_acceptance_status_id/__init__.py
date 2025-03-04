@@ -1,6 +1,7 @@
 # Auto-generated client
 
 from __future__ import annotations
+from kiota_abstractions.get_path_parameters import get_path_parameters
 from kiota_abstractions.method import Method
 from kiota_abstractions.base_request_builder import BaseRequestBuilder
 from kiota_abstractions.base_request_configuration import RequestConfiguration
@@ -111,9 +112,19 @@ class ByTermsAndConditionsAcceptanceStatusIdRequest(BaseRequestBuilder):
 			raise TypeError("raw_url cannot be None.")
 		return ByTermsAndConditionsAcceptanceStatusIdRequest(self.request_adapter, self.path_parameters)
 
-	@property
 	def terms_and_conditions(self,
+		termsAndConditions_id: str,
+		termsAndConditionsAcceptanceStatus_id: str,
 	) -> TermsAndConditionsRequest:
+		if termsAndConditions_id is None:
+			raise TypeError("termsAndConditions_id cannot be null.")
+		if termsAndConditionsAcceptanceStatus_id is None:
+			raise TypeError("termsAndConditionsAcceptanceStatus_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["termsAndConditions%2Did"] =  termsAndConditions_id
+		path_parameters["termsAndConditionsAcceptanceStatus%2Did"] =  termsAndConditionsAcceptanceStatus_id
+
 		from .terms_and_conditions import TermsAndConditionsRequest
-		return TermsAndConditionsRequest(self.request_adapter, self.path_parameters)
+		return TermsAndConditionsRequest(self.request_adapter, path_parameters)
 

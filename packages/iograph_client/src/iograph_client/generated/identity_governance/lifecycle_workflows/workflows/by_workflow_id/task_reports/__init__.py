@@ -11,11 +11,12 @@ from typing import Union, Any, Optional
 from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:
+	from .identity_governance_summary import IdentityGovernanceSummaryRequest
 	from .count import CountRequest
 	from .by_task_report_id import ByTaskReportIdRequest
 	from .......request_adapter import HttpxRequestAdapter
-from iograph_models.models.identity_governance_task_report_collection_response import IdentityGovernanceTaskReportCollectionResponse
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.models.identity_governance_task_report_collection_response import IdentityGovernanceTaskReportCollectionResponse
 
 
 class TaskReportsRequest(BaseRequestBuilder):
@@ -82,9 +83,35 @@ class TaskReportsRequest(BaseRequestBuilder):
 		from .by_task_report_id import ByTaskReportIdRequest
 		return ByTaskReportIdRequest(self.request_adapter, path_parameters)
 
-	@property
 	def count(self,
+		workflow_id: str,
 	) -> CountRequest:
+		if workflow_id is None:
+			raise TypeError("workflow_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["workflow%2Did"] =  workflow_id
+
 		from .count import CountRequest
-		return CountRequest(self.request_adapter, self.path_parameters)
+		return CountRequest(self.request_adapter, path_parameters)
+
+	def identity_governance_summary(self,
+		workflow_id: str,
+		startDateTime: datetime,
+		endDateTime: datetime,
+	) -> IdentityGovernanceSummaryRequest:
+		if workflow_id is None:
+			raise TypeError("workflow_id cannot be null.")
+		if startDateTime is None:
+			raise TypeError("startDateTime cannot be null.")
+		if endDateTime is None:
+			raise TypeError("endDateTime cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["workflow%2Did"] =  workflow_id
+		path_parameters["startDateTime"] =  startDateTime
+		path_parameters["endDateTime"] =  endDateTime
+
+		from .identity_governance_summary import IdentityGovernanceSummaryRequest
+		return IdentityGovernanceSummaryRequest(self.request_adapter, path_parameters)
 

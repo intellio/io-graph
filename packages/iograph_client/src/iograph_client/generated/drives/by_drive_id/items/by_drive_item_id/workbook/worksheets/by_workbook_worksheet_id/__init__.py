@@ -1,6 +1,7 @@
 # Auto-generated client
 
 from __future__ import annotations
+from kiota_abstractions.get_path_parameters import get_path_parameters
 from kiota_abstractions.method import Method
 from kiota_abstractions.base_request_builder import BaseRequestBuilder
 from kiota_abstractions.base_request_configuration import RequestConfiguration
@@ -14,10 +15,13 @@ if TYPE_CHECKING:
 	from .protection import ProtectionRequest
 	from .pivot_tables import PivotTablesRequest
 	from .names import NamesRequest
+	from .used_range import UsedRangeRequest
+	from .range import RangeRequest
+	from .cell import CellRequest
 	from .charts import ChartsRequest
 	from .........request_adapter import HttpxRequestAdapter
-from iograph_models.models.workbook_worksheet import WorkbookWorksheet
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.models.workbook_worksheet import WorkbookWorksheet
 
 
 class ByWorkbookWorksheetIdRequest(BaseRequestBuilder):
@@ -112,33 +116,171 @@ class ByWorkbookWorksheetIdRequest(BaseRequestBuilder):
 			raise TypeError("raw_url cannot be None.")
 		return ByWorkbookWorksheetIdRequest(self.request_adapter, self.path_parameters)
 
-	@property
 	def charts(self,
+		drive_id: str,
+		driveItem_id: str,
+		workbookWorksheet_id: str,
 	) -> ChartsRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+		if workbookWorksheet_id is None:
+			raise TypeError("workbookWorksheet_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+		path_parameters["workbookWorksheet%2Did"] =  workbookWorksheet_id
+
 		from .charts import ChartsRequest
-		return ChartsRequest(self.request_adapter, self.path_parameters)
+		return ChartsRequest(self.request_adapter, path_parameters)
 
-	@property
+	def cell(self,
+		drive_id: str,
+		driveItem_id: str,
+		workbookWorksheet_id: str,
+		row: int,
+		column: int,
+	) -> CellRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+		if workbookWorksheet_id is None:
+			raise TypeError("workbookWorksheet_id cannot be null.")
+		if row is None:
+			raise TypeError("row cannot be null.")
+		if column is None:
+			raise TypeError("column cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+		path_parameters["workbookWorksheet%2Did"] =  workbookWorksheet_id
+		path_parameters["row"] =  row
+		path_parameters["column"] =  column
+
+		from .cell import CellRequest
+		return CellRequest(self.request_adapter, path_parameters)
+
+	def range(self,
+		drive_id: str,
+		driveItem_id: str,
+		workbookWorksheet_id: str,
+	) -> RangeRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+		if workbookWorksheet_id is None:
+			raise TypeError("workbookWorksheet_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+		path_parameters["workbookWorksheet%2Did"] =  workbookWorksheet_id
+
+		from .range import RangeRequest
+		return RangeRequest(self.request_adapter, path_parameters)
+
+	def used_range(self,
+		drive_id: str,
+		driveItem_id: str,
+		workbookWorksheet_id: str,
+	) -> UsedRangeRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+		if workbookWorksheet_id is None:
+			raise TypeError("workbookWorksheet_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+		path_parameters["workbookWorksheet%2Did"] =  workbookWorksheet_id
+
+		from .used_range import UsedRangeRequest
+		return UsedRangeRequest(self.request_adapter, path_parameters)
+
 	def names(self,
+		drive_id: str,
+		driveItem_id: str,
+		workbookWorksheet_id: str,
 	) -> NamesRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+		if workbookWorksheet_id is None:
+			raise TypeError("workbookWorksheet_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+		path_parameters["workbookWorksheet%2Did"] =  workbookWorksheet_id
+
 		from .names import NamesRequest
-		return NamesRequest(self.request_adapter, self.path_parameters)
+		return NamesRequest(self.request_adapter, path_parameters)
 
-	@property
 	def pivot_tables(self,
+		drive_id: str,
+		driveItem_id: str,
+		workbookWorksheet_id: str,
 	) -> PivotTablesRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+		if workbookWorksheet_id is None:
+			raise TypeError("workbookWorksheet_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+		path_parameters["workbookWorksheet%2Did"] =  workbookWorksheet_id
+
 		from .pivot_tables import PivotTablesRequest
-		return PivotTablesRequest(self.request_adapter, self.path_parameters)
+		return PivotTablesRequest(self.request_adapter, path_parameters)
 
-	@property
 	def protection(self,
+		drive_id: str,
+		driveItem_id: str,
+		workbookWorksheet_id: str,
 	) -> ProtectionRequest:
-		from .protection import ProtectionRequest
-		return ProtectionRequest(self.request_adapter, self.path_parameters)
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+		if workbookWorksheet_id is None:
+			raise TypeError("workbookWorksheet_id cannot be null.")
 
-	@property
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+		path_parameters["workbookWorksheet%2Did"] =  workbookWorksheet_id
+
+		from .protection import ProtectionRequest
+		return ProtectionRequest(self.request_adapter, path_parameters)
+
 	def tables(self,
+		drive_id: str,
+		driveItem_id: str,
+		workbookWorksheet_id: str,
 	) -> TablesRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+		if workbookWorksheet_id is None:
+			raise TypeError("workbookWorksheet_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+		path_parameters["workbookWorksheet%2Did"] =  workbookWorksheet_id
+
 		from .tables import TablesRequest
-		return TablesRequest(self.request_adapter, self.path_parameters)
+		return TablesRequest(self.request_adapter, path_parameters)
 

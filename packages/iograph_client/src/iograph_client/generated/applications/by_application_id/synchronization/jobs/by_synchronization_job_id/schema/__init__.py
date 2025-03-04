@@ -1,6 +1,7 @@
 # Auto-generated client
 
 from __future__ import annotations
+from kiota_abstractions.get_path_parameters import get_path_parameters
 from kiota_abstractions.method import Method
 from kiota_abstractions.base_request_builder import BaseRequestBuilder
 from kiota_abstractions.base_request_configuration import RequestConfiguration
@@ -11,10 +12,12 @@ from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:
 	from .parse_expression import ParseExpressionRequest
+	from .functions import FunctionsRequest
+	from .filter_operators import FilterOperatorsRequest
 	from .directories import DirectoriesRequest
 	from ........request_adapter import HttpxRequestAdapter
-from iograph_models.models.synchronization_schema import SynchronizationSchema
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.models.synchronization_schema import SynchronizationSchema
 
 
 class SchemaRequest(BaseRequestBuilder):
@@ -109,15 +112,67 @@ class SchemaRequest(BaseRequestBuilder):
 			raise TypeError("raw_url cannot be None.")
 		return SchemaRequest(self.request_adapter, self.path_parameters)
 
-	@property
 	def directories(self,
+		application_id: str,
+		synchronizationJob_id: str,
 	) -> DirectoriesRequest:
-		from .directories import DirectoriesRequest
-		return DirectoriesRequest(self.request_adapter, self.path_parameters)
+		if application_id is None:
+			raise TypeError("application_id cannot be null.")
+		if synchronizationJob_id is None:
+			raise TypeError("synchronizationJob_id cannot be null.")
 
-	@property
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["application%2Did"] =  application_id
+		path_parameters["synchronizationJob%2Did"] =  synchronizationJob_id
+
+		from .directories import DirectoriesRequest
+		return DirectoriesRequest(self.request_adapter, path_parameters)
+
+	def filter_operators(self,
+		application_id: str,
+		synchronizationJob_id: str,
+	) -> FilterOperatorsRequest:
+		if application_id is None:
+			raise TypeError("application_id cannot be null.")
+		if synchronizationJob_id is None:
+			raise TypeError("synchronizationJob_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["application%2Did"] =  application_id
+		path_parameters["synchronizationJob%2Did"] =  synchronizationJob_id
+
+		from .filter_operators import FilterOperatorsRequest
+		return FilterOperatorsRequest(self.request_adapter, path_parameters)
+
+	def functions(self,
+		application_id: str,
+		synchronizationJob_id: str,
+	) -> FunctionsRequest:
+		if application_id is None:
+			raise TypeError("application_id cannot be null.")
+		if synchronizationJob_id is None:
+			raise TypeError("synchronizationJob_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["application%2Did"] =  application_id
+		path_parameters["synchronizationJob%2Did"] =  synchronizationJob_id
+
+		from .functions import FunctionsRequest
+		return FunctionsRequest(self.request_adapter, path_parameters)
+
 	def parse_expression(self,
+		application_id: str,
+		synchronizationJob_id: str,
 	) -> ParseExpressionRequest:
+		if application_id is None:
+			raise TypeError("application_id cannot be null.")
+		if synchronizationJob_id is None:
+			raise TypeError("synchronizationJob_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["application%2Did"] =  application_id
+		path_parameters["synchronizationJob%2Did"] =  synchronizationJob_id
+
 		from .parse_expression import ParseExpressionRequest
-		return ParseExpressionRequest(self.request_adapter, self.path_parameters)
+		return ParseExpressionRequest(self.request_adapter, path_parameters)
 

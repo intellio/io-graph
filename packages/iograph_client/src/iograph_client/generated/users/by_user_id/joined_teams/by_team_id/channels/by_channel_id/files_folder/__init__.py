@@ -1,6 +1,7 @@
 # Auto-generated client
 
 from __future__ import annotations
+from kiota_abstractions.get_path_parameters import get_path_parameters
 from kiota_abstractions.method import Method
 from kiota_abstractions.base_request_builder import BaseRequestBuilder
 from kiota_abstractions.base_request_configuration import RequestConfiguration
@@ -57,9 +58,23 @@ class FilesFolderRequest(BaseRequestBuilder):
 			raise TypeError("raw_url cannot be None.")
 		return FilesFolderRequest(self.request_adapter, self.path_parameters)
 
-	@property
 	def content(self,
+		user_id: str,
+		team_id: str,
+		channel_id: str,
 	) -> ContentRequest:
+		if user_id is None:
+			raise TypeError("user_id cannot be null.")
+		if team_id is None:
+			raise TypeError("team_id cannot be null.")
+		if channel_id is None:
+			raise TypeError("channel_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["user%2Did"] =  user_id
+		path_parameters["team%2Did"] =  team_id
+		path_parameters["channel%2Did"] =  channel_id
+
 		from .content import ContentRequest
-		return ContentRequest(self.request_adapter, self.path_parameters)
+		return ContentRequest(self.request_adapter, path_parameters)
 

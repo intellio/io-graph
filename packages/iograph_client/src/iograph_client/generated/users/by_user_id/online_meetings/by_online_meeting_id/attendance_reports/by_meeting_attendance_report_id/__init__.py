@@ -1,6 +1,7 @@
 # Auto-generated client
 
 from __future__ import annotations
+from kiota_abstractions.get_path_parameters import get_path_parameters
 from kiota_abstractions.method import Method
 from kiota_abstractions.base_request_builder import BaseRequestBuilder
 from kiota_abstractions.base_request_configuration import RequestConfiguration
@@ -12,8 +13,8 @@ from typing import TYPE_CHECKING
 if TYPE_CHECKING:
 	from .attendance_records import AttendanceRecordsRequest
 	from ........request_adapter import HttpxRequestAdapter
-from iograph_models.models.meeting_attendance_report import MeetingAttendanceReport
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.models.meeting_attendance_report import MeetingAttendanceReport
 
 
 class ByMeetingAttendanceReportIdRequest(BaseRequestBuilder):
@@ -108,9 +109,23 @@ class ByMeetingAttendanceReportIdRequest(BaseRequestBuilder):
 			raise TypeError("raw_url cannot be None.")
 		return ByMeetingAttendanceReportIdRequest(self.request_adapter, self.path_parameters)
 
-	@property
 	def attendance_records(self,
+		user_id: str,
+		onlineMeeting_id: str,
+		meetingAttendanceReport_id: str,
 	) -> AttendanceRecordsRequest:
+		if user_id is None:
+			raise TypeError("user_id cannot be null.")
+		if onlineMeeting_id is None:
+			raise TypeError("onlineMeeting_id cannot be null.")
+		if meetingAttendanceReport_id is None:
+			raise TypeError("meetingAttendanceReport_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["user%2Did"] =  user_id
+		path_parameters["onlineMeeting%2Did"] =  onlineMeeting_id
+		path_parameters["meetingAttendanceReport%2Did"] =  meetingAttendanceReport_id
+
 		from .attendance_records import AttendanceRecordsRequest
-		return AttendanceRecordsRequest(self.request_adapter, self.path_parameters)
+		return AttendanceRecordsRequest(self.request_adapter, path_parameters)
 

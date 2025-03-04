@@ -1,6 +1,7 @@
 # Auto-generated client
 
 from __future__ import annotations
+from kiota_abstractions.get_path_parameters import get_path_parameters
 from kiota_abstractions.method import Method
 from kiota_abstractions.base_request_builder import BaseRequestBuilder
 from kiota_abstractions.base_request_configuration import RequestConfiguration
@@ -109,9 +110,15 @@ class ByTeamsAppIdRequest(BaseRequestBuilder):
 			raise TypeError("raw_url cannot be None.")
 		return ByTeamsAppIdRequest(self.request_adapter, self.path_parameters)
 
-	@property
 	def app_definitions(self,
+		teamsApp_id: str,
 	) -> AppDefinitionsRequest:
+		if teamsApp_id is None:
+			raise TypeError("teamsApp_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["teamsApp%2Did"] =  teamsApp_id
+
 		from .app_definitions import AppDefinitionsRequest
-		return AppDefinitionsRequest(self.request_adapter, self.path_parameters)
+		return AppDefinitionsRequest(self.request_adapter, path_parameters)
 

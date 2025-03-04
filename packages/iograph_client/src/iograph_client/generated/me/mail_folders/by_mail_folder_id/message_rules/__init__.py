@@ -110,9 +110,15 @@ class MessageRulesRequest(BaseRequestBuilder):
 		from .by_message_rule_id import ByMessageRuleIdRequest
 		return ByMessageRuleIdRequest(self.request_adapter, path_parameters)
 
-	@property
 	def count(self,
+		mailFolder_id: str,
 	) -> CountRequest:
+		if mailFolder_id is None:
+			raise TypeError("mailFolder_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["mailFolder%2Did"] =  mailFolder_id
+
 		from .count import CountRequest
-		return CountRequest(self.request_adapter, self.path_parameters)
+		return CountRequest(self.request_adapter, path_parameters)
 

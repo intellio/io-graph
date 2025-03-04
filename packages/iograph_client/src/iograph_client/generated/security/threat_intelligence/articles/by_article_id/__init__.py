@@ -1,6 +1,7 @@
 # Auto-generated client
 
 from __future__ import annotations
+from kiota_abstractions.get_path_parameters import get_path_parameters
 from kiota_abstractions.method import Method
 from kiota_abstractions.base_request_builder import BaseRequestBuilder
 from kiota_abstractions.base_request_configuration import RequestConfiguration
@@ -109,9 +110,15 @@ class ByArticleIdRequest(BaseRequestBuilder):
 			raise TypeError("raw_url cannot be None.")
 		return ByArticleIdRequest(self.request_adapter, self.path_parameters)
 
-	@property
 	def indicators(self,
+		article_id: str,
 	) -> IndicatorsRequest:
+		if article_id is None:
+			raise TypeError("article_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["article%2Did"] =  article_id
+
 		from .indicators import IndicatorsRequest
-		return IndicatorsRequest(self.request_adapter, self.path_parameters)
+		return IndicatorsRequest(self.request_adapter, path_parameters)
 

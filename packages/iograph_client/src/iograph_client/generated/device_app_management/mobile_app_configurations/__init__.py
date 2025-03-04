@@ -14,9 +14,9 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_managed_device_mobile_app_configuration_id import ByManagedDeviceMobileAppConfigurationIdRequest
 	from ....request_adapter import HttpxRequestAdapter
-from iograph_models.models.managed_device_mobile_app_configuration_collection_response import ManagedDeviceMobileAppConfigurationCollectionResponse
 from iograph_models.models.managed_device_mobile_app_configuration import ManagedDeviceMobileAppConfiguration
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.models.managed_device_mobile_app_configuration_collection_response import ManagedDeviceMobileAppConfigurationCollectionResponse
 
 
 class MobileAppConfigurationsRequest(BaseRequestBuilder):
@@ -28,9 +28,9 @@ class MobileAppConfigurationsRequest(BaseRequestBuilder):
 		request_configuration: Optional[RequestConfiguration[GetQueryParams]] = None,
 	) -> ManagedDeviceMobileAppConfigurationCollectionResponse:
 		"""
-		List managedDeviceMobileAppConfigurations
-		List properties and relationships of the managedDeviceMobileAppConfiguration objects.
-		Find more info here: https://learn.microsoft.com/graph/api/intune-apps-manageddevicemobileappconfiguration-list?view=graph-rest-1.0
+		List iosMobileAppConfigurations
+		List properties and relationships of the iosMobileAppConfiguration objects.
+		Find more info here: https://learn.microsoft.com/graph/api/intune-apps-iosmobileappconfiguration-list?view=graph-rest-1.0
 		"""
 		tags = ['deviceAppManagement.managedDeviceMobileAppConfiguration']
 

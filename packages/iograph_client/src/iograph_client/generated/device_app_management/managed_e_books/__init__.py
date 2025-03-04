@@ -15,8 +15,8 @@ if TYPE_CHECKING:
 	from .by_managed_e_book_id import ByManagedEBookIdRequest
 	from ....request_adapter import HttpxRequestAdapter
 from iograph_models.models.managed_e_book_collection_response import ManagedEBookCollectionResponse
-from iograph_models.models.managed_e_book import ManagedEBook
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.models.managed_e_book import ManagedEBook
 
 
 class ManagedEBooksRequest(BaseRequestBuilder):
@@ -28,9 +28,9 @@ class ManagedEBooksRequest(BaseRequestBuilder):
 		request_configuration: Optional[RequestConfiguration[GetQueryParams]] = None,
 	) -> ManagedEBookCollectionResponse:
 		"""
-		List iosVppEBooks
-		List properties and relationships of the iosVppEBook objects.
-		Find more info here: https://learn.microsoft.com/graph/api/intune-books-iosvppebook-list?view=graph-rest-1.0
+		List managedEBooks
+		List properties and relationships of the managedEBook objects.
+		Find more info here: https://learn.microsoft.com/graph/api/intune-books-managedebook-list?view=graph-rest-1.0
 		"""
 		tags = ['deviceAppManagement.managedEBook']
 

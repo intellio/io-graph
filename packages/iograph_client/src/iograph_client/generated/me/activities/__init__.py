@@ -11,12 +11,13 @@ from typing import Union, Any, Optional
 from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:
+	from .recent import RecentRequest
 	from .count import CountRequest
 	from .by_user_activity_id import ByUserActivityIdRequest
 	from ....request_adapter import HttpxRequestAdapter
-from iograph_models.models.user_activity import UserActivity
 from iograph_models.models.user_activity_collection_response import UserActivityCollectionResponse
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.models.user_activity import UserActivity
 
 
 class ActivitiesRequest(BaseRequestBuilder):
@@ -110,4 +111,10 @@ class ActivitiesRequest(BaseRequestBuilder):
 	) -> CountRequest:
 		from .count import CountRequest
 		return CountRequest(self.request_adapter, self.path_parameters)
+
+	@property
+	def recent(self,
+	) -> RecentRequest:
+		from .recent import RecentRequest
+		return RecentRequest(self.request_adapter, self.path_parameters)
 

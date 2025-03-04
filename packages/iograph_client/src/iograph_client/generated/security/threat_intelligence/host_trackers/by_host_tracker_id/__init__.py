@@ -1,6 +1,7 @@
 # Auto-generated client
 
 from __future__ import annotations
+from kiota_abstractions.get_path_parameters import get_path_parameters
 from kiota_abstractions.method import Method
 from kiota_abstractions.base_request_builder import BaseRequestBuilder
 from kiota_abstractions.base_request_configuration import RequestConfiguration
@@ -109,9 +110,15 @@ class ByHostTrackerIdRequest(BaseRequestBuilder):
 			raise TypeError("raw_url cannot be None.")
 		return ByHostTrackerIdRequest(self.request_adapter, self.path_parameters)
 
-	@property
 	def host(self,
+		hostTracker_id: str,
 	) -> HostRequest:
+		if hostTracker_id is None:
+			raise TypeError("hostTracker_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["hostTracker%2Did"] =  hostTracker_id
+
 		from .host import HostRequest
-		return HostRequest(self.request_adapter, self.path_parameters)
+		return HostRequest(self.request_adapter, path_parameters)
 

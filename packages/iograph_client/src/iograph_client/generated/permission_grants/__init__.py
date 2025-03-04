@@ -14,11 +14,12 @@ if TYPE_CHECKING:
 	from .validate_properties import ValidatePropertiesRequest
 	from .get_by_ids import GetByIdsRequest
 	from .get_available_extension_properties import GetAvailableExtensionPropertiesRequest
+	from .delta import DeltaRequest
 	from .by_resource_specific_permission_grant_id import ByResourceSpecificPermissionGrantIdRequest
 	from ...request_adapter import HttpxRequestAdapter
 from iograph_models.models.resource_specific_permission_grant import ResourceSpecificPermissionGrant
-from iograph_models.models.resource_specific_permission_grant_collection_response import ResourceSpecificPermissionGrantCollectionResponse
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.models.resource_specific_permission_grant_collection_response import ResourceSpecificPermissionGrantCollectionResponse
 
 
 class PermissionGrantsRequest(BaseRequestBuilder):
@@ -105,6 +106,12 @@ class PermissionGrantsRequest(BaseRequestBuilder):
 
 		from .by_resource_specific_permission_grant_id import ByResourceSpecificPermissionGrantIdRequest
 		return ByResourceSpecificPermissionGrantIdRequest(self.request_adapter, path_parameters)
+
+	@property
+	def delta(self,
+	) -> DeltaRequest:
+		from .delta import DeltaRequest
+		return DeltaRequest(self.request_adapter, self.path_parameters)
 
 	@property
 	def get_available_extension_properties(self,

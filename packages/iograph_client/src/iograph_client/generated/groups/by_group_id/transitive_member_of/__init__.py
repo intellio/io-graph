@@ -85,21 +85,39 @@ class TransitiveMemberOfRequest(BaseRequestBuilder):
 		from .by_directory_object_id import ByDirectoryObjectIdRequest
 		return ByDirectoryObjectIdRequest(self.request_adapter, path_parameters)
 
-	@property
 	def count(self,
+		group_id: str,
 	) -> CountRequest:
+		if group_id is None:
+			raise TypeError("group_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["group%2Did"] =  group_id
+
 		from .count import CountRequest
-		return CountRequest(self.request_adapter, self.path_parameters)
+		return CountRequest(self.request_adapter, path_parameters)
 
-	@property
 	def graph_administrative_unit(self,
+		group_id: str,
 	) -> GraphAdministrativeUnitRequest:
-		from .graph_administrative_unit import GraphAdministrativeUnitRequest
-		return GraphAdministrativeUnitRequest(self.request_adapter, self.path_parameters)
+		if group_id is None:
+			raise TypeError("group_id cannot be null.")
 
-	@property
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["group%2Did"] =  group_id
+
+		from .graph_administrative_unit import GraphAdministrativeUnitRequest
+		return GraphAdministrativeUnitRequest(self.request_adapter, path_parameters)
+
 	def graph_group(self,
+		group_id: str,
 	) -> GraphGroupRequest:
+		if group_id is None:
+			raise TypeError("group_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["group%2Did"] =  group_id
+
 		from .graph_group import GraphGroupRequest
-		return GraphGroupRequest(self.request_adapter, self.path_parameters)
+		return GraphGroupRequest(self.request_adapter, path_parameters)
 

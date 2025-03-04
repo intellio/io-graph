@@ -15,8 +15,8 @@ if TYPE_CHECKING:
 	from .by_comms_operation_id import ByCommsOperationIdRequest
 	from ......request_adapter import HttpxRequestAdapter
 from iograph_models.models.comms_operation import CommsOperation
-from iograph_models.models.comms_operation_collection_response import CommsOperationCollectionResponse
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.models.comms_operation_collection_response import CommsOperationCollectionResponse
 
 
 class OperationsRequest(BaseRequestBuilder):
@@ -108,9 +108,15 @@ class OperationsRequest(BaseRequestBuilder):
 		from .by_comms_operation_id import ByCommsOperationIdRequest
 		return ByCommsOperationIdRequest(self.request_adapter, path_parameters)
 
-	@property
 	def count(self,
+		call_id: str,
 	) -> CountRequest:
+		if call_id is None:
+			raise TypeError("call_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["call%2Did"] =  call_id
+
 		from .count import CountRequest
-		return CountRequest(self.request_adapter, self.path_parameters)
+		return CountRequest(self.request_adapter, path_parameters)
 

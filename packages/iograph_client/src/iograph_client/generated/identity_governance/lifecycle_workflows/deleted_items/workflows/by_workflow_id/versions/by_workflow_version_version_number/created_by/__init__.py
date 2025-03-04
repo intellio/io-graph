@@ -1,6 +1,7 @@
 # Auto-generated client
 
 from __future__ import annotations
+from kiota_abstractions.get_path_parameters import get_path_parameters
 from kiota_abstractions.method import Method
 from kiota_abstractions.base_request_builder import BaseRequestBuilder
 from kiota_abstractions.base_request_configuration import RequestConfiguration
@@ -58,15 +59,35 @@ class CreatedByRequest(BaseRequestBuilder):
 			raise TypeError("raw_url cannot be None.")
 		return CreatedByRequest(self.request_adapter, self.path_parameters)
 
-	@property
 	def mailbox_settings(self,
+		workflow_id: str,
+		workflowVersion_versionNumber: int,
 	) -> MailboxSettingsRequest:
-		from .mailbox_settings import MailboxSettingsRequest
-		return MailboxSettingsRequest(self.request_adapter, self.path_parameters)
+		if workflow_id is None:
+			raise TypeError("workflow_id cannot be null.")
+		if workflowVersion_versionNumber is None:
+			raise TypeError("workflowVersion_versionNumber cannot be null.")
 
-	@property
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["workflow%2Did"] =  workflow_id
+		path_parameters["workflowVersion%2DversionNumber"] =  workflowVersion_versionNumber
+
+		from .mailbox_settings import MailboxSettingsRequest
+		return MailboxSettingsRequest(self.request_adapter, path_parameters)
+
 	def service_provisioning_errors(self,
+		workflow_id: str,
+		workflowVersion_versionNumber: int,
 	) -> ServiceProvisioningErrorsRequest:
+		if workflow_id is None:
+			raise TypeError("workflow_id cannot be null.")
+		if workflowVersion_versionNumber is None:
+			raise TypeError("workflowVersion_versionNumber cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["workflow%2Did"] =  workflow_id
+		path_parameters["workflowVersion%2DversionNumber"] =  workflowVersion_versionNumber
+
 		from .service_provisioning_errors import ServiceProvisioningErrorsRequest
-		return ServiceProvisioningErrorsRequest(self.request_adapter, self.path_parameters)
+		return ServiceProvisioningErrorsRequest(self.request_adapter, path_parameters)
 

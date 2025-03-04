@@ -1,6 +1,7 @@
 # Auto-generated client
 
 from __future__ import annotations
+from kiota_abstractions.get_path_parameters import get_path_parameters
 from kiota_abstractions.method import Method
 from kiota_abstractions.base_request_builder import BaseRequestBuilder
 from kiota_abstractions.base_request_configuration import RequestConfiguration
@@ -43,9 +44,9 @@ class ByMobileAppIdRequest(BaseRequestBuilder):
 		request_configuration: Optional[RequestConfiguration[GetQueryParams]] = None,
 	) -> MobileApp:
 		"""
-		Get webApp
-		Read properties and relationships of the webApp object.
-		Find more info here: https://learn.microsoft.com/graph/api/intune-apps-webapp-get?view=graph-rest-1.0
+		Get managedIOSLobApp
+		Read properties and relationships of the managedIOSLobApp object.
+		Find more info here: https://learn.microsoft.com/graph/api/intune-apps-managedioslobapp-get?view=graph-rest-1.0
 		"""
 		tags = ['deviceAppManagement.mobileApp']
 
@@ -68,9 +69,9 @@ class ByMobileAppIdRequest(BaseRequestBuilder):
 		request_configuration: Optional[RequestConfiguration[BaseModel]] = None,
 	) -> MobileApp:
 		"""
-		Update iosiPadOSWebClip
-		Update the properties of a iosiPadOSWebClip object.
-		Find more info here: https://learn.microsoft.com/graph/api/intune-apps-iosipadoswebclip-update?view=graph-rest-1.0
+		Update managedIOSLobApp
+		Update the properties of a managedIOSLobApp object.
+		Find more info here: https://learn.microsoft.com/graph/api/intune-apps-managedioslobapp-update?view=graph-rest-1.0
 		"""
 		tags = ['deviceAppManagement.mobileApp']
 
@@ -93,9 +94,9 @@ class ByMobileAppIdRequest(BaseRequestBuilder):
 		request_configuration: Optional[RequestConfiguration[BaseModel]] = None,
 	) -> None:
 		"""
-		Delete windowsMobileMSI
-		Deletes a windowsMobileMSI.
-		Find more info here: https://learn.microsoft.com/graph/api/intune-apps-windowsmobilemsi-delete?view=graph-rest-1.0
+		Delete windowsAppX
+		Deletes a windowsAppX.
+		Find more info here: https://learn.microsoft.com/graph/api/intune-apps-windowsappx-delete?view=graph-rest-1.0
 		"""
 		tags = ['deviceAppManagement.mobileApp']
 		header_parameters = [{'name': 'If-Match', 'in': 'header', 'description': 'ETag', 'schema': {'type': 'string'}}]
@@ -129,117 +130,231 @@ class ByMobileAppIdRequest(BaseRequestBuilder):
 			raise TypeError("raw_url cannot be None.")
 		return ByMobileAppIdRequest(self.request_adapter, self.path_parameters)
 
-	@property
 	def assignments(self,
+		mobileApp_id: str,
 	) -> AssignmentsRequest:
+		if mobileApp_id is None:
+			raise TypeError("mobileApp_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["mobileApp%2Did"] =  mobileApp_id
+
 		from .assignments import AssignmentsRequest
-		return AssignmentsRequest(self.request_adapter, self.path_parameters)
+		return AssignmentsRequest(self.request_adapter, path_parameters)
 
-	@property
 	def categories(self,
+		mobileApp_id: str,
 	) -> CategoriesRequest:
+		if mobileApp_id is None:
+			raise TypeError("mobileApp_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["mobileApp%2Did"] =  mobileApp_id
+
 		from .categories import CategoriesRequest
-		return CategoriesRequest(self.request_adapter, self.path_parameters)
+		return CategoriesRequest(self.request_adapter, path_parameters)
 
-	@property
 	def graph_android_lob_app(self,
+		mobileApp_id: str,
 	) -> GraphAndroidLobAppRequest:
+		if mobileApp_id is None:
+			raise TypeError("mobileApp_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["mobileApp%2Did"] =  mobileApp_id
+
 		from .graph_android_lob_app import GraphAndroidLobAppRequest
-		return GraphAndroidLobAppRequest(self.request_adapter, self.path_parameters)
+		return GraphAndroidLobAppRequest(self.request_adapter, path_parameters)
 
-	@property
 	def graph_android_store_app(self,
+		mobileApp_id: str,
 	) -> GraphAndroidStoreAppRequest:
+		if mobileApp_id is None:
+			raise TypeError("mobileApp_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["mobileApp%2Did"] =  mobileApp_id
+
 		from .graph_android_store_app import GraphAndroidStoreAppRequest
-		return GraphAndroidStoreAppRequest(self.request_adapter, self.path_parameters)
+		return GraphAndroidStoreAppRequest(self.request_adapter, path_parameters)
 
-	@property
 	def assign(self,
+		mobileApp_id: str,
 	) -> AssignRequest:
+		if mobileApp_id is None:
+			raise TypeError("mobileApp_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["mobileApp%2Did"] =  mobileApp_id
+
 		from .assign import AssignRequest
-		return AssignRequest(self.request_adapter, self.path_parameters)
+		return AssignRequest(self.request_adapter, path_parameters)
 
-	@property
 	def graph_ios_lob_app(self,
+		mobileApp_id: str,
 	) -> GraphIosLobAppRequest:
+		if mobileApp_id is None:
+			raise TypeError("mobileApp_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["mobileApp%2Did"] =  mobileApp_id
+
 		from .graph_ios_lob_app import GraphIosLobAppRequest
-		return GraphIosLobAppRequest(self.request_adapter, self.path_parameters)
+		return GraphIosLobAppRequest(self.request_adapter, path_parameters)
 
-	@property
 	def graph_ios_store_app(self,
+		mobileApp_id: str,
 	) -> GraphIosStoreAppRequest:
+		if mobileApp_id is None:
+			raise TypeError("mobileApp_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["mobileApp%2Did"] =  mobileApp_id
+
 		from .graph_ios_store_app import GraphIosStoreAppRequest
-		return GraphIosStoreAppRequest(self.request_adapter, self.path_parameters)
+		return GraphIosStoreAppRequest(self.request_adapter, path_parameters)
 
-	@property
 	def graph_ios_vpp_app(self,
+		mobileApp_id: str,
 	) -> GraphIosVppAppRequest:
+		if mobileApp_id is None:
+			raise TypeError("mobileApp_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["mobileApp%2Did"] =  mobileApp_id
+
 		from .graph_ios_vpp_app import GraphIosVppAppRequest
-		return GraphIosVppAppRequest(self.request_adapter, self.path_parameters)
+		return GraphIosVppAppRequest(self.request_adapter, path_parameters)
 
-	@property
 	def graph_mac_o_s_dmg_app(self,
+		mobileApp_id: str,
 	) -> GraphMacOSDmgAppRequest:
+		if mobileApp_id is None:
+			raise TypeError("mobileApp_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["mobileApp%2Did"] =  mobileApp_id
+
 		from .graph_mac_o_s_dmg_app import GraphMacOSDmgAppRequest
-		return GraphMacOSDmgAppRequest(self.request_adapter, self.path_parameters)
+		return GraphMacOSDmgAppRequest(self.request_adapter, path_parameters)
 
-	@property
 	def graph_mac_o_s_lob_app(self,
+		mobileApp_id: str,
 	) -> GraphMacOSLobAppRequest:
+		if mobileApp_id is None:
+			raise TypeError("mobileApp_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["mobileApp%2Did"] =  mobileApp_id
+
 		from .graph_mac_o_s_lob_app import GraphMacOSLobAppRequest
-		return GraphMacOSLobAppRequest(self.request_adapter, self.path_parameters)
+		return GraphMacOSLobAppRequest(self.request_adapter, path_parameters)
 
-	@property
 	def graph_managed_android_lob_app(self,
+		mobileApp_id: str,
 	) -> GraphManagedAndroidLobAppRequest:
+		if mobileApp_id is None:
+			raise TypeError("mobileApp_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["mobileApp%2Did"] =  mobileApp_id
+
 		from .graph_managed_android_lob_app import GraphManagedAndroidLobAppRequest
-		return GraphManagedAndroidLobAppRequest(self.request_adapter, self.path_parameters)
+		return GraphManagedAndroidLobAppRequest(self.request_adapter, path_parameters)
 
-	@property
 	def graph_managed_i_o_s_lob_app(self,
+		mobileApp_id: str,
 	) -> GraphManagedIOSLobAppRequest:
+		if mobileApp_id is None:
+			raise TypeError("mobileApp_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["mobileApp%2Did"] =  mobileApp_id
+
 		from .graph_managed_i_o_s_lob_app import GraphManagedIOSLobAppRequest
-		return GraphManagedIOSLobAppRequest(self.request_adapter, self.path_parameters)
+		return GraphManagedIOSLobAppRequest(self.request_adapter, path_parameters)
 
-	@property
 	def graph_managed_mobile_lob_app(self,
+		mobileApp_id: str,
 	) -> GraphManagedMobileLobAppRequest:
+		if mobileApp_id is None:
+			raise TypeError("mobileApp_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["mobileApp%2Did"] =  mobileApp_id
+
 		from .graph_managed_mobile_lob_app import GraphManagedMobileLobAppRequest
-		return GraphManagedMobileLobAppRequest(self.request_adapter, self.path_parameters)
+		return GraphManagedMobileLobAppRequest(self.request_adapter, path_parameters)
 
-	@property
 	def graph_microsoft_store_for_business_app(self,
+		mobileApp_id: str,
 	) -> GraphMicrosoftStoreForBusinessAppRequest:
+		if mobileApp_id is None:
+			raise TypeError("mobileApp_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["mobileApp%2Did"] =  mobileApp_id
+
 		from .graph_microsoft_store_for_business_app import GraphMicrosoftStoreForBusinessAppRequest
-		return GraphMicrosoftStoreForBusinessAppRequest(self.request_adapter, self.path_parameters)
+		return GraphMicrosoftStoreForBusinessAppRequest(self.request_adapter, path_parameters)
 
-	@property
 	def graph_win32_lob_app(self,
+		mobileApp_id: str,
 	) -> GraphWin32LobAppRequest:
+		if mobileApp_id is None:
+			raise TypeError("mobileApp_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["mobileApp%2Did"] =  mobileApp_id
+
 		from .graph_win32_lob_app import GraphWin32LobAppRequest
-		return GraphWin32LobAppRequest(self.request_adapter, self.path_parameters)
+		return GraphWin32LobAppRequest(self.request_adapter, path_parameters)
 
-	@property
 	def graph_windows_app_x(self,
+		mobileApp_id: str,
 	) -> GraphWindowsAppXRequest:
+		if mobileApp_id is None:
+			raise TypeError("mobileApp_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["mobileApp%2Did"] =  mobileApp_id
+
 		from .graph_windows_app_x import GraphWindowsAppXRequest
-		return GraphWindowsAppXRequest(self.request_adapter, self.path_parameters)
+		return GraphWindowsAppXRequest(self.request_adapter, path_parameters)
 
-	@property
 	def graph_windows_mobile_m_s_i(self,
+		mobileApp_id: str,
 	) -> GraphWindowsMobileMSIRequest:
+		if mobileApp_id is None:
+			raise TypeError("mobileApp_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["mobileApp%2Did"] =  mobileApp_id
+
 		from .graph_windows_mobile_m_s_i import GraphWindowsMobileMSIRequest
-		return GraphWindowsMobileMSIRequest(self.request_adapter, self.path_parameters)
+		return GraphWindowsMobileMSIRequest(self.request_adapter, path_parameters)
 
-	@property
 	def graph_windows_universal_app_x(self,
+		mobileApp_id: str,
 	) -> GraphWindowsUniversalAppXRequest:
-		from .graph_windows_universal_app_x import GraphWindowsUniversalAppXRequest
-		return GraphWindowsUniversalAppXRequest(self.request_adapter, self.path_parameters)
+		if mobileApp_id is None:
+			raise TypeError("mobileApp_id cannot be null.")
 
-	@property
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["mobileApp%2Did"] =  mobileApp_id
+
+		from .graph_windows_universal_app_x import GraphWindowsUniversalAppXRequest
+		return GraphWindowsUniversalAppXRequest(self.request_adapter, path_parameters)
+
 	def graph_windows_web_app(self,
+		mobileApp_id: str,
 	) -> GraphWindowsWebAppRequest:
+		if mobileApp_id is None:
+			raise TypeError("mobileApp_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["mobileApp%2Did"] =  mobileApp_id
+
 		from .graph_windows_web_app import GraphWindowsWebAppRequest
-		return GraphWindowsWebAppRequest(self.request_adapter, self.path_parameters)
+		return GraphWindowsWebAppRequest(self.request_adapter, path_parameters)
 

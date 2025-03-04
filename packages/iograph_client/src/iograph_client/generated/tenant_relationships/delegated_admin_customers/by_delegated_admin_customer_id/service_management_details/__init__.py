@@ -15,8 +15,8 @@ if TYPE_CHECKING:
 	from .by_delegated_admin_service_management_detail_id import ByDelegatedAdminServiceManagementDetailIdRequest
 	from ......request_adapter import HttpxRequestAdapter
 from iograph_models.models.delegated_admin_service_management_detail import DelegatedAdminServiceManagementDetail
-from iograph_models.models.delegated_admin_service_management_detail_collection_response import DelegatedAdminServiceManagementDetailCollectionResponse
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.models.delegated_admin_service_management_detail_collection_response import DelegatedAdminServiceManagementDetailCollectionResponse
 
 
 class ServiceManagementDetailsRequest(BaseRequestBuilder):
@@ -109,9 +109,15 @@ class ServiceManagementDetailsRequest(BaseRequestBuilder):
 		from .by_delegated_admin_service_management_detail_id import ByDelegatedAdminServiceManagementDetailIdRequest
 		return ByDelegatedAdminServiceManagementDetailIdRequest(self.request_adapter, path_parameters)
 
-	@property
 	def count(self,
+		delegatedAdminCustomer_id: str,
 	) -> CountRequest:
+		if delegatedAdminCustomer_id is None:
+			raise TypeError("delegatedAdminCustomer_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["delegatedAdminCustomer%2Did"] =  delegatedAdminCustomer_id
+
 		from .count import CountRequest
-		return CountRequest(self.request_adapter, self.path_parameters)
+		return CountRequest(self.request_adapter, path_parameters)
 

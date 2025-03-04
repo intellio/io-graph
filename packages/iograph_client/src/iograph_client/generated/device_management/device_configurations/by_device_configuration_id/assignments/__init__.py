@@ -14,9 +14,9 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_device_configuration_assignment_id import ByDeviceConfigurationAssignmentIdRequest
 	from ......request_adapter import HttpxRequestAdapter
-from iograph_models.models.device_configuration_assignment_collection_response import DeviceConfigurationAssignmentCollectionResponse
-from iograph_models.models.device_configuration_assignment import DeviceConfigurationAssignment
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.models.device_configuration_assignment import DeviceConfigurationAssignment
+from iograph_models.models.device_configuration_assignment_collection_response import DeviceConfigurationAssignmentCollectionResponse
 
 
 class AssignmentsRequest(BaseRequestBuilder):
@@ -110,9 +110,15 @@ class AssignmentsRequest(BaseRequestBuilder):
 		from .by_device_configuration_assignment_id import ByDeviceConfigurationAssignmentIdRequest
 		return ByDeviceConfigurationAssignmentIdRequest(self.request_adapter, path_parameters)
 
-	@property
 	def count(self,
+		deviceConfiguration_id: str,
 	) -> CountRequest:
+		if deviceConfiguration_id is None:
+			raise TypeError("deviceConfiguration_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["deviceConfiguration%2Did"] =  deviceConfiguration_id
+
 		from .count import CountRequest
-		return CountRequest(self.request_adapter, self.path_parameters)
+		return CountRequest(self.request_adapter, path_parameters)
 

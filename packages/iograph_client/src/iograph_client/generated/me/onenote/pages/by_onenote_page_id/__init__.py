@@ -1,6 +1,7 @@
 # Auto-generated client
 
 from __future__ import annotations
+from kiota_abstractions.get_path_parameters import get_path_parameters
 from kiota_abstractions.method import Method
 from kiota_abstractions.base_request_builder import BaseRequestBuilder
 from kiota_abstractions.base_request_configuration import RequestConfiguration
@@ -12,6 +13,7 @@ from typing import TYPE_CHECKING
 if TYPE_CHECKING:
 	from .parent_section import ParentSectionRequest
 	from .parent_notebook import ParentNotebookRequest
+	from .preview import PreviewRequest
 	from .onenote_patch_content import OnenotePatchContentRequest
 	from .copy_to_section import CopyToSectionRequest
 	from .content import ContentRequest
@@ -114,33 +116,75 @@ class ByOnenotePageIdRequest(BaseRequestBuilder):
 			raise TypeError("raw_url cannot be None.")
 		return ByOnenotePageIdRequest(self.request_adapter, self.path_parameters)
 
-	@property
 	def content(self,
+		onenotePage_id: str,
 	) -> ContentRequest:
+		if onenotePage_id is None:
+			raise TypeError("onenotePage_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["onenotePage%2Did"] =  onenotePage_id
+
 		from .content import ContentRequest
-		return ContentRequest(self.request_adapter, self.path_parameters)
+		return ContentRequest(self.request_adapter, path_parameters)
 
-	@property
 	def copy_to_section(self,
+		onenotePage_id: str,
 	) -> CopyToSectionRequest:
+		if onenotePage_id is None:
+			raise TypeError("onenotePage_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["onenotePage%2Did"] =  onenotePage_id
+
 		from .copy_to_section import CopyToSectionRequest
-		return CopyToSectionRequest(self.request_adapter, self.path_parameters)
+		return CopyToSectionRequest(self.request_adapter, path_parameters)
 
-	@property
 	def onenote_patch_content(self,
+		onenotePage_id: str,
 	) -> OnenotePatchContentRequest:
+		if onenotePage_id is None:
+			raise TypeError("onenotePage_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["onenotePage%2Did"] =  onenotePage_id
+
 		from .onenote_patch_content import OnenotePatchContentRequest
-		return OnenotePatchContentRequest(self.request_adapter, self.path_parameters)
+		return OnenotePatchContentRequest(self.request_adapter, path_parameters)
 
-	@property
+	def preview(self,
+		onenotePage_id: str,
+	) -> PreviewRequest:
+		if onenotePage_id is None:
+			raise TypeError("onenotePage_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["onenotePage%2Did"] =  onenotePage_id
+
+		from .preview import PreviewRequest
+		return PreviewRequest(self.request_adapter, path_parameters)
+
 	def parent_notebook(self,
+		onenotePage_id: str,
 	) -> ParentNotebookRequest:
-		from .parent_notebook import ParentNotebookRequest
-		return ParentNotebookRequest(self.request_adapter, self.path_parameters)
+		if onenotePage_id is None:
+			raise TypeError("onenotePage_id cannot be null.")
 
-	@property
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["onenotePage%2Did"] =  onenotePage_id
+
+		from .parent_notebook import ParentNotebookRequest
+		return ParentNotebookRequest(self.request_adapter, path_parameters)
+
 	def parent_section(self,
+		onenotePage_id: str,
 	) -> ParentSectionRequest:
+		if onenotePage_id is None:
+			raise TypeError("onenotePage_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["onenotePage%2Did"] =  onenotePage_id
+
 		from .parent_section import ParentSectionRequest
-		return ParentSectionRequest(self.request_adapter, self.path_parameters)
+		return ParentSectionRequest(self.request_adapter, path_parameters)
 

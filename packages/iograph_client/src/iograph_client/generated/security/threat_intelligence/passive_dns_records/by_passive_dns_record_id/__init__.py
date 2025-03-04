@@ -1,6 +1,7 @@
 # Auto-generated client
 
 from __future__ import annotations
+from kiota_abstractions.get_path_parameters import get_path_parameters
 from kiota_abstractions.method import Method
 from kiota_abstractions.base_request_builder import BaseRequestBuilder
 from kiota_abstractions.base_request_configuration import RequestConfiguration
@@ -13,8 +14,8 @@ if TYPE_CHECKING:
 	from .parent_host import ParentHostRequest
 	from .artifact import ArtifactRequest
 	from ......request_adapter import HttpxRequestAdapter
-from iograph_models.models.security_passive_dns_record import SecurityPassiveDnsRecord
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.models.security_passive_dns_record import SecurityPassiveDnsRecord
 
 
 class ByPassiveDnsRecordIdRequest(BaseRequestBuilder):
@@ -110,15 +111,27 @@ class ByPassiveDnsRecordIdRequest(BaseRequestBuilder):
 			raise TypeError("raw_url cannot be None.")
 		return ByPassiveDnsRecordIdRequest(self.request_adapter, self.path_parameters)
 
-	@property
 	def artifact(self,
+		passiveDnsRecord_id: str,
 	) -> ArtifactRequest:
-		from .artifact import ArtifactRequest
-		return ArtifactRequest(self.request_adapter, self.path_parameters)
+		if passiveDnsRecord_id is None:
+			raise TypeError("passiveDnsRecord_id cannot be null.")
 
-	@property
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["passiveDnsRecord%2Did"] =  passiveDnsRecord_id
+
+		from .artifact import ArtifactRequest
+		return ArtifactRequest(self.request_adapter, path_parameters)
+
 	def parent_host(self,
+		passiveDnsRecord_id: str,
 	) -> ParentHostRequest:
+		if passiveDnsRecord_id is None:
+			raise TypeError("passiveDnsRecord_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["passiveDnsRecord%2Did"] =  passiveDnsRecord_id
+
 		from .parent_host import ParentHostRequest
-		return ParentHostRequest(self.request_adapter, self.path_parameters)
+		return ParentHostRequest(self.request_adapter, path_parameters)
 

@@ -12,8 +12,8 @@ from typing import TYPE_CHECKING
 if TYPE_CHECKING:
 	from ....request_adapter import HttpxRequestAdapter
 from iograph_models.models.security_hunting_query_results import SecurityHuntingQueryResults
-from iograph_models.models.security_run_hunting_query_post_request import Security_run_hunting_queryPostRequest
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.models.security_run_hunting_query_post_request import Security_run_hunting_queryPostRequest
 
 
 class SecurityRunHuntingQueryRequest(BaseRequestBuilder):

@@ -11,12 +11,13 @@ from typing import Union, Any, Optional
 from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:
+	from .delta import DeltaRequest
 	from .count import CountRequest
 	from .by_mail_folder_id1 import ByMailFolderId1Request
 	from ......request_adapter import HttpxRequestAdapter
-from iograph_models.models.mail_folder import MailFolder
 from iograph_models.models.mail_folder_collection_response import MailFolderCollectionResponse
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.models.mail_folder import MailFolder
 
 
 class ChildFoldersRequest(BaseRequestBuilder):
@@ -54,9 +55,9 @@ folder collection and navigate to another folder. By default, this operation doe
 		request_configuration: Optional[RequestConfiguration[BaseModel]] = None,
 	) -> MailFolder:
 		"""
-		Create child folder
-		Use this API to create a new child mailFolder. If you intend a new folder to be hidden, you must set the isHidden property to true on creation.
-		Find more info here: https://learn.microsoft.com/graph/api/mailfolder-post-childfolders?view=graph-rest-1.0
+		Create mailSearchFolder
+		Create a new mailSearchFolder in the specified user's mailbox.
+		Find more info here: https://learn.microsoft.com/graph/api/mailsearchfolder-post?view=graph-rest-1.0
 		"""
 		tags = ['me.mailFolder']
 
@@ -112,9 +113,27 @@ folder collection and navigate to another folder. By default, this operation doe
 		from .by_mail_folder_id1 import ByMailFolderId1Request
 		return ByMailFolderId1Request(self.request_adapter, path_parameters)
 
-	@property
 	def count(self,
+		mailFolder_id: str,
 	) -> CountRequest:
+		if mailFolder_id is None:
+			raise TypeError("mailFolder_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["mailFolder%2Did"] =  mailFolder_id
+
 		from .count import CountRequest
-		return CountRequest(self.request_adapter, self.path_parameters)
+		return CountRequest(self.request_adapter, path_parameters)
+
+	def delta(self,
+		mailFolder_id: str,
+	) -> DeltaRequest:
+		if mailFolder_id is None:
+			raise TypeError("mailFolder_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["mailFolder%2Did"] =  mailFolder_id
+
+		from .delta import DeltaRequest
+		return DeltaRequest(self.request_adapter, path_parameters)
 

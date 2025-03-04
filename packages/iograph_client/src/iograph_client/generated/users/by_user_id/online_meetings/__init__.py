@@ -16,8 +16,8 @@ if TYPE_CHECKING:
 	from .by_online_meeting_id import ByOnlineMeetingIdRequest
 	from .....request_adapter import HttpxRequestAdapter
 from iograph_models.models.online_meeting import OnlineMeeting
-from iograph_models.models.online_meeting_collection_response import OnlineMeetingCollectionResponse
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.models.online_meeting_collection_response import OnlineMeetingCollectionResponse
 
 
 class OnlineMeetingsRequest(BaseRequestBuilder):
@@ -109,15 +109,27 @@ class OnlineMeetingsRequest(BaseRequestBuilder):
 		from .by_online_meeting_id import ByOnlineMeetingIdRequest
 		return ByOnlineMeetingIdRequest(self.request_adapter, path_parameters)
 
-	@property
 	def count(self,
+		user_id: str,
 	) -> CountRequest:
-		from .count import CountRequest
-		return CountRequest(self.request_adapter, self.path_parameters)
+		if user_id is None:
+			raise TypeError("user_id cannot be null.")
 
-	@property
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["user%2Did"] =  user_id
+
+		from .count import CountRequest
+		return CountRequest(self.request_adapter, path_parameters)
+
 	def create_or_get(self,
+		user_id: str,
 	) -> CreateOrGetRequest:
+		if user_id is None:
+			raise TypeError("user_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["user%2Did"] =  user_id
+
 		from .create_or_get import CreateOrGetRequest
-		return CreateOrGetRequest(self.request_adapter, self.path_parameters)
+		return CreateOrGetRequest(self.request_adapter, path_parameters)
 

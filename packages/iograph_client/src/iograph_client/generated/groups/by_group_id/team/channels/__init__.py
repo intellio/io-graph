@@ -11,6 +11,8 @@ from typing import Union, Any, Optional
 from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:
+	from .get_all_retained_messages import GetAllRetainedMessagesRequest
+	from .get_all_messages import GetAllMessagesRequest
 	from .count import CountRequest
 	from .by_channel_id import ByChannelIdRequest
 	from ......request_adapter import HttpxRequestAdapter
@@ -108,9 +110,39 @@ class ChannelsRequest(BaseRequestBuilder):
 		from .by_channel_id import ByChannelIdRequest
 		return ByChannelIdRequest(self.request_adapter, path_parameters)
 
-	@property
 	def count(self,
+		group_id: str,
 	) -> CountRequest:
+		if group_id is None:
+			raise TypeError("group_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["group%2Did"] =  group_id
+
 		from .count import CountRequest
-		return CountRequest(self.request_adapter, self.path_parameters)
+		return CountRequest(self.request_adapter, path_parameters)
+
+	def get_all_messages(self,
+		group_id: str,
+	) -> GetAllMessagesRequest:
+		if group_id is None:
+			raise TypeError("group_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["group%2Did"] =  group_id
+
+		from .get_all_messages import GetAllMessagesRequest
+		return GetAllMessagesRequest(self.request_adapter, path_parameters)
+
+	def get_all_retained_messages(self,
+		group_id: str,
+	) -> GetAllRetainedMessagesRequest:
+		if group_id is None:
+			raise TypeError("group_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["group%2Did"] =  group_id
+
+		from .get_all_retained_messages import GetAllRetainedMessagesRequest
+		return GetAllRetainedMessagesRequest(self.request_adapter, path_parameters)
 

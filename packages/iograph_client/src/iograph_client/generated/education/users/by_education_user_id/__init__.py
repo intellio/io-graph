@@ -1,6 +1,7 @@
 # Auto-generated client
 
 from __future__ import annotations
+from kiota_abstractions.get_path_parameters import get_path_parameters
 from kiota_abstractions.method import Method
 from kiota_abstractions.base_request_builder import BaseRequestBuilder
 from kiota_abstractions.base_request_configuration import RequestConfiguration
@@ -17,8 +18,8 @@ if TYPE_CHECKING:
 	from .classes import ClassesRequest
 	from .assignments import AssignmentsRequest
 	from .....request_adapter import HttpxRequestAdapter
-from iograph_models.models.education_user import EducationUser
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.models.education_user import EducationUser
 
 
 class ByEducationUserIdRequest(BaseRequestBuilder):
@@ -116,39 +117,75 @@ class ByEducationUserIdRequest(BaseRequestBuilder):
 			raise TypeError("raw_url cannot be None.")
 		return ByEducationUserIdRequest(self.request_adapter, self.path_parameters)
 
-	@property
 	def assignments(self,
+		educationUser_id: str,
 	) -> AssignmentsRequest:
+		if educationUser_id is None:
+			raise TypeError("educationUser_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["educationUser%2Did"] =  educationUser_id
+
 		from .assignments import AssignmentsRequest
-		return AssignmentsRequest(self.request_adapter, self.path_parameters)
+		return AssignmentsRequest(self.request_adapter, path_parameters)
 
-	@property
 	def classes(self,
+		educationUser_id: str,
 	) -> ClassesRequest:
+		if educationUser_id is None:
+			raise TypeError("educationUser_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["educationUser%2Did"] =  educationUser_id
+
 		from .classes import ClassesRequest
-		return ClassesRequest(self.request_adapter, self.path_parameters)
+		return ClassesRequest(self.request_adapter, path_parameters)
 
-	@property
 	def rubrics(self,
+		educationUser_id: str,
 	) -> RubricsRequest:
+		if educationUser_id is None:
+			raise TypeError("educationUser_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["educationUser%2Did"] =  educationUser_id
+
 		from .rubrics import RubricsRequest
-		return RubricsRequest(self.request_adapter, self.path_parameters)
+		return RubricsRequest(self.request_adapter, path_parameters)
 
-	@property
 	def schools(self,
+		educationUser_id: str,
 	) -> SchoolsRequest:
+		if educationUser_id is None:
+			raise TypeError("educationUser_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["educationUser%2Did"] =  educationUser_id
+
 		from .schools import SchoolsRequest
-		return SchoolsRequest(self.request_adapter, self.path_parameters)
+		return SchoolsRequest(self.request_adapter, path_parameters)
 
-	@property
 	def taught_classes(self,
+		educationUser_id: str,
 	) -> TaughtClassesRequest:
-		from .taught_classes import TaughtClassesRequest
-		return TaughtClassesRequest(self.request_adapter, self.path_parameters)
+		if educationUser_id is None:
+			raise TypeError("educationUser_id cannot be null.")
 
-	@property
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["educationUser%2Did"] =  educationUser_id
+
+		from .taught_classes import TaughtClassesRequest
+		return TaughtClassesRequest(self.request_adapter, path_parameters)
+
 	def user(self,
+		educationUser_id: str,
 	) -> UserRequest:
+		if educationUser_id is None:
+			raise TypeError("educationUser_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["educationUser%2Did"] =  educationUser_id
+
 		from .user import UserRequest
-		return UserRequest(self.request_adapter, self.path_parameters)
+		return UserRequest(self.request_adapter, path_parameters)
 

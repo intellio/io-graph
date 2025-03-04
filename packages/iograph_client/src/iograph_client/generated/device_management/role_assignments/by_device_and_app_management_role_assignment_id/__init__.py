@@ -1,6 +1,7 @@
 # Auto-generated client
 
 from __future__ import annotations
+from kiota_abstractions.get_path_parameters import get_path_parameters
 from kiota_abstractions.method import Method
 from kiota_abstractions.base_request_builder import BaseRequestBuilder
 from kiota_abstractions.base_request_configuration import RequestConfiguration
@@ -111,9 +112,15 @@ class ByDeviceAndAppManagementRoleAssignmentIdRequest(BaseRequestBuilder):
 			raise TypeError("raw_url cannot be None.")
 		return ByDeviceAndAppManagementRoleAssignmentIdRequest(self.request_adapter, self.path_parameters)
 
-	@property
 	def role_definition(self,
+		deviceAndAppManagementRoleAssignment_id: str,
 	) -> RoleDefinitionRequest:
+		if deviceAndAppManagementRoleAssignment_id is None:
+			raise TypeError("deviceAndAppManagementRoleAssignment_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["deviceAndAppManagementRoleAssignment%2Did"] =  deviceAndAppManagementRoleAssignment_id
+
 		from .role_definition import RoleDefinitionRequest
-		return RoleDefinitionRequest(self.request_adapter, self.path_parameters)
+		return RoleDefinitionRequest(self.request_adapter, path_parameters)
 

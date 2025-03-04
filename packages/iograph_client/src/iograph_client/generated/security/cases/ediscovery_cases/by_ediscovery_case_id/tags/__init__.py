@@ -11,12 +11,13 @@ from typing import Union, Any, Optional
 from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:
+	from .security_as_hierarchy import SecurityAsHierarchyRequest
 	from .count import CountRequest
 	from .by_ediscovery_review_tag_id import ByEdiscoveryReviewTagIdRequest
 	from .......request_adapter import HttpxRequestAdapter
-from iograph_models.models.security_ediscovery_review_tag_collection_response import SecurityEdiscoveryReviewTagCollectionResponse
 from iograph_models.models.security_ediscovery_review_tag import SecurityEdiscoveryReviewTag
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.models.security_ediscovery_review_tag_collection_response import SecurityEdiscoveryReviewTagCollectionResponse
 
 
 class TagsRequest(BaseRequestBuilder):
@@ -110,9 +111,27 @@ class TagsRequest(BaseRequestBuilder):
 		from .by_ediscovery_review_tag_id import ByEdiscoveryReviewTagIdRequest
 		return ByEdiscoveryReviewTagIdRequest(self.request_adapter, path_parameters)
 
-	@property
 	def count(self,
+		ediscoveryCase_id: str,
 	) -> CountRequest:
+		if ediscoveryCase_id is None:
+			raise TypeError("ediscoveryCase_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["ediscoveryCase%2Did"] =  ediscoveryCase_id
+
 		from .count import CountRequest
-		return CountRequest(self.request_adapter, self.path_parameters)
+		return CountRequest(self.request_adapter, path_parameters)
+
+	def security_as_hierarchy(self,
+		ediscoveryCase_id: str,
+	) -> SecurityAsHierarchyRequest:
+		if ediscoveryCase_id is None:
+			raise TypeError("ediscoveryCase_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["ediscoveryCase%2Did"] =  ediscoveryCase_id
+
+		from .security_as_hierarchy import SecurityAsHierarchyRequest
+		return SecurityAsHierarchyRequest(self.request_adapter, path_parameters)
 

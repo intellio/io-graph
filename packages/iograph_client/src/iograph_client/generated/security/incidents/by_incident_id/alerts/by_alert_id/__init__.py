@@ -1,6 +1,7 @@
 # Auto-generated client
 
 from __future__ import annotations
+from kiota_abstractions.get_path_parameters import get_path_parameters
 from kiota_abstractions.method import Method
 from kiota_abstractions.base_request_builder import BaseRequestBuilder
 from kiota_abstractions.base_request_configuration import RequestConfiguration
@@ -12,8 +13,8 @@ from typing import TYPE_CHECKING
 if TYPE_CHECKING:
 	from .comments import CommentsRequest
 	from .......request_adapter import HttpxRequestAdapter
-from iograph_models.models.security_alert import SecurityAlert
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.models.security_alert import SecurityAlert
 
 
 class ByAlertIdRequest(BaseRequestBuilder):
@@ -57,9 +58,19 @@ class ByAlertIdRequest(BaseRequestBuilder):
 			raise TypeError("raw_url cannot be None.")
 		return ByAlertIdRequest(self.request_adapter, self.path_parameters)
 
-	@property
 	def comments(self,
+		incident_id: str,
+		alert_id: str,
 	) -> CommentsRequest:
+		if incident_id is None:
+			raise TypeError("incident_id cannot be null.")
+		if alert_id is None:
+			raise TypeError("alert_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["incident%2Did"] =  incident_id
+		path_parameters["alert%2Did"] =  alert_id
+
 		from .comments import CommentsRequest
-		return CommentsRequest(self.request_adapter, self.path_parameters)
+		return CommentsRequest(self.request_adapter, path_parameters)
 

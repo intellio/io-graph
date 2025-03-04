@@ -81,9 +81,15 @@ class AlertsRequest(BaseRequestBuilder):
 		from .by_alert_id import ByAlertIdRequest
 		return ByAlertIdRequest(self.request_adapter, path_parameters)
 
-	@property
 	def count(self,
+		incident_id: str,
 	) -> CountRequest:
+		if incident_id is None:
+			raise TypeError("incident_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["incident%2Did"] =  incident_id
+
 		from .count import CountRequest
-		return CountRequest(self.request_adapter, self.path_parameters)
+		return CountRequest(self.request_adapter, path_parameters)
 

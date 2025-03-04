@@ -1,6 +1,7 @@
 # Auto-generated client
 
 from __future__ import annotations
+from kiota_abstractions.get_path_parameters import get_path_parameters
 from kiota_abstractions.method import Method
 from kiota_abstractions.base_request_builder import BaseRequestBuilder
 from kiota_abstractions.base_request_configuration import RequestConfiguration
@@ -109,15 +110,35 @@ class ResourceRequest(BaseRequestBuilder):
 			raise TypeError("raw_url cannot be None.")
 		return ResourceRequest(self.request_adapter, self.path_parameters)
 
-	@property
 	def environment(self,
+		accessPackageResource_id: str,
+		accessPackageResourceScope_id: str,
 	) -> EnvironmentRequest:
-		from .environment import EnvironmentRequest
-		return EnvironmentRequest(self.request_adapter, self.path_parameters)
+		if accessPackageResource_id is None:
+			raise TypeError("accessPackageResource_id cannot be null.")
+		if accessPackageResourceScope_id is None:
+			raise TypeError("accessPackageResourceScope_id cannot be null.")
 
-	@property
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["accessPackageResource%2Did"] =  accessPackageResource_id
+		path_parameters["accessPackageResourceScope%2Did"] =  accessPackageResourceScope_id
+
+		from .environment import EnvironmentRequest
+		return EnvironmentRequest(self.request_adapter, path_parameters)
+
 	def roles(self,
+		accessPackageResource_id: str,
+		accessPackageResourceScope_id: str,
 	) -> RolesRequest:
+		if accessPackageResource_id is None:
+			raise TypeError("accessPackageResource_id cannot be null.")
+		if accessPackageResourceScope_id is None:
+			raise TypeError("accessPackageResourceScope_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["accessPackageResource%2Did"] =  accessPackageResource_id
+		path_parameters["accessPackageResourceScope%2Did"] =  accessPackageResourceScope_id
+
 		from .roles import RolesRequest
-		return RolesRequest(self.request_adapter, self.path_parameters)
+		return RolesRequest(self.request_adapter, path_parameters)
 

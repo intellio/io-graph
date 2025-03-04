@@ -1,6 +1,7 @@
 # Auto-generated client
 
 from __future__ import annotations
+from kiota_abstractions.get_path_parameters import get_path_parameters
 from kiota_abstractions.method import Method
 from kiota_abstractions.base_request_builder import BaseRequestBuilder
 from kiota_abstractions.base_request_configuration import RequestConfiguration
@@ -28,9 +29,19 @@ class ByTokenLifetimePolicyIdRequest(BaseRequestBuilder):
 			raise TypeError("raw_url cannot be None.")
 		return ByTokenLifetimePolicyIdRequest(self.request_adapter, self.path_parameters)
 
-	@property
 	def ref(self,
+		application_id: str,
+		tokenLifetimePolicy_id: str,
 	) -> RefRequest:
+		if application_id is None:
+			raise TypeError("application_id cannot be null.")
+		if tokenLifetimePolicy_id is None:
+			raise TypeError("tokenLifetimePolicy_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["application%2Did"] =  application_id
+		path_parameters["tokenLifetimePolicy%2Did"] =  tokenLifetimePolicy_id
+
 		from .ref import RefRequest
-		return RefRequest(self.request_adapter, self.path_parameters)
+		return RefRequest(self.request_adapter, path_parameters)
 

@@ -1,6 +1,7 @@
 # Auto-generated client
 
 from __future__ import annotations
+from kiota_abstractions.get_path_parameters import get_path_parameters
 from kiota_abstractions.method import Method
 from kiota_abstractions.base_request_builder import BaseRequestBuilder
 from kiota_abstractions.base_request_configuration import RequestConfiguration
@@ -111,9 +112,19 @@ class ByExternalGroupIdRequest(BaseRequestBuilder):
 			raise TypeError("raw_url cannot be None.")
 		return ByExternalGroupIdRequest(self.request_adapter, self.path_parameters)
 
-	@property
 	def members(self,
+		externalConnection_id: str,
+		externalGroup_id: str,
 	) -> MembersRequest:
+		if externalConnection_id is None:
+			raise TypeError("externalConnection_id cannot be null.")
+		if externalGroup_id is None:
+			raise TypeError("externalGroup_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["externalConnection%2Did"] =  externalConnection_id
+		path_parameters["externalGroup%2Did"] =  externalGroup_id
+
 		from .members import MembersRequest
-		return MembersRequest(self.request_adapter, self.path_parameters)
+		return MembersRequest(self.request_adapter, path_parameters)
 

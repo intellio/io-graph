@@ -81,9 +81,15 @@ class HealthIssuesRequest(BaseRequestBuilder):
 		from .by_health_issue_id import ByHealthIssueIdRequest
 		return ByHealthIssueIdRequest(self.request_adapter, path_parameters)
 
-	@property
 	def count(self,
+		sensor_id: str,
 	) -> CountRequest:
+		if sensor_id is None:
+			raise TypeError("sensor_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["sensor%2Did"] =  sensor_id
+
 		from .count import CountRequest
-		return CountRequest(self.request_adapter, self.path_parameters)
+		return CountRequest(self.request_adapter, path_parameters)
 

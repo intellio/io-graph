@@ -1,6 +1,7 @@
 # Auto-generated client
 
 from __future__ import annotations
+from kiota_abstractions.get_path_parameters import get_path_parameters
 from kiota_abstractions.method import Method
 from kiota_abstractions.base_request_builder import BaseRequestBuilder
 from kiota_abstractions.base_request_configuration import RequestConfiguration
@@ -50,6 +51,9 @@ if TYPE_CHECKING:
 	from .notification_message_templates import NotificationMessageTemplatesRequest
 	from .mobile_threat_defense_connectors import MobileThreatDefenseConnectorsRequest
 	from .mobile_app_troubleshooting_events import MobileAppTroubleshootingEventsRequest
+	from .verify_windows_enrollment_auto_discovery import VerifyWindowsEnrollmentAutoDiscoveryRequest
+	from .user_experience_analytics_summarize_work_from_anywhere_devices import UserExperienceAnalyticsSummarizeWorkFromAnywhereDevicesRequest
+	from .get_effective_permissions import GetEffectivePermissionsRequest
 	from .managed_devices import ManagedDevicesRequest
 	from .managed_device_overview import ManagedDeviceOverviewRequest
 	from .ios_update_statuses import IosUpdateStatusesRequest
@@ -84,7 +88,7 @@ class DeviceManagementRequest(BaseRequestBuilder):
 		"""
 		Get deviceManagement
 		Read properties and relationships of the deviceManagement object.
-		Find more info here: https://learn.microsoft.com/graph/api/intune-enrollment-devicemanagement-get?view=graph-rest-1.0
+		Find more info here: https://learn.microsoft.com/graph/api/intune-wip-devicemanagement-get?view=graph-rest-1.0
 		"""
 		tags = ['deviceManagement.deviceManagement']
 
@@ -109,7 +113,7 @@ class DeviceManagementRequest(BaseRequestBuilder):
 		"""
 		Update deviceManagement
 		Update the properties of a deviceManagement object.
-		Find more info here: https://learn.microsoft.com/graph/api/intune-auditing-devicemanagement-update?view=graph-rest-1.0
+		Find more info here: https://learn.microsoft.com/graph/api/intune-deviceconfig-devicemanagement-update?view=graph-rest-1.0
 		"""
 		tags = ['deviceManagement.deviceManagement']
 
@@ -249,6 +253,36 @@ class DeviceManagementRequest(BaseRequestBuilder):
 	) -> ManagedDevicesRequest:
 		from .managed_devices import ManagedDevicesRequest
 		return ManagedDevicesRequest(self.request_adapter, self.path_parameters)
+
+	def get_effective_permissions(self,
+		scope: str,
+	) -> GetEffectivePermissionsRequest:
+		if scope is None:
+			raise TypeError("scope cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["scope"] =  scope
+
+		from .get_effective_permissions import GetEffectivePermissionsRequest
+		return GetEffectivePermissionsRequest(self.request_adapter, path_parameters)
+
+	@property
+	def user_experience_analytics_summarize_work_from_anywhere_devices(self,
+	) -> UserExperienceAnalyticsSummarizeWorkFromAnywhereDevicesRequest:
+		from .user_experience_analytics_summarize_work_from_anywhere_devices import UserExperienceAnalyticsSummarizeWorkFromAnywhereDevicesRequest
+		return UserExperienceAnalyticsSummarizeWorkFromAnywhereDevicesRequest(self.request_adapter, self.path_parameters)
+
+	def verify_windows_enrollment_auto_discovery(self,
+		domainName: str,
+	) -> VerifyWindowsEnrollmentAutoDiscoveryRequest:
+		if domainName is None:
+			raise TypeError("domainName cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["domainName"] =  domainName
+
+		from .verify_windows_enrollment_auto_discovery import VerifyWindowsEnrollmentAutoDiscoveryRequest
+		return VerifyWindowsEnrollmentAutoDiscoveryRequest(self.request_adapter, path_parameters)
 
 	@property
 	def mobile_app_troubleshooting_events(self,

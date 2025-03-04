@@ -15,8 +15,8 @@ if TYPE_CHECKING:
 	from .by_managed_e_book_assignment_id import ByManagedEBookAssignmentIdRequest
 	from ......request_adapter import HttpxRequestAdapter
 from iograph_models.models.managed_e_book_assignment import ManagedEBookAssignment
-from iograph_models.models.managed_e_book_assignment_collection_response import ManagedEBookAssignmentCollectionResponse
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.models.managed_e_book_assignment_collection_response import ManagedEBookAssignmentCollectionResponse
 
 
 class AssignmentsRequest(BaseRequestBuilder):
@@ -28,9 +28,9 @@ class AssignmentsRequest(BaseRequestBuilder):
 		request_configuration: Optional[RequestConfiguration[GetQueryParams]] = None,
 	) -> ManagedEBookAssignmentCollectionResponse:
 		"""
-		List iosVppEBookAssignments
-		List properties and relationships of the iosVppEBookAssignment objects.
-		Find more info here: https://learn.microsoft.com/graph/api/intune-books-iosvppebookassignment-list?view=graph-rest-1.0
+		List managedEBookAssignments
+		List properties and relationships of the managedEBookAssignment objects.
+		Find more info here: https://learn.microsoft.com/graph/api/intune-books-managedebookassignment-list?view=graph-rest-1.0
 		"""
 		tags = ['deviceAppManagement.managedEBook']
 
@@ -110,9 +110,15 @@ class AssignmentsRequest(BaseRequestBuilder):
 		from .by_managed_e_book_assignment_id import ByManagedEBookAssignmentIdRequest
 		return ByManagedEBookAssignmentIdRequest(self.request_adapter, path_parameters)
 
-	@property
 	def count(self,
+		managedEBook_id: str,
 	) -> CountRequest:
+		if managedEBook_id is None:
+			raise TypeError("managedEBook_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["managedEBook%2Did"] =  managedEBook_id
+
 		from .count import CountRequest
-		return CountRequest(self.request_adapter, self.path_parameters)
+		return CountRequest(self.request_adapter, path_parameters)
 

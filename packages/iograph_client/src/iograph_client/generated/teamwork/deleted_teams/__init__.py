@@ -11,11 +11,12 @@ from typing import Union, Any, Optional
 from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:
+	from .get_all_messages import GetAllMessagesRequest
 	from .count import CountRequest
 	from .by_deleted_team_id import ByDeletedTeamIdRequest
 	from ....request_adapter import HttpxRequestAdapter
-from iograph_models.models.deleted_team_collection_response import DeletedTeamCollectionResponse
 from iograph_models.models.deleted_team import DeletedTeam
+from iograph_models.models.deleted_team_collection_response import DeletedTeamCollectionResponse
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
 
 
@@ -110,4 +111,10 @@ class DeletedTeamsRequest(BaseRequestBuilder):
 	) -> CountRequest:
 		from .count import CountRequest
 		return CountRequest(self.request_adapter, self.path_parameters)
+
+	@property
+	def get_all_messages(self,
+	) -> GetAllMessagesRequest:
+		from .get_all_messages import GetAllMessagesRequest
+		return GetAllMessagesRequest(self.request_adapter, self.path_parameters)
 

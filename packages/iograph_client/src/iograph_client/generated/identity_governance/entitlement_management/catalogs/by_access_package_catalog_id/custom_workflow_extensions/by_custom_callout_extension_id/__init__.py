@@ -11,8 +11,8 @@ from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:
 	from ........request_adapter import HttpxRequestAdapter
-from iograph_models.models.custom_callout_extension import CustomCalloutExtension
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.models.custom_callout_extension import CustomCalloutExtension
 
 
 class ByCustomCalloutExtensionIdRequest(BaseRequestBuilder):
@@ -24,9 +24,9 @@ class ByCustomCalloutExtensionIdRequest(BaseRequestBuilder):
 		request_configuration: Optional[RequestConfiguration[GetQueryParams]] = None,
 	) -> CustomCalloutExtension:
 		"""
-		Get accessPackageAssignmentWorkflowExtension
-		Read the properties and relationships of an accessPackageAssignmentWorkflowExtension object.
-		Find more info here: https://learn.microsoft.com/graph/api/accesspackageassignmentworkflowextension-get?view=graph-rest-1.0
+		Get accessPackageAssignmentRequestWorkflowExtension
+		Read the properties and relationships of an accessPackageAssignmentRequestWorkflowExtension object.
+		Find more info here: https://learn.microsoft.com/graph/api/accesspackageassignmentrequestworkflowextension-get?view=graph-rest-1.0
 		"""
 		tags = ['identityGovernance.entitlementManagement']
 
@@ -49,9 +49,9 @@ class ByCustomCalloutExtensionIdRequest(BaseRequestBuilder):
 		request_configuration: Optional[RequestConfiguration[BaseModel]] = None,
 	) -> CustomCalloutExtension:
 		"""
-		Update accessPackageAssignmentRequestWorkflowExtension
-		Update the properties of an accessPackageAssignmentRequestWorkflowExtension object.
-		Find more info here: https://learn.microsoft.com/graph/api/accesspackageassignmentrequestworkflowextension-update?view=graph-rest-1.0
+		Update accessPackageAssignmentWorkflowExtension
+		Update the properties of an accessPackageAssignmentWorkflowExtension object.
+		Find more info here: https://learn.microsoft.com/graph/api/accesspackageassignmentworkflowextension-update?view=graph-rest-1.0
 		"""
 		tags = ['identityGovernance.entitlementManagement']
 

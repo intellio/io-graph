@@ -12,6 +12,8 @@ from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:
 	from .remove import RemoveRequest
+	from .get_all_sites import GetAllSitesRequest
+	from .delta import DeltaRequest
 	from .add import AddRequest
 	from .count import CountRequest
 	from .by_site_id import BySiteIdRequest
@@ -83,21 +85,63 @@ class SitesRequest(BaseRequestBuilder):
 		from .by_site_id import BySiteIdRequest
 		return BySiteIdRequest(self.request_adapter, path_parameters)
 
-	@property
 	def count(self,
+		group_id: str,
 	) -> CountRequest:
+		if group_id is None:
+			raise TypeError("group_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["group%2Did"] =  group_id
+
 		from .count import CountRequest
-		return CountRequest(self.request_adapter, self.path_parameters)
+		return CountRequest(self.request_adapter, path_parameters)
 
-	@property
 	def add(self,
+		group_id: str,
 	) -> AddRequest:
-		from .add import AddRequest
-		return AddRequest(self.request_adapter, self.path_parameters)
+		if group_id is None:
+			raise TypeError("group_id cannot be null.")
 
-	@property
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["group%2Did"] =  group_id
+
+		from .add import AddRequest
+		return AddRequest(self.request_adapter, path_parameters)
+
+	def delta(self,
+		group_id: str,
+	) -> DeltaRequest:
+		if group_id is None:
+			raise TypeError("group_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["group%2Did"] =  group_id
+
+		from .delta import DeltaRequest
+		return DeltaRequest(self.request_adapter, path_parameters)
+
+	def get_all_sites(self,
+		group_id: str,
+	) -> GetAllSitesRequest:
+		if group_id is None:
+			raise TypeError("group_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["group%2Did"] =  group_id
+
+		from .get_all_sites import GetAllSitesRequest
+		return GetAllSitesRequest(self.request_adapter, path_parameters)
+
 	def remove(self,
+		group_id: str,
 	) -> RemoveRequest:
+		if group_id is None:
+			raise TypeError("group_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["group%2Did"] =  group_id
+
 		from .remove import RemoveRequest
-		return RemoveRequest(self.request_adapter, self.path_parameters)
+		return RemoveRequest(self.request_adapter, path_parameters)
 

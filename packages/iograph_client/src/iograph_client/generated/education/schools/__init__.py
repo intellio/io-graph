@@ -11,12 +11,13 @@ from typing import Union, Any, Optional
 from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:
+	from .delta import DeltaRequest
 	from .count import CountRequest
 	from .by_education_school_id import ByEducationSchoolIdRequest
 	from ....request_adapter import HttpxRequestAdapter
 from iograph_models.models.education_school import EducationSchool
-from iograph_models.models.education_school_collection_response import EducationSchoolCollectionResponse
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.models.education_school_collection_response import EducationSchoolCollectionResponse
 
 
 class SchoolsRequest(BaseRequestBuilder):
@@ -111,4 +112,10 @@ class SchoolsRequest(BaseRequestBuilder):
 	) -> CountRequest:
 		from .count import CountRequest
 		return CountRequest(self.request_adapter, self.path_parameters)
+
+	@property
+	def delta(self,
+	) -> DeltaRequest:
+		from .delta import DeltaRequest
+		return DeltaRequest(self.request_adapter, self.path_parameters)
 

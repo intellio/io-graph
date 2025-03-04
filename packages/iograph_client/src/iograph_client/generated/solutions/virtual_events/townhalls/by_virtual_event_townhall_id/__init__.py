@@ -1,6 +1,7 @@
 # Auto-generated client
 
 from __future__ import annotations
+from kiota_abstractions.get_path_parameters import get_path_parameters
 from kiota_abstractions.method import Method
 from kiota_abstractions.base_request_builder import BaseRequestBuilder
 from kiota_abstractions.base_request_configuration import RequestConfiguration
@@ -13,8 +14,8 @@ if TYPE_CHECKING:
 	from .sessions import SessionsRequest
 	from .presenters import PresentersRequest
 	from ......request_adapter import HttpxRequestAdapter
-from iograph_models.models.virtual_event_townhall import VirtualEventTownhall
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.models.virtual_event_townhall import VirtualEventTownhall
 
 
 class ByVirtualEventTownhallIdRequest(BaseRequestBuilder):
@@ -111,15 +112,27 @@ class ByVirtualEventTownhallIdRequest(BaseRequestBuilder):
 			raise TypeError("raw_url cannot be None.")
 		return ByVirtualEventTownhallIdRequest(self.request_adapter, self.path_parameters)
 
-	@property
 	def presenters(self,
+		virtualEventTownhall_id: str,
 	) -> PresentersRequest:
-		from .presenters import PresentersRequest
-		return PresentersRequest(self.request_adapter, self.path_parameters)
+		if virtualEventTownhall_id is None:
+			raise TypeError("virtualEventTownhall_id cannot be null.")
 
-	@property
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["virtualEventTownhall%2Did"] =  virtualEventTownhall_id
+
+		from .presenters import PresentersRequest
+		return PresentersRequest(self.request_adapter, path_parameters)
+
 	def sessions(self,
+		virtualEventTownhall_id: str,
 	) -> SessionsRequest:
+		if virtualEventTownhall_id is None:
+			raise TypeError("virtualEventTownhall_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["virtualEventTownhall%2Did"] =  virtualEventTownhall_id
+
 		from .sessions import SessionsRequest
-		return SessionsRequest(self.request_adapter, self.path_parameters)
+		return SessionsRequest(self.request_adapter, path_parameters)
 

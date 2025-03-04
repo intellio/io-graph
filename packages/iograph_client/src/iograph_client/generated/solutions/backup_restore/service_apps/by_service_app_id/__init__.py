@@ -1,6 +1,7 @@
 # Auto-generated client
 
 from __future__ import annotations
+from kiota_abstractions.get_path_parameters import get_path_parameters
 from kiota_abstractions.method import Method
 from kiota_abstractions.base_request_builder import BaseRequestBuilder
 from kiota_abstractions.base_request_configuration import RequestConfiguration
@@ -13,8 +14,8 @@ if TYPE_CHECKING:
 	from .deactivate import DeactivateRequest
 	from .activate import ActivateRequest
 	from ......request_adapter import HttpxRequestAdapter
-from iograph_models.models.service_app import ServiceApp
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.models.service_app import ServiceApp
 
 
 class ByServiceAppIdRequest(BaseRequestBuilder):
@@ -111,15 +112,27 @@ class ByServiceAppIdRequest(BaseRequestBuilder):
 			raise TypeError("raw_url cannot be None.")
 		return ByServiceAppIdRequest(self.request_adapter, self.path_parameters)
 
-	@property
 	def activate(self,
+		serviceApp_id: str,
 	) -> ActivateRequest:
-		from .activate import ActivateRequest
-		return ActivateRequest(self.request_adapter, self.path_parameters)
+		if serviceApp_id is None:
+			raise TypeError("serviceApp_id cannot be null.")
 
-	@property
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["serviceApp%2Did"] =  serviceApp_id
+
+		from .activate import ActivateRequest
+		return ActivateRequest(self.request_adapter, path_parameters)
+
 	def deactivate(self,
+		serviceApp_id: str,
 	) -> DeactivateRequest:
+		if serviceApp_id is None:
+			raise TypeError("serviceApp_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["serviceApp%2Did"] =  serviceApp_id
+
 		from .deactivate import DeactivateRequest
-		return DeactivateRequest(self.request_adapter, self.path_parameters)
+		return DeactivateRequest(self.request_adapter, path_parameters)
 

@@ -1,6 +1,7 @@
 # Auto-generated client
 
 from __future__ import annotations
+from kiota_abstractions.get_path_parameters import get_path_parameters
 from kiota_abstractions.method import Method
 from kiota_abstractions.base_request_builder import BaseRequestBuilder
 from kiota_abstractions.base_request_configuration import RequestConfiguration
@@ -16,8 +17,8 @@ if TYPE_CHECKING:
 	from .set_reaction import SetReactionRequest
 	from .hosted_contents import HostedContentsRequest
 	from .........request_adapter import HttpxRequestAdapter
-from iograph_models.models.chat_message import ChatMessage
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.models.chat_message import ChatMessage
 
 
 class ByChatMessageId1Request(BaseRequestBuilder):
@@ -112,33 +113,103 @@ class ByChatMessageId1Request(BaseRequestBuilder):
 			raise TypeError("raw_url cannot be None.")
 		return ByChatMessageId1Request(self.request_adapter, self.path_parameters)
 
-	@property
 	def hosted_contents(self,
+		chat_id: str,
+		chatMessage_id: str,
+		chatMessage_id1: str,
 	) -> HostedContentsRequest:
+		if chat_id is None:
+			raise TypeError("chat_id cannot be null.")
+		if chatMessage_id is None:
+			raise TypeError("chatMessage_id cannot be null.")
+		if chatMessage_id1 is None:
+			raise TypeError("chatMessage_id1 cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["chat%2Did"] =  chat_id
+		path_parameters["chatMessage%2Did"] =  chatMessage_id
+		path_parameters["chatMessage%2Did1"] =  chatMessage_id1
+
 		from .hosted_contents import HostedContentsRequest
-		return HostedContentsRequest(self.request_adapter, self.path_parameters)
+		return HostedContentsRequest(self.request_adapter, path_parameters)
 
-	@property
 	def set_reaction(self,
+		chat_id: str,
+		chatMessage_id: str,
+		chatMessage_id1: str,
 	) -> SetReactionRequest:
+		if chat_id is None:
+			raise TypeError("chat_id cannot be null.")
+		if chatMessage_id is None:
+			raise TypeError("chatMessage_id cannot be null.")
+		if chatMessage_id1 is None:
+			raise TypeError("chatMessage_id1 cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["chat%2Did"] =  chat_id
+		path_parameters["chatMessage%2Did"] =  chatMessage_id
+		path_parameters["chatMessage%2Did1"] =  chatMessage_id1
+
 		from .set_reaction import SetReactionRequest
-		return SetReactionRequest(self.request_adapter, self.path_parameters)
+		return SetReactionRequest(self.request_adapter, path_parameters)
 
-	@property
 	def soft_delete(self,
+		chat_id: str,
+		chatMessage_id: str,
+		chatMessage_id1: str,
 	) -> SoftDeleteRequest:
+		if chat_id is None:
+			raise TypeError("chat_id cannot be null.")
+		if chatMessage_id is None:
+			raise TypeError("chatMessage_id cannot be null.")
+		if chatMessage_id1 is None:
+			raise TypeError("chatMessage_id1 cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["chat%2Did"] =  chat_id
+		path_parameters["chatMessage%2Did"] =  chatMessage_id
+		path_parameters["chatMessage%2Did1"] =  chatMessage_id1
+
 		from .soft_delete import SoftDeleteRequest
-		return SoftDeleteRequest(self.request_adapter, self.path_parameters)
+		return SoftDeleteRequest(self.request_adapter, path_parameters)
 
-	@property
 	def undo_soft_delete(self,
+		chat_id: str,
+		chatMessage_id: str,
+		chatMessage_id1: str,
 	) -> UndoSoftDeleteRequest:
-		from .undo_soft_delete import UndoSoftDeleteRequest
-		return UndoSoftDeleteRequest(self.request_adapter, self.path_parameters)
+		if chat_id is None:
+			raise TypeError("chat_id cannot be null.")
+		if chatMessage_id is None:
+			raise TypeError("chatMessage_id cannot be null.")
+		if chatMessage_id1 is None:
+			raise TypeError("chatMessage_id1 cannot be null.")
 
-	@property
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["chat%2Did"] =  chat_id
+		path_parameters["chatMessage%2Did"] =  chatMessage_id
+		path_parameters["chatMessage%2Did1"] =  chatMessage_id1
+
+		from .undo_soft_delete import UndoSoftDeleteRequest
+		return UndoSoftDeleteRequest(self.request_adapter, path_parameters)
+
 	def unset_reaction(self,
+		chat_id: str,
+		chatMessage_id: str,
+		chatMessage_id1: str,
 	) -> UnsetReactionRequest:
+		if chat_id is None:
+			raise TypeError("chat_id cannot be null.")
+		if chatMessage_id is None:
+			raise TypeError("chatMessage_id cannot be null.")
+		if chatMessage_id1 is None:
+			raise TypeError("chatMessage_id1 cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["chat%2Did"] =  chat_id
+		path_parameters["chatMessage%2Did"] =  chatMessage_id
+		path_parameters["chatMessage%2Did1"] =  chatMessage_id1
+
 		from .unset_reaction import UnsetReactionRequest
-		return UnsetReactionRequest(self.request_adapter, self.path_parameters)
+		return UnsetReactionRequest(self.request_adapter, path_parameters)
 

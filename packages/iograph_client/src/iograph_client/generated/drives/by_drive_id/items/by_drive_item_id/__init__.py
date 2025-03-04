@@ -1,6 +1,7 @@
 # Auto-generated client
 
 from __future__ import annotations
+from kiota_abstractions.get_path_parameters import get_path_parameters
 from kiota_abstractions.method import Method
 from kiota_abstractions.base_request_builder import BaseRequestBuilder
 from kiota_abstractions.base_request_configuration import RequestConfiguration
@@ -18,13 +19,16 @@ if TYPE_CHECKING:
 	from .permissions import PermissionsRequest
 	from .validate_permission import ValidatePermissionRequest
 	from .unfollow import UnfollowRequest
+	from .search import SearchRequest
 	from .restore import RestoreRequest
 	from .preview import PreviewRequest
 	from .permanent_delete import PermanentDeleteRequest
 	from .invite import InviteRequest
+	from .get_activities_by_interval import GetActivitiesByIntervalRequest
 	from .follow import FollowRequest
 	from .extract_sensitivity_labels import ExtractSensitivityLabelsRequest
 	from .discard_checkout import DiscardCheckoutRequest
+	from .delta import DeltaRequest
 	from .create_upload_session import CreateUploadSessionRequest
 	from .create_link import CreateLinkRequest
 	from .copy import CopyRequest
@@ -134,165 +138,487 @@ class ByDriveItemIdRequest(BaseRequestBuilder):
 			raise TypeError("raw_url cannot be None.")
 		return ByDriveItemIdRequest(self.request_adapter, self.path_parameters)
 
-	@property
 	def analytics(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> AnalyticsRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .analytics import AnalyticsRequest
-		return AnalyticsRequest(self.request_adapter, self.path_parameters)
+		return AnalyticsRequest(self.request_adapter, path_parameters)
 
-	@property
 	def children(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> ChildrenRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .children import ChildrenRequest
-		return ChildrenRequest(self.request_adapter, self.path_parameters)
+		return ChildrenRequest(self.request_adapter, path_parameters)
 
-	@property
 	def content(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> ContentRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .content import ContentRequest
-		return ContentRequest(self.request_adapter, self.path_parameters)
+		return ContentRequest(self.request_adapter, path_parameters)
 
-	@property
 	def created_by_user(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> CreatedByUserRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .created_by_user import CreatedByUserRequest
-		return CreatedByUserRequest(self.request_adapter, self.path_parameters)
+		return CreatedByUserRequest(self.request_adapter, path_parameters)
 
-	@property
 	def last_modified_by_user(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> LastModifiedByUserRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .last_modified_by_user import LastModifiedByUserRequest
-		return LastModifiedByUserRequest(self.request_adapter, self.path_parameters)
+		return LastModifiedByUserRequest(self.request_adapter, path_parameters)
 
-	@property
 	def list_item(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> ListItemRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .list_item import ListItemRequest
-		return ListItemRequest(self.request_adapter, self.path_parameters)
+		return ListItemRequest(self.request_adapter, path_parameters)
 
-	@property
 	def assign_sensitivity_label(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> AssignSensitivityLabelRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .assign_sensitivity_label import AssignSensitivityLabelRequest
-		return AssignSensitivityLabelRequest(self.request_adapter, self.path_parameters)
+		return AssignSensitivityLabelRequest(self.request_adapter, path_parameters)
 
-	@property
 	def checkin(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> CheckinRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .checkin import CheckinRequest
-		return CheckinRequest(self.request_adapter, self.path_parameters)
+		return CheckinRequest(self.request_adapter, path_parameters)
 
-	@property
 	def checkout(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> CheckoutRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .checkout import CheckoutRequest
-		return CheckoutRequest(self.request_adapter, self.path_parameters)
+		return CheckoutRequest(self.request_adapter, path_parameters)
 
-	@property
 	def copy(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> CopyRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .copy import CopyRequest
-		return CopyRequest(self.request_adapter, self.path_parameters)
+		return CopyRequest(self.request_adapter, path_parameters)
 
-	@property
 	def create_link(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> CreateLinkRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .create_link import CreateLinkRequest
-		return CreateLinkRequest(self.request_adapter, self.path_parameters)
+		return CreateLinkRequest(self.request_adapter, path_parameters)
 
-	@property
 	def create_upload_session(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> CreateUploadSessionRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .create_upload_session import CreateUploadSessionRequest
-		return CreateUploadSessionRequest(self.request_adapter, self.path_parameters)
+		return CreateUploadSessionRequest(self.request_adapter, path_parameters)
 
-	@property
+	def delta(self,
+		drive_id: str,
+		driveItem_id: str,
+	) -> DeltaRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
+		from .delta import DeltaRequest
+		return DeltaRequest(self.request_adapter, path_parameters)
+
 	def discard_checkout(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> DiscardCheckoutRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .discard_checkout import DiscardCheckoutRequest
-		return DiscardCheckoutRequest(self.request_adapter, self.path_parameters)
+		return DiscardCheckoutRequest(self.request_adapter, path_parameters)
 
-	@property
 	def extract_sensitivity_labels(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> ExtractSensitivityLabelsRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .extract_sensitivity_labels import ExtractSensitivityLabelsRequest
-		return ExtractSensitivityLabelsRequest(self.request_adapter, self.path_parameters)
+		return ExtractSensitivityLabelsRequest(self.request_adapter, path_parameters)
 
-	@property
 	def follow(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> FollowRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .follow import FollowRequest
-		return FollowRequest(self.request_adapter, self.path_parameters)
+		return FollowRequest(self.request_adapter, path_parameters)
 
-	@property
+	def get_activities_by_interval(self,
+		drive_id: str,
+		driveItem_id: str,
+	) -> GetActivitiesByIntervalRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
+		from .get_activities_by_interval import GetActivitiesByIntervalRequest
+		return GetActivitiesByIntervalRequest(self.request_adapter, path_parameters)
+
 	def invite(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> InviteRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .invite import InviteRequest
-		return InviteRequest(self.request_adapter, self.path_parameters)
+		return InviteRequest(self.request_adapter, path_parameters)
 
-	@property
 	def permanent_delete(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> PermanentDeleteRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .permanent_delete import PermanentDeleteRequest
-		return PermanentDeleteRequest(self.request_adapter, self.path_parameters)
+		return PermanentDeleteRequest(self.request_adapter, path_parameters)
 
-	@property
 	def preview(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> PreviewRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .preview import PreviewRequest
-		return PreviewRequest(self.request_adapter, self.path_parameters)
+		return PreviewRequest(self.request_adapter, path_parameters)
 
-	@property
 	def restore(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> RestoreRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .restore import RestoreRequest
-		return RestoreRequest(self.request_adapter, self.path_parameters)
+		return RestoreRequest(self.request_adapter, path_parameters)
 
-	@property
+	def search(self,
+		drive_id: str,
+		driveItem_id: str,
+		q: str,
+	) -> SearchRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+		if q is None:
+			raise TypeError("q cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+		path_parameters["q"] =  q
+
+		from .search import SearchRequest
+		return SearchRequest(self.request_adapter, path_parameters)
+
 	def unfollow(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> UnfollowRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .unfollow import UnfollowRequest
-		return UnfollowRequest(self.request_adapter, self.path_parameters)
+		return UnfollowRequest(self.request_adapter, path_parameters)
 
-	@property
 	def validate_permission(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> ValidatePermissionRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .validate_permission import ValidatePermissionRequest
-		return ValidatePermissionRequest(self.request_adapter, self.path_parameters)
+		return ValidatePermissionRequest(self.request_adapter, path_parameters)
 
-	@property
 	def permissions(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> PermissionsRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .permissions import PermissionsRequest
-		return PermissionsRequest(self.request_adapter, self.path_parameters)
+		return PermissionsRequest(self.request_adapter, path_parameters)
 
-	@property
 	def retention_label(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> RetentionLabelRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .retention_label import RetentionLabelRequest
-		return RetentionLabelRequest(self.request_adapter, self.path_parameters)
+		return RetentionLabelRequest(self.request_adapter, path_parameters)
 
-	@property
 	def subscriptions(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> SubscriptionsRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .subscriptions import SubscriptionsRequest
-		return SubscriptionsRequest(self.request_adapter, self.path_parameters)
+		return SubscriptionsRequest(self.request_adapter, path_parameters)
 
-	@property
 	def thumbnails(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> ThumbnailsRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .thumbnails import ThumbnailsRequest
-		return ThumbnailsRequest(self.request_adapter, self.path_parameters)
+		return ThumbnailsRequest(self.request_adapter, path_parameters)
 
-	@property
 	def versions(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> VersionsRequest:
-		from .versions import VersionsRequest
-		return VersionsRequest(self.request_adapter, self.path_parameters)
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
 
-	@property
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
+		from .versions import VersionsRequest
+		return VersionsRequest(self.request_adapter, path_parameters)
+
 	def workbook(self,
+		drive_id: str,
+		driveItem_id: str,
 	) -> WorkbookRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+
 		from .workbook import WorkbookRequest
-		return WorkbookRequest(self.request_adapter, self.path_parameters)
+		return WorkbookRequest(self.request_adapter, path_parameters)
 

@@ -1,6 +1,7 @@
 # Auto-generated client
 
 from __future__ import annotations
+from kiota_abstractions.get_path_parameters import get_path_parameters
 from kiota_abstractions.method import Method
 from kiota_abstractions.base_request_builder import BaseRequestBuilder
 from kiota_abstractions.base_request_configuration import RequestConfiguration
@@ -12,8 +13,8 @@ from typing import TYPE_CHECKING
 if TYPE_CHECKING:
 	from .plans import PlansRequest
 	from .....request_adapter import HttpxRequestAdapter
-from iograph_models.models.planner_group import PlannerGroup
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.models.planner_group import PlannerGroup
 
 
 class PlannerRequest(BaseRequestBuilder):
@@ -109,9 +110,15 @@ class PlannerRequest(BaseRequestBuilder):
 			raise TypeError("raw_url cannot be None.")
 		return PlannerRequest(self.request_adapter, self.path_parameters)
 
-	@property
 	def plans(self,
+		group_id: str,
 	) -> PlansRequest:
+		if group_id is None:
+			raise TypeError("group_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["group%2Did"] =  group_id
+
 		from .plans import PlansRequest
-		return PlansRequest(self.request_adapter, self.path_parameters)
+		return PlansRequest(self.request_adapter, path_parameters)
 

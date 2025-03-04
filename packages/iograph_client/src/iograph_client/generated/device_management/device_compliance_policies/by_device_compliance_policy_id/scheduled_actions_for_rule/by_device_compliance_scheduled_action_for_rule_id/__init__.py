@@ -1,6 +1,7 @@
 # Auto-generated client
 
 from __future__ import annotations
+from kiota_abstractions.get_path_parameters import get_path_parameters
 from kiota_abstractions.method import Method
 from kiota_abstractions.base_request_builder import BaseRequestBuilder
 from kiota_abstractions.base_request_configuration import RequestConfiguration
@@ -111,9 +112,19 @@ class ByDeviceComplianceScheduledActionForRuleIdRequest(BaseRequestBuilder):
 			raise TypeError("raw_url cannot be None.")
 		return ByDeviceComplianceScheduledActionForRuleIdRequest(self.request_adapter, self.path_parameters)
 
-	@property
 	def scheduled_action_configurations(self,
+		deviceCompliancePolicy_id: str,
+		deviceComplianceScheduledActionForRule_id: str,
 	) -> ScheduledActionConfigurationsRequest:
+		if deviceCompliancePolicy_id is None:
+			raise TypeError("deviceCompliancePolicy_id cannot be null.")
+		if deviceComplianceScheduledActionForRule_id is None:
+			raise TypeError("deviceComplianceScheduledActionForRule_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["deviceCompliancePolicy%2Did"] =  deviceCompliancePolicy_id
+		path_parameters["deviceComplianceScheduledActionForRule%2Did"] =  deviceComplianceScheduledActionForRule_id
+
 		from .scheduled_action_configurations import ScheduledActionConfigurationsRequest
-		return ScheduledActionConfigurationsRequest(self.request_adapter, self.path_parameters)
+		return ScheduledActionConfigurationsRequest(self.request_adapter, path_parameters)
 

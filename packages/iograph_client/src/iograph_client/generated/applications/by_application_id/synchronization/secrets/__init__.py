@@ -1,6 +1,7 @@
 # Auto-generated client
 
 from __future__ import annotations
+from kiota_abstractions.get_path_parameters import get_path_parameters
 from kiota_abstractions.method import Method
 from kiota_abstractions.base_request_builder import BaseRequestBuilder
 from kiota_abstractions.base_request_configuration import RequestConfiguration
@@ -12,9 +13,9 @@ from typing import TYPE_CHECKING
 if TYPE_CHECKING:
 	from .count import CountRequest
 	from ......request_adapter import HttpxRequestAdapter
-from iograph_models.models.secrets_put_request import SecretsPutRequest
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.models.secrets_put_response import SecretsPutResponse
+from iograph_models.models.secrets_put_request import SecretsPutRequest
 
 
 class SecretsRequest(BaseRequestBuilder):
@@ -57,9 +58,15 @@ class SecretsRequest(BaseRequestBuilder):
 			raise TypeError("raw_url cannot be None.")
 		return SecretsRequest(self.request_adapter, self.path_parameters)
 
-	@property
 	def count(self,
+		application_id: str,
 	) -> CountRequest:
+		if application_id is None:
+			raise TypeError("application_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["application%2Did"] =  application_id
+
 		from .count import CountRequest
-		return CountRequest(self.request_adapter, self.path_parameters)
+		return CountRequest(self.request_adapter, path_parameters)
 

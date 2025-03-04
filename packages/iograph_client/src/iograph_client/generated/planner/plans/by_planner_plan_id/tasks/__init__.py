@@ -109,9 +109,15 @@ class TasksRequest(BaseRequestBuilder):
 		from .by_planner_task_id import ByPlannerTaskIdRequest
 		return ByPlannerTaskIdRequest(self.request_adapter, path_parameters)
 
-	@property
 	def count(self,
+		plannerPlan_id: str,
 	) -> CountRequest:
+		if plannerPlan_id is None:
+			raise TypeError("plannerPlan_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["plannerPlan%2Did"] =  plannerPlan_id
+
 		from .count import CountRequest
-		return CountRequest(self.request_adapter, self.path_parameters)
+		return CountRequest(self.request_adapter, path_parameters)
 

@@ -1,6 +1,7 @@
 # Auto-generated client
 
 from __future__ import annotations
+from kiota_abstractions.get_path_parameters import get_path_parameters
 from kiota_abstractions.method import Method
 from kiota_abstractions.base_request_builder import BaseRequestBuilder
 from kiota_abstractions.base_request_configuration import RequestConfiguration
@@ -28,9 +29,19 @@ class ByIdentityUserFlowAttributeIdRequest(BaseRequestBuilder):
 			raise TypeError("raw_url cannot be None.")
 		return ByIdentityUserFlowAttributeIdRequest(self.request_adapter, self.path_parameters)
 
-	@property
 	def ref(self,
+		authenticationEventsFlow_id: str,
+		identityUserFlowAttribute_id: str,
 	) -> RefRequest:
+		if authenticationEventsFlow_id is None:
+			raise TypeError("authenticationEventsFlow_id cannot be null.")
+		if identityUserFlowAttribute_id is None:
+			raise TypeError("identityUserFlowAttribute_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["authenticationEventsFlow%2Did"] =  authenticationEventsFlow_id
+		path_parameters["identityUserFlowAttribute%2Did"] =  identityUserFlowAttribute_id
+
 		from .ref import RefRequest
-		return RefRequest(self.request_adapter, self.path_parameters)
+		return RefRequest(self.request_adapter, path_parameters)
 

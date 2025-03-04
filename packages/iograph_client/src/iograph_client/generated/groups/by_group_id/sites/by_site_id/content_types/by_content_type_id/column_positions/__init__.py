@@ -89,9 +89,23 @@ class ColumnPositionsRequest(BaseRequestBuilder):
 		from .by_column_definition_id import ByColumnDefinitionIdRequest
 		return ByColumnDefinitionIdRequest(self.request_adapter, path_parameters)
 
-	@property
 	def count(self,
+		group_id: str,
+		site_id: str,
+		contentType_id: str,
 	) -> CountRequest:
+		if group_id is None:
+			raise TypeError("group_id cannot be null.")
+		if site_id is None:
+			raise TypeError("site_id cannot be null.")
+		if contentType_id is None:
+			raise TypeError("contentType_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["group%2Did"] =  group_id
+		path_parameters["site%2Did"] =  site_id
+		path_parameters["contentType%2Did"] =  contentType_id
+
 		from .count import CountRequest
-		return CountRequest(self.request_adapter, self.path_parameters)
+		return CountRequest(self.request_adapter, path_parameters)
 

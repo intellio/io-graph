@@ -1,6 +1,7 @@
 # Auto-generated client
 
 from __future__ import annotations
+from kiota_abstractions.get_path_parameters import get_path_parameters
 from kiota_abstractions.method import Method
 from kiota_abstractions.base_request_builder import BaseRequestBuilder
 from kiota_abstractions.base_request_configuration import RequestConfiguration
@@ -114,45 +115,115 @@ class BySynchronizationJobIdRequest(BaseRequestBuilder):
 			raise TypeError("raw_url cannot be None.")
 		return BySynchronizationJobIdRequest(self.request_adapter, self.path_parameters)
 
-	@property
 	def bulk_upload(self,
+		application_id: str,
+		synchronizationJob_id: str,
 	) -> BulkUploadRequest:
+		if application_id is None:
+			raise TypeError("application_id cannot be null.")
+		if synchronizationJob_id is None:
+			raise TypeError("synchronizationJob_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["application%2Did"] =  application_id
+		path_parameters["synchronizationJob%2Did"] =  synchronizationJob_id
+
 		from .bulk_upload import BulkUploadRequest
-		return BulkUploadRequest(self.request_adapter, self.path_parameters)
+		return BulkUploadRequest(self.request_adapter, path_parameters)
 
-	@property
 	def pause(self,
+		application_id: str,
+		synchronizationJob_id: str,
 	) -> PauseRequest:
+		if application_id is None:
+			raise TypeError("application_id cannot be null.")
+		if synchronizationJob_id is None:
+			raise TypeError("synchronizationJob_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["application%2Did"] =  application_id
+		path_parameters["synchronizationJob%2Did"] =  synchronizationJob_id
+
 		from .pause import PauseRequest
-		return PauseRequest(self.request_adapter, self.path_parameters)
+		return PauseRequest(self.request_adapter, path_parameters)
 
-	@property
 	def provision_on_demand(self,
+		application_id: str,
+		synchronizationJob_id: str,
 	) -> ProvisionOnDemandRequest:
+		if application_id is None:
+			raise TypeError("application_id cannot be null.")
+		if synchronizationJob_id is None:
+			raise TypeError("synchronizationJob_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["application%2Did"] =  application_id
+		path_parameters["synchronizationJob%2Did"] =  synchronizationJob_id
+
 		from .provision_on_demand import ProvisionOnDemandRequest
-		return ProvisionOnDemandRequest(self.request_adapter, self.path_parameters)
+		return ProvisionOnDemandRequest(self.request_adapter, path_parameters)
 
-	@property
 	def restart(self,
+		application_id: str,
+		synchronizationJob_id: str,
 	) -> RestartRequest:
+		if application_id is None:
+			raise TypeError("application_id cannot be null.")
+		if synchronizationJob_id is None:
+			raise TypeError("synchronizationJob_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["application%2Did"] =  application_id
+		path_parameters["synchronizationJob%2Did"] =  synchronizationJob_id
+
 		from .restart import RestartRequest
-		return RestartRequest(self.request_adapter, self.path_parameters)
+		return RestartRequest(self.request_adapter, path_parameters)
 
-	@property
 	def start(self,
+		application_id: str,
+		synchronizationJob_id: str,
 	) -> StartRequest:
+		if application_id is None:
+			raise TypeError("application_id cannot be null.")
+		if synchronizationJob_id is None:
+			raise TypeError("synchronizationJob_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["application%2Did"] =  application_id
+		path_parameters["synchronizationJob%2Did"] =  synchronizationJob_id
+
 		from .start import StartRequest
-		return StartRequest(self.request_adapter, self.path_parameters)
+		return StartRequest(self.request_adapter, path_parameters)
 
-	@property
 	def validate_credentials(self,
+		application_id: str,
+		synchronizationJob_id: str,
 	) -> ValidateCredentialsRequest:
-		from .validate_credentials import ValidateCredentialsRequest
-		return ValidateCredentialsRequest(self.request_adapter, self.path_parameters)
+		if application_id is None:
+			raise TypeError("application_id cannot be null.")
+		if synchronizationJob_id is None:
+			raise TypeError("synchronizationJob_id cannot be null.")
 
-	@property
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["application%2Did"] =  application_id
+		path_parameters["synchronizationJob%2Did"] =  synchronizationJob_id
+
+		from .validate_credentials import ValidateCredentialsRequest
+		return ValidateCredentialsRequest(self.request_adapter, path_parameters)
+
 	def schema(self,
+		application_id: str,
+		synchronizationJob_id: str,
 	) -> SchemaRequest:
+		if application_id is None:
+			raise TypeError("application_id cannot be null.")
+		if synchronizationJob_id is None:
+			raise TypeError("synchronizationJob_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["application%2Did"] =  application_id
+		path_parameters["synchronizationJob%2Did"] =  synchronizationJob_id
+
 		from .schema import SchemaRequest
-		return SchemaRequest(self.request_adapter, self.path_parameters)
+		return SchemaRequest(self.request_adapter, path_parameters)
 

@@ -1,6 +1,7 @@
 # Auto-generated client
 
 from __future__ import annotations
+from kiota_abstractions.get_path_parameters import get_path_parameters
 from kiota_abstractions.method import Method
 from kiota_abstractions.base_request_builder import BaseRequestBuilder
 from kiota_abstractions.base_request_configuration import RequestConfiguration
@@ -111,15 +112,35 @@ class ByPrintTaskIdRequest(BaseRequestBuilder):
 			raise TypeError("raw_url cannot be None.")
 		return ByPrintTaskIdRequest(self.request_adapter, self.path_parameters)
 
-	@property
 	def definition(self,
+		printTaskDefinition_id: str,
+		printTask_id: str,
 	) -> DefinitionRequest:
-		from .definition import DefinitionRequest
-		return DefinitionRequest(self.request_adapter, self.path_parameters)
+		if printTaskDefinition_id is None:
+			raise TypeError("printTaskDefinition_id cannot be null.")
+		if printTask_id is None:
+			raise TypeError("printTask_id cannot be null.")
 
-	@property
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["printTaskDefinition%2Did"] =  printTaskDefinition_id
+		path_parameters["printTask%2Did"] =  printTask_id
+
+		from .definition import DefinitionRequest
+		return DefinitionRequest(self.request_adapter, path_parameters)
+
 	def trigger(self,
+		printTaskDefinition_id: str,
+		printTask_id: str,
 	) -> TriggerRequest:
+		if printTaskDefinition_id is None:
+			raise TypeError("printTaskDefinition_id cannot be null.")
+		if printTask_id is None:
+			raise TypeError("printTask_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["printTaskDefinition%2Did"] =  printTaskDefinition_id
+		path_parameters["printTask%2Did"] =  printTask_id
+
 		from .trigger import TriggerRequest
-		return TriggerRequest(self.request_adapter, self.path_parameters)
+		return TriggerRequest(self.request_adapter, path_parameters)
 

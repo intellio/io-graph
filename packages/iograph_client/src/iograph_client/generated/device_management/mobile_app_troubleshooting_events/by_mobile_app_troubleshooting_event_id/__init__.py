@@ -1,6 +1,7 @@
 # Auto-generated client
 
 from __future__ import annotations
+from kiota_abstractions.get_path_parameters import get_path_parameters
 from kiota_abstractions.method import Method
 from kiota_abstractions.base_request_builder import BaseRequestBuilder
 from kiota_abstractions.base_request_configuration import RequestConfiguration
@@ -111,9 +112,15 @@ class ByMobileAppTroubleshootingEventIdRequest(BaseRequestBuilder):
 			raise TypeError("raw_url cannot be None.")
 		return ByMobileAppTroubleshootingEventIdRequest(self.request_adapter, self.path_parameters)
 
-	@property
 	def app_log_collection_requests(self,
+		mobileAppTroubleshootingEvent_id: str,
 	) -> AppLogCollectionRequestsRequest:
+		if mobileAppTroubleshootingEvent_id is None:
+			raise TypeError("mobileAppTroubleshootingEvent_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["mobileAppTroubleshootingEvent%2Did"] =  mobileAppTroubleshootingEvent_id
+
 		from .app_log_collection_requests import AppLogCollectionRequestsRequest
-		return AppLogCollectionRequestsRequest(self.request_adapter, self.path_parameters)
+		return AppLogCollectionRequestsRequest(self.request_adapter, path_parameters)
 

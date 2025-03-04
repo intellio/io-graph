@@ -110,9 +110,15 @@ class AcceptanceStatusesRequest(BaseRequestBuilder):
 		from .by_terms_and_conditions_acceptance_status_id import ByTermsAndConditionsAcceptanceStatusIdRequest
 		return ByTermsAndConditionsAcceptanceStatusIdRequest(self.request_adapter, path_parameters)
 
-	@property
 	def count(self,
+		termsAndConditions_id: str,
 	) -> CountRequest:
+		if termsAndConditions_id is None:
+			raise TypeError("termsAndConditions_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["termsAndConditions%2Did"] =  termsAndConditions_id
+
 		from .count import CountRequest
-		return CountRequest(self.request_adapter, self.path_parameters)
+		return CountRequest(self.request_adapter, path_parameters)
 

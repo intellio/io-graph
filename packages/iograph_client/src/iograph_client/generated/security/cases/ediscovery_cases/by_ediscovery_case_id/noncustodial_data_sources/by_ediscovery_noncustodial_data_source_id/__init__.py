@@ -1,6 +1,7 @@
 # Auto-generated client
 
 from __future__ import annotations
+from kiota_abstractions.get_path_parameters import get_path_parameters
 from kiota_abstractions.method import Method
 from kiota_abstractions.base_request_builder import BaseRequestBuilder
 from kiota_abstractions.base_request_configuration import RequestConfiguration
@@ -17,8 +18,8 @@ if TYPE_CHECKING:
 	from .last_index_operation import LastIndexOperationRequest
 	from .data_source import DataSourceRequest
 	from ........request_adapter import HttpxRequestAdapter
-from iograph_models.models.security_ediscovery_noncustodial_data_source import SecurityEdiscoveryNoncustodialDataSource
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.models.security_ediscovery_noncustodial_data_source import SecurityEdiscoveryNoncustodialDataSource
 
 
 class ByEdiscoveryNoncustodialDataSourceIdRequest(BaseRequestBuilder):
@@ -113,39 +114,99 @@ class ByEdiscoveryNoncustodialDataSourceIdRequest(BaseRequestBuilder):
 			raise TypeError("raw_url cannot be None.")
 		return ByEdiscoveryNoncustodialDataSourceIdRequest(self.request_adapter, self.path_parameters)
 
-	@property
 	def data_source(self,
+		ediscoveryCase_id: str,
+		ediscoveryNoncustodialDataSource_id: str,
 	) -> DataSourceRequest:
+		if ediscoveryCase_id is None:
+			raise TypeError("ediscoveryCase_id cannot be null.")
+		if ediscoveryNoncustodialDataSource_id is None:
+			raise TypeError("ediscoveryNoncustodialDataSource_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["ediscoveryCase%2Did"] =  ediscoveryCase_id
+		path_parameters["ediscoveryNoncustodialDataSource%2Did"] =  ediscoveryNoncustodialDataSource_id
+
 		from .data_source import DataSourceRequest
-		return DataSourceRequest(self.request_adapter, self.path_parameters)
+		return DataSourceRequest(self.request_adapter, path_parameters)
 
-	@property
 	def last_index_operation(self,
+		ediscoveryCase_id: str,
+		ediscoveryNoncustodialDataSource_id: str,
 	) -> LastIndexOperationRequest:
+		if ediscoveryCase_id is None:
+			raise TypeError("ediscoveryCase_id cannot be null.")
+		if ediscoveryNoncustodialDataSource_id is None:
+			raise TypeError("ediscoveryNoncustodialDataSource_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["ediscoveryCase%2Did"] =  ediscoveryCase_id
+		path_parameters["ediscoveryNoncustodialDataSource%2Did"] =  ediscoveryNoncustodialDataSource_id
+
 		from .last_index_operation import LastIndexOperationRequest
-		return LastIndexOperationRequest(self.request_adapter, self.path_parameters)
+		return LastIndexOperationRequest(self.request_adapter, path_parameters)
 
-	@property
 	def security_apply_hold(self,
+		ediscoveryCase_id: str,
+		ediscoveryNoncustodialDataSource_id: str,
 	) -> SecurityApplyHoldRequest:
+		if ediscoveryCase_id is None:
+			raise TypeError("ediscoveryCase_id cannot be null.")
+		if ediscoveryNoncustodialDataSource_id is None:
+			raise TypeError("ediscoveryNoncustodialDataSource_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["ediscoveryCase%2Did"] =  ediscoveryCase_id
+		path_parameters["ediscoveryNoncustodialDataSource%2Did"] =  ediscoveryNoncustodialDataSource_id
+
 		from .security_apply_hold import SecurityApplyHoldRequest
-		return SecurityApplyHoldRequest(self.request_adapter, self.path_parameters)
+		return SecurityApplyHoldRequest(self.request_adapter, path_parameters)
 
-	@property
 	def security_release(self,
+		ediscoveryCase_id: str,
+		ediscoveryNoncustodialDataSource_id: str,
 	) -> SecurityReleaseRequest:
+		if ediscoveryCase_id is None:
+			raise TypeError("ediscoveryCase_id cannot be null.")
+		if ediscoveryNoncustodialDataSource_id is None:
+			raise TypeError("ediscoveryNoncustodialDataSource_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["ediscoveryCase%2Did"] =  ediscoveryCase_id
+		path_parameters["ediscoveryNoncustodialDataSource%2Did"] =  ediscoveryNoncustodialDataSource_id
+
 		from .security_release import SecurityReleaseRequest
-		return SecurityReleaseRequest(self.request_adapter, self.path_parameters)
+		return SecurityReleaseRequest(self.request_adapter, path_parameters)
 
-	@property
 	def security_remove_hold(self,
+		ediscoveryCase_id: str,
+		ediscoveryNoncustodialDataSource_id: str,
 	) -> SecurityRemoveHoldRequest:
-		from .security_remove_hold import SecurityRemoveHoldRequest
-		return SecurityRemoveHoldRequest(self.request_adapter, self.path_parameters)
+		if ediscoveryCase_id is None:
+			raise TypeError("ediscoveryCase_id cannot be null.")
+		if ediscoveryNoncustodialDataSource_id is None:
+			raise TypeError("ediscoveryNoncustodialDataSource_id cannot be null.")
 
-	@property
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["ediscoveryCase%2Did"] =  ediscoveryCase_id
+		path_parameters["ediscoveryNoncustodialDataSource%2Did"] =  ediscoveryNoncustodialDataSource_id
+
+		from .security_remove_hold import SecurityRemoveHoldRequest
+		return SecurityRemoveHoldRequest(self.request_adapter, path_parameters)
+
 	def security_update_index(self,
+		ediscoveryCase_id: str,
+		ediscoveryNoncustodialDataSource_id: str,
 	) -> SecurityUpdateIndexRequest:
+		if ediscoveryCase_id is None:
+			raise TypeError("ediscoveryCase_id cannot be null.")
+		if ediscoveryNoncustodialDataSource_id is None:
+			raise TypeError("ediscoveryNoncustodialDataSource_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["ediscoveryCase%2Did"] =  ediscoveryCase_id
+		path_parameters["ediscoveryNoncustodialDataSource%2Did"] =  ediscoveryNoncustodialDataSource_id
+
 		from .security_update_index import SecurityUpdateIndexRequest
-		return SecurityUpdateIndexRequest(self.request_adapter, self.path_parameters)
+		return SecurityUpdateIndexRequest(self.request_adapter, path_parameters)
 

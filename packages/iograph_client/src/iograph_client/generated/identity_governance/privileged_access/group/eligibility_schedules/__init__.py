@@ -11,12 +11,13 @@ from typing import Union, Any, Optional
 from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:
+	from .filter_by_current_user import FilterByCurrentUserRequest
 	from .count import CountRequest
 	from .by_privileged_access_group_eligibility_schedule_id import ByPrivilegedAccessGroupEligibilityScheduleIdRequest
 	from ......request_adapter import HttpxRequestAdapter
 from iograph_models.models.privileged_access_group_eligibility_schedule_collection_response import PrivilegedAccessGroupEligibilityScheduleCollectionResponse
-from iograph_models.models.privileged_access_group_eligibility_schedule import PrivilegedAccessGroupEligibilitySchedule
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.models.privileged_access_group_eligibility_schedule import PrivilegedAccessGroupEligibilitySchedule
 
 
 class EligibilitySchedulesRequest(BaseRequestBuilder):
@@ -110,4 +111,16 @@ class EligibilitySchedulesRequest(BaseRequestBuilder):
 	) -> CountRequest:
 		from .count import CountRequest
 		return CountRequest(self.request_adapter, self.path_parameters)
+
+	def filter_by_current_user(self,
+		on: str,
+	) -> FilterByCurrentUserRequest:
+		if on is None:
+			raise TypeError("on cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["on"] =  on
+
+		from .filter_by_current_user import FilterByCurrentUserRequest
+		return FilterByCurrentUserRequest(self.request_adapter, path_parameters)
 

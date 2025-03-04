@@ -1,6 +1,7 @@
 # Auto-generated client
 
 from __future__ import annotations
+from kiota_abstractions.get_path_parameters import get_path_parameters
 from kiota_abstractions.method import Method
 from kiota_abstractions.base_request_builder import BaseRequestBuilder
 from kiota_abstractions.base_request_configuration import RequestConfiguration
@@ -17,8 +18,8 @@ if TYPE_CHECKING:
 	from .set_reaction import SetReactionRequest
 	from .hosted_contents import HostedContentsRequest
 	from ........request_adapter import HttpxRequestAdapter
-from iograph_models.models.chat_message import ChatMessage
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.models.chat_message import ChatMessage
 
 
 class ByChatMessageIdRequest(BaseRequestBuilder):
@@ -113,39 +114,99 @@ class ByChatMessageIdRequest(BaseRequestBuilder):
 			raise TypeError("raw_url cannot be None.")
 		return ByChatMessageIdRequest(self.request_adapter, self.path_parameters)
 
-	@property
 	def hosted_contents(self,
+		group_id: str,
+		chatMessage_id: str,
 	) -> HostedContentsRequest:
+		if group_id is None:
+			raise TypeError("group_id cannot be null.")
+		if chatMessage_id is None:
+			raise TypeError("chatMessage_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["group%2Did"] =  group_id
+		path_parameters["chatMessage%2Did"] =  chatMessage_id
+
 		from .hosted_contents import HostedContentsRequest
-		return HostedContentsRequest(self.request_adapter, self.path_parameters)
+		return HostedContentsRequest(self.request_adapter, path_parameters)
 
-	@property
 	def set_reaction(self,
+		group_id: str,
+		chatMessage_id: str,
 	) -> SetReactionRequest:
+		if group_id is None:
+			raise TypeError("group_id cannot be null.")
+		if chatMessage_id is None:
+			raise TypeError("chatMessage_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["group%2Did"] =  group_id
+		path_parameters["chatMessage%2Did"] =  chatMessage_id
+
 		from .set_reaction import SetReactionRequest
-		return SetReactionRequest(self.request_adapter, self.path_parameters)
+		return SetReactionRequest(self.request_adapter, path_parameters)
 
-	@property
 	def soft_delete(self,
+		group_id: str,
+		chatMessage_id: str,
 	) -> SoftDeleteRequest:
+		if group_id is None:
+			raise TypeError("group_id cannot be null.")
+		if chatMessage_id is None:
+			raise TypeError("chatMessage_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["group%2Did"] =  group_id
+		path_parameters["chatMessage%2Did"] =  chatMessage_id
+
 		from .soft_delete import SoftDeleteRequest
-		return SoftDeleteRequest(self.request_adapter, self.path_parameters)
+		return SoftDeleteRequest(self.request_adapter, path_parameters)
 
-	@property
 	def undo_soft_delete(self,
+		group_id: str,
+		chatMessage_id: str,
 	) -> UndoSoftDeleteRequest:
+		if group_id is None:
+			raise TypeError("group_id cannot be null.")
+		if chatMessage_id is None:
+			raise TypeError("chatMessage_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["group%2Did"] =  group_id
+		path_parameters["chatMessage%2Did"] =  chatMessage_id
+
 		from .undo_soft_delete import UndoSoftDeleteRequest
-		return UndoSoftDeleteRequest(self.request_adapter, self.path_parameters)
+		return UndoSoftDeleteRequest(self.request_adapter, path_parameters)
 
-	@property
 	def unset_reaction(self,
+		group_id: str,
+		chatMessage_id: str,
 	) -> UnsetReactionRequest:
-		from .unset_reaction import UnsetReactionRequest
-		return UnsetReactionRequest(self.request_adapter, self.path_parameters)
+		if group_id is None:
+			raise TypeError("group_id cannot be null.")
+		if chatMessage_id is None:
+			raise TypeError("chatMessage_id cannot be null.")
 
-	@property
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["group%2Did"] =  group_id
+		path_parameters["chatMessage%2Did"] =  chatMessage_id
+
+		from .unset_reaction import UnsetReactionRequest
+		return UnsetReactionRequest(self.request_adapter, path_parameters)
+
 	def replies(self,
+		group_id: str,
+		chatMessage_id: str,
 	) -> RepliesRequest:
+		if group_id is None:
+			raise TypeError("group_id cannot be null.")
+		if chatMessage_id is None:
+			raise TypeError("chatMessage_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["group%2Did"] =  group_id
+		path_parameters["chatMessage%2Did"] =  chatMessage_id
+
 		from .replies import RepliesRequest
-		return RepliesRequest(self.request_adapter, self.path_parameters)
+		return RepliesRequest(self.request_adapter, path_parameters)
 

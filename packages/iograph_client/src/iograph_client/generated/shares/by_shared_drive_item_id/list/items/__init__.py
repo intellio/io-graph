@@ -11,10 +11,11 @@ from typing import Union, Any, Optional
 from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:
+	from .delta import DeltaRequest
 	from .by_list_item_id import ByListItemIdRequest
 	from ......request_adapter import HttpxRequestAdapter
-from iograph_models.models.list_item_collection_response import ListItemCollectionResponse
 from iograph_models.models.list_item import ListItem
+from iograph_models.models.list_item_collection_response import ListItemCollectionResponse
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
 
 
@@ -106,4 +107,16 @@ class ItemsRequest(BaseRequestBuilder):
 
 		from .by_list_item_id import ByListItemIdRequest
 		return ByListItemIdRequest(self.request_adapter, path_parameters)
+
+	def delta(self,
+		sharedDriveItem_id: str,
+	) -> DeltaRequest:
+		if sharedDriveItem_id is None:
+			raise TypeError("sharedDriveItem_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["sharedDriveItem%2Did"] =  sharedDriveItem_id
+
+		from .delta import DeltaRequest
+		return DeltaRequest(self.request_adapter, path_parameters)
 

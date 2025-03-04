@@ -14,8 +14,8 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_post_id import ByPostIdRequest
 	from .......request_adapter import HttpxRequestAdapter
-from iograph_models.models.post_collection_response import PostCollectionResponse
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.models.post_collection_response import PostCollectionResponse
 
 
 class PostsRequest(BaseRequestBuilder):
@@ -27,10 +27,10 @@ class PostsRequest(BaseRequestBuilder):
 		request_configuration: Optional[RequestConfiguration[GetQueryParams]] = None,
 	) -> PostCollectionResponse:
 		"""
-		Get post
-		Get the properties and relationships of a post in a specified thread. You can specify both the parent 
-conversation and the thread, or, you can specify the thread without referencing the parent conversation. Since the post resource supports extensions, you can also use the GET operation to get custom properties and extension data in a post instance.
-		Find more info here: https://learn.microsoft.com/graph/api/post-get?view=graph-rest-1.0
+		List posts
+		Get the posts of the specified thread. You can specify both the parent conversation and the thread, or,
+you can specify the thread without referencing the parent conversation.
+		Find more info here: https://learn.microsoft.com/graph/api/conversationthread-list-posts?view=graph-rest-1.0
 		"""
 		tags = ['groups.conversationThread']
 
@@ -87,9 +87,19 @@ conversation and the thread, or, you can specify the thread without referencing 
 		from .by_post_id import ByPostIdRequest
 		return ByPostIdRequest(self.request_adapter, path_parameters)
 
-	@property
 	def count(self,
+		group_id: str,
+		conversationThread_id: str,
 	) -> CountRequest:
+		if group_id is None:
+			raise TypeError("group_id cannot be null.")
+		if conversationThread_id is None:
+			raise TypeError("conversationThread_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["group%2Did"] =  group_id
+		path_parameters["conversationThread%2Did"] =  conversationThread_id
+
 		from .count import CountRequest
-		return CountRequest(self.request_adapter, self.path_parameters)
+		return CountRequest(self.request_adapter, path_parameters)
 

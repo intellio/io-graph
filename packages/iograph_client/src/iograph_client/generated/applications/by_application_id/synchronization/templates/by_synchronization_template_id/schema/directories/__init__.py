@@ -112,9 +112,19 @@ class DirectoriesRequest(BaseRequestBuilder):
 		from .by_directory_definition_id import ByDirectoryDefinitionIdRequest
 		return ByDirectoryDefinitionIdRequest(self.request_adapter, path_parameters)
 
-	@property
 	def count(self,
+		application_id: str,
+		synchronizationTemplate_id: str,
 	) -> CountRequest:
+		if application_id is None:
+			raise TypeError("application_id cannot be null.")
+		if synchronizationTemplate_id is None:
+			raise TypeError("synchronizationTemplate_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["application%2Did"] =  application_id
+		path_parameters["synchronizationTemplate%2Did"] =  synchronizationTemplate_id
+
 		from .count import CountRequest
-		return CountRequest(self.request_adapter, self.path_parameters)
+		return CountRequest(self.request_adapter, path_parameters)
 

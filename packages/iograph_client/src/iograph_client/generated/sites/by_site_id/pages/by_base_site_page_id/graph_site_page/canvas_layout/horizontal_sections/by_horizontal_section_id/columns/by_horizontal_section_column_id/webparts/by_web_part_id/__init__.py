@@ -1,6 +1,7 @@
 # Auto-generated client
 
 from __future__ import annotations
+from kiota_abstractions.get_path_parameters import get_path_parameters
 from kiota_abstractions.method import Method
 from kiota_abstractions.base_request_builder import BaseRequestBuilder
 from kiota_abstractions.base_request_configuration import RequestConfiguration
@@ -108,9 +109,31 @@ class ByWebPartIdRequest(BaseRequestBuilder):
 			raise TypeError("raw_url cannot be None.")
 		return ByWebPartIdRequest(self.request_adapter, self.path_parameters)
 
-	@property
 	def get_position_of_web_part(self,
+		site_id: str,
+		baseSitePage_id: str,
+		horizontalSection_id: str,
+		horizontalSectionColumn_id: str,
+		webPart_id: str,
 	) -> GetPositionOfWebPartRequest:
+		if site_id is None:
+			raise TypeError("site_id cannot be null.")
+		if baseSitePage_id is None:
+			raise TypeError("baseSitePage_id cannot be null.")
+		if horizontalSection_id is None:
+			raise TypeError("horizontalSection_id cannot be null.")
+		if horizontalSectionColumn_id is None:
+			raise TypeError("horizontalSectionColumn_id cannot be null.")
+		if webPart_id is None:
+			raise TypeError("webPart_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["site%2Did"] =  site_id
+		path_parameters["baseSitePage%2Did"] =  baseSitePage_id
+		path_parameters["horizontalSection%2Did"] =  horizontalSection_id
+		path_parameters["horizontalSectionColumn%2Did"] =  horizontalSectionColumn_id
+		path_parameters["webPart%2Did"] =  webPart_id
+
 		from .get_position_of_web_part import GetPositionOfWebPartRequest
-		return GetPositionOfWebPartRequest(self.request_adapter, self.path_parameters)
+		return GetPositionOfWebPartRequest(self.request_adapter, path_parameters)
 

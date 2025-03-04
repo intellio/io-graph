@@ -1,6 +1,7 @@
 # Auto-generated client
 
 from __future__ import annotations
+from kiota_abstractions.get_path_parameters import get_path_parameters
 from kiota_abstractions.method import Method
 from kiota_abstractions.base_request_builder import BaseRequestBuilder
 from kiota_abstractions.base_request_configuration import RequestConfiguration
@@ -115,39 +116,75 @@ class ByAccessPackageAssignmentRequestIdRequest(BaseRequestBuilder):
 			raise TypeError("raw_url cannot be None.")
 		return ByAccessPackageAssignmentRequestIdRequest(self.request_adapter, self.path_parameters)
 
-	@property
 	def access_package(self,
+		accessPackageAssignmentRequest_id: str,
 	) -> AccessPackageRequest:
+		if accessPackageAssignmentRequest_id is None:
+			raise TypeError("accessPackageAssignmentRequest_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["accessPackageAssignmentRequest%2Did"] =  accessPackageAssignmentRequest_id
+
 		from .access_package import AccessPackageRequest
-		return AccessPackageRequest(self.request_adapter, self.path_parameters)
+		return AccessPackageRequest(self.request_adapter, path_parameters)
 
-	@property
 	def assignment(self,
+		accessPackageAssignmentRequest_id: str,
 	) -> AssignmentRequest:
+		if accessPackageAssignmentRequest_id is None:
+			raise TypeError("accessPackageAssignmentRequest_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["accessPackageAssignmentRequest%2Did"] =  accessPackageAssignmentRequest_id
+
 		from .assignment import AssignmentRequest
-		return AssignmentRequest(self.request_adapter, self.path_parameters)
+		return AssignmentRequest(self.request_adapter, path_parameters)
 
-	@property
 	def cancel(self,
+		accessPackageAssignmentRequest_id: str,
 	) -> CancelRequest:
+		if accessPackageAssignmentRequest_id is None:
+			raise TypeError("accessPackageAssignmentRequest_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["accessPackageAssignmentRequest%2Did"] =  accessPackageAssignmentRequest_id
+
 		from .cancel import CancelRequest
-		return CancelRequest(self.request_adapter, self.path_parameters)
+		return CancelRequest(self.request_adapter, path_parameters)
 
-	@property
 	def reprocess(self,
+		accessPackageAssignmentRequest_id: str,
 	) -> ReprocessRequest:
+		if accessPackageAssignmentRequest_id is None:
+			raise TypeError("accessPackageAssignmentRequest_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["accessPackageAssignmentRequest%2Did"] =  accessPackageAssignmentRequest_id
+
 		from .reprocess import ReprocessRequest
-		return ReprocessRequest(self.request_adapter, self.path_parameters)
+		return ReprocessRequest(self.request_adapter, path_parameters)
 
-	@property
 	def resume(self,
+		accessPackageAssignmentRequest_id: str,
 	) -> ResumeRequest:
-		from .resume import ResumeRequest
-		return ResumeRequest(self.request_adapter, self.path_parameters)
+		if accessPackageAssignmentRequest_id is None:
+			raise TypeError("accessPackageAssignmentRequest_id cannot be null.")
 
-	@property
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["accessPackageAssignmentRequest%2Did"] =  accessPackageAssignmentRequest_id
+
+		from .resume import ResumeRequest
+		return ResumeRequest(self.request_adapter, path_parameters)
+
 	def requestor(self,
+		accessPackageAssignmentRequest_id: str,
 	) -> RequestorRequest:
+		if accessPackageAssignmentRequest_id is None:
+			raise TypeError("accessPackageAssignmentRequest_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["accessPackageAssignmentRequest%2Did"] =  accessPackageAssignmentRequest_id
+
 		from .requestor import RequestorRequest
-		return RequestorRequest(self.request_adapter, self.path_parameters)
+		return RequestorRequest(self.request_adapter, path_parameters)
 

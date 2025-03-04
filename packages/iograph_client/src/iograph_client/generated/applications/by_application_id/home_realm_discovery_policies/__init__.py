@@ -81,9 +81,15 @@ class HomeRealmDiscoveryPoliciesRequest(BaseRequestBuilder):
 		from .by_home_realm_discovery_policy_id import ByHomeRealmDiscoveryPolicyIdRequest
 		return ByHomeRealmDiscoveryPolicyIdRequest(self.request_adapter, path_parameters)
 
-	@property
 	def count(self,
+		application_id: str,
 	) -> CountRequest:
+		if application_id is None:
+			raise TypeError("application_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["application%2Did"] =  application_id
+
 		from .count import CountRequest
-		return CountRequest(self.request_adapter, self.path_parameters)
+		return CountRequest(self.request_adapter, path_parameters)
 

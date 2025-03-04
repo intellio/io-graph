@@ -11,12 +11,13 @@ from typing import Union, Any, Optional
 from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:
+	from .delta import DeltaRequest
 	from .count import CountRequest
 	from .by_contact_id import ByContactIdRequest
 	from .........request_adapter import HttpxRequestAdapter
 from iograph_models.models.contact_collection_response import ContactCollectionResponse
-from iograph_models.models.contact import Contact
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.models.contact import Contact
 
 
 class ContactsRequest(BaseRequestBuilder):
@@ -116,9 +117,43 @@ class ContactsRequest(BaseRequestBuilder):
 		from .by_contact_id import ByContactIdRequest
 		return ByContactIdRequest(self.request_adapter, path_parameters)
 
-	@property
 	def count(self,
+		user_id: str,
+		contactFolder_id: str,
+		contactFolder_id1: str,
 	) -> CountRequest:
+		if user_id is None:
+			raise TypeError("user_id cannot be null.")
+		if contactFolder_id is None:
+			raise TypeError("contactFolder_id cannot be null.")
+		if contactFolder_id1 is None:
+			raise TypeError("contactFolder_id1 cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["user%2Did"] =  user_id
+		path_parameters["contactFolder%2Did"] =  contactFolder_id
+		path_parameters["contactFolder%2Did1"] =  contactFolder_id1
+
 		from .count import CountRequest
-		return CountRequest(self.request_adapter, self.path_parameters)
+		return CountRequest(self.request_adapter, path_parameters)
+
+	def delta(self,
+		user_id: str,
+		contactFolder_id: str,
+		contactFolder_id1: str,
+	) -> DeltaRequest:
+		if user_id is None:
+			raise TypeError("user_id cannot be null.")
+		if contactFolder_id is None:
+			raise TypeError("contactFolder_id cannot be null.")
+		if contactFolder_id1 is None:
+			raise TypeError("contactFolder_id1 cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["user%2Did"] =  user_id
+		path_parameters["contactFolder%2Did"] =  contactFolder_id
+		path_parameters["contactFolder%2Did1"] =  contactFolder_id1
+
+		from .delta import DeltaRequest
+		return DeltaRequest(self.request_adapter, path_parameters)
 

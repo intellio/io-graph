@@ -14,9 +14,9 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_managed_device_mobile_app_configuration_assignment_id import ByManagedDeviceMobileAppConfigurationAssignmentIdRequest
 	from ......request_adapter import HttpxRequestAdapter
-from iograph_models.models.managed_device_mobile_app_configuration_assignment_collection_response import ManagedDeviceMobileAppConfigurationAssignmentCollectionResponse
 from iograph_models.models.managed_device_mobile_app_configuration_assignment import ManagedDeviceMobileAppConfigurationAssignment
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.models.managed_device_mobile_app_configuration_assignment_collection_response import ManagedDeviceMobileAppConfigurationAssignmentCollectionResponse
 
 
 class AssignmentsRequest(BaseRequestBuilder):
@@ -110,9 +110,15 @@ class AssignmentsRequest(BaseRequestBuilder):
 		from .by_managed_device_mobile_app_configuration_assignment_id import ByManagedDeviceMobileAppConfigurationAssignmentIdRequest
 		return ByManagedDeviceMobileAppConfigurationAssignmentIdRequest(self.request_adapter, path_parameters)
 
-	@property
 	def count(self,
+		managedDeviceMobileAppConfiguration_id: str,
 	) -> CountRequest:
+		if managedDeviceMobileAppConfiguration_id is None:
+			raise TypeError("managedDeviceMobileAppConfiguration_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["managedDeviceMobileAppConfiguration%2Did"] =  managedDeviceMobileAppConfiguration_id
+
 		from .count import CountRequest
-		return CountRequest(self.request_adapter, self.path_parameters)
+		return CountRequest(self.request_adapter, path_parameters)
 

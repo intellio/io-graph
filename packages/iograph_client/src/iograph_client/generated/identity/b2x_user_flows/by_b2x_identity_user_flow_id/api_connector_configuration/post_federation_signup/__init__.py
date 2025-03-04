@@ -1,6 +1,7 @@
 # Auto-generated client
 
 from __future__ import annotations
+from kiota_abstractions.get_path_parameters import get_path_parameters
 from kiota_abstractions.method import Method
 from kiota_abstractions.base_request_builder import BaseRequestBuilder
 from kiota_abstractions.base_request_configuration import RequestConfiguration
@@ -13,8 +14,8 @@ if TYPE_CHECKING:
 	from .upload_client_certificate import UploadClientCertificateRequest
 	from .ref import RefRequest
 	from .......request_adapter import HttpxRequestAdapter
-from iograph_models.models.identity_api_connector import IdentityApiConnector
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.models.identity_api_connector import IdentityApiConnector
 
 
 class PostFederationSignupRequest(BaseRequestBuilder):
@@ -109,15 +110,27 @@ class PostFederationSignupRequest(BaseRequestBuilder):
 			raise TypeError("raw_url cannot be None.")
 		return PostFederationSignupRequest(self.request_adapter, self.path_parameters)
 
-	@property
 	def ref(self,
+		b2xIdentityUserFlow_id: str,
 	) -> RefRequest:
-		from .ref import RefRequest
-		return RefRequest(self.request_adapter, self.path_parameters)
+		if b2xIdentityUserFlow_id is None:
+			raise TypeError("b2xIdentityUserFlow_id cannot be null.")
 
-	@property
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["b2xIdentityUserFlow%2Did"] =  b2xIdentityUserFlow_id
+
+		from .ref import RefRequest
+		return RefRequest(self.request_adapter, path_parameters)
+
 	def upload_client_certificate(self,
+		b2xIdentityUserFlow_id: str,
 	) -> UploadClientCertificateRequest:
+		if b2xIdentityUserFlow_id is None:
+			raise TypeError("b2xIdentityUserFlow_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["b2xIdentityUserFlow%2Did"] =  b2xIdentityUserFlow_id
+
 		from .upload_client_certificate import UploadClientCertificateRequest
-		return UploadClientCertificateRequest(self.request_adapter, self.path_parameters)
+		return UploadClientCertificateRequest(self.request_adapter, path_parameters)
 

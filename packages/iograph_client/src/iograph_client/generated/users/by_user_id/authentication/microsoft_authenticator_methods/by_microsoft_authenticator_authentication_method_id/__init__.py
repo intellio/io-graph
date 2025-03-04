@@ -1,6 +1,7 @@
 # Auto-generated client
 
 from __future__ import annotations
+from kiota_abstractions.get_path_parameters import get_path_parameters
 from kiota_abstractions.method import Method
 from kiota_abstractions.base_request_builder import BaseRequestBuilder
 from kiota_abstractions.base_request_configuration import RequestConfiguration
@@ -84,9 +85,19 @@ class ByMicrosoftAuthenticatorAuthenticationMethodIdRequest(BaseRequestBuilder):
 			raise TypeError("raw_url cannot be None.")
 		return ByMicrosoftAuthenticatorAuthenticationMethodIdRequest(self.request_adapter, self.path_parameters)
 
-	@property
 	def device(self,
+		user_id: str,
+		microsoftAuthenticatorAuthenticationMethod_id: str,
 	) -> DeviceRequest:
+		if user_id is None:
+			raise TypeError("user_id cannot be null.")
+		if microsoftAuthenticatorAuthenticationMethod_id is None:
+			raise TypeError("microsoftAuthenticatorAuthenticationMethod_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["user%2Did"] =  user_id
+		path_parameters["microsoftAuthenticatorAuthenticationMethod%2Did"] =  microsoftAuthenticatorAuthenticationMethod_id
+
 		from .device import DeviceRequest
-		return DeviceRequest(self.request_adapter, self.path_parameters)
+		return DeviceRequest(self.request_adapter, path_parameters)
 

@@ -1,6 +1,7 @@
 # Auto-generated client
 
 from __future__ import annotations
+from kiota_abstractions.get_path_parameters import get_path_parameters
 from kiota_abstractions.method import Method
 from kiota_abstractions.base_request_builder import BaseRequestBuilder
 from kiota_abstractions.base_request_configuration import RequestConfiguration
@@ -10,6 +11,8 @@ from typing import Union, Any, Optional
 from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:
+	from .supported_time_zones import SupportedTimeZonesRequest
+	from .supported_languages import SupportedLanguagesRequest
 	from .master_categories import MasterCategoriesRequest
 	from .....request_adapter import HttpxRequestAdapter
 from iograph_models.models.outlook_user import OutlookUser
@@ -57,9 +60,39 @@ class OutlookRequest(BaseRequestBuilder):
 			raise TypeError("raw_url cannot be None.")
 		return OutlookRequest(self.request_adapter, self.path_parameters)
 
-	@property
 	def master_categories(self,
+		user_id: str,
 	) -> MasterCategoriesRequest:
+		if user_id is None:
+			raise TypeError("user_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["user%2Did"] =  user_id
+
 		from .master_categories import MasterCategoriesRequest
-		return MasterCategoriesRequest(self.request_adapter, self.path_parameters)
+		return MasterCategoriesRequest(self.request_adapter, path_parameters)
+
+	def supported_languages(self,
+		user_id: str,
+	) -> SupportedLanguagesRequest:
+		if user_id is None:
+			raise TypeError("user_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["user%2Did"] =  user_id
+
+		from .supported_languages import SupportedLanguagesRequest
+		return SupportedLanguagesRequest(self.request_adapter, path_parameters)
+
+	def supported_time_zones(self,
+		user_id: str,
+	) -> SupportedTimeZonesRequest:
+		if user_id is None:
+			raise TypeError("user_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["user%2Did"] =  user_id
+
+		from .supported_time_zones import SupportedTimeZonesRequest
+		return SupportedTimeZonesRequest(self.request_adapter, path_parameters)
 

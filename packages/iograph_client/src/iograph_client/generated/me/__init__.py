@@ -1,6 +1,7 @@
 # Auto-generated client
 
 from __future__ import annotations
+from kiota_abstractions.get_path_parameters import get_path_parameters
 from kiota_abstractions.method import Method
 from kiota_abstractions.base_request_builder import BaseRequestBuilder
 from kiota_abstractions.base_request_configuration import RequestConfiguration
@@ -39,11 +40,16 @@ if TYPE_CHECKING:
 	from .restore import RestoreRequest
 	from .reprocess_license_assignment import ReprocessLicenseAssignmentRequest
 	from .remove_all_devices_from_management import RemoveAllDevicesFromManagementRequest
+	from .reminder_view import ReminderViewRequest
 	from .get_member_objects import GetMemberObjectsRequest
 	from .get_member_groups import GetMemberGroupsRequest
+	from .get_managed_devices_with_app_failures import GetManagedDevicesWithAppFailuresRequest
+	from .get_managed_app_policies import GetManagedAppPoliciesRequest
+	from .get_managed_app_diagnostic_statuses import GetManagedAppDiagnosticStatusesRequest
 	from .get_mail_tips import GetMailTipsRequest
 	from .find_meeting_times import FindMeetingTimesRequest
 	from .export_personal_data import ExportPersonalDataRequest
+	from .export_device_and_app_management_data import ExportDeviceAndAppManagementDataRequest
 	from .check_member_objects import CheckMemberObjectsRequest
 	from .check_member_groups import CheckMemberGroupsRequest
 	from .change_password import ChangePasswordRequest
@@ -94,9 +100,9 @@ class MeRequest(BaseRequestBuilder):
 		request_configuration: Optional[RequestConfiguration[GetQueryParams]] = None,
 	) -> User:
 		"""
-		Get a user
-		Retrieve the properties and relationships of user object. This operation returns by default only a subset of the more commonly used properties for each user. These default properties are noted in the Properties section. To get properties that are not returned by default, do a GET operation for the user and specify the properties in a $select OData query option. Because the user resource supports extensions, you can also use the GET operation to get custom properties and extension data in a user instance. Customers through Microsoft Entra ID for customers can also use this API operation to retrieve their details.
-		Find more info here: https://learn.microsoft.com/graph/api/user-get?view=graph-rest-1.0
+		List manager
+		Returns the user or organizational contact assigned as the user's manager. Optionally, you can expand the manager's chain up to the root node.
+		Find more info here: https://learn.microsoft.com/graph/api/user-list-manager?view=graph-rest-1.0
 		"""
 		tags = ['me.user']
 		header_parameters = [{'name': 'ConsistencyLevel', 'in': 'header', 'description': 'Indicates the requested consistency level. Documentation URL: https://docs.microsoft.com/graph/aad-advanced-queries', 'schema': {'type': 'string'}, 'examples': {'example-1': {'description': "$search and $count queries require the client to set the ConsistencyLevel HTTP header to 'eventual'.", 'value': 'eventual'}}}]
@@ -372,6 +378,12 @@ class MeRequest(BaseRequestBuilder):
 		return CheckMemberObjectsRequest(self.request_adapter, self.path_parameters)
 
 	@property
+	def export_device_and_app_management_data(self,
+	) -> ExportDeviceAndAppManagementDataRequest:
+		from .export_device_and_app_management_data import ExportDeviceAndAppManagementDataRequest
+		return ExportDeviceAndAppManagementDataRequest(self.request_adapter, self.path_parameters)
+
+	@property
 	def export_personal_data(self,
 	) -> ExportPersonalDataRequest:
 		from .export_personal_data import ExportPersonalDataRequest
@@ -390,6 +402,24 @@ class MeRequest(BaseRequestBuilder):
 		return GetMailTipsRequest(self.request_adapter, self.path_parameters)
 
 	@property
+	def get_managed_app_diagnostic_statuses(self,
+	) -> GetManagedAppDiagnosticStatusesRequest:
+		from .get_managed_app_diagnostic_statuses import GetManagedAppDiagnosticStatusesRequest
+		return GetManagedAppDiagnosticStatusesRequest(self.request_adapter, self.path_parameters)
+
+	@property
+	def get_managed_app_policies(self,
+	) -> GetManagedAppPoliciesRequest:
+		from .get_managed_app_policies import GetManagedAppPoliciesRequest
+		return GetManagedAppPoliciesRequest(self.request_adapter, self.path_parameters)
+
+	@property
+	def get_managed_devices_with_app_failures(self,
+	) -> GetManagedDevicesWithAppFailuresRequest:
+		from .get_managed_devices_with_app_failures import GetManagedDevicesWithAppFailuresRequest
+		return GetManagedDevicesWithAppFailuresRequest(self.request_adapter, self.path_parameters)
+
+	@property
 	def get_member_groups(self,
 	) -> GetMemberGroupsRequest:
 		from .get_member_groups import GetMemberGroupsRequest
@@ -400,6 +430,22 @@ class MeRequest(BaseRequestBuilder):
 	) -> GetMemberObjectsRequest:
 		from .get_member_objects import GetMemberObjectsRequest
 		return GetMemberObjectsRequest(self.request_adapter, self.path_parameters)
+
+	def reminder_view(self,
+		StartDateTime: str,
+		EndDateTime: str,
+	) -> ReminderViewRequest:
+		if StartDateTime is None:
+			raise TypeError("StartDateTime cannot be null.")
+		if EndDateTime is None:
+			raise TypeError("EndDateTime cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["StartDateTime"] =  StartDateTime
+		path_parameters["EndDateTime"] =  EndDateTime
+
+		from .reminder_view import ReminderViewRequest
+		return ReminderViewRequest(self.request_adapter, path_parameters)
 
 	@property
 	def remove_all_devices_from_management(self,

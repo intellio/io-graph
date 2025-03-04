@@ -15,8 +15,8 @@ if TYPE_CHECKING:
 	from .by_conversation_thread_id import ByConversationThreadIdRequest
 	from .......request_adapter import HttpxRequestAdapter
 from iograph_models.models.conversation_thread_collection_response import ConversationThreadCollectionResponse
-from iograph_models.models.conversation_thread import ConversationThread
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.models.conversation_thread import ConversationThread
 
 
 class ThreadsRequest(BaseRequestBuilder):
@@ -115,9 +115,19 @@ to that thread. Or, if you get the post ID, you can also reply to that post in t
 		from .by_conversation_thread_id import ByConversationThreadIdRequest
 		return ByConversationThreadIdRequest(self.request_adapter, path_parameters)
 
-	@property
 	def count(self,
+		group_id: str,
+		conversation_id: str,
 	) -> CountRequest:
+		if group_id is None:
+			raise TypeError("group_id cannot be null.")
+		if conversation_id is None:
+			raise TypeError("conversation_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["group%2Did"] =  group_id
+		path_parameters["conversation%2Did"] =  conversation_id
+
 		from .count import CountRequest
-		return CountRequest(self.request_adapter, self.path_parameters)
+		return CountRequest(self.request_adapter, path_parameters)
 

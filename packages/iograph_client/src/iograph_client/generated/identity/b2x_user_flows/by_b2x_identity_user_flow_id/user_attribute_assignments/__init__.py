@@ -12,12 +12,13 @@ from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:
 	from .set_order import SetOrderRequest
+	from .get_order import GetOrderRequest
 	from .count import CountRequest
 	from .by_identity_user_flow_attribute_assignment_id import ByIdentityUserFlowAttributeAssignmentIdRequest
 	from ......request_adapter import HttpxRequestAdapter
-from iograph_models.models.identity_user_flow_attribute_assignment_collection_response import IdentityUserFlowAttributeAssignmentCollectionResponse
-from iograph_models.models.identity_user_flow_attribute_assignment import IdentityUserFlowAttributeAssignment
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.models.identity_user_flow_attribute_assignment import IdentityUserFlowAttributeAssignment
+from iograph_models.models.identity_user_flow_attribute_assignment_collection_response import IdentityUserFlowAttributeAssignmentCollectionResponse
 
 
 class UserAttributeAssignmentsRequest(BaseRequestBuilder):
@@ -111,15 +112,39 @@ class UserAttributeAssignmentsRequest(BaseRequestBuilder):
 		from .by_identity_user_flow_attribute_assignment_id import ByIdentityUserFlowAttributeAssignmentIdRequest
 		return ByIdentityUserFlowAttributeAssignmentIdRequest(self.request_adapter, path_parameters)
 
-	@property
 	def count(self,
+		b2xIdentityUserFlow_id: str,
 	) -> CountRequest:
-		from .count import CountRequest
-		return CountRequest(self.request_adapter, self.path_parameters)
+		if b2xIdentityUserFlow_id is None:
+			raise TypeError("b2xIdentityUserFlow_id cannot be null.")
 
-	@property
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["b2xIdentityUserFlow%2Did"] =  b2xIdentityUserFlow_id
+
+		from .count import CountRequest
+		return CountRequest(self.request_adapter, path_parameters)
+
+	def get_order(self,
+		b2xIdentityUserFlow_id: str,
+	) -> GetOrderRequest:
+		if b2xIdentityUserFlow_id is None:
+			raise TypeError("b2xIdentityUserFlow_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["b2xIdentityUserFlow%2Did"] =  b2xIdentityUserFlow_id
+
+		from .get_order import GetOrderRequest
+		return GetOrderRequest(self.request_adapter, path_parameters)
+
 	def set_order(self,
+		b2xIdentityUserFlow_id: str,
 	) -> SetOrderRequest:
+		if b2xIdentityUserFlow_id is None:
+			raise TypeError("b2xIdentityUserFlow_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["b2xIdentityUserFlow%2Did"] =  b2xIdentityUserFlow_id
+
 		from .set_order import SetOrderRequest
-		return SetOrderRequest(self.request_adapter, self.path_parameters)
+		return SetOrderRequest(self.request_adapter, path_parameters)
 

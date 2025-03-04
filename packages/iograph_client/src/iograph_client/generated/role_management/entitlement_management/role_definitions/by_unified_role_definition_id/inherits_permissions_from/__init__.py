@@ -14,8 +14,8 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_unified_role_definition_id1 import ByUnifiedRoleDefinitionId1Request
 	from .......request_adapter import HttpxRequestAdapter
-from iograph_models.models.unified_role_definition import UnifiedRoleDefinition
 from iograph_models.models.unified_role_definition_collection_response import UnifiedRoleDefinitionCollectionResponse
+from iograph_models.models.unified_role_definition import UnifiedRoleDefinition
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
 
 
@@ -108,9 +108,15 @@ class InheritsPermissionsFromRequest(BaseRequestBuilder):
 		from .by_unified_role_definition_id1 import ByUnifiedRoleDefinitionId1Request
 		return ByUnifiedRoleDefinitionId1Request(self.request_adapter, path_parameters)
 
-	@property
 	def count(self,
+		unifiedRoleDefinition_id: str,
 	) -> CountRequest:
+		if unifiedRoleDefinition_id is None:
+			raise TypeError("unifiedRoleDefinition_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["unifiedRoleDefinition%2Did"] =  unifiedRoleDefinition_id
+
 		from .count import CountRequest
-		return CountRequest(self.request_adapter, self.path_parameters)
+		return CountRequest(self.request_adapter, path_parameters)
 

@@ -11,8 +11,8 @@ from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:
 	from .......request_adapter import HttpxRequestAdapter
-from iograph_models.models.invite_post_request import InvitePostRequest
 from iograph_models.models.invite_participants_operation import InviteParticipantsOperation
+from iograph_models.models.invite_post_request import InvitePostRequest
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
 
 
@@ -27,8 +27,8 @@ class InviteRequest(BaseRequestBuilder):
 	) -> InviteParticipantsOperation:
 		"""
 		Invoke action invite
-		Invite participants to the active call. For more information about how to handle operations, see commsOperation.
-		Find more info here: https://learn.microsoft.com/graph/api/participant-invite?view=graph-rest-1.0
+		Delete a specific participant in a call. In some situations, it is appropriate for an application to remove a participant from an active call. This action can be done before or after the participant answers the call. When an active caller is removed, they are immediately dropped from the call with no pre- or post-removal notification. When an invited participant is removed, any outstanding add participant request is canceled. 
+		Find more info here: https://learn.microsoft.com/graph/api/participant-delete?view=graph-rest-1.0
 		"""
 		tags = ['communications.call']
 

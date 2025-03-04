@@ -1,6 +1,7 @@
 # Auto-generated client
 
 from __future__ import annotations
+from kiota_abstractions.get_path_parameters import get_path_parameters
 from kiota_abstractions.method import Method
 from kiota_abstractions.base_request_builder import BaseRequestBuilder
 from kiota_abstractions.base_request_configuration import RequestConfiguration
@@ -16,8 +17,8 @@ if TYPE_CHECKING:
 	from .reboot import RebootRequest
 	from .end_grace_period import EndGracePeriodRequest
 	from ......request_adapter import HttpxRequestAdapter
-from iograph_models.models.cloud_p_c import CloudPC
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.models.cloud_p_c import CloudPC
 
 
 class ByCloudPCIdRequest(BaseRequestBuilder):
@@ -113,33 +114,63 @@ class ByCloudPCIdRequest(BaseRequestBuilder):
 			raise TypeError("raw_url cannot be None.")
 		return ByCloudPCIdRequest(self.request_adapter, self.path_parameters)
 
-	@property
 	def end_grace_period(self,
+		cloudPC_id: str,
 	) -> EndGracePeriodRequest:
+		if cloudPC_id is None:
+			raise TypeError("cloudPC_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["cloudPC%2Did"] =  cloudPC_id
+
 		from .end_grace_period import EndGracePeriodRequest
-		return EndGracePeriodRequest(self.request_adapter, self.path_parameters)
+		return EndGracePeriodRequest(self.request_adapter, path_parameters)
 
-	@property
 	def reboot(self,
+		cloudPC_id: str,
 	) -> RebootRequest:
+		if cloudPC_id is None:
+			raise TypeError("cloudPC_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["cloudPC%2Did"] =  cloudPC_id
+
 		from .reboot import RebootRequest
-		return RebootRequest(self.request_adapter, self.path_parameters)
+		return RebootRequest(self.request_adapter, path_parameters)
 
-	@property
 	def rename(self,
+		cloudPC_id: str,
 	) -> RenameRequest:
+		if cloudPC_id is None:
+			raise TypeError("cloudPC_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["cloudPC%2Did"] =  cloudPC_id
+
 		from .rename import RenameRequest
-		return RenameRequest(self.request_adapter, self.path_parameters)
+		return RenameRequest(self.request_adapter, path_parameters)
 
-	@property
 	def restore(self,
+		cloudPC_id: str,
 	) -> RestoreRequest:
-		from .restore import RestoreRequest
-		return RestoreRequest(self.request_adapter, self.path_parameters)
+		if cloudPC_id is None:
+			raise TypeError("cloudPC_id cannot be null.")
 
-	@property
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["cloudPC%2Did"] =  cloudPC_id
+
+		from .restore import RestoreRequest
+		return RestoreRequest(self.request_adapter, path_parameters)
+
 	def troubleshoot(self,
+		cloudPC_id: str,
 	) -> TroubleshootRequest:
+		if cloudPC_id is None:
+			raise TypeError("cloudPC_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["cloudPC%2Did"] =  cloudPC_id
+
 		from .troubleshoot import TroubleshootRequest
-		return TroubleshootRequest(self.request_adapter, self.path_parameters)
+		return TroubleshootRequest(self.request_adapter, path_parameters)
 

@@ -1,6 +1,7 @@
 # Auto-generated client
 
 from __future__ import annotations
+from kiota_abstractions.get_path_parameters import get_path_parameters
 from kiota_abstractions.method import Method
 from kiota_abstractions.base_request_builder import BaseRequestBuilder
 from kiota_abstractions.base_request_configuration import RequestConfiguration
@@ -18,8 +19,8 @@ if TYPE_CHECKING:
 	from .banner_logo import BannerLogoRequest
 	from .background_image import BackgroundImageRequest
 	from .......request_adapter import HttpxRequestAdapter
-from iograph_models.models.organizational_branding_localization import OrganizationalBrandingLocalization
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.models.organizational_branding_localization import OrganizationalBrandingLocalization
 
 
 class ByOrganizationalBrandingLocalizationIdRequest(BaseRequestBuilder):
@@ -117,45 +118,115 @@ class ByOrganizationalBrandingLocalizationIdRequest(BaseRequestBuilder):
 			raise TypeError("raw_url cannot be None.")
 		return ByOrganizationalBrandingLocalizationIdRequest(self.request_adapter, self.path_parameters)
 
-	@property
 	def background_image(self,
+		organization_id: str,
+		organizationalBrandingLocalization_id: str,
 	) -> BackgroundImageRequest:
+		if organization_id is None:
+			raise TypeError("organization_id cannot be null.")
+		if organizationalBrandingLocalization_id is None:
+			raise TypeError("organizationalBrandingLocalization_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["organization%2Did"] =  organization_id
+		path_parameters["organizationalBrandingLocalization%2Did"] =  organizationalBrandingLocalization_id
+
 		from .background_image import BackgroundImageRequest
-		return BackgroundImageRequest(self.request_adapter, self.path_parameters)
+		return BackgroundImageRequest(self.request_adapter, path_parameters)
 
-	@property
 	def banner_logo(self,
+		organization_id: str,
+		organizationalBrandingLocalization_id: str,
 	) -> BannerLogoRequest:
+		if organization_id is None:
+			raise TypeError("organization_id cannot be null.")
+		if organizationalBrandingLocalization_id is None:
+			raise TypeError("organizationalBrandingLocalization_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["organization%2Did"] =  organization_id
+		path_parameters["organizationalBrandingLocalization%2Did"] =  organizationalBrandingLocalization_id
+
 		from .banner_logo import BannerLogoRequest
-		return BannerLogoRequest(self.request_adapter, self.path_parameters)
+		return BannerLogoRequest(self.request_adapter, path_parameters)
 
-	@property
 	def custom_c_s_s(self,
+		organization_id: str,
+		organizationalBrandingLocalization_id: str,
 	) -> CustomCSSRequest:
+		if organization_id is None:
+			raise TypeError("organization_id cannot be null.")
+		if organizationalBrandingLocalization_id is None:
+			raise TypeError("organizationalBrandingLocalization_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["organization%2Did"] =  organization_id
+		path_parameters["organizationalBrandingLocalization%2Did"] =  organizationalBrandingLocalization_id
+
 		from .custom_c_s_s import CustomCSSRequest
-		return CustomCSSRequest(self.request_adapter, self.path_parameters)
+		return CustomCSSRequest(self.request_adapter, path_parameters)
 
-	@property
 	def favicon(self,
+		organization_id: str,
+		organizationalBrandingLocalization_id: str,
 	) -> FaviconRequest:
+		if organization_id is None:
+			raise TypeError("organization_id cannot be null.")
+		if organizationalBrandingLocalization_id is None:
+			raise TypeError("organizationalBrandingLocalization_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["organization%2Did"] =  organization_id
+		path_parameters["organizationalBrandingLocalization%2Did"] =  organizationalBrandingLocalization_id
+
 		from .favicon import FaviconRequest
-		return FaviconRequest(self.request_adapter, self.path_parameters)
+		return FaviconRequest(self.request_adapter, path_parameters)
 
-	@property
 	def header_logo(self,
+		organization_id: str,
+		organizationalBrandingLocalization_id: str,
 	) -> HeaderLogoRequest:
+		if organization_id is None:
+			raise TypeError("organization_id cannot be null.")
+		if organizationalBrandingLocalization_id is None:
+			raise TypeError("organizationalBrandingLocalization_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["organization%2Did"] =  organization_id
+		path_parameters["organizationalBrandingLocalization%2Did"] =  organizationalBrandingLocalization_id
+
 		from .header_logo import HeaderLogoRequest
-		return HeaderLogoRequest(self.request_adapter, self.path_parameters)
+		return HeaderLogoRequest(self.request_adapter, path_parameters)
 
-	@property
 	def square_logo(self,
+		organization_id: str,
+		organizationalBrandingLocalization_id: str,
 	) -> SquareLogoRequest:
-		from .square_logo import SquareLogoRequest
-		return SquareLogoRequest(self.request_adapter, self.path_parameters)
+		if organization_id is None:
+			raise TypeError("organization_id cannot be null.")
+		if organizationalBrandingLocalization_id is None:
+			raise TypeError("organizationalBrandingLocalization_id cannot be null.")
 
-	@property
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["organization%2Did"] =  organization_id
+		path_parameters["organizationalBrandingLocalization%2Did"] =  organizationalBrandingLocalization_id
+
+		from .square_logo import SquareLogoRequest
+		return SquareLogoRequest(self.request_adapter, path_parameters)
+
 	def square_logo_dark(self,
+		organization_id: str,
+		organizationalBrandingLocalization_id: str,
 	) -> SquareLogoDarkRequest:
+		if organization_id is None:
+			raise TypeError("organization_id cannot be null.")
+		if organizationalBrandingLocalization_id is None:
+			raise TypeError("organizationalBrandingLocalization_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["organization%2Did"] =  organization_id
+		path_parameters["organizationalBrandingLocalization%2Did"] =  organizationalBrandingLocalization_id
+
 		from .square_logo_dark import SquareLogoDarkRequest
-		return SquareLogoDarkRequest(self.request_adapter, self.path_parameters)
+		return SquareLogoDarkRequest(self.request_adapter, path_parameters)
 

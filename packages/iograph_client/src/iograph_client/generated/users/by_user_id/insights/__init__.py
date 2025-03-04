@@ -1,6 +1,7 @@
 # Auto-generated client
 
 from __future__ import annotations
+from kiota_abstractions.get_path_parameters import get_path_parameters
 from kiota_abstractions.method import Method
 from kiota_abstractions.base_request_builder import BaseRequestBuilder
 from kiota_abstractions.base_request_configuration import RequestConfiguration
@@ -110,21 +111,39 @@ class InsightsRequest(BaseRequestBuilder):
 			raise TypeError("raw_url cannot be None.")
 		return InsightsRequest(self.request_adapter, self.path_parameters)
 
-	@property
 	def shared(self,
+		user_id: str,
 	) -> SharedRequest:
+		if user_id is None:
+			raise TypeError("user_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["user%2Did"] =  user_id
+
 		from .shared import SharedRequest
-		return SharedRequest(self.request_adapter, self.path_parameters)
+		return SharedRequest(self.request_adapter, path_parameters)
 
-	@property
 	def trending(self,
+		user_id: str,
 	) -> TrendingRequest:
-		from .trending import TrendingRequest
-		return TrendingRequest(self.request_adapter, self.path_parameters)
+		if user_id is None:
+			raise TypeError("user_id cannot be null.")
 
-	@property
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["user%2Did"] =  user_id
+
+		from .trending import TrendingRequest
+		return TrendingRequest(self.request_adapter, path_parameters)
+
 	def used(self,
+		user_id: str,
 	) -> UsedRequest:
+		if user_id is None:
+			raise TypeError("user_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["user%2Did"] =  user_id
+
 		from .used import UsedRequest
-		return UsedRequest(self.request_adapter, self.path_parameters)
+		return UsedRequest(self.request_adapter, path_parameters)
 

@@ -1,6 +1,7 @@
 # Auto-generated client
 
 from __future__ import annotations
+from kiota_abstractions.get_path_parameters import get_path_parameters
 from kiota_abstractions.method import Method
 from kiota_abstractions.base_request_builder import BaseRequestBuilder
 from kiota_abstractions.base_request_configuration import RequestConfiguration
@@ -54,8 +55,8 @@ if TYPE_CHECKING:
 	from .app_role_assignments import AppRoleAssignmentsRequest
 	from .accepted_senders import AcceptedSendersRequest
 	from ....request_adapter import HttpxRequestAdapter
-from iograph_models.models.group import Group
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.models.group import Group
 
 
 class ByGroupIdRequest(BaseRequestBuilder):
@@ -154,261 +155,519 @@ You can create or update the following types of group: By default, this operatio
 			raise TypeError("raw_url cannot be None.")
 		return ByGroupIdRequest(self.request_adapter, self.path_parameters)
 
-	@property
 	def accepted_senders(self,
+		group_id: str,
 	) -> AcceptedSendersRequest:
+		if group_id is None:
+			raise TypeError("group_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["group%2Did"] =  group_id
+
 		from .accepted_senders import AcceptedSendersRequest
-		return AcceptedSendersRequest(self.request_adapter, self.path_parameters)
+		return AcceptedSendersRequest(self.request_adapter, path_parameters)
 
-	@property
 	def app_role_assignments(self,
+		group_id: str,
 	) -> AppRoleAssignmentsRequest:
+		if group_id is None:
+			raise TypeError("group_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["group%2Did"] =  group_id
+
 		from .app_role_assignments import AppRoleAssignmentsRequest
-		return AppRoleAssignmentsRequest(self.request_adapter, self.path_parameters)
+		return AppRoleAssignmentsRequest(self.request_adapter, path_parameters)
 
-	@property
 	def calendar(self,
+		group_id: str,
 	) -> CalendarRequest:
+		if group_id is None:
+			raise TypeError("group_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["group%2Did"] =  group_id
+
 		from .calendar import CalendarRequest
-		return CalendarRequest(self.request_adapter, self.path_parameters)
+		return CalendarRequest(self.request_adapter, path_parameters)
 
-	@property
 	def calendar_view(self,
+		group_id: str,
 	) -> CalendarViewRequest:
+		if group_id is None:
+			raise TypeError("group_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["group%2Did"] =  group_id
+
 		from .calendar_view import CalendarViewRequest
-		return CalendarViewRequest(self.request_adapter, self.path_parameters)
+		return CalendarViewRequest(self.request_adapter, path_parameters)
 
-	@property
 	def conversations(self,
+		group_id: str,
 	) -> ConversationsRequest:
+		if group_id is None:
+			raise TypeError("group_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["group%2Did"] =  group_id
+
 		from .conversations import ConversationsRequest
-		return ConversationsRequest(self.request_adapter, self.path_parameters)
+		return ConversationsRequest(self.request_adapter, path_parameters)
 
-	@property
 	def created_on_behalf_of(self,
+		group_id: str,
 	) -> CreatedOnBehalfOfRequest:
+		if group_id is None:
+			raise TypeError("group_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["group%2Did"] =  group_id
+
 		from .created_on_behalf_of import CreatedOnBehalfOfRequest
-		return CreatedOnBehalfOfRequest(self.request_adapter, self.path_parameters)
+		return CreatedOnBehalfOfRequest(self.request_adapter, path_parameters)
 
-	@property
 	def drive(self,
+		group_id: str,
 	) -> DriveRequest:
+		if group_id is None:
+			raise TypeError("group_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["group%2Did"] =  group_id
+
 		from .drive import DriveRequest
-		return DriveRequest(self.request_adapter, self.path_parameters)
+		return DriveRequest(self.request_adapter, path_parameters)
 
-	@property
 	def drives(self,
+		group_id: str,
 	) -> DrivesRequest:
+		if group_id is None:
+			raise TypeError("group_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["group%2Did"] =  group_id
+
 		from .drives import DrivesRequest
-		return DrivesRequest(self.request_adapter, self.path_parameters)
+		return DrivesRequest(self.request_adapter, path_parameters)
 
-	@property
 	def events(self,
+		group_id: str,
 	) -> EventsRequest:
+		if group_id is None:
+			raise TypeError("group_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["group%2Did"] =  group_id
+
 		from .events import EventsRequest
-		return EventsRequest(self.request_adapter, self.path_parameters)
+		return EventsRequest(self.request_adapter, path_parameters)
 
-	@property
 	def extensions(self,
+		group_id: str,
 	) -> ExtensionsRequest:
+		if group_id is None:
+			raise TypeError("group_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["group%2Did"] =  group_id
+
 		from .extensions import ExtensionsRequest
-		return ExtensionsRequest(self.request_adapter, self.path_parameters)
+		return ExtensionsRequest(self.request_adapter, path_parameters)
 
-	@property
 	def group_lifecycle_policies(self,
+		group_id: str,
 	) -> GroupLifecyclePoliciesRequest:
+		if group_id is None:
+			raise TypeError("group_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["group%2Did"] =  group_id
+
 		from .group_lifecycle_policies import GroupLifecyclePoliciesRequest
-		return GroupLifecyclePoliciesRequest(self.request_adapter, self.path_parameters)
+		return GroupLifecyclePoliciesRequest(self.request_adapter, path_parameters)
 
-	@property
 	def member_of(self,
+		group_id: str,
 	) -> MemberOfRequest:
+		if group_id is None:
+			raise TypeError("group_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["group%2Did"] =  group_id
+
 		from .member_of import MemberOfRequest
-		return MemberOfRequest(self.request_adapter, self.path_parameters)
+		return MemberOfRequest(self.request_adapter, path_parameters)
 
-	@property
 	def members(self,
+		group_id: str,
 	) -> MembersRequest:
+		if group_id is None:
+			raise TypeError("group_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["group%2Did"] =  group_id
+
 		from .members import MembersRequest
-		return MembersRequest(self.request_adapter, self.path_parameters)
+		return MembersRequest(self.request_adapter, path_parameters)
 
-	@property
 	def members_with_license_errors(self,
+		group_id: str,
 	) -> MembersWithLicenseErrorsRequest:
+		if group_id is None:
+			raise TypeError("group_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["group%2Did"] =  group_id
+
 		from .members_with_license_errors import MembersWithLicenseErrorsRequest
-		return MembersWithLicenseErrorsRequest(self.request_adapter, self.path_parameters)
+		return MembersWithLicenseErrorsRequest(self.request_adapter, path_parameters)
 
-	@property
 	def add_favorite(self,
+		group_id: str,
 	) -> AddFavoriteRequest:
+		if group_id is None:
+			raise TypeError("group_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["group%2Did"] =  group_id
+
 		from .add_favorite import AddFavoriteRequest
-		return AddFavoriteRequest(self.request_adapter, self.path_parameters)
+		return AddFavoriteRequest(self.request_adapter, path_parameters)
 
-	@property
 	def assign_license(self,
+		group_id: str,
 	) -> AssignLicenseRequest:
+		if group_id is None:
+			raise TypeError("group_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["group%2Did"] =  group_id
+
 		from .assign_license import AssignLicenseRequest
-		return AssignLicenseRequest(self.request_adapter, self.path_parameters)
+		return AssignLicenseRequest(self.request_adapter, path_parameters)
 
-	@property
 	def check_granted_permissions_for_app(self,
+		group_id: str,
 	) -> CheckGrantedPermissionsForAppRequest:
+		if group_id is None:
+			raise TypeError("group_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["group%2Did"] =  group_id
+
 		from .check_granted_permissions_for_app import CheckGrantedPermissionsForAppRequest
-		return CheckGrantedPermissionsForAppRequest(self.request_adapter, self.path_parameters)
+		return CheckGrantedPermissionsForAppRequest(self.request_adapter, path_parameters)
 
-	@property
 	def check_member_groups(self,
+		group_id: str,
 	) -> CheckMemberGroupsRequest:
+		if group_id is None:
+			raise TypeError("group_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["group%2Did"] =  group_id
+
 		from .check_member_groups import CheckMemberGroupsRequest
-		return CheckMemberGroupsRequest(self.request_adapter, self.path_parameters)
+		return CheckMemberGroupsRequest(self.request_adapter, path_parameters)
 
-	@property
 	def check_member_objects(self,
+		group_id: str,
 	) -> CheckMemberObjectsRequest:
+		if group_id is None:
+			raise TypeError("group_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["group%2Did"] =  group_id
+
 		from .check_member_objects import CheckMemberObjectsRequest
-		return CheckMemberObjectsRequest(self.request_adapter, self.path_parameters)
+		return CheckMemberObjectsRequest(self.request_adapter, path_parameters)
 
-	@property
 	def get_member_groups(self,
+		group_id: str,
 	) -> GetMemberGroupsRequest:
+		if group_id is None:
+			raise TypeError("group_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["group%2Did"] =  group_id
+
 		from .get_member_groups import GetMemberGroupsRequest
-		return GetMemberGroupsRequest(self.request_adapter, self.path_parameters)
+		return GetMemberGroupsRequest(self.request_adapter, path_parameters)
 
-	@property
 	def get_member_objects(self,
+		group_id: str,
 	) -> GetMemberObjectsRequest:
+		if group_id is None:
+			raise TypeError("group_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["group%2Did"] =  group_id
+
 		from .get_member_objects import GetMemberObjectsRequest
-		return GetMemberObjectsRequest(self.request_adapter, self.path_parameters)
+		return GetMemberObjectsRequest(self.request_adapter, path_parameters)
 
-	@property
 	def remove_favorite(self,
+		group_id: str,
 	) -> RemoveFavoriteRequest:
+		if group_id is None:
+			raise TypeError("group_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["group%2Did"] =  group_id
+
 		from .remove_favorite import RemoveFavoriteRequest
-		return RemoveFavoriteRequest(self.request_adapter, self.path_parameters)
+		return RemoveFavoriteRequest(self.request_adapter, path_parameters)
 
-	@property
 	def renew(self,
+		group_id: str,
 	) -> RenewRequest:
+		if group_id is None:
+			raise TypeError("group_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["group%2Did"] =  group_id
+
 		from .renew import RenewRequest
-		return RenewRequest(self.request_adapter, self.path_parameters)
+		return RenewRequest(self.request_adapter, path_parameters)
 
-	@property
 	def reset_unseen_count(self,
+		group_id: str,
 	) -> ResetUnseenCountRequest:
+		if group_id is None:
+			raise TypeError("group_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["group%2Did"] =  group_id
+
 		from .reset_unseen_count import ResetUnseenCountRequest
-		return ResetUnseenCountRequest(self.request_adapter, self.path_parameters)
+		return ResetUnseenCountRequest(self.request_adapter, path_parameters)
 
-	@property
 	def restore(self,
+		group_id: str,
 	) -> RestoreRequest:
+		if group_id is None:
+			raise TypeError("group_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["group%2Did"] =  group_id
+
 		from .restore import RestoreRequest
-		return RestoreRequest(self.request_adapter, self.path_parameters)
+		return RestoreRequest(self.request_adapter, path_parameters)
 
-	@property
 	def retry_service_provisioning(self,
+		group_id: str,
 	) -> RetryServiceProvisioningRequest:
+		if group_id is None:
+			raise TypeError("group_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["group%2Did"] =  group_id
+
 		from .retry_service_provisioning import RetryServiceProvisioningRequest
-		return RetryServiceProvisioningRequest(self.request_adapter, self.path_parameters)
+		return RetryServiceProvisioningRequest(self.request_adapter, path_parameters)
 
-	@property
 	def subscribe_by_mail(self,
+		group_id: str,
 	) -> SubscribeByMailRequest:
+		if group_id is None:
+			raise TypeError("group_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["group%2Did"] =  group_id
+
 		from .subscribe_by_mail import SubscribeByMailRequest
-		return SubscribeByMailRequest(self.request_adapter, self.path_parameters)
+		return SubscribeByMailRequest(self.request_adapter, path_parameters)
 
-	@property
 	def unsubscribe_by_mail(self,
+		group_id: str,
 	) -> UnsubscribeByMailRequest:
+		if group_id is None:
+			raise TypeError("group_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["group%2Did"] =  group_id
+
 		from .unsubscribe_by_mail import UnsubscribeByMailRequest
-		return UnsubscribeByMailRequest(self.request_adapter, self.path_parameters)
+		return UnsubscribeByMailRequest(self.request_adapter, path_parameters)
 
-	@property
 	def validate_properties(self,
+		group_id: str,
 	) -> ValidatePropertiesRequest:
+		if group_id is None:
+			raise TypeError("group_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["group%2Did"] =  group_id
+
 		from .validate_properties import ValidatePropertiesRequest
-		return ValidatePropertiesRequest(self.request_adapter, self.path_parameters)
+		return ValidatePropertiesRequest(self.request_adapter, path_parameters)
 
-	@property
 	def onenote(self,
+		group_id: str,
 	) -> OnenoteRequest:
+		if group_id is None:
+			raise TypeError("group_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["group%2Did"] =  group_id
+
 		from .onenote import OnenoteRequest
-		return OnenoteRequest(self.request_adapter, self.path_parameters)
+		return OnenoteRequest(self.request_adapter, path_parameters)
 
-	@property
 	def owners(self,
+		group_id: str,
 	) -> OwnersRequest:
+		if group_id is None:
+			raise TypeError("group_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["group%2Did"] =  group_id
+
 		from .owners import OwnersRequest
-		return OwnersRequest(self.request_adapter, self.path_parameters)
+		return OwnersRequest(self.request_adapter, path_parameters)
 
-	@property
 	def permission_grants(self,
+		group_id: str,
 	) -> PermissionGrantsRequest:
+		if group_id is None:
+			raise TypeError("group_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["group%2Did"] =  group_id
+
 		from .permission_grants import PermissionGrantsRequest
-		return PermissionGrantsRequest(self.request_adapter, self.path_parameters)
+		return PermissionGrantsRequest(self.request_adapter, path_parameters)
 
-	@property
 	def photo(self,
+		group_id: str,
 	) -> PhotoRequest:
+		if group_id is None:
+			raise TypeError("group_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["group%2Did"] =  group_id
+
 		from .photo import PhotoRequest
-		return PhotoRequest(self.request_adapter, self.path_parameters)
+		return PhotoRequest(self.request_adapter, path_parameters)
 
-	@property
 	def photos(self,
+		group_id: str,
 	) -> PhotosRequest:
+		if group_id is None:
+			raise TypeError("group_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["group%2Did"] =  group_id
+
 		from .photos import PhotosRequest
-		return PhotosRequest(self.request_adapter, self.path_parameters)
+		return PhotosRequest(self.request_adapter, path_parameters)
 
-	@property
 	def planner(self,
+		group_id: str,
 	) -> PlannerRequest:
+		if group_id is None:
+			raise TypeError("group_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["group%2Did"] =  group_id
+
 		from .planner import PlannerRequest
-		return PlannerRequest(self.request_adapter, self.path_parameters)
+		return PlannerRequest(self.request_adapter, path_parameters)
 
-	@property
 	def rejected_senders(self,
+		group_id: str,
 	) -> RejectedSendersRequest:
+		if group_id is None:
+			raise TypeError("group_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["group%2Did"] =  group_id
+
 		from .rejected_senders import RejectedSendersRequest
-		return RejectedSendersRequest(self.request_adapter, self.path_parameters)
+		return RejectedSendersRequest(self.request_adapter, path_parameters)
 
-	@property
 	def service_provisioning_errors(self,
+		group_id: str,
 	) -> ServiceProvisioningErrorsRequest:
+		if group_id is None:
+			raise TypeError("group_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["group%2Did"] =  group_id
+
 		from .service_provisioning_errors import ServiceProvisioningErrorsRequest
-		return ServiceProvisioningErrorsRequest(self.request_adapter, self.path_parameters)
+		return ServiceProvisioningErrorsRequest(self.request_adapter, path_parameters)
 
-	@property
 	def settings(self,
+		group_id: str,
 	) -> SettingsRequest:
+		if group_id is None:
+			raise TypeError("group_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["group%2Did"] =  group_id
+
 		from .settings import SettingsRequest
-		return SettingsRequest(self.request_adapter, self.path_parameters)
+		return SettingsRequest(self.request_adapter, path_parameters)
 
-	@property
 	def sites(self,
+		group_id: str,
 	) -> SitesRequest:
+		if group_id is None:
+			raise TypeError("group_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["group%2Did"] =  group_id
+
 		from .sites import SitesRequest
-		return SitesRequest(self.request_adapter, self.path_parameters)
+		return SitesRequest(self.request_adapter, path_parameters)
 
-	@property
 	def team(self,
+		group_id: str,
 	) -> TeamRequest:
+		if group_id is None:
+			raise TypeError("group_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["group%2Did"] =  group_id
+
 		from .team import TeamRequest
-		return TeamRequest(self.request_adapter, self.path_parameters)
+		return TeamRequest(self.request_adapter, path_parameters)
 
-	@property
 	def threads(self,
+		group_id: str,
 	) -> ThreadsRequest:
+		if group_id is None:
+			raise TypeError("group_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["group%2Did"] =  group_id
+
 		from .threads import ThreadsRequest
-		return ThreadsRequest(self.request_adapter, self.path_parameters)
+		return ThreadsRequest(self.request_adapter, path_parameters)
 
-	@property
 	def transitive_member_of(self,
+		group_id: str,
 	) -> TransitiveMemberOfRequest:
-		from .transitive_member_of import TransitiveMemberOfRequest
-		return TransitiveMemberOfRequest(self.request_adapter, self.path_parameters)
+		if group_id is None:
+			raise TypeError("group_id cannot be null.")
 
-	@property
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["group%2Did"] =  group_id
+
+		from .transitive_member_of import TransitiveMemberOfRequest
+		return TransitiveMemberOfRequest(self.request_adapter, path_parameters)
+
 	def transitive_members(self,
+		group_id: str,
 	) -> TransitiveMembersRequest:
+		if group_id is None:
+			raise TypeError("group_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["group%2Did"] =  group_id
+
 		from .transitive_members import TransitiveMembersRequest
-		return TransitiveMembersRequest(self.request_adapter, self.path_parameters)
+		return TransitiveMembersRequest(self.request_adapter, path_parameters)
 

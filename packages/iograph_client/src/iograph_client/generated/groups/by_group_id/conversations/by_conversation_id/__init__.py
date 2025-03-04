@@ -1,6 +1,7 @@
 # Auto-generated client
 
 from __future__ import annotations
+from kiota_abstractions.get_path_parameters import get_path_parameters
 from kiota_abstractions.method import Method
 from kiota_abstractions.base_request_builder import BaseRequestBuilder
 from kiota_abstractions.base_request_configuration import RequestConfiguration
@@ -51,7 +52,7 @@ class ByConversationIdRequest(BaseRequestBuilder):
 		"""
 		Delete conversation
 		Delete conversation.
-		Find more info here: https://learn.microsoft.com/graph/api/conversation-delete?view=graph-rest-1.0
+		Find more info here: https://learn.microsoft.com/graph/api/group-delete-conversation?view=graph-rest-1.0
 		"""
 		tags = ['groups.conversation']
 		header_parameters = [{'name': 'If-Match', 'in': 'header', 'description': 'ETag', 'schema': {'type': 'string'}}]
@@ -84,9 +85,19 @@ class ByConversationIdRequest(BaseRequestBuilder):
 			raise TypeError("raw_url cannot be None.")
 		return ByConversationIdRequest(self.request_adapter, self.path_parameters)
 
-	@property
 	def threads(self,
+		group_id: str,
+		conversation_id: str,
 	) -> ThreadsRequest:
+		if group_id is None:
+			raise TypeError("group_id cannot be null.")
+		if conversation_id is None:
+			raise TypeError("conversation_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["group%2Did"] =  group_id
+		path_parameters["conversation%2Did"] =  conversation_id
+
 		from .threads import ThreadsRequest
-		return ThreadsRequest(self.request_adapter, self.path_parameters)
+		return ThreadsRequest(self.request_adapter, path_parameters)
 

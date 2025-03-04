@@ -1,6 +1,7 @@
 # Auto-generated client
 
 from __future__ import annotations
+from kiota_abstractions.get_path_parameters import get_path_parameters
 from kiota_abstractions.method import Method
 from kiota_abstractions.base_request_builder import BaseRequestBuilder
 from kiota_abstractions.base_request_configuration import RequestConfiguration
@@ -13,8 +14,8 @@ if TYPE_CHECKING:
 	from .last_modified_by import LastModifiedByRequest
 	from .created_by import CreatedByRequest
 	from ......request_adapter import HttpxRequestAdapter
-from iograph_models.models.identity_governance_custom_task_extension import IdentityGovernanceCustomTaskExtension
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.models.identity_governance_custom_task_extension import IdentityGovernanceCustomTaskExtension
 
 
 class ByCustomTaskExtensionIdRequest(BaseRequestBuilder):
@@ -112,15 +113,27 @@ class ByCustomTaskExtensionIdRequest(BaseRequestBuilder):
 			raise TypeError("raw_url cannot be None.")
 		return ByCustomTaskExtensionIdRequest(self.request_adapter, self.path_parameters)
 
-	@property
 	def created_by(self,
+		customTaskExtension_id: str,
 	) -> CreatedByRequest:
-		from .created_by import CreatedByRequest
-		return CreatedByRequest(self.request_adapter, self.path_parameters)
+		if customTaskExtension_id is None:
+			raise TypeError("customTaskExtension_id cannot be null.")
 
-	@property
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["customTaskExtension%2Did"] =  customTaskExtension_id
+
+		from .created_by import CreatedByRequest
+		return CreatedByRequest(self.request_adapter, path_parameters)
+
 	def last_modified_by(self,
+		customTaskExtension_id: str,
 	) -> LastModifiedByRequest:
+		if customTaskExtension_id is None:
+			raise TypeError("customTaskExtension_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["customTaskExtension%2Did"] =  customTaskExtension_id
+
 		from .last_modified_by import LastModifiedByRequest
-		return LastModifiedByRequest(self.request_adapter, self.path_parameters)
+		return LastModifiedByRequest(self.request_adapter, path_parameters)
 

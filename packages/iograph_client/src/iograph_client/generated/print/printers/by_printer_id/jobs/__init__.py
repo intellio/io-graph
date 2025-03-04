@@ -14,9 +14,9 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_print_job_id import ByPrintJobIdRequest
 	from ......request_adapter import HttpxRequestAdapter
+from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.models.print_job import PrintJob
 from iograph_models.models.print_job_collection_response import PrintJobCollectionResponse
-from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
 
 
 class JobsRequest(BaseRequestBuilder):
@@ -110,9 +110,15 @@ class JobsRequest(BaseRequestBuilder):
 		from .by_print_job_id import ByPrintJobIdRequest
 		return ByPrintJobIdRequest(self.request_adapter, path_parameters)
 
-	@property
 	def count(self,
+		printer_id: str,
 	) -> CountRequest:
+		if printer_id is None:
+			raise TypeError("printer_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["printer%2Did"] =  printer_id
+
 		from .count import CountRequest
-		return CountRequest(self.request_adapter, self.path_parameters)
+		return CountRequest(self.request_adapter, path_parameters)
 

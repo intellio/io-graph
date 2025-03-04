@@ -1,6 +1,7 @@
 # Auto-generated client
 
 from __future__ import annotations
+from kiota_abstractions.get_path_parameters import get_path_parameters
 from kiota_abstractions.method import Method
 from kiota_abstractions.base_request_builder import BaseRequestBuilder
 from kiota_abstractions.base_request_configuration import RequestConfiguration
@@ -16,8 +17,8 @@ if TYPE_CHECKING:
 	from .copy_to_section_group import CopyToSectionGroupRequest
 	from .copy_to_notebook import CopyToNotebookRequest
 	from .........request_adapter import HttpxRequestAdapter
-from iograph_models.models.onenote_section import OnenoteSection
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.models.onenote_section import OnenoteSection
 
 
 class ByOnenoteSectionIdRequest(BaseRequestBuilder):
@@ -112,33 +113,103 @@ class ByOnenoteSectionIdRequest(BaseRequestBuilder):
 			raise TypeError("raw_url cannot be None.")
 		return ByOnenoteSectionIdRequest(self.request_adapter, self.path_parameters)
 
-	@property
 	def copy_to_notebook(self,
+		group_id: str,
+		site_id: str,
+		onenoteSection_id: str,
 	) -> CopyToNotebookRequest:
+		if group_id is None:
+			raise TypeError("group_id cannot be null.")
+		if site_id is None:
+			raise TypeError("site_id cannot be null.")
+		if onenoteSection_id is None:
+			raise TypeError("onenoteSection_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["group%2Did"] =  group_id
+		path_parameters["site%2Did"] =  site_id
+		path_parameters["onenoteSection%2Did"] =  onenoteSection_id
+
 		from .copy_to_notebook import CopyToNotebookRequest
-		return CopyToNotebookRequest(self.request_adapter, self.path_parameters)
+		return CopyToNotebookRequest(self.request_adapter, path_parameters)
 
-	@property
 	def copy_to_section_group(self,
+		group_id: str,
+		site_id: str,
+		onenoteSection_id: str,
 	) -> CopyToSectionGroupRequest:
+		if group_id is None:
+			raise TypeError("group_id cannot be null.")
+		if site_id is None:
+			raise TypeError("site_id cannot be null.")
+		if onenoteSection_id is None:
+			raise TypeError("onenoteSection_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["group%2Did"] =  group_id
+		path_parameters["site%2Did"] =  site_id
+		path_parameters["onenoteSection%2Did"] =  onenoteSection_id
+
 		from .copy_to_section_group import CopyToSectionGroupRequest
-		return CopyToSectionGroupRequest(self.request_adapter, self.path_parameters)
+		return CopyToSectionGroupRequest(self.request_adapter, path_parameters)
 
-	@property
 	def pages(self,
+		group_id: str,
+		site_id: str,
+		onenoteSection_id: str,
 	) -> PagesRequest:
+		if group_id is None:
+			raise TypeError("group_id cannot be null.")
+		if site_id is None:
+			raise TypeError("site_id cannot be null.")
+		if onenoteSection_id is None:
+			raise TypeError("onenoteSection_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["group%2Did"] =  group_id
+		path_parameters["site%2Did"] =  site_id
+		path_parameters["onenoteSection%2Did"] =  onenoteSection_id
+
 		from .pages import PagesRequest
-		return PagesRequest(self.request_adapter, self.path_parameters)
+		return PagesRequest(self.request_adapter, path_parameters)
 
-	@property
 	def parent_notebook(self,
+		group_id: str,
+		site_id: str,
+		onenoteSection_id: str,
 	) -> ParentNotebookRequest:
-		from .parent_notebook import ParentNotebookRequest
-		return ParentNotebookRequest(self.request_adapter, self.path_parameters)
+		if group_id is None:
+			raise TypeError("group_id cannot be null.")
+		if site_id is None:
+			raise TypeError("site_id cannot be null.")
+		if onenoteSection_id is None:
+			raise TypeError("onenoteSection_id cannot be null.")
 
-	@property
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["group%2Did"] =  group_id
+		path_parameters["site%2Did"] =  site_id
+		path_parameters["onenoteSection%2Did"] =  onenoteSection_id
+
+		from .parent_notebook import ParentNotebookRequest
+		return ParentNotebookRequest(self.request_adapter, path_parameters)
+
 	def parent_section_group(self,
+		group_id: str,
+		site_id: str,
+		onenoteSection_id: str,
 	) -> ParentSectionGroupRequest:
+		if group_id is None:
+			raise TypeError("group_id cannot be null.")
+		if site_id is None:
+			raise TypeError("site_id cannot be null.")
+		if onenoteSection_id is None:
+			raise TypeError("onenoteSection_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["group%2Did"] =  group_id
+		path_parameters["site%2Did"] =  site_id
+		path_parameters["onenoteSection%2Did"] =  onenoteSection_id
+
 		from .parent_section_group import ParentSectionGroupRequest
-		return ParentSectionGroupRequest(self.request_adapter, self.path_parameters)
+		return ParentSectionGroupRequest(self.request_adapter, path_parameters)
 

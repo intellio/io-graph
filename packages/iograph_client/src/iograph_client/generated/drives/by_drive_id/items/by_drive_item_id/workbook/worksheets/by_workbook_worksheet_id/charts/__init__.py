@@ -11,12 +11,15 @@ from typing import Union, Any, Optional
 from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:
+	from .item_at import ItemAtRequest
+	from .item import ItemRequest
+	from .count import CountRequest
 	from .add import AddRequest
 	from .by_workbook_chart_id import ByWorkbookChartIdRequest
 	from ..........request_adapter import HttpxRequestAdapter
-from iograph_models.models.workbook_chart import WorkbookChart
 from iograph_models.models.workbook_chart_collection_response import WorkbookChartCollectionResponse
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.models.workbook_chart import WorkbookChart
 
 
 class ChartsRequest(BaseRequestBuilder):
@@ -116,9 +119,91 @@ class ChartsRequest(BaseRequestBuilder):
 		from .by_workbook_chart_id import ByWorkbookChartIdRequest
 		return ByWorkbookChartIdRequest(self.request_adapter, path_parameters)
 
-	@property
 	def add(self,
+		drive_id: str,
+		driveItem_id: str,
+		workbookWorksheet_id: str,
 	) -> AddRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+		if workbookWorksheet_id is None:
+			raise TypeError("workbookWorksheet_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+		path_parameters["workbookWorksheet%2Did"] =  workbookWorksheet_id
+
 		from .add import AddRequest
-		return AddRequest(self.request_adapter, self.path_parameters)
+		return AddRequest(self.request_adapter, path_parameters)
+
+	def count(self,
+		drive_id: str,
+		driveItem_id: str,
+		workbookWorksheet_id: str,
+	) -> CountRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+		if workbookWorksheet_id is None:
+			raise TypeError("workbookWorksheet_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+		path_parameters["workbookWorksheet%2Did"] =  workbookWorksheet_id
+
+		from .count import CountRequest
+		return CountRequest(self.request_adapter, path_parameters)
+
+	def item(self,
+		drive_id: str,
+		driveItem_id: str,
+		workbookWorksheet_id: str,
+		name: str,
+	) -> ItemRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+		if workbookWorksheet_id is None:
+			raise TypeError("workbookWorksheet_id cannot be null.")
+		if name is None:
+			raise TypeError("name cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+		path_parameters["workbookWorksheet%2Did"] =  workbookWorksheet_id
+		path_parameters["name"] =  name
+
+		from .item import ItemRequest
+		return ItemRequest(self.request_adapter, path_parameters)
+
+	def item_at(self,
+		drive_id: str,
+		driveItem_id: str,
+		workbookWorksheet_id: str,
+		index: int,
+	) -> ItemAtRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+		if workbookWorksheet_id is None:
+			raise TypeError("workbookWorksheet_id cannot be null.")
+		if index is None:
+			raise TypeError("index cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+		path_parameters["workbookWorksheet%2Did"] =  workbookWorksheet_id
+		path_parameters["index"] =  index
+
+		from .item_at import ItemAtRequest
+		return ItemAtRequest(self.request_adapter, path_parameters)
 

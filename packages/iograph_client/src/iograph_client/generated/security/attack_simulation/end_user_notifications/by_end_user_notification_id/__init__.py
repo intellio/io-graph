@@ -1,6 +1,7 @@
 # Auto-generated client
 
 from __future__ import annotations
+from kiota_abstractions.get_path_parameters import get_path_parameters
 from kiota_abstractions.method import Method
 from kiota_abstractions.base_request_builder import BaseRequestBuilder
 from kiota_abstractions.base_request_configuration import RequestConfiguration
@@ -108,9 +109,15 @@ class ByEndUserNotificationIdRequest(BaseRequestBuilder):
 			raise TypeError("raw_url cannot be None.")
 		return ByEndUserNotificationIdRequest(self.request_adapter, self.path_parameters)
 
-	@property
 	def details(self,
+		endUserNotification_id: str,
 	) -> DetailsRequest:
+		if endUserNotification_id is None:
+			raise TypeError("endUserNotification_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["endUserNotification%2Did"] =  endUserNotification_id
+
 		from .details import DetailsRequest
-		return DetailsRequest(self.request_adapter, self.path_parameters)
+		return DetailsRequest(self.request_adapter, path_parameters)
 

@@ -1,6 +1,7 @@
 # Auto-generated client
 
 from __future__ import annotations
+from kiota_abstractions.get_path_parameters import get_path_parameters
 from kiota_abstractions.method import Method
 from kiota_abstractions.base_request_builder import BaseRequestBuilder
 from kiota_abstractions.base_request_configuration import RequestConfiguration
@@ -17,8 +18,8 @@ if TYPE_CHECKING:
 	from .abort import AbortRequest
 	from .documents import DocumentsRequest
 	from .......request_adapter import HttpxRequestAdapter
-from iograph_models.models.print_job import PrintJob
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.models.print_job import PrintJob
 
 
 class ByPrintJobIdRequest(BaseRequestBuilder):
@@ -113,39 +114,99 @@ class ByPrintJobIdRequest(BaseRequestBuilder):
 			raise TypeError("raw_url cannot be None.")
 		return ByPrintJobIdRequest(self.request_adapter, self.path_parameters)
 
-	@property
 	def documents(self,
+		printerShare_id: str,
+		printJob_id: str,
 	) -> DocumentsRequest:
+		if printerShare_id is None:
+			raise TypeError("printerShare_id cannot be null.")
+		if printJob_id is None:
+			raise TypeError("printJob_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["printerShare%2Did"] =  printerShare_id
+		path_parameters["printJob%2Did"] =  printJob_id
+
 		from .documents import DocumentsRequest
-		return DocumentsRequest(self.request_adapter, self.path_parameters)
+		return DocumentsRequest(self.request_adapter, path_parameters)
 
-	@property
 	def abort(self,
+		printerShare_id: str,
+		printJob_id: str,
 	) -> AbortRequest:
+		if printerShare_id is None:
+			raise TypeError("printerShare_id cannot be null.")
+		if printJob_id is None:
+			raise TypeError("printJob_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["printerShare%2Did"] =  printerShare_id
+		path_parameters["printJob%2Did"] =  printJob_id
+
 		from .abort import AbortRequest
-		return AbortRequest(self.request_adapter, self.path_parameters)
+		return AbortRequest(self.request_adapter, path_parameters)
 
-	@property
 	def cancel(self,
+		printerShare_id: str,
+		printJob_id: str,
 	) -> CancelRequest:
+		if printerShare_id is None:
+			raise TypeError("printerShare_id cannot be null.")
+		if printJob_id is None:
+			raise TypeError("printJob_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["printerShare%2Did"] =  printerShare_id
+		path_parameters["printJob%2Did"] =  printJob_id
+
 		from .cancel import CancelRequest
-		return CancelRequest(self.request_adapter, self.path_parameters)
+		return CancelRequest(self.request_adapter, path_parameters)
 
-	@property
 	def redirect(self,
+		printerShare_id: str,
+		printJob_id: str,
 	) -> RedirectRequest:
+		if printerShare_id is None:
+			raise TypeError("printerShare_id cannot be null.")
+		if printJob_id is None:
+			raise TypeError("printJob_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["printerShare%2Did"] =  printerShare_id
+		path_parameters["printJob%2Did"] =  printJob_id
+
 		from .redirect import RedirectRequest
-		return RedirectRequest(self.request_adapter, self.path_parameters)
+		return RedirectRequest(self.request_adapter, path_parameters)
 
-	@property
 	def start(self,
+		printerShare_id: str,
+		printJob_id: str,
 	) -> StartRequest:
-		from .start import StartRequest
-		return StartRequest(self.request_adapter, self.path_parameters)
+		if printerShare_id is None:
+			raise TypeError("printerShare_id cannot be null.")
+		if printJob_id is None:
+			raise TypeError("printJob_id cannot be null.")
 
-	@property
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["printerShare%2Did"] =  printerShare_id
+		path_parameters["printJob%2Did"] =  printJob_id
+
+		from .start import StartRequest
+		return StartRequest(self.request_adapter, path_parameters)
+
 	def tasks(self,
+		printerShare_id: str,
+		printJob_id: str,
 	) -> TasksRequest:
+		if printerShare_id is None:
+			raise TypeError("printerShare_id cannot be null.")
+		if printJob_id is None:
+			raise TypeError("printJob_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["printerShare%2Did"] =  printerShare_id
+		path_parameters["printJob%2Did"] =  printJob_id
+
 		from .tasks import TasksRequest
-		return TasksRequest(self.request_adapter, self.path_parameters)
+		return TasksRequest(self.request_adapter, path_parameters)
 

@@ -14,9 +14,9 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_mobile_app_content_file_id import ByMobileAppContentFileIdRequest
 	from .........request_adapter import HttpxRequestAdapter
-from iograph_models.models.mobile_app_content_file import MobileAppContentFile
 from iograph_models.models.mobile_app_content_file_collection_response import MobileAppContentFileCollectionResponse
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.models.mobile_app_content_file import MobileAppContentFile
 
 
 class FilesRequest(BaseRequestBuilder):
@@ -112,9 +112,19 @@ class FilesRequest(BaseRequestBuilder):
 		from .by_mobile_app_content_file_id import ByMobileAppContentFileIdRequest
 		return ByMobileAppContentFileIdRequest(self.request_adapter, path_parameters)
 
-	@property
 	def count(self,
+		mobileApp_id: str,
+		mobileAppContent_id: str,
 	) -> CountRequest:
+		if mobileApp_id is None:
+			raise TypeError("mobileApp_id cannot be null.")
+		if mobileAppContent_id is None:
+			raise TypeError("mobileAppContent_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["mobileApp%2Did"] =  mobileApp_id
+		path_parameters["mobileAppContent%2Did"] =  mobileAppContent_id
+
 		from .count import CountRequest
-		return CountRequest(self.request_adapter, self.path_parameters)
+		return CountRequest(self.request_adapter, path_parameters)
 

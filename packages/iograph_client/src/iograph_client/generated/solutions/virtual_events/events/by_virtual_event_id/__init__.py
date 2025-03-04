@@ -1,6 +1,7 @@
 # Auto-generated client
 
 from __future__ import annotations
+from kiota_abstractions.get_path_parameters import get_path_parameters
 from kiota_abstractions.method import Method
 from kiota_abstractions.base_request_builder import BaseRequestBuilder
 from kiota_abstractions.base_request_configuration import RequestConfiguration
@@ -16,8 +17,8 @@ if TYPE_CHECKING:
 	from .publish import PublishRequest
 	from .cancel import CancelRequest
 	from ......request_adapter import HttpxRequestAdapter
-from iograph_models.models.virtual_event import VirtualEvent
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.models.virtual_event import VirtualEvent
 
 
 class ByVirtualEventIdRequest(BaseRequestBuilder):
@@ -112,33 +113,63 @@ class ByVirtualEventIdRequest(BaseRequestBuilder):
 			raise TypeError("raw_url cannot be None.")
 		return ByVirtualEventIdRequest(self.request_adapter, self.path_parameters)
 
-	@property
 	def cancel(self,
+		virtualEvent_id: str,
 	) -> CancelRequest:
+		if virtualEvent_id is None:
+			raise TypeError("virtualEvent_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["virtualEvent%2Did"] =  virtualEvent_id
+
 		from .cancel import CancelRequest
-		return CancelRequest(self.request_adapter, self.path_parameters)
+		return CancelRequest(self.request_adapter, path_parameters)
 
-	@property
 	def publish(self,
+		virtualEvent_id: str,
 	) -> PublishRequest:
+		if virtualEvent_id is None:
+			raise TypeError("virtualEvent_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["virtualEvent%2Did"] =  virtualEvent_id
+
 		from .publish import PublishRequest
-		return PublishRequest(self.request_adapter, self.path_parameters)
+		return PublishRequest(self.request_adapter, path_parameters)
 
-	@property
 	def set_external_event_information(self,
+		virtualEvent_id: str,
 	) -> SetExternalEventInformationRequest:
+		if virtualEvent_id is None:
+			raise TypeError("virtualEvent_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["virtualEvent%2Did"] =  virtualEvent_id
+
 		from .set_external_event_information import SetExternalEventInformationRequest
-		return SetExternalEventInformationRequest(self.request_adapter, self.path_parameters)
+		return SetExternalEventInformationRequest(self.request_adapter, path_parameters)
 
-	@property
 	def presenters(self,
+		virtualEvent_id: str,
 	) -> PresentersRequest:
-		from .presenters import PresentersRequest
-		return PresentersRequest(self.request_adapter, self.path_parameters)
+		if virtualEvent_id is None:
+			raise TypeError("virtualEvent_id cannot be null.")
 
-	@property
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["virtualEvent%2Did"] =  virtualEvent_id
+
+		from .presenters import PresentersRequest
+		return PresentersRequest(self.request_adapter, path_parameters)
+
 	def sessions(self,
+		virtualEvent_id: str,
 	) -> SessionsRequest:
+		if virtualEvent_id is None:
+			raise TypeError("virtualEvent_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["virtualEvent%2Did"] =  virtualEvent_id
+
 		from .sessions import SessionsRequest
-		return SessionsRequest(self.request_adapter, self.path_parameters)
+		return SessionsRequest(self.request_adapter, path_parameters)
 

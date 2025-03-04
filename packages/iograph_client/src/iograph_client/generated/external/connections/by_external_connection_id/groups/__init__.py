@@ -109,9 +109,15 @@ class GroupsRequest(BaseRequestBuilder):
 		from .by_external_group_id import ByExternalGroupIdRequest
 		return ByExternalGroupIdRequest(self.request_adapter, path_parameters)
 
-	@property
 	def count(self,
+		externalConnection_id: str,
 	) -> CountRequest:
+		if externalConnection_id is None:
+			raise TypeError("externalConnection_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["externalConnection%2Did"] =  externalConnection_id
+
 		from .count import CountRequest
-		return CountRequest(self.request_adapter, self.path_parameters)
+		return CountRequest(self.request_adapter, path_parameters)
 

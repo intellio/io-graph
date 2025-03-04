@@ -1,6 +1,7 @@
 # Auto-generated client
 
 from __future__ import annotations
+from kiota_abstractions.get_path_parameters import get_path_parameters
 from kiota_abstractions.method import Method
 from kiota_abstractions.base_request_builder import BaseRequestBuilder
 from kiota_abstractions.base_request_configuration import RequestConfiguration
@@ -27,9 +28,9 @@ class ByManagedAppRegistrationIdRequest(BaseRequestBuilder):
 		request_configuration: Optional[RequestConfiguration[GetQueryParams]] = None,
 	) -> ManagedAppRegistration:
 		"""
-		Get iosManagedAppRegistration
-		Read properties and relationships of the iosManagedAppRegistration object.
-		Find more info here: https://learn.microsoft.com/graph/api/intune-mam-iosmanagedappregistration-get?view=graph-rest-1.0
+		Get androidManagedAppRegistration
+		Read properties and relationships of the androidManagedAppRegistration object.
+		Find more info here: https://learn.microsoft.com/graph/api/intune-mam-androidmanagedappregistration-get?view=graph-rest-1.0
 		"""
 		tags = ['deviceAppManagement.managedAppRegistration']
 
@@ -111,21 +112,39 @@ class ByManagedAppRegistrationIdRequest(BaseRequestBuilder):
 			raise TypeError("raw_url cannot be None.")
 		return ByManagedAppRegistrationIdRequest(self.request_adapter, self.path_parameters)
 
-	@property
 	def applied_policies(self,
+		managedAppRegistration_id: str,
 	) -> AppliedPoliciesRequest:
+		if managedAppRegistration_id is None:
+			raise TypeError("managedAppRegistration_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["managedAppRegistration%2Did"] =  managedAppRegistration_id
+
 		from .applied_policies import AppliedPoliciesRequest
-		return AppliedPoliciesRequest(self.request_adapter, self.path_parameters)
+		return AppliedPoliciesRequest(self.request_adapter, path_parameters)
 
-	@property
 	def intended_policies(self,
+		managedAppRegistration_id: str,
 	) -> IntendedPoliciesRequest:
-		from .intended_policies import IntendedPoliciesRequest
-		return IntendedPoliciesRequest(self.request_adapter, self.path_parameters)
+		if managedAppRegistration_id is None:
+			raise TypeError("managedAppRegistration_id cannot be null.")
 
-	@property
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["managedAppRegistration%2Did"] =  managedAppRegistration_id
+
+		from .intended_policies import IntendedPoliciesRequest
+		return IntendedPoliciesRequest(self.request_adapter, path_parameters)
+
 	def operations(self,
+		managedAppRegistration_id: str,
 	) -> OperationsRequest:
+		if managedAppRegistration_id is None:
+			raise TypeError("managedAppRegistration_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["managedAppRegistration%2Did"] =  managedAppRegistration_id
+
 		from .operations import OperationsRequest
-		return OperationsRequest(self.request_adapter, self.path_parameters)
+		return OperationsRequest(self.request_adapter, path_parameters)
 

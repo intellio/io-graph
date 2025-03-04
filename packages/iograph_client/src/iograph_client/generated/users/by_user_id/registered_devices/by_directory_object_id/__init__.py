@@ -1,6 +1,7 @@
 # Auto-generated client
 
 from __future__ import annotations
+from kiota_abstractions.get_path_parameters import get_path_parameters
 from kiota_abstractions.method import Method
 from kiota_abstractions.base_request_builder import BaseRequestBuilder
 from kiota_abstractions.base_request_configuration import RequestConfiguration
@@ -14,8 +15,8 @@ if TYPE_CHECKING:
 	from .graph_device import GraphDeviceRequest
 	from .graph_app_role_assignment import GraphAppRoleAssignmentRequest
 	from ......request_adapter import HttpxRequestAdapter
-from iograph_models.models.directory_object import DirectoryObject
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.models.directory_object import DirectoryObject
 
 
 class ByDirectoryObjectIdRequest(BaseRequestBuilder):
@@ -60,21 +61,51 @@ class ByDirectoryObjectIdRequest(BaseRequestBuilder):
 			raise TypeError("raw_url cannot be None.")
 		return ByDirectoryObjectIdRequest(self.request_adapter, self.path_parameters)
 
-	@property
 	def graph_app_role_assignment(self,
+		user_id: str,
+		directoryObject_id: str,
 	) -> GraphAppRoleAssignmentRequest:
+		if user_id is None:
+			raise TypeError("user_id cannot be null.")
+		if directoryObject_id is None:
+			raise TypeError("directoryObject_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["user%2Did"] =  user_id
+		path_parameters["directoryObject%2Did"] =  directoryObject_id
+
 		from .graph_app_role_assignment import GraphAppRoleAssignmentRequest
-		return GraphAppRoleAssignmentRequest(self.request_adapter, self.path_parameters)
+		return GraphAppRoleAssignmentRequest(self.request_adapter, path_parameters)
 
-	@property
 	def graph_device(self,
+		user_id: str,
+		directoryObject_id: str,
 	) -> GraphDeviceRequest:
-		from .graph_device import GraphDeviceRequest
-		return GraphDeviceRequest(self.request_adapter, self.path_parameters)
+		if user_id is None:
+			raise TypeError("user_id cannot be null.")
+		if directoryObject_id is None:
+			raise TypeError("directoryObject_id cannot be null.")
 
-	@property
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["user%2Did"] =  user_id
+		path_parameters["directoryObject%2Did"] =  directoryObject_id
+
+		from .graph_device import GraphDeviceRequest
+		return GraphDeviceRequest(self.request_adapter, path_parameters)
+
 	def graph_endpoint(self,
+		user_id: str,
+		directoryObject_id: str,
 	) -> GraphEndpointRequest:
+		if user_id is None:
+			raise TypeError("user_id cannot be null.")
+		if directoryObject_id is None:
+			raise TypeError("directoryObject_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["user%2Did"] =  user_id
+		path_parameters["directoryObject%2Did"] =  directoryObject_id
+
 		from .graph_endpoint import GraphEndpointRequest
-		return GraphEndpointRequest(self.request_adapter, self.path_parameters)
+		return GraphEndpointRequest(self.request_adapter, path_parameters)
 

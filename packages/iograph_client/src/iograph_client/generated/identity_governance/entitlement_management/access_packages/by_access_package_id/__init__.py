@@ -1,6 +1,7 @@
 # Auto-generated client
 
 from __future__ import annotations
+from kiota_abstractions.get_path_parameters import get_path_parameters
 from kiota_abstractions.method import Method
 from kiota_abstractions.base_request_builder import BaseRequestBuilder
 from kiota_abstractions.base_request_configuration import RequestConfiguration
@@ -18,8 +19,8 @@ if TYPE_CHECKING:
 	from .assignment_policies import AssignmentPoliciesRequest
 	from .access_packages_incompatible_with import AccessPackagesIncompatibleWithRequest
 	from ......request_adapter import HttpxRequestAdapter
-from iograph_models.models.access_package import AccessPackage
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.models.access_package import AccessPackage
 
 
 class ByAccessPackageIdRequest(BaseRequestBuilder):
@@ -31,9 +32,9 @@ class ByAccessPackageIdRequest(BaseRequestBuilder):
 		request_configuration: Optional[RequestConfiguration[GetQueryParams]] = None,
 	) -> AccessPackage:
 		"""
-		Get accessPackage
-		Retrieve the properties and relationships of an accessPackage object.
-		Find more info here: https://learn.microsoft.com/graph/api/accesspackage-get?view=graph-rest-1.0
+		List resourceRoleScopes
+		Retrieve an access package with a list of accessPackageResourceRoleScope objects. These objects represent the resource roles that an access package assigns to each subject. Each object links to an accessPackageResourceRole and an accessPackageResourceScope.
+		Find more info here: https://learn.microsoft.com/graph/api/accesspackage-list-resourcerolescopes?view=graph-rest-1.0
 		"""
 		tags = ['identityGovernance.entitlementManagement']
 
@@ -117,45 +118,87 @@ class ByAccessPackageIdRequest(BaseRequestBuilder):
 			raise TypeError("raw_url cannot be None.")
 		return ByAccessPackageIdRequest(self.request_adapter, self.path_parameters)
 
-	@property
 	def access_packages_incompatible_with(self,
+		accessPackage_id: str,
 	) -> AccessPackagesIncompatibleWithRequest:
+		if accessPackage_id is None:
+			raise TypeError("accessPackage_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["accessPackage%2Did"] =  accessPackage_id
+
 		from .access_packages_incompatible_with import AccessPackagesIncompatibleWithRequest
-		return AccessPackagesIncompatibleWithRequest(self.request_adapter, self.path_parameters)
+		return AccessPackagesIncompatibleWithRequest(self.request_adapter, path_parameters)
 
-	@property
 	def assignment_policies(self,
+		accessPackage_id: str,
 	) -> AssignmentPoliciesRequest:
+		if accessPackage_id is None:
+			raise TypeError("accessPackage_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["accessPackage%2Did"] =  accessPackage_id
+
 		from .assignment_policies import AssignmentPoliciesRequest
-		return AssignmentPoliciesRequest(self.request_adapter, self.path_parameters)
+		return AssignmentPoliciesRequest(self.request_adapter, path_parameters)
 
-	@property
 	def catalog(self,
+		accessPackage_id: str,
 	) -> CatalogRequest:
+		if accessPackage_id is None:
+			raise TypeError("accessPackage_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["accessPackage%2Did"] =  accessPackage_id
+
 		from .catalog import CatalogRequest
-		return CatalogRequest(self.request_adapter, self.path_parameters)
+		return CatalogRequest(self.request_adapter, path_parameters)
 
-	@property
 	def incompatible_access_packages(self,
+		accessPackage_id: str,
 	) -> IncompatibleAccessPackagesRequest:
+		if accessPackage_id is None:
+			raise TypeError("accessPackage_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["accessPackage%2Did"] =  accessPackage_id
+
 		from .incompatible_access_packages import IncompatibleAccessPackagesRequest
-		return IncompatibleAccessPackagesRequest(self.request_adapter, self.path_parameters)
+		return IncompatibleAccessPackagesRequest(self.request_adapter, path_parameters)
 
-	@property
 	def incompatible_groups(self,
+		accessPackage_id: str,
 	) -> IncompatibleGroupsRequest:
+		if accessPackage_id is None:
+			raise TypeError("accessPackage_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["accessPackage%2Did"] =  accessPackage_id
+
 		from .incompatible_groups import IncompatibleGroupsRequest
-		return IncompatibleGroupsRequest(self.request_adapter, self.path_parameters)
+		return IncompatibleGroupsRequest(self.request_adapter, path_parameters)
 
-	@property
 	def get_applicable_policy_requirements(self,
+		accessPackage_id: str,
 	) -> GetApplicablePolicyRequirementsRequest:
-		from .get_applicable_policy_requirements import GetApplicablePolicyRequirementsRequest
-		return GetApplicablePolicyRequirementsRequest(self.request_adapter, self.path_parameters)
+		if accessPackage_id is None:
+			raise TypeError("accessPackage_id cannot be null.")
 
-	@property
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["accessPackage%2Did"] =  accessPackage_id
+
+		from .get_applicable_policy_requirements import GetApplicablePolicyRequirementsRequest
+		return GetApplicablePolicyRequirementsRequest(self.request_adapter, path_parameters)
+
 	def resource_role_scopes(self,
+		accessPackage_id: str,
 	) -> ResourceRoleScopesRequest:
+		if accessPackage_id is None:
+			raise TypeError("accessPackage_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["accessPackage%2Did"] =  accessPackage_id
+
 		from .resource_role_scopes import ResourceRoleScopesRequest
-		return ResourceRoleScopesRequest(self.request_adapter, self.path_parameters)
+		return ResourceRoleScopesRequest(self.request_adapter, path_parameters)
 

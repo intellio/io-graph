@@ -1,6 +1,7 @@
 # Auto-generated client
 
 from __future__ import annotations
+from kiota_abstractions.get_path_parameters import get_path_parameters
 from kiota_abstractions.method import Method
 from kiota_abstractions.base_request_builder import BaseRequestBuilder
 from kiota_abstractions.base_request_configuration import RequestConfiguration
@@ -19,8 +20,8 @@ if TYPE_CHECKING:
 	from .attribute_sets import AttributeSetsRequest
 	from .administrative_units import AdministrativeUnitsRequest
 	from ...request_adapter import HttpxRequestAdapter
-from iograph_models.models.directory import Directory
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.models.directory import Directory
 
 
 class DirectoryRequest(BaseRequestBuilder):

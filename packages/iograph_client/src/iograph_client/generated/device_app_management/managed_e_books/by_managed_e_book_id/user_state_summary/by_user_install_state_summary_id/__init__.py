@@ -1,6 +1,7 @@
 # Auto-generated client
 
 from __future__ import annotations
+from kiota_abstractions.get_path_parameters import get_path_parameters
 from kiota_abstractions.method import Method
 from kiota_abstractions.base_request_builder import BaseRequestBuilder
 from kiota_abstractions.base_request_configuration import RequestConfiguration
@@ -12,8 +13,8 @@ from typing import TYPE_CHECKING
 if TYPE_CHECKING:
 	from .device_states import DeviceStatesRequest
 	from .......request_adapter import HttpxRequestAdapter
-from iograph_models.models.user_install_state_summary import UserInstallStateSummary
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.models.user_install_state_summary import UserInstallStateSummary
 
 
 class ByUserInstallStateSummaryIdRequest(BaseRequestBuilder):
@@ -111,9 +112,19 @@ class ByUserInstallStateSummaryIdRequest(BaseRequestBuilder):
 			raise TypeError("raw_url cannot be None.")
 		return ByUserInstallStateSummaryIdRequest(self.request_adapter, self.path_parameters)
 
-	@property
 	def device_states(self,
+		managedEBook_id: str,
+		userInstallStateSummary_id: str,
 	) -> DeviceStatesRequest:
+		if managedEBook_id is None:
+			raise TypeError("managedEBook_id cannot be null.")
+		if userInstallStateSummary_id is None:
+			raise TypeError("userInstallStateSummary_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["managedEBook%2Did"] =  managedEBook_id
+		path_parameters["userInstallStateSummary%2Did"] =  userInstallStateSummary_id
+
 		from .device_states import DeviceStatesRequest
-		return DeviceStatesRequest(self.request_adapter, self.path_parameters)
+		return DeviceStatesRequest(self.request_adapter, path_parameters)
 

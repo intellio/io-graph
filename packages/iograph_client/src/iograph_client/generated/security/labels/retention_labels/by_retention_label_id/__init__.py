@@ -1,6 +1,7 @@
 # Auto-generated client
 
 from __future__ import annotations
+from kiota_abstractions.get_path_parameters import get_path_parameters
 from kiota_abstractions.method import Method
 from kiota_abstractions.base_request_builder import BaseRequestBuilder
 from kiota_abstractions.base_request_configuration import RequestConfiguration
@@ -112,21 +113,39 @@ class ByRetentionLabelIdRequest(BaseRequestBuilder):
 			raise TypeError("raw_url cannot be None.")
 		return ByRetentionLabelIdRequest(self.request_adapter, self.path_parameters)
 
-	@property
 	def descriptors(self,
+		retentionLabel_id: str,
 	) -> DescriptorsRequest:
+		if retentionLabel_id is None:
+			raise TypeError("retentionLabel_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["retentionLabel%2Did"] =  retentionLabel_id
+
 		from .descriptors import DescriptorsRequest
-		return DescriptorsRequest(self.request_adapter, self.path_parameters)
+		return DescriptorsRequest(self.request_adapter, path_parameters)
 
-	@property
 	def disposition_review_stages(self,
+		retentionLabel_id: str,
 	) -> DispositionReviewStagesRequest:
-		from .disposition_review_stages import DispositionReviewStagesRequest
-		return DispositionReviewStagesRequest(self.request_adapter, self.path_parameters)
+		if retentionLabel_id is None:
+			raise TypeError("retentionLabel_id cannot be null.")
 
-	@property
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["retentionLabel%2Did"] =  retentionLabel_id
+
+		from .disposition_review_stages import DispositionReviewStagesRequest
+		return DispositionReviewStagesRequest(self.request_adapter, path_parameters)
+
 	def retention_event_type(self,
+		retentionLabel_id: str,
 	) -> RetentionEventTypeRequest:
+		if retentionLabel_id is None:
+			raise TypeError("retentionLabel_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["retentionLabel%2Did"] =  retentionLabel_id
+
 		from .retention_event_type import RetentionEventTypeRequest
-		return RetentionEventTypeRequest(self.request_adapter, self.path_parameters)
+		return RetentionEventTypeRequest(self.request_adapter, path_parameters)
 

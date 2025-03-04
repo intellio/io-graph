@@ -1,6 +1,7 @@
 # Auto-generated client
 
 from __future__ import annotations
+from kiota_abstractions.get_path_parameters import get_path_parameters
 from kiota_abstractions.method import Method
 from kiota_abstractions.base_request_builder import BaseRequestBuilder
 from kiota_abstractions.base_request_configuration import RequestConfiguration
@@ -109,15 +110,43 @@ class ByDocumentSetVersionIdRequest(BaseRequestBuilder):
 			raise TypeError("raw_url cannot be None.")
 		return ByDocumentSetVersionIdRequest(self.request_adapter, self.path_parameters)
 
-	@property
 	def fields(self,
+		sharedDriveItem_id: str,
+		listItem_id: str,
+		documentSetVersion_id: str,
 	) -> FieldsRequest:
-		from .fields import FieldsRequest
-		return FieldsRequest(self.request_adapter, self.path_parameters)
+		if sharedDriveItem_id is None:
+			raise TypeError("sharedDriveItem_id cannot be null.")
+		if listItem_id is None:
+			raise TypeError("listItem_id cannot be null.")
+		if documentSetVersion_id is None:
+			raise TypeError("documentSetVersion_id cannot be null.")
 
-	@property
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["sharedDriveItem%2Did"] =  sharedDriveItem_id
+		path_parameters["listItem%2Did"] =  listItem_id
+		path_parameters["documentSetVersion%2Did"] =  documentSetVersion_id
+
+		from .fields import FieldsRequest
+		return FieldsRequest(self.request_adapter, path_parameters)
+
 	def restore(self,
+		sharedDriveItem_id: str,
+		listItem_id: str,
+		documentSetVersion_id: str,
 	) -> RestoreRequest:
+		if sharedDriveItem_id is None:
+			raise TypeError("sharedDriveItem_id cannot be null.")
+		if listItem_id is None:
+			raise TypeError("listItem_id cannot be null.")
+		if documentSetVersion_id is None:
+			raise TypeError("documentSetVersion_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["sharedDriveItem%2Did"] =  sharedDriveItem_id
+		path_parameters["listItem%2Did"] =  listItem_id
+		path_parameters["documentSetVersion%2Did"] =  documentSetVersion_id
+
 		from .restore import RestoreRequest
-		return RestoreRequest(self.request_adapter, self.path_parameters)
+		return RestoreRequest(self.request_adapter, path_parameters)
 

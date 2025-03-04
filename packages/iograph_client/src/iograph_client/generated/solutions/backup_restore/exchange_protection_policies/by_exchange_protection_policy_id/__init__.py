@@ -1,6 +1,7 @@
 # Auto-generated client
 
 from __future__ import annotations
+from kiota_abstractions.get_path_parameters import get_path_parameters
 from kiota_abstractions.method import Method
 from kiota_abstractions.base_request_builder import BaseRequestBuilder
 from kiota_abstractions.base_request_configuration import RequestConfiguration
@@ -13,8 +14,8 @@ if TYPE_CHECKING:
 	from .mailbox_protection_units import MailboxProtectionUnitsRequest
 	from .mailbox_inclusion_rules import MailboxInclusionRulesRequest
 	from ......request_adapter import HttpxRequestAdapter
-from iograph_models.models.exchange_protection_policy import ExchangeProtectionPolicy
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.models.exchange_protection_policy import ExchangeProtectionPolicy
 
 
 class ByExchangeProtectionPolicyIdRequest(BaseRequestBuilder):
@@ -110,15 +111,27 @@ class ByExchangeProtectionPolicyIdRequest(BaseRequestBuilder):
 			raise TypeError("raw_url cannot be None.")
 		return ByExchangeProtectionPolicyIdRequest(self.request_adapter, self.path_parameters)
 
-	@property
 	def mailbox_inclusion_rules(self,
+		exchangeProtectionPolicy_id: str,
 	) -> MailboxInclusionRulesRequest:
-		from .mailbox_inclusion_rules import MailboxInclusionRulesRequest
-		return MailboxInclusionRulesRequest(self.request_adapter, self.path_parameters)
+		if exchangeProtectionPolicy_id is None:
+			raise TypeError("exchangeProtectionPolicy_id cannot be null.")
 
-	@property
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["exchangeProtectionPolicy%2Did"] =  exchangeProtectionPolicy_id
+
+		from .mailbox_inclusion_rules import MailboxInclusionRulesRequest
+		return MailboxInclusionRulesRequest(self.request_adapter, path_parameters)
+
 	def mailbox_protection_units(self,
+		exchangeProtectionPolicy_id: str,
 	) -> MailboxProtectionUnitsRequest:
+		if exchangeProtectionPolicy_id is None:
+			raise TypeError("exchangeProtectionPolicy_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["exchangeProtectionPolicy%2Did"] =  exchangeProtectionPolicy_id
+
 		from .mailbox_protection_units import MailboxProtectionUnitsRequest
-		return MailboxProtectionUnitsRequest(self.request_adapter, self.path_parameters)
+		return MailboxProtectionUnitsRequest(self.request_adapter, path_parameters)
 

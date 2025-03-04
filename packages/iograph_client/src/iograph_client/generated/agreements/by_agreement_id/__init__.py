@@ -1,6 +1,7 @@
 # Auto-generated client
 
 from __future__ import annotations
+from kiota_abstractions.get_path_parameters import get_path_parameters
 from kiota_abstractions.method import Method
 from kiota_abstractions.base_request_builder import BaseRequestBuilder
 from kiota_abstractions.base_request_configuration import RequestConfiguration
@@ -14,8 +15,8 @@ if TYPE_CHECKING:
 	from .file import FileRequest
 	from .acceptances import AcceptancesRequest
 	from ....request_adapter import HttpxRequestAdapter
-from iograph_models.models.agreement import Agreement
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.models.agreement import Agreement
 
 
 class ByAgreementIdRequest(BaseRequestBuilder):
@@ -109,21 +110,39 @@ class ByAgreementIdRequest(BaseRequestBuilder):
 			raise TypeError("raw_url cannot be None.")
 		return ByAgreementIdRequest(self.request_adapter, self.path_parameters)
 
-	@property
 	def acceptances(self,
+		agreement_id: str,
 	) -> AcceptancesRequest:
+		if agreement_id is None:
+			raise TypeError("agreement_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["agreement%2Did"] =  agreement_id
+
 		from .acceptances import AcceptancesRequest
-		return AcceptancesRequest(self.request_adapter, self.path_parameters)
+		return AcceptancesRequest(self.request_adapter, path_parameters)
 
-	@property
 	def file(self,
+		agreement_id: str,
 	) -> FileRequest:
-		from .file import FileRequest
-		return FileRequest(self.request_adapter, self.path_parameters)
+		if agreement_id is None:
+			raise TypeError("agreement_id cannot be null.")
 
-	@property
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["agreement%2Did"] =  agreement_id
+
+		from .file import FileRequest
+		return FileRequest(self.request_adapter, path_parameters)
+
 	def files(self,
+		agreement_id: str,
 	) -> FilesRequest:
+		if agreement_id is None:
+			raise TypeError("agreement_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["agreement%2Did"] =  agreement_id
+
 		from .files import FilesRequest
-		return FilesRequest(self.request_adapter, self.path_parameters)
+		return FilesRequest(self.request_adapter, path_parameters)
 

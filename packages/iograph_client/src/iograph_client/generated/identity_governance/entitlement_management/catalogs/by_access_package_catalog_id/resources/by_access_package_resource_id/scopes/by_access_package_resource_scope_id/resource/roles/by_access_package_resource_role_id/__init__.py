@@ -1,6 +1,7 @@
 # Auto-generated client
 
 from __future__ import annotations
+from kiota_abstractions.get_path_parameters import get_path_parameters
 from kiota_abstractions.method import Method
 from kiota_abstractions.base_request_builder import BaseRequestBuilder
 from kiota_abstractions.base_request_configuration import RequestConfiguration
@@ -12,8 +13,8 @@ from typing import TYPE_CHECKING
 if TYPE_CHECKING:
 	from .resource import ResourceRequest
 	from .............request_adapter import HttpxRequestAdapter
-from iograph_models.models.access_package_resource_role import AccessPackageResourceRole
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.models.access_package_resource_role import AccessPackageResourceRole
 
 
 class ByAccessPackageResourceRoleIdRequest(BaseRequestBuilder):
@@ -108,9 +109,27 @@ class ByAccessPackageResourceRoleIdRequest(BaseRequestBuilder):
 			raise TypeError("raw_url cannot be None.")
 		return ByAccessPackageResourceRoleIdRequest(self.request_adapter, self.path_parameters)
 
-	@property
 	def resource(self,
+		accessPackageCatalog_id: str,
+		accessPackageResource_id: str,
+		accessPackageResourceScope_id: str,
+		accessPackageResourceRole_id: str,
 	) -> ResourceRequest:
+		if accessPackageCatalog_id is None:
+			raise TypeError("accessPackageCatalog_id cannot be null.")
+		if accessPackageResource_id is None:
+			raise TypeError("accessPackageResource_id cannot be null.")
+		if accessPackageResourceScope_id is None:
+			raise TypeError("accessPackageResourceScope_id cannot be null.")
+		if accessPackageResourceRole_id is None:
+			raise TypeError("accessPackageResourceRole_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["accessPackageCatalog%2Did"] =  accessPackageCatalog_id
+		path_parameters["accessPackageResource%2Did"] =  accessPackageResource_id
+		path_parameters["accessPackageResourceScope%2Did"] =  accessPackageResourceScope_id
+		path_parameters["accessPackageResourceRole%2Did"] =  accessPackageResourceRole_id
+
 		from .resource import ResourceRequest
-		return ResourceRequest(self.request_adapter, self.path_parameters)
+		return ResourceRequest(self.request_adapter, path_parameters)
 

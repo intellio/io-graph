@@ -28,9 +28,9 @@ class DeviceCompliancePoliciesRequest(BaseRequestBuilder):
 		request_configuration: Optional[RequestConfiguration[GetQueryParams]] = None,
 	) -> DeviceCompliancePolicyCollectionResponse:
 		"""
-		List deviceCompliancePolicies
-		List properties and relationships of the deviceCompliancePolicy objects.
-		Find more info here: https://learn.microsoft.com/graph/api/intune-deviceconfig-devicecompliancepolicy-list?view=graph-rest-1.0
+		List windowsPhone81CompliancePolicies
+		List properties and relationships of the windowsPhone81CompliancePolicy objects.
+		Find more info here: https://learn.microsoft.com/graph/api/intune-deviceconfig-windowsphone81compliancepolicy-list?view=graph-rest-1.0
 		"""
 		tags = ['deviceManagement.deviceCompliancePolicy']
 
@@ -53,9 +53,9 @@ class DeviceCompliancePoliciesRequest(BaseRequestBuilder):
 		request_configuration: Optional[RequestConfiguration[BaseModel]] = None,
 	) -> DeviceCompliancePolicy:
 		"""
-		Create androidWorkProfileCompliancePolicy
-		Create a new androidWorkProfileCompliancePolicy object.
-		Find more info here: https://learn.microsoft.com/graph/api/intune-deviceconfig-androidworkprofilecompliancepolicy-create?view=graph-rest-1.0
+		Create iosCompliancePolicy
+		Create a new iosCompliancePolicy object.
+		Find more info here: https://learn.microsoft.com/graph/api/intune-deviceconfig-ioscompliancepolicy-create?view=graph-rest-1.0
 		"""
 		tags = ['deviceManagement.deviceCompliancePolicy']
 

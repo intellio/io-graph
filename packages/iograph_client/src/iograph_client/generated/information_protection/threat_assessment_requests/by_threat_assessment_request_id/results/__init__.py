@@ -108,9 +108,15 @@ class ResultsRequest(BaseRequestBuilder):
 		from .by_threat_assessment_result_id import ByThreatAssessmentResultIdRequest
 		return ByThreatAssessmentResultIdRequest(self.request_adapter, path_parameters)
 
-	@property
 	def count(self,
+		threatAssessmentRequest_id: str,
 	) -> CountRequest:
+		if threatAssessmentRequest_id is None:
+			raise TypeError("threatAssessmentRequest_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["threatAssessmentRequest%2Did"] =  threatAssessmentRequest_id
+
 		from .count import CountRequest
-		return CountRequest(self.request_adapter, self.path_parameters)
+		return CountRequest(self.request_adapter, path_parameters)
 

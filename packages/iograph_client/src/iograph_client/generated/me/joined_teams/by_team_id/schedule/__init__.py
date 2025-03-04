@@ -1,6 +1,7 @@
 # Auto-generated client
 
 from __future__ import annotations
+from kiota_abstractions.get_path_parameters import get_path_parameters
 from kiota_abstractions.method import Method
 from kiota_abstractions.base_request_builder import BaseRequestBuilder
 from kiota_abstractions.base_request_configuration import RequestConfiguration
@@ -119,75 +120,147 @@ class ScheduleRequest(BaseRequestBuilder):
 			raise TypeError("raw_url cannot be None.")
 		return ScheduleRequest(self.request_adapter, self.path_parameters)
 
-	@property
 	def day_notes(self,
+		team_id: str,
 	) -> DayNotesRequest:
+		if team_id is None:
+			raise TypeError("team_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["team%2Did"] =  team_id
+
 		from .day_notes import DayNotesRequest
-		return DayNotesRequest(self.request_adapter, self.path_parameters)
+		return DayNotesRequest(self.request_adapter, path_parameters)
 
-	@property
 	def share(self,
+		team_id: str,
 	) -> ShareRequest:
+		if team_id is None:
+			raise TypeError("team_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["team%2Did"] =  team_id
+
 		from .share import ShareRequest
-		return ShareRequest(self.request_adapter, self.path_parameters)
+		return ShareRequest(self.request_adapter, path_parameters)
 
-	@property
 	def offer_shift_requests(self,
+		team_id: str,
 	) -> OfferShiftRequestsRequest:
+		if team_id is None:
+			raise TypeError("team_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["team%2Did"] =  team_id
+
 		from .offer_shift_requests import OfferShiftRequestsRequest
-		return OfferShiftRequestsRequest(self.request_adapter, self.path_parameters)
+		return OfferShiftRequestsRequest(self.request_adapter, path_parameters)
 
-	@property
 	def open_shift_change_requests(self,
+		team_id: str,
 	) -> OpenShiftChangeRequestsRequest:
+		if team_id is None:
+			raise TypeError("team_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["team%2Did"] =  team_id
+
 		from .open_shift_change_requests import OpenShiftChangeRequestsRequest
-		return OpenShiftChangeRequestsRequest(self.request_adapter, self.path_parameters)
+		return OpenShiftChangeRequestsRequest(self.request_adapter, path_parameters)
 
-	@property
 	def open_shifts(self,
+		team_id: str,
 	) -> OpenShiftsRequest:
+		if team_id is None:
+			raise TypeError("team_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["team%2Did"] =  team_id
+
 		from .open_shifts import OpenShiftsRequest
-		return OpenShiftsRequest(self.request_adapter, self.path_parameters)
+		return OpenShiftsRequest(self.request_adapter, path_parameters)
 
-	@property
 	def scheduling_groups(self,
+		team_id: str,
 	) -> SchedulingGroupsRequest:
+		if team_id is None:
+			raise TypeError("team_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["team%2Did"] =  team_id
+
 		from .scheduling_groups import SchedulingGroupsRequest
-		return SchedulingGroupsRequest(self.request_adapter, self.path_parameters)
+		return SchedulingGroupsRequest(self.request_adapter, path_parameters)
 
-	@property
 	def shifts(self,
+		team_id: str,
 	) -> ShiftsRequest:
+		if team_id is None:
+			raise TypeError("team_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["team%2Did"] =  team_id
+
 		from .shifts import ShiftsRequest
-		return ShiftsRequest(self.request_adapter, self.path_parameters)
+		return ShiftsRequest(self.request_adapter, path_parameters)
 
-	@property
 	def swap_shifts_change_requests(self,
+		team_id: str,
 	) -> SwapShiftsChangeRequestsRequest:
+		if team_id is None:
+			raise TypeError("team_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["team%2Did"] =  team_id
+
 		from .swap_shifts_change_requests import SwapShiftsChangeRequestsRequest
-		return SwapShiftsChangeRequestsRequest(self.request_adapter, self.path_parameters)
+		return SwapShiftsChangeRequestsRequest(self.request_adapter, path_parameters)
 
-	@property
 	def time_cards(self,
+		team_id: str,
 	) -> TimeCardsRequest:
+		if team_id is None:
+			raise TypeError("team_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["team%2Did"] =  team_id
+
 		from .time_cards import TimeCardsRequest
-		return TimeCardsRequest(self.request_adapter, self.path_parameters)
+		return TimeCardsRequest(self.request_adapter, path_parameters)
 
-	@property
 	def time_off_reasons(self,
+		team_id: str,
 	) -> TimeOffReasonsRequest:
+		if team_id is None:
+			raise TypeError("team_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["team%2Did"] =  team_id
+
 		from .time_off_reasons import TimeOffReasonsRequest
-		return TimeOffReasonsRequest(self.request_adapter, self.path_parameters)
+		return TimeOffReasonsRequest(self.request_adapter, path_parameters)
 
-	@property
 	def time_off_requests(self,
+		team_id: str,
 	) -> TimeOffRequestsRequest:
-		from .time_off_requests import TimeOffRequestsRequest
-		return TimeOffRequestsRequest(self.request_adapter, self.path_parameters)
+		if team_id is None:
+			raise TypeError("team_id cannot be null.")
 
-	@property
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["team%2Did"] =  team_id
+
+		from .time_off_requests import TimeOffRequestsRequest
+		return TimeOffRequestsRequest(self.request_adapter, path_parameters)
+
 	def times_off(self,
+		team_id: str,
 	) -> TimesOffRequest:
+		if team_id is None:
+			raise TypeError("team_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["team%2Did"] =  team_id
+
 		from .times_off import TimesOffRequest
-		return TimesOffRequest(self.request_adapter, self.path_parameters)
+		return TimesOffRequest(self.request_adapter, path_parameters)
 

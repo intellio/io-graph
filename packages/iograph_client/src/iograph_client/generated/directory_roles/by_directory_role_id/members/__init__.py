@@ -1,6 +1,7 @@
 # Auto-generated client
 
 from __future__ import annotations
+from kiota_abstractions.get_path_parameters import get_path_parameters
 from kiota_abstractions.method import Method
 from kiota_abstractions.base_request_builder import BaseRequestBuilder
 from kiota_abstractions.base_request_configuration import RequestConfiguration
@@ -79,51 +80,99 @@ class MembersRequest(BaseRequestBuilder):
 		from .by_directory_object_id import ByDirectoryObjectIdRequest
 		return ByDirectoryObjectIdRequest(self.request_adapter, self.path_parameters)
 
-	@property
 	def count(self,
+		directoryRole_id: str,
 	) -> CountRequest:
+		if directoryRole_id is None:
+			raise TypeError("directoryRole_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["directoryRole%2Did"] =  directoryRole_id
+
 		from .count import CountRequest
-		return CountRequest(self.request_adapter, self.path_parameters)
+		return CountRequest(self.request_adapter, path_parameters)
 
-	@property
 	def ref(self,
+		directoryRole_id: str,
 	) -> RefRequest:
+		if directoryRole_id is None:
+			raise TypeError("directoryRole_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["directoryRole%2Did"] =  directoryRole_id
+
 		from .ref import RefRequest
-		return RefRequest(self.request_adapter, self.path_parameters)
+		return RefRequest(self.request_adapter, path_parameters)
 
-	@property
 	def graph_application(self,
+		directoryRole_id: str,
 	) -> GraphApplicationRequest:
+		if directoryRole_id is None:
+			raise TypeError("directoryRole_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["directoryRole%2Did"] =  directoryRole_id
+
 		from .graph_application import GraphApplicationRequest
-		return GraphApplicationRequest(self.request_adapter, self.path_parameters)
+		return GraphApplicationRequest(self.request_adapter, path_parameters)
 
-	@property
 	def graph_device(self,
+		directoryRole_id: str,
 	) -> GraphDeviceRequest:
+		if directoryRole_id is None:
+			raise TypeError("directoryRole_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["directoryRole%2Did"] =  directoryRole_id
+
 		from .graph_device import GraphDeviceRequest
-		return GraphDeviceRequest(self.request_adapter, self.path_parameters)
+		return GraphDeviceRequest(self.request_adapter, path_parameters)
 
-	@property
 	def graph_group(self,
+		directoryRole_id: str,
 	) -> GraphGroupRequest:
+		if directoryRole_id is None:
+			raise TypeError("directoryRole_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["directoryRole%2Did"] =  directoryRole_id
+
 		from .graph_group import GraphGroupRequest
-		return GraphGroupRequest(self.request_adapter, self.path_parameters)
+		return GraphGroupRequest(self.request_adapter, path_parameters)
 
-	@property
 	def graph_org_contact(self,
+		directoryRole_id: str,
 	) -> GraphOrgContactRequest:
+		if directoryRole_id is None:
+			raise TypeError("directoryRole_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["directoryRole%2Did"] =  directoryRole_id
+
 		from .graph_org_contact import GraphOrgContactRequest
-		return GraphOrgContactRequest(self.request_adapter, self.path_parameters)
+		return GraphOrgContactRequest(self.request_adapter, path_parameters)
 
-	@property
 	def graph_service_principal(self,
+		directoryRole_id: str,
 	) -> GraphServicePrincipalRequest:
-		from .graph_service_principal import GraphServicePrincipalRequest
-		return GraphServicePrincipalRequest(self.request_adapter, self.path_parameters)
+		if directoryRole_id is None:
+			raise TypeError("directoryRole_id cannot be null.")
 
-	@property
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["directoryRole%2Did"] =  directoryRole_id
+
+		from .graph_service_principal import GraphServicePrincipalRequest
+		return GraphServicePrincipalRequest(self.request_adapter, path_parameters)
+
 	def graph_user(self,
+		directoryRole_id: str,
 	) -> GraphUserRequest:
+		if directoryRole_id is None:
+			raise TypeError("directoryRole_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["directoryRole%2Did"] =  directoryRole_id
+
 		from .graph_user import GraphUserRequest
-		return GraphUserRequest(self.request_adapter, self.path_parameters)
+		return GraphUserRequest(self.request_adapter, path_parameters)
 

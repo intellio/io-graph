@@ -1,6 +1,7 @@
 # Auto-generated client
 
 from __future__ import annotations
+from kiota_abstractions.get_path_parameters import get_path_parameters
 from kiota_abstractions.method import Method
 from kiota_abstractions.base_request_builder import BaseRequestBuilder
 from kiota_abstractions.base_request_configuration import RequestConfiguration
@@ -110,21 +111,87 @@ class ByRelationIdRequest(BaseRequestBuilder):
 			raise TypeError("raw_url cannot be None.")
 		return ByRelationIdRequest(self.request_adapter, self.path_parameters)
 
-	@property
 	def from_term(self,
+		group_id: str,
+		site_id: str,
+		set_id: str,
+		term_id: str,
+		relation_id: str,
 	) -> FromTermRequest:
+		if group_id is None:
+			raise TypeError("group_id cannot be null.")
+		if site_id is None:
+			raise TypeError("site_id cannot be null.")
+		if set_id is None:
+			raise TypeError("set_id cannot be null.")
+		if term_id is None:
+			raise TypeError("term_id cannot be null.")
+		if relation_id is None:
+			raise TypeError("relation_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["group%2Did"] =  group_id
+		path_parameters["site%2Did"] =  site_id
+		path_parameters["set%2Did"] =  set_id
+		path_parameters["term%2Did"] =  term_id
+		path_parameters["relation%2Did"] =  relation_id
+
 		from .from_term import FromTermRequest
-		return FromTermRequest(self.request_adapter, self.path_parameters)
+		return FromTermRequest(self.request_adapter, path_parameters)
 
-	@property
 	def set(self,
+		group_id: str,
+		site_id: str,
+		set_id: str,
+		term_id: str,
+		relation_id: str,
 	) -> SetRequest:
-		from .set import SetRequest
-		return SetRequest(self.request_adapter, self.path_parameters)
+		if group_id is None:
+			raise TypeError("group_id cannot be null.")
+		if site_id is None:
+			raise TypeError("site_id cannot be null.")
+		if set_id is None:
+			raise TypeError("set_id cannot be null.")
+		if term_id is None:
+			raise TypeError("term_id cannot be null.")
+		if relation_id is None:
+			raise TypeError("relation_id cannot be null.")
 
-	@property
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["group%2Did"] =  group_id
+		path_parameters["site%2Did"] =  site_id
+		path_parameters["set%2Did"] =  set_id
+		path_parameters["term%2Did"] =  term_id
+		path_parameters["relation%2Did"] =  relation_id
+
+		from .set import SetRequest
+		return SetRequest(self.request_adapter, path_parameters)
+
 	def to_term(self,
+		group_id: str,
+		site_id: str,
+		set_id: str,
+		term_id: str,
+		relation_id: str,
 	) -> ToTermRequest:
+		if group_id is None:
+			raise TypeError("group_id cannot be null.")
+		if site_id is None:
+			raise TypeError("site_id cannot be null.")
+		if set_id is None:
+			raise TypeError("set_id cannot be null.")
+		if term_id is None:
+			raise TypeError("term_id cannot be null.")
+		if relation_id is None:
+			raise TypeError("relation_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["group%2Did"] =  group_id
+		path_parameters["site%2Did"] =  site_id
+		path_parameters["set%2Did"] =  set_id
+		path_parameters["term%2Did"] =  term_id
+		path_parameters["relation%2Did"] =  relation_id
+
 		from .to_term import ToTermRequest
-		return ToTermRequest(self.request_adapter, self.path_parameters)
+		return ToTermRequest(self.request_adapter, path_parameters)
 

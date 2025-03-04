@@ -1,6 +1,7 @@
 # Auto-generated client
 
 from __future__ import annotations
+from kiota_abstractions.get_path_parameters import get_path_parameters
 from kiota_abstractions.method import Method
 from kiota_abstractions.base_request_builder import BaseRequestBuilder
 from kiota_abstractions.base_request_configuration import RequestConfiguration
@@ -12,8 +13,8 @@ from typing import TYPE_CHECKING
 if TYPE_CHECKING:
 	from .device_compliance_setting_states import DeviceComplianceSettingStatesRequest
 	from .....request_adapter import HttpxRequestAdapter
-from iograph_models.models.device_compliance_policy_setting_state_summary import DeviceCompliancePolicySettingStateSummary
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.models.device_compliance_policy_setting_state_summary import DeviceCompliancePolicySettingStateSummary
 
 
 class ByDeviceCompliancePolicySettingStateSummaryIdRequest(BaseRequestBuilder):
@@ -111,9 +112,15 @@ class ByDeviceCompliancePolicySettingStateSummaryIdRequest(BaseRequestBuilder):
 			raise TypeError("raw_url cannot be None.")
 		return ByDeviceCompliancePolicySettingStateSummaryIdRequest(self.request_adapter, self.path_parameters)
 
-	@property
 	def device_compliance_setting_states(self,
+		deviceCompliancePolicySettingStateSummary_id: str,
 	) -> DeviceComplianceSettingStatesRequest:
+		if deviceCompliancePolicySettingStateSummary_id is None:
+			raise TypeError("deviceCompliancePolicySettingStateSummary_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["deviceCompliancePolicySettingStateSummary%2Did"] =  deviceCompliancePolicySettingStateSummary_id
+
 		from .device_compliance_setting_states import DeviceComplianceSettingStatesRequest
-		return DeviceComplianceSettingStatesRequest(self.request_adapter, self.path_parameters)
+		return DeviceComplianceSettingStatesRequest(self.request_adapter, path_parameters)
 

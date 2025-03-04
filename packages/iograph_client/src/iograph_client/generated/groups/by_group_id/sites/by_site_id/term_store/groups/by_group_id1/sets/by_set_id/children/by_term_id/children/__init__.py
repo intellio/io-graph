@@ -14,9 +14,9 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_term_id1 import ByTermId1Request
 	from ..............request_adapter import HttpxRequestAdapter
-from iograph_models.models.term_store_term_collection_response import TermStoreTermCollectionResponse
 from iograph_models.models.term_store_term import TermStoreTerm
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.models.term_store_term_collection_response import TermStoreTermCollectionResponse
 
 
 class ChildrenRequest(BaseRequestBuilder):
@@ -124,9 +124,31 @@ class ChildrenRequest(BaseRequestBuilder):
 		from .by_term_id1 import ByTermId1Request
 		return ByTermId1Request(self.request_adapter, path_parameters)
 
-	@property
 	def count(self,
+		group_id: str,
+		site_id: str,
+		group_id1: str,
+		set_id: str,
+		term_id: str,
 	) -> CountRequest:
+		if group_id is None:
+			raise TypeError("group_id cannot be null.")
+		if site_id is None:
+			raise TypeError("site_id cannot be null.")
+		if group_id1 is None:
+			raise TypeError("group_id1 cannot be null.")
+		if set_id is None:
+			raise TypeError("set_id cannot be null.")
+		if term_id is None:
+			raise TypeError("term_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["group%2Did"] =  group_id
+		path_parameters["site%2Did"] =  site_id
+		path_parameters["group%2Did1"] =  group_id1
+		path_parameters["set%2Did"] =  set_id
+		path_parameters["term%2Did"] =  term_id
+
 		from .count import CountRequest
-		return CountRequest(self.request_adapter, self.path_parameters)
+		return CountRequest(self.request_adapter, path_parameters)
 

@@ -1,6 +1,7 @@
 # Auto-generated client
 
 from __future__ import annotations
+from kiota_abstractions.get_path_parameters import get_path_parameters
 from kiota_abstractions.method import Method
 from kiota_abstractions.base_request_builder import BaseRequestBuilder
 from kiota_abstractions.base_request_configuration import RequestConfiguration
@@ -110,21 +111,75 @@ class BySetId1Request(BaseRequestBuilder):
 			raise TypeError("raw_url cannot be None.")
 		return BySetId1Request(self.request_adapter, self.path_parameters)
 
-	@property
 	def children(self,
+		group_id: str,
+		site_id: str,
+		set_id: str,
+		set_id1: str,
 	) -> ChildrenRequest:
+		if group_id is None:
+			raise TypeError("group_id cannot be null.")
+		if site_id is None:
+			raise TypeError("site_id cannot be null.")
+		if set_id is None:
+			raise TypeError("set_id cannot be null.")
+		if set_id1 is None:
+			raise TypeError("set_id1 cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["group%2Did"] =  group_id
+		path_parameters["site%2Did"] =  site_id
+		path_parameters["set%2Did"] =  set_id
+		path_parameters["set%2Did1"] =  set_id1
+
 		from .children import ChildrenRequest
-		return ChildrenRequest(self.request_adapter, self.path_parameters)
+		return ChildrenRequest(self.request_adapter, path_parameters)
 
-	@property
 	def relations(self,
+		group_id: str,
+		site_id: str,
+		set_id: str,
+		set_id1: str,
 	) -> RelationsRequest:
-		from .relations import RelationsRequest
-		return RelationsRequest(self.request_adapter, self.path_parameters)
+		if group_id is None:
+			raise TypeError("group_id cannot be null.")
+		if site_id is None:
+			raise TypeError("site_id cannot be null.")
+		if set_id is None:
+			raise TypeError("set_id cannot be null.")
+		if set_id1 is None:
+			raise TypeError("set_id1 cannot be null.")
 
-	@property
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["group%2Did"] =  group_id
+		path_parameters["site%2Did"] =  site_id
+		path_parameters["set%2Did"] =  set_id
+		path_parameters["set%2Did1"] =  set_id1
+
+		from .relations import RelationsRequest
+		return RelationsRequest(self.request_adapter, path_parameters)
+
 	def terms(self,
+		group_id: str,
+		site_id: str,
+		set_id: str,
+		set_id1: str,
 	) -> TermsRequest:
+		if group_id is None:
+			raise TypeError("group_id cannot be null.")
+		if site_id is None:
+			raise TypeError("site_id cannot be null.")
+		if set_id is None:
+			raise TypeError("set_id cannot be null.")
+		if set_id1 is None:
+			raise TypeError("set_id1 cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["group%2Did"] =  group_id
+		path_parameters["site%2Did"] =  site_id
+		path_parameters["set%2Did"] =  set_id
+		path_parameters["set%2Did1"] =  set_id1
+
 		from .terms import TermsRequest
-		return TermsRequest(self.request_adapter, self.path_parameters)
+		return TermsRequest(self.request_adapter, path_parameters)
 

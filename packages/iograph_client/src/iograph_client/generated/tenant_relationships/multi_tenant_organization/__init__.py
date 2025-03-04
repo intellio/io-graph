@@ -51,9 +51,9 @@ class MultiTenantOrganizationRequest(BaseRequestBuilder):
 		request_configuration: Optional[RequestConfiguration[BaseModel]] = None,
 	) -> MultiTenantOrganization:
 		"""
-		Update multiTenantOrganization
-		Update the properties of a multitenant organization.
-		Find more info here: https://learn.microsoft.com/graph/api/multitenantorganization-update?view=graph-rest-1.0
+		Create multiTenantOrganization
+		Create a new multitenant organization. By default, the creator tenant becomes an owner tenant upon successful creation. Only owner tenants can manage a multitenant organization.
+		Find more info here: https://learn.microsoft.com/graph/api/tenantrelationship-put-multitenantorganization?view=graph-rest-1.0
 		"""
 		tags = ['tenantRelationships.multiTenantOrganization']
 

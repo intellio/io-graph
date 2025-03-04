@@ -1,6 +1,7 @@
 # Auto-generated client
 
 from __future__ import annotations
+from kiota_abstractions.get_path_parameters import get_path_parameters
 from kiota_abstractions.method import Method
 from kiota_abstractions.base_request_builder import BaseRequestBuilder
 from kiota_abstractions.base_request_configuration import RequestConfiguration
@@ -112,15 +113,27 @@ class ByNotificationMessageTemplateIdRequest(BaseRequestBuilder):
 			raise TypeError("raw_url cannot be None.")
 		return ByNotificationMessageTemplateIdRequest(self.request_adapter, self.path_parameters)
 
-	@property
 	def localized_notification_messages(self,
+		notificationMessageTemplate_id: str,
 	) -> LocalizedNotificationMessagesRequest:
-		from .localized_notification_messages import LocalizedNotificationMessagesRequest
-		return LocalizedNotificationMessagesRequest(self.request_adapter, self.path_parameters)
+		if notificationMessageTemplate_id is None:
+			raise TypeError("notificationMessageTemplate_id cannot be null.")
 
-	@property
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["notificationMessageTemplate%2Did"] =  notificationMessageTemplate_id
+
+		from .localized_notification_messages import LocalizedNotificationMessagesRequest
+		return LocalizedNotificationMessagesRequest(self.request_adapter, path_parameters)
+
 	def send_test_message(self,
+		notificationMessageTemplate_id: str,
 	) -> SendTestMessageRequest:
+		if notificationMessageTemplate_id is None:
+			raise TypeError("notificationMessageTemplate_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["notificationMessageTemplate%2Did"] =  notificationMessageTemplate_id
+
 		from .send_test_message import SendTestMessageRequest
-		return SendTestMessageRequest(self.request_adapter, self.path_parameters)
+		return SendTestMessageRequest(self.request_adapter, path_parameters)
 

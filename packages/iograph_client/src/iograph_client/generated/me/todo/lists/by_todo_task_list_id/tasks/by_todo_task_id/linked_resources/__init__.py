@@ -14,9 +14,9 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_linked_resource_id import ByLinkedResourceIdRequest
 	from .........request_adapter import HttpxRequestAdapter
-from iograph_models.models.linked_resource import LinkedResource
-from iograph_models.models.linked_resource_collection_response import LinkedResourceCollectionResponse
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.models.linked_resource_collection_response import LinkedResourceCollectionResponse
+from iograph_models.models.linked_resource import LinkedResource
 
 
 class LinkedResourcesRequest(BaseRequestBuilder):
@@ -114,9 +114,19 @@ class LinkedResourcesRequest(BaseRequestBuilder):
 		from .by_linked_resource_id import ByLinkedResourceIdRequest
 		return ByLinkedResourceIdRequest(self.request_adapter, path_parameters)
 
-	@property
 	def count(self,
+		todoTaskList_id: str,
+		todoTask_id: str,
 	) -> CountRequest:
+		if todoTaskList_id is None:
+			raise TypeError("todoTaskList_id cannot be null.")
+		if todoTask_id is None:
+			raise TypeError("todoTask_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["todoTaskList%2Did"] =  todoTaskList_id
+		path_parameters["todoTask%2Did"] =  todoTask_id
+
 		from .count import CountRequest
-		return CountRequest(self.request_adapter, self.path_parameters)
+		return CountRequest(self.request_adapter, path_parameters)
 

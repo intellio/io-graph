@@ -11,12 +11,13 @@ from typing import Union, Any, Optional
 from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:
+	from .delta import DeltaRequest
 	from .count import CountRequest
 	from .by_event_id import ByEventIdRequest
 	from .....request_adapter import HttpxRequestAdapter
-from iograph_models.models.event import Event
 from iograph_models.models.event_collection_response import EventCollectionResponse
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.models.event import Event
 
 
 class EventsRequest(BaseRequestBuilder):
@@ -111,4 +112,10 @@ get the instances of an event.
 	) -> CountRequest:
 		from .count import CountRequest
 		return CountRequest(self.request_adapter, self.path_parameters)
+
+	@property
+	def delta(self,
+	) -> DeltaRequest:
+		from .delta import DeltaRequest
+		return DeltaRequest(self.request_adapter, self.path_parameters)
 

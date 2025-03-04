@@ -1,6 +1,7 @@
 # Auto-generated client
 
 from __future__ import annotations
+from kiota_abstractions.get_path_parameters import get_path_parameters
 from kiota_abstractions.method import Method
 from kiota_abstractions.base_request_builder import BaseRequestBuilder
 from kiota_abstractions.base_request_configuration import RequestConfiguration
@@ -28,9 +29,19 @@ class ByHomeRealmDiscoveryPolicyIdRequest(BaseRequestBuilder):
 			raise TypeError("raw_url cannot be None.")
 		return ByHomeRealmDiscoveryPolicyIdRequest(self.request_adapter, self.path_parameters)
 
-	@property
 	def ref(self,
+		servicePrincipal_id: str,
+		homeRealmDiscoveryPolicy_id: str,
 	) -> RefRequest:
+		if servicePrincipal_id is None:
+			raise TypeError("servicePrincipal_id cannot be null.")
+		if homeRealmDiscoveryPolicy_id is None:
+			raise TypeError("homeRealmDiscoveryPolicy_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["servicePrincipal%2Did"] =  servicePrincipal_id
+		path_parameters["homeRealmDiscoveryPolicy%2Did"] =  homeRealmDiscoveryPolicy_id
+
 		from .ref import RefRequest
-		return RefRequest(self.request_adapter, self.path_parameters)
+		return RefRequest(self.request_adapter, path_parameters)
 

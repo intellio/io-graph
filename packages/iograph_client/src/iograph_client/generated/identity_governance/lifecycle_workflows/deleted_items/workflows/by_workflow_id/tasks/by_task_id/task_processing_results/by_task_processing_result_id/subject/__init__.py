@@ -1,6 +1,7 @@
 # Auto-generated client
 
 from __future__ import annotations
+from kiota_abstractions.get_path_parameters import get_path_parameters
 from kiota_abstractions.method import Method
 from kiota_abstractions.base_request_builder import BaseRequestBuilder
 from kiota_abstractions.base_request_configuration import RequestConfiguration
@@ -58,15 +59,43 @@ class SubjectRequest(BaseRequestBuilder):
 			raise TypeError("raw_url cannot be None.")
 		return SubjectRequest(self.request_adapter, self.path_parameters)
 
-	@property
 	def mailbox_settings(self,
+		workflow_id: str,
+		task_id: str,
+		taskProcessingResult_id: str,
 	) -> MailboxSettingsRequest:
-		from .mailbox_settings import MailboxSettingsRequest
-		return MailboxSettingsRequest(self.request_adapter, self.path_parameters)
+		if workflow_id is None:
+			raise TypeError("workflow_id cannot be null.")
+		if task_id is None:
+			raise TypeError("task_id cannot be null.")
+		if taskProcessingResult_id is None:
+			raise TypeError("taskProcessingResult_id cannot be null.")
 
-	@property
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["workflow%2Did"] =  workflow_id
+		path_parameters["task%2Did"] =  task_id
+		path_parameters["taskProcessingResult%2Did"] =  taskProcessingResult_id
+
+		from .mailbox_settings import MailboxSettingsRequest
+		return MailboxSettingsRequest(self.request_adapter, path_parameters)
+
 	def service_provisioning_errors(self,
+		workflow_id: str,
+		task_id: str,
+		taskProcessingResult_id: str,
 	) -> ServiceProvisioningErrorsRequest:
+		if workflow_id is None:
+			raise TypeError("workflow_id cannot be null.")
+		if task_id is None:
+			raise TypeError("task_id cannot be null.")
+		if taskProcessingResult_id is None:
+			raise TypeError("taskProcessingResult_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["workflow%2Did"] =  workflow_id
+		path_parameters["task%2Did"] =  task_id
+		path_parameters["taskProcessingResult%2Did"] =  taskProcessingResult_id
+
 		from .service_provisioning_errors import ServiceProvisioningErrorsRequest
-		return ServiceProvisioningErrorsRequest(self.request_adapter, self.path_parameters)
+		return ServiceProvisioningErrorsRequest(self.request_adapter, path_parameters)
 

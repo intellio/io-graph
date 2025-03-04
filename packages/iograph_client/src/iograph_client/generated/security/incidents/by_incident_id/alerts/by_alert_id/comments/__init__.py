@@ -1,6 +1,7 @@
 # Auto-generated client
 
 from __future__ import annotations
+from kiota_abstractions.get_path_parameters import get_path_parameters
 from kiota_abstractions.method import Method
 from kiota_abstractions.base_request_builder import BaseRequestBuilder
 from kiota_abstractions.base_request_configuration import RequestConfiguration
@@ -57,9 +58,19 @@ class CommentsRequest(BaseRequestBuilder):
 			raise TypeError("raw_url cannot be None.")
 		return CommentsRequest(self.request_adapter, self.path_parameters)
 
-	@property
 	def count(self,
+		incident_id: str,
+		alert_id: str,
 	) -> CountRequest:
+		if incident_id is None:
+			raise TypeError("incident_id cannot be null.")
+		if alert_id is None:
+			raise TypeError("alert_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["incident%2Did"] =  incident_id
+		path_parameters["alert%2Did"] =  alert_id
+
 		from .count import CountRequest
-		return CountRequest(self.request_adapter, self.path_parameters)
+		return CountRequest(self.request_adapter, path_parameters)
 

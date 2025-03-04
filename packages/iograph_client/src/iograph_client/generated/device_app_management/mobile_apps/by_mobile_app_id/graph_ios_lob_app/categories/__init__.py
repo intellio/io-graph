@@ -81,9 +81,15 @@ class CategoriesRequest(BaseRequestBuilder):
 		from .by_mobile_app_category_id import ByMobileAppCategoryIdRequest
 		return ByMobileAppCategoryIdRequest(self.request_adapter, path_parameters)
 
-	@property
 	def count(self,
+		mobileApp_id: str,
 	) -> CountRequest:
+		if mobileApp_id is None:
+			raise TypeError("mobileApp_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["mobileApp%2Did"] =  mobileApp_id
+
 		from .count import CountRequest
-		return CountRequest(self.request_adapter, self.path_parameters)
+		return CountRequest(self.request_adapter, path_parameters)
 

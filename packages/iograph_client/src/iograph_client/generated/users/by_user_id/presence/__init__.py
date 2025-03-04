@@ -1,6 +1,7 @@
 # Auto-generated client
 
 from __future__ import annotations
+from kiota_abstractions.get_path_parameters import get_path_parameters
 from kiota_abstractions.method import Method
 from kiota_abstractions.base_request_builder import BaseRequestBuilder
 from kiota_abstractions.base_request_configuration import RequestConfiguration
@@ -29,9 +30,9 @@ class PresenceRequest(BaseRequestBuilder):
 		request_configuration: Optional[RequestConfiguration[GetQueryParams]] = None,
 	) -> Presence:
 		"""
-		Get presence
-		Get a user's presence information.
-		Find more info here: https://learn.microsoft.com/graph/api/presence-get?view=graph-rest-1.0
+		presence: setStatusMessage
+		Set a presence status message for a user. An optional expiration date and time can be supplied.
+		Find more info here: https://learn.microsoft.com/graph/api/presence-setstatusmessage?view=graph-rest-1.0
 		"""
 		tags = ['users.presence']
 
@@ -113,33 +114,63 @@ class PresenceRequest(BaseRequestBuilder):
 			raise TypeError("raw_url cannot be None.")
 		return PresenceRequest(self.request_adapter, self.path_parameters)
 
-	@property
 	def clear_presence(self,
+		user_id: str,
 	) -> ClearPresenceRequest:
+		if user_id is None:
+			raise TypeError("user_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["user%2Did"] =  user_id
+
 		from .clear_presence import ClearPresenceRequest
-		return ClearPresenceRequest(self.request_adapter, self.path_parameters)
+		return ClearPresenceRequest(self.request_adapter, path_parameters)
 
-	@property
 	def clear_user_preferred_presence(self,
+		user_id: str,
 	) -> ClearUserPreferredPresenceRequest:
+		if user_id is None:
+			raise TypeError("user_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["user%2Did"] =  user_id
+
 		from .clear_user_preferred_presence import ClearUserPreferredPresenceRequest
-		return ClearUserPreferredPresenceRequest(self.request_adapter, self.path_parameters)
+		return ClearUserPreferredPresenceRequest(self.request_adapter, path_parameters)
 
-	@property
 	def set_presence(self,
+		user_id: str,
 	) -> SetPresenceRequest:
+		if user_id is None:
+			raise TypeError("user_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["user%2Did"] =  user_id
+
 		from .set_presence import SetPresenceRequest
-		return SetPresenceRequest(self.request_adapter, self.path_parameters)
+		return SetPresenceRequest(self.request_adapter, path_parameters)
 
-	@property
 	def set_status_message(self,
+		user_id: str,
 	) -> SetStatusMessageRequest:
-		from .set_status_message import SetStatusMessageRequest
-		return SetStatusMessageRequest(self.request_adapter, self.path_parameters)
+		if user_id is None:
+			raise TypeError("user_id cannot be null.")
 
-	@property
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["user%2Did"] =  user_id
+
+		from .set_status_message import SetStatusMessageRequest
+		return SetStatusMessageRequest(self.request_adapter, path_parameters)
+
 	def set_user_preferred_presence(self,
+		user_id: str,
 	) -> SetUserPreferredPresenceRequest:
+		if user_id is None:
+			raise TypeError("user_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["user%2Did"] =  user_id
+
 		from .set_user_preferred_presence import SetUserPreferredPresenceRequest
-		return SetUserPreferredPresenceRequest(self.request_adapter, self.path_parameters)
+		return SetUserPreferredPresenceRequest(self.request_adapter, path_parameters)
 

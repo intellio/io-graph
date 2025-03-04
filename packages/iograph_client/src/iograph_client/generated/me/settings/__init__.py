@@ -15,8 +15,8 @@ if TYPE_CHECKING:
 	from .shift_preferences import ShiftPreferencesRequest
 	from .item_insights import ItemInsightsRequest
 	from ....request_adapter import HttpxRequestAdapter
-from iograph_models.models.user_settings import UserSettings
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.models.user_settings import UserSettings
 
 
 class SettingsRequest(BaseRequestBuilder):

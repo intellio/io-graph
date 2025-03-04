@@ -1,6 +1,7 @@
 # Auto-generated client
 
 from __future__ import annotations
+from kiota_abstractions.get_path_parameters import get_path_parameters
 from kiota_abstractions.method import Method
 from kiota_abstractions.base_request_builder import BaseRequestBuilder
 from kiota_abstractions.base_request_configuration import RequestConfiguration
@@ -15,8 +16,8 @@ if TYPE_CHECKING:
 	from .extensions import ExtensionsRequest
 	from .attachments import AttachmentsRequest
 	from .........request_adapter import HttpxRequestAdapter
-from iograph_models.models.post import Post
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.models.post import Post
 
 
 class InReplyToRequest(BaseRequestBuilder):
@@ -60,27 +61,83 @@ class InReplyToRequest(BaseRequestBuilder):
 			raise TypeError("raw_url cannot be None.")
 		return InReplyToRequest(self.request_adapter, self.path_parameters)
 
-	@property
 	def attachments(self,
+		group_id: str,
+		conversationThread_id: str,
+		post_id: str,
 	) -> AttachmentsRequest:
+		if group_id is None:
+			raise TypeError("group_id cannot be null.")
+		if conversationThread_id is None:
+			raise TypeError("conversationThread_id cannot be null.")
+		if post_id is None:
+			raise TypeError("post_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["group%2Did"] =  group_id
+		path_parameters["conversationThread%2Did"] =  conversationThread_id
+		path_parameters["post%2Did"] =  post_id
+
 		from .attachments import AttachmentsRequest
-		return AttachmentsRequest(self.request_adapter, self.path_parameters)
+		return AttachmentsRequest(self.request_adapter, path_parameters)
 
-	@property
 	def extensions(self,
+		group_id: str,
+		conversationThread_id: str,
+		post_id: str,
 	) -> ExtensionsRequest:
+		if group_id is None:
+			raise TypeError("group_id cannot be null.")
+		if conversationThread_id is None:
+			raise TypeError("conversationThread_id cannot be null.")
+		if post_id is None:
+			raise TypeError("post_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["group%2Did"] =  group_id
+		path_parameters["conversationThread%2Did"] =  conversationThread_id
+		path_parameters["post%2Did"] =  post_id
+
 		from .extensions import ExtensionsRequest
-		return ExtensionsRequest(self.request_adapter, self.path_parameters)
+		return ExtensionsRequest(self.request_adapter, path_parameters)
 
-	@property
 	def forward(self,
+		group_id: str,
+		conversationThread_id: str,
+		post_id: str,
 	) -> ForwardRequest:
-		from .forward import ForwardRequest
-		return ForwardRequest(self.request_adapter, self.path_parameters)
+		if group_id is None:
+			raise TypeError("group_id cannot be null.")
+		if conversationThread_id is None:
+			raise TypeError("conversationThread_id cannot be null.")
+		if post_id is None:
+			raise TypeError("post_id cannot be null.")
 
-	@property
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["group%2Did"] =  group_id
+		path_parameters["conversationThread%2Did"] =  conversationThread_id
+		path_parameters["post%2Did"] =  post_id
+
+		from .forward import ForwardRequest
+		return ForwardRequest(self.request_adapter, path_parameters)
+
 	def reply(self,
+		group_id: str,
+		conversationThread_id: str,
+		post_id: str,
 	) -> ReplyRequest:
+		if group_id is None:
+			raise TypeError("group_id cannot be null.")
+		if conversationThread_id is None:
+			raise TypeError("conversationThread_id cannot be null.")
+		if post_id is None:
+			raise TypeError("post_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["group%2Did"] =  group_id
+		path_parameters["conversationThread%2Did"] =  conversationThread_id
+		path_parameters["post%2Did"] =  post_id
+
 		from .reply import ReplyRequest
-		return ReplyRequest(self.request_adapter, self.path_parameters)
+		return ReplyRequest(self.request_adapter, path_parameters)
 

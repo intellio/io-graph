@@ -14,8 +14,8 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_custom_extension_stage_setting_id import ByCustomExtensionStageSettingIdRequest
 	from .......request_adapter import HttpxRequestAdapter
-from iograph_models.models.custom_extension_stage_setting_collection_response import CustomExtensionStageSettingCollectionResponse
 from iograph_models.models.custom_extension_stage_setting import CustomExtensionStageSetting
+from iograph_models.models.custom_extension_stage_setting_collection_response import CustomExtensionStageSettingCollectionResponse
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
 
 
@@ -108,9 +108,15 @@ class CustomExtensionStageSettingsRequest(BaseRequestBuilder):
 		from .by_custom_extension_stage_setting_id import ByCustomExtensionStageSettingIdRequest
 		return ByCustomExtensionStageSettingIdRequest(self.request_adapter, path_parameters)
 
-	@property
 	def count(self,
+		accessPackageAssignmentPolicy_id: str,
 	) -> CountRequest:
+		if accessPackageAssignmentPolicy_id is None:
+			raise TypeError("accessPackageAssignmentPolicy_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["accessPackageAssignmentPolicy%2Did"] =  accessPackageAssignmentPolicy_id
+
 		from .count import CountRequest
-		return CountRequest(self.request_adapter, self.path_parameters)
+		return CountRequest(self.request_adapter, path_parameters)
 

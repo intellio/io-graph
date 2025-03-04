@@ -1,6 +1,7 @@
 # Auto-generated client
 
 from __future__ import annotations
+from kiota_abstractions.get_path_parameters import get_path_parameters
 from kiota_abstractions.method import Method
 from kiota_abstractions.base_request_builder import BaseRequestBuilder
 from kiota_abstractions.base_request_configuration import RequestConfiguration
@@ -109,15 +110,43 @@ class BySharedWithChannelTeamInfoIdRequest(BaseRequestBuilder):
 			raise TypeError("raw_url cannot be None.")
 		return BySharedWithChannelTeamInfoIdRequest(self.request_adapter, self.path_parameters)
 
-	@property
 	def allowed_members(self,
+		deletedTeam_id: str,
+		channel_id: str,
+		sharedWithChannelTeamInfo_id: str,
 	) -> AllowedMembersRequest:
-		from .allowed_members import AllowedMembersRequest
-		return AllowedMembersRequest(self.request_adapter, self.path_parameters)
+		if deletedTeam_id is None:
+			raise TypeError("deletedTeam_id cannot be null.")
+		if channel_id is None:
+			raise TypeError("channel_id cannot be null.")
+		if sharedWithChannelTeamInfo_id is None:
+			raise TypeError("sharedWithChannelTeamInfo_id cannot be null.")
 
-	@property
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["deletedTeam%2Did"] =  deletedTeam_id
+		path_parameters["channel%2Did"] =  channel_id
+		path_parameters["sharedWithChannelTeamInfo%2Did"] =  sharedWithChannelTeamInfo_id
+
+		from .allowed_members import AllowedMembersRequest
+		return AllowedMembersRequest(self.request_adapter, path_parameters)
+
 	def team(self,
+		deletedTeam_id: str,
+		channel_id: str,
+		sharedWithChannelTeamInfo_id: str,
 	) -> TeamRequest:
+		if deletedTeam_id is None:
+			raise TypeError("deletedTeam_id cannot be null.")
+		if channel_id is None:
+			raise TypeError("channel_id cannot be null.")
+		if sharedWithChannelTeamInfo_id is None:
+			raise TypeError("sharedWithChannelTeamInfo_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["deletedTeam%2Did"] =  deletedTeam_id
+		path_parameters["channel%2Did"] =  channel_id
+		path_parameters["sharedWithChannelTeamInfo%2Did"] =  sharedWithChannelTeamInfo_id
+
 		from .team import TeamRequest
-		return TeamRequest(self.request_adapter, self.path_parameters)
+		return TeamRequest(self.request_adapter, path_parameters)
 

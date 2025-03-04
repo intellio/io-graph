@@ -16,9 +16,9 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_workbook_named_item_id import ByWorkbookNamedItemIdRequest
 	from ..........request_adapter import HttpxRequestAdapter
-from iograph_models.models.workbook_named_item_collection_response import WorkbookNamedItemCollectionResponse
 from iograph_models.models.workbook_named_item import WorkbookNamedItem
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.models.workbook_named_item_collection_response import WorkbookNamedItemCollectionResponse
 
 
 class NamesRequest(BaseRequestBuilder):
@@ -118,21 +118,63 @@ class NamesRequest(BaseRequestBuilder):
 		from .by_workbook_named_item_id import ByWorkbookNamedItemIdRequest
 		return ByWorkbookNamedItemIdRequest(self.request_adapter, path_parameters)
 
-	@property
 	def count(self,
+		drive_id: str,
+		driveItem_id: str,
+		workbookWorksheet_id: str,
 	) -> CountRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+		if workbookWorksheet_id is None:
+			raise TypeError("workbookWorksheet_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+		path_parameters["workbookWorksheet%2Did"] =  workbookWorksheet_id
+
 		from .count import CountRequest
-		return CountRequest(self.request_adapter, self.path_parameters)
+		return CountRequest(self.request_adapter, path_parameters)
 
-	@property
 	def add(self,
+		drive_id: str,
+		driveItem_id: str,
+		workbookWorksheet_id: str,
 	) -> AddRequest:
-		from .add import AddRequest
-		return AddRequest(self.request_adapter, self.path_parameters)
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+		if workbookWorksheet_id is None:
+			raise TypeError("workbookWorksheet_id cannot be null.")
 
-	@property
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+		path_parameters["workbookWorksheet%2Did"] =  workbookWorksheet_id
+
+		from .add import AddRequest
+		return AddRequest(self.request_adapter, path_parameters)
+
 	def add_formula_local(self,
+		drive_id: str,
+		driveItem_id: str,
+		workbookWorksheet_id: str,
 	) -> AddFormulaLocalRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+		if workbookWorksheet_id is None:
+			raise TypeError("workbookWorksheet_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+		path_parameters["workbookWorksheet%2Did"] =  workbookWorksheet_id
+
 		from .add_formula_local import AddFormulaLocalRequest
-		return AddFormulaLocalRequest(self.request_adapter, self.path_parameters)
+		return AddFormulaLocalRequest(self.request_adapter, path_parameters)
 

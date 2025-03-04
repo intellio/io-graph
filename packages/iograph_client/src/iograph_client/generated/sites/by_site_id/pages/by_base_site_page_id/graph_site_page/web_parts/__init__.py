@@ -14,8 +14,8 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_web_part_id import ByWebPartIdRequest
 	from ........request_adapter import HttpxRequestAdapter
-from iograph_models.models.web_part_collection_response import WebPartCollectionResponse
 from iograph_models.models.web_part import WebPart
+from iograph_models.models.web_part_collection_response import WebPartCollectionResponse
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
 
 
@@ -112,9 +112,19 @@ class WebPartsRequest(BaseRequestBuilder):
 		from .by_web_part_id import ByWebPartIdRequest
 		return ByWebPartIdRequest(self.request_adapter, path_parameters)
 
-	@property
 	def count(self,
+		site_id: str,
+		baseSitePage_id: str,
 	) -> CountRequest:
+		if site_id is None:
+			raise TypeError("site_id cannot be null.")
+		if baseSitePage_id is None:
+			raise TypeError("baseSitePage_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["site%2Did"] =  site_id
+		path_parameters["baseSitePage%2Did"] =  baseSitePage_id
+
 		from .count import CountRequest
-		return CountRequest(self.request_adapter, self.path_parameters)
+		return CountRequest(self.request_adapter, path_parameters)
 

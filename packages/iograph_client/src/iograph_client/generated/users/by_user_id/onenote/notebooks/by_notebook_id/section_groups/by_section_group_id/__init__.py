@@ -1,6 +1,7 @@
 # Auto-generated client
 
 from __future__ import annotations
+from kiota_abstractions.get_path_parameters import get_path_parameters
 from kiota_abstractions.method import Method
 from kiota_abstractions.base_request_builder import BaseRequestBuilder
 from kiota_abstractions.base_request_configuration import RequestConfiguration
@@ -111,27 +112,83 @@ class BySectionGroupIdRequest(BaseRequestBuilder):
 			raise TypeError("raw_url cannot be None.")
 		return BySectionGroupIdRequest(self.request_adapter, self.path_parameters)
 
-	@property
 	def parent_notebook(self,
+		user_id: str,
+		notebook_id: str,
+		sectionGroup_id: str,
 	) -> ParentNotebookRequest:
+		if user_id is None:
+			raise TypeError("user_id cannot be null.")
+		if notebook_id is None:
+			raise TypeError("notebook_id cannot be null.")
+		if sectionGroup_id is None:
+			raise TypeError("sectionGroup_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["user%2Did"] =  user_id
+		path_parameters["notebook%2Did"] =  notebook_id
+		path_parameters["sectionGroup%2Did"] =  sectionGroup_id
+
 		from .parent_notebook import ParentNotebookRequest
-		return ParentNotebookRequest(self.request_adapter, self.path_parameters)
+		return ParentNotebookRequest(self.request_adapter, path_parameters)
 
-	@property
 	def parent_section_group(self,
+		user_id: str,
+		notebook_id: str,
+		sectionGroup_id: str,
 	) -> ParentSectionGroupRequest:
+		if user_id is None:
+			raise TypeError("user_id cannot be null.")
+		if notebook_id is None:
+			raise TypeError("notebook_id cannot be null.")
+		if sectionGroup_id is None:
+			raise TypeError("sectionGroup_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["user%2Did"] =  user_id
+		path_parameters["notebook%2Did"] =  notebook_id
+		path_parameters["sectionGroup%2Did"] =  sectionGroup_id
+
 		from .parent_section_group import ParentSectionGroupRequest
-		return ParentSectionGroupRequest(self.request_adapter, self.path_parameters)
+		return ParentSectionGroupRequest(self.request_adapter, path_parameters)
 
-	@property
 	def section_groups(self,
+		user_id: str,
+		notebook_id: str,
+		sectionGroup_id: str,
 	) -> SectionGroupsRequest:
-		from .section_groups import SectionGroupsRequest
-		return SectionGroupsRequest(self.request_adapter, self.path_parameters)
+		if user_id is None:
+			raise TypeError("user_id cannot be null.")
+		if notebook_id is None:
+			raise TypeError("notebook_id cannot be null.")
+		if sectionGroup_id is None:
+			raise TypeError("sectionGroup_id cannot be null.")
 
-	@property
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["user%2Did"] =  user_id
+		path_parameters["notebook%2Did"] =  notebook_id
+		path_parameters["sectionGroup%2Did"] =  sectionGroup_id
+
+		from .section_groups import SectionGroupsRequest
+		return SectionGroupsRequest(self.request_adapter, path_parameters)
+
 	def sections(self,
+		user_id: str,
+		notebook_id: str,
+		sectionGroup_id: str,
 	) -> SectionsRequest:
+		if user_id is None:
+			raise TypeError("user_id cannot be null.")
+		if notebook_id is None:
+			raise TypeError("notebook_id cannot be null.")
+		if sectionGroup_id is None:
+			raise TypeError("sectionGroup_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["user%2Did"] =  user_id
+		path_parameters["notebook%2Did"] =  notebook_id
+		path_parameters["sectionGroup%2Did"] =  sectionGroup_id
+
 		from .sections import SectionsRequest
-		return SectionsRequest(self.request_adapter, self.path_parameters)
+		return SectionsRequest(self.request_adapter, path_parameters)
 

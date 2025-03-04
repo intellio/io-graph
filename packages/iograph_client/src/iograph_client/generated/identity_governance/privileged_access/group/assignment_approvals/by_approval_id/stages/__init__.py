@@ -14,9 +14,9 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_approval_stage_id import ByApprovalStageIdRequest
 	from ........request_adapter import HttpxRequestAdapter
-from iograph_models.models.approval_stage_collection_response import ApprovalStageCollectionResponse
 from iograph_models.models.approval_stage import ApprovalStage
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.models.approval_stage_collection_response import ApprovalStageCollectionResponse
 
 
 class StagesRequest(BaseRequestBuilder):
@@ -108,9 +108,15 @@ class StagesRequest(BaseRequestBuilder):
 		from .by_approval_stage_id import ByApprovalStageIdRequest
 		return ByApprovalStageIdRequest(self.request_adapter, path_parameters)
 
-	@property
 	def count(self,
+		approval_id: str,
 	) -> CountRequest:
+		if approval_id is None:
+			raise TypeError("approval_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["approval%2Did"] =  approval_id
+
 		from .count import CountRequest
-		return CountRequest(self.request_adapter, self.path_parameters)
+		return CountRequest(self.request_adapter, path_parameters)
 

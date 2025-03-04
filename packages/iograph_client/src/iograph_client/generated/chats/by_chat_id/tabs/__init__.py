@@ -14,9 +14,9 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_teams_tab_id import ByTeamsTabIdRequest
 	from .....request_adapter import HttpxRequestAdapter
-from iograph_models.models.teams_tab_collection_response import TeamsTabCollectionResponse
-from iograph_models.models.teams_tab import TeamsTab
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.models.teams_tab import TeamsTab
+from iograph_models.models.teams_tab_collection_response import TeamsTabCollectionResponse
 
 
 class TabsRequest(BaseRequestBuilder):
@@ -111,9 +111,15 @@ The corresponding app must already be installed in the chat.
 		from .by_teams_tab_id import ByTeamsTabIdRequest
 		return ByTeamsTabIdRequest(self.request_adapter, path_parameters)
 
-	@property
 	def count(self,
+		chat_id: str,
 	) -> CountRequest:
+		if chat_id is None:
+			raise TypeError("chat_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["chat%2Did"] =  chat_id
+
 		from .count import CountRequest
-		return CountRequest(self.request_adapter, self.path_parameters)
+		return CountRequest(self.request_adapter, path_parameters)
 
