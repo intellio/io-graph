@@ -11,13 +11,13 @@ from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:
 	from ......request_adapter import HttpxRequestAdapter
-from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.models.additional_access_get_response import Additional_accessGetResponse
+from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
 
 
 class AdditionalAccessRequest(BaseRequestBuilder):
 	def __init__(self,request_adapter: HttpxRequestAdapter, path_parameters: Optional[Union[dict[str, Any], str]]) -> None:
-		super().__init__(request_adapter, "{+baseurl}/identityGovernance/entitlementManagement/assignments/additionalAccess(accessPackageId='{accessPackageId}',incompatibleAccessPackageId='{incompatibleAccessPackageId}')", path_parameters)
+		super().__init__(request_adapter, "{+baseurl}/identityGovernance/entitlementManagement/assignments/additionalAccess()", path_parameters)
 
 	async def get(
 		self,
@@ -25,7 +25,8 @@ class AdditionalAccessRequest(BaseRequestBuilder):
 	) -> Additional_accessGetResponse:
 		"""
 		Invoke function additionalAccess
-		
+		In Microsoft Entra Entitlement Management, retrieve a collection of accessPackageAssignment objects that indicate a target user has an assignment to a specified access package and also an assignment to another, potentially incompatible, access package.  This can be used to prepare to configure the incompatible access packages for a specific access package.
+		Find more info here: https://learn.microsoft.com/graph/api/accesspackageassignment-additionalaccess?view=graph-rest-1.0
 		"""
 		tags = ['identityGovernance.entitlementManagement']
 

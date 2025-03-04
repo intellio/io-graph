@@ -16,8 +16,8 @@ if TYPE_CHECKING:
 	from .by_authentication_events_flow_id import ByAuthenticationEventsFlowIdRequest
 	from ....request_adapter import HttpxRequestAdapter
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
-from iograph_models.models.authentication_events_flow import AuthenticationEventsFlow
 from iograph_models.models.authentication_events_flow_collection_response import AuthenticationEventsFlowCollectionResponse
+from iograph_models.models.authentication_events_flow import AuthenticationEventsFlow
 
 
 class AuthenticationEventsFlowsRequest(BaseRequestBuilder):

@@ -11,10 +11,11 @@ from typing import Union, Any, Optional
 from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:
+	from .assigned_users_with_userprincipalname import AssignedUsersWithUserPrincipalNameRequest
 	from .assigned_users import AssignedUsersRequest
 	from ........request_adapter import HttpxRequestAdapter
-from iograph_models.models.cloud_pc_provisioning_policy_assignment import CloudPcProvisioningPolicyAssignment
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.models.cloud_pc_provisioning_policy_assignment import CloudPcProvisioningPolicyAssignment
 
 
 class ByCloudPcProvisioningPolicyAssignmentIdRequest(BaseRequestBuilder):
@@ -124,4 +125,24 @@ class ByCloudPcProvisioningPolicyAssignmentIdRequest(BaseRequestBuilder):
 
 		from .assigned_users import AssignedUsersRequest
 		return AssignedUsersRequest(self.request_adapter, path_parameters)
+
+	def assigned_users_with_userprincipalname(self,
+		cloudPcProvisioningPolicy_id: str,
+		cloudPcProvisioningPolicyAssignment_id: str,
+		userPrincipalName: str,
+	) -> AssignedUsersWithUserPrincipalNameRequest:
+		if cloudPcProvisioningPolicy_id is None:
+			raise TypeError("cloudPcProvisioningPolicy_id cannot be null.")
+		if cloudPcProvisioningPolicyAssignment_id is None:
+			raise TypeError("cloudPcProvisioningPolicyAssignment_id cannot be null.")
+		if userPrincipalName is None:
+			raise TypeError("userPrincipalName cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["cloudPcProvisioningPolicy%2Did"] =  cloudPcProvisioningPolicy_id
+		path_parameters["cloudPcProvisioningPolicyAssignment%2Did"] =  cloudPcProvisioningPolicyAssignment_id
+		path_parameters["userPrincipalName"] =  userPrincipalName
+
+		from .assigned_users_with_userprincipalname import AssignedUsersWithUserPrincipalNameRequest
+		return AssignedUsersWithUserPrincipalNameRequest(self.request_adapter, path_parameters)
 

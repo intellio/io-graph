@@ -11,12 +11,12 @@ from typing import Union, Any, Optional
 from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:
-	from .identity_governance_summary import IdentityGovernanceSummaryRequest
+	from .identity_governance_summary_with_startdatetime_enddatetime import IdentityGovernanceSummaryWithStartDateTimeEndDateTimeRequest
 	from .count import CountRequest
 	from .by_user_processing_result_id import ByUserProcessingResultIdRequest
 	from .......request_adapter import HttpxRequestAdapter
-from iograph_models.models.identity_governance_user_processing_result_collection_response import IdentityGovernanceUserProcessingResultCollectionResponse
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.models.identity_governance_user_processing_result_collection_response import IdentityGovernanceUserProcessingResultCollectionResponse
 
 
 class UserProcessingResultsRequest(BaseRequestBuilder):
@@ -95,11 +95,11 @@ class UserProcessingResultsRequest(BaseRequestBuilder):
 		from .count import CountRequest
 		return CountRequest(self.request_adapter, path_parameters)
 
-	def identity_governance_summary(self,
+	def identity_governance_summary_with_startdatetime_enddatetime(self,
 		workflow_id: str,
 		startDateTime: datetime,
 		endDateTime: datetime,
-	) -> IdentityGovernanceSummaryRequest:
+	) -> IdentityGovernanceSummaryWithStartDateTimeEndDateTimeRequest:
 		if workflow_id is None:
 			raise TypeError("workflow_id cannot be null.")
 		if startDateTime is None:
@@ -112,6 +112,6 @@ class UserProcessingResultsRequest(BaseRequestBuilder):
 		path_parameters["startDateTime"] =  startDateTime
 		path_parameters["endDateTime"] =  endDateTime
 
-		from .identity_governance_summary import IdentityGovernanceSummaryRequest
-		return IdentityGovernanceSummaryRequest(self.request_adapter, path_parameters)
+		from .identity_governance_summary_with_startdatetime_enddatetime import IdentityGovernanceSummaryWithStartDateTimeEndDateTimeRequest
+		return IdentityGovernanceSummaryWithStartDateTimeEndDateTimeRequest(self.request_adapter, path_parameters)
 

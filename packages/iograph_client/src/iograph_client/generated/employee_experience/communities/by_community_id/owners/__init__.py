@@ -14,18 +14,18 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_user_id import ByUserIdRequest
 	from ......request_adapter import HttpxRequestAdapter
-from iograph_models.models.user import User
+from iograph_models.models.user_collection_response import UserCollectionResponse
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
 
 
 class OwnersRequest(BaseRequestBuilder):
 	def __init__(self,request_adapter: HttpxRequestAdapter, path_parameters: Optional[Union[dict[str, Any], str]]) -> None:
-		super().__init__(request_adapter, "{+baseurl}/employeeExperience/communities/{community%2Did}/owners(userPrincipalName='{userPrincipalName}')", path_parameters)
+		super().__init__(request_adapter, "{+baseurl}/employeeExperience/communities/{community%2Did}/owners", path_parameters)
 
 	async def get(
 		self,
 		request_configuration: Optional[RequestConfiguration[GetQueryParams]] = None,
-	) -> User:
+	) -> UserCollectionResponse:
 		"""
 		Get owners from employeeExperience
 		The admins of the community. Limited to 100 users. If this property isn't specified when you create the community, the calling user is automatically assigned as the community owner.
@@ -43,9 +43,15 @@ class OwnersRequest(BaseRequestBuilder):
 		)
 		request_info.configure(request_configuration)
 		request_info.headers.try_add("Accept", "application/json")
-		return await self.request_adapter.send_async(request_info, User, error_mapping)
+		return await self.request_adapter.send_async(request_info, UserCollectionResponse, error_mapping)
 
 	class GetQueryParams(BaseModel):
+		top: int = Field(default=None,serialization_alias="%24top")
+		skip: int = Field(default=None,serialization_alias="%24skip")
+		search: str = Field(default=None,serialization_alias="%24search")
+		filter: str = Field(default=None,serialization_alias="%24filter")
+		count: bool = Field(default=None,serialization_alias="%24count")
+		orderby: list[str] = Field(default=None,serialization_alias="%24orderby")
 		select: list[str] = Field(default=None,serialization_alias="%24select")
 		expand: list[str] = Field(default=None,serialization_alias="%24expand")
 

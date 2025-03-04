@@ -15,8 +15,8 @@ if TYPE_CHECKING:
 	from .clear import ClearRequest
 	from .apply import ApplyRequest
 	from ..........request_adapter import HttpxRequestAdapter
-from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.models.workbook_table_sort import WorkbookTableSort
+from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
 
 
 class SortRequest(BaseRequestBuilder):

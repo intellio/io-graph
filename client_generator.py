@@ -55,14 +55,28 @@ python_reserved_words = [
 
 def module_class_name_from_name(name: str):
     func = lambda s: s[:1].upper() + s[1:]
+
+    # handle paths that have paranthesis
+    if '(' in name:
+        pattern = r'([a-zA-Z]*)='
+        params_in_paranthesis :list[str] = re.findall(pattern, name)
+        name = name[:name.index('(')]
+        if params_in_paranthesis:
+            name = name + 'With'+ ''.join([func(x) for x in params_in_paranthesis])
+        else:
+            name = name
+
     name = name.strip('$')
     name = name.replace('microsoft.graph.','')
-    name = name.replace('()', '')
-    if '{' in name:
+    # name = name.replace('()', '')
+
+    # if name starts with a curly brace, we will assume that it is a path parameter
+    if name.startswith('{') and name.endswith('}'):
         # remove the curly braces
         name = name[1:-1]
         name = func(name)
         name = 'By'+ name
+
     name = func(name)
 
     name = name.split('.')
@@ -75,10 +89,22 @@ def module_class_name_from_name(name: str):
 
 def module_file_name_from_name(name: str):
     func = lambda s: s[:1].lower() + s[1:]
+    # handle paths that have paranthesis
+    if '(' in name:
+        pattern = r'([a-zA-Z]*)='
+        params_in_paranthesis :list[str] = re.findall(pattern, name)
+        name = name[:name.index('(')]
+        if params_in_paranthesis:
+            name = name + '_with_'+ '_'.join([x.lower() for x in params_in_paranthesis])
+        else:
+            name = name
+
     name = name.strip('$')
-    name = name.replace('()', '')
+    # name = name.replace('()', '')
     name = name.replace('microsoft.graph.','')
-    if '{' in name:
+
+    # if name starts with a curly brace, we will assume that it is a path parameter
+    if name.startswith('{') and name.endswith('}'):
         # remove the curly braces
         name = name[1:-1]
         name = func(name)
@@ -578,6 +604,8 @@ def get_param_field_type(param):
         schema = param['schema']
         if '$ref' in schema:
             return 'str'
+        elif 'anyOf' in schema:
+            return 'str'
         else:
             return get_field_type(schema)
 
@@ -597,7 +625,6 @@ def _method_writes(
         details:dict,
         endpoint_path:str,
         path_parameters:list,
-        path_parts:list,
         http_path:str,
         components:dict
     ) -> list:
@@ -871,27 +898,19 @@ def _child_in_parent_writes(parent_file_content: list, model_name: str, child_pa
 
     return parent_file_content
 
-def _clean_path_string(path:str):
-    # if paranthesis in path, return string up to first occurence of (
-    if '(' in path:
-        path = path[:path.index('(')]
-    return path
-
 def add_missing_submodule_imports(paths:dict, components:dict):
     for path in paths.keys():
 
-        # # ignore paths that have query param in path
-        # if '(' in path:
-        #     continue
+
 
         path_parts = path.strip('/').split('/')
 
         for x in range(len(path_parts)-1):
-            parent_name = _clean_path_string(path_parts[x])
+            parent_name = path_parts[x]
             # parent_http_path = path[:path.rindex('/')]
             parent_http_path = '/'+ '/'.join(path_parts[:x+1])
 
-            model_name:str = _clean_path_string(path_parts[x+1])
+            model_name:str = path_parts[x+1]
             child_http_path = '/'+ '/'.join(path_parts[:x+2])
 
             # Check if child model has a path parameter
@@ -901,19 +920,7 @@ def add_missing_submodule_imports(paths:dict, components:dict):
                 child_path_parameters: dict = resolve_path_parameters(child_path_parameters, components)
  
 
-            # # Sometimes the constructed child path is not a valid path in paths
-            # if '{' in model_name:
-            #     if child_http_path in paths.keys():
-            #         child_path_parameters = paths[child_http_path].get('parameters', [])
-            #         if not child_path_parameters:
-            #             raise Exception('child path contains path_parameter but no path parameters was found in openapi dict for child model ' + model_name)
-            #         child_path_parameters: dict = resolve_path_parameters(child_path_parameters, components)
-            #     else:
-            #         child_path_parameters = {}
-            # else:
-            #     child_path_parameters = {}
-
-            parent_endpoint_path = os.path.join(client_generated_dir, *[module_file_name_from_name(_clean_path_string(part)) for part in path_parts[:x+1]])
+            parent_endpoint_path = os.path.join(client_generated_dir, *[module_file_name_from_name(part) for part in path_parts[:x+1]])
             parent_init_file = os.path.join(parent_endpoint_path, '__init__.py')
             parent_relative_path_to_root = '.' + '.'.join(['' for _ in range(len(path_parts[:x+1]))])
 
@@ -950,10 +957,10 @@ def add_methods(paths:dict, components:dict):
 
         # Create directory structure based on the path
         path_parts = path.strip('/').split('/')
-        path_parts = [_clean_path_string(x) for x in path_parts]
-
+        
         endpoint_path = os.path.join(client_generated_dir, *[module_file_name_from_name(part) for part in path_parts])
         endpoint_relative_path_to_root = '.' + '.'.join(['' for _ in range(len(path_parts))])
+        
         # create folders for the collection and all submodules
         progressive_path = []
         for part in path_parts:
@@ -982,7 +989,6 @@ def add_methods(paths:dict, components:dict):
                 details=details,
                 endpoint_path=endpoint_path,
                 path_parameters=path_parameters,
-                path_parts=path_parts,
                 http_path=path,
                 components=components,
             )
@@ -1010,7 +1016,6 @@ def add_generated_base_service_client(paths:dict):
     # iterate over the paths and only extract the first part of the path
     for path in paths.keys():
         path_parts = path.strip('/').split('/')
-        path_parts = [_clean_path_string(x) for x in path_parts]
         model_name = path_parts[0]
 
         # # ignore paths that have query param in path

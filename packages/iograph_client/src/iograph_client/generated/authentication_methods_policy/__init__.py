@@ -12,8 +12,8 @@ from typing import TYPE_CHECKING
 if TYPE_CHECKING:
 	from .authentication_method_configurations import AuthenticationMethodConfigurationsRequest
 	from ...request_adapter import HttpxRequestAdapter
-from iograph_models.models.authentication_methods_policy import AuthenticationMethodsPolicy
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.models.authentication_methods_policy import AuthenticationMethodsPolicy
 
 
 class AuthenticationMethodsPolicyRequest(BaseRequestBuilder):

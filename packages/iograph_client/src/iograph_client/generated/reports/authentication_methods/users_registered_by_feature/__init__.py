@@ -17,7 +17,7 @@ from iograph_models.models.user_registration_feature_summary import UserRegistra
 
 class UsersRegisteredByFeatureRequest(BaseRequestBuilder):
 	def __init__(self,request_adapter: HttpxRequestAdapter, path_parameters: Optional[Union[dict[str, Any], str]]) -> None:
-		super().__init__(request_adapter, "{+baseurl}/reports/authenticationMethods/usersRegisteredByFeature(includedUserTypes='{includedUserTypes}',includedUserRoles='{includedUserRoles}')", path_parameters)
+		super().__init__(request_adapter, "{+baseurl}/reports/authenticationMethods/usersRegisteredByFeature()", path_parameters)
 
 	async def get(
 		self,
@@ -25,7 +25,8 @@ class UsersRegisteredByFeatureRequest(BaseRequestBuilder):
 	) -> UserRegistrationFeatureSummary:
 		"""
 		Invoke function usersRegisteredByFeature
-		
+		Get the number of users capable of multi-factor authentication, self-service password reset, and passwordless authentication.
+		Find more info here: https://learn.microsoft.com/graph/api/authenticationmethodsroot-usersregisteredbyfeature?view=graph-rest-1.0
 		"""
 		tags = ['reports.authenticationMethodsRoot']
 

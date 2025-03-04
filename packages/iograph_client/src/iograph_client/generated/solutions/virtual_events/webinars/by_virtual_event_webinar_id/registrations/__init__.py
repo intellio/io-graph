@@ -12,25 +12,25 @@ from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:
 	from .count import CountRequest
-	from .cancel import CancelRequest
 	from .by_virtual_event_registration_id import ByVirtualEventRegistrationIdRequest
 	from .......request_adapter import HttpxRequestAdapter
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.models.virtual_event_registration_collection_response import VirtualEventRegistrationCollectionResponse
 from iograph_models.models.virtual_event_registration import VirtualEventRegistration
 
 
 class RegistrationsRequest(BaseRequestBuilder):
 	def __init__(self,request_adapter: HttpxRequestAdapter, path_parameters: Optional[Union[dict[str, Any], str]]) -> None:
-		super().__init__(request_adapter, "{+baseurl}/solutions/virtualEvents/webinars/{virtualEventWebinar%2Did}/registrations(userId='{userId}')", path_parameters)
+		super().__init__(request_adapter, "{+baseurl}/solutions/virtualEvents/webinars/{virtualEventWebinar%2Did}/registrations", path_parameters)
 
 	async def get(
 		self,
 		request_configuration: Optional[RequestConfiguration[GetQueryParams]] = None,
-	) -> VirtualEventRegistration:
+	) -> VirtualEventRegistrationCollectionResponse:
 		"""
-		Get virtualEventRegistration
-		Get the properties and relationships of a virtualEventRegistration object.
-		Find more info here: https://learn.microsoft.com/graph/api/virtualeventregistration-get?view=graph-rest-1.0
+		List virtualEventRegistrations
+		Get a list of all registration records of a webinar.
+		Find more info here: https://learn.microsoft.com/graph/api/virtualeventregistration-list?view=graph-rest-1.0
 		"""
 		tags = ['solutions.virtualEventsRoot']
 
@@ -45,16 +45,17 @@ class RegistrationsRequest(BaseRequestBuilder):
 		)
 		request_info.configure(request_configuration)
 		request_info.headers.try_add("Accept", "application/json")
-		return await self.request_adapter.send_async(request_info, VirtualEventRegistration, error_mapping)
+		return await self.request_adapter.send_async(request_info, VirtualEventRegistrationCollectionResponse, error_mapping)
 
-	async def patch(
+	async def post(
 		self,
 		body: VirtualEventRegistration,
 		request_configuration: Optional[RequestConfiguration[BaseModel]] = None,
 	) -> VirtualEventRegistration:
 		"""
-		Update the navigation property registrations in solutions
-		
+		Create virtualEventRegistration
+		Create a registration record for a registrant of a webinar. This method registers the person for the webinar. 
+		Find more info here: https://learn.microsoft.com/graph/api/virtualeventwebinar-post-registrations?view=graph-rest-1.0
 		"""
 		tags = ['solutions.virtualEventsRoot']
 
@@ -63,7 +64,7 @@ class RegistrationsRequest(BaseRequestBuilder):
 		}
 
 		request_info: RequestInformation = RequestInformation(
-			method = Method.PATCH,
+			method = Method.POST,
 			url_template = self.url_template,
 			path_parameters = self.path_parameters,
 		)
@@ -72,34 +73,15 @@ class RegistrationsRequest(BaseRequestBuilder):
 		request_info.set_content(body, "application/json")
 		return await self.request_adapter.send_async(request_info, VirtualEventRegistration, error_mapping)
 
-	async def delete(
-		self,
-		request_configuration: Optional[RequestConfiguration[BaseModel]] = None,
-	) -> None:
-		"""
-		Delete navigation property registrations for solutions
-		
-		"""
-		tags = ['solutions.virtualEventsRoot']
-		header_parameters = [{'name': 'If-Match', 'in': 'header', 'description': 'ETag', 'schema': {'type': 'string'}}]
-
-		error_mapping: dict[str, type[BaseModel]] = {
-			"XXX": ODataErrorsODataError,
-		}
-
-		request_info: RequestInformation = RequestInformation(
-			method = Method.DELETE,
-			url_template = self.url_template,
-			path_parameters = self.path_parameters,
-		)
-		request_info.configure(request_configuration)
-		request_info.headers.try_add("Accept", "application/json")
-		return await self.request_adapter.send_no_response_content_async(request_info, error_mapping)
-
 	class GetQueryParams(BaseModel):
+		top: int = Field(default=None,serialization_alias="%24top")
+		skip: int = Field(default=None,serialization_alias="%24skip")
+		search: str = Field(default=None,serialization_alias="%24search")
+		filter: str = Field(default=None,serialization_alias="%24filter")
+		count: bool = Field(default=None,serialization_alias="%24count")
+		orderby: list[str] = Field(default=None,serialization_alias="%24orderby")
 		select: list[str] = Field(default=None,serialization_alias="%24select")
 		expand: list[str] = Field(default=None,serialization_alias="%24expand")
-
 
 
 	def with_url(self, raw_url: str) -> RegistrationsRequest:
@@ -127,22 +109,6 @@ class RegistrationsRequest(BaseRequestBuilder):
 
 		from .by_virtual_event_registration_id import ByVirtualEventRegistrationIdRequest
 		return ByVirtualEventRegistrationIdRequest(self.request_adapter, path_parameters)
-
-	def cancel(self,
-		virtualEventWebinar_id: str,
-		email: str,
-	) -> CancelRequest:
-		if virtualEventWebinar_id is None:
-			raise TypeError("virtualEventWebinar_id cannot be null.")
-		if email is None:
-			raise TypeError("email cannot be null.")
-
-		path_parameters = get_path_parameters(self.path_parameters)
-		path_parameters["virtualEventWebinar%2Did"] =  virtualEventWebinar_id
-		path_parameters["email"] =  email
-
-		from .cancel import CancelRequest
-		return CancelRequest(self.request_adapter, path_parameters)
 
 	def count(self,
 		virtualEventWebinar_id: str,

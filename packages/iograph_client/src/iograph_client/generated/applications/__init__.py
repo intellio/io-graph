@@ -20,22 +20,24 @@ if TYPE_CHECKING:
 	from ...request_adapter import HttpxRequestAdapter
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.models.application import Application
+from iograph_models.models.application_collection_response import ApplicationCollectionResponse
 
 
 class ApplicationsRequest(BaseRequestBuilder):
 	def __init__(self,request_adapter: HttpxRequestAdapter, path_parameters: Optional[Union[dict[str, Any], str]]) -> None:
-		super().__init__(request_adapter, "{+baseurl}/applications(uniqueName='{uniqueName}')", path_parameters)
+		super().__init__(request_adapter, "{+baseurl}/applications", path_parameters)
 
 	async def get(
 		self,
 		request_configuration: Optional[RequestConfiguration[GetQueryParams]] = None,
-	) -> Application:
+	) -> ApplicationCollectionResponse:
 		"""
-		Get application
-		Get the properties and relationships of an application object.
-		Find more info here: https://learn.microsoft.com/graph/api/application-get?view=graph-rest-1.0
+		List applications
+		Get the list of applications in this organization.
+		Find more info here: https://learn.microsoft.com/graph/api/application-list?view=graph-rest-1.0
 		"""
 		tags = ['applications.application']
+		header_parameters = [{'name': 'ConsistencyLevel', 'in': 'header', 'description': 'Indicates the requested consistency level. Documentation URL: https://docs.microsoft.com/graph/aad-advanced-queries', 'schema': {'type': 'string'}, 'examples': {'example-1': {'description': "$search and $count queries require the client to set the ConsistencyLevel HTTP header to 'eventual'.", 'value': 'eventual'}}}]
 
 		error_mapping: dict[str, type[BaseModel]] = {
 			"XXX": ODataErrorsODataError,
@@ -48,17 +50,17 @@ class ApplicationsRequest(BaseRequestBuilder):
 		)
 		request_info.configure(request_configuration)
 		request_info.headers.try_add("Accept", "application/json")
-		return await self.request_adapter.send_async(request_info, Application, error_mapping)
+		return await self.request_adapter.send_async(request_info, ApplicationCollectionResponse, error_mapping)
 
-	async def patch(
+	async def post(
 		self,
 		body: Application,
 		request_configuration: Optional[RequestConfiguration[BaseModel]] = None,
 	) -> Application:
 		"""
-		Upsert application
-		Create a new application object if it doesn't exist, or update the properties of an existing application object.
-		Find more info here: https://learn.microsoft.com/graph/api/application-upsert?view=graph-rest-1.0
+		Create application
+		Create a new application object.
+		Find more info here: https://learn.microsoft.com/graph/api/application-post-applications?view=graph-rest-1.0
 		"""
 		tags = ['applications.application']
 
@@ -67,7 +69,7 @@ class ApplicationsRequest(BaseRequestBuilder):
 		}
 
 		request_info: RequestInformation = RequestInformation(
-			method = Method.PATCH,
+			method = Method.POST,
 			url_template = self.url_template,
 			path_parameters = self.path_parameters,
 		)
@@ -76,35 +78,15 @@ class ApplicationsRequest(BaseRequestBuilder):
 		request_info.set_content(body, "application/json")
 		return await self.request_adapter.send_async(request_info, Application, error_mapping)
 
-	async def delete(
-		self,
-		request_configuration: Optional[RequestConfiguration[BaseModel]] = None,
-	) -> None:
-		"""
-		Delete application
-		Delete an application object. When deleted, apps are moved to a temporary container and can be restored within 30 days. After that time, they are permanently deleted.
-		Find more info here: https://learn.microsoft.com/graph/api/application-delete?view=graph-rest-1.0
-		"""
-		tags = ['applications.application']
-		header_parameters = [{'name': 'If-Match', 'in': 'header', 'description': 'ETag', 'schema': {'type': 'string'}}]
-
-		error_mapping: dict[str, type[BaseModel]] = {
-			"XXX": ODataErrorsODataError,
-		}
-
-		request_info: RequestInformation = RequestInformation(
-			method = Method.DELETE,
-			url_template = self.url_template,
-			path_parameters = self.path_parameters,
-		)
-		request_info.configure(request_configuration)
-		request_info.headers.try_add("Accept", "application/json")
-		return await self.request_adapter.send_no_response_content_async(request_info, error_mapping)
-
 	class GetQueryParams(BaseModel):
+		top: int = Field(default=None,serialization_alias="%24top")
+		skip: int = Field(default=None,serialization_alias="%24skip")
+		search: str = Field(default=None,serialization_alias="%24search")
+		filter: str = Field(default=None,serialization_alias="%24filter")
+		count: bool = Field(default=None,serialization_alias="%24count")
+		orderby: list[str] = Field(default=None,serialization_alias="%24orderby")
 		select: list[str] = Field(default=None,serialization_alias="%24select")
 		expand: list[str] = Field(default=None,serialization_alias="%24expand")
-
 
 
 	def with_url(self, raw_url: str) -> ApplicationsRequest:

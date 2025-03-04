@@ -11,12 +11,13 @@ from typing import Union, Any, Optional
 from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:
+	from .supported_time_zones_with_timezonestandard import SupportedTimeZonesWithTimeZoneStandardRequest
 	from .supported_time_zones import SupportedTimeZonesRequest
 	from .supported_languages import SupportedLanguagesRequest
 	from .master_categories import MasterCategoriesRequest
 	from .....request_adapter import HttpxRequestAdapter
-from iograph_models.models.outlook_user import OutlookUser
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.models.outlook_user import OutlookUser
 
 
 class OutlookRequest(BaseRequestBuilder):
@@ -95,4 +96,20 @@ class OutlookRequest(BaseRequestBuilder):
 
 		from .supported_time_zones import SupportedTimeZonesRequest
 		return SupportedTimeZonesRequest(self.request_adapter, path_parameters)
+
+	def supported_time_zones_with_timezonestandard(self,
+		user_id: str,
+		TimeZoneStandard: str,
+	) -> SupportedTimeZonesWithTimeZoneStandardRequest:
+		if user_id is None:
+			raise TypeError("user_id cannot be null.")
+		if TimeZoneStandard is None:
+			raise TypeError("TimeZoneStandard cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["user%2Did"] =  user_id
+		path_parameters["TimeZoneStandard"] =  TimeZoneStandard
+
+		from .supported_time_zones_with_timezonestandard import SupportedTimeZonesWithTimeZoneStandardRequest
+		return SupportedTimeZonesWithTimeZoneStandardRequest(self.request_adapter, path_parameters)
 

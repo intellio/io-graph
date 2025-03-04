@@ -12,12 +12,14 @@ from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:
 	from .sessions import SessionsRequest
+	from .registrations_with_userid import RegistrationsWithUserIdRequest
+	from .registrations_with_email import RegistrationsWithEmailRequest
 	from .registrations import RegistrationsRequest
 	from .registration_configuration import RegistrationConfigurationRequest
 	from .presenters import PresentersRequest
 	from ......request_adapter import HttpxRequestAdapter
-from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.models.virtual_event_webinar import VirtualEventWebinar
+from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
 
 
 class ByVirtualEventWebinarIdRequest(BaseRequestBuilder):
@@ -149,6 +151,38 @@ class ByVirtualEventWebinarIdRequest(BaseRequestBuilder):
 
 		from .registrations import RegistrationsRequest
 		return RegistrationsRequest(self.request_adapter, path_parameters)
+
+	def registrations_with_email(self,
+		virtualEventWebinar_id: str,
+		email: str,
+	) -> RegistrationsWithEmailRequest:
+		if virtualEventWebinar_id is None:
+			raise TypeError("virtualEventWebinar_id cannot be null.")
+		if email is None:
+			raise TypeError("email cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["virtualEventWebinar%2Did"] =  virtualEventWebinar_id
+		path_parameters["email"] =  email
+
+		from .registrations_with_email import RegistrationsWithEmailRequest
+		return RegistrationsWithEmailRequest(self.request_adapter, path_parameters)
+
+	def registrations_with_userid(self,
+		virtualEventWebinar_id: str,
+		userId: str,
+	) -> RegistrationsWithUserIdRequest:
+		if virtualEventWebinar_id is None:
+			raise TypeError("virtualEventWebinar_id cannot be null.")
+		if userId is None:
+			raise TypeError("userId cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["virtualEventWebinar%2Did"] =  virtualEventWebinar_id
+		path_parameters["userId"] =  userId
+
+		from .registrations_with_userid import RegistrationsWithUserIdRequest
+		return RegistrationsWithUserIdRequest(self.request_adapter, path_parameters)
 
 	def sessions(self,
 		virtualEventWebinar_id: str,

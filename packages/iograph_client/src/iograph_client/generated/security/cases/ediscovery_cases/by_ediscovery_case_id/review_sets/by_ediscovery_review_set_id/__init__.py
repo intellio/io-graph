@@ -15,8 +15,8 @@ if TYPE_CHECKING:
 	from .security_export import SecurityExportRequest
 	from .security_add_to_review_set import SecurityAddToReviewSetRequest
 	from ........request_adapter import HttpxRequestAdapter
-from iograph_models.models.security_ediscovery_review_set import SecurityEdiscoveryReviewSet
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.models.security_ediscovery_review_set import SecurityEdiscoveryReviewSet
 
 
 class ByEdiscoveryReviewSetIdRequest(BaseRequestBuilder):

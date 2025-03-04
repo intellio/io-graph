@@ -17,7 +17,7 @@ from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataEr
 
 class ManagedDeviceEnrollmentFailureDetailsRequest(BaseRequestBuilder):
 	def __init__(self,request_adapter: HttpxRequestAdapter, path_parameters: Optional[Union[dict[str, Any], str]]) -> None:
-		super().__init__(request_adapter, "{+baseurl}/reports/managedDeviceEnrollmentFailureDetails(skip={skip},top={top},filter='{filter}',skipToken='{skipToken}')", path_parameters)
+		super().__init__(request_adapter, "{+baseurl}/reports/managedDeviceEnrollmentFailureDetails()", path_parameters)
 
 	async def get(
 		self,

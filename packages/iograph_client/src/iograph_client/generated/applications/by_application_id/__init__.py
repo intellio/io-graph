@@ -28,6 +28,7 @@ if TYPE_CHECKING:
 	from .add_key import AddKeyRequest
 	from .logo import LogoRequest
 	from .home_realm_discovery_policies import HomeRealmDiscoveryPoliciesRequest
+	from .federated_identity_credentials_with_name import FederatedIdentityCredentialsWithNameRequest
 	from .federated_identity_credentials import FederatedIdentityCredentialsRequest
 	from .extension_properties import ExtensionPropertiesRequest
 	from .created_on_behalf_of import CreatedOnBehalfOfRequest
@@ -179,6 +180,22 @@ class ByApplicationIdRequest(BaseRequestBuilder):
 
 		from .federated_identity_credentials import FederatedIdentityCredentialsRequest
 		return FederatedIdentityCredentialsRequest(self.request_adapter, path_parameters)
+
+	def federated_identity_credentials_with_name(self,
+		application_id: str,
+		name: str,
+	) -> FederatedIdentityCredentialsWithNameRequest:
+		if application_id is None:
+			raise TypeError("application_id cannot be null.")
+		if name is None:
+			raise TypeError("name cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["application%2Did"] =  application_id
+		path_parameters["name"] =  name
+
+		from .federated_identity_credentials_with_name import FederatedIdentityCredentialsWithNameRequest
+		return FederatedIdentityCredentialsWithNameRequest(self.request_adapter, path_parameters)
 
 	def home_realm_discovery_policies(self,
 		application_id: str,

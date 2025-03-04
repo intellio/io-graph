@@ -51,9 +51,9 @@ if TYPE_CHECKING:
 	from .notification_message_templates import NotificationMessageTemplatesRequest
 	from .mobile_threat_defense_connectors import MobileThreatDefenseConnectorsRequest
 	from .mobile_app_troubleshooting_events import MobileAppTroubleshootingEventsRequest
-	from .verify_windows_enrollment_auto_discovery import VerifyWindowsEnrollmentAutoDiscoveryRequest
+	from .verify_windows_enrollment_auto_discovery_with_domainname import VerifyWindowsEnrollmentAutoDiscoveryWithDomainNameRequest
 	from .user_experience_analytics_summarize_work_from_anywhere_devices import UserExperienceAnalyticsSummarizeWorkFromAnywhereDevicesRequest
-	from .get_effective_permissions import GetEffectivePermissionsRequest
+	from .get_effective_permissions_with_scope import GetEffectivePermissionsWithScopeRequest
 	from .managed_devices import ManagedDevicesRequest
 	from .managed_device_overview import ManagedDeviceOverviewRequest
 	from .ios_update_statuses import IosUpdateStatusesRequest
@@ -73,8 +73,8 @@ if TYPE_CHECKING:
 	from .audit_events import AuditEventsRequest
 	from .apple_push_notification_certificate import ApplePushNotificationCertificateRequest
 	from ...request_adapter import HttpxRequestAdapter
-from iograph_models.models.device_management import DeviceManagement
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.models.device_management import DeviceManagement
 
 
 class DeviceManagementRequest(BaseRequestBuilder):
@@ -254,17 +254,17 @@ class DeviceManagementRequest(BaseRequestBuilder):
 		from .managed_devices import ManagedDevicesRequest
 		return ManagedDevicesRequest(self.request_adapter, self.path_parameters)
 
-	def get_effective_permissions(self,
+	def get_effective_permissions_with_scope(self,
 		scope: str,
-	) -> GetEffectivePermissionsRequest:
+	) -> GetEffectivePermissionsWithScopeRequest:
 		if scope is None:
 			raise TypeError("scope cannot be null.")
 
 		path_parameters = get_path_parameters(self.path_parameters)
 		path_parameters["scope"] =  scope
 
-		from .get_effective_permissions import GetEffectivePermissionsRequest
-		return GetEffectivePermissionsRequest(self.request_adapter, path_parameters)
+		from .get_effective_permissions_with_scope import GetEffectivePermissionsWithScopeRequest
+		return GetEffectivePermissionsWithScopeRequest(self.request_adapter, path_parameters)
 
 	@property
 	def user_experience_analytics_summarize_work_from_anywhere_devices(self,
@@ -272,17 +272,17 @@ class DeviceManagementRequest(BaseRequestBuilder):
 		from .user_experience_analytics_summarize_work_from_anywhere_devices import UserExperienceAnalyticsSummarizeWorkFromAnywhereDevicesRequest
 		return UserExperienceAnalyticsSummarizeWorkFromAnywhereDevicesRequest(self.request_adapter, self.path_parameters)
 
-	def verify_windows_enrollment_auto_discovery(self,
+	def verify_windows_enrollment_auto_discovery_with_domainname(self,
 		domainName: str,
-	) -> VerifyWindowsEnrollmentAutoDiscoveryRequest:
+	) -> VerifyWindowsEnrollmentAutoDiscoveryWithDomainNameRequest:
 		if domainName is None:
 			raise TypeError("domainName cannot be null.")
 
 		path_parameters = get_path_parameters(self.path_parameters)
 		path_parameters["domainName"] =  domainName
 
-		from .verify_windows_enrollment_auto_discovery import VerifyWindowsEnrollmentAutoDiscoveryRequest
-		return VerifyWindowsEnrollmentAutoDiscoveryRequest(self.request_adapter, path_parameters)
+		from .verify_windows_enrollment_auto_discovery_with_domainname import VerifyWindowsEnrollmentAutoDiscoveryWithDomainNameRequest
+		return VerifyWindowsEnrollmentAutoDiscoveryWithDomainNameRequest(self.request_adapter, path_parameters)
 
 	@property
 	def mobile_app_troubleshooting_events(self,

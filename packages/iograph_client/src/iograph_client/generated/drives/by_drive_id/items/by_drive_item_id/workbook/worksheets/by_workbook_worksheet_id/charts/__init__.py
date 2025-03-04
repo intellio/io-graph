@@ -11,15 +11,15 @@ from typing import Union, Any, Optional
 from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:
-	from .item_at import ItemAtRequest
-	from .item import ItemRequest
+	from .item_at_with_index import ItemAtWithIndexRequest
+	from .item_with_name import ItemWithNameRequest
 	from .count import CountRequest
 	from .add import AddRequest
 	from .by_workbook_chart_id import ByWorkbookChartIdRequest
 	from ..........request_adapter import HttpxRequestAdapter
-from iograph_models.models.workbook_chart_collection_response import WorkbookChartCollectionResponse
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.models.workbook_chart import WorkbookChart
+from iograph_models.models.workbook_chart_collection_response import WorkbookChartCollectionResponse
 
 
 class ChartsRequest(BaseRequestBuilder):
@@ -159,12 +159,12 @@ class ChartsRequest(BaseRequestBuilder):
 		from .count import CountRequest
 		return CountRequest(self.request_adapter, path_parameters)
 
-	def item(self,
+	def item_with_name(self,
 		drive_id: str,
 		driveItem_id: str,
 		workbookWorksheet_id: str,
 		name: str,
-	) -> ItemRequest:
+	) -> ItemWithNameRequest:
 		if drive_id is None:
 			raise TypeError("drive_id cannot be null.")
 		if driveItem_id is None:
@@ -180,15 +180,15 @@ class ChartsRequest(BaseRequestBuilder):
 		path_parameters["workbookWorksheet%2Did"] =  workbookWorksheet_id
 		path_parameters["name"] =  name
 
-		from .item import ItemRequest
-		return ItemRequest(self.request_adapter, path_parameters)
+		from .item_with_name import ItemWithNameRequest
+		return ItemWithNameRequest(self.request_adapter, path_parameters)
 
-	def item_at(self,
+	def item_at_with_index(self,
 		drive_id: str,
 		driveItem_id: str,
 		workbookWorksheet_id: str,
 		index: int,
-	) -> ItemAtRequest:
+	) -> ItemAtWithIndexRequest:
 		if drive_id is None:
 			raise TypeError("drive_id cannot be null.")
 		if driveItem_id is None:
@@ -204,6 +204,6 @@ class ChartsRequest(BaseRequestBuilder):
 		path_parameters["workbookWorksheet%2Did"] =  workbookWorksheet_id
 		path_parameters["index"] =  index
 
-		from .item_at import ItemAtRequest
-		return ItemAtRequest(self.request_adapter, path_parameters)
+		from .item_at_with_index import ItemAtWithIndexRequest
+		return ItemAtWithIndexRequest(self.request_adapter, path_parameters)
 

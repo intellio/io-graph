@@ -19,8 +19,8 @@ if TYPE_CHECKING:
 	from .landing_pages import LandingPagesRequest
 	from .end_user_notifications import EndUserNotificationsRequest
 	from ....request_adapter import HttpxRequestAdapter
-from iograph_models.models.attack_simulation_root import AttackSimulationRoot
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.models.attack_simulation_root import AttackSimulationRoot
 
 
 class AttackSimulationRequest(BaseRequestBuilder):

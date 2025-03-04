@@ -14,8 +14,8 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_attachment_session_id import ByAttachmentSessionIdRequest
 	from ..........request_adapter import HttpxRequestAdapter
-from iograph_models.models.attachment_session_collection_response import AttachmentSessionCollectionResponse
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.models.attachment_session_collection_response import AttachmentSessionCollectionResponse
 
 
 class AttachmentSessionsRequest(BaseRequestBuilder):

@@ -13,8 +13,8 @@ if TYPE_CHECKING:
 	from .settings import SettingsRequest
 	from .file_storage import FileStorageRequest
 	from ...request_adapter import HttpxRequestAdapter
-from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.models.storage import Storage
+from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
 
 
 class StorageRequest(BaseRequestBuilder):

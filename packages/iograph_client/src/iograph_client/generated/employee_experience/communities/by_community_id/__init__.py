@@ -11,6 +11,7 @@ from typing import Union, Any, Optional
 from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:
+	from .owners_with_userprincipalname import OwnersWithUserPrincipalNameRequest
 	from .owners import OwnersRequest
 	from .group import GroupRequest
 	from .....request_adapter import HttpxRequestAdapter
@@ -136,4 +137,20 @@ class ByCommunityIdRequest(BaseRequestBuilder):
 
 		from .owners import OwnersRequest
 		return OwnersRequest(self.request_adapter, path_parameters)
+
+	def owners_with_userprincipalname(self,
+		community_id: str,
+		userPrincipalName: str,
+	) -> OwnersWithUserPrincipalNameRequest:
+		if community_id is None:
+			raise TypeError("community_id cannot be null.")
+		if userPrincipalName is None:
+			raise TypeError("userPrincipalName cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["community%2Did"] =  community_id
+		path_parameters["userPrincipalName"] =  userPrincipalName
+
+		from .owners_with_userprincipalname import OwnersWithUserPrincipalNameRequest
+		return OwnersWithUserPrincipalNameRequest(self.request_adapter, path_parameters)
 

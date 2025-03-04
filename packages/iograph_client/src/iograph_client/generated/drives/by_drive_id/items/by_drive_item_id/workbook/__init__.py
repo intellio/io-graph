@@ -15,8 +15,8 @@ if TYPE_CHECKING:
 	from .tables import TablesRequest
 	from .operations import OperationsRequest
 	from .names import NamesRequest
-	from .table_row_operation_result import TableRowOperationResultRequest
-	from .session_info_resource import SessionInfoResourceRequest
+	from .table_row_operation_result_with_key import TableRowOperationResultWithKeyRequest
+	from .session_info_resource_with_key import SessionInfoResourceWithKeyRequest
 	from .refresh_session import RefreshSessionRequest
 	from .create_session import CreateSessionRequest
 	from .close_session import CloseSessionRequest
@@ -24,8 +24,8 @@ if TYPE_CHECKING:
 	from .comments import CommentsRequest
 	from .application import ApplicationRequest
 	from .......request_adapter import HttpxRequestAdapter
-from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.models.workbook import Workbook
+from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
 
 
 class WorkbookRequest(BaseRequestBuilder):
@@ -216,11 +216,11 @@ class WorkbookRequest(BaseRequestBuilder):
 		from .refresh_session import RefreshSessionRequest
 		return RefreshSessionRequest(self.request_adapter, path_parameters)
 
-	def session_info_resource(self,
+	def session_info_resource_with_key(self,
 		drive_id: str,
 		driveItem_id: str,
 		key: str,
-	) -> SessionInfoResourceRequest:
+	) -> SessionInfoResourceWithKeyRequest:
 		if drive_id is None:
 			raise TypeError("drive_id cannot be null.")
 		if driveItem_id is None:
@@ -233,14 +233,14 @@ class WorkbookRequest(BaseRequestBuilder):
 		path_parameters["driveItem%2Did"] =  driveItem_id
 		path_parameters["key"] =  key
 
-		from .session_info_resource import SessionInfoResourceRequest
-		return SessionInfoResourceRequest(self.request_adapter, path_parameters)
+		from .session_info_resource_with_key import SessionInfoResourceWithKeyRequest
+		return SessionInfoResourceWithKeyRequest(self.request_adapter, path_parameters)
 
-	def table_row_operation_result(self,
+	def table_row_operation_result_with_key(self,
 		drive_id: str,
 		driveItem_id: str,
 		key: str,
-	) -> TableRowOperationResultRequest:
+	) -> TableRowOperationResultWithKeyRequest:
 		if drive_id is None:
 			raise TypeError("drive_id cannot be null.")
 		if driveItem_id is None:
@@ -253,8 +253,8 @@ class WorkbookRequest(BaseRequestBuilder):
 		path_parameters["driveItem%2Did"] =  driveItem_id
 		path_parameters["key"] =  key
 
-		from .table_row_operation_result import TableRowOperationResultRequest
-		return TableRowOperationResultRequest(self.request_adapter, path_parameters)
+		from .table_row_operation_result_with_key import TableRowOperationResultWithKeyRequest
+		return TableRowOperationResultWithKeyRequest(self.request_adapter, path_parameters)
 
 	def names(self,
 		drive_id: str,

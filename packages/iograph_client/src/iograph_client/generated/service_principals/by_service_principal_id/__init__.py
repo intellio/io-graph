@@ -31,6 +31,7 @@ if TYPE_CHECKING:
 	from .add_key import AddKeyRequest
 	from .member_of import MemberOfRequest
 	from .home_realm_discovery_policies import HomeRealmDiscoveryPoliciesRequest
+	from .federated_identity_credentials_with_name import FederatedIdentityCredentialsWithNameRequest
 	from .federated_identity_credentials import FederatedIdentityCredentialsRequest
 	from .endpoints import EndpointsRequest
 	from .delegated_permission_classifications import DelegatedPermissionClassificationsRequest
@@ -40,8 +41,8 @@ if TYPE_CHECKING:
 	from .app_role_assigned_to import AppRoleAssignedToRequest
 	from .app_management_policies import AppManagementPoliciesRequest
 	from ....request_adapter import HttpxRequestAdapter
-from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.models.service_principal import ServicePrincipal
+from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
 
 
 class ByServicePrincipalIdRequest(BaseRequestBuilder):
@@ -234,6 +235,22 @@ class ByServicePrincipalIdRequest(BaseRequestBuilder):
 
 		from .federated_identity_credentials import FederatedIdentityCredentialsRequest
 		return FederatedIdentityCredentialsRequest(self.request_adapter, path_parameters)
+
+	def federated_identity_credentials_with_name(self,
+		servicePrincipal_id: str,
+		name: str,
+	) -> FederatedIdentityCredentialsWithNameRequest:
+		if servicePrincipal_id is None:
+			raise TypeError("servicePrincipal_id cannot be null.")
+		if name is None:
+			raise TypeError("name cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["servicePrincipal%2Did"] =  servicePrincipal_id
+		path_parameters["name"] =  name
+
+		from .federated_identity_credentials_with_name import FederatedIdentityCredentialsWithNameRequest
+		return FederatedIdentityCredentialsWithNameRequest(self.request_adapter, path_parameters)
 
 	def home_realm_discovery_policies(self,
 		servicePrincipal_id: str,

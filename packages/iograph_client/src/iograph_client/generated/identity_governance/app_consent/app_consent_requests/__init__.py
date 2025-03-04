@@ -11,7 +11,7 @@ from typing import Union, Any, Optional
 from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:
-	from .filter_by_current_user import FilterByCurrentUserRequest
+	from .filter_by_current_user_with_on import FilterByCurrentUserWithOnRequest
 	from .count import CountRequest
 	from .by_app_consent_request_id import ByAppConsentRequestIdRequest
 	from .....request_adapter import HttpxRequestAdapter
@@ -112,15 +112,15 @@ class AppConsentRequestsRequest(BaseRequestBuilder):
 		from .count import CountRequest
 		return CountRequest(self.request_adapter, self.path_parameters)
 
-	def filter_by_current_user(self,
+	def filter_by_current_user_with_on(self,
 		on: str,
-	) -> FilterByCurrentUserRequest:
+	) -> FilterByCurrentUserWithOnRequest:
 		if on is None:
 			raise TypeError("on cannot be null.")
 
 		path_parameters = get_path_parameters(self.path_parameters)
 		path_parameters["on"] =  on
 
-		from .filter_by_current_user import FilterByCurrentUserRequest
-		return FilterByCurrentUserRequest(self.request_adapter, path_parameters)
+		from .filter_by_current_user_with_on import FilterByCurrentUserWithOnRequest
+		return FilterByCurrentUserWithOnRequest(self.request_adapter, path_parameters)
 

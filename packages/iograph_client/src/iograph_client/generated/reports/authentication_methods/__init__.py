@@ -12,11 +12,13 @@ from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:
 	from .user_registration_details import UserRegistrationDetailsRequest
+	from .users_registered_by_method_with_includedusertypes_includeduserroles import UsersRegisteredByMethodWithIncludedUserTypesIncludedUserRolesRequest
 	from .users_registered_by_method import UsersRegisteredByMethodRequest
+	from .users_registered_by_feature_with_includedusertypes_includeduserroles import UsersRegisteredByFeatureWithIncludedUserTypesIncludedUserRolesRequest
 	from .users_registered_by_feature import UsersRegisteredByFeatureRequest
 	from ....request_adapter import HttpxRequestAdapter
-from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.models.authentication_methods_root import AuthenticationMethodsRoot
+from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
 
 
 class AuthenticationMethodsRequest(BaseRequestBuilder):
@@ -117,11 +119,43 @@ class AuthenticationMethodsRequest(BaseRequestBuilder):
 		from .users_registered_by_feature import UsersRegisteredByFeatureRequest
 		return UsersRegisteredByFeatureRequest(self.request_adapter, self.path_parameters)
 
+	def users_registered_by_feature_with_includedusertypes_includeduserroles(self,
+		includedUserTypes: str,
+		includedUserRoles: str,
+	) -> UsersRegisteredByFeatureWithIncludedUserTypesIncludedUserRolesRequest:
+		if includedUserTypes is None:
+			raise TypeError("includedUserTypes cannot be null.")
+		if includedUserRoles is None:
+			raise TypeError("includedUserRoles cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["includedUserTypes"] =  includedUserTypes
+		path_parameters["includedUserRoles"] =  includedUserRoles
+
+		from .users_registered_by_feature_with_includedusertypes_includeduserroles import UsersRegisteredByFeatureWithIncludedUserTypesIncludedUserRolesRequest
+		return UsersRegisteredByFeatureWithIncludedUserTypesIncludedUserRolesRequest(self.request_adapter, path_parameters)
+
 	@property
 	def users_registered_by_method(self,
 	) -> UsersRegisteredByMethodRequest:
 		from .users_registered_by_method import UsersRegisteredByMethodRequest
 		return UsersRegisteredByMethodRequest(self.request_adapter, self.path_parameters)
+
+	def users_registered_by_method_with_includedusertypes_includeduserroles(self,
+		includedUserTypes: str,
+		includedUserRoles: str,
+	) -> UsersRegisteredByMethodWithIncludedUserTypesIncludedUserRolesRequest:
+		if includedUserTypes is None:
+			raise TypeError("includedUserTypes cannot be null.")
+		if includedUserRoles is None:
+			raise TypeError("includedUserRoles cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["includedUserTypes"] =  includedUserTypes
+		path_parameters["includedUserRoles"] =  includedUserRoles
+
+		from .users_registered_by_method_with_includedusertypes_includeduserroles import UsersRegisteredByMethodWithIncludedUserTypesIncludedUserRolesRequest
+		return UsersRegisteredByMethodWithIncludedUserTypesIncludedUserRolesRequest(self.request_adapter, path_parameters)
 
 	@property
 	def user_registration_details(self,

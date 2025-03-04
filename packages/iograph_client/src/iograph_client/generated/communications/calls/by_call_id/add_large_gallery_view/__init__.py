@@ -12,8 +12,8 @@ from typing import TYPE_CHECKING
 if TYPE_CHECKING:
 	from ......request_adapter import HttpxRequestAdapter
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
-from iograph_models.models.add_large_gallery_view_operation import AddLargeGalleryViewOperation
 from iograph_models.models.add_large_gallery_view_post_request import Add_large_gallery_viewPostRequest
+from iograph_models.models.add_large_gallery_view_operation import AddLargeGalleryViewOperation
 
 
 class AddLargeGalleryViewRequest(BaseRequestBuilder):

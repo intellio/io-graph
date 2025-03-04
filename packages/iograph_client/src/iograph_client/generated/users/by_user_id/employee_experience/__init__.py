@@ -11,6 +11,7 @@ from typing import Union, Any, Optional
 from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:
+	from .learning_course_activities_with_externalcourseactivityid import LearningCourseActivitiesWithExternalcourseActivityIdRequest
 	from .learning_course_activities import LearningCourseActivitiesRequest
 	from .....request_adapter import HttpxRequestAdapter
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
@@ -120,4 +121,20 @@ class EmployeeExperienceRequest(BaseRequestBuilder):
 
 		from .learning_course_activities import LearningCourseActivitiesRequest
 		return LearningCourseActivitiesRequest(self.request_adapter, path_parameters)
+
+	def learning_course_activities_with_externalcourseactivityid(self,
+		user_id: str,
+		externalcourseActivityId: str,
+	) -> LearningCourseActivitiesWithExternalcourseActivityIdRequest:
+		if user_id is None:
+			raise TypeError("user_id cannot be null.")
+		if externalcourseActivityId is None:
+			raise TypeError("externalcourseActivityId cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["user%2Did"] =  user_id
+		path_parameters["externalcourseActivityId"] =  externalcourseActivityId
+
+		from .learning_course_activities_with_externalcourseactivityid import LearningCourseActivitiesWithExternalcourseActivityIdRequest
+		return LearningCourseActivitiesWithExternalcourseActivityIdRequest(self.request_adapter, path_parameters)
 

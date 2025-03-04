@@ -19,15 +19,17 @@ if TYPE_CHECKING:
 	from .permissions import PermissionsRequest
 	from .validate_permission import ValidatePermissionRequest
 	from .unfollow import UnfollowRequest
-	from .search import SearchRequest
+	from .search_with_q import SearchWithQRequest
 	from .restore import RestoreRequest
 	from .preview import PreviewRequest
 	from .permanent_delete import PermanentDeleteRequest
 	from .invite import InviteRequest
+	from .get_activities_by_interval_with_startdatetime_enddatetime_interval import GetActivitiesByIntervalWithStartDateTimeEndDateTimeIntervalRequest
 	from .get_activities_by_interval import GetActivitiesByIntervalRequest
 	from .follow import FollowRequest
 	from .extract_sensitivity_labels import ExtractSensitivityLabelsRequest
 	from .discard_checkout import DiscardCheckoutRequest
+	from .delta_with_token import DeltaWithTokenRequest
 	from .delta import DeltaRequest
 	from .create_upload_session import CreateUploadSessionRequest
 	from .create_link import CreateLinkRequest
@@ -42,8 +44,8 @@ if TYPE_CHECKING:
 	from .children import ChildrenRequest
 	from .analytics import AnalyticsRequest
 	from ......request_adapter import HttpxRequestAdapter
-from iograph_models.models.drive_item import DriveItem
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.models.drive_item import DriveItem
 
 
 class ByDriveItemIdRequest(BaseRequestBuilder):
@@ -346,6 +348,26 @@ class ByDriveItemIdRequest(BaseRequestBuilder):
 		from .delta import DeltaRequest
 		return DeltaRequest(self.request_adapter, path_parameters)
 
+	def delta_with_token(self,
+		drive_id: str,
+		driveItem_id: str,
+		token: str,
+	) -> DeltaWithTokenRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+		if token is None:
+			raise TypeError("token cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+		path_parameters["token"] =  token
+
+		from .delta_with_token import DeltaWithTokenRequest
+		return DeltaWithTokenRequest(self.request_adapter, path_parameters)
+
 	def discard_checkout(self,
 		drive_id: str,
 		driveItem_id: str,
@@ -409,6 +431,34 @@ class ByDriveItemIdRequest(BaseRequestBuilder):
 
 		from .get_activities_by_interval import GetActivitiesByIntervalRequest
 		return GetActivitiesByIntervalRequest(self.request_adapter, path_parameters)
+
+	def get_activities_by_interval_with_startdatetime_enddatetime_interval(self,
+		drive_id: str,
+		driveItem_id: str,
+		startDateTime: str,
+		endDateTime: str,
+		interval: str,
+	) -> GetActivitiesByIntervalWithStartDateTimeEndDateTimeIntervalRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+		if startDateTime is None:
+			raise TypeError("startDateTime cannot be null.")
+		if endDateTime is None:
+			raise TypeError("endDateTime cannot be null.")
+		if interval is None:
+			raise TypeError("interval cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+		path_parameters["startDateTime"] =  startDateTime
+		path_parameters["endDateTime"] =  endDateTime
+		path_parameters["interval"] =  interval
+
+		from .get_activities_by_interval_with_startdatetime_enddatetime_interval import GetActivitiesByIntervalWithStartDateTimeEndDateTimeIntervalRequest
+		return GetActivitiesByIntervalWithStartDateTimeEndDateTimeIntervalRequest(self.request_adapter, path_parameters)
 
 	def invite(self,
 		drive_id: str,
@@ -474,11 +524,11 @@ class ByDriveItemIdRequest(BaseRequestBuilder):
 		from .restore import RestoreRequest
 		return RestoreRequest(self.request_adapter, path_parameters)
 
-	def search(self,
+	def search_with_q(self,
 		drive_id: str,
 		driveItem_id: str,
 		q: str,
-	) -> SearchRequest:
+	) -> SearchWithQRequest:
 		if drive_id is None:
 			raise TypeError("drive_id cannot be null.")
 		if driveItem_id is None:
@@ -491,8 +541,8 @@ class ByDriveItemIdRequest(BaseRequestBuilder):
 		path_parameters["driveItem%2Did"] =  driveItem_id
 		path_parameters["q"] =  q
 
-		from .search import SearchRequest
-		return SearchRequest(self.request_adapter, path_parameters)
+		from .search_with_q import SearchWithQRequest
+		return SearchWithQRequest(self.request_adapter, path_parameters)
 
 	def unfollow(self,
 		drive_id: str,

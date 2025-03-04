@@ -17,7 +17,7 @@ from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataEr
 
 class SupportedTimeZonesRequest(BaseRequestBuilder):
 	def __init__(self,request_adapter: HttpxRequestAdapter, path_parameters: Optional[Union[dict[str, Any], str]]) -> None:
-		super().__init__(request_adapter, "{+baseurl}/users/{user%2Did}/outlook/supportedTimeZones(TimeZoneStandard='{TimeZoneStandard}')", path_parameters)
+		super().__init__(request_adapter, "{+baseurl}/users/{user%2Did}/outlook/supportedTimeZones()", path_parameters)
 
 	async def get(
 		self,

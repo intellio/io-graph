@@ -14,7 +14,7 @@ if TYPE_CHECKING:
 	from .special import SpecialRequest
 	from .root import RootRequest
 	from .shared_with_me import SharedWithMeRequest
-	from .search import SearchRequest
+	from .search_with_q import SearchWithQRequest
 	from .recent import RecentRequest
 	from .list import ListRequest
 	from .last_modified_by_user import LastModifiedByUserRequest
@@ -203,10 +203,10 @@ class ByDriveIdRequest(BaseRequestBuilder):
 		from .recent import RecentRequest
 		return RecentRequest(self.request_adapter, path_parameters)
 
-	def search(self,
+	def search_with_q(self,
 		drive_id: str,
 		q: str,
-	) -> SearchRequest:
+	) -> SearchWithQRequest:
 		if drive_id is None:
 			raise TypeError("drive_id cannot be null.")
 		if q is None:
@@ -216,8 +216,8 @@ class ByDriveIdRequest(BaseRequestBuilder):
 		path_parameters["drive%2Did"] =  drive_id
 		path_parameters["q"] =  q
 
-		from .search import SearchRequest
-		return SearchRequest(self.request_adapter, path_parameters)
+		from .search_with_q import SearchWithQRequest
+		return SearchWithQRequest(self.request_adapter, path_parameters)
 
 	def shared_with_me(self,
 		drive_id: str,

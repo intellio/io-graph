@@ -11,6 +11,7 @@ from typing import Union, Any, Optional
 from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:
+	from .subscriptions_with_commercesubscriptionid import SubscriptionsWithCommerceSubscriptionIdRequest
 	from .subscriptions import SubscriptionsRequest
 	from .on_premises_synchronization import OnPremisesSynchronizationRequest
 	from .federation_configurations import FederationConfigurationsRequest
@@ -138,4 +139,16 @@ class DirectoryRequest(BaseRequestBuilder):
 	) -> SubscriptionsRequest:
 		from .subscriptions import SubscriptionsRequest
 		return SubscriptionsRequest(self.request_adapter, self.path_parameters)
+
+	def subscriptions_with_commercesubscriptionid(self,
+		commerceSubscriptionId: str,
+	) -> SubscriptionsWithCommerceSubscriptionIdRequest:
+		if commerceSubscriptionId is None:
+			raise TypeError("commerceSubscriptionId cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["commerceSubscriptionId"] =  commerceSubscriptionId
+
+		from .subscriptions_with_commercesubscriptionid import SubscriptionsWithCommerceSubscriptionIdRequest
+		return SubscriptionsWithCommerceSubscriptionIdRequest(self.request_adapter, path_parameters)
 

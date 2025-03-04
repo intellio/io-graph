@@ -17,7 +17,7 @@ from iograph_models.models.get_activities_by_interval_get_response import Get_ac
 
 class GetActivitiesByIntervalRequest(BaseRequestBuilder):
 	def __init__(self,request_adapter: HttpxRequestAdapter, path_parameters: Optional[Union[dict[str, Any], str]]) -> None:
-		super().__init__(request_adapter, "{+baseurl}/drives/{drive%2Did}/items/{driveItem%2Did}/getActivitiesByInterval(startDateTime='{startDateTime}',endDateTime='{endDateTime}',interval='{interval}')", path_parameters)
+		super().__init__(request_adapter, "{+baseurl}/drives/{drive%2Did}/items/{driveItem%2Did}/getActivitiesByInterval()", path_parameters)
 
 	async def get(
 		self,
@@ -25,7 +25,8 @@ class GetActivitiesByIntervalRequest(BaseRequestBuilder):
 	) -> Get_activities_by_intervalGetResponse:
 		"""
 		Invoke function getActivitiesByInterval
-		
+		Get a collection of itemActivityStats resources for the activities that took place on this resource within the specified time interval. Analytics aggregates might not be available for all action types.
+		Find more info here: https://learn.microsoft.com/graph/api/itemactivitystat-getactivitybyinterval?view=graph-rest-1.0
 		"""
 		tags = ['drives.driveItem']
 

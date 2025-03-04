@@ -15,8 +15,8 @@ if TYPE_CHECKING:
 	from .by_linked_resource_id import ByLinkedResourceIdRequest
 	from .........request_adapter import HttpxRequestAdapter
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
-from iograph_models.models.linked_resource_collection_response import LinkedResourceCollectionResponse
 from iograph_models.models.linked_resource import LinkedResource
+from iograph_models.models.linked_resource_collection_response import LinkedResourceCollectionResponse
 
 
 class LinkedResourcesRequest(BaseRequestBuilder):

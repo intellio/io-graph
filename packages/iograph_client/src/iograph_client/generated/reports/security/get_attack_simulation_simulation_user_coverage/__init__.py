@@ -11,8 +11,8 @@ from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:
 	from .....request_adapter import HttpxRequestAdapter
-from iograph_models.models.get_attack_simulation_simulation_user_coverage_get_response import Get_attack_simulation_simulation_user_coverageGetResponse
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.models.get_attack_simulation_simulation_user_coverage_get_response import Get_attack_simulation_simulation_user_coverageGetResponse
 
 
 class GetAttackSimulationSimulationUserCoverageRequest(BaseRequestBuilder):

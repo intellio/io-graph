@@ -14,9 +14,9 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_ediscovery_case_id import ByEdiscoveryCaseIdRequest
 	from .....request_adapter import HttpxRequestAdapter
+from iograph_models.models.security_ediscovery_case import SecurityEdiscoveryCase
 from iograph_models.models.security_ediscovery_case_collection_response import SecurityEdiscoveryCaseCollectionResponse
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
-from iograph_models.models.security_ediscovery_case import SecurityEdiscoveryCase
 
 
 class EdiscoveryCasesRequest(BaseRequestBuilder):

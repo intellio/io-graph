@@ -15,8 +15,8 @@ if TYPE_CHECKING:
 	from .by_endpoint_id import ByEndpointIdRequest
 	from .....request_adapter import HttpxRequestAdapter
 from iograph_models.models.endpoint import Endpoint
-from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.models.endpoint_collection_response import EndpointCollectionResponse
+from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
 
 
 class EndpointsRequest(BaseRequestBuilder):

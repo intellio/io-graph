@@ -12,6 +12,7 @@ from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:
 	from .versions import VersionsRequest
+	from .get_activities_by_interval_with_startdatetime_enddatetime_interval import GetActivitiesByIntervalWithStartDateTimeEndDateTimeIntervalRequest
 	from .get_activities_by_interval import GetActivitiesByIntervalRequest
 	from .create_link import CreateLinkRequest
 	from .last_modified_by_user import LastModifiedByUserRequest
@@ -21,8 +22,8 @@ if TYPE_CHECKING:
 	from .created_by_user import CreatedByUserRequest
 	from .analytics import AnalyticsRequest
 	from .......request_adapter import HttpxRequestAdapter
-from iograph_models.models.list_item import ListItem
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.models.list_item import ListItem
 
 
 class ByListItemIdRequest(BaseRequestBuilder):
@@ -244,6 +245,34 @@ class ByListItemIdRequest(BaseRequestBuilder):
 
 		from .get_activities_by_interval import GetActivitiesByIntervalRequest
 		return GetActivitiesByIntervalRequest(self.request_adapter, path_parameters)
+
+	def get_activities_by_interval_with_startdatetime_enddatetime_interval(self,
+		sharedDriveItem_id: str,
+		listItem_id: str,
+		startDateTime: str,
+		endDateTime: str,
+		interval: str,
+	) -> GetActivitiesByIntervalWithStartDateTimeEndDateTimeIntervalRequest:
+		if sharedDriveItem_id is None:
+			raise TypeError("sharedDriveItem_id cannot be null.")
+		if listItem_id is None:
+			raise TypeError("listItem_id cannot be null.")
+		if startDateTime is None:
+			raise TypeError("startDateTime cannot be null.")
+		if endDateTime is None:
+			raise TypeError("endDateTime cannot be null.")
+		if interval is None:
+			raise TypeError("interval cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["sharedDriveItem%2Did"] =  sharedDriveItem_id
+		path_parameters["listItem%2Did"] =  listItem_id
+		path_parameters["startDateTime"] =  startDateTime
+		path_parameters["endDateTime"] =  endDateTime
+		path_parameters["interval"] =  interval
+
+		from .get_activities_by_interval_with_startdatetime_enddatetime_interval import GetActivitiesByIntervalWithStartDateTimeEndDateTimeIntervalRequest
+		return GetActivitiesByIntervalWithStartDateTimeEndDateTimeIntervalRequest(self.request_adapter, path_parameters)
 
 	def versions(self,
 		sharedDriveItem_id: str,

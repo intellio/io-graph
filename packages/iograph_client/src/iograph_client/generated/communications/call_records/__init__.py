@@ -11,13 +11,13 @@ from typing import Union, Any, Optional
 from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:
-	from .call_records_get_pstn_calls import CallRecordsGetPstnCallsRequest
-	from .call_records_get_direct_routing_calls import CallRecordsGetDirectRoutingCallsRequest
+	from .call_records_get_pstn_calls_with_fromdatetime_todatetime import CallRecordsGetPstnCallsWithFromDateTimeToDateTimeRequest
+	from .call_records_get_direct_routing_calls_with_fromdatetime_todatetime import CallRecordsGetDirectRoutingCallsWithFromDateTimeToDateTimeRequest
 	from .count import CountRequest
 	from .by_call_record_id import ByCallRecordIdRequest
 	from ....request_adapter import HttpxRequestAdapter
-from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.models.call_records_call_record_collection_response import CallRecordsCallRecordCollectionResponse
+from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.models.call_records_call_record import CallRecordsCallRecord
 
 
@@ -113,10 +113,10 @@ class CallRecordsRequest(BaseRequestBuilder):
 		from .count import CountRequest
 		return CountRequest(self.request_adapter, self.path_parameters)
 
-	def call_records_get_direct_routing_calls(self,
+	def call_records_get_direct_routing_calls_with_fromdatetime_todatetime(self,
 		fromDateTime: datetime,
 		toDateTime: datetime,
-	) -> CallRecordsGetDirectRoutingCallsRequest:
+	) -> CallRecordsGetDirectRoutingCallsWithFromDateTimeToDateTimeRequest:
 		if fromDateTime is None:
 			raise TypeError("fromDateTime cannot be null.")
 		if toDateTime is None:
@@ -126,13 +126,13 @@ class CallRecordsRequest(BaseRequestBuilder):
 		path_parameters["fromDateTime"] =  fromDateTime
 		path_parameters["toDateTime"] =  toDateTime
 
-		from .call_records_get_direct_routing_calls import CallRecordsGetDirectRoutingCallsRequest
-		return CallRecordsGetDirectRoutingCallsRequest(self.request_adapter, path_parameters)
+		from .call_records_get_direct_routing_calls_with_fromdatetime_todatetime import CallRecordsGetDirectRoutingCallsWithFromDateTimeToDateTimeRequest
+		return CallRecordsGetDirectRoutingCallsWithFromDateTimeToDateTimeRequest(self.request_adapter, path_parameters)
 
-	def call_records_get_pstn_calls(self,
+	def call_records_get_pstn_calls_with_fromdatetime_todatetime(self,
 		fromDateTime: datetime,
 		toDateTime: datetime,
-	) -> CallRecordsGetPstnCallsRequest:
+	) -> CallRecordsGetPstnCallsWithFromDateTimeToDateTimeRequest:
 		if fromDateTime is None:
 			raise TypeError("fromDateTime cannot be null.")
 		if toDateTime is None:
@@ -142,6 +142,6 @@ class CallRecordsRequest(BaseRequestBuilder):
 		path_parameters["fromDateTime"] =  fromDateTime
 		path_parameters["toDateTime"] =  toDateTime
 
-		from .call_records_get_pstn_calls import CallRecordsGetPstnCallsRequest
-		return CallRecordsGetPstnCallsRequest(self.request_adapter, path_parameters)
+		from .call_records_get_pstn_calls_with_fromdatetime_todatetime import CallRecordsGetPstnCallsWithFromDateTimeToDateTimeRequest
+		return CallRecordsGetPstnCallsWithFromDateTimeToDateTimeRequest(self.request_adapter, path_parameters)
 

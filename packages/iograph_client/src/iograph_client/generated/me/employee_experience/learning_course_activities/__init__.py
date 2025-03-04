@@ -14,18 +14,18 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_learning_course_activity_id import ByLearningCourseActivityIdRequest
 	from .....request_adapter import HttpxRequestAdapter
-from iograph_models.models.learning_course_activity import LearningCourseActivity
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.models.learning_course_activity_collection_response import LearningCourseActivityCollectionResponse
 
 
 class LearningCourseActivitiesRequest(BaseRequestBuilder):
 	def __init__(self,request_adapter: HttpxRequestAdapter, path_parameters: Optional[Union[dict[str, Any], str]]) -> None:
-		super().__init__(request_adapter, "{+baseurl}/me/employeeExperience/learningCourseActivities(externalcourseActivityId='{externalcourseActivityId}')", path_parameters)
+		super().__init__(request_adapter, "{+baseurl}/me/employeeExperience/learningCourseActivities", path_parameters)
 
 	async def get(
 		self,
 		request_configuration: Optional[RequestConfiguration[GetQueryParams]] = None,
-	) -> LearningCourseActivity:
+	) -> LearningCourseActivityCollectionResponse:
 		"""
 		Get learningCourseActivities from me
 		
@@ -43,9 +43,15 @@ class LearningCourseActivitiesRequest(BaseRequestBuilder):
 		)
 		request_info.configure(request_configuration)
 		request_info.headers.try_add("Accept", "application/json")
-		return await self.request_adapter.send_async(request_info, LearningCourseActivity, error_mapping)
+		return await self.request_adapter.send_async(request_info, LearningCourseActivityCollectionResponse, error_mapping)
 
 	class GetQueryParams(BaseModel):
+		top: int = Field(default=None,serialization_alias="%24top")
+		skip: int = Field(default=None,serialization_alias="%24skip")
+		search: str = Field(default=None,serialization_alias="%24search")
+		filter: str = Field(default=None,serialization_alias="%24filter")
+		count: bool = Field(default=None,serialization_alias="%24count")
+		orderby: list[str] = Field(default=None,serialization_alias="%24orderby")
 		select: list[str] = Field(default=None,serialization_alias="%24select")
 		expand: list[str] = Field(default=None,serialization_alias="%24expand")
 

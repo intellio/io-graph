@@ -18,24 +18,26 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_user_id import ByUserIdRequest
 	from ...request_adapter import HttpxRequestAdapter
-from iograph_models.models.user import User
+from iograph_models.models.user_collection_response import UserCollectionResponse
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.models.user import User
 
 
 class UsersRequest(BaseRequestBuilder):
 	def __init__(self,request_adapter: HttpxRequestAdapter, path_parameters: Optional[Union[dict[str, Any], str]]) -> None:
-		super().__init__(request_adapter, "{+baseurl}/users(userPrincipalName='{userPrincipalName}')", path_parameters)
+		super().__init__(request_adapter, "{+baseurl}/users", path_parameters)
 
 	async def get(
 		self,
 		request_configuration: Optional[RequestConfiguration[GetQueryParams]] = None,
-	) -> User:
+	) -> UserCollectionResponse:
 		"""
-		Get user
-		Read properties and relationships of the user object.
-		Find more info here: https://learn.microsoft.com/graph/api/intune-mam-user-get?view=graph-rest-1.0
+		List users
+		List properties and relationships of the user objects.
+		Find more info here: https://learn.microsoft.com/graph/api/intune-mam-user-list?view=graph-rest-1.0
 		"""
 		tags = ['users.user']
+		header_parameters = [{'name': 'ConsistencyLevel', 'in': 'header', 'description': 'Indicates the requested consistency level. Documentation URL: https://docs.microsoft.com/graph/aad-advanced-queries', 'schema': {'type': 'string'}, 'examples': {'example-1': {'description': "$search and $count queries require the client to set the ConsistencyLevel HTTP header to 'eventual'.", 'value': 'eventual'}}}]
 
 		error_mapping: dict[str, type[BaseModel]] = {
 			"XXX": ODataErrorsODataError,
@@ -48,17 +50,17 @@ class UsersRequest(BaseRequestBuilder):
 		)
 		request_info.configure(request_configuration)
 		request_info.headers.try_add("Accept", "application/json")
-		return await self.request_adapter.send_async(request_info, User, error_mapping)
+		return await self.request_adapter.send_async(request_info, UserCollectionResponse, error_mapping)
 
-	async def patch(
+	async def post(
 		self,
 		body: User,
 		request_configuration: Optional[RequestConfiguration[BaseModel]] = None,
 	) -> User:
 		"""
-		Update user
-		Update the properties of a user object.
-		Find more info here: https://learn.microsoft.com/graph/api/user-update?view=graph-rest-1.0
+		Create user
+		Create a new user object.
+		Find more info here: https://learn.microsoft.com/graph/api/intune-onboarding-user-create?view=graph-rest-1.0
 		"""
 		tags = ['users.user']
 
@@ -67,7 +69,7 @@ class UsersRequest(BaseRequestBuilder):
 		}
 
 		request_info: RequestInformation = RequestInformation(
-			method = Method.PATCH,
+			method = Method.POST,
 			url_template = self.url_template,
 			path_parameters = self.path_parameters,
 		)
@@ -76,35 +78,14 @@ class UsersRequest(BaseRequestBuilder):
 		request_info.set_content(body, "application/json")
 		return await self.request_adapter.send_async(request_info, User, error_mapping)
 
-	async def delete(
-		self,
-		request_configuration: Optional[RequestConfiguration[BaseModel]] = None,
-	) -> None:
-		"""
-		Delete user
-		Deletes a user.
-		Find more info here: https://learn.microsoft.com/graph/api/intune-mam-user-delete?view=graph-rest-1.0
-		"""
-		tags = ['users.user']
-		header_parameters = [{'name': 'If-Match', 'in': 'header', 'description': 'ETag', 'schema': {'type': 'string'}}]
-
-		error_mapping: dict[str, type[BaseModel]] = {
-			"XXX": ODataErrorsODataError,
-		}
-
-		request_info: RequestInformation = RequestInformation(
-			method = Method.DELETE,
-			url_template = self.url_template,
-			path_parameters = self.path_parameters,
-		)
-		request_info.configure(request_configuration)
-		request_info.headers.try_add("Accept", "application/json")
-		return await self.request_adapter.send_no_response_content_async(request_info, error_mapping)
-
 	class GetQueryParams(BaseModel):
+		top: int = Field(default=None,serialization_alias="%24top")
+		search: str = Field(default=None,serialization_alias="%24search")
+		filter: str = Field(default=None,serialization_alias="%24filter")
+		count: bool = Field(default=None,serialization_alias="%24count")
+		orderby: list[str] = Field(default=None,serialization_alias="%24orderby")
 		select: list[str] = Field(default=None,serialization_alias="%24select")
 		expand: list[str] = Field(default=None,serialization_alias="%24expand")
-
 
 
 	def with_url(self, raw_url: str) -> UsersRequest:

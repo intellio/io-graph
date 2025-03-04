@@ -15,17 +15,18 @@ if TYPE_CHECKING:
 	from .by_federated_identity_credential_id import ByFederatedIdentityCredentialIdRequest
 	from .....request_adapter import HttpxRequestAdapter
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.models.federated_identity_credential_collection_response import FederatedIdentityCredentialCollectionResponse
 from iograph_models.models.federated_identity_credential import FederatedIdentityCredential
 
 
 class FederatedIdentityCredentialsRequest(BaseRequestBuilder):
 	def __init__(self,request_adapter: HttpxRequestAdapter, path_parameters: Optional[Union[dict[str, Any], str]]) -> None:
-		super().__init__(request_adapter, "{+baseurl}/servicePrincipals/{servicePrincipal%2Did}/federatedIdentityCredentials(name='{name}')", path_parameters)
+		super().__init__(request_adapter, "{+baseurl}/servicePrincipals/{servicePrincipal%2Did}/federatedIdentityCredentials", path_parameters)
 
 	async def get(
 		self,
 		request_configuration: Optional[RequestConfiguration[GetQueryParams]] = None,
-	) -> FederatedIdentityCredential:
+	) -> FederatedIdentityCredentialCollectionResponse:
 		"""
 		Get federatedIdentityCredentials from servicePrincipals
 		Federated identities for a specific type of service principal - managed identity. Supports $expand and $filter (/$count eq 0, /$count ne 0).
@@ -43,15 +44,15 @@ class FederatedIdentityCredentialsRequest(BaseRequestBuilder):
 		)
 		request_info.configure(request_configuration)
 		request_info.headers.try_add("Accept", "application/json")
-		return await self.request_adapter.send_async(request_info, FederatedIdentityCredential, error_mapping)
+		return await self.request_adapter.send_async(request_info, FederatedIdentityCredentialCollectionResponse, error_mapping)
 
-	async def patch(
+	async def post(
 		self,
 		body: FederatedIdentityCredential,
 		request_configuration: Optional[RequestConfiguration[BaseModel]] = None,
 	) -> FederatedIdentityCredential:
 		"""
-		Update the navigation property federatedIdentityCredentials in servicePrincipals
+		Create new navigation property to federatedIdentityCredentials for servicePrincipals
 		
 		"""
 		tags = ['servicePrincipals.federatedIdentityCredential']
@@ -61,7 +62,7 @@ class FederatedIdentityCredentialsRequest(BaseRequestBuilder):
 		}
 
 		request_info: RequestInformation = RequestInformation(
-			method = Method.PATCH,
+			method = Method.POST,
 			url_template = self.url_template,
 			path_parameters = self.path_parameters,
 		)
@@ -70,34 +71,15 @@ class FederatedIdentityCredentialsRequest(BaseRequestBuilder):
 		request_info.set_content(body, "application/json")
 		return await self.request_adapter.send_async(request_info, FederatedIdentityCredential, error_mapping)
 
-	async def delete(
-		self,
-		request_configuration: Optional[RequestConfiguration[BaseModel]] = None,
-	) -> None:
-		"""
-		Delete navigation property federatedIdentityCredentials for servicePrincipals
-		
-		"""
-		tags = ['servicePrincipals.federatedIdentityCredential']
-		header_parameters = [{'name': 'If-Match', 'in': 'header', 'description': 'ETag', 'schema': {'type': 'string'}}]
-
-		error_mapping: dict[str, type[BaseModel]] = {
-			"XXX": ODataErrorsODataError,
-		}
-
-		request_info: RequestInformation = RequestInformation(
-			method = Method.DELETE,
-			url_template = self.url_template,
-			path_parameters = self.path_parameters,
-		)
-		request_info.configure(request_configuration)
-		request_info.headers.try_add("Accept", "application/json")
-		return await self.request_adapter.send_no_response_content_async(request_info, error_mapping)
-
 	class GetQueryParams(BaseModel):
+		top: int = Field(default=None,serialization_alias="%24top")
+		skip: int = Field(default=None,serialization_alias="%24skip")
+		search: str = Field(default=None,serialization_alias="%24search")
+		filter: str = Field(default=None,serialization_alias="%24filter")
+		count: bool = Field(default=None,serialization_alias="%24count")
+		orderby: list[str] = Field(default=None,serialization_alias="%24orderby")
 		select: list[str] = Field(default=None,serialization_alias="%24select")
 		expand: list[str] = Field(default=None,serialization_alias="%24expand")
-
 
 
 	def with_url(self, raw_url: str) -> FederatedIdentityCredentialsRequest:

@@ -11,8 +11,8 @@ from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:
 	from .....request_adapter import HttpxRequestAdapter
-from iograph_models.models.ios_update_device_status import IosUpdateDeviceStatus
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.models.ios_update_device_status import IosUpdateDeviceStatus
 
 
 class ByIosUpdateDeviceStatusIdRequest(BaseRequestBuilder):

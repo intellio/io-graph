@@ -11,14 +11,14 @@ from typing import Union, Any, Optional
 from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:
-	from .get_by_user_role import GetByUserRoleRequest
-	from .get_by_user_id_and_role import GetByUserIdAndRoleRequest
+	from .get_by_user_role_with_role import GetByUserRoleWithRoleRequest
+	from .get_by_user_id_and_role_with_userid_role import GetByUserIdAndRoleWithUserIdRoleRequest
 	from .count import CountRequest
 	from .by_virtual_event_webinar_id import ByVirtualEventWebinarIdRequest
 	from .....request_adapter import HttpxRequestAdapter
-from iograph_models.models.virtual_event_webinar_collection_response import VirtualEventWebinarCollectionResponse
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.models.virtual_event_webinar import VirtualEventWebinar
+from iograph_models.models.virtual_event_webinar_collection_response import VirtualEventWebinarCollectionResponse
 
 
 class WebinarsRequest(BaseRequestBuilder):
@@ -114,10 +114,10 @@ class WebinarsRequest(BaseRequestBuilder):
 		from .count import CountRequest
 		return CountRequest(self.request_adapter, self.path_parameters)
 
-	def get_by_user_id_and_role(self,
+	def get_by_user_id_and_role_with_userid_role(self,
 		userId: str,
 		role: str,
-	) -> GetByUserIdAndRoleRequest:
+	) -> GetByUserIdAndRoleWithUserIdRoleRequest:
 		if userId is None:
 			raise TypeError("userId cannot be null.")
 		if role is None:
@@ -127,18 +127,18 @@ class WebinarsRequest(BaseRequestBuilder):
 		path_parameters["userId"] =  userId
 		path_parameters["role"] =  role
 
-		from .get_by_user_id_and_role import GetByUserIdAndRoleRequest
-		return GetByUserIdAndRoleRequest(self.request_adapter, path_parameters)
+		from .get_by_user_id_and_role_with_userid_role import GetByUserIdAndRoleWithUserIdRoleRequest
+		return GetByUserIdAndRoleWithUserIdRoleRequest(self.request_adapter, path_parameters)
 
-	def get_by_user_role(self,
+	def get_by_user_role_with_role(self,
 		role: str,
-	) -> GetByUserRoleRequest:
+	) -> GetByUserRoleWithRoleRequest:
 		if role is None:
 			raise TypeError("role cannot be null.")
 
 		path_parameters = get_path_parameters(self.path_parameters)
 		path_parameters["role"] =  role
 
-		from .get_by_user_role import GetByUserRoleRequest
-		return GetByUserRoleRequest(self.request_adapter, path_parameters)
+		from .get_by_user_role_with_role import GetByUserRoleWithRoleRequest
+		return GetByUserRoleWithRoleRequest(self.request_adapter, path_parameters)
 

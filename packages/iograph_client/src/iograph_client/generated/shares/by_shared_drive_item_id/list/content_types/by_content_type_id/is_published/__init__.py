@@ -11,8 +11,8 @@ from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:
 	from ........request_adapter import HttpxRequestAdapter
-from iograph_models.models.is_published_get_response import Is_publishedGetResponse
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.models.is_published_get_response import Is_publishedGetResponse
 
 
 class IsPublishedRequest(BaseRequestBuilder):

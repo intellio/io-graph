@@ -13,15 +13,15 @@ from typing import TYPE_CHECKING
 if TYPE_CHECKING:
 	from .user_status_overview import UserStatusOverviewRequest
 	from .user_statuses import UserStatusesRequest
-	from .get_oma_setting_plain_text_value import GetOmaSettingPlainTextValueRequest
+	from .get_oma_setting_plain_text_value_with_secretreferencevalueid import GetOmaSettingPlainTextValueWithSecretReferenceValueIdRequest
 	from .assign import AssignRequest
 	from .device_status_overview import DeviceStatusOverviewRequest
 	from .device_statuses import DeviceStatusesRequest
 	from .device_setting_state_summaries import DeviceSettingStateSummariesRequest
 	from .assignments import AssignmentsRequest
 	from .....request_adapter import HttpxRequestAdapter
-from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.models.device_configuration import DeviceConfiguration
+from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
 
 
 class ByDeviceConfigurationIdRequest(BaseRequestBuilder):
@@ -179,10 +179,10 @@ class ByDeviceConfigurationIdRequest(BaseRequestBuilder):
 		from .assign import AssignRequest
 		return AssignRequest(self.request_adapter, path_parameters)
 
-	def get_oma_setting_plain_text_value(self,
+	def get_oma_setting_plain_text_value_with_secretreferencevalueid(self,
 		deviceConfiguration_id: str,
 		secretReferenceValueId: str,
-	) -> GetOmaSettingPlainTextValueRequest:
+	) -> GetOmaSettingPlainTextValueWithSecretReferenceValueIdRequest:
 		if deviceConfiguration_id is None:
 			raise TypeError("deviceConfiguration_id cannot be null.")
 		if secretReferenceValueId is None:
@@ -192,8 +192,8 @@ class ByDeviceConfigurationIdRequest(BaseRequestBuilder):
 		path_parameters["deviceConfiguration%2Did"] =  deviceConfiguration_id
 		path_parameters["secretReferenceValueId"] =  secretReferenceValueId
 
-		from .get_oma_setting_plain_text_value import GetOmaSettingPlainTextValueRequest
-		return GetOmaSettingPlainTextValueRequest(self.request_adapter, path_parameters)
+		from .get_oma_setting_plain_text_value_with_secretreferencevalueid import GetOmaSettingPlainTextValueWithSecretReferenceValueIdRequest
+		return GetOmaSettingPlainTextValueWithSecretReferenceValueIdRequest(self.request_adapter, path_parameters)
 
 	def user_statuses(self,
 		deviceConfiguration_id: str,

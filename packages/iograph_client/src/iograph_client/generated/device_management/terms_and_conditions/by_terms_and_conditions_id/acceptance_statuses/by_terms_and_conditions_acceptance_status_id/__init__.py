@@ -13,8 +13,8 @@ from typing import TYPE_CHECKING
 if TYPE_CHECKING:
 	from .terms_and_conditions import TermsAndConditionsRequest
 	from .......request_adapter import HttpxRequestAdapter
-from iograph_models.models.terms_and_conditions_acceptance_status import TermsAndConditionsAcceptanceStatus
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.models.terms_and_conditions_acceptance_status import TermsAndConditionsAcceptanceStatus
 
 
 class ByTermsAndConditionsAcceptanceStatusIdRequest(BaseRequestBuilder):

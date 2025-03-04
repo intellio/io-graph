@@ -15,7 +15,9 @@ if TYPE_CHECKING:
 	from .notes import NotesRequest
 	from .get_final_report import GetFinalReportRequest
 	from .get_final_attachment import GetFinalAttachmentRequest
+	from .collaborators_with_userprincipalname import CollaboratorsWithUserPrincipalNameRequest
 	from .collaborators import CollaboratorsRequest
+	from .approvers_with_userprincipalname import ApproversWithUserPrincipalNameRequest
 	from .approvers import ApproversRequest
 	from .....request_adapter import HttpxRequestAdapter
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
@@ -128,6 +130,22 @@ class BySubjectRightsRequestIdRequest(BaseRequestBuilder):
 		from .approvers import ApproversRequest
 		return ApproversRequest(self.request_adapter, path_parameters)
 
+	def approvers_with_userprincipalname(self,
+		subjectRightsRequest_id: str,
+		userPrincipalName: str,
+	) -> ApproversWithUserPrincipalNameRequest:
+		if subjectRightsRequest_id is None:
+			raise TypeError("subjectRightsRequest_id cannot be null.")
+		if userPrincipalName is None:
+			raise TypeError("userPrincipalName cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["subjectRightsRequest%2Did"] =  subjectRightsRequest_id
+		path_parameters["userPrincipalName"] =  userPrincipalName
+
+		from .approvers_with_userprincipalname import ApproversWithUserPrincipalNameRequest
+		return ApproversWithUserPrincipalNameRequest(self.request_adapter, path_parameters)
+
 	def collaborators(self,
 		subjectRightsRequest_id: str,
 	) -> CollaboratorsRequest:
@@ -139,6 +157,22 @@ class BySubjectRightsRequestIdRequest(BaseRequestBuilder):
 
 		from .collaborators import CollaboratorsRequest
 		return CollaboratorsRequest(self.request_adapter, path_parameters)
+
+	def collaborators_with_userprincipalname(self,
+		subjectRightsRequest_id: str,
+		userPrincipalName: str,
+	) -> CollaboratorsWithUserPrincipalNameRequest:
+		if subjectRightsRequest_id is None:
+			raise TypeError("subjectRightsRequest_id cannot be null.")
+		if userPrincipalName is None:
+			raise TypeError("userPrincipalName cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["subjectRightsRequest%2Did"] =  subjectRightsRequest_id
+		path_parameters["userPrincipalName"] =  userPrincipalName
+
+		from .collaborators_with_userprincipalname import CollaboratorsWithUserPrincipalNameRequest
+		return CollaboratorsWithUserPrincipalNameRequest(self.request_adapter, path_parameters)
 
 	def get_final_attachment(self,
 		subjectRightsRequest_id: str,

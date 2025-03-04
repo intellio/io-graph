@@ -13,8 +13,8 @@ from typing import TYPE_CHECKING
 if TYPE_CHECKING:
 	from .service_management_details import ServiceManagementDetailsRequest
 	from .....request_adapter import HttpxRequestAdapter
-from iograph_models.models.delegated_admin_customer import DelegatedAdminCustomer
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.models.delegated_admin_customer import DelegatedAdminCustomer
 
 
 class ByDelegatedAdminCustomerIdRequest(BaseRequestBuilder):

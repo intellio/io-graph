@@ -11,7 +11,7 @@ from typing import Union, Any, Optional
 from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:
-	from .item_at import ItemAtRequest
+	from .item_at_with_index import ItemAtWithIndexRequest
 	from .count import CountRequest
 	from .add import AddRequest
 	from .by_workbook_table_row_id import ByWorkbookTableRowIdRequest
@@ -158,12 +158,12 @@ class RowsRequest(BaseRequestBuilder):
 		from .count import CountRequest
 		return CountRequest(self.request_adapter, path_parameters)
 
-	def item_at(self,
+	def item_at_with_index(self,
 		drive_id: str,
 		driveItem_id: str,
 		workbookTable_id: str,
 		index: int,
-	) -> ItemAtRequest:
+	) -> ItemAtWithIndexRequest:
 		if drive_id is None:
 			raise TypeError("drive_id cannot be null.")
 		if driveItem_id is None:
@@ -179,6 +179,6 @@ class RowsRequest(BaseRequestBuilder):
 		path_parameters["workbookTable%2Did"] =  workbookTable_id
 		path_parameters["index"] =  index
 
-		from .item_at import ItemAtRequest
-		return ItemAtRequest(self.request_adapter, path_parameters)
+		from .item_at_with_index import ItemAtWithIndexRequest
+		return ItemAtWithIndexRequest(self.request_adapter, path_parameters)
 

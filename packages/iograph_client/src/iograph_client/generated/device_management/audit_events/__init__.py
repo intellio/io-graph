@@ -12,12 +12,12 @@ from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:
 	from .get_audit_categories import GetAuditCategoriesRequest
-	from .get_audit_activity_types import GetAuditActivityTypesRequest
+	from .get_audit_activity_types_with_category import GetAuditActivityTypesWithCategoryRequest
 	from .count import CountRequest
 	from .by_audit_event_id import ByAuditEventIdRequest
 	from ....request_adapter import HttpxRequestAdapter
-from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.models.audit_event import AuditEvent
+from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.models.audit_event_collection_response import AuditEventCollectionResponse
 
 
@@ -114,17 +114,17 @@ class AuditEventsRequest(BaseRequestBuilder):
 		from .count import CountRequest
 		return CountRequest(self.request_adapter, self.path_parameters)
 
-	def get_audit_activity_types(self,
+	def get_audit_activity_types_with_category(self,
 		category: str,
-	) -> GetAuditActivityTypesRequest:
+	) -> GetAuditActivityTypesWithCategoryRequest:
 		if category is None:
 			raise TypeError("category cannot be null.")
 
 		path_parameters = get_path_parameters(self.path_parameters)
 		path_parameters["category"] =  category
 
-		from .get_audit_activity_types import GetAuditActivityTypesRequest
-		return GetAuditActivityTypesRequest(self.request_adapter, path_parameters)
+		from .get_audit_activity_types_with_category import GetAuditActivityTypesWithCategoryRequest
+		return GetAuditActivityTypesWithCategoryRequest(self.request_adapter, path_parameters)
 
 	@property
 	def get_audit_categories(self,

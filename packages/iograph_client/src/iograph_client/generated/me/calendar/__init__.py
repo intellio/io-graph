@@ -12,7 +12,7 @@ from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:
 	from .get_schedule import GetScheduleRequest
-	from .allowed_calendar_sharing_roles import AllowedCalendarSharingRolesRequest
+	from .allowed_calendar_sharing_roles_with_user import AllowedCalendarSharingRolesWithUserRequest
 	from .events import EventsRequest
 	from .calendar_view import CalendarViewRequest
 	from .calendar_permissions import CalendarPermissionsRequest
@@ -110,17 +110,17 @@ or the default calendar of a Microsoft 365 group.
 		from .events import EventsRequest
 		return EventsRequest(self.request_adapter, self.path_parameters)
 
-	def allowed_calendar_sharing_roles(self,
+	def allowed_calendar_sharing_roles_with_user(self,
 		User: str,
-	) -> AllowedCalendarSharingRolesRequest:
+	) -> AllowedCalendarSharingRolesWithUserRequest:
 		if User is None:
 			raise TypeError("User cannot be null.")
 
 		path_parameters = get_path_parameters(self.path_parameters)
 		path_parameters["User"] =  User
 
-		from .allowed_calendar_sharing_roles import AllowedCalendarSharingRolesRequest
-		return AllowedCalendarSharingRolesRequest(self.request_adapter, path_parameters)
+		from .allowed_calendar_sharing_roles_with_user import AllowedCalendarSharingRolesWithUserRequest
+		return AllowedCalendarSharingRolesWithUserRequest(self.request_adapter, path_parameters)
 
 	@property
 	def get_schedule(self,

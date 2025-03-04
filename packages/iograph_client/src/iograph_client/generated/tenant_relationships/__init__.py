@@ -12,8 +12,8 @@ from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:
 	from .multi_tenant_organization import MultiTenantOrganizationRequest
-	from .find_tenant_information_by_tenant_id import FindTenantInformationByTenantIdRequest
-	from .find_tenant_information_by_domain_name import FindTenantInformationByDomainNameRequest
+	from .find_tenant_information_by_tenant_id_with_tenantid import FindTenantInformationByTenantIdWithTenantIdRequest
+	from .find_tenant_information_by_domain_name_with_domainname import FindTenantInformationByDomainNameWithDomainNameRequest
 	from .delegated_admin_relationships import DelegatedAdminRelationshipsRequest
 	from .delegated_admin_customers import DelegatedAdminCustomersRequest
 	from ...request_adapter import HttpxRequestAdapter
@@ -100,29 +100,29 @@ class TenantRelationshipsRequest(BaseRequestBuilder):
 		from .delegated_admin_relationships import DelegatedAdminRelationshipsRequest
 		return DelegatedAdminRelationshipsRequest(self.request_adapter, self.path_parameters)
 
-	def find_tenant_information_by_domain_name(self,
+	def find_tenant_information_by_domain_name_with_domainname(self,
 		domainName: str,
-	) -> FindTenantInformationByDomainNameRequest:
+	) -> FindTenantInformationByDomainNameWithDomainNameRequest:
 		if domainName is None:
 			raise TypeError("domainName cannot be null.")
 
 		path_parameters = get_path_parameters(self.path_parameters)
 		path_parameters["domainName"] =  domainName
 
-		from .find_tenant_information_by_domain_name import FindTenantInformationByDomainNameRequest
-		return FindTenantInformationByDomainNameRequest(self.request_adapter, path_parameters)
+		from .find_tenant_information_by_domain_name_with_domainname import FindTenantInformationByDomainNameWithDomainNameRequest
+		return FindTenantInformationByDomainNameWithDomainNameRequest(self.request_adapter, path_parameters)
 
-	def find_tenant_information_by_tenant_id(self,
+	def find_tenant_information_by_tenant_id_with_tenantid(self,
 		tenantId: str,
-	) -> FindTenantInformationByTenantIdRequest:
+	) -> FindTenantInformationByTenantIdWithTenantIdRequest:
 		if tenantId is None:
 			raise TypeError("tenantId cannot be null.")
 
 		path_parameters = get_path_parameters(self.path_parameters)
 		path_parameters["tenantId"] =  tenantId
 
-		from .find_tenant_information_by_tenant_id import FindTenantInformationByTenantIdRequest
-		return FindTenantInformationByTenantIdRequest(self.request_adapter, path_parameters)
+		from .find_tenant_information_by_tenant_id_with_tenantid import FindTenantInformationByTenantIdWithTenantIdRequest
+		return FindTenantInformationByTenantIdWithTenantIdRequest(self.request_adapter, path_parameters)
 
 	@property
 	def multi_tenant_organization(self,

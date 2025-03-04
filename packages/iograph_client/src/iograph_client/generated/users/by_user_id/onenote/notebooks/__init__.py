@@ -11,14 +11,14 @@ from typing import Union, Any, Optional
 from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:
-	from .get_recent_notebooks import GetRecentNotebooksRequest
+	from .get_recent_notebooks_with_includepersonalnotebooks import GetRecentNotebooksWithIncludePersonalNotebooksRequest
 	from .get_notebook_from_web_url import GetNotebookFromWebUrlRequest
 	from .count import CountRequest
 	from .by_notebook_id import ByNotebookIdRequest
 	from ......request_adapter import HttpxRequestAdapter
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
-from iograph_models.models.notebook_collection_response import NotebookCollectionResponse
 from iograph_models.models.notebook import Notebook
+from iograph_models.models.notebook_collection_response import NotebookCollectionResponse
 
 
 class NotebooksRequest(BaseRequestBuilder):
@@ -134,10 +134,10 @@ class NotebooksRequest(BaseRequestBuilder):
 		from .get_notebook_from_web_url import GetNotebookFromWebUrlRequest
 		return GetNotebookFromWebUrlRequest(self.request_adapter, path_parameters)
 
-	def get_recent_notebooks(self,
+	def get_recent_notebooks_with_includepersonalnotebooks(self,
 		user_id: str,
 		includePersonalNotebooks: bool,
-	) -> GetRecentNotebooksRequest:
+	) -> GetRecentNotebooksWithIncludePersonalNotebooksRequest:
 		if user_id is None:
 			raise TypeError("user_id cannot be null.")
 		if includePersonalNotebooks is None:
@@ -147,6 +147,6 @@ class NotebooksRequest(BaseRequestBuilder):
 		path_parameters["user%2Did"] =  user_id
 		path_parameters["includePersonalNotebooks"] =  includePersonalNotebooks
 
-		from .get_recent_notebooks import GetRecentNotebooksRequest
-		return GetRecentNotebooksRequest(self.request_adapter, path_parameters)
+		from .get_recent_notebooks_with_includepersonalnotebooks import GetRecentNotebooksWithIncludePersonalNotebooksRequest
+		return GetRecentNotebooksWithIncludePersonalNotebooksRequest(self.request_adapter, path_parameters)
 

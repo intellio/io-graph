@@ -14,9 +14,9 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_user_experience_analytics_baseline_id import ByUserExperienceAnalyticsBaselineIdRequest
 	from ....request_adapter import HttpxRequestAdapter
+from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.models.user_experience_analytics_baseline import UserExperienceAnalyticsBaseline
 from iograph_models.models.user_experience_analytics_baseline_collection_response import UserExperienceAnalyticsBaselineCollectionResponse
-from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
 
 
 class UserExperienceAnalyticsBaselinesRequest(BaseRequestBuilder):

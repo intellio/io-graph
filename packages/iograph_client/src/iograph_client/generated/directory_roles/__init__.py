@@ -18,22 +18,23 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_directory_role_id import ByDirectoryRoleIdRequest
 	from ...request_adapter import HttpxRequestAdapter
-from iograph_models.models.directory_role import DirectoryRole
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.models.directory_role import DirectoryRole
+from iograph_models.models.directory_role_collection_response import DirectoryRoleCollectionResponse
 
 
 class DirectoryRolesRequest(BaseRequestBuilder):
 	def __init__(self,request_adapter: HttpxRequestAdapter, path_parameters: Optional[Union[dict[str, Any], str]]) -> None:
-		super().__init__(request_adapter, "{+baseurl}/directoryRoles(roleTemplateId='{roleTemplateId}')", path_parameters)
+		super().__init__(request_adapter, "{+baseurl}/directoryRoles", path_parameters)
 
 	async def get(
 		self,
 		request_configuration: Optional[RequestConfiguration[GetQueryParams]] = None,
-	) -> DirectoryRole:
+	) -> DirectoryRoleCollectionResponse:
 		"""
-		Get directoryRole
-		Retrieve the properties of a directoryRole object. The role must be activated in tenant for a successful response. You can use both the object ID and template ID of the directoryRole with this API. The template ID of a built-in role is immutable and can be seen in the role description on the Microsoft Entra admin center. For details, see Role template IDs.
-		Find more info here: https://learn.microsoft.com/graph/api/directoryrole-get?view=graph-rest-1.0
+		List directoryRoles
+		List the directory roles that are activated in the tenant. This operation only returns roles that have been activated. A role becomes activated when an admin activates the role using the Activate directoryRole API. Not all built-in roles are initially activated.  When assigning a role using the Microsoft Entra admin center, the role activation step is implicitly done on the admin's behalf. To get the full list of roles that are available in Microsoft Entra ID, use List directoryRoleTemplates.
+		Find more info here: https://learn.microsoft.com/graph/api/directoryrole-list?view=graph-rest-1.0
 		"""
 		tags = ['directoryRoles.directoryRole']
 
@@ -48,16 +49,17 @@ class DirectoryRolesRequest(BaseRequestBuilder):
 		)
 		request_info.configure(request_configuration)
 		request_info.headers.try_add("Accept", "application/json")
-		return await self.request_adapter.send_async(request_info, DirectoryRole, error_mapping)
+		return await self.request_adapter.send_async(request_info, DirectoryRoleCollectionResponse, error_mapping)
 
-	async def patch(
+	async def post(
 		self,
 		body: DirectoryRole,
 		request_configuration: Optional[RequestConfiguration[BaseModel]] = None,
 	) -> DirectoryRole:
 		"""
-		Update entity in directoryRoles by roleTemplateId
-		
+		Activate directoryRole
+		Activate a directory role. To read a directory role or update its members, it must first be activated in the tenant. The Company Administrators and the implicit user directory roles (User, Guest User, and Restricted Guest User roles) are activated by default. To access and assign members to other directory roles, you must first activate it with its corresponding directory role template ID.
+		Find more info here: https://learn.microsoft.com/graph/api/directoryrole-post-directoryroles?view=graph-rest-1.0
 		"""
 		tags = ['directoryRoles.directoryRole']
 
@@ -66,7 +68,7 @@ class DirectoryRolesRequest(BaseRequestBuilder):
 		}
 
 		request_info: RequestInformation = RequestInformation(
-			method = Method.PATCH,
+			method = Method.POST,
 			url_template = self.url_template,
 			path_parameters = self.path_parameters,
 		)
@@ -75,34 +77,15 @@ class DirectoryRolesRequest(BaseRequestBuilder):
 		request_info.set_content(body, "application/json")
 		return await self.request_adapter.send_async(request_info, DirectoryRole, error_mapping)
 
-	async def delete(
-		self,
-		request_configuration: Optional[RequestConfiguration[BaseModel]] = None,
-	) -> None:
-		"""
-		Delete entity from directoryRoles by roleTemplateId
-		
-		"""
-		tags = ['directoryRoles.directoryRole']
-		header_parameters = [{'name': 'If-Match', 'in': 'header', 'description': 'ETag', 'schema': {'type': 'string'}}]
-
-		error_mapping: dict[str, type[BaseModel]] = {
-			"XXX": ODataErrorsODataError,
-		}
-
-		request_info: RequestInformation = RequestInformation(
-			method = Method.DELETE,
-			url_template = self.url_template,
-			path_parameters = self.path_parameters,
-		)
-		request_info.configure(request_configuration)
-		request_info.headers.try_add("Accept", "application/json")
-		return await self.request_adapter.send_no_response_content_async(request_info, error_mapping)
-
 	class GetQueryParams(BaseModel):
+		top: int = Field(default=None,serialization_alias="%24top")
+		skip: int = Field(default=None,serialization_alias="%24skip")
+		search: str = Field(default=None,serialization_alias="%24search")
+		filter: str = Field(default=None,serialization_alias="%24filter")
+		count: bool = Field(default=None,serialization_alias="%24count")
+		orderby: list[str] = Field(default=None,serialization_alias="%24orderby")
 		select: list[str] = Field(default=None,serialization_alias="%24select")
 		expand: list[str] = Field(default=None,serialization_alias="%24expand")
-
 
 
 	def with_url(self, raw_url: str) -> DirectoryRolesRequest:

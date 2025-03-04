@@ -11,13 +11,14 @@ from typing import Union, Any, Optional
 from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:
-	from .filter_by_current_user import FilterByCurrentUserRequest
+	from .filter_by_current_user_with_on import FilterByCurrentUserWithOnRequest
+	from .additional_access_with_accesspackageid_incompatibleaccesspackageid import AdditionalAccessWithAccessPackageIdIncompatibleAccessPackageIdRequest
 	from .additional_access import AdditionalAccessRequest
 	from .count import CountRequest
 	from .by_access_package_assignment_id import ByAccessPackageAssignmentIdRequest
 	from .....request_adapter import HttpxRequestAdapter
-from iograph_models.models.access_package_assignment import AccessPackageAssignment
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.models.access_package_assignment import AccessPackageAssignment
 from iograph_models.models.access_package_assignment_collection_response import AccessPackageAssignmentCollectionResponse
 
 
@@ -119,15 +120,31 @@ class AssignmentsRequest(BaseRequestBuilder):
 		from .additional_access import AdditionalAccessRequest
 		return AdditionalAccessRequest(self.request_adapter, self.path_parameters)
 
-	def filter_by_current_user(self,
+	def additional_access_with_accesspackageid_incompatibleaccesspackageid(self,
+		accessPackageId: str,
+		incompatibleAccessPackageId: str,
+	) -> AdditionalAccessWithAccessPackageIdIncompatibleAccessPackageIdRequest:
+		if accessPackageId is None:
+			raise TypeError("accessPackageId cannot be null.")
+		if incompatibleAccessPackageId is None:
+			raise TypeError("incompatibleAccessPackageId cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["accessPackageId"] =  accessPackageId
+		path_parameters["incompatibleAccessPackageId"] =  incompatibleAccessPackageId
+
+		from .additional_access_with_accesspackageid_incompatibleaccesspackageid import AdditionalAccessWithAccessPackageIdIncompatibleAccessPackageIdRequest
+		return AdditionalAccessWithAccessPackageIdIncompatibleAccessPackageIdRequest(self.request_adapter, path_parameters)
+
+	def filter_by_current_user_with_on(self,
 		on: str,
-	) -> FilterByCurrentUserRequest:
+	) -> FilterByCurrentUserWithOnRequest:
 		if on is None:
 			raise TypeError("on cannot be null.")
 
 		path_parameters = get_path_parameters(self.path_parameters)
 		path_parameters["on"] =  on
 
-		from .filter_by_current_user import FilterByCurrentUserRequest
-		return FilterByCurrentUserRequest(self.request_adapter, path_parameters)
+		from .filter_by_current_user_with_on import FilterByCurrentUserWithOnRequest
+		return FilterByCurrentUserWithOnRequest(self.request_adapter, path_parameters)
 

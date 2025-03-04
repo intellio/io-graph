@@ -19,23 +19,25 @@ if TYPE_CHECKING:
 	from .by_device_id import ByDeviceIdRequest
 	from ...request_adapter import HttpxRequestAdapter
 from iograph_models.models.device import Device
+from iograph_models.models.device_collection_response import DeviceCollectionResponse
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
 
 
 class DevicesRequest(BaseRequestBuilder):
 	def __init__(self,request_adapter: HttpxRequestAdapter, path_parameters: Optional[Union[dict[str, Any], str]]) -> None:
-		super().__init__(request_adapter, "{+baseurl}/devices(deviceId='{deviceId}')", path_parameters)
+		super().__init__(request_adapter, "{+baseurl}/devices", path_parameters)
 
 	async def get(
 		self,
 		request_configuration: Optional[RequestConfiguration[GetQueryParams]] = None,
-	) -> Device:
+	) -> DeviceCollectionResponse:
 		"""
-		Get device
-		Get the properties and relationships of a device object.
-		Find more info here: https://learn.microsoft.com/graph/api/device-get?view=graph-rest-1.0
+		List devices
+		Retrieve a list of device objects registered in the organization.
+		Find more info here: https://learn.microsoft.com/graph/api/device-list?view=graph-rest-1.0
 		"""
 		tags = ['devices.device']
+		header_parameters = [{'name': 'ConsistencyLevel', 'in': 'header', 'description': 'Indicates the requested consistency level. Documentation URL: https://docs.microsoft.com/graph/aad-advanced-queries', 'schema': {'type': 'string'}, 'examples': {'example-1': {'description': "$search and $count queries require the client to set the ConsistencyLevel HTTP header to 'eventual'.", 'value': 'eventual'}}}]
 
 		error_mapping: dict[str, type[BaseModel]] = {
 			"XXX": ODataErrorsODataError,
@@ -48,17 +50,17 @@ class DevicesRequest(BaseRequestBuilder):
 		)
 		request_info.configure(request_configuration)
 		request_info.headers.try_add("Accept", "application/json")
-		return await self.request_adapter.send_async(request_info, Device, error_mapping)
+		return await self.request_adapter.send_async(request_info, DeviceCollectionResponse, error_mapping)
 
-	async def patch(
+	async def post(
 		self,
 		body: Device,
 		request_configuration: Optional[RequestConfiguration[BaseModel]] = None,
 	) -> Device:
 		"""
-		Update device
-		Update the properties of a registered device. Only certain properties of a device can be updated through approved Mobile Device Managment (MDM) apps.
-		Find more info here: https://learn.microsoft.com/graph/api/device-update?view=graph-rest-1.0
+		Create device
+		Create and register a new device in the organization.
+		Find more info here: https://learn.microsoft.com/graph/api/device-post-devices?view=graph-rest-1.0
 		"""
 		tags = ['devices.device']
 
@@ -67,7 +69,7 @@ class DevicesRequest(BaseRequestBuilder):
 		}
 
 		request_info: RequestInformation = RequestInformation(
-			method = Method.PATCH,
+			method = Method.POST,
 			url_template = self.url_template,
 			path_parameters = self.path_parameters,
 		)
@@ -76,35 +78,15 @@ class DevicesRequest(BaseRequestBuilder):
 		request_info.set_content(body, "application/json")
 		return await self.request_adapter.send_async(request_info, Device, error_mapping)
 
-	async def delete(
-		self,
-		request_configuration: Optional[RequestConfiguration[BaseModel]] = None,
-	) -> None:
-		"""
-		Delete device
-		Delete a registered device.
-		Find more info here: https://learn.microsoft.com/graph/api/device-delete?view=graph-rest-1.0
-		"""
-		tags = ['devices.device']
-		header_parameters = [{'name': 'If-Match', 'in': 'header', 'description': 'ETag', 'schema': {'type': 'string'}}]
-
-		error_mapping: dict[str, type[BaseModel]] = {
-			"XXX": ODataErrorsODataError,
-		}
-
-		request_info: RequestInformation = RequestInformation(
-			method = Method.DELETE,
-			url_template = self.url_template,
-			path_parameters = self.path_parameters,
-		)
-		request_info.configure(request_configuration)
-		request_info.headers.try_add("Accept", "application/json")
-		return await self.request_adapter.send_no_response_content_async(request_info, error_mapping)
-
 	class GetQueryParams(BaseModel):
+		top: int = Field(default=None,serialization_alias="%24top")
+		skip: int = Field(default=None,serialization_alias="%24skip")
+		search: str = Field(default=None,serialization_alias="%24search")
+		filter: str = Field(default=None,serialization_alias="%24filter")
+		count: bool = Field(default=None,serialization_alias="%24count")
+		orderby: list[str] = Field(default=None,serialization_alias="%24orderby")
 		select: list[str] = Field(default=None,serialization_alias="%24select")
 		expand: list[str] = Field(default=None,serialization_alias="%24expand")
-
 
 
 	def with_url(self, raw_url: str) -> DevicesRequest:

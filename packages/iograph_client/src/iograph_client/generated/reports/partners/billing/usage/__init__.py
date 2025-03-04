@@ -13,8 +13,8 @@ if TYPE_CHECKING:
 	from .unbilled import UnbilledRequest
 	from .billed import BilledRequest
 	from ......request_adapter import HttpxRequestAdapter
-from iograph_models.models.partners_billing_azure_usage import PartnersBillingAzureUsage
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.models.partners_billing_azure_usage import PartnersBillingAzureUsage
 
 
 class UsageRequest(BaseRequestBuilder):

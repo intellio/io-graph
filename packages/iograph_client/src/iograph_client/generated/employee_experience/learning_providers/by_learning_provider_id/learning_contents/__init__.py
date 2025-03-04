@@ -14,22 +14,23 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_learning_content_id import ByLearningContentIdRequest
 	from ......request_adapter import HttpxRequestAdapter
-from iograph_models.models.learning_content import LearningContent
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.models.learning_content_collection_response import LearningContentCollectionResponse
+from iograph_models.models.learning_content import LearningContent
 
 
 class LearningContentsRequest(BaseRequestBuilder):
 	def __init__(self,request_adapter: HttpxRequestAdapter, path_parameters: Optional[Union[dict[str, Any], str]]) -> None:
-		super().__init__(request_adapter, "{+baseurl}/employeeExperience/learningProviders/{learningProvider%2Did}/learningContents(externalId='{externalId}')", path_parameters)
+		super().__init__(request_adapter, "{+baseurl}/employeeExperience/learningProviders/{learningProvider%2Did}/learningContents", path_parameters)
 
 	async def get(
 		self,
 		request_configuration: Optional[RequestConfiguration[GetQueryParams]] = None,
-	) -> LearningContent:
+	) -> LearningContentCollectionResponse:
 		"""
-		Get learningContent
-		Get the specified learningContent resource which represents the metadata of the specified provider's ingested content.
-		Find more info here: https://learn.microsoft.com/graph/api/learningcontent-get?view=graph-rest-1.0
+		List learningContents
+		Get a list of the learningContent resources and their properties. This list represents the metadata of the specified provider's content in Viva Learning.
+		Find more info here: https://learn.microsoft.com/graph/api/learningprovider-list-learningcontents?view=graph-rest-1.0
 		"""
 		tags = ['employeeExperience.learningProvider']
 
@@ -44,15 +45,15 @@ class LearningContentsRequest(BaseRequestBuilder):
 		)
 		request_info.configure(request_configuration)
 		request_info.headers.try_add("Accept", "application/json")
-		return await self.request_adapter.send_async(request_info, LearningContent, error_mapping)
+		return await self.request_adapter.send_async(request_info, LearningContentCollectionResponse, error_mapping)
 
-	async def patch(
+	async def post(
 		self,
 		body: LearningContent,
 		request_configuration: Optional[RequestConfiguration[BaseModel]] = None,
 	) -> LearningContent:
 		"""
-		Update the navigation property learningContents in employeeExperience
+		Create new navigation property to learningContents for employeeExperience
 		
 		"""
 		tags = ['employeeExperience.learningProvider']
@@ -62,7 +63,7 @@ class LearningContentsRequest(BaseRequestBuilder):
 		}
 
 		request_info: RequestInformation = RequestInformation(
-			method = Method.PATCH,
+			method = Method.POST,
 			url_template = self.url_template,
 			path_parameters = self.path_parameters,
 		)
@@ -71,35 +72,15 @@ class LearningContentsRequest(BaseRequestBuilder):
 		request_info.set_content(body, "application/json")
 		return await self.request_adapter.send_async(request_info, LearningContent, error_mapping)
 
-	async def delete(
-		self,
-		request_configuration: Optional[RequestConfiguration[BaseModel]] = None,
-	) -> None:
-		"""
-		Delete learningContent
-		Delete the specified learningContent resource that represents the metadata of the specified provider's ingested content.
-		Find more info here: https://learn.microsoft.com/graph/api/learningprovider-delete-learningcontents?view=graph-rest-1.0
-		"""
-		tags = ['employeeExperience.learningProvider']
-		header_parameters = [{'name': 'If-Match', 'in': 'header', 'description': 'ETag', 'schema': {'type': 'string'}}]
-
-		error_mapping: dict[str, type[BaseModel]] = {
-			"XXX": ODataErrorsODataError,
-		}
-
-		request_info: RequestInformation = RequestInformation(
-			method = Method.DELETE,
-			url_template = self.url_template,
-			path_parameters = self.path_parameters,
-		)
-		request_info.configure(request_configuration)
-		request_info.headers.try_add("Accept", "application/json")
-		return await self.request_adapter.send_no_response_content_async(request_info, error_mapping)
-
 	class GetQueryParams(BaseModel):
+		top: int = Field(default=None,serialization_alias="%24top")
+		skip: int = Field(default=None,serialization_alias="%24skip")
+		search: str = Field(default=None,serialization_alias="%24search")
+		filter: str = Field(default=None,serialization_alias="%24filter")
+		count: bool = Field(default=None,serialization_alias="%24count")
+		orderby: list[str] = Field(default=None,serialization_alias="%24orderby")
 		select: list[str] = Field(default=None,serialization_alias="%24select")
 		expand: list[str] = Field(default=None,serialization_alias="%24expand")
-
 
 
 	def with_url(self, raw_url: str) -> LearningContentsRequest:

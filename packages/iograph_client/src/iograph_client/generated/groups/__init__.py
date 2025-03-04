@@ -18,24 +18,26 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_group_id import ByGroupIdRequest
 	from ...request_adapter import HttpxRequestAdapter
+from iograph_models.models.group_collection_response import GroupCollectionResponse
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.models.group import Group
 
 
 class GroupsRequest(BaseRequestBuilder):
 	def __init__(self,request_adapter: HttpxRequestAdapter, path_parameters: Optional[Union[dict[str, Any], str]]) -> None:
-		super().__init__(request_adapter, "{+baseurl}/groups(uniqueName='{uniqueName}')", path_parameters)
+		super().__init__(request_adapter, "{+baseurl}/groups", path_parameters)
 
 	async def get(
 		self,
 		request_configuration: Optional[RequestConfiguration[GetQueryParams]] = None,
-	) -> Group:
+	) -> GroupCollectionResponse:
 		"""
-		Get group
-		Get the properties and relationships of a group object. This operation returns by default only a subset of all the available properties, as noted in the Properties section. To get properties that aren't_ returned by default, specify them in a $select OData query option. The hasMembersWithLicenseErrors and isArchived properties are an exception and aren't returned in the $select query.
-		Find more info here: https://learn.microsoft.com/graph/api/group-get?view=graph-rest-1.0
+		List groups
+		List all the groups available in an organization, excluding dynamic distribution groups. To retrieve dynamic distribution groups, use the Exchange admin center. This operation returns by default only a subset of the properties for each group. These default properties are noted in the Properties section. To get properties that are not returned by default, do a GET operation for the group and specify the properties in a $select OData query option. The hasMembersWithLicenseErrors and isArchived properties are an exception and are not returned in the $select query.
+		Find more info here: https://learn.microsoft.com/graph/api/group-list?view=graph-rest-1.0
 		"""
 		tags = ['groups.group']
+		header_parameters = [{'name': 'ConsistencyLevel', 'in': 'header', 'description': 'Indicates the requested consistency level. Documentation URL: https://docs.microsoft.com/graph/aad-advanced-queries', 'schema': {'type': 'string'}, 'examples': {'example-1': {'description': "$search and $count queries require the client to set the ConsistencyLevel HTTP header to 'eventual'.", 'value': 'eventual'}}}]
 
 		error_mapping: dict[str, type[BaseModel]] = {
 			"XXX": ODataErrorsODataError,
@@ -48,9 +50,9 @@ class GroupsRequest(BaseRequestBuilder):
 		)
 		request_info.configure(request_configuration)
 		request_info.headers.try_add("Accept", "application/json")
-		return await self.request_adapter.send_async(request_info, Group, error_mapping)
+		return await self.request_adapter.send_async(request_info, GroupCollectionResponse, error_mapping)
 
-	async def patch(
+	async def post(
 		self,
 		body: Group,
 		request_configuration: Optional[RequestConfiguration[BaseModel]] = None,
@@ -68,7 +70,7 @@ You can create or update the following types of group: By default, this operatio
 		}
 
 		request_info: RequestInformation = RequestInformation(
-			method = Method.PATCH,
+			method = Method.POST,
 			url_template = self.url_template,
 			path_parameters = self.path_parameters,
 		)
@@ -77,35 +79,15 @@ You can create or update the following types of group: By default, this operatio
 		request_info.set_content(body, "application/json")
 		return await self.request_adapter.send_async(request_info, Group, error_mapping)
 
-	async def delete(
-		self,
-		request_configuration: Optional[RequestConfiguration[BaseModel]] = None,
-	) -> None:
-		"""
-		Delete group
-		Delete a group. When deleted, Microsoft 365 groups are moved to a temporary container and can be restored within 30 days. After that time, they're permanently deleted. This isn't applicable to Security groups and Distribution groups which are permanently deleted immediately. To learn more, see deletedItems.
-		Find more info here: https://learn.microsoft.com/graph/api/group-delete?view=graph-rest-1.0
-		"""
-		tags = ['groups.group']
-		header_parameters = [{'name': 'If-Match', 'in': 'header', 'description': 'ETag', 'schema': {'type': 'string'}}]
-
-		error_mapping: dict[str, type[BaseModel]] = {
-			"XXX": ODataErrorsODataError,
-		}
-
-		request_info: RequestInformation = RequestInformation(
-			method = Method.DELETE,
-			url_template = self.url_template,
-			path_parameters = self.path_parameters,
-		)
-		request_info.configure(request_configuration)
-		request_info.headers.try_add("Accept", "application/json")
-		return await self.request_adapter.send_no_response_content_async(request_info, error_mapping)
-
 	class GetQueryParams(BaseModel):
+		top: int = Field(default=None,serialization_alias="%24top")
+		skip: int = Field(default=None,serialization_alias="%24skip")
+		search: str = Field(default=None,serialization_alias="%24search")
+		filter: str = Field(default=None,serialization_alias="%24filter")
+		count: bool = Field(default=None,serialization_alias="%24count")
+		orderby: list[str] = Field(default=None,serialization_alias="%24orderby")
 		select: list[str] = Field(default=None,serialization_alias="%24select")
 		expand: list[str] = Field(default=None,serialization_alias="%24expand")
-
 
 
 	def with_url(self, raw_url: str) -> GroupsRequest:

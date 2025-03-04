@@ -12,7 +12,7 @@ from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:
 	from .get_schedule import GetScheduleRequest
-	from .allowed_calendar_sharing_roles import AllowedCalendarSharingRolesRequest
+	from .allowed_calendar_sharing_roles_with_user import AllowedCalendarSharingRolesWithUserRequest
 	from .events import EventsRequest
 	from .calendar_view import CalendarViewRequest
 	from .calendar_permissions import CalendarPermissionsRequest
@@ -98,10 +98,10 @@ class CalendarRequest(BaseRequestBuilder):
 		from .events import EventsRequest
 		return EventsRequest(self.request_adapter, path_parameters)
 
-	def allowed_calendar_sharing_roles(self,
+	def allowed_calendar_sharing_roles_with_user(self,
 		group_id: str,
 		User: str,
-	) -> AllowedCalendarSharingRolesRequest:
+	) -> AllowedCalendarSharingRolesWithUserRequest:
 		if group_id is None:
 			raise TypeError("group_id cannot be null.")
 		if User is None:
@@ -111,8 +111,8 @@ class CalendarRequest(BaseRequestBuilder):
 		path_parameters["group%2Did"] =  group_id
 		path_parameters["User"] =  User
 
-		from .allowed_calendar_sharing_roles import AllowedCalendarSharingRolesRequest
-		return AllowedCalendarSharingRolesRequest(self.request_adapter, path_parameters)
+		from .allowed_calendar_sharing_roles_with_user import AllowedCalendarSharingRolesWithUserRequest
+		return AllowedCalendarSharingRolesWithUserRequest(self.request_adapter, path_parameters)
 
 	def get_schedule(self,
 		group_id: str,

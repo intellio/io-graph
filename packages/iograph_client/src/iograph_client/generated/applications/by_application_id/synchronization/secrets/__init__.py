@@ -14,8 +14,8 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from ......request_adapter import HttpxRequestAdapter
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
-from iograph_models.models.secrets_put_response import SecretsPutResponse
 from iograph_models.models.secrets_put_request import SecretsPutRequest
+from iograph_models.models.secrets_put_response import SecretsPutResponse
 
 
 class SecretsRequest(BaseRequestBuilder):

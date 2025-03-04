@@ -15,8 +15,8 @@ if TYPE_CHECKING:
 	from .by_device_configuration_assignment_id import ByDeviceConfigurationAssignmentIdRequest
 	from ......request_adapter import HttpxRequestAdapter
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
-from iograph_models.models.device_configuration_assignment import DeviceConfigurationAssignment
 from iograph_models.models.device_configuration_assignment_collection_response import DeviceConfigurationAssignmentCollectionResponse
+from iograph_models.models.device_configuration_assignment import DeviceConfigurationAssignment
 
 
 class AssignmentsRequest(BaseRequestBuilder):

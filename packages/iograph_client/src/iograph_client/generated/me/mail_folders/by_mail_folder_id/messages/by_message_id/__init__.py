@@ -24,8 +24,8 @@ if TYPE_CHECKING:
 	from .attachments import AttachmentsRequest
 	from .value import ValueRequest
 	from .......request_adapter import HttpxRequestAdapter
-from iograph_models.models.message import Message
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.models.message import Message
 
 
 class ByMessageIdRequest(BaseRequestBuilder):

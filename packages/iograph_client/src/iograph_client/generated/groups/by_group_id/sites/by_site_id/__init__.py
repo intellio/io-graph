@@ -18,8 +18,9 @@ if TYPE_CHECKING:
 	from .pages import PagesRequest
 	from .operations import OperationsRequest
 	from .onenote import OnenoteRequest
-	from .get_by_path import GetByPathRequest
-	from .get_applicable_content_types_for_list import GetApplicableContentTypesForListRequest
+	from .get_by_path_with_path import GetByPathWithPathRequest
+	from .get_applicable_content_types_for_list_with_listid import GetApplicableContentTypesForListWithListIdRequest
+	from .get_activities_by_interval_with_startdatetime_enddatetime_interval import GetActivitiesByIntervalWithStartDateTimeEndDateTimeIntervalRequest
 	from .get_activities_by_interval import GetActivitiesByIntervalRequest
 	from .lists import ListsRequest
 	from .last_modified_by_user import LastModifiedByUserRequest
@@ -279,11 +280,39 @@ class BySiteIdRequest(BaseRequestBuilder):
 		from .get_activities_by_interval import GetActivitiesByIntervalRequest
 		return GetActivitiesByIntervalRequest(self.request_adapter, path_parameters)
 
-	def get_applicable_content_types_for_list(self,
+	def get_activities_by_interval_with_startdatetime_enddatetime_interval(self,
+		group_id: str,
+		site_id: str,
+		startDateTime: str,
+		endDateTime: str,
+		interval: str,
+	) -> GetActivitiesByIntervalWithStartDateTimeEndDateTimeIntervalRequest:
+		if group_id is None:
+			raise TypeError("group_id cannot be null.")
+		if site_id is None:
+			raise TypeError("site_id cannot be null.")
+		if startDateTime is None:
+			raise TypeError("startDateTime cannot be null.")
+		if endDateTime is None:
+			raise TypeError("endDateTime cannot be null.")
+		if interval is None:
+			raise TypeError("interval cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["group%2Did"] =  group_id
+		path_parameters["site%2Did"] =  site_id
+		path_parameters["startDateTime"] =  startDateTime
+		path_parameters["endDateTime"] =  endDateTime
+		path_parameters["interval"] =  interval
+
+		from .get_activities_by_interval_with_startdatetime_enddatetime_interval import GetActivitiesByIntervalWithStartDateTimeEndDateTimeIntervalRequest
+		return GetActivitiesByIntervalWithStartDateTimeEndDateTimeIntervalRequest(self.request_adapter, path_parameters)
+
+	def get_applicable_content_types_for_list_with_listid(self,
 		group_id: str,
 		site_id: str,
 		listId: str,
-	) -> GetApplicableContentTypesForListRequest:
+	) -> GetApplicableContentTypesForListWithListIdRequest:
 		if group_id is None:
 			raise TypeError("group_id cannot be null.")
 		if site_id is None:
@@ -296,14 +325,14 @@ class BySiteIdRequest(BaseRequestBuilder):
 		path_parameters["site%2Did"] =  site_id
 		path_parameters["listId"] =  listId
 
-		from .get_applicable_content_types_for_list import GetApplicableContentTypesForListRequest
-		return GetApplicableContentTypesForListRequest(self.request_adapter, path_parameters)
+		from .get_applicable_content_types_for_list_with_listid import GetApplicableContentTypesForListWithListIdRequest
+		return GetApplicableContentTypesForListWithListIdRequest(self.request_adapter, path_parameters)
 
-	def get_by_path(self,
+	def get_by_path_with_path(self,
 		group_id: str,
 		site_id: str,
 		path: str,
-	) -> GetByPathRequest:
+	) -> GetByPathWithPathRequest:
 		if group_id is None:
 			raise TypeError("group_id cannot be null.")
 		if site_id is None:
@@ -316,8 +345,8 @@ class BySiteIdRequest(BaseRequestBuilder):
 		path_parameters["site%2Did"] =  site_id
 		path_parameters["path"] =  path
 
-		from .get_by_path import GetByPathRequest
-		return GetByPathRequest(self.request_adapter, path_parameters)
+		from .get_by_path_with_path import GetByPathWithPathRequest
+		return GetByPathWithPathRequest(self.request_adapter, path_parameters)
 
 	def onenote(self,
 		group_id: str,

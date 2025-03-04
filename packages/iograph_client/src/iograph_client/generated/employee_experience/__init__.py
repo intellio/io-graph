@@ -12,6 +12,7 @@ from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:
 	from .learning_providers import LearningProvidersRequest
+	from .learning_course_activities_with_externalcourseactivityid import LearningCourseActivitiesWithExternalcourseActivityIdRequest
 	from .learning_course_activities import LearningCourseActivitiesRequest
 	from .engagement_async_operations import EngagementAsyncOperationsRequest
 	from .communities import CommunitiesRequest
@@ -103,6 +104,18 @@ class EmployeeExperienceRequest(BaseRequestBuilder):
 	) -> LearningCourseActivitiesRequest:
 		from .learning_course_activities import LearningCourseActivitiesRequest
 		return LearningCourseActivitiesRequest(self.request_adapter, self.path_parameters)
+
+	def learning_course_activities_with_externalcourseactivityid(self,
+		externalcourseActivityId: str,
+	) -> LearningCourseActivitiesWithExternalcourseActivityIdRequest:
+		if externalcourseActivityId is None:
+			raise TypeError("externalcourseActivityId cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["externalcourseActivityId"] =  externalcourseActivityId
+
+		from .learning_course_activities_with_externalcourseactivityid import LearningCourseActivitiesWithExternalcourseActivityIdRequest
+		return LearningCourseActivitiesWithExternalcourseActivityIdRequest(self.request_adapter, path_parameters)
 
 	@property
 	def learning_providers(self,

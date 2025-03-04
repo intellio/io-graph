@@ -15,9 +15,11 @@ if TYPE_CHECKING:
 	from .protection import ProtectionRequest
 	from .pivot_tables import PivotTablesRequest
 	from .names import NamesRequest
+	from .used_range_with_valuesonly import UsedRangeWithValuesOnlyRequest
 	from .used_range import UsedRangeRequest
+	from .range_with_address import RangeWithAddressRequest
 	from .range import RangeRequest
-	from .cell import CellRequest
+	from .cell_with_row_column import CellWithRowColumnRequest
 	from .charts import ChartsRequest
 	from .........request_adapter import HttpxRequestAdapter
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
@@ -136,13 +138,13 @@ class ByWorkbookWorksheetIdRequest(BaseRequestBuilder):
 		from .charts import ChartsRequest
 		return ChartsRequest(self.request_adapter, path_parameters)
 
-	def cell(self,
+	def cell_with_row_column(self,
 		drive_id: str,
 		driveItem_id: str,
 		workbookWorksheet_id: str,
 		row: int,
 		column: int,
-	) -> CellRequest:
+	) -> CellWithRowColumnRequest:
 		if drive_id is None:
 			raise TypeError("drive_id cannot be null.")
 		if driveItem_id is None:
@@ -161,8 +163,8 @@ class ByWorkbookWorksheetIdRequest(BaseRequestBuilder):
 		path_parameters["row"] =  row
 		path_parameters["column"] =  column
 
-		from .cell import CellRequest
-		return CellRequest(self.request_adapter, path_parameters)
+		from .cell_with_row_column import CellWithRowColumnRequest
+		return CellWithRowColumnRequest(self.request_adapter, path_parameters)
 
 	def range(self,
 		drive_id: str,
@@ -184,6 +186,30 @@ class ByWorkbookWorksheetIdRequest(BaseRequestBuilder):
 		from .range import RangeRequest
 		return RangeRequest(self.request_adapter, path_parameters)
 
+	def range_with_address(self,
+		drive_id: str,
+		driveItem_id: str,
+		workbookWorksheet_id: str,
+		address: str,
+	) -> RangeWithAddressRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+		if workbookWorksheet_id is None:
+			raise TypeError("workbookWorksheet_id cannot be null.")
+		if address is None:
+			raise TypeError("address cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+		path_parameters["workbookWorksheet%2Did"] =  workbookWorksheet_id
+		path_parameters["address"] =  address
+
+		from .range_with_address import RangeWithAddressRequest
+		return RangeWithAddressRequest(self.request_adapter, path_parameters)
+
 	def used_range(self,
 		drive_id: str,
 		driveItem_id: str,
@@ -203,6 +229,30 @@ class ByWorkbookWorksheetIdRequest(BaseRequestBuilder):
 
 		from .used_range import UsedRangeRequest
 		return UsedRangeRequest(self.request_adapter, path_parameters)
+
+	def used_range_with_valuesonly(self,
+		drive_id: str,
+		driveItem_id: str,
+		workbookWorksheet_id: str,
+		valuesOnly: bool,
+	) -> UsedRangeWithValuesOnlyRequest:
+		if drive_id is None:
+			raise TypeError("drive_id cannot be null.")
+		if driveItem_id is None:
+			raise TypeError("driveItem_id cannot be null.")
+		if workbookWorksheet_id is None:
+			raise TypeError("workbookWorksheet_id cannot be null.")
+		if valuesOnly is None:
+			raise TypeError("valuesOnly cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["drive%2Did"] =  drive_id
+		path_parameters["driveItem%2Did"] =  driveItem_id
+		path_parameters["workbookWorksheet%2Did"] =  workbookWorksheet_id
+		path_parameters["valuesOnly"] =  valuesOnly
+
+		from .used_range_with_valuesonly import UsedRangeWithValuesOnlyRequest
+		return UsedRangeWithValuesOnlyRequest(self.request_adapter, path_parameters)
 
 	def names(self,
 		drive_id: str,

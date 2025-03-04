@@ -13,8 +13,8 @@ from typing import TYPE_CHECKING
 if TYPE_CHECKING:
 	from .scheduled_action_configurations import ScheduledActionConfigurationsRequest
 	from .......request_adapter import HttpxRequestAdapter
-from iograph_models.models.device_compliance_scheduled_action_for_rule import DeviceComplianceScheduledActionForRule
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.models.device_compliance_scheduled_action_for_rule import DeviceComplianceScheduledActionForRule
 
 
 class ByDeviceComplianceScheduledActionForRuleIdRequest(BaseRequestBuilder):

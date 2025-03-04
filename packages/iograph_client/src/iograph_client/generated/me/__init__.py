@@ -40,7 +40,7 @@ if TYPE_CHECKING:
 	from .restore import RestoreRequest
 	from .reprocess_license_assignment import ReprocessLicenseAssignmentRequest
 	from .remove_all_devices_from_management import RemoveAllDevicesFromManagementRequest
-	from .reminder_view import ReminderViewRequest
+	from .reminder_view_with_startdatetime_enddatetime import ReminderViewWithStartDateTimeEndDateTimeRequest
 	from .get_member_objects import GetMemberObjectsRequest
 	from .get_member_groups import GetMemberGroupsRequest
 	from .get_managed_devices_with_app_failures import GetManagedDevicesWithAppFailuresRequest
@@ -49,6 +49,7 @@ if TYPE_CHECKING:
 	from .get_mail_tips import GetMailTipsRequest
 	from .find_meeting_times import FindMeetingTimesRequest
 	from .export_personal_data import ExportPersonalDataRequest
+	from .export_device_and_app_management_data_with_skip_top import ExportDeviceAndAppManagementDataWithSkipTopRequest
 	from .export_device_and_app_management_data import ExportDeviceAndAppManagementDataRequest
 	from .check_member_objects import CheckMemberObjectsRequest
 	from .check_member_groups import CheckMemberGroupsRequest
@@ -383,6 +384,22 @@ class MeRequest(BaseRequestBuilder):
 		from .export_device_and_app_management_data import ExportDeviceAndAppManagementDataRequest
 		return ExportDeviceAndAppManagementDataRequest(self.request_adapter, self.path_parameters)
 
+	def export_device_and_app_management_data_with_skip_top(self,
+		skip: int,
+		top: int,
+	) -> ExportDeviceAndAppManagementDataWithSkipTopRequest:
+		if skip is None:
+			raise TypeError("skip cannot be null.")
+		if top is None:
+			raise TypeError("top cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["skip"] =  skip
+		path_parameters["top"] =  top
+
+		from .export_device_and_app_management_data_with_skip_top import ExportDeviceAndAppManagementDataWithSkipTopRequest
+		return ExportDeviceAndAppManagementDataWithSkipTopRequest(self.request_adapter, path_parameters)
+
 	@property
 	def export_personal_data(self,
 	) -> ExportPersonalDataRequest:
@@ -431,10 +448,10 @@ class MeRequest(BaseRequestBuilder):
 		from .get_member_objects import GetMemberObjectsRequest
 		return GetMemberObjectsRequest(self.request_adapter, self.path_parameters)
 
-	def reminder_view(self,
+	def reminder_view_with_startdatetime_enddatetime(self,
 		StartDateTime: str,
 		EndDateTime: str,
-	) -> ReminderViewRequest:
+	) -> ReminderViewWithStartDateTimeEndDateTimeRequest:
 		if StartDateTime is None:
 			raise TypeError("StartDateTime cannot be null.")
 		if EndDateTime is None:
@@ -444,8 +461,8 @@ class MeRequest(BaseRequestBuilder):
 		path_parameters["StartDateTime"] =  StartDateTime
 		path_parameters["EndDateTime"] =  EndDateTime
 
-		from .reminder_view import ReminderViewRequest
-		return ReminderViewRequest(self.request_adapter, path_parameters)
+		from .reminder_view_with_startdatetime_enddatetime import ReminderViewWithStartDateTimeEndDateTimeRequest
+		return ReminderViewWithStartDateTimeEndDateTimeRequest(self.request_adapter, path_parameters)
 
 	@property
 	def remove_all_devices_from_management(self,

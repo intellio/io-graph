@@ -11,14 +11,14 @@ from typing import Union, Any, Optional
 from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:
-	from .item_at import ItemAtRequest
+	from .item_at_with_index import ItemAtWithIndexRequest
 	from .count import CountRequest
 	from .add import AddRequest
 	from .by_workbook_table_id import ByWorkbookTableIdRequest
 	from ........request_adapter import HttpxRequestAdapter
-from iograph_models.models.workbook_table import WorkbookTable
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.models.workbook_table_collection_response import WorkbookTableCollectionResponse
+from iograph_models.models.workbook_table import WorkbookTable
 
 
 class TablesRequest(BaseRequestBuilder):
@@ -146,11 +146,11 @@ class TablesRequest(BaseRequestBuilder):
 		from .count import CountRequest
 		return CountRequest(self.request_adapter, path_parameters)
 
-	def item_at(self,
+	def item_at_with_index(self,
 		drive_id: str,
 		driveItem_id: str,
 		index: int,
-	) -> ItemAtRequest:
+	) -> ItemAtWithIndexRequest:
 		if drive_id is None:
 			raise TypeError("drive_id cannot be null.")
 		if driveItem_id is None:
@@ -163,6 +163,6 @@ class TablesRequest(BaseRequestBuilder):
 		path_parameters["driveItem%2Did"] =  driveItem_id
 		path_parameters["index"] =  index
 
-		from .item_at import ItemAtRequest
-		return ItemAtRequest(self.request_adapter, path_parameters)
+		from .item_at_with_index import ItemAtWithIndexRequest
+		return ItemAtWithIndexRequest(self.request_adapter, path_parameters)
 

@@ -11,13 +11,13 @@ from typing import Union, Any, Optional
 from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:
-	from .filter_by_current_user import FilterByCurrentUserRequest
+	from .filter_by_current_user_with_on import FilterByCurrentUserWithOnRequest
 	from .count import CountRequest
 	from .by_user_consent_request_id import ByUserConsentRequestIdRequest
 	from .......request_adapter import HttpxRequestAdapter
-from iograph_models.models.user_consent_request import UserConsentRequest
-from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.models.user_consent_request_collection_response import UserConsentRequestCollectionResponse
+from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.models.user_consent_request import UserConsentRequest
 
 
 class UserConsentRequestsRequest(BaseRequestBuilder):
@@ -122,10 +122,10 @@ class UserConsentRequestsRequest(BaseRequestBuilder):
 		from .count import CountRequest
 		return CountRequest(self.request_adapter, path_parameters)
 
-	def filter_by_current_user(self,
+	def filter_by_current_user_with_on(self,
 		appConsentRequest_id: str,
 		on: str,
-	) -> FilterByCurrentUserRequest:
+	) -> FilterByCurrentUserWithOnRequest:
 		if appConsentRequest_id is None:
 			raise TypeError("appConsentRequest_id cannot be null.")
 		if on is None:
@@ -135,6 +135,6 @@ class UserConsentRequestsRequest(BaseRequestBuilder):
 		path_parameters["appConsentRequest%2Did"] =  appConsentRequest_id
 		path_parameters["on"] =  on
 
-		from .filter_by_current_user import FilterByCurrentUserRequest
-		return FilterByCurrentUserRequest(self.request_adapter, path_parameters)
+		from .filter_by_current_user_with_on import FilterByCurrentUserWithOnRequest
+		return FilterByCurrentUserWithOnRequest(self.request_adapter, path_parameters)
 

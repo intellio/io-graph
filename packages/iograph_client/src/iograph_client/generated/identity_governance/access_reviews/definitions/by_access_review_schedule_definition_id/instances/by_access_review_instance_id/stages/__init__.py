@@ -11,12 +11,12 @@ from typing import Union, Any, Optional
 from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:
-	from .filter_by_current_user import FilterByCurrentUserRequest
+	from .filter_by_current_user_with_on import FilterByCurrentUserWithOnRequest
 	from .count import CountRequest
 	from .by_access_review_stage_id import ByAccessReviewStageIdRequest
 	from .........request_adapter import HttpxRequestAdapter
-from iograph_models.models.access_review_stage import AccessReviewStage
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.models.access_review_stage import AccessReviewStage
 from iograph_models.models.access_review_stage_collection_response import AccessReviewStageCollectionResponse
 
 
@@ -130,11 +130,11 @@ class StagesRequest(BaseRequestBuilder):
 		from .count import CountRequest
 		return CountRequest(self.request_adapter, path_parameters)
 
-	def filter_by_current_user(self,
+	def filter_by_current_user_with_on(self,
 		accessReviewScheduleDefinition_id: str,
 		accessReviewInstance_id: str,
 		on: str,
-	) -> FilterByCurrentUserRequest:
+	) -> FilterByCurrentUserWithOnRequest:
 		if accessReviewScheduleDefinition_id is None:
 			raise TypeError("accessReviewScheduleDefinition_id cannot be null.")
 		if accessReviewInstance_id is None:
@@ -147,6 +147,6 @@ class StagesRequest(BaseRequestBuilder):
 		path_parameters["accessReviewInstance%2Did"] =  accessReviewInstance_id
 		path_parameters["on"] =  on
 
-		from .filter_by_current_user import FilterByCurrentUserRequest
-		return FilterByCurrentUserRequest(self.request_adapter, path_parameters)
+		from .filter_by_current_user_with_on import FilterByCurrentUserWithOnRequest
+		return FilterByCurrentUserWithOnRequest(self.request_adapter, path_parameters)
 

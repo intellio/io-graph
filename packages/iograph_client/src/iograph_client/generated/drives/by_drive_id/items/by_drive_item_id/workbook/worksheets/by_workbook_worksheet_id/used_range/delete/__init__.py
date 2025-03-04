@@ -11,13 +11,13 @@ from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:
 	from ...........request_adapter import HttpxRequestAdapter
-from iograph_models.models.delete_post_request import DeletePostRequest
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.models.delete_post_request import DeletePostRequest
 
 
 class DeleteRequest(BaseRequestBuilder):
 	def __init__(self,request_adapter: HttpxRequestAdapter, path_parameters: Optional[Union[dict[str, Any], str]]) -> None:
-		super().__init__(request_adapter, "{+baseurl}/drives/{drive%2Did}/items/{driveItem%2Did}/workbook/worksheets/{workbookWorksheet%2Did}/usedRange(valuesOnly={valuesOnly})/delete", path_parameters)
+		super().__init__(request_adapter, "{+baseurl}/drives/{drive%2Did}/items/{driveItem%2Did}/workbook/worksheets/{workbookWorksheet%2Did}/usedRange()/delete", path_parameters)
 
 	async def post(
 		self,

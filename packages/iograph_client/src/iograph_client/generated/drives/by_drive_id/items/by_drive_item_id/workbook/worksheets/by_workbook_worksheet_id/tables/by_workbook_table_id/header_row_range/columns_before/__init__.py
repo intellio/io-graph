@@ -11,13 +11,13 @@ from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:
 	from .............request_adapter import HttpxRequestAdapter
-from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.models.workbook_range import WorkbookRange
+from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
 
 
 class ColumnsBeforeRequest(BaseRequestBuilder):
 	def __init__(self,request_adapter: HttpxRequestAdapter, path_parameters: Optional[Union[dict[str, Any], str]]) -> None:
-		super().__init__(request_adapter, "{+baseurl}/drives/{drive%2Did}/items/{driveItem%2Did}/workbook/worksheets/{workbookWorksheet%2Did}/tables/{workbookTable%2Did}/headerRowRange()/columnsBefore(count={count})", path_parameters)
+		super().__init__(request_adapter, "{+baseurl}/drives/{drive%2Did}/items/{driveItem%2Did}/workbook/worksheets/{workbookWorksheet%2Did}/tables/{workbookTable%2Did}/headerRowRange()/columnsBefore()", path_parameters)
 
 	async def get(
 		self,

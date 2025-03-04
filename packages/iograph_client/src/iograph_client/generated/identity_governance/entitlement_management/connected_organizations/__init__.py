@@ -14,9 +14,9 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_connected_organization_id import ByConnectedOrganizationIdRequest
 	from .....request_adapter import HttpxRequestAdapter
-from iograph_models.models.connected_organization import ConnectedOrganization
 from iograph_models.models.connected_organization_collection_response import ConnectedOrganizationCollectionResponse
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.models.connected_organization import ConnectedOrganization
 
 
 class ConnectedOrganizationsRequest(BaseRequestBuilder):

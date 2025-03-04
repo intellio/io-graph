@@ -14,8 +14,8 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_app_log_collection_request_id import ByAppLogCollectionRequestIdRequest
 	from ......request_adapter import HttpxRequestAdapter
-from iograph_models.models.app_log_collection_request_collection_response import AppLogCollectionRequestCollectionResponse
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.models.app_log_collection_request_collection_response import AppLogCollectionRequestCollectionResponse
 from iograph_models.models.app_log_collection_request import AppLogCollectionRequest
 
 
