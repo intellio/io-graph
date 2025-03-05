@@ -3,7 +3,7 @@ from typing import Optional
 from pydantic import model_validator, ModelWrapValidatorHandler, ValidationError
 from typing_extensions import Self
 from datetime import datetime
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class IdentityGovernanceWorkflowBase(BaseModel):
@@ -11,7 +11,7 @@ class IdentityGovernanceWorkflowBase(BaseModel):
 	createdDateTime: Optional[datetime] = Field(default=None,alias="createdDateTime",)
 	description: Optional[str] = Field(default=None,alias="description",)
 	displayName: Optional[str] = Field(default=None,alias="displayName",)
-	executionConditions: Optional[IdentityGovernanceWorkflowExecutionConditions] = Field(default=None,alias="executionConditions",)
+	executionConditions: SerializeAsAny[Optional[IdentityGovernanceWorkflowExecutionConditions]] = Field(default=None,alias="executionConditions",)
 	isEnabled: Optional[bool] = Field(default=None,alias="isEnabled",)
 	isSchedulingEnabled: Optional[bool] = Field(default=None,alias="isSchedulingEnabled",)
 	lastModifiedDateTime: Optional[datetime] = Field(default=None,alias="lastModifiedDateTime",)

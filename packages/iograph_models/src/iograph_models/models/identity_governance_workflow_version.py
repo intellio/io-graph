@@ -1,7 +1,7 @@
 from __future__ import annotations
 from typing import Optional
 from datetime import datetime
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class IdentityGovernanceWorkflowVersion(BaseModel):
@@ -9,7 +9,7 @@ class IdentityGovernanceWorkflowVersion(BaseModel):
 	createdDateTime: Optional[datetime] = Field(default=None,alias="createdDateTime",)
 	description: Optional[str] = Field(default=None,alias="description",)
 	displayName: Optional[str] = Field(default=None,alias="displayName",)
-	executionConditions: Optional[IdentityGovernanceWorkflowExecutionConditions] = Field(default=None,alias="executionConditions",)
+	executionConditions: SerializeAsAny[Optional[IdentityGovernanceWorkflowExecutionConditions]] = Field(default=None,alias="executionConditions",)
 	isEnabled: Optional[bool] = Field(default=None,alias="isEnabled",)
 	isSchedulingEnabled: Optional[bool] = Field(default=None,alias="isSchedulingEnabled",)
 	lastModifiedDateTime: Optional[datetime] = Field(default=None,alias="lastModifiedDateTime",)

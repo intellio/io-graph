@@ -1,7 +1,7 @@
 from __future__ import annotations
 from typing import Optional
 from datetime import datetime
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class CallRecordsCallRecord(BaseModel):
@@ -11,8 +11,8 @@ class CallRecordsCallRecord(BaseModel):
 	joinWebUrl: Optional[str] = Field(default=None,alias="joinWebUrl",)
 	lastModifiedDateTime: Optional[datetime] = Field(default=None,alias="lastModifiedDateTime",)
 	modalities: Optional[list[CallRecordsModality]] = Field(default=None,alias="modalities",)
-	organizer: Optional[IdentitySet] = Field(default=None,alias="organizer",)
-	participants: Optional[list[IdentitySet]] = Field(default=None,alias="participants",)
+	organizer: SerializeAsAny[Optional[IdentitySet]] = Field(default=None,alias="organizer",)
+	participants: SerializeAsAny[Optional[list[IdentitySet]]] = Field(default=None,alias="participants",)
 	startDateTime: Optional[datetime] = Field(default=None,alias="startDateTime",)
 	type: Optional[CallRecordsCallType] = Field(default=None,alias="type",)
 	version: Optional[int] = Field(default=None,alias="version",)

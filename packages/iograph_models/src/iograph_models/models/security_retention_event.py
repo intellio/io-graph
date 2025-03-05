@@ -1,13 +1,13 @@
 from __future__ import annotations
 from typing import Optional
 from datetime import datetime
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class SecurityRetentionEvent(BaseModel):
 	id: Optional[str] = Field(default=None,alias="id",)
 	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	createdBy: Optional[IdentitySet] = Field(default=None,alias="createdBy",)
+	createdBy: SerializeAsAny[Optional[IdentitySet]] = Field(default=None,alias="createdBy",)
 	createdDateTime: Optional[datetime] = Field(default=None,alias="createdDateTime",)
 	description: Optional[str] = Field(default=None,alias="description",)
 	displayName: Optional[str] = Field(default=None,alias="displayName",)
@@ -15,7 +15,7 @@ class SecurityRetentionEvent(BaseModel):
 	eventQueries: Optional[list[SecurityEventQuery]] = Field(default=None,alias="eventQueries",)
 	eventStatus: Optional[SecurityRetentionEventStatus] = Field(default=None,alias="eventStatus",)
 	eventTriggerDateTime: Optional[datetime] = Field(default=None,alias="eventTriggerDateTime",)
-	lastModifiedBy: Optional[IdentitySet] = Field(default=None,alias="lastModifiedBy",)
+	lastModifiedBy: SerializeAsAny[Optional[IdentitySet]] = Field(default=None,alias="lastModifiedBy",)
 	lastModifiedDateTime: Optional[datetime] = Field(default=None,alias="lastModifiedDateTime",)
 	lastStatusUpdateDateTime: Optional[datetime] = Field(default=None,alias="lastStatusUpdateDateTime",)
 	retentionEventType: Optional[SecurityRetentionEventType] = Field(default=None,alias="retentionEventType",)

@@ -1,13 +1,13 @@
 from __future__ import annotations
 from typing import Optional
 from datetime import datetime
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class MessagePinnedEventMessageDetail(BaseModel):
 	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
 	eventDateTime: Optional[datetime] = Field(default=None,alias="eventDateTime",)
-	initiator: Optional[IdentitySet] = Field(default=None,alias="initiator",)
+	initiator: SerializeAsAny[Optional[IdentitySet]] = Field(default=None,alias="initiator",)
 
 from .identity_set import IdentitySet
 

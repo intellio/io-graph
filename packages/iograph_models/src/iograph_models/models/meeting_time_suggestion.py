@@ -1,12 +1,12 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class MeetingTimeSuggestion(BaseModel):
 	attendeeAvailability: Optional[list[AttendeeAvailability]] = Field(default=None,alias="attendeeAvailability",)
 	confidence: float | str | ReferenceNumeric
-	locations: Optional[list[Location]] = Field(default=None,alias="locations",)
+	locations: SerializeAsAny[Optional[list[Location]]] = Field(default=None,alias="locations",)
 	meetingTimeSlot: Optional[TimeSlot] = Field(default=None,alias="meetingTimeSlot",)
 	order: Optional[int] = Field(default=None,alias="order",)
 	organizerAvailability: Optional[FreeBusyStatus] = Field(default=None,alias="organizerAvailability",)

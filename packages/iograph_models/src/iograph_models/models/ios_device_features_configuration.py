@@ -1,7 +1,7 @@
 from __future__ import annotations
 from typing import Optional
 from datetime import datetime
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class IosDeviceFeaturesConfiguration(BaseModel):
@@ -19,7 +19,7 @@ class IosDeviceFeaturesConfiguration(BaseModel):
 	userStatuses: Optional[list[DeviceConfigurationUserStatus]] = Field(default=None,alias="userStatuses",)
 	userStatusOverview: Optional[DeviceConfigurationUserOverview] = Field(default=None,alias="userStatusOverview",)
 	assetTagTemplate: Optional[str] = Field(default=None,alias="assetTagTemplate",)
-	homeScreenDockIcons: Optional[list[IosHomeScreenItem]] = Field(default=None,alias="homeScreenDockIcons",)
+	homeScreenDockIcons: SerializeAsAny[Optional[list[IosHomeScreenItem]]] = Field(default=None,alias="homeScreenDockIcons",)
 	homeScreenPages: Optional[list[IosHomeScreenPage]] = Field(default=None,alias="homeScreenPages",)
 	lockScreenFootnote: Optional[str] = Field(default=None,alias="lockScreenFootnote",)
 	notificationSettings: Optional[list[IosNotificationSettings]] = Field(default=None,alias="notificationSettings",)

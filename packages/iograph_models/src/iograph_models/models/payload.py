@@ -1,7 +1,7 @@
 from __future__ import annotations
 from typing import Optional
 from datetime import datetime
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class Payload(BaseModel):
@@ -12,7 +12,7 @@ class Payload(BaseModel):
 	createdBy: Optional[EmailIdentity] = Field(default=None,alias="createdBy",)
 	createdDateTime: Optional[datetime] = Field(default=None,alias="createdDateTime",)
 	description: Optional[str] = Field(default=None,alias="description",)
-	detail: Optional[PayloadDetail] = Field(default=None,alias="detail",)
+	detail: SerializeAsAny[Optional[PayloadDetail]] = Field(default=None,alias="detail",)
 	displayName: Optional[str] = Field(default=None,alias="displayName",)
 	industry: Optional[PayloadIndustry] = Field(default=None,alias="industry",)
 	isAutomated: Optional[bool] = Field(default=None,alias="isAutomated",)

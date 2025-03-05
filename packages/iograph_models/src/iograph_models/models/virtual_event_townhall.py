@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class VirtualEventTownhall(BaseModel):
@@ -18,7 +18,7 @@ class VirtualEventTownhall(BaseModel):
 	sessions: Optional[list[VirtualEventSession]] = Field(default=None,alias="sessions",)
 	audience: Optional[MeetingAudience] = Field(default=None,alias="audience",)
 	coOrganizers: Optional[list[CommunicationsUserIdentity]] = Field(default=None,alias="coOrganizers",)
-	invitedAttendees: Optional[list[Identity]] = Field(default=None,alias="invitedAttendees",)
+	invitedAttendees: SerializeAsAny[Optional[list[Identity]]] = Field(default=None,alias="invitedAttendees",)
 	isInviteOnly: Optional[bool] = Field(default=None,alias="isInviteOnly",)
 
 from .communications_identity_set import CommunicationsIdentitySet

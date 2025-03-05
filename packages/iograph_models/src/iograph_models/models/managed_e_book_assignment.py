@@ -2,14 +2,14 @@ from __future__ import annotations
 from typing import Optional
 from pydantic import model_validator, ModelWrapValidatorHandler, ValidationError
 from typing_extensions import Self
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class ManagedEBookAssignment(BaseModel):
 	id: Optional[str] = Field(default=None,alias="id",)
 	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
 	installIntent: Optional[InstallIntent] = Field(default=None,alias="installIntent",)
-	target: Optional[DeviceAndAppManagementAssignmentTarget] = Field(default=None,alias="target",)
+	target: SerializeAsAny[Optional[DeviceAndAppManagementAssignmentTarget]] = Field(default=None,alias="target",)
 
 	@model_validator(mode="wrap")
 	def convert_discriminator_class(cls, data: Any, handler: ModelWrapValidatorHandler[Self]) -> Self:

@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class SharedInsight(BaseModel):
@@ -10,8 +10,8 @@ class SharedInsight(BaseModel):
 	resourceReference: Optional[ResourceReference] = Field(default=None,alias="resourceReference",)
 	resourceVisualization: Optional[ResourceVisualization] = Field(default=None,alias="resourceVisualization",)
 	sharingHistory: Optional[list[SharingDetail]] = Field(default=None,alias="sharingHistory",)
-	lastSharedMethod: Optional[Entity] = Field(default=None,alias="lastSharedMethod",)
-	resource: Optional[Entity] = Field(default=None,alias="resource",)
+	lastSharedMethod: SerializeAsAny[Optional[Entity]] = Field(default=None,alias="lastSharedMethod",)
+	resource: SerializeAsAny[Optional[Entity]] = Field(default=None,alias="resource",)
 
 from .sharing_detail import SharingDetail
 from .resource_reference import ResourceReference

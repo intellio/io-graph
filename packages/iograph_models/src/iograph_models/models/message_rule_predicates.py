@@ -1,13 +1,13 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class MessageRulePredicates(BaseModel):
 	bodyContains: Optional[list[str]] = Field(default=None,alias="bodyContains",)
 	bodyOrSubjectContains: Optional[list[str]] = Field(default=None,alias="bodyOrSubjectContains",)
 	categories: Optional[list[str]] = Field(default=None,alias="categories",)
-	fromAddresses: Optional[list[Recipient]] = Field(default=None,alias="fromAddresses",)
+	fromAddresses: SerializeAsAny[Optional[list[Recipient]]] = Field(default=None,alias="fromAddresses",)
 	hasAttachments: Optional[bool] = Field(default=None,alias="hasAttachments",)
 	headerContains: Optional[list[str]] = Field(default=None,alias="headerContains",)
 	importance: Optional[Importance] = Field(default=None,alias="importance",)
@@ -29,7 +29,7 @@ class MessageRulePredicates(BaseModel):
 	sensitivity: Optional[Sensitivity] = Field(default=None,alias="sensitivity",)
 	sentCcMe: Optional[bool] = Field(default=None,alias="sentCcMe",)
 	sentOnlyToMe: Optional[bool] = Field(default=None,alias="sentOnlyToMe",)
-	sentToAddresses: Optional[list[Recipient]] = Field(default=None,alias="sentToAddresses",)
+	sentToAddresses: SerializeAsAny[Optional[list[Recipient]]] = Field(default=None,alias="sentToAddresses",)
 	sentToMe: Optional[bool] = Field(default=None,alias="sentToMe",)
 	sentToOrCcMe: Optional[bool] = Field(default=None,alias="sentToOrCcMe",)
 	subjectContains: Optional[list[str]] = Field(default=None,alias="subjectContains",)

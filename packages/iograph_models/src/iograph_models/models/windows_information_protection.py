@@ -4,7 +4,7 @@ from typing import Optional
 from pydantic import model_validator, ModelWrapValidatorHandler, ValidationError
 from typing_extensions import Self
 from datetime import datetime
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class WindowsInformationProtection(BaseModel):
@@ -27,12 +27,12 @@ class WindowsInformationProtection(BaseModel):
 	enterpriseProxiedDomains: Optional[list[WindowsInformationProtectionProxiedDomainCollection]] = Field(default=None,alias="enterpriseProxiedDomains",)
 	enterpriseProxyServers: Optional[list[WindowsInformationProtectionResourceCollection]] = Field(default=None,alias="enterpriseProxyServers",)
 	enterpriseProxyServersAreAuthoritative: Optional[bool] = Field(default=None,alias="enterpriseProxyServersAreAuthoritative",)
-	exemptApps: Optional[list[WindowsInformationProtectionApp]] = Field(default=None,alias="exemptApps",)
+	exemptApps: SerializeAsAny[Optional[list[WindowsInformationProtectionApp]]] = Field(default=None,alias="exemptApps",)
 	iconsVisible: Optional[bool] = Field(default=None,alias="iconsVisible",)
 	indexingEncryptedStoresOrItemsBlocked: Optional[bool] = Field(default=None,alias="indexingEncryptedStoresOrItemsBlocked",)
 	isAssigned: Optional[bool] = Field(default=None,alias="isAssigned",)
 	neutralDomainResources: Optional[list[WindowsInformationProtectionResourceCollection]] = Field(default=None,alias="neutralDomainResources",)
-	protectedApps: Optional[list[WindowsInformationProtectionApp]] = Field(default=None,alias="protectedApps",)
+	protectedApps: SerializeAsAny[Optional[list[WindowsInformationProtectionApp]]] = Field(default=None,alias="protectedApps",)
 	protectionUnderLockConfigRequired: Optional[bool] = Field(default=None,alias="protectionUnderLockConfigRequired",)
 	revokeOnUnenrollDisabled: Optional[bool] = Field(default=None,alias="revokeOnUnenrollDisabled",)
 	rightsManagementServicesTemplateId: Optional[UUID] = Field(default=None,alias="rightsManagementServicesTemplateId",)

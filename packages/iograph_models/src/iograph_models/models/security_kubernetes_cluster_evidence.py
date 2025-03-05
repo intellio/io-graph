@@ -1,7 +1,7 @@
 from __future__ import annotations
 from typing import Optional
 from datetime import datetime
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class SecurityKubernetesClusterEvidence(BaseModel):
@@ -13,7 +13,7 @@ class SecurityKubernetesClusterEvidence(BaseModel):
 	tags: Optional[list[str]] = Field(default=None,alias="tags",)
 	verdict: Optional[SecurityEvidenceVerdict] = Field(default=None,alias="verdict",)
 	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	cloudResource: Optional[SecurityAlertEvidence] = Field(default=None,alias="cloudResource",)
+	cloudResource: SerializeAsAny[Optional[SecurityAlertEvidence]] = Field(default=None,alias="cloudResource",)
 	distribution: Optional[str] = Field(default=None,alias="distribution",)
 	name: Optional[str] = Field(default=None,alias="name",)
 	platform: Optional[SecurityKubernetesPlatform] = Field(default=None,alias="platform",)

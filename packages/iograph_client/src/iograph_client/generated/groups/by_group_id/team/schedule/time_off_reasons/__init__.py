@@ -14,8 +14,8 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_time_off_reason_id import ByTimeOffReasonIdRequest
 	from .......request_adapter import HttpxRequestAdapter
-from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.models.time_off_reason_collection_response import TimeOffReasonCollectionResponse
+from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.models.time_off_reason import TimeOffReason
 
 

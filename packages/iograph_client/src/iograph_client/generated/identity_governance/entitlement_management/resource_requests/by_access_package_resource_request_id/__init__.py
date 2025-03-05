@@ -14,8 +14,8 @@ if TYPE_CHECKING:
 	from .resource import ResourceRequest
 	from .catalog import CatalogRequest
 	from ......request_adapter import HttpxRequestAdapter
-from iograph_models.models.access_package_resource_request import AccessPackageResourceRequest
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.models.access_package_resource_request import AccessPackageResourceRequest
 
 
 class ByAccessPackageResourceRequestIdRequest(BaseRequestBuilder):

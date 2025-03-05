@@ -23,8 +23,8 @@ if TYPE_CHECKING:
 	from .created_by_user import CreatedByUserRequest
 	from .bundles import BundlesRequest
 	from ....request_adapter import HttpxRequestAdapter
-from iograph_models.models.drive import Drive
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.models.drive import Drive
 
 
 class ByDriveIdRequest(BaseRequestBuilder):

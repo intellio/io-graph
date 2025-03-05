@@ -1,16 +1,16 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class OnTokenIssuanceStartCustomExtension(BaseModel):
 	id: Optional[str] = Field(default=None,alias="id",)
 	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	authenticationConfiguration: Optional[CustomExtensionAuthenticationConfiguration] = Field(default=None,alias="authenticationConfiguration",)
+	authenticationConfiguration: SerializeAsAny[Optional[CustomExtensionAuthenticationConfiguration]] = Field(default=None,alias="authenticationConfiguration",)
 	clientConfiguration: Optional[CustomExtensionClientConfiguration] = Field(default=None,alias="clientConfiguration",)
 	description: Optional[str] = Field(default=None,alias="description",)
 	displayName: Optional[str] = Field(default=None,alias="displayName",)
-	endpointConfiguration: Optional[CustomExtensionEndpointConfiguration] = Field(default=None,alias="endpointConfiguration",)
+	endpointConfiguration: SerializeAsAny[Optional[CustomExtensionEndpointConfiguration]] = Field(default=None,alias="endpointConfiguration",)
 	claimsForTokenConfiguration: Optional[list[OnTokenIssuanceStartReturnClaim]] = Field(default=None,alias="claimsForTokenConfiguration",)
 
 from .custom_extension_authentication_configuration import CustomExtensionAuthenticationConfiguration

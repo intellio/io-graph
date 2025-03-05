@@ -11,9 +11,9 @@ from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:
 	from .........request_adapter import HttpxRequestAdapter
-from iograph_models.models.get_notebook_from_web_url_post_request import Get_notebook_from_web_urlPostRequest
 from iograph_models.models.copy_notebook_model import CopyNotebookModel
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.models.get_notebook_from_web_url_post_request import Get_notebook_from_web_urlPostRequest
 
 
 class GetNotebookFromWebUrlRequest(BaseRequestBuilder):

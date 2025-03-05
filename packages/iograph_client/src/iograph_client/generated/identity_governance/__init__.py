@@ -17,8 +17,8 @@ if TYPE_CHECKING:
 	from .app_consent import AppConsentRequest
 	from .access_reviews import AccessReviewsRequest
 	from ...request_adapter import HttpxRequestAdapter
-from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.models.identity_governance import IdentityGovernance
+from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
 
 
 class IdentityGovernanceRequest(BaseRequestBuilder):

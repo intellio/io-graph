@@ -15,8 +15,8 @@ if TYPE_CHECKING:
 	from .by_authority_template_id import ByAuthorityTemplateIdRequest
 	from .....request_adapter import HttpxRequestAdapter
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
-from iograph_models.models.security_authority_template_collection_response import SecurityAuthorityTemplateCollectionResponse
 from iograph_models.models.security_authority_template import SecurityAuthorityTemplate
+from iograph_models.models.security_authority_template_collection_response import SecurityAuthorityTemplateCollectionResponse
 
 
 class AuthoritiesRequest(BaseRequestBuilder):

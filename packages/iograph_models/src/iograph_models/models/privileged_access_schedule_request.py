@@ -3,7 +3,7 @@ from typing import Optional
 from pydantic import model_validator, ModelWrapValidatorHandler, ValidationError
 from typing_extensions import Self
 from datetime import datetime
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class PrivilegedAccessScheduleRequest(BaseModel):
@@ -11,7 +11,7 @@ class PrivilegedAccessScheduleRequest(BaseModel):
 	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
 	approvalId: Optional[str] = Field(default=None,alias="approvalId",)
 	completedDateTime: Optional[datetime] = Field(default=None,alias="completedDateTime",)
-	createdBy: Optional[IdentitySet] = Field(default=None,alias="createdBy",)
+	createdBy: SerializeAsAny[Optional[IdentitySet]] = Field(default=None,alias="createdBy",)
 	createdDateTime: Optional[datetime] = Field(default=None,alias="createdDateTime",)
 	customData: Optional[str] = Field(default=None,alias="customData",)
 	status: Optional[str] = Field(default=None,alias="status",)

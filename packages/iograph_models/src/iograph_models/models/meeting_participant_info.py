@@ -2,11 +2,11 @@ from __future__ import annotations
 from typing import Optional
 from pydantic import model_validator, ModelWrapValidatorHandler, ValidationError
 from typing_extensions import Self
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class MeetingParticipantInfo(BaseModel):
-	identity: Optional[IdentitySet] = Field(default=None,alias="identity",)
+	identity: SerializeAsAny[Optional[IdentitySet]] = Field(default=None,alias="identity",)
 	role: Optional[OnlineMeetingRole] = Field(default=None,alias="role",)
 	upn: Optional[str] = Field(default=None,alias="upn",)
 	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)

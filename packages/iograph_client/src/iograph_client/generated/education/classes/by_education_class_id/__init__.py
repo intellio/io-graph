@@ -21,8 +21,8 @@ if TYPE_CHECKING:
 	from .assignment_defaults import AssignmentDefaultsRequest
 	from .assignment_categories import AssignmentCategoriesRequest
 	from .....request_adapter import HttpxRequestAdapter
-from iograph_models.models.education_class import EducationClass
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.models.education_class import EducationClass
 
 
 class ByEducationClassIdRequest(BaseRequestBuilder):

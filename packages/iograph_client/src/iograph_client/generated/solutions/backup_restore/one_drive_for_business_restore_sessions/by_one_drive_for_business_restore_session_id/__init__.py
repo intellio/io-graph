@@ -13,8 +13,8 @@ from typing import TYPE_CHECKING
 if TYPE_CHECKING:
 	from .drive_restore_artifacts import DriveRestoreArtifactsRequest
 	from ......request_adapter import HttpxRequestAdapter
-from iograph_models.models.one_drive_for_business_restore_session import OneDriveForBusinessRestoreSession
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.models.one_drive_for_business_restore_session import OneDriveForBusinessRestoreSession
 
 
 class ByOneDriveForBusinessRestoreSessionIdRequest(BaseRequestBuilder):

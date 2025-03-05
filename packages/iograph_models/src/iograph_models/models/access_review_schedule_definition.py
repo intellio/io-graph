@@ -1,7 +1,7 @@
 from __future__ import annotations
 from typing import Optional
 from datetime import datetime
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class AccessReviewScheduleDefinition(BaseModel):
@@ -14,10 +14,10 @@ class AccessReviewScheduleDefinition(BaseModel):
 	descriptionForReviewers: Optional[str] = Field(default=None,alias="descriptionForReviewers",)
 	displayName: Optional[str] = Field(default=None,alias="displayName",)
 	fallbackReviewers: Optional[list[AccessReviewReviewerScope]] = Field(default=None,alias="fallbackReviewers",)
-	instanceEnumerationScope: Optional[AccessReviewScope] = Field(default=None,alias="instanceEnumerationScope",)
+	instanceEnumerationScope: SerializeAsAny[Optional[AccessReviewScope]] = Field(default=None,alias="instanceEnumerationScope",)
 	lastModifiedDateTime: Optional[datetime] = Field(default=None,alias="lastModifiedDateTime",)
 	reviewers: Optional[list[AccessReviewReviewerScope]] = Field(default=None,alias="reviewers",)
-	scope: Optional[AccessReviewScope] = Field(default=None,alias="scope",)
+	scope: SerializeAsAny[Optional[AccessReviewScope]] = Field(default=None,alias="scope",)
 	settings: Optional[AccessReviewScheduleSettings] = Field(default=None,alias="settings",)
 	stageSettings: Optional[list[AccessReviewStageSettings]] = Field(default=None,alias="stageSettings",)
 	status: Optional[str] = Field(default=None,alias="status",)

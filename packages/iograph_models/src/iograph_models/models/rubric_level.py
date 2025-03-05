@@ -1,12 +1,12 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class RubricLevel(BaseModel):
 	description: Optional[EducationItemBody] = Field(default=None,alias="description",)
 	displayName: Optional[str] = Field(default=None,alias="displayName",)
-	grading: Optional[EducationAssignmentGradeType] = Field(default=None,alias="grading",)
+	grading: SerializeAsAny[Optional[EducationAssignmentGradeType]] = Field(default=None,alias="grading",)
 	levelId: Optional[str] = Field(default=None,alias="levelId",)
 	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
 

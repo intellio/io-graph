@@ -1,18 +1,18 @@
 from __future__ import annotations
 from typing import Optional
 from datetime import datetime
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class EducationModule(BaseModel):
 	id: Optional[str] = Field(default=None,alias="id",)
 	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	createdBy: Optional[IdentitySet] = Field(default=None,alias="createdBy",)
+	createdBy: SerializeAsAny[Optional[IdentitySet]] = Field(default=None,alias="createdBy",)
 	createdDateTime: Optional[datetime] = Field(default=None,alias="createdDateTime",)
 	description: Optional[str] = Field(default=None,alias="description",)
 	displayName: Optional[str] = Field(default=None,alias="displayName",)
 	isPinned: Optional[bool] = Field(default=None,alias="isPinned",)
-	lastModifiedBy: Optional[IdentitySet] = Field(default=None,alias="lastModifiedBy",)
+	lastModifiedBy: SerializeAsAny[Optional[IdentitySet]] = Field(default=None,alias="lastModifiedBy",)
 	lastModifiedDateTime: Optional[datetime] = Field(default=None,alias="lastModifiedDateTime",)
 	resourcesFolderUrl: Optional[str] = Field(default=None,alias="resourcesFolderUrl",)
 	status: Optional[EducationModuleStatus] = Field(default=None,alias="status",)

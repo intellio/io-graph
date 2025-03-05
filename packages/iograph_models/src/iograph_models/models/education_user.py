@@ -1,7 +1,7 @@
 from __future__ import annotations
 from typing import Optional
 from datetime import datetime
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class EducationUser(BaseModel):
@@ -11,7 +11,7 @@ class EducationUser(BaseModel):
 	assignedLicenses: Optional[list[AssignedLicense]] = Field(default=None,alias="assignedLicenses",)
 	assignedPlans: Optional[list[AssignedPlan]] = Field(default=None,alias="assignedPlans",)
 	businessPhones: Optional[list[str]] = Field(default=None,alias="businessPhones",)
-	createdBy: Optional[IdentitySet] = Field(default=None,alias="createdBy",)
+	createdBy: SerializeAsAny[Optional[IdentitySet]] = Field(default=None,alias="createdBy",)
 	department: Optional[str] = Field(default=None,alias="department",)
 	displayName: Optional[str] = Field(default=None,alias="displayName",)
 	externalSource: Optional[EducationExternalSource] = Field(default=None,alias="externalSource",)

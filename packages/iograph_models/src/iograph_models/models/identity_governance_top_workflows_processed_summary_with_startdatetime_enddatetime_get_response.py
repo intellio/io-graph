@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class Identity_governance_top_workflows_processed_summary_with_startdatetime_enddatetimeGetResponse(BaseModel):

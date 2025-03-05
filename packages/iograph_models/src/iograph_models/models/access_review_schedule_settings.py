@@ -1,10 +1,10 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class AccessReviewScheduleSettings(BaseModel):
-	applyActions: Optional[list[AccessReviewApplyAction]] = Field(default=None,alias="applyActions",)
+	applyActions: SerializeAsAny[Optional[list[AccessReviewApplyAction]]] = Field(default=None,alias="applyActions",)
 	autoApplyDecisionsEnabled: Optional[bool] = Field(default=None,alias="autoApplyDecisionsEnabled",)
 	decisionHistoriesForReviewersEnabled: Optional[bool] = Field(default=None,alias="decisionHistoriesForReviewersEnabled",)
 	defaultDecision: Optional[str] = Field(default=None,alias="defaultDecision",)
@@ -12,7 +12,7 @@ class AccessReviewScheduleSettings(BaseModel):
 	instanceDurationInDays: Optional[int] = Field(default=None,alias="instanceDurationInDays",)
 	justificationRequiredOnApproval: Optional[bool] = Field(default=None,alias="justificationRequiredOnApproval",)
 	mailNotificationsEnabled: Optional[bool] = Field(default=None,alias="mailNotificationsEnabled",)
-	recommendationInsightSettings: Optional[list[AccessReviewRecommendationInsightSetting]] = Field(default=None,alias="recommendationInsightSettings",)
+	recommendationInsightSettings: SerializeAsAny[Optional[list[AccessReviewRecommendationInsightSetting]]] = Field(default=None,alias="recommendationInsightSettings",)
 	recommendationLookBackDuration: Optional[str] = Field(default=None,alias="recommendationLookBackDuration",)
 	recommendationsEnabled: Optional[bool] = Field(default=None,alias="recommendationsEnabled",)
 	recurrence: Optional[PatternedRecurrence] = Field(default=None,alias="recurrence",)

@@ -11,8 +11,8 @@ from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:
 	from .......request_adapter import HttpxRequestAdapter
-from iograph_models.models.risky_service_principal_history_item import RiskyServicePrincipalHistoryItem
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.models.risky_service_principal_history_item import RiskyServicePrincipalHistoryItem
 
 
 class ByRiskyServicePrincipalHistoryItemIdRequest(BaseRequestBuilder):

@@ -1,7 +1,7 @@
 from __future__ import annotations
 from typing import Optional
 from datetime import datetime
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class PlannerTask(BaseModel):
@@ -13,10 +13,10 @@ class PlannerTask(BaseModel):
 	assignments: Optional[PlannerAssignments] = Field(default=None,alias="assignments",)
 	bucketId: Optional[str] = Field(default=None,alias="bucketId",)
 	checklistItemCount: Optional[int] = Field(default=None,alias="checklistItemCount",)
-	completedBy: Optional[IdentitySet] = Field(default=None,alias="completedBy",)
+	completedBy: SerializeAsAny[Optional[IdentitySet]] = Field(default=None,alias="completedBy",)
 	completedDateTime: Optional[datetime] = Field(default=None,alias="completedDateTime",)
 	conversationThreadId: Optional[str] = Field(default=None,alias="conversationThreadId",)
-	createdBy: Optional[IdentitySet] = Field(default=None,alias="createdBy",)
+	createdBy: SerializeAsAny[Optional[IdentitySet]] = Field(default=None,alias="createdBy",)
 	createdDateTime: Optional[datetime] = Field(default=None,alias="createdDateTime",)
 	dueDateTime: Optional[datetime] = Field(default=None,alias="dueDateTime",)
 	hasDescription: Optional[bool] = Field(default=None,alias="hasDescription",)

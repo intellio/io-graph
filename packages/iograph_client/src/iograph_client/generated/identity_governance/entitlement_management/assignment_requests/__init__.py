@@ -16,8 +16,8 @@ if TYPE_CHECKING:
 	from .by_access_package_assignment_request_id import ByAccessPackageAssignmentRequestIdRequest
 	from .....request_adapter import HttpxRequestAdapter
 from iograph_models.models.access_package_assignment_request_collection_response import AccessPackageAssignmentRequestCollectionResponse
-from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.models.access_package_assignment_request import AccessPackageAssignmentRequest
+from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
 
 
 class AssignmentRequestsRequest(BaseRequestBuilder):

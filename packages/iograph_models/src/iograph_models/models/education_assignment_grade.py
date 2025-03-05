@@ -3,11 +3,11 @@ from typing import Optional
 from pydantic import model_validator, ModelWrapValidatorHandler, ValidationError
 from typing_extensions import Self
 from datetime import datetime
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class EducationAssignmentGrade(BaseModel):
-	gradedBy: Optional[IdentitySet] = Field(default=None,alias="gradedBy",)
+	gradedBy: SerializeAsAny[Optional[IdentitySet]] = Field(default=None,alias="gradedBy",)
 	gradedDateTime: Optional[datetime] = Field(default=None,alias="gradedDateTime",)
 	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
 

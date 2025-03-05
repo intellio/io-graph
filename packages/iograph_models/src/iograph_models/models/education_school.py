@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class EducationSchool(BaseModel):
@@ -11,7 +11,7 @@ class EducationSchool(BaseModel):
 	externalSource: Optional[EducationExternalSource] = Field(default=None,alias="externalSource",)
 	externalSourceDetail: Optional[str] = Field(default=None,alias="externalSourceDetail",)
 	address: Optional[PhysicalAddress] = Field(default=None,alias="address",)
-	createdBy: Optional[IdentitySet] = Field(default=None,alias="createdBy",)
+	createdBy: SerializeAsAny[Optional[IdentitySet]] = Field(default=None,alias="createdBy",)
 	externalId: Optional[str] = Field(default=None,alias="externalId",)
 	externalPrincipalId: Optional[str] = Field(default=None,alias="externalPrincipalId",)
 	fax: Optional[str] = Field(default=None,alias="fax",)

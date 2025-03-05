@@ -1,7 +1,7 @@
 from __future__ import annotations
 from typing import Optional
 from datetime import datetime
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class CallTranscript(BaseModel):
@@ -13,7 +13,7 @@ class CallTranscript(BaseModel):
 	createdDateTime: Optional[datetime] = Field(default=None,alias="createdDateTime",)
 	endDateTime: Optional[datetime] = Field(default=None,alias="endDateTime",)
 	meetingId: Optional[str] = Field(default=None,alias="meetingId",)
-	meetingOrganizer: Optional[IdentitySet] = Field(default=None,alias="meetingOrganizer",)
+	meetingOrganizer: SerializeAsAny[Optional[IdentitySet]] = Field(default=None,alias="meetingOrganizer",)
 	metadataContent: Optional[str] = Field(default=None,alias="metadataContent",)
 	transcriptContentUrl: Optional[str] = Field(default=None,alias="transcriptContentUrl",)
 

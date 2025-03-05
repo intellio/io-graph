@@ -1,11 +1,11 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class InvitationParticipantInfo(BaseModel):
 	hidden: Optional[bool] = Field(default=None,alias="hidden",)
-	identity: Optional[IdentitySet] = Field(default=None,alias="identity",)
+	identity: SerializeAsAny[Optional[IdentitySet]] = Field(default=None,alias="identity",)
 	participantId: Optional[str] = Field(default=None,alias="participantId",)
 	removeFromDefaultAudioRoutingGroup: Optional[bool] = Field(default=None,alias="removeFromDefaultAudioRoutingGroup",)
 	replacesCallId: Optional[str] = Field(default=None,alias="replacesCallId",)

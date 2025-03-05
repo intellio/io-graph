@@ -1,18 +1,18 @@
 from __future__ import annotations
 from typing import Optional
 from datetime import datetime
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class CopyNotebookModel(BaseModel):
 	createdBy: Optional[str] = Field(default=None,alias="createdBy",)
-	createdByIdentity: Optional[IdentitySet] = Field(default=None,alias="createdByIdentity",)
+	createdByIdentity: SerializeAsAny[Optional[IdentitySet]] = Field(default=None,alias="createdByIdentity",)
 	createdTime: Optional[datetime] = Field(default=None,alias="createdTime",)
 	id: Optional[str] = Field(default=None,alias="id",)
 	isDefault: Optional[bool] = Field(default=None,alias="isDefault",)
 	isShared: Optional[bool] = Field(default=None,alias="isShared",)
 	lastModifiedBy: Optional[str] = Field(default=None,alias="lastModifiedBy",)
-	lastModifiedByIdentity: Optional[IdentitySet] = Field(default=None,alias="lastModifiedByIdentity",)
+	lastModifiedByIdentity: SerializeAsAny[Optional[IdentitySet]] = Field(default=None,alias="lastModifiedByIdentity",)
 	lastModifiedTime: Optional[datetime] = Field(default=None,alias="lastModifiedTime",)
 	links: Optional[NotebookLinks] = Field(default=None,alias="links",)
 	name: Optional[str] = Field(default=None,alias="name",)

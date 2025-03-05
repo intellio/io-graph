@@ -1,7 +1,7 @@
 from __future__ import annotations
 from typing import Optional
 from datetime import datetime
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class ItemActivity(BaseModel):
@@ -9,7 +9,7 @@ class ItemActivity(BaseModel):
 	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
 	access: Optional[AccessAction] = Field(default=None,alias="access",)
 	activityDateTime: Optional[datetime] = Field(default=None,alias="activityDateTime",)
-	actor: Optional[IdentitySet] = Field(default=None,alias="actor",)
+	actor: SerializeAsAny[Optional[IdentitySet]] = Field(default=None,alias="actor",)
 	driveItem: Optional[DriveItem] = Field(default=None,alias="driveItem",)
 
 from .access_action import AccessAction

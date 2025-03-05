@@ -1,7 +1,7 @@
 from __future__ import annotations
 from typing import Optional
 from datetime import datetime
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class Group(BaseModel):
@@ -44,7 +44,7 @@ class Group(BaseModel):
 	renewedDateTime: Optional[datetime] = Field(default=None,alias="renewedDateTime",)
 	securityEnabled: Optional[bool] = Field(default=None,alias="securityEnabled",)
 	securityIdentifier: Optional[str] = Field(default=None,alias="securityIdentifier",)
-	serviceProvisioningErrors: Optional[list[ServiceProvisioningError]] = Field(default=None,alias="serviceProvisioningErrors",)
+	serviceProvisioningErrors: SerializeAsAny[Optional[list[ServiceProvisioningError]]] = Field(default=None,alias="serviceProvisioningErrors",)
 	theme: Optional[str] = Field(default=None,alias="theme",)
 	uniqueName: Optional[str] = Field(default=None,alias="uniqueName",)
 	unseenCount: Optional[int] = Field(default=None,alias="unseenCount",)

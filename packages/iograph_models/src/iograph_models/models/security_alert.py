@@ -1,7 +1,7 @@
 from __future__ import annotations
 from typing import Optional
 from datetime import datetime
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class SecurityAlert(BaseModel):
@@ -20,7 +20,7 @@ class SecurityAlert(BaseModel):
 	detectionSource: Optional[SecurityDetectionSource] = Field(default=None,alias="detectionSource",)
 	detectorId: Optional[str] = Field(default=None,alias="detectorId",)
 	determination: Optional[SecurityAlertDetermination] = Field(default=None,alias="determination",)
-	evidence: Optional[list[SecurityAlertEvidence]] = Field(default=None,alias="evidence",)
+	evidence: SerializeAsAny[Optional[list[SecurityAlertEvidence]]] = Field(default=None,alias="evidence",)
 	firstActivityDateTime: Optional[datetime] = Field(default=None,alias="firstActivityDateTime",)
 	incidentId: Optional[str] = Field(default=None,alias="incidentId",)
 	incidentWebUrl: Optional[str] = Field(default=None,alias="incidentWebUrl",)

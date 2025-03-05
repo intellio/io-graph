@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class Call_records_get_pstn_calls_with_fromdatetime_todatetimeGetResponse(BaseModel):

@@ -1,7 +1,7 @@
 from __future__ import annotations
 from typing import Optional
 from datetime import datetime
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class ChatMessageInfo(BaseModel):
@@ -9,7 +9,7 @@ class ChatMessageInfo(BaseModel):
 	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
 	body: Optional[ItemBody] = Field(default=None,alias="body",)
 	createdDateTime: Optional[datetime] = Field(default=None,alias="createdDateTime",)
-	eventDetail: Optional[EventMessageDetail] = Field(default=None,alias="eventDetail",)
+	eventDetail: SerializeAsAny[Optional[EventMessageDetail]] = Field(default=None,alias="eventDetail",)
 	from_: Optional[ChatMessageFromIdentitySet] = Field(default=None,alias="from",)
 	isDeleted: Optional[bool] = Field(default=None,alias="isDeleted",)
 	messageType: Optional[ChatMessageType] = Field(default=None,alias="messageType",)

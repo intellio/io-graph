@@ -1,7 +1,7 @@
 from __future__ import annotations
 from typing import Optional
 from datetime import datetime
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class AccessReviewHistoryDefinition(BaseModel):
@@ -14,7 +14,7 @@ class AccessReviewHistoryDefinition(BaseModel):
 	reviewHistoryPeriodEndDateTime: Optional[datetime] = Field(default=None,alias="reviewHistoryPeriodEndDateTime",)
 	reviewHistoryPeriodStartDateTime: Optional[datetime] = Field(default=None,alias="reviewHistoryPeriodStartDateTime",)
 	scheduleSettings: Optional[AccessReviewHistoryScheduleSettings] = Field(default=None,alias="scheduleSettings",)
-	scopes: Optional[list[AccessReviewScope]] = Field(default=None,alias="scopes",)
+	scopes: SerializeAsAny[Optional[list[AccessReviewScope]]] = Field(default=None,alias="scopes",)
 	status: Optional[AccessReviewHistoryStatus] = Field(default=None,alias="status",)
 	instances: Optional[list[AccessReviewHistoryInstance]] = Field(default=None,alias="instances",)
 

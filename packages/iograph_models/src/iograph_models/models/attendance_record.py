@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class AttendanceRecord(BaseModel):
@@ -8,7 +8,7 @@ class AttendanceRecord(BaseModel):
 	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
 	attendanceIntervals: Optional[list[AttendanceInterval]] = Field(default=None,alias="attendanceIntervals",)
 	emailAddress: Optional[str] = Field(default=None,alias="emailAddress",)
-	identity: Optional[Identity] = Field(default=None,alias="identity",)
+	identity: SerializeAsAny[Optional[Identity]] = Field(default=None,alias="identity",)
 	role: Optional[str] = Field(default=None,alias="role",)
 	totalAttendanceInSeconds: Optional[int] = Field(default=None,alias="totalAttendanceInSeconds",)
 

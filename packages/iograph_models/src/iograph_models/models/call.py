@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class Call(BaseModel):
@@ -8,14 +8,14 @@ class Call(BaseModel):
 	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
 	callbackUri: Optional[str] = Field(default=None,alias="callbackUri",)
 	callChainId: Optional[str] = Field(default=None,alias="callChainId",)
-	callOptions: Optional[CallOptions] = Field(default=None,alias="callOptions",)
+	callOptions: SerializeAsAny[Optional[CallOptions]] = Field(default=None,alias="callOptions",)
 	callRoutes: Optional[list[CallRoute]] = Field(default=None,alias="callRoutes",)
 	chatInfo: Optional[ChatInfo] = Field(default=None,alias="chatInfo",)
 	direction: Optional[CallDirection] = Field(default=None,alias="direction",)
 	incomingContext: Optional[IncomingContext] = Field(default=None,alias="incomingContext",)
-	mediaConfig: Optional[MediaConfig] = Field(default=None,alias="mediaConfig",)
+	mediaConfig: SerializeAsAny[Optional[MediaConfig]] = Field(default=None,alias="mediaConfig",)
 	mediaState: Optional[CallMediaState] = Field(default=None,alias="mediaState",)
-	meetingInfo: Optional[MeetingInfo] = Field(default=None,alias="meetingInfo",)
+	meetingInfo: SerializeAsAny[Optional[MeetingInfo]] = Field(default=None,alias="meetingInfo",)
 	myParticipantId: Optional[str] = Field(default=None,alias="myParticipantId",)
 	requestedModalities: Optional[Modality] = Field(default=None,alias="requestedModalities",)
 	resultInfo: Optional[ResultInfo] = Field(default=None,alias="resultInfo",)

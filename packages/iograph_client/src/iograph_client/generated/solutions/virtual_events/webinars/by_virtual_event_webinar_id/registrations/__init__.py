@@ -14,9 +14,9 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_virtual_event_registration_id import ByVirtualEventRegistrationIdRequest
 	from .......request_adapter import HttpxRequestAdapter
+from iograph_models.models.virtual_event_registration import VirtualEventRegistration
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.models.virtual_event_registration_collection_response import VirtualEventRegistrationCollectionResponse
-from iograph_models.models.virtual_event_registration import VirtualEventRegistration
 
 
 class RegistrationsRequest(BaseRequestBuilder):

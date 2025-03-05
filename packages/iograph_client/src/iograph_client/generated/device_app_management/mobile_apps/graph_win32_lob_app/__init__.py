@@ -12,8 +12,8 @@ from typing import TYPE_CHECKING
 if TYPE_CHECKING:
 	from .count import CountRequest
 	from .....request_adapter import HttpxRequestAdapter
-from iograph_models.models.win32_lob_app_collection_response import Win32LobAppCollectionResponse
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.models.win32_lob_app_collection_response import Win32LobAppCollectionResponse
 
 
 class GraphWin32LobAppRequest(BaseRequestBuilder):

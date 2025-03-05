@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class Additional_access_with_accesspackageid_incompatibleaccesspackageidGetResponse(BaseModel):

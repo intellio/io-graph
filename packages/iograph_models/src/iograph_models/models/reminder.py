@@ -1,13 +1,13 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class Reminder(BaseModel):
 	changeKey: Optional[str] = Field(default=None,alias="changeKey",)
 	eventEndTime: Optional[DateTimeTimeZone] = Field(default=None,alias="eventEndTime",)
 	eventId: Optional[str] = Field(default=None,alias="eventId",)
-	eventLocation: Optional[Location] = Field(default=None,alias="eventLocation",)
+	eventLocation: SerializeAsAny[Optional[Location]] = Field(default=None,alias="eventLocation",)
 	eventStartTime: Optional[DateTimeTimeZone] = Field(default=None,alias="eventStartTime",)
 	eventSubject: Optional[str] = Field(default=None,alias="eventSubject",)
 	eventWebLink: Optional[str] = Field(default=None,alias="eventWebLink",)

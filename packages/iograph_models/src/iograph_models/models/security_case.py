@@ -3,7 +3,7 @@ from typing import Optional
 from pydantic import model_validator, ModelWrapValidatorHandler, ValidationError
 from typing_extensions import Self
 from datetime import datetime
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class SecurityCase(BaseModel):
@@ -12,7 +12,7 @@ class SecurityCase(BaseModel):
 	createdDateTime: Optional[datetime] = Field(default=None,alias="createdDateTime",)
 	description: Optional[str] = Field(default=None,alias="description",)
 	displayName: Optional[str] = Field(default=None,alias="displayName",)
-	lastModifiedBy: Optional[IdentitySet] = Field(default=None,alias="lastModifiedBy",)
+	lastModifiedBy: SerializeAsAny[Optional[IdentitySet]] = Field(default=None,alias="lastModifiedBy",)
 	lastModifiedDateTime: Optional[datetime] = Field(default=None,alias="lastModifiedDateTime",)
 	status: Optional[SecurityCaseStatus] = Field(default=None,alias="status",)
 

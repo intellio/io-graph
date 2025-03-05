@@ -17,8 +17,8 @@ if TYPE_CHECKING:
 	from .device_states import DeviceStatesRequest
 	from .assignments import AssignmentsRequest
 	from .....request_adapter import HttpxRequestAdapter
-from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.models.managed_e_book import ManagedEBook
+from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
 
 
 class ByManagedEBookIdRequest(BaseRequestBuilder):

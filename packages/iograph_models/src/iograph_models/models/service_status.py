@@ -1,14 +1,14 @@
 from __future__ import annotations
 from typing import Optional
 from datetime import datetime
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class ServiceStatus(BaseModel):
 	backupServiceConsumer: Optional[BackupServiceConsumer] = Field(default=None,alias="backupServiceConsumer",)
 	disableReason: Optional[DisableReason] = Field(default=None,alias="disableReason",)
 	gracePeriodDateTime: Optional[datetime] = Field(default=None,alias="gracePeriodDateTime",)
-	lastModifiedBy: Optional[IdentitySet] = Field(default=None,alias="lastModifiedBy",)
+	lastModifiedBy: SerializeAsAny[Optional[IdentitySet]] = Field(default=None,alias="lastModifiedBy",)
 	lastModifiedDateTime: Optional[datetime] = Field(default=None,alias="lastModifiedDateTime",)
 	restoreAllowedTillDateTime: Optional[datetime] = Field(default=None,alias="restoreAllowedTillDateTime",)
 	status: Optional[BackupServiceStatus] = Field(default=None,alias="status",)

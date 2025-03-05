@@ -14,8 +14,8 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_bookmark_id import ByBookmarkIdRequest
 	from ....request_adapter import HttpxRequestAdapter
-from iograph_models.models.search_bookmark import SearchBookmark
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.models.search_bookmark import SearchBookmark
 from iograph_models.models.search_bookmark_collection_response import SearchBookmarkCollectionResponse
 
 

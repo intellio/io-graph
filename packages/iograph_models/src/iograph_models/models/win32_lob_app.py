@@ -1,7 +1,7 @@
 from __future__ import annotations
 from typing import Optional
 from datetime import datetime
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class Win32LobApp(BaseModel):
@@ -36,7 +36,7 @@ class Win32LobApp(BaseModel):
 	minimumSupportedWindowsRelease: Optional[str] = Field(default=None,alias="minimumSupportedWindowsRelease",)
 	msiInformation: Optional[Win32LobAppMsiInformation] = Field(default=None,alias="msiInformation",)
 	returnCodes: Optional[list[Win32LobAppReturnCode]] = Field(default=None,alias="returnCodes",)
-	rules: Optional[list[Win32LobAppRule]] = Field(default=None,alias="rules",)
+	rules: SerializeAsAny[Optional[list[Win32LobAppRule]]] = Field(default=None,alias="rules",)
 	setupFilePath: Optional[str] = Field(default=None,alias="setupFilePath",)
 	uninstallCommandLine: Optional[str] = Field(default=None,alias="uninstallCommandLine",)
 

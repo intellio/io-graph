@@ -14,8 +14,8 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_document_set_version_id import ByDocumentSetVersionIdRequest
 	from ........request_adapter import HttpxRequestAdapter
-from iograph_models.models.document_set_version_collection_response import DocumentSetVersionCollectionResponse
 from iograph_models.models.document_set_version import DocumentSetVersion
+from iograph_models.models.document_set_version_collection_response import DocumentSetVersionCollectionResponse
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
 
 

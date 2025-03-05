@@ -1,7 +1,7 @@
 from __future__ import annotations
 from typing import Optional
 from datetime import datetime
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class FileAssessmentRequest(BaseModel):
@@ -9,7 +9,7 @@ class FileAssessmentRequest(BaseModel):
 	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
 	category: Optional[ThreatCategory] = Field(default=None,alias="category",)
 	contentType: Optional[ThreatAssessmentContentType] = Field(default=None,alias="contentType",)
-	createdBy: Optional[IdentitySet] = Field(default=None,alias="createdBy",)
+	createdBy: SerializeAsAny[Optional[IdentitySet]] = Field(default=None,alias="createdBy",)
 	createdDateTime: Optional[datetime] = Field(default=None,alias="createdDateTime",)
 	expectedAssessment: Optional[ThreatExpectedAssessment] = Field(default=None,alias="expectedAssessment",)
 	requestSource: Optional[ThreatAssessmentRequestSource] = Field(default=None,alias="requestSource",)

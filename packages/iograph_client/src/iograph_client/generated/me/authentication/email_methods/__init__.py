@@ -15,8 +15,8 @@ if TYPE_CHECKING:
 	from .by_email_authentication_method_id import ByEmailAuthenticationMethodIdRequest
 	from .....request_adapter import HttpxRequestAdapter
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
-from iograph_models.models.email_authentication_method_collection_response import EmailAuthenticationMethodCollectionResponse
 from iograph_models.models.email_authentication_method import EmailAuthenticationMethod
+from iograph_models.models.email_authentication_method_collection_response import EmailAuthenticationMethodCollectionResponse
 
 
 class EmailMethodsRequest(BaseRequestBuilder):

@@ -1,7 +1,7 @@
 from __future__ import annotations
 from typing import Optional
 from datetime import datetime
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class User(BaseModel):
@@ -75,7 +75,7 @@ class User(BaseModel):
 	responsibilities: Optional[list[str]] = Field(default=None,alias="responsibilities",)
 	schools: Optional[list[str]] = Field(default=None,alias="schools",)
 	securityIdentifier: Optional[str] = Field(default=None,alias="securityIdentifier",)
-	serviceProvisioningErrors: Optional[list[ServiceProvisioningError]] = Field(default=None,alias="serviceProvisioningErrors",)
+	serviceProvisioningErrors: SerializeAsAny[Optional[list[ServiceProvisioningError]]] = Field(default=None,alias="serviceProvisioningErrors",)
 	showInAddressList: Optional[bool] = Field(default=None,alias="showInAddressList",)
 	signInActivity: Optional[SignInActivity] = Field(default=None,alias="signInActivity",)
 	signInSessionsValidFromDateTime: Optional[datetime] = Field(default=None,alias="signInSessionsValidFromDateTime",)

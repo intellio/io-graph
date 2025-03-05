@@ -1,13 +1,13 @@
 from __future__ import annotations
 from typing import Optional
 from datetime import datetime
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class AccessPackageAssignmentRequest(BaseModel):
 	id: Optional[str] = Field(default=None,alias="id",)
 	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	answers: Optional[list[AccessPackageAnswer]] = Field(default=None,alias="answers",)
+	answers: SerializeAsAny[Optional[list[AccessPackageAnswer]]] = Field(default=None,alias="answers",)
 	completedDateTime: Optional[datetime] = Field(default=None,alias="completedDateTime",)
 	createdDateTime: Optional[datetime] = Field(default=None,alias="createdDateTime",)
 	customExtensionCalloutInstances: Optional[list[CustomExtensionCalloutInstance]] = Field(default=None,alias="customExtensionCalloutInstances",)

@@ -1,7 +1,7 @@
 from __future__ import annotations
 from typing import Optional
 from datetime import datetime
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class EventMessageRequest(BaseModel):
@@ -11,14 +11,14 @@ class EventMessageRequest(BaseModel):
 	changeKey: Optional[str] = Field(default=None,alias="changeKey",)
 	createdDateTime: Optional[datetime] = Field(default=None,alias="createdDateTime",)
 	lastModifiedDateTime: Optional[datetime] = Field(default=None,alias="lastModifiedDateTime",)
-	bccRecipients: Optional[list[Recipient]] = Field(default=None,alias="bccRecipients",)
+	bccRecipients: SerializeAsAny[Optional[list[Recipient]]] = Field(default=None,alias="bccRecipients",)
 	body: Optional[ItemBody] = Field(default=None,alias="body",)
 	bodyPreview: Optional[str] = Field(default=None,alias="bodyPreview",)
-	ccRecipients: Optional[list[Recipient]] = Field(default=None,alias="ccRecipients",)
+	ccRecipients: SerializeAsAny[Optional[list[Recipient]]] = Field(default=None,alias="ccRecipients",)
 	conversationId: Optional[str] = Field(default=None,alias="conversationId",)
 	conversationIndex: Optional[str] = Field(default=None,alias="conversationIndex",)
 	flag: Optional[FollowupFlag] = Field(default=None,alias="flag",)
-	from_: Optional[Recipient] = Field(default=None,alias="from",)
+	from_: SerializeAsAny[Optional[Recipient]] = Field(default=None,alias="from",)
 	hasAttachments: Optional[bool] = Field(default=None,alias="hasAttachments",)
 	importance: Optional[Importance] = Field(default=None,alias="importance",)
 	inferenceClassification: Optional[InferenceClassificationType] = Field(default=None,alias="inferenceClassification",)
@@ -30,11 +30,11 @@ class EventMessageRequest(BaseModel):
 	isReadReceiptRequested: Optional[bool] = Field(default=None,alias="isReadReceiptRequested",)
 	parentFolderId: Optional[str] = Field(default=None,alias="parentFolderId",)
 	receivedDateTime: Optional[datetime] = Field(default=None,alias="receivedDateTime",)
-	replyTo: Optional[list[Recipient]] = Field(default=None,alias="replyTo",)
-	sender: Optional[Recipient] = Field(default=None,alias="sender",)
+	replyTo: SerializeAsAny[Optional[list[Recipient]]] = Field(default=None,alias="replyTo",)
+	sender: SerializeAsAny[Optional[Recipient]] = Field(default=None,alias="sender",)
 	sentDateTime: Optional[datetime] = Field(default=None,alias="sentDateTime",)
 	subject: Optional[str] = Field(default=None,alias="subject",)
-	toRecipients: Optional[list[Recipient]] = Field(default=None,alias="toRecipients",)
+	toRecipients: SerializeAsAny[Optional[list[Recipient]]] = Field(default=None,alias="toRecipients",)
 	uniqueBody: Optional[ItemBody] = Field(default=None,alias="uniqueBody",)
 	webLink: Optional[str] = Field(default=None,alias="webLink",)
 	attachments: Optional[list[Attachment]] = Field(default=None,alias="attachments",)
@@ -45,7 +45,7 @@ class EventMessageRequest(BaseModel):
 	isAllDay: Optional[bool] = Field(default=None,alias="isAllDay",)
 	isDelegated: Optional[bool] = Field(default=None,alias="isDelegated",)
 	isOutOfDate: Optional[bool] = Field(default=None,alias="isOutOfDate",)
-	location: Optional[Location] = Field(default=None,alias="location",)
+	location: SerializeAsAny[Optional[Location]] = Field(default=None,alias="location",)
 	meetingMessageType: Optional[MeetingMessageType] = Field(default=None,alias="meetingMessageType",)
 	recurrence: Optional[PatternedRecurrence] = Field(default=None,alias="recurrence",)
 	startDateTime: Optional[DateTimeTimeZone] = Field(default=None,alias="startDateTime",)
@@ -54,7 +54,7 @@ class EventMessageRequest(BaseModel):
 	allowNewTimeProposals: Optional[bool] = Field(default=None,alias="allowNewTimeProposals",)
 	meetingRequestType: Optional[MeetingRequestType] = Field(default=None,alias="meetingRequestType",)
 	previousEndDateTime: Optional[DateTimeTimeZone] = Field(default=None,alias="previousEndDateTime",)
-	previousLocation: Optional[Location] = Field(default=None,alias="previousLocation",)
+	previousLocation: SerializeAsAny[Optional[Location]] = Field(default=None,alias="previousLocation",)
 	previousStartDateTime: Optional[DateTimeTimeZone] = Field(default=None,alias="previousStartDateTime",)
 	responseRequested: Optional[bool] = Field(default=None,alias="responseRequested",)
 

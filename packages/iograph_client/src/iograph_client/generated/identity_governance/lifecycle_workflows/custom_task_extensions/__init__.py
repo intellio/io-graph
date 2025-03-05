@@ -15,8 +15,8 @@ if TYPE_CHECKING:
 	from .by_custom_task_extension_id import ByCustomTaskExtensionIdRequest
 	from .....request_adapter import HttpxRequestAdapter
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
-from iograph_models.models.identity_governance_custom_task_extension import IdentityGovernanceCustomTaskExtension
 from iograph_models.models.identity_governance_custom_task_extension_collection_response import IdentityGovernanceCustomTaskExtensionCollectionResponse
+from iograph_models.models.identity_governance_custom_task_extension import IdentityGovernanceCustomTaskExtension
 
 
 class CustomTaskExtensionsRequest(BaseRequestBuilder):

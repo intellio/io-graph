@@ -1,7 +1,7 @@
 from __future__ import annotations
 from typing import Optional
 from datetime import datetime
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class ConnectedOrganization(BaseModel):
@@ -10,7 +10,7 @@ class ConnectedOrganization(BaseModel):
 	createdDateTime: Optional[datetime] = Field(default=None,alias="createdDateTime",)
 	description: Optional[str] = Field(default=None,alias="description",)
 	displayName: Optional[str] = Field(default=None,alias="displayName",)
-	identitySources: Optional[list[IdentitySource]] = Field(default=None,alias="identitySources",)
+	identitySources: SerializeAsAny[Optional[list[IdentitySource]]] = Field(default=None,alias="identitySources",)
 	modifiedDateTime: Optional[datetime] = Field(default=None,alias="modifiedDateTime",)
 	state: Optional[ConnectedOrganizationState] = Field(default=None,alias="state",)
 	externalSponsors: Optional[list[DirectoryObject]] = Field(default=None,alias="externalSponsors",)

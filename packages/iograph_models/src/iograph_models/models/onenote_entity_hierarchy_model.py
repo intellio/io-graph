@@ -3,7 +3,7 @@ from typing import Optional
 from pydantic import model_validator, ModelWrapValidatorHandler, ValidationError
 from typing_extensions import Self
 from datetime import datetime
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class OnenoteEntityHierarchyModel(BaseModel):
@@ -11,9 +11,9 @@ class OnenoteEntityHierarchyModel(BaseModel):
 	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
 	self: Optional[str] = Field(default=None,alias="self",)
 	createdDateTime: Optional[datetime] = Field(default=None,alias="createdDateTime",)
-	createdBy: Optional[IdentitySet] = Field(default=None,alias="createdBy",)
+	createdBy: SerializeAsAny[Optional[IdentitySet]] = Field(default=None,alias="createdBy",)
 	displayName: Optional[str] = Field(default=None,alias="displayName",)
-	lastModifiedBy: Optional[IdentitySet] = Field(default=None,alias="lastModifiedBy",)
+	lastModifiedBy: SerializeAsAny[Optional[IdentitySet]] = Field(default=None,alias="lastModifiedBy",)
 	lastModifiedDateTime: Optional[datetime] = Field(default=None,alias="lastModifiedDateTime",)
 
 	@model_validator(mode="wrap")

@@ -19,8 +19,8 @@ if TYPE_CHECKING:
 	from .by_directory_role_id import ByDirectoryRoleIdRequest
 	from ...request_adapter import HttpxRequestAdapter
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
-from iograph_models.models.directory_role import DirectoryRole
 from iograph_models.models.directory_role_collection_response import DirectoryRoleCollectionResponse
+from iograph_models.models.directory_role import DirectoryRole
 
 
 class DirectoryRolesRequest(BaseRequestBuilder):

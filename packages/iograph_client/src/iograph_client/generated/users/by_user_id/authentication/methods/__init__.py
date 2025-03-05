@@ -14,8 +14,8 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_authentication_method_id import ByAuthenticationMethodIdRequest
 	from ......request_adapter import HttpxRequestAdapter
-from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.models.authentication_method import AuthenticationMethod
+from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.models.authentication_method_collection_response import AuthenticationMethodCollectionResponse
 
 

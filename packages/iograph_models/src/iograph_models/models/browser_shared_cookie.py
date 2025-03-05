@@ -1,7 +1,7 @@
 from __future__ import annotations
 from typing import Optional
 from datetime import datetime
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class BrowserSharedCookie(BaseModel):
@@ -14,7 +14,7 @@ class BrowserSharedCookie(BaseModel):
 	history: Optional[list[BrowserSharedCookieHistory]] = Field(default=None,alias="history",)
 	hostOnly: Optional[bool] = Field(default=None,alias="hostOnly",)
 	hostOrDomain: Optional[str] = Field(default=None,alias="hostOrDomain",)
-	lastModifiedBy: Optional[IdentitySet] = Field(default=None,alias="lastModifiedBy",)
+	lastModifiedBy: SerializeAsAny[Optional[IdentitySet]] = Field(default=None,alias="lastModifiedBy",)
 	lastModifiedDateTime: Optional[datetime] = Field(default=None,alias="lastModifiedDateTime",)
 	path: Optional[str] = Field(default=None,alias="path",)
 	sourceEnvironment: Optional[BrowserSharedCookieSourceEnvironment] = Field(default=None,alias="sourceEnvironment",)

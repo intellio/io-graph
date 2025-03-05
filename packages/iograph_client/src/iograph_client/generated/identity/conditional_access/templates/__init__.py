@@ -14,8 +14,8 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_conditional_access_template_id import ByConditionalAccessTemplateIdRequest
 	from .....request_adapter import HttpxRequestAdapter
-from iograph_models.models.conditional_access_template_collection_response import ConditionalAccessTemplateCollectionResponse
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.models.conditional_access_template_collection_response import ConditionalAccessTemplateCollectionResponse
 
 
 class TemplatesRequest(BaseRequestBuilder):

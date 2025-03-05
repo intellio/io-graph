@@ -1,7 +1,7 @@
 from __future__ import annotations
 from typing import Optional
 from datetime import datetime
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class Simulation(BaseModel):
@@ -16,9 +16,9 @@ class Simulation(BaseModel):
 	description: Optional[str] = Field(default=None,alias="description",)
 	displayName: Optional[str] = Field(default=None,alias="displayName",)
 	durationInDays: Optional[int] = Field(default=None,alias="durationInDays",)
-	endUserNotificationSetting: Optional[EndUserNotificationSetting] = Field(default=None,alias="endUserNotificationSetting",)
-	excludedAccountTarget: Optional[AccountTargetContent] = Field(default=None,alias="excludedAccountTarget",)
-	includedAccountTarget: Optional[AccountTargetContent] = Field(default=None,alias="includedAccountTarget",)
+	endUserNotificationSetting: SerializeAsAny[Optional[EndUserNotificationSetting]] = Field(default=None,alias="endUserNotificationSetting",)
+	excludedAccountTarget: SerializeAsAny[Optional[AccountTargetContent]] = Field(default=None,alias="excludedAccountTarget",)
+	includedAccountTarget: SerializeAsAny[Optional[AccountTargetContent]] = Field(default=None,alias="includedAccountTarget",)
 	isAutomated: Optional[bool] = Field(default=None,alias="isAutomated",)
 	lastModifiedBy: Optional[EmailIdentity] = Field(default=None,alias="lastModifiedBy",)
 	lastModifiedDateTime: Optional[datetime] = Field(default=None,alias="lastModifiedDateTime",)
@@ -27,7 +27,7 @@ class Simulation(BaseModel):
 	payloadDeliveryPlatform: Optional[PayloadDeliveryPlatform] = Field(default=None,alias="payloadDeliveryPlatform",)
 	report: Optional[SimulationReport] = Field(default=None,alias="report",)
 	status: Optional[SimulationStatus] = Field(default=None,alias="status",)
-	trainingSetting: Optional[TrainingSetting] = Field(default=None,alias="trainingSetting",)
+	trainingSetting: SerializeAsAny[Optional[TrainingSetting]] = Field(default=None,alias="trainingSetting",)
 	landingPage: Optional[LandingPage] = Field(default=None,alias="landingPage",)
 	loginPage: Optional[LoginPage] = Field(default=None,alias="loginPage",)
 	payload: Optional[Payload] = Field(default=None,alias="payload",)

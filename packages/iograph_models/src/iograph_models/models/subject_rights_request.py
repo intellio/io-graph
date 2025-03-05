@@ -1,16 +1,16 @@
 from __future__ import annotations
 from typing import Optional
 from datetime import datetime
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class SubjectRightsRequest(BaseModel):
 	id: Optional[str] = Field(default=None,alias="id",)
 	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	assignedTo: Optional[Identity] = Field(default=None,alias="assignedTo",)
+	assignedTo: SerializeAsAny[Optional[Identity]] = Field(default=None,alias="assignedTo",)
 	closedDateTime: Optional[datetime] = Field(default=None,alias="closedDateTime",)
 	contentQuery: Optional[str] = Field(default=None,alias="contentQuery",)
-	createdBy: Optional[IdentitySet] = Field(default=None,alias="createdBy",)
+	createdBy: SerializeAsAny[Optional[IdentitySet]] = Field(default=None,alias="createdBy",)
 	createdDateTime: Optional[datetime] = Field(default=None,alias="createdDateTime",)
 	dataSubject: Optional[DataSubject] = Field(default=None,alias="dataSubject",)
 	dataSubjectType: Optional[DataSubjectType] = Field(default=None,alias="dataSubjectType",)
@@ -22,12 +22,12 @@ class SubjectRightsRequest(BaseModel):
 	includeAuthoredContent: Optional[bool] = Field(default=None,alias="includeAuthoredContent",)
 	insight: Optional[SubjectRightsRequestDetail] = Field(default=None,alias="insight",)
 	internalDueDateTime: Optional[datetime] = Field(default=None,alias="internalDueDateTime",)
-	lastModifiedBy: Optional[IdentitySet] = Field(default=None,alias="lastModifiedBy",)
+	lastModifiedBy: SerializeAsAny[Optional[IdentitySet]] = Field(default=None,alias="lastModifiedBy",)
 	lastModifiedDateTime: Optional[datetime] = Field(default=None,alias="lastModifiedDateTime",)
-	mailboxLocations: Optional[SubjectRightsRequestMailboxLocation] = Field(default=None,alias="mailboxLocations",)
+	mailboxLocations: SerializeAsAny[Optional[SubjectRightsRequestMailboxLocation]] = Field(default=None,alias="mailboxLocations",)
 	pauseAfterEstimate: Optional[bool] = Field(default=None,alias="pauseAfterEstimate",)
 	regulations: Optional[list[str]] = Field(default=None,alias="regulations",)
-	siteLocations: Optional[SubjectRightsRequestSiteLocation] = Field(default=None,alias="siteLocations",)
+	siteLocations: SerializeAsAny[Optional[SubjectRightsRequestSiteLocation]] = Field(default=None,alias="siteLocations",)
 	stages: Optional[list[SubjectRightsRequestStageDetail]] = Field(default=None,alias="stages",)
 	status: Optional[SubjectRightsRequestStatus] = Field(default=None,alias="status",)
 	type: Optional[SubjectRightsRequestType] = Field(default=None,alias="type",)

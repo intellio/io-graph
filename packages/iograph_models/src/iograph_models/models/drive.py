@@ -1,17 +1,17 @@
 from __future__ import annotations
 from typing import Optional
 from datetime import datetime
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class Drive(BaseModel):
 	id: Optional[str] = Field(default=None,alias="id",)
 	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	createdBy: Optional[IdentitySet] = Field(default=None,alias="createdBy",)
+	createdBy: SerializeAsAny[Optional[IdentitySet]] = Field(default=None,alias="createdBy",)
 	createdDateTime: Optional[datetime] = Field(default=None,alias="createdDateTime",)
 	description: Optional[str] = Field(default=None,alias="description",)
 	eTag: Optional[str] = Field(default=None,alias="eTag",)
-	lastModifiedBy: Optional[IdentitySet] = Field(default=None,alias="lastModifiedBy",)
+	lastModifiedBy: SerializeAsAny[Optional[IdentitySet]] = Field(default=None,alias="lastModifiedBy",)
 	lastModifiedDateTime: Optional[datetime] = Field(default=None,alias="lastModifiedDateTime",)
 	name: Optional[str] = Field(default=None,alias="name",)
 	parentReference: Optional[ItemReference] = Field(default=None,alias="parentReference",)
@@ -19,7 +19,7 @@ class Drive(BaseModel):
 	createdByUser: Optional[User] = Field(default=None,alias="createdByUser",)
 	lastModifiedByUser: Optional[User] = Field(default=None,alias="lastModifiedByUser",)
 	driveType: Optional[str] = Field(default=None,alias="driveType",)
-	owner: Optional[IdentitySet] = Field(default=None,alias="owner",)
+	owner: SerializeAsAny[Optional[IdentitySet]] = Field(default=None,alias="owner",)
 	quota: Optional[Quota] = Field(default=None,alias="quota",)
 	sharePointIds: Optional[SharepointIds] = Field(default=None,alias="sharePointIds",)
 	system: Optional[SystemFacet] = Field(default=None,alias="system",)

@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class AccessReviewStageSettings(BaseModel):
@@ -8,7 +8,7 @@ class AccessReviewStageSettings(BaseModel):
 	dependsOn: Optional[list[str]] = Field(default=None,alias="dependsOn",)
 	durationInDays: Optional[int] = Field(default=None,alias="durationInDays",)
 	fallbackReviewers: Optional[list[AccessReviewReviewerScope]] = Field(default=None,alias="fallbackReviewers",)
-	recommendationInsightSettings: Optional[list[AccessReviewRecommendationInsightSetting]] = Field(default=None,alias="recommendationInsightSettings",)
+	recommendationInsightSettings: SerializeAsAny[Optional[list[AccessReviewRecommendationInsightSetting]]] = Field(default=None,alias="recommendationInsightSettings",)
 	recommendationsEnabled: Optional[bool] = Field(default=None,alias="recommendationsEnabled",)
 	reviewers: Optional[list[AccessReviewReviewerScope]] = Field(default=None,alias="reviewers",)
 	stageId: Optional[str] = Field(default=None,alias="stageId",)

@@ -14,8 +14,8 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_external_activity_id import ByExternalActivityIdRequest
 	from ........request_adapter import HttpxRequestAdapter
-from iograph_models.models.external_connectors_external_activity_collection_response import ExternalConnectorsExternalActivityCollectionResponse
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.models.external_connectors_external_activity_collection_response import ExternalConnectorsExternalActivityCollectionResponse
 from iograph_models.models.external_connectors_external_activity import ExternalConnectorsExternalActivity
 
 

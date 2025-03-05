@@ -1,10 +1,10 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class VirtualEventPresenterInfo(BaseModel):
-	identity: Optional[IdentitySet] = Field(default=None,alias="identity",)
+	identity: SerializeAsAny[Optional[IdentitySet]] = Field(default=None,alias="identity",)
 	role: Optional[OnlineMeetingRole] = Field(default=None,alias="role",)
 	upn: Optional[str] = Field(default=None,alias="upn",)
 	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)

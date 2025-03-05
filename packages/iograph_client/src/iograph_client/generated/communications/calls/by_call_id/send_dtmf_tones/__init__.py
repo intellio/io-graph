@@ -12,8 +12,8 @@ from typing import TYPE_CHECKING
 if TYPE_CHECKING:
 	from ......request_adapter import HttpxRequestAdapter
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
-from iograph_models.models.send_dtmf_tones_operation import SendDtmfTonesOperation
 from iograph_models.models.send_dtmf_tones_post_request import Send_dtmf_tonesPostRequest
+from iograph_models.models.send_dtmf_tones_operation import SendDtmfTonesOperation
 
 
 class SendDtmfTonesRequest(BaseRequestBuilder):

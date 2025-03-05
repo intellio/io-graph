@@ -1,7 +1,7 @@
 from __future__ import annotations
 from uuid import UUID
 from typing import Optional
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class TeleconferenceDeviceQuality(BaseModel):
@@ -13,7 +13,7 @@ class TeleconferenceDeviceQuality(BaseModel):
 	deviceDescription: Optional[str] = Field(default=None,alias="deviceDescription",)
 	deviceName: Optional[str] = Field(default=None,alias="deviceName",)
 	mediaLegId: Optional[UUID] = Field(default=None,alias="mediaLegId",)
-	mediaQualityList: Optional[list[TeleconferenceDeviceMediaQuality]] = Field(default=None,alias="mediaQualityList",)
+	mediaQualityList: SerializeAsAny[Optional[list[TeleconferenceDeviceMediaQuality]]] = Field(default=None,alias="mediaQualityList",)
 	participantId: Optional[UUID] = Field(default=None,alias="participantId",)
 	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
 

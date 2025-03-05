@@ -1,7 +1,7 @@
 from __future__ import annotations
 from typing import Optional
 from datetime import datetime
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class SecurityEdiscoveryCase(BaseModel):
@@ -10,10 +10,10 @@ class SecurityEdiscoveryCase(BaseModel):
 	createdDateTime: Optional[datetime] = Field(default=None,alias="createdDateTime",)
 	description: Optional[str] = Field(default=None,alias="description",)
 	displayName: Optional[str] = Field(default=None,alias="displayName",)
-	lastModifiedBy: Optional[IdentitySet] = Field(default=None,alias="lastModifiedBy",)
+	lastModifiedBy: SerializeAsAny[Optional[IdentitySet]] = Field(default=None,alias="lastModifiedBy",)
 	lastModifiedDateTime: Optional[datetime] = Field(default=None,alias="lastModifiedDateTime",)
 	status: Optional[SecurityCaseStatus] = Field(default=None,alias="status",)
-	closedBy: Optional[IdentitySet] = Field(default=None,alias="closedBy",)
+	closedBy: SerializeAsAny[Optional[IdentitySet]] = Field(default=None,alias="closedBy",)
 	closedDateTime: Optional[datetime] = Field(default=None,alias="closedDateTime",)
 	externalId: Optional[str] = Field(default=None,alias="externalId",)
 	custodians: Optional[list[SecurityEdiscoveryCustodian]] = Field(default=None,alias="custodians",)

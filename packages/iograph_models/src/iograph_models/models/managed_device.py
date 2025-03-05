@@ -1,7 +1,7 @@
 from __future__ import annotations
 from typing import Optional
 from datetime import datetime
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class ManagedDevice(BaseModel):
@@ -14,7 +14,7 @@ class ManagedDevice(BaseModel):
 	complianceGracePeriodExpirationDateTime: Optional[datetime] = Field(default=None,alias="complianceGracePeriodExpirationDateTime",)
 	complianceState: Optional[ComplianceState] = Field(default=None,alias="complianceState",)
 	configurationManagerClientEnabledFeatures: Optional[ConfigurationManagerClientEnabledFeatures] = Field(default=None,alias="configurationManagerClientEnabledFeatures",)
-	deviceActionResults: Optional[list[DeviceActionResult]] = Field(default=None,alias="deviceActionResults",)
+	deviceActionResults: SerializeAsAny[Optional[list[DeviceActionResult]]] = Field(default=None,alias="deviceActionResults",)
 	deviceCategoryDisplayName: Optional[str] = Field(default=None,alias="deviceCategoryDisplayName",)
 	deviceEnrollmentType: Optional[DeviceEnrollmentType] = Field(default=None,alias="deviceEnrollmentType",)
 	deviceHealthAttestationState: Optional[DeviceHealthAttestationState] = Field(default=None,alias="deviceHealthAttestationState",)

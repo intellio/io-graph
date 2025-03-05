@@ -1,7 +1,7 @@
 from __future__ import annotations
 from typing import Optional
 from datetime import datetime
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class Trending(BaseModel):
@@ -11,7 +11,7 @@ class Trending(BaseModel):
 	resourceReference: Optional[ResourceReference] = Field(default=None,alias="resourceReference",)
 	resourceVisualization: Optional[ResourceVisualization] = Field(default=None,alias="resourceVisualization",)
 	weight: float | str | ReferenceNumeric
-	resource: Optional[Entity] = Field(default=None,alias="resource",)
+	resource: SerializeAsAny[Optional[Entity]] = Field(default=None,alias="resource",)
 
 from .resource_reference import ResourceReference
 from .resource_visualization import ResourceVisualization

@@ -1,7 +1,7 @@
 from __future__ import annotations
 from typing import Optional
 from datetime import datetime
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class BookingService(BaseModel):
@@ -11,7 +11,7 @@ class BookingService(BaseModel):
 	createdDateTime: Optional[datetime] = Field(default=None,alias="createdDateTime",)
 	customQuestions: Optional[list[BookingQuestionAssignment]] = Field(default=None,alias="customQuestions",)
 	defaultDuration: Optional[str] = Field(default=None,alias="defaultDuration",)
-	defaultLocation: Optional[Location] = Field(default=None,alias="defaultLocation",)
+	defaultLocation: SerializeAsAny[Optional[Location]] = Field(default=None,alias="defaultLocation",)
 	defaultPrice: float | str | ReferenceNumeric
 	defaultPriceType: Optional[BookingPriceType] = Field(default=None,alias="defaultPriceType",)
 	defaultReminders: Optional[list[BookingReminder]] = Field(default=None,alias="defaultReminders",)

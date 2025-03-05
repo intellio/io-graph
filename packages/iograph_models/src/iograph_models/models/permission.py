@@ -1,15 +1,15 @@
 from __future__ import annotations
 from typing import Optional
 from datetime import datetime
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class Permission(BaseModel):
 	id: Optional[str] = Field(default=None,alias="id",)
 	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
 	expirationDateTime: Optional[datetime] = Field(default=None,alias="expirationDateTime",)
-	grantedTo: Optional[IdentitySet] = Field(default=None,alias="grantedTo",)
-	grantedToIdentities: Optional[list[IdentitySet]] = Field(default=None,alias="grantedToIdentities",)
+	grantedTo: SerializeAsAny[Optional[IdentitySet]] = Field(default=None,alias="grantedTo",)
+	grantedToIdentities: SerializeAsAny[Optional[list[IdentitySet]]] = Field(default=None,alias="grantedToIdentities",)
 	grantedToIdentitiesV2: Optional[list[SharePointIdentitySet]] = Field(default=None,alias="grantedToIdentitiesV2",)
 	grantedToV2: Optional[SharePointIdentitySet] = Field(default=None,alias="grantedToV2",)
 	hasPassword: Optional[bool] = Field(default=None,alias="hasPassword",)

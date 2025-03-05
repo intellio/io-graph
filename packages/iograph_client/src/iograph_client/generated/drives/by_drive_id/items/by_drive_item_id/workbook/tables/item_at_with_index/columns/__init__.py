@@ -11,9 +11,9 @@ from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:
 	from ..........request_adapter import HttpxRequestAdapter
+from iograph_models.models.workbook_table_column_collection_response import WorkbookTableColumnCollectionResponse
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.models.workbook_table_column import WorkbookTableColumn
-from iograph_models.models.workbook_table_column_collection_response import WorkbookTableColumnCollectionResponse
 
 
 class ColumnsRequest(BaseRequestBuilder):

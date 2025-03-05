@@ -3,13 +3,13 @@ from typing import Optional
 from pydantic import model_validator, ModelWrapValidatorHandler, ValidationError
 from typing_extensions import Self
 from datetime import datetime
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class ManagedAppRegistration(BaseModel):
 	id: Optional[str] = Field(default=None,alias="id",)
 	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	appIdentifier: Optional[MobileAppIdentifier] = Field(default=None,alias="appIdentifier",)
+	appIdentifier: SerializeAsAny[Optional[MobileAppIdentifier]] = Field(default=None,alias="appIdentifier",)
 	applicationVersion: Optional[str] = Field(default=None,alias="applicationVersion",)
 	createdDateTime: Optional[datetime] = Field(default=None,alias="createdDateTime",)
 	deviceName: Optional[str] = Field(default=None,alias="deviceName",)

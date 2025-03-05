@@ -1,7 +1,7 @@
 from __future__ import annotations
 from typing import Optional
 from datetime import datetime
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class Windows10GeneralConfiguration(BaseModel):
@@ -88,7 +88,7 @@ class Windows10GeneralConfiguration(BaseModel):
 	edgeFirstRunUrl: Optional[str] = Field(default=None,alias="edgeFirstRunUrl",)
 	edgeHomepageUrls: Optional[list[str]] = Field(default=None,alias="edgeHomepageUrls",)
 	edgeRequireSmartScreen: Optional[bool] = Field(default=None,alias="edgeRequireSmartScreen",)
-	edgeSearchEngine: Optional[EdgeSearchEngineBase] = Field(default=None,alias="edgeSearchEngine",)
+	edgeSearchEngine: SerializeAsAny[Optional[EdgeSearchEngineBase]] = Field(default=None,alias="edgeSearchEngine",)
 	edgeSendIntranetTrafficToInternetExplorer: Optional[bool] = Field(default=None,alias="edgeSendIntranetTrafficToInternetExplorer",)
 	edgeSyncFavoritesWithInternetExplorer: Optional[bool] = Field(default=None,alias="edgeSyncFavoritesWithInternetExplorer",)
 	enterpriseCloudPrintDiscoveryEndPoint: Optional[str] = Field(default=None,alias="enterpriseCloudPrintDiscoveryEndPoint",)

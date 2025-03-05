@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class OnInteractiveAuthFlowStartListener(BaseModel):
@@ -8,7 +8,7 @@ class OnInteractiveAuthFlowStartListener(BaseModel):
 	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
 	authenticationEventsFlowId: Optional[str] = Field(default=None,alias="authenticationEventsFlowId",)
 	conditions: Optional[AuthenticationConditions] = Field(default=None,alias="conditions",)
-	handler: Optional[OnInteractiveAuthFlowStartHandler] = Field(default=None,alias="handler",)
+	handler: SerializeAsAny[Optional[OnInteractiveAuthFlowStartHandler]] = Field(default=None,alias="handler",)
 
 from .authentication_conditions import AuthenticationConditions
 from .on_interactive_auth_flow_start_handler import OnInteractiveAuthFlowStartHandler

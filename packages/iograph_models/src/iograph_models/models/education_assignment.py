@@ -1,7 +1,7 @@
 from __future__ import annotations
 from typing import Optional
 from datetime import datetime
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class EducationAssignment(BaseModel):
@@ -13,17 +13,17 @@ class EducationAssignment(BaseModel):
 	allowStudentsToAddResourcesToSubmission: Optional[bool] = Field(default=None,alias="allowStudentsToAddResourcesToSubmission",)
 	assignDateTime: Optional[datetime] = Field(default=None,alias="assignDateTime",)
 	assignedDateTime: Optional[datetime] = Field(default=None,alias="assignedDateTime",)
-	assignTo: Optional[EducationAssignmentRecipient] = Field(default=None,alias="assignTo",)
+	assignTo: SerializeAsAny[Optional[EducationAssignmentRecipient]] = Field(default=None,alias="assignTo",)
 	classId: Optional[str] = Field(default=None,alias="classId",)
 	closeDateTime: Optional[datetime] = Field(default=None,alias="closeDateTime",)
-	createdBy: Optional[IdentitySet] = Field(default=None,alias="createdBy",)
+	createdBy: SerializeAsAny[Optional[IdentitySet]] = Field(default=None,alias="createdBy",)
 	createdDateTime: Optional[datetime] = Field(default=None,alias="createdDateTime",)
 	displayName: Optional[str] = Field(default=None,alias="displayName",)
 	dueDateTime: Optional[datetime] = Field(default=None,alias="dueDateTime",)
 	feedbackResourcesFolderUrl: Optional[str] = Field(default=None,alias="feedbackResourcesFolderUrl",)
-	grading: Optional[EducationAssignmentGradeType] = Field(default=None,alias="grading",)
+	grading: SerializeAsAny[Optional[EducationAssignmentGradeType]] = Field(default=None,alias="grading",)
 	instructions: Optional[EducationItemBody] = Field(default=None,alias="instructions",)
-	lastModifiedBy: Optional[IdentitySet] = Field(default=None,alias="lastModifiedBy",)
+	lastModifiedBy: SerializeAsAny[Optional[IdentitySet]] = Field(default=None,alias="lastModifiedBy",)
 	lastModifiedDateTime: Optional[datetime] = Field(default=None,alias="lastModifiedDateTime",)
 	moduleUrl: Optional[str] = Field(default=None,alias="moduleUrl",)
 	notificationChannelUrl: Optional[str] = Field(default=None,alias="notificationChannelUrl",)

@@ -1,7 +1,7 @@
 from __future__ import annotations
 from typing import Optional
 from datetime import datetime
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class WindowsUpdateForBusinessConfiguration(BaseModel):
@@ -37,7 +37,7 @@ class WindowsUpdateForBusinessConfiguration(BaseModel):
 	featureUpdatesRollbackStartDateTime: Optional[datetime] = Field(default=None,alias="featureUpdatesRollbackStartDateTime",)
 	featureUpdatesRollbackWindowInDays: Optional[int] = Field(default=None,alias="featureUpdatesRollbackWindowInDays",)
 	featureUpdatesWillBeRolledBack: Optional[bool] = Field(default=None,alias="featureUpdatesWillBeRolledBack",)
-	installationSchedule: Optional[WindowsUpdateInstallScheduleType] = Field(default=None,alias="installationSchedule",)
+	installationSchedule: SerializeAsAny[Optional[WindowsUpdateInstallScheduleType]] = Field(default=None,alias="installationSchedule",)
 	microsoftUpdateServiceAllowed: Optional[bool] = Field(default=None,alias="microsoftUpdateServiceAllowed",)
 	postponeRebootUntilAfterDeadline: Optional[bool] = Field(default=None,alias="postponeRebootUntilAfterDeadline",)
 	prereleaseFeatures: Optional[PrereleaseFeatures] = Field(default=None,alias="prereleaseFeatures",)

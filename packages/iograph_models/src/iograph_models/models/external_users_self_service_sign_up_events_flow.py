@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class ExternalUsersSelfServiceSignUpEventsFlow(BaseModel):
@@ -9,10 +9,10 @@ class ExternalUsersSelfServiceSignUpEventsFlow(BaseModel):
 	conditions: Optional[AuthenticationConditions] = Field(default=None,alias="conditions",)
 	description: Optional[str] = Field(default=None,alias="description",)
 	displayName: Optional[str] = Field(default=None,alias="displayName",)
-	onAttributeCollection: Optional[OnAttributeCollectionHandler] = Field(default=None,alias="onAttributeCollection",)
-	onAuthenticationMethodLoadStart: Optional[OnAuthenticationMethodLoadStartHandler] = Field(default=None,alias="onAuthenticationMethodLoadStart",)
-	onInteractiveAuthFlowStart: Optional[OnInteractiveAuthFlowStartHandler] = Field(default=None,alias="onInteractiveAuthFlowStart",)
-	onUserCreateStart: Optional[OnUserCreateStartHandler] = Field(default=None,alias="onUserCreateStart",)
+	onAttributeCollection: SerializeAsAny[Optional[OnAttributeCollectionHandler]] = Field(default=None,alias="onAttributeCollection",)
+	onAuthenticationMethodLoadStart: SerializeAsAny[Optional[OnAuthenticationMethodLoadStartHandler]] = Field(default=None,alias="onAuthenticationMethodLoadStart",)
+	onInteractiveAuthFlowStart: SerializeAsAny[Optional[OnInteractiveAuthFlowStartHandler]] = Field(default=None,alias="onInteractiveAuthFlowStart",)
+	onUserCreateStart: SerializeAsAny[Optional[OnUserCreateStartHandler]] = Field(default=None,alias="onUserCreateStart",)
 
 from .authentication_conditions import AuthenticationConditions
 from .on_attribute_collection_handler import OnAttributeCollectionHandler

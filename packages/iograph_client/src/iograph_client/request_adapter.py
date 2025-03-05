@@ -103,7 +103,7 @@ class HttpxRequestAdapter:
             
             if self._should_return_none(response):
                 return None
-            
+
             value = return_model.model_validate_json(response.text)
 
 

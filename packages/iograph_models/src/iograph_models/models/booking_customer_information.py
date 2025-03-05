@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class BookingCustomerInformation(BaseModel):
@@ -8,7 +8,7 @@ class BookingCustomerInformation(BaseModel):
 	customerId: Optional[str] = Field(default=None,alias="customerId",)
 	customQuestionAnswers: Optional[list[BookingQuestionAnswer]] = Field(default=None,alias="customQuestionAnswers",)
 	emailAddress: Optional[str] = Field(default=None,alias="emailAddress",)
-	location: Optional[Location] = Field(default=None,alias="location",)
+	location: SerializeAsAny[Optional[Location]] = Field(default=None,alias="location",)
 	name: Optional[str] = Field(default=None,alias="name",)
 	notes: Optional[str] = Field(default=None,alias="notes",)
 	phone: Optional[str] = Field(default=None,alias="phone",)

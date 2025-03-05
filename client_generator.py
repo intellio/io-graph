@@ -163,7 +163,7 @@ def get_field_type(prop_schema):
         raise Exception('Object type in schema: ' + str(prop_schema))
         return 'Dict[str, Any]'
     
-def _pydantic_field_type_write(field_model_name:str, field_type:str, nullable:bool =True):
+def _pydantic_field_type_write(field_model_name:str, field_type:str, nullable:bool =True, as_any: bool = False):
     python_builtin_types = ['str', 'int', 'float', 'bool', 'datetime', 'UUID']
 
     # if field_type.startswith('list['):
@@ -178,14 +178,19 @@ def _pydantic_field_type_write(field_model_name:str, field_type:str, nullable:bo
 
 
     if not nullable:
-        return f'{field_type} = Field(alias="{field_model_name}",)'
-
+        if as_any:
+            return f'SerializeAsAny[{field_type}] = Field(alias="{field_model_name}",)'
+        else:
+            return f'{field_type} = Field(alias="{field_model_name}",)'
     else:
         if 'Optional[' in field_type:
             # return f'{field_type} = Field(default=None,alias="{field_model_name}",)'
             raise Exception(f'Optional[ in field_type not supported for type: {field_type} model_name: {field_model_name}')
         else:
-            return f'Optional[{field_type}] = Field(default=None,alias="{field_model_name}",)'
+            if as_any:
+                return f'SerializeAsAny[Optional[{field_type}]] = Field(default=None,alias="{field_model_name}",)'
+            else:
+                return f'Optional[{field_type}] = Field(default=None,alias="{field_model_name}",)'
 
 def get_model_discriminator(schema):
     discriminator_mapping = {}
@@ -207,7 +212,14 @@ def get_model_discriminator(schema):
         return discriminator_field, discriminator_mapping
     else:
         return None
-        
+
+def _check_field_type_has_discriminator(model_name, components):
+    model_schema = components['schemas'][model_name]
+    if 'discriminator' in model_schema:
+        return True
+    else:
+        return False
+
 def get_schema_fields(name:str, schema, components,dependencies:list):
     fields = {}
 
@@ -225,15 +237,18 @@ def get_schema_fields(name:str, schema, components,dependencies:list):
 
     # Extract fields from properties
     if 'properties'  in schema:
+
         # extract fields from properties
         for prop_name, prop_schema in schema['properties'].items():
 
             if '$ref' in prop_schema:
                 model_name = prop_schema['$ref'].split('/')[-1]
+                has_discriminator = _check_field_type_has_discriminator(model_name, components)
                 fields[clean_field_name(prop_name)] = _pydantic_field_type_write(
                     field_model_name=prop_name,
                     field_type=module_class_name_from_name(model_name),
-                    nullable= prop_schema.get('nullable', True)
+                    nullable= prop_schema.get('nullable', True),
+                    as_any = has_discriminator
                 )
                 dependencies.append(model_name)
             
@@ -243,10 +258,12 @@ def get_schema_fields(name:str, schema, components,dependencies:list):
                 for item in prop_schema['anyOf']:
                     if '$ref' in item:
                         model_name = item['$ref'].split('/')[-1]
+                        has_discriminator = _check_field_type_has_discriminator(model_name, components)
                         fields[clean_field_name(prop_name)] = _pydantic_field_type_write(
                             field_model_name=prop_name,
                             field_type=module_class_name_from_name(model_name),
-                            nullable= prop_schema.get('nullable', True)
+                            nullable= prop_schema.get('nullable', True),
+                            as_any = has_discriminator
                         )
                         dependencies.append(model_name)
                         break
@@ -260,10 +277,12 @@ def get_schema_fields(name:str, schema, components,dependencies:list):
                 for item in prop_schema['oneOf']:
                     if '$ref' in item:
                         model_name = item['$ref'].split('/')[-1]
+                        has_discriminator = _check_field_type_has_discriminator(model_name, components)
                         field_types.append(module_class_name_from_name(model_name))
                         dependencies.append(model_name)
                     else:
                         field_types.append(get_field_type(item))
+                # Warning: this is not using the _pydantic_field_type_write function
                 fields[clean_field_name(prop_name)] = ' | '.join(field_types)
 
             elif 'type' in prop_schema:
@@ -271,12 +290,12 @@ def get_schema_fields(name:str, schema, components,dependencies:list):
                 # Handle if the property is an array
                 if prop_schema['type'] == 'array' and '$ref' in prop_schema['items']:
                     model_name = prop_schema['items']['$ref'].split('/')[-1]
+                    has_discriminator = _check_field_type_has_discriminator(model_name, components)
                     fields[clean_field_name(prop_name)] = _pydantic_field_type_write(
                         field_model_name=prop_name,
-
                         field_type=f"list[{module_class_name_from_name(model_name)}]",
                         nullable = True,
-                        # nullable= prop_schema.get('nullable', True)
+                        as_any= has_discriminator
                     )
                     dependencies.append(model_name)
 
@@ -293,11 +312,12 @@ def get_schema_fields(name:str, schema, components,dependencies:list):
                     if model_name is None:
                         raise Exception('No reference found in anyOf schema under items for model name: ' + name)
                     else:
+                        has_discriminator = _check_field_type_has_discriminator(model_name, components)
                         fields[clean_field_name(prop_name)] = _pydantic_field_type_write(
                             field_model_name=prop_name,
                             field_type=module_class_name_from_name(model_name),
-                            nullable= True
-                            # nullable= prop_schema.get('nullable', True)
+                            nullable= True,
+                            as_any = has_discriminator,
                         )
                 else:
                     fields[clean_field_name(prop_name)] = _pydantic_field_type_write(
@@ -354,7 +374,7 @@ def create_pydantic_model(name:str, schema, components):
         if any('datetime' in x for x in fields.values() if isinstance(x,str)):
             model_file_obj.write(f'from datetime import datetime\n')
 
-        model_file_obj.write(f'from pydantic import BaseModel, Field\n')
+        model_file_obj.write(f'from pydantic import BaseModel, Field, SerializeAsAny\n')
         model_file_obj.write('\n')
         model_file_obj.write('\n')
         

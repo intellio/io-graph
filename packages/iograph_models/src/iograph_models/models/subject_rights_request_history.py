@@ -1,11 +1,11 @@
 from __future__ import annotations
 from typing import Optional
 from datetime import datetime
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class SubjectRightsRequestHistory(BaseModel):
-	changedBy: Optional[IdentitySet] = Field(default=None,alias="changedBy",)
+	changedBy: SerializeAsAny[Optional[IdentitySet]] = Field(default=None,alias="changedBy",)
 	eventDateTime: Optional[datetime] = Field(default=None,alias="eventDateTime",)
 	stage: Optional[SubjectRightsRequestStage] = Field(default=None,alias="stage",)
 	stageStatus: Optional[SubjectRightsRequestStageStatus] = Field(default=None,alias="stageStatus",)

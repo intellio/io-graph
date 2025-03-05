@@ -1,7 +1,7 @@
 from __future__ import annotations
 from typing import Optional
 from datetime import datetime
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class BookingAppointment(BaseModel):
@@ -15,7 +15,7 @@ class BookingAppointment(BaseModel):
 	customerName: Optional[str] = Field(default=None,alias="customerName",)
 	customerNotes: Optional[str] = Field(default=None,alias="customerNotes",)
 	customerPhone: Optional[str] = Field(default=None,alias="customerPhone",)
-	customers: Optional[list[BookingCustomerInformationBase]] = Field(default=None,alias="customers",)
+	customers: SerializeAsAny[Optional[list[BookingCustomerInformationBase]]] = Field(default=None,alias="customers",)
 	customerTimeZone: Optional[str] = Field(default=None,alias="customerTimeZone",)
 	duration: Optional[str] = Field(default=None,alias="duration",)
 	endDateTime: Optional[DateTimeTimeZone] = Field(default=None,alias="endDateTime",)
@@ -33,7 +33,7 @@ class BookingAppointment(BaseModel):
 	reminders: Optional[list[BookingReminder]] = Field(default=None,alias="reminders",)
 	selfServiceAppointmentId: Optional[str] = Field(default=None,alias="selfServiceAppointmentId",)
 	serviceId: Optional[str] = Field(default=None,alias="serviceId",)
-	serviceLocation: Optional[Location] = Field(default=None,alias="serviceLocation",)
+	serviceLocation: SerializeAsAny[Optional[Location]] = Field(default=None,alias="serviceLocation",)
 	serviceName: Optional[str] = Field(default=None,alias="serviceName",)
 	serviceNotes: Optional[str] = Field(default=None,alias="serviceNotes",)
 	smsNotificationsEnabled: Optional[bool] = Field(default=None,alias="smsNotificationsEnabled",)

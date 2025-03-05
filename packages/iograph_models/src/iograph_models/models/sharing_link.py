@@ -1,10 +1,10 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class SharingLink(BaseModel):
-	application: Optional[Identity] = Field(default=None,alias="application",)
+	application: SerializeAsAny[Optional[Identity]] = Field(default=None,alias="application",)
 	preventsDownload: Optional[bool] = Field(default=None,alias="preventsDownload",)
 	scope: Optional[str] = Field(default=None,alias="scope",)
 	type: Optional[str] = Field(default=None,alias="type",)

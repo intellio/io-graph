@@ -1,7 +1,7 @@
 from __future__ import annotations
 from typing import Optional
 from datetime import datetime
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class Windows10CustomConfiguration(BaseModel):
@@ -18,7 +18,7 @@ class Windows10CustomConfiguration(BaseModel):
 	deviceStatusOverview: Optional[DeviceConfigurationDeviceOverview] = Field(default=None,alias="deviceStatusOverview",)
 	userStatuses: Optional[list[DeviceConfigurationUserStatus]] = Field(default=None,alias="userStatuses",)
 	userStatusOverview: Optional[DeviceConfigurationUserOverview] = Field(default=None,alias="userStatusOverview",)
-	omaSettings: Optional[list[OmaSetting]] = Field(default=None,alias="omaSettings",)
+	omaSettings: SerializeAsAny[Optional[list[OmaSetting]]] = Field(default=None,alias="omaSettings",)
 
 from .device_configuration_assignment import DeviceConfigurationAssignment
 from .setting_state_device_summary import SettingStateDeviceSummary

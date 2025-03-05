@@ -1,16 +1,16 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class CrossTenantAccessPolicyConfigurationDefault(BaseModel):
 	id: Optional[str] = Field(default=None,alias="id",)
 	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
 	automaticUserConsentSettings: Optional[InboundOutboundPolicyConfiguration] = Field(default=None,alias="automaticUserConsentSettings",)
-	b2bCollaborationInbound: Optional[CrossTenantAccessPolicyB2BSetting] = Field(default=None,alias="b2bCollaborationInbound",)
-	b2bCollaborationOutbound: Optional[CrossTenantAccessPolicyB2BSetting] = Field(default=None,alias="b2bCollaborationOutbound",)
-	b2bDirectConnectInbound: Optional[CrossTenantAccessPolicyB2BSetting] = Field(default=None,alias="b2bDirectConnectInbound",)
-	b2bDirectConnectOutbound: Optional[CrossTenantAccessPolicyB2BSetting] = Field(default=None,alias="b2bDirectConnectOutbound",)
+	b2bCollaborationInbound: SerializeAsAny[Optional[CrossTenantAccessPolicyB2BSetting]] = Field(default=None,alias="b2bCollaborationInbound",)
+	b2bCollaborationOutbound: SerializeAsAny[Optional[CrossTenantAccessPolicyB2BSetting]] = Field(default=None,alias="b2bCollaborationOutbound",)
+	b2bDirectConnectInbound: SerializeAsAny[Optional[CrossTenantAccessPolicyB2BSetting]] = Field(default=None,alias="b2bDirectConnectInbound",)
+	b2bDirectConnectOutbound: SerializeAsAny[Optional[CrossTenantAccessPolicyB2BSetting]] = Field(default=None,alias="b2bDirectConnectOutbound",)
 	inboundTrust: Optional[CrossTenantAccessPolicyInboundTrust] = Field(default=None,alias="inboundTrust",)
 	invitationRedemptionIdentityProviderConfiguration: Optional[DefaultInvitationRedemptionIdentityProviderConfiguration] = Field(default=None,alias="invitationRedemptionIdentityProviderConfiguration",)
 	isServiceDefault: Optional[bool] = Field(default=None,alias="isServiceDefault",)

@@ -14,8 +14,8 @@ if TYPE_CHECKING:
 	from .tasks import TasksRequest
 	from .extensions import ExtensionsRequest
 	from ......request_adapter import HttpxRequestAdapter
-from iograph_models.models.todo_task_list import TodoTaskList
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.models.todo_task_list import TodoTaskList
 
 
 class ByTodoTaskListIdRequest(BaseRequestBuilder):

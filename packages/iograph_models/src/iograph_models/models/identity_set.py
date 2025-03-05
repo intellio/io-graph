@@ -2,13 +2,13 @@ from __future__ import annotations
 from typing import Optional
 from pydantic import model_validator, ModelWrapValidatorHandler, ValidationError
 from typing_extensions import Self
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class IdentitySet(BaseModel):
-	application: Optional[Identity] = Field(default=None,alias="application",)
-	device: Optional[Identity] = Field(default=None,alias="device",)
-	user: Optional[Identity] = Field(default=None,alias="user",)
+	application: SerializeAsAny[Optional[Identity]] = Field(default=None,alias="application",)
+	device: SerializeAsAny[Optional[Identity]] = Field(default=None,alias="device",)
+	user: SerializeAsAny[Optional[Identity]] = Field(default=None,alias="user",)
 	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
 
 	@model_validator(mode="wrap")

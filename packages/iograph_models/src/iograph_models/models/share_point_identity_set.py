@@ -1,14 +1,14 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class SharePointIdentitySet(BaseModel):
-	application: Optional[Identity] = Field(default=None,alias="application",)
-	device: Optional[Identity] = Field(default=None,alias="device",)
-	user: Optional[Identity] = Field(default=None,alias="user",)
+	application: SerializeAsAny[Optional[Identity]] = Field(default=None,alias="application",)
+	device: SerializeAsAny[Optional[Identity]] = Field(default=None,alias="device",)
+	user: SerializeAsAny[Optional[Identity]] = Field(default=None,alias="user",)
 	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	group: Optional[Identity] = Field(default=None,alias="group",)
+	group: SerializeAsAny[Optional[Identity]] = Field(default=None,alias="group",)
 	siteGroup: Optional[SharePointIdentity] = Field(default=None,alias="siteGroup",)
 	siteUser: Optional[SharePointIdentity] = Field(default=None,alias="siteUser",)
 

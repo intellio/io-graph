@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class Get_group_archived_print_jobs_with_groupid_startdatetime_enddatetimeGetResponse(BaseModel):

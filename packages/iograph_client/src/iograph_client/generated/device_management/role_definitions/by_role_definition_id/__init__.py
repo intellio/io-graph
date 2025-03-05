@@ -13,8 +13,8 @@ from typing import TYPE_CHECKING
 if TYPE_CHECKING:
 	from .role_assignments import RoleAssignmentsRequest
 	from .....request_adapter import HttpxRequestAdapter
-from iograph_models.models.role_definition import RoleDefinition
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.models.role_definition import RoleDefinition
 
 
 class ByRoleDefinitionIdRequest(BaseRequestBuilder):

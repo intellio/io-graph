@@ -1,7 +1,7 @@
 from __future__ import annotations
 from typing import Optional
 from datetime import datetime
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class ApprovalStage(BaseModel):
@@ -10,7 +10,7 @@ class ApprovalStage(BaseModel):
 	assignedToMe: Optional[bool] = Field(default=None,alias="assignedToMe",)
 	displayName: Optional[str] = Field(default=None,alias="displayName",)
 	justification: Optional[str] = Field(default=None,alias="justification",)
-	reviewedBy: Optional[Identity] = Field(default=None,alias="reviewedBy",)
+	reviewedBy: SerializeAsAny[Optional[Identity]] = Field(default=None,alias="reviewedBy",)
 	reviewedDateTime: Optional[datetime] = Field(default=None,alias="reviewedDateTime",)
 	reviewResult: Optional[str] = Field(default=None,alias="reviewResult",)
 	status: Optional[str] = Field(default=None,alias="status",)

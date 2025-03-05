@@ -1,14 +1,14 @@
 from __future__ import annotations
 from typing import Optional
 from datetime import datetime
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class BrowserSiteHistory(BaseModel):
 	allowRedirect: Optional[bool] = Field(default=None,alias="allowRedirect",)
 	comment: Optional[str] = Field(default=None,alias="comment",)
 	compatibilityMode: Optional[BrowserSiteCompatibilityMode] = Field(default=None,alias="compatibilityMode",)
-	lastModifiedBy: Optional[IdentitySet] = Field(default=None,alias="lastModifiedBy",)
+	lastModifiedBy: SerializeAsAny[Optional[IdentitySet]] = Field(default=None,alias="lastModifiedBy",)
 	mergeType: Optional[BrowserSiteMergeType] = Field(default=None,alias="mergeType",)
 	publishedDateTime: Optional[datetime] = Field(default=None,alias="publishedDateTime",)
 	targetEnvironment: Optional[BrowserSiteTargetEnvironment] = Field(default=None,alias="targetEnvironment",)

@@ -1,10 +1,10 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class ForwardPostRequest(BaseModel):
-	ToRecipients: Optional[list[Recipient]] = Field(default=None,alias="ToRecipients",)
+	ToRecipients: SerializeAsAny[Optional[list[Recipient]]] = Field(default=None,alias="ToRecipients",)
 	Message: Optional[Message] = Field(default=None,alias="Message",)
 	Comment: Optional[str] = Field(default=None,alias="Comment",)
 

@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class MailTips(BaseModel):
@@ -14,7 +14,7 @@ class MailTips(BaseModel):
 	mailboxFull: Optional[bool] = Field(default=None,alias="mailboxFull",)
 	maxMessageSize: Optional[int] = Field(default=None,alias="maxMessageSize",)
 	recipientScope: Optional[RecipientScopeType] = Field(default=None,alias="recipientScope",)
-	recipientSuggestions: Optional[list[Recipient]] = Field(default=None,alias="recipientSuggestions",)
+	recipientSuggestions: SerializeAsAny[Optional[list[Recipient]]] = Field(default=None,alias="recipientSuggestions",)
 	totalMemberCount: Optional[int] = Field(default=None,alias="totalMemberCount",)
 	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
 

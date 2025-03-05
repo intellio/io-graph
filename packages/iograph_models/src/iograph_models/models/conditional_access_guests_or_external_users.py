@@ -1,10 +1,10 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class ConditionalAccessGuestsOrExternalUsers(BaseModel):
-	externalTenants: Optional[ConditionalAccessExternalTenants] = Field(default=None,alias="externalTenants",)
+	externalTenants: SerializeAsAny[Optional[ConditionalAccessExternalTenants]] = Field(default=None,alias="externalTenants",)
 	guestOrExternalUserTypes: Optional[ConditionalAccessGuestOrExternalUserTypes] = Field(default=None,alias="guestOrExternalUserTypes",)
 	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
 

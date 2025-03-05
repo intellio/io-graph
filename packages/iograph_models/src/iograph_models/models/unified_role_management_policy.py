@@ -1,7 +1,7 @@
 from __future__ import annotations
 from typing import Optional
 from datetime import datetime
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class UnifiedRoleManagementPolicy(BaseModel):
@@ -10,7 +10,7 @@ class UnifiedRoleManagementPolicy(BaseModel):
 	description: Optional[str] = Field(default=None,alias="description",)
 	displayName: Optional[str] = Field(default=None,alias="displayName",)
 	isOrganizationDefault: Optional[bool] = Field(default=None,alias="isOrganizationDefault",)
-	lastModifiedBy: Optional[Identity] = Field(default=None,alias="lastModifiedBy",)
+	lastModifiedBy: SerializeAsAny[Optional[Identity]] = Field(default=None,alias="lastModifiedBy",)
 	lastModifiedDateTime: Optional[datetime] = Field(default=None,alias="lastModifiedDateTime",)
 	scopeId: Optional[str] = Field(default=None,alias="scopeId",)
 	scopeType: Optional[str] = Field(default=None,alias="scopeType",)

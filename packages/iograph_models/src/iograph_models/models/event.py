@@ -1,7 +1,7 @@
 from __future__ import annotations
 from typing import Optional
 from datetime import datetime
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class Event(BaseModel):
@@ -26,12 +26,12 @@ class Event(BaseModel):
 	isOnlineMeeting: Optional[bool] = Field(default=None,alias="isOnlineMeeting",)
 	isOrganizer: Optional[bool] = Field(default=None,alias="isOrganizer",)
 	isReminderOn: Optional[bool] = Field(default=None,alias="isReminderOn",)
-	location: Optional[Location] = Field(default=None,alias="location",)
-	locations: Optional[list[Location]] = Field(default=None,alias="locations",)
+	location: SerializeAsAny[Optional[Location]] = Field(default=None,alias="location",)
+	locations: SerializeAsAny[Optional[list[Location]]] = Field(default=None,alias="locations",)
 	onlineMeeting: Optional[OnlineMeetingInfo] = Field(default=None,alias="onlineMeeting",)
 	onlineMeetingProvider: Optional[OnlineMeetingProviderType] = Field(default=None,alias="onlineMeetingProvider",)
 	onlineMeetingUrl: Optional[str] = Field(default=None,alias="onlineMeetingUrl",)
-	organizer: Optional[Recipient] = Field(default=None,alias="organizer",)
+	organizer: SerializeAsAny[Optional[Recipient]] = Field(default=None,alias="organizer",)
 	originalEndTimeZone: Optional[str] = Field(default=None,alias="originalEndTimeZone",)
 	originalStart: Optional[datetime] = Field(default=None,alias="originalStart",)
 	originalStartTimeZone: Optional[str] = Field(default=None,alias="originalStartTimeZone",)

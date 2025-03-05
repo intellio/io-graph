@@ -16,8 +16,8 @@ if TYPE_CHECKING:
 	from .by_call_id import ByCallIdRequest
 	from ....request_adapter import HttpxRequestAdapter
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
-from iograph_models.models.call import Call
 from iograph_models.models.call_collection_response import CallCollectionResponse
+from iograph_models.models.call import Call
 
 
 class CallsRequest(BaseRequestBuilder):

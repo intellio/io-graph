@@ -12,8 +12,8 @@ from typing import TYPE_CHECKING
 if TYPE_CHECKING:
 	from ....request_adapter import HttpxRequestAdapter
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
-from iograph_models.models.assign_license_post_request import Assign_licensePostRequest
 from iograph_models.models.assign_license_response import AssignLicenseResponse
+from iograph_models.models.assign_license_post_request import Assign_licensePostRequest
 
 
 class AssignLicenseRequest(BaseRequestBuilder):

@@ -14,9 +14,9 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_attack_simulation_operation_id import ByAttackSimulationOperationIdRequest
 	from .....request_adapter import HttpxRequestAdapter
-from iograph_models.models.attack_simulation_operation_collection_response import AttackSimulationOperationCollectionResponse
-from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.models.attack_simulation_operation import AttackSimulationOperation
+from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.models.attack_simulation_operation_collection_response import AttackSimulationOperationCollectionResponse
 
 
 class OperationsRequest(BaseRequestBuilder):

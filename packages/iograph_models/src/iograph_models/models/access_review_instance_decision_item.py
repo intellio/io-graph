@@ -1,7 +1,7 @@
 from __future__ import annotations
 from typing import Optional
 from datetime import datetime
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class AccessReviewInstanceDecisionItem(BaseModel):
@@ -13,10 +13,10 @@ class AccessReviewInstanceDecisionItem(BaseModel):
 	applyResult: Optional[str] = Field(default=None,alias="applyResult",)
 	decision: Optional[str] = Field(default=None,alias="decision",)
 	justification: Optional[str] = Field(default=None,alias="justification",)
-	principal: Optional[Identity] = Field(default=None,alias="principal",)
+	principal: SerializeAsAny[Optional[Identity]] = Field(default=None,alias="principal",)
 	principalLink: Optional[str] = Field(default=None,alias="principalLink",)
 	recommendation: Optional[str] = Field(default=None,alias="recommendation",)
-	resource: Optional[AccessReviewInstanceDecisionItemResource] = Field(default=None,alias="resource",)
+	resource: SerializeAsAny[Optional[AccessReviewInstanceDecisionItemResource]] = Field(default=None,alias="resource",)
 	resourceLink: Optional[str] = Field(default=None,alias="resourceLink",)
 	reviewedBy: Optional[UserIdentity] = Field(default=None,alias="reviewedBy",)
 	reviewedDateTime: Optional[datetime] = Field(default=None,alias="reviewedDateTime",)

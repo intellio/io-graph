@@ -1,7 +1,7 @@
 from __future__ import annotations
 from typing import Optional
 from datetime import datetime
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class SectionGroup(BaseModel):
@@ -9,9 +9,9 @@ class SectionGroup(BaseModel):
 	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
 	self: Optional[str] = Field(default=None,alias="self",)
 	createdDateTime: Optional[datetime] = Field(default=None,alias="createdDateTime",)
-	createdBy: Optional[IdentitySet] = Field(default=None,alias="createdBy",)
+	createdBy: SerializeAsAny[Optional[IdentitySet]] = Field(default=None,alias="createdBy",)
 	displayName: Optional[str] = Field(default=None,alias="displayName",)
-	lastModifiedBy: Optional[IdentitySet] = Field(default=None,alias="lastModifiedBy",)
+	lastModifiedBy: SerializeAsAny[Optional[IdentitySet]] = Field(default=None,alias="lastModifiedBy",)
 	lastModifiedDateTime: Optional[datetime] = Field(default=None,alias="lastModifiedDateTime",)
 	sectionGroupsUrl: Optional[str] = Field(default=None,alias="sectionGroupsUrl",)
 	sectionsUrl: Optional[str] = Field(default=None,alias="sectionsUrl",)

@@ -1,14 +1,14 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class MobileAppAssignment(BaseModel):
 	id: Optional[str] = Field(default=None,alias="id",)
 	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
 	intent: Optional[InstallIntent] = Field(default=None,alias="intent",)
-	settings: Optional[MobileAppAssignmentSettings] = Field(default=None,alias="settings",)
-	target: Optional[DeviceAndAppManagementAssignmentTarget] = Field(default=None,alias="target",)
+	settings: SerializeAsAny[Optional[MobileAppAssignmentSettings]] = Field(default=None,alias="settings",)
+	target: SerializeAsAny[Optional[DeviceAndAppManagementAssignmentTarget]] = Field(default=None,alias="target",)
 
 from .install_intent import InstallIntent
 from .mobile_app_assignment_settings import MobileAppAssignmentSettings

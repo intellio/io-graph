@@ -1,24 +1,24 @@
 from __future__ import annotations
 from typing import Optional
 from datetime import datetime
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class EducationSubmission(BaseModel):
 	id: Optional[str] = Field(default=None,alias="id",)
 	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	excusedBy: Optional[IdentitySet] = Field(default=None,alias="excusedBy",)
+	excusedBy: SerializeAsAny[Optional[IdentitySet]] = Field(default=None,alias="excusedBy",)
 	excusedDateTime: Optional[datetime] = Field(default=None,alias="excusedDateTime",)
-	reassignedBy: Optional[IdentitySet] = Field(default=None,alias="reassignedBy",)
+	reassignedBy: SerializeAsAny[Optional[IdentitySet]] = Field(default=None,alias="reassignedBy",)
 	reassignedDateTime: Optional[datetime] = Field(default=None,alias="reassignedDateTime",)
-	recipient: Optional[EducationSubmissionRecipient] = Field(default=None,alias="recipient",)
+	recipient: SerializeAsAny[Optional[EducationSubmissionRecipient]] = Field(default=None,alias="recipient",)
 	resourcesFolderUrl: Optional[str] = Field(default=None,alias="resourcesFolderUrl",)
-	returnedBy: Optional[IdentitySet] = Field(default=None,alias="returnedBy",)
+	returnedBy: SerializeAsAny[Optional[IdentitySet]] = Field(default=None,alias="returnedBy",)
 	returnedDateTime: Optional[datetime] = Field(default=None,alias="returnedDateTime",)
 	status: Optional[EducationSubmissionStatus] = Field(default=None,alias="status",)
-	submittedBy: Optional[IdentitySet] = Field(default=None,alias="submittedBy",)
+	submittedBy: SerializeAsAny[Optional[IdentitySet]] = Field(default=None,alias="submittedBy",)
 	submittedDateTime: Optional[datetime] = Field(default=None,alias="submittedDateTime",)
-	unsubmittedBy: Optional[IdentitySet] = Field(default=None,alias="unsubmittedBy",)
+	unsubmittedBy: SerializeAsAny[Optional[IdentitySet]] = Field(default=None,alias="unsubmittedBy",)
 	unsubmittedDateTime: Optional[datetime] = Field(default=None,alias="unsubmittedDateTime",)
 	webUrl: Optional[str] = Field(default=None,alias="webUrl",)
 	outcomes: Optional[list[EducationOutcome]] = Field(default=None,alias="outcomes",)

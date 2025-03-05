@@ -15,8 +15,8 @@ if TYPE_CHECKING:
 	from .by_teams_template_id import ByTeamsTemplateIdRequest
 	from ...request_adapter import HttpxRequestAdapter
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
-from iograph_models.models.teams_template import TeamsTemplate
 from iograph_models.models.teams_template_collection_response import TeamsTemplateCollectionResponse
+from iograph_models.models.teams_template import TeamsTemplate
 
 
 class TeamsTemplatesRequest(BaseRequestBuilder):

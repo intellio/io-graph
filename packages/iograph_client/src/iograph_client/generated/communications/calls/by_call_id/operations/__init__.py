@@ -14,9 +14,9 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_comms_operation_id import ByCommsOperationIdRequest
 	from ......request_adapter import HttpxRequestAdapter
-from iograph_models.models.comms_operation import CommsOperation
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.models.comms_operation_collection_response import CommsOperationCollectionResponse
+from iograph_models.models.comms_operation import CommsOperation
 
 
 class OperationsRequest(BaseRequestBuilder):

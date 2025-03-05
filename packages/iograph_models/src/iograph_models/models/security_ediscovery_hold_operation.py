@@ -1,7 +1,7 @@
 from __future__ import annotations
 from typing import Optional
 from datetime import datetime
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class SecurityEdiscoveryHoldOperation(BaseModel):
@@ -9,7 +9,7 @@ class SecurityEdiscoveryHoldOperation(BaseModel):
 	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
 	action: Optional[SecurityCaseAction] = Field(default=None,alias="action",)
 	completedDateTime: Optional[datetime] = Field(default=None,alias="completedDateTime",)
-	createdBy: Optional[IdentitySet] = Field(default=None,alias="createdBy",)
+	createdBy: SerializeAsAny[Optional[IdentitySet]] = Field(default=None,alias="createdBy",)
 	createdDateTime: Optional[datetime] = Field(default=None,alias="createdDateTime",)
 	percentProgress: Optional[int] = Field(default=None,alias="percentProgress",)
 	resultInfo: Optional[ResultInfo] = Field(default=None,alias="resultInfo",)

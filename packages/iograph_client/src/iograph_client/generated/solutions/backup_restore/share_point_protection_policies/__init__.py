@@ -14,8 +14,8 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_share_point_protection_policy_id import BySharePointProtectionPolicyIdRequest
 	from .....request_adapter import HttpxRequestAdapter
-from iograph_models.models.share_point_protection_policy_collection_response import SharePointProtectionPolicyCollectionResponse
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.models.share_point_protection_policy_collection_response import SharePointProtectionPolicyCollectionResponse
 from iograph_models.models.share_point_protection_policy import SharePointProtectionPolicy
 
 

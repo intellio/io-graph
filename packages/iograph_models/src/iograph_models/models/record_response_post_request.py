@@ -1,10 +1,10 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class Record_responsePostRequest(BaseModel):
-	prompts: Optional[list[Prompt]] = Field(default=None,alias="prompts",)
+	prompts: SerializeAsAny[Optional[list[Prompt]]] = Field(default=None,alias="prompts",)
 	bargeInAllowed: Optional[bool] = Field(default=None,alias="bargeInAllowed",)
 	initialSilenceTimeoutInSeconds: Optional[int] = Field(default=None,alias="initialSilenceTimeoutInSeconds",)
 	maxSilenceTimeoutInSeconds: Optional[int] = Field(default=None,alias="maxSilenceTimeoutInSeconds",)

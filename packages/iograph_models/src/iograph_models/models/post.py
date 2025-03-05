@@ -1,7 +1,7 @@
 from __future__ import annotations
 from typing import Optional
 from datetime import datetime
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class Post(BaseModel):
@@ -14,11 +14,11 @@ class Post(BaseModel):
 	body: Optional[ItemBody] = Field(default=None,alias="body",)
 	conversationId: Optional[str] = Field(default=None,alias="conversationId",)
 	conversationThreadId: Optional[str] = Field(default=None,alias="conversationThreadId",)
-	from_: Optional[Recipient] = Field(default=None,alias="from",)
+	from_: SerializeAsAny[Optional[Recipient]] = Field(default=None,alias="from",)
 	hasAttachments: Optional[bool] = Field(default=None,alias="hasAttachments",)
-	newParticipants: Optional[list[Recipient]] = Field(default=None,alias="newParticipants",)
+	newParticipants: SerializeAsAny[Optional[list[Recipient]]] = Field(default=None,alias="newParticipants",)
 	receivedDateTime: Optional[datetime] = Field(default=None,alias="receivedDateTime",)
-	sender: Optional[Recipient] = Field(default=None,alias="sender",)
+	sender: SerializeAsAny[Optional[Recipient]] = Field(default=None,alias="sender",)
 	attachments: Optional[list[Attachment]] = Field(default=None,alias="attachments",)
 	extensions: Optional[list[Extension]] = Field(default=None,alias="extensions",)
 	inReplyTo: Optional[Post] = Field(default=None,alias="inReplyTo",)

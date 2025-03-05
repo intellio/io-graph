@@ -1,7 +1,7 @@
 from __future__ import annotations
 from typing import Optional
 from datetime import datetime
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class OrgContact(BaseModel):
@@ -21,7 +21,7 @@ class OrgContact(BaseModel):
 	onPremisesSyncEnabled: Optional[bool] = Field(default=None,alias="onPremisesSyncEnabled",)
 	phones: Optional[list[Phone]] = Field(default=None,alias="phones",)
 	proxyAddresses: Optional[list[str]] = Field(default=None,alias="proxyAddresses",)
-	serviceProvisioningErrors: Optional[list[ServiceProvisioningError]] = Field(default=None,alias="serviceProvisioningErrors",)
+	serviceProvisioningErrors: SerializeAsAny[Optional[list[ServiceProvisioningError]]] = Field(default=None,alias="serviceProvisioningErrors",)
 	surname: Optional[str] = Field(default=None,alias="surname",)
 	directReports: Optional[list[DirectoryObject]] = Field(default=None,alias="directReports",)
 	manager: Optional[DirectoryObject] = Field(default=None,alias="manager",)

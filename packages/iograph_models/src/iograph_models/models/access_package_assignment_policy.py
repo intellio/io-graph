@@ -1,7 +1,7 @@
 from __future__ import annotations
 from typing import Optional
 from datetime import datetime
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class AccessPackageAssignmentPolicy(BaseModel):
@@ -17,7 +17,7 @@ class AccessPackageAssignmentPolicy(BaseModel):
 	requestApprovalSettings: Optional[AccessPackageAssignmentApprovalSettings] = Field(default=None,alias="requestApprovalSettings",)
 	requestorSettings: Optional[AccessPackageAssignmentRequestorSettings] = Field(default=None,alias="requestorSettings",)
 	reviewSettings: Optional[AccessPackageAssignmentReviewSettings] = Field(default=None,alias="reviewSettings",)
-	specificAllowedTargets: Optional[list[SubjectSet]] = Field(default=None,alias="specificAllowedTargets",)
+	specificAllowedTargets: SerializeAsAny[Optional[list[SubjectSet]]] = Field(default=None,alias="specificAllowedTargets",)
 	accessPackage: Optional[AccessPackage] = Field(default=None,alias="accessPackage",)
 	catalog: Optional[AccessPackageCatalog] = Field(default=None,alias="catalog",)
 	customExtensionStageSettings: Optional[list[CustomExtensionStageSetting]] = Field(default=None,alias="customExtensionStageSettings",)

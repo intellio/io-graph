@@ -1,7 +1,7 @@
 from __future__ import annotations
 from typing import Optional
 from datetime import datetime
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class BrowserSite(BaseModel):
@@ -13,7 +13,7 @@ class BrowserSite(BaseModel):
 	createdDateTime: Optional[datetime] = Field(default=None,alias="createdDateTime",)
 	deletedDateTime: Optional[datetime] = Field(default=None,alias="deletedDateTime",)
 	history: Optional[list[BrowserSiteHistory]] = Field(default=None,alias="history",)
-	lastModifiedBy: Optional[IdentitySet] = Field(default=None,alias="lastModifiedBy",)
+	lastModifiedBy: SerializeAsAny[Optional[IdentitySet]] = Field(default=None,alias="lastModifiedBy",)
 	lastModifiedDateTime: Optional[datetime] = Field(default=None,alias="lastModifiedDateTime",)
 	mergeType: Optional[BrowserSiteMergeType] = Field(default=None,alias="mergeType",)
 	status: Optional[BrowserSiteStatus] = Field(default=None,alias="status",)

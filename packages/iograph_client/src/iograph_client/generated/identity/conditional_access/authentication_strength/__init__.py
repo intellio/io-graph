@@ -13,8 +13,8 @@ if TYPE_CHECKING:
 	from .policies import PoliciesRequest
 	from .authentication_method_modes import AuthenticationMethodModesRequest
 	from .....request_adapter import HttpxRequestAdapter
-from iograph_models.models.authentication_strength_root import AuthenticationStrengthRoot
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.models.authentication_strength_root import AuthenticationStrengthRoot
 
 
 class AuthenticationStrengthRequest(BaseRequestBuilder):

@@ -1,7 +1,7 @@
 from __future__ import annotations
 from typing import Optional
 from datetime import datetime
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class SecurityRetentionLabel(BaseModel):
@@ -9,7 +9,7 @@ class SecurityRetentionLabel(BaseModel):
 	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
 	actionAfterRetentionPeriod: Optional[SecurityActionAfterRetentionPeriod] = Field(default=None,alias="actionAfterRetentionPeriod",)
 	behaviorDuringRetentionPeriod: Optional[SecurityBehaviorDuringRetentionPeriod] = Field(default=None,alias="behaviorDuringRetentionPeriod",)
-	createdBy: Optional[IdentitySet] = Field(default=None,alias="createdBy",)
+	createdBy: SerializeAsAny[Optional[IdentitySet]] = Field(default=None,alias="createdBy",)
 	createdDateTime: Optional[datetime] = Field(default=None,alias="createdDateTime",)
 	defaultRecordBehavior: Optional[SecurityDefaultRecordBehavior] = Field(default=None,alias="defaultRecordBehavior",)
 	descriptionForAdmins: Optional[str] = Field(default=None,alias="descriptionForAdmins",)
@@ -17,9 +17,9 @@ class SecurityRetentionLabel(BaseModel):
 	displayName: Optional[str] = Field(default=None,alias="displayName",)
 	isInUse: Optional[bool] = Field(default=None,alias="isInUse",)
 	labelToBeApplied: Optional[str] = Field(default=None,alias="labelToBeApplied",)
-	lastModifiedBy: Optional[IdentitySet] = Field(default=None,alias="lastModifiedBy",)
+	lastModifiedBy: SerializeAsAny[Optional[IdentitySet]] = Field(default=None,alias="lastModifiedBy",)
 	lastModifiedDateTime: Optional[datetime] = Field(default=None,alias="lastModifiedDateTime",)
-	retentionDuration: Optional[SecurityRetentionDuration] = Field(default=None,alias="retentionDuration",)
+	retentionDuration: SerializeAsAny[Optional[SecurityRetentionDuration]] = Field(default=None,alias="retentionDuration",)
 	retentionTrigger: Optional[SecurityRetentionTrigger] = Field(default=None,alias="retentionTrigger",)
 	descriptors: Optional[SecurityFilePlanDescriptor] = Field(default=None,alias="descriptors",)
 	dispositionReviewStages: Optional[list[SecurityDispositionReviewStage]] = Field(default=None,alias="dispositionReviewStages",)
