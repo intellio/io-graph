@@ -398,6 +398,7 @@ def create_pydantic_model(name:str, schema, components):
         if discriminator:
             model_file_obj.write(f'from pydantic import model_validator, ModelWrapValidatorHandler, ValidationError\n')
             model_file_obj.write(f'from typing_extensions import Self\n')
+            model_file_obj.write(f'from typing import Any\n')
 
         if any('datetime' in x for x in fields.values() if isinstance(x,str)):
             model_file_obj.write(f'from datetime import datetime\n')
