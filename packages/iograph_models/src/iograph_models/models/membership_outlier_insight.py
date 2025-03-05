@@ -5,16 +5,16 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class MembershipOutlierInsight(BaseModel):
-	id: Optional[str] = Field(default=None,alias="id",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	insightCreatedDateTime: Optional[datetime] = Field(default=None,alias="insightCreatedDateTime",)
-	containerId: Optional[str] = Field(default=None,alias="containerId",)
-	memberId: Optional[str] = Field(default=None,alias="memberId",)
-	outlierContainerType: Optional[OutlierContainerType] = Field(default=None,alias="outlierContainerType",)
-	outlierMemberType: Optional[OutlierMemberType] = Field(default=None,alias="outlierMemberType",)
-	container: SerializeAsAny[Optional[DirectoryObject]] = Field(default=None,alias="container",)
-	lastModifiedBy: Optional[User] = Field(default=None,alias="lastModifiedBy",)
-	member: SerializeAsAny[Optional[DirectoryObject]] = Field(default=None,alias="member",)
+	id: Optional[str] = Field(alias="id",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	insightCreatedDateTime: Optional[datetime] = Field(alias="insightCreatedDateTime",default=None,)
+	containerId: Optional[str] = Field(alias="containerId",default=None,)
+	memberId: Optional[str] = Field(alias="memberId",default=None,)
+	outlierContainerType: Optional[str | OutlierContainerType] = Field(alias="outlierContainerType",default=None,)
+	outlierMemberType: Optional[str | OutlierMemberType] = Field(alias="outlierMemberType",default=None,)
+	container: SerializeAsAny[Optional[DirectoryObject]] = Field(alias="container",default=None,)
+	lastModifiedBy: Optional[User] = Field(alias="lastModifiedBy",default=None,)
+	member: SerializeAsAny[Optional[DirectoryObject]] = Field(alias="member",default=None,)
 
 from .outlier_container_type import OutlierContainerType
 from .outlier_member_type import OutlierMemberType

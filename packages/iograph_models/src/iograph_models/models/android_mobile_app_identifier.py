@@ -4,7 +4,7 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class AndroidMobileAppIdentifier(BaseModel):
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	packageId: Optional[str] = Field(default=None,alias="packageId",)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	packageId: Optional[str] = Field(alias="packageId",default=None,)
 
 

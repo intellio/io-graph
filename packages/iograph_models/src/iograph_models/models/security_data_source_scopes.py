@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class SecurityDataSourceScopes(Enum):
+class SecurityDataSourceScopes(StrEnum):
 	none = "none"
 	allTenantMailboxes = "allTenantMailboxes"
 	allTenantSites = "allTenantSites"

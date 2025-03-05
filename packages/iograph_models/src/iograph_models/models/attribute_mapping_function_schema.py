@@ -4,9 +4,9 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class AttributeMappingFunctionSchema(BaseModel):
-	id: Optional[str] = Field(default=None,alias="id",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	parameters: Optional[list[AttributeMappingParameterSchema]] = Field(default=None,alias="parameters",)
+	id: Optional[str] = Field(alias="id",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	parameters: Optional[list[AttributeMappingParameterSchema]] = Field(alias="parameters",default=None,)
 
 from .attribute_mapping_parameter_schema import AttributeMappingParameterSchema
 

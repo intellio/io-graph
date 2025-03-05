@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class TemplateScenarios(Enum):
+class TemplateScenarios(StrEnum):
 	new = "new"
 	secureFoundation = "secureFoundation"
 	zeroTrust = "zeroTrust"

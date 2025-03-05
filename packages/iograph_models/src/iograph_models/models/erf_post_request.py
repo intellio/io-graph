@@ -4,7 +4,7 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class ErfPostRequest(BaseModel):
-	lowerLimit: Optional[str] = Field(default=None,alias="lowerLimit",)
-	upperLimit: Optional[str] = Field(default=None,alias="upperLimit",)
+	lowerLimit: Optional[str] = Field(alias="lowerLimit",default=None,)
+	upperLimit: Optional[str] = Field(alias="upperLimit",default=None,)
 
 

@@ -4,10 +4,10 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class OptionalClaims(BaseModel):
-	accessToken: Optional[list[OptionalClaim]] = Field(default=None,alias="accessToken",)
-	idToken: Optional[list[OptionalClaim]] = Field(default=None,alias="idToken",)
-	saml2Token: Optional[list[OptionalClaim]] = Field(default=None,alias="saml2Token",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
+	accessToken: Optional[list[OptionalClaim]] = Field(alias="accessToken",default=None,)
+	idToken: Optional[list[OptionalClaim]] = Field(alias="idToken",default=None,)
+	saml2Token: Optional[list[OptionalClaim]] = Field(alias="saml2Token",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 
 from .optional_claim import OptionalClaim
 from .optional_claim import OptionalClaim

@@ -4,8 +4,8 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class SecuritySensorDeploymentPackage(BaseModel):
-	downloadUrl: Optional[str] = Field(default=None,alias="downloadUrl",)
-	version: Optional[str] = Field(default=None,alias="version",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
+	downloadUrl: Optional[str] = Field(alias="downloadUrl",default=None,)
+	version: Optional[str] = Field(alias="version",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 
 

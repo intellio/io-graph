@@ -4,22 +4,22 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class SearchRequest(BaseModel):
-	aggregationFilters: Optional[list[str]] = Field(default=None,alias="aggregationFilters",)
-	aggregations: Optional[list[AggregationOption]] = Field(default=None,alias="aggregations",)
-	collapseProperties: Optional[list[CollapseProperty]] = Field(default=None,alias="collapseProperties",)
-	contentSources: Optional[list[str]] = Field(default=None,alias="contentSources",)
-	enableTopResults: Optional[bool] = Field(default=None,alias="enableTopResults",)
-	entityTypes: Optional[EntityType] = Field(default=None,alias="entityTypes",)
-	fields: Optional[list[str]] = Field(default=None,alias="fields",)
-	from_: Optional[int] = Field(default=None,alias="from",)
-	query: Optional[SearchQuery] = Field(default=None,alias="query",)
-	queryAlterationOptions: Optional[SearchAlterationOptions] = Field(default=None,alias="queryAlterationOptions",)
-	region: Optional[str] = Field(default=None,alias="region",)
-	resultTemplateOptions: Optional[ResultTemplateOption] = Field(default=None,alias="resultTemplateOptions",)
-	sharePointOneDriveOptions: Optional[SharePointOneDriveOptions] = Field(default=None,alias="sharePointOneDriveOptions",)
-	size: Optional[int] = Field(default=None,alias="size",)
-	sortProperties: Optional[list[SortProperty]] = Field(default=None,alias="sortProperties",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
+	aggregationFilters: Optional[list[str]] = Field(alias="aggregationFilters",default=None,)
+	aggregations: Optional[list[AggregationOption]] = Field(alias="aggregations",default=None,)
+	collapseProperties: Optional[list[CollapseProperty]] = Field(alias="collapseProperties",default=None,)
+	contentSources: Optional[list[str]] = Field(alias="contentSources",default=None,)
+	enableTopResults: Optional[bool] = Field(alias="enableTopResults",default=None,)
+	entityTypes: Optional[str | EntityType] = Field(alias="entityTypes",default=None,)
+	fields: Optional[list[str]] = Field(alias="fields",default=None,)
+	from_: Optional[int] = Field(alias="from",default=None,)
+	query: Optional[SearchQuery] = Field(alias="query",default=None,)
+	queryAlterationOptions: Optional[SearchAlterationOptions] = Field(alias="queryAlterationOptions",default=None,)
+	region: Optional[str] = Field(alias="region",default=None,)
+	resultTemplateOptions: Optional[ResultTemplateOption] = Field(alias="resultTemplateOptions",default=None,)
+	sharePointOneDriveOptions: Optional[SharePointOneDriveOptions] = Field(alias="sharePointOneDriveOptions",default=None,)
+	size: Optional[int] = Field(alias="size",default=None,)
+	sortProperties: Optional[list[SortProperty]] = Field(alias="sortProperties",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 
 from .aggregation_option import AggregationOption
 from .collapse_property import CollapseProperty

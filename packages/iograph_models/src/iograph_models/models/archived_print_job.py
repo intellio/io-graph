@@ -5,17 +5,17 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class ArchivedPrintJob(BaseModel):
-	acquiredByPrinter: Optional[bool] = Field(default=None,alias="acquiredByPrinter",)
-	acquiredDateTime: Optional[datetime] = Field(default=None,alias="acquiredDateTime",)
-	completionDateTime: Optional[datetime] = Field(default=None,alias="completionDateTime",)
-	copiesPrinted: Optional[int] = Field(default=None,alias="copiesPrinted",)
-	createdBy: Optional[UserIdentity] = Field(default=None,alias="createdBy",)
-	createdDateTime: Optional[datetime] = Field(default=None,alias="createdDateTime",)
-	id: Optional[str] = Field(default=None,alias="id",)
-	printerId: Optional[str] = Field(default=None,alias="printerId",)
-	printerName: Optional[str] = Field(default=None,alias="printerName",)
-	processingState: Optional[PrintJobProcessingState] = Field(default=None,alias="processingState",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
+	acquiredByPrinter: Optional[bool] = Field(alias="acquiredByPrinter",default=None,)
+	acquiredDateTime: Optional[datetime] = Field(alias="acquiredDateTime",default=None,)
+	completionDateTime: Optional[datetime] = Field(alias="completionDateTime",default=None,)
+	copiesPrinted: Optional[int] = Field(alias="copiesPrinted",default=None,)
+	createdBy: Optional[UserIdentity] = Field(alias="createdBy",default=None,)
+	createdDateTime: Optional[datetime] = Field(alias="createdDateTime",default=None,)
+	id: Optional[str] = Field(alias="id",default=None,)
+	printerId: Optional[str] = Field(alias="printerId",default=None,)
+	printerName: Optional[str] = Field(alias="printerName",default=None,)
+	processingState: Optional[str | PrintJobProcessingState] = Field(alias="processingState",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 
 from .user_identity import UserIdentity
 from .print_job_processing_state import PrintJobProcessingState

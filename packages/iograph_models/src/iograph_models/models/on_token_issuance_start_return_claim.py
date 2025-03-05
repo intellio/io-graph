@@ -4,7 +4,7 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class OnTokenIssuanceStartReturnClaim(BaseModel):
-	claimIdInApiResponse: Optional[str] = Field(default=None,alias="claimIdInApiResponse",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
+	claimIdInApiResponse: Optional[str] = Field(alias="claimIdInApiResponse",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 
 

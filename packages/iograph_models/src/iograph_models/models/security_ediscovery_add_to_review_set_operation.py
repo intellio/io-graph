@@ -5,17 +5,17 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class SecurityEdiscoveryAddToReviewSetOperation(BaseModel):
-	id: Optional[str] = Field(default=None,alias="id",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	action: Optional[SecurityCaseAction] = Field(default=None,alias="action",)
-	completedDateTime: Optional[datetime] = Field(default=None,alias="completedDateTime",)
-	createdBy: SerializeAsAny[Optional[IdentitySet]] = Field(default=None,alias="createdBy",)
-	createdDateTime: Optional[datetime] = Field(default=None,alias="createdDateTime",)
-	percentProgress: Optional[int] = Field(default=None,alias="percentProgress",)
-	resultInfo: Optional[ResultInfo] = Field(default=None,alias="resultInfo",)
-	status: Optional[SecurityCaseOperationStatus] = Field(default=None,alias="status",)
-	reviewSet: Optional[SecurityEdiscoveryReviewSet] = Field(default=None,alias="reviewSet",)
-	search: Optional[SecurityEdiscoverySearch] = Field(default=None,alias="search",)
+	id: Optional[str] = Field(alias="id",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	action: Optional[str | SecurityCaseAction] = Field(alias="action",default=None,)
+	completedDateTime: Optional[datetime] = Field(alias="completedDateTime",default=None,)
+	createdBy: SerializeAsAny[Optional[IdentitySet]] = Field(alias="createdBy",default=None,)
+	createdDateTime: Optional[datetime] = Field(alias="createdDateTime",default=None,)
+	percentProgress: Optional[int] = Field(alias="percentProgress",default=None,)
+	resultInfo: Optional[ResultInfo] = Field(alias="resultInfo",default=None,)
+	status: Optional[str | SecurityCaseOperationStatus] = Field(alias="status",default=None,)
+	reviewSet: Optional[SecurityEdiscoveryReviewSet] = Field(alias="reviewSet",default=None,)
+	search: Optional[SecurityEdiscoverySearch] = Field(alias="search",default=None,)
 
 from .security_case_action import SecurityCaseAction
 from .identity_set import IdentitySet

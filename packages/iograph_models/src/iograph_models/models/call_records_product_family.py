@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class CallRecordsProductFamily(Enum):
+class CallRecordsProductFamily(StrEnum):
 	unknown = "unknown"
 	teams = "teams"
 	skypeForBusiness = "skypeForBusiness"

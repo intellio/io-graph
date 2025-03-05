@@ -4,7 +4,7 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class InsightValueInt(BaseModel):
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	value: Optional[int] = Field(default=None,alias="value",)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	value: Optional[int] = Field(alias="value",default=None,)
 
 

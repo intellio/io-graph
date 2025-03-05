@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class MobileAppPublishingState(Enum):
+class MobileAppPublishingState(StrEnum):
 	notPublished = "notPublished"
 	processing = "processing"
 	published = "published"

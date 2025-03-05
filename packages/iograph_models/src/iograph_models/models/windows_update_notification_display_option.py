@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class WindowsUpdateNotificationDisplayOption(Enum):
+class WindowsUpdateNotificationDisplayOption(StrEnum):
 	notConfigured = "notConfigured"
 	defaultNotifications = "defaultNotifications"
 	restartWarningsOnly = "restartWarningsOnly"

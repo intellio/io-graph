@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class RatingGermanyTelevisionType(Enum):
+class RatingGermanyTelevisionType(StrEnum):
 	allAllowed = "allAllowed"
 	allBlocked = "allBlocked"
 	general = "general"

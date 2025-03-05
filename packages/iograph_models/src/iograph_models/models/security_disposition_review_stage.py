@@ -4,10 +4,10 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class SecurityDispositionReviewStage(BaseModel):
-	id: Optional[str] = Field(default=None,alias="id",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	name: Optional[str] = Field(default=None,alias="name",)
-	reviewersEmailAddresses: Optional[list[str]] = Field(default=None,alias="reviewersEmailAddresses",)
-	stageNumber: Optional[str] = Field(default=None,alias="stageNumber",)
+	id: Optional[str] = Field(alias="id",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	name: Optional[str] = Field(alias="name",default=None,)
+	reviewersEmailAddresses: Optional[list[str]] = Field(alias="reviewersEmailAddresses",default=None,)
+	stageNumber: Optional[str] = Field(alias="stageNumber",default=None,)
 
 

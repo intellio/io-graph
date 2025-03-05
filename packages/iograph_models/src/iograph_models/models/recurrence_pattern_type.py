@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class RecurrencePatternType(Enum):
+class RecurrencePatternType(StrEnum):
 	daily = "daily"
 	weekly = "weekly"
 	absoluteMonthly = "absoluteMonthly"

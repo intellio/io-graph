@@ -5,22 +5,22 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class Notebook(BaseModel):
-	id: Optional[str] = Field(default=None,alias="id",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	self: Optional[str] = Field(default=None,alias="self",)
-	createdDateTime: Optional[datetime] = Field(default=None,alias="createdDateTime",)
-	createdBy: SerializeAsAny[Optional[IdentitySet]] = Field(default=None,alias="createdBy",)
-	displayName: Optional[str] = Field(default=None,alias="displayName",)
-	lastModifiedBy: SerializeAsAny[Optional[IdentitySet]] = Field(default=None,alias="lastModifiedBy",)
-	lastModifiedDateTime: Optional[datetime] = Field(default=None,alias="lastModifiedDateTime",)
-	isDefault: Optional[bool] = Field(default=None,alias="isDefault",)
-	isShared: Optional[bool] = Field(default=None,alias="isShared",)
-	links: Optional[NotebookLinks] = Field(default=None,alias="links",)
-	sectionGroupsUrl: Optional[str] = Field(default=None,alias="sectionGroupsUrl",)
-	sectionsUrl: Optional[str] = Field(default=None,alias="sectionsUrl",)
-	userRole: Optional[OnenoteUserRole] = Field(default=None,alias="userRole",)
-	sectionGroups: Optional[list[SectionGroup]] = Field(default=None,alias="sectionGroups",)
-	sections: Optional[list[OnenoteSection]] = Field(default=None,alias="sections",)
+	id: Optional[str] = Field(alias="id",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	self: Optional[str] = Field(alias="self",default=None,)
+	createdDateTime: Optional[datetime] = Field(alias="createdDateTime",default=None,)
+	createdBy: SerializeAsAny[Optional[IdentitySet]] = Field(alias="createdBy",default=None,)
+	displayName: Optional[str] = Field(alias="displayName",default=None,)
+	lastModifiedBy: SerializeAsAny[Optional[IdentitySet]] = Field(alias="lastModifiedBy",default=None,)
+	lastModifiedDateTime: Optional[datetime] = Field(alias="lastModifiedDateTime",default=None,)
+	isDefault: Optional[bool] = Field(alias="isDefault",default=None,)
+	isShared: Optional[bool] = Field(alias="isShared",default=None,)
+	links: Optional[NotebookLinks] = Field(alias="links",default=None,)
+	sectionGroupsUrl: Optional[str] = Field(alias="sectionGroupsUrl",default=None,)
+	sectionsUrl: Optional[str] = Field(alias="sectionsUrl",default=None,)
+	userRole: Optional[str | OnenoteUserRole] = Field(alias="userRole",default=None,)
+	sectionGroups: Optional[list[SectionGroup]] = Field(alias="sectionGroups",default=None,)
+	sections: Optional[list[OnenoteSection]] = Field(alias="sections",default=None,)
 
 from .identity_set import IdentitySet
 from .identity_set import IdentitySet

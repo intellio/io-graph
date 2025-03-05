@@ -4,7 +4,7 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class UpgradePostRequest(BaseModel):
-	consentedPermissionSet: Optional[TeamsAppPermissionSet] = Field(default=None,alias="consentedPermissionSet",)
+	consentedPermissionSet: Optional[TeamsAppPermissionSet] = Field(alias="consentedPermissionSet",default=None,)
 
 from .teams_app_permission_set import TeamsAppPermissionSet
 

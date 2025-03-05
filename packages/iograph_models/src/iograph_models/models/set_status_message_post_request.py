@@ -4,7 +4,7 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class Set_status_messagePostRequest(BaseModel):
-	statusMessage: Optional[PresenceStatusMessage] = Field(default=None,alias="statusMessage",)
+	statusMessage: Optional[PresenceStatusMessage] = Field(alias="statusMessage",default=None,)
 
 from .presence_status_message import PresenceStatusMessage
 

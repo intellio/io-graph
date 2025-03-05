@@ -4,13 +4,13 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class OnlineMeetingInfo(BaseModel):
-	conferenceId: Optional[str] = Field(default=None,alias="conferenceId",)
-	joinUrl: Optional[str] = Field(default=None,alias="joinUrl",)
-	phones: Optional[list[Phone]] = Field(default=None,alias="phones",)
-	quickDial: Optional[str] = Field(default=None,alias="quickDial",)
-	tollFreeNumbers: Optional[list[str]] = Field(default=None,alias="tollFreeNumbers",)
-	tollNumber: Optional[str] = Field(default=None,alias="tollNumber",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
+	conferenceId: Optional[str] = Field(alias="conferenceId",default=None,)
+	joinUrl: Optional[str] = Field(alias="joinUrl",default=None,)
+	phones: Optional[list[Phone]] = Field(alias="phones",default=None,)
+	quickDial: Optional[str] = Field(alias="quickDial",default=None,)
+	tollFreeNumbers: Optional[list[str]] = Field(alias="tollFreeNumbers",default=None,)
+	tollNumber: Optional[str] = Field(alias="tollNumber",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 
 from .phone import Phone
 

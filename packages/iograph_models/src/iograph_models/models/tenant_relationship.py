@@ -4,10 +4,10 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class TenantRelationship(BaseModel):
-	delegatedAdminCustomers: Optional[list[DelegatedAdminCustomer]] = Field(default=None,alias="delegatedAdminCustomers",)
-	delegatedAdminRelationships: SerializeAsAny[Optional[list[DelegatedAdminRelationship]]] = Field(default=None,alias="delegatedAdminRelationships",)
-	multiTenantOrganization: Optional[MultiTenantOrganization] = Field(default=None,alias="multiTenantOrganization",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
+	delegatedAdminCustomers: Optional[list[DelegatedAdminCustomer]] = Field(alias="delegatedAdminCustomers",default=None,)
+	delegatedAdminRelationships: SerializeAsAny[Optional[list[DelegatedAdminRelationship]]] = Field(alias="delegatedAdminRelationships",default=None,)
+	multiTenantOrganization: Optional[MultiTenantOrganization] = Field(alias="multiTenantOrganization",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 
 from .delegated_admin_customer import DelegatedAdminCustomer
 from .delegated_admin_relationship import DelegatedAdminRelationship

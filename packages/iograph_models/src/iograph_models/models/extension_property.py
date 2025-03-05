@@ -5,14 +5,14 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class ExtensionProperty(BaseModel):
-	id: Optional[str] = Field(default=None,alias="id",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	deletedDateTime: Optional[datetime] = Field(default=None,alias="deletedDateTime",)
-	appDisplayName: Optional[str] = Field(default=None,alias="appDisplayName",)
-	dataType: Optional[str] = Field(default=None,alias="dataType",)
-	isMultiValued: Optional[bool] = Field(default=None,alias="isMultiValued",)
-	isSyncedFromOnPremises: Optional[bool] = Field(default=None,alias="isSyncedFromOnPremises",)
-	name: Optional[str] = Field(default=None,alias="name",)
-	targetObjects: Optional[list[str]] = Field(default=None,alias="targetObjects",)
+	id: Optional[str] = Field(alias="id",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	deletedDateTime: Optional[datetime] = Field(alias="deletedDateTime",default=None,)
+	appDisplayName: Optional[str] = Field(alias="appDisplayName",default=None,)
+	dataType: Optional[str] = Field(alias="dataType",default=None,)
+	isMultiValued: Optional[bool] = Field(alias="isMultiValued",default=None,)
+	isSyncedFromOnPremises: Optional[bool] = Field(alias="isSyncedFromOnPremises",default=None,)
+	name: Optional[str] = Field(alias="name",default=None,)
+	targetObjects: Optional[list[str]] = Field(alias="targetObjects",default=None,)
 
 

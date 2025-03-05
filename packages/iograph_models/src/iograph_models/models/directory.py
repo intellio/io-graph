@@ -4,16 +4,16 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class Directory(BaseModel):
-	id: Optional[str] = Field(default=None,alias="id",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	administrativeUnits: Optional[list[AdministrativeUnit]] = Field(default=None,alias="administrativeUnits",)
-	attributeSets: Optional[list[AttributeSet]] = Field(default=None,alias="attributeSets",)
-	customSecurityAttributeDefinitions: Optional[list[CustomSecurityAttributeDefinition]] = Field(default=None,alias="customSecurityAttributeDefinitions",)
-	deletedItems: SerializeAsAny[Optional[list[DirectoryObject]]] = Field(default=None,alias="deletedItems",)
-	deviceLocalCredentials: Optional[list[DeviceLocalCredentialInfo]] = Field(default=None,alias="deviceLocalCredentials",)
-	federationConfigurations: SerializeAsAny[Optional[list[IdentityProviderBase]]] = Field(default=None,alias="federationConfigurations",)
-	onPremisesSynchronization: Optional[list[OnPremisesDirectorySynchronization]] = Field(default=None,alias="onPremisesSynchronization",)
-	subscriptions: Optional[list[CompanySubscription]] = Field(default=None,alias="subscriptions",)
+	id: Optional[str] = Field(alias="id",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	administrativeUnits: Optional[list[AdministrativeUnit]] = Field(alias="administrativeUnits",default=None,)
+	attributeSets: Optional[list[AttributeSet]] = Field(alias="attributeSets",default=None,)
+	customSecurityAttributeDefinitions: Optional[list[CustomSecurityAttributeDefinition]] = Field(alias="customSecurityAttributeDefinitions",default=None,)
+	deletedItems: SerializeAsAny[Optional[list[DirectoryObject]]] = Field(alias="deletedItems",default=None,)
+	deviceLocalCredentials: Optional[list[DeviceLocalCredentialInfo]] = Field(alias="deviceLocalCredentials",default=None,)
+	federationConfigurations: SerializeAsAny[Optional[list[IdentityProviderBase]]] = Field(alias="federationConfigurations",default=None,)
+	onPremisesSynchronization: Optional[list[OnPremisesDirectorySynchronization]] = Field(alias="onPremisesSynchronization",default=None,)
+	subscriptions: Optional[list[CompanySubscription]] = Field(alias="subscriptions",default=None,)
 
 from .administrative_unit import AdministrativeUnit
 from .attribute_set import AttributeSet

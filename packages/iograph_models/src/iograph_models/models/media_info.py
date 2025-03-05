@@ -4,8 +4,8 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class MediaInfo(BaseModel):
-	resourceId: Optional[str] = Field(default=None,alias="resourceId",)
-	uri: Optional[str] = Field(default=None,alias="uri",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
+	resourceId: Optional[str] = Field(alias="resourceId",default=None,)
+	uri: Optional[str] = Field(alias="uri",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 
 

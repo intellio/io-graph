@@ -4,17 +4,17 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class TitleArea(BaseModel):
-	alternativeText: Optional[str] = Field(default=None,alias="alternativeText",)
-	enableGradientEffect: Optional[bool] = Field(default=None,alias="enableGradientEffect",)
-	imageWebUrl: Optional[str] = Field(default=None,alias="imageWebUrl",)
-	layout: Optional[TitleAreaLayoutType] = Field(default=None,alias="layout",)
-	serverProcessedContent: Optional[ServerProcessedContent] = Field(default=None,alias="serverProcessedContent",)
-	showAuthor: Optional[bool] = Field(default=None,alias="showAuthor",)
-	showPublishedDate: Optional[bool] = Field(default=None,alias="showPublishedDate",)
-	showTextBlockAboveTitle: Optional[bool] = Field(default=None,alias="showTextBlockAboveTitle",)
-	textAboveTitle: Optional[str] = Field(default=None,alias="textAboveTitle",)
-	textAlignment: Optional[TitleAreaTextAlignmentType] = Field(default=None,alias="textAlignment",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
+	alternativeText: Optional[str] = Field(alias="alternativeText",default=None,)
+	enableGradientEffect: Optional[bool] = Field(alias="enableGradientEffect",default=None,)
+	imageWebUrl: Optional[str] = Field(alias="imageWebUrl",default=None,)
+	layout: Optional[str | TitleAreaLayoutType] = Field(alias="layout",default=None,)
+	serverProcessedContent: Optional[ServerProcessedContent] = Field(alias="serverProcessedContent",default=None,)
+	showAuthor: Optional[bool] = Field(alias="showAuthor",default=None,)
+	showPublishedDate: Optional[bool] = Field(alias="showPublishedDate",default=None,)
+	showTextBlockAboveTitle: Optional[bool] = Field(alias="showTextBlockAboveTitle",default=None,)
+	textAboveTitle: Optional[str] = Field(alias="textAboveTitle",default=None,)
+	textAlignment: Optional[str | TitleAreaTextAlignmentType] = Field(alias="textAlignment",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 
 from .title_area_layout_type import TitleAreaLayoutType
 from .server_processed_content import ServerProcessedContent

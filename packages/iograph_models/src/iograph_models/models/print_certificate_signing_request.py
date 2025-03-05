@@ -4,8 +4,8 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class PrintCertificateSigningRequest(BaseModel):
-	content: Optional[str] = Field(default=None,alias="content",)
-	transportKey: Optional[str] = Field(default=None,alias="transportKey",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
+	content: Optional[str] = Field(alias="content",default=None,)
+	transportKey: Optional[str] = Field(alias="transportKey",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 
 

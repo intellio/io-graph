@@ -4,10 +4,10 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class ConversationMemberRoleUpdatedEventMessageDetail(BaseModel):
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	conversationMemberRoles: Optional[list[str]] = Field(default=None,alias="conversationMemberRoles",)
-	conversationMemberUser: Optional[TeamworkUserIdentity] = Field(default=None,alias="conversationMemberUser",)
-	initiator: SerializeAsAny[Optional[IdentitySet]] = Field(default=None,alias="initiator",)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	conversationMemberRoles: Optional[list[str]] = Field(alias="conversationMemberRoles",default=None,)
+	conversationMemberUser: Optional[TeamworkUserIdentity] = Field(alias="conversationMemberUser",default=None,)
+	initiator: SerializeAsAny[Optional[IdentitySet]] = Field(alias="initiator",default=None,)
 
 from .teamwork_user_identity import TeamworkUserIdentity
 from .identity_set import IdentitySet

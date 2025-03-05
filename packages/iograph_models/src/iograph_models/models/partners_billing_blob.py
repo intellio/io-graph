@@ -4,8 +4,8 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class PartnersBillingBlob(BaseModel):
-	name: Optional[str] = Field(default=None,alias="name",)
-	partitionValue: Optional[str] = Field(default=None,alias="partitionValue",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
+	name: Optional[str] = Field(alias="name",default=None,)
+	partitionValue: Optional[str] = Field(alias="partitionValue",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 
 

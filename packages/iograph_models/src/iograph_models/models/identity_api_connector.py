@@ -4,11 +4,11 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class IdentityApiConnector(BaseModel):
-	id: Optional[str] = Field(default=None,alias="id",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	authenticationConfiguration: SerializeAsAny[Optional[ApiAuthenticationConfigurationBase]] = Field(default=None,alias="authenticationConfiguration",)
-	displayName: Optional[str] = Field(default=None,alias="displayName",)
-	targetUrl: Optional[str] = Field(default=None,alias="targetUrl",)
+	id: Optional[str] = Field(alias="id",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	authenticationConfiguration: SerializeAsAny[Optional[ApiAuthenticationConfigurationBase]] = Field(alias="authenticationConfiguration",default=None,)
+	displayName: Optional[str] = Field(alias="displayName",default=None,)
+	targetUrl: Optional[str] = Field(alias="targetUrl",default=None,)
 
 from .api_authentication_configuration_base import ApiAuthenticationConfigurationBase
 

@@ -5,13 +5,13 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class SecurityHostTracker(BaseModel):
-	id: Optional[str] = Field(default=None,alias="id",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	firstSeenDateTime: Optional[datetime] = Field(default=None,alias="firstSeenDateTime",)
-	kind: Optional[str] = Field(default=None,alias="kind",)
-	lastSeenDateTime: Optional[datetime] = Field(default=None,alias="lastSeenDateTime",)
-	value: Optional[str] = Field(default=None,alias="value",)
-	host: SerializeAsAny[Optional[SecurityHost]] = Field(default=None,alias="host",)
+	id: Optional[str] = Field(alias="id",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	firstSeenDateTime: Optional[datetime] = Field(alias="firstSeenDateTime",default=None,)
+	kind: Optional[str] = Field(alias="kind",default=None,)
+	lastSeenDateTime: Optional[datetime] = Field(alias="lastSeenDateTime",default=None,)
+	value: Optional[str] = Field(alias="value",default=None,)
+	host: SerializeAsAny[Optional[SecurityHost]] = Field(alias="host",default=None,)
 
 from .security_host import SecurityHost
 

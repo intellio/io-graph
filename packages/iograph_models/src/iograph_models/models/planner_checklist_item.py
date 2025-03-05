@@ -5,12 +5,12 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class PlannerChecklistItem(BaseModel):
-	isChecked: Optional[bool] = Field(default=None,alias="isChecked",)
-	lastModifiedBy: SerializeAsAny[Optional[IdentitySet]] = Field(default=None,alias="lastModifiedBy",)
-	lastModifiedDateTime: Optional[datetime] = Field(default=None,alias="lastModifiedDateTime",)
-	orderHint: Optional[str] = Field(default=None,alias="orderHint",)
-	title: Optional[str] = Field(default=None,alias="title",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
+	isChecked: Optional[bool] = Field(alias="isChecked",default=None,)
+	lastModifiedBy: SerializeAsAny[Optional[IdentitySet]] = Field(alias="lastModifiedBy",default=None,)
+	lastModifiedDateTime: Optional[datetime] = Field(alias="lastModifiedDateTime",default=None,)
+	orderHint: Optional[str] = Field(alias="orderHint",default=None,)
+	title: Optional[str] = Field(alias="title",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 
 from .identity_set import IdentitySet
 

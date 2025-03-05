@@ -4,10 +4,10 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class IosVppEBookAssignment(BaseModel):
-	id: Optional[str] = Field(default=None,alias="id",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	installIntent: Optional[InstallIntent] = Field(default=None,alias="installIntent",)
-	target: SerializeAsAny[Optional[DeviceAndAppManagementAssignmentTarget]] = Field(default=None,alias="target",)
+	id: Optional[str] = Field(alias="id",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	installIntent: Optional[str | InstallIntent] = Field(alias="installIntent",default=None,)
+	target: SerializeAsAny[Optional[DeviceAndAppManagementAssignmentTarget]] = Field(alias="target",default=None,)
 
 from .install_intent import InstallIntent
 from .device_and_app_management_assignment_target import DeviceAndAppManagementAssignmentTarget

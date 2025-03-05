@@ -4,10 +4,10 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class ExternalConnectorsAcl(BaseModel):
-	accessType: Optional[ExternalConnectorsAccessType] = Field(default=None,alias="accessType",)
-	type: Optional[ExternalConnectorsAclType] = Field(default=None,alias="type",)
-	value: Optional[str] = Field(default=None,alias="value",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
+	accessType: Optional[str | ExternalConnectorsAccessType] = Field(alias="accessType",default=None,)
+	type: Optional[str | ExternalConnectorsAclType] = Field(alias="type",default=None,)
+	value: Optional[str] = Field(alias="value",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 
 from .external_connectors_access_type import ExternalConnectorsAccessType
 from .external_connectors_acl_type import ExternalConnectorsAclType

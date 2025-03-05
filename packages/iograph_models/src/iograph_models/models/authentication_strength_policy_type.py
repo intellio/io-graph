@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class AuthenticationStrengthPolicyType(Enum):
+class AuthenticationStrengthPolicyType(StrEnum):
 	builtIn = "builtIn"
 	custom = "custom"
 	unknownFutureValue = "unknownFutureValue"

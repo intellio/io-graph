@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class TeamworkCallEventType(Enum):
+class TeamworkCallEventType(StrEnum):
 	call = "call"
 	meeting = "meeting"
 	screenShare = "screenShare"

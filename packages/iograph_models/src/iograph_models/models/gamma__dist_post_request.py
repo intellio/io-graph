@@ -4,9 +4,9 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class Gamma__distPostRequest(BaseModel):
-	x: Optional[str] = Field(default=None,alias="x",)
-	alpha: Optional[str] = Field(default=None,alias="alpha",)
-	beta: Optional[str] = Field(default=None,alias="beta",)
-	cumulative: Optional[str] = Field(default=None,alias="cumulative",)
+	x: Optional[str] = Field(alias="x",default=None,)
+	alpha: Optional[str] = Field(alias="alpha",default=None,)
+	beta: Optional[str] = Field(alias="beta",default=None,)
+	cumulative: Optional[str] = Field(alias="cumulative",default=None,)
 
 

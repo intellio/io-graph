@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class WindowsHelloForBusinessPinUsage(Enum):
+class WindowsHelloForBusinessPinUsage(StrEnum):
 	allowed = "allowed"
 	required = "required"
 	disallowed = "disallowed"

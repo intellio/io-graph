@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class SimulationAttackType(Enum):
+class SimulationAttackType(StrEnum):
 	unknown = "unknown"
 	social = "social"
 	cloud = "cloud"

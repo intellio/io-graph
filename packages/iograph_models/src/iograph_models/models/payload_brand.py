@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class PayloadBrand(Enum):
+class PayloadBrand(StrEnum):
 	unknown = "unknown"
 	other = "other"
 	americanExpress = "americanExpress"

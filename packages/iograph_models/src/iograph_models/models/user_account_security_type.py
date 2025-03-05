@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class UserAccountSecurityType(Enum):
+class UserAccountSecurityType(StrEnum):
 	unknown = "unknown"
 	standard = "standard"
 	power = "power"

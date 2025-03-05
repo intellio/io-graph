@@ -5,10 +5,10 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class AddIn(BaseModel):
-	id: Optional[UUID] = Field(default=None,alias="id",)
-	properties: Optional[list[KeyValue]] = Field(default=None,alias="properties",)
-	type: Optional[str] = Field(default=None,alias="type",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
+	id: Optional[UUID] = Field(alias="id",default=None,)
+	properties: Optional[list[KeyValue]] = Field(alias="properties",default=None,)
+	type: Optional[str] = Field(alias="type",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 
 from .key_value import KeyValue
 

@@ -5,14 +5,14 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class AppManagementPolicy(BaseModel):
-	id: Optional[str] = Field(default=None,alias="id",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	deletedDateTime: Optional[datetime] = Field(default=None,alias="deletedDateTime",)
-	description: Optional[str] = Field(default=None,alias="description",)
-	displayName: Optional[str] = Field(default=None,alias="displayName",)
-	isEnabled: Optional[bool] = Field(default=None,alias="isEnabled",)
-	restrictions: Optional[CustomAppManagementConfiguration] = Field(default=None,alias="restrictions",)
-	appliesTo: SerializeAsAny[Optional[list[DirectoryObject]]] = Field(default=None,alias="appliesTo",)
+	id: Optional[str] = Field(alias="id",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	deletedDateTime: Optional[datetime] = Field(alias="deletedDateTime",default=None,)
+	description: Optional[str] = Field(alias="description",default=None,)
+	displayName: Optional[str] = Field(alias="displayName",default=None,)
+	isEnabled: Optional[bool] = Field(alias="isEnabled",default=None,)
+	restrictions: Optional[CustomAppManagementConfiguration] = Field(alias="restrictions",default=None,)
+	appliesTo: SerializeAsAny[Optional[list[DirectoryObject]]] = Field(alias="appliesTo",default=None,)
 
 from .custom_app_management_configuration import CustomAppManagementConfiguration
 from .directory_object import DirectoryObject

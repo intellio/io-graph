@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class SecurityGoogleCloudLocationType(Enum):
+class SecurityGoogleCloudLocationType(StrEnum):
 	unknown = "unknown"
 	regional = "regional"
 	zonal = "zonal"

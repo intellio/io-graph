@@ -4,7 +4,7 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class InviteNewBotResponse(BaseModel):
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	inviteUri: Optional[str] = Field(default=None,alias="inviteUri",)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	inviteUri: Optional[str] = Field(alias="inviteUri",default=None,)
 
 

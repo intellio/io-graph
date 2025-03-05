@@ -7,14 +7,14 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class StsPolicy(BaseModel):
-	id: Optional[str] = Field(default=None,alias="id",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	deletedDateTime: Optional[datetime] = Field(default=None,alias="deletedDateTime",)
-	description: Optional[str] = Field(default=None,alias="description",)
-	displayName: Optional[str] = Field(default=None,alias="displayName",)
-	definition: Optional[list[str]] = Field(default=None,alias="definition",)
-	isOrganizationDefault: Optional[bool] = Field(default=None,alias="isOrganizationDefault",)
-	appliesTo: SerializeAsAny[Optional[list[DirectoryObject]]] = Field(default=None,alias="appliesTo",)
+	id: Optional[str] = Field(alias="id",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	deletedDateTime: Optional[datetime] = Field(alias="deletedDateTime",default=None,)
+	description: Optional[str] = Field(alias="description",default=None,)
+	displayName: Optional[str] = Field(alias="displayName",default=None,)
+	definition: Optional[list[str]] = Field(alias="definition",default=None,)
+	isOrganizationDefault: Optional[bool] = Field(alias="isOrganizationDefault",default=None,)
+	appliesTo: SerializeAsAny[Optional[list[DirectoryObject]]] = Field(alias="appliesTo",default=None,)
 
 	@model_validator(mode="wrap")
 	def convert_discriminator_class(cls, data: Any, handler: ModelWrapValidatorHandler[Self]) -> Self:

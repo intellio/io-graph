@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class TeamsAsyncOperationType(Enum):
+class TeamsAsyncOperationType(StrEnum):
 	invalid = "invalid"
 	cloneTeam = "cloneTeam"
 	archiveTeam = "archiveTeam"

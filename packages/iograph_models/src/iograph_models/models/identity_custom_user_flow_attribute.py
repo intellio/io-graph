@@ -4,12 +4,12 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class IdentityCustomUserFlowAttribute(BaseModel):
-	id: Optional[str] = Field(default=None,alias="id",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	dataType: Optional[IdentityUserFlowAttributeDataType] = Field(default=None,alias="dataType",)
-	description: Optional[str] = Field(default=None,alias="description",)
-	displayName: Optional[str] = Field(default=None,alias="displayName",)
-	userFlowAttributeType: Optional[IdentityUserFlowAttributeType] = Field(default=None,alias="userFlowAttributeType",)
+	id: Optional[str] = Field(alias="id",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	dataType: Optional[str | IdentityUserFlowAttributeDataType] = Field(alias="dataType",default=None,)
+	description: Optional[str] = Field(alias="description",default=None,)
+	displayName: Optional[str] = Field(alias="displayName",default=None,)
+	userFlowAttributeType: Optional[str | IdentityUserFlowAttributeType] = Field(alias="userFlowAttributeType",default=None,)
 
 from .identity_user_flow_attribute_data_type import IdentityUserFlowAttributeDataType
 from .identity_user_flow_attribute_type import IdentityUserFlowAttributeType

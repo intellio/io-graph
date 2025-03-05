@@ -5,14 +5,14 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class PrintConnector(BaseModel):
-	id: Optional[str] = Field(default=None,alias="id",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	appVersion: Optional[str] = Field(default=None,alias="appVersion",)
-	displayName: Optional[str] = Field(default=None,alias="displayName",)
-	fullyQualifiedDomainName: Optional[str] = Field(default=None,alias="fullyQualifiedDomainName",)
-	location: Optional[PrinterLocation] = Field(default=None,alias="location",)
-	operatingSystem: Optional[str] = Field(default=None,alias="operatingSystem",)
-	registeredDateTime: Optional[datetime] = Field(default=None,alias="registeredDateTime",)
+	id: Optional[str] = Field(alias="id",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	appVersion: Optional[str] = Field(alias="appVersion",default=None,)
+	displayName: Optional[str] = Field(alias="displayName",default=None,)
+	fullyQualifiedDomainName: Optional[str] = Field(alias="fullyQualifiedDomainName",default=None,)
+	location: Optional[PrinterLocation] = Field(alias="location",default=None,)
+	operatingSystem: Optional[str] = Field(alias="operatingSystem",default=None,)
+	registeredDateTime: Optional[datetime] = Field(alias="registeredDateTime",default=None,)
 
 from .printer_location import PrinterLocation
 

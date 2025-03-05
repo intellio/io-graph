@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class SecurityEventStatusType(Enum):
+class SecurityEventStatusType(StrEnum):
 	pending = "pending"
 	error = "error"
 	success = "success"

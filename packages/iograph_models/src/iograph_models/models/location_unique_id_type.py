@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class LocationUniqueIdType(Enum):
+class LocationUniqueIdType(StrEnum):
 	unknown = "unknown"
 	locationStore = "locationStore"
 	directory = "directory"

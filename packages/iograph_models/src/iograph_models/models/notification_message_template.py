@@ -5,14 +5,14 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class NotificationMessageTemplate(BaseModel):
-	id: Optional[str] = Field(default=None,alias="id",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	brandingOptions: Optional[NotificationTemplateBrandingOptions] = Field(default=None,alias="brandingOptions",)
-	defaultLocale: Optional[str] = Field(default=None,alias="defaultLocale",)
-	displayName: Optional[str] = Field(default=None,alias="displayName",)
-	lastModifiedDateTime: Optional[datetime] = Field(default=None,alias="lastModifiedDateTime",)
-	roleScopeTagIds: Optional[list[str]] = Field(default=None,alias="roleScopeTagIds",)
-	localizedNotificationMessages: Optional[list[LocalizedNotificationMessage]] = Field(default=None,alias="localizedNotificationMessages",)
+	id: Optional[str] = Field(alias="id",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	brandingOptions: Optional[str | NotificationTemplateBrandingOptions] = Field(alias="brandingOptions",default=None,)
+	defaultLocale: Optional[str] = Field(alias="defaultLocale",default=None,)
+	displayName: Optional[str] = Field(alias="displayName",default=None,)
+	lastModifiedDateTime: Optional[datetime] = Field(alias="lastModifiedDateTime",default=None,)
+	roleScopeTagIds: Optional[list[str]] = Field(alias="roleScopeTagIds",default=None,)
+	localizedNotificationMessages: Optional[list[LocalizedNotificationMessage]] = Field(alias="localizedNotificationMessages",default=None,)
 
 from .notification_template_branding_options import NotificationTemplateBrandingOptions
 from .localized_notification_message import LocalizedNotificationMessage

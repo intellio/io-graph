@@ -5,11 +5,11 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class PasswordCredentialConfiguration(BaseModel):
-	maxLifetime: Optional[str] = Field(default=None,alias="maxLifetime",)
-	restrictForAppsCreatedAfterDateTime: Optional[datetime] = Field(default=None,alias="restrictForAppsCreatedAfterDateTime",)
-	restrictionType: Optional[AppCredentialRestrictionType] = Field(default=None,alias="restrictionType",)
-	state: Optional[AppManagementRestrictionState] = Field(default=None,alias="state",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
+	maxLifetime: Optional[str] = Field(alias="maxLifetime",default=None,)
+	restrictForAppsCreatedAfterDateTime: Optional[datetime] = Field(alias="restrictForAppsCreatedAfterDateTime",default=None,)
+	restrictionType: Optional[str | AppCredentialRestrictionType] = Field(alias="restrictionType",default=None,)
+	state: Optional[str | AppManagementRestrictionState] = Field(alias="state",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 
 from .app_credential_restriction_type import AppCredentialRestrictionType
 from .app_management_restriction_state import AppManagementRestrictionState

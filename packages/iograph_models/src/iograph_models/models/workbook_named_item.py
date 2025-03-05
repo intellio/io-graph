@@ -4,15 +4,15 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class WorkbookNamedItem(BaseModel):
-	id: Optional[str] = Field(default=None,alias="id",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	comment: Optional[str] = Field(default=None,alias="comment",)
-	name: Optional[str] = Field(default=None,alias="name",)
-	scope: Optional[str] = Field(default=None,alias="scope",)
-	type: Optional[str] = Field(default=None,alias="type",)
-	value: Optional[str] = Field(default=None,alias="value",)
-	visible: Optional[bool] = Field(default=None,alias="visible",)
-	worksheet: Optional[WorkbookWorksheet] = Field(default=None,alias="worksheet",)
+	id: Optional[str] = Field(alias="id",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	comment: Optional[str] = Field(alias="comment",default=None,)
+	name: Optional[str] = Field(alias="name",default=None,)
+	scope: Optional[str] = Field(alias="scope",default=None,)
+	type: Optional[str] = Field(alias="type",default=None,)
+	value: Optional[str] = Field(alias="value",default=None,)
+	visible: Optional[bool] = Field(alias="visible",default=None,)
+	worksheet: Optional[WorkbookWorksheet] = Field(alias="worksheet",default=None,)
 
 from .workbook_worksheet import WorkbookWorksheet
 

@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class MobileThreatPartnerTenantState(Enum):
+class MobileThreatPartnerTenantState(StrEnum):
 	unavailable = "unavailable"
 	available = "available"
 	enabled = "enabled"

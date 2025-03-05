@@ -14,9 +14,9 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_identity_user_flow_attribute_id import ByIdentityUserFlowAttributeIdRequest
 	from ....request_adapter import HttpxRequestAdapter
-from iograph_models.models.identity_user_flow_attribute import IdentityUserFlowAttribute
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.models.identity_user_flow_attribute_collection_response import IdentityUserFlowAttributeCollectionResponse
+from iograph_models.models.identity_user_flow_attribute import IdentityUserFlowAttribute
 
 
 class UserFlowAttributesRequest(BaseRequestBuilder):

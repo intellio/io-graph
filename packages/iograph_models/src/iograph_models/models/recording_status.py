@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class RecordingStatus(Enum):
+class RecordingStatus(StrEnum):
 	unknown = "unknown"
 	notRecording = "notRecording"
 	recording = "recording"

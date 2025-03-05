@@ -4,7 +4,7 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class Bessel_yPostRequest(BaseModel):
-	x: Optional[str] = Field(default=None,alias="x",)
-	n: Optional[str] = Field(default=None,alias="n",)
+	x: Optional[str] = Field(alias="x",default=None,)
+	n: Optional[str] = Field(alias="n",default=None,)
 
 

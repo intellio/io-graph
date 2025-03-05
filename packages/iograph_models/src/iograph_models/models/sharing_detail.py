@@ -5,12 +5,12 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class SharingDetail(BaseModel):
-	sharedBy: Optional[InsightIdentity] = Field(default=None,alias="sharedBy",)
-	sharedDateTime: Optional[datetime] = Field(default=None,alias="sharedDateTime",)
-	sharingReference: Optional[ResourceReference] = Field(default=None,alias="sharingReference",)
-	sharingSubject: Optional[str] = Field(default=None,alias="sharingSubject",)
-	sharingType: Optional[str] = Field(default=None,alias="sharingType",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
+	sharedBy: Optional[InsightIdentity] = Field(alias="sharedBy",default=None,)
+	sharedDateTime: Optional[datetime] = Field(alias="sharedDateTime",default=None,)
+	sharingReference: Optional[ResourceReference] = Field(alias="sharingReference",default=None,)
+	sharingSubject: Optional[str] = Field(alias="sharingSubject",default=None,)
+	sharingType: Optional[str] = Field(alias="sharingType",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 
 from .insight_identity import InsightIdentity
 from .resource_reference import ResourceReference

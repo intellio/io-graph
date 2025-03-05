@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class ScheduleChangeState(Enum):
+class ScheduleChangeState(StrEnum):
 	pending = "pending"
 	approved = "approved"
 	declined = "declined"

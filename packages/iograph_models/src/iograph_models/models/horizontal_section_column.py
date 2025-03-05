@@ -4,10 +4,10 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class HorizontalSectionColumn(BaseModel):
-	id: Optional[str] = Field(default=None,alias="id",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	width: Optional[int] = Field(default=None,alias="width",)
-	webparts: SerializeAsAny[Optional[list[WebPart]]] = Field(default=None,alias="webparts",)
+	id: Optional[str] = Field(alias="id",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	width: Optional[int] = Field(alias="width",default=None,)
+	webparts: SerializeAsAny[Optional[list[WebPart]]] = Field(alias="webparts",default=None,)
 
 from .web_part import WebPart
 

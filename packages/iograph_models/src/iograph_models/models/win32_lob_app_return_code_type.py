@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class Win32LobAppReturnCodeType(Enum):
+class Win32LobAppReturnCodeType(StrEnum):
 	failed = "failed"
 	success = "success"
 	softReboot = "softReboot"

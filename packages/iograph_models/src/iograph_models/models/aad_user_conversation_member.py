@@ -5,15 +5,15 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class AadUserConversationMember(BaseModel):
-	id: Optional[str] = Field(default=None,alias="id",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	displayName: Optional[str] = Field(default=None,alias="displayName",)
-	roles: Optional[list[str]] = Field(default=None,alias="roles",)
-	visibleHistoryStartDateTime: Optional[datetime] = Field(default=None,alias="visibleHistoryStartDateTime",)
-	email: Optional[str] = Field(default=None,alias="email",)
-	tenantId: Optional[str] = Field(default=None,alias="tenantId",)
-	userId: Optional[str] = Field(default=None,alias="userId",)
-	user: Optional[User] = Field(default=None,alias="user",)
+	id: Optional[str] = Field(alias="id",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	displayName: Optional[str] = Field(alias="displayName",default=None,)
+	roles: Optional[list[str]] = Field(alias="roles",default=None,)
+	visibleHistoryStartDateTime: Optional[datetime] = Field(alias="visibleHistoryStartDateTime",default=None,)
+	email: Optional[str] = Field(alias="email",default=None,)
+	tenantId: Optional[str] = Field(alias="tenantId",default=None,)
+	userId: Optional[str] = Field(alias="userId",default=None,)
+	user: Optional[User] = Field(alias="user",default=None,)
 
 from .user import User
 

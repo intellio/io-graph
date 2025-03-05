@@ -163,34 +163,25 @@ def get_field_type(prop_schema):
         raise Exception('Object type in schema: ' + str(prop_schema))
         return 'Dict[str, Any]'
     
-def _pydantic_field_type_write(field_model_name:str, field_type:str, nullable:bool =True, as_any: bool = False):
+def _pydantic_field_type_write(field_model_name:str, field_type:str, nullable:bool =True, as_any: bool = False,is_enum:bool = False, list_ref:bool = False):
     python_builtin_types = ['str', 'int', 'float', 'bool', 'datetime', 'UUID']
 
-    # if field_type.startswith('list['):
-    #     if 'list[Optional[' in field_type:
-    #         raise Exception(f'list[Optional[ in field_type not supported for type: {field_type} model_name: {field_model_name}')
-        
-    #     if 'Optional[' in field_type:
-    #         return f'{field_type} = Field(default=None, alias="{field_model_name}",)'
-
-    #     # we will always assume that lists are nullable
-    #     return f'Optional[{field_type}] = Field(default=None, alias="{field_model_name}",)'
-
-
-    if not nullable:
-        if as_any:
-            return f'SerializeAsAny[{field_type}] = Field(alias="{field_model_name}",)'
-        else:
-            return f'{field_type} = Field(alias="{field_model_name}",)'
-    else:
-        if 'Optional[' in field_type:
-            # return f'{field_type} = Field(default=None,alias="{field_model_name}",)'
+    if 'Optional[' in field_type:
             raise Exception(f'Optional[ in field_type not supported for type: {field_type} model_name: {field_model_name}')
-        else:
-            if as_any:
-                return f'SerializeAsAny[Optional[{field_type}]] = Field(default=None,alias="{field_model_name}",)'
-            else:
-                return f'Optional[{field_type}] = Field(default=None,alias="{field_model_name}",)'
+
+    if is_enum:
+        field_type = ' | '.join(['str', field_type])
+
+    if list_ref:
+        field_type = f'list[{field_type}]'
+
+    if nullable:
+        field_type = f'Optional[{field_type}]'
+
+    if as_any:
+        field_type = f'SerializeAsAny[{field_type}]'
+
+    return f'{field_type} = Field(alias="{field_model_name}",{"default=None," if nullable else ""})'
 
 def get_model_discriminator(schema):
     discriminator_mapping = {}
@@ -231,6 +222,23 @@ def _check_field_type_has_discriminator(model_name, components):
         else:
             return False
 
+def _check_field_type_is_enum(model_name, components):
+    model_schema = components['schemas'][model_name]
+
+    if not model_schema:
+        raise Exception('Model schema not found for model name: ' + model_name)
+    
+    if 'allOf' in model_schema:
+        for item in model_schema['allOf']:
+            if 'type' in model_schema and 'enum' in model_schema:
+                raise Exception('Enum type in allOf schema for model name: ' + model_name)
+                return True
+            
+    if 'type' in model_schema and 'enum' in model_schema:
+        return True
+    else:
+        return False
+    
 def get_schema_fields(name:str, schema, components,dependencies:list):
     fields = {}
 
@@ -255,11 +263,13 @@ def get_schema_fields(name:str, schema, components,dependencies:list):
             if '$ref' in prop_schema:
                 model_name = prop_schema['$ref'].split('/')[-1]
                 has_discriminator = _check_field_type_has_discriminator(model_name, components)
+                is_enum = _check_field_type_is_enum(model_name, components)
                 fields[clean_field_name(prop_name)] = _pydantic_field_type_write(
                     field_model_name=prop_name,
                     field_type=module_class_name_from_name(model_name),
                     nullable= prop_schema.get('nullable', True),
-                    as_any = has_discriminator
+                    as_any = has_discriminator,
+                    is_enum = is_enum,
                 )
                 dependencies.append(model_name)
             
@@ -270,11 +280,13 @@ def get_schema_fields(name:str, schema, components,dependencies:list):
                     if '$ref' in item:
                         model_name = item['$ref'].split('/')[-1]
                         has_discriminator = _check_field_type_has_discriminator(model_name, components)
+                        is_enum = _check_field_type_is_enum(model_name, components)
                         fields[clean_field_name(prop_name)] = _pydantic_field_type_write(
                             field_model_name=prop_name,
                             field_type=module_class_name_from_name(model_name),
                             nullable= prop_schema.get('nullable', True),
-                            as_any = has_discriminator
+                            as_any = has_discriminator,
+                            is_enum = is_enum,
                         )
                         dependencies.append(model_name)
                         break
@@ -302,11 +314,14 @@ def get_schema_fields(name:str, schema, components,dependencies:list):
                 if prop_schema['type'] == 'array' and '$ref' in prop_schema['items']:
                     model_name = prop_schema['items']['$ref'].split('/')[-1]
                     has_discriminator = _check_field_type_has_discriminator(model_name, components)
+                    is_enum = _check_field_type_is_enum(model_name, components)
                     fields[clean_field_name(prop_name)] = _pydantic_field_type_write(
                         field_model_name=prop_name,
-                        field_type=f"list[{module_class_name_from_name(model_name)}]",
+                        field_type=module_class_name_from_name(model_name),
                         nullable = True,
-                        as_any= has_discriminator
+                        as_any= has_discriminator,
+                        is_enum = is_enum,
+                        list_ref= True,
                     )
                     dependencies.append(model_name)
 
@@ -324,11 +339,13 @@ def get_schema_fields(name:str, schema, components,dependencies:list):
                         raise Exception('No reference found in anyOf schema under items for model name: ' + name)
                     else:
                         has_discriminator = _check_field_type_has_discriminator(model_name, components)
+                        is_enum = _check_field_type_is_enum(model_name, components)
                         fields[clean_field_name(prop_name)] = _pydantic_field_type_write(
                             field_model_name=prop_name,
                             field_type=module_class_name_from_name(model_name),
                             nullable= True,
                             as_any = has_discriminator,
+                            is_enum = is_enum,
                         )
                 else:
                     fields[clean_field_name(prop_name)] = _pydantic_field_type_write(
@@ -428,15 +445,20 @@ def create_pydantic_model(name:str, schema, components):
         
         model_file_obj.write(f'\n')
 
-def create_enum_model(name: str, schema, components):
+def create_enum_model(name: str, schema, components, enum_type):
     # write to file
     model_file = os.path.join(models_dir, f'{module_file_name_from_name(name)}.py')
     with open(model_file, 'w') as model_file_obj:
         class_name = module_class_name_from_name(name)
         model_file_obj.write(f'from __future__ import annotations\n')
-        model_file_obj.write(f'from enum import Enum\n')
-        model_file_obj.write(f'\n\n')
-        model_file_obj.write(f'class {class_name}(Enum):\n')
+        if enum_type == 'string':
+            model_file_obj.write(f'from enum import StrEnum\n')
+            model_file_obj.write(f'\n\n')
+            model_file_obj.write(f'class {class_name}(StrEnum):\n')
+        elif enum_type == 'integer':
+            model_file_obj.write(f'from enum import IntEnum\n')
+            model_file_obj.write(f'\n\n')
+            model_file_obj.write(f'class {class_name}(IntEnum):\n')
         for field_name in schema['enum']:
 
             if field_name in python_reserved_words:
@@ -461,13 +483,19 @@ def create_root_model(name: str, schema, components):
 def create_model(name: str, schema, components):
     if 'type' in schema and schema['type'] == 'object':
         create_pydantic_model(name, schema, components)
-    elif 'type' in schema and schema['type'] == 'string':
+
+    elif 'type' in schema and schema['type'] in ['integer', 'number', 'boolean','string']:
+
         if 'enum' in schema:
-            create_enum_model(name, schema, components)
+            if schema['type'] == 'integer':
+                create_enum_model(name, schema,components, enum_type='integer')
+            elif schema['type'] == 'string':
+                create_enum_model(name, schema,components, enum_type='string')
+            else: 
+                raise Exception('Model type enum but not string or integer not supported in create_model : ' + name)
         else:
-            raise Exception('String type without enum in schema: ' + name)
-    elif 'type' in schema and schema['type'] in ['integer', 'number', 'boolean']:
-        create_root_model(name, schema, components)
+            create_root_model(name, schema, components)
+
     elif 'allOf' in schema:
         create_pydantic_model(name, schema, components)
 

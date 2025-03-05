@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class DeviceManagementPartnerAppType(Enum):
+class DeviceManagementPartnerAppType(StrEnum):
 	unknown = "unknown"
 	singleTenantApp = "singleTenantApp"
 	multiTenantApp = "multiTenantApp"

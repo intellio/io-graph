@@ -4,10 +4,10 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class SettingTemplateValue(BaseModel):
-	defaultValue: Optional[str] = Field(default=None,alias="defaultValue",)
-	description: Optional[str] = Field(default=None,alias="description",)
-	name: Optional[str] = Field(default=None,alias="name",)
-	type: Optional[str] = Field(default=None,alias="type",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
+	defaultValue: Optional[str] = Field(alias="defaultValue",default=None,)
+	description: Optional[str] = Field(alias="description",default=None,)
+	name: Optional[str] = Field(alias="name",default=None,)
+	type: Optional[str] = Field(alias="type",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 
 

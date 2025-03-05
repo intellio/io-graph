@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class WindowsSpotlightEnablementSettings(Enum):
+class WindowsSpotlightEnablementSettings(StrEnum):
 	notConfigured = "notConfigured"
 	disabled = "disabled"
 	enabled = "enabled"

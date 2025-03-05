@@ -4,9 +4,9 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class UserExperienceAnalyticsAutopilotDevicesSummary(BaseModel):
-	devicesNotAutopilotRegistered: Optional[int] = Field(default=None,alias="devicesNotAutopilotRegistered",)
-	devicesWithoutAutopilotProfileAssigned: Optional[int] = Field(default=None,alias="devicesWithoutAutopilotProfileAssigned",)
-	totalWindows10DevicesWithoutTenantAttached: Optional[int] = Field(default=None,alias="totalWindows10DevicesWithoutTenantAttached",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
+	devicesNotAutopilotRegistered: Optional[int] = Field(alias="devicesNotAutopilotRegistered",default=None,)
+	devicesWithoutAutopilotProfileAssigned: Optional[int] = Field(alias="devicesWithoutAutopilotProfileAssigned",default=None,)
+	totalWindows10DevicesWithoutTenantAttached: Optional[int] = Field(alias="totalWindows10DevicesWithoutTenantAttached",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 
 

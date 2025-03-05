@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class ProtectionRuleStatus(Enum):
+class ProtectionRuleStatus(StrEnum):
 	draft = "draft"
 	active = "active"
 	completed = "completed"

@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class BookingsServiceAvailabilityType(Enum):
+class BookingsServiceAvailabilityType(StrEnum):
 	bookWhenStaffAreFree = "bookWhenStaffAreFree"
 	notBookable = "notBookable"
 	customWeeklyHours = "customWeeklyHours"

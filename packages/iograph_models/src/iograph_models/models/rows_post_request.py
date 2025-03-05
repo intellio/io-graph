@@ -4,6 +4,6 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class RowsPostRequest(BaseModel):
-	array: Optional[str] = Field(default=None,alias="array",)
+	array: Optional[str] = Field(alias="array",default=None,)
 
 

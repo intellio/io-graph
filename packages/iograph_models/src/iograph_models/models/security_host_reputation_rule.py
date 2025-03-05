@@ -4,11 +4,11 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class SecurityHostReputationRule(BaseModel):
-	description: Optional[str] = Field(default=None,alias="description",)
-	name: Optional[str] = Field(default=None,alias="name",)
-	relatedDetailsUrl: Optional[str] = Field(default=None,alias="relatedDetailsUrl",)
-	severity: Optional[SecurityHostReputationRuleSeverity] = Field(default=None,alias="severity",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
+	description: Optional[str] = Field(alias="description",default=None,)
+	name: Optional[str] = Field(alias="name",default=None,)
+	relatedDetailsUrl: Optional[str] = Field(alias="relatedDetailsUrl",default=None,)
+	severity: Optional[str | SecurityHostReputationRuleSeverity] = Field(alias="severity",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 
 from .security_host_reputation_rule_severity import SecurityHostReputationRuleSeverity
 

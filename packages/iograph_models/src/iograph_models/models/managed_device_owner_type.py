@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class ManagedDeviceOwnerType(Enum):
+class ManagedDeviceOwnerType(StrEnum):
 	unknown = "unknown"
 	company = "company"
 	personal = "personal"

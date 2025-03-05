@@ -5,21 +5,21 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class IosMobileAppConfiguration(BaseModel):
-	id: Optional[str] = Field(default=None,alias="id",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	createdDateTime: Optional[datetime] = Field(default=None,alias="createdDateTime",)
-	description: Optional[str] = Field(default=None,alias="description",)
-	displayName: Optional[str] = Field(default=None,alias="displayName",)
-	lastModifiedDateTime: Optional[datetime] = Field(default=None,alias="lastModifiedDateTime",)
-	targetedMobileApps: Optional[list[str]] = Field(default=None,alias="targetedMobileApps",)
-	version: Optional[int] = Field(default=None,alias="version",)
-	assignments: Optional[list[ManagedDeviceMobileAppConfigurationAssignment]] = Field(default=None,alias="assignments",)
-	deviceStatuses: Optional[list[ManagedDeviceMobileAppConfigurationDeviceStatus]] = Field(default=None,alias="deviceStatuses",)
-	deviceStatusSummary: Optional[ManagedDeviceMobileAppConfigurationDeviceSummary] = Field(default=None,alias="deviceStatusSummary",)
-	userStatuses: Optional[list[ManagedDeviceMobileAppConfigurationUserStatus]] = Field(default=None,alias="userStatuses",)
-	userStatusSummary: Optional[ManagedDeviceMobileAppConfigurationUserSummary] = Field(default=None,alias="userStatusSummary",)
-	encodedSettingXml: Optional[str] = Field(default=None,alias="encodedSettingXml",)
-	settings: Optional[list[AppConfigurationSettingItem]] = Field(default=None,alias="settings",)
+	id: Optional[str] = Field(alias="id",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	createdDateTime: Optional[datetime] = Field(alias="createdDateTime",default=None,)
+	description: Optional[str] = Field(alias="description",default=None,)
+	displayName: Optional[str] = Field(alias="displayName",default=None,)
+	lastModifiedDateTime: Optional[datetime] = Field(alias="lastModifiedDateTime",default=None,)
+	targetedMobileApps: Optional[list[str]] = Field(alias="targetedMobileApps",default=None,)
+	version: Optional[int] = Field(alias="version",default=None,)
+	assignments: Optional[list[ManagedDeviceMobileAppConfigurationAssignment]] = Field(alias="assignments",default=None,)
+	deviceStatuses: Optional[list[ManagedDeviceMobileAppConfigurationDeviceStatus]] = Field(alias="deviceStatuses",default=None,)
+	deviceStatusSummary: Optional[ManagedDeviceMobileAppConfigurationDeviceSummary] = Field(alias="deviceStatusSummary",default=None,)
+	userStatuses: Optional[list[ManagedDeviceMobileAppConfigurationUserStatus]] = Field(alias="userStatuses",default=None,)
+	userStatusSummary: Optional[ManagedDeviceMobileAppConfigurationUserSummary] = Field(alias="userStatusSummary",default=None,)
+	encodedSettingXml: Optional[str] = Field(alias="encodedSettingXml",default=None,)
+	settings: Optional[list[AppConfigurationSettingItem]] = Field(alias="settings",default=None,)
 
 from .managed_device_mobile_app_configuration_assignment import ManagedDeviceMobileAppConfigurationAssignment
 from .managed_device_mobile_app_configuration_device_status import ManagedDeviceMobileAppConfigurationDeviceStatus

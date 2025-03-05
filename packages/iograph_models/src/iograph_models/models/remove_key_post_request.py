@@ -5,7 +5,7 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class Remove_keyPostRequest(BaseModel):
-	keyId: Optional[UUID] = Field(default=None,alias="keyId",)
-	proof: Optional[str] = Field(default=None,alias="proof",)
+	keyId: Optional[UUID] = Field(alias="keyId",default=None,)
+	proof: Optional[str] = Field(alias="proof",default=None,)
 
 

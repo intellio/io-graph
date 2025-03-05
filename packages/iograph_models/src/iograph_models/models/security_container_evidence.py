@@ -5,21 +5,21 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class SecurityContainerEvidence(BaseModel):
-	createdDateTime: Optional[datetime] = Field(default=None,alias="createdDateTime",)
-	detailedRoles: Optional[list[str]] = Field(default=None,alias="detailedRoles",)
-	remediationStatus: Optional[SecurityEvidenceRemediationStatus] = Field(default=None,alias="remediationStatus",)
-	remediationStatusDetails: Optional[str] = Field(default=None,alias="remediationStatusDetails",)
-	roles: Optional[list[SecurityEvidenceRole]] = Field(default=None,alias="roles",)
-	tags: Optional[list[str]] = Field(default=None,alias="tags",)
-	verdict: Optional[SecurityEvidenceVerdict] = Field(default=None,alias="verdict",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	args: Optional[list[str]] = Field(default=None,alias="args",)
-	command: Optional[list[str]] = Field(default=None,alias="command",)
-	containerId: Optional[str] = Field(default=None,alias="containerId",)
-	image: Optional[SecurityContainerImageEvidence] = Field(default=None,alias="image",)
-	isPrivileged: Optional[bool] = Field(default=None,alias="isPrivileged",)
-	name: Optional[str] = Field(default=None,alias="name",)
-	pod: Optional[SecurityKubernetesPodEvidence] = Field(default=None,alias="pod",)
+	createdDateTime: Optional[datetime] = Field(alias="createdDateTime",default=None,)
+	detailedRoles: Optional[list[str]] = Field(alias="detailedRoles",default=None,)
+	remediationStatus: Optional[str | SecurityEvidenceRemediationStatus] = Field(alias="remediationStatus",default=None,)
+	remediationStatusDetails: Optional[str] = Field(alias="remediationStatusDetails",default=None,)
+	roles: Optional[list[str | SecurityEvidenceRole]] = Field(alias="roles",default=None,)
+	tags: Optional[list[str]] = Field(alias="tags",default=None,)
+	verdict: Optional[str | SecurityEvidenceVerdict] = Field(alias="verdict",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	args: Optional[list[str]] = Field(alias="args",default=None,)
+	command: Optional[list[str]] = Field(alias="command",default=None,)
+	containerId: Optional[str] = Field(alias="containerId",default=None,)
+	image: Optional[SecurityContainerImageEvidence] = Field(alias="image",default=None,)
+	isPrivileged: Optional[bool] = Field(alias="isPrivileged",default=None,)
+	name: Optional[str] = Field(alias="name",default=None,)
+	pod: Optional[SecurityKubernetesPodEvidence] = Field(alias="pod",default=None,)
 
 from .security_evidence_remediation_status import SecurityEvidenceRemediationStatus
 from .security_evidence_role import SecurityEvidenceRole

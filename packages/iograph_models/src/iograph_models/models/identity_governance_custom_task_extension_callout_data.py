@@ -4,11 +4,11 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class IdentityGovernanceCustomTaskExtensionCalloutData(BaseModel):
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	subject: Optional[User] = Field(default=None,alias="subject",)
-	task: Optional[IdentityGovernanceTask] = Field(default=None,alias="task",)
-	taskProcessingresult: Optional[IdentityGovernanceTaskProcessingResult] = Field(default=None,alias="taskProcessingresult",)
-	workflow: Optional[IdentityGovernanceWorkflow] = Field(default=None,alias="workflow",)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	subject: Optional[User] = Field(alias="subject",default=None,)
+	task: Optional[IdentityGovernanceTask] = Field(alias="task",default=None,)
+	taskProcessingresult: Optional[IdentityGovernanceTaskProcessingResult] = Field(alias="taskProcessingresult",default=None,)
+	workflow: Optional[IdentityGovernanceWorkflow] = Field(alias="workflow",default=None,)
 
 from .user import User
 from .identity_governance_task import IdentityGovernanceTask

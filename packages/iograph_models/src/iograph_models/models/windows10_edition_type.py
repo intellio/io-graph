@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class Windows10EditionType(Enum):
+class Windows10EditionType(StrEnum):
 	windows10Enterprise = "windows10Enterprise"
 	windows10EnterpriseN = "windows10EnterpriseN"
 	windows10Education = "windows10Education"

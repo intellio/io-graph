@@ -4,8 +4,8 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class ReplyPostRequest(BaseModel):
-	Message: SerializeAsAny[Optional[Message]] = Field(default=None,alias="Message",)
-	Comment: Optional[str] = Field(default=None,alias="Comment",)
+	Message: SerializeAsAny[Optional[Message]] = Field(alias="Message",default=None,)
+	Comment: Optional[str] = Field(alias="Comment",default=None,)
 
 from .message import Message
 

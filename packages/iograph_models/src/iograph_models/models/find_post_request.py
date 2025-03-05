@@ -4,8 +4,8 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class FindPostRequest(BaseModel):
-	findText: Optional[str] = Field(default=None,alias="findText",)
-	withinText: Optional[str] = Field(default=None,alias="withinText",)
-	startNum: Optional[str] = Field(default=None,alias="startNum",)
+	findText: Optional[str] = Field(alias="findText",default=None,)
+	withinText: Optional[str] = Field(alias="withinText",default=None,)
+	startNum: Optional[str] = Field(alias="startNum",default=None,)
 
 

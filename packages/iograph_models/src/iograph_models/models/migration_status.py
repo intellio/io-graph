@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class MigrationStatus(Enum):
+class MigrationStatus(StrEnum):
 	ready = "ready"
 	needsReview = "needsReview"
 	additionalStepsRequired = "additionalStepsRequired"

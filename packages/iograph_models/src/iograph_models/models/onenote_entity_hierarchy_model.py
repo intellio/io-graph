@@ -7,14 +7,14 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class OnenoteEntityHierarchyModel(BaseModel):
-	id: Optional[str] = Field(default=None,alias="id",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	self: Optional[str] = Field(default=None,alias="self",)
-	createdDateTime: Optional[datetime] = Field(default=None,alias="createdDateTime",)
-	createdBy: SerializeAsAny[Optional[IdentitySet]] = Field(default=None,alias="createdBy",)
-	displayName: Optional[str] = Field(default=None,alias="displayName",)
-	lastModifiedBy: SerializeAsAny[Optional[IdentitySet]] = Field(default=None,alias="lastModifiedBy",)
-	lastModifiedDateTime: Optional[datetime] = Field(default=None,alias="lastModifiedDateTime",)
+	id: Optional[str] = Field(alias="id",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	self: Optional[str] = Field(alias="self",default=None,)
+	createdDateTime: Optional[datetime] = Field(alias="createdDateTime",default=None,)
+	createdBy: SerializeAsAny[Optional[IdentitySet]] = Field(alias="createdBy",default=None,)
+	displayName: Optional[str] = Field(alias="displayName",default=None,)
+	lastModifiedBy: SerializeAsAny[Optional[IdentitySet]] = Field(alias="lastModifiedBy",default=None,)
+	lastModifiedDateTime: Optional[datetime] = Field(alias="lastModifiedDateTime",default=None,)
 
 	@model_validator(mode="wrap")
 	def convert_discriminator_class(cls, data: Any, handler: ModelWrapValidatorHandler[Self]) -> Self:

@@ -4,10 +4,10 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class AppConfigurationSettingItem(BaseModel):
-	appConfigKey: Optional[str] = Field(default=None,alias="appConfigKey",)
-	appConfigKeyType: Optional[MdmAppConfigKeyType] = Field(default=None,alias="appConfigKeyType",)
-	appConfigKeyValue: Optional[str] = Field(default=None,alias="appConfigKeyValue",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
+	appConfigKey: Optional[str] = Field(alias="appConfigKey",default=None,)
+	appConfigKeyType: Optional[str | MdmAppConfigKeyType] = Field(alias="appConfigKeyType",default=None,)
+	appConfigKeyValue: Optional[str] = Field(alias="appConfigKeyValue",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 
 from .mdm_app_config_key_type import MdmAppConfigKeyType
 

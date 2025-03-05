@@ -6,10 +6,10 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class AuthenticationMethodConfiguration(BaseModel):
-	id: Optional[str] = Field(default=None,alias="id",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	excludeTargets: Optional[list[ExcludeTarget]] = Field(default=None,alias="excludeTargets",)
-	state: Optional[AuthenticationMethodState] = Field(default=None,alias="state",)
+	id: Optional[str] = Field(alias="id",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	excludeTargets: Optional[list[ExcludeTarget]] = Field(alias="excludeTargets",default=None,)
+	state: Optional[str | AuthenticationMethodState] = Field(alias="state",default=None,)
 
 	@model_validator(mode="wrap")
 	def convert_discriminator_class(cls, data: Any, handler: ModelWrapValidatorHandler[Self]) -> Self:

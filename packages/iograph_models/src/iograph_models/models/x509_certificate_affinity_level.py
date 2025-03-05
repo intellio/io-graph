@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class X509CertificateAffinityLevel(Enum):
+class X509CertificateAffinityLevel(StrEnum):
 	low = "low"
 	high = "high"
 	unknownFutureValue = "unknownFutureValue"

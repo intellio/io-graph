@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class Win32LobAppMsiPackageType(Enum):
+class Win32LobAppMsiPackageType(StrEnum):
 	perMachine = "perMachine"
 	perUser = "perUser"
 	dualPurpose = "dualPurpose"

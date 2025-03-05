@@ -4,18 +4,18 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class CrossTenantAccessPolicyConfigurationPartner(BaseModel):
-	automaticUserConsentSettings: Optional[InboundOutboundPolicyConfiguration] = Field(default=None,alias="automaticUserConsentSettings",)
-	b2bCollaborationInbound: SerializeAsAny[Optional[CrossTenantAccessPolicyB2BSetting]] = Field(default=None,alias="b2bCollaborationInbound",)
-	b2bCollaborationOutbound: SerializeAsAny[Optional[CrossTenantAccessPolicyB2BSetting]] = Field(default=None,alias="b2bCollaborationOutbound",)
-	b2bDirectConnectInbound: SerializeAsAny[Optional[CrossTenantAccessPolicyB2BSetting]] = Field(default=None,alias="b2bDirectConnectInbound",)
-	b2bDirectConnectOutbound: SerializeAsAny[Optional[CrossTenantAccessPolicyB2BSetting]] = Field(default=None,alias="b2bDirectConnectOutbound",)
-	inboundTrust: Optional[CrossTenantAccessPolicyInboundTrust] = Field(default=None,alias="inboundTrust",)
-	isInMultiTenantOrganization: Optional[bool] = Field(default=None,alias="isInMultiTenantOrganization",)
-	isServiceProvider: Optional[bool] = Field(default=None,alias="isServiceProvider",)
-	tenantId: Optional[str] = Field(default=None,alias="tenantId",)
-	tenantRestrictions: Optional[CrossTenantAccessPolicyTenantRestrictions] = Field(default=None,alias="tenantRestrictions",)
-	identitySynchronization: Optional[CrossTenantIdentitySyncPolicyPartner] = Field(default=None,alias="identitySynchronization",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
+	automaticUserConsentSettings: Optional[InboundOutboundPolicyConfiguration] = Field(alias="automaticUserConsentSettings",default=None,)
+	b2bCollaborationInbound: SerializeAsAny[Optional[CrossTenantAccessPolicyB2BSetting]] = Field(alias="b2bCollaborationInbound",default=None,)
+	b2bCollaborationOutbound: SerializeAsAny[Optional[CrossTenantAccessPolicyB2BSetting]] = Field(alias="b2bCollaborationOutbound",default=None,)
+	b2bDirectConnectInbound: SerializeAsAny[Optional[CrossTenantAccessPolicyB2BSetting]] = Field(alias="b2bDirectConnectInbound",default=None,)
+	b2bDirectConnectOutbound: SerializeAsAny[Optional[CrossTenantAccessPolicyB2BSetting]] = Field(alias="b2bDirectConnectOutbound",default=None,)
+	inboundTrust: Optional[CrossTenantAccessPolicyInboundTrust] = Field(alias="inboundTrust",default=None,)
+	isInMultiTenantOrganization: Optional[bool] = Field(alias="isInMultiTenantOrganization",default=None,)
+	isServiceProvider: Optional[bool] = Field(alias="isServiceProvider",default=None,)
+	tenantId: Optional[str] = Field(alias="tenantId",default=None,)
+	tenantRestrictions: Optional[CrossTenantAccessPolicyTenantRestrictions] = Field(alias="tenantRestrictions",default=None,)
+	identitySynchronization: Optional[CrossTenantIdentitySyncPolicyPartner] = Field(alias="identitySynchronization",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 
 from .inbound_outbound_policy_configuration import InboundOutboundPolicyConfiguration
 from .cross_tenant_access_policy_b2_b_setting import CrossTenantAccessPolicyB2BSetting

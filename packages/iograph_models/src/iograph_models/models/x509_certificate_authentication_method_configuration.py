@@ -4,14 +4,14 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class X509CertificateAuthenticationMethodConfiguration(BaseModel):
-	id: Optional[str] = Field(default=None,alias="id",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	excludeTargets: Optional[list[ExcludeTarget]] = Field(default=None,alias="excludeTargets",)
-	state: Optional[AuthenticationMethodState] = Field(default=None,alias="state",)
-	authenticationModeConfiguration: Optional[X509CertificateAuthenticationModeConfiguration] = Field(default=None,alias="authenticationModeConfiguration",)
-	certificateUserBindings: Optional[list[X509CertificateUserBinding]] = Field(default=None,alias="certificateUserBindings",)
-	crlValidationConfiguration: Optional[X509CertificateCRLValidationConfiguration] = Field(default=None,alias="crlValidationConfiguration",)
-	includeTargets: SerializeAsAny[Optional[list[AuthenticationMethodTarget]]] = Field(default=None,alias="includeTargets",)
+	id: Optional[str] = Field(alias="id",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	excludeTargets: Optional[list[ExcludeTarget]] = Field(alias="excludeTargets",default=None,)
+	state: Optional[str | AuthenticationMethodState] = Field(alias="state",default=None,)
+	authenticationModeConfiguration: Optional[X509CertificateAuthenticationModeConfiguration] = Field(alias="authenticationModeConfiguration",default=None,)
+	certificateUserBindings: Optional[list[X509CertificateUserBinding]] = Field(alias="certificateUserBindings",default=None,)
+	crlValidationConfiguration: Optional[X509CertificateCRLValidationConfiguration] = Field(alias="crlValidationConfiguration",default=None,)
+	includeTargets: SerializeAsAny[Optional[list[AuthenticationMethodTarget]]] = Field(alias="includeTargets",default=None,)
 
 from .exclude_target import ExcludeTarget
 from .authentication_method_state import AuthenticationMethodState

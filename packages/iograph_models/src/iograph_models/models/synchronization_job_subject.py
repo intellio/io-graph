@@ -4,10 +4,10 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class SynchronizationJobSubject(BaseModel):
-	links: Optional[SynchronizationLinkedObjects] = Field(default=None,alias="links",)
-	objectId: Optional[str] = Field(default=None,alias="objectId",)
-	objectTypeName: Optional[str] = Field(default=None,alias="objectTypeName",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
+	links: Optional[SynchronizationLinkedObjects] = Field(alias="links",default=None,)
+	objectId: Optional[str] = Field(alias="objectId",default=None,)
+	objectTypeName: Optional[str] = Field(alias="objectTypeName",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 
 from .synchronization_linked_objects import SynchronizationLinkedObjects
 

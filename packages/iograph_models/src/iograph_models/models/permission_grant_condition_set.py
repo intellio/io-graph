@@ -4,16 +4,16 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class PermissionGrantConditionSet(BaseModel):
-	id: Optional[str] = Field(default=None,alias="id",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	clientApplicationIds: Optional[list[str]] = Field(default=None,alias="clientApplicationIds",)
-	clientApplicationPublisherIds: Optional[list[str]] = Field(default=None,alias="clientApplicationPublisherIds",)
-	clientApplicationsFromVerifiedPublisherOnly: Optional[bool] = Field(default=None,alias="clientApplicationsFromVerifiedPublisherOnly",)
-	clientApplicationTenantIds: Optional[list[str]] = Field(default=None,alias="clientApplicationTenantIds",)
-	permissionClassification: Optional[str] = Field(default=None,alias="permissionClassification",)
-	permissions: Optional[list[str]] = Field(default=None,alias="permissions",)
-	permissionType: Optional[PermissionType] = Field(default=None,alias="permissionType",)
-	resourceApplication: Optional[str] = Field(default=None,alias="resourceApplication",)
+	id: Optional[str] = Field(alias="id",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	clientApplicationIds: Optional[list[str]] = Field(alias="clientApplicationIds",default=None,)
+	clientApplicationPublisherIds: Optional[list[str]] = Field(alias="clientApplicationPublisherIds",default=None,)
+	clientApplicationsFromVerifiedPublisherOnly: Optional[bool] = Field(alias="clientApplicationsFromVerifiedPublisherOnly",default=None,)
+	clientApplicationTenantIds: Optional[list[str]] = Field(alias="clientApplicationTenantIds",default=None,)
+	permissionClassification: Optional[str] = Field(alias="permissionClassification",default=None,)
+	permissions: Optional[list[str]] = Field(alias="permissions",default=None,)
+	permissionType: Optional[str | PermissionType] = Field(alias="permissionType",default=None,)
+	resourceApplication: Optional[str] = Field(alias="resourceApplication",default=None,)
 
 from .permission_type import PermissionType
 

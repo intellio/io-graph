@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class SecurityEvidenceVerdict(Enum):
+class SecurityEvidenceVerdict(StrEnum):
 	unknown = "unknown"
 	suspicious = "suspicious"
 	malicious = "malicious"

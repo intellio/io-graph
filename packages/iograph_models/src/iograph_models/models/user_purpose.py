@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class UserPurpose(Enum):
+class UserPurpose(StrEnum):
 	user = "user"
 	linked = "linked"
 	shared = "shared"

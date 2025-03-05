@@ -4,8 +4,8 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class Send_virtual_appointment_smsPostRequest(BaseModel):
-	messageType: Optional[VirtualAppointmentMessageType] = Field(default=None,alias="messageType",)
-	attendees: Optional[list[AttendeeNotificationInfo]] = Field(default=None,alias="attendees",)
+	messageType: Optional[str | VirtualAppointmentMessageType] = Field(alias="messageType",default=None,)
+	attendees: Optional[list[AttendeeNotificationInfo]] = Field(alias="attendees",default=None,)
 
 from .virtual_appointment_message_type import VirtualAppointmentMessageType
 from .attendee_notification_info import AttendeeNotificationInfo

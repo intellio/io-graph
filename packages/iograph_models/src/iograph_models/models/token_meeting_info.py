@@ -4,7 +4,7 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class TokenMeetingInfo(BaseModel):
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	token: Optional[str] = Field(default=None,alias="token",)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	token: Optional[str] = Field(alias="token",default=None,)
 
 

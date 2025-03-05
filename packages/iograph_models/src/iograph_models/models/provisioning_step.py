@@ -4,12 +4,12 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class ProvisioningStep(BaseModel):
-	description: Optional[str] = Field(default=None,alias="description",)
-	details: Optional[DetailsInfo] = Field(default=None,alias="details",)
-	name: Optional[str] = Field(default=None,alias="name",)
-	provisioningStepType: Optional[ProvisioningStepType] = Field(default=None,alias="provisioningStepType",)
-	status: Optional[ProvisioningResult] = Field(default=None,alias="status",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
+	description: Optional[str] = Field(alias="description",default=None,)
+	details: Optional[DetailsInfo] = Field(alias="details",default=None,)
+	name: Optional[str] = Field(alias="name",default=None,)
+	provisioningStepType: Optional[str | ProvisioningStepType] = Field(alias="provisioningStepType",default=None,)
+	status: Optional[str | ProvisioningResult] = Field(alias="status",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 
 from .details_info import DetailsInfo
 from .provisioning_step_type import ProvisioningStepType

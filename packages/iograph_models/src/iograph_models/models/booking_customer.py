@@ -5,14 +5,14 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class BookingCustomer(BaseModel):
-	id: Optional[str] = Field(default=None,alias="id",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	addresses: Optional[list[PhysicalAddress]] = Field(default=None,alias="addresses",)
-	createdDateTime: Optional[datetime] = Field(default=None,alias="createdDateTime",)
-	displayName: Optional[str] = Field(default=None,alias="displayName",)
-	emailAddress: Optional[str] = Field(default=None,alias="emailAddress",)
-	lastUpdatedDateTime: Optional[datetime] = Field(default=None,alias="lastUpdatedDateTime",)
-	phones: Optional[list[Phone]] = Field(default=None,alias="phones",)
+	id: Optional[str] = Field(alias="id",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	addresses: Optional[list[PhysicalAddress]] = Field(alias="addresses",default=None,)
+	createdDateTime: Optional[datetime] = Field(alias="createdDateTime",default=None,)
+	displayName: Optional[str] = Field(alias="displayName",default=None,)
+	emailAddress: Optional[str] = Field(alias="emailAddress",default=None,)
+	lastUpdatedDateTime: Optional[datetime] = Field(alias="lastUpdatedDateTime",default=None,)
+	phones: Optional[list[Phone]] = Field(alias="phones",default=None,)
 
 from .physical_address import PhysicalAddress
 from .phone import Phone

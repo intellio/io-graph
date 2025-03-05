@@ -4,10 +4,10 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class DataSubject(BaseModel):
-	email: Optional[str] = Field(default=None,alias="email",)
-	firstName: Optional[str] = Field(default=None,alias="firstName",)
-	lastName: Optional[str] = Field(default=None,alias="lastName",)
-	residency: Optional[str] = Field(default=None,alias="residency",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
+	email: Optional[str] = Field(alias="email",default=None,)
+	firstName: Optional[str] = Field(alias="firstName",default=None,)
+	lastName: Optional[str] = Field(alias="lastName",default=None,)
+	residency: Optional[str] = Field(alias="residency",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 
 

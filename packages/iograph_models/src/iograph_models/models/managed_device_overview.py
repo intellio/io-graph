@@ -4,13 +4,13 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class ManagedDeviceOverview(BaseModel):
-	id: Optional[str] = Field(default=None,alias="id",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	deviceExchangeAccessStateSummary: Optional[DeviceExchangeAccessStateSummary] = Field(default=None,alias="deviceExchangeAccessStateSummary",)
-	deviceOperatingSystemSummary: Optional[DeviceOperatingSystemSummary] = Field(default=None,alias="deviceOperatingSystemSummary",)
-	dualEnrolledDeviceCount: Optional[int] = Field(default=None,alias="dualEnrolledDeviceCount",)
-	enrolledDeviceCount: Optional[int] = Field(default=None,alias="enrolledDeviceCount",)
-	mdmEnrolledCount: Optional[int] = Field(default=None,alias="mdmEnrolledCount",)
+	id: Optional[str] = Field(alias="id",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	deviceExchangeAccessStateSummary: Optional[DeviceExchangeAccessStateSummary] = Field(alias="deviceExchangeAccessStateSummary",default=None,)
+	deviceOperatingSystemSummary: Optional[DeviceOperatingSystemSummary] = Field(alias="deviceOperatingSystemSummary",default=None,)
+	dualEnrolledDeviceCount: Optional[int] = Field(alias="dualEnrolledDeviceCount",default=None,)
+	enrolledDeviceCount: Optional[int] = Field(alias="enrolledDeviceCount",default=None,)
+	mdmEnrolledCount: Optional[int] = Field(alias="mdmEnrolledCount",default=None,)
 
 from .device_exchange_access_state_summary import DeviceExchangeAccessStateSummary
 from .device_operating_system_summary import DeviceOperatingSystemSummary

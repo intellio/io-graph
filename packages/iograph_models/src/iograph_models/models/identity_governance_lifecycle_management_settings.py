@@ -4,10 +4,10 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class IdentityGovernanceLifecycleManagementSettings(BaseModel):
-	id: Optional[str] = Field(default=None,alias="id",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	emailSettings: Optional[EmailSettings] = Field(default=None,alias="emailSettings",)
-	workflowScheduleIntervalInHours: Optional[int] = Field(default=None,alias="workflowScheduleIntervalInHours",)
+	id: Optional[str] = Field(alias="id",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	emailSettings: Optional[EmailSettings] = Field(alias="emailSettings",default=None,)
+	workflowScheduleIntervalInHours: Optional[int] = Field(alias="workflowScheduleIntervalInHours",default=None,)
 
 from .email_settings import EmailSettings
 

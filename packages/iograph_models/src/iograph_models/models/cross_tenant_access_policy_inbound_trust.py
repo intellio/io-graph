@@ -4,9 +4,9 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class CrossTenantAccessPolicyInboundTrust(BaseModel):
-	isCompliantDeviceAccepted: Optional[bool] = Field(default=None,alias="isCompliantDeviceAccepted",)
-	isHybridAzureADJoinedDeviceAccepted: Optional[bool] = Field(default=None,alias="isHybridAzureADJoinedDeviceAccepted",)
-	isMfaAccepted: Optional[bool] = Field(default=None,alias="isMfaAccepted",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
+	isCompliantDeviceAccepted: Optional[bool] = Field(alias="isCompliantDeviceAccepted",default=None,)
+	isHybridAzureADJoinedDeviceAccepted: Optional[bool] = Field(alias="isHybridAzureADJoinedDeviceAccepted",default=None,)
+	isMfaAccepted: Optional[bool] = Field(alias="isMfaAccepted",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 
 

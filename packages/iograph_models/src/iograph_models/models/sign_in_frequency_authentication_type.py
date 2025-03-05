@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class SignInFrequencyAuthenticationType(Enum):
+class SignInFrequencyAuthenticationType(StrEnum):
 	primaryAndSecondaryAuthentication = "primaryAndSecondaryAuthentication"
 	secondaryAuthentication = "secondaryAuthentication"
 	unknownFutureValue = "unknownFutureValue"

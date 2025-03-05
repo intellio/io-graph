@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class EndUserNotificationType(Enum):
+class EndUserNotificationType(StrEnum):
 	unknown = "unknown"
 	positiveReinforcement = "positiveReinforcement"
 	noTraining = "noTraining"

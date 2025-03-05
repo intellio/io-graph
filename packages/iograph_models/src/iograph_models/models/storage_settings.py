@@ -4,9 +4,9 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class StorageSettings(BaseModel):
-	id: Optional[str] = Field(default=None,alias="id",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	quota: Optional[UnifiedStorageQuota] = Field(default=None,alias="quota",)
+	id: Optional[str] = Field(alias="id",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	quota: Optional[UnifiedStorageQuota] = Field(alias="quota",default=None,)
 
 from .unified_storage_quota import UnifiedStorageQuota
 

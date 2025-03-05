@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class ExternalConnectorsIdentityType(Enum):
+class ExternalConnectorsIdentityType(StrEnum):
 	user = "user"
 	group = "group"
 	externalGroup = "externalGroup"

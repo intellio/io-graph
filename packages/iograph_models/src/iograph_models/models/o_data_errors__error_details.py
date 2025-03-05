@@ -4,8 +4,8 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class ODataErrorsErrorDetails(BaseModel):
-	code: Optional[str] = Field(default=None,alias="code",)
-	message: Optional[str] = Field(default=None,alias="message",)
-	target: Optional[str] = Field(default=None,alias="target",)
+	code: Optional[str] = Field(alias="code",default=None,)
+	message: Optional[str] = Field(alias="message",default=None,)
+	target: Optional[str] = Field(alias="target",default=None,)
 
 

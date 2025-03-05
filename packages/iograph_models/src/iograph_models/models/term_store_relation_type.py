@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class TermStoreRelationType(Enum):
+class TermStoreRelationType(StrEnum):
 	pin = "pin"
 	reuse = "reuse"
 	unknownFutureValue = "unknownFutureValue"

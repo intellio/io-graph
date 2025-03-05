@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class LocationType(Enum):
+class LocationType(StrEnum):
 	default = "default"
 	conferenceRoom = "conferenceRoom"
 	homeAddress = "homeAddress"

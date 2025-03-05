@@ -4,9 +4,9 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class MeetingParticipants(BaseModel):
-	attendees: SerializeAsAny[Optional[list[MeetingParticipantInfo]]] = Field(default=None,alias="attendees",)
-	organizer: SerializeAsAny[Optional[MeetingParticipantInfo]] = Field(default=None,alias="organizer",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
+	attendees: SerializeAsAny[Optional[list[MeetingParticipantInfo]]] = Field(alias="attendees",default=None,)
+	organizer: SerializeAsAny[Optional[MeetingParticipantInfo]] = Field(alias="organizer",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 
 from .meeting_participant_info import MeetingParticipantInfo
 from .meeting_participant_info import MeetingParticipantInfo

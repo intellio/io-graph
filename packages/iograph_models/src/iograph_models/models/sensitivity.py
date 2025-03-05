@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class Sensitivity(Enum):
+class Sensitivity(StrEnum):
 	normal = "normal"
 	personal = "personal"
 	private = "private"

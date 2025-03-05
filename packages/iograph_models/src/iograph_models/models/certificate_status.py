@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class CertificateStatus(Enum):
+class CertificateStatus(StrEnum):
 	notProvisioned = "notProvisioned"
 	provisioned = "provisioned"
 

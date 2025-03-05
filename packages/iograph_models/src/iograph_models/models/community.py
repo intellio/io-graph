@@ -4,14 +4,14 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class Community(BaseModel):
-	id: Optional[str] = Field(default=None,alias="id",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	description: Optional[str] = Field(default=None,alias="description",)
-	displayName: Optional[str] = Field(default=None,alias="displayName",)
-	groupId: Optional[str] = Field(default=None,alias="groupId",)
-	privacy: Optional[CommunityPrivacy] = Field(default=None,alias="privacy",)
-	group: Optional[Group] = Field(default=None,alias="group",)
-	owners: Optional[list[User]] = Field(default=None,alias="owners",)
+	id: Optional[str] = Field(alias="id",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	description: Optional[str] = Field(alias="description",default=None,)
+	displayName: Optional[str] = Field(alias="displayName",default=None,)
+	groupId: Optional[str] = Field(alias="groupId",default=None,)
+	privacy: Optional[str | CommunityPrivacy] = Field(alias="privacy",default=None,)
+	group: Optional[Group] = Field(alias="group",default=None,)
+	owners: Optional[list[User]] = Field(alias="owners",default=None,)
 
 from .community_privacy import CommunityPrivacy
 from .group import Group

@@ -4,9 +4,9 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class TeamsAppSettings(BaseModel):
-	id: Optional[str] = Field(default=None,alias="id",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	allowUserRequestsForAppAccess: Optional[bool] = Field(default=None,alias="allowUserRequestsForAppAccess",)
-	isUserPersonalScopeResourceSpecificConsentEnabled: Optional[bool] = Field(default=None,alias="isUserPersonalScopeResourceSpecificConsentEnabled",)
+	id: Optional[str] = Field(alias="id",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	allowUserRequestsForAppAccess: Optional[bool] = Field(alias="allowUserRequestsForAppAccess",default=None,)
+	isUserPersonalScopeResourceSpecificConsentEnabled: Optional[bool] = Field(alias="isUserPersonalScopeResourceSpecificConsentEnabled",default=None,)
 
 

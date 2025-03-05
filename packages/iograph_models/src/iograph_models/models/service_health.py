@@ -4,11 +4,11 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class ServiceHealth(BaseModel):
-	id: Optional[str] = Field(default=None,alias="id",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	service: Optional[str] = Field(default=None,alias="service",)
-	status: Optional[ServiceHealthStatus] = Field(default=None,alias="status",)
-	issues: Optional[list[ServiceHealthIssue]] = Field(default=None,alias="issues",)
+	id: Optional[str] = Field(alias="id",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	service: Optional[str] = Field(alias="service",default=None,)
+	status: Optional[str | ServiceHealthStatus] = Field(alias="status",default=None,)
+	issues: Optional[list[ServiceHealthIssue]] = Field(alias="issues",default=None,)
 
 from .service_health_status import ServiceHealthStatus
 from .service_health_issue import ServiceHealthIssue

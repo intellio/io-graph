@@ -4,10 +4,10 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class OnenoteResource(BaseModel):
-	id: Optional[str] = Field(default=None,alias="id",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	self: Optional[str] = Field(default=None,alias="self",)
-	content: Optional[str] = Field(default=None,alias="content",)
-	contentUrl: Optional[str] = Field(default=None,alias="contentUrl",)
+	id: Optional[str] = Field(alias="id",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	self: Optional[str] = Field(alias="self",default=None,)
+	content: Optional[str] = Field(alias="content",default=None,)
+	contentUrl: Optional[str] = Field(alias="contentUrl",default=None,)
 
 

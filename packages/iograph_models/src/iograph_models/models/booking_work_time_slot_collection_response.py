@@ -4,9 +4,9 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class BookingWorkTimeSlotCollectionResponse(BaseModel):
-	odata_count: Optional[int] = Field(default=None,alias="@odata.count",)
-	odata_nextLink: Optional[str] = Field(default=None,alias="@odata.nextLink",)
-	value: Optional[list[BookingWorkTimeSlot]] = Field(default=None,alias="value",)
+	odata_count: Optional[int] = Field(alias="@odata.count",default=None,)
+	odata_nextLink: Optional[str] = Field(alias="@odata.nextLink",default=None,)
+	value: Optional[list[BookingWorkTimeSlot]] = Field(alias="value",default=None,)
 
 from .booking_work_time_slot import BookingWorkTimeSlot
 

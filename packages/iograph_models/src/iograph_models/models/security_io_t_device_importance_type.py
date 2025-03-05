@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class SecurityIoTDeviceImportanceType(Enum):
+class SecurityIoTDeviceImportanceType(StrEnum):
 	unknown = "unknown"
 	low = "low"
 	normal = "normal"

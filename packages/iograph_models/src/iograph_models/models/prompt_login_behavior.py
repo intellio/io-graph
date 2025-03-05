@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class PromptLoginBehavior(Enum):
+class PromptLoginBehavior(StrEnum):
 	translateToFreshPasswordAuthentication = "translateToFreshPasswordAuthentication"
 	nativeSupport = "nativeSupport"
 	disabled = "disabled"

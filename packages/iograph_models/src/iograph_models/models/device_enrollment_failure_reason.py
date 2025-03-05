@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class DeviceEnrollmentFailureReason(Enum):
+class DeviceEnrollmentFailureReason(StrEnum):
 	unknown = "unknown"
 	authentication = "authentication"
 	authorization = "authorization"

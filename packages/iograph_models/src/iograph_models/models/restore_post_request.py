@@ -4,8 +4,8 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class RestorePostRequest(BaseModel):
-	parentReference: Optional[ItemReference] = Field(default=None,alias="parentReference",)
-	name: Optional[str] = Field(default=None,alias="name",)
+	parentReference: Optional[ItemReference] = Field(alias="parentReference",default=None,)
+	name: Optional[str] = Field(alias="name",default=None,)
 
 from .item_reference import ItemReference
 

@@ -4,9 +4,9 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class IosLobAppAssignmentSettings(BaseModel):
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	isRemovable: Optional[bool] = Field(default=None,alias="isRemovable",)
-	uninstallOnDeviceRemoval: Optional[bool] = Field(default=None,alias="uninstallOnDeviceRemoval",)
-	vpnConfigurationId: Optional[str] = Field(default=None,alias="vpnConfigurationId",)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	isRemovable: Optional[bool] = Field(alias="isRemovable",default=None,)
+	uninstallOnDeviceRemoval: Optional[bool] = Field(alias="uninstallOnDeviceRemoval",default=None,)
+	vpnConfigurationId: Optional[str] = Field(alias="vpnConfigurationId",default=None,)
 
 

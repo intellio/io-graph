@@ -4,6 +4,6 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class DatevaluePostRequest(BaseModel):
-	dateText: Optional[str] = Field(default=None,alias="dateText",)
+	dateText: Optional[str] = Field(alias="dateText",default=None,)
 
 

@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class ImportedWindowsAutopilotDeviceIdentityImportStatus(Enum):
+class ImportedWindowsAutopilotDeviceIdentityImportStatus(StrEnum):
 	unknown = "unknown"
 	pending = "pending"
 	partial = "partial"

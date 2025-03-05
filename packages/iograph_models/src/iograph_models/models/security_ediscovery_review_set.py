@@ -5,13 +5,13 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class SecurityEdiscoveryReviewSet(BaseModel):
-	id: Optional[str] = Field(default=None,alias="id",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	createdBy: SerializeAsAny[Optional[IdentitySet]] = Field(default=None,alias="createdBy",)
-	createdDateTime: Optional[datetime] = Field(default=None,alias="createdDateTime",)
-	description: Optional[str] = Field(default=None,alias="description",)
-	displayName: Optional[str] = Field(default=None,alias="displayName",)
-	queries: Optional[list[SecurityEdiscoveryReviewSetQuery]] = Field(default=None,alias="queries",)
+	id: Optional[str] = Field(alias="id",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	createdBy: SerializeAsAny[Optional[IdentitySet]] = Field(alias="createdBy",default=None,)
+	createdDateTime: Optional[datetime] = Field(alias="createdDateTime",default=None,)
+	description: Optional[str] = Field(alias="description",default=None,)
+	displayName: Optional[str] = Field(alias="displayName",default=None,)
+	queries: Optional[list[SecurityEdiscoveryReviewSetQuery]] = Field(alias="queries",default=None,)
 
 from .identity_set import IdentitySet
 from .security_ediscovery_review_set_query import SecurityEdiscoveryReviewSetQuery

@@ -4,11 +4,11 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class ImportedWindowsAutopilotDeviceIdentityState(BaseModel):
-	deviceErrorCode: Optional[int] = Field(default=None,alias="deviceErrorCode",)
-	deviceErrorName: Optional[str] = Field(default=None,alias="deviceErrorName",)
-	deviceImportStatus: Optional[ImportedWindowsAutopilotDeviceIdentityImportStatus] = Field(default=None,alias="deviceImportStatus",)
-	deviceRegistrationId: Optional[str] = Field(default=None,alias="deviceRegistrationId",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
+	deviceErrorCode: Optional[int] = Field(alias="deviceErrorCode",default=None,)
+	deviceErrorName: Optional[str] = Field(alias="deviceErrorName",default=None,)
+	deviceImportStatus: Optional[str | ImportedWindowsAutopilotDeviceIdentityImportStatus] = Field(alias="deviceImportStatus",default=None,)
+	deviceRegistrationId: Optional[str] = Field(alias="deviceRegistrationId",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 
 from .imported_windows_autopilot_device_identity_import_status import ImportedWindowsAutopilotDeviceIdentityImportStatus
 

@@ -4,12 +4,12 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class OAuth2PermissionGrant(BaseModel):
-	id: Optional[str] = Field(default=None,alias="id",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	clientId: Optional[str] = Field(default=None,alias="clientId",)
-	consentType: Optional[str] = Field(default=None,alias="consentType",)
-	principalId: Optional[str] = Field(default=None,alias="principalId",)
-	resourceId: Optional[str] = Field(default=None,alias="resourceId",)
-	scope: Optional[str] = Field(default=None,alias="scope",)
+	id: Optional[str] = Field(alias="id",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	clientId: Optional[str] = Field(alias="clientId",default=None,)
+	consentType: Optional[str] = Field(alias="consentType",default=None,)
+	principalId: Optional[str] = Field(alias="principalId",default=None,)
+	resourceId: Optional[str] = Field(alias="resourceId",default=None,)
+	scope: Optional[str] = Field(alias="scope",default=None,)
 
 

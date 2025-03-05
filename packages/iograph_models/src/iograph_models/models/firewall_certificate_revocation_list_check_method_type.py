@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class FirewallCertificateRevocationListCheckMethodType(Enum):
+class FirewallCertificateRevocationListCheckMethodType(StrEnum):
 	deviceDefault = "deviceDefault"
 	none = "none"
 	attempt = "attempt"

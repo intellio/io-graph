@@ -4,7 +4,7 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class Set_dataPostRequest(BaseModel):
-	sourceData: Optional[str] = Field(default=None,alias="sourceData",)
-	seriesBy: Optional[str] = Field(default=None,alias="seriesBy",)
+	sourceData: Optional[str] = Field(alias="sourceData",default=None,)
+	seriesBy: Optional[str] = Field(alias="seriesBy",default=None,)
 
 

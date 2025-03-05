@@ -4,8 +4,8 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class CollapseProperty(BaseModel):
-	fields: Optional[list[str]] = Field(default=None,alias="fields",)
-	limit: Optional[int] = Field(default=None,alias="limit",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
+	fields: Optional[list[str]] = Field(alias="fields",default=None,)
+	limit: Optional[int] = Field(alias="limit",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 
 

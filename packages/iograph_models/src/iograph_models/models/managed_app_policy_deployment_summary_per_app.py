@@ -4,9 +4,9 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class ManagedAppPolicyDeploymentSummaryPerApp(BaseModel):
-	configurationAppliedUserCount: Optional[int] = Field(default=None,alias="configurationAppliedUserCount",)
-	mobileAppIdentifier: SerializeAsAny[Optional[MobileAppIdentifier]] = Field(default=None,alias="mobileAppIdentifier",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
+	configurationAppliedUserCount: Optional[int] = Field(alias="configurationAppliedUserCount",default=None,)
+	mobileAppIdentifier: SerializeAsAny[Optional[MobileAppIdentifier]] = Field(alias="mobileAppIdentifier",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 
 from .mobile_app_identifier import MobileAppIdentifier
 

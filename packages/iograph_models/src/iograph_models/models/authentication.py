@@ -4,18 +4,18 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class Authentication(BaseModel):
-	id: Optional[str] = Field(default=None,alias="id",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	emailMethods: Optional[list[EmailAuthenticationMethod]] = Field(default=None,alias="emailMethods",)
-	fido2Methods: Optional[list[Fido2AuthenticationMethod]] = Field(default=None,alias="fido2Methods",)
-	methods: SerializeAsAny[Optional[list[AuthenticationMethod]]] = Field(default=None,alias="methods",)
-	microsoftAuthenticatorMethods: Optional[list[MicrosoftAuthenticatorAuthenticationMethod]] = Field(default=None,alias="microsoftAuthenticatorMethods",)
-	operations: SerializeAsAny[Optional[list[LongRunningOperation]]] = Field(default=None,alias="operations",)
-	passwordMethods: Optional[list[PasswordAuthenticationMethod]] = Field(default=None,alias="passwordMethods",)
-	phoneMethods: Optional[list[PhoneAuthenticationMethod]] = Field(default=None,alias="phoneMethods",)
-	softwareOathMethods: Optional[list[SoftwareOathAuthenticationMethod]] = Field(default=None,alias="softwareOathMethods",)
-	temporaryAccessPassMethods: Optional[list[TemporaryAccessPassAuthenticationMethod]] = Field(default=None,alias="temporaryAccessPassMethods",)
-	windowsHelloForBusinessMethods: Optional[list[WindowsHelloForBusinessAuthenticationMethod]] = Field(default=None,alias="windowsHelloForBusinessMethods",)
+	id: Optional[str] = Field(alias="id",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	emailMethods: Optional[list[EmailAuthenticationMethod]] = Field(alias="emailMethods",default=None,)
+	fido2Methods: Optional[list[Fido2AuthenticationMethod]] = Field(alias="fido2Methods",default=None,)
+	methods: SerializeAsAny[Optional[list[AuthenticationMethod]]] = Field(alias="methods",default=None,)
+	microsoftAuthenticatorMethods: Optional[list[MicrosoftAuthenticatorAuthenticationMethod]] = Field(alias="microsoftAuthenticatorMethods",default=None,)
+	operations: SerializeAsAny[Optional[list[LongRunningOperation]]] = Field(alias="operations",default=None,)
+	passwordMethods: Optional[list[PasswordAuthenticationMethod]] = Field(alias="passwordMethods",default=None,)
+	phoneMethods: Optional[list[PhoneAuthenticationMethod]] = Field(alias="phoneMethods",default=None,)
+	softwareOathMethods: Optional[list[SoftwareOathAuthenticationMethod]] = Field(alias="softwareOathMethods",default=None,)
+	temporaryAccessPassMethods: Optional[list[TemporaryAccessPassAuthenticationMethod]] = Field(alias="temporaryAccessPassMethods",default=None,)
+	windowsHelloForBusinessMethods: Optional[list[WindowsHelloForBusinessAuthenticationMethod]] = Field(alias="windowsHelloForBusinessMethods",default=None,)
 
 from .email_authentication_method import EmailAuthenticationMethod
 from .fido2_authentication_method import Fido2AuthenticationMethod

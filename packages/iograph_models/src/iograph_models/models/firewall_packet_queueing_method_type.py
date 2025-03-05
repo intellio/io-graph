@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class FirewallPacketQueueingMethodType(Enum):
+class FirewallPacketQueueingMethodType(StrEnum):
 	deviceDefault = "deviceDefault"
 	disabled = "disabled"
 	queueInbound = "queueInbound"

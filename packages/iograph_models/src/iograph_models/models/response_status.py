@@ -5,9 +5,9 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class ResponseStatus(BaseModel):
-	response: Optional[ResponseType] = Field(default=None,alias="response",)
-	time: Optional[datetime] = Field(default=None,alias="time",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
+	response: Optional[str | ResponseType] = Field(alias="response",default=None,)
+	time: Optional[datetime] = Field(alias="time",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 
 from .response_type import ResponseType
 

@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class SimulationAutomationStatus(Enum):
+class SimulationAutomationStatus(StrEnum):
 	unknown = "unknown"
 	draft = "draft"
 	notRunning = "notRunning"

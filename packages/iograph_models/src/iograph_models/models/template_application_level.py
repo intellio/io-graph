@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class TemplateApplicationLevel(Enum):
+class TemplateApplicationLevel(StrEnum):
 	none = "none"
 	newPartners = "newPartners"
 	existingPartners = "existingPartners"

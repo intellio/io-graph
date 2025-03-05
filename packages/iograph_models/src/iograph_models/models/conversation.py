@@ -5,14 +5,14 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class Conversation(BaseModel):
-	id: Optional[str] = Field(default=None,alias="id",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	hasAttachments: Optional[bool] = Field(default=None,alias="hasAttachments",)
-	lastDeliveredDateTime: Optional[datetime] = Field(default=None,alias="lastDeliveredDateTime",)
-	preview: Optional[str] = Field(default=None,alias="preview",)
-	topic: Optional[str] = Field(default=None,alias="topic",)
-	uniqueSenders: Optional[list[str]] = Field(default=None,alias="uniqueSenders",)
-	threads: Optional[list[ConversationThread]] = Field(default=None,alias="threads",)
+	id: Optional[str] = Field(alias="id",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	hasAttachments: Optional[bool] = Field(alias="hasAttachments",default=None,)
+	lastDeliveredDateTime: Optional[datetime] = Field(alias="lastDeliveredDateTime",default=None,)
+	preview: Optional[str] = Field(alias="preview",default=None,)
+	topic: Optional[str] = Field(alias="topic",default=None,)
+	uniqueSenders: Optional[list[str]] = Field(alias="uniqueSenders",default=None,)
+	threads: Optional[list[ConversationThread]] = Field(alias="threads",default=None,)
 
 from .conversation_thread import ConversationThread
 

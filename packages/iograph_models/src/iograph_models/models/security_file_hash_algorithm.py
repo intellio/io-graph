@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class SecurityFileHashAlgorithm(Enum):
+class SecurityFileHashAlgorithm(StrEnum):
 	unknown = "unknown"
 	md5 = "md5"
 	sha1 = "sha1"

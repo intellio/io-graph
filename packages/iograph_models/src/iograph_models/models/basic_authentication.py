@@ -4,8 +4,8 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class BasicAuthentication(BaseModel):
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	password: Optional[str] = Field(default=None,alias="password",)
-	username: Optional[str] = Field(default=None,alias="username",)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	password: Optional[str] = Field(alias="password",default=None,)
+	username: Optional[str] = Field(alias="username",default=None,)
 
 

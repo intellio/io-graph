@@ -4,8 +4,8 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class GroupMembers(BaseModel):
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	description: Optional[str] = Field(default=None,alias="description",)
-	groupId: Optional[str] = Field(default=None,alias="groupId",)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	description: Optional[str] = Field(alias="description",default=None,)
+	groupId: Optional[str] = Field(alias="groupId",default=None,)
 
 

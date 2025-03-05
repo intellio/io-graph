@@ -5,13 +5,13 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class EducationLinkResource(BaseModel):
-	createdBy: SerializeAsAny[Optional[IdentitySet]] = Field(default=None,alias="createdBy",)
-	createdDateTime: Optional[datetime] = Field(default=None,alias="createdDateTime",)
-	displayName: Optional[str] = Field(default=None,alias="displayName",)
-	lastModifiedBy: SerializeAsAny[Optional[IdentitySet]] = Field(default=None,alias="lastModifiedBy",)
-	lastModifiedDateTime: Optional[datetime] = Field(default=None,alias="lastModifiedDateTime",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	link: Optional[str] = Field(default=None,alias="link",)
+	createdBy: SerializeAsAny[Optional[IdentitySet]] = Field(alias="createdBy",default=None,)
+	createdDateTime: Optional[datetime] = Field(alias="createdDateTime",default=None,)
+	displayName: Optional[str] = Field(alias="displayName",default=None,)
+	lastModifiedBy: SerializeAsAny[Optional[IdentitySet]] = Field(alias="lastModifiedBy",default=None,)
+	lastModifiedDateTime: Optional[datetime] = Field(alias="lastModifiedDateTime",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	link: Optional[str] = Field(alias="link",default=None,)
 
 from .identity_set import IdentitySet
 from .identity_set import IdentitySet

@@ -4,9 +4,9 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class WorkbookChartGridlinesFormat(BaseModel):
-	id: Optional[str] = Field(default=None,alias="id",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	line: Optional[WorkbookChartLineFormat] = Field(default=None,alias="line",)
+	id: Optional[str] = Field(alias="id",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	line: Optional[WorkbookChartLineFormat] = Field(alias="line",default=None,)
 
 from .workbook_chart_line_format import WorkbookChartLineFormat
 

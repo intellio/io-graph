@@ -5,20 +5,20 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class UnifiedRoleEligibilityScheduleInstance(BaseModel):
-	id: Optional[str] = Field(default=None,alias="id",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	appScopeId: Optional[str] = Field(default=None,alias="appScopeId",)
-	directoryScopeId: Optional[str] = Field(default=None,alias="directoryScopeId",)
-	principalId: Optional[str] = Field(default=None,alias="principalId",)
-	roleDefinitionId: Optional[str] = Field(default=None,alias="roleDefinitionId",)
-	appScope: Optional[AppScope] = Field(default=None,alias="appScope",)
-	directoryScope: SerializeAsAny[Optional[DirectoryObject]] = Field(default=None,alias="directoryScope",)
-	principal: SerializeAsAny[Optional[DirectoryObject]] = Field(default=None,alias="principal",)
-	roleDefinition: Optional[UnifiedRoleDefinition] = Field(default=None,alias="roleDefinition",)
-	endDateTime: Optional[datetime] = Field(default=None,alias="endDateTime",)
-	memberType: Optional[str] = Field(default=None,alias="memberType",)
-	roleEligibilityScheduleId: Optional[str] = Field(default=None,alias="roleEligibilityScheduleId",)
-	startDateTime: Optional[datetime] = Field(default=None,alias="startDateTime",)
+	id: Optional[str] = Field(alias="id",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	appScopeId: Optional[str] = Field(alias="appScopeId",default=None,)
+	directoryScopeId: Optional[str] = Field(alias="directoryScopeId",default=None,)
+	principalId: Optional[str] = Field(alias="principalId",default=None,)
+	roleDefinitionId: Optional[str] = Field(alias="roleDefinitionId",default=None,)
+	appScope: Optional[AppScope] = Field(alias="appScope",default=None,)
+	directoryScope: SerializeAsAny[Optional[DirectoryObject]] = Field(alias="directoryScope",default=None,)
+	principal: SerializeAsAny[Optional[DirectoryObject]] = Field(alias="principal",default=None,)
+	roleDefinition: Optional[UnifiedRoleDefinition] = Field(alias="roleDefinition",default=None,)
+	endDateTime: Optional[datetime] = Field(alias="endDateTime",default=None,)
+	memberType: Optional[str] = Field(alias="memberType",default=None,)
+	roleEligibilityScheduleId: Optional[str] = Field(alias="roleEligibilityScheduleId",default=None,)
+	startDateTime: Optional[datetime] = Field(alias="startDateTime",default=None,)
 
 from .app_scope import AppScope
 from .directory_object import DirectoryObject

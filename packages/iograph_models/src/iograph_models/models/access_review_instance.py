@@ -5,17 +5,17 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class AccessReviewInstance(BaseModel):
-	id: Optional[str] = Field(default=None,alias="id",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	endDateTime: Optional[datetime] = Field(default=None,alias="endDateTime",)
-	fallbackReviewers: Optional[list[AccessReviewReviewerScope]] = Field(default=None,alias="fallbackReviewers",)
-	reviewers: Optional[list[AccessReviewReviewerScope]] = Field(default=None,alias="reviewers",)
-	scope: SerializeAsAny[Optional[AccessReviewScope]] = Field(default=None,alias="scope",)
-	startDateTime: Optional[datetime] = Field(default=None,alias="startDateTime",)
-	status: Optional[str] = Field(default=None,alias="status",)
-	contactedReviewers: Optional[list[AccessReviewReviewer]] = Field(default=None,alias="contactedReviewers",)
-	decisions: Optional[list[AccessReviewInstanceDecisionItem]] = Field(default=None,alias="decisions",)
-	stages: Optional[list[AccessReviewStage]] = Field(default=None,alias="stages",)
+	id: Optional[str] = Field(alias="id",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	endDateTime: Optional[datetime] = Field(alias="endDateTime",default=None,)
+	fallbackReviewers: Optional[list[AccessReviewReviewerScope]] = Field(alias="fallbackReviewers",default=None,)
+	reviewers: Optional[list[AccessReviewReviewerScope]] = Field(alias="reviewers",default=None,)
+	scope: SerializeAsAny[Optional[AccessReviewScope]] = Field(alias="scope",default=None,)
+	startDateTime: Optional[datetime] = Field(alias="startDateTime",default=None,)
+	status: Optional[str] = Field(alias="status",default=None,)
+	contactedReviewers: Optional[list[AccessReviewReviewer]] = Field(alias="contactedReviewers",default=None,)
+	decisions: Optional[list[AccessReviewInstanceDecisionItem]] = Field(alias="decisions",default=None,)
+	stages: Optional[list[AccessReviewStage]] = Field(alias="stages",default=None,)
 
 from .access_review_reviewer_scope import AccessReviewReviewerScope
 from .access_review_reviewer_scope import AccessReviewReviewerScope

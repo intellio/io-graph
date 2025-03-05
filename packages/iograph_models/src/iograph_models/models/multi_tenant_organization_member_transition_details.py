@@ -4,11 +4,11 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class MultiTenantOrganizationMemberTransitionDetails(BaseModel):
-	desiredRole: Optional[MultiTenantOrganizationMemberRole] = Field(default=None,alias="desiredRole",)
-	desiredState: Optional[MultiTenantOrganizationMemberState] = Field(default=None,alias="desiredState",)
-	details: Optional[str] = Field(default=None,alias="details",)
-	status: Optional[MultiTenantOrganizationMemberProcessingStatus] = Field(default=None,alias="status",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
+	desiredRole: Optional[str | MultiTenantOrganizationMemberRole] = Field(alias="desiredRole",default=None,)
+	desiredState: Optional[str | MultiTenantOrganizationMemberState] = Field(alias="desiredState",default=None,)
+	details: Optional[str] = Field(alias="details",default=None,)
+	status: Optional[str | MultiTenantOrganizationMemberProcessingStatus] = Field(alias="status",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 
 from .multi_tenant_organization_member_role import MultiTenantOrganizationMemberRole
 from .multi_tenant_organization_member_state import MultiTenantOrganizationMemberState

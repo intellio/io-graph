@@ -4,8 +4,8 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class AzureActiveDirectoryTenant(BaseModel):
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	displayName: Optional[str] = Field(default=None,alias="displayName",)
-	tenantId: Optional[str] = Field(default=None,alias="tenantId",)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	displayName: Optional[str] = Field(alias="displayName",default=None,)
+	tenantId: Optional[str] = Field(alias="tenantId",default=None,)
 
 

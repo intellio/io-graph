@@ -4,9 +4,9 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class PartnersBillingBillingReconciliation(BaseModel):
-	id: Optional[str] = Field(default=None,alias="id",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	billed: Optional[PartnersBillingBilledReconciliation] = Field(default=None,alias="billed",)
+	id: Optional[str] = Field(alias="id",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	billed: Optional[PartnersBillingBilledReconciliation] = Field(alias="billed",default=None,)
 
 from .partners_billing_billed_reconciliation import PartnersBillingBilledReconciliation
 

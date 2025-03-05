@@ -4,15 +4,15 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class Reminder(BaseModel):
-	changeKey: Optional[str] = Field(default=None,alias="changeKey",)
-	eventEndTime: Optional[DateTimeTimeZone] = Field(default=None,alias="eventEndTime",)
-	eventId: Optional[str] = Field(default=None,alias="eventId",)
-	eventLocation: SerializeAsAny[Optional[Location]] = Field(default=None,alias="eventLocation",)
-	eventStartTime: Optional[DateTimeTimeZone] = Field(default=None,alias="eventStartTime",)
-	eventSubject: Optional[str] = Field(default=None,alias="eventSubject",)
-	eventWebLink: Optional[str] = Field(default=None,alias="eventWebLink",)
-	reminderFireTime: Optional[DateTimeTimeZone] = Field(default=None,alias="reminderFireTime",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
+	changeKey: Optional[str] = Field(alias="changeKey",default=None,)
+	eventEndTime: Optional[DateTimeTimeZone] = Field(alias="eventEndTime",default=None,)
+	eventId: Optional[str] = Field(alias="eventId",default=None,)
+	eventLocation: SerializeAsAny[Optional[Location]] = Field(alias="eventLocation",default=None,)
+	eventStartTime: Optional[DateTimeTimeZone] = Field(alias="eventStartTime",default=None,)
+	eventSubject: Optional[str] = Field(alias="eventSubject",default=None,)
+	eventWebLink: Optional[str] = Field(alias="eventWebLink",default=None,)
+	reminderFireTime: Optional[DateTimeTimeZone] = Field(alias="reminderFireTime",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 
 from .date_time_time_zone import DateTimeTimeZone
 from .location import Location

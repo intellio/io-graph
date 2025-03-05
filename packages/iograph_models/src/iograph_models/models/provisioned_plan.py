@@ -4,9 +4,9 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class ProvisionedPlan(BaseModel):
-	capabilityStatus: Optional[str] = Field(default=None,alias="capabilityStatus",)
-	provisioningStatus: Optional[str] = Field(default=None,alias="provisioningStatus",)
-	service: Optional[str] = Field(default=None,alias="service",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
+	capabilityStatus: Optional[str] = Field(alias="capabilityStatus",default=None,)
+	provisioningStatus: Optional[str] = Field(alias="provisioningStatus",default=None,)
+	service: Optional[str] = Field(alias="service",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 
 

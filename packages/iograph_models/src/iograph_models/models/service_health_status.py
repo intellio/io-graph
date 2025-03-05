@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class ServiceHealthStatus(Enum):
+class ServiceHealthStatus(StrEnum):
 	serviceOperational = "serviceOperational"
 	investigating = "investigating"
 	restoringService = "restoringService"

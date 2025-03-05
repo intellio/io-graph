@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class ConditionalAccessTransferMethods(Enum):
+class ConditionalAccessTransferMethods(StrEnum):
 	none = "none"
 	deviceCodeFlow = "deviceCodeFlow"
 	authenticationTransfer = "authenticationTransfer"

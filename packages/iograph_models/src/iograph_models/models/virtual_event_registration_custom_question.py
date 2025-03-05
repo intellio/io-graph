@@ -4,12 +4,12 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class VirtualEventRegistrationCustomQuestion(BaseModel):
-	id: Optional[str] = Field(default=None,alias="id",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	displayName: Optional[str] = Field(default=None,alias="displayName",)
-	isRequired: Optional[bool] = Field(default=None,alias="isRequired",)
-	answerChoices: Optional[list[str]] = Field(default=None,alias="answerChoices",)
-	answerInputType: Optional[VirtualEventRegistrationQuestionAnswerInputType] = Field(default=None,alias="answerInputType",)
+	id: Optional[str] = Field(alias="id",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	displayName: Optional[str] = Field(alias="displayName",default=None,)
+	isRequired: Optional[bool] = Field(alias="isRequired",default=None,)
+	answerChoices: Optional[list[str]] = Field(alias="answerChoices",default=None,)
+	answerInputType: Optional[str | VirtualEventRegistrationQuestionAnswerInputType] = Field(alias="answerInputType",default=None,)
 
 from .virtual_event_registration_question_answer_input_type import VirtualEventRegistrationQuestionAnswerInputType
 

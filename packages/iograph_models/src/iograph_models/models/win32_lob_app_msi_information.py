@@ -4,14 +4,14 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class Win32LobAppMsiInformation(BaseModel):
-	packageType: Optional[Win32LobAppMsiPackageType] = Field(default=None,alias="packageType",)
-	productCode: Optional[str] = Field(default=None,alias="productCode",)
-	productName: Optional[str] = Field(default=None,alias="productName",)
-	productVersion: Optional[str] = Field(default=None,alias="productVersion",)
-	publisher: Optional[str] = Field(default=None,alias="publisher",)
-	requiresReboot: Optional[bool] = Field(default=None,alias="requiresReboot",)
-	upgradeCode: Optional[str] = Field(default=None,alias="upgradeCode",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
+	packageType: Optional[str | Win32LobAppMsiPackageType] = Field(alias="packageType",default=None,)
+	productCode: Optional[str] = Field(alias="productCode",default=None,)
+	productName: Optional[str] = Field(alias="productName",default=None,)
+	productVersion: Optional[str] = Field(alias="productVersion",default=None,)
+	publisher: Optional[str] = Field(alias="publisher",default=None,)
+	requiresReboot: Optional[bool] = Field(alias="requiresReboot",default=None,)
+	upgradeCode: Optional[str] = Field(alias="upgradeCode",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 
 from .win32_lob_app_msi_package_type import Win32LobAppMsiPackageType
 

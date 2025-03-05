@@ -4,11 +4,11 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class SiteCollection(BaseModel):
-	archivalDetails: Optional[SiteArchivalDetails] = Field(default=None,alias="archivalDetails",)
-	dataLocationCode: Optional[str] = Field(default=None,alias="dataLocationCode",)
-	hostname: Optional[str] = Field(default=None,alias="hostname",)
-	root: Optional[Root] = Field(default=None,alias="root",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
+	archivalDetails: Optional[SiteArchivalDetails] = Field(alias="archivalDetails",default=None,)
+	dataLocationCode: Optional[str] = Field(alias="dataLocationCode",default=None,)
+	hostname: Optional[str] = Field(alias="hostname",default=None,)
+	root: Optional[Root] = Field(alias="root",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 
 from .site_archival_details import SiteArchivalDetails
 from .root import Root

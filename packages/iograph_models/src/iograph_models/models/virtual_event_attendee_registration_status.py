@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class VirtualEventAttendeeRegistrationStatus(Enum):
+class VirtualEventAttendeeRegistrationStatus(StrEnum):
 	registered = "registered"
 	canceled = "canceled"
 	waitlisted = "waitlisted"

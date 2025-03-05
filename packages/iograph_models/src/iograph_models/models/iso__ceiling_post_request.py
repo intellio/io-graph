@@ -4,7 +4,7 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class Iso__ceilingPostRequest(BaseModel):
-	number: Optional[str] = Field(default=None,alias="number",)
-	significance: Optional[str] = Field(default=None,alias="significance",)
+	number: Optional[str] = Field(alias="number",default=None,)
+	significance: Optional[str] = Field(alias="significance",default=None,)
 
 

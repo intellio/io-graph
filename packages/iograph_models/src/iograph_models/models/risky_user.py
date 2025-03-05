@@ -7,17 +7,17 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class RiskyUser(BaseModel):
-	id: Optional[str] = Field(default=None,alias="id",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	isDeleted: Optional[bool] = Field(default=None,alias="isDeleted",)
-	isProcessing: Optional[bool] = Field(default=None,alias="isProcessing",)
-	riskDetail: Optional[RiskDetail] = Field(default=None,alias="riskDetail",)
-	riskLastUpdatedDateTime: Optional[datetime] = Field(default=None,alias="riskLastUpdatedDateTime",)
-	riskLevel: Optional[RiskLevel] = Field(default=None,alias="riskLevel",)
-	riskState: Optional[RiskState] = Field(default=None,alias="riskState",)
-	userDisplayName: Optional[str] = Field(default=None,alias="userDisplayName",)
-	userPrincipalName: Optional[str] = Field(default=None,alias="userPrincipalName",)
-	history: Optional[list[RiskyUserHistoryItem]] = Field(default=None,alias="history",)
+	id: Optional[str] = Field(alias="id",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	isDeleted: Optional[bool] = Field(alias="isDeleted",default=None,)
+	isProcessing: Optional[bool] = Field(alias="isProcessing",default=None,)
+	riskDetail: Optional[str | RiskDetail] = Field(alias="riskDetail",default=None,)
+	riskLastUpdatedDateTime: Optional[datetime] = Field(alias="riskLastUpdatedDateTime",default=None,)
+	riskLevel: Optional[str | RiskLevel] = Field(alias="riskLevel",default=None,)
+	riskState: Optional[str | RiskState] = Field(alias="riskState",default=None,)
+	userDisplayName: Optional[str] = Field(alias="userDisplayName",default=None,)
+	userPrincipalName: Optional[str] = Field(alias="userPrincipalName",default=None,)
+	history: Optional[list[RiskyUserHistoryItem]] = Field(alias="history",default=None,)
 
 	@model_validator(mode="wrap")
 	def convert_discriminator_class(cls, data: Any, handler: ModelWrapValidatorHandler[Self]) -> Self:

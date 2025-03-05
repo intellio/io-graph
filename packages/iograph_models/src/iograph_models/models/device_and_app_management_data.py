@@ -4,7 +4,7 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class DeviceAndAppManagementData(BaseModel):
-	content: Optional[str] = Field(default=None,alias="content",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
+	content: Optional[str] = Field(alias="content",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 
 

@@ -4,9 +4,9 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class MeetingTimeSuggestionsResult(BaseModel):
-	emptySuggestionsReason: Optional[str] = Field(default=None,alias="emptySuggestionsReason",)
-	meetingTimeSuggestions: Optional[list[MeetingTimeSuggestion]] = Field(default=None,alias="meetingTimeSuggestions",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
+	emptySuggestionsReason: Optional[str] = Field(alias="emptySuggestionsReason",default=None,)
+	meetingTimeSuggestions: Optional[list[MeetingTimeSuggestion]] = Field(alias="meetingTimeSuggestions",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 
 from .meeting_time_suggestion import MeetingTimeSuggestion
 

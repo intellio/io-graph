@@ -4,10 +4,10 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class TeamworkApplicationIdentity(BaseModel):
-	displayName: Optional[str] = Field(default=None,alias="displayName",)
-	id: Optional[str] = Field(default=None,alias="id",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	applicationIdentityType: Optional[TeamworkApplicationIdentityType] = Field(default=None,alias="applicationIdentityType",)
+	displayName: Optional[str] = Field(alias="displayName",default=None,)
+	id: Optional[str] = Field(alias="id",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	applicationIdentityType: Optional[str | TeamworkApplicationIdentityType] = Field(alias="applicationIdentityType",default=None,)
 
 from .teamwork_application_identity_type import TeamworkApplicationIdentityType
 

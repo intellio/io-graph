@@ -4,10 +4,10 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class EducationAssignmentSettings(BaseModel):
-	id: Optional[str] = Field(default=None,alias="id",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	submissionAnimationDisabled: Optional[bool] = Field(default=None,alias="submissionAnimationDisabled",)
-	gradingCategories: Optional[list[EducationGradingCategory]] = Field(default=None,alias="gradingCategories",)
+	id: Optional[str] = Field(alias="id",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	submissionAnimationDisabled: Optional[bool] = Field(alias="submissionAnimationDisabled",default=None,)
+	gradingCategories: Optional[list[EducationGradingCategory]] = Field(alias="gradingCategories",default=None,)
 
 from .education_grading_category import EducationGradingCategory
 

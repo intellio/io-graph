@@ -15,8 +15,8 @@ if TYPE_CHECKING:
 	from .by_claims_mapping_policy_id import ByClaimsMappingPolicyIdRequest
 	from ....request_adapter import HttpxRequestAdapter
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
-from iograph_models.models.claims_mapping_policy import ClaimsMappingPolicy
 from iograph_models.models.claims_mapping_policy_collection_response import ClaimsMappingPolicyCollectionResponse
+from iograph_models.models.claims_mapping_policy import ClaimsMappingPolicy
 
 
 class ClaimsMappingPoliciesRequest(BaseRequestBuilder):

@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class LayoutTemplateType(Enum):
+class LayoutTemplateType(StrEnum):
 	default = "default"
 	verticalSplit = "verticalSplit"
 	unknownFutureValue = "unknownFutureValue"

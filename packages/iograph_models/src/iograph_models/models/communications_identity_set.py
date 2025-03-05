@@ -4,18 +4,18 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class CommunicationsIdentitySet(BaseModel):
-	application: SerializeAsAny[Optional[Identity]] = Field(default=None,alias="application",)
-	device: SerializeAsAny[Optional[Identity]] = Field(default=None,alias="device",)
-	user: SerializeAsAny[Optional[Identity]] = Field(default=None,alias="user",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	applicationInstance: SerializeAsAny[Optional[Identity]] = Field(default=None,alias="applicationInstance",)
-	assertedIdentity: SerializeAsAny[Optional[Identity]] = Field(default=None,alias="assertedIdentity",)
-	azureCommunicationServicesUser: SerializeAsAny[Optional[Identity]] = Field(default=None,alias="azureCommunicationServicesUser",)
-	encrypted: SerializeAsAny[Optional[Identity]] = Field(default=None,alias="encrypted",)
-	endpointType: Optional[EndpointType] = Field(default=None,alias="endpointType",)
-	guest: SerializeAsAny[Optional[Identity]] = Field(default=None,alias="guest",)
-	onPremises: SerializeAsAny[Optional[Identity]] = Field(default=None,alias="onPremises",)
-	phone: SerializeAsAny[Optional[Identity]] = Field(default=None,alias="phone",)
+	application: SerializeAsAny[Optional[Identity]] = Field(alias="application",default=None,)
+	device: SerializeAsAny[Optional[Identity]] = Field(alias="device",default=None,)
+	user: SerializeAsAny[Optional[Identity]] = Field(alias="user",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	applicationInstance: SerializeAsAny[Optional[Identity]] = Field(alias="applicationInstance",default=None,)
+	assertedIdentity: SerializeAsAny[Optional[Identity]] = Field(alias="assertedIdentity",default=None,)
+	azureCommunicationServicesUser: SerializeAsAny[Optional[Identity]] = Field(alias="azureCommunicationServicesUser",default=None,)
+	encrypted: SerializeAsAny[Optional[Identity]] = Field(alias="encrypted",default=None,)
+	endpointType: Optional[str | EndpointType] = Field(alias="endpointType",default=None,)
+	guest: SerializeAsAny[Optional[Identity]] = Field(alias="guest",default=None,)
+	onPremises: SerializeAsAny[Optional[Identity]] = Field(alias="onPremises",default=None,)
+	phone: SerializeAsAny[Optional[Identity]] = Field(alias="phone",default=None,)
 
 from .identity import Identity
 from .identity import Identity

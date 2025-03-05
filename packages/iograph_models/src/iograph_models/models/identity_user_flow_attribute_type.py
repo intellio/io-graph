@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class IdentityUserFlowAttributeType(Enum):
+class IdentityUserFlowAttributeType(StrEnum):
 	builtIn = "builtIn"
 	custom = "custom"
 	required = "required"

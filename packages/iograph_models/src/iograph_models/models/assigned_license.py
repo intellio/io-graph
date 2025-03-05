@@ -5,8 +5,8 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class AssignedLicense(BaseModel):
-	disabledPlans: Optional[list[UUID]] = Field(default=None,alias="disabledPlans",)
-	skuId: Optional[UUID] = Field(default=None,alias="skuId",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
+	disabledPlans: Optional[list[UUID]] = Field(alias="disabledPlans",default=None,)
+	skuId: Optional[UUID] = Field(alias="skuId",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 
 

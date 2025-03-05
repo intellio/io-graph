@@ -4,7 +4,7 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class LogPostRequest(BaseModel):
-	number: Optional[str] = Field(default=None,alias="number",)
-	base: Optional[str] = Field(default=None,alias="base",)
+	number: Optional[str] = Field(alias="number",default=None,)
+	base: Optional[str] = Field(alias="base",default=None,)
 
 

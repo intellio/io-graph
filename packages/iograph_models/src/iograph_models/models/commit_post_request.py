@@ -4,7 +4,7 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class CommitPostRequest(BaseModel):
-	fileEncryptionInfo: Optional[FileEncryptionInfo] = Field(default=None,alias="fileEncryptionInfo",)
+	fileEncryptionInfo: Optional[FileEncryptionInfo] = Field(alias="fileEncryptionInfo",default=None,)
 
 from .file_encryption_info import FileEncryptionInfo
 

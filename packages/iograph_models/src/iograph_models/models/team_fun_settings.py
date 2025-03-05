@@ -4,11 +4,11 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class TeamFunSettings(BaseModel):
-	allowCustomMemes: Optional[bool] = Field(default=None,alias="allowCustomMemes",)
-	allowGiphy: Optional[bool] = Field(default=None,alias="allowGiphy",)
-	allowStickersAndMemes: Optional[bool] = Field(default=None,alias="allowStickersAndMemes",)
-	giphyContentRating: Optional[GiphyRatingType] = Field(default=None,alias="giphyContentRating",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
+	allowCustomMemes: Optional[bool] = Field(alias="allowCustomMemes",default=None,)
+	allowGiphy: Optional[bool] = Field(alias="allowGiphy",default=None,)
+	allowStickersAndMemes: Optional[bool] = Field(alias="allowStickersAndMemes",default=None,)
+	giphyContentRating: Optional[str | GiphyRatingType] = Field(alias="giphyContentRating",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 
 from .giphy_rating_type import GiphyRatingType
 

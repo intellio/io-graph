@@ -5,20 +5,20 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class OnenoteSection(BaseModel):
-	id: Optional[str] = Field(default=None,alias="id",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	self: Optional[str] = Field(default=None,alias="self",)
-	createdDateTime: Optional[datetime] = Field(default=None,alias="createdDateTime",)
-	createdBy: SerializeAsAny[Optional[IdentitySet]] = Field(default=None,alias="createdBy",)
-	displayName: Optional[str] = Field(default=None,alias="displayName",)
-	lastModifiedBy: SerializeAsAny[Optional[IdentitySet]] = Field(default=None,alias="lastModifiedBy",)
-	lastModifiedDateTime: Optional[datetime] = Field(default=None,alias="lastModifiedDateTime",)
-	isDefault: Optional[bool] = Field(default=None,alias="isDefault",)
-	links: Optional[SectionLinks] = Field(default=None,alias="links",)
-	pagesUrl: Optional[str] = Field(default=None,alias="pagesUrl",)
-	pages: Optional[list[OnenotePage]] = Field(default=None,alias="pages",)
-	parentNotebook: Optional[Notebook] = Field(default=None,alias="parentNotebook",)
-	parentSectionGroup: Optional[SectionGroup] = Field(default=None,alias="parentSectionGroup",)
+	id: Optional[str] = Field(alias="id",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	self: Optional[str] = Field(alias="self",default=None,)
+	createdDateTime: Optional[datetime] = Field(alias="createdDateTime",default=None,)
+	createdBy: SerializeAsAny[Optional[IdentitySet]] = Field(alias="createdBy",default=None,)
+	displayName: Optional[str] = Field(alias="displayName",default=None,)
+	lastModifiedBy: SerializeAsAny[Optional[IdentitySet]] = Field(alias="lastModifiedBy",default=None,)
+	lastModifiedDateTime: Optional[datetime] = Field(alias="lastModifiedDateTime",default=None,)
+	isDefault: Optional[bool] = Field(alias="isDefault",default=None,)
+	links: Optional[SectionLinks] = Field(alias="links",default=None,)
+	pagesUrl: Optional[str] = Field(alias="pagesUrl",default=None,)
+	pages: Optional[list[OnenotePage]] = Field(alias="pages",default=None,)
+	parentNotebook: Optional[Notebook] = Field(alias="parentNotebook",default=None,)
+	parentSectionGroup: Optional[SectionGroup] = Field(alias="parentSectionGroup",default=None,)
 
 from .identity_set import IdentitySet
 from .identity_set import IdentitySet

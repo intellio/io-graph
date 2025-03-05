@@ -6,10 +6,10 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class EndUserNotificationSetting(BaseModel):
-	notificationPreference: Optional[EndUserNotificationPreference] = Field(default=None,alias="notificationPreference",)
-	positiveReinforcement: Optional[PositiveReinforcementNotification] = Field(default=None,alias="positiveReinforcement",)
-	settingType: Optional[EndUserNotificationSettingType] = Field(default=None,alias="settingType",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
+	notificationPreference: Optional[str | EndUserNotificationPreference] = Field(alias="notificationPreference",default=None,)
+	positiveReinforcement: Optional[PositiveReinforcementNotification] = Field(alias="positiveReinforcement",default=None,)
+	settingType: Optional[str | EndUserNotificationSettingType] = Field(alias="settingType",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 
 	@model_validator(mode="wrap")
 	def convert_discriminator_class(cls, data: Any, handler: ModelWrapValidatorHandler[Self]) -> Self:

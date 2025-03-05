@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class ServiceHealthClassificationType(Enum):
+class ServiceHealthClassificationType(StrEnum):
 	advisory = "advisory"
 	incident = "incident"
 	unknownFutureValue = "unknownFutureValue"

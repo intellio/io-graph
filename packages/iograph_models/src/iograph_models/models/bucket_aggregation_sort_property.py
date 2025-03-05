@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class BucketAggregationSortProperty(Enum):
+class BucketAggregationSortProperty(StrEnum):
 	count = "count"
 	keyAsString = "keyAsString"
 	keyAsNumber = "keyAsNumber"

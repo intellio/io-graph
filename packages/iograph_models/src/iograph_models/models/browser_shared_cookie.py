@@ -5,20 +5,20 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class BrowserSharedCookie(BaseModel):
-	id: Optional[str] = Field(default=None,alias="id",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	comment: Optional[str] = Field(default=None,alias="comment",)
-	createdDateTime: Optional[datetime] = Field(default=None,alias="createdDateTime",)
-	deletedDateTime: Optional[datetime] = Field(default=None,alias="deletedDateTime",)
-	displayName: Optional[str] = Field(default=None,alias="displayName",)
-	history: Optional[list[BrowserSharedCookieHistory]] = Field(default=None,alias="history",)
-	hostOnly: Optional[bool] = Field(default=None,alias="hostOnly",)
-	hostOrDomain: Optional[str] = Field(default=None,alias="hostOrDomain",)
-	lastModifiedBy: SerializeAsAny[Optional[IdentitySet]] = Field(default=None,alias="lastModifiedBy",)
-	lastModifiedDateTime: Optional[datetime] = Field(default=None,alias="lastModifiedDateTime",)
-	path: Optional[str] = Field(default=None,alias="path",)
-	sourceEnvironment: Optional[BrowserSharedCookieSourceEnvironment] = Field(default=None,alias="sourceEnvironment",)
-	status: Optional[BrowserSharedCookieStatus] = Field(default=None,alias="status",)
+	id: Optional[str] = Field(alias="id",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	comment: Optional[str] = Field(alias="comment",default=None,)
+	createdDateTime: Optional[datetime] = Field(alias="createdDateTime",default=None,)
+	deletedDateTime: Optional[datetime] = Field(alias="deletedDateTime",default=None,)
+	displayName: Optional[str] = Field(alias="displayName",default=None,)
+	history: Optional[list[BrowserSharedCookieHistory]] = Field(alias="history",default=None,)
+	hostOnly: Optional[bool] = Field(alias="hostOnly",default=None,)
+	hostOrDomain: Optional[str] = Field(alias="hostOrDomain",default=None,)
+	lastModifiedBy: SerializeAsAny[Optional[IdentitySet]] = Field(alias="lastModifiedBy",default=None,)
+	lastModifiedDateTime: Optional[datetime] = Field(alias="lastModifiedDateTime",default=None,)
+	path: Optional[str] = Field(alias="path",default=None,)
+	sourceEnvironment: Optional[str | BrowserSharedCookieSourceEnvironment] = Field(alias="sourceEnvironment",default=None,)
+	status: Optional[str | BrowserSharedCookieStatus] = Field(alias="status",default=None,)
 
 from .browser_shared_cookie_history import BrowserSharedCookieHistory
 from .identity_set import IdentitySet

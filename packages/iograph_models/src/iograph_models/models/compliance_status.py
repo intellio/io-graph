@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class ComplianceStatus(Enum):
+class ComplianceStatus(StrEnum):
 	unknown = "unknown"
 	notApplicable = "notApplicable"
 	compliant = "compliant"

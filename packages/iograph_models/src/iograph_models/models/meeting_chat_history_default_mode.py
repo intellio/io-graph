@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class MeetingChatHistoryDefaultMode(Enum):
+class MeetingChatHistoryDefaultMode(StrEnum):
 	none = "none"
 	all = "all"
 	unknownFutureValue = "unknownFutureValue"

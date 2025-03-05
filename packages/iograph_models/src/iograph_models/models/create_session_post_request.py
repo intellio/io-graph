@@ -4,6 +4,6 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class Create_sessionPostRequest(BaseModel):
-	persistChanges: Optional[bool] = Field(default=None,alias="persistChanges",)
+	persistChanges: Optional[bool] = Field(alias="persistChanges",default=None,)
 
 

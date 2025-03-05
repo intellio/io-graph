@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class DriveItemSourceApplication(Enum):
+class DriveItemSourceApplication(StrEnum):
 	teams = "teams"
 	yammer = "yammer"
 	sharePoint = "sharePoint"

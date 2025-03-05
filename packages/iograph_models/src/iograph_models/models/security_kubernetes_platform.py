@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class SecurityKubernetesPlatform(Enum):
+class SecurityKubernetesPlatform(StrEnum):
 	unknown = "unknown"
 	aks = "aks"
 	eks = "eks"

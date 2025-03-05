@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class EducationAddToCalendarOptions(Enum):
+class EducationAddToCalendarOptions(StrEnum):
 	none = "none"
 	studentsAndPublisher = "studentsAndPublisher"
 	studentsAndTeamOwners = "studentsAndTeamOwners"

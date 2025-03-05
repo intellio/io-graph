@@ -4,9 +4,9 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class UnifiedRolePermission(BaseModel):
-	allowedResourceActions: Optional[list[str]] = Field(default=None,alias="allowedResourceActions",)
-	condition: Optional[str] = Field(default=None,alias="condition",)
-	excludedResourceActions: Optional[list[str]] = Field(default=None,alias="excludedResourceActions",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
+	allowedResourceActions: Optional[list[str]] = Field(alias="allowedResourceActions",default=None,)
+	condition: Optional[str] = Field(alias="condition",default=None,)
+	excludedResourceActions: Optional[list[str]] = Field(alias="excludedResourceActions",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 
 

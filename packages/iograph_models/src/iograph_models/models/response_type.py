@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class ResponseType(Enum):
+class ResponseType(StrEnum):
 	none = "none"
 	organizer = "organizer"
 	tentativelyAccepted = "tentativelyAccepted"

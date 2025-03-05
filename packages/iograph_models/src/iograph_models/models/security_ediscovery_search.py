@@ -5,21 +5,21 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class SecurityEdiscoverySearch(BaseModel):
-	id: Optional[str] = Field(default=None,alias="id",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	contentQuery: Optional[str] = Field(default=None,alias="contentQuery",)
-	createdBy: SerializeAsAny[Optional[IdentitySet]] = Field(default=None,alias="createdBy",)
-	createdDateTime: Optional[datetime] = Field(default=None,alias="createdDateTime",)
-	description: Optional[str] = Field(default=None,alias="description",)
-	displayName: Optional[str] = Field(default=None,alias="displayName",)
-	lastModifiedBy: SerializeAsAny[Optional[IdentitySet]] = Field(default=None,alias="lastModifiedBy",)
-	lastModifiedDateTime: Optional[datetime] = Field(default=None,alias="lastModifiedDateTime",)
-	dataSourceScopes: Optional[SecurityDataSourceScopes] = Field(default=None,alias="dataSourceScopes",)
-	additionalSources: SerializeAsAny[Optional[list[SecurityDataSource]]] = Field(default=None,alias="additionalSources",)
-	addToReviewSetOperation: Optional[SecurityEdiscoveryAddToReviewSetOperation] = Field(default=None,alias="addToReviewSetOperation",)
-	custodianSources: SerializeAsAny[Optional[list[SecurityDataSource]]] = Field(default=None,alias="custodianSources",)
-	lastEstimateStatisticsOperation: Optional[SecurityEdiscoveryEstimateOperation] = Field(default=None,alias="lastEstimateStatisticsOperation",)
-	noncustodialSources: Optional[list[SecurityEdiscoveryNoncustodialDataSource]] = Field(default=None,alias="noncustodialSources",)
+	id: Optional[str] = Field(alias="id",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	contentQuery: Optional[str] = Field(alias="contentQuery",default=None,)
+	createdBy: SerializeAsAny[Optional[IdentitySet]] = Field(alias="createdBy",default=None,)
+	createdDateTime: Optional[datetime] = Field(alias="createdDateTime",default=None,)
+	description: Optional[str] = Field(alias="description",default=None,)
+	displayName: Optional[str] = Field(alias="displayName",default=None,)
+	lastModifiedBy: SerializeAsAny[Optional[IdentitySet]] = Field(alias="lastModifiedBy",default=None,)
+	lastModifiedDateTime: Optional[datetime] = Field(alias="lastModifiedDateTime",default=None,)
+	dataSourceScopes: Optional[str | SecurityDataSourceScopes] = Field(alias="dataSourceScopes",default=None,)
+	additionalSources: SerializeAsAny[Optional[list[SecurityDataSource]]] = Field(alias="additionalSources",default=None,)
+	addToReviewSetOperation: Optional[SecurityEdiscoveryAddToReviewSetOperation] = Field(alias="addToReviewSetOperation",default=None,)
+	custodianSources: SerializeAsAny[Optional[list[SecurityDataSource]]] = Field(alias="custodianSources",default=None,)
+	lastEstimateStatisticsOperation: Optional[SecurityEdiscoveryEstimateOperation] = Field(alias="lastEstimateStatisticsOperation",default=None,)
+	noncustodialSources: Optional[list[SecurityEdiscoveryNoncustodialDataSource]] = Field(alias="noncustodialSources",default=None,)
 
 from .identity_set import IdentitySet
 from .identity_set import IdentitySet

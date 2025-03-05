@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class InstallIntent(Enum):
+class InstallIntent(StrEnum):
 	available = "available"
 	required = "required"
 	uninstall = "uninstall"

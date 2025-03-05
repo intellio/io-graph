@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class VisibilitySetting(Enum):
+class VisibilitySetting(StrEnum):
 	notConfigured = "notConfigured"
 	hide = "hide"
 	show = "show"

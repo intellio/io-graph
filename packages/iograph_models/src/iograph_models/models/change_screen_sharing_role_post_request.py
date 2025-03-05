@@ -4,7 +4,7 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class Change_screen_sharing_rolePostRequest(BaseModel):
-	role: Optional[ScreenSharingRole] = Field(default=None,alias="role",)
+	role: Optional[str | ScreenSharingRole] = Field(alias="role",default=None,)
 
 from .screen_sharing_role import ScreenSharingRole
 

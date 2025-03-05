@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class PrivilegedAccessGroupRelationships(Enum):
+class PrivilegedAccessGroupRelationships(StrEnum):
 	owner = "owner"
 	member = "member"
 	unknownFutureValue = "unknownFutureValue"

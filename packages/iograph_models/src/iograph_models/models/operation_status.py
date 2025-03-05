@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class OperationStatus(Enum):
+class OperationStatus(StrEnum):
 	NotStarted = "NotStarted"
 	Running = "Running"
 	Completed = "Completed"

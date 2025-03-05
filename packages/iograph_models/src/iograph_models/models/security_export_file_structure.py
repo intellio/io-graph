@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class SecurityExportFileStructure(Enum):
+class SecurityExportFileStructure(StrEnum):
 	none = "none"
 	directory = "directory"
 	pst = "pst"

@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class CategoryColor(Enum):
+class CategoryColor(StrEnum):
 	none = "none"
 	preset0 = "preset0"
 	preset1 = "preset1"

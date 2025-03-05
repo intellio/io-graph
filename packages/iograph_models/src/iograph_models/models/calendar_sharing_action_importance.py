@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class CalendarSharingActionImportance(Enum):
+class CalendarSharingActionImportance(StrEnum):
 	primary = "primary"
 	secondary = "secondary"
 

@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class AccessPackageRequestState(Enum):
+class AccessPackageRequestState(StrEnum):
 	submitted = "submitted"
 	pendingApproval = "pendingApproval"
 	delivering = "delivering"

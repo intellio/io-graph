@@ -4,9 +4,9 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class DriveItemSource(BaseModel):
-	application: Optional[DriveItemSourceApplication] = Field(default=None,alias="application",)
-	externalId: Optional[str] = Field(default=None,alias="externalId",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
+	application: Optional[str | DriveItemSourceApplication] = Field(alias="application",default=None,)
+	externalId: Optional[str] = Field(alias="externalId",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 
 from .drive_item_source_application import DriveItemSourceApplication
 

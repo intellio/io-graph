@@ -4,10 +4,10 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class CrossTenantIdentitySyncPolicyPartner(BaseModel):
-	displayName: Optional[str] = Field(default=None,alias="displayName",)
-	tenantId: Optional[str] = Field(default=None,alias="tenantId",)
-	userSyncInbound: Optional[CrossTenantUserSyncInbound] = Field(default=None,alias="userSyncInbound",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
+	displayName: Optional[str] = Field(alias="displayName",default=None,)
+	tenantId: Optional[str] = Field(alias="tenantId",default=None,)
+	userSyncInbound: Optional[CrossTenantUserSyncInbound] = Field(alias="userSyncInbound",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 
 from .cross_tenant_user_sync_inbound import CrossTenantUserSyncInbound
 

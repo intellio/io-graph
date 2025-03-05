@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class PrinterProcessingStateDetail(Enum):
+class PrinterProcessingStateDetail(StrEnum):
 	paused = "paused"
 	mediaJam = "mediaJam"
 	mediaNeeded = "mediaNeeded"

@@ -5,18 +5,18 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class IdentityGovernanceCustomTaskExtension(BaseModel):
-	id: Optional[str] = Field(default=None,alias="id",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	authenticationConfiguration: SerializeAsAny[Optional[CustomExtensionAuthenticationConfiguration]] = Field(default=None,alias="authenticationConfiguration",)
-	clientConfiguration: Optional[CustomExtensionClientConfiguration] = Field(default=None,alias="clientConfiguration",)
-	description: Optional[str] = Field(default=None,alias="description",)
-	displayName: Optional[str] = Field(default=None,alias="displayName",)
-	endpointConfiguration: SerializeAsAny[Optional[CustomExtensionEndpointConfiguration]] = Field(default=None,alias="endpointConfiguration",)
-	callbackConfiguration: SerializeAsAny[Optional[CustomExtensionCallbackConfiguration]] = Field(default=None,alias="callbackConfiguration",)
-	createdDateTime: Optional[datetime] = Field(default=None,alias="createdDateTime",)
-	lastModifiedDateTime: Optional[datetime] = Field(default=None,alias="lastModifiedDateTime",)
-	createdBy: Optional[User] = Field(default=None,alias="createdBy",)
-	lastModifiedBy: Optional[User] = Field(default=None,alias="lastModifiedBy",)
+	id: Optional[str] = Field(alias="id",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	authenticationConfiguration: SerializeAsAny[Optional[CustomExtensionAuthenticationConfiguration]] = Field(alias="authenticationConfiguration",default=None,)
+	clientConfiguration: Optional[CustomExtensionClientConfiguration] = Field(alias="clientConfiguration",default=None,)
+	description: Optional[str] = Field(alias="description",default=None,)
+	displayName: Optional[str] = Field(alias="displayName",default=None,)
+	endpointConfiguration: SerializeAsAny[Optional[CustomExtensionEndpointConfiguration]] = Field(alias="endpointConfiguration",default=None,)
+	callbackConfiguration: SerializeAsAny[Optional[CustomExtensionCallbackConfiguration]] = Field(alias="callbackConfiguration",default=None,)
+	createdDateTime: Optional[datetime] = Field(alias="createdDateTime",default=None,)
+	lastModifiedDateTime: Optional[datetime] = Field(alias="lastModifiedDateTime",default=None,)
+	createdBy: Optional[User] = Field(alias="createdBy",default=None,)
+	lastModifiedBy: Optional[User] = Field(alias="lastModifiedBy",default=None,)
 
 from .custom_extension_authentication_configuration import CustomExtensionAuthenticationConfiguration
 from .custom_extension_client_configuration import CustomExtensionClientConfiguration

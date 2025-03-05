@@ -4,19 +4,19 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class WindowsFirewallNetworkProfile(BaseModel):
-	authorizedApplicationRulesFromGroupPolicyMerged: Optional[bool] = Field(default=None,alias="authorizedApplicationRulesFromGroupPolicyMerged",)
-	connectionSecurityRulesFromGroupPolicyMerged: Optional[bool] = Field(default=None,alias="connectionSecurityRulesFromGroupPolicyMerged",)
-	firewallEnabled: Optional[StateManagementSetting] = Field(default=None,alias="firewallEnabled",)
-	globalPortRulesFromGroupPolicyMerged: Optional[bool] = Field(default=None,alias="globalPortRulesFromGroupPolicyMerged",)
-	inboundConnectionsBlocked: Optional[bool] = Field(default=None,alias="inboundConnectionsBlocked",)
-	inboundNotificationsBlocked: Optional[bool] = Field(default=None,alias="inboundNotificationsBlocked",)
-	incomingTrafficBlocked: Optional[bool] = Field(default=None,alias="incomingTrafficBlocked",)
-	outboundConnectionsBlocked: Optional[bool] = Field(default=None,alias="outboundConnectionsBlocked",)
-	policyRulesFromGroupPolicyMerged: Optional[bool] = Field(default=None,alias="policyRulesFromGroupPolicyMerged",)
-	securedPacketExemptionAllowed: Optional[bool] = Field(default=None,alias="securedPacketExemptionAllowed",)
-	stealthModeBlocked: Optional[bool] = Field(default=None,alias="stealthModeBlocked",)
-	unicastResponsesToMulticastBroadcastsBlocked: Optional[bool] = Field(default=None,alias="unicastResponsesToMulticastBroadcastsBlocked",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
+	authorizedApplicationRulesFromGroupPolicyMerged: Optional[bool] = Field(alias="authorizedApplicationRulesFromGroupPolicyMerged",default=None,)
+	connectionSecurityRulesFromGroupPolicyMerged: Optional[bool] = Field(alias="connectionSecurityRulesFromGroupPolicyMerged",default=None,)
+	firewallEnabled: Optional[str | StateManagementSetting] = Field(alias="firewallEnabled",default=None,)
+	globalPortRulesFromGroupPolicyMerged: Optional[bool] = Field(alias="globalPortRulesFromGroupPolicyMerged",default=None,)
+	inboundConnectionsBlocked: Optional[bool] = Field(alias="inboundConnectionsBlocked",default=None,)
+	inboundNotificationsBlocked: Optional[bool] = Field(alias="inboundNotificationsBlocked",default=None,)
+	incomingTrafficBlocked: Optional[bool] = Field(alias="incomingTrafficBlocked",default=None,)
+	outboundConnectionsBlocked: Optional[bool] = Field(alias="outboundConnectionsBlocked",default=None,)
+	policyRulesFromGroupPolicyMerged: Optional[bool] = Field(alias="policyRulesFromGroupPolicyMerged",default=None,)
+	securedPacketExemptionAllowed: Optional[bool] = Field(alias="securedPacketExemptionAllowed",default=None,)
+	stealthModeBlocked: Optional[bool] = Field(alias="stealthModeBlocked",default=None,)
+	unicastResponsesToMulticastBroadcastsBlocked: Optional[bool] = Field(alias="unicastResponsesToMulticastBroadcastsBlocked",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 
 from .state_management_setting import StateManagementSetting
 

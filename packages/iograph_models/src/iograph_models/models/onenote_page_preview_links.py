@@ -4,8 +4,8 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class OnenotePagePreviewLinks(BaseModel):
-	previewImageUrl: Optional[ExternalLink] = Field(default=None,alias="previewImageUrl",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
+	previewImageUrl: Optional[ExternalLink] = Field(alias="previewImageUrl",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 
 from .external_link import ExternalLink
 

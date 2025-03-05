@@ -4,10 +4,10 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class Copy_notebookPostRequest(BaseModel):
-	groupId: Optional[str] = Field(default=None,alias="groupId",)
-	renameAs: Optional[str] = Field(default=None,alias="renameAs",)
-	notebookFolder: Optional[str] = Field(default=None,alias="notebookFolder",)
-	siteCollectionId: Optional[str] = Field(default=None,alias="siteCollectionId",)
-	siteId: Optional[str] = Field(default=None,alias="siteId",)
+	groupId: Optional[str] = Field(alias="groupId",default=None,)
+	renameAs: Optional[str] = Field(alias="renameAs",default=None,)
+	notebookFolder: Optional[str] = Field(alias="notebookFolder",default=None,)
+	siteCollectionId: Optional[str] = Field(alias="siteCollectionId",default=None,)
+	siteId: Optional[str] = Field(alias="siteId",default=None,)
 
 

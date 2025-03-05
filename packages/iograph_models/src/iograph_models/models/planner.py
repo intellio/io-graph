@@ -4,11 +4,11 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class Planner(BaseModel):
-	id: Optional[str] = Field(default=None,alias="id",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	buckets: Optional[list[PlannerBucket]] = Field(default=None,alias="buckets",)
-	plans: Optional[list[PlannerPlan]] = Field(default=None,alias="plans",)
-	tasks: Optional[list[PlannerTask]] = Field(default=None,alias="tasks",)
+	id: Optional[str] = Field(alias="id",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	buckets: Optional[list[PlannerBucket]] = Field(alias="buckets",default=None,)
+	plans: Optional[list[PlannerPlan]] = Field(alias="plans",default=None,)
+	tasks: Optional[list[PlannerTask]] = Field(alias="tasks",default=None,)
 
 from .planner_bucket import PlannerBucket
 from .planner_plan import PlannerPlan

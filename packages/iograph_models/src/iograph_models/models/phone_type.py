@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class PhoneType(Enum):
+class PhoneType(StrEnum):
 	home = "home"
 	business = "business"
 	mobile = "mobile"

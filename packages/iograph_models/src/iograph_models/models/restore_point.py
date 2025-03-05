@@ -5,12 +5,12 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class RestorePoint(BaseModel):
-	id: Optional[str] = Field(default=None,alias="id",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	expirationDateTime: Optional[datetime] = Field(default=None,alias="expirationDateTime",)
-	protectionDateTime: Optional[datetime] = Field(default=None,alias="protectionDateTime",)
-	tags: Optional[RestorePointTags] = Field(default=None,alias="tags",)
-	protectionUnit: SerializeAsAny[Optional[ProtectionUnitBase]] = Field(default=None,alias="protectionUnit",)
+	id: Optional[str] = Field(alias="id",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	expirationDateTime: Optional[datetime] = Field(alias="expirationDateTime",default=None,)
+	protectionDateTime: Optional[datetime] = Field(alias="protectionDateTime",default=None,)
+	tags: Optional[str | RestorePointTags] = Field(alias="tags",default=None,)
+	protectionUnit: SerializeAsAny[Optional[ProtectionUnitBase]] = Field(alias="protectionUnit",default=None,)
 
 from .restore_point_tags import RestorePointTags
 from .protection_unit_base import ProtectionUnitBase

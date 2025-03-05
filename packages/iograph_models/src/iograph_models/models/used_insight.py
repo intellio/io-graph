@@ -4,12 +4,12 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class UsedInsight(BaseModel):
-	id: Optional[str] = Field(default=None,alias="id",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	lastUsed: Optional[UsageDetails] = Field(default=None,alias="lastUsed",)
-	resourceReference: Optional[ResourceReference] = Field(default=None,alias="resourceReference",)
-	resourceVisualization: Optional[ResourceVisualization] = Field(default=None,alias="resourceVisualization",)
-	resource: SerializeAsAny[Optional[Entity]] = Field(default=None,alias="resource",)
+	id: Optional[str] = Field(alias="id",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	lastUsed: Optional[UsageDetails] = Field(alias="lastUsed",default=None,)
+	resourceReference: Optional[ResourceReference] = Field(alias="resourceReference",default=None,)
+	resourceVisualization: Optional[ResourceVisualization] = Field(alias="resourceVisualization",default=None,)
+	resource: SerializeAsAny[Optional[Entity]] = Field(alias="resource",default=None,)
 
 from .usage_details import UsageDetails
 from .resource_reference import ResourceReference

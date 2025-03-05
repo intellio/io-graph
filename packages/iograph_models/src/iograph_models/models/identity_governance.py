@@ -4,13 +4,13 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class IdentityGovernance(BaseModel):
-	accessReviews: Optional[AccessReviewSet] = Field(default=None,alias="accessReviews",)
-	appConsent: Optional[AppConsentApprovalRoute] = Field(default=None,alias="appConsent",)
-	entitlementManagement: Optional[EntitlementManagement] = Field(default=None,alias="entitlementManagement",)
-	lifecycleWorkflows: Optional[IdentityGovernanceLifecycleWorkflowsContainer] = Field(default=None,alias="lifecycleWorkflows",)
-	privilegedAccess: Optional[PrivilegedAccessRoot] = Field(default=None,alias="privilegedAccess",)
-	termsOfUse: Optional[TermsOfUseContainer] = Field(default=None,alias="termsOfUse",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
+	accessReviews: Optional[AccessReviewSet] = Field(alias="accessReviews",default=None,)
+	appConsent: Optional[AppConsentApprovalRoute] = Field(alias="appConsent",default=None,)
+	entitlementManagement: Optional[EntitlementManagement] = Field(alias="entitlementManagement",default=None,)
+	lifecycleWorkflows: Optional[IdentityGovernanceLifecycleWorkflowsContainer] = Field(alias="lifecycleWorkflows",default=None,)
+	privilegedAccess: Optional[PrivilegedAccessRoot] = Field(alias="privilegedAccess",default=None,)
+	termsOfUse: Optional[TermsOfUseContainer] = Field(alias="termsOfUse",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 
 from .access_review_set import AccessReviewSet
 from .app_consent_approval_route import AppConsentApprovalRoute

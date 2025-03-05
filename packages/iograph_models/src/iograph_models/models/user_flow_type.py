@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class UserFlowType(Enum):
+class UserFlowType(StrEnum):
 	signUp = "signUp"
 	signIn = "signIn"
 	signUpOrSignIn = "signUpOrSignIn"

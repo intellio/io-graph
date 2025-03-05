@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class ObjectMappingMetadata(Enum):
+class ObjectMappingMetadata(StrEnum):
 	EscrowBehavior = "EscrowBehavior"
 	DisableMonitoringForChanges = "DisableMonitoringForChanges"
 	OriginalJoiningProperty = "OriginalJoiningProperty"

@@ -5,14 +5,14 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class UserExperienceAnalyticsAppHealthDevicePerformanceDetails(BaseModel):
-	id: Optional[str] = Field(default=None,alias="id",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	appDisplayName: Optional[str] = Field(default=None,alias="appDisplayName",)
-	appPublisher: Optional[str] = Field(default=None,alias="appPublisher",)
-	appVersion: Optional[str] = Field(default=None,alias="appVersion",)
-	deviceDisplayName: Optional[str] = Field(default=None,alias="deviceDisplayName",)
-	deviceId: Optional[str] = Field(default=None,alias="deviceId",)
-	eventDateTime: Optional[datetime] = Field(default=None,alias="eventDateTime",)
-	eventType: Optional[str] = Field(default=None,alias="eventType",)
+	id: Optional[str] = Field(alias="id",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	appDisplayName: Optional[str] = Field(alias="appDisplayName",default=None,)
+	appPublisher: Optional[str] = Field(alias="appPublisher",default=None,)
+	appVersion: Optional[str] = Field(alias="appVersion",default=None,)
+	deviceDisplayName: Optional[str] = Field(alias="deviceDisplayName",default=None,)
+	deviceId: Optional[str] = Field(alias="deviceId",default=None,)
+	eventDateTime: Optional[datetime] = Field(alias="eventDateTime",default=None,)
+	eventType: Optional[str] = Field(alias="eventType",default=None,)
 
 

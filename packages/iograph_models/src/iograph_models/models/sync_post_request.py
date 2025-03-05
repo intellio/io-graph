@@ -4,7 +4,7 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class SyncPostRequest(BaseModel):
-	syncType: Optional[DeviceManagementExchangeConnectorSyncType] = Field(default=None,alias="syncType",)
+	syncType: Optional[str | DeviceManagementExchangeConnectorSyncType] = Field(alias="syncType",default=None,)
 
 from .device_management_exchange_connector_sync_type import DeviceManagementExchangeConnectorSyncType
 

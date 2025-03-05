@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class FirewallPreSharedKeyEncodingMethodType(Enum):
+class FirewallPreSharedKeyEncodingMethodType(StrEnum):
 	deviceDefault = "deviceDefault"
 	none = "none"
 	utF8 = "utF8"

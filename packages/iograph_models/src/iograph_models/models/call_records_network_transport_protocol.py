@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class CallRecordsNetworkTransportProtocol(Enum):
+class CallRecordsNetworkTransportProtocol(StrEnum):
 	unknown = "unknown"
 	udp = "udp"
 	tcp = "tcp"

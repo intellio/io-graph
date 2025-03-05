@@ -4,7 +4,7 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class SpecialFolder(BaseModel):
-	name: Optional[str] = Field(default=None,alias="name",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
+	name: Optional[str] = Field(alias="name",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 
 

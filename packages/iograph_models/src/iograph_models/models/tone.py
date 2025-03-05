@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class Tone(Enum):
+class Tone(StrEnum):
 	tone0 = "tone0"
 	tone1 = "tone1"
 	tone2 = "tone2"

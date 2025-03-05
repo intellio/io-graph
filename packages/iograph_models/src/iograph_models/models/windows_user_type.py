@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class WindowsUserType(Enum):
+class WindowsUserType(StrEnum):
 	administrator = "administrator"
 	standard = "standard"
 	unknownFutureValue = "unknownFutureValue"

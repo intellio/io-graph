@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class MediaState(Enum):
+class MediaState(StrEnum):
 	active = "active"
 	inactive = "inactive"
 	unknownFutureValue = "unknownFutureValue"

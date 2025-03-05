@@ -4,7 +4,7 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class UserExperienceAnalyticsWindows10DevicesSummary(BaseModel):
-	unsupportedOSversionDeviceCount: Optional[int] = Field(default=None,alias="unsupportedOSversionDeviceCount",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
+	unsupportedOSversionDeviceCount: Optional[int] = Field(alias="unsupportedOSversionDeviceCount",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 
 

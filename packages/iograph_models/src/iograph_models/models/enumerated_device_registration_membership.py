@@ -4,8 +4,8 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class EnumeratedDeviceRegistrationMembership(BaseModel):
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	groups: Optional[list[str]] = Field(default=None,alias="groups",)
-	users: Optional[list[str]] = Field(default=None,alias="users",)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	groups: Optional[list[str]] = Field(alias="groups",default=None,)
+	users: Optional[list[str]] = Field(alias="users",default=None,)
 
 

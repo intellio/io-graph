@@ -5,13 +5,13 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class DriveItemVersion(BaseModel):
-	id: Optional[str] = Field(default=None,alias="id",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	lastModifiedBy: SerializeAsAny[Optional[IdentitySet]] = Field(default=None,alias="lastModifiedBy",)
-	lastModifiedDateTime: Optional[datetime] = Field(default=None,alias="lastModifiedDateTime",)
-	publication: Optional[PublicationFacet] = Field(default=None,alias="publication",)
-	content: Optional[str] = Field(default=None,alias="content",)
-	size: Optional[int] = Field(default=None,alias="size",)
+	id: Optional[str] = Field(alias="id",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	lastModifiedBy: SerializeAsAny[Optional[IdentitySet]] = Field(alias="lastModifiedBy",default=None,)
+	lastModifiedDateTime: Optional[datetime] = Field(alias="lastModifiedDateTime",default=None,)
+	publication: Optional[PublicationFacet] = Field(alias="publication",default=None,)
+	content: Optional[str] = Field(alias="content",default=None,)
+	size: Optional[int] = Field(alias="size",default=None,)
 
 from .identity_set import IdentitySet
 from .publication_facet import PublicationFacet

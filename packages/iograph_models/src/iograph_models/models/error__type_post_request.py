@@ -4,6 +4,6 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class Error__typePostRequest(BaseModel):
-	errorVal: Optional[str] = Field(default=None,alias="errorVal",)
+	errorVal: Optional[str] = Field(alias="errorVal",default=None,)
 
 

@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class SearchAlterationType(Enum):
+class SearchAlterationType(StrEnum):
 	suggestion = "suggestion"
 	modification = "modification"
 	unknownFutureValue = "unknownFutureValue"

@@ -4,15 +4,15 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class AccessPackageTextInputQuestion(BaseModel):
-	id: Optional[str] = Field(default=None,alias="id",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	isAnswerEditable: Optional[bool] = Field(default=None,alias="isAnswerEditable",)
-	isRequired: Optional[bool] = Field(default=None,alias="isRequired",)
-	localizations: Optional[list[AccessPackageLocalizedText]] = Field(default=None,alias="localizations",)
-	sequence: Optional[int] = Field(default=None,alias="sequence",)
-	text: Optional[str] = Field(default=None,alias="text",)
-	isSingleLineQuestion: Optional[bool] = Field(default=None,alias="isSingleLineQuestion",)
-	regexPattern: Optional[str] = Field(default=None,alias="regexPattern",)
+	id: Optional[str] = Field(alias="id",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	isAnswerEditable: Optional[bool] = Field(alias="isAnswerEditable",default=None,)
+	isRequired: Optional[bool] = Field(alias="isRequired",default=None,)
+	localizations: Optional[list[AccessPackageLocalizedText]] = Field(alias="localizations",default=None,)
+	sequence: Optional[int] = Field(alias="sequence",default=None,)
+	text: Optional[str] = Field(alias="text",default=None,)
+	isSingleLineQuestion: Optional[bool] = Field(alias="isSingleLineQuestion",default=None,)
+	regexPattern: Optional[str] = Field(alias="regexPattern",default=None,)
 
 from .access_package_localized_text import AccessPackageLocalizedText
 

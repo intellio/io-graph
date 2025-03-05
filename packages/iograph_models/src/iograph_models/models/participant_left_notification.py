@@ -4,10 +4,10 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class ParticipantLeftNotification(BaseModel):
-	id: Optional[str] = Field(default=None,alias="id",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	participantId: Optional[str] = Field(default=None,alias="participantId",)
-	call: Optional[Call] = Field(default=None,alias="call",)
+	id: Optional[str] = Field(alias="id",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	participantId: Optional[str] = Field(alias="participantId",default=None,)
+	call: Optional[Call] = Field(alias="call",default=None,)
 
 from .call import Call
 

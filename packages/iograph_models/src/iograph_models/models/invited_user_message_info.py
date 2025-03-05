@@ -4,10 +4,10 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class InvitedUserMessageInfo(BaseModel):
-	ccRecipients: SerializeAsAny[Optional[list[Recipient]]] = Field(default=None,alias="ccRecipients",)
-	customizedMessageBody: Optional[str] = Field(default=None,alias="customizedMessageBody",)
-	messageLanguage: Optional[str] = Field(default=None,alias="messageLanguage",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
+	ccRecipients: SerializeAsAny[Optional[list[Recipient]]] = Field(alias="ccRecipients",default=None,)
+	customizedMessageBody: Optional[str] = Field(alias="customizedMessageBody",default=None,)
+	messageLanguage: Optional[str] = Field(alias="messageLanguage",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 
 from .recipient import Recipient
 

@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class UserType(Enum):
+class UserType(StrEnum):
 	member = "member"
 	guest = "guest"
 	unknownFutureValue = "unknownFutureValue"

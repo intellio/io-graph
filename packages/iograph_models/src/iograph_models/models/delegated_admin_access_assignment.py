@@ -5,13 +5,13 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class DelegatedAdminAccessAssignment(BaseModel):
-	id: Optional[str] = Field(default=None,alias="id",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	accessContainer: Optional[DelegatedAdminAccessContainer] = Field(default=None,alias="accessContainer",)
-	accessDetails: Optional[DelegatedAdminAccessDetails] = Field(default=None,alias="accessDetails",)
-	createdDateTime: Optional[datetime] = Field(default=None,alias="createdDateTime",)
-	lastModifiedDateTime: Optional[datetime] = Field(default=None,alias="lastModifiedDateTime",)
-	status: Optional[DelegatedAdminAccessAssignmentStatus] = Field(default=None,alias="status",)
+	id: Optional[str] = Field(alias="id",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	accessContainer: Optional[DelegatedAdminAccessContainer] = Field(alias="accessContainer",default=None,)
+	accessDetails: Optional[DelegatedAdminAccessDetails] = Field(alias="accessDetails",default=None,)
+	createdDateTime: Optional[datetime] = Field(alias="createdDateTime",default=None,)
+	lastModifiedDateTime: Optional[datetime] = Field(alias="lastModifiedDateTime",default=None,)
+	status: Optional[str | DelegatedAdminAccessAssignmentStatus] = Field(alias="status",default=None,)
 
 from .delegated_admin_access_container import DelegatedAdminAccessContainer
 from .delegated_admin_access_details import DelegatedAdminAccessDetails

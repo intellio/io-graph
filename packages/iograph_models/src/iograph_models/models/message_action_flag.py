@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class MessageActionFlag(Enum):
+class MessageActionFlag(StrEnum):
 	any = "any"
 	call = "call"
 	doNotForward = "doNotForward"

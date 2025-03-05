@@ -4,12 +4,12 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class CustomExtensionCalloutInstance(BaseModel):
-	customExtensionId: Optional[str] = Field(default=None,alias="customExtensionId",)
-	detail: Optional[str] = Field(default=None,alias="detail",)
-	externalCorrelationId: Optional[str] = Field(default=None,alias="externalCorrelationId",)
-	id: Optional[str] = Field(default=None,alias="id",)
-	status: Optional[CustomExtensionCalloutInstanceStatus] = Field(default=None,alias="status",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
+	customExtensionId: Optional[str] = Field(alias="customExtensionId",default=None,)
+	detail: Optional[str] = Field(alias="detail",default=None,)
+	externalCorrelationId: Optional[str] = Field(alias="externalCorrelationId",default=None,)
+	id: Optional[str] = Field(alias="id",default=None,)
+	status: Optional[str | CustomExtensionCalloutInstanceStatus] = Field(alias="status",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 
 from .custom_extension_callout_instance_status import CustomExtensionCalloutInstanceStatus
 

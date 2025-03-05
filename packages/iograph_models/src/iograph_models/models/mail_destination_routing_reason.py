@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class MailDestinationRoutingReason(Enum):
+class MailDestinationRoutingReason(StrEnum):
 	none = "none"
 	mailFlowRule = "mailFlowRule"
 	safeSender = "safeSender"

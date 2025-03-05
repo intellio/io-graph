@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class SafeSearchFilterType(Enum):
+class SafeSearchFilterType(StrEnum):
 	userDefined = "userDefined"
 	strict = "strict"
 	moderate = "moderate"

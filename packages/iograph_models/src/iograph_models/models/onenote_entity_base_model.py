@@ -6,9 +6,9 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class OnenoteEntityBaseModel(BaseModel):
-	id: Optional[str] = Field(default=None,alias="id",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	self: Optional[str] = Field(default=None,alias="self",)
+	id: Optional[str] = Field(alias="id",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	self: Optional[str] = Field(alias="self",default=None,)
 
 	@model_validator(mode="wrap")
 	def convert_discriminator_class(cls, data: Any, handler: ModelWrapValidatorHandler[Self]) -> Self:

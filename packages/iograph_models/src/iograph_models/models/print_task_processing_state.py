@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class PrintTaskProcessingState(Enum):
+class PrintTaskProcessingState(StrEnum):
 	pending = "pending"
 	processing = "processing"
 	completed = "completed"

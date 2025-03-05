@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class CallRecordsServiceRole(Enum):
+class CallRecordsServiceRole(StrEnum):
 	unknown = "unknown"
 	customBot = "customBot"
 	skypeForBusinessMicrosoftTeamsGateway = "skypeForBusinessMicrosoftTeamsGateway"

@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class EducationModuleStatus(Enum):
+class EducationModuleStatus(StrEnum):
 	draft = "draft"
 	published = "published"
 	unknownFutureValue = "unknownFutureValue"

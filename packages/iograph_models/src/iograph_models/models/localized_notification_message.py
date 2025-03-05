@@ -5,12 +5,12 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class LocalizedNotificationMessage(BaseModel):
-	id: Optional[str] = Field(default=None,alias="id",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	isDefault: Optional[bool] = Field(default=None,alias="isDefault",)
-	lastModifiedDateTime: Optional[datetime] = Field(default=None,alias="lastModifiedDateTime",)
-	locale: Optional[str] = Field(default=None,alias="locale",)
-	messageTemplate: Optional[str] = Field(default=None,alias="messageTemplate",)
-	subject: Optional[str] = Field(default=None,alias="subject",)
+	id: Optional[str] = Field(alias="id",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	isDefault: Optional[bool] = Field(alias="isDefault",default=None,)
+	lastModifiedDateTime: Optional[datetime] = Field(alias="lastModifiedDateTime",default=None,)
+	locale: Optional[str] = Field(alias="locale",default=None,)
+	messageTemplate: Optional[str] = Field(alias="messageTemplate",default=None,)
+	subject: Optional[str] = Field(alias="subject",default=None,)
 
 

@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class DeviceRegistrationState(Enum):
+class DeviceRegistrationState(StrEnum):
 	notRegistered = "notRegistered"
 	registered = "registered"
 	revoked = "revoked"

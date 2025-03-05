@@ -4,14 +4,14 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class SharedInsight(BaseModel):
-	id: Optional[str] = Field(default=None,alias="id",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	lastShared: Optional[SharingDetail] = Field(default=None,alias="lastShared",)
-	resourceReference: Optional[ResourceReference] = Field(default=None,alias="resourceReference",)
-	resourceVisualization: Optional[ResourceVisualization] = Field(default=None,alias="resourceVisualization",)
-	sharingHistory: Optional[list[SharingDetail]] = Field(default=None,alias="sharingHistory",)
-	lastSharedMethod: SerializeAsAny[Optional[Entity]] = Field(default=None,alias="lastSharedMethod",)
-	resource: SerializeAsAny[Optional[Entity]] = Field(default=None,alias="resource",)
+	id: Optional[str] = Field(alias="id",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	lastShared: Optional[SharingDetail] = Field(alias="lastShared",default=None,)
+	resourceReference: Optional[ResourceReference] = Field(alias="resourceReference",default=None,)
+	resourceVisualization: Optional[ResourceVisualization] = Field(alias="resourceVisualization",default=None,)
+	sharingHistory: Optional[list[SharingDetail]] = Field(alias="sharingHistory",default=None,)
+	lastSharedMethod: SerializeAsAny[Optional[Entity]] = Field(alias="lastSharedMethod",default=None,)
+	resource: SerializeAsAny[Optional[Entity]] = Field(alias="resource",default=None,)
 
 from .sharing_detail import SharingDetail
 from .resource_reference import ResourceReference

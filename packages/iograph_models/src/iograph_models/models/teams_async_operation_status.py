@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class TeamsAsyncOperationStatus(Enum):
+class TeamsAsyncOperationStatus(StrEnum):
 	invalid = "invalid"
 	notStarted = "notStarted"
 	inProgress = "inProgress"

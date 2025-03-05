@@ -5,16 +5,16 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class OneDriveForBusinessRestoreSession(BaseModel):
-	id: Optional[str] = Field(default=None,alias="id",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	completedDateTime: Optional[datetime] = Field(default=None,alias="completedDateTime",)
-	createdBy: SerializeAsAny[Optional[IdentitySet]] = Field(default=None,alias="createdBy",)
-	createdDateTime: Optional[datetime] = Field(default=None,alias="createdDateTime",)
-	error: Optional[PublicError] = Field(default=None,alias="error",)
-	lastModifiedBy: SerializeAsAny[Optional[IdentitySet]] = Field(default=None,alias="lastModifiedBy",)
-	lastModifiedDateTime: Optional[datetime] = Field(default=None,alias="lastModifiedDateTime",)
-	status: Optional[RestoreSessionStatus] = Field(default=None,alias="status",)
-	driveRestoreArtifacts: Optional[list[DriveRestoreArtifact]] = Field(default=None,alias="driveRestoreArtifacts",)
+	id: Optional[str] = Field(alias="id",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	completedDateTime: Optional[datetime] = Field(alias="completedDateTime",default=None,)
+	createdBy: SerializeAsAny[Optional[IdentitySet]] = Field(alias="createdBy",default=None,)
+	createdDateTime: Optional[datetime] = Field(alias="createdDateTime",default=None,)
+	error: Optional[PublicError] = Field(alias="error",default=None,)
+	lastModifiedBy: SerializeAsAny[Optional[IdentitySet]] = Field(alias="lastModifiedBy",default=None,)
+	lastModifiedDateTime: Optional[datetime] = Field(alias="lastModifiedDateTime",default=None,)
+	status: Optional[str | RestoreSessionStatus] = Field(alias="status",default=None,)
+	driveRestoreArtifacts: Optional[list[DriveRestoreArtifact]] = Field(alias="driveRestoreArtifacts",default=None,)
 
 from .identity_set import IdentitySet
 from .public_error import PublicError

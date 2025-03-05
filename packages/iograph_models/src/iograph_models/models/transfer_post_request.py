@@ -4,8 +4,8 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class TransferPostRequest(BaseModel):
-	transferTarget: Optional[InvitationParticipantInfo] = Field(default=None,alias="transferTarget",)
-	transferee: Optional[ParticipantInfo] = Field(default=None,alias="transferee",)
+	transferTarget: Optional[InvitationParticipantInfo] = Field(alias="transferTarget",default=None,)
+	transferee: Optional[ParticipantInfo] = Field(alias="transferee",default=None,)
 
 from .invitation_participant_info import InvitationParticipantInfo
 from .participant_info import ParticipantInfo

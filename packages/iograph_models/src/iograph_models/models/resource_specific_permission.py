@@ -5,11 +5,11 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class ResourceSpecificPermission(BaseModel):
-	description: Optional[str] = Field(default=None,alias="description",)
-	displayName: Optional[str] = Field(default=None,alias="displayName",)
-	id: Optional[UUID] = Field(default=None,alias="id",)
-	isEnabled: Optional[bool] = Field(default=None,alias="isEnabled",)
-	value: Optional[str] = Field(default=None,alias="value",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
+	description: Optional[str] = Field(alias="description",default=None,)
+	displayName: Optional[str] = Field(alias="displayName",default=None,)
+	id: Optional[UUID] = Field(alias="id",default=None,)
+	isEnabled: Optional[bool] = Field(alias="isEnabled",default=None,)
+	value: Optional[str] = Field(alias="value",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 
 

@@ -5,13 +5,13 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class TermsAndConditionsAcceptanceStatus(BaseModel):
-	id: Optional[str] = Field(default=None,alias="id",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	acceptedDateTime: Optional[datetime] = Field(default=None,alias="acceptedDateTime",)
-	acceptedVersion: Optional[int] = Field(default=None,alias="acceptedVersion",)
-	userDisplayName: Optional[str] = Field(default=None,alias="userDisplayName",)
-	userPrincipalName: Optional[str] = Field(default=None,alias="userPrincipalName",)
-	termsAndConditions: Optional[TermsAndConditions] = Field(default=None,alias="termsAndConditions",)
+	id: Optional[str] = Field(alias="id",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	acceptedDateTime: Optional[datetime] = Field(alias="acceptedDateTime",default=None,)
+	acceptedVersion: Optional[int] = Field(alias="acceptedVersion",default=None,)
+	userDisplayName: Optional[str] = Field(alias="userDisplayName",default=None,)
+	userPrincipalName: Optional[str] = Field(alias="userPrincipalName",default=None,)
+	termsAndConditions: Optional[TermsAndConditions] = Field(alias="termsAndConditions",default=None,)
 
 from .terms_and_conditions import TermsAndConditions
 

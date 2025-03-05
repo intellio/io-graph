@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class ExternalConnectorsPropertyType(Enum):
+class ExternalConnectorsPropertyType(StrEnum):
 	string = "string"
 	int64 = "int64"
 	double = "double"

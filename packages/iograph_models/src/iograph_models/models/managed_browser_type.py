@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class ManagedBrowserType(Enum):
+class ManagedBrowserType(StrEnum):
 	notConfigured = "notConfigured"
 	microsoftEdge = "microsoftEdge"
 

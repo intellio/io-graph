@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class ArtifactRestoreStatus(Enum):
+class ArtifactRestoreStatus(StrEnum):
 	added = "added"
 	scheduling = "scheduling"
 	scheduled = "scheduled"

@@ -6,15 +6,15 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class SelfSignedCertificate(BaseModel):
-	customKeyIdentifier: Optional[str] = Field(default=None,alias="customKeyIdentifier",)
-	displayName: Optional[str] = Field(default=None,alias="displayName",)
-	endDateTime: Optional[datetime] = Field(default=None,alias="endDateTime",)
-	key: Optional[str] = Field(default=None,alias="key",)
-	keyId: Optional[UUID] = Field(default=None,alias="keyId",)
-	startDateTime: Optional[datetime] = Field(default=None,alias="startDateTime",)
-	thumbprint: Optional[str] = Field(default=None,alias="thumbprint",)
-	type: Optional[str] = Field(default=None,alias="type",)
-	usage: Optional[str] = Field(default=None,alias="usage",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
+	customKeyIdentifier: Optional[str] = Field(alias="customKeyIdentifier",default=None,)
+	displayName: Optional[str] = Field(alias="displayName",default=None,)
+	endDateTime: Optional[datetime] = Field(alias="endDateTime",default=None,)
+	key: Optional[str] = Field(alias="key",default=None,)
+	keyId: Optional[UUID] = Field(alias="keyId",default=None,)
+	startDateTime: Optional[datetime] = Field(alias="startDateTime",default=None,)
+	thumbprint: Optional[str] = Field(alias="thumbprint",default=None,)
+	type: Optional[str] = Field(alias="type",default=None,)
+	usage: Optional[str] = Field(alias="usage",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 
 

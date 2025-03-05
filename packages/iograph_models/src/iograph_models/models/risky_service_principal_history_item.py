@@ -5,20 +5,20 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class RiskyServicePrincipalHistoryItem(BaseModel):
-	id: Optional[str] = Field(default=None,alias="id",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	appId: Optional[str] = Field(default=None,alias="appId",)
-	displayName: Optional[str] = Field(default=None,alias="displayName",)
-	isEnabled: Optional[bool] = Field(default=None,alias="isEnabled",)
-	isProcessing: Optional[bool] = Field(default=None,alias="isProcessing",)
-	riskDetail: Optional[RiskDetail] = Field(default=None,alias="riskDetail",)
-	riskLastUpdatedDateTime: Optional[datetime] = Field(default=None,alias="riskLastUpdatedDateTime",)
-	riskLevel: Optional[RiskLevel] = Field(default=None,alias="riskLevel",)
-	riskState: Optional[RiskState] = Field(default=None,alias="riskState",)
-	servicePrincipalType: Optional[str] = Field(default=None,alias="servicePrincipalType",)
-	history: Optional[list[RiskyServicePrincipalHistoryItem]] = Field(default=None,alias="history",)
-	activity: Optional[RiskServicePrincipalActivity] = Field(default=None,alias="activity",)
-	initiatedBy: Optional[str] = Field(default=None,alias="initiatedBy",)
+	id: Optional[str] = Field(alias="id",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	appId: Optional[str] = Field(alias="appId",default=None,)
+	displayName: Optional[str] = Field(alias="displayName",default=None,)
+	isEnabled: Optional[bool] = Field(alias="isEnabled",default=None,)
+	isProcessing: Optional[bool] = Field(alias="isProcessing",default=None,)
+	riskDetail: Optional[str | RiskDetail] = Field(alias="riskDetail",default=None,)
+	riskLastUpdatedDateTime: Optional[datetime] = Field(alias="riskLastUpdatedDateTime",default=None,)
+	riskLevel: Optional[str | RiskLevel] = Field(alias="riskLevel",default=None,)
+	riskState: Optional[str | RiskState] = Field(alias="riskState",default=None,)
+	servicePrincipalType: Optional[str] = Field(alias="servicePrincipalType",default=None,)
+	history: Optional[list[RiskyServicePrincipalHistoryItem]] = Field(alias="history",default=None,)
+	activity: Optional[RiskServicePrincipalActivity] = Field(alias="activity",default=None,)
+	initiatedBy: Optional[str] = Field(alias="initiatedBy",default=None,)
 
 from .risk_detail import RiskDetail
 from .risk_level import RiskLevel

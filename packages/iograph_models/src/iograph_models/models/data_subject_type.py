@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class DataSubjectType(Enum):
+class DataSubjectType(StrEnum):
 	customer = "customer"
 	currentEmployee = "currentEmployee"
 	formerEmployee = "formerEmployee"

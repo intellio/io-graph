@@ -4,7 +4,7 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class ConfigurationManagerCollectionAssignmentTarget(BaseModel):
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	collectionId: Optional[str] = Field(default=None,alias="collectionId",)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	collectionId: Optional[str] = Field(alias="collectionId",default=None,)
 
 

@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class ActionState(Enum):
+class ActionState(StrEnum):
 	none = "none"
 	pending = "pending"
 	canceled = "canceled"

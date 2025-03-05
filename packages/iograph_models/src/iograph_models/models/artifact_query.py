@@ -4,9 +4,9 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class ArtifactQuery(BaseModel):
-	artifactType: Optional[RestorableArtifact] = Field(default=None,alias="artifactType",)
-	queryExpression: Optional[str] = Field(default=None,alias="queryExpression",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
+	artifactType: Optional[str | RestorableArtifact] = Field(alias="artifactType",default=None,)
+	queryExpression: Optional[str] = Field(alias="queryExpression",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 
 from .restorable_artifact import RestorableArtifact
 

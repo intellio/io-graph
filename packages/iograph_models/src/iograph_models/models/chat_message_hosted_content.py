@@ -4,9 +4,9 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class ChatMessageHostedContent(BaseModel):
-	id: Optional[str] = Field(default=None,alias="id",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	contentBytes: Optional[str] = Field(default=None,alias="contentBytes",)
-	contentType: Optional[str] = Field(default=None,alias="contentType",)
+	id: Optional[str] = Field(alias="id",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	contentBytes: Optional[str] = Field(alias="contentBytes",default=None,)
+	contentType: Optional[str] = Field(alias="contentType",default=None,)
 
 

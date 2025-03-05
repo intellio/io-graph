@@ -4,8 +4,8 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class IntegerRange(BaseModel):
-	end: Optional[int] = Field(default=None,alias="end",)
-	start: Optional[int] = Field(default=None,alias="start",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
+	end: Optional[int] = Field(alias="end",default=None,)
+	start: Optional[int] = Field(alias="start",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 
 

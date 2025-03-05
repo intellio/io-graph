@@ -4,8 +4,8 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class Year_fracPostRequest(BaseModel):
-	startDate: Optional[str] = Field(default=None,alias="startDate",)
-	endDate: Optional[str] = Field(default=None,alias="endDate",)
-	basis: Optional[str] = Field(default=None,alias="basis",)
+	startDate: Optional[str] = Field(alias="startDate",default=None,)
+	endDate: Optional[str] = Field(alias="endDate",default=None,)
+	basis: Optional[str] = Field(alias="basis",default=None,)
 
 

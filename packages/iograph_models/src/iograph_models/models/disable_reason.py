@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class DisableReason(Enum):
+class DisableReason(StrEnum):
 	none = "none"
 	invalidBillingProfile = "invalidBillingProfile"
 	userRequested = "userRequested"

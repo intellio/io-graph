@@ -4,6 +4,6 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class UnarchivePostRequest(BaseModel):
-	messageIds: Optional[list[str]] = Field(default=None,alias="messageIds",)
+	messageIds: Optional[list[str]] = Field(alias="messageIds",default=None,)
 
 

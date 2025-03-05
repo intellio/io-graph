@@ -4,9 +4,9 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class AuthenticationMethodsRoot(BaseModel):
-	id: Optional[str] = Field(default=None,alias="id",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	userRegistrationDetails: Optional[list[UserRegistrationDetails]] = Field(default=None,alias="userRegistrationDetails",)
+	id: Optional[str] = Field(alias="id",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	userRegistrationDetails: Optional[list[UserRegistrationDetails]] = Field(alias="userRegistrationDetails",default=None,)
 
 from .user_registration_details import UserRegistrationDetails
 

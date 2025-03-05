@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class SecurityHostPortStatus(Enum):
+class SecurityHostPortStatus(StrEnum):
 	open = "open"
 	filtered = "filtered"
 	closed = "closed"

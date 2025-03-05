@@ -4,7 +4,7 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class EducationOnPremisesInfo(BaseModel):
-	immutableId: Optional[str] = Field(default=None,alias="immutableId",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
+	immutableId: Optional[str] = Field(alias="immutableId",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 
 

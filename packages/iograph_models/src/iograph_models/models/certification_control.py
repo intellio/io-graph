@@ -4,8 +4,8 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class CertificationControl(BaseModel):
-	name: Optional[str] = Field(default=None,alias="name",)
-	url: Optional[str] = Field(default=None,alias="url",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
+	name: Optional[str] = Field(alias="name",default=None,)
+	url: Optional[str] = Field(alias="url",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 
 

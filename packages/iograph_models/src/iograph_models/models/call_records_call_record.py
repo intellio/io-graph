@@ -5,20 +5,20 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class CallRecordsCallRecord(BaseModel):
-	id: Optional[str] = Field(default=None,alias="id",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	endDateTime: Optional[datetime] = Field(default=None,alias="endDateTime",)
-	joinWebUrl: Optional[str] = Field(default=None,alias="joinWebUrl",)
-	lastModifiedDateTime: Optional[datetime] = Field(default=None,alias="lastModifiedDateTime",)
-	modalities: Optional[list[CallRecordsModality]] = Field(default=None,alias="modalities",)
-	organizer: SerializeAsAny[Optional[IdentitySet]] = Field(default=None,alias="organizer",)
-	participants: SerializeAsAny[Optional[list[IdentitySet]]] = Field(default=None,alias="participants",)
-	startDateTime: Optional[datetime] = Field(default=None,alias="startDateTime",)
-	type: Optional[CallRecordsCallType] = Field(default=None,alias="type",)
-	version: Optional[int] = Field(default=None,alias="version",)
-	organizer_v2: Optional[CallRecordsOrganizer] = Field(default=None,alias="organizer_v2",)
-	participants_v2: Optional[list[CallRecordsParticipant]] = Field(default=None,alias="participants_v2",)
-	sessions: Optional[list[CallRecordsSession]] = Field(default=None,alias="sessions",)
+	id: Optional[str] = Field(alias="id",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	endDateTime: Optional[datetime] = Field(alias="endDateTime",default=None,)
+	joinWebUrl: Optional[str] = Field(alias="joinWebUrl",default=None,)
+	lastModifiedDateTime: Optional[datetime] = Field(alias="lastModifiedDateTime",default=None,)
+	modalities: Optional[list[str | CallRecordsModality]] = Field(alias="modalities",default=None,)
+	organizer: SerializeAsAny[Optional[IdentitySet]] = Field(alias="organizer",default=None,)
+	participants: SerializeAsAny[Optional[list[IdentitySet]]] = Field(alias="participants",default=None,)
+	startDateTime: Optional[datetime] = Field(alias="startDateTime",default=None,)
+	type: Optional[str | CallRecordsCallType] = Field(alias="type",default=None,)
+	version: Optional[int] = Field(alias="version",default=None,)
+	organizer_v2: Optional[CallRecordsOrganizer] = Field(alias="organizer_v2",default=None,)
+	participants_v2: Optional[list[CallRecordsParticipant]] = Field(alias="participants_v2",default=None,)
+	sessions: Optional[list[CallRecordsSession]] = Field(alias="sessions",default=None,)
 
 from .call_records_modality import CallRecordsModality
 from .identity_set import IdentitySet

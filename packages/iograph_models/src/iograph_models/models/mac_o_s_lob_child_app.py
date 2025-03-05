@@ -4,9 +4,9 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class MacOSLobChildApp(BaseModel):
-	buildNumber: Optional[str] = Field(default=None,alias="buildNumber",)
-	bundleId: Optional[str] = Field(default=None,alias="bundleId",)
-	versionNumber: Optional[str] = Field(default=None,alias="versionNumber",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
+	buildNumber: Optional[str] = Field(alias="buildNumber",default=None,)
+	bundleId: Optional[str] = Field(alias="bundleId",default=None,)
+	versionNumber: Optional[str] = Field(alias="versionNumber",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 
 

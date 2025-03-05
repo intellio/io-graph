@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class TeamsAppResourceSpecificPermissionType(Enum):
+class TeamsAppResourceSpecificPermissionType(StrEnum):
 	delegated = "delegated"
 	application = "application"
 	unknownFutureValue = "unknownFutureValue"

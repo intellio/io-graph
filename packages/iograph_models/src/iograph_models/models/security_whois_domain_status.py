@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class SecurityWhoisDomainStatus(Enum):
+class SecurityWhoisDomainStatus(StrEnum):
 	clientDeleteProhibited = "clientDeleteProhibited"
 	clientHold = "clientHold"
 	clientRenewProhibited = "clientRenewProhibited"

@@ -5,14 +5,14 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class EducationRubricOutcome(BaseModel):
-	id: Optional[str] = Field(default=None,alias="id",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	lastModifiedBy: SerializeAsAny[Optional[IdentitySet]] = Field(default=None,alias="lastModifiedBy",)
-	lastModifiedDateTime: Optional[datetime] = Field(default=None,alias="lastModifiedDateTime",)
-	publishedRubricQualityFeedback: Optional[list[RubricQualityFeedbackModel]] = Field(default=None,alias="publishedRubricQualityFeedback",)
-	publishedRubricQualitySelectedLevels: Optional[list[RubricQualitySelectedColumnModel]] = Field(default=None,alias="publishedRubricQualitySelectedLevels",)
-	rubricQualityFeedback: Optional[list[RubricQualityFeedbackModel]] = Field(default=None,alias="rubricQualityFeedback",)
-	rubricQualitySelectedLevels: Optional[list[RubricQualitySelectedColumnModel]] = Field(default=None,alias="rubricQualitySelectedLevels",)
+	id: Optional[str] = Field(alias="id",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	lastModifiedBy: SerializeAsAny[Optional[IdentitySet]] = Field(alias="lastModifiedBy",default=None,)
+	lastModifiedDateTime: Optional[datetime] = Field(alias="lastModifiedDateTime",default=None,)
+	publishedRubricQualityFeedback: Optional[list[RubricQualityFeedbackModel]] = Field(alias="publishedRubricQualityFeedback",default=None,)
+	publishedRubricQualitySelectedLevels: Optional[list[RubricQualitySelectedColumnModel]] = Field(alias="publishedRubricQualitySelectedLevels",default=None,)
+	rubricQualityFeedback: Optional[list[RubricQualityFeedbackModel]] = Field(alias="rubricQualityFeedback",default=None,)
+	rubricQualitySelectedLevels: Optional[list[RubricQualitySelectedColumnModel]] = Field(alias="rubricQualitySelectedLevels",default=None,)
 
 from .identity_set import IdentitySet
 from .rubric_quality_feedback_model import RubricQualityFeedbackModel

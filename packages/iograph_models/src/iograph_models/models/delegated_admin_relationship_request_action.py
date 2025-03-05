@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class DelegatedAdminRelationshipRequestAction(Enum):
+class DelegatedAdminRelationshipRequestAction(StrEnum):
 	lockForApproval = "lockForApproval"
 	approve = "approve"
 	terminate = "terminate"

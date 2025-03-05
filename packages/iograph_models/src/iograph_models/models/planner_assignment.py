@@ -5,10 +5,10 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class PlannerAssignment(BaseModel):
-	assignedBy: SerializeAsAny[Optional[IdentitySet]] = Field(default=None,alias="assignedBy",)
-	assignedDateTime: Optional[datetime] = Field(default=None,alias="assignedDateTime",)
-	orderHint: Optional[str] = Field(default=None,alias="orderHint",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
+	assignedBy: SerializeAsAny[Optional[IdentitySet]] = Field(alias="assignedBy",default=None,)
+	assignedDateTime: Optional[datetime] = Field(alias="assignedDateTime",default=None,)
+	orderHint: Optional[str] = Field(alias="orderHint",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 
 from .identity_set import IdentitySet
 

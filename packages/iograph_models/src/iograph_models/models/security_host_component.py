@@ -5,14 +5,14 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class SecurityHostComponent(BaseModel):
-	id: Optional[str] = Field(default=None,alias="id",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	category: Optional[str] = Field(default=None,alias="category",)
-	firstSeenDateTime: Optional[datetime] = Field(default=None,alias="firstSeenDateTime",)
-	lastSeenDateTime: Optional[datetime] = Field(default=None,alias="lastSeenDateTime",)
-	name: Optional[str] = Field(default=None,alias="name",)
-	version: Optional[str] = Field(default=None,alias="version",)
-	host: SerializeAsAny[Optional[SecurityHost]] = Field(default=None,alias="host",)
+	id: Optional[str] = Field(alias="id",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	category: Optional[str] = Field(alias="category",default=None,)
+	firstSeenDateTime: Optional[datetime] = Field(alias="firstSeenDateTime",default=None,)
+	lastSeenDateTime: Optional[datetime] = Field(alias="lastSeenDateTime",default=None,)
+	name: Optional[str] = Field(alias="name",default=None,)
+	version: Optional[str] = Field(alias="version",default=None,)
+	host: SerializeAsAny[Optional[SecurityHost]] = Field(alias="host",default=None,)
 
 from .security_host import SecurityHost
 

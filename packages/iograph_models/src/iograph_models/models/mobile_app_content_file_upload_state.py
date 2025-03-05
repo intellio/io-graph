@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class MobileAppContentFileUploadState(Enum):
+class MobileAppContentFileUploadState(StrEnum):
 	success = "success"
 	transientError = "transientError"
 	error = "error"

@@ -4,11 +4,11 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class SearchHitsContainer(BaseModel):
-	aggregations: Optional[list[SearchAggregation]] = Field(default=None,alias="aggregations",)
-	hits: Optional[list[SearchHit]] = Field(default=None,alias="hits",)
-	moreResultsAvailable: Optional[bool] = Field(default=None,alias="moreResultsAvailable",)
-	total: Optional[int] = Field(default=None,alias="total",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
+	aggregations: Optional[list[SearchAggregation]] = Field(alias="aggregations",default=None,)
+	hits: Optional[list[SearchHit]] = Field(alias="hits",default=None,)
+	moreResultsAvailable: Optional[bool] = Field(alias="moreResultsAvailable",default=None,)
+	total: Optional[int] = Field(alias="total",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 
 from .search_aggregation import SearchAggregation
 from .search_hit import SearchHit

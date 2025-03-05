@@ -5,12 +5,12 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class ServiceAnnouncementAttachment(BaseModel):
-	id: Optional[str] = Field(default=None,alias="id",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	content: Optional[str] = Field(default=None,alias="content",)
-	contentType: Optional[str] = Field(default=None,alias="contentType",)
-	lastModifiedDateTime: Optional[datetime] = Field(default=None,alias="lastModifiedDateTime",)
-	name: Optional[str] = Field(default=None,alias="name",)
-	size: Optional[int] = Field(default=None,alias="size",)
+	id: Optional[str] = Field(alias="id",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	content: Optional[str] = Field(alias="content",default=None,)
+	contentType: Optional[str] = Field(alias="contentType",default=None,)
+	lastModifiedDateTime: Optional[datetime] = Field(alias="lastModifiedDateTime",default=None,)
+	name: Optional[str] = Field(alias="name",default=None,)
+	size: Optional[int] = Field(alias="size",default=None,)
 
 

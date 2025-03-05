@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class CalendarRoleType(Enum):
+class CalendarRoleType(StrEnum):
 	none = "none"
 	freeBusyRead = "freeBusyRead"
 	limitedRead = "limitedRead"

@@ -5,12 +5,12 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class SignInActivity(BaseModel):
-	lastNonInteractiveSignInDateTime: Optional[datetime] = Field(default=None,alias="lastNonInteractiveSignInDateTime",)
-	lastNonInteractiveSignInRequestId: Optional[str] = Field(default=None,alias="lastNonInteractiveSignInRequestId",)
-	lastSignInDateTime: Optional[datetime] = Field(default=None,alias="lastSignInDateTime",)
-	lastSignInRequestId: Optional[str] = Field(default=None,alias="lastSignInRequestId",)
-	lastSuccessfulSignInDateTime: Optional[datetime] = Field(default=None,alias="lastSuccessfulSignInDateTime",)
-	lastSuccessfulSignInRequestId: Optional[str] = Field(default=None,alias="lastSuccessfulSignInRequestId",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
+	lastNonInteractiveSignInDateTime: Optional[datetime] = Field(alias="lastNonInteractiveSignInDateTime",default=None,)
+	lastNonInteractiveSignInRequestId: Optional[str] = Field(alias="lastNonInteractiveSignInRequestId",default=None,)
+	lastSignInDateTime: Optional[datetime] = Field(alias="lastSignInDateTime",default=None,)
+	lastSignInRequestId: Optional[str] = Field(alias="lastSignInRequestId",default=None,)
+	lastSuccessfulSignInDateTime: Optional[datetime] = Field(alias="lastSuccessfulSignInDateTime",default=None,)
+	lastSuccessfulSignInRequestId: Optional[str] = Field(alias="lastSuccessfulSignInRequestId",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 
 

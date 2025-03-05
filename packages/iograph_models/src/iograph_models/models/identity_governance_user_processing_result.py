@@ -5,19 +5,19 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class IdentityGovernanceUserProcessingResult(BaseModel):
-	id: Optional[str] = Field(default=None,alias="id",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	completedDateTime: Optional[datetime] = Field(default=None,alias="completedDateTime",)
-	failedTasksCount: Optional[int] = Field(default=None,alias="failedTasksCount",)
-	processingStatus: Optional[IdentityGovernanceLifecycleWorkflowProcessingStatus] = Field(default=None,alias="processingStatus",)
-	scheduledDateTime: Optional[datetime] = Field(default=None,alias="scheduledDateTime",)
-	startedDateTime: Optional[datetime] = Field(default=None,alias="startedDateTime",)
-	totalTasksCount: Optional[int] = Field(default=None,alias="totalTasksCount",)
-	totalUnprocessedTasksCount: Optional[int] = Field(default=None,alias="totalUnprocessedTasksCount",)
-	workflowExecutionType: Optional[IdentityGovernanceWorkflowExecutionType] = Field(default=None,alias="workflowExecutionType",)
-	workflowVersion: Optional[int] = Field(default=None,alias="workflowVersion",)
-	subject: Optional[User] = Field(default=None,alias="subject",)
-	taskProcessingResults: Optional[list[IdentityGovernanceTaskProcessingResult]] = Field(default=None,alias="taskProcessingResults",)
+	id: Optional[str] = Field(alias="id",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	completedDateTime: Optional[datetime] = Field(alias="completedDateTime",default=None,)
+	failedTasksCount: Optional[int] = Field(alias="failedTasksCount",default=None,)
+	processingStatus: Optional[str | IdentityGovernanceLifecycleWorkflowProcessingStatus] = Field(alias="processingStatus",default=None,)
+	scheduledDateTime: Optional[datetime] = Field(alias="scheduledDateTime",default=None,)
+	startedDateTime: Optional[datetime] = Field(alias="startedDateTime",default=None,)
+	totalTasksCount: Optional[int] = Field(alias="totalTasksCount",default=None,)
+	totalUnprocessedTasksCount: Optional[int] = Field(alias="totalUnprocessedTasksCount",default=None,)
+	workflowExecutionType: Optional[str | IdentityGovernanceWorkflowExecutionType] = Field(alias="workflowExecutionType",default=None,)
+	workflowVersion: Optional[int] = Field(alias="workflowVersion",default=None,)
+	subject: Optional[User] = Field(alias="subject",default=None,)
+	taskProcessingResults: Optional[list[IdentityGovernanceTaskProcessingResult]] = Field(alias="taskProcessingResults",default=None,)
 
 from .identity_governance_lifecycle_workflow_processing_status import IdentityGovernanceLifecycleWorkflowProcessingStatus
 from .identity_governance_workflow_execution_type import IdentityGovernanceWorkflowExecutionType

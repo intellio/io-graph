@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class MicrosoftManagedDesktopType(Enum):
+class MicrosoftManagedDesktopType(StrEnum):
 	notManaged = "notManaged"
 	premiumManaged = "premiumManaged"
 	standardManaged = "standardManaged"

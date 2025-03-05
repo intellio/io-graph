@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class VirtualEventRegistrationQuestionAnswerInputType(Enum):
+class VirtualEventRegistrationQuestionAnswerInputType(StrEnum):
 	text = "text"
 	multilineText = "multilineText"
 	singleChoice = "singleChoice"

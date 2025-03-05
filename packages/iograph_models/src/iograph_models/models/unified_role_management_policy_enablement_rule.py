@@ -4,10 +4,10 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class UnifiedRoleManagementPolicyEnablementRule(BaseModel):
-	id: Optional[str] = Field(default=None,alias="id",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	target: Optional[UnifiedRoleManagementPolicyRuleTarget] = Field(default=None,alias="target",)
-	enabledRules: Optional[list[str]] = Field(default=None,alias="enabledRules",)
+	id: Optional[str] = Field(alias="id",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	target: Optional[UnifiedRoleManagementPolicyRuleTarget] = Field(alias="target",default=None,)
+	enabledRules: Optional[list[str]] = Field(alias="enabledRules",default=None,)
 
 from .unified_role_management_policy_rule_target import UnifiedRoleManagementPolicyRuleTarget
 

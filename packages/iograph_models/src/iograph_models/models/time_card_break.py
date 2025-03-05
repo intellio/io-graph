@@ -4,11 +4,11 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class TimeCardBreak(BaseModel):
-	breakId: Optional[str] = Field(default=None,alias="breakId",)
-	end: Optional[TimeCardEvent] = Field(default=None,alias="end",)
-	notes: Optional[ItemBody] = Field(default=None,alias="notes",)
-	start: Optional[TimeCardEvent] = Field(default=None,alias="start",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
+	breakId: Optional[str] = Field(alias="breakId",default=None,)
+	end: Optional[TimeCardEvent] = Field(alias="end",default=None,)
+	notes: Optional[ItemBody] = Field(alias="notes",default=None,)
+	start: Optional[TimeCardEvent] = Field(alias="start",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 
 from .time_card_event import TimeCardEvent
 from .item_body import ItemBody

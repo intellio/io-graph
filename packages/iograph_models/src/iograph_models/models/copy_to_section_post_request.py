@@ -4,9 +4,9 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class Copy_to_sectionPostRequest(BaseModel):
-	id: Optional[str] = Field(default=None,alias="id",)
-	groupId: Optional[str] = Field(default=None,alias="groupId",)
-	siteCollectionId: Optional[str] = Field(default=None,alias="siteCollectionId",)
-	siteId: Optional[str] = Field(default=None,alias="siteId",)
+	id: Optional[str] = Field(alias="id",default=None,)
+	groupId: Optional[str] = Field(alias="groupId",default=None,)
+	siteCollectionId: Optional[str] = Field(alias="siteCollectionId",default=None,)
+	siteId: Optional[str] = Field(alias="siteId",default=None,)
 
 

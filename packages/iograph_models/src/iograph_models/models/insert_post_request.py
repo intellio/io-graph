@@ -4,6 +4,6 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class InsertPostRequest(BaseModel):
-	shift: Optional[str] = Field(default=None,alias="shift",)
+	shift: Optional[str] = Field(alias="shift",default=None,)
 
 

@@ -4,11 +4,11 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class Win32LobAppProductCodeRule(BaseModel):
-	ruleType: Optional[Win32LobAppRuleType] = Field(default=None,alias="ruleType",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	productCode: Optional[str] = Field(default=None,alias="productCode",)
-	productVersion: Optional[str] = Field(default=None,alias="productVersion",)
-	productVersionOperator: Optional[Win32LobAppRuleOperator] = Field(default=None,alias="productVersionOperator",)
+	ruleType: Optional[str | Win32LobAppRuleType] = Field(alias="ruleType",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	productCode: Optional[str] = Field(alias="productCode",default=None,)
+	productVersion: Optional[str] = Field(alias="productVersion",default=None,)
+	productVersionOperator: Optional[str | Win32LobAppRuleOperator] = Field(alias="productVersionOperator",default=None,)
 
 from .win32_lob_app_rule_type import Win32LobAppRuleType
 from .win32_lob_app_rule_operator import Win32LobAppRuleOperator

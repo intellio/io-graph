@@ -4,10 +4,10 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class OmaSettingString(BaseModel):
-	description: Optional[str] = Field(default=None,alias="description",)
-	displayName: Optional[str] = Field(default=None,alias="displayName",)
-	omaUri: Optional[str] = Field(default=None,alias="omaUri",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	value: Optional[str] = Field(default=None,alias="value",)
+	description: Optional[str] = Field(alias="description",default=None,)
+	displayName: Optional[str] = Field(alias="displayName",default=None,)
+	omaUri: Optional[str] = Field(alias="omaUri",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	value: Optional[str] = Field(alias="value",default=None,)
 
 

@@ -5,14 +5,14 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class AlertHistoryState(BaseModel):
-	appId: Optional[str] = Field(default=None,alias="appId",)
-	assignedTo: Optional[str] = Field(default=None,alias="assignedTo",)
-	comments: Optional[list[str]] = Field(default=None,alias="comments",)
-	feedback: Optional[AlertFeedback] = Field(default=None,alias="feedback",)
-	status: Optional[AlertStatus] = Field(default=None,alias="status",)
-	updatedDateTime: Optional[datetime] = Field(default=None,alias="updatedDateTime",)
-	user: Optional[str] = Field(default=None,alias="user",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
+	appId: Optional[str] = Field(alias="appId",default=None,)
+	assignedTo: Optional[str] = Field(alias="assignedTo",default=None,)
+	comments: Optional[list[str]] = Field(alias="comments",default=None,)
+	feedback: Optional[str | AlertFeedback] = Field(alias="feedback",default=None,)
+	status: Optional[str | AlertStatus] = Field(alias="status",default=None,)
+	updatedDateTime: Optional[datetime] = Field(alias="updatedDateTime",default=None,)
+	user: Optional[str] = Field(alias="user",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 
 from .alert_feedback import AlertFeedback
 from .alert_status import AlertStatus

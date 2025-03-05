@@ -4,8 +4,8 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class Send_mailPostRequest(BaseModel):
-	Message: SerializeAsAny[Optional[Message]] = Field(default=None,alias="Message",)
-	SaveToSentItems: Optional[bool] = Field(default=None,alias="SaveToSentItems",)
+	Message: SerializeAsAny[Optional[Message]] = Field(alias="Message",default=None,)
+	SaveToSentItems: Optional[bool] = Field(alias="SaveToSentItems",default=None,)
 
 from .message import Message
 

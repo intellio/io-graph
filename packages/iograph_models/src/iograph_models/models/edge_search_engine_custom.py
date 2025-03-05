@@ -4,7 +4,7 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class EdgeSearchEngineCustom(BaseModel):
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	edgeSearchEngineOpenSearchXmlUrl: Optional[str] = Field(default=None,alias="edgeSearchEngineOpenSearchXmlUrl",)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	edgeSearchEngineOpenSearchXmlUrl: Optional[str] = Field(alias="edgeSearchEngineOpenSearchXmlUrl",default=None,)
 
 

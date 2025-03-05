@@ -4,7 +4,7 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class Update_allowed_combinationsPostRequest(BaseModel):
-	allowedCombinations: Optional[AuthenticationMethodModes] = Field(default=None,alias="allowedCombinations",)
+	allowedCombinations: Optional[str | AuthenticationMethodModes] = Field(alias="allowedCombinations",default=None,)
 
 from .authentication_method_modes import AuthenticationMethodModes
 

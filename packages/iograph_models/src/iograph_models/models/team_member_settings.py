@@ -4,12 +4,12 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class TeamMemberSettings(BaseModel):
-	allowAddRemoveApps: Optional[bool] = Field(default=None,alias="allowAddRemoveApps",)
-	allowCreatePrivateChannels: Optional[bool] = Field(default=None,alias="allowCreatePrivateChannels",)
-	allowCreateUpdateChannels: Optional[bool] = Field(default=None,alias="allowCreateUpdateChannels",)
-	allowCreateUpdateRemoveConnectors: Optional[bool] = Field(default=None,alias="allowCreateUpdateRemoveConnectors",)
-	allowCreateUpdateRemoveTabs: Optional[bool] = Field(default=None,alias="allowCreateUpdateRemoveTabs",)
-	allowDeleteChannels: Optional[bool] = Field(default=None,alias="allowDeleteChannels",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
+	allowAddRemoveApps: Optional[bool] = Field(alias="allowAddRemoveApps",default=None,)
+	allowCreatePrivateChannels: Optional[bool] = Field(alias="allowCreatePrivateChannels",default=None,)
+	allowCreateUpdateChannels: Optional[bool] = Field(alias="allowCreateUpdateChannels",default=None,)
+	allowCreateUpdateRemoveConnectors: Optional[bool] = Field(alias="allowCreateUpdateRemoveConnectors",default=None,)
+	allowCreateUpdateRemoveTabs: Optional[bool] = Field(alias="allowCreateUpdateRemoveTabs",default=None,)
+	allowDeleteChannels: Optional[bool] = Field(alias="allowDeleteChannels",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 
 

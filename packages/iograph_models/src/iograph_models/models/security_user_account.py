@@ -4,12 +4,12 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class SecurityUserAccount(BaseModel):
-	accountName: Optional[str] = Field(default=None,alias="accountName",)
-	azureAdUserId: Optional[str] = Field(default=None,alias="azureAdUserId",)
-	displayName: Optional[str] = Field(default=None,alias="displayName",)
-	domainName: Optional[str] = Field(default=None,alias="domainName",)
-	userPrincipalName: Optional[str] = Field(default=None,alias="userPrincipalName",)
-	userSid: Optional[str] = Field(default=None,alias="userSid",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
+	accountName: Optional[str] = Field(alias="accountName",default=None,)
+	azureAdUserId: Optional[str] = Field(alias="azureAdUserId",default=None,)
+	displayName: Optional[str] = Field(alias="displayName",default=None,)
+	domainName: Optional[str] = Field(alias="domainName",default=None,)
+	userPrincipalName: Optional[str] = Field(alias="userPrincipalName",default=None,)
+	userSid: Optional[str] = Field(alias="userSid",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 
 

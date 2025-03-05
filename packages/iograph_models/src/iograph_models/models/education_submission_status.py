@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class EducationSubmissionStatus(Enum):
+class EducationSubmissionStatus(StrEnum):
 	working = "working"
 	submitted = "submitted"
 	released = "released"

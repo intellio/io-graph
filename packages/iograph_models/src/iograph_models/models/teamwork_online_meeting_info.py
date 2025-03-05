@@ -4,10 +4,10 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class TeamworkOnlineMeetingInfo(BaseModel):
-	calendarEventId: Optional[str] = Field(default=None,alias="calendarEventId",)
-	joinWebUrl: Optional[str] = Field(default=None,alias="joinWebUrl",)
-	organizer: Optional[TeamworkUserIdentity] = Field(default=None,alias="organizer",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
+	calendarEventId: Optional[str] = Field(alias="calendarEventId",default=None,)
+	joinWebUrl: Optional[str] = Field(alias="joinWebUrl",default=None,)
+	organizer: Optional[TeamworkUserIdentity] = Field(alias="organizer",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 
 from .teamwork_user_identity import TeamworkUserIdentity
 

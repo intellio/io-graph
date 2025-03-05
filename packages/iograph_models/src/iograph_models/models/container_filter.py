@@ -4,7 +4,7 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class ContainerFilter(BaseModel):
-	includedContainers: Optional[list[str]] = Field(default=None,alias="includedContainers",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
+	includedContainers: Optional[list[str]] = Field(alias="includedContainers",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 
 

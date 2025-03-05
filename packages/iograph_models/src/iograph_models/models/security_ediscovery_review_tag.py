@@ -5,15 +5,15 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class SecurityEdiscoveryReviewTag(BaseModel):
-	id: Optional[str] = Field(default=None,alias="id",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	createdBy: SerializeAsAny[Optional[IdentitySet]] = Field(default=None,alias="createdBy",)
-	description: Optional[str] = Field(default=None,alias="description",)
-	displayName: Optional[str] = Field(default=None,alias="displayName",)
-	lastModifiedDateTime: Optional[datetime] = Field(default=None,alias="lastModifiedDateTime",)
-	childSelectability: Optional[SecurityChildSelectability] = Field(default=None,alias="childSelectability",)
-	childTags: Optional[list[SecurityEdiscoveryReviewTag]] = Field(default=None,alias="childTags",)
-	parent: Optional[SecurityEdiscoveryReviewTag] = Field(default=None,alias="parent",)
+	id: Optional[str] = Field(alias="id",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	createdBy: SerializeAsAny[Optional[IdentitySet]] = Field(alias="createdBy",default=None,)
+	description: Optional[str] = Field(alias="description",default=None,)
+	displayName: Optional[str] = Field(alias="displayName",default=None,)
+	lastModifiedDateTime: Optional[datetime] = Field(alias="lastModifiedDateTime",default=None,)
+	childSelectability: Optional[str | SecurityChildSelectability] = Field(alias="childSelectability",default=None,)
+	childTags: Optional[list[SecurityEdiscoveryReviewTag]] = Field(alias="childTags",default=None,)
+	parent: Optional[SecurityEdiscoveryReviewTag] = Field(alias="parent",default=None,)
 
 from .identity_set import IdentitySet
 from .security_child_selectability import SecurityChildSelectability

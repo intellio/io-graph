@@ -4,10 +4,10 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class CommunicationsApplicationIdentity(BaseModel):
-	displayName: Optional[str] = Field(default=None,alias="displayName",)
-	id: Optional[str] = Field(default=None,alias="id",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	applicationType: Optional[str] = Field(default=None,alias="applicationType",)
-	hidden: Optional[bool] = Field(default=None,alias="hidden",)
+	displayName: Optional[str] = Field(alias="displayName",default=None,)
+	id: Optional[str] = Field(alias="id",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	applicationType: Optional[str] = Field(alias="applicationType",default=None,)
+	hidden: Optional[bool] = Field(alias="hidden",default=None,)
 
 

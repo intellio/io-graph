@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class ExternalAudienceScope(Enum):
+class ExternalAudienceScope(StrEnum):
 	none = "none"
 	contactsOnly = "contactsOnly"
 	all = "all"

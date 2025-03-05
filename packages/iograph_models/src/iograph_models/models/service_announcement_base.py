@@ -7,13 +7,13 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class ServiceAnnouncementBase(BaseModel):
-	id: Optional[str] = Field(default=None,alias="id",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	details: Optional[list[KeyValuePair]] = Field(default=None,alias="details",)
-	endDateTime: Optional[datetime] = Field(default=None,alias="endDateTime",)
-	lastModifiedDateTime: Optional[datetime] = Field(default=None,alias="lastModifiedDateTime",)
-	startDateTime: Optional[datetime] = Field(default=None,alias="startDateTime",)
-	title: Optional[str] = Field(default=None,alias="title",)
+	id: Optional[str] = Field(alias="id",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	details: Optional[list[KeyValuePair]] = Field(alias="details",default=None,)
+	endDateTime: Optional[datetime] = Field(alias="endDateTime",default=None,)
+	lastModifiedDateTime: Optional[datetime] = Field(alias="lastModifiedDateTime",default=None,)
+	startDateTime: Optional[datetime] = Field(alias="startDateTime",default=None,)
+	title: Optional[str] = Field(alias="title",default=None,)
 
 	@model_validator(mode="wrap")
 	def convert_discriminator_class(cls, data: Any, handler: ModelWrapValidatorHandler[Self]) -> Self:

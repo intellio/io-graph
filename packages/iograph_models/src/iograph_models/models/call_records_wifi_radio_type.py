@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class CallRecordsWifiRadioType(Enum):
+class CallRecordsWifiRadioType(StrEnum):
 	unknown = "unknown"
 	wifi80211a = "wifi80211a"
 	wifi80211b = "wifi80211b"

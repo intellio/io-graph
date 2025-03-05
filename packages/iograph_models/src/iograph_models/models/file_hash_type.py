@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class FileHashType(Enum):
+class FileHashType(StrEnum):
 	unknown = "unknown"
 	sha1 = "sha1"
 	sha256 = "sha256"

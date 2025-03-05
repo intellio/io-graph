@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class DeviceEnrollmentType(Enum):
+class DeviceEnrollmentType(StrEnum):
 	unknown = "unknown"
 	userEnrollment = "userEnrollment"
 	deviceEnrollmentManager = "deviceEnrollmentManager"

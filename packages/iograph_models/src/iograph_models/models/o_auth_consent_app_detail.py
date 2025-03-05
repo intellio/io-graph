@@ -4,10 +4,10 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class OAuthConsentAppDetail(BaseModel):
-	appScope: Optional[OAuthAppScope] = Field(default=None,alias="appScope",)
-	displayLogo: Optional[str] = Field(default=None,alias="displayLogo",)
-	displayName: Optional[str] = Field(default=None,alias="displayName",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
+	appScope: Optional[str | OAuthAppScope] = Field(alias="appScope",default=None,)
+	displayLogo: Optional[str] = Field(alias="displayLogo",default=None,)
+	displayName: Optional[str] = Field(alias="displayName",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 
 from .o_auth_app_scope import OAuthAppScope
 

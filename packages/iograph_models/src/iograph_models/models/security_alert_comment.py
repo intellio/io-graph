@@ -5,9 +5,9 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class SecurityAlertComment(BaseModel):
-	comment: Optional[str] = Field(default=None,alias="comment",)
-	createdByDisplayName: Optional[str] = Field(default=None,alias="createdByDisplayName",)
-	createdDateTime: Optional[datetime] = Field(default=None,alias="createdDateTime",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
+	comment: Optional[str] = Field(alias="comment",default=None,)
+	createdByDisplayName: Optional[str] = Field(alias="createdByDisplayName",default=None,)
+	createdDateTime: Optional[datetime] = Field(alias="createdDateTime",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 
 

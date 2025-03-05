@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class TrainingAssignedTo(Enum):
+class TrainingAssignedTo(StrEnum):
 	none = "none"
 	allUsers = "allUsers"
 	clickedPayload = "clickedPayload"

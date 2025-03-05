@@ -4,11 +4,11 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class Yield_matPostRequest(BaseModel):
-	settlement: Optional[str] = Field(default=None,alias="settlement",)
-	maturity: Optional[str] = Field(default=None,alias="maturity",)
-	issue: Optional[str] = Field(default=None,alias="issue",)
-	rate: Optional[str] = Field(default=None,alias="rate",)
-	pr: Optional[str] = Field(default=None,alias="pr",)
-	basis: Optional[str] = Field(default=None,alias="basis",)
+	settlement: Optional[str] = Field(alias="settlement",default=None,)
+	maturity: Optional[str] = Field(alias="maturity",default=None,)
+	issue: Optional[str] = Field(alias="issue",default=None,)
+	rate: Optional[str] = Field(alias="rate",default=None,)
+	pr: Optional[str] = Field(alias="pr",default=None,)
+	basis: Optional[str] = Field(alias="basis",default=None,)
 
 

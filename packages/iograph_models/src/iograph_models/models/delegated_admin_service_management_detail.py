@@ -4,9 +4,9 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class DelegatedAdminServiceManagementDetail(BaseModel):
-	id: Optional[str] = Field(default=None,alias="id",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	serviceManagementUrl: Optional[str] = Field(default=None,alias="serviceManagementUrl",)
-	serviceName: Optional[str] = Field(default=None,alias="serviceName",)
+	id: Optional[str] = Field(alias="id",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	serviceManagementUrl: Optional[str] = Field(alias="serviceManagementUrl",default=None,)
+	serviceName: Optional[str] = Field(alias="serviceName",default=None,)
 
 

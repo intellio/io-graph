@@ -4,11 +4,11 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class ServerProcessedContent(BaseModel):
-	htmlStrings: Optional[list[MetaDataKeyStringPair]] = Field(default=None,alias="htmlStrings",)
-	imageSources: Optional[list[MetaDataKeyStringPair]] = Field(default=None,alias="imageSources",)
-	links: Optional[list[MetaDataKeyStringPair]] = Field(default=None,alias="links",)
-	searchablePlainTexts: Optional[list[MetaDataKeyStringPair]] = Field(default=None,alias="searchablePlainTexts",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
+	htmlStrings: Optional[list[MetaDataKeyStringPair]] = Field(alias="htmlStrings",default=None,)
+	imageSources: Optional[list[MetaDataKeyStringPair]] = Field(alias="imageSources",default=None,)
+	links: Optional[list[MetaDataKeyStringPair]] = Field(alias="links",default=None,)
+	searchablePlainTexts: Optional[list[MetaDataKeyStringPair]] = Field(alias="searchablePlainTexts",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 
 from .meta_data_key_string_pair import MetaDataKeyStringPair
 from .meta_data_key_string_pair import MetaDataKeyStringPair

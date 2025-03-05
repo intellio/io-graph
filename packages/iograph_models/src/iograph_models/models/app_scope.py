@@ -4,9 +4,9 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class AppScope(BaseModel):
-	id: Optional[str] = Field(default=None,alias="id",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	displayName: Optional[str] = Field(default=None,alias="displayName",)
-	type: Optional[str] = Field(default=None,alias="type",)
+	id: Optional[str] = Field(alias="id",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	displayName: Optional[str] = Field(alias="displayName",default=None,)
+	type: Optional[str] = Field(alias="type",default=None,)
 
 

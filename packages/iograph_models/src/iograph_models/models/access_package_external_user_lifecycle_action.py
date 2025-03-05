@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class AccessPackageExternalUserLifecycleAction(Enum):
+class AccessPackageExternalUserLifecycleAction(StrEnum):
 	none = "none"
 	blockSignIn = "blockSignIn"
 	blockSignInAndDelete = "blockSignInAndDelete"

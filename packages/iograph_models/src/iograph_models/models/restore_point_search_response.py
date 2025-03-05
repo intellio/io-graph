@@ -4,10 +4,10 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class RestorePointSearchResponse(BaseModel):
-	noResultProtectionUnitIds: Optional[list[str]] = Field(default=None,alias="noResultProtectionUnitIds",)
-	searchResponseId: Optional[str] = Field(default=None,alias="searchResponseId",)
-	searchResults: Optional[list[RestorePointSearchResult]] = Field(default=None,alias="searchResults",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
+	noResultProtectionUnitIds: Optional[list[str]] = Field(alias="noResultProtectionUnitIds",default=None,)
+	searchResponseId: Optional[str] = Field(alias="searchResponseId",default=None,)
+	searchResults: Optional[list[RestorePointSearchResult]] = Field(alias="searchResults",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 
 from .restore_point_search_result import RestorePointSearchResult
 

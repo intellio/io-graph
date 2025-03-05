@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class SynchronizationTaskExecutionResult(Enum):
+class SynchronizationTaskExecutionResult(StrEnum):
 	Succeeded = "Succeeded"
 	Failed = "Failed"
 	EntryLevelErrors = "EntryLevelErrors"

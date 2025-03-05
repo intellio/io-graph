@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class TeamVisibilityType(Enum):
+class TeamVisibilityType(StrEnum):
 	private = "private"
 	public = "public"
 	hiddenMembership = "hiddenMembership"

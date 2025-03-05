@@ -5,15 +5,15 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class SynchronizationTemplate(BaseModel):
-	id: Optional[str] = Field(default=None,alias="id",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	applicationId: Optional[UUID] = Field(default=None,alias="applicationId",)
-	default: Optional[bool] = Field(default=None,alias="default",)
-	description: Optional[str] = Field(default=None,alias="description",)
-	discoverable: Optional[bool] = Field(default=None,alias="discoverable",)
-	factoryTag: Optional[str] = Field(default=None,alias="factoryTag",)
-	metadata: Optional[list[SynchronizationMetadataEntry]] = Field(default=None,alias="metadata",)
-	schema: Optional[SynchronizationSchema] = Field(default=None,alias="schema",)
+	id: Optional[str] = Field(alias="id",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	applicationId: Optional[UUID] = Field(alias="applicationId",default=None,)
+	default: Optional[bool] = Field(alias="default",default=None,)
+	description: Optional[str] = Field(alias="description",default=None,)
+	discoverable: Optional[bool] = Field(alias="discoverable",default=None,)
+	factoryTag: Optional[str] = Field(alias="factoryTag",default=None,)
+	metadata: Optional[list[SynchronizationMetadataEntry]] = Field(alias="metadata",default=None,)
+	schema: Optional[SynchronizationSchema] = Field(alias="schema",default=None,)
 
 from .synchronization_metadata_entry import SynchronizationMetadataEntry
 from .synchronization_schema import SynchronizationSchema

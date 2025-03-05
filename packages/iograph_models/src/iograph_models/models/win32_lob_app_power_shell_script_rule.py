@@ -4,16 +4,16 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class Win32LobAppPowerShellScriptRule(BaseModel):
-	ruleType: Optional[Win32LobAppRuleType] = Field(default=None,alias="ruleType",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	comparisonValue: Optional[str] = Field(default=None,alias="comparisonValue",)
-	displayName: Optional[str] = Field(default=None,alias="displayName",)
-	enforceSignatureCheck: Optional[bool] = Field(default=None,alias="enforceSignatureCheck",)
-	operationType: Optional[Win32LobAppPowerShellScriptRuleOperationType] = Field(default=None,alias="operationType",)
-	operator: Optional[Win32LobAppRuleOperator] = Field(default=None,alias="operator",)
-	runAs32Bit: Optional[bool] = Field(default=None,alias="runAs32Bit",)
-	runAsAccount: Optional[RunAsAccountType] = Field(default=None,alias="runAsAccount",)
-	scriptContent: Optional[str] = Field(default=None,alias="scriptContent",)
+	ruleType: Optional[str | Win32LobAppRuleType] = Field(alias="ruleType",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	comparisonValue: Optional[str] = Field(alias="comparisonValue",default=None,)
+	displayName: Optional[str] = Field(alias="displayName",default=None,)
+	enforceSignatureCheck: Optional[bool] = Field(alias="enforceSignatureCheck",default=None,)
+	operationType: Optional[str | Win32LobAppPowerShellScriptRuleOperationType] = Field(alias="operationType",default=None,)
+	operator: Optional[str | Win32LobAppRuleOperator] = Field(alias="operator",default=None,)
+	runAs32Bit: Optional[bool] = Field(alias="runAs32Bit",default=None,)
+	runAsAccount: Optional[str | RunAsAccountType] = Field(alias="runAsAccount",default=None,)
+	scriptContent: Optional[str] = Field(alias="scriptContent",default=None,)
 
 from .win32_lob_app_rule_type import Win32LobAppRuleType
 from .win32_lob_app_power_shell_script_rule_operation_type import Win32LobAppPowerShellScriptRuleOperationType

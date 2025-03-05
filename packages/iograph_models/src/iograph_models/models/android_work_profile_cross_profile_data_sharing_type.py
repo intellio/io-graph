@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class AndroidWorkProfileCrossProfileDataSharingType(Enum):
+class AndroidWorkProfileCrossProfileDataSharingType(StrEnum):
 	deviceDefault = "deviceDefault"
 	preventAny = "preventAny"
 	allowPersonalToWork = "allowPersonalToWork"

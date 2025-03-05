@@ -4,10 +4,10 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class AccessPackageAnswerString(BaseModel):
-	displayValue: Optional[str] = Field(default=None,alias="displayValue",)
-	answeredQuestion: SerializeAsAny[Optional[AccessPackageQuestion]] = Field(default=None,alias="answeredQuestion",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	value: Optional[str] = Field(default=None,alias="value",)
+	displayValue: Optional[str] = Field(alias="displayValue",default=None,)
+	answeredQuestion: SerializeAsAny[Optional[AccessPackageQuestion]] = Field(alias="answeredQuestion",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	value: Optional[str] = Field(alias="value",default=None,)
 
 from .access_package_question import AccessPackageQuestion
 

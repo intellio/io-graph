@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class TrainingCompletionDuration(Enum):
+class TrainingCompletionDuration(StrEnum):
 	week = "week"
 	fortnite = "fortnite"
 	month = "month"

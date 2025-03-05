@@ -4,6 +4,6 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class Apply_bottom_items_filterPostRequest(BaseModel):
-	count: Optional[int] = Field(default=None,alias="count",)
+	count: Optional[int] = Field(alias="count",default=None,)
 
 

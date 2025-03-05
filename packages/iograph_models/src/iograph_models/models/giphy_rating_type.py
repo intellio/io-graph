@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class GiphyRatingType(Enum):
+class GiphyRatingType(StrEnum):
 	strict = "strict"
 	moderate = "moderate"
 	unknownFutureValue = "unknownFutureValue"

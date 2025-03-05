@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class DefenderMonitorFileActivity(Enum):
+class DefenderMonitorFileActivity(StrEnum):
 	userDefined = "userDefined"
 	disable = "disable"
 	monitorAllFiles = "monitorAllFiles"

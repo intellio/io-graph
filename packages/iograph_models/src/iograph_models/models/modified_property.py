@@ -4,9 +4,9 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class ModifiedProperty(BaseModel):
-	displayName: Optional[str] = Field(default=None,alias="displayName",)
-	newValue: Optional[str] = Field(default=None,alias="newValue",)
-	oldValue: Optional[str] = Field(default=None,alias="oldValue",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
+	displayName: Optional[str] = Field(alias="displayName",default=None,)
+	newValue: Optional[str] = Field(alias="newValue",default=None,)
+	oldValue: Optional[str] = Field(alias="oldValue",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 
 

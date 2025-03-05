@@ -4,8 +4,8 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class RedirectUriSettings(BaseModel):
-	index: Optional[int] = Field(default=None,alias="index",)
-	uri: Optional[str] = Field(default=None,alias="uri",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
+	index: Optional[int] = Field(alias="index",default=None,)
+	uri: Optional[str] = Field(alias="uri",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 
 

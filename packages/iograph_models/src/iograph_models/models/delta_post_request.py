@@ -4,7 +4,7 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class DeltaPostRequest(BaseModel):
-	number1: Optional[str] = Field(default=None,alias="number1",)
-	number2: Optional[str] = Field(default=None,alias="number2",)
+	number1: Optional[str] = Field(alias="number1",default=None,)
+	number2: Optional[str] = Field(alias="number2",default=None,)
 
 

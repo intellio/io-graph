@@ -4,28 +4,28 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class TeleconferenceDeviceScreenSharingQuality(BaseModel):
-	averageInboundJitter: Optional[str] = Field(default=None,alias="averageInboundJitter",)
+	averageInboundJitter: Optional[str] = Field(alias="averageInboundJitter",default=None,)
 	averageInboundPacketLossRateInPercentage: float | str | ReferenceNumeric
-	averageInboundRoundTripDelay: Optional[str] = Field(default=None,alias="averageInboundRoundTripDelay",)
-	averageOutboundJitter: Optional[str] = Field(default=None,alias="averageOutboundJitter",)
+	averageInboundRoundTripDelay: Optional[str] = Field(alias="averageInboundRoundTripDelay",default=None,)
+	averageOutboundJitter: Optional[str] = Field(alias="averageOutboundJitter",default=None,)
 	averageOutboundPacketLossRateInPercentage: float | str | ReferenceNumeric
-	averageOutboundRoundTripDelay: Optional[str] = Field(default=None,alias="averageOutboundRoundTripDelay",)
-	channelIndex: Optional[int] = Field(default=None,alias="channelIndex",)
-	inboundPackets: Optional[int] = Field(default=None,alias="inboundPackets",)
-	localIPAddress: Optional[str] = Field(default=None,alias="localIPAddress",)
-	localPort: Optional[int] = Field(default=None,alias="localPort",)
-	maximumInboundJitter: Optional[str] = Field(default=None,alias="maximumInboundJitter",)
+	averageOutboundRoundTripDelay: Optional[str] = Field(alias="averageOutboundRoundTripDelay",default=None,)
+	channelIndex: Optional[int] = Field(alias="channelIndex",default=None,)
+	inboundPackets: Optional[int] = Field(alias="inboundPackets",default=None,)
+	localIPAddress: Optional[str] = Field(alias="localIPAddress",default=None,)
+	localPort: Optional[int] = Field(alias="localPort",default=None,)
+	maximumInboundJitter: Optional[str] = Field(alias="maximumInboundJitter",default=None,)
 	maximumInboundPacketLossRateInPercentage: float | str | ReferenceNumeric
-	maximumInboundRoundTripDelay: Optional[str] = Field(default=None,alias="maximumInboundRoundTripDelay",)
-	maximumOutboundJitter: Optional[str] = Field(default=None,alias="maximumOutboundJitter",)
+	maximumInboundRoundTripDelay: Optional[str] = Field(alias="maximumInboundRoundTripDelay",default=None,)
+	maximumOutboundJitter: Optional[str] = Field(alias="maximumOutboundJitter",default=None,)
 	maximumOutboundPacketLossRateInPercentage: float | str | ReferenceNumeric
-	maximumOutboundRoundTripDelay: Optional[str] = Field(default=None,alias="maximumOutboundRoundTripDelay",)
-	mediaDuration: Optional[str] = Field(default=None,alias="mediaDuration",)
-	networkLinkSpeedInBytes: Optional[int] = Field(default=None,alias="networkLinkSpeedInBytes",)
-	outboundPackets: Optional[int] = Field(default=None,alias="outboundPackets",)
-	remoteIPAddress: Optional[str] = Field(default=None,alias="remoteIPAddress",)
-	remotePort: Optional[int] = Field(default=None,alias="remotePort",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
+	maximumOutboundRoundTripDelay: Optional[str] = Field(alias="maximumOutboundRoundTripDelay",default=None,)
+	mediaDuration: Optional[str] = Field(alias="mediaDuration",default=None,)
+	networkLinkSpeedInBytes: Optional[int] = Field(alias="networkLinkSpeedInBytes",default=None,)
+	outboundPackets: Optional[int] = Field(alias="outboundPackets",default=None,)
+	remoteIPAddress: Optional[str] = Field(alias="remoteIPAddress",default=None,)
+	remotePort: Optional[int] = Field(alias="remotePort",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 	averageInboundBitRate: float | str | ReferenceNumeric
 	averageInboundFrameRate: float | str | ReferenceNumeric
 	averageOutboundBitRate: float | str | ReferenceNumeric

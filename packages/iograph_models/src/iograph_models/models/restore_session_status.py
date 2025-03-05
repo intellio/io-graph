@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class RestoreSessionStatus(Enum):
+class RestoreSessionStatus(StrEnum):
 	draft = "draft"
 	activating = "activating"
 	active = "active"

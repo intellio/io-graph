@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class X509CertificateRuleType(Enum):
+class X509CertificateRuleType(StrEnum):
 	issuerSubject = "issuerSubject"
 	policyOID = "policyOID"
 	unknownFutureValue = "unknownFutureValue"

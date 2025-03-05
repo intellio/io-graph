@@ -4,10 +4,10 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class CanvasLayout(BaseModel):
-	id: Optional[str] = Field(default=None,alias="id",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	horizontalSections: Optional[list[HorizontalSection]] = Field(default=None,alias="horizontalSections",)
-	verticalSection: Optional[VerticalSection] = Field(default=None,alias="verticalSection",)
+	id: Optional[str] = Field(alias="id",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	horizontalSections: Optional[list[HorizontalSection]] = Field(alias="horizontalSections",default=None,)
+	verticalSection: Optional[VerticalSection] = Field(alias="verticalSection",default=None,)
 
 from .horizontal_section import HorizontalSection
 from .vertical_section import VerticalSection

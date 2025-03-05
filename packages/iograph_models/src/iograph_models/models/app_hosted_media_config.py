@@ -4,7 +4,7 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class AppHostedMediaConfig(BaseModel):
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	blob: Optional[str] = Field(default=None,alias="blob",)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	blob: Optional[str] = Field(alias="blob",default=None,)
 
 

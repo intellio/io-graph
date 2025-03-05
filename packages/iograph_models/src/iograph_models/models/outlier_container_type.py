@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class OutlierContainerType(Enum):
+class OutlierContainerType(StrEnum):
 	group = "group"
 	unknownFutureValue = "unknownFutureValue"
 

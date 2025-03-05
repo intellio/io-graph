@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class ManagedAppDataEncryptionType(Enum):
+class ManagedAppDataEncryptionType(StrEnum):
 	useDeviceSettings = "useDeviceSettings"
 	afterDeviceRestart = "afterDeviceRestart"
 	whenDeviceLockedExceptOpenFiles = "whenDeviceLockedExceptOpenFiles"

@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class BookingReminderRecipients(Enum):
+class BookingReminderRecipients(StrEnum):
 	allAttendees = "allAttendees"
 	staff = "staff"
 	customer = "customer"

@@ -5,20 +5,20 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class SecurityRetentionEvent(BaseModel):
-	id: Optional[str] = Field(default=None,alias="id",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	createdBy: SerializeAsAny[Optional[IdentitySet]] = Field(default=None,alias="createdBy",)
-	createdDateTime: Optional[datetime] = Field(default=None,alias="createdDateTime",)
-	description: Optional[str] = Field(default=None,alias="description",)
-	displayName: Optional[str] = Field(default=None,alias="displayName",)
-	eventPropagationResults: Optional[list[SecurityEventPropagationResult]] = Field(default=None,alias="eventPropagationResults",)
-	eventQueries: Optional[list[SecurityEventQuery]] = Field(default=None,alias="eventQueries",)
-	eventStatus: Optional[SecurityRetentionEventStatus] = Field(default=None,alias="eventStatus",)
-	eventTriggerDateTime: Optional[datetime] = Field(default=None,alias="eventTriggerDateTime",)
-	lastModifiedBy: SerializeAsAny[Optional[IdentitySet]] = Field(default=None,alias="lastModifiedBy",)
-	lastModifiedDateTime: Optional[datetime] = Field(default=None,alias="lastModifiedDateTime",)
-	lastStatusUpdateDateTime: Optional[datetime] = Field(default=None,alias="lastStatusUpdateDateTime",)
-	retentionEventType: Optional[SecurityRetentionEventType] = Field(default=None,alias="retentionEventType",)
+	id: Optional[str] = Field(alias="id",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	createdBy: SerializeAsAny[Optional[IdentitySet]] = Field(alias="createdBy",default=None,)
+	createdDateTime: Optional[datetime] = Field(alias="createdDateTime",default=None,)
+	description: Optional[str] = Field(alias="description",default=None,)
+	displayName: Optional[str] = Field(alias="displayName",default=None,)
+	eventPropagationResults: Optional[list[SecurityEventPropagationResult]] = Field(alias="eventPropagationResults",default=None,)
+	eventQueries: Optional[list[SecurityEventQuery]] = Field(alias="eventQueries",default=None,)
+	eventStatus: Optional[SecurityRetentionEventStatus] = Field(alias="eventStatus",default=None,)
+	eventTriggerDateTime: Optional[datetime] = Field(alias="eventTriggerDateTime",default=None,)
+	lastModifiedBy: SerializeAsAny[Optional[IdentitySet]] = Field(alias="lastModifiedBy",default=None,)
+	lastModifiedDateTime: Optional[datetime] = Field(alias="lastModifiedDateTime",default=None,)
+	lastStatusUpdateDateTime: Optional[datetime] = Field(alias="lastStatusUpdateDateTime",default=None,)
+	retentionEventType: Optional[SecurityRetentionEventType] = Field(alias="retentionEventType",default=None,)
 
 from .identity_set import IdentitySet
 from .security_event_propagation_result import SecurityEventPropagationResult

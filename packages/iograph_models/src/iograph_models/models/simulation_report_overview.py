@@ -4,11 +4,11 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class SimulationReportOverview(BaseModel):
-	recommendedActions: Optional[list[RecommendedAction]] = Field(default=None,alias="recommendedActions",)
-	resolvedTargetsCount: Optional[int] = Field(default=None,alias="resolvedTargetsCount",)
-	simulationEventsContent: Optional[SimulationEventsContent] = Field(default=None,alias="simulationEventsContent",)
-	trainingEventsContent: Optional[TrainingEventsContent] = Field(default=None,alias="trainingEventsContent",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
+	recommendedActions: Optional[list[RecommendedAction]] = Field(alias="recommendedActions",default=None,)
+	resolvedTargetsCount: Optional[int] = Field(alias="resolvedTargetsCount",default=None,)
+	simulationEventsContent: Optional[SimulationEventsContent] = Field(alias="simulationEventsContent",default=None,)
+	trainingEventsContent: Optional[TrainingEventsContent] = Field(alias="trainingEventsContent",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 
 from .recommended_action import RecommendedAction
 from .simulation_events_content import SimulationEventsContent

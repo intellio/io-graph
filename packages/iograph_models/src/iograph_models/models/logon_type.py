@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class LogonType(Enum):
+class LogonType(StrEnum):
 	unknown = "unknown"
 	interactive = "interactive"
 	remoteInteractive = "remoteInteractive"

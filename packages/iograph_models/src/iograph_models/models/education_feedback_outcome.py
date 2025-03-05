@@ -5,12 +5,12 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class EducationFeedbackOutcome(BaseModel):
-	id: Optional[str] = Field(default=None,alias="id",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	lastModifiedBy: SerializeAsAny[Optional[IdentitySet]] = Field(default=None,alias="lastModifiedBy",)
-	lastModifiedDateTime: Optional[datetime] = Field(default=None,alias="lastModifiedDateTime",)
-	feedback: Optional[EducationFeedback] = Field(default=None,alias="feedback",)
-	publishedFeedback: Optional[EducationFeedback] = Field(default=None,alias="publishedFeedback",)
+	id: Optional[str] = Field(alias="id",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	lastModifiedBy: SerializeAsAny[Optional[IdentitySet]] = Field(alias="lastModifiedBy",default=None,)
+	lastModifiedDateTime: Optional[datetime] = Field(alias="lastModifiedDateTime",default=None,)
+	feedback: Optional[EducationFeedback] = Field(alias="feedback",default=None,)
+	publishedFeedback: Optional[EducationFeedback] = Field(alias="publishedFeedback",default=None,)
 
 from .identity_set import IdentitySet
 from .education_feedback import EducationFeedback

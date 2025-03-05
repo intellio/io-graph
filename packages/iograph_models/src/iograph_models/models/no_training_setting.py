@@ -4,8 +4,8 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class NoTrainingSetting(BaseModel):
-	settingType: Optional[TrainingSettingType] = Field(default=None,alias="settingType",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
+	settingType: Optional[str | TrainingSettingType] = Field(alias="settingType",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 
 from .training_setting_type import TrainingSettingType
 

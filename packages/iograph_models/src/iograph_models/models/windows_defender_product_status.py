@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class WindowsDefenderProductStatus(Enum):
+class WindowsDefenderProductStatus(StrEnum):
 	noStatus = "noStatus"
 	serviceNotRunning = "serviceNotRunning"
 	serviceStartedWithoutMalwareProtection = "serviceStartedWithoutMalwareProtection"

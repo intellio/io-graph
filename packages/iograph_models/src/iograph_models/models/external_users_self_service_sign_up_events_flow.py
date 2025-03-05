@@ -4,15 +4,15 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class ExternalUsersSelfServiceSignUpEventsFlow(BaseModel):
-	id: Optional[str] = Field(default=None,alias="id",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	conditions: Optional[AuthenticationConditions] = Field(default=None,alias="conditions",)
-	description: Optional[str] = Field(default=None,alias="description",)
-	displayName: Optional[str] = Field(default=None,alias="displayName",)
-	onAttributeCollection: SerializeAsAny[Optional[OnAttributeCollectionHandler]] = Field(default=None,alias="onAttributeCollection",)
-	onAuthenticationMethodLoadStart: SerializeAsAny[Optional[OnAuthenticationMethodLoadStartHandler]] = Field(default=None,alias="onAuthenticationMethodLoadStart",)
-	onInteractiveAuthFlowStart: SerializeAsAny[Optional[OnInteractiveAuthFlowStartHandler]] = Field(default=None,alias="onInteractiveAuthFlowStart",)
-	onUserCreateStart: SerializeAsAny[Optional[OnUserCreateStartHandler]] = Field(default=None,alias="onUserCreateStart",)
+	id: Optional[str] = Field(alias="id",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	conditions: Optional[AuthenticationConditions] = Field(alias="conditions",default=None,)
+	description: Optional[str] = Field(alias="description",default=None,)
+	displayName: Optional[str] = Field(alias="displayName",default=None,)
+	onAttributeCollection: SerializeAsAny[Optional[OnAttributeCollectionHandler]] = Field(alias="onAttributeCollection",default=None,)
+	onAuthenticationMethodLoadStart: SerializeAsAny[Optional[OnAuthenticationMethodLoadStartHandler]] = Field(alias="onAuthenticationMethodLoadStart",default=None,)
+	onInteractiveAuthFlowStart: SerializeAsAny[Optional[OnInteractiveAuthFlowStartHandler]] = Field(alias="onInteractiveAuthFlowStart",default=None,)
+	onUserCreateStart: SerializeAsAny[Optional[OnUserCreateStartHandler]] = Field(alias="onUserCreateStart",default=None,)
 
 from .authentication_conditions import AuthenticationConditions
 from .on_attribute_collection_handler import OnAttributeCollectionHandler

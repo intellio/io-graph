@@ -4,8 +4,8 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class ExtractSensitivityLabelsResult(BaseModel):
-	labels: Optional[list[SensitivityLabelAssignment]] = Field(default=None,alias="labels",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
+	labels: Optional[list[SensitivityLabelAssignment]] = Field(alias="labels",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 
 from .sensitivity_label_assignment import SensitivityLabelAssignment
 

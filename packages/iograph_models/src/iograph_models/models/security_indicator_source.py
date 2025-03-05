@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class SecurityIndicatorSource(Enum):
+class SecurityIndicatorSource(StrEnum):
 	microsoft = "microsoft"
 	osint = "osint"
 	public = "public"

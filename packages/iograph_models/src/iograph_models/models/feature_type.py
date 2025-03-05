@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class FeatureType(Enum):
+class FeatureType(StrEnum):
 	registration = "registration"
 	reset = "reset"
 	unknownFutureValue = "unknownFutureValue"

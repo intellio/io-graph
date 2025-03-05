@@ -16,8 +16,8 @@ if TYPE_CHECKING:
 	from .major_gridlines import MajorGridlinesRequest
 	from .format import FormatRequest
 	from .............request_adapter import HttpxRequestAdapter
-from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.models.workbook_chart_axis import WorkbookChartAxis
+from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
 
 
 class CategoryAxisRequest(BaseRequestBuilder):

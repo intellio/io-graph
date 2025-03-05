@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class CloudPcProvisioningType(Enum):
+class CloudPcProvisioningType(StrEnum):
 	dedicated = "dedicated"
 	shared = "shared"
 	unknownFutureValue = "unknownFutureValue"

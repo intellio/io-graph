@@ -4,16 +4,16 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class WorkbookWorksheet(BaseModel):
-	id: Optional[str] = Field(default=None,alias="id",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	name: Optional[str] = Field(default=None,alias="name",)
-	position: Optional[int] = Field(default=None,alias="position",)
-	visibility: Optional[str] = Field(default=None,alias="visibility",)
-	charts: Optional[list[WorkbookChart]] = Field(default=None,alias="charts",)
-	names: Optional[list[WorkbookNamedItem]] = Field(default=None,alias="names",)
-	pivotTables: Optional[list[WorkbookPivotTable]] = Field(default=None,alias="pivotTables",)
-	protection: Optional[WorkbookWorksheetProtection] = Field(default=None,alias="protection",)
-	tables: Optional[list[WorkbookTable]] = Field(default=None,alias="tables",)
+	id: Optional[str] = Field(alias="id",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	name: Optional[str] = Field(alias="name",default=None,)
+	position: Optional[int] = Field(alias="position",default=None,)
+	visibility: Optional[str] = Field(alias="visibility",default=None,)
+	charts: Optional[list[WorkbookChart]] = Field(alias="charts",default=None,)
+	names: Optional[list[WorkbookNamedItem]] = Field(alias="names",default=None,)
+	pivotTables: Optional[list[WorkbookPivotTable]] = Field(alias="pivotTables",default=None,)
+	protection: Optional[WorkbookWorksheetProtection] = Field(alias="protection",default=None,)
+	tables: Optional[list[WorkbookTable]] = Field(alias="tables",default=None,)
 
 from .workbook_chart import WorkbookChart
 from .workbook_named_item import WorkbookNamedItem

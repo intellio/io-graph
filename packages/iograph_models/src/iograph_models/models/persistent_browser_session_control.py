@@ -4,9 +4,9 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class PersistentBrowserSessionControl(BaseModel):
-	isEnabled: Optional[bool] = Field(default=None,alias="isEnabled",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	mode: Optional[PersistentBrowserSessionMode] = Field(default=None,alias="mode",)
+	isEnabled: Optional[bool] = Field(alias="isEnabled",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	mode: Optional[str | PersistentBrowserSessionMode] = Field(alias="mode",default=None,)
 
 from .persistent_browser_session_mode import PersistentBrowserSessionMode
 

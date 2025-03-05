@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class SecurityActionAfterRetentionPeriod(Enum):
+class SecurityActionAfterRetentionPeriod(StrEnum):
 	none = "none"
 	delete = "delete"
 	startDispositionReview = "startDispositionReview"

@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class ConnectedOrganizationState(Enum):
+class ConnectedOrganizationState(StrEnum):
 	configured = "configured"
 	proposed = "proposed"
 	unknownFutureValue = "unknownFutureValue"

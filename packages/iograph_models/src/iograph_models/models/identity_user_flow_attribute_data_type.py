@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class IdentityUserFlowAttributeDataType(Enum):
+class IdentityUserFlowAttributeDataType(StrEnum):
 	string = "string"
 	boolean = "boolean"
 	int64 = "int64"

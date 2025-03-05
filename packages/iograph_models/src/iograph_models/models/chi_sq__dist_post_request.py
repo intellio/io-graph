@@ -4,8 +4,8 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class Chi_sq__distPostRequest(BaseModel):
-	x: Optional[str] = Field(default=None,alias="x",)
-	degFreedom: Optional[str] = Field(default=None,alias="degFreedom",)
-	cumulative: Optional[str] = Field(default=None,alias="cumulative",)
+	x: Optional[str] = Field(alias="x",default=None,)
+	degFreedom: Optional[str] = Field(alias="degFreedom",default=None,)
+	cumulative: Optional[str] = Field(alias="cumulative",default=None,)
 
 

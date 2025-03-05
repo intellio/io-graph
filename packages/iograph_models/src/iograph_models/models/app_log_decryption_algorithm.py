@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class AppLogDecryptionAlgorithm(Enum):
+class AppLogDecryptionAlgorithm(StrEnum):
 	aes256 = "aes256"
 	unknownFutureValue = "unknownFutureValue"
 

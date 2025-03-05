@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class ProvisioningStatusErrorCategory(Enum):
+class ProvisioningStatusErrorCategory(StrEnum):
 	failure = "failure"
 	nonServiceFailure = "nonServiceFailure"
 	success = "success"

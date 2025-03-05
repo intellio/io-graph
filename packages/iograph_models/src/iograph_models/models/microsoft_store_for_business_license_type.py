@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class MicrosoftStoreForBusinessLicenseType(Enum):
+class MicrosoftStoreForBusinessLicenseType(StrEnum):
 	offline = "offline"
 	online = "online"
 

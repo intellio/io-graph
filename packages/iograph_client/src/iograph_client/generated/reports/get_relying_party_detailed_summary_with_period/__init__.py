@@ -11,8 +11,8 @@ from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:
 	from ....request_adapter import HttpxRequestAdapter
-from iograph_models.models.get_relying_party_detailed_summary_with_period_get_response import Get_relying_party_detailed_summary_with_periodGetResponse
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.models.get_relying_party_detailed_summary_with_period_get_response import Get_relying_party_detailed_summary_with_periodGetResponse
 
 
 class GetRelyingPartyDetailedSummaryWithPeriodRequest(BaseRequestBuilder):

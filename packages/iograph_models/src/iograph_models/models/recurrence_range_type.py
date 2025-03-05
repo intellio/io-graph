@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class RecurrenceRangeType(Enum):
+class RecurrenceRangeType(StrEnum):
 	endDate = "endDate"
 	noEnd = "noEnd"
 	numbered = "numbered"

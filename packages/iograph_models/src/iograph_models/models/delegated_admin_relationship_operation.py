@@ -5,13 +5,13 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class DelegatedAdminRelationshipOperation(BaseModel):
-	id: Optional[str] = Field(default=None,alias="id",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	createdDateTime: Optional[datetime] = Field(default=None,alias="createdDateTime",)
-	data: Optional[str] = Field(default=None,alias="data",)
-	lastModifiedDateTime: Optional[datetime] = Field(default=None,alias="lastModifiedDateTime",)
-	operationType: Optional[DelegatedAdminRelationshipOperationType] = Field(default=None,alias="operationType",)
-	status: Optional[LongRunningOperationStatus] = Field(default=None,alias="status",)
+	id: Optional[str] = Field(alias="id",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	createdDateTime: Optional[datetime] = Field(alias="createdDateTime",default=None,)
+	data: Optional[str] = Field(alias="data",default=None,)
+	lastModifiedDateTime: Optional[datetime] = Field(alias="lastModifiedDateTime",default=None,)
+	operationType: Optional[str | DelegatedAdminRelationshipOperationType] = Field(alias="operationType",default=None,)
+	status: Optional[str | LongRunningOperationStatus] = Field(alias="status",default=None,)
 
 from .delegated_admin_relationship_operation_type import DelegatedAdminRelationshipOperationType
 from .long_running_operation_status import LongRunningOperationStatus

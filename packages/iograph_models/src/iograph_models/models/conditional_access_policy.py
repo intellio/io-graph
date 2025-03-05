@@ -5,17 +5,17 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class ConditionalAccessPolicy(BaseModel):
-	id: Optional[str] = Field(default=None,alias="id",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	conditions: Optional[ConditionalAccessConditionSet] = Field(default=None,alias="conditions",)
-	createdDateTime: Optional[datetime] = Field(default=None,alias="createdDateTime",)
-	description: Optional[str] = Field(default=None,alias="description",)
-	displayName: Optional[str] = Field(default=None,alias="displayName",)
-	grantControls: Optional[ConditionalAccessGrantControls] = Field(default=None,alias="grantControls",)
-	modifiedDateTime: Optional[datetime] = Field(default=None,alias="modifiedDateTime",)
-	sessionControls: Optional[ConditionalAccessSessionControls] = Field(default=None,alias="sessionControls",)
-	state: Optional[ConditionalAccessPolicyState] = Field(default=None,alias="state",)
-	templateId: Optional[str] = Field(default=None,alias="templateId",)
+	id: Optional[str] = Field(alias="id",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	conditions: Optional[ConditionalAccessConditionSet] = Field(alias="conditions",default=None,)
+	createdDateTime: Optional[datetime] = Field(alias="createdDateTime",default=None,)
+	description: Optional[str] = Field(alias="description",default=None,)
+	displayName: Optional[str] = Field(alias="displayName",default=None,)
+	grantControls: Optional[ConditionalAccessGrantControls] = Field(alias="grantControls",default=None,)
+	modifiedDateTime: Optional[datetime] = Field(alias="modifiedDateTime",default=None,)
+	sessionControls: Optional[ConditionalAccessSessionControls] = Field(alias="sessionControls",default=None,)
+	state: Optional[str | ConditionalAccessPolicyState] = Field(alias="state",default=None,)
+	templateId: Optional[str] = Field(alias="templateId",default=None,)
 
 from .conditional_access_condition_set import ConditionalAccessConditionSet
 from .conditional_access_grant_controls import ConditionalAccessGrantControls

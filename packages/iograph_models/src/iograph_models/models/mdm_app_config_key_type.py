@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class MdmAppConfigKeyType(Enum):
+class MdmAppConfigKeyType(StrEnum):
 	stringType = "stringType"
 	integerType = "integerType"
 	realType = "realType"

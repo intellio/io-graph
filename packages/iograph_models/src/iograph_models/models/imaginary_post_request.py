@@ -4,6 +4,6 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class ImaginaryPostRequest(BaseModel):
-	inumber: Optional[str] = Field(default=None,alias="inumber",)
+	inumber: Optional[str] = Field(alias="inumber",default=None,)
 
 

@@ -4,15 +4,15 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class AccessReviewStageSettings(BaseModel):
-	decisionsThatWillMoveToNextStage: Optional[list[str]] = Field(default=None,alias="decisionsThatWillMoveToNextStage",)
-	dependsOn: Optional[list[str]] = Field(default=None,alias="dependsOn",)
-	durationInDays: Optional[int] = Field(default=None,alias="durationInDays",)
-	fallbackReviewers: Optional[list[AccessReviewReviewerScope]] = Field(default=None,alias="fallbackReviewers",)
-	recommendationInsightSettings: SerializeAsAny[Optional[list[AccessReviewRecommendationInsightSetting]]] = Field(default=None,alias="recommendationInsightSettings",)
-	recommendationsEnabled: Optional[bool] = Field(default=None,alias="recommendationsEnabled",)
-	reviewers: Optional[list[AccessReviewReviewerScope]] = Field(default=None,alias="reviewers",)
-	stageId: Optional[str] = Field(default=None,alias="stageId",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
+	decisionsThatWillMoveToNextStage: Optional[list[str]] = Field(alias="decisionsThatWillMoveToNextStage",default=None,)
+	dependsOn: Optional[list[str]] = Field(alias="dependsOn",default=None,)
+	durationInDays: Optional[int] = Field(alias="durationInDays",default=None,)
+	fallbackReviewers: Optional[list[AccessReviewReviewerScope]] = Field(alias="fallbackReviewers",default=None,)
+	recommendationInsightSettings: SerializeAsAny[Optional[list[AccessReviewRecommendationInsightSetting]]] = Field(alias="recommendationInsightSettings",default=None,)
+	recommendationsEnabled: Optional[bool] = Field(alias="recommendationsEnabled",default=None,)
+	reviewers: Optional[list[AccessReviewReviewerScope]] = Field(alias="reviewers",default=None,)
+	stageId: Optional[str] = Field(alias="stageId",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 
 from .access_review_reviewer_scope import AccessReviewReviewerScope
 from .access_review_recommendation_insight_setting import AccessReviewRecommendationInsightSetting

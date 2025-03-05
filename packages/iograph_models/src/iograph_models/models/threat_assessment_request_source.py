@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class ThreatAssessmentRequestSource(Enum):
+class ThreatAssessmentRequestSource(StrEnum):
 	undefined = "undefined"
 	user = "user"
 	administrator = "administrator"

@@ -4,14 +4,14 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class BookingQuestionAnswer(BaseModel):
-	answer: Optional[str] = Field(default=None,alias="answer",)
-	answerInputType: Optional[AnswerInputType] = Field(default=None,alias="answerInputType",)
-	answerOptions: Optional[list[str]] = Field(default=None,alias="answerOptions",)
-	isRequired: Optional[bool] = Field(default=None,alias="isRequired",)
-	question: Optional[str] = Field(default=None,alias="question",)
-	questionId: Optional[str] = Field(default=None,alias="questionId",)
-	selectedOptions: Optional[list[str]] = Field(default=None,alias="selectedOptions",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
+	answer: Optional[str] = Field(alias="answer",default=None,)
+	answerInputType: Optional[str | AnswerInputType] = Field(alias="answerInputType",default=None,)
+	answerOptions: Optional[list[str]] = Field(alias="answerOptions",default=None,)
+	isRequired: Optional[bool] = Field(alias="isRequired",default=None,)
+	question: Optional[str] = Field(alias="question",default=None,)
+	questionId: Optional[str] = Field(alias="questionId",default=None,)
+	selectedOptions: Optional[list[str]] = Field(alias="selectedOptions",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 
 from .answer_input_type import AnswerInputType
 

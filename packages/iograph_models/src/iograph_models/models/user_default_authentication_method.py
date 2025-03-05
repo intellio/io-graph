@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class UserDefaultAuthenticationMethod(Enum):
+class UserDefaultAuthenticationMethod(StrEnum):
 	push = "push"
 	oath = "oath"
 	voiceMobile = "voiceMobile"

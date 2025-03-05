@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class SecurityDataSourceContainerStatus(Enum):
+class SecurityDataSourceContainerStatus(StrEnum):
 	active = "active"
 	released = "released"
 	unknownFutureValue = "unknownFutureValue"

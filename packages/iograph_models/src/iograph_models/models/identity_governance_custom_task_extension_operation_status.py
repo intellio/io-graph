@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class IdentityGovernanceCustomTaskExtensionOperationStatus(Enum):
+class IdentityGovernanceCustomTaskExtensionOperationStatus(StrEnum):
 	completed = "completed"
 	failed = "failed"
 	unknownFutureValue = "unknownFutureValue"

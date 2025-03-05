@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class DefenderCloudBlockLevelType(Enum):
+class DefenderCloudBlockLevelType(StrEnum):
 	notConfigured = "notConfigured"
 	high = "high"
 	highPlus = "highPlus"

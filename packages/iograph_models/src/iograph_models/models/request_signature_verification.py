@@ -4,9 +4,9 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class RequestSignatureVerification(BaseModel):
-	allowedWeakAlgorithms: Optional[WeakAlgorithms] = Field(default=None,alias="allowedWeakAlgorithms",)
-	isSignedRequestRequired: Optional[bool] = Field(default=None,alias="isSignedRequestRequired",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
+	allowedWeakAlgorithms: Optional[str | WeakAlgorithms] = Field(alias="allowedWeakAlgorithms",default=None,)
+	isSignedRequestRequired: Optional[bool] = Field(alias="isSignedRequestRequired",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 
 from .weak_algorithms import WeakAlgorithms
 

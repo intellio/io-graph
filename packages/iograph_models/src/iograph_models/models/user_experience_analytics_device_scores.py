@@ -4,15 +4,15 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class UserExperienceAnalyticsDeviceScores(BaseModel):
-	id: Optional[str] = Field(default=None,alias="id",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
+	id: Optional[str] = Field(alias="id",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 	appReliabilityScore: float | str | ReferenceNumeric
 	batteryHealthScore: float | str | ReferenceNumeric
-	deviceName: Optional[str] = Field(default=None,alias="deviceName",)
+	deviceName: Optional[str] = Field(alias="deviceName",default=None,)
 	endpointAnalyticsScore: float | str | ReferenceNumeric
-	healthStatus: Optional[UserExperienceAnalyticsHealthState] = Field(default=None,alias="healthStatus",)
-	manufacturer: Optional[str] = Field(default=None,alias="manufacturer",)
-	model: Optional[str] = Field(default=None,alias="model",)
+	healthStatus: Optional[str | UserExperienceAnalyticsHealthState] = Field(alias="healthStatus",default=None,)
+	manufacturer: Optional[str] = Field(alias="manufacturer",default=None,)
+	model: Optional[str] = Field(alias="model",default=None,)
 	startupPerformanceScore: float | str | ReferenceNumeric
 	workFromAnywhereScore: float | str | ReferenceNumeric
 

@@ -4,10 +4,10 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class AccessReviewInstanceDecisionItemServicePrincipalResource(BaseModel):
-	displayName: Optional[str] = Field(default=None,alias="displayName",)
-	id: Optional[str] = Field(default=None,alias="id",)
-	type: Optional[str] = Field(default=None,alias="type",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	appId: Optional[str] = Field(default=None,alias="appId",)
+	displayName: Optional[str] = Field(alias="displayName",default=None,)
+	id: Optional[str] = Field(alias="id",default=None,)
+	type: Optional[str] = Field(alias="type",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	appId: Optional[str] = Field(alias="appId",default=None,)
 
 

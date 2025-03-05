@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class TeamworkActivityTopicSource(Enum):
+class TeamworkActivityTopicSource(StrEnum):
 	entityUrl = "entityUrl"
 	text = "text"
 

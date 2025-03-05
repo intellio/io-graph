@@ -4,8 +4,8 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class DeleteAction(BaseModel):
-	name: Optional[str] = Field(default=None,alias="name",)
-	objectType: Optional[str] = Field(default=None,alias="objectType",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
+	name: Optional[str] = Field(alias="name",default=None,)
+	objectType: Optional[str] = Field(alias="objectType",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 
 

@@ -4,8 +4,8 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class VirtualEventExternalRegistrationInformation(BaseModel):
-	referrer: Optional[str] = Field(default=None,alias="referrer",)
-	registrationId: Optional[str] = Field(default=None,alias="registrationId",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
+	referrer: Optional[str] = Field(alias="referrer",default=None,)
+	registrationId: Optional[str] = Field(alias="registrationId",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 
 

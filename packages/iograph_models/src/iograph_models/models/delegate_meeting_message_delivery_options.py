@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class DelegateMeetingMessageDeliveryOptions(Enum):
+class DelegateMeetingMessageDeliveryOptions(StrEnum):
 	sendToDelegateAndInformationToPrincipal = "sendToDelegateAndInformationToPrincipal"
 	sendToDelegateAndPrincipal = "sendToDelegateAndPrincipal"
 	sendToDelegateOnly = "sendToDelegateOnly"

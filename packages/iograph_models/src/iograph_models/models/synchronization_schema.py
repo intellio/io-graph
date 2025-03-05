@@ -4,11 +4,11 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class SynchronizationSchema(BaseModel):
-	id: Optional[str] = Field(default=None,alias="id",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	synchronizationRules: Optional[list[SynchronizationRule]] = Field(default=None,alias="synchronizationRules",)
-	version: Optional[str] = Field(default=None,alias="version",)
-	directories: Optional[list[DirectoryDefinition]] = Field(default=None,alias="directories",)
+	id: Optional[str] = Field(alias="id",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	synchronizationRules: Optional[list[SynchronizationRule]] = Field(alias="synchronizationRules",default=None,)
+	version: Optional[str] = Field(alias="version",default=None,)
+	directories: Optional[list[DirectoryDefinition]] = Field(alias="directories",default=None,)
 
 from .synchronization_rule import SynchronizationRule
 from .directory_definition import DirectoryDefinition

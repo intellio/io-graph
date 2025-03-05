@@ -4,8 +4,8 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class WindowsUniversalAppXContainedApp(BaseModel):
-	id: Optional[str] = Field(default=None,alias="id",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	appUserModelId: Optional[str] = Field(default=None,alias="appUserModelId",)
+	id: Optional[str] = Field(alias="id",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	appUserModelId: Optional[str] = Field(alias="appUserModelId",default=None,)
 
 

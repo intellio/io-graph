@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class PostType(Enum):
+class PostType(StrEnum):
 	regular = "regular"
 	quick = "quick"
 	strategic = "strategic"

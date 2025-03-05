@@ -4,13 +4,13 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class AutomaticRepliesSetting(BaseModel):
-	externalAudience: Optional[ExternalAudienceScope] = Field(default=None,alias="externalAudience",)
-	externalReplyMessage: Optional[str] = Field(default=None,alias="externalReplyMessage",)
-	internalReplyMessage: Optional[str] = Field(default=None,alias="internalReplyMessage",)
-	scheduledEndDateTime: Optional[DateTimeTimeZone] = Field(default=None,alias="scheduledEndDateTime",)
-	scheduledStartDateTime: Optional[DateTimeTimeZone] = Field(default=None,alias="scheduledStartDateTime",)
-	status: Optional[AutomaticRepliesStatus] = Field(default=None,alias="status",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
+	externalAudience: Optional[str | ExternalAudienceScope] = Field(alias="externalAudience",default=None,)
+	externalReplyMessage: Optional[str] = Field(alias="externalReplyMessage",default=None,)
+	internalReplyMessage: Optional[str] = Field(alias="internalReplyMessage",default=None,)
+	scheduledEndDateTime: Optional[DateTimeTimeZone] = Field(alias="scheduledEndDateTime",default=None,)
+	scheduledStartDateTime: Optional[DateTimeTimeZone] = Field(alias="scheduledStartDateTime",default=None,)
+	status: Optional[str | AutomaticRepliesStatus] = Field(alias="status",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 
 from .external_audience_scope import ExternalAudienceScope
 from .date_time_time_zone import DateTimeTimeZone

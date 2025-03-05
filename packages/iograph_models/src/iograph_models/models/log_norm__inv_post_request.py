@@ -4,8 +4,8 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class Log_norm__invPostRequest(BaseModel):
-	probability: Optional[str] = Field(default=None,alias="probability",)
-	mean: Optional[str] = Field(default=None,alias="mean",)
-	standardDev: Optional[str] = Field(default=None,alias="standardDev",)
+	probability: Optional[str] = Field(alias="probability",default=None,)
+	mean: Optional[str] = Field(alias="mean",default=None,)
+	standardDev: Optional[str] = Field(alias="standardDev",default=None,)
 
 

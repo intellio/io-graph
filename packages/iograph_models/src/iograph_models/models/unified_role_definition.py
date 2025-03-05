@@ -4,17 +4,17 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class UnifiedRoleDefinition(BaseModel):
-	id: Optional[str] = Field(default=None,alias="id",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	description: Optional[str] = Field(default=None,alias="description",)
-	displayName: Optional[str] = Field(default=None,alias="displayName",)
-	isBuiltIn: Optional[bool] = Field(default=None,alias="isBuiltIn",)
-	isEnabled: Optional[bool] = Field(default=None,alias="isEnabled",)
-	resourceScopes: Optional[list[str]] = Field(default=None,alias="resourceScopes",)
-	rolePermissions: Optional[list[UnifiedRolePermission]] = Field(default=None,alias="rolePermissions",)
-	templateId: Optional[str] = Field(default=None,alias="templateId",)
-	version: Optional[str] = Field(default=None,alias="version",)
-	inheritsPermissionsFrom: Optional[list[UnifiedRoleDefinition]] = Field(default=None,alias="inheritsPermissionsFrom",)
+	id: Optional[str] = Field(alias="id",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	description: Optional[str] = Field(alias="description",default=None,)
+	displayName: Optional[str] = Field(alias="displayName",default=None,)
+	isBuiltIn: Optional[bool] = Field(alias="isBuiltIn",default=None,)
+	isEnabled: Optional[bool] = Field(alias="isEnabled",default=None,)
+	resourceScopes: Optional[list[str]] = Field(alias="resourceScopes",default=None,)
+	rolePermissions: Optional[list[UnifiedRolePermission]] = Field(alias="rolePermissions",default=None,)
+	templateId: Optional[str] = Field(alias="templateId",default=None,)
+	version: Optional[str] = Field(alias="version",default=None,)
+	inheritsPermissionsFrom: Optional[list[UnifiedRoleDefinition]] = Field(alias="inheritsPermissionsFrom",default=None,)
 
 from .unified_role_permission import UnifiedRolePermission
 

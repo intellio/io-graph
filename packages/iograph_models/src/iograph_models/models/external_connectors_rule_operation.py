@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class ExternalConnectorsRuleOperation(Enum):
+class ExternalConnectorsRuleOperation(StrEnum):
 	null = "null"
 	equals = "equals"
 	notEquals = "notEquals"

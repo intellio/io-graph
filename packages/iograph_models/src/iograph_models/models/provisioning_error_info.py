@@ -4,12 +4,12 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class ProvisioningErrorInfo(BaseModel):
-	additionalDetails: Optional[str] = Field(default=None,alias="additionalDetails",)
-	errorCategory: Optional[ProvisioningStatusErrorCategory] = Field(default=None,alias="errorCategory",)
-	errorCode: Optional[str] = Field(default=None,alias="errorCode",)
-	reason: Optional[str] = Field(default=None,alias="reason",)
-	recommendedAction: Optional[str] = Field(default=None,alias="recommendedAction",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
+	additionalDetails: Optional[str] = Field(alias="additionalDetails",default=None,)
+	errorCategory: Optional[str | ProvisioningStatusErrorCategory] = Field(alias="errorCategory",default=None,)
+	errorCode: Optional[str] = Field(alias="errorCode",default=None,)
+	reason: Optional[str] = Field(alias="reason",default=None,)
+	recommendedAction: Optional[str] = Field(alias="recommendedAction",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 
 from .provisioning_status_error_category import ProvisioningStatusErrorCategory
 

@@ -5,18 +5,18 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class TermsAndConditions(BaseModel):
-	id: Optional[str] = Field(default=None,alias="id",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	acceptanceStatement: Optional[str] = Field(default=None,alias="acceptanceStatement",)
-	bodyText: Optional[str] = Field(default=None,alias="bodyText",)
-	createdDateTime: Optional[datetime] = Field(default=None,alias="createdDateTime",)
-	description: Optional[str] = Field(default=None,alias="description",)
-	displayName: Optional[str] = Field(default=None,alias="displayName",)
-	lastModifiedDateTime: Optional[datetime] = Field(default=None,alias="lastModifiedDateTime",)
-	title: Optional[str] = Field(default=None,alias="title",)
-	version: Optional[int] = Field(default=None,alias="version",)
-	acceptanceStatuses: Optional[list[TermsAndConditionsAcceptanceStatus]] = Field(default=None,alias="acceptanceStatuses",)
-	assignments: Optional[list[TermsAndConditionsAssignment]] = Field(default=None,alias="assignments",)
+	id: Optional[str] = Field(alias="id",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	acceptanceStatement: Optional[str] = Field(alias="acceptanceStatement",default=None,)
+	bodyText: Optional[str] = Field(alias="bodyText",default=None,)
+	createdDateTime: Optional[datetime] = Field(alias="createdDateTime",default=None,)
+	description: Optional[str] = Field(alias="description",default=None,)
+	displayName: Optional[str] = Field(alias="displayName",default=None,)
+	lastModifiedDateTime: Optional[datetime] = Field(alias="lastModifiedDateTime",default=None,)
+	title: Optional[str] = Field(alias="title",default=None,)
+	version: Optional[int] = Field(alias="version",default=None,)
+	acceptanceStatuses: Optional[list[TermsAndConditionsAcceptanceStatus]] = Field(alias="acceptanceStatuses",default=None,)
+	assignments: Optional[list[TermsAndConditionsAssignment]] = Field(alias="assignments",default=None,)
 
 from .terms_and_conditions_acceptance_status import TermsAndConditionsAcceptanceStatus
 from .terms_and_conditions_assignment import TermsAndConditionsAssignment

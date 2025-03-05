@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class SecurityExportCriteria(Enum):
+class SecurityExportCriteria(StrEnum):
 	searchHits = "searchHits"
 	partiallyIndexed = "partiallyIndexed"
 	unknownFutureValue = "unknownFutureValue"

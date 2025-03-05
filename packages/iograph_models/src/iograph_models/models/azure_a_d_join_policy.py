@@ -4,9 +4,9 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class AzureADJoinPolicy(BaseModel):
-	allowedToJoin: SerializeAsAny[Optional[DeviceRegistrationMembership]] = Field(default=None,alias="allowedToJoin",)
-	isAdminConfigurable: Optional[bool] = Field(default=None,alias="isAdminConfigurable",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
+	allowedToJoin: SerializeAsAny[Optional[DeviceRegistrationMembership]] = Field(alias="allowedToJoin",default=None,)
+	isAdminConfigurable: Optional[bool] = Field(alias="isAdminConfigurable",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 
 from .device_registration_membership import DeviceRegistrationMembership
 

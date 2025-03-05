@@ -4,9 +4,9 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class OutgoingCallOptions(BaseModel):
-	hideBotAfterEscalation: Optional[bool] = Field(default=None,alias="hideBotAfterEscalation",)
-	isContentSharingNotificationEnabled: Optional[bool] = Field(default=None,alias="isContentSharingNotificationEnabled",)
-	isDeltaRosterEnabled: Optional[bool] = Field(default=None,alias="isDeltaRosterEnabled",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
+	hideBotAfterEscalation: Optional[bool] = Field(alias="hideBotAfterEscalation",default=None,)
+	isContentSharingNotificationEnabled: Optional[bool] = Field(alias="isContentSharingNotificationEnabled",default=None,)
+	isDeltaRosterEnabled: Optional[bool] = Field(alias="isDeltaRosterEnabled",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 
 

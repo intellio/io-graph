@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class TimeZoneStandard(Enum):
+class TimeZoneStandard(StrEnum):
 	windows = "windows"
 	iana = "iana"
 

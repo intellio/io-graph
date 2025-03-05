@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class AccessReviewHistoryStatus(Enum):
+class AccessReviewHistoryStatus(StrEnum):
 	done = "done"
 	inprogress = "inprogress"
 	error = "error"

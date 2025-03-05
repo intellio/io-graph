@@ -4,17 +4,17 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class CloudPcAuditActor(BaseModel):
-	applicationDisplayName: Optional[str] = Field(default=None,alias="applicationDisplayName",)
-	applicationId: Optional[str] = Field(default=None,alias="applicationId",)
-	ipAddress: Optional[str] = Field(default=None,alias="ipAddress",)
-	remoteTenantId: Optional[str] = Field(default=None,alias="remoteTenantId",)
-	remoteUserId: Optional[str] = Field(default=None,alias="remoteUserId",)
-	servicePrincipalName: Optional[str] = Field(default=None,alias="servicePrincipalName",)
-	userId: Optional[str] = Field(default=None,alias="userId",)
-	userPermissions: Optional[list[str]] = Field(default=None,alias="userPermissions",)
-	userPrincipalName: Optional[str] = Field(default=None,alias="userPrincipalName",)
-	userRoleScopeTags: Optional[list[CloudPcUserRoleScopeTagInfo]] = Field(default=None,alias="userRoleScopeTags",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
+	applicationDisplayName: Optional[str] = Field(alias="applicationDisplayName",default=None,)
+	applicationId: Optional[str] = Field(alias="applicationId",default=None,)
+	ipAddress: Optional[str] = Field(alias="ipAddress",default=None,)
+	remoteTenantId: Optional[str] = Field(alias="remoteTenantId",default=None,)
+	remoteUserId: Optional[str] = Field(alias="remoteUserId",default=None,)
+	servicePrincipalName: Optional[str] = Field(alias="servicePrincipalName",default=None,)
+	userId: Optional[str] = Field(alias="userId",default=None,)
+	userPermissions: Optional[list[str]] = Field(alias="userPermissions",default=None,)
+	userPrincipalName: Optional[str] = Field(alias="userPrincipalName",default=None,)
+	userRoleScopeTags: Optional[list[CloudPcUserRoleScopeTagInfo]] = Field(alias="userRoleScopeTags",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 
 from .cloud_pc_user_role_scope_tag_info import CloudPcUserRoleScopeTagInfo
 

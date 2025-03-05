@@ -4,10 +4,10 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class Pkcs12CertificateInformation(BaseModel):
-	isActive: Optional[bool] = Field(default=None,alias="isActive",)
-	notAfter: Optional[int] = Field(default=None,alias="notAfter",)
-	notBefore: Optional[int] = Field(default=None,alias="notBefore",)
-	thumbprint: Optional[str] = Field(default=None,alias="thumbprint",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
+	isActive: Optional[bool] = Field(alias="isActive",default=None,)
+	notAfter: Optional[int] = Field(alias="notAfter",default=None,)
+	notBefore: Optional[int] = Field(alias="notBefore",default=None,)
+	thumbprint: Optional[str] = Field(alias="thumbprint",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 
 

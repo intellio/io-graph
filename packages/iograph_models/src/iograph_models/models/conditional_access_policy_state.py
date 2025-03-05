@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class ConditionalAccessPolicyState(Enum):
+class ConditionalAccessPolicyState(StrEnum):
 	enabled = "enabled"
 	disabled = "disabled"
 	enabledForReportingButNotEnforced = "enabledForReportingButNotEnforced"

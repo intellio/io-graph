@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class ColumnTypes(Enum):
+class ColumnTypes(StrEnum):
 	note = "note"
 	text = "text"
 	choice = "choice"

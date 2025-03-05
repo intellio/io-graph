@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class OperatingSystemUpgradeEligibility(Enum):
+class OperatingSystemUpgradeEligibility(StrEnum):
 	upgraded = "upgraded"
 	unknown = "unknown"
 	notCapable = "notCapable"

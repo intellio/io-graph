@@ -4,11 +4,11 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class PhysicalAddress(BaseModel):
-	city: Optional[str] = Field(default=None,alias="city",)
-	countryOrRegion: Optional[str] = Field(default=None,alias="countryOrRegion",)
-	postalCode: Optional[str] = Field(default=None,alias="postalCode",)
-	state: Optional[str] = Field(default=None,alias="state",)
-	street: Optional[str] = Field(default=None,alias="street",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
+	city: Optional[str] = Field(alias="city",default=None,)
+	countryOrRegion: Optional[str] = Field(alias="countryOrRegion",default=None,)
+	postalCode: Optional[str] = Field(alias="postalCode",default=None,)
+	state: Optional[str] = Field(alias="state",default=None,)
+	street: Optional[str] = Field(alias="street",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 
 

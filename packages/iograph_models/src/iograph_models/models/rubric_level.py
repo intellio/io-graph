@@ -4,11 +4,11 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class RubricLevel(BaseModel):
-	description: Optional[EducationItemBody] = Field(default=None,alias="description",)
-	displayName: Optional[str] = Field(default=None,alias="displayName",)
-	grading: SerializeAsAny[Optional[EducationAssignmentGradeType]] = Field(default=None,alias="grading",)
-	levelId: Optional[str] = Field(default=None,alias="levelId",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
+	description: Optional[EducationItemBody] = Field(alias="description",default=None,)
+	displayName: Optional[str] = Field(alias="displayName",default=None,)
+	grading: SerializeAsAny[Optional[EducationAssignmentGradeType]] = Field(alias="grading",default=None,)
+	levelId: Optional[str] = Field(alias="levelId",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 
 from .education_item_body import EducationItemBody
 from .education_assignment_grade_type import EducationAssignmentGradeType

@@ -5,18 +5,18 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class SecurityIntelligenceProfile(BaseModel):
-	id: Optional[str] = Field(default=None,alias="id",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	aliases: Optional[list[str]] = Field(default=None,alias="aliases",)
-	countriesOrRegionsOfOrigin: Optional[list[SecurityIntelligenceProfileCountryOrRegionOfOrigin]] = Field(default=None,alias="countriesOrRegionsOfOrigin",)
-	description: Optional[SecurityFormattedContent] = Field(default=None,alias="description",)
-	firstActiveDateTime: Optional[datetime] = Field(default=None,alias="firstActiveDateTime",)
-	kind: Optional[SecurityIntelligenceProfileKind] = Field(default=None,alias="kind",)
-	summary: Optional[SecurityFormattedContent] = Field(default=None,alias="summary",)
-	targets: Optional[list[str]] = Field(default=None,alias="targets",)
-	title: Optional[str] = Field(default=None,alias="title",)
-	tradecraft: Optional[SecurityFormattedContent] = Field(default=None,alias="tradecraft",)
-	indicators: Optional[list[SecurityIntelligenceProfileIndicator]] = Field(default=None,alias="indicators",)
+	id: Optional[str] = Field(alias="id",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	aliases: Optional[list[str]] = Field(alias="aliases",default=None,)
+	countriesOrRegionsOfOrigin: Optional[list[SecurityIntelligenceProfileCountryOrRegionOfOrigin]] = Field(alias="countriesOrRegionsOfOrigin",default=None,)
+	description: Optional[SecurityFormattedContent] = Field(alias="description",default=None,)
+	firstActiveDateTime: Optional[datetime] = Field(alias="firstActiveDateTime",default=None,)
+	kind: Optional[str | SecurityIntelligenceProfileKind] = Field(alias="kind",default=None,)
+	summary: Optional[SecurityFormattedContent] = Field(alias="summary",default=None,)
+	targets: Optional[list[str]] = Field(alias="targets",default=None,)
+	title: Optional[str] = Field(alias="title",default=None,)
+	tradecraft: Optional[SecurityFormattedContent] = Field(alias="tradecraft",default=None,)
+	indicators: Optional[list[SecurityIntelligenceProfileIndicator]] = Field(alias="indicators",default=None,)
 
 from .security_intelligence_profile_country_or_region_of_origin import SecurityIntelligenceProfileCountryOrRegionOfOrigin
 from .security_formatted_content import SecurityFormattedContent

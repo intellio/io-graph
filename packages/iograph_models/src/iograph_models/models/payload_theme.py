@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class PayloadTheme(Enum):
+class PayloadTheme(StrEnum):
 	unknown = "unknown"
 	other = "other"
 	accountActivation = "accountActivation"

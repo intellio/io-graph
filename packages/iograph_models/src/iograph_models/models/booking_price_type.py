@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class BookingPriceType(Enum):
+class BookingPriceType(StrEnum):
 	undefined = "undefined"
 	fixedPrice = "fixedPrice"
 	startingAt = "startingAt"

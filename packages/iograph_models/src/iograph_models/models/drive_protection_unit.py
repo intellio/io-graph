@@ -5,18 +5,18 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class DriveProtectionUnit(BaseModel):
-	id: Optional[str] = Field(default=None,alias="id",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	createdBy: SerializeAsAny[Optional[IdentitySet]] = Field(default=None,alias="createdBy",)
-	createdDateTime: Optional[datetime] = Field(default=None,alias="createdDateTime",)
-	error: Optional[PublicError] = Field(default=None,alias="error",)
-	lastModifiedBy: SerializeAsAny[Optional[IdentitySet]] = Field(default=None,alias="lastModifiedBy",)
-	lastModifiedDateTime: Optional[datetime] = Field(default=None,alias="lastModifiedDateTime",)
-	policyId: Optional[str] = Field(default=None,alias="policyId",)
-	status: Optional[ProtectionUnitStatus] = Field(default=None,alias="status",)
-	directoryObjectId: Optional[str] = Field(default=None,alias="directoryObjectId",)
-	displayName: Optional[str] = Field(default=None,alias="displayName",)
-	email: Optional[str] = Field(default=None,alias="email",)
+	id: Optional[str] = Field(alias="id",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	createdBy: SerializeAsAny[Optional[IdentitySet]] = Field(alias="createdBy",default=None,)
+	createdDateTime: Optional[datetime] = Field(alias="createdDateTime",default=None,)
+	error: Optional[PublicError] = Field(alias="error",default=None,)
+	lastModifiedBy: SerializeAsAny[Optional[IdentitySet]] = Field(alias="lastModifiedBy",default=None,)
+	lastModifiedDateTime: Optional[datetime] = Field(alias="lastModifiedDateTime",default=None,)
+	policyId: Optional[str] = Field(alias="policyId",default=None,)
+	status: Optional[str | ProtectionUnitStatus] = Field(alias="status",default=None,)
+	directoryObjectId: Optional[str] = Field(alias="directoryObjectId",default=None,)
+	displayName: Optional[str] = Field(alias="displayName",default=None,)
+	email: Optional[str] = Field(alias="email",default=None,)
 
 from .identity_set import IdentitySet
 from .public_error import PublicError

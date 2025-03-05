@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class EducationExternalSource(Enum):
+class EducationExternalSource(StrEnum):
 	sis = "sis"
 	manual = "manual"
 	unknownFutureValue = "unknownFutureValue"

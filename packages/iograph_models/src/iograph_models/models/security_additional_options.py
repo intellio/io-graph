@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class SecurityAdditionalOptions(Enum):
+class SecurityAdditionalOptions(StrEnum):
 	none = "none"
 	teamsAndYammerConversations = "teamsAndYammerConversations"
 	cloudAttachments = "cloudAttachments"

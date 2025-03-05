@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class MdmAuthority(Enum):
+class MdmAuthority(StrEnum):
 	unknown = "unknown"
 	intune = "intune"
 	sccm = "sccm"

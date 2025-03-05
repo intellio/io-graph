@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class SecurityHealthIssueStatus(Enum):
+class SecurityHealthIssueStatus(StrEnum):
 	open = "open"
 	closed = "closed"
 	suppressed = "suppressed"

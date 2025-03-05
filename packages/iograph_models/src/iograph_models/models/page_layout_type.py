@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class PageLayoutType(Enum):
+class PageLayoutType(StrEnum):
 	microsoftReserved = "microsoftReserved"
 	article = "article"
 	home = "home"

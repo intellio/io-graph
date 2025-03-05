@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class VirtualEventStatus(Enum):
+class VirtualEventStatus(StrEnum):
 	draft = "draft"
 	published = "published"
 	canceled = "canceled"

@@ -4,7 +4,7 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class TargetManager(BaseModel):
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	managerLevel: Optional[int] = Field(default=None,alias="managerLevel",)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	managerLevel: Optional[int] = Field(alias="managerLevel",default=None,)
 
 

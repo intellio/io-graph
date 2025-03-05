@@ -4,9 +4,9 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class IspmtPostRequest(BaseModel):
-	rate: Optional[str] = Field(default=None,alias="rate",)
-	per: Optional[str] = Field(default=None,alias="per",)
-	nper: Optional[str] = Field(default=None,alias="nper",)
-	pv: Optional[str] = Field(default=None,alias="pv",)
+	rate: Optional[str] = Field(alias="rate",default=None,)
+	per: Optional[str] = Field(alias="per",default=None,)
+	nper: Optional[str] = Field(alias="nper",default=None,)
+	pv: Optional[str] = Field(alias="pv",default=None,)
 
 

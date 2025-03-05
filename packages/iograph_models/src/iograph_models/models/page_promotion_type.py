@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class PagePromotionType(Enum):
+class PagePromotionType(StrEnum):
 	microsoftReserved = "microsoftReserved"
 	page = "page"
 	newsPost = "newsPost"

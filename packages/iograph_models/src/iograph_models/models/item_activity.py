@@ -5,12 +5,12 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class ItemActivity(BaseModel):
-	id: Optional[str] = Field(default=None,alias="id",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	access: Optional[AccessAction] = Field(default=None,alias="access",)
-	activityDateTime: Optional[datetime] = Field(default=None,alias="activityDateTime",)
-	actor: SerializeAsAny[Optional[IdentitySet]] = Field(default=None,alias="actor",)
-	driveItem: Optional[DriveItem] = Field(default=None,alias="driveItem",)
+	id: Optional[str] = Field(alias="id",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	access: Optional[AccessAction] = Field(alias="access",default=None,)
+	activityDateTime: Optional[datetime] = Field(alias="activityDateTime",default=None,)
+	actor: SerializeAsAny[Optional[IdentitySet]] = Field(alias="actor",default=None,)
+	driveItem: Optional[DriveItem] = Field(alias="driveItem",default=None,)
 
 from .access_action import AccessAction
 from .identity_set import IdentitySet

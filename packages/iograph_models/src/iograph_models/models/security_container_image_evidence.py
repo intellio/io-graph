@@ -5,17 +5,17 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class SecurityContainerImageEvidence(BaseModel):
-	createdDateTime: Optional[datetime] = Field(default=None,alias="createdDateTime",)
-	detailedRoles: Optional[list[str]] = Field(default=None,alias="detailedRoles",)
-	remediationStatus: Optional[SecurityEvidenceRemediationStatus] = Field(default=None,alias="remediationStatus",)
-	remediationStatusDetails: Optional[str] = Field(default=None,alias="remediationStatusDetails",)
-	roles: Optional[list[SecurityEvidenceRole]] = Field(default=None,alias="roles",)
-	tags: Optional[list[str]] = Field(default=None,alias="tags",)
-	verdict: Optional[SecurityEvidenceVerdict] = Field(default=None,alias="verdict",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	digestImage: Optional[SecurityContainerImageEvidence] = Field(default=None,alias="digestImage",)
-	imageId: Optional[str] = Field(default=None,alias="imageId",)
-	registry: Optional[SecurityContainerRegistryEvidence] = Field(default=None,alias="registry",)
+	createdDateTime: Optional[datetime] = Field(alias="createdDateTime",default=None,)
+	detailedRoles: Optional[list[str]] = Field(alias="detailedRoles",default=None,)
+	remediationStatus: Optional[str | SecurityEvidenceRemediationStatus] = Field(alias="remediationStatus",default=None,)
+	remediationStatusDetails: Optional[str] = Field(alias="remediationStatusDetails",default=None,)
+	roles: Optional[list[str | SecurityEvidenceRole]] = Field(alias="roles",default=None,)
+	tags: Optional[list[str]] = Field(alias="tags",default=None,)
+	verdict: Optional[str | SecurityEvidenceVerdict] = Field(alias="verdict",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	digestImage: Optional[SecurityContainerImageEvidence] = Field(alias="digestImage",default=None,)
+	imageId: Optional[str] = Field(alias="imageId",default=None,)
+	registry: Optional[SecurityContainerRegistryEvidence] = Field(alias="registry",default=None,)
 
 from .security_evidence_remediation_status import SecurityEvidenceRemediationStatus
 from .security_evidence_role import SecurityEvidenceRole

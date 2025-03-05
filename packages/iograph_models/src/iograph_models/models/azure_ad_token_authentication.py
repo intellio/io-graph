@@ -4,7 +4,7 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class AzureAdTokenAuthentication(BaseModel):
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	resourceId: Optional[str] = Field(default=None,alias="resourceId",)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	resourceId: Optional[str] = Field(alias="resourceId",default=None,)
 
 

@@ -4,6 +4,6 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class Security_apply_holdPostRequest(BaseModel):
-	ids: Optional[list[str]] = Field(default=None,alias="ids",)
+	ids: Optional[list[str]] = Field(alias="ids",default=None,)
 
 

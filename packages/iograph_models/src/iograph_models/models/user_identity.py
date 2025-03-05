@@ -4,10 +4,10 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class UserIdentity(BaseModel):
-	displayName: Optional[str] = Field(default=None,alias="displayName",)
-	id: Optional[str] = Field(default=None,alias="id",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	ipAddress: Optional[str] = Field(default=None,alias="ipAddress",)
-	userPrincipalName: Optional[str] = Field(default=None,alias="userPrincipalName",)
+	displayName: Optional[str] = Field(alias="displayName",default=None,)
+	id: Optional[str] = Field(alias="id",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	ipAddress: Optional[str] = Field(alias="ipAddress",default=None,)
+	userPrincipalName: Optional[str] = Field(alias="userPrincipalName",default=None,)
 
 

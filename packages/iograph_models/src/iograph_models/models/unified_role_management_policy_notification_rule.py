@@ -4,14 +4,14 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class UnifiedRoleManagementPolicyNotificationRule(BaseModel):
-	id: Optional[str] = Field(default=None,alias="id",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	target: Optional[UnifiedRoleManagementPolicyRuleTarget] = Field(default=None,alias="target",)
-	isDefaultRecipientsEnabled: Optional[bool] = Field(default=None,alias="isDefaultRecipientsEnabled",)
-	notificationLevel: Optional[str] = Field(default=None,alias="notificationLevel",)
-	notificationRecipients: Optional[list[str]] = Field(default=None,alias="notificationRecipients",)
-	notificationType: Optional[str] = Field(default=None,alias="notificationType",)
-	recipientType: Optional[str] = Field(default=None,alias="recipientType",)
+	id: Optional[str] = Field(alias="id",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	target: Optional[UnifiedRoleManagementPolicyRuleTarget] = Field(alias="target",default=None,)
+	isDefaultRecipientsEnabled: Optional[bool] = Field(alias="isDefaultRecipientsEnabled",default=None,)
+	notificationLevel: Optional[str] = Field(alias="notificationLevel",default=None,)
+	notificationRecipients: Optional[list[str]] = Field(alias="notificationRecipients",default=None,)
+	notificationType: Optional[str] = Field(alias="notificationType",default=None,)
+	recipientType: Optional[str] = Field(alias="recipientType",default=None,)
 
 from .unified_role_management_policy_rule_target import UnifiedRoleManagementPolicyRuleTarget
 

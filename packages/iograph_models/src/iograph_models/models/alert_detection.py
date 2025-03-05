@@ -4,9 +4,9 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class AlertDetection(BaseModel):
-	detectionType: Optional[str] = Field(default=None,alias="detectionType",)
-	method: Optional[str] = Field(default=None,alias="method",)
-	name: Optional[str] = Field(default=None,alias="name",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
+	detectionType: Optional[str] = Field(alias="detectionType",default=None,)
+	method: Optional[str] = Field(alias="method",default=None,)
+	name: Optional[str] = Field(alias="name",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 
 

@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class SecurityHostPortProtocol(Enum):
+class SecurityHostPortProtocol(StrEnum):
 	tcp = "tcp"
 	udp = "udp"
 	unknownFutureValue = "unknownFutureValue"

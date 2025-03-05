@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class OnlineMeetingPresenters(Enum):
+class OnlineMeetingPresenters(StrEnum):
 	everyone = "everyone"
 	organization = "organization"
 	roleIsPresenter = "roleIsPresenter"

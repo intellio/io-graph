@@ -4,7 +4,7 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class SubjectRightsRequestEnumeratedSiteLocation(BaseModel):
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	urls: Optional[list[str]] = Field(default=None,alias="urls",)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	urls: Optional[list[str]] = Field(alias="urls",default=None,)
 
 

@@ -5,17 +5,17 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class DeviceManagementPartner(BaseModel):
-	id: Optional[str] = Field(default=None,alias="id",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	displayName: Optional[str] = Field(default=None,alias="displayName",)
-	groupsRequiringPartnerEnrollment: Optional[list[DeviceManagementPartnerAssignment]] = Field(default=None,alias="groupsRequiringPartnerEnrollment",)
-	isConfigured: Optional[bool] = Field(default=None,alias="isConfigured",)
-	lastHeartbeatDateTime: Optional[datetime] = Field(default=None,alias="lastHeartbeatDateTime",)
-	partnerAppType: Optional[DeviceManagementPartnerAppType] = Field(default=None,alias="partnerAppType",)
-	partnerState: Optional[DeviceManagementPartnerTenantState] = Field(default=None,alias="partnerState",)
-	singleTenantAppId: Optional[str] = Field(default=None,alias="singleTenantAppId",)
-	whenPartnerDevicesWillBeMarkedAsNonCompliantDateTime: Optional[datetime] = Field(default=None,alias="whenPartnerDevicesWillBeMarkedAsNonCompliantDateTime",)
-	whenPartnerDevicesWillBeRemovedDateTime: Optional[datetime] = Field(default=None,alias="whenPartnerDevicesWillBeRemovedDateTime",)
+	id: Optional[str] = Field(alias="id",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	displayName: Optional[str] = Field(alias="displayName",default=None,)
+	groupsRequiringPartnerEnrollment: Optional[list[DeviceManagementPartnerAssignment]] = Field(alias="groupsRequiringPartnerEnrollment",default=None,)
+	isConfigured: Optional[bool] = Field(alias="isConfigured",default=None,)
+	lastHeartbeatDateTime: Optional[datetime] = Field(alias="lastHeartbeatDateTime",default=None,)
+	partnerAppType: Optional[str | DeviceManagementPartnerAppType] = Field(alias="partnerAppType",default=None,)
+	partnerState: Optional[str | DeviceManagementPartnerTenantState] = Field(alias="partnerState",default=None,)
+	singleTenantAppId: Optional[str] = Field(alias="singleTenantAppId",default=None,)
+	whenPartnerDevicesWillBeMarkedAsNonCompliantDateTime: Optional[datetime] = Field(alias="whenPartnerDevicesWillBeMarkedAsNonCompliantDateTime",default=None,)
+	whenPartnerDevicesWillBeRemovedDateTime: Optional[datetime] = Field(alias="whenPartnerDevicesWillBeRemovedDateTime",default=None,)
 
 from .device_management_partner_assignment import DeviceManagementPartnerAssignment
 from .device_management_partner_app_type import DeviceManagementPartnerAppType

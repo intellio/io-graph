@@ -4,14 +4,14 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class Teamwork(BaseModel):
-	id: Optional[str] = Field(default=None,alias="id",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	isTeamsEnabled: Optional[bool] = Field(default=None,alias="isTeamsEnabled",)
-	region: Optional[str] = Field(default=None,alias="region",)
-	deletedChats: Optional[list[DeletedChat]] = Field(default=None,alias="deletedChats",)
-	deletedTeams: Optional[list[DeletedTeam]] = Field(default=None,alias="deletedTeams",)
-	teamsAppSettings: Optional[TeamsAppSettings] = Field(default=None,alias="teamsAppSettings",)
-	workforceIntegrations: Optional[list[WorkforceIntegration]] = Field(default=None,alias="workforceIntegrations",)
+	id: Optional[str] = Field(alias="id",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	isTeamsEnabled: Optional[bool] = Field(alias="isTeamsEnabled",default=None,)
+	region: Optional[str] = Field(alias="region",default=None,)
+	deletedChats: Optional[list[DeletedChat]] = Field(alias="deletedChats",default=None,)
+	deletedTeams: Optional[list[DeletedTeam]] = Field(alias="deletedTeams",default=None,)
+	teamsAppSettings: Optional[TeamsAppSettings] = Field(alias="teamsAppSettings",default=None,)
+	workforceIntegrations: Optional[list[WorkforceIntegration]] = Field(alias="workforceIntegrations",default=None,)
 
 from .deleted_chat import DeletedChat
 from .deleted_team import DeletedTeam

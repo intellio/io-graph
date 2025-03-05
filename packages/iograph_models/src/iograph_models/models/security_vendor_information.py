@@ -4,10 +4,10 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class SecurityVendorInformation(BaseModel):
-	provider: Optional[str] = Field(default=None,alias="provider",)
-	providerVersion: Optional[str] = Field(default=None,alias="providerVersion",)
-	subProvider: Optional[str] = Field(default=None,alias="subProvider",)
-	vendor: Optional[str] = Field(default=None,alias="vendor",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
+	provider: Optional[str] = Field(alias="provider",default=None,)
+	providerVersion: Optional[str] = Field(alias="providerVersion",default=None,)
+	subProvider: Optional[str] = Field(alias="subProvider",default=None,)
+	vendor: Optional[str] = Field(alias="vendor",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 
 

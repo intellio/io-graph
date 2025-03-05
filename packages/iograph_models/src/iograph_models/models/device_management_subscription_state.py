@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class DeviceManagementSubscriptionState(Enum):
+class DeviceManagementSubscriptionState(StrEnum):
 	pending = "pending"
 	active = "active"
 	warning = "warning"

@@ -4,9 +4,9 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class ForwardPostRequest(BaseModel):
-	ToRecipients: SerializeAsAny[Optional[list[Recipient]]] = Field(default=None,alias="ToRecipients",)
-	Message: SerializeAsAny[Optional[Message]] = Field(default=None,alias="Message",)
-	Comment: Optional[str] = Field(default=None,alias="Comment",)
+	ToRecipients: SerializeAsAny[Optional[list[Recipient]]] = Field(alias="ToRecipients",default=None,)
+	Message: SerializeAsAny[Optional[Message]] = Field(alias="Message",default=None,)
+	Comment: Optional[str] = Field(alias="Comment",default=None,)
 
 from .recipient import Recipient
 from .message import Message

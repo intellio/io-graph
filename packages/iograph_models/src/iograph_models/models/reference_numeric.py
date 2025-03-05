@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class ReferenceNumeric(Enum):
+class ReferenceNumeric(StrEnum):
 	_INF = "_INF"
 	INF = "INF"
 	NaN = "NaN"

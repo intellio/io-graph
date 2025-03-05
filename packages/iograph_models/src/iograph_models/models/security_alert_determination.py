@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class SecurityAlertDetermination(Enum):
+class SecurityAlertDetermination(StrEnum):
 	unknown = "unknown"
 	apt = "apt"
 	malware = "malware"

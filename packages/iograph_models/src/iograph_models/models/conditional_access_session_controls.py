@@ -4,12 +4,12 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class ConditionalAccessSessionControls(BaseModel):
-	applicationEnforcedRestrictions: Optional[ApplicationEnforcedRestrictionsSessionControl] = Field(default=None,alias="applicationEnforcedRestrictions",)
-	cloudAppSecurity: Optional[CloudAppSecuritySessionControl] = Field(default=None,alias="cloudAppSecurity",)
-	disableResilienceDefaults: Optional[bool] = Field(default=None,alias="disableResilienceDefaults",)
-	persistentBrowser: Optional[PersistentBrowserSessionControl] = Field(default=None,alias="persistentBrowser",)
-	signInFrequency: Optional[SignInFrequencySessionControl] = Field(default=None,alias="signInFrequency",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
+	applicationEnforcedRestrictions: Optional[ApplicationEnforcedRestrictionsSessionControl] = Field(alias="applicationEnforcedRestrictions",default=None,)
+	cloudAppSecurity: Optional[CloudAppSecuritySessionControl] = Field(alias="cloudAppSecurity",default=None,)
+	disableResilienceDefaults: Optional[bool] = Field(alias="disableResilienceDefaults",default=None,)
+	persistentBrowser: Optional[PersistentBrowserSessionControl] = Field(alias="persistentBrowser",default=None,)
+	signInFrequency: Optional[SignInFrequencySessionControl] = Field(alias="signInFrequency",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 
 from .application_enforced_restrictions_session_control import ApplicationEnforcedRestrictionsSessionControl
 from .cloud_app_security_session_control import CloudAppSecuritySessionControl

@@ -4,12 +4,12 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class Amor_lincPostRequest(BaseModel):
-	cost: Optional[str] = Field(default=None,alias="cost",)
-	datePurchased: Optional[str] = Field(default=None,alias="datePurchased",)
-	firstPeriod: Optional[str] = Field(default=None,alias="firstPeriod",)
-	salvage: Optional[str] = Field(default=None,alias="salvage",)
-	period: Optional[str] = Field(default=None,alias="period",)
-	rate: Optional[str] = Field(default=None,alias="rate",)
-	basis: Optional[str] = Field(default=None,alias="basis",)
+	cost: Optional[str] = Field(alias="cost",default=None,)
+	datePurchased: Optional[str] = Field(alias="datePurchased",default=None,)
+	firstPeriod: Optional[str] = Field(alias="firstPeriod",default=None,)
+	salvage: Optional[str] = Field(alias="salvage",default=None,)
+	period: Optional[str] = Field(alias="period",default=None,)
+	rate: Optional[str] = Field(alias="rate",default=None,)
+	basis: Optional[str] = Field(alias="basis",default=None,)
 
 

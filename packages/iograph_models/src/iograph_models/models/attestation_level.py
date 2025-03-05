@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class AttestationLevel(Enum):
+class AttestationLevel(StrEnum):
 	attested = "attested"
 	notAttested = "notAttested"
 	unknownFutureValue = "unknownFutureValue"

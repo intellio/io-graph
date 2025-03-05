@@ -4,7 +4,7 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class AddPostRequest(BaseModel):
-	values: SerializeAsAny[Optional[list[ConversationMember]]] = Field(default=None,alias="values",)
+	values: SerializeAsAny[Optional[list[ConversationMember]]] = Field(alias="values",default=None,)
 
 from .conversation_member import ConversationMember
 

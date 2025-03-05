@@ -5,21 +5,21 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class PrivilegedAccessGroupAssignmentSchedule(BaseModel):
-	id: Optional[str] = Field(default=None,alias="id",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	createdDateTime: Optional[datetime] = Field(default=None,alias="createdDateTime",)
-	createdUsing: Optional[str] = Field(default=None,alias="createdUsing",)
-	modifiedDateTime: Optional[datetime] = Field(default=None,alias="modifiedDateTime",)
-	scheduleInfo: Optional[RequestSchedule] = Field(default=None,alias="scheduleInfo",)
-	status: Optional[str] = Field(default=None,alias="status",)
-	accessId: Optional[PrivilegedAccessGroupRelationships] = Field(default=None,alias="accessId",)
-	assignmentType: Optional[PrivilegedAccessGroupAssignmentType] = Field(default=None,alias="assignmentType",)
-	groupId: Optional[str] = Field(default=None,alias="groupId",)
-	memberType: Optional[PrivilegedAccessGroupMemberType] = Field(default=None,alias="memberType",)
-	principalId: Optional[str] = Field(default=None,alias="principalId",)
-	activatedUsing: Optional[PrivilegedAccessGroupEligibilitySchedule] = Field(default=None,alias="activatedUsing",)
-	group: Optional[Group] = Field(default=None,alias="group",)
-	principal: SerializeAsAny[Optional[DirectoryObject]] = Field(default=None,alias="principal",)
+	id: Optional[str] = Field(alias="id",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	createdDateTime: Optional[datetime] = Field(alias="createdDateTime",default=None,)
+	createdUsing: Optional[str] = Field(alias="createdUsing",default=None,)
+	modifiedDateTime: Optional[datetime] = Field(alias="modifiedDateTime",default=None,)
+	scheduleInfo: Optional[RequestSchedule] = Field(alias="scheduleInfo",default=None,)
+	status: Optional[str] = Field(alias="status",default=None,)
+	accessId: Optional[str | PrivilegedAccessGroupRelationships] = Field(alias="accessId",default=None,)
+	assignmentType: Optional[str | PrivilegedAccessGroupAssignmentType] = Field(alias="assignmentType",default=None,)
+	groupId: Optional[str] = Field(alias="groupId",default=None,)
+	memberType: Optional[str | PrivilegedAccessGroupMemberType] = Field(alias="memberType",default=None,)
+	principalId: Optional[str] = Field(alias="principalId",default=None,)
+	activatedUsing: Optional[PrivilegedAccessGroupEligibilitySchedule] = Field(alias="activatedUsing",default=None,)
+	group: Optional[Group] = Field(alias="group",default=None,)
+	principal: SerializeAsAny[Optional[DirectoryObject]] = Field(alias="principal",default=None,)
 
 from .request_schedule import RequestSchedule
 from .privileged_access_group_relationships import PrivilegedAccessGroupRelationships

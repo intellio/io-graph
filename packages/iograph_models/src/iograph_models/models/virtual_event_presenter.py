@@ -4,11 +4,11 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class VirtualEventPresenter(BaseModel):
-	id: Optional[str] = Field(default=None,alias="id",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	email: Optional[str] = Field(default=None,alias="email",)
-	identity: SerializeAsAny[Optional[Identity]] = Field(default=None,alias="identity",)
-	presenterDetails: Optional[VirtualEventPresenterDetails] = Field(default=None,alias="presenterDetails",)
+	id: Optional[str] = Field(alias="id",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	email: Optional[str] = Field(alias="email",default=None,)
+	identity: SerializeAsAny[Optional[Identity]] = Field(alias="identity",default=None,)
+	presenterDetails: Optional[VirtualEventPresenterDetails] = Field(alias="presenterDetails",default=None,)
 
 from .identity import Identity
 from .virtual_event_presenter_details import VirtualEventPresenterDetails

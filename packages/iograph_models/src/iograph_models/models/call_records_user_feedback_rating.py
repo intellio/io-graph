@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class CallRecordsUserFeedbackRating(Enum):
+class CallRecordsUserFeedbackRating(StrEnum):
 	notRated = "notRated"
 	bad = "bad"
 	poor = "poor"

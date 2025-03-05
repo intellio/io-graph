@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class EducationUserRole(Enum):
+class EducationUserRole(StrEnum):
 	student = "student"
 	teacher = "teacher"
 	none = "none"

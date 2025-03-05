@@ -4,9 +4,9 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class FileStorageContainerSettings(BaseModel):
-	isItemVersioningEnabled: Optional[bool] = Field(default=None,alias="isItemVersioningEnabled",)
-	isOcrEnabled: Optional[bool] = Field(default=None,alias="isOcrEnabled",)
-	itemMajorVersionLimit: Optional[int] = Field(default=None,alias="itemMajorVersionLimit",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
+	isItemVersioningEnabled: Optional[bool] = Field(alias="isItemVersioningEnabled",default=None,)
+	isOcrEnabled: Optional[bool] = Field(alias="isOcrEnabled",default=None,)
+	itemMajorVersionLimit: Optional[int] = Field(alias="itemMajorVersionLimit",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 
 

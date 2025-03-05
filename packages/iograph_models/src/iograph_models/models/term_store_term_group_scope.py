@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class TermStoreTermGroupScope(Enum):
+class TermStoreTermGroupScope(StrEnum):
 	global_ = "global_"
 	system = "system"
 	siteCollection = "siteCollection"

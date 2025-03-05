@@ -4,10 +4,10 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class CallTranscriptEventMessageDetail(BaseModel):
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	callId: Optional[str] = Field(default=None,alias="callId",)
-	callTranscriptICalUid: Optional[str] = Field(default=None,alias="callTranscriptICalUid",)
-	meetingOrganizer: SerializeAsAny[Optional[IdentitySet]] = Field(default=None,alias="meetingOrganizer",)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	callId: Optional[str] = Field(alias="callId",default=None,)
+	callTranscriptICalUid: Optional[str] = Field(alias="callTranscriptICalUid",default=None,)
+	meetingOrganizer: SerializeAsAny[Optional[IdentitySet]] = Field(alias="meetingOrganizer",default=None,)
 
 from .identity_set import IdentitySet
 

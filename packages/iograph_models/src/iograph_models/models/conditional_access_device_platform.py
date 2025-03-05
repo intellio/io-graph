@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class ConditionalAccessDevicePlatform(Enum):
+class ConditionalAccessDevicePlatform(StrEnum):
 	android = "android"
 	iOS = "iOS"
 	windows = "windows"

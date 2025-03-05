@@ -4,9 +4,9 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class SecurityExportFileMetadata(BaseModel):
-	downloadUrl: Optional[str] = Field(default=None,alias="downloadUrl",)
-	fileName: Optional[str] = Field(default=None,alias="fileName",)
-	size: Optional[int] = Field(default=None,alias="size",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
+	downloadUrl: Optional[str] = Field(alias="downloadUrl",default=None,)
+	fileName: Optional[str] = Field(alias="fileName",default=None,)
+	size: Optional[int] = Field(alias="size",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 
 

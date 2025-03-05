@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class CoachmarkLocationType(Enum):
+class CoachmarkLocationType(StrEnum):
 	unknown = "unknown"
 	fromEmail = "fromEmail"
 	subject = "subject"

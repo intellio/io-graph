@@ -4,10 +4,10 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class AccessPackageAssignmentApprovalSettings(BaseModel):
-	isApprovalRequiredForAdd: Optional[bool] = Field(default=None,alias="isApprovalRequiredForAdd",)
-	isApprovalRequiredForUpdate: Optional[bool] = Field(default=None,alias="isApprovalRequiredForUpdate",)
-	stages: Optional[list[AccessPackageApprovalStage]] = Field(default=None,alias="stages",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
+	isApprovalRequiredForAdd: Optional[bool] = Field(alias="isApprovalRequiredForAdd",default=None,)
+	isApprovalRequiredForUpdate: Optional[bool] = Field(alias="isApprovalRequiredForUpdate",default=None,)
+	stages: Optional[list[AccessPackageApprovalStage]] = Field(alias="stages",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 
 from .access_package_approval_stage import AccessPackageApprovalStage
 

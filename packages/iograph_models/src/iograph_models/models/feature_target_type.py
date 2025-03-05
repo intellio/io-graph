@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class FeatureTargetType(Enum):
+class FeatureTargetType(StrEnum):
 	group = "group"
 	administrativeUnit = "administrativeUnit"
 	role = "role"

@@ -4,10 +4,10 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class PrinterStatus(BaseModel):
-	description: Optional[str] = Field(default=None,alias="description",)
-	details: Optional[list[PrinterProcessingStateDetail]] = Field(default=None,alias="details",)
-	state: Optional[PrinterProcessingState] = Field(default=None,alias="state",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
+	description: Optional[str] = Field(alias="description",default=None,)
+	details: Optional[list[str | PrinterProcessingStateDetail]] = Field(alias="details",default=None,)
+	state: Optional[str | PrinterProcessingState] = Field(alias="state",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 
 from .printer_processing_state_detail import PrinterProcessingStateDetail
 from .printer_processing_state import PrinterProcessingState

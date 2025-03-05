@@ -4,8 +4,8 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class AuthenticationAttributeCollectionOptionConfiguration(BaseModel):
-	label: Optional[str] = Field(default=None,alias="label",)
-	value: Optional[str] = Field(default=None,alias="value",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
+	label: Optional[str] = Field(alias="label",default=None,)
+	value: Optional[str] = Field(alias="value",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 
 

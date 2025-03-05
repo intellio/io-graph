@@ -6,8 +6,8 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class GroupAssignmentTarget(BaseModel):
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	groupId: Optional[str] = Field(default=None,alias="groupId",)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	groupId: Optional[str] = Field(alias="groupId",default=None,)
 
 	@model_validator(mode="wrap")
 	def convert_discriminator_class(cls, data: Any, handler: ModelWrapValidatorHandler[Self]) -> Self:

@@ -4,12 +4,12 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class RelatedContact(BaseModel):
-	accessConsent: Optional[bool] = Field(default=None,alias="accessConsent",)
-	displayName: Optional[str] = Field(default=None,alias="displayName",)
-	emailAddress: Optional[str] = Field(default=None,alias="emailAddress",)
-	mobilePhone: Optional[str] = Field(default=None,alias="mobilePhone",)
-	relationship: Optional[ContactRelationship] = Field(default=None,alias="relationship",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
+	accessConsent: Optional[bool] = Field(alias="accessConsent",default=None,)
+	displayName: Optional[str] = Field(alias="displayName",default=None,)
+	emailAddress: Optional[str] = Field(alias="emailAddress",default=None,)
+	mobilePhone: Optional[str] = Field(alias="mobilePhone",default=None,)
+	relationship: Optional[str | ContactRelationship] = Field(alias="relationship",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 
 from .contact_relationship import ContactRelationship
 

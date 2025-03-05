@@ -4,12 +4,12 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class PublicError(BaseModel):
-	code: Optional[str] = Field(default=None,alias="code",)
-	details: Optional[list[PublicErrorDetail]] = Field(default=None,alias="details",)
-	innerError: Optional[PublicInnerError] = Field(default=None,alias="innerError",)
-	message: Optional[str] = Field(default=None,alias="message",)
-	target: Optional[str] = Field(default=None,alias="target",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
+	code: Optional[str] = Field(alias="code",default=None,)
+	details: Optional[list[PublicErrorDetail]] = Field(alias="details",default=None,)
+	innerError: Optional[PublicInnerError] = Field(alias="innerError",default=None,)
+	message: Optional[str] = Field(alias="message",default=None,)
+	target: Optional[str] = Field(alias="target",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 
 from .public_error_detail import PublicErrorDetail
 from .public_inner_error import PublicInnerError

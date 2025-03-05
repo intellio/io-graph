@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class EligibilityFilteringEnabledEntities(Enum):
+class EligibilityFilteringEnabledEntities(StrEnum):
 	none = "none"
 	swapRequest = "swapRequest"
 	offerShiftRequest = "offerShiftRequest"

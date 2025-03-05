@@ -5,17 +5,17 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class ConversationThread(BaseModel):
-	id: Optional[str] = Field(default=None,alias="id",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	ccRecipients: SerializeAsAny[Optional[list[Recipient]]] = Field(default=None,alias="ccRecipients",)
-	hasAttachments: Optional[bool] = Field(default=None,alias="hasAttachments",)
-	isLocked: Optional[bool] = Field(default=None,alias="isLocked",)
-	lastDeliveredDateTime: Optional[datetime] = Field(default=None,alias="lastDeliveredDateTime",)
-	preview: Optional[str] = Field(default=None,alias="preview",)
-	topic: Optional[str] = Field(default=None,alias="topic",)
-	toRecipients: SerializeAsAny[Optional[list[Recipient]]] = Field(default=None,alias="toRecipients",)
-	uniqueSenders: Optional[list[str]] = Field(default=None,alias="uniqueSenders",)
-	posts: Optional[list[Post]] = Field(default=None,alias="posts",)
+	id: Optional[str] = Field(alias="id",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	ccRecipients: SerializeAsAny[Optional[list[Recipient]]] = Field(alias="ccRecipients",default=None,)
+	hasAttachments: Optional[bool] = Field(alias="hasAttachments",default=None,)
+	isLocked: Optional[bool] = Field(alias="isLocked",default=None,)
+	lastDeliveredDateTime: Optional[datetime] = Field(alias="lastDeliveredDateTime",default=None,)
+	preview: Optional[str] = Field(alias="preview",default=None,)
+	topic: Optional[str] = Field(alias="topic",default=None,)
+	toRecipients: SerializeAsAny[Optional[list[Recipient]]] = Field(alias="toRecipients",default=None,)
+	uniqueSenders: Optional[list[str]] = Field(alias="uniqueSenders",default=None,)
+	posts: Optional[list[Post]] = Field(alias="posts",default=None,)
 
 from .recipient import Recipient
 from .recipient import Recipient

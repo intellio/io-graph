@@ -4,7 +4,7 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class OnInteractiveAuthFlowStartExternalUsersSelfServiceSignUp(BaseModel):
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	isSignUpAllowed: Optional[bool] = Field(default=None,alias="isSignUpAllowed",)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	isSignUpAllowed: Optional[bool] = Field(alias="isSignUpAllowed",default=None,)
 
 

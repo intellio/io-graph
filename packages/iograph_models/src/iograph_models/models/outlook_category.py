@@ -4,10 +4,10 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class OutlookCategory(BaseModel):
-	id: Optional[str] = Field(default=None,alias="id",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	color: Optional[CategoryColor] = Field(default=None,alias="color",)
-	displayName: Optional[str] = Field(default=None,alias="displayName",)
+	id: Optional[str] = Field(alias="id",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	color: Optional[str | CategoryColor] = Field(alias="color",default=None,)
+	displayName: Optional[str] = Field(alias="displayName",default=None,)
 
 from .category_color import CategoryColor
 

@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class AccessPackageCatalogState(Enum):
+class AccessPackageCatalogState(StrEnum):
 	unpublished = "unpublished"
 	published = "published"
 	unknownFutureValue = "unknownFutureValue"

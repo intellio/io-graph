@@ -4,9 +4,9 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class EmailIdentity(BaseModel):
-	displayName: Optional[str] = Field(default=None,alias="displayName",)
-	id: Optional[str] = Field(default=None,alias="id",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	email: Optional[str] = Field(default=None,alias="email",)
+	displayName: Optional[str] = Field(alias="displayName",default=None,)
+	id: Optional[str] = Field(alias="id",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	email: Optional[str] = Field(alias="email",default=None,)
 
 

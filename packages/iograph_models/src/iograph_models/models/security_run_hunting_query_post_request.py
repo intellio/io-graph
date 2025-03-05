@@ -4,7 +4,7 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class Security_run_hunting_queryPostRequest(BaseModel):
-	query: Optional[str] = Field(default=None,alias="query",)
-	timespan: Optional[str] = Field(default=None,alias="timespan",)
+	query: Optional[str] = Field(alias="query",default=None,)
+	timespan: Optional[str] = Field(alias="timespan",default=None,)
 
 

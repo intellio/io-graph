@@ -4,9 +4,9 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class ToneInfo(BaseModel):
-	sequenceId: Optional[int] = Field(default=None,alias="sequenceId",)
-	tone: Optional[Tone] = Field(default=None,alias="tone",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
+	sequenceId: Optional[int] = Field(alias="sequenceId",default=None,)
+	tone: Optional[str | Tone] = Field(alias="tone",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 
 from .tone import Tone
 

@@ -5,9 +5,9 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class UserSignInInsight(BaseModel):
-	id: Optional[str] = Field(default=None,alias="id",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	insightCreatedDateTime: Optional[datetime] = Field(default=None,alias="insightCreatedDateTime",)
-	lastSignInDateTime: Optional[datetime] = Field(default=None,alias="lastSignInDateTime",)
+	id: Optional[str] = Field(alias="id",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	insightCreatedDateTime: Optional[datetime] = Field(alias="insightCreatedDateTime",default=None,)
+	lastSignInDateTime: Optional[datetime] = Field(alias="lastSignInDateTime",default=None,)
 
 

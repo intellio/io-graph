@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class AlertSeverity(Enum):
+class AlertSeverity(StrEnum):
 	unknown = "unknown"
 	informational = "informational"
 	low = "low"

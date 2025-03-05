@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class AuthenticationProtocol(Enum):
+class AuthenticationProtocol(StrEnum):
 	wsFed = "wsFed"
 	saml = "saml"
 	unknownFutureValue = "unknownFutureValue"

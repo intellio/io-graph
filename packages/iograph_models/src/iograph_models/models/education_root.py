@@ -4,11 +4,11 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class EducationRoot(BaseModel):
-	classes: Optional[list[EducationClass]] = Field(default=None,alias="classes",)
-	me: Optional[EducationUser] = Field(default=None,alias="me",)
-	schools: Optional[list[EducationSchool]] = Field(default=None,alias="schools",)
-	users: Optional[list[EducationUser]] = Field(default=None,alias="users",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
+	classes: Optional[list[EducationClass]] = Field(alias="classes",default=None,)
+	me: Optional[EducationUser] = Field(alias="me",default=None,)
+	schools: Optional[list[EducationSchool]] = Field(alias="schools",default=None,)
+	users: Optional[list[EducationUser]] = Field(alias="users",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 
 from .education_class import EducationClass
 from .education_user import EducationUser

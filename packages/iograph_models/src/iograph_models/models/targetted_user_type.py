@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class TargettedUserType(Enum):
+class TargettedUserType(StrEnum):
 	unknown = "unknown"
 	clicked = "clicked"
 	compromised = "compromised"

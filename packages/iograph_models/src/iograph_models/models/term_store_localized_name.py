@@ -4,8 +4,8 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class TermStoreLocalizedName(BaseModel):
-	languageTag: Optional[str] = Field(default=None,alias="languageTag",)
-	name: Optional[str] = Field(default=None,alias="name",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
+	languageTag: Optional[str] = Field(alias="languageTag",default=None,)
+	name: Optional[str] = Field(alias="name",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 
 

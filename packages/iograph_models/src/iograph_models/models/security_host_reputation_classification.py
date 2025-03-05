@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class SecurityHostReputationClassification(Enum):
+class SecurityHostReputationClassification(StrEnum):
 	unknown = "unknown"
 	neutral = "neutral"
 	suspicious = "suspicious"

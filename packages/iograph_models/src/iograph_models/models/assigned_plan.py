@@ -6,10 +6,10 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class AssignedPlan(BaseModel):
-	assignedDateTime: Optional[datetime] = Field(default=None,alias="assignedDateTime",)
-	capabilityStatus: Optional[str] = Field(default=None,alias="capabilityStatus",)
-	service: Optional[str] = Field(default=None,alias="service",)
-	servicePlanId: Optional[UUID] = Field(default=None,alias="servicePlanId",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
+	assignedDateTime: Optional[datetime] = Field(alias="assignedDateTime",default=None,)
+	capabilityStatus: Optional[str] = Field(alias="capabilityStatus",default=None,)
+	service: Optional[str] = Field(alias="service",default=None,)
+	servicePlanId: Optional[UUID] = Field(alias="servicePlanId",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 
 

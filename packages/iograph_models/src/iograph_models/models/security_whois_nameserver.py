@@ -5,10 +5,10 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class SecurityWhoisNameserver(BaseModel):
-	firstSeenDateTime: Optional[datetime] = Field(default=None,alias="firstSeenDateTime",)
-	lastSeenDateTime: Optional[datetime] = Field(default=None,alias="lastSeenDateTime",)
-	host: SerializeAsAny[Optional[SecurityHost]] = Field(default=None,alias="host",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
+	firstSeenDateTime: Optional[datetime] = Field(alias="firstSeenDateTime",default=None,)
+	lastSeenDateTime: Optional[datetime] = Field(alias="lastSeenDateTime",default=None,)
+	host: SerializeAsAny[Optional[SecurityHost]] = Field(alias="host",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 
 from .security_host import SecurityHost
 

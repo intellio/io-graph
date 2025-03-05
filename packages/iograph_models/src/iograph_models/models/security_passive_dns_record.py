@@ -5,14 +5,14 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class SecurityPassiveDnsRecord(BaseModel):
-	id: Optional[str] = Field(default=None,alias="id",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	collectedDateTime: Optional[datetime] = Field(default=None,alias="collectedDateTime",)
-	firstSeenDateTime: Optional[datetime] = Field(default=None,alias="firstSeenDateTime",)
-	lastSeenDateTime: Optional[datetime] = Field(default=None,alias="lastSeenDateTime",)
-	recordType: Optional[str] = Field(default=None,alias="recordType",)
-	artifact: SerializeAsAny[Optional[SecurityArtifact]] = Field(default=None,alias="artifact",)
-	parentHost: SerializeAsAny[Optional[SecurityHost]] = Field(default=None,alias="parentHost",)
+	id: Optional[str] = Field(alias="id",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	collectedDateTime: Optional[datetime] = Field(alias="collectedDateTime",default=None,)
+	firstSeenDateTime: Optional[datetime] = Field(alias="firstSeenDateTime",default=None,)
+	lastSeenDateTime: Optional[datetime] = Field(alias="lastSeenDateTime",default=None,)
+	recordType: Optional[str] = Field(alias="recordType",default=None,)
+	artifact: SerializeAsAny[Optional[SecurityArtifact]] = Field(alias="artifact",default=None,)
+	parentHost: SerializeAsAny[Optional[SecurityHost]] = Field(alias="parentHost",default=None,)
 
 from .security_artifact import SecurityArtifact
 from .security_host import SecurityHost

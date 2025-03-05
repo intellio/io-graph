@@ -4,8 +4,8 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class AdminReportSettings(BaseModel):
-	id: Optional[str] = Field(default=None,alias="id",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	displayConcealedNames: Optional[bool] = Field(default=None,alias="displayConcealedNames",)
+	id: Optional[str] = Field(alias="id",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	displayConcealedNames: Optional[bool] = Field(alias="displayConcealedNames",default=None,)
 
 

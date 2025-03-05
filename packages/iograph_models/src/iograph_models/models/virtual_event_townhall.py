@@ -4,22 +4,22 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class VirtualEventTownhall(BaseModel):
-	id: Optional[str] = Field(default=None,alias="id",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	createdBy: Optional[CommunicationsIdentitySet] = Field(default=None,alias="createdBy",)
-	description: Optional[ItemBody] = Field(default=None,alias="description",)
-	displayName: Optional[str] = Field(default=None,alias="displayName",)
-	endDateTime: Optional[DateTimeTimeZone] = Field(default=None,alias="endDateTime",)
-	externalEventInformation: Optional[list[VirtualEventExternalInformation]] = Field(default=None,alias="externalEventInformation",)
-	settings: Optional[VirtualEventSettings] = Field(default=None,alias="settings",)
-	startDateTime: Optional[DateTimeTimeZone] = Field(default=None,alias="startDateTime",)
-	status: Optional[VirtualEventStatus] = Field(default=None,alias="status",)
-	presenters: Optional[list[VirtualEventPresenter]] = Field(default=None,alias="presenters",)
-	sessions: Optional[list[VirtualEventSession]] = Field(default=None,alias="sessions",)
-	audience: Optional[MeetingAudience] = Field(default=None,alias="audience",)
-	coOrganizers: Optional[list[CommunicationsUserIdentity]] = Field(default=None,alias="coOrganizers",)
-	invitedAttendees: SerializeAsAny[Optional[list[Identity]]] = Field(default=None,alias="invitedAttendees",)
-	isInviteOnly: Optional[bool] = Field(default=None,alias="isInviteOnly",)
+	id: Optional[str] = Field(alias="id",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	createdBy: Optional[CommunicationsIdentitySet] = Field(alias="createdBy",default=None,)
+	description: Optional[ItemBody] = Field(alias="description",default=None,)
+	displayName: Optional[str] = Field(alias="displayName",default=None,)
+	endDateTime: Optional[DateTimeTimeZone] = Field(alias="endDateTime",default=None,)
+	externalEventInformation: Optional[list[VirtualEventExternalInformation]] = Field(alias="externalEventInformation",default=None,)
+	settings: Optional[VirtualEventSettings] = Field(alias="settings",default=None,)
+	startDateTime: Optional[DateTimeTimeZone] = Field(alias="startDateTime",default=None,)
+	status: Optional[str | VirtualEventStatus] = Field(alias="status",default=None,)
+	presenters: Optional[list[VirtualEventPresenter]] = Field(alias="presenters",default=None,)
+	sessions: Optional[list[VirtualEventSession]] = Field(alias="sessions",default=None,)
+	audience: Optional[str | MeetingAudience] = Field(alias="audience",default=None,)
+	coOrganizers: Optional[list[CommunicationsUserIdentity]] = Field(alias="coOrganizers",default=None,)
+	invitedAttendees: SerializeAsAny[Optional[list[Identity]]] = Field(alias="invitedAttendees",default=None,)
+	isInviteOnly: Optional[bool] = Field(alias="isInviteOnly",default=None,)
 
 from .communications_identity_set import CommunicationsIdentitySet
 from .item_body import ItemBody

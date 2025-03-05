@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class ConnectionStatus(Enum):
+class ConnectionStatus(StrEnum):
 	unknown = "unknown"
 	attempted = "attempted"
 	succeeded = "succeeded"

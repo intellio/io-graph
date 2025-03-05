@@ -4,9 +4,9 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class CustomAppManagementConfiguration(BaseModel):
-	keyCredentials: Optional[list[KeyCredentialConfiguration]] = Field(default=None,alias="keyCredentials",)
-	passwordCredentials: Optional[list[PasswordCredentialConfiguration]] = Field(default=None,alias="passwordCredentials",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
+	keyCredentials: Optional[list[KeyCredentialConfiguration]] = Field(alias="keyCredentials",default=None,)
+	passwordCredentials: Optional[list[PasswordCredentialConfiguration]] = Field(alias="passwordCredentials",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 
 from .key_credential_configuration import KeyCredentialConfiguration
 from .password_credential_configuration import PasswordCredentialConfiguration

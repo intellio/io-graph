@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class AttributeMappingSourceType(Enum):
+class AttributeMappingSourceType(StrEnum):
 	Attribute = "Attribute"
 	Constant = "Constant"
 	Function = "Function"

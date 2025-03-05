@@ -4,7 +4,7 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class PreviewPostRequest(BaseModel):
-	page: Optional[str] = Field(default=None,alias="page",)
+	page: Optional[str] = Field(alias="page",default=None,)
 	zoom: float | str | ReferenceNumeric
 
 from .reference_numeric import ReferenceNumeric

@@ -5,20 +5,20 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class DeviceEnrollmentPlatformRestrictionsConfiguration(BaseModel):
-	id: Optional[str] = Field(default=None,alias="id",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	createdDateTime: Optional[datetime] = Field(default=None,alias="createdDateTime",)
-	description: Optional[str] = Field(default=None,alias="description",)
-	displayName: Optional[str] = Field(default=None,alias="displayName",)
-	lastModifiedDateTime: Optional[datetime] = Field(default=None,alias="lastModifiedDateTime",)
-	priority: Optional[int] = Field(default=None,alias="priority",)
-	version: Optional[int] = Field(default=None,alias="version",)
-	assignments: Optional[list[EnrollmentConfigurationAssignment]] = Field(default=None,alias="assignments",)
-	androidRestriction: Optional[DeviceEnrollmentPlatformRestriction] = Field(default=None,alias="androidRestriction",)
-	iosRestriction: Optional[DeviceEnrollmentPlatformRestriction] = Field(default=None,alias="iosRestriction",)
-	macOSRestriction: Optional[DeviceEnrollmentPlatformRestriction] = Field(default=None,alias="macOSRestriction",)
-	windowsMobileRestriction: Optional[DeviceEnrollmentPlatformRestriction] = Field(default=None,alias="windowsMobileRestriction",)
-	windowsRestriction: Optional[DeviceEnrollmentPlatformRestriction] = Field(default=None,alias="windowsRestriction",)
+	id: Optional[str] = Field(alias="id",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	createdDateTime: Optional[datetime] = Field(alias="createdDateTime",default=None,)
+	description: Optional[str] = Field(alias="description",default=None,)
+	displayName: Optional[str] = Field(alias="displayName",default=None,)
+	lastModifiedDateTime: Optional[datetime] = Field(alias="lastModifiedDateTime",default=None,)
+	priority: Optional[int] = Field(alias="priority",default=None,)
+	version: Optional[int] = Field(alias="version",default=None,)
+	assignments: Optional[list[EnrollmentConfigurationAssignment]] = Field(alias="assignments",default=None,)
+	androidRestriction: Optional[DeviceEnrollmentPlatformRestriction] = Field(alias="androidRestriction",default=None,)
+	iosRestriction: Optional[DeviceEnrollmentPlatformRestriction] = Field(alias="iosRestriction",default=None,)
+	macOSRestriction: Optional[DeviceEnrollmentPlatformRestriction] = Field(alias="macOSRestriction",default=None,)
+	windowsMobileRestriction: Optional[DeviceEnrollmentPlatformRestriction] = Field(alias="windowsMobileRestriction",default=None,)
+	windowsRestriction: Optional[DeviceEnrollmentPlatformRestriction] = Field(alias="windowsRestriction",default=None,)
 
 from .enrollment_configuration_assignment import EnrollmentConfigurationAssignment
 from .device_enrollment_platform_restriction import DeviceEnrollmentPlatformRestriction

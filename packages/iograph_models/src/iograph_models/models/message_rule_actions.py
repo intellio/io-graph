@@ -4,18 +4,18 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class MessageRuleActions(BaseModel):
-	assignCategories: Optional[list[str]] = Field(default=None,alias="assignCategories",)
-	copyToFolder: Optional[str] = Field(default=None,alias="copyToFolder",)
-	delete: Optional[bool] = Field(default=None,alias="delete",)
-	forwardAsAttachmentTo: SerializeAsAny[Optional[list[Recipient]]] = Field(default=None,alias="forwardAsAttachmentTo",)
-	forwardTo: SerializeAsAny[Optional[list[Recipient]]] = Field(default=None,alias="forwardTo",)
-	markAsRead: Optional[bool] = Field(default=None,alias="markAsRead",)
-	markImportance: Optional[Importance] = Field(default=None,alias="markImportance",)
-	moveToFolder: Optional[str] = Field(default=None,alias="moveToFolder",)
-	permanentDelete: Optional[bool] = Field(default=None,alias="permanentDelete",)
-	redirectTo: SerializeAsAny[Optional[list[Recipient]]] = Field(default=None,alias="redirectTo",)
-	stopProcessingRules: Optional[bool] = Field(default=None,alias="stopProcessingRules",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
+	assignCategories: Optional[list[str]] = Field(alias="assignCategories",default=None,)
+	copyToFolder: Optional[str] = Field(alias="copyToFolder",default=None,)
+	delete: Optional[bool] = Field(alias="delete",default=None,)
+	forwardAsAttachmentTo: SerializeAsAny[Optional[list[Recipient]]] = Field(alias="forwardAsAttachmentTo",default=None,)
+	forwardTo: SerializeAsAny[Optional[list[Recipient]]] = Field(alias="forwardTo",default=None,)
+	markAsRead: Optional[bool] = Field(alias="markAsRead",default=None,)
+	markImportance: Optional[str | Importance] = Field(alias="markImportance",default=None,)
+	moveToFolder: Optional[str] = Field(alias="moveToFolder",default=None,)
+	permanentDelete: Optional[bool] = Field(alias="permanentDelete",default=None,)
+	redirectTo: SerializeAsAny[Optional[list[Recipient]]] = Field(alias="redirectTo",default=None,)
+	stopProcessingRules: Optional[bool] = Field(alias="stopProcessingRules",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 
 from .recipient import Recipient
 from .recipient import Recipient

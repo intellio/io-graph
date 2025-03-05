@@ -4,7 +4,7 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class InstantiatePostRequest(BaseModel):
-	displayName: Optional[str] = Field(default=None,alias="displayName",)
-	serviceManagementReference: Optional[str] = Field(default=None,alias="serviceManagementReference",)
+	displayName: Optional[str] = Field(alias="displayName",default=None,)
+	serviceManagementReference: Optional[str] = Field(alias="serviceManagementReference",default=None,)
 
 

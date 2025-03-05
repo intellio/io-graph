@@ -4,10 +4,10 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class ExternalConnectorsConnectionOperation(BaseModel):
-	id: Optional[str] = Field(default=None,alias="id",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	error: Optional[PublicError] = Field(default=None,alias="error",)
-	status: Optional[ExternalConnectorsConnectionOperationStatus] = Field(default=None,alias="status",)
+	id: Optional[str] = Field(alias="id",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	error: Optional[PublicError] = Field(alias="error",default=None,)
+	status: Optional[str | ExternalConnectorsConnectionOperationStatus] = Field(alias="status",default=None,)
 
 from .public_error import PublicError
 from .external_connectors_connection_operation_status import ExternalConnectorsConnectionOperationStatus

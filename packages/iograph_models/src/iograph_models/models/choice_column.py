@@ -4,9 +4,9 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class ChoiceColumn(BaseModel):
-	allowTextEntry: Optional[bool] = Field(default=None,alias="allowTextEntry",)
-	choices: Optional[list[str]] = Field(default=None,alias="choices",)
-	displayAs: Optional[str] = Field(default=None,alias="displayAs",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
+	allowTextEntry: Optional[bool] = Field(alias="allowTextEntry",default=None,)
+	choices: Optional[list[str]] = Field(alias="choices",default=None,)
+	displayAs: Optional[str] = Field(alias="displayAs",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 
 

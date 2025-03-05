@@ -4,14 +4,14 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class Record_responsePostRequest(BaseModel):
-	prompts: SerializeAsAny[Optional[list[Prompt]]] = Field(default=None,alias="prompts",)
-	bargeInAllowed: Optional[bool] = Field(default=None,alias="bargeInAllowed",)
-	initialSilenceTimeoutInSeconds: Optional[int] = Field(default=None,alias="initialSilenceTimeoutInSeconds",)
-	maxSilenceTimeoutInSeconds: Optional[int] = Field(default=None,alias="maxSilenceTimeoutInSeconds",)
-	maxRecordDurationInSeconds: Optional[int] = Field(default=None,alias="maxRecordDurationInSeconds",)
-	playBeep: Optional[bool] = Field(default=None,alias="playBeep",)
-	stopTones: Optional[list[str]] = Field(default=None,alias="stopTones",)
-	clientContext: Optional[str] = Field(default=None,alias="clientContext",)
+	prompts: SerializeAsAny[Optional[list[Prompt]]] = Field(alias="prompts",default=None,)
+	bargeInAllowed: Optional[bool] = Field(alias="bargeInAllowed",default=None,)
+	initialSilenceTimeoutInSeconds: Optional[int] = Field(alias="initialSilenceTimeoutInSeconds",default=None,)
+	maxSilenceTimeoutInSeconds: Optional[int] = Field(alias="maxSilenceTimeoutInSeconds",default=None,)
+	maxRecordDurationInSeconds: Optional[int] = Field(alias="maxRecordDurationInSeconds",default=None,)
+	playBeep: Optional[bool] = Field(alias="playBeep",default=None,)
+	stopTones: Optional[list[str]] = Field(alias="stopTones",default=None,)
+	clientContext: Optional[str] = Field(alias="clientContext",default=None,)
 
 from .prompt import Prompt
 

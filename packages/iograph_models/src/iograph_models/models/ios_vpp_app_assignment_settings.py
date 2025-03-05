@@ -4,8 +4,8 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class IosVppAppAssignmentSettings(BaseModel):
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	useDeviceLicensing: Optional[bool] = Field(default=None,alias="useDeviceLicensing",)
-	vpnConfigurationId: Optional[str] = Field(default=None,alias="vpnConfigurationId",)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	useDeviceLicensing: Optional[bool] = Field(alias="useDeviceLicensing",default=None,)
+	vpnConfigurationId: Optional[str] = Field(alias="vpnConfigurationId",default=None,)
 
 

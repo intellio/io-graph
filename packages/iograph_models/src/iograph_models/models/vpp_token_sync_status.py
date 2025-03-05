@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class VppTokenSyncStatus(Enum):
+class VppTokenSyncStatus(StrEnum):
 	none = "none"
 	inProgress = "inProgress"
 	completed = "completed"

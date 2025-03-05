@@ -4,7 +4,7 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class FileStorageContainerViewpoint(BaseModel):
-	effectiveRole: Optional[str] = Field(default=None,alias="effectiveRole",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
+	effectiveRole: Optional[str] = Field(alias="effectiveRole",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 
 

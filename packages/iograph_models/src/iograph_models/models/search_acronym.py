@@ -5,15 +5,15 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class SearchAcronym(BaseModel):
-	id: Optional[str] = Field(default=None,alias="id",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	description: Optional[str] = Field(default=None,alias="description",)
-	displayName: Optional[str] = Field(default=None,alias="displayName",)
-	lastModifiedBy: Optional[SearchIdentitySet] = Field(default=None,alias="lastModifiedBy",)
-	lastModifiedDateTime: Optional[datetime] = Field(default=None,alias="lastModifiedDateTime",)
-	webUrl: Optional[str] = Field(default=None,alias="webUrl",)
-	standsFor: Optional[str] = Field(default=None,alias="standsFor",)
-	state: Optional[SearchAnswerState] = Field(default=None,alias="state",)
+	id: Optional[str] = Field(alias="id",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	description: Optional[str] = Field(alias="description",default=None,)
+	displayName: Optional[str] = Field(alias="displayName",default=None,)
+	lastModifiedBy: Optional[SearchIdentitySet] = Field(alias="lastModifiedBy",default=None,)
+	lastModifiedDateTime: Optional[datetime] = Field(alias="lastModifiedDateTime",default=None,)
+	webUrl: Optional[str] = Field(alias="webUrl",default=None,)
+	standsFor: Optional[str] = Field(alias="standsFor",default=None,)
+	state: Optional[str | SearchAnswerState] = Field(alias="state",default=None,)
 
 from .search_identity_set import SearchIdentitySet
 from .search_answer_state import SearchAnswerState

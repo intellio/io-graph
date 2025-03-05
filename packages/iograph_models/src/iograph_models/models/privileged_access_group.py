@@ -4,15 +4,15 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class PrivilegedAccessGroup(BaseModel):
-	id: Optional[str] = Field(default=None,alias="id",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	assignmentApprovals: Optional[list[Approval]] = Field(default=None,alias="assignmentApprovals",)
-	assignmentScheduleInstances: Optional[list[PrivilegedAccessGroupAssignmentScheduleInstance]] = Field(default=None,alias="assignmentScheduleInstances",)
-	assignmentScheduleRequests: Optional[list[PrivilegedAccessGroupAssignmentScheduleRequest]] = Field(default=None,alias="assignmentScheduleRequests",)
-	assignmentSchedules: Optional[list[PrivilegedAccessGroupAssignmentSchedule]] = Field(default=None,alias="assignmentSchedules",)
-	eligibilityScheduleInstances: Optional[list[PrivilegedAccessGroupEligibilityScheduleInstance]] = Field(default=None,alias="eligibilityScheduleInstances",)
-	eligibilityScheduleRequests: Optional[list[PrivilegedAccessGroupEligibilityScheduleRequest]] = Field(default=None,alias="eligibilityScheduleRequests",)
-	eligibilitySchedules: Optional[list[PrivilegedAccessGroupEligibilitySchedule]] = Field(default=None,alias="eligibilitySchedules",)
+	id: Optional[str] = Field(alias="id",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	assignmentApprovals: Optional[list[Approval]] = Field(alias="assignmentApprovals",default=None,)
+	assignmentScheduleInstances: Optional[list[PrivilegedAccessGroupAssignmentScheduleInstance]] = Field(alias="assignmentScheduleInstances",default=None,)
+	assignmentScheduleRequests: Optional[list[PrivilegedAccessGroupAssignmentScheduleRequest]] = Field(alias="assignmentScheduleRequests",default=None,)
+	assignmentSchedules: Optional[list[PrivilegedAccessGroupAssignmentSchedule]] = Field(alias="assignmentSchedules",default=None,)
+	eligibilityScheduleInstances: Optional[list[PrivilegedAccessGroupEligibilityScheduleInstance]] = Field(alias="eligibilityScheduleInstances",default=None,)
+	eligibilityScheduleRequests: Optional[list[PrivilegedAccessGroupEligibilityScheduleRequest]] = Field(alias="eligibilityScheduleRequests",default=None,)
+	eligibilitySchedules: Optional[list[PrivilegedAccessGroupEligibilitySchedule]] = Field(alias="eligibilitySchedules",default=None,)
 
 from .approval import Approval
 from .privileged_access_group_assignment_schedule_instance import PrivilegedAccessGroupAssignmentScheduleInstance

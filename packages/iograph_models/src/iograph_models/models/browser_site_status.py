@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class BrowserSiteStatus(Enum):
+class BrowserSiteStatus(StrEnum):
 	published = "published"
 	pendingAdd = "pendingAdd"
 	pendingEdit = "pendingEdit"

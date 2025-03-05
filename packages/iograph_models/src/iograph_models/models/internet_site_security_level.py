@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class InternetSiteSecurityLevel(Enum):
+class InternetSiteSecurityLevel(StrEnum):
 	userDefined = "userDefined"
 	medium = "medium"
 	mediumHigh = "mediumHigh"

@@ -4,7 +4,7 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class PublicClientApplication(BaseModel):
-	redirectUris: Optional[list[str]] = Field(default=None,alias="redirectUris",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
+	redirectUris: Optional[list[str]] = Field(alias="redirectUris",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 
 

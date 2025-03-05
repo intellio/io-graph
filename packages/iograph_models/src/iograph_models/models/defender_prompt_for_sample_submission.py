@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class DefenderPromptForSampleSubmission(Enum):
+class DefenderPromptForSampleSubmission(StrEnum):
 	userDefined = "userDefined"
 	alwaysPrompt = "alwaysPrompt"
 	promptBeforeSendingPersonalData = "promptBeforeSendingPersonalData"

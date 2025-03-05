@@ -4,15 +4,15 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class AccessPackageAssignmentReviewSettings(BaseModel):
-	expirationBehavior: Optional[AccessReviewExpirationBehavior] = Field(default=None,alias="expirationBehavior",)
-	fallbackReviewers: SerializeAsAny[Optional[list[SubjectSet]]] = Field(default=None,alias="fallbackReviewers",)
-	isEnabled: Optional[bool] = Field(default=None,alias="isEnabled",)
-	isRecommendationEnabled: Optional[bool] = Field(default=None,alias="isRecommendationEnabled",)
-	isReviewerJustificationRequired: Optional[bool] = Field(default=None,alias="isReviewerJustificationRequired",)
-	isSelfReview: Optional[bool] = Field(default=None,alias="isSelfReview",)
-	primaryReviewers: SerializeAsAny[Optional[list[SubjectSet]]] = Field(default=None,alias="primaryReviewers",)
-	schedule: Optional[EntitlementManagementSchedule] = Field(default=None,alias="schedule",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
+	expirationBehavior: Optional[str | AccessReviewExpirationBehavior] = Field(alias="expirationBehavior",default=None,)
+	fallbackReviewers: SerializeAsAny[Optional[list[SubjectSet]]] = Field(alias="fallbackReviewers",default=None,)
+	isEnabled: Optional[bool] = Field(alias="isEnabled",default=None,)
+	isRecommendationEnabled: Optional[bool] = Field(alias="isRecommendationEnabled",default=None,)
+	isReviewerJustificationRequired: Optional[bool] = Field(alias="isReviewerJustificationRequired",default=None,)
+	isSelfReview: Optional[bool] = Field(alias="isSelfReview",default=None,)
+	primaryReviewers: SerializeAsAny[Optional[list[SubjectSet]]] = Field(alias="primaryReviewers",default=None,)
+	schedule: Optional[EntitlementManagementSchedule] = Field(alias="schedule",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 
 from .access_review_expiration_behavior import AccessReviewExpirationBehavior
 from .subject_set import SubjectSet

@@ -4,10 +4,10 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class CallRoute(BaseModel):
-	final: SerializeAsAny[Optional[IdentitySet]] = Field(default=None,alias="final",)
-	original: SerializeAsAny[Optional[IdentitySet]] = Field(default=None,alias="original",)
-	routingType: Optional[RoutingType] = Field(default=None,alias="routingType",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
+	final: SerializeAsAny[Optional[IdentitySet]] = Field(alias="final",default=None,)
+	original: SerializeAsAny[Optional[IdentitySet]] = Field(alias="original",default=None,)
+	routingType: Optional[str | RoutingType] = Field(alias="routingType",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 
 from .identity_set import IdentitySet
 from .identity_set import IdentitySet

@@ -4,12 +4,12 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class UserScopeTeamsAppInstallation(BaseModel):
-	id: Optional[str] = Field(default=None,alias="id",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	consentedPermissionSet: Optional[TeamsAppPermissionSet] = Field(default=None,alias="consentedPermissionSet",)
-	teamsApp: Optional[TeamsApp] = Field(default=None,alias="teamsApp",)
-	teamsAppDefinition: Optional[TeamsAppDefinition] = Field(default=None,alias="teamsAppDefinition",)
-	chat: Optional[Chat] = Field(default=None,alias="chat",)
+	id: Optional[str] = Field(alias="id",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	consentedPermissionSet: Optional[TeamsAppPermissionSet] = Field(alias="consentedPermissionSet",default=None,)
+	teamsApp: Optional[TeamsApp] = Field(alias="teamsApp",default=None,)
+	teamsAppDefinition: Optional[TeamsAppDefinition] = Field(alias="teamsAppDefinition",default=None,)
+	chat: Optional[Chat] = Field(alias="chat",default=None,)
 
 from .teams_app_permission_set import TeamsAppPermissionSet
 from .teams_app import TeamsApp

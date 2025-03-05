@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class AgreementAcceptanceState(Enum):
+class AgreementAcceptanceState(StrEnum):
 	accepted = "accepted"
 	declined = "declined"
 	unknownFutureValue = "unknownFutureValue"

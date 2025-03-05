@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class Win32LobAppFileSystemOperationType(Enum):
+class Win32LobAppFileSystemOperationType(StrEnum):
 	notConfigured = "notConfigured"
 	exists = "exists"
 	modifiedDate = "modifiedDate"

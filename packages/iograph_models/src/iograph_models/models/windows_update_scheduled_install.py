@@ -4,9 +4,9 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class WindowsUpdateScheduledInstall(BaseModel):
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	scheduledInstallDay: Optional[WeeklySchedule] = Field(default=None,alias="scheduledInstallDay",)
-	scheduledInstallTime: Optional[str] = Field(default=None,alias="scheduledInstallTime",)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	scheduledInstallDay: Optional[str | WeeklySchedule] = Field(alias="scheduledInstallDay",default=None,)
+	scheduledInstallTime: Optional[str] = Field(alias="scheduledInstallTime",default=None,)
 
 from .weekly_schedule import WeeklySchedule
 

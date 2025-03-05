@@ -4,9 +4,9 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class BookingWorkHours(BaseModel):
-	day: Optional[DayOfWeek] = Field(default=None,alias="day",)
-	timeSlots: Optional[list[BookingWorkTimeSlot]] = Field(default=None,alias="timeSlots",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
+	day: Optional[str | DayOfWeek] = Field(alias="day",default=None,)
+	timeSlots: Optional[list[BookingWorkTimeSlot]] = Field(alias="timeSlots",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 
 from .day_of_week import DayOfWeek
 from .booking_work_time_slot import BookingWorkTimeSlot

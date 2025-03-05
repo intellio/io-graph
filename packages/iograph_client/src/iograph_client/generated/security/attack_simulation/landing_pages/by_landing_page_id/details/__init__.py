@@ -15,8 +15,8 @@ if TYPE_CHECKING:
 	from .by_landing_page_detail_id import ByLandingPageDetailIdRequest
 	from .......request_adapter import HttpxRequestAdapter
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
-from iograph_models.models.landing_page_detail_collection_response import LandingPageDetailCollectionResponse
 from iograph_models.models.landing_page_detail import LandingPageDetail
+from iograph_models.models.landing_page_detail_collection_response import LandingPageDetailCollectionResponse
 
 
 class DetailsRequest(BaseRequestBuilder):

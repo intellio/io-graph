@@ -4,8 +4,8 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class DatePostRequest(BaseModel):
-	year: Optional[str] = Field(default=None,alias="year",)
-	month: Optional[str] = Field(default=None,alias="month",)
-	day: Optional[str] = Field(default=None,alias="day",)
+	year: Optional[str] = Field(alias="year",default=None,)
+	month: Optional[str] = Field(alias="month",default=None,)
+	day: Optional[str] = Field(alias="day",default=None,)
 
 

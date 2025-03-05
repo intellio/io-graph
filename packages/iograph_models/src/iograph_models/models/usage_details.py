@@ -5,8 +5,8 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class UsageDetails(BaseModel):
-	lastAccessedDateTime: Optional[datetime] = Field(default=None,alias="lastAccessedDateTime",)
-	lastModifiedDateTime: Optional[datetime] = Field(default=None,alias="lastModifiedDateTime",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
+	lastAccessedDateTime: Optional[datetime] = Field(alias="lastAccessedDateTime",default=None,)
+	lastModifiedDateTime: Optional[datetime] = Field(alias="lastModifiedDateTime",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 
 

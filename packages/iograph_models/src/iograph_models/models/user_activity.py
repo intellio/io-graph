@@ -5,22 +5,22 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class UserActivity(BaseModel):
-	id: Optional[str] = Field(default=None,alias="id",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	activationUrl: Optional[str] = Field(default=None,alias="activationUrl",)
-	activitySourceHost: Optional[str] = Field(default=None,alias="activitySourceHost",)
-	appActivityId: Optional[str] = Field(default=None,alias="appActivityId",)
-	appDisplayName: Optional[str] = Field(default=None,alias="appDisplayName",)
-	contentInfo: Optional[str] = Field(default=None,alias="contentInfo",)
-	contentUrl: Optional[str] = Field(default=None,alias="contentUrl",)
-	createdDateTime: Optional[datetime] = Field(default=None,alias="createdDateTime",)
-	expirationDateTime: Optional[datetime] = Field(default=None,alias="expirationDateTime",)
-	fallbackUrl: Optional[str] = Field(default=None,alias="fallbackUrl",)
-	lastModifiedDateTime: Optional[datetime] = Field(default=None,alias="lastModifiedDateTime",)
-	status: Optional[Status] = Field(default=None,alias="status",)
-	userTimezone: Optional[str] = Field(default=None,alias="userTimezone",)
-	visualElements: Optional[VisualInfo] = Field(default=None,alias="visualElements",)
-	historyItems: Optional[list[ActivityHistoryItem]] = Field(default=None,alias="historyItems",)
+	id: Optional[str] = Field(alias="id",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	activationUrl: Optional[str] = Field(alias="activationUrl",default=None,)
+	activitySourceHost: Optional[str] = Field(alias="activitySourceHost",default=None,)
+	appActivityId: Optional[str] = Field(alias="appActivityId",default=None,)
+	appDisplayName: Optional[str] = Field(alias="appDisplayName",default=None,)
+	contentInfo: Optional[str] = Field(alias="contentInfo",default=None,)
+	contentUrl: Optional[str] = Field(alias="contentUrl",default=None,)
+	createdDateTime: Optional[datetime] = Field(alias="createdDateTime",default=None,)
+	expirationDateTime: Optional[datetime] = Field(alias="expirationDateTime",default=None,)
+	fallbackUrl: Optional[str] = Field(alias="fallbackUrl",default=None,)
+	lastModifiedDateTime: Optional[datetime] = Field(alias="lastModifiedDateTime",default=None,)
+	status: Optional[str | Status] = Field(alias="status",default=None,)
+	userTimezone: Optional[str] = Field(alias="userTimezone",default=None,)
+	visualElements: Optional[VisualInfo] = Field(alias="visualElements",default=None,)
+	historyItems: Optional[list[ActivityHistoryItem]] = Field(alias="historyItems",default=None,)
 
 from .status import Status
 from .visual_info import VisualInfo

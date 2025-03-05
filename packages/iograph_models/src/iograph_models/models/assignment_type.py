@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class AssignmentType(Enum):
+class AssignmentType(StrEnum):
 	required = "required"
 	recommended = "recommended"
 	unknownFutureValue = "unknownFutureValue"

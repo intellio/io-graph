@@ -5,14 +5,14 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class TemporaryAccessPassAuthenticationMethod(BaseModel):
-	id: Optional[str] = Field(default=None,alias="id",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	createdDateTime: Optional[datetime] = Field(default=None,alias="createdDateTime",)
-	isUsable: Optional[bool] = Field(default=None,alias="isUsable",)
-	isUsableOnce: Optional[bool] = Field(default=None,alias="isUsableOnce",)
-	lifetimeInMinutes: Optional[int] = Field(default=None,alias="lifetimeInMinutes",)
-	methodUsabilityReason: Optional[str] = Field(default=None,alias="methodUsabilityReason",)
-	startDateTime: Optional[datetime] = Field(default=None,alias="startDateTime",)
-	temporaryAccessPass: Optional[str] = Field(default=None,alias="temporaryAccessPass",)
+	id: Optional[str] = Field(alias="id",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	createdDateTime: Optional[datetime] = Field(alias="createdDateTime",default=None,)
+	isUsable: Optional[bool] = Field(alias="isUsable",default=None,)
+	isUsableOnce: Optional[bool] = Field(alias="isUsableOnce",default=None,)
+	lifetimeInMinutes: Optional[int] = Field(alias="lifetimeInMinutes",default=None,)
+	methodUsabilityReason: Optional[str] = Field(alias="methodUsabilityReason",default=None,)
+	startDateTime: Optional[datetime] = Field(alias="startDateTime",default=None,)
+	temporaryAccessPass: Optional[str] = Field(alias="temporaryAccessPass",default=None,)
 
 

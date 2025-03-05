@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class PartnersBillingBillingPeriod(Enum):
+class PartnersBillingBillingPeriod(StrEnum):
 	current = "current"
 	last = "last"
 	unknownFutureValue = "unknownFutureValue"

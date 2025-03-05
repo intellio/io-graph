@@ -4,19 +4,19 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class Invitation(BaseModel):
-	id: Optional[str] = Field(default=None,alias="id",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	invitedUserDisplayName: Optional[str] = Field(default=None,alias="invitedUserDisplayName",)
-	invitedUserEmailAddress: Optional[str] = Field(default=None,alias="invitedUserEmailAddress",)
-	invitedUserMessageInfo: Optional[InvitedUserMessageInfo] = Field(default=None,alias="invitedUserMessageInfo",)
-	invitedUserType: Optional[str] = Field(default=None,alias="invitedUserType",)
-	inviteRedeemUrl: Optional[str] = Field(default=None,alias="inviteRedeemUrl",)
-	inviteRedirectUrl: Optional[str] = Field(default=None,alias="inviteRedirectUrl",)
-	resetRedemption: Optional[bool] = Field(default=None,alias="resetRedemption",)
-	sendInvitationMessage: Optional[bool] = Field(default=None,alias="sendInvitationMessage",)
-	status: Optional[str] = Field(default=None,alias="status",)
-	invitedUser: Optional[User] = Field(default=None,alias="invitedUser",)
-	invitedUserSponsors: SerializeAsAny[Optional[list[DirectoryObject]]] = Field(default=None,alias="invitedUserSponsors",)
+	id: Optional[str] = Field(alias="id",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	invitedUserDisplayName: Optional[str] = Field(alias="invitedUserDisplayName",default=None,)
+	invitedUserEmailAddress: Optional[str] = Field(alias="invitedUserEmailAddress",default=None,)
+	invitedUserMessageInfo: Optional[InvitedUserMessageInfo] = Field(alias="invitedUserMessageInfo",default=None,)
+	invitedUserType: Optional[str] = Field(alias="invitedUserType",default=None,)
+	inviteRedeemUrl: Optional[str] = Field(alias="inviteRedeemUrl",default=None,)
+	inviteRedirectUrl: Optional[str] = Field(alias="inviteRedirectUrl",default=None,)
+	resetRedemption: Optional[bool] = Field(alias="resetRedemption",default=None,)
+	sendInvitationMessage: Optional[bool] = Field(alias="sendInvitationMessage",default=None,)
+	status: Optional[str] = Field(alias="status",default=None,)
+	invitedUser: Optional[User] = Field(alias="invitedUser",default=None,)
+	invitedUserSponsors: SerializeAsAny[Optional[list[DirectoryObject]]] = Field(alias="invitedUserSponsors",default=None,)
 
 from .invited_user_message_info import InvitedUserMessageInfo
 from .user import User

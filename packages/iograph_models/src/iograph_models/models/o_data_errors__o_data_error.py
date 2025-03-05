@@ -4,7 +4,7 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class ODataErrorsODataError(BaseModel):
-	error: Optional[ODataErrorsMainError] = Field(default=None,alias="error",)
+	error: Optional[ODataErrorsMainError] = Field(alias="error",default=None,)
 
 from .o_data_errors__main_error import ODataErrorsMainError
 

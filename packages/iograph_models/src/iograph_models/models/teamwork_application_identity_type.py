@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class TeamworkApplicationIdentityType(Enum):
+class TeamworkApplicationIdentityType(StrEnum):
 	aadApplication = "aadApplication"
 	bot = "bot"
 	tenantBot = "tenantBot"

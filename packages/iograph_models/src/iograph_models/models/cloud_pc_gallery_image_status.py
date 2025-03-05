@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class CloudPcGalleryImageStatus(Enum):
+class CloudPcGalleryImageStatus(StrEnum):
 	supported = "supported"
 	supportedWithWarning = "supportedWithWarning"
 	notSupported = "notSupported"

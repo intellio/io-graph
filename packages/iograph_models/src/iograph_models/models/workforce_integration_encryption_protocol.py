@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class WorkforceIntegrationEncryptionProtocol(Enum):
+class WorkforceIntegrationEncryptionProtocol(StrEnum):
 	sharedSecret = "sharedSecret"
 	unknownFutureValue = "unknownFutureValue"
 

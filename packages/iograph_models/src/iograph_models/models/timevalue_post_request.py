@@ -4,6 +4,6 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class TimevaluePostRequest(BaseModel):
-	timeText: Optional[str] = Field(default=None,alias="timeText",)
+	timeText: Optional[str] = Field(alias="timeText",default=None,)
 
 

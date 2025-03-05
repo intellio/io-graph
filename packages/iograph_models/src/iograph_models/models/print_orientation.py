@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class PrintOrientation(Enum):
+class PrintOrientation(StrEnum):
 	portrait = "portrait"
 	landscape = "landscape"
 	reverseLandscape = "reverseLandscape"

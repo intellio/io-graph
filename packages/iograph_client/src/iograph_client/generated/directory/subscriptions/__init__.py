@@ -15,8 +15,8 @@ if TYPE_CHECKING:
 	from .by_company_subscription_id import ByCompanySubscriptionIdRequest
 	from ....request_adapter import HttpxRequestAdapter
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
-from iograph_models.models.company_subscription_collection_response import CompanySubscriptionCollectionResponse
 from iograph_models.models.company_subscription import CompanySubscription
+from iograph_models.models.company_subscription_collection_response import CompanySubscriptionCollectionResponse
 
 
 class SubscriptionsRequest(BaseRequestBuilder):

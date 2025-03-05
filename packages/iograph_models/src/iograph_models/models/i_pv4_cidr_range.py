@@ -4,7 +4,7 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class IPv4CidrRange(BaseModel):
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	cidrAddress: Optional[str] = Field(default=None,alias="cidrAddress",)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	cidrAddress: Optional[str] = Field(alias="cidrAddress",default=None,)
 
 

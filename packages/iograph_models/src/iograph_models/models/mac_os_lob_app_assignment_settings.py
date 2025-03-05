@@ -4,7 +4,7 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class MacOsLobAppAssignmentSettings(BaseModel):
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	uninstallOnDeviceRemoval: Optional[bool] = Field(default=None,alias="uninstallOnDeviceRemoval",)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	uninstallOnDeviceRemoval: Optional[bool] = Field(alias="uninstallOnDeviceRemoval",default=None,)
 
 

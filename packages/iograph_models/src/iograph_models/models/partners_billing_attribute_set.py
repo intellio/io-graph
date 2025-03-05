@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class PartnersBillingAttributeSet(Enum):
+class PartnersBillingAttributeSet(StrEnum):
 	full = "full"
 	basic = "basic"
 	unknownFutureValue = "unknownFutureValue"

@@ -4,14 +4,14 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class TodoTaskList(BaseModel):
-	id: Optional[str] = Field(default=None,alias="id",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	displayName: Optional[str] = Field(default=None,alias="displayName",)
-	isOwner: Optional[bool] = Field(default=None,alias="isOwner",)
-	isShared: Optional[bool] = Field(default=None,alias="isShared",)
-	wellknownListName: Optional[WellknownListName] = Field(default=None,alias="wellknownListName",)
-	extensions: SerializeAsAny[Optional[list[Extension]]] = Field(default=None,alias="extensions",)
-	tasks: Optional[list[TodoTask]] = Field(default=None,alias="tasks",)
+	id: Optional[str] = Field(alias="id",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	displayName: Optional[str] = Field(alias="displayName",default=None,)
+	isOwner: Optional[bool] = Field(alias="isOwner",default=None,)
+	isShared: Optional[bool] = Field(alias="isShared",default=None,)
+	wellknownListName: Optional[str | WellknownListName] = Field(alias="wellknownListName",default=None,)
+	extensions: SerializeAsAny[Optional[list[Extension]]] = Field(alias="extensions",default=None,)
+	tasks: Optional[list[TodoTask]] = Field(alias="tasks",default=None,)
 
 from .wellknown_list_name import WellknownListName
 from .extension import Extension

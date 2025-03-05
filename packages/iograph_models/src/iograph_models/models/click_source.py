@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class ClickSource(Enum):
+class ClickSource(StrEnum):
 	unknown = "unknown"
 	qrCode = "qrCode"
 	phishingUrl = "phishingUrl"

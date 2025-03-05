@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class OperationResult(Enum):
+class OperationResult(StrEnum):
 	success = "success"
 	failure = "failure"
 	timeout = "timeout"

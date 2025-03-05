@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class ChatType(Enum):
+class ChatType(StrEnum):
 	oneOnOne = "oneOnOne"
 	group = "group"
 	meeting = "meeting"

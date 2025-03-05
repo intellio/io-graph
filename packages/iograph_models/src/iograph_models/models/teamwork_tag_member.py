@@ -4,10 +4,10 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class TeamworkTagMember(BaseModel):
-	id: Optional[str] = Field(default=None,alias="id",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	displayName: Optional[str] = Field(default=None,alias="displayName",)
-	tenantId: Optional[str] = Field(default=None,alias="tenantId",)
-	userId: Optional[str] = Field(default=None,alias="userId",)
+	id: Optional[str] = Field(alias="id",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	displayName: Optional[str] = Field(alias="displayName",default=None,)
+	tenantId: Optional[str] = Field(alias="tenantId",default=None,)
+	userId: Optional[str] = Field(alias="userId",default=None,)
 
 

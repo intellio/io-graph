@@ -4,9 +4,9 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class CertificateBasedAuthConfiguration(BaseModel):
-	id: Optional[str] = Field(default=None,alias="id",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	certificateAuthorities: Optional[list[CertificateAuthority]] = Field(default=None,alias="certificateAuthorities",)
+	id: Optional[str] = Field(alias="id",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	certificateAuthorities: Optional[list[CertificateAuthority]] = Field(alias="certificateAuthorities",default=None,)
 
 from .certificate_authority import CertificateAuthority
 

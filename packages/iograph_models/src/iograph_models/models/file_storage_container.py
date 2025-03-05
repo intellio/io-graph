@@ -6,20 +6,20 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class FileStorageContainer(BaseModel):
-	id: Optional[str] = Field(default=None,alias="id",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	containerTypeId: Optional[UUID] = Field(default=None,alias="containerTypeId",)
-	createdDateTime: Optional[datetime] = Field(default=None,alias="createdDateTime",)
-	customProperties: Optional[FileStorageContainerCustomPropertyDictionary] = Field(default=None,alias="customProperties",)
-	description: Optional[str] = Field(default=None,alias="description",)
-	displayName: Optional[str] = Field(default=None,alias="displayName",)
-	lockState: Optional[SiteLockState] = Field(default=None,alias="lockState",)
-	settings: Optional[FileStorageContainerSettings] = Field(default=None,alias="settings",)
-	status: Optional[FileStorageContainerStatus] = Field(default=None,alias="status",)
-	viewpoint: Optional[FileStorageContainerViewpoint] = Field(default=None,alias="viewpoint",)
-	drive: Optional[Drive] = Field(default=None,alias="drive",)
-	permissions: Optional[list[Permission]] = Field(default=None,alias="permissions",)
-	recycleBin: Optional[RecycleBin] = Field(default=None,alias="recycleBin",)
+	id: Optional[str] = Field(alias="id",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	containerTypeId: Optional[UUID] = Field(alias="containerTypeId",default=None,)
+	createdDateTime: Optional[datetime] = Field(alias="createdDateTime",default=None,)
+	customProperties: Optional[FileStorageContainerCustomPropertyDictionary] = Field(alias="customProperties",default=None,)
+	description: Optional[str] = Field(alias="description",default=None,)
+	displayName: Optional[str] = Field(alias="displayName",default=None,)
+	lockState: Optional[str | SiteLockState] = Field(alias="lockState",default=None,)
+	settings: Optional[FileStorageContainerSettings] = Field(alias="settings",default=None,)
+	status: Optional[str | FileStorageContainerStatus] = Field(alias="status",default=None,)
+	viewpoint: Optional[FileStorageContainerViewpoint] = Field(alias="viewpoint",default=None,)
+	drive: Optional[Drive] = Field(alias="drive",default=None,)
+	permissions: Optional[list[Permission]] = Field(alias="permissions",default=None,)
+	recycleBin: Optional[RecycleBin] = Field(alias="recycleBin",default=None,)
 
 from .file_storage_container_custom_property_dictionary import FileStorageContainerCustomPropertyDictionary
 from .site_lock_state import SiteLockState

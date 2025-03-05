@@ -5,12 +5,12 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class EducationPointsOutcome(BaseModel):
-	id: Optional[str] = Field(default=None,alias="id",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	lastModifiedBy: SerializeAsAny[Optional[IdentitySet]] = Field(default=None,alias="lastModifiedBy",)
-	lastModifiedDateTime: Optional[datetime] = Field(default=None,alias="lastModifiedDateTime",)
-	points: Optional[EducationAssignmentPointsGrade] = Field(default=None,alias="points",)
-	publishedPoints: Optional[EducationAssignmentPointsGrade] = Field(default=None,alias="publishedPoints",)
+	id: Optional[str] = Field(alias="id",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	lastModifiedBy: SerializeAsAny[Optional[IdentitySet]] = Field(alias="lastModifiedBy",default=None,)
+	lastModifiedDateTime: Optional[datetime] = Field(alias="lastModifiedDateTime",default=None,)
+	points: Optional[EducationAssignmentPointsGrade] = Field(alias="points",default=None,)
+	publishedPoints: Optional[EducationAssignmentPointsGrade] = Field(alias="publishedPoints",default=None,)
 
 from .identity_set import IdentitySet
 from .education_assignment_points_grade import EducationAssignmentPointsGrade

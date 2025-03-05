@@ -4,16 +4,16 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class MailboxSettings(BaseModel):
-	archiveFolder: Optional[str] = Field(default=None,alias="archiveFolder",)
-	automaticRepliesSetting: Optional[AutomaticRepliesSetting] = Field(default=None,alias="automaticRepliesSetting",)
-	dateFormat: Optional[str] = Field(default=None,alias="dateFormat",)
-	delegateMeetingMessageDeliveryOptions: Optional[DelegateMeetingMessageDeliveryOptions] = Field(default=None,alias="delegateMeetingMessageDeliveryOptions",)
-	language: Optional[LocaleInfo] = Field(default=None,alias="language",)
-	timeFormat: Optional[str] = Field(default=None,alias="timeFormat",)
-	timeZone: Optional[str] = Field(default=None,alias="timeZone",)
-	userPurpose: Optional[UserPurpose] = Field(default=None,alias="userPurpose",)
-	workingHours: Optional[WorkingHours] = Field(default=None,alias="workingHours",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
+	archiveFolder: Optional[str] = Field(alias="archiveFolder",default=None,)
+	automaticRepliesSetting: Optional[AutomaticRepliesSetting] = Field(alias="automaticRepliesSetting",default=None,)
+	dateFormat: Optional[str] = Field(alias="dateFormat",default=None,)
+	delegateMeetingMessageDeliveryOptions: Optional[str | DelegateMeetingMessageDeliveryOptions] = Field(alias="delegateMeetingMessageDeliveryOptions",default=None,)
+	language: Optional[LocaleInfo] = Field(alias="language",default=None,)
+	timeFormat: Optional[str] = Field(alias="timeFormat",default=None,)
+	timeZone: Optional[str] = Field(alias="timeZone",default=None,)
+	userPurpose: Optional[str | UserPurpose] = Field(alias="userPurpose",default=None,)
+	workingHours: Optional[WorkingHours] = Field(alias="workingHours",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 
 from .automatic_replies_setting import AutomaticRepliesSetting
 from .delegate_meeting_message_delivery_options import DelegateMeetingMessageDeliveryOptions

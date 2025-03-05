@@ -5,17 +5,17 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class ExchangeProtectionPolicy(BaseModel):
-	id: Optional[str] = Field(default=None,alias="id",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	createdBy: SerializeAsAny[Optional[IdentitySet]] = Field(default=None,alias="createdBy",)
-	createdDateTime: Optional[datetime] = Field(default=None,alias="createdDateTime",)
-	displayName: Optional[str] = Field(default=None,alias="displayName",)
-	lastModifiedBy: SerializeAsAny[Optional[IdentitySet]] = Field(default=None,alias="lastModifiedBy",)
-	lastModifiedDateTime: Optional[datetime] = Field(default=None,alias="lastModifiedDateTime",)
-	retentionSettings: Optional[list[RetentionSetting]] = Field(default=None,alias="retentionSettings",)
-	status: Optional[ProtectionPolicyStatus] = Field(default=None,alias="status",)
-	mailboxInclusionRules: Optional[list[MailboxProtectionRule]] = Field(default=None,alias="mailboxInclusionRules",)
-	mailboxProtectionUnits: Optional[list[MailboxProtectionUnit]] = Field(default=None,alias="mailboxProtectionUnits",)
+	id: Optional[str] = Field(alias="id",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	createdBy: SerializeAsAny[Optional[IdentitySet]] = Field(alias="createdBy",default=None,)
+	createdDateTime: Optional[datetime] = Field(alias="createdDateTime",default=None,)
+	displayName: Optional[str] = Field(alias="displayName",default=None,)
+	lastModifiedBy: SerializeAsAny[Optional[IdentitySet]] = Field(alias="lastModifiedBy",default=None,)
+	lastModifiedDateTime: Optional[datetime] = Field(alias="lastModifiedDateTime",default=None,)
+	retentionSettings: Optional[list[RetentionSetting]] = Field(alias="retentionSettings",default=None,)
+	status: Optional[str | ProtectionPolicyStatus] = Field(alias="status",default=None,)
+	mailboxInclusionRules: Optional[list[MailboxProtectionRule]] = Field(alias="mailboxInclusionRules",default=None,)
+	mailboxProtectionUnits: Optional[list[MailboxProtectionUnit]] = Field(alias="mailboxProtectionUnits",default=None,)
 
 from .identity_set import IdentitySet
 from .identity_set import IdentitySet

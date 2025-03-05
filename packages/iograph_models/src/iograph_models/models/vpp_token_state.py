@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class VppTokenState(Enum):
+class VppTokenState(StrEnum):
 	unknown = "unknown"
 	valid = "valid"
 	expired = "expired"

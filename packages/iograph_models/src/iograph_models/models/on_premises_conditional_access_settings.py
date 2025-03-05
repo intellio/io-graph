@@ -5,11 +5,11 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class OnPremisesConditionalAccessSettings(BaseModel):
-	id: Optional[str] = Field(default=None,alias="id",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	enabled: Optional[bool] = Field(default=None,alias="enabled",)
-	excludedGroups: Optional[list[UUID]] = Field(default=None,alias="excludedGroups",)
-	includedGroups: Optional[list[UUID]] = Field(default=None,alias="includedGroups",)
-	overrideDefaultRule: Optional[bool] = Field(default=None,alias="overrideDefaultRule",)
+	id: Optional[str] = Field(alias="id",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	enabled: Optional[bool] = Field(alias="enabled",default=None,)
+	excludedGroups: Optional[list[UUID]] = Field(alias="excludedGroups",default=None,)
+	includedGroups: Optional[list[UUID]] = Field(alias="includedGroups",default=None,)
+	overrideDefaultRule: Optional[bool] = Field(alias="overrideDefaultRule",default=None,)
 
 

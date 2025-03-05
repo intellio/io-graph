@@ -5,12 +5,12 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class TelecomExpenseManagementPartner(BaseModel):
-	id: Optional[str] = Field(default=None,alias="id",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	appAuthorized: Optional[bool] = Field(default=None,alias="appAuthorized",)
-	displayName: Optional[str] = Field(default=None,alias="displayName",)
-	enabled: Optional[bool] = Field(default=None,alias="enabled",)
-	lastConnectionDateTime: Optional[datetime] = Field(default=None,alias="lastConnectionDateTime",)
-	url: Optional[str] = Field(default=None,alias="url",)
+	id: Optional[str] = Field(alias="id",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	appAuthorized: Optional[bool] = Field(alias="appAuthorized",default=None,)
+	displayName: Optional[str] = Field(alias="displayName",default=None,)
+	enabled: Optional[bool] = Field(alias="enabled",default=None,)
+	lastConnectionDateTime: Optional[datetime] = Field(alias="lastConnectionDateTime",default=None,)
+	url: Optional[str] = Field(alias="url",default=None,)
 
 

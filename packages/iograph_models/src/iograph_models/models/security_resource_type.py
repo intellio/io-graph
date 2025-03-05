@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class SecurityResourceType(Enum):
+class SecurityResourceType(StrEnum):
 	unknown = "unknown"
 	attacked = "attacked"
 	related = "related"

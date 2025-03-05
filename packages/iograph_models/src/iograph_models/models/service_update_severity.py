@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class ServiceUpdateSeverity(Enum):
+class ServiceUpdateSeverity(StrEnum):
 	normal = "normal"
 	high = "high"
 	critical = "critical"

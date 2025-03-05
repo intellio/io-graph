@@ -5,14 +5,14 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class MultiTenantOrganization(BaseModel):
-	id: Optional[str] = Field(default=None,alias="id",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	createdDateTime: Optional[datetime] = Field(default=None,alias="createdDateTime",)
-	description: Optional[str] = Field(default=None,alias="description",)
-	displayName: Optional[str] = Field(default=None,alias="displayName",)
-	state: Optional[MultiTenantOrganizationState] = Field(default=None,alias="state",)
-	joinRequest: Optional[MultiTenantOrganizationJoinRequestRecord] = Field(default=None,alias="joinRequest",)
-	tenants: Optional[list[MultiTenantOrganizationMember]] = Field(default=None,alias="tenants",)
+	id: Optional[str] = Field(alias="id",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	createdDateTime: Optional[datetime] = Field(alias="createdDateTime",default=None,)
+	description: Optional[str] = Field(alias="description",default=None,)
+	displayName: Optional[str] = Field(alias="displayName",default=None,)
+	state: Optional[str | MultiTenantOrganizationState] = Field(alias="state",default=None,)
+	joinRequest: Optional[MultiTenantOrganizationJoinRequestRecord] = Field(alias="joinRequest",default=None,)
+	tenants: Optional[list[MultiTenantOrganizationMember]] = Field(alias="tenants",default=None,)
 
 from .multi_tenant_organization_state import MultiTenantOrganizationState
 from .multi_tenant_organization_join_request_record import MultiTenantOrganizationJoinRequestRecord

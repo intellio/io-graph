@@ -4,7 +4,7 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class CombinaPostRequest(BaseModel):
-	number: Optional[str] = Field(default=None,alias="number",)
-	numberChosen: Optional[str] = Field(default=None,alias="numberChosen",)
+	number: Optional[str] = Field(alias="number",default=None,)
+	numberChosen: Optional[str] = Field(alias="numberChosen",default=None,)
 
 

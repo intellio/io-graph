@@ -4,15 +4,15 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class B2xIdentityUserFlow(BaseModel):
-	id: Optional[str] = Field(default=None,alias="id",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	userFlowType: Optional[UserFlowType] = Field(default=None,alias="userFlowType",)
+	id: Optional[str] = Field(alias="id",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	userFlowType: Optional[str | UserFlowType] = Field(alias="userFlowType",default=None,)
 	userFlowTypeVersion: float | str | ReferenceNumeric
-	apiConnectorConfiguration: Optional[UserFlowApiConnectorConfiguration] = Field(default=None,alias="apiConnectorConfiguration",)
-	identityProviders: Optional[list[IdentityProvider]] = Field(default=None,alias="identityProviders",)
-	languages: Optional[list[UserFlowLanguageConfiguration]] = Field(default=None,alias="languages",)
-	userAttributeAssignments: Optional[list[IdentityUserFlowAttributeAssignment]] = Field(default=None,alias="userAttributeAssignments",)
-	userFlowIdentityProviders: SerializeAsAny[Optional[list[IdentityProviderBase]]] = Field(default=None,alias="userFlowIdentityProviders",)
+	apiConnectorConfiguration: Optional[UserFlowApiConnectorConfiguration] = Field(alias="apiConnectorConfiguration",default=None,)
+	identityProviders: Optional[list[IdentityProvider]] = Field(alias="identityProviders",default=None,)
+	languages: Optional[list[UserFlowLanguageConfiguration]] = Field(alias="languages",default=None,)
+	userAttributeAssignments: Optional[list[IdentityUserFlowAttributeAssignment]] = Field(alias="userAttributeAssignments",default=None,)
+	userFlowIdentityProviders: SerializeAsAny[Optional[list[IdentityProviderBase]]] = Field(alias="userFlowIdentityProviders",default=None,)
 
 from .user_flow_type import UserFlowType
 from .reference_numeric import ReferenceNumeric

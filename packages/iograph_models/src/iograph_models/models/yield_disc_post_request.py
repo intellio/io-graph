@@ -4,10 +4,10 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class Yield_discPostRequest(BaseModel):
-	settlement: Optional[str] = Field(default=None,alias="settlement",)
-	maturity: Optional[str] = Field(default=None,alias="maturity",)
-	pr: Optional[str] = Field(default=None,alias="pr",)
-	redemption: Optional[str] = Field(default=None,alias="redemption",)
-	basis: Optional[str] = Field(default=None,alias="basis",)
+	settlement: Optional[str] = Field(alias="settlement",default=None,)
+	maturity: Optional[str] = Field(alias="maturity",default=None,)
+	pr: Optional[str] = Field(alias="pr",default=None,)
+	redemption: Optional[str] = Field(alias="redemption",default=None,)
+	basis: Optional[str] = Field(alias="basis",default=None,)
 
 

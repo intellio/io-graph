@@ -4,11 +4,11 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class ServicePrincipalLockConfiguration(BaseModel):
-	allProperties: Optional[bool] = Field(default=None,alias="allProperties",)
-	credentialsWithUsageSign: Optional[bool] = Field(default=None,alias="credentialsWithUsageSign",)
-	credentialsWithUsageVerify: Optional[bool] = Field(default=None,alias="credentialsWithUsageVerify",)
-	isEnabled: Optional[bool] = Field(default=None,alias="isEnabled",)
-	tokenEncryptionKeyId: Optional[bool] = Field(default=None,alias="tokenEncryptionKeyId",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
+	allProperties: Optional[bool] = Field(alias="allProperties",default=None,)
+	credentialsWithUsageSign: Optional[bool] = Field(alias="credentialsWithUsageSign",default=None,)
+	credentialsWithUsageVerify: Optional[bool] = Field(alias="credentialsWithUsageVerify",default=None,)
+	isEnabled: Optional[bool] = Field(alias="isEnabled",default=None,)
+	tokenEncryptionKeyId: Optional[bool] = Field(alias="tokenEncryptionKeyId",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 
 

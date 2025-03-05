@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class SiteLockState(Enum):
+class SiteLockState(StrEnum):
 	unlocked = "unlocked"
 	lockedReadOnly = "lockedReadOnly"
 	lockedNoAccess = "lockedNoAccess"

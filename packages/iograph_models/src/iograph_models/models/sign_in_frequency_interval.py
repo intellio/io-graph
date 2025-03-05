@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class SignInFrequencyInterval(Enum):
+class SignInFrequencyInterval(StrEnum):
 	timeBased = "timeBased"
 	everyTime = "everyTime"
 	unknownFutureValue = "unknownFutureValue"

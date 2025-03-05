@@ -5,10 +5,10 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class WindowsInformationProtectionDataRecoveryCertificate(BaseModel):
-	certificate: Optional[str] = Field(default=None,alias="certificate",)
-	description: Optional[str] = Field(default=None,alias="description",)
-	expirationDateTime: Optional[datetime] = Field(default=None,alias="expirationDateTime",)
-	subjectName: Optional[str] = Field(default=None,alias="subjectName",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
+	certificate: Optional[str] = Field(alias="certificate",default=None,)
+	description: Optional[str] = Field(alias="description",default=None,)
+	expirationDateTime: Optional[datetime] = Field(alias="expirationDateTime",default=None,)
+	subjectName: Optional[str] = Field(alias="subjectName",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 
 

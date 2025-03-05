@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class DeviceManagementExchangeConnectorType(Enum):
+class DeviceManagementExchangeConnectorType(StrEnum):
 	onPremises = "onPremises"
 	hosted = "hosted"
 	serviceToService = "serviceToService"

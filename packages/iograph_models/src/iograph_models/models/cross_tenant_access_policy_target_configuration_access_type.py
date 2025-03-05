@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class CrossTenantAccessPolicyTargetConfigurationAccessType(Enum):
+class CrossTenantAccessPolicyTargetConfigurationAccessType(StrEnum):
 	allowed = "allowed"
 	blocked = "blocked"
 	unknownFutureValue = "unknownFutureValue"

@@ -5,18 +5,18 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class BrowserSiteList(BaseModel):
-	id: Optional[str] = Field(default=None,alias="id",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	description: Optional[str] = Field(default=None,alias="description",)
-	displayName: Optional[str] = Field(default=None,alias="displayName",)
-	lastModifiedBy: SerializeAsAny[Optional[IdentitySet]] = Field(default=None,alias="lastModifiedBy",)
-	lastModifiedDateTime: Optional[datetime] = Field(default=None,alias="lastModifiedDateTime",)
-	publishedBy: SerializeAsAny[Optional[IdentitySet]] = Field(default=None,alias="publishedBy",)
-	publishedDateTime: Optional[datetime] = Field(default=None,alias="publishedDateTime",)
-	revision: Optional[str] = Field(default=None,alias="revision",)
-	status: Optional[BrowserSiteListStatus] = Field(default=None,alias="status",)
-	sharedCookies: Optional[list[BrowserSharedCookie]] = Field(default=None,alias="sharedCookies",)
-	sites: Optional[list[BrowserSite]] = Field(default=None,alias="sites",)
+	id: Optional[str] = Field(alias="id",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	description: Optional[str] = Field(alias="description",default=None,)
+	displayName: Optional[str] = Field(alias="displayName",default=None,)
+	lastModifiedBy: SerializeAsAny[Optional[IdentitySet]] = Field(alias="lastModifiedBy",default=None,)
+	lastModifiedDateTime: Optional[datetime] = Field(alias="lastModifiedDateTime",default=None,)
+	publishedBy: SerializeAsAny[Optional[IdentitySet]] = Field(alias="publishedBy",default=None,)
+	publishedDateTime: Optional[datetime] = Field(alias="publishedDateTime",default=None,)
+	revision: Optional[str] = Field(alias="revision",default=None,)
+	status: Optional[str | BrowserSiteListStatus] = Field(alias="status",default=None,)
+	sharedCookies: Optional[list[BrowserSharedCookie]] = Field(alias="sharedCookies",default=None,)
+	sites: Optional[list[BrowserSite]] = Field(alias="sites",default=None,)
 
 from .identity_set import IdentitySet
 from .identity_set import IdentitySet

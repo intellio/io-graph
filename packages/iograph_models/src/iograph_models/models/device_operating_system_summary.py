@@ -4,18 +4,18 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class DeviceOperatingSystemSummary(BaseModel):
-	androidCorporateWorkProfileCount: Optional[int] = Field(default=None,alias="androidCorporateWorkProfileCount",)
-	androidCount: Optional[int] = Field(default=None,alias="androidCount",)
-	androidDedicatedCount: Optional[int] = Field(default=None,alias="androidDedicatedCount",)
-	androidDeviceAdminCount: Optional[int] = Field(default=None,alias="androidDeviceAdminCount",)
-	androidFullyManagedCount: Optional[int] = Field(default=None,alias="androidFullyManagedCount",)
-	androidWorkProfileCount: Optional[int] = Field(default=None,alias="androidWorkProfileCount",)
-	configMgrDeviceCount: Optional[int] = Field(default=None,alias="configMgrDeviceCount",)
-	iosCount: Optional[int] = Field(default=None,alias="iosCount",)
-	macOSCount: Optional[int] = Field(default=None,alias="macOSCount",)
-	unknownCount: Optional[int] = Field(default=None,alias="unknownCount",)
-	windowsCount: Optional[int] = Field(default=None,alias="windowsCount",)
-	windowsMobileCount: Optional[int] = Field(default=None,alias="windowsMobileCount",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
+	androidCorporateWorkProfileCount: Optional[int] = Field(alias="androidCorporateWorkProfileCount",default=None,)
+	androidCount: Optional[int] = Field(alias="androidCount",default=None,)
+	androidDedicatedCount: Optional[int] = Field(alias="androidDedicatedCount",default=None,)
+	androidDeviceAdminCount: Optional[int] = Field(alias="androidDeviceAdminCount",default=None,)
+	androidFullyManagedCount: Optional[int] = Field(alias="androidFullyManagedCount",default=None,)
+	androidWorkProfileCount: Optional[int] = Field(alias="androidWorkProfileCount",default=None,)
+	configMgrDeviceCount: Optional[int] = Field(alias="configMgrDeviceCount",default=None,)
+	iosCount: Optional[int] = Field(alias="iosCount",default=None,)
+	macOSCount: Optional[int] = Field(alias="macOSCount",default=None,)
+	unknownCount: Optional[int] = Field(alias="unknownCount",default=None,)
+	windowsCount: Optional[int] = Field(alias="windowsCount",default=None,)
+	windowsMobileCount: Optional[int] = Field(alias="windowsMobileCount",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 
 

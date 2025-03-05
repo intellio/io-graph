@@ -4,11 +4,11 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class SearchEntity(BaseModel):
-	id: Optional[str] = Field(default=None,alias="id",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	acronyms: Optional[list[SearchAcronym]] = Field(default=None,alias="acronyms",)
-	bookmarks: Optional[list[SearchBookmark]] = Field(default=None,alias="bookmarks",)
-	qnas: Optional[list[SearchQna]] = Field(default=None,alias="qnas",)
+	id: Optional[str] = Field(alias="id",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	acronyms: Optional[list[SearchAcronym]] = Field(alias="acronyms",default=None,)
+	bookmarks: Optional[list[SearchBookmark]] = Field(alias="bookmarks",default=None,)
+	qnas: Optional[list[SearchQna]] = Field(alias="qnas",default=None,)
 
 from .search_acronym import SearchAcronym
 from .search_bookmark import SearchBookmark

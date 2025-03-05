@@ -4,7 +4,7 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class RestartPostRequest(BaseModel):
-	criteria: Optional[SynchronizationJobRestartCriteria] = Field(default=None,alias="criteria",)
+	criteria: Optional[SynchronizationJobRestartCriteria] = Field(alias="criteria",default=None,)
 
 from .synchronization_job_restart_criteria import SynchronizationJobRestartCriteria
 

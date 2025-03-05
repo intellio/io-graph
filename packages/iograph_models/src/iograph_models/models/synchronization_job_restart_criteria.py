@@ -4,8 +4,8 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class SynchronizationJobRestartCriteria(BaseModel):
-	resetScope: Optional[SynchronizationJobRestartScope] = Field(default=None,alias="resetScope",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
+	resetScope: Optional[str | SynchronizationJobRestartScope] = Field(alias="resetScope",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 
 from .synchronization_job_restart_scope import SynchronizationJobRestartScope
 

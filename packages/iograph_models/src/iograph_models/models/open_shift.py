@@ -5,16 +5,16 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class OpenShift(BaseModel):
-	id: Optional[str] = Field(default=None,alias="id",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	createdBy: SerializeAsAny[Optional[IdentitySet]] = Field(default=None,alias="createdBy",)
-	createdDateTime: Optional[datetime] = Field(default=None,alias="createdDateTime",)
-	lastModifiedBy: SerializeAsAny[Optional[IdentitySet]] = Field(default=None,alias="lastModifiedBy",)
-	lastModifiedDateTime: Optional[datetime] = Field(default=None,alias="lastModifiedDateTime",)
-	draftOpenShift: Optional[OpenShiftItem] = Field(default=None,alias="draftOpenShift",)
-	isStagedForDeletion: Optional[bool] = Field(default=None,alias="isStagedForDeletion",)
-	schedulingGroupId: Optional[str] = Field(default=None,alias="schedulingGroupId",)
-	sharedOpenShift: Optional[OpenShiftItem] = Field(default=None,alias="sharedOpenShift",)
+	id: Optional[str] = Field(alias="id",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	createdBy: SerializeAsAny[Optional[IdentitySet]] = Field(alias="createdBy",default=None,)
+	createdDateTime: Optional[datetime] = Field(alias="createdDateTime",default=None,)
+	lastModifiedBy: SerializeAsAny[Optional[IdentitySet]] = Field(alias="lastModifiedBy",default=None,)
+	lastModifiedDateTime: Optional[datetime] = Field(alias="lastModifiedDateTime",default=None,)
+	draftOpenShift: Optional[OpenShiftItem] = Field(alias="draftOpenShift",default=None,)
+	isStagedForDeletion: Optional[bool] = Field(alias="isStagedForDeletion",default=None,)
+	schedulingGroupId: Optional[str] = Field(alias="schedulingGroupId",default=None,)
+	sharedOpenShift: Optional[OpenShiftItem] = Field(alias="sharedOpenShift",default=None,)
 
 from .identity_set import IdentitySet
 from .identity_set import IdentitySet

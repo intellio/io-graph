@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class PersistentBrowserSessionMode(Enum):
+class PersistentBrowserSessionMode(StrEnum):
 	always = "always"
 	never = "never"
 

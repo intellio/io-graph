@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class AllowInvitesFrom(Enum):
+class AllowInvitesFrom(StrEnum):
 	none = "none"
 	adminsAndGuestInviters = "adminsAndGuestInviters"
 	adminsGuestInvitersAndAllMembers = "adminsGuestInvitersAndAllMembers"

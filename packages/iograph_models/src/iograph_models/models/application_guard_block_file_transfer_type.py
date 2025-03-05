@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class ApplicationGuardBlockFileTransferType(Enum):
+class ApplicationGuardBlockFileTransferType(StrEnum):
 	notConfigured = "notConfigured"
 	blockImageAndTextFile = "blockImageAndTextFile"
 	blockImageFile = "blockImageFile"

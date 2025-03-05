@@ -4,6 +4,6 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class Get_member_objectsPostRequest(BaseModel):
-	securityEnabledOnly: Optional[bool] = Field(default=None,alias="securityEnabledOnly",)
+	securityEnabledOnly: Optional[bool] = Field(alias="securityEnabledOnly",default=None,)
 
 

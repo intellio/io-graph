@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class VppTokenAccountType(Enum):
+class VppTokenAccountType(StrEnum):
 	business = "business"
 	education = "education"
 

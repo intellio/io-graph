@@ -4,7 +4,7 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class Atan2PostRequest(BaseModel):
-	xNum: Optional[str] = Field(default=None,alias="xNum",)
-	yNum: Optional[str] = Field(default=None,alias="yNum",)
+	xNum: Optional[str] = Field(alias="xNum",default=None,)
+	yNum: Optional[str] = Field(alias="yNum",default=None,)
 
 

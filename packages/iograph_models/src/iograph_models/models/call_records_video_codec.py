@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class CallRecordsVideoCodec(Enum):
+class CallRecordsVideoCodec(StrEnum):
 	unknown = "unknown"
 	invalid = "invalid"
 	av1 = "av1"

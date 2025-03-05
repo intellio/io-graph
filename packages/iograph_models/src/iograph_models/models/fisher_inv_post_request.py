@@ -4,6 +4,6 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class Fisher_invPostRequest(BaseModel):
-	y: Optional[str] = Field(default=None,alias="y",)
+	y: Optional[str] = Field(alias="y",default=None,)
 
 

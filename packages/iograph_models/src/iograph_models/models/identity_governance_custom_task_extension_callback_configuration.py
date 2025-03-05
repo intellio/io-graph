@@ -4,9 +4,9 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class IdentityGovernanceCustomTaskExtensionCallbackConfiguration(BaseModel):
-	timeoutDuration: Optional[str] = Field(default=None,alias="timeoutDuration",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	authorizedApps: Optional[list[Application]] = Field(default=None,alias="authorizedApps",)
+	timeoutDuration: Optional[str] = Field(alias="timeoutDuration",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	authorizedApps: Optional[list[Application]] = Field(alias="authorizedApps",default=None,)
 
 from .application import Application
 

@@ -4,11 +4,11 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class UnifiedRoleManagementPolicyExpirationRule(BaseModel):
-	id: Optional[str] = Field(default=None,alias="id",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	target: Optional[UnifiedRoleManagementPolicyRuleTarget] = Field(default=None,alias="target",)
-	isExpirationRequired: Optional[bool] = Field(default=None,alias="isExpirationRequired",)
-	maximumDuration: Optional[str] = Field(default=None,alias="maximumDuration",)
+	id: Optional[str] = Field(alias="id",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	target: Optional[UnifiedRoleManagementPolicyRuleTarget] = Field(alias="target",default=None,)
+	isExpirationRequired: Optional[bool] = Field(alias="isExpirationRequired",default=None,)
+	maximumDuration: Optional[str] = Field(alias="maximumDuration",default=None,)
 
 from .unified_role_management_policy_rule_target import UnifiedRoleManagementPolicyRuleTarget
 

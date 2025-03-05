@@ -4,10 +4,10 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class ConvertIdResult(BaseModel):
-	errorDetails: Optional[GenericError] = Field(default=None,alias="errorDetails",)
-	sourceId: Optional[str] = Field(default=None,alias="sourceId",)
-	targetId: Optional[str] = Field(default=None,alias="targetId",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
+	errorDetails: Optional[GenericError] = Field(alias="errorDetails",default=None,)
+	sourceId: Optional[str] = Field(alias="sourceId",default=None,)
+	targetId: Optional[str] = Field(alias="targetId",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 
 from .generic_error import GenericError
 

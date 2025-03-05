@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class IdentityGovernanceWorkflowTriggerTimeBasedAttribute(Enum):
+class IdentityGovernanceWorkflowTriggerTimeBasedAttribute(StrEnum):
 	employeeHireDate = "employeeHireDate"
 	employeeLeaveDateTime = "employeeLeaveDateTime"
 	unknownFutureValue = "unknownFutureValue"

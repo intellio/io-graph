@@ -5,11 +5,11 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class SecurityHostPortBanner(BaseModel):
-	banner: Optional[str] = Field(default=None,alias="banner",)
-	firstSeenDateTime: Optional[datetime] = Field(default=None,alias="firstSeenDateTime",)
-	lastSeenDateTime: Optional[datetime] = Field(default=None,alias="lastSeenDateTime",)
-	scanProtocol: Optional[str] = Field(default=None,alias="scanProtocol",)
-	timesObserved: Optional[int] = Field(default=None,alias="timesObserved",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
+	banner: Optional[str] = Field(alias="banner",default=None,)
+	firstSeenDateTime: Optional[datetime] = Field(alias="firstSeenDateTime",default=None,)
+	lastSeenDateTime: Optional[datetime] = Field(alias="lastSeenDateTime",default=None,)
+	scanProtocol: Optional[str] = Field(alias="scanProtocol",default=None,)
+	timesObserved: Optional[int] = Field(alias="timesObserved",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 
 

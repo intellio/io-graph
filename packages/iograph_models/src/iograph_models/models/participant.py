@@ -4,17 +4,17 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class Participant(BaseModel):
-	id: Optional[str] = Field(default=None,alias="id",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	info: Optional[ParticipantInfo] = Field(default=None,alias="info",)
-	isInLobby: Optional[bool] = Field(default=None,alias="isInLobby",)
-	isMuted: Optional[bool] = Field(default=None,alias="isMuted",)
-	mediaStreams: Optional[list[MediaStream]] = Field(default=None,alias="mediaStreams",)
-	metadata: Optional[str] = Field(default=None,alias="metadata",)
-	recordingInfo: Optional[RecordingInfo] = Field(default=None,alias="recordingInfo",)
-	removedState: Optional[RemovedState] = Field(default=None,alias="removedState",)
-	restrictedExperience: Optional[OnlineMeetingRestricted] = Field(default=None,alias="restrictedExperience",)
-	rosterSequenceNumber: Optional[int] = Field(default=None,alias="rosterSequenceNumber",)
+	id: Optional[str] = Field(alias="id",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	info: Optional[ParticipantInfo] = Field(alias="info",default=None,)
+	isInLobby: Optional[bool] = Field(alias="isInLobby",default=None,)
+	isMuted: Optional[bool] = Field(alias="isMuted",default=None,)
+	mediaStreams: Optional[list[MediaStream]] = Field(alias="mediaStreams",default=None,)
+	metadata: Optional[str] = Field(alias="metadata",default=None,)
+	recordingInfo: Optional[RecordingInfo] = Field(alias="recordingInfo",default=None,)
+	removedState: Optional[RemovedState] = Field(alias="removedState",default=None,)
+	restrictedExperience: Optional[OnlineMeetingRestricted] = Field(alias="restrictedExperience",default=None,)
+	rosterSequenceNumber: Optional[int] = Field(alias="rosterSequenceNumber",default=None,)
 
 from .participant_info import ParticipantInfo
 from .media_stream import MediaStream

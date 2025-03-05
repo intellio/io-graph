@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class IdentityGovernanceLifecycleWorkflowCategory(Enum):
+class IdentityGovernanceLifecycleWorkflowCategory(StrEnum):
 	joiner = "joiner"
 	leaver = "leaver"
 	unknownFutureValue = "unknownFutureValue"

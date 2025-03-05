@@ -4,9 +4,9 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class AttributeMappingFunctionSchemaCollectionResponse(BaseModel):
-	odata_count: Optional[int] = Field(default=None,alias="@odata.count",)
-	odata_nextLink: Optional[str] = Field(default=None,alias="@odata.nextLink",)
-	value: Optional[list[AttributeMappingFunctionSchema]] = Field(default=None,alias="value",)
+	odata_count: Optional[int] = Field(alias="@odata.count",default=None,)
+	odata_nextLink: Optional[str] = Field(alias="@odata.nextLink",default=None,)
+	value: Optional[list[AttributeMappingFunctionSchema]] = Field(alias="value",default=None,)
 
 from .attribute_mapping_function_schema import AttributeMappingFunctionSchema
 

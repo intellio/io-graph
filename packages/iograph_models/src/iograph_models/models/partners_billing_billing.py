@@ -4,12 +4,12 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class PartnersBillingBilling(BaseModel):
-	id: Optional[str] = Field(default=None,alias="id",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	manifests: Optional[list[PartnersBillingManifest]] = Field(default=None,alias="manifests",)
-	operations: SerializeAsAny[Optional[list[PartnersBillingOperation]]] = Field(default=None,alias="operations",)
-	reconciliation: Optional[PartnersBillingBillingReconciliation] = Field(default=None,alias="reconciliation",)
-	usage: Optional[PartnersBillingAzureUsage] = Field(default=None,alias="usage",)
+	id: Optional[str] = Field(alias="id",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	manifests: Optional[list[PartnersBillingManifest]] = Field(alias="manifests",default=None,)
+	operations: SerializeAsAny[Optional[list[PartnersBillingOperation]]] = Field(alias="operations",default=None,)
+	reconciliation: Optional[PartnersBillingBillingReconciliation] = Field(alias="reconciliation",default=None,)
+	usage: Optional[PartnersBillingAzureUsage] = Field(alias="usage",default=None,)
 
 from .partners_billing_manifest import PartnersBillingManifest
 from .partners_billing_operation import PartnersBillingOperation

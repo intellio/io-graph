@@ -4,11 +4,11 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class SearchPostRequest(BaseModel):
-	protectionUnitIds: Optional[list[str]] = Field(default=None,alias="protectionUnitIds",)
-	protectionTimePeriod: Optional[TimePeriod] = Field(default=None,alias="protectionTimePeriod",)
-	restorePointPreference: Optional[RestorePointPreference] = Field(default=None,alias="restorePointPreference",)
-	tags: Optional[RestorePointTags] = Field(default=None,alias="tags",)
-	artifactQuery: Optional[ArtifactQuery] = Field(default=None,alias="artifactQuery",)
+	protectionUnitIds: Optional[list[str]] = Field(alias="protectionUnitIds",default=None,)
+	protectionTimePeriod: Optional[TimePeriod] = Field(alias="protectionTimePeriod",default=None,)
+	restorePointPreference: Optional[str | RestorePointPreference] = Field(alias="restorePointPreference",default=None,)
+	tags: Optional[str | RestorePointTags] = Field(alias="tags",default=None,)
+	artifactQuery: Optional[ArtifactQuery] = Field(alias="artifactQuery",default=None,)
 
 from .time_period import TimePeriod
 from .restore_point_preference import RestorePointPreference

@@ -4,9 +4,9 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class SubstitutePostRequest(BaseModel):
-	text: Optional[str] = Field(default=None,alias="text",)
-	oldText: Optional[str] = Field(default=None,alias="oldText",)
-	newText: Optional[str] = Field(default=None,alias="newText",)
-	instanceNum: Optional[str] = Field(default=None,alias="instanceNum",)
+	text: Optional[str] = Field(alias="text",default=None,)
+	oldText: Optional[str] = Field(alias="oldText",default=None,)
+	newText: Optional[str] = Field(alias="newText",default=None,)
+	instanceNum: Optional[str] = Field(alias="instanceNum",default=None,)
 
 

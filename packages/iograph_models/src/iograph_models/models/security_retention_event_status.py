@@ -4,9 +4,9 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class SecurityRetentionEventStatus(BaseModel):
-	error: Optional[PublicError] = Field(default=None,alias="error",)
-	status: Optional[SecurityEventStatusType] = Field(default=None,alias="status",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
+	error: Optional[PublicError] = Field(alias="error",default=None,)
+	status: Optional[str | SecurityEventStatusType] = Field(alias="status",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 
 from .public_error import PublicError
 from .security_event_status_type import SecurityEventStatusType

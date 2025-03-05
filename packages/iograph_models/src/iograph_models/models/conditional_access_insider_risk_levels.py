@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class ConditionalAccessInsiderRiskLevels(Enum):
+class ConditionalAccessInsiderRiskLevels(StrEnum):
 	minor = "minor"
 	moderate = "moderate"
 	elevated = "elevated"

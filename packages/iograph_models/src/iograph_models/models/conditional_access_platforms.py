@@ -4,9 +4,9 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class ConditionalAccessPlatforms(BaseModel):
-	excludePlatforms: Optional[list[ConditionalAccessDevicePlatform]] = Field(default=None,alias="excludePlatforms",)
-	includePlatforms: Optional[list[ConditionalAccessDevicePlatform]] = Field(default=None,alias="includePlatforms",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
+	excludePlatforms: Optional[list[str | ConditionalAccessDevicePlatform]] = Field(alias="excludePlatforms",default=None,)
+	includePlatforms: Optional[list[str | ConditionalAccessDevicePlatform]] = Field(alias="includePlatforms",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 
 from .conditional_access_device_platform import ConditionalAccessDevicePlatform
 from .conditional_access_device_platform import ConditionalAccessDevicePlatform

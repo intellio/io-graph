@@ -7,16 +7,16 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class ThreatAssessmentRequest(BaseModel):
-	id: Optional[str] = Field(default=None,alias="id",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	category: Optional[ThreatCategory] = Field(default=None,alias="category",)
-	contentType: Optional[ThreatAssessmentContentType] = Field(default=None,alias="contentType",)
-	createdBy: SerializeAsAny[Optional[IdentitySet]] = Field(default=None,alias="createdBy",)
-	createdDateTime: Optional[datetime] = Field(default=None,alias="createdDateTime",)
-	expectedAssessment: Optional[ThreatExpectedAssessment] = Field(default=None,alias="expectedAssessment",)
-	requestSource: Optional[ThreatAssessmentRequestSource] = Field(default=None,alias="requestSource",)
-	status: Optional[ThreatAssessmentStatus] = Field(default=None,alias="status",)
-	results: Optional[list[ThreatAssessmentResult]] = Field(default=None,alias="results",)
+	id: Optional[str] = Field(alias="id",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	category: Optional[str | ThreatCategory] = Field(alias="category",default=None,)
+	contentType: Optional[str | ThreatAssessmentContentType] = Field(alias="contentType",default=None,)
+	createdBy: SerializeAsAny[Optional[IdentitySet]] = Field(alias="createdBy",default=None,)
+	createdDateTime: Optional[datetime] = Field(alias="createdDateTime",default=None,)
+	expectedAssessment: Optional[str | ThreatExpectedAssessment] = Field(alias="expectedAssessment",default=None,)
+	requestSource: Optional[str | ThreatAssessmentRequestSource] = Field(alias="requestSource",default=None,)
+	status: Optional[str | ThreatAssessmentStatus] = Field(alias="status",default=None,)
+	results: Optional[list[ThreatAssessmentResult]] = Field(alias="results",default=None,)
 
 	@model_validator(mode="wrap")
 	def convert_discriminator_class(cls, data: Any, handler: ModelWrapValidatorHandler[Self]) -> Self:

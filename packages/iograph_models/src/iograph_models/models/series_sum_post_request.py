@@ -4,9 +4,9 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class Series_sumPostRequest(BaseModel):
-	x: Optional[str] = Field(default=None,alias="x",)
-	n: Optional[str] = Field(default=None,alias="n",)
-	m: Optional[str] = Field(default=None,alias="m",)
-	coefficients: Optional[str] = Field(default=None,alias="coefficients",)
+	x: Optional[str] = Field(alias="x",default=None,)
+	n: Optional[str] = Field(alias="n",default=None,)
+	m: Optional[str] = Field(alias="m",default=None,)
+	coefficients: Optional[str] = Field(alias="coefficients",default=None,)
 
 

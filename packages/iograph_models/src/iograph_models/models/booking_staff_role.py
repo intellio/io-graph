@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class BookingStaffRole(Enum):
+class BookingStaffRole(StrEnum):
 	guest = "guest"
 	administrator = "administrator"
 	viewer = "viewer"

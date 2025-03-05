@@ -4,8 +4,8 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class TermStoreLocalizedDescription(BaseModel):
-	description: Optional[str] = Field(default=None,alias="description",)
-	languageTag: Optional[str] = Field(default=None,alias="languageTag",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
+	description: Optional[str] = Field(alias="description",default=None,)
+	languageTag: Optional[str] = Field(alias="languageTag",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 
 

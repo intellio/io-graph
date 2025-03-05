@@ -4,11 +4,11 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class Beta__distPostRequest(BaseModel):
-	x: Optional[str] = Field(default=None,alias="x",)
-	alpha: Optional[str] = Field(default=None,alias="alpha",)
-	beta: Optional[str] = Field(default=None,alias="beta",)
-	cumulative: Optional[str] = Field(default=None,alias="cumulative",)
-	A: Optional[str] = Field(default=None,alias="A",)
-	B: Optional[str] = Field(default=None,alias="B",)
+	x: Optional[str] = Field(alias="x",default=None,)
+	alpha: Optional[str] = Field(alias="alpha",default=None,)
+	beta: Optional[str] = Field(alias="beta",default=None,)
+	cumulative: Optional[str] = Field(alias="cumulative",default=None,)
+	A: Optional[str] = Field(alias="A",default=None,)
+	B: Optional[str] = Field(alias="B",default=None,)
 
 

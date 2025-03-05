@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class IdentityGovernanceWorkflowExecutionType(Enum):
+class IdentityGovernanceWorkflowExecutionType(StrEnum):
 	scheduled = "scheduled"
 	onDemand = "onDemand"
 	unknownFutureValue = "unknownFutureValue"

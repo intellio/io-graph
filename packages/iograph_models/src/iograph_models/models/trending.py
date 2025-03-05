@@ -5,13 +5,13 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class Trending(BaseModel):
-	id: Optional[str] = Field(default=None,alias="id",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	lastModifiedDateTime: Optional[datetime] = Field(default=None,alias="lastModifiedDateTime",)
-	resourceReference: Optional[ResourceReference] = Field(default=None,alias="resourceReference",)
-	resourceVisualization: Optional[ResourceVisualization] = Field(default=None,alias="resourceVisualization",)
+	id: Optional[str] = Field(alias="id",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	lastModifiedDateTime: Optional[datetime] = Field(alias="lastModifiedDateTime",default=None,)
+	resourceReference: Optional[ResourceReference] = Field(alias="resourceReference",default=None,)
+	resourceVisualization: Optional[ResourceVisualization] = Field(alias="resourceVisualization",default=None,)
 	weight: float | str | ReferenceNumeric
-	resource: SerializeAsAny[Optional[Entity]] = Field(default=None,alias="resource",)
+	resource: SerializeAsAny[Optional[Entity]] = Field(alias="resource",default=None,)
 
 from .resource_reference import ResourceReference
 from .resource_visualization import ResourceVisualization

@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class ExternalConnectorsExternalActivityType(Enum):
+class ExternalConnectorsExternalActivityType(StrEnum):
 	viewed = "viewed"
 	modified = "modified"
 	created = "created"

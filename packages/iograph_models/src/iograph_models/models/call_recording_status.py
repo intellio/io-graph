@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class CallRecordingStatus(Enum):
+class CallRecordingStatus(StrEnum):
 	success = "success"
 	failure = "failure"
 	initial = "initial"

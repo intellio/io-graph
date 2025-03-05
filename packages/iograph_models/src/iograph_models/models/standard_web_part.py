@@ -4,11 +4,11 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class StandardWebPart(BaseModel):
-	id: Optional[str] = Field(default=None,alias="id",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	containerTextWebPartId: Optional[str] = Field(default=None,alias="containerTextWebPartId",)
-	data: Optional[WebPartData] = Field(default=None,alias="data",)
-	webPartType: Optional[str] = Field(default=None,alias="webPartType",)
+	id: Optional[str] = Field(alias="id",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	containerTextWebPartId: Optional[str] = Field(alias="containerTextWebPartId",default=None,)
+	data: Optional[WebPartData] = Field(alias="data",default=None,)
+	webPartType: Optional[str] = Field(alias="webPartType",default=None,)
 
 from .web_part_data import WebPartData
 

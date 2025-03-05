@@ -4,19 +4,19 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class WorkbookRangeView(BaseModel):
-	id: Optional[str] = Field(default=None,alias="id",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	cellAddresses: Optional[str] = Field(default=None,alias="cellAddresses",)
-	columnCount: Optional[int] = Field(default=None,alias="columnCount",)
-	formulas: Optional[str] = Field(default=None,alias="formulas",)
-	formulasLocal: Optional[str] = Field(default=None,alias="formulasLocal",)
-	formulasR1C1: Optional[str] = Field(default=None,alias="formulasR1C1",)
-	index: Optional[int] = Field(default=None,alias="index",)
-	numberFormat: Optional[str] = Field(default=None,alias="numberFormat",)
-	rowCount: Optional[int] = Field(default=None,alias="rowCount",)
-	text: Optional[str] = Field(default=None,alias="text",)
-	values: Optional[str] = Field(default=None,alias="values",)
-	valueTypes: Optional[str] = Field(default=None,alias="valueTypes",)
-	rows: Optional[list[WorkbookRangeView]] = Field(default=None,alias="rows",)
+	id: Optional[str] = Field(alias="id",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	cellAddresses: Optional[str] = Field(alias="cellAddresses",default=None,)
+	columnCount: Optional[int] = Field(alias="columnCount",default=None,)
+	formulas: Optional[str] = Field(alias="formulas",default=None,)
+	formulasLocal: Optional[str] = Field(alias="formulasLocal",default=None,)
+	formulasR1C1: Optional[str] = Field(alias="formulasR1C1",default=None,)
+	index: Optional[int] = Field(alias="index",default=None,)
+	numberFormat: Optional[str] = Field(alias="numberFormat",default=None,)
+	rowCount: Optional[int] = Field(alias="rowCount",default=None,)
+	text: Optional[str] = Field(alias="text",default=None,)
+	values: Optional[str] = Field(alias="values",default=None,)
+	valueTypes: Optional[str] = Field(alias="valueTypes",default=None,)
+	rows: Optional[list[WorkbookRangeView]] = Field(alias="rows",default=None,)
 
 

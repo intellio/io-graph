@@ -4,13 +4,13 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class TargetResource(BaseModel):
-	displayName: Optional[str] = Field(default=None,alias="displayName",)
-	groupType: Optional[GroupType] = Field(default=None,alias="groupType",)
-	id: Optional[str] = Field(default=None,alias="id",)
-	modifiedProperties: Optional[list[ModifiedProperty]] = Field(default=None,alias="modifiedProperties",)
-	type: Optional[str] = Field(default=None,alias="type",)
-	userPrincipalName: Optional[str] = Field(default=None,alias="userPrincipalName",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
+	displayName: Optional[str] = Field(alias="displayName",default=None,)
+	groupType: Optional[str | GroupType] = Field(alias="groupType",default=None,)
+	id: Optional[str] = Field(alias="id",default=None,)
+	modifiedProperties: Optional[list[ModifiedProperty]] = Field(alias="modifiedProperties",default=None,)
+	type: Optional[str] = Field(alias="type",default=None,)
+	userPrincipalName: Optional[str] = Field(alias="userPrincipalName",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 
 from .group_type import GroupType
 from .modified_property import ModifiedProperty

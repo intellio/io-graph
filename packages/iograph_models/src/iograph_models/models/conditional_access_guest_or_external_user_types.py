@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class ConditionalAccessGuestOrExternalUserTypes(Enum):
+class ConditionalAccessGuestOrExternalUserTypes(StrEnum):
 	none = "none"
 	internalGuest = "internalGuest"
 	b2bCollaborationGuest = "b2bCollaborationGuest"

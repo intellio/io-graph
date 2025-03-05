@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class ChangeType(Enum):
+class ChangeType(StrEnum):
 	created = "created"
 	updated = "updated"
 	deleted = "deleted"

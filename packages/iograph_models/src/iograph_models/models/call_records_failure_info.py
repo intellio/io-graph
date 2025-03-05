@@ -4,9 +4,9 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class CallRecordsFailureInfo(BaseModel):
-	reason: Optional[str] = Field(default=None,alias="reason",)
-	stage: Optional[CallRecordsFailureStage] = Field(default=None,alias="stage",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
+	reason: Optional[str] = Field(alias="reason",default=None,)
+	stage: Optional[str | CallRecordsFailureStage] = Field(alias="stage",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 
 from .call_records_failure_stage import CallRecordsFailureStage
 

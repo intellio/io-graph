@@ -4,11 +4,11 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class GroupSetting(BaseModel):
-	id: Optional[str] = Field(default=None,alias="id",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	displayName: Optional[str] = Field(default=None,alias="displayName",)
-	templateId: Optional[str] = Field(default=None,alias="templateId",)
-	values: Optional[list[SettingValue]] = Field(default=None,alias="values",)
+	id: Optional[str] = Field(alias="id",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	displayName: Optional[str] = Field(alias="displayName",default=None,)
+	templateId: Optional[str] = Field(alias="templateId",default=None,)
+	values: Optional[list[SettingValue]] = Field(alias="values",default=None,)
 
 from .setting_value import SettingValue
 

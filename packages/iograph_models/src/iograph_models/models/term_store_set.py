@@ -5,16 +5,16 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class TermStoreSet(BaseModel):
-	id: Optional[str] = Field(default=None,alias="id",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	createdDateTime: Optional[datetime] = Field(default=None,alias="createdDateTime",)
-	description: Optional[str] = Field(default=None,alias="description",)
-	localizedNames: Optional[list[TermStoreLocalizedName]] = Field(default=None,alias="localizedNames",)
-	properties: Optional[list[KeyValue]] = Field(default=None,alias="properties",)
-	children: Optional[list[TermStoreTerm]] = Field(default=None,alias="children",)
-	parentGroup: Optional[TermStoreGroup] = Field(default=None,alias="parentGroup",)
-	relations: Optional[list[TermStoreRelation]] = Field(default=None,alias="relations",)
-	terms: Optional[list[TermStoreTerm]] = Field(default=None,alias="terms",)
+	id: Optional[str] = Field(alias="id",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	createdDateTime: Optional[datetime] = Field(alias="createdDateTime",default=None,)
+	description: Optional[str] = Field(alias="description",default=None,)
+	localizedNames: Optional[list[TermStoreLocalizedName]] = Field(alias="localizedNames",default=None,)
+	properties: Optional[list[KeyValue]] = Field(alias="properties",default=None,)
+	children: Optional[list[TermStoreTerm]] = Field(alias="children",default=None,)
+	parentGroup: Optional[TermStoreGroup] = Field(alias="parentGroup",default=None,)
+	relations: Optional[list[TermStoreRelation]] = Field(alias="relations",default=None,)
+	terms: Optional[list[TermStoreTerm]] = Field(alias="terms",default=None,)
 
 from .term_store_localized_name import TermStoreLocalizedName
 from .key_value import KeyValue

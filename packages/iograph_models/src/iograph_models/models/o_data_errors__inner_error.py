@@ -5,9 +5,9 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class ODataErrorsInnerError(BaseModel):
-	request_id: Optional[str] = Field(default=None,alias="request-id",)
-	client_request_id: Optional[str] = Field(default=None,alias="client-request-id",)
-	date: Optional[datetime] = Field(default=None,alias="date",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
+	request_id: Optional[str] = Field(alias="request-id",default=None,)
+	client_request_id: Optional[str] = Field(alias="client-request-id",default=None,)
+	date: Optional[datetime] = Field(alias="date",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 
 

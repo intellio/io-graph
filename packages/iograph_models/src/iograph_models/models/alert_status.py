@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class AlertStatus(Enum):
+class AlertStatus(StrEnum):
 	unknown = "unknown"
 	newAlert = "newAlert"
 	inProgress = "inProgress"

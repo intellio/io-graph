@@ -4,9 +4,9 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class OnlineMeetingRestricted(BaseModel):
-	contentSharingDisabled: Optional[OnlineMeetingContentSharingDisabledReason] = Field(default=None,alias="contentSharingDisabled",)
-	videoDisabled: Optional[OnlineMeetingVideoDisabledReason] = Field(default=None,alias="videoDisabled",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
+	contentSharingDisabled: Optional[str | OnlineMeetingContentSharingDisabledReason] = Field(alias="contentSharingDisabled",default=None,)
+	videoDisabled: Optional[str | OnlineMeetingVideoDisabledReason] = Field(alias="videoDisabled",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 
 from .online_meeting_content_sharing_disabled_reason import OnlineMeetingContentSharingDisabledReason
 from .online_meeting_video_disabled_reason import OnlineMeetingVideoDisabledReason

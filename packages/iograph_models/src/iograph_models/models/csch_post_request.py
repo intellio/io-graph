@@ -4,6 +4,6 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class CschPostRequest(BaseModel):
-	number: Optional[str] = Field(default=None,alias="number",)
+	number: Optional[str] = Field(alias="number",default=None,)
 
 

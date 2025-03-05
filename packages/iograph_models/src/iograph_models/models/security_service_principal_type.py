@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class SecurityServicePrincipalType(Enum):
+class SecurityServicePrincipalType(StrEnum):
 	unknown = "unknown"
 	application = "application"
 	managedIdentity = "managedIdentity"

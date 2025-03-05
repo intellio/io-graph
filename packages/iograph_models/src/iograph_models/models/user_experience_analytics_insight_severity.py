@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class UserExperienceAnalyticsInsightSeverity(Enum):
+class UserExperienceAnalyticsInsightSeverity(StrEnum):
 	none = "none"
 	informational = "informational"
 	warning = "warning"

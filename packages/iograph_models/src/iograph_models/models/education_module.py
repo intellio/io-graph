@@ -5,18 +5,18 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class EducationModule(BaseModel):
-	id: Optional[str] = Field(default=None,alias="id",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	createdBy: SerializeAsAny[Optional[IdentitySet]] = Field(default=None,alias="createdBy",)
-	createdDateTime: Optional[datetime] = Field(default=None,alias="createdDateTime",)
-	description: Optional[str] = Field(default=None,alias="description",)
-	displayName: Optional[str] = Field(default=None,alias="displayName",)
-	isPinned: Optional[bool] = Field(default=None,alias="isPinned",)
-	lastModifiedBy: SerializeAsAny[Optional[IdentitySet]] = Field(default=None,alias="lastModifiedBy",)
-	lastModifiedDateTime: Optional[datetime] = Field(default=None,alias="lastModifiedDateTime",)
-	resourcesFolderUrl: Optional[str] = Field(default=None,alias="resourcesFolderUrl",)
-	status: Optional[EducationModuleStatus] = Field(default=None,alias="status",)
-	resources: Optional[list[EducationModuleResource]] = Field(default=None,alias="resources",)
+	id: Optional[str] = Field(alias="id",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	createdBy: SerializeAsAny[Optional[IdentitySet]] = Field(alias="createdBy",default=None,)
+	createdDateTime: Optional[datetime] = Field(alias="createdDateTime",default=None,)
+	description: Optional[str] = Field(alias="description",default=None,)
+	displayName: Optional[str] = Field(alias="displayName",default=None,)
+	isPinned: Optional[bool] = Field(alias="isPinned",default=None,)
+	lastModifiedBy: SerializeAsAny[Optional[IdentitySet]] = Field(alias="lastModifiedBy",default=None,)
+	lastModifiedDateTime: Optional[datetime] = Field(alias="lastModifiedDateTime",default=None,)
+	resourcesFolderUrl: Optional[str] = Field(alias="resourcesFolderUrl",default=None,)
+	status: Optional[str | EducationModuleStatus] = Field(alias="status",default=None,)
+	resources: Optional[list[EducationModuleResource]] = Field(alias="resources",default=None,)
 
 from .identity_set import IdentitySet
 from .identity_set import IdentitySet

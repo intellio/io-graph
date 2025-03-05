@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class ManagedAppDataTransferLevel(Enum):
+class ManagedAppDataTransferLevel(StrEnum):
 	allApps = "allApps"
 	managedApps = "managedApps"
 	none = "none"

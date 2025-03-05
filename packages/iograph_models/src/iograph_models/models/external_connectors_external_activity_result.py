@@ -5,12 +5,12 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class ExternalConnectorsExternalActivityResult(BaseModel):
-	id: Optional[str] = Field(default=None,alias="id",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	startDateTime: Optional[datetime] = Field(default=None,alias="startDateTime",)
-	type: Optional[ExternalConnectorsExternalActivityType] = Field(default=None,alias="type",)
-	performedBy: Optional[ExternalConnectorsIdentity] = Field(default=None,alias="performedBy",)
-	error: Optional[PublicError] = Field(default=None,alias="error",)
+	id: Optional[str] = Field(alias="id",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	startDateTime: Optional[datetime] = Field(alias="startDateTime",default=None,)
+	type: Optional[str | ExternalConnectorsExternalActivityType] = Field(alias="type",default=None,)
+	performedBy: Optional[ExternalConnectorsIdentity] = Field(alias="performedBy",default=None,)
+	error: Optional[PublicError] = Field(alias="error",default=None,)
 
 from .external_connectors_external_activity_type import ExternalConnectorsExternalActivityType
 from .external_connectors_identity import ExternalConnectorsIdentity

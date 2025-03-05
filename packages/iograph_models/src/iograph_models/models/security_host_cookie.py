@@ -5,13 +5,13 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class SecurityHostCookie(BaseModel):
-	id: Optional[str] = Field(default=None,alias="id",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	domain: Optional[str] = Field(default=None,alias="domain",)
-	firstSeenDateTime: Optional[datetime] = Field(default=None,alias="firstSeenDateTime",)
-	lastSeenDateTime: Optional[datetime] = Field(default=None,alias="lastSeenDateTime",)
-	name: Optional[str] = Field(default=None,alias="name",)
-	host: SerializeAsAny[Optional[SecurityHost]] = Field(default=None,alias="host",)
+	id: Optional[str] = Field(alias="id",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	domain: Optional[str] = Field(alias="domain",default=None,)
+	firstSeenDateTime: Optional[datetime] = Field(alias="firstSeenDateTime",default=None,)
+	lastSeenDateTime: Optional[datetime] = Field(alias="lastSeenDateTime",default=None,)
+	name: Optional[str] = Field(alias="name",default=None,)
+	host: SerializeAsAny[Optional[SecurityHost]] = Field(alias="host",default=None,)
 
 from .security_host import SecurityHost
 

@@ -4,8 +4,8 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class SearchAlterationOptions(BaseModel):
-	enableModification: Optional[bool] = Field(default=None,alias="enableModification",)
-	enableSuggestion: Optional[bool] = Field(default=None,alias="enableSuggestion",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
+	enableModification: Optional[bool] = Field(alias="enableModification",default=None,)
+	enableSuggestion: Optional[bool] = Field(alias="enableSuggestion",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 
 

@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class SimulationAttackTechnique(Enum):
+class SimulationAttackTechnique(StrEnum):
 	unknown = "unknown"
 	credentialHarvesting = "credentialHarvesting"
 	attachmentMalware = "attachmentMalware"

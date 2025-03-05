@@ -4,9 +4,9 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class SecurityOcrSettings(BaseModel):
-	isEnabled: Optional[bool] = Field(default=None,alias="isEnabled",)
-	maxImageSize: Optional[int] = Field(default=None,alias="maxImageSize",)
-	timeout: Optional[str] = Field(default=None,alias="timeout",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
+	isEnabled: Optional[bool] = Field(alias="isEnabled",default=None,)
+	maxImageSize: Optional[int] = Field(alias="maxImageSize",default=None,)
+	timeout: Optional[str] = Field(alias="timeout",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 
 

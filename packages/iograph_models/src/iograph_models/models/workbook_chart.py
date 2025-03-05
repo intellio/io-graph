@@ -4,20 +4,20 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class WorkbookChart(BaseModel):
-	id: Optional[str] = Field(default=None,alias="id",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
+	id: Optional[str] = Field(alias="id",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 	height: float | str | ReferenceNumeric
 	left: float | str | ReferenceNumeric
-	name: Optional[str] = Field(default=None,alias="name",)
+	name: Optional[str] = Field(alias="name",default=None,)
 	top: float | str | ReferenceNumeric
 	width: float | str | ReferenceNumeric
-	axes: Optional[WorkbookChartAxes] = Field(default=None,alias="axes",)
-	dataLabels: Optional[WorkbookChartDataLabels] = Field(default=None,alias="dataLabels",)
-	format: Optional[WorkbookChartAreaFormat] = Field(default=None,alias="format",)
-	legend: Optional[WorkbookChartLegend] = Field(default=None,alias="legend",)
-	series: Optional[list[WorkbookChartSeries]] = Field(default=None,alias="series",)
-	title: Optional[WorkbookChartTitle] = Field(default=None,alias="title",)
-	worksheet: Optional[WorkbookWorksheet] = Field(default=None,alias="worksheet",)
+	axes: Optional[WorkbookChartAxes] = Field(alias="axes",default=None,)
+	dataLabels: Optional[WorkbookChartDataLabels] = Field(alias="dataLabels",default=None,)
+	format: Optional[WorkbookChartAreaFormat] = Field(alias="format",default=None,)
+	legend: Optional[WorkbookChartLegend] = Field(alias="legend",default=None,)
+	series: Optional[list[WorkbookChartSeries]] = Field(alias="series",default=None,)
+	title: Optional[WorkbookChartTitle] = Field(alias="title",default=None,)
+	worksheet: Optional[WorkbookWorksheet] = Field(alias="worksheet",default=None,)
 
 from .reference_numeric import ReferenceNumeric
 from .reference_numeric import ReferenceNumeric

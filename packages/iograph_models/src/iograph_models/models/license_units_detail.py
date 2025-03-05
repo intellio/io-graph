@@ -4,10 +4,10 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class LicenseUnitsDetail(BaseModel):
-	enabled: Optional[int] = Field(default=None,alias="enabled",)
-	lockedOut: Optional[int] = Field(default=None,alias="lockedOut",)
-	suspended: Optional[int] = Field(default=None,alias="suspended",)
-	warning: Optional[int] = Field(default=None,alias="warning",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
+	enabled: Optional[int] = Field(alias="enabled",default=None,)
+	lockedOut: Optional[int] = Field(alias="lockedOut",default=None,)
+	suspended: Optional[int] = Field(alias="suspended",default=None,)
+	warning: Optional[int] = Field(alias="warning",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 
 

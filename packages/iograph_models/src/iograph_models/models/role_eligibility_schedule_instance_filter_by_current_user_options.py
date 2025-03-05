@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class RoleEligibilityScheduleInstanceFilterByCurrentUserOptions(Enum):
+class RoleEligibilityScheduleInstanceFilterByCurrentUserOptions(StrEnum):
 	principal = "principal"
 	unknownFutureValue = "unknownFutureValue"
 

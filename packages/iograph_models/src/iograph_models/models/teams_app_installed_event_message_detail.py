@@ -4,10 +4,10 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class TeamsAppInstalledEventMessageDetail(BaseModel):
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	initiator: SerializeAsAny[Optional[IdentitySet]] = Field(default=None,alias="initiator",)
-	teamsAppDisplayName: Optional[str] = Field(default=None,alias="teamsAppDisplayName",)
-	teamsAppId: Optional[str] = Field(default=None,alias="teamsAppId",)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	initiator: SerializeAsAny[Optional[IdentitySet]] = Field(alias="initiator",default=None,)
+	teamsAppDisplayName: Optional[str] = Field(alias="teamsAppDisplayName",default=None,)
+	teamsAppId: Optional[str] = Field(alias="teamsAppId",default=None,)
 
 from .identity_set import IdentitySet
 

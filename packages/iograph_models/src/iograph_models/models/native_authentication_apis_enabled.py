@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class NativeAuthenticationApisEnabled(Enum):
+class NativeAuthenticationApisEnabled(StrEnum):
 	none = "none"
 	all = "all"
 	unknownFutureValue = "unknownFutureValue"

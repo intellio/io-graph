@@ -4,16 +4,16 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class Agreement(BaseModel):
-	id: Optional[str] = Field(default=None,alias="id",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	displayName: Optional[str] = Field(default=None,alias="displayName",)
-	isPerDeviceAcceptanceRequired: Optional[bool] = Field(default=None,alias="isPerDeviceAcceptanceRequired",)
-	isViewingBeforeAcceptanceRequired: Optional[bool] = Field(default=None,alias="isViewingBeforeAcceptanceRequired",)
-	termsExpiration: Optional[TermsExpiration] = Field(default=None,alias="termsExpiration",)
-	userReacceptRequiredFrequency: Optional[str] = Field(default=None,alias="userReacceptRequiredFrequency",)
-	acceptances: Optional[list[AgreementAcceptance]] = Field(default=None,alias="acceptances",)
-	file: Optional[AgreementFile] = Field(default=None,alias="file",)
-	files: Optional[list[AgreementFileLocalization]] = Field(default=None,alias="files",)
+	id: Optional[str] = Field(alias="id",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	displayName: Optional[str] = Field(alias="displayName",default=None,)
+	isPerDeviceAcceptanceRequired: Optional[bool] = Field(alias="isPerDeviceAcceptanceRequired",default=None,)
+	isViewingBeforeAcceptanceRequired: Optional[bool] = Field(alias="isViewingBeforeAcceptanceRequired",default=None,)
+	termsExpiration: Optional[TermsExpiration] = Field(alias="termsExpiration",default=None,)
+	userReacceptRequiredFrequency: Optional[str] = Field(alias="userReacceptRequiredFrequency",default=None,)
+	acceptances: Optional[list[AgreementAcceptance]] = Field(alias="acceptances",default=None,)
+	file: Optional[AgreementFile] = Field(alias="file",default=None,)
+	files: Optional[list[AgreementFileLocalization]] = Field(alias="files",default=None,)
 
 from .terms_expiration import TermsExpiration
 from .agreement_acceptance import AgreementAcceptance

@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class AndroidWorkProfileDefaultAppPermissionPolicyType(Enum):
+class AndroidWorkProfileDefaultAppPermissionPolicyType(StrEnum):
 	deviceDefault = "deviceDefault"
 	prompt = "prompt"
 	autoGrant = "autoGrant"

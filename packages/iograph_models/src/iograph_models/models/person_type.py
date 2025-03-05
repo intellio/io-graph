@@ -4,8 +4,8 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class PersonType(BaseModel):
-	class_: Optional[str] = Field(default=None,alias="class",)
-	subclass: Optional[str] = Field(default=None,alias="subclass",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
+	class_: Optional[str] = Field(alias="class",default=None,)
+	subclass: Optional[str] = Field(alias="subclass",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 
 

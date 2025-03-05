@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class OnPremisesDirectorySynchronizationDeletionPreventionType(Enum):
+class OnPremisesDirectorySynchronizationDeletionPreventionType(StrEnum):
 	disabled = "disabled"
 	enabledForCount = "enabledForCount"
 	enabledForPercentage = "enabledForPercentage"

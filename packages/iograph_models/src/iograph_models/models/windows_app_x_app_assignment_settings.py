@@ -4,7 +4,7 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class WindowsAppXAppAssignmentSettings(BaseModel):
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	useDeviceContext: Optional[bool] = Field(default=None,alias="useDeviceContext",)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	useDeviceContext: Optional[bool] = Field(alias="useDeviceContext",default=None,)
 
 

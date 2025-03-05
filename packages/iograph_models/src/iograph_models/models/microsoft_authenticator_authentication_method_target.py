@@ -4,11 +4,11 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class MicrosoftAuthenticatorAuthenticationMethodTarget(BaseModel):
-	id: Optional[str] = Field(default=None,alias="id",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	isRegistrationRequired: Optional[bool] = Field(default=None,alias="isRegistrationRequired",)
-	targetType: Optional[AuthenticationMethodTargetType] = Field(default=None,alias="targetType",)
-	authenticationMode: Optional[MicrosoftAuthenticatorAuthenticationMode] = Field(default=None,alias="authenticationMode",)
+	id: Optional[str] = Field(alias="id",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	isRegistrationRequired: Optional[bool] = Field(alias="isRegistrationRequired",default=None,)
+	targetType: Optional[str | AuthenticationMethodTargetType] = Field(alias="targetType",default=None,)
+	authenticationMode: Optional[str | MicrosoftAuthenticatorAuthenticationMode] = Field(alias="authenticationMode",default=None,)
 
 from .authentication_method_target_type import AuthenticationMethodTargetType
 from .microsoft_authenticator_authentication_mode import MicrosoftAuthenticatorAuthenticationMode

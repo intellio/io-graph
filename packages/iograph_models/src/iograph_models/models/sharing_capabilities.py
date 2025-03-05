@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class SharingCapabilities(Enum):
+class SharingCapabilities(StrEnum):
 	disabled = "disabled"
 	externalUserSharingOnly = "externalUserSharingOnly"
 	externalUserAndGuestSharing = "externalUserAndGuestSharing"

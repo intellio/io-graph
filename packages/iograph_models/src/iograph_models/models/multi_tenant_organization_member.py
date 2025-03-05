@@ -6,17 +6,17 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class MultiTenantOrganizationMember(BaseModel):
-	id: Optional[str] = Field(default=None,alias="id",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	deletedDateTime: Optional[datetime] = Field(default=None,alias="deletedDateTime",)
-	addedByTenantId: Optional[UUID] = Field(default=None,alias="addedByTenantId",)
-	addedDateTime: Optional[datetime] = Field(default=None,alias="addedDateTime",)
-	displayName: Optional[str] = Field(default=None,alias="displayName",)
-	joinedDateTime: Optional[datetime] = Field(default=None,alias="joinedDateTime",)
-	role: Optional[MultiTenantOrganizationMemberRole] = Field(default=None,alias="role",)
-	state: Optional[MultiTenantOrganizationMemberState] = Field(default=None,alias="state",)
-	tenantId: Optional[str] = Field(default=None,alias="tenantId",)
-	transitionDetails: Optional[MultiTenantOrganizationMemberTransitionDetails] = Field(default=None,alias="transitionDetails",)
+	id: Optional[str] = Field(alias="id",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	deletedDateTime: Optional[datetime] = Field(alias="deletedDateTime",default=None,)
+	addedByTenantId: Optional[UUID] = Field(alias="addedByTenantId",default=None,)
+	addedDateTime: Optional[datetime] = Field(alias="addedDateTime",default=None,)
+	displayName: Optional[str] = Field(alias="displayName",default=None,)
+	joinedDateTime: Optional[datetime] = Field(alias="joinedDateTime",default=None,)
+	role: Optional[str | MultiTenantOrganizationMemberRole] = Field(alias="role",default=None,)
+	state: Optional[str | MultiTenantOrganizationMemberState] = Field(alias="state",default=None,)
+	tenantId: Optional[str] = Field(alias="tenantId",default=None,)
+	transitionDetails: Optional[MultiTenantOrganizationMemberTransitionDetails] = Field(alias="transitionDetails",default=None,)
 
 from .multi_tenant_organization_member_role import MultiTenantOrganizationMemberRole
 from .multi_tenant_organization_member_state import MultiTenantOrganizationMemberState

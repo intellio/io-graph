@@ -5,19 +5,19 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class SecurityHostPort(BaseModel):
-	id: Optional[str] = Field(default=None,alias="id",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	banners: Optional[list[SecurityHostPortBanner]] = Field(default=None,alias="banners",)
-	firstSeenDateTime: Optional[datetime] = Field(default=None,alias="firstSeenDateTime",)
-	lastScanDateTime: Optional[datetime] = Field(default=None,alias="lastScanDateTime",)
-	lastSeenDateTime: Optional[datetime] = Field(default=None,alias="lastSeenDateTime",)
-	port: Optional[int] = Field(default=None,alias="port",)
-	protocol: Optional[SecurityHostPortProtocol] = Field(default=None,alias="protocol",)
-	services: Optional[list[SecurityHostPortComponent]] = Field(default=None,alias="services",)
-	status: Optional[SecurityHostPortStatus] = Field(default=None,alias="status",)
-	timesObserved: Optional[int] = Field(default=None,alias="timesObserved",)
-	host: SerializeAsAny[Optional[SecurityHost]] = Field(default=None,alias="host",)
-	mostRecentSslCertificate: Optional[SecuritySslCertificate] = Field(default=None,alias="mostRecentSslCertificate",)
+	id: Optional[str] = Field(alias="id",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	banners: Optional[list[SecurityHostPortBanner]] = Field(alias="banners",default=None,)
+	firstSeenDateTime: Optional[datetime] = Field(alias="firstSeenDateTime",default=None,)
+	lastScanDateTime: Optional[datetime] = Field(alias="lastScanDateTime",default=None,)
+	lastSeenDateTime: Optional[datetime] = Field(alias="lastSeenDateTime",default=None,)
+	port: Optional[int] = Field(alias="port",default=None,)
+	protocol: Optional[str | SecurityHostPortProtocol] = Field(alias="protocol",default=None,)
+	services: Optional[list[SecurityHostPortComponent]] = Field(alias="services",default=None,)
+	status: Optional[str | SecurityHostPortStatus] = Field(alias="status",default=None,)
+	timesObserved: Optional[int] = Field(alias="timesObserved",default=None,)
+	host: SerializeAsAny[Optional[SecurityHost]] = Field(alias="host",default=None,)
+	mostRecentSslCertificate: Optional[SecuritySslCertificate] = Field(alias="mostRecentSslCertificate",default=None,)
 
 from .security_host_port_banner import SecurityHostPortBanner
 from .security_host_port_protocol import SecurityHostPortProtocol

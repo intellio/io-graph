@@ -4,15 +4,15 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class BookingSchedulingPolicy(BaseModel):
-	allowStaffSelection: Optional[bool] = Field(default=None,alias="allowStaffSelection",)
-	customAvailabilities: Optional[list[BookingsAvailabilityWindow]] = Field(default=None,alias="customAvailabilities",)
-	generalAvailability: SerializeAsAny[Optional[BookingsAvailability]] = Field(default=None,alias="generalAvailability",)
-	isMeetingInviteToCustomersEnabled: Optional[bool] = Field(default=None,alias="isMeetingInviteToCustomersEnabled",)
-	maximumAdvance: Optional[str] = Field(default=None,alias="maximumAdvance",)
-	minimumLeadTime: Optional[str] = Field(default=None,alias="minimumLeadTime",)
-	sendConfirmationsToOwner: Optional[bool] = Field(default=None,alias="sendConfirmationsToOwner",)
-	timeSlotInterval: Optional[str] = Field(default=None,alias="timeSlotInterval",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
+	allowStaffSelection: Optional[bool] = Field(alias="allowStaffSelection",default=None,)
+	customAvailabilities: Optional[list[BookingsAvailabilityWindow]] = Field(alias="customAvailabilities",default=None,)
+	generalAvailability: SerializeAsAny[Optional[BookingsAvailability]] = Field(alias="generalAvailability",default=None,)
+	isMeetingInviteToCustomersEnabled: Optional[bool] = Field(alias="isMeetingInviteToCustomersEnabled",default=None,)
+	maximumAdvance: Optional[str] = Field(alias="maximumAdvance",default=None,)
+	minimumLeadTime: Optional[str] = Field(alias="minimumLeadTime",default=None,)
+	sendConfirmationsToOwner: Optional[bool] = Field(alias="sendConfirmationsToOwner",default=None,)
+	timeSlotInterval: Optional[str] = Field(alias="timeSlotInterval",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 
 from .bookings_availability_window import BookingsAvailabilityWindow
 from .bookings_availability import BookingsAvailability

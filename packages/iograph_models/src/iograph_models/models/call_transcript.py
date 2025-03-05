@@ -5,17 +5,17 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class CallTranscript(BaseModel):
-	id: Optional[str] = Field(default=None,alias="id",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	callId: Optional[str] = Field(default=None,alias="callId",)
-	content: Optional[str] = Field(default=None,alias="content",)
-	contentCorrelationId: Optional[str] = Field(default=None,alias="contentCorrelationId",)
-	createdDateTime: Optional[datetime] = Field(default=None,alias="createdDateTime",)
-	endDateTime: Optional[datetime] = Field(default=None,alias="endDateTime",)
-	meetingId: Optional[str] = Field(default=None,alias="meetingId",)
-	meetingOrganizer: SerializeAsAny[Optional[IdentitySet]] = Field(default=None,alias="meetingOrganizer",)
-	metadataContent: Optional[str] = Field(default=None,alias="metadataContent",)
-	transcriptContentUrl: Optional[str] = Field(default=None,alias="transcriptContentUrl",)
+	id: Optional[str] = Field(alias="id",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	callId: Optional[str] = Field(alias="callId",default=None,)
+	content: Optional[str] = Field(alias="content",default=None,)
+	contentCorrelationId: Optional[str] = Field(alias="contentCorrelationId",default=None,)
+	createdDateTime: Optional[datetime] = Field(alias="createdDateTime",default=None,)
+	endDateTime: Optional[datetime] = Field(alias="endDateTime",default=None,)
+	meetingId: Optional[str] = Field(alias="meetingId",default=None,)
+	meetingOrganizer: SerializeAsAny[Optional[IdentitySet]] = Field(alias="meetingOrganizer",default=None,)
+	metadataContent: Optional[str] = Field(alias="metadataContent",default=None,)
+	transcriptContentUrl: Optional[str] = Field(alias="transcriptContentUrl",default=None,)
 
 from .identity_set import IdentitySet
 

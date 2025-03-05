@@ -5,21 +5,21 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class RecycleBin(BaseModel):
-	id: Optional[str] = Field(default=None,alias="id",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	createdBy: SerializeAsAny[Optional[IdentitySet]] = Field(default=None,alias="createdBy",)
-	createdDateTime: Optional[datetime] = Field(default=None,alias="createdDateTime",)
-	description: Optional[str] = Field(default=None,alias="description",)
-	eTag: Optional[str] = Field(default=None,alias="eTag",)
-	lastModifiedBy: SerializeAsAny[Optional[IdentitySet]] = Field(default=None,alias="lastModifiedBy",)
-	lastModifiedDateTime: Optional[datetime] = Field(default=None,alias="lastModifiedDateTime",)
-	name: Optional[str] = Field(default=None,alias="name",)
-	parentReference: Optional[ItemReference] = Field(default=None,alias="parentReference",)
-	webUrl: Optional[str] = Field(default=None,alias="webUrl",)
-	createdByUser: Optional[User] = Field(default=None,alias="createdByUser",)
-	lastModifiedByUser: Optional[User] = Field(default=None,alias="lastModifiedByUser",)
-	settings: Optional[RecycleBinSettings] = Field(default=None,alias="settings",)
-	items: Optional[list[RecycleBinItem]] = Field(default=None,alias="items",)
+	id: Optional[str] = Field(alias="id",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	createdBy: SerializeAsAny[Optional[IdentitySet]] = Field(alias="createdBy",default=None,)
+	createdDateTime: Optional[datetime] = Field(alias="createdDateTime",default=None,)
+	description: Optional[str] = Field(alias="description",default=None,)
+	eTag: Optional[str] = Field(alias="eTag",default=None,)
+	lastModifiedBy: SerializeAsAny[Optional[IdentitySet]] = Field(alias="lastModifiedBy",default=None,)
+	lastModifiedDateTime: Optional[datetime] = Field(alias="lastModifiedDateTime",default=None,)
+	name: Optional[str] = Field(alias="name",default=None,)
+	parentReference: Optional[ItemReference] = Field(alias="parentReference",default=None,)
+	webUrl: Optional[str] = Field(alias="webUrl",default=None,)
+	createdByUser: Optional[User] = Field(alias="createdByUser",default=None,)
+	lastModifiedByUser: Optional[User] = Field(alias="lastModifiedByUser",default=None,)
+	settings: Optional[RecycleBinSettings] = Field(alias="settings",default=None,)
+	items: Optional[list[RecycleBinItem]] = Field(alias="items",default=None,)
 
 from .identity_set import IdentitySet
 from .identity_set import IdentitySet

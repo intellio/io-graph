@@ -7,14 +7,14 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class RestoreArtifactBase(BaseModel):
-	id: Optional[str] = Field(default=None,alias="id",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	completionDateTime: Optional[datetime] = Field(default=None,alias="completionDateTime",)
-	destinationType: Optional[DestinationType] = Field(default=None,alias="destinationType",)
-	error: Optional[PublicError] = Field(default=None,alias="error",)
-	startDateTime: Optional[datetime] = Field(default=None,alias="startDateTime",)
-	status: Optional[ArtifactRestoreStatus] = Field(default=None,alias="status",)
-	restorePoint: Optional[RestorePoint] = Field(default=None,alias="restorePoint",)
+	id: Optional[str] = Field(alias="id",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	completionDateTime: Optional[datetime] = Field(alias="completionDateTime",default=None,)
+	destinationType: Optional[str | DestinationType] = Field(alias="destinationType",default=None,)
+	error: Optional[PublicError] = Field(alias="error",default=None,)
+	startDateTime: Optional[datetime] = Field(alias="startDateTime",default=None,)
+	status: Optional[str | ArtifactRestoreStatus] = Field(alias="status",default=None,)
+	restorePoint: Optional[RestorePoint] = Field(alias="restorePoint",default=None,)
 
 	@model_validator(mode="wrap")
 	def convert_discriminator_class(cls, data: Any, handler: ModelWrapValidatorHandler[Self]) -> Self:

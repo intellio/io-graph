@@ -6,10 +6,10 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class AuthenticationEventListener(BaseModel):
-	id: Optional[str] = Field(default=None,alias="id",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	authenticationEventsFlowId: Optional[str] = Field(default=None,alias="authenticationEventsFlowId",)
-	conditions: Optional[AuthenticationConditions] = Field(default=None,alias="conditions",)
+	id: Optional[str] = Field(alias="id",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	authenticationEventsFlowId: Optional[str] = Field(alias="authenticationEventsFlowId",default=None,)
+	conditions: Optional[AuthenticationConditions] = Field(alias="conditions",default=None,)
 
 	@model_validator(mode="wrap")
 	def convert_discriminator_class(cls, data: Any, handler: ModelWrapValidatorHandler[Self]) -> Self:

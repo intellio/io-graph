@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class UnifiedRoleManagementPolicyRuleTargetOperations(Enum):
+class UnifiedRoleManagementPolicyRuleTargetOperations(StrEnum):
 	all = "all"
 	activate = "activate"
 	deactivate = "deactivate"

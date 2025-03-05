@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class EndpointType(Enum):
+class EndpointType(StrEnum):
 	default = "default"
 	voicemail = "voicemail"
 	skypeForBusiness = "skypeForBusiness"

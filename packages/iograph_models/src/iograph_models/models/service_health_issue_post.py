@@ -5,10 +5,10 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class ServiceHealthIssuePost(BaseModel):
-	createdDateTime: Optional[datetime] = Field(default=None,alias="createdDateTime",)
-	description: Optional[ItemBody] = Field(default=None,alias="description",)
-	postType: Optional[PostType] = Field(default=None,alias="postType",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
+	createdDateTime: Optional[datetime] = Field(alias="createdDateTime",default=None,)
+	description: Optional[ItemBody] = Field(alias="description",default=None,)
+	postType: Optional[str | PostType] = Field(alias="postType",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 
 from .item_body import ItemBody
 from .post_type import PostType

@@ -4,12 +4,12 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class TermStoreStore(BaseModel):
-	id: Optional[str] = Field(default=None,alias="id",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	defaultLanguageTag: Optional[str] = Field(default=None,alias="defaultLanguageTag",)
-	languageTags: Optional[list[str]] = Field(default=None,alias="languageTags",)
-	groups: Optional[list[TermStoreGroup]] = Field(default=None,alias="groups",)
-	sets: Optional[list[TermStoreSet]] = Field(default=None,alias="sets",)
+	id: Optional[str] = Field(alias="id",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	defaultLanguageTag: Optional[str] = Field(alias="defaultLanguageTag",default=None,)
+	languageTags: Optional[list[str]] = Field(alias="languageTags",default=None,)
+	groups: Optional[list[TermStoreGroup]] = Field(alias="groups",default=None,)
+	sets: Optional[list[TermStoreSet]] = Field(alias="sets",default=None,)
 
 from .term_store_group import TermStoreGroup
 from .term_store_set import TermStoreSet

@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class VirtualAppointmentMessageType(Enum):
+class VirtualAppointmentMessageType(StrEnum):
 	confirmation = "confirmation"
 	reschedule = "reschedule"
 	cancellation = "cancellation"

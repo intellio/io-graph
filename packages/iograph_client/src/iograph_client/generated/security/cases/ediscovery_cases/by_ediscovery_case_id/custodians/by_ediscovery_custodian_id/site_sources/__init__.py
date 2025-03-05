@@ -15,8 +15,8 @@ if TYPE_CHECKING:
 	from .by_site_source_id import BySiteSourceIdRequest
 	from .........request_adapter import HttpxRequestAdapter
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
-from iograph_models.models.security_site_source import SecuritySiteSource
 from iograph_models.models.security_site_source_collection_response import SecuritySiteSourceCollectionResponse
+from iograph_models.models.security_site_source import SecuritySiteSource
 
 
 class SiteSourcesRequest(BaseRequestBuilder):

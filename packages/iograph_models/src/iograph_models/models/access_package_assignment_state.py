@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class AccessPackageAssignmentState(Enum):
+class AccessPackageAssignmentState(StrEnum):
 	delivering = "delivering"
 	partiallyDelivered = "partiallyDelivered"
 	delivered = "delivered"

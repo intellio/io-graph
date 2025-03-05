@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class AccessReviewInstanceDecisionItemFilterByCurrentUserOptions(Enum):
+class AccessReviewInstanceDecisionItemFilterByCurrentUserOptions(StrEnum):
 	reviewer = "reviewer"
 	unknownFutureValue = "unknownFutureValue"
 

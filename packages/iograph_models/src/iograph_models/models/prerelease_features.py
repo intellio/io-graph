@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class PrereleaseFeatures(Enum):
+class PrereleaseFeatures(StrEnum):
 	userDefined = "userDefined"
 	settingsOnly = "settingsOnly"
 	settingsAndExperimentations = "settingsAndExperimentations"

@@ -4,9 +4,9 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class Work_day__intlPostRequest(BaseModel):
-	startDate: Optional[str] = Field(default=None,alias="startDate",)
-	days: Optional[str] = Field(default=None,alias="days",)
-	weekend: Optional[str] = Field(default=None,alias="weekend",)
-	holidays: Optional[str] = Field(default=None,alias="holidays",)
+	startDate: Optional[str] = Field(alias="startDate",default=None,)
+	days: Optional[str] = Field(alias="days",default=None,)
+	weekend: Optional[str] = Field(alias="weekend",default=None,)
+	holidays: Optional[str] = Field(alias="holidays",default=None,)
 
 

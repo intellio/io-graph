@@ -4,7 +4,7 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class SecurityDeploymentAccessKeyType(BaseModel):
-	deploymentAccessKey: Optional[str] = Field(default=None,alias="deploymentAccessKey",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
+	deploymentAccessKey: Optional[str] = Field(alias="deploymentAccessKey",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 
 

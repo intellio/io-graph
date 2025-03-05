@@ -4,14 +4,14 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class SubjectRightsRequestDetail(BaseModel):
-	excludedItemCount: Optional[int] = Field(default=None,alias="excludedItemCount",)
-	insightCounts: Optional[list[KeyValuePair]] = Field(default=None,alias="insightCounts",)
-	itemCount: Optional[int] = Field(default=None,alias="itemCount",)
-	itemNeedReview: Optional[int] = Field(default=None,alias="itemNeedReview",)
-	productItemCounts: Optional[list[KeyValuePair]] = Field(default=None,alias="productItemCounts",)
-	signedOffItemCount: Optional[int] = Field(default=None,alias="signedOffItemCount",)
-	totalItemSize: Optional[int] = Field(default=None,alias="totalItemSize",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
+	excludedItemCount: Optional[int] = Field(alias="excludedItemCount",default=None,)
+	insightCounts: Optional[list[KeyValuePair]] = Field(alias="insightCounts",default=None,)
+	itemCount: Optional[int] = Field(alias="itemCount",default=None,)
+	itemNeedReview: Optional[int] = Field(alias="itemNeedReview",default=None,)
+	productItemCounts: Optional[list[KeyValuePair]] = Field(alias="productItemCounts",default=None,)
+	signedOffItemCount: Optional[int] = Field(alias="signedOffItemCount",default=None,)
+	totalItemSize: Optional[int] = Field(alias="totalItemSize",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 
 from .key_value_pair import KeyValuePair
 from .key_value_pair import KeyValuePair

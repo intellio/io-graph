@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class ConsentRequestFilterByCurrentUserOptions(Enum):
+class ConsentRequestFilterByCurrentUserOptions(StrEnum):
 	reviewer = "reviewer"
 	unknownFutureValue = "unknownFutureValue"
 

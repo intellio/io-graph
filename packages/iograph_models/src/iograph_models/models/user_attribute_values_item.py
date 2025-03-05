@@ -4,9 +4,9 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class UserAttributeValuesItem(BaseModel):
-	isDefault: Optional[bool] = Field(default=None,alias="isDefault",)
-	name: Optional[str] = Field(default=None,alias="name",)
-	value: Optional[str] = Field(default=None,alias="value",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
+	isDefault: Optional[bool] = Field(alias="isDefault",default=None,)
+	name: Optional[str] = Field(alias="name",default=None,)
+	value: Optional[str] = Field(alias="value",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 
 

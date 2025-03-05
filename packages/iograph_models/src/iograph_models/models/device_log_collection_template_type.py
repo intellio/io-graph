@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class DeviceLogCollectionTemplateType(Enum):
+class DeviceLogCollectionTemplateType(StrEnum):
 	predefined = "predefined"
 	unknownFutureValue = "unknownFutureValue"
 

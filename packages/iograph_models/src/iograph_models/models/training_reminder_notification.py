@@ -4,10 +4,10 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class TrainingReminderNotification(BaseModel):
-	defaultLanguage: Optional[str] = Field(default=None,alias="defaultLanguage",)
-	endUserNotification: Optional[EndUserNotification] = Field(default=None,alias="endUserNotification",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	deliveryFrequency: Optional[NotificationDeliveryFrequency] = Field(default=None,alias="deliveryFrequency",)
+	defaultLanguage: Optional[str] = Field(alias="defaultLanguage",default=None,)
+	endUserNotification: Optional[EndUserNotification] = Field(alias="endUserNotification",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	deliveryFrequency: Optional[str | NotificationDeliveryFrequency] = Field(alias="deliveryFrequency",default=None,)
 
 from .end_user_notification import EndUserNotification
 from .notification_delivery_frequency import NotificationDeliveryFrequency

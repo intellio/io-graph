@@ -4,14 +4,14 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class MeetingTimeSuggestion(BaseModel):
-	attendeeAvailability: Optional[list[AttendeeAvailability]] = Field(default=None,alias="attendeeAvailability",)
+	attendeeAvailability: Optional[list[AttendeeAvailability]] = Field(alias="attendeeAvailability",default=None,)
 	confidence: float | str | ReferenceNumeric
-	locations: SerializeAsAny[Optional[list[Location]]] = Field(default=None,alias="locations",)
-	meetingTimeSlot: Optional[TimeSlot] = Field(default=None,alias="meetingTimeSlot",)
-	order: Optional[int] = Field(default=None,alias="order",)
-	organizerAvailability: Optional[FreeBusyStatus] = Field(default=None,alias="organizerAvailability",)
-	suggestionReason: Optional[str] = Field(default=None,alias="suggestionReason",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
+	locations: SerializeAsAny[Optional[list[Location]]] = Field(alias="locations",default=None,)
+	meetingTimeSlot: Optional[TimeSlot] = Field(alias="meetingTimeSlot",default=None,)
+	order: Optional[int] = Field(alias="order",default=None,)
+	organizerAvailability: Optional[str | FreeBusyStatus] = Field(alias="organizerAvailability",default=None,)
+	suggestionReason: Optional[str] = Field(alias="suggestionReason",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 
 from .attendee_availability import AttendeeAvailability
 from .reference_numeric import ReferenceNumeric

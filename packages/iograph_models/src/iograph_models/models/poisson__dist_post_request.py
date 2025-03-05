@@ -4,8 +4,8 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class Poisson__distPostRequest(BaseModel):
-	x: Optional[str] = Field(default=None,alias="x",)
-	mean: Optional[str] = Field(default=None,alias="mean",)
-	cumulative: Optional[str] = Field(default=None,alias="cumulative",)
+	x: Optional[str] = Field(alias="x",default=None,)
+	mean: Optional[str] = Field(alias="mean",default=None,)
+	cumulative: Optional[str] = Field(alias="cumulative",default=None,)
 
 

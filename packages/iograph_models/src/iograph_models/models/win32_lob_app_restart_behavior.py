@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class Win32LobAppRestartBehavior(Enum):
+class Win32LobAppRestartBehavior(StrEnum):
 	basedOnReturnCode = "basedOnReturnCode"
 	allow = "allow"
 	suppress = "suppress"

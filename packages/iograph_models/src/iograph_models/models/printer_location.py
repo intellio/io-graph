@@ -4,24 +4,24 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class PrinterLocation(BaseModel):
-	altitudeInMeters: Optional[int] = Field(default=None,alias="altitudeInMeters",)
-	building: Optional[str] = Field(default=None,alias="building",)
-	city: Optional[str] = Field(default=None,alias="city",)
-	countryOrRegion: Optional[str] = Field(default=None,alias="countryOrRegion",)
-	floor: Optional[str] = Field(default=None,alias="floor",)
-	floorDescription: Optional[str] = Field(default=None,alias="floorDescription",)
+	altitudeInMeters: Optional[int] = Field(alias="altitudeInMeters",default=None,)
+	building: Optional[str] = Field(alias="building",default=None,)
+	city: Optional[str] = Field(alias="city",default=None,)
+	countryOrRegion: Optional[str] = Field(alias="countryOrRegion",default=None,)
+	floor: Optional[str] = Field(alias="floor",default=None,)
+	floorDescription: Optional[str] = Field(alias="floorDescription",default=None,)
 	latitude: float | str | ReferenceNumeric
 	longitude: float | str | ReferenceNumeric
-	organization: Optional[list[str]] = Field(default=None,alias="organization",)
-	postalCode: Optional[str] = Field(default=None,alias="postalCode",)
-	roomDescription: Optional[str] = Field(default=None,alias="roomDescription",)
-	roomName: Optional[str] = Field(default=None,alias="roomName",)
-	site: Optional[str] = Field(default=None,alias="site",)
-	stateOrProvince: Optional[str] = Field(default=None,alias="stateOrProvince",)
-	streetAddress: Optional[str] = Field(default=None,alias="streetAddress",)
-	subdivision: Optional[list[str]] = Field(default=None,alias="subdivision",)
-	subunit: Optional[list[str]] = Field(default=None,alias="subunit",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
+	organization: Optional[list[str]] = Field(alias="organization",default=None,)
+	postalCode: Optional[str] = Field(alias="postalCode",default=None,)
+	roomDescription: Optional[str] = Field(alias="roomDescription",default=None,)
+	roomName: Optional[str] = Field(alias="roomName",default=None,)
+	site: Optional[str] = Field(alias="site",default=None,)
+	stateOrProvince: Optional[str] = Field(alias="stateOrProvince",default=None,)
+	streetAddress: Optional[str] = Field(alias="streetAddress",default=None,)
+	subdivision: Optional[list[str]] = Field(alias="subdivision",default=None,)
+	subunit: Optional[list[str]] = Field(alias="subunit",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 
 from .reference_numeric import ReferenceNumeric
 from .reference_numeric import ReferenceNumeric

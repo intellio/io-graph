@@ -5,12 +5,12 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class WindowsHelloForBusinessAuthenticationMethod(BaseModel):
-	id: Optional[str] = Field(default=None,alias="id",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	createdDateTime: Optional[datetime] = Field(default=None,alias="createdDateTime",)
-	displayName: Optional[str] = Field(default=None,alias="displayName",)
-	keyStrength: Optional[AuthenticationMethodKeyStrength] = Field(default=None,alias="keyStrength",)
-	device: Optional[Device] = Field(default=None,alias="device",)
+	id: Optional[str] = Field(alias="id",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	createdDateTime: Optional[datetime] = Field(alias="createdDateTime",default=None,)
+	displayName: Optional[str] = Field(alias="displayName",default=None,)
+	keyStrength: Optional[str | AuthenticationMethodKeyStrength] = Field(alias="keyStrength",default=None,)
+	device: Optional[Device] = Field(alias="device",default=None,)
 
 from .authentication_method_key_strength import AuthenticationMethodKeyStrength
 from .device import Device

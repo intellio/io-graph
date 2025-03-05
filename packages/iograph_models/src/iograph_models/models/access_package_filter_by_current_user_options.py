@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class AccessPackageFilterByCurrentUserOptions(Enum):
+class AccessPackageFilterByCurrentUserOptions(StrEnum):
 	allowedRequestor = "allowedRequestor"
 	unknownFutureValue = "unknownFutureValue"
 

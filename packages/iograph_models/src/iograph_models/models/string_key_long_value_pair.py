@@ -4,8 +4,8 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class StringKeyLongValuePair(BaseModel):
-	key: Optional[str] = Field(default=None,alias="key",)
-	value: Optional[int] = Field(default=None,alias="value",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
+	key: Optional[str] = Field(alias="key",default=None,)
+	value: Optional[int] = Field(alias="value",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 
 

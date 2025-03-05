@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class BrowserSiteMergeType(Enum):
+class BrowserSiteMergeType(StrEnum):
 	noMerge = "noMerge"
 	default = "default"
 	unknownFutureValue = "unknownFutureValue"

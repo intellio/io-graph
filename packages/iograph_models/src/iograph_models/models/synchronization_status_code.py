@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class SynchronizationStatusCode(Enum):
+class SynchronizationStatusCode(StrEnum):
 	NotConfigured = "NotConfigured"
 	NotRun = "NotRun"
 	Active = "Active"

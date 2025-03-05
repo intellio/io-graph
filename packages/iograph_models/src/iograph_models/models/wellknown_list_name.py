@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class WellknownListName(Enum):
+class WellknownListName(StrEnum):
 	none = "none"
 	defaultList = "defaultList"
 	flaggedEmails = "flaggedEmails"

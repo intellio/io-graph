@@ -4,9 +4,9 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class SecurityFilePlanCitation(BaseModel):
-	displayName: Optional[str] = Field(default=None,alias="displayName",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	citationJurisdiction: Optional[str] = Field(default=None,alias="citationJurisdiction",)
-	citationUrl: Optional[str] = Field(default=None,alias="citationUrl",)
+	displayName: Optional[str] = Field(alias="displayName",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	citationJurisdiction: Optional[str] = Field(alias="citationJurisdiction",default=None,)
+	citationUrl: Optional[str] = Field(alias="citationUrl",default=None,)
 
 

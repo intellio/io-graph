@@ -4,9 +4,9 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class WorkbookChartAxisTitleFormat(BaseModel):
-	id: Optional[str] = Field(default=None,alias="id",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	font: Optional[WorkbookChartFont] = Field(default=None,alias="font",)
+	id: Optional[str] = Field(alias="id",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	font: Optional[WorkbookChartFont] = Field(alias="font",default=None,)
 
 from .workbook_chart_font import WorkbookChartFont
 

@@ -4,8 +4,8 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class InboundOutboundPolicyConfiguration(BaseModel):
-	inboundAllowed: Optional[bool] = Field(default=None,alias="inboundAllowed",)
-	outboundAllowed: Optional[bool] = Field(default=None,alias="outboundAllowed",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
+	inboundAllowed: Optional[bool] = Field(alias="inboundAllowed",default=None,)
+	outboundAllowed: Optional[bool] = Field(alias="outboundAllowed",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 
 

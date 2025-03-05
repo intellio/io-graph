@@ -5,22 +5,22 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class SecurityEdiscoveryExportOperation(BaseModel):
-	id: Optional[str] = Field(default=None,alias="id",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	action: Optional[SecurityCaseAction] = Field(default=None,alias="action",)
-	completedDateTime: Optional[datetime] = Field(default=None,alias="completedDateTime",)
-	createdBy: SerializeAsAny[Optional[IdentitySet]] = Field(default=None,alias="createdBy",)
-	createdDateTime: Optional[datetime] = Field(default=None,alias="createdDateTime",)
-	percentProgress: Optional[int] = Field(default=None,alias="percentProgress",)
-	resultInfo: Optional[ResultInfo] = Field(default=None,alias="resultInfo",)
-	status: Optional[SecurityCaseOperationStatus] = Field(default=None,alias="status",)
-	description: Optional[str] = Field(default=None,alias="description",)
-	exportFileMetadata: Optional[list[SecurityExportFileMetadata]] = Field(default=None,alias="exportFileMetadata",)
-	exportOptions: Optional[SecurityExportOptions] = Field(default=None,alias="exportOptions",)
-	exportStructure: Optional[SecurityExportFileStructure] = Field(default=None,alias="exportStructure",)
-	outputName: Optional[str] = Field(default=None,alias="outputName",)
-	reviewSet: Optional[SecurityEdiscoveryReviewSet] = Field(default=None,alias="reviewSet",)
-	reviewSetQuery: Optional[SecurityEdiscoveryReviewSetQuery] = Field(default=None,alias="reviewSetQuery",)
+	id: Optional[str] = Field(alias="id",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	action: Optional[str | SecurityCaseAction] = Field(alias="action",default=None,)
+	completedDateTime: Optional[datetime] = Field(alias="completedDateTime",default=None,)
+	createdBy: SerializeAsAny[Optional[IdentitySet]] = Field(alias="createdBy",default=None,)
+	createdDateTime: Optional[datetime] = Field(alias="createdDateTime",default=None,)
+	percentProgress: Optional[int] = Field(alias="percentProgress",default=None,)
+	resultInfo: Optional[ResultInfo] = Field(alias="resultInfo",default=None,)
+	status: Optional[str | SecurityCaseOperationStatus] = Field(alias="status",default=None,)
+	description: Optional[str] = Field(alias="description",default=None,)
+	exportFileMetadata: Optional[list[SecurityExportFileMetadata]] = Field(alias="exportFileMetadata",default=None,)
+	exportOptions: Optional[str | SecurityExportOptions] = Field(alias="exportOptions",default=None,)
+	exportStructure: Optional[str | SecurityExportFileStructure] = Field(alias="exportStructure",default=None,)
+	outputName: Optional[str] = Field(alias="outputName",default=None,)
+	reviewSet: Optional[SecurityEdiscoveryReviewSet] = Field(alias="reviewSet",default=None,)
+	reviewSetQuery: Optional[SecurityEdiscoveryReviewSetQuery] = Field(alias="reviewSetQuery",default=None,)
 
 from .security_case_action import SecurityCaseAction
 from .identity_set import IdentitySet

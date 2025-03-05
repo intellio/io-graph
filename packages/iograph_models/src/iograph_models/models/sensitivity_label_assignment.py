@@ -4,10 +4,10 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class SensitivityLabelAssignment(BaseModel):
-	assignmentMethod: Optional[SensitivityLabelAssignmentMethod] = Field(default=None,alias="assignmentMethod",)
-	sensitivityLabelId: Optional[str] = Field(default=None,alias="sensitivityLabelId",)
-	tenantId: Optional[str] = Field(default=None,alias="tenantId",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
+	assignmentMethod: Optional[str | SensitivityLabelAssignmentMethod] = Field(alias="assignmentMethod",default=None,)
+	sensitivityLabelId: Optional[str] = Field(alias="sensitivityLabelId",default=None,)
+	tenantId: Optional[str] = Field(alias="tenantId",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 
 from .sensitivity_label_assignment_method import SensitivityLabelAssignmentMethod
 

@@ -4,8 +4,8 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class CloudClipboardItemPayload(BaseModel):
-	content: Optional[str] = Field(default=None,alias="content",)
-	formatName: Optional[str] = Field(default=None,alias="formatName",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
+	content: Optional[str] = Field(alias="content",default=None,)
+	formatName: Optional[str] = Field(alias="formatName",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 
 

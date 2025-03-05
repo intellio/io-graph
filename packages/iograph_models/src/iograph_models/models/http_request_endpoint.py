@@ -4,7 +4,7 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class HttpRequestEndpoint(BaseModel):
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	targetUrl: Optional[str] = Field(default=None,alias="targetUrl",)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	targetUrl: Optional[str] = Field(alias="targetUrl",default=None,)
 
 

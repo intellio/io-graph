@@ -5,8 +5,8 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 class SimulationEventsContent(BaseModel):
 	compromisedRate: float | str | ReferenceNumeric
-	events: Optional[list[SimulationEvent]] = Field(default=None,alias="events",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
+	events: Optional[list[SimulationEvent]] = Field(alias="events",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 
 from .reference_numeric import ReferenceNumeric
 from .simulation_event import SimulationEvent

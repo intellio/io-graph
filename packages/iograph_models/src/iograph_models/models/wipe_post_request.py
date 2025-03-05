@@ -4,9 +4,9 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class WipePostRequest(BaseModel):
-	keepEnrollmentData: Optional[bool] = Field(default=None,alias="keepEnrollmentData",)
-	keepUserData: Optional[bool] = Field(default=None,alias="keepUserData",)
-	macOsUnlockCode: Optional[str] = Field(default=None,alias="macOsUnlockCode",)
-	persistEsimDataPlan: Optional[bool] = Field(default=None,alias="persistEsimDataPlan",)
+	keepEnrollmentData: Optional[bool] = Field(alias="keepEnrollmentData",default=None,)
+	keepUserData: Optional[bool] = Field(alias="keepUserData",default=None,)
+	macOsUnlockCode: Optional[str] = Field(alias="macOsUnlockCode",default=None,)
+	persistEsimDataPlan: Optional[bool] = Field(alias="persistEsimDataPlan",default=None,)
 
 

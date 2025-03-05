@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class BaseAuthenticationMethod(Enum):
+class BaseAuthenticationMethod(StrEnum):
 	password = "password"
 	voice = "voice"
 	hardwareOath = "hardwareOath"

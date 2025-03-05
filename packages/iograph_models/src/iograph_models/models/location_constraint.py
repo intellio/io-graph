@@ -4,10 +4,10 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class LocationConstraint(BaseModel):
-	isRequired: Optional[bool] = Field(default=None,alias="isRequired",)
-	locations: Optional[list[LocationConstraintItem]] = Field(default=None,alias="locations",)
-	suggestLocation: Optional[bool] = Field(default=None,alias="suggestLocation",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
+	isRequired: Optional[bool] = Field(alias="isRequired",default=None,)
+	locations: Optional[list[LocationConstraintItem]] = Field(alias="locations",default=None,)
+	suggestLocation: Optional[bool] = Field(alias="suggestLocation",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 
 from .location_constraint_item import LocationConstraintItem
 

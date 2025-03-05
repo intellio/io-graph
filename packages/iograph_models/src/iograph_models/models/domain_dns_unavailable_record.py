@@ -4,13 +4,13 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class DomainDnsUnavailableRecord(BaseModel):
-	id: Optional[str] = Field(default=None,alias="id",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	isOptional: Optional[bool] = Field(default=None,alias="isOptional",)
-	label: Optional[str] = Field(default=None,alias="label",)
-	recordType: Optional[str] = Field(default=None,alias="recordType",)
-	supportedService: Optional[str] = Field(default=None,alias="supportedService",)
-	ttl: Optional[int] = Field(default=None,alias="ttl",)
-	description: Optional[str] = Field(default=None,alias="description",)
+	id: Optional[str] = Field(alias="id",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	isOptional: Optional[bool] = Field(alias="isOptional",default=None,)
+	label: Optional[str] = Field(alias="label",default=None,)
+	recordType: Optional[str] = Field(alias="recordType",default=None,)
+	supportedService: Optional[str] = Field(alias="supportedService",default=None,)
+	ttl: Optional[int] = Field(alias="ttl",default=None,)
+	description: Optional[str] = Field(alias="description",default=None,)
 
 

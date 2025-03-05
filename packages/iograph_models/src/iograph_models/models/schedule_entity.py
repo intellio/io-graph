@@ -7,10 +7,10 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class ScheduleEntity(BaseModel):
-	endDateTime: Optional[datetime] = Field(default=None,alias="endDateTime",)
-	startDateTime: Optional[datetime] = Field(default=None,alias="startDateTime",)
-	theme: Optional[ScheduleEntityTheme] = Field(default=None,alias="theme",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
+	endDateTime: Optional[datetime] = Field(alias="endDateTime",default=None,)
+	startDateTime: Optional[datetime] = Field(alias="startDateTime",default=None,)
+	theme: Optional[str | ScheduleEntityTheme] = Field(alias="theme",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 
 	@model_validator(mode="wrap")
 	def convert_discriminator_class(cls, data: Any, handler: ModelWrapValidatorHandler[Self]) -> Self:

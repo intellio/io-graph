@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class AuthenticationPhoneType(Enum):
+class AuthenticationPhoneType(StrEnum):
 	mobile = "mobile"
 	alternateMobile = "alternateMobile"
 	office = "office"

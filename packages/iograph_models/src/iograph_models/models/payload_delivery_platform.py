@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class PayloadDeliveryPlatform(Enum):
+class PayloadDeliveryPlatform(StrEnum):
 	unknown = "unknown"
 	sms = "sms"
 	email = "email"

@@ -4,9 +4,9 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class JoinMeetingIdSettings(BaseModel):
-	isPasscodeRequired: Optional[bool] = Field(default=None,alias="isPasscodeRequired",)
-	joinMeetingId: Optional[str] = Field(default=None,alias="joinMeetingId",)
-	passcode: Optional[str] = Field(default=None,alias="passcode",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
+	isPasscodeRequired: Optional[bool] = Field(alias="isPasscodeRequired",default=None,)
+	joinMeetingId: Optional[str] = Field(alias="joinMeetingId",default=None,)
+	passcode: Optional[str] = Field(alias="passcode",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 
 

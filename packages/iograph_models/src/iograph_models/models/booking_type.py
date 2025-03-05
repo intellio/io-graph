@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class BookingType(Enum):
+class BookingType(StrEnum):
 	unknown = "unknown"
 	standard = "standard"
 	reserved = "reserved"

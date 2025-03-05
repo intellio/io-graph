@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class AuthenticationMethodTargetType(Enum):
+class AuthenticationMethodTargetType(StrEnum):
 	user = "user"
 	group = "group"
 	unknownFutureValue = "unknownFutureValue"

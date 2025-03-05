@@ -5,17 +5,17 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class AccessPackageResourceEnvironment(BaseModel):
-	id: Optional[str] = Field(default=None,alias="id",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	connectionInfo: Optional[ConnectionInfo] = Field(default=None,alias="connectionInfo",)
-	createdDateTime: Optional[datetime] = Field(default=None,alias="createdDateTime",)
-	description: Optional[str] = Field(default=None,alias="description",)
-	displayName: Optional[str] = Field(default=None,alias="displayName",)
-	isDefaultEnvironment: Optional[bool] = Field(default=None,alias="isDefaultEnvironment",)
-	modifiedDateTime: Optional[datetime] = Field(default=None,alias="modifiedDateTime",)
-	originId: Optional[str] = Field(default=None,alias="originId",)
-	originSystem: Optional[str] = Field(default=None,alias="originSystem",)
-	resources: Optional[list[AccessPackageResource]] = Field(default=None,alias="resources",)
+	id: Optional[str] = Field(alias="id",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	connectionInfo: Optional[ConnectionInfo] = Field(alias="connectionInfo",default=None,)
+	createdDateTime: Optional[datetime] = Field(alias="createdDateTime",default=None,)
+	description: Optional[str] = Field(alias="description",default=None,)
+	displayName: Optional[str] = Field(alias="displayName",default=None,)
+	isDefaultEnvironment: Optional[bool] = Field(alias="isDefaultEnvironment",default=None,)
+	modifiedDateTime: Optional[datetime] = Field(alias="modifiedDateTime",default=None,)
+	originId: Optional[str] = Field(alias="originId",default=None,)
+	originSystem: Optional[str] = Field(alias="originSystem",default=None,)
+	resources: Optional[list[AccessPackageResource]] = Field(alias="resources",default=None,)
 
 from .connection_info import ConnectionInfo
 from .access_package_resource import AccessPackageResource

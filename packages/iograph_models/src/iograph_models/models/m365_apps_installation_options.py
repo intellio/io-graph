@@ -4,11 +4,11 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class M365AppsInstallationOptions(BaseModel):
-	id: Optional[str] = Field(default=None,alias="id",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	appsForMac: Optional[AppsInstallationOptionsForMac] = Field(default=None,alias="appsForMac",)
-	appsForWindows: Optional[AppsInstallationOptionsForWindows] = Field(default=None,alias="appsForWindows",)
-	updateChannel: Optional[AppsUpdateChannelType] = Field(default=None,alias="updateChannel",)
+	id: Optional[str] = Field(alias="id",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	appsForMac: Optional[AppsInstallationOptionsForMac] = Field(alias="appsForMac",default=None,)
+	appsForWindows: Optional[AppsInstallationOptionsForWindows] = Field(alias="appsForWindows",default=None,)
+	updateChannel: Optional[str | AppsUpdateChannelType] = Field(alias="updateChannel",default=None,)
 
 from .apps_installation_options_for_mac import AppsInstallationOptionsForMac
 from .apps_installation_options_for_windows import AppsInstallationOptionsForWindows

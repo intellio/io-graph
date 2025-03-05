@@ -4,14 +4,14 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class IdentityGovernanceTopTasksInsightsSummary(BaseModel):
-	failedTasks: Optional[int] = Field(default=None,alias="failedTasks",)
-	failedUsers: Optional[int] = Field(default=None,alias="failedUsers",)
-	successfulTasks: Optional[int] = Field(default=None,alias="successfulTasks",)
-	successfulUsers: Optional[int] = Field(default=None,alias="successfulUsers",)
-	taskDefinitionDisplayName: Optional[str] = Field(default=None,alias="taskDefinitionDisplayName",)
-	taskDefinitionId: Optional[str] = Field(default=None,alias="taskDefinitionId",)
-	totalTasks: Optional[int] = Field(default=None,alias="totalTasks",)
-	totalUsers: Optional[int] = Field(default=None,alias="totalUsers",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
+	failedTasks: Optional[int] = Field(alias="failedTasks",default=None,)
+	failedUsers: Optional[int] = Field(alias="failedUsers",default=None,)
+	successfulTasks: Optional[int] = Field(alias="successfulTasks",default=None,)
+	successfulUsers: Optional[int] = Field(alias="successfulUsers",default=None,)
+	taskDefinitionDisplayName: Optional[str] = Field(alias="taskDefinitionDisplayName",default=None,)
+	taskDefinitionId: Optional[str] = Field(alias="taskDefinitionId",default=None,)
+	totalTasks: Optional[int] = Field(alias="totalTasks",default=None,)
+	totalUsers: Optional[int] = Field(alias="totalUsers",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 
 

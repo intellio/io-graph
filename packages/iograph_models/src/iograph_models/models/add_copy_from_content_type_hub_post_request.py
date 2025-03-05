@@ -4,6 +4,6 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class Add_copy_from_content_type_hubPostRequest(BaseModel):
-	contentTypeId: Optional[str] = Field(default=None,alias="contentTypeId",)
+	contentTypeId: Optional[str] = Field(alias="contentTypeId",default=None,)
 
 

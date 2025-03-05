@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class WindowsArchitecture(Enum):
+class WindowsArchitecture(StrEnum):
 	none = "none"
 	x86 = "x86"
 	x64 = "x64"

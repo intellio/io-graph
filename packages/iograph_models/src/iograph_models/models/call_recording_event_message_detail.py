@@ -4,14 +4,14 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class CallRecordingEventMessageDetail(BaseModel):
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	callId: Optional[str] = Field(default=None,alias="callId",)
-	callRecordingDisplayName: Optional[str] = Field(default=None,alias="callRecordingDisplayName",)
-	callRecordingDuration: Optional[str] = Field(default=None,alias="callRecordingDuration",)
-	callRecordingStatus: Optional[CallRecordingStatus] = Field(default=None,alias="callRecordingStatus",)
-	callRecordingUrl: Optional[str] = Field(default=None,alias="callRecordingUrl",)
-	initiator: SerializeAsAny[Optional[IdentitySet]] = Field(default=None,alias="initiator",)
-	meetingOrganizer: SerializeAsAny[Optional[IdentitySet]] = Field(default=None,alias="meetingOrganizer",)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	callId: Optional[str] = Field(alias="callId",default=None,)
+	callRecordingDisplayName: Optional[str] = Field(alias="callRecordingDisplayName",default=None,)
+	callRecordingDuration: Optional[str] = Field(alias="callRecordingDuration",default=None,)
+	callRecordingStatus: Optional[str | CallRecordingStatus] = Field(alias="callRecordingStatus",default=None,)
+	callRecordingUrl: Optional[str] = Field(alias="callRecordingUrl",default=None,)
+	initiator: SerializeAsAny[Optional[IdentitySet]] = Field(alias="initiator",default=None,)
+	meetingOrganizer: SerializeAsAny[Optional[IdentitySet]] = Field(alias="meetingOrganizer",default=None,)
 
 from .call_recording_status import CallRecordingStatus
 from .identity_set import IdentitySet

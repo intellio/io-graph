@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class OnlineMeetingProviderType(Enum):
+class OnlineMeetingProviderType(StrEnum):
 	unknown = "unknown"
 	skypeForBusiness = "skypeForBusiness"
 	skypeForConsumer = "skypeForConsumer"

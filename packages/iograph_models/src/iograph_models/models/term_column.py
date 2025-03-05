@@ -4,11 +4,11 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class TermColumn(BaseModel):
-	allowMultipleValues: Optional[bool] = Field(default=None,alias="allowMultipleValues",)
-	showFullyQualifiedName: Optional[bool] = Field(default=None,alias="showFullyQualifiedName",)
-	parentTerm: Optional[TermStoreTerm] = Field(default=None,alias="parentTerm",)
-	termSet: Optional[TermStoreSet] = Field(default=None,alias="termSet",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
+	allowMultipleValues: Optional[bool] = Field(alias="allowMultipleValues",default=None,)
+	showFullyQualifiedName: Optional[bool] = Field(alias="showFullyQualifiedName",default=None,)
+	parentTerm: Optional[TermStoreTerm] = Field(alias="parentTerm",default=None,)
+	termSet: Optional[TermStoreSet] = Field(alias="termSet",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 
 from .term_store_term import TermStoreTerm
 from .term_store_set import TermStoreSet

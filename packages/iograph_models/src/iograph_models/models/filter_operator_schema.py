@@ -4,11 +4,11 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class FilterOperatorSchema(BaseModel):
-	id: Optional[str] = Field(default=None,alias="id",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	arity: Optional[ScopeOperatorType] = Field(default=None,alias="arity",)
-	multivaluedComparisonType: Optional[ScopeOperatorMultiValuedComparisonType] = Field(default=None,alias="multivaluedComparisonType",)
-	supportedAttributeTypes: Optional[list[AttributeType]] = Field(default=None,alias="supportedAttributeTypes",)
+	id: Optional[str] = Field(alias="id",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	arity: Optional[str | ScopeOperatorType] = Field(alias="arity",default=None,)
+	multivaluedComparisonType: Optional[str | ScopeOperatorMultiValuedComparisonType] = Field(alias="multivaluedComparisonType",default=None,)
+	supportedAttributeTypes: Optional[list[str | AttributeType]] = Field(alias="supportedAttributeTypes",default=None,)
 
 from .scope_operator_type import ScopeOperatorType
 from .scope_operator_multi_valued_comparison_type import ScopeOperatorMultiValuedComparisonType

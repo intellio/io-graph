@@ -5,20 +5,20 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class TimeCard(BaseModel):
-	id: Optional[str] = Field(default=None,alias="id",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	createdBy: SerializeAsAny[Optional[IdentitySet]] = Field(default=None,alias="createdBy",)
-	createdDateTime: Optional[datetime] = Field(default=None,alias="createdDateTime",)
-	lastModifiedBy: SerializeAsAny[Optional[IdentitySet]] = Field(default=None,alias="lastModifiedBy",)
-	lastModifiedDateTime: Optional[datetime] = Field(default=None,alias="lastModifiedDateTime",)
-	breaks: Optional[list[TimeCardBreak]] = Field(default=None,alias="breaks",)
-	clockInEvent: Optional[TimeCardEvent] = Field(default=None,alias="clockInEvent",)
-	clockOutEvent: Optional[TimeCardEvent] = Field(default=None,alias="clockOutEvent",)
-	confirmedBy: Optional[ConfirmedBy] = Field(default=None,alias="confirmedBy",)
-	notes: Optional[ItemBody] = Field(default=None,alias="notes",)
-	originalEntry: Optional[TimeCardEntry] = Field(default=None,alias="originalEntry",)
-	state: Optional[TimeCardState] = Field(default=None,alias="state",)
-	userId: Optional[str] = Field(default=None,alias="userId",)
+	id: Optional[str] = Field(alias="id",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	createdBy: SerializeAsAny[Optional[IdentitySet]] = Field(alias="createdBy",default=None,)
+	createdDateTime: Optional[datetime] = Field(alias="createdDateTime",default=None,)
+	lastModifiedBy: SerializeAsAny[Optional[IdentitySet]] = Field(alias="lastModifiedBy",default=None,)
+	lastModifiedDateTime: Optional[datetime] = Field(alias="lastModifiedDateTime",default=None,)
+	breaks: Optional[list[TimeCardBreak]] = Field(alias="breaks",default=None,)
+	clockInEvent: Optional[TimeCardEvent] = Field(alias="clockInEvent",default=None,)
+	clockOutEvent: Optional[TimeCardEvent] = Field(alias="clockOutEvent",default=None,)
+	confirmedBy: Optional[str | ConfirmedBy] = Field(alias="confirmedBy",default=None,)
+	notes: Optional[ItemBody] = Field(alias="notes",default=None,)
+	originalEntry: Optional[TimeCardEntry] = Field(alias="originalEntry",default=None,)
+	state: Optional[str | TimeCardState] = Field(alias="state",default=None,)
+	userId: Optional[str] = Field(alias="userId",default=None,)
 
 from .identity_set import IdentitySet
 from .identity_set import IdentitySet

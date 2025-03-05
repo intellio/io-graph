@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class WindowsSettingType(Enum):
+class WindowsSettingType(StrEnum):
 	roaming = "roaming"
 	backup = "backup"
 	unknownFutureValue = "unknownFutureValue"

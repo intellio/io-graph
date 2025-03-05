@@ -14,8 +14,8 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_virtual_event_presenter_id import ByVirtualEventPresenterIdRequest
 	from .......request_adapter import HttpxRequestAdapter
-from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.models.virtual_event_presenter import VirtualEventPresenter
+from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.models.virtual_event_presenter_collection_response import VirtualEventPresenterCollectionResponse
 
 

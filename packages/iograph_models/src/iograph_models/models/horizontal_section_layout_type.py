@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class HorizontalSectionLayoutType(Enum):
+class HorizontalSectionLayoutType(StrEnum):
 	none = "none"
 	oneColumn = "oneColumn"
 	twoColumns = "twoColumns"

@@ -6,9 +6,9 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class IdentityUserFlow(BaseModel):
-	id: Optional[str] = Field(default=None,alias="id",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	userFlowType: Optional[UserFlowType] = Field(default=None,alias="userFlowType",)
+	id: Optional[str] = Field(alias="id",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	userFlowType: Optional[str | UserFlowType] = Field(alias="userFlowType",default=None,)
 	userFlowTypeVersion: float | str | ReferenceNumeric
 
 	@model_validator(mode="wrap")

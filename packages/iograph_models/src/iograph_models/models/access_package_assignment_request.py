@@ -5,19 +5,19 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class AccessPackageAssignmentRequest(BaseModel):
-	id: Optional[str] = Field(default=None,alias="id",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	answers: SerializeAsAny[Optional[list[AccessPackageAnswer]]] = Field(default=None,alias="answers",)
-	completedDateTime: Optional[datetime] = Field(default=None,alias="completedDateTime",)
-	createdDateTime: Optional[datetime] = Field(default=None,alias="createdDateTime",)
-	customExtensionCalloutInstances: Optional[list[CustomExtensionCalloutInstance]] = Field(default=None,alias="customExtensionCalloutInstances",)
-	requestType: Optional[AccessPackageRequestType] = Field(default=None,alias="requestType",)
-	schedule: Optional[EntitlementManagementSchedule] = Field(default=None,alias="schedule",)
-	state: Optional[AccessPackageRequestState] = Field(default=None,alias="state",)
-	status: Optional[str] = Field(default=None,alias="status",)
-	accessPackage: Optional[AccessPackage] = Field(default=None,alias="accessPackage",)
-	assignment: Optional[AccessPackageAssignment] = Field(default=None,alias="assignment",)
-	requestor: Optional[AccessPackageSubject] = Field(default=None,alias="requestor",)
+	id: Optional[str] = Field(alias="id",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	answers: SerializeAsAny[Optional[list[AccessPackageAnswer]]] = Field(alias="answers",default=None,)
+	completedDateTime: Optional[datetime] = Field(alias="completedDateTime",default=None,)
+	createdDateTime: Optional[datetime] = Field(alias="createdDateTime",default=None,)
+	customExtensionCalloutInstances: Optional[list[CustomExtensionCalloutInstance]] = Field(alias="customExtensionCalloutInstances",default=None,)
+	requestType: Optional[str | AccessPackageRequestType] = Field(alias="requestType",default=None,)
+	schedule: Optional[EntitlementManagementSchedule] = Field(alias="schedule",default=None,)
+	state: Optional[str | AccessPackageRequestState] = Field(alias="state",default=None,)
+	status: Optional[str] = Field(alias="status",default=None,)
+	accessPackage: Optional[AccessPackage] = Field(alias="accessPackage",default=None,)
+	assignment: Optional[AccessPackageAssignment] = Field(alias="assignment",default=None,)
+	requestor: Optional[AccessPackageSubject] = Field(alias="requestor",default=None,)
 
 from .access_package_answer import AccessPackageAnswer
 from .custom_extension_callout_instance import CustomExtensionCalloutInstance

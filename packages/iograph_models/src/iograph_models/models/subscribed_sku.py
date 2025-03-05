@@ -5,18 +5,18 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class SubscribedSku(BaseModel):
-	id: Optional[str] = Field(default=None,alias="id",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	accountId: Optional[str] = Field(default=None,alias="accountId",)
-	accountName: Optional[str] = Field(default=None,alias="accountName",)
-	appliesTo: Optional[str] = Field(default=None,alias="appliesTo",)
-	capabilityStatus: Optional[str] = Field(default=None,alias="capabilityStatus",)
-	consumedUnits: Optional[int] = Field(default=None,alias="consumedUnits",)
-	prepaidUnits: Optional[LicenseUnitsDetail] = Field(default=None,alias="prepaidUnits",)
-	servicePlans: Optional[list[ServicePlanInfo]] = Field(default=None,alias="servicePlans",)
-	skuId: Optional[UUID] = Field(default=None,alias="skuId",)
-	skuPartNumber: Optional[str] = Field(default=None,alias="skuPartNumber",)
-	subscriptionIds: Optional[list[str]] = Field(default=None,alias="subscriptionIds",)
+	id: Optional[str] = Field(alias="id",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	accountId: Optional[str] = Field(alias="accountId",default=None,)
+	accountName: Optional[str] = Field(alias="accountName",default=None,)
+	appliesTo: Optional[str] = Field(alias="appliesTo",default=None,)
+	capabilityStatus: Optional[str] = Field(alias="capabilityStatus",default=None,)
+	consumedUnits: Optional[int] = Field(alias="consumedUnits",default=None,)
+	prepaidUnits: Optional[LicenseUnitsDetail] = Field(alias="prepaidUnits",default=None,)
+	servicePlans: Optional[list[ServicePlanInfo]] = Field(alias="servicePlans",default=None,)
+	skuId: Optional[UUID] = Field(alias="skuId",default=None,)
+	skuPartNumber: Optional[str] = Field(alias="skuPartNumber",default=None,)
+	subscriptionIds: Optional[list[str]] = Field(alias="subscriptionIds",default=None,)
 
 from .license_units_detail import LicenseUnitsDetail
 from .service_plan_info import ServicePlanInfo

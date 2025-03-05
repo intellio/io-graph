@@ -4,9 +4,9 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class AuthenticationBehaviors(BaseModel):
-	blockAzureADGraphAccess: Optional[bool] = Field(default=None,alias="blockAzureADGraphAccess",)
-	removeUnverifiedEmailClaim: Optional[bool] = Field(default=None,alias="removeUnverifiedEmailClaim",)
-	requireClientServicePrincipal: Optional[bool] = Field(default=None,alias="requireClientServicePrincipal",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
+	blockAzureADGraphAccess: Optional[bool] = Field(alias="blockAzureADGraphAccess",default=None,)
+	removeUnverifiedEmailClaim: Optional[bool] = Field(alias="removeUnverifiedEmailClaim",default=None,)
+	requireClientServicePrincipal: Optional[bool] = Field(alias="requireClientServicePrincipal",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 
 

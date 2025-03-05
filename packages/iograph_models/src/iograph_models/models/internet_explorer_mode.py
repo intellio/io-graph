@@ -4,9 +4,9 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class InternetExplorerMode(BaseModel):
-	id: Optional[str] = Field(default=None,alias="id",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	siteLists: Optional[list[BrowserSiteList]] = Field(default=None,alias="siteLists",)
+	id: Optional[str] = Field(alias="id",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	siteLists: Optional[list[BrowserSiteList]] = Field(alias="siteLists",default=None,)
 
 from .browser_site_list import BrowserSiteList
 

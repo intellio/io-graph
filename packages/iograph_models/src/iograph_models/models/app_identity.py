@@ -4,10 +4,10 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class AppIdentity(BaseModel):
-	appId: Optional[str] = Field(default=None,alias="appId",)
-	displayName: Optional[str] = Field(default=None,alias="displayName",)
-	servicePrincipalId: Optional[str] = Field(default=None,alias="servicePrincipalId",)
-	servicePrincipalName: Optional[str] = Field(default=None,alias="servicePrincipalName",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
+	appId: Optional[str] = Field(alias="appId",default=None,)
+	displayName: Optional[str] = Field(alias="displayName",default=None,)
+	servicePrincipalId: Optional[str] = Field(alias="servicePrincipalId",default=None,)
+	servicePrincipalName: Optional[str] = Field(alias="servicePrincipalName",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 
 

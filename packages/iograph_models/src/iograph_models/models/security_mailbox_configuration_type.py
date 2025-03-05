@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class SecurityMailboxConfigurationType(Enum):
+class SecurityMailboxConfigurationType(StrEnum):
 	mailForwardingRule = "mailForwardingRule"
 	owaSettings = "owaSettings"
 	ewsSettings = "ewsSettings"

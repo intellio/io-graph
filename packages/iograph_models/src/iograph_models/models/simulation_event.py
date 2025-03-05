@@ -4,8 +4,8 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class SimulationEvent(BaseModel):
-	count: Optional[int] = Field(default=None,alias="count",)
-	eventName: Optional[str] = Field(default=None,alias="eventName",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
+	count: Optional[int] = Field(alias="count",default=None,)
+	eventName: Optional[str] = Field(alias="eventName",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 
 

@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class DestinationType(Enum):
+class DestinationType(StrEnum):
 	new = "new"
 	inPlace = "inPlace"
 	unknownFutureValue = "unknownFutureValue"

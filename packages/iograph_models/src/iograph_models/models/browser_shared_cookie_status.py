@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class BrowserSharedCookieStatus(Enum):
+class BrowserSharedCookieStatus(StrEnum):
 	published = "published"
 	pendingAdd = "pendingAdd"
 	pendingEdit = "pendingEdit"

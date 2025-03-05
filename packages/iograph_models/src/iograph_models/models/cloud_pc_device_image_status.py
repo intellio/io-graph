@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class CloudPcDeviceImageStatus(Enum):
+class CloudPcDeviceImageStatus(StrEnum):
 	pending = "pending"
 	ready = "ready"
 	failed = "failed"

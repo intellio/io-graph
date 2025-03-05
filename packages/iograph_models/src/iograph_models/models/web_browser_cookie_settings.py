@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class WebBrowserCookieSettings(Enum):
+class WebBrowserCookieSettings(StrEnum):
 	browserDefault = "browserDefault"
 	blockAlways = "blockAlways"
 	allowCurrentWebSite = "allowCurrentWebSite"

@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class WebsiteType(Enum):
+class WebsiteType(StrEnum):
 	other = "other"
 	home = "home"
 	work = "work"

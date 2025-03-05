@@ -4,11 +4,11 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class DeviceExchangeAccessStateSummary(BaseModel):
-	allowedDeviceCount: Optional[int] = Field(default=None,alias="allowedDeviceCount",)
-	blockedDeviceCount: Optional[int] = Field(default=None,alias="blockedDeviceCount",)
-	quarantinedDeviceCount: Optional[int] = Field(default=None,alias="quarantinedDeviceCount",)
-	unavailableDeviceCount: Optional[int] = Field(default=None,alias="unavailableDeviceCount",)
-	unknownDeviceCount: Optional[int] = Field(default=None,alias="unknownDeviceCount",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
+	allowedDeviceCount: Optional[int] = Field(alias="allowedDeviceCount",default=None,)
+	blockedDeviceCount: Optional[int] = Field(alias="blockedDeviceCount",default=None,)
+	quarantinedDeviceCount: Optional[int] = Field(alias="quarantinedDeviceCount",default=None,)
+	unavailableDeviceCount: Optional[int] = Field(alias="unavailableDeviceCount",default=None,)
+	unknownDeviceCount: Optional[int] = Field(alias="unknownDeviceCount",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 
 

@@ -4,6 +4,6 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class Set_external_event_informationPostRequest(BaseModel):
-	externalEventId: Optional[str] = Field(default=None,alias="externalEventId",)
+	externalEventId: Optional[str] = Field(alias="externalEventId",default=None,)
 
 

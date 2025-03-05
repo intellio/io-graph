@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class SecurityExportFormat(Enum):
+class SecurityExportFormat(StrEnum):
 	pst = "pst"
 	msg = "msg"
 	eml = "eml"

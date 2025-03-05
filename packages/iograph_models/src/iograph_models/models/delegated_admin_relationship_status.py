@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class DelegatedAdminRelationshipStatus(Enum):
+class DelegatedAdminRelationshipStatus(StrEnum):
 	activating = "activating"
 	active = "active"
 	approvalPending = "approvalPending"

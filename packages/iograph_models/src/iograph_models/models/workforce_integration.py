@@ -5,19 +5,19 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class WorkforceIntegration(BaseModel):
-	id: Optional[str] = Field(default=None,alias="id",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	createdBy: SerializeAsAny[Optional[IdentitySet]] = Field(default=None,alias="createdBy",)
-	createdDateTime: Optional[datetime] = Field(default=None,alias="createdDateTime",)
-	lastModifiedBy: SerializeAsAny[Optional[IdentitySet]] = Field(default=None,alias="lastModifiedBy",)
-	lastModifiedDateTime: Optional[datetime] = Field(default=None,alias="lastModifiedDateTime",)
-	apiVersion: Optional[int] = Field(default=None,alias="apiVersion",)
-	displayName: Optional[str] = Field(default=None,alias="displayName",)
-	eligibilityFilteringEnabledEntities: Optional[EligibilityFilteringEnabledEntities] = Field(default=None,alias="eligibilityFilteringEnabledEntities",)
-	encryption: Optional[WorkforceIntegrationEncryption] = Field(default=None,alias="encryption",)
-	isActive: Optional[bool] = Field(default=None,alias="isActive",)
-	supportedEntities: Optional[WorkforceIntegrationSupportedEntities] = Field(default=None,alias="supportedEntities",)
-	url: Optional[str] = Field(default=None,alias="url",)
+	id: Optional[str] = Field(alias="id",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	createdBy: SerializeAsAny[Optional[IdentitySet]] = Field(alias="createdBy",default=None,)
+	createdDateTime: Optional[datetime] = Field(alias="createdDateTime",default=None,)
+	lastModifiedBy: SerializeAsAny[Optional[IdentitySet]] = Field(alias="lastModifiedBy",default=None,)
+	lastModifiedDateTime: Optional[datetime] = Field(alias="lastModifiedDateTime",default=None,)
+	apiVersion: Optional[int] = Field(alias="apiVersion",default=None,)
+	displayName: Optional[str] = Field(alias="displayName",default=None,)
+	eligibilityFilteringEnabledEntities: Optional[str | EligibilityFilteringEnabledEntities] = Field(alias="eligibilityFilteringEnabledEntities",default=None,)
+	encryption: Optional[WorkforceIntegrationEncryption] = Field(alias="encryption",default=None,)
+	isActive: Optional[bool] = Field(alias="isActive",default=None,)
+	supportedEntities: Optional[str | WorkforceIntegrationSupportedEntities] = Field(alias="supportedEntities",default=None,)
+	url: Optional[str] = Field(alias="url",default=None,)
 
 from .identity_set import IdentitySet
 from .identity_set import IdentitySet

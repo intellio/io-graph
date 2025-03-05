@@ -7,13 +7,13 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class ShiftItem(BaseModel):
-	endDateTime: Optional[datetime] = Field(default=None,alias="endDateTime",)
-	startDateTime: Optional[datetime] = Field(default=None,alias="startDateTime",)
-	theme: Optional[ScheduleEntityTheme] = Field(default=None,alias="theme",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	activities: Optional[list[ShiftActivity]] = Field(default=None,alias="activities",)
-	displayName: Optional[str] = Field(default=None,alias="displayName",)
-	notes: Optional[str] = Field(default=None,alias="notes",)
+	endDateTime: Optional[datetime] = Field(alias="endDateTime",default=None,)
+	startDateTime: Optional[datetime] = Field(alias="startDateTime",default=None,)
+	theme: Optional[str | ScheduleEntityTheme] = Field(alias="theme",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	activities: Optional[list[ShiftActivity]] = Field(alias="activities",default=None,)
+	displayName: Optional[str] = Field(alias="displayName",default=None,)
+	notes: Optional[str] = Field(alias="notes",default=None,)
 
 	@model_validator(mode="wrap")
 	def convert_discriminator_class(cls, data: Any, handler: ModelWrapValidatorHandler[Self]) -> Self:

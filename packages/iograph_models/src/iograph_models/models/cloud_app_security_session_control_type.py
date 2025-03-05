@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class CloudAppSecuritySessionControlType(Enum):
+class CloudAppSecuritySessionControlType(StrEnum):
 	mcasConfigured = "mcasConfigured"
 	monitorOnly = "monitorOnly"
 	blockDownloads = "blockDownloads"

@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class CustomExtensionCalloutInstanceStatus(Enum):
+class CustomExtensionCalloutInstanceStatus(StrEnum):
 	calloutSent = "calloutSent"
 	callbackReceived = "callbackReceived"
 	calloutFailed = "calloutFailed"

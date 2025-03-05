@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class SensitivityLabelAssignmentMethod(Enum):
+class SensitivityLabelAssignmentMethod(StrEnum):
 	standard = "standard"
 	privileged = "privileged"
 	auto = "auto"

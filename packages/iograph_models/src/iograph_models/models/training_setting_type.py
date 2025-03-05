@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class TrainingSettingType(Enum):
+class TrainingSettingType(StrEnum):
 	microsoftCustom = "microsoftCustom"
 	microsoftManaged = "microsoftManaged"
 	noTraining = "noTraining"

@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class CallRecordsCallType(Enum):
+class CallRecordsCallType(StrEnum):
 	unknown = "unknown"
 	groupCall = "groupCall"
 	peerToPeer = "peerToPeer"

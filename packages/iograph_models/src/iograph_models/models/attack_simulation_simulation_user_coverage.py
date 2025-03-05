@@ -5,12 +5,12 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class AttackSimulationSimulationUserCoverage(BaseModel):
-	attackSimulationUser: Optional[AttackSimulationUser] = Field(default=None,alias="attackSimulationUser",)
-	clickCount: Optional[int] = Field(default=None,alias="clickCount",)
-	compromisedCount: Optional[int] = Field(default=None,alias="compromisedCount",)
-	latestSimulationDateTime: Optional[datetime] = Field(default=None,alias="latestSimulationDateTime",)
-	simulationCount: Optional[int] = Field(default=None,alias="simulationCount",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
+	attackSimulationUser: Optional[AttackSimulationUser] = Field(alias="attackSimulationUser",default=None,)
+	clickCount: Optional[int] = Field(alias="clickCount",default=None,)
+	compromisedCount: Optional[int] = Field(alias="compromisedCount",default=None,)
+	latestSimulationDateTime: Optional[datetime] = Field(alias="latestSimulationDateTime",default=None,)
+	simulationCount: Optional[int] = Field(alias="simulationCount",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 
 from .attack_simulation_user import AttackSimulationUser
 

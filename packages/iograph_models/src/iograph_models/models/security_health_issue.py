@@ -5,21 +5,21 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class SecurityHealthIssue(BaseModel):
-	id: Optional[str] = Field(default=None,alias="id",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	additionalInformation: Optional[list[str]] = Field(default=None,alias="additionalInformation",)
-	createdDateTime: Optional[datetime] = Field(default=None,alias="createdDateTime",)
-	description: Optional[str] = Field(default=None,alias="description",)
-	displayName: Optional[str] = Field(default=None,alias="displayName",)
-	domainNames: Optional[list[str]] = Field(default=None,alias="domainNames",)
-	healthIssueType: Optional[SecurityHealthIssueType] = Field(default=None,alias="healthIssueType",)
-	issueTypeId: Optional[str] = Field(default=None,alias="issueTypeId",)
-	lastModifiedDateTime: Optional[datetime] = Field(default=None,alias="lastModifiedDateTime",)
-	recommendations: Optional[list[str]] = Field(default=None,alias="recommendations",)
-	recommendedActionCommands: Optional[list[str]] = Field(default=None,alias="recommendedActionCommands",)
-	sensorDNSNames: Optional[list[str]] = Field(default=None,alias="sensorDNSNames",)
-	severity: Optional[SecurityHealthIssueSeverity] = Field(default=None,alias="severity",)
-	status: Optional[SecurityHealthIssueStatus] = Field(default=None,alias="status",)
+	id: Optional[str] = Field(alias="id",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	additionalInformation: Optional[list[str]] = Field(alias="additionalInformation",default=None,)
+	createdDateTime: Optional[datetime] = Field(alias="createdDateTime",default=None,)
+	description: Optional[str] = Field(alias="description",default=None,)
+	displayName: Optional[str] = Field(alias="displayName",default=None,)
+	domainNames: Optional[list[str]] = Field(alias="domainNames",default=None,)
+	healthIssueType: Optional[str | SecurityHealthIssueType] = Field(alias="healthIssueType",default=None,)
+	issueTypeId: Optional[str] = Field(alias="issueTypeId",default=None,)
+	lastModifiedDateTime: Optional[datetime] = Field(alias="lastModifiedDateTime",default=None,)
+	recommendations: Optional[list[str]] = Field(alias="recommendations",default=None,)
+	recommendedActionCommands: Optional[list[str]] = Field(alias="recommendedActionCommands",default=None,)
+	sensorDNSNames: Optional[list[str]] = Field(alias="sensorDNSNames",default=None,)
+	severity: Optional[str | SecurityHealthIssueSeverity] = Field(alias="severity",default=None,)
+	status: Optional[str | SecurityHealthIssueStatus] = Field(alias="status",default=None,)
 
 from .security_health_issue_type import SecurityHealthIssueType
 from .security_health_issue_severity import SecurityHealthIssueSeverity

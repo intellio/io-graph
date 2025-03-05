@@ -4,8 +4,8 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class FileStorageContainerCustomPropertyValue(BaseModel):
-	isSearchable: Optional[bool] = Field(default=None,alias="isSearchable",)
-	value: Optional[str] = Field(default=None,alias="value",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
+	isSearchable: Optional[bool] = Field(alias="isSearchable",default=None,)
+	value: Optional[str] = Field(alias="value",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 
 

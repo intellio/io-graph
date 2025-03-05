@@ -4,12 +4,12 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class RecurrenceRange(BaseModel):
-	endDate: Optional[str] = Field(default=None,alias="endDate",)
-	numberOfOccurrences: Optional[int] = Field(default=None,alias="numberOfOccurrences",)
-	recurrenceTimeZone: Optional[str] = Field(default=None,alias="recurrenceTimeZone",)
-	startDate: Optional[str] = Field(default=None,alias="startDate",)
-	type: Optional[RecurrenceRangeType] = Field(default=None,alias="type",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
+	endDate: Optional[str] = Field(alias="endDate",default=None,)
+	numberOfOccurrences: Optional[int] = Field(alias="numberOfOccurrences",default=None,)
+	recurrenceTimeZone: Optional[str] = Field(alias="recurrenceTimeZone",default=None,)
+	startDate: Optional[str] = Field(alias="startDate",default=None,)
+	type: Optional[str | RecurrenceRangeType] = Field(alias="type",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 
 from .recurrence_range_type import RecurrenceRangeType
 

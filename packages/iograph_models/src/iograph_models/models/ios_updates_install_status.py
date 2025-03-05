@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class IosUpdatesInstallStatus(Enum):
+class IosUpdatesInstallStatus(StrEnum):
 	deviceOsHigherThanDesiredOsVersion = "deviceOsHigherThanDesiredOsVersion"
 	sharedDeviceUserLoggedInError = "sharedDeviceUserLoggedInError"
 	notSupportedOperation = "notSupportedOperation"

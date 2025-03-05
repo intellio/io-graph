@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class IdentityGovernanceLifecycleWorkflowProcessingStatus(Enum):
+class IdentityGovernanceLifecycleWorkflowProcessingStatus(StrEnum):
 	queued = "queued"
 	inProgress = "inProgress"
 	completed = "completed"

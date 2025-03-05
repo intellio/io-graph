@@ -15,9 +15,9 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_event_id import ByEventIdRequest
 	from .....request_adapter import HttpxRequestAdapter
+from iograph_models.models.event import Event
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.models.event_collection_response import EventCollectionResponse
-from iograph_models.models.event import Event
 
 
 class EventsRequest(BaseRequestBuilder):

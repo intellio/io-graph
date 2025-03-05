@@ -4,9 +4,9 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class DocumentSetVersionItem(BaseModel):
-	itemId: Optional[str] = Field(default=None,alias="itemId",)
-	title: Optional[str] = Field(default=None,alias="title",)
-	versionId: Optional[str] = Field(default=None,alias="versionId",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
+	itemId: Optional[str] = Field(alias="itemId",default=None,)
+	title: Optional[str] = Field(alias="title",default=None,)
+	versionId: Optional[str] = Field(alias="versionId",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 
 

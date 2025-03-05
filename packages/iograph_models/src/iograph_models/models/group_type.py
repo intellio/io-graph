@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class GroupType(Enum):
+class GroupType(StrEnum):
 	unifiedGroups = "unifiedGroups"
 	azureAD = "azureAD"
 	unknownFutureValue = "unknownFutureValue"

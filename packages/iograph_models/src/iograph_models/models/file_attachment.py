@@ -5,15 +5,15 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class FileAttachment(BaseModel):
-	id: Optional[str] = Field(default=None,alias="id",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	contentType: Optional[str] = Field(default=None,alias="contentType",)
-	isInline: Optional[bool] = Field(default=None,alias="isInline",)
-	lastModifiedDateTime: Optional[datetime] = Field(default=None,alias="lastModifiedDateTime",)
-	name: Optional[str] = Field(default=None,alias="name",)
-	size: Optional[int] = Field(default=None,alias="size",)
-	contentBytes: Optional[str] = Field(default=None,alias="contentBytes",)
-	contentId: Optional[str] = Field(default=None,alias="contentId",)
-	contentLocation: Optional[str] = Field(default=None,alias="contentLocation",)
+	id: Optional[str] = Field(alias="id",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	contentType: Optional[str] = Field(alias="contentType",default=None,)
+	isInline: Optional[bool] = Field(alias="isInline",default=None,)
+	lastModifiedDateTime: Optional[datetime] = Field(alias="lastModifiedDateTime",default=None,)
+	name: Optional[str] = Field(alias="name",default=None,)
+	size: Optional[int] = Field(alias="size",default=None,)
+	contentBytes: Optional[str] = Field(alias="contentBytes",default=None,)
+	contentId: Optional[str] = Field(alias="contentId",default=None,)
+	contentLocation: Optional[str] = Field(alias="contentLocation",default=None,)
 
 

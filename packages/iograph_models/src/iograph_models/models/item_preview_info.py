@@ -4,9 +4,9 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class ItemPreviewInfo(BaseModel):
-	getUrl: Optional[str] = Field(default=None,alias="getUrl",)
-	postParameters: Optional[str] = Field(default=None,alias="postParameters",)
-	postUrl: Optional[str] = Field(default=None,alias="postUrl",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
+	getUrl: Optional[str] = Field(alias="getUrl",default=None,)
+	postParameters: Optional[str] = Field(alias="postParameters",default=None,)
+	postUrl: Optional[str] = Field(alias="postUrl",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 
 

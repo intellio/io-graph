@@ -4,6 +4,6 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class Export_personal_dataPostRequest(BaseModel):
-	storageLocation: Optional[str] = Field(default=None,alias="storageLocation",)
+	storageLocation: Optional[str] = Field(alias="storageLocation",default=None,)
 
 

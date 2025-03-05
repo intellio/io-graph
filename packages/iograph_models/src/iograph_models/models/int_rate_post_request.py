@@ -4,10 +4,10 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class Int_ratePostRequest(BaseModel):
-	settlement: Optional[str] = Field(default=None,alias="settlement",)
-	maturity: Optional[str] = Field(default=None,alias="maturity",)
-	investment: Optional[str] = Field(default=None,alias="investment",)
-	redemption: Optional[str] = Field(default=None,alias="redemption",)
-	basis: Optional[str] = Field(default=None,alias="basis",)
+	settlement: Optional[str] = Field(alias="settlement",default=None,)
+	maturity: Optional[str] = Field(alias="maturity",default=None,)
+	investment: Optional[str] = Field(alias="investment",default=None,)
+	redemption: Optional[str] = Field(alias="redemption",default=None,)
+	basis: Optional[str] = Field(alias="basis",default=None,)
 
 

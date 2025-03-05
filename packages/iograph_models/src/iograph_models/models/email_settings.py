@@ -4,8 +4,8 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class EmailSettings(BaseModel):
-	senderDomain: Optional[str] = Field(default=None,alias="senderDomain",)
-	useCompanyBranding: Optional[bool] = Field(default=None,alias="useCompanyBranding",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
+	senderDomain: Optional[str] = Field(alias="senderDomain",default=None,)
+	useCompanyBranding: Optional[bool] = Field(alias="useCompanyBranding",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 
 

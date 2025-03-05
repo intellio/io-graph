@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class MeetingRequestType(Enum):
+class MeetingRequestType(StrEnum):
 	none = "none"
 	newMeetingRequest = "newMeetingRequest"
 	fullUpdate = "fullUpdate"

@@ -5,16 +5,16 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class CallRecordsSession(BaseModel):
-	id: Optional[str] = Field(default=None,alias="id",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	callee: SerializeAsAny[Optional[CallRecordsEndpoint]] = Field(default=None,alias="callee",)
-	caller: SerializeAsAny[Optional[CallRecordsEndpoint]] = Field(default=None,alias="caller",)
-	endDateTime: Optional[datetime] = Field(default=None,alias="endDateTime",)
-	failureInfo: Optional[CallRecordsFailureInfo] = Field(default=None,alias="failureInfo",)
-	isTest: Optional[bool] = Field(default=None,alias="isTest",)
-	modalities: Optional[list[CallRecordsModality]] = Field(default=None,alias="modalities",)
-	startDateTime: Optional[datetime] = Field(default=None,alias="startDateTime",)
-	segments: Optional[list[CallRecordsSegment]] = Field(default=None,alias="segments",)
+	id: Optional[str] = Field(alias="id",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	callee: SerializeAsAny[Optional[CallRecordsEndpoint]] = Field(alias="callee",default=None,)
+	caller: SerializeAsAny[Optional[CallRecordsEndpoint]] = Field(alias="caller",default=None,)
+	endDateTime: Optional[datetime] = Field(alias="endDateTime",default=None,)
+	failureInfo: Optional[CallRecordsFailureInfo] = Field(alias="failureInfo",default=None,)
+	isTest: Optional[bool] = Field(alias="isTest",default=None,)
+	modalities: Optional[list[str | CallRecordsModality]] = Field(alias="modalities",default=None,)
+	startDateTime: Optional[datetime] = Field(alias="startDateTime",default=None,)
+	segments: Optional[list[CallRecordsSegment]] = Field(alias="segments",default=None,)
 
 from .call_records_endpoint import CallRecordsEndpoint
 from .call_records_endpoint import CallRecordsEndpoint

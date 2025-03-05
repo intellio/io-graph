@@ -5,10 +5,10 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class ServiceProvisioningXmlError(BaseModel):
-	createdDateTime: Optional[datetime] = Field(default=None,alias="createdDateTime",)
-	isResolved: Optional[bool] = Field(default=None,alias="isResolved",)
-	serviceInstance: Optional[str] = Field(default=None,alias="serviceInstance",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	errorDetail: Optional[str] = Field(default=None,alias="errorDetail",)
+	createdDateTime: Optional[datetime] = Field(alias="createdDateTime",default=None,)
+	isResolved: Optional[bool] = Field(alias="isResolved",default=None,)
+	serviceInstance: Optional[str] = Field(alias="serviceInstance",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	errorDetail: Optional[str] = Field(alias="errorDetail",default=None,)
 
 

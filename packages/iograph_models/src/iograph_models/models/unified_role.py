@@ -4,7 +4,7 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class UnifiedRole(BaseModel):
-	roleDefinitionId: Optional[str] = Field(default=None,alias="roleDefinitionId",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
+	roleDefinitionId: Optional[str] = Field(alias="roleDefinitionId",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 
 

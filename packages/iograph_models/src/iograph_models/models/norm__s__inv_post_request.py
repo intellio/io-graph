@@ -4,6 +4,6 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class Norm__s__invPostRequest(BaseModel):
-	probability: Optional[str] = Field(default=None,alias="probability",)
+	probability: Optional[str] = Field(alias="probability",default=None,)
 
 

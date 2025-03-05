@@ -5,10 +5,10 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class AttachmentSession(BaseModel):
-	id: Optional[str] = Field(default=None,alias="id",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	content: Optional[str] = Field(default=None,alias="content",)
-	expirationDateTime: Optional[datetime] = Field(default=None,alias="expirationDateTime",)
-	nextExpectedRanges: Optional[list[str]] = Field(default=None,alias="nextExpectedRanges",)
+	id: Optional[str] = Field(alias="id",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	content: Optional[str] = Field(alias="content",default=None,)
+	expirationDateTime: Optional[datetime] = Field(alias="expirationDateTime",default=None,)
+	nextExpectedRanges: Optional[list[str]] = Field(alias="nextExpectedRanges",default=None,)
 
 

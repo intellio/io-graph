@@ -4,8 +4,8 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class ProxiedDomain(BaseModel):
-	ipAddressOrFQDN: Optional[str] = Field(default=None,alias="ipAddressOrFQDN",)
-	proxy: Optional[str] = Field(default=None,alias="proxy",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
+	ipAddressOrFQDN: Optional[str] = Field(alias="ipAddressOrFQDN",default=None,)
+	proxy: Optional[str] = Field(alias="proxy",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 
 

@@ -4,11 +4,11 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class ExternalConnectorsDisplayTemplate(BaseModel):
-	id: Optional[str] = Field(default=None,alias="id",)
-	layout: Optional[str] = Field(default=None,alias="layout",)
-	priority: Optional[int] = Field(default=None,alias="priority",)
-	rules: Optional[list[ExternalConnectorsPropertyRule]] = Field(default=None,alias="rules",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
+	id: Optional[str] = Field(alias="id",default=None,)
+	layout: Optional[str] = Field(alias="layout",default=None,)
+	priority: Optional[int] = Field(alias="priority",default=None,)
+	rules: Optional[list[ExternalConnectorsPropertyRule]] = Field(alias="rules",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 
 from .external_connectors_property_rule import ExternalConnectorsPropertyRule
 

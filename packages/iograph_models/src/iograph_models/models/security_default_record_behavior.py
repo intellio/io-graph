@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class SecurityDefaultRecordBehavior(Enum):
+class SecurityDefaultRecordBehavior(StrEnum):
 	startLocked = "startLocked"
 	startUnlocked = "startUnlocked"
 	unknownFutureValue = "unknownFutureValue"

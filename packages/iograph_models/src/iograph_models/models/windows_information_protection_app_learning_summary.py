@@ -4,11 +4,11 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class WindowsInformationProtectionAppLearningSummary(BaseModel):
-	id: Optional[str] = Field(default=None,alias="id",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	applicationName: Optional[str] = Field(default=None,alias="applicationName",)
-	applicationType: Optional[ApplicationType] = Field(default=None,alias="applicationType",)
-	deviceCount: Optional[int] = Field(default=None,alias="deviceCount",)
+	id: Optional[str] = Field(alias="id",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	applicationName: Optional[str] = Field(alias="applicationName",default=None,)
+	applicationType: Optional[str | ApplicationType] = Field(alias="applicationType",default=None,)
+	deviceCount: Optional[int] = Field(alias="deviceCount",default=None,)
 
 from .application_type import ApplicationType
 

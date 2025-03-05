@@ -4,13 +4,13 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class SharepointIds(BaseModel):
-	listId: Optional[str] = Field(default=None,alias="listId",)
-	listItemId: Optional[str] = Field(default=None,alias="listItemId",)
-	listItemUniqueId: Optional[str] = Field(default=None,alias="listItemUniqueId",)
-	siteId: Optional[str] = Field(default=None,alias="siteId",)
-	siteUrl: Optional[str] = Field(default=None,alias="siteUrl",)
-	tenantId: Optional[str] = Field(default=None,alias="tenantId",)
-	webId: Optional[str] = Field(default=None,alias="webId",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
+	listId: Optional[str] = Field(alias="listId",default=None,)
+	listItemId: Optional[str] = Field(alias="listItemId",default=None,)
+	listItemUniqueId: Optional[str] = Field(alias="listItemUniqueId",default=None,)
+	siteId: Optional[str] = Field(alias="siteId",default=None,)
+	siteUrl: Optional[str] = Field(alias="siteUrl",default=None,)
+	tenantId: Optional[str] = Field(alias="tenantId",default=None,)
+	webId: Optional[str] = Field(alias="webId",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 
 

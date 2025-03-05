@@ -4,8 +4,8 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class IosHomeScreenApp(BaseModel):
-	displayName: Optional[str] = Field(default=None,alias="displayName",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	bundleID: Optional[str] = Field(default=None,alias="bundleID",)
+	displayName: Optional[str] = Field(alias="displayName",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	bundleID: Optional[str] = Field(alias="bundleID",default=None,)
 
 

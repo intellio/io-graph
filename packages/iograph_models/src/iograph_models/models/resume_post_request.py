@@ -4,9 +4,9 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class ResumePostRequest(BaseModel):
-	source: Optional[str] = Field(default=None,alias="source",)
-	type: Optional[str] = Field(default=None,alias="type",)
-	data: SerializeAsAny[Optional[CustomExtensionData]] = Field(default=None,alias="data",)
+	source: Optional[str] = Field(alias="source",default=None,)
+	type: Optional[str] = Field(alias="type",default=None,)
+	data: SerializeAsAny[Optional[CustomExtensionData]] = Field(alias="data",default=None,)
 
 from .custom_extension_data import CustomExtensionData
 

@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class AttributeDefinitionMetadata(Enum):
+class AttributeDefinitionMetadata(StrEnum):
 	BaseAttributeName = "BaseAttributeName"
 	ComplexObjectDefinition = "ComplexObjectDefinition"
 	IsContainer = "IsContainer"

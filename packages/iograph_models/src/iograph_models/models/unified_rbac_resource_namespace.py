@@ -4,10 +4,10 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class UnifiedRbacResourceNamespace(BaseModel):
-	id: Optional[str] = Field(default=None,alias="id",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	name: Optional[str] = Field(default=None,alias="name",)
-	resourceActions: Optional[list[UnifiedRbacResourceAction]] = Field(default=None,alias="resourceActions",)
+	id: Optional[str] = Field(alias="id",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	name: Optional[str] = Field(alias="name",default=None,)
+	resourceActions: Optional[list[UnifiedRbacResourceAction]] = Field(alias="resourceActions",default=None,)
 
 from .unified_rbac_resource_action import UnifiedRbacResourceAction
 

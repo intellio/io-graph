@@ -5,37 +5,37 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class CallRecordsMediaStream(BaseModel):
-	audioCodec: Optional[CallRecordsAudioCodec] = Field(default=None,alias="audioCodec",)
+	audioCodec: Optional[str | CallRecordsAudioCodec] = Field(alias="audioCodec",default=None,)
 	averageAudioDegradation: float | str | ReferenceNumeric
-	averageAudioNetworkJitter: Optional[str] = Field(default=None,alias="averageAudioNetworkJitter",)
-	averageBandwidthEstimate: Optional[int] = Field(default=None,alias="averageBandwidthEstimate",)
-	averageFreezeDuration: Optional[str] = Field(default=None,alias="averageFreezeDuration",)
-	averageJitter: Optional[str] = Field(default=None,alias="averageJitter",)
+	averageAudioNetworkJitter: Optional[str] = Field(alias="averageAudioNetworkJitter",default=None,)
+	averageBandwidthEstimate: Optional[int] = Field(alias="averageBandwidthEstimate",default=None,)
+	averageFreezeDuration: Optional[str] = Field(alias="averageFreezeDuration",default=None,)
+	averageJitter: Optional[str] = Field(alias="averageJitter",default=None,)
 	averagePacketLossRate: float | str | ReferenceNumeric
 	averageRatioOfConcealedSamples: float | str | ReferenceNumeric
 	averageReceivedFrameRate: float | str | ReferenceNumeric
-	averageRoundTripTime: Optional[str] = Field(default=None,alias="averageRoundTripTime",)
+	averageRoundTripTime: Optional[str] = Field(alias="averageRoundTripTime",default=None,)
 	averageVideoFrameLossPercentage: float | str | ReferenceNumeric
 	averageVideoFrameRate: float | str | ReferenceNumeric
 	averageVideoPacketLossRate: float | str | ReferenceNumeric
-	endDateTime: Optional[datetime] = Field(default=None,alias="endDateTime",)
-	isAudioForwardErrorCorrectionUsed: Optional[bool] = Field(default=None,alias="isAudioForwardErrorCorrectionUsed",)
+	endDateTime: Optional[datetime] = Field(alias="endDateTime",default=None,)
+	isAudioForwardErrorCorrectionUsed: Optional[bool] = Field(alias="isAudioForwardErrorCorrectionUsed",default=None,)
 	lowFrameRateRatio: float | str | ReferenceNumeric
 	lowVideoProcessingCapabilityRatio: float | str | ReferenceNumeric
-	maxAudioNetworkJitter: Optional[str] = Field(default=None,alias="maxAudioNetworkJitter",)
-	maxJitter: Optional[str] = Field(default=None,alias="maxJitter",)
+	maxAudioNetworkJitter: Optional[str] = Field(alias="maxAudioNetworkJitter",default=None,)
+	maxJitter: Optional[str] = Field(alias="maxJitter",default=None,)
 	maxPacketLossRate: float | str | ReferenceNumeric
 	maxRatioOfConcealedSamples: float | str | ReferenceNumeric
-	maxRoundTripTime: Optional[str] = Field(default=None,alias="maxRoundTripTime",)
-	packetUtilization: Optional[int] = Field(default=None,alias="packetUtilization",)
+	maxRoundTripTime: Optional[str] = Field(alias="maxRoundTripTime",default=None,)
+	packetUtilization: Optional[int] = Field(alias="packetUtilization",default=None,)
 	postForwardErrorCorrectionPacketLossRate: float | str | ReferenceNumeric
-	rmsFreezeDuration: Optional[str] = Field(default=None,alias="rmsFreezeDuration",)
-	startDateTime: Optional[datetime] = Field(default=None,alias="startDateTime",)
-	streamDirection: Optional[CallRecordsMediaStreamDirection] = Field(default=None,alias="streamDirection",)
-	streamId: Optional[str] = Field(default=None,alias="streamId",)
-	videoCodec: Optional[CallRecordsVideoCodec] = Field(default=None,alias="videoCodec",)
-	wasMediaBypassed: Optional[bool] = Field(default=None,alias="wasMediaBypassed",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
+	rmsFreezeDuration: Optional[str] = Field(alias="rmsFreezeDuration",default=None,)
+	startDateTime: Optional[datetime] = Field(alias="startDateTime",default=None,)
+	streamDirection: Optional[str | CallRecordsMediaStreamDirection] = Field(alias="streamDirection",default=None,)
+	streamId: Optional[str] = Field(alias="streamId",default=None,)
+	videoCodec: Optional[str | CallRecordsVideoCodec] = Field(alias="videoCodec",default=None,)
+	wasMediaBypassed: Optional[bool] = Field(alias="wasMediaBypassed",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 
 from .call_records_audio_codec import CallRecordsAudioCodec
 from .reference_numeric import ReferenceNumeric

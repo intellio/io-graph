@@ -5,9 +5,9 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class CallTranscriptionInfo(BaseModel):
-	lastModifiedDateTime: Optional[datetime] = Field(default=None,alias="lastModifiedDateTime",)
-	state: Optional[CallTranscriptionState] = Field(default=None,alias="state",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
+	lastModifiedDateTime: Optional[datetime] = Field(alias="lastModifiedDateTime",default=None,)
+	state: Optional[str | CallTranscriptionState] = Field(alias="state",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 
 from .call_transcription_state import CallTranscriptionState
 

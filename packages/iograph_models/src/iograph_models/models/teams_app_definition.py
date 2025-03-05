@@ -5,18 +5,18 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class TeamsAppDefinition(BaseModel):
-	id: Optional[str] = Field(default=None,alias="id",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	authorization: Optional[TeamsAppAuthorization] = Field(default=None,alias="authorization",)
-	createdBy: SerializeAsAny[Optional[IdentitySet]] = Field(default=None,alias="createdBy",)
-	description: Optional[str] = Field(default=None,alias="description",)
-	displayName: Optional[str] = Field(default=None,alias="displayName",)
-	lastModifiedDateTime: Optional[datetime] = Field(default=None,alias="lastModifiedDateTime",)
-	publishingState: Optional[TeamsAppPublishingState] = Field(default=None,alias="publishingState",)
-	shortDescription: Optional[str] = Field(default=None,alias="shortDescription",)
-	teamsAppId: Optional[str] = Field(default=None,alias="teamsAppId",)
-	version: Optional[str] = Field(default=None,alias="version",)
-	bot: Optional[TeamworkBot] = Field(default=None,alias="bot",)
+	id: Optional[str] = Field(alias="id",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	authorization: Optional[TeamsAppAuthorization] = Field(alias="authorization",default=None,)
+	createdBy: SerializeAsAny[Optional[IdentitySet]] = Field(alias="createdBy",default=None,)
+	description: Optional[str] = Field(alias="description",default=None,)
+	displayName: Optional[str] = Field(alias="displayName",default=None,)
+	lastModifiedDateTime: Optional[datetime] = Field(alias="lastModifiedDateTime",default=None,)
+	publishingState: Optional[str | TeamsAppPublishingState] = Field(alias="publishingState",default=None,)
+	shortDescription: Optional[str] = Field(alias="shortDescription",default=None,)
+	teamsAppId: Optional[str] = Field(alias="teamsAppId",default=None,)
+	version: Optional[str] = Field(alias="version",default=None,)
+	bot: Optional[TeamworkBot] = Field(alias="bot",default=None,)
 
 from .teams_app_authorization import TeamsAppAuthorization
 from .identity_set import IdentitySet

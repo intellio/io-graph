@@ -4,9 +4,9 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class IdentityGovernanceTimeBasedAttributeTrigger(BaseModel):
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	offsetInDays: Optional[int] = Field(default=None,alias="offsetInDays",)
-	timeBasedAttribute: Optional[IdentityGovernanceWorkflowTriggerTimeBasedAttribute] = Field(default=None,alias="timeBasedAttribute",)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	offsetInDays: Optional[int] = Field(alias="offsetInDays",default=None,)
+	timeBasedAttribute: Optional[str | IdentityGovernanceWorkflowTriggerTimeBasedAttribute] = Field(alias="timeBasedAttribute",default=None,)
 
 from .identity_governance_workflow_trigger_time_based_attribute import IdentityGovernanceWorkflowTriggerTimeBasedAttribute
 

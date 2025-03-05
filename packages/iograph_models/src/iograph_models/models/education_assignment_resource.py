@@ -4,10 +4,10 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class EducationAssignmentResource(BaseModel):
-	id: Optional[str] = Field(default=None,alias="id",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	distributeForStudentWork: Optional[bool] = Field(default=None,alias="distributeForStudentWork",)
-	resource: SerializeAsAny[Optional[EducationResource]] = Field(default=None,alias="resource",)
+	id: Optional[str] = Field(alias="id",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	distributeForStudentWork: Optional[bool] = Field(alias="distributeForStudentWork",default=None,)
+	resource: SerializeAsAny[Optional[EducationResource]] = Field(alias="resource",default=None,)
 
 from .education_resource import EducationResource
 

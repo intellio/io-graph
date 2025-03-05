@@ -4,9 +4,9 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class PrintDocumentUploadProperties(BaseModel):
-	contentType: Optional[str] = Field(default=None,alias="contentType",)
-	documentName: Optional[str] = Field(default=None,alias="documentName",)
-	size: Optional[int] = Field(default=None,alias="size",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
+	contentType: Optional[str] = Field(alias="contentType",default=None,)
+	documentName: Optional[str] = Field(alias="documentName",default=None,)
+	size: Optional[int] = Field(alias="size",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 
 

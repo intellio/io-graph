@@ -5,20 +5,20 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class SecurityServicePrincipalEvidence(BaseModel):
-	createdDateTime: Optional[datetime] = Field(default=None,alias="createdDateTime",)
-	detailedRoles: Optional[list[str]] = Field(default=None,alias="detailedRoles",)
-	remediationStatus: Optional[SecurityEvidenceRemediationStatus] = Field(default=None,alias="remediationStatus",)
-	remediationStatusDetails: Optional[str] = Field(default=None,alias="remediationStatusDetails",)
-	roles: Optional[list[SecurityEvidenceRole]] = Field(default=None,alias="roles",)
-	tags: Optional[list[str]] = Field(default=None,alias="tags",)
-	verdict: Optional[SecurityEvidenceVerdict] = Field(default=None,alias="verdict",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	appId: Optional[str] = Field(default=None,alias="appId",)
-	appOwnerTenantId: Optional[str] = Field(default=None,alias="appOwnerTenantId",)
-	servicePrincipalName: Optional[str] = Field(default=None,alias="servicePrincipalName",)
-	servicePrincipalObjectId: Optional[str] = Field(default=None,alias="servicePrincipalObjectId",)
-	servicePrincipalType: Optional[SecurityServicePrincipalType] = Field(default=None,alias="servicePrincipalType",)
-	tenantId: Optional[str] = Field(default=None,alias="tenantId",)
+	createdDateTime: Optional[datetime] = Field(alias="createdDateTime",default=None,)
+	detailedRoles: Optional[list[str]] = Field(alias="detailedRoles",default=None,)
+	remediationStatus: Optional[str | SecurityEvidenceRemediationStatus] = Field(alias="remediationStatus",default=None,)
+	remediationStatusDetails: Optional[str] = Field(alias="remediationStatusDetails",default=None,)
+	roles: Optional[list[str | SecurityEvidenceRole]] = Field(alias="roles",default=None,)
+	tags: Optional[list[str]] = Field(alias="tags",default=None,)
+	verdict: Optional[str | SecurityEvidenceVerdict] = Field(alias="verdict",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	appId: Optional[str] = Field(alias="appId",default=None,)
+	appOwnerTenantId: Optional[str] = Field(alias="appOwnerTenantId",default=None,)
+	servicePrincipalName: Optional[str] = Field(alias="servicePrincipalName",default=None,)
+	servicePrincipalObjectId: Optional[str] = Field(alias="servicePrincipalObjectId",default=None,)
+	servicePrincipalType: Optional[str | SecurityServicePrincipalType] = Field(alias="servicePrincipalType",default=None,)
+	tenantId: Optional[str] = Field(alias="tenantId",default=None,)
 
 from .security_evidence_remediation_status import SecurityEvidenceRemediationStatus
 from .security_evidence_role import SecurityEvidenceRole

@@ -5,18 +5,18 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class DeviceManagementExportJob(BaseModel):
-	id: Optional[str] = Field(default=None,alias="id",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	expirationDateTime: Optional[datetime] = Field(default=None,alias="expirationDateTime",)
-	filter: Optional[str] = Field(default=None,alias="filter",)
-	format: Optional[DeviceManagementReportFileFormat] = Field(default=None,alias="format",)
-	localizationType: Optional[DeviceManagementExportJobLocalizationType] = Field(default=None,alias="localizationType",)
-	reportName: Optional[str] = Field(default=None,alias="reportName",)
-	requestDateTime: Optional[datetime] = Field(default=None,alias="requestDateTime",)
-	select: Optional[list[str]] = Field(default=None,alias="select",)
-	snapshotId: Optional[str] = Field(default=None,alias="snapshotId",)
-	status: Optional[DeviceManagementReportStatus] = Field(default=None,alias="status",)
-	url: Optional[str] = Field(default=None,alias="url",)
+	id: Optional[str] = Field(alias="id",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	expirationDateTime: Optional[datetime] = Field(alias="expirationDateTime",default=None,)
+	filter: Optional[str] = Field(alias="filter",default=None,)
+	format: Optional[str | DeviceManagementReportFileFormat] = Field(alias="format",default=None,)
+	localizationType: Optional[str | DeviceManagementExportJobLocalizationType] = Field(alias="localizationType",default=None,)
+	reportName: Optional[str] = Field(alias="reportName",default=None,)
+	requestDateTime: Optional[datetime] = Field(alias="requestDateTime",default=None,)
+	select: Optional[list[str]] = Field(alias="select",default=None,)
+	snapshotId: Optional[str] = Field(alias="snapshotId",default=None,)
+	status: Optional[str | DeviceManagementReportStatus] = Field(alias="status",default=None,)
+	url: Optional[str] = Field(alias="url",default=None,)
 
 from .device_management_report_file_format import DeviceManagementReportFileFormat
 from .device_management_export_job_localization_type import DeviceManagementExportJobLocalizationType

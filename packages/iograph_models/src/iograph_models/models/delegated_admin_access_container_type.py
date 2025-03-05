@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class DelegatedAdminAccessContainerType(Enum):
+class DelegatedAdminAccessContainerType(StrEnum):
 	securityGroup = "securityGroup"
 	unknownFutureValue = "unknownFutureValue"
 

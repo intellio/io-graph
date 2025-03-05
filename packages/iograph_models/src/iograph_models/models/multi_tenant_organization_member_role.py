@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class MultiTenantOrganizationMemberRole(Enum):
+class MultiTenantOrganizationMemberRole(StrEnum):
 	owner = "owner"
 	member = "member"
 	unknownFutureValue = "unknownFutureValue"

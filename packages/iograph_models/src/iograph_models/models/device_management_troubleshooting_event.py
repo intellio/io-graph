@@ -7,10 +7,10 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class DeviceManagementTroubleshootingEvent(BaseModel):
-	id: Optional[str] = Field(default=None,alias="id",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	correlationId: Optional[str] = Field(default=None,alias="correlationId",)
-	eventDateTime: Optional[datetime] = Field(default=None,alias="eventDateTime",)
+	id: Optional[str] = Field(alias="id",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	correlationId: Optional[str] = Field(alias="correlationId",default=None,)
+	eventDateTime: Optional[datetime] = Field(alias="eventDateTime",default=None,)
 
 	@model_validator(mode="wrap")
 	def convert_discriminator_class(cls, data: Any, handler: ModelWrapValidatorHandler[Self]) -> Self:

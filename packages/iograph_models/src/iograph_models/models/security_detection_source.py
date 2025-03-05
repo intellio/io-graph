@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class SecurityDetectionSource(Enum):
+class SecurityDetectionSource(StrEnum):
 	unknown = "unknown"
 	microsoftDefenderForEndpoint = "microsoftDefenderForEndpoint"
 	antivirus = "antivirus"

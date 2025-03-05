@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class ChatMessageType(Enum):
+class ChatMessageType(StrEnum):
 	message = "message"
 	chatEvent = "chatEvent"
 	typing = "typing"

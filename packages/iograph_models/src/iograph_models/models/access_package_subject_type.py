@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class AccessPackageSubjectType(Enum):
+class AccessPackageSubjectType(StrEnum):
 	notSpecified = "notSpecified"
 	user = "user"
 	servicePrincipal = "servicePrincipal"

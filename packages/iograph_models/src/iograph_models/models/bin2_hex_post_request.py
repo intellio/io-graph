@@ -4,7 +4,7 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class Bin2_hexPostRequest(BaseModel):
-	number: Optional[str] = Field(default=None,alias="number",)
-	places: Optional[str] = Field(default=None,alias="places",)
+	number: Optional[str] = Field(alias="number",default=None,)
+	places: Optional[str] = Field(alias="places",default=None,)
 
 

@@ -4,10 +4,10 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class PrintTaskTrigger(BaseModel):
-	id: Optional[str] = Field(default=None,alias="id",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	event: Optional[PrintEvent] = Field(default=None,alias="event",)
-	definition: Optional[PrintTaskDefinition] = Field(default=None,alias="definition",)
+	id: Optional[str] = Field(alias="id",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	event: Optional[str | PrintEvent] = Field(alias="event",default=None,)
+	definition: Optional[PrintTaskDefinition] = Field(alias="definition",default=None,)
 
 from .print_event import PrintEvent
 from .print_task_definition import PrintTaskDefinition

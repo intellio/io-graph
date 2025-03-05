@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class SecurityDataSourceHoldStatus(Enum):
+class SecurityDataSourceHoldStatus(StrEnum):
 	notApplied = "notApplied"
 	applied = "applied"
 	applying = "applying"

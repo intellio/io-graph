@@ -4,9 +4,9 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class Get_by_user_id_and_role_with_userid_roleGetResponse(BaseModel):
-	odata_count: Optional[int] = Field(default=None,alias="@odata.count",)
-	odata_nextLink: Optional[str] = Field(default=None,alias="@odata.nextLink",)
-	value: Optional[list[VirtualEventWebinar]] = Field(default=None,alias="value",)
+	odata_count: Optional[int] = Field(alias="@odata.count",default=None,)
+	odata_nextLink: Optional[str] = Field(alias="@odata.nextLink",default=None,)
+	value: Optional[list[VirtualEventWebinar]] = Field(alias="value",default=None,)
 
 from .virtual_event_webinar import VirtualEventWebinar
 

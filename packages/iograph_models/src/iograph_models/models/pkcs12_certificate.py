@@ -4,8 +4,8 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class Pkcs12Certificate(BaseModel):
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	password: Optional[str] = Field(default=None,alias="password",)
-	pkcs12Value: Optional[str] = Field(default=None,alias="pkcs12Value",)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	password: Optional[str] = Field(alias="password",default=None,)
+	pkcs12Value: Optional[str] = Field(alias="pkcs12Value",default=None,)
 
 

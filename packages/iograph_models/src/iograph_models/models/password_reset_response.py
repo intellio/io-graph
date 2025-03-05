@@ -4,7 +4,7 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class PasswordResetResponse(BaseModel):
-	newPassword: Optional[str] = Field(default=None,alias="newPassword",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
+	newPassword: Optional[str] = Field(alias="newPassword",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 
 

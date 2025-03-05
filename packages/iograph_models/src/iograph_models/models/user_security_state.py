@@ -5,21 +5,21 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class UserSecurityState(BaseModel):
-	aadUserId: Optional[str] = Field(default=None,alias="aadUserId",)
-	accountName: Optional[str] = Field(default=None,alias="accountName",)
-	domainName: Optional[str] = Field(default=None,alias="domainName",)
-	emailRole: Optional[EmailRole] = Field(default=None,alias="emailRole",)
-	isVpn: Optional[bool] = Field(default=None,alias="isVpn",)
-	logonDateTime: Optional[datetime] = Field(default=None,alias="logonDateTime",)
-	logonId: Optional[str] = Field(default=None,alias="logonId",)
-	logonIp: Optional[str] = Field(default=None,alias="logonIp",)
-	logonLocation: Optional[str] = Field(default=None,alias="logonLocation",)
-	logonType: Optional[LogonType] = Field(default=None,alias="logonType",)
-	onPremisesSecurityIdentifier: Optional[str] = Field(default=None,alias="onPremisesSecurityIdentifier",)
-	riskScore: Optional[str] = Field(default=None,alias="riskScore",)
-	userAccountType: Optional[UserAccountSecurityType] = Field(default=None,alias="userAccountType",)
-	userPrincipalName: Optional[str] = Field(default=None,alias="userPrincipalName",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
+	aadUserId: Optional[str] = Field(alias="aadUserId",default=None,)
+	accountName: Optional[str] = Field(alias="accountName",default=None,)
+	domainName: Optional[str] = Field(alias="domainName",default=None,)
+	emailRole: Optional[str | EmailRole] = Field(alias="emailRole",default=None,)
+	isVpn: Optional[bool] = Field(alias="isVpn",default=None,)
+	logonDateTime: Optional[datetime] = Field(alias="logonDateTime",default=None,)
+	logonId: Optional[str] = Field(alias="logonId",default=None,)
+	logonIp: Optional[str] = Field(alias="logonIp",default=None,)
+	logonLocation: Optional[str] = Field(alias="logonLocation",default=None,)
+	logonType: Optional[str | LogonType] = Field(alias="logonType",default=None,)
+	onPremisesSecurityIdentifier: Optional[str] = Field(alias="onPremisesSecurityIdentifier",default=None,)
+	riskScore: Optional[str] = Field(alias="riskScore",default=None,)
+	userAccountType: Optional[str | UserAccountSecurityType] = Field(alias="userAccountType",default=None,)
+	userPrincipalName: Optional[str] = Field(alias="userPrincipalName",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 
 from .email_role import EmailRole
 from .logon_type import LogonType

@@ -4,11 +4,11 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class VirtualEventRegistrationQuestionAnswer(BaseModel):
-	booleanValue: Optional[bool] = Field(default=None,alias="booleanValue",)
-	displayName: Optional[str] = Field(default=None,alias="displayName",)
-	multiChoiceValues: Optional[list[str]] = Field(default=None,alias="multiChoiceValues",)
-	questionId: Optional[str] = Field(default=None,alias="questionId",)
-	value: Optional[str] = Field(default=None,alias="value",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
+	booleanValue: Optional[bool] = Field(alias="booleanValue",default=None,)
+	displayName: Optional[str] = Field(alias="displayName",default=None,)
+	multiChoiceValues: Optional[list[str]] = Field(alias="multiChoiceValues",default=None,)
+	questionId: Optional[str] = Field(alias="questionId",default=None,)
+	value: Optional[str] = Field(alias="value",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 
 

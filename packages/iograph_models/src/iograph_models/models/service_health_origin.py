@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class ServiceHealthOrigin(Enum):
+class ServiceHealthOrigin(StrEnum):
 	microsoft = "microsoft"
 	thirdParty = "thirdParty"
 	customer = "customer"

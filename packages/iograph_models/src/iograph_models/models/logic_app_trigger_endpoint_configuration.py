@@ -4,10 +4,10 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class LogicAppTriggerEndpointConfiguration(BaseModel):
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	logicAppWorkflowName: Optional[str] = Field(default=None,alias="logicAppWorkflowName",)
-	resourceGroupName: Optional[str] = Field(default=None,alias="resourceGroupName",)
-	subscriptionId: Optional[str] = Field(default=None,alias="subscriptionId",)
-	url: Optional[str] = Field(default=None,alias="url",)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	logicAppWorkflowName: Optional[str] = Field(alias="logicAppWorkflowName",default=None,)
+	resourceGroupName: Optional[str] = Field(alias="resourceGroupName",default=None,)
+	subscriptionId: Optional[str] = Field(alias="subscriptionId",default=None,)
+	url: Optional[str] = Field(alias="url",default=None,)
 
 

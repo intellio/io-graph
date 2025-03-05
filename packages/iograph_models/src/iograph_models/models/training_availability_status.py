@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class TrainingAvailabilityStatus(Enum):
+class TrainingAvailabilityStatus(StrEnum):
 	unknown = "unknown"
 	notAvailable = "notAvailable"
 	available = "available"

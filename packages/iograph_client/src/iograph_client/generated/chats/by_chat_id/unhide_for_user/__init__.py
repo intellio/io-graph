@@ -11,8 +11,8 @@ from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:
 	from .....request_adapter import HttpxRequestAdapter
-from iograph_models.models.unhide_for_user_post_request import Unhide_for_userPostRequest
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.models.unhide_for_user_post_request import Unhide_for_userPostRequest
 
 
 class UnhideForUserRequest(BaseRequestBuilder):

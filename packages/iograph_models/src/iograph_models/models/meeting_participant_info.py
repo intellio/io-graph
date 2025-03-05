@@ -6,10 +6,10 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class MeetingParticipantInfo(BaseModel):
-	identity: SerializeAsAny[Optional[IdentitySet]] = Field(default=None,alias="identity",)
-	role: Optional[OnlineMeetingRole] = Field(default=None,alias="role",)
-	upn: Optional[str] = Field(default=None,alias="upn",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
+	identity: SerializeAsAny[Optional[IdentitySet]] = Field(alias="identity",default=None,)
+	role: Optional[str | OnlineMeetingRole] = Field(alias="role",default=None,)
+	upn: Optional[str] = Field(alias="upn",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 
 	@model_validator(mode="wrap")
 	def convert_discriminator_class(cls, data: Any, handler: ModelWrapValidatorHandler[Self]) -> Self:

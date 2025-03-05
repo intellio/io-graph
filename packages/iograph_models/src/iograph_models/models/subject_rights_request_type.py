@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class SubjectRightsRequestType(Enum):
+class SubjectRightsRequestType(StrEnum):
 	export = "export"
 	delete = "delete"
 	access = "access"

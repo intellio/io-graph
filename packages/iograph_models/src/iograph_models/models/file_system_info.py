@@ -5,9 +5,9 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class FileSystemInfo(BaseModel):
-	createdDateTime: Optional[datetime] = Field(default=None,alias="createdDateTime",)
-	lastAccessedDateTime: Optional[datetime] = Field(default=None,alias="lastAccessedDateTime",)
-	lastModifiedDateTime: Optional[datetime] = Field(default=None,alias="lastModifiedDateTime",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
+	createdDateTime: Optional[datetime] = Field(alias="createdDateTime",default=None,)
+	lastAccessedDateTime: Optional[datetime] = Field(alias="lastAccessedDateTime",default=None,)
+	lastModifiedDateTime: Optional[datetime] = Field(alias="lastModifiedDateTime",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 
 

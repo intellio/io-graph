@@ -5,11 +5,11 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class ChecklistItem(BaseModel):
-	id: Optional[str] = Field(default=None,alias="id",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	checkedDateTime: Optional[datetime] = Field(default=None,alias="checkedDateTime",)
-	createdDateTime: Optional[datetime] = Field(default=None,alias="createdDateTime",)
-	displayName: Optional[str] = Field(default=None,alias="displayName",)
-	isChecked: Optional[bool] = Field(default=None,alias="isChecked",)
+	id: Optional[str] = Field(alias="id",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	checkedDateTime: Optional[datetime] = Field(alias="checkedDateTime",default=None,)
+	createdDateTime: Optional[datetime] = Field(alias="createdDateTime",default=None,)
+	displayName: Optional[str] = Field(alias="displayName",default=None,)
+	isChecked: Optional[bool] = Field(alias="isChecked",default=None,)
 
 

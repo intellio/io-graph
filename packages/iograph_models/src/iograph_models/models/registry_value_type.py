@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class RegistryValueType(Enum):
+class RegistryValueType(StrEnum):
 	unknown = "unknown"
 	binary = "binary"
 	dword = "dword"

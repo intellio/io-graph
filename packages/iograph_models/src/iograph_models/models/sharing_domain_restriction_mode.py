@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class SharingDomainRestrictionMode(Enum):
+class SharingDomainRestrictionMode(StrEnum):
 	none = "none"
 	allowList = "allowList"
 	blockList = "blockList"

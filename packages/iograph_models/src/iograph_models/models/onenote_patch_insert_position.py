@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class OnenotePatchInsertPosition(Enum):
+class OnenotePatchInsertPosition(StrEnum):
 	After = "After"
 	Before = "Before"
 

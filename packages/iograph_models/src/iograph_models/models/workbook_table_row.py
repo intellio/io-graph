@@ -4,9 +4,9 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class WorkbookTableRow(BaseModel):
-	id: Optional[str] = Field(default=None,alias="id",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	index: Optional[int] = Field(default=None,alias="index",)
-	values: Optional[str] = Field(default=None,alias="values",)
+	id: Optional[str] = Field(alias="id",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	index: Optional[int] = Field(alias="index",default=None,)
+	values: Optional[str] = Field(alias="values",default=None,)
 
 

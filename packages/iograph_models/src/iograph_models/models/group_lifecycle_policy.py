@@ -4,10 +4,10 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class GroupLifecyclePolicy(BaseModel):
-	id: Optional[str] = Field(default=None,alias="id",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	alternateNotificationEmails: Optional[str] = Field(default=None,alias="alternateNotificationEmails",)
-	groupLifetimeInDays: Optional[int] = Field(default=None,alias="groupLifetimeInDays",)
-	managedGroupTypes: Optional[str] = Field(default=None,alias="managedGroupTypes",)
+	id: Optional[str] = Field(alias="id",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	alternateNotificationEmails: Optional[str] = Field(alias="alternateNotificationEmails",default=None,)
+	groupLifetimeInDays: Optional[int] = Field(alias="groupLifetimeInDays",default=None,)
+	managedGroupTypes: Optional[str] = Field(alias="managedGroupTypes",default=None,)
 
 

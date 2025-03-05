@@ -4,9 +4,9 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class SearchBucket(BaseModel):
-	aggregationFilterToken: Optional[str] = Field(default=None,alias="aggregationFilterToken",)
-	count: Optional[int] = Field(default=None,alias="count",)
-	key: Optional[str] = Field(default=None,alias="key",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
+	aggregationFilterToken: Optional[str] = Field(alias="aggregationFilterToken",default=None,)
+	count: Optional[int] = Field(alias="count",default=None,)
+	key: Optional[str] = Field(alias="key",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 
 

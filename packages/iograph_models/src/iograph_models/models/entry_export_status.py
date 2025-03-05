@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class EntryExportStatus(Enum):
+class EntryExportStatus(StrEnum):
 	Noop = "Noop"
 	Success = "Success"
 	RetryableError = "RetryableError"

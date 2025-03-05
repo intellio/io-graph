@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class BackupServiceStatus(Enum):
+class BackupServiceStatus(StrEnum):
 	disabled = "disabled"
 	enabled = "enabled"
 	protectionChangeLocked = "protectionChangeLocked"

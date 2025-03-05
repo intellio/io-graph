@@ -4,10 +4,10 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class NperPostRequest(BaseModel):
-	rate: Optional[str] = Field(default=None,alias="rate",)
-	pmt: Optional[str] = Field(default=None,alias="pmt",)
-	pv: Optional[str] = Field(default=None,alias="pv",)
-	fv: Optional[str] = Field(default=None,alias="fv",)
-	type: Optional[str] = Field(default=None,alias="type",)
+	rate: Optional[str] = Field(alias="rate",default=None,)
+	pmt: Optional[str] = Field(alias="pmt",default=None,)
+	pv: Optional[str] = Field(alias="pv",default=None,)
+	fv: Optional[str] = Field(alias="fv",default=None,)
+	type: Optional[str] = Field(alias="type",default=None,)
 
 

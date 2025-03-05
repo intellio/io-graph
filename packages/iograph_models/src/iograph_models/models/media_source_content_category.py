@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class MediaSourceContentCategory(Enum):
+class MediaSourceContentCategory(StrEnum):
 	meeting = "meeting"
 	liveStream = "liveStream"
 	presentation = "presentation"

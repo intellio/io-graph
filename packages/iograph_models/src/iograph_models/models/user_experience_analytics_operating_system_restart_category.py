@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class UserExperienceAnalyticsOperatingSystemRestartCategory(Enum):
+class UserExperienceAnalyticsOperatingSystemRestartCategory(StrEnum):
 	unknown = "unknown"
 	restartWithUpdate = "restartWithUpdate"
 	restartWithoutUpdate = "restartWithoutUpdate"

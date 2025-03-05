@@ -4,8 +4,8 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class GrantPostRequest(BaseModel):
-	roles: Optional[list[str]] = Field(default=None,alias="roles",)
-	recipients: Optional[list[DriveRecipient]] = Field(default=None,alias="recipients",)
+	roles: Optional[list[str]] = Field(alias="roles",default=None,)
+	recipients: Optional[list[DriveRecipient]] = Field(alias="recipients",default=None,)
 
 from .drive_recipient import DriveRecipient
 

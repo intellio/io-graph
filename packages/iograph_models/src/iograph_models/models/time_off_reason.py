@@ -5,16 +5,16 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class TimeOffReason(BaseModel):
-	id: Optional[str] = Field(default=None,alias="id",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	createdBy: SerializeAsAny[Optional[IdentitySet]] = Field(default=None,alias="createdBy",)
-	createdDateTime: Optional[datetime] = Field(default=None,alias="createdDateTime",)
-	lastModifiedBy: SerializeAsAny[Optional[IdentitySet]] = Field(default=None,alias="lastModifiedBy",)
-	lastModifiedDateTime: Optional[datetime] = Field(default=None,alias="lastModifiedDateTime",)
-	code: Optional[str] = Field(default=None,alias="code",)
-	displayName: Optional[str] = Field(default=None,alias="displayName",)
-	iconType: Optional[TimeOffReasonIconType] = Field(default=None,alias="iconType",)
-	isActive: Optional[bool] = Field(default=None,alias="isActive",)
+	id: Optional[str] = Field(alias="id",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	createdBy: SerializeAsAny[Optional[IdentitySet]] = Field(alias="createdBy",default=None,)
+	createdDateTime: Optional[datetime] = Field(alias="createdDateTime",default=None,)
+	lastModifiedBy: SerializeAsAny[Optional[IdentitySet]] = Field(alias="lastModifiedBy",default=None,)
+	lastModifiedDateTime: Optional[datetime] = Field(alias="lastModifiedDateTime",default=None,)
+	code: Optional[str] = Field(alias="code",default=None,)
+	displayName: Optional[str] = Field(alias="displayName",default=None,)
+	iconType: Optional[str | TimeOffReasonIconType] = Field(alias="iconType",default=None,)
+	isActive: Optional[bool] = Field(alias="isActive",default=None,)
 
 from .identity_set import IdentitySet
 from .identity_set import IdentitySet

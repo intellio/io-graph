@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class ScheduleChangeRequestActor(Enum):
+class ScheduleChangeRequestActor(StrEnum):
 	sender = "sender"
 	recipient = "recipient"
 	manager = "manager"

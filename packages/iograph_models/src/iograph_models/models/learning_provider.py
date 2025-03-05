@@ -4,17 +4,17 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class LearningProvider(BaseModel):
-	id: Optional[str] = Field(default=None,alias="id",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	displayName: Optional[str] = Field(default=None,alias="displayName",)
-	isCourseActivitySyncEnabled: Optional[bool] = Field(default=None,alias="isCourseActivitySyncEnabled",)
-	loginWebUrl: Optional[str] = Field(default=None,alias="loginWebUrl",)
-	longLogoWebUrlForDarkTheme: Optional[str] = Field(default=None,alias="longLogoWebUrlForDarkTheme",)
-	longLogoWebUrlForLightTheme: Optional[str] = Field(default=None,alias="longLogoWebUrlForLightTheme",)
-	squareLogoWebUrlForDarkTheme: Optional[str] = Field(default=None,alias="squareLogoWebUrlForDarkTheme",)
-	squareLogoWebUrlForLightTheme: Optional[str] = Field(default=None,alias="squareLogoWebUrlForLightTheme",)
-	learningContents: Optional[list[LearningContent]] = Field(default=None,alias="learningContents",)
-	learningCourseActivities: SerializeAsAny[Optional[list[LearningCourseActivity]]] = Field(default=None,alias="learningCourseActivities",)
+	id: Optional[str] = Field(alias="id",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	displayName: Optional[str] = Field(alias="displayName",default=None,)
+	isCourseActivitySyncEnabled: Optional[bool] = Field(alias="isCourseActivitySyncEnabled",default=None,)
+	loginWebUrl: Optional[str] = Field(alias="loginWebUrl",default=None,)
+	longLogoWebUrlForDarkTheme: Optional[str] = Field(alias="longLogoWebUrlForDarkTheme",default=None,)
+	longLogoWebUrlForLightTheme: Optional[str] = Field(alias="longLogoWebUrlForLightTheme",default=None,)
+	squareLogoWebUrlForDarkTheme: Optional[str] = Field(alias="squareLogoWebUrlForDarkTheme",default=None,)
+	squareLogoWebUrlForLightTheme: Optional[str] = Field(alias="squareLogoWebUrlForLightTheme",default=None,)
+	learningContents: Optional[list[LearningContent]] = Field(alias="learningContents",default=None,)
+	learningCourseActivities: SerializeAsAny[Optional[list[LearningCourseActivity]]] = Field(alias="learningCourseActivities",default=None,)
 
 from .learning_content import LearningContent
 from .learning_course_activity import LearningCourseActivity

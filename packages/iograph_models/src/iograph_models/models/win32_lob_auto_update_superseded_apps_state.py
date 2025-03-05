@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class Win32LobAutoUpdateSupersededAppsState(Enum):
+class Win32LobAutoUpdateSupersededAppsState(StrEnum):
 	notConfigured = "notConfigured"
 	enabled = "enabled"
 	unknownFutureValue = "unknownFutureValue"

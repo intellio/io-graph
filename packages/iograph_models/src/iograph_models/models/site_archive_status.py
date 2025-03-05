@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class SiteArchiveStatus(Enum):
+class SiteArchiveStatus(StrEnum):
 	recentlyArchived = "recentlyArchived"
 	fullyArchived = "fullyArchived"
 	reactivating = "reactivating"

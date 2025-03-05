@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class OAuthAppScope(Enum):
+class OAuthAppScope(StrEnum):
 	unknown = "unknown"
 	readCalendar = "readCalendar"
 	readContact = "readContact"

@@ -4,15 +4,15 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class Workbook(BaseModel):
-	id: Optional[str] = Field(default=None,alias="id",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	application: Optional[WorkbookApplication] = Field(default=None,alias="application",)
-	comments: Optional[list[WorkbookComment]] = Field(default=None,alias="comments",)
-	functions: Optional[WorkbookFunctions] = Field(default=None,alias="functions",)
-	names: Optional[list[WorkbookNamedItem]] = Field(default=None,alias="names",)
-	operations: Optional[list[WorkbookOperation]] = Field(default=None,alias="operations",)
-	tables: Optional[list[WorkbookTable]] = Field(default=None,alias="tables",)
-	worksheets: Optional[list[WorkbookWorksheet]] = Field(default=None,alias="worksheets",)
+	id: Optional[str] = Field(alias="id",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	application: Optional[WorkbookApplication] = Field(alias="application",default=None,)
+	comments: Optional[list[WorkbookComment]] = Field(alias="comments",default=None,)
+	functions: Optional[WorkbookFunctions] = Field(alias="functions",default=None,)
+	names: Optional[list[WorkbookNamedItem]] = Field(alias="names",default=None,)
+	operations: Optional[list[WorkbookOperation]] = Field(alias="operations",default=None,)
+	tables: Optional[list[WorkbookTable]] = Field(alias="tables",default=None,)
+	worksheets: Optional[list[WorkbookWorksheet]] = Field(alias="worksheets",default=None,)
 
 from .workbook_application import WorkbookApplication
 from .workbook_comment import WorkbookComment

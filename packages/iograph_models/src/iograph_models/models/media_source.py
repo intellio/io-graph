@@ -4,8 +4,8 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class MediaSource(BaseModel):
-	contentCategory: Optional[MediaSourceContentCategory] = Field(default=None,alias="contentCategory",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
+	contentCategory: Optional[str | MediaSourceContentCategory] = Field(alias="contentCategory",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 
 from .media_source_content_category import MediaSourceContentCategory
 

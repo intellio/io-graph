@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class ConditionalAccessGrantControl(Enum):
+class ConditionalAccessGrantControl(StrEnum):
 	block = "block"
 	mfa = "mfa"
 	compliantDevice = "compliantDevice"

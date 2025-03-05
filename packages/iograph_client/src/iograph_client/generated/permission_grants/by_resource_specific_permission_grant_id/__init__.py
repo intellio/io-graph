@@ -17,8 +17,8 @@ if TYPE_CHECKING:
 	from .check_member_objects import CheckMemberObjectsRequest
 	from .check_member_groups import CheckMemberGroupsRequest
 	from ....request_adapter import HttpxRequestAdapter
-from iograph_models.models.resource_specific_permission_grant import ResourceSpecificPermissionGrant
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.models.resource_specific_permission_grant import ResourceSpecificPermissionGrant
 
 
 class ByResourceSpecificPermissionGrantIdRequest(BaseRequestBuilder):

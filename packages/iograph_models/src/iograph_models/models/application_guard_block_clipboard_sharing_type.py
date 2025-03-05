@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class ApplicationGuardBlockClipboardSharingType(Enum):
+class ApplicationGuardBlockClipboardSharingType(StrEnum):
 	notConfigured = "notConfigured"
 	blockBoth = "blockBoth"
 	blockHostToContainer = "blockHostToContainer"

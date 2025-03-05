@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class BackupServiceConsumer(Enum):
+class BackupServiceConsumer(StrEnum):
 	unknown = "unknown"
 	firstparty = "firstparty"
 	thirdparty = "thirdparty"

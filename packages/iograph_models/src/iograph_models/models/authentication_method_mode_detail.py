@@ -4,10 +4,10 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class AuthenticationMethodModeDetail(BaseModel):
-	id: Optional[str] = Field(default=None,alias="id",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	authenticationMethod: Optional[BaseAuthenticationMethod] = Field(default=None,alias="authenticationMethod",)
-	displayName: Optional[str] = Field(default=None,alias="displayName",)
+	id: Optional[str] = Field(alias="id",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	authenticationMethod: Optional[str | BaseAuthenticationMethod] = Field(alias="authenticationMethod",default=None,)
+	displayName: Optional[str] = Field(alias="displayName",default=None,)
 
 from .base_authentication_method import BaseAuthenticationMethod
 

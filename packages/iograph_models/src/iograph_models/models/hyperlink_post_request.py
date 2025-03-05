@@ -4,7 +4,7 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class HyperlinkPostRequest(BaseModel):
-	linkLocation: Optional[str] = Field(default=None,alias="linkLocation",)
-	friendlyName: Optional[str] = Field(default=None,alias="friendlyName",)
+	linkLocation: Optional[str] = Field(alias="linkLocation",default=None,)
+	friendlyName: Optional[str] = Field(alias="friendlyName",default=None,)
 
 

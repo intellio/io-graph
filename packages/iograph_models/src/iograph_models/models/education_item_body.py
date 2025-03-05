@@ -4,9 +4,9 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class EducationItemBody(BaseModel):
-	content: Optional[str] = Field(default=None,alias="content",)
-	contentType: Optional[BodyType] = Field(default=None,alias="contentType",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
+	content: Optional[str] = Field(alias="content",default=None,)
+	contentType: Optional[str | BodyType] = Field(alias="contentType",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 
 from .body_type import BodyType
 

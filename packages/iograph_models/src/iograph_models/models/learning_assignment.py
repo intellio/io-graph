@@ -5,20 +5,20 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class LearningAssignment(BaseModel):
-	id: Optional[str] = Field(default=None,alias="id",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	completedDateTime: Optional[datetime] = Field(default=None,alias="completedDateTime",)
-	completionPercentage: Optional[int] = Field(default=None,alias="completionPercentage",)
-	externalcourseActivityId: Optional[str] = Field(default=None,alias="externalcourseActivityId",)
-	learnerUserId: Optional[str] = Field(default=None,alias="learnerUserId",)
-	learningContentId: Optional[str] = Field(default=None,alias="learningContentId",)
-	learningProviderId: Optional[str] = Field(default=None,alias="learningProviderId",)
-	status: Optional[CourseStatus] = Field(default=None,alias="status",)
-	assignedDateTime: Optional[datetime] = Field(default=None,alias="assignedDateTime",)
-	assignerUserId: Optional[str] = Field(default=None,alias="assignerUserId",)
-	assignmentType: Optional[AssignmentType] = Field(default=None,alias="assignmentType",)
-	dueDateTime: Optional[DateTimeTimeZone] = Field(default=None,alias="dueDateTime",)
-	notes: Optional[ItemBody] = Field(default=None,alias="notes",)
+	id: Optional[str] = Field(alias="id",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	completedDateTime: Optional[datetime] = Field(alias="completedDateTime",default=None,)
+	completionPercentage: Optional[int] = Field(alias="completionPercentage",default=None,)
+	externalcourseActivityId: Optional[str] = Field(alias="externalcourseActivityId",default=None,)
+	learnerUserId: Optional[str] = Field(alias="learnerUserId",default=None,)
+	learningContentId: Optional[str] = Field(alias="learningContentId",default=None,)
+	learningProviderId: Optional[str] = Field(alias="learningProviderId",default=None,)
+	status: Optional[str | CourseStatus] = Field(alias="status",default=None,)
+	assignedDateTime: Optional[datetime] = Field(alias="assignedDateTime",default=None,)
+	assignerUserId: Optional[str] = Field(alias="assignerUserId",default=None,)
+	assignmentType: Optional[str | AssignmentType] = Field(alias="assignmentType",default=None,)
+	dueDateTime: Optional[DateTimeTimeZone] = Field(alias="dueDateTime",default=None,)
+	notes: Optional[ItemBody] = Field(alias="notes",default=None,)
 
 from .course_status import CourseStatus
 from .assignment_type import AssignmentType

@@ -4,9 +4,9 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class AuthenticationConfigurationValidation(BaseModel):
-	errors: Optional[list[GenericError]] = Field(default=None,alias="errors",)
-	warnings: Optional[list[GenericError]] = Field(default=None,alias="warnings",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
+	errors: Optional[list[GenericError]] = Field(alias="errors",default=None,)
+	warnings: Optional[list[GenericError]] = Field(alias="warnings",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 
 from .generic_error import GenericError
 from .generic_error import GenericError

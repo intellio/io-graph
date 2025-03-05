@@ -4,10 +4,10 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class SearchAlteration(BaseModel):
-	alteredHighlightedQueryString: Optional[str] = Field(default=None,alias="alteredHighlightedQueryString",)
-	alteredQueryString: Optional[str] = Field(default=None,alias="alteredQueryString",)
-	alteredQueryTokens: Optional[list[AlteredQueryToken]] = Field(default=None,alias="alteredQueryTokens",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
+	alteredHighlightedQueryString: Optional[str] = Field(alias="alteredHighlightedQueryString",default=None,)
+	alteredQueryString: Optional[str] = Field(alias="alteredQueryString",default=None,)
+	alteredQueryTokens: Optional[list[AlteredQueryToken]] = Field(alias="alteredQueryTokens",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 
 from .altered_query_token import AlteredQueryToken
 

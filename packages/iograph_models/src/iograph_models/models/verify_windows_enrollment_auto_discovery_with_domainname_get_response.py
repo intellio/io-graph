@@ -4,6 +4,6 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class Verify_windows_enrollment_auto_discovery_with_domainnameGetResponse(BaseModel):
-	value: Optional[bool] = Field(default=None,alias="value",)
+	value: Optional[bool] = Field(alias="value",default=None,)
 
 

@@ -4,8 +4,8 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class FixedPostRequest(BaseModel):
-	number: Optional[str] = Field(default=None,alias="number",)
-	decimals: Optional[str] = Field(default=None,alias="decimals",)
-	noCommas: Optional[str] = Field(default=None,alias="noCommas",)
+	number: Optional[str] = Field(alias="number",default=None,)
+	decimals: Optional[str] = Field(alias="decimals",default=None,)
+	noCommas: Optional[str] = Field(alias="noCommas",default=None,)
 
 

@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class InstallState(Enum):
+class InstallState(StrEnum):
 	notApplicable = "notApplicable"
 	installed = "installed"
 	failed = "failed"

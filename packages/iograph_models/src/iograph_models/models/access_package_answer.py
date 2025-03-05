@@ -6,9 +6,9 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class AccessPackageAnswer(BaseModel):
-	displayValue: Optional[str] = Field(default=None,alias="displayValue",)
-	answeredQuestion: SerializeAsAny[Optional[AccessPackageQuestion]] = Field(default=None,alias="answeredQuestion",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
+	displayValue: Optional[str] = Field(alias="displayValue",default=None,)
+	answeredQuestion: SerializeAsAny[Optional[AccessPackageQuestion]] = Field(alias="answeredQuestion",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 
 	@model_validator(mode="wrap")
 	def convert_discriminator_class(cls, data: Any, handler: ModelWrapValidatorHandler[Self]) -> Self:

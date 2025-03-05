@@ -4,6 +4,6 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class Add_groupPostResponse(BaseModel):
-	value: Optional[bool] = Field(default=None,alias="value",)
+	value: Optional[bool] = Field(alias="value",default=None,)
 
 

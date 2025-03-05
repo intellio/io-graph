@@ -4,10 +4,10 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class AuthenticationMethodFeatureConfiguration(BaseModel):
-	excludeTarget: Optional[FeatureTarget] = Field(default=None,alias="excludeTarget",)
-	includeTarget: Optional[FeatureTarget] = Field(default=None,alias="includeTarget",)
-	state: Optional[AdvancedConfigState] = Field(default=None,alias="state",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
+	excludeTarget: Optional[FeatureTarget] = Field(alias="excludeTarget",default=None,)
+	includeTarget: Optional[FeatureTarget] = Field(alias="includeTarget",default=None,)
+	state: Optional[str | AdvancedConfigState] = Field(alias="state",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 
 from .feature_target import FeatureTarget
 from .feature_target import FeatureTarget

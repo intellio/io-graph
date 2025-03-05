@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class FreeBusyStatus(Enum):
+class FreeBusyStatus(StrEnum):
 	unknown = "unknown"
 	free = "free"
 	tentative = "tentative"

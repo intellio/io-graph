@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class SecurityRetentionTrigger(Enum):
+class SecurityRetentionTrigger(StrEnum):
 	dateLabeled = "dateLabeled"
 	dateCreated = "dateCreated"
 	dateModified = "dateModified"

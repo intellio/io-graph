@@ -4,6 +4,6 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class YearPostRequest(BaseModel):
-	serialNumber: Optional[str] = Field(default=None,alias="serialNumber",)
+	serialNumber: Optional[str] = Field(alias="serialNumber",default=None,)
 
 

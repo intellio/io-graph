@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class ActivityType(Enum):
+class ActivityType(StrEnum):
 	signin = "signin"
 	user = "user"
 	unknownFutureValue = "unknownFutureValue"

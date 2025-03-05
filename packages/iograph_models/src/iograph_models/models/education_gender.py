@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class EducationGender(Enum):
+class EducationGender(StrEnum):
 	female = "female"
 	male = "male"
 	other = "other"

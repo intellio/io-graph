@@ -5,10 +5,10 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class CloudPcUserSettingAssignment(BaseModel):
-	id: Optional[str] = Field(default=None,alias="id",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	createdDateTime: Optional[datetime] = Field(default=None,alias="createdDateTime",)
-	target: SerializeAsAny[Optional[CloudPcManagementAssignmentTarget]] = Field(default=None,alias="target",)
+	id: Optional[str] = Field(alias="id",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	createdDateTime: Optional[datetime] = Field(alias="createdDateTime",default=None,)
+	target: SerializeAsAny[Optional[CloudPcManagementAssignmentTarget]] = Field(alias="target",default=None,)
 
 from .cloud_pc_management_assignment_target import CloudPcManagementAssignmentTarget
 

@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class RoleEligibilityScheduleRequestFilterByCurrentUserOptions(Enum):
+class RoleEligibilityScheduleRequestFilterByCurrentUserOptions(StrEnum):
 	principal = "principal"
 	createdBy = "createdBy"
 	approver = "approver"

@@ -4,10 +4,10 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class Beta__invPostRequest(BaseModel):
-	probability: Optional[str] = Field(default=None,alias="probability",)
-	alpha: Optional[str] = Field(default=None,alias="alpha",)
-	beta: Optional[str] = Field(default=None,alias="beta",)
-	A: Optional[str] = Field(default=None,alias="A",)
-	B: Optional[str] = Field(default=None,alias="B",)
+	probability: Optional[str] = Field(alias="probability",default=None,)
+	alpha: Optional[str] = Field(alias="alpha",default=None,)
+	beta: Optional[str] = Field(alias="beta",default=None,)
+	A: Optional[str] = Field(alias="A",default=None,)
+	B: Optional[str] = Field(alias="B",default=None,)
 
 

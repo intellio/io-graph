@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class StateManagementSetting(Enum):
+class StateManagementSetting(StrEnum):
 	notConfigured = "notConfigured"
 	blocked = "blocked"
 	allowed = "allowed"

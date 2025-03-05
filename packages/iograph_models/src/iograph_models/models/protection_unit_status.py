@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class ProtectionUnitStatus(Enum):
+class ProtectionUnitStatus(StrEnum):
 	protectRequested = "protectRequested"
 	protected = "protected"
 	unprotectRequested = "unprotectRequested"

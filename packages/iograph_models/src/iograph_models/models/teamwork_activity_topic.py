@@ -4,10 +4,10 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class TeamworkActivityTopic(BaseModel):
-	source: Optional[TeamworkActivityTopicSource] = Field(default=None,alias="source",)
-	value: Optional[str] = Field(default=None,alias="value",)
-	webUrl: Optional[str] = Field(default=None,alias="webUrl",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
+	source: Optional[str | TeamworkActivityTopicSource] = Field(alias="source",default=None,)
+	value: Optional[str] = Field(alias="value",default=None,)
+	webUrl: Optional[str] = Field(alias="webUrl",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 
 from .teamwork_activity_topic_source import TeamworkActivityTopicSource
 

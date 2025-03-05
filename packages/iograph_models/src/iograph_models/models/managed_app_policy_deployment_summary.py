@@ -5,13 +5,13 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class ManagedAppPolicyDeploymentSummary(BaseModel):
-	id: Optional[str] = Field(default=None,alias="id",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	configurationDeployedUserCount: Optional[int] = Field(default=None,alias="configurationDeployedUserCount",)
-	configurationDeploymentSummaryPerApp: Optional[list[ManagedAppPolicyDeploymentSummaryPerApp]] = Field(default=None,alias="configurationDeploymentSummaryPerApp",)
-	displayName: Optional[str] = Field(default=None,alias="displayName",)
-	lastRefreshTime: Optional[datetime] = Field(default=None,alias="lastRefreshTime",)
-	version: Optional[str] = Field(default=None,alias="version",)
+	id: Optional[str] = Field(alias="id",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	configurationDeployedUserCount: Optional[int] = Field(alias="configurationDeployedUserCount",default=None,)
+	configurationDeploymentSummaryPerApp: Optional[list[ManagedAppPolicyDeploymentSummaryPerApp]] = Field(alias="configurationDeploymentSummaryPerApp",default=None,)
+	displayName: Optional[str] = Field(alias="displayName",default=None,)
+	lastRefreshTime: Optional[datetime] = Field(alias="lastRefreshTime",default=None,)
+	version: Optional[str] = Field(alias="version",default=None,)
 
 from .managed_app_policy_deployment_summary_per_app import ManagedAppPolicyDeploymentSummaryPerApp
 

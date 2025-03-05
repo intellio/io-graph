@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class PrintScaling(Enum):
+class PrintScaling(StrEnum):
 	auto = "auto"
 	shrinkToFit = "shrinkToFit"
 	fill = "fill"

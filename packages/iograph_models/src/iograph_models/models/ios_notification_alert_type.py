@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class IosNotificationAlertType(Enum):
+class IosNotificationAlertType(StrEnum):
 	deviceDefault = "deviceDefault"
 	banner = "banner"
 	modal = "modal"

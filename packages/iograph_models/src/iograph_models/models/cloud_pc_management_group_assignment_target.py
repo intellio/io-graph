@@ -4,8 +4,8 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class CloudPcManagementGroupAssignmentTarget(BaseModel):
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	groupId: Optional[str] = Field(default=None,alias="groupId",)
-	servicePlanId: Optional[str] = Field(default=None,alias="servicePlanId",)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	groupId: Optional[str] = Field(alias="groupId",default=None,)
+	servicePlanId: Optional[str] = Field(alias="servicePlanId",default=None,)
 
 

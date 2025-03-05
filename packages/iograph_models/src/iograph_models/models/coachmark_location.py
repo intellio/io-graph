@@ -4,10 +4,10 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class CoachmarkLocation(BaseModel):
-	length: Optional[int] = Field(default=None,alias="length",)
-	offset: Optional[int] = Field(default=None,alias="offset",)
-	type: Optional[CoachmarkLocationType] = Field(default=None,alias="type",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
+	length: Optional[int] = Field(alias="length",default=None,)
+	offset: Optional[int] = Field(alias="offset",default=None,)
+	type: Optional[str | CoachmarkLocationType] = Field(alias="type",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 
 from .coachmark_location_type import CoachmarkLocationType
 

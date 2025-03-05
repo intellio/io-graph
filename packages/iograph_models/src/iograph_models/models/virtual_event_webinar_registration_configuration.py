@@ -4,13 +4,13 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class VirtualEventWebinarRegistrationConfiguration(BaseModel):
-	id: Optional[str] = Field(default=None,alias="id",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	capacity: Optional[int] = Field(default=None,alias="capacity",)
-	registrationWebUrl: Optional[str] = Field(default=None,alias="registrationWebUrl",)
-	questions: SerializeAsAny[Optional[list[VirtualEventRegistrationQuestionBase]]] = Field(default=None,alias="questions",)
-	isManualApprovalEnabled: Optional[bool] = Field(default=None,alias="isManualApprovalEnabled",)
-	isWaitlistEnabled: Optional[bool] = Field(default=None,alias="isWaitlistEnabled",)
+	id: Optional[str] = Field(alias="id",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	capacity: Optional[int] = Field(alias="capacity",default=None,)
+	registrationWebUrl: Optional[str] = Field(alias="registrationWebUrl",default=None,)
+	questions: SerializeAsAny[Optional[list[VirtualEventRegistrationQuestionBase]]] = Field(alias="questions",default=None,)
+	isManualApprovalEnabled: Optional[bool] = Field(alias="isManualApprovalEnabled",default=None,)
+	isWaitlistEnabled: Optional[bool] = Field(alias="isWaitlistEnabled",default=None,)
 
 from .virtual_event_registration_question_base import VirtualEventRegistrationQuestionBase
 

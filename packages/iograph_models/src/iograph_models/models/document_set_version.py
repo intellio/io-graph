@@ -5,17 +5,17 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class DocumentSetVersion(BaseModel):
-	id: Optional[str] = Field(default=None,alias="id",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	lastModifiedBy: SerializeAsAny[Optional[IdentitySet]] = Field(default=None,alias="lastModifiedBy",)
-	lastModifiedDateTime: Optional[datetime] = Field(default=None,alias="lastModifiedDateTime",)
-	publication: Optional[PublicationFacet] = Field(default=None,alias="publication",)
-	fields: Optional[FieldValueSet] = Field(default=None,alias="fields",)
-	comment: Optional[str] = Field(default=None,alias="comment",)
-	createdBy: SerializeAsAny[Optional[IdentitySet]] = Field(default=None,alias="createdBy",)
-	createdDateTime: Optional[datetime] = Field(default=None,alias="createdDateTime",)
-	items: Optional[list[DocumentSetVersionItem]] = Field(default=None,alias="items",)
-	shouldCaptureMinorVersion: Optional[bool] = Field(default=None,alias="shouldCaptureMinorVersion",)
+	id: Optional[str] = Field(alias="id",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	lastModifiedBy: SerializeAsAny[Optional[IdentitySet]] = Field(alias="lastModifiedBy",default=None,)
+	lastModifiedDateTime: Optional[datetime] = Field(alias="lastModifiedDateTime",default=None,)
+	publication: Optional[PublicationFacet] = Field(alias="publication",default=None,)
+	fields: Optional[FieldValueSet] = Field(alias="fields",default=None,)
+	comment: Optional[str] = Field(alias="comment",default=None,)
+	createdBy: SerializeAsAny[Optional[IdentitySet]] = Field(alias="createdBy",default=None,)
+	createdDateTime: Optional[datetime] = Field(alias="createdDateTime",default=None,)
+	items: Optional[list[DocumentSetVersionItem]] = Field(alias="items",default=None,)
+	shouldCaptureMinorVersion: Optional[bool] = Field(alias="shouldCaptureMinorVersion",default=None,)
 
 from .identity_set import IdentitySet
 from .publication_facet import PublicationFacet

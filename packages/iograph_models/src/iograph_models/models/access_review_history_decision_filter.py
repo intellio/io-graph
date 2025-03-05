@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class AccessReviewHistoryDecisionFilter(Enum):
+class AccessReviewHistoryDecisionFilter(StrEnum):
 	approve = "approve"
 	deny = "deny"
 	notReviewed = "notReviewed"

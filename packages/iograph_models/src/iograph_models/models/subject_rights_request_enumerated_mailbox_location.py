@@ -4,7 +4,7 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class SubjectRightsRequestEnumeratedMailboxLocation(BaseModel):
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	userPrincipalNames: Optional[list[str]] = Field(default=None,alias="userPrincipalNames",)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	userPrincipalNames: Optional[list[str]] = Field(alias="userPrincipalNames",default=None,)
 
 

@@ -4,11 +4,11 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class WindowsInformationProtectionAppLockerFile(BaseModel):
-	id: Optional[str] = Field(default=None,alias="id",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	displayName: Optional[str] = Field(default=None,alias="displayName",)
-	file: Optional[str] = Field(default=None,alias="file",)
-	fileHash: Optional[str] = Field(default=None,alias="fileHash",)
-	version: Optional[str] = Field(default=None,alias="version",)
+	id: Optional[str] = Field(alias="id",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	displayName: Optional[str] = Field(alias="displayName",default=None,)
+	file: Optional[str] = Field(alias="file",default=None,)
+	fileHash: Optional[str] = Field(alias="fileHash",default=None,)
+	version: Optional[str] = Field(alias="version",default=None,)
 
 

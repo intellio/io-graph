@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class SecurityExportOptions(Enum):
+class SecurityExportOptions(StrEnum):
 	originalFiles = "originalFiles"
 	text = "text"
 	pdfReplacement = "pdfReplacement"

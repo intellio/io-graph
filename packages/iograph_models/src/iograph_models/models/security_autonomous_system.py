@@ -4,10 +4,10 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class SecurityAutonomousSystem(BaseModel):
-	name: Optional[str] = Field(default=None,alias="name",)
-	number: Optional[int] = Field(default=None,alias="number",)
-	organization: Optional[str] = Field(default=None,alias="organization",)
-	value: Optional[str] = Field(default=None,alias="value",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
+	name: Optional[str] = Field(alias="name",default=None,)
+	number: Optional[int] = Field(alias="number",default=None,)
+	organization: Optional[str] = Field(alias="organization",default=None,)
+	value: Optional[str] = Field(alias="value",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 
 

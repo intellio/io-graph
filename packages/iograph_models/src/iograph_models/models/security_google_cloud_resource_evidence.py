@@ -5,21 +5,21 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class SecurityGoogleCloudResourceEvidence(BaseModel):
-	createdDateTime: Optional[datetime] = Field(default=None,alias="createdDateTime",)
-	detailedRoles: Optional[list[str]] = Field(default=None,alias="detailedRoles",)
-	remediationStatus: Optional[SecurityEvidenceRemediationStatus] = Field(default=None,alias="remediationStatus",)
-	remediationStatusDetails: Optional[str] = Field(default=None,alias="remediationStatusDetails",)
-	roles: Optional[list[SecurityEvidenceRole]] = Field(default=None,alias="roles",)
-	tags: Optional[list[str]] = Field(default=None,alias="tags",)
-	verdict: Optional[SecurityEvidenceVerdict] = Field(default=None,alias="verdict",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	fullResourceName: Optional[str] = Field(default=None,alias="fullResourceName",)
-	location: Optional[str] = Field(default=None,alias="location",)
-	locationType: Optional[SecurityGoogleCloudLocationType] = Field(default=None,alias="locationType",)
-	projectId: Optional[str] = Field(default=None,alias="projectId",)
-	projectNumber: Optional[int] = Field(default=None,alias="projectNumber",)
-	resourceName: Optional[str] = Field(default=None,alias="resourceName",)
-	resourceType: Optional[str] = Field(default=None,alias="resourceType",)
+	createdDateTime: Optional[datetime] = Field(alias="createdDateTime",default=None,)
+	detailedRoles: Optional[list[str]] = Field(alias="detailedRoles",default=None,)
+	remediationStatus: Optional[str | SecurityEvidenceRemediationStatus] = Field(alias="remediationStatus",default=None,)
+	remediationStatusDetails: Optional[str] = Field(alias="remediationStatusDetails",default=None,)
+	roles: Optional[list[str | SecurityEvidenceRole]] = Field(alias="roles",default=None,)
+	tags: Optional[list[str]] = Field(alias="tags",default=None,)
+	verdict: Optional[str | SecurityEvidenceVerdict] = Field(alias="verdict",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	fullResourceName: Optional[str] = Field(alias="fullResourceName",default=None,)
+	location: Optional[str] = Field(alias="location",default=None,)
+	locationType: Optional[str | SecurityGoogleCloudLocationType] = Field(alias="locationType",default=None,)
+	projectId: Optional[str] = Field(alias="projectId",default=None,)
+	projectNumber: Optional[int] = Field(alias="projectNumber",default=None,)
+	resourceName: Optional[str] = Field(alias="resourceName",default=None,)
+	resourceType: Optional[str] = Field(alias="resourceType",default=None,)
 
 from .security_evidence_remediation_status import SecurityEvidenceRemediationStatus
 from .security_evidence_role import SecurityEvidenceRole

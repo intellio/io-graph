@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class FileStorageContainerStatus(Enum):
+class FileStorageContainerStatus(StrEnum):
 	inactive = "inactive"
 	active = "active"
 	unknownFutureValue = "unknownFutureValue"

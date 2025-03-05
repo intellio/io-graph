@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class PhysicalAddressType(Enum):
+class PhysicalAddressType(StrEnum):
 	unknown = "unknown"
 	home = "home"
 	business = "business"

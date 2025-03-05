@@ -4,8 +4,8 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class JoinMeetingIdMeetingInfo(BaseModel):
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	joinMeetingId: Optional[str] = Field(default=None,alias="joinMeetingId",)
-	passcode: Optional[str] = Field(default=None,alias="passcode",)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	joinMeetingId: Optional[str] = Field(alias="joinMeetingId",default=None,)
+	passcode: Optional[str] = Field(alias="passcode",default=None,)
 
 

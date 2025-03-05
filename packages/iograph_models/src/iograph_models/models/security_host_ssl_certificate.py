@@ -5,13 +5,13 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class SecurityHostSslCertificate(BaseModel):
-	id: Optional[str] = Field(default=None,alias="id",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	firstSeenDateTime: Optional[datetime] = Field(default=None,alias="firstSeenDateTime",)
-	lastSeenDateTime: Optional[datetime] = Field(default=None,alias="lastSeenDateTime",)
-	ports: Optional[list[SecurityHostSslCertificatePort]] = Field(default=None,alias="ports",)
-	host: SerializeAsAny[Optional[SecurityHost]] = Field(default=None,alias="host",)
-	sslCertificate: Optional[SecuritySslCertificate] = Field(default=None,alias="sslCertificate",)
+	id: Optional[str] = Field(alias="id",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	firstSeenDateTime: Optional[datetime] = Field(alias="firstSeenDateTime",default=None,)
+	lastSeenDateTime: Optional[datetime] = Field(alias="lastSeenDateTime",default=None,)
+	ports: Optional[list[SecurityHostSslCertificatePort]] = Field(alias="ports",default=None,)
+	host: SerializeAsAny[Optional[SecurityHost]] = Field(alias="host",default=None,)
+	sslCertificate: Optional[SecuritySslCertificate] = Field(alias="sslCertificate",default=None,)
 
 from .security_host_ssl_certificate_port import SecurityHostSslCertificatePort
 from .security_host import SecurityHost

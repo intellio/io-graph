@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class TitleAreaLayoutType(Enum):
+class TitleAreaLayoutType(StrEnum):
 	imageAndTitle = "imageAndTitle"
 	plain = "plain"
 	colorBlock = "colorBlock"

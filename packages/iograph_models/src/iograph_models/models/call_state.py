@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class CallState(Enum):
+class CallState(StrEnum):
 	incoming = "incoming"
 	establishing = "establishing"
 	established = "established"

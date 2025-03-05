@@ -4,14 +4,14 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class RecurrencePattern(BaseModel):
-	dayOfMonth: Optional[int] = Field(default=None,alias="dayOfMonth",)
-	daysOfWeek: Optional[DayOfWeek] = Field(default=None,alias="daysOfWeek",)
-	firstDayOfWeek: Optional[DayOfWeek] = Field(default=None,alias="firstDayOfWeek",)
-	index: Optional[WeekIndex] = Field(default=None,alias="index",)
-	interval: Optional[int] = Field(default=None,alias="interval",)
-	month: Optional[int] = Field(default=None,alias="month",)
-	type: Optional[RecurrencePatternType] = Field(default=None,alias="type",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
+	dayOfMonth: Optional[int] = Field(alias="dayOfMonth",default=None,)
+	daysOfWeek: Optional[str | DayOfWeek] = Field(alias="daysOfWeek",default=None,)
+	firstDayOfWeek: Optional[str | DayOfWeek] = Field(alias="firstDayOfWeek",default=None,)
+	index: Optional[str | WeekIndex] = Field(alias="index",default=None,)
+	interval: Optional[int] = Field(alias="interval",default=None,)
+	month: Optional[int] = Field(alias="month",default=None,)
+	type: Optional[str | RecurrencePatternType] = Field(alias="type",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 
 from .day_of_week import DayOfWeek
 from .day_of_week import DayOfWeek

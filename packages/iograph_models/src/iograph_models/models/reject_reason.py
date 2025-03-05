@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class RejectReason(Enum):
+class RejectReason(StrEnum):
 	none = "none"
 	busy = "busy"
 	forbidden = "forbidden"

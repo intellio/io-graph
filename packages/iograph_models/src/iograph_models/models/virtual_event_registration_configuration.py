@@ -6,11 +6,11 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class VirtualEventRegistrationConfiguration(BaseModel):
-	id: Optional[str] = Field(default=None,alias="id",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	capacity: Optional[int] = Field(default=None,alias="capacity",)
-	registrationWebUrl: Optional[str] = Field(default=None,alias="registrationWebUrl",)
-	questions: SerializeAsAny[Optional[list[VirtualEventRegistrationQuestionBase]]] = Field(default=None,alias="questions",)
+	id: Optional[str] = Field(alias="id",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	capacity: Optional[int] = Field(alias="capacity",default=None,)
+	registrationWebUrl: Optional[str] = Field(alias="registrationWebUrl",default=None,)
+	questions: SerializeAsAny[Optional[list[VirtualEventRegistrationQuestionBase]]] = Field(alias="questions",default=None,)
 
 	@model_validator(mode="wrap")
 	def convert_discriminator_class(cls, data: Any, handler: ModelWrapValidatorHandler[Self]) -> Self:

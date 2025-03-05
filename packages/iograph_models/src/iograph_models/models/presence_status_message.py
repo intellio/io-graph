@@ -5,10 +5,10 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class PresenceStatusMessage(BaseModel):
-	expiryDateTime: Optional[DateTimeTimeZone] = Field(default=None,alias="expiryDateTime",)
-	message: Optional[ItemBody] = Field(default=None,alias="message",)
-	publishedDateTime: Optional[datetime] = Field(default=None,alias="publishedDateTime",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
+	expiryDateTime: Optional[DateTimeTimeZone] = Field(alias="expiryDateTime",default=None,)
+	message: Optional[ItemBody] = Field(alias="message",default=None,)
+	publishedDateTime: Optional[datetime] = Field(alias="publishedDateTime",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 
 from .date_time_time_zone import DateTimeTimeZone
 from .item_body import ItemBody

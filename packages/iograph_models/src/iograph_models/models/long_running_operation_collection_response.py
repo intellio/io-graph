@@ -4,9 +4,9 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class LongRunningOperationCollectionResponse(BaseModel):
-	odata_count: Optional[int] = Field(default=None,alias="@odata.count",)
-	odata_nextLink: Optional[str] = Field(default=None,alias="@odata.nextLink",)
-	value: SerializeAsAny[Optional[list[LongRunningOperation]]] = Field(default=None,alias="value",)
+	odata_count: Optional[int] = Field(alias="@odata.count",default=None,)
+	odata_nextLink: Optional[str] = Field(alias="@odata.nextLink",default=None,)
+	value: SerializeAsAny[Optional[list[LongRunningOperation]]] = Field(alias="value",default=None,)
 
 from .long_running_operation import LongRunningOperation
 

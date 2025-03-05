@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class NotificationDeliveryFrequency(Enum):
+class NotificationDeliveryFrequency(StrEnum):
 	unknown = "unknown"
 	weekly = "weekly"
 	biWeekly = "biWeekly"

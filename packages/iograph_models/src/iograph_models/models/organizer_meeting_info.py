@@ -4,8 +4,8 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class OrganizerMeetingInfo(BaseModel):
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	organizer: SerializeAsAny[Optional[IdentitySet]] = Field(default=None,alias="organizer",)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	organizer: SerializeAsAny[Optional[IdentitySet]] = Field(alias="organizer",default=None,)
 
 from .identity_set import IdentitySet
 

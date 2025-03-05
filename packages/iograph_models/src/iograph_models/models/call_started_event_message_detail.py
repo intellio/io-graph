@@ -4,10 +4,10 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class CallStartedEventMessageDetail(BaseModel):
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	callEventType: Optional[TeamworkCallEventType] = Field(default=None,alias="callEventType",)
-	callId: Optional[str] = Field(default=None,alias="callId",)
-	initiator: SerializeAsAny[Optional[IdentitySet]] = Field(default=None,alias="initiator",)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	callEventType: Optional[str | TeamworkCallEventType] = Field(alias="callEventType",default=None,)
+	callId: Optional[str] = Field(alias="callId",default=None,)
+	initiator: SerializeAsAny[Optional[IdentitySet]] = Field(alias="initiator",default=None,)
 
 from .teamwork_call_event_type import TeamworkCallEventType
 from .identity_set import IdentitySet

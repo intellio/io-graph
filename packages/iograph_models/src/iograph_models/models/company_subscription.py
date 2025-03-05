@@ -5,20 +5,20 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class CompanySubscription(BaseModel):
-	id: Optional[str] = Field(default=None,alias="id",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	commerceSubscriptionId: Optional[str] = Field(default=None,alias="commerceSubscriptionId",)
-	createdDateTime: Optional[datetime] = Field(default=None,alias="createdDateTime",)
-	isTrial: Optional[bool] = Field(default=None,alias="isTrial",)
-	nextLifecycleDateTime: Optional[datetime] = Field(default=None,alias="nextLifecycleDateTime",)
-	ownerId: Optional[str] = Field(default=None,alias="ownerId",)
-	ownerTenantId: Optional[str] = Field(default=None,alias="ownerTenantId",)
-	ownerType: Optional[str] = Field(default=None,alias="ownerType",)
-	serviceStatus: Optional[list[ServicePlanInfo]] = Field(default=None,alias="serviceStatus",)
-	skuId: Optional[str] = Field(default=None,alias="skuId",)
-	skuPartNumber: Optional[str] = Field(default=None,alias="skuPartNumber",)
-	status: Optional[str] = Field(default=None,alias="status",)
-	totalLicenses: Optional[int] = Field(default=None,alias="totalLicenses",)
+	id: Optional[str] = Field(alias="id",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	commerceSubscriptionId: Optional[str] = Field(alias="commerceSubscriptionId",default=None,)
+	createdDateTime: Optional[datetime] = Field(alias="createdDateTime",default=None,)
+	isTrial: Optional[bool] = Field(alias="isTrial",default=None,)
+	nextLifecycleDateTime: Optional[datetime] = Field(alias="nextLifecycleDateTime",default=None,)
+	ownerId: Optional[str] = Field(alias="ownerId",default=None,)
+	ownerTenantId: Optional[str] = Field(alias="ownerTenantId",default=None,)
+	ownerType: Optional[str] = Field(alias="ownerType",default=None,)
+	serviceStatus: Optional[list[ServicePlanInfo]] = Field(alias="serviceStatus",default=None,)
+	skuId: Optional[str] = Field(alias="skuId",default=None,)
+	skuPartNumber: Optional[str] = Field(alias="skuPartNumber",default=None,)
+	status: Optional[str] = Field(alias="status",default=None,)
+	totalLicenses: Optional[int] = Field(alias="totalLicenses",default=None,)
 
 from .service_plan_info import ServicePlanInfo
 

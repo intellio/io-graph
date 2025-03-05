@@ -4,6 +4,6 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class Get_virtual_appointment_join_web_urlGetResponse(BaseModel):
-	value: Optional[str] = Field(default=None,alias="value",)
+	value: Optional[str] = Field(alias="value",default=None,)
 
 

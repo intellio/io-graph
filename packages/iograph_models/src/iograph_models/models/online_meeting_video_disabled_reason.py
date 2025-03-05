@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class OnlineMeetingVideoDisabledReason(Enum):
+class OnlineMeetingVideoDisabledReason(StrEnum):
 	watermarkProtection = "watermarkProtection"
 	unknownFutureValue = "unknownFutureValue"
 

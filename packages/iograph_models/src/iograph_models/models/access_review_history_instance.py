@@ -5,15 +5,15 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class AccessReviewHistoryInstance(BaseModel):
-	id: Optional[str] = Field(default=None,alias="id",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	downloadUri: Optional[str] = Field(default=None,alias="downloadUri",)
-	expirationDateTime: Optional[datetime] = Field(default=None,alias="expirationDateTime",)
-	fulfilledDateTime: Optional[datetime] = Field(default=None,alias="fulfilledDateTime",)
-	reviewHistoryPeriodEndDateTime: Optional[datetime] = Field(default=None,alias="reviewHistoryPeriodEndDateTime",)
-	reviewHistoryPeriodStartDateTime: Optional[datetime] = Field(default=None,alias="reviewHistoryPeriodStartDateTime",)
-	runDateTime: Optional[datetime] = Field(default=None,alias="runDateTime",)
-	status: Optional[AccessReviewHistoryStatus] = Field(default=None,alias="status",)
+	id: Optional[str] = Field(alias="id",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	downloadUri: Optional[str] = Field(alias="downloadUri",default=None,)
+	expirationDateTime: Optional[datetime] = Field(alias="expirationDateTime",default=None,)
+	fulfilledDateTime: Optional[datetime] = Field(alias="fulfilledDateTime",default=None,)
+	reviewHistoryPeriodEndDateTime: Optional[datetime] = Field(alias="reviewHistoryPeriodEndDateTime",default=None,)
+	reviewHistoryPeriodStartDateTime: Optional[datetime] = Field(alias="reviewHistoryPeriodStartDateTime",default=None,)
+	runDateTime: Optional[datetime] = Field(alias="runDateTime",default=None,)
+	status: Optional[str | AccessReviewHistoryStatus] = Field(alias="status",default=None,)
 
 from .access_review_history_status import AccessReviewHistoryStatus
 

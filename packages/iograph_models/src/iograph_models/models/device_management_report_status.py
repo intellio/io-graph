@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class DeviceManagementReportStatus(Enum):
+class DeviceManagementReportStatus(StrEnum):
 	unknown = "unknown"
 	notStarted = "notStarted"
 	inProgress = "inProgress"

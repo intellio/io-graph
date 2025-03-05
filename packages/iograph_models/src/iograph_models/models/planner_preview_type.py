@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class PlannerPreviewType(Enum):
+class PlannerPreviewType(StrEnum):
 	automatic = "automatic"
 	noPreview = "noPreview"
 	checklist = "checklist"

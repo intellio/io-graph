@@ -4,13 +4,13 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class ChatMessageAttachment(BaseModel):
-	content: Optional[str] = Field(default=None,alias="content",)
-	contentType: Optional[str] = Field(default=None,alias="contentType",)
-	contentUrl: Optional[str] = Field(default=None,alias="contentUrl",)
-	id: Optional[str] = Field(default=None,alias="id",)
-	name: Optional[str] = Field(default=None,alias="name",)
-	teamsAppId: Optional[str] = Field(default=None,alias="teamsAppId",)
-	thumbnailUrl: Optional[str] = Field(default=None,alias="thumbnailUrl",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
+	content: Optional[str] = Field(alias="content",default=None,)
+	contentType: Optional[str] = Field(alias="contentType",default=None,)
+	contentUrl: Optional[str] = Field(alias="contentUrl",default=None,)
+	id: Optional[str] = Field(alias="id",default=None,)
+	name: Optional[str] = Field(alias="name",default=None,)
+	teamsAppId: Optional[str] = Field(alias="teamsAppId",default=None,)
+	thumbnailUrl: Optional[str] = Field(alias="thumbnailUrl",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 
 

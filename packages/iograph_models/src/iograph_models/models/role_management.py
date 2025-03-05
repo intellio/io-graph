@@ -4,9 +4,9 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class RoleManagement(BaseModel):
-	directory: Optional[RbacApplication] = Field(default=None,alias="directory",)
-	entitlementManagement: Optional[RbacApplication] = Field(default=None,alias="entitlementManagement",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
+	directory: Optional[RbacApplication] = Field(alias="directory",default=None,)
+	entitlementManagement: Optional[RbacApplication] = Field(alias="entitlementManagement",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 
 from .rbac_application import RbacApplication
 from .rbac_application import RbacApplication

@@ -4,13 +4,13 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class UserExperienceAnalyticsAppHealthDeviceModelPerformance(BaseModel):
-	id: Optional[str] = Field(default=None,alias="id",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	activeDeviceCount: Optional[int] = Field(default=None,alias="activeDeviceCount",)
-	deviceManufacturer: Optional[str] = Field(default=None,alias="deviceManufacturer",)
-	deviceModel: Optional[str] = Field(default=None,alias="deviceModel",)
-	healthStatus: Optional[UserExperienceAnalyticsHealthState] = Field(default=None,alias="healthStatus",)
-	meanTimeToFailureInMinutes: Optional[int] = Field(default=None,alias="meanTimeToFailureInMinutes",)
+	id: Optional[str] = Field(alias="id",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	activeDeviceCount: Optional[int] = Field(alias="activeDeviceCount",default=None,)
+	deviceManufacturer: Optional[str] = Field(alias="deviceManufacturer",default=None,)
+	deviceModel: Optional[str] = Field(alias="deviceModel",default=None,)
+	healthStatus: Optional[str | UserExperienceAnalyticsHealthState] = Field(alias="healthStatus",default=None,)
+	meanTimeToFailureInMinutes: Optional[int] = Field(alias="meanTimeToFailureInMinutes",default=None,)
 	modelAppHealthScore: float | str | ReferenceNumeric
 
 from .user_experience_analytics_health_state import UserExperienceAnalyticsHealthState

@@ -4,8 +4,8 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class XnpvPostRequest(BaseModel):
-	rate: Optional[str] = Field(default=None,alias="rate",)
-	values: Optional[str] = Field(default=None,alias="values",)
-	dates: Optional[str] = Field(default=None,alias="dates",)
+	rate: Optional[str] = Field(alias="rate",default=None,)
+	values: Optional[str] = Field(alias="values",default=None,)
+	dates: Optional[str] = Field(alias="dates",default=None,)
 
 

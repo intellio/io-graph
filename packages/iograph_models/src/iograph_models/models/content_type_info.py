@@ -4,8 +4,8 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class ContentTypeInfo(BaseModel):
-	id: Optional[str] = Field(default=None,alias="id",)
-	name: Optional[str] = Field(default=None,alias="name",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
+	id: Optional[str] = Field(alias="id",default=None,)
+	name: Optional[str] = Field(alias="name",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 
 

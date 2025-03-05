@@ -4,8 +4,8 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class Expon__distPostRequest(BaseModel):
-	x: Optional[str] = Field(default=None,alias="x",)
-	lambda_: Optional[str] = Field(default=None,alias="lambda",)
-	cumulative: Optional[str] = Field(default=None,alias="cumulative",)
+	x: Optional[str] = Field(alias="x",default=None,)
+	lambda_: Optional[str] = Field(alias="lambda",default=None,)
+	cumulative: Optional[str] = Field(alias="cumulative",default=None,)
 
 

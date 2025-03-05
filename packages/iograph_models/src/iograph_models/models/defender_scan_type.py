@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class DefenderScanType(Enum):
+class DefenderScanType(StrEnum):
 	userDefined = "userDefined"
 	disabled = "disabled"
 	quick = "quick"

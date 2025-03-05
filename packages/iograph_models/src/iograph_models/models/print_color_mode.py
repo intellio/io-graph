@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class PrintColorMode(Enum):
+class PrintColorMode(StrEnum):
 	blackAndWhite = "blackAndWhite"
 	grayscale = "grayscale"
 	color = "color"

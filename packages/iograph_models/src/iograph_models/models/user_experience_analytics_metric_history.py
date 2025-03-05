@@ -5,10 +5,10 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class UserExperienceAnalyticsMetricHistory(BaseModel):
-	id: Optional[str] = Field(default=None,alias="id",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	deviceId: Optional[str] = Field(default=None,alias="deviceId",)
-	metricDateTime: Optional[datetime] = Field(default=None,alias="metricDateTime",)
-	metricType: Optional[str] = Field(default=None,alias="metricType",)
+	id: Optional[str] = Field(alias="id",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	deviceId: Optional[str] = Field(alias="deviceId",default=None,)
+	metricDateTime: Optional[datetime] = Field(alias="metricDateTime",default=None,)
+	metricType: Optional[str] = Field(alias="metricType",default=None,)
 
 

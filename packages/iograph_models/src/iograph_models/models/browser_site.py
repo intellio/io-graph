@@ -5,20 +5,20 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class BrowserSite(BaseModel):
-	id: Optional[str] = Field(default=None,alias="id",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	allowRedirect: Optional[bool] = Field(default=None,alias="allowRedirect",)
-	comment: Optional[str] = Field(default=None,alias="comment",)
-	compatibilityMode: Optional[BrowserSiteCompatibilityMode] = Field(default=None,alias="compatibilityMode",)
-	createdDateTime: Optional[datetime] = Field(default=None,alias="createdDateTime",)
-	deletedDateTime: Optional[datetime] = Field(default=None,alias="deletedDateTime",)
-	history: Optional[list[BrowserSiteHistory]] = Field(default=None,alias="history",)
-	lastModifiedBy: SerializeAsAny[Optional[IdentitySet]] = Field(default=None,alias="lastModifiedBy",)
-	lastModifiedDateTime: Optional[datetime] = Field(default=None,alias="lastModifiedDateTime",)
-	mergeType: Optional[BrowserSiteMergeType] = Field(default=None,alias="mergeType",)
-	status: Optional[BrowserSiteStatus] = Field(default=None,alias="status",)
-	targetEnvironment: Optional[BrowserSiteTargetEnvironment] = Field(default=None,alias="targetEnvironment",)
-	webUrl: Optional[str] = Field(default=None,alias="webUrl",)
+	id: Optional[str] = Field(alias="id",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	allowRedirect: Optional[bool] = Field(alias="allowRedirect",default=None,)
+	comment: Optional[str] = Field(alias="comment",default=None,)
+	compatibilityMode: Optional[str | BrowserSiteCompatibilityMode] = Field(alias="compatibilityMode",default=None,)
+	createdDateTime: Optional[datetime] = Field(alias="createdDateTime",default=None,)
+	deletedDateTime: Optional[datetime] = Field(alias="deletedDateTime",default=None,)
+	history: Optional[list[BrowserSiteHistory]] = Field(alias="history",default=None,)
+	lastModifiedBy: SerializeAsAny[Optional[IdentitySet]] = Field(alias="lastModifiedBy",default=None,)
+	lastModifiedDateTime: Optional[datetime] = Field(alias="lastModifiedDateTime",default=None,)
+	mergeType: Optional[str | BrowserSiteMergeType] = Field(alias="mergeType",default=None,)
+	status: Optional[str | BrowserSiteStatus] = Field(alias="status",default=None,)
+	targetEnvironment: Optional[str | BrowserSiteTargetEnvironment] = Field(alias="targetEnvironment",default=None,)
+	webUrl: Optional[str] = Field(alias="webUrl",default=None,)
 
 from .browser_site_compatibility_mode import BrowserSiteCompatibilityMode
 from .browser_site_history import BrowserSiteHistory

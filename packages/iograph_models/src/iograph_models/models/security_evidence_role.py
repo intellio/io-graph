@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class SecurityEvidenceRole(Enum):
+class SecurityEvidenceRole(StrEnum):
 	unknown = "unknown"
 	contextual = "contextual"
 	scanned = "scanned"

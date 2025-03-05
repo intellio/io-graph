@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class AccessPackageCustomExtensionStage(Enum):
+class AccessPackageCustomExtensionStage(StrEnum):
 	assignmentRequestCreated = "assignmentRequestCreated"
 	assignmentRequestApproved = "assignmentRequestApproved"
 	assignmentRequestGranted = "assignmentRequestGranted"

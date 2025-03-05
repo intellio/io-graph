@@ -4,9 +4,9 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class WindowsAutopilotDeviceIdentityCollectionResponse(BaseModel):
-	odata_count: Optional[int] = Field(default=None,alias="@odata.count",)
-	odata_nextLink: Optional[str] = Field(default=None,alias="@odata.nextLink",)
-	value: Optional[list[WindowsAutopilotDeviceIdentity]] = Field(default=None,alias="value",)
+	odata_count: Optional[int] = Field(alias="@odata.count",default=None,)
+	odata_nextLink: Optional[str] = Field(alias="@odata.nextLink",default=None,)
+	value: Optional[list[WindowsAutopilotDeviceIdentity]] = Field(alias="value",default=None,)
 
 from .windows_autopilot_device_identity import WindowsAutopilotDeviceIdentity
 

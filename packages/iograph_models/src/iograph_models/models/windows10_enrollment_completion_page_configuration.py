@@ -5,16 +5,16 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class Windows10EnrollmentCompletionPageConfiguration(BaseModel):
-	id: Optional[str] = Field(default=None,alias="id",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	createdDateTime: Optional[datetime] = Field(default=None,alias="createdDateTime",)
-	description: Optional[str] = Field(default=None,alias="description",)
-	displayName: Optional[str] = Field(default=None,alias="displayName",)
-	lastModifiedDateTime: Optional[datetime] = Field(default=None,alias="lastModifiedDateTime",)
-	priority: Optional[int] = Field(default=None,alias="priority",)
-	version: Optional[int] = Field(default=None,alias="version",)
-	assignments: Optional[list[EnrollmentConfigurationAssignment]] = Field(default=None,alias="assignments",)
-	allowNonBlockingAppInstallation: Optional[bool] = Field(default=None,alias="allowNonBlockingAppInstallation",)
+	id: Optional[str] = Field(alias="id",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	createdDateTime: Optional[datetime] = Field(alias="createdDateTime",default=None,)
+	description: Optional[str] = Field(alias="description",default=None,)
+	displayName: Optional[str] = Field(alias="displayName",default=None,)
+	lastModifiedDateTime: Optional[datetime] = Field(alias="lastModifiedDateTime",default=None,)
+	priority: Optional[int] = Field(alias="priority",default=None,)
+	version: Optional[int] = Field(alias="version",default=None,)
+	assignments: Optional[list[EnrollmentConfigurationAssignment]] = Field(alias="assignments",default=None,)
+	allowNonBlockingAppInstallation: Optional[bool] = Field(alias="allowNonBlockingAppInstallation",default=None,)
 
 from .enrollment_configuration_assignment import EnrollmentConfigurationAssignment
 

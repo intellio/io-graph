@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class AllowedTargetScope(Enum):
+class AllowedTargetScope(StrEnum):
 	notSpecified = "notSpecified"
 	specificDirectoryUsers = "specificDirectoryUsers"
 	specificConnectedOrganizationUsers = "specificConnectedOrganizationUsers"

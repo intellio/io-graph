@@ -4,10 +4,10 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class TenantInformation(BaseModel):
-	defaultDomainName: Optional[str] = Field(default=None,alias="defaultDomainName",)
-	displayName: Optional[str] = Field(default=None,alias="displayName",)
-	federationBrandName: Optional[str] = Field(default=None,alias="federationBrandName",)
-	tenantId: Optional[str] = Field(default=None,alias="tenantId",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
+	defaultDomainName: Optional[str] = Field(alias="defaultDomainName",default=None,)
+	displayName: Optional[str] = Field(alias="displayName",default=None,)
+	federationBrandName: Optional[str] = Field(alias="federationBrandName",default=None,)
+	tenantId: Optional[str] = Field(alias="tenantId",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 
 

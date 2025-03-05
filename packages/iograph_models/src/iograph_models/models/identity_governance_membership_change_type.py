@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class IdentityGovernanceMembershipChangeType(Enum):
+class IdentityGovernanceMembershipChangeType(StrEnum):
 	add = "add"
 	remove = "remove"
 	unknownFutureValue = "unknownFutureValue"

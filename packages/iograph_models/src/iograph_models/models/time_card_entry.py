@@ -4,10 +4,10 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class TimeCardEntry(BaseModel):
-	breaks: Optional[list[TimeCardBreak]] = Field(default=None,alias="breaks",)
-	clockInEvent: Optional[TimeCardEvent] = Field(default=None,alias="clockInEvent",)
-	clockOutEvent: Optional[TimeCardEvent] = Field(default=None,alias="clockOutEvent",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
+	breaks: Optional[list[TimeCardBreak]] = Field(alias="breaks",default=None,)
+	clockInEvent: Optional[TimeCardEvent] = Field(alias="clockInEvent",default=None,)
+	clockOutEvent: Optional[TimeCardEvent] = Field(alias="clockOutEvent",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 
 from .time_card_break import TimeCardBreak
 from .time_card_event import TimeCardEvent

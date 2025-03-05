@@ -4,9 +4,9 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class SecurityUnclassifiedArtifact(BaseModel):
-	id: Optional[str] = Field(default=None,alias="id",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	kind: Optional[str] = Field(default=None,alias="kind",)
-	value: Optional[str] = Field(default=None,alias="value",)
+	id: Optional[str] = Field(alias="id",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	kind: Optional[str] = Field(alias="kind",default=None,)
+	value: Optional[str] = Field(alias="value",default=None,)
 
 

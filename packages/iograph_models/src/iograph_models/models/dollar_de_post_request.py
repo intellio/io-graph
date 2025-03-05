@@ -4,7 +4,7 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class Dollar_dePostRequest(BaseModel):
-	fractionalDollar: Optional[str] = Field(default=None,alias="fractionalDollar",)
-	fraction: Optional[str] = Field(default=None,alias="fraction",)
+	fractionalDollar: Optional[str] = Field(alias="fractionalDollar",default=None,)
+	fraction: Optional[str] = Field(alias="fraction",default=None,)
 
 

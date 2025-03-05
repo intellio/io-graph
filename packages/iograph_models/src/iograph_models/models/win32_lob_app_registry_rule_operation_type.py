@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class Win32LobAppRegistryRuleOperationType(Enum):
+class Win32LobAppRegistryRuleOperationType(StrEnum):
 	notConfigured = "notConfigured"
 	exists = "exists"
 	doesNotExist = "doesNotExist"

@@ -5,17 +5,17 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class DeviceManagementExchangeConnector(BaseModel):
-	id: Optional[str] = Field(default=None,alias="id",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	connectorServerName: Optional[str] = Field(default=None,alias="connectorServerName",)
-	exchangeAlias: Optional[str] = Field(default=None,alias="exchangeAlias",)
-	exchangeConnectorType: Optional[DeviceManagementExchangeConnectorType] = Field(default=None,alias="exchangeConnectorType",)
-	exchangeOrganization: Optional[str] = Field(default=None,alias="exchangeOrganization",)
-	lastSyncDateTime: Optional[datetime] = Field(default=None,alias="lastSyncDateTime",)
-	primarySmtpAddress: Optional[str] = Field(default=None,alias="primarySmtpAddress",)
-	serverName: Optional[str] = Field(default=None,alias="serverName",)
-	status: Optional[DeviceManagementExchangeConnectorStatus] = Field(default=None,alias="status",)
-	version: Optional[str] = Field(default=None,alias="version",)
+	id: Optional[str] = Field(alias="id",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	connectorServerName: Optional[str] = Field(alias="connectorServerName",default=None,)
+	exchangeAlias: Optional[str] = Field(alias="exchangeAlias",default=None,)
+	exchangeConnectorType: Optional[str | DeviceManagementExchangeConnectorType] = Field(alias="exchangeConnectorType",default=None,)
+	exchangeOrganization: Optional[str] = Field(alias="exchangeOrganization",default=None,)
+	lastSyncDateTime: Optional[datetime] = Field(alias="lastSyncDateTime",default=None,)
+	primarySmtpAddress: Optional[str] = Field(alias="primarySmtpAddress",default=None,)
+	serverName: Optional[str] = Field(alias="serverName",default=None,)
+	status: Optional[str | DeviceManagementExchangeConnectorStatus] = Field(alias="status",default=None,)
+	version: Optional[str] = Field(alias="version",default=None,)
 
 from .device_management_exchange_connector_type import DeviceManagementExchangeConnectorType
 from .device_management_exchange_connector_status import DeviceManagementExchangeConnectorStatus

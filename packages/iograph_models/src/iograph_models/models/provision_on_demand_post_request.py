@@ -4,7 +4,7 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class Provision_on_demandPostRequest(BaseModel):
-	parameters: Optional[list[SynchronizationJobApplicationParameters]] = Field(default=None,alias="parameters",)
+	parameters: Optional[list[SynchronizationJobApplicationParameters]] = Field(alias="parameters",default=None,)
 
 from .synchronization_job_application_parameters import SynchronizationJobApplicationParameters
 

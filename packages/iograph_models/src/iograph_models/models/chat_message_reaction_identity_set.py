@@ -4,10 +4,10 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class ChatMessageReactionIdentitySet(BaseModel):
-	application: SerializeAsAny[Optional[Identity]] = Field(default=None,alias="application",)
-	device: SerializeAsAny[Optional[Identity]] = Field(default=None,alias="device",)
-	user: SerializeAsAny[Optional[Identity]] = Field(default=None,alias="user",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
+	application: SerializeAsAny[Optional[Identity]] = Field(alias="application",default=None,)
+	device: SerializeAsAny[Optional[Identity]] = Field(alias="device",default=None,)
+	user: SerializeAsAny[Optional[Identity]] = Field(alias="user",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 
 from .identity import Identity
 from .identity import Identity

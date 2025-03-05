@@ -5,13 +5,13 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class UserSimulationEventInfo(BaseModel):
-	browser: Optional[str] = Field(default=None,alias="browser",)
-	clickSource: Optional[ClickSource] = Field(default=None,alias="clickSource",)
-	eventDateTime: Optional[datetime] = Field(default=None,alias="eventDateTime",)
-	eventName: Optional[str] = Field(default=None,alias="eventName",)
-	ipAddress: Optional[str] = Field(default=None,alias="ipAddress",)
-	osPlatformDeviceDetails: Optional[str] = Field(default=None,alias="osPlatformDeviceDetails",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
+	browser: Optional[str] = Field(alias="browser",default=None,)
+	clickSource: Optional[str | ClickSource] = Field(alias="clickSource",default=None,)
+	eventDateTime: Optional[datetime] = Field(alias="eventDateTime",default=None,)
+	eventName: Optional[str] = Field(alias="eventName",default=None,)
+	ipAddress: Optional[str] = Field(alias="ipAddress",default=None,)
+	osPlatformDeviceDetails: Optional[str] = Field(alias="osPlatformDeviceDetails",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 
 from .click_source import ClickSource
 

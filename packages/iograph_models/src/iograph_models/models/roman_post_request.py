@@ -4,7 +4,7 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class RomanPostRequest(BaseModel):
-	number: Optional[str] = Field(default=None,alias="number",)
-	form: Optional[str] = Field(default=None,alias="form",)
+	number: Optional[str] = Field(alias="number",default=None,)
+	form: Optional[str] = Field(alias="form",default=None,)
 
 

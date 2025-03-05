@@ -4,11 +4,11 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class SharingInvitation(BaseModel):
-	email: Optional[str] = Field(default=None,alias="email",)
-	invitedBy: SerializeAsAny[Optional[IdentitySet]] = Field(default=None,alias="invitedBy",)
-	redeemedBy: Optional[str] = Field(default=None,alias="redeemedBy",)
-	signInRequired: Optional[bool] = Field(default=None,alias="signInRequired",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
+	email: Optional[str] = Field(alias="email",default=None,)
+	invitedBy: SerializeAsAny[Optional[IdentitySet]] = Field(alias="invitedBy",default=None,)
+	redeemedBy: Optional[str] = Field(alias="redeemedBy",default=None,)
+	signInRequired: Optional[bool] = Field(alias="signInRequired",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 
 from .identity_set import IdentitySet
 

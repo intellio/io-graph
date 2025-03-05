@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class OnenoteSourceService(Enum):
+class OnenoteSourceService(StrEnum):
 	Unknown = "Unknown"
 	OneDrive = "OneDrive"
 	OneDriveForBusiness = "OneDriveForBusiness"

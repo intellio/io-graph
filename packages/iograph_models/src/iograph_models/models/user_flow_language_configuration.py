@@ -4,12 +4,12 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class UserFlowLanguageConfiguration(BaseModel):
-	id: Optional[str] = Field(default=None,alias="id",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	displayName: Optional[str] = Field(default=None,alias="displayName",)
-	isEnabled: Optional[bool] = Field(default=None,alias="isEnabled",)
-	defaultPages: Optional[list[UserFlowLanguagePage]] = Field(default=None,alias="defaultPages",)
-	overridesPages: Optional[list[UserFlowLanguagePage]] = Field(default=None,alias="overridesPages",)
+	id: Optional[str] = Field(alias="id",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	displayName: Optional[str] = Field(alias="displayName",default=None,)
+	isEnabled: Optional[bool] = Field(alias="isEnabled",default=None,)
+	defaultPages: Optional[list[UserFlowLanguagePage]] = Field(alias="defaultPages",default=None,)
+	overridesPages: Optional[list[UserFlowLanguagePage]] = Field(alias="overridesPages",default=None,)
 
 from .user_flow_language_page import UserFlowLanguagePage
 from .user_flow_language_page import UserFlowLanguagePage

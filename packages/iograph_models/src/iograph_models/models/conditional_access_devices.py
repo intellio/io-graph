@@ -4,8 +4,8 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class ConditionalAccessDevices(BaseModel):
-	deviceFilter: Optional[ConditionalAccessFilter] = Field(default=None,alias="deviceFilter",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
+	deviceFilter: Optional[ConditionalAccessFilter] = Field(alias="deviceFilter",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 
 from .conditional_access_filter import ConditionalAccessFilter
 

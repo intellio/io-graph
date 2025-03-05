@@ -4,8 +4,8 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class Set_user_preferred_presencePostRequest(BaseModel):
-	availability: Optional[str] = Field(default=None,alias="availability",)
-	activity: Optional[str] = Field(default=None,alias="activity",)
-	expirationDuration: Optional[str] = Field(default=None,alias="expirationDuration",)
+	availability: Optional[str] = Field(alias="availability",default=None,)
+	activity: Optional[str] = Field(alias="activity",default=None,)
+	expirationDuration: Optional[str] = Field(alias="expirationDuration",default=None,)
 
 

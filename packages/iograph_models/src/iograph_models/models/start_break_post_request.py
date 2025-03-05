@@ -4,8 +4,8 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class Start_breakPostRequest(BaseModel):
-	isAtApprovedLocation: Optional[bool] = Field(default=None,alias="isAtApprovedLocation",)
-	notes: Optional[ItemBody] = Field(default=None,alias="notes",)
+	isAtApprovedLocation: Optional[bool] = Field(alias="isAtApprovedLocation",default=None,)
+	notes: Optional[ItemBody] = Field(alias="notes",default=None,)
 
 from .item_body import ItemBody
 

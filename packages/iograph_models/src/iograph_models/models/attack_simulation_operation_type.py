@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class AttackSimulationOperationType(Enum):
+class AttackSimulationOperationType(StrEnum):
 	createSimualation = "createSimualation"
 	updateSimulation = "updateSimulation"
 	unknownFutureValue = "unknownFutureValue"

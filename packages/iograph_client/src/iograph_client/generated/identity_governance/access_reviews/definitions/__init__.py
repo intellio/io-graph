@@ -16,8 +16,8 @@ if TYPE_CHECKING:
 	from .by_access_review_schedule_definition_id import ByAccessReviewScheduleDefinitionIdRequest
 	from .....request_adapter import HttpxRequestAdapter
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
-from iograph_models.models.access_review_schedule_definition_collection_response import AccessReviewScheduleDefinitionCollectionResponse
 from iograph_models.models.access_review_schedule_definition import AccessReviewScheduleDefinition
+from iograph_models.models.access_review_schedule_definition_collection_response import AccessReviewScheduleDefinitionCollectionResponse
 
 
 class DefinitionsRequest(BaseRequestBuilder):

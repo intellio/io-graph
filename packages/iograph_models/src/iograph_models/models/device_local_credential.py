@@ -5,11 +5,11 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class DeviceLocalCredential(BaseModel):
-	id: Optional[str] = Field(default=None,alias="id",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	accountName: Optional[str] = Field(default=None,alias="accountName",)
-	accountSid: Optional[str] = Field(default=None,alias="accountSid",)
-	backupDateTime: Optional[datetime] = Field(default=None,alias="backupDateTime",)
-	passwordBase64: Optional[str] = Field(default=None,alias="passwordBase64",)
+	id: Optional[str] = Field(alias="id",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	accountName: Optional[str] = Field(alias="accountName",default=None,)
+	accountSid: Optional[str] = Field(alias="accountSid",default=None,)
+	backupDateTime: Optional[datetime] = Field(alias="backupDateTime",default=None,)
+	passwordBase64: Optional[str] = Field(alias="passwordBase64",default=None,)
 
 

@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class QuarantineReason(Enum):
+class QuarantineReason(StrEnum):
 	EncounteredBaseEscrowThreshold = "EncounteredBaseEscrowThreshold"
 	EncounteredTotalEscrowThreshold = "EncounteredTotalEscrowThreshold"
 	EncounteredEscrowProportionThreshold = "EncounteredEscrowProportionThreshold"

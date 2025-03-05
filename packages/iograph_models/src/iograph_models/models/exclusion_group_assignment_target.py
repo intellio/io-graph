@@ -4,7 +4,7 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class ExclusionGroupAssignmentTarget(BaseModel):
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	groupId: Optional[str] = Field(default=None,alias="groupId",)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	groupId: Optional[str] = Field(alias="groupId",default=None,)
 
 

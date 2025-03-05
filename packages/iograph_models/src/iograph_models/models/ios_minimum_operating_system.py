@@ -4,14 +4,14 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class IosMinimumOperatingSystem(BaseModel):
-	v10_0: Optional[bool] = Field(default=None,alias="v10_0",)
-	v11_0: Optional[bool] = Field(default=None,alias="v11_0",)
-	v12_0: Optional[bool] = Field(default=None,alias="v12_0",)
-	v13_0: Optional[bool] = Field(default=None,alias="v13_0",)
-	v14_0: Optional[bool] = Field(default=None,alias="v14_0",)
-	v15_0: Optional[bool] = Field(default=None,alias="v15_0",)
-	v8_0: Optional[bool] = Field(default=None,alias="v8_0",)
-	v9_0: Optional[bool] = Field(default=None,alias="v9_0",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
+	v10_0: Optional[bool] = Field(alias="v10_0",default=None,)
+	v11_0: Optional[bool] = Field(alias="v11_0",default=None,)
+	v12_0: Optional[bool] = Field(alias="v12_0",default=None,)
+	v13_0: Optional[bool] = Field(alias="v13_0",default=None,)
+	v14_0: Optional[bool] = Field(alias="v14_0",default=None,)
+	v15_0: Optional[bool] = Field(alias="v15_0",default=None,)
+	v8_0: Optional[bool] = Field(alias="v8_0",default=None,)
+	v9_0: Optional[bool] = Field(alias="v9_0",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 
 

@@ -4,7 +4,7 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class ChoosePostRequest(BaseModel):
-	indexNum: Optional[str] = Field(default=None,alias="indexNum",)
-	values: Optional[str] = Field(default=None,alias="values",)
+	indexNum: Optional[str] = Field(alias="indexNum",default=None,)
+	values: Optional[str] = Field(alias="values",default=None,)
 
 

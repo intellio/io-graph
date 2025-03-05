@@ -4,19 +4,19 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class ExternalConnectorsExternalConnection(BaseModel):
-	id: Optional[str] = Field(default=None,alias="id",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	activitySettings: Optional[ExternalConnectorsActivitySettings] = Field(default=None,alias="activitySettings",)
-	configuration: Optional[ExternalConnectorsConfiguration] = Field(default=None,alias="configuration",)
-	connectorId: Optional[str] = Field(default=None,alias="connectorId",)
-	description: Optional[str] = Field(default=None,alias="description",)
-	name: Optional[str] = Field(default=None,alias="name",)
-	searchSettings: Optional[ExternalConnectorsSearchSettings] = Field(default=None,alias="searchSettings",)
-	state: Optional[ExternalConnectorsConnectionState] = Field(default=None,alias="state",)
-	groups: Optional[list[ExternalConnectorsExternalGroup]] = Field(default=None,alias="groups",)
-	items: Optional[list[ExternalConnectorsExternalItem]] = Field(default=None,alias="items",)
-	operations: Optional[list[ExternalConnectorsConnectionOperation]] = Field(default=None,alias="operations",)
-	schema: Optional[ExternalConnectorsSchema] = Field(default=None,alias="schema",)
+	id: Optional[str] = Field(alias="id",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	activitySettings: Optional[ExternalConnectorsActivitySettings] = Field(alias="activitySettings",default=None,)
+	configuration: Optional[ExternalConnectorsConfiguration] = Field(alias="configuration",default=None,)
+	connectorId: Optional[str] = Field(alias="connectorId",default=None,)
+	description: Optional[str] = Field(alias="description",default=None,)
+	name: Optional[str] = Field(alias="name",default=None,)
+	searchSettings: Optional[ExternalConnectorsSearchSettings] = Field(alias="searchSettings",default=None,)
+	state: Optional[str | ExternalConnectorsConnectionState] = Field(alias="state",default=None,)
+	groups: Optional[list[ExternalConnectorsExternalGroup]] = Field(alias="groups",default=None,)
+	items: Optional[list[ExternalConnectorsExternalItem]] = Field(alias="items",default=None,)
+	operations: Optional[list[ExternalConnectorsConnectionOperation]] = Field(alias="operations",default=None,)
+	schema: Optional[ExternalConnectorsSchema] = Field(alias="schema",default=None,)
 
 from .external_connectors_activity_settings import ExternalConnectorsActivitySettings
 from .external_connectors_configuration import ExternalConnectorsConfiguration

@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class ThreatAssessmentStatus(Enum):
+class ThreatAssessmentStatus(StrEnum):
 	pending = "pending"
 	completed = "completed"
 

@@ -4,13 +4,13 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class ParticipantInfo(BaseModel):
-	countryCode: Optional[str] = Field(default=None,alias="countryCode",)
-	endpointType: Optional[EndpointType] = Field(default=None,alias="endpointType",)
-	identity: SerializeAsAny[Optional[IdentitySet]] = Field(default=None,alias="identity",)
-	languageId: Optional[str] = Field(default=None,alias="languageId",)
-	participantId: Optional[str] = Field(default=None,alias="participantId",)
-	region: Optional[str] = Field(default=None,alias="region",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
+	countryCode: Optional[str] = Field(alias="countryCode",default=None,)
+	endpointType: Optional[str | EndpointType] = Field(alias="endpointType",default=None,)
+	identity: SerializeAsAny[Optional[IdentitySet]] = Field(alias="identity",default=None,)
+	languageId: Optional[str] = Field(alias="languageId",default=None,)
+	participantId: Optional[str] = Field(alias="participantId",default=None,)
+	region: Optional[str] = Field(alias="region",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 
 from .endpoint_type import EndpointType
 from .identity_set import IdentitySet

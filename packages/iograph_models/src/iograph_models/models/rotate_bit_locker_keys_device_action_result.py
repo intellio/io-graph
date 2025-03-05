@@ -5,12 +5,12 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class RotateBitLockerKeysDeviceActionResult(BaseModel):
-	actionName: Optional[str] = Field(default=None,alias="actionName",)
-	actionState: Optional[ActionState] = Field(default=None,alias="actionState",)
-	lastUpdatedDateTime: Optional[datetime] = Field(default=None,alias="lastUpdatedDateTime",)
-	startDateTime: Optional[datetime] = Field(default=None,alias="startDateTime",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	errorCode: Optional[int] = Field(default=None,alias="errorCode",)
+	actionName: Optional[str] = Field(alias="actionName",default=None,)
+	actionState: Optional[str | ActionState] = Field(alias="actionState",default=None,)
+	lastUpdatedDateTime: Optional[datetime] = Field(alias="lastUpdatedDateTime",default=None,)
+	startDateTime: Optional[datetime] = Field(alias="startDateTime",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	errorCode: Optional[int] = Field(alias="errorCode",default=None,)
 
 from .action_state import ActionState
 

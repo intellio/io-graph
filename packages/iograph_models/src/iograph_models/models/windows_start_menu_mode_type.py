@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class WindowsStartMenuModeType(Enum):
+class WindowsStartMenuModeType(StrEnum):
 	userDefined = "userDefined"
 	fullScreen = "fullScreen"
 	nonFullScreen = "nonFullScreen"

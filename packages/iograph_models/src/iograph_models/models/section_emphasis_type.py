@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class SectionEmphasisType(Enum):
+class SectionEmphasisType(StrEnum):
 	none = "none"
 	neutral = "neutral"
 	soft = "soft"

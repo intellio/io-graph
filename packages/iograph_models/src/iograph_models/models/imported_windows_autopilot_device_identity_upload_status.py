@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class ImportedWindowsAutopilotDeviceIdentityUploadStatus(Enum):
+class ImportedWindowsAutopilotDeviceIdentityUploadStatus(StrEnum):
 	noUpload = "noUpload"
 	pending = "pending"
 	complete = "complete"

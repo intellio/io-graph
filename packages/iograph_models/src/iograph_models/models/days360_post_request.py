@@ -4,8 +4,8 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class Days360PostRequest(BaseModel):
-	startDate: Optional[str] = Field(default=None,alias="startDate",)
-	endDate: Optional[str] = Field(default=None,alias="endDate",)
-	method: Optional[str] = Field(default=None,alias="method",)
+	startDate: Optional[str] = Field(alias="startDate",default=None,)
+	endDate: Optional[str] = Field(alias="endDate",default=None,)
+	method: Optional[str] = Field(alias="method",default=None,)
 
 

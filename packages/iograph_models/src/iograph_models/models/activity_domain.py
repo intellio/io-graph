@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class ActivityDomain(Enum):
+class ActivityDomain(StrEnum):
 	unknown = "unknown"
 	work = "work"
 	personal = "personal"

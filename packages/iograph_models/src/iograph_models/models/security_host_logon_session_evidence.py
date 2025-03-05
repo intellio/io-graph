@@ -5,19 +5,19 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class SecurityHostLogonSessionEvidence(BaseModel):
-	createdDateTime: Optional[datetime] = Field(default=None,alias="createdDateTime",)
-	detailedRoles: Optional[list[str]] = Field(default=None,alias="detailedRoles",)
-	remediationStatus: Optional[SecurityEvidenceRemediationStatus] = Field(default=None,alias="remediationStatus",)
-	remediationStatusDetails: Optional[str] = Field(default=None,alias="remediationStatusDetails",)
-	roles: Optional[list[SecurityEvidenceRole]] = Field(default=None,alias="roles",)
-	tags: Optional[list[str]] = Field(default=None,alias="tags",)
-	verdict: Optional[SecurityEvidenceVerdict] = Field(default=None,alias="verdict",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	account: Optional[SecurityUserEvidence] = Field(default=None,alias="account",)
-	endUtcDateTime: Optional[datetime] = Field(default=None,alias="endUtcDateTime",)
-	host: Optional[SecurityDeviceEvidence] = Field(default=None,alias="host",)
-	sessionId: Optional[str] = Field(default=None,alias="sessionId",)
-	startUtcDateTime: Optional[datetime] = Field(default=None,alias="startUtcDateTime",)
+	createdDateTime: Optional[datetime] = Field(alias="createdDateTime",default=None,)
+	detailedRoles: Optional[list[str]] = Field(alias="detailedRoles",default=None,)
+	remediationStatus: Optional[str | SecurityEvidenceRemediationStatus] = Field(alias="remediationStatus",default=None,)
+	remediationStatusDetails: Optional[str] = Field(alias="remediationStatusDetails",default=None,)
+	roles: Optional[list[str | SecurityEvidenceRole]] = Field(alias="roles",default=None,)
+	tags: Optional[list[str]] = Field(alias="tags",default=None,)
+	verdict: Optional[str | SecurityEvidenceVerdict] = Field(alias="verdict",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	account: Optional[SecurityUserEvidence] = Field(alias="account",default=None,)
+	endUtcDateTime: Optional[datetime] = Field(alias="endUtcDateTime",default=None,)
+	host: Optional[SecurityDeviceEvidence] = Field(alias="host",default=None,)
+	sessionId: Optional[str] = Field(alias="sessionId",default=None,)
+	startUtcDateTime: Optional[datetime] = Field(alias="startUtcDateTime",default=None,)
 
 from .security_evidence_remediation_status import SecurityEvidenceRemediationStatus
 from .security_evidence_role import SecurityEvidenceRole

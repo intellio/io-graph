@@ -4,21 +4,21 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class UserExperienceAnalyticsWorkFromAnywhereDevicesSummary(BaseModel):
-	autopilotDevicesSummary: Optional[UserExperienceAnalyticsAutopilotDevicesSummary] = Field(default=None,alias="autopilotDevicesSummary",)
-	cloudIdentityDevicesSummary: Optional[UserExperienceAnalyticsCloudIdentityDevicesSummary] = Field(default=None,alias="cloudIdentityDevicesSummary",)
-	cloudManagementDevicesSummary: Optional[UserExperienceAnalyticsCloudManagementDevicesSummary] = Field(default=None,alias="cloudManagementDevicesSummary",)
-	coManagedDevices: Optional[int] = Field(default=None,alias="coManagedDevices",)
-	devicesNotAutopilotRegistered: Optional[int] = Field(default=None,alias="devicesNotAutopilotRegistered",)
-	devicesWithoutAutopilotProfileAssigned: Optional[int] = Field(default=None,alias="devicesWithoutAutopilotProfileAssigned",)
-	devicesWithoutCloudIdentity: Optional[int] = Field(default=None,alias="devicesWithoutCloudIdentity",)
-	intuneDevices: Optional[int] = Field(default=None,alias="intuneDevices",)
-	tenantAttachDevices: Optional[int] = Field(default=None,alias="tenantAttachDevices",)
-	totalDevices: Optional[int] = Field(default=None,alias="totalDevices",)
-	unsupportedOSversionDevices: Optional[int] = Field(default=None,alias="unsupportedOSversionDevices",)
-	windows10Devices: Optional[int] = Field(default=None,alias="windows10Devices",)
-	windows10DevicesSummary: Optional[UserExperienceAnalyticsWindows10DevicesSummary] = Field(default=None,alias="windows10DevicesSummary",)
-	windows10DevicesWithoutTenantAttach: Optional[int] = Field(default=None,alias="windows10DevicesWithoutTenantAttach",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
+	autopilotDevicesSummary: Optional[UserExperienceAnalyticsAutopilotDevicesSummary] = Field(alias="autopilotDevicesSummary",default=None,)
+	cloudIdentityDevicesSummary: Optional[UserExperienceAnalyticsCloudIdentityDevicesSummary] = Field(alias="cloudIdentityDevicesSummary",default=None,)
+	cloudManagementDevicesSummary: Optional[UserExperienceAnalyticsCloudManagementDevicesSummary] = Field(alias="cloudManagementDevicesSummary",default=None,)
+	coManagedDevices: Optional[int] = Field(alias="coManagedDevices",default=None,)
+	devicesNotAutopilotRegistered: Optional[int] = Field(alias="devicesNotAutopilotRegistered",default=None,)
+	devicesWithoutAutopilotProfileAssigned: Optional[int] = Field(alias="devicesWithoutAutopilotProfileAssigned",default=None,)
+	devicesWithoutCloudIdentity: Optional[int] = Field(alias="devicesWithoutCloudIdentity",default=None,)
+	intuneDevices: Optional[int] = Field(alias="intuneDevices",default=None,)
+	tenantAttachDevices: Optional[int] = Field(alias="tenantAttachDevices",default=None,)
+	totalDevices: Optional[int] = Field(alias="totalDevices",default=None,)
+	unsupportedOSversionDevices: Optional[int] = Field(alias="unsupportedOSversionDevices",default=None,)
+	windows10Devices: Optional[int] = Field(alias="windows10Devices",default=None,)
+	windows10DevicesSummary: Optional[UserExperienceAnalyticsWindows10DevicesSummary] = Field(alias="windows10DevicesSummary",default=None,)
+	windows10DevicesWithoutTenantAttach: Optional[int] = Field(alias="windows10DevicesWithoutTenantAttach",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 
 from .user_experience_analytics_autopilot_devices_summary import UserExperienceAnalyticsAutopilotDevicesSummary
 from .user_experience_analytics_cloud_identity_devices_summary import UserExperienceAnalyticsCloudIdentityDevicesSummary

@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class PrintJobStateDetail(Enum):
+class PrintJobStateDetail(StrEnum):
 	uploadPending = "uploadPending"
 	transforming = "transforming"
 	completedSuccessfully = "completedSuccessfully"

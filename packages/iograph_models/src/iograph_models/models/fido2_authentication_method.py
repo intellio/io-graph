@@ -5,14 +5,14 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class Fido2AuthenticationMethod(BaseModel):
-	id: Optional[str] = Field(default=None,alias="id",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	aaGuid: Optional[str] = Field(default=None,alias="aaGuid",)
-	attestationCertificates: Optional[list[str]] = Field(default=None,alias="attestationCertificates",)
-	attestationLevel: Optional[AttestationLevel] = Field(default=None,alias="attestationLevel",)
-	createdDateTime: Optional[datetime] = Field(default=None,alias="createdDateTime",)
-	displayName: Optional[str] = Field(default=None,alias="displayName",)
-	model: Optional[str] = Field(default=None,alias="model",)
+	id: Optional[str] = Field(alias="id",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	aaGuid: Optional[str] = Field(alias="aaGuid",default=None,)
+	attestationCertificates: Optional[list[str]] = Field(alias="attestationCertificates",default=None,)
+	attestationLevel: Optional[str | AttestationLevel] = Field(alias="attestationLevel",default=None,)
+	createdDateTime: Optional[datetime] = Field(alias="createdDateTime",default=None,)
+	displayName: Optional[str] = Field(alias="displayName",default=None,)
+	model: Optional[str] = Field(alias="model",default=None,)
 
 from .attestation_level import AttestationLevel
 

@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class SendDtmfCompletionReason(Enum):
+class SendDtmfCompletionReason(StrEnum):
 	unknown = "unknown"
 	completedSuccessfully = "completedSuccessfully"
 	mediaOperationCanceled = "mediaOperationCanceled"

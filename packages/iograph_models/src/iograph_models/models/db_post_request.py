@@ -4,10 +4,10 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class DbPostRequest(BaseModel):
-	cost: Optional[str] = Field(default=None,alias="cost",)
-	salvage: Optional[str] = Field(default=None,alias="salvage",)
-	life: Optional[str] = Field(default=None,alias="life",)
-	period: Optional[str] = Field(default=None,alias="period",)
-	month: Optional[str] = Field(default=None,alias="month",)
+	cost: Optional[str] = Field(alias="cost",default=None,)
+	salvage: Optional[str] = Field(alias="salvage",default=None,)
+	life: Optional[str] = Field(alias="life",default=None,)
+	period: Optional[str] = Field(alias="period",default=None,)
+	month: Optional[str] = Field(alias="month",default=None,)
 
 

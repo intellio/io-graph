@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class EnrollmentState(Enum):
+class EnrollmentState(StrEnum):
 	unknown = "unknown"
 	enrolled = "enrolled"
 	pendingReset = "pendingReset"

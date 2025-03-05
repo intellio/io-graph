@@ -4,7 +4,7 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class Ge_stepPostRequest(BaseModel):
-	number: Optional[str] = Field(default=None,alias="number",)
-	step: Optional[str] = Field(default=None,alias="step",)
+	number: Optional[str] = Field(alias="number",default=None,)
+	step: Optional[str] = Field(alias="step",default=None,)
 
 

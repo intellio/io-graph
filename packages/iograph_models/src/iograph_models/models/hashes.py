@@ -4,10 +4,10 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class Hashes(BaseModel):
-	crc32Hash: Optional[str] = Field(default=None,alias="crc32Hash",)
-	quickXorHash: Optional[str] = Field(default=None,alias="quickXorHash",)
-	sha1Hash: Optional[str] = Field(default=None,alias="sha1Hash",)
-	sha256Hash: Optional[str] = Field(default=None,alias="sha256Hash",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
+	crc32Hash: Optional[str] = Field(alias="crc32Hash",default=None,)
+	quickXorHash: Optional[str] = Field(alias="quickXorHash",default=None,)
+	sha1Hash: Optional[str] = Field(alias="sha1Hash",default=None,)
+	sha256Hash: Optional[str] = Field(alias="sha256Hash",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 
 

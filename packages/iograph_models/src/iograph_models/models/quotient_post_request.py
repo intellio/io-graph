@@ -4,7 +4,7 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class QuotientPostRequest(BaseModel):
-	numerator: Optional[str] = Field(default=None,alias="numerator",)
-	denominator: Optional[str] = Field(default=None,alias="denominator",)
+	numerator: Optional[str] = Field(alias="numerator",default=None,)
+	denominator: Optional[str] = Field(alias="denominator",default=None,)
 
 

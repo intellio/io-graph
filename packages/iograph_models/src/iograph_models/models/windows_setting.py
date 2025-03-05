@@ -4,12 +4,12 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class WindowsSetting(BaseModel):
-	id: Optional[str] = Field(default=None,alias="id",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	payloadType: Optional[str] = Field(default=None,alias="payloadType",)
-	settingType: Optional[WindowsSettingType] = Field(default=None,alias="settingType",)
-	windowsDeviceId: Optional[str] = Field(default=None,alias="windowsDeviceId",)
-	instances: Optional[list[WindowsSettingInstance]] = Field(default=None,alias="instances",)
+	id: Optional[str] = Field(alias="id",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	payloadType: Optional[str] = Field(alias="payloadType",default=None,)
+	settingType: Optional[str | WindowsSettingType] = Field(alias="settingType",default=None,)
+	windowsDeviceId: Optional[str] = Field(alias="windowsDeviceId",default=None,)
+	instances: Optional[list[WindowsSettingInstance]] = Field(alias="instances",default=None,)
 
 from .windows_setting_type import WindowsSettingType
 from .windows_setting_instance import WindowsSettingInstance

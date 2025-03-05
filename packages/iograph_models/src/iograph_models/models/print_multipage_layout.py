@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class PrintMultipageLayout(Enum):
+class PrintMultipageLayout(StrEnum):
 	clockwiseFromTopLeft = "clockwiseFromTopLeft"
 	counterclockwiseFromTopLeft = "counterclockwiseFromTopLeft"
 	counterclockwiseFromTopRight = "counterclockwiseFromTopRight"

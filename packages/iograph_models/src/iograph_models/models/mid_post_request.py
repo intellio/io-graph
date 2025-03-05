@@ -4,8 +4,8 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class MidPostRequest(BaseModel):
-	text: Optional[str] = Field(default=None,alias="text",)
-	startNum: Optional[str] = Field(default=None,alias="startNum",)
-	numChars: Optional[str] = Field(default=None,alias="numChars",)
+	text: Optional[str] = Field(alias="text",default=None,)
+	startNum: Optional[str] = Field(alias="startNum",default=None,)
+	numChars: Optional[str] = Field(alias="numChars",default=None,)
 
 

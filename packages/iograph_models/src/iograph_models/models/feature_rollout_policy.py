@@ -4,14 +4,14 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class FeatureRolloutPolicy(BaseModel):
-	id: Optional[str] = Field(default=None,alias="id",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	description: Optional[str] = Field(default=None,alias="description",)
-	displayName: Optional[str] = Field(default=None,alias="displayName",)
-	feature: Optional[StagedFeatureName] = Field(default=None,alias="feature",)
-	isAppliedToOrganization: Optional[bool] = Field(default=None,alias="isAppliedToOrganization",)
-	isEnabled: Optional[bool] = Field(default=None,alias="isEnabled",)
-	appliesTo: SerializeAsAny[Optional[list[DirectoryObject]]] = Field(default=None,alias="appliesTo",)
+	id: Optional[str] = Field(alias="id",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	description: Optional[str] = Field(alias="description",default=None,)
+	displayName: Optional[str] = Field(alias="displayName",default=None,)
+	feature: Optional[str | StagedFeatureName] = Field(alias="feature",default=None,)
+	isAppliedToOrganization: Optional[bool] = Field(alias="isAppliedToOrganization",default=None,)
+	isEnabled: Optional[bool] = Field(alias="isEnabled",default=None,)
+	appliesTo: SerializeAsAny[Optional[list[DirectoryObject]]] = Field(alias="appliesTo",default=None,)
 
 from .staged_feature_name import StagedFeatureName
 from .directory_object import DirectoryObject

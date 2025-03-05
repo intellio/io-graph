@@ -4,7 +4,7 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class Identity_governance_create_new_versionPostRequest(BaseModel):
-	workflow: Optional[IdentityGovernanceWorkflow] = Field(default=None,alias="workflow",)
+	workflow: Optional[IdentityGovernanceWorkflow] = Field(alias="workflow",default=None,)
 
 from .identity_governance_workflow import IdentityGovernanceWorkflow
 

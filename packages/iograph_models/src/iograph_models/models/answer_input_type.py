@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class AnswerInputType(Enum):
+class AnswerInputType(StrEnum):
 	text = "text"
 	radioButton = "radioButton"
 	unknownFutureValue = "unknownFutureValue"

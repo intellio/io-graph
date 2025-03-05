@@ -4,6 +4,6 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class CountGetResponse(BaseModel):
-	value: Optional[int] = Field(default=None,alias="value",)
+	value: Optional[int] = Field(alias="value",default=None,)
 
 

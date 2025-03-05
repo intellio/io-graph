@@ -4,8 +4,8 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class WindowsUpdateActiveHoursInstall(BaseModel):
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	activeHoursEnd: Optional[str] = Field(default=None,alias="activeHoursEnd",)
-	activeHoursStart: Optional[str] = Field(default=None,alias="activeHoursStart",)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	activeHoursEnd: Optional[str] = Field(alias="activeHoursEnd",default=None,)
+	activeHoursStart: Optional[str] = Field(alias="activeHoursStart",default=None,)
 
 

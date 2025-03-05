@@ -5,9 +5,9 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class MobileAppInstallTimeSettings(BaseModel):
-	deadlineDateTime: Optional[datetime] = Field(default=None,alias="deadlineDateTime",)
-	startDateTime: Optional[datetime] = Field(default=None,alias="startDateTime",)
-	useLocalTime: Optional[bool] = Field(default=None,alias="useLocalTime",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
+	deadlineDateTime: Optional[datetime] = Field(alias="deadlineDateTime",default=None,)
+	startDateTime: Optional[datetime] = Field(alias="startDateTime",default=None,)
+	useLocalTime: Optional[bool] = Field(alias="useLocalTime",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 
 

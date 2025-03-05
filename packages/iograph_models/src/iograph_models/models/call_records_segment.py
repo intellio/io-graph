@@ -5,14 +5,14 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class CallRecordsSegment(BaseModel):
-	id: Optional[str] = Field(default=None,alias="id",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	callee: SerializeAsAny[Optional[CallRecordsEndpoint]] = Field(default=None,alias="callee",)
-	caller: SerializeAsAny[Optional[CallRecordsEndpoint]] = Field(default=None,alias="caller",)
-	endDateTime: Optional[datetime] = Field(default=None,alias="endDateTime",)
-	failureInfo: Optional[CallRecordsFailureInfo] = Field(default=None,alias="failureInfo",)
-	media: Optional[list[CallRecordsMedia]] = Field(default=None,alias="media",)
-	startDateTime: Optional[datetime] = Field(default=None,alias="startDateTime",)
+	id: Optional[str] = Field(alias="id",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	callee: SerializeAsAny[Optional[CallRecordsEndpoint]] = Field(alias="callee",default=None,)
+	caller: SerializeAsAny[Optional[CallRecordsEndpoint]] = Field(alias="caller",default=None,)
+	endDateTime: Optional[datetime] = Field(alias="endDateTime",default=None,)
+	failureInfo: Optional[CallRecordsFailureInfo] = Field(alias="failureInfo",default=None,)
+	media: Optional[list[CallRecordsMedia]] = Field(alias="media",default=None,)
+	startDateTime: Optional[datetime] = Field(alias="startDateTime",default=None,)
 
 from .call_records_endpoint import CallRecordsEndpoint
 from .call_records_endpoint import CallRecordsEndpoint

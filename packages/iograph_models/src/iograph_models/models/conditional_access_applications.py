@@ -4,12 +4,12 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class ConditionalAccessApplications(BaseModel):
-	applicationFilter: Optional[ConditionalAccessFilter] = Field(default=None,alias="applicationFilter",)
-	excludeApplications: Optional[list[str]] = Field(default=None,alias="excludeApplications",)
-	includeApplications: Optional[list[str]] = Field(default=None,alias="includeApplications",)
-	includeAuthenticationContextClassReferences: Optional[list[str]] = Field(default=None,alias="includeAuthenticationContextClassReferences",)
-	includeUserActions: Optional[list[str]] = Field(default=None,alias="includeUserActions",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
+	applicationFilter: Optional[ConditionalAccessFilter] = Field(alias="applicationFilter",default=None,)
+	excludeApplications: Optional[list[str]] = Field(alias="excludeApplications",default=None,)
+	includeApplications: Optional[list[str]] = Field(alias="includeApplications",default=None,)
+	includeAuthenticationContextClassReferences: Optional[list[str]] = Field(alias="includeAuthenticationContextClassReferences",default=None,)
+	includeUserActions: Optional[list[str]] = Field(alias="includeUserActions",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 
 from .conditional_access_filter import ConditionalAccessFilter
 

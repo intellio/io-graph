@@ -5,12 +5,12 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class PrinterCreateOperation(BaseModel):
-	id: Optional[str] = Field(default=None,alias="id",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	createdDateTime: Optional[datetime] = Field(default=None,alias="createdDateTime",)
-	status: Optional[PrintOperationStatus] = Field(default=None,alias="status",)
-	certificate: Optional[str] = Field(default=None,alias="certificate",)
-	printer: Optional[Printer] = Field(default=None,alias="printer",)
+	id: Optional[str] = Field(alias="id",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	createdDateTime: Optional[datetime] = Field(alias="createdDateTime",default=None,)
+	status: Optional[PrintOperationStatus] = Field(alias="status",default=None,)
+	certificate: Optional[str] = Field(alias="certificate",default=None,)
+	printer: Optional[Printer] = Field(alias="printer",default=None,)
 
 from .print_operation_status import PrintOperationStatus
 from .printer import Printer

@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class Win32LobAppPowerShellScriptRuleOperationType(Enum):
+class Win32LobAppPowerShellScriptRuleOperationType(StrEnum):
 	notConfigured = "notConfigured"
 	string = "string"
 	dateTime = "dateTime"

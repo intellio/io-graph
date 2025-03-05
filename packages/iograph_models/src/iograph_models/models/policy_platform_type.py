@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class PolicyPlatformType(Enum):
+class PolicyPlatformType(StrEnum):
 	android = "android"
 	androidForWork = "androidForWork"
 	iOS = "iOS"

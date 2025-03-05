@@ -6,9 +6,9 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class BookingsAvailability(BaseModel):
-	availabilityType: Optional[BookingsServiceAvailabilityType] = Field(default=None,alias="availabilityType",)
-	businessHours: Optional[list[BookingWorkHours]] = Field(default=None,alias="businessHours",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
+	availabilityType: Optional[str | BookingsServiceAvailabilityType] = Field(alias="availabilityType",default=None,)
+	businessHours: Optional[list[BookingWorkHours]] = Field(alias="businessHours",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 
 	@model_validator(mode="wrap")
 	def convert_discriminator_class(cls, data: Any, handler: ModelWrapValidatorHandler[Self]) -> Self:

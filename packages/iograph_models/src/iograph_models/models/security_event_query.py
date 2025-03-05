@@ -4,9 +4,9 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class SecurityEventQuery(BaseModel):
-	query: Optional[str] = Field(default=None,alias="query",)
-	queryType: Optional[SecurityQueryType] = Field(default=None,alias="queryType",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
+	query: Optional[str] = Field(alias="query",default=None,)
+	queryType: Optional[str | SecurityQueryType] = Field(alias="queryType",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 
 from .security_query_type import SecurityQueryType
 

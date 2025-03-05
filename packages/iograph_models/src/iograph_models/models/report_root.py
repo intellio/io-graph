@@ -4,14 +4,14 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class ReportRoot(BaseModel):
-	authenticationMethods: Optional[AuthenticationMethodsRoot] = Field(default=None,alias="authenticationMethods",)
-	dailyPrintUsageByPrinter: Optional[list[PrintUsageByPrinter]] = Field(default=None,alias="dailyPrintUsageByPrinter",)
-	dailyPrintUsageByUser: Optional[list[PrintUsageByUser]] = Field(default=None,alias="dailyPrintUsageByUser",)
-	monthlyPrintUsageByPrinter: Optional[list[PrintUsageByPrinter]] = Field(default=None,alias="monthlyPrintUsageByPrinter",)
-	monthlyPrintUsageByUser: Optional[list[PrintUsageByUser]] = Field(default=None,alias="monthlyPrintUsageByUser",)
-	partners: Optional[Partners] = Field(default=None,alias="partners",)
-	security: Optional[SecurityReportsRoot] = Field(default=None,alias="security",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
+	authenticationMethods: Optional[AuthenticationMethodsRoot] = Field(alias="authenticationMethods",default=None,)
+	dailyPrintUsageByPrinter: Optional[list[PrintUsageByPrinter]] = Field(alias="dailyPrintUsageByPrinter",default=None,)
+	dailyPrintUsageByUser: Optional[list[PrintUsageByUser]] = Field(alias="dailyPrintUsageByUser",default=None,)
+	monthlyPrintUsageByPrinter: Optional[list[PrintUsageByPrinter]] = Field(alias="monthlyPrintUsageByPrinter",default=None,)
+	monthlyPrintUsageByUser: Optional[list[PrintUsageByUser]] = Field(alias="monthlyPrintUsageByUser",default=None,)
+	partners: Optional[Partners] = Field(alias="partners",default=None,)
+	security: Optional[SecurityReportsRoot] = Field(alias="security",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 
 from .authentication_methods_root import AuthenticationMethodsRoot
 from .print_usage_by_printer import PrintUsageByPrinter

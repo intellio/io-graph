@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class PermissionClassificationType(Enum):
+class PermissionClassificationType(StrEnum):
 	low = "low"
 	medium = "medium"
 	high = "high"

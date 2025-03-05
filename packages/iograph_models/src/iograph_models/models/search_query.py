@@ -4,8 +4,8 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class SearchQuery(BaseModel):
-	queryString: Optional[str] = Field(default=None,alias="queryString",)
-	queryTemplate: Optional[str] = Field(default=None,alias="queryTemplate",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
+	queryString: Optional[str] = Field(alias="queryString",default=None,)
+	queryTemplate: Optional[str] = Field(alias="queryTemplate",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 
 

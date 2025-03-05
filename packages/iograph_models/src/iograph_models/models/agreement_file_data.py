@@ -4,7 +4,7 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class AgreementFileData(BaseModel):
-	data: Optional[str] = Field(default=None,alias="data",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
+	data: Optional[str] = Field(alias="data",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 
 

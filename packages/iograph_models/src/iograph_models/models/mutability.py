@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class Mutability(Enum):
+class Mutability(StrEnum):
 	ReadWrite = "ReadWrite"
 	ReadOnly = "ReadOnly"
 	Immutable = "Immutable"

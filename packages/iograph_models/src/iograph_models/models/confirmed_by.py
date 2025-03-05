@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class ConfirmedBy(Enum):
+class ConfirmedBy(StrEnum):
 	none = "none"
 	user = "user"
 	manager = "manager"

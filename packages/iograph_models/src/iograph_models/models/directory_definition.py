@@ -5,14 +5,14 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class DirectoryDefinition(BaseModel):
-	id: Optional[str] = Field(default=None,alias="id",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	discoverabilities: Optional[DirectoryDefinitionDiscoverabilities] = Field(default=None,alias="discoverabilities",)
-	discoveryDateTime: Optional[datetime] = Field(default=None,alias="discoveryDateTime",)
-	name: Optional[str] = Field(default=None,alias="name",)
-	objects: Optional[list[ObjectDefinition]] = Field(default=None,alias="objects",)
-	readOnly: Optional[bool] = Field(default=None,alias="readOnly",)
-	version: Optional[str] = Field(default=None,alias="version",)
+	id: Optional[str] = Field(alias="id",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	discoverabilities: Optional[str | DirectoryDefinitionDiscoverabilities] = Field(alias="discoverabilities",default=None,)
+	discoveryDateTime: Optional[datetime] = Field(alias="discoveryDateTime",default=None,)
+	name: Optional[str] = Field(alias="name",default=None,)
+	objects: Optional[list[ObjectDefinition]] = Field(alias="objects",default=None,)
+	readOnly: Optional[bool] = Field(alias="readOnly",default=None,)
+	version: Optional[str] = Field(alias="version",default=None,)
 
 from .directory_definition_discoverabilities import DirectoryDefinitionDiscoverabilities
 from .object_definition import ObjectDefinition

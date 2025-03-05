@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class ManagementAgentType(Enum):
+class ManagementAgentType(StrEnum):
 	eas = "eas"
 	mdm = "mdm"
 	easMdm = "easMdm"

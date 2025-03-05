@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class RiskState(Enum):
+class RiskState(StrEnum):
 	none = "none"
 	confirmedSafe = "confirmedSafe"
 	remediated = "remediated"

@@ -4,8 +4,8 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class Play_promptPostRequest(BaseModel):
-	prompts: SerializeAsAny[Optional[list[Prompt]]] = Field(default=None,alias="prompts",)
-	clientContext: Optional[str] = Field(default=None,alias="clientContext",)
+	prompts: SerializeAsAny[Optional[list[Prompt]]] = Field(alias="prompts",default=None,)
+	clientContext: Optional[str] = Field(alias="clientContext",default=None,)
 
 from .prompt import Prompt
 

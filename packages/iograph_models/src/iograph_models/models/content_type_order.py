@@ -4,8 +4,8 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class ContentTypeOrder(BaseModel):
-	default: Optional[bool] = Field(default=None,alias="default",)
-	position: Optional[int] = Field(default=None,alias="position",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
+	default: Optional[bool] = Field(alias="default",default=None,)
+	position: Optional[int] = Field(alias="position",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 
 

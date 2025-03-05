@@ -5,17 +5,17 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class ActivityHistoryItem(BaseModel):
-	id: Optional[str] = Field(default=None,alias="id",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	activeDurationSeconds: Optional[int] = Field(default=None,alias="activeDurationSeconds",)
-	createdDateTime: Optional[datetime] = Field(default=None,alias="createdDateTime",)
-	expirationDateTime: Optional[datetime] = Field(default=None,alias="expirationDateTime",)
-	lastActiveDateTime: Optional[datetime] = Field(default=None,alias="lastActiveDateTime",)
-	lastModifiedDateTime: Optional[datetime] = Field(default=None,alias="lastModifiedDateTime",)
-	startedDateTime: Optional[datetime] = Field(default=None,alias="startedDateTime",)
-	status: Optional[Status] = Field(default=None,alias="status",)
-	userTimezone: Optional[str] = Field(default=None,alias="userTimezone",)
-	activity: Optional[UserActivity] = Field(default=None,alias="activity",)
+	id: Optional[str] = Field(alias="id",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	activeDurationSeconds: Optional[int] = Field(alias="activeDurationSeconds",default=None,)
+	createdDateTime: Optional[datetime] = Field(alias="createdDateTime",default=None,)
+	expirationDateTime: Optional[datetime] = Field(alias="expirationDateTime",default=None,)
+	lastActiveDateTime: Optional[datetime] = Field(alias="lastActiveDateTime",default=None,)
+	lastModifiedDateTime: Optional[datetime] = Field(alias="lastModifiedDateTime",default=None,)
+	startedDateTime: Optional[datetime] = Field(alias="startedDateTime",default=None,)
+	status: Optional[str | Status] = Field(alias="status",default=None,)
+	userTimezone: Optional[str] = Field(alias="userTimezone",default=None,)
+	activity: Optional[UserActivity] = Field(alias="activity",default=None,)
 
 from .status import Status
 from .user_activity import UserActivity

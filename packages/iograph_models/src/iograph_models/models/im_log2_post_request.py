@@ -4,6 +4,6 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class Im_log2PostRequest(BaseModel):
-	inumber: Optional[str] = Field(default=None,alias="inumber",)
+	inumber: Optional[str] = Field(alias="inumber",default=None,)
 
 

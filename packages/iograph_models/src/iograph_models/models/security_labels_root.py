@@ -4,14 +4,14 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class SecurityLabelsRoot(BaseModel):
-	id: Optional[str] = Field(default=None,alias="id",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	authorities: Optional[list[SecurityAuthorityTemplate]] = Field(default=None,alias="authorities",)
-	categories: Optional[list[SecurityCategoryTemplate]] = Field(default=None,alias="categories",)
-	citations: Optional[list[SecurityCitationTemplate]] = Field(default=None,alias="citations",)
-	departments: Optional[list[SecurityDepartmentTemplate]] = Field(default=None,alias="departments",)
-	filePlanReferences: Optional[list[SecurityFilePlanReferenceTemplate]] = Field(default=None,alias="filePlanReferences",)
-	retentionLabels: Optional[list[SecurityRetentionLabel]] = Field(default=None,alias="retentionLabels",)
+	id: Optional[str] = Field(alias="id",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	authorities: Optional[list[SecurityAuthorityTemplate]] = Field(alias="authorities",default=None,)
+	categories: Optional[list[SecurityCategoryTemplate]] = Field(alias="categories",default=None,)
+	citations: Optional[list[SecurityCitationTemplate]] = Field(alias="citations",default=None,)
+	departments: Optional[list[SecurityDepartmentTemplate]] = Field(alias="departments",default=None,)
+	filePlanReferences: Optional[list[SecurityFilePlanReferenceTemplate]] = Field(alias="filePlanReferences",default=None,)
+	retentionLabels: Optional[list[SecurityRetentionLabel]] = Field(alias="retentionLabels",default=None,)
 
 from .security_authority_template import SecurityAuthorityTemplate
 from .security_category_template import SecurityCategoryTemplate

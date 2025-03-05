@@ -4,9 +4,9 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class ExternalConnectorsExternalItemContent(BaseModel):
-	type: Optional[ExternalConnectorsExternalItemContentType] = Field(default=None,alias="type",)
-	value: Optional[str] = Field(default=None,alias="value",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
+	type: Optional[str | ExternalConnectorsExternalItemContentType] = Field(alias="type",default=None,)
+	value: Optional[str] = Field(alias="value",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 
 from .external_connectors_external_item_content_type import ExternalConnectorsExternalItemContentType
 

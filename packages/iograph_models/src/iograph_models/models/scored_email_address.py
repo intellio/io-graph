@@ -4,11 +4,11 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class ScoredEmailAddress(BaseModel):
-	address: Optional[str] = Field(default=None,alias="address",)
-	itemId: Optional[str] = Field(default=None,alias="itemId",)
+	address: Optional[str] = Field(alias="address",default=None,)
+	itemId: Optional[str] = Field(alias="itemId",default=None,)
 	relevanceScore: float | str | ReferenceNumeric
-	selectionLikelihood: Optional[SelectionLikelihoodInfo] = Field(default=None,alias="selectionLikelihood",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
+	selectionLikelihood: Optional[str | SelectionLikelihoodInfo] = Field(alias="selectionLikelihood",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 
 from .reference_numeric import ReferenceNumeric
 from .selection_likelihood_info import SelectionLikelihoodInfo

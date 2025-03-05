@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class RiskEventType(Enum):
+class RiskEventType(StrEnum):
 	unlikelyTravel = "unlikelyTravel"
 	anonymizedIPAddress = "anonymizedIPAddress"
 	maliciousIPAddress = "maliciousIPAddress"

@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class EntityType(Enum):
+class EntityType(StrEnum):
 	event = "event"
 	message = "message"
 	driveItem = "driveItem"

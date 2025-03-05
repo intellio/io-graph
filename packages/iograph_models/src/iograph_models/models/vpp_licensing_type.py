@@ -4,8 +4,8 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class VppLicensingType(BaseModel):
-	supportsDeviceLicensing: Optional[bool] = Field(default=None,alias="supportsDeviceLicensing",)
-	supportsUserLicensing: Optional[bool] = Field(default=None,alias="supportsUserLicensing",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
+	supportsDeviceLicensing: Optional[bool] = Field(alias="supportsDeviceLicensing",default=None,)
+	supportsUserLicensing: Optional[bool] = Field(alias="supportsUserLicensing",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 
 

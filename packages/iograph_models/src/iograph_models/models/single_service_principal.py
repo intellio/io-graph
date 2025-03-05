@@ -4,8 +4,8 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class SingleServicePrincipal(BaseModel):
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	description: Optional[str] = Field(default=None,alias="description",)
-	servicePrincipalId: Optional[str] = Field(default=None,alias="servicePrincipalId",)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	description: Optional[str] = Field(alias="description",default=None,)
+	servicePrincipalId: Optional[str] = Field(alias="servicePrincipalId",default=None,)
 
 

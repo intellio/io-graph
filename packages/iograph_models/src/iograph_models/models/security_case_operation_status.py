@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class SecurityCaseOperationStatus(Enum):
+class SecurityCaseOperationStatus(StrEnum):
 	notStarted = "notStarted"
 	submissionFailed = "submissionFailed"
 	running = "running"

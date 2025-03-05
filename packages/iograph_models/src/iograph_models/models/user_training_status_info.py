@@ -5,11 +5,11 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class UserTrainingStatusInfo(BaseModel):
-	assignedDateTime: Optional[datetime] = Field(default=None,alias="assignedDateTime",)
-	completionDateTime: Optional[datetime] = Field(default=None,alias="completionDateTime",)
-	displayName: Optional[str] = Field(default=None,alias="displayName",)
-	trainingStatus: Optional[TrainingStatus] = Field(default=None,alias="trainingStatus",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
+	assignedDateTime: Optional[datetime] = Field(alias="assignedDateTime",default=None,)
+	completionDateTime: Optional[datetime] = Field(alias="completionDateTime",default=None,)
+	displayName: Optional[str] = Field(alias="displayName",default=None,)
+	trainingStatus: Optional[str | TrainingStatus] = Field(alias="trainingStatus",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 
 from .training_status import TrainingStatus
 

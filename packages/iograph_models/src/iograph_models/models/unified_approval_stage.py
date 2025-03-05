@@ -4,13 +4,13 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class UnifiedApprovalStage(BaseModel):
-	approvalStageTimeOutInDays: Optional[int] = Field(default=None,alias="approvalStageTimeOutInDays",)
-	escalationApprovers: SerializeAsAny[Optional[list[SubjectSet]]] = Field(default=None,alias="escalationApprovers",)
-	escalationTimeInMinutes: Optional[int] = Field(default=None,alias="escalationTimeInMinutes",)
-	isApproverJustificationRequired: Optional[bool] = Field(default=None,alias="isApproverJustificationRequired",)
-	isEscalationEnabled: Optional[bool] = Field(default=None,alias="isEscalationEnabled",)
-	primaryApprovers: SerializeAsAny[Optional[list[SubjectSet]]] = Field(default=None,alias="primaryApprovers",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
+	approvalStageTimeOutInDays: Optional[int] = Field(alias="approvalStageTimeOutInDays",default=None,)
+	escalationApprovers: SerializeAsAny[Optional[list[SubjectSet]]] = Field(alias="escalationApprovers",default=None,)
+	escalationTimeInMinutes: Optional[int] = Field(alias="escalationTimeInMinutes",default=None,)
+	isApproverJustificationRequired: Optional[bool] = Field(alias="isApproverJustificationRequired",default=None,)
+	isEscalationEnabled: Optional[bool] = Field(alias="isEscalationEnabled",default=None,)
+	primaryApprovers: SerializeAsAny[Optional[list[SubjectSet]]] = Field(alias="primaryApprovers",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 
 from .subject_set import SubjectSet
 from .subject_set import SubjectSet

@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class WeeklySchedule(Enum):
+class WeeklySchedule(StrEnum):
 	userDefined = "userDefined"
 	everyday = "everyday"
 	sunday = "sunday"

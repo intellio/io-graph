@@ -4,10 +4,10 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class SimulationNotification(BaseModel):
-	defaultLanguage: Optional[str] = Field(default=None,alias="defaultLanguage",)
-	endUserNotification: Optional[EndUserNotification] = Field(default=None,alias="endUserNotification",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	targettedUserType: Optional[TargettedUserType] = Field(default=None,alias="targettedUserType",)
+	defaultLanguage: Optional[str] = Field(alias="defaultLanguage",default=None,)
+	endUserNotification: Optional[EndUserNotification] = Field(alias="endUserNotification",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	targettedUserType: Optional[str | TargettedUserType] = Field(alias="targettedUserType",default=None,)
 
 from .end_user_notification import EndUserNotification
 from .targetted_user_type import TargettedUserType

@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class ExternalEmailOtpState(Enum):
+class ExternalEmailOtpState(StrEnum):
 	default = "default"
 	enabled = "enabled"
 	disabled = "disabled"

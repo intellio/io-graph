@@ -4,15 +4,15 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class DeviceRegistrationPolicy(BaseModel):
-	id: Optional[str] = Field(default=None,alias="id",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	azureADJoin: Optional[AzureADJoinPolicy] = Field(default=None,alias="azureADJoin",)
-	azureADRegistration: Optional[AzureADRegistrationPolicy] = Field(default=None,alias="azureADRegistration",)
-	description: Optional[str] = Field(default=None,alias="description",)
-	displayName: Optional[str] = Field(default=None,alias="displayName",)
-	localAdminPassword: Optional[LocalAdminPasswordSettings] = Field(default=None,alias="localAdminPassword",)
-	multiFactorAuthConfiguration: Optional[MultiFactorAuthConfiguration] = Field(default=None,alias="multiFactorAuthConfiguration",)
-	userDeviceQuota: Optional[int] = Field(default=None,alias="userDeviceQuota",)
+	id: Optional[str] = Field(alias="id",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	azureADJoin: Optional[AzureADJoinPolicy] = Field(alias="azureADJoin",default=None,)
+	azureADRegistration: Optional[AzureADRegistrationPolicy] = Field(alias="azureADRegistration",default=None,)
+	description: Optional[str] = Field(alias="description",default=None,)
+	displayName: Optional[str] = Field(alias="displayName",default=None,)
+	localAdminPassword: Optional[LocalAdminPasswordSettings] = Field(alias="localAdminPassword",default=None,)
+	multiFactorAuthConfiguration: Optional[str | MultiFactorAuthConfiguration] = Field(alias="multiFactorAuthConfiguration",default=None,)
+	userDeviceQuota: Optional[int] = Field(alias="userDeviceQuota",default=None,)
 
 from .azure_a_d_join_policy import AzureADJoinPolicy
 from .azure_a_d_registration_policy import AzureADRegistrationPolicy

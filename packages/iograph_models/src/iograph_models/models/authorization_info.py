@@ -4,7 +4,7 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class AuthorizationInfo(BaseModel):
-	certificateUserIds: Optional[list[str]] = Field(default=None,alias="certificateUserIds",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
+	certificateUserIds: Optional[list[str]] = Field(alias="certificateUserIds",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 
 

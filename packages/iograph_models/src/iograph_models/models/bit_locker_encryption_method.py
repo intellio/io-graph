@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class BitLockerEncryptionMethod(Enum):
+class BitLockerEncryptionMethod(StrEnum):
 	aesCbc128 = "aesCbc128"
 	aesCbc256 = "aesCbc256"
 	xtsAes128 = "xtsAes128"

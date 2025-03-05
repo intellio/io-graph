@@ -4,15 +4,15 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class AccessPackageSubject(BaseModel):
-	id: Optional[str] = Field(default=None,alias="id",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	displayName: Optional[str] = Field(default=None,alias="displayName",)
-	email: Optional[str] = Field(default=None,alias="email",)
-	objectId: Optional[str] = Field(default=None,alias="objectId",)
-	onPremisesSecurityIdentifier: Optional[str] = Field(default=None,alias="onPremisesSecurityIdentifier",)
-	principalName: Optional[str] = Field(default=None,alias="principalName",)
-	subjectType: Optional[AccessPackageSubjectType] = Field(default=None,alias="subjectType",)
-	connectedOrganization: Optional[ConnectedOrganization] = Field(default=None,alias="connectedOrganization",)
+	id: Optional[str] = Field(alias="id",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	displayName: Optional[str] = Field(alias="displayName",default=None,)
+	email: Optional[str] = Field(alias="email",default=None,)
+	objectId: Optional[str] = Field(alias="objectId",default=None,)
+	onPremisesSecurityIdentifier: Optional[str] = Field(alias="onPremisesSecurityIdentifier",default=None,)
+	principalName: Optional[str] = Field(alias="principalName",default=None,)
+	subjectType: Optional[str | AccessPackageSubjectType] = Field(alias="subjectType",default=None,)
+	connectedOrganization: Optional[ConnectedOrganization] = Field(alias="connectedOrganization",default=None,)
 
 from .access_package_subject_type import AccessPackageSubjectType
 from .connected_organization import ConnectedOrganization

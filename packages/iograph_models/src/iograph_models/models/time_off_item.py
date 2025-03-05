@@ -5,11 +5,11 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class TimeOffItem(BaseModel):
-	endDateTime: Optional[datetime] = Field(default=None,alias="endDateTime",)
-	startDateTime: Optional[datetime] = Field(default=None,alias="startDateTime",)
-	theme: Optional[ScheduleEntityTheme] = Field(default=None,alias="theme",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	timeOffReasonId: Optional[str] = Field(default=None,alias="timeOffReasonId",)
+	endDateTime: Optional[datetime] = Field(alias="endDateTime",default=None,)
+	startDateTime: Optional[datetime] = Field(alias="startDateTime",default=None,)
+	theme: Optional[str | ScheduleEntityTheme] = Field(alias="theme",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	timeOffReasonId: Optional[str] = Field(alias="timeOffReasonId",default=None,)
 
 from .schedule_entity_theme import ScheduleEntityTheme
 

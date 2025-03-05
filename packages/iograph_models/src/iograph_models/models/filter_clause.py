@@ -4,10 +4,10 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class FilterClause(BaseModel):
-	operatorName: Optional[str] = Field(default=None,alias="operatorName",)
-	sourceOperandName: Optional[str] = Field(default=None,alias="sourceOperandName",)
-	targetOperand: Optional[FilterOperand] = Field(default=None,alias="targetOperand",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
+	operatorName: Optional[str] = Field(alias="operatorName",default=None,)
+	sourceOperandName: Optional[str] = Field(alias="sourceOperandName",default=None,)
+	targetOperand: Optional[FilterOperand] = Field(alias="targetOperand",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 
 from .filter_operand import FilterOperand
 

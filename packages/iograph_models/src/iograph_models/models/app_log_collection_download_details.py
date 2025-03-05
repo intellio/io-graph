@@ -4,10 +4,10 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class AppLogCollectionDownloadDetails(BaseModel):
-	appLogDecryptionAlgorithm: Optional[AppLogDecryptionAlgorithm] = Field(default=None,alias="appLogDecryptionAlgorithm",)
-	decryptionKey: Optional[str] = Field(default=None,alias="decryptionKey",)
-	downloadUrl: Optional[str] = Field(default=None,alias="downloadUrl",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
+	appLogDecryptionAlgorithm: Optional[str | AppLogDecryptionAlgorithm] = Field(alias="appLogDecryptionAlgorithm",default=None,)
+	decryptionKey: Optional[str] = Field(alias="decryptionKey",default=None,)
+	downloadUrl: Optional[str] = Field(alias="downloadUrl",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 
 from .app_log_decryption_algorithm import AppLogDecryptionAlgorithm
 

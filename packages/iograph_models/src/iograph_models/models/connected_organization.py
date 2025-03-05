@@ -5,16 +5,16 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class ConnectedOrganization(BaseModel):
-	id: Optional[str] = Field(default=None,alias="id",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	createdDateTime: Optional[datetime] = Field(default=None,alias="createdDateTime",)
-	description: Optional[str] = Field(default=None,alias="description",)
-	displayName: Optional[str] = Field(default=None,alias="displayName",)
-	identitySources: SerializeAsAny[Optional[list[IdentitySource]]] = Field(default=None,alias="identitySources",)
-	modifiedDateTime: Optional[datetime] = Field(default=None,alias="modifiedDateTime",)
-	state: Optional[ConnectedOrganizationState] = Field(default=None,alias="state",)
-	externalSponsors: SerializeAsAny[Optional[list[DirectoryObject]]] = Field(default=None,alias="externalSponsors",)
-	internalSponsors: SerializeAsAny[Optional[list[DirectoryObject]]] = Field(default=None,alias="internalSponsors",)
+	id: Optional[str] = Field(alias="id",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	createdDateTime: Optional[datetime] = Field(alias="createdDateTime",default=None,)
+	description: Optional[str] = Field(alias="description",default=None,)
+	displayName: Optional[str] = Field(alias="displayName",default=None,)
+	identitySources: SerializeAsAny[Optional[list[IdentitySource]]] = Field(alias="identitySources",default=None,)
+	modifiedDateTime: Optional[datetime] = Field(alias="modifiedDateTime",default=None,)
+	state: Optional[str | ConnectedOrganizationState] = Field(alias="state",default=None,)
+	externalSponsors: SerializeAsAny[Optional[list[DirectoryObject]]] = Field(alias="externalSponsors",default=None,)
+	internalSponsors: SerializeAsAny[Optional[list[DirectoryObject]]] = Field(alias="internalSponsors",default=None,)
 
 from .identity_source import IdentitySource
 from .connected_organization_state import ConnectedOrganizationState

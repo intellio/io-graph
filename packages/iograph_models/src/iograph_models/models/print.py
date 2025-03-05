@@ -4,14 +4,14 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class Print(BaseModel):
-	settings: Optional[PrintSettings] = Field(default=None,alias="settings",)
-	connectors: Optional[list[PrintConnector]] = Field(default=None,alias="connectors",)
-	operations: SerializeAsAny[Optional[list[PrintOperation]]] = Field(default=None,alias="operations",)
-	printers: Optional[list[Printer]] = Field(default=None,alias="printers",)
-	services: Optional[list[PrintService]] = Field(default=None,alias="services",)
-	shares: Optional[list[PrinterShare]] = Field(default=None,alias="shares",)
-	taskDefinitions: Optional[list[PrintTaskDefinition]] = Field(default=None,alias="taskDefinitions",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
+	settings: Optional[PrintSettings] = Field(alias="settings",default=None,)
+	connectors: Optional[list[PrintConnector]] = Field(alias="connectors",default=None,)
+	operations: SerializeAsAny[Optional[list[PrintOperation]]] = Field(alias="operations",default=None,)
+	printers: Optional[list[Printer]] = Field(alias="printers",default=None,)
+	services: Optional[list[PrintService]] = Field(alias="services",default=None,)
+	shares: Optional[list[PrinterShare]] = Field(alias="shares",default=None,)
+	taskDefinitions: Optional[list[PrintTaskDefinition]] = Field(alias="taskDefinitions",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 
 from .print_settings import PrintSettings
 from .print_connector import PrintConnector

@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class CallRecordsPstnCallDurationSource(Enum):
+class CallRecordsPstnCallDurationSource(StrEnum):
 	microsoft = "microsoft"
 	operator = "operator"
 

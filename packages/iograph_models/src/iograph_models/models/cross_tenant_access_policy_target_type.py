@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class CrossTenantAccessPolicyTargetType(Enum):
+class CrossTenantAccessPolicyTargetType(StrEnum):
 	user = "user"
 	group = "group"
 	application = "application"

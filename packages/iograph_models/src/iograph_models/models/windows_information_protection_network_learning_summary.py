@@ -4,9 +4,9 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class WindowsInformationProtectionNetworkLearningSummary(BaseModel):
-	id: Optional[str] = Field(default=None,alias="id",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	deviceCount: Optional[int] = Field(default=None,alias="deviceCount",)
-	url: Optional[str] = Field(default=None,alias="url",)
+	id: Optional[str] = Field(alias="id",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	deviceCount: Optional[int] = Field(alias="deviceCount",default=None,)
+	url: Optional[str] = Field(alias="url",default=None,)
 
 

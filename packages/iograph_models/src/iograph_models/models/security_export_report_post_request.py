@@ -4,11 +4,11 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class Security_export_reportPostRequest(BaseModel):
-	displayName: Optional[str] = Field(default=None,alias="displayName",)
-	description: Optional[str] = Field(default=None,alias="description",)
-	exportCriteria: Optional[SecurityExportCriteria] = Field(default=None,alias="exportCriteria",)
-	exportLocation: Optional[SecurityExportLocation] = Field(default=None,alias="exportLocation",)
-	additionalOptions: Optional[SecurityAdditionalOptions] = Field(default=None,alias="additionalOptions",)
+	displayName: Optional[str] = Field(alias="displayName",default=None,)
+	description: Optional[str] = Field(alias="description",default=None,)
+	exportCriteria: Optional[str | SecurityExportCriteria] = Field(alias="exportCriteria",default=None,)
+	exportLocation: Optional[str | SecurityExportLocation] = Field(alias="exportLocation",default=None,)
+	additionalOptions: Optional[str | SecurityAdditionalOptions] = Field(alias="additionalOptions",default=None,)
 
 from .security_export_criteria import SecurityExportCriteria
 from .security_export_location import SecurityExportLocation

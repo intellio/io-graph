@@ -5,9 +5,9 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class DomainState(BaseModel):
-	lastActionDateTime: Optional[datetime] = Field(default=None,alias="lastActionDateTime",)
-	operation: Optional[str] = Field(default=None,alias="operation",)
-	status: Optional[str] = Field(default=None,alias="status",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
+	lastActionDateTime: Optional[datetime] = Field(alias="lastActionDateTime",default=None,)
+	operation: Optional[str] = Field(alias="operation",default=None,)
+	status: Optional[str] = Field(alias="status",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 
 

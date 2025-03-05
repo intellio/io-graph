@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class CloudPcAuditActivityOperationType(Enum):
+class CloudPcAuditActivityOperationType(StrEnum):
 	create = "create"
 	delete = "delete"
 	patch = "patch"

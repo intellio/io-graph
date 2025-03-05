@@ -4,10 +4,10 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class LoginPageLayoutConfiguration(BaseModel):
-	isFooterShown: Optional[bool] = Field(default=None,alias="isFooterShown",)
-	isHeaderShown: Optional[bool] = Field(default=None,alias="isHeaderShown",)
-	layoutTemplateType: Optional[LayoutTemplateType] = Field(default=None,alias="layoutTemplateType",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
+	isFooterShown: Optional[bool] = Field(alias="isFooterShown",default=None,)
+	isHeaderShown: Optional[bool] = Field(alias="isHeaderShown",default=None,)
+	layoutTemplateType: Optional[str | LayoutTemplateType] = Field(alias="layoutTemplateType",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 
 from .layout_template_type import LayoutTemplateType
 

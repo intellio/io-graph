@@ -4,9 +4,9 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class SignInStatus(BaseModel):
-	additionalDetails: Optional[str] = Field(default=None,alias="additionalDetails",)
-	errorCode: Optional[int] = Field(default=None,alias="errorCode",)
-	failureReason: Optional[str] = Field(default=None,alias="failureReason",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
+	additionalDetails: Optional[str] = Field(alias="additionalDetails",default=None,)
+	errorCode: Optional[int] = Field(alias="errorCode",default=None,)
+	failureReason: Optional[str] = Field(alias="failureReason",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 
 

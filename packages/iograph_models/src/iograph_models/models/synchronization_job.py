@@ -4,14 +4,14 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class SynchronizationJob(BaseModel):
-	id: Optional[str] = Field(default=None,alias="id",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	schedule: Optional[SynchronizationSchedule] = Field(default=None,alias="schedule",)
-	status: Optional[SynchronizationStatus] = Field(default=None,alias="status",)
-	synchronizationJobSettings: Optional[list[KeyValuePair]] = Field(default=None,alias="synchronizationJobSettings",)
-	templateId: Optional[str] = Field(default=None,alias="templateId",)
-	bulkUpload: Optional[BulkUpload] = Field(default=None,alias="bulkUpload",)
-	schema: Optional[SynchronizationSchema] = Field(default=None,alias="schema",)
+	id: Optional[str] = Field(alias="id",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	schedule: Optional[SynchronizationSchedule] = Field(alias="schedule",default=None,)
+	status: Optional[SynchronizationStatus] = Field(alias="status",default=None,)
+	synchronizationJobSettings: Optional[list[KeyValuePair]] = Field(alias="synchronizationJobSettings",default=None,)
+	templateId: Optional[str] = Field(alias="templateId",default=None,)
+	bulkUpload: Optional[BulkUpload] = Field(alias="bulkUpload",default=None,)
+	schema: Optional[SynchronizationSchema] = Field(alias="schema",default=None,)
 
 from .synchronization_schedule import SynchronizationSchedule
 from .synchronization_status import SynchronizationStatus

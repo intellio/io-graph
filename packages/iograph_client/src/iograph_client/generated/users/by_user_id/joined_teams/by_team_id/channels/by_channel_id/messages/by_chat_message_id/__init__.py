@@ -18,8 +18,8 @@ if TYPE_CHECKING:
 	from .set_reaction import SetReactionRequest
 	from .hosted_contents import HostedContentsRequest
 	from ..........request_adapter import HttpxRequestAdapter
-from iograph_models.models.chat_message import ChatMessage
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.models.chat_message import ChatMessage
 
 
 class ByChatMessageIdRequest(BaseRequestBuilder):

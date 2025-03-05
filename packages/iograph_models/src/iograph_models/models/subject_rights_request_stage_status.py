@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class SubjectRightsRequestStageStatus(Enum):
+class SubjectRightsRequestStageStatus(StrEnum):
 	notStarted = "notStarted"
 	current = "current"
 	completed = "completed"

@@ -4,13 +4,13 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class SharedWithChannelTeamInfo(BaseModel):
-	id: Optional[str] = Field(default=None,alias="id",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	displayName: Optional[str] = Field(default=None,alias="displayName",)
-	tenantId: Optional[str] = Field(default=None,alias="tenantId",)
-	team: Optional[Team] = Field(default=None,alias="team",)
-	isHostTeam: Optional[bool] = Field(default=None,alias="isHostTeam",)
-	allowedMembers: SerializeAsAny[Optional[list[ConversationMember]]] = Field(default=None,alias="allowedMembers",)
+	id: Optional[str] = Field(alias="id",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	displayName: Optional[str] = Field(alias="displayName",default=None,)
+	tenantId: Optional[str] = Field(alias="tenantId",default=None,)
+	team: Optional[Team] = Field(alias="team",default=None,)
+	isHostTeam: Optional[bool] = Field(alias="isHostTeam",default=None,)
+	allowedMembers: SerializeAsAny[Optional[list[ConversationMember]]] = Field(alias="allowedMembers",default=None,)
 
 from .team import Team
 from .conversation_member import ConversationMember

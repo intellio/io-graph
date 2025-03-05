@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class BroadcastMeetingAudience(Enum):
+class BroadcastMeetingAudience(StrEnum):
 	roleIsAttendee = "roleIsAttendee"
 	organization = "organization"
 	everyone = "everyone"

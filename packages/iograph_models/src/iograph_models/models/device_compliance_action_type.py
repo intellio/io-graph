@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class DeviceComplianceActionType(Enum):
+class DeviceComplianceActionType(StrEnum):
 	noAction = "noAction"
 	notification = "notification"
 	block = "block"

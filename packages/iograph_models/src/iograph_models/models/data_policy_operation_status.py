@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class DataPolicyOperationStatus(Enum):
+class DataPolicyOperationStatus(StrEnum):
 	notStarted = "notStarted"
 	running = "running"
 	complete = "complete"

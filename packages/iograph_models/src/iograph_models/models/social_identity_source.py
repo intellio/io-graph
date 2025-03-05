@@ -4,9 +4,9 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class SocialIdentitySource(BaseModel):
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	displayName: Optional[str] = Field(default=None,alias="displayName",)
-	socialIdentitySourceType: Optional[SocialIdentitySourceType] = Field(default=None,alias="socialIdentitySourceType",)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	displayName: Optional[str] = Field(alias="displayName",default=None,)
+	socialIdentitySourceType: Optional[str | SocialIdentitySourceType] = Field(alias="socialIdentitySourceType",default=None,)
 
 from .social_identity_source_type import SocialIdentitySourceType
 

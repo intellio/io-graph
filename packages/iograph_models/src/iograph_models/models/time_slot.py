@@ -4,9 +4,9 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class TimeSlot(BaseModel):
-	end: Optional[DateTimeTimeZone] = Field(default=None,alias="end",)
-	start: Optional[DateTimeTimeZone] = Field(default=None,alias="start",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
+	end: Optional[DateTimeTimeZone] = Field(alias="end",default=None,)
+	start: Optional[DateTimeTimeZone] = Field(alias="start",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 
 from .date_time_time_zone import DateTimeTimeZone
 from .date_time_time_zone import DateTimeTimeZone

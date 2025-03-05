@@ -4,8 +4,8 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class TeamGuestSettings(BaseModel):
-	allowCreateUpdateChannels: Optional[bool] = Field(default=None,alias="allowCreateUpdateChannels",)
-	allowDeleteChannels: Optional[bool] = Field(default=None,alias="allowDeleteChannels",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
+	allowCreateUpdateChannels: Optional[bool] = Field(alias="allowCreateUpdateChannels",default=None,)
+	allowDeleteChannels: Optional[bool] = Field(alias="allowDeleteChannels",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 
 

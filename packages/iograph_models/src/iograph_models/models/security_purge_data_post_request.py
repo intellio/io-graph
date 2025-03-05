@@ -4,8 +4,8 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class Security_purge_dataPostRequest(BaseModel):
-	purgeType: Optional[SecurityPurgeType] = Field(default=None,alias="purgeType",)
-	purgeAreas: Optional[SecurityPurgeAreas] = Field(default=None,alias="purgeAreas",)
+	purgeType: Optional[str | SecurityPurgeType] = Field(alias="purgeType",default=None,)
+	purgeAreas: Optional[str | SecurityPurgeAreas] = Field(alias="purgeAreas",default=None,)
 
 from .security_purge_type import SecurityPurgeType
 from .security_purge_areas import SecurityPurgeAreas

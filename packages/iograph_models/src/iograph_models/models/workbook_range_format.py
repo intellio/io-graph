@@ -4,17 +4,17 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class WorkbookRangeFormat(BaseModel):
-	id: Optional[str] = Field(default=None,alias="id",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
+	id: Optional[str] = Field(alias="id",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 	columnWidth: float | str | ReferenceNumeric
-	horizontalAlignment: Optional[str] = Field(default=None,alias="horizontalAlignment",)
+	horizontalAlignment: Optional[str] = Field(alias="horizontalAlignment",default=None,)
 	rowHeight: float | str | ReferenceNumeric
-	verticalAlignment: Optional[str] = Field(default=None,alias="verticalAlignment",)
-	wrapText: Optional[bool] = Field(default=None,alias="wrapText",)
-	borders: Optional[list[WorkbookRangeBorder]] = Field(default=None,alias="borders",)
-	fill: Optional[WorkbookRangeFill] = Field(default=None,alias="fill",)
-	font: Optional[WorkbookRangeFont] = Field(default=None,alias="font",)
-	protection: Optional[WorkbookFormatProtection] = Field(default=None,alias="protection",)
+	verticalAlignment: Optional[str] = Field(alias="verticalAlignment",default=None,)
+	wrapText: Optional[bool] = Field(alias="wrapText",default=None,)
+	borders: Optional[list[WorkbookRangeBorder]] = Field(alias="borders",default=None,)
+	fill: Optional[WorkbookRangeFill] = Field(alias="fill",default=None,)
+	font: Optional[WorkbookRangeFont] = Field(alias="font",default=None,)
+	protection: Optional[WorkbookFormatProtection] = Field(alias="protection",default=None,)
 
 from .reference_numeric import ReferenceNumeric
 from .reference_numeric import ReferenceNumeric

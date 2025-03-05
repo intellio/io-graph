@@ -4,7 +4,7 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class DecimalPostRequest(BaseModel):
-	number: Optional[str] = Field(default=None,alias="number",)
-	radix: Optional[str] = Field(default=None,alias="radix",)
+	number: Optional[str] = Field(alias="number",default=None,)
+	radix: Optional[str] = Field(alias="radix",default=None,)
 
 

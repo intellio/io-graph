@@ -4,11 +4,11 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class IdentityGovernanceUsersProcessingSummary(BaseModel):
-	failedTasks: Optional[int] = Field(default=None,alias="failedTasks",)
-	failedUsers: Optional[int] = Field(default=None,alias="failedUsers",)
-	successfulUsers: Optional[int] = Field(default=None,alias="successfulUsers",)
-	totalTasks: Optional[int] = Field(default=None,alias="totalTasks",)
-	totalUsers: Optional[int] = Field(default=None,alias="totalUsers",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
+	failedTasks: Optional[int] = Field(alias="failedTasks",default=None,)
+	failedUsers: Optional[int] = Field(alias="failedUsers",default=None,)
+	successfulUsers: Optional[int] = Field(alias="successfulUsers",default=None,)
+	totalTasks: Optional[int] = Field(alias="totalTasks",default=None,)
+	totalUsers: Optional[int] = Field(alias="totalUsers",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 
 

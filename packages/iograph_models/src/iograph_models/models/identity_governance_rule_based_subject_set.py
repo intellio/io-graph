@@ -4,7 +4,7 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class IdentityGovernanceRuleBasedSubjectSet(BaseModel):
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	rule: Optional[str] = Field(default=None,alias="rule",)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	rule: Optional[str] = Field(alias="rule",default=None,)
 
 

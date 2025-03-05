@@ -4,15 +4,15 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class AccessPackageMultipleChoiceQuestion(BaseModel):
-	id: Optional[str] = Field(default=None,alias="id",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	isAnswerEditable: Optional[bool] = Field(default=None,alias="isAnswerEditable",)
-	isRequired: Optional[bool] = Field(default=None,alias="isRequired",)
-	localizations: Optional[list[AccessPackageLocalizedText]] = Field(default=None,alias="localizations",)
-	sequence: Optional[int] = Field(default=None,alias="sequence",)
-	text: Optional[str] = Field(default=None,alias="text",)
-	choices: Optional[list[AccessPackageAnswerChoice]] = Field(default=None,alias="choices",)
-	isMultipleSelectionAllowed: Optional[bool] = Field(default=None,alias="isMultipleSelectionAllowed",)
+	id: Optional[str] = Field(alias="id",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	isAnswerEditable: Optional[bool] = Field(alias="isAnswerEditable",default=None,)
+	isRequired: Optional[bool] = Field(alias="isRequired",default=None,)
+	localizations: Optional[list[AccessPackageLocalizedText]] = Field(alias="localizations",default=None,)
+	sequence: Optional[int] = Field(alias="sequence",default=None,)
+	text: Optional[str] = Field(alias="text",default=None,)
+	choices: Optional[list[AccessPackageAnswerChoice]] = Field(alias="choices",default=None,)
+	isMultipleSelectionAllowed: Optional[bool] = Field(alias="isMultipleSelectionAllowed",default=None,)
 
 from .access_package_localized_text import AccessPackageLocalizedText
 from .access_package_answer_choice import AccessPackageAnswerChoice

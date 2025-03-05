@@ -4,9 +4,9 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class TabUpdatedEventMessageDetail(BaseModel):
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	initiator: SerializeAsAny[Optional[IdentitySet]] = Field(default=None,alias="initiator",)
-	tabId: Optional[str] = Field(default=None,alias="tabId",)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	initiator: SerializeAsAny[Optional[IdentitySet]] = Field(alias="initiator",default=None,)
+	tabId: Optional[str] = Field(alias="tabId",default=None,)
 
 from .identity_set import IdentitySet
 

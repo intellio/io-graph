@@ -5,19 +5,19 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class SynchronizationStatus(BaseModel):
-	code: Optional[SynchronizationStatusCode] = Field(default=None,alias="code",)
-	countSuccessiveCompleteFailures: Optional[int] = Field(default=None,alias="countSuccessiveCompleteFailures",)
-	escrowsPruned: Optional[bool] = Field(default=None,alias="escrowsPruned",)
-	lastExecution: Optional[SynchronizationTaskExecution] = Field(default=None,alias="lastExecution",)
-	lastSuccessfulExecution: Optional[SynchronizationTaskExecution] = Field(default=None,alias="lastSuccessfulExecution",)
-	lastSuccessfulExecutionWithExports: Optional[SynchronizationTaskExecution] = Field(default=None,alias="lastSuccessfulExecutionWithExports",)
-	progress: Optional[list[SynchronizationProgress]] = Field(default=None,alias="progress",)
-	quarantine: Optional[SynchronizationQuarantine] = Field(default=None,alias="quarantine",)
-	steadyStateFirstAchievedTime: Optional[datetime] = Field(default=None,alias="steadyStateFirstAchievedTime",)
-	steadyStateLastAchievedTime: Optional[datetime] = Field(default=None,alias="steadyStateLastAchievedTime",)
-	synchronizedEntryCountByType: Optional[list[StringKeyLongValuePair]] = Field(default=None,alias="synchronizedEntryCountByType",)
-	troubleshootingUrl: Optional[str] = Field(default=None,alias="troubleshootingUrl",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
+	code: Optional[str | SynchronizationStatusCode] = Field(alias="code",default=None,)
+	countSuccessiveCompleteFailures: Optional[int] = Field(alias="countSuccessiveCompleteFailures",default=None,)
+	escrowsPruned: Optional[bool] = Field(alias="escrowsPruned",default=None,)
+	lastExecution: Optional[SynchronizationTaskExecution] = Field(alias="lastExecution",default=None,)
+	lastSuccessfulExecution: Optional[SynchronizationTaskExecution] = Field(alias="lastSuccessfulExecution",default=None,)
+	lastSuccessfulExecutionWithExports: Optional[SynchronizationTaskExecution] = Field(alias="lastSuccessfulExecutionWithExports",default=None,)
+	progress: Optional[list[SynchronizationProgress]] = Field(alias="progress",default=None,)
+	quarantine: Optional[SynchronizationQuarantine] = Field(alias="quarantine",default=None,)
+	steadyStateFirstAchievedTime: Optional[datetime] = Field(alias="steadyStateFirstAchievedTime",default=None,)
+	steadyStateLastAchievedTime: Optional[datetime] = Field(alias="steadyStateLastAchievedTime",default=None,)
+	synchronizedEntryCountByType: Optional[list[StringKeyLongValuePair]] = Field(alias="synchronizedEntryCountByType",default=None,)
+	troubleshootingUrl: Optional[str] = Field(alias="troubleshootingUrl",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 
 from .synchronization_status_code import SynchronizationStatusCode
 from .synchronization_task_execution import SynchronizationTaskExecution

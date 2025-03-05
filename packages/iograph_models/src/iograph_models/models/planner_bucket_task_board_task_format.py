@@ -4,8 +4,8 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class PlannerBucketTaskBoardTaskFormat(BaseModel):
-	id: Optional[str] = Field(default=None,alias="id",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	orderHint: Optional[str] = Field(default=None,alias="orderHint",)
+	id: Optional[str] = Field(alias="id",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	orderHint: Optional[str] = Field(alias="orderHint",default=None,)
 
 

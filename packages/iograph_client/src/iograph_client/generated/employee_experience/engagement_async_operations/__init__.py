@@ -15,8 +15,8 @@ if TYPE_CHECKING:
 	from .by_engagement_async_operation_id import ByEngagementAsyncOperationIdRequest
 	from ....request_adapter import HttpxRequestAdapter
 from iograph_models.models.engagement_async_operation_collection_response import EngagementAsyncOperationCollectionResponse
-from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.models.engagement_async_operation import EngagementAsyncOperation
+from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
 
 
 class EngagementAsyncOperationsRequest(BaseRequestBuilder):

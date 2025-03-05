@@ -6,19 +6,19 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class PrintUsage(BaseModel):
-	id: Optional[str] = Field(default=None,alias="id",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	blackAndWhitePageCount: Optional[int] = Field(default=None,alias="blackAndWhitePageCount",)
-	colorPageCount: Optional[int] = Field(default=None,alias="colorPageCount",)
-	completedBlackAndWhiteJobCount: Optional[int] = Field(default=None,alias="completedBlackAndWhiteJobCount",)
-	completedColorJobCount: Optional[int] = Field(default=None,alias="completedColorJobCount",)
-	completedJobCount: Optional[int] = Field(default=None,alias="completedJobCount",)
-	doubleSidedSheetCount: Optional[int] = Field(default=None,alias="doubleSidedSheetCount",)
-	incompleteJobCount: Optional[int] = Field(default=None,alias="incompleteJobCount",)
-	mediaSheetCount: Optional[int] = Field(default=None,alias="mediaSheetCount",)
-	pageCount: Optional[int] = Field(default=None,alias="pageCount",)
-	singleSidedSheetCount: Optional[int] = Field(default=None,alias="singleSidedSheetCount",)
-	usageDate: Optional[str] = Field(default=None,alias="usageDate",)
+	id: Optional[str] = Field(alias="id",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	blackAndWhitePageCount: Optional[int] = Field(alias="blackAndWhitePageCount",default=None,)
+	colorPageCount: Optional[int] = Field(alias="colorPageCount",default=None,)
+	completedBlackAndWhiteJobCount: Optional[int] = Field(alias="completedBlackAndWhiteJobCount",default=None,)
+	completedColorJobCount: Optional[int] = Field(alias="completedColorJobCount",default=None,)
+	completedJobCount: Optional[int] = Field(alias="completedJobCount",default=None,)
+	doubleSidedSheetCount: Optional[int] = Field(alias="doubleSidedSheetCount",default=None,)
+	incompleteJobCount: Optional[int] = Field(alias="incompleteJobCount",default=None,)
+	mediaSheetCount: Optional[int] = Field(alias="mediaSheetCount",default=None,)
+	pageCount: Optional[int] = Field(alias="pageCount",default=None,)
+	singleSidedSheetCount: Optional[int] = Field(alias="singleSidedSheetCount",default=None,)
+	usageDate: Optional[str] = Field(alias="usageDate",default=None,)
 
 	@model_validator(mode="wrap")
 	def convert_discriminator_class(cls, data: Any, handler: ModelWrapValidatorHandler[Self]) -> Self:

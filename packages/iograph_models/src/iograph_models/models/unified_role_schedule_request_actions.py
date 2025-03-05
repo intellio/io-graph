@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class UnifiedRoleScheduleRequestActions(Enum):
+class UnifiedRoleScheduleRequestActions(StrEnum):
 	adminAssign = "adminAssign"
 	adminUpdate = "adminUpdate"
 	adminRemove = "adminRemove"

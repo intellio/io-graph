@@ -4,8 +4,8 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class ChannelMembersNotificationRecipient(BaseModel):
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	channelId: Optional[str] = Field(default=None,alias="channelId",)
-	teamId: Optional[str] = Field(default=None,alias="teamId",)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	channelId: Optional[str] = Field(alias="channelId",default=None,)
+	teamId: Optional[str] = Field(alias="teamId",default=None,)
 
 

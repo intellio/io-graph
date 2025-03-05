@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class FilterMode(Enum):
+class FilterMode(StrEnum):
 	include = "include"
 	exclude = "exclude"
 

@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class ManagedDevicePartnerReportedHealthState(Enum):
+class ManagedDevicePartnerReportedHealthState(StrEnum):
 	unknown = "unknown"
 	activated = "activated"
 	deactivated = "deactivated"

@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class IdentityUserFlowAttributeInputType(Enum):
+class IdentityUserFlowAttributeInputType(StrEnum):
 	textBox = "textBox"
 	dateTimeDropdown = "dateTimeDropdown"
 	radioSingleSelect = "radioSingleSelect"

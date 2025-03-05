@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class WindowsInformationProtectionPinCharacterRequirements(Enum):
+class WindowsInformationProtectionPinCharacterRequirements(StrEnum):
 	notAllow = "notAllow"
 	requireAtLeastOne = "requireAtLeastOne"
 	allow = "allow"

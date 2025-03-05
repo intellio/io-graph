@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class PrinterProcessingState(Enum):
+class PrinterProcessingState(StrEnum):
 	unknown = "unknown"
 	idle = "idle"
 	processing = "processing"

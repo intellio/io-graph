@@ -4,11 +4,11 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class X509CertificateCombinationConfiguration(BaseModel):
-	id: Optional[str] = Field(default=None,alias="id",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	appliesToCombinations: Optional[list[AuthenticationMethodModes]] = Field(default=None,alias="appliesToCombinations",)
-	allowedIssuerSkis: Optional[list[str]] = Field(default=None,alias="allowedIssuerSkis",)
-	allowedPolicyOIDs: Optional[list[str]] = Field(default=None,alias="allowedPolicyOIDs",)
+	id: Optional[str] = Field(alias="id",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	appliesToCombinations: Optional[list[str | AuthenticationMethodModes]] = Field(alias="appliesToCombinations",default=None,)
+	allowedIssuerSkis: Optional[list[str]] = Field(alias="allowedIssuerSkis",default=None,)
+	allowedPolicyOIDs: Optional[list[str]] = Field(alias="allowedPolicyOIDs",default=None,)
 
 from .authentication_method_modes import AuthenticationMethodModes
 

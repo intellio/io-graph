@@ -5,11 +5,11 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class AuthoredNote(BaseModel):
-	id: Optional[str] = Field(default=None,alias="id",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	author: SerializeAsAny[Optional[Identity]] = Field(default=None,alias="author",)
-	content: Optional[ItemBody] = Field(default=None,alias="content",)
-	createdDateTime: Optional[datetime] = Field(default=None,alias="createdDateTime",)
+	id: Optional[str] = Field(alias="id",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	author: SerializeAsAny[Optional[Identity]] = Field(alias="author",default=None,)
+	content: Optional[ItemBody] = Field(alias="content",default=None,)
+	createdDateTime: Optional[datetime] = Field(alias="createdDateTime",default=None,)
 
 from .identity import Identity
 from .item_body import ItemBody

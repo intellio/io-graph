@@ -4,7 +4,7 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class PowerPostRequest(BaseModel):
-	number: Optional[str] = Field(default=None,alias="number",)
-	power: Optional[str] = Field(default=None,alias="power",)
+	number: Optional[str] = Field(alias="number",default=None,)
+	power: Optional[str] = Field(alias="power",default=None,)
 
 

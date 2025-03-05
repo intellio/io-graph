@@ -4,15 +4,15 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class ItemReference(BaseModel):
-	driveId: Optional[str] = Field(default=None,alias="driveId",)
-	driveType: Optional[str] = Field(default=None,alias="driveType",)
-	id: Optional[str] = Field(default=None,alias="id",)
-	name: Optional[str] = Field(default=None,alias="name",)
-	path: Optional[str] = Field(default=None,alias="path",)
-	shareId: Optional[str] = Field(default=None,alias="shareId",)
-	sharepointIds: Optional[SharepointIds] = Field(default=None,alias="sharepointIds",)
-	siteId: Optional[str] = Field(default=None,alias="siteId",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
+	driveId: Optional[str] = Field(alias="driveId",default=None,)
+	driveType: Optional[str] = Field(alias="driveType",default=None,)
+	id: Optional[str] = Field(alias="id",default=None,)
+	name: Optional[str] = Field(alias="name",default=None,)
+	path: Optional[str] = Field(alias="path",default=None,)
+	shareId: Optional[str] = Field(alias="shareId",default=None,)
+	sharepointIds: Optional[SharepointIds] = Field(alias="sharepointIds",default=None,)
+	siteId: Optional[str] = Field(alias="siteId",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 
 from .sharepoint_ids import SharepointIds
 

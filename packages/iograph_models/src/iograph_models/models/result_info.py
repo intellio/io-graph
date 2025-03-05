@@ -4,9 +4,9 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class ResultInfo(BaseModel):
-	code: Optional[int] = Field(default=None,alias="code",)
-	message: Optional[str] = Field(default=None,alias="message",)
-	subcode: Optional[int] = Field(default=None,alias="subcode",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
+	code: Optional[int] = Field(alias="code",default=None,)
+	message: Optional[str] = Field(alias="message",default=None,)
+	subcode: Optional[int] = Field(alias="subcode",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 
 

@@ -4,13 +4,13 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class RecordOperation(BaseModel):
-	id: Optional[str] = Field(default=None,alias="id",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	clientContext: Optional[str] = Field(default=None,alias="clientContext",)
-	resultInfo: Optional[ResultInfo] = Field(default=None,alias="resultInfo",)
-	status: Optional[OperationStatus] = Field(default=None,alias="status",)
-	recordingAccessToken: Optional[str] = Field(default=None,alias="recordingAccessToken",)
-	recordingLocation: Optional[str] = Field(default=None,alias="recordingLocation",)
+	id: Optional[str] = Field(alias="id",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	clientContext: Optional[str] = Field(alias="clientContext",default=None,)
+	resultInfo: Optional[ResultInfo] = Field(alias="resultInfo",default=None,)
+	status: Optional[str | OperationStatus] = Field(alias="status",default=None,)
+	recordingAccessToken: Optional[str] = Field(alias="recordingAccessToken",default=None,)
+	recordingLocation: Optional[str] = Field(alias="recordingLocation",default=None,)
 
 from .result_info import ResultInfo
 from .operation_status import OperationStatus

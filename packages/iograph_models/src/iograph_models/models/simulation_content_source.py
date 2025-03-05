@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class SimulationContentSource(Enum):
+class SimulationContentSource(StrEnum):
 	unknown = "unknown"
 	global_ = "global_"
 	tenant = "tenant"

@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class BrowserSharedCookieSourceEnvironment(Enum):
+class BrowserSharedCookieSourceEnvironment(StrEnum):
 	microsoftEdge = "microsoftEdge"
 	internetExplorer11 = "internetExplorer11"
 	both = "both"

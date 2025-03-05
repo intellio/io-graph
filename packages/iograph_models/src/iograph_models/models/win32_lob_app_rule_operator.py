@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class Win32LobAppRuleOperator(Enum):
+class Win32LobAppRuleOperator(StrEnum):
 	notConfigured = "notConfigured"
 	equal = "equal"
 	notEqual = "notEqual"

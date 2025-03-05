@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class SubjectRightsRequestStatus(Enum):
+class SubjectRightsRequestStatus(StrEnum):
 	active = "active"
 	closed = "closed"
 	unknownFutureValue = "unknownFutureValue"

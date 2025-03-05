@@ -4,9 +4,9 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class ComplianceInformation(BaseModel):
-	certificationControls: Optional[list[CertificationControl]] = Field(default=None,alias="certificationControls",)
-	certificationName: Optional[str] = Field(default=None,alias="certificationName",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
+	certificationControls: Optional[list[CertificationControl]] = Field(alias="certificationControls",default=None,)
+	certificationName: Optional[str] = Field(alias="certificationName",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 
 from .certification_control import CertificationControl
 

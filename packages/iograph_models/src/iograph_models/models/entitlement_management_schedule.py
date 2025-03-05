@@ -5,10 +5,10 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class EntitlementManagementSchedule(BaseModel):
-	expiration: Optional[ExpirationPattern] = Field(default=None,alias="expiration",)
-	recurrence: Optional[PatternedRecurrence] = Field(default=None,alias="recurrence",)
-	startDateTime: Optional[datetime] = Field(default=None,alias="startDateTime",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
+	expiration: Optional[ExpirationPattern] = Field(alias="expiration",default=None,)
+	recurrence: Optional[PatternedRecurrence] = Field(alias="recurrence",default=None,)
+	startDateTime: Optional[datetime] = Field(alias="startDateTime",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 
 from .expiration_pattern import ExpirationPattern
 from .patterned_recurrence import PatternedRecurrence

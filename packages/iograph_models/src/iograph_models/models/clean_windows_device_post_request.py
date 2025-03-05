@@ -4,6 +4,6 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class Clean_windows_devicePostRequest(BaseModel):
-	keepUserData: Optional[bool] = Field(default=None,alias="keepUserData",)
+	keepUserData: Optional[bool] = Field(alias="keepUserData",default=None,)
 
 

@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class DefenderThreatAction(Enum):
+class DefenderThreatAction(StrEnum):
 	deviceDefault = "deviceDefault"
 	clean = "clean"
 	quarantine = "quarantine"

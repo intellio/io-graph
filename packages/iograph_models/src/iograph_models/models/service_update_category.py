@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class ServiceUpdateCategory(Enum):
+class ServiceUpdateCategory(StrEnum):
 	preventOrFixIssue = "preventOrFixIssue"
 	planForChange = "planForChange"
 	stayInformed = "stayInformed"

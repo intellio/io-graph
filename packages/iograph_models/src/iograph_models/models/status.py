@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class Status(Enum):
+class Status(StrEnum):
 	active = "active"
 	updated = "updated"
 	deleted = "deleted"

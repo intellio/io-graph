@@ -4,15 +4,15 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class BookingCustomerInformation(BaseModel):
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	customerId: Optional[str] = Field(default=None,alias="customerId",)
-	customQuestionAnswers: Optional[list[BookingQuestionAnswer]] = Field(default=None,alias="customQuestionAnswers",)
-	emailAddress: Optional[str] = Field(default=None,alias="emailAddress",)
-	location: SerializeAsAny[Optional[Location]] = Field(default=None,alias="location",)
-	name: Optional[str] = Field(default=None,alias="name",)
-	notes: Optional[str] = Field(default=None,alias="notes",)
-	phone: Optional[str] = Field(default=None,alias="phone",)
-	timeZone: Optional[str] = Field(default=None,alias="timeZone",)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	customerId: Optional[str] = Field(alias="customerId",default=None,)
+	customQuestionAnswers: Optional[list[BookingQuestionAnswer]] = Field(alias="customQuestionAnswers",default=None,)
+	emailAddress: Optional[str] = Field(alias="emailAddress",default=None,)
+	location: SerializeAsAny[Optional[Location]] = Field(alias="location",default=None,)
+	name: Optional[str] = Field(alias="name",default=None,)
+	notes: Optional[str] = Field(alias="notes",default=None,)
+	phone: Optional[str] = Field(alias="phone",default=None,)
+	timeZone: Optional[str] = Field(alias="timeZone",default=None,)
 
 from .booking_question_answer import BookingQuestionAnswer
 from .location import Location

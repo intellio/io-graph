@@ -4,8 +4,8 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class SecurityLoggedOnUser(BaseModel):
-	accountName: Optional[str] = Field(default=None,alias="accountName",)
-	domainName: Optional[str] = Field(default=None,alias="domainName",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
+	accountName: Optional[str] = Field(alias="accountName",default=None,)
+	domainName: Optional[str] = Field(alias="domainName",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 
 

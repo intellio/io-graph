@@ -4,9 +4,9 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class AuditActivityInitiator(BaseModel):
-	app: Optional[AppIdentity] = Field(default=None,alias="app",)
-	user: Optional[UserIdentity] = Field(default=None,alias="user",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
+	app: Optional[AppIdentity] = Field(alias="app",default=None,)
+	user: Optional[UserIdentity] = Field(alias="user",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 
 from .app_identity import AppIdentity
 from .user_identity import UserIdentity

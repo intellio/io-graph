@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class NotificationDeliveryPreference(Enum):
+class NotificationDeliveryPreference(StrEnum):
 	unknown = "unknown"
 	deliverImmedietly = "deliverImmedietly"
 	deliverAfterCampaignEnd = "deliverAfterCampaignEnd"

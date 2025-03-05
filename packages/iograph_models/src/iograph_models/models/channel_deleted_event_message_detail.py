@@ -4,10 +4,10 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class ChannelDeletedEventMessageDetail(BaseModel):
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	channelDisplayName: Optional[str] = Field(default=None,alias="channelDisplayName",)
-	channelId: Optional[str] = Field(default=None,alias="channelId",)
-	initiator: SerializeAsAny[Optional[IdentitySet]] = Field(default=None,alias="initiator",)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	channelDisplayName: Optional[str] = Field(alias="channelDisplayName",default=None,)
+	channelId: Optional[str] = Field(alias="channelId",default=None,)
+	initiator: SerializeAsAny[Optional[IdentitySet]] = Field(alias="initiator",default=None,)
 
 from .identity_set import IdentitySet
 

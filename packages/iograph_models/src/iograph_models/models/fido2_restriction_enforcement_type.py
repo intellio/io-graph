@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class Fido2RestrictionEnforcementType(Enum):
+class Fido2RestrictionEnforcementType(StrEnum):
 	allow = "allow"
 	block = "block"
 	unknownFutureValue = "unknownFutureValue"

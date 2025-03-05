@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class ExchangeIdFormat(Enum):
+class ExchangeIdFormat(StrEnum):
 	entryId = "entryId"
 	ewsId = "ewsId"
 	immutableEntryId = "immutableEntryId"

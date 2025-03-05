@@ -6,15 +6,15 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class AppRoleAssignment(BaseModel):
-	id: Optional[str] = Field(default=None,alias="id",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	deletedDateTime: Optional[datetime] = Field(default=None,alias="deletedDateTime",)
-	appRoleId: Optional[UUID] = Field(default=None,alias="appRoleId",)
-	createdDateTime: Optional[datetime] = Field(default=None,alias="createdDateTime",)
-	principalDisplayName: Optional[str] = Field(default=None,alias="principalDisplayName",)
-	principalId: Optional[UUID] = Field(default=None,alias="principalId",)
-	principalType: Optional[str] = Field(default=None,alias="principalType",)
-	resourceDisplayName: Optional[str] = Field(default=None,alias="resourceDisplayName",)
-	resourceId: Optional[UUID] = Field(default=None,alias="resourceId",)
+	id: Optional[str] = Field(alias="id",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	deletedDateTime: Optional[datetime] = Field(alias="deletedDateTime",default=None,)
+	appRoleId: Optional[UUID] = Field(alias="appRoleId",default=None,)
+	createdDateTime: Optional[datetime] = Field(alias="createdDateTime",default=None,)
+	principalDisplayName: Optional[str] = Field(alias="principalDisplayName",default=None,)
+	principalId: Optional[UUID] = Field(alias="principalId",default=None,)
+	principalType: Optional[str] = Field(alias="principalType",default=None,)
+	resourceDisplayName: Optional[str] = Field(alias="resourceDisplayName",default=None,)
+	resourceId: Optional[UUID] = Field(alias="resourceId",default=None,)
 
 

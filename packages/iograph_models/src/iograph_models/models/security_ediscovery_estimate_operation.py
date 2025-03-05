@@ -5,22 +5,22 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class SecurityEdiscoveryEstimateOperation(BaseModel):
-	id: Optional[str] = Field(default=None,alias="id",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	action: Optional[SecurityCaseAction] = Field(default=None,alias="action",)
-	completedDateTime: Optional[datetime] = Field(default=None,alias="completedDateTime",)
-	createdBy: SerializeAsAny[Optional[IdentitySet]] = Field(default=None,alias="createdBy",)
-	createdDateTime: Optional[datetime] = Field(default=None,alias="createdDateTime",)
-	percentProgress: Optional[int] = Field(default=None,alias="percentProgress",)
-	resultInfo: Optional[ResultInfo] = Field(default=None,alias="resultInfo",)
-	status: Optional[SecurityCaseOperationStatus] = Field(default=None,alias="status",)
-	indexedItemCount: Optional[int] = Field(default=None,alias="indexedItemCount",)
-	indexedItemsSize: Optional[int] = Field(default=None,alias="indexedItemsSize",)
-	mailboxCount: Optional[int] = Field(default=None,alias="mailboxCount",)
-	siteCount: Optional[int] = Field(default=None,alias="siteCount",)
-	unindexedItemCount: Optional[int] = Field(default=None,alias="unindexedItemCount",)
-	unindexedItemsSize: Optional[int] = Field(default=None,alias="unindexedItemsSize",)
-	search: Optional[SecurityEdiscoverySearch] = Field(default=None,alias="search",)
+	id: Optional[str] = Field(alias="id",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	action: Optional[str | SecurityCaseAction] = Field(alias="action",default=None,)
+	completedDateTime: Optional[datetime] = Field(alias="completedDateTime",default=None,)
+	createdBy: SerializeAsAny[Optional[IdentitySet]] = Field(alias="createdBy",default=None,)
+	createdDateTime: Optional[datetime] = Field(alias="createdDateTime",default=None,)
+	percentProgress: Optional[int] = Field(alias="percentProgress",default=None,)
+	resultInfo: Optional[ResultInfo] = Field(alias="resultInfo",default=None,)
+	status: Optional[str | SecurityCaseOperationStatus] = Field(alias="status",default=None,)
+	indexedItemCount: Optional[int] = Field(alias="indexedItemCount",default=None,)
+	indexedItemsSize: Optional[int] = Field(alias="indexedItemsSize",default=None,)
+	mailboxCount: Optional[int] = Field(alias="mailboxCount",default=None,)
+	siteCount: Optional[int] = Field(alias="siteCount",default=None,)
+	unindexedItemCount: Optional[int] = Field(alias="unindexedItemCount",default=None,)
+	unindexedItemsSize: Optional[int] = Field(alias="unindexedItemsSize",default=None,)
+	search: Optional[SecurityEdiscoverySearch] = Field(alias="search",default=None,)
 
 from .security_case_action import SecurityCaseAction
 from .identity_set import IdentitySet

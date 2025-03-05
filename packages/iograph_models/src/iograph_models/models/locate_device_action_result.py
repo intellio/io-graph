@@ -5,12 +5,12 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class LocateDeviceActionResult(BaseModel):
-	actionName: Optional[str] = Field(default=None,alias="actionName",)
-	actionState: Optional[ActionState] = Field(default=None,alias="actionState",)
-	lastUpdatedDateTime: Optional[datetime] = Field(default=None,alias="lastUpdatedDateTime",)
-	startDateTime: Optional[datetime] = Field(default=None,alias="startDateTime",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	deviceLocation: Optional[DeviceGeoLocation] = Field(default=None,alias="deviceLocation",)
+	actionName: Optional[str] = Field(alias="actionName",default=None,)
+	actionState: Optional[str | ActionState] = Field(alias="actionState",default=None,)
+	lastUpdatedDateTime: Optional[datetime] = Field(alias="lastUpdatedDateTime",default=None,)
+	startDateTime: Optional[datetime] = Field(alias="startDateTime",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	deviceLocation: Optional[DeviceGeoLocation] = Field(alias="deviceLocation",default=None,)
 
 from .action_state import ActionState
 from .device_geo_location import DeviceGeoLocation

@@ -4,15 +4,15 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class IdentityGovernanceWorkflowsInsightsByCategory(BaseModel):
-	failedJoinerRuns: Optional[int] = Field(default=None,alias="failedJoinerRuns",)
-	failedLeaverRuns: Optional[int] = Field(default=None,alias="failedLeaverRuns",)
-	failedMoverRuns: Optional[int] = Field(default=None,alias="failedMoverRuns",)
-	successfulJoinerRuns: Optional[int] = Field(default=None,alias="successfulJoinerRuns",)
-	successfulLeaverRuns: Optional[int] = Field(default=None,alias="successfulLeaverRuns",)
-	successfulMoverRuns: Optional[int] = Field(default=None,alias="successfulMoverRuns",)
-	totalJoinerRuns: Optional[int] = Field(default=None,alias="totalJoinerRuns",)
-	totalLeaverRuns: Optional[int] = Field(default=None,alias="totalLeaverRuns",)
-	totalMoverRuns: Optional[int] = Field(default=None,alias="totalMoverRuns",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
+	failedJoinerRuns: Optional[int] = Field(alias="failedJoinerRuns",default=None,)
+	failedLeaverRuns: Optional[int] = Field(alias="failedLeaverRuns",default=None,)
+	failedMoverRuns: Optional[int] = Field(alias="failedMoverRuns",default=None,)
+	successfulJoinerRuns: Optional[int] = Field(alias="successfulJoinerRuns",default=None,)
+	successfulLeaverRuns: Optional[int] = Field(alias="successfulLeaverRuns",default=None,)
+	successfulMoverRuns: Optional[int] = Field(alias="successfulMoverRuns",default=None,)
+	totalJoinerRuns: Optional[int] = Field(alias="totalJoinerRuns",default=None,)
+	totalLeaverRuns: Optional[int] = Field(alias="totalLeaverRuns",default=None,)
+	totalMoverRuns: Optional[int] = Field(alias="totalMoverRuns",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 
 

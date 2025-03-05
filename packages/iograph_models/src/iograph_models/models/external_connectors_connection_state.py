@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class ExternalConnectorsConnectionState(Enum):
+class ExternalConnectorsConnectionState(StrEnum):
 	draft = "draft"
 	ready = "ready"
 	obsolete = "obsolete"

@@ -5,16 +5,16 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class DeviceInstallState(BaseModel):
-	id: Optional[str] = Field(default=None,alias="id",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	deviceId: Optional[str] = Field(default=None,alias="deviceId",)
-	deviceName: Optional[str] = Field(default=None,alias="deviceName",)
-	errorCode: Optional[str] = Field(default=None,alias="errorCode",)
-	installState: Optional[InstallState] = Field(default=None,alias="installState",)
-	lastSyncDateTime: Optional[datetime] = Field(default=None,alias="lastSyncDateTime",)
-	osDescription: Optional[str] = Field(default=None,alias="osDescription",)
-	osVersion: Optional[str] = Field(default=None,alias="osVersion",)
-	userName: Optional[str] = Field(default=None,alias="userName",)
+	id: Optional[str] = Field(alias="id",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	deviceId: Optional[str] = Field(alias="deviceId",default=None,)
+	deviceName: Optional[str] = Field(alias="deviceName",default=None,)
+	errorCode: Optional[str] = Field(alias="errorCode",default=None,)
+	installState: Optional[str | InstallState] = Field(alias="installState",default=None,)
+	lastSyncDateTime: Optional[datetime] = Field(alias="lastSyncDateTime",default=None,)
+	osDescription: Optional[str] = Field(alias="osDescription",default=None,)
+	osVersion: Optional[str] = Field(alias="osVersion",default=None,)
+	userName: Optional[str] = Field(alias="userName",default=None,)
 
 from .install_state import InstallState
 

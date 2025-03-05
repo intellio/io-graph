@@ -4,11 +4,11 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class ScopedRoleMembership(BaseModel):
-	id: Optional[str] = Field(default=None,alias="id",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	administrativeUnitId: Optional[str] = Field(default=None,alias="administrativeUnitId",)
-	roleId: Optional[str] = Field(default=None,alias="roleId",)
-	roleMemberInfo: SerializeAsAny[Optional[Identity]] = Field(default=None,alias="roleMemberInfo",)
+	id: Optional[str] = Field(alias="id",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	administrativeUnitId: Optional[str] = Field(alias="administrativeUnitId",default=None,)
+	roleId: Optional[str] = Field(alias="roleId",default=None,)
+	roleMemberInfo: SerializeAsAny[Optional[Identity]] = Field(alias="roleMemberInfo",default=None,)
 
 from .identity import Identity
 

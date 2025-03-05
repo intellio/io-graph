@@ -4,9 +4,9 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class DeltaGetResponse(BaseModel):
-	odata_nextLink: Optional[str] = Field(default=None,alias="@odata.nextLink",)
-	odata_deltaLink: Optional[str] = Field(default=None,alias="@odata.deltaLink",)
-	value: Optional[list[User]] = Field(default=None,alias="value",)
+	odata_nextLink: Optional[str] = Field(alias="@odata.nextLink",default=None,)
+	odata_deltaLink: Optional[str] = Field(alias="@odata.deltaLink",default=None,)
+	value: Optional[list[User]] = Field(alias="value",default=None,)
 
 from .user import User
 

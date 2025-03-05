@@ -14,8 +14,8 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_service_health_issue_id import ByServiceHealthIssueIdRequest
 	from .......request_adapter import HttpxRequestAdapter
-from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.models.service_health_issue import ServiceHealthIssue
+from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.models.service_health_issue_collection_response import ServiceHealthIssueCollectionResponse
 
 

@@ -4,11 +4,11 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class AnswerPostRequest(BaseModel):
-	callbackUri: Optional[str] = Field(default=None,alias="callbackUri",)
-	mediaConfig: SerializeAsAny[Optional[MediaConfig]] = Field(default=None,alias="mediaConfig",)
-	acceptedModalities: Optional[Modality] = Field(default=None,alias="acceptedModalities",)
-	participantCapacity: Optional[int] = Field(default=None,alias="participantCapacity",)
-	callOptions: Optional[IncomingCallOptions] = Field(default=None,alias="callOptions",)
+	callbackUri: Optional[str] = Field(alias="callbackUri",default=None,)
+	mediaConfig: SerializeAsAny[Optional[MediaConfig]] = Field(alias="mediaConfig",default=None,)
+	acceptedModalities: Optional[str | Modality] = Field(alias="acceptedModalities",default=None,)
+	participantCapacity: Optional[int] = Field(alias="participantCapacity",default=None,)
+	callOptions: Optional[IncomingCallOptions] = Field(alias="callOptions",default=None,)
 
 from .media_config import MediaConfig
 from .modality import Modality

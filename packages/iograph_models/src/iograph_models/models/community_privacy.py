@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class CommunityPrivacy(Enum):
+class CommunityPrivacy(StrEnum):
 	public = "public"
 	private = "private"
 	unknownFutureValue = "unknownFutureValue"

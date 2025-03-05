@@ -5,18 +5,18 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class AccessReviewHistoryDefinition(BaseModel):
-	id: Optional[str] = Field(default=None,alias="id",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	createdBy: Optional[UserIdentity] = Field(default=None,alias="createdBy",)
-	createdDateTime: Optional[datetime] = Field(default=None,alias="createdDateTime",)
-	decisions: Optional[AccessReviewHistoryDecisionFilter] = Field(default=None,alias="decisions",)
-	displayName: Optional[str] = Field(default=None,alias="displayName",)
-	reviewHistoryPeriodEndDateTime: Optional[datetime] = Field(default=None,alias="reviewHistoryPeriodEndDateTime",)
-	reviewHistoryPeriodStartDateTime: Optional[datetime] = Field(default=None,alias="reviewHistoryPeriodStartDateTime",)
-	scheduleSettings: Optional[AccessReviewHistoryScheduleSettings] = Field(default=None,alias="scheduleSettings",)
-	scopes: SerializeAsAny[Optional[list[AccessReviewScope]]] = Field(default=None,alias="scopes",)
-	status: Optional[AccessReviewHistoryStatus] = Field(default=None,alias="status",)
-	instances: Optional[list[AccessReviewHistoryInstance]] = Field(default=None,alias="instances",)
+	id: Optional[str] = Field(alias="id",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	createdBy: Optional[UserIdentity] = Field(alias="createdBy",default=None,)
+	createdDateTime: Optional[datetime] = Field(alias="createdDateTime",default=None,)
+	decisions: Optional[str | AccessReviewHistoryDecisionFilter] = Field(alias="decisions",default=None,)
+	displayName: Optional[str] = Field(alias="displayName",default=None,)
+	reviewHistoryPeriodEndDateTime: Optional[datetime] = Field(alias="reviewHistoryPeriodEndDateTime",default=None,)
+	reviewHistoryPeriodStartDateTime: Optional[datetime] = Field(alias="reviewHistoryPeriodStartDateTime",default=None,)
+	scheduleSettings: Optional[AccessReviewHistoryScheduleSettings] = Field(alias="scheduleSettings",default=None,)
+	scopes: SerializeAsAny[Optional[list[AccessReviewScope]]] = Field(alias="scopes",default=None,)
+	status: Optional[str | AccessReviewHistoryStatus] = Field(alias="status",default=None,)
+	instances: Optional[list[AccessReviewHistoryInstance]] = Field(alias="instances",default=None,)
 
 from .user_identity import UserIdentity
 from .access_review_history_decision_filter import AccessReviewHistoryDecisionFilter

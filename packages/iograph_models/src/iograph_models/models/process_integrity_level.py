@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class ProcessIntegrityLevel(Enum):
+class ProcessIntegrityLevel(StrEnum):
 	unknown = "unknown"
 	untrusted = "untrusted"
 	low = "low"

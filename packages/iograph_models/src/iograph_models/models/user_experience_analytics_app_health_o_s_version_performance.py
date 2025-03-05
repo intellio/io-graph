@@ -4,12 +4,12 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class UserExperienceAnalyticsAppHealthOSVersionPerformance(BaseModel):
-	id: Optional[str] = Field(default=None,alias="id",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	activeDeviceCount: Optional[int] = Field(default=None,alias="activeDeviceCount",)
-	meanTimeToFailureInMinutes: Optional[int] = Field(default=None,alias="meanTimeToFailureInMinutes",)
-	osBuildNumber: Optional[str] = Field(default=None,alias="osBuildNumber",)
-	osVersion: Optional[str] = Field(default=None,alias="osVersion",)
+	id: Optional[str] = Field(alias="id",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	activeDeviceCount: Optional[int] = Field(alias="activeDeviceCount",default=None,)
+	meanTimeToFailureInMinutes: Optional[int] = Field(alias="meanTimeToFailureInMinutes",default=None,)
+	osBuildNumber: Optional[str] = Field(alias="osBuildNumber",default=None,)
+	osVersion: Optional[str] = Field(alias="osVersion",default=None,)
 	osVersionAppHealthScore: float | str | ReferenceNumeric
 
 from .reference_numeric import ReferenceNumeric

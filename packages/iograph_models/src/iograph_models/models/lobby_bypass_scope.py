@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class LobbyBypassScope(Enum):
+class LobbyBypassScope(StrEnum):
 	organizer = "organizer"
 	organization = "organization"
 	organizationAndFederated = "organizationAndFederated"

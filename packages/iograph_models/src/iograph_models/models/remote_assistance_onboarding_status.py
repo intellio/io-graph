@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class RemoteAssistanceOnboardingStatus(Enum):
+class RemoteAssistanceOnboardingStatus(StrEnum):
 	notOnboarded = "notOnboarded"
 	onboarding = "onboarding"
 	onboarded = "onboarded"

@@ -4,8 +4,8 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class SecurityIntelligenceProfileCountryOrRegionOfOrigin(BaseModel):
-	code: Optional[str] = Field(default=None,alias="code",)
-	label: Optional[str] = Field(default=None,alias="label",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
+	code: Optional[str] = Field(alias="code",default=None,)
+	label: Optional[str] = Field(alias="label",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 
 

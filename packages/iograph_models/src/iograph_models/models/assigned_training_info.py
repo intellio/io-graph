@@ -4,9 +4,9 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class AssignedTrainingInfo(BaseModel):
-	assignedUserCount: Optional[int] = Field(default=None,alias="assignedUserCount",)
-	completedUserCount: Optional[int] = Field(default=None,alias="completedUserCount",)
-	displayName: Optional[str] = Field(default=None,alias="displayName",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
+	assignedUserCount: Optional[int] = Field(alias="assignedUserCount",default=None,)
+	completedUserCount: Optional[int] = Field(alias="completedUserCount",default=None,)
+	displayName: Optional[str] = Field(alias="displayName",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 
 

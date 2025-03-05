@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class WindowsDeviceType(Enum):
+class WindowsDeviceType(StrEnum):
 	none = "none"
 	desktop = "desktop"
 	mobile = "mobile"

@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class EscrowBehavior(Enum):
+class EscrowBehavior(StrEnum):
 	Default = "Default"
 	IgnoreLookupReferenceResolutionFailure = "IgnoreLookupReferenceResolutionFailure"
 

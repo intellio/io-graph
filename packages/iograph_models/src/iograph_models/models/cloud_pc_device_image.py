@@ -5,18 +5,18 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class CloudPcDeviceImage(BaseModel):
-	id: Optional[str] = Field(default=None,alias="id",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	displayName: Optional[str] = Field(default=None,alias="displayName",)
-	errorCode: Optional[CloudPcDeviceImageErrorCode] = Field(default=None,alias="errorCode",)
-	expirationDate: Optional[str] = Field(default=None,alias="expirationDate",)
-	lastModifiedDateTime: Optional[datetime] = Field(default=None,alias="lastModifiedDateTime",)
-	operatingSystem: Optional[str] = Field(default=None,alias="operatingSystem",)
-	osBuildNumber: Optional[str] = Field(default=None,alias="osBuildNumber",)
-	osStatus: Optional[CloudPcDeviceImageOsStatus] = Field(default=None,alias="osStatus",)
-	sourceImageResourceId: Optional[str] = Field(default=None,alias="sourceImageResourceId",)
-	status: Optional[CloudPcDeviceImageStatus] = Field(default=None,alias="status",)
-	version: Optional[str] = Field(default=None,alias="version",)
+	id: Optional[str] = Field(alias="id",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	displayName: Optional[str] = Field(alias="displayName",default=None,)
+	errorCode: Optional[str | CloudPcDeviceImageErrorCode] = Field(alias="errorCode",default=None,)
+	expirationDate: Optional[str] = Field(alias="expirationDate",default=None,)
+	lastModifiedDateTime: Optional[datetime] = Field(alias="lastModifiedDateTime",default=None,)
+	operatingSystem: Optional[str] = Field(alias="operatingSystem",default=None,)
+	osBuildNumber: Optional[str] = Field(alias="osBuildNumber",default=None,)
+	osStatus: Optional[str | CloudPcDeviceImageOsStatus] = Field(alias="osStatus",default=None,)
+	sourceImageResourceId: Optional[str] = Field(alias="sourceImageResourceId",default=None,)
+	status: Optional[str | CloudPcDeviceImageStatus] = Field(alias="status",default=None,)
+	version: Optional[str] = Field(alias="version",default=None,)
 
 from .cloud_pc_device_image_error_code import CloudPcDeviceImageErrorCode
 from .cloud_pc_device_image_os_status import CloudPcDeviceImageOsStatus

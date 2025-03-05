@@ -4,14 +4,14 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class Win32LobAppRegistryRule(BaseModel):
-	ruleType: Optional[Win32LobAppRuleType] = Field(default=None,alias="ruleType",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	check32BitOn64System: Optional[bool] = Field(default=None,alias="check32BitOn64System",)
-	comparisonValue: Optional[str] = Field(default=None,alias="comparisonValue",)
-	keyPath: Optional[str] = Field(default=None,alias="keyPath",)
-	operationType: Optional[Win32LobAppRegistryRuleOperationType] = Field(default=None,alias="operationType",)
-	operator: Optional[Win32LobAppRuleOperator] = Field(default=None,alias="operator",)
-	valueName: Optional[str] = Field(default=None,alias="valueName",)
+	ruleType: Optional[str | Win32LobAppRuleType] = Field(alias="ruleType",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	check32BitOn64System: Optional[bool] = Field(alias="check32BitOn64System",default=None,)
+	comparisonValue: Optional[str] = Field(alias="comparisonValue",default=None,)
+	keyPath: Optional[str] = Field(alias="keyPath",default=None,)
+	operationType: Optional[str | Win32LobAppRegistryRuleOperationType] = Field(alias="operationType",default=None,)
+	operator: Optional[str | Win32LobAppRuleOperator] = Field(alias="operator",default=None,)
+	valueName: Optional[str] = Field(alias="valueName",default=None,)
 
 from .win32_lob_app_rule_type import Win32LobAppRuleType
 from .win32_lob_app_registry_rule_operation_type import Win32LobAppRegistryRuleOperationType

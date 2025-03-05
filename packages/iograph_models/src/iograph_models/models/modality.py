@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class Modality(Enum):
+class Modality(StrEnum):
 	audio = "audio"
 	video = "video"
 	videoBasedScreenSharing = "videoBasedScreenSharing"

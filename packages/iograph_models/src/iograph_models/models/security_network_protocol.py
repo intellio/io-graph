@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class SecurityNetworkProtocol(Enum):
+class SecurityNetworkProtocol(StrEnum):
 	unknown = "unknown"
 	ip = "ip"
 	icmp = "icmp"

@@ -4,7 +4,7 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class ProtectPostRequest(BaseModel):
-	options: Optional[WorkbookWorksheetProtectionOptions] = Field(default=None,alias="options",)
+	options: Optional[WorkbookWorksheetProtectionOptions] = Field(alias="options",default=None,)
 
 from .workbook_worksheet_protection_options import WorkbookWorksheetProtectionOptions
 

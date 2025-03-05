@@ -4,10 +4,10 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class AlterationResponse(BaseModel):
-	originalQueryString: Optional[str] = Field(default=None,alias="originalQueryString",)
-	queryAlteration: Optional[SearchAlteration] = Field(default=None,alias="queryAlteration",)
-	queryAlterationType: Optional[SearchAlterationType] = Field(default=None,alias="queryAlterationType",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
+	originalQueryString: Optional[str] = Field(alias="originalQueryString",default=None,)
+	queryAlteration: Optional[SearchAlteration] = Field(alias="queryAlteration",default=None,)
+	queryAlterationType: Optional[str | SearchAlterationType] = Field(alias="queryAlterationType",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 
 from .search_alteration import SearchAlteration
 from .search_alteration_type import SearchAlterationType

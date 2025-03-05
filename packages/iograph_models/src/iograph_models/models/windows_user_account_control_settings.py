@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class WindowsUserAccountControlSettings(Enum):
+class WindowsUserAccountControlSettings(StrEnum):
 	userDefined = "userDefined"
 	alwaysNotify = "alwaysNotify"
 	notifyOnAppChanges = "notifyOnAppChanges"

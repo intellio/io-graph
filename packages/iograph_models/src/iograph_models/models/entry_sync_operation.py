@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class EntrySyncOperation(Enum):
+class EntrySyncOperation(StrEnum):
 	None_ = "None_"
 	Add = "Add"
 	Delete = "Delete"

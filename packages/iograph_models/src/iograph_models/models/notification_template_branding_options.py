@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class NotificationTemplateBrandingOptions(Enum):
+class NotificationTemplateBrandingOptions(StrEnum):
 	none = "none"
 	includeCompanyLogo = "includeCompanyLogo"
 	includeCompanyName = "includeCompanyName"

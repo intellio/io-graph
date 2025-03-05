@@ -4,14 +4,14 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class Fido2AuthenticationMethodConfiguration(BaseModel):
-	id: Optional[str] = Field(default=None,alias="id",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	excludeTargets: Optional[list[ExcludeTarget]] = Field(default=None,alias="excludeTargets",)
-	state: Optional[AuthenticationMethodState] = Field(default=None,alias="state",)
-	isAttestationEnforced: Optional[bool] = Field(default=None,alias="isAttestationEnforced",)
-	isSelfServiceRegistrationAllowed: Optional[bool] = Field(default=None,alias="isSelfServiceRegistrationAllowed",)
-	keyRestrictions: Optional[Fido2KeyRestrictions] = Field(default=None,alias="keyRestrictions",)
-	includeTargets: SerializeAsAny[Optional[list[AuthenticationMethodTarget]]] = Field(default=None,alias="includeTargets",)
+	id: Optional[str] = Field(alias="id",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	excludeTargets: Optional[list[ExcludeTarget]] = Field(alias="excludeTargets",default=None,)
+	state: Optional[str | AuthenticationMethodState] = Field(alias="state",default=None,)
+	isAttestationEnforced: Optional[bool] = Field(alias="isAttestationEnforced",default=None,)
+	isSelfServiceRegistrationAllowed: Optional[bool] = Field(alias="isSelfServiceRegistrationAllowed",default=None,)
+	keyRestrictions: Optional[Fido2KeyRestrictions] = Field(alias="keyRestrictions",default=None,)
+	includeTargets: SerializeAsAny[Optional[list[AuthenticationMethodTarget]]] = Field(alias="includeTargets",default=None,)
 
 from .exclude_target import ExcludeTarget
 from .authentication_method_state import AuthenticationMethodState

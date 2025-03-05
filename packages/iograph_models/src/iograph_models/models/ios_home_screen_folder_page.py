@@ -4,9 +4,9 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class IosHomeScreenFolderPage(BaseModel):
-	apps: Optional[list[IosHomeScreenApp]] = Field(default=None,alias="apps",)
-	displayName: Optional[str] = Field(default=None,alias="displayName",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
+	apps: Optional[list[IosHomeScreenApp]] = Field(alias="apps",default=None,)
+	displayName: Optional[str] = Field(alias="displayName",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 
 from .ios_home_screen_app import IosHomeScreenApp
 

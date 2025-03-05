@@ -5,21 +5,21 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class OnenotePage(BaseModel):
-	id: Optional[str] = Field(default=None,alias="id",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	self: Optional[str] = Field(default=None,alias="self",)
-	createdDateTime: Optional[datetime] = Field(default=None,alias="createdDateTime",)
-	content: Optional[str] = Field(default=None,alias="content",)
-	contentUrl: Optional[str] = Field(default=None,alias="contentUrl",)
-	createdByAppId: Optional[str] = Field(default=None,alias="createdByAppId",)
-	lastModifiedDateTime: Optional[datetime] = Field(default=None,alias="lastModifiedDateTime",)
-	level: Optional[int] = Field(default=None,alias="level",)
-	links: Optional[PageLinks] = Field(default=None,alias="links",)
-	order: Optional[int] = Field(default=None,alias="order",)
-	title: Optional[str] = Field(default=None,alias="title",)
-	userTags: Optional[list[str]] = Field(default=None,alias="userTags",)
-	parentNotebook: Optional[Notebook] = Field(default=None,alias="parentNotebook",)
-	parentSection: Optional[OnenoteSection] = Field(default=None,alias="parentSection",)
+	id: Optional[str] = Field(alias="id",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	self: Optional[str] = Field(alias="self",default=None,)
+	createdDateTime: Optional[datetime] = Field(alias="createdDateTime",default=None,)
+	content: Optional[str] = Field(alias="content",default=None,)
+	contentUrl: Optional[str] = Field(alias="contentUrl",default=None,)
+	createdByAppId: Optional[str] = Field(alias="createdByAppId",default=None,)
+	lastModifiedDateTime: Optional[datetime] = Field(alias="lastModifiedDateTime",default=None,)
+	level: Optional[int] = Field(alias="level",default=None,)
+	links: Optional[PageLinks] = Field(alias="links",default=None,)
+	order: Optional[int] = Field(alias="order",default=None,)
+	title: Optional[str] = Field(alias="title",default=None,)
+	userTags: Optional[list[str]] = Field(alias="userTags",default=None,)
+	parentNotebook: Optional[Notebook] = Field(alias="parentNotebook",default=None,)
+	parentSection: Optional[OnenoteSection] = Field(alias="parentSection",default=None,)
 
 from .page_links import PageLinks
 from .notebook import Notebook

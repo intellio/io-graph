@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class PartnerTenantType(Enum):
+class PartnerTenantType(StrEnum):
 	microsoftSupport = "microsoftSupport"
 	syndicatePartner = "syndicatePartner"
 	breadthPartner = "breadthPartner"

@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class BrowserSiteCompatibilityMode(Enum):
+class BrowserSiteCompatibilityMode(StrEnum):
 	default = "default"
 	internetExplorer8Enterprise = "internetExplorer8Enterprise"
 	internetExplorer7Enterprise = "internetExplorer7Enterprise"

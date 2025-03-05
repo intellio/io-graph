@@ -4,11 +4,11 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class InformationalUrl(BaseModel):
-	logoUrl: Optional[str] = Field(default=None,alias="logoUrl",)
-	marketingUrl: Optional[str] = Field(default=None,alias="marketingUrl",)
-	privacyStatementUrl: Optional[str] = Field(default=None,alias="privacyStatementUrl",)
-	supportUrl: Optional[str] = Field(default=None,alias="supportUrl",)
-	termsOfServiceUrl: Optional[str] = Field(default=None,alias="termsOfServiceUrl",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
+	logoUrl: Optional[str] = Field(alias="logoUrl",default=None,)
+	marketingUrl: Optional[str] = Field(alias="marketingUrl",default=None,)
+	privacyStatementUrl: Optional[str] = Field(alias="privacyStatementUrl",default=None,)
+	supportUrl: Optional[str] = Field(alias="supportUrl",default=None,)
+	termsOfServiceUrl: Optional[str] = Field(alias="termsOfServiceUrl",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 
 

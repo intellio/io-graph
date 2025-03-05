@@ -4,10 +4,10 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class PrintMargin(BaseModel):
-	bottom: Optional[int] = Field(default=None,alias="bottom",)
-	left: Optional[int] = Field(default=None,alias="left",)
-	right: Optional[int] = Field(default=None,alias="right",)
-	top: Optional[int] = Field(default=None,alias="top",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
+	bottom: Optional[int] = Field(alias="bottom",default=None,)
+	left: Optional[int] = Field(alias="left",default=None,)
+	right: Optional[int] = Field(alias="right",default=None,)
+	top: Optional[int] = Field(alias="top",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 
 

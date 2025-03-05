@@ -4,8 +4,8 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class MentionAction(BaseModel):
-	mentionees: SerializeAsAny[Optional[list[IdentitySet]]] = Field(default=None,alias="mentionees",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
+	mentionees: SerializeAsAny[Optional[list[IdentitySet]]] = Field(alias="mentionees",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 
 from .identity_set import IdentitySet
 

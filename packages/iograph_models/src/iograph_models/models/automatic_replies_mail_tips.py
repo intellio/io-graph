@@ -4,11 +4,11 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class AutomaticRepliesMailTips(BaseModel):
-	message: Optional[str] = Field(default=None,alias="message",)
-	messageLanguage: Optional[LocaleInfo] = Field(default=None,alias="messageLanguage",)
-	scheduledEndTime: Optional[DateTimeTimeZone] = Field(default=None,alias="scheduledEndTime",)
-	scheduledStartTime: Optional[DateTimeTimeZone] = Field(default=None,alias="scheduledStartTime",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
+	message: Optional[str] = Field(alias="message",default=None,)
+	messageLanguage: Optional[LocaleInfo] = Field(alias="messageLanguage",default=None,)
+	scheduledEndTime: Optional[DateTimeTimeZone] = Field(alias="scheduledEndTime",default=None,)
+	scheduledStartTime: Optional[DateTimeTimeZone] = Field(alias="scheduledStartTime",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 
 from .locale_info import LocaleInfo
 from .date_time_time_zone import DateTimeTimeZone

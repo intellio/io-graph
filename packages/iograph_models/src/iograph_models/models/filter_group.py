@@ -4,9 +4,9 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class FilterGroup(BaseModel):
-	clauses: Optional[list[FilterClause]] = Field(default=None,alias="clauses",)
-	name: Optional[str] = Field(default=None,alias="name",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
+	clauses: Optional[list[FilterClause]] = Field(alias="clauses",default=None,)
+	name: Optional[str] = Field(alias="name",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 
 from .filter_clause import FilterClause
 

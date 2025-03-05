@@ -4,6 +4,6 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class SinPostRequest(BaseModel):
-	number: Optional[str] = Field(default=None,alias="number",)
+	number: Optional[str] = Field(alias="number",default=None,)
 
 

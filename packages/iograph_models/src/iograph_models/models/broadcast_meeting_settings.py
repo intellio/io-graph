@@ -4,13 +4,13 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class BroadcastMeetingSettings(BaseModel):
-	allowedAudience: Optional[BroadcastMeetingAudience] = Field(default=None,alias="allowedAudience",)
-	captions: Optional[BroadcastMeetingCaptionSettings] = Field(default=None,alias="captions",)
-	isAttendeeReportEnabled: Optional[bool] = Field(default=None,alias="isAttendeeReportEnabled",)
-	isQuestionAndAnswerEnabled: Optional[bool] = Field(default=None,alias="isQuestionAndAnswerEnabled",)
-	isRecordingEnabled: Optional[bool] = Field(default=None,alias="isRecordingEnabled",)
-	isVideoOnDemandEnabled: Optional[bool] = Field(default=None,alias="isVideoOnDemandEnabled",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
+	allowedAudience: Optional[str | BroadcastMeetingAudience] = Field(alias="allowedAudience",default=None,)
+	captions: Optional[BroadcastMeetingCaptionSettings] = Field(alias="captions",default=None,)
+	isAttendeeReportEnabled: Optional[bool] = Field(alias="isAttendeeReportEnabled",default=None,)
+	isQuestionAndAnswerEnabled: Optional[bool] = Field(alias="isQuestionAndAnswerEnabled",default=None,)
+	isRecordingEnabled: Optional[bool] = Field(alias="isRecordingEnabled",default=None,)
+	isVideoOnDemandEnabled: Optional[bool] = Field(alias="isVideoOnDemandEnabled",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 
 from .broadcast_meeting_audience import BroadcastMeetingAudience
 from .broadcast_meeting_caption_settings import BroadcastMeetingCaptionSettings

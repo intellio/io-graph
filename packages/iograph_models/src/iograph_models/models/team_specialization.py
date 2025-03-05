@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class TeamSpecialization(Enum):
+class TeamSpecialization(StrEnum):
 	none = "none"
 	educationStandard = "educationStandard"
 	educationClass = "educationClass"

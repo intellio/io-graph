@@ -4,9 +4,9 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class AlternativeSecurityId(BaseModel):
-	identityProvider: Optional[str] = Field(default=None,alias="identityProvider",)
-	key: Optional[str] = Field(default=None,alias="key",)
-	type: Optional[int] = Field(default=None,alias="type",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
+	identityProvider: Optional[str] = Field(alias="identityProvider",default=None,)
+	key: Optional[str] = Field(alias="key",default=None,)
+	type: Optional[int] = Field(alias="type",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 
 

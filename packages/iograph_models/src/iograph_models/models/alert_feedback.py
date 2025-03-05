@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class AlertFeedback(Enum):
+class AlertFeedback(StrEnum):
 	unknown = "unknown"
 	truePositive = "truePositive"
 	falsePositive = "falsePositive"

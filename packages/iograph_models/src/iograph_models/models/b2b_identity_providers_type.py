@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class B2bIdentityProvidersType(Enum):
+class B2bIdentityProvidersType(StrEnum):
 	azureActiveDirectory = "azureActiveDirectory"
 	externalFederation = "externalFederation"
 	socialIdentityProviders = "socialIdentityProviders"

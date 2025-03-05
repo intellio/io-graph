@@ -4,7 +4,7 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class Week_numPostRequest(BaseModel):
-	serialNumber: Optional[str] = Field(default=None,alias="serialNumber",)
-	returnType: Optional[str] = Field(default=None,alias="returnType",)
+	serialNumber: Optional[str] = Field(alias="serialNumber",default=None,)
+	returnType: Optional[str] = Field(alias="returnType",default=None,)
 
 

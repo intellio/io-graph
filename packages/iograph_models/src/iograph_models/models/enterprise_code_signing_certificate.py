@@ -5,16 +5,16 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class EnterpriseCodeSigningCertificate(BaseModel):
-	id: Optional[str] = Field(default=None,alias="id",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	content: Optional[str] = Field(default=None,alias="content",)
-	expirationDateTime: Optional[datetime] = Field(default=None,alias="expirationDateTime",)
-	issuer: Optional[str] = Field(default=None,alias="issuer",)
-	issuerName: Optional[str] = Field(default=None,alias="issuerName",)
-	status: Optional[CertificateStatus] = Field(default=None,alias="status",)
-	subject: Optional[str] = Field(default=None,alias="subject",)
-	subjectName: Optional[str] = Field(default=None,alias="subjectName",)
-	uploadDateTime: Optional[datetime] = Field(default=None,alias="uploadDateTime",)
+	id: Optional[str] = Field(alias="id",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	content: Optional[str] = Field(alias="content",default=None,)
+	expirationDateTime: Optional[datetime] = Field(alias="expirationDateTime",default=None,)
+	issuer: Optional[str] = Field(alias="issuer",default=None,)
+	issuerName: Optional[str] = Field(alias="issuerName",default=None,)
+	status: Optional[str | CertificateStatus] = Field(alias="status",default=None,)
+	subject: Optional[str] = Field(alias="subject",default=None,)
+	subjectName: Optional[str] = Field(alias="subjectName",default=None,)
+	uploadDateTime: Optional[datetime] = Field(alias="uploadDateTime",default=None,)
 
 from .certificate_status import CertificateStatus
 

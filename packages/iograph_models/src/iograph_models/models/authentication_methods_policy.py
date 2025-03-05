@@ -5,16 +5,16 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class AuthenticationMethodsPolicy(BaseModel):
-	id: Optional[str] = Field(default=None,alias="id",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	description: Optional[str] = Field(default=None,alias="description",)
-	displayName: Optional[str] = Field(default=None,alias="displayName",)
-	lastModifiedDateTime: Optional[datetime] = Field(default=None,alias="lastModifiedDateTime",)
-	policyMigrationState: Optional[AuthenticationMethodsPolicyMigrationState] = Field(default=None,alias="policyMigrationState",)
-	policyVersion: Optional[str] = Field(default=None,alias="policyVersion",)
-	reconfirmationInDays: Optional[int] = Field(default=None,alias="reconfirmationInDays",)
-	registrationEnforcement: Optional[RegistrationEnforcement] = Field(default=None,alias="registrationEnforcement",)
-	authenticationMethodConfigurations: SerializeAsAny[Optional[list[AuthenticationMethodConfiguration]]] = Field(default=None,alias="authenticationMethodConfigurations",)
+	id: Optional[str] = Field(alias="id",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	description: Optional[str] = Field(alias="description",default=None,)
+	displayName: Optional[str] = Field(alias="displayName",default=None,)
+	lastModifiedDateTime: Optional[datetime] = Field(alias="lastModifiedDateTime",default=None,)
+	policyMigrationState: Optional[str | AuthenticationMethodsPolicyMigrationState] = Field(alias="policyMigrationState",default=None,)
+	policyVersion: Optional[str] = Field(alias="policyVersion",default=None,)
+	reconfirmationInDays: Optional[int] = Field(alias="reconfirmationInDays",default=None,)
+	registrationEnforcement: Optional[RegistrationEnforcement] = Field(alias="registrationEnforcement",default=None,)
+	authenticationMethodConfigurations: SerializeAsAny[Optional[list[AuthenticationMethodConfiguration]]] = Field(alias="authenticationMethodConfigurations",default=None,)
 
 from .authentication_methods_policy_migration_state import AuthenticationMethodsPolicyMigrationState
 from .registration_enforcement import RegistrationEnforcement

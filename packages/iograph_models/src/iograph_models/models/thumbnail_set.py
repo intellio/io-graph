@@ -4,12 +4,12 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class ThumbnailSet(BaseModel):
-	id: Optional[str] = Field(default=None,alias="id",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	large: Optional[Thumbnail] = Field(default=None,alias="large",)
-	medium: Optional[Thumbnail] = Field(default=None,alias="medium",)
-	small: Optional[Thumbnail] = Field(default=None,alias="small",)
-	source: Optional[Thumbnail] = Field(default=None,alias="source",)
+	id: Optional[str] = Field(alias="id",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	large: Optional[Thumbnail] = Field(alias="large",default=None,)
+	medium: Optional[Thumbnail] = Field(alias="medium",default=None,)
+	small: Optional[Thumbnail] = Field(alias="small",default=None,)
+	source: Optional[Thumbnail] = Field(alias="source",default=None,)
 
 from .thumbnail import Thumbnail
 from .thumbnail import Thumbnail

@@ -5,19 +5,19 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class BookingStaffMember(BaseModel):
-	id: Optional[str] = Field(default=None,alias="id",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	availabilityIsAffectedByPersonalCalendar: Optional[bool] = Field(default=None,alias="availabilityIsAffectedByPersonalCalendar",)
-	createdDateTime: Optional[datetime] = Field(default=None,alias="createdDateTime",)
-	displayName: Optional[str] = Field(default=None,alias="displayName",)
-	emailAddress: Optional[str] = Field(default=None,alias="emailAddress",)
-	isEmailNotificationEnabled: Optional[bool] = Field(default=None,alias="isEmailNotificationEnabled",)
-	lastUpdatedDateTime: Optional[datetime] = Field(default=None,alias="lastUpdatedDateTime",)
-	membershipStatus: Optional[BookingStaffMembershipStatus] = Field(default=None,alias="membershipStatus",)
-	role: Optional[BookingStaffRole] = Field(default=None,alias="role",)
-	timeZone: Optional[str] = Field(default=None,alias="timeZone",)
-	useBusinessHours: Optional[bool] = Field(default=None,alias="useBusinessHours",)
-	workingHours: Optional[list[BookingWorkHours]] = Field(default=None,alias="workingHours",)
+	id: Optional[str] = Field(alias="id",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	availabilityIsAffectedByPersonalCalendar: Optional[bool] = Field(alias="availabilityIsAffectedByPersonalCalendar",default=None,)
+	createdDateTime: Optional[datetime] = Field(alias="createdDateTime",default=None,)
+	displayName: Optional[str] = Field(alias="displayName",default=None,)
+	emailAddress: Optional[str] = Field(alias="emailAddress",default=None,)
+	isEmailNotificationEnabled: Optional[bool] = Field(alias="isEmailNotificationEnabled",default=None,)
+	lastUpdatedDateTime: Optional[datetime] = Field(alias="lastUpdatedDateTime",default=None,)
+	membershipStatus: Optional[str | BookingStaffMembershipStatus] = Field(alias="membershipStatus",default=None,)
+	role: Optional[str | BookingStaffRole] = Field(alias="role",default=None,)
+	timeZone: Optional[str] = Field(alias="timeZone",default=None,)
+	useBusinessHours: Optional[bool] = Field(alias="useBusinessHours",default=None,)
+	workingHours: Optional[list[BookingWorkHours]] = Field(alias="workingHours",default=None,)
 
 from .booking_staff_membership_status import BookingStaffMembershipStatus
 from .booking_staff_role import BookingStaffRole

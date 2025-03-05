@@ -4,17 +4,17 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class IdentityGovernanceTopWorkflowsInsightsSummary(BaseModel):
-	failedRuns: Optional[int] = Field(default=None,alias="failedRuns",)
-	failedUsers: Optional[int] = Field(default=None,alias="failedUsers",)
-	successfulRuns: Optional[int] = Field(default=None,alias="successfulRuns",)
-	successfulUsers: Optional[int] = Field(default=None,alias="successfulUsers",)
-	totalRuns: Optional[int] = Field(default=None,alias="totalRuns",)
-	totalUsers: Optional[int] = Field(default=None,alias="totalUsers",)
-	workflowCategory: Optional[IdentityGovernanceLifecycleWorkflowCategory] = Field(default=None,alias="workflowCategory",)
-	workflowDisplayName: Optional[str] = Field(default=None,alias="workflowDisplayName",)
-	workflowId: Optional[str] = Field(default=None,alias="workflowId",)
-	workflowVersion: Optional[int] = Field(default=None,alias="workflowVersion",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
+	failedRuns: Optional[int] = Field(alias="failedRuns",default=None,)
+	failedUsers: Optional[int] = Field(alias="failedUsers",default=None,)
+	successfulRuns: Optional[int] = Field(alias="successfulRuns",default=None,)
+	successfulUsers: Optional[int] = Field(alias="successfulUsers",default=None,)
+	totalRuns: Optional[int] = Field(alias="totalRuns",default=None,)
+	totalUsers: Optional[int] = Field(alias="totalUsers",default=None,)
+	workflowCategory: Optional[str | IdentityGovernanceLifecycleWorkflowCategory] = Field(alias="workflowCategory",default=None,)
+	workflowDisplayName: Optional[str] = Field(alias="workflowDisplayName",default=None,)
+	workflowId: Optional[str] = Field(alias="workflowId",default=None,)
+	workflowVersion: Optional[int] = Field(alias="workflowVersion",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 
 from .identity_governance_lifecycle_workflow_category import IdentityGovernanceLifecycleWorkflowCategory
 

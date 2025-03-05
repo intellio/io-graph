@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class SecurityContentFormat(Enum):
+class SecurityContentFormat(StrEnum):
 	text = "text"
 	html = "html"
 	markdown = "markdown"

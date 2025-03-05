@@ -4,9 +4,9 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class DelegatedAdminAccessContainer(BaseModel):
-	accessContainerId: Optional[str] = Field(default=None,alias="accessContainerId",)
-	accessContainerType: Optional[DelegatedAdminAccessContainerType] = Field(default=None,alias="accessContainerType",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
+	accessContainerId: Optional[str] = Field(alias="accessContainerId",default=None,)
+	accessContainerType: Optional[str | DelegatedAdminAccessContainerType] = Field(alias="accessContainerType",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 
 from .delegated_admin_access_container_type import DelegatedAdminAccessContainerType
 

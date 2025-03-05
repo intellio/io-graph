@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class ChatMessageActions(Enum):
+class ChatMessageActions(StrEnum):
 	reactionAdded = "reactionAdded"
 	reactionRemoved = "reactionRemoved"
 	actionUndefined = "actionUndefined"

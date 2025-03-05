@@ -4,15 +4,15 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetails(BaseModel):
-	id: Optional[str] = Field(default=None,alias="id",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	appCrashCount: Optional[int] = Field(default=None,alias="appCrashCount",)
-	appDisplayName: Optional[str] = Field(default=None,alias="appDisplayName",)
-	appName: Optional[str] = Field(default=None,alias="appName",)
-	appPublisher: Optional[str] = Field(default=None,alias="appPublisher",)
-	appVersion: Optional[str] = Field(default=None,alias="appVersion",)
-	deviceCountWithCrashes: Optional[int] = Field(default=None,alias="deviceCountWithCrashes",)
-	isLatestUsedVersion: Optional[bool] = Field(default=None,alias="isLatestUsedVersion",)
-	isMostUsedVersion: Optional[bool] = Field(default=None,alias="isMostUsedVersion",)
+	id: Optional[str] = Field(alias="id",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	appCrashCount: Optional[int] = Field(alias="appCrashCount",default=None,)
+	appDisplayName: Optional[str] = Field(alias="appDisplayName",default=None,)
+	appName: Optional[str] = Field(alias="appName",default=None,)
+	appPublisher: Optional[str] = Field(alias="appPublisher",default=None,)
+	appVersion: Optional[str] = Field(alias="appVersion",default=None,)
+	deviceCountWithCrashes: Optional[int] = Field(alias="deviceCountWithCrashes",default=None,)
+	isLatestUsedVersion: Optional[bool] = Field(alias="isLatestUsedVersion",default=None,)
+	isMostUsedVersion: Optional[bool] = Field(alias="isMostUsedVersion",default=None,)
 
 

@@ -4,7 +4,7 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class Mark_chat_read_for_userPostRequest(BaseModel):
-	user: Optional[TeamworkUserIdentity] = Field(default=None,alias="user",)
+	user: Optional[TeamworkUserIdentity] = Field(alias="user",default=None,)
 
 from .teamwork_user_identity import TeamworkUserIdentity
 

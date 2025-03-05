@@ -4,11 +4,11 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class BookingsAvailabilityWindow(BaseModel):
-	availabilityType: Optional[BookingsServiceAvailabilityType] = Field(default=None,alias="availabilityType",)
-	businessHours: Optional[list[BookingWorkHours]] = Field(default=None,alias="businessHours",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	endDate: Optional[str] = Field(default=None,alias="endDate",)
-	startDate: Optional[str] = Field(default=None,alias="startDate",)
+	availabilityType: Optional[str | BookingsServiceAvailabilityType] = Field(alias="availabilityType",default=None,)
+	businessHours: Optional[list[BookingWorkHours]] = Field(alias="businessHours",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	endDate: Optional[str] = Field(alias="endDate",default=None,)
+	startDate: Optional[str] = Field(alias="startDate",default=None,)
 
 from .bookings_service_availability_type import BookingsServiceAvailabilityType
 from .booking_work_hours import BookingWorkHours

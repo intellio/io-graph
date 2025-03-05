@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class ObjectFlowTypes(Enum):
+class ObjectFlowTypes(StrEnum):
 	None_ = "None_"
 	Add = "Add"
 	Update = "Update"

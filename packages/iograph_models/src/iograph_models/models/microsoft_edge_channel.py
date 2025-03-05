@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class MicrosoftEdgeChannel(Enum):
+class MicrosoftEdgeChannel(StrEnum):
 	dev = "dev"
 	beta = "beta"
 	stable = "stable"

@@ -6,17 +6,17 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class PrinterBase(BaseModel):
-	id: Optional[str] = Field(default=None,alias="id",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	capabilities: Optional[PrinterCapabilities] = Field(default=None,alias="capabilities",)
-	defaults: Optional[PrinterDefaults] = Field(default=None,alias="defaults",)
-	displayName: Optional[str] = Field(default=None,alias="displayName",)
-	isAcceptingJobs: Optional[bool] = Field(default=None,alias="isAcceptingJobs",)
-	location: Optional[PrinterLocation] = Field(default=None,alias="location",)
-	manufacturer: Optional[str] = Field(default=None,alias="manufacturer",)
-	model: Optional[str] = Field(default=None,alias="model",)
-	status: Optional[PrinterStatus] = Field(default=None,alias="status",)
-	jobs: Optional[list[PrintJob]] = Field(default=None,alias="jobs",)
+	id: Optional[str] = Field(alias="id",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	capabilities: Optional[PrinterCapabilities] = Field(alias="capabilities",default=None,)
+	defaults: Optional[PrinterDefaults] = Field(alias="defaults",default=None,)
+	displayName: Optional[str] = Field(alias="displayName",default=None,)
+	isAcceptingJobs: Optional[bool] = Field(alias="isAcceptingJobs",default=None,)
+	location: Optional[PrinterLocation] = Field(alias="location",default=None,)
+	manufacturer: Optional[str] = Field(alias="manufacturer",default=None,)
+	model: Optional[str] = Field(alias="model",default=None,)
+	status: Optional[PrinterStatus] = Field(alias="status",default=None,)
+	jobs: Optional[list[PrintJob]] = Field(alias="jobs",default=None,)
 
 	@model_validator(mode="wrap")
 	def convert_discriminator_class(cls, data: Any, handler: ModelWrapValidatorHandler[Self]) -> Self:

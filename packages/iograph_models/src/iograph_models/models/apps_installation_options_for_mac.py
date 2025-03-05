@@ -4,8 +4,8 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class AppsInstallationOptionsForMac(BaseModel):
-	isMicrosoft365AppsEnabled: Optional[bool] = Field(default=None,alias="isMicrosoft365AppsEnabled",)
-	isSkypeForBusinessEnabled: Optional[bool] = Field(default=None,alias="isSkypeForBusinessEnabled",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
+	isMicrosoft365AppsEnabled: Optional[bool] = Field(alias="isMicrosoft365AppsEnabled",default=None,)
+	isSkypeForBusinessEnabled: Optional[bool] = Field(alias="isSkypeForBusinessEnabled",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 
 

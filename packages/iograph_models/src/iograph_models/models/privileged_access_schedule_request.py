@@ -7,19 +7,19 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class PrivilegedAccessScheduleRequest(BaseModel):
-	id: Optional[str] = Field(default=None,alias="id",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	approvalId: Optional[str] = Field(default=None,alias="approvalId",)
-	completedDateTime: Optional[datetime] = Field(default=None,alias="completedDateTime",)
-	createdBy: SerializeAsAny[Optional[IdentitySet]] = Field(default=None,alias="createdBy",)
-	createdDateTime: Optional[datetime] = Field(default=None,alias="createdDateTime",)
-	customData: Optional[str] = Field(default=None,alias="customData",)
-	status: Optional[str] = Field(default=None,alias="status",)
-	action: Optional[ScheduleRequestActions] = Field(default=None,alias="action",)
-	isValidationOnly: Optional[bool] = Field(default=None,alias="isValidationOnly",)
-	justification: Optional[str] = Field(default=None,alias="justification",)
-	scheduleInfo: Optional[RequestSchedule] = Field(default=None,alias="scheduleInfo",)
-	ticketInfo: Optional[TicketInfo] = Field(default=None,alias="ticketInfo",)
+	id: Optional[str] = Field(alias="id",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	approvalId: Optional[str] = Field(alias="approvalId",default=None,)
+	completedDateTime: Optional[datetime] = Field(alias="completedDateTime",default=None,)
+	createdBy: SerializeAsAny[Optional[IdentitySet]] = Field(alias="createdBy",default=None,)
+	createdDateTime: Optional[datetime] = Field(alias="createdDateTime",default=None,)
+	customData: Optional[str] = Field(alias="customData",default=None,)
+	status: Optional[str] = Field(alias="status",default=None,)
+	action: Optional[str | ScheduleRequestActions] = Field(alias="action",default=None,)
+	isValidationOnly: Optional[bool] = Field(alias="isValidationOnly",default=None,)
+	justification: Optional[str] = Field(alias="justification",default=None,)
+	scheduleInfo: Optional[RequestSchedule] = Field(alias="scheduleInfo",default=None,)
+	ticketInfo: Optional[TicketInfo] = Field(alias="ticketInfo",default=None,)
 
 	@model_validator(mode="wrap")
 	def convert_discriminator_class(cls, data: Any, handler: ModelWrapValidatorHandler[Self]) -> Self:

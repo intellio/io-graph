@@ -4,8 +4,8 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class Average_ifPostRequest(BaseModel):
-	range: Optional[str] = Field(default=None,alias="range",)
-	criteria: Optional[str] = Field(default=None,alias="criteria",)
-	averageRange: Optional[str] = Field(default=None,alias="averageRange",)
+	range: Optional[str] = Field(alias="range",default=None,)
+	criteria: Optional[str] = Field(alias="criteria",default=None,)
+	averageRange: Optional[str] = Field(alias="averageRange",default=None,)
 
 

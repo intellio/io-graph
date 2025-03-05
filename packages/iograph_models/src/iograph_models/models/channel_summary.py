@@ -4,10 +4,10 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class ChannelSummary(BaseModel):
-	guestsCount: Optional[int] = Field(default=None,alias="guestsCount",)
-	hasMembersFromOtherTenants: Optional[bool] = Field(default=None,alias="hasMembersFromOtherTenants",)
-	membersCount: Optional[int] = Field(default=None,alias="membersCount",)
-	ownersCount: Optional[int] = Field(default=None,alias="ownersCount",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
+	guestsCount: Optional[int] = Field(alias="guestsCount",default=None,)
+	hasMembersFromOtherTenants: Optional[bool] = Field(alias="hasMembersFromOtherTenants",default=None,)
+	membersCount: Optional[int] = Field(alias="membersCount",default=None,)
+	ownersCount: Optional[int] = Field(alias="ownersCount",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 
 

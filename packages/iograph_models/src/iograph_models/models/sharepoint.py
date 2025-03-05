@@ -4,9 +4,9 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class Sharepoint(BaseModel):
-	id: Optional[str] = Field(default=None,alias="id",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	settings: Optional[SharepointSettings] = Field(default=None,alias="settings",)
+	id: Optional[str] = Field(alias="id",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	settings: Optional[SharepointSettings] = Field(alias="settings",default=None,)
 
 from .sharepoint_settings import SharepointSettings
 

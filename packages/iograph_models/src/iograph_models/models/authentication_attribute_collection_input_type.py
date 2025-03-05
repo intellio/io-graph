@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class AuthenticationAttributeCollectionInputType(Enum):
+class AuthenticationAttributeCollectionInputType(StrEnum):
 	text = "text"
 	radioSingleSelect = "radioSingleSelect"
 	checkboxMultiSelect = "checkboxMultiSelect"

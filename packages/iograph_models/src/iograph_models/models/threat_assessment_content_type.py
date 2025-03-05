@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class ThreatAssessmentContentType(Enum):
+class ThreatAssessmentContentType(StrEnum):
 	mail = "mail"
 	url = "url"
 	file = "file"

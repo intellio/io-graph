@@ -4,12 +4,12 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class Get_cached_reportPostRequest(BaseModel):
-	id: Optional[str] = Field(default=None,alias="id",)
-	select: Optional[list[str]] = Field(default=None,alias="select",)
-	groupBy: Optional[list[str]] = Field(default=None,alias="groupBy",)
-	orderBy: Optional[list[str]] = Field(default=None,alias="orderBy",)
-	search: Optional[str] = Field(default=None,alias="search",)
-	skip: Optional[int] = Field(default=None,alias="skip",)
-	top: Optional[int] = Field(default=None,alias="top",)
+	id: Optional[str] = Field(alias="id",default=None,)
+	select: Optional[list[str]] = Field(alias="select",default=None,)
+	groupBy: Optional[list[str]] = Field(alias="groupBy",default=None,)
+	orderBy: Optional[list[str]] = Field(alias="orderBy",default=None,)
+	search: Optional[str] = Field(alias="search",default=None,)
+	skip: Optional[int] = Field(alias="skip",default=None,)
+	top: Optional[int] = Field(alias="top",default=None,)
 
 

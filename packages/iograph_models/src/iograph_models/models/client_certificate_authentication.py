@@ -4,8 +4,8 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class ClientCertificateAuthentication(BaseModel):
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	certificateList: Optional[list[Pkcs12CertificateInformation]] = Field(default=None,alias="certificateList",)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	certificateList: Optional[list[Pkcs12CertificateInformation]] = Field(alias="certificateList",default=None,)
 
 from .pkcs12_certificate_information import Pkcs12CertificateInformation
 

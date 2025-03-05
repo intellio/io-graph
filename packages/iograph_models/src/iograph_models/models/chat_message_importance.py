@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class ChatMessageImportance(Enum):
+class ChatMessageImportance(StrEnum):
 	normal = "normal"
 	high = "high"
 	urgent = "urgent"

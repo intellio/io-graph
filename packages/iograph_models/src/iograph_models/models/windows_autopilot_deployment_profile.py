@@ -5,21 +5,21 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class WindowsAutopilotDeploymentProfile(BaseModel):
-	id: Optional[str] = Field(default=None,alias="id",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	createdDateTime: Optional[datetime] = Field(default=None,alias="createdDateTime",)
-	description: Optional[str] = Field(default=None,alias="description",)
-	deviceNameTemplate: Optional[str] = Field(default=None,alias="deviceNameTemplate",)
-	deviceType: Optional[WindowsAutopilotDeviceType] = Field(default=None,alias="deviceType",)
-	displayName: Optional[str] = Field(default=None,alias="displayName",)
-	hardwareHashExtractionEnabled: Optional[bool] = Field(default=None,alias="hardwareHashExtractionEnabled",)
-	lastModifiedDateTime: Optional[datetime] = Field(default=None,alias="lastModifiedDateTime",)
-	locale: Optional[str] = Field(default=None,alias="locale",)
-	managementServiceAppId: Optional[str] = Field(default=None,alias="managementServiceAppId",)
-	outOfBoxExperienceSetting: Optional[OutOfBoxExperienceSetting] = Field(default=None,alias="outOfBoxExperienceSetting",)
-	preprovisioningAllowed: Optional[bool] = Field(default=None,alias="preprovisioningAllowed",)
-	roleScopeTagIds: Optional[list[str]] = Field(default=None,alias="roleScopeTagIds",)
-	assignedDevices: Optional[list[WindowsAutopilotDeviceIdentity]] = Field(default=None,alias="assignedDevices",)
+	id: Optional[str] = Field(alias="id",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	createdDateTime: Optional[datetime] = Field(alias="createdDateTime",default=None,)
+	description: Optional[str] = Field(alias="description",default=None,)
+	deviceNameTemplate: Optional[str] = Field(alias="deviceNameTemplate",default=None,)
+	deviceType: Optional[str | WindowsAutopilotDeviceType] = Field(alias="deviceType",default=None,)
+	displayName: Optional[str] = Field(alias="displayName",default=None,)
+	hardwareHashExtractionEnabled: Optional[bool] = Field(alias="hardwareHashExtractionEnabled",default=None,)
+	lastModifiedDateTime: Optional[datetime] = Field(alias="lastModifiedDateTime",default=None,)
+	locale: Optional[str] = Field(alias="locale",default=None,)
+	managementServiceAppId: Optional[str] = Field(alias="managementServiceAppId",default=None,)
+	outOfBoxExperienceSetting: Optional[OutOfBoxExperienceSetting] = Field(alias="outOfBoxExperienceSetting",default=None,)
+	preprovisioningAllowed: Optional[bool] = Field(alias="preprovisioningAllowed",default=None,)
+	roleScopeTagIds: Optional[list[str]] = Field(alias="roleScopeTagIds",default=None,)
+	assignedDevices: Optional[list[WindowsAutopilotDeviceIdentity]] = Field(alias="assignedDevices",default=None,)
 
 from .windows_autopilot_device_type import WindowsAutopilotDeviceType
 from .out_of_box_experience_setting import OutOfBoxExperienceSetting

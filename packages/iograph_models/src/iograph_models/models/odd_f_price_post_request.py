@@ -4,14 +4,14 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class Odd_f_pricePostRequest(BaseModel):
-	settlement: Optional[str] = Field(default=None,alias="settlement",)
-	maturity: Optional[str] = Field(default=None,alias="maturity",)
-	issue: Optional[str] = Field(default=None,alias="issue",)
-	firstCoupon: Optional[str] = Field(default=None,alias="firstCoupon",)
-	rate: Optional[str] = Field(default=None,alias="rate",)
-	yld: Optional[str] = Field(default=None,alias="yld",)
-	redemption: Optional[str] = Field(default=None,alias="redemption",)
-	frequency: Optional[str] = Field(default=None,alias="frequency",)
-	basis: Optional[str] = Field(default=None,alias="basis",)
+	settlement: Optional[str] = Field(alias="settlement",default=None,)
+	maturity: Optional[str] = Field(alias="maturity",default=None,)
+	issue: Optional[str] = Field(alias="issue",default=None,)
+	firstCoupon: Optional[str] = Field(alias="firstCoupon",default=None,)
+	rate: Optional[str] = Field(alias="rate",default=None,)
+	yld: Optional[str] = Field(alias="yld",default=None,)
+	redemption: Optional[str] = Field(alias="redemption",default=None,)
+	frequency: Optional[str] = Field(alias="frequency",default=None,)
+	basis: Optional[str] = Field(alias="basis",default=None,)
 
 

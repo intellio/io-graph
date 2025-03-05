@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class SecurityEvidenceRemediationStatus(Enum):
+class SecurityEvidenceRemediationStatus(StrEnum):
 	none = "none"
 	remediated = "remediated"
 	prevented = "prevented"

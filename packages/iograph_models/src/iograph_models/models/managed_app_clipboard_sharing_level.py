@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class ManagedAppClipboardSharingLevel(Enum):
+class ManagedAppClipboardSharingLevel(StrEnum):
 	allApps = "allApps"
 	managedAppsWithPasteIn = "managedAppsWithPasteIn"
 	managedApps = "managedApps"

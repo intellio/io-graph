@@ -5,18 +5,18 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class SecuritySensor(BaseModel):
-	id: Optional[str] = Field(default=None,alias="id",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	createdDateTime: Optional[datetime] = Field(default=None,alias="createdDateTime",)
-	deploymentStatus: Optional[SecurityDeploymentStatus] = Field(default=None,alias="deploymentStatus",)
-	displayName: Optional[str] = Field(default=None,alias="displayName",)
-	domainName: Optional[str] = Field(default=None,alias="domainName",)
-	healthStatus: Optional[SecuritySensorHealthStatus] = Field(default=None,alias="healthStatus",)
-	openHealthIssuesCount: Optional[int] = Field(default=None,alias="openHealthIssuesCount",)
-	sensorType: Optional[SecuritySensorType] = Field(default=None,alias="sensorType",)
-	settings: Optional[SecuritySensorSettings] = Field(default=None,alias="settings",)
-	version: Optional[str] = Field(default=None,alias="version",)
-	healthIssues: Optional[list[SecurityHealthIssue]] = Field(default=None,alias="healthIssues",)
+	id: Optional[str] = Field(alias="id",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	createdDateTime: Optional[datetime] = Field(alias="createdDateTime",default=None,)
+	deploymentStatus: Optional[str | SecurityDeploymentStatus] = Field(alias="deploymentStatus",default=None,)
+	displayName: Optional[str] = Field(alias="displayName",default=None,)
+	domainName: Optional[str] = Field(alias="domainName",default=None,)
+	healthStatus: Optional[str | SecuritySensorHealthStatus] = Field(alias="healthStatus",default=None,)
+	openHealthIssuesCount: Optional[int] = Field(alias="openHealthIssuesCount",default=None,)
+	sensorType: Optional[str | SecuritySensorType] = Field(alias="sensorType",default=None,)
+	settings: Optional[SecuritySensorSettings] = Field(alias="settings",default=None,)
+	version: Optional[str] = Field(alias="version",default=None,)
+	healthIssues: Optional[list[SecurityHealthIssue]] = Field(alias="healthIssues",default=None,)
 
 from .security_deployment_status import SecurityDeploymentStatus
 from .security_sensor_health_status import SecuritySensorHealthStatus

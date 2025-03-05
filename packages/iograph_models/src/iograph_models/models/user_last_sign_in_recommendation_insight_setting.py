@@ -4,9 +4,9 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class UserLastSignInRecommendationInsightSetting(BaseModel):
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	recommendationLookBackDuration: Optional[str] = Field(default=None,alias="recommendationLookBackDuration",)
-	signInScope: Optional[UserSignInRecommendationScope] = Field(default=None,alias="signInScope",)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	recommendationLookBackDuration: Optional[str] = Field(alias="recommendationLookBackDuration",default=None,)
+	signInScope: Optional[str | UserSignInRecommendationScope] = Field(alias="signInScope",default=None,)
 
 from .user_sign_in_recommendation_scope import UserSignInRecommendationScope
 

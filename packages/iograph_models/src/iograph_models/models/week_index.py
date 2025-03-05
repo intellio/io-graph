@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class WeekIndex(Enum):
+class WeekIndex(StrEnum):
 	first = "first"
 	second = "second"
 	third = "third"

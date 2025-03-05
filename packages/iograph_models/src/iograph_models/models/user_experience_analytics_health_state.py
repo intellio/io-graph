@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class UserExperienceAnalyticsHealthState(Enum):
+class UserExperienceAnalyticsHealthState(StrEnum):
 	unknown = "unknown"
 	insufficientData = "insufficientData"
 	needsAttention = "needsAttention"

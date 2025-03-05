@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class TrainingType(Enum):
+class TrainingType(StrEnum):
 	unknown = "unknown"
 	phishing = "phishing"
 	unknownFutureValue = "unknownFutureValue"

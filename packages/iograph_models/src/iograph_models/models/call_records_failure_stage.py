@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class CallRecordsFailureStage(Enum):
+class CallRecordsFailureStage(StrEnum):
 	unknown = "unknown"
 	callSetup = "callSetup"
 	midcall = "midcall"

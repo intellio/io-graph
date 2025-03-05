@@ -5,19 +5,19 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class IosUpdateDeviceStatus(BaseModel):
-	id: Optional[str] = Field(default=None,alias="id",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	complianceGracePeriodExpirationDateTime: Optional[datetime] = Field(default=None,alias="complianceGracePeriodExpirationDateTime",)
-	deviceDisplayName: Optional[str] = Field(default=None,alias="deviceDisplayName",)
-	deviceId: Optional[str] = Field(default=None,alias="deviceId",)
-	deviceModel: Optional[str] = Field(default=None,alias="deviceModel",)
-	installStatus: Optional[IosUpdatesInstallStatus] = Field(default=None,alias="installStatus",)
-	lastReportedDateTime: Optional[datetime] = Field(default=None,alias="lastReportedDateTime",)
-	osVersion: Optional[str] = Field(default=None,alias="osVersion",)
-	status: Optional[ComplianceStatus] = Field(default=None,alias="status",)
-	userId: Optional[str] = Field(default=None,alias="userId",)
-	userName: Optional[str] = Field(default=None,alias="userName",)
-	userPrincipalName: Optional[str] = Field(default=None,alias="userPrincipalName",)
+	id: Optional[str] = Field(alias="id",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	complianceGracePeriodExpirationDateTime: Optional[datetime] = Field(alias="complianceGracePeriodExpirationDateTime",default=None,)
+	deviceDisplayName: Optional[str] = Field(alias="deviceDisplayName",default=None,)
+	deviceId: Optional[str] = Field(alias="deviceId",default=None,)
+	deviceModel: Optional[str] = Field(alias="deviceModel",default=None,)
+	installStatus: Optional[str | IosUpdatesInstallStatus] = Field(alias="installStatus",default=None,)
+	lastReportedDateTime: Optional[datetime] = Field(alias="lastReportedDateTime",default=None,)
+	osVersion: Optional[str] = Field(alias="osVersion",default=None,)
+	status: Optional[str | ComplianceStatus] = Field(alias="status",default=None,)
+	userId: Optional[str] = Field(alias="userId",default=None,)
+	userName: Optional[str] = Field(alias="userName",default=None,)
+	userPrincipalName: Optional[str] = Field(alias="userPrincipalName",default=None,)
 
 from .ios_updates_install_status import IosUpdatesInstallStatus
 from .compliance_status import ComplianceStatus

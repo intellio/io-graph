@@ -5,7 +5,7 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class PendingContentUpdate(BaseModel):
-	queuedDateTime: Optional[datetime] = Field(default=None,alias="queuedDateTime",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
+	queuedDateTime: Optional[datetime] = Field(alias="queuedDateTime",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 
 

@@ -4,10 +4,10 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class AggregationOption(BaseModel):
-	bucketDefinition: Optional[BucketAggregationDefinition] = Field(default=None,alias="bucketDefinition",)
-	field: Optional[str] = Field(default=None,alias="field",)
-	size: Optional[int] = Field(default=None,alias="size",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
+	bucketDefinition: Optional[BucketAggregationDefinition] = Field(alias="bucketDefinition",default=None,)
+	field: Optional[str] = Field(alias="field",default=None,)
+	size: Optional[int] = Field(alias="size",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 
 from .bucket_aggregation_definition import BucketAggregationDefinition
 

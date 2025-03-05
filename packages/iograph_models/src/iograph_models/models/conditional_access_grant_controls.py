@@ -4,12 +4,12 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class ConditionalAccessGrantControls(BaseModel):
-	builtInControls: Optional[list[ConditionalAccessGrantControl]] = Field(default=None,alias="builtInControls",)
-	customAuthenticationFactors: Optional[list[str]] = Field(default=None,alias="customAuthenticationFactors",)
-	operator: Optional[str] = Field(default=None,alias="operator",)
-	termsOfUse: Optional[list[str]] = Field(default=None,alias="termsOfUse",)
-	authenticationStrength: Optional[AuthenticationStrengthPolicy] = Field(default=None,alias="authenticationStrength",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
+	builtInControls: Optional[list[str | ConditionalAccessGrantControl]] = Field(alias="builtInControls",default=None,)
+	customAuthenticationFactors: Optional[list[str]] = Field(alias="customAuthenticationFactors",default=None,)
+	operator: Optional[str] = Field(alias="operator",default=None,)
+	termsOfUse: Optional[list[str]] = Field(alias="termsOfUse",default=None,)
+	authenticationStrength: Optional[AuthenticationStrengthPolicy] = Field(alias="authenticationStrength",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 
 from .conditional_access_grant_control import ConditionalAccessGrantControl
 from .authentication_strength_policy import AuthenticationStrengthPolicy

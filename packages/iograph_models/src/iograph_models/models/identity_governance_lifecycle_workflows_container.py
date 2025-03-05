@@ -4,15 +4,15 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class IdentityGovernanceLifecycleWorkflowsContainer(BaseModel):
-	id: Optional[str] = Field(default=None,alias="id",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	customTaskExtensions: Optional[list[IdentityGovernanceCustomTaskExtension]] = Field(default=None,alias="customTaskExtensions",)
-	deletedItems: Optional[DeletedItemContainer] = Field(default=None,alias="deletedItems",)
-	insights: Optional[IdentityGovernanceInsights] = Field(default=None,alias="insights",)
-	settings: Optional[IdentityGovernanceLifecycleManagementSettings] = Field(default=None,alias="settings",)
-	taskDefinitions: Optional[list[IdentityGovernanceTaskDefinition]] = Field(default=None,alias="taskDefinitions",)
-	workflows: Optional[list[IdentityGovernanceWorkflow]] = Field(default=None,alias="workflows",)
-	workflowTemplates: Optional[list[IdentityGovernanceWorkflowTemplate]] = Field(default=None,alias="workflowTemplates",)
+	id: Optional[str] = Field(alias="id",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	customTaskExtensions: Optional[list[IdentityGovernanceCustomTaskExtension]] = Field(alias="customTaskExtensions",default=None,)
+	deletedItems: Optional[DeletedItemContainer] = Field(alias="deletedItems",default=None,)
+	insights: Optional[IdentityGovernanceInsights] = Field(alias="insights",default=None,)
+	settings: Optional[IdentityGovernanceLifecycleManagementSettings] = Field(alias="settings",default=None,)
+	taskDefinitions: Optional[list[IdentityGovernanceTaskDefinition]] = Field(alias="taskDefinitions",default=None,)
+	workflows: Optional[list[IdentityGovernanceWorkflow]] = Field(alias="workflows",default=None,)
+	workflowTemplates: Optional[list[IdentityGovernanceWorkflowTemplate]] = Field(alias="workflowTemplates",default=None,)
 
 from .identity_governance_custom_task_extension import IdentityGovernanceCustomTaskExtension
 from .deleted_item_container import DeletedItemContainer

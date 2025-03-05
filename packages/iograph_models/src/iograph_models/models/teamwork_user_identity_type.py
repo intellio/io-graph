@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class TeamworkUserIdentityType(Enum):
+class TeamworkUserIdentityType(StrEnum):
 	aadUser = "aadUser"
 	onPremiseAadUser = "onPremiseAadUser"
 	anonymousGuest = "anonymousGuest"

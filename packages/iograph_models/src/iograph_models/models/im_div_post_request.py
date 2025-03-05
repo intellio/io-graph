@@ -4,7 +4,7 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class Im_divPostRequest(BaseModel):
-	inumber1: Optional[str] = Field(default=None,alias="inumber1",)
-	inumber2: Optional[str] = Field(default=None,alias="inumber2",)
+	inumber1: Optional[str] = Field(alias="inumber1",default=None,)
+	inumber2: Optional[str] = Field(alias="inumber2",default=None,)
 
 

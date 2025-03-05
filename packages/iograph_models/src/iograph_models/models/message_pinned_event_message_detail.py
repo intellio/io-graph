@@ -5,9 +5,9 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class MessagePinnedEventMessageDetail(BaseModel):
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	eventDateTime: Optional[datetime] = Field(default=None,alias="eventDateTime",)
-	initiator: SerializeAsAny[Optional[IdentitySet]] = Field(default=None,alias="initiator",)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	eventDateTime: Optional[datetime] = Field(alias="eventDateTime",default=None,)
+	initiator: SerializeAsAny[Optional[IdentitySet]] = Field(alias="initiator",default=None,)
 
 from .identity_set import IdentitySet
 

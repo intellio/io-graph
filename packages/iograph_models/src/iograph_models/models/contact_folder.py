@@ -4,14 +4,14 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class ContactFolder(BaseModel):
-	id: Optional[str] = Field(default=None,alias="id",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	displayName: Optional[str] = Field(default=None,alias="displayName",)
-	parentFolderId: Optional[str] = Field(default=None,alias="parentFolderId",)
-	childFolders: Optional[list[ContactFolder]] = Field(default=None,alias="childFolders",)
-	contacts: Optional[list[Contact]] = Field(default=None,alias="contacts",)
-	multiValueExtendedProperties: Optional[list[MultiValueLegacyExtendedProperty]] = Field(default=None,alias="multiValueExtendedProperties",)
-	singleValueExtendedProperties: Optional[list[SingleValueLegacyExtendedProperty]] = Field(default=None,alias="singleValueExtendedProperties",)
+	id: Optional[str] = Field(alias="id",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	displayName: Optional[str] = Field(alias="displayName",default=None,)
+	parentFolderId: Optional[str] = Field(alias="parentFolderId",default=None,)
+	childFolders: Optional[list[ContactFolder]] = Field(alias="childFolders",default=None,)
+	contacts: Optional[list[Contact]] = Field(alias="contacts",default=None,)
+	multiValueExtendedProperties: Optional[list[MultiValueLegacyExtendedProperty]] = Field(alias="multiValueExtendedProperties",default=None,)
+	singleValueExtendedProperties: Optional[list[SingleValueLegacyExtendedProperty]] = Field(alias="singleValueExtendedProperties",default=None,)
 
 from .contact import Contact
 from .multi_value_legacy_extended_property import MultiValueLegacyExtendedProperty

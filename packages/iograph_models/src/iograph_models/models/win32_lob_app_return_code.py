@@ -4,9 +4,9 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class Win32LobAppReturnCode(BaseModel):
-	returnCode: Optional[int] = Field(default=None,alias="returnCode",)
-	type: Optional[Win32LobAppReturnCodeType] = Field(default=None,alias="type",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
+	returnCode: Optional[int] = Field(alias="returnCode",default=None,)
+	type: Optional[str | Win32LobAppReturnCodeType] = Field(alias="type",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 
 from .win32_lob_app_return_code_type import Win32LobAppReturnCodeType
 

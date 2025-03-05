@@ -4,10 +4,10 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class Accr_int_mPostRequest(BaseModel):
-	issue: Optional[str] = Field(default=None,alias="issue",)
-	settlement: Optional[str] = Field(default=None,alias="settlement",)
-	rate: Optional[str] = Field(default=None,alias="rate",)
-	par: Optional[str] = Field(default=None,alias="par",)
-	basis: Optional[str] = Field(default=None,alias="basis",)
+	issue: Optional[str] = Field(alias="issue",default=None,)
+	settlement: Optional[str] = Field(alias="settlement",default=None,)
+	rate: Optional[str] = Field(alias="rate",default=None,)
+	par: Optional[str] = Field(alias="par",default=None,)
+	basis: Optional[str] = Field(alias="basis",default=None,)
 
 

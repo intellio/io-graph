@@ -5,14 +5,14 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class BrowserSiteHistory(BaseModel):
-	allowRedirect: Optional[bool] = Field(default=None,alias="allowRedirect",)
-	comment: Optional[str] = Field(default=None,alias="comment",)
-	compatibilityMode: Optional[BrowserSiteCompatibilityMode] = Field(default=None,alias="compatibilityMode",)
-	lastModifiedBy: SerializeAsAny[Optional[IdentitySet]] = Field(default=None,alias="lastModifiedBy",)
-	mergeType: Optional[BrowserSiteMergeType] = Field(default=None,alias="mergeType",)
-	publishedDateTime: Optional[datetime] = Field(default=None,alias="publishedDateTime",)
-	targetEnvironment: Optional[BrowserSiteTargetEnvironment] = Field(default=None,alias="targetEnvironment",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
+	allowRedirect: Optional[bool] = Field(alias="allowRedirect",default=None,)
+	comment: Optional[str] = Field(alias="comment",default=None,)
+	compatibilityMode: Optional[str | BrowserSiteCompatibilityMode] = Field(alias="compatibilityMode",default=None,)
+	lastModifiedBy: SerializeAsAny[Optional[IdentitySet]] = Field(alias="lastModifiedBy",default=None,)
+	mergeType: Optional[str | BrowserSiteMergeType] = Field(alias="mergeType",default=None,)
+	publishedDateTime: Optional[datetime] = Field(alias="publishedDateTime",default=None,)
+	targetEnvironment: Optional[str | BrowserSiteTargetEnvironment] = Field(alias="targetEnvironment",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 
 from .browser_site_compatibility_mode import BrowserSiteCompatibilityMode
 from .identity_set import IdentitySet

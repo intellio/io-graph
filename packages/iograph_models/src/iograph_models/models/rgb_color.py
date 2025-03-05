@@ -4,9 +4,9 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class RgbColor(BaseModel):
-	b: Optional[int] = Field(default=None,alias="b",)
-	g: Optional[int] = Field(default=None,alias="g",)
-	r: Optional[int] = Field(default=None,alias="r",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
+	b: Optional[int] = Field(alias="b",default=None,)
+	g: Optional[int] = Field(alias="g",default=None,)
+	r: Optional[int] = Field(alias="r",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 
 

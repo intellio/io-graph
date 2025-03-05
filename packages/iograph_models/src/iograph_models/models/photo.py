@@ -5,16 +5,16 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class Photo(BaseModel):
-	cameraMake: Optional[str] = Field(default=None,alias="cameraMake",)
-	cameraModel: Optional[str] = Field(default=None,alias="cameraModel",)
+	cameraMake: Optional[str] = Field(alias="cameraMake",default=None,)
+	cameraModel: Optional[str] = Field(alias="cameraModel",default=None,)
 	exposureDenominator: float | str | ReferenceNumeric
 	exposureNumerator: float | str | ReferenceNumeric
 	fNumber: float | str | ReferenceNumeric
 	focalLength: float | str | ReferenceNumeric
-	iso: Optional[int] = Field(default=None,alias="iso",)
-	orientation: Optional[int] = Field(default=None,alias="orientation",)
-	takenDateTime: Optional[datetime] = Field(default=None,alias="takenDateTime",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
+	iso: Optional[int] = Field(alias="iso",default=None,)
+	orientation: Optional[int] = Field(alias="orientation",default=None,)
+	takenDateTime: Optional[datetime] = Field(alias="takenDateTime",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 
 from .reference_numeric import ReferenceNumeric
 from .reference_numeric import ReferenceNumeric

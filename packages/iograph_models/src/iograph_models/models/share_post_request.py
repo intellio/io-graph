@@ -5,8 +5,8 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class SharePostRequest(BaseModel):
-	notifyTeam: Optional[bool] = Field(default=None,alias="notifyTeam",)
-	startDateTime: Optional[datetime] = Field(default=None,alias="startDateTime",)
-	endDateTime: Optional[datetime] = Field(default=None,alias="endDateTime",)
+	notifyTeam: Optional[bool] = Field(alias="notifyTeam",default=None,)
+	startDateTime: Optional[datetime] = Field(alias="startDateTime",default=None,)
+	endDateTime: Optional[datetime] = Field(alias="endDateTime",default=None,)
 
 

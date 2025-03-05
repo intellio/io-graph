@@ -5,16 +5,16 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class TermStoreTerm(BaseModel):
-	id: Optional[str] = Field(default=None,alias="id",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	createdDateTime: Optional[datetime] = Field(default=None,alias="createdDateTime",)
-	descriptions: Optional[list[TermStoreLocalizedDescription]] = Field(default=None,alias="descriptions",)
-	labels: Optional[list[TermStoreLocalizedLabel]] = Field(default=None,alias="labels",)
-	lastModifiedDateTime: Optional[datetime] = Field(default=None,alias="lastModifiedDateTime",)
-	properties: Optional[list[KeyValue]] = Field(default=None,alias="properties",)
-	children: Optional[list[TermStoreTerm]] = Field(default=None,alias="children",)
-	relations: Optional[list[TermStoreRelation]] = Field(default=None,alias="relations",)
-	set: Optional[TermStoreSet] = Field(default=None,alias="set",)
+	id: Optional[str] = Field(alias="id",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	createdDateTime: Optional[datetime] = Field(alias="createdDateTime",default=None,)
+	descriptions: Optional[list[TermStoreLocalizedDescription]] = Field(alias="descriptions",default=None,)
+	labels: Optional[list[TermStoreLocalizedLabel]] = Field(alias="labels",default=None,)
+	lastModifiedDateTime: Optional[datetime] = Field(alias="lastModifiedDateTime",default=None,)
+	properties: Optional[list[KeyValue]] = Field(alias="properties",default=None,)
+	children: Optional[list[TermStoreTerm]] = Field(alias="children",default=None,)
+	relations: Optional[list[TermStoreRelation]] = Field(alias="relations",default=None,)
+	set: Optional[TermStoreSet] = Field(alias="set",default=None,)
 
 from .term_store_localized_description import TermStoreLocalizedDescription
 from .term_store_localized_label import TermStoreLocalizedLabel

@@ -5,19 +5,19 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class AdministrativeUnit(BaseModel):
-	id: Optional[str] = Field(default=None,alias="id",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	deletedDateTime: Optional[datetime] = Field(default=None,alias="deletedDateTime",)
-	description: Optional[str] = Field(default=None,alias="description",)
-	displayName: Optional[str] = Field(default=None,alias="displayName",)
-	isMemberManagementRestricted: Optional[bool] = Field(default=None,alias="isMemberManagementRestricted",)
-	membershipRule: Optional[str] = Field(default=None,alias="membershipRule",)
-	membershipRuleProcessingState: Optional[str] = Field(default=None,alias="membershipRuleProcessingState",)
-	membershipType: Optional[str] = Field(default=None,alias="membershipType",)
-	visibility: Optional[str] = Field(default=None,alias="visibility",)
-	extensions: SerializeAsAny[Optional[list[Extension]]] = Field(default=None,alias="extensions",)
-	members: SerializeAsAny[Optional[list[DirectoryObject]]] = Field(default=None,alias="members",)
-	scopedRoleMembers: Optional[list[ScopedRoleMembership]] = Field(default=None,alias="scopedRoleMembers",)
+	id: Optional[str] = Field(alias="id",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	deletedDateTime: Optional[datetime] = Field(alias="deletedDateTime",default=None,)
+	description: Optional[str] = Field(alias="description",default=None,)
+	displayName: Optional[str] = Field(alias="displayName",default=None,)
+	isMemberManagementRestricted: Optional[bool] = Field(alias="isMemberManagementRestricted",default=None,)
+	membershipRule: Optional[str] = Field(alias="membershipRule",default=None,)
+	membershipRuleProcessingState: Optional[str] = Field(alias="membershipRuleProcessingState",default=None,)
+	membershipType: Optional[str] = Field(alias="membershipType",default=None,)
+	visibility: Optional[str] = Field(alias="visibility",default=None,)
+	extensions: SerializeAsAny[Optional[list[Extension]]] = Field(alias="extensions",default=None,)
+	members: SerializeAsAny[Optional[list[DirectoryObject]]] = Field(alias="members",default=None,)
+	scopedRoleMembers: Optional[list[ScopedRoleMembership]] = Field(alias="scopedRoleMembers",default=None,)
 
 from .extension import Extension
 from .directory_object import DirectoryObject

@@ -5,14 +5,14 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class DeviceConfigurationDeviceOverview(BaseModel):
-	id: Optional[str] = Field(default=None,alias="id",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	configurationVersion: Optional[int] = Field(default=None,alias="configurationVersion",)
-	errorCount: Optional[int] = Field(default=None,alias="errorCount",)
-	failedCount: Optional[int] = Field(default=None,alias="failedCount",)
-	lastUpdateDateTime: Optional[datetime] = Field(default=None,alias="lastUpdateDateTime",)
-	notApplicableCount: Optional[int] = Field(default=None,alias="notApplicableCount",)
-	pendingCount: Optional[int] = Field(default=None,alias="pendingCount",)
-	successCount: Optional[int] = Field(default=None,alias="successCount",)
+	id: Optional[str] = Field(alias="id",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	configurationVersion: Optional[int] = Field(alias="configurationVersion",default=None,)
+	errorCount: Optional[int] = Field(alias="errorCount",default=None,)
+	failedCount: Optional[int] = Field(alias="failedCount",default=None,)
+	lastUpdateDateTime: Optional[datetime] = Field(alias="lastUpdateDateTime",default=None,)
+	notApplicableCount: Optional[int] = Field(alias="notApplicableCount",default=None,)
+	pendingCount: Optional[int] = Field(alias="pendingCount",default=None,)
+	successCount: Optional[int] = Field(alias="successCount",default=None,)
 
 

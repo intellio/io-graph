@@ -4,7 +4,7 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class PrintSettings(BaseModel):
-	documentConversionEnabled: Optional[bool] = Field(default=None,alias="documentConversionEnabled",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
+	documentConversionEnabled: Optional[bool] = Field(alias="documentConversionEnabled",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 
 

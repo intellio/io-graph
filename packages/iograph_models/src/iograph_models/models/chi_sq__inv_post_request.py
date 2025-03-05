@@ -4,7 +4,7 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class Chi_sq__invPostRequest(BaseModel):
-	probability: Optional[str] = Field(default=None,alias="probability",)
-	degFreedom: Optional[str] = Field(default=None,alias="degFreedom",)
+	probability: Optional[str] = Field(alias="probability",default=None,)
+	degFreedom: Optional[str] = Field(alias="degFreedom",default=None,)
 
 

@@ -4,9 +4,9 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class LobbyBypassSettings(BaseModel):
-	isDialInBypassEnabled: Optional[bool] = Field(default=None,alias="isDialInBypassEnabled",)
-	scope: Optional[LobbyBypassScope] = Field(default=None,alias="scope",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
+	isDialInBypassEnabled: Optional[bool] = Field(alias="isDialInBypassEnabled",default=None,)
+	scope: Optional[str | LobbyBypassScope] = Field(alias="scope",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 
 from .lobby_bypass_scope import LobbyBypassScope
 

@@ -5,12 +5,12 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class ReferenceAttachment(BaseModel):
-	id: Optional[str] = Field(default=None,alias="id",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	contentType: Optional[str] = Field(default=None,alias="contentType",)
-	isInline: Optional[bool] = Field(default=None,alias="isInline",)
-	lastModifiedDateTime: Optional[datetime] = Field(default=None,alias="lastModifiedDateTime",)
-	name: Optional[str] = Field(default=None,alias="name",)
-	size: Optional[int] = Field(default=None,alias="size",)
+	id: Optional[str] = Field(alias="id",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	contentType: Optional[str] = Field(alias="contentType",default=None,)
+	isInline: Optional[bool] = Field(alias="isInline",default=None,)
+	lastModifiedDateTime: Optional[datetime] = Field(alias="lastModifiedDateTime",default=None,)
+	name: Optional[str] = Field(alias="name",default=None,)
+	size: Optional[int] = Field(alias="size",default=None,)
 
 

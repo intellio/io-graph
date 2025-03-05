@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class SynchronizationSecret(Enum):
+class SynchronizationSecret(StrEnum):
 	None_ = "None_"
 	UserName = "UserName"
 	Password = "Password"

@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class DayOfWeek(Enum):
+class DayOfWeek(StrEnum):
 	sunday = "sunday"
 	monday = "monday"
 	tuesday = "tuesday"

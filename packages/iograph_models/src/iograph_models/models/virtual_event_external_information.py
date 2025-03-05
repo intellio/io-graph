@@ -4,8 +4,8 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class VirtualEventExternalInformation(BaseModel):
-	applicationId: Optional[str] = Field(default=None,alias="applicationId",)
-	externalEventId: Optional[str] = Field(default=None,alias="externalEventId",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
+	applicationId: Optional[str] = Field(alias="applicationId",default=None,)
+	externalEventId: Optional[str] = Field(alias="externalEventId",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 
 

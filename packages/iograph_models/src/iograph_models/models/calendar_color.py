@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class CalendarColor(Enum):
+class CalendarColor(StrEnum):
 	auto = "auto"
 	lightBlue = "lightBlue"
 	lightGreen = "lightGreen"

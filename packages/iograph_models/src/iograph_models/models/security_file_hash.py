@@ -4,9 +4,9 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class SecurityFileHash(BaseModel):
-	algorithm: Optional[SecurityFileHashAlgorithm] = Field(default=None,alias="algorithm",)
-	value: Optional[str] = Field(default=None,alias="value",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
+	algorithm: Optional[str | SecurityFileHashAlgorithm] = Field(alias="algorithm",default=None,)
+	value: Optional[str] = Field(alias="value",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 
 from .security_file_hash_algorithm import SecurityFileHashAlgorithm
 

@@ -4,8 +4,8 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class RejectPostRequest(BaseModel):
-	reason: Optional[RejectReason] = Field(default=None,alias="reason",)
-	callbackUri: Optional[str] = Field(default=None,alias="callbackUri",)
+	reason: Optional[str | RejectReason] = Field(alias="reason",default=None,)
+	callbackUri: Optional[str] = Field(alias="callbackUri",default=None,)
 
 from .reject_reason import RejectReason
 

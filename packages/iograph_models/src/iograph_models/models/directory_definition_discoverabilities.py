@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class DirectoryDefinitionDiscoverabilities(Enum):
+class DirectoryDefinitionDiscoverabilities(StrEnum):
 	None_ = "None_"
 	AttributeNames = "AttributeNames"
 	AttributeDataTypes = "AttributeDataTypes"

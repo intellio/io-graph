@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class ContactRelationship(Enum):
+class ContactRelationship(StrEnum):
 	parent = "parent"
 	relative = "relative"
 	aide = "aide"

@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class AuthenticationMethodKeyStrength(Enum):
+class AuthenticationMethodKeyStrength(StrEnum):
 	normal = "normal"
 	weak = "weak"
 	unknown = "unknown"

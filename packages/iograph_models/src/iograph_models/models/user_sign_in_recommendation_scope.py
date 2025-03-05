@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class UserSignInRecommendationScope(Enum):
+class UserSignInRecommendationScope(StrEnum):
 	tenant = "tenant"
 	application = "application"
 	unknownFutureValue = "unknownFutureValue"

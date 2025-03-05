@@ -4,11 +4,11 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class TeamMessagingSettings(BaseModel):
-	allowChannelMentions: Optional[bool] = Field(default=None,alias="allowChannelMentions",)
-	allowOwnerDeleteMessages: Optional[bool] = Field(default=None,alias="allowOwnerDeleteMessages",)
-	allowTeamMentions: Optional[bool] = Field(default=None,alias="allowTeamMentions",)
-	allowUserDeleteMessages: Optional[bool] = Field(default=None,alias="allowUserDeleteMessages",)
-	allowUserEditMessages: Optional[bool] = Field(default=None,alias="allowUserEditMessages",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
+	allowChannelMentions: Optional[bool] = Field(alias="allowChannelMentions",default=None,)
+	allowOwnerDeleteMessages: Optional[bool] = Field(alias="allowOwnerDeleteMessages",default=None,)
+	allowTeamMentions: Optional[bool] = Field(alias="allowTeamMentions",default=None,)
+	allowUserDeleteMessages: Optional[bool] = Field(alias="allowUserDeleteMessages",default=None,)
+	allowUserEditMessages: Optional[bool] = Field(alias="allowUserEditMessages",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 
 

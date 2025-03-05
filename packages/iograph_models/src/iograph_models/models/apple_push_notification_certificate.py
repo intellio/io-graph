@@ -5,15 +5,15 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class ApplePushNotificationCertificate(BaseModel):
-	id: Optional[str] = Field(default=None,alias="id",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	appleIdentifier: Optional[str] = Field(default=None,alias="appleIdentifier",)
-	certificate: Optional[str] = Field(default=None,alias="certificate",)
-	certificateSerialNumber: Optional[str] = Field(default=None,alias="certificateSerialNumber",)
-	certificateUploadFailureReason: Optional[str] = Field(default=None,alias="certificateUploadFailureReason",)
-	certificateUploadStatus: Optional[str] = Field(default=None,alias="certificateUploadStatus",)
-	expirationDateTime: Optional[datetime] = Field(default=None,alias="expirationDateTime",)
-	lastModifiedDateTime: Optional[datetime] = Field(default=None,alias="lastModifiedDateTime",)
-	topicIdentifier: Optional[str] = Field(default=None,alias="topicIdentifier",)
+	id: Optional[str] = Field(alias="id",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	appleIdentifier: Optional[str] = Field(alias="appleIdentifier",default=None,)
+	certificate: Optional[str] = Field(alias="certificate",default=None,)
+	certificateSerialNumber: Optional[str] = Field(alias="certificateSerialNumber",default=None,)
+	certificateUploadFailureReason: Optional[str] = Field(alias="certificateUploadFailureReason",default=None,)
+	certificateUploadStatus: Optional[str] = Field(alias="certificateUploadStatus",default=None,)
+	expirationDateTime: Optional[datetime] = Field(alias="expirationDateTime",default=None,)
+	lastModifiedDateTime: Optional[datetime] = Field(alias="lastModifiedDateTime",default=None,)
+	topicIdentifier: Optional[str] = Field(alias="topicIdentifier",default=None,)
 
 

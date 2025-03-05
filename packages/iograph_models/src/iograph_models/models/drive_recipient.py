@@ -4,9 +4,9 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class DriveRecipient(BaseModel):
-	alias: Optional[str] = Field(default=None,alias="alias",)
-	email: Optional[str] = Field(default=None,alias="email",)
-	objectId: Optional[str] = Field(default=None,alias="objectId",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
+	alias: Optional[str] = Field(alias="alias",default=None,)
+	email: Optional[str] = Field(alias="email",default=None,)
+	objectId: Optional[str] = Field(alias="objectId",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 
 

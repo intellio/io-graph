@@ -6,10 +6,10 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class CallRecordsParticipantBase(BaseModel):
-	id: Optional[str] = Field(default=None,alias="id",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	administrativeUnitInfos: Optional[list[CallRecordsAdministrativeUnitInfo]] = Field(default=None,alias="administrativeUnitInfos",)
-	identity: Optional[CommunicationsIdentitySet] = Field(default=None,alias="identity",)
+	id: Optional[str] = Field(alias="id",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	administrativeUnitInfos: Optional[list[CallRecordsAdministrativeUnitInfo]] = Field(alias="administrativeUnitInfos",default=None,)
+	identity: Optional[CommunicationsIdentitySet] = Field(alias="identity",default=None,)
 
 	@model_validator(mode="wrap")
 	def convert_discriminator_class(cls, data: Any, handler: ModelWrapValidatorHandler[Self]) -> Self:

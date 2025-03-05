@@ -4,8 +4,8 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class MirrPostRequest(BaseModel):
-	values: Optional[str] = Field(default=None,alias="values",)
-	financeRate: Optional[str] = Field(default=None,alias="financeRate",)
-	reinvestRate: Optional[str] = Field(default=None,alias="reinvestRate",)
+	values: Optional[str] = Field(alias="values",default=None,)
+	financeRate: Optional[str] = Field(alias="financeRate",default=None,)
+	reinvestRate: Optional[str] = Field(alias="reinvestRate",default=None,)
 
 

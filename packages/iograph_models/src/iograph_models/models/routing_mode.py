@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class RoutingMode(Enum):
+class RoutingMode(StrEnum):
 	oneToOne = "oneToOne"
 	multicast = "multicast"
 	unknownFutureValue = "unknownFutureValue"

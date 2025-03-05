@@ -4,12 +4,12 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class InvitationParticipantInfo(BaseModel):
-	hidden: Optional[bool] = Field(default=None,alias="hidden",)
-	identity: SerializeAsAny[Optional[IdentitySet]] = Field(default=None,alias="identity",)
-	participantId: Optional[str] = Field(default=None,alias="participantId",)
-	removeFromDefaultAudioRoutingGroup: Optional[bool] = Field(default=None,alias="removeFromDefaultAudioRoutingGroup",)
-	replacesCallId: Optional[str] = Field(default=None,alias="replacesCallId",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
+	hidden: Optional[bool] = Field(alias="hidden",default=None,)
+	identity: SerializeAsAny[Optional[IdentitySet]] = Field(alias="identity",default=None,)
+	participantId: Optional[str] = Field(alias="participantId",default=None,)
+	removeFromDefaultAudioRoutingGroup: Optional[bool] = Field(alias="removeFromDefaultAudioRoutingGroup",default=None,)
+	replacesCallId: Optional[str] = Field(alias="replacesCallId",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 
 from .identity_set import IdentitySet
 

@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class Level(Enum):
+class Level(StrEnum):
 	beginner = "beginner"
 	intermediate = "intermediate"
 	advanced = "advanced"

@@ -4,9 +4,9 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class SecurityTriggersRoot(BaseModel):
-	id: Optional[str] = Field(default=None,alias="id",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	retentionEvents: Optional[list[SecurityRetentionEvent]] = Field(default=None,alias="retentionEvents",)
+	id: Optional[str] = Field(alias="id",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	retentionEvents: Optional[list[SecurityRetentionEvent]] = Field(alias="retentionEvents",default=None,)
 
 from .security_retention_event import SecurityRetentionEvent
 

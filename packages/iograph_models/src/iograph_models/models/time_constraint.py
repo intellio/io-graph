@@ -4,9 +4,9 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class TimeConstraint(BaseModel):
-	activityDomain: Optional[ActivityDomain] = Field(default=None,alias="activityDomain",)
-	timeSlots: Optional[list[TimeSlot]] = Field(default=None,alias="timeSlots",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
+	activityDomain: Optional[str | ActivityDomain] = Field(alias="activityDomain",default=None,)
+	timeSlots: Optional[list[TimeSlot]] = Field(alias="timeSlots",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 
 from .activity_domain import ActivityDomain
 from .time_slot import TimeSlot

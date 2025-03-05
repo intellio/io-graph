@@ -4,8 +4,8 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class RolePermission(BaseModel):
-	resourceActions: Optional[list[ResourceAction]] = Field(default=None,alias="resourceActions",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
+	resourceActions: Optional[list[ResourceAction]] = Field(alias="resourceActions",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 
 from .resource_action import ResourceAction
 

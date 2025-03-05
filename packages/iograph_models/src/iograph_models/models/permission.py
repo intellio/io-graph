@@ -5,19 +5,19 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class Permission(BaseModel):
-	id: Optional[str] = Field(default=None,alias="id",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	expirationDateTime: Optional[datetime] = Field(default=None,alias="expirationDateTime",)
-	grantedTo: SerializeAsAny[Optional[IdentitySet]] = Field(default=None,alias="grantedTo",)
-	grantedToIdentities: SerializeAsAny[Optional[list[IdentitySet]]] = Field(default=None,alias="grantedToIdentities",)
-	grantedToIdentitiesV2: Optional[list[SharePointIdentitySet]] = Field(default=None,alias="grantedToIdentitiesV2",)
-	grantedToV2: Optional[SharePointIdentitySet] = Field(default=None,alias="grantedToV2",)
-	hasPassword: Optional[bool] = Field(default=None,alias="hasPassword",)
-	inheritedFrom: Optional[ItemReference] = Field(default=None,alias="inheritedFrom",)
-	invitation: Optional[SharingInvitation] = Field(default=None,alias="invitation",)
-	link: Optional[SharingLink] = Field(default=None,alias="link",)
-	roles: Optional[list[str]] = Field(default=None,alias="roles",)
-	shareId: Optional[str] = Field(default=None,alias="shareId",)
+	id: Optional[str] = Field(alias="id",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	expirationDateTime: Optional[datetime] = Field(alias="expirationDateTime",default=None,)
+	grantedTo: SerializeAsAny[Optional[IdentitySet]] = Field(alias="grantedTo",default=None,)
+	grantedToIdentities: SerializeAsAny[Optional[list[IdentitySet]]] = Field(alias="grantedToIdentities",default=None,)
+	grantedToIdentitiesV2: Optional[list[SharePointIdentitySet]] = Field(alias="grantedToIdentitiesV2",default=None,)
+	grantedToV2: Optional[SharePointIdentitySet] = Field(alias="grantedToV2",default=None,)
+	hasPassword: Optional[bool] = Field(alias="hasPassword",default=None,)
+	inheritedFrom: Optional[ItemReference] = Field(alias="inheritedFrom",default=None,)
+	invitation: Optional[SharingInvitation] = Field(alias="invitation",default=None,)
+	link: Optional[SharingLink] = Field(alias="link",default=None,)
+	roles: Optional[list[str]] = Field(alias="roles",default=None,)
+	shareId: Optional[str] = Field(alias="shareId",default=None,)
 
 from .identity_set import IdentitySet
 from .identity_set import IdentitySet

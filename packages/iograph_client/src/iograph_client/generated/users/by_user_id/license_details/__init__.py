@@ -16,8 +16,8 @@ if TYPE_CHECKING:
 	from .by_license_details_id import ByLicenseDetailsIdRequest
 	from .....request_adapter import HttpxRequestAdapter
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
-from iograph_models.models.license_details_collection_response import LicenseDetailsCollectionResponse
 from iograph_models.models.license_details import LicenseDetails
+from iograph_models.models.license_details_collection_response import LicenseDetailsCollectionResponse
 
 
 class LicenseDetailsRequest(BaseRequestBuilder):

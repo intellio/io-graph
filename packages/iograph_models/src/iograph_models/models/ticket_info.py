@@ -4,8 +4,8 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class TicketInfo(BaseModel):
-	ticketNumber: Optional[str] = Field(default=None,alias="ticketNumber",)
-	ticketSystem: Optional[str] = Field(default=None,alias="ticketSystem",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
+	ticketNumber: Optional[str] = Field(alias="ticketNumber",default=None,)
+	ticketSystem: Optional[str] = Field(alias="ticketSystem",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 
 

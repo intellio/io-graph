@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class ConditionalAccessExternalTenantsMembershipKind(Enum):
+class ConditionalAccessExternalTenantsMembershipKind(StrEnum):
 	all = "all"
 	enumerated = "enumerated"
 	unknownFutureValue = "unknownFutureValue"

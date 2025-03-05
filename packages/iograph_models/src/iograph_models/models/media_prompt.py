@@ -4,8 +4,8 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class MediaPrompt(BaseModel):
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	mediaInfo: Optional[MediaInfo] = Field(default=None,alias="mediaInfo",)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	mediaInfo: Optional[MediaInfo] = Field(alias="mediaInfo",default=None,)
 
 from .media_info import MediaInfo
 

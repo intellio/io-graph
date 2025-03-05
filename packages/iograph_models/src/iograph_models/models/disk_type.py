@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class DiskType(Enum):
+class DiskType(StrEnum):
 	unknown = "unknown"
 	hdd = "hdd"
 	ssd = "ssd"

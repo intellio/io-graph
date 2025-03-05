@@ -4,17 +4,17 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class RegistryKeyState(BaseModel):
-	hive: Optional[RegistryHive] = Field(default=None,alias="hive",)
-	key: Optional[str] = Field(default=None,alias="key",)
-	oldKey: Optional[str] = Field(default=None,alias="oldKey",)
-	oldValueData: Optional[str] = Field(default=None,alias="oldValueData",)
-	oldValueName: Optional[str] = Field(default=None,alias="oldValueName",)
-	operation: Optional[RegistryOperation] = Field(default=None,alias="operation",)
-	processId: Optional[int] = Field(default=None,alias="processId",)
-	valueData: Optional[str] = Field(default=None,alias="valueData",)
-	valueName: Optional[str] = Field(default=None,alias="valueName",)
-	valueType: Optional[RegistryValueType] = Field(default=None,alias="valueType",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
+	hive: Optional[str | RegistryHive] = Field(alias="hive",default=None,)
+	key: Optional[str] = Field(alias="key",default=None,)
+	oldKey: Optional[str] = Field(alias="oldKey",default=None,)
+	oldValueData: Optional[str] = Field(alias="oldValueData",default=None,)
+	oldValueName: Optional[str] = Field(alias="oldValueName",default=None,)
+	operation: Optional[str | RegistryOperation] = Field(alias="operation",default=None,)
+	processId: Optional[int] = Field(alias="processId",default=None,)
+	valueData: Optional[str] = Field(alias="valueData",default=None,)
+	valueName: Optional[str] = Field(alias="valueName",default=None,)
+	valueType: Optional[str | RegistryValueType] = Field(alias="valueType",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 
 from .registry_hive import RegistryHive
 from .registry_operation import RegistryOperation

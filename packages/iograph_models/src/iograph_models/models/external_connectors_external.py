@@ -4,8 +4,8 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class ExternalConnectorsExternal(BaseModel):
-	connections: Optional[list[ExternalConnectorsExternalConnection]] = Field(default=None,alias="connections",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
+	connections: Optional[list[ExternalConnectorsExternalConnection]] = Field(alias="connections",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 
 from .external_connectors_external_connection import ExternalConnectorsExternalConnection
 

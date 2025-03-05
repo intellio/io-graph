@@ -5,18 +5,18 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class PartnersBillingManifest(BaseModel):
-	id: Optional[str] = Field(default=None,alias="id",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	blobCount: Optional[int] = Field(default=None,alias="blobCount",)
-	blobs: Optional[list[PartnersBillingBlob]] = Field(default=None,alias="blobs",)
-	createdDateTime: Optional[datetime] = Field(default=None,alias="createdDateTime",)
-	dataFormat: Optional[str] = Field(default=None,alias="dataFormat",)
-	eTag: Optional[str] = Field(default=None,alias="eTag",)
-	partitionType: Optional[str] = Field(default=None,alias="partitionType",)
-	partnerTenantId: Optional[str] = Field(default=None,alias="partnerTenantId",)
-	rootDirectory: Optional[str] = Field(default=None,alias="rootDirectory",)
-	sasToken: Optional[str] = Field(default=None,alias="sasToken",)
-	schemaVersion: Optional[str] = Field(default=None,alias="schemaVersion",)
+	id: Optional[str] = Field(alias="id",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	blobCount: Optional[int] = Field(alias="blobCount",default=None,)
+	blobs: Optional[list[PartnersBillingBlob]] = Field(alias="blobs",default=None,)
+	createdDateTime: Optional[datetime] = Field(alias="createdDateTime",default=None,)
+	dataFormat: Optional[str] = Field(alias="dataFormat",default=None,)
+	eTag: Optional[str] = Field(alias="eTag",default=None,)
+	partitionType: Optional[str] = Field(alias="partitionType",default=None,)
+	partnerTenantId: Optional[str] = Field(alias="partnerTenantId",default=None,)
+	rootDirectory: Optional[str] = Field(alias="rootDirectory",default=None,)
+	sasToken: Optional[str] = Field(alias="sasToken",default=None,)
+	schemaVersion: Optional[str] = Field(alias="schemaVersion",default=None,)
 
 from .partners_billing_blob import PartnersBillingBlob
 

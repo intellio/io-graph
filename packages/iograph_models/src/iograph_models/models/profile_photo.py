@@ -4,9 +4,9 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class ProfilePhoto(BaseModel):
-	id: Optional[str] = Field(default=None,alias="id",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	height: Optional[int] = Field(default=None,alias="height",)
-	width: Optional[int] = Field(default=None,alias="width",)
+	id: Optional[str] = Field(alias="id",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	height: Optional[int] = Field(alias="height",default=None,)
+	width: Optional[int] = Field(alias="width",default=None,)
 
 

@@ -4,10 +4,10 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class File(BaseModel):
-	hashes: Optional[Hashes] = Field(default=None,alias="hashes",)
-	mimeType: Optional[str] = Field(default=None,alias="mimeType",)
-	processingMetadata: Optional[bool] = Field(default=None,alias="processingMetadata",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
+	hashes: Optional[Hashes] = Field(alias="hashes",default=None,)
+	mimeType: Optional[str] = Field(alias="mimeType",default=None,)
+	processingMetadata: Optional[bool] = Field(alias="processingMetadata",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 
 from .hashes import Hashes
 

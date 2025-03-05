@@ -4,9 +4,9 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class Folder(BaseModel):
-	childCount: Optional[int] = Field(default=None,alias="childCount",)
-	view: Optional[FolderView] = Field(default=None,alias="view",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
+	childCount: Optional[int] = Field(alias="childCount",default=None,)
+	view: Optional[FolderView] = Field(alias="view",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 
 from .folder_view import FolderView
 

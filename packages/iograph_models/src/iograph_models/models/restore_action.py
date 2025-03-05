@@ -4,6 +4,6 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class RestoreAction(BaseModel):
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 
 

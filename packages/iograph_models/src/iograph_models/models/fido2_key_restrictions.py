@@ -4,10 +4,10 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class Fido2KeyRestrictions(BaseModel):
-	aaGuids: Optional[list[str]] = Field(default=None,alias="aaGuids",)
-	enforcementType: Optional[Fido2RestrictionEnforcementType] = Field(default=None,alias="enforcementType",)
-	isEnforced: Optional[bool] = Field(default=None,alias="isEnforced",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
+	aaGuids: Optional[list[str]] = Field(alias="aaGuids",default=None,)
+	enforcementType: Optional[str | Fido2RestrictionEnforcementType] = Field(alias="enforcementType",default=None,)
+	isEnforced: Optional[bool] = Field(alias="isEnforced",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 
 from .fido2_restriction_enforcement_type import Fido2RestrictionEnforcementType
 

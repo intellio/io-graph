@@ -4,12 +4,12 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class MediaStream(BaseModel):
-	direction: Optional[MediaDirection] = Field(default=None,alias="direction",)
-	label: Optional[str] = Field(default=None,alias="label",)
-	mediaType: Optional[Modality] = Field(default=None,alias="mediaType",)
-	serverMuted: Optional[bool] = Field(default=None,alias="serverMuted",)
-	sourceId: Optional[str] = Field(default=None,alias="sourceId",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
+	direction: Optional[str | MediaDirection] = Field(alias="direction",default=None,)
+	label: Optional[str] = Field(alias="label",default=None,)
+	mediaType: Optional[str | Modality] = Field(alias="mediaType",default=None,)
+	serverMuted: Optional[bool] = Field(alias="serverMuted",default=None,)
+	sourceId: Optional[str] = Field(alias="sourceId",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 
 from .media_direction import MediaDirection
 from .modality import Modality

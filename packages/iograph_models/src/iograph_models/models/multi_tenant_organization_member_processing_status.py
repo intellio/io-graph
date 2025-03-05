@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class MultiTenantOrganizationMemberProcessingStatus(Enum):
+class MultiTenantOrganizationMemberProcessingStatus(StrEnum):
 	notStarted = "notStarted"
 	running = "running"
 	succeeded = "succeeded"

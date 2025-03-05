@@ -4,13 +4,13 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class OutOfBoxExperienceSetting(BaseModel):
-	deviceUsageType: Optional[WindowsDeviceUsageType] = Field(default=None,alias="deviceUsageType",)
-	escapeLinkHidden: Optional[bool] = Field(default=None,alias="escapeLinkHidden",)
-	eulaHidden: Optional[bool] = Field(default=None,alias="eulaHidden",)
-	keyboardSelectionPageSkipped: Optional[bool] = Field(default=None,alias="keyboardSelectionPageSkipped",)
-	privacySettingsHidden: Optional[bool] = Field(default=None,alias="privacySettingsHidden",)
-	userType: Optional[WindowsUserType] = Field(default=None,alias="userType",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
+	deviceUsageType: Optional[str | WindowsDeviceUsageType] = Field(alias="deviceUsageType",default=None,)
+	escapeLinkHidden: Optional[bool] = Field(alias="escapeLinkHidden",default=None,)
+	eulaHidden: Optional[bool] = Field(alias="eulaHidden",default=None,)
+	keyboardSelectionPageSkipped: Optional[bool] = Field(alias="keyboardSelectionPageSkipped",default=None,)
+	privacySettingsHidden: Optional[bool] = Field(alias="privacySettingsHidden",default=None,)
+	userType: Optional[str | WindowsUserType] = Field(alias="userType",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 
 from .windows_device_usage_type import WindowsDeviceUsageType
 from .windows_user_type import WindowsUserType

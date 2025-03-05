@@ -4,9 +4,9 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class AccessReviewHistoryScheduleSettings(BaseModel):
-	recurrence: Optional[PatternedRecurrence] = Field(default=None,alias="recurrence",)
-	reportRange: Optional[str] = Field(default=None,alias="reportRange",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
+	recurrence: Optional[PatternedRecurrence] = Field(alias="recurrence",default=None,)
+	reportRange: Optional[str] = Field(alias="reportRange",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 
 from .patterned_recurrence import PatternedRecurrence
 

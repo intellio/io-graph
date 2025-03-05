@@ -5,9 +5,9 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class SecurityHostSslCertificatePort(BaseModel):
-	firstSeenDateTime: Optional[datetime] = Field(default=None,alias="firstSeenDateTime",)
-	lastSeenDateTime: Optional[datetime] = Field(default=None,alias="lastSeenDateTime",)
-	port: Optional[int] = Field(default=None,alias="port",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
+	firstSeenDateTime: Optional[datetime] = Field(alias="firstSeenDateTime",default=None,)
+	lastSeenDateTime: Optional[datetime] = Field(alias="lastSeenDateTime",default=None,)
+	port: Optional[int] = Field(alias="port",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 
 

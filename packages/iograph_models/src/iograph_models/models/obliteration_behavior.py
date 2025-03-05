@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class ObliterationBehavior(Enum):
+class ObliterationBehavior(StrEnum):
 	default = "default"
 	doNotObliterate = "doNotObliterate"
 	obliterateWithWarning = "obliterateWithWarning"

@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class CloudPcRegionGroup(Enum):
+class CloudPcRegionGroup(StrEnum):
 	default = "default"
 	australia = "australia"
 	canada = "canada"

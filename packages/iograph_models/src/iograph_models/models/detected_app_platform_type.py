@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class DetectedAppPlatformType(Enum):
+class DetectedAppPlatformType(StrEnum):
 	unknown = "unknown"
 	windows = "windows"
 	windowsMobile = "windowsMobile"

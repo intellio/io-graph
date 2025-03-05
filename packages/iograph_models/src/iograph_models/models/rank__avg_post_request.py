@@ -4,8 +4,8 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class Rank__avgPostRequest(BaseModel):
-	number: Optional[str] = Field(default=None,alias="number",)
-	ref: Optional[str] = Field(default=None,alias="ref",)
-	order: Optional[str] = Field(default=None,alias="order",)
+	number: Optional[str] = Field(alias="number",default=None,)
+	ref: Optional[str] = Field(alias="ref",default=None,)
+	order: Optional[str] = Field(alias="order",default=None,)
 
 

@@ -5,18 +5,18 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class LoginPage(BaseModel):
-	id: Optional[str] = Field(default=None,alias="id",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	content: Optional[str] = Field(default=None,alias="content",)
-	createdBy: Optional[EmailIdentity] = Field(default=None,alias="createdBy",)
-	createdDateTime: Optional[datetime] = Field(default=None,alias="createdDateTime",)
-	description: Optional[str] = Field(default=None,alias="description",)
-	displayName: Optional[str] = Field(default=None,alias="displayName",)
-	language: Optional[str] = Field(default=None,alias="language",)
-	lastModifiedBy: Optional[EmailIdentity] = Field(default=None,alias="lastModifiedBy",)
-	lastModifiedDateTime: Optional[datetime] = Field(default=None,alias="lastModifiedDateTime",)
-	source: Optional[SimulationContentSource] = Field(default=None,alias="source",)
-	status: Optional[SimulationContentStatus] = Field(default=None,alias="status",)
+	id: Optional[str] = Field(alias="id",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	content: Optional[str] = Field(alias="content",default=None,)
+	createdBy: Optional[EmailIdentity] = Field(alias="createdBy",default=None,)
+	createdDateTime: Optional[datetime] = Field(alias="createdDateTime",default=None,)
+	description: Optional[str] = Field(alias="description",default=None,)
+	displayName: Optional[str] = Field(alias="displayName",default=None,)
+	language: Optional[str] = Field(alias="language",default=None,)
+	lastModifiedBy: Optional[EmailIdentity] = Field(alias="lastModifiedBy",default=None,)
+	lastModifiedDateTime: Optional[datetime] = Field(alias="lastModifiedDateTime",default=None,)
+	source: Optional[str | SimulationContentSource] = Field(alias="source",default=None,)
+	status: Optional[str | SimulationContentStatus] = Field(alias="status",default=None,)
 
 from .email_identity import EmailIdentity
 from .email_identity import EmailIdentity

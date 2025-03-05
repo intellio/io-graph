@@ -5,21 +5,21 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class SynchronizationTaskExecution(BaseModel):
-	activityIdentifier: Optional[str] = Field(default=None,alias="activityIdentifier",)
-	countEntitled: Optional[int] = Field(default=None,alias="countEntitled",)
-	countEntitledForProvisioning: Optional[int] = Field(default=None,alias="countEntitledForProvisioning",)
-	countEscrowed: Optional[int] = Field(default=None,alias="countEscrowed",)
-	countEscrowedRaw: Optional[int] = Field(default=None,alias="countEscrowedRaw",)
-	countExported: Optional[int] = Field(default=None,alias="countExported",)
-	countExports: Optional[int] = Field(default=None,alias="countExports",)
-	countImported: Optional[int] = Field(default=None,alias="countImported",)
-	countImportedDeltas: Optional[int] = Field(default=None,alias="countImportedDeltas",)
-	countImportedReferenceDeltas: Optional[int] = Field(default=None,alias="countImportedReferenceDeltas",)
-	error: Optional[SynchronizationError] = Field(default=None,alias="error",)
-	state: Optional[SynchronizationTaskExecutionResult] = Field(default=None,alias="state",)
-	timeBegan: Optional[datetime] = Field(default=None,alias="timeBegan",)
-	timeEnded: Optional[datetime] = Field(default=None,alias="timeEnded",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
+	activityIdentifier: Optional[str] = Field(alias="activityIdentifier",default=None,)
+	countEntitled: Optional[int] = Field(alias="countEntitled",default=None,)
+	countEntitledForProvisioning: Optional[int] = Field(alias="countEntitledForProvisioning",default=None,)
+	countEscrowed: Optional[int] = Field(alias="countEscrowed",default=None,)
+	countEscrowedRaw: Optional[int] = Field(alias="countEscrowedRaw",default=None,)
+	countExported: Optional[int] = Field(alias="countExported",default=None,)
+	countExports: Optional[int] = Field(alias="countExports",default=None,)
+	countImported: Optional[int] = Field(alias="countImported",default=None,)
+	countImportedDeltas: Optional[int] = Field(alias="countImportedDeltas",default=None,)
+	countImportedReferenceDeltas: Optional[int] = Field(alias="countImportedReferenceDeltas",default=None,)
+	error: Optional[SynchronizationError] = Field(alias="error",default=None,)
+	state: Optional[str | SynchronizationTaskExecutionResult] = Field(alias="state",default=None,)
+	timeBegan: Optional[datetime] = Field(alias="timeBegan",default=None,)
+	timeEnded: Optional[datetime] = Field(alias="timeEnded",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 
 from .synchronization_error import SynchronizationError
 from .synchronization_task_execution_result import SynchronizationTaskExecutionResult

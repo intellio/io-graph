@@ -4,6 +4,6 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class MovePostRequest(BaseModel):
-	DestinationId: Optional[str] = Field(default=None,alias="DestinationId",)
+	DestinationId: Optional[str] = Field(alias="DestinationId",default=None,)
 
 

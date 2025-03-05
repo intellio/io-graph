@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class SynchronizationMetadata(Enum):
+class SynchronizationMetadata(StrEnum):
 	GalleryApplicationIdentifier = "GalleryApplicationIdentifier"
 	GalleryApplicationKey = "GalleryApplicationKey"
 	IsOAuthEnabled = "IsOAuthEnabled"

@@ -4,9 +4,9 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class DeletedItemContainer(BaseModel):
-	id: Optional[str] = Field(default=None,alias="id",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	workflows: Optional[list[IdentityGovernanceWorkflow]] = Field(default=None,alias="workflows",)
+	id: Optional[str] = Field(alias="id",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	workflows: Optional[list[IdentityGovernanceWorkflow]] = Field(alias="workflows",default=None,)
 
 from .identity_governance_workflow import IdentityGovernanceWorkflow
 

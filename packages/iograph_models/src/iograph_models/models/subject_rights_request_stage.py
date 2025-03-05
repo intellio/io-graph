@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class SubjectRightsRequestStage(Enum):
+class SubjectRightsRequestStage(StrEnum):
 	contentRetrieval = "contentRetrieval"
 	contentReview = "contentReview"
 	generateReport = "generateReport"

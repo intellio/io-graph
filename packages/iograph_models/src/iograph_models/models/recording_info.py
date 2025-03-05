@@ -4,9 +4,9 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class RecordingInfo(BaseModel):
-	initiator: SerializeAsAny[Optional[IdentitySet]] = Field(default=None,alias="initiator",)
-	recordingStatus: Optional[RecordingStatus] = Field(default=None,alias="recordingStatus",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
+	initiator: SerializeAsAny[Optional[IdentitySet]] = Field(alias="initiator",default=None,)
+	recordingStatus: Optional[str | RecordingStatus] = Field(alias="recordingStatus",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 
 from .identity_set import IdentitySet
 from .recording_status import RecordingStatus

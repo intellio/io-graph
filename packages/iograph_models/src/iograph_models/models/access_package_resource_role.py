@@ -4,13 +4,13 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class AccessPackageResourceRole(BaseModel):
-	id: Optional[str] = Field(default=None,alias="id",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	description: Optional[str] = Field(default=None,alias="description",)
-	displayName: Optional[str] = Field(default=None,alias="displayName",)
-	originId: Optional[str] = Field(default=None,alias="originId",)
-	originSystem: Optional[str] = Field(default=None,alias="originSystem",)
-	resource: Optional[AccessPackageResource] = Field(default=None,alias="resource",)
+	id: Optional[str] = Field(alias="id",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	description: Optional[str] = Field(alias="description",default=None,)
+	displayName: Optional[str] = Field(alias="displayName",default=None,)
+	originId: Optional[str] = Field(alias="originId",default=None,)
+	originSystem: Optional[str] = Field(alias="originSystem",default=None,)
+	resource: Optional[AccessPackageResource] = Field(alias="resource",default=None,)
 
 from .access_package_resource import AccessPackageResource
 

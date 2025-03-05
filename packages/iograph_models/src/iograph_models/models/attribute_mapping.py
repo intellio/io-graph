@@ -4,14 +4,14 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class AttributeMapping(BaseModel):
-	defaultValue: Optional[str] = Field(default=None,alias="defaultValue",)
-	exportMissingReferences: Optional[bool] = Field(default=None,alias="exportMissingReferences",)
-	flowBehavior: Optional[AttributeFlowBehavior] = Field(default=None,alias="flowBehavior",)
-	flowType: Optional[AttributeFlowType] = Field(default=None,alias="flowType",)
-	matchingPriority: Optional[int] = Field(default=None,alias="matchingPriority",)
-	source: Optional[AttributeMappingSource] = Field(default=None,alias="source",)
-	targetAttributeName: Optional[str] = Field(default=None,alias="targetAttributeName",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
+	defaultValue: Optional[str] = Field(alias="defaultValue",default=None,)
+	exportMissingReferences: Optional[bool] = Field(alias="exportMissingReferences",default=None,)
+	flowBehavior: Optional[str | AttributeFlowBehavior] = Field(alias="flowBehavior",default=None,)
+	flowType: Optional[str | AttributeFlowType] = Field(alias="flowType",default=None,)
+	matchingPriority: Optional[int] = Field(alias="matchingPriority",default=None,)
+	source: Optional[AttributeMappingSource] = Field(alias="source",default=None,)
+	targetAttributeName: Optional[str] = Field(alias="targetAttributeName",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 
 from .attribute_flow_behavior import AttributeFlowBehavior
 from .attribute_flow_type import AttributeFlowType

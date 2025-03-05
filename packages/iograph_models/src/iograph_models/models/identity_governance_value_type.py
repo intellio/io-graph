@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class IdentityGovernanceValueType(Enum):
+class IdentityGovernanceValueType(StrEnum):
 	enum = "enum"
 	string = "string"
 	int = "int"

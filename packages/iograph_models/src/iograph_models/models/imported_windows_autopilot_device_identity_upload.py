@@ -5,11 +5,11 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class ImportedWindowsAutopilotDeviceIdentityUpload(BaseModel):
-	id: Optional[str] = Field(default=None,alias="id",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	createdDateTimeUtc: Optional[datetime] = Field(default=None,alias="createdDateTimeUtc",)
-	status: Optional[ImportedWindowsAutopilotDeviceIdentityUploadStatus] = Field(default=None,alias="status",)
-	deviceIdentities: Optional[list[ImportedWindowsAutopilotDeviceIdentity]] = Field(default=None,alias="deviceIdentities",)
+	id: Optional[str] = Field(alias="id",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	createdDateTimeUtc: Optional[datetime] = Field(alias="createdDateTimeUtc",default=None,)
+	status: Optional[str | ImportedWindowsAutopilotDeviceIdentityUploadStatus] = Field(alias="status",default=None,)
+	deviceIdentities: Optional[list[ImportedWindowsAutopilotDeviceIdentity]] = Field(alias="deviceIdentities",default=None,)
 
 from .imported_windows_autopilot_device_identity_upload_status import ImportedWindowsAutopilotDeviceIdentityUploadStatus
 from .imported_windows_autopilot_device_identity import ImportedWindowsAutopilotDeviceIdentity

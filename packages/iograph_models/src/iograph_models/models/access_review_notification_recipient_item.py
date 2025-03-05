@@ -4,9 +4,9 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class AccessReviewNotificationRecipientItem(BaseModel):
-	notificationRecipientScope: SerializeAsAny[Optional[AccessReviewNotificationRecipientScope]] = Field(default=None,alias="notificationRecipientScope",)
-	notificationTemplateType: Optional[str] = Field(default=None,alias="notificationTemplateType",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
+	notificationRecipientScope: SerializeAsAny[Optional[AccessReviewNotificationRecipientScope]] = Field(alias="notificationRecipientScope",default=None,)
+	notificationTemplateType: Optional[str] = Field(alias="notificationTemplateType",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 
 from .access_review_notification_recipient_scope import AccessReviewNotificationRecipientScope
 

@@ -4,9 +4,9 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class ChangeNotificationCollection(BaseModel):
-	validationTokens: Optional[list[str]] = Field(default=None,alias="validationTokens",)
-	value: Optional[list[ChangeNotification]] = Field(default=None,alias="value",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
+	validationTokens: Optional[list[str]] = Field(alias="validationTokens",default=None,)
+	value: Optional[list[ChangeNotification]] = Field(alias="value",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 
 from .change_notification import ChangeNotification
 

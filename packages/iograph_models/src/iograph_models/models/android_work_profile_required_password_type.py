@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class AndroidWorkProfileRequiredPasswordType(Enum):
+class AndroidWorkProfileRequiredPasswordType(StrEnum):
 	deviceDefault = "deviceDefault"
 	lowSecurityBiometric = "lowSecurityBiometric"
 	required = "required"

@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class SynchronizationScheduleState(Enum):
+class SynchronizationScheduleState(StrEnum):
 	Active = "Active"
 	Disabled = "Disabled"
 	Paused = "Paused"

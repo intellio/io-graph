@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class SecurityPurgeType(Enum):
+class SecurityPurgeType(StrEnum):
 	recoverable = "recoverable"
 	unknownFutureValue = "unknownFutureValue"
 	permanentlyDelete = "permanentlyDelete"

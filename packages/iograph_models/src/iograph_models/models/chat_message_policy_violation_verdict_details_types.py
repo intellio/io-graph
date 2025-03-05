@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class ChatMessagePolicyViolationVerdictDetailsTypes(Enum):
+class ChatMessagePolicyViolationVerdictDetailsTypes(StrEnum):
 	none = "none"
 	allowFalsePositiveOverride = "allowFalsePositiveOverride"
 	allowOverrideWithoutJustification = "allowOverrideWithoutJustification"

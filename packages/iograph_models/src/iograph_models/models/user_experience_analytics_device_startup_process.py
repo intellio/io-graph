@@ -4,12 +4,12 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class UserExperienceAnalyticsDeviceStartupProcess(BaseModel):
-	id: Optional[str] = Field(default=None,alias="id",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	managedDeviceId: Optional[str] = Field(default=None,alias="managedDeviceId",)
-	processName: Optional[str] = Field(default=None,alias="processName",)
-	productName: Optional[str] = Field(default=None,alias="productName",)
-	publisher: Optional[str] = Field(default=None,alias="publisher",)
-	startupImpactInMs: Optional[int] = Field(default=None,alias="startupImpactInMs",)
+	id: Optional[str] = Field(alias="id",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	managedDeviceId: Optional[str] = Field(alias="managedDeviceId",default=None,)
+	processName: Optional[str] = Field(alias="processName",default=None,)
+	productName: Optional[str] = Field(alias="productName",default=None,)
+	publisher: Optional[str] = Field(alias="publisher",default=None,)
+	startupImpactInMs: Optional[int] = Field(alias="startupImpactInMs",default=None,)
 
 

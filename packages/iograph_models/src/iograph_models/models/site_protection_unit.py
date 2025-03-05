@@ -5,18 +5,18 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class SiteProtectionUnit(BaseModel):
-	id: Optional[str] = Field(default=None,alias="id",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	createdBy: SerializeAsAny[Optional[IdentitySet]] = Field(default=None,alias="createdBy",)
-	createdDateTime: Optional[datetime] = Field(default=None,alias="createdDateTime",)
-	error: Optional[PublicError] = Field(default=None,alias="error",)
-	lastModifiedBy: SerializeAsAny[Optional[IdentitySet]] = Field(default=None,alias="lastModifiedBy",)
-	lastModifiedDateTime: Optional[datetime] = Field(default=None,alias="lastModifiedDateTime",)
-	policyId: Optional[str] = Field(default=None,alias="policyId",)
-	status: Optional[ProtectionUnitStatus] = Field(default=None,alias="status",)
-	siteId: Optional[str] = Field(default=None,alias="siteId",)
-	siteName: Optional[str] = Field(default=None,alias="siteName",)
-	siteWebUrl: Optional[str] = Field(default=None,alias="siteWebUrl",)
+	id: Optional[str] = Field(alias="id",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	createdBy: SerializeAsAny[Optional[IdentitySet]] = Field(alias="createdBy",default=None,)
+	createdDateTime: Optional[datetime] = Field(alias="createdDateTime",default=None,)
+	error: Optional[PublicError] = Field(alias="error",default=None,)
+	lastModifiedBy: SerializeAsAny[Optional[IdentitySet]] = Field(alias="lastModifiedBy",default=None,)
+	lastModifiedDateTime: Optional[datetime] = Field(alias="lastModifiedDateTime",default=None,)
+	policyId: Optional[str] = Field(alias="policyId",default=None,)
+	status: Optional[str | ProtectionUnitStatus] = Field(alias="status",default=None,)
+	siteId: Optional[str] = Field(alias="siteId",default=None,)
+	siteName: Optional[str] = Field(alias="siteName",default=None,)
+	siteWebUrl: Optional[str] = Field(alias="siteWebUrl",default=None,)
 
 from .identity_set import IdentitySet
 from .public_error import PublicError

@@ -4,8 +4,8 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class F__invPostRequest(BaseModel):
-	probability: Optional[str] = Field(default=None,alias="probability",)
-	degFreedom1: Optional[str] = Field(default=None,alias="degFreedom1",)
-	degFreedom2: Optional[str] = Field(default=None,alias="degFreedom2",)
+	probability: Optional[str] = Field(alias="probability",default=None,)
+	degFreedom1: Optional[str] = Field(alias="degFreedom1",default=None,)
+	degFreedom2: Optional[str] = Field(alias="degFreedom2",default=None,)
 
 

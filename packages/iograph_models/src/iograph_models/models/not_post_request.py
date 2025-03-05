@@ -4,6 +4,6 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class NotPostRequest(BaseModel):
-	logical: Optional[str] = Field(default=None,alias="logical",)
+	logical: Optional[str] = Field(alias="logical",default=None,)
 
 

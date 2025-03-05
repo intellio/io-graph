@@ -4,12 +4,12 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class ExternalConnectorsExternalItem(BaseModel):
-	id: Optional[str] = Field(default=None,alias="id",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	acl: Optional[list[ExternalConnectorsAcl]] = Field(default=None,alias="acl",)
-	content: Optional[ExternalConnectorsExternalItemContent] = Field(default=None,alias="content",)
-	properties: Optional[ExternalConnectorsProperties] = Field(default=None,alias="properties",)
-	activities: SerializeAsAny[Optional[list[ExternalConnectorsExternalActivity]]] = Field(default=None,alias="activities",)
+	id: Optional[str] = Field(alias="id",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	acl: Optional[list[ExternalConnectorsAcl]] = Field(alias="acl",default=None,)
+	content: Optional[ExternalConnectorsExternalItemContent] = Field(alias="content",default=None,)
+	properties: Optional[ExternalConnectorsProperties] = Field(alias="properties",default=None,)
+	activities: SerializeAsAny[Optional[list[ExternalConnectorsExternalActivity]]] = Field(alias="activities",default=None,)
 
 from .external_connectors_acl import ExternalConnectorsAcl
 from .external_connectors_external_item_content import ExternalConnectorsExternalItemContent

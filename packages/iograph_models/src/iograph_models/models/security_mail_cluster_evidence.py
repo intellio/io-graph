@@ -5,20 +5,20 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class SecurityMailClusterEvidence(BaseModel):
-	createdDateTime: Optional[datetime] = Field(default=None,alias="createdDateTime",)
-	detailedRoles: Optional[list[str]] = Field(default=None,alias="detailedRoles",)
-	remediationStatus: Optional[SecurityEvidenceRemediationStatus] = Field(default=None,alias="remediationStatus",)
-	remediationStatusDetails: Optional[str] = Field(default=None,alias="remediationStatusDetails",)
-	roles: Optional[list[SecurityEvidenceRole]] = Field(default=None,alias="roles",)
-	tags: Optional[list[str]] = Field(default=None,alias="tags",)
-	verdict: Optional[SecurityEvidenceVerdict] = Field(default=None,alias="verdict",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	clusterBy: Optional[str] = Field(default=None,alias="clusterBy",)
-	clusterByValue: Optional[str] = Field(default=None,alias="clusterByValue",)
-	emailCount: Optional[int] = Field(default=None,alias="emailCount",)
-	networkMessageIds: Optional[list[str]] = Field(default=None,alias="networkMessageIds",)
-	query: Optional[str] = Field(default=None,alias="query",)
-	urn: Optional[str] = Field(default=None,alias="urn",)
+	createdDateTime: Optional[datetime] = Field(alias="createdDateTime",default=None,)
+	detailedRoles: Optional[list[str]] = Field(alias="detailedRoles",default=None,)
+	remediationStatus: Optional[str | SecurityEvidenceRemediationStatus] = Field(alias="remediationStatus",default=None,)
+	remediationStatusDetails: Optional[str] = Field(alias="remediationStatusDetails",default=None,)
+	roles: Optional[list[str | SecurityEvidenceRole]] = Field(alias="roles",default=None,)
+	tags: Optional[list[str]] = Field(alias="tags",default=None,)
+	verdict: Optional[str | SecurityEvidenceVerdict] = Field(alias="verdict",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	clusterBy: Optional[str] = Field(alias="clusterBy",default=None,)
+	clusterByValue: Optional[str] = Field(alias="clusterByValue",default=None,)
+	emailCount: Optional[int] = Field(alias="emailCount",default=None,)
+	networkMessageIds: Optional[list[str]] = Field(alias="networkMessageIds",default=None,)
+	query: Optional[str] = Field(alias="query",default=None,)
+	urn: Optional[str] = Field(alias="urn",default=None,)
 
 from .security_evidence_remediation_status import SecurityEvidenceRemediationStatus
 from .security_evidence_role import SecurityEvidenceRole

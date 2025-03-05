@@ -4,14 +4,14 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class ResourceVisualization(BaseModel):
-	containerDisplayName: Optional[str] = Field(default=None,alias="containerDisplayName",)
-	containerType: Optional[str] = Field(default=None,alias="containerType",)
-	containerWebUrl: Optional[str] = Field(default=None,alias="containerWebUrl",)
-	mediaType: Optional[str] = Field(default=None,alias="mediaType",)
-	previewImageUrl: Optional[str] = Field(default=None,alias="previewImageUrl",)
-	previewText: Optional[str] = Field(default=None,alias="previewText",)
-	title: Optional[str] = Field(default=None,alias="title",)
-	type: Optional[str] = Field(default=None,alias="type",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
+	containerDisplayName: Optional[str] = Field(alias="containerDisplayName",default=None,)
+	containerType: Optional[str] = Field(alias="containerType",default=None,)
+	containerWebUrl: Optional[str] = Field(alias="containerWebUrl",default=None,)
+	mediaType: Optional[str] = Field(alias="mediaType",default=None,)
+	previewImageUrl: Optional[str] = Field(alias="previewImageUrl",default=None,)
+	previewText: Optional[str] = Field(alias="previewText",default=None,)
+	title: Optional[str] = Field(alias="title",default=None,)
+	type: Optional[str] = Field(alias="type",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 
 

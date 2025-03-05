@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class ThreatAssessmentResultType(Enum):
+class ThreatAssessmentResultType(StrEnum):
 	checkPolicy = "checkPolicy"
 	rescan = "rescan"
 	unknownFutureValue = "unknownFutureValue"

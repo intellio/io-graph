@@ -1,7 +1,7 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class CalendarSharingActionType(Enum):
+class CalendarSharingActionType(StrEnum):
 	accept = "accept"
 

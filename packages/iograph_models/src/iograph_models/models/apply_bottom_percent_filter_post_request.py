@@ -4,6 +4,6 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class Apply_bottom_percent_filterPostRequest(BaseModel):
-	percent: Optional[int] = Field(default=None,alias="percent",)
+	percent: Optional[int] = Field(alias="percent",default=None,)
 
 

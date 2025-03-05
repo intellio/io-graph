@@ -5,22 +5,22 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class ServiceHealthIssue(BaseModel):
-	id: Optional[str] = Field(default=None,alias="id",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	details: Optional[list[KeyValuePair]] = Field(default=None,alias="details",)
-	endDateTime: Optional[datetime] = Field(default=None,alias="endDateTime",)
-	lastModifiedDateTime: Optional[datetime] = Field(default=None,alias="lastModifiedDateTime",)
-	startDateTime: Optional[datetime] = Field(default=None,alias="startDateTime",)
-	title: Optional[str] = Field(default=None,alias="title",)
-	classification: Optional[ServiceHealthClassificationType] = Field(default=None,alias="classification",)
-	feature: Optional[str] = Field(default=None,alias="feature",)
-	featureGroup: Optional[str] = Field(default=None,alias="featureGroup",)
-	impactDescription: Optional[str] = Field(default=None,alias="impactDescription",)
-	isResolved: Optional[bool] = Field(default=None,alias="isResolved",)
-	origin: Optional[ServiceHealthOrigin] = Field(default=None,alias="origin",)
-	posts: Optional[list[ServiceHealthIssuePost]] = Field(default=None,alias="posts",)
-	service: Optional[str] = Field(default=None,alias="service",)
-	status: Optional[ServiceHealthStatus] = Field(default=None,alias="status",)
+	id: Optional[str] = Field(alias="id",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	details: Optional[list[KeyValuePair]] = Field(alias="details",default=None,)
+	endDateTime: Optional[datetime] = Field(alias="endDateTime",default=None,)
+	lastModifiedDateTime: Optional[datetime] = Field(alias="lastModifiedDateTime",default=None,)
+	startDateTime: Optional[datetime] = Field(alias="startDateTime",default=None,)
+	title: Optional[str] = Field(alias="title",default=None,)
+	classification: Optional[str | ServiceHealthClassificationType] = Field(alias="classification",default=None,)
+	feature: Optional[str] = Field(alias="feature",default=None,)
+	featureGroup: Optional[str] = Field(alias="featureGroup",default=None,)
+	impactDescription: Optional[str] = Field(alias="impactDescription",default=None,)
+	isResolved: Optional[bool] = Field(alias="isResolved",default=None,)
+	origin: Optional[str | ServiceHealthOrigin] = Field(alias="origin",default=None,)
+	posts: Optional[list[ServiceHealthIssuePost]] = Field(alias="posts",default=None,)
+	service: Optional[str] = Field(alias="service",default=None,)
+	status: Optional[str | ServiceHealthStatus] = Field(alias="status",default=None,)
 
 from .key_value_pair import KeyValuePair
 from .service_health_classification_type import ServiceHealthClassificationType

@@ -4,9 +4,9 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class RestorePointSearchResult(BaseModel):
-	artifactHitCount: Optional[int] = Field(default=None,alias="artifactHitCount",)
-	restorePoint: Optional[RestorePoint] = Field(default=None,alias="restorePoint",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
+	artifactHitCount: Optional[int] = Field(alias="artifactHitCount",default=None,)
+	restorePoint: Optional[RestorePoint] = Field(alias="restorePoint",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 
 from .restore_point import RestorePoint
 

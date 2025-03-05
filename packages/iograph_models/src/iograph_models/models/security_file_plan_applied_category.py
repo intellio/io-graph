@@ -4,9 +4,9 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class SecurityFilePlanAppliedCategory(BaseModel):
-	displayName: Optional[str] = Field(default=None,alias="displayName",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	subcategory: Optional[SecurityFilePlanSubcategory] = Field(default=None,alias="subcategory",)
+	displayName: Optional[str] = Field(alias="displayName",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	subcategory: Optional[SecurityFilePlanSubcategory] = Field(alias="subcategory",default=None,)
 
 from .security_file_plan_subcategory import SecurityFilePlanSubcategory
 

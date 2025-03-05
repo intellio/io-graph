@@ -4,7 +4,7 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class EducationAssignmentIndividualRecipient(BaseModel):
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	recipients: Optional[list[str]] = Field(default=None,alias="recipients",)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	recipients: Optional[list[str]] = Field(alias="recipients",default=None,)
 
 

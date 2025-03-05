@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class PrintFinishing(Enum):
+class PrintFinishing(StrEnum):
 	none = "none"
 	staple = "staple"
 	punch = "punch"

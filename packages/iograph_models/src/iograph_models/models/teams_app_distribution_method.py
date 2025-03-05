@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class TeamsAppDistributionMethod(Enum):
+class TeamsAppDistributionMethod(StrEnum):
 	store = "store"
 	organization = "organization"
 	sideloaded = "sideloaded"

@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class AccountTargetContentType(Enum):
+class AccountTargetContentType(StrEnum):
 	unknown = "unknown"
 	includeAll = "includeAll"
 	addressBook = "addressBook"

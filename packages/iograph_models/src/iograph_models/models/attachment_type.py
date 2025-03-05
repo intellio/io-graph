@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class AttachmentType(Enum):
+class AttachmentType(StrEnum):
 	file = "file"
 	item = "item"
 	reference = "reference"

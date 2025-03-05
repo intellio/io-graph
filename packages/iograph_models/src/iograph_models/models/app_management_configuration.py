@@ -6,9 +6,9 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class AppManagementConfiguration(BaseModel):
-	keyCredentials: Optional[list[KeyCredentialConfiguration]] = Field(default=None,alias="keyCredentials",)
-	passwordCredentials: Optional[list[PasswordCredentialConfiguration]] = Field(default=None,alias="passwordCredentials",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
+	keyCredentials: Optional[list[KeyCredentialConfiguration]] = Field(alias="keyCredentials",default=None,)
+	passwordCredentials: Optional[list[PasswordCredentialConfiguration]] = Field(alias="passwordCredentials",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 
 	@model_validator(mode="wrap")
 	def convert_discriminator_class(cls, data: Any, handler: ModelWrapValidatorHandler[Self]) -> Self:

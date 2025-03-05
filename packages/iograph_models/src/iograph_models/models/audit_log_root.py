@@ -4,11 +4,11 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class AuditLogRoot(BaseModel):
-	id: Optional[str] = Field(default=None,alias="id",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	directoryAudits: Optional[list[DirectoryAudit]] = Field(default=None,alias="directoryAudits",)
-	provisioning: Optional[list[ProvisioningObjectSummary]] = Field(default=None,alias="provisioning",)
-	signIns: Optional[list[SignIn]] = Field(default=None,alias="signIns",)
+	id: Optional[str] = Field(alias="id",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	directoryAudits: Optional[list[DirectoryAudit]] = Field(alias="directoryAudits",default=None,)
+	provisioning: Optional[list[ProvisioningObjectSummary]] = Field(alias="provisioning",default=None,)
+	signIns: Optional[list[SignIn]] = Field(alias="signIns",default=None,)
 
 from .directory_audit import DirectoryAudit
 from .provisioning_object_summary import ProvisioningObjectSummary

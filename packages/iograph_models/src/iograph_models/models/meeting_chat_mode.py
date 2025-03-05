@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class MeetingChatMode(Enum):
+class MeetingChatMode(StrEnum):
 	enabled = "enabled"
 	disabled = "disabled"
 	limited = "limited"

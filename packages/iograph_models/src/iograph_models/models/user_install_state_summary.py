@@ -4,13 +4,13 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class UserInstallStateSummary(BaseModel):
-	id: Optional[str] = Field(default=None,alias="id",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	failedDeviceCount: Optional[int] = Field(default=None,alias="failedDeviceCount",)
-	installedDeviceCount: Optional[int] = Field(default=None,alias="installedDeviceCount",)
-	notInstalledDeviceCount: Optional[int] = Field(default=None,alias="notInstalledDeviceCount",)
-	userName: Optional[str] = Field(default=None,alias="userName",)
-	deviceStates: Optional[list[DeviceInstallState]] = Field(default=None,alias="deviceStates",)
+	id: Optional[str] = Field(alias="id",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	failedDeviceCount: Optional[int] = Field(alias="failedDeviceCount",default=None,)
+	installedDeviceCount: Optional[int] = Field(alias="installedDeviceCount",default=None,)
+	notInstalledDeviceCount: Optional[int] = Field(alias="notInstalledDeviceCount",default=None,)
+	userName: Optional[str] = Field(alias="userName",default=None,)
+	deviceStates: Optional[list[DeviceInstallState]] = Field(alias="deviceStates",default=None,)
 
 from .device_install_state import DeviceInstallState
 

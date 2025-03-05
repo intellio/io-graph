@@ -11,9 +11,9 @@ from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:
 	from ..........request_adapter import HttpxRequestAdapter
+from iograph_models.models.start_break_post_request import Start_breakPostRequest
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.models.time_card import TimeCard
-from iograph_models.models.start_break_post_request import Start_breakPostRequest
 
 
 class StartBreakRequest(BaseRequestBuilder):

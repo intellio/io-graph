@@ -4,7 +4,7 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class Create_upload_sessionPostRequest(BaseModel):
-	attachmentInfo: Optional[AttachmentInfo] = Field(default=None,alias="attachmentInfo",)
+	attachmentInfo: Optional[AttachmentInfo] = Field(alias="attachmentInfo",default=None,)
 
 from .attachment_info import AttachmentInfo
 

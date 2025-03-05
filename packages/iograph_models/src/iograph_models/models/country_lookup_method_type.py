@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class CountryLookupMethodType(Enum):
+class CountryLookupMethodType(StrEnum):
 	clientIpAddress = "clientIpAddress"
 	authenticatorAppGps = "authenticatorAppGps"
 	unknownFutureValue = "unknownFutureValue"

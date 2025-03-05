@@ -6,11 +6,11 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class OfficeGraphInsights(BaseModel):
-	id: Optional[str] = Field(default=None,alias="id",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	shared: Optional[list[SharedInsight]] = Field(default=None,alias="shared",)
-	trending: Optional[list[Trending]] = Field(default=None,alias="trending",)
-	used: Optional[list[UsedInsight]] = Field(default=None,alias="used",)
+	id: Optional[str] = Field(alias="id",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	shared: Optional[list[SharedInsight]] = Field(alias="shared",default=None,)
+	trending: Optional[list[Trending]] = Field(alias="trending",default=None,)
+	used: Optional[list[UsedInsight]] = Field(alias="used",default=None,)
 
 	@model_validator(mode="wrap")
 	def convert_discriminator_class(cls, data: Any, handler: ModelWrapValidatorHandler[Self]) -> Self:

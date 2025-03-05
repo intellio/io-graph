@@ -4,6 +4,6 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class Apply_font_color_filterPostRequest(BaseModel):
-	color: Optional[str] = Field(default=None,alias="color",)
+	color: Optional[str] = Field(alias="color",default=None,)
 
 

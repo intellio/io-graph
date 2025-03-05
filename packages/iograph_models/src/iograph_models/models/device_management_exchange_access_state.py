@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class DeviceManagementExchangeAccessState(Enum):
+class DeviceManagementExchangeAccessState(StrEnum):
 	none = "none"
 	unknown = "unknown"
 	allowed = "allowed"

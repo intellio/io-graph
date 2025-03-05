@@ -4,11 +4,11 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class VirtualEventRegistrationPredefinedQuestion(BaseModel):
-	id: Optional[str] = Field(default=None,alias="id",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	displayName: Optional[str] = Field(default=None,alias="displayName",)
-	isRequired: Optional[bool] = Field(default=None,alias="isRequired",)
-	label: Optional[VirtualEventRegistrationPredefinedQuestionLabel] = Field(default=None,alias="label",)
+	id: Optional[str] = Field(alias="id",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	displayName: Optional[str] = Field(alias="displayName",default=None,)
+	isRequired: Optional[bool] = Field(alias="isRequired",default=None,)
+	label: Optional[str | VirtualEventRegistrationPredefinedQuestionLabel] = Field(alias="label",default=None,)
 
 from .virtual_event_registration_predefined_question_label import VirtualEventRegistrationPredefinedQuestionLabel
 

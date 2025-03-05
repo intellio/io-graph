@@ -4,8 +4,8 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class Gamma__invPostRequest(BaseModel):
-	probability: Optional[str] = Field(default=None,alias="probability",)
-	alpha: Optional[str] = Field(default=None,alias="alpha",)
-	beta: Optional[str] = Field(default=None,alias="beta",)
+	probability: Optional[str] = Field(alias="probability",default=None,)
+	alpha: Optional[str] = Field(alias="alpha",default=None,)
+	beta: Optional[str] = Field(alias="beta",default=None,)
 
 

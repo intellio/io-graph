@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class ChatMessagePolicyViolationDlpActionTypes(Enum):
+class ChatMessagePolicyViolationDlpActionTypes(StrEnum):
 	none = "none"
 	notifySender = "notifySender"
 	blockAccess = "blockAccess"

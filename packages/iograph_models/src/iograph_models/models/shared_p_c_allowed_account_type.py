@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class SharedPCAllowedAccountType(Enum):
+class SharedPCAllowedAccountType(StrEnum):
 	guest = "guest"
 	domain = "domain"
 

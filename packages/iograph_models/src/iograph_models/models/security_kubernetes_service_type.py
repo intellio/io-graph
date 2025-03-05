@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class SecurityKubernetesServiceType(Enum):
+class SecurityKubernetesServiceType(StrEnum):
 	unknown = "unknown"
 	clusterIP = "clusterIP"
 	externalName = "externalName"

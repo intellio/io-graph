@@ -5,11 +5,11 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class Certification(BaseModel):
-	certificationDetailsUrl: Optional[str] = Field(default=None,alias="certificationDetailsUrl",)
-	certificationExpirationDateTime: Optional[datetime] = Field(default=None,alias="certificationExpirationDateTime",)
-	isCertifiedByMicrosoft: Optional[bool] = Field(default=None,alias="isCertifiedByMicrosoft",)
-	isPublisherAttested: Optional[bool] = Field(default=None,alias="isPublisherAttested",)
-	lastCertificationDateTime: Optional[datetime] = Field(default=None,alias="lastCertificationDateTime",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
+	certificationDetailsUrl: Optional[str] = Field(alias="certificationDetailsUrl",default=None,)
+	certificationExpirationDateTime: Optional[datetime] = Field(alias="certificationExpirationDateTime",default=None,)
+	isCertifiedByMicrosoft: Optional[bool] = Field(alias="isCertifiedByMicrosoft",default=None,)
+	isPublisherAttested: Optional[bool] = Field(alias="isPublisherAttested",default=None,)
+	lastCertificationDateTime: Optional[datetime] = Field(alias="lastCertificationDateTime",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 
 

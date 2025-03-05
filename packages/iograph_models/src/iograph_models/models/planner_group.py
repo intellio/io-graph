@@ -4,9 +4,9 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class PlannerGroup(BaseModel):
-	id: Optional[str] = Field(default=None,alias="id",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	plans: Optional[list[PlannerPlan]] = Field(default=None,alias="plans",)
+	id: Optional[str] = Field(alias="id",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	plans: Optional[list[PlannerPlan]] = Field(alias="plans",default=None,)
 
 from .planner_plan import PlannerPlan
 

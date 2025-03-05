@@ -5,17 +5,17 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class UnifiedRoleManagementPolicy(BaseModel):
-	id: Optional[str] = Field(default=None,alias="id",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	description: Optional[str] = Field(default=None,alias="description",)
-	displayName: Optional[str] = Field(default=None,alias="displayName",)
-	isOrganizationDefault: Optional[bool] = Field(default=None,alias="isOrganizationDefault",)
-	lastModifiedBy: SerializeAsAny[Optional[Identity]] = Field(default=None,alias="lastModifiedBy",)
-	lastModifiedDateTime: Optional[datetime] = Field(default=None,alias="lastModifiedDateTime",)
-	scopeId: Optional[str] = Field(default=None,alias="scopeId",)
-	scopeType: Optional[str] = Field(default=None,alias="scopeType",)
-	effectiveRules: SerializeAsAny[Optional[list[UnifiedRoleManagementPolicyRule]]] = Field(default=None,alias="effectiveRules",)
-	rules: SerializeAsAny[Optional[list[UnifiedRoleManagementPolicyRule]]] = Field(default=None,alias="rules",)
+	id: Optional[str] = Field(alias="id",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	description: Optional[str] = Field(alias="description",default=None,)
+	displayName: Optional[str] = Field(alias="displayName",default=None,)
+	isOrganizationDefault: Optional[bool] = Field(alias="isOrganizationDefault",default=None,)
+	lastModifiedBy: SerializeAsAny[Optional[Identity]] = Field(alias="lastModifiedBy",default=None,)
+	lastModifiedDateTime: Optional[datetime] = Field(alias="lastModifiedDateTime",default=None,)
+	scopeId: Optional[str] = Field(alias="scopeId",default=None,)
+	scopeType: Optional[str] = Field(alias="scopeType",default=None,)
+	effectiveRules: SerializeAsAny[Optional[list[UnifiedRoleManagementPolicyRule]]] = Field(alias="effectiveRules",default=None,)
+	rules: SerializeAsAny[Optional[list[UnifiedRoleManagementPolicyRule]]] = Field(alias="rules",default=None,)
 
 from .identity import Identity
 from .unified_role_management_policy_rule import UnifiedRoleManagementPolicyRule

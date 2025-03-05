@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class OnenoteUserRole(Enum):
+class OnenoteUserRole(StrEnum):
 	None_ = "None_"
 	Owner = "Owner"
 	Contributor = "Contributor"

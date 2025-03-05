@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class ImageTaggingChoice(Enum):
+class ImageTaggingChoice(StrEnum):
 	disabled = "disabled"
 	basic = "basic"
 	enhanced = "enhanced"

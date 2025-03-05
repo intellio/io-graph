@@ -4,9 +4,9 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class RiskServicePrincipalActivity(BaseModel):
-	detail: Optional[RiskDetail] = Field(default=None,alias="detail",)
-	riskEventTypes: Optional[list[str]] = Field(default=None,alias="riskEventTypes",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
+	detail: Optional[str | RiskDetail] = Field(alias="detail",default=None,)
+	riskEventTypes: Optional[list[str]] = Field(alias="riskEventTypes",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 
 from .risk_detail import RiskDetail
 

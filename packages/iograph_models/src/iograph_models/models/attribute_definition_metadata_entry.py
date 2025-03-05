@@ -4,9 +4,9 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class AttributeDefinitionMetadataEntry(BaseModel):
-	key: Optional[AttributeDefinitionMetadata] = Field(default=None,alias="key",)
-	value: Optional[str] = Field(default=None,alias="value",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
+	key: Optional[str | AttributeDefinitionMetadata] = Field(alias="key",default=None,)
+	value: Optional[str] = Field(alias="value",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 
 from .attribute_definition_metadata import AttributeDefinitionMetadata
 

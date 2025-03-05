@@ -4,17 +4,17 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class CloudPcGalleryImage(BaseModel):
-	id: Optional[str] = Field(default=None,alias="id",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	displayName: Optional[str] = Field(default=None,alias="displayName",)
-	endDate: Optional[str] = Field(default=None,alias="endDate",)
-	expirationDate: Optional[str] = Field(default=None,alias="expirationDate",)
-	offerName: Optional[str] = Field(default=None,alias="offerName",)
-	publisherName: Optional[str] = Field(default=None,alias="publisherName",)
-	sizeInGB: Optional[int] = Field(default=None,alias="sizeInGB",)
-	skuName: Optional[str] = Field(default=None,alias="skuName",)
-	startDate: Optional[str] = Field(default=None,alias="startDate",)
-	status: Optional[CloudPcGalleryImageStatus] = Field(default=None,alias="status",)
+	id: Optional[str] = Field(alias="id",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	displayName: Optional[str] = Field(alias="displayName",default=None,)
+	endDate: Optional[str] = Field(alias="endDate",default=None,)
+	expirationDate: Optional[str] = Field(alias="expirationDate",default=None,)
+	offerName: Optional[str] = Field(alias="offerName",default=None,)
+	publisherName: Optional[str] = Field(alias="publisherName",default=None,)
+	sizeInGB: Optional[int] = Field(alias="sizeInGB",default=None,)
+	skuName: Optional[str] = Field(alias="skuName",default=None,)
+	startDate: Optional[str] = Field(alias="startDate",default=None,)
+	status: Optional[str | CloudPcGalleryImageStatus] = Field(alias="status",default=None,)
 
 from .cloud_pc_gallery_image_status import CloudPcGalleryImageStatus
 

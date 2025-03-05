@@ -4,7 +4,7 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class IosMobileAppIdentifier(BaseModel):
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	bundleId: Optional[str] = Field(default=None,alias="bundleId",)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	bundleId: Optional[str] = Field(alias="bundleId",default=None,)
 
 

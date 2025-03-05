@@ -4,10 +4,10 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class BookingReminder(BaseModel):
-	message: Optional[str] = Field(default=None,alias="message",)
-	offset: Optional[str] = Field(default=None,alias="offset",)
-	recipients: Optional[BookingReminderRecipients] = Field(default=None,alias="recipients",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
+	message: Optional[str] = Field(alias="message",default=None,)
+	offset: Optional[str] = Field(alias="offset",default=None,)
+	recipients: Optional[str | BookingReminderRecipients] = Field(alias="recipients",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 
 from .booking_reminder_recipients import BookingReminderRecipients
 

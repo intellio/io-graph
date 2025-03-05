@@ -4,9 +4,9 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class ConditionalAccessFilter(BaseModel):
-	mode: Optional[FilterMode] = Field(default=None,alias="mode",)
-	rule: Optional[str] = Field(default=None,alias="rule",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
+	mode: Optional[str | FilterMode] = Field(alias="mode",default=None,)
+	rule: Optional[str] = Field(alias="rule",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 
 from .filter_mode import FilterMode
 

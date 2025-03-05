@@ -5,10 +5,10 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class TimeCardEvent(BaseModel):
-	dateTime: Optional[datetime] = Field(default=None,alias="dateTime",)
-	isAtApprovedLocation: Optional[bool] = Field(default=None,alias="isAtApprovedLocation",)
-	notes: Optional[ItemBody] = Field(default=None,alias="notes",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
+	dateTime: Optional[datetime] = Field(alias="dateTime",default=None,)
+	isAtApprovedLocation: Optional[bool] = Field(alias="isAtApprovedLocation",default=None,)
+	notes: Optional[ItemBody] = Field(alias="notes",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 
 from .item_body import ItemBody
 

@@ -6,8 +6,8 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class ActionResultPart(BaseModel):
-	error: Optional[PublicError] = Field(default=None,alias="error",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
+	error: Optional[PublicError] = Field(alias="error",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 
 	@model_validator(mode="wrap")
 	def convert_discriminator_class(cls, data: Any, handler: ModelWrapValidatorHandler[Self]) -> Self:

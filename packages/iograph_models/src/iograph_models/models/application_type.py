@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class ApplicationType(Enum):
+class ApplicationType(StrEnum):
 	universal = "universal"
 	desktop = "desktop"
 

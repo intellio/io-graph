@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class AppLogUploadState(Enum):
+class AppLogUploadState(StrEnum):
 	pending = "pending"
 	completed = "completed"
 	failed = "failed"

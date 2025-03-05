@@ -4,8 +4,8 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class SizeRange(BaseModel):
-	maximumSize: Optional[int] = Field(default=None,alias="maximumSize",)
-	minimumSize: Optional[int] = Field(default=None,alias="minimumSize",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
+	maximumSize: Optional[int] = Field(alias="maximumSize",default=None,)
+	minimumSize: Optional[int] = Field(alias="minimumSize",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 
 

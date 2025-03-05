@@ -4,12 +4,12 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class ConfigurationManagerClientEnabledFeatures(BaseModel):
-	compliancePolicy: Optional[bool] = Field(default=None,alias="compliancePolicy",)
-	deviceConfiguration: Optional[bool] = Field(default=None,alias="deviceConfiguration",)
-	inventory: Optional[bool] = Field(default=None,alias="inventory",)
-	modernApps: Optional[bool] = Field(default=None,alias="modernApps",)
-	resourceAccess: Optional[bool] = Field(default=None,alias="resourceAccess",)
-	windowsUpdateForBusiness: Optional[bool] = Field(default=None,alias="windowsUpdateForBusiness",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
+	compliancePolicy: Optional[bool] = Field(alias="compliancePolicy",default=None,)
+	deviceConfiguration: Optional[bool] = Field(alias="deviceConfiguration",default=None,)
+	inventory: Optional[bool] = Field(alias="inventory",default=None,)
+	modernApps: Optional[bool] = Field(alias="modernApps",default=None,)
+	resourceAccess: Optional[bool] = Field(alias="resourceAccess",default=None,)
+	windowsUpdateForBusiness: Optional[bool] = Field(alias="windowsUpdateForBusiness",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 
 

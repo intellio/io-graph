@@ -4,9 +4,9 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class ManagedAppDiagnosticStatus(BaseModel):
-	mitigationInstruction: Optional[str] = Field(default=None,alias="mitigationInstruction",)
-	state: Optional[str] = Field(default=None,alias="state",)
-	validationName: Optional[str] = Field(default=None,alias="validationName",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
+	mitigationInstruction: Optional[str] = Field(alias="mitigationInstruction",default=None,)
+	state: Optional[str] = Field(alias="state",default=None,)
+	validationName: Optional[str] = Field(alias="validationName",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 
 

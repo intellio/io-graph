@@ -17,8 +17,8 @@ if TYPE_CHECKING:
 	from .check_member_objects import CheckMemberObjectsRequest
 	from .check_member_groups import CheckMemberGroupsRequest
 	from ....request_adapter import HttpxRequestAdapter
-from iograph_models.models.directory_role_template import DirectoryRoleTemplate
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.models.directory_role_template import DirectoryRoleTemplate
 
 
 class ByDirectoryRoleTemplateIdRequest(BaseRequestBuilder):

@@ -6,12 +6,12 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class Contract(BaseModel):
-	id: Optional[str] = Field(default=None,alias="id",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	deletedDateTime: Optional[datetime] = Field(default=None,alias="deletedDateTime",)
-	contractType: Optional[str] = Field(default=None,alias="contractType",)
-	customerId: Optional[UUID] = Field(default=None,alias="customerId",)
-	defaultDomainName: Optional[str] = Field(default=None,alias="defaultDomainName",)
-	displayName: Optional[str] = Field(default=None,alias="displayName",)
+	id: Optional[str] = Field(alias="id",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	deletedDateTime: Optional[datetime] = Field(alias="deletedDateTime",default=None,)
+	contractType: Optional[str] = Field(alias="contractType",default=None,)
+	customerId: Optional[UUID] = Field(alias="customerId",default=None,)
+	defaultDomainName: Optional[str] = Field(alias="defaultDomainName",default=None,)
+	displayName: Optional[str] = Field(alias="displayName",default=None,)
 
 

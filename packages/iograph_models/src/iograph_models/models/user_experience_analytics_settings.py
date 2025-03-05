@@ -4,7 +4,7 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class UserExperienceAnalyticsSettings(BaseModel):
-	configurationManagerDataConnectorConfigured: Optional[bool] = Field(default=None,alias="configurationManagerDataConnectorConfigured",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
+	configurationManagerDataConnectorConfigured: Optional[bool] = Field(alias="configurationManagerDataConnectorConfigured",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 
 

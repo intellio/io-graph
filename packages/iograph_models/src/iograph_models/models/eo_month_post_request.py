@@ -4,7 +4,7 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class Eo_monthPostRequest(BaseModel):
-	startDate: Optional[str] = Field(default=None,alias="startDate",)
-	months: Optional[str] = Field(default=None,alias="months",)
+	startDate: Optional[str] = Field(alias="startDate",default=None,)
+	months: Optional[str] = Field(alias="months",default=None,)
 
 

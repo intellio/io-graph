@@ -4,7 +4,7 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class ExternalConnectorsConfiguration(BaseModel):
-	authorizedAppIds: Optional[list[str]] = Field(default=None,alias="authorizedAppIds",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
+	authorizedAppIds: Optional[list[str]] = Field(alias="authorizedAppIds",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 
 

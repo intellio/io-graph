@@ -4,19 +4,19 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class ConditionalAccessConditionSet(BaseModel):
-	applications: Optional[ConditionalAccessApplications] = Field(default=None,alias="applications",)
-	authenticationFlows: Optional[ConditionalAccessAuthenticationFlows] = Field(default=None,alias="authenticationFlows",)
-	clientApplications: Optional[ConditionalAccessClientApplications] = Field(default=None,alias="clientApplications",)
-	clientAppTypes: Optional[list[ConditionalAccessClientApp]] = Field(default=None,alias="clientAppTypes",)
-	devices: Optional[ConditionalAccessDevices] = Field(default=None,alias="devices",)
-	insiderRiskLevels: Optional[ConditionalAccessInsiderRiskLevels] = Field(default=None,alias="insiderRiskLevels",)
-	locations: Optional[ConditionalAccessLocations] = Field(default=None,alias="locations",)
-	platforms: Optional[ConditionalAccessPlatforms] = Field(default=None,alias="platforms",)
-	servicePrincipalRiskLevels: Optional[list[RiskLevel]] = Field(default=None,alias="servicePrincipalRiskLevels",)
-	signInRiskLevels: Optional[list[RiskLevel]] = Field(default=None,alias="signInRiskLevels",)
-	userRiskLevels: Optional[list[RiskLevel]] = Field(default=None,alias="userRiskLevels",)
-	users: Optional[ConditionalAccessUsers] = Field(default=None,alias="users",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
+	applications: Optional[ConditionalAccessApplications] = Field(alias="applications",default=None,)
+	authenticationFlows: Optional[ConditionalAccessAuthenticationFlows] = Field(alias="authenticationFlows",default=None,)
+	clientApplications: Optional[ConditionalAccessClientApplications] = Field(alias="clientApplications",default=None,)
+	clientAppTypes: Optional[list[str | ConditionalAccessClientApp]] = Field(alias="clientAppTypes",default=None,)
+	devices: Optional[ConditionalAccessDevices] = Field(alias="devices",default=None,)
+	insiderRiskLevels: Optional[str | ConditionalAccessInsiderRiskLevels] = Field(alias="insiderRiskLevels",default=None,)
+	locations: Optional[ConditionalAccessLocations] = Field(alias="locations",default=None,)
+	platforms: Optional[ConditionalAccessPlatforms] = Field(alias="platforms",default=None,)
+	servicePrincipalRiskLevels: Optional[list[str | RiskLevel]] = Field(alias="servicePrincipalRiskLevels",default=None,)
+	signInRiskLevels: Optional[list[str | RiskLevel]] = Field(alias="signInRiskLevels",default=None,)
+	userRiskLevels: Optional[list[str | RiskLevel]] = Field(alias="userRiskLevels",default=None,)
+	users: Optional[ConditionalAccessUsers] = Field(alias="users",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 
 from .conditional_access_applications import ConditionalAccessApplications
 from .conditional_access_authentication_flows import ConditionalAccessAuthenticationFlows

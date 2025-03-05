@@ -4,7 +4,7 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class TruncPostRequest(BaseModel):
-	number: Optional[str] = Field(default=None,alias="number",)
-	numDigits: Optional[str] = Field(default=None,alias="numDigits",)
+	number: Optional[str] = Field(alias="number",default=None,)
+	numDigits: Optional[str] = Field(alias="numDigits",default=None,)
 
 

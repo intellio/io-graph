@@ -4,8 +4,8 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class ItemActionStat(BaseModel):
-	actionCount: Optional[int] = Field(default=None,alias="actionCount",)
-	actorCount: Optional[int] = Field(default=None,alias="actorCount",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
+	actionCount: Optional[int] = Field(alias="actionCount",default=None,)
+	actorCount: Optional[int] = Field(alias="actorCount",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 
 

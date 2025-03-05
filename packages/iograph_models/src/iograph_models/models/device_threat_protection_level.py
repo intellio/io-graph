@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class DeviceThreatProtectionLevel(Enum):
+class DeviceThreatProtectionLevel(StrEnum):
 	unavailable = "unavailable"
 	secured = "secured"
 	low = "low"

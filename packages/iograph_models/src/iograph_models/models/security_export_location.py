@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class SecurityExportLocation(Enum):
+class SecurityExportLocation(StrEnum):
 	responsiveLocations = "responsiveLocations"
 	nonresponsiveLocations = "nonresponsiveLocations"
 	unknownFutureValue = "unknownFutureValue"

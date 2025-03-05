@@ -4,14 +4,14 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class EndUserNotificationDetail(BaseModel):
-	id: Optional[str] = Field(default=None,alias="id",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	emailContent: Optional[str] = Field(default=None,alias="emailContent",)
-	isDefaultLangauge: Optional[bool] = Field(default=None,alias="isDefaultLangauge",)
-	language: Optional[str] = Field(default=None,alias="language",)
-	locale: Optional[str] = Field(default=None,alias="locale",)
-	sentFrom: Optional[EmailIdentity] = Field(default=None,alias="sentFrom",)
-	subject: Optional[str] = Field(default=None,alias="subject",)
+	id: Optional[str] = Field(alias="id",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	emailContent: Optional[str] = Field(alias="emailContent",default=None,)
+	isDefaultLangauge: Optional[bool] = Field(alias="isDefaultLangauge",default=None,)
+	language: Optional[str] = Field(alias="language",default=None,)
+	locale: Optional[str] = Field(alias="locale",default=None,)
+	sentFrom: Optional[EmailIdentity] = Field(alias="sentFrom",default=None,)
+	subject: Optional[str] = Field(alias="subject",default=None,)
 
 from .email_identity import EmailIdentity
 

@@ -9,7 +9,7 @@ class OutlookGeoCoordinates(BaseModel):
 	altitudeAccuracy: float | str | ReferenceNumeric
 	latitude: float | str | ReferenceNumeric
 	longitude: float | str | ReferenceNumeric
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 
 from .reference_numeric import ReferenceNumeric
 from .reference_numeric import ReferenceNumeric

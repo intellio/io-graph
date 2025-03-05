@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class EducationAddedStudentAction(Enum):
+class EducationAddedStudentAction(StrEnum):
 	none = "none"
 	assignIfOpen = "assignIfOpen"
 	unknownFutureValue = "unknownFutureValue"

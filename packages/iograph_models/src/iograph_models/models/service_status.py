@@ -5,14 +5,14 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class ServiceStatus(BaseModel):
-	backupServiceConsumer: Optional[BackupServiceConsumer] = Field(default=None,alias="backupServiceConsumer",)
-	disableReason: Optional[DisableReason] = Field(default=None,alias="disableReason",)
-	gracePeriodDateTime: Optional[datetime] = Field(default=None,alias="gracePeriodDateTime",)
-	lastModifiedBy: SerializeAsAny[Optional[IdentitySet]] = Field(default=None,alias="lastModifiedBy",)
-	lastModifiedDateTime: Optional[datetime] = Field(default=None,alias="lastModifiedDateTime",)
-	restoreAllowedTillDateTime: Optional[datetime] = Field(default=None,alias="restoreAllowedTillDateTime",)
-	status: Optional[BackupServiceStatus] = Field(default=None,alias="status",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
+	backupServiceConsumer: Optional[str | BackupServiceConsumer] = Field(alias="backupServiceConsumer",default=None,)
+	disableReason: Optional[str | DisableReason] = Field(alias="disableReason",default=None,)
+	gracePeriodDateTime: Optional[datetime] = Field(alias="gracePeriodDateTime",default=None,)
+	lastModifiedBy: SerializeAsAny[Optional[IdentitySet]] = Field(alias="lastModifiedBy",default=None,)
+	lastModifiedDateTime: Optional[datetime] = Field(alias="lastModifiedDateTime",default=None,)
+	restoreAllowedTillDateTime: Optional[datetime] = Field(alias="restoreAllowedTillDateTime",default=None,)
+	status: Optional[str | BackupServiceStatus] = Field(alias="status",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 
 from .backup_service_consumer import BackupServiceConsumer
 from .disable_reason import DisableReason

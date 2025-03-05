@@ -5,15 +5,15 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDeviceId(BaseModel):
-	id: Optional[str] = Field(default=None,alias="id",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	appCrashCount: Optional[int] = Field(default=None,alias="appCrashCount",)
-	appDisplayName: Optional[str] = Field(default=None,alias="appDisplayName",)
-	appName: Optional[str] = Field(default=None,alias="appName",)
-	appPublisher: Optional[str] = Field(default=None,alias="appPublisher",)
-	appVersion: Optional[str] = Field(default=None,alias="appVersion",)
-	deviceDisplayName: Optional[str] = Field(default=None,alias="deviceDisplayName",)
-	deviceId: Optional[str] = Field(default=None,alias="deviceId",)
-	processedDateTime: Optional[datetime] = Field(default=None,alias="processedDateTime",)
+	id: Optional[str] = Field(alias="id",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	appCrashCount: Optional[int] = Field(alias="appCrashCount",default=None,)
+	appDisplayName: Optional[str] = Field(alias="appDisplayName",default=None,)
+	appName: Optional[str] = Field(alias="appName",default=None,)
+	appPublisher: Optional[str] = Field(alias="appPublisher",default=None,)
+	appVersion: Optional[str] = Field(alias="appVersion",default=None,)
+	deviceDisplayName: Optional[str] = Field(alias="deviceDisplayName",default=None,)
+	deviceId: Optional[str] = Field(alias="deviceId",default=None,)
+	processedDateTime: Optional[datetime] = Field(alias="processedDateTime",default=None,)
 
 

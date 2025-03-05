@@ -4,11 +4,11 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class Presence(BaseModel):
-	id: Optional[str] = Field(default=None,alias="id",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	activity: Optional[str] = Field(default=None,alias="activity",)
-	availability: Optional[str] = Field(default=None,alias="availability",)
-	statusMessage: Optional[PresenceStatusMessage] = Field(default=None,alias="statusMessage",)
+	id: Optional[str] = Field(alias="id",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	activity: Optional[str] = Field(alias="activity",default=None,)
+	availability: Optional[str] = Field(alias="availability",default=None,)
+	statusMessage: Optional[PresenceStatusMessage] = Field(alias="statusMessage",default=None,)
 
 from .presence_status_message import PresenceStatusMessage
 

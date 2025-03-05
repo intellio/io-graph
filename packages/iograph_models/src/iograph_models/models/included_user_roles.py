@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class IncludedUserRoles(Enum):
+class IncludedUserRoles(StrEnum):
 	all = "all"
 	privilegedAdmin = "privilegedAdmin"
 	admin = "admin"

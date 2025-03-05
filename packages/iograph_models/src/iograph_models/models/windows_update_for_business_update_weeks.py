@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class WindowsUpdateForBusinessUpdateWeeks(Enum):
+class WindowsUpdateForBusinessUpdateWeeks(StrEnum):
 	userDefined = "userDefined"
 	firstWeek = "firstWeek"
 	secondWeek = "secondWeek"

@@ -13,8 +13,8 @@ from typing import TYPE_CHECKING
 if TYPE_CHECKING:
 	from .attributes import AttributesRequest
 	from ........request_adapter import HttpxRequestAdapter
-from iograph_models.models.on_attribute_collection_external_users_self_service_sign_up import OnAttributeCollectionExternalUsersSelfServiceSignUp
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.models.on_attribute_collection_external_users_self_service_sign_up import OnAttributeCollectionExternalUsersSelfServiceSignUp
 
 
 class GraphOnAttributeCollectionExternalUsersSelfServiceSignUpRequest(BaseRequestBuilder):

@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class SecuritySensorType(Enum):
+class SecuritySensorType(StrEnum):
 	adConnectIntegrated = "adConnectIntegrated"
 	adcsIntegrated = "adcsIntegrated"
 	adfsIntegrated = "adfsIntegrated"

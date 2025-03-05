@@ -6,10 +6,10 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class AccessReviewQueryScope(BaseModel):
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	query: Optional[str] = Field(default=None,alias="query",)
-	queryRoot: Optional[str] = Field(default=None,alias="queryRoot",)
-	queryType: Optional[str] = Field(default=None,alias="queryType",)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	query: Optional[str] = Field(alias="query",default=None,)
+	queryRoot: Optional[str] = Field(alias="queryRoot",default=None,)
+	queryType: Optional[str] = Field(alias="queryType",default=None,)
 
 	@model_validator(mode="wrap")
 	def convert_discriminator_class(cls, data: Any, handler: ModelWrapValidatorHandler[Self]) -> Self:

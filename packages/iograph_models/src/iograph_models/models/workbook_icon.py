@@ -4,8 +4,8 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class WorkbookIcon(BaseModel):
-	index: Optional[int] = Field(default=None,alias="index",)
-	set: Optional[str] = Field(default=None,alias="set",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
+	index: Optional[int] = Field(alias="index",default=None,)
+	set: Optional[str] = Field(alias="set",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 
 

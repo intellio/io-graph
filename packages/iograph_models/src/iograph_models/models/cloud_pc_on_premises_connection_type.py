@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class CloudPcOnPremisesConnectionType(Enum):
+class CloudPcOnPremisesConnectionType(StrEnum):
 	hybridAzureADJoin = "hybridAzureADJoin"
 	azureADJoin = "azureADJoin"
 	unknownFutureValue = "unknownFutureValue"

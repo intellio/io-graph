@@ -4,7 +4,7 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class Album(BaseModel):
-	coverImageItemId: Optional[str] = Field(default=None,alias="coverImageItemId",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
+	coverImageItemId: Optional[str] = Field(alias="coverImageItemId",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 
 

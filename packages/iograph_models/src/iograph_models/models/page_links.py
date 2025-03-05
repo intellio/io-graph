@@ -4,9 +4,9 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class PageLinks(BaseModel):
-	oneNoteClientUrl: Optional[ExternalLink] = Field(default=None,alias="oneNoteClientUrl",)
-	oneNoteWebUrl: Optional[ExternalLink] = Field(default=None,alias="oneNoteWebUrl",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
+	oneNoteClientUrl: Optional[ExternalLink] = Field(alias="oneNoteClientUrl",default=None,)
+	oneNoteWebUrl: Optional[ExternalLink] = Field(alias="oneNoteWebUrl",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 
 from .external_link import ExternalLink
 from .external_link import ExternalLink

@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class AuthenticationMethodSignInState(Enum):
+class AuthenticationMethodSignInState(StrEnum):
 	notSupported = "notSupported"
 	notAllowedByPolicy = "notAllowedByPolicy"
 	notEnabled = "notEnabled"

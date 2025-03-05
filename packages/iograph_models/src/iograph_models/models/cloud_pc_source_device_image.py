@@ -4,10 +4,10 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class CloudPcSourceDeviceImage(BaseModel):
-	displayName: Optional[str] = Field(default=None,alias="displayName",)
-	resourceId: Optional[str] = Field(default=None,alias="resourceId",)
-	subscriptionDisplayName: Optional[str] = Field(default=None,alias="subscriptionDisplayName",)
-	subscriptionId: Optional[str] = Field(default=None,alias="subscriptionId",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
+	displayName: Optional[str] = Field(alias="displayName",default=None,)
+	resourceId: Optional[str] = Field(alias="resourceId",default=None,)
+	subscriptionDisplayName: Optional[str] = Field(alias="subscriptionDisplayName",default=None,)
+	subscriptionId: Optional[str] = Field(alias="subscriptionId",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 
 

@@ -5,6 +5,6 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class ActivatePostRequest(BaseModel):
-	effectiveDateTime: Optional[datetime] = Field(default=None,alias="effectiveDateTime",)
+	effectiveDateTime: Optional[datetime] = Field(alias="effectiveDateTime",default=None,)
 
 

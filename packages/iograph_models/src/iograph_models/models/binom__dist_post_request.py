@@ -4,9 +4,9 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class Binom__distPostRequest(BaseModel):
-	numberS: Optional[str] = Field(default=None,alias="numberS",)
-	trials: Optional[str] = Field(default=None,alias="trials",)
-	probabilityS: Optional[str] = Field(default=None,alias="probabilityS",)
-	cumulative: Optional[str] = Field(default=None,alias="cumulative",)
+	numberS: Optional[str] = Field(alias="numberS",default=None,)
+	trials: Optional[str] = Field(alias="trials",default=None,)
+	probabilityS: Optional[str] = Field(alias="probabilityS",default=None,)
+	cumulative: Optional[str] = Field(alias="cumulative",default=None,)
 
 

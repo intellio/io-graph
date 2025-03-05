@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class SharedPCAccountDeletionPolicyType(Enum):
+class SharedPCAccountDeletionPolicyType(StrEnum):
 	immediate = "immediate"
 	diskSpaceThreshold = "diskSpaceThreshold"
 	diskSpaceThresholdOrInactiveThreshold = "diskSpaceThresholdOrInactiveThreshold"

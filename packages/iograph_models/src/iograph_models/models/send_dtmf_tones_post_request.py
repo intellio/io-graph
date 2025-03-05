@@ -4,9 +4,9 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class Send_dtmf_tonesPostRequest(BaseModel):
-	tones: Optional[list[Tone]] = Field(default=None,alias="tones",)
-	delayBetweenTonesMs: Optional[int] = Field(default=None,alias="delayBetweenTonesMs",)
-	clientContext: Optional[str] = Field(default=None,alias="clientContext",)
+	tones: Optional[list[str | Tone]] = Field(alias="tones",default=None,)
+	delayBetweenTonesMs: Optional[int] = Field(alias="delayBetweenTonesMs",default=None,)
+	clientContext: Optional[str] = Field(alias="clientContext",default=None,)
 
 from .tone import Tone
 

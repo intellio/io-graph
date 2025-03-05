@@ -4,13 +4,13 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class MicrosoftAuthenticatorAuthenticationMethodConfiguration(BaseModel):
-	id: Optional[str] = Field(default=None,alias="id",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	excludeTargets: Optional[list[ExcludeTarget]] = Field(default=None,alias="excludeTargets",)
-	state: Optional[AuthenticationMethodState] = Field(default=None,alias="state",)
-	featureSettings: Optional[MicrosoftAuthenticatorFeatureSettings] = Field(default=None,alias="featureSettings",)
-	isSoftwareOathEnabled: Optional[bool] = Field(default=None,alias="isSoftwareOathEnabled",)
-	includeTargets: Optional[list[MicrosoftAuthenticatorAuthenticationMethodTarget]] = Field(default=None,alias="includeTargets",)
+	id: Optional[str] = Field(alias="id",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	excludeTargets: Optional[list[ExcludeTarget]] = Field(alias="excludeTargets",default=None,)
+	state: Optional[str | AuthenticationMethodState] = Field(alias="state",default=None,)
+	featureSettings: Optional[MicrosoftAuthenticatorFeatureSettings] = Field(alias="featureSettings",default=None,)
+	isSoftwareOathEnabled: Optional[bool] = Field(alias="isSoftwareOathEnabled",default=None,)
+	includeTargets: Optional[list[MicrosoftAuthenticatorAuthenticationMethodTarget]] = Field(alias="includeTargets",default=None,)
 
 from .exclude_target import ExcludeTarget
 from .authentication_method_state import AuthenticationMethodState

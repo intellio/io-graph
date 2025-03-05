@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class AutomaticUpdateMode(Enum):
+class AutomaticUpdateMode(StrEnum):
 	userDefined = "userDefined"
 	notifyDownload = "notifyDownload"
 	autoInstallAtMaintenanceTime = "autoInstallAtMaintenanceTime"

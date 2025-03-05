@@ -5,15 +5,15 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class BrowserSharedCookieHistory(BaseModel):
-	comment: Optional[str] = Field(default=None,alias="comment",)
-	displayName: Optional[str] = Field(default=None,alias="displayName",)
-	hostOnly: Optional[bool] = Field(default=None,alias="hostOnly",)
-	hostOrDomain: Optional[str] = Field(default=None,alias="hostOrDomain",)
-	lastModifiedBy: SerializeAsAny[Optional[IdentitySet]] = Field(default=None,alias="lastModifiedBy",)
-	path: Optional[str] = Field(default=None,alias="path",)
-	publishedDateTime: Optional[datetime] = Field(default=None,alias="publishedDateTime",)
-	sourceEnvironment: Optional[BrowserSharedCookieSourceEnvironment] = Field(default=None,alias="sourceEnvironment",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
+	comment: Optional[str] = Field(alias="comment",default=None,)
+	displayName: Optional[str] = Field(alias="displayName",default=None,)
+	hostOnly: Optional[bool] = Field(alias="hostOnly",default=None,)
+	hostOrDomain: Optional[str] = Field(alias="hostOrDomain",default=None,)
+	lastModifiedBy: SerializeAsAny[Optional[IdentitySet]] = Field(alias="lastModifiedBy",default=None,)
+	path: Optional[str] = Field(alias="path",default=None,)
+	publishedDateTime: Optional[datetime] = Field(alias="publishedDateTime",default=None,)
+	sourceEnvironment: Optional[str | BrowserSharedCookieSourceEnvironment] = Field(alias="sourceEnvironment",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 
 from .identity_set import IdentitySet
 from .browser_shared_cookie_source_environment import BrowserSharedCookieSourceEnvironment

@@ -4,9 +4,9 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class CommsNotification(BaseModel):
-	changeType: Optional[ChangeType] = Field(default=None,alias="changeType",)
-	resourceUrl: Optional[str] = Field(default=None,alias="resourceUrl",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
+	changeType: Optional[str | ChangeType] = Field(alias="changeType",default=None,)
+	resourceUrl: Optional[str] = Field(alias="resourceUrl",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 
 from .change_type import ChangeType
 

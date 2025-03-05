@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class CloudPcRestorePointFrequencyType(Enum):
+class CloudPcRestorePointFrequencyType(StrEnum):
 	default = "default"
 	fourHours = "fourHours"
 	sixHours = "sixHours"

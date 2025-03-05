@@ -4,13 +4,13 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class Quota(BaseModel):
-	deleted: Optional[int] = Field(default=None,alias="deleted",)
-	remaining: Optional[int] = Field(default=None,alias="remaining",)
-	state: Optional[str] = Field(default=None,alias="state",)
-	storagePlanInformation: Optional[StoragePlanInformation] = Field(default=None,alias="storagePlanInformation",)
-	total: Optional[int] = Field(default=None,alias="total",)
-	used: Optional[int] = Field(default=None,alias="used",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
+	deleted: Optional[int] = Field(alias="deleted",default=None,)
+	remaining: Optional[int] = Field(alias="remaining",default=None,)
+	state: Optional[str] = Field(alias="state",default=None,)
+	storagePlanInformation: Optional[StoragePlanInformation] = Field(alias="storagePlanInformation",default=None,)
+	total: Optional[int] = Field(alias="total",default=None,)
+	used: Optional[int] = Field(alias="used",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 
 from .storage_plan_information import StoragePlanInformation
 

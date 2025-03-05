@@ -4,15 +4,15 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class CallRecordsParticipantEndpoint(BaseModel):
-	userAgent: SerializeAsAny[Optional[CallRecordsUserAgent]] = Field(default=None,alias="userAgent",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	associatedIdentity: SerializeAsAny[Optional[Identity]] = Field(default=None,alias="associatedIdentity",)
-	cpuCoresCount: Optional[int] = Field(default=None,alias="cpuCoresCount",)
-	cpuName: Optional[str] = Field(default=None,alias="cpuName",)
-	cpuProcessorSpeedInMhz: Optional[int] = Field(default=None,alias="cpuProcessorSpeedInMhz",)
-	feedback: Optional[CallRecordsUserFeedback] = Field(default=None,alias="feedback",)
-	identity: SerializeAsAny[Optional[IdentitySet]] = Field(default=None,alias="identity",)
-	name: Optional[str] = Field(default=None,alias="name",)
+	userAgent: SerializeAsAny[Optional[CallRecordsUserAgent]] = Field(alias="userAgent",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	associatedIdentity: SerializeAsAny[Optional[Identity]] = Field(alias="associatedIdentity",default=None,)
+	cpuCoresCount: Optional[int] = Field(alias="cpuCoresCount",default=None,)
+	cpuName: Optional[str] = Field(alias="cpuName",default=None,)
+	cpuProcessorSpeedInMhz: Optional[int] = Field(alias="cpuProcessorSpeedInMhz",default=None,)
+	feedback: Optional[CallRecordsUserFeedback] = Field(alias="feedback",default=None,)
+	identity: SerializeAsAny[Optional[IdentitySet]] = Field(alias="identity",default=None,)
+	name: Optional[str] = Field(alias="name",default=None,)
 
 from .call_records_user_agent import CallRecordsUserAgent
 from .identity import Identity

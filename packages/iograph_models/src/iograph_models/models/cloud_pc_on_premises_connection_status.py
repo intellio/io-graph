@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class CloudPcOnPremisesConnectionStatus(Enum):
+class CloudPcOnPremisesConnectionStatus(StrEnum):
 	pending = "pending"
 	running = "running"
 	passed = "passed"

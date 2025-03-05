@@ -4,7 +4,7 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class BaseDeltaFunctionResponse(BaseModel):
-	odata_nextLink: Optional[str] = Field(default=None,alias="@odata.nextLink",)
-	odata_deltaLink: Optional[str] = Field(default=None,alias="@odata.deltaLink",)
+	odata_nextLink: Optional[str] = Field(alias="@odata.nextLink",default=None,)
+	odata_deltaLink: Optional[str] = Field(alias="@odata.deltaLink",default=None,)
 
 

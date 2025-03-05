@@ -15,8 +15,8 @@ if TYPE_CHECKING:
 	from .by_filter_operator_schema_id import ByFilterOperatorSchemaIdRequest
 	from ...request_adapter import HttpxRequestAdapter
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
-from iograph_models.models.filter_operator_schema import FilterOperatorSchema
 from iograph_models.models.filter_operator_schema_collection_response import FilterOperatorSchemaCollectionResponse
+from iograph_models.models.filter_operator_schema import FilterOperatorSchema
 
 
 class FilterOperatorsRequest(BaseRequestBuilder):

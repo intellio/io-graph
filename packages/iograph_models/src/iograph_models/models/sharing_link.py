@@ -4,13 +4,13 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class SharingLink(BaseModel):
-	application: SerializeAsAny[Optional[Identity]] = Field(default=None,alias="application",)
-	preventsDownload: Optional[bool] = Field(default=None,alias="preventsDownload",)
-	scope: Optional[str] = Field(default=None,alias="scope",)
-	type: Optional[str] = Field(default=None,alias="type",)
-	webHtml: Optional[str] = Field(default=None,alias="webHtml",)
-	webUrl: Optional[str] = Field(default=None,alias="webUrl",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
+	application: SerializeAsAny[Optional[Identity]] = Field(alias="application",default=None,)
+	preventsDownload: Optional[bool] = Field(alias="preventsDownload",default=None,)
+	scope: Optional[str] = Field(alias="scope",default=None,)
+	type: Optional[str] = Field(alias="type",default=None,)
+	webHtml: Optional[str] = Field(alias="webHtml",default=None,)
+	webUrl: Optional[str] = Field(alias="webUrl",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 
 from .identity import Identity
 

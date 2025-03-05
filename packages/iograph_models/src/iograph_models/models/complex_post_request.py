@@ -4,8 +4,8 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class ComplexPostRequest(BaseModel):
-	realNum: Optional[str] = Field(default=None,alias="realNum",)
-	iNum: Optional[str] = Field(default=None,alias="iNum",)
-	suffix: Optional[str] = Field(default=None,alias="suffix",)
+	realNum: Optional[str] = Field(alias="realNum",default=None,)
+	iNum: Optional[str] = Field(alias="iNum",default=None,)
+	suffix: Optional[str] = Field(alias="suffix",default=None,)
 
 

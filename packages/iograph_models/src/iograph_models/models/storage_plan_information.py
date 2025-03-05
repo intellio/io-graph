@@ -4,7 +4,7 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class StoragePlanInformation(BaseModel):
-	upgradeAvailable: Optional[bool] = Field(default=None,alias="upgradeAvailable",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
+	upgradeAvailable: Optional[bool] = Field(alias="upgradeAvailable",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 
 

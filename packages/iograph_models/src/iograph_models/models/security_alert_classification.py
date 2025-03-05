@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class SecurityAlertClassification(Enum):
+class SecurityAlertClassification(StrEnum):
 	unknown = "unknown"
 	falsePositive = "falsePositive"
 	truePositive = "truePositive"

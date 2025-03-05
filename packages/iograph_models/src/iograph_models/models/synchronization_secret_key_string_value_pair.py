@@ -4,9 +4,9 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class SynchronizationSecretKeyStringValuePair(BaseModel):
-	key: Optional[SynchronizationSecret] = Field(default=None,alias="key",)
-	value: Optional[str] = Field(default=None,alias="value",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
+	key: Optional[str | SynchronizationSecret] = Field(alias="key",default=None,)
+	value: Optional[str] = Field(alias="value",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 
 from .synchronization_secret import SynchronizationSecret
 

@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class WindowsInformationProtectionEnforcementLevel(Enum):
+class WindowsInformationProtectionEnforcementLevel(StrEnum):
 	noProtection = "noProtection"
 	encryptAndAuditOnly = "encryptAndAuditOnly"
 	encryptAuditAndPrompt = "encryptAuditAndPrompt"

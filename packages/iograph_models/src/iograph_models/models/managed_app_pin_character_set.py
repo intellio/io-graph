@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class ManagedAppPinCharacterSet(Enum):
+class ManagedAppPinCharacterSet(StrEnum):
 	numeric = "numeric"
 	alphanumericAndSymbol = "alphanumericAndSymbol"
 

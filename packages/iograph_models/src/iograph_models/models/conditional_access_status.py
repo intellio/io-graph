@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class ConditionalAccessStatus(Enum):
+class ConditionalAccessStatus(StrEnum):
 	success = "success"
 	failure = "failure"
 	notApplied = "notApplied"

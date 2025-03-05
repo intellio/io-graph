@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class ChannelMembershipType(Enum):
+class ChannelMembershipType(StrEnum):
 	standard = "standard"
 	private = "private"
 	unknownFutureValue = "unknownFutureValue"

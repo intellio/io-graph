@@ -6,11 +6,11 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class TeamsAppInstallation(BaseModel):
-	id: Optional[str] = Field(default=None,alias="id",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	consentedPermissionSet: Optional[TeamsAppPermissionSet] = Field(default=None,alias="consentedPermissionSet",)
-	teamsApp: Optional[TeamsApp] = Field(default=None,alias="teamsApp",)
-	teamsAppDefinition: Optional[TeamsAppDefinition] = Field(default=None,alias="teamsAppDefinition",)
+	id: Optional[str] = Field(alias="id",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	consentedPermissionSet: Optional[TeamsAppPermissionSet] = Field(alias="consentedPermissionSet",default=None,)
+	teamsApp: Optional[TeamsApp] = Field(alias="teamsApp",default=None,)
+	teamsAppDefinition: Optional[TeamsAppDefinition] = Field(alias="teamsAppDefinition",default=None,)
 
 	@model_validator(mode="wrap")
 	def convert_discriminator_class(cls, data: Any, handler: ModelWrapValidatorHandler[Self]) -> Self:

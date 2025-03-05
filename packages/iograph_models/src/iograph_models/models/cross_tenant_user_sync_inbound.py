@@ -4,7 +4,7 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class CrossTenantUserSyncInbound(BaseModel):
-	isSyncAllowed: Optional[bool] = Field(default=None,alias="isSyncAllowed",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
+	isSyncAllowed: Optional[bool] = Field(alias="isSyncAllowed",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 
 

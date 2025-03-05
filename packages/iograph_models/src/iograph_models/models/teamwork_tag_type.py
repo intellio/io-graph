@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class TeamworkTagType(Enum):
+class TeamworkTagType(StrEnum):
 	standard = "standard"
 	unknownFutureValue = "unknownFutureValue"
 

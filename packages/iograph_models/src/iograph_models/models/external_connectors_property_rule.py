@@ -4,11 +4,11 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class ExternalConnectorsPropertyRule(BaseModel):
-	operation: Optional[ExternalConnectorsRuleOperation] = Field(default=None,alias="operation",)
-	property: Optional[str] = Field(default=None,alias="property",)
-	values: Optional[list[str]] = Field(default=None,alias="values",)
-	valuesJoinedBy: Optional[BinaryOperator] = Field(default=None,alias="valuesJoinedBy",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
+	operation: Optional[str | ExternalConnectorsRuleOperation] = Field(alias="operation",default=None,)
+	property: Optional[str] = Field(alias="property",default=None,)
+	values: Optional[list[str]] = Field(alias="values",default=None,)
+	valuesJoinedBy: Optional[str | BinaryOperator] = Field(alias="valuesJoinedBy",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 
 from .external_connectors_rule_operation import ExternalConnectorsRuleOperation
 from .binary_operator import BinaryOperator

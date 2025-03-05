@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class ProvisioningStepType(Enum):
+class ProvisioningStepType(StrEnum):
 	import_ = "import_"
 	scoping = "scoping"
 	matching = "matching"

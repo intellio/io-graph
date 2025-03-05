@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class RecipientScopeType(Enum):
+class RecipientScopeType(StrEnum):
 	none = "none"
 	internal = "internal"
 	external = "external"

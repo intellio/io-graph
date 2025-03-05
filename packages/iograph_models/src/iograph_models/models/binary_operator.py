@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class BinaryOperator(Enum):
+class BinaryOperator(StrEnum):
 	or_ = "or_"
 	and_ = "and_"
 

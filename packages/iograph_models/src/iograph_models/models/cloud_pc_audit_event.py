@@ -5,19 +5,19 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class CloudPcAuditEvent(BaseModel):
-	id: Optional[str] = Field(default=None,alias="id",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	activity: Optional[str] = Field(default=None,alias="activity",)
-	activityDateTime: Optional[datetime] = Field(default=None,alias="activityDateTime",)
-	activityOperationType: Optional[CloudPcAuditActivityOperationType] = Field(default=None,alias="activityOperationType",)
-	activityResult: Optional[CloudPcAuditActivityResult] = Field(default=None,alias="activityResult",)
-	activityType: Optional[str] = Field(default=None,alias="activityType",)
-	actor: Optional[CloudPcAuditActor] = Field(default=None,alias="actor",)
-	category: Optional[CloudPcAuditCategory] = Field(default=None,alias="category",)
-	componentName: Optional[str] = Field(default=None,alias="componentName",)
-	correlationId: Optional[str] = Field(default=None,alias="correlationId",)
-	displayName: Optional[str] = Field(default=None,alias="displayName",)
-	resources: Optional[list[CloudPcAuditResource]] = Field(default=None,alias="resources",)
+	id: Optional[str] = Field(alias="id",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	activity: Optional[str] = Field(alias="activity",default=None,)
+	activityDateTime: Optional[datetime] = Field(alias="activityDateTime",default=None,)
+	activityOperationType: Optional[str | CloudPcAuditActivityOperationType] = Field(alias="activityOperationType",default=None,)
+	activityResult: Optional[str | CloudPcAuditActivityResult] = Field(alias="activityResult",default=None,)
+	activityType: Optional[str] = Field(alias="activityType",default=None,)
+	actor: Optional[CloudPcAuditActor] = Field(alias="actor",default=None,)
+	category: Optional[str | CloudPcAuditCategory] = Field(alias="category",default=None,)
+	componentName: Optional[str] = Field(alias="componentName",default=None,)
+	correlationId: Optional[str] = Field(alias="correlationId",default=None,)
+	displayName: Optional[str] = Field(alias="displayName",default=None,)
+	resources: Optional[list[CloudPcAuditResource]] = Field(alias="resources",default=None,)
 
 from .cloud_pc_audit_activity_operation_type import CloudPcAuditActivityOperationType
 from .cloud_pc_audit_activity_result import CloudPcAuditActivityResult

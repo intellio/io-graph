@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class AccessPackageAssignmentRequestFilterByCurrentUserOptions(Enum):
+class AccessPackageAssignmentRequestFilterByCurrentUserOptions(StrEnum):
 	target = "target"
 	createdBy = "createdBy"
 	approver = "approver"

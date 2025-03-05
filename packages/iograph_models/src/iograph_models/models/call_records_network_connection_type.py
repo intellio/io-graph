@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class CallRecordsNetworkConnectionType(Enum):
+class CallRecordsNetworkConnectionType(StrEnum):
 	unknown = "unknown"
 	wired = "wired"
 	wifi = "wifi"

@@ -4,11 +4,11 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class AttributeMappingSource(BaseModel):
-	expression: Optional[str] = Field(default=None,alias="expression",)
-	name: Optional[str] = Field(default=None,alias="name",)
-	parameters: Optional[list[StringKeyAttributeMappingSourceValuePair]] = Field(default=None,alias="parameters",)
-	type: Optional[AttributeMappingSourceType] = Field(default=None,alias="type",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
+	expression: Optional[str] = Field(alias="expression",default=None,)
+	name: Optional[str] = Field(alias="name",default=None,)
+	parameters: Optional[list[StringKeyAttributeMappingSourceValuePair]] = Field(alias="parameters",default=None,)
+	type: Optional[str | AttributeMappingSourceType] = Field(alias="type",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 
 from .string_key_attribute_mapping_source_value_pair import StringKeyAttributeMappingSourceValuePair
 from .attribute_mapping_source_type import AttributeMappingSourceType

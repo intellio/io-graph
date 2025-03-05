@@ -4,7 +4,7 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class Norm__s__distPostRequest(BaseModel):
-	z: Optional[str] = Field(default=None,alias="z",)
-	cumulative: Optional[str] = Field(default=None,alias="cumulative",)
+	z: Optional[str] = Field(alias="z",default=None,)
+	cumulative: Optional[str] = Field(alias="cumulative",default=None,)
 
 

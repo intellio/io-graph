@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class BookingStaffMembershipStatus(Enum):
+class BookingStaffMembershipStatus(StrEnum):
 	active = "active"
 	pendingAcceptance = "pendingAcceptance"
 	rejectedByStaff = "rejectedByStaff"

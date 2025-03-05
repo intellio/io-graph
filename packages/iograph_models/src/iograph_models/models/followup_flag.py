@@ -4,11 +4,11 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class FollowupFlag(BaseModel):
-	completedDateTime: Optional[DateTimeTimeZone] = Field(default=None,alias="completedDateTime",)
-	dueDateTime: Optional[DateTimeTimeZone] = Field(default=None,alias="dueDateTime",)
-	flagStatus: Optional[FollowupFlagStatus] = Field(default=None,alias="flagStatus",)
-	startDateTime: Optional[DateTimeTimeZone] = Field(default=None,alias="startDateTime",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
+	completedDateTime: Optional[DateTimeTimeZone] = Field(alias="completedDateTime",default=None,)
+	dueDateTime: Optional[DateTimeTimeZone] = Field(alias="dueDateTime",default=None,)
+	flagStatus: Optional[str | FollowupFlagStatus] = Field(alias="flagStatus",default=None,)
+	startDateTime: Optional[DateTimeTimeZone] = Field(alias="startDateTime",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 
 from .date_time_time_zone import DateTimeTimeZone
 from .date_time_time_zone import DateTimeTimeZone

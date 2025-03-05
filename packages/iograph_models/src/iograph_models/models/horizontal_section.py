@@ -4,11 +4,11 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class HorizontalSection(BaseModel):
-	id: Optional[str] = Field(default=None,alias="id",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	emphasis: Optional[SectionEmphasisType] = Field(default=None,alias="emphasis",)
-	layout: Optional[HorizontalSectionLayoutType] = Field(default=None,alias="layout",)
-	columns: Optional[list[HorizontalSectionColumn]] = Field(default=None,alias="columns",)
+	id: Optional[str] = Field(alias="id",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	emphasis: Optional[str | SectionEmphasisType] = Field(alias="emphasis",default=None,)
+	layout: Optional[str | HorizontalSectionLayoutType] = Field(alias="layout",default=None,)
+	columns: Optional[list[HorizontalSectionColumn]] = Field(alias="columns",default=None,)
 
 from .section_emphasis_type import SectionEmphasisType
 from .horizontal_section_layout_type import HorizontalSectionLayoutType

@@ -4,8 +4,8 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class Confidence__tPostRequest(BaseModel):
-	alpha: Optional[str] = Field(default=None,alias="alpha",)
-	standardDev: Optional[str] = Field(default=None,alias="standardDev",)
-	size: Optional[str] = Field(default=None,alias="size",)
+	alpha: Optional[str] = Field(alias="alpha",default=None,)
+	standardDev: Optional[str] = Field(alias="standardDev",default=None,)
+	size: Optional[str] = Field(alias="size",default=None,)
 
 

@@ -5,17 +5,17 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class OneDriveForBusinessProtectionPolicy(BaseModel):
-	id: Optional[str] = Field(default=None,alias="id",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	createdBy: SerializeAsAny[Optional[IdentitySet]] = Field(default=None,alias="createdBy",)
-	createdDateTime: Optional[datetime] = Field(default=None,alias="createdDateTime",)
-	displayName: Optional[str] = Field(default=None,alias="displayName",)
-	lastModifiedBy: SerializeAsAny[Optional[IdentitySet]] = Field(default=None,alias="lastModifiedBy",)
-	lastModifiedDateTime: Optional[datetime] = Field(default=None,alias="lastModifiedDateTime",)
-	retentionSettings: Optional[list[RetentionSetting]] = Field(default=None,alias="retentionSettings",)
-	status: Optional[ProtectionPolicyStatus] = Field(default=None,alias="status",)
-	driveInclusionRules: Optional[list[DriveProtectionRule]] = Field(default=None,alias="driveInclusionRules",)
-	driveProtectionUnits: Optional[list[DriveProtectionUnit]] = Field(default=None,alias="driveProtectionUnits",)
+	id: Optional[str] = Field(alias="id",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	createdBy: SerializeAsAny[Optional[IdentitySet]] = Field(alias="createdBy",default=None,)
+	createdDateTime: Optional[datetime] = Field(alias="createdDateTime",default=None,)
+	displayName: Optional[str] = Field(alias="displayName",default=None,)
+	lastModifiedBy: SerializeAsAny[Optional[IdentitySet]] = Field(alias="lastModifiedBy",default=None,)
+	lastModifiedDateTime: Optional[datetime] = Field(alias="lastModifiedDateTime",default=None,)
+	retentionSettings: Optional[list[RetentionSetting]] = Field(alias="retentionSettings",default=None,)
+	status: Optional[str | ProtectionPolicyStatus] = Field(alias="status",default=None,)
+	driveInclusionRules: Optional[list[DriveProtectionRule]] = Field(alias="driveInclusionRules",default=None,)
+	driveProtectionUnits: Optional[list[DriveProtectionUnit]] = Field(alias="driveProtectionUnits",default=None,)
 
 from .identity_set import IdentitySet
 from .identity_set import IdentitySet

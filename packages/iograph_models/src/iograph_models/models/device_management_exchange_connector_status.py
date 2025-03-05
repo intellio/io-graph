@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class DeviceManagementExchangeConnectorStatus(Enum):
+class DeviceManagementExchangeConnectorStatus(StrEnum):
 	none = "none"
 	connectionPending = "connectionPending"
 	connected = "connected"

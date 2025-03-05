@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class ObjectDefinitionMetadata(Enum):
+class ObjectDefinitionMetadata(StrEnum):
 	PropertyNameAccountEnabled = "PropertyNameAccountEnabled"
 	PropertyNameSoftDeleted = "PropertyNameSoftDeleted"
 	IsSoftDeletionSupported = "IsSoftDeletionSupported"

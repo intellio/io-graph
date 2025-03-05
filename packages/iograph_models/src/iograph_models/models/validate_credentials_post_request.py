@@ -4,10 +4,10 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class Validate_credentialsPostRequest(BaseModel):
-	applicationIdentifier: Optional[str] = Field(default=None,alias="applicationIdentifier",)
-	templateId: Optional[str] = Field(default=None,alias="templateId",)
-	useSavedCredentials: Optional[bool] = Field(default=None,alias="useSavedCredentials",)
-	credentials: Optional[list[SynchronizationSecretKeyStringValuePair]] = Field(default=None,alias="credentials",)
+	applicationIdentifier: Optional[str] = Field(alias="applicationIdentifier",default=None,)
+	templateId: Optional[str] = Field(alias="templateId",default=None,)
+	useSavedCredentials: Optional[bool] = Field(alias="useSavedCredentials",default=None,)
+	credentials: Optional[list[SynchronizationSecretKeyStringValuePair]] = Field(alias="credentials",default=None,)
 
 from .synchronization_secret_key_string_value_pair import SynchronizationSecretKeyStringValuePair
 

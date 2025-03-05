@@ -4,8 +4,8 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class WindowsInformationProtectionResourceCollection(BaseModel):
-	displayName: Optional[str] = Field(default=None,alias="displayName",)
-	resources: Optional[list[str]] = Field(default=None,alias="resources",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
+	displayName: Optional[str] = Field(alias="displayName",default=None,)
+	resources: Optional[list[str]] = Field(alias="resources",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 
 

@@ -4,8 +4,8 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class Add_formula_localPostRequest(BaseModel):
-	name: Optional[str] = Field(default=None,alias="name",)
-	formula: Optional[str] = Field(default=None,alias="formula",)
-	comment: Optional[str] = Field(default=None,alias="comment",)
+	name: Optional[str] = Field(alias="name",default=None,)
+	formula: Optional[str] = Field(alias="formula",default=None,)
+	comment: Optional[str] = Field(alias="comment",default=None,)
 
 

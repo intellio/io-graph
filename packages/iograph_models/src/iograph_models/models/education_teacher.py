@@ -4,8 +4,8 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class EducationTeacher(BaseModel):
-	externalId: Optional[str] = Field(default=None,alias="externalId",)
-	teacherNumber: Optional[str] = Field(default=None,alias="teacherNumber",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
+	externalId: Optional[str] = Field(alias="externalId",default=None,)
+	teacherNumber: Optional[str] = Field(alias="teacherNumber",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 
 

@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class SynchronizationJobRestartScope(Enum):
+class SynchronizationJobRestartScope(StrEnum):
 	None_ = "None_"
 	ConnectorDataStore = "ConnectorDataStore"
 	Escrows = "Escrows"

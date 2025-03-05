@@ -5,20 +5,20 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class VirtualEventRegistration(BaseModel):
-	id: Optional[str] = Field(default=None,alias="id",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	cancelationDateTime: Optional[datetime] = Field(default=None,alias="cancelationDateTime",)
-	email: Optional[str] = Field(default=None,alias="email",)
-	externalRegistrationInformation: Optional[VirtualEventExternalRegistrationInformation] = Field(default=None,alias="externalRegistrationInformation",)
-	firstName: Optional[str] = Field(default=None,alias="firstName",)
-	lastName: Optional[str] = Field(default=None,alias="lastName",)
-	preferredLanguage: Optional[str] = Field(default=None,alias="preferredLanguage",)
-	preferredTimezone: Optional[str] = Field(default=None,alias="preferredTimezone",)
-	registrationDateTime: Optional[datetime] = Field(default=None,alias="registrationDateTime",)
-	registrationQuestionAnswers: Optional[list[VirtualEventRegistrationQuestionAnswer]] = Field(default=None,alias="registrationQuestionAnswers",)
-	status: Optional[VirtualEventAttendeeRegistrationStatus] = Field(default=None,alias="status",)
-	userId: Optional[str] = Field(default=None,alias="userId",)
-	sessions: Optional[list[VirtualEventSession]] = Field(default=None,alias="sessions",)
+	id: Optional[str] = Field(alias="id",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	cancelationDateTime: Optional[datetime] = Field(alias="cancelationDateTime",default=None,)
+	email: Optional[str] = Field(alias="email",default=None,)
+	externalRegistrationInformation: Optional[VirtualEventExternalRegistrationInformation] = Field(alias="externalRegistrationInformation",default=None,)
+	firstName: Optional[str] = Field(alias="firstName",default=None,)
+	lastName: Optional[str] = Field(alias="lastName",default=None,)
+	preferredLanguage: Optional[str] = Field(alias="preferredLanguage",default=None,)
+	preferredTimezone: Optional[str] = Field(alias="preferredTimezone",default=None,)
+	registrationDateTime: Optional[datetime] = Field(alias="registrationDateTime",default=None,)
+	registrationQuestionAnswers: Optional[list[VirtualEventRegistrationQuestionAnswer]] = Field(alias="registrationQuestionAnswers",default=None,)
+	status: Optional[str | VirtualEventAttendeeRegistrationStatus] = Field(alias="status",default=None,)
+	userId: Optional[str] = Field(alias="userId",default=None,)
+	sessions: Optional[list[VirtualEventSession]] = Field(alias="sessions",default=None,)
 
 from .virtual_event_external_registration_information import VirtualEventExternalRegistrationInformation
 from .virtual_event_registration_question_answer import VirtualEventRegistrationQuestionAnswer

@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class MultiFactorAuthConfiguration(Enum):
+class MultiFactorAuthConfiguration(StrEnum):
 	notRequired = "notRequired"
 	required = "required"
 	unknownFutureValue = "unknownFutureValue"

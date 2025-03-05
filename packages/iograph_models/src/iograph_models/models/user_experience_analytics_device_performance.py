@@ -4,27 +4,27 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class UserExperienceAnalyticsDevicePerformance(BaseModel):
-	id: Optional[str] = Field(default=None,alias="id",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
+	id: Optional[str] = Field(alias="id",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 	averageBlueScreens: float | str | ReferenceNumeric
 	averageRestarts: float | str | ReferenceNumeric
-	blueScreenCount: Optional[int] = Field(default=None,alias="blueScreenCount",)
-	bootScore: Optional[int] = Field(default=None,alias="bootScore",)
-	coreBootTimeInMs: Optional[int] = Field(default=None,alias="coreBootTimeInMs",)
-	coreLoginTimeInMs: Optional[int] = Field(default=None,alias="coreLoginTimeInMs",)
-	deviceCount: Optional[int] = Field(default=None,alias="deviceCount",)
-	deviceName: Optional[str] = Field(default=None,alias="deviceName",)
-	diskType: Optional[DiskType] = Field(default=None,alias="diskType",)
-	groupPolicyBootTimeInMs: Optional[int] = Field(default=None,alias="groupPolicyBootTimeInMs",)
-	groupPolicyLoginTimeInMs: Optional[int] = Field(default=None,alias="groupPolicyLoginTimeInMs",)
-	healthStatus: Optional[UserExperienceAnalyticsHealthState] = Field(default=None,alias="healthStatus",)
-	loginScore: Optional[int] = Field(default=None,alias="loginScore",)
-	manufacturer: Optional[str] = Field(default=None,alias="manufacturer",)
-	model: Optional[str] = Field(default=None,alias="model",)
+	blueScreenCount: Optional[int] = Field(alias="blueScreenCount",default=None,)
+	bootScore: Optional[int] = Field(alias="bootScore",default=None,)
+	coreBootTimeInMs: Optional[int] = Field(alias="coreBootTimeInMs",default=None,)
+	coreLoginTimeInMs: Optional[int] = Field(alias="coreLoginTimeInMs",default=None,)
+	deviceCount: Optional[int] = Field(alias="deviceCount",default=None,)
+	deviceName: Optional[str] = Field(alias="deviceName",default=None,)
+	diskType: Optional[str | DiskType] = Field(alias="diskType",default=None,)
+	groupPolicyBootTimeInMs: Optional[int] = Field(alias="groupPolicyBootTimeInMs",default=None,)
+	groupPolicyLoginTimeInMs: Optional[int] = Field(alias="groupPolicyLoginTimeInMs",default=None,)
+	healthStatus: Optional[str | UserExperienceAnalyticsHealthState] = Field(alias="healthStatus",default=None,)
+	loginScore: Optional[int] = Field(alias="loginScore",default=None,)
+	manufacturer: Optional[str] = Field(alias="manufacturer",default=None,)
+	model: Optional[str] = Field(alias="model",default=None,)
 	modelStartupPerformanceScore: float | str | ReferenceNumeric
-	operatingSystemVersion: Optional[str] = Field(default=None,alias="operatingSystemVersion",)
-	responsiveDesktopTimeInMs: Optional[int] = Field(default=None,alias="responsiveDesktopTimeInMs",)
-	restartCount: Optional[int] = Field(default=None,alias="restartCount",)
+	operatingSystemVersion: Optional[str] = Field(alias="operatingSystemVersion",default=None,)
+	responsiveDesktopTimeInMs: Optional[int] = Field(alias="responsiveDesktopTimeInMs",default=None,)
+	restartCount: Optional[int] = Field(alias="restartCount",default=None,)
 	startupPerformanceScore: float | str | ReferenceNumeric
 
 from .reference_numeric import ReferenceNumeric

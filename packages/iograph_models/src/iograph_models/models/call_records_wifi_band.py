@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class CallRecordsWifiBand(Enum):
+class CallRecordsWifiBand(StrEnum):
 	unknown = "unknown"
 	frequency24GHz = "frequency24GHz"
 	frequency50GHz = "frequency50GHz"

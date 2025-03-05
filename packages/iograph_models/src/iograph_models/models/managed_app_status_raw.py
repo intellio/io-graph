@@ -4,10 +4,10 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class ManagedAppStatusRaw(BaseModel):
-	id: Optional[str] = Field(default=None,alias="id",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	displayName: Optional[str] = Field(default=None,alias="displayName",)
-	version: Optional[str] = Field(default=None,alias="version",)
-	content: Optional[str] = Field(default=None,alias="content",)
+	id: Optional[str] = Field(alias="id",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	displayName: Optional[str] = Field(alias="displayName",default=None,)
+	version: Optional[str] = Field(alias="version",default=None,)
+	content: Optional[str] = Field(alias="content",default=None,)
 
 

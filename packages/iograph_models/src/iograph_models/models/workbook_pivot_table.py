@@ -4,10 +4,10 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class WorkbookPivotTable(BaseModel):
-	id: Optional[str] = Field(default=None,alias="id",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	name: Optional[str] = Field(default=None,alias="name",)
-	worksheet: Optional[WorkbookWorksheet] = Field(default=None,alias="worksheet",)
+	id: Optional[str] = Field(alias="id",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	name: Optional[str] = Field(alias="name",default=None,)
+	worksheet: Optional[WorkbookWorksheet] = Field(alias="worksheet",default=None,)
 
 from .workbook_worksheet import WorkbookWorksheet
 

@@ -4,9 +4,9 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class Win32LobAppRestartSettings(BaseModel):
-	countdownDisplayBeforeRestartInMinutes: Optional[int] = Field(default=None,alias="countdownDisplayBeforeRestartInMinutes",)
-	gracePeriodInMinutes: Optional[int] = Field(default=None,alias="gracePeriodInMinutes",)
-	restartNotificationSnoozeDurationInMinutes: Optional[int] = Field(default=None,alias="restartNotificationSnoozeDurationInMinutes",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
+	countdownDisplayBeforeRestartInMinutes: Optional[int] = Field(alias="countdownDisplayBeforeRestartInMinutes",default=None,)
+	gracePeriodInMinutes: Optional[int] = Field(alias="gracePeriodInMinutes",default=None,)
+	restartNotificationSnoozeDurationInMinutes: Optional[int] = Field(alias="restartNotificationSnoozeDurationInMinutes",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 
 

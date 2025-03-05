@@ -4,9 +4,9 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class ReactionsFacet(BaseModel):
-	commentCount: Optional[int] = Field(default=None,alias="commentCount",)
-	likeCount: Optional[int] = Field(default=None,alias="likeCount",)
-	shareCount: Optional[int] = Field(default=None,alias="shareCount",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
+	commentCount: Optional[int] = Field(alias="commentCount",default=None,)
+	likeCount: Optional[int] = Field(alias="likeCount",default=None,)
+	shareCount: Optional[int] = Field(alias="shareCount",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 
 

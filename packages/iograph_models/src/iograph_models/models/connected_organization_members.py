@@ -4,8 +4,8 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class ConnectedOrganizationMembers(BaseModel):
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	connectedOrganizationId: Optional[str] = Field(default=None,alias="connectedOrganizationId",)
-	description: Optional[str] = Field(default=None,alias="description",)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	connectedOrganizationId: Optional[str] = Field(alias="connectedOrganizationId",default=None,)
+	description: Optional[str] = Field(alias="description",default=None,)
 
 

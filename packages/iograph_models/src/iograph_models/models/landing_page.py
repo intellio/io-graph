@@ -5,19 +5,19 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class LandingPage(BaseModel):
-	id: Optional[str] = Field(default=None,alias="id",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	createdBy: Optional[EmailIdentity] = Field(default=None,alias="createdBy",)
-	createdDateTime: Optional[datetime] = Field(default=None,alias="createdDateTime",)
-	description: Optional[str] = Field(default=None,alias="description",)
-	displayName: Optional[str] = Field(default=None,alias="displayName",)
-	lastModifiedBy: Optional[EmailIdentity] = Field(default=None,alias="lastModifiedBy",)
-	lastModifiedDateTime: Optional[datetime] = Field(default=None,alias="lastModifiedDateTime",)
-	locale: Optional[str] = Field(default=None,alias="locale",)
-	source: Optional[SimulationContentSource] = Field(default=None,alias="source",)
-	status: Optional[SimulationContentStatus] = Field(default=None,alias="status",)
-	supportedLocales: Optional[list[str]] = Field(default=None,alias="supportedLocales",)
-	details: Optional[list[LandingPageDetail]] = Field(default=None,alias="details",)
+	id: Optional[str] = Field(alias="id",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	createdBy: Optional[EmailIdentity] = Field(alias="createdBy",default=None,)
+	createdDateTime: Optional[datetime] = Field(alias="createdDateTime",default=None,)
+	description: Optional[str] = Field(alias="description",default=None,)
+	displayName: Optional[str] = Field(alias="displayName",default=None,)
+	lastModifiedBy: Optional[EmailIdentity] = Field(alias="lastModifiedBy",default=None,)
+	lastModifiedDateTime: Optional[datetime] = Field(alias="lastModifiedDateTime",default=None,)
+	locale: Optional[str] = Field(alias="locale",default=None,)
+	source: Optional[str | SimulationContentSource] = Field(alias="source",default=None,)
+	status: Optional[str | SimulationContentStatus] = Field(alias="status",default=None,)
+	supportedLocales: Optional[list[str]] = Field(alias="supportedLocales",default=None,)
+	details: Optional[list[LandingPageDetail]] = Field(alias="details",default=None,)
 
 from .email_identity import EmailIdentity
 from .email_identity import EmailIdentity

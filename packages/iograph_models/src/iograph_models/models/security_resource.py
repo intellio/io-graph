@@ -4,9 +4,9 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class SecurityResource(BaseModel):
-	resource: Optional[str] = Field(default=None,alias="resource",)
-	resourceType: Optional[SecurityResourceType] = Field(default=None,alias="resourceType",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
+	resource: Optional[str] = Field(alias="resource",default=None,)
+	resourceType: Optional[str | SecurityResourceType] = Field(alias="resourceType",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 
 from .security_resource_type import SecurityResourceType
 

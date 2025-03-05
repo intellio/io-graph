@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class AuthenticationMethodFeature(Enum):
+class AuthenticationMethodFeature(StrEnum):
 	ssprRegistered = "ssprRegistered"
 	ssprEnabled = "ssprEnabled"
 	ssprCapable = "ssprCapable"

@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class WorkforceIntegrationSupportedEntities(Enum):
+class WorkforceIntegrationSupportedEntities(StrEnum):
 	none = "none"
 	shift = "shift"
 	swapRequest = "swapRequest"

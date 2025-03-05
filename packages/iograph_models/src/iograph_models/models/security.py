@@ -4,21 +4,21 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class Security(BaseModel):
-	id: Optional[str] = Field(default=None,alias="id",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	alerts: Optional[list[Alert]] = Field(default=None,alias="alerts",)
-	alerts_v2: Optional[list[SecurityAlert]] = Field(default=None,alias="alerts_v2",)
-	attackSimulation: Optional[AttackSimulationRoot] = Field(default=None,alias="attackSimulation",)
-	cases: Optional[SecurityCasesRoot] = Field(default=None,alias="cases",)
-	identities: Optional[SecurityIdentityContainer] = Field(default=None,alias="identities",)
-	incidents: Optional[list[SecurityIncident]] = Field(default=None,alias="incidents",)
-	labels: Optional[SecurityLabelsRoot] = Field(default=None,alias="labels",)
-	secureScoreControlProfiles: Optional[list[SecureScoreControlProfile]] = Field(default=None,alias="secureScoreControlProfiles",)
-	secureScores: Optional[list[SecureScore]] = Field(default=None,alias="secureScores",)
-	subjectRightsRequests: Optional[list[SubjectRightsRequest]] = Field(default=None,alias="subjectRightsRequests",)
-	threatIntelligence: Optional[SecurityThreatIntelligence] = Field(default=None,alias="threatIntelligence",)
-	triggers: Optional[SecurityTriggersRoot] = Field(default=None,alias="triggers",)
-	triggerTypes: Optional[SecurityTriggerTypesRoot] = Field(default=None,alias="triggerTypes",)
+	id: Optional[str] = Field(alias="id",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	alerts: Optional[list[Alert]] = Field(alias="alerts",default=None,)
+	alerts_v2: Optional[list[SecurityAlert]] = Field(alias="alerts_v2",default=None,)
+	attackSimulation: Optional[AttackSimulationRoot] = Field(alias="attackSimulation",default=None,)
+	cases: Optional[SecurityCasesRoot] = Field(alias="cases",default=None,)
+	identities: Optional[SecurityIdentityContainer] = Field(alias="identities",default=None,)
+	incidents: Optional[list[SecurityIncident]] = Field(alias="incidents",default=None,)
+	labels: Optional[SecurityLabelsRoot] = Field(alias="labels",default=None,)
+	secureScoreControlProfiles: Optional[list[SecureScoreControlProfile]] = Field(alias="secureScoreControlProfiles",default=None,)
+	secureScores: Optional[list[SecureScore]] = Field(alias="secureScores",default=None,)
+	subjectRightsRequests: Optional[list[SubjectRightsRequest]] = Field(alias="subjectRightsRequests",default=None,)
+	threatIntelligence: Optional[SecurityThreatIntelligence] = Field(alias="threatIntelligence",default=None,)
+	triggers: Optional[SecurityTriggersRoot] = Field(alias="triggers",default=None,)
+	triggerTypes: Optional[SecurityTriggerTypesRoot] = Field(alias="triggerTypes",default=None,)
 
 from .alert import Alert
 from .security_alert import SecurityAlert

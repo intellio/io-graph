@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class DeviceManagementExportJobLocalizationType(Enum):
+class DeviceManagementExportJobLocalizationType(StrEnum):
 	localizedValuesAsAdditionalColumn = "localizedValuesAsAdditionalColumn"
 	replaceLocalizableValues = "replaceLocalizableValues"
 

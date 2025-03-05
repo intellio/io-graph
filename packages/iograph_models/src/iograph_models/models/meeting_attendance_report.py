@@ -5,12 +5,12 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class MeetingAttendanceReport(BaseModel):
-	id: Optional[str] = Field(default=None,alias="id",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	meetingEndDateTime: Optional[datetime] = Field(default=None,alias="meetingEndDateTime",)
-	meetingStartDateTime: Optional[datetime] = Field(default=None,alias="meetingStartDateTime",)
-	totalParticipantCount: Optional[int] = Field(default=None,alias="totalParticipantCount",)
-	attendanceRecords: Optional[list[AttendanceRecord]] = Field(default=None,alias="attendanceRecords",)
+	id: Optional[str] = Field(alias="id",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	meetingEndDateTime: Optional[datetime] = Field(alias="meetingEndDateTime",default=None,)
+	meetingStartDateTime: Optional[datetime] = Field(alias="meetingStartDateTime",default=None,)
+	totalParticipantCount: Optional[int] = Field(alias="totalParticipantCount",default=None,)
+	attendanceRecords: Optional[list[AttendanceRecord]] = Field(alias="attendanceRecords",default=None,)
 
 from .attendance_record import AttendanceRecord
 

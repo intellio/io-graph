@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class SecurityDeviceRiskScore(Enum):
+class SecurityDeviceRiskScore(StrEnum):
 	none = "none"
 	informational = "informational"
 	low = "low"

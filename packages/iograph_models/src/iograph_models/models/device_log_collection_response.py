@@ -6,16 +6,16 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class DeviceLogCollectionResponse(BaseModel):
-	id: Optional[str] = Field(default=None,alias="id",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	enrolledByUser: Optional[str] = Field(default=None,alias="enrolledByUser",)
-	expirationDateTimeUTC: Optional[datetime] = Field(default=None,alias="expirationDateTimeUTC",)
-	initiatedByUserPrincipalName: Optional[str] = Field(default=None,alias="initiatedByUserPrincipalName",)
-	managedDeviceId: Optional[UUID] = Field(default=None,alias="managedDeviceId",)
-	receivedDateTimeUTC: Optional[datetime] = Field(default=None,alias="receivedDateTimeUTC",)
-	requestedDateTimeUTC: Optional[datetime] = Field(default=None,alias="requestedDateTimeUTC",)
+	id: Optional[str] = Field(alias="id",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	enrolledByUser: Optional[str] = Field(alias="enrolledByUser",default=None,)
+	expirationDateTimeUTC: Optional[datetime] = Field(alias="expirationDateTimeUTC",default=None,)
+	initiatedByUserPrincipalName: Optional[str] = Field(alias="initiatedByUserPrincipalName",default=None,)
+	managedDeviceId: Optional[UUID] = Field(alias="managedDeviceId",default=None,)
+	receivedDateTimeUTC: Optional[datetime] = Field(alias="receivedDateTimeUTC",default=None,)
+	requestedDateTimeUTC: Optional[datetime] = Field(alias="requestedDateTimeUTC",default=None,)
 	sizeInKB: float | str | ReferenceNumeric
-	status: Optional[AppLogUploadState] = Field(default=None,alias="status",)
+	status: Optional[str | AppLogUploadState] = Field(alias="status",default=None,)
 
 from .reference_numeric import ReferenceNumeric
 from .app_log_upload_state import AppLogUploadState

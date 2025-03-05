@@ -4,10 +4,10 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class ManagedMobileApp(BaseModel):
-	id: Optional[str] = Field(default=None,alias="id",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	mobileAppIdentifier: SerializeAsAny[Optional[MobileAppIdentifier]] = Field(default=None,alias="mobileAppIdentifier",)
-	version: Optional[str] = Field(default=None,alias="version",)
+	id: Optional[str] = Field(alias="id",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	mobileAppIdentifier: SerializeAsAny[Optional[MobileAppIdentifier]] = Field(alias="mobileAppIdentifier",default=None,)
+	version: Optional[str] = Field(alias="version",default=None,)
 
 from .mobile_app_identifier import MobileAppIdentifier
 

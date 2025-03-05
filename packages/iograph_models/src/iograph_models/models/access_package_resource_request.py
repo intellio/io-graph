@@ -5,13 +5,13 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class AccessPackageResourceRequest(BaseModel):
-	id: Optional[str] = Field(default=None,alias="id",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	createdDateTime: Optional[datetime] = Field(default=None,alias="createdDateTime",)
-	requestType: Optional[AccessPackageRequestType] = Field(default=None,alias="requestType",)
-	state: Optional[AccessPackageRequestState] = Field(default=None,alias="state",)
-	catalog: Optional[AccessPackageCatalog] = Field(default=None,alias="catalog",)
-	resource: Optional[AccessPackageResource] = Field(default=None,alias="resource",)
+	id: Optional[str] = Field(alias="id",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	createdDateTime: Optional[datetime] = Field(alias="createdDateTime",default=None,)
+	requestType: Optional[str | AccessPackageRequestType] = Field(alias="requestType",default=None,)
+	state: Optional[str | AccessPackageRequestState] = Field(alias="state",default=None,)
+	catalog: Optional[AccessPackageCatalog] = Field(alias="catalog",default=None,)
+	resource: Optional[AccessPackageResource] = Field(alias="resource",default=None,)
 
 from .access_package_request_type import AccessPackageRequestType
 from .access_package_request_state import AccessPackageRequestState

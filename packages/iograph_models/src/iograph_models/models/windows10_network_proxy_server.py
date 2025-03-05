@@ -4,9 +4,9 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class Windows10NetworkProxyServer(BaseModel):
-	address: Optional[str] = Field(default=None,alias="address",)
-	exceptions: Optional[list[str]] = Field(default=None,alias="exceptions",)
-	useForLocalAddresses: Optional[bool] = Field(default=None,alias="useForLocalAddresses",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
+	address: Optional[str] = Field(alias="address",default=None,)
+	exceptions: Optional[list[str]] = Field(alias="exceptions",default=None,)
+	useForLocalAddresses: Optional[bool] = Field(alias="useForLocalAddresses",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 
 

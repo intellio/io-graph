@@ -4,6 +4,6 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class AreasPostRequest(BaseModel):
-	reference: Optional[str] = Field(default=None,alias="reference",)
+	reference: Optional[str] = Field(alias="reference",default=None,)
 
 

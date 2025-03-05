@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class SecurityOnboardingStatus(Enum):
+class SecurityOnboardingStatus(StrEnum):
 	insufficientInfo = "insufficientInfo"
 	onboarded = "onboarded"
 	canBeOnboarded = "canBeOnboarded"

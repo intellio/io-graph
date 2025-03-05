@@ -4,11 +4,11 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class Attendee(BaseModel):
-	emailAddress: Optional[EmailAddress] = Field(default=None,alias="emailAddress",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	type: Optional[AttendeeType] = Field(default=None,alias="type",)
-	proposedNewTime: Optional[TimeSlot] = Field(default=None,alias="proposedNewTime",)
-	status: Optional[ResponseStatus] = Field(default=None,alias="status",)
+	emailAddress: Optional[EmailAddress] = Field(alias="emailAddress",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	type: Optional[str | AttendeeType] = Field(alias="type",default=None,)
+	proposedNewTime: Optional[TimeSlot] = Field(alias="proposedNewTime",default=None,)
+	status: Optional[ResponseStatus] = Field(alias="status",default=None,)
 
 from .email_address import EmailAddress
 from .attendee_type import AttendeeType

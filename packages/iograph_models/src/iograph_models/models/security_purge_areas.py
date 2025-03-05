@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class SecurityPurgeAreas(Enum):
+class SecurityPurgeAreas(StrEnum):
 	mailboxes = "mailboxes"
 	teamsMessages = "teamsMessages"
 	unknownFutureValue = "unknownFutureValue"

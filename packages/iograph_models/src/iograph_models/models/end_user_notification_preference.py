@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class EndUserNotificationPreference(Enum):
+class EndUserNotificationPreference(StrEnum):
 	unknown = "unknown"
 	microsoft = "microsoft"
 	custom = "custom"

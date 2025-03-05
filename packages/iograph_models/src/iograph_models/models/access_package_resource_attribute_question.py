@@ -4,8 +4,8 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class AccessPackageResourceAttributeQuestion(BaseModel):
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	question: SerializeAsAny[Optional[AccessPackageQuestion]] = Field(default=None,alias="question",)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	question: SerializeAsAny[Optional[AccessPackageQuestion]] = Field(alias="question",default=None,)
 
 from .access_package_question import AccessPackageQuestion
 

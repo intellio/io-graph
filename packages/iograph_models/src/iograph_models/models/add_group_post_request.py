@@ -4,6 +4,6 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class Add_groupPostRequest(BaseModel):
-	groupId: Optional[str] = Field(default=None,alias="groupId",)
+	groupId: Optional[str] = Field(alias="groupId",default=None,)
 
 

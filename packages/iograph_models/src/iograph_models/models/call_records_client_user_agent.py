@@ -4,13 +4,13 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class CallRecordsClientUserAgent(BaseModel):
-	applicationVersion: Optional[str] = Field(default=None,alias="applicationVersion",)
-	headerValue: Optional[str] = Field(default=None,alias="headerValue",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	azureADAppId: Optional[str] = Field(default=None,alias="azureADAppId",)
-	communicationServiceId: Optional[str] = Field(default=None,alias="communicationServiceId",)
-	platform: Optional[CallRecordsClientPlatform] = Field(default=None,alias="platform",)
-	productFamily: Optional[CallRecordsProductFamily] = Field(default=None,alias="productFamily",)
+	applicationVersion: Optional[str] = Field(alias="applicationVersion",default=None,)
+	headerValue: Optional[str] = Field(alias="headerValue",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	azureADAppId: Optional[str] = Field(alias="azureADAppId",default=None,)
+	communicationServiceId: Optional[str] = Field(alias="communicationServiceId",default=None,)
+	platform: Optional[str | CallRecordsClientPlatform] = Field(alias="platform",default=None,)
+	productFamily: Optional[str | CallRecordsProductFamily] = Field(alias="productFamily",default=None,)
 
 from .call_records_client_platform import CallRecordsClientPlatform
 from .call_records_product_family import CallRecordsProductFamily

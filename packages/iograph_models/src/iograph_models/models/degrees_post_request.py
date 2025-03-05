@@ -4,6 +4,6 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class DegreesPostRequest(BaseModel):
-	angle: Optional[str] = Field(default=None,alias="angle",)
+	angle: Optional[str] = Field(alias="angle",default=None,)
 
 

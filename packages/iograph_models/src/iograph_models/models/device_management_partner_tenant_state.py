@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class DeviceManagementPartnerTenantState(Enum):
+class DeviceManagementPartnerTenantState(StrEnum):
 	unknown = "unknown"
 	unavailable = "unavailable"
 	enabled = "enabled"

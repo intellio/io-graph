@@ -4,6 +4,6 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class Get_notebook_from_web_urlPostRequest(BaseModel):
-	webUrl: Optional[str] = Field(default=None,alias="webUrl",)
+	webUrl: Optional[str] = Field(alias="webUrl",default=None,)
 
 

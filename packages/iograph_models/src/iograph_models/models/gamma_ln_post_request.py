@@ -4,6 +4,6 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class Gamma_lnPostRequest(BaseModel):
-	x: Optional[str] = Field(default=None,alias="x",)
+	x: Optional[str] = Field(alias="x",default=None,)
 
 

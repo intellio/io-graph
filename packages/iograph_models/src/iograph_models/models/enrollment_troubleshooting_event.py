@@ -5,18 +5,18 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class EnrollmentTroubleshootingEvent(BaseModel):
-	id: Optional[str] = Field(default=None,alias="id",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	correlationId: Optional[str] = Field(default=None,alias="correlationId",)
-	eventDateTime: Optional[datetime] = Field(default=None,alias="eventDateTime",)
-	deviceId: Optional[str] = Field(default=None,alias="deviceId",)
-	enrollmentType: Optional[DeviceEnrollmentType] = Field(default=None,alias="enrollmentType",)
-	failureCategory: Optional[DeviceEnrollmentFailureReason] = Field(default=None,alias="failureCategory",)
-	failureReason: Optional[str] = Field(default=None,alias="failureReason",)
-	managedDeviceIdentifier: Optional[str] = Field(default=None,alias="managedDeviceIdentifier",)
-	operatingSystem: Optional[str] = Field(default=None,alias="operatingSystem",)
-	osVersion: Optional[str] = Field(default=None,alias="osVersion",)
-	userId: Optional[str] = Field(default=None,alias="userId",)
+	id: Optional[str] = Field(alias="id",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	correlationId: Optional[str] = Field(alias="correlationId",default=None,)
+	eventDateTime: Optional[datetime] = Field(alias="eventDateTime",default=None,)
+	deviceId: Optional[str] = Field(alias="deviceId",default=None,)
+	enrollmentType: Optional[str | DeviceEnrollmentType] = Field(alias="enrollmentType",default=None,)
+	failureCategory: Optional[str | DeviceEnrollmentFailureReason] = Field(alias="failureCategory",default=None,)
+	failureReason: Optional[str] = Field(alias="failureReason",default=None,)
+	managedDeviceIdentifier: Optional[str] = Field(alias="managedDeviceIdentifier",default=None,)
+	operatingSystem: Optional[str] = Field(alias="operatingSystem",default=None,)
+	osVersion: Optional[str] = Field(alias="osVersion",default=None,)
+	userId: Optional[str] = Field(alias="userId",default=None,)
 
 from .device_enrollment_type import DeviceEnrollmentType
 from .device_enrollment_failure_reason import DeviceEnrollmentFailureReason

@@ -5,15 +5,15 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class ManagedDeviceMobileAppConfigurationDeviceStatus(BaseModel):
-	id: Optional[str] = Field(default=None,alias="id",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	complianceGracePeriodExpirationDateTime: Optional[datetime] = Field(default=None,alias="complianceGracePeriodExpirationDateTime",)
-	deviceDisplayName: Optional[str] = Field(default=None,alias="deviceDisplayName",)
-	deviceModel: Optional[str] = Field(default=None,alias="deviceModel",)
-	lastReportedDateTime: Optional[datetime] = Field(default=None,alias="lastReportedDateTime",)
-	status: Optional[ComplianceStatus] = Field(default=None,alias="status",)
-	userName: Optional[str] = Field(default=None,alias="userName",)
-	userPrincipalName: Optional[str] = Field(default=None,alias="userPrincipalName",)
+	id: Optional[str] = Field(alias="id",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	complianceGracePeriodExpirationDateTime: Optional[datetime] = Field(alias="complianceGracePeriodExpirationDateTime",default=None,)
+	deviceDisplayName: Optional[str] = Field(alias="deviceDisplayName",default=None,)
+	deviceModel: Optional[str] = Field(alias="deviceModel",default=None,)
+	lastReportedDateTime: Optional[datetime] = Field(alias="lastReportedDateTime",default=None,)
+	status: Optional[str | ComplianceStatus] = Field(alias="status",default=None,)
+	userName: Optional[str] = Field(alias="userName",default=None,)
+	userPrincipalName: Optional[str] = Field(alias="userPrincipalName",default=None,)
 
 from .compliance_status import ComplianceStatus
 

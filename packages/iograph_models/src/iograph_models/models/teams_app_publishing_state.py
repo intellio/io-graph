@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class TeamsAppPublishingState(Enum):
+class TeamsAppPublishingState(StrEnum):
 	submitted = "submitted"
 	rejected = "rejected"
 	published = "published"

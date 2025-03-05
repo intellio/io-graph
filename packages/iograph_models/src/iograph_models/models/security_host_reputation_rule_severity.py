@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class SecurityHostReputationRuleSeverity(Enum):
+class SecurityHostReputationRuleSeverity(StrEnum):
 	unknown = "unknown"
 	low = "low"
 	medium = "medium"

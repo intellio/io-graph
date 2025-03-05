@@ -4,11 +4,11 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class WorkbookChartAxes(BaseModel):
-	id: Optional[str] = Field(default=None,alias="id",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	categoryAxis: Optional[WorkbookChartAxis] = Field(default=None,alias="categoryAxis",)
-	seriesAxis: Optional[WorkbookChartAxis] = Field(default=None,alias="seriesAxis",)
-	valueAxis: Optional[WorkbookChartAxis] = Field(default=None,alias="valueAxis",)
+	id: Optional[str] = Field(alias="id",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	categoryAxis: Optional[WorkbookChartAxis] = Field(alias="categoryAxis",default=None,)
+	seriesAxis: Optional[WorkbookChartAxis] = Field(alias="seriesAxis",default=None,)
+	valueAxis: Optional[WorkbookChartAxis] = Field(alias="valueAxis",default=None,)
 
 from .workbook_chart_axis import WorkbookChartAxis
 from .workbook_chart_axis import WorkbookChartAxis

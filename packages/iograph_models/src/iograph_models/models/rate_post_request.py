@@ -4,11 +4,11 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class RatePostRequest(BaseModel):
-	nper: Optional[str] = Field(default=None,alias="nper",)
-	pmt: Optional[str] = Field(default=None,alias="pmt",)
-	pv: Optional[str] = Field(default=None,alias="pv",)
-	fv: Optional[str] = Field(default=None,alias="fv",)
-	type: Optional[str] = Field(default=None,alias="type",)
-	guess: Optional[str] = Field(default=None,alias="guess",)
+	nper: Optional[str] = Field(alias="nper",default=None,)
+	pmt: Optional[str] = Field(alias="pmt",default=None,)
+	pv: Optional[str] = Field(alias="pv",default=None,)
+	fv: Optional[str] = Field(alias="fv",default=None,)
+	type: Optional[str] = Field(alias="type",default=None,)
+	guess: Optional[str] = Field(alias="guess",default=None,)
 
 

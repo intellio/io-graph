@@ -4,9 +4,9 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class UserFlowApiConnectorConfiguration(BaseModel):
-	postAttributeCollection: Optional[IdentityApiConnector] = Field(default=None,alias="postAttributeCollection",)
-	postFederationSignup: Optional[IdentityApiConnector] = Field(default=None,alias="postFederationSignup",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
+	postAttributeCollection: Optional[IdentityApiConnector] = Field(alias="postAttributeCollection",default=None,)
+	postFederationSignup: Optional[IdentityApiConnector] = Field(alias="postFederationSignup",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 
 from .identity_api_connector import IdentityApiConnector
 from .identity_api_connector import IdentityApiConnector

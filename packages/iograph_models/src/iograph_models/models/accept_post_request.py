@@ -4,7 +4,7 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class AcceptPostRequest(BaseModel):
-	SendResponse: Optional[bool] = Field(default=None,alias="SendResponse",)
-	Comment: Optional[str] = Field(default=None,alias="Comment",)
+	SendResponse: Optional[bool] = Field(alias="SendResponse",default=None,)
+	Comment: Optional[str] = Field(alias="Comment",default=None,)
 
 

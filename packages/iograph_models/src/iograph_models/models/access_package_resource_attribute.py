@@ -4,12 +4,12 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class AccessPackageResourceAttribute(BaseModel):
-	destination: SerializeAsAny[Optional[AccessPackageResourceAttributeDestination]] = Field(default=None,alias="destination",)
-	isEditable: Optional[bool] = Field(default=None,alias="isEditable",)
-	isPersistedOnAssignmentRemoval: Optional[bool] = Field(default=None,alias="isPersistedOnAssignmentRemoval",)
-	name: Optional[str] = Field(default=None,alias="name",)
-	source: SerializeAsAny[Optional[AccessPackageResourceAttributeSource]] = Field(default=None,alias="source",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
+	destination: SerializeAsAny[Optional[AccessPackageResourceAttributeDestination]] = Field(alias="destination",default=None,)
+	isEditable: Optional[bool] = Field(alias="isEditable",default=None,)
+	isPersistedOnAssignmentRemoval: Optional[bool] = Field(alias="isPersistedOnAssignmentRemoval",default=None,)
+	name: Optional[str] = Field(alias="name",default=None,)
+	source: SerializeAsAny[Optional[AccessPackageResourceAttributeSource]] = Field(alias="source",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 
 from .access_package_resource_attribute_destination import AccessPackageResourceAttributeDestination
 from .access_package_resource_attribute_source import AccessPackageResourceAttributeSource

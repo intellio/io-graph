@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class PermissionType(Enum):
+class PermissionType(StrEnum):
 	delegatedUserConsentable = "delegatedUserConsentable"
 	delegated = "delegated"
 	application = "application"

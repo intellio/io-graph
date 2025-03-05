@@ -4,12 +4,12 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class AudioConferencing(BaseModel):
-	conferenceId: Optional[str] = Field(default=None,alias="conferenceId",)
-	dialinUrl: Optional[str] = Field(default=None,alias="dialinUrl",)
-	tollFreeNumber: Optional[str] = Field(default=None,alias="tollFreeNumber",)
-	tollFreeNumbers: Optional[list[str]] = Field(default=None,alias="tollFreeNumbers",)
-	tollNumber: Optional[str] = Field(default=None,alias="tollNumber",)
-	tollNumbers: Optional[list[str]] = Field(default=None,alias="tollNumbers",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
+	conferenceId: Optional[str] = Field(alias="conferenceId",default=None,)
+	dialinUrl: Optional[str] = Field(alias="dialinUrl",default=None,)
+	tollFreeNumber: Optional[str] = Field(alias="tollFreeNumber",default=None,)
+	tollFreeNumbers: Optional[list[str]] = Field(alias="tollFreeNumbers",default=None,)
+	tollNumber: Optional[str] = Field(alias="tollNumber",default=None,)
+	tollNumbers: Optional[list[str]] = Field(alias="tollNumbers",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 
 

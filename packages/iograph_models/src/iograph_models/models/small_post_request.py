@@ -4,7 +4,7 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class SmallPostRequest(BaseModel):
-	array: Optional[str] = Field(default=None,alias="array",)
-	k: Optional[str] = Field(default=None,alias="k",)
+	array: Optional[str] = Field(alias="array",default=None,)
+	k: Optional[str] = Field(alias="k",default=None,)
 
 

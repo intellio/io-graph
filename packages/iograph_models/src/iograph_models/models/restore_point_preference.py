@@ -1,8 +1,8 @@
 from __future__ import annotations
-from enum import Enum
+from enum import StrEnum
 
 
-class RestorePointPreference(Enum):
+class RestorePointPreference(StrEnum):
 	latest = "latest"
 	oldest = "oldest"
 	unknownFutureValue = "unknownFutureValue"

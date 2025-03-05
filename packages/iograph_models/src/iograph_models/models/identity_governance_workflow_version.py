@@ -5,19 +5,19 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class IdentityGovernanceWorkflowVersion(BaseModel):
-	category: Optional[IdentityGovernanceLifecycleWorkflowCategory] = Field(default=None,alias="category",)
-	createdDateTime: Optional[datetime] = Field(default=None,alias="createdDateTime",)
-	description: Optional[str] = Field(default=None,alias="description",)
-	displayName: Optional[str] = Field(default=None,alias="displayName",)
-	executionConditions: SerializeAsAny[Optional[IdentityGovernanceWorkflowExecutionConditions]] = Field(default=None,alias="executionConditions",)
-	isEnabled: Optional[bool] = Field(default=None,alias="isEnabled",)
-	isSchedulingEnabled: Optional[bool] = Field(default=None,alias="isSchedulingEnabled",)
-	lastModifiedDateTime: Optional[datetime] = Field(default=None,alias="lastModifiedDateTime",)
-	createdBy: Optional[User] = Field(default=None,alias="createdBy",)
-	lastModifiedBy: Optional[User] = Field(default=None,alias="lastModifiedBy",)
-	tasks: Optional[list[IdentityGovernanceTask]] = Field(default=None,alias="tasks",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	versionNumber: Optional[int] = Field(default=None,alias="versionNumber",)
+	category: Optional[str | IdentityGovernanceLifecycleWorkflowCategory] = Field(alias="category",default=None,)
+	createdDateTime: Optional[datetime] = Field(alias="createdDateTime",default=None,)
+	description: Optional[str] = Field(alias="description",default=None,)
+	displayName: Optional[str] = Field(alias="displayName",default=None,)
+	executionConditions: SerializeAsAny[Optional[IdentityGovernanceWorkflowExecutionConditions]] = Field(alias="executionConditions",default=None,)
+	isEnabled: Optional[bool] = Field(alias="isEnabled",default=None,)
+	isSchedulingEnabled: Optional[bool] = Field(alias="isSchedulingEnabled",default=None,)
+	lastModifiedDateTime: Optional[datetime] = Field(alias="lastModifiedDateTime",default=None,)
+	createdBy: Optional[User] = Field(alias="createdBy",default=None,)
+	lastModifiedBy: Optional[User] = Field(alias="lastModifiedBy",default=None,)
+	tasks: Optional[list[IdentityGovernanceTask]] = Field(alias="tasks",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	versionNumber: Optional[int] = Field(alias="versionNumber",default=None,)
 
 from .identity_governance_lifecycle_workflow_category import IdentityGovernanceLifecycleWorkflowCategory
 from .identity_governance_workflow_execution_conditions import IdentityGovernanceWorkflowExecutionConditions

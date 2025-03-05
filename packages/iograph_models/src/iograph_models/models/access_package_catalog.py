@@ -5,20 +5,20 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class AccessPackageCatalog(BaseModel):
-	id: Optional[str] = Field(default=None,alias="id",)
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	catalogType: Optional[AccessPackageCatalogType] = Field(default=None,alias="catalogType",)
-	createdDateTime: Optional[datetime] = Field(default=None,alias="createdDateTime",)
-	description: Optional[str] = Field(default=None,alias="description",)
-	displayName: Optional[str] = Field(default=None,alias="displayName",)
-	isExternallyVisible: Optional[bool] = Field(default=None,alias="isExternallyVisible",)
-	modifiedDateTime: Optional[datetime] = Field(default=None,alias="modifiedDateTime",)
-	state: Optional[AccessPackageCatalogState] = Field(default=None,alias="state",)
-	accessPackages: Optional[list[AccessPackage]] = Field(default=None,alias="accessPackages",)
-	customWorkflowExtensions: SerializeAsAny[Optional[list[CustomCalloutExtension]]] = Field(default=None,alias="customWorkflowExtensions",)
-	resourceRoles: Optional[list[AccessPackageResourceRole]] = Field(default=None,alias="resourceRoles",)
-	resources: Optional[list[AccessPackageResource]] = Field(default=None,alias="resources",)
-	resourceScopes: Optional[list[AccessPackageResourceScope]] = Field(default=None,alias="resourceScopes",)
+	id: Optional[str] = Field(alias="id",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	catalogType: Optional[str | AccessPackageCatalogType] = Field(alias="catalogType",default=None,)
+	createdDateTime: Optional[datetime] = Field(alias="createdDateTime",default=None,)
+	description: Optional[str] = Field(alias="description",default=None,)
+	displayName: Optional[str] = Field(alias="displayName",default=None,)
+	isExternallyVisible: Optional[bool] = Field(alias="isExternallyVisible",default=None,)
+	modifiedDateTime: Optional[datetime] = Field(alias="modifiedDateTime",default=None,)
+	state: Optional[str | AccessPackageCatalogState] = Field(alias="state",default=None,)
+	accessPackages: Optional[list[AccessPackage]] = Field(alias="accessPackages",default=None,)
+	customWorkflowExtensions: SerializeAsAny[Optional[list[CustomCalloutExtension]]] = Field(alias="customWorkflowExtensions",default=None,)
+	resourceRoles: Optional[list[AccessPackageResourceRole]] = Field(alias="resourceRoles",default=None,)
+	resources: Optional[list[AccessPackageResource]] = Field(alias="resources",default=None,)
+	resourceScopes: Optional[list[AccessPackageResourceScope]] = Field(alias="resourceScopes",default=None,)
 
 from .access_package_catalog_type import AccessPackageCatalogType
 from .access_package_catalog_state import AccessPackageCatalogState

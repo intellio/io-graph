@@ -4,7 +4,7 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class SecurityRetentionDurationInDays(BaseModel):
-	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	days: Optional[int] = Field(default=None,alias="days",)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	days: Optional[int] = Field(alias="days",default=None,)
 
 

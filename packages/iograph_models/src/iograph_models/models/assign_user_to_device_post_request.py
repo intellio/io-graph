@@ -4,7 +4,7 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class Assign_user_to_devicePostRequest(BaseModel):
-	userPrincipalName: Optional[str] = Field(default=None,alias="userPrincipalName",)
-	addressableUserName: Optional[str] = Field(default=None,alias="addressableUserName",)
+	userPrincipalName: Optional[str] = Field(alias="userPrincipalName",default=None,)
+	addressableUserName: Optional[str] = Field(alias="addressableUserName",default=None,)
 
 
