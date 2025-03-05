@@ -15,8 +15,8 @@ if TYPE_CHECKING:
 	from .by_risky_user_history_item_id import ByRiskyUserHistoryItemIdRequest
 	from ......request_adapter import HttpxRequestAdapter
 from iograph_models.models.risky_user_history_item import RiskyUserHistoryItem
-from iograph_models.models.risky_user_history_item_collection_response import RiskyUserHistoryItemCollectionResponse
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.models.risky_user_history_item_collection_response import RiskyUserHistoryItemCollectionResponse
 
 
 class HistoryRequest(BaseRequestBuilder):

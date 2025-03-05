@@ -11,7 +11,7 @@ class Fido2AuthenticationMethodConfiguration(BaseModel):
 	isAttestationEnforced: Optional[bool] = Field(default=None,alias="isAttestationEnforced",)
 	isSelfServiceRegistrationAllowed: Optional[bool] = Field(default=None,alias="isSelfServiceRegistrationAllowed",)
 	keyRestrictions: Optional[Fido2KeyRestrictions] = Field(default=None,alias="keyRestrictions",)
-	includeTargets: Optional[list[AuthenticationMethodTarget]] = Field(default=None,alias="includeTargets",)
+	includeTargets: SerializeAsAny[Optional[list[AuthenticationMethodTarget]]] = Field(default=None,alias="includeTargets",)
 
 from .exclude_target import ExcludeTarget
 from .authentication_method_state import AuthenticationMethodState

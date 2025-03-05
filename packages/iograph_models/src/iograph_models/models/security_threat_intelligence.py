@@ -12,7 +12,7 @@ class SecurityThreatIntelligence(BaseModel):
 	hostCookies: Optional[list[SecurityHostCookie]] = Field(default=None,alias="hostCookies",)
 	hostPairs: Optional[list[SecurityHostPair]] = Field(default=None,alias="hostPairs",)
 	hostPorts: Optional[list[SecurityHostPort]] = Field(default=None,alias="hostPorts",)
-	hosts: Optional[list[SecurityHost]] = Field(default=None,alias="hosts",)
+	hosts: SerializeAsAny[Optional[list[SecurityHost]]] = Field(default=None,alias="hosts",)
 	hostSslCertificates: Optional[list[SecurityHostSslCertificate]] = Field(default=None,alias="hostSslCertificates",)
 	hostTrackers: Optional[list[SecurityHostTracker]] = Field(default=None,alias="hostTrackers",)
 	intelligenceProfileIndicators: Optional[list[SecurityIntelligenceProfileIndicator]] = Field(default=None,alias="intelligenceProfileIndicators",)

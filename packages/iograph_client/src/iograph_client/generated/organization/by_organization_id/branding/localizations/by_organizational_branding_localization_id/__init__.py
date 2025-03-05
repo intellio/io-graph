@@ -19,8 +19,8 @@ if TYPE_CHECKING:
 	from .banner_logo import BannerLogoRequest
 	from .background_image import BackgroundImageRequest
 	from .......request_adapter import HttpxRequestAdapter
-from iograph_models.models.organizational_branding_localization import OrganizationalBrandingLocalization
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.models.organizational_branding_localization import OrganizationalBrandingLocalization
 
 
 class ByOrganizationalBrandingLocalizationIdRequest(BaseRequestBuilder):

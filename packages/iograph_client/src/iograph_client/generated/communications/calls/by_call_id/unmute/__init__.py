@@ -11,9 +11,9 @@ from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:
 	from ......request_adapter import HttpxRequestAdapter
-from iograph_models.models.unmute_participant_operation import UnmuteParticipantOperation
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.models.unmute_post_request import UnmutePostRequest
+from iograph_models.models.unmute_participant_operation import UnmuteParticipantOperation
 
 
 class UnmuteRequest(BaseRequestBuilder):

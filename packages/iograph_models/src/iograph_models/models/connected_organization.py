@@ -13,8 +13,8 @@ class ConnectedOrganization(BaseModel):
 	identitySources: SerializeAsAny[Optional[list[IdentitySource]]] = Field(default=None,alias="identitySources",)
 	modifiedDateTime: Optional[datetime] = Field(default=None,alias="modifiedDateTime",)
 	state: Optional[ConnectedOrganizationState] = Field(default=None,alias="state",)
-	externalSponsors: Optional[list[DirectoryObject]] = Field(default=None,alias="externalSponsors",)
-	internalSponsors: Optional[list[DirectoryObject]] = Field(default=None,alias="internalSponsors",)
+	externalSponsors: SerializeAsAny[Optional[list[DirectoryObject]]] = Field(default=None,alias="externalSponsors",)
+	internalSponsors: SerializeAsAny[Optional[list[DirectoryObject]]] = Field(default=None,alias="internalSponsors",)
 
 from .identity_source import IdentitySource
 from .connected_organization_state import ConnectedOrganizationState

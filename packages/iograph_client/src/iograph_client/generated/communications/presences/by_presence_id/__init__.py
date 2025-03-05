@@ -17,8 +17,8 @@ if TYPE_CHECKING:
 	from .clear_user_preferred_presence import ClearUserPreferredPresenceRequest
 	from .clear_presence import ClearPresenceRequest
 	from .....request_adapter import HttpxRequestAdapter
-from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.models.presence import Presence
+from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
 
 
 class ByPresenceIdRequest(BaseRequestBuilder):

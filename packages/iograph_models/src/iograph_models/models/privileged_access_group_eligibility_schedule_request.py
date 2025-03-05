@@ -23,7 +23,7 @@ class PrivilegedAccessGroupEligibilityScheduleRequest(BaseModel):
 	principalId: Optional[str] = Field(default=None,alias="principalId",)
 	targetScheduleId: Optional[str] = Field(default=None,alias="targetScheduleId",)
 	group: Optional[Group] = Field(default=None,alias="group",)
-	principal: Optional[DirectoryObject] = Field(default=None,alias="principal",)
+	principal: SerializeAsAny[Optional[DirectoryObject]] = Field(default=None,alias="principal",)
 	targetSchedule: Optional[PrivilegedAccessGroupEligibilitySchedule] = Field(default=None,alias="targetSchedule",)
 
 from .identity_set import IdentitySet

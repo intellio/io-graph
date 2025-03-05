@@ -8,7 +8,7 @@ class SoftwareOathAuthenticationMethodConfiguration(BaseModel):
 	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
 	excludeTargets: Optional[list[ExcludeTarget]] = Field(default=None,alias="excludeTargets",)
 	state: Optional[AuthenticationMethodState] = Field(default=None,alias="state",)
-	includeTargets: Optional[list[AuthenticationMethodTarget]] = Field(default=None,alias="includeTargets",)
+	includeTargets: SerializeAsAny[Optional[list[AuthenticationMethodTarget]]] = Field(default=None,alias="includeTargets",)
 
 from .exclude_target import ExcludeTarget
 from .authentication_method_state import AuthenticationMethodState

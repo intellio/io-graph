@@ -15,9 +15,9 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_approval_id import ByApprovalIdRequest
 	from ......request_adapter import HttpxRequestAdapter
-from iograph_models.models.approval_collection_response import ApprovalCollectionResponse
-from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.models.approval import Approval
+from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.models.approval_collection_response import ApprovalCollectionResponse
 
 
 class AssignmentApprovalsRequest(BaseRequestBuilder):

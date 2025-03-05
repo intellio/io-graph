@@ -11,7 +11,7 @@ class SecurityHostCookie(BaseModel):
 	firstSeenDateTime: Optional[datetime] = Field(default=None,alias="firstSeenDateTime",)
 	lastSeenDateTime: Optional[datetime] = Field(default=None,alias="lastSeenDateTime",)
 	name: Optional[str] = Field(default=None,alias="name",)
-	host: Optional[SecurityHost] = Field(default=None,alias="host",)
+	host: SerializeAsAny[Optional[SecurityHost]] = Field(default=None,alias="host",)
 
 from .security_host import SecurityHost
 

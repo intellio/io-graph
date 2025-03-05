@@ -12,7 +12,7 @@ class AppManagementPolicy(BaseModel):
 	displayName: Optional[str] = Field(default=None,alias="displayName",)
 	isEnabled: Optional[bool] = Field(default=None,alias="isEnabled",)
 	restrictions: Optional[CustomAppManagementConfiguration] = Field(default=None,alias="restrictions",)
-	appliesTo: Optional[list[DirectoryObject]] = Field(default=None,alias="appliesTo",)
+	appliesTo: SerializeAsAny[Optional[list[DirectoryObject]]] = Field(default=None,alias="appliesTo",)
 
 from .custom_app_management_configuration import CustomAppManagementConfiguration
 from .directory_object import DirectoryObject

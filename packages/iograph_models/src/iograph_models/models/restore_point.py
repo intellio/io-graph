@@ -10,7 +10,7 @@ class RestorePoint(BaseModel):
 	expirationDateTime: Optional[datetime] = Field(default=None,alias="expirationDateTime",)
 	protectionDateTime: Optional[datetime] = Field(default=None,alias="protectionDateTime",)
 	tags: Optional[RestorePointTags] = Field(default=None,alias="tags",)
-	protectionUnit: Optional[ProtectionUnitBase] = Field(default=None,alias="protectionUnit",)
+	protectionUnit: SerializeAsAny[Optional[ProtectionUnitBase]] = Field(default=None,alias="protectionUnit",)
 
 from .restore_point_tags import RestorePointTags
 from .protection_unit_base import ProtectionUnitBase

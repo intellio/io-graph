@@ -14,7 +14,7 @@ class AuthenticationStrengthPolicy(BaseModel):
 	modifiedDateTime: Optional[datetime] = Field(default=None,alias="modifiedDateTime",)
 	policyType: Optional[AuthenticationStrengthPolicyType] = Field(default=None,alias="policyType",)
 	requirementsSatisfied: Optional[AuthenticationStrengthRequirements] = Field(default=None,alias="requirementsSatisfied",)
-	combinationConfigurations: Optional[list[AuthenticationCombinationConfiguration]] = Field(default=None,alias="combinationConfigurations",)
+	combinationConfigurations: SerializeAsAny[Optional[list[AuthenticationCombinationConfiguration]]] = Field(default=None,alias="combinationConfigurations",)
 
 from .authentication_method_modes import AuthenticationMethodModes
 from .authentication_strength_policy_type import AuthenticationStrengthPolicyType

@@ -22,10 +22,10 @@ class TodoTask(BaseModel):
 	startDateTime: Optional[DateTimeTimeZone] = Field(default=None,alias="startDateTime",)
 	status: Optional[TaskStatus] = Field(default=None,alias="status",)
 	title: Optional[str] = Field(default=None,alias="title",)
-	attachments: Optional[list[AttachmentBase]] = Field(default=None,alias="attachments",)
+	attachments: SerializeAsAny[Optional[list[AttachmentBase]]] = Field(default=None,alias="attachments",)
 	attachmentSessions: Optional[list[AttachmentSession]] = Field(default=None,alias="attachmentSessions",)
 	checklistItems: Optional[list[ChecklistItem]] = Field(default=None,alias="checklistItems",)
-	extensions: Optional[list[Extension]] = Field(default=None,alias="extensions",)
+	extensions: SerializeAsAny[Optional[list[Extension]]] = Field(default=None,alias="extensions",)
 	linkedResources: Optional[list[LinkedResource]] = Field(default=None,alias="linkedResources",)
 
 from .item_body import ItemBody

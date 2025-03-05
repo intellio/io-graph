@@ -15,8 +15,8 @@ class AdministrativeUnit(BaseModel):
 	membershipRuleProcessingState: Optional[str] = Field(default=None,alias="membershipRuleProcessingState",)
 	membershipType: Optional[str] = Field(default=None,alias="membershipType",)
 	visibility: Optional[str] = Field(default=None,alias="visibility",)
-	extensions: Optional[list[Extension]] = Field(default=None,alias="extensions",)
-	members: Optional[list[DirectoryObject]] = Field(default=None,alias="members",)
+	extensions: SerializeAsAny[Optional[list[Extension]]] = Field(default=None,alias="extensions",)
+	members: SerializeAsAny[Optional[list[DirectoryObject]]] = Field(default=None,alias="members",)
 	scopedRoleMembers: Optional[list[ScopedRoleMembership]] = Field(default=None,alias="scopedRoleMembers",)
 
 from .extension import Extension

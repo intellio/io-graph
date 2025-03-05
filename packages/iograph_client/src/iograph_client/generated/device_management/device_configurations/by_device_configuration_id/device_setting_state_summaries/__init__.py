@@ -14,9 +14,9 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_setting_state_device_summary_id import BySettingStateDeviceSummaryIdRequest
 	from ......request_adapter import HttpxRequestAdapter
-from iograph_models.models.setting_state_device_summary_collection_response import SettingStateDeviceSummaryCollectionResponse
-from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.models.setting_state_device_summary import SettingStateDeviceSummary
+from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.models.setting_state_device_summary_collection_response import SettingStateDeviceSummaryCollectionResponse
 
 
 class DeviceSettingStateSummariesRequest(BaseRequestBuilder):

@@ -214,11 +214,22 @@ def get_model_discriminator(schema):
         return None
 
 def _check_field_type_has_discriminator(model_name, components):
+
     model_schema = components['schemas'][model_name]
-    if 'discriminator' in model_schema:
-        return True
+
+    if not model_schema:
+        raise Exception('Model schema not found for model name: ' + model_name)
+    
+    if 'allOf' in model_schema:
+        for item in model_schema['allOf']:
+            if 'discriminator' in item:
+                return True
+    
     else:
-        return False
+        if 'discriminator' in model_schema:
+            return True
+        else:
+            return False
 
 def get_schema_fields(name:str, schema, components,dependencies:list):
     fields = {}

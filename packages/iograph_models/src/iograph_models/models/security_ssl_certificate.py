@@ -16,7 +16,7 @@ class SecuritySslCertificate(BaseModel):
 	serialNumber: Optional[str] = Field(default=None,alias="serialNumber",)
 	sha1: Optional[str] = Field(default=None,alias="sha1",)
 	subject: Optional[SecuritySslCertificateEntity] = Field(default=None,alias="subject",)
-	relatedHosts: Optional[list[SecurityHost]] = Field(default=None,alias="relatedHosts",)
+	relatedHosts: SerializeAsAny[Optional[list[SecurityHost]]] = Field(default=None,alias="relatedHosts",)
 
 from .security_ssl_certificate_entity import SecuritySslCertificateEntity
 from .security_ssl_certificate_entity import SecuritySslCertificateEntity

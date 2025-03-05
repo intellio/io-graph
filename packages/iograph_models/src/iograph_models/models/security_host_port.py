@@ -16,7 +16,7 @@ class SecurityHostPort(BaseModel):
 	services: Optional[list[SecurityHostPortComponent]] = Field(default=None,alias="services",)
 	status: Optional[SecurityHostPortStatus] = Field(default=None,alias="status",)
 	timesObserved: Optional[int] = Field(default=None,alias="timesObserved",)
-	host: Optional[SecurityHost] = Field(default=None,alias="host",)
+	host: SerializeAsAny[Optional[SecurityHost]] = Field(default=None,alias="host",)
 	mostRecentSslCertificate: Optional[SecuritySslCertificate] = Field(default=None,alias="mostRecentSslCertificate",)
 
 from .security_host_port_banner import SecurityHostPortBanner

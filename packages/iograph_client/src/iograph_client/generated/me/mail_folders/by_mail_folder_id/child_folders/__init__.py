@@ -15,9 +15,9 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_mail_folder_id1 import ByMailFolderId1Request
 	from ......request_adapter import HttpxRequestAdapter
-from iograph_models.models.mail_folder_collection_response import MailFolderCollectionResponse
-from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.models.mail_folder import MailFolder
+from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.models.mail_folder_collection_response import MailFolderCollectionResponse
 
 
 class ChildFoldersRequest(BaseRequestBuilder):

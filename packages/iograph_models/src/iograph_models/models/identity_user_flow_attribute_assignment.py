@@ -11,7 +11,7 @@ class IdentityUserFlowAttributeAssignment(BaseModel):
 	requiresVerification: Optional[bool] = Field(default=None,alias="requiresVerification",)
 	userAttributeValues: Optional[list[UserAttributeValuesItem]] = Field(default=None,alias="userAttributeValues",)
 	userInputType: Optional[IdentityUserFlowAttributeInputType] = Field(default=None,alias="userInputType",)
-	userAttribute: Optional[IdentityUserFlowAttribute] = Field(default=None,alias="userAttribute",)
+	userAttribute: SerializeAsAny[Optional[IdentityUserFlowAttribute]] = Field(default=None,alias="userAttribute",)
 
 from .user_attribute_values_item import UserAttributeValuesItem
 from .identity_user_flow_attribute_input_type import IdentityUserFlowAttributeInputType

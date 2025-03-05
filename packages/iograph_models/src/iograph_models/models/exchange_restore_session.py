@@ -15,7 +15,7 @@ class ExchangeRestoreSession(BaseModel):
 	lastModifiedDateTime: Optional[datetime] = Field(default=None,alias="lastModifiedDateTime",)
 	status: Optional[RestoreSessionStatus] = Field(default=None,alias="status",)
 	granularMailboxRestoreArtifacts: Optional[list[GranularMailboxRestoreArtifact]] = Field(default=None,alias="granularMailboxRestoreArtifacts",)
-	mailboxRestoreArtifacts: Optional[list[MailboxRestoreArtifact]] = Field(default=None,alias="mailboxRestoreArtifacts",)
+	mailboxRestoreArtifacts: SerializeAsAny[Optional[list[MailboxRestoreArtifact]]] = Field(default=None,alias="mailboxRestoreArtifacts",)
 
 from .identity_set import IdentitySet
 from .public_error import PublicError

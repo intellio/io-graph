@@ -15,7 +15,7 @@ class AccessPackageCatalog(BaseModel):
 	modifiedDateTime: Optional[datetime] = Field(default=None,alias="modifiedDateTime",)
 	state: Optional[AccessPackageCatalogState] = Field(default=None,alias="state",)
 	accessPackages: Optional[list[AccessPackage]] = Field(default=None,alias="accessPackages",)
-	customWorkflowExtensions: Optional[list[CustomCalloutExtension]] = Field(default=None,alias="customWorkflowExtensions",)
+	customWorkflowExtensions: SerializeAsAny[Optional[list[CustomCalloutExtension]]] = Field(default=None,alias="customWorkflowExtensions",)
 	resourceRoles: Optional[list[AccessPackageResourceRole]] = Field(default=None,alias="resourceRoles",)
 	resources: Optional[list[AccessPackageResource]] = Field(default=None,alias="resources",)
 	resourceScopes: Optional[list[AccessPackageResourceScope]] = Field(default=None,alias="resourceScopes",)

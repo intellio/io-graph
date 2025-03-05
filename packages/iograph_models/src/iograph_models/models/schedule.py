@@ -20,7 +20,7 @@ class Schedule(BaseModel):
 	timeZone: Optional[str] = Field(default=None,alias="timeZone",)
 	workforceIntegrationIds: Optional[list[str]] = Field(default=None,alias="workforceIntegrationIds",)
 	dayNotes: Optional[list[DayNote]] = Field(default=None,alias="dayNotes",)
-	offerShiftRequests: Optional[list[OfferShiftRequest]] = Field(default=None,alias="offerShiftRequests",)
+	offerShiftRequests: SerializeAsAny[Optional[list[OfferShiftRequest]]] = Field(default=None,alias="offerShiftRequests",)
 	openShiftChangeRequests: Optional[list[OpenShiftChangeRequest]] = Field(default=None,alias="openShiftChangeRequests",)
 	openShifts: Optional[list[OpenShift]] = Field(default=None,alias="openShifts",)
 	schedulingGroups: Optional[list[SchedulingGroup]] = Field(default=None,alias="schedulingGroups",)

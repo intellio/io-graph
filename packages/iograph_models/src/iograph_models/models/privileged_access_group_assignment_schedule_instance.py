@@ -17,7 +17,7 @@ class PrivilegedAccessGroupAssignmentScheduleInstance(BaseModel):
 	principalId: Optional[str] = Field(default=None,alias="principalId",)
 	activatedUsing: Optional[PrivilegedAccessGroupEligibilityScheduleInstance] = Field(default=None,alias="activatedUsing",)
 	group: Optional[Group] = Field(default=None,alias="group",)
-	principal: Optional[DirectoryObject] = Field(default=None,alias="principal",)
+	principal: SerializeAsAny[Optional[DirectoryObject]] = Field(default=None,alias="principal",)
 
 from .privileged_access_group_relationships import PrivilegedAccessGroupRelationships
 from .privileged_access_group_assignment_type import PrivilegedAccessGroupAssignmentType

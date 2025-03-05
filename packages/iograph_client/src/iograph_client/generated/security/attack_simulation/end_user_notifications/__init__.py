@@ -14,9 +14,9 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_end_user_notification_id import ByEndUserNotificationIdRequest
 	from .....request_adapter import HttpxRequestAdapter
-from iograph_models.models.end_user_notification import EndUserNotification
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.models.end_user_notification_collection_response import EndUserNotificationCollectionResponse
+from iograph_models.models.end_user_notification import EndUserNotification
 
 
 class EndUserNotificationsRequest(BaseRequestBuilder):

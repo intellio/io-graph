@@ -14,7 +14,7 @@ class AuthenticationMethodsPolicy(BaseModel):
 	policyVersion: Optional[str] = Field(default=None,alias="policyVersion",)
 	reconfirmationInDays: Optional[int] = Field(default=None,alias="reconfirmationInDays",)
 	registrationEnforcement: Optional[RegistrationEnforcement] = Field(default=None,alias="registrationEnforcement",)
-	authenticationMethodConfigurations: Optional[list[AuthenticationMethodConfiguration]] = Field(default=None,alias="authenticationMethodConfigurations",)
+	authenticationMethodConfigurations: SerializeAsAny[Optional[list[AuthenticationMethodConfiguration]]] = Field(default=None,alias="authenticationMethodConfigurations",)
 
 from .authentication_methods_policy_migration_state import AuthenticationMethodsPolicyMigrationState
 from .registration_enforcement import RegistrationEnforcement

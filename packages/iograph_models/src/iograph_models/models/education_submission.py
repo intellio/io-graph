@@ -21,7 +21,7 @@ class EducationSubmission(BaseModel):
 	unsubmittedBy: SerializeAsAny[Optional[IdentitySet]] = Field(default=None,alias="unsubmittedBy",)
 	unsubmittedDateTime: Optional[datetime] = Field(default=None,alias="unsubmittedDateTime",)
 	webUrl: Optional[str] = Field(default=None,alias="webUrl",)
-	outcomes: Optional[list[EducationOutcome]] = Field(default=None,alias="outcomes",)
+	outcomes: SerializeAsAny[Optional[list[EducationOutcome]]] = Field(default=None,alias="outcomes",)
 	resources: Optional[list[EducationSubmissionResource]] = Field(default=None,alias="resources",)
 	submittedResources: Optional[list[EducationSubmissionResource]] = Field(default=None,alias="submittedResources",)
 

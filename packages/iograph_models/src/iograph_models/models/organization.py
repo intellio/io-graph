@@ -34,7 +34,7 @@ class Organization(BaseModel):
 	verifiedDomains: Optional[list[VerifiedDomain]] = Field(default=None,alias="verifiedDomains",)
 	branding: Optional[OrganizationalBranding] = Field(default=None,alias="branding",)
 	certificateBasedAuthConfiguration: Optional[list[CertificateBasedAuthConfiguration]] = Field(default=None,alias="certificateBasedAuthConfiguration",)
-	extensions: Optional[list[Extension]] = Field(default=None,alias="extensions",)
+	extensions: SerializeAsAny[Optional[list[Extension]]] = Field(default=None,alias="extensions",)
 
 from .assigned_plan import AssignedPlan
 from .mdm_authority import MdmAuthority

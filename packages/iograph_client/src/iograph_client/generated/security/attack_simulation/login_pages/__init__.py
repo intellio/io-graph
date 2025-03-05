@@ -14,9 +14,9 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_login_page_id import ByLoginPageIdRequest
 	from .....request_adapter import HttpxRequestAdapter
-from iograph_models.models.login_page_collection_response import LoginPageCollectionResponse
-from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.models.login_page import LoginPage
+from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.models.login_page_collection_response import LoginPageCollectionResponse
 
 
 class LoginPagesRequest(BaseRequestBuilder):

@@ -11,7 +11,7 @@ class SecurityHostTracker(BaseModel):
 	kind: Optional[str] = Field(default=None,alias="kind",)
 	lastSeenDateTime: Optional[datetime] = Field(default=None,alias="lastSeenDateTime",)
 	value: Optional[str] = Field(default=None,alias="value",)
-	host: Optional[SecurityHost] = Field(default=None,alias="host",)
+	host: SerializeAsAny[Optional[SecurityHost]] = Field(default=None,alias="host",)
 
 from .security_host import SecurityHost
 

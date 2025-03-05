@@ -18,7 +18,7 @@ class ManagedEBook(BaseModel):
 	privacyInformationUrl: Optional[str] = Field(default=None,alias="privacyInformationUrl",)
 	publishedDateTime: Optional[datetime] = Field(default=None,alias="publishedDateTime",)
 	publisher: Optional[str] = Field(default=None,alias="publisher",)
-	assignments: Optional[list[ManagedEBookAssignment]] = Field(default=None,alias="assignments",)
+	assignments: SerializeAsAny[Optional[list[ManagedEBookAssignment]]] = Field(default=None,alias="assignments",)
 	deviceStates: Optional[list[DeviceInstallState]] = Field(default=None,alias="deviceStates",)
 	installSummary: Optional[EBookInstallSummary] = Field(default=None,alias="installSummary",)
 	userStateSummary: Optional[list[UserInstallStateSummary]] = Field(default=None,alias="userStateSummary",)

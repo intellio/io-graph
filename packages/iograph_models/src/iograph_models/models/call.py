@@ -28,7 +28,7 @@ class Call(BaseModel):
 	transcription: Optional[CallTranscriptionInfo] = Field(default=None,alias="transcription",)
 	audioRoutingGroups: Optional[list[AudioRoutingGroup]] = Field(default=None,alias="audioRoutingGroups",)
 	contentSharingSessions: Optional[list[ContentSharingSession]] = Field(default=None,alias="contentSharingSessions",)
-	operations: Optional[list[CommsOperation]] = Field(default=None,alias="operations",)
+	operations: SerializeAsAny[Optional[list[CommsOperation]]] = Field(default=None,alias="operations",)
 	participants: Optional[list[Participant]] = Field(default=None,alias="participants",)
 
 from .call_options import CallOptions

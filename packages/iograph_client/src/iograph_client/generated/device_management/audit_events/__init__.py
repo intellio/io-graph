@@ -17,8 +17,8 @@ if TYPE_CHECKING:
 	from .by_audit_event_id import ByAuditEventIdRequest
 	from ....request_adapter import HttpxRequestAdapter
 from iograph_models.models.audit_event import AuditEvent
-from iograph_models.models.audit_event_collection_response import AuditEventCollectionResponse
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.models.audit_event_collection_response import AuditEventCollectionResponse
 
 
 class AuditEventsRequest(BaseRequestBuilder):

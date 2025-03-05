@@ -12,7 +12,7 @@ class SecurityHostComponent(BaseModel):
 	lastSeenDateTime: Optional[datetime] = Field(default=None,alias="lastSeenDateTime",)
 	name: Optional[str] = Field(default=None,alias="name",)
 	version: Optional[str] = Field(default=None,alias="version",)
-	host: Optional[SecurityHost] = Field(default=None,alias="host",)
+	host: SerializeAsAny[Optional[SecurityHost]] = Field(default=None,alias="host",)
 
 from .security_host import SecurityHost
 

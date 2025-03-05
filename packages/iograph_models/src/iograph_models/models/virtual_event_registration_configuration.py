@@ -10,7 +10,7 @@ class VirtualEventRegistrationConfiguration(BaseModel):
 	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
 	capacity: Optional[int] = Field(default=None,alias="capacity",)
 	registrationWebUrl: Optional[str] = Field(default=None,alias="registrationWebUrl",)
-	questions: Optional[list[VirtualEventRegistrationQuestionBase]] = Field(default=None,alias="questions",)
+	questions: SerializeAsAny[Optional[list[VirtualEventRegistrationQuestionBase]]] = Field(default=None,alias="questions",)
 
 	@model_validator(mode="wrap")
 	def convert_discriminator_class(cls, data: Any, handler: ModelWrapValidatorHandler[Self]) -> Self:

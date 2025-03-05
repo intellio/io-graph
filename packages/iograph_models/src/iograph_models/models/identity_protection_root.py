@@ -5,8 +5,8 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 class IdentityProtectionRoot(BaseModel):
 	riskDetections: Optional[list[RiskDetection]] = Field(default=None,alias="riskDetections",)
-	riskyServicePrincipals: Optional[list[RiskyServicePrincipal]] = Field(default=None,alias="riskyServicePrincipals",)
-	riskyUsers: Optional[list[RiskyUser]] = Field(default=None,alias="riskyUsers",)
+	riskyServicePrincipals: SerializeAsAny[Optional[list[RiskyServicePrincipal]]] = Field(default=None,alias="riskyServicePrincipals",)
+	riskyUsers: SerializeAsAny[Optional[list[RiskyUser]]] = Field(default=None,alias="riskyUsers",)
 	servicePrincipalRiskDetections: Optional[list[ServicePrincipalRiskDetection]] = Field(default=None,alias="servicePrincipalRiskDetections",)
 	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
 

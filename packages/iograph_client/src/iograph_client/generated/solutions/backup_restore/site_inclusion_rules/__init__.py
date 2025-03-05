@@ -14,9 +14,9 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_site_protection_rule_id import BySiteProtectionRuleIdRequest
 	from .....request_adapter import HttpxRequestAdapter
-from iograph_models.models.site_protection_rule import SiteProtectionRule
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.models.site_protection_rule_collection_response import SiteProtectionRuleCollectionResponse
+from iograph_models.models.site_protection_rule import SiteProtectionRule
 
 
 class SiteInclusionRulesRequest(BaseRequestBuilder):

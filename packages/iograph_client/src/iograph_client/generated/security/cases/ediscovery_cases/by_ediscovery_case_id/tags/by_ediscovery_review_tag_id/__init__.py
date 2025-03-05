@@ -14,8 +14,8 @@ if TYPE_CHECKING:
 	from .parent import ParentRequest
 	from .child_tags import ChildTagsRequest
 	from ........request_adapter import HttpxRequestAdapter
-from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.models.security_ediscovery_review_tag import SecurityEdiscoveryReviewTag
+from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
 
 
 class ByEdiscoveryReviewTagIdRequest(BaseRequestBuilder):

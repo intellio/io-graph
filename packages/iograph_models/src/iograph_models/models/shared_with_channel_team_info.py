@@ -10,7 +10,7 @@ class SharedWithChannelTeamInfo(BaseModel):
 	tenantId: Optional[str] = Field(default=None,alias="tenantId",)
 	team: Optional[Team] = Field(default=None,alias="team",)
 	isHostTeam: Optional[bool] = Field(default=None,alias="isHostTeam",)
-	allowedMembers: Optional[list[ConversationMember]] = Field(default=None,alias="allowedMembers",)
+	allowedMembers: SerializeAsAny[Optional[list[ConversationMember]]] = Field(default=None,alias="allowedMembers",)
 
 from .team import Team
 from .conversation_member import ConversationMember

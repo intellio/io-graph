@@ -24,8 +24,8 @@ class UnifiedRoleEligibilityScheduleRequest(BaseModel):
 	targetScheduleId: Optional[str] = Field(default=None,alias="targetScheduleId",)
 	ticketInfo: Optional[TicketInfo] = Field(default=None,alias="ticketInfo",)
 	appScope: Optional[AppScope] = Field(default=None,alias="appScope",)
-	directoryScope: Optional[DirectoryObject] = Field(default=None,alias="directoryScope",)
-	principal: Optional[DirectoryObject] = Field(default=None,alias="principal",)
+	directoryScope: SerializeAsAny[Optional[DirectoryObject]] = Field(default=None,alias="directoryScope",)
+	principal: SerializeAsAny[Optional[DirectoryObject]] = Field(default=None,alias="principal",)
 	roleDefinition: Optional[UnifiedRoleDefinition] = Field(default=None,alias="roleDefinition",)
 	targetSchedule: Optional[UnifiedRoleEligibilitySchedule] = Field(default=None,alias="targetSchedule",)
 

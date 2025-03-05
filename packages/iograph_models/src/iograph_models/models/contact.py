@@ -44,7 +44,7 @@ class Contact(BaseModel):
 	yomiCompanyName: Optional[str] = Field(default=None,alias="yomiCompanyName",)
 	yomiGivenName: Optional[str] = Field(default=None,alias="yomiGivenName",)
 	yomiSurname: Optional[str] = Field(default=None,alias="yomiSurname",)
-	extensions: Optional[list[Extension]] = Field(default=None,alias="extensions",)
+	extensions: SerializeAsAny[Optional[list[Extension]]] = Field(default=None,alias="extensions",)
 	multiValueExtendedProperties: Optional[list[MultiValueLegacyExtendedProperty]] = Field(default=None,alias="multiValueExtendedProperties",)
 	photo: Optional[ProfilePhoto] = Field(default=None,alias="photo",)
 	singleValueExtendedProperties: Optional[list[SingleValueLegacyExtendedProperty]] = Field(default=None,alias="singleValueExtendedProperties",)

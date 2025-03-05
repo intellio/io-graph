@@ -28,7 +28,7 @@ class SitePage(BaseModel):
 	thumbnailWebUrl: Optional[str] = Field(default=None,alias="thumbnailWebUrl",)
 	titleArea: Optional[TitleArea] = Field(default=None,alias="titleArea",)
 	canvasLayout: Optional[CanvasLayout] = Field(default=None,alias="canvasLayout",)
-	webParts: Optional[list[WebPart]] = Field(default=None,alias="webParts",)
+	webParts: SerializeAsAny[Optional[list[WebPart]]] = Field(default=None,alias="webParts",)
 
 from .identity_set import IdentitySet
 from .identity_set import IdentitySet

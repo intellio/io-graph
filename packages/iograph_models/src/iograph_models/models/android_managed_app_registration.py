@@ -19,8 +19,8 @@ class AndroidManagedAppRegistration(BaseModel):
 	platformVersion: Optional[str] = Field(default=None,alias="platformVersion",)
 	userId: Optional[str] = Field(default=None,alias="userId",)
 	version: Optional[str] = Field(default=None,alias="version",)
-	appliedPolicies: Optional[list[ManagedAppPolicy]] = Field(default=None,alias="appliedPolicies",)
-	intendedPolicies: Optional[list[ManagedAppPolicy]] = Field(default=None,alias="intendedPolicies",)
+	appliedPolicies: SerializeAsAny[Optional[list[ManagedAppPolicy]]] = Field(default=None,alias="appliedPolicies",)
+	intendedPolicies: SerializeAsAny[Optional[list[ManagedAppPolicy]]] = Field(default=None,alias="intendedPolicies",)
 	operations: Optional[list[ManagedAppOperation]] = Field(default=None,alias="operations",)
 
 from .mobile_app_identifier import MobileAppIdentifier

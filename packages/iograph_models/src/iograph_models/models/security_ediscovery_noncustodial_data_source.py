@@ -13,7 +13,7 @@ class SecurityEdiscoveryNoncustodialDataSource(BaseModel):
 	lastModifiedDateTime: Optional[datetime] = Field(default=None,alias="lastModifiedDateTime",)
 	releasedDateTime: Optional[datetime] = Field(default=None,alias="releasedDateTime",)
 	status: Optional[SecurityDataSourceContainerStatus] = Field(default=None,alias="status",)
-	dataSource: Optional[SecurityDataSource] = Field(default=None,alias="dataSource",)
+	dataSource: SerializeAsAny[Optional[SecurityDataSource]] = Field(default=None,alias="dataSource",)
 	lastIndexOperation: Optional[SecurityEdiscoveryIndexOperation] = Field(default=None,alias="lastIndexOperation",)
 
 from .security_data_source_hold_status import SecurityDataSourceHoldStatus

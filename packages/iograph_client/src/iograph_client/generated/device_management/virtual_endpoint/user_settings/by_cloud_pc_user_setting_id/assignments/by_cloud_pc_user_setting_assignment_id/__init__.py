@@ -11,8 +11,8 @@ from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:
 	from ........request_adapter import HttpxRequestAdapter
-from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.models.cloud_pc_user_setting_assignment import CloudPcUserSettingAssignment
+from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
 
 
 class ByCloudPcUserSettingAssignmentIdRequest(BaseRequestBuilder):

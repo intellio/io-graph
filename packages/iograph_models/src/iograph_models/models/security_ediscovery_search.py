@@ -15,9 +15,9 @@ class SecurityEdiscoverySearch(BaseModel):
 	lastModifiedBy: SerializeAsAny[Optional[IdentitySet]] = Field(default=None,alias="lastModifiedBy",)
 	lastModifiedDateTime: Optional[datetime] = Field(default=None,alias="lastModifiedDateTime",)
 	dataSourceScopes: Optional[SecurityDataSourceScopes] = Field(default=None,alias="dataSourceScopes",)
-	additionalSources: Optional[list[SecurityDataSource]] = Field(default=None,alias="additionalSources",)
+	additionalSources: SerializeAsAny[Optional[list[SecurityDataSource]]] = Field(default=None,alias="additionalSources",)
 	addToReviewSetOperation: Optional[SecurityEdiscoveryAddToReviewSetOperation] = Field(default=None,alias="addToReviewSetOperation",)
-	custodianSources: Optional[list[SecurityDataSource]] = Field(default=None,alias="custodianSources",)
+	custodianSources: SerializeAsAny[Optional[list[SecurityDataSource]]] = Field(default=None,alias="custodianSources",)
 	lastEstimateStatisticsOperation: Optional[SecurityEdiscoveryEstimateOperation] = Field(default=None,alias="lastEstimateStatisticsOperation",)
 	noncustodialSources: Optional[list[SecurityEdiscoveryNoncustodialDataSource]] = Field(default=None,alias="noncustodialSources",)
 

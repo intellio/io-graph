@@ -20,8 +20,8 @@ if TYPE_CHECKING:
 	from .role_assignments import RoleAssignmentsRequest
 	from .resource_namespaces import ResourceNamespacesRequest
 	from ....request_adapter import HttpxRequestAdapter
-from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.models.rbac_application import RbacApplication
+from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
 
 
 class EntitlementManagementRequest(BaseRequestBuilder):

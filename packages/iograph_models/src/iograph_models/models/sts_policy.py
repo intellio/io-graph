@@ -14,7 +14,7 @@ class StsPolicy(BaseModel):
 	displayName: Optional[str] = Field(default=None,alias="displayName",)
 	definition: Optional[list[str]] = Field(default=None,alias="definition",)
 	isOrganizationDefault: Optional[bool] = Field(default=None,alias="isOrganizationDefault",)
-	appliesTo: Optional[list[DirectoryObject]] = Field(default=None,alias="appliesTo",)
+	appliesTo: SerializeAsAny[Optional[list[DirectoryObject]]] = Field(default=None,alias="appliesTo",)
 
 	@model_validator(mode="wrap")
 	def convert_discriminator_class(cls, data: Any, handler: ModelWrapValidatorHandler[Self]) -> Self:

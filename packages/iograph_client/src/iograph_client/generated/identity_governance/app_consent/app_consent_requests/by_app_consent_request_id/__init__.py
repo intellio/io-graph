@@ -13,8 +13,8 @@ from typing import TYPE_CHECKING
 if TYPE_CHECKING:
 	from .user_consent_requests import UserConsentRequestsRequest
 	from ......request_adapter import HttpxRequestAdapter
-from iograph_models.models.app_consent_request import AppConsentRequest
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.models.app_consent_request import AppConsentRequest
 
 
 class ByAppConsentRequestIdRequest(BaseRequestBuilder):

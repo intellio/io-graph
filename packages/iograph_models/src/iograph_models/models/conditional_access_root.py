@@ -8,7 +8,7 @@ class ConditionalAccessRoot(BaseModel):
 	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
 	authenticationContextClassReferences: Optional[list[AuthenticationContextClassReference]] = Field(default=None,alias="authenticationContextClassReferences",)
 	authenticationStrength: Optional[AuthenticationStrengthRoot] = Field(default=None,alias="authenticationStrength",)
-	namedLocations: Optional[list[NamedLocation]] = Field(default=None,alias="namedLocations",)
+	namedLocations: SerializeAsAny[Optional[list[NamedLocation]]] = Field(default=None,alias="namedLocations",)
 	policies: Optional[list[ConditionalAccessPolicy]] = Field(default=None,alias="policies",)
 	templates: Optional[list[ConditionalAccessTemplate]] = Field(default=None,alias="templates",)
 

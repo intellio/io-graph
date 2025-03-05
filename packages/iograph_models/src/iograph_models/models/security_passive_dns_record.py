@@ -11,8 +11,8 @@ class SecurityPassiveDnsRecord(BaseModel):
 	firstSeenDateTime: Optional[datetime] = Field(default=None,alias="firstSeenDateTime",)
 	lastSeenDateTime: Optional[datetime] = Field(default=None,alias="lastSeenDateTime",)
 	recordType: Optional[str] = Field(default=None,alias="recordType",)
-	artifact: Optional[SecurityArtifact] = Field(default=None,alias="artifact",)
-	parentHost: Optional[SecurityHost] = Field(default=None,alias="parentHost",)
+	artifact: SerializeAsAny[Optional[SecurityArtifact]] = Field(default=None,alias="artifact",)
+	parentHost: SerializeAsAny[Optional[SecurityHost]] = Field(default=None,alias="parentHost",)
 
 from .security_artifact import SecurityArtifact
 from .security_host import SecurityHost

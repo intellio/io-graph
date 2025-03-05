@@ -26,7 +26,7 @@ class SecurityWhoisBaseRecord(BaseModel):
 	technical: Optional[SecurityWhoisContact] = Field(default=None,alias="technical",)
 	whoisServer: Optional[str] = Field(default=None,alias="whoisServer",)
 	zone: Optional[SecurityWhoisContact] = Field(default=None,alias="zone",)
-	host: Optional[SecurityHost] = Field(default=None,alias="host",)
+	host: SerializeAsAny[Optional[SecurityHost]] = Field(default=None,alias="host",)
 
 	@model_validator(mode="wrap")
 	def convert_discriminator_class(cls, data: Any, handler: ModelWrapValidatorHandler[Self]) -> Self:

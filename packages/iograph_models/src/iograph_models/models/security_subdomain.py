@@ -8,7 +8,7 @@ class SecuritySubdomain(BaseModel):
 	id: Optional[str] = Field(default=None,alias="id",)
 	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
 	firstSeenDateTime: Optional[datetime] = Field(default=None,alias="firstSeenDateTime",)
-	host: Optional[SecurityHost] = Field(default=None,alias="host",)
+	host: SerializeAsAny[Optional[SecurityHost]] = Field(default=None,alias="host",)
 
 from .security_host import SecurityHost
 

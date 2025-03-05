@@ -4,7 +4,7 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class AttendeeAvailability(BaseModel):
-	attendee: Optional[AttendeeBase] = Field(default=None,alias="attendee",)
+	attendee: SerializeAsAny[Optional[AttendeeBase]] = Field(default=None,alias="attendee",)
 	availability: Optional[FreeBusyStatus] = Field(default=None,alias="availability",)
 	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
 

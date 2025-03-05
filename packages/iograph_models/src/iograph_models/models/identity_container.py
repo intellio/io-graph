@@ -7,13 +7,13 @@ class IdentityContainer(BaseModel):
 	id: Optional[str] = Field(default=None,alias="id",)
 	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
 	apiConnectors: Optional[list[IdentityApiConnector]] = Field(default=None,alias="apiConnectors",)
-	authenticationEventListeners: Optional[list[AuthenticationEventListener]] = Field(default=None,alias="authenticationEventListeners",)
-	authenticationEventsFlows: Optional[list[AuthenticationEventsFlow]] = Field(default=None,alias="authenticationEventsFlows",)
+	authenticationEventListeners: SerializeAsAny[Optional[list[AuthenticationEventListener]]] = Field(default=None,alias="authenticationEventListeners",)
+	authenticationEventsFlows: SerializeAsAny[Optional[list[AuthenticationEventsFlow]]] = Field(default=None,alias="authenticationEventsFlows",)
 	b2xUserFlows: Optional[list[B2xIdentityUserFlow]] = Field(default=None,alias="b2xUserFlows",)
 	conditionalAccess: Optional[ConditionalAccessRoot] = Field(default=None,alias="conditionalAccess",)
-	customAuthenticationExtensions: Optional[list[CustomAuthenticationExtension]] = Field(default=None,alias="customAuthenticationExtensions",)
-	identityProviders: Optional[list[IdentityProviderBase]] = Field(default=None,alias="identityProviders",)
-	userFlowAttributes: Optional[list[IdentityUserFlowAttribute]] = Field(default=None,alias="userFlowAttributes",)
+	customAuthenticationExtensions: SerializeAsAny[Optional[list[CustomAuthenticationExtension]]] = Field(default=None,alias="customAuthenticationExtensions",)
+	identityProviders: SerializeAsAny[Optional[list[IdentityProviderBase]]] = Field(default=None,alias="identityProviders",)
+	userFlowAttributes: SerializeAsAny[Optional[list[IdentityUserFlowAttribute]]] = Field(default=None,alias="userFlowAttributes",)
 
 from .identity_api_connector import IdentityApiConnector
 from .authentication_event_listener import AuthenticationEventListener

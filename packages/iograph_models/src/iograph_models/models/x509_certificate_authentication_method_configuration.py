@@ -11,7 +11,7 @@ class X509CertificateAuthenticationMethodConfiguration(BaseModel):
 	authenticationModeConfiguration: Optional[X509CertificateAuthenticationModeConfiguration] = Field(default=None,alias="authenticationModeConfiguration",)
 	certificateUserBindings: Optional[list[X509CertificateUserBinding]] = Field(default=None,alias="certificateUserBindings",)
 	crlValidationConfiguration: Optional[X509CertificateCRLValidationConfiguration] = Field(default=None,alias="crlValidationConfiguration",)
-	includeTargets: Optional[list[AuthenticationMethodTarget]] = Field(default=None,alias="includeTargets",)
+	includeTargets: SerializeAsAny[Optional[list[AuthenticationMethodTarget]]] = Field(default=None,alias="includeTargets",)
 
 from .exclude_target import ExcludeTarget
 from .authentication_method_state import AuthenticationMethodState

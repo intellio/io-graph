@@ -9,9 +9,9 @@ class Directory(BaseModel):
 	administrativeUnits: Optional[list[AdministrativeUnit]] = Field(default=None,alias="administrativeUnits",)
 	attributeSets: Optional[list[AttributeSet]] = Field(default=None,alias="attributeSets",)
 	customSecurityAttributeDefinitions: Optional[list[CustomSecurityAttributeDefinition]] = Field(default=None,alias="customSecurityAttributeDefinitions",)
-	deletedItems: Optional[list[DirectoryObject]] = Field(default=None,alias="deletedItems",)
+	deletedItems: SerializeAsAny[Optional[list[DirectoryObject]]] = Field(default=None,alias="deletedItems",)
 	deviceLocalCredentials: Optional[list[DeviceLocalCredentialInfo]] = Field(default=None,alias="deviceLocalCredentials",)
-	federationConfigurations: Optional[list[IdentityProviderBase]] = Field(default=None,alias="federationConfigurations",)
+	federationConfigurations: SerializeAsAny[Optional[list[IdentityProviderBase]]] = Field(default=None,alias="federationConfigurations",)
 	onPremisesSynchronization: Optional[list[OnPremisesDirectorySynchronization]] = Field(default=None,alias="onPremisesSynchronization",)
 	subscriptions: Optional[list[CompanySubscription]] = Field(default=None,alias="subscriptions",)
 

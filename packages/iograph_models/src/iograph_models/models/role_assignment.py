@@ -11,7 +11,7 @@ class RoleAssignment(BaseModel):
 	description: Optional[str] = Field(default=None,alias="description",)
 	displayName: Optional[str] = Field(default=None,alias="displayName",)
 	resourceScopes: Optional[list[str]] = Field(default=None,alias="resourceScopes",)
-	roleDefinition: Optional[RoleDefinition] = Field(default=None,alias="roleDefinition",)
+	roleDefinition: SerializeAsAny[Optional[RoleDefinition]] = Field(default=None,alias="roleDefinition",)
 
 	@model_validator(mode="wrap")
 	def convert_discriminator_class(cls, data: Any, handler: ModelWrapValidatorHandler[Self]) -> Self:

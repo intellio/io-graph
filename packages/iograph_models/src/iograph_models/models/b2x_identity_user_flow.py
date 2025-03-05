@@ -12,7 +12,7 @@ class B2xIdentityUserFlow(BaseModel):
 	identityProviders: Optional[list[IdentityProvider]] = Field(default=None,alias="identityProviders",)
 	languages: Optional[list[UserFlowLanguageConfiguration]] = Field(default=None,alias="languages",)
 	userAttributeAssignments: Optional[list[IdentityUserFlowAttributeAssignment]] = Field(default=None,alias="userAttributeAssignments",)
-	userFlowIdentityProviders: Optional[list[IdentityProviderBase]] = Field(default=None,alias="userFlowIdentityProviders",)
+	userFlowIdentityProviders: SerializeAsAny[Optional[list[IdentityProviderBase]]] = Field(default=None,alias="userFlowIdentityProviders",)
 
 from .user_flow_type import UserFlowType
 from .reference_numeric import ReferenceNumeric

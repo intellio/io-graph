@@ -9,7 +9,7 @@ class ExternalConnectorsExternalItem(BaseModel):
 	acl: Optional[list[ExternalConnectorsAcl]] = Field(default=None,alias="acl",)
 	content: Optional[ExternalConnectorsExternalItemContent] = Field(default=None,alias="content",)
 	properties: Optional[ExternalConnectorsProperties] = Field(default=None,alias="properties",)
-	activities: Optional[list[ExternalConnectorsExternalActivity]] = Field(default=None,alias="activities",)
+	activities: SerializeAsAny[Optional[list[ExternalConnectorsExternalActivity]]] = Field(default=None,alias="activities",)
 
 from .external_connectors_acl import ExternalConnectorsAcl
 from .external_connectors_external_item_content import ExternalConnectorsExternalItemContent

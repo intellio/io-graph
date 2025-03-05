@@ -15,8 +15,8 @@ if TYPE_CHECKING:
 	from .by_article_id import ByArticleIdRequest
 	from .....request_adapter import HttpxRequestAdapter
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
-from iograph_models.models.security_article import SecurityArticle
 from iograph_models.models.security_article_collection_response import SecurityArticleCollectionResponse
+from iograph_models.models.security_article import SecurityArticle
 
 
 class ArticlesRequest(BaseRequestBuilder):

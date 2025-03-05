@@ -12,9 +12,9 @@ class MembershipOutlierInsight(BaseModel):
 	memberId: Optional[str] = Field(default=None,alias="memberId",)
 	outlierContainerType: Optional[OutlierContainerType] = Field(default=None,alias="outlierContainerType",)
 	outlierMemberType: Optional[OutlierMemberType] = Field(default=None,alias="outlierMemberType",)
-	container: Optional[DirectoryObject] = Field(default=None,alias="container",)
+	container: SerializeAsAny[Optional[DirectoryObject]] = Field(default=None,alias="container",)
 	lastModifiedBy: Optional[User] = Field(default=None,alias="lastModifiedBy",)
-	member: Optional[DirectoryObject] = Field(default=None,alias="member",)
+	member: SerializeAsAny[Optional[DirectoryObject]] = Field(default=None,alias="member",)
 
 from .outlier_container_type import OutlierContainerType
 from .outlier_member_type import OutlierMemberType

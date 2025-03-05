@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field, SerializeAsAny
 class VirtualEventsRoot(BaseModel):
 	id: Optional[str] = Field(default=None,alias="id",)
 	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	events: Optional[list[VirtualEvent]] = Field(default=None,alias="events",)
+	events: SerializeAsAny[Optional[list[VirtualEvent]]] = Field(default=None,alias="events",)
 	townhalls: Optional[list[VirtualEventTownhall]] = Field(default=None,alias="townhalls",)
 	webinars: Optional[list[VirtualEventWebinar]] = Field(default=None,alias="webinars",)
 

@@ -12,7 +12,7 @@ class ItemAttachment(BaseModel):
 	lastModifiedDateTime: Optional[datetime] = Field(default=None,alias="lastModifiedDateTime",)
 	name: Optional[str] = Field(default=None,alias="name",)
 	size: Optional[int] = Field(default=None,alias="size",)
-	item: Optional[OutlookItem] = Field(default=None,alias="item",)
+	item: SerializeAsAny[Optional[OutlookItem]] = Field(default=None,alias="item",)
 
 from .outlook_item import OutlookItem
 

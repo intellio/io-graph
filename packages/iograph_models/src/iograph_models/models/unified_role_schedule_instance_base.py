@@ -13,8 +13,8 @@ class UnifiedRoleScheduleInstanceBase(BaseModel):
 	principalId: Optional[str] = Field(default=None,alias="principalId",)
 	roleDefinitionId: Optional[str] = Field(default=None,alias="roleDefinitionId",)
 	appScope: Optional[AppScope] = Field(default=None,alias="appScope",)
-	directoryScope: Optional[DirectoryObject] = Field(default=None,alias="directoryScope",)
-	principal: Optional[DirectoryObject] = Field(default=None,alias="principal",)
+	directoryScope: SerializeAsAny[Optional[DirectoryObject]] = Field(default=None,alias="directoryScope",)
+	principal: SerializeAsAny[Optional[DirectoryObject]] = Field(default=None,alias="principal",)
 	roleDefinition: Optional[UnifiedRoleDefinition] = Field(default=None,alias="roleDefinition",)
 
 	@model_validator(mode="wrap")

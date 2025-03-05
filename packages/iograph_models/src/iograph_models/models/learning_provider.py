@@ -14,7 +14,7 @@ class LearningProvider(BaseModel):
 	squareLogoWebUrlForDarkTheme: Optional[str] = Field(default=None,alias="squareLogoWebUrlForDarkTheme",)
 	squareLogoWebUrlForLightTheme: Optional[str] = Field(default=None,alias="squareLogoWebUrlForLightTheme",)
 	learningContents: Optional[list[LearningContent]] = Field(default=None,alias="learningContents",)
-	learningCourseActivities: Optional[list[LearningCourseActivity]] = Field(default=None,alias="learningCourseActivities",)
+	learningCourseActivities: SerializeAsAny[Optional[list[LearningCourseActivity]]] = Field(default=None,alias="learningCourseActivities",)
 
 from .learning_content import LearningContent
 from .learning_course_activity import LearningCourseActivity

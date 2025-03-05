@@ -14,9 +14,9 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_managed_app_operation_id import ByManagedAppOperationIdRequest
 	from ......request_adapter import HttpxRequestAdapter
-from iograph_models.models.managed_app_operation_collection_response import ManagedAppOperationCollectionResponse
-from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.models.managed_app_operation import ManagedAppOperation
+from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.models.managed_app_operation_collection_response import ManagedAppOperationCollectionResponse
 
 
 class OperationsRequest(BaseRequestBuilder):

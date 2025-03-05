@@ -9,7 +9,7 @@ class UnifiedRoleManagementPolicyRuleTarget(BaseModel):
 	inheritableSettings: Optional[list[str]] = Field(default=None,alias="inheritableSettings",)
 	level: Optional[str] = Field(default=None,alias="level",)
 	operations: Optional[UnifiedRoleManagementPolicyRuleTargetOperations] = Field(default=None,alias="operations",)
-	targetObjects: Optional[list[DirectoryObject]] = Field(default=None,alias="targetObjects",)
+	targetObjects: SerializeAsAny[Optional[list[DirectoryObject]]] = Field(default=None,alias="targetObjects",)
 	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
 
 from .unified_role_management_policy_rule_target_operations import UnifiedRoleManagementPolicyRuleTargetOperations

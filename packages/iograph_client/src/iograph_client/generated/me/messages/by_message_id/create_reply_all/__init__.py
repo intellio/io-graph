@@ -12,8 +12,8 @@ from typing import TYPE_CHECKING
 if TYPE_CHECKING:
 	from ......request_adapter import HttpxRequestAdapter
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
-from iograph_models.models.message import Message
 from iograph_models.models.create_reply_all_post_request import Create_reply_allPostRequest
+from iograph_models.models.message import Message
 
 
 class CreateReplyAllRequest(BaseRequestBuilder):

@@ -12,8 +12,8 @@ from typing import TYPE_CHECKING
 if TYPE_CHECKING:
 	from .site_lists import SiteListsRequest
 	from .....request_adapter import HttpxRequestAdapter
-from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.models.internet_explorer_mode import InternetExplorerMode
+from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
 
 
 class InternetExplorerModeRequest(BaseRequestBuilder):

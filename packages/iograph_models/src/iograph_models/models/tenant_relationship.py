@@ -5,7 +5,7 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 class TenantRelationship(BaseModel):
 	delegatedAdminCustomers: Optional[list[DelegatedAdminCustomer]] = Field(default=None,alias="delegatedAdminCustomers",)
-	delegatedAdminRelationships: Optional[list[DelegatedAdminRelationship]] = Field(default=None,alias="delegatedAdminRelationships",)
+	delegatedAdminRelationships: SerializeAsAny[Optional[list[DelegatedAdminRelationship]]] = Field(default=None,alias="delegatedAdminRelationships",)
 	multiTenantOrganization: Optional[MultiTenantOrganization] = Field(default=None,alias="multiTenantOrganization",)
 	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
 

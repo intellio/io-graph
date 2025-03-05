@@ -20,7 +20,7 @@ class AccessReviewInstanceDecisionItem(BaseModel):
 	resourceLink: Optional[str] = Field(default=None,alias="resourceLink",)
 	reviewedBy: Optional[UserIdentity] = Field(default=None,alias="reviewedBy",)
 	reviewedDateTime: Optional[datetime] = Field(default=None,alias="reviewedDateTime",)
-	insights: Optional[list[GovernanceInsight]] = Field(default=None,alias="insights",)
+	insights: SerializeAsAny[Optional[list[GovernanceInsight]]] = Field(default=None,alias="insights",)
 
 from .user_identity import UserIdentity
 from .identity import Identity

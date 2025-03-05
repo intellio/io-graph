@@ -21,7 +21,7 @@ class AccessPackageAssignmentPolicy(BaseModel):
 	accessPackage: Optional[AccessPackage] = Field(default=None,alias="accessPackage",)
 	catalog: Optional[AccessPackageCatalog] = Field(default=None,alias="catalog",)
 	customExtensionStageSettings: Optional[list[CustomExtensionStageSetting]] = Field(default=None,alias="customExtensionStageSettings",)
-	questions: Optional[list[AccessPackageQuestion]] = Field(default=None,alias="questions",)
+	questions: SerializeAsAny[Optional[list[AccessPackageQuestion]]] = Field(default=None,alias="questions",)
 
 from .allowed_target_scope import AllowedTargetScope
 from .access_package_automatic_request_settings import AccessPackageAutomaticRequestSettings

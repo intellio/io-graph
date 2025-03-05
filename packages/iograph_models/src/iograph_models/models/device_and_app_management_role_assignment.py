@@ -9,7 +9,7 @@ class DeviceAndAppManagementRoleAssignment(BaseModel):
 	description: Optional[str] = Field(default=None,alias="description",)
 	displayName: Optional[str] = Field(default=None,alias="displayName",)
 	resourceScopes: Optional[list[str]] = Field(default=None,alias="resourceScopes",)
-	roleDefinition: Optional[RoleDefinition] = Field(default=None,alias="roleDefinition",)
+	roleDefinition: SerializeAsAny[Optional[RoleDefinition]] = Field(default=None,alias="roleDefinition",)
 	members: Optional[list[str]] = Field(default=None,alias="members",)
 
 from .role_definition import RoleDefinition

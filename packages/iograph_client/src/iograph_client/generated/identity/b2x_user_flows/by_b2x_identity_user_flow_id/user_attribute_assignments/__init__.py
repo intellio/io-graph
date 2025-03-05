@@ -17,8 +17,8 @@ if TYPE_CHECKING:
 	from .by_identity_user_flow_attribute_assignment_id import ByIdentityUserFlowAttributeAssignmentIdRequest
 	from ......request_adapter import HttpxRequestAdapter
 from iograph_models.models.identity_user_flow_attribute_assignment import IdentityUserFlowAttributeAssignment
-from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.models.identity_user_flow_attribute_assignment_collection_response import IdentityUserFlowAttributeAssignmentCollectionResponse
+from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
 
 
 class UserAttributeAssignmentsRequest(BaseRequestBuilder):

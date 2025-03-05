@@ -9,7 +9,7 @@ class VoiceAuthenticationMethodConfiguration(BaseModel):
 	excludeTargets: Optional[list[ExcludeTarget]] = Field(default=None,alias="excludeTargets",)
 	state: Optional[AuthenticationMethodState] = Field(default=None,alias="state",)
 	isOfficePhoneAllowed: Optional[bool] = Field(default=None,alias="isOfficePhoneAllowed",)
-	includeTargets: Optional[list[AuthenticationMethodTarget]] = Field(default=None,alias="includeTargets",)
+	includeTargets: SerializeAsAny[Optional[list[AuthenticationMethodTarget]]] = Field(default=None,alias="includeTargets",)
 
 from .exclude_target import ExcludeTarget
 from .authentication_method_state import AuthenticationMethodState

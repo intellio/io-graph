@@ -14,9 +14,9 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_scoped_role_membership_id import ByScopedRoleMembershipIdRequest
 	from .....request_adapter import HttpxRequestAdapter
+from iograph_models.models.scoped_role_membership_collection_response import ScopedRoleMembershipCollectionResponse
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.models.scoped_role_membership import ScopedRoleMembership
-from iograph_models.models.scoped_role_membership_collection_response import ScopedRoleMembershipCollectionResponse
 
 
 class ScopedRoleMemberOfRequest(BaseRequestBuilder):

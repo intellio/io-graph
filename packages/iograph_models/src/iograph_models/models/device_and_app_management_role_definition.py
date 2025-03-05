@@ -10,7 +10,7 @@ class DeviceAndAppManagementRoleDefinition(BaseModel):
 	displayName: Optional[str] = Field(default=None,alias="displayName",)
 	isBuiltIn: Optional[bool] = Field(default=None,alias="isBuiltIn",)
 	rolePermissions: Optional[list[RolePermission]] = Field(default=None,alias="rolePermissions",)
-	roleAssignments: Optional[list[RoleAssignment]] = Field(default=None,alias="roleAssignments",)
+	roleAssignments: SerializeAsAny[Optional[list[RoleAssignment]]] = Field(default=None,alias="roleAssignments",)
 
 from .role_permission import RolePermission
 from .role_assignment import RoleAssignment

@@ -14,8 +14,8 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_windows_hello_for_business_authentication_method_id import ByWindowsHelloForBusinessAuthenticationMethodIdRequest
 	from .....request_adapter import HttpxRequestAdapter
-from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.models.windows_hello_for_business_authentication_method_collection_response import WindowsHelloForBusinessAuthenticationMethodCollectionResponse
+from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
 
 
 class WindowsHelloForBusinessMethodsRequest(BaseRequestBuilder):

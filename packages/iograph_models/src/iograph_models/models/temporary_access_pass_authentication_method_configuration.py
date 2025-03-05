@@ -13,7 +13,7 @@ class TemporaryAccessPassAuthenticationMethodConfiguration(BaseModel):
 	isUsableOnce: Optional[bool] = Field(default=None,alias="isUsableOnce",)
 	maximumLifetimeInMinutes: Optional[int] = Field(default=None,alias="maximumLifetimeInMinutes",)
 	minimumLifetimeInMinutes: Optional[int] = Field(default=None,alias="minimumLifetimeInMinutes",)
-	includeTargets: Optional[list[AuthenticationMethodTarget]] = Field(default=None,alias="includeTargets",)
+	includeTargets: SerializeAsAny[Optional[list[AuthenticationMethodTarget]]] = Field(default=None,alias="includeTargets",)
 
 from .exclude_target import ExcludeTarget
 from .authentication_method_state import AuthenticationMethodState

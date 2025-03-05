@@ -24,7 +24,7 @@ class SecurityWhoisRecord(BaseModel):
 	technical: Optional[SecurityWhoisContact] = Field(default=None,alias="technical",)
 	whoisServer: Optional[str] = Field(default=None,alias="whoisServer",)
 	zone: Optional[SecurityWhoisContact] = Field(default=None,alias="zone",)
-	host: Optional[SecurityHost] = Field(default=None,alias="host",)
+	host: SerializeAsAny[Optional[SecurityHost]] = Field(default=None,alias="host",)
 	history: Optional[list[SecurityWhoisHistoryRecord]] = Field(default=None,alias="history",)
 
 from .security_whois_contact import SecurityWhoisContact

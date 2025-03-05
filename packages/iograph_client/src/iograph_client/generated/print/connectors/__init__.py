@@ -14,9 +14,9 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_print_connector_id import ByPrintConnectorIdRequest
 	from ....request_adapter import HttpxRequestAdapter
-from iograph_models.models.print_connector_collection_response import PrintConnectorCollectionResponse
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.models.print_connector import PrintConnector
+from iograph_models.models.print_connector_collection_response import PrintConnectorCollectionResponse
 
 
 class ConnectorsRequest(BaseRequestBuilder):

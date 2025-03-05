@@ -12,8 +12,8 @@ from typing import TYPE_CHECKING
 if TYPE_CHECKING:
 	from ......request_adapter import HttpxRequestAdapter
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
-from iograph_models.models.play_prompt_post_request import Play_promptPostRequest
 from iograph_models.models.play_prompt_operation import PlayPromptOperation
+from iograph_models.models.play_prompt_post_request import Play_promptPostRequest
 
 
 class PlayPromptRequest(BaseRequestBuilder):

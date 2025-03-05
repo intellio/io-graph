@@ -17,7 +17,7 @@ class PrivilegedAccessGroupEligibilitySchedule(BaseModel):
 	memberType: Optional[PrivilegedAccessGroupMemberType] = Field(default=None,alias="memberType",)
 	principalId: Optional[str] = Field(default=None,alias="principalId",)
 	group: Optional[Group] = Field(default=None,alias="group",)
-	principal: Optional[DirectoryObject] = Field(default=None,alias="principal",)
+	principal: SerializeAsAny[Optional[DirectoryObject]] = Field(default=None,alias="principal",)
 
 from .request_schedule import RequestSchedule
 from .privileged_access_group_relationships import PrivilegedAccessGroupRelationships

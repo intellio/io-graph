@@ -14,9 +14,9 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_thumbnail_set_id import ByThumbnailSetIdRequest
 	from .......request_adapter import HttpxRequestAdapter
+from iograph_models.models.thumbnail_set_collection_response import ThumbnailSetCollectionResponse
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.models.thumbnail_set import ThumbnailSet
-from iograph_models.models.thumbnail_set_collection_response import ThumbnailSetCollectionResponse
 
 
 class ThumbnailsRequest(BaseRequestBuilder):

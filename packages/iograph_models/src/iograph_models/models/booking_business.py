@@ -24,10 +24,10 @@ class BookingBusiness(BaseModel):
 	webSiteUrl: Optional[str] = Field(default=None,alias="webSiteUrl",)
 	appointments: Optional[list[BookingAppointment]] = Field(default=None,alias="appointments",)
 	calendarView: Optional[list[BookingAppointment]] = Field(default=None,alias="calendarView",)
-	customers: Optional[list[BookingCustomerBase]] = Field(default=None,alias="customers",)
+	customers: SerializeAsAny[Optional[list[BookingCustomerBase]]] = Field(default=None,alias="customers",)
 	customQuestions: Optional[list[BookingCustomQuestion]] = Field(default=None,alias="customQuestions",)
 	services: Optional[list[BookingService]] = Field(default=None,alias="services",)
-	staffMembers: Optional[list[BookingStaffMemberBase]] = Field(default=None,alias="staffMembers",)
+	staffMembers: SerializeAsAny[Optional[list[BookingStaffMemberBase]]] = Field(default=None,alias="staffMembers",)
 
 from .physical_address import PhysicalAddress
 from .booking_page_settings import BookingPageSettings

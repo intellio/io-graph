@@ -38,11 +38,11 @@ class Device(BaseModel):
 	registrationDateTime: Optional[datetime] = Field(default=None,alias="registrationDateTime",)
 	systemLabels: Optional[list[str]] = Field(default=None,alias="systemLabels",)
 	trustType: Optional[str] = Field(default=None,alias="trustType",)
-	extensions: Optional[list[Extension]] = Field(default=None,alias="extensions",)
-	memberOf: Optional[list[DirectoryObject]] = Field(default=None,alias="memberOf",)
-	registeredOwners: Optional[list[DirectoryObject]] = Field(default=None,alias="registeredOwners",)
-	registeredUsers: Optional[list[DirectoryObject]] = Field(default=None,alias="registeredUsers",)
-	transitiveMemberOf: Optional[list[DirectoryObject]] = Field(default=None,alias="transitiveMemberOf",)
+	extensions: SerializeAsAny[Optional[list[Extension]]] = Field(default=None,alias="extensions",)
+	memberOf: SerializeAsAny[Optional[list[DirectoryObject]]] = Field(default=None,alias="memberOf",)
+	registeredOwners: SerializeAsAny[Optional[list[DirectoryObject]]] = Field(default=None,alias="registeredOwners",)
+	registeredUsers: SerializeAsAny[Optional[list[DirectoryObject]]] = Field(default=None,alias="registeredUsers",)
+	transitiveMemberOf: SerializeAsAny[Optional[list[DirectoryObject]]] = Field(default=None,alias="transitiveMemberOf",)
 
 from .alternative_security_id import AlternativeSecurityId
 from .extension import Extension

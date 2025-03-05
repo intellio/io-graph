@@ -10,7 +10,7 @@ class SecurityHostSslCertificate(BaseModel):
 	firstSeenDateTime: Optional[datetime] = Field(default=None,alias="firstSeenDateTime",)
 	lastSeenDateTime: Optional[datetime] = Field(default=None,alias="lastSeenDateTime",)
 	ports: Optional[list[SecurityHostSslCertificatePort]] = Field(default=None,alias="ports",)
-	host: Optional[SecurityHost] = Field(default=None,alias="host",)
+	host: SerializeAsAny[Optional[SecurityHost]] = Field(default=None,alias="host",)
 	sslCertificate: Optional[SecuritySslCertificate] = Field(default=None,alias="sslCertificate",)
 
 from .security_host_ssl_certificate_port import SecurityHostSslCertificatePort

@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field, SerializeAsAny
 class EmployeeExperienceUser(BaseModel):
 	id: Optional[str] = Field(default=None,alias="id",)
 	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
-	learningCourseActivities: Optional[list[LearningCourseActivity]] = Field(default=None,alias="learningCourseActivities",)
+	learningCourseActivities: SerializeAsAny[Optional[list[LearningCourseActivity]]] = Field(default=None,alias="learningCourseActivities",)
 
 from .learning_course_activity import LearningCourseActivity
 

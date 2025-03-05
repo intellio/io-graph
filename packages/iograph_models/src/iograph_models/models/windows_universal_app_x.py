@@ -34,7 +34,7 @@ class WindowsUniversalAppX(BaseModel):
 	identityVersion: Optional[str] = Field(default=None,alias="identityVersion",)
 	isBundle: Optional[bool] = Field(default=None,alias="isBundle",)
 	minimumSupportedOperatingSystem: Optional[WindowsMinimumOperatingSystem] = Field(default=None,alias="minimumSupportedOperatingSystem",)
-	committedContainedApps: Optional[list[MobileContainedApp]] = Field(default=None,alias="committedContainedApps",)
+	committedContainedApps: SerializeAsAny[Optional[list[MobileContainedApp]]] = Field(default=None,alias="committedContainedApps",)
 
 from .mime_content import MimeContent
 from .mobile_app_publishing_state import MobileAppPublishingState

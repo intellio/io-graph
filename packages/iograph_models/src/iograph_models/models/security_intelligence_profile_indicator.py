@@ -8,7 +8,7 @@ class SecurityIntelligenceProfileIndicator(BaseModel):
 	id: Optional[str] = Field(default=None,alias="id",)
 	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
 	source: Optional[SecurityIndicatorSource] = Field(default=None,alias="source",)
-	artifact: Optional[SecurityArtifact] = Field(default=None,alias="artifact",)
+	artifact: SerializeAsAny[Optional[SecurityArtifact]] = Field(default=None,alias="artifact",)
 	firstSeenDateTime: Optional[datetime] = Field(default=None,alias="firstSeenDateTime",)
 	lastSeenDateTime: Optional[datetime] = Field(default=None,alias="lastSeenDateTime",)
 

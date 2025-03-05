@@ -15,8 +15,8 @@ if TYPE_CHECKING:
 	from .by_presence_id import ByPresenceIdRequest
 	from ....request_adapter import HttpxRequestAdapter
 from iograph_models.models.presence_collection_response import PresenceCollectionResponse
-from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.models.presence import Presence
+from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
 
 
 class PresencesRequest(BaseRequestBuilder):

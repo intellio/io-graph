@@ -11,7 +11,7 @@ class DirectoryRole(BaseModel):
 	description: Optional[str] = Field(default=None,alias="description",)
 	displayName: Optional[str] = Field(default=None,alias="displayName",)
 	roleTemplateId: Optional[str] = Field(default=None,alias="roleTemplateId",)
-	members: Optional[list[DirectoryObject]] = Field(default=None,alias="members",)
+	members: SerializeAsAny[Optional[list[DirectoryObject]]] = Field(default=None,alias="members",)
 	scopedMembers: Optional[list[ScopedRoleMembership]] = Field(default=None,alias="scopedMembers",)
 
 from .directory_object import DirectoryObject

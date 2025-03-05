@@ -18,7 +18,7 @@ class SecurityEdiscoveryCase(BaseModel):
 	externalId: Optional[str] = Field(default=None,alias="externalId",)
 	custodians: Optional[list[SecurityEdiscoveryCustodian]] = Field(default=None,alias="custodians",)
 	noncustodialDataSources: Optional[list[SecurityEdiscoveryNoncustodialDataSource]] = Field(default=None,alias="noncustodialDataSources",)
-	operations: Optional[list[SecurityCaseOperation]] = Field(default=None,alias="operations",)
+	operations: SerializeAsAny[Optional[list[SecurityCaseOperation]]] = Field(default=None,alias="operations",)
 	reviewSets: Optional[list[SecurityEdiscoveryReviewSet]] = Field(default=None,alias="reviewSets",)
 	searches: Optional[list[SecurityEdiscoverySearch]] = Field(default=None,alias="searches",)
 	settings: Optional[SecurityEdiscoveryCaseSettings] = Field(default=None,alias="settings",)

@@ -15,8 +15,8 @@ if TYPE_CHECKING:
 	from .by_training_language_detail_id import ByTrainingLanguageDetailIdRequest
 	from .......request_adapter import HttpxRequestAdapter
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
-from iograph_models.models.training_language_detail import TrainingLanguageDetail
 from iograph_models.models.training_language_detail_collection_response import TrainingLanguageDetailCollectionResponse
+from iograph_models.models.training_language_detail import TrainingLanguageDetail
 
 
 class LanguageDetailsRequest(BaseRequestBuilder):

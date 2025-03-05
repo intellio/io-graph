@@ -20,8 +20,8 @@ if TYPE_CHECKING:
 	from .approvers_with_userprincipalname import ApproversWithUserPrincipalNameRequest
 	from .approvers import ApproversRequest
 	from .....request_adapter import HttpxRequestAdapter
-from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.models.subject_rights_request import SubjectRightsRequest
+from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
 
 
 class BySubjectRightsRequestIdRequest(BaseRequestBuilder):

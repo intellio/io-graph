@@ -7,7 +7,7 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 class AccessPackageAnswer(BaseModel):
 	displayValue: Optional[str] = Field(default=None,alias="displayValue",)
-	answeredQuestion: Optional[AccessPackageQuestion] = Field(default=None,alias="answeredQuestion",)
+	answeredQuestion: SerializeAsAny[Optional[AccessPackageQuestion]] = Field(default=None,alias="answeredQuestion",)
 	odata_type: Optional[str] = Field(default=None,alias="@odata.type",)
 
 	@model_validator(mode="wrap")

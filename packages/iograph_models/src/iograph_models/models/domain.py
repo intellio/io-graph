@@ -19,11 +19,11 @@ class Domain(BaseModel):
 	passwordValidityPeriodInDays: Optional[int] = Field(default=None,alias="passwordValidityPeriodInDays",)
 	state: Optional[DomainState] = Field(default=None,alias="state",)
 	supportedServices: Optional[list[str]] = Field(default=None,alias="supportedServices",)
-	domainNameReferences: Optional[list[DirectoryObject]] = Field(default=None,alias="domainNameReferences",)
+	domainNameReferences: SerializeAsAny[Optional[list[DirectoryObject]]] = Field(default=None,alias="domainNameReferences",)
 	federationConfiguration: Optional[list[InternalDomainFederation]] = Field(default=None,alias="federationConfiguration",)
 	rootDomain: Optional[Domain] = Field(default=None,alias="rootDomain",)
-	serviceConfigurationRecords: Optional[list[DomainDnsRecord]] = Field(default=None,alias="serviceConfigurationRecords",)
-	verificationDnsRecords: Optional[list[DomainDnsRecord]] = Field(default=None,alias="verificationDnsRecords",)
+	serviceConfigurationRecords: SerializeAsAny[Optional[list[DomainDnsRecord]]] = Field(default=None,alias="serviceConfigurationRecords",)
+	verificationDnsRecords: SerializeAsAny[Optional[list[DomainDnsRecord]]] = Field(default=None,alias="verificationDnsRecords",)
 
 from .domain_state import DomainState
 from .directory_object import DirectoryObject

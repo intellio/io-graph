@@ -15,8 +15,8 @@ if TYPE_CHECKING:
 	from .by_time_off_request_id import ByTimeOffRequestIdRequest
 	from ......request_adapter import HttpxRequestAdapter
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
-from iograph_models.models.time_off_request_collection_response import TimeOffRequestCollectionResponse
 from iograph_models.models.time_off_request import TimeOffRequest
+from iograph_models.models.time_off_request_collection_response import TimeOffRequestCollectionResponse
 
 
 class TimeOffRequestsRequest(BaseRequestBuilder):

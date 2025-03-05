@@ -10,8 +10,8 @@ class SecurityHostPair(BaseModel):
 	firstSeenDateTime: Optional[datetime] = Field(default=None,alias="firstSeenDateTime",)
 	lastSeenDateTime: Optional[datetime] = Field(default=None,alias="lastSeenDateTime",)
 	linkKind: Optional[str] = Field(default=None,alias="linkKind",)
-	childHost: Optional[SecurityHost] = Field(default=None,alias="childHost",)
-	parentHost: Optional[SecurityHost] = Field(default=None,alias="parentHost",)
+	childHost: SerializeAsAny[Optional[SecurityHost]] = Field(default=None,alias="childHost",)
+	parentHost: SerializeAsAny[Optional[SecurityHost]] = Field(default=None,alias="parentHost",)
 
 from .security_host import SecurityHost
 from .security_host import SecurityHost

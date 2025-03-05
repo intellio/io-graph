@@ -10,7 +10,7 @@ class TodoTaskList(BaseModel):
 	isOwner: Optional[bool] = Field(default=None,alias="isOwner",)
 	isShared: Optional[bool] = Field(default=None,alias="isShared",)
 	wellknownListName: Optional[WellknownListName] = Field(default=None,alias="wellknownListName",)
-	extensions: Optional[list[Extension]] = Field(default=None,alias="extensions",)
+	extensions: SerializeAsAny[Optional[list[Extension]]] = Field(default=None,alias="extensions",)
 	tasks: Optional[list[TodoTask]] = Field(default=None,alias="tasks",)
 
 from .wellknown_list_name import WellknownListName

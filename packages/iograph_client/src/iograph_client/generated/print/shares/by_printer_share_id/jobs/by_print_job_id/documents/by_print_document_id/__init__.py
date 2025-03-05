@@ -14,8 +14,8 @@ if TYPE_CHECKING:
 	from .create_upload_session import CreateUploadSessionRequest
 	from .value import ValueRequest
 	from .........request_adapter import HttpxRequestAdapter
-from iograph_models.models.print_document import PrintDocument
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.models.print_document import PrintDocument
 
 
 class ByPrintDocumentIdRequest(BaseRequestBuilder):

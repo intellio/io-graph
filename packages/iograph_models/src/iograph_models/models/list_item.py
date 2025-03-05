@@ -24,7 +24,7 @@ class ListItem(BaseModel):
 	documentSetVersions: Optional[list[DocumentSetVersion]] = Field(default=None,alias="documentSetVersions",)
 	driveItem: Optional[DriveItem] = Field(default=None,alias="driveItem",)
 	fields: Optional[FieldValueSet] = Field(default=None,alias="fields",)
-	versions: Optional[list[ListItemVersion]] = Field(default=None,alias="versions",)
+	versions: SerializeAsAny[Optional[list[ListItemVersion]]] = Field(default=None,alias="versions",)
 
 from .identity_set import IdentitySet
 from .identity_set import IdentitySet

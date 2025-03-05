@@ -14,8 +14,8 @@ if TYPE_CHECKING:
 	from .principal import PrincipalRequest
 	from .group import GroupRequest
 	from .......request_adapter import HttpxRequestAdapter
-from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.models.privileged_access_group_eligibility_schedule_instance import PrivilegedAccessGroupEligibilityScheduleInstance
+from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
 
 
 class ByPrivilegedAccessGroupEligibilityScheduleInstanceIdRequest(BaseRequestBuilder):

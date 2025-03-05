@@ -16,7 +16,7 @@ class Invitation(BaseModel):
 	sendInvitationMessage: Optional[bool] = Field(default=None,alias="sendInvitationMessage",)
 	status: Optional[str] = Field(default=None,alias="status",)
 	invitedUser: Optional[User] = Field(default=None,alias="invitedUser",)
-	invitedUserSponsors: Optional[list[DirectoryObject]] = Field(default=None,alias="invitedUserSponsors",)
+	invitedUserSponsors: SerializeAsAny[Optional[list[DirectoryObject]]] = Field(default=None,alias="invitedUserSponsors",)
 
 from .invited_user_message_info import InvitedUserMessageInfo
 from .user import User

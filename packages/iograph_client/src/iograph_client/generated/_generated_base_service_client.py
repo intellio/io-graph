@@ -2,234 +2,94 @@ from __future__ import annotations
 from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:
-	from .application_templates import ApplicationTemplatesRequest
-	from .devices_with_deviceid import DevicesWithDeviceIdRequest
-	from .role_management import RoleManagementRequest
-	from .sites import SitesRequest
-	from .device_management import DeviceManagementRequest
-	from .agreement_acceptances import AgreementAcceptancesRequest
-	from .directory_roles_with_roletemplateid import DirectoryRolesWithRoleTemplateIdRequest
-	from .teamwork import TeamworkRequest
-	from .drives import DrivesRequest
-	from .identity_providers import IdentityProvidersRequest
-	from .service_principals_with_appid import ServicePrincipalsWithAppIdRequest
-	from .search import SearchRequest
-	from .service_principals import ServicePrincipalsRequest
-	from .identity import IdentityRequest
-	from .invitations import InvitationsRequest
-	from .applications import ApplicationsRequest
-	from .reports import ReportsRequest
-	from .teams_templates import TeamsTemplatesRequest
-	from .applications_with_appid import ApplicationsWithAppIdRequest
-	from .storage import StorageRequest
-	from .chats import ChatsRequest
-	from .solutions import SolutionsRequest
-	from .domains import DomainsRequest
-	from .contracts import ContractsRequest
-	from .scoped_role_memberships import ScopedRoleMembershipsRequest
-	from .connections import ConnectionsRequest
-	from .authentication_method_configurations import AuthenticationMethodConfigurationsRequest
-	from .communications import CommunicationsRequest
-	from .applications_with_uniquename import ApplicationsWithUniqueNameRequest
-	from .external import ExternalRequest
+	from .groups_with_uniquename import GroupsWithUniqueNameRequest
+	from .education import EducationRequest
 	from .employee_experience import EmployeeExperienceRequest
 	from .organization import OrganizationRequest
-	from .audit_logs import AuditLogsRequest
-	from .groups import GroupsRequest
-	from .identity_protection import IdentityProtectionRequest
-	from .information_protection import InformationProtectionRequest
-	from .device_app_management import DeviceAppManagementRequest
+	from .reports import ReportsRequest
 	from .print import PrintRequest
-	from .schema_extensions import SchemaExtensionsRequest
-	from .users_with_userprincipalname import UsersWithUserPrincipalNameRequest
-	from .security import SecurityRequest
-	from .devices import DevicesRequest
-	from .directory_roles import DirectoryRolesRequest
-	from .domain_dns_records import DomainDnsRecordsRequest
-	from .functions import FunctionsRequest
-	from .directory_role_templates import DirectoryRoleTemplatesRequest
-	from .users import UsersRequest
-	from .directory_objects import DirectoryObjectsRequest
-	from .tenant_relationships import TenantRelationshipsRequest
-	from .group_settings import GroupSettingsRequest
+	from .scoped_role_memberships import ScopedRoleMembershipsRequest
 	from .subscriptions import SubscriptionsRequest
-	from .admin import AdminRequest
-	from .places import PlacesRequest
-	from .directory import DirectoryRequest
-	from .privacy import PrivacyRequest
-	from .me import MeRequest
+	from .directory_objects import DirectoryObjectsRequest
 	from .teams import TeamsRequest
-	from .education import EducationRequest
-	from .group_setting_templates import GroupSettingTemplatesRequest
-	from .planner import PlannerRequest
-	from .contacts import ContactsRequest
-	from .subscribed_skus import SubscribedSkusRequest
-	from .permission_grants import PermissionGrantsRequest
-	from .agreements import AgreementsRequest
-	from .groups_with_uniquename import GroupsWithUniqueNameRequest
-	from .policies import PoliciesRequest
-	from .data_policy_operations import DataPolicyOperationsRequest
-	from .filter_operators import FilterOperatorsRequest
-	from .app_catalogs import AppCatalogsRequest
-	from .group_lifecycle_policies import GroupLifecyclePoliciesRequest
-	from .oauth2_permission_grants import Oauth2PermissionGrantsRequest
-	from .certificate_based_auth_configuration import CertificateBasedAuthConfigurationRequest
-	from .identity_governance import IdentityGovernanceRequest
+	from .application_templates import ApplicationTemplatesRequest
+	from .information_protection import InformationProtectionRequest
 	from .shares import SharesRequest
+	from .tenant_relationships import TenantRelationshipsRequest
+	from .users_with_userprincipalname import UsersWithUserPrincipalNameRequest
+	from .planner import PlannerRequest
+	from .directory_role_templates import DirectoryRoleTemplatesRequest
+	from .communications import CommunicationsRequest
+	from .data_policy_operations import DataPolicyOperationsRequest
+	from .chats import ChatsRequest
+	from .domain_dns_records import DomainDnsRecordsRequest
+	from .places import PlacesRequest
+	from .privacy import PrivacyRequest
+	from .external import ExternalRequest
+	from .me import MeRequest
+	from .agreement_acceptances import AgreementAcceptancesRequest
+	from .device_management import DeviceManagementRequest
+	from .devices_with_deviceid import DevicesWithDeviceIdRequest
 	from .authentication_methods_policy import AuthenticationMethodsPolicyRequest
+	from .admin import AdminRequest
+	from .policies import PoliciesRequest
+	from .certificate_based_auth_configuration import CertificateBasedAuthConfigurationRequest
+	from .applications_with_appid import ApplicationsWithAppIdRequest
+	from .groups import GroupsRequest
+	from .audit_logs import AuditLogsRequest
+	from .connections import ConnectionsRequest
+	from .applications import ApplicationsRequest
+	from .identity_providers import IdentityProvidersRequest
+	from .permission_grants import PermissionGrantsRequest
+	from .domains import DomainsRequest
+	from .schema_extensions import SchemaExtensionsRequest
+	from .search import SearchRequest
+	from .agreements import AgreementsRequest
+	from .teams_templates import TeamsTemplatesRequest
+	from .service_principals_with_appid import ServicePrincipalsWithAppIdRequest
+	from .functions import FunctionsRequest
+	from .security import SecurityRequest
+	from .invitations import InvitationsRequest
+	from .storage import StorageRequest
+	from .identity_protection import IdentityProtectionRequest
+	from .contracts import ContractsRequest
+	from .subscribed_skus import SubscribedSkusRequest
+	from .directory_roles import DirectoryRolesRequest
+	from .drives import DrivesRequest
+	from .solutions import SolutionsRequest
+	from .identity import IdentityRequest
+	from .applications_with_uniquename import ApplicationsWithUniqueNameRequest
+	from .oauth2_permission_grants import Oauth2PermissionGrantsRequest
+	from .teamwork import TeamworkRequest
+	from .app_catalogs import AppCatalogsRequest
+	from .directory import DirectoryRequest
+	from .filter_operators import FilterOperatorsRequest
 	from .compliance import ComplianceRequest
+	from .group_lifecycle_policies import GroupLifecyclePoliciesRequest
+	from .group_settings import GroupSettingsRequest
+	from .group_setting_templates import GroupSettingTemplatesRequest
+	from .users import UsersRequest
+	from .sites import SitesRequest
+	from .directory_roles_with_roletemplateid import DirectoryRolesWithRoleTemplateIdRequest
+	from .service_principals import ServicePrincipalsRequest
+	from .role_management import RoleManagementRequest
+	from .contacts import ContactsRequest
+	from .authentication_method_configurations import AuthenticationMethodConfigurationsRequest
+	from .device_app_management import DeviceAppManagementRequest
+	from .identity_governance import IdentityGovernanceRequest
+	from .devices import DevicesRequest
 
 class GraphServiceClientBase:
 
 	@property
-	def application_templates(self) -> ApplicationTemplatesRequest:
-		from .application_templates import ApplicationTemplatesRequest
-		return ApplicationTemplatesRequest(self.request_adapter, self.path_parameters)
+	def groups_with_uniquename(self) -> GroupsWithUniqueNameRequest:
+		from .groups_with_uniquename import GroupsWithUniqueNameRequest
+		return GroupsWithUniqueNameRequest(self.request_adapter, self.path_parameters)
 
 	@property
-	def devices_with_deviceid(self) -> DevicesWithDeviceIdRequest:
-		from .devices_with_deviceid import DevicesWithDeviceIdRequest
-		return DevicesWithDeviceIdRequest(self.request_adapter, self.path_parameters)
-
-	@property
-	def role_management(self) -> RoleManagementRequest:
-		from .role_management import RoleManagementRequest
-		return RoleManagementRequest(self.request_adapter, self.path_parameters)
-
-	@property
-	def sites(self) -> SitesRequest:
-		from .sites import SitesRequest
-		return SitesRequest(self.request_adapter, self.path_parameters)
-
-	@property
-	def device_management(self) -> DeviceManagementRequest:
-		from .device_management import DeviceManagementRequest
-		return DeviceManagementRequest(self.request_adapter, self.path_parameters)
-
-	@property
-	def agreement_acceptances(self) -> AgreementAcceptancesRequest:
-		from .agreement_acceptances import AgreementAcceptancesRequest
-		return AgreementAcceptancesRequest(self.request_adapter, self.path_parameters)
-
-	@property
-	def directory_roles_with_roletemplateid(self) -> DirectoryRolesWithRoleTemplateIdRequest:
-		from .directory_roles_with_roletemplateid import DirectoryRolesWithRoleTemplateIdRequest
-		return DirectoryRolesWithRoleTemplateIdRequest(self.request_adapter, self.path_parameters)
-
-	@property
-	def teamwork(self) -> TeamworkRequest:
-		from .teamwork import TeamworkRequest
-		return TeamworkRequest(self.request_adapter, self.path_parameters)
-
-	@property
-	def drives(self) -> DrivesRequest:
-		from .drives import DrivesRequest
-		return DrivesRequest(self.request_adapter, self.path_parameters)
-
-	@property
-	def identity_providers(self) -> IdentityProvidersRequest:
-		from .identity_providers import IdentityProvidersRequest
-		return IdentityProvidersRequest(self.request_adapter, self.path_parameters)
-
-	@property
-	def service_principals_with_appid(self) -> ServicePrincipalsWithAppIdRequest:
-		from .service_principals_with_appid import ServicePrincipalsWithAppIdRequest
-		return ServicePrincipalsWithAppIdRequest(self.request_adapter, self.path_parameters)
-
-	@property
-	def search(self) -> SearchRequest:
-		from .search import SearchRequest
-		return SearchRequest(self.request_adapter, self.path_parameters)
-
-	@property
-	def service_principals(self) -> ServicePrincipalsRequest:
-		from .service_principals import ServicePrincipalsRequest
-		return ServicePrincipalsRequest(self.request_adapter, self.path_parameters)
-
-	@property
-	def identity(self) -> IdentityRequest:
-		from .identity import IdentityRequest
-		return IdentityRequest(self.request_adapter, self.path_parameters)
-
-	@property
-	def invitations(self) -> InvitationsRequest:
-		from .invitations import InvitationsRequest
-		return InvitationsRequest(self.request_adapter, self.path_parameters)
-
-	@property
-	def applications(self) -> ApplicationsRequest:
-		from .applications import ApplicationsRequest
-		return ApplicationsRequest(self.request_adapter, self.path_parameters)
-
-	@property
-	def reports(self) -> ReportsRequest:
-		from .reports import ReportsRequest
-		return ReportsRequest(self.request_adapter, self.path_parameters)
-
-	@property
-	def teams_templates(self) -> TeamsTemplatesRequest:
-		from .teams_templates import TeamsTemplatesRequest
-		return TeamsTemplatesRequest(self.request_adapter, self.path_parameters)
-
-	@property
-	def applications_with_appid(self) -> ApplicationsWithAppIdRequest:
-		from .applications_with_appid import ApplicationsWithAppIdRequest
-		return ApplicationsWithAppIdRequest(self.request_adapter, self.path_parameters)
-
-	@property
-	def storage(self) -> StorageRequest:
-		from .storage import StorageRequest
-		return StorageRequest(self.request_adapter, self.path_parameters)
-
-	@property
-	def chats(self) -> ChatsRequest:
-		from .chats import ChatsRequest
-		return ChatsRequest(self.request_adapter, self.path_parameters)
-
-	@property
-	def solutions(self) -> SolutionsRequest:
-		from .solutions import SolutionsRequest
-		return SolutionsRequest(self.request_adapter, self.path_parameters)
-
-	@property
-	def domains(self) -> DomainsRequest:
-		from .domains import DomainsRequest
-		return DomainsRequest(self.request_adapter, self.path_parameters)
-
-	@property
-	def contracts(self) -> ContractsRequest:
-		from .contracts import ContractsRequest
-		return ContractsRequest(self.request_adapter, self.path_parameters)
-
-	@property
-	def scoped_role_memberships(self) -> ScopedRoleMembershipsRequest:
-		from .scoped_role_memberships import ScopedRoleMembershipsRequest
-		return ScopedRoleMembershipsRequest(self.request_adapter, self.path_parameters)
-
-	@property
-	def connections(self) -> ConnectionsRequest:
-		from .connections import ConnectionsRequest
-		return ConnectionsRequest(self.request_adapter, self.path_parameters)
-
-	@property
-	def authentication_method_configurations(self) -> AuthenticationMethodConfigurationsRequest:
-		from .authentication_method_configurations import AuthenticationMethodConfigurationsRequest
-		return AuthenticationMethodConfigurationsRequest(self.request_adapter, self.path_parameters)
-
-	@property
-	def communications(self) -> CommunicationsRequest:
-		from .communications import CommunicationsRequest
-		return CommunicationsRequest(self.request_adapter, self.path_parameters)
-
-	@property
-	def applications_with_uniquename(self) -> ApplicationsWithUniqueNameRequest:
-		from .applications_with_uniquename import ApplicationsWithUniqueNameRequest
-		return ApplicationsWithUniqueNameRequest(self.request_adapter, self.path_parameters)
-
-	@property
-	def external(self) -> ExternalRequest:
-		from .external import ExternalRequest
-		return ExternalRequest(self.request_adapter, self.path_parameters)
+	def education(self) -> EducationRequest:
+		from .education import EducationRequest
+		return EducationRequest(self.request_adapter, self.path_parameters)
 
 	@property
 	def employee_experience(self) -> EmployeeExperienceRequest:
@@ -242,29 +102,9 @@ class GraphServiceClientBase:
 		return OrganizationRequest(self.request_adapter, self.path_parameters)
 
 	@property
-	def audit_logs(self) -> AuditLogsRequest:
-		from .audit_logs import AuditLogsRequest
-		return AuditLogsRequest(self.request_adapter, self.path_parameters)
-
-	@property
-	def groups(self) -> GroupsRequest:
-		from .groups import GroupsRequest
-		return GroupsRequest(self.request_adapter, self.path_parameters)
-
-	@property
-	def identity_protection(self) -> IdentityProtectionRequest:
-		from .identity_protection import IdentityProtectionRequest
-		return IdentityProtectionRequest(self.request_adapter, self.path_parameters)
-
-	@property
-	def information_protection(self) -> InformationProtectionRequest:
-		from .information_protection import InformationProtectionRequest
-		return InformationProtectionRequest(self.request_adapter, self.path_parameters)
-
-	@property
-	def device_app_management(self) -> DeviceAppManagementRequest:
-		from .device_app_management import DeviceAppManagementRequest
-		return DeviceAppManagementRequest(self.request_adapter, self.path_parameters)
+	def reports(self) -> ReportsRequest:
+		from .reports import ReportsRequest
+		return ReportsRequest(self.request_adapter, self.path_parameters)
 
 	@property
 	def print(self) -> PrintRequest:
@@ -272,64 +112,9 @@ class GraphServiceClientBase:
 		return PrintRequest(self.request_adapter, self.path_parameters)
 
 	@property
-	def schema_extensions(self) -> SchemaExtensionsRequest:
-		from .schema_extensions import SchemaExtensionsRequest
-		return SchemaExtensionsRequest(self.request_adapter, self.path_parameters)
-
-	@property
-	def users_with_userprincipalname(self) -> UsersWithUserPrincipalNameRequest:
-		from .users_with_userprincipalname import UsersWithUserPrincipalNameRequest
-		return UsersWithUserPrincipalNameRequest(self.request_adapter, self.path_parameters)
-
-	@property
-	def security(self) -> SecurityRequest:
-		from .security import SecurityRequest
-		return SecurityRequest(self.request_adapter, self.path_parameters)
-
-	@property
-	def devices(self) -> DevicesRequest:
-		from .devices import DevicesRequest
-		return DevicesRequest(self.request_adapter, self.path_parameters)
-
-	@property
-	def directory_roles(self) -> DirectoryRolesRequest:
-		from .directory_roles import DirectoryRolesRequest
-		return DirectoryRolesRequest(self.request_adapter, self.path_parameters)
-
-	@property
-	def domain_dns_records(self) -> DomainDnsRecordsRequest:
-		from .domain_dns_records import DomainDnsRecordsRequest
-		return DomainDnsRecordsRequest(self.request_adapter, self.path_parameters)
-
-	@property
-	def functions(self) -> FunctionsRequest:
-		from .functions import FunctionsRequest
-		return FunctionsRequest(self.request_adapter, self.path_parameters)
-
-	@property
-	def directory_role_templates(self) -> DirectoryRoleTemplatesRequest:
-		from .directory_role_templates import DirectoryRoleTemplatesRequest
-		return DirectoryRoleTemplatesRequest(self.request_adapter, self.path_parameters)
-
-	@property
-	def users(self) -> UsersRequest:
-		from .users import UsersRequest
-		return UsersRequest(self.request_adapter, self.path_parameters)
-
-	@property
-	def directory_objects(self) -> DirectoryObjectsRequest:
-		from .directory_objects import DirectoryObjectsRequest
-		return DirectoryObjectsRequest(self.request_adapter, self.path_parameters)
-
-	@property
-	def tenant_relationships(self) -> TenantRelationshipsRequest:
-		from .tenant_relationships import TenantRelationshipsRequest
-		return TenantRelationshipsRequest(self.request_adapter, self.path_parameters)
-
-	@property
-	def group_settings(self) -> GroupSettingsRequest:
-		from .group_settings import GroupSettingsRequest
-		return GroupSettingsRequest(self.request_adapter, self.path_parameters)
+	def scoped_role_memberships(self) -> ScopedRoleMembershipsRequest:
+		from .scoped_role_memberships import ScopedRoleMembershipsRequest
+		return ScopedRoleMembershipsRequest(self.request_adapter, self.path_parameters)
 
 	@property
 	def subscriptions(self) -> SubscriptionsRequest:
@@ -337,29 +122,9 @@ class GraphServiceClientBase:
 		return SubscriptionsRequest(self.request_adapter, self.path_parameters)
 
 	@property
-	def admin(self) -> AdminRequest:
-		from .admin import AdminRequest
-		return AdminRequest(self.request_adapter, self.path_parameters)
-
-	@property
-	def places(self) -> PlacesRequest:
-		from .places import PlacesRequest
-		return PlacesRequest(self.request_adapter, self.path_parameters)
-
-	@property
-	def directory(self) -> DirectoryRequest:
-		from .directory import DirectoryRequest
-		return DirectoryRequest(self.request_adapter, self.path_parameters)
-
-	@property
-	def privacy(self) -> PrivacyRequest:
-		from .privacy import PrivacyRequest
-		return PrivacyRequest(self.request_adapter, self.path_parameters)
-
-	@property
-	def me(self) -> MeRequest:
-		from .me import MeRequest
-		return MeRequest(self.request_adapter, self.path_parameters)
+	def directory_objects(self) -> DirectoryObjectsRequest:
+		from .directory_objects import DirectoryObjectsRequest
+		return DirectoryObjectsRequest(self.request_adapter, self.path_parameters)
 
 	@property
 	def teams(self) -> TeamsRequest:
@@ -367,84 +132,14 @@ class GraphServiceClientBase:
 		return TeamsRequest(self.request_adapter, self.path_parameters)
 
 	@property
-	def education(self) -> EducationRequest:
-		from .education import EducationRequest
-		return EducationRequest(self.request_adapter, self.path_parameters)
+	def application_templates(self) -> ApplicationTemplatesRequest:
+		from .application_templates import ApplicationTemplatesRequest
+		return ApplicationTemplatesRequest(self.request_adapter, self.path_parameters)
 
 	@property
-	def group_setting_templates(self) -> GroupSettingTemplatesRequest:
-		from .group_setting_templates import GroupSettingTemplatesRequest
-		return GroupSettingTemplatesRequest(self.request_adapter, self.path_parameters)
-
-	@property
-	def planner(self) -> PlannerRequest:
-		from .planner import PlannerRequest
-		return PlannerRequest(self.request_adapter, self.path_parameters)
-
-	@property
-	def contacts(self) -> ContactsRequest:
-		from .contacts import ContactsRequest
-		return ContactsRequest(self.request_adapter, self.path_parameters)
-
-	@property
-	def subscribed_skus(self) -> SubscribedSkusRequest:
-		from .subscribed_skus import SubscribedSkusRequest
-		return SubscribedSkusRequest(self.request_adapter, self.path_parameters)
-
-	@property
-	def permission_grants(self) -> PermissionGrantsRequest:
-		from .permission_grants import PermissionGrantsRequest
-		return PermissionGrantsRequest(self.request_adapter, self.path_parameters)
-
-	@property
-	def agreements(self) -> AgreementsRequest:
-		from .agreements import AgreementsRequest
-		return AgreementsRequest(self.request_adapter, self.path_parameters)
-
-	@property
-	def groups_with_uniquename(self) -> GroupsWithUniqueNameRequest:
-		from .groups_with_uniquename import GroupsWithUniqueNameRequest
-		return GroupsWithUniqueNameRequest(self.request_adapter, self.path_parameters)
-
-	@property
-	def policies(self) -> PoliciesRequest:
-		from .policies import PoliciesRequest
-		return PoliciesRequest(self.request_adapter, self.path_parameters)
-
-	@property
-	def data_policy_operations(self) -> DataPolicyOperationsRequest:
-		from .data_policy_operations import DataPolicyOperationsRequest
-		return DataPolicyOperationsRequest(self.request_adapter, self.path_parameters)
-
-	@property
-	def filter_operators(self) -> FilterOperatorsRequest:
-		from .filter_operators import FilterOperatorsRequest
-		return FilterOperatorsRequest(self.request_adapter, self.path_parameters)
-
-	@property
-	def app_catalogs(self) -> AppCatalogsRequest:
-		from .app_catalogs import AppCatalogsRequest
-		return AppCatalogsRequest(self.request_adapter, self.path_parameters)
-
-	@property
-	def group_lifecycle_policies(self) -> GroupLifecyclePoliciesRequest:
-		from .group_lifecycle_policies import GroupLifecyclePoliciesRequest
-		return GroupLifecyclePoliciesRequest(self.request_adapter, self.path_parameters)
-
-	@property
-	def oauth2_permission_grants(self) -> Oauth2PermissionGrantsRequest:
-		from .oauth2_permission_grants import Oauth2PermissionGrantsRequest
-		return Oauth2PermissionGrantsRequest(self.request_adapter, self.path_parameters)
-
-	@property
-	def certificate_based_auth_configuration(self) -> CertificateBasedAuthConfigurationRequest:
-		from .certificate_based_auth_configuration import CertificateBasedAuthConfigurationRequest
-		return CertificateBasedAuthConfigurationRequest(self.request_adapter, self.path_parameters)
-
-	@property
-	def identity_governance(self) -> IdentityGovernanceRequest:
-		from .identity_governance import IdentityGovernanceRequest
-		return IdentityGovernanceRequest(self.request_adapter, self.path_parameters)
+	def information_protection(self) -> InformationProtectionRequest:
+		from .information_protection import InformationProtectionRequest
+		return InformationProtectionRequest(self.request_adapter, self.path_parameters)
 
 	@property
 	def shares(self) -> SharesRequest:
@@ -452,13 +147,318 @@ class GraphServiceClientBase:
 		return SharesRequest(self.request_adapter, self.path_parameters)
 
 	@property
+	def tenant_relationships(self) -> TenantRelationshipsRequest:
+		from .tenant_relationships import TenantRelationshipsRequest
+		return TenantRelationshipsRequest(self.request_adapter, self.path_parameters)
+
+	@property
+	def users_with_userprincipalname(self) -> UsersWithUserPrincipalNameRequest:
+		from .users_with_userprincipalname import UsersWithUserPrincipalNameRequest
+		return UsersWithUserPrincipalNameRequest(self.request_adapter, self.path_parameters)
+
+	@property
+	def planner(self) -> PlannerRequest:
+		from .planner import PlannerRequest
+		return PlannerRequest(self.request_adapter, self.path_parameters)
+
+	@property
+	def directory_role_templates(self) -> DirectoryRoleTemplatesRequest:
+		from .directory_role_templates import DirectoryRoleTemplatesRequest
+		return DirectoryRoleTemplatesRequest(self.request_adapter, self.path_parameters)
+
+	@property
+	def communications(self) -> CommunicationsRequest:
+		from .communications import CommunicationsRequest
+		return CommunicationsRequest(self.request_adapter, self.path_parameters)
+
+	@property
+	def data_policy_operations(self) -> DataPolicyOperationsRequest:
+		from .data_policy_operations import DataPolicyOperationsRequest
+		return DataPolicyOperationsRequest(self.request_adapter, self.path_parameters)
+
+	@property
+	def chats(self) -> ChatsRequest:
+		from .chats import ChatsRequest
+		return ChatsRequest(self.request_adapter, self.path_parameters)
+
+	@property
+	def domain_dns_records(self) -> DomainDnsRecordsRequest:
+		from .domain_dns_records import DomainDnsRecordsRequest
+		return DomainDnsRecordsRequest(self.request_adapter, self.path_parameters)
+
+	@property
+	def places(self) -> PlacesRequest:
+		from .places import PlacesRequest
+		return PlacesRequest(self.request_adapter, self.path_parameters)
+
+	@property
+	def privacy(self) -> PrivacyRequest:
+		from .privacy import PrivacyRequest
+		return PrivacyRequest(self.request_adapter, self.path_parameters)
+
+	@property
+	def external(self) -> ExternalRequest:
+		from .external import ExternalRequest
+		return ExternalRequest(self.request_adapter, self.path_parameters)
+
+	@property
+	def me(self) -> MeRequest:
+		from .me import MeRequest
+		return MeRequest(self.request_adapter, self.path_parameters)
+
+	@property
+	def agreement_acceptances(self) -> AgreementAcceptancesRequest:
+		from .agreement_acceptances import AgreementAcceptancesRequest
+		return AgreementAcceptancesRequest(self.request_adapter, self.path_parameters)
+
+	@property
+	def device_management(self) -> DeviceManagementRequest:
+		from .device_management import DeviceManagementRequest
+		return DeviceManagementRequest(self.request_adapter, self.path_parameters)
+
+	@property
+	def devices_with_deviceid(self) -> DevicesWithDeviceIdRequest:
+		from .devices_with_deviceid import DevicesWithDeviceIdRequest
+		return DevicesWithDeviceIdRequest(self.request_adapter, self.path_parameters)
+
+	@property
 	def authentication_methods_policy(self) -> AuthenticationMethodsPolicyRequest:
 		from .authentication_methods_policy import AuthenticationMethodsPolicyRequest
 		return AuthenticationMethodsPolicyRequest(self.request_adapter, self.path_parameters)
 
 	@property
+	def admin(self) -> AdminRequest:
+		from .admin import AdminRequest
+		return AdminRequest(self.request_adapter, self.path_parameters)
+
+	@property
+	def policies(self) -> PoliciesRequest:
+		from .policies import PoliciesRequest
+		return PoliciesRequest(self.request_adapter, self.path_parameters)
+
+	@property
+	def certificate_based_auth_configuration(self) -> CertificateBasedAuthConfigurationRequest:
+		from .certificate_based_auth_configuration import CertificateBasedAuthConfigurationRequest
+		return CertificateBasedAuthConfigurationRequest(self.request_adapter, self.path_parameters)
+
+	@property
+	def applications_with_appid(self) -> ApplicationsWithAppIdRequest:
+		from .applications_with_appid import ApplicationsWithAppIdRequest
+		return ApplicationsWithAppIdRequest(self.request_adapter, self.path_parameters)
+
+	@property
+	def groups(self) -> GroupsRequest:
+		from .groups import GroupsRequest
+		return GroupsRequest(self.request_adapter, self.path_parameters)
+
+	@property
+	def audit_logs(self) -> AuditLogsRequest:
+		from .audit_logs import AuditLogsRequest
+		return AuditLogsRequest(self.request_adapter, self.path_parameters)
+
+	@property
+	def connections(self) -> ConnectionsRequest:
+		from .connections import ConnectionsRequest
+		return ConnectionsRequest(self.request_adapter, self.path_parameters)
+
+	@property
+	def applications(self) -> ApplicationsRequest:
+		from .applications import ApplicationsRequest
+		return ApplicationsRequest(self.request_adapter, self.path_parameters)
+
+	@property
+	def identity_providers(self) -> IdentityProvidersRequest:
+		from .identity_providers import IdentityProvidersRequest
+		return IdentityProvidersRequest(self.request_adapter, self.path_parameters)
+
+	@property
+	def permission_grants(self) -> PermissionGrantsRequest:
+		from .permission_grants import PermissionGrantsRequest
+		return PermissionGrantsRequest(self.request_adapter, self.path_parameters)
+
+	@property
+	def domains(self) -> DomainsRequest:
+		from .domains import DomainsRequest
+		return DomainsRequest(self.request_adapter, self.path_parameters)
+
+	@property
+	def schema_extensions(self) -> SchemaExtensionsRequest:
+		from .schema_extensions import SchemaExtensionsRequest
+		return SchemaExtensionsRequest(self.request_adapter, self.path_parameters)
+
+	@property
+	def search(self) -> SearchRequest:
+		from .search import SearchRequest
+		return SearchRequest(self.request_adapter, self.path_parameters)
+
+	@property
+	def agreements(self) -> AgreementsRequest:
+		from .agreements import AgreementsRequest
+		return AgreementsRequest(self.request_adapter, self.path_parameters)
+
+	@property
+	def teams_templates(self) -> TeamsTemplatesRequest:
+		from .teams_templates import TeamsTemplatesRequest
+		return TeamsTemplatesRequest(self.request_adapter, self.path_parameters)
+
+	@property
+	def service_principals_with_appid(self) -> ServicePrincipalsWithAppIdRequest:
+		from .service_principals_with_appid import ServicePrincipalsWithAppIdRequest
+		return ServicePrincipalsWithAppIdRequest(self.request_adapter, self.path_parameters)
+
+	@property
+	def functions(self) -> FunctionsRequest:
+		from .functions import FunctionsRequest
+		return FunctionsRequest(self.request_adapter, self.path_parameters)
+
+	@property
+	def security(self) -> SecurityRequest:
+		from .security import SecurityRequest
+		return SecurityRequest(self.request_adapter, self.path_parameters)
+
+	@property
+	def invitations(self) -> InvitationsRequest:
+		from .invitations import InvitationsRequest
+		return InvitationsRequest(self.request_adapter, self.path_parameters)
+
+	@property
+	def storage(self) -> StorageRequest:
+		from .storage import StorageRequest
+		return StorageRequest(self.request_adapter, self.path_parameters)
+
+	@property
+	def identity_protection(self) -> IdentityProtectionRequest:
+		from .identity_protection import IdentityProtectionRequest
+		return IdentityProtectionRequest(self.request_adapter, self.path_parameters)
+
+	@property
+	def contracts(self) -> ContractsRequest:
+		from .contracts import ContractsRequest
+		return ContractsRequest(self.request_adapter, self.path_parameters)
+
+	@property
+	def subscribed_skus(self) -> SubscribedSkusRequest:
+		from .subscribed_skus import SubscribedSkusRequest
+		return SubscribedSkusRequest(self.request_adapter, self.path_parameters)
+
+	@property
+	def directory_roles(self) -> DirectoryRolesRequest:
+		from .directory_roles import DirectoryRolesRequest
+		return DirectoryRolesRequest(self.request_adapter, self.path_parameters)
+
+	@property
+	def drives(self) -> DrivesRequest:
+		from .drives import DrivesRequest
+		return DrivesRequest(self.request_adapter, self.path_parameters)
+
+	@property
+	def solutions(self) -> SolutionsRequest:
+		from .solutions import SolutionsRequest
+		return SolutionsRequest(self.request_adapter, self.path_parameters)
+
+	@property
+	def identity(self) -> IdentityRequest:
+		from .identity import IdentityRequest
+		return IdentityRequest(self.request_adapter, self.path_parameters)
+
+	@property
+	def applications_with_uniquename(self) -> ApplicationsWithUniqueNameRequest:
+		from .applications_with_uniquename import ApplicationsWithUniqueNameRequest
+		return ApplicationsWithUniqueNameRequest(self.request_adapter, self.path_parameters)
+
+	@property
+	def oauth2_permission_grants(self) -> Oauth2PermissionGrantsRequest:
+		from .oauth2_permission_grants import Oauth2PermissionGrantsRequest
+		return Oauth2PermissionGrantsRequest(self.request_adapter, self.path_parameters)
+
+	@property
+	def teamwork(self) -> TeamworkRequest:
+		from .teamwork import TeamworkRequest
+		return TeamworkRequest(self.request_adapter, self.path_parameters)
+
+	@property
+	def app_catalogs(self) -> AppCatalogsRequest:
+		from .app_catalogs import AppCatalogsRequest
+		return AppCatalogsRequest(self.request_adapter, self.path_parameters)
+
+	@property
+	def directory(self) -> DirectoryRequest:
+		from .directory import DirectoryRequest
+		return DirectoryRequest(self.request_adapter, self.path_parameters)
+
+	@property
+	def filter_operators(self) -> FilterOperatorsRequest:
+		from .filter_operators import FilterOperatorsRequest
+		return FilterOperatorsRequest(self.request_adapter, self.path_parameters)
+
+	@property
 	def compliance(self) -> ComplianceRequest:
 		from .compliance import ComplianceRequest
 		return ComplianceRequest(self.request_adapter, self.path_parameters)
+
+	@property
+	def group_lifecycle_policies(self) -> GroupLifecyclePoliciesRequest:
+		from .group_lifecycle_policies import GroupLifecyclePoliciesRequest
+		return GroupLifecyclePoliciesRequest(self.request_adapter, self.path_parameters)
+
+	@property
+	def group_settings(self) -> GroupSettingsRequest:
+		from .group_settings import GroupSettingsRequest
+		return GroupSettingsRequest(self.request_adapter, self.path_parameters)
+
+	@property
+	def group_setting_templates(self) -> GroupSettingTemplatesRequest:
+		from .group_setting_templates import GroupSettingTemplatesRequest
+		return GroupSettingTemplatesRequest(self.request_adapter, self.path_parameters)
+
+	@property
+	def users(self) -> UsersRequest:
+		from .users import UsersRequest
+		return UsersRequest(self.request_adapter, self.path_parameters)
+
+	@property
+	def sites(self) -> SitesRequest:
+		from .sites import SitesRequest
+		return SitesRequest(self.request_adapter, self.path_parameters)
+
+	@property
+	def directory_roles_with_roletemplateid(self) -> DirectoryRolesWithRoleTemplateIdRequest:
+		from .directory_roles_with_roletemplateid import DirectoryRolesWithRoleTemplateIdRequest
+		return DirectoryRolesWithRoleTemplateIdRequest(self.request_adapter, self.path_parameters)
+
+	@property
+	def service_principals(self) -> ServicePrincipalsRequest:
+		from .service_principals import ServicePrincipalsRequest
+		return ServicePrincipalsRequest(self.request_adapter, self.path_parameters)
+
+	@property
+	def role_management(self) -> RoleManagementRequest:
+		from .role_management import RoleManagementRequest
+		return RoleManagementRequest(self.request_adapter, self.path_parameters)
+
+	@property
+	def contacts(self) -> ContactsRequest:
+		from .contacts import ContactsRequest
+		return ContactsRequest(self.request_adapter, self.path_parameters)
+
+	@property
+	def authentication_method_configurations(self) -> AuthenticationMethodConfigurationsRequest:
+		from .authentication_method_configurations import AuthenticationMethodConfigurationsRequest
+		return AuthenticationMethodConfigurationsRequest(self.request_adapter, self.path_parameters)
+
+	@property
+	def device_app_management(self) -> DeviceAppManagementRequest:
+		from .device_app_management import DeviceAppManagementRequest
+		return DeviceAppManagementRequest(self.request_adapter, self.path_parameters)
+
+	@property
+	def identity_governance(self) -> IdentityGovernanceRequest:
+		from .identity_governance import IdentityGovernanceRequest
+		return IdentityGovernanceRequest(self.request_adapter, self.path_parameters)
+
+	@property
+	def devices(self) -> DevicesRequest:
+		from .devices import DevicesRequest
+		return DevicesRequest(self.request_adapter, self.path_parameters)
 
 

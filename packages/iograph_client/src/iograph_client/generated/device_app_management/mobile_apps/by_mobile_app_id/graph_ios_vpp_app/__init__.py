@@ -14,8 +14,8 @@ if TYPE_CHECKING:
 	from .categories import CategoriesRequest
 	from .assignments import AssignmentsRequest
 	from ......request_adapter import HttpxRequestAdapter
-from iograph_models.models.ios_vpp_app import IosVppApp
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.models.ios_vpp_app import IosVppApp
 
 
 class GraphIosVppAppRequest(BaseRequestBuilder):

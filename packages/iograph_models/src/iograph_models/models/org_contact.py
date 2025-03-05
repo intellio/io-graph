@@ -23,10 +23,10 @@ class OrgContact(BaseModel):
 	proxyAddresses: Optional[list[str]] = Field(default=None,alias="proxyAddresses",)
 	serviceProvisioningErrors: SerializeAsAny[Optional[list[ServiceProvisioningError]]] = Field(default=None,alias="serviceProvisioningErrors",)
 	surname: Optional[str] = Field(default=None,alias="surname",)
-	directReports: Optional[list[DirectoryObject]] = Field(default=None,alias="directReports",)
-	manager: Optional[DirectoryObject] = Field(default=None,alias="manager",)
-	memberOf: Optional[list[DirectoryObject]] = Field(default=None,alias="memberOf",)
-	transitiveMemberOf: Optional[list[DirectoryObject]] = Field(default=None,alias="transitiveMemberOf",)
+	directReports: SerializeAsAny[Optional[list[DirectoryObject]]] = Field(default=None,alias="directReports",)
+	manager: SerializeAsAny[Optional[DirectoryObject]] = Field(default=None,alias="manager",)
+	memberOf: SerializeAsAny[Optional[list[DirectoryObject]]] = Field(default=None,alias="memberOf",)
+	transitiveMemberOf: SerializeAsAny[Optional[list[DirectoryObject]]] = Field(default=None,alias="transitiveMemberOf",)
 
 from .physical_office_address import PhysicalOfficeAddress
 from .on_premises_provisioning_error import OnPremisesProvisioningError

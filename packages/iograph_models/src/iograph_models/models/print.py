@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field, SerializeAsAny
 class Print(BaseModel):
 	settings: Optional[PrintSettings] = Field(default=None,alias="settings",)
 	connectors: Optional[list[PrintConnector]] = Field(default=None,alias="connectors",)
-	operations: Optional[list[PrintOperation]] = Field(default=None,alias="operations",)
+	operations: SerializeAsAny[Optional[list[PrintOperation]]] = Field(default=None,alias="operations",)
 	printers: Optional[list[Printer]] = Field(default=None,alias="printers",)
 	services: Optional[list[PrintService]] = Field(default=None,alias="services",)
 	shares: Optional[list[PrinterShare]] = Field(default=None,alias="shares",)

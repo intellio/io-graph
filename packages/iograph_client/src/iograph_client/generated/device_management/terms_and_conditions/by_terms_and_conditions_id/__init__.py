@@ -14,8 +14,8 @@ if TYPE_CHECKING:
 	from .assignments import AssignmentsRequest
 	from .acceptance_statuses import AcceptanceStatusesRequest
 	from .....request_adapter import HttpxRequestAdapter
-from iograph_models.models.terms_and_conditions import TermsAndConditions
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.models.terms_and_conditions import TermsAndConditions
 
 
 class ByTermsAndConditionsIdRequest(BaseRequestBuilder):
