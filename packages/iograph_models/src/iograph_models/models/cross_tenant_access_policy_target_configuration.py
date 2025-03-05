@@ -4,7 +4,7 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class CrossTenantAccessPolicyTargetConfiguration(BaseModel):
-	accessType: Optional[str | CrossTenantAccessPolicyTargetConfigurationAccessType] = Field(alias="accessType",default=None,)
+	accessType: Optional[CrossTenantAccessPolicyTargetConfigurationAccessType | str] = Field(alias="accessType",default=None,)
 	targets: Optional[list[CrossTenantAccessPolicyTarget]] = Field(alias="targets",default=None,)
 	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 

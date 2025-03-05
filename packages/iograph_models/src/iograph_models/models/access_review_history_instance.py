@@ -13,7 +13,7 @@ class AccessReviewHistoryInstance(BaseModel):
 	reviewHistoryPeriodEndDateTime: Optional[datetime] = Field(alias="reviewHistoryPeriodEndDateTime",default=None,)
 	reviewHistoryPeriodStartDateTime: Optional[datetime] = Field(alias="reviewHistoryPeriodStartDateTime",default=None,)
 	runDateTime: Optional[datetime] = Field(alias="runDateTime",default=None,)
-	status: Optional[str | AccessReviewHistoryStatus] = Field(alias="status",default=None,)
+	status: Optional[AccessReviewHistoryStatus | str] = Field(alias="status",default=None,)
 
 from .access_review_history_status import AccessReviewHistoryStatus
 

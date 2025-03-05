@@ -20,7 +20,7 @@ class IosUpdateConfiguration(BaseModel):
 	userStatusOverview: Optional[DeviceConfigurationUserOverview] = Field(alias="userStatusOverview",default=None,)
 	activeHoursEnd: Optional[str] = Field(alias="activeHoursEnd",default=None,)
 	activeHoursStart: Optional[str] = Field(alias="activeHoursStart",default=None,)
-	scheduledInstallDays: Optional[list[str | DayOfWeek]] = Field(alias="scheduledInstallDays",default=None,)
+	scheduledInstallDays: Optional[list[DayOfWeek | str]] = Field(alias="scheduledInstallDays",default=None,)
 	utcTimeOffsetInMinutes: Optional[int] = Field(alias="utcTimeOffsetInMinutes",default=None,)
 
 from .device_configuration_assignment import DeviceConfigurationAssignment

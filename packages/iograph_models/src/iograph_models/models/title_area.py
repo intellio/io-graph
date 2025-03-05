@@ -7,13 +7,13 @@ class TitleArea(BaseModel):
 	alternativeText: Optional[str] = Field(alias="alternativeText",default=None,)
 	enableGradientEffect: Optional[bool] = Field(alias="enableGradientEffect",default=None,)
 	imageWebUrl: Optional[str] = Field(alias="imageWebUrl",default=None,)
-	layout: Optional[str | TitleAreaLayoutType] = Field(alias="layout",default=None,)
+	layout: Optional[TitleAreaLayoutType | str] = Field(alias="layout",default=None,)
 	serverProcessedContent: Optional[ServerProcessedContent] = Field(alias="serverProcessedContent",default=None,)
 	showAuthor: Optional[bool] = Field(alias="showAuthor",default=None,)
 	showPublishedDate: Optional[bool] = Field(alias="showPublishedDate",default=None,)
 	showTextBlockAboveTitle: Optional[bool] = Field(alias="showTextBlockAboveTitle",default=None,)
 	textAboveTitle: Optional[str] = Field(alias="textAboveTitle",default=None,)
-	textAlignment: Optional[str | TitleAreaTextAlignmentType] = Field(alias="textAlignment",default=None,)
+	textAlignment: Optional[TitleAreaTextAlignmentType | str] = Field(alias="textAlignment",default=None,)
 	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 
 from .title_area_layout_type import TitleAreaLayoutType

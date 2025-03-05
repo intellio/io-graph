@@ -11,7 +11,7 @@ class DeviceConfigurationDeviceStatus(BaseModel):
 	deviceDisplayName: Optional[str] = Field(alias="deviceDisplayName",default=None,)
 	deviceModel: Optional[str] = Field(alias="deviceModel",default=None,)
 	lastReportedDateTime: Optional[datetime] = Field(alias="lastReportedDateTime",default=None,)
-	status: Optional[str | ComplianceStatus] = Field(alias="status",default=None,)
+	status: Optional[ComplianceStatus | str] = Field(alias="status",default=None,)
 	userName: Optional[str] = Field(alias="userName",default=None,)
 	userPrincipalName: Optional[str] = Field(alias="userPrincipalName",default=None,)
 

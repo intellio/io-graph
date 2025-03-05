@@ -10,7 +10,7 @@ class IdentityUserFlowAttributeAssignment(BaseModel):
 	isOptional: Optional[bool] = Field(alias="isOptional",default=None,)
 	requiresVerification: Optional[bool] = Field(alias="requiresVerification",default=None,)
 	userAttributeValues: Optional[list[UserAttributeValuesItem]] = Field(alias="userAttributeValues",default=None,)
-	userInputType: Optional[str | IdentityUserFlowAttributeInputType] = Field(alias="userInputType",default=None,)
+	userInputType: Optional[IdentityUserFlowAttributeInputType | str] = Field(alias="userInputType",default=None,)
 	userAttribute: SerializeAsAny[Optional[IdentityUserFlowAttribute]] = Field(alias="userAttribute",default=None,)
 
 from .user_attribute_values_item import UserAttributeValuesItem

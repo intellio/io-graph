@@ -5,7 +5,7 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 class BookingQuestionAnswer(BaseModel):
 	answer: Optional[str] = Field(alias="answer",default=None,)
-	answerInputType: Optional[str | AnswerInputType] = Field(alias="answerInputType",default=None,)
+	answerInputType: Optional[AnswerInputType | str] = Field(alias="answerInputType",default=None,)
 	answerOptions: Optional[list[str]] = Field(alias="answerOptions",default=None,)
 	isRequired: Optional[bool] = Field(alias="isRequired",default=None,)
 	question: Optional[str] = Field(alias="question",default=None,)

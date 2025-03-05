@@ -7,11 +7,11 @@ class MailboxSettings(BaseModel):
 	archiveFolder: Optional[str] = Field(alias="archiveFolder",default=None,)
 	automaticRepliesSetting: Optional[AutomaticRepliesSetting] = Field(alias="automaticRepliesSetting",default=None,)
 	dateFormat: Optional[str] = Field(alias="dateFormat",default=None,)
-	delegateMeetingMessageDeliveryOptions: Optional[str | DelegateMeetingMessageDeliveryOptions] = Field(alias="delegateMeetingMessageDeliveryOptions",default=None,)
+	delegateMeetingMessageDeliveryOptions: Optional[DelegateMeetingMessageDeliveryOptions | str] = Field(alias="delegateMeetingMessageDeliveryOptions",default=None,)
 	language: Optional[LocaleInfo] = Field(alias="language",default=None,)
 	timeFormat: Optional[str] = Field(alias="timeFormat",default=None,)
 	timeZone: Optional[str] = Field(alias="timeZone",default=None,)
-	userPurpose: Optional[str | UserPurpose] = Field(alias="userPurpose",default=None,)
+	userPurpose: Optional[UserPurpose | str] = Field(alias="userPurpose",default=None,)
 	workingHours: Optional[WorkingHours] = Field(alias="workingHours",default=None,)
 	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 

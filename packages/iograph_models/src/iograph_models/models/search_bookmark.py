@@ -19,9 +19,9 @@ class SearchBookmark(BaseModel):
 	isSuggested: Optional[bool] = Field(alias="isSuggested",default=None,)
 	keywords: Optional[SearchAnswerKeyword] = Field(alias="keywords",default=None,)
 	languageTags: Optional[list[str]] = Field(alias="languageTags",default=None,)
-	platforms: Optional[list[str | DevicePlatformType]] = Field(alias="platforms",default=None,)
+	platforms: Optional[list[DevicePlatformType | str]] = Field(alias="platforms",default=None,)
 	powerAppIds: Optional[list[str]] = Field(alias="powerAppIds",default=None,)
-	state: Optional[str | SearchAnswerState] = Field(alias="state",default=None,)
+	state: Optional[SearchAnswerState | str] = Field(alias="state",default=None,)
 	targetedVariations: Optional[list[SearchAnswerVariant]] = Field(alias="targetedVariations",default=None,)
 
 from .search_identity_set import SearchIdentitySet

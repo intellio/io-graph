@@ -2,6 +2,7 @@ from __future__ import annotations
 from typing import Optional
 from pydantic import model_validator, ModelWrapValidatorHandler, ValidationError
 from typing_extensions import Self
+from typing import Any
 from datetime import datetime
 from pydantic import BaseModel, Field, SerializeAsAny
 
@@ -13,14 +14,14 @@ class OfferShiftRequest(BaseModel):
 	createdDateTime: Optional[datetime] = Field(alias="createdDateTime",default=None,)
 	lastModifiedBy: SerializeAsAny[Optional[IdentitySet]] = Field(alias="lastModifiedBy",default=None,)
 	lastModifiedDateTime: Optional[datetime] = Field(alias="lastModifiedDateTime",default=None,)
-	assignedTo: Optional[str | ScheduleChangeRequestActor] = Field(alias="assignedTo",default=None,)
+	assignedTo: Optional[ScheduleChangeRequestActor | str] = Field(alias="assignedTo",default=None,)
 	managerActionDateTime: Optional[datetime] = Field(alias="managerActionDateTime",default=None,)
 	managerActionMessage: Optional[str] = Field(alias="managerActionMessage",default=None,)
 	managerUserId: Optional[str] = Field(alias="managerUserId",default=None,)
 	senderDateTime: Optional[datetime] = Field(alias="senderDateTime",default=None,)
 	senderMessage: Optional[str] = Field(alias="senderMessage",default=None,)
 	senderUserId: Optional[str] = Field(alias="senderUserId",default=None,)
-	state: Optional[str | ScheduleChangeState] = Field(alias="state",default=None,)
+	state: Optional[ScheduleChangeState | str] = Field(alias="state",default=None,)
 	recipientActionDateTime: Optional[datetime] = Field(alias="recipientActionDateTime",default=None,)
 	recipientActionMessage: Optional[str] = Field(alias="recipientActionMessage",default=None,)
 	recipientUserId: Optional[str] = Field(alias="recipientUserId",default=None,)

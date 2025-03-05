@@ -13,7 +13,7 @@ class ExchangeProtectionPolicy(BaseModel):
 	lastModifiedBy: SerializeAsAny[Optional[IdentitySet]] = Field(alias="lastModifiedBy",default=None,)
 	lastModifiedDateTime: Optional[datetime] = Field(alias="lastModifiedDateTime",default=None,)
 	retentionSettings: Optional[list[RetentionSetting]] = Field(alias="retentionSettings",default=None,)
-	status: Optional[str | ProtectionPolicyStatus] = Field(alias="status",default=None,)
+	status: Optional[ProtectionPolicyStatus | str] = Field(alias="status",default=None,)
 	mailboxInclusionRules: Optional[list[MailboxProtectionRule]] = Field(alias="mailboxInclusionRules",default=None,)
 	mailboxProtectionUnits: Optional[list[MailboxProtectionUnit]] = Field(alias="mailboxProtectionUnits",default=None,)
 

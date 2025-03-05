@@ -2,6 +2,7 @@ from __future__ import annotations
 from typing import Optional
 from pydantic import model_validator, ModelWrapValidatorHandler, ValidationError
 from typing_extensions import Self
+from typing import Any
 from datetime import datetime
 from pydantic import BaseModel, Field, SerializeAsAny
 
@@ -15,7 +16,7 @@ class PrivilegedAccessScheduleRequest(BaseModel):
 	createdDateTime: Optional[datetime] = Field(alias="createdDateTime",default=None,)
 	customData: Optional[str] = Field(alias="customData",default=None,)
 	status: Optional[str] = Field(alias="status",default=None,)
-	action: Optional[str | ScheduleRequestActions] = Field(alias="action",default=None,)
+	action: Optional[ScheduleRequestActions | str] = Field(alias="action",default=None,)
 	isValidationOnly: Optional[bool] = Field(alias="isValidationOnly",default=None,)
 	justification: Optional[str] = Field(alias="justification",default=None,)
 	scheduleInfo: Optional[RequestSchedule] = Field(alias="scheduleInfo",default=None,)

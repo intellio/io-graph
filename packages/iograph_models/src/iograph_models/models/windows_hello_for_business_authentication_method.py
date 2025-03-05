@@ -9,7 +9,7 @@ class WindowsHelloForBusinessAuthenticationMethod(BaseModel):
 	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 	createdDateTime: Optional[datetime] = Field(alias="createdDateTime",default=None,)
 	displayName: Optional[str] = Field(alias="displayName",default=None,)
-	keyStrength: Optional[str | AuthenticationMethodKeyStrength] = Field(alias="keyStrength",default=None,)
+	keyStrength: Optional[AuthenticationMethodKeyStrength | str] = Field(alias="keyStrength",default=None,)
 	device: Optional[Device] = Field(alias="device",default=None,)
 
 from .authentication_method_key_strength import AuthenticationMethodKeyStrength

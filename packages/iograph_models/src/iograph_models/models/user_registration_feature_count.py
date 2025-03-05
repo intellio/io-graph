@@ -4,7 +4,7 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class UserRegistrationFeatureCount(BaseModel):
-	feature: Optional[str | AuthenticationMethodFeature] = Field(alias="feature",default=None,)
+	feature: Optional[AuthenticationMethodFeature | str] = Field(alias="feature",default=None,)
 	userCount: Optional[int] = Field(alias="userCount",default=None,)
 	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 

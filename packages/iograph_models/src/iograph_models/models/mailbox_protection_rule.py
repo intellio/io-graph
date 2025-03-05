@@ -13,7 +13,7 @@ class MailboxProtectionRule(BaseModel):
 	isAutoApplyEnabled: Optional[bool] = Field(alias="isAutoApplyEnabled",default=None,)
 	lastModifiedBy: SerializeAsAny[Optional[IdentitySet]] = Field(alias="lastModifiedBy",default=None,)
 	lastModifiedDateTime: Optional[datetime] = Field(alias="lastModifiedDateTime",default=None,)
-	status: Optional[str | ProtectionRuleStatus] = Field(alias="status",default=None,)
+	status: Optional[ProtectionRuleStatus | str] = Field(alias="status",default=None,)
 	mailboxExpression: Optional[str] = Field(alias="mailboxExpression",default=None,)
 
 from .identity_set import IdentitySet

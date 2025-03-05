@@ -4,7 +4,7 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class ConditionalAccessGrantControls(BaseModel):
-	builtInControls: Optional[list[str | ConditionalAccessGrantControl]] = Field(alias="builtInControls",default=None,)
+	builtInControls: Optional[list[ConditionalAccessGrantControl | str]] = Field(alias="builtInControls",default=None,)
 	customAuthenticationFactors: Optional[list[str]] = Field(alias="customAuthenticationFactors",default=None,)
 	operator: Optional[str] = Field(alias="operator",default=None,)
 	termsOfUse: Optional[list[str]] = Field(alias="termsOfUse",default=None,)

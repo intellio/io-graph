@@ -10,9 +10,9 @@ class SecurityUserSource(BaseModel):
 	createdBy: SerializeAsAny[Optional[IdentitySet]] = Field(alias="createdBy",default=None,)
 	createdDateTime: Optional[datetime] = Field(alias="createdDateTime",default=None,)
 	displayName: Optional[str] = Field(alias="displayName",default=None,)
-	holdStatus: Optional[str | SecurityDataSourceHoldStatus] = Field(alias="holdStatus",default=None,)
+	holdStatus: Optional[SecurityDataSourceHoldStatus | str] = Field(alias="holdStatus",default=None,)
 	email: Optional[str] = Field(alias="email",default=None,)
-	includedSources: Optional[str | SecuritySourceType] = Field(alias="includedSources",default=None,)
+	includedSources: Optional[SecuritySourceType | str] = Field(alias="includedSources",default=None,)
 	siteWebUrl: Optional[str] = Field(alias="siteWebUrl",default=None,)
 
 from .identity_set import IdentitySet

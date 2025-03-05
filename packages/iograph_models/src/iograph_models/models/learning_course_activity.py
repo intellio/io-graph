@@ -2,6 +2,7 @@ from __future__ import annotations
 from typing import Optional
 from pydantic import model_validator, ModelWrapValidatorHandler, ValidationError
 from typing_extensions import Self
+from typing import Any
 from datetime import datetime
 from pydantic import BaseModel, Field, SerializeAsAny
 
@@ -15,7 +16,7 @@ class LearningCourseActivity(BaseModel):
 	learnerUserId: Optional[str] = Field(alias="learnerUserId",default=None,)
 	learningContentId: Optional[str] = Field(alias="learningContentId",default=None,)
 	learningProviderId: Optional[str] = Field(alias="learningProviderId",default=None,)
-	status: Optional[str | CourseStatus] = Field(alias="status",default=None,)
+	status: Optional[CourseStatus | str] = Field(alias="status",default=None,)
 
 	@model_validator(mode="wrap")
 	def convert_discriminator_class(cls, data: Any, handler: ModelWrapValidatorHandler[Self]) -> Self:

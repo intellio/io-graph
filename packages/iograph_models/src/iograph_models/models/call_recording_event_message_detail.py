@@ -8,7 +8,7 @@ class CallRecordingEventMessageDetail(BaseModel):
 	callId: Optional[str] = Field(alias="callId",default=None,)
 	callRecordingDisplayName: Optional[str] = Field(alias="callRecordingDisplayName",default=None,)
 	callRecordingDuration: Optional[str] = Field(alias="callRecordingDuration",default=None,)
-	callRecordingStatus: Optional[str | CallRecordingStatus] = Field(alias="callRecordingStatus",default=None,)
+	callRecordingStatus: Optional[CallRecordingStatus | str] = Field(alias="callRecordingStatus",default=None,)
 	callRecordingUrl: Optional[str] = Field(alias="callRecordingUrl",default=None,)
 	initiator: SerializeAsAny[Optional[IdentitySet]] = Field(alias="initiator",default=None,)
 	meetingOrganizer: SerializeAsAny[Optional[IdentitySet]] = Field(alias="meetingOrganizer",default=None,)

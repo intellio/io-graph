@@ -8,7 +8,7 @@ class DetectedApp(BaseModel):
 	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 	deviceCount: Optional[int] = Field(alias="deviceCount",default=None,)
 	displayName: Optional[str] = Field(alias="displayName",default=None,)
-	platform: Optional[str | DetectedAppPlatformType] = Field(alias="platform",default=None,)
+	platform: Optional[DetectedAppPlatformType | str] = Field(alias="platform",default=None,)
 	publisher: Optional[str] = Field(alias="publisher",default=None,)
 	sizeInByte: Optional[int] = Field(alias="sizeInByte",default=None,)
 	version: Optional[str] = Field(alias="version",default=None,)

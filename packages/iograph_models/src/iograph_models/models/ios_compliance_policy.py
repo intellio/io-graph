@@ -20,7 +20,7 @@ class IosCompliancePolicy(BaseModel):
 	userStatuses: Optional[list[DeviceComplianceUserStatus]] = Field(alias="userStatuses",default=None,)
 	userStatusOverview: Optional[DeviceComplianceUserOverview] = Field(alias="userStatusOverview",default=None,)
 	deviceThreatProtectionEnabled: Optional[bool] = Field(alias="deviceThreatProtectionEnabled",default=None,)
-	deviceThreatProtectionRequiredSecurityLevel: Optional[str | DeviceThreatProtectionLevel] = Field(alias="deviceThreatProtectionRequiredSecurityLevel",default=None,)
+	deviceThreatProtectionRequiredSecurityLevel: Optional[DeviceThreatProtectionLevel | str] = Field(alias="deviceThreatProtectionRequiredSecurityLevel",default=None,)
 	managedEmailProfileRequired: Optional[bool] = Field(alias="managedEmailProfileRequired",default=None,)
 	osMaximumVersion: Optional[str] = Field(alias="osMaximumVersion",default=None,)
 	osMinimumVersion: Optional[str] = Field(alias="osMinimumVersion",default=None,)
@@ -31,7 +31,7 @@ class IosCompliancePolicy(BaseModel):
 	passcodeMinutesOfInactivityBeforeLock: Optional[int] = Field(alias="passcodeMinutesOfInactivityBeforeLock",default=None,)
 	passcodePreviousPasscodeBlockCount: Optional[int] = Field(alias="passcodePreviousPasscodeBlockCount",default=None,)
 	passcodeRequired: Optional[bool] = Field(alias="passcodeRequired",default=None,)
-	passcodeRequiredType: Optional[str | RequiredPasswordType] = Field(alias="passcodeRequiredType",default=None,)
+	passcodeRequiredType: Optional[RequiredPasswordType | str] = Field(alias="passcodeRequiredType",default=None,)
 	securityBlockJailbrokenDevices: Optional[bool] = Field(alias="securityBlockJailbrokenDevices",default=None,)
 
 from .device_compliance_policy_assignment import DeviceCompliancePolicyAssignment

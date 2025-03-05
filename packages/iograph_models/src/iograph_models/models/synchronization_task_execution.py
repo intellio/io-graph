@@ -16,7 +16,7 @@ class SynchronizationTaskExecution(BaseModel):
 	countImportedDeltas: Optional[int] = Field(alias="countImportedDeltas",default=None,)
 	countImportedReferenceDeltas: Optional[int] = Field(alias="countImportedReferenceDeltas",default=None,)
 	error: Optional[SynchronizationError] = Field(alias="error",default=None,)
-	state: Optional[str | SynchronizationTaskExecutionResult] = Field(alias="state",default=None,)
+	state: Optional[SynchronizationTaskExecutionResult | str] = Field(alias="state",default=None,)
 	timeBegan: Optional[datetime] = Field(alias="timeBegan",default=None,)
 	timeEnded: Optional[datetime] = Field(alias="timeEnded",default=None,)
 	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)

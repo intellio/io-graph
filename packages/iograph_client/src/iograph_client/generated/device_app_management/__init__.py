@@ -26,8 +26,8 @@ if TYPE_CHECKING:
 	from .default_managed_app_protections import DefaultManagedAppProtectionsRequest
 	from .android_managed_app_protections import AndroidManagedAppProtectionsRequest
 	from ...request_adapter import HttpxRequestAdapter
-from iograph_models.models.device_app_management import DeviceAppManagement
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.models.device_app_management import DeviceAppManagement
 
 
 class DeviceAppManagementRequest(BaseRequestBuilder):

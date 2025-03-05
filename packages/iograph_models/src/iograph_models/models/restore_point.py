@@ -9,7 +9,7 @@ class RestorePoint(BaseModel):
 	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 	expirationDateTime: Optional[datetime] = Field(alias="expirationDateTime",default=None,)
 	protectionDateTime: Optional[datetime] = Field(alias="protectionDateTime",default=None,)
-	tags: Optional[str | RestorePointTags] = Field(alias="tags",default=None,)
+	tags: Optional[RestorePointTags | str] = Field(alias="tags",default=None,)
 	protectionUnit: SerializeAsAny[Optional[ProtectionUnitBase]] = Field(alias="protectionUnit",default=None,)
 
 from .restore_point_tags import RestorePointTags

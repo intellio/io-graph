@@ -4,7 +4,7 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class WorkforceIntegrationEncryption(BaseModel):
-	protocol: Optional[str | WorkforceIntegrationEncryptionProtocol] = Field(alias="protocol",default=None,)
+	protocol: Optional[WorkforceIntegrationEncryptionProtocol | str] = Field(alias="protocol",default=None,)
 	secret: Optional[str] = Field(alias="secret",default=None,)
 	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 

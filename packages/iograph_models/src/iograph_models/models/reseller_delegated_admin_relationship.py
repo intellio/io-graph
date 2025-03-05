@@ -16,7 +16,7 @@ class ResellerDelegatedAdminRelationship(BaseModel):
 	duration: Optional[str] = Field(alias="duration",default=None,)
 	endDateTime: Optional[datetime] = Field(alias="endDateTime",default=None,)
 	lastModifiedDateTime: Optional[datetime] = Field(alias="lastModifiedDateTime",default=None,)
-	status: Optional[str | DelegatedAdminRelationshipStatus] = Field(alias="status",default=None,)
+	status: Optional[DelegatedAdminRelationshipStatus | str] = Field(alias="status",default=None,)
 	accessAssignments: Optional[list[DelegatedAdminAccessAssignment]] = Field(alias="accessAssignments",default=None,)
 	operations: Optional[list[DelegatedAdminRelationshipOperation]] = Field(alias="operations",default=None,)
 	requests: Optional[list[DelegatedAdminRelationshipRequest]] = Field(alias="requests",default=None,)

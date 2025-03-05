@@ -7,16 +7,16 @@ from pydantic import BaseModel, Field, SerializeAsAny
 class EmailFileAssessmentRequest(BaseModel):
 	id: Optional[str] = Field(alias="id",default=None,)
 	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
-	category: Optional[str | ThreatCategory] = Field(alias="category",default=None,)
-	contentType: Optional[str | ThreatAssessmentContentType] = Field(alias="contentType",default=None,)
+	category: Optional[ThreatCategory | str] = Field(alias="category",default=None,)
+	contentType: Optional[ThreatAssessmentContentType | str] = Field(alias="contentType",default=None,)
 	createdBy: SerializeAsAny[Optional[IdentitySet]] = Field(alias="createdBy",default=None,)
 	createdDateTime: Optional[datetime] = Field(alias="createdDateTime",default=None,)
-	expectedAssessment: Optional[str | ThreatExpectedAssessment] = Field(alias="expectedAssessment",default=None,)
-	requestSource: Optional[str | ThreatAssessmentRequestSource] = Field(alias="requestSource",default=None,)
-	status: Optional[str | ThreatAssessmentStatus] = Field(alias="status",default=None,)
+	expectedAssessment: Optional[ThreatExpectedAssessment | str] = Field(alias="expectedAssessment",default=None,)
+	requestSource: Optional[ThreatAssessmentRequestSource | str] = Field(alias="requestSource",default=None,)
+	status: Optional[ThreatAssessmentStatus | str] = Field(alias="status",default=None,)
 	results: Optional[list[ThreatAssessmentResult]] = Field(alias="results",default=None,)
 	contentData: Optional[str] = Field(alias="contentData",default=None,)
-	destinationRoutingReason: Optional[str | MailDestinationRoutingReason] = Field(alias="destinationRoutingReason",default=None,)
+	destinationRoutingReason: Optional[MailDestinationRoutingReason | str] = Field(alias="destinationRoutingReason",default=None,)
 	recipientEmail: Optional[str] = Field(alias="recipientEmail",default=None,)
 
 from .threat_category import ThreatCategory

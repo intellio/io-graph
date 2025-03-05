@@ -11,7 +11,7 @@ class EnterpriseCodeSigningCertificate(BaseModel):
 	expirationDateTime: Optional[datetime] = Field(alias="expirationDateTime",default=None,)
 	issuer: Optional[str] = Field(alias="issuer",default=None,)
 	issuerName: Optional[str] = Field(alias="issuerName",default=None,)
-	status: Optional[str | CertificateStatus] = Field(alias="status",default=None,)
+	status: Optional[CertificateStatus | str] = Field(alias="status",default=None,)
 	subject: Optional[str] = Field(alias="subject",default=None,)
 	subjectName: Optional[str] = Field(alias="subjectName",default=None,)
 	uploadDateTime: Optional[datetime] = Field(alias="uploadDateTime",default=None,)

@@ -2,12 +2,13 @@ from __future__ import annotations
 from typing import Optional
 from pydantic import model_validator, ModelWrapValidatorHandler, ValidationError
 from typing_extensions import Self
+from typing import Any
 from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class StandardTimeZoneOffset(BaseModel):
 	dayOccurrence: Optional[int] = Field(alias="dayOccurrence",default=None,)
-	dayOfWeek: Optional[str | DayOfWeek] = Field(alias="dayOfWeek",default=None,)
+	dayOfWeek: Optional[DayOfWeek | str] = Field(alias="dayOfWeek",default=None,)
 	month: Optional[int] = Field(alias="month",default=None,)
 	time: Optional[str] = Field(alias="time",default=None,)
 	year: Optional[int] = Field(alias="year",default=None,)

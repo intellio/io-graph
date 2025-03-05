@@ -6,13 +6,13 @@ from pydantic import BaseModel, Field, SerializeAsAny
 class CallRecordsNetworkInfo(BaseModel):
 	bandwidthLowEventRatio: float | str | ReferenceNumeric
 	basicServiceSetIdentifier: Optional[str] = Field(alias="basicServiceSetIdentifier",default=None,)
-	connectionType: Optional[str | CallRecordsNetworkConnectionType] = Field(alias="connectionType",default=None,)
+	connectionType: Optional[CallRecordsNetworkConnectionType | str] = Field(alias="connectionType",default=None,)
 	delayEventRatio: float | str | ReferenceNumeric
 	dnsSuffix: Optional[str] = Field(alias="dnsSuffix",default=None,)
 	ipAddress: Optional[str] = Field(alias="ipAddress",default=None,)
 	linkSpeed: Optional[int] = Field(alias="linkSpeed",default=None,)
 	macAddress: Optional[str] = Field(alias="macAddress",default=None,)
-	networkTransportProtocol: Optional[str | CallRecordsNetworkTransportProtocol] = Field(alias="networkTransportProtocol",default=None,)
+	networkTransportProtocol: Optional[CallRecordsNetworkTransportProtocol | str] = Field(alias="networkTransportProtocol",default=None,)
 	port: Optional[int] = Field(alias="port",default=None,)
 	receivedQualityEventRatio: float | str | ReferenceNumeric
 	reflexiveIPAddress: Optional[str] = Field(alias="reflexiveIPAddress",default=None,)
@@ -21,12 +21,12 @@ class CallRecordsNetworkInfo(BaseModel):
 	sentQualityEventRatio: float | str | ReferenceNumeric
 	subnet: Optional[str] = Field(alias="subnet",default=None,)
 	traceRouteHops: Optional[list[CallRecordsTraceRouteHop]] = Field(alias="traceRouteHops",default=None,)
-	wifiBand: Optional[str | CallRecordsWifiBand] = Field(alias="wifiBand",default=None,)
+	wifiBand: Optional[CallRecordsWifiBand | str] = Field(alias="wifiBand",default=None,)
 	wifiBatteryCharge: Optional[int] = Field(alias="wifiBatteryCharge",default=None,)
 	wifiChannel: Optional[int] = Field(alias="wifiChannel",default=None,)
 	wifiMicrosoftDriver: Optional[str] = Field(alias="wifiMicrosoftDriver",default=None,)
 	wifiMicrosoftDriverVersion: Optional[str] = Field(alias="wifiMicrosoftDriverVersion",default=None,)
-	wifiRadioType: Optional[str | CallRecordsWifiRadioType] = Field(alias="wifiRadioType",default=None,)
+	wifiRadioType: Optional[CallRecordsWifiRadioType | str] = Field(alias="wifiRadioType",default=None,)
 	wifiSignalStrength: Optional[int] = Field(alias="wifiSignalStrength",default=None,)
 	wifiVendorDriver: Optional[str] = Field(alias="wifiVendorDriver",default=None,)
 	wifiVendorDriverVersion: Optional[str] = Field(alias="wifiVendorDriverVersion",default=None,)

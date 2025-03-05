@@ -11,7 +11,7 @@ class DeviceCompliancePolicySettingStateSummary(BaseModel):
 	errorDeviceCount: Optional[int] = Field(alias="errorDeviceCount",default=None,)
 	nonCompliantDeviceCount: Optional[int] = Field(alias="nonCompliantDeviceCount",default=None,)
 	notApplicableDeviceCount: Optional[int] = Field(alias="notApplicableDeviceCount",default=None,)
-	platformType: Optional[str | PolicyPlatformType] = Field(alias="platformType",default=None,)
+	platformType: Optional[PolicyPlatformType | str] = Field(alias="platformType",default=None,)
 	remediatedDeviceCount: Optional[int] = Field(alias="remediatedDeviceCount",default=None,)
 	setting: Optional[str] = Field(alias="setting",default=None,)
 	settingName: Optional[str] = Field(alias="settingName",default=None,)

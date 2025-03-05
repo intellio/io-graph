@@ -35,7 +35,7 @@ class ColumnDefinition(BaseModel):
 	term: Optional[TermColumn] = Field(alias="term",default=None,)
 	text: Optional[TextColumn] = Field(alias="text",default=None,)
 	thumbnail: Optional[ThumbnailColumn] = Field(alias="thumbnail",default=None,)
-	type: Optional[str | ColumnTypes] = Field(alias="type",default=None,)
+	type: Optional[ColumnTypes | str] = Field(alias="type",default=None,)
 	validation: Optional[ColumnValidation] = Field(alias="validation",default=None,)
 	sourceColumn: Optional[ColumnDefinition] = Field(alias="sourceColumn",default=None,)
 

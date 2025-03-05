@@ -10,7 +10,7 @@ class AuthenticationMethodsPolicy(BaseModel):
 	description: Optional[str] = Field(alias="description",default=None,)
 	displayName: Optional[str] = Field(alias="displayName",default=None,)
 	lastModifiedDateTime: Optional[datetime] = Field(alias="lastModifiedDateTime",default=None,)
-	policyMigrationState: Optional[str | AuthenticationMethodsPolicyMigrationState] = Field(alias="policyMigrationState",default=None,)
+	policyMigrationState: Optional[AuthenticationMethodsPolicyMigrationState | str] = Field(alias="policyMigrationState",default=None,)
 	policyVersion: Optional[str] = Field(alias="policyVersion",default=None,)
 	reconfirmationInDays: Optional[int] = Field(alias="reconfirmationInDays",default=None,)
 	registrationEnforcement: Optional[RegistrationEnforcement] = Field(alias="registrationEnforcement",default=None,)

@@ -10,8 +10,8 @@ class SecurityUnifiedGroupSource(BaseModel):
 	createdBy: SerializeAsAny[Optional[IdentitySet]] = Field(alias="createdBy",default=None,)
 	createdDateTime: Optional[datetime] = Field(alias="createdDateTime",default=None,)
 	displayName: Optional[str] = Field(alias="displayName",default=None,)
-	holdStatus: Optional[str | SecurityDataSourceHoldStatus] = Field(alias="holdStatus",default=None,)
-	includedSources: Optional[str | SecuritySourceType] = Field(alias="includedSources",default=None,)
+	holdStatus: Optional[SecurityDataSourceHoldStatus | str] = Field(alias="holdStatus",default=None,)
+	includedSources: Optional[SecuritySourceType | str] = Field(alias="includedSources",default=None,)
 	group: Optional[Group] = Field(alias="group",default=None,)
 
 from .identity_set import IdentitySet

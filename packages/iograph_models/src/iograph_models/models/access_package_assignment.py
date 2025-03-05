@@ -10,7 +10,7 @@ class AccessPackageAssignment(BaseModel):
 	customExtensionCalloutInstances: Optional[list[CustomExtensionCalloutInstance]] = Field(alias="customExtensionCalloutInstances",default=None,)
 	expiredDateTime: Optional[datetime] = Field(alias="expiredDateTime",default=None,)
 	schedule: Optional[EntitlementManagementSchedule] = Field(alias="schedule",default=None,)
-	state: Optional[str | AccessPackageAssignmentState] = Field(alias="state",default=None,)
+	state: Optional[AccessPackageAssignmentState | str] = Field(alias="state",default=None,)
 	status: Optional[str] = Field(alias="status",default=None,)
 	accessPackage: Optional[AccessPackage] = Field(alias="accessPackage",default=None,)
 	assignmentPolicy: Optional[AccessPackageAssignmentPolicy] = Field(alias="assignmentPolicy",default=None,)

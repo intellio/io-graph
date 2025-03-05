@@ -13,7 +13,7 @@ class SharePointProtectionPolicy(BaseModel):
 	lastModifiedBy: SerializeAsAny[Optional[IdentitySet]] = Field(alias="lastModifiedBy",default=None,)
 	lastModifiedDateTime: Optional[datetime] = Field(alias="lastModifiedDateTime",default=None,)
 	retentionSettings: Optional[list[RetentionSetting]] = Field(alias="retentionSettings",default=None,)
-	status: Optional[str | ProtectionPolicyStatus] = Field(alias="status",default=None,)
+	status: Optional[ProtectionPolicyStatus | str] = Field(alias="status",default=None,)
 	siteInclusionRules: Optional[list[SiteProtectionRule]] = Field(alias="siteInclusionRules",default=None,)
 	siteProtectionUnits: Optional[list[SiteProtectionUnit]] = Field(alias="siteProtectionUnits",default=None,)
 

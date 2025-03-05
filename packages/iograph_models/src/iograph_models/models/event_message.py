@@ -2,6 +2,7 @@ from __future__ import annotations
 from typing import Optional
 from pydantic import model_validator, ModelWrapValidatorHandler, ValidationError
 from typing_extensions import Self
+from typing import Any
 from datetime import datetime
 from pydantic import BaseModel, Field, SerializeAsAny
 
@@ -22,8 +23,8 @@ class EventMessage(BaseModel):
 	flag: Optional[FollowupFlag] = Field(alias="flag",default=None,)
 	from_: SerializeAsAny[Optional[Recipient]] = Field(alias="from",default=None,)
 	hasAttachments: Optional[bool] = Field(alias="hasAttachments",default=None,)
-	importance: Optional[str | Importance] = Field(alias="importance",default=None,)
-	inferenceClassification: Optional[str | InferenceClassificationType] = Field(alias="inferenceClassification",default=None,)
+	importance: Optional[Importance | str] = Field(alias="importance",default=None,)
+	inferenceClassification: Optional[InferenceClassificationType | str] = Field(alias="inferenceClassification",default=None,)
 	internetMessageHeaders: Optional[list[InternetMessageHeader]] = Field(alias="internetMessageHeaders",default=None,)
 	internetMessageId: Optional[str] = Field(alias="internetMessageId",default=None,)
 	isDeliveryReceiptRequested: Optional[bool] = Field(alias="isDeliveryReceiptRequested",default=None,)
@@ -48,10 +49,10 @@ class EventMessage(BaseModel):
 	isDelegated: Optional[bool] = Field(alias="isDelegated",default=None,)
 	isOutOfDate: Optional[bool] = Field(alias="isOutOfDate",default=None,)
 	location: SerializeAsAny[Optional[Location]] = Field(alias="location",default=None,)
-	meetingMessageType: Optional[str | MeetingMessageType] = Field(alias="meetingMessageType",default=None,)
+	meetingMessageType: Optional[MeetingMessageType | str] = Field(alias="meetingMessageType",default=None,)
 	recurrence: Optional[PatternedRecurrence] = Field(alias="recurrence",default=None,)
 	startDateTime: Optional[DateTimeTimeZone] = Field(alias="startDateTime",default=None,)
-	type: Optional[str | EventType] = Field(alias="type",default=None,)
+	type: Optional[EventType | str] = Field(alias="type",default=None,)
 	event: Optional[Event] = Field(alias="event",default=None,)
 
 	@model_validator(mode="wrap")

@@ -29,7 +29,7 @@ class BookingAppointment(BaseModel):
 	postBuffer: Optional[str] = Field(alias="postBuffer",default=None,)
 	preBuffer: Optional[str] = Field(alias="preBuffer",default=None,)
 	price: float | str | ReferenceNumeric
-	priceType: Optional[str | BookingPriceType] = Field(alias="priceType",default=None,)
+	priceType: Optional[BookingPriceType | str] = Field(alias="priceType",default=None,)
 	reminders: Optional[list[BookingReminder]] = Field(alias="reminders",default=None,)
 	selfServiceAppointmentId: Optional[str] = Field(alias="selfServiceAppointmentId",default=None,)
 	serviceId: Optional[str] = Field(alias="serviceId",default=None,)

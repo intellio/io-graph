@@ -17,7 +17,7 @@ class UserActivity(BaseModel):
 	expirationDateTime: Optional[datetime] = Field(alias="expirationDateTime",default=None,)
 	fallbackUrl: Optional[str] = Field(alias="fallbackUrl",default=None,)
 	lastModifiedDateTime: Optional[datetime] = Field(alias="lastModifiedDateTime",default=None,)
-	status: Optional[str | Status] = Field(alias="status",default=None,)
+	status: Optional[Status | str] = Field(alias="status",default=None,)
 	userTimezone: Optional[str] = Field(alias="userTimezone",default=None,)
 	visualElements: Optional[VisualInfo] = Field(alias="visualElements",default=None,)
 	historyItems: Optional[list[ActivityHistoryItem]] = Field(alias="historyItems",default=None,)

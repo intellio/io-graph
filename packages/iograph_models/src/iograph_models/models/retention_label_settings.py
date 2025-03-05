@@ -4,7 +4,7 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class RetentionLabelSettings(BaseModel):
-	behaviorDuringRetentionPeriod: Optional[str | SecurityBehaviorDuringRetentionPeriod] = Field(alias="behaviorDuringRetentionPeriod",default=None,)
+	behaviorDuringRetentionPeriod: Optional[SecurityBehaviorDuringRetentionPeriod | str] = Field(alias="behaviorDuringRetentionPeriod",default=None,)
 	isContentUpdateAllowed: Optional[bool] = Field(alias="isContentUpdateAllowed",default=None,)
 	isDeleteAllowed: Optional[bool] = Field(alias="isDeleteAllowed",default=None,)
 	isLabelUpdateAllowed: Optional[bool] = Field(alias="isLabelUpdateAllowed",default=None,)

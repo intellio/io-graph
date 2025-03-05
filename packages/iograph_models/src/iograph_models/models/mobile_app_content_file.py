@@ -16,7 +16,7 @@ class MobileAppContentFile(BaseModel):
 	name: Optional[str] = Field(alias="name",default=None,)
 	size: Optional[int] = Field(alias="size",default=None,)
 	sizeEncrypted: Optional[int] = Field(alias="sizeEncrypted",default=None,)
-	uploadState: Optional[str | MobileAppContentFileUploadState] = Field(alias="uploadState",default=None,)
+	uploadState: Optional[MobileAppContentFileUploadState | str] = Field(alias="uploadState",default=None,)
 
 from .mobile_app_content_file_upload_state import MobileAppContentFileUploadState
 

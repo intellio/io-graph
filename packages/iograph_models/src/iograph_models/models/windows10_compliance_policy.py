@@ -34,7 +34,7 @@ class Windows10CompliancePolicy(BaseModel):
 	passwordPreviousPasswordBlockCount: Optional[int] = Field(alias="passwordPreviousPasswordBlockCount",default=None,)
 	passwordRequired: Optional[bool] = Field(alias="passwordRequired",default=None,)
 	passwordRequiredToUnlockFromIdle: Optional[bool] = Field(alias="passwordRequiredToUnlockFromIdle",default=None,)
-	passwordRequiredType: Optional[str | RequiredPasswordType] = Field(alias="passwordRequiredType",default=None,)
+	passwordRequiredType: Optional[RequiredPasswordType | str] = Field(alias="passwordRequiredType",default=None,)
 	requireHealthyDeviceReport: Optional[bool] = Field(alias="requireHealthyDeviceReport",default=None,)
 	secureBootEnabled: Optional[bool] = Field(alias="secureBootEnabled",default=None,)
 	storageRequireEncryption: Optional[bool] = Field(alias="storageRequireEncryption",default=None,)

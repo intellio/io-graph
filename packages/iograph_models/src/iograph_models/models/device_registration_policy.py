@@ -11,7 +11,7 @@ class DeviceRegistrationPolicy(BaseModel):
 	description: Optional[str] = Field(alias="description",default=None,)
 	displayName: Optional[str] = Field(alias="displayName",default=None,)
 	localAdminPassword: Optional[LocalAdminPasswordSettings] = Field(alias="localAdminPassword",default=None,)
-	multiFactorAuthConfiguration: Optional[str | MultiFactorAuthConfiguration] = Field(alias="multiFactorAuthConfiguration",default=None,)
+	multiFactorAuthConfiguration: Optional[MultiFactorAuthConfiguration | str] = Field(alias="multiFactorAuthConfiguration",default=None,)
 	userDeviceQuota: Optional[int] = Field(alias="userDeviceQuota",default=None,)
 
 from .azure_a_d_join_policy import AzureADJoinPolicy

@@ -5,7 +5,7 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 class SecurityCvssSummary(BaseModel):
 	score: float | str | ReferenceNumeric
-	severity: Optional[str | SecurityVulnerabilitySeverity] = Field(alias="severity",default=None,)
+	severity: Optional[SecurityVulnerabilitySeverity | str] = Field(alias="severity",default=None,)
 	vectorString: Optional[str] = Field(alias="vectorString",default=None,)
 	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 

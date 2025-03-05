@@ -2,6 +2,7 @@ from __future__ import annotations
 from typing import Optional
 from pydantic import model_validator, ModelWrapValidatorHandler, ValidationError
 from typing_extensions import Self
+from typing import Any
 from datetime import datetime
 from pydantic import BaseModel, Field, SerializeAsAny
 
@@ -21,7 +22,7 @@ class MobileApp(BaseModel):
 	owner: Optional[str] = Field(alias="owner",default=None,)
 	privacyInformationUrl: Optional[str] = Field(alias="privacyInformationUrl",default=None,)
 	publisher: Optional[str] = Field(alias="publisher",default=None,)
-	publishingState: Optional[str | MobileAppPublishingState] = Field(alias="publishingState",default=None,)
+	publishingState: Optional[MobileAppPublishingState | str] = Field(alias="publishingState",default=None,)
 	assignments: Optional[list[MobileAppAssignment]] = Field(alias="assignments",default=None,)
 	categories: Optional[list[MobileAppCategory]] = Field(alias="categories",default=None,)
 

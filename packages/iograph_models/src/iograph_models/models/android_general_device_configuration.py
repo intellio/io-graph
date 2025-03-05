@@ -30,7 +30,7 @@ class AndroidGeneralDeviceConfiguration(BaseModel):
 	cellularBlockMessaging: Optional[bool] = Field(alias="cellularBlockMessaging",default=None,)
 	cellularBlockVoiceRoaming: Optional[bool] = Field(alias="cellularBlockVoiceRoaming",default=None,)
 	cellularBlockWiFiTethering: Optional[bool] = Field(alias="cellularBlockWiFiTethering",default=None,)
-	compliantAppListType: Optional[str | AppListType] = Field(alias="compliantAppListType",default=None,)
+	compliantAppListType: Optional[AppListType | str] = Field(alias="compliantAppListType",default=None,)
 	compliantAppsList: Optional[list[AppListItem]] = Field(alias="compliantAppsList",default=None,)
 	deviceSharingAllowed: Optional[bool] = Field(alias="deviceSharingAllowed",default=None,)
 	diagnosticDataBlockSubmission: Optional[bool] = Field(alias="diagnosticDataBlockSubmission",default=None,)
@@ -49,7 +49,7 @@ class AndroidGeneralDeviceConfiguration(BaseModel):
 	passwordMinutesOfInactivityBeforeScreenTimeout: Optional[int] = Field(alias="passwordMinutesOfInactivityBeforeScreenTimeout",default=None,)
 	passwordPreviousPasswordBlockCount: Optional[int] = Field(alias="passwordPreviousPasswordBlockCount",default=None,)
 	passwordRequired: Optional[bool] = Field(alias="passwordRequired",default=None,)
-	passwordRequiredType: Optional[str | AndroidRequiredPasswordType] = Field(alias="passwordRequiredType",default=None,)
+	passwordRequiredType: Optional[AndroidRequiredPasswordType | str] = Field(alias="passwordRequiredType",default=None,)
 	passwordSignInFailureCountBeforeFactoryReset: Optional[int] = Field(alias="passwordSignInFailureCountBeforeFactoryReset",default=None,)
 	powerOffBlocked: Optional[bool] = Field(alias="powerOffBlocked",default=None,)
 	screenCaptureBlocked: Optional[bool] = Field(alias="screenCaptureBlocked",default=None,)
@@ -64,7 +64,7 @@ class AndroidGeneralDeviceConfiguration(BaseModel):
 	webBrowserBlocked: Optional[bool] = Field(alias="webBrowserBlocked",default=None,)
 	webBrowserBlockJavaScript: Optional[bool] = Field(alias="webBrowserBlockJavaScript",default=None,)
 	webBrowserBlockPopups: Optional[bool] = Field(alias="webBrowserBlockPopups",default=None,)
-	webBrowserCookieSettings: Optional[str | WebBrowserCookieSettings] = Field(alias="webBrowserCookieSettings",default=None,)
+	webBrowserCookieSettings: Optional[WebBrowserCookieSettings | str] = Field(alias="webBrowserCookieSettings",default=None,)
 	wiFiBlocked: Optional[bool] = Field(alias="wiFiBlocked",default=None,)
 
 from .device_configuration_assignment import DeviceConfigurationAssignment

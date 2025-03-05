@@ -8,7 +8,7 @@ class AuthenticationAttributeCollectionInputConfiguration(BaseModel):
 	defaultValue: Optional[str] = Field(alias="defaultValue",default=None,)
 	editable: Optional[bool] = Field(alias="editable",default=None,)
 	hidden: Optional[bool] = Field(alias="hidden",default=None,)
-	inputType: Optional[str | AuthenticationAttributeCollectionInputType] = Field(alias="inputType",default=None,)
+	inputType: Optional[AuthenticationAttributeCollectionInputType | str] = Field(alias="inputType",default=None,)
 	label: Optional[str] = Field(alias="label",default=None,)
 	options: Optional[list[AuthenticationAttributeCollectionOptionConfiguration]] = Field(alias="options",default=None,)
 	required: Optional[bool] = Field(alias="required",default=None,)

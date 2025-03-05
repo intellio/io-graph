@@ -2,6 +2,7 @@ from __future__ import annotations
 from typing import Optional
 from pydantic import model_validator, ModelWrapValidatorHandler, ValidationError
 from typing_extensions import Self
+from typing import Any
 from datetime import datetime
 from pydantic import BaseModel, Field, SerializeAsAny
 
@@ -20,7 +21,7 @@ class BaseSitePage(BaseModel):
 	webUrl: Optional[str] = Field(alias="webUrl",default=None,)
 	createdByUser: Optional[User] = Field(alias="createdByUser",default=None,)
 	lastModifiedByUser: Optional[User] = Field(alias="lastModifiedByUser",default=None,)
-	pageLayout: Optional[str | PageLayoutType] = Field(alias="pageLayout",default=None,)
+	pageLayout: Optional[PageLayoutType | str] = Field(alias="pageLayout",default=None,)
 	publishingState: Optional[PublicationFacet] = Field(alias="publishingState",default=None,)
 	title: Optional[str] = Field(alias="title",default=None,)
 

@@ -5,7 +5,7 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class CallRecordsPstnCallLogRow(BaseModel):
-	callDurationSource: Optional[str | CallRecordsPstnCallDurationSource] = Field(alias="callDurationSource",default=None,)
+	callDurationSource: Optional[CallRecordsPstnCallDurationSource | str] = Field(alias="callDurationSource",default=None,)
 	calleeNumber: Optional[str] = Field(alias="calleeNumber",default=None,)
 	callerNumber: Optional[str] = Field(alias="callerNumber",default=None,)
 	callId: Optional[str] = Field(alias="callId",default=None,)

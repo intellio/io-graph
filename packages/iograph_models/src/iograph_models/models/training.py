@@ -7,7 +7,7 @@ from pydantic import BaseModel, Field, SerializeAsAny
 class Training(BaseModel):
 	id: Optional[str] = Field(alias="id",default=None,)
 	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
-	availabilityStatus: Optional[str | TrainingAvailabilityStatus] = Field(alias="availabilityStatus",default=None,)
+	availabilityStatus: Optional[TrainingAvailabilityStatus | str] = Field(alias="availabilityStatus",default=None,)
 	createdBy: Optional[EmailIdentity] = Field(alias="createdBy",default=None,)
 	createdDateTime: Optional[datetime] = Field(alias="createdDateTime",default=None,)
 	description: Optional[str] = Field(alias="description",default=None,)
@@ -16,10 +16,10 @@ class Training(BaseModel):
 	hasEvaluation: Optional[bool] = Field(alias="hasEvaluation",default=None,)
 	lastModifiedBy: Optional[EmailIdentity] = Field(alias="lastModifiedBy",default=None,)
 	lastModifiedDateTime: Optional[datetime] = Field(alias="lastModifiedDateTime",default=None,)
-	source: Optional[str | SimulationContentSource] = Field(alias="source",default=None,)
+	source: Optional[SimulationContentSource | str] = Field(alias="source",default=None,)
 	supportedLocales: Optional[list[str]] = Field(alias="supportedLocales",default=None,)
 	tags: Optional[list[str]] = Field(alias="tags",default=None,)
-	type: Optional[str | TrainingType] = Field(alias="type",default=None,)
+	type: Optional[TrainingType | str] = Field(alias="type",default=None,)
 	languageDetails: Optional[list[TrainingLanguageDetail]] = Field(alias="languageDetails",default=None,)
 
 from .training_availability_status import TrainingAvailabilityStatus

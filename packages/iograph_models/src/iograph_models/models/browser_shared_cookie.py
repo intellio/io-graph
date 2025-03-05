@@ -17,8 +17,8 @@ class BrowserSharedCookie(BaseModel):
 	lastModifiedBy: SerializeAsAny[Optional[IdentitySet]] = Field(alias="lastModifiedBy",default=None,)
 	lastModifiedDateTime: Optional[datetime] = Field(alias="lastModifiedDateTime",default=None,)
 	path: Optional[str] = Field(alias="path",default=None,)
-	sourceEnvironment: Optional[str | BrowserSharedCookieSourceEnvironment] = Field(alias="sourceEnvironment",default=None,)
-	status: Optional[str | BrowserSharedCookieStatus] = Field(alias="status",default=None,)
+	sourceEnvironment: Optional[BrowserSharedCookieSourceEnvironment | str] = Field(alias="sourceEnvironment",default=None,)
+	status: Optional[BrowserSharedCookieStatus | str] = Field(alias="status",default=None,)
 
 from .browser_shared_cookie_history import BrowserSharedCookieHistory
 from .identity_set import IdentitySet

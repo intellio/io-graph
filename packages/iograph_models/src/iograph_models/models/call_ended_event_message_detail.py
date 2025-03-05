@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field, SerializeAsAny
 class CallEndedEventMessageDetail(BaseModel):
 	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 	callDuration: Optional[str] = Field(alias="callDuration",default=None,)
-	callEventType: Optional[str | TeamworkCallEventType] = Field(alias="callEventType",default=None,)
+	callEventType: Optional[TeamworkCallEventType | str] = Field(alias="callEventType",default=None,)
 	callId: Optional[str] = Field(alias="callId",default=None,)
 	callParticipants: Optional[list[CallParticipantInfo]] = Field(alias="callParticipants",default=None,)
 	initiator: SerializeAsAny[Optional[IdentitySet]] = Field(alias="initiator",default=None,)

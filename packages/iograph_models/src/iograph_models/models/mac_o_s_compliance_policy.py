@@ -20,7 +20,7 @@ class MacOSCompliancePolicy(BaseModel):
 	userStatuses: Optional[list[DeviceComplianceUserStatus]] = Field(alias="userStatuses",default=None,)
 	userStatusOverview: Optional[DeviceComplianceUserOverview] = Field(alias="userStatusOverview",default=None,)
 	deviceThreatProtectionEnabled: Optional[bool] = Field(alias="deviceThreatProtectionEnabled",default=None,)
-	deviceThreatProtectionRequiredSecurityLevel: Optional[str | DeviceThreatProtectionLevel] = Field(alias="deviceThreatProtectionRequiredSecurityLevel",default=None,)
+	deviceThreatProtectionRequiredSecurityLevel: Optional[DeviceThreatProtectionLevel | str] = Field(alias="deviceThreatProtectionRequiredSecurityLevel",default=None,)
 	firewallBlockAllIncoming: Optional[bool] = Field(alias="firewallBlockAllIncoming",default=None,)
 	firewallEnabled: Optional[bool] = Field(alias="firewallEnabled",default=None,)
 	firewallEnableStealthMode: Optional[bool] = Field(alias="firewallEnableStealthMode",default=None,)
@@ -33,7 +33,7 @@ class MacOSCompliancePolicy(BaseModel):
 	passwordMinutesOfInactivityBeforeLock: Optional[int] = Field(alias="passwordMinutesOfInactivityBeforeLock",default=None,)
 	passwordPreviousPasswordBlockCount: Optional[int] = Field(alias="passwordPreviousPasswordBlockCount",default=None,)
 	passwordRequired: Optional[bool] = Field(alias="passwordRequired",default=None,)
-	passwordRequiredType: Optional[str | RequiredPasswordType] = Field(alias="passwordRequiredType",default=None,)
+	passwordRequiredType: Optional[RequiredPasswordType | str] = Field(alias="passwordRequiredType",default=None,)
 	storageRequireEncryption: Optional[bool] = Field(alias="storageRequireEncryption",default=None,)
 	systemIntegrityProtectionEnabled: Optional[bool] = Field(alias="systemIntegrityProtectionEnabled",default=None,)
 

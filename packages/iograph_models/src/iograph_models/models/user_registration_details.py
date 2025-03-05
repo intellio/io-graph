@@ -19,9 +19,9 @@ class UserRegistrationDetails(BaseModel):
 	methodsRegistered: Optional[list[str]] = Field(alias="methodsRegistered",default=None,)
 	systemPreferredAuthenticationMethods: Optional[list[str]] = Field(alias="systemPreferredAuthenticationMethods",default=None,)
 	userDisplayName: Optional[str] = Field(alias="userDisplayName",default=None,)
-	userPreferredMethodForSecondaryAuthentication: Optional[str | UserDefaultAuthenticationMethod] = Field(alias="userPreferredMethodForSecondaryAuthentication",default=None,)
+	userPreferredMethodForSecondaryAuthentication: Optional[UserDefaultAuthenticationMethod | str] = Field(alias="userPreferredMethodForSecondaryAuthentication",default=None,)
 	userPrincipalName: Optional[str] = Field(alias="userPrincipalName",default=None,)
-	userType: Optional[str | SignInUserType] = Field(alias="userType",default=None,)
+	userType: Optional[SignInUserType | str] = Field(alias="userType",default=None,)
 
 from .user_default_authentication_method import UserDefaultAuthenticationMethod
 from .sign_in_user_type import SignInUserType

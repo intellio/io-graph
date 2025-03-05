@@ -5,7 +5,7 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 class ProvisioningErrorInfo(BaseModel):
 	additionalDetails: Optional[str] = Field(alias="additionalDetails",default=None,)
-	errorCategory: Optional[str | ProvisioningStatusErrorCategory] = Field(alias="errorCategory",default=None,)
+	errorCategory: Optional[ProvisioningStatusErrorCategory | str] = Field(alias="errorCategory",default=None,)
 	errorCode: Optional[str] = Field(alias="errorCode",default=None,)
 	reason: Optional[str] = Field(alias="reason",default=None,)
 	recommendedAction: Optional[str] = Field(alias="recommendedAction",default=None,)

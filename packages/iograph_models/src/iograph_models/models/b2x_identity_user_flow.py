@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field, SerializeAsAny
 class B2xIdentityUserFlow(BaseModel):
 	id: Optional[str] = Field(alias="id",default=None,)
 	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
-	userFlowType: Optional[str | UserFlowType] = Field(alias="userFlowType",default=None,)
+	userFlowType: Optional[UserFlowType | str] = Field(alias="userFlowType",default=None,)
 	userFlowTypeVersion: float | str | ReferenceNumeric
 	apiConnectorConfiguration: Optional[UserFlowApiConnectorConfiguration] = Field(alias="apiConnectorConfiguration",default=None,)
 	identityProviders: Optional[list[IdentityProvider]] = Field(alias="identityProviders",default=None,)

@@ -41,8 +41,8 @@ if TYPE_CHECKING:
 	from .app_role_assigned_to import AppRoleAssignedToRequest
 	from .app_management_policies import AppManagementPoliciesRequest
 	from ....request_adapter import HttpxRequestAdapter
-from iograph_models.models.service_principal import ServicePrincipal
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.models.service_principal import ServicePrincipal
 
 
 class ByServicePrincipalIdRequest(BaseRequestBuilder):

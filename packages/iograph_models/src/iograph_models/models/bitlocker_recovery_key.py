@@ -10,7 +10,7 @@ class BitlockerRecoveryKey(BaseModel):
 	createdDateTime: Optional[datetime] = Field(alias="createdDateTime",default=None,)
 	deviceId: Optional[str] = Field(alias="deviceId",default=None,)
 	key: Optional[str] = Field(alias="key",default=None,)
-	volumeType: Optional[str | VolumeType] = Field(alias="volumeType",default=None,)
+	volumeType: Optional[VolumeType | str] = Field(alias="volumeType",default=None,)
 
 from .volume_type import VolumeType
 

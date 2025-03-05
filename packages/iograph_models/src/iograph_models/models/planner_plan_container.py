@@ -5,7 +5,7 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 class PlannerPlanContainer(BaseModel):
 	containerId: Optional[str] = Field(alias="containerId",default=None,)
-	type: Optional[str | PlannerContainerType] = Field(alias="type",default=None,)
+	type: Optional[PlannerContainerType | str] = Field(alias="type",default=None,)
 	url: Optional[str] = Field(alias="url",default=None,)
 	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 

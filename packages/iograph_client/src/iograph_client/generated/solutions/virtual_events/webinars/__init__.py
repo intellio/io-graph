@@ -17,8 +17,8 @@ if TYPE_CHECKING:
 	from .by_virtual_event_webinar_id import ByVirtualEventWebinarIdRequest
 	from .....request_adapter import HttpxRequestAdapter
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
-from iograph_models.models.virtual_event_webinar_collection_response import VirtualEventWebinarCollectionResponse
 from iograph_models.models.virtual_event_webinar import VirtualEventWebinar
+from iograph_models.models.virtual_event_webinar_collection_response import VirtualEventWebinarCollectionResponse
 
 
 class WebinarsRequest(BaseRequestBuilder):

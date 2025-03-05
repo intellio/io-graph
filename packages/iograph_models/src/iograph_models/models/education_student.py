@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field, SerializeAsAny
 class EducationStudent(BaseModel):
 	birthDate: Optional[str] = Field(alias="birthDate",default=None,)
 	externalId: Optional[str] = Field(alias="externalId",default=None,)
-	gender: Optional[str | EducationGender] = Field(alias="gender",default=None,)
+	gender: Optional[EducationGender | str] = Field(alias="gender",default=None,)
 	grade: Optional[str] = Field(alias="grade",default=None,)
 	graduationYear: Optional[str] = Field(alias="graduationYear",default=None,)
 	studentNumber: Optional[str] = Field(alias="studentNumber",default=None,)

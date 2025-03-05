@@ -28,7 +28,7 @@ class Application(BaseModel):
 	isFallbackPublicClient: Optional[bool] = Field(alias="isFallbackPublicClient",default=None,)
 	keyCredentials: Optional[list[KeyCredential]] = Field(alias="keyCredentials",default=None,)
 	logo: Optional[str] = Field(alias="logo",default=None,)
-	nativeAuthenticationApisEnabled: Optional[str | NativeAuthenticationApisEnabled] = Field(alias="nativeAuthenticationApisEnabled",default=None,)
+	nativeAuthenticationApisEnabled: Optional[NativeAuthenticationApisEnabled | str] = Field(alias="nativeAuthenticationApisEnabled",default=None,)
 	notes: Optional[str] = Field(alias="notes",default=None,)
 	oauth2RequirePostResponse: Optional[bool] = Field(alias="oauth2RequirePostResponse",default=None,)
 	optionalClaims: Optional[OptionalClaims] = Field(alias="optionalClaims",default=None,)

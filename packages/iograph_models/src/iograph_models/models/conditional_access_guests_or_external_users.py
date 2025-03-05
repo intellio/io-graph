@@ -5,7 +5,7 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 class ConditionalAccessGuestsOrExternalUsers(BaseModel):
 	externalTenants: SerializeAsAny[Optional[ConditionalAccessExternalTenants]] = Field(alias="externalTenants",default=None,)
-	guestOrExternalUserTypes: Optional[str | ConditionalAccessGuestOrExternalUserTypes] = Field(alias="guestOrExternalUserTypes",default=None,)
+	guestOrExternalUserTypes: Optional[ConditionalAccessGuestOrExternalUserTypes | str] = Field(alias="guestOrExternalUserTypes",default=None,)
 	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 
 from .conditional_access_external_tenants import ConditionalAccessExternalTenants

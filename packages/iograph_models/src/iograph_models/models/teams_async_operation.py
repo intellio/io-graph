@@ -11,8 +11,8 @@ class TeamsAsyncOperation(BaseModel):
 	createdDateTime: Optional[datetime] = Field(alias="createdDateTime",default=None,)
 	error: Optional[OperationError] = Field(alias="error",default=None,)
 	lastActionDateTime: Optional[datetime] = Field(alias="lastActionDateTime",default=None,)
-	operationType: Optional[str | TeamsAsyncOperationType] = Field(alias="operationType",default=None,)
-	status: Optional[str | TeamsAsyncOperationStatus] = Field(alias="status",default=None,)
+	operationType: Optional[TeamsAsyncOperationType | str] = Field(alias="operationType",default=None,)
+	status: Optional[TeamsAsyncOperationStatus | str] = Field(alias="status",default=None,)
 	targetResourceId: Optional[str] = Field(alias="targetResourceId",default=None,)
 	targetResourceLocation: Optional[str] = Field(alias="targetResourceLocation",default=None,)
 

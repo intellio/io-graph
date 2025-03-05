@@ -8,7 +8,7 @@ class EducationSchool(BaseModel):
 	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 	description: Optional[str] = Field(alias="description",default=None,)
 	displayName: Optional[str] = Field(alias="displayName",default=None,)
-	externalSource: Optional[str | EducationExternalSource] = Field(alias="externalSource",default=None,)
+	externalSource: Optional[EducationExternalSource | str] = Field(alias="externalSource",default=None,)
 	externalSourceDetail: Optional[str] = Field(alias="externalSourceDetail",default=None,)
 	address: Optional[PhysicalAddress] = Field(alias="address",default=None,)
 	createdBy: SerializeAsAny[Optional[IdentitySet]] = Field(alias="createdBy",default=None,)

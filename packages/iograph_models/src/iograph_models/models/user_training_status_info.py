@@ -8,7 +8,7 @@ class UserTrainingStatusInfo(BaseModel):
 	assignedDateTime: Optional[datetime] = Field(alias="assignedDateTime",default=None,)
 	completionDateTime: Optional[datetime] = Field(alias="completionDateTime",default=None,)
 	displayName: Optional[str] = Field(alias="displayName",default=None,)
-	trainingStatus: Optional[str | TrainingStatus] = Field(alias="trainingStatus",default=None,)
+	trainingStatus: Optional[TrainingStatus | str] = Field(alias="trainingStatus",default=None,)
 	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 
 from .training_status import TrainingStatus

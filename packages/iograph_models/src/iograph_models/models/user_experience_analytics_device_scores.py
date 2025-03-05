@@ -10,7 +10,7 @@ class UserExperienceAnalyticsDeviceScores(BaseModel):
 	batteryHealthScore: float | str | ReferenceNumeric
 	deviceName: Optional[str] = Field(alias="deviceName",default=None,)
 	endpointAnalyticsScore: float | str | ReferenceNumeric
-	healthStatus: Optional[str | UserExperienceAnalyticsHealthState] = Field(alias="healthStatus",default=None,)
+	healthStatus: Optional[UserExperienceAnalyticsHealthState | str] = Field(alias="healthStatus",default=None,)
 	manufacturer: Optional[str] = Field(alias="manufacturer",default=None,)
 	model: Optional[str] = Field(alias="model",default=None,)
 	startupPerformanceScore: float | str | ReferenceNumeric

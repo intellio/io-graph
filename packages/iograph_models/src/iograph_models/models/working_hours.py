@@ -4,7 +4,7 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class WorkingHours(BaseModel):
-	daysOfWeek: Optional[str | DayOfWeek] = Field(alias="daysOfWeek",default=None,)
+	daysOfWeek: Optional[DayOfWeek | str] = Field(alias="daysOfWeek",default=None,)
 	endTime: Optional[str] = Field(alias="endTime",default=None,)
 	startTime: Optional[str] = Field(alias="startTime",default=None,)
 	timeZone: SerializeAsAny[Optional[TimeZoneBase]] = Field(alias="timeZone",default=None,)

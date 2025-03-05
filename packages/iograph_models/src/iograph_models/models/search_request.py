@@ -9,7 +9,7 @@ class SearchRequest(BaseModel):
 	collapseProperties: Optional[list[CollapseProperty]] = Field(alias="collapseProperties",default=None,)
 	contentSources: Optional[list[str]] = Field(alias="contentSources",default=None,)
 	enableTopResults: Optional[bool] = Field(alias="enableTopResults",default=None,)
-	entityTypes: Optional[str | EntityType] = Field(alias="entityTypes",default=None,)
+	entityTypes: Optional[EntityType | str] = Field(alias="entityTypes",default=None,)
 	fields: Optional[list[str]] = Field(alias="fields",default=None,)
 	from_: Optional[int] = Field(alias="from",default=None,)
 	query: Optional[SearchQuery] = Field(alias="query",default=None,)

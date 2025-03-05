@@ -6,11 +6,11 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class ChangeNotification(BaseModel):
-	changeType: Optional[str | ChangeType] = Field(alias="changeType",default=None,)
+	changeType: Optional[ChangeType | str] = Field(alias="changeType",default=None,)
 	clientState: Optional[str] = Field(alias="clientState",default=None,)
 	encryptedContent: Optional[ChangeNotificationEncryptedContent] = Field(alias="encryptedContent",default=None,)
 	id: Optional[str] = Field(alias="id",default=None,)
-	lifecycleEvent: Optional[str | LifecycleEventType] = Field(alias="lifecycleEvent",default=None,)
+	lifecycleEvent: Optional[LifecycleEventType | str] = Field(alias="lifecycleEvent",default=None,)
 	resource: Optional[str] = Field(alias="resource",default=None,)
 	resourceData: Optional[ResourceData] = Field(alias="resourceData",default=None,)
 	subscriptionExpirationDateTime: Optional[datetime] = Field(alias="subscriptionExpirationDateTime",default=None,)

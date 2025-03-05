@@ -7,7 +7,7 @@ from pydantic import BaseModel, Field, SerializeAsAny
 class ExpirationPattern(BaseModel):
 	duration: Optional[str] = Field(alias="duration",default=None,)
 	endDateTime: Optional[datetime] = Field(alias="endDateTime",default=None,)
-	type: Optional[str | ExpirationPatternType] = Field(alias="type",default=None,)
+	type: Optional[ExpirationPatternType | str] = Field(alias="type",default=None,)
 	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 
 from .expiration_pattern_type import ExpirationPatternType

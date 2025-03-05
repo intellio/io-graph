@@ -7,7 +7,7 @@ from pydantic import BaseModel, Field, SerializeAsAny
 class DirectoryDefinition(BaseModel):
 	id: Optional[str] = Field(alias="id",default=None,)
 	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
-	discoverabilities: Optional[str | DirectoryDefinitionDiscoverabilities] = Field(alias="discoverabilities",default=None,)
+	discoverabilities: Optional[DirectoryDefinitionDiscoverabilities | str] = Field(alias="discoverabilities",default=None,)
 	discoveryDateTime: Optional[datetime] = Field(alias="discoveryDateTime",default=None,)
 	name: Optional[str] = Field(alias="name",default=None,)
 	objects: Optional[list[ObjectDefinition]] = Field(alias="objects",default=None,)

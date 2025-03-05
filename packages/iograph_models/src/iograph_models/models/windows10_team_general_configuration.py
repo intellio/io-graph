@@ -26,7 +26,7 @@ class Windows10TeamGeneralConfiguration(BaseModel):
 	maintenanceWindowDurationInHours: Optional[int] = Field(alias="maintenanceWindowDurationInHours",default=None,)
 	maintenanceWindowStartTime: Optional[str] = Field(alias="maintenanceWindowStartTime",default=None,)
 	miracastBlocked: Optional[bool] = Field(alias="miracastBlocked",default=None,)
-	miracastChannel: Optional[str | MiracastChannel] = Field(alias="miracastChannel",default=None,)
+	miracastChannel: Optional[MiracastChannel | str] = Field(alias="miracastChannel",default=None,)
 	miracastRequirePin: Optional[bool] = Field(alias="miracastRequirePin",default=None,)
 	settingsBlockMyMeetingsAndFiles: Optional[bool] = Field(alias="settingsBlockMyMeetingsAndFiles",default=None,)
 	settingsBlockSessionResume: Optional[bool] = Field(alias="settingsBlockSessionResume",default=None,)
@@ -37,7 +37,7 @@ class Windows10TeamGeneralConfiguration(BaseModel):
 	settingsSleepTimeoutInMinutes: Optional[int] = Field(alias="settingsSleepTimeoutInMinutes",default=None,)
 	welcomeScreenBackgroundImageUrl: Optional[str] = Field(alias="welcomeScreenBackgroundImageUrl",default=None,)
 	welcomeScreenBlockAutomaticWakeUp: Optional[bool] = Field(alias="welcomeScreenBlockAutomaticWakeUp",default=None,)
-	welcomeScreenMeetingInformation: Optional[str | WelcomeScreenMeetingInformation] = Field(alias="welcomeScreenMeetingInformation",default=None,)
+	welcomeScreenMeetingInformation: Optional[WelcomeScreenMeetingInformation | str] = Field(alias="welcomeScreenMeetingInformation",default=None,)
 
 from .device_configuration_assignment import DeviceConfigurationAssignment
 from .setting_state_device_summary import SettingStateDeviceSummary

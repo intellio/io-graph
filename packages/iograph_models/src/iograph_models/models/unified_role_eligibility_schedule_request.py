@@ -13,7 +13,7 @@ class UnifiedRoleEligibilityScheduleRequest(BaseModel):
 	createdDateTime: Optional[datetime] = Field(alias="createdDateTime",default=None,)
 	customData: Optional[str] = Field(alias="customData",default=None,)
 	status: Optional[str] = Field(alias="status",default=None,)
-	action: Optional[str | UnifiedRoleScheduleRequestActions] = Field(alias="action",default=None,)
+	action: Optional[UnifiedRoleScheduleRequestActions | str] = Field(alias="action",default=None,)
 	appScopeId: Optional[str] = Field(alias="appScopeId",default=None,)
 	directoryScopeId: Optional[str] = Field(alias="directoryScopeId",default=None,)
 	isValidationOnly: Optional[bool] = Field(alias="isValidationOnly",default=None,)

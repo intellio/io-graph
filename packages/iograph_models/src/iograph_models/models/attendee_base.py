@@ -2,13 +2,14 @@ from __future__ import annotations
 from typing import Optional
 from pydantic import model_validator, ModelWrapValidatorHandler, ValidationError
 from typing_extensions import Self
+from typing import Any
 from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class AttendeeBase(BaseModel):
 	emailAddress: Optional[EmailAddress] = Field(alias="emailAddress",default=None,)
 	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
-	type: Optional[str | AttendeeType] = Field(alias="type",default=None,)
+	type: Optional[AttendeeType | str] = Field(alias="type",default=None,)
 
 	@model_validator(mode="wrap")
 	def convert_discriminator_class(cls, data: Any, handler: ModelWrapValidatorHandler[Self]) -> Self:

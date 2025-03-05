@@ -9,8 +9,8 @@ class CallRecordsClientUserAgent(BaseModel):
 	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 	azureADAppId: Optional[str] = Field(alias="azureADAppId",default=None,)
 	communicationServiceId: Optional[str] = Field(alias="communicationServiceId",default=None,)
-	platform: Optional[str | CallRecordsClientPlatform] = Field(alias="platform",default=None,)
-	productFamily: Optional[str | CallRecordsProductFamily] = Field(alias="productFamily",default=None,)
+	platform: Optional[CallRecordsClientPlatform | str] = Field(alias="platform",default=None,)
+	productFamily: Optional[CallRecordsProductFamily | str] = Field(alias="productFamily",default=None,)
 
 from .call_records_client_platform import CallRecordsClientPlatform
 from .call_records_product_family import CallRecordsProductFamily

@@ -15,7 +15,7 @@ class AgreementAcceptance(BaseModel):
 	deviceOSVersion: Optional[str] = Field(alias="deviceOSVersion",default=None,)
 	expirationDateTime: Optional[datetime] = Field(alias="expirationDateTime",default=None,)
 	recordedDateTime: Optional[datetime] = Field(alias="recordedDateTime",default=None,)
-	state: Optional[str | AgreementAcceptanceState] = Field(alias="state",default=None,)
+	state: Optional[AgreementAcceptanceState | str] = Field(alias="state",default=None,)
 	userDisplayName: Optional[str] = Field(alias="userDisplayName",default=None,)
 	userEmail: Optional[str] = Field(alias="userEmail",default=None,)
 	userId: Optional[str] = Field(alias="userId",default=None,)

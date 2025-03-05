@@ -5,13 +5,13 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class ServiceStatus(BaseModel):
-	backupServiceConsumer: Optional[str | BackupServiceConsumer] = Field(alias="backupServiceConsumer",default=None,)
-	disableReason: Optional[str | DisableReason] = Field(alias="disableReason",default=None,)
+	backupServiceConsumer: Optional[BackupServiceConsumer | str] = Field(alias="backupServiceConsumer",default=None,)
+	disableReason: Optional[DisableReason | str] = Field(alias="disableReason",default=None,)
 	gracePeriodDateTime: Optional[datetime] = Field(alias="gracePeriodDateTime",default=None,)
 	lastModifiedBy: SerializeAsAny[Optional[IdentitySet]] = Field(alias="lastModifiedBy",default=None,)
 	lastModifiedDateTime: Optional[datetime] = Field(alias="lastModifiedDateTime",default=None,)
 	restoreAllowedTillDateTime: Optional[datetime] = Field(alias="restoreAllowedTillDateTime",default=None,)
-	status: Optional[str | BackupServiceStatus] = Field(alias="status",default=None,)
+	status: Optional[BackupServiceStatus | str] = Field(alias="status",default=None,)
 	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 
 from .backup_service_consumer import BackupServiceConsumer

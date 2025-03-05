@@ -4,8 +4,8 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class MediaContentRatingCanada(BaseModel):
-	movieRating: Optional[str | RatingCanadaMoviesType] = Field(alias="movieRating",default=None,)
-	tvRating: Optional[str | RatingCanadaTelevisionType] = Field(alias="tvRating",default=None,)
+	movieRating: Optional[RatingCanadaMoviesType | str] = Field(alias="movieRating",default=None,)
+	tvRating: Optional[RatingCanadaTelevisionType | str] = Field(alias="tvRating",default=None,)
 	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 
 from .rating_canada_movies_type import RatingCanadaMoviesType

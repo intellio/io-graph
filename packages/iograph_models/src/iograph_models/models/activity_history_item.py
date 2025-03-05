@@ -13,7 +13,7 @@ class ActivityHistoryItem(BaseModel):
 	lastActiveDateTime: Optional[datetime] = Field(alias="lastActiveDateTime",default=None,)
 	lastModifiedDateTime: Optional[datetime] = Field(alias="lastModifiedDateTime",default=None,)
 	startedDateTime: Optional[datetime] = Field(alias="startedDateTime",default=None,)
-	status: Optional[str | Status] = Field(alias="status",default=None,)
+	status: Optional[Status | str] = Field(alias="status",default=None,)
 	userTimezone: Optional[str] = Field(alias="userTimezone",default=None,)
 	activity: Optional[UserActivity] = Field(alias="activity",default=None,)
 

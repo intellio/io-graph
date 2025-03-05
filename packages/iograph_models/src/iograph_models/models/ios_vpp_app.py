@@ -19,7 +19,7 @@ class IosVppApp(BaseModel):
 	owner: Optional[str] = Field(alias="owner",default=None,)
 	privacyInformationUrl: Optional[str] = Field(alias="privacyInformationUrl",default=None,)
 	publisher: Optional[str] = Field(alias="publisher",default=None,)
-	publishingState: Optional[str | MobileAppPublishingState] = Field(alias="publishingState",default=None,)
+	publishingState: Optional[MobileAppPublishingState | str] = Field(alias="publishingState",default=None,)
 	assignments: Optional[list[MobileAppAssignment]] = Field(alias="assignments",default=None,)
 	categories: Optional[list[MobileAppCategory]] = Field(alias="categories",default=None,)
 	applicableDeviceType: Optional[IosDeviceType] = Field(alias="applicableDeviceType",default=None,)
@@ -29,7 +29,7 @@ class IosVppApp(BaseModel):
 	releaseDateTime: Optional[datetime] = Field(alias="releaseDateTime",default=None,)
 	totalLicenseCount: Optional[int] = Field(alias="totalLicenseCount",default=None,)
 	usedLicenseCount: Optional[int] = Field(alias="usedLicenseCount",default=None,)
-	vppTokenAccountType: Optional[str | VppTokenAccountType] = Field(alias="vppTokenAccountType",default=None,)
+	vppTokenAccountType: Optional[VppTokenAccountType | str] = Field(alias="vppTokenAccountType",default=None,)
 	vppTokenAppleId: Optional[str] = Field(alias="vppTokenAppleId",default=None,)
 	vppTokenOrganizationName: Optional[str] = Field(alias="vppTokenOrganizationName",default=None,)
 

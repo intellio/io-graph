@@ -15,7 +15,7 @@ class ComplianceManagementPartner(BaseModel):
 	lastHeartbeatDateTime: Optional[datetime] = Field(alias="lastHeartbeatDateTime",default=None,)
 	macOsEnrollmentAssignments: Optional[list[ComplianceManagementPartnerAssignment]] = Field(alias="macOsEnrollmentAssignments",default=None,)
 	macOsOnboarded: Optional[bool] = Field(alias="macOsOnboarded",default=None,)
-	partnerState: Optional[str | DeviceManagementPartnerTenantState] = Field(alias="partnerState",default=None,)
+	partnerState: Optional[DeviceManagementPartnerTenantState | str] = Field(alias="partnerState",default=None,)
 
 from .compliance_management_partner_assignment import ComplianceManagementPartnerAssignment
 from .compliance_management_partner_assignment import ComplianceManagementPartnerAssignment

@@ -4,7 +4,7 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class SharedPCAccountManagerPolicy(BaseModel):
-	accountDeletionPolicy: Optional[str | SharedPCAccountDeletionPolicyType] = Field(alias="accountDeletionPolicy",default=None,)
+	accountDeletionPolicy: Optional[SharedPCAccountDeletionPolicyType | str] = Field(alias="accountDeletionPolicy",default=None,)
 	cacheAccountsAboveDiskFreePercentage: Optional[int] = Field(alias="cacheAccountsAboveDiskFreePercentage",default=None,)
 	inactiveThresholdDays: Optional[int] = Field(alias="inactiveThresholdDays",default=None,)
 	removeAccountsBelowDiskFreePercentage: Optional[int] = Field(alias="removeAccountsBelowDiskFreePercentage",default=None,)

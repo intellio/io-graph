@@ -7,7 +7,7 @@ class VoiceAuthenticationMethodConfiguration(BaseModel):
 	id: Optional[str] = Field(alias="id",default=None,)
 	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 	excludeTargets: Optional[list[ExcludeTarget]] = Field(alias="excludeTargets",default=None,)
-	state: Optional[str | AuthenticationMethodState] = Field(alias="state",default=None,)
+	state: Optional[AuthenticationMethodState | str] = Field(alias="state",default=None,)
 	isOfficePhoneAllowed: Optional[bool] = Field(alias="isOfficePhoneAllowed",default=None,)
 	includeTargets: SerializeAsAny[Optional[list[AuthenticationMethodTarget]]] = Field(alias="includeTargets",default=None,)
 

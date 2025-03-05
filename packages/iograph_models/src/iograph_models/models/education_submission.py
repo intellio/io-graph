@@ -15,7 +15,7 @@ class EducationSubmission(BaseModel):
 	resourcesFolderUrl: Optional[str] = Field(alias="resourcesFolderUrl",default=None,)
 	returnedBy: SerializeAsAny[Optional[IdentitySet]] = Field(alias="returnedBy",default=None,)
 	returnedDateTime: Optional[datetime] = Field(alias="returnedDateTime",default=None,)
-	status: Optional[str | EducationSubmissionStatus] = Field(alias="status",default=None,)
+	status: Optional[EducationSubmissionStatus | str] = Field(alias="status",default=None,)
 	submittedBy: SerializeAsAny[Optional[IdentitySet]] = Field(alias="submittedBy",default=None,)
 	submittedDateTime: Optional[datetime] = Field(alias="submittedDateTime",default=None,)
 	unsubmittedBy: SerializeAsAny[Optional[IdentitySet]] = Field(alias="unsubmittedBy",default=None,)

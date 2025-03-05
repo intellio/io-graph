@@ -11,7 +11,7 @@ class DelegatedAdminAccessAssignment(BaseModel):
 	accessDetails: Optional[DelegatedAdminAccessDetails] = Field(alias="accessDetails",default=None,)
 	createdDateTime: Optional[datetime] = Field(alias="createdDateTime",default=None,)
 	lastModifiedDateTime: Optional[datetime] = Field(alias="lastModifiedDateTime",default=None,)
-	status: Optional[str | DelegatedAdminAccessAssignmentStatus] = Field(alias="status",default=None,)
+	status: Optional[DelegatedAdminAccessAssignmentStatus | str] = Field(alias="status",default=None,)
 
 from .delegated_admin_access_container import DelegatedAdminAccessContainer
 from .delegated_admin_access_details import DelegatedAdminAccessDetails

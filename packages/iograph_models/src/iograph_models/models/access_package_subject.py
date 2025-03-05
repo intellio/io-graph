@@ -11,7 +11,7 @@ class AccessPackageSubject(BaseModel):
 	objectId: Optional[str] = Field(alias="objectId",default=None,)
 	onPremisesSecurityIdentifier: Optional[str] = Field(alias="onPremisesSecurityIdentifier",default=None,)
 	principalName: Optional[str] = Field(alias="principalName",default=None,)
-	subjectType: Optional[str | AccessPackageSubjectType] = Field(alias="subjectType",default=None,)
+	subjectType: Optional[AccessPackageSubjectType | str] = Field(alias="subjectType",default=None,)
 	connectedOrganization: Optional[ConnectedOrganization] = Field(alias="connectedOrganization",default=None,)
 
 from .access_package_subject_type import AccessPackageSubjectType

@@ -12,7 +12,7 @@ class TeamsAppDefinition(BaseModel):
 	description: Optional[str] = Field(alias="description",default=None,)
 	displayName: Optional[str] = Field(alias="displayName",default=None,)
 	lastModifiedDateTime: Optional[datetime] = Field(alias="lastModifiedDateTime",default=None,)
-	publishingState: Optional[str | TeamsAppPublishingState] = Field(alias="publishingState",default=None,)
+	publishingState: Optional[TeamsAppPublishingState | str] = Field(alias="publishingState",default=None,)
 	shortDescription: Optional[str] = Field(alias="shortDescription",default=None,)
 	teamsAppId: Optional[str] = Field(alias="teamsAppId",default=None,)
 	version: Optional[str] = Field(alias="version",default=None,)

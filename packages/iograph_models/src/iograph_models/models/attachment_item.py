@@ -4,7 +4,7 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class AttachmentItem(BaseModel):
-	attachmentType: Optional[str | AttachmentType] = Field(alias="attachmentType",default=None,)
+	attachmentType: Optional[AttachmentType | str] = Field(alias="attachmentType",default=None,)
 	contentId: Optional[str] = Field(alias="contentId",default=None,)
 	contentType: Optional[str] = Field(alias="contentType",default=None,)
 	isInline: Optional[bool] = Field(alias="isInline",default=None,)

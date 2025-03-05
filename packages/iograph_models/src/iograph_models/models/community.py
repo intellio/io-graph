@@ -9,7 +9,7 @@ class Community(BaseModel):
 	description: Optional[str] = Field(alias="description",default=None,)
 	displayName: Optional[str] = Field(alias="displayName",default=None,)
 	groupId: Optional[str] = Field(alias="groupId",default=None,)
-	privacy: Optional[str | CommunityPrivacy] = Field(alias="privacy",default=None,)
+	privacy: Optional[CommunityPrivacy | str] = Field(alias="privacy",default=None,)
 	group: Optional[Group] = Field(alias="group",default=None,)
 	owners: Optional[list[User]] = Field(alias="owners",default=None,)
 

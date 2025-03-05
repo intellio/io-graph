@@ -19,7 +19,7 @@ class SharedPCConfiguration(BaseModel):
 	userStatuses: Optional[list[DeviceConfigurationUserStatus]] = Field(alias="userStatuses",default=None,)
 	userStatusOverview: Optional[DeviceConfigurationUserOverview] = Field(alias="userStatusOverview",default=None,)
 	accountManagerPolicy: Optional[SharedPCAccountManagerPolicy] = Field(alias="accountManagerPolicy",default=None,)
-	allowedAccounts: Optional[str | SharedPCAllowedAccountType] = Field(alias="allowedAccounts",default=None,)
+	allowedAccounts: Optional[SharedPCAllowedAccountType | str] = Field(alias="allowedAccounts",default=None,)
 	allowLocalStorage: Optional[bool] = Field(alias="allowLocalStorage",default=None,)
 	disableAccountManager: Optional[bool] = Field(alias="disableAccountManager",default=None,)
 	disableEduPolicies: Optional[bool] = Field(alias="disableEduPolicies",default=None,)

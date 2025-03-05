@@ -7,7 +7,7 @@ class Fido2AuthenticationMethodConfiguration(BaseModel):
 	id: Optional[str] = Field(alias="id",default=None,)
 	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 	excludeTargets: Optional[list[ExcludeTarget]] = Field(alias="excludeTargets",default=None,)
-	state: Optional[str | AuthenticationMethodState] = Field(alias="state",default=None,)
+	state: Optional[AuthenticationMethodState | str] = Field(alias="state",default=None,)
 	isAttestationEnforced: Optional[bool] = Field(alias="isAttestationEnforced",default=None,)
 	isSelfServiceRegistrationAllowed: Optional[bool] = Field(alias="isSelfServiceRegistrationAllowed",default=None,)
 	keyRestrictions: Optional[Fido2KeyRestrictions] = Field(alias="keyRestrictions",default=None,)

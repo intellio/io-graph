@@ -4,7 +4,7 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class AccessPackageAssignmentReviewSettings(BaseModel):
-	expirationBehavior: Optional[str | AccessReviewExpirationBehavior] = Field(alias="expirationBehavior",default=None,)
+	expirationBehavior: Optional[AccessReviewExpirationBehavior | str] = Field(alias="expirationBehavior",default=None,)
 	fallbackReviewers: SerializeAsAny[Optional[list[SubjectSet]]] = Field(alias="fallbackReviewers",default=None,)
 	isEnabled: Optional[bool] = Field(alias="isEnabled",default=None,)
 	isRecommendationEnabled: Optional[bool] = Field(alias="isRecommendationEnabled",default=None,)

@@ -9,7 +9,7 @@ class RemoteAssistancePartner(BaseModel):
 	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 	displayName: Optional[str] = Field(alias="displayName",default=None,)
 	lastConnectionDateTime: Optional[datetime] = Field(alias="lastConnectionDateTime",default=None,)
-	onboardingStatus: Optional[str | RemoteAssistanceOnboardingStatus] = Field(alias="onboardingStatus",default=None,)
+	onboardingStatus: Optional[RemoteAssistanceOnboardingStatus | str] = Field(alias="onboardingStatus",default=None,)
 	onboardingUrl: Optional[str] = Field(alias="onboardingUrl",default=None,)
 
 from .remote_assistance_onboarding_status import RemoteAssistanceOnboardingStatus

@@ -9,7 +9,7 @@ class DataPolicyOperation(BaseModel):
 	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 	completedDateTime: Optional[datetime] = Field(alias="completedDateTime",default=None,)
 	progress: float | str | ReferenceNumeric
-	status: Optional[str | DataPolicyOperationStatus] = Field(alias="status",default=None,)
+	status: Optional[DataPolicyOperationStatus | str] = Field(alias="status",default=None,)
 	storageLocation: Optional[str] = Field(alias="storageLocation",default=None,)
 	submittedDateTime: Optional[datetime] = Field(alias="submittedDateTime",default=None,)
 	userId: Optional[str] = Field(alias="userId",default=None,)

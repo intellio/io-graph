@@ -15,8 +15,8 @@ class LoginPage(BaseModel):
 	language: Optional[str] = Field(alias="language",default=None,)
 	lastModifiedBy: Optional[EmailIdentity] = Field(alias="lastModifiedBy",default=None,)
 	lastModifiedDateTime: Optional[datetime] = Field(alias="lastModifiedDateTime",default=None,)
-	source: Optional[str | SimulationContentSource] = Field(alias="source",default=None,)
-	status: Optional[str | SimulationContentStatus] = Field(alias="status",default=None,)
+	source: Optional[SimulationContentSource | str] = Field(alias="source",default=None,)
+	status: Optional[SimulationContentStatus | str] = Field(alias="status",default=None,)
 
 from .email_identity import EmailIdentity
 from .email_identity import EmailIdentity

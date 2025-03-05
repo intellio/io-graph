@@ -9,7 +9,7 @@ class UserExperienceAnalyticsModelScores(BaseModel):
 	appReliabilityScore: float | str | ReferenceNumeric
 	batteryHealthScore: float | str | ReferenceNumeric
 	endpointAnalyticsScore: float | str | ReferenceNumeric
-	healthStatus: Optional[str | UserExperienceAnalyticsHealthState] = Field(alias="healthStatus",default=None,)
+	healthStatus: Optional[UserExperienceAnalyticsHealthState | str] = Field(alias="healthStatus",default=None,)
 	manufacturer: Optional[str] = Field(alias="manufacturer",default=None,)
 	model: Optional[str] = Field(alias="model",default=None,)
 	modelDeviceCount: Optional[int] = Field(alias="modelDeviceCount",default=None,)

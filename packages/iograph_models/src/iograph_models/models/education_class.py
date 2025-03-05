@@ -13,7 +13,7 @@ class EducationClass(BaseModel):
 	displayName: Optional[str] = Field(alias="displayName",default=None,)
 	externalId: Optional[str] = Field(alias="externalId",default=None,)
 	externalName: Optional[str] = Field(alias="externalName",default=None,)
-	externalSource: Optional[str | EducationExternalSource] = Field(alias="externalSource",default=None,)
+	externalSource: Optional[EducationExternalSource | str] = Field(alias="externalSource",default=None,)
 	externalSourceDetail: Optional[str] = Field(alias="externalSourceDetail",default=None,)
 	grade: Optional[str] = Field(alias="grade",default=None,)
 	mailNickname: Optional[str] = Field(alias="mailNickname",default=None,)

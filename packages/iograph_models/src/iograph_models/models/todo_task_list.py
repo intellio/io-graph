@@ -9,7 +9,7 @@ class TodoTaskList(BaseModel):
 	displayName: Optional[str] = Field(alias="displayName",default=None,)
 	isOwner: Optional[bool] = Field(alias="isOwner",default=None,)
 	isShared: Optional[bool] = Field(alias="isShared",default=None,)
-	wellknownListName: Optional[str | WellknownListName] = Field(alias="wellknownListName",default=None,)
+	wellknownListName: Optional[WellknownListName | str] = Field(alias="wellknownListName",default=None,)
 	extensions: SerializeAsAny[Optional[list[Extension]]] = Field(alias="extensions",default=None,)
 	tasks: Optional[list[TodoTask]] = Field(alias="tasks",default=None,)
 

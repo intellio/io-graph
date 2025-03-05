@@ -10,7 +10,7 @@ class WindowsAutopilotDeploymentProfile(BaseModel):
 	createdDateTime: Optional[datetime] = Field(alias="createdDateTime",default=None,)
 	description: Optional[str] = Field(alias="description",default=None,)
 	deviceNameTemplate: Optional[str] = Field(alias="deviceNameTemplate",default=None,)
-	deviceType: Optional[str | WindowsAutopilotDeviceType] = Field(alias="deviceType",default=None,)
+	deviceType: Optional[WindowsAutopilotDeviceType | str] = Field(alias="deviceType",default=None,)
 	displayName: Optional[str] = Field(alias="displayName",default=None,)
 	hardwareHashExtractionEnabled: Optional[bool] = Field(alias="hardwareHashExtractionEnabled",default=None,)
 	lastModifiedDateTime: Optional[datetime] = Field(alias="lastModifiedDateTime",default=None,)

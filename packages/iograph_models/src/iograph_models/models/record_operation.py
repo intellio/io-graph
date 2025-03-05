@@ -8,7 +8,7 @@ class RecordOperation(BaseModel):
 	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 	clientContext: Optional[str] = Field(alias="clientContext",default=None,)
 	resultInfo: Optional[ResultInfo] = Field(alias="resultInfo",default=None,)
-	status: Optional[str | OperationStatus] = Field(alias="status",default=None,)
+	status: Optional[OperationStatus | str] = Field(alias="status",default=None,)
 	recordingAccessToken: Optional[str] = Field(alias="recordingAccessToken",default=None,)
 	recordingLocation: Optional[str] = Field(alias="recordingLocation",default=None,)
 

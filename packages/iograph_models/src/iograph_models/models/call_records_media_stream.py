@@ -5,7 +5,7 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class CallRecordsMediaStream(BaseModel):
-	audioCodec: Optional[str | CallRecordsAudioCodec] = Field(alias="audioCodec",default=None,)
+	audioCodec: Optional[CallRecordsAudioCodec | str] = Field(alias="audioCodec",default=None,)
 	averageAudioDegradation: float | str | ReferenceNumeric
 	averageAudioNetworkJitter: Optional[str] = Field(alias="averageAudioNetworkJitter",default=None,)
 	averageBandwidthEstimate: Optional[int] = Field(alias="averageBandwidthEstimate",default=None,)
@@ -31,9 +31,9 @@ class CallRecordsMediaStream(BaseModel):
 	postForwardErrorCorrectionPacketLossRate: float | str | ReferenceNumeric
 	rmsFreezeDuration: Optional[str] = Field(alias="rmsFreezeDuration",default=None,)
 	startDateTime: Optional[datetime] = Field(alias="startDateTime",default=None,)
-	streamDirection: Optional[str | CallRecordsMediaStreamDirection] = Field(alias="streamDirection",default=None,)
+	streamDirection: Optional[CallRecordsMediaStreamDirection | str] = Field(alias="streamDirection",default=None,)
 	streamId: Optional[str] = Field(alias="streamId",default=None,)
-	videoCodec: Optional[str | CallRecordsVideoCodec] = Field(alias="videoCodec",default=None,)
+	videoCodec: Optional[CallRecordsVideoCodec | str] = Field(alias="videoCodec",default=None,)
 	wasMediaBypassed: Optional[bool] = Field(alias="wasMediaBypassed",default=None,)
 	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 

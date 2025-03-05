@@ -2,13 +2,14 @@ from __future__ import annotations
 from typing import Optional
 from pydantic import model_validator, ModelWrapValidatorHandler, ValidationError
 from typing_extensions import Self
+from typing import Any
 from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class SecurityIndicator(BaseModel):
 	id: Optional[str] = Field(alias="id",default=None,)
 	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
-	source: Optional[str | SecurityIndicatorSource] = Field(alias="source",default=None,)
+	source: Optional[SecurityIndicatorSource | str] = Field(alias="source",default=None,)
 	artifact: SerializeAsAny[Optional[SecurityArtifact]] = Field(alias="artifact",default=None,)
 
 	@model_validator(mode="wrap")

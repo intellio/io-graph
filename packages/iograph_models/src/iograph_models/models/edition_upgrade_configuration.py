@@ -19,9 +19,9 @@ class EditionUpgradeConfiguration(BaseModel):
 	userStatuses: Optional[list[DeviceConfigurationUserStatus]] = Field(alias="userStatuses",default=None,)
 	userStatusOverview: Optional[DeviceConfigurationUserOverview] = Field(alias="userStatusOverview",default=None,)
 	license: Optional[str] = Field(alias="license",default=None,)
-	licenseType: Optional[str | EditionUpgradeLicenseType] = Field(alias="licenseType",default=None,)
+	licenseType: Optional[EditionUpgradeLicenseType | str] = Field(alias="licenseType",default=None,)
 	productKey: Optional[str] = Field(alias="productKey",default=None,)
-	targetEdition: Optional[str | Windows10EditionType] = Field(alias="targetEdition",default=None,)
+	targetEdition: Optional[Windows10EditionType | str] = Field(alias="targetEdition",default=None,)
 
 from .device_configuration_assignment import DeviceConfigurationAssignment
 from .setting_state_device_summary import SettingStateDeviceSummary

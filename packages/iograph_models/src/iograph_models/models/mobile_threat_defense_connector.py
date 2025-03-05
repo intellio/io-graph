@@ -17,7 +17,7 @@ class MobileThreatDefenseConnector(BaseModel):
 	iosMobileApplicationManagementEnabled: Optional[bool] = Field(alias="iosMobileApplicationManagementEnabled",default=None,)
 	lastHeartbeatDateTime: Optional[datetime] = Field(alias="lastHeartbeatDateTime",default=None,)
 	microsoftDefenderForEndpointAttachEnabled: Optional[bool] = Field(alias="microsoftDefenderForEndpointAttachEnabled",default=None,)
-	partnerState: Optional[str | MobileThreatPartnerTenantState] = Field(alias="partnerState",default=None,)
+	partnerState: Optional[MobileThreatPartnerTenantState | str] = Field(alias="partnerState",default=None,)
 	partnerUnresponsivenessThresholdInDays: Optional[int] = Field(alias="partnerUnresponsivenessThresholdInDays",default=None,)
 	partnerUnsupportedOsVersionBlocked: Optional[bool] = Field(alias="partnerUnsupportedOsVersionBlocked",default=None,)
 	windowsDeviceBlockedOnMissingPartnerData: Optional[bool] = Field(alias="windowsDeviceBlockedOnMissingPartnerData",default=None,)

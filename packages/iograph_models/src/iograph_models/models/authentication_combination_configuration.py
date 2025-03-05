@@ -2,13 +2,14 @@ from __future__ import annotations
 from typing import Optional
 from pydantic import model_validator, ModelWrapValidatorHandler, ValidationError
 from typing_extensions import Self
+from typing import Any
 from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class AuthenticationCombinationConfiguration(BaseModel):
 	id: Optional[str] = Field(alias="id",default=None,)
 	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
-	appliesToCombinations: Optional[list[str | AuthenticationMethodModes]] = Field(alias="appliesToCombinations",default=None,)
+	appliesToCombinations: Optional[list[AuthenticationMethodModes | str]] = Field(alias="appliesToCombinations",default=None,)
 
 	@model_validator(mode="wrap")
 	def convert_discriminator_class(cls, data: Any, handler: ModelWrapValidatorHandler[Self]) -> Self:

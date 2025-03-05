@@ -11,9 +11,9 @@ from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:
 	from ......request_adapter import HttpxRequestAdapter
-from iograph_models.models.favorite_post_response import FavoritePostResponse
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.models.favorite_post_request import FavoritePostRequest
+from iograph_models.models.favorite_post_response import FavoritePostResponse
 
 
 class FavoriteRequest(BaseRequestBuilder):

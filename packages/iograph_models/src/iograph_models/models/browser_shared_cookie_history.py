@@ -12,7 +12,7 @@ class BrowserSharedCookieHistory(BaseModel):
 	lastModifiedBy: SerializeAsAny[Optional[IdentitySet]] = Field(alias="lastModifiedBy",default=None,)
 	path: Optional[str] = Field(alias="path",default=None,)
 	publishedDateTime: Optional[datetime] = Field(alias="publishedDateTime",default=None,)
-	sourceEnvironment: Optional[str | BrowserSharedCookieSourceEnvironment] = Field(alias="sourceEnvironment",default=None,)
+	sourceEnvironment: Optional[BrowserSharedCookieSourceEnvironment | str] = Field(alias="sourceEnvironment",default=None,)
 	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 
 from .identity_set import IdentitySet

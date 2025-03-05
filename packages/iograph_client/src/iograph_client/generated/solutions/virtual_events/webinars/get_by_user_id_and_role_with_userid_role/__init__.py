@@ -11,8 +11,8 @@ from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:
 	from ......request_adapter import HttpxRequestAdapter
-from iograph_models.models.get_by_user_id_and_role_with_userid_role_get_response import Get_by_user_id_and_role_with_userid_roleGetResponse
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.models.get_by_user_id_and_role_with_userid_role_get_response import Get_by_user_id_and_role_with_userid_roleGetResponse
 
 
 class GetByUserIdAndRoleWithUserIdRoleRequest(BaseRequestBuilder):

@@ -2,6 +2,7 @@ from __future__ import annotations
 from typing import Optional
 from pydantic import model_validator, ModelWrapValidatorHandler, ValidationError
 from typing_extensions import Self
+from typing import Any
 from datetime import datetime
 from pydantic import BaseModel, Field, SerializeAsAny
 
@@ -11,7 +12,7 @@ class Operation(BaseModel):
 	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 	createdDateTime: Optional[datetime] = Field(alias="createdDateTime",default=None,)
 	lastActionDateTime: Optional[datetime] = Field(alias="lastActionDateTime",default=None,)
-	status: Optional[str | OperationStatus] = Field(alias="status",default=None,)
+	status: Optional[OperationStatus | str] = Field(alias="status",default=None,)
 
 	@model_validator(mode="wrap")
 	def convert_discriminator_class(cls, data: Any, handler: ModelWrapValidatorHandler[Self]) -> Self:

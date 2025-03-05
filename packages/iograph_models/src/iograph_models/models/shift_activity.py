@@ -10,7 +10,7 @@ class ShiftActivity(BaseModel):
 	endDateTime: Optional[datetime] = Field(alias="endDateTime",default=None,)
 	isPaid: Optional[bool] = Field(alias="isPaid",default=None,)
 	startDateTime: Optional[datetime] = Field(alias="startDateTime",default=None,)
-	theme: Optional[str | ScheduleEntityTheme] = Field(alias="theme",default=None,)
+	theme: Optional[ScheduleEntityTheme | str] = Field(alias="theme",default=None,)
 	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 
 from .schedule_entity_theme import ScheduleEntityTheme

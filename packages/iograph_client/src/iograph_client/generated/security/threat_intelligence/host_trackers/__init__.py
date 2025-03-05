@@ -15,8 +15,8 @@ if TYPE_CHECKING:
 	from .by_host_tracker_id import ByHostTrackerIdRequest
 	from .....request_adapter import HttpxRequestAdapter
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
-from iograph_models.models.security_host_tracker_collection_response import SecurityHostTrackerCollectionResponse
 from iograph_models.models.security_host_tracker import SecurityHostTracker
+from iograph_models.models.security_host_tracker_collection_response import SecurityHostTrackerCollectionResponse
 
 
 class HostTrackersRequest(BaseRequestBuilder):

@@ -4,7 +4,7 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class BookingPageSettings(BaseModel):
-	accessControl: Optional[str | BookingPageAccessControl] = Field(alias="accessControl",default=None,)
+	accessControl: Optional[BookingPageAccessControl | str] = Field(alias="accessControl",default=None,)
 	bookingPageColorCode: Optional[str] = Field(alias="bookingPageColorCode",default=None,)
 	businessTimeZone: Optional[str] = Field(alias="businessTimeZone",default=None,)
 	customerConsentMessage: Optional[str] = Field(alias="customerConsentMessage",default=None,)

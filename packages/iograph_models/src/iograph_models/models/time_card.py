@@ -14,10 +14,10 @@ class TimeCard(BaseModel):
 	breaks: Optional[list[TimeCardBreak]] = Field(alias="breaks",default=None,)
 	clockInEvent: Optional[TimeCardEvent] = Field(alias="clockInEvent",default=None,)
 	clockOutEvent: Optional[TimeCardEvent] = Field(alias="clockOutEvent",default=None,)
-	confirmedBy: Optional[str | ConfirmedBy] = Field(alias="confirmedBy",default=None,)
+	confirmedBy: Optional[ConfirmedBy | str] = Field(alias="confirmedBy",default=None,)
 	notes: Optional[ItemBody] = Field(alias="notes",default=None,)
 	originalEntry: Optional[TimeCardEntry] = Field(alias="originalEntry",default=None,)
-	state: Optional[str | TimeCardState] = Field(alias="state",default=None,)
+	state: Optional[TimeCardState | str] = Field(alias="state",default=None,)
 	userId: Optional[str] = Field(alias="userId",default=None,)
 
 from .identity_set import IdentitySet

@@ -10,7 +10,7 @@ class MultiTenantOrganization(BaseModel):
 	createdDateTime: Optional[datetime] = Field(alias="createdDateTime",default=None,)
 	description: Optional[str] = Field(alias="description",default=None,)
 	displayName: Optional[str] = Field(alias="displayName",default=None,)
-	state: Optional[str | MultiTenantOrganizationState] = Field(alias="state",default=None,)
+	state: Optional[MultiTenantOrganizationState | str] = Field(alias="state",default=None,)
 	joinRequest: Optional[MultiTenantOrganizationJoinRequestRecord] = Field(alias="joinRequest",default=None,)
 	tenants: Optional[list[MultiTenantOrganizationMember]] = Field(alias="tenants",default=None,)
 

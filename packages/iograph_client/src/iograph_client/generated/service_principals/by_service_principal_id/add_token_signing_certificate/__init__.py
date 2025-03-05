@@ -11,8 +11,8 @@ from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:
 	from .....request_adapter import HttpxRequestAdapter
-from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.models.add_token_signing_certificate_post_request import Add_token_signing_certificatePostRequest
+from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.models.self_signed_certificate import SelfSignedCertificate
 
 

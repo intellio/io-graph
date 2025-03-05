@@ -10,7 +10,7 @@ class RichLongRunningOperation(BaseModel):
 	createdDateTime: Optional[datetime] = Field(alias="createdDateTime",default=None,)
 	lastActionDateTime: Optional[datetime] = Field(alias="lastActionDateTime",default=None,)
 	resourceLocation: Optional[str] = Field(alias="resourceLocation",default=None,)
-	status: Optional[str | LongRunningOperationStatus] = Field(alias="status",default=None,)
+	status: Optional[LongRunningOperationStatus | str] = Field(alias="status",default=None,)
 	statusDetail: Optional[str] = Field(alias="statusDetail",default=None,)
 	error: Optional[PublicError] = Field(alias="error",default=None,)
 	percentageComplete: Optional[int] = Field(alias="percentageComplete",default=None,)

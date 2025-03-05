@@ -4,7 +4,7 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class BroadcastMeetingSettings(BaseModel):
-	allowedAudience: Optional[str | BroadcastMeetingAudience] = Field(alias="allowedAudience",default=None,)
+	allowedAudience: Optional[BroadcastMeetingAudience | str] = Field(alias="allowedAudience",default=None,)
 	captions: Optional[BroadcastMeetingCaptionSettings] = Field(alias="captions",default=None,)
 	isAttendeeReportEnabled: Optional[bool] = Field(alias="isAttendeeReportEnabled",default=None,)
 	isQuestionAndAnswerEnabled: Optional[bool] = Field(alias="isQuestionAndAnswerEnabled",default=None,)

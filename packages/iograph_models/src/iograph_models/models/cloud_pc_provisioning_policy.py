@@ -17,10 +17,10 @@ class CloudPcProvisioningPolicy(BaseModel):
 	gracePeriodInHours: Optional[int] = Field(alias="gracePeriodInHours",default=None,)
 	imageDisplayName: Optional[str] = Field(alias="imageDisplayName",default=None,)
 	imageId: Optional[str] = Field(alias="imageId",default=None,)
-	imageType: Optional[str | CloudPcProvisioningPolicyImageType] = Field(alias="imageType",default=None,)
+	imageType: Optional[CloudPcProvisioningPolicyImageType | str] = Field(alias="imageType",default=None,)
 	localAdminEnabled: Optional[bool] = Field(alias="localAdminEnabled",default=None,)
 	microsoftManagedDesktop: Optional[MicrosoftManagedDesktop] = Field(alias="microsoftManagedDesktop",default=None,)
-	provisioningType: Optional[str | CloudPcProvisioningType] = Field(alias="provisioningType",default=None,)
+	provisioningType: Optional[CloudPcProvisioningType | str] = Field(alias="provisioningType",default=None,)
 	windowsSetting: Optional[CloudPcWindowsSetting] = Field(alias="windowsSetting",default=None,)
 	assignments: Optional[list[CloudPcProvisioningPolicyAssignment]] = Field(alias="assignments",default=None,)
 

@@ -19,7 +19,7 @@ class CopyNotebookModel(BaseModel):
 	sectionGroupsUrl: Optional[str] = Field(alias="sectionGroupsUrl",default=None,)
 	sectionsUrl: Optional[str] = Field(alias="sectionsUrl",default=None,)
 	self: Optional[str] = Field(alias="self",default=None,)
-	userRole: Optional[str | OnenoteUserRole] = Field(alias="userRole",default=None,)
+	userRole: Optional[OnenoteUserRole | str] = Field(alias="userRole",default=None,)
 	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 
 from .identity_set import IdentitySet

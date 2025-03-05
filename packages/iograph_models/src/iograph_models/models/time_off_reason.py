@@ -13,7 +13,7 @@ class TimeOffReason(BaseModel):
 	lastModifiedDateTime: Optional[datetime] = Field(alias="lastModifiedDateTime",default=None,)
 	code: Optional[str] = Field(alias="code",default=None,)
 	displayName: Optional[str] = Field(alias="displayName",default=None,)
-	iconType: Optional[str | TimeOffReasonIconType] = Field(alias="iconType",default=None,)
+	iconType: Optional[TimeOffReasonIconType | str] = Field(alias="iconType",default=None,)
 	isActive: Optional[bool] = Field(alias="isActive",default=None,)
 
 from .identity_set import IdentitySet

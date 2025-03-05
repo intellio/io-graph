@@ -8,7 +8,7 @@ class ScheduleItem(BaseModel):
 	isPrivate: Optional[bool] = Field(alias="isPrivate",default=None,)
 	location: Optional[str] = Field(alias="location",default=None,)
 	start: Optional[DateTimeTimeZone] = Field(alias="start",default=None,)
-	status: Optional[str | FreeBusyStatus] = Field(alias="status",default=None,)
+	status: Optional[FreeBusyStatus | str] = Field(alias="status",default=None,)
 	subject: Optional[str] = Field(alias="subject",default=None,)
 	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 

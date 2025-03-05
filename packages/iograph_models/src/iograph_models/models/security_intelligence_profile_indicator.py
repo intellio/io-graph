@@ -7,7 +7,7 @@ from pydantic import BaseModel, Field, SerializeAsAny
 class SecurityIntelligenceProfileIndicator(BaseModel):
 	id: Optional[str] = Field(alias="id",default=None,)
 	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
-	source: Optional[str | SecurityIndicatorSource] = Field(alias="source",default=None,)
+	source: Optional[SecurityIndicatorSource | str] = Field(alias="source",default=None,)
 	artifact: SerializeAsAny[Optional[SecurityArtifact]] = Field(alias="artifact",default=None,)
 	firstSeenDateTime: Optional[datetime] = Field(alias="firstSeenDateTime",default=None,)
 	lastSeenDateTime: Optional[datetime] = Field(alias="lastSeenDateTime",default=None,)

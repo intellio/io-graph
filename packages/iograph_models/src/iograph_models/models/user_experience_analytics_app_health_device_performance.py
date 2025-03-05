@@ -15,7 +15,7 @@ class UserExperienceAnalyticsAppHealthDevicePerformance(BaseModel):
 	deviceId: Optional[str] = Field(alias="deviceId",default=None,)
 	deviceManufacturer: Optional[str] = Field(alias="deviceManufacturer",default=None,)
 	deviceModel: Optional[str] = Field(alias="deviceModel",default=None,)
-	healthStatus: Optional[str | UserExperienceAnalyticsHealthState] = Field(alias="healthStatus",default=None,)
+	healthStatus: Optional[UserExperienceAnalyticsHealthState | str] = Field(alias="healthStatus",default=None,)
 	meanTimeToFailureInMinutes: Optional[int] = Field(alias="meanTimeToFailureInMinutes",default=None,)
 	processedDateTime: Optional[datetime] = Field(alias="processedDateTime",default=None,)
 

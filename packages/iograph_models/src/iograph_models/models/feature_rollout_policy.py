@@ -8,7 +8,7 @@ class FeatureRolloutPolicy(BaseModel):
 	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 	description: Optional[str] = Field(alias="description",default=None,)
 	displayName: Optional[str] = Field(alias="displayName",default=None,)
-	feature: Optional[str | StagedFeatureName] = Field(alias="feature",default=None,)
+	feature: Optional[StagedFeatureName | str] = Field(alias="feature",default=None,)
 	isAppliedToOrganization: Optional[bool] = Field(alias="isAppliedToOrganization",default=None,)
 	isEnabled: Optional[bool] = Field(alias="isEnabled",default=None,)
 	appliesTo: SerializeAsAny[Optional[list[DirectoryObject]]] = Field(alias="appliesTo",default=None,)

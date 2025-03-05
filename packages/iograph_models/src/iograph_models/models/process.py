@@ -9,7 +9,7 @@ class Process(BaseModel):
 	commandLine: Optional[str] = Field(alias="commandLine",default=None,)
 	createdDateTime: Optional[datetime] = Field(alias="createdDateTime",default=None,)
 	fileHash: Optional[FileHash] = Field(alias="fileHash",default=None,)
-	integrityLevel: Optional[str | ProcessIntegrityLevel] = Field(alias="integrityLevel",default=None,)
+	integrityLevel: Optional[ProcessIntegrityLevel | str] = Field(alias="integrityLevel",default=None,)
 	isElevated: Optional[bool] = Field(alias="isElevated",default=None,)
 	name: Optional[str] = Field(alias="name",default=None,)
 	parentProcessCreatedDateTime: Optional[datetime] = Field(alias="parentProcessCreatedDateTime",default=None,)

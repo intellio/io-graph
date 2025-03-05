@@ -9,7 +9,7 @@ class ThreatAssessmentResult(BaseModel):
 	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 	createdDateTime: Optional[datetime] = Field(alias="createdDateTime",default=None,)
 	message: Optional[str] = Field(alias="message",default=None,)
-	resultType: Optional[str | ThreatAssessmentResultType] = Field(alias="resultType",default=None,)
+	resultType: Optional[ThreatAssessmentResultType | str] = Field(alias="resultType",default=None,)
 
 from .threat_assessment_result_type import ThreatAssessmentResultType
 

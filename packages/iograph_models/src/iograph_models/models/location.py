@@ -2,6 +2,7 @@ from __future__ import annotations
 from typing import Optional
 from pydantic import model_validator, ModelWrapValidatorHandler, ValidationError
 from typing_extensions import Self
+from typing import Any
 from pydantic import BaseModel, Field, SerializeAsAny
 
 
@@ -10,10 +11,10 @@ class Location(BaseModel):
 	coordinates: Optional[OutlookGeoCoordinates] = Field(alias="coordinates",default=None,)
 	displayName: Optional[str] = Field(alias="displayName",default=None,)
 	locationEmailAddress: Optional[str] = Field(alias="locationEmailAddress",default=None,)
-	locationType: Optional[str | LocationType] = Field(alias="locationType",default=None,)
+	locationType: Optional[LocationType | str] = Field(alias="locationType",default=None,)
 	locationUri: Optional[str] = Field(alias="locationUri",default=None,)
 	uniqueId: Optional[str] = Field(alias="uniqueId",default=None,)
-	uniqueIdType: Optional[str | LocationUniqueIdType] = Field(alias="uniqueIdType",default=None,)
+	uniqueIdType: Optional[LocationUniqueIdType | str] = Field(alias="uniqueIdType",default=None,)
 	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 
 	@model_validator(mode="wrap")

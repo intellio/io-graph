@@ -17,7 +17,7 @@ class CloudPC(BaseModel):
 	onPremisesConnectionName: Optional[str] = Field(alias="onPremisesConnectionName",default=None,)
 	provisioningPolicyId: Optional[str] = Field(alias="provisioningPolicyId",default=None,)
 	provisioningPolicyName: Optional[str] = Field(alias="provisioningPolicyName",default=None,)
-	provisioningType: Optional[str | CloudPcProvisioningType] = Field(alias="provisioningType",default=None,)
+	provisioningType: Optional[CloudPcProvisioningType | str] = Field(alias="provisioningType",default=None,)
 	servicePlanId: Optional[str] = Field(alias="servicePlanId",default=None,)
 	servicePlanName: Optional[str] = Field(alias="servicePlanName",default=None,)
 	userPrincipalName: Optional[str] = Field(alias="userPrincipalName",default=None,)

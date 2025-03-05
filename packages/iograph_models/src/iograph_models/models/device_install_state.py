@@ -10,7 +10,7 @@ class DeviceInstallState(BaseModel):
 	deviceId: Optional[str] = Field(alias="deviceId",default=None,)
 	deviceName: Optional[str] = Field(alias="deviceName",default=None,)
 	errorCode: Optional[str] = Field(alias="errorCode",default=None,)
-	installState: Optional[str | InstallState] = Field(alias="installState",default=None,)
+	installState: Optional[InstallState | str] = Field(alias="installState",default=None,)
 	lastSyncDateTime: Optional[datetime] = Field(alias="lastSyncDateTime",default=None,)
 	osDescription: Optional[str] = Field(alias="osDescription",default=None,)
 	osVersion: Optional[str] = Field(alias="osVersion",default=None,)

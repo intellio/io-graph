@@ -7,7 +7,7 @@ class TeamworkConversationIdentity(BaseModel):
 	displayName: Optional[str] = Field(alias="displayName",default=None,)
 	id: Optional[str] = Field(alias="id",default=None,)
 	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
-	conversationIdentityType: Optional[str | TeamworkConversationIdentityType] = Field(alias="conversationIdentityType",default=None,)
+	conversationIdentityType: Optional[TeamworkConversationIdentityType | str] = Field(alias="conversationIdentityType",default=None,)
 
 from .teamwork_conversation_identity_type import TeamworkConversationIdentityType
 

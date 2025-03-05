@@ -13,7 +13,7 @@ class MailTips(BaseModel):
 	isModerated: Optional[bool] = Field(alias="isModerated",default=None,)
 	mailboxFull: Optional[bool] = Field(alias="mailboxFull",default=None,)
 	maxMessageSize: Optional[int] = Field(alias="maxMessageSize",default=None,)
-	recipientScope: Optional[str | RecipientScopeType] = Field(alias="recipientScope",default=None,)
+	recipientScope: Optional[RecipientScopeType | str] = Field(alias="recipientScope",default=None,)
 	recipientSuggestions: SerializeAsAny[Optional[list[Recipient]]] = Field(alias="recipientSuggestions",default=None,)
 	totalMemberCount: Optional[int] = Field(alias="totalMemberCount",default=None,)
 	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)

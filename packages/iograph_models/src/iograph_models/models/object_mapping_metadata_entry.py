@@ -4,7 +4,7 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class ObjectMappingMetadataEntry(BaseModel):
-	key: Optional[str | ObjectMappingMetadata] = Field(alias="key",default=None,)
+	key: Optional[ObjectMappingMetadata | str] = Field(alias="key",default=None,)
 	value: Optional[str] = Field(alias="value",default=None,)
 	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 

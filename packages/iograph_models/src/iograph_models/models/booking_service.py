@@ -13,7 +13,7 @@ class BookingService(BaseModel):
 	defaultDuration: Optional[str] = Field(alias="defaultDuration",default=None,)
 	defaultLocation: SerializeAsAny[Optional[Location]] = Field(alias="defaultLocation",default=None,)
 	defaultPrice: float | str | ReferenceNumeric
-	defaultPriceType: Optional[str | BookingPriceType] = Field(alias="defaultPriceType",default=None,)
+	defaultPriceType: Optional[BookingPriceType | str] = Field(alias="defaultPriceType",default=None,)
 	defaultReminders: Optional[list[BookingReminder]] = Field(alias="defaultReminders",default=None,)
 	description: Optional[str] = Field(alias="description",default=None,)
 	displayName: Optional[str] = Field(alias="displayName",default=None,)

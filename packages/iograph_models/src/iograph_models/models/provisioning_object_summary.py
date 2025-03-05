@@ -14,7 +14,7 @@ class ProvisioningObjectSummary(BaseModel):
 	initiatedBy: Optional[Initiator] = Field(alias="initiatedBy",default=None,)
 	jobId: Optional[str] = Field(alias="jobId",default=None,)
 	modifiedProperties: Optional[list[ModifiedProperty]] = Field(alias="modifiedProperties",default=None,)
-	provisioningAction: Optional[str | ProvisioningAction] = Field(alias="provisioningAction",default=None,)
+	provisioningAction: Optional[ProvisioningAction | str] = Field(alias="provisioningAction",default=None,)
 	provisioningStatusInfo: Optional[ProvisioningStatusInfo] = Field(alias="provisioningStatusInfo",default=None,)
 	provisioningSteps: Optional[list[ProvisioningStep]] = Field(alias="provisioningSteps",default=None,)
 	servicePrincipal: Optional[ProvisioningServicePrincipal] = Field(alias="servicePrincipal",default=None,)

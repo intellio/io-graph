@@ -11,9 +11,9 @@ from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:
 	from .......request_adapter import HttpxRequestAdapter
-from iograph_models.models.remove_group_post_request import Remove_groupPostRequest
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.models.remove_group_post_response import Remove_groupPostResponse
+from iograph_models.models.remove_group_post_request import Remove_groupPostRequest
 
 
 class RemoveGroupRequest(BaseRequestBuilder):

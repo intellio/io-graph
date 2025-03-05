@@ -10,7 +10,7 @@ class SecuritySiteSource(BaseModel):
 	createdBy: SerializeAsAny[Optional[IdentitySet]] = Field(alias="createdBy",default=None,)
 	createdDateTime: Optional[datetime] = Field(alias="createdDateTime",default=None,)
 	displayName: Optional[str] = Field(alias="displayName",default=None,)
-	holdStatus: Optional[str | SecurityDataSourceHoldStatus] = Field(alias="holdStatus",default=None,)
+	holdStatus: Optional[SecurityDataSourceHoldStatus | str] = Field(alias="holdStatus",default=None,)
 	site: Optional[Site] = Field(alias="site",default=None,)
 
 from .identity_set import IdentitySet

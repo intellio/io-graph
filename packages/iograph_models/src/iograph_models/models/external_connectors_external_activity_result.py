@@ -8,7 +8,7 @@ class ExternalConnectorsExternalActivityResult(BaseModel):
 	id: Optional[str] = Field(alias="id",default=None,)
 	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 	startDateTime: Optional[datetime] = Field(alias="startDateTime",default=None,)
-	type: Optional[str | ExternalConnectorsExternalActivityType] = Field(alias="type",default=None,)
+	type: Optional[ExternalConnectorsExternalActivityType | str] = Field(alias="type",default=None,)
 	performedBy: Optional[ExternalConnectorsIdentity] = Field(alias="performedBy",default=None,)
 	error: Optional[PublicError] = Field(alias="error",default=None,)
 

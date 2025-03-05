@@ -14,7 +14,7 @@ class AuthorizationPolicy(BaseModel):
 	allowedToSignUpEmailBasedSubscriptions: Optional[bool] = Field(alias="allowedToSignUpEmailBasedSubscriptions",default=None,)
 	allowedToUseSSPR: Optional[bool] = Field(alias="allowedToUseSSPR",default=None,)
 	allowEmailVerifiedUsersToJoinOrganization: Optional[bool] = Field(alias="allowEmailVerifiedUsersToJoinOrganization",default=None,)
-	allowInvitesFrom: Optional[str | AllowInvitesFrom] = Field(alias="allowInvitesFrom",default=None,)
+	allowInvitesFrom: Optional[AllowInvitesFrom | str] = Field(alias="allowInvitesFrom",default=None,)
 	allowUserConsentForRiskyApps: Optional[bool] = Field(alias="allowUserConsentForRiskyApps",default=None,)
 	blockMsolPowerShell: Optional[bool] = Field(alias="blockMsolPowerShell",default=None,)
 	defaultUserRolePermissions: Optional[DefaultUserRolePermissions] = Field(alias="defaultUserRolePermissions",default=None,)

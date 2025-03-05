@@ -11,7 +11,7 @@ class CountryNamedLocation(BaseModel):
 	displayName: Optional[str] = Field(alias="displayName",default=None,)
 	modifiedDateTime: Optional[datetime] = Field(alias="modifiedDateTime",default=None,)
 	countriesAndRegions: Optional[list[str]] = Field(alias="countriesAndRegions",default=None,)
-	countryLookupMethod: Optional[str | CountryLookupMethodType] = Field(alias="countryLookupMethod",default=None,)
+	countryLookupMethod: Optional[CountryLookupMethodType | str] = Field(alias="countryLookupMethod",default=None,)
 	includeUnknownCountriesAndRegions: Optional[bool] = Field(alias="includeUnknownCountriesAndRegions",default=None,)
 
 from .country_lookup_method_type import CountryLookupMethodType

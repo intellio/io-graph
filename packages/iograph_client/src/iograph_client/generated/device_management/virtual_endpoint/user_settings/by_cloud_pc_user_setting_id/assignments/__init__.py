@@ -15,8 +15,8 @@ if TYPE_CHECKING:
 	from .by_cloud_pc_user_setting_assignment_id import ByCloudPcUserSettingAssignmentIdRequest
 	from .......request_adapter import HttpxRequestAdapter
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
-from iograph_models.models.cloud_pc_user_setting_assignment import CloudPcUserSettingAssignment
 from iograph_models.models.cloud_pc_user_setting_assignment_collection_response import CloudPcUserSettingAssignmentCollectionResponse
+from iograph_models.models.cloud_pc_user_setting_assignment import CloudPcUserSettingAssignment
 
 
 class AssignmentsRequest(BaseRequestBuilder):

@@ -20,7 +20,7 @@ class LearningContent(BaseModel):
 	isSearchable: Optional[bool] = Field(alias="isSearchable",default=None,)
 	languageTag: Optional[str] = Field(alias="languageTag",default=None,)
 	lastModifiedDateTime: Optional[datetime] = Field(alias="lastModifiedDateTime",default=None,)
-	level: Optional[str | Level] = Field(alias="level",default=None,)
+	level: Optional[Level | str] = Field(alias="level",default=None,)
 	numberOfPages: Optional[int] = Field(alias="numberOfPages",default=None,)
 	skillTags: Optional[list[str]] = Field(alias="skillTags",default=None,)
 	sourceName: Optional[str] = Field(alias="sourceName",default=None,)

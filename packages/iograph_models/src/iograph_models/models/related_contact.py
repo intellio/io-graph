@@ -8,7 +8,7 @@ class RelatedContact(BaseModel):
 	displayName: Optional[str] = Field(alias="displayName",default=None,)
 	emailAddress: Optional[str] = Field(alias="emailAddress",default=None,)
 	mobilePhone: Optional[str] = Field(alias="mobilePhone",default=None,)
-	relationship: Optional[str | ContactRelationship] = Field(alias="relationship",default=None,)
+	relationship: Optional[ContactRelationship | str] = Field(alias="relationship",default=None,)
 	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 
 from .contact_relationship import ContactRelationship

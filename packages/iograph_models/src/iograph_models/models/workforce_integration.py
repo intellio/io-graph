@@ -13,10 +13,10 @@ class WorkforceIntegration(BaseModel):
 	lastModifiedDateTime: Optional[datetime] = Field(alias="lastModifiedDateTime",default=None,)
 	apiVersion: Optional[int] = Field(alias="apiVersion",default=None,)
 	displayName: Optional[str] = Field(alias="displayName",default=None,)
-	eligibilityFilteringEnabledEntities: Optional[str | EligibilityFilteringEnabledEntities] = Field(alias="eligibilityFilteringEnabledEntities",default=None,)
+	eligibilityFilteringEnabledEntities: Optional[EligibilityFilteringEnabledEntities | str] = Field(alias="eligibilityFilteringEnabledEntities",default=None,)
 	encryption: Optional[WorkforceIntegrationEncryption] = Field(alias="encryption",default=None,)
 	isActive: Optional[bool] = Field(alias="isActive",default=None,)
-	supportedEntities: Optional[str | WorkforceIntegrationSupportedEntities] = Field(alias="supportedEntities",default=None,)
+	supportedEntities: Optional[WorkforceIntegrationSupportedEntities | str] = Field(alias="supportedEntities",default=None,)
 	url: Optional[str] = Field(alias="url",default=None,)
 
 from .identity_set import IdentitySet

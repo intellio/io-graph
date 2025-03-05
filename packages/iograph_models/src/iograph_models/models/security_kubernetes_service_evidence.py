@@ -7,11 +7,11 @@ from pydantic import BaseModel, Field, SerializeAsAny
 class SecurityKubernetesServiceEvidence(BaseModel):
 	createdDateTime: Optional[datetime] = Field(alias="createdDateTime",default=None,)
 	detailedRoles: Optional[list[str]] = Field(alias="detailedRoles",default=None,)
-	remediationStatus: Optional[str | SecurityEvidenceRemediationStatus] = Field(alias="remediationStatus",default=None,)
+	remediationStatus: Optional[SecurityEvidenceRemediationStatus | str] = Field(alias="remediationStatus",default=None,)
 	remediationStatusDetails: Optional[str] = Field(alias="remediationStatusDetails",default=None,)
-	roles: Optional[list[str | SecurityEvidenceRole]] = Field(alias="roles",default=None,)
+	roles: Optional[list[SecurityEvidenceRole | str]] = Field(alias="roles",default=None,)
 	tags: Optional[list[str]] = Field(alias="tags",default=None,)
-	verdict: Optional[str | SecurityEvidenceVerdict] = Field(alias="verdict",default=None,)
+	verdict: Optional[SecurityEvidenceVerdict | str] = Field(alias="verdict",default=None,)
 	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 	clusterIP: Optional[SecurityIpEvidence] = Field(alias="clusterIP",default=None,)
 	externalIPs: Optional[list[SecurityIpEvidence]] = Field(alias="externalIPs",default=None,)
@@ -20,7 +20,7 @@ class SecurityKubernetesServiceEvidence(BaseModel):
 	namespace: Optional[SecurityKubernetesNamespaceEvidence] = Field(alias="namespace",default=None,)
 	selector: Optional[SecurityDictionary] = Field(alias="selector",default=None,)
 	servicePorts: Optional[list[SecurityKubernetesServicePort]] = Field(alias="servicePorts",default=None,)
-	serviceType: Optional[str | SecurityKubernetesServiceType] = Field(alias="serviceType",default=None,)
+	serviceType: Optional[SecurityKubernetesServiceType | str] = Field(alias="serviceType",default=None,)
 
 from .security_evidence_remediation_status import SecurityEvidenceRemediationStatus
 from .security_evidence_role import SecurityEvidenceRole

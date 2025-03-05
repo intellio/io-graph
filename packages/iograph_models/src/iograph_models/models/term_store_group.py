@@ -11,7 +11,7 @@ class TermStoreGroup(BaseModel):
 	description: Optional[str] = Field(alias="description",default=None,)
 	displayName: Optional[str] = Field(alias="displayName",default=None,)
 	parentSiteId: Optional[str] = Field(alias="parentSiteId",default=None,)
-	scope: Optional[str | TermStoreTermGroupScope] = Field(alias="scope",default=None,)
+	scope: Optional[TermStoreTermGroupScope | str] = Field(alias="scope",default=None,)
 	sets: Optional[list[TermStoreSet]] = Field(alias="sets",default=None,)
 
 from .term_store_term_group_scope import TermStoreTermGroupScope

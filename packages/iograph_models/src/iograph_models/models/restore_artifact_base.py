@@ -2,6 +2,7 @@ from __future__ import annotations
 from typing import Optional
 from pydantic import model_validator, ModelWrapValidatorHandler, ValidationError
 from typing_extensions import Self
+from typing import Any
 from datetime import datetime
 from pydantic import BaseModel, Field, SerializeAsAny
 
@@ -10,10 +11,10 @@ class RestoreArtifactBase(BaseModel):
 	id: Optional[str] = Field(alias="id",default=None,)
 	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 	completionDateTime: Optional[datetime] = Field(alias="completionDateTime",default=None,)
-	destinationType: Optional[str | DestinationType] = Field(alias="destinationType",default=None,)
+	destinationType: Optional[DestinationType | str] = Field(alias="destinationType",default=None,)
 	error: Optional[PublicError] = Field(alias="error",default=None,)
 	startDateTime: Optional[datetime] = Field(alias="startDateTime",default=None,)
-	status: Optional[str | ArtifactRestoreStatus] = Field(alias="status",default=None,)
+	status: Optional[ArtifactRestoreStatus | str] = Field(alias="status",default=None,)
 	restorePoint: Optional[RestorePoint] = Field(alias="restorePoint",default=None,)
 
 	@model_validator(mode="wrap")

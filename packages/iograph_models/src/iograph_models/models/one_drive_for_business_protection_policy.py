@@ -13,7 +13,7 @@ class OneDriveForBusinessProtectionPolicy(BaseModel):
 	lastModifiedBy: SerializeAsAny[Optional[IdentitySet]] = Field(alias="lastModifiedBy",default=None,)
 	lastModifiedDateTime: Optional[datetime] = Field(alias="lastModifiedDateTime",default=None,)
 	retentionSettings: Optional[list[RetentionSetting]] = Field(alias="retentionSettings",default=None,)
-	status: Optional[str | ProtectionPolicyStatus] = Field(alias="status",default=None,)
+	status: Optional[ProtectionPolicyStatus | str] = Field(alias="status",default=None,)
 	driveInclusionRules: Optional[list[DriveProtectionRule]] = Field(alias="driveInclusionRules",default=None,)
 	driveProtectionUnits: Optional[list[DriveProtectionUnit]] = Field(alias="driveProtectionUnits",default=None,)
 

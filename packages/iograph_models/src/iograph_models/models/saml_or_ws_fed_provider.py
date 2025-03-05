@@ -2,6 +2,7 @@ from __future__ import annotations
 from typing import Optional
 from pydantic import model_validator, ModelWrapValidatorHandler, ValidationError
 from typing_extensions import Self
+from typing import Any
 from pydantic import BaseModel, Field, SerializeAsAny
 
 
@@ -12,7 +13,7 @@ class SamlOrWsFedProvider(BaseModel):
 	issuerUri: Optional[str] = Field(alias="issuerUri",default=None,)
 	metadataExchangeUri: Optional[str] = Field(alias="metadataExchangeUri",default=None,)
 	passiveSignInUri: Optional[str] = Field(alias="passiveSignInUri",default=None,)
-	preferredAuthenticationProtocol: Optional[str | AuthenticationProtocol] = Field(alias="preferredAuthenticationProtocol",default=None,)
+	preferredAuthenticationProtocol: Optional[AuthenticationProtocol | str] = Field(alias="preferredAuthenticationProtocol",default=None,)
 	signingCertificate: Optional[str] = Field(alias="signingCertificate",default=None,)
 
 	@model_validator(mode="wrap")

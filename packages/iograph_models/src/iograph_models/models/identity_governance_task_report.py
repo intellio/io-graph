@@ -10,7 +10,7 @@ class IdentityGovernanceTaskReport(BaseModel):
 	completedDateTime: Optional[datetime] = Field(alias="completedDateTime",default=None,)
 	failedUsersCount: Optional[int] = Field(alias="failedUsersCount",default=None,)
 	lastUpdatedDateTime: Optional[datetime] = Field(alias="lastUpdatedDateTime",default=None,)
-	processingStatus: Optional[str | IdentityGovernanceLifecycleWorkflowProcessingStatus] = Field(alias="processingStatus",default=None,)
+	processingStatus: Optional[IdentityGovernanceLifecycleWorkflowProcessingStatus | str] = Field(alias="processingStatus",default=None,)
 	runId: Optional[str] = Field(alias="runId",default=None,)
 	startedDateTime: Optional[datetime] = Field(alias="startedDateTime",default=None,)
 	successfulUsersCount: Optional[int] = Field(alias="successfulUsersCount",default=None,)

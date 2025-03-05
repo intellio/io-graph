@@ -9,7 +9,7 @@ class MeetingTimeSuggestion(BaseModel):
 	locations: SerializeAsAny[Optional[list[Location]]] = Field(alias="locations",default=None,)
 	meetingTimeSlot: Optional[TimeSlot] = Field(alias="meetingTimeSlot",default=None,)
 	order: Optional[int] = Field(alias="order",default=None,)
-	organizerAvailability: Optional[str | FreeBusyStatus] = Field(alias="organizerAvailability",default=None,)
+	organizerAvailability: Optional[FreeBusyStatus | str] = Field(alias="organizerAvailability",default=None,)
 	suggestionReason: Optional[str] = Field(alias="suggestionReason",default=None,)
 	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 

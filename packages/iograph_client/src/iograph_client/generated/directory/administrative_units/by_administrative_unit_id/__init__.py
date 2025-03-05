@@ -15,8 +15,8 @@ if TYPE_CHECKING:
 	from .members import MembersRequest
 	from .extensions import ExtensionsRequest
 	from .....request_adapter import HttpxRequestAdapter
-from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.models.administrative_unit import AdministrativeUnit
+from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
 
 
 class ByAdministrativeUnitIdRequest(BaseRequestBuilder):

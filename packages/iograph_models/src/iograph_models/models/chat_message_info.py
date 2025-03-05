@@ -12,7 +12,7 @@ class ChatMessageInfo(BaseModel):
 	eventDetail: SerializeAsAny[Optional[EventMessageDetail]] = Field(alias="eventDetail",default=None,)
 	from_: Optional[ChatMessageFromIdentitySet] = Field(alias="from",default=None,)
 	isDeleted: Optional[bool] = Field(alias="isDeleted",default=None,)
-	messageType: Optional[str | ChatMessageType] = Field(alias="messageType",default=None,)
+	messageType: Optional[ChatMessageType | str] = Field(alias="messageType",default=None,)
 
 from .item_body import ItemBody
 from .event_message_detail import EventMessageDetail

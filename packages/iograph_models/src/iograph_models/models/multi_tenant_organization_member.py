@@ -13,8 +13,8 @@ class MultiTenantOrganizationMember(BaseModel):
 	addedDateTime: Optional[datetime] = Field(alias="addedDateTime",default=None,)
 	displayName: Optional[str] = Field(alias="displayName",default=None,)
 	joinedDateTime: Optional[datetime] = Field(alias="joinedDateTime",default=None,)
-	role: Optional[str | MultiTenantOrganizationMemberRole] = Field(alias="role",default=None,)
-	state: Optional[str | MultiTenantOrganizationMemberState] = Field(alias="state",default=None,)
+	role: Optional[MultiTenantOrganizationMemberRole | str] = Field(alias="role",default=None,)
+	state: Optional[MultiTenantOrganizationMemberState | str] = Field(alias="state",default=None,)
 	tenantId: Optional[str] = Field(alias="tenantId",default=None,)
 	transitionDetails: Optional[MultiTenantOrganizationMemberTransitionDetails] = Field(alias="transitionDetails",default=None,)
 

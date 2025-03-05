@@ -14,8 +14,8 @@ if TYPE_CHECKING:
 	from .contacts import ContactsRequest
 	from .child_folders import ChildFoldersRequest
 	from ......request_adapter import HttpxRequestAdapter
-from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.models.contact_folder import ContactFolder
+from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
 
 
 class ByContactFolderIdRequest(BaseRequestBuilder):

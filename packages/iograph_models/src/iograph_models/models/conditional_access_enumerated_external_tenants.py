@@ -4,7 +4,7 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class ConditionalAccessEnumeratedExternalTenants(BaseModel):
-	membershipKind: Optional[str | ConditionalAccessExternalTenantsMembershipKind] = Field(alias="membershipKind",default=None,)
+	membershipKind: Optional[ConditionalAccessExternalTenantsMembershipKind | str] = Field(alias="membershipKind",default=None,)
 	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 	members: Optional[list[str]] = Field(alias="members",default=None,)
 

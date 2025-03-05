@@ -10,7 +10,7 @@ class MessageRuleActions(BaseModel):
 	forwardAsAttachmentTo: SerializeAsAny[Optional[list[Recipient]]] = Field(alias="forwardAsAttachmentTo",default=None,)
 	forwardTo: SerializeAsAny[Optional[list[Recipient]]] = Field(alias="forwardTo",default=None,)
 	markAsRead: Optional[bool] = Field(alias="markAsRead",default=None,)
-	markImportance: Optional[str | Importance] = Field(alias="markImportance",default=None,)
+	markImportance: Optional[Importance | str] = Field(alias="markImportance",default=None,)
 	moveToFolder: Optional[str] = Field(alias="moveToFolder",default=None,)
 	permanentDelete: Optional[bool] = Field(alias="permanentDelete",default=None,)
 	redirectTo: SerializeAsAny[Optional[list[Recipient]]] = Field(alias="redirectTo",default=None,)

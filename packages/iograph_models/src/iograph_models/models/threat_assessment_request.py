@@ -2,6 +2,7 @@ from __future__ import annotations
 from typing import Optional
 from pydantic import model_validator, ModelWrapValidatorHandler, ValidationError
 from typing_extensions import Self
+from typing import Any
 from datetime import datetime
 from pydantic import BaseModel, Field, SerializeAsAny
 
@@ -9,13 +10,13 @@ from pydantic import BaseModel, Field, SerializeAsAny
 class ThreatAssessmentRequest(BaseModel):
 	id: Optional[str] = Field(alias="id",default=None,)
 	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
-	category: Optional[str | ThreatCategory] = Field(alias="category",default=None,)
-	contentType: Optional[str | ThreatAssessmentContentType] = Field(alias="contentType",default=None,)
+	category: Optional[ThreatCategory | str] = Field(alias="category",default=None,)
+	contentType: Optional[ThreatAssessmentContentType | str] = Field(alias="contentType",default=None,)
 	createdBy: SerializeAsAny[Optional[IdentitySet]] = Field(alias="createdBy",default=None,)
 	createdDateTime: Optional[datetime] = Field(alias="createdDateTime",default=None,)
-	expectedAssessment: Optional[str | ThreatExpectedAssessment] = Field(alias="expectedAssessment",default=None,)
-	requestSource: Optional[str | ThreatAssessmentRequestSource] = Field(alias="requestSource",default=None,)
-	status: Optional[str | ThreatAssessmentStatus] = Field(alias="status",default=None,)
+	expectedAssessment: Optional[ThreatExpectedAssessment | str] = Field(alias="expectedAssessment",default=None,)
+	requestSource: Optional[ThreatAssessmentRequestSource | str] = Field(alias="requestSource",default=None,)
+	status: Optional[ThreatAssessmentStatus | str] = Field(alias="status",default=None,)
 	results: Optional[list[ThreatAssessmentResult]] = Field(alias="results",default=None,)
 
 	@model_validator(mode="wrap")

@@ -4,7 +4,7 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class SensitivityLabelAssignment(BaseModel):
-	assignmentMethod: Optional[str | SensitivityLabelAssignmentMethod] = Field(alias="assignmentMethod",default=None,)
+	assignmentMethod: Optional[SensitivityLabelAssignmentMethod | str] = Field(alias="assignmentMethod",default=None,)
 	sensitivityLabelId: Optional[str] = Field(alias="sensitivityLabelId",default=None,)
 	tenantId: Optional[str] = Field(alias="tenantId",default=None,)
 	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)

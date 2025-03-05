@@ -10,7 +10,7 @@ class SimulationAutomationRun(BaseModel):
 	endDateTime: Optional[datetime] = Field(alias="endDateTime",default=None,)
 	simulationId: Optional[str] = Field(alias="simulationId",default=None,)
 	startDateTime: Optional[datetime] = Field(alias="startDateTime",default=None,)
-	status: Optional[str | SimulationAutomationRunStatus] = Field(alias="status",default=None,)
+	status: Optional[SimulationAutomationRunStatus | str] = Field(alias="status",default=None,)
 
 from .simulation_automation_run_status import SimulationAutomationRunStatus
 

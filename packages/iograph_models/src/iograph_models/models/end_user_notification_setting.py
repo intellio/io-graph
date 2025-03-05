@@ -2,13 +2,14 @@ from __future__ import annotations
 from typing import Optional
 from pydantic import model_validator, ModelWrapValidatorHandler, ValidationError
 from typing_extensions import Self
+from typing import Any
 from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class EndUserNotificationSetting(BaseModel):
-	notificationPreference: Optional[str | EndUserNotificationPreference] = Field(alias="notificationPreference",default=None,)
+	notificationPreference: Optional[EndUserNotificationPreference | str] = Field(alias="notificationPreference",default=None,)
 	positiveReinforcement: Optional[PositiveReinforcementNotification] = Field(alias="positiveReinforcement",default=None,)
-	settingType: Optional[str | EndUserNotificationSettingType] = Field(alias="settingType",default=None,)
+	settingType: Optional[EndUserNotificationSettingType | str] = Field(alias="settingType",default=None,)
 	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 
 	@model_validator(mode="wrap")

@@ -14,7 +14,7 @@ class CloudPcGalleryImage(BaseModel):
 	sizeInGB: Optional[int] = Field(alias="sizeInGB",default=None,)
 	skuName: Optional[str] = Field(alias="skuName",default=None,)
 	startDate: Optional[str] = Field(alias="startDate",default=None,)
-	status: Optional[str | CloudPcGalleryImageStatus] = Field(alias="status",default=None,)
+	status: Optional[CloudPcGalleryImageStatus | str] = Field(alias="status",default=None,)
 
 from .cloud_pc_gallery_image_status import CloudPcGalleryImageStatus
 

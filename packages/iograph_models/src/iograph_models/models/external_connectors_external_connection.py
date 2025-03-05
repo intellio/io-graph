@@ -12,7 +12,7 @@ class ExternalConnectorsExternalConnection(BaseModel):
 	description: Optional[str] = Field(alias="description",default=None,)
 	name: Optional[str] = Field(alias="name",default=None,)
 	searchSettings: Optional[ExternalConnectorsSearchSettings] = Field(alias="searchSettings",default=None,)
-	state: Optional[str | ExternalConnectorsConnectionState] = Field(alias="state",default=None,)
+	state: Optional[ExternalConnectorsConnectionState | str] = Field(alias="state",default=None,)
 	groups: Optional[list[ExternalConnectorsExternalGroup]] = Field(alias="groups",default=None,)
 	items: Optional[list[ExternalConnectorsExternalItem]] = Field(alias="items",default=None,)
 	operations: Optional[list[ExternalConnectorsConnectionOperation]] = Field(alias="operations",default=None,)

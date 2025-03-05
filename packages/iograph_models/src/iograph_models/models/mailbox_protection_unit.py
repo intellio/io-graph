@@ -13,7 +13,7 @@ class MailboxProtectionUnit(BaseModel):
 	lastModifiedBy: SerializeAsAny[Optional[IdentitySet]] = Field(alias="lastModifiedBy",default=None,)
 	lastModifiedDateTime: Optional[datetime] = Field(alias="lastModifiedDateTime",default=None,)
 	policyId: Optional[str] = Field(alias="policyId",default=None,)
-	status: Optional[str | ProtectionUnitStatus] = Field(alias="status",default=None,)
+	status: Optional[ProtectionUnitStatus | str] = Field(alias="status",default=None,)
 	directoryObjectId: Optional[str] = Field(alias="directoryObjectId",default=None,)
 	displayName: Optional[str] = Field(alias="displayName",default=None,)
 	email: Optional[str] = Field(alias="email",default=None,)

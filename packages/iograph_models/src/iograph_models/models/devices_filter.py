@@ -4,7 +4,7 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class DevicesFilter(BaseModel):
-	mode: Optional[str | CrossTenantAccessPolicyTargetConfigurationAccessType] = Field(alias="mode",default=None,)
+	mode: Optional[CrossTenantAccessPolicyTargetConfigurationAccessType | str] = Field(alias="mode",default=None,)
 	rule: Optional[str] = Field(alias="rule",default=None,)
 	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 

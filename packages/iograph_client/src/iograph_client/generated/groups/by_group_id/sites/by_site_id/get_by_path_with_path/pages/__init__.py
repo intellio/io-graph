@@ -11,9 +11,9 @@ from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:
 	from ........request_adapter import HttpxRequestAdapter
-from iograph_models.models.base_site_page import BaseSitePage
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.models.base_site_page_collection_response import BaseSitePageCollectionResponse
+from iograph_models.models.base_site_page import BaseSitePage
 
 
 class PagesRequest(BaseRequestBuilder):

@@ -16,8 +16,8 @@ if TYPE_CHECKING:
 	from .parent_group import ParentGroupRequest
 	from .children import ChildrenRequest
 	from .........request_adapter import HttpxRequestAdapter
-from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.models.term_store_set import TermStoreSet
+from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
 
 
 class BySetIdRequest(BaseRequestBuilder):

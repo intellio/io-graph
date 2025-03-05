@@ -10,7 +10,7 @@ class AppLogCollectionRequest(BaseModel):
 	completedDateTime: Optional[datetime] = Field(alias="completedDateTime",default=None,)
 	customLogFolders: Optional[list[str]] = Field(alias="customLogFolders",default=None,)
 	errorMessage: Optional[str] = Field(alias="errorMessage",default=None,)
-	status: Optional[str | AppLogUploadState] = Field(alias="status",default=None,)
+	status: Optional[AppLogUploadState | str] = Field(alias="status",default=None,)
 
 from .app_log_upload_state import AppLogUploadState
 

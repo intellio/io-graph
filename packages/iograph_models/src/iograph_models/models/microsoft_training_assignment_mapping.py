@@ -4,9 +4,9 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class MicrosoftTrainingAssignmentMapping(BaseModel):
-	settingType: Optional[str | TrainingSettingType] = Field(alias="settingType",default=None,)
+	settingType: Optional[TrainingSettingType | str] = Field(alias="settingType",default=None,)
 	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
-	assignedTo: Optional[str | TrainingAssignedTo] = Field(alias="assignedTo",default=None,)
+	assignedTo: Optional[TrainingAssignedTo | str] = Field(alias="assignedTo",default=None,)
 	training: Optional[Training] = Field(alias="training",default=None,)
 
 from .training_setting_type import TrainingSettingType

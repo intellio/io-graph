@@ -8,7 +8,7 @@ class BucketAggregationDefinition(BaseModel):
 	minimumCount: Optional[int] = Field(alias="minimumCount",default=None,)
 	prefixFilter: Optional[str] = Field(alias="prefixFilter",default=None,)
 	ranges: Optional[list[BucketAggregationRange]] = Field(alias="ranges",default=None,)
-	sortBy: Optional[str | BucketAggregationSortProperty] = Field(alias="sortBy",default=None,)
+	sortBy: Optional[BucketAggregationSortProperty | str] = Field(alias="sortBy",default=None,)
 	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 
 from .bucket_aggregation_range import BucketAggregationRange

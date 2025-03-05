@@ -14,7 +14,7 @@ class BrowserSiteList(BaseModel):
 	publishedBy: SerializeAsAny[Optional[IdentitySet]] = Field(alias="publishedBy",default=None,)
 	publishedDateTime: Optional[datetime] = Field(alias="publishedDateTime",default=None,)
 	revision: Optional[str] = Field(alias="revision",default=None,)
-	status: Optional[str | BrowserSiteListStatus] = Field(alias="status",default=None,)
+	status: Optional[BrowserSiteListStatus | str] = Field(alias="status",default=None,)
 	sharedCookies: Optional[list[BrowserSharedCookie]] = Field(alias="sharedCookies",default=None,)
 	sites: Optional[list[BrowserSite]] = Field(alias="sites",default=None,)
 

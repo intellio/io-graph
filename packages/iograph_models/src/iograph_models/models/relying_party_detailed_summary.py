@@ -7,7 +7,7 @@ class RelyingPartyDetailedSummary(BaseModel):
 	id: Optional[str] = Field(alias="id",default=None,)
 	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 	failedSignInCount: Optional[int] = Field(alias="failedSignInCount",default=None,)
-	migrationStatus: Optional[str | MigrationStatus] = Field(alias="migrationStatus",default=None,)
+	migrationStatus: Optional[MigrationStatus | str] = Field(alias="migrationStatus",default=None,)
 	migrationValidationDetails: Optional[list[KeyValuePair]] = Field(alias="migrationValidationDetails",default=None,)
 	relyingPartyId: Optional[str] = Field(alias="relyingPartyId",default=None,)
 	relyingPartyName: Optional[str] = Field(alias="relyingPartyName",default=None,)

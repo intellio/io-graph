@@ -22,8 +22,8 @@ if TYPE_CHECKING:
 	from .member_of import MemberOfRequest
 	from .extensions import ExtensionsRequest
 	from ....request_adapter import HttpxRequestAdapter
-from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.models.device import Device
+from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
 
 
 class ByDeviceIdRequest(BaseRequestBuilder):

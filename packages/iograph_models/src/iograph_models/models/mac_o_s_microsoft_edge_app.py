@@ -19,10 +19,10 @@ class MacOSMicrosoftEdgeApp(BaseModel):
 	owner: Optional[str] = Field(alias="owner",default=None,)
 	privacyInformationUrl: Optional[str] = Field(alias="privacyInformationUrl",default=None,)
 	publisher: Optional[str] = Field(alias="publisher",default=None,)
-	publishingState: Optional[str | MobileAppPublishingState] = Field(alias="publishingState",default=None,)
+	publishingState: Optional[MobileAppPublishingState | str] = Field(alias="publishingState",default=None,)
 	assignments: Optional[list[MobileAppAssignment]] = Field(alias="assignments",default=None,)
 	categories: Optional[list[MobileAppCategory]] = Field(alias="categories",default=None,)
-	channel: Optional[str | MicrosoftEdgeChannel] = Field(alias="channel",default=None,)
+	channel: Optional[MicrosoftEdgeChannel | str] = Field(alias="channel",default=None,)
 
 from .mime_content import MimeContent
 from .mobile_app_publishing_state import MobileAppPublishingState

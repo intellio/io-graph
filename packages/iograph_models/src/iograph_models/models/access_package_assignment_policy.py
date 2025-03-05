@@ -7,7 +7,7 @@ from pydantic import BaseModel, Field, SerializeAsAny
 class AccessPackageAssignmentPolicy(BaseModel):
 	id: Optional[str] = Field(alias="id",default=None,)
 	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
-	allowedTargetScope: Optional[str | AllowedTargetScope] = Field(alias="allowedTargetScope",default=None,)
+	allowedTargetScope: Optional[AllowedTargetScope | str] = Field(alias="allowedTargetScope",default=None,)
 	automaticRequestSettings: Optional[AccessPackageAutomaticRequestSettings] = Field(alias="automaticRequestSettings",default=None,)
 	createdDateTime: Optional[datetime] = Field(alias="createdDateTime",default=None,)
 	description: Optional[str] = Field(alias="description",default=None,)

@@ -8,7 +8,7 @@ class VirtualEventRegistrationPredefinedQuestion(BaseModel):
 	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 	displayName: Optional[str] = Field(alias="displayName",default=None,)
 	isRequired: Optional[bool] = Field(alias="isRequired",default=None,)
-	label: Optional[str | VirtualEventRegistrationPredefinedQuestionLabel] = Field(alias="label",default=None,)
+	label: Optional[VirtualEventRegistrationPredefinedQuestionLabel | str] = Field(alias="label",default=None,)
 
 from .virtual_event_registration_predefined_question_label import VirtualEventRegistrationPredefinedQuestionLabel
 

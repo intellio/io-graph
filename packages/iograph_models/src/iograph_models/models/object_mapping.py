@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field, SerializeAsAny
 class ObjectMapping(BaseModel):
 	attributeMappings: Optional[list[AttributeMapping]] = Field(alias="attributeMappings",default=None,)
 	enabled: Optional[bool] = Field(alias="enabled",default=None,)
-	flowTypes: Optional[str | ObjectFlowTypes] = Field(alias="flowTypes",default=None,)
+	flowTypes: Optional[ObjectFlowTypes | str] = Field(alias="flowTypes",default=None,)
 	metadata: Optional[list[ObjectMappingMetadataEntry]] = Field(alias="metadata",default=None,)
 	name: Optional[str] = Field(alias="name",default=None,)
 	scope: Optional[Filter] = Field(alias="scope",default=None,)

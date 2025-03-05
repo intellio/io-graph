@@ -8,8 +8,8 @@ class AccessPackageResourceRequest(BaseModel):
 	id: Optional[str] = Field(alias="id",default=None,)
 	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 	createdDateTime: Optional[datetime] = Field(alias="createdDateTime",default=None,)
-	requestType: Optional[str | AccessPackageRequestType] = Field(alias="requestType",default=None,)
-	state: Optional[str | AccessPackageRequestState] = Field(alias="state",default=None,)
+	requestType: Optional[AccessPackageRequestType | str] = Field(alias="requestType",default=None,)
+	state: Optional[AccessPackageRequestState | str] = Field(alias="state",default=None,)
 	catalog: Optional[AccessPackageCatalog] = Field(alias="catalog",default=None,)
 	resource: Optional[AccessPackageResource] = Field(alias="resource",default=None,)
 

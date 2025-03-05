@@ -15,7 +15,7 @@ class DeviceLogCollectionResponse(BaseModel):
 	receivedDateTimeUTC: Optional[datetime] = Field(alias="receivedDateTimeUTC",default=None,)
 	requestedDateTimeUTC: Optional[datetime] = Field(alias="requestedDateTimeUTC",default=None,)
 	sizeInKB: float | str | ReferenceNumeric
-	status: Optional[str | AppLogUploadState] = Field(alias="status",default=None,)
+	status: Optional[AppLogUploadState | str] = Field(alias="status",default=None,)
 
 from .reference_numeric import ReferenceNumeric
 from .app_log_upload_state import AppLogUploadState

@@ -4,9 +4,9 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class OnenotePatchContentCommand(BaseModel):
-	action: Optional[str | OnenotePatchActionType] = Field(alias="action",default=None,)
+	action: Optional[OnenotePatchActionType | str] = Field(alias="action",default=None,)
 	content: Optional[str] = Field(alias="content",default=None,)
-	position: Optional[str | OnenotePatchInsertPosition] = Field(alias="position",default=None,)
+	position: Optional[OnenotePatchInsertPosition | str] = Field(alias="position",default=None,)
 	target: Optional[str] = Field(alias="target",default=None,)
 	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 

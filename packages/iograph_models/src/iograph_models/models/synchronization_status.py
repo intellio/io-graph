@@ -5,7 +5,7 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class SynchronizationStatus(BaseModel):
-	code: Optional[str | SynchronizationStatusCode] = Field(alias="code",default=None,)
+	code: Optional[SynchronizationStatusCode | str] = Field(alias="code",default=None,)
 	countSuccessiveCompleteFailures: Optional[int] = Field(alias="countSuccessiveCompleteFailures",default=None,)
 	escrowsPruned: Optional[bool] = Field(alias="escrowsPruned",default=None,)
 	lastExecution: Optional[SynchronizationTaskExecution] = Field(alias="lastExecution",default=None,)

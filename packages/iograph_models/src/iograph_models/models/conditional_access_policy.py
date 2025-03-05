@@ -14,7 +14,7 @@ class ConditionalAccessPolicy(BaseModel):
 	grantControls: Optional[ConditionalAccessGrantControls] = Field(alias="grantControls",default=None,)
 	modifiedDateTime: Optional[datetime] = Field(alias="modifiedDateTime",default=None,)
 	sessionControls: Optional[ConditionalAccessSessionControls] = Field(alias="sessionControls",default=None,)
-	state: Optional[str | ConditionalAccessPolicyState] = Field(alias="state",default=None,)
+	state: Optional[ConditionalAccessPolicyState | str] = Field(alias="state",default=None,)
 	templateId: Optional[str] = Field(alias="templateId",default=None,)
 
 from .conditional_access_condition_set import ConditionalAccessConditionSet

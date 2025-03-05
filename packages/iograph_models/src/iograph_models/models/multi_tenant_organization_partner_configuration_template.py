@@ -12,7 +12,7 @@ class MultiTenantOrganizationPartnerConfigurationTemplate(BaseModel):
 	b2bDirectConnectInbound: SerializeAsAny[Optional[CrossTenantAccessPolicyB2BSetting]] = Field(alias="b2bDirectConnectInbound",default=None,)
 	b2bDirectConnectOutbound: SerializeAsAny[Optional[CrossTenantAccessPolicyB2BSetting]] = Field(alias="b2bDirectConnectOutbound",default=None,)
 	inboundTrust: Optional[CrossTenantAccessPolicyInboundTrust] = Field(alias="inboundTrust",default=None,)
-	templateApplicationLevel: Optional[str | TemplateApplicationLevel] = Field(alias="templateApplicationLevel",default=None,)
+	templateApplicationLevel: Optional[TemplateApplicationLevel | str] = Field(alias="templateApplicationLevel",default=None,)
 
 from .inbound_outbound_policy_configuration import InboundOutboundPolicyConfiguration
 from .cross_tenant_access_policy_b2_b_setting import CrossTenantAccessPolicyB2BSetting

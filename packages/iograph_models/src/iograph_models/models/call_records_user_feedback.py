@@ -4,7 +4,7 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class CallRecordsUserFeedback(BaseModel):
-	rating: Optional[str | CallRecordsUserFeedbackRating] = Field(alias="rating",default=None,)
+	rating: Optional[CallRecordsUserFeedbackRating | str] = Field(alias="rating",default=None,)
 	text: Optional[str] = Field(alias="text",default=None,)
 	tokens: Optional[CallRecordsFeedbackTokenSet] = Field(alias="tokens",default=None,)
 	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)

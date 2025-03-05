@@ -2,6 +2,7 @@ from __future__ import annotations
 from typing import Optional
 from pydantic import model_validator, ModelWrapValidatorHandler, ValidationError
 from typing_extensions import Self
+from typing import Any
 from pydantic import BaseModel, Field, SerializeAsAny
 
 
@@ -11,10 +12,10 @@ class OnlineMeetingBase(BaseModel):
 	allowAttendeeToEnableCamera: Optional[bool] = Field(alias="allowAttendeeToEnableCamera",default=None,)
 	allowAttendeeToEnableMic: Optional[bool] = Field(alias="allowAttendeeToEnableMic",default=None,)
 	allowBreakoutRooms: Optional[bool] = Field(alias="allowBreakoutRooms",default=None,)
-	allowedLobbyAdmitters: Optional[str | AllowedLobbyAdmitterRoles] = Field(alias="allowedLobbyAdmitters",default=None,)
-	allowedPresenters: Optional[str | OnlineMeetingPresenters] = Field(alias="allowedPresenters",default=None,)
-	allowLiveShare: Optional[str | MeetingLiveShareOptions] = Field(alias="allowLiveShare",default=None,)
-	allowMeetingChat: Optional[str | MeetingChatMode] = Field(alias="allowMeetingChat",default=None,)
+	allowedLobbyAdmitters: Optional[AllowedLobbyAdmitterRoles | str] = Field(alias="allowedLobbyAdmitters",default=None,)
+	allowedPresenters: Optional[OnlineMeetingPresenters | str] = Field(alias="allowedPresenters",default=None,)
+	allowLiveShare: Optional[MeetingLiveShareOptions | str] = Field(alias="allowLiveShare",default=None,)
+	allowMeetingChat: Optional[MeetingChatMode | str] = Field(alias="allowMeetingChat",default=None,)
 	allowParticipantsToChangeName: Optional[bool] = Field(alias="allowParticipantsToChangeName",default=None,)
 	allowPowerPointSharing: Optional[bool] = Field(alias="allowPowerPointSharing",default=None,)
 	allowRecording: Optional[bool] = Field(alias="allowRecording",default=None,)
@@ -30,7 +31,7 @@ class OnlineMeetingBase(BaseModel):
 	joinWebUrl: Optional[str] = Field(alias="joinWebUrl",default=None,)
 	lobbyBypassSettings: Optional[LobbyBypassSettings] = Field(alias="lobbyBypassSettings",default=None,)
 	recordAutomatically: Optional[bool] = Field(alias="recordAutomatically",default=None,)
-	shareMeetingChatHistoryDefault: Optional[str | MeetingChatHistoryDefaultMode] = Field(alias="shareMeetingChatHistoryDefault",default=None,)
+	shareMeetingChatHistoryDefault: Optional[MeetingChatHistoryDefaultMode | str] = Field(alias="shareMeetingChatHistoryDefault",default=None,)
 	subject: Optional[str] = Field(alias="subject",default=None,)
 	videoTeleconferenceId: Optional[str] = Field(alias="videoTeleconferenceId",default=None,)
 	watermarkProtection: Optional[WatermarkProtectionValues] = Field(alias="watermarkProtection",default=None,)

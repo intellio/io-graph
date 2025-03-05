@@ -11,7 +11,7 @@ class SecurityEdiscoveryReviewTag(BaseModel):
 	description: Optional[str] = Field(alias="description",default=None,)
 	displayName: Optional[str] = Field(alias="displayName",default=None,)
 	lastModifiedDateTime: Optional[datetime] = Field(alias="lastModifiedDateTime",default=None,)
-	childSelectability: Optional[str | SecurityChildSelectability] = Field(alias="childSelectability",default=None,)
+	childSelectability: Optional[SecurityChildSelectability | str] = Field(alias="childSelectability",default=None,)
 	childTags: Optional[list[SecurityEdiscoveryReviewTag]] = Field(alias="childTags",default=None,)
 	parent: Optional[SecurityEdiscoveryReviewTag] = Field(alias="parent",default=None,)
 

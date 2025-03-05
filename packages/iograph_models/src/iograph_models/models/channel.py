@@ -13,7 +13,7 @@ class Channel(BaseModel):
 	email: Optional[str] = Field(alias="email",default=None,)
 	isArchived: Optional[bool] = Field(alias="isArchived",default=None,)
 	isFavoriteByDefault: Optional[bool] = Field(alias="isFavoriteByDefault",default=None,)
-	membershipType: Optional[str | ChannelMembershipType] = Field(alias="membershipType",default=None,)
+	membershipType: Optional[ChannelMembershipType | str] = Field(alias="membershipType",default=None,)
 	summary: Optional[ChannelSummary] = Field(alias="summary",default=None,)
 	tenantId: Optional[str] = Field(alias="tenantId",default=None,)
 	webUrl: Optional[str] = Field(alias="webUrl",default=None,)

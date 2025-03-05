@@ -5,7 +5,7 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 class RejectJoinResponse(BaseModel):
 	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
-	reason: Optional[str | RejectReason] = Field(alias="reason",default=None,)
+	reason: Optional[RejectReason | str] = Field(alias="reason",default=None,)
 
 from .reject_reason import RejectReason
 

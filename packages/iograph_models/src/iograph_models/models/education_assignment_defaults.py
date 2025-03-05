@@ -6,8 +6,8 @@ from pydantic import BaseModel, Field, SerializeAsAny
 class EducationAssignmentDefaults(BaseModel):
 	id: Optional[str] = Field(alias="id",default=None,)
 	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
-	addedStudentAction: Optional[str | EducationAddedStudentAction] = Field(alias="addedStudentAction",default=None,)
-	addToCalendarAction: Optional[str | EducationAddToCalendarOptions] = Field(alias="addToCalendarAction",default=None,)
+	addedStudentAction: Optional[EducationAddedStudentAction | str] = Field(alias="addedStudentAction",default=None,)
+	addToCalendarAction: Optional[EducationAddToCalendarOptions | str] = Field(alias="addToCalendarAction",default=None,)
 	dueTime: Optional[str] = Field(alias="dueTime",default=None,)
 	notificationChannelUrl: Optional[str] = Field(alias="notificationChannelUrl",default=None,)
 

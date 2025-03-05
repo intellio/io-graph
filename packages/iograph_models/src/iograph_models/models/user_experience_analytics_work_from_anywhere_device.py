@@ -17,7 +17,7 @@ class UserExperienceAnalyticsWorkFromAnywhereDevice(BaseModel):
 	compliancePolicySetToIntune: Optional[bool] = Field(alias="compliancePolicySetToIntune",default=None,)
 	deviceId: Optional[str] = Field(alias="deviceId",default=None,)
 	deviceName: Optional[str] = Field(alias="deviceName",default=None,)
-	healthStatus: Optional[str | UserExperienceAnalyticsHealthState] = Field(alias="healthStatus",default=None,)
+	healthStatus: Optional[UserExperienceAnalyticsHealthState | str] = Field(alias="healthStatus",default=None,)
 	isCloudManagedGatewayEnabled: Optional[bool] = Field(alias="isCloudManagedGatewayEnabled",default=None,)
 	managedBy: Optional[str] = Field(alias="managedBy",default=None,)
 	manufacturer: Optional[str] = Field(alias="manufacturer",default=None,)
@@ -37,7 +37,7 @@ class UserExperienceAnalyticsWorkFromAnywhereDevice(BaseModel):
 	storageCheckFailed: Optional[bool] = Field(alias="storageCheckFailed",default=None,)
 	tenantAttached: Optional[bool] = Field(alias="tenantAttached",default=None,)
 	tpmCheckFailed: Optional[bool] = Field(alias="tpmCheckFailed",default=None,)
-	upgradeEligibility: Optional[str | OperatingSystemUpgradeEligibility] = Field(alias="upgradeEligibility",default=None,)
+	upgradeEligibility: Optional[OperatingSystemUpgradeEligibility | str] = Field(alias="upgradeEligibility",default=None,)
 	windowsScore: float | str | ReferenceNumeric
 	workFromAnywhereScore: float | str | ReferenceNumeric
 

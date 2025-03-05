@@ -28,7 +28,7 @@ class Windows81CompliancePolicy(BaseModel):
 	passwordMinutesOfInactivityBeforeLock: Optional[int] = Field(alias="passwordMinutesOfInactivityBeforeLock",default=None,)
 	passwordPreviousPasswordBlockCount: Optional[int] = Field(alias="passwordPreviousPasswordBlockCount",default=None,)
 	passwordRequired: Optional[bool] = Field(alias="passwordRequired",default=None,)
-	passwordRequiredType: Optional[str | RequiredPasswordType] = Field(alias="passwordRequiredType",default=None,)
+	passwordRequiredType: Optional[RequiredPasswordType | str] = Field(alias="passwordRequiredType",default=None,)
 	storageRequireEncryption: Optional[bool] = Field(alias="storageRequireEncryption",default=None,)
 
 from .device_compliance_policy_assignment import DeviceCompliancePolicyAssignment

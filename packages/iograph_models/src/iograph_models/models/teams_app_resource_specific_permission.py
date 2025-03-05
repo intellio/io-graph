@@ -4,7 +4,7 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class TeamsAppResourceSpecificPermission(BaseModel):
-	permissionType: Optional[str | TeamsAppResourceSpecificPermissionType] = Field(alias="permissionType",default=None,)
+	permissionType: Optional[TeamsAppResourceSpecificPermissionType | str] = Field(alias="permissionType",default=None,)
 	permissionValue: Optional[str] = Field(alias="permissionValue",default=None,)
 	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 

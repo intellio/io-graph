@@ -5,7 +5,7 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 class Assign_sensitivity_labelPostRequest(BaseModel):
 	sensitivityLabelId: Optional[str] = Field(alias="sensitivityLabelId",default=None,)
-	assignmentMethod: Optional[str | SensitivityLabelAssignmentMethod] = Field(alias="assignmentMethod",default=None,)
+	assignmentMethod: Optional[SensitivityLabelAssignmentMethod | str] = Field(alias="assignmentMethod",default=None,)
 	justificationText: Optional[str] = Field(alias="justificationText",default=None,)
 
 from .sensitivity_label_assignment_method import SensitivityLabelAssignmentMethod

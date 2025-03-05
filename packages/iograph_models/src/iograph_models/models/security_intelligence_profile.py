@@ -11,7 +11,7 @@ class SecurityIntelligenceProfile(BaseModel):
 	countriesOrRegionsOfOrigin: Optional[list[SecurityIntelligenceProfileCountryOrRegionOfOrigin]] = Field(alias="countriesOrRegionsOfOrigin",default=None,)
 	description: Optional[SecurityFormattedContent] = Field(alias="description",default=None,)
 	firstActiveDateTime: Optional[datetime] = Field(alias="firstActiveDateTime",default=None,)
-	kind: Optional[str | SecurityIntelligenceProfileKind] = Field(alias="kind",default=None,)
+	kind: Optional[SecurityIntelligenceProfileKind | str] = Field(alias="kind",default=None,)
 	summary: Optional[SecurityFormattedContent] = Field(alias="summary",default=None,)
 	targets: Optional[list[str]] = Field(alias="targets",default=None,)
 	title: Optional[str] = Field(alias="title",default=None,)

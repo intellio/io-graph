@@ -17,8 +17,8 @@ if TYPE_CHECKING:
 	from .categories import CategoriesRequest
 	from .authorities import AuthoritiesRequest
 	from ....request_adapter import HttpxRequestAdapter
-from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.models.security_labels_root import SecurityLabelsRoot
+from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
 
 
 class LabelsRequest(BaseRequestBuilder):

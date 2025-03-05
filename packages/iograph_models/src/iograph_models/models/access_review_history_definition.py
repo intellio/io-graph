@@ -9,13 +9,13 @@ class AccessReviewHistoryDefinition(BaseModel):
 	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 	createdBy: Optional[UserIdentity] = Field(alias="createdBy",default=None,)
 	createdDateTime: Optional[datetime] = Field(alias="createdDateTime",default=None,)
-	decisions: Optional[str | AccessReviewHistoryDecisionFilter] = Field(alias="decisions",default=None,)
+	decisions: Optional[AccessReviewHistoryDecisionFilter | str] = Field(alias="decisions",default=None,)
 	displayName: Optional[str] = Field(alias="displayName",default=None,)
 	reviewHistoryPeriodEndDateTime: Optional[datetime] = Field(alias="reviewHistoryPeriodEndDateTime",default=None,)
 	reviewHistoryPeriodStartDateTime: Optional[datetime] = Field(alias="reviewHistoryPeriodStartDateTime",default=None,)
 	scheduleSettings: Optional[AccessReviewHistoryScheduleSettings] = Field(alias="scheduleSettings",default=None,)
 	scopes: SerializeAsAny[Optional[list[AccessReviewScope]]] = Field(alias="scopes",default=None,)
-	status: Optional[str | AccessReviewHistoryStatus] = Field(alias="status",default=None,)
+	status: Optional[AccessReviewHistoryStatus | str] = Field(alias="status",default=None,)
 	instances: Optional[list[AccessReviewHistoryInstance]] = Field(alias="instances",default=None,)
 
 from .user_identity import UserIdentity

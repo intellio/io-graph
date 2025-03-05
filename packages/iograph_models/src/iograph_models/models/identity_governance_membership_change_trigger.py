@@ -5,7 +5,7 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 class IdentityGovernanceMembershipChangeTrigger(BaseModel):
 	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
-	changeType: Optional[str | IdentityGovernanceMembershipChangeType] = Field(alias="changeType",default=None,)
+	changeType: Optional[IdentityGovernanceMembershipChangeType | str] = Field(alias="changeType",default=None,)
 
 from .identity_governance_membership_change_type import IdentityGovernanceMembershipChangeType
 

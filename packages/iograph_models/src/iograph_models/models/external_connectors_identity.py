@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field, SerializeAsAny
 class ExternalConnectorsIdentity(BaseModel):
 	id: Optional[str] = Field(alias="id",default=None,)
 	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
-	type: Optional[str | ExternalConnectorsIdentityType] = Field(alias="type",default=None,)
+	type: Optional[ExternalConnectorsIdentityType | str] = Field(alias="type",default=None,)
 
 from .external_connectors_identity_type import ExternalConnectorsIdentityType
 

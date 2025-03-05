@@ -8,7 +8,7 @@ class M365AppsInstallationOptions(BaseModel):
 	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 	appsForMac: Optional[AppsInstallationOptionsForMac] = Field(alias="appsForMac",default=None,)
 	appsForWindows: Optional[AppsInstallationOptionsForWindows] = Field(alias="appsForWindows",default=None,)
-	updateChannel: Optional[str | AppsUpdateChannelType] = Field(alias="updateChannel",default=None,)
+	updateChannel: Optional[AppsUpdateChannelType | str] = Field(alias="updateChannel",default=None,)
 
 from .apps_installation_options_for_mac import AppsInstallationOptionsForMac
 from .apps_installation_options_for_windows import AppsInstallationOptionsForWindows

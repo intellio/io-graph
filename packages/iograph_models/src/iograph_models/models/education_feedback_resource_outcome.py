@@ -10,7 +10,7 @@ class EducationFeedbackResourceOutcome(BaseModel):
 	lastModifiedBy: SerializeAsAny[Optional[IdentitySet]] = Field(alias="lastModifiedBy",default=None,)
 	lastModifiedDateTime: Optional[datetime] = Field(alias="lastModifiedDateTime",default=None,)
 	feedbackResource: SerializeAsAny[Optional[EducationResource]] = Field(alias="feedbackResource",default=None,)
-	resourceStatus: Optional[str | EducationFeedbackResourceOutcomeStatus] = Field(alias="resourceStatus",default=None,)
+	resourceStatus: Optional[EducationFeedbackResourceOutcomeStatus | str] = Field(alias="resourceStatus",default=None,)
 
 from .identity_set import IdentitySet
 from .education_resource import EducationResource

@@ -7,7 +7,7 @@ class MicrosoftAuthenticatorAuthenticationMethodConfiguration(BaseModel):
 	id: Optional[str] = Field(alias="id",default=None,)
 	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 	excludeTargets: Optional[list[ExcludeTarget]] = Field(alias="excludeTargets",default=None,)
-	state: Optional[str | AuthenticationMethodState] = Field(alias="state",default=None,)
+	state: Optional[AuthenticationMethodState | str] = Field(alias="state",default=None,)
 	featureSettings: Optional[MicrosoftAuthenticatorFeatureSettings] = Field(alias="featureSettings",default=None,)
 	isSoftwareOathEnabled: Optional[bool] = Field(alias="isSoftwareOathEnabled",default=None,)
 	includeTargets: Optional[list[MicrosoftAuthenticatorAuthenticationMethodTarget]] = Field(alias="includeTargets",default=None,)

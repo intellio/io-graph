@@ -5,8 +5,8 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 class X509CertificateAuthenticationModeConfiguration(BaseModel):
 	rules: Optional[list[X509CertificateRule]] = Field(alias="rules",default=None,)
-	x509CertificateAuthenticationDefaultMode: Optional[str | X509CertificateAuthenticationMode] = Field(alias="x509CertificateAuthenticationDefaultMode",default=None,)
-	x509CertificateDefaultRequiredAffinityLevel: Optional[str | X509CertificateAffinityLevel] = Field(alias="x509CertificateDefaultRequiredAffinityLevel",default=None,)
+	x509CertificateAuthenticationDefaultMode: Optional[X509CertificateAuthenticationMode | str] = Field(alias="x509CertificateAuthenticationDefaultMode",default=None,)
+	x509CertificateDefaultRequiredAffinityLevel: Optional[X509CertificateAffinityLevel | str] = Field(alias="x509CertificateDefaultRequiredAffinityLevel",default=None,)
 	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 
 from .x509_certificate_rule import X509CertificateRule

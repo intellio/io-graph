@@ -16,7 +16,7 @@ class VirtualEventRegistration(BaseModel):
 	preferredTimezone: Optional[str] = Field(alias="preferredTimezone",default=None,)
 	registrationDateTime: Optional[datetime] = Field(alias="registrationDateTime",default=None,)
 	registrationQuestionAnswers: Optional[list[VirtualEventRegistrationQuestionAnswer]] = Field(alias="registrationQuestionAnswers",default=None,)
-	status: Optional[str | VirtualEventAttendeeRegistrationStatus] = Field(alias="status",default=None,)
+	status: Optional[VirtualEventAttendeeRegistrationStatus | str] = Field(alias="status",default=None,)
 	userId: Optional[str] = Field(alias="userId",default=None,)
 	sessions: Optional[list[VirtualEventSession]] = Field(alias="sessions",default=None,)
 

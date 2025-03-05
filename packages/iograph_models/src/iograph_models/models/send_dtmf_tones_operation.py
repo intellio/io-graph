@@ -8,8 +8,8 @@ class SendDtmfTonesOperation(BaseModel):
 	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 	clientContext: Optional[str] = Field(alias="clientContext",default=None,)
 	resultInfo: Optional[ResultInfo] = Field(alias="resultInfo",default=None,)
-	status: Optional[str | OperationStatus] = Field(alias="status",default=None,)
-	completionReason: Optional[str | SendDtmfCompletionReason] = Field(alias="completionReason",default=None,)
+	status: Optional[OperationStatus | str] = Field(alias="status",default=None,)
+	completionReason: Optional[SendDtmfCompletionReason | str] = Field(alias="completionReason",default=None,)
 
 from .result_info import ResultInfo
 from .operation_status import OperationStatus

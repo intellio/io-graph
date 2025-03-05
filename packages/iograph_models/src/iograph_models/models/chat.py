@@ -7,7 +7,7 @@ from pydantic import BaseModel, Field, SerializeAsAny
 class Chat(BaseModel):
 	id: Optional[str] = Field(alias="id",default=None,)
 	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
-	chatType: Optional[str | ChatType] = Field(alias="chatType",default=None,)
+	chatType: Optional[ChatType | str] = Field(alias="chatType",default=None,)
 	createdDateTime: Optional[datetime] = Field(alias="createdDateTime",default=None,)
 	isHiddenForAllMembers: Optional[bool] = Field(alias="isHiddenForAllMembers",default=None,)
 	lastUpdatedDateTime: Optional[datetime] = Field(alias="lastUpdatedDateTime",default=None,)

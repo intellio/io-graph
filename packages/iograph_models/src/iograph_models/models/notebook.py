@@ -18,7 +18,7 @@ class Notebook(BaseModel):
 	links: Optional[NotebookLinks] = Field(alias="links",default=None,)
 	sectionGroupsUrl: Optional[str] = Field(alias="sectionGroupsUrl",default=None,)
 	sectionsUrl: Optional[str] = Field(alias="sectionsUrl",default=None,)
-	userRole: Optional[str | OnenoteUserRole] = Field(alias="userRole",default=None,)
+	userRole: Optional[OnenoteUserRole | str] = Field(alias="userRole",default=None,)
 	sectionGroups: Optional[list[SectionGroup]] = Field(alias="sectionGroups",default=None,)
 	sections: Optional[list[OnenoteSection]] = Field(alias="sections",default=None,)
 

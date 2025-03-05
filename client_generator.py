@@ -170,7 +170,7 @@ def _pydantic_field_type_write(field_model_name:str, field_type:str, nullable:bo
             raise Exception(f'Optional[ in field_type not supported for type: {field_type} model_name: {field_model_name}')
 
     if is_enum:
-        field_type = ' | '.join(['str', field_type])
+        field_type = ' | '.join([ field_type, 'str'])
 
     if list_ref:
         field_type = f'list[{field_type}]'

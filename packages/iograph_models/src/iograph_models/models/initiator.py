@@ -7,7 +7,7 @@ class Initiator(BaseModel):
 	displayName: Optional[str] = Field(alias="displayName",default=None,)
 	id: Optional[str] = Field(alias="id",default=None,)
 	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
-	initiatorType: Optional[str | InitiatorType] = Field(alias="initiatorType",default=None,)
+	initiatorType: Optional[InitiatorType | str] = Field(alias="initiatorType",default=None,)
 
 from .initiator_type import InitiatorType
 

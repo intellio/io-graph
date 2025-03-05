@@ -13,8 +13,8 @@ from typing import TYPE_CHECKING
 if TYPE_CHECKING:
 	from .validate_authentication_configuration import ValidateAuthenticationConfigurationRequest
 	from .....request_adapter import HttpxRequestAdapter
-from iograph_models.models.custom_authentication_extension import CustomAuthenticationExtension
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.models.custom_authentication_extension import CustomAuthenticationExtension
 
 
 class ByCustomAuthenticationExtensionIdRequest(BaseRequestBuilder):

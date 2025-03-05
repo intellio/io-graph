@@ -4,7 +4,7 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class Win32LobAppMsiInformation(BaseModel):
-	packageType: Optional[str | Win32LobAppMsiPackageType] = Field(alias="packageType",default=None,)
+	packageType: Optional[Win32LobAppMsiPackageType | str] = Field(alias="packageType",default=None,)
 	productCode: Optional[str] = Field(alias="productCode",default=None,)
 	productName: Optional[str] = Field(alias="productName",default=None,)
 	productVersion: Optional[str] = Field(alias="productVersion",default=None,)

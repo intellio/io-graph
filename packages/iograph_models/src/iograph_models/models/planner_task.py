@@ -23,7 +23,7 @@ class PlannerTask(BaseModel):
 	orderHint: Optional[str] = Field(alias="orderHint",default=None,)
 	percentComplete: Optional[int] = Field(alias="percentComplete",default=None,)
 	planId: Optional[str] = Field(alias="planId",default=None,)
-	previewType: Optional[str | PlannerPreviewType] = Field(alias="previewType",default=None,)
+	previewType: Optional[PlannerPreviewType | str] = Field(alias="previewType",default=None,)
 	priority: Optional[int] = Field(alias="priority",default=None,)
 	referenceCount: Optional[int] = Field(alias="referenceCount",default=None,)
 	startDateTime: Optional[datetime] = Field(alias="startDateTime",default=None,)

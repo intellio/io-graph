@@ -31,7 +31,7 @@ class Windows10MobileCompliancePolicy(BaseModel):
 	passwordMinutesOfInactivityBeforeLock: Optional[int] = Field(alias="passwordMinutesOfInactivityBeforeLock",default=None,)
 	passwordPreviousPasswordBlockCount: Optional[int] = Field(alias="passwordPreviousPasswordBlockCount",default=None,)
 	passwordRequired: Optional[bool] = Field(alias="passwordRequired",default=None,)
-	passwordRequiredType: Optional[str | RequiredPasswordType] = Field(alias="passwordRequiredType",default=None,)
+	passwordRequiredType: Optional[RequiredPasswordType | str] = Field(alias="passwordRequiredType",default=None,)
 	passwordRequireToUnlockFromIdle: Optional[bool] = Field(alias="passwordRequireToUnlockFromIdle",default=None,)
 	secureBootEnabled: Optional[bool] = Field(alias="secureBootEnabled",default=None,)
 	storageRequireEncryption: Optional[bool] = Field(alias="storageRequireEncryption",default=None,)

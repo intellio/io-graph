@@ -4,7 +4,7 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class CloudPcRestorePointSetting(BaseModel):
-	frequencyType: Optional[str | CloudPcRestorePointFrequencyType] = Field(alias="frequencyType",default=None,)
+	frequencyType: Optional[CloudPcRestorePointFrequencyType | str] = Field(alias="frequencyType",default=None,)
 	userRestoreEnabled: Optional[bool] = Field(alias="userRestoreEnabled",default=None,)
 	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 

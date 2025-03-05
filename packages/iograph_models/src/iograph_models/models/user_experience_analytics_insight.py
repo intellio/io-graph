@@ -5,7 +5,7 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 class UserExperienceAnalyticsInsight(BaseModel):
 	insightId: Optional[str] = Field(alias="insightId",default=None,)
-	severity: Optional[str | UserExperienceAnalyticsInsightSeverity] = Field(alias="severity",default=None,)
+	severity: Optional[UserExperienceAnalyticsInsightSeverity | str] = Field(alias="severity",default=None,)
 	userExperienceAnalyticsMetricId: Optional[str] = Field(alias="userExperienceAnalyticsMetricId",default=None,)
 	values: SerializeAsAny[Optional[list[UserExperienceAnalyticsInsightValue]]] = Field(alias="values",default=None,)
 	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)

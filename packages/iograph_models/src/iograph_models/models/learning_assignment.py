@@ -13,10 +13,10 @@ class LearningAssignment(BaseModel):
 	learnerUserId: Optional[str] = Field(alias="learnerUserId",default=None,)
 	learningContentId: Optional[str] = Field(alias="learningContentId",default=None,)
 	learningProviderId: Optional[str] = Field(alias="learningProviderId",default=None,)
-	status: Optional[str | CourseStatus] = Field(alias="status",default=None,)
+	status: Optional[CourseStatus | str] = Field(alias="status",default=None,)
 	assignedDateTime: Optional[datetime] = Field(alias="assignedDateTime",default=None,)
 	assignerUserId: Optional[str] = Field(alias="assignerUserId",default=None,)
-	assignmentType: Optional[str | AssignmentType] = Field(alias="assignmentType",default=None,)
+	assignmentType: Optional[AssignmentType | str] = Field(alias="assignmentType",default=None,)
 	dueDateTime: Optional[DateTimeTimeZone] = Field(alias="dueDateTime",default=None,)
 	notes: Optional[ItemBody] = Field(alias="notes",default=None,)
 

@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field, SerializeAsAny
 class Attendee(BaseModel):
 	emailAddress: Optional[EmailAddress] = Field(alias="emailAddress",default=None,)
 	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
-	type: Optional[str | AttendeeType] = Field(alias="type",default=None,)
+	type: Optional[AttendeeType | str] = Field(alias="type",default=None,)
 	proposedNewTime: Optional[TimeSlot] = Field(alias="proposedNewTime",default=None,)
 	status: Optional[ResponseStatus] = Field(alias="status",default=None,)
 

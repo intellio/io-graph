@@ -13,7 +13,7 @@ class LearningSelfInitiatedCourse(BaseModel):
 	learnerUserId: Optional[str] = Field(alias="learnerUserId",default=None,)
 	learningContentId: Optional[str] = Field(alias="learningContentId",default=None,)
 	learningProviderId: Optional[str] = Field(alias="learningProviderId",default=None,)
-	status: Optional[str | CourseStatus] = Field(alias="status",default=None,)
+	status: Optional[CourseStatus | str] = Field(alias="status",default=None,)
 	startedDateTime: Optional[datetime] = Field(alias="startedDateTime",default=None,)
 
 from .course_status import CourseStatus

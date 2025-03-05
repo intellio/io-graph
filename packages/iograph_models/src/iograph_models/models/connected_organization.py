@@ -12,7 +12,7 @@ class ConnectedOrganization(BaseModel):
 	displayName: Optional[str] = Field(alias="displayName",default=None,)
 	identitySources: SerializeAsAny[Optional[list[IdentitySource]]] = Field(alias="identitySources",default=None,)
 	modifiedDateTime: Optional[datetime] = Field(alias="modifiedDateTime",default=None,)
-	state: Optional[str | ConnectedOrganizationState] = Field(alias="state",default=None,)
+	state: Optional[ConnectedOrganizationState | str] = Field(alias="state",default=None,)
 	externalSponsors: SerializeAsAny[Optional[list[DirectoryObject]]] = Field(alias="externalSponsors",default=None,)
 	internalSponsors: SerializeAsAny[Optional[list[DirectoryObject]]] = Field(alias="internalSponsors",default=None,)
 

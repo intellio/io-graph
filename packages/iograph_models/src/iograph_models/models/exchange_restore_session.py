@@ -13,7 +13,7 @@ class ExchangeRestoreSession(BaseModel):
 	error: Optional[PublicError] = Field(alias="error",default=None,)
 	lastModifiedBy: SerializeAsAny[Optional[IdentitySet]] = Field(alias="lastModifiedBy",default=None,)
 	lastModifiedDateTime: Optional[datetime] = Field(alias="lastModifiedDateTime",default=None,)
-	status: Optional[str | RestoreSessionStatus] = Field(alias="status",default=None,)
+	status: Optional[RestoreSessionStatus | str] = Field(alias="status",default=None,)
 	granularMailboxRestoreArtifacts: Optional[list[GranularMailboxRestoreArtifact]] = Field(alias="granularMailboxRestoreArtifacts",default=None,)
 	mailboxRestoreArtifacts: SerializeAsAny[Optional[list[MailboxRestoreArtifact]]] = Field(alias="mailboxRestoreArtifacts",default=None,)
 

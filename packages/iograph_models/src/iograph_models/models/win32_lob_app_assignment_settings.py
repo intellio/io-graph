@@ -6,9 +6,9 @@ from pydantic import BaseModel, Field, SerializeAsAny
 class Win32LobAppAssignmentSettings(BaseModel):
 	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 	autoUpdateSettings: Optional[Win32LobAppAutoUpdateSettings] = Field(alias="autoUpdateSettings",default=None,)
-	deliveryOptimizationPriority: Optional[str | Win32LobAppDeliveryOptimizationPriority] = Field(alias="deliveryOptimizationPriority",default=None,)
+	deliveryOptimizationPriority: Optional[Win32LobAppDeliveryOptimizationPriority | str] = Field(alias="deliveryOptimizationPriority",default=None,)
 	installTimeSettings: Optional[MobileAppInstallTimeSettings] = Field(alias="installTimeSettings",default=None,)
-	notifications: Optional[str | Win32LobAppNotification] = Field(alias="notifications",default=None,)
+	notifications: Optional[Win32LobAppNotification | str] = Field(alias="notifications",default=None,)
 	restartSettings: Optional[Win32LobAppRestartSettings] = Field(alias="restartSettings",default=None,)
 
 from .win32_lob_app_auto_update_settings import Win32LobAppAutoUpdateSettings

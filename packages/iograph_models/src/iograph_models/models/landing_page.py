@@ -14,8 +14,8 @@ class LandingPage(BaseModel):
 	lastModifiedBy: Optional[EmailIdentity] = Field(alias="lastModifiedBy",default=None,)
 	lastModifiedDateTime: Optional[datetime] = Field(alias="lastModifiedDateTime",default=None,)
 	locale: Optional[str] = Field(alias="locale",default=None,)
-	source: Optional[str | SimulationContentSource] = Field(alias="source",default=None,)
-	status: Optional[str | SimulationContentStatus] = Field(alias="status",default=None,)
+	source: Optional[SimulationContentSource | str] = Field(alias="source",default=None,)
+	status: Optional[SimulationContentStatus | str] = Field(alias="status",default=None,)
 	supportedLocales: Optional[list[str]] = Field(alias="supportedLocales",default=None,)
 	details: Optional[list[LandingPageDetail]] = Field(alias="details",default=None,)
 

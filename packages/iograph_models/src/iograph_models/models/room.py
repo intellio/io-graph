@@ -11,7 +11,7 @@ class Room(BaseModel):
 	geoCoordinates: Optional[OutlookGeoCoordinates] = Field(alias="geoCoordinates",default=None,)
 	phone: Optional[str] = Field(alias="phone",default=None,)
 	audioDeviceName: Optional[str] = Field(alias="audioDeviceName",default=None,)
-	bookingType: Optional[str | BookingType] = Field(alias="bookingType",default=None,)
+	bookingType: Optional[BookingType | str] = Field(alias="bookingType",default=None,)
 	building: Optional[str] = Field(alias="building",default=None,)
 	capacity: Optional[int] = Field(alias="capacity",default=None,)
 	displayDeviceName: Optional[str] = Field(alias="displayDeviceName",default=None,)

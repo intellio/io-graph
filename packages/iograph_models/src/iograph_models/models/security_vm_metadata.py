@@ -4,7 +4,7 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class SecurityVmMetadata(BaseModel):
-	cloudProvider: Optional[str | SecurityVmCloudProvider] = Field(alias="cloudProvider",default=None,)
+	cloudProvider: Optional[SecurityVmCloudProvider | str] = Field(alias="cloudProvider",default=None,)
 	resourceId: Optional[str] = Field(alias="resourceId",default=None,)
 	subscriptionId: Optional[str] = Field(alias="subscriptionId",default=None,)
 	vmId: Optional[str] = Field(alias="vmId",default=None,)

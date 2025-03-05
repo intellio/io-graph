@@ -2,6 +2,7 @@ from __future__ import annotations
 from typing import Optional
 from pydantic import model_validator, ModelWrapValidatorHandler, ValidationError
 from typing_extensions import Self
+from typing import Any
 from pydantic import BaseModel, Field, SerializeAsAny
 
 
@@ -15,7 +16,7 @@ class VirtualEvent(BaseModel):
 	externalEventInformation: Optional[list[VirtualEventExternalInformation]] = Field(alias="externalEventInformation",default=None,)
 	settings: Optional[VirtualEventSettings] = Field(alias="settings",default=None,)
 	startDateTime: Optional[DateTimeTimeZone] = Field(alias="startDateTime",default=None,)
-	status: Optional[str | VirtualEventStatus] = Field(alias="status",default=None,)
+	status: Optional[VirtualEventStatus | str] = Field(alias="status",default=None,)
 	presenters: Optional[list[VirtualEventPresenter]] = Field(alias="presenters",default=None,)
 	sessions: Optional[list[VirtualEventSession]] = Field(alias="sessions",default=None,)
 

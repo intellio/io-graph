@@ -4,8 +4,8 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class DefaultInvitationRedemptionIdentityProviderConfiguration(BaseModel):
-	fallbackIdentityProvider: Optional[str | B2bIdentityProvidersType] = Field(alias="fallbackIdentityProvider",default=None,)
-	primaryIdentityProviderPrecedenceOrder: Optional[str | B2bIdentityProvidersType] = Field(alias="primaryIdentityProviderPrecedenceOrder",default=None,)
+	fallbackIdentityProvider: Optional[B2bIdentityProvidersType | str] = Field(alias="fallbackIdentityProvider",default=None,)
+	primaryIdentityProviderPrecedenceOrder: Optional[B2bIdentityProvidersType | str] = Field(alias="primaryIdentityProviderPrecedenceOrder",default=None,)
 	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 
 from .b2b_identity_providers_type import B2bIdentityProvidersType

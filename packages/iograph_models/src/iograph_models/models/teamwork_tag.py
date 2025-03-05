@@ -9,7 +9,7 @@ class TeamworkTag(BaseModel):
 	description: Optional[str] = Field(alias="description",default=None,)
 	displayName: Optional[str] = Field(alias="displayName",default=None,)
 	memberCount: Optional[int] = Field(alias="memberCount",default=None,)
-	tagType: Optional[str | TeamworkTagType] = Field(alias="tagType",default=None,)
+	tagType: Optional[TeamworkTagType | str] = Field(alias="tagType",default=None,)
 	teamId: Optional[str] = Field(alias="teamId",default=None,)
 	members: Optional[list[TeamworkTagMember]] = Field(alias="members",default=None,)
 

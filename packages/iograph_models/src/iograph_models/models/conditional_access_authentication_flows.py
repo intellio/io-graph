@@ -4,7 +4,7 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class ConditionalAccessAuthenticationFlows(BaseModel):
-	transferMethods: Optional[str | ConditionalAccessTransferMethods] = Field(alias="transferMethods",default=None,)
+	transferMethods: Optional[ConditionalAccessTransferMethods | str] = Field(alias="transferMethods",default=None,)
 	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 
 from .conditional_access_transfer_methods import ConditionalAccessTransferMethods

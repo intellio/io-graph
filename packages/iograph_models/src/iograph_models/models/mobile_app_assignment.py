@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field, SerializeAsAny
 class MobileAppAssignment(BaseModel):
 	id: Optional[str] = Field(alias="id",default=None,)
 	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
-	intent: Optional[str | InstallIntent] = Field(alias="intent",default=None,)
+	intent: Optional[InstallIntent | str] = Field(alias="intent",default=None,)
 	settings: SerializeAsAny[Optional[MobileAppAssignmentSettings]] = Field(alias="settings",default=None,)
 	target: SerializeAsAny[Optional[DeviceAndAppManagementAssignmentTarget]] = Field(alias="target",default=None,)
 

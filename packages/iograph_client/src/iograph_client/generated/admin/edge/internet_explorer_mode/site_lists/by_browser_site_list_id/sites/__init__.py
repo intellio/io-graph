@@ -14,9 +14,9 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_browser_site_id import ByBrowserSiteIdRequest
 	from ........request_adapter import HttpxRequestAdapter
-from iograph_models.models.browser_site_collection_response import BrowserSiteCollectionResponse
-from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.models.browser_site import BrowserSite
+from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.models.browser_site_collection_response import BrowserSiteCollectionResponse
 
 
 class SitesRequest(BaseRequestBuilder):

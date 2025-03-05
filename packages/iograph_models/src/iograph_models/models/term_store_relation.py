@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field, SerializeAsAny
 class TermStoreRelation(BaseModel):
 	id: Optional[str] = Field(alias="id",default=None,)
 	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
-	relationship: Optional[str | TermStoreRelationType] = Field(alias="relationship",default=None,)
+	relationship: Optional[TermStoreRelationType | str] = Field(alias="relationship",default=None,)
 	fromTerm: Optional[TermStoreTerm] = Field(alias="fromTerm",default=None,)
 	set: Optional[TermStoreSet] = Field(alias="set",default=None,)
 	toTerm: Optional[TermStoreTerm] = Field(alias="toTerm",default=None,)

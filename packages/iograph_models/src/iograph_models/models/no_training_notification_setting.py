@@ -4,9 +4,9 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class NoTrainingNotificationSetting(BaseModel):
-	notificationPreference: Optional[str | EndUserNotificationPreference] = Field(alias="notificationPreference",default=None,)
+	notificationPreference: Optional[EndUserNotificationPreference | str] = Field(alias="notificationPreference",default=None,)
 	positiveReinforcement: Optional[PositiveReinforcementNotification] = Field(alias="positiveReinforcement",default=None,)
-	settingType: Optional[str | EndUserNotificationSettingType] = Field(alias="settingType",default=None,)
+	settingType: Optional[EndUserNotificationSettingType | str] = Field(alias="settingType",default=None,)
 	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 	simulationNotification: Optional[SimulationNotification] = Field(alias="simulationNotification",default=None,)
 

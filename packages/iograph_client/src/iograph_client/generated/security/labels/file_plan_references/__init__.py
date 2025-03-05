@@ -14,9 +14,9 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_file_plan_reference_template_id import ByFilePlanReferenceTemplateIdRequest
 	from .....request_adapter import HttpxRequestAdapter
-from iograph_models.models.security_file_plan_reference_template_collection_response import SecurityFilePlanReferenceTemplateCollectionResponse
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.models.security_file_plan_reference_template import SecurityFilePlanReferenceTemplate
+from iograph_models.models.security_file_plan_reference_template_collection_response import SecurityFilePlanReferenceTemplateCollectionResponse
 
 
 class FilePlanReferencesRequest(BaseRequestBuilder):

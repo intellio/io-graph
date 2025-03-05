@@ -9,9 +9,9 @@ class ExternalConnectorsProperty(BaseModel):
 	isRefinable: Optional[bool] = Field(alias="isRefinable",default=None,)
 	isRetrievable: Optional[bool] = Field(alias="isRetrievable",default=None,)
 	isSearchable: Optional[bool] = Field(alias="isSearchable",default=None,)
-	labels: Optional[str | ExternalConnectorsLabel] = Field(alias="labels",default=None,)
+	labels: Optional[ExternalConnectorsLabel | str] = Field(alias="labels",default=None,)
 	name: Optional[str] = Field(alias="name",default=None,)
-	type: Optional[str | ExternalConnectorsPropertyType] = Field(alias="type",default=None,)
+	type: Optional[ExternalConnectorsPropertyType | str] = Field(alias="type",default=None,)
 	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 
 from .external_connectors_label import ExternalConnectorsLabel

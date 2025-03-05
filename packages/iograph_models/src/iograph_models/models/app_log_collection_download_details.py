@@ -4,7 +4,7 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class AppLogCollectionDownloadDetails(BaseModel):
-	appLogDecryptionAlgorithm: Optional[str | AppLogDecryptionAlgorithm] = Field(alias="appLogDecryptionAlgorithm",default=None,)
+	appLogDecryptionAlgorithm: Optional[AppLogDecryptionAlgorithm | str] = Field(alias="appLogDecryptionAlgorithm",default=None,)
 	decryptionKey: Optional[str] = Field(alias="decryptionKey",default=None,)
 	downloadUrl: Optional[str] = Field(alias="downloadUrl",default=None,)
 	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)

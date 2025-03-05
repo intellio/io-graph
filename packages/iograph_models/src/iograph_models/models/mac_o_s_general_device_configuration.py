@@ -18,7 +18,7 @@ class MacOSGeneralDeviceConfiguration(BaseModel):
 	deviceStatusOverview: Optional[DeviceConfigurationDeviceOverview] = Field(alias="deviceStatusOverview",default=None,)
 	userStatuses: Optional[list[DeviceConfigurationUserStatus]] = Field(alias="userStatuses",default=None,)
 	userStatusOverview: Optional[DeviceConfigurationUserOverview] = Field(alias="userStatusOverview",default=None,)
-	compliantAppListType: Optional[str | AppListType] = Field(alias="compliantAppListType",default=None,)
+	compliantAppListType: Optional[AppListType | str] = Field(alias="compliantAppListType",default=None,)
 	compliantAppsList: Optional[list[AppListItem]] = Field(alias="compliantAppsList",default=None,)
 	emailInDomainSuffixes: Optional[list[str]] = Field(alias="emailInDomainSuffixes",default=None,)
 	passwordBlockSimple: Optional[bool] = Field(alias="passwordBlockSimple",default=None,)
@@ -29,7 +29,7 @@ class MacOSGeneralDeviceConfiguration(BaseModel):
 	passwordMinutesOfInactivityBeforeScreenTimeout: Optional[int] = Field(alias="passwordMinutesOfInactivityBeforeScreenTimeout",default=None,)
 	passwordPreviousPasswordBlockCount: Optional[int] = Field(alias="passwordPreviousPasswordBlockCount",default=None,)
 	passwordRequired: Optional[bool] = Field(alias="passwordRequired",default=None,)
-	passwordRequiredType: Optional[str | RequiredPasswordType] = Field(alias="passwordRequiredType",default=None,)
+	passwordRequiredType: Optional[RequiredPasswordType | str] = Field(alias="passwordRequiredType",default=None,)
 
 from .device_configuration_assignment import DeviceConfigurationAssignment
 from .setting_state_device_summary import SettingStateDeviceSummary

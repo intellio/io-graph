@@ -14,7 +14,7 @@ class ArchivedPrintJob(BaseModel):
 	id: Optional[str] = Field(alias="id",default=None,)
 	printerId: Optional[str] = Field(alias="printerId",default=None,)
 	printerName: Optional[str] = Field(alias="printerName",default=None,)
-	processingState: Optional[str | PrintJobProcessingState] = Field(alias="processingState",default=None,)
+	processingState: Optional[PrintJobProcessingState | str] = Field(alias="processingState",default=None,)
 	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 
 from .user_identity import UserIdentity

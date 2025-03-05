@@ -12,7 +12,7 @@ class CallRecordsSession(BaseModel):
 	endDateTime: Optional[datetime] = Field(alias="endDateTime",default=None,)
 	failureInfo: Optional[CallRecordsFailureInfo] = Field(alias="failureInfo",default=None,)
 	isTest: Optional[bool] = Field(alias="isTest",default=None,)
-	modalities: Optional[list[str | CallRecordsModality]] = Field(alias="modalities",default=None,)
+	modalities: Optional[list[CallRecordsModality | str]] = Field(alias="modalities",default=None,)
 	startDateTime: Optional[datetime] = Field(alias="startDateTime",default=None,)
 	segments: Optional[list[CallRecordsSegment]] = Field(alias="segments",default=None,)
 

@@ -14,8 +14,8 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_whois_record_id import ByWhoisRecordIdRequest
 	from .....request_adapter import HttpxRequestAdapter
-from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.models.security_whois_record_collection_response import SecurityWhoisRecordCollectionResponse
+from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.models.security_whois_record import SecurityWhoisRecord
 
 

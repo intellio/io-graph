@@ -4,9 +4,9 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class CalendarSharingMessageAction(BaseModel):
-	action: Optional[str | CalendarSharingAction] = Field(alias="action",default=None,)
-	actionType: Optional[str | CalendarSharingActionType] = Field(alias="actionType",default=None,)
-	importance: Optional[str | CalendarSharingActionImportance] = Field(alias="importance",default=None,)
+	action: Optional[CalendarSharingAction | str] = Field(alias="action",default=None,)
+	actionType: Optional[CalendarSharingActionType | str] = Field(alias="actionType",default=None,)
+	importance: Optional[CalendarSharingActionImportance | str] = Field(alias="importance",default=None,)
 	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 
 from .calendar_sharing_action import CalendarSharingAction

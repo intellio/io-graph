@@ -12,7 +12,7 @@ class PermissionGrantConditionSet(BaseModel):
 	clientApplicationTenantIds: Optional[list[str]] = Field(alias="clientApplicationTenantIds",default=None,)
 	permissionClassification: Optional[str] = Field(alias="permissionClassification",default=None,)
 	permissions: Optional[list[str]] = Field(alias="permissions",default=None,)
-	permissionType: Optional[str | PermissionType] = Field(alias="permissionType",default=None,)
+	permissionType: Optional[PermissionType | str] = Field(alias="permissionType",default=None,)
 	resourceApplication: Optional[str] = Field(alias="resourceApplication",default=None,)
 
 from .permission_type import PermissionType

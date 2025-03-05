@@ -10,7 +10,7 @@ class WindowsAutopilotDeviceIdentity(BaseModel):
 	addressableUserName: Optional[str] = Field(alias="addressableUserName",default=None,)
 	azureActiveDirectoryDeviceId: Optional[str] = Field(alias="azureActiveDirectoryDeviceId",default=None,)
 	displayName: Optional[str] = Field(alias="displayName",default=None,)
-	enrollmentState: Optional[str | EnrollmentState] = Field(alias="enrollmentState",default=None,)
+	enrollmentState: Optional[EnrollmentState | str] = Field(alias="enrollmentState",default=None,)
 	groupTag: Optional[str] = Field(alias="groupTag",default=None,)
 	lastContactedDateTime: Optional[datetime] = Field(alias="lastContactedDateTime",default=None,)
 	managedDeviceId: Optional[str] = Field(alias="managedDeviceId",default=None,)

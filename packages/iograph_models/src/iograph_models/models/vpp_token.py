@@ -13,11 +13,11 @@ class VppToken(BaseModel):
 	expirationDateTime: Optional[datetime] = Field(alias="expirationDateTime",default=None,)
 	lastModifiedDateTime: Optional[datetime] = Field(alias="lastModifiedDateTime",default=None,)
 	lastSyncDateTime: Optional[datetime] = Field(alias="lastSyncDateTime",default=None,)
-	lastSyncStatus: Optional[str | VppTokenSyncStatus] = Field(alias="lastSyncStatus",default=None,)
+	lastSyncStatus: Optional[VppTokenSyncStatus | str] = Field(alias="lastSyncStatus",default=None,)
 	organizationName: Optional[str] = Field(alias="organizationName",default=None,)
-	state: Optional[str | VppTokenState] = Field(alias="state",default=None,)
+	state: Optional[VppTokenState | str] = Field(alias="state",default=None,)
 	token: Optional[str] = Field(alias="token",default=None,)
-	vppTokenAccountType: Optional[str | VppTokenAccountType] = Field(alias="vppTokenAccountType",default=None,)
+	vppTokenAccountType: Optional[VppTokenAccountType | str] = Field(alias="vppTokenAccountType",default=None,)
 
 from .vpp_token_sync_status import VppTokenSyncStatus
 from .vpp_token_state import VppTokenState

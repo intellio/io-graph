@@ -13,7 +13,7 @@ class IosManagedAppRegistration(BaseModel):
 	deviceName: Optional[str] = Field(alias="deviceName",default=None,)
 	deviceTag: Optional[str] = Field(alias="deviceTag",default=None,)
 	deviceType: Optional[str] = Field(alias="deviceType",default=None,)
-	flaggedReasons: Optional[list[str | ManagedAppFlaggedReason]] = Field(alias="flaggedReasons",default=None,)
+	flaggedReasons: Optional[list[ManagedAppFlaggedReason | str]] = Field(alias="flaggedReasons",default=None,)
 	lastSyncDateTime: Optional[datetime] = Field(alias="lastSyncDateTime",default=None,)
 	managementSdkVersion: Optional[str] = Field(alias="managementSdkVersion",default=None,)
 	platformVersion: Optional[str] = Field(alias="platformVersion",default=None,)

@@ -7,7 +7,7 @@ from pydantic import BaseModel, Field, SerializeAsAny
 class OpenShiftItem(BaseModel):
 	endDateTime: Optional[datetime] = Field(alias="endDateTime",default=None,)
 	startDateTime: Optional[datetime] = Field(alias="startDateTime",default=None,)
-	theme: Optional[str | ScheduleEntityTheme] = Field(alias="theme",default=None,)
+	theme: Optional[ScheduleEntityTheme | str] = Field(alias="theme",default=None,)
 	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 	activities: Optional[list[ShiftActivity]] = Field(alias="activities",default=None,)
 	displayName: Optional[str] = Field(alias="displayName",default=None,)

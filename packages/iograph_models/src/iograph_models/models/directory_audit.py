@@ -15,7 +15,7 @@ class DirectoryAudit(BaseModel):
 	initiatedBy: Optional[AuditActivityInitiator] = Field(alias="initiatedBy",default=None,)
 	loggedByService: Optional[str] = Field(alias="loggedByService",default=None,)
 	operationType: Optional[str] = Field(alias="operationType",default=None,)
-	result: Optional[str | OperationResult] = Field(alias="result",default=None,)
+	result: Optional[OperationResult | str] = Field(alias="result",default=None,)
 	resultReason: Optional[str] = Field(alias="resultReason",default=None,)
 	targetResources: Optional[list[TargetResource]] = Field(alias="targetResources",default=None,)
 

@@ -15,8 +15,8 @@ if TYPE_CHECKING:
 	from .by_open_shift_id import ByOpenShiftIdRequest
 	from ......request_adapter import HttpxRequestAdapter
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
-from iograph_models.models.open_shift import OpenShift
 from iograph_models.models.open_shift_collection_response import OpenShiftCollectionResponse
+from iograph_models.models.open_shift import OpenShift
 
 
 class OpenShiftsRequest(BaseRequestBuilder):

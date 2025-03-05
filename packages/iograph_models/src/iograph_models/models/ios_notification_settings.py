@@ -4,7 +4,7 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class IosNotificationSettings(BaseModel):
-	alertType: Optional[str | IosNotificationAlertType] = Field(alias="alertType",default=None,)
+	alertType: Optional[IosNotificationAlertType | str] = Field(alias="alertType",default=None,)
 	appName: Optional[str] = Field(alias="appName",default=None,)
 	badgesEnabled: Optional[bool] = Field(alias="badgesEnabled",default=None,)
 	bundleID: Optional[str] = Field(alias="bundleID",default=None,)

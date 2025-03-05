@@ -12,7 +12,7 @@ class ServiceApp(BaseModel):
 	lastModifiedBy: SerializeAsAny[Optional[IdentitySet]] = Field(alias="lastModifiedBy",default=None,)
 	lastModifiedDateTime: Optional[datetime] = Field(alias="lastModifiedDateTime",default=None,)
 	registrationDateTime: Optional[datetime] = Field(alias="registrationDateTime",default=None,)
-	status: Optional[str | ServiceAppStatus] = Field(alias="status",default=None,)
+	status: Optional[ServiceAppStatus | str] = Field(alias="status",default=None,)
 
 from .identity import Identity
 from .identity_set import IdentitySet

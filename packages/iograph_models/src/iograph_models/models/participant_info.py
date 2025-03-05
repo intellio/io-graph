@@ -5,7 +5,7 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 class ParticipantInfo(BaseModel):
 	countryCode: Optional[str] = Field(alias="countryCode",default=None,)
-	endpointType: Optional[str | EndpointType] = Field(alias="endpointType",default=None,)
+	endpointType: Optional[EndpointType | str] = Field(alias="endpointType",default=None,)
 	identity: SerializeAsAny[Optional[IdentitySet]] = Field(alias="identity",default=None,)
 	languageId: Optional[str] = Field(alias="languageId",default=None,)
 	participantId: Optional[str] = Field(alias="participantId",default=None,)

@@ -13,7 +13,7 @@ class SearchAcronym(BaseModel):
 	lastModifiedDateTime: Optional[datetime] = Field(alias="lastModifiedDateTime",default=None,)
 	webUrl: Optional[str] = Field(alias="webUrl",default=None,)
 	standsFor: Optional[str] = Field(alias="standsFor",default=None,)
-	state: Optional[str | SearchAnswerState] = Field(alias="state",default=None,)
+	state: Optional[SearchAnswerState | str] = Field(alias="state",default=None,)
 
 from .search_identity_set import SearchIdentitySet
 from .search_answer_state import SearchAnswerState

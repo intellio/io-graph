@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field, SerializeAsAny
 class IdentityGovernanceWorkflowTemplate(BaseModel):
 	id: Optional[str] = Field(alias="id",default=None,)
 	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
-	category: Optional[str | IdentityGovernanceLifecycleWorkflowCategory] = Field(alias="category",default=None,)
+	category: Optional[IdentityGovernanceLifecycleWorkflowCategory | str] = Field(alias="category",default=None,)
 	description: Optional[str] = Field(alias="description",default=None,)
 	displayName: Optional[str] = Field(alias="displayName",default=None,)
 	executionConditions: SerializeAsAny[Optional[IdentityGovernanceWorkflowExecutionConditions]] = Field(alias="executionConditions",default=None,)

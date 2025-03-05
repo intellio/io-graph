@@ -6,8 +6,8 @@ from pydantic import BaseModel, Field, SerializeAsAny
 class UserRegistrationFeatureSummary(BaseModel):
 	totalUserCount: Optional[int] = Field(alias="totalUserCount",default=None,)
 	userRegistrationFeatureCounts: Optional[list[UserRegistrationFeatureCount]] = Field(alias="userRegistrationFeatureCounts",default=None,)
-	userRoles: Optional[str | IncludedUserRoles] = Field(alias="userRoles",default=None,)
-	userTypes: Optional[str | IncludedUserTypes] = Field(alias="userTypes",default=None,)
+	userRoles: Optional[IncludedUserRoles | str] = Field(alias="userRoles",default=None,)
+	userTypes: Optional[IncludedUserTypes | str] = Field(alias="userTypes",default=None,)
 	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 
 from .user_registration_feature_count import UserRegistrationFeatureCount

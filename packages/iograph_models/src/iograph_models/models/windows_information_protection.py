@@ -3,6 +3,7 @@ from uuid import UUID
 from typing import Optional
 from pydantic import model_validator, ModelWrapValidatorHandler, ValidationError
 from typing_extensions import Self
+from typing import Any
 from datetime import datetime
 from pydantic import BaseModel, Field, SerializeAsAny
 
@@ -17,7 +18,7 @@ class WindowsInformationProtection(BaseModel):
 	version: Optional[str] = Field(alias="version",default=None,)
 	azureRightsManagementServicesAllowed: Optional[bool] = Field(alias="azureRightsManagementServicesAllowed",default=None,)
 	dataRecoveryCertificate: Optional[WindowsInformationProtectionDataRecoveryCertificate] = Field(alias="dataRecoveryCertificate",default=None,)
-	enforcementLevel: Optional[str | WindowsInformationProtectionEnforcementLevel] = Field(alias="enforcementLevel",default=None,)
+	enforcementLevel: Optional[WindowsInformationProtectionEnforcementLevel | str] = Field(alias="enforcementLevel",default=None,)
 	enterpriseDomain: Optional[str] = Field(alias="enterpriseDomain",default=None,)
 	enterpriseInternalProxyServers: Optional[list[WindowsInformationProtectionResourceCollection]] = Field(alias="enterpriseInternalProxyServers",default=None,)
 	enterpriseIPRanges: Optional[list[WindowsInformationProtectionIPRangeCollection]] = Field(alias="enterpriseIPRanges",default=None,)

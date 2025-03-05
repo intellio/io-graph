@@ -12,7 +12,7 @@ class SecurityEdiscoveryCase(BaseModel):
 	displayName: Optional[str] = Field(alias="displayName",default=None,)
 	lastModifiedBy: SerializeAsAny[Optional[IdentitySet]] = Field(alias="lastModifiedBy",default=None,)
 	lastModifiedDateTime: Optional[datetime] = Field(alias="lastModifiedDateTime",default=None,)
-	status: Optional[str | SecurityCaseStatus] = Field(alias="status",default=None,)
+	status: Optional[SecurityCaseStatus | str] = Field(alias="status",default=None,)
 	closedBy: SerializeAsAny[Optional[IdentitySet]] = Field(alias="closedBy",default=None,)
 	closedDateTime: Optional[datetime] = Field(alias="closedDateTime",default=None,)
 	externalId: Optional[str] = Field(alias="externalId",default=None,)

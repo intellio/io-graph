@@ -7,7 +7,7 @@ class WindowsSetting(BaseModel):
 	id: Optional[str] = Field(alias="id",default=None,)
 	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 	payloadType: Optional[str] = Field(alias="payloadType",default=None,)
-	settingType: Optional[str | WindowsSettingType] = Field(alias="settingType",default=None,)
+	settingType: Optional[WindowsSettingType | str] = Field(alias="settingType",default=None,)
 	windowsDeviceId: Optional[str] = Field(alias="windowsDeviceId",default=None,)
 	instances: Optional[list[WindowsSettingInstance]] = Field(alias="instances",default=None,)
 

@@ -2,6 +2,7 @@ from __future__ import annotations
 from typing import Optional
 from pydantic import model_validator, ModelWrapValidatorHandler, ValidationError
 from typing_extensions import Self
+from typing import Any
 from datetime import datetime
 from pydantic import BaseModel, Field, SerializeAsAny
 
@@ -9,7 +10,7 @@ from pydantic import BaseModel, Field, SerializeAsAny
 class ScheduleEntity(BaseModel):
 	endDateTime: Optional[datetime] = Field(alias="endDateTime",default=None,)
 	startDateTime: Optional[datetime] = Field(alias="startDateTime",default=None,)
-	theme: Optional[str | ScheduleEntityTheme] = Field(alias="theme",default=None,)
+	theme: Optional[ScheduleEntityTheme | str] = Field(alias="theme",default=None,)
 	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 
 	@model_validator(mode="wrap")

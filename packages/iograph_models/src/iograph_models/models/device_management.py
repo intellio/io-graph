@@ -11,7 +11,7 @@ class DeviceManagement(BaseModel):
 	intuneAccountId: Optional[UUID] = Field(alias="intuneAccountId",default=None,)
 	intuneBrand: Optional[IntuneBrand] = Field(alias="intuneBrand",default=None,)
 	settings: Optional[DeviceManagementSettings] = Field(alias="settings",default=None,)
-	subscriptionState: Optional[str | DeviceManagementSubscriptionState] = Field(alias="subscriptionState",default=None,)
+	subscriptionState: Optional[DeviceManagementSubscriptionState | str] = Field(alias="subscriptionState",default=None,)
 	userExperienceAnalyticsSettings: Optional[UserExperienceAnalyticsSettings] = Field(alias="userExperienceAnalyticsSettings",default=None,)
 	windowsMalwareOverview: Optional[WindowsMalwareOverview] = Field(alias="windowsMalwareOverview",default=None,)
 	applePushNotificationCertificate: Optional[ApplePushNotificationCertificate] = Field(alias="applePushNotificationCertificate",default=None,)

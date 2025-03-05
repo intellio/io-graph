@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field, SerializeAsAny
 class WindowsFirewallNetworkProfile(BaseModel):
 	authorizedApplicationRulesFromGroupPolicyMerged: Optional[bool] = Field(alias="authorizedApplicationRulesFromGroupPolicyMerged",default=None,)
 	connectionSecurityRulesFromGroupPolicyMerged: Optional[bool] = Field(alias="connectionSecurityRulesFromGroupPolicyMerged",default=None,)
-	firewallEnabled: Optional[str | StateManagementSetting] = Field(alias="firewallEnabled",default=None,)
+	firewallEnabled: Optional[StateManagementSetting | str] = Field(alias="firewallEnabled",default=None,)
 	globalPortRulesFromGroupPolicyMerged: Optional[bool] = Field(alias="globalPortRulesFromGroupPolicyMerged",default=None,)
 	inboundConnectionsBlocked: Optional[bool] = Field(alias="inboundConnectionsBlocked",default=None,)
 	inboundNotificationsBlocked: Optional[bool] = Field(alias="inboundNotificationsBlocked",default=None,)

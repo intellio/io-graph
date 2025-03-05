@@ -7,7 +7,7 @@ class TeamworkApplicationIdentity(BaseModel):
 	displayName: Optional[str] = Field(alias="displayName",default=None,)
 	id: Optional[str] = Field(alias="id",default=None,)
 	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
-	applicationIdentityType: Optional[str | TeamworkApplicationIdentityType] = Field(alias="applicationIdentityType",default=None,)
+	applicationIdentityType: Optional[TeamworkApplicationIdentityType | str] = Field(alias="applicationIdentityType",default=None,)
 
 from .teamwork_application_identity_type import TeamworkApplicationIdentityType
 

@@ -12,14 +12,14 @@ class SecurityHealthIssue(BaseModel):
 	description: Optional[str] = Field(alias="description",default=None,)
 	displayName: Optional[str] = Field(alias="displayName",default=None,)
 	domainNames: Optional[list[str]] = Field(alias="domainNames",default=None,)
-	healthIssueType: Optional[str | SecurityHealthIssueType] = Field(alias="healthIssueType",default=None,)
+	healthIssueType: Optional[SecurityHealthIssueType | str] = Field(alias="healthIssueType",default=None,)
 	issueTypeId: Optional[str] = Field(alias="issueTypeId",default=None,)
 	lastModifiedDateTime: Optional[datetime] = Field(alias="lastModifiedDateTime",default=None,)
 	recommendations: Optional[list[str]] = Field(alias="recommendations",default=None,)
 	recommendedActionCommands: Optional[list[str]] = Field(alias="recommendedActionCommands",default=None,)
 	sensorDNSNames: Optional[list[str]] = Field(alias="sensorDNSNames",default=None,)
-	severity: Optional[str | SecurityHealthIssueSeverity] = Field(alias="severity",default=None,)
-	status: Optional[str | SecurityHealthIssueStatus] = Field(alias="status",default=None,)
+	severity: Optional[SecurityHealthIssueSeverity | str] = Field(alias="severity",default=None,)
+	status: Optional[SecurityHealthIssueStatus | str] = Field(alias="status",default=None,)
 
 from .security_health_issue_type import SecurityHealthIssueType
 from .security_health_issue_severity import SecurityHealthIssueSeverity

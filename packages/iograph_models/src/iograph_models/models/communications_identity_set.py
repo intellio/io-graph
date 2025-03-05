@@ -12,7 +12,7 @@ class CommunicationsIdentitySet(BaseModel):
 	assertedIdentity: SerializeAsAny[Optional[Identity]] = Field(alias="assertedIdentity",default=None,)
 	azureCommunicationServicesUser: SerializeAsAny[Optional[Identity]] = Field(alias="azureCommunicationServicesUser",default=None,)
 	encrypted: SerializeAsAny[Optional[Identity]] = Field(alias="encrypted",default=None,)
-	endpointType: Optional[str | EndpointType] = Field(alias="endpointType",default=None,)
+	endpointType: Optional[EndpointType | str] = Field(alias="endpointType",default=None,)
 	guest: SerializeAsAny[Optional[Identity]] = Field(alias="guest",default=None,)
 	onPremises: SerializeAsAny[Optional[Identity]] = Field(alias="onPremises",default=None,)
 	phone: SerializeAsAny[Optional[Identity]] = Field(alias="phone",default=None,)

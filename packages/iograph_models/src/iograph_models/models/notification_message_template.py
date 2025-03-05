@@ -7,7 +7,7 @@ from pydantic import BaseModel, Field, SerializeAsAny
 class NotificationMessageTemplate(BaseModel):
 	id: Optional[str] = Field(alias="id",default=None,)
 	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
-	brandingOptions: Optional[str | NotificationTemplateBrandingOptions] = Field(alias="brandingOptions",default=None,)
+	brandingOptions: Optional[NotificationTemplateBrandingOptions | str] = Field(alias="brandingOptions",default=None,)
 	defaultLocale: Optional[str] = Field(alias="defaultLocale",default=None,)
 	displayName: Optional[str] = Field(alias="displayName",default=None,)
 	lastModifiedDateTime: Optional[datetime] = Field(alias="lastModifiedDateTime",default=None,)

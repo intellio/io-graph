@@ -23,8 +23,8 @@ if TYPE_CHECKING:
 	from .calendar import CalendarRequest
 	from .attachments import AttachmentsRequest
 	from .........request_adapter import HttpxRequestAdapter
-from iograph_models.models.event import Event
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.models.event import Event
 
 
 class ByEventIdRequest(BaseRequestBuilder):

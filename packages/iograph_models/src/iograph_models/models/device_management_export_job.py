@@ -9,13 +9,13 @@ class DeviceManagementExportJob(BaseModel):
 	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
 	expirationDateTime: Optional[datetime] = Field(alias="expirationDateTime",default=None,)
 	filter: Optional[str] = Field(alias="filter",default=None,)
-	format: Optional[str | DeviceManagementReportFileFormat] = Field(alias="format",default=None,)
-	localizationType: Optional[str | DeviceManagementExportJobLocalizationType] = Field(alias="localizationType",default=None,)
+	format: Optional[DeviceManagementReportFileFormat | str] = Field(alias="format",default=None,)
+	localizationType: Optional[DeviceManagementExportJobLocalizationType | str] = Field(alias="localizationType",default=None,)
 	reportName: Optional[str] = Field(alias="reportName",default=None,)
 	requestDateTime: Optional[datetime] = Field(alias="requestDateTime",default=None,)
 	select: Optional[list[str]] = Field(alias="select",default=None,)
 	snapshotId: Optional[str] = Field(alias="snapshotId",default=None,)
-	status: Optional[str | DeviceManagementReportStatus] = Field(alias="status",default=None,)
+	status: Optional[DeviceManagementReportStatus | str] = Field(alias="status",default=None,)
 	url: Optional[str] = Field(alias="url",default=None,)
 
 from .device_management_report_file_format import DeviceManagementReportFileFormat

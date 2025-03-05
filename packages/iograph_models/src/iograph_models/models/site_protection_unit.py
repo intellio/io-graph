@@ -13,7 +13,7 @@ class SiteProtectionUnit(BaseModel):
 	lastModifiedBy: SerializeAsAny[Optional[IdentitySet]] = Field(alias="lastModifiedBy",default=None,)
 	lastModifiedDateTime: Optional[datetime] = Field(alias="lastModifiedDateTime",default=None,)
 	policyId: Optional[str] = Field(alias="policyId",default=None,)
-	status: Optional[str | ProtectionUnitStatus] = Field(alias="status",default=None,)
+	status: Optional[ProtectionUnitStatus | str] = Field(alias="status",default=None,)
 	siteId: Optional[str] = Field(alias="siteId",default=None,)
 	siteName: Optional[str] = Field(alias="siteName",default=None,)
 	siteWebUrl: Optional[str] = Field(alias="siteWebUrl",default=None,)

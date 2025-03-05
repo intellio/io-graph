@@ -13,7 +13,7 @@ class SharePointRestoreSession(BaseModel):
 	error: Optional[PublicError] = Field(alias="error",default=None,)
 	lastModifiedBy: SerializeAsAny[Optional[IdentitySet]] = Field(alias="lastModifiedBy",default=None,)
 	lastModifiedDateTime: Optional[datetime] = Field(alias="lastModifiedDateTime",default=None,)
-	status: Optional[str | RestoreSessionStatus] = Field(alias="status",default=None,)
+	status: Optional[RestoreSessionStatus | str] = Field(alias="status",default=None,)
 	siteRestoreArtifacts: Optional[list[SiteRestoreArtifact]] = Field(alias="siteRestoreArtifacts",default=None,)
 
 from .identity_set import IdentitySet

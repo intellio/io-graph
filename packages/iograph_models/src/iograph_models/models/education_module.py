@@ -15,7 +15,7 @@ class EducationModule(BaseModel):
 	lastModifiedBy: SerializeAsAny[Optional[IdentitySet]] = Field(alias="lastModifiedBy",default=None,)
 	lastModifiedDateTime: Optional[datetime] = Field(alias="lastModifiedDateTime",default=None,)
 	resourcesFolderUrl: Optional[str] = Field(alias="resourcesFolderUrl",default=None,)
-	status: Optional[str | EducationModuleStatus] = Field(alias="status",default=None,)
+	status: Optional[EducationModuleStatus | str] = Field(alias="status",default=None,)
 	resources: Optional[list[EducationModuleResource]] = Field(alias="resources",default=None,)
 
 from .identity_set import IdentitySet

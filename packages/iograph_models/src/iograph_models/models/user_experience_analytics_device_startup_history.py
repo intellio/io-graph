@@ -17,7 +17,7 @@ class UserExperienceAnalyticsDeviceStartupHistory(BaseModel):
 	isFirstLogin: Optional[bool] = Field(alias="isFirstLogin",default=None,)
 	operatingSystemVersion: Optional[str] = Field(alias="operatingSystemVersion",default=None,)
 	responsiveDesktopTimeInMs: Optional[int] = Field(alias="responsiveDesktopTimeInMs",default=None,)
-	restartCategory: Optional[str | UserExperienceAnalyticsOperatingSystemRestartCategory] = Field(alias="restartCategory",default=None,)
+	restartCategory: Optional[UserExperienceAnalyticsOperatingSystemRestartCategory | str] = Field(alias="restartCategory",default=None,)
 	restartFaultBucket: Optional[str] = Field(alias="restartFaultBucket",default=None,)
 	restartStopCode: Optional[str] = Field(alias="restartStopCode",default=None,)
 	startTime: Optional[datetime] = Field(alias="startTime",default=None,)

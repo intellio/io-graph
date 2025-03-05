@@ -10,9 +10,9 @@ class EngagementAsyncOperation(BaseModel):
 	createdDateTime: Optional[datetime] = Field(alias="createdDateTime",default=None,)
 	lastActionDateTime: Optional[datetime] = Field(alias="lastActionDateTime",default=None,)
 	resourceLocation: Optional[str] = Field(alias="resourceLocation",default=None,)
-	status: Optional[str | LongRunningOperationStatus] = Field(alias="status",default=None,)
+	status: Optional[LongRunningOperationStatus | str] = Field(alias="status",default=None,)
 	statusDetail: Optional[str] = Field(alias="statusDetail",default=None,)
-	operationType: Optional[str | EngagementAsyncOperationType] = Field(alias="operationType",default=None,)
+	operationType: Optional[EngagementAsyncOperationType | str] = Field(alias="operationType",default=None,)
 	resourceId: Optional[str] = Field(alias="resourceId",default=None,)
 
 from .long_running_operation_status import LongRunningOperationStatus

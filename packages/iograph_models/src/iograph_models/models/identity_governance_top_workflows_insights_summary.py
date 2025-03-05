@@ -10,7 +10,7 @@ class IdentityGovernanceTopWorkflowsInsightsSummary(BaseModel):
 	successfulUsers: Optional[int] = Field(alias="successfulUsers",default=None,)
 	totalRuns: Optional[int] = Field(alias="totalRuns",default=None,)
 	totalUsers: Optional[int] = Field(alias="totalUsers",default=None,)
-	workflowCategory: Optional[str | IdentityGovernanceLifecycleWorkflowCategory] = Field(alias="workflowCategory",default=None,)
+	workflowCategory: Optional[IdentityGovernanceLifecycleWorkflowCategory | str] = Field(alias="workflowCategory",default=None,)
 	workflowDisplayName: Optional[str] = Field(alias="workflowDisplayName",default=None,)
 	workflowId: Optional[str] = Field(alias="workflowId",default=None,)
 	workflowVersion: Optional[int] = Field(alias="workflowVersion",default=None,)
