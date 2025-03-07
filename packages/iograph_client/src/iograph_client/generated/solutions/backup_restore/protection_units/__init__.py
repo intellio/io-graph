@@ -14,8 +14,8 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_protection_unit_base_id import ByProtectionUnitBaseIdRequest
 	from .....request_adapter import HttpxRequestAdapter
-from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.models.protection_unit_base_collection_response import ProtectionUnitBaseCollectionResponse
+from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
 
 
 class ProtectionUnitsRequest(BaseRequestBuilder):

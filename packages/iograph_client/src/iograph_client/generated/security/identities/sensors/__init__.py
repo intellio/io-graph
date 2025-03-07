@@ -18,8 +18,8 @@ if TYPE_CHECKING:
 	from .by_sensor_id import BySensorIdRequest
 	from .....request_adapter import HttpxRequestAdapter
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
-from iograph_models.models.security_sensor_collection_response import SecuritySensorCollectionResponse
 from iograph_models.models.security_sensor import SecuritySensor
+from iograph_models.models.security_sensor_collection_response import SecuritySensorCollectionResponse
 
 
 class SensorsRequest(BaseRequestBuilder):

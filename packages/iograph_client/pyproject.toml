@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "iograph-client"
-version = "0.2.6"
+version = "0.2.8"
 description = "Microsoft Graph Python SDK. Heavily influenced ny the official released SDK client by Microsoft, but better!"
 readme = "README.md"
 requires-python = ">=3.12"

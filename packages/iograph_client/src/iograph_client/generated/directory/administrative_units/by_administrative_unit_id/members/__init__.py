@@ -21,9 +21,9 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_directory_object_id import ByDirectoryObjectIdRequest
 	from ......request_adapter import HttpxRequestAdapter
-from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.models.directory_object import DirectoryObject
 from iograph_models.models.directory_object_collection_response import DirectoryObjectCollectionResponse
+from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
 
 
 class MembersRequest(BaseRequestBuilder):

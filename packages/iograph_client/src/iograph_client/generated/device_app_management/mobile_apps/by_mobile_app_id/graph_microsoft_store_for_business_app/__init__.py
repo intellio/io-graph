@@ -14,8 +14,8 @@ if TYPE_CHECKING:
 	from .categories import CategoriesRequest
 	from .assignments import AssignmentsRequest
 	from ......request_adapter import HttpxRequestAdapter
-from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.models.microsoft_store_for_business_app import MicrosoftStoreForBusinessApp
+from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
 
 
 class GraphMicrosoftStoreForBusinessAppRequest(BaseRequestBuilder):

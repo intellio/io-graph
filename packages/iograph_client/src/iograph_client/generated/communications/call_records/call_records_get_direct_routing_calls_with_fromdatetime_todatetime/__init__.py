@@ -11,8 +11,8 @@ from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:
 	from .....request_adapter import HttpxRequestAdapter
-from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.models.call_records_get_direct_routing_calls_with_fromdatetime_todatetime_get_response import Call_records_get_direct_routing_calls_with_fromdatetime_todatetimeGetResponse
+from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
 
 
 class CallRecordsGetDirectRoutingCallsWithFromDateTimeToDateTimeRequest(BaseRequestBuilder):

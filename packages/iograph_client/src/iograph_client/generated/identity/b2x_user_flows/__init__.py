@@ -14,9 +14,9 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_b2x_identity_user_flow_id import ByB2xIdentityUserFlowIdRequest
 	from ....request_adapter import HttpxRequestAdapter
-from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
-from iograph_models.models.b2x_identity_user_flow_collection_response import B2xIdentityUserFlowCollectionResponse
 from iograph_models.models.b2x_identity_user_flow import B2xIdentityUserFlow
+from iograph_models.models.b2x_identity_user_flow_collection_response import B2xIdentityUserFlowCollectionResponse
+from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
 
 
 class B2xUserFlowsRequest(BaseRequestBuilder):

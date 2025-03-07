@@ -21,8 +21,8 @@ if TYPE_CHECKING:
 	from .add_to_review_set_operation import AddToReviewSetOperationRequest
 	from .additional_sources import AdditionalSourcesRequest
 	from ........request_adapter import HttpxRequestAdapter
-from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.models.security_ediscovery_search import SecurityEdiscoverySearch
+from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
 
 
 class ByEdiscoverySearchIdRequest(BaseRequestBuilder):

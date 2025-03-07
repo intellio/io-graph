@@ -14,8 +14,8 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_user_experience_analytics_metric_history_id import ByUserExperienceAnalyticsMetricHistoryIdRequest
 	from ....request_adapter import HttpxRequestAdapter
-from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.models.user_experience_analytics_metric_history_collection_response import UserExperienceAnalyticsMetricHistoryCollectionResponse
+from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.models.user_experience_analytics_metric_history import UserExperienceAnalyticsMetricHistory
 
 

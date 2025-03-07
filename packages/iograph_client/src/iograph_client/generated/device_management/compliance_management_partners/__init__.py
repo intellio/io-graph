@@ -15,8 +15,8 @@ if TYPE_CHECKING:
 	from .by_compliance_management_partner_id import ByComplianceManagementPartnerIdRequest
 	from ....request_adapter import HttpxRequestAdapter
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
-from iograph_models.models.compliance_management_partner import ComplianceManagementPartner
 from iograph_models.models.compliance_management_partner_collection_response import ComplianceManagementPartnerCollectionResponse
+from iograph_models.models.compliance_management_partner import ComplianceManagementPartner
 
 
 class ComplianceManagementPartnersRequest(BaseRequestBuilder):

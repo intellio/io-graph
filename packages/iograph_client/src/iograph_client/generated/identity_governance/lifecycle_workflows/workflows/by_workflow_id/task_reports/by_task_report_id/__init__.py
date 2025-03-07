@@ -15,8 +15,8 @@ if TYPE_CHECKING:
 	from .task_definition import TaskDefinitionRequest
 	from .task import TaskRequest
 	from ........request_adapter import HttpxRequestAdapter
-from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.models.identity_governance_task_report import IdentityGovernanceTaskReport
+from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
 
 
 class ByTaskReportIdRequest(BaseRequestBuilder):

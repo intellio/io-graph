@@ -17,8 +17,8 @@ if TYPE_CHECKING:
 	from .users_registered_by_feature_with_includedusertypes_includeduserroles import UsersRegisteredByFeatureWithIncludedUserTypesIncludedUserRolesRequest
 	from .users_registered_by_feature import UsersRegisteredByFeatureRequest
 	from ....request_adapter import HttpxRequestAdapter
-from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.models.authentication_methods_root import AuthenticationMethodsRoot
+from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
 
 
 class AuthenticationMethodsRequest(BaseRequestBuilder):

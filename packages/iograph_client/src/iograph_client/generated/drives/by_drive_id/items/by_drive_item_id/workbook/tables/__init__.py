@@ -17,8 +17,8 @@ if TYPE_CHECKING:
 	from .by_workbook_table_id import ByWorkbookTableIdRequest
 	from ........request_adapter import HttpxRequestAdapter
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
-from iograph_models.models.workbook_table import WorkbookTable
 from iograph_models.models.workbook_table_collection_response import WorkbookTableCollectionResponse
+from iograph_models.models.workbook_table import WorkbookTable
 
 
 class TablesRequest(BaseRequestBuilder):

@@ -14,8 +14,8 @@ if TYPE_CHECKING:
 	from .upload_client_certificate import UploadClientCertificateRequest
 	from .ref import RefRequest
 	from .......request_adapter import HttpxRequestAdapter
-from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.models.identity_api_connector import IdentityApiConnector
+from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
 
 
 class PostAttributeCollectionRequest(BaseRequestBuilder):

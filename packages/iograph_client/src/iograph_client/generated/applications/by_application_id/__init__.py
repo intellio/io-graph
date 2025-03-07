@@ -34,8 +34,8 @@ if TYPE_CHECKING:
 	from .created_on_behalf_of import CreatedOnBehalfOfRequest
 	from .app_management_policies import AppManagementPoliciesRequest
 	from ....request_adapter import HttpxRequestAdapter
-from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.models.application import Application
+from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
 
 
 class ByApplicationIdRequest(BaseRequestBuilder):

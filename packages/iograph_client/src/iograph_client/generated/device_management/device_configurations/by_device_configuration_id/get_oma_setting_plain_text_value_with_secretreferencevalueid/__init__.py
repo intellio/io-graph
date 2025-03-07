@@ -11,8 +11,8 @@ from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:
 	from ......request_adapter import HttpxRequestAdapter
-from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.models.get_oma_setting_plain_text_value_with_secretreferencevalueid_get_response import Get_oma_setting_plain_text_value_with_secretreferencevalueidGetResponse
+from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
 
 
 class GetOmaSettingPlainTextValueWithSecretReferenceValueIdRequest(BaseRequestBuilder):

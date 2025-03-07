@@ -15,8 +15,8 @@ if TYPE_CHECKING:
 	from .by_internal_domain_federation_id import ByInternalDomainFederationIdRequest
 	from .....request_adapter import HttpxRequestAdapter
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
-from iograph_models.models.internal_domain_federation_collection_response import InternalDomainFederationCollectionResponse
 from iograph_models.models.internal_domain_federation import InternalDomainFederation
+from iograph_models.models.internal_domain_federation_collection_response import InternalDomainFederationCollectionResponse
 
 
 class FederationConfigurationRequest(BaseRequestBuilder):

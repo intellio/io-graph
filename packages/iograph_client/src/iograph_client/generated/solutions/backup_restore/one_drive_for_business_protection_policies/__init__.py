@@ -14,9 +14,9 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_one_drive_for_business_protection_policy_id import ByOneDriveForBusinessProtectionPolicyIdRequest
 	from .....request_adapter import HttpxRequestAdapter
+from iograph_models.models.one_drive_for_business_protection_policy import OneDriveForBusinessProtectionPolicy
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.models.one_drive_for_business_protection_policy_collection_response import OneDriveForBusinessProtectionPolicyCollectionResponse
-from iograph_models.models.one_drive_for_business_protection_policy import OneDriveForBusinessProtectionPolicy
 
 
 class OneDriveForBusinessProtectionPoliciesRequest(BaseRequestBuilder):

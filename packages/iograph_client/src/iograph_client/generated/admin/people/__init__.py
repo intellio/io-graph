@@ -14,8 +14,8 @@ if TYPE_CHECKING:
 	from .profile_card_properties import ProfileCardPropertiesRequest
 	from .item_insights import ItemInsightsRequest
 	from ....request_adapter import HttpxRequestAdapter
-from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.models.people_admin_settings import PeopleAdminSettings
+from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
 
 
 class PeopleRequest(BaseRequestBuilder):

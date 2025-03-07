@@ -14,8 +14,8 @@ if TYPE_CHECKING:
 	from .files import FilesRequest
 	from .contained_apps import ContainedAppsRequest
 	from ........request_adapter import HttpxRequestAdapter
-from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.models.mobile_app_content import MobileAppContent
+from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
 
 
 class ByMobileAppContentIdRequest(BaseRequestBuilder):

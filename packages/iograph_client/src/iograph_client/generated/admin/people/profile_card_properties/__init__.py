@@ -15,8 +15,8 @@ if TYPE_CHECKING:
 	from .by_profile_card_property_id import ByProfileCardPropertyIdRequest
 	from .....request_adapter import HttpxRequestAdapter
 from iograph_models.models.profile_card_property_collection_response import ProfileCardPropertyCollectionResponse
-from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.models.profile_card_property import ProfileCardProperty
+from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
 
 
 class ProfileCardPropertiesRequest(BaseRequestBuilder):

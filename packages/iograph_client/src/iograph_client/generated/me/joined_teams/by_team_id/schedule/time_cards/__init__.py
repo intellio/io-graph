@@ -15,9 +15,9 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_time_card_id import ByTimeCardIdRequest
 	from .......request_adapter import HttpxRequestAdapter
-from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
-from iograph_models.models.time_card_collection_response import TimeCardCollectionResponse
 from iograph_models.models.time_card import TimeCard
+from iograph_models.models.time_card_collection_response import TimeCardCollectionResponse
+from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
 
 
 class TimeCardsRequest(BaseRequestBuilder):

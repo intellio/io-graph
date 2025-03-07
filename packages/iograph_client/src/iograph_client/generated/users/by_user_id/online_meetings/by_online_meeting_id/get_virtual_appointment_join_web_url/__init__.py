@@ -11,8 +11,8 @@ from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:
 	from .......request_adapter import HttpxRequestAdapter
-from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.models.get_virtual_appointment_join_web_url_get_response import Get_virtual_appointment_join_web_urlGetResponse
+from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
 
 
 class GetVirtualAppointmentJoinWebUrlRequest(BaseRequestBuilder):

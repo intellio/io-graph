@@ -17,8 +17,8 @@ if TYPE_CHECKING:
 	from .custom_workflow_extensions import CustomWorkflowExtensionsRequest
 	from .access_packages import AccessPackagesRequest
 	from ......request_adapter import HttpxRequestAdapter
-from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.models.access_package_catalog import AccessPackageCatalog
+from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
 
 
 class ByAccessPackageCatalogIdRequest(BaseRequestBuilder):

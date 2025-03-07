@@ -11,8 +11,8 @@ from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:
 	from ....request_adapter import HttpxRequestAdapter
-from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.models.get_group_archived_print_jobs_with_groupid_startdatetime_enddatetime_get_response import Get_group_archived_print_jobs_with_groupid_startdatetime_enddatetimeGetResponse
+from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
 
 
 class GetGroupArchivedPrintJobsWithGroupIdStartDateTimeEndDateTimeRequest(BaseRequestBuilder):

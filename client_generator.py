@@ -446,6 +446,8 @@ def create_pydantic_model(name:str, schema, components):
         
         model_file_obj.write(f'\n')
 
+
+
 def create_enum_model(name: str, schema, components, enum_type):
     # write to file
     model_file = os.path.join(models_dir, f'{module_file_name_from_name(name)}.py')

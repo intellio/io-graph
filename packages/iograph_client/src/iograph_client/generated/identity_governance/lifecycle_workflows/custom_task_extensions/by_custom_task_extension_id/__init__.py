@@ -14,8 +14,8 @@ if TYPE_CHECKING:
 	from .last_modified_by import LastModifiedByRequest
 	from .created_by import CreatedByRequest
 	from ......request_adapter import HttpxRequestAdapter
-from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.models.identity_governance_custom_task_extension import IdentityGovernanceCustomTaskExtension
+from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
 
 
 class ByCustomTaskExtensionIdRequest(BaseRequestBuilder):

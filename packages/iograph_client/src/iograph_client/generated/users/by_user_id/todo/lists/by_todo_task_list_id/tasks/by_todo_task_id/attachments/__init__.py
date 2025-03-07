@@ -16,8 +16,8 @@ if TYPE_CHECKING:
 	from .by_attachment_base_id import ByAttachmentBaseIdRequest
 	from ..........request_adapter import HttpxRequestAdapter
 from iograph_models.models.o_data_errors__o_data_error import ODataErrorsODataError
-from iograph_models.models.attachment_base_collection_response import AttachmentBaseCollectionResponse
 from iograph_models.models.attachment_base import AttachmentBase
+from iograph_models.models.attachment_base_collection_response import AttachmentBaseCollectionResponse
 
 
 class AttachmentsRequest(BaseRequestBuilder):
