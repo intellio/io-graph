@@ -1,0 +1,38 @@
+from __future__ import annotations
+from enum import StrEnum
+
+
+class Code(StrEnum):
+	none = "none"
+	jsonFileInvalid = "jsonFileInvalid"
+	jsonFileMissing = "jsonFileMissing"
+	jsonFileTooLarge = "jsonFileTooLarge"
+	rulesMissing = "rulesMissing"
+	duplicateRules = "duplicateRules"
+	tooManyRulesSpecified = "tooManyRulesSpecified"
+	operatorMissing = "operatorMissing"
+	operatorNotSupported = "operatorNotSupported"
+	datatypeMissing = "datatypeMissing"
+	datatypeNotSupported = "datatypeNotSupported"
+	operatorDataTypeCombinationNotSupported = "operatorDataTypeCombinationNotSupported"
+	moreInfoUriMissing = "moreInfoUriMissing"
+	moreInfoUriInvalid = "moreInfoUriInvalid"
+	moreInfoUriTooLarge = "moreInfoUriTooLarge"
+	descriptionMissing = "descriptionMissing"
+	descriptionInvalid = "descriptionInvalid"
+	descriptionTooLarge = "descriptionTooLarge"
+	titleMissing = "titleMissing"
+	titleInvalid = "titleInvalid"
+	titleTooLarge = "titleTooLarge"
+	operandMissing = "operandMissing"
+	operandInvalid = "operandInvalid"
+	operandTooLarge = "operandTooLarge"
+	settingNameMissing = "settingNameMissing"
+	settingNameInvalid = "settingNameInvalid"
+	settingNameTooLarge = "settingNameTooLarge"
+	englishLocaleMissing = "englishLocaleMissing"
+	duplicateLocales = "duplicateLocales"
+	unrecognizedLocale = "unrecognizedLocale"
+	unknown = "unknown"
+	remediationStringsMissing = "remediationStringsMissing"
+

@@ -1,0 +1,11 @@
+from __future__ import annotations
+from typing import Optional
+from pydantic import BaseModel, Field, SerializeAsAny
+
+
+class UserPrint(BaseModel):
+	recentPrinterShares: Optional[list[PrinterShare]] = Field(alias="recentPrinterShares",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+
+from .printer_share import PrinterShare
+

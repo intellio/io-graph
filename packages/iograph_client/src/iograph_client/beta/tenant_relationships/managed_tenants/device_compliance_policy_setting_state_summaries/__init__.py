@@ -1,0 +1,113 @@
+# Auto-generated client
+
+from __future__ import annotations
+from kiota_abstractions.get_path_parameters import get_path_parameters
+from kiota_abstractions.method import Method
+from kiota_abstractions.base_request_builder import BaseRequestBuilder
+from kiota_abstractions.base_request_configuration import RequestConfiguration
+from .....request_information import RequestInformation
+from pydantic import BaseModel, Field
+from typing import Union, Any, Optional
+from typing import TYPE_CHECKING
+
+if TYPE_CHECKING:
+	from .count import CountRequest
+	from .by_device_compliance_policy_setting_state_summary_id import ByDeviceCompliancePolicySettingStateSummaryIdRequest
+	from .....request_adapter import HttpxRequestAdapter
+from iograph_models.beta.managed_tenants_device_compliance_policy_setting_state_summary_collection_response import ManagedTenantsDeviceCompliancePolicySettingStateSummaryCollectionResponse
+from iograph_models.beta.managed_tenants_device_compliance_policy_setting_state_summary import ManagedTenantsDeviceCompliancePolicySettingStateSummary
+from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
+
+
+class DeviceCompliancePolicySettingStateSummariesRequest(BaseRequestBuilder):
+	def __init__(self,request_adapter: HttpxRequestAdapter, path_parameters: Optional[Union[dict[str, Any], str]]) -> None:
+		super().__init__(request_adapter, "{+baseurl}/tenantRelationships/managedTenants/deviceCompliancePolicySettingStateSummaries", path_parameters)
+
+	async def get(
+		self,
+		request_configuration: Optional[RequestConfiguration[GetQueryParams]] = None,
+	) -> ManagedTenantsDeviceCompliancePolicySettingStateSummaryCollectionResponse:
+		"""
+		List deviceCompliancePolicySettingStateSummary
+		Get a list of the deviceCompliancePolicySettingStateSummary objects and their properties.
+		Find more info here: https://learn.microsoft.com/graph/api/managedtenants-managedtenant-list-devicecompliancepolicysettingstatesummary?view=graph-rest-beta
+		"""
+		tags = ['tenantRelationships.managedTenant']
+
+		error_mapping: dict[str, type[BaseModel]] = {
+			"XXX": ODataErrorsODataError,
+		}
+
+		request_info: RequestInformation = RequestInformation(
+			method = Method.GET,
+			url_template = self.url_template,
+			path_parameters = self.path_parameters,
+		)
+		request_info.configure(request_configuration)
+		request_info.headers.try_add("Accept", "application/json")
+		return await self.request_adapter.send_async(request_info, ManagedTenantsDeviceCompliancePolicySettingStateSummaryCollectionResponse, error_mapping)
+
+	async def post(
+		self,
+		body: ManagedTenantsDeviceCompliancePolicySettingStateSummary,
+		request_configuration: Optional[RequestConfiguration[BaseModel]] = None,
+	) -> ManagedTenantsDeviceCompliancePolicySettingStateSummary:
+		"""
+		Create new navigation property to deviceCompliancePolicySettingStateSummaries for tenantRelationships
+		
+		"""
+		tags = ['tenantRelationships.managedTenant']
+
+		error_mapping: dict[str, type[BaseModel]] = {
+			"XXX": ODataErrorsODataError,
+		}
+
+		request_info: RequestInformation = RequestInformation(
+			method = Method.POST,
+			url_template = self.url_template,
+			path_parameters = self.path_parameters,
+		)
+		request_info.configure(request_configuration)
+		request_info.headers.try_add("Accept", "application/json")
+		request_info.set_content(body, "application/json")
+		return await self.request_adapter.send_async(request_info, ManagedTenantsDeviceCompliancePolicySettingStateSummary, error_mapping)
+
+	class GetQueryParams(BaseModel):
+		top: int = Field(default=None,serialization_alias="%24top")
+		skip: int = Field(default=None,serialization_alias="%24skip")
+		search: str = Field(default=None,serialization_alias="%24search")
+		filter: str = Field(default=None,serialization_alias="%24filter")
+		count: bool = Field(default=None,serialization_alias="%24count")
+		orderby: list[str] = Field(default=None,serialization_alias="%24orderby")
+		select: list[str] = Field(default=None,serialization_alias="%24select")
+		expand: list[str] = Field(default=None,serialization_alias="%24expand")
+
+
+	def with_url(self, raw_url: str) -> DeviceCompliancePolicySettingStateSummariesRequest:
+		"""
+		Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+		param raw_url: The raw URL to use for the request builder.
+		Returns: DeviceCompliancePolicySettingStateSummariesRequest
+		"""
+		if raw_url is None:
+			raise TypeError("raw_url cannot be None.")
+		return DeviceCompliancePolicySettingStateSummariesRequest(self.request_adapter, self.path_parameters)
+
+	def by_device_compliance_policy_setting_state_summary_id(self,
+		deviceCompliancePolicySettingStateSummary_id: str,
+	) -> ByDeviceCompliancePolicySettingStateSummaryIdRequest:
+		if deviceCompliancePolicySettingStateSummary_id is None:
+			raise TypeError("deviceCompliancePolicySettingStateSummary_id cannot be null.")
+
+		path_parameters = get_path_parameters(self.path_parameters)
+		path_parameters["deviceCompliancePolicySettingStateSummary%2Did"] =  deviceCompliancePolicySettingStateSummary_id
+
+		from .by_device_compliance_policy_setting_state_summary_id import ByDeviceCompliancePolicySettingStateSummaryIdRequest
+		return ByDeviceCompliancePolicySettingStateSummaryIdRequest(self.request_adapter, path_parameters)
+
+	@property
+	def count(self,
+	) -> CountRequest:
+		from .count import CountRequest
+		return CountRequest(self.request_adapter, self.path_parameters)
+

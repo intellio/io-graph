@@ -1,0 +1,76 @@
+from __future__ import annotations
+from typing import Optional
+from datetime import datetime
+from pydantic import BaseModel, Field, SerializeAsAny
+
+
+class Site(BaseModel):
+	id: Optional[str] = Field(alias="id",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	createdBy: SerializeAsAny[Optional[IdentitySet]] = Field(alias="createdBy",default=None,)
+	createdDateTime: Optional[datetime] = Field(alias="createdDateTime",default=None,)
+	description: Optional[str] = Field(alias="description",default=None,)
+	eTag: Optional[str] = Field(alias="eTag",default=None,)
+	lastModifiedBy: SerializeAsAny[Optional[IdentitySet]] = Field(alias="lastModifiedBy",default=None,)
+	lastModifiedDateTime: Optional[datetime] = Field(alias="lastModifiedDateTime",default=None,)
+	name: Optional[str] = Field(alias="name",default=None,)
+	parentReference: Optional[ItemReference] = Field(alias="parentReference",default=None,)
+	webUrl: Optional[str] = Field(alias="webUrl",default=None,)
+	createdByUser: Optional[User] = Field(alias="createdByUser",default=None,)
+	lastModifiedByUser: Optional[User] = Field(alias="lastModifiedByUser",default=None,)
+	deleted: Optional[Deleted] = Field(alias="deleted",default=None,)
+	displayName: Optional[str] = Field(alias="displayName",default=None,)
+	isPersonalSite: Optional[bool] = Field(alias="isPersonalSite",default=None,)
+	root: Optional[Root] = Field(alias="root",default=None,)
+	settings: Optional[SiteSettings] = Field(alias="settings",default=None,)
+	sharepointIds: Optional[SharepointIds] = Field(alias="sharepointIds",default=None,)
+	siteCollection: Optional[SiteCollection] = Field(alias="siteCollection",default=None,)
+	analytics: Optional[ItemAnalytics] = Field(alias="analytics",default=None,)
+	columns: Optional[list[ColumnDefinition]] = Field(alias="columns",default=None,)
+	contentModels: Optional[list[ContentModel]] = Field(alias="contentModels",default=None,)
+	contentTypes: Optional[list[ContentType]] = Field(alias="contentTypes",default=None,)
+	documentProcessingJobs: Optional[list[DocumentProcessingJob]] = Field(alias="documentProcessingJobs",default=None,)
+	drive: Optional[Drive] = Field(alias="drive",default=None,)
+	drives: Optional[list[Drive]] = Field(alias="drives",default=None,)
+	externalColumns: Optional[list[ColumnDefinition]] = Field(alias="externalColumns",default=None,)
+	informationProtection: Optional[InformationProtection] = Field(alias="informationProtection",default=None,)
+	items: SerializeAsAny[Optional[list[BaseItem]]] = Field(alias="items",default=None,)
+	lists: Optional[list[List]] = Field(alias="lists",default=None,)
+	onenote: Optional[Onenote] = Field(alias="onenote",default=None,)
+	operations: Optional[list[RichLongRunningOperation]] = Field(alias="operations",default=None,)
+	pages: SerializeAsAny[Optional[list[BaseSitePage]]] = Field(alias="pages",default=None,)
+	pageTemplates: Optional[list[PageTemplate]] = Field(alias="pageTemplates",default=None,)
+	permissions: Optional[list[Permission]] = Field(alias="permissions",default=None,)
+	recycleBin: Optional[RecycleBin] = Field(alias="recycleBin",default=None,)
+	sites: Optional[list[Site]] = Field(alias="sites",default=None,)
+	termStore: Optional[TermStoreStore] = Field(alias="termStore",default=None,)
+
+from .identity_set import IdentitySet
+from .identity_set import IdentitySet
+from .item_reference import ItemReference
+from .user import User
+from .user import User
+from .deleted import Deleted
+from .root import Root
+from .site_settings import SiteSettings
+from .sharepoint_ids import SharepointIds
+from .site_collection import SiteCollection
+from .item_analytics import ItemAnalytics
+from .column_definition import ColumnDefinition
+from .content_model import ContentModel
+from .content_type import ContentType
+from .document_processing_job import DocumentProcessingJob
+from .drive import Drive
+from .drive import Drive
+from .column_definition import ColumnDefinition
+from .information_protection import InformationProtection
+from .base_item import BaseItem
+from .list import List
+from .onenote import Onenote
+from .rich_long_running_operation import RichLongRunningOperation
+from .base_site_page import BaseSitePage
+from .page_template import PageTemplate
+from .permission import Permission
+from .recycle_bin import RecycleBin
+from .term_store_store import TermStoreStore
+

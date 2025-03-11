@@ -1,0 +1,20 @@
+from __future__ import annotations
+from typing import Optional
+from datetime import datetime
+from pydantic import BaseModel, Field, SerializeAsAny
+
+
+class ServiceNowConnection(BaseModel):
+	id: Optional[str] = Field(alias="id",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	authenticationMethod: SerializeAsAny[Optional[ServiceNowAuthenticationMethod]] = Field(alias="authenticationMethod",default=None,)
+	createdDateTime: Optional[datetime] = Field(alias="createdDateTime",default=None,)
+	incidentApiUrl: Optional[str] = Field(alias="incidentApiUrl",default=None,)
+	instanceUrl: Optional[str] = Field(alias="instanceUrl",default=None,)
+	lastModifiedDateTime: Optional[datetime] = Field(alias="lastModifiedDateTime",default=None,)
+	lastQueriedDateTime: Optional[datetime] = Field(alias="lastQueriedDateTime",default=None,)
+	serviceNowConnectionStatus: Optional[ServiceNowConnectionStatus | str] = Field(alias="serviceNowConnectionStatus",default=None,)
+
+from .service_now_authentication_method import ServiceNowAuthenticationMethod
+from .service_now_connection_status import ServiceNowConnectionStatus
+

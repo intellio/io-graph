@@ -1,0 +1,11 @@
+from __future__ import annotations
+from typing import Optional
+from pydantic import BaseModel, Field, SerializeAsAny
+
+
+class ToLowercaseTransformation(BaseModel):
+	input: Optional[TransformationAttribute] = Field(alias="input",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+
+from .transformation_attribute import TransformationAttribute
+

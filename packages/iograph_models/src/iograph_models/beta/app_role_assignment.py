@@ -1,0 +1,20 @@
+from __future__ import annotations
+from uuid import UUID
+from typing import Optional
+from datetime import datetime
+from pydantic import BaseModel, Field, SerializeAsAny
+
+
+class AppRoleAssignment(BaseModel):
+	id: Optional[str] = Field(alias="id",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	deletedDateTime: Optional[datetime] = Field(alias="deletedDateTime",default=None,)
+	appRoleId: Optional[UUID] = Field(alias="appRoleId",default=None,)
+	creationTimestamp: Optional[datetime] = Field(alias="creationTimestamp",default=None,)
+	principalDisplayName: Optional[str] = Field(alias="principalDisplayName",default=None,)
+	principalId: Optional[UUID] = Field(alias="principalId",default=None,)
+	principalType: Optional[str] = Field(alias="principalType",default=None,)
+	resourceDisplayName: Optional[str] = Field(alias="resourceDisplayName",default=None,)
+	resourceId: Optional[UUID] = Field(alias="resourceId",default=None,)
+
+

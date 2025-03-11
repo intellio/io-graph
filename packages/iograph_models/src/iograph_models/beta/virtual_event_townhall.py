@@ -1,0 +1,36 @@
+from __future__ import annotations
+from typing import Optional
+from pydantic import BaseModel, Field, SerializeAsAny
+
+
+class VirtualEventTownhall(BaseModel):
+	id: Optional[str] = Field(alias="id",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	createdBy: Optional[CommunicationsIdentitySet] = Field(alias="createdBy",default=None,)
+	description: Optional[ItemBody] = Field(alias="description",default=None,)
+	displayName: Optional[str] = Field(alias="displayName",default=None,)
+	endDateTime: Optional[DateTimeTimeZone] = Field(alias="endDateTime",default=None,)
+	externalEventInformation: Optional[list[VirtualEventExternalInformation]] = Field(alias="externalEventInformation",default=None,)
+	settings: Optional[VirtualEventSettings] = Field(alias="settings",default=None,)
+	startDateTime: Optional[DateTimeTimeZone] = Field(alias="startDateTime",default=None,)
+	status: Optional[VirtualEventStatus | str] = Field(alias="status",default=None,)
+	presenters: Optional[list[VirtualEventPresenter]] = Field(alias="presenters",default=None,)
+	sessions: Optional[list[VirtualEventSession]] = Field(alias="sessions",default=None,)
+	audience: Optional[MeetingAudience | str] = Field(alias="audience",default=None,)
+	coOrganizers: Optional[list[CommunicationsUserIdentity]] = Field(alias="coOrganizers",default=None,)
+	invitedAttendees: SerializeAsAny[Optional[list[Identity]]] = Field(alias="invitedAttendees",default=None,)
+	isInviteOnly: Optional[bool] = Field(alias="isInviteOnly",default=None,)
+
+from .communications_identity_set import CommunicationsIdentitySet
+from .item_body import ItemBody
+from .date_time_time_zone import DateTimeTimeZone
+from .virtual_event_external_information import VirtualEventExternalInformation
+from .virtual_event_settings import VirtualEventSettings
+from .date_time_time_zone import DateTimeTimeZone
+from .virtual_event_status import VirtualEventStatus
+from .virtual_event_presenter import VirtualEventPresenter
+from .virtual_event_session import VirtualEventSession
+from .meeting_audience import MeetingAudience
+from .communications_user_identity import CommunicationsUserIdentity
+from .identity import Identity
+

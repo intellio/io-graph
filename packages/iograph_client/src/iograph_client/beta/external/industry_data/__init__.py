@@ -1,0 +1,121 @@
+# Auto-generated client
+
+from __future__ import annotations
+from kiota_abstractions.method import Method
+from kiota_abstractions.base_request_builder import BaseRequestBuilder
+from kiota_abstractions.base_request_configuration import RequestConfiguration
+from ....request_information import RequestInformation
+from pydantic import BaseModel, Field
+from typing import Union, Any, Optional
+from typing import TYPE_CHECKING
+
+if TYPE_CHECKING:
+	from .years import YearsRequest
+	from .source_systems import SourceSystemsRequest
+	from .runs import RunsRequest
+	from .role_groups import RoleGroupsRequest
+	from .reference_definitions import ReferenceDefinitionsRequest
+	from .outbound_provisioning_flow_sets import OutboundProvisioningFlowSetsRequest
+	from .operations import OperationsRequest
+	from .inbound_flows import InboundFlowsRequest
+	from .data_connectors import DataConnectorsRequest
+	from ....request_adapter import HttpxRequestAdapter
+from iograph_models.beta.industry_data_industry_data_root import IndustryDataIndustryDataRoot
+from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
+
+
+class IndustryDataRequest(BaseRequestBuilder):
+	def __init__(self,request_adapter: HttpxRequestAdapter, path_parameters: Optional[Union[dict[str, Any], str]]) -> None:
+		super().__init__(request_adapter, "{+baseurl}/external/industryData", path_parameters)
+
+	async def get(
+		self,
+		request_configuration: Optional[RequestConfiguration[GetQueryParams]] = None,
+	) -> IndustryDataIndustryDataRoot:
+		"""
+		Get industryData from external
+		
+		"""
+		tags = ['external.industryDataRoot']
+
+		error_mapping: dict[str, type[BaseModel]] = {
+			"XXX": ODataErrorsODataError,
+		}
+
+		request_info: RequestInformation = RequestInformation(
+			method = Method.GET,
+			url_template = self.url_template,
+			path_parameters = self.path_parameters,
+		)
+		request_info.configure(request_configuration)
+		request_info.headers.try_add("Accept", "application/json")
+		return await self.request_adapter.send_async(request_info, IndustryDataIndustryDataRoot, error_mapping)
+
+	class GetQueryParams(BaseModel):
+		select: list[str] = Field(default=None,serialization_alias="%24select")
+		expand: list[str] = Field(default=None,serialization_alias="%24expand")
+
+	def with_url(self, raw_url: str) -> IndustryDataRequest:
+		"""
+		Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+		param raw_url: The raw URL to use for the request builder.
+		Returns: IndustryDataRequest
+		"""
+		if raw_url is None:
+			raise TypeError("raw_url cannot be None.")
+		return IndustryDataRequest(self.request_adapter, self.path_parameters)
+
+	@property
+	def data_connectors(self,
+	) -> DataConnectorsRequest:
+		from .data_connectors import DataConnectorsRequest
+		return DataConnectorsRequest(self.request_adapter, self.path_parameters)
+
+	@property
+	def inbound_flows(self,
+	) -> InboundFlowsRequest:
+		from .inbound_flows import InboundFlowsRequest
+		return InboundFlowsRequest(self.request_adapter, self.path_parameters)
+
+	@property
+	def operations(self,
+	) -> OperationsRequest:
+		from .operations import OperationsRequest
+		return OperationsRequest(self.request_adapter, self.path_parameters)
+
+	@property
+	def outbound_provisioning_flow_sets(self,
+	) -> OutboundProvisioningFlowSetsRequest:
+		from .outbound_provisioning_flow_sets import OutboundProvisioningFlowSetsRequest
+		return OutboundProvisioningFlowSetsRequest(self.request_adapter, self.path_parameters)
+
+	@property
+	def reference_definitions(self,
+	) -> ReferenceDefinitionsRequest:
+		from .reference_definitions import ReferenceDefinitionsRequest
+		return ReferenceDefinitionsRequest(self.request_adapter, self.path_parameters)
+
+	@property
+	def role_groups(self,
+	) -> RoleGroupsRequest:
+		from .role_groups import RoleGroupsRequest
+		return RoleGroupsRequest(self.request_adapter, self.path_parameters)
+
+	@property
+	def runs(self,
+	) -> RunsRequest:
+		from .runs import RunsRequest
+		return RunsRequest(self.request_adapter, self.path_parameters)
+
+	@property
+	def source_systems(self,
+	) -> SourceSystemsRequest:
+		from .source_systems import SourceSystemsRequest
+		return SourceSystemsRequest(self.request_adapter, self.path_parameters)
+
+	@property
+	def years(self,
+	) -> YearsRequest:
+		from .years import YearsRequest
+		return YearsRequest(self.request_adapter, self.path_parameters)
+

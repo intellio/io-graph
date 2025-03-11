@@ -9,11 +9,26 @@ from shutil import rmtree
 # Example usage
 base_dir = os.getcwd()
 openapi_file = os.path.join(base_dir, 'openapi.yaml')
+openapi__beta_file = os.path.join(base_dir, 'openapi-beta.yaml')
+
 client_root_dir = os.path.join(base_dir, 'packages','iograph_client',)
-client_generated_dir = os.path.join(client_root_dir, 'src','iograph_client','generated')
+client_generated_dir = os.path.join(client_root_dir, 'src','iograph_client','v1')
+client_generated_beta_dir = os.path.join(client_root_dir, 'src','iograph_client','beta')
 
 models_root_dir = os.path.join(base_dir, 'packages','iograph_models',)
-models_dir = os.path.join(models_root_dir,'src','iograph_models','models')
+models_dir = os.path.join(models_root_dir,'src','iograph_models','v1')
+models_beta_dir = os.path.join(models_root_dir,'src','iograph_models','beta')
+
+
+# client_generated_dir = client_generated_dir
+client_generated_dir = client_generated_beta_dir
+# models_dir = models_dir
+models_dir = models_beta_dir
+# openapi_file = openapi_file
+openapi_file = openapi__beta_file
+# beta = False
+beta = True
+
 
 python_reserved_words = [
     "False",
@@ -754,7 +769,7 @@ def _method_writes(
     
     # write the imports
     for dep in import_deps:
-        dependency_writes.append(f'from iograph_models.models.{module_file_name_from_name(dep)} import {module_class_name_from_name(dep)}\n')
+        dependency_writes.append(f'from iograph_models.{'beta' if beta else 'v1'}.{module_file_name_from_name(dep)} import {module_class_name_from_name(dep)}\n')
 
     # write the function
     function_writes.append(f'\tasync def {method}(\n')
@@ -1167,7 +1182,7 @@ if __name__ == '__main__':
     with open(openapi_file, 'r') as file:
         openapi_data = yaml.load(file,Loader=CoreLoader )
 
-    create_models_from_openapi(openapi_data)
+    # create_models_from_openapi(openapi_data)
     create_client_from_openapi(openapi_data)
 
     client_pyproject_file = os.path.join(client_root_dir, 'pyproject.toml')

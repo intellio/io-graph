@@ -1,0 +1,176 @@
+from __future__ import annotations
+from typing import Optional
+from pydantic import model_validator, ModelWrapValidatorHandler, ValidationError
+from typing_extensions import Self
+from typing import Any
+from datetime import datetime
+from pydantic import BaseModel, Field, SerializeAsAny
+
+
+class MobileApp(BaseModel):
+	id: Optional[str] = Field(alias="id",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	createdDateTime: Optional[datetime] = Field(alias="createdDateTime",default=None,)
+	dependentAppCount: Optional[int] = Field(alias="dependentAppCount",default=None,)
+	description: Optional[str] = Field(alias="description",default=None,)
+	developer: Optional[str] = Field(alias="developer",default=None,)
+	displayName: Optional[str] = Field(alias="displayName",default=None,)
+	informationUrl: Optional[str] = Field(alias="informationUrl",default=None,)
+	isAssigned: Optional[bool] = Field(alias="isAssigned",default=None,)
+	isFeatured: Optional[bool] = Field(alias="isFeatured",default=None,)
+	largeIcon: Optional[MimeContent] = Field(alias="largeIcon",default=None,)
+	lastModifiedDateTime: Optional[datetime] = Field(alias="lastModifiedDateTime",default=None,)
+	notes: Optional[str] = Field(alias="notes",default=None,)
+	owner: Optional[str] = Field(alias="owner",default=None,)
+	privacyInformationUrl: Optional[str] = Field(alias="privacyInformationUrl",default=None,)
+	publisher: Optional[str] = Field(alias="publisher",default=None,)
+	publishingState: Optional[MobileAppPublishingState | str] = Field(alias="publishingState",default=None,)
+	roleScopeTagIds: Optional[list[str]] = Field(alias="roleScopeTagIds",default=None,)
+	supersededAppCount: Optional[int] = Field(alias="supersededAppCount",default=None,)
+	supersedingAppCount: Optional[int] = Field(alias="supersedingAppCount",default=None,)
+	uploadState: Optional[int] = Field(alias="uploadState",default=None,)
+	assignments: Optional[list[MobileAppAssignment]] = Field(alias="assignments",default=None,)
+	categories: Optional[list[MobileAppCategory]] = Field(alias="categories",default=None,)
+	relationships: SerializeAsAny[Optional[list[MobileAppRelationship]]] = Field(alias="relationships",default=None,)
+
+	@model_validator(mode="wrap")
+	def convert_discriminator_class(cls, data: Any, handler: ModelWrapValidatorHandler[Self]) -> Self:
+		try:
+			# check with parent model to catch any errors
+			parent_validated_model = handler(data)
+			# check if the discriminator field is present
+			if "@odata.type" not in data:
+				return parent_validated_model
+			# get the discriminator value
+			mapping_key = data["@odata.type"]
+			if mapping_key == "#microsoft.graph.androidForWorkApp":
+				from .android_for_work_app import AndroidForWorkApp
+				return AndroidForWorkApp.model_validate(data)
+			if mapping_key == "#microsoft.graph.androidManagedStoreApp":
+				from .android_managed_store_app import AndroidManagedStoreApp
+				return AndroidManagedStoreApp.model_validate(data)
+			if mapping_key == "#microsoft.graph.androidManagedStoreWebApp":
+				from .android_managed_store_web_app import AndroidManagedStoreWebApp
+				return AndroidManagedStoreWebApp.model_validate(data)
+			if mapping_key == "#microsoft.graph.androidStoreApp":
+				from .android_store_app import AndroidStoreApp
+				return AndroidStoreApp.model_validate(data)
+			if mapping_key == "#microsoft.graph.iosiPadOSWebClip":
+				from .iosi_pad_o_s_web_clip import IosiPadOSWebClip
+				return IosiPadOSWebClip.model_validate(data)
+			if mapping_key == "#microsoft.graph.iosStoreApp":
+				from .ios_store_app import IosStoreApp
+				return IosStoreApp.model_validate(data)
+			if mapping_key == "#microsoft.graph.iosVppApp":
+				from .ios_vpp_app import IosVppApp
+				return IosVppApp.model_validate(data)
+			if mapping_key == "#microsoft.graph.macOSMicrosoftDefenderApp":
+				from .mac_o_s_microsoft_defender_app import MacOSMicrosoftDefenderApp
+				return MacOSMicrosoftDefenderApp.model_validate(data)
+			if mapping_key == "#microsoft.graph.macOSMicrosoftEdgeApp":
+				from .mac_o_s_microsoft_edge_app import MacOSMicrosoftEdgeApp
+				return MacOSMicrosoftEdgeApp.model_validate(data)
+			if mapping_key == "#microsoft.graph.macOSOfficeSuiteApp":
+				from .mac_o_s_office_suite_app import MacOSOfficeSuiteApp
+				return MacOSOfficeSuiteApp.model_validate(data)
+			if mapping_key == "#microsoft.graph.macOsVppApp":
+				from .mac_os_vpp_app import MacOsVppApp
+				return MacOsVppApp.model_validate(data)
+			if mapping_key == "#microsoft.graph.macOSWebClip":
+				from .mac_o_s_web_clip import MacOSWebClip
+				return MacOSWebClip.model_validate(data)
+			if mapping_key == "#microsoft.graph.managedApp":
+				from .managed_app import ManagedApp
+				return ManagedApp.model_validate(data)
+			if mapping_key == "#microsoft.graph.managedAndroidStoreApp":
+				from .managed_android_store_app import ManagedAndroidStoreApp
+				return ManagedAndroidStoreApp.model_validate(data)
+			if mapping_key == "#microsoft.graph.managedIOSStoreApp":
+				from .managed_i_o_s_store_app import ManagedIOSStoreApp
+				return ManagedIOSStoreApp.model_validate(data)
+			if mapping_key == "#microsoft.graph.managedMobileLobApp":
+				from .managed_mobile_lob_app import ManagedMobileLobApp
+				return ManagedMobileLobApp.model_validate(data)
+			if mapping_key == "#microsoft.graph.managedAndroidLobApp":
+				from .managed_android_lob_app import ManagedAndroidLobApp
+				return ManagedAndroidLobApp.model_validate(data)
+			if mapping_key == "#microsoft.graph.managedIOSLobApp":
+				from .managed_i_o_s_lob_app import ManagedIOSLobApp
+				return ManagedIOSLobApp.model_validate(data)
+			if mapping_key == "#microsoft.graph.microsoftStoreForBusinessApp":
+				from .microsoft_store_for_business_app import MicrosoftStoreForBusinessApp
+				return MicrosoftStoreForBusinessApp.model_validate(data)
+			if mapping_key == "#microsoft.graph.mobileLobApp":
+				from .mobile_lob_app import MobileLobApp
+				return MobileLobApp.model_validate(data)
+			if mapping_key == "#microsoft.graph.androidLobApp":
+				from .android_lob_app import AndroidLobApp
+				return AndroidLobApp.model_validate(data)
+			if mapping_key == "#microsoft.graph.iosLobApp":
+				from .ios_lob_app import IosLobApp
+				return IosLobApp.model_validate(data)
+			if mapping_key == "#microsoft.graph.macOSDmgApp":
+				from .mac_o_s_dmg_app import MacOSDmgApp
+				return MacOSDmgApp.model_validate(data)
+			if mapping_key == "#microsoft.graph.macOSLobApp":
+				from .mac_o_s_lob_app import MacOSLobApp
+				return MacOSLobApp.model_validate(data)
+			if mapping_key == "#microsoft.graph.macOSPkgApp":
+				from .mac_o_s_pkg_app import MacOSPkgApp
+				return MacOSPkgApp.model_validate(data)
+			if mapping_key == "#microsoft.graph.win32LobApp":
+				from .win32_lob_app import Win32LobApp
+				return Win32LobApp.model_validate(data)
+			if mapping_key == "#microsoft.graph.win32CatalogApp":
+				from .win32_catalog_app import Win32CatalogApp
+				return Win32CatalogApp.model_validate(data)
+			if mapping_key == "#microsoft.graph.windowsAppX":
+				from .windows_app_x import WindowsAppX
+				return WindowsAppX.model_validate(data)
+			if mapping_key == "#microsoft.graph.windowsMobileMSI":
+				from .windows_mobile_m_s_i import WindowsMobileMSI
+				return WindowsMobileMSI.model_validate(data)
+			if mapping_key == "#microsoft.graph.windowsPhone81AppX":
+				from .windows_phone81_app_x import WindowsPhone81AppX
+				return WindowsPhone81AppX.model_validate(data)
+			if mapping_key == "#microsoft.graph.windowsPhone81AppXBundle":
+				from .windows_phone81_app_x_bundle import WindowsPhone81AppXBundle
+				return WindowsPhone81AppXBundle.model_validate(data)
+			if mapping_key == "#microsoft.graph.windowsPhoneXAP":
+				from .windows_phone_x_a_p import WindowsPhoneXAP
+				return WindowsPhoneXAP.model_validate(data)
+			if mapping_key == "#microsoft.graph.windowsUniversalAppX":
+				from .windows_universal_app_x import WindowsUniversalAppX
+				return WindowsUniversalAppX.model_validate(data)
+			if mapping_key == "#microsoft.graph.officeSuiteApp":
+				from .office_suite_app import OfficeSuiteApp
+				return OfficeSuiteApp.model_validate(data)
+			if mapping_key == "#microsoft.graph.webApp":
+				from .web_app import WebApp
+				return WebApp.model_validate(data)
+			if mapping_key == "#microsoft.graph.windowsMicrosoftEdgeApp":
+				from .windows_microsoft_edge_app import WindowsMicrosoftEdgeApp
+				return WindowsMicrosoftEdgeApp.model_validate(data)
+			if mapping_key == "#microsoft.graph.windowsPhone81StoreApp":
+				from .windows_phone81_store_app import WindowsPhone81StoreApp
+				return WindowsPhone81StoreApp.model_validate(data)
+			if mapping_key == "#microsoft.graph.windowsStoreApp":
+				from .windows_store_app import WindowsStoreApp
+				return WindowsStoreApp.model_validate(data)
+			if mapping_key == "#microsoft.graph.windowsWebApp":
+				from .windows_web_app import WindowsWebApp
+				return WindowsWebApp.model_validate(data)
+			if mapping_key == "#microsoft.graph.winGetApp":
+				from .win_get_app import WinGetApp
+				return WinGetApp.model_validate(data)
+			raise ValidationError(f"Invalid discriminator value: {mapping_key}")
+
+		except Exception as e:
+			raise e
+
+from .mime_content import MimeContent
+from .mobile_app_publishing_state import MobileAppPublishingState
+from .mobile_app_assignment import MobileAppAssignment
+from .mobile_app_category import MobileAppCategory
+from .mobile_app_relationship import MobileAppRelationship
+
