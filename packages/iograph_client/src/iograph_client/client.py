@@ -1,23 +1,12 @@
 from abc import abstractmethod
-from typing import List, Optional, Union, TypeVar, Callable
-from contextlib import asynccontextmanager, contextmanager
-from collections.abc import AsyncGenerator
-import httpx
-from httpx import AsyncClient
-import datetime
-import time
-from msgraph_core._enums import APIVersion
-from azure.core.credentials import TokenCredential
-from azure.core.credentials_async import AsyncTokenCredential
-from azure.identity.aio import ClientSecretCredential as aioClientSecretCredential
+from typing import TypeVar, Callable
+
+
 from kiota_abstractions.base_request_builder import BaseRequestBuilder
 from .v1._generated_base_service_client import GraphServiceClientBase as V1GraphServiceClientBase
 from .beta._generated_base_service_client import GraphServiceClientBase as BetaGraphServiceClientBase
 from .request_adapter import HttpxRequestAdapter
 
-from kiota_authentication_azure.azure_identity_authentication_provider import (
-    AzureIdentityAuthenticationProvider,
-)
 
 T = TypeVar("T")
 
