@@ -16,7 +16,7 @@ class AuthenticationMethodsPolicy(BaseModel):
 	policyVersion: Optional[str] = Field(alias="policyVersion", default=None,)
 	reconfirmationInDays: Optional[int] = Field(alias="reconfirmationInDays", default=None,)
 	registrationEnforcement: Optional[RegistrationEnforcement] = Field(alias="registrationEnforcement", default=None,)
-	authenticationMethodConfigurations: Optional[list[Annotated[Union[EmailAuthenticationMethodConfiguration, Fido2AuthenticationMethodConfiguration, MicrosoftAuthenticatorAuthenticationMethodConfiguration, SmsAuthenticationMethodConfiguration, SoftwareOathAuthenticationMethodConfiguration, TemporaryAccessPassAuthenticationMethodConfiguration, VoiceAuthenticationMethodConfiguration, X509CertificateAuthenticationMethodConfiguration]],Field(discriminator="odata_type")]]] = Field(alias="authenticationMethodConfigurations", default=None,)
+	authenticationMethodConfigurations: Optional[list[Annotated[Union[EmailAuthenticationMethodConfiguration, Fido2AuthenticationMethodConfiguration, MicrosoftAuthenticatorAuthenticationMethodConfiguration, SmsAuthenticationMethodConfiguration, SoftwareOathAuthenticationMethodConfiguration, TemporaryAccessPassAuthenticationMethodConfiguration, VoiceAuthenticationMethodConfiguration, X509CertificateAuthenticationMethodConfiguration],Field(discriminator="odata_type")]]] = Field(alias="authenticationMethodConfigurations", default=None,)
 
 from .authentication_methods_policy_migration_state import AuthenticationMethodsPolicyMigrationState
 from .registration_enforcement import RegistrationEnforcement

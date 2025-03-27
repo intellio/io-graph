@@ -16,8 +16,8 @@ if TYPE_CHECKING:
 	from .by_identity_provider_base_id import ByIdentityProviderBaseIdRequest
 	from ....request_adapter import HttpxRequestAdapter
 from iograph_models.v1.o_data_errors__o_data_error import ODataErrorsODataError
-from iograph_models.v1.identity_provider_base_collection_response import IdentityProviderBaseCollectionResponse
 from iograph_models.v1.identity_provider_base import IdentityProviderBase
+from iograph_models.v1.identity_provider_base_collection_response import IdentityProviderBaseCollectionResponse
 
 
 class FederationConfigurationsRequest(BaseRequestBuilder):

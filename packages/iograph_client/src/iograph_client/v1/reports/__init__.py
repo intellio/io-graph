@@ -121,8 +121,8 @@ if TYPE_CHECKING:
 	from .daily_print_usage_by_printer import DailyPrintUsageByPrinterRequest
 	from .authentication_methods import AuthenticationMethodsRequest
 	from ...request_adapter import HttpxRequestAdapter
-from iograph_models.v1.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.v1.report_root import ReportRoot
+from iograph_models.v1.o_data_errors__o_data_error import ODataErrorsODataError
 
 
 class ReportsRequest(BaseRequestBuilder):

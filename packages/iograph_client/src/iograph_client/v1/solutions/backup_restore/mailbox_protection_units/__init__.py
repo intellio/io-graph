@@ -14,9 +14,9 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_mailbox_protection_unit_id import ByMailboxProtectionUnitIdRequest
 	from .....request_adapter import HttpxRequestAdapter
+from iograph_models.v1.mailbox_protection_unit import MailboxProtectionUnit
 from iograph_models.v1.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.v1.mailbox_protection_unit_collection_response import MailboxProtectionUnitCollectionResponse
-from iograph_models.v1.mailbox_protection_unit import MailboxProtectionUnit
 
 
 class MailboxProtectionUnitsRequest(BaseRequestBuilder):

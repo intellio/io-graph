@@ -14,8 +14,8 @@ if TYPE_CHECKING:
 	from .deactivate import DeactivateRequest
 	from .activate import ActivateRequest
 	from ......request_adapter import HttpxRequestAdapter
-from iograph_models.v1.service_app import ServiceApp
 from iograph_models.v1.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.v1.service_app import ServiceApp
 
 
 class ByServiceAppIdRequest(BaseRequestBuilder):

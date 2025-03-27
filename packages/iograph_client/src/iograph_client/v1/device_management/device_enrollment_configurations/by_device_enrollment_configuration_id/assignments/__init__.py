@@ -15,8 +15,8 @@ if TYPE_CHECKING:
 	from .by_enrollment_configuration_assignment_id import ByEnrollmentConfigurationAssignmentIdRequest
 	from ......request_adapter import HttpxRequestAdapter
 from iograph_models.v1.o_data_errors__o_data_error import ODataErrorsODataError
-from iograph_models.v1.enrollment_configuration_assignment_collection_response import EnrollmentConfigurationAssignmentCollectionResponse
 from iograph_models.v1.enrollment_configuration_assignment import EnrollmentConfigurationAssignment
+from iograph_models.v1.enrollment_configuration_assignment_collection_response import EnrollmentConfigurationAssignmentCollectionResponse
 
 
 class AssignmentsRequest(BaseRequestBuilder):

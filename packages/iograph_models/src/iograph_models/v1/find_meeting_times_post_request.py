@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class Find_meeting_timesPostRequest(BaseModel):
-	attendees: Optional[list[Annotated[Union[Attendee]],Field(discriminator="odata_type")]]] = Field(alias="attendees", default=None,)
+	attendees: Optional[list[Annotated[Union[Attendee],Field(discriminator="odata_type")]]] = Field(alias="attendees", default=None,)
 	locationConstraint: Optional[LocationConstraint] = Field(alias="locationConstraint", default=None,)
 	timeConstraint: Optional[TimeConstraint] = Field(alias="timeConstraint", default=None,)
 	meetingDuration: Optional[str] = Field(alias="meetingDuration", default=None,)

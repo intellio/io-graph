@@ -15,7 +15,7 @@ class RoleDefinition(BaseModel):
 	displayName: Optional[str] = Field(alias="displayName", default=None,)
 	isBuiltIn: Optional[bool] = Field(alias="isBuiltIn", default=None,)
 	rolePermissions: Optional[list[RolePermission]] = Field(alias="rolePermissions", default=None,)
-	roleAssignments: Optional[list[Annotated[Union[DeviceAndAppManagementRoleAssignment]],Field(discriminator="odata_type")]]] = Field(alias="roleAssignments", default=None,)
+	roleAssignments: Optional[list[Annotated[Union[DeviceAndAppManagementRoleAssignment],Field(discriminator="odata_type")]]] = Field(alias="roleAssignments", default=None,)
 
 	@model_validator(mode="wrap")
 	def convert_discriminator_class(cls, data: Any, handler: ModelWrapValidatorHandler[Self]) -> Self:

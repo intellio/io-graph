@@ -15,8 +15,8 @@ if TYPE_CHECKING:
 	from .by_vulnerability_id import ByVulnerabilityIdRequest
 	from .....request_adapter import HttpxRequestAdapter
 from iograph_models.v1.o_data_errors__o_data_error import ODataErrorsODataError
-from iograph_models.v1.security_vulnerability import SecurityVulnerability
 from iograph_models.v1.security_vulnerability_collection_response import SecurityVulnerabilityCollectionResponse
+from iograph_models.v1.security_vulnerability import SecurityVulnerability
 
 
 class VulnerabilitiesRequest(BaseRequestBuilder):

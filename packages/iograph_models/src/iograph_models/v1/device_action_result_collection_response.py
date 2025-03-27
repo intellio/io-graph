@@ -8,7 +8,7 @@ from pydantic import BaseModel, Field, SerializeAsAny
 class DeviceActionResultCollectionResponse(BaseModel):
 	odata_count: Optional[int] = Field(alias="@odata.count", default=None,)
 	odata_nextLink: Optional[str] = Field(alias="@odata.nextLink", default=None,)
-	value: Optional[list[Annotated[Union[DeleteUserFromSharedAppleDeviceActionResult, LocateDeviceActionResult, RemoteLockActionResult, ResetPasscodeActionResult, RotateBitLockerKeysDeviceActionResult, WindowsDefenderScanActionResult]],Field(discriminator="odata_type")]]] = Field(alias="value", default=None,)
+	value: Optional[list[Annotated[Union[DeleteUserFromSharedAppleDeviceActionResult, LocateDeviceActionResult, RemoteLockActionResult, ResetPasscodeActionResult, RotateBitLockerKeysDeviceActionResult, WindowsDefenderScanActionResult],Field(discriminator="odata_type")]]] = Field(alias="value", default=None,)
 
 from .delete_user_from_shared_apple_device_action_result import DeleteUserFromSharedAppleDeviceActionResult
 from .locate_device_action_result import LocateDeviceActionResult

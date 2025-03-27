@@ -11,8 +11,8 @@ from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:
 	from .....request_adapter import HttpxRequestAdapter
-from iograph_models.v1.check_member_groups_post_response import Check_member_groupsPostResponse
 from iograph_models.v1.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.v1.check_member_groups_post_response import Check_member_groupsPostResponse
 from iograph_models.v1.check_member_groups_post_request import Check_member_groupsPostRequest
 
 

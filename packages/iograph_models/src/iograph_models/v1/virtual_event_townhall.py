@@ -21,7 +21,7 @@ class VirtualEventTownhall(BaseModel):
 	sessions: Optional[list[VirtualEventSession]] = Field(alias="sessions", default=None,)
 	audience: Optional[MeetingAudience | str] = Field(alias="audience", default=None,)
 	coOrganizers: Optional[list[CommunicationsUserIdentity]] = Field(alias="coOrganizers", default=None,)
-	invitedAttendees: Optional[list[Annotated[Union[AzureCommunicationServicesUserIdentity, CommunicationsApplicationIdentity, CommunicationsApplicationInstanceIdentity, CommunicationsEncryptedIdentity, CommunicationsGuestIdentity, CommunicationsPhoneIdentity, CommunicationsUserIdentity, EmailIdentity, Initiator, ProvisionedIdentity, ProvisioningServicePrincipal, ProvisioningSystem, ServicePrincipalIdentity, SharePointIdentity, TeamworkApplicationIdentity, TeamworkConversationIdentity, TeamworkTagIdentity, TeamworkUserIdentity, UserIdentity, CallRecordsUserIdentity]],Field(discriminator="odata_type")]]] = Field(alias="invitedAttendees", default=None,)
+	invitedAttendees: Optional[list[Annotated[Union[AzureCommunicationServicesUserIdentity, CommunicationsApplicationIdentity, CommunicationsApplicationInstanceIdentity, CommunicationsEncryptedIdentity, CommunicationsGuestIdentity, CommunicationsPhoneIdentity, CommunicationsUserIdentity, EmailIdentity, Initiator, ProvisionedIdentity, ProvisioningServicePrincipal, ProvisioningSystem, ServicePrincipalIdentity, SharePointIdentity, TeamworkApplicationIdentity, TeamworkConversationIdentity, TeamworkTagIdentity, TeamworkUserIdentity, UserIdentity, CallRecordsUserIdentity],Field(discriminator="odata_type")]]] = Field(alias="invitedAttendees", default=None,)
 	isInviteOnly: Optional[bool] = Field(alias="isInviteOnly", default=None,)
 
 from .communications_identity_set import CommunicationsIdentitySet

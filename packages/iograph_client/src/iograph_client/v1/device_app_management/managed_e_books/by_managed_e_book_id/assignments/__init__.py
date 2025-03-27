@@ -15,8 +15,8 @@ if TYPE_CHECKING:
 	from .by_managed_e_book_assignment_id import ByManagedEBookAssignmentIdRequest
 	from ......request_adapter import HttpxRequestAdapter
 from iograph_models.v1.o_data_errors__o_data_error import ODataErrorsODataError
-from iograph_models.v1.managed_e_book_assignment_collection_response import ManagedEBookAssignmentCollectionResponse
 from iograph_models.v1.managed_e_book_assignment import ManagedEBookAssignment
+from iograph_models.v1.managed_e_book_assignment_collection_response import ManagedEBookAssignmentCollectionResponse
 
 
 class AssignmentsRequest(BaseRequestBuilder):

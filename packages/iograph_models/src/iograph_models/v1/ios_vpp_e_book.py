@@ -20,7 +20,7 @@ class IosVppEBook(BaseModel):
 	privacyInformationUrl: Optional[str] = Field(alias="privacyInformationUrl", default=None,)
 	publishedDateTime: Optional[datetime] = Field(alias="publishedDateTime", default=None,)
 	publisher: Optional[str] = Field(alias="publisher", default=None,)
-	assignments: Optional[list[Annotated[Union[IosVppEBookAssignment]],Field(discriminator="odata_type")]]] = Field(alias="assignments", default=None,)
+	assignments: Optional[list[Annotated[Union[IosVppEBookAssignment],Field(discriminator="odata_type")]]] = Field(alias="assignments", default=None,)
 	deviceStates: Optional[list[DeviceInstallState]] = Field(alias="deviceStates", default=None,)
 	installSummary: Optional[EBookInstallSummary] = Field(alias="installSummary", default=None,)
 	userStateSummary: Optional[list[UserInstallStateSummary]] = Field(alias="userStateSummary", default=None,)

@@ -24,8 +24,8 @@ class ManagedAppRegistration(BaseModel):
 	platformVersion: Optional[str] = Field(alias="platformVersion", default=None,)
 	userId: Optional[str] = Field(alias="userId", default=None,)
 	version: Optional[str] = Field(alias="version", default=None,)
-	appliedPolicies: Optional[list[Annotated[Union[ManagedAppConfiguration, TargetedManagedAppConfiguration, ManagedAppProtection, DefaultManagedAppProtection, TargetedManagedAppProtection, AndroidManagedAppProtection, IosManagedAppProtection, WindowsInformationProtection, MdmWindowsInformationProtectionPolicy, WindowsInformationProtectionPolicy]],Field(discriminator="odata_type")]]] = Field(alias="appliedPolicies", default=None,)
-	intendedPolicies: Optional[list[Annotated[Union[ManagedAppConfiguration, TargetedManagedAppConfiguration, ManagedAppProtection, DefaultManagedAppProtection, TargetedManagedAppProtection, AndroidManagedAppProtection, IosManagedAppProtection, WindowsInformationProtection, MdmWindowsInformationProtectionPolicy, WindowsInformationProtectionPolicy]],Field(discriminator="odata_type")]]] = Field(alias="intendedPolicies", default=None,)
+	appliedPolicies: Optional[list[Annotated[Union[ManagedAppConfiguration, TargetedManagedAppConfiguration, ManagedAppProtection, DefaultManagedAppProtection, TargetedManagedAppProtection, AndroidManagedAppProtection, IosManagedAppProtection, WindowsInformationProtection, MdmWindowsInformationProtectionPolicy, WindowsInformationProtectionPolicy],Field(discriminator="odata_type")]]] = Field(alias="appliedPolicies", default=None,)
+	intendedPolicies: Optional[list[Annotated[Union[ManagedAppConfiguration, TargetedManagedAppConfiguration, ManagedAppProtection, DefaultManagedAppProtection, TargetedManagedAppProtection, AndroidManagedAppProtection, IosManagedAppProtection, WindowsInformationProtection, MdmWindowsInformationProtectionPolicy, WindowsInformationProtectionPolicy],Field(discriminator="odata_type")]]] = Field(alias="intendedPolicies", default=None,)
 	operations: Optional[list[ManagedAppOperation]] = Field(alias="operations", default=None,)
 
 	@model_validator(mode="wrap")

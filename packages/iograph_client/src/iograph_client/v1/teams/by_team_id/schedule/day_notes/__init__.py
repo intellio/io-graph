@@ -14,9 +14,9 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_day_note_id import ByDayNoteIdRequest
 	from ......request_adapter import HttpxRequestAdapter
-from iograph_models.v1.day_note_collection_response import DayNoteCollectionResponse
 from iograph_models.v1.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.v1.day_note import DayNote
+from iograph_models.v1.day_note_collection_response import DayNoteCollectionResponse
 
 
 class DayNotesRequest(BaseRequestBuilder):

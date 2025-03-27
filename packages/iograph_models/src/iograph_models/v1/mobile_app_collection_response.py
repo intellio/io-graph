@@ -8,7 +8,7 @@ from pydantic import BaseModel, Field, SerializeAsAny
 class MobileAppCollectionResponse(BaseModel):
 	odata_count: Optional[int] = Field(alias="@odata.count", default=None,)
 	odata_nextLink: Optional[str] = Field(alias="@odata.nextLink", default=None,)
-	value: Optional[list[Annotated[Union[AndroidStoreApp, IosiPadOSWebClip, IosStoreApp, IosVppApp, MacOSMicrosoftDefenderApp, MacOSMicrosoftEdgeApp, MacOSOfficeSuiteApp, ManagedApp, ManagedAndroidStoreApp, ManagedIOSStoreApp, ManagedMobileLobApp, ManagedAndroidLobApp, ManagedIOSLobApp, MicrosoftStoreForBusinessApp, MobileLobApp, AndroidLobApp, IosLobApp, MacOSDmgApp, MacOSLobApp, Win32LobApp, WindowsAppX, WindowsMobileMSI, WindowsUniversalAppX, WebApp, WindowsMicrosoftEdgeApp, WindowsWebApp]],Field(discriminator="odata_type")]]] = Field(alias="value", default=None,)
+	value: Optional[list[Annotated[Union[AndroidStoreApp, IosiPadOSWebClip, IosStoreApp, IosVppApp, MacOSMicrosoftDefenderApp, MacOSMicrosoftEdgeApp, MacOSOfficeSuiteApp, ManagedApp, ManagedAndroidStoreApp, ManagedIOSStoreApp, ManagedMobileLobApp, ManagedAndroidLobApp, ManagedIOSLobApp, MicrosoftStoreForBusinessApp, MobileLobApp, AndroidLobApp, IosLobApp, MacOSDmgApp, MacOSLobApp, Win32LobApp, WindowsAppX, WindowsMobileMSI, WindowsUniversalAppX, WebApp, WindowsMicrosoftEdgeApp, WindowsWebApp],Field(discriminator="odata_type")]]] = Field(alias="value", default=None,)
 
 from .android_store_app import AndroidStoreApp
 from .iosi_pad_o_s_web_clip import IosiPadOSWebClip

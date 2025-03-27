@@ -16,7 +16,7 @@ class ManagedDevice(BaseModel):
 	complianceGracePeriodExpirationDateTime: Optional[datetime] = Field(alias="complianceGracePeriodExpirationDateTime", default=None,)
 	complianceState: Optional[ComplianceState | str] = Field(alias="complianceState", default=None,)
 	configurationManagerClientEnabledFeatures: Optional[ConfigurationManagerClientEnabledFeatures] = Field(alias="configurationManagerClientEnabledFeatures", default=None,)
-	deviceActionResults: Optional[list[Annotated[Union[DeleteUserFromSharedAppleDeviceActionResult, LocateDeviceActionResult, RemoteLockActionResult, ResetPasscodeActionResult, RotateBitLockerKeysDeviceActionResult, WindowsDefenderScanActionResult]],Field(discriminator="odata_type")]]] = Field(alias="deviceActionResults", default=None,)
+	deviceActionResults: Optional[list[Annotated[Union[DeleteUserFromSharedAppleDeviceActionResult, LocateDeviceActionResult, RemoteLockActionResult, ResetPasscodeActionResult, RotateBitLockerKeysDeviceActionResult, WindowsDefenderScanActionResult],Field(discriminator="odata_type")]]] = Field(alias="deviceActionResults", default=None,)
 	deviceCategoryDisplayName: Optional[str] = Field(alias="deviceCategoryDisplayName", default=None,)
 	deviceEnrollmentType: Optional[DeviceEnrollmentType | str] = Field(alias="deviceEnrollmentType", default=None,)
 	deviceHealthAttestationState: Optional[DeviceHealthAttestationState] = Field(alias="deviceHealthAttestationState", default=None,)

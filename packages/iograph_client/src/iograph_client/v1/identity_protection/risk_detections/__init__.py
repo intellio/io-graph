@@ -14,8 +14,8 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_risk_detection_id import ByRiskDetectionIdRequest
 	from ....request_adapter import HttpxRequestAdapter
-from iograph_models.v1.risk_detection_collection_response import RiskDetectionCollectionResponse
 from iograph_models.v1.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.v1.risk_detection_collection_response import RiskDetectionCollectionResponse
 from iograph_models.v1.risk_detection import RiskDetection
 
 

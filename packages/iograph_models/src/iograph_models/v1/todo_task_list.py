@@ -12,7 +12,7 @@ class TodoTaskList(BaseModel):
 	isOwner: Optional[bool] = Field(alias="isOwner", default=None,)
 	isShared: Optional[bool] = Field(alias="isShared", default=None,)
 	wellknownListName: Optional[WellknownListName | str] = Field(alias="wellknownListName", default=None,)
-	extensions: Optional[list[Annotated[Union[OpenTypeExtension]],Field(discriminator="odata_type")]]] = Field(alias="extensions", default=None,)
+	extensions: Optional[list[Annotated[Union[OpenTypeExtension],Field(discriminator="odata_type")]]] = Field(alias="extensions", default=None,)
 	tasks: Optional[list[TodoTask]] = Field(alias="tasks", default=None,)
 
 from .wellknown_list_name import WellknownListName

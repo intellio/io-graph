@@ -8,7 +8,7 @@ from pydantic import BaseModel, Field, SerializeAsAny
 class CommentAction(BaseModel):
 	isReply: Optional[bool] = Field(alias="isReply", default=None,)
 	parentAuthor: Optional[Union[ChatMessageFromIdentitySet, ChatMessageMentionedIdentitySet, ChatMessageReactionIdentitySet, CommunicationsIdentitySet, SharePointIdentitySet]] = Field(alias="parentAuthor", default=None,discriminator="odata_type", )
-	participants: Optional[list[Annotated[Union[ChatMessageFromIdentitySet, ChatMessageMentionedIdentitySet, ChatMessageReactionIdentitySet, CommunicationsIdentitySet, SharePointIdentitySet]],Field(discriminator="odata_type")]]] = Field(alias="participants", default=None,)
+	participants: Optional[list[Annotated[Union[ChatMessageFromIdentitySet, ChatMessageMentionedIdentitySet, ChatMessageReactionIdentitySet, CommunicationsIdentitySet, SharePointIdentitySet],Field(discriminator="odata_type")]]] = Field(alias="participants", default=None,)
 	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
 
 from .chat_message_from_identity_set import ChatMessageFromIdentitySet

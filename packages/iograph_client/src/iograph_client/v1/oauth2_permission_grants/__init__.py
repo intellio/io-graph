@@ -16,8 +16,8 @@ if TYPE_CHECKING:
 	from .by_o_auth2_permission_grant_id import ByOAuth2PermissionGrantIdRequest
 	from ...request_adapter import HttpxRequestAdapter
 from iograph_models.v1.o_data_errors__o_data_error import ODataErrorsODataError
-from iograph_models.v1.o_auth2_permission_grant import OAuth2PermissionGrant
 from iograph_models.v1.o_auth2_permission_grant_collection_response import OAuth2PermissionGrantCollectionResponse
+from iograph_models.v1.o_auth2_permission_grant import OAuth2PermissionGrant
 
 
 class Oauth2PermissionGrantsRequest(BaseRequestBuilder):

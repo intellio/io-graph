@@ -15,8 +15,8 @@ if TYPE_CHECKING:
 	from .by_feature_rollout_policy_id import ByFeatureRolloutPolicyIdRequest
 	from ....request_adapter import HttpxRequestAdapter
 from iograph_models.v1.o_data_errors__o_data_error import ODataErrorsODataError
-from iograph_models.v1.feature_rollout_policy import FeatureRolloutPolicy
 from iograph_models.v1.feature_rollout_policy_collection_response import FeatureRolloutPolicyCollectionResponse
+from iograph_models.v1.feature_rollout_policy import FeatureRolloutPolicy
 
 
 class FeatureRolloutPoliciesRequest(BaseRequestBuilder):

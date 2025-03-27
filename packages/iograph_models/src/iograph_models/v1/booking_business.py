@@ -26,10 +26,10 @@ class BookingBusiness(BaseModel):
 	webSiteUrl: Optional[str] = Field(alias="webSiteUrl", default=None,)
 	appointments: Optional[list[BookingAppointment]] = Field(alias="appointments", default=None,)
 	calendarView: Optional[list[BookingAppointment]] = Field(alias="calendarView", default=None,)
-	customers: Optional[list[Annotated[Union[BookingCustomer]],Field(discriminator="odata_type")]]] = Field(alias="customers", default=None,)
+	customers: Optional[list[Annotated[Union[BookingCustomer],Field(discriminator="odata_type")]]] = Field(alias="customers", default=None,)
 	customQuestions: Optional[list[BookingCustomQuestion]] = Field(alias="customQuestions", default=None,)
 	services: Optional[list[BookingService]] = Field(alias="services", default=None,)
-	staffMembers: Optional[list[Annotated[Union[BookingStaffMember]],Field(discriminator="odata_type")]]] = Field(alias="staffMembers", default=None,)
+	staffMembers: Optional[list[Annotated[Union[BookingStaffMember],Field(discriminator="odata_type")]]] = Field(alias="staffMembers", default=None,)
 
 from .physical_address import PhysicalAddress
 from .booking_page_settings import BookingPageSettings

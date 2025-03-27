@@ -9,13 +9,13 @@ class IdentityContainer(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
 	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
 	apiConnectors: Optional[list[IdentityApiConnector]] = Field(alias="apiConnectors", default=None,)
-	authenticationEventListeners: Optional[list[Annotated[Union[OnAttributeCollectionListener, OnAuthenticationMethodLoadStartListener, OnInteractiveAuthFlowStartListener, OnTokenIssuanceStartListener, OnUserCreateStartListener]],Field(discriminator="odata_type")]]] = Field(alias="authenticationEventListeners", default=None,)
-	authenticationEventsFlows: Optional[list[Annotated[Union[ExternalUsersSelfServiceSignUpEventsFlow]],Field(discriminator="odata_type")]]] = Field(alias="authenticationEventsFlows", default=None,)
+	authenticationEventListeners: Optional[list[Annotated[Union[OnAttributeCollectionListener, OnAuthenticationMethodLoadStartListener, OnInteractiveAuthFlowStartListener, OnTokenIssuanceStartListener, OnUserCreateStartListener],Field(discriminator="odata_type")]]] = Field(alias="authenticationEventListeners", default=None,)
+	authenticationEventsFlows: Optional[list[Annotated[Union[ExternalUsersSelfServiceSignUpEventsFlow],Field(discriminator="odata_type")]]] = Field(alias="authenticationEventsFlows", default=None,)
 	b2xUserFlows: Optional[list[B2xIdentityUserFlow]] = Field(alias="b2xUserFlows", default=None,)
 	conditionalAccess: Optional[ConditionalAccessRoot] = Field(alias="conditionalAccess", default=None,)
-	customAuthenticationExtensions: Optional[list[Annotated[Union[OnTokenIssuanceStartCustomExtension]],Field(discriminator="odata_type")]]] = Field(alias="customAuthenticationExtensions", default=None,)
-	identityProviders: Optional[list[Annotated[Union[AppleManagedIdentityProvider, BuiltInIdentityProvider, SamlOrWsFedProvider, InternalDomainFederation, SamlOrWsFedExternalDomainFederation, SocialIdentityProvider]],Field(discriminator="odata_type")]]] = Field(alias="identityProviders", default=None,)
-	userFlowAttributes: Optional[list[Annotated[Union[IdentityBuiltInUserFlowAttribute, IdentityCustomUserFlowAttribute]],Field(discriminator="odata_type")]]] = Field(alias="userFlowAttributes", default=None,)
+	customAuthenticationExtensions: Optional[list[Annotated[Union[OnTokenIssuanceStartCustomExtension],Field(discriminator="odata_type")]]] = Field(alias="customAuthenticationExtensions", default=None,)
+	identityProviders: Optional[list[Annotated[Union[AppleManagedIdentityProvider, BuiltInIdentityProvider, SamlOrWsFedProvider, InternalDomainFederation, SamlOrWsFedExternalDomainFederation, SocialIdentityProvider],Field(discriminator="odata_type")]]] = Field(alias="identityProviders", default=None,)
+	userFlowAttributes: Optional[list[Annotated[Union[IdentityBuiltInUserFlowAttribute, IdentityCustomUserFlowAttribute],Field(discriminator="odata_type")]]] = Field(alias="userFlowAttributes", default=None,)
 
 from .identity_api_connector import IdentityApiConnector
 from .on_attribute_collection_listener import OnAttributeCollectionListener

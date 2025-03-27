@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class AddPostRequest(BaseModel):
-	values: Optional[list[Annotated[Union[AadUserConversationMember, AnonymousGuestConversationMember, AzureCommunicationServicesUserConversationMember, MicrosoftAccountUserConversationMember, SkypeForBusinessUserConversationMember, SkypeUserConversationMember]],Field(discriminator="odata_type")]]] = Field(alias="values", default=None,)
+	values: Optional[list[Annotated[Union[AadUserConversationMember, AnonymousGuestConversationMember, AzureCommunicationServicesUserConversationMember, MicrosoftAccountUserConversationMember, SkypeForBusinessUserConversationMember, SkypeUserConversationMember],Field(discriminator="odata_type")]]] = Field(alias="values", default=None,)
 
 from .aad_user_conversation_member import AadUserConversationMember
 from .anonymous_guest_conversation_member import AnonymousGuestConversationMember

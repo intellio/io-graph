@@ -17,7 +17,7 @@ class AccessPackageCatalog(BaseModel):
 	modifiedDateTime: Optional[datetime] = Field(alias="modifiedDateTime", default=None,)
 	state: Optional[AccessPackageCatalogState | str] = Field(alias="state", default=None,)
 	accessPackages: Optional[list[AccessPackage]] = Field(alias="accessPackages", default=None,)
-	customWorkflowExtensions: Optional[list[Annotated[Union[AccessPackageAssignmentRequestWorkflowExtension, AccessPackageAssignmentWorkflowExtension, CustomAuthenticationExtension, OnTokenIssuanceStartCustomExtension, IdentityGovernanceCustomTaskExtension]],Field(discriminator="odata_type")]]] = Field(alias="customWorkflowExtensions", default=None,)
+	customWorkflowExtensions: Optional[list[Annotated[Union[AccessPackageAssignmentRequestWorkflowExtension, AccessPackageAssignmentWorkflowExtension, CustomAuthenticationExtension, OnTokenIssuanceStartCustomExtension, IdentityGovernanceCustomTaskExtension],Field(discriminator="odata_type")]]] = Field(alias="customWorkflowExtensions", default=None,)
 	resourceRoles: Optional[list[AccessPackageResourceRole]] = Field(alias="resourceRoles", default=None,)
 	resources: Optional[list[AccessPackageResource]] = Field(alias="resources", default=None,)
 	resourceScopes: Optional[list[AccessPackageResourceScope]] = Field(alias="resourceScopes", default=None,)

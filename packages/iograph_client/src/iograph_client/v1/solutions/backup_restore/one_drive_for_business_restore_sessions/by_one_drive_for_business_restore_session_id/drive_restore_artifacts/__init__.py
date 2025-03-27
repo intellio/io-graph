@@ -14,9 +14,9 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_drive_restore_artifact_id import ByDriveRestoreArtifactIdRequest
 	from .......request_adapter import HttpxRequestAdapter
-from iograph_models.v1.drive_restore_artifact import DriveRestoreArtifact
 from iograph_models.v1.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.v1.drive_restore_artifact_collection_response import DriveRestoreArtifactCollectionResponse
+from iograph_models.v1.drive_restore_artifact import DriveRestoreArtifact
 
 
 class DriveRestoreArtifactsRequest(BaseRequestBuilder):

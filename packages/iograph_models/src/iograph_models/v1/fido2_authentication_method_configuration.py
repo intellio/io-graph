@@ -14,7 +14,7 @@ class Fido2AuthenticationMethodConfiguration(BaseModel):
 	isAttestationEnforced: Optional[bool] = Field(alias="isAttestationEnforced", default=None,)
 	isSelfServiceRegistrationAllowed: Optional[bool] = Field(alias="isSelfServiceRegistrationAllowed", default=None,)
 	keyRestrictions: Optional[Fido2KeyRestrictions] = Field(alias="keyRestrictions", default=None,)
-	includeTargets: Optional[list[Annotated[Union[MicrosoftAuthenticatorAuthenticationMethodTarget, SmsAuthenticationMethodTarget]],Field(discriminator="odata_type")]]] = Field(alias="includeTargets", default=None,)
+	includeTargets: Optional[list[Annotated[Union[MicrosoftAuthenticatorAuthenticationMethodTarget, SmsAuthenticationMethodTarget],Field(discriminator="odata_type")]]] = Field(alias="includeTargets", default=None,)
 
 from .exclude_target import ExcludeTarget
 from .authentication_method_state import AuthenticationMethodState

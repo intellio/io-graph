@@ -22,7 +22,7 @@ class AccessReviewInstanceDecisionItem(BaseModel):
 	resourceLink: Optional[str] = Field(alias="resourceLink", default=None,)
 	reviewedBy: Optional[UserIdentity] = Field(alias="reviewedBy", default=None,)
 	reviewedDateTime: Optional[datetime] = Field(alias="reviewedDateTime", default=None,)
-	insights: Optional[list[Annotated[Union[MembershipOutlierInsight, UserSignInInsight]],Field(discriminator="odata_type")]]] = Field(alias="insights", default=None,)
+	insights: Optional[list[Annotated[Union[MembershipOutlierInsight, UserSignInInsight],Field(discriminator="odata_type")]]] = Field(alias="insights", default=None,)
 
 from .user_identity import UserIdentity
 from .azure_communication_services_user_identity import AzureCommunicationServicesUserIdentity

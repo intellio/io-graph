@@ -7,11 +7,11 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 class UnifiedApprovalStage(BaseModel):
 	approvalStageTimeOutInDays: Optional[int] = Field(alias="approvalStageTimeOutInDays", default=None,)
-	escalationApprovers: Optional[list[Annotated[Union[AttributeRuleMembers, ConnectedOrganizationMembers, ExternalSponsors, GroupMembers, InternalSponsors, RequestorManager, SingleServicePrincipal, SingleUser, TargetApplicationOwners, TargetManager, TargetUserSponsors, IdentityGovernanceGroupBasedSubjectSet, IdentityGovernanceRuleBasedSubjectSet]],Field(discriminator="odata_type")]]] = Field(alias="escalationApprovers", default=None,)
+	escalationApprovers: Optional[list[Annotated[Union[AttributeRuleMembers, ConnectedOrganizationMembers, ExternalSponsors, GroupMembers, InternalSponsors, RequestorManager, SingleServicePrincipal, SingleUser, TargetApplicationOwners, TargetManager, TargetUserSponsors, IdentityGovernanceGroupBasedSubjectSet, IdentityGovernanceRuleBasedSubjectSet],Field(discriminator="odata_type")]]] = Field(alias="escalationApprovers", default=None,)
 	escalationTimeInMinutes: Optional[int] = Field(alias="escalationTimeInMinutes", default=None,)
 	isApproverJustificationRequired: Optional[bool] = Field(alias="isApproverJustificationRequired", default=None,)
 	isEscalationEnabled: Optional[bool] = Field(alias="isEscalationEnabled", default=None,)
-	primaryApprovers: Optional[list[Annotated[Union[AttributeRuleMembers, ConnectedOrganizationMembers, ExternalSponsors, GroupMembers, InternalSponsors, RequestorManager, SingleServicePrincipal, SingleUser, TargetApplicationOwners, TargetManager, TargetUserSponsors, IdentityGovernanceGroupBasedSubjectSet, IdentityGovernanceRuleBasedSubjectSet]],Field(discriminator="odata_type")]]] = Field(alias="primaryApprovers", default=None,)
+	primaryApprovers: Optional[list[Annotated[Union[AttributeRuleMembers, ConnectedOrganizationMembers, ExternalSponsors, GroupMembers, InternalSponsors, RequestorManager, SingleServicePrincipal, SingleUser, TargetApplicationOwners, TargetManager, TargetUserSponsors, IdentityGovernanceGroupBasedSubjectSet, IdentityGovernanceRuleBasedSubjectSet],Field(discriminator="odata_type")]]] = Field(alias="primaryApprovers", default=None,)
 	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
 
 from .attribute_rule_members import AttributeRuleMembers

@@ -14,7 +14,7 @@ class B2xIdentityUserFlow(BaseModel):
 	identityProviders: Optional[list[IdentityProvider]] = Field(alias="identityProviders", default=None,)
 	languages: Optional[list[UserFlowLanguageConfiguration]] = Field(alias="languages", default=None,)
 	userAttributeAssignments: Optional[list[IdentityUserFlowAttributeAssignment]] = Field(alias="userAttributeAssignments", default=None,)
-	userFlowIdentityProviders: Optional[list[Annotated[Union[AppleManagedIdentityProvider, BuiltInIdentityProvider, SamlOrWsFedProvider, InternalDomainFederation, SamlOrWsFedExternalDomainFederation, SocialIdentityProvider]],Field(discriminator="odata_type")]]] = Field(alias="userFlowIdentityProviders", default=None,)
+	userFlowIdentityProviders: Optional[list[Annotated[Union[AppleManagedIdentityProvider, BuiltInIdentityProvider, SamlOrWsFedProvider, InternalDomainFederation, SamlOrWsFedExternalDomainFederation, SocialIdentityProvider],Field(discriminator="odata_type")]]] = Field(alias="userFlowIdentityProviders", default=None,)
 
 from .user_flow_type import UserFlowType
 from .reference_numeric import ReferenceNumeric

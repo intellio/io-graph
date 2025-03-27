@@ -27,7 +27,7 @@ class ListItem(BaseModel):
 	documentSetVersions: Optional[list[DocumentSetVersion]] = Field(alias="documentSetVersions", default=None,)
 	driveItem: Optional[DriveItem] = Field(alias="driveItem", default=None,)
 	fields: Optional[FieldValueSet] = Field(alias="fields", default=None,)
-	versions: Optional[list[Annotated[Union[DocumentSetVersion]],Field(discriminator="odata_type")]]] = Field(alias="versions", default=None,)
+	versions: Optional[list[Annotated[Union[DocumentSetVersion],Field(discriminator="odata_type")]]] = Field(alias="versions", default=None,)
 
 from .chat_message_from_identity_set import ChatMessageFromIdentitySet
 from .chat_message_mentioned_identity_set import ChatMessageMentionedIdentitySet

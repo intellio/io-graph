@@ -14,7 +14,7 @@ class X509CertificateAuthenticationMethodConfiguration(BaseModel):
 	authenticationModeConfiguration: Optional[X509CertificateAuthenticationModeConfiguration] = Field(alias="authenticationModeConfiguration", default=None,)
 	certificateUserBindings: Optional[list[X509CertificateUserBinding]] = Field(alias="certificateUserBindings", default=None,)
 	crlValidationConfiguration: Optional[X509CertificateCRLValidationConfiguration] = Field(alias="crlValidationConfiguration", default=None,)
-	includeTargets: Optional[list[Annotated[Union[MicrosoftAuthenticatorAuthenticationMethodTarget, SmsAuthenticationMethodTarget]],Field(discriminator="odata_type")]]] = Field(alias="includeTargets", default=None,)
+	includeTargets: Optional[list[Annotated[Union[MicrosoftAuthenticatorAuthenticationMethodTarget, SmsAuthenticationMethodTarget],Field(discriminator="odata_type")]]] = Field(alias="includeTargets", default=None,)
 
 from .exclude_target import ExcludeTarget
 from .authentication_method_state import AuthenticationMethodState

@@ -13,7 +13,7 @@ class AccessPackageAssignmentRequestRequirements(BaseModel):
 	policyDisplayName: Optional[str] = Field(alias="policyDisplayName", default=None,)
 	policyId: Optional[str] = Field(alias="policyId", default=None,)
 	schedule: Optional[EntitlementManagementSchedule] = Field(alias="schedule", default=None,)
-	questions: Optional[list[Annotated[Union[AccessPackageMultipleChoiceQuestion, AccessPackageTextInputQuestion]],Field(discriminator="odata_type")]]] = Field(alias="questions", default=None,)
+	questions: Optional[list[Annotated[Union[AccessPackageMultipleChoiceQuestion, AccessPackageTextInputQuestion],Field(discriminator="odata_type")]]] = Field(alias="questions", default=None,)
 	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
 
 from .entitlement_management_schedule import EntitlementManagementSchedule

@@ -8,7 +8,7 @@ from pydantic import BaseModel, Field, SerializeAsAny
 class ManagedEBookCollectionResponse(BaseModel):
 	odata_count: Optional[int] = Field(alias="@odata.count", default=None,)
 	odata_nextLink: Optional[str] = Field(alias="@odata.nextLink", default=None,)
-	value: Optional[list[Annotated[Union[IosVppEBook]],Field(discriminator="odata_type")]]] = Field(alias="value", default=None,)
+	value: Optional[list[Annotated[Union[IosVppEBook],Field(discriminator="odata_type")]]] = Field(alias="value", default=None,)
 
 from .ios_vpp_e_book import IosVppEBook
 

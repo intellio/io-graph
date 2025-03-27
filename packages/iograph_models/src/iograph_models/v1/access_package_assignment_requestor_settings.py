@@ -13,7 +13,7 @@ class AccessPackageAssignmentRequestorSettings(BaseModel):
 	enableTargetsToSelfAddAccess: Optional[bool] = Field(alias="enableTargetsToSelfAddAccess", default=None,)
 	enableTargetsToSelfRemoveAccess: Optional[bool] = Field(alias="enableTargetsToSelfRemoveAccess", default=None,)
 	enableTargetsToSelfUpdateAccess: Optional[bool] = Field(alias="enableTargetsToSelfUpdateAccess", default=None,)
-	onBehalfRequestors: Optional[list[Annotated[Union[AttributeRuleMembers, ConnectedOrganizationMembers, ExternalSponsors, GroupMembers, InternalSponsors, RequestorManager, SingleServicePrincipal, SingleUser, TargetApplicationOwners, TargetManager, TargetUserSponsors, IdentityGovernanceGroupBasedSubjectSet, IdentityGovernanceRuleBasedSubjectSet]],Field(discriminator="odata_type")]]] = Field(alias="onBehalfRequestors", default=None,)
+	onBehalfRequestors: Optional[list[Annotated[Union[AttributeRuleMembers, ConnectedOrganizationMembers, ExternalSponsors, GroupMembers, InternalSponsors, RequestorManager, SingleServicePrincipal, SingleUser, TargetApplicationOwners, TargetManager, TargetUserSponsors, IdentityGovernanceGroupBasedSubjectSet, IdentityGovernanceRuleBasedSubjectSet],Field(discriminator="odata_type")]]] = Field(alias="onBehalfRequestors", default=None,)
 	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
 
 from .attribute_rule_members import AttributeRuleMembers

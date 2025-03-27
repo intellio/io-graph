@@ -12,7 +12,7 @@ class SharedWithChannelTeamInfo(BaseModel):
 	tenantId: Optional[str] = Field(alias="tenantId", default=None,)
 	team: Optional[Team] = Field(alias="team", default=None,)
 	isHostTeam: Optional[bool] = Field(alias="isHostTeam", default=None,)
-	allowedMembers: Optional[list[Annotated[Union[AadUserConversationMember, AnonymousGuestConversationMember, AzureCommunicationServicesUserConversationMember, MicrosoftAccountUserConversationMember, SkypeForBusinessUserConversationMember, SkypeUserConversationMember]],Field(discriminator="odata_type")]]] = Field(alias="allowedMembers", default=None,)
+	allowedMembers: Optional[list[Annotated[Union[AadUserConversationMember, AnonymousGuestConversationMember, AzureCommunicationServicesUserConversationMember, MicrosoftAccountUserConversationMember, SkypeForBusinessUserConversationMember, SkypeUserConversationMember],Field(discriminator="odata_type")]]] = Field(alias="allowedMembers", default=None,)
 
 from .team import Team
 from .aad_user_conversation_member import AadUserConversationMember

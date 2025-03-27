@@ -32,8 +32,8 @@ if TYPE_CHECKING:
 	from .columns import ColumnsRequest
 	from .analytics import AnalyticsRequest
 	from .....request_adapter import HttpxRequestAdapter
-from iograph_models.v1.site import Site
 from iograph_models.v1.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.v1.site import Site
 
 
 class GetByPathWithPathRequest(BaseRequestBuilder):

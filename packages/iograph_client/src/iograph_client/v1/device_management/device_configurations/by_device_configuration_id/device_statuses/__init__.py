@@ -15,8 +15,8 @@ if TYPE_CHECKING:
 	from .by_device_configuration_device_status_id import ByDeviceConfigurationDeviceStatusIdRequest
 	from ......request_adapter import HttpxRequestAdapter
 from iograph_models.v1.device_configuration_device_status_collection_response import DeviceConfigurationDeviceStatusCollectionResponse
-from iograph_models.v1.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.v1.device_configuration_device_status import DeviceConfigurationDeviceStatus
+from iograph_models.v1.o_data_errors__o_data_error import ODataErrorsODataError
 
 
 class DeviceStatusesRequest(BaseRequestBuilder):

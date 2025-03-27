@@ -14,9 +14,9 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_windows_autopilot_device_identity_id import ByWindowsAutopilotDeviceIdentityIdRequest
 	from ....request_adapter import HttpxRequestAdapter
+from iograph_models.v1.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.v1.windows_autopilot_device_identity_collection_response import WindowsAutopilotDeviceIdentityCollectionResponse
 from iograph_models.v1.windows_autopilot_device_identity import WindowsAutopilotDeviceIdentity
-from iograph_models.v1.o_data_errors__o_data_error import ODataErrorsODataError
 
 
 class WindowsAutopilotDeviceIdentitiesRequest(BaseRequestBuilder):

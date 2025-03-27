@@ -14,8 +14,8 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_store_id import ByStoreIdRequest
 	from .......request_adapter import HttpxRequestAdapter
-from iograph_models.v1.term_store_store_collection_response import TermStoreStoreCollectionResponse
 from iograph_models.v1.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.v1.term_store_store_collection_response import TermStoreStoreCollectionResponse
 from iograph_models.v1.term_store_store import TermStoreStore
 
 

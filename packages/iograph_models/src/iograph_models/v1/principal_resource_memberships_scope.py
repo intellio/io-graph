@@ -8,8 +8,8 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 class PrincipalResourceMembershipsScope(BaseModel):
 	odata_type: Literal["#microsoft.graph.principalResourceMembershipsScope"] = Field(alias="@odata.type", default="#microsoft.graph.principalResourceMembershipsScope")
-	principalScopes: Optional[list[Annotated[Union[AccessReviewQueryScope, AccessReviewInactiveUsersQueryScope, PrincipalResourceMembershipsScope]],Field(discriminator="odata_type")]]] = Field(alias="principalScopes", default=None,)
-	resourceScopes: Optional[list[Annotated[Union[AccessReviewQueryScope, AccessReviewInactiveUsersQueryScope, PrincipalResourceMembershipsScope]],Field(discriminator="odata_type")]]] = Field(alias="resourceScopes", default=None,)
+	principalScopes: Optional[list[Annotated[Union[AccessReviewQueryScope, AccessReviewInactiveUsersQueryScope, PrincipalResourceMembershipsScope],Field(discriminator="odata_type")]]] = Field(alias="principalScopes", default=None,)
+	resourceScopes: Optional[list[Annotated[Union[AccessReviewQueryScope, AccessReviewInactiveUsersQueryScope, PrincipalResourceMembershipsScope],Field(discriminator="odata_type")]]] = Field(alias="resourceScopes", default=None,)
 
 from .access_review_query_scope import AccessReviewQueryScope
 from .access_review_inactive_users_query_scope import AccessReviewInactiveUsersQueryScope

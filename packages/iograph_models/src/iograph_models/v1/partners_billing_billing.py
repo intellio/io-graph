@@ -9,7 +9,7 @@ class PartnersBillingBilling(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
 	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
 	manifests: Optional[list[PartnersBillingManifest]] = Field(alias="manifests", default=None,)
-	operations: Optional[list[Annotated[Union[PartnersBillingExportSuccessOperation, PartnersBillingFailedOperation, PartnersBillingRunningOperation]],Field(discriminator="odata_type")]]] = Field(alias="operations", default=None,)
+	operations: Optional[list[Annotated[Union[PartnersBillingExportSuccessOperation, PartnersBillingFailedOperation, PartnersBillingRunningOperation],Field(discriminator="odata_type")]]] = Field(alias="operations", default=None,)
 	reconciliation: Optional[PartnersBillingBillingReconciliation] = Field(alias="reconciliation", default=None,)
 	usage: Optional[PartnersBillingAzureUsage] = Field(alias="usage", default=None,)
 

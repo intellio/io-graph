@@ -8,7 +8,7 @@ from pydantic import BaseModel, Field, SerializeAsAny
 class RemovePostResponse(BaseModel):
 	odata_count: Optional[int] = Field(alias="@odata.count", default=None,)
 	odata_nextLink: Optional[str] = Field(alias="@odata.nextLink", default=None,)
-	value: Optional[list[Annotated[Union[AadUserConversationMemberResult]],Field(discriminator="odata_type")]]] = Field(alias="value", default=None,)
+	value: Optional[list[Annotated[Union[AadUserConversationMemberResult],Field(discriminator="odata_type")]]] = Field(alias="value", default=None,)
 
 from .aad_user_conversation_member_result import AadUserConversationMemberResult
 

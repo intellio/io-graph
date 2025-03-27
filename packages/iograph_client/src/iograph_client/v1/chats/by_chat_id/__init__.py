@@ -24,8 +24,8 @@ if TYPE_CHECKING:
 	from .last_message_preview import LastMessagePreviewRequest
 	from .installed_apps import InstalledAppsRequest
 	from ....request_adapter import HttpxRequestAdapter
-from iograph_models.v1.chat import Chat
 from iograph_models.v1.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.v1.chat import Chat
 
 
 class ByChatIdRequest(BaseRequestBuilder):

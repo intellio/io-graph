@@ -12,7 +12,7 @@ class Send_activity_notification_to_recipientsPostRequest(BaseModel):
 	previewText: Optional[ItemBody] = Field(alias="previewText", default=None,)
 	teamsAppId: Optional[str] = Field(alias="teamsAppId", default=None,)
 	templateParameters: Optional[list[KeyValuePair]] = Field(alias="templateParameters", default=None,)
-	recipients: Optional[list[Annotated[Union[AadUserNotificationRecipient, ChannelMembersNotificationRecipient, ChatMembersNotificationRecipient, TeamMembersNotificationRecipient]],Field(discriminator="odata_type")]]] = Field(alias="recipients", default=None,)
+	recipients: Optional[list[Annotated[Union[AadUserNotificationRecipient, ChannelMembersNotificationRecipient, ChatMembersNotificationRecipient, TeamMembersNotificationRecipient],Field(discriminator="odata_type")]]] = Field(alias="recipients", default=None,)
 
 from .teamwork_activity_topic import TeamworkActivityTopic
 from .item_body import ItemBody

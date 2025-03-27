@@ -14,8 +14,8 @@ if TYPE_CHECKING:
 	from .deployment_summary import DeploymentSummaryRequest
 	from .apps import AppsRequest
 	from .....request_adapter import HttpxRequestAdapter
-from iograph_models.v1.default_managed_app_protection import DefaultManagedAppProtection
 from iograph_models.v1.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.v1.default_managed_app_protection import DefaultManagedAppProtection
 
 
 class ByDefaultManagedAppProtectionIdRequest(BaseRequestBuilder):

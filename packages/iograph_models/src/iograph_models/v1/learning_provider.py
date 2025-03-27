@@ -16,7 +16,7 @@ class LearningProvider(BaseModel):
 	squareLogoWebUrlForDarkTheme: Optional[str] = Field(alias="squareLogoWebUrlForDarkTheme", default=None,)
 	squareLogoWebUrlForLightTheme: Optional[str] = Field(alias="squareLogoWebUrlForLightTheme", default=None,)
 	learningContents: Optional[list[LearningContent]] = Field(alias="learningContents", default=None,)
-	learningCourseActivities: Optional[list[Annotated[Union[LearningAssignment, LearningSelfInitiatedCourse]],Field(discriminator="odata_type")]]] = Field(alias="learningCourseActivities", default=None,)
+	learningCourseActivities: Optional[list[Annotated[Union[LearningAssignment, LearningSelfInitiatedCourse],Field(discriminator="odata_type")]]] = Field(alias="learningCourseActivities", default=None,)
 
 from .learning_content import LearningContent
 from .learning_assignment import LearningAssignment

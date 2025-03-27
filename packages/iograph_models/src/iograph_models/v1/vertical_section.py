@@ -9,7 +9,7 @@ class VerticalSection(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
 	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
 	emphasis: Optional[SectionEmphasisType | str] = Field(alias="emphasis", default=None,)
-	webparts: Optional[list[Annotated[Union[StandardWebPart, TextWebPart]],Field(discriminator="odata_type")]]] = Field(alias="webparts", default=None,)
+	webparts: Optional[list[Annotated[Union[StandardWebPart, TextWebPart],Field(discriminator="odata_type")]]] = Field(alias="webparts", default=None,)
 
 from .section_emphasis_type import SectionEmphasisType
 from .standard_web_part import StandardWebPart

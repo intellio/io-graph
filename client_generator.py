@@ -338,7 +338,6 @@ def get_schema_fields(name:str, schema, components,dependencies:list):
                 if default_value:
                     fields[clean_field_name(prop_name)] = f'Literal["{default_value}"] = Field(alias="@odata.type", default="{default_value}")'
                 else: 
-                    print('No default value for @odata.type' + name)
                     fields[clean_field_name(prop_name)] = 'Optional[str] = Field(alias="@odata.type", default=None,)'
                 continue
 

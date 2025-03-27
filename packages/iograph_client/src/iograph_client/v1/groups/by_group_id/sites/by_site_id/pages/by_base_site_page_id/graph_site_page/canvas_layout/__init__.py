@@ -14,8 +14,8 @@ if TYPE_CHECKING:
 	from .vertical_section import VerticalSectionRequest
 	from .horizontal_sections import HorizontalSectionsRequest
 	from ..........request_adapter import HttpxRequestAdapter
-from iograph_models.v1.canvas_layout import CanvasLayout
 from iograph_models.v1.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.v1.canvas_layout import CanvasLayout
 
 
 class CanvasLayoutRequest(BaseRequestBuilder):

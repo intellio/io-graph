@@ -19,7 +19,7 @@ class SecuritySslCertificate(BaseModel):
 	serialNumber: Optional[str] = Field(alias="serialNumber", default=None,)
 	sha1: Optional[str] = Field(alias="sha1", default=None,)
 	subject: Optional[SecuritySslCertificateEntity] = Field(alias="subject", default=None,)
-	relatedHosts: Optional[list[Annotated[Union[SecurityHostname, SecurityIpAddress]],Field(discriminator="odata_type")]]] = Field(alias="relatedHosts", default=None,)
+	relatedHosts: Optional[list[Annotated[Union[SecurityHostname, SecurityIpAddress],Field(discriminator="odata_type")]]] = Field(alias="relatedHosts", default=None,)
 
 from .security_ssl_certificate_entity import SecuritySslCertificateEntity
 from .security_ssl_certificate_entity import SecuritySslCertificateEntity

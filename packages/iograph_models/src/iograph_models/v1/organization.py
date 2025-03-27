@@ -37,7 +37,7 @@ class Organization(BaseModel):
 	verifiedDomains: Optional[list[VerifiedDomain]] = Field(alias="verifiedDomains", default=None,)
 	branding: Optional[OrganizationalBranding] = Field(alias="branding", default=None,)
 	certificateBasedAuthConfiguration: Optional[list[CertificateBasedAuthConfiguration]] = Field(alias="certificateBasedAuthConfiguration", default=None,)
-	extensions: Optional[list[Annotated[Union[OpenTypeExtension]],Field(discriminator="odata_type")]]] = Field(alias="extensions", default=None,)
+	extensions: Optional[list[Annotated[Union[OpenTypeExtension],Field(discriminator="odata_type")]]] = Field(alias="extensions", default=None,)
 
 from .assigned_plan import AssignedPlan
 from .mdm_authority import MdmAuthority

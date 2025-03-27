@@ -22,7 +22,7 @@ class IosDeviceFeaturesConfiguration(BaseModel):
 	userStatuses: Optional[list[DeviceConfigurationUserStatus]] = Field(alias="userStatuses", default=None,)
 	userStatusOverview: Optional[DeviceConfigurationUserOverview] = Field(alias="userStatusOverview", default=None,)
 	assetTagTemplate: Optional[str] = Field(alias="assetTagTemplate", default=None,)
-	homeScreenDockIcons: Optional[list[Annotated[Union[IosHomeScreenApp, IosHomeScreenFolder]],Field(discriminator="odata_type")]]] = Field(alias="homeScreenDockIcons", default=None,)
+	homeScreenDockIcons: Optional[list[Annotated[Union[IosHomeScreenApp, IosHomeScreenFolder],Field(discriminator="odata_type")]]] = Field(alias="homeScreenDockIcons", default=None,)
 	homeScreenPages: Optional[list[IosHomeScreenPage]] = Field(alias="homeScreenPages", default=None,)
 	lockScreenFootnote: Optional[str] = Field(alias="lockScreenFootnote", default=None,)
 	notificationSettings: Optional[list[IosNotificationSettings]] = Field(alias="notificationSettings", default=None,)

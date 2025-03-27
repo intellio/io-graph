@@ -19,11 +19,11 @@ class AccessPackageAssignmentPolicy(BaseModel):
 	requestApprovalSettings: Optional[AccessPackageAssignmentApprovalSettings] = Field(alias="requestApprovalSettings", default=None,)
 	requestorSettings: Optional[AccessPackageAssignmentRequestorSettings] = Field(alias="requestorSettings", default=None,)
 	reviewSettings: Optional[AccessPackageAssignmentReviewSettings] = Field(alias="reviewSettings", default=None,)
-	specificAllowedTargets: Optional[list[Annotated[Union[AttributeRuleMembers, ConnectedOrganizationMembers, ExternalSponsors, GroupMembers, InternalSponsors, RequestorManager, SingleServicePrincipal, SingleUser, TargetApplicationOwners, TargetManager, TargetUserSponsors, IdentityGovernanceGroupBasedSubjectSet, IdentityGovernanceRuleBasedSubjectSet]],Field(discriminator="odata_type")]]] = Field(alias="specificAllowedTargets", default=None,)
+	specificAllowedTargets: Optional[list[Annotated[Union[AttributeRuleMembers, ConnectedOrganizationMembers, ExternalSponsors, GroupMembers, InternalSponsors, RequestorManager, SingleServicePrincipal, SingleUser, TargetApplicationOwners, TargetManager, TargetUserSponsors, IdentityGovernanceGroupBasedSubjectSet, IdentityGovernanceRuleBasedSubjectSet],Field(discriminator="odata_type")]]] = Field(alias="specificAllowedTargets", default=None,)
 	accessPackage: Optional[AccessPackage] = Field(alias="accessPackage", default=None,)
 	catalog: Optional[AccessPackageCatalog] = Field(alias="catalog", default=None,)
 	customExtensionStageSettings: Optional[list[CustomExtensionStageSetting]] = Field(alias="customExtensionStageSettings", default=None,)
-	questions: Optional[list[Annotated[Union[AccessPackageMultipleChoiceQuestion, AccessPackageTextInputQuestion]],Field(discriminator="odata_type")]]] = Field(alias="questions", default=None,)
+	questions: Optional[list[Annotated[Union[AccessPackageMultipleChoiceQuestion, AccessPackageTextInputQuestion],Field(discriminator="odata_type")]]] = Field(alias="questions", default=None,)
 
 from .allowed_target_scope import AllowedTargetScope
 from .access_package_automatic_request_settings import AccessPackageAutomaticRequestSettings

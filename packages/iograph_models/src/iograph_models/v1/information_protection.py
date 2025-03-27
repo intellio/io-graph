@@ -7,7 +7,7 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 class InformationProtection(BaseModel):
 	bitlocker: Optional[Bitlocker] = Field(alias="bitlocker", default=None,)
-	threatAssessmentRequests: Optional[list[Annotated[Union[EmailFileAssessmentRequest, FileAssessmentRequest, MailAssessmentRequest, UrlAssessmentRequest]],Field(discriminator="odata_type")]]] = Field(alias="threatAssessmentRequests", default=None,)
+	threatAssessmentRequests: Optional[list[Annotated[Union[EmailFileAssessmentRequest, FileAssessmentRequest, MailAssessmentRequest, UrlAssessmentRequest],Field(discriminator="odata_type")]]] = Field(alias="threatAssessmentRequests", default=None,)
 	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
 
 from .bitlocker import Bitlocker

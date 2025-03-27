@@ -12,7 +12,7 @@ class EmailAuthenticationMethodConfiguration(BaseModel):
 	excludeTargets: Optional[list[ExcludeTarget]] = Field(alias="excludeTargets", default=None,)
 	state: Optional[AuthenticationMethodState | str] = Field(alias="state", default=None,)
 	allowExternalIdToUseEmailOtp: Optional[ExternalEmailOtpState | str] = Field(alias="allowExternalIdToUseEmailOtp", default=None,)
-	includeTargets: Optional[list[Annotated[Union[MicrosoftAuthenticatorAuthenticationMethodTarget, SmsAuthenticationMethodTarget]],Field(discriminator="odata_type")]]] = Field(alias="includeTargets", default=None,)
+	includeTargets: Optional[list[Annotated[Union[MicrosoftAuthenticatorAuthenticationMethodTarget, SmsAuthenticationMethodTarget],Field(discriminator="odata_type")]]] = Field(alias="includeTargets", default=None,)
 
 from .exclude_target import ExcludeTarget
 from .authentication_method_state import AuthenticationMethodState

@@ -18,7 +18,7 @@ class ExchangeRestoreSession(BaseModel):
 	lastModifiedDateTime: Optional[datetime] = Field(alias="lastModifiedDateTime", default=None,)
 	status: Optional[RestoreSessionStatus | str] = Field(alias="status", default=None,)
 	granularMailboxRestoreArtifacts: Optional[list[GranularMailboxRestoreArtifact]] = Field(alias="granularMailboxRestoreArtifacts", default=None,)
-	mailboxRestoreArtifacts: Optional[list[Annotated[Union[GranularMailboxRestoreArtifact]],Field(discriminator="odata_type")]]] = Field(alias="mailboxRestoreArtifacts", default=None,)
+	mailboxRestoreArtifacts: Optional[list[Annotated[Union[GranularMailboxRestoreArtifact],Field(discriminator="odata_type")]]] = Field(alias="mailboxRestoreArtifacts", default=None,)
 
 from .chat_message_from_identity_set import ChatMessageFromIdentitySet
 from .chat_message_mentioned_identity_set import ChatMessageMentionedIdentitySet

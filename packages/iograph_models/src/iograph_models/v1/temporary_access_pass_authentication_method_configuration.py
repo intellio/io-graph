@@ -16,7 +16,7 @@ class TemporaryAccessPassAuthenticationMethodConfiguration(BaseModel):
 	isUsableOnce: Optional[bool] = Field(alias="isUsableOnce", default=None,)
 	maximumLifetimeInMinutes: Optional[int] = Field(alias="maximumLifetimeInMinutes", default=None,)
 	minimumLifetimeInMinutes: Optional[int] = Field(alias="minimumLifetimeInMinutes", default=None,)
-	includeTargets: Optional[list[Annotated[Union[MicrosoftAuthenticatorAuthenticationMethodTarget, SmsAuthenticationMethodTarget]],Field(discriminator="odata_type")]]] = Field(alias="includeTargets", default=None,)
+	includeTargets: Optional[list[Annotated[Union[MicrosoftAuthenticatorAuthenticationMethodTarget, SmsAuthenticationMethodTarget],Field(discriminator="odata_type")]]] = Field(alias="includeTargets", default=None,)
 
 from .exclude_target import ExcludeTarget
 from .authentication_method_state import AuthenticationMethodState

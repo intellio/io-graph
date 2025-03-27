@@ -18,9 +18,9 @@ class SecurityEdiscoverySearch(BaseModel):
 	lastModifiedBy: Optional[Union[ChatMessageFromIdentitySet, ChatMessageMentionedIdentitySet, ChatMessageReactionIdentitySet, CommunicationsIdentitySet, SharePointIdentitySet]] = Field(alias="lastModifiedBy", default=None,discriminator="odata_type", )
 	lastModifiedDateTime: Optional[datetime] = Field(alias="lastModifiedDateTime", default=None,)
 	dataSourceScopes: Optional[SecurityDataSourceScopes | str] = Field(alias="dataSourceScopes", default=None,)
-	additionalSources: Optional[list[Annotated[Union[SecuritySiteSource, SecurityUnifiedGroupSource, SecurityUserSource]],Field(discriminator="odata_type")]]] = Field(alias="additionalSources", default=None,)
+	additionalSources: Optional[list[Annotated[Union[SecuritySiteSource, SecurityUnifiedGroupSource, SecurityUserSource],Field(discriminator="odata_type")]]] = Field(alias="additionalSources", default=None,)
 	addToReviewSetOperation: Optional[SecurityEdiscoveryAddToReviewSetOperation] = Field(alias="addToReviewSetOperation", default=None,)
-	custodianSources: Optional[list[Annotated[Union[SecuritySiteSource, SecurityUnifiedGroupSource, SecurityUserSource]],Field(discriminator="odata_type")]]] = Field(alias="custodianSources", default=None,)
+	custodianSources: Optional[list[Annotated[Union[SecuritySiteSource, SecurityUnifiedGroupSource, SecurityUserSource],Field(discriminator="odata_type")]]] = Field(alias="custodianSources", default=None,)
 	lastEstimateStatisticsOperation: Optional[SecurityEdiscoveryEstimateOperation] = Field(alias="lastEstimateStatisticsOperation", default=None,)
 	noncustodialSources: Optional[list[SecurityEdiscoveryNoncustodialDataSource]] = Field(alias="noncustodialSources", default=None,)
 

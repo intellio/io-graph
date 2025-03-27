@@ -14,9 +14,9 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_article_indicator_id import ByArticleIndicatorIdRequest
 	from .....request_adapter import HttpxRequestAdapter
-from iograph_models.v1.security_article_indicator import SecurityArticleIndicator
 from iograph_models.v1.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.v1.security_article_indicator_collection_response import SecurityArticleIndicatorCollectionResponse
+from iograph_models.v1.security_article_indicator import SecurityArticleIndicator
 
 
 class ArticleIndicatorsRequest(BaseRequestBuilder):

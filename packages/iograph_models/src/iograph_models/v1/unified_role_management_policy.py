@@ -16,8 +16,8 @@ class UnifiedRoleManagementPolicy(BaseModel):
 	lastModifiedDateTime: Optional[datetime] = Field(alias="lastModifiedDateTime", default=None,)
 	scopeId: Optional[str] = Field(alias="scopeId", default=None,)
 	scopeType: Optional[str] = Field(alias="scopeType", default=None,)
-	effectiveRules: Optional[list[Annotated[Union[UnifiedRoleManagementPolicyApprovalRule, UnifiedRoleManagementPolicyAuthenticationContextRule, UnifiedRoleManagementPolicyEnablementRule, UnifiedRoleManagementPolicyExpirationRule, UnifiedRoleManagementPolicyNotificationRule]],Field(discriminator="odata_type")]]] = Field(alias="effectiveRules", default=None,)
-	rules: Optional[list[Annotated[Union[UnifiedRoleManagementPolicyApprovalRule, UnifiedRoleManagementPolicyAuthenticationContextRule, UnifiedRoleManagementPolicyEnablementRule, UnifiedRoleManagementPolicyExpirationRule, UnifiedRoleManagementPolicyNotificationRule]],Field(discriminator="odata_type")]]] = Field(alias="rules", default=None,)
+	effectiveRules: Optional[list[Annotated[Union[UnifiedRoleManagementPolicyApprovalRule, UnifiedRoleManagementPolicyAuthenticationContextRule, UnifiedRoleManagementPolicyEnablementRule, UnifiedRoleManagementPolicyExpirationRule, UnifiedRoleManagementPolicyNotificationRule],Field(discriminator="odata_type")]]] = Field(alias="effectiveRules", default=None,)
+	rules: Optional[list[Annotated[Union[UnifiedRoleManagementPolicyApprovalRule, UnifiedRoleManagementPolicyAuthenticationContextRule, UnifiedRoleManagementPolicyEnablementRule, UnifiedRoleManagementPolicyExpirationRule, UnifiedRoleManagementPolicyNotificationRule],Field(discriminator="odata_type")]]] = Field(alias="rules", default=None,)
 
 from .azure_communication_services_user_identity import AzureCommunicationServicesUserIdentity
 from .communications_application_identity import CommunicationsApplicationIdentity

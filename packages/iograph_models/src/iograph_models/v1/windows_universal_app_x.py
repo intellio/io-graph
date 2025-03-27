@@ -37,7 +37,7 @@ class WindowsUniversalAppX(BaseModel):
 	identityVersion: Optional[str] = Field(alias="identityVersion", default=None,)
 	isBundle: Optional[bool] = Field(alias="isBundle", default=None,)
 	minimumSupportedOperatingSystem: Optional[WindowsMinimumOperatingSystem] = Field(alias="minimumSupportedOperatingSystem", default=None,)
-	committedContainedApps: Optional[list[Annotated[Union[WindowsUniversalAppXContainedApp]],Field(discriminator="odata_type")]]] = Field(alias="committedContainedApps", default=None,)
+	committedContainedApps: Optional[list[Annotated[Union[WindowsUniversalAppXContainedApp],Field(discriminator="odata_type")]]] = Field(alias="committedContainedApps", default=None,)
 
 from .mime_content import MimeContent
 from .mobile_app_publishing_state import MobileAppPublishingState

@@ -39,7 +39,7 @@ class Win32LobApp(BaseModel):
 	minimumSupportedWindowsRelease: Optional[str] = Field(alias="minimumSupportedWindowsRelease", default=None,)
 	msiInformation: Optional[Win32LobAppMsiInformation] = Field(alias="msiInformation", default=None,)
 	returnCodes: Optional[list[Win32LobAppReturnCode]] = Field(alias="returnCodes", default=None,)
-	rules: Optional[list[Annotated[Union[Win32LobAppFileSystemRule, Win32LobAppPowerShellScriptRule, Win32LobAppProductCodeRule, Win32LobAppRegistryRule]],Field(discriminator="odata_type")]]] = Field(alias="rules", default=None,)
+	rules: Optional[list[Annotated[Union[Win32LobAppFileSystemRule, Win32LobAppPowerShellScriptRule, Win32LobAppProductCodeRule, Win32LobAppRegistryRule],Field(discriminator="odata_type")]]] = Field(alias="rules", default=None,)
 	setupFilePath: Optional[str] = Field(alias="setupFilePath", default=None,)
 	uninstallCommandLine: Optional[str] = Field(alias="uninstallCommandLine", default=None,)
 

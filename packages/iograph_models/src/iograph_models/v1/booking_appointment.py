@@ -17,7 +17,7 @@ class BookingAppointment(BaseModel):
 	customerName: Optional[str] = Field(alias="customerName", default=None,)
 	customerNotes: Optional[str] = Field(alias="customerNotes", default=None,)
 	customerPhone: Optional[str] = Field(alias="customerPhone", default=None,)
-	customers: Optional[list[Annotated[Union[BookingCustomerInformation]],Field(discriminator="odata_type")]]] = Field(alias="customers", default=None,)
+	customers: Optional[list[Annotated[Union[BookingCustomerInformation],Field(discriminator="odata_type")]]] = Field(alias="customers", default=None,)
 	customerTimeZone: Optional[str] = Field(alias="customerTimeZone", default=None,)
 	duration: Optional[str] = Field(alias="duration", default=None,)
 	endDateTime: Optional[DateTimeTimeZone] = Field(alias="endDateTime", default=None,)

@@ -15,7 +15,7 @@ class TeleconferenceDeviceQuality(BaseModel):
 	deviceDescription: Optional[str] = Field(alias="deviceDescription", default=None,)
 	deviceName: Optional[str] = Field(alias="deviceName", default=None,)
 	mediaLegId: Optional[UUID] = Field(alias="mediaLegId", default=None,)
-	mediaQualityList: Optional[list[Annotated[Union[TeleconferenceDeviceAudioQuality, TeleconferenceDeviceVideoQuality, TeleconferenceDeviceScreenSharingQuality]],Field(discriminator="odata_type")]]] = Field(alias="mediaQualityList", default=None,)
+	mediaQualityList: Optional[list[Annotated[Union[TeleconferenceDeviceAudioQuality, TeleconferenceDeviceVideoQuality, TeleconferenceDeviceScreenSharingQuality],Field(discriminator="odata_type")]]] = Field(alias="mediaQualityList", default=None,)
 	participantId: Optional[UUID] = Field(alias="participantId", default=None,)
 	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
 

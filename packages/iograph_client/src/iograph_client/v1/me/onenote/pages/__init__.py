@@ -15,8 +15,8 @@ if TYPE_CHECKING:
 	from .by_onenote_page_id import ByOnenotePageIdRequest
 	from .....request_adapter import HttpxRequestAdapter
 from iograph_models.v1.onenote_page_collection_response import OnenotePageCollectionResponse
-from iograph_models.v1.onenote_page import OnenotePage
 from iograph_models.v1.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.v1.onenote_page import OnenotePage
 
 
 class PagesRequest(BaseRequestBuilder):

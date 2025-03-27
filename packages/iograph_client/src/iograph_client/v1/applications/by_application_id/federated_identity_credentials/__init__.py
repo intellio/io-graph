@@ -14,8 +14,8 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_federated_identity_credential_id import ByFederatedIdentityCredentialIdRequest
 	from .....request_adapter import HttpxRequestAdapter
-from iograph_models.v1.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.v1.federated_identity_credential import FederatedIdentityCredential
+from iograph_models.v1.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.v1.federated_identity_credential_collection_response import FederatedIdentityCredentialCollectionResponse
 
 

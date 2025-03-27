@@ -30,7 +30,7 @@ class Call(BaseModel):
 	transcription: Optional[CallTranscriptionInfo] = Field(alias="transcription", default=None,)
 	audioRoutingGroups: Optional[list[AudioRoutingGroup]] = Field(alias="audioRoutingGroups", default=None,)
 	contentSharingSessions: Optional[list[ContentSharingSession]] = Field(alias="contentSharingSessions", default=None,)
-	operations: Optional[list[Annotated[Union[AddLargeGalleryViewOperation, CancelMediaProcessingOperation, InviteParticipantsOperation, MuteParticipantOperation, PlayPromptOperation, RecordOperation, SendDtmfTonesOperation, StartHoldMusicOperation, StopHoldMusicOperation, SubscribeToToneOperation, UnmuteParticipantOperation, UpdateRecordingStatusOperation]],Field(discriminator="odata_type")]]] = Field(alias="operations", default=None,)
+	operations: Optional[list[Annotated[Union[AddLargeGalleryViewOperation, CancelMediaProcessingOperation, InviteParticipantsOperation, MuteParticipantOperation, PlayPromptOperation, RecordOperation, SendDtmfTonesOperation, StartHoldMusicOperation, StopHoldMusicOperation, SubscribeToToneOperation, UnmuteParticipantOperation, UpdateRecordingStatusOperation],Field(discriminator="odata_type")]]] = Field(alias="operations", default=None,)
 	participants: Optional[list[Participant]] = Field(alias="participants", default=None,)
 
 from .incoming_call_options import IncomingCallOptions

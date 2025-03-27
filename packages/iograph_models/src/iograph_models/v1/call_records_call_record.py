@@ -14,7 +14,7 @@ class CallRecordsCallRecord(BaseModel):
 	lastModifiedDateTime: Optional[datetime] = Field(alias="lastModifiedDateTime", default=None,)
 	modalities: Optional[list[CallRecordsModality | str]] = Field(alias="modalities", default=None,)
 	organizer: Optional[Union[ChatMessageFromIdentitySet, ChatMessageMentionedIdentitySet, ChatMessageReactionIdentitySet, CommunicationsIdentitySet, SharePointIdentitySet]] = Field(alias="organizer", default=None,discriminator="odata_type", )
-	participants: Optional[list[Annotated[Union[ChatMessageFromIdentitySet, ChatMessageMentionedIdentitySet, ChatMessageReactionIdentitySet, CommunicationsIdentitySet, SharePointIdentitySet]],Field(discriminator="odata_type")]]] = Field(alias="participants", default=None,)
+	participants: Optional[list[Annotated[Union[ChatMessageFromIdentitySet, ChatMessageMentionedIdentitySet, ChatMessageReactionIdentitySet, CommunicationsIdentitySet, SharePointIdentitySet],Field(discriminator="odata_type")]]] = Field(alias="participants", default=None,)
 	startDateTime: Optional[datetime] = Field(alias="startDateTime", default=None,)
 	type: Optional[CallRecordsCallType | str] = Field(alias="type", default=None,)
 	version: Optional[int] = Field(alias="version", default=None,)

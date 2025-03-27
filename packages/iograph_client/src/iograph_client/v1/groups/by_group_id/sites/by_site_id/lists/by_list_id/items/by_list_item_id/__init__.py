@@ -22,8 +22,8 @@ if TYPE_CHECKING:
 	from .created_by_user import CreatedByUserRequest
 	from .analytics import AnalyticsRequest
 	from ..........request_adapter import HttpxRequestAdapter
-from iograph_models.v1.list_item import ListItem
 from iograph_models.v1.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.v1.list_item import ListItem
 
 
 class ByListItemIdRequest(BaseRequestBuilder):

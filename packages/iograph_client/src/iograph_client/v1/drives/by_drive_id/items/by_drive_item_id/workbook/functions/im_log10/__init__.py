@@ -12,8 +12,8 @@ from typing import TYPE_CHECKING
 if TYPE_CHECKING:
 	from .........request_adapter import HttpxRequestAdapter
 from iograph_models.v1.o_data_errors__o_data_error import ODataErrorsODataError
-from iograph_models.v1.im_log10_post_request import Im_log10PostRequest
 from iograph_models.v1.workbook_function_result import WorkbookFunctionResult
+from iograph_models.v1.im_log10_post_request import Im_log10PostRequest
 
 
 class ImLog10Request(BaseRequestBuilder):
