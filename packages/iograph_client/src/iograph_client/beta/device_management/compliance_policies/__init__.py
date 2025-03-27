@@ -14,9 +14,9 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_device_management_compliance_policy_id import ByDeviceManagementCompliancePolicyIdRequest
 	from ....request_adapter import HttpxRequestAdapter
-from iograph_models.beta.device_management_compliance_policy_collection_response import DeviceManagementCompliancePolicyCollectionResponse
 from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.beta.device_management_compliance_policy import DeviceManagementCompliancePolicy
+from iograph_models.beta.device_management_compliance_policy_collection_response import DeviceManagementCompliancePolicyCollectionResponse
 
 
 class CompliancePoliciesRequest(BaseRequestBuilder):

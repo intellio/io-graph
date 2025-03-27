@@ -205,7 +205,7 @@ def _pydantic_field_type_write(
         disc_values = discriminator[1].values()
         disc_values = [module_class_name_from_name(x) for x in disc_values]
         if list_ref:
-            field_type = f'Annotated[Union[{', '.join(disc_values)}]],Field(discriminator="{clean_field_name(discriminator[0])}")]'
+            field_type = f'Annotated[Union[{', '.join(disc_values)}],Field(discriminator="{clean_field_name(discriminator[0])}")]'
         else:
             field_type = f'Union[{', '.join(disc_values)}]'
 

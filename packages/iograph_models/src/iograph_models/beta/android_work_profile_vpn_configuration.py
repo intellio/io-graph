@@ -41,7 +41,7 @@ class AndroidWorkProfileVpnConfiguration(BaseModel):
 	realm: Optional[str] = Field(alias="realm", default=None,)
 	role: Optional[str] = Field(alias="role", default=None,)
 	servers: Optional[list[VpnServer]] = Field(alias="servers", default=None,)
-	targetedMobileApps: Optional[list[Annotated[Union[AppleAppListItem]],Field(discriminator="odata_type")]]] = Field(alias="targetedMobileApps", default=None,)
+	targetedMobileApps: Optional[list[Annotated[Union[AppleAppListItem],Field(discriminator="odata_type")]]] = Field(alias="targetedMobileApps", default=None,)
 	targetedPackageIds: Optional[list[str]] = Field(alias="targetedPackageIds", default=None,)
 	identityCertificate: Optional[Union[AndroidWorkProfilePkcsCertificateProfile, AndroidWorkProfileScepCertificateProfile]] = Field(alias="identityCertificate", default=None,discriminator="odata_type", )
 

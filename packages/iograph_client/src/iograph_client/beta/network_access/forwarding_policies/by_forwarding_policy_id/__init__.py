@@ -14,8 +14,8 @@ if TYPE_CHECKING:
 	from .policy_rules import PolicyRulesRequest
 	from .networkaccess_update_policy_rules import NetworkaccessUpdatePolicyRulesRequest
 	from .....request_adapter import HttpxRequestAdapter
-from iograph_models.beta.networkaccess_forwarding_policy import NetworkaccessForwardingPolicy
 from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.beta.networkaccess_forwarding_policy import NetworkaccessForwardingPolicy
 
 
 class ByForwardingPolicyIdRequest(BaseRequestBuilder):

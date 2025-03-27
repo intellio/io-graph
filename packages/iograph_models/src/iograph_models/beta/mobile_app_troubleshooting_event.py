@@ -16,7 +16,7 @@ class MobileAppTroubleshootingEvent(BaseModel):
 	troubleshootingErrorDetails: Optional[DeviceManagementTroubleshootingErrorDetails] = Field(alias="troubleshootingErrorDetails", default=None,)
 	applicationId: Optional[str] = Field(alias="applicationId", default=None,)
 	deviceId: Optional[str] = Field(alias="deviceId", default=None,)
-	history: Optional[list[Annotated[Union[MobileAppTroubleshootingAppPolicyCreationHistory, MobileAppTroubleshootingAppStateHistory, MobileAppTroubleshootingAppTargetHistory, MobileAppTroubleshootingAppUpdateHistory, MobileAppTroubleshootingDeviceCheckinHistory]],Field(discriminator="odata_type")]]] = Field(alias="history", default=None,)
+	history: Optional[list[Annotated[Union[MobileAppTroubleshootingAppPolicyCreationHistory, MobileAppTroubleshootingAppStateHistory, MobileAppTroubleshootingAppTargetHistory, MobileAppTroubleshootingAppUpdateHistory, MobileAppTroubleshootingDeviceCheckinHistory],Field(discriminator="odata_type")]]] = Field(alias="history", default=None,)
 	managedDeviceIdentifier: Optional[str] = Field(alias="managedDeviceIdentifier", default=None,)
 	userId: Optional[str] = Field(alias="userId", default=None,)
 	appLogCollectionRequests: Optional[list[AppLogCollectionRequest]] = Field(alias="appLogCollectionRequests", default=None,)

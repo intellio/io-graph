@@ -13,8 +13,8 @@ from typing import TYPE_CHECKING
 if TYPE_CHECKING:
 	from .get_all_managed_device_windows_o_s_images import GetAllManagedDeviceWindowsOSImagesRequest
 	from .....request_adapter import HttpxRequestAdapter
-from iograph_models.beta.managed_device_windows_operating_system_image import ManagedDeviceWindowsOperatingSystemImage
 from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.beta.managed_device_windows_operating_system_image import ManagedDeviceWindowsOperatingSystemImage
 
 
 class ByManagedDeviceWindowsOperatingSystemImageIdRequest(BaseRequestBuilder):

@@ -8,7 +8,7 @@ from pydantic import BaseModel, Field, SerializeAsAny
 class IosVppAppAssignedLicenseCollectionResponse(BaseModel):
 	odata_count: Optional[int] = Field(alias="@odata.count", default=None,)
 	odata_nextLink: Optional[str] = Field(alias="@odata.nextLink", default=None,)
-	value: Optional[list[Annotated[Union[IosVppAppAssignedDeviceLicense, IosVppAppAssignedUserLicense]],Field(discriminator="odata_type")]]] = Field(alias="value", default=None,)
+	value: Optional[list[Annotated[Union[IosVppAppAssignedDeviceLicense, IosVppAppAssignedUserLicense],Field(discriminator="odata_type")]]] = Field(alias="value", default=None,)
 
 from .ios_vpp_app_assigned_device_license import IosVppAppAssignedDeviceLicense
 from .ios_vpp_app_assigned_user_license import IosVppAppAssignedUserLicense

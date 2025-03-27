@@ -14,9 +14,9 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_embedded_s_i_m_device_state_id import ByEmbeddedSIMDeviceStateIdRequest
 	from ......request_adapter import HttpxRequestAdapter
-from iograph_models.beta.embedded_s_i_m_device_state import EmbeddedSIMDeviceState
-from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.beta.embedded_s_i_m_device_state_collection_response import EmbeddedSIMDeviceStateCollectionResponse
+from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.beta.embedded_s_i_m_device_state import EmbeddedSIMDeviceState
 
 
 class DeviceStatesRequest(BaseRequestBuilder):

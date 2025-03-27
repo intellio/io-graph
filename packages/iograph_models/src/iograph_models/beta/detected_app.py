@@ -14,7 +14,7 @@ class DetectedApp(BaseModel):
 	publisher: Optional[str] = Field(alias="publisher", default=None,)
 	sizeInByte: Optional[int] = Field(alias="sizeInByte", default=None,)
 	version: Optional[str] = Field(alias="version", default=None,)
-	managedDevices: Optional[list[Annotated[Union[WindowsManagedDevice]],Field(discriminator="odata_type")]]] = Field(alias="managedDevices", default=None,)
+	managedDevices: Optional[list[Annotated[Union[WindowsManagedDevice],Field(discriminator="odata_type")]]] = Field(alias="managedDevices", default=None,)
 
 from .detected_app_platform_type import DetectedAppPlatformType
 from .windows_managed_device import WindowsManagedDevice

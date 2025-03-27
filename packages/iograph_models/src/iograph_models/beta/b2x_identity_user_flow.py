@@ -11,10 +11,10 @@ class B2xIdentityUserFlow(BaseModel):
 	userFlowType: Optional[UserFlowType | str] = Field(alias="userFlowType", default=None,)
 	userFlowTypeVersion: float | str | ReferenceNumeric
 	apiConnectorConfiguration: Optional[UserFlowApiConnectorConfiguration] = Field(alias="apiConnectorConfiguration", default=None,)
-	identityProviders: Optional[list[Annotated[Union[OpenIdConnectProvider]],Field(discriminator="odata_type")]]] = Field(alias="identityProviders", default=None,)
+	identityProviders: Optional[list[Annotated[Union[OpenIdConnectProvider],Field(discriminator="odata_type")]]] = Field(alias="identityProviders", default=None,)
 	languages: Optional[list[UserFlowLanguageConfiguration]] = Field(alias="languages", default=None,)
 	userAttributeAssignments: Optional[list[IdentityUserFlowAttributeAssignment]] = Field(alias="userAttributeAssignments", default=None,)
-	userFlowIdentityProviders: Optional[list[Annotated[Union[AppleManagedIdentityProvider, BuiltInIdentityProvider, OidcIdentityProvider, OpenIdConnectIdentityProvider, SamlOrWsFedProvider, InternalDomainFederation, SamlOrWsFedExternalDomainFederation, SocialIdentityProvider]],Field(discriminator="odata_type")]]] = Field(alias="userFlowIdentityProviders", default=None,)
+	userFlowIdentityProviders: Optional[list[Annotated[Union[AppleManagedIdentityProvider, BuiltInIdentityProvider, OidcIdentityProvider, OpenIdConnectIdentityProvider, SamlOrWsFedProvider, InternalDomainFederation, SamlOrWsFedExternalDomainFederation, SocialIdentityProvider],Field(discriminator="odata_type")]]] = Field(alias="userFlowIdentityProviders", default=None,)
 
 from .user_flow_type import UserFlowType
 from .reference_numeric import ReferenceNumeric

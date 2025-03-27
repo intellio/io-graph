@@ -8,7 +8,7 @@ from pydantic import BaseModel, Field, SerializeAsAny
 class EnrollmentProfileCollectionResponse(BaseModel):
 	odata_count: Optional[int] = Field(alias="@odata.count", default=None,)
 	odata_nextLink: Optional[str] = Field(alias="@odata.nextLink", default=None,)
-	value: Optional[list[Annotated[Union[DepEnrollmentBaseProfile, DepIOSEnrollmentProfile, DepMacOSEnrollmentProfile, DepEnrollmentProfile, DepTvOSEnrollmentProfile, DepVisionOSEnrollmentProfile]],Field(discriminator="odata_type")]]] = Field(alias="value", default=None,)
+	value: Optional[list[Annotated[Union[DepEnrollmentBaseProfile, DepIOSEnrollmentProfile, DepMacOSEnrollmentProfile, DepEnrollmentProfile, DepTvOSEnrollmentProfile, DepVisionOSEnrollmentProfile],Field(discriminator="odata_type")]]] = Field(alias="value", default=None,)
 
 from .dep_enrollment_base_profile import DepEnrollmentBaseProfile
 from .dep_i_o_s_enrollment_profile import DepIOSEnrollmentProfile

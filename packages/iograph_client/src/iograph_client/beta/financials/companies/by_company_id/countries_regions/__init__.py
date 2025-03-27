@@ -15,8 +15,8 @@ if TYPE_CHECKING:
 	from .by_country_region_id import ByCountryRegionIdRequest
 	from ......request_adapter import HttpxRequestAdapter
 from iograph_models.beta.country_region_collection_response import CountryRegionCollectionResponse
-from iograph_models.beta.country_region import CountryRegion
 from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.beta.country_region import CountryRegion
 
 
 class CountriesRegionsRequest(BaseRequestBuilder):

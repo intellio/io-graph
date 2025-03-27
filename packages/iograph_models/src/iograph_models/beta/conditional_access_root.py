@@ -11,8 +11,8 @@ class ConditionalAccessRoot(BaseModel):
 	authenticationContextClassReferences: Optional[list[AuthenticationContextClassReference]] = Field(alias="authenticationContextClassReferences", default=None,)
 	authenticationStrength: Optional[AuthenticationStrengthRoot] = Field(alias="authenticationStrength", default=None,)
 	authenticationStrengths: Optional[AuthenticationStrengthRoot] = Field(alias="authenticationStrengths", default=None,)
-	namedLocations: Optional[list[Annotated[Union[CompliantNetworkNamedLocation, CountryNamedLocation, IpNamedLocation]],Field(discriminator="odata_type")]]] = Field(alias="namedLocations", default=None,)
-	policies: Optional[list[Annotated[Union[ConditionalAccessWhatIfPolicy]],Field(discriminator="odata_type")]]] = Field(alias="policies", default=None,)
+	namedLocations: Optional[list[Annotated[Union[CompliantNetworkNamedLocation, CountryNamedLocation, IpNamedLocation],Field(discriminator="odata_type")]]] = Field(alias="namedLocations", default=None,)
+	policies: Optional[list[Annotated[Union[ConditionalAccessWhatIfPolicy],Field(discriminator="odata_type")]]] = Field(alias="policies", default=None,)
 	templates: Optional[list[ConditionalAccessTemplate]] = Field(alias="templates", default=None,)
 
 from .authentication_context_class_reference import AuthenticationContextClassReference

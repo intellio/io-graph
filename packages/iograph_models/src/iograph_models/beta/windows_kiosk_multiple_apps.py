@@ -9,7 +9,7 @@ from pydantic import BaseModel, Field, SerializeAsAny
 class WindowsKioskMultipleApps(BaseModel):
 	odata_type: Literal["#microsoft.graph.windowsKioskMultipleApps"] = Field(alias="@odata.type", default="#microsoft.graph.windowsKioskMultipleApps")
 	allowAccessToDownloadsFolder: Optional[bool] = Field(alias="allowAccessToDownloadsFolder", default=None,)
-	apps: Optional[list[Annotated[Union[WindowsKioskDesktopApp, WindowsKioskUWPApp, WindowsKioskWin32App]],Field(discriminator="odata_type")]]] = Field(alias="apps", default=None,)
+	apps: Optional[list[Annotated[Union[WindowsKioskDesktopApp, WindowsKioskUWPApp, WindowsKioskWin32App],Field(discriminator="odata_type")]]] = Field(alias="apps", default=None,)
 	disallowDesktopApps: Optional[bool] = Field(alias="disallowDesktopApps", default=None,)
 	showTaskBar: Optional[bool] = Field(alias="showTaskBar", default=None,)
 	startMenuLayoutXml: Optional[str] = Field(alias="startMenuLayoutXml", default=None,)

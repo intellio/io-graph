@@ -8,7 +8,7 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 class OnAuthenticationMethodLoadStartExternalUsersSelfServiceSignUp(BaseModel):
 	odata_type: Literal["#microsoft.graph.onAuthenticationMethodLoadStartExternalUsersSelfServiceSignUp"] = Field(alias="@odata.type", default="#microsoft.graph.onAuthenticationMethodLoadStartExternalUsersSelfServiceSignUp")
-	identityProviders: Optional[list[Annotated[Union[AppleManagedIdentityProvider, BuiltInIdentityProvider, OidcIdentityProvider, OpenIdConnectIdentityProvider, SamlOrWsFedProvider, InternalDomainFederation, SamlOrWsFedExternalDomainFederation, SocialIdentityProvider]],Field(discriminator="odata_type")]]] = Field(alias="identityProviders", default=None,)
+	identityProviders: Optional[list[Annotated[Union[AppleManagedIdentityProvider, BuiltInIdentityProvider, OidcIdentityProvider, OpenIdConnectIdentityProvider, SamlOrWsFedProvider, InternalDomainFederation, SamlOrWsFedExternalDomainFederation, SocialIdentityProvider],Field(discriminator="odata_type")]]] = Field(alias="identityProviders", default=None,)
 
 from .apple_managed_identity_provider import AppleManagedIdentityProvider
 from .built_in_identity_provider import BuiltInIdentityProvider

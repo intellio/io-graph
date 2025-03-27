@@ -13,7 +13,7 @@ class DeviceManagementSettingCategory(BaseModel):
 	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
 	displayName: Optional[str] = Field(alias="displayName", default=None,)
 	hasRequiredSetting: Optional[bool] = Field(alias="hasRequiredSetting", default=None,)
-	settingDefinitions: Optional[list[Annotated[Union[DeviceManagementAbstractComplexSettingDefinition, DeviceManagementCollectionSettingDefinition, DeviceManagementComplexSettingDefinition]],Field(discriminator="odata_type")]]] = Field(alias="settingDefinitions", default=None,)
+	settingDefinitions: Optional[list[Annotated[Union[DeviceManagementAbstractComplexSettingDefinition, DeviceManagementCollectionSettingDefinition, DeviceManagementComplexSettingDefinition],Field(discriminator="odata_type")]]] = Field(alias="settingDefinitions", default=None,)
 
 	@model_validator(mode="wrap")
 	def convert_discriminator_class(cls, data: Any, handler: ModelWrapValidatorHandler[Self]) -> Self:

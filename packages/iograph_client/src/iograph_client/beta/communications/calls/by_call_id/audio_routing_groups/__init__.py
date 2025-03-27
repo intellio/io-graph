@@ -15,8 +15,8 @@ if TYPE_CHECKING:
 	from .by_audio_routing_group_id import ByAudioRoutingGroupIdRequest
 	from ......request_adapter import HttpxRequestAdapter
 from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
-from iograph_models.beta.audio_routing_group import AudioRoutingGroup
 from iograph_models.beta.audio_routing_group_collection_response import AudioRoutingGroupCollectionResponse
+from iograph_models.beta.audio_routing_group import AudioRoutingGroup
 
 
 class AudioRoutingGroupsRequest(BaseRequestBuilder):

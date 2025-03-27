@@ -15,8 +15,8 @@ if TYPE_CHECKING:
 	from .cross_tenant_access import CrossTenantAccessRequest
 	from .conditional_access import ConditionalAccessRequest
 	from ....request_adapter import HttpxRequestAdapter
-from iograph_models.beta.networkaccess_settings import NetworkaccessSettings
 from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.beta.networkaccess_settings import NetworkaccessSettings
 
 
 class SettingsRequest(BaseRequestBuilder):

@@ -11,8 +11,8 @@ from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:
 	from .....request_adapter import HttpxRequestAdapter
-from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.beta.user_experience_analytics_app_health_app_performance_by_o_s_version import UserExperienceAnalyticsAppHealthAppPerformanceByOSVersion
+from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 
 
 class ByUserExperienceAnalyticsAppHealthAppPerformanceByOSVersionIdRequest(BaseRequestBuilder):

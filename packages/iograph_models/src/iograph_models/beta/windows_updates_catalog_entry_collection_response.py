@@ -8,7 +8,7 @@ from pydantic import BaseModel, Field, SerializeAsAny
 class WindowsUpdatesCatalogEntryCollectionResponse(BaseModel):
 	odata_count: Optional[int] = Field(alias="@odata.count", default=None,)
 	odata_nextLink: Optional[str] = Field(alias="@odata.nextLink", default=None,)
-	value: Optional[list[Annotated[Union[WindowsUpdatesSoftwareUpdateCatalogEntry, WindowsUpdatesDriverUpdateCatalogEntry, WindowsUpdatesFeatureUpdateCatalogEntry, WindowsUpdatesQualityUpdateCatalogEntry]],Field(discriminator="odata_type")]]] = Field(alias="value", default=None,)
+	value: Optional[list[Annotated[Union[WindowsUpdatesSoftwareUpdateCatalogEntry, WindowsUpdatesDriverUpdateCatalogEntry, WindowsUpdatesFeatureUpdateCatalogEntry, WindowsUpdatesQualityUpdateCatalogEntry],Field(discriminator="odata_type")]]] = Field(alias="value", default=None,)
 
 from .windows_updates_software_update_catalog_entry import WindowsUpdatesSoftwareUpdateCatalogEntry
 from .windows_updates_driver_update_catalog_entry import WindowsUpdatesDriverUpdateCatalogEntry

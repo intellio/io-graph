@@ -14,9 +14,9 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_chat_message_hosted_content_id import ByChatMessageHostedContentIdRequest
 	from .............request_adapter import HttpxRequestAdapter
-from iograph_models.beta.chat_message_hosted_content_collection_response import ChatMessageHostedContentCollectionResponse
 from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.beta.chat_message_hosted_content import ChatMessageHostedContent
+from iograph_models.beta.chat_message_hosted_content_collection_response import ChatMessageHostedContentCollectionResponse
 
 
 class HostedContentsRequest(BaseRequestBuilder):

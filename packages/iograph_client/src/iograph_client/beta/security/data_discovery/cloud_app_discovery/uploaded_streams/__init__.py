@@ -15,8 +15,8 @@ if TYPE_CHECKING:
 	from .by_cloud_app_discovery_report_id import ByCloudAppDiscoveryReportIdRequest
 	from ......request_adapter import HttpxRequestAdapter
 from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
-from iograph_models.beta.security_cloud_app_discovery_report_collection_response import SecurityCloudAppDiscoveryReportCollectionResponse
 from iograph_models.beta.security_cloud_app_discovery_report import SecurityCloudAppDiscoveryReport
+from iograph_models.beta.security_cloud_app_discovery_report_collection_response import SecurityCloudAppDiscoveryReportCollectionResponse
 
 
 class UploadedStreamsRequest(BaseRequestBuilder):

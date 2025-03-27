@@ -8,7 +8,7 @@ from pydantic import BaseModel, Field, SerializeAsAny
 class UnifiedRoleManagementAlertConfigurationCollectionResponse(BaseModel):
 	odata_count: Optional[int] = Field(alias="@odata.count", default=None,)
 	odata_nextLink: Optional[str] = Field(alias="@odata.nextLink", default=None,)
-	value: Optional[list[Annotated[Union[InvalidLicenseAlertConfiguration, NoMfaOnRoleActivationAlertConfiguration, RedundantAssignmentAlertConfiguration, RolesAssignedOutsidePrivilegedIdentityManagementAlertConfiguration, SequentialActivationRenewalsAlertConfiguration, StaleSignInAlertConfiguration, TooManyGlobalAdminsAssignedToTenantAlertConfiguration]],Field(discriminator="odata_type")]]] = Field(alias="value", default=None,)
+	value: Optional[list[Annotated[Union[InvalidLicenseAlertConfiguration, NoMfaOnRoleActivationAlertConfiguration, RedundantAssignmentAlertConfiguration, RolesAssignedOutsidePrivilegedIdentityManagementAlertConfiguration, SequentialActivationRenewalsAlertConfiguration, StaleSignInAlertConfiguration, TooManyGlobalAdminsAssignedToTenantAlertConfiguration],Field(discriminator="odata_type")]]] = Field(alias="value", default=None,)
 
 from .invalid_license_alert_configuration import InvalidLicenseAlertConfiguration
 from .no_mfa_on_role_activation_alert_configuration import NoMfaOnRoleActivationAlertConfiguration

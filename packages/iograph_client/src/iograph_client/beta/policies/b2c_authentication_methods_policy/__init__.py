@@ -11,8 +11,8 @@ from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:
 	from ....request_adapter import HttpxRequestAdapter
-from iograph_models.beta.b2c_authentication_methods_policy import B2cAuthenticationMethodsPolicy
 from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.beta.b2c_authentication_methods_policy import B2cAuthenticationMethodsPolicy
 
 
 class B2cAuthenticationMethodsPolicyRequest(BaseRequestBuilder):

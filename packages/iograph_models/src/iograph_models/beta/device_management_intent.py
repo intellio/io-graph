@@ -21,7 +21,7 @@ class DeviceManagementIntent(BaseModel):
 	deviceSettingStateSummaries: Optional[list[DeviceManagementIntentDeviceSettingStateSummary]] = Field(alias="deviceSettingStateSummaries", default=None,)
 	deviceStates: Optional[list[DeviceManagementIntentDeviceState]] = Field(alias="deviceStates", default=None,)
 	deviceStateSummary: Optional[DeviceManagementIntentDeviceStateSummary] = Field(alias="deviceStateSummary", default=None,)
-	settings: Optional[list[Annotated[Union[DeviceManagementAbstractComplexSettingInstance, DeviceManagementBooleanSettingInstance, DeviceManagementCollectionSettingInstance, DeviceManagementComplexSettingInstance, DeviceManagementIntegerSettingInstance, DeviceManagementStringSettingInstance]],Field(discriminator="odata_type")]]] = Field(alias="settings", default=None,)
+	settings: Optional[list[Annotated[Union[DeviceManagementAbstractComplexSettingInstance, DeviceManagementBooleanSettingInstance, DeviceManagementCollectionSettingInstance, DeviceManagementComplexSettingInstance, DeviceManagementIntegerSettingInstance, DeviceManagementStringSettingInstance],Field(discriminator="odata_type")]]] = Field(alias="settings", default=None,)
 	userStates: Optional[list[DeviceManagementIntentUserState]] = Field(alias="userStates", default=None,)
 	userStateSummary: Optional[DeviceManagementIntentUserStateSummary] = Field(alias="userStateSummary", default=None,)
 

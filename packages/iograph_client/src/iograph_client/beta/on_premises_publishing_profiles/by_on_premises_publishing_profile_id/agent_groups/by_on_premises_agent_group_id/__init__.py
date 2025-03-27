@@ -14,8 +14,8 @@ if TYPE_CHECKING:
 	from .published_resources import PublishedResourcesRequest
 	from .agents import AgentsRequest
 	from ......request_adapter import HttpxRequestAdapter
-from iograph_models.beta.on_premises_agent_group import OnPremisesAgentGroup
 from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.beta.on_premises_agent_group import OnPremisesAgentGroup
 
 
 class ByOnPremisesAgentGroupIdRequest(BaseRequestBuilder):

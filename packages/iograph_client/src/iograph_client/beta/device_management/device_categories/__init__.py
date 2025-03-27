@@ -14,9 +14,9 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_device_category_id import ByDeviceCategoryIdRequest
 	from ....request_adapter import HttpxRequestAdapter
+from iograph_models.beta.device_category_collection_response import DeviceCategoryCollectionResponse
 from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.beta.device_category import DeviceCategory
-from iograph_models.beta.device_category_collection_response import DeviceCategoryCollectionResponse
 
 
 class DeviceCategoriesRequest(BaseRequestBuilder):

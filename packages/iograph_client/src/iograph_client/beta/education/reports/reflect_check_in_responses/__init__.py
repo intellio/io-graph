@@ -14,9 +14,9 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_reflect_check_in_response_id import ByReflectCheckInResponseIdRequest
 	from .....request_adapter import HttpxRequestAdapter
-from iograph_models.beta.reflect_check_in_response import ReflectCheckInResponse
-from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.beta.reflect_check_in_response_collection_response import ReflectCheckInResponseCollectionResponse
+from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.beta.reflect_check_in_response import ReflectCheckInResponse
 
 
 class ReflectCheckInResponsesRequest(BaseRequestBuilder):

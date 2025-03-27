@@ -8,7 +8,7 @@ from pydantic import BaseModel, Field, SerializeAsAny
 class WindowsNetworkIsolationPolicy(BaseModel):
 	enterpriseCloudResources: Optional[list[ProxiedDomain]] = Field(alias="enterpriseCloudResources", default=None,)
 	enterpriseInternalProxyServers: Optional[list[str]] = Field(alias="enterpriseInternalProxyServers", default=None,)
-	enterpriseIPRanges: Optional[list[Annotated[Union[IPv4CidrRange, IPv4Range, IPv6CidrRange, IPv6Range]],Field(discriminator="odata_type")]]] = Field(alias="enterpriseIPRanges", default=None,)
+	enterpriseIPRanges: Optional[list[Annotated[Union[IPv4CidrRange, IPv4Range, IPv6CidrRange, IPv6Range],Field(discriminator="odata_type")]]] = Field(alias="enterpriseIPRanges", default=None,)
 	enterpriseIPRangesAreAuthoritative: Optional[bool] = Field(alias="enterpriseIPRangesAreAuthoritative", default=None,)
 	enterpriseNetworkDomainNames: Optional[list[str]] = Field(alias="enterpriseNetworkDomainNames", default=None,)
 	enterpriseProxyServers: Optional[list[str]] = Field(alias="enterpriseProxyServers", default=None,)

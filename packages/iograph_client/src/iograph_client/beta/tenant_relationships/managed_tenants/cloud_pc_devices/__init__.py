@@ -15,8 +15,8 @@ if TYPE_CHECKING:
 	from .by_cloud_pc_device_id import ByCloudPcDeviceIdRequest
 	from .....request_adapter import HttpxRequestAdapter
 from iograph_models.beta.managed_tenants_cloud_pc_device_collection_response import ManagedTenantsCloudPcDeviceCollectionResponse
-from iograph_models.beta.managed_tenants_cloud_pc_device import ManagedTenantsCloudPcDevice
 from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.beta.managed_tenants_cloud_pc_device import ManagedTenantsCloudPcDevice
 
 
 class CloudPcDevicesRequest(BaseRequestBuilder):

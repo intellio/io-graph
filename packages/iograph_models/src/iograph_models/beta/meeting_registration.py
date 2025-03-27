@@ -11,7 +11,7 @@ class MeetingRegistration(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
 	odata_type: Literal["#microsoft.graph.meetingRegistration"] = Field(alias="@odata.type", default="#microsoft.graph.meetingRegistration")
 	allowedRegistrant: Optional[MeetingAudience | str] = Field(alias="allowedRegistrant", default=None,)
-	registrants: Optional[list[Annotated[Union[ExternalMeetingRegistrant, MeetingRegistrant]],Field(discriminator="odata_type")]]] = Field(alias="registrants", default=None,)
+	registrants: Optional[list[Annotated[Union[ExternalMeetingRegistrant, MeetingRegistrant],Field(discriminator="odata_type")]]] = Field(alias="registrants", default=None,)
 	description: Optional[str] = Field(alias="description", default=None,)
 	endDateTime: Optional[datetime] = Field(alias="endDateTime", default=None,)
 	registrationPageViewCount: Optional[int] = Field(alias="registrationPageViewCount", default=None,)

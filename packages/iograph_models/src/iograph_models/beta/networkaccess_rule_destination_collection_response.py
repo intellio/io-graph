@@ -8,7 +8,7 @@ from pydantic import BaseModel, Field, SerializeAsAny
 class NetworkaccessRuleDestinationCollectionResponse(BaseModel):
 	odata_count: Optional[int] = Field(alias="@odata.count", default=None,)
 	odata_nextLink: Optional[str] = Field(alias="@odata.nextLink", default=None,)
-	value: Optional[list[Annotated[Union[NetworkaccessFqdn, NetworkaccessIpAddress, NetworkaccessIpRange, NetworkaccessIpSubnet, NetworkaccessUrl, NetworkaccessWebCategory]],Field(discriminator="odata_type")]]] = Field(alias="value", default=None,)
+	value: Optional[list[Annotated[Union[NetworkaccessFqdn, NetworkaccessIpAddress, NetworkaccessIpRange, NetworkaccessIpSubnet, NetworkaccessUrl, NetworkaccessWebCategory],Field(discriminator="odata_type")]]] = Field(alias="value", default=None,)
 
 from .networkaccess_fqdn import NetworkaccessFqdn
 from .networkaccess_ip_address import NetworkaccessIpAddress

@@ -13,7 +13,7 @@ class InformationProtection(BaseModel):
 	policy: Optional[InformationProtectionPolicy] = Field(alias="policy", default=None,)
 	sensitivityLabels: Optional[list[SensitivityLabel]] = Field(alias="sensitivityLabels", default=None,)
 	sensitivityPolicySettings: Optional[SensitivityPolicySettings] = Field(alias="sensitivityPolicySettings", default=None,)
-	threatAssessmentRequests: Optional[list[Annotated[Union[EmailFileAssessmentRequest, FileAssessmentRequest, MailAssessmentRequest, UrlAssessmentRequest]],Field(discriminator="odata_type")]]] = Field(alias="threatAssessmentRequests", default=None,)
+	threatAssessmentRequests: Optional[list[Annotated[Union[EmailFileAssessmentRequest, FileAssessmentRequest, MailAssessmentRequest, UrlAssessmentRequest],Field(discriminator="odata_type")]]] = Field(alias="threatAssessmentRequests", default=None,)
 
 from .bitlocker import Bitlocker
 from .data_loss_prevention_policy import DataLossPreventionPolicy

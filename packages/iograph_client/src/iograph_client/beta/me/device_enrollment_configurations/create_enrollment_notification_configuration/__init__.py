@@ -11,8 +11,8 @@ from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:
 	from .....request_adapter import HttpxRequestAdapter
-from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.beta.create_enrollment_notification_configuration_post_request import Create_enrollment_notification_configurationPostRequest
+from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 
 
 class CreateEnrollmentNotificationConfigurationRequest(BaseRequestBuilder):

@@ -14,8 +14,8 @@ if TYPE_CHECKING:
 	from .comment import CommentRequest
 	from .changes import ChangesRequest
 	from ............request_adapter import HttpxRequestAdapter
-from iograph_models.beta.workbook_document_task import WorkbookDocumentTask
 from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.beta.workbook_document_task import WorkbookDocumentTask
 
 
 class TaskRequest(BaseRequestBuilder):

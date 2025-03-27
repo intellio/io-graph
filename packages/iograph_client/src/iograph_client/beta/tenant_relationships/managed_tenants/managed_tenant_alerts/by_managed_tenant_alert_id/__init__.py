@@ -17,8 +17,8 @@ if TYPE_CHECKING:
 	from .alert_rule import AlertRuleRequest
 	from .alert_logs import AlertLogsRequest
 	from ......request_adapter import HttpxRequestAdapter
-from iograph_models.beta.managed_tenants_managed_tenant_alert import ManagedTenantsManagedTenantAlert
 from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.beta.managed_tenants_managed_tenant_alert import ManagedTenantsManagedTenantAlert
 
 
 class ByManagedTenantAlertIdRequest(BaseRequestBuilder):

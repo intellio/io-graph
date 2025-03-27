@@ -8,7 +8,7 @@ from pydantic import BaseModel, Field, SerializeAsAny
 class PlannerDeltaCollectionResponse(BaseModel):
 	odata_count: Optional[int] = Field(alias="@odata.count", default=None,)
 	odata_nextLink: Optional[str] = Field(alias="@odata.nextLink", default=None,)
-	value: Optional[list[Annotated[Union[PlannerAssignedToTaskBoardTaskFormat, PlannerBucket, PlannerBucketTaskBoardTaskFormat, PlannerPlan, PlannerPlanDetails, PlannerProgressTaskBoardTaskFormat, PlannerTask, BusinessScenarioTask, PlannerTaskDetails, PlannerUser]],Field(discriminator="odata_type")]]] = Field(alias="value", default=None,)
+	value: Optional[list[Annotated[Union[PlannerAssignedToTaskBoardTaskFormat, PlannerBucket, PlannerBucketTaskBoardTaskFormat, PlannerPlan, PlannerPlanDetails, PlannerProgressTaskBoardTaskFormat, PlannerTask, BusinessScenarioTask, PlannerTaskDetails, PlannerUser],Field(discriminator="odata_type")]]] = Field(alias="value", default=None,)
 
 from .planner_assigned_to_task_board_task_format import PlannerAssignedToTaskBoardTaskFormat
 from .planner_bucket import PlannerBucket

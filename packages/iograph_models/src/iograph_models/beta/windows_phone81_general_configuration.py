@@ -33,7 +33,7 @@ class WindowsPhone81GeneralConfiguration(BaseModel):
 	cameraBlocked: Optional[bool] = Field(alias="cameraBlocked", default=None,)
 	cellularBlockWifiTethering: Optional[bool] = Field(alias="cellularBlockWifiTethering", default=None,)
 	compliantAppListType: Optional[AppListType | str] = Field(alias="compliantAppListType", default=None,)
-	compliantAppsList: Optional[list[Annotated[Union[AppleAppListItem]],Field(discriminator="odata_type")]]] = Field(alias="compliantAppsList", default=None,)
+	compliantAppsList: Optional[list[Annotated[Union[AppleAppListItem],Field(discriminator="odata_type")]]] = Field(alias="compliantAppsList", default=None,)
 	diagnosticDataBlockSubmission: Optional[bool] = Field(alias="diagnosticDataBlockSubmission", default=None,)
 	emailBlockAddingAccounts: Optional[bool] = Field(alias="emailBlockAddingAccounts", default=None,)
 	locationServicesBlocked: Optional[bool] = Field(alias="locationServicesBlocked", default=None,)

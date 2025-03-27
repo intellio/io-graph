@@ -12,7 +12,7 @@ class NetworkaccessForwardingPolicy(BaseModel):
 	description: Optional[str] = Field(alias="description", default=None,)
 	name: Optional[str] = Field(alias="name", default=None,)
 	version: Optional[str] = Field(alias="version", default=None,)
-	policyRules: Optional[list[Annotated[Union[NetworkaccessFilteringRule, NetworkaccessFqdnFilteringRule, NetworkaccessWebCategoryFilteringRule, NetworkaccessForwardingRule, NetworkaccessInternetAccessForwardingRule, NetworkaccessM365ForwardingRule, NetworkaccessPrivateAccessForwardingRule]],Field(discriminator="odata_type")]]] = Field(alias="policyRules", default=None,)
+	policyRules: Optional[list[Annotated[Union[NetworkaccessFilteringRule, NetworkaccessFqdnFilteringRule, NetworkaccessWebCategoryFilteringRule, NetworkaccessForwardingRule, NetworkaccessInternetAccessForwardingRule, NetworkaccessM365ForwardingRule, NetworkaccessPrivateAccessForwardingRule],Field(discriminator="odata_type")]]] = Field(alias="policyRules", default=None,)
 	trafficForwardingType: Optional[NetworkaccessTrafficForwardingType | str] = Field(alias="trafficForwardingType", default=None,)
 
 from .networkaccess_filtering_rule import NetworkaccessFilteringRule

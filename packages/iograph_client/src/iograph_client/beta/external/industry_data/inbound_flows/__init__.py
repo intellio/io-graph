@@ -14,9 +14,9 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_inbound_flow_id import ByInboundFlowIdRequest
 	from .....request_adapter import HttpxRequestAdapter
+from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.beta.industry_data_inbound_flow_collection_response import IndustryDataInboundFlowCollectionResponse
 from iograph_models.beta.industry_data_inbound_flow import IndustryDataInboundFlow
-from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 
 
 class InboundFlowsRequest(BaseRequestBuilder):

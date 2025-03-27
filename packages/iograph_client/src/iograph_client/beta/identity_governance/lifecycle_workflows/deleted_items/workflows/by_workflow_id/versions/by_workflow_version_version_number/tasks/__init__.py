@@ -15,8 +15,8 @@ if TYPE_CHECKING:
 	from .by_task_id import ByTaskIdRequest
 	from ..........request_adapter import HttpxRequestAdapter
 from iograph_models.beta.identity_governance_task_collection_response import IdentityGovernanceTaskCollectionResponse
-from iograph_models.beta.identity_governance_task import IdentityGovernanceTask
 from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.beta.identity_governance_task import IdentityGovernanceTask
 
 
 class TasksRequest(BaseRequestBuilder):

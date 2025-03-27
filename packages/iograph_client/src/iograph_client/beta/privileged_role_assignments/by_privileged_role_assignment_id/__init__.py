@@ -15,8 +15,8 @@ if TYPE_CHECKING:
 	from .make_permanent import MakePermanentRequest
 	from .make_eligible import MakeEligibleRequest
 	from ....request_adapter import HttpxRequestAdapter
-from iograph_models.beta.privileged_role_assignment import PrivilegedRoleAssignment
 from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.beta.privileged_role_assignment import PrivilegedRoleAssignment
 
 
 class ByPrivilegedRoleAssignmentIdRequest(BaseRequestBuilder):

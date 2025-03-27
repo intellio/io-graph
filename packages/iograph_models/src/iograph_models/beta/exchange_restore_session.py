@@ -20,7 +20,7 @@ class ExchangeRestoreSession(BaseModel):
 	restoreSessionArtifactCount: Optional[RestoreSessionArtifactCount] = Field(alias="restoreSessionArtifactCount", default=None,)
 	status: Optional[RestoreSessionStatus | str] = Field(alias="status", default=None,)
 	granularMailboxRestoreArtifacts: Optional[list[GranularMailboxRestoreArtifact]] = Field(alias="granularMailboxRestoreArtifacts", default=None,)
-	mailboxRestoreArtifacts: Optional[list[Annotated[Union[GranularMailboxRestoreArtifact]],Field(discriminator="odata_type")]]] = Field(alias="mailboxRestoreArtifacts", default=None,)
+	mailboxRestoreArtifacts: Optional[list[Annotated[Union[GranularMailboxRestoreArtifact],Field(discriminator="odata_type")]]] = Field(alias="mailboxRestoreArtifacts", default=None,)
 	mailboxRestoreArtifactsBulkAdditionRequests: Optional[list[MailboxRestoreArtifactsBulkAdditionRequest]] = Field(alias="mailboxRestoreArtifactsBulkAdditionRequests", default=None,)
 
 from .ai_interaction_mentioned_identity_set import AiInteractionMentionedIdentitySet

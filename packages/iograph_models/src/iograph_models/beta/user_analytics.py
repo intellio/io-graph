@@ -9,7 +9,7 @@ class UserAnalytics(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
 	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
 	settings: Optional[Settings] = Field(alias="settings", default=None,)
-	activityStatistics: Optional[list[Annotated[Union[CallActivityStatistics, ChatActivityStatistics, EmailActivityStatistics, FocusActivityStatistics, MeetingActivityStatistics]],Field(discriminator="odata_type")]]] = Field(alias="activityStatistics", default=None,)
+	activityStatistics: Optional[list[Annotated[Union[CallActivityStatistics, ChatActivityStatistics, EmailActivityStatistics, FocusActivityStatistics, MeetingActivityStatistics],Field(discriminator="odata_type")]]] = Field(alias="activityStatistics", default=None,)
 
 from .settings import Settings
 from .call_activity_statistics import CallActivityStatistics

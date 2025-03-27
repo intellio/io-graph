@@ -16,9 +16,9 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_sign_in_id import BySignInIdRequest
 	from ....request_adapter import HttpxRequestAdapter
+from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.beta.sign_in import SignIn
 from iograph_models.beta.sign_in_collection_response import SignInCollectionResponse
-from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 
 
 class SignInsRequest(BaseRequestBuilder):

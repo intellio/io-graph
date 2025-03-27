@@ -41,7 +41,7 @@ class Organization(BaseModel):
 	verifiedDomains: Optional[list[VerifiedDomain]] = Field(alias="verifiedDomains", default=None,)
 	branding: Optional[OrganizationalBranding] = Field(alias="branding", default=None,)
 	certificateBasedAuthConfiguration: Optional[list[CertificateBasedAuthConfiguration]] = Field(alias="certificateBasedAuthConfiguration", default=None,)
-	extensions: Optional[list[Annotated[Union[OpenTypeExtension, PersonExtension]],Field(discriminator="odata_type")]]] = Field(alias="extensions", default=None,)
+	extensions: Optional[list[Annotated[Union[OpenTypeExtension, PersonExtension],Field(discriminator="odata_type")]]] = Field(alias="extensions", default=None,)
 	partnerInformation: Optional[PartnerInformation] = Field(alias="partnerInformation", default=None,)
 	settings: Optional[OrganizationSettings] = Field(alias="settings", default=None,)
 

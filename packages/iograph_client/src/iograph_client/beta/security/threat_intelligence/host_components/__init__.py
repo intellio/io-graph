@@ -14,9 +14,9 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_host_component_id import ByHostComponentIdRequest
 	from .....request_adapter import HttpxRequestAdapter
-from iograph_models.beta.security_host_component_collection_response import SecurityHostComponentCollectionResponse
 from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.beta.security_host_component import SecurityHostComponent
+from iograph_models.beta.security_host_component_collection_response import SecurityHostComponentCollectionResponse
 
 
 class HostComponentsRequest(BaseRequestBuilder):

@@ -8,9 +8,9 @@ from pydantic import BaseModel, Field, SerializeAsAny
 class IndustryDataIndustryDataRoot(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
 	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
-	dataConnectors: Optional[list[Annotated[Union[IndustryDataApiDataConnector, IndustryDataOneRosterApiDataConnector, IndustryDataFileDataConnector, IndustryDataAzureDataLakeConnector]],Field(discriminator="odata_type")]]] = Field(alias="dataConnectors", default=None,)
-	inboundFlows: Optional[list[Annotated[Union[IndustryDataInboundApiFlow, IndustryDataInboundFileFlow]],Field(discriminator="odata_type")]]] = Field(alias="inboundFlows", default=None,)
-	operations: Optional[list[Annotated[Union[AttackSimulationOperation, EngagementAsyncOperation, GoalsExportJob, RichLongRunningOperation, IndustryDataValidateOperation, IndustryDataFileValidateOperation]],Field(discriminator="odata_type")]]] = Field(alias="operations", default=None,)
+	dataConnectors: Optional[list[Annotated[Union[IndustryDataApiDataConnector, IndustryDataOneRosterApiDataConnector, IndustryDataFileDataConnector, IndustryDataAzureDataLakeConnector],Field(discriminator="odata_type")]]] = Field(alias="dataConnectors", default=None,)
+	inboundFlows: Optional[list[Annotated[Union[IndustryDataInboundApiFlow, IndustryDataInboundFileFlow],Field(discriminator="odata_type")]]] = Field(alias="inboundFlows", default=None,)
+	operations: Optional[list[Annotated[Union[AttackSimulationOperation, EngagementAsyncOperation, GoalsExportJob, RichLongRunningOperation, IndustryDataValidateOperation, IndustryDataFileValidateOperation],Field(discriminator="odata_type")]]] = Field(alias="operations", default=None,)
 	outboundProvisioningFlowSets: Optional[list[IndustryDataOutboundProvisioningFlowSet]] = Field(alias="outboundProvisioningFlowSets", default=None,)
 	referenceDefinitions: Optional[list[IndustryDataReferenceDefinition]] = Field(alias="referenceDefinitions", default=None,)
 	roleGroups: Optional[list[IndustryDataRoleGroup]] = Field(alias="roleGroups", default=None,)

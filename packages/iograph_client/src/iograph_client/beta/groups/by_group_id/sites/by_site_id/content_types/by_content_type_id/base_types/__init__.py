@@ -14,8 +14,8 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_content_type_id1 import ByContentTypeId1Request
 	from .........request_adapter import HttpxRequestAdapter
-from iograph_models.beta.content_type_collection_response import ContentTypeCollectionResponse
 from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.beta.content_type_collection_response import ContentTypeCollectionResponse
 
 
 class BaseTypesRequest(BaseRequestBuilder):

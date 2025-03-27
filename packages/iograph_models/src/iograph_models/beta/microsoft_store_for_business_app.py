@@ -31,14 +31,14 @@ class MicrosoftStoreForBusinessApp(BaseModel):
 	uploadState: Optional[int] = Field(alias="uploadState", default=None,)
 	assignments: Optional[list[MobileAppAssignment]] = Field(alias="assignments", default=None,)
 	categories: Optional[list[MobileAppCategory]] = Field(alias="categories", default=None,)
-	relationships: Optional[list[Annotated[Union[MobileAppDependency, MobileAppSupersedence]],Field(discriminator="odata_type")]]] = Field(alias="relationships", default=None,)
+	relationships: Optional[list[Annotated[Union[MobileAppDependency, MobileAppSupersedence],Field(discriminator="odata_type")]]] = Field(alias="relationships", default=None,)
 	licenseType: Optional[MicrosoftStoreForBusinessLicenseType | str] = Field(alias="licenseType", default=None,)
 	licensingType: Optional[VppLicensingType] = Field(alias="licensingType", default=None,)
 	packageIdentityName: Optional[str] = Field(alias="packageIdentityName", default=None,)
 	productKey: Optional[str] = Field(alias="productKey", default=None,)
 	totalLicenseCount: Optional[int] = Field(alias="totalLicenseCount", default=None,)
 	usedLicenseCount: Optional[int] = Field(alias="usedLicenseCount", default=None,)
-	containedApps: Optional[list[Annotated[Union[MicrosoftStoreForBusinessContainedApp, WindowsUniversalAppXContainedApp]],Field(discriminator="odata_type")]]] = Field(alias="containedApps", default=None,)
+	containedApps: Optional[list[Annotated[Union[MicrosoftStoreForBusinessContainedApp, WindowsUniversalAppXContainedApp],Field(discriminator="odata_type")]]] = Field(alias="containedApps", default=None,)
 
 from .mime_content import MimeContent
 from .mobile_app_publishing_state import MobileAppPublishingState

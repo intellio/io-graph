@@ -8,7 +8,7 @@ from pydantic import BaseModel, Field, SerializeAsAny
 class MobileAppContent(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
 	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
-	containedApps: Optional[list[Annotated[Union[MicrosoftStoreForBusinessContainedApp, WindowsUniversalAppXContainedApp]],Field(discriminator="odata_type")]]] = Field(alias="containedApps", default=None,)
+	containedApps: Optional[list[Annotated[Union[MicrosoftStoreForBusinessContainedApp, WindowsUniversalAppXContainedApp],Field(discriminator="odata_type")]]] = Field(alias="containedApps", default=None,)
 	files: Optional[list[MobileAppContentFile]] = Field(alias="files", default=None,)
 
 from .microsoft_store_for_business_contained_app import MicrosoftStoreForBusinessContainedApp

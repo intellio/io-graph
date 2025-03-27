@@ -12,7 +12,7 @@ class ServiceProvisioningResourceError(BaseModel):
 	isResolved: Optional[bool] = Field(alias="isResolved", default=None,)
 	serviceInstance: Optional[str] = Field(alias="serviceInstance", default=None,)
 	odata_type: Literal["#microsoft.graph.serviceProvisioningResourceError"] = Field(alias="@odata.type", default="#microsoft.graph.serviceProvisioningResourceError")
-	errors: Optional[list[Annotated[Union[ServiceProvisioningLinkedResourceErrorDetail]],Field(discriminator="odata_type")]]] = Field(alias="errors", default=None,)
+	errors: Optional[list[Annotated[Union[ServiceProvisioningLinkedResourceErrorDetail],Field(discriminator="odata_type")]]] = Field(alias="errors", default=None,)
 
 from .service_provisioning_linked_resource_error_detail import ServiceProvisioningLinkedResourceErrorDetail
 

@@ -14,9 +14,9 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_device_management_intent_id import ByDeviceManagementIntentIdRequest
 	from ....request_adapter import HttpxRequestAdapter
-from iograph_models.beta.device_management_intent import DeviceManagementIntent
 from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.beta.device_management_intent_collection_response import DeviceManagementIntentCollectionResponse
+from iograph_models.beta.device_management_intent import DeviceManagementIntent
 
 
 class IntentsRequest(BaseRequestBuilder):

@@ -21,7 +21,7 @@ class EdiscoveryCase(BaseModel):
 	custodians: Optional[list[EdiscoveryCustodian]] = Field(alias="custodians", default=None,)
 	legalHolds: Optional[list[EdiscoveryLegalHold]] = Field(alias="legalHolds", default=None,)
 	noncustodialDataSources: Optional[list[EdiscoveryNoncustodialDataSource]] = Field(alias="noncustodialDataSources", default=None,)
-	operations: Optional[list[Annotated[Union[EdiscoveryAddToReviewSetOperation, EdiscoveryCaseExportOperation, EdiscoveryCaseHoldOperation, EdiscoveryCaseIndexOperation, EdiscoveryEstimateStatisticsOperation, EdiscoveryPurgeDataOperation, EdiscoveryTagOperation]],Field(discriminator="odata_type")]]] = Field(alias="operations", default=None,)
+	operations: Optional[list[Annotated[Union[EdiscoveryAddToReviewSetOperation, EdiscoveryCaseExportOperation, EdiscoveryCaseHoldOperation, EdiscoveryCaseIndexOperation, EdiscoveryEstimateStatisticsOperation, EdiscoveryPurgeDataOperation, EdiscoveryTagOperation],Field(discriminator="odata_type")]]] = Field(alias="operations", default=None,)
 	reviewSets: Optional[list[EdiscoveryReviewSet]] = Field(alias="reviewSets", default=None,)
 	settings: Optional[EdiscoveryCaseSettings] = Field(alias="settings", default=None,)
 	sourceCollections: Optional[list[EdiscoverySourceCollection]] = Field(alias="sourceCollections", default=None,)

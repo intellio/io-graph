@@ -14,7 +14,7 @@ class NetworkaccessPolicy(BaseModel):
 	description: Optional[str] = Field(alias="description", default=None,)
 	name: Optional[str] = Field(alias="name", default=None,)
 	version: Optional[str] = Field(alias="version", default=None,)
-	policyRules: Optional[list[Annotated[Union[NetworkaccessFilteringRule, NetworkaccessFqdnFilteringRule, NetworkaccessWebCategoryFilteringRule, NetworkaccessForwardingRule, NetworkaccessInternetAccessForwardingRule, NetworkaccessM365ForwardingRule, NetworkaccessPrivateAccessForwardingRule]],Field(discriminator="odata_type")]]] = Field(alias="policyRules", default=None,)
+	policyRules: Optional[list[Annotated[Union[NetworkaccessFilteringRule, NetworkaccessFqdnFilteringRule, NetworkaccessWebCategoryFilteringRule, NetworkaccessForwardingRule, NetworkaccessInternetAccessForwardingRule, NetworkaccessM365ForwardingRule, NetworkaccessPrivateAccessForwardingRule],Field(discriminator="odata_type")]]] = Field(alias="policyRules", default=None,)
 
 	@model_validator(mode="wrap")
 	def convert_discriminator_class(cls, data: Any, handler: ModelWrapValidatorHandler[Self]) -> Self:

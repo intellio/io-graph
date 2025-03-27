@@ -14,8 +14,8 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_ssl_certificate_id import BySslCertificateIdRequest
 	from .....request_adapter import HttpxRequestAdapter
-from iograph_models.beta.security_ssl_certificate import SecuritySslCertificate
 from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.beta.security_ssl_certificate import SecuritySslCertificate
 from iograph_models.beta.security_ssl_certificate_collection_response import SecuritySslCertificateCollectionResponse
 
 

@@ -21,7 +21,7 @@ class FileStorageContainer(BaseModel):
 	isItemVersioningEnabled: Optional[bool] = Field(alias="isItemVersioningEnabled", default=None,)
 	itemMajorVersionLimit: Optional[int] = Field(alias="itemMajorVersionLimit", default=None,)
 	lockState: Optional[SiteLockState | str] = Field(alias="lockState", default=None,)
-	owners: Optional[list[Annotated[Union[AuditUserIdentity]],Field(discriminator="odata_type")]]] = Field(alias="owners", default=None,)
+	owners: Optional[list[Annotated[Union[AuditUserIdentity],Field(discriminator="odata_type")]]] = Field(alias="owners", default=None,)
 	ownershipType: Optional[FileStorageContainerOwnershipType | str] = Field(alias="ownershipType", default=None,)
 	settings: Optional[FileStorageContainerSettings] = Field(alias="settings", default=None,)
 	status: Optional[FileStorageContainerStatus | str] = Field(alias="status", default=None,)

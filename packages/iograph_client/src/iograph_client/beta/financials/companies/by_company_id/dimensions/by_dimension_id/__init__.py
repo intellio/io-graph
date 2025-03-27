@@ -13,8 +13,8 @@ from typing import TYPE_CHECKING
 if TYPE_CHECKING:
 	from .dimension_values import DimensionValuesRequest
 	from .......request_adapter import HttpxRequestAdapter
-from iograph_models.beta.dimension import Dimension
 from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.beta.dimension import Dimension
 
 
 class ByDimensionIdRequest(BaseRequestBuilder):

@@ -14,9 +14,9 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_device_management_setting_definition_id import ByDeviceManagementSettingDefinitionIdRequest
 	from ..........request_adapter import HttpxRequestAdapter
-from iograph_models.beta.device_management_setting_definition import DeviceManagementSettingDefinition
 from iograph_models.beta.device_management_setting_definition_collection_response import DeviceManagementSettingDefinitionCollectionResponse
 from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.beta.device_management_setting_definition import DeviceManagementSettingDefinition
 
 
 class SettingDefinitionsRequest(BaseRequestBuilder):

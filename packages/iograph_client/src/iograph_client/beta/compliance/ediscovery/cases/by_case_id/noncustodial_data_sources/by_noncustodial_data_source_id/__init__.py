@@ -18,8 +18,8 @@ if TYPE_CHECKING:
 	from .last_index_operation import LastIndexOperationRequest
 	from .data_source import DataSourceRequest
 	from ........request_adapter import HttpxRequestAdapter
-from iograph_models.beta.ediscovery_noncustodial_data_source import EdiscoveryNoncustodialDataSource
 from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.beta.ediscovery_noncustodial_data_source import EdiscoveryNoncustodialDataSource
 
 
 class ByNoncustodialDataSourceIdRequest(BaseRequestBuilder):

@@ -14,8 +14,8 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_list_id import ByListIdRequest
 	from .......request_adapter import HttpxRequestAdapter
-from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.beta.list import List
+from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.beta.list_collection_response import ListCollectionResponse
 
 

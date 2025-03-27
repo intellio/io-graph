@@ -22,8 +22,8 @@ if TYPE_CHECKING:
 	from .customer import CustomerRequest
 	from .currency import CurrencyRequest
 	from .......request_adapter import HttpxRequestAdapter
-from iograph_models.beta.sales_invoice import SalesInvoice
 from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.beta.sales_invoice import SalesInvoice
 
 
 class BySalesInvoiceIdRequest(BaseRequestBuilder):

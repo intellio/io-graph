@@ -11,7 +11,7 @@ class Permission(BaseModel):
 	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
 	expirationDateTime: Optional[datetime] = Field(alias="expirationDateTime", default=None,)
 	grantedTo: Optional[Union[AiInteractionMentionedIdentitySet, ApprovalIdentitySet, ChatMessageFromIdentitySet, ChatMessageMentionedIdentitySet, ChatMessageReactionIdentitySet, CommunicationsIdentitySet, SharePointIdentitySet]] = Field(alias="grantedTo", default=None,discriminator="odata_type", )
-	grantedToIdentities: Optional[list[Annotated[Union[AiInteractionMentionedIdentitySet, ApprovalIdentitySet, ChatMessageFromIdentitySet, ChatMessageMentionedIdentitySet, ChatMessageReactionIdentitySet, CommunicationsIdentitySet, SharePointIdentitySet]],Field(discriminator="odata_type")]]] = Field(alias="grantedToIdentities", default=None,)
+	grantedToIdentities: Optional[list[Annotated[Union[AiInteractionMentionedIdentitySet, ApprovalIdentitySet, ChatMessageFromIdentitySet, ChatMessageMentionedIdentitySet, ChatMessageReactionIdentitySet, CommunicationsIdentitySet, SharePointIdentitySet],Field(discriminator="odata_type")]]] = Field(alias="grantedToIdentities", default=None,)
 	grantedToIdentitiesV2: Optional[list[SharePointIdentitySet]] = Field(alias="grantedToIdentitiesV2", default=None,)
 	grantedToV2: Optional[SharePointIdentitySet] = Field(alias="grantedToV2", default=None,)
 	hasPassword: Optional[bool] = Field(alias="hasPassword", default=None,)

@@ -30,7 +30,7 @@ class IosDeviceFeaturesConfiguration(BaseModel):
 	airPrintDestinations: Optional[list[AirPrintDestination]] = Field(alias="airPrintDestinations", default=None,)
 	assetTagTemplate: Optional[str] = Field(alias="assetTagTemplate", default=None,)
 	contentFilterSettings: Optional[Union[IosWebContentFilterAutoFilter, IosWebContentFilterSpecificWebsitesAccess]] = Field(alias="contentFilterSettings", default=None,discriminator="odata_type", )
-	homeScreenDockIcons: Optional[list[Annotated[Union[IosHomeScreenApp, IosHomeScreenFolder]],Field(discriminator="odata_type")]]] = Field(alias="homeScreenDockIcons", default=None,)
+	homeScreenDockIcons: Optional[list[Annotated[Union[IosHomeScreenApp, IosHomeScreenFolder],Field(discriminator="odata_type")]]] = Field(alias="homeScreenDockIcons", default=None,)
 	homeScreenGridHeight: Optional[int] = Field(alias="homeScreenGridHeight", default=None,)
 	homeScreenGridWidth: Optional[int] = Field(alias="homeScreenGridWidth", default=None,)
 	homeScreenPages: Optional[list[IosHomeScreenPage]] = Field(alias="homeScreenPages", default=None,)

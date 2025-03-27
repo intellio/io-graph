@@ -10,7 +10,7 @@ class NetworkaccessWebCategoryFilteringRule(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
 	odata_type: Literal["#microsoft.graph.networkaccess.webCategoryFilteringRule"] = Field(alias="@odata.type", default="#microsoft.graph.networkaccess.webCategoryFilteringRule")
 	name: Optional[str] = Field(alias="name", default=None,)
-	destinations: Optional[list[Annotated[Union[NetworkaccessFqdn, NetworkaccessIpAddress, NetworkaccessIpRange, NetworkaccessIpSubnet, NetworkaccessUrl, NetworkaccessWebCategory]],Field(discriminator="odata_type")]]] = Field(alias="destinations", default=None,)
+	destinations: Optional[list[Annotated[Union[NetworkaccessFqdn, NetworkaccessIpAddress, NetworkaccessIpRange, NetworkaccessIpSubnet, NetworkaccessUrl, NetworkaccessWebCategory],Field(discriminator="odata_type")]]] = Field(alias="destinations", default=None,)
 	ruleType: Optional[NetworkaccessNetworkDestinationType | str] = Field(alias="ruleType", default=None,)
 
 from .networkaccess_fqdn import NetworkaccessFqdn

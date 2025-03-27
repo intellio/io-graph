@@ -8,7 +8,7 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 class EnumeratedAccountsWithAccess(BaseModel):
 	odata_type: Literal["#microsoft.graph.enumeratedAccountsWithAccess"] = Field(alias="@odata.type", default="#microsoft.graph.enumeratedAccountsWithAccess")
-	accounts: Optional[list[Annotated[Union[AwsAuthorizationSystem, AzureAuthorizationSystem, GcpAuthorizationSystem]],Field(discriminator="odata_type")]]] = Field(alias="accounts", default=None,)
+	accounts: Optional[list[Annotated[Union[AwsAuthorizationSystem, AzureAuthorizationSystem, GcpAuthorizationSystem],Field(discriminator="odata_type")]]] = Field(alias="accounts", default=None,)
 
 from .aws_authorization_system import AwsAuthorizationSystem
 from .azure_authorization_system import AzureAuthorizationSystem

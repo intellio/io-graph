@@ -22,8 +22,8 @@ class DeviceManagementTemplate(BaseModel):
 	templateType: Optional[DeviceManagementTemplateType | str] = Field(alias="templateType", default=None,)
 	versionInfo: Optional[str] = Field(alias="versionInfo", default=None,)
 	categories: Optional[list[DeviceManagementTemplateSettingCategory]] = Field(alias="categories", default=None,)
-	migratableTo: Optional[list[Annotated[Union[SecurityBaselineTemplate]],Field(discriminator="odata_type")]]] = Field(alias="migratableTo", default=None,)
-	settings: Optional[list[Annotated[Union[DeviceManagementAbstractComplexSettingInstance, DeviceManagementBooleanSettingInstance, DeviceManagementCollectionSettingInstance, DeviceManagementComplexSettingInstance, DeviceManagementIntegerSettingInstance, DeviceManagementStringSettingInstance]],Field(discriminator="odata_type")]]] = Field(alias="settings", default=None,)
+	migratableTo: Optional[list[Annotated[Union[SecurityBaselineTemplate],Field(discriminator="odata_type")]]] = Field(alias="migratableTo", default=None,)
+	settings: Optional[list[Annotated[Union[DeviceManagementAbstractComplexSettingInstance, DeviceManagementBooleanSettingInstance, DeviceManagementCollectionSettingInstance, DeviceManagementComplexSettingInstance, DeviceManagementIntegerSettingInstance, DeviceManagementStringSettingInstance],Field(discriminator="odata_type")]]] = Field(alias="settings", default=None,)
 
 	@model_validator(mode="wrap")
 	def convert_discriminator_class(cls, data: Any, handler: ModelWrapValidatorHandler[Self]) -> Self:

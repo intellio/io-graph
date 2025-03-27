@@ -12,8 +12,8 @@ from typing import TYPE_CHECKING
 if TYPE_CHECKING:
 	from ......request_adapter import HttpxRequestAdapter
 from iograph_models.beta.evaluate_dynamic_membership_result import EvaluateDynamicMembershipResult
-from iograph_models.beta.evaluate_dynamic_membership_post_request import Evaluate_dynamic_membershipPostRequest
 from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.beta.evaluate_dynamic_membership_post_request import Evaluate_dynamic_membershipPostRequest
 
 
 class EvaluateDynamicMembershipRequest(BaseRequestBuilder):

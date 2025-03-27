@@ -9,7 +9,7 @@ from pydantic import BaseModel, Field, SerializeAsAny
 class MacOSAzureAdSingleSignOnExtension(BaseModel):
 	odata_type: Literal["#microsoft.graph.macOSAzureAdSingleSignOnExtension"] = Field(alias="@odata.type", default="#microsoft.graph.macOSAzureAdSingleSignOnExtension")
 	bundleIdAccessControlList: Optional[list[str]] = Field(alias="bundleIdAccessControlList", default=None,)
-	configurations: Optional[list[Annotated[Union[KeyBooleanValuePair, KeyIntegerValuePair, KeyRealValuePair, KeyStringValuePair]],Field(discriminator="odata_type")]]] = Field(alias="configurations", default=None,)
+	configurations: Optional[list[Annotated[Union[KeyBooleanValuePair, KeyIntegerValuePair, KeyRealValuePair, KeyStringValuePair],Field(discriminator="odata_type")]]] = Field(alias="configurations", default=None,)
 	enableSharedDeviceMode: Optional[bool] = Field(alias="enableSharedDeviceMode", default=None,)
 
 from .key_boolean_value_pair import KeyBooleanValuePair

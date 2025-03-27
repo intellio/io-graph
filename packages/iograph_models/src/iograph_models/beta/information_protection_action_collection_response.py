@@ -8,7 +8,7 @@ from pydantic import BaseModel, Field, SerializeAsAny
 class InformationProtectionActionCollectionResponse(BaseModel):
 	odata_count: Optional[int] = Field(alias="@odata.count", default=None,)
 	odata_nextLink: Optional[str] = Field(alias="@odata.nextLink", default=None,)
-	value: Optional[list[Annotated[Union[AddContentFooterAction, AddContentHeaderAction, AddWatermarkAction, ApplyLabelAction, CustomAction, JustifyAction, MetadataAction, ProtectAdhocAction, ProtectByTemplateAction, ProtectDoNotForwardAction, RecommendLabelAction, RemoveContentFooterAction, RemoveContentHeaderAction, RemoveProtectionAction, RemoveWatermarkAction]],Field(discriminator="odata_type")]]] = Field(alias="value", default=None,)
+	value: Optional[list[Annotated[Union[AddContentFooterAction, AddContentHeaderAction, AddWatermarkAction, ApplyLabelAction, CustomAction, JustifyAction, MetadataAction, ProtectAdhocAction, ProtectByTemplateAction, ProtectDoNotForwardAction, RecommendLabelAction, RemoveContentFooterAction, RemoveContentHeaderAction, RemoveProtectionAction, RemoveWatermarkAction],Field(discriminator="odata_type")]]] = Field(alias="value", default=None,)
 
 from .add_content_footer_action import AddContentFooterAction
 from .add_content_header_action import AddContentHeaderAction

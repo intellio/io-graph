@@ -14,8 +14,8 @@ if TYPE_CHECKING:
 	from .internal_sponsors import InternalSponsorsRequest
 	from .external_sponsors import ExternalSponsorsRequest
 	from ......request_adapter import HttpxRequestAdapter
-from iograph_models.beta.connected_organization import ConnectedOrganization
 from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.beta.connected_organization import ConnectedOrganization
 
 
 class ByConnectedOrganizationIdRequest(BaseRequestBuilder):

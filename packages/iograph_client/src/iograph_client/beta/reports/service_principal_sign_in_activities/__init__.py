@@ -14,9 +14,9 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_service_principal_sign_in_activity_id import ByServicePrincipalSignInActivityIdRequest
 	from ....request_adapter import HttpxRequestAdapter
+from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.beta.service_principal_sign_in_activity import ServicePrincipalSignInActivity
 from iograph_models.beta.service_principal_sign_in_activity_collection_response import ServicePrincipalSignInActivityCollectionResponse
-from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 
 
 class ServicePrincipalSignInActivitiesRequest(BaseRequestBuilder):

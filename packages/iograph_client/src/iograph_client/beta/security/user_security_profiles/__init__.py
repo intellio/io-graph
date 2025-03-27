@@ -14,9 +14,9 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_user_security_profile_id import ByUserSecurityProfileIdRequest
 	from ....request_adapter import HttpxRequestAdapter
-from iograph_models.beta.user_security_profile_collection_response import UserSecurityProfileCollectionResponse
 from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.beta.user_security_profile import UserSecurityProfile
+from iograph_models.beta.user_security_profile_collection_response import UserSecurityProfileCollectionResponse
 
 
 class UserSecurityProfilesRequest(BaseRequestBuilder):

@@ -21,7 +21,7 @@ class AccessPackageAssignmentPolicy(BaseModel):
 	expirationDateTime: Optional[datetime] = Field(alias="expirationDateTime", default=None,)
 	modifiedBy: Optional[str] = Field(alias="modifiedBy", default=None,)
 	modifiedDateTime: Optional[datetime] = Field(alias="modifiedDateTime", default=None,)
-	questions: Optional[list[Annotated[Union[AccessPackageMultipleChoiceQuestion, AccessPackageTextInputQuestion]],Field(discriminator="odata_type")]]] = Field(alias="questions", default=None,)
+	questions: Optional[list[Annotated[Union[AccessPackageMultipleChoiceQuestion, AccessPackageTextInputQuestion],Field(discriminator="odata_type")]]] = Field(alias="questions", default=None,)
 	requestApprovalSettings: Optional[ApprovalSettings] = Field(alias="requestApprovalSettings", default=None,)
 	requestorSettings: Optional[RequestorSettings] = Field(alias="requestorSettings", default=None,)
 	verifiableCredentialSettings: Optional[VerifiableCredentialSettings] = Field(alias="verifiableCredentialSettings", default=None,)

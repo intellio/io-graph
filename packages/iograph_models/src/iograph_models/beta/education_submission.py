@@ -26,7 +26,7 @@ class EducationSubmission(BaseModel):
 	unsubmittedBy: Optional[Union[AiInteractionMentionedIdentitySet, ApprovalIdentitySet, ChatMessageFromIdentitySet, ChatMessageMentionedIdentitySet, ChatMessageReactionIdentitySet, CommunicationsIdentitySet, SharePointIdentitySet]] = Field(alias="unsubmittedBy", default=None,discriminator="odata_type", )
 	unsubmittedDateTime: Optional[datetime] = Field(alias="unsubmittedDateTime", default=None,)
 	webUrl: Optional[str] = Field(alias="webUrl", default=None,)
-	outcomes: Optional[list[Annotated[Union[EducationFeedbackOutcome, EducationFeedbackResourceOutcome, EducationPointsOutcome, EducationRubricOutcome]],Field(discriminator="odata_type")]]] = Field(alias="outcomes", default=None,)
+	outcomes: Optional[list[Annotated[Union[EducationFeedbackOutcome, EducationFeedbackResourceOutcome, EducationPointsOutcome, EducationRubricOutcome],Field(discriminator="odata_type")]]] = Field(alias="outcomes", default=None,)
 	resources: Optional[list[EducationSubmissionResource]] = Field(alias="resources", default=None,)
 	submittedResources: Optional[list[EducationSubmissionResource]] = Field(alias="submittedResources", default=None,)
 

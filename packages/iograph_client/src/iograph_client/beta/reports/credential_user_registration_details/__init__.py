@@ -14,9 +14,9 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_credential_user_registration_details_id import ByCredentialUserRegistrationDetailsIdRequest
 	from ....request_adapter import HttpxRequestAdapter
-from iograph_models.beta.credential_user_registration_details import CredentialUserRegistrationDetails
-from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.beta.credential_user_registration_details_collection_response import CredentialUserRegistrationDetailsCollectionResponse
+from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.beta.credential_user_registration_details import CredentialUserRegistrationDetails
 
 
 class CredentialUserRegistrationDetailsRequest(BaseRequestBuilder):

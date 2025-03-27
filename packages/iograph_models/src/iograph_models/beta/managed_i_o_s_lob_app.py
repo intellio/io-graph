@@ -31,7 +31,7 @@ class ManagedIOSLobApp(BaseModel):
 	uploadState: Optional[int] = Field(alias="uploadState", default=None,)
 	assignments: Optional[list[MobileAppAssignment]] = Field(alias="assignments", default=None,)
 	categories: Optional[list[MobileAppCategory]] = Field(alias="categories", default=None,)
-	relationships: Optional[list[Annotated[Union[MobileAppDependency, MobileAppSupersedence]],Field(discriminator="odata_type")]]] = Field(alias="relationships", default=None,)
+	relationships: Optional[list[Annotated[Union[MobileAppDependency, MobileAppSupersedence],Field(discriminator="odata_type")]]] = Field(alias="relationships", default=None,)
 	appAvailability: Optional[ManagedAppAvailability | str] = Field(alias="appAvailability", default=None,)
 	version: Optional[str] = Field(alias="version", default=None,)
 	committedContentVersion: Optional[str] = Field(alias="committedContentVersion", default=None,)

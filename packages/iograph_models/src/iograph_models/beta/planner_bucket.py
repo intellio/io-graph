@@ -14,7 +14,7 @@ class PlannerBucket(BaseModel):
 	name: Optional[str] = Field(alias="name", default=None,)
 	orderHint: Optional[str] = Field(alias="orderHint", default=None,)
 	planId: Optional[str] = Field(alias="planId", default=None,)
-	tasks: Optional[list[Annotated[Union[BusinessScenarioTask]],Field(discriminator="odata_type")]]] = Field(alias="tasks", default=None,)
+	tasks: Optional[list[Annotated[Union[BusinessScenarioTask],Field(discriminator="odata_type")]]] = Field(alias="tasks", default=None,)
 
 from .planner_archival_info import PlannerArchivalInfo
 from .planner_external_bucket_source import PlannerExternalBucketSource

@@ -13,8 +13,8 @@ from typing import TYPE_CHECKING
 if TYPE_CHECKING:
 	from .protection_unit import ProtectionUnitRequest
 	from ......request_adapter import HttpxRequestAdapter
-from iograph_models.beta.restore_point import RestorePoint
 from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.beta.restore_point import RestorePoint
 
 
 class ByRestorePointIdRequest(BaseRequestBuilder):

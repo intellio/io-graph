@@ -14,8 +14,8 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_hardware_configuration_device_state_id import ByHardwareConfigurationDeviceStateIdRequest
 	from ......request_adapter import HttpxRequestAdapter
-from iograph_models.beta.hardware_configuration_device_state_collection_response import HardwareConfigurationDeviceStateCollectionResponse
 from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.beta.hardware_configuration_device_state_collection_response import HardwareConfigurationDeviceStateCollectionResponse
 from iograph_models.beta.hardware_configuration_device_state import HardwareConfigurationDeviceState
 
 

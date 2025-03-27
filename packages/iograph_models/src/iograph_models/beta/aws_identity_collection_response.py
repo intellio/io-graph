@@ -8,7 +8,7 @@ from pydantic import BaseModel, Field, SerializeAsAny
 class AwsIdentityCollectionResponse(BaseModel):
 	odata_count: Optional[int] = Field(alias="@odata.count", default=None,)
 	odata_nextLink: Optional[str] = Field(alias="@odata.nextLink", default=None,)
-	value: Optional[list[Annotated[Union[AwsAccessKey, AwsEc2Instance, AwsGroup, AwsLambda, AwsRole, AwsUser]],Field(discriminator="odata_type")]]] = Field(alias="value", default=None,)
+	value: Optional[list[Annotated[Union[AwsAccessKey, AwsEc2Instance, AwsGroup, AwsLambda, AwsRole, AwsUser],Field(discriminator="odata_type")]]] = Field(alias="value", default=None,)
 
 from .aws_access_key import AwsAccessKey
 from .aws_ec2_instance import AwsEc2Instance

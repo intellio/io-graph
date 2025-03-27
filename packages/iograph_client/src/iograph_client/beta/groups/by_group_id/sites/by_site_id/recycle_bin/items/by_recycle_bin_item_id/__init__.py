@@ -14,8 +14,8 @@ if TYPE_CHECKING:
 	from .last_modified_by_user import LastModifiedByUserRequest
 	from .created_by_user import CreatedByUserRequest
 	from .........request_adapter import HttpxRequestAdapter
-from iograph_models.beta.recycle_bin_item import RecycleBinItem
 from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.beta.recycle_bin_item import RecycleBinItem
 
 
 class ByRecycleBinItemIdRequest(BaseRequestBuilder):

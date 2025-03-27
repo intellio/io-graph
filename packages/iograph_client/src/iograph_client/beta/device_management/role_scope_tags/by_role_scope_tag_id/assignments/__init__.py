@@ -15,8 +15,8 @@ if TYPE_CHECKING:
 	from .by_role_scope_tag_auto_assignment_id import ByRoleScopeTagAutoAssignmentIdRequest
 	from ......request_adapter import HttpxRequestAdapter
 from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
-from iograph_models.beta.role_scope_tag_auto_assignment_collection_response import RoleScopeTagAutoAssignmentCollectionResponse
 from iograph_models.beta.role_scope_tag_auto_assignment import RoleScopeTagAutoAssignment
+from iograph_models.beta.role_scope_tag_auto_assignment_collection_response import RoleScopeTagAutoAssignmentCollectionResponse
 
 
 class AssignmentsRequest(BaseRequestBuilder):

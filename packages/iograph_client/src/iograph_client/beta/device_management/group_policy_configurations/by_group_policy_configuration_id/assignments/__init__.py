@@ -14,9 +14,9 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_group_policy_configuration_assignment_id import ByGroupPolicyConfigurationAssignmentIdRequest
 	from ......request_adapter import HttpxRequestAdapter
+from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.beta.group_policy_configuration_assignment import GroupPolicyConfigurationAssignment
 from iograph_models.beta.group_policy_configuration_assignment_collection_response import GroupPolicyConfigurationAssignmentCollectionResponse
-from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 
 
 class AssignmentsRequest(BaseRequestBuilder):

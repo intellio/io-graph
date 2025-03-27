@@ -8,7 +8,7 @@ from pydantic import BaseModel, Field, SerializeAsAny
 class DeviceManagementSettingDefinitionCollectionResponse(BaseModel):
 	odata_count: Optional[int] = Field(alias="@odata.count", default=None,)
 	odata_nextLink: Optional[str] = Field(alias="@odata.nextLink", default=None,)
-	value: Optional[list[Annotated[Union[DeviceManagementAbstractComplexSettingDefinition, DeviceManagementCollectionSettingDefinition, DeviceManagementComplexSettingDefinition]],Field(discriminator="odata_type")]]] = Field(alias="value", default=None,)
+	value: Optional[list[Annotated[Union[DeviceManagementAbstractComplexSettingDefinition, DeviceManagementCollectionSettingDefinition, DeviceManagementComplexSettingDefinition],Field(discriminator="odata_type")]]] = Field(alias="value", default=None,)
 
 from .device_management_abstract_complex_setting_definition import DeviceManagementAbstractComplexSettingDefinition
 from .device_management_collection_setting_definition import DeviceManagementCollectionSettingDefinition

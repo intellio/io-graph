@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class ForwardPostRequest(BaseModel):
-	ToRecipients: Optional[list[Annotated[Union[AttendeeBase, Attendee]],Field(discriminator="odata_type")]]] = Field(alias="ToRecipients", default=None,)
+	ToRecipients: Optional[list[Annotated[Union[AttendeeBase, Attendee],Field(discriminator="odata_type")]]] = Field(alias="ToRecipients", default=None,)
 	Message: Optional[Union[CalendarSharingMessage, EventMessage, EventMessageRequest, EventMessageResponse]] = Field(alias="Message", default=None,discriminator="odata_type", )
 	Comment: Optional[str] = Field(alias="Comment", default=None,)
 

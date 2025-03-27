@@ -8,7 +8,7 @@ from pydantic import BaseModel, Field, SerializeAsAny
 class EdiscoveryCaseOperationCollectionResponse(BaseModel):
 	odata_count: Optional[int] = Field(alias="@odata.count", default=None,)
 	odata_nextLink: Optional[str] = Field(alias="@odata.nextLink", default=None,)
-	value: Optional[list[Annotated[Union[EdiscoveryAddToReviewSetOperation, EdiscoveryCaseExportOperation, EdiscoveryCaseHoldOperation, EdiscoveryCaseIndexOperation, EdiscoveryEstimateStatisticsOperation, EdiscoveryPurgeDataOperation, EdiscoveryTagOperation]],Field(discriminator="odata_type")]]] = Field(alias="value", default=None,)
+	value: Optional[list[Annotated[Union[EdiscoveryAddToReviewSetOperation, EdiscoveryCaseExportOperation, EdiscoveryCaseHoldOperation, EdiscoveryCaseIndexOperation, EdiscoveryEstimateStatisticsOperation, EdiscoveryPurgeDataOperation, EdiscoveryTagOperation],Field(discriminator="odata_type")]]] = Field(alias="value", default=None,)
 
 from .ediscovery_add_to_review_set_operation import EdiscoveryAddToReviewSetOperation
 from .ediscovery_case_export_operation import EdiscoveryCaseExportOperation

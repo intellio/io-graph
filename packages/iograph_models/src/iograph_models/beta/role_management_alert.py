@@ -8,10 +8,10 @@ from pydantic import BaseModel, Field, SerializeAsAny
 class RoleManagementAlert(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
 	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
-	alertConfigurations: Optional[list[Annotated[Union[InvalidLicenseAlertConfiguration, NoMfaOnRoleActivationAlertConfiguration, RedundantAssignmentAlertConfiguration, RolesAssignedOutsidePrivilegedIdentityManagementAlertConfiguration, SequentialActivationRenewalsAlertConfiguration, StaleSignInAlertConfiguration, TooManyGlobalAdminsAssignedToTenantAlertConfiguration]],Field(discriminator="odata_type")]]] = Field(alias="alertConfigurations", default=None,)
+	alertConfigurations: Optional[list[Annotated[Union[InvalidLicenseAlertConfiguration, NoMfaOnRoleActivationAlertConfiguration, RedundantAssignmentAlertConfiguration, RolesAssignedOutsidePrivilegedIdentityManagementAlertConfiguration, SequentialActivationRenewalsAlertConfiguration, StaleSignInAlertConfiguration, TooManyGlobalAdminsAssignedToTenantAlertConfiguration],Field(discriminator="odata_type")]]] = Field(alias="alertConfigurations", default=None,)
 	alertDefinitions: Optional[list[UnifiedRoleManagementAlertDefinition]] = Field(alias="alertDefinitions", default=None,)
 	alerts: Optional[list[UnifiedRoleManagementAlert]] = Field(alias="alerts", default=None,)
-	operations: Optional[list[Annotated[Union[AttackSimulationOperation, EngagementAsyncOperation, GoalsExportJob, RichLongRunningOperation, IndustryDataValidateOperation, IndustryDataFileValidateOperation]],Field(discriminator="odata_type")]]] = Field(alias="operations", default=None,)
+	operations: Optional[list[Annotated[Union[AttackSimulationOperation, EngagementAsyncOperation, GoalsExportJob, RichLongRunningOperation, IndustryDataValidateOperation, IndustryDataFileValidateOperation],Field(discriminator="odata_type")]]] = Field(alias="operations", default=None,)
 
 from .invalid_license_alert_configuration import InvalidLicenseAlertConfiguration
 from .no_mfa_on_role_activation_alert_configuration import NoMfaOnRoleActivationAlertConfiguration

@@ -10,8 +10,8 @@ class DeviceManagementIntentSettingCategory(BaseModel):
 	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
 	displayName: Optional[str] = Field(alias="displayName", default=None,)
 	hasRequiredSetting: Optional[bool] = Field(alias="hasRequiredSetting", default=None,)
-	settingDefinitions: Optional[list[Annotated[Union[DeviceManagementAbstractComplexSettingDefinition, DeviceManagementCollectionSettingDefinition, DeviceManagementComplexSettingDefinition]],Field(discriminator="odata_type")]]] = Field(alias="settingDefinitions", default=None,)
-	settings: Optional[list[Annotated[Union[DeviceManagementAbstractComplexSettingInstance, DeviceManagementBooleanSettingInstance, DeviceManagementCollectionSettingInstance, DeviceManagementComplexSettingInstance, DeviceManagementIntegerSettingInstance, DeviceManagementStringSettingInstance]],Field(discriminator="odata_type")]]] = Field(alias="settings", default=None,)
+	settingDefinitions: Optional[list[Annotated[Union[DeviceManagementAbstractComplexSettingDefinition, DeviceManagementCollectionSettingDefinition, DeviceManagementComplexSettingDefinition],Field(discriminator="odata_type")]]] = Field(alias="settingDefinitions", default=None,)
+	settings: Optional[list[Annotated[Union[DeviceManagementAbstractComplexSettingInstance, DeviceManagementBooleanSettingInstance, DeviceManagementCollectionSettingInstance, DeviceManagementComplexSettingInstance, DeviceManagementIntegerSettingInstance, DeviceManagementStringSettingInstance],Field(discriminator="odata_type")]]] = Field(alias="settings", default=None,)
 
 from .device_management_abstract_complex_setting_definition import DeviceManagementAbstractComplexSettingDefinition
 from .device_management_collection_setting_definition import DeviceManagementCollectionSettingDefinition

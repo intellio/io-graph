@@ -25,8 +25,8 @@ class DepOnboardingSetting(BaseModel):
 	defaultMacOsEnrollmentProfile: Optional[DepMacOSEnrollmentProfile] = Field(alias="defaultMacOsEnrollmentProfile", default=None,)
 	defaultTvOSEnrollmentProfile: Optional[DepTvOSEnrollmentProfile] = Field(alias="defaultTvOSEnrollmentProfile", default=None,)
 	defaultVisionOSEnrollmentProfile: Optional[DepVisionOSEnrollmentProfile] = Field(alias="defaultVisionOSEnrollmentProfile", default=None,)
-	enrollmentProfiles: Optional[list[Annotated[Union[DepEnrollmentBaseProfile, DepIOSEnrollmentProfile, DepMacOSEnrollmentProfile, DepEnrollmentProfile, DepTvOSEnrollmentProfile, DepVisionOSEnrollmentProfile]],Field(discriminator="odata_type")]]] = Field(alias="enrollmentProfiles", default=None,)
-	importedAppleDeviceIdentities: Optional[list[Annotated[Union[ImportedAppleDeviceIdentityResult]],Field(discriminator="odata_type")]]] = Field(alias="importedAppleDeviceIdentities", default=None,)
+	enrollmentProfiles: Optional[list[Annotated[Union[DepEnrollmentBaseProfile, DepIOSEnrollmentProfile, DepMacOSEnrollmentProfile, DepEnrollmentProfile, DepTvOSEnrollmentProfile, DepVisionOSEnrollmentProfile],Field(discriminator="odata_type")]]] = Field(alias="enrollmentProfiles", default=None,)
+	importedAppleDeviceIdentities: Optional[list[Annotated[Union[ImportedAppleDeviceIdentityResult],Field(discriminator="odata_type")]]] = Field(alias="importedAppleDeviceIdentities", default=None,)
 
 from .dep_token_type import DepTokenType
 from .dep_i_o_s_enrollment_profile import DepIOSEnrollmentProfile

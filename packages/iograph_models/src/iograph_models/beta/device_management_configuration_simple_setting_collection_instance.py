@@ -10,7 +10,7 @@ class DeviceManagementConfigurationSimpleSettingCollectionInstance(BaseModel):
 	settingDefinitionId: Optional[str] = Field(alias="settingDefinitionId", default=None,)
 	settingInstanceTemplateReference: Optional[DeviceManagementConfigurationSettingInstanceTemplateReference] = Field(alias="settingInstanceTemplateReference", default=None,)
 	odata_type: Literal["#microsoft.graph.deviceManagementConfigurationSimpleSettingCollectionInstance"] = Field(alias="@odata.type", default="#microsoft.graph.deviceManagementConfigurationSimpleSettingCollectionInstance")
-	simpleSettingCollectionValue: Optional[list[Annotated[Union[DeviceManagementConfigurationIntegerSettingValue, DeviceManagementConfigurationSecretSettingValue, DeviceManagementConfigurationStringSettingValue, DeviceManagementConfigurationReferenceSettingValue]],Field(discriminator="odata_type")]]] = Field(alias="simpleSettingCollectionValue", default=None,)
+	simpleSettingCollectionValue: Optional[list[Annotated[Union[DeviceManagementConfigurationIntegerSettingValue, DeviceManagementConfigurationSecretSettingValue, DeviceManagementConfigurationStringSettingValue, DeviceManagementConfigurationReferenceSettingValue],Field(discriminator="odata_type")]]] = Field(alias="simpleSettingCollectionValue", default=None,)
 
 from .device_management_configuration_setting_instance_template_reference import DeviceManagementConfigurationSettingInstanceTemplateReference
 from .device_management_configuration_integer_setting_value import DeviceManagementConfigurationIntegerSettingValue

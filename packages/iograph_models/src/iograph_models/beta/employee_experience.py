@@ -9,7 +9,7 @@ class EmployeeExperience(BaseModel):
 	communities: Optional[list[Community]] = Field(alias="communities", default=None,)
 	engagementAsyncOperations: Optional[list[EngagementAsyncOperation]] = Field(alias="engagementAsyncOperations", default=None,)
 	goals: Optional[Goals] = Field(alias="goals", default=None,)
-	learningCourseActivities: Optional[list[Annotated[Union[LearningAssignment, LearningSelfInitiatedCourse]],Field(discriminator="odata_type")]]] = Field(alias="learningCourseActivities", default=None,)
+	learningCourseActivities: Optional[list[Annotated[Union[LearningAssignment, LearningSelfInitiatedCourse],Field(discriminator="odata_type")]]] = Field(alias="learningCourseActivities", default=None,)
 	learningProviders: Optional[list[LearningProvider]] = Field(alias="learningProviders", default=None,)
 	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
 

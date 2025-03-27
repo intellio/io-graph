@@ -11,8 +11,8 @@ from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:
 	from .....request_adapter import HttpxRequestAdapter
-from iograph_models.beta.get_devices_without_compliance_policy_report_post_request import Get_devices_without_compliance_policy_reportPostRequest
 from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.beta.get_devices_without_compliance_policy_report_post_request import Get_devices_without_compliance_policy_reportPostRequest
 
 
 class GetDevicesWithoutCompliancePolicyReportRequest(BaseRequestBuilder):

@@ -14,8 +14,8 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_bitlocker_recovery_key_id import ByBitlockerRecoveryKeyIdRequest
 	from ......request_adapter import HttpxRequestAdapter
-from iograph_models.beta.bitlocker_recovery_key_collection_response import BitlockerRecoveryKeyCollectionResponse
 from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.beta.bitlocker_recovery_key_collection_response import BitlockerRecoveryKeyCollectionResponse
 
 
 class RecoveryKeysRequest(BaseRequestBuilder):

@@ -38,7 +38,7 @@ class AndroidCompliancePolicy(BaseModel):
 	passwordRequiredType: Optional[AndroidRequiredPasswordType | str] = Field(alias="passwordRequiredType", default=None,)
 	passwordSignInFailureCountBeforeFactoryReset: Optional[int] = Field(alias="passwordSignInFailureCountBeforeFactoryReset", default=None,)
 	requiredPasswordComplexity: Optional[AndroidRequiredPasswordComplexity | str] = Field(alias="requiredPasswordComplexity", default=None,)
-	restrictedApps: Optional[list[Annotated[Union[AppleAppListItem]],Field(discriminator="odata_type")]]] = Field(alias="restrictedApps", default=None,)
+	restrictedApps: Optional[list[Annotated[Union[AppleAppListItem],Field(discriminator="odata_type")]]] = Field(alias="restrictedApps", default=None,)
 	securityBlockDeviceAdministratorManagedDevices: Optional[bool] = Field(alias="securityBlockDeviceAdministratorManagedDevices", default=None,)
 	securityBlockJailbrokenDevices: Optional[bool] = Field(alias="securityBlockJailbrokenDevices", default=None,)
 	securityDisableUsbDebugging: Optional[bool] = Field(alias="securityDisableUsbDebugging", default=None,)

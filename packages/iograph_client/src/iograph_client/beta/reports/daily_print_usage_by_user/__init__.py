@@ -14,9 +14,9 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_print_usage_by_user_id import ByPrintUsageByUserIdRequest
 	from ....request_adapter import HttpxRequestAdapter
-from iograph_models.beta.print_usage_by_user_collection_response import PrintUsageByUserCollectionResponse
 from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.beta.print_usage_by_user import PrintUsageByUser
+from iograph_models.beta.print_usage_by_user_collection_response import PrintUsageByUserCollectionResponse
 
 
 class DailyPrintUsageByUserRequest(BaseRequestBuilder):

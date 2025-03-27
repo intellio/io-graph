@@ -30,7 +30,7 @@ class ListItem(BaseModel):
 	driveItem: Optional[DriveItem] = Field(alias="driveItem", default=None,)
 	fields: Optional[FieldValueSet] = Field(alias="fields", default=None,)
 	permissions: Optional[list[Permission]] = Field(alias="permissions", default=None,)
-	versions: Optional[list[Annotated[Union[DocumentSetVersion]],Field(discriminator="odata_type")]]] = Field(alias="versions", default=None,)
+	versions: Optional[list[Annotated[Union[DocumentSetVersion],Field(discriminator="odata_type")]]] = Field(alias="versions", default=None,)
 
 from .ai_interaction_mentioned_identity_set import AiInteractionMentionedIdentitySet
 from .approval_identity_set import ApprovalIdentitySet

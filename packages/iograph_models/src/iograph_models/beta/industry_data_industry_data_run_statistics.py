@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class IndustryDataIndustryDataRunStatistics(BaseModel):
-	activityStatistics: Optional[list[Annotated[Union[IndustryDataInboundActivityResults]],Field(discriminator="odata_type")]]] = Field(alias="activityStatistics", default=None,)
+	activityStatistics: Optional[list[Annotated[Union[IndustryDataInboundActivityResults],Field(discriminator="odata_type")]]] = Field(alias="activityStatistics", default=None,)
 	inboundTotals: Optional[IndustryDataAggregatedInboundStatistics] = Field(alias="inboundTotals", default=None,)
 	runId: Optional[str] = Field(alias="runId", default=None,)
 	status: Optional[IndustryDataIndustryDataRunStatus | str] = Field(alias="status", default=None,)

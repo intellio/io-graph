@@ -9,7 +9,7 @@ from pydantic import BaseModel, Field, SerializeAsAny
 class AccessPackageAssignmentRequest(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
 	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
-	answers: Optional[list[Annotated[Union[AccessPackageAnswerString]],Field(discriminator="odata_type")]]] = Field(alias="answers", default=None,)
+	answers: Optional[list[Annotated[Union[AccessPackageAnswerString],Field(discriminator="odata_type")]]] = Field(alias="answers", default=None,)
 	completedDate: Optional[datetime] = Field(alias="completedDate", default=None,)
 	createdDateTime: Optional[datetime] = Field(alias="createdDateTime", default=None,)
 	customExtensionCalloutInstances: Optional[list[CustomExtensionCalloutInstance]] = Field(alias="customExtensionCalloutInstances", default=None,)

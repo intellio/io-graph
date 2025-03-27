@@ -12,8 +12,8 @@ from typing import TYPE_CHECKING
 if TYPE_CHECKING:
 	from .cloud_app_discovery import CloudAppDiscoveryRequest
 	from ....request_adapter import HttpxRequestAdapter
-from iograph_models.beta.security_data_discovery_root import SecurityDataDiscoveryRoot
 from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.beta.security_data_discovery_root import SecurityDataDiscoveryRoot
 
 
 class DataDiscoveryRequest(BaseRequestBuilder):

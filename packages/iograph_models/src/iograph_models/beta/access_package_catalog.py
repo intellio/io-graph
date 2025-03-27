@@ -19,7 +19,7 @@ class AccessPackageCatalog(BaseModel):
 	modifiedBy: Optional[str] = Field(alias="modifiedBy", default=None,)
 	modifiedDateTime: Optional[datetime] = Field(alias="modifiedDateTime", default=None,)
 	uniqueName: Optional[str] = Field(alias="uniqueName", default=None,)
-	accessPackageCustomWorkflowExtensions: Optional[list[Annotated[Union[AccessPackageAssignmentRequestWorkflowExtension, AccessPackageAssignmentWorkflowExtension, CustomAccessPackageWorkflowExtension, CustomAuthenticationExtension, OnAttributeCollectionStartCustomExtension, OnAttributeCollectionSubmitCustomExtension, OnOtpSendCustomExtension, OnTokenIssuanceStartCustomExtension, IdentityGovernanceCustomTaskExtension]],Field(discriminator="odata_type")]]] = Field(alias="accessPackageCustomWorkflowExtensions", default=None,)
+	accessPackageCustomWorkflowExtensions: Optional[list[Annotated[Union[AccessPackageAssignmentRequestWorkflowExtension, AccessPackageAssignmentWorkflowExtension, CustomAccessPackageWorkflowExtension, CustomAuthenticationExtension, OnAttributeCollectionStartCustomExtension, OnAttributeCollectionSubmitCustomExtension, OnOtpSendCustomExtension, OnTokenIssuanceStartCustomExtension, IdentityGovernanceCustomTaskExtension],Field(discriminator="odata_type")]]] = Field(alias="accessPackageCustomWorkflowExtensions", default=None,)
 	accessPackageResourceRoles: Optional[list[AccessPackageResourceRole]] = Field(alias="accessPackageResourceRoles", default=None,)
 	accessPackageResources: Optional[list[AccessPackageResource]] = Field(alias="accessPackageResources", default=None,)
 	accessPackageResourceScopes: Optional[list[AccessPackageResourceScope]] = Field(alias="accessPackageResourceScopes", default=None,)

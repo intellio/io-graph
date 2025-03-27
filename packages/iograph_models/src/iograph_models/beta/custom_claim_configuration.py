@@ -8,7 +8,7 @@ from pydantic import BaseModel, Field, SerializeAsAny
 class CustomClaimConfiguration(BaseModel):
 	attribute: Optional[Union[SourcedAttribute, ValueBasedAttribute]] = Field(alias="attribute", default=None,discriminator="odata_type", )
 	condition: Optional[Union[CustomClaimCondition]] = Field(alias="condition", default=None,discriminator="odata_type", )
-	transformations: Optional[list[Annotated[Union[ContainsTransformation, EndsWithTransformation, ExtractAlphaTransformation, ExtractMailPrefixTransformation, ExtractNumberTransformation, ExtractTransformation, IfEmptyTransformation, IfNotEmptyTransformation, JoinTransformation, RegexReplaceTransformation, StartsWithTransformation, SubstringTransformation, ToLowercaseTransformation, ToUppercaseTransformation, TrimTransformation]],Field(discriminator="odata_type")]]] = Field(alias="transformations", default=None,)
+	transformations: Optional[list[Annotated[Union[ContainsTransformation, EndsWithTransformation, ExtractAlphaTransformation, ExtractMailPrefixTransformation, ExtractNumberTransformation, ExtractTransformation, IfEmptyTransformation, IfNotEmptyTransformation, JoinTransformation, RegexReplaceTransformation, StartsWithTransformation, SubstringTransformation, ToLowercaseTransformation, ToUppercaseTransformation, TrimTransformation],Field(discriminator="odata_type")]]] = Field(alias="transformations", default=None,)
 	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
 
 from .sourced_attribute import SourcedAttribute

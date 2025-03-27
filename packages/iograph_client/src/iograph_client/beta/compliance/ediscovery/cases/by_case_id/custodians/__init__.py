@@ -16,9 +16,9 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_custodian_id import ByCustodianIdRequest
 	from .......request_adapter import HttpxRequestAdapter
+from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.beta.ediscovery_custodian import EdiscoveryCustodian
 from iograph_models.beta.ediscovery_custodian_collection_response import EdiscoveryCustodianCollectionResponse
-from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 
 
 class CustodiansRequest(BaseRequestBuilder):

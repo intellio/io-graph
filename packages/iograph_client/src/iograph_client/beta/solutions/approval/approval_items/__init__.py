@@ -15,8 +15,8 @@ if TYPE_CHECKING:
 	from .by_approval_item_id import ByApprovalItemIdRequest
 	from .....request_adapter import HttpxRequestAdapter
 from iograph_models.beta.approval_item import ApprovalItem
-from iograph_models.beta.approval_item_collection_response import ApprovalItemCollectionResponse
 from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.beta.approval_item_collection_response import ApprovalItemCollectionResponse
 
 
 class ApprovalItemsRequest(BaseRequestBuilder):

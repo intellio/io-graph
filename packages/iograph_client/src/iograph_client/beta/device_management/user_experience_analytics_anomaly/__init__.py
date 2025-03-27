@@ -14,9 +14,9 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_user_experience_analytics_anomaly_id import ByUserExperienceAnalyticsAnomalyIdRequest
 	from ....request_adapter import HttpxRequestAdapter
+from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.beta.user_experience_analytics_anomaly import UserExperienceAnalyticsAnomaly
 from iograph_models.beta.user_experience_analytics_anomaly_collection_response import UserExperienceAnalyticsAnomalyCollectionResponse
-from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 
 
 class UserExperienceAnalyticsAnomalyRequest(BaseRequestBuilder):

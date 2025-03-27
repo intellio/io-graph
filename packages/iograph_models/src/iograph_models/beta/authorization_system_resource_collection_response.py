@@ -8,7 +8,7 @@ from pydantic import BaseModel, Field, SerializeAsAny
 class AuthorizationSystemResourceCollectionResponse(BaseModel):
 	odata_count: Optional[int] = Field(alias="@odata.count", default=None,)
 	odata_nextLink: Optional[str] = Field(alias="@odata.nextLink", default=None,)
-	value: Optional[list[Annotated[Union[AwsAuthorizationSystemResource, AzureAuthorizationSystemResource, GcpAuthorizationSystemResource]],Field(discriminator="odata_type")]]] = Field(alias="value", default=None,)
+	value: Optional[list[Annotated[Union[AwsAuthorizationSystemResource, AzureAuthorizationSystemResource, GcpAuthorizationSystemResource],Field(discriminator="odata_type")]]] = Field(alias="value", default=None,)
 
 from .aws_authorization_system_resource import AwsAuthorizationSystemResource
 from .azure_authorization_system_resource import AzureAuthorizationSystemResource

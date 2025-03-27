@@ -15,8 +15,8 @@ if TYPE_CHECKING:
 	from .sessions import SessionsRequest
 	from .presenters import PresentersRequest
 	from ......request_adapter import HttpxRequestAdapter
-from iograph_models.beta.virtual_event_townhall import VirtualEventTownhall
 from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.beta.virtual_event_townhall import VirtualEventTownhall
 
 
 class ByVirtualEventTownhallIdRequest(BaseRequestBuilder):

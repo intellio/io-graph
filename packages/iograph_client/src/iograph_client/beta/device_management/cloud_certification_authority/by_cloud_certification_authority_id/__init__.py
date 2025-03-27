@@ -24,8 +24,8 @@ if TYPE_CHECKING:
 	from .change_cloud_certification_authority_status import ChangeCloudCertificationAuthorityStatusRequest
 	from .cloud_certification_authority_leaf_certificate import CloudCertificationAuthorityLeafCertificateRequest
 	from .....request_adapter import HttpxRequestAdapter
-from iograph_models.beta.cloud_certification_authority import CloudCertificationAuthority
 from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.beta.cloud_certification_authority import CloudCertificationAuthority
 
 
 class ByCloudCertificationAuthorityIdRequest(BaseRequestBuilder):

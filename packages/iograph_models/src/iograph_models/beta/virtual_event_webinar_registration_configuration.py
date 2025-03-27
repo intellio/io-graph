@@ -10,7 +10,7 @@ class VirtualEventWebinarRegistrationConfiguration(BaseModel):
 	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
 	capacity: Optional[int] = Field(alias="capacity", default=None,)
 	registrationWebUrl: Optional[str] = Field(alias="registrationWebUrl", default=None,)
-	questions: Optional[list[Annotated[Union[VirtualEventRegistrationCustomQuestion, VirtualEventRegistrationPredefinedQuestion]],Field(discriminator="odata_type")]]] = Field(alias="questions", default=None,)
+	questions: Optional[list[Annotated[Union[VirtualEventRegistrationCustomQuestion, VirtualEventRegistrationPredefinedQuestion],Field(discriminator="odata_type")]]] = Field(alias="questions", default=None,)
 	isManualApprovalEnabled: Optional[bool] = Field(alias="isManualApprovalEnabled", default=None,)
 	isWaitlistEnabled: Optional[bool] = Field(alias="isWaitlistEnabled", default=None,)
 

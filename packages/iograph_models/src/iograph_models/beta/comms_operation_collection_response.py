@@ -8,7 +8,7 @@ from pydantic import BaseModel, Field, SerializeAsAny
 class CommsOperationCollectionResponse(BaseModel):
 	odata_count: Optional[int] = Field(alias="@odata.count", default=None,)
 	odata_nextLink: Optional[str] = Field(alias="@odata.nextLink", default=None,)
-	value: Optional[list[Annotated[Union[AddLargeGalleryViewOperation, CancelMediaProcessingOperation, InviteParticipantsOperation, MuteParticipantOperation, MuteParticipantsOperation, PlayPromptOperation, RecordOperation, SendDtmfTonesOperation, StartHoldMusicOperation, StartRecordingOperation, StartTranscriptionOperation, StopHoldMusicOperation, StopRecordingOperation, StopTranscriptionOperation, SubscribeToToneOperation, UnmuteParticipantOperation, UpdateRecordingStatusOperation]],Field(discriminator="odata_type")]]] = Field(alias="value", default=None,)
+	value: Optional[list[Annotated[Union[AddLargeGalleryViewOperation, CancelMediaProcessingOperation, InviteParticipantsOperation, MuteParticipantOperation, MuteParticipantsOperation, PlayPromptOperation, RecordOperation, SendDtmfTonesOperation, StartHoldMusicOperation, StartRecordingOperation, StartTranscriptionOperation, StopHoldMusicOperation, StopRecordingOperation, StopTranscriptionOperation, SubscribeToToneOperation, UnmuteParticipantOperation, UpdateRecordingStatusOperation],Field(discriminator="odata_type")]]] = Field(alias="value", default=None,)
 
 from .add_large_gallery_view_operation import AddLargeGalleryViewOperation
 from .cancel_media_processing_operation import CancelMediaProcessingOperation

@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class IosSingleSignOnSettings(BaseModel):
-	allowedAppsList: Optional[list[Annotated[Union[AppleAppListItem]],Field(discriminator="odata_type")]]] = Field(alias="allowedAppsList", default=None,)
+	allowedAppsList: Optional[list[Annotated[Union[AppleAppListItem],Field(discriminator="odata_type")]]] = Field(alias="allowedAppsList", default=None,)
 	allowedUrls: Optional[list[str]] = Field(alias="allowedUrls", default=None,)
 	displayName: Optional[str] = Field(alias="displayName", default=None,)
 	kerberosPrincipalName: Optional[str] = Field(alias="kerberosPrincipalName", default=None,)

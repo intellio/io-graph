@@ -14,9 +14,9 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_group_policy_setting_mapping_id import ByGroupPolicySettingMappingIdRequest
 	from ......request_adapter import HttpxRequestAdapter
-from iograph_models.beta.group_policy_setting_mapping import GroupPolicySettingMapping
 from iograph_models.beta.group_policy_setting_mapping_collection_response import GroupPolicySettingMappingCollectionResponse
 from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.beta.group_policy_setting_mapping import GroupPolicySettingMapping
 
 
 class GroupPolicySettingMappingsRequest(BaseRequestBuilder):

@@ -15,7 +15,7 @@ class NetworkaccessAlert(BaseModel):
 	description: Optional[str] = Field(alias="description", default=None,)
 	detectionTechnology: Optional[str] = Field(alias="detectionTechnology", default=None,)
 	displayName: Optional[str] = Field(alias="displayName", default=None,)
-	relatedResources: Optional[list[Annotated[Union[NetworkaccessRelatedDestination, NetworkaccessRelatedDevice, NetworkaccessRelatedFile, NetworkaccessRelatedFileHash, NetworkaccessRelatedMalware, NetworkaccessRelatedRemoteNetwork, NetworkaccessRelatedTenant, NetworkaccessRelatedThreatIntelligence, NetworkaccessRelatedToken, NetworkaccessRelatedTransaction, NetworkaccessRelatedUrl, NetworkaccessRelatedUser, NetworkaccessRelatedWebCategory]],Field(discriminator="odata_type")]]] = Field(alias="relatedResources", default=None,)
+	relatedResources: Optional[list[Annotated[Union[NetworkaccessRelatedDestination, NetworkaccessRelatedDevice, NetworkaccessRelatedFile, NetworkaccessRelatedFileHash, NetworkaccessRelatedMalware, NetworkaccessRelatedRemoteNetwork, NetworkaccessRelatedTenant, NetworkaccessRelatedThreatIntelligence, NetworkaccessRelatedToken, NetworkaccessRelatedTransaction, NetworkaccessRelatedUrl, NetworkaccessRelatedUser, NetworkaccessRelatedWebCategory],Field(discriminator="odata_type")]]] = Field(alias="relatedResources", default=None,)
 	severity: Optional[NetworkaccessAlertSeverity | str] = Field(alias="severity", default=None,)
 	vendorName: Optional[str] = Field(alias="vendorName", default=None,)
 	policy: Optional[NetworkaccessFilteringPolicy] = Field(alias="policy", default=None,)

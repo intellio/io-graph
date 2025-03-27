@@ -18,7 +18,7 @@ class PolicySet(BaseModel):
 	roleScopeTags: Optional[list[str]] = Field(alias="roleScopeTags", default=None,)
 	status: Optional[PolicySetStatus | str] = Field(alias="status", default=None,)
 	assignments: Optional[list[PolicySetAssignment]] = Field(alias="assignments", default=None,)
-	items: Optional[list[Annotated[Union[DeviceCompliancePolicyPolicySetItem, DeviceConfigurationPolicySetItem, DeviceManagementConfigurationPolicyPolicySetItem, DeviceManagementScriptPolicySetItem, EnrollmentRestrictionsConfigurationPolicySetItem, IosLobAppProvisioningConfigurationPolicySetItem, ManagedAppProtectionPolicySetItem, ManagedDeviceMobileAppConfigurationPolicySetItem, MdmWindowsInformationProtectionPolicyPolicySetItem, MobileAppPolicySetItem, TargetedManagedAppConfigurationPolicySetItem, Windows10EnrollmentCompletionPageConfigurationPolicySetItem, WindowsAutopilotDeploymentProfilePolicySetItem]],Field(discriminator="odata_type")]]] = Field(alias="items", default=None,)
+	items: Optional[list[Annotated[Union[DeviceCompliancePolicyPolicySetItem, DeviceConfigurationPolicySetItem, DeviceManagementConfigurationPolicyPolicySetItem, DeviceManagementScriptPolicySetItem, EnrollmentRestrictionsConfigurationPolicySetItem, IosLobAppProvisioningConfigurationPolicySetItem, ManagedAppProtectionPolicySetItem, ManagedDeviceMobileAppConfigurationPolicySetItem, MdmWindowsInformationProtectionPolicyPolicySetItem, MobileAppPolicySetItem, TargetedManagedAppConfigurationPolicySetItem, Windows10EnrollmentCompletionPageConfigurationPolicySetItem, WindowsAutopilotDeploymentProfilePolicySetItem],Field(discriminator="odata_type")]]] = Field(alias="items", default=None,)
 
 from .error_code import ErrorCode
 from .policy_set_status import PolicySetStatus

@@ -8,7 +8,7 @@ from pydantic import BaseModel, Field, SerializeAsAny
 class Print(BaseModel):
 	settings: Optional[PrintSettings] = Field(alias="settings", default=None,)
 	connectors: Optional[list[PrintConnector]] = Field(alias="connectors", default=None,)
-	operations: Optional[list[Annotated[Union[PrinterCreateOperation]],Field(discriminator="odata_type")]]] = Field(alias="operations", default=None,)
+	operations: Optional[list[Annotated[Union[PrinterCreateOperation],Field(discriminator="odata_type")]]] = Field(alias="operations", default=None,)
 	printers: Optional[list[Printer]] = Field(alias="printers", default=None,)
 	printerShares: Optional[list[PrinterShare]] = Field(alias="printerShares", default=None,)
 	services: Optional[list[PrintService]] = Field(alias="services", default=None,)

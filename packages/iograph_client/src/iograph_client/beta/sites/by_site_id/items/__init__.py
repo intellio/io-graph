@@ -14,8 +14,8 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_base_item_id import ByBaseItemIdRequest
 	from .....request_adapter import HttpxRequestAdapter
-from iograph_models.beta.base_item_collection_response import BaseItemCollectionResponse
 from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.beta.base_item_collection_response import BaseItemCollectionResponse
 
 
 class ItemsRequest(BaseRequestBuilder):

@@ -20,8 +20,8 @@ if TYPE_CHECKING:
 	from .messages import MessagesRequest
 	from .message_rules import MessageRulesRequest
 	from .......request_adapter import HttpxRequestAdapter
-from iograph_models.beta.mail_folder import MailFolder
 from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.beta.mail_folder import MailFolder
 
 
 class ByMailFolderId1Request(BaseRequestBuilder):

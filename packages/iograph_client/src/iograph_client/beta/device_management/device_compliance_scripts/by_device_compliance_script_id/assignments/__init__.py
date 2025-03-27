@@ -15,8 +15,8 @@ if TYPE_CHECKING:
 	from .by_device_health_script_assignment_id import ByDeviceHealthScriptAssignmentIdRequest
 	from ......request_adapter import HttpxRequestAdapter
 from iograph_models.beta.device_health_script_assignment import DeviceHealthScriptAssignment
-from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.beta.device_health_script_assignment_collection_response import DeviceHealthScriptAssignmentCollectionResponse
+from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 
 
 class AssignmentsRequest(BaseRequestBuilder):

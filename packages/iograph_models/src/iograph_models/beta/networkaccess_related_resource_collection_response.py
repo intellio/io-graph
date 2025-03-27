@@ -8,7 +8,7 @@ from pydantic import BaseModel, Field, SerializeAsAny
 class NetworkaccessRelatedResourceCollectionResponse(BaseModel):
 	odata_count: Optional[int] = Field(alias="@odata.count", default=None,)
 	odata_nextLink: Optional[str] = Field(alias="@odata.nextLink", default=None,)
-	value: Optional[list[Annotated[Union[NetworkaccessRelatedDestination, NetworkaccessRelatedDevice, NetworkaccessRelatedFile, NetworkaccessRelatedFileHash, NetworkaccessRelatedMalware, NetworkaccessRelatedRemoteNetwork, NetworkaccessRelatedTenant, NetworkaccessRelatedThreatIntelligence, NetworkaccessRelatedToken, NetworkaccessRelatedTransaction, NetworkaccessRelatedUrl, NetworkaccessRelatedUser, NetworkaccessRelatedWebCategory]],Field(discriminator="odata_type")]]] = Field(alias="value", default=None,)
+	value: Optional[list[Annotated[Union[NetworkaccessRelatedDestination, NetworkaccessRelatedDevice, NetworkaccessRelatedFile, NetworkaccessRelatedFileHash, NetworkaccessRelatedMalware, NetworkaccessRelatedRemoteNetwork, NetworkaccessRelatedTenant, NetworkaccessRelatedThreatIntelligence, NetworkaccessRelatedToken, NetworkaccessRelatedTransaction, NetworkaccessRelatedUrl, NetworkaccessRelatedUser, NetworkaccessRelatedWebCategory],Field(discriminator="odata_type")]]] = Field(alias="value", default=None,)
 
 from .networkaccess_related_destination import NetworkaccessRelatedDestination
 from .networkaccess_related_device import NetworkaccessRelatedDevice

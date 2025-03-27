@@ -27,7 +27,7 @@ class AndroidWorkProfileCustomConfiguration(BaseModel):
 	groupAssignments: Optional[list[DeviceConfigurationGroupAssignment]] = Field(alias="groupAssignments", default=None,)
 	userStatuses: Optional[list[DeviceConfigurationUserStatus]] = Field(alias="userStatuses", default=None,)
 	userStatusOverview: Optional[DeviceConfigurationUserOverview] = Field(alias="userStatusOverview", default=None,)
-	omaSettings: Optional[list[Annotated[Union[OmaSettingBase64, OmaSettingBoolean, OmaSettingDateTime, OmaSettingFloatingPoint, OmaSettingInteger, OmaSettingString, OmaSettingStringXml]],Field(discriminator="odata_type")]]] = Field(alias="omaSettings", default=None,)
+	omaSettings: Optional[list[Annotated[Union[OmaSettingBase64, OmaSettingBoolean, OmaSettingDateTime, OmaSettingFloatingPoint, OmaSettingInteger, OmaSettingString, OmaSettingStringXml],Field(discriminator="odata_type")]]] = Field(alias="omaSettings", default=None,)
 
 from .device_management_applicability_rule_device_mode import DeviceManagementApplicabilityRuleDeviceMode
 from .device_management_applicability_rule_os_edition import DeviceManagementApplicabilityRuleOsEdition

@@ -14,7 +14,7 @@ class X509CertificateAuthenticationMethodConfiguration(BaseModel):
 	authenticationModeConfiguration: Optional[X509CertificateAuthenticationModeConfiguration] = Field(alias="authenticationModeConfiguration", default=None,)
 	certificateUserBindings: Optional[list[X509CertificateUserBinding]] = Field(alias="certificateUserBindings", default=None,)
 	issuerHintsConfiguration: Optional[X509CertificateIssuerHintsConfiguration] = Field(alias="issuerHintsConfiguration", default=None,)
-	includeTargets: Optional[list[Annotated[Union[MicrosoftAuthenticatorAuthenticationMethodTarget, PasskeyAuthenticationMethodTarget, SmsAuthenticationMethodTarget, VoiceAuthenticationMethodTarget]],Field(discriminator="odata_type")]]] = Field(alias="includeTargets", default=None,)
+	includeTargets: Optional[list[Annotated[Union[MicrosoftAuthenticatorAuthenticationMethodTarget, PasskeyAuthenticationMethodTarget, SmsAuthenticationMethodTarget, VoiceAuthenticationMethodTarget],Field(discriminator="odata_type")]]] = Field(alias="includeTargets", default=None,)
 
 from .exclude_target import ExcludeTarget
 from .authentication_method_state import AuthenticationMethodState

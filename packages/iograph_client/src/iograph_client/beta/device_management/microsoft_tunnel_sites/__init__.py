@@ -14,9 +14,9 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_microsoft_tunnel_site_id import ByMicrosoftTunnelSiteIdRequest
 	from ....request_adapter import HttpxRequestAdapter
-from iograph_models.beta.microsoft_tunnel_site_collection_response import MicrosoftTunnelSiteCollectionResponse
 from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.beta.microsoft_tunnel_site import MicrosoftTunnelSite
+from iograph_models.beta.microsoft_tunnel_site_collection_response import MicrosoftTunnelSiteCollectionResponse
 
 
 class MicrosoftTunnelSitesRequest(BaseRequestBuilder):

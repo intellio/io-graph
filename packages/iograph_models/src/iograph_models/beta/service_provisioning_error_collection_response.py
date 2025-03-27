@@ -8,7 +8,7 @@ from pydantic import BaseModel, Field, SerializeAsAny
 class ServiceProvisioningErrorCollectionResponse(BaseModel):
 	odata_count: Optional[int] = Field(alias="@odata.count", default=None,)
 	odata_nextLink: Optional[str] = Field(alias="@odata.nextLink", default=None,)
-	value: Optional[list[Annotated[Union[ServiceProvisioningResourceError, ServiceProvisioningXmlError]],Field(discriminator="odata_type")]]] = Field(alias="value", default=None,)
+	value: Optional[list[Annotated[Union[ServiceProvisioningResourceError, ServiceProvisioningXmlError],Field(discriminator="odata_type")]]] = Field(alias="value", default=None,)
 
 from .service_provisioning_resource_error import ServiceProvisioningResourceError
 from .service_provisioning_xml_error import ServiceProvisioningXmlError

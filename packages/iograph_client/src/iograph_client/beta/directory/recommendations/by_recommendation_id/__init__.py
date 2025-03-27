@@ -17,8 +17,8 @@ if TYPE_CHECKING:
 	from .complete import CompleteRequest
 	from .impacted_resources import ImpactedResourcesRequest
 	from .....request_adapter import HttpxRequestAdapter
-from iograph_models.beta.recommendation import Recommendation
 from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.beta.recommendation import Recommendation
 
 
 class ByRecommendationIdRequest(BaseRequestBuilder):

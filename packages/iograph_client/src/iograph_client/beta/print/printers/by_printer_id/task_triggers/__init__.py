@@ -14,8 +14,8 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_print_task_trigger_id import ByPrintTaskTriggerIdRequest
 	from ......request_adapter import HttpxRequestAdapter
-from iograph_models.beta.print_task_trigger import PrintTaskTrigger
 from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.beta.print_task_trigger import PrintTaskTrigger
 from iograph_models.beta.print_task_trigger_collection_response import PrintTaskTriggerCollectionResponse
 
 

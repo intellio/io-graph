@@ -12,7 +12,7 @@ class ReportRoot(BaseModel):
 	applicationSignInDetailedSummary: Optional[list[ApplicationSignInDetailedSummary]] = Field(alias="applicationSignInDetailedSummary", default=None,)
 	authenticationMethods: Optional[AuthenticationMethodsRoot] = Field(alias="authenticationMethods", default=None,)
 	credentialUserRegistrationDetails: Optional[list[CredentialUserRegistrationDetails]] = Field(alias="credentialUserRegistrationDetails", default=None,)
-	dailyPrintUsage: Optional[list[Annotated[Union[PrintUsageByPrinter, PrintUsageByUser]],Field(discriminator="odata_type")]]] = Field(alias="dailyPrintUsage", default=None,)
+	dailyPrintUsage: Optional[list[Annotated[Union[PrintUsageByPrinter, PrintUsageByUser],Field(discriminator="odata_type")]]] = Field(alias="dailyPrintUsage", default=None,)
 	dailyPrintUsageByPrinter: Optional[list[PrintUsageByPrinter]] = Field(alias="dailyPrintUsageByPrinter", default=None,)
 	dailyPrintUsageByUser: Optional[list[PrintUsageByUser]] = Field(alias="dailyPrintUsageByUser", default=None,)
 	dailyPrintUsageSummariesByPrinter: Optional[list[PrintUsageByPrinter]] = Field(alias="dailyPrintUsageSummariesByPrinter", default=None,)

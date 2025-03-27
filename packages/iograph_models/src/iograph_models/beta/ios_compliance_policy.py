@@ -40,7 +40,7 @@ class IosCompliancePolicy(BaseModel):
 	passcodePreviousPasscodeBlockCount: Optional[int] = Field(alias="passcodePreviousPasscodeBlockCount", default=None,)
 	passcodeRequired: Optional[bool] = Field(alias="passcodeRequired", default=None,)
 	passcodeRequiredType: Optional[RequiredPasswordType | str] = Field(alias="passcodeRequiredType", default=None,)
-	restrictedApps: Optional[list[Annotated[Union[AppleAppListItem]],Field(discriminator="odata_type")]]] = Field(alias="restrictedApps", default=None,)
+	restrictedApps: Optional[list[Annotated[Union[AppleAppListItem],Field(discriminator="odata_type")]]] = Field(alias="restrictedApps", default=None,)
 	securityBlockJailbrokenDevices: Optional[bool] = Field(alias="securityBlockJailbrokenDevices", default=None,)
 
 from .device_compliance_policy_assignment import DeviceCompliancePolicyAssignment

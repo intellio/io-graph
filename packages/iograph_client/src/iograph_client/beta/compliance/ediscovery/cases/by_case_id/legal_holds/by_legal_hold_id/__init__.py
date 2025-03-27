@@ -15,8 +15,8 @@ if TYPE_CHECKING:
 	from .unified_group_sources import UnifiedGroupSourcesRequest
 	from .site_sources import SiteSourcesRequest
 	from ........request_adapter import HttpxRequestAdapter
-from iograph_models.beta.ediscovery_legal_hold import EdiscoveryLegalHold
 from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.beta.ediscovery_legal_hold import EdiscoveryLegalHold
 
 
 class ByLegalHoldIdRequest(BaseRequestBuilder):

@@ -8,7 +8,7 @@ from pydantic import BaseModel, Field, SerializeAsAny
 class AccessReviewApplyActionCollectionResponse(BaseModel):
 	odata_count: Optional[int] = Field(alias="@odata.count", default=None,)
 	odata_nextLink: Optional[str] = Field(alias="@odata.nextLink", default=None,)
-	value: Optional[list[Annotated[Union[DisableAndDeleteUserApplyAction, RemoveAccessApplyAction]],Field(discriminator="odata_type")]]] = Field(alias="value", default=None,)
+	value: Optional[list[Annotated[Union[DisableAndDeleteUserApplyAction, RemoveAccessApplyAction],Field(discriminator="odata_type")]]] = Field(alias="value", default=None,)
 
 from .disable_and_delete_user_apply_action import DisableAndDeleteUserApplyAction
 from .remove_access_apply_action import RemoveAccessApplyAction

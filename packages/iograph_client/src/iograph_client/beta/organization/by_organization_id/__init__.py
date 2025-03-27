@@ -23,8 +23,8 @@ if TYPE_CHECKING:
 	from .certificate_based_auth_configuration import CertificateBasedAuthConfigurationRequest
 	from .branding import BrandingRequest
 	from ....request_adapter import HttpxRequestAdapter
-from iograph_models.beta.organization import Organization
 from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.beta.organization import Organization
 
 
 class ByOrganizationIdRequest(BaseRequestBuilder):

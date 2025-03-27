@@ -18,7 +18,7 @@ class UnifiedRoleManagementAlert(BaseModel):
 	scopeType: Optional[str] = Field(alias="scopeType", default=None,)
 	alertConfiguration: Optional[Union[InvalidLicenseAlertConfiguration, NoMfaOnRoleActivationAlertConfiguration, RedundantAssignmentAlertConfiguration, RolesAssignedOutsidePrivilegedIdentityManagementAlertConfiguration, SequentialActivationRenewalsAlertConfiguration, StaleSignInAlertConfiguration, TooManyGlobalAdminsAssignedToTenantAlertConfiguration]] = Field(alias="alertConfiguration", default=None,discriminator="odata_type", )
 	alertDefinition: Optional[UnifiedRoleManagementAlertDefinition] = Field(alias="alertDefinition", default=None,)
-	alertIncidents: Optional[list[Annotated[Union[InvalidLicenseAlertIncident, NoMfaOnRoleActivationAlertIncident, RedundantAssignmentAlertIncident, RolesAssignedOutsidePrivilegedIdentityManagementAlertIncident, SequentialActivationRenewalsAlertIncident, StaleSignInAlertIncident, TooManyGlobalAdminsAssignedToTenantAlertIncident]],Field(discriminator="odata_type")]]] = Field(alias="alertIncidents", default=None,)
+	alertIncidents: Optional[list[Annotated[Union[InvalidLicenseAlertIncident, NoMfaOnRoleActivationAlertIncident, RedundantAssignmentAlertIncident, RolesAssignedOutsidePrivilegedIdentityManagementAlertIncident, SequentialActivationRenewalsAlertIncident, StaleSignInAlertIncident, TooManyGlobalAdminsAssignedToTenantAlertIncident],Field(discriminator="odata_type")]]] = Field(alias="alertIncidents", default=None,)
 
 from .invalid_license_alert_configuration import InvalidLicenseAlertConfiguration
 from .no_mfa_on_role_activation_alert_configuration import NoMfaOnRoleActivationAlertConfiguration

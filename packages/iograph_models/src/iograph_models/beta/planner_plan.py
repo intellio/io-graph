@@ -21,7 +21,7 @@ class PlannerPlan(BaseModel):
 	title: Optional[str] = Field(alias="title", default=None,)
 	buckets: Optional[list[PlannerBucket]] = Field(alias="buckets", default=None,)
 	details: Optional[PlannerPlanDetails] = Field(alias="details", default=None,)
-	tasks: Optional[list[Annotated[Union[BusinessScenarioTask]],Field(discriminator="odata_type")]]] = Field(alias="tasks", default=None,)
+	tasks: Optional[list[Annotated[Union[BusinessScenarioTask],Field(discriminator="odata_type")]]] = Field(alias="tasks", default=None,)
 
 from .planner_archival_info import PlannerArchivalInfo
 from .planner_shared_with_container import PlannerSharedWithContainer

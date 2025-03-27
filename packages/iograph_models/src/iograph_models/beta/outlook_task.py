@@ -29,7 +29,7 @@ class OutlookTask(BaseModel):
 	startDateTime: Optional[DateTimeTimeZone] = Field(alias="startDateTime", default=None,)
 	status: Optional[TaskStatus | str] = Field(alias="status", default=None,)
 	subject: Optional[str] = Field(alias="subject", default=None,)
-	attachments: Optional[list[Annotated[Union[FileAttachment, ItemAttachment, ReferenceAttachment]],Field(discriminator="odata_type")]]] = Field(alias="attachments", default=None,)
+	attachments: Optional[list[Annotated[Union[FileAttachment, ItemAttachment, ReferenceAttachment],Field(discriminator="odata_type")]]] = Field(alias="attachments", default=None,)
 	multiValueExtendedProperties: Optional[list[MultiValueLegacyExtendedProperty]] = Field(alias="multiValueExtendedProperties", default=None,)
 	singleValueExtendedProperties: Optional[list[SingleValueLegacyExtendedProperty]] = Field(alias="singleValueExtendedProperties", default=None,)
 

@@ -8,7 +8,7 @@ from pydantic import BaseModel, Field, SerializeAsAny
 class EasEmailProfileConfigurationBaseCollectionResponse(BaseModel):
 	odata_count: Optional[int] = Field(alias="@odata.count", default=None,)
 	odata_nextLink: Optional[str] = Field(alias="@odata.nextLink", default=None,)
-	value: Optional[list[Annotated[Union[IosEasEmailProfileConfiguration, Windows10EasEmailProfileConfiguration, WindowsPhoneEASEmailProfileConfiguration]],Field(discriminator="odata_type")]]] = Field(alias="value", default=None,)
+	value: Optional[list[Annotated[Union[IosEasEmailProfileConfiguration, Windows10EasEmailProfileConfiguration, WindowsPhoneEASEmailProfileConfiguration],Field(discriminator="odata_type")]]] = Field(alias="value", default=None,)
 
 from .ios_eas_email_profile_configuration import IosEasEmailProfileConfiguration
 from .windows10_eas_email_profile_configuration import Windows10EasEmailProfileConfiguration

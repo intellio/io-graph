@@ -8,7 +8,7 @@ from pydantic import BaseModel, Field, SerializeAsAny
 class BaseItemCollectionResponse(BaseModel):
 	odata_count: Optional[int] = Field(alias="@odata.count", default=None,)
 	odata_nextLink: Optional[str] = Field(alias="@odata.nextLink", default=None,)
-	value: Optional[list[Annotated[Union[BaseSitePage, NewsLinkPage, PageTemplate, SitePage, VideoNewsLinkPage, Drive, DriveItem, List, ListItem, RecycleBin, RecycleBinItem, SharedDriveItem, Site]],Field(discriminator="odata_type")]]] = Field(alias="value", default=None,)
+	value: Optional[list[Annotated[Union[BaseSitePage, NewsLinkPage, PageTemplate, SitePage, VideoNewsLinkPage, Drive, DriveItem, List, ListItem, RecycleBin, RecycleBinItem, SharedDriveItem, Site],Field(discriminator="odata_type")]]] = Field(alias="value", default=None,)
 
 from .base_site_page import BaseSitePage
 from .news_link_page import NewsLinkPage

@@ -13,8 +13,8 @@ from typing import TYPE_CHECKING
 if TYPE_CHECKING:
 	from .data_collection_info import DataCollectionInfoRequest
 	from .....request_adapter import HttpxRequestAdapter
-from iograph_models.beta.authorization_system import AuthorizationSystem
 from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.beta.authorization_system import AuthorizationSystem
 
 
 class ByAuthorizationSystemIdRequest(BaseRequestBuilder):

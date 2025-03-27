@@ -16,7 +16,7 @@ class AuthenticationStrengthPolicy(BaseModel):
 	modifiedDateTime: Optional[datetime] = Field(alias="modifiedDateTime", default=None,)
 	policyType: Optional[AuthenticationStrengthPolicyType | str] = Field(alias="policyType", default=None,)
 	requirementsSatisfied: Optional[AuthenticationStrengthRequirements | str] = Field(alias="requirementsSatisfied", default=None,)
-	combinationConfigurations: Optional[list[Annotated[Union[Fido2CombinationConfiguration, X509CertificateCombinationConfiguration]],Field(discriminator="odata_type")]]] = Field(alias="combinationConfigurations", default=None,)
+	combinationConfigurations: Optional[list[Annotated[Union[Fido2CombinationConfiguration, X509CertificateCombinationConfiguration],Field(discriminator="odata_type")]]] = Field(alias="combinationConfigurations", default=None,)
 
 from .authentication_method_modes import AuthenticationMethodModes
 from .authentication_strength_policy_type import AuthenticationStrengthPolicyType

@@ -8,7 +8,7 @@ from pydantic import BaseModel, Field, SerializeAsAny
 class LabelActionBaseCollectionResponse(BaseModel):
 	odata_count: Optional[int] = Field(alias="@odata.count", default=None,)
 	odata_nextLink: Optional[str] = Field(alias="@odata.nextLink", default=None,)
-	value: Optional[list[Annotated[Union[EncryptContent, EncryptWithTemplate, EncryptWithUserDefinedRights, MarkContent, AddFooter, AddHeader, AddWatermark, ProtectGroup, ProtectOnlineMeetingAction, ProtectSite]],Field(discriminator="odata_type")]]] = Field(alias="value", default=None,)
+	value: Optional[list[Annotated[Union[EncryptContent, EncryptWithTemplate, EncryptWithUserDefinedRights, MarkContent, AddFooter, AddHeader, AddWatermark, ProtectGroup, ProtectOnlineMeetingAction, ProtectSite],Field(discriminator="odata_type")]]] = Field(alias="value", default=None,)
 
 from .encrypt_content import EncryptContent
 from .encrypt_with_template import EncryptWithTemplate

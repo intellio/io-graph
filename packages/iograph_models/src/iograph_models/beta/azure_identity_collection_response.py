@@ -8,7 +8,7 @@ from pydantic import BaseModel, Field, SerializeAsAny
 class AzureIdentityCollectionResponse(BaseModel):
 	odata_count: Optional[int] = Field(alias="@odata.count", default=None,)
 	odata_nextLink: Optional[str] = Field(alias="@odata.nextLink", default=None,)
-	value: Optional[list[Annotated[Union[AzureGroup, AzureManagedIdentity, AzureServerlessFunction, AzureServicePrincipal, AzureUser]],Field(discriminator="odata_type")]]] = Field(alias="value", default=None,)
+	value: Optional[list[Annotated[Union[AzureGroup, AzureManagedIdentity, AzureServerlessFunction, AzureServicePrincipal, AzureUser],Field(discriminator="odata_type")]]] = Field(alias="value", default=None,)
 
 from .azure_group import AzureGroup
 from .azure_managed_identity import AzureManagedIdentity

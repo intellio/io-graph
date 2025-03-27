@@ -14,8 +14,8 @@ if TYPE_CHECKING:
 	from .sessions import SessionsRequest
 	from .lookup import LookupRequest
 	from .....request_adapter import HttpxRequestAdapter
-from iograph_models.beta.exact_match_data_store import ExactMatchDataStore
 from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.beta.exact_match_data_store import ExactMatchDataStore
 
 
 class ByExactMatchDataStoreIdRequest(BaseRequestBuilder):

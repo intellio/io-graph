@@ -8,7 +8,7 @@ from pydantic import BaseModel, Field, SerializeAsAny
 class AwsSecurityToolAdministrationFindingCollectionResponse(BaseModel):
 	odata_count: Optional[int] = Field(alias="@odata.count", default=None,)
 	odata_nextLink: Optional[str] = Field(alias="@odata.nextLink", default=None,)
-	value: Optional[list[Annotated[Union[SecurityToolAwsResourceAdministratorFinding, SecurityToolAwsRoleAdministratorFinding, SecurityToolAwsServerlessFunctionAdministratorFinding, SecurityToolAwsUserAdministratorFinding]],Field(discriminator="odata_type")]]] = Field(alias="value", default=None,)
+	value: Optional[list[Annotated[Union[SecurityToolAwsResourceAdministratorFinding, SecurityToolAwsRoleAdministratorFinding, SecurityToolAwsServerlessFunctionAdministratorFinding, SecurityToolAwsUserAdministratorFinding],Field(discriminator="odata_type")]]] = Field(alias="value", default=None,)
 
 from .security_tool_aws_resource_administrator_finding import SecurityToolAwsResourceAdministratorFinding
 from .security_tool_aws_role_administrator_finding import SecurityToolAwsRoleAdministratorFinding

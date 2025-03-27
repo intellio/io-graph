@@ -13,8 +13,8 @@ from typing import TYPE_CHECKING
 if TYPE_CHECKING:
 	from .source_column import SourceColumnRequest
 	from .......request_adapter import HttpxRequestAdapter
-from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.beta.column_definition import ColumnDefinition
+from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 
 
 class ByColumnDefinitionIdRequest(BaseRequestBuilder):

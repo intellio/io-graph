@@ -18,8 +18,8 @@ class Note(BaseModel):
 	hasAttachments: Optional[bool] = Field(alias="hasAttachments", default=None,)
 	isDeleted: Optional[bool] = Field(alias="isDeleted", default=None,)
 	subject: Optional[str] = Field(alias="subject", default=None,)
-	attachments: Optional[list[Annotated[Union[FileAttachment, ItemAttachment, ReferenceAttachment]],Field(discriminator="odata_type")]]] = Field(alias="attachments", default=None,)
-	extensions: Optional[list[Annotated[Union[OpenTypeExtension, PersonExtension]],Field(discriminator="odata_type")]]] = Field(alias="extensions", default=None,)
+	attachments: Optional[list[Annotated[Union[FileAttachment, ItemAttachment, ReferenceAttachment],Field(discriminator="odata_type")]]] = Field(alias="attachments", default=None,)
+	extensions: Optional[list[Annotated[Union[OpenTypeExtension, PersonExtension],Field(discriminator="odata_type")]]] = Field(alias="extensions", default=None,)
 	multiValueExtendedProperties: Optional[list[MultiValueLegacyExtendedProperty]] = Field(alias="multiValueExtendedProperties", default=None,)
 	singleValueExtendedProperties: Optional[list[SingleValueLegacyExtendedProperty]] = Field(alias="singleValueExtendedProperties", default=None,)
 

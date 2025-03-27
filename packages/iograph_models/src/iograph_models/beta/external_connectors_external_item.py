@@ -11,7 +11,7 @@ class ExternalConnectorsExternalItem(BaseModel):
 	acl: Optional[list[ExternalConnectorsAcl]] = Field(alias="acl", default=None,)
 	content: Optional[ExternalConnectorsExternalItemContent] = Field(alias="content", default=None,)
 	properties: Optional[ExternalConnectorsProperties] = Field(alias="properties", default=None,)
-	activities: Optional[list[Annotated[Union[ExternalConnectorsExternalActivityResult]],Field(discriminator="odata_type")]]] = Field(alias="activities", default=None,)
+	activities: Optional[list[Annotated[Union[ExternalConnectorsExternalActivityResult],Field(discriminator="odata_type")]]] = Field(alias="activities", default=None,)
 
 from .external_connectors_acl import ExternalConnectorsAcl
 from .external_connectors_external_item_content import ExternalConnectorsExternalItemContent

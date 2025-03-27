@@ -14,8 +14,8 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_microsoft_tunnel_health_threshold_id import ByMicrosoftTunnelHealthThresholdIdRequest
 	from ....request_adapter import HttpxRequestAdapter
-from iograph_models.beta.microsoft_tunnel_health_threshold import MicrosoftTunnelHealthThreshold
 from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.beta.microsoft_tunnel_health_threshold import MicrosoftTunnelHealthThreshold
 from iograph_models.beta.microsoft_tunnel_health_threshold_collection_response import MicrosoftTunnelHealthThresholdCollectionResponse
 
 

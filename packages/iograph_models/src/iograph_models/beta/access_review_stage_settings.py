@@ -10,7 +10,7 @@ class AccessReviewStageSettings(BaseModel):
 	dependsOn: Optional[list[str]] = Field(alias="dependsOn", default=None,)
 	durationInDays: Optional[int] = Field(alias="durationInDays", default=None,)
 	fallbackReviewers: Optional[list[AccessReviewReviewerScope]] = Field(alias="fallbackReviewers", default=None,)
-	recommendationInsightSettings: Optional[list[Annotated[Union[GroupPeerOutlierRecommendationInsightSettings, UserLastSignInRecommendationInsightSetting]],Field(discriminator="odata_type")]]] = Field(alias="recommendationInsightSettings", default=None,)
+	recommendationInsightSettings: Optional[list[Annotated[Union[GroupPeerOutlierRecommendationInsightSettings, UserLastSignInRecommendationInsightSetting],Field(discriminator="odata_type")]]] = Field(alias="recommendationInsightSettings", default=None,)
 	recommendationLookBackDuration: Optional[str] = Field(alias="recommendationLookBackDuration", default=None,)
 	recommendationsEnabled: Optional[bool] = Field(alias="recommendationsEnabled", default=None,)
 	reviewers: Optional[list[AccessReviewReviewerScope]] = Field(alias="reviewers", default=None,)

@@ -24,7 +24,7 @@ class VppToken(BaseModel):
 	roleScopeTagIds: Optional[list[str]] = Field(alias="roleScopeTagIds", default=None,)
 	state: Optional[VppTokenState | str] = Field(alias="state", default=None,)
 	token: Optional[str] = Field(alias="token", default=None,)
-	tokenActionResults: Optional[list[Annotated[Union[VppTokenRevokeLicensesActionResult]],Field(discriminator="odata_type")]]] = Field(alias="tokenActionResults", default=None,)
+	tokenActionResults: Optional[list[Annotated[Union[VppTokenRevokeLicensesActionResult],Field(discriminator="odata_type")]]] = Field(alias="tokenActionResults", default=None,)
 	vppTokenAccountType: Optional[VppTokenAccountType | str] = Field(alias="vppTokenAccountType", default=None,)
 
 from .vpp_token_sync_status import VppTokenSyncStatus

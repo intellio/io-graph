@@ -24,7 +24,7 @@ class AccessReviewInstanceDecisionItem(BaseModel):
 	reviewedBy: Optional[Union[AuditUserIdentity]] = Field(alias="reviewedBy", default=None,discriminator="odata_type", )
 	reviewedDateTime: Optional[datetime] = Field(alias="reviewedDateTime", default=None,)
 	target: Optional[Union[AccessReviewInstanceDecisionItemServicePrincipalTarget, AccessReviewInstanceDecisionItemUserTarget]] = Field(alias="target", default=None,discriminator="odata_type", )
-	insights: Optional[list[Annotated[Union[MembershipOutlierInsight, UserSignInInsight]],Field(discriminator="odata_type")]]] = Field(alias="insights", default=None,)
+	insights: Optional[list[Annotated[Union[MembershipOutlierInsight, UserSignInInsight],Field(discriminator="odata_type")]]] = Field(alias="insights", default=None,)
 	instance: Optional[AccessReviewInstance] = Field(alias="instance", default=None,)
 
 from .audit_user_identity import AuditUserIdentity

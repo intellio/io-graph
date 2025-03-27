@@ -14,9 +14,9 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_on_premises_agent_id import ByOnPremisesAgentIdRequest
 	from .....request_adapter import HttpxRequestAdapter
-from iograph_models.beta.on_premises_agent import OnPremisesAgent
-from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.beta.on_premises_agent_collection_response import OnPremisesAgentCollectionResponse
+from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.beta.on_premises_agent import OnPremisesAgent
 
 
 class AgentsRequest(BaseRequestBuilder):

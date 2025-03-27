@@ -8,7 +8,7 @@ from pydantic import BaseModel, Field, SerializeAsAny
 class SecurityImpactedAssetCollectionResponse(BaseModel):
 	odata_count: Optional[int] = Field(alias="@odata.count", default=None,)
 	odata_nextLink: Optional[str] = Field(alias="@odata.nextLink", default=None,)
-	value: Optional[list[Annotated[Union[SecurityImpactedDeviceAsset, SecurityImpactedMailboxAsset, SecurityImpactedUserAsset]],Field(discriminator="odata_type")]]] = Field(alias="value", default=None,)
+	value: Optional[list[Annotated[Union[SecurityImpactedDeviceAsset, SecurityImpactedMailboxAsset, SecurityImpactedUserAsset],Field(discriminator="odata_type")]]] = Field(alias="value", default=None,)
 
 from .security_impacted_device_asset import SecurityImpactedDeviceAsset
 from .security_impacted_mailbox_asset import SecurityImpactedMailboxAsset

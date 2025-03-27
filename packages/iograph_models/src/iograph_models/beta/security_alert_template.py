@@ -8,7 +8,7 @@ from pydantic import BaseModel, Field, SerializeAsAny
 class SecurityAlertTemplate(BaseModel):
 	category: Optional[str] = Field(alias="category", default=None,)
 	description: Optional[str] = Field(alias="description", default=None,)
-	impactedAssets: Optional[list[Annotated[Union[SecurityImpactedDeviceAsset, SecurityImpactedMailboxAsset, SecurityImpactedUserAsset]],Field(discriminator="odata_type")]]] = Field(alias="impactedAssets", default=None,)
+	impactedAssets: Optional[list[Annotated[Union[SecurityImpactedDeviceAsset, SecurityImpactedMailboxAsset, SecurityImpactedUserAsset],Field(discriminator="odata_type")]]] = Field(alias="impactedAssets", default=None,)
 	mitreTechniques: Optional[list[str]] = Field(alias="mitreTechniques", default=None,)
 	recommendedActions: Optional[str] = Field(alias="recommendedActions", default=None,)
 	severity: Optional[SecurityAlertSeverity | str] = Field(alias="severity", default=None,)

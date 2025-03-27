@@ -11,9 +11,9 @@ from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:
 	from .....request_adapter import HttpxRequestAdapter
-from iograph_models.beta.connect_post_request import ConnectPostRequest
 from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.beta.chrome_o_s_onboarding_status import ChromeOSOnboardingStatus
+from iograph_models.beta.connect_post_request import ConnectPostRequest
 
 
 class ConnectRequest(BaseRequestBuilder):

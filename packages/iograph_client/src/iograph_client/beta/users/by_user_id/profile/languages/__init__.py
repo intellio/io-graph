@@ -15,8 +15,8 @@ if TYPE_CHECKING:
 	from .by_language_proficiency_id import ByLanguageProficiencyIdRequest
 	from ......request_adapter import HttpxRequestAdapter
 from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
-from iograph_models.beta.language_proficiency import LanguageProficiency
 from iograph_models.beta.language_proficiency_collection_response import LanguageProficiencyCollectionResponse
+from iograph_models.beta.language_proficiency import LanguageProficiency
 
 
 class LanguagesRequest(BaseRequestBuilder):

@@ -11,8 +11,8 @@ from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:
 	from .......request_adapter import HttpxRequestAdapter
-from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.beta.cross_tenant_identity_sync_policy_partner import CrossTenantIdentitySyncPolicyPartner
+from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 
 
 class IdentitySynchronizationRequest(BaseRequestBuilder):

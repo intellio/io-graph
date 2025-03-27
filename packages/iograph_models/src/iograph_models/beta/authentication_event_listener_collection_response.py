@@ -8,7 +8,7 @@ from pydantic import BaseModel, Field, SerializeAsAny
 class AuthenticationEventListenerCollectionResponse(BaseModel):
 	odata_count: Optional[int] = Field(alias="@odata.count", default=None,)
 	odata_nextLink: Optional[str] = Field(alias="@odata.nextLink", default=None,)
-	value: Optional[list[Annotated[Union[OnAttributeCollectionListener, OnAttributeCollectionStartListener, OnAttributeCollectionSubmitListener, OnAuthenticationMethodLoadStartListener, OnEmailOtpSendListener, OnInteractiveAuthFlowStartListener, OnPhoneMethodLoadStartListener, OnTokenIssuanceStartListener, OnUserCreateStartListener]],Field(discriminator="odata_type")]]] = Field(alias="value", default=None,)
+	value: Optional[list[Annotated[Union[OnAttributeCollectionListener, OnAttributeCollectionStartListener, OnAttributeCollectionSubmitListener, OnAuthenticationMethodLoadStartListener, OnEmailOtpSendListener, OnInteractiveAuthFlowStartListener, OnPhoneMethodLoadStartListener, OnTokenIssuanceStartListener, OnUserCreateStartListener],Field(discriminator="odata_type")]]] = Field(alias="value", default=None,)
 
 from .on_attribute_collection_listener import OnAttributeCollectionListener
 from .on_attribute_collection_start_listener import OnAttributeCollectionStartListener

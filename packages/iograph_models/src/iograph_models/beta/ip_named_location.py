@@ -12,7 +12,7 @@ class IpNamedLocation(BaseModel):
 	createdDateTime: Optional[datetime] = Field(alias="createdDateTime", default=None,)
 	displayName: Optional[str] = Field(alias="displayName", default=None,)
 	modifiedDateTime: Optional[datetime] = Field(alias="modifiedDateTime", default=None,)
-	ipRanges: Optional[list[Annotated[Union[IPv4CidrRange, IPv4Range, IPv6CidrRange, IPv6Range]],Field(discriminator="odata_type")]]] = Field(alias="ipRanges", default=None,)
+	ipRanges: Optional[list[Annotated[Union[IPv4CidrRange, IPv4Range, IPv6CidrRange, IPv6Range],Field(discriminator="odata_type")]]] = Field(alias="ipRanges", default=None,)
 	isTrusted: Optional[bool] = Field(alias="isTrusted", default=None,)
 
 from .i_pv4_cidr_range import IPv4CidrRange

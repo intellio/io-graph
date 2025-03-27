@@ -11,7 +11,7 @@ class Planner(BaseModel):
 	buckets: Optional[list[PlannerBucket]] = Field(alias="buckets", default=None,)
 	plans: Optional[list[PlannerPlan]] = Field(alias="plans", default=None,)
 	rosters: Optional[list[PlannerRoster]] = Field(alias="rosters", default=None,)
-	tasks: Optional[list[Annotated[Union[BusinessScenarioTask]],Field(discriminator="odata_type")]]] = Field(alias="tasks", default=None,)
+	tasks: Optional[list[Annotated[Union[BusinessScenarioTask],Field(discriminator="odata_type")]]] = Field(alias="tasks", default=None,)
 
 from .planner_bucket import PlannerBucket
 from .planner_plan import PlannerPlan

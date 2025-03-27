@@ -14,8 +14,8 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_windows_protection_state_id import ByWindowsProtectionStateIdRequest
 	from .....request_adapter import HttpxRequestAdapter
-from iograph_models.beta.managed_tenants_windows_protection_state_collection_response import ManagedTenantsWindowsProtectionStateCollectionResponse
 from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.beta.managed_tenants_windows_protection_state_collection_response import ManagedTenantsWindowsProtectionStateCollectionResponse
 from iograph_models.beta.managed_tenants_windows_protection_state import ManagedTenantsWindowsProtectionState
 
 

@@ -18,7 +18,7 @@ class PolicyRoot(BaseModel):
 	authorizationPolicy: Optional[list[AuthorizationPolicy]] = Field(alias="authorizationPolicy", default=None,)
 	b2cAuthenticationMethodsPolicy: Optional[B2cAuthenticationMethodsPolicy] = Field(alias="b2cAuthenticationMethodsPolicy", default=None,)
 	claimsMappingPolicies: Optional[list[ClaimsMappingPolicy]] = Field(alias="claimsMappingPolicies", default=None,)
-	conditionalAccessPolicies: Optional[list[Annotated[Union[ConditionalAccessWhatIfPolicy]],Field(discriminator="odata_type")]]] = Field(alias="conditionalAccessPolicies", default=None,)
+	conditionalAccessPolicies: Optional[list[Annotated[Union[ConditionalAccessWhatIfPolicy],Field(discriminator="odata_type")]]] = Field(alias="conditionalAccessPolicies", default=None,)
 	crossTenantAccessPolicy: Optional[CrossTenantAccessPolicy] = Field(alias="crossTenantAccessPolicy", default=None,)
 	defaultAppManagementPolicy: Optional[TenantAppManagementPolicy] = Field(alias="defaultAppManagementPolicy", default=None,)
 	deviceRegistrationPolicy: Optional[DeviceRegistrationPolicy] = Field(alias="deviceRegistrationPolicy", default=None,)

@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class GovernancePolicy(BaseModel):
-	decisionMakerCriteria: Optional[list[Annotated[Union[GroupMembershipGovernanceCriteria, RoleMembershipGovernanceCriteria, UserGovernanceCriteria]],Field(discriminator="odata_type")]]] = Field(alias="decisionMakerCriteria", default=None,)
+	decisionMakerCriteria: Optional[list[Annotated[Union[GroupMembershipGovernanceCriteria, RoleMembershipGovernanceCriteria, UserGovernanceCriteria],Field(discriminator="odata_type")]]] = Field(alias="decisionMakerCriteria", default=None,)
 	notificationPolicy: Optional[GovernanceNotificationPolicy] = Field(alias="notificationPolicy", default=None,)
 	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
 

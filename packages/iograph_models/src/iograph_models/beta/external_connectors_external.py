@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class ExternalConnectorsExternal(BaseModel):
-	authorizationSystems: Optional[list[Annotated[Union[AwsAuthorizationSystem, AzureAuthorizationSystem, GcpAuthorizationSystem]],Field(discriminator="odata_type")]]] = Field(alias="authorizationSystems", default=None,)
+	authorizationSystems: Optional[list[Annotated[Union[AwsAuthorizationSystem, AzureAuthorizationSystem, GcpAuthorizationSystem],Field(discriminator="odata_type")]]] = Field(alias="authorizationSystems", default=None,)
 	connections: Optional[list[ExternalConnectorsExternalConnection]] = Field(alias="connections", default=None,)
 	industryData: Optional[IndustryDataIndustryDataRoot] = Field(alias="industryData", default=None,)
 	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)

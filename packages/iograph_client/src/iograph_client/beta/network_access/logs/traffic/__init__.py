@@ -14,8 +14,8 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_network_access_traffic_transaction_id import ByNetworkAccessTrafficTransactionIdRequest
 	from .....request_adapter import HttpxRequestAdapter
-from iograph_models.beta.networkaccess_network_access_traffic import NetworkaccessNetworkAccessTraffic
 from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.beta.networkaccess_network_access_traffic import NetworkaccessNetworkAccessTraffic
 from iograph_models.beta.networkaccess_network_access_traffic_collection_response import NetworkaccessNetworkAccessTrafficCollectionResponse
 
 

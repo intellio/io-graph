@@ -15,7 +15,7 @@ class NetworkaccessFilteringProfile(BaseModel):
 	name: Optional[str] = Field(alias="name", default=None,)
 	state: Optional[NetworkaccessStatus | str] = Field(alias="state", default=None,)
 	version: Optional[str] = Field(alias="version", default=None,)
-	policies: Optional[list[Annotated[Union[NetworkaccessFilteringPolicyLink, NetworkaccessForwardingPolicyLink]],Field(discriminator="odata_type")]]] = Field(alias="policies", default=None,)
+	policies: Optional[list[Annotated[Union[NetworkaccessFilteringPolicyLink, NetworkaccessForwardingPolicyLink],Field(discriminator="odata_type")]]] = Field(alias="policies", default=None,)
 	createdDateTime: Optional[datetime] = Field(alias="createdDateTime", default=None,)
 	priority: Optional[int] = Field(alias="priority", default=None,)
 	conditionalAccessPolicies: Optional[list[NetworkaccessConditionalAccessPolicy]] = Field(alias="conditionalAccessPolicies", default=None,)

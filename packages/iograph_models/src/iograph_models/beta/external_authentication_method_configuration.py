@@ -14,7 +14,7 @@ class ExternalAuthenticationMethodConfiguration(BaseModel):
 	appId: Optional[str] = Field(alias="appId", default=None,)
 	displayName: Optional[str] = Field(alias="displayName", default=None,)
 	openIdConnectSetting: Optional[OpenIdConnectSetting] = Field(alias="openIdConnectSetting", default=None,)
-	includeTargets: Optional[list[Annotated[Union[MicrosoftAuthenticatorAuthenticationMethodTarget, PasskeyAuthenticationMethodTarget, SmsAuthenticationMethodTarget, VoiceAuthenticationMethodTarget]],Field(discriminator="odata_type")]]] = Field(alias="includeTargets", default=None,)
+	includeTargets: Optional[list[Annotated[Union[MicrosoftAuthenticatorAuthenticationMethodTarget, PasskeyAuthenticationMethodTarget, SmsAuthenticationMethodTarget, VoiceAuthenticationMethodTarget],Field(discriminator="odata_type")]]] = Field(alias="includeTargets", default=None,)
 
 from .exclude_target import ExcludeTarget
 from .authentication_method_state import AuthenticationMethodState

@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class AzureAssociatedIdentities(BaseModel):
-	all: Optional[list[Annotated[Union[AzureGroup, AzureManagedIdentity, AzureServerlessFunction, AzureServicePrincipal, AzureUser]],Field(discriminator="odata_type")]]] = Field(alias="all", default=None,)
+	all: Optional[list[Annotated[Union[AzureGroup, AzureManagedIdentity, AzureServerlessFunction, AzureServicePrincipal, AzureUser],Field(discriminator="odata_type")]]] = Field(alias="all", default=None,)
 	managedIdentities: Optional[list[AzureManagedIdentity]] = Field(alias="managedIdentities", default=None,)
 	servicePrincipals: Optional[list[AzureServicePrincipal]] = Field(alias="servicePrincipals", default=None,)
 	users: Optional[list[AzureUser]] = Field(alias="users", default=None,)

@@ -9,7 +9,7 @@ class WindowsKioskProfile(BaseModel):
 	appConfiguration: Optional[Union[WindowsKioskMultipleApps, WindowsKioskSingleUWPApp, WindowsKioskSingleWin32App]] = Field(alias="appConfiguration", default=None,discriminator="odata_type", )
 	profileId: Optional[str] = Field(alias="profileId", default=None,)
 	profileName: Optional[str] = Field(alias="profileName", default=None,)
-	userAccountsConfiguration: Optional[list[Annotated[Union[WindowsKioskActiveDirectoryGroup, WindowsKioskAutologon, WindowsKioskAzureADGroup, WindowsKioskAzureADUser, WindowsKioskLocalGroup, WindowsKioskLocalUser, WindowsKioskVisitor]],Field(discriminator="odata_type")]]] = Field(alias="userAccountsConfiguration", default=None,)
+	userAccountsConfiguration: Optional[list[Annotated[Union[WindowsKioskActiveDirectoryGroup, WindowsKioskAutologon, WindowsKioskAzureADGroup, WindowsKioskAzureADUser, WindowsKioskLocalGroup, WindowsKioskLocalUser, WindowsKioskVisitor],Field(discriminator="odata_type")]]] = Field(alias="userAccountsConfiguration", default=None,)
 	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
 
 from .windows_kiosk_multiple_apps import WindowsKioskMultipleApps

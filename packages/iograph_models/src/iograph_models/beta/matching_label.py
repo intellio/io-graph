@@ -11,7 +11,7 @@ class MatchingLabel(BaseModel):
 	displayName: Optional[str] = Field(alias="displayName", default=None,)
 	id: Optional[str] = Field(alias="id", default=None,)
 	isEndpointProtectionEnabled: Optional[bool] = Field(alias="isEndpointProtectionEnabled", default=None,)
-	labelActions: Optional[list[Annotated[Union[EncryptContent, EncryptWithTemplate, EncryptWithUserDefinedRights, MarkContent, AddFooter, AddHeader, AddWatermark, ProtectGroup, ProtectOnlineMeetingAction, ProtectSite]],Field(discriminator="odata_type")]]] = Field(alias="labelActions", default=None,)
+	labelActions: Optional[list[Annotated[Union[EncryptContent, EncryptWithTemplate, EncryptWithUserDefinedRights, MarkContent, AddFooter, AddHeader, AddWatermark, ProtectGroup, ProtectOnlineMeetingAction, ProtectSite],Field(discriminator="odata_type")]]] = Field(alias="labelActions", default=None,)
 	name: Optional[str] = Field(alias="name", default=None,)
 	policyTip: Optional[str] = Field(alias="policyTip", default=None,)
 	priority: Optional[int] = Field(alias="priority", default=None,)

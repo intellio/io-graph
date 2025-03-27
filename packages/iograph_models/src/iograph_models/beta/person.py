@@ -20,7 +20,7 @@ class Person(BaseModel):
 	personNotes: Optional[str] = Field(alias="personNotes", default=None,)
 	personType: Optional[str] = Field(alias="personType", default=None,)
 	phones: Optional[list[Phone]] = Field(alias="phones", default=None,)
-	postalAddresses: Optional[list[Annotated[Union[LocationConstraintItem]],Field(discriminator="odata_type")]]] = Field(alias="postalAddresses", default=None,)
+	postalAddresses: Optional[list[Annotated[Union[LocationConstraintItem],Field(discriminator="odata_type")]]] = Field(alias="postalAddresses", default=None,)
 	profession: Optional[str] = Field(alias="profession", default=None,)
 	sources: Optional[list[PersonDataSource]] = Field(alias="sources", default=None,)
 	surname: Optional[str] = Field(alias="surname", default=None,)

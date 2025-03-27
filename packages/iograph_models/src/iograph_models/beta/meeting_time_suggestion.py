@@ -8,7 +8,7 @@ from pydantic import BaseModel, Field, SerializeAsAny
 class MeetingTimeSuggestion(BaseModel):
 	attendeeAvailability: Optional[list[AttendeeAvailability]] = Field(alias="attendeeAvailability", default=None,)
 	confidence: float | str | ReferenceNumeric
-	locations: Optional[list[Annotated[Union[LocationConstraintItem]],Field(discriminator="odata_type")]]] = Field(alias="locations", default=None,)
+	locations: Optional[list[Annotated[Union[LocationConstraintItem],Field(discriminator="odata_type")]]] = Field(alias="locations", default=None,)
 	meetingTimeSlot: Optional[TimeSlot] = Field(alias="meetingTimeSlot", default=None,)
 	order: Optional[int] = Field(alias="order", default=None,)
 	organizerAvailability: Optional[FreeBusyStatus | str] = Field(alias="organizerAvailability", default=None,)

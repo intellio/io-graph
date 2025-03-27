@@ -8,7 +8,7 @@ from pydantic import BaseModel, Field, SerializeAsAny
 class IndustryDataApiDataConnectorCollectionResponse(BaseModel):
 	odata_count: Optional[int] = Field(alias="@odata.count", default=None,)
 	odata_nextLink: Optional[str] = Field(alias="@odata.nextLink", default=None,)
-	value: Optional[list[Annotated[Union[IndustryDataOneRosterApiDataConnector]],Field(discriminator="odata_type")]]] = Field(alias="value", default=None,)
+	value: Optional[list[Annotated[Union[IndustryDataOneRosterApiDataConnector],Field(discriminator="odata_type")]]] = Field(alias="value", default=None,)
 
 from .industry_data_one_roster_api_data_connector import IndustryDataOneRosterApiDataConnector
 

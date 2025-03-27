@@ -15,9 +15,9 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_ediscovery_review_tag_id import ByEdiscoveryReviewTagIdRequest
 	from .......request_adapter import HttpxRequestAdapter
-from iograph_models.beta.security_ediscovery_review_tag import SecurityEdiscoveryReviewTag
-from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.beta.security_ediscovery_review_tag_collection_response import SecurityEdiscoveryReviewTagCollectionResponse
+from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.beta.security_ediscovery_review_tag import SecurityEdiscoveryReviewTag
 
 
 class TagsRequest(BaseRequestBuilder):

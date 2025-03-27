@@ -47,7 +47,7 @@ class Contact(BaseModel):
 	yomiCompanyName: Optional[str] = Field(alias="yomiCompanyName", default=None,)
 	yomiGivenName: Optional[str] = Field(alias="yomiGivenName", default=None,)
 	yomiSurname: Optional[str] = Field(alias="yomiSurname", default=None,)
-	extensions: Optional[list[Annotated[Union[OpenTypeExtension, PersonExtension]],Field(discriminator="odata_type")]]] = Field(alias="extensions", default=None,)
+	extensions: Optional[list[Annotated[Union[OpenTypeExtension, PersonExtension],Field(discriminator="odata_type")]]] = Field(alias="extensions", default=None,)
 	multiValueExtendedProperties: Optional[list[MultiValueLegacyExtendedProperty]] = Field(alias="multiValueExtendedProperties", default=None,)
 	photo: Optional[ProfilePhoto] = Field(alias="photo", default=None,)
 	singleValueExtendedProperties: Optional[list[SingleValueLegacyExtendedProperty]] = Field(alias="singleValueExtendedProperties", default=None,)

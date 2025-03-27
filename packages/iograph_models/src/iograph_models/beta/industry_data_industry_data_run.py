@@ -14,7 +14,7 @@ class IndustryDataIndustryDataRun(BaseModel):
 	endDateTime: Optional[datetime] = Field(alias="endDateTime", default=None,)
 	startDateTime: Optional[datetime] = Field(alias="startDateTime", default=None,)
 	status: Optional[IndustryDataIndustryDataRunStatus | str] = Field(alias="status", default=None,)
-	activities: Optional[list[Annotated[Union[IndustryDataInboundFlowActivity, IndustryDataOutboundFlowActivity]],Field(discriminator="odata_type")]]] = Field(alias="activities", default=None,)
+	activities: Optional[list[Annotated[Union[IndustryDataInboundFlowActivity, IndustryDataOutboundFlowActivity],Field(discriminator="odata_type")]]] = Field(alias="activities", default=None,)
 
 from .public_error import PublicError
 from .industry_data_industry_data_run_status import IndustryDataIndustryDataRunStatus

@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class AwsAssociatedIdentities(BaseModel):
-	all: Optional[list[Annotated[Union[AwsAccessKey, AwsEc2Instance, AwsGroup, AwsLambda, AwsRole, AwsUser]],Field(discriminator="odata_type")]]] = Field(alias="all", default=None,)
+	all: Optional[list[Annotated[Union[AwsAccessKey, AwsEc2Instance, AwsGroup, AwsLambda, AwsRole, AwsUser],Field(discriminator="odata_type")]]] = Field(alias="all", default=None,)
 	roles: Optional[list[AwsRole]] = Field(alias="roles", default=None,)
 	users: Optional[list[AwsUser]] = Field(alias="users", default=None,)
 	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)

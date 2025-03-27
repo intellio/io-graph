@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class MatchingDlpRule(BaseModel):
-	actions: Optional[list[Annotated[Union[BlockAccessAction, NotifyUserAction]],Field(discriminator="odata_type")]]] = Field(alias="actions", default=None,)
+	actions: Optional[list[Annotated[Union[BlockAccessAction, NotifyUserAction],Field(discriminator="odata_type")]]] = Field(alias="actions", default=None,)
 	isMostRestrictive: Optional[bool] = Field(alias="isMostRestrictive", default=None,)
 	policyId: Optional[str] = Field(alias="policyId", default=None,)
 	policyName: Optional[str] = Field(alias="policyName", default=None,)

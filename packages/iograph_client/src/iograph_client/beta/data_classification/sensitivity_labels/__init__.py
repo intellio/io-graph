@@ -15,9 +15,9 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_sensitivity_label_id import BySensitivityLabelIdRequest
 	from ....request_adapter import HttpxRequestAdapter
-from iograph_models.beta.sensitivity_label_collection_response import SensitivityLabelCollectionResponse
 from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.beta.sensitivity_label import SensitivityLabel
+from iograph_models.beta.sensitivity_label_collection_response import SensitivityLabelCollectionResponse
 
 
 class SensitivityLabelsRequest(BaseRequestBuilder):

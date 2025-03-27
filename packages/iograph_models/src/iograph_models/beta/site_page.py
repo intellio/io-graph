@@ -30,7 +30,7 @@ class SitePage(BaseModel):
 	thumbnailWebUrl: Optional[str] = Field(alias="thumbnailWebUrl", default=None,)
 	titleArea: Optional[TitleArea] = Field(alias="titleArea", default=None,)
 	canvasLayout: Optional[CanvasLayout] = Field(alias="canvasLayout", default=None,)
-	webParts: Optional[list[Annotated[Union[StandardWebPart, TextWebPart]],Field(discriminator="odata_type")]]] = Field(alias="webParts", default=None,)
+	webParts: Optional[list[Annotated[Union[StandardWebPart, TextWebPart],Field(discriminator="odata_type")]]] = Field(alias="webParts", default=None,)
 
 from .ai_interaction_mentioned_identity_set import AiInteractionMentionedIdentitySet
 from .approval_identity_set import ApprovalIdentitySet

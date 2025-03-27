@@ -8,7 +8,7 @@ from pydantic import BaseModel, Field, SerializeAsAny
 class CustomClaimTransformationCollectionResponse(BaseModel):
 	odata_count: Optional[int] = Field(alias="@odata.count", default=None,)
 	odata_nextLink: Optional[str] = Field(alias="@odata.nextLink", default=None,)
-	value: Optional[list[Annotated[Union[ContainsTransformation, EndsWithTransformation, ExtractAlphaTransformation, ExtractMailPrefixTransformation, ExtractNumberTransformation, ExtractTransformation, IfEmptyTransformation, IfNotEmptyTransformation, JoinTransformation, RegexReplaceTransformation, StartsWithTransformation, SubstringTransformation, ToLowercaseTransformation, ToUppercaseTransformation, TrimTransformation]],Field(discriminator="odata_type")]]] = Field(alias="value", default=None,)
+	value: Optional[list[Annotated[Union[ContainsTransformation, EndsWithTransformation, ExtractAlphaTransformation, ExtractMailPrefixTransformation, ExtractNumberTransformation, ExtractTransformation, IfEmptyTransformation, IfNotEmptyTransformation, JoinTransformation, RegexReplaceTransformation, StartsWithTransformation, SubstringTransformation, ToLowercaseTransformation, ToUppercaseTransformation, TrimTransformation],Field(discriminator="odata_type")]]] = Field(alias="value", default=None,)
 
 from .contains_transformation import ContainsTransformation
 from .ends_with_transformation import EndsWithTransformation

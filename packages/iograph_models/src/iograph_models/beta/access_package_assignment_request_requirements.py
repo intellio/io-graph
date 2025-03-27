@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class AccessPackageAssignmentRequestRequirements(BaseModel):
-	existingAnswers: Optional[list[Annotated[Union[AccessPackageAnswerString]],Field(discriminator="odata_type")]]] = Field(alias="existingAnswers", default=None,)
+	existingAnswers: Optional[list[Annotated[Union[AccessPackageAnswerString],Field(discriminator="odata_type")]]] = Field(alias="existingAnswers", default=None,)
 	isApprovalRequired: Optional[bool] = Field(alias="isApprovalRequired", default=None,)
 	isApprovalRequiredForExtension: Optional[bool] = Field(alias="isApprovalRequiredForExtension", default=None,)
 	isCustomAssignmentScheduleAllowed: Optional[bool] = Field(alias="isCustomAssignmentScheduleAllowed", default=None,)
@@ -14,7 +14,7 @@ class AccessPackageAssignmentRequestRequirements(BaseModel):
 	policyDescription: Optional[str] = Field(alias="policyDescription", default=None,)
 	policyDisplayName: Optional[str] = Field(alias="policyDisplayName", default=None,)
 	policyId: Optional[str] = Field(alias="policyId", default=None,)
-	questions: Optional[list[Annotated[Union[AccessPackageMultipleChoiceQuestion, AccessPackageTextInputQuestion]],Field(discriminator="odata_type")]]] = Field(alias="questions", default=None,)
+	questions: Optional[list[Annotated[Union[AccessPackageMultipleChoiceQuestion, AccessPackageTextInputQuestion],Field(discriminator="odata_type")]]] = Field(alias="questions", default=None,)
 	schedule: Optional[RequestSchedule] = Field(alias="schedule", default=None,)
 	verifiableCredentialRequirementStatus: Optional[Union[VerifiableCredentialRequired, VerifiableCredentialRetrieved, VerifiableCredentialVerified]] = Field(alias="verifiableCredentialRequirementStatus", default=None,discriminator="odata_type", )
 	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)

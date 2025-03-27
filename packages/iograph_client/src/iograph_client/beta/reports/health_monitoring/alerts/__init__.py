@@ -15,8 +15,8 @@ if TYPE_CHECKING:
 	from .by_alert_id import ByAlertIdRequest
 	from .....request_adapter import HttpxRequestAdapter
 from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
-from iograph_models.beta.health_monitoring_alert import HealthMonitoringAlert
 from iograph_models.beta.health_monitoring_alert_collection_response import HealthMonitoringAlertCollectionResponse
+from iograph_models.beta.health_monitoring_alert import HealthMonitoringAlert
 
 
 class AlertsRequest(BaseRequestBuilder):

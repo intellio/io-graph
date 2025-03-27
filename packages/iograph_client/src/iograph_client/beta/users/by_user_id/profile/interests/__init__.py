@@ -14,8 +14,8 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_person_interest_id import ByPersonInterestIdRequest
 	from ......request_adapter import HttpxRequestAdapter
-from iograph_models.beta.person_interest_collection_response import PersonInterestCollectionResponse
 from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.beta.person_interest_collection_response import PersonInterestCollectionResponse
 from iograph_models.beta.person_interest import PersonInterest
 
 

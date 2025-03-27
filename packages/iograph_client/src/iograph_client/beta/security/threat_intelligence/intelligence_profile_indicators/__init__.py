@@ -14,9 +14,9 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_intelligence_profile_indicator_id import ByIntelligenceProfileIndicatorIdRequest
 	from .....request_adapter import HttpxRequestAdapter
-from iograph_models.beta.security_intelligence_profile_indicator_collection_response import SecurityIntelligenceProfileIndicatorCollectionResponse
 from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.beta.security_intelligence_profile_indicator import SecurityIntelligenceProfileIndicator
+from iograph_models.beta.security_intelligence_profile_indicator_collection_response import SecurityIntelligenceProfileIndicatorCollectionResponse
 
 
 class IntelligenceProfileIndicatorsRequest(BaseRequestBuilder):

@@ -8,7 +8,7 @@ from pydantic import BaseModel, Field, SerializeAsAny
 class UserSetCollectionResponse(BaseModel):
 	odata_count: Optional[int] = Field(alias="@odata.count", default=None,)
 	odata_nextLink: Optional[str] = Field(alias="@odata.nextLink", default=None,)
-	value: Optional[list[Annotated[Union[ConnectedOrganizationMembers, ExternalSponsors, GroupMembers, InternalSponsors, RequestorManager, SingleUser, TargetUserSponsors]],Field(discriminator="odata_type")]]] = Field(alias="value", default=None,)
+	value: Optional[list[Annotated[Union[ConnectedOrganizationMembers, ExternalSponsors, GroupMembers, InternalSponsors, RequestorManager, SingleUser, TargetUserSponsors],Field(discriminator="odata_type")]]] = Field(alias="value", default=None,)
 
 from .connected_organization_members import ConnectedOrganizationMembers
 from .external_sponsors import ExternalSponsors

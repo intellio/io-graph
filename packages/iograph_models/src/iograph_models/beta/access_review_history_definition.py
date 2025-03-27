@@ -18,7 +18,7 @@ class AccessReviewHistoryDefinition(BaseModel):
 	reviewHistoryPeriodEndDateTime: Optional[datetime] = Field(alias="reviewHistoryPeriodEndDateTime", default=None,)
 	reviewHistoryPeriodStartDateTime: Optional[datetime] = Field(alias="reviewHistoryPeriodStartDateTime", default=None,)
 	scheduleSettings: Optional[AccessReviewHistoryScheduleSettings] = Field(alias="scheduleSettings", default=None,)
-	scopes: Optional[list[Annotated[Union[AccessReviewQueryScope, AccessReviewInactiveUsersQueryScope, AccessReviewReviewerScope, PrincipalResourceMembershipsScope]],Field(discriminator="odata_type")]]] = Field(alias="scopes", default=None,)
+	scopes: Optional[list[Annotated[Union[AccessReviewQueryScope, AccessReviewInactiveUsersQueryScope, AccessReviewReviewerScope, PrincipalResourceMembershipsScope],Field(discriminator="odata_type")]]] = Field(alias="scopes", default=None,)
 	status: Optional[AccessReviewHistoryStatus | str] = Field(alias="status", default=None,)
 	instances: Optional[list[AccessReviewHistoryInstance]] = Field(alias="instances", default=None,)
 

@@ -13,8 +13,8 @@ from typing import TYPE_CHECKING
 if TYPE_CHECKING:
 	from .policy import PolicyRequest
 	from .....request_adapter import HttpxRequestAdapter
-from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.beta.networkaccess_alert import NetworkaccessAlert
+from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 
 
 class ByAlertIdRequest(BaseRequestBuilder):

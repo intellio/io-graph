@@ -9,7 +9,7 @@ class CustomClaimsPolicy(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
 	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
 	audienceOverride: Optional[str] = Field(alias="audienceOverride", default=None,)
-	claims: Optional[list[Annotated[Union[CustomClaim, SamlNameIdClaim]],Field(discriminator="odata_type")]]] = Field(alias="claims", default=None,)
+	claims: Optional[list[Annotated[Union[CustomClaim, SamlNameIdClaim],Field(discriminator="odata_type")]]] = Field(alias="claims", default=None,)
 	includeApplicationIdInIssuer: Optional[bool] = Field(alias="includeApplicationIdInIssuer", default=None,)
 	includeBasicClaimSet: Optional[bool] = Field(alias="includeBasicClaimSet", default=None,)
 

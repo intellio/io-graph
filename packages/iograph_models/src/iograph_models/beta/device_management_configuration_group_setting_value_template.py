@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class DeviceManagementConfigurationGroupSettingValueTemplate(BaseModel):
-	children: Optional[list[Annotated[Union[DeviceManagementConfigurationChoiceSettingCollectionInstanceTemplate, DeviceManagementConfigurationChoiceSettingInstanceTemplate, DeviceManagementConfigurationGroupSettingCollectionInstanceTemplate, DeviceManagementConfigurationGroupSettingInstanceTemplate, DeviceManagementConfigurationSimpleSettingCollectionInstanceTemplate, DeviceManagementConfigurationSimpleSettingInstanceTemplate]],Field(discriminator="odata_type")]]] = Field(alias="children", default=None,)
+	children: Optional[list[Annotated[Union[DeviceManagementConfigurationChoiceSettingCollectionInstanceTemplate, DeviceManagementConfigurationChoiceSettingInstanceTemplate, DeviceManagementConfigurationGroupSettingCollectionInstanceTemplate, DeviceManagementConfigurationGroupSettingInstanceTemplate, DeviceManagementConfigurationSimpleSettingCollectionInstanceTemplate, DeviceManagementConfigurationSimpleSettingInstanceTemplate],Field(discriminator="odata_type")]]] = Field(alias="children", default=None,)
 	settingValueTemplateId: Optional[str] = Field(alias="settingValueTemplateId", default=None,)
 	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
 

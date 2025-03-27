@@ -25,7 +25,7 @@ class GroupPolicyDefinition(BaseModel):
 	category: Optional[GroupPolicyCategory] = Field(alias="category", default=None,)
 	definitionFile: Optional[Union[GroupPolicyUploadedDefinitionFile]] = Field(alias="definitionFile", default=None,discriminator="odata_type", )
 	nextVersionDefinition: Optional[GroupPolicyDefinition] = Field(alias="nextVersionDefinition", default=None,)
-	presentations: Optional[list[Annotated[Union[GroupPolicyUploadedPresentation, GroupPolicyPresentationCheckBox, GroupPolicyPresentationComboBox, GroupPolicyPresentationDecimalTextBox, GroupPolicyPresentationDropdownList, GroupPolicyPresentationListBox, GroupPolicyPresentationLongDecimalTextBox, GroupPolicyPresentationMultiTextBox, GroupPolicyPresentationText, GroupPolicyPresentationTextBox]],Field(discriminator="odata_type")]]] = Field(alias="presentations", default=None,)
+	presentations: Optional[list[Annotated[Union[GroupPolicyUploadedPresentation, GroupPolicyPresentationCheckBox, GroupPolicyPresentationComboBox, GroupPolicyPresentationDecimalTextBox, GroupPolicyPresentationDropdownList, GroupPolicyPresentationListBox, GroupPolicyPresentationLongDecimalTextBox, GroupPolicyPresentationMultiTextBox, GroupPolicyPresentationText, GroupPolicyPresentationTextBox],Field(discriminator="odata_type")]]] = Field(alias="presentations", default=None,)
 	previousVersionDefinition: Optional[GroupPolicyDefinition] = Field(alias="previousVersionDefinition", default=None,)
 
 from .group_policy_definition_class_type import GroupPolicyDefinitionClassType

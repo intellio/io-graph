@@ -15,8 +15,8 @@ if TYPE_CHECKING:
 	from .name_pronunciation import NamePronunciationRequest
 	from .item_insights import ItemInsightsRequest
 	from ....request_adapter import HttpxRequestAdapter
-from iograph_models.beta.people_admin_settings import PeopleAdminSettings
 from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.beta.people_admin_settings import PeopleAdminSettings
 
 
 class PeopleRequest(BaseRequestBuilder):

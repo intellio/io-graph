@@ -16,8 +16,8 @@ if TYPE_CHECKING:
 	from .definition_values import DefinitionValuesRequest
 	from .assignments import AssignmentsRequest
 	from .....request_adapter import HttpxRequestAdapter
-from iograph_models.beta.group_policy_configuration import GroupPolicyConfiguration
 from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.beta.group_policy_configuration import GroupPolicyConfiguration
 
 
 class ByGroupPolicyConfigurationIdRequest(BaseRequestBuilder):

@@ -15,8 +15,8 @@ if TYPE_CHECKING:
 	from .by_policy_set_item_id import ByPolicySetItemIdRequest
 	from ......request_adapter import HttpxRequestAdapter
 from iograph_models.beta.policy_set_item_collection_response import PolicySetItemCollectionResponse
-from iograph_models.beta.policy_set_item import PolicySetItem
 from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.beta.policy_set_item import PolicySetItem
 
 
 class ItemsRequest(BaseRequestBuilder):

@@ -31,7 +31,7 @@ class WindowsUniversalAppX(BaseModel):
 	uploadState: Optional[int] = Field(alias="uploadState", default=None,)
 	assignments: Optional[list[MobileAppAssignment]] = Field(alias="assignments", default=None,)
 	categories: Optional[list[MobileAppCategory]] = Field(alias="categories", default=None,)
-	relationships: Optional[list[Annotated[Union[MobileAppDependency, MobileAppSupersedence]],Field(discriminator="odata_type")]]] = Field(alias="relationships", default=None,)
+	relationships: Optional[list[Annotated[Union[MobileAppDependency, MobileAppSupersedence],Field(discriminator="odata_type")]]] = Field(alias="relationships", default=None,)
 	committedContentVersion: Optional[str] = Field(alias="committedContentVersion", default=None,)
 	fileName: Optional[str] = Field(alias="fileName", default=None,)
 	size: Optional[int] = Field(alias="size", default=None,)
@@ -44,7 +44,7 @@ class WindowsUniversalAppX(BaseModel):
 	identityVersion: Optional[str] = Field(alias="identityVersion", default=None,)
 	isBundle: Optional[bool] = Field(alias="isBundle", default=None,)
 	minimumSupportedOperatingSystem: Optional[WindowsMinimumOperatingSystem] = Field(alias="minimumSupportedOperatingSystem", default=None,)
-	committedContainedApps: Optional[list[Annotated[Union[MicrosoftStoreForBusinessContainedApp, WindowsUniversalAppXContainedApp]],Field(discriminator="odata_type")]]] = Field(alias="committedContainedApps", default=None,)
+	committedContainedApps: Optional[list[Annotated[Union[MicrosoftStoreForBusinessContainedApp, WindowsUniversalAppXContainedApp],Field(discriminator="odata_type")]]] = Field(alias="committedContainedApps", default=None,)
 
 from .mime_content import MimeContent
 from .mobile_app_publishing_state import MobileAppPublishingState

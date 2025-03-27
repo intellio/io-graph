@@ -16,7 +16,7 @@ class SensitivityLabel(BaseModel):
 	displayName: Optional[str] = Field(alias="displayName", default=None,)
 	isDefault: Optional[bool] = Field(alias="isDefault", default=None,)
 	isEndpointProtectionEnabled: Optional[bool] = Field(alias="isEndpointProtectionEnabled", default=None,)
-	labelActions: Optional[list[Annotated[Union[EncryptContent, EncryptWithTemplate, EncryptWithUserDefinedRights, MarkContent, AddFooter, AddHeader, AddWatermark, ProtectGroup, ProtectOnlineMeetingAction, ProtectSite]],Field(discriminator="odata_type")]]] = Field(alias="labelActions", default=None,)
+	labelActions: Optional[list[Annotated[Union[EncryptContent, EncryptWithTemplate, EncryptWithUserDefinedRights, MarkContent, AddFooter, AddHeader, AddWatermark, ProtectGroup, ProtectOnlineMeetingAction, ProtectSite],Field(discriminator="odata_type")]]] = Field(alias="labelActions", default=None,)
 	name: Optional[str] = Field(alias="name", default=None,)
 	priority: Optional[int] = Field(alias="priority", default=None,)
 	toolTip: Optional[str] = Field(alias="toolTip", default=None,)

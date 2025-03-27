@@ -14,8 +14,8 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_windows_update_catalog_item_id import ByWindowsUpdateCatalogItemIdRequest
 	from ....request_adapter import HttpxRequestAdapter
-from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.beta.windows_update_catalog_item_collection_response import WindowsUpdateCatalogItemCollectionResponse
+from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.beta.windows_update_catalog_item import WindowsUpdateCatalogItem
 
 

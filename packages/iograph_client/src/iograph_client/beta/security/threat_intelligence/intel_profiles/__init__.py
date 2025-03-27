@@ -15,8 +15,8 @@ if TYPE_CHECKING:
 	from .by_intelligence_profile_id import ByIntelligenceProfileIdRequest
 	from .....request_adapter import HttpxRequestAdapter
 from iograph_models.beta.security_intelligence_profile import SecurityIntelligenceProfile
-from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.beta.security_intelligence_profile_collection_response import SecurityIntelligenceProfileCollectionResponse
+from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 
 
 class IntelProfilesRequest(BaseRequestBuilder):

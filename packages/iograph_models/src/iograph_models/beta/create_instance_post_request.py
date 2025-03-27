@@ -8,7 +8,7 @@ from pydantic import BaseModel, Field, SerializeAsAny
 class Create_instancePostRequest(BaseModel):
 	displayName: Optional[str] = Field(alias="displayName", default=None,)
 	description: Optional[str] = Field(alias="description", default=None,)
-	settingsDelta: Optional[list[Annotated[Union[DeviceManagementAbstractComplexSettingInstance, DeviceManagementBooleanSettingInstance, DeviceManagementCollectionSettingInstance, DeviceManagementComplexSettingInstance, DeviceManagementIntegerSettingInstance, DeviceManagementStringSettingInstance]],Field(discriminator="odata_type")]]] = Field(alias="settingsDelta", default=None,)
+	settingsDelta: Optional[list[Annotated[Union[DeviceManagementAbstractComplexSettingInstance, DeviceManagementBooleanSettingInstance, DeviceManagementCollectionSettingInstance, DeviceManagementComplexSettingInstance, DeviceManagementIntegerSettingInstance, DeviceManagementStringSettingInstance],Field(discriminator="odata_type")]]] = Field(alias="settingsDelta", default=None,)
 	roleScopeTagIds: Optional[list[str]] = Field(alias="roleScopeTagIds", default=None,)
 
 from .device_management_abstract_complex_setting_instance import DeviceManagementAbstractComplexSettingInstance

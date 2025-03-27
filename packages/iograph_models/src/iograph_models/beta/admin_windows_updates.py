@@ -12,8 +12,8 @@ class AdminWindowsUpdates(BaseModel):
 	deploymentAudiences: Optional[list[WindowsUpdatesDeploymentAudience]] = Field(alias="deploymentAudiences", default=None,)
 	deployments: Optional[list[WindowsUpdatesDeployment]] = Field(alias="deployments", default=None,)
 	products: Optional[list[WindowsUpdatesProduct]] = Field(alias="products", default=None,)
-	resourceConnections: Optional[list[Annotated[Union[WindowsUpdatesOperationalInsightsConnection]],Field(discriminator="odata_type")]]] = Field(alias="resourceConnections", default=None,)
-	updatableAssets: Optional[list[Annotated[Union[WindowsUpdatesAzureADDevice, WindowsUpdatesUpdatableAssetGroup]],Field(discriminator="odata_type")]]] = Field(alias="updatableAssets", default=None,)
+	resourceConnections: Optional[list[Annotated[Union[WindowsUpdatesOperationalInsightsConnection],Field(discriminator="odata_type")]]] = Field(alias="resourceConnections", default=None,)
+	updatableAssets: Optional[list[Annotated[Union[WindowsUpdatesAzureADDevice, WindowsUpdatesUpdatableAssetGroup],Field(discriminator="odata_type")]]] = Field(alias="updatableAssets", default=None,)
 	updatePolicies: Optional[list[WindowsUpdatesUpdatePolicy]] = Field(alias="updatePolicies", default=None,)
 
 from .windows_updates_catalog import WindowsUpdatesCatalog

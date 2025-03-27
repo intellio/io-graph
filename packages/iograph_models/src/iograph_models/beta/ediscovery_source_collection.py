@@ -17,9 +17,9 @@ class EdiscoverySourceCollection(BaseModel):
 	displayName: Optional[str] = Field(alias="displayName", default=None,)
 	lastModifiedBy: Optional[Union[AiInteractionMentionedIdentitySet, ApprovalIdentitySet, ChatMessageFromIdentitySet, ChatMessageMentionedIdentitySet, ChatMessageReactionIdentitySet, CommunicationsIdentitySet, SharePointIdentitySet]] = Field(alias="lastModifiedBy", default=None,discriminator="odata_type", )
 	lastModifiedDateTime: Optional[datetime] = Field(alias="lastModifiedDateTime", default=None,)
-	additionalSources: Optional[list[Annotated[Union[EdiscoverySiteSource, EdiscoveryUnifiedGroupSource, EdiscoveryUserSource]],Field(discriminator="odata_type")]]] = Field(alias="additionalSources", default=None,)
+	additionalSources: Optional[list[Annotated[Union[EdiscoverySiteSource, EdiscoveryUnifiedGroupSource, EdiscoveryUserSource],Field(discriminator="odata_type")]]] = Field(alias="additionalSources", default=None,)
 	addToReviewSetOperation: Optional[EdiscoveryAddToReviewSetOperation] = Field(alias="addToReviewSetOperation", default=None,)
-	custodianSources: Optional[list[Annotated[Union[EdiscoverySiteSource, EdiscoveryUnifiedGroupSource, EdiscoveryUserSource]],Field(discriminator="odata_type")]]] = Field(alias="custodianSources", default=None,)
+	custodianSources: Optional[list[Annotated[Union[EdiscoverySiteSource, EdiscoveryUnifiedGroupSource, EdiscoveryUserSource],Field(discriminator="odata_type")]]] = Field(alias="custodianSources", default=None,)
 	lastEstimateStatisticsOperation: Optional[EdiscoveryEstimateStatisticsOperation] = Field(alias="lastEstimateStatisticsOperation", default=None,)
 	noncustodialSources: Optional[list[EdiscoveryNoncustodialDataSource]] = Field(alias="noncustodialSources", default=None,)
 

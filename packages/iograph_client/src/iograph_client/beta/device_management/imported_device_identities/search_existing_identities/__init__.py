@@ -11,9 +11,9 @@ from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:
 	from .....request_adapter import HttpxRequestAdapter
-from iograph_models.beta.search_existing_identities_post_request import Search_existing_identitiesPostRequest
 from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.beta.search_existing_identities_post_response import Search_existing_identitiesPostResponse
+from iograph_models.beta.search_existing_identities_post_request import Search_existing_identitiesPostRequest
 
 
 class SearchExistingIdentitiesRequest(BaseRequestBuilder):

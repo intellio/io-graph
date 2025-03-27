@@ -11,8 +11,8 @@ from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:
 	from .........request_adapter import HttpxRequestAdapter
-from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.beta.app_log_collection_download_details import AppLogCollectionDownloadDetails
+from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 
 
 class CreateDownloadUrlRequest(BaseRequestBuilder):

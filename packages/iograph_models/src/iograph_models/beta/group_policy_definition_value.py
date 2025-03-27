@@ -14,7 +14,7 @@ class GroupPolicyDefinitionValue(BaseModel):
 	enabled: Optional[bool] = Field(alias="enabled", default=None,)
 	lastModifiedDateTime: Optional[datetime] = Field(alias="lastModifiedDateTime", default=None,)
 	definition: Optional[GroupPolicyDefinition] = Field(alias="definition", default=None,)
-	presentationValues: Optional[list[Annotated[Union[GroupPolicyPresentationValueBoolean, GroupPolicyPresentationValueDecimal, GroupPolicyPresentationValueList, GroupPolicyPresentationValueLongDecimal, GroupPolicyPresentationValueMultiText, GroupPolicyPresentationValueText]],Field(discriminator="odata_type")]]] = Field(alias="presentationValues", default=None,)
+	presentationValues: Optional[list[Annotated[Union[GroupPolicyPresentationValueBoolean, GroupPolicyPresentationValueDecimal, GroupPolicyPresentationValueList, GroupPolicyPresentationValueLongDecimal, GroupPolicyPresentationValueMultiText, GroupPolicyPresentationValueText],Field(discriminator="odata_type")]]] = Field(alias="presentationValues", default=None,)
 
 from .group_policy_configuration_type import GroupPolicyConfigurationType
 from .group_policy_definition import GroupPolicyDefinition

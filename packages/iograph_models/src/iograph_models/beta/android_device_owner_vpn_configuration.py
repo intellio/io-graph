@@ -40,7 +40,7 @@ class AndroidDeviceOwnerVpnConfiguration(BaseModel):
 	microsoftTunnelSiteId: Optional[str] = Field(alias="microsoftTunnelSiteId", default=None,)
 	proxyExclusionList: Optional[list[str]] = Field(alias="proxyExclusionList", default=None,)
 	proxyServer: Optional[Union[Windows10VpnProxyServer, Windows81VpnProxyServer]] = Field(alias="proxyServer", default=None,discriminator="odata_type", )
-	targetedMobileApps: Optional[list[Annotated[Union[AppleAppListItem]],Field(discriminator="odata_type")]]] = Field(alias="targetedMobileApps", default=None,)
+	targetedMobileApps: Optional[list[Annotated[Union[AppleAppListItem],Field(discriminator="odata_type")]]] = Field(alias="targetedMobileApps", default=None,)
 	targetedPackageIds: Optional[list[str]] = Field(alias="targetedPackageIds", default=None,)
 	derivedCredentialSettings: Optional[DeviceManagementDerivedCredentialSettings] = Field(alias="derivedCredentialSettings", default=None,)
 	identityCertificate: Optional[Union[AndroidDeviceOwnerImportedPFXCertificateProfile, AndroidDeviceOwnerPkcsCertificateProfile, AndroidDeviceOwnerScepCertificateProfile]] = Field(alias="identityCertificate", default=None,discriminator="odata_type", )

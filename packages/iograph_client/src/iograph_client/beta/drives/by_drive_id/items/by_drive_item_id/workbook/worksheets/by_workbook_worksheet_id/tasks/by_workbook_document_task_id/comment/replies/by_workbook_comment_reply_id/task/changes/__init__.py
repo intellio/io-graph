@@ -15,9 +15,9 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_workbook_document_task_change_id import ByWorkbookDocumentTaskChangeIdRequest
 	from ................request_adapter import HttpxRequestAdapter
-from iograph_models.beta.workbook_document_task_change import WorkbookDocumentTaskChange
-from iograph_models.beta.workbook_document_task_change_collection_response import WorkbookDocumentTaskChangeCollectionResponse
 from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.beta.workbook_document_task_change_collection_response import WorkbookDocumentTaskChangeCollectionResponse
+from iograph_models.beta.workbook_document_task_change import WorkbookDocumentTaskChange
 
 
 class ChangesRequest(BaseRequestBuilder):

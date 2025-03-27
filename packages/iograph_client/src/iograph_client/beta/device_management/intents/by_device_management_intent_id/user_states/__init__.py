@@ -14,9 +14,9 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_device_management_intent_user_state_id import ByDeviceManagementIntentUserStateIdRequest
 	from ......request_adapter import HttpxRequestAdapter
-from iograph_models.beta.device_management_intent_user_state import DeviceManagementIntentUserState
 from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.beta.device_management_intent_user_state_collection_response import DeviceManagementIntentUserStateCollectionResponse
+from iograph_models.beta.device_management_intent_user_state import DeviceManagementIntentUserState
 
 
 class UserStatesRequest(BaseRequestBuilder):

@@ -31,7 +31,7 @@ class MacOSWebClip(BaseModel):
 	uploadState: Optional[int] = Field(alias="uploadState", default=None,)
 	assignments: Optional[list[MobileAppAssignment]] = Field(alias="assignments", default=None,)
 	categories: Optional[list[MobileAppCategory]] = Field(alias="categories", default=None,)
-	relationships: Optional[list[Annotated[Union[MobileAppDependency, MobileAppSupersedence]],Field(discriminator="odata_type")]]] = Field(alias="relationships", default=None,)
+	relationships: Optional[list[Annotated[Union[MobileAppDependency, MobileAppSupersedence],Field(discriminator="odata_type")]]] = Field(alias="relationships", default=None,)
 	appUrl: Optional[str] = Field(alias="appUrl", default=None,)
 	fullScreenEnabled: Optional[bool] = Field(alias="fullScreenEnabled", default=None,)
 	preComposedIconEnabled: Optional[bool] = Field(alias="preComposedIconEnabled", default=None,)

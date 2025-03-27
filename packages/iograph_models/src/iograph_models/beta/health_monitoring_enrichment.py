@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class HealthMonitoringEnrichment(BaseModel):
-	impacts: Optional[list[Annotated[Union[HealthMonitoringDirectoryObjectImpactSummary, HealthMonitoringApplicationImpactSummary, HealthMonitoringDeviceImpactSummary, HealthMonitoringGroupImpactSummary, HealthMonitoringServicePrincipalImpactSummary, HealthMonitoringUserImpactSummary]],Field(discriminator="odata_type")]]] = Field(alias="impacts", default=None,)
+	impacts: Optional[list[Annotated[Union[HealthMonitoringDirectoryObjectImpactSummary, HealthMonitoringApplicationImpactSummary, HealthMonitoringDeviceImpactSummary, HealthMonitoringGroupImpactSummary, HealthMonitoringServicePrincipalImpactSummary, HealthMonitoringUserImpactSummary],Field(discriminator="odata_type")]]] = Field(alias="impacts", default=None,)
 	state: Optional[HealthMonitoringEnrichmentState | str] = Field(alias="state", default=None,)
 	supportingData: Optional[HealthMonitoringSupportingData] = Field(alias="supportingData", default=None,)
 	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)

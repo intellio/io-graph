@@ -15,7 +15,7 @@ class PartnerSecurityPartnerSecurityScore(BaseModel):
 	updatedDateTime: Optional[datetime] = Field(alias="updatedDateTime", default=None,)
 	customerInsights: Optional[list[PartnerSecurityCustomerInsight]] = Field(alias="customerInsights", default=None,)
 	history: Optional[list[PartnerSecuritySecurityScoreHistory]] = Field(alias="history", default=None,)
-	requirements: Optional[list[Annotated[Union[PartnerSecurityAdminsMfaEnforcedSecurityRequirement, PartnerSecurityCustomersMfaEnforcedSecurityRequirement, PartnerSecurityCustomersSpendingBudgetSecurityRequirement, PartnerSecurityResponseTimeSecurityRequirement]],Field(discriminator="odata_type")]]] = Field(alias="requirements", default=None,)
+	requirements: Optional[list[Annotated[Union[PartnerSecurityAdminsMfaEnforcedSecurityRequirement, PartnerSecurityCustomersMfaEnforcedSecurityRequirement, PartnerSecurityCustomersSpendingBudgetSecurityRequirement, PartnerSecurityResponseTimeSecurityRequirement],Field(discriminator="odata_type")]]] = Field(alias="requirements", default=None,)
 
 from .reference_numeric import ReferenceNumeric
 from .reference_numeric import ReferenceNumeric

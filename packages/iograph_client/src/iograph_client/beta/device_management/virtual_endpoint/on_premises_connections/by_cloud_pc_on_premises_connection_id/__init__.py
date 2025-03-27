@@ -14,8 +14,8 @@ if TYPE_CHECKING:
 	from .update_ad_domain_password import UpdateAdDomainPasswordRequest
 	from .run_health_checks import RunHealthChecksRequest
 	from ......request_adapter import HttpxRequestAdapter
-from iograph_models.beta.cloud_pc_on_premises_connection import CloudPcOnPremisesConnection
 from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.beta.cloud_pc_on_premises_connection import CloudPcOnPremisesConnection
 
 
 class ByCloudPcOnPremisesConnectionIdRequest(BaseRequestBuilder):

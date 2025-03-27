@@ -11,8 +11,8 @@ from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:
 	from ......request_adapter import HttpxRequestAdapter
-from iograph_models.beta.additional_access_get_response import Additional_accessGetResponse
 from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.beta.additional_access_get_response import Additional_accessGetResponse
 
 
 class AdditionalAccessRequest(BaseRequestBuilder):

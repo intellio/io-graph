@@ -13,7 +13,7 @@ class AssignmentReviewSettings(BaseModel):
 	isApprovalJustificationRequired: Optional[bool] = Field(alias="isApprovalJustificationRequired", default=None,)
 	isEnabled: Optional[bool] = Field(alias="isEnabled", default=None,)
 	recurrenceType: Optional[str] = Field(alias="recurrenceType", default=None,)
-	reviewers: Optional[list[Annotated[Union[ConnectedOrganizationMembers, ExternalSponsors, GroupMembers, InternalSponsors, RequestorManager, SingleUser, TargetUserSponsors]],Field(discriminator="odata_type")]]] = Field(alias="reviewers", default=None,)
+	reviewers: Optional[list[Annotated[Union[ConnectedOrganizationMembers, ExternalSponsors, GroupMembers, InternalSponsors, RequestorManager, SingleUser, TargetUserSponsors],Field(discriminator="odata_type")]]] = Field(alias="reviewers", default=None,)
 	reviewerType: Optional[str] = Field(alias="reviewerType", default=None,)
 	startDateTime: Optional[datetime] = Field(alias="startDateTime", default=None,)
 	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)

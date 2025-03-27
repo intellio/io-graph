@@ -13,7 +13,7 @@ class NetworkaccessFilteringPolicy(BaseModel):
 	description: Optional[str] = Field(alias="description", default=None,)
 	name: Optional[str] = Field(alias="name", default=None,)
 	version: Optional[str] = Field(alias="version", default=None,)
-	policyRules: Optional[list[Annotated[Union[NetworkaccessFilteringRule, NetworkaccessFqdnFilteringRule, NetworkaccessWebCategoryFilteringRule, NetworkaccessForwardingRule, NetworkaccessInternetAccessForwardingRule, NetworkaccessM365ForwardingRule, NetworkaccessPrivateAccessForwardingRule]],Field(discriminator="odata_type")]]] = Field(alias="policyRules", default=None,)
+	policyRules: Optional[list[Annotated[Union[NetworkaccessFilteringRule, NetworkaccessFqdnFilteringRule, NetworkaccessWebCategoryFilteringRule, NetworkaccessForwardingRule, NetworkaccessInternetAccessForwardingRule, NetworkaccessM365ForwardingRule, NetworkaccessPrivateAccessForwardingRule],Field(discriminator="odata_type")]]] = Field(alias="policyRules", default=None,)
 	action: Optional[NetworkaccessFilteringPolicyAction | str] = Field(alias="action", default=None,)
 	createdDateTime: Optional[datetime] = Field(alias="createdDateTime", default=None,)
 	lastModifiedDateTime: Optional[datetime] = Field(alias="lastModifiedDateTime", default=None,)

@@ -8,7 +8,7 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 class IosRedirectSingleSignOnExtension(BaseModel):
 	odata_type: Literal["#microsoft.graph.iosRedirectSingleSignOnExtension"] = Field(alias="@odata.type", default="#microsoft.graph.iosRedirectSingleSignOnExtension")
-	configurations: Optional[list[Annotated[Union[KeyBooleanValuePair, KeyIntegerValuePair, KeyRealValuePair, KeyStringValuePair]],Field(discriminator="odata_type")]]] = Field(alias="configurations", default=None,)
+	configurations: Optional[list[Annotated[Union[KeyBooleanValuePair, KeyIntegerValuePair, KeyRealValuePair, KeyStringValuePair],Field(discriminator="odata_type")]]] = Field(alias="configurations", default=None,)
 	extensionIdentifier: Optional[str] = Field(alias="extensionIdentifier", default=None,)
 	teamIdentifier: Optional[str] = Field(alias="teamIdentifier", default=None,)
 	urlPrefixes: Optional[list[str]] = Field(alias="urlPrefixes", default=None,)

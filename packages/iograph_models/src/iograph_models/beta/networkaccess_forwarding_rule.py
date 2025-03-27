@@ -14,7 +14,7 @@ class NetworkaccessForwardingRule(BaseModel):
 	odata_type: Literal["#microsoft.graph.networkaccess.forwardingRule"] = Field(alias="@odata.type", default="#microsoft.graph.networkaccess.forwardingRule")
 	name: Optional[str] = Field(alias="name", default=None,)
 	action: Optional[NetworkaccessForwardingRuleAction | str] = Field(alias="action", default=None,)
-	destinations: Optional[list[Annotated[Union[NetworkaccessFqdn, NetworkaccessIpAddress, NetworkaccessIpRange, NetworkaccessIpSubnet, NetworkaccessUrl, NetworkaccessWebCategory]],Field(discriminator="odata_type")]]] = Field(alias="destinations", default=None,)
+	destinations: Optional[list[Annotated[Union[NetworkaccessFqdn, NetworkaccessIpAddress, NetworkaccessIpRange, NetworkaccessIpSubnet, NetworkaccessUrl, NetworkaccessWebCategory],Field(discriminator="odata_type")]]] = Field(alias="destinations", default=None,)
 	ruleType: Optional[NetworkaccessNetworkDestinationType | str] = Field(alias="ruleType", default=None,)
 
 	@model_validator(mode="wrap")

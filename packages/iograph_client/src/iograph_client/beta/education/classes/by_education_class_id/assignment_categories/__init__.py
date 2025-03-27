@@ -15,8 +15,8 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_education_category_id import ByEducationCategoryIdRequest
 	from ......request_adapter import HttpxRequestAdapter
-from iograph_models.beta.education_category import EducationCategory
 from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.beta.education_category import EducationCategory
 from iograph_models.beta.education_category_collection_response import EducationCategoryCollectionResponse
 
 

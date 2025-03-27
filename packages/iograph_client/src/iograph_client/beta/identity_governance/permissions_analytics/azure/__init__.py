@@ -13,8 +13,8 @@ if TYPE_CHECKING:
 	from .permissions_creep_index_distributions import PermissionsCreepIndexDistributionsRequest
 	from .findings import FindingsRequest
 	from .....request_adapter import HttpxRequestAdapter
-from iograph_models.beta.permissions_analytics import PermissionsAnalytics
 from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.beta.permissions_analytics import PermissionsAnalytics
 
 
 class AzureRequest(BaseRequestBuilder):

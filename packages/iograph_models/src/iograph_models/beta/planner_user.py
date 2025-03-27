@@ -10,13 +10,13 @@ class PlannerUser(BaseModel):
 	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
 	favoritePlanReferences: Optional[PlannerFavoritePlanReferenceCollection] = Field(alias="favoritePlanReferences", default=None,)
 	recentPlanReferences: Optional[PlannerRecentPlanReferenceCollection] = Field(alias="recentPlanReferences", default=None,)
-	all: Optional[list[Annotated[Union[PlannerAssignedToTaskBoardTaskFormat, PlannerBucket, PlannerBucketTaskBoardTaskFormat, PlannerPlan, PlannerPlanDetails, PlannerProgressTaskBoardTaskFormat, PlannerTask, BusinessScenarioTask, PlannerTaskDetails, PlannerUser]],Field(discriminator="odata_type")]]] = Field(alias="all", default=None,)
+	all: Optional[list[Annotated[Union[PlannerAssignedToTaskBoardTaskFormat, PlannerBucket, PlannerBucketTaskBoardTaskFormat, PlannerPlan, PlannerPlanDetails, PlannerProgressTaskBoardTaskFormat, PlannerTask, BusinessScenarioTask, PlannerTaskDetails, PlannerUser],Field(discriminator="odata_type")]]] = Field(alias="all", default=None,)
 	favoritePlans: Optional[list[PlannerPlan]] = Field(alias="favoritePlans", default=None,)
-	myDayTasks: Optional[list[Annotated[Union[BusinessScenarioTask]],Field(discriminator="odata_type")]]] = Field(alias="myDayTasks", default=None,)
+	myDayTasks: Optional[list[Annotated[Union[BusinessScenarioTask],Field(discriminator="odata_type")]]] = Field(alias="myDayTasks", default=None,)
 	plans: Optional[list[PlannerPlan]] = Field(alias="plans", default=None,)
 	recentPlans: Optional[list[PlannerPlan]] = Field(alias="recentPlans", default=None,)
 	rosterPlans: Optional[list[PlannerPlan]] = Field(alias="rosterPlans", default=None,)
-	tasks: Optional[list[Annotated[Union[BusinessScenarioTask]],Field(discriminator="odata_type")]]] = Field(alias="tasks", default=None,)
+	tasks: Optional[list[Annotated[Union[BusinessScenarioTask],Field(discriminator="odata_type")]]] = Field(alias="tasks", default=None,)
 
 from .planner_favorite_plan_reference_collection import PlannerFavoritePlanReferenceCollection
 from .planner_recent_plan_reference_collection import PlannerRecentPlanReferenceCollection

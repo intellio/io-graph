@@ -8,7 +8,7 @@ from pydantic import BaseModel, Field, SerializeAsAny
 class TrustedCertificateAuthorityBaseCollectionResponse(BaseModel):
 	odata_count: Optional[int] = Field(alias="@odata.count", default=None,)
 	odata_nextLink: Optional[str] = Field(alias="@odata.nextLink", default=None,)
-	value: Optional[list[Annotated[Union[MutualTlsOauthConfiguration]],Field(discriminator="odata_type")]]] = Field(alias="value", default=None,)
+	value: Optional[list[Annotated[Union[MutualTlsOauthConfiguration],Field(discriminator="odata_type")]]] = Field(alias="value", default=None,)
 
 from .mutual_tls_oauth_configuration import MutualTlsOauthConfiguration
 

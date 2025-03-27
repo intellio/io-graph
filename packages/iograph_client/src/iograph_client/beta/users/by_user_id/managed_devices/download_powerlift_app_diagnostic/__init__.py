@@ -11,8 +11,8 @@ from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:
 	from ......request_adapter import HttpxRequestAdapter
-from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.beta.download_powerlift_app_diagnostic_post_request import Download_powerlift_app_diagnosticPostRequest
+from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 
 
 class DownloadPowerliftAppDiagnosticRequest(BaseRequestBuilder):

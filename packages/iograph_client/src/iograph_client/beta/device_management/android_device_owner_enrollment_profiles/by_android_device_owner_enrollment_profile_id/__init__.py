@@ -14,8 +14,8 @@ if TYPE_CHECKING:
 	from .revoke_token import RevokeTokenRequest
 	from .create_token import CreateTokenRequest
 	from .....request_adapter import HttpxRequestAdapter
-from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.beta.android_device_owner_enrollment_profile import AndroidDeviceOwnerEnrollmentProfile
+from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 
 
 class ByAndroidDeviceOwnerEnrollmentProfileIdRequest(BaseRequestBuilder):

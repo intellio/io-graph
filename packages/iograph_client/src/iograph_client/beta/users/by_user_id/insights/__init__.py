@@ -15,8 +15,8 @@ if TYPE_CHECKING:
 	from .trending import TrendingRequest
 	from .shared import SharedRequest
 	from .....request_adapter import HttpxRequestAdapter
-from iograph_models.beta.item_insights import ItemInsights
 from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.beta.item_insights import ItemInsights
 
 
 class InsightsRequest(BaseRequestBuilder):

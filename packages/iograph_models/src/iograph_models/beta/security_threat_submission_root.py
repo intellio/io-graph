@@ -8,9 +8,9 @@ from pydantic import BaseModel, Field, SerializeAsAny
 class SecurityThreatSubmissionRoot(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
 	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
-	emailThreats: Optional[list[Annotated[Union[SecurityEmailContentThreatSubmission, SecurityEmailUrlThreatSubmission]],Field(discriminator="odata_type")]]] = Field(alias="emailThreats", default=None,)
+	emailThreats: Optional[list[Annotated[Union[SecurityEmailContentThreatSubmission, SecurityEmailUrlThreatSubmission],Field(discriminator="odata_type")]]] = Field(alias="emailThreats", default=None,)
 	emailThreatSubmissionPolicies: Optional[list[SecurityEmailThreatSubmissionPolicy]] = Field(alias="emailThreatSubmissionPolicies", default=None,)
-	fileThreats: Optional[list[Annotated[Union[SecurityFileContentThreatSubmission, SecurityFileUrlThreatSubmission]],Field(discriminator="odata_type")]]] = Field(alias="fileThreats", default=None,)
+	fileThreats: Optional[list[Annotated[Union[SecurityFileContentThreatSubmission, SecurityFileUrlThreatSubmission],Field(discriminator="odata_type")]]] = Field(alias="fileThreats", default=None,)
 	urlThreats: Optional[list[SecurityUrlThreatSubmission]] = Field(alias="urlThreats", default=None,)
 
 from .security_email_content_threat_submission import SecurityEmailContentThreatSubmission

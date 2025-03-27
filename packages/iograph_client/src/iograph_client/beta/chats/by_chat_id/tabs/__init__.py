@@ -14,9 +14,9 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_teams_tab_id import ByTeamsTabIdRequest
 	from .....request_adapter import HttpxRequestAdapter
-from iograph_models.beta.teams_tab_collection_response import TeamsTabCollectionResponse
-from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.beta.teams_tab import TeamsTab
+from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.beta.teams_tab_collection_response import TeamsTabCollectionResponse
 
 
 class TabsRequest(BaseRequestBuilder):

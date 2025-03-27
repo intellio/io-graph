@@ -17,7 +17,7 @@ class NetworkaccessProfile(BaseModel):
 	name: Optional[str] = Field(alias="name", default=None,)
 	state: Optional[NetworkaccessStatus | str] = Field(alias="state", default=None,)
 	version: Optional[str] = Field(alias="version", default=None,)
-	policies: Optional[list[Annotated[Union[NetworkaccessFilteringPolicyLink, NetworkaccessForwardingPolicyLink]],Field(discriminator="odata_type")]]] = Field(alias="policies", default=None,)
+	policies: Optional[list[Annotated[Union[NetworkaccessFilteringPolicyLink, NetworkaccessForwardingPolicyLink],Field(discriminator="odata_type")]]] = Field(alias="policies", default=None,)
 
 	@model_validator(mode="wrap")
 	def convert_discriminator_class(cls, data: Any, handler: ModelWrapValidatorHandler[Self]) -> Self:

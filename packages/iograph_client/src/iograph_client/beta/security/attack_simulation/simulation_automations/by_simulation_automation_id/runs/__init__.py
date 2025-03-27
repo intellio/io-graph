@@ -14,9 +14,9 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_simulation_automation_run_id import BySimulationAutomationRunIdRequest
 	from .......request_adapter import HttpxRequestAdapter
-from iograph_models.beta.simulation_automation_run import SimulationAutomationRun
 from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.beta.simulation_automation_run_collection_response import SimulationAutomationRunCollectionResponse
+from iograph_models.beta.simulation_automation_run import SimulationAutomationRun
 
 
 class RunsRequest(BaseRequestBuilder):

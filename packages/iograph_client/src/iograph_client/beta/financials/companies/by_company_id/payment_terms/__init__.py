@@ -14,8 +14,8 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_payment_term_id import ByPaymentTermIdRequest
 	from ......request_adapter import HttpxRequestAdapter
-from iograph_models.beta.payment_term import PaymentTerm
 from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.beta.payment_term import PaymentTerm
 from iograph_models.beta.payment_term_collection_response import PaymentTermCollectionResponse
 
 

@@ -8,7 +8,7 @@ from pydantic import BaseModel, Field, SerializeAsAny
 class GroupPolicyPresentationValueCollectionResponse(BaseModel):
 	odata_count: Optional[int] = Field(alias="@odata.count", default=None,)
 	odata_nextLink: Optional[str] = Field(alias="@odata.nextLink", default=None,)
-	value: Optional[list[Annotated[Union[GroupPolicyPresentationValueBoolean, GroupPolicyPresentationValueDecimal, GroupPolicyPresentationValueList, GroupPolicyPresentationValueLongDecimal, GroupPolicyPresentationValueMultiText, GroupPolicyPresentationValueText]],Field(discriminator="odata_type")]]] = Field(alias="value", default=None,)
+	value: Optional[list[Annotated[Union[GroupPolicyPresentationValueBoolean, GroupPolicyPresentationValueDecimal, GroupPolicyPresentationValueList, GroupPolicyPresentationValueLongDecimal, GroupPolicyPresentationValueMultiText, GroupPolicyPresentationValueText],Field(discriminator="odata_type")]]] = Field(alias="value", default=None,)
 
 from .group_policy_presentation_value_boolean import GroupPolicyPresentationValueBoolean
 from .group_policy_presentation_value_decimal import GroupPolicyPresentationValueDecimal

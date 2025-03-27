@@ -14,9 +14,9 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_recycle_bin_item_id import ByRecycleBinItemIdRequest
 	from ........request_adapter import HttpxRequestAdapter
+from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.beta.recycle_bin_item_collection_response import RecycleBinItemCollectionResponse
 from iograph_models.beta.recycle_bin_item import RecycleBinItem
-from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 
 
 class ItemsRequest(BaseRequestBuilder):

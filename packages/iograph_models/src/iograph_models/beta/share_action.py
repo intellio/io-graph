@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class ShareAction(BaseModel):
-	recipients: Optional[list[Annotated[Union[AiInteractionMentionedIdentitySet, ApprovalIdentitySet, ChatMessageFromIdentitySet, ChatMessageMentionedIdentitySet, ChatMessageReactionIdentitySet, CommunicationsIdentitySet, SharePointIdentitySet]],Field(discriminator="odata_type")]]] = Field(alias="recipients", default=None,)
+	recipients: Optional[list[Annotated[Union[AiInteractionMentionedIdentitySet, ApprovalIdentitySet, ChatMessageFromIdentitySet, ChatMessageMentionedIdentitySet, ChatMessageReactionIdentitySet, CommunicationsIdentitySet, SharePointIdentitySet],Field(discriminator="odata_type")]]] = Field(alias="recipients", default=None,)
 	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
 
 from .ai_interaction_mentioned_identity_set import AiInteractionMentionedIdentitySet

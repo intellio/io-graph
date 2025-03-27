@@ -8,7 +8,7 @@ from pydantic import BaseModel, Field, SerializeAsAny
 class ManagedDeviceMobileAppConfigurationCollectionResponse(BaseModel):
 	odata_count: Optional[int] = Field(alias="@odata.count", default=None,)
 	odata_nextLink: Optional[str] = Field(alias="@odata.nextLink", default=None,)
-	value: Optional[list[Annotated[Union[AndroidForWorkMobileAppConfiguration, AndroidManagedStoreAppConfiguration, IosMobileAppConfiguration]],Field(discriminator="odata_type")]]] = Field(alias="value", default=None,)
+	value: Optional[list[Annotated[Union[AndroidForWorkMobileAppConfiguration, AndroidManagedStoreAppConfiguration, IosMobileAppConfiguration],Field(discriminator="odata_type")]]] = Field(alias="value", default=None,)
 
 from .android_for_work_mobile_app_configuration import AndroidForWorkMobileAppConfiguration
 from .android_managed_store_app_configuration import AndroidManagedStoreAppConfiguration

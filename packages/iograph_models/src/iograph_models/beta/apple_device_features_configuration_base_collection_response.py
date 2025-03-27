@@ -8,7 +8,7 @@ from pydantic import BaseModel, Field, SerializeAsAny
 class AppleDeviceFeaturesConfigurationBaseCollectionResponse(BaseModel):
 	odata_count: Optional[int] = Field(alias="@odata.count", default=None,)
 	odata_nextLink: Optional[str] = Field(alias="@odata.nextLink", default=None,)
-	value: Optional[list[Annotated[Union[IosDeviceFeaturesConfiguration, MacOSDeviceFeaturesConfiguration]],Field(discriminator="odata_type")]]] = Field(alias="value", default=None,)
+	value: Optional[list[Annotated[Union[IosDeviceFeaturesConfiguration, MacOSDeviceFeaturesConfiguration],Field(discriminator="odata_type")]]] = Field(alias="value", default=None,)
 
 from .ios_device_features_configuration import IosDeviceFeaturesConfiguration
 from .mac_o_s_device_features_configuration import MacOSDeviceFeaturesConfiguration

@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class InvitedUserMessageInfo(BaseModel):
-	ccRecipients: Optional[list[Annotated[Union[AttendeeBase, Attendee]],Field(discriminator="odata_type")]]] = Field(alias="ccRecipients", default=None,)
+	ccRecipients: Optional[list[Annotated[Union[AttendeeBase, Attendee],Field(discriminator="odata_type")]]] = Field(alias="ccRecipients", default=None,)
 	customizedMessageBody: Optional[str] = Field(alias="customizedMessageBody", default=None,)
 	messageLanguage: Optional[str] = Field(alias="messageLanguage", default=None,)
 	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)

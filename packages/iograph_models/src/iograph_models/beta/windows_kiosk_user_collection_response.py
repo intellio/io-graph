@@ -8,7 +8,7 @@ from pydantic import BaseModel, Field, SerializeAsAny
 class WindowsKioskUserCollectionResponse(BaseModel):
 	odata_count: Optional[int] = Field(alias="@odata.count", default=None,)
 	odata_nextLink: Optional[str] = Field(alias="@odata.nextLink", default=None,)
-	value: Optional[list[Annotated[Union[WindowsKioskActiveDirectoryGroup, WindowsKioskAutologon, WindowsKioskAzureADGroup, WindowsKioskAzureADUser, WindowsKioskLocalGroup, WindowsKioskLocalUser, WindowsKioskVisitor]],Field(discriminator="odata_type")]]] = Field(alias="value", default=None,)
+	value: Optional[list[Annotated[Union[WindowsKioskActiveDirectoryGroup, WindowsKioskAutologon, WindowsKioskAzureADGroup, WindowsKioskAzureADUser, WindowsKioskLocalGroup, WindowsKioskLocalUser, WindowsKioskVisitor],Field(discriminator="odata_type")]]] = Field(alias="value", default=None,)
 
 from .windows_kiosk_active_directory_group import WindowsKioskActiveDirectoryGroup
 from .windows_kiosk_autologon import WindowsKioskAutologon

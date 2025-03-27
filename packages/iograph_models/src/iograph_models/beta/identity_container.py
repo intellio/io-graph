@@ -7,17 +7,17 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 class IdentityContainer(BaseModel):
 	apiConnectors: Optional[list[IdentityApiConnector]] = Field(alias="apiConnectors", default=None,)
-	authenticationEventListeners: Optional[list[Annotated[Union[OnAttributeCollectionListener, OnAttributeCollectionStartListener, OnAttributeCollectionSubmitListener, OnAuthenticationMethodLoadStartListener, OnEmailOtpSendListener, OnInteractiveAuthFlowStartListener, OnPhoneMethodLoadStartListener, OnTokenIssuanceStartListener, OnUserCreateStartListener]],Field(discriminator="odata_type")]]] = Field(alias="authenticationEventListeners", default=None,)
-	authenticationEventsFlows: Optional[list[Annotated[Union[ExternalUsersSelfServiceSignUpEventsFlow]],Field(discriminator="odata_type")]]] = Field(alias="authenticationEventsFlows", default=None,)
+	authenticationEventListeners: Optional[list[Annotated[Union[OnAttributeCollectionListener, OnAttributeCollectionStartListener, OnAttributeCollectionSubmitListener, OnAuthenticationMethodLoadStartListener, OnEmailOtpSendListener, OnInteractiveAuthFlowStartListener, OnPhoneMethodLoadStartListener, OnTokenIssuanceStartListener, OnUserCreateStartListener],Field(discriminator="odata_type")]]] = Field(alias="authenticationEventListeners", default=None,)
+	authenticationEventsFlows: Optional[list[Annotated[Union[ExternalUsersSelfServiceSignUpEventsFlow],Field(discriminator="odata_type")]]] = Field(alias="authenticationEventsFlows", default=None,)
 	b2cUserFlows: Optional[list[B2cIdentityUserFlow]] = Field(alias="b2cUserFlows", default=None,)
 	b2xUserFlows: Optional[list[B2xIdentityUserFlow]] = Field(alias="b2xUserFlows", default=None,)
 	conditionalAccess: Optional[ConditionalAccessRoot] = Field(alias="conditionalAccess", default=None,)
 	continuousAccessEvaluationPolicy: Optional[ContinuousAccessEvaluationPolicy] = Field(alias="continuousAccessEvaluationPolicy", default=None,)
-	customAuthenticationExtensions: Optional[list[Annotated[Union[OnAttributeCollectionStartCustomExtension, OnAttributeCollectionSubmitCustomExtension, OnOtpSendCustomExtension, OnTokenIssuanceStartCustomExtension]],Field(discriminator="odata_type")]]] = Field(alias="customAuthenticationExtensions", default=None,)
-	identityProviders: Optional[list[Annotated[Union[AppleManagedIdentityProvider, BuiltInIdentityProvider, OidcIdentityProvider, OpenIdConnectIdentityProvider, SamlOrWsFedProvider, InternalDomainFederation, SamlOrWsFedExternalDomainFederation, SocialIdentityProvider]],Field(discriminator="odata_type")]]] = Field(alias="identityProviders", default=None,)
-	productChanges: Optional[list[Annotated[Union[Announcement, Roadmap]],Field(discriminator="odata_type")]]] = Field(alias="productChanges", default=None,)
-	userFlowAttributes: Optional[list[Annotated[Union[IdentityBuiltInUserFlowAttribute, IdentityCustomUserFlowAttribute]],Field(discriminator="odata_type")]]] = Field(alias="userFlowAttributes", default=None,)
-	userFlows: Optional[list[Annotated[Union[B2cIdentityUserFlow, B2xIdentityUserFlow]],Field(discriminator="odata_type")]]] = Field(alias="userFlows", default=None,)
+	customAuthenticationExtensions: Optional[list[Annotated[Union[OnAttributeCollectionStartCustomExtension, OnAttributeCollectionSubmitCustomExtension, OnOtpSendCustomExtension, OnTokenIssuanceStartCustomExtension],Field(discriminator="odata_type")]]] = Field(alias="customAuthenticationExtensions", default=None,)
+	identityProviders: Optional[list[Annotated[Union[AppleManagedIdentityProvider, BuiltInIdentityProvider, OidcIdentityProvider, OpenIdConnectIdentityProvider, SamlOrWsFedProvider, InternalDomainFederation, SamlOrWsFedExternalDomainFederation, SocialIdentityProvider],Field(discriminator="odata_type")]]] = Field(alias="identityProviders", default=None,)
+	productChanges: Optional[list[Annotated[Union[Announcement, Roadmap],Field(discriminator="odata_type")]]] = Field(alias="productChanges", default=None,)
+	userFlowAttributes: Optional[list[Annotated[Union[IdentityBuiltInUserFlowAttribute, IdentityCustomUserFlowAttribute],Field(discriminator="odata_type")]]] = Field(alias="userFlowAttributes", default=None,)
+	userFlows: Optional[list[Annotated[Union[B2cIdentityUserFlow, B2xIdentityUserFlow],Field(discriminator="odata_type")]]] = Field(alias="userFlows", default=None,)
 	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
 
 from .identity_api_connector import IdentityApiConnector

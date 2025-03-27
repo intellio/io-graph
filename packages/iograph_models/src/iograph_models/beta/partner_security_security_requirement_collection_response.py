@@ -8,7 +8,7 @@ from pydantic import BaseModel, Field, SerializeAsAny
 class PartnerSecuritySecurityRequirementCollectionResponse(BaseModel):
 	odata_count: Optional[int] = Field(alias="@odata.count", default=None,)
 	odata_nextLink: Optional[str] = Field(alias="@odata.nextLink", default=None,)
-	value: Optional[list[Annotated[Union[PartnerSecurityAdminsMfaEnforcedSecurityRequirement, PartnerSecurityCustomersMfaEnforcedSecurityRequirement, PartnerSecurityCustomersSpendingBudgetSecurityRequirement, PartnerSecurityResponseTimeSecurityRequirement]],Field(discriminator="odata_type")]]] = Field(alias="value", default=None,)
+	value: Optional[list[Annotated[Union[PartnerSecurityAdminsMfaEnforcedSecurityRequirement, PartnerSecurityCustomersMfaEnforcedSecurityRequirement, PartnerSecurityCustomersSpendingBudgetSecurityRequirement, PartnerSecurityResponseTimeSecurityRequirement],Field(discriminator="odata_type")]]] = Field(alias="value", default=None,)
 
 from .partner_security_admins_mfa_enforced_security_requirement import PartnerSecurityAdminsMfaEnforcedSecurityRequirement
 from .partner_security_customers_mfa_enforced_security_requirement import PartnerSecurityCustomersMfaEnforcedSecurityRequirement

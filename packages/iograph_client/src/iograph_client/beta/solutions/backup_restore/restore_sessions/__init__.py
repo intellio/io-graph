@@ -14,9 +14,9 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_restore_session_base_id import ByRestoreSessionBaseIdRequest
 	from .....request_adapter import HttpxRequestAdapter
-from iograph_models.beta.restore_session_base import RestoreSessionBase
 from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.beta.restore_session_base_collection_response import RestoreSessionBaseCollectionResponse
+from iograph_models.beta.restore_session_base import RestoreSessionBase
 
 
 class RestoreSessionsRequest(BaseRequestBuilder):

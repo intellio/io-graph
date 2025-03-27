@@ -15,9 +15,9 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_analyzed_email_id import ByAnalyzedEmailIdRequest
 	from .....request_adapter import HttpxRequestAdapter
-from iograph_models.beta.security_analyzed_email import SecurityAnalyzedEmail
-from iograph_models.beta.security_analyzed_email_collection_response import SecurityAnalyzedEmailCollectionResponse
 from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.beta.security_analyzed_email_collection_response import SecurityAnalyzedEmailCollectionResponse
+from iograph_models.beta.security_analyzed_email import SecurityAnalyzedEmail
 
 
 class AnalyzedEmailsRequest(BaseRequestBuilder):

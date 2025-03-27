@@ -23,8 +23,8 @@ if TYPE_CHECKING:
 	from .authentication_event_listeners import AuthenticationEventListenersRequest
 	from .api_connectors import ApiConnectorsRequest
 	from ...request_adapter import HttpxRequestAdapter
-from iograph_models.beta.identity_container import IdentityContainer
 from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.beta.identity_container import IdentityContainer
 
 
 class IdentityRequest(BaseRequestBuilder):

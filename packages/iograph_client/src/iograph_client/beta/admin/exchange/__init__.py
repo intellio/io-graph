@@ -13,8 +13,8 @@ if TYPE_CHECKING:
 	from .message_traces import MessageTracesRequest
 	from .mailboxes import MailboxesRequest
 	from ....request_adapter import HttpxRequestAdapter
-from iograph_models.beta.exchange_admin import ExchangeAdmin
 from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.beta.exchange_admin import ExchangeAdmin
 
 
 class ExchangeRequest(BaseRequestBuilder):

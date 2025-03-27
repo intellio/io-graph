@@ -12,7 +12,7 @@ class DeviceManagementAbstractComplexSettingInstance(BaseModel):
 	definitionId: Optional[str] = Field(alias="definitionId", default=None,)
 	valueJson: Optional[str] = Field(alias="valueJson", default=None,)
 	implementationId: Optional[str] = Field(alias="implementationId", default=None,)
-	value: Optional[list[Annotated[Union[DeviceManagementAbstractComplexSettingInstance, DeviceManagementBooleanSettingInstance, DeviceManagementCollectionSettingInstance, DeviceManagementComplexSettingInstance, DeviceManagementIntegerSettingInstance, DeviceManagementStringSettingInstance]],Field(discriminator="odata_type")]]] = Field(alias="value", default=None,)
+	value: Optional[list[Annotated[Union[DeviceManagementAbstractComplexSettingInstance, DeviceManagementBooleanSettingInstance, DeviceManagementCollectionSettingInstance, DeviceManagementComplexSettingInstance, DeviceManagementIntegerSettingInstance, DeviceManagementStringSettingInstance],Field(discriminator="odata_type")]]] = Field(alias="value", default=None,)
 
 from .device_management_boolean_setting_instance import DeviceManagementBooleanSettingInstance
 from .device_management_collection_setting_instance import DeviceManagementCollectionSettingInstance

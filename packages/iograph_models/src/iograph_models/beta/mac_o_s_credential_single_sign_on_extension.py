@@ -8,7 +8,7 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 class MacOSCredentialSingleSignOnExtension(BaseModel):
 	odata_type: Literal["#microsoft.graph.macOSCredentialSingleSignOnExtension"] = Field(alias="@odata.type", default="#microsoft.graph.macOSCredentialSingleSignOnExtension")
-	configurations: Optional[list[Annotated[Union[KeyBooleanValuePair, KeyIntegerValuePair, KeyRealValuePair, KeyStringValuePair]],Field(discriminator="odata_type")]]] = Field(alias="configurations", default=None,)
+	configurations: Optional[list[Annotated[Union[KeyBooleanValuePair, KeyIntegerValuePair, KeyRealValuePair, KeyStringValuePair],Field(discriminator="odata_type")]]] = Field(alias="configurations", default=None,)
 	domains: Optional[list[str]] = Field(alias="domains", default=None,)
 	extensionIdentifier: Optional[str] = Field(alias="extensionIdentifier", default=None,)
 	realm: Optional[str] = Field(alias="realm", default=None,)

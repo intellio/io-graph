@@ -21,8 +21,8 @@ if TYPE_CHECKING:
 	from .device_setting_state_summaries import DeviceSettingStateSummariesRequest
 	from .assignments import AssignmentsRequest
 	from .....request_adapter import HttpxRequestAdapter
-from iograph_models.beta.device_compliance_policy import DeviceCompliancePolicy
 from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.beta.device_compliance_policy import DeviceCompliancePolicy
 
 
 class ByDeviceCompliancePolicyIdRequest(BaseRequestBuilder):

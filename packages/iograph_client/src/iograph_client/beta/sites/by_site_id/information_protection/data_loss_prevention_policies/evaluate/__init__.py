@@ -11,9 +11,9 @@ from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:
 	from .......request_adapter import HttpxRequestAdapter
-from iograph_models.beta.evaluate_post_request import EvaluatePostRequest
 from iograph_models.beta.dlp_evaluate_policies_job_response import DlpEvaluatePoliciesJobResponse
 from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.beta.evaluate_post_request import EvaluatePostRequest
 
 
 class EvaluateRequest(BaseRequestBuilder):

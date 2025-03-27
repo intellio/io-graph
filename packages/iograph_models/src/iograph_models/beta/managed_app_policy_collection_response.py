@@ -8,7 +8,7 @@ from pydantic import BaseModel, Field, SerializeAsAny
 class ManagedAppPolicyCollectionResponse(BaseModel):
 	odata_count: Optional[int] = Field(alias="@odata.count", default=None,)
 	odata_nextLink: Optional[str] = Field(alias="@odata.nextLink", default=None,)
-	value: Optional[list[Annotated[Union[ManagedAppConfiguration, TargetedManagedAppConfiguration, ManagedAppProtection, DefaultManagedAppProtection, TargetedManagedAppProtection, AndroidManagedAppProtection, IosManagedAppProtection, WindowsInformationProtection, MdmWindowsInformationProtectionPolicy, WindowsInformationProtectionPolicy, WindowsManagedAppProtection]],Field(discriminator="odata_type")]]] = Field(alias="value", default=None,)
+	value: Optional[list[Annotated[Union[ManagedAppConfiguration, TargetedManagedAppConfiguration, ManagedAppProtection, DefaultManagedAppProtection, TargetedManagedAppProtection, AndroidManagedAppProtection, IosManagedAppProtection, WindowsInformationProtection, MdmWindowsInformationProtectionPolicy, WindowsInformationProtectionPolicy, WindowsManagedAppProtection],Field(discriminator="odata_type")]]] = Field(alias="value", default=None,)
 
 from .managed_app_configuration import ManagedAppConfiguration
 from .targeted_managed_app_configuration import TargetedManagedAppConfiguration

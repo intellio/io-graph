@@ -56,7 +56,7 @@ class IosVpnConfiguration(BaseModel):
 	excludeList: Optional[list[str]] = Field(alias="excludeList", default=None,)
 	microsoftTunnelSiteId: Optional[str] = Field(alias="microsoftTunnelSiteId", default=None,)
 	strictEnforcement: Optional[bool] = Field(alias="strictEnforcement", default=None,)
-	targetedMobileApps: Optional[list[Annotated[Union[AppleAppListItem]],Field(discriminator="odata_type")]]] = Field(alias="targetedMobileApps", default=None,)
+	targetedMobileApps: Optional[list[Annotated[Union[AppleAppListItem],Field(discriminator="odata_type")]]] = Field(alias="targetedMobileApps", default=None,)
 	userDomain: Optional[str] = Field(alias="userDomain", default=None,)
 	derivedCredentialSettings: Optional[DeviceManagementDerivedCredentialSettings] = Field(alias="derivedCredentialSettings", default=None,)
 	identityCertificate: Optional[Union[IosPkcsCertificateProfile, IosScepCertificateProfile]] = Field(alias="identityCertificate", default=None,discriminator="odata_type", )

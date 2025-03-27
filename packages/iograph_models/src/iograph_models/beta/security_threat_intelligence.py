@@ -14,7 +14,7 @@ class SecurityThreatIntelligence(BaseModel):
 	hostCookies: Optional[list[SecurityHostCookie]] = Field(alias="hostCookies", default=None,)
 	hostPairs: Optional[list[SecurityHostPair]] = Field(alias="hostPairs", default=None,)
 	hostPorts: Optional[list[SecurityHostPort]] = Field(alias="hostPorts", default=None,)
-	hosts: Optional[list[Annotated[Union[SecurityHostname, SecurityIpAddress]],Field(discriminator="odata_type")]]] = Field(alias="hosts", default=None,)
+	hosts: Optional[list[Annotated[Union[SecurityHostname, SecurityIpAddress],Field(discriminator="odata_type")]]] = Field(alias="hosts", default=None,)
 	hostSslCertificates: Optional[list[SecurityHostSslCertificate]] = Field(alias="hostSslCertificates", default=None,)
 	hostTrackers: Optional[list[SecurityHostTracker]] = Field(alias="hostTrackers", default=None,)
 	intelligenceProfileIndicators: Optional[list[SecurityIntelligenceProfileIndicator]] = Field(alias="intelligenceProfileIndicators", default=None,)

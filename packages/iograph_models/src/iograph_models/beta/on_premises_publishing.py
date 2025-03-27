@@ -30,7 +30,7 @@ class OnPremisesPublishing(BaseModel):
 	verifiedCustomDomainKeyCredential: Optional[KeyCredential] = Field(alias="verifiedCustomDomainKeyCredential", default=None,)
 	verifiedCustomDomainPasswordCredential: Optional[PasswordCredential] = Field(alias="verifiedCustomDomainPasswordCredential", default=None,)
 	wafAllowedHeaders: Optional[WafAllowedHeadersDictionary] = Field(alias="wafAllowedHeaders", default=None,)
-	wafIpRanges: Optional[list[Annotated[Union[IPv4CidrRange, IPv4Range, IPv6CidrRange, IPv6Range]],Field(discriminator="odata_type")]]] = Field(alias="wafIpRanges", default=None,)
+	wafIpRanges: Optional[list[Annotated[Union[IPv4CidrRange, IPv4Range, IPv6CidrRange, IPv6Range],Field(discriminator="odata_type")]]] = Field(alias="wafIpRanges", default=None,)
 	wafProvider: Optional[str] = Field(alias="wafProvider", default=None,)
 	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
 

@@ -15,9 +15,9 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_tenant_group_id import ByTenantGroupIdRequest
 	from .....request_adapter import HttpxRequestAdapter
-from iograph_models.beta.managed_tenants_tenant_group import ManagedTenantsTenantGroup
-from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.beta.managed_tenants_tenant_group_collection_response import ManagedTenantsTenantGroupCollectionResponse
+from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.beta.managed_tenants_tenant_group import ManagedTenantsTenantGroup
 
 
 class TenantGroupsRequest(BaseRequestBuilder):

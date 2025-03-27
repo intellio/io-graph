@@ -11,8 +11,8 @@ from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:
 	from .....request_adapter import HttpxRequestAdapter
-from iograph_models.beta.app_credential_sign_in_activity import AppCredentialSignInActivity
 from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.beta.app_credential_sign_in_activity import AppCredentialSignInActivity
 
 
 class ByAppCredentialSignInActivityIdRequest(BaseRequestBuilder):

@@ -11,9 +11,9 @@ from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:
 	from .....request_adapter import HttpxRequestAdapter
-from iograph_models.beta.operation_approval_request_entity_status import OperationApprovalRequestEntityStatus
 from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.beta.retrieve_request_status_post_request import Retrieve_request_statusPostRequest
+from iograph_models.beta.operation_approval_request_entity_status import OperationApprovalRequestEntityStatus
 
 
 class RetrieveRequestStatusRequest(BaseRequestBuilder):

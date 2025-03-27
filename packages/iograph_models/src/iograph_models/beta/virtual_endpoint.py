@@ -9,7 +9,7 @@ class VirtualEndpoint(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
 	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
 	auditEvents: Optional[list[CloudPcAuditEvent]] = Field(alias="auditEvents", default=None,)
-	bulkActions: Optional[list[Annotated[Union[CloudPcBulkCreateSnapshot, CloudPcBulkDisasterRecoveryFailback, CloudPcBulkDisasterRecoveryFailover, CloudPcBulkModifyDiskEncryptionType, CloudPcBulkMove, CloudPcBulkPowerOff, CloudPcBulkPowerOn, CloudPcBulkReprovision, CloudPcBulkResize, CloudPcBulkRestart, CloudPcBulkRestore, CloudPcBulkSetReviewStatus, CloudPcBulkTroubleshoot]],Field(discriminator="odata_type")]]] = Field(alias="bulkActions", default=None,)
+	bulkActions: Optional[list[Annotated[Union[CloudPcBulkCreateSnapshot, CloudPcBulkDisasterRecoveryFailback, CloudPcBulkDisasterRecoveryFailover, CloudPcBulkModifyDiskEncryptionType, CloudPcBulkMove, CloudPcBulkPowerOff, CloudPcBulkPowerOn, CloudPcBulkReprovision, CloudPcBulkResize, CloudPcBulkRestart, CloudPcBulkRestore, CloudPcBulkSetReviewStatus, CloudPcBulkTroubleshoot],Field(discriminator="odata_type")]]] = Field(alias="bulkActions", default=None,)
 	cloudPCs: Optional[list[CloudPC]] = Field(alias="cloudPCs", default=None,)
 	crossCloudGovernmentOrganizationMapping: Optional[CloudPcCrossCloudGovernmentOrganizationMapping] = Field(alias="crossCloudGovernmentOrganizationMapping", default=None,)
 	deviceImages: Optional[list[CloudPcDeviceImage]] = Field(alias="deviceImages", default=None,)

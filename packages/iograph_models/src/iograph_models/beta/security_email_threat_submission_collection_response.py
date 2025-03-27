@@ -8,7 +8,7 @@ from pydantic import BaseModel, Field, SerializeAsAny
 class SecurityEmailThreatSubmissionCollectionResponse(BaseModel):
 	odata_count: Optional[int] = Field(alias="@odata.count", default=None,)
 	odata_nextLink: Optional[str] = Field(alias="@odata.nextLink", default=None,)
-	value: Optional[list[Annotated[Union[SecurityEmailContentThreatSubmission, SecurityEmailUrlThreatSubmission]],Field(discriminator="odata_type")]]] = Field(alias="value", default=None,)
+	value: Optional[list[Annotated[Union[SecurityEmailContentThreatSubmission, SecurityEmailUrlThreatSubmission],Field(discriminator="odata_type")]]] = Field(alias="value", default=None,)
 
 from .security_email_content_threat_submission import SecurityEmailContentThreatSubmission
 from .security_email_url_threat_submission import SecurityEmailUrlThreatSubmission

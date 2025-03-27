@@ -14,9 +14,9 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_managed_device_mobile_app_configuration_id import ByManagedDeviceMobileAppConfigurationIdRequest
 	from ....request_adapter import HttpxRequestAdapter
-from iograph_models.beta.managed_device_mobile_app_configuration import ManagedDeviceMobileAppConfiguration
-from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.beta.managed_device_mobile_app_configuration_collection_response import ManagedDeviceMobileAppConfigurationCollectionResponse
+from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.beta.managed_device_mobile_app_configuration import ManagedDeviceMobileAppConfiguration
 
 
 class MobileAppConfigurationsRequest(BaseRequestBuilder):

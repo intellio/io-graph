@@ -14,9 +14,9 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_privilege_management_elevation_id import ByPrivilegeManagementElevationIdRequest
 	from ....request_adapter import HttpxRequestAdapter
-from iograph_models.beta.privilege_management_elevation_collection_response import PrivilegeManagementElevationCollectionResponse
-from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.beta.privilege_management_elevation import PrivilegeManagementElevation
+from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.beta.privilege_management_elevation_collection_response import PrivilegeManagementElevationCollectionResponse
 
 
 class PrivilegeManagementElevationsRequest(BaseRequestBuilder):

@@ -10,8 +10,8 @@ class PrivilegeEscalation(BaseModel):
 	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
 	description: Optional[str] = Field(alias="description", default=None,)
 	displayName: Optional[str] = Field(alias="displayName", default=None,)
-	actions: Optional[list[Annotated[Union[AwsAuthorizationSystemTypeAction, AzureAuthorizationSystemTypeAction, GcpAuthorizationSystemTypeAction]],Field(discriminator="odata_type")]]] = Field(alias="actions", default=None,)
-	resources: Optional[list[Annotated[Union[AwsAuthorizationSystemResource, AzureAuthorizationSystemResource, GcpAuthorizationSystemResource]],Field(discriminator="odata_type")]]] = Field(alias="resources", default=None,)
+	actions: Optional[list[Annotated[Union[AwsAuthorizationSystemTypeAction, AzureAuthorizationSystemTypeAction, GcpAuthorizationSystemTypeAction],Field(discriminator="odata_type")]]] = Field(alias="actions", default=None,)
+	resources: Optional[list[Annotated[Union[AwsAuthorizationSystemResource, AzureAuthorizationSystemResource, GcpAuthorizationSystemResource],Field(discriminator="odata_type")]]] = Field(alias="resources", default=None,)
 
 from .aws_authorization_system_type_action import AwsAuthorizationSystemTypeAction
 from .azure_authorization_system_type_action import AzureAuthorizationSystemTypeAction

@@ -9,7 +9,7 @@ class UserExperienceAnalyticsInsight(BaseModel):
 	insightId: Optional[str] = Field(alias="insightId", default=None,)
 	severity: Optional[UserExperienceAnalyticsInsightSeverity | str] = Field(alias="severity", default=None,)
 	userExperienceAnalyticsMetricId: Optional[str] = Field(alias="userExperienceAnalyticsMetricId", default=None,)
-	values: Optional[list[Annotated[Union[InsightValueDouble, InsightValueInt]],Field(discriminator="odata_type")]]] = Field(alias="values", default=None,)
+	values: Optional[list[Annotated[Union[InsightValueDouble, InsightValueInt],Field(discriminator="odata_type")]]] = Field(alias="values", default=None,)
 	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
 
 from .user_experience_analytics_insight_severity import UserExperienceAnalyticsInsightSeverity

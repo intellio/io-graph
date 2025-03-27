@@ -33,7 +33,7 @@ class MobileApp(BaseModel):
 	uploadState: Optional[int] = Field(alias="uploadState", default=None,)
 	assignments: Optional[list[MobileAppAssignment]] = Field(alias="assignments", default=None,)
 	categories: Optional[list[MobileAppCategory]] = Field(alias="categories", default=None,)
-	relationships: Optional[list[Annotated[Union[MobileAppDependency, MobileAppSupersedence]],Field(discriminator="odata_type")]]] = Field(alias="relationships", default=None,)
+	relationships: Optional[list[Annotated[Union[MobileAppDependency, MobileAppSupersedence],Field(discriminator="odata_type")]]] = Field(alias="relationships", default=None,)
 
 	@model_validator(mode="wrap")
 	def convert_discriminator_class(cls, data: Any, handler: ModelWrapValidatorHandler[Self]) -> Self:

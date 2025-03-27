@@ -8,7 +8,7 @@ from pydantic import BaseModel, Field, SerializeAsAny
 class MobileAppTroubleshootingHistoryItemCollectionResponse(BaseModel):
 	odata_count: Optional[int] = Field(alias="@odata.count", default=None,)
 	odata_nextLink: Optional[str] = Field(alias="@odata.nextLink", default=None,)
-	value: Optional[list[Annotated[Union[MobileAppTroubleshootingAppPolicyCreationHistory, MobileAppTroubleshootingAppStateHistory, MobileAppTroubleshootingAppTargetHistory, MobileAppTroubleshootingAppUpdateHistory, MobileAppTroubleshootingDeviceCheckinHistory]],Field(discriminator="odata_type")]]] = Field(alias="value", default=None,)
+	value: Optional[list[Annotated[Union[MobileAppTroubleshootingAppPolicyCreationHistory, MobileAppTroubleshootingAppStateHistory, MobileAppTroubleshootingAppTargetHistory, MobileAppTroubleshootingAppUpdateHistory, MobileAppTroubleshootingDeviceCheckinHistory],Field(discriminator="odata_type")]]] = Field(alias="value", default=None,)
 
 from .mobile_app_troubleshooting_app_policy_creation_history import MobileAppTroubleshootingAppPolicyCreationHistory
 from .mobile_app_troubleshooting_app_state_history import MobileAppTroubleshootingAppStateHistory

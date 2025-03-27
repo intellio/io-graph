@@ -13,8 +13,8 @@ from typing import TYPE_CHECKING
 if TYPE_CHECKING:
 	from .device import DeviceRequest
 	from .......request_adapter import HttpxRequestAdapter
-from iograph_models.beta.passwordless_microsoft_authenticator_authentication_method import PasswordlessMicrosoftAuthenticatorAuthenticationMethod
 from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.beta.passwordless_microsoft_authenticator_authentication_method import PasswordlessMicrosoftAuthenticatorAuthenticationMethod
 
 
 class ByPasswordlessMicrosoftAuthenticatorAuthenticationMethodIdRequest(BaseRequestBuilder):

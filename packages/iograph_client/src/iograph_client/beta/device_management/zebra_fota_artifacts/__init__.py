@@ -14,9 +14,9 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_zebra_fota_artifact_id import ByZebraFotaArtifactIdRequest
 	from ....request_adapter import HttpxRequestAdapter
+from iograph_models.beta.zebra_fota_artifact import ZebraFotaArtifact
 from iograph_models.beta.zebra_fota_artifact_collection_response import ZebraFotaArtifactCollectionResponse
 from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
-from iograph_models.beta.zebra_fota_artifact import ZebraFotaArtifact
 
 
 class ZebraFotaArtifactsRequest(BaseRequestBuilder):

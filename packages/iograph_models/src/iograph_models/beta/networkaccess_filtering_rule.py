@@ -13,7 +13,7 @@ class NetworkaccessFilteringRule(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
 	odata_type: Literal["#microsoft.graph.networkaccess.filteringRule"] = Field(alias="@odata.type", default="#microsoft.graph.networkaccess.filteringRule")
 	name: Optional[str] = Field(alias="name", default=None,)
-	destinations: Optional[list[Annotated[Union[NetworkaccessFqdn, NetworkaccessIpAddress, NetworkaccessIpRange, NetworkaccessIpSubnet, NetworkaccessUrl, NetworkaccessWebCategory]],Field(discriminator="odata_type")]]] = Field(alias="destinations", default=None,)
+	destinations: Optional[list[Annotated[Union[NetworkaccessFqdn, NetworkaccessIpAddress, NetworkaccessIpRange, NetworkaccessIpSubnet, NetworkaccessUrl, NetworkaccessWebCategory],Field(discriminator="odata_type")]]] = Field(alias="destinations", default=None,)
 	ruleType: Optional[NetworkaccessNetworkDestinationType | str] = Field(alias="ruleType", default=None,)
 
 	@model_validator(mode="wrap")

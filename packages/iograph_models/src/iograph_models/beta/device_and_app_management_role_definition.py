@@ -16,7 +16,7 @@ class DeviceAndAppManagementRoleDefinition(BaseModel):
 	permissions: Optional[list[RolePermission]] = Field(alias="permissions", default=None,)
 	rolePermissions: Optional[list[RolePermission]] = Field(alias="rolePermissions", default=None,)
 	roleScopeTagIds: Optional[list[str]] = Field(alias="roleScopeTagIds", default=None,)
-	roleAssignments: Optional[list[Annotated[Union[DeviceAndAppManagementRoleAssignment]],Field(discriminator="odata_type")]]] = Field(alias="roleAssignments", default=None,)
+	roleAssignments: Optional[list[Annotated[Union[DeviceAndAppManagementRoleAssignment],Field(discriminator="odata_type")]]] = Field(alias="roleAssignments", default=None,)
 
 from .role_permission import RolePermission
 from .role_permission import RolePermission

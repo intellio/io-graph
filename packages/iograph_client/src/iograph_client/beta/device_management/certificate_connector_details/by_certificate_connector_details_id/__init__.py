@@ -14,8 +14,8 @@ if TYPE_CHECKING:
 	from .get_health_metric_time_series import GetHealthMetricTimeSeriesRequest
 	from .get_health_metrics import GetHealthMetricsRequest
 	from .....request_adapter import HttpxRequestAdapter
-from iograph_models.beta.certificate_connector_details import CertificateConnectorDetails
 from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.beta.certificate_connector_details import CertificateConnectorDetails
 
 
 class ByCertificateConnectorDetailsIdRequest(BaseRequestBuilder):

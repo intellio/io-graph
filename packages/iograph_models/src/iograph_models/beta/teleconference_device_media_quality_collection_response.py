@@ -8,7 +8,7 @@ from pydantic import BaseModel, Field, SerializeAsAny
 class TeleconferenceDeviceMediaQualityCollectionResponse(BaseModel):
 	odata_count: Optional[int] = Field(alias="@odata.count", default=None,)
 	odata_nextLink: Optional[str] = Field(alias="@odata.nextLink", default=None,)
-	value: Optional[list[Annotated[Union[TeleconferenceDeviceAudioQuality, TeleconferenceDeviceVideoQuality, TeleconferenceDeviceScreenSharingQuality]],Field(discriminator="odata_type")]]] = Field(alias="value", default=None,)
+	value: Optional[list[Annotated[Union[TeleconferenceDeviceAudioQuality, TeleconferenceDeviceVideoQuality, TeleconferenceDeviceScreenSharingQuality],Field(discriminator="odata_type")]]] = Field(alias="value", default=None,)
 
 from .teleconference_device_audio_quality import TeleconferenceDeviceAudioQuality
 from .teleconference_device_video_quality import TeleconferenceDeviceVideoQuality

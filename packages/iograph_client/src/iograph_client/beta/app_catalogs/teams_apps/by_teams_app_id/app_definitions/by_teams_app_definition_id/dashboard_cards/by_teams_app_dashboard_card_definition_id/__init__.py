@@ -11,8 +11,8 @@ from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:
 	from .........request_adapter import HttpxRequestAdapter
-from iograph_models.beta.teams_app_dashboard_card_definition import TeamsAppDashboardCardDefinition
 from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.beta.teams_app_dashboard_card_definition import TeamsAppDashboardCardDefinition
 
 
 class ByTeamsAppDashboardCardDefinitionIdRequest(BaseRequestBuilder):

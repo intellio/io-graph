@@ -9,7 +9,7 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 class ApplyLabelAction(BaseModel):
 	odata_type: Literal["#microsoft.graph.applyLabelAction"] = Field(alias="@odata.type", default="#microsoft.graph.applyLabelAction")
-	actions: Optional[list[Annotated[Union[AddContentFooterAction, AddContentHeaderAction, AddWatermarkAction, ApplyLabelAction, CustomAction, JustifyAction, MetadataAction, ProtectAdhocAction, ProtectByTemplateAction, ProtectDoNotForwardAction, RecommendLabelAction, RemoveContentFooterAction, RemoveContentHeaderAction, RemoveProtectionAction, RemoveWatermarkAction]],Field(discriminator="odata_type")]]] = Field(alias="actions", default=None,)
+	actions: Optional[list[Annotated[Union[AddContentFooterAction, AddContentHeaderAction, AddWatermarkAction, ApplyLabelAction, CustomAction, JustifyAction, MetadataAction, ProtectAdhocAction, ProtectByTemplateAction, ProtectDoNotForwardAction, RecommendLabelAction, RemoveContentFooterAction, RemoveContentHeaderAction, RemoveProtectionAction, RemoveWatermarkAction],Field(discriminator="odata_type")]]] = Field(alias="actions", default=None,)
 	actionSource: Optional[ActionSource | str] = Field(alias="actionSource", default=None,)
 	label: Optional[LabelDetails] = Field(alias="label", default=None,)
 	responsibleSensitiveTypeIds: Optional[list[UUID]] = Field(alias="responsibleSensitiveTypeIds", default=None,)

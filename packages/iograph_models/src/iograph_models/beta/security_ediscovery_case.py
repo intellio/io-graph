@@ -22,7 +22,7 @@ class SecurityEdiscoveryCase(BaseModel):
 	custodians: Optional[list[SecurityEdiscoveryCustodian]] = Field(alias="custodians", default=None,)
 	legalHolds: Optional[list[SecurityEdiscoveryHoldPolicy]] = Field(alias="legalHolds", default=None,)
 	noncustodialDataSources: Optional[list[SecurityEdiscoveryNoncustodialDataSource]] = Field(alias="noncustodialDataSources", default=None,)
-	operations: Optional[list[Annotated[Union[SecurityEdiscoveryAddToReviewSetOperation, SecurityEdiscoveryEstimateOperation, SecurityEdiscoveryExportOperation, SecurityEdiscoveryHoldOperation, SecurityEdiscoveryIndexOperation, SecurityEdiscoveryPurgeDataOperation, SecurityEdiscoverySearchExportOperation, SecurityEdiscoveryTagOperation]],Field(discriminator="odata_type")]]] = Field(alias="operations", default=None,)
+	operations: Optional[list[Annotated[Union[SecurityEdiscoveryAddToReviewSetOperation, SecurityEdiscoveryEstimateOperation, SecurityEdiscoveryExportOperation, SecurityEdiscoveryHoldOperation, SecurityEdiscoveryIndexOperation, SecurityEdiscoveryPurgeDataOperation, SecurityEdiscoverySearchExportOperation, SecurityEdiscoveryTagOperation],Field(discriminator="odata_type")]]] = Field(alias="operations", default=None,)
 	reviewSets: Optional[list[SecurityEdiscoveryReviewSet]] = Field(alias="reviewSets", default=None,)
 	searches: Optional[list[SecurityEdiscoverySearch]] = Field(alias="searches", default=None,)
 	settings: Optional[SecurityEdiscoveryCaseSettings] = Field(alias="settings", default=None,)

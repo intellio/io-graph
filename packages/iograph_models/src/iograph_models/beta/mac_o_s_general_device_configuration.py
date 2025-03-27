@@ -38,7 +38,7 @@ class MacOSGeneralDeviceConfiguration(BaseModel):
 	classroomForceRequestPermissionToLeaveClasses: Optional[bool] = Field(alias="classroomForceRequestPermissionToLeaveClasses", default=None,)
 	classroomForceUnpromptedAppAndDeviceLock: Optional[bool] = Field(alias="classroomForceUnpromptedAppAndDeviceLock", default=None,)
 	compliantAppListType: Optional[AppListType | str] = Field(alias="compliantAppListType", default=None,)
-	compliantAppsList: Optional[list[Annotated[Union[AppleAppListItem]],Field(discriminator="odata_type")]]] = Field(alias="compliantAppsList", default=None,)
+	compliantAppsList: Optional[list[Annotated[Union[AppleAppListItem],Field(discriminator="odata_type")]]] = Field(alias="compliantAppsList", default=None,)
 	contentCachingBlocked: Optional[bool] = Field(alias="contentCachingBlocked", default=None,)
 	definitionLookupBlocked: Optional[bool] = Field(alias="definitionLookupBlocked", default=None,)
 	emailInDomainSuffixes: Optional[list[str]] = Field(alias="emailInDomainSuffixes", default=None,)

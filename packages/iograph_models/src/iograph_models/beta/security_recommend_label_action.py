@@ -8,7 +8,7 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 class SecurityRecommendLabelAction(BaseModel):
 	odata_type: Literal["#microsoft.graph.security.recommendLabelAction"] = Field(alias="@odata.type", default="#microsoft.graph.security.recommendLabelAction")
-	actions: Optional[list[Annotated[Union[SecurityAddContentFooterAction, SecurityAddContentHeaderAction, SecurityAddWatermarkAction, SecurityApplyLabelAction, SecurityCustomAction, SecurityJustifyAction, SecurityMetadataAction, SecurityProtectAdhocAction, SecurityProtectByTemplateAction, SecurityProtectDoNotForwardAction, SecurityRecommendLabelAction, SecurityRemoveContentFooterAction, SecurityRemoveContentHeaderAction, SecurityRemoveProtectionAction, SecurityRemoveWatermarkAction]],Field(discriminator="odata_type")]]] = Field(alias="actions", default=None,)
+	actions: Optional[list[Annotated[Union[SecurityAddContentFooterAction, SecurityAddContentHeaderAction, SecurityAddWatermarkAction, SecurityApplyLabelAction, SecurityCustomAction, SecurityJustifyAction, SecurityMetadataAction, SecurityProtectAdhocAction, SecurityProtectByTemplateAction, SecurityProtectDoNotForwardAction, SecurityRecommendLabelAction, SecurityRemoveContentFooterAction, SecurityRemoveContentHeaderAction, SecurityRemoveProtectionAction, SecurityRemoveWatermarkAction],Field(discriminator="odata_type")]]] = Field(alias="actions", default=None,)
 	actionSource: Optional[SecurityActionSource | str] = Field(alias="actionSource", default=None,)
 	responsibleSensitiveTypeIds: Optional[list[str]] = Field(alias="responsibleSensitiveTypeIds", default=None,)
 	sensitivityLabelId: Optional[str] = Field(alias="sensitivityLabelId", default=None,)

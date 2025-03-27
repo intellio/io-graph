@@ -14,9 +14,9 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_governance_subject_id import ByGovernanceSubjectIdRequest
 	from ...request_adapter import HttpxRequestAdapter
-from iograph_models.beta.governance_subject_collection_response import GovernanceSubjectCollectionResponse
 from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.beta.governance_subject import GovernanceSubject
+from iograph_models.beta.governance_subject_collection_response import GovernanceSubjectCollectionResponse
 
 
 class GovernanceSubjectsRequest(BaseRequestBuilder):

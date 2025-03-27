@@ -15,8 +15,8 @@ if TYPE_CHECKING:
 	from .by_intune_branding_profile_id import ByIntuneBrandingProfileIdRequest
 	from ....request_adapter import HttpxRequestAdapter
 from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
-from iograph_models.beta.intune_branding_profile import IntuneBrandingProfile
 from iograph_models.beta.intune_branding_profile_collection_response import IntuneBrandingProfileCollectionResponse
+from iograph_models.beta.intune_branding_profile import IntuneBrandingProfile
 
 
 class IntuneBrandingProfilesRequest(BaseRequestBuilder):

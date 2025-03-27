@@ -9,7 +9,7 @@ class HorizontalSectionColumn(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
 	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
 	width: Optional[int] = Field(alias="width", default=None,)
-	webparts: Optional[list[Annotated[Union[StandardWebPart, TextWebPart]],Field(discriminator="odata_type")]]] = Field(alias="webparts", default=None,)
+	webparts: Optional[list[Annotated[Union[StandardWebPart, TextWebPart],Field(discriminator="odata_type")]]] = Field(alias="webparts", default=None,)
 
 from .standard_web_part import StandardWebPart
 from .text_web_part import TextWebPart

@@ -15,8 +15,8 @@ if TYPE_CHECKING:
 	from .by_app_management_policy_id import ByAppManagementPolicyIdRequest
 	from ....request_adapter import HttpxRequestAdapter
 from iograph_models.beta.app_management_policy_collection_response import AppManagementPolicyCollectionResponse
-from iograph_models.beta.app_management_policy import AppManagementPolicy
 from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.beta.app_management_policy import AppManagementPolicy
 
 
 class AppManagementPoliciesRequest(BaseRequestBuilder):
