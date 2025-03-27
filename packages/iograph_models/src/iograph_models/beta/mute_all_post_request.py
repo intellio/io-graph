@@ -4,7 +4,7 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class Mute_allPostRequest(BaseModel):
-	participants: Optional[list[str]] = Field(alias="participants",default=None,)
-	clientContext: Optional[str] = Field(alias="clientContext",default=None,)
+	participants: Optional[list[str]] = Field(alias="participants", default=None,)
+	clientContext: Optional[str] = Field(alias="clientContext", default=None,)
 
 

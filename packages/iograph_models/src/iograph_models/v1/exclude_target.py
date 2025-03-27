@@ -4,9 +4,9 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class ExcludeTarget(BaseModel):
-	id: Optional[str] = Field(alias="id",default=None,)
-	targetType: Optional[AuthenticationMethodTargetType | str] = Field(alias="targetType",default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	id: Optional[str] = Field(alias="id", default=None,)
+	targetType: Optional[AuthenticationMethodTargetType | str] = Field(alias="targetType", default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
 
 from .authentication_method_target_type import AuthenticationMethodTargetType
 

@@ -4,8 +4,8 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class RejectPostRequest(BaseModel):
-	justification: Optional[str] = Field(alias="justification",default=None,)
-	approvalSource: Optional[OperationApprovalSource | str] = Field(alias="approvalSource",default=None,)
+	justification: Optional[str] = Field(alias="justification", default=None,)
+	approvalSource: Optional[OperationApprovalSource | str] = Field(alias="approvalSource", default=None,)
 
 from .operation_approval_source import OperationApprovalSource
 

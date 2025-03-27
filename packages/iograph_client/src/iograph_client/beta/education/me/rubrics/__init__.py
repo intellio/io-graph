@@ -15,8 +15,8 @@ if TYPE_CHECKING:
 	from .by_education_rubric_id import ByEducationRubricIdRequest
 	from .....request_adapter import HttpxRequestAdapter
 from iograph_models.beta.education_rubric_collection_response import EducationRubricCollectionResponse
-from iograph_models.beta.education_rubric import EducationRubric
 from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.beta.education_rubric import EducationRubric
 
 
 class RubricsRequest(BaseRequestBuilder):

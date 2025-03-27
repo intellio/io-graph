@@ -8,15 +8,15 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class DeviceEnrollmentConfiguration(BaseModel):
-	id: Optional[str] = Field(alias="id",default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
-	createdDateTime: Optional[datetime] = Field(alias="createdDateTime",default=None,)
-	description: Optional[str] = Field(alias="description",default=None,)
-	displayName: Optional[str] = Field(alias="displayName",default=None,)
-	lastModifiedDateTime: Optional[datetime] = Field(alias="lastModifiedDateTime",default=None,)
-	priority: Optional[int] = Field(alias="priority",default=None,)
-	version: Optional[int] = Field(alias="version",default=None,)
-	assignments: Optional[list[EnrollmentConfigurationAssignment]] = Field(alias="assignments",default=None,)
+	id: Optional[str] = Field(alias="id", default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
+	createdDateTime: Optional[datetime] = Field(alias="createdDateTime", default=None,)
+	description: Optional[str] = Field(alias="description", default=None,)
+	displayName: Optional[str] = Field(alias="displayName", default=None,)
+	lastModifiedDateTime: Optional[datetime] = Field(alias="lastModifiedDateTime", default=None,)
+	priority: Optional[int] = Field(alias="priority", default=None,)
+	version: Optional[int] = Field(alias="version", default=None,)
+	assignments: Optional[list[EnrollmentConfigurationAssignment]] = Field(alias="assignments", default=None,)
 
 	@model_validator(mode="wrap")
 	def convert_discriminator_class(cls, data: Any, handler: ModelWrapValidatorHandler[Self]) -> Self:

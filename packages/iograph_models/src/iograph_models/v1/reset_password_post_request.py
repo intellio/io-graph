@@ -4,6 +4,6 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class Reset_passwordPostRequest(BaseModel):
-	newPassword: Optional[str] = Field(alias="newPassword",default=None,)
+	newPassword: Optional[str] = Field(alias="newPassword", default=None,)
 
 

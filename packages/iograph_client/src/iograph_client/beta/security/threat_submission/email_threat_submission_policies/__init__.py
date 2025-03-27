@@ -14,9 +14,9 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_email_threat_submission_policy_id import ByEmailThreatSubmissionPolicyIdRequest
 	from .....request_adapter import HttpxRequestAdapter
-from iograph_models.beta.security_email_threat_submission_policy import SecurityEmailThreatSubmissionPolicy
-from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.beta.security_email_threat_submission_policy_collection_response import SecurityEmailThreatSubmissionPolicyCollectionResponse
+from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.beta.security_email_threat_submission_policy import SecurityEmailThreatSubmissionPolicy
 
 
 class EmailThreatSubmissionPoliciesRequest(BaseRequestBuilder):

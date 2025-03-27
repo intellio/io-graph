@@ -5,6 +5,6 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class PostponePostRequest(BaseModel):
-	postponeUntilDateTime: Optional[datetime] = Field(alias="postponeUntilDateTime",default=None,)
+	postponeUntilDateTime: Optional[datetime] = Field(alias="postponeUntilDateTime", default=None,)
 
 

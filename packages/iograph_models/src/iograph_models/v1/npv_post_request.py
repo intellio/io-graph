@@ -4,7 +4,7 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class NpvPostRequest(BaseModel):
-	rate: Optional[str] = Field(alias="rate",default=None,)
-	values: Optional[str] = Field(alias="values",default=None,)
+	rate: Optional[str] = Field(alias="rate", default=None,)
+	values: Optional[str] = Field(alias="values", default=None,)
 
 

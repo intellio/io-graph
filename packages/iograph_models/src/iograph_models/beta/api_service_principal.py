@@ -4,8 +4,8 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class ApiServicePrincipal(BaseModel):
-	resourceSpecificApplicationPermissions: Optional[list[ResourceSpecificPermission]] = Field(alias="resourceSpecificApplicationPermissions",default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	resourceSpecificApplicationPermissions: Optional[list[ResourceSpecificPermission]] = Field(alias="resourceSpecificApplicationPermissions", default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
 
 from .resource_specific_permission import ResourceSpecificPermission
 

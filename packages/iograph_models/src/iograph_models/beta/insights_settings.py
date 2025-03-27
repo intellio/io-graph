@@ -4,9 +4,9 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class InsightsSettings(BaseModel):
-	id: Optional[str] = Field(alias="id",default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
-	disabledForGroup: Optional[str] = Field(alias="disabledForGroup",default=None,)
-	isEnabledInOrganization: Optional[bool] = Field(alias="isEnabledInOrganization",default=None,)
+	id: Optional[str] = Field(alias="id", default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
+	disabledForGroup: Optional[str] = Field(alias="disabledForGroup", default=None,)
+	isEnabledInOrganization: Optional[bool] = Field(alias="isEnabledInOrganization", default=None,)
 
 

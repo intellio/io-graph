@@ -7,15 +7,15 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class Location(BaseModel):
-	address: Optional[PhysicalAddress] = Field(alias="address",default=None,)
-	coordinates: Optional[OutlookGeoCoordinates] = Field(alias="coordinates",default=None,)
-	displayName: Optional[str] = Field(alias="displayName",default=None,)
-	locationEmailAddress: Optional[str] = Field(alias="locationEmailAddress",default=None,)
-	locationType: Optional[LocationType | str] = Field(alias="locationType",default=None,)
-	locationUri: Optional[str] = Field(alias="locationUri",default=None,)
-	uniqueId: Optional[str] = Field(alias="uniqueId",default=None,)
-	uniqueIdType: Optional[LocationUniqueIdType | str] = Field(alias="uniqueIdType",default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	address: Optional[PhysicalAddress] = Field(alias="address", default=None,)
+	coordinates: Optional[OutlookGeoCoordinates] = Field(alias="coordinates", default=None,)
+	displayName: Optional[str] = Field(alias="displayName", default=None,)
+	locationEmailAddress: Optional[str] = Field(alias="locationEmailAddress", default=None,)
+	locationType: Optional[LocationType | str] = Field(alias="locationType", default=None,)
+	locationUri: Optional[str] = Field(alias="locationUri", default=None,)
+	uniqueId: Optional[str] = Field(alias="uniqueId", default=None,)
+	uniqueIdType: Optional[LocationUniqueIdType | str] = Field(alias="uniqueIdType", default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
 
 	@model_validator(mode="wrap")
 	def convert_discriminator_class(cls, data: Any, handler: ModelWrapValidatorHandler[Self]) -> Self:

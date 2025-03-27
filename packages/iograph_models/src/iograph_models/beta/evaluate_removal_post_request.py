@@ -4,8 +4,8 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class Evaluate_removalPostRequest(BaseModel):
-	contentInfo: Optional[ContentInfo] = Field(alias="contentInfo",default=None,)
-	downgradeJustification: Optional[DowngradeJustification] = Field(alias="downgradeJustification",default=None,)
+	contentInfo: Optional[ContentInfo] = Field(alias="contentInfo", default=None,)
+	downgradeJustification: Optional[DowngradeJustification] = Field(alias="downgradeJustification", default=None,)
 
 from .content_info import ContentInfo
 from .downgrade_justification import DowngradeJustification

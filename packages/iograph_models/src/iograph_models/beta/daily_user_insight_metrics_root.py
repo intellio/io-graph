@@ -4,17 +4,17 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class DailyUserInsightMetricsRoot(BaseModel):
-	id: Optional[str] = Field(alias="id",default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
-	activeUsers: Optional[list[ActiveUsersMetric]] = Field(alias="activeUsers",default=None,)
-	authentications: Optional[list[AuthenticationsMetric]] = Field(alias="authentications",default=None,)
-	inactiveUsers: Optional[list[DailyInactiveUsersMetric]] = Field(alias="inactiveUsers",default=None,)
-	inactiveUsersByApplication: Optional[list[DailyInactiveUsersByApplicationMetric]] = Field(alias="inactiveUsersByApplication",default=None,)
-	mfaCompletions: Optional[list[MfaCompletionMetric]] = Field(alias="mfaCompletions",default=None,)
-	mfaTelecomFraud: Optional[list[MfaTelecomFraudMetric]] = Field(alias="mfaTelecomFraud",default=None,)
-	signUps: Optional[list[UserSignUpMetric]] = Field(alias="signUps",default=None,)
-	summary: Optional[list[InsightSummary]] = Field(alias="summary",default=None,)
-	userCount: Optional[list[UserCountMetric]] = Field(alias="userCount",default=None,)
+	id: Optional[str] = Field(alias="id", default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
+	activeUsers: Optional[list[ActiveUsersMetric]] = Field(alias="activeUsers", default=None,)
+	authentications: Optional[list[AuthenticationsMetric]] = Field(alias="authentications", default=None,)
+	inactiveUsers: Optional[list[DailyInactiveUsersMetric]] = Field(alias="inactiveUsers", default=None,)
+	inactiveUsersByApplication: Optional[list[DailyInactiveUsersByApplicationMetric]] = Field(alias="inactiveUsersByApplication", default=None,)
+	mfaCompletions: Optional[list[MfaCompletionMetric]] = Field(alias="mfaCompletions", default=None,)
+	mfaTelecomFraud: Optional[list[MfaTelecomFraudMetric]] = Field(alias="mfaTelecomFraud", default=None,)
+	signUps: Optional[list[UserSignUpMetric]] = Field(alias="signUps", default=None,)
+	summary: Optional[list[InsightSummary]] = Field(alias="summary", default=None,)
+	userCount: Optional[list[UserCountMetric]] = Field(alias="userCount", default=None,)
 
 from .active_users_metric import ActiveUsersMetric
 from .authentications_metric import AuthenticationsMetric

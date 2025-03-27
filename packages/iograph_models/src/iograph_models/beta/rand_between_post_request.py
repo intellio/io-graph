@@ -4,7 +4,7 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class Rand_betweenPostRequest(BaseModel):
-	bottom: Optional[str] = Field(alias="bottom",default=None,)
-	top: Optional[str] = Field(alias="top",default=None,)
+	bottom: Optional[str] = Field(alias="bottom", default=None,)
+	top: Optional[str] = Field(alias="top", default=None,)
 
 

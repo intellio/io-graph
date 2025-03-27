@@ -4,9 +4,9 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class ManagedTenantsTenantContract(BaseModel):
-	contractType: Optional[int] = Field(alias="contractType",default=None,)
-	defaultDomainName: Optional[str] = Field(alias="defaultDomainName",default=None,)
-	displayName: Optional[str] = Field(alias="displayName",default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	contractType: Optional[int] = Field(alias="contractType", default=None,)
+	defaultDomainName: Optional[str] = Field(alias="defaultDomainName", default=None,)
+	displayName: Optional[str] = Field(alias="displayName", default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
 
 

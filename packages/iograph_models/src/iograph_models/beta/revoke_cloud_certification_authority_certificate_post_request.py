@@ -4,6 +4,6 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class Revoke_cloud_certification_authority_certificatePostRequest(BaseModel):
-	certificationAuthorityVersion: Optional[int] = Field(alias="certificationAuthorityVersion",default=None,)
+	certificationAuthorityVersion: Optional[int] = Field(alias="certificationAuthorityVersion", default=None,)
 
 

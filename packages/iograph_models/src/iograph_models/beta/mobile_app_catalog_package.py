@@ -7,12 +7,12 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class MobileAppCatalogPackage(BaseModel):
-	id: Optional[str] = Field(alias="id",default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
-	productDisplayName: Optional[str] = Field(alias="productDisplayName",default=None,)
-	productId: Optional[str] = Field(alias="productId",default=None,)
-	publisherDisplayName: Optional[str] = Field(alias="publisherDisplayName",default=None,)
-	versionDisplayName: Optional[str] = Field(alias="versionDisplayName",default=None,)
+	id: Optional[str] = Field(alias="id", default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
+	productDisplayName: Optional[str] = Field(alias="productDisplayName", default=None,)
+	productId: Optional[str] = Field(alias="productId", default=None,)
+	publisherDisplayName: Optional[str] = Field(alias="publisherDisplayName", default=None,)
+	versionDisplayName: Optional[str] = Field(alias="versionDisplayName", default=None,)
 
 	@model_validator(mode="wrap")
 	def convert_discriminator_class(cls, data: Any, handler: ModelWrapValidatorHandler[Self]) -> Self:

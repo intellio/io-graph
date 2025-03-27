@@ -14,9 +14,9 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_teamwork_tag_id import ByTeamworkTagIdRequest
 	from ......request_adapter import HttpxRequestAdapter
-from iograph_models.v1.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.v1.teamwork_tag import TeamworkTag
 from iograph_models.v1.teamwork_tag_collection_response import TeamworkTagCollectionResponse
+from iograph_models.v1.o_data_errors__o_data_error import ODataErrorsODataError
 
 
 class TagsRequest(BaseRequestBuilder):

@@ -1,10 +1,11 @@
 from __future__ import annotations
 from typing import Optional
+from typing import Literal
 from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class ProtectByTemplateAction(BaseModel):
-	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
-	templateId: Optional[str] = Field(alias="templateId",default=None,)
+	odata_type: Literal["#microsoft.graph.protectByTemplateAction"] = Field(alias="@odata.type", default="#microsoft.graph.protectByTemplateAction")
+	templateId: Optional[str] = Field(alias="templateId", default=None,)
 
 

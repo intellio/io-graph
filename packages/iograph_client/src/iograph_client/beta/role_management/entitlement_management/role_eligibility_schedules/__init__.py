@@ -16,8 +16,8 @@ if TYPE_CHECKING:
 	from .by_unified_role_eligibility_schedule_id import ByUnifiedRoleEligibilityScheduleIdRequest
 	from .....request_adapter import HttpxRequestAdapter
 from iograph_models.beta.unified_role_eligibility_schedule_collection_response import UnifiedRoleEligibilityScheduleCollectionResponse
-from iograph_models.beta.unified_role_eligibility_schedule import UnifiedRoleEligibilitySchedule
 from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.beta.unified_role_eligibility_schedule import UnifiedRoleEligibilitySchedule
 
 
 class RoleEligibilitySchedulesRequest(BaseRequestBuilder):

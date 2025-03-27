@@ -4,9 +4,9 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class ReputationCategory(BaseModel):
-	description: Optional[str] = Field(alias="description",default=None,)
-	name: Optional[str] = Field(alias="name",default=None,)
-	vendor: Optional[str] = Field(alias="vendor",default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	description: Optional[str] = Field(alias="description", default=None,)
+	name: Optional[str] = Field(alias="name", default=None,)
+	vendor: Optional[str] = Field(alias="vendor", default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
 
 

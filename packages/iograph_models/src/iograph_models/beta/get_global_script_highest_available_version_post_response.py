@@ -4,6 +4,6 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class Get_global_script_highest_available_versionPostResponse(BaseModel):
-	value: Optional[str] = Field(alias="value",default=None,)
+	value: Optional[str] = Field(alias="value", default=None,)
 
 

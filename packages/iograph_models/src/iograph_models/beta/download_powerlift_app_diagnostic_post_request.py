@@ -4,7 +4,7 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class Download_powerlift_app_diagnosticPostRequest(BaseModel):
-	request: Optional[PowerliftAppDiagnosticDownloadRequest] = Field(alias="request",default=None,)
+	request: Optional[PowerliftAppDiagnosticDownloadRequest] = Field(alias="request", default=None,)
 
 from .powerlift_app_diagnostic_download_request import PowerliftAppDiagnosticDownloadRequest
 

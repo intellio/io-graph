@@ -11,9 +11,9 @@ from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:
 	from ............request_adapter import HttpxRequestAdapter
-from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
-from iograph_models.beta.time_card import TimeCard
 from iograph_models.beta.clock_out_post_request import Clock_outPostRequest
+from iograph_models.beta.time_card import TimeCard
+from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 
 
 class ClockOutRequest(BaseRequestBuilder):

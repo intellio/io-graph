@@ -7,8 +7,8 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class Win32LobAppRule(BaseModel):
-	ruleType: Optional[Win32LobAppRuleType | str] = Field(alias="ruleType",default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	ruleType: Optional[Win32LobAppRuleType | str] = Field(alias="ruleType", default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
 
 	@model_validator(mode="wrap")
 	def convert_discriminator_class(cls, data: Any, handler: ModelWrapValidatorHandler[Self]) -> Self:

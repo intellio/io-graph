@@ -15,8 +15,8 @@ if TYPE_CHECKING:
 	from .by_certificate_connector_details_id import ByCertificateConnectorDetailsIdRequest
 	from ....request_adapter import HttpxRequestAdapter
 from iograph_models.beta.certificate_connector_details import CertificateConnectorDetails
-from iograph_models.beta.certificate_connector_details_collection_response import CertificateConnectorDetailsCollectionResponse
 from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.beta.certificate_connector_details_collection_response import CertificateConnectorDetailsCollectionResponse
 
 
 class CertificateConnectorDetailsRequest(BaseRequestBuilder):

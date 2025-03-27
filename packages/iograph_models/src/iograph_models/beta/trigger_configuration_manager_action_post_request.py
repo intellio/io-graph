@@ -4,7 +4,7 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class Trigger_configuration_manager_actionPostRequest(BaseModel):
-	configurationManagerAction: Optional[ConfigurationManagerAction] = Field(alias="configurationManagerAction",default=None,)
+	configurationManagerAction: Optional[ConfigurationManagerAction] = Field(alias="configurationManagerAction", default=None,)
 
 from .configuration_manager_action import ConfigurationManagerAction
 

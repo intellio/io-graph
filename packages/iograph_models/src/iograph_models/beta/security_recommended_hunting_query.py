@@ -4,7 +4,7 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class SecurityRecommendedHuntingQuery(BaseModel):
-	kqlText: Optional[str] = Field(alias="kqlText",default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	kqlText: Optional[str] = Field(alias="kqlText", default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
 
 

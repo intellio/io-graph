@@ -1,5 +1,6 @@
 from __future__ import annotations
 from typing import Optional
+from typing import Union
 from pydantic import model_validator, ModelWrapValidatorHandler, ValidationError
 from typing_extensions import Self
 from typing import Any
@@ -7,8 +8,8 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class Recipient(BaseModel):
-	emailAddress: SerializeAsAny[Optional[EmailAddress]] = Field(alias="emailAddress",default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	emailAddress: Optional[Union[TypedEmailAddress]] = Field(alias="emailAddress", default=None,discriminator="odata_type", )
+	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
 
 	@model_validator(mode="wrap")
 	def convert_discriminator_class(cls, data: Any, handler: ModelWrapValidatorHandler[Self]) -> Self:
@@ -31,5 +32,5 @@ class Recipient(BaseModel):
 		except Exception as e:
 			raise e
 
-from .email_address import EmailAddress
+from .typed_email_address import TypedEmailAddress
 

@@ -14,8 +14,8 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_privileged_role_assignment_id1 import ByPrivilegedRoleAssignmentId1Request
 	from ......request_adapter import HttpxRequestAdapter
-from iograph_models.beta.privileged_role_assignment_collection_response import PrivilegedRoleAssignmentCollectionResponse
 from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.beta.privileged_role_assignment_collection_response import PrivilegedRoleAssignmentCollectionResponse
 
 
 class AssignmentsRequest(BaseRequestBuilder):

@@ -15,8 +15,8 @@ if TYPE_CHECKING:
 	from .by_custom_security_attribute_audit_id import ByCustomSecurityAttributeAuditIdRequest
 	from ....request_adapter import HttpxRequestAdapter
 from iograph_models.beta.custom_security_attribute_audit import CustomSecurityAttributeAudit
-from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.beta.custom_security_attribute_audit_collection_response import CustomSecurityAttributeAuditCollectionResponse
+from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 
 
 class CustomSecurityAttributeAuditsRequest(BaseRequestBuilder):

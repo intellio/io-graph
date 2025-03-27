@@ -5,7 +5,7 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class Move_devices_to_o_uPostRequest(BaseModel):
-	deviceIds: Optional[list[UUID]] = Field(alias="deviceIds",default=None,)
-	organizationalUnitPath: Optional[str] = Field(alias="organizationalUnitPath",default=None,)
+	deviceIds: Optional[list[UUID]] = Field(alias="deviceIds", default=None,)
+	organizationalUnitPath: Optional[str] = Field(alias="organizationalUnitPath", default=None,)
 
 

@@ -4,9 +4,9 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class Storage(BaseModel):
-	fileStorage: Optional[FileStorage] = Field(alias="fileStorage",default=None,)
-	settings: Optional[StorageSettings] = Field(alias="settings",default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	fileStorage: Optional[FileStorage] = Field(alias="fileStorage", default=None,)
+	settings: Optional[StorageSettings] = Field(alias="settings", default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
 
 from .file_storage import FileStorage
 from .storage_settings import StorageSettings

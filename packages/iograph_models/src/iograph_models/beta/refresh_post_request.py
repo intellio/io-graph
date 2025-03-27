@@ -4,7 +4,7 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class RefreshPostRequest(BaseModel):
-	scopeType: Optional[str] = Field(alias="scopeType",default=None,)
-	scopeId: Optional[str] = Field(alias="scopeId",default=None,)
+	scopeType: Optional[str] = Field(alias="scopeType", default=None,)
+	scopeId: Optional[str] = Field(alias="scopeId", default=None,)
 
 

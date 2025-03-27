@@ -4,8 +4,8 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class AutoLabeling(BaseModel):
-	message: Optional[str] = Field(alias="message",default=None,)
-	sensitiveTypeIds: Optional[list[str]] = Field(alias="sensitiveTypeIds",default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	message: Optional[str] = Field(alias="message", default=None,)
+	sensitiveTypeIds: Optional[list[str]] = Field(alias="sensitiveTypeIds", default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
 
 

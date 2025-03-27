@@ -14,9 +14,9 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_device_link_id import ByDeviceLinkIdRequest
 	from .......request_adapter import HttpxRequestAdapter
+from iograph_models.beta.networkaccess_device_link_collection_response import NetworkaccessDeviceLinkCollectionResponse
 from iograph_models.beta.networkaccess_device_link import NetworkaccessDeviceLink
 from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
-from iograph_models.beta.networkaccess_device_link_collection_response import NetworkaccessDeviceLinkCollectionResponse
 
 
 class DeviceLinksRequest(BaseRequestBuilder):

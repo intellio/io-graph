@@ -1,14 +1,24 @@
 from __future__ import annotations
 from typing import Optional
+from typing import Union
+from typing import Literal
+from typing import Annotated
 from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class DeviceManagementConfigurationChoiceSettingValue(BaseModel):
-	settingValueTemplateReference: Optional[DeviceManagementConfigurationSettingValueTemplateReference] = Field(alias="settingValueTemplateReference",default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
-	children: SerializeAsAny[Optional[list[DeviceManagementConfigurationSettingInstance]]] = Field(alias="children",default=None,)
-	value: Optional[str] = Field(alias="value",default=None,)
+	settingValueTemplateReference: Optional[DeviceManagementConfigurationSettingValueTemplateReference] = Field(alias="settingValueTemplateReference", default=None,)
+	odata_type: Literal["#microsoft.graph.deviceManagementConfigurationChoiceSettingValue"] = Field(alias="@odata.type", default="#microsoft.graph.deviceManagementConfigurationChoiceSettingValue")
+	children: Optional[list[Annotated[Union[DeviceManagementConfigurationChoiceSettingCollectionInstance, DeviceManagementConfigurationChoiceSettingInstance, DeviceManagementConfigurationGroupSettingCollectionInstance, DeviceManagementConfigurationGroupSettingInstance, DeviceManagementConfigurationSettingGroupCollectionInstance, DeviceManagementConfigurationSettingGroupInstance, DeviceManagementConfigurationSimpleSettingCollectionInstance, DeviceManagementConfigurationSimpleSettingInstance]],Field(discriminator="odata_type")]]] = Field(alias="children", default=None,)
+	value: Optional[str] = Field(alias="value", default=None,)
 
 from .device_management_configuration_setting_value_template_reference import DeviceManagementConfigurationSettingValueTemplateReference
-from .device_management_configuration_setting_instance import DeviceManagementConfigurationSettingInstance
+from .device_management_configuration_choice_setting_collection_instance import DeviceManagementConfigurationChoiceSettingCollectionInstance
+from .device_management_configuration_choice_setting_instance import DeviceManagementConfigurationChoiceSettingInstance
+from .device_management_configuration_group_setting_collection_instance import DeviceManagementConfigurationGroupSettingCollectionInstance
+from .device_management_configuration_group_setting_instance import DeviceManagementConfigurationGroupSettingInstance
+from .device_management_configuration_setting_group_collection_instance import DeviceManagementConfigurationSettingGroupCollectionInstance
+from .device_management_configuration_setting_group_instance import DeviceManagementConfigurationSettingGroupInstance
+from .device_management_configuration_simple_setting_collection_instance import DeviceManagementConfigurationSimpleSettingCollectionInstance
+from .device_management_configuration_simple_setting_instance import DeviceManagementConfigurationSimpleSettingInstance
 

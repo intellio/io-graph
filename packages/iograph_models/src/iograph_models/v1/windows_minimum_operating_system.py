@@ -4,9 +4,9 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class WindowsMinimumOperatingSystem(BaseModel):
-	v10_0: Optional[bool] = Field(alias="v10_0",default=None,)
-	v8_0: Optional[bool] = Field(alias="v8_0",default=None,)
-	v8_1: Optional[bool] = Field(alias="v8_1",default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	v10_0: Optional[bool] = Field(alias="v10_0", default=None,)
+	v8_0: Optional[bool] = Field(alias="v8_0", default=None,)
+	v8_1: Optional[bool] = Field(alias="v8_1", default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
 
 

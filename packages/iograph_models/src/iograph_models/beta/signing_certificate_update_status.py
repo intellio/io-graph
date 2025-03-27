@@ -5,8 +5,8 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class SigningCertificateUpdateStatus(BaseModel):
-	certificateUpdateResult: Optional[str] = Field(alias="certificateUpdateResult",default=None,)
-	lastRunDateTime: Optional[datetime] = Field(alias="lastRunDateTime",default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	certificateUpdateResult: Optional[str] = Field(alias="certificateUpdateResult", default=None,)
+	lastRunDateTime: Optional[datetime] = Field(alias="lastRunDateTime", default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
 
 

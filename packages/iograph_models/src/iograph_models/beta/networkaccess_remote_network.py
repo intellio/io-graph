@@ -5,15 +5,15 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class NetworkaccessRemoteNetwork(BaseModel):
-	id: Optional[str] = Field(alias="id",default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
-	lastModifiedDateTime: Optional[datetime] = Field(alias="lastModifiedDateTime",default=None,)
-	name: Optional[str] = Field(alias="name",default=None,)
-	region: Optional[NetworkaccessRegion | str] = Field(alias="region",default=None,)
-	version: Optional[str] = Field(alias="version",default=None,)
-	connectivityConfiguration: Optional[NetworkaccessRemoteNetworkConnectivityConfiguration] = Field(alias="connectivityConfiguration",default=None,)
-	deviceLinks: Optional[list[NetworkaccessDeviceLink]] = Field(alias="deviceLinks",default=None,)
-	forwardingProfiles: Optional[list[NetworkaccessForwardingProfile]] = Field(alias="forwardingProfiles",default=None,)
+	id: Optional[str] = Field(alias="id", default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
+	lastModifiedDateTime: Optional[datetime] = Field(alias="lastModifiedDateTime", default=None,)
+	name: Optional[str] = Field(alias="name", default=None,)
+	region: Optional[NetworkaccessRegion | str] = Field(alias="region", default=None,)
+	version: Optional[str] = Field(alias="version", default=None,)
+	connectivityConfiguration: Optional[NetworkaccessRemoteNetworkConnectivityConfiguration] = Field(alias="connectivityConfiguration", default=None,)
+	deviceLinks: Optional[list[NetworkaccessDeviceLink]] = Field(alias="deviceLinks", default=None,)
+	forwardingProfiles: Optional[list[NetworkaccessForwardingProfile]] = Field(alias="forwardingProfiles", default=None,)
 
 from .networkaccess_region import NetworkaccessRegion
 from .networkaccess_remote_network_connectivity_configuration import NetworkaccessRemoteNetworkConnectivityConfiguration

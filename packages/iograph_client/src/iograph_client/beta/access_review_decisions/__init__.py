@@ -15,8 +15,8 @@ if TYPE_CHECKING:
 	from .by_access_review_decision_id import ByAccessReviewDecisionIdRequest
 	from ...request_adapter import HttpxRequestAdapter
 from iograph_models.beta.access_review_decision_collection_response import AccessReviewDecisionCollectionResponse
-from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.beta.access_review_decision import AccessReviewDecision
+from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 
 
 class AccessReviewDecisionsRequest(BaseRequestBuilder):

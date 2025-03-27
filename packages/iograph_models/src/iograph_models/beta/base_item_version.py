@@ -1,5 +1,6 @@
 from __future__ import annotations
 from typing import Optional
+from typing import Union
 from pydantic import model_validator, ModelWrapValidatorHandler, ValidationError
 from typing_extensions import Self
 from typing import Any
@@ -8,11 +9,11 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class BaseItemVersion(BaseModel):
-	id: Optional[str] = Field(alias="id",default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
-	lastModifiedBy: SerializeAsAny[Optional[IdentitySet]] = Field(alias="lastModifiedBy",default=None,)
-	lastModifiedDateTime: Optional[datetime] = Field(alias="lastModifiedDateTime",default=None,)
-	publication: Optional[PublicationFacet] = Field(alias="publication",default=None,)
+	id: Optional[str] = Field(alias="id", default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
+	lastModifiedBy: Optional[Union[AiInteractionMentionedIdentitySet, ApprovalIdentitySet, ChatMessageFromIdentitySet, ChatMessageMentionedIdentitySet, ChatMessageReactionIdentitySet, CommunicationsIdentitySet, SharePointIdentitySet]] = Field(alias="lastModifiedBy", default=None,discriminator="odata_type", )
+	lastModifiedDateTime: Optional[datetime] = Field(alias="lastModifiedDateTime", default=None,)
+	publication: Optional[PublicationFacet] = Field(alias="publication", default=None,)
 
 	@model_validator(mode="wrap")
 	def convert_discriminator_class(cls, data: Any, handler: ModelWrapValidatorHandler[Self]) -> Self:
@@ -38,6 +39,12 @@ class BaseItemVersion(BaseModel):
 		except Exception as e:
 			raise e
 
-from .identity_set import IdentitySet
+from .ai_interaction_mentioned_identity_set import AiInteractionMentionedIdentitySet
+from .approval_identity_set import ApprovalIdentitySet
+from .chat_message_from_identity_set import ChatMessageFromIdentitySet
+from .chat_message_mentioned_identity_set import ChatMessageMentionedIdentitySet
+from .chat_message_reaction_identity_set import ChatMessageReactionIdentitySet
+from .communications_identity_set import CommunicationsIdentitySet
+from .share_point_identity_set import SharePointIdentitySet
 from .publication_facet import PublicationFacet
 

@@ -4,7 +4,7 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class ManagedDeviceCleanupSettings(BaseModel):
-	deviceInactivityBeforeRetirementInDays: Optional[str] = Field(alias="deviceInactivityBeforeRetirementInDays",default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	deviceInactivityBeforeRetirementInDays: Optional[str] = Field(alias="deviceInactivityBeforeRetirementInDays", default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
 
 

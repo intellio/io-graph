@@ -1,12 +1,18 @@
 from __future__ import annotations
 from typing import Optional
+from typing import Union
+from typing import Annotated
 from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class DeviceManagementResourceAccessProfileBaseCollectionResponse(BaseModel):
-	odata_count: Optional[int] = Field(alias="@odata.count",default=None,)
-	odata_nextLink: Optional[str] = Field(alias="@odata.nextLink",default=None,)
-	value: SerializeAsAny[Optional[list[DeviceManagementResourceAccessProfileBase]]] = Field(alias="value",default=None,)
+	odata_count: Optional[int] = Field(alias="@odata.count", default=None,)
+	odata_nextLink: Optional[str] = Field(alias="@odata.nextLink", default=None,)
+	value: Optional[list[Annotated[Union[Windows10XCertificateProfile, Windows10XSCEPCertificateProfile, Windows10XTrustedRootCertificate, Windows10XVpnConfiguration, Windows10XWifiConfiguration]],Field(discriminator="odata_type")]]] = Field(alias="value", default=None,)
 
-from .device_management_resource_access_profile_base import DeviceManagementResourceAccessProfileBase
+from .windows10_x_certificate_profile import Windows10XCertificateProfile
+from .windows10_x_s_c_e_p_certificate_profile import Windows10XSCEPCertificateProfile
+from .windows10_x_trusted_root_certificate import Windows10XTrustedRootCertificate
+from .windows10_x_vpn_configuration import Windows10XVpnConfiguration
+from .windows10_x_wifi_configuration import Windows10XWifiConfiguration
 

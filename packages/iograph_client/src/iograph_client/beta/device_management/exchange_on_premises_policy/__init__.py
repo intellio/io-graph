@@ -12,8 +12,8 @@ from typing import TYPE_CHECKING
 if TYPE_CHECKING:
 	from .conditional_access_settings import ConditionalAccessSettingsRequest
 	from ....request_adapter import HttpxRequestAdapter
-from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.beta.device_management_exchange_on_premises_policy import DeviceManagementExchangeOnPremisesPolicy
+from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 
 
 class ExchangeOnPremisesPolicyRequest(BaseRequestBuilder):

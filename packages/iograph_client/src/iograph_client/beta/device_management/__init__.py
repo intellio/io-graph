@@ -204,8 +204,8 @@ if TYPE_CHECKING:
 	from .android_device_owner_enrollment_profiles import AndroidDeviceOwnerEnrollmentProfilesRequest
 	from .advanced_threat_protection_onboarding_state_summary import AdvancedThreatProtectionOnboardingStateSummaryRequest
 	from ...request_adapter import HttpxRequestAdapter
-from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.beta.device_management import DeviceManagement
+from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 
 
 class DeviceManagementRequest(BaseRequestBuilder):

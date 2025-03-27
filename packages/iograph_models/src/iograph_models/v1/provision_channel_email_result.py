@@ -4,7 +4,7 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class ProvisionChannelEmailResult(BaseModel):
-	email: Optional[str] = Field(alias="email",default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	email: Optional[str] = Field(alias="email", default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
 
 

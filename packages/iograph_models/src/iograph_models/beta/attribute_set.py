@@ -4,9 +4,9 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class AttributeSet(BaseModel):
-	id: Optional[str] = Field(alias="id",default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
-	description: Optional[str] = Field(alias="description",default=None,)
-	maxAttributesPerSet: Optional[int] = Field(alias="maxAttributesPerSet",default=None,)
+	id: Optional[str] = Field(alias="id", default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
+	description: Optional[str] = Field(alias="description", default=None,)
+	maxAttributesPerSet: Optional[int] = Field(alias="maxAttributesPerSet", default=None,)
 
 

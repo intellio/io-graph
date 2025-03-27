@@ -7,14 +7,14 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class SecurityBaselineStateSummary(BaseModel):
-	id: Optional[str] = Field(alias="id",default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
-	conflictCount: Optional[int] = Field(alias="conflictCount",default=None,)
-	errorCount: Optional[int] = Field(alias="errorCount",default=None,)
-	notApplicableCount: Optional[int] = Field(alias="notApplicableCount",default=None,)
-	notSecureCount: Optional[int] = Field(alias="notSecureCount",default=None,)
-	secureCount: Optional[int] = Field(alias="secureCount",default=None,)
-	unknownCount: Optional[int] = Field(alias="unknownCount",default=None,)
+	id: Optional[str] = Field(alias="id", default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
+	conflictCount: Optional[int] = Field(alias="conflictCount", default=None,)
+	errorCount: Optional[int] = Field(alias="errorCount", default=None,)
+	notApplicableCount: Optional[int] = Field(alias="notApplicableCount", default=None,)
+	notSecureCount: Optional[int] = Field(alias="notSecureCount", default=None,)
+	secureCount: Optional[int] = Field(alias="secureCount", default=None,)
+	unknownCount: Optional[int] = Field(alias="unknownCount", default=None,)
 
 	@model_validator(mode="wrap")
 	def convert_discriminator_class(cls, data: Any, handler: ModelWrapValidatorHandler[Self]) -> Self:

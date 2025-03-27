@@ -14,8 +14,8 @@ if TYPE_CHECKING:
 	from .learning_course_activities_with_externalcourseactivityid import LearningCourseActivitiesWithExternalcourseActivityIdRequest
 	from .learning_course_activities import LearningCourseActivitiesRequest
 	from .....request_adapter import HttpxRequestAdapter
-from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.beta.employee_experience_user import EmployeeExperienceUser
+from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 
 
 class EmployeeExperienceRequest(BaseRequestBuilder):

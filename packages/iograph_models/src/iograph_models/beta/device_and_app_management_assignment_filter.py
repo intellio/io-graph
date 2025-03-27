@@ -8,17 +8,17 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class DeviceAndAppManagementAssignmentFilter(BaseModel):
-	id: Optional[str] = Field(alias="id",default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
-	assignmentFilterManagementType: Optional[AssignmentFilterManagementType | str] = Field(alias="assignmentFilterManagementType",default=None,)
-	createdDateTime: Optional[datetime] = Field(alias="createdDateTime",default=None,)
-	description: Optional[str] = Field(alias="description",default=None,)
-	displayName: Optional[str] = Field(alias="displayName",default=None,)
-	lastModifiedDateTime: Optional[datetime] = Field(alias="lastModifiedDateTime",default=None,)
-	payloads: Optional[list[PayloadByFilter]] = Field(alias="payloads",default=None,)
-	platform: Optional[DevicePlatformType | str] = Field(alias="platform",default=None,)
-	roleScopeTags: Optional[list[str]] = Field(alias="roleScopeTags",default=None,)
-	rule: Optional[str] = Field(alias="rule",default=None,)
+	id: Optional[str] = Field(alias="id", default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
+	assignmentFilterManagementType: Optional[AssignmentFilterManagementType | str] = Field(alias="assignmentFilterManagementType", default=None,)
+	createdDateTime: Optional[datetime] = Field(alias="createdDateTime", default=None,)
+	description: Optional[str] = Field(alias="description", default=None,)
+	displayName: Optional[str] = Field(alias="displayName", default=None,)
+	lastModifiedDateTime: Optional[datetime] = Field(alias="lastModifiedDateTime", default=None,)
+	payloads: Optional[list[PayloadByFilter]] = Field(alias="payloads", default=None,)
+	platform: Optional[DevicePlatformType | str] = Field(alias="platform", default=None,)
+	roleScopeTags: Optional[list[str]] = Field(alias="roleScopeTags", default=None,)
+	rule: Optional[str] = Field(alias="rule", default=None,)
 
 	@model_validator(mode="wrap")
 	def convert_discriminator_class(cls, data: Any, handler: ModelWrapValidatorHandler[Self]) -> Self:

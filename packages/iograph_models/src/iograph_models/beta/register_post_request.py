@@ -4,6 +4,6 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class RegisterPostRequest(BaseModel):
-	externalId: Optional[str] = Field(alias="externalId",default=None,)
+	externalId: Optional[str] = Field(alias="externalId", default=None,)
 
 

@@ -15,9 +15,9 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_workbook_chart_point_id import ByWorkbookChartPointIdRequest
 	from ..............request_adapter import HttpxRequestAdapter
-from iograph_models.beta.workbook_chart_point import WorkbookChartPoint
-from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.beta.workbook_chart_point_collection_response import WorkbookChartPointCollectionResponse
+from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.beta.workbook_chart_point import WorkbookChartPoint
 
 
 class PointsRequest(BaseRequestBuilder):

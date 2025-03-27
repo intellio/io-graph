@@ -4,7 +4,7 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class GroupFilter(BaseModel):
-	includedGroups: Optional[list[str]] = Field(alias="includedGroups",default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	includedGroups: Optional[list[str]] = Field(alias="includedGroups", default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
 
 

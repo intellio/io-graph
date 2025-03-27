@@ -4,6 +4,6 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class Unset_reactionPostRequest(BaseModel):
-	reactionType: Optional[str] = Field(alias="reactionType",default=None,)
+	reactionType: Optional[str] = Field(alias="reactionType", default=None,)
 
 

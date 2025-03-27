@@ -4,7 +4,7 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class SecurityBufferDecryptionResult(BaseModel):
-	decryptedBuffer: Optional[str] = Field(alias="decryptedBuffer",default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	decryptedBuffer: Optional[str] = Field(alias="decryptedBuffer", default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
 
 

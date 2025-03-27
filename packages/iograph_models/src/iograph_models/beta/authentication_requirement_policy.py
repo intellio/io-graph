@@ -4,9 +4,9 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class AuthenticationRequirementPolicy(BaseModel):
-	detail: Optional[str] = Field(alias="detail",default=None,)
-	requirementProvider: Optional[RequirementProvider | str] = Field(alias="requirementProvider",default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	detail: Optional[str] = Field(alias="detail", default=None,)
+	requirementProvider: Optional[RequirementProvider | str] = Field(alias="requirementProvider", default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
 
 from .requirement_provider import RequirementProvider
 

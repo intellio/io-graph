@@ -4,7 +4,7 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class ReferenceUpdate(BaseModel):
-	odata_id: Optional[str] = Field(alias="@odata.id",default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	odata_id: Optional[str] = Field(alias="@odata.id", default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
 
 

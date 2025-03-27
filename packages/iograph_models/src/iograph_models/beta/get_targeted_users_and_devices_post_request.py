@@ -4,6 +4,6 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class Get_targeted_users_and_devicesPostRequest(BaseModel):
-	deviceConfigurationIds: Optional[list[str]] = Field(alias="deviceConfigurationIds",default=None,)
+	deviceConfigurationIds: Optional[list[str]] = Field(alias="deviceConfigurationIds", default=None,)
 
 

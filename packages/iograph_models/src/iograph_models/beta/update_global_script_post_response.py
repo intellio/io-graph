@@ -4,6 +4,6 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class Update_global_scriptPostResponse(BaseModel):
-	value: Optional[str] = Field(alias="value",default=None,)
+	value: Optional[str] = Field(alias="value", default=None,)
 
 

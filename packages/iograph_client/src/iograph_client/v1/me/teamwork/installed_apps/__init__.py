@@ -15,8 +15,8 @@ if TYPE_CHECKING:
 	from .by_user_scope_teams_app_installation_id import ByUserScopeTeamsAppInstallationIdRequest
 	from .....request_adapter import HttpxRequestAdapter
 from iograph_models.v1.o_data_errors__o_data_error import ODataErrorsODataError
-from iograph_models.v1.user_scope_teams_app_installation_collection_response import UserScopeTeamsAppInstallationCollectionResponse
 from iograph_models.v1.user_scope_teams_app_installation import UserScopeTeamsAppInstallation
+from iograph_models.v1.user_scope_teams_app_installation_collection_response import UserScopeTeamsAppInstallationCollectionResponse
 
 
 class InstalledAppsRequest(BaseRequestBuilder):

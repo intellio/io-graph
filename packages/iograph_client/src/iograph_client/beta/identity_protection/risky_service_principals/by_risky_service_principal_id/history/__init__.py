@@ -14,9 +14,9 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_risky_service_principal_history_item_id import ByRiskyServicePrincipalHistoryItemIdRequest
 	from ......request_adapter import HttpxRequestAdapter
-from iograph_models.beta.risky_service_principal_history_item import RiskyServicePrincipalHistoryItem
-from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.beta.risky_service_principal_history_item_collection_response import RiskyServicePrincipalHistoryItemCollectionResponse
+from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.beta.risky_service_principal_history_item import RiskyServicePrincipalHistoryItem
 
 
 class HistoryRequest(BaseRequestBuilder):

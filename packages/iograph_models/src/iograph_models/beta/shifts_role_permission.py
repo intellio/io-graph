@@ -4,7 +4,7 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class ShiftsRolePermission(BaseModel):
-	allowedResourceActions: Optional[list[str]] = Field(alias="allowedResourceActions",default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	allowedResourceActions: Optional[list[str]] = Field(alias="allowedResourceActions", default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
 
 

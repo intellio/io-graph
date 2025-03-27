@@ -1,15 +1,16 @@
 from __future__ import annotations
 from typing import Optional
+from typing import Literal
 from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class Win32CatalogAppAssignmentSettings(BaseModel):
-	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
-	autoUpdateSettings: Optional[Win32LobAppAutoUpdateSettings] = Field(alias="autoUpdateSettings",default=None,)
-	deliveryOptimizationPriority: Optional[Win32LobAppDeliveryOptimizationPriority | str] = Field(alias="deliveryOptimizationPriority",default=None,)
-	installTimeSettings: Optional[MobileAppInstallTimeSettings] = Field(alias="installTimeSettings",default=None,)
-	notifications: Optional[Win32LobAppNotification | str] = Field(alias="notifications",default=None,)
-	restartSettings: Optional[Win32LobAppRestartSettings] = Field(alias="restartSettings",default=None,)
+	odata_type: Literal["#microsoft.graph.win32CatalogAppAssignmentSettings"] = Field(alias="@odata.type", default="#microsoft.graph.win32CatalogAppAssignmentSettings")
+	autoUpdateSettings: Optional[Win32LobAppAutoUpdateSettings] = Field(alias="autoUpdateSettings", default=None,)
+	deliveryOptimizationPriority: Optional[Win32LobAppDeliveryOptimizationPriority | str] = Field(alias="deliveryOptimizationPriority", default=None,)
+	installTimeSettings: Optional[MobileAppInstallTimeSettings] = Field(alias="installTimeSettings", default=None,)
+	notifications: Optional[Win32LobAppNotification | str] = Field(alias="notifications", default=None,)
+	restartSettings: Optional[Win32LobAppRestartSettings] = Field(alias="restartSettings", default=None,)
 
 from .win32_lob_app_auto_update_settings import Win32LobAppAutoUpdateSettings
 from .win32_lob_app_delivery_optimization_priority import Win32LobAppDeliveryOptimizationPriority

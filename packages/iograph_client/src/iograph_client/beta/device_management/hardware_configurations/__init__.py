@@ -14,9 +14,9 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_hardware_configuration_id import ByHardwareConfigurationIdRequest
 	from ....request_adapter import HttpxRequestAdapter
-from iograph_models.beta.hardware_configuration import HardwareConfiguration
 from iograph_models.beta.hardware_configuration_collection_response import HardwareConfigurationCollectionResponse
 from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.beta.hardware_configuration import HardwareConfiguration
 
 
 class HardwareConfigurationsRequest(BaseRequestBuilder):

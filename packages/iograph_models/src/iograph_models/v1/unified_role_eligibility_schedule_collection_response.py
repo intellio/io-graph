@@ -4,9 +4,9 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class UnifiedRoleEligibilityScheduleCollectionResponse(BaseModel):
-	odata_count: Optional[int] = Field(alias="@odata.count",default=None,)
-	odata_nextLink: Optional[str] = Field(alias="@odata.nextLink",default=None,)
-	value: Optional[list[UnifiedRoleEligibilitySchedule]] = Field(alias="value",default=None,)
+	odata_count: Optional[int] = Field(alias="@odata.count", default=None,)
+	odata_nextLink: Optional[str] = Field(alias="@odata.nextLink", default=None,)
+	value: Optional[list[UnifiedRoleEligibilitySchedule]] = Field(alias="value", default=None,)
 
 from .unified_role_eligibility_schedule import UnifiedRoleEligibilitySchedule
 

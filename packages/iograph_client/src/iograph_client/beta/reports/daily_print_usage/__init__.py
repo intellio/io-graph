@@ -15,8 +15,8 @@ if TYPE_CHECKING:
 	from .by_print_usage_id import ByPrintUsageIdRequest
 	from ....request_adapter import HttpxRequestAdapter
 from iograph_models.beta.print_usage import PrintUsage
-from iograph_models.beta.print_usage_collection_response import PrintUsageCollectionResponse
 from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.beta.print_usage_collection_response import PrintUsageCollectionResponse
 
 
 class DailyPrintUsageRequest(BaseRequestBuilder):

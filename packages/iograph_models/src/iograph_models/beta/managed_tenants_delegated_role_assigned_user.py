@@ -4,9 +4,9 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class ManagedTenantsDelegatedRoleAssignedUser(BaseModel):
-	displayName: Optional[str] = Field(alias="displayName",default=None,)
-	userEntityId: Optional[str] = Field(alias="userEntityId",default=None,)
-	userPrincipalName: Optional[str] = Field(alias="userPrincipalName",default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	displayName: Optional[str] = Field(alias="displayName", default=None,)
+	userEntityId: Optional[str] = Field(alias="userEntityId", default=None,)
+	userPrincipalName: Optional[str] = Field(alias="userPrincipalName", default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
 
 

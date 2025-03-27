@@ -4,6 +4,6 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class Get_available_extension_propertiesPostRequest(BaseModel):
-	isSyncedFromOnPremises: Optional[bool] = Field(alias="isSyncedFromOnPremises",default=None,)
+	isSyncedFromOnPremises: Optional[bool] = Field(alias="isSyncedFromOnPremises", default=None,)
 
 

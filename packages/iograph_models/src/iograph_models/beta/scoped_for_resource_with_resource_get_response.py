@@ -4,6 +4,6 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class Scoped_for_resource_with_resourceGetResponse(BaseModel):
-	value: Optional[bool] = Field(alias="value",default=None,)
+	value: Optional[bool] = Field(alias="value", default=None,)
 
 

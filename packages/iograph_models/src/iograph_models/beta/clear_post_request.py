@@ -4,6 +4,6 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class ClearPostRequest(BaseModel):
-	applyTo: Optional[str] = Field(alias="applyTo",default=None,)
+	applyTo: Optional[str] = Field(alias="applyTo", default=None,)
 
 

@@ -4,8 +4,8 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class Assign_and_activate_by_serial_numberPostRequest(BaseModel):
-	verificationCode: Optional[str] = Field(alias="verificationCode",default=None,)
-	serialNumber: Optional[str] = Field(alias="serialNumber",default=None,)
-	displayName: Optional[str] = Field(alias="displayName",default=None,)
+	verificationCode: Optional[str] = Field(alias="verificationCode", default=None,)
+	serialNumber: Optional[str] = Field(alias="serialNumber", default=None,)
+	displayName: Optional[str] = Field(alias="displayName", default=None,)
 
 

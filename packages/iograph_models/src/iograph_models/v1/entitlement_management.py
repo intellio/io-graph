@@ -4,20 +4,20 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class EntitlementManagement(BaseModel):
-	id: Optional[str] = Field(alias="id",default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
-	accessPackageAssignmentApprovals: Optional[list[Approval]] = Field(alias="accessPackageAssignmentApprovals",default=None,)
-	accessPackages: Optional[list[AccessPackage]] = Field(alias="accessPackages",default=None,)
-	assignmentPolicies: Optional[list[AccessPackageAssignmentPolicy]] = Field(alias="assignmentPolicies",default=None,)
-	assignmentRequests: Optional[list[AccessPackageAssignmentRequest]] = Field(alias="assignmentRequests",default=None,)
-	assignments: Optional[list[AccessPackageAssignment]] = Field(alias="assignments",default=None,)
-	catalogs: Optional[list[AccessPackageCatalog]] = Field(alias="catalogs",default=None,)
-	connectedOrganizations: Optional[list[ConnectedOrganization]] = Field(alias="connectedOrganizations",default=None,)
-	resourceEnvironments: Optional[list[AccessPackageResourceEnvironment]] = Field(alias="resourceEnvironments",default=None,)
-	resourceRequests: Optional[list[AccessPackageResourceRequest]] = Field(alias="resourceRequests",default=None,)
-	resourceRoleScopes: Optional[list[AccessPackageResourceRoleScope]] = Field(alias="resourceRoleScopes",default=None,)
-	resources: Optional[list[AccessPackageResource]] = Field(alias="resources",default=None,)
-	settings: Optional[EntitlementManagementSettings] = Field(alias="settings",default=None,)
+	id: Optional[str] = Field(alias="id", default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
+	accessPackageAssignmentApprovals: Optional[list[Approval]] = Field(alias="accessPackageAssignmentApprovals", default=None,)
+	accessPackages: Optional[list[AccessPackage]] = Field(alias="accessPackages", default=None,)
+	assignmentPolicies: Optional[list[AccessPackageAssignmentPolicy]] = Field(alias="assignmentPolicies", default=None,)
+	assignmentRequests: Optional[list[AccessPackageAssignmentRequest]] = Field(alias="assignmentRequests", default=None,)
+	assignments: Optional[list[AccessPackageAssignment]] = Field(alias="assignments", default=None,)
+	catalogs: Optional[list[AccessPackageCatalog]] = Field(alias="catalogs", default=None,)
+	connectedOrganizations: Optional[list[ConnectedOrganization]] = Field(alias="connectedOrganizations", default=None,)
+	resourceEnvironments: Optional[list[AccessPackageResourceEnvironment]] = Field(alias="resourceEnvironments", default=None,)
+	resourceRequests: Optional[list[AccessPackageResourceRequest]] = Field(alias="resourceRequests", default=None,)
+	resourceRoleScopes: Optional[list[AccessPackageResourceRoleScope]] = Field(alias="resourceRoleScopes", default=None,)
+	resources: Optional[list[AccessPackageResource]] = Field(alias="resources", default=None,)
+	settings: Optional[EntitlementManagementSettings] = Field(alias="settings", default=None,)
 
 from .approval import Approval
 from .access_package import AccessPackage

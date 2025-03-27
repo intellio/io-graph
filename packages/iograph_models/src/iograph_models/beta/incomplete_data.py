@@ -5,8 +5,8 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class IncompleteData(BaseModel):
-	missingDataBeforeDateTime: Optional[datetime] = Field(alias="missingDataBeforeDateTime",default=None,)
-	wasThrottled: Optional[bool] = Field(alias="wasThrottled",default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	missingDataBeforeDateTime: Optional[datetime] = Field(alias="missingDataBeforeDateTime", default=None,)
+	wasThrottled: Optional[bool] = Field(alias="wasThrottled", default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
 
 

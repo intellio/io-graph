@@ -1,5 +1,7 @@
 from __future__ import annotations
 from typing import Optional
+from typing import Union
+from typing import Annotated
 from pydantic import model_validator, ModelWrapValidatorHandler, ValidationError
 from typing_extensions import Self
 from typing import Any
@@ -8,28 +10,28 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class ManagedAppRegistration(BaseModel):
-	id: Optional[str] = Field(alias="id",default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
-	appIdentifier: SerializeAsAny[Optional[MobileAppIdentifier]] = Field(alias="appIdentifier",default=None,)
-	applicationVersion: Optional[str] = Field(alias="applicationVersion",default=None,)
-	azureADDeviceId: Optional[str] = Field(alias="azureADDeviceId",default=None,)
-	createdDateTime: Optional[datetime] = Field(alias="createdDateTime",default=None,)
-	deviceManufacturer: Optional[str] = Field(alias="deviceManufacturer",default=None,)
-	deviceModel: Optional[str] = Field(alias="deviceModel",default=None,)
-	deviceName: Optional[str] = Field(alias="deviceName",default=None,)
-	deviceTag: Optional[str] = Field(alias="deviceTag",default=None,)
-	deviceType: Optional[str] = Field(alias="deviceType",default=None,)
-	flaggedReasons: Optional[list[ManagedAppFlaggedReason | str]] = Field(alias="flaggedReasons",default=None,)
-	lastSyncDateTime: Optional[datetime] = Field(alias="lastSyncDateTime",default=None,)
-	managedDeviceId: Optional[str] = Field(alias="managedDeviceId",default=None,)
-	managementSdkVersion: Optional[str] = Field(alias="managementSdkVersion",default=None,)
-	platformVersion: Optional[str] = Field(alias="platformVersion",default=None,)
-	userId: Optional[str] = Field(alias="userId",default=None,)
-	version: Optional[str] = Field(alias="version",default=None,)
-	appliedPolicies: SerializeAsAny[Optional[list[ManagedAppPolicy]]] = Field(alias="appliedPolicies",default=None,)
-	intendedPolicies: SerializeAsAny[Optional[list[ManagedAppPolicy]]] = Field(alias="intendedPolicies",default=None,)
-	managedAppLogCollectionRequests: Optional[list[ManagedAppLogCollectionRequest]] = Field(alias="managedAppLogCollectionRequests",default=None,)
-	operations: Optional[list[ManagedAppOperation]] = Field(alias="operations",default=None,)
+	id: Optional[str] = Field(alias="id", default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
+	appIdentifier: Optional[Union[AndroidMobileAppIdentifier, IosMobileAppIdentifier, MacAppIdentifier, WindowsAppIdentifier]] = Field(alias="appIdentifier", default=None,discriminator="odata_type", )
+	applicationVersion: Optional[str] = Field(alias="applicationVersion", default=None,)
+	azureADDeviceId: Optional[str] = Field(alias="azureADDeviceId", default=None,)
+	createdDateTime: Optional[datetime] = Field(alias="createdDateTime", default=None,)
+	deviceManufacturer: Optional[str] = Field(alias="deviceManufacturer", default=None,)
+	deviceModel: Optional[str] = Field(alias="deviceModel", default=None,)
+	deviceName: Optional[str] = Field(alias="deviceName", default=None,)
+	deviceTag: Optional[str] = Field(alias="deviceTag", default=None,)
+	deviceType: Optional[str] = Field(alias="deviceType", default=None,)
+	flaggedReasons: Optional[list[ManagedAppFlaggedReason | str]] = Field(alias="flaggedReasons", default=None,)
+	lastSyncDateTime: Optional[datetime] = Field(alias="lastSyncDateTime", default=None,)
+	managedDeviceId: Optional[str] = Field(alias="managedDeviceId", default=None,)
+	managementSdkVersion: Optional[str] = Field(alias="managementSdkVersion", default=None,)
+	platformVersion: Optional[str] = Field(alias="platformVersion", default=None,)
+	userId: Optional[str] = Field(alias="userId", default=None,)
+	version: Optional[str] = Field(alias="version", default=None,)
+	appliedPolicies: Optional[list[Annotated[Union[ManagedAppConfiguration, TargetedManagedAppConfiguration, ManagedAppProtection, DefaultManagedAppProtection, TargetedManagedAppProtection, AndroidManagedAppProtection, IosManagedAppProtection, WindowsInformationProtection, MdmWindowsInformationProtectionPolicy, WindowsInformationProtectionPolicy, WindowsManagedAppProtection]],Field(discriminator="odata_type")]]] = Field(alias="appliedPolicies", default=None,)
+	intendedPolicies: Optional[list[Annotated[Union[ManagedAppConfiguration, TargetedManagedAppConfiguration, ManagedAppProtection, DefaultManagedAppProtection, TargetedManagedAppProtection, AndroidManagedAppProtection, IosManagedAppProtection, WindowsInformationProtection, MdmWindowsInformationProtectionPolicy, WindowsInformationProtectionPolicy, WindowsManagedAppProtection]],Field(discriminator="odata_type")]]] = Field(alias="intendedPolicies", default=None,)
+	managedAppLogCollectionRequests: Optional[list[ManagedAppLogCollectionRequest]] = Field(alias="managedAppLogCollectionRequests", default=None,)
+	operations: Optional[list[ManagedAppOperation]] = Field(alias="operations", default=None,)
 
 	@model_validator(mode="wrap")
 	def convert_discriminator_class(cls, data: Any, handler: ModelWrapValidatorHandler[Self]) -> Self:
@@ -55,10 +57,33 @@ class ManagedAppRegistration(BaseModel):
 		except Exception as e:
 			raise e
 
-from .mobile_app_identifier import MobileAppIdentifier
+from .android_mobile_app_identifier import AndroidMobileAppIdentifier
+from .ios_mobile_app_identifier import IosMobileAppIdentifier
+from .mac_app_identifier import MacAppIdentifier
+from .windows_app_identifier import WindowsAppIdentifier
 from .managed_app_flagged_reason import ManagedAppFlaggedReason
-from .managed_app_policy import ManagedAppPolicy
-from .managed_app_policy import ManagedAppPolicy
+from .managed_app_configuration import ManagedAppConfiguration
+from .targeted_managed_app_configuration import TargetedManagedAppConfiguration
+from .managed_app_protection import ManagedAppProtection
+from .default_managed_app_protection import DefaultManagedAppProtection
+from .targeted_managed_app_protection import TargetedManagedAppProtection
+from .android_managed_app_protection import AndroidManagedAppProtection
+from .ios_managed_app_protection import IosManagedAppProtection
+from .windows_information_protection import WindowsInformationProtection
+from .mdm_windows_information_protection_policy import MdmWindowsInformationProtectionPolicy
+from .windows_information_protection_policy import WindowsInformationProtectionPolicy
+from .windows_managed_app_protection import WindowsManagedAppProtection
+from .managed_app_configuration import ManagedAppConfiguration
+from .targeted_managed_app_configuration import TargetedManagedAppConfiguration
+from .managed_app_protection import ManagedAppProtection
+from .default_managed_app_protection import DefaultManagedAppProtection
+from .targeted_managed_app_protection import TargetedManagedAppProtection
+from .android_managed_app_protection import AndroidManagedAppProtection
+from .ios_managed_app_protection import IosManagedAppProtection
+from .windows_information_protection import WindowsInformationProtection
+from .mdm_windows_information_protection_policy import MdmWindowsInformationProtectionPolicy
+from .windows_information_protection_policy import WindowsInformationProtectionPolicy
+from .windows_managed_app_protection import WindowsManagedAppProtection
 from .managed_app_log_collection_request import ManagedAppLogCollectionRequest
 from .managed_app_operation import ManagedAppOperation
 

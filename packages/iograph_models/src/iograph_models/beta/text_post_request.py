@@ -4,7 +4,7 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class TextPostRequest(BaseModel):
-	value: Optional[str] = Field(alias="value",default=None,)
-	formatText: Optional[str] = Field(alias="formatText",default=None,)
+	value: Optional[str] = Field(alias="value", default=None,)
+	formatText: Optional[str] = Field(alias="formatText", default=None,)
 
 

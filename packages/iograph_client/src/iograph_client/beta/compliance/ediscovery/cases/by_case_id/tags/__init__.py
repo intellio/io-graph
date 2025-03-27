@@ -16,8 +16,8 @@ if TYPE_CHECKING:
 	from .by_tag_id import ByTagIdRequest
 	from .......request_adapter import HttpxRequestAdapter
 from iograph_models.beta.ediscovery_tag import EdiscoveryTag
-from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.beta.ediscovery_tag_collection_response import EdiscoveryTagCollectionResponse
+from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 
 
 class TagsRequest(BaseRequestBuilder):

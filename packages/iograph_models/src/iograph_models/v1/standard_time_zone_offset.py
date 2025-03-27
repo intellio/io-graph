@@ -7,12 +7,12 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class StandardTimeZoneOffset(BaseModel):
-	dayOccurrence: Optional[int] = Field(alias="dayOccurrence",default=None,)
-	dayOfWeek: Optional[DayOfWeek | str] = Field(alias="dayOfWeek",default=None,)
-	month: Optional[int] = Field(alias="month",default=None,)
-	time: Optional[str] = Field(alias="time",default=None,)
-	year: Optional[int] = Field(alias="year",default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	dayOccurrence: Optional[int] = Field(alias="dayOccurrence", default=None,)
+	dayOfWeek: Optional[DayOfWeek | str] = Field(alias="dayOfWeek", default=None,)
+	month: Optional[int] = Field(alias="month", default=None,)
+	time: Optional[str] = Field(alias="time", default=None,)
+	year: Optional[int] = Field(alias="year", default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
 
 	@model_validator(mode="wrap")
 	def convert_discriminator_class(cls, data: Any, handler: ModelWrapValidatorHandler[Self]) -> Self:

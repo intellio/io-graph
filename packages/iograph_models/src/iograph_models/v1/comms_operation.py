@@ -7,11 +7,11 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class CommsOperation(BaseModel):
-	id: Optional[str] = Field(alias="id",default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
-	clientContext: Optional[str] = Field(alias="clientContext",default=None,)
-	resultInfo: Optional[ResultInfo] = Field(alias="resultInfo",default=None,)
-	status: Optional[OperationStatus | str] = Field(alias="status",default=None,)
+	id: Optional[str] = Field(alias="id", default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
+	clientContext: Optional[str] = Field(alias="clientContext", default=None,)
+	resultInfo: Optional[ResultInfo] = Field(alias="resultInfo", default=None,)
+	status: Optional[OperationStatus | str] = Field(alias="status", default=None,)
 
 	@model_validator(mode="wrap")
 	def convert_discriminator_class(cls, data: Any, handler: ModelWrapValidatorHandler[Self]) -> Self:

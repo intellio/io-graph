@@ -13,8 +13,8 @@ from typing import TYPE_CHECKING
 if TYPE_CHECKING:
 	from .device_states import DeviceStatesRequest
 	from .......request_adapter import HttpxRequestAdapter
-from iograph_models.beta.user_install_state_summary import UserInstallStateSummary
 from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.beta.user_install_state_summary import UserInstallStateSummary
 
 
 class ByUserInstallStateSummaryIdRequest(BaseRequestBuilder):

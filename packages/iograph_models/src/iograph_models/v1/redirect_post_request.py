@@ -4,8 +4,8 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class RedirectPostRequest(BaseModel):
-	destinationPrinterId: Optional[str] = Field(alias="destinationPrinterId",default=None,)
-	configuration: Optional[PrintJobConfiguration] = Field(alias="configuration",default=None,)
+	destinationPrinterId: Optional[str] = Field(alias="destinationPrinterId", default=None,)
+	configuration: Optional[PrintJobConfiguration] = Field(alias="configuration", default=None,)
 
 from .print_job_configuration import PrintJobConfiguration
 

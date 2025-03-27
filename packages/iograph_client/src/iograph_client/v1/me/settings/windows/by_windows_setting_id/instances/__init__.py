@@ -14,9 +14,9 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_windows_setting_instance_id import ByWindowsSettingInstanceIdRequest
 	from .......request_adapter import HttpxRequestAdapter
-from iograph_models.v1.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.v1.windows_setting_instance_collection_response import WindowsSettingInstanceCollectionResponse
 from iograph_models.v1.windows_setting_instance import WindowsSettingInstance
+from iograph_models.v1.o_data_errors__o_data_error import ODataErrorsODataError
 
 
 class InstancesRequest(BaseRequestBuilder):

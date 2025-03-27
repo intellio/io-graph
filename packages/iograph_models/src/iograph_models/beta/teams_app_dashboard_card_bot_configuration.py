@@ -4,7 +4,7 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class TeamsAppDashboardCardBotConfiguration(BaseModel):
-	botId: Optional[str] = Field(alias="botId",default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	botId: Optional[str] = Field(alias="botId", default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
 
 

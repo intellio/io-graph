@@ -4,9 +4,9 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class SamlOrWsFedExternalDomainFederationCollectionResponse(BaseModel):
-	odata_count: Optional[int] = Field(alias="@odata.count",default=None,)
-	odata_nextLink: Optional[str] = Field(alias="@odata.nextLink",default=None,)
-	value: Optional[list[SamlOrWsFedExternalDomainFederation]] = Field(alias="value",default=None,)
+	odata_count: Optional[int] = Field(alias="@odata.count", default=None,)
+	odata_nextLink: Optional[str] = Field(alias="@odata.nextLink", default=None,)
+	value: Optional[list[SamlOrWsFedExternalDomainFederation]] = Field(alias="value", default=None,)
 
 from .saml_or_ws_fed_external_domain_federation import SamlOrWsFedExternalDomainFederation
 

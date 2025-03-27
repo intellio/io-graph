@@ -4,8 +4,8 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class WebauthnPublicKeyCredentialParameters(BaseModel):
-	alg: Optional[int] = Field(alias="alg",default=None,)
-	type: Optional[str] = Field(alias="type",default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	alg: Optional[int] = Field(alias="alg", default=None,)
+	type: Optional[str] = Field(alias="type", default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
 
 

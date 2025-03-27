@@ -4,9 +4,9 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class PhoneOptions(BaseModel):
-	defaultRegions: Optional[list[int]] = Field(alias="defaultRegions",default=None,)
-	excludeRegions: Optional[list[int]] = Field(alias="excludeRegions",default=None,)
-	includeAdditionalRegions: Optional[list[int]] = Field(alias="includeAdditionalRegions",default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	defaultRegions: Optional[list[int]] = Field(alias="defaultRegions", default=None,)
+	excludeRegions: Optional[list[int]] = Field(alias="excludeRegions", default=None,)
+	includeAdditionalRegions: Optional[list[int]] = Field(alias="includeAdditionalRegions", default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
 
 

@@ -14,9 +14,9 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_picture_id import ByPictureIdRequest
 	from ...........request_adapter import HttpxRequestAdapter
-from iograph_models.beta.picture_collection_response import PictureCollectionResponse
-from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.beta.picture import Picture
+from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.beta.picture_collection_response import PictureCollectionResponse
 
 
 class PictureRequest(BaseRequestBuilder):

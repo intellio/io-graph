@@ -4,9 +4,9 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class ProfileSource(BaseModel):
-	id: Optional[str] = Field(alias="id",default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
-	displayName: Optional[str] = Field(alias="displayName",default=None,)
-	webUrl: Optional[str] = Field(alias="webUrl",default=None,)
+	id: Optional[str] = Field(alias="id", default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
+	displayName: Optional[str] = Field(alias="displayName", default=None,)
+	webUrl: Optional[str] = Field(alias="webUrl", default=None,)
 
 

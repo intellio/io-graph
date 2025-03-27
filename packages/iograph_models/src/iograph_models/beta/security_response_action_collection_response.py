@@ -1,12 +1,29 @@
 from __future__ import annotations
 from typing import Optional
+from typing import Union
+from typing import Annotated
 from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class SecurityResponseActionCollectionResponse(BaseModel):
-	odata_count: Optional[int] = Field(alias="@odata.count",default=None,)
-	odata_nextLink: Optional[str] = Field(alias="@odata.nextLink",default=None,)
-	value: SerializeAsAny[Optional[list[SecurityResponseAction]]] = Field(alias="value",default=None,)
+	odata_count: Optional[int] = Field(alias="@odata.count", default=None,)
+	odata_nextLink: Optional[str] = Field(alias="@odata.nextLink", default=None,)
+	value: Optional[list[Annotated[Union[SecurityAllowFileResponseAction, SecurityBlockFileResponseAction, SecurityCollectInvestigationPackageResponseAction, SecurityDisableUserResponseAction, SecurityForceUserPasswordResetResponseAction, SecurityHardDeleteResponseAction, SecurityInitiateInvestigationResponseAction, SecurityIsolateDeviceResponseAction, SecurityMarkUserAsCompromisedResponseAction, SecurityMoveToDeletedItemsResponseAction, SecurityMoveToInboxResponseAction, SecurityMoveToJunkResponseAction, SecurityRestrictAppExecutionResponseAction, SecurityRunAntivirusScanResponseAction, SecuritySoftDeleteResponseAction, SecurityStopAndQuarantineFileResponseAction]],Field(discriminator="odata_type")]]] = Field(alias="value", default=None,)
 
-from .security_response_action import SecurityResponseAction
+from .security_allow_file_response_action import SecurityAllowFileResponseAction
+from .security_block_file_response_action import SecurityBlockFileResponseAction
+from .security_collect_investigation_package_response_action import SecurityCollectInvestigationPackageResponseAction
+from .security_disable_user_response_action import SecurityDisableUserResponseAction
+from .security_force_user_password_reset_response_action import SecurityForceUserPasswordResetResponseAction
+from .security_hard_delete_response_action import SecurityHardDeleteResponseAction
+from .security_initiate_investigation_response_action import SecurityInitiateInvestigationResponseAction
+from .security_isolate_device_response_action import SecurityIsolateDeviceResponseAction
+from .security_mark_user_as_compromised_response_action import SecurityMarkUserAsCompromisedResponseAction
+from .security_move_to_deleted_items_response_action import SecurityMoveToDeletedItemsResponseAction
+from .security_move_to_inbox_response_action import SecurityMoveToInboxResponseAction
+from .security_move_to_junk_response_action import SecurityMoveToJunkResponseAction
+from .security_restrict_app_execution_response_action import SecurityRestrictAppExecutionResponseAction
+from .security_run_antivirus_scan_response_action import SecurityRunAntivirusScanResponseAction
+from .security_soft_delete_response_action import SecuritySoftDeleteResponseAction
+from .security_stop_and_quarantine_file_response_action import SecurityStopAndQuarantineFileResponseAction
 

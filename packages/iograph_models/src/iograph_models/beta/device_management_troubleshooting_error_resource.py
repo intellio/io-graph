@@ -4,8 +4,8 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class DeviceManagementTroubleshootingErrorResource(BaseModel):
-	link: Optional[str] = Field(alias="link",default=None,)
-	text: Optional[str] = Field(alias="text",default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	link: Optional[str] = Field(alias="link", default=None,)
+	text: Optional[str] = Field(alias="text", default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
 
 

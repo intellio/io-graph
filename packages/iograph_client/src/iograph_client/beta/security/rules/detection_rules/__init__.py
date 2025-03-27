@@ -15,8 +15,8 @@ if TYPE_CHECKING:
 	from .by_detection_rule_id import ByDetectionRuleIdRequest
 	from .....request_adapter import HttpxRequestAdapter
 from iograph_models.beta.security_detection_rule import SecurityDetectionRule
-from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.beta.security_detection_rule_collection_response import SecurityDetectionRuleCollectionResponse
+from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 
 
 class DetectionRulesRequest(BaseRequestBuilder):

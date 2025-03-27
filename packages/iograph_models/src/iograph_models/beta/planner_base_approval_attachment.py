@@ -7,8 +7,8 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class PlannerBaseApprovalAttachment(BaseModel):
-	status: Optional[PlannerApprovalStatus | str] = Field(alias="status",default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	status: Optional[PlannerApprovalStatus | str] = Field(alias="status", default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
 
 	@model_validator(mode="wrap")
 	def convert_discriminator_class(cls, data: Any, handler: ModelWrapValidatorHandler[Self]) -> Self:

@@ -14,8 +14,8 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_risky_user_history_item_id import ByRiskyUserHistoryItemIdRequest
 	from .....request_adapter import HttpxRequestAdapter
-from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.beta.risky_user_history_item_collection_response import RiskyUserHistoryItemCollectionResponse
+from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.beta.risky_user_history_item import RiskyUserHistoryItem
 
 

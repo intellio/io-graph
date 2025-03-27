@@ -161,8 +161,8 @@ if TYPE_CHECKING:
 	from .application_sign_in_detailed_summary import ApplicationSignInDetailedSummaryRequest
 	from .app_credential_sign_in_activities import AppCredentialSignInActivitiesRequest
 	from ...request_adapter import HttpxRequestAdapter
-from iograph_models.beta.report_root import ReportRoot
 from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.beta.report_root import ReportRoot
 
 
 class ReportsRequest(BaseRequestBuilder):

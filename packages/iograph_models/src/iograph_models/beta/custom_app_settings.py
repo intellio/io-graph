@@ -4,8 +4,8 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class CustomAppSettings(BaseModel):
-	developerToolsForShowingAppUsageMetrics: Optional[AppDevelopmentPlatforms | str] = Field(alias="developerToolsForShowingAppUsageMetrics",default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	developerToolsForShowingAppUsageMetrics: Optional[AppDevelopmentPlatforms | str] = Field(alias="developerToolsForShowingAppUsageMetrics", default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
 
 from .app_development_platforms import AppDevelopmentPlatforms
 

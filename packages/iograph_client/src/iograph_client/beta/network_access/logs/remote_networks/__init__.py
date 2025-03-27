@@ -14,9 +14,9 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_remote_network_health_event_id import ByRemoteNetworkHealthEventIdRequest
 	from .....request_adapter import HttpxRequestAdapter
-from iograph_models.beta.networkaccess_remote_network_health_event import NetworkaccessRemoteNetworkHealthEvent
 from iograph_models.beta.networkaccess_remote_network_health_event_collection_response import NetworkaccessRemoteNetworkHealthEventCollectionResponse
 from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.beta.networkaccess_remote_network_health_event import NetworkaccessRemoteNetworkHealthEvent
 
 
 class RemoteNetworksRequest(BaseRequestBuilder):

@@ -15,8 +15,8 @@ if TYPE_CHECKING:
 	from .by_print_document_id import ByPrintDocumentIdRequest
 	from ........request_adapter import HttpxRequestAdapter
 from iograph_models.v1.o_data_errors__o_data_error import ODataErrorsODataError
-from iograph_models.v1.print_document_collection_response import PrintDocumentCollectionResponse
 from iograph_models.v1.print_document import PrintDocument
+from iograph_models.v1.print_document_collection_response import PrintDocumentCollectionResponse
 
 
 class DocumentsRequest(BaseRequestBuilder):

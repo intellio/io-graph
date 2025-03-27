@@ -4,8 +4,8 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class IfPostRequest(BaseModel):
-	logicalTest: Optional[str] = Field(alias="logicalTest",default=None,)
-	valueIfTrue: Optional[str] = Field(alias="valueIfTrue",default=None,)
-	valueIfFalse: Optional[str] = Field(alias="valueIfFalse",default=None,)
+	logicalTest: Optional[str] = Field(alias="logicalTest", default=None,)
+	valueIfTrue: Optional[str] = Field(alias="valueIfTrue", default=None,)
+	valueIfFalse: Optional[str] = Field(alias="valueIfFalse", default=None,)
 
 

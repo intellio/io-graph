@@ -14,9 +14,9 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_item_publication_id import ByItemPublicationIdRequest
 	from .....request_adapter import HttpxRequestAdapter
-from iograph_models.beta.item_publication import ItemPublication
-from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.beta.item_publication_collection_response import ItemPublicationCollectionResponse
+from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.beta.item_publication import ItemPublication
 
 
 class PublicationsRequest(BaseRequestBuilder):

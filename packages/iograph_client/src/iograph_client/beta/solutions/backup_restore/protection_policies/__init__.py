@@ -14,9 +14,9 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_protection_policy_base_id import ByProtectionPolicyBaseIdRequest
 	from .....request_adapter import HttpxRequestAdapter
-from iograph_models.beta.protection_policy_base_collection_response import ProtectionPolicyBaseCollectionResponse
-from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.beta.protection_policy_base import ProtectionPolicyBase
+from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.beta.protection_policy_base_collection_response import ProtectionPolicyBaseCollectionResponse
 
 
 class ProtectionPoliciesRequest(BaseRequestBuilder):

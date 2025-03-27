@@ -15,9 +15,9 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_privileged_access_group_assignment_schedule_id import ByPrivilegedAccessGroupAssignmentScheduleIdRequest
 	from ......request_adapter import HttpxRequestAdapter
+from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.beta.privileged_access_group_assignment_schedule import PrivilegedAccessGroupAssignmentSchedule
 from iograph_models.beta.privileged_access_group_assignment_schedule_collection_response import PrivilegedAccessGroupAssignmentScheduleCollectionResponse
-from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 
 
 class AssignmentSchedulesRequest(BaseRequestBuilder):

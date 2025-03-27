@@ -4,7 +4,7 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class DeviceManagementConfigurationSettingInstanceTemplateReference(BaseModel):
-	settingInstanceTemplateId: Optional[str] = Field(alias="settingInstanceTemplateId",default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	settingInstanceTemplateId: Optional[str] = Field(alias="settingInstanceTemplateId", default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
 
 

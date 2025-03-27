@@ -15,8 +15,8 @@ if TYPE_CHECKING:
 	from .post_federation_signup import PostFederationSignupRequest
 	from .post_attribute_collection import PostAttributeCollectionRequest
 	from ......request_adapter import HttpxRequestAdapter
-from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.beta.user_flow_api_connector_configuration import UserFlowApiConnectorConfiguration
+from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 
 
 class ApiConnectorConfigurationRequest(BaseRequestBuilder):

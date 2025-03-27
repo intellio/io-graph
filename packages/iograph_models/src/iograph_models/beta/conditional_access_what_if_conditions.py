@@ -4,17 +4,17 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class ConditionalAccessWhatIfConditions(BaseModel):
-	authenticationFlow: Optional[AuthenticationFlow] = Field(alias="authenticationFlow",default=None,)
-	clientAppType: Optional[ConditionalAccessClientApp | str] = Field(alias="clientAppType",default=None,)
-	country: Optional[str] = Field(alias="country",default=None,)
-	deviceInfo: Optional[DeviceInfo] = Field(alias="deviceInfo",default=None,)
-	devicePlatform: Optional[ConditionalAccessDevicePlatform | str] = Field(alias="devicePlatform",default=None,)
-	insiderRiskLevel: Optional[InsiderRiskLevel | str] = Field(alias="insiderRiskLevel",default=None,)
-	ipAddress: Optional[str] = Field(alias="ipAddress",default=None,)
-	servicePrincipalRiskLevel: Optional[RiskLevel | str] = Field(alias="servicePrincipalRiskLevel",default=None,)
-	signInRiskLevel: Optional[RiskLevel | str] = Field(alias="signInRiskLevel",default=None,)
-	userRiskLevel: Optional[RiskLevel | str] = Field(alias="userRiskLevel",default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	authenticationFlow: Optional[AuthenticationFlow] = Field(alias="authenticationFlow", default=None,)
+	clientAppType: Optional[ConditionalAccessClientApp | str] = Field(alias="clientAppType", default=None,)
+	country: Optional[str] = Field(alias="country", default=None,)
+	deviceInfo: Optional[DeviceInfo] = Field(alias="deviceInfo", default=None,)
+	devicePlatform: Optional[ConditionalAccessDevicePlatform | str] = Field(alias="devicePlatform", default=None,)
+	insiderRiskLevel: Optional[InsiderRiskLevel | str] = Field(alias="insiderRiskLevel", default=None,)
+	ipAddress: Optional[str] = Field(alias="ipAddress", default=None,)
+	servicePrincipalRiskLevel: Optional[RiskLevel | str] = Field(alias="servicePrincipalRiskLevel", default=None,)
+	signInRiskLevel: Optional[RiskLevel | str] = Field(alias="signInRiskLevel", default=None,)
+	userRiskLevel: Optional[RiskLevel | str] = Field(alias="userRiskLevel", default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
 
 from .authentication_flow import AuthenticationFlow
 from .conditional_access_client_app import ConditionalAccessClientApp

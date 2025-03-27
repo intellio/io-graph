@@ -4,7 +4,7 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class UploadPostRequest(BaseModel):
-	uploadUrl: Optional[str] = Field(alias="uploadUrl",default=None,)
-	sha256FileHash: Optional[str] = Field(alias="sha256FileHash",default=None,)
+	uploadUrl: Optional[str] = Field(alias="uploadUrl", default=None,)
+	sha256FileHash: Optional[str] = Field(alias="sha256FileHash", default=None,)
 
 

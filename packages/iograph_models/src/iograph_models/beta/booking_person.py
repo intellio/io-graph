@@ -1,5 +1,6 @@
 from __future__ import annotations
 from typing import Optional
+from typing import Literal
 from pydantic import model_validator, ModelWrapValidatorHandler, ValidationError
 from typing_extensions import Self
 from typing import Any
@@ -7,10 +8,10 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class BookingPerson(BaseModel):
-	id: Optional[str] = Field(alias="id",default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
-	displayName: Optional[str] = Field(alias="displayName",default=None,)
-	emailAddress: Optional[str] = Field(alias="emailAddress",default=None,)
+	id: Optional[str] = Field(alias="id", default=None,)
+	odata_type: Literal["#microsoft.graph.bookingPerson"] = Field(alias="@odata.type", default="#microsoft.graph.bookingPerson")
+	displayName: Optional[str] = Field(alias="displayName", default=None,)
+	emailAddress: Optional[str] = Field(alias="emailAddress", default=None,)
 
 	@model_validator(mode="wrap")
 	def convert_discriminator_class(cls, data: Any, handler: ModelWrapValidatorHandler[Self]) -> Self:

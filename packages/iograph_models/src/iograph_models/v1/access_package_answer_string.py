@@ -1,13 +1,16 @@
 from __future__ import annotations
 from typing import Optional
+from typing import Union
+from typing import Literal
 from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class AccessPackageAnswerString(BaseModel):
-	displayValue: Optional[str] = Field(alias="displayValue",default=None,)
-	answeredQuestion: SerializeAsAny[Optional[AccessPackageQuestion]] = Field(alias="answeredQuestion",default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
-	value: Optional[str] = Field(alias="value",default=None,)
+	displayValue: Optional[str] = Field(alias="displayValue", default=None,)
+	answeredQuestion: Optional[Union[AccessPackageMultipleChoiceQuestion, AccessPackageTextInputQuestion]] = Field(alias="answeredQuestion", default=None,discriminator="odata_type", )
+	odata_type: Literal["#microsoft.graph.accessPackageAnswerString"] = Field(alias="@odata.type", default="#microsoft.graph.accessPackageAnswerString")
+	value: Optional[str] = Field(alias="value", default=None,)
 
-from .access_package_question import AccessPackageQuestion
+from .access_package_multiple_choice_question import AccessPackageMultipleChoiceQuestion
+from .access_package_text_input_question import AccessPackageTextInputQuestion
 

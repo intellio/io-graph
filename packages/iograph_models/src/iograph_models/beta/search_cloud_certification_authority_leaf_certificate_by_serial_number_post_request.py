@@ -4,6 +4,6 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class Search_cloud_certification_authority_leaf_certificate_by_serial_numberPostRequest(BaseModel):
-	certificateSerialNumber: Optional[str] = Field(alias="certificateSerialNumber",default=None,)
+	certificateSerialNumber: Optional[str] = Field(alias="certificateSerialNumber", default=None,)
 
 

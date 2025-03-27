@@ -16,8 +16,8 @@ if TYPE_CHECKING:
 	from .add import AddRequest
 	from .by_workbook_table_row_id import ByWorkbookTableRowIdRequest
 	from ..........request_adapter import HttpxRequestAdapter
-from iograph_models.v1.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.v1.workbook_table_row_collection_response import WorkbookTableRowCollectionResponse
+from iograph_models.v1.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.v1.workbook_table_row import WorkbookTableRow
 
 

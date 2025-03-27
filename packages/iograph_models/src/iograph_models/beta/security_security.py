@@ -4,9 +4,9 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class SecuritySecurity(BaseModel):
-	id: Optional[str] = Field(alias="id",default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
-	informationProtection: Optional[SecurityInformationProtection] = Field(alias="informationProtection",default=None,)
+	id: Optional[str] = Field(alias="id", default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
+	informationProtection: Optional[SecurityInformationProtection] = Field(alias="informationProtection", default=None,)
 
 from .security_information_protection import SecurityInformationProtection
 

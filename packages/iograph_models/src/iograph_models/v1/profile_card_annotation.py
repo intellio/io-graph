@@ -4,9 +4,9 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class ProfileCardAnnotation(BaseModel):
-	displayName: Optional[str] = Field(alias="displayName",default=None,)
-	localizations: Optional[list[DisplayNameLocalization]] = Field(alias="localizations",default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	displayName: Optional[str] = Field(alias="displayName", default=None,)
+	localizations: Optional[list[DisplayNameLocalization]] = Field(alias="localizations", default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
 
 from .display_name_localization import DisplayNameLocalization
 

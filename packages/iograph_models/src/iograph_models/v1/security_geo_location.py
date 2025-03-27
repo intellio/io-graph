@@ -4,12 +4,12 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class SecurityGeoLocation(BaseModel):
-	city: Optional[str] = Field(alias="city",default=None,)
-	countryName: Optional[str] = Field(alias="countryName",default=None,)
+	city: Optional[str] = Field(alias="city", default=None,)
+	countryName: Optional[str] = Field(alias="countryName", default=None,)
 	latitude: float | str | ReferenceNumeric
 	longitude: float | str | ReferenceNumeric
-	state: Optional[str] = Field(alias="state",default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	state: Optional[str] = Field(alias="state", default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
 
 from .reference_numeric import ReferenceNumeric
 from .reference_numeric import ReferenceNumeric

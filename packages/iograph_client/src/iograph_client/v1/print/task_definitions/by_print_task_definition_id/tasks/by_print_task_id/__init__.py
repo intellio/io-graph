@@ -14,8 +14,8 @@ if TYPE_CHECKING:
 	from .trigger import TriggerRequest
 	from .definition import DefinitionRequest
 	from .......request_adapter import HttpxRequestAdapter
-from iograph_models.v1.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.v1.print_task import PrintTask
+from iograph_models.v1.o_data_errors__o_data_error import ODataErrorsODataError
 
 
 class ByPrintTaskIdRequest(BaseRequestBuilder):

@@ -5,13 +5,13 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class RemoteAssistancePartner(BaseModel):
-	id: Optional[str] = Field(alias="id",default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
-	displayName: Optional[str] = Field(alias="displayName",default=None,)
-	lastConnectionDateTime: Optional[datetime] = Field(alias="lastConnectionDateTime",default=None,)
-	onboardingRequestExpiryDateTime: Optional[datetime] = Field(alias="onboardingRequestExpiryDateTime",default=None,)
-	onboardingStatus: Optional[RemoteAssistanceOnboardingStatus | str] = Field(alias="onboardingStatus",default=None,)
-	onboardingUrl: Optional[str] = Field(alias="onboardingUrl",default=None,)
+	id: Optional[str] = Field(alias="id", default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
+	displayName: Optional[str] = Field(alias="displayName", default=None,)
+	lastConnectionDateTime: Optional[datetime] = Field(alias="lastConnectionDateTime", default=None,)
+	onboardingRequestExpiryDateTime: Optional[datetime] = Field(alias="onboardingRequestExpiryDateTime", default=None,)
+	onboardingStatus: Optional[RemoteAssistanceOnboardingStatus | str] = Field(alias="onboardingStatus", default=None,)
+	onboardingUrl: Optional[str] = Field(alias="onboardingUrl", default=None,)
 
 from .remote_assistance_onboarding_status import RemoteAssistanceOnboardingStatus
 

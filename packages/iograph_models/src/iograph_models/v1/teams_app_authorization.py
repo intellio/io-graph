@@ -4,9 +4,9 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class TeamsAppAuthorization(BaseModel):
-	clientAppId: Optional[str] = Field(alias="clientAppId",default=None,)
-	requiredPermissionSet: Optional[TeamsAppPermissionSet] = Field(alias="requiredPermissionSet",default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	clientAppId: Optional[str] = Field(alias="clientAppId", default=None,)
+	requiredPermissionSet: Optional[TeamsAppPermissionSet] = Field(alias="requiredPermissionSet", default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
 
 from .teams_app_permission_set import TeamsAppPermissionSet
 

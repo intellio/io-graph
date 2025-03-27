@@ -5,12 +5,12 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class DocumentProcessingJob(BaseModel):
-	id: Optional[str] = Field(alias="id",default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
-	createdDateTime: Optional[datetime] = Field(alias="createdDateTime",default=None,)
-	jobType: Optional[DocumentProcessingJobType | str] = Field(alias="jobType",default=None,)
-	listItemUniqueId: Optional[str] = Field(alias="listItemUniqueId",default=None,)
-	status: Optional[DocumentProcessingJobStatus | str] = Field(alias="status",default=None,)
+	id: Optional[str] = Field(alias="id", default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
+	createdDateTime: Optional[datetime] = Field(alias="createdDateTime", default=None,)
+	jobType: Optional[DocumentProcessingJobType | str] = Field(alias="jobType", default=None,)
+	listItemUniqueId: Optional[str] = Field(alias="listItemUniqueId", default=None,)
+	status: Optional[DocumentProcessingJobStatus | str] = Field(alias="status", default=None,)
 
 from .document_processing_job_type import DocumentProcessingJobType
 from .document_processing_job_status import DocumentProcessingJobStatus

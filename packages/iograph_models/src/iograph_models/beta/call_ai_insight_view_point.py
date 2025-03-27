@@ -4,8 +4,8 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class CallAiInsightViewPoint(BaseModel):
-	mentionEvents: Optional[list[MentionEvent]] = Field(alias="mentionEvents",default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	mentionEvents: Optional[list[MentionEvent]] = Field(alias="mentionEvents", default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
 
 from .mention_event import MentionEvent
 

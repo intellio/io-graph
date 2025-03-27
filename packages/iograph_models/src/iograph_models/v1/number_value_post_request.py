@@ -4,8 +4,8 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class Number_valuePostRequest(BaseModel):
-	text: Optional[str] = Field(alias="text",default=None,)
-	decimalSeparator: Optional[str] = Field(alias="decimalSeparator",default=None,)
-	groupSeparator: Optional[str] = Field(alias="groupSeparator",default=None,)
+	text: Optional[str] = Field(alias="text", default=None,)
+	decimalSeparator: Optional[str] = Field(alias="decimalSeparator", default=None,)
+	groupSeparator: Optional[str] = Field(alias="groupSeparator", default=None,)
 
 

@@ -1,5 +1,6 @@
 from __future__ import annotations
 from typing import Optional
+from typing import Union
 from pydantic import model_validator, ModelWrapValidatorHandler, ValidationError
 from typing_extensions import Self
 from typing import Any
@@ -8,20 +9,20 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class RestoreArtifactsBulkRequestBase(BaseModel):
-	id: Optional[str] = Field(alias="id",default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
-	createdBy: SerializeAsAny[Optional[IdentitySet]] = Field(alias="createdBy",default=None,)
-	createdDateTime: Optional[datetime] = Field(alias="createdDateTime",default=None,)
-	destinationType: Optional[DestinationType | str] = Field(alias="destinationType",default=None,)
-	displayName: Optional[str] = Field(alias="displayName",default=None,)
-	error: Optional[PublicError] = Field(alias="error",default=None,)
-	lastModifiedBy: SerializeAsAny[Optional[IdentitySet]] = Field(alias="lastModifiedBy",default=None,)
-	lastModifiedDateTime: Optional[datetime] = Field(alias="lastModifiedDateTime",default=None,)
-	protectionTimePeriod: Optional[TimePeriod] = Field(alias="protectionTimePeriod",default=None,)
-	protectionUnitIds: Optional[list[str]] = Field(alias="protectionUnitIds",default=None,)
-	restorePointPreference: Optional[RestorePointPreference | str] = Field(alias="restorePointPreference",default=None,)
-	status: Optional[RestoreArtifactsBulkRequestStatus | str] = Field(alias="status",default=None,)
-	tags: Optional[RestorePointTags | str] = Field(alias="tags",default=None,)
+	id: Optional[str] = Field(alias="id", default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
+	createdBy: Optional[Union[AiInteractionMentionedIdentitySet, ApprovalIdentitySet, ChatMessageFromIdentitySet, ChatMessageMentionedIdentitySet, ChatMessageReactionIdentitySet, CommunicationsIdentitySet, SharePointIdentitySet]] = Field(alias="createdBy", default=None,discriminator="odata_type", )
+	createdDateTime: Optional[datetime] = Field(alias="createdDateTime", default=None,)
+	destinationType: Optional[DestinationType | str] = Field(alias="destinationType", default=None,)
+	displayName: Optional[str] = Field(alias="displayName", default=None,)
+	error: Optional[PublicError] = Field(alias="error", default=None,)
+	lastModifiedBy: Optional[Union[AiInteractionMentionedIdentitySet, ApprovalIdentitySet, ChatMessageFromIdentitySet, ChatMessageMentionedIdentitySet, ChatMessageReactionIdentitySet, CommunicationsIdentitySet, SharePointIdentitySet]] = Field(alias="lastModifiedBy", default=None,discriminator="odata_type", )
+	lastModifiedDateTime: Optional[datetime] = Field(alias="lastModifiedDateTime", default=None,)
+	protectionTimePeriod: Optional[TimePeriod] = Field(alias="protectionTimePeriod", default=None,)
+	protectionUnitIds: Optional[list[str]] = Field(alias="protectionUnitIds", default=None,)
+	restorePointPreference: Optional[RestorePointPreference | str] = Field(alias="restorePointPreference", default=None,)
+	status: Optional[RestoreArtifactsBulkRequestStatus | str] = Field(alias="status", default=None,)
+	tags: Optional[RestorePointTags | str] = Field(alias="tags", default=None,)
 
 	@model_validator(mode="wrap")
 	def convert_discriminator_class(cls, data: Any, handler: ModelWrapValidatorHandler[Self]) -> Self:
@@ -47,10 +48,22 @@ class RestoreArtifactsBulkRequestBase(BaseModel):
 		except Exception as e:
 			raise e
 
-from .identity_set import IdentitySet
+from .ai_interaction_mentioned_identity_set import AiInteractionMentionedIdentitySet
+from .approval_identity_set import ApprovalIdentitySet
+from .chat_message_from_identity_set import ChatMessageFromIdentitySet
+from .chat_message_mentioned_identity_set import ChatMessageMentionedIdentitySet
+from .chat_message_reaction_identity_set import ChatMessageReactionIdentitySet
+from .communications_identity_set import CommunicationsIdentitySet
+from .share_point_identity_set import SharePointIdentitySet
 from .destination_type import DestinationType
 from .public_error import PublicError
-from .identity_set import IdentitySet
+from .ai_interaction_mentioned_identity_set import AiInteractionMentionedIdentitySet
+from .approval_identity_set import ApprovalIdentitySet
+from .chat_message_from_identity_set import ChatMessageFromIdentitySet
+from .chat_message_mentioned_identity_set import ChatMessageMentionedIdentitySet
+from .chat_message_reaction_identity_set import ChatMessageReactionIdentitySet
+from .communications_identity_set import CommunicationsIdentitySet
+from .share_point_identity_set import SharePointIdentitySet
 from .time_period import TimePeriod
 from .restore_point_preference import RestorePointPreference
 from .restore_artifacts_bulk_request_status import RestoreArtifactsBulkRequestStatus

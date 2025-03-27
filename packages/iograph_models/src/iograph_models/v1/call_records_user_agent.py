@@ -7,9 +7,9 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class CallRecordsUserAgent(BaseModel):
-	applicationVersion: Optional[str] = Field(alias="applicationVersion",default=None,)
-	headerValue: Optional[str] = Field(alias="headerValue",default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	applicationVersion: Optional[str] = Field(alias="applicationVersion", default=None,)
+	headerValue: Optional[str] = Field(alias="headerValue", default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
 
 	@model_validator(mode="wrap")
 	def convert_discriminator_class(cls, data: Any, handler: ModelWrapValidatorHandler[Self]) -> Self:

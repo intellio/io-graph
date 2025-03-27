@@ -4,7 +4,7 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class Change_passwordPostRequest(BaseModel):
-	currentPassword: Optional[str] = Field(alias="currentPassword",default=None,)
-	newPassword: Optional[str] = Field(alias="newPassword",default=None,)
+	currentPassword: Optional[str] = Field(alias="currentPassword", default=None,)
+	newPassword: Optional[str] = Field(alias="newPassword", default=None,)
 
 

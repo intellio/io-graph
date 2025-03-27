@@ -11,9 +11,9 @@ from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:
 	from .............request_adapter import HttpxRequestAdapter
+from iograph_models.v1.onenote_operation import OnenoteOperation
 from iograph_models.v1.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.v1.copy_to_section_post_request import Copy_to_sectionPostRequest
-from iograph_models.v1.onenote_operation import OnenoteOperation
 
 
 class CopyToSectionRequest(BaseRequestBuilder):

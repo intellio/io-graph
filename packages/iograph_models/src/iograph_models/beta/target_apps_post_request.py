@@ -4,7 +4,7 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class Target_appsPostRequest(BaseModel):
-	apps: Optional[list[ManagedMobileApp]] = Field(alias="apps",default=None,)
+	apps: Optional[list[ManagedMobileApp]] = Field(alias="apps", default=None,)
 
 from .managed_mobile_app import ManagedMobileApp
 

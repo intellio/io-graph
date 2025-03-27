@@ -4,19 +4,19 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class AuditActor(BaseModel):
-	applicationDisplayName: Optional[str] = Field(alias="applicationDisplayName",default=None,)
-	applicationId: Optional[str] = Field(alias="applicationId",default=None,)
-	auditActorType: Optional[str] = Field(alias="auditActorType",default=None,)
-	ipAddress: Optional[str] = Field(alias="ipAddress",default=None,)
-	remoteTenantId: Optional[str] = Field(alias="remoteTenantId",default=None,)
-	remoteUserId: Optional[str] = Field(alias="remoteUserId",default=None,)
-	servicePrincipalName: Optional[str] = Field(alias="servicePrincipalName",default=None,)
-	type: Optional[str] = Field(alias="type",default=None,)
-	userId: Optional[str] = Field(alias="userId",default=None,)
-	userPermissions: Optional[list[str]] = Field(alias="userPermissions",default=None,)
-	userPrincipalName: Optional[str] = Field(alias="userPrincipalName",default=None,)
-	userRoleScopeTags: Optional[list[RoleScopeTagInfo]] = Field(alias="userRoleScopeTags",default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	applicationDisplayName: Optional[str] = Field(alias="applicationDisplayName", default=None,)
+	applicationId: Optional[str] = Field(alias="applicationId", default=None,)
+	auditActorType: Optional[str] = Field(alias="auditActorType", default=None,)
+	ipAddress: Optional[str] = Field(alias="ipAddress", default=None,)
+	remoteTenantId: Optional[str] = Field(alias="remoteTenantId", default=None,)
+	remoteUserId: Optional[str] = Field(alias="remoteUserId", default=None,)
+	servicePrincipalName: Optional[str] = Field(alias="servicePrincipalName", default=None,)
+	type: Optional[str] = Field(alias="type", default=None,)
+	userId: Optional[str] = Field(alias="userId", default=None,)
+	userPermissions: Optional[list[str]] = Field(alias="userPermissions", default=None,)
+	userPrincipalName: Optional[str] = Field(alias="userPrincipalName", default=None,)
+	userRoleScopeTags: Optional[list[RoleScopeTagInfo]] = Field(alias="userRoleScopeTags", default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
 
 from .role_scope_tag_info import RoleScopeTagInfo
 

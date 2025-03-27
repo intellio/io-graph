@@ -4,7 +4,7 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class Revoke_licensesPostRequest(BaseModel):
-	notifyManagedDevices: Optional[bool] = Field(alias="notifyManagedDevices",default=None,)
-	revokeUntrackedLicenses: Optional[bool] = Field(alias="revokeUntrackedLicenses",default=None,)
+	notifyManagedDevices: Optional[bool] = Field(alias="notifyManagedDevices", default=None,)
+	revokeUntrackedLicenses: Optional[bool] = Field(alias="revokeUntrackedLicenses", default=None,)
 
 

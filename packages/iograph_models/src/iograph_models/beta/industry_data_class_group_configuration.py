@@ -4,10 +4,10 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class IndustryDataClassGroupConfiguration(BaseModel):
-	additionalAttributes: Optional[IndustryDataAdditionalClassGroupAttributes | str] = Field(alias="additionalAttributes",default=None,)
-	additionalOptions: Optional[IndustryDataAdditionalClassGroupOptions] = Field(alias="additionalOptions",default=None,)
-	enrollmentMappings: Optional[IndustryDataEnrollmentMappings] = Field(alias="enrollmentMappings",default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	additionalAttributes: Optional[list[IndustryDataAdditionalClassGroupAttributes | str]] = Field(alias="additionalAttributes", default=None,)
+	additionalOptions: Optional[IndustryDataAdditionalClassGroupOptions] = Field(alias="additionalOptions", default=None,)
+	enrollmentMappings: Optional[IndustryDataEnrollmentMappings] = Field(alias="enrollmentMappings", default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
 
 from .industry_data_additional_class_group_attributes import IndustryDataAdditionalClassGroupAttributes
 from .industry_data_additional_class_group_options import IndustryDataAdditionalClassGroupOptions

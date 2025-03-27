@@ -15,8 +15,8 @@ if TYPE_CHECKING:
 	from .by_external_item_id import ByExternalItemIdRequest
 	from ......request_adapter import HttpxRequestAdapter
 from iograph_models.beta.external_connectors_external_item_collection_response import ExternalConnectorsExternalItemCollectionResponse
-from iograph_models.beta.external_connectors_external_item import ExternalConnectorsExternalItem
 from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.beta.external_connectors_external_item import ExternalConnectorsExternalItem
 
 
 class ItemsRequest(BaseRequestBuilder):

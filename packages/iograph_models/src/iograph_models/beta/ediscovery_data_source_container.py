@@ -8,15 +8,15 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class EdiscoveryDataSourceContainer(BaseModel):
-	id: Optional[str] = Field(alias="id",default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
-	createdDateTime: Optional[datetime] = Field(alias="createdDateTime",default=None,)
-	displayName: Optional[str] = Field(alias="displayName",default=None,)
-	holdStatus: Optional[EdiscoveryDataSourceHoldStatus | str] = Field(alias="holdStatus",default=None,)
-	lastModifiedDateTime: Optional[datetime] = Field(alias="lastModifiedDateTime",default=None,)
-	releasedDateTime: Optional[datetime] = Field(alias="releasedDateTime",default=None,)
-	status: Optional[EdiscoveryDataSourceContainerStatus | str] = Field(alias="status",default=None,)
-	lastIndexOperation: Optional[EdiscoveryCaseIndexOperation] = Field(alias="lastIndexOperation",default=None,)
+	id: Optional[str] = Field(alias="id", default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
+	createdDateTime: Optional[datetime] = Field(alias="createdDateTime", default=None,)
+	displayName: Optional[str] = Field(alias="displayName", default=None,)
+	holdStatus: Optional[EdiscoveryDataSourceHoldStatus | str] = Field(alias="holdStatus", default=None,)
+	lastModifiedDateTime: Optional[datetime] = Field(alias="lastModifiedDateTime", default=None,)
+	releasedDateTime: Optional[datetime] = Field(alias="releasedDateTime", default=None,)
+	status: Optional[EdiscoveryDataSourceContainerStatus | str] = Field(alias="status", default=None,)
+	lastIndexOperation: Optional[EdiscoveryCaseIndexOperation] = Field(alias="lastIndexOperation", default=None,)
 
 	@model_validator(mode="wrap")
 	def convert_discriminator_class(cls, data: Any, handler: ModelWrapValidatorHandler[Self]) -> Self:

@@ -5,8 +5,8 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class AwsAccessKeyDetails(BaseModel):
-	createdDateTime: Optional[datetime] = Field(alias="createdDateTime",default=None,)
-	lastUsedDateTime: Optional[datetime] = Field(alias="lastUsedDateTime",default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	createdDateTime: Optional[datetime] = Field(alias="createdDateTime", default=None,)
+	lastUsedDateTime: Optional[datetime] = Field(alias="lastUsedDateTime", default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
 
 

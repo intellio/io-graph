@@ -4,7 +4,7 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class Set_scheduled_actionsPostRequest(BaseModel):
-	scheduledActions: Optional[list[DeviceManagementComplianceScheduledActionForRule]] = Field(alias="scheduledActions",default=None,)
+	scheduledActions: Optional[list[DeviceManagementComplianceScheduledActionForRule]] = Field(alias="scheduledActions", default=None,)
 
 from .device_management_compliance_scheduled_action_for_rule import DeviceManagementComplianceScheduledActionForRule
 

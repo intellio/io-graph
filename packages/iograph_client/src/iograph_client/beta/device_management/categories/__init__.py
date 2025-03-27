@@ -15,8 +15,8 @@ if TYPE_CHECKING:
 	from .by_device_management_setting_category_id import ByDeviceManagementSettingCategoryIdRequest
 	from ....request_adapter import HttpxRequestAdapter
 from iograph_models.beta.device_management_setting_category import DeviceManagementSettingCategory
-from iograph_models.beta.device_management_setting_category_collection_response import DeviceManagementSettingCategoryCollectionResponse
 from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.beta.device_management_setting_category_collection_response import DeviceManagementSettingCategoryCollectionResponse
 
 
 class CategoriesRequest(BaseRequestBuilder):

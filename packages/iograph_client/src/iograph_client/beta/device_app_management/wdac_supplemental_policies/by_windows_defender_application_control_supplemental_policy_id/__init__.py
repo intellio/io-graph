@@ -16,8 +16,8 @@ if TYPE_CHECKING:
 	from .deploy_summary import DeploySummaryRequest
 	from .assignments import AssignmentsRequest
 	from .....request_adapter import HttpxRequestAdapter
-from iograph_models.beta.windows_defender_application_control_supplemental_policy import WindowsDefenderApplicationControlSupplementalPolicy
 from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.beta.windows_defender_application_control_supplemental_policy import WindowsDefenderApplicationControlSupplementalPolicy
 
 
 class ByWindowsDefenderApplicationControlSupplementalPolicyIdRequest(BaseRequestBuilder):

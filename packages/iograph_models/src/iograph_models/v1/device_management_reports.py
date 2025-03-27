@@ -4,9 +4,9 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class DeviceManagementReports(BaseModel):
-	id: Optional[str] = Field(alias="id",default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
-	exportJobs: Optional[list[DeviceManagementExportJob]] = Field(alias="exportJobs",default=None,)
+	id: Optional[str] = Field(alias="id", default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
+	exportJobs: Optional[list[DeviceManagementExportJob]] = Field(alias="exportJobs", default=None,)
 
 from .device_management_export_job import DeviceManagementExportJob
 

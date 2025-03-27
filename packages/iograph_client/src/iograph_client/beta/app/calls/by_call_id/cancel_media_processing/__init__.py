@@ -11,9 +11,9 @@ from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:
 	from ......request_adapter import HttpxRequestAdapter
-from iograph_models.beta.cancel_media_processing_post_request import Cancel_media_processingPostRequest
-from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.beta.cancel_media_processing_operation import CancelMediaProcessingOperation
+from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.beta.cancel_media_processing_post_request import Cancel_media_processingPostRequest
 
 
 class CancelMediaProcessingRequest(BaseRequestBuilder):

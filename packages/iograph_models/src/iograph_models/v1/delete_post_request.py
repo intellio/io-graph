@@ -4,6 +4,6 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class DeletePostRequest(BaseModel):
-	shift: Optional[str] = Field(alias="shift",default=None,)
+	shift: Optional[str] = Field(alias="shift", default=None,)
 
 

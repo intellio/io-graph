@@ -7,9 +7,9 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class DlpEvaluationInput(BaseModel):
-	currentLabel: Optional[CurrentLabel] = Field(alias="currentLabel",default=None,)
-	discoveredSensitiveTypes: Optional[list[DiscoveredSensitiveType]] = Field(alias="discoveredSensitiveTypes",default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	currentLabel: Optional[CurrentLabel] = Field(alias="currentLabel", default=None,)
+	discoveredSensitiveTypes: Optional[list[DiscoveredSensitiveType]] = Field(alias="discoveredSensitiveTypes", default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
 
 	@model_validator(mode="wrap")
 	def convert_discriminator_class(cls, data: Any, handler: ModelWrapValidatorHandler[Self]) -> Self:

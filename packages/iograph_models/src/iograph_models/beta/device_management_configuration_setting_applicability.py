@@ -7,11 +7,11 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class DeviceManagementConfigurationSettingApplicability(BaseModel):
-	description: Optional[str] = Field(alias="description",default=None,)
-	deviceMode: Optional[DeviceManagementConfigurationDeviceMode | str] = Field(alias="deviceMode",default=None,)
-	platform: Optional[DeviceManagementConfigurationPlatforms | str] = Field(alias="platform",default=None,)
-	technologies: Optional[DeviceManagementConfigurationTechnologies | str] = Field(alias="technologies",default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	description: Optional[str] = Field(alias="description", default=None,)
+	deviceMode: Optional[DeviceManagementConfigurationDeviceMode | str] = Field(alias="deviceMode", default=None,)
+	platform: Optional[DeviceManagementConfigurationPlatforms | str] = Field(alias="platform", default=None,)
+	technologies: Optional[DeviceManagementConfigurationTechnologies | str] = Field(alias="technologies", default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
 
 	@model_validator(mode="wrap")
 	def convert_discriminator_class(cls, data: Any, handler: ModelWrapValidatorHandler[Self]) -> Self:

@@ -11,8 +11,8 @@ from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:
 	from .........request_adapter import HttpxRequestAdapter
-from iograph_models.beta.windows_updates_unenroll_assets_post_request import Windows_updates_unenroll_assetsPostRequest
 from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.beta.windows_updates_unenroll_assets_post_request import Windows_updates_unenroll_assetsPostRequest
 
 
 class WindowsUpdatesUnenrollAssetsRequest(BaseRequestBuilder):

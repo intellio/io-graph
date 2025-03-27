@@ -1,20 +1,51 @@
 from __future__ import annotations
 from typing import Optional
+from typing import Union
 from datetime import datetime
 from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class ServiceApp(BaseModel):
-	id: Optional[str] = Field(alias="id",default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
-	application: SerializeAsAny[Optional[Identity]] = Field(alias="application",default=None,)
-	effectiveDateTime: Optional[datetime] = Field(alias="effectiveDateTime",default=None,)
-	lastModifiedBy: SerializeAsAny[Optional[IdentitySet]] = Field(alias="lastModifiedBy",default=None,)
-	lastModifiedDateTime: Optional[datetime] = Field(alias="lastModifiedDateTime",default=None,)
-	registrationDateTime: Optional[datetime] = Field(alias="registrationDateTime",default=None,)
-	status: Optional[ServiceAppStatus | str] = Field(alias="status",default=None,)
+	id: Optional[str] = Field(alias="id", default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
+	application: Optional[Union[AzureCommunicationServicesUserIdentity, CommunicationsApplicationIdentity, CommunicationsApplicationInstanceIdentity, CommunicationsEncryptedIdentity, CommunicationsGuestIdentity, CommunicationsPhoneIdentity, CommunicationsUserIdentity, EmailIdentity, Initiator, ProgramResource, ProvisionedIdentity, ProvisioningServicePrincipal, ProvisioningSystem, ServicePrincipalIdentity, SharePointIdentity, SourceProvisionedIdentity, TargetProvisionedIdentity, TeamworkApplicationIdentity, TeamworkConversationIdentity, TeamworkTagIdentity, TeamworkUserIdentity, UserIdentity, AuditUserIdentity, CallRecordsUserIdentity, SecuritySubmissionUserIdentity]] = Field(alias="application", default=None,discriminator="odata_type", )
+	effectiveDateTime: Optional[datetime] = Field(alias="effectiveDateTime", default=None,)
+	lastModifiedBy: Optional[Union[AiInteractionMentionedIdentitySet, ApprovalIdentitySet, ChatMessageFromIdentitySet, ChatMessageMentionedIdentitySet, ChatMessageReactionIdentitySet, CommunicationsIdentitySet, SharePointIdentitySet]] = Field(alias="lastModifiedBy", default=None,discriminator="odata_type", )
+	lastModifiedDateTime: Optional[datetime] = Field(alias="lastModifiedDateTime", default=None,)
+	registrationDateTime: Optional[datetime] = Field(alias="registrationDateTime", default=None,)
+	status: Optional[ServiceAppStatus | str] = Field(alias="status", default=None,)
 
-from .identity import Identity
-from .identity_set import IdentitySet
+from .azure_communication_services_user_identity import AzureCommunicationServicesUserIdentity
+from .communications_application_identity import CommunicationsApplicationIdentity
+from .communications_application_instance_identity import CommunicationsApplicationInstanceIdentity
+from .communications_encrypted_identity import CommunicationsEncryptedIdentity
+from .communications_guest_identity import CommunicationsGuestIdentity
+from .communications_phone_identity import CommunicationsPhoneIdentity
+from .communications_user_identity import CommunicationsUserIdentity
+from .email_identity import EmailIdentity
+from .initiator import Initiator
+from .program_resource import ProgramResource
+from .provisioned_identity import ProvisionedIdentity
+from .provisioning_service_principal import ProvisioningServicePrincipal
+from .provisioning_system import ProvisioningSystem
+from .service_principal_identity import ServicePrincipalIdentity
+from .share_point_identity import SharePointIdentity
+from .source_provisioned_identity import SourceProvisionedIdentity
+from .target_provisioned_identity import TargetProvisionedIdentity
+from .teamwork_application_identity import TeamworkApplicationIdentity
+from .teamwork_conversation_identity import TeamworkConversationIdentity
+from .teamwork_tag_identity import TeamworkTagIdentity
+from .teamwork_user_identity import TeamworkUserIdentity
+from .user_identity import UserIdentity
+from .audit_user_identity import AuditUserIdentity
+from .call_records_user_identity import CallRecordsUserIdentity
+from .security_submission_user_identity import SecuritySubmissionUserIdentity
+from .ai_interaction_mentioned_identity_set import AiInteractionMentionedIdentitySet
+from .approval_identity_set import ApprovalIdentitySet
+from .chat_message_from_identity_set import ChatMessageFromIdentitySet
+from .chat_message_mentioned_identity_set import ChatMessageMentionedIdentitySet
+from .chat_message_reaction_identity_set import ChatMessageReactionIdentitySet
+from .communications_identity_set import CommunicationsIdentitySet
+from .share_point_identity_set import SharePointIdentitySet
 from .service_app_status import ServiceAppStatus
 

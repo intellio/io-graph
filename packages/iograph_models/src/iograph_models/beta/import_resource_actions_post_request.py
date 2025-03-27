@@ -4,8 +4,8 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class Import_resource_actionsPostRequest(BaseModel):
-	format: Optional[str] = Field(alias="format",default=None,)
-	value: Optional[str] = Field(alias="value",default=None,)
-	overwriteResourceNamespace: Optional[bool] = Field(alias="overwriteResourceNamespace",default=None,)
+	format: Optional[str] = Field(alias="format", default=None,)
+	value: Optional[str] = Field(alias="value", default=None,)
+	overwriteResourceNamespace: Optional[bool] = Field(alias="overwriteResourceNamespace", default=None,)
 
 

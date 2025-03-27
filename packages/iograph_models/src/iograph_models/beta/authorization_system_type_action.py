@@ -7,12 +7,12 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class AuthorizationSystemTypeAction(BaseModel):
-	id: Optional[str] = Field(alias="id",default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
-	actionType: Optional[AuthorizationSystemActionType | str] = Field(alias="actionType",default=None,)
-	externalId: Optional[str] = Field(alias="externalId",default=None,)
-	resourceTypes: Optional[list[str]] = Field(alias="resourceTypes",default=None,)
-	severity: Optional[AuthorizationSystemActionSeverity | str] = Field(alias="severity",default=None,)
+	id: Optional[str] = Field(alias="id", default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
+	actionType: Optional[AuthorizationSystemActionType | str] = Field(alias="actionType", default=None,)
+	externalId: Optional[str] = Field(alias="externalId", default=None,)
+	resourceTypes: Optional[list[str]] = Field(alias="resourceTypes", default=None,)
+	severity: Optional[AuthorizationSystemActionSeverity | str] = Field(alias="severity", default=None,)
 
 	@model_validator(mode="wrap")
 	def convert_discriminator_class(cls, data: Any, handler: ModelWrapValidatorHandler[Self]) -> Self:

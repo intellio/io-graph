@@ -4,6 +4,6 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class Clear_presencePostRequest(BaseModel):
-	sessionId: Optional[str] = Field(alias="sessionId",default=None,)
+	sessionId: Optional[str] = Field(alias="sessionId", default=None,)
 
 

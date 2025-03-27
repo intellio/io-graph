@@ -14,8 +14,8 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_conditional_access_policy_id import ByConditionalAccessPolicyIdRequest
 	from ......request_adapter import HttpxRequestAdapter
-from iograph_models.beta.networkaccess_conditional_access_policy_collection_response import NetworkaccessConditionalAccessPolicyCollectionResponse
 from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.beta.networkaccess_conditional_access_policy_collection_response import NetworkaccessConditionalAccessPolicyCollectionResponse
 
 
 class ConditionalAccessPoliciesRequest(BaseRequestBuilder):

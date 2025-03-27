@@ -4,6 +4,6 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class RevokePostRequest(BaseModel):
-	reviewerJustification: Optional[str] = Field(alias="reviewerJustification",default=None,)
+	reviewerJustification: Optional[str] = Field(alias="reviewerJustification", default=None,)
 
 

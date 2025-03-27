@@ -4,6 +4,6 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class Activate_device_esimPostRequest(BaseModel):
-	carrierUrl: Optional[str] = Field(alias="carrierUrl",default=None,)
+	carrierUrl: Optional[str] = Field(alias="carrierUrl", default=None,)
 
 

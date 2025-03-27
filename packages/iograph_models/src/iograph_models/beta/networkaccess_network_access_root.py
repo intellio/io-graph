@@ -4,18 +4,18 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class NetworkaccessNetworkAccessRoot(BaseModel):
-	id: Optional[str] = Field(alias="id",default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
-	alerts: Optional[list[NetworkaccessAlert]] = Field(alias="alerts",default=None,)
-	connectivity: Optional[NetworkaccessConnectivity] = Field(alias="connectivity",default=None,)
-	filteringPolicies: Optional[list[NetworkaccessFilteringPolicy]] = Field(alias="filteringPolicies",default=None,)
-	filteringProfiles: Optional[list[NetworkaccessFilteringProfile]] = Field(alias="filteringProfiles",default=None,)
-	forwardingPolicies: Optional[list[NetworkaccessForwardingPolicy]] = Field(alias="forwardingPolicies",default=None,)
-	forwardingProfiles: Optional[list[NetworkaccessForwardingProfile]] = Field(alias="forwardingProfiles",default=None,)
-	logs: Optional[NetworkaccessLogs] = Field(alias="logs",default=None,)
-	reports: Optional[NetworkaccessReports] = Field(alias="reports",default=None,)
-	settings: Optional[NetworkaccessSettings] = Field(alias="settings",default=None,)
-	tenantStatus: Optional[NetworkaccessTenantStatus] = Field(alias="tenantStatus",default=None,)
+	id: Optional[str] = Field(alias="id", default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
+	alerts: Optional[list[NetworkaccessAlert]] = Field(alias="alerts", default=None,)
+	connectivity: Optional[NetworkaccessConnectivity] = Field(alias="connectivity", default=None,)
+	filteringPolicies: Optional[list[NetworkaccessFilteringPolicy]] = Field(alias="filteringPolicies", default=None,)
+	filteringProfiles: Optional[list[NetworkaccessFilteringProfile]] = Field(alias="filteringProfiles", default=None,)
+	forwardingPolicies: Optional[list[NetworkaccessForwardingPolicy]] = Field(alias="forwardingPolicies", default=None,)
+	forwardingProfiles: Optional[list[NetworkaccessForwardingProfile]] = Field(alias="forwardingProfiles", default=None,)
+	logs: Optional[NetworkaccessLogs] = Field(alias="logs", default=None,)
+	reports: Optional[NetworkaccessReports] = Field(alias="reports", default=None,)
+	settings: Optional[NetworkaccessSettings] = Field(alias="settings", default=None,)
+	tenantStatus: Optional[NetworkaccessTenantStatus] = Field(alias="tenantStatus", default=None,)
 
 from .networkaccess_alert import NetworkaccessAlert
 from .networkaccess_connectivity import NetworkaccessConnectivity

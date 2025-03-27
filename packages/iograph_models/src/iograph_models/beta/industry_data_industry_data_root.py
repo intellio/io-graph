@@ -1,24 +1,35 @@
 from __future__ import annotations
 from typing import Optional
+from typing import Union
+from typing import Annotated
 from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class IndustryDataIndustryDataRoot(BaseModel):
-	id: Optional[str] = Field(alias="id",default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
-	dataConnectors: SerializeAsAny[Optional[list[IndustryDataIndustryDataConnector]]] = Field(alias="dataConnectors",default=None,)
-	inboundFlows: SerializeAsAny[Optional[list[IndustryDataInboundFlow]]] = Field(alias="inboundFlows",default=None,)
-	operations: SerializeAsAny[Optional[list[LongRunningOperation]]] = Field(alias="operations",default=None,)
-	outboundProvisioningFlowSets: Optional[list[IndustryDataOutboundProvisioningFlowSet]] = Field(alias="outboundProvisioningFlowSets",default=None,)
-	referenceDefinitions: Optional[list[IndustryDataReferenceDefinition]] = Field(alias="referenceDefinitions",default=None,)
-	roleGroups: Optional[list[IndustryDataRoleGroup]] = Field(alias="roleGroups",default=None,)
-	runs: Optional[list[IndustryDataIndustryDataRun]] = Field(alias="runs",default=None,)
-	sourceSystems: Optional[list[IndustryDataSourceSystemDefinition]] = Field(alias="sourceSystems",default=None,)
-	years: Optional[list[IndustryDataYearTimePeriodDefinition]] = Field(alias="years",default=None,)
+	id: Optional[str] = Field(alias="id", default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
+	dataConnectors: Optional[list[Annotated[Union[IndustryDataApiDataConnector, IndustryDataOneRosterApiDataConnector, IndustryDataFileDataConnector, IndustryDataAzureDataLakeConnector]],Field(discriminator="odata_type")]]] = Field(alias="dataConnectors", default=None,)
+	inboundFlows: Optional[list[Annotated[Union[IndustryDataInboundApiFlow, IndustryDataInboundFileFlow]],Field(discriminator="odata_type")]]] = Field(alias="inboundFlows", default=None,)
+	operations: Optional[list[Annotated[Union[AttackSimulationOperation, EngagementAsyncOperation, GoalsExportJob, RichLongRunningOperation, IndustryDataValidateOperation, IndustryDataFileValidateOperation]],Field(discriminator="odata_type")]]] = Field(alias="operations", default=None,)
+	outboundProvisioningFlowSets: Optional[list[IndustryDataOutboundProvisioningFlowSet]] = Field(alias="outboundProvisioningFlowSets", default=None,)
+	referenceDefinitions: Optional[list[IndustryDataReferenceDefinition]] = Field(alias="referenceDefinitions", default=None,)
+	roleGroups: Optional[list[IndustryDataRoleGroup]] = Field(alias="roleGroups", default=None,)
+	runs: Optional[list[IndustryDataIndustryDataRun]] = Field(alias="runs", default=None,)
+	sourceSystems: Optional[list[IndustryDataSourceSystemDefinition]] = Field(alias="sourceSystems", default=None,)
+	years: Optional[list[IndustryDataYearTimePeriodDefinition]] = Field(alias="years", default=None,)
 
-from .industry_data_industry_data_connector import IndustryDataIndustryDataConnector
-from .industry_data_inbound_flow import IndustryDataInboundFlow
-from .long_running_operation import LongRunningOperation
+from .industry_data_api_data_connector import IndustryDataApiDataConnector
+from .industry_data_one_roster_api_data_connector import IndustryDataOneRosterApiDataConnector
+from .industry_data_file_data_connector import IndustryDataFileDataConnector
+from .industry_data_azure_data_lake_connector import IndustryDataAzureDataLakeConnector
+from .industry_data_inbound_api_flow import IndustryDataInboundApiFlow
+from .industry_data_inbound_file_flow import IndustryDataInboundFileFlow
+from .attack_simulation_operation import AttackSimulationOperation
+from .engagement_async_operation import EngagementAsyncOperation
+from .goals_export_job import GoalsExportJob
+from .rich_long_running_operation import RichLongRunningOperation
+from .industry_data_validate_operation import IndustryDataValidateOperation
+from .industry_data_file_validate_operation import IndustryDataFileValidateOperation
 from .industry_data_outbound_provisioning_flow_set import IndustryDataOutboundProvisioningFlowSet
 from .industry_data_reference_definition import IndustryDataReferenceDefinition
 from .industry_data_role_group import IndustryDataRoleGroup

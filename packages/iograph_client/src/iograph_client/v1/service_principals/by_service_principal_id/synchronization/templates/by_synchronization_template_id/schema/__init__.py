@@ -16,8 +16,8 @@ if TYPE_CHECKING:
 	from .filter_operators import FilterOperatorsRequest
 	from .directories import DirectoriesRequest
 	from ........request_adapter import HttpxRequestAdapter
-from iograph_models.v1.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.v1.synchronization_schema import SynchronizationSchema
+from iograph_models.v1.o_data_errors__o_data_error import ODataErrorsODataError
 
 
 class SchemaRequest(BaseRequestBuilder):

@@ -4,9 +4,9 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class ValidationResult(BaseModel):
-	message: Optional[str] = Field(alias="message",default=None,)
-	ruleName: Optional[str] = Field(alias="ruleName",default=None,)
-	validationPassed: Optional[bool] = Field(alias="validationPassed",default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	message: Optional[str] = Field(alias="message", default=None,)
+	ruleName: Optional[str] = Field(alias="ruleName", default=None,)
+	validationPassed: Optional[bool] = Field(alias="validationPassed", default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
 
 

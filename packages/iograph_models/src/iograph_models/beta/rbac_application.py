@@ -4,19 +4,19 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class RbacApplication(BaseModel):
-	id: Optional[str] = Field(alias="id",default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
-	resourceNamespaces: Optional[list[UnifiedRbacResourceNamespace]] = Field(alias="resourceNamespaces",default=None,)
-	roleAssignmentApprovals: Optional[list[Approval]] = Field(alias="roleAssignmentApprovals",default=None,)
-	roleAssignments: Optional[list[UnifiedRoleAssignment]] = Field(alias="roleAssignments",default=None,)
-	roleAssignmentScheduleInstances: Optional[list[UnifiedRoleAssignmentScheduleInstance]] = Field(alias="roleAssignmentScheduleInstances",default=None,)
-	roleAssignmentScheduleRequests: Optional[list[UnifiedRoleAssignmentScheduleRequest]] = Field(alias="roleAssignmentScheduleRequests",default=None,)
-	roleAssignmentSchedules: Optional[list[UnifiedRoleAssignmentSchedule]] = Field(alias="roleAssignmentSchedules",default=None,)
-	roleDefinitions: Optional[list[UnifiedRoleDefinition]] = Field(alias="roleDefinitions",default=None,)
-	roleEligibilityScheduleInstances: Optional[list[UnifiedRoleEligibilityScheduleInstance]] = Field(alias="roleEligibilityScheduleInstances",default=None,)
-	roleEligibilityScheduleRequests: Optional[list[UnifiedRoleEligibilityScheduleRequest]] = Field(alias="roleEligibilityScheduleRequests",default=None,)
-	roleEligibilitySchedules: Optional[list[UnifiedRoleEligibilitySchedule]] = Field(alias="roleEligibilitySchedules",default=None,)
-	transitiveRoleAssignments: Optional[list[UnifiedRoleAssignment]] = Field(alias="transitiveRoleAssignments",default=None,)
+	id: Optional[str] = Field(alias="id", default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
+	resourceNamespaces: Optional[list[UnifiedRbacResourceNamespace]] = Field(alias="resourceNamespaces", default=None,)
+	roleAssignmentApprovals: Optional[list[Approval]] = Field(alias="roleAssignmentApprovals", default=None,)
+	roleAssignments: Optional[list[UnifiedRoleAssignment]] = Field(alias="roleAssignments", default=None,)
+	roleAssignmentScheduleInstances: Optional[list[UnifiedRoleAssignmentScheduleInstance]] = Field(alias="roleAssignmentScheduleInstances", default=None,)
+	roleAssignmentScheduleRequests: Optional[list[UnifiedRoleAssignmentScheduleRequest]] = Field(alias="roleAssignmentScheduleRequests", default=None,)
+	roleAssignmentSchedules: Optional[list[UnifiedRoleAssignmentSchedule]] = Field(alias="roleAssignmentSchedules", default=None,)
+	roleDefinitions: Optional[list[UnifiedRoleDefinition]] = Field(alias="roleDefinitions", default=None,)
+	roleEligibilityScheduleInstances: Optional[list[UnifiedRoleEligibilityScheduleInstance]] = Field(alias="roleEligibilityScheduleInstances", default=None,)
+	roleEligibilityScheduleRequests: Optional[list[UnifiedRoleEligibilityScheduleRequest]] = Field(alias="roleEligibilityScheduleRequests", default=None,)
+	roleEligibilitySchedules: Optional[list[UnifiedRoleEligibilitySchedule]] = Field(alias="roleEligibilitySchedules", default=None,)
+	transitiveRoleAssignments: Optional[list[UnifiedRoleAssignment]] = Field(alias="transitiveRoleAssignments", default=None,)
 
 from .unified_rbac_resource_namespace import UnifiedRbacResourceNamespace
 from .approval import Approval

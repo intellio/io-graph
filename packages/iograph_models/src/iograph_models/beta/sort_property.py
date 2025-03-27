@@ -4,8 +4,8 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class SortProperty(BaseModel):
-	isDescending: Optional[bool] = Field(alias="isDescending",default=None,)
-	name: Optional[str] = Field(alias="name",default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	isDescending: Optional[bool] = Field(alias="isDescending", default=None,)
+	name: Optional[str] = Field(alias="name", default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
 
 

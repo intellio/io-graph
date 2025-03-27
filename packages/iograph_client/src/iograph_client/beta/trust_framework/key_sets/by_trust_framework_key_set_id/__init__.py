@@ -18,8 +18,8 @@ if TYPE_CHECKING:
 	from .generate_key import GenerateKeyRequest
 	from .keys_v2 import Keys_v2Request
 	from .....request_adapter import HttpxRequestAdapter
-from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.beta.trust_framework_key_set import TrustFrameworkKeySet
+from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 
 
 class ByTrustFrameworkKeySetIdRequest(BaseRequestBuilder):

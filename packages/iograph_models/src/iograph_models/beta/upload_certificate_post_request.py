@@ -4,6 +4,6 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class Upload_certificatePostRequest(BaseModel):
-	key: Optional[str] = Field(alias="key",default=None,)
+	key: Optional[str] = Field(alias="key", default=None,)
 
 

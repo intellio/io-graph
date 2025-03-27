@@ -14,9 +14,9 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_workforce_integration_id import ByWorkforceIntegrationIdRequest
 	from ....request_adapter import HttpxRequestAdapter
-from iograph_models.v1.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.v1.workforce_integration import WorkforceIntegration
 from iograph_models.v1.workforce_integration_collection_response import WorkforceIntegrationCollectionResponse
+from iograph_models.v1.o_data_errors__o_data_error import ODataErrorsODataError
 
 
 class WorkforceIntegrationsRequest(BaseRequestBuilder):

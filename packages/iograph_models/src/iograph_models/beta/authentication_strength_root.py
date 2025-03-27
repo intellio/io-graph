@@ -4,12 +4,12 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class AuthenticationStrengthRoot(BaseModel):
-	id: Optional[str] = Field(alias="id",default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
-	authenticationCombinations: Optional[list[AuthenticationMethodModes | str]] = Field(alias="authenticationCombinations",default=None,)
-	combinations: Optional[list[AuthenticationMethodModes | str]] = Field(alias="combinations",default=None,)
-	authenticationMethodModes: Optional[list[AuthenticationMethodModeDetail]] = Field(alias="authenticationMethodModes",default=None,)
-	policies: Optional[list[AuthenticationStrengthPolicy]] = Field(alias="policies",default=None,)
+	id: Optional[str] = Field(alias="id", default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
+	authenticationCombinations: Optional[list[AuthenticationMethodModes | str]] = Field(alias="authenticationCombinations", default=None,)
+	combinations: Optional[list[AuthenticationMethodModes | str]] = Field(alias="combinations", default=None,)
+	authenticationMethodModes: Optional[list[AuthenticationMethodModeDetail]] = Field(alias="authenticationMethodModes", default=None,)
+	policies: Optional[list[AuthenticationStrengthPolicy]] = Field(alias="policies", default=None,)
 
 from .authentication_method_modes import AuthenticationMethodModes
 from .authentication_method_modes import AuthenticationMethodModes

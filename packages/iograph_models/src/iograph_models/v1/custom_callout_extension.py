@@ -1,5 +1,6 @@
 from __future__ import annotations
 from typing import Optional
+from typing import Union
 from pydantic import model_validator, ModelWrapValidatorHandler, ValidationError
 from typing_extensions import Self
 from typing import Any
@@ -7,13 +8,13 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class CustomCalloutExtension(BaseModel):
-	id: Optional[str] = Field(alias="id",default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
-	authenticationConfiguration: SerializeAsAny[Optional[CustomExtensionAuthenticationConfiguration]] = Field(alias="authenticationConfiguration",default=None,)
-	clientConfiguration: Optional[CustomExtensionClientConfiguration] = Field(alias="clientConfiguration",default=None,)
-	description: Optional[str] = Field(alias="description",default=None,)
-	displayName: Optional[str] = Field(alias="displayName",default=None,)
-	endpointConfiguration: SerializeAsAny[Optional[CustomExtensionEndpointConfiguration]] = Field(alias="endpointConfiguration",default=None,)
+	id: Optional[str] = Field(alias="id", default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
+	authenticationConfiguration: Optional[Union[AzureAdPopTokenAuthentication, AzureAdTokenAuthentication]] = Field(alias="authenticationConfiguration", default=None,discriminator="odata_type", )
+	clientConfiguration: Optional[CustomExtensionClientConfiguration] = Field(alias="clientConfiguration", default=None,)
+	description: Optional[str] = Field(alias="description", default=None,)
+	displayName: Optional[str] = Field(alias="displayName", default=None,)
+	endpointConfiguration: Optional[Union[HttpRequestEndpoint, LogicAppTriggerEndpointConfiguration]] = Field(alias="endpointConfiguration", default=None,discriminator="odata_type", )
 
 	@model_validator(mode="wrap")
 	def convert_discriminator_class(cls, data: Any, handler: ModelWrapValidatorHandler[Self]) -> Self:
@@ -45,7 +46,9 @@ class CustomCalloutExtension(BaseModel):
 		except Exception as e:
 			raise e
 
-from .custom_extension_authentication_configuration import CustomExtensionAuthenticationConfiguration
+from .azure_ad_pop_token_authentication import AzureAdPopTokenAuthentication
+from .azure_ad_token_authentication import AzureAdTokenAuthentication
 from .custom_extension_client_configuration import CustomExtensionClientConfiguration
-from .custom_extension_endpoint_configuration import CustomExtensionEndpointConfiguration
+from .http_request_endpoint import HttpRequestEndpoint
+from .logic_app_trigger_endpoint_configuration import LogicAppTriggerEndpointConfiguration
 

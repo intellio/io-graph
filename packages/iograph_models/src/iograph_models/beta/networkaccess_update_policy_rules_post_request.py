@@ -4,7 +4,7 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class Networkaccess_update_policy_rulesPostRequest(BaseModel):
-	rules: Optional[list[NetworkaccessPolicyRuleDelta]] = Field(alias="rules",default=None,)
+	rules: Optional[list[NetworkaccessPolicyRuleDelta]] = Field(alias="rules", default=None,)
 
 from .networkaccess_policy_rule_delta import NetworkaccessPolicyRuleDelta
 

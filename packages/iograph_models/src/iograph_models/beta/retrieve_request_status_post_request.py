@@ -4,7 +4,7 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class Retrieve_request_statusPostRequest(BaseModel):
-	entityId: Optional[str] = Field(alias="entityId",default=None,)
-	entityType: Optional[str] = Field(alias="entityType",default=None,)
+	entityId: Optional[str] = Field(alias="entityId", default=None,)
+	entityType: Optional[str] = Field(alias="entityType", default=None,)
 
 

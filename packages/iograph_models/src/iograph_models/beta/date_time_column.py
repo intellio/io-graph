@@ -4,8 +4,8 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class DateTimeColumn(BaseModel):
-	displayAs: Optional[str] = Field(alias="displayAs",default=None,)
-	format: Optional[str] = Field(alias="format",default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	displayAs: Optional[str] = Field(alias="displayAs", default=None,)
+	format: Optional[str] = Field(alias="format", default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
 
 

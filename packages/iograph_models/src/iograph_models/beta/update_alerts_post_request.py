@@ -4,7 +4,7 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class Update_alertsPostRequest(BaseModel):
-	value: Optional[list[Alert]] = Field(alias="value",default=None,)
+	value: Optional[list[Alert]] = Field(alias="value", default=None,)
 
 from .alert import Alert
 

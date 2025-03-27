@@ -14,9 +14,9 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_employee_id import ByEmployeeIdRequest
 	from ......request_adapter import HttpxRequestAdapter
-from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
-from iograph_models.beta.employee import Employee
 from iograph_models.beta.employee_collection_response import EmployeeCollectionResponse
+from iograph_models.beta.employee import Employee
+from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 
 
 class EmployeesRequest(BaseRequestBuilder):

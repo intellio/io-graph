@@ -4,6 +4,6 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class ArchivePostRequest(BaseModel):
-	justification: Optional[str] = Field(alias="justification",default=None,)
+	justification: Optional[str] = Field(alias="justification", default=None,)
 
 

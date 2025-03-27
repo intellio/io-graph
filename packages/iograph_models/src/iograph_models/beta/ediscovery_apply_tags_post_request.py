@@ -4,8 +4,8 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class Ediscovery_apply_tagsPostRequest(BaseModel):
-	tagsToAdd: Optional[list[EdiscoveryTag]] = Field(alias="tagsToAdd",default=None,)
-	tagsToRemove: Optional[list[EdiscoveryTag]] = Field(alias="tagsToRemove",default=None,)
+	tagsToAdd: Optional[list[EdiscoveryTag]] = Field(alias="tagsToAdd", default=None,)
+	tagsToRemove: Optional[list[EdiscoveryTag]] = Field(alias="tagsToRemove", default=None,)
 
 from .ediscovery_tag import EdiscoveryTag
 from .ediscovery_tag import EdiscoveryTag

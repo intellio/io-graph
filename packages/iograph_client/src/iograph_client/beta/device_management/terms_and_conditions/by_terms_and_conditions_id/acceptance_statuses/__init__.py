@@ -15,8 +15,8 @@ if TYPE_CHECKING:
 	from .by_terms_and_conditions_acceptance_status_id import ByTermsAndConditionsAcceptanceStatusIdRequest
 	from ......request_adapter import HttpxRequestAdapter
 from iograph_models.beta.terms_and_conditions_acceptance_status_collection_response import TermsAndConditionsAcceptanceStatusCollectionResponse
-from iograph_models.beta.terms_and_conditions_acceptance_status import TermsAndConditionsAcceptanceStatus
 from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.beta.terms_and_conditions_acceptance_status import TermsAndConditionsAcceptanceStatus
 
 
 class AcceptanceStatusesRequest(BaseRequestBuilder):

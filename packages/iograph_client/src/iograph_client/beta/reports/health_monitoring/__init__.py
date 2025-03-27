@@ -13,8 +13,8 @@ if TYPE_CHECKING:
 	from .alerts import AlertsRequest
 	from .alert_configurations import AlertConfigurationsRequest
 	from ....request_adapter import HttpxRequestAdapter
-from iograph_models.beta.health_monitoring_health_monitoring_root import HealthMonitoringHealthMonitoringRoot
 from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.beta.health_monitoring_health_monitoring_root import HealthMonitoringHealthMonitoringRoot
 
 
 class HealthMonitoringRequest(BaseRequestBuilder):

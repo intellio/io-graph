@@ -14,9 +14,9 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_permissions_request_change_id import ByPermissionsRequestChangeIdRequest
 	from .....request_adapter import HttpxRequestAdapter
-from iograph_models.beta.permissions_request_change import PermissionsRequestChange
 from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.beta.permissions_request_change_collection_response import PermissionsRequestChangeCollectionResponse
+from iograph_models.beta.permissions_request_change import PermissionsRequestChange
 
 
 class PermissionsRequestChangesRequest(BaseRequestBuilder):

@@ -4,6 +4,6 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class RetryPostRequest(BaseModel):
-	cloudPcIds: Optional[list[str]] = Field(alias="cloudPcIds",default=None,)
+	cloudPcIds: Optional[list[str]] = Field(alias="cloudPcIds", default=None,)
 
 

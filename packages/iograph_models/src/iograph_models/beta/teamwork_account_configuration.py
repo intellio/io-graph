@@ -4,9 +4,9 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class TeamworkAccountConfiguration(BaseModel):
-	onPremisesCalendarSyncConfiguration: Optional[TeamworkOnPremisesCalendarSyncConfiguration] = Field(alias="onPremisesCalendarSyncConfiguration",default=None,)
-	supportedClient: Optional[TeamworkSupportedClient | str] = Field(alias="supportedClient",default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	onPremisesCalendarSyncConfiguration: Optional[TeamworkOnPremisesCalendarSyncConfiguration] = Field(alias="onPremisesCalendarSyncConfiguration", default=None,)
+	supportedClient: Optional[TeamworkSupportedClient | str] = Field(alias="supportedClient", default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
 
 from .teamwork_on_premises_calendar_sync_configuration import TeamworkOnPremisesCalendarSyncConfiguration
 from .teamwork_supported_client import TeamworkSupportedClient

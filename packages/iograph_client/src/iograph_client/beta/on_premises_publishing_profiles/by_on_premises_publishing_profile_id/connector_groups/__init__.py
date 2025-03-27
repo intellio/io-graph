@@ -14,8 +14,8 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_connector_group_id import ByConnectorGroupIdRequest
 	from .....request_adapter import HttpxRequestAdapter
-from iograph_models.beta.connector_group import ConnectorGroup
 from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.beta.connector_group import ConnectorGroup
 from iograph_models.beta.connector_group_collection_response import ConnectorGroupCollectionResponse
 
 

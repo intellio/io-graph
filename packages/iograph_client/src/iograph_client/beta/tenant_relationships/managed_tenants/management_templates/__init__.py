@@ -15,8 +15,8 @@ if TYPE_CHECKING:
 	from .by_management_template_id import ByManagementTemplateIdRequest
 	from .....request_adapter import HttpxRequestAdapter
 from iograph_models.beta.managed_tenants_management_template import ManagedTenantsManagementTemplate
-from iograph_models.beta.managed_tenants_management_template_collection_response import ManagedTenantsManagementTemplateCollectionResponse
 from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.beta.managed_tenants_management_template_collection_response import ManagedTenantsManagementTemplateCollectionResponse
 
 
 class ManagementTemplatesRequest(BaseRequestBuilder):

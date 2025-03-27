@@ -4,7 +4,7 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class Remove_all_access_for_userPostRequest(BaseModel):
-	user: Optional[TeamworkUserIdentity] = Field(alias="user",default=None,)
+	user: Optional[TeamworkUserIdentity] = Field(alias="user", default=None,)
 
 from .teamwork_user_identity import TeamworkUserIdentity
 

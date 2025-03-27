@@ -1,17 +1,19 @@
 from __future__ import annotations
 from typing import Optional
+from typing import Union
+from typing import Annotated
 from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class MeetingParticipants(BaseModel):
-	attendees: SerializeAsAny[Optional[list[MeetingParticipantInfo]]] = Field(alias="attendees",default=None,)
-	contributors: SerializeAsAny[Optional[list[MeetingParticipantInfo]]] = Field(alias="contributors",default=None,)
-	organizer: SerializeAsAny[Optional[MeetingParticipantInfo]] = Field(alias="organizer",default=None,)
-	producers: SerializeAsAny[Optional[list[MeetingParticipantInfo]]] = Field(alias="producers",default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	attendees: Optional[list[Annotated[Union[VirtualEventPresenterInfo]],Field(discriminator="odata_type")]]] = Field(alias="attendees", default=None,)
+	contributors: Optional[list[Annotated[Union[VirtualEventPresenterInfo]],Field(discriminator="odata_type")]]] = Field(alias="contributors", default=None,)
+	organizer: Optional[Union[VirtualEventPresenterInfo]] = Field(alias="organizer", default=None,discriminator="odata_type", )
+	producers: Optional[list[Annotated[Union[VirtualEventPresenterInfo]],Field(discriminator="odata_type")]]] = Field(alias="producers", default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
 
-from .meeting_participant_info import MeetingParticipantInfo
-from .meeting_participant_info import MeetingParticipantInfo
-from .meeting_participant_info import MeetingParticipantInfo
-from .meeting_participant_info import MeetingParticipantInfo
+from .virtual_event_presenter_info import VirtualEventPresenterInfo
+from .virtual_event_presenter_info import VirtualEventPresenterInfo
+from .virtual_event_presenter_info import VirtualEventPresenterInfo
+from .virtual_event_presenter_info import VirtualEventPresenterInfo
 

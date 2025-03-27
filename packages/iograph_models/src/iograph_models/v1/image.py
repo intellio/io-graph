@@ -4,8 +4,8 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class Image(BaseModel):
-	height: Optional[int] = Field(alias="height",default=None,)
-	width: Optional[int] = Field(alias="width",default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	height: Optional[int] = Field(alias="height", default=None,)
+	width: Optional[int] = Field(alias="width", default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
 
 

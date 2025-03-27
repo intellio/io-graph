@@ -4,7 +4,7 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class PlannerApprovalRequirement(BaseModel):
-	isApprovalRequired: Optional[bool] = Field(alias="isApprovalRequired",default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	isApprovalRequired: Optional[bool] = Field(alias="isApprovalRequired", default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
 
 

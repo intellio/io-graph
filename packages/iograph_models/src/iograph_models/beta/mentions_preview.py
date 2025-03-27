@@ -4,7 +4,7 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class MentionsPreview(BaseModel):
-	isMentioned: Optional[bool] = Field(alias="isMentioned",default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	isMentioned: Optional[bool] = Field(alias="isMentioned", default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
 
 

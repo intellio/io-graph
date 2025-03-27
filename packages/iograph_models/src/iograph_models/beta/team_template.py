@@ -4,9 +4,9 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class TeamTemplate(BaseModel):
-	id: Optional[str] = Field(alias="id",default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
-	definitions: Optional[list[TeamTemplateDefinition]] = Field(alias="definitions",default=None,)
+	id: Optional[str] = Field(alias="id", default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
+	definitions: Optional[list[TeamTemplateDefinition]] = Field(alias="definitions", default=None,)
 
 from .team_template_definition import TeamTemplateDefinition
 

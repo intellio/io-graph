@@ -15,8 +15,8 @@ if TYPE_CHECKING:
 	from .by_user_experience_analytics_metric_id import ByUserExperienceAnalyticsMetricIdRequest
 	from .....request_adapter import HttpxRequestAdapter
 from iograph_models.beta.user_experience_analytics_metric import UserExperienceAnalyticsMetric
-from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.beta.user_experience_analytics_metric_collection_response import UserExperienceAnalyticsMetricCollectionResponse
+from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 
 
 class MetricValuesRequest(BaseRequestBuilder):

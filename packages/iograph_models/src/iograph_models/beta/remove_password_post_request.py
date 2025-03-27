@@ -5,6 +5,6 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class Remove_passwordPostRequest(BaseModel):
-	keyId: Optional[UUID] = Field(alias="keyId",default=None,)
+	keyId: Optional[UUID] = Field(alias="keyId", default=None,)
 
 

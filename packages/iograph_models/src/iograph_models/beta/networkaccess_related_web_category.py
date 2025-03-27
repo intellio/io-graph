@@ -1,10 +1,11 @@
 from __future__ import annotations
 from typing import Optional
+from typing import Literal
 from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class NetworkaccessRelatedWebCategory(BaseModel):
-	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
-	webCategoryName: Optional[str] = Field(alias="webCategoryName",default=None,)
+	odata_type: Literal["#microsoft.graph.networkaccess.relatedWebCategory"] = Field(alias="@odata.type", default="#microsoft.graph.networkaccess.relatedWebCategory")
+	webCategoryName: Optional[str] = Field(alias="webCategoryName", default=None,)
 
 

@@ -4,9 +4,9 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class WslDistributionConfiguration(BaseModel):
-	distribution: Optional[str] = Field(alias="distribution",default=None,)
-	maximumOSVersion: Optional[str] = Field(alias="maximumOSVersion",default=None,)
-	minimumOSVersion: Optional[str] = Field(alias="minimumOSVersion",default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	distribution: Optional[str] = Field(alias="distribution", default=None,)
+	maximumOSVersion: Optional[str] = Field(alias="maximumOSVersion", default=None,)
+	minimumOSVersion: Optional[str] = Field(alias="minimumOSVersion", default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
 
 

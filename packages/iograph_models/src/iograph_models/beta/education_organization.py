@@ -7,12 +7,12 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class EducationOrganization(BaseModel):
-	id: Optional[str] = Field(alias="id",default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
-	description: Optional[str] = Field(alias="description",default=None,)
-	displayName: Optional[str] = Field(alias="displayName",default=None,)
-	externalSource: Optional[EducationExternalSource | str] = Field(alias="externalSource",default=None,)
-	externalSourceDetail: Optional[str] = Field(alias="externalSourceDetail",default=None,)
+	id: Optional[str] = Field(alias="id", default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
+	description: Optional[str] = Field(alias="description", default=None,)
+	displayName: Optional[str] = Field(alias="displayName", default=None,)
+	externalSource: Optional[EducationExternalSource | str] = Field(alias="externalSource", default=None,)
+	externalSourceDetail: Optional[str] = Field(alias="externalSourceDetail", default=None,)
 
 	@model_validator(mode="wrap")
 	def convert_discriminator_class(cls, data: Any, handler: ModelWrapValidatorHandler[Self]) -> Self:

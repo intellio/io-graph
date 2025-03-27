@@ -1,10 +1,11 @@
 from __future__ import annotations
 from typing import Optional
+from typing import Union
 from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class Get_planPostRequest(BaseModel):
-	target: SerializeAsAny[Optional[BusinessScenarioTaskTargetBase]] = Field(alias="target",default=None,)
+	target: Optional[Union[BusinessScenarioGroupTarget]] = Field(alias="target", default=None,discriminator="odata_type", )
 
-from .business_scenario_task_target_base import BusinessScenarioTaskTargetBase
+from .business_scenario_group_target import BusinessScenarioGroupTarget
 

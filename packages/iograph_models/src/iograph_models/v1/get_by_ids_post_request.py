@@ -4,7 +4,7 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class Get_by_idsPostRequest(BaseModel):
-	ids: Optional[list[str]] = Field(alias="ids",default=None,)
-	types: Optional[list[str]] = Field(alias="types",default=None,)
+	ids: Optional[list[str]] = Field(alias="ids", default=None,)
+	types: Optional[list[str]] = Field(alias="types", default=None,)
 
 

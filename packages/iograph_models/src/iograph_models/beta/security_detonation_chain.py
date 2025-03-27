@@ -4,8 +4,8 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class SecurityDetonationChain(BaseModel):
-	childNodes: Optional[list[SecurityDetonationChain]] = Field(alias="childNodes",default=None,)
-	value: Optional[str] = Field(alias="value",default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	childNodes: Optional[list[SecurityDetonationChain]] = Field(alias="childNodes", default=None,)
+	value: Optional[str] = Field(alias="value", default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
 
 

@@ -4,7 +4,7 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class QueryPostRequest(BaseModel):
-	requests: Optional[list[SearchRequest]] = Field(alias="requests",default=None,)
+	requests: Optional[list[SearchRequest]] = Field(alias="requests", default=None,)
 
 from .search_request import SearchRequest
 

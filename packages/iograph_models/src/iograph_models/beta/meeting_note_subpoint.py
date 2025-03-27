@@ -4,8 +4,8 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class MeetingNoteSubpoint(BaseModel):
-	text: Optional[str] = Field(alias="text",default=None,)
-	title: Optional[str] = Field(alias="title",default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	text: Optional[str] = Field(alias="text", default=None,)
+	title: Optional[str] = Field(alias="title", default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
 
 

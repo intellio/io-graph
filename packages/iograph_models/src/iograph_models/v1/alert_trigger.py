@@ -4,9 +4,9 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class AlertTrigger(BaseModel):
-	name: Optional[str] = Field(alias="name",default=None,)
-	type: Optional[str] = Field(alias="type",default=None,)
-	value: Optional[str] = Field(alias="value",default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	name: Optional[str] = Field(alias="name", default=None,)
+	type: Optional[str] = Field(alias="type", default=None,)
+	value: Optional[str] = Field(alias="value", default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
 
 

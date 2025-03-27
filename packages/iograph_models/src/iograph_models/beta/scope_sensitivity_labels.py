@@ -7,8 +7,8 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class ScopeSensitivityLabels(BaseModel):
-	labelKind: Optional[LabelKind | str] = Field(alias="labelKind",default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	labelKind: Optional[LabelKind | str] = Field(alias="labelKind", default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
 
 	@model_validator(mode="wrap")
 	def convert_discriminator_class(cls, data: Any, handler: ModelWrapValidatorHandler[Self]) -> Self:

@@ -4,6 +4,6 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class Complete_signupPostRequest(BaseModel):
-	enterpriseToken: Optional[str] = Field(alias="enterpriseToken",default=None,)
+	enterpriseToken: Optional[str] = Field(alias="enterpriseToken", default=None,)
 
 

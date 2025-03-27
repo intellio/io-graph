@@ -8,16 +8,16 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class PartnerSecuritySecurityRequirement(BaseModel):
-	id: Optional[str] = Field(alias="id",default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
-	actionUrl: Optional[str] = Field(alias="actionUrl",default=None,)
-	complianceStatus: Optional[PartnerSecurityComplianceStatus | str] = Field(alias="complianceStatus",default=None,)
-	helpUrl: Optional[str] = Field(alias="helpUrl",default=None,)
-	maxScore: Optional[int] = Field(alias="maxScore",default=None,)
-	requirementType: Optional[PartnerSecuritySecurityRequirementType | str] = Field(alias="requirementType",default=None,)
-	score: Optional[int] = Field(alias="score",default=None,)
-	state: Optional[PartnerSecuritySecurityRequirementState | str] = Field(alias="state",default=None,)
-	updatedDateTime: Optional[datetime] = Field(alias="updatedDateTime",default=None,)
+	id: Optional[str] = Field(alias="id", default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
+	actionUrl: Optional[str] = Field(alias="actionUrl", default=None,)
+	complianceStatus: Optional[PartnerSecurityComplianceStatus | str] = Field(alias="complianceStatus", default=None,)
+	helpUrl: Optional[str] = Field(alias="helpUrl", default=None,)
+	maxScore: Optional[int] = Field(alias="maxScore", default=None,)
+	requirementType: Optional[PartnerSecuritySecurityRequirementType | str] = Field(alias="requirementType", default=None,)
+	score: Optional[int] = Field(alias="score", default=None,)
+	state: Optional[PartnerSecuritySecurityRequirementState | str] = Field(alias="state", default=None,)
+	updatedDateTime: Optional[datetime] = Field(alias="updatedDateTime", default=None,)
 
 	@model_validator(mode="wrap")
 	def convert_discriminator_class(cls, data: Any, handler: ModelWrapValidatorHandler[Self]) -> Self:

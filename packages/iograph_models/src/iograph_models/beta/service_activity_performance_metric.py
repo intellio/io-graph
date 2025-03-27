@@ -5,9 +5,9 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class ServiceActivityPerformanceMetric(BaseModel):
-	intervalStartDateTime: Optional[datetime] = Field(alias="intervalStartDateTime",default=None,)
+	intervalStartDateTime: Optional[datetime] = Field(alias="intervalStartDateTime", default=None,)
 	percentage: float | str | ReferenceNumeric
-	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
 
 from .reference_numeric import ReferenceNumeric
 

@@ -4,6 +4,6 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class RadiansPostRequest(BaseModel):
-	angle: Optional[str] = Field(alias="angle",default=None,)
+	angle: Optional[str] = Field(alias="angle", default=None,)
 
 

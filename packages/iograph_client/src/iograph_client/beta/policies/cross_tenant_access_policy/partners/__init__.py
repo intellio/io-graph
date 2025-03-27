@@ -14,9 +14,9 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_cross_tenant_access_policy_configuration_partner_tenant_id import ByCrossTenantAccessPolicyConfigurationPartnerTenantIdRequest
 	from .....request_adapter import HttpxRequestAdapter
-from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.beta.cross_tenant_access_policy_configuration_partner import CrossTenantAccessPolicyConfigurationPartner
 from iograph_models.beta.cross_tenant_access_policy_configuration_partner_collection_response import CrossTenantAccessPolicyConfigurationPartnerCollectionResponse
+from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 
 
 class PartnersRequest(BaseRequestBuilder):

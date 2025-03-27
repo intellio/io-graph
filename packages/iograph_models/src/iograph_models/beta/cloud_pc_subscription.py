@@ -4,9 +4,9 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class CloudPcSubscription(BaseModel):
-	id: Optional[str] = Field(alias="id",default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
-	subscriptionId: Optional[str] = Field(alias="subscriptionId",default=None,)
-	subscriptionName: Optional[str] = Field(alias="subscriptionName",default=None,)
+	id: Optional[str] = Field(alias="id", default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
+	subscriptionId: Optional[str] = Field(alias="subscriptionId", default=None,)
+	subscriptionName: Optional[str] = Field(alias="subscriptionName", default=None,)
 
 

@@ -4,7 +4,7 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class SearchResult(BaseModel):
-	onClickTelemetryUrl: Optional[str] = Field(alias="onClickTelemetryUrl",default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	onClickTelemetryUrl: Optional[str] = Field(alias="onClickTelemetryUrl", default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
 
 

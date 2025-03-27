@@ -14,8 +14,8 @@ if TYPE_CHECKING:
 	from .start_working_time import StartWorkingTimeRequest
 	from .end_working_time import EndWorkingTimeRequest
 	from ......request_adapter import HttpxRequestAdapter
-from iograph_models.v1.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.v1.working_time_schedule import WorkingTimeSchedule
+from iograph_models.v1.o_data_errors__o_data_error import ODataErrorsODataError
 
 
 class WorkingTimeScheduleRequest(BaseRequestBuilder):

@@ -4,9 +4,9 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class SecurityCasesRoot(BaseModel):
-	id: Optional[str] = Field(alias="id",default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
-	ediscoveryCases: Optional[list[SecurityEdiscoveryCase]] = Field(alias="ediscoveryCases",default=None,)
+	id: Optional[str] = Field(alias="id", default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
+	ediscoveryCases: Optional[list[SecurityEdiscoveryCase]] = Field(alias="ediscoveryCases", default=None,)
 
 from .security_ediscovery_case import SecurityEdiscoveryCase
 

@@ -4,6 +4,6 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class ContentApprovalStatusColumn(BaseModel):
-	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
 
 

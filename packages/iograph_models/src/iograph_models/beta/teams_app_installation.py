@@ -1,5 +1,6 @@
 from __future__ import annotations
 from typing import Optional
+from typing import Union
 from pydantic import model_validator, ModelWrapValidatorHandler, ValidationError
 from typing_extensions import Self
 from typing import Any
@@ -7,12 +8,12 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class TeamsAppInstallation(BaseModel):
-	id: Optional[str] = Field(alias="id",default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
-	consentedPermissionSet: Optional[TeamsAppPermissionSet] = Field(alias="consentedPermissionSet",default=None,)
-	scopeInfo: SerializeAsAny[Optional[TeamsAppInstallationScopeInfo]] = Field(alias="scopeInfo",default=None,)
-	teamsApp: Optional[TeamsApp] = Field(alias="teamsApp",default=None,)
-	teamsAppDefinition: Optional[TeamsAppDefinition] = Field(alias="teamsAppDefinition",default=None,)
+	id: Optional[str] = Field(alias="id", default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
+	consentedPermissionSet: Optional[TeamsAppPermissionSet] = Field(alias="consentedPermissionSet", default=None,)
+	scopeInfo: Optional[Union[GroupChatTeamsAppInstallationScopeInfo, PersonalTeamsAppInstallationScopeInfo, TeamTeamsAppInstallationScopeInfo]] = Field(alias="scopeInfo", default=None,discriminator="odata_type", )
+	teamsApp: Optional[TeamsApp] = Field(alias="teamsApp", default=None,)
+	teamsAppDefinition: Optional[TeamsAppDefinition] = Field(alias="teamsAppDefinition", default=None,)
 
 	@model_validator(mode="wrap")
 	def convert_discriminator_class(cls, data: Any, handler: ModelWrapValidatorHandler[Self]) -> Self:
@@ -33,7 +34,9 @@ class TeamsAppInstallation(BaseModel):
 			raise e
 
 from .teams_app_permission_set import TeamsAppPermissionSet
-from .teams_app_installation_scope_info import TeamsAppInstallationScopeInfo
+from .group_chat_teams_app_installation_scope_info import GroupChatTeamsAppInstallationScopeInfo
+from .personal_teams_app_installation_scope_info import PersonalTeamsAppInstallationScopeInfo
+from .team_teams_app_installation_scope_info import TeamTeamsAppInstallationScopeInfo
 from .teams_app import TeamsApp
 from .teams_app_definition import TeamsAppDefinition
 

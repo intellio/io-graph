@@ -4,6 +4,6 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class Multi_nomialPostRequest(BaseModel):
-	values: Optional[str] = Field(alias="values",default=None,)
+	values: Optional[str] = Field(alias="values", default=None,)
 
 

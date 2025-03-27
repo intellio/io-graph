@@ -4,6 +4,6 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class Generate_apple_push_notification_certificate_signing_requestPostResponse(BaseModel):
-	value: Optional[str] = Field(alias="value",default=None,)
+	value: Optional[str] = Field(alias="value", default=None,)
 
 

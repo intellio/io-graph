@@ -4,7 +4,7 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class MicrosoftPersonalizationSettings(BaseModel):
-	isBingRewardsFeatureEnabled: Optional[bool] = Field(alias="isBingRewardsFeatureEnabled",default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	isBingRewardsFeatureEnabled: Optional[bool] = Field(alias="isBingRewardsFeatureEnabled", default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
 
 

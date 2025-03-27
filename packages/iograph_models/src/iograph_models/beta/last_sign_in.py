@@ -5,8 +5,8 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class LastSignIn(BaseModel):
-	interactiveDateTime: Optional[datetime] = Field(alias="interactiveDateTime",default=None,)
-	nonInteractiveDateTime: Optional[datetime] = Field(alias="nonInteractiveDateTime",default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	interactiveDateTime: Optional[datetime] = Field(alias="interactiveDateTime", default=None,)
+	nonInteractiveDateTime: Optional[datetime] = Field(alias="nonInteractiveDateTime", default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
 
 

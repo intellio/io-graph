@@ -4,8 +4,8 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class SharePointOneDriveOptions(BaseModel):
-	includeContent: Optional[SearchContent | str] = Field(alias="includeContent",default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	includeContent: Optional[SearchContent | str] = Field(alias="includeContent", default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
 
 from .search_content import SearchContent
 

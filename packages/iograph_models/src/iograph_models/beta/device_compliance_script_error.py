@@ -7,10 +7,10 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class DeviceComplianceScriptError(BaseModel):
-	code: Optional[Code | str] = Field(alias="code",default=None,)
-	deviceComplianceScriptRulesValidationError: Optional[DeviceComplianceScriptRulesValidationError | str] = Field(alias="deviceComplianceScriptRulesValidationError",default=None,)
-	message: Optional[str] = Field(alias="message",default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	code: Optional[Code | str] = Field(alias="code", default=None,)
+	deviceComplianceScriptRulesValidationError: Optional[DeviceComplianceScriptRulesValidationError | str] = Field(alias="deviceComplianceScriptRulesValidationError", default=None,)
+	message: Optional[str] = Field(alias="message", default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
 
 	@model_validator(mode="wrap")
 	def convert_discriminator_class(cls, data: Any, handler: ModelWrapValidatorHandler[Self]) -> Self:

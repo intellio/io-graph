@@ -15,8 +15,8 @@ if TYPE_CHECKING:
 	from .by_file_threat_submission_id import ByFileThreatSubmissionIdRequest
 	from .....request_adapter import HttpxRequestAdapter
 from iograph_models.beta.security_file_threat_submission import SecurityFileThreatSubmission
-from iograph_models.beta.security_file_threat_submission_collection_response import SecurityFileThreatSubmissionCollectionResponse
 from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.beta.security_file_threat_submission_collection_response import SecurityFileThreatSubmissionCollectionResponse
 
 
 class FileThreatsRequest(BaseRequestBuilder):

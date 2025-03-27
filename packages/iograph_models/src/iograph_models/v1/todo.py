@@ -4,9 +4,9 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class Todo(BaseModel):
-	id: Optional[str] = Field(alias="id",default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
-	lists: Optional[list[TodoTaskList]] = Field(alias="lists",default=None,)
+	id: Optional[str] = Field(alias="id", default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
+	lists: Optional[list[TodoTaskList]] = Field(alias="lists", default=None,)
 
 from .todo_task_list import TodoTaskList
 

@@ -4,8 +4,8 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class DeviceManagementNotificationReceiver(BaseModel):
-	contactInformation: Optional[str] = Field(alias="contactInformation",default=None,)
-	locale: Optional[str] = Field(alias="locale",default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	contactInformation: Optional[str] = Field(alias="contactInformation", default=None,)
+	locale: Optional[str] = Field(alias="locale", default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
 
 

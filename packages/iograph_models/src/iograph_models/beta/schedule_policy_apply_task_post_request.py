@@ -4,7 +4,7 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class Schedule_policy_apply_taskPostRequest(BaseModel):
-	scheduledRule: Optional[CloudPcPolicyScheduledApplyActionDetail] = Field(alias="scheduledRule",default=None,)
+	scheduledRule: Optional[CloudPcPolicyScheduledApplyActionDetail] = Field(alias="scheduledRule", default=None,)
 
 from .cloud_pc_policy_scheduled_apply_action_detail import CloudPcPolicyScheduledApplyActionDetail
 

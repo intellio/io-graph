@@ -15,8 +15,8 @@ if TYPE_CHECKING:
 	from .by_certificate_authority_as_entity_id import ByCertificateAuthorityAsEntityIdRequest
 	from .......request_adapter import HttpxRequestAdapter
 from iograph_models.beta.certificate_authority_as_entity import CertificateAuthorityAsEntity
-from iograph_models.beta.certificate_authority_as_entity_collection_response import CertificateAuthorityAsEntityCollectionResponse
 from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.beta.certificate_authority_as_entity_collection_response import CertificateAuthorityAsEntityCollectionResponse
 
 
 class TrustedCertificateAuthoritiesRequest(BaseRequestBuilder):

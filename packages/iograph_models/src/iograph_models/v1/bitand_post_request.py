@@ -4,7 +4,7 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class BitandPostRequest(BaseModel):
-	number1: Optional[str] = Field(alias="number1",default=None,)
-	number2: Optional[str] = Field(alias="number2",default=None,)
+	number1: Optional[str] = Field(alias="number1", default=None,)
+	number2: Optional[str] = Field(alias="number2", default=None,)
 
 

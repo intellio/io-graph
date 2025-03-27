@@ -1,14 +1,19 @@
 from __future__ import annotations
 from typing import Optional
+from typing import Union
 from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class SharingInvitation(BaseModel):
-	email: Optional[str] = Field(alias="email",default=None,)
-	invitedBy: SerializeAsAny[Optional[IdentitySet]] = Field(alias="invitedBy",default=None,)
-	redeemedBy: Optional[str] = Field(alias="redeemedBy",default=None,)
-	signInRequired: Optional[bool] = Field(alias="signInRequired",default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	email: Optional[str] = Field(alias="email", default=None,)
+	invitedBy: Optional[Union[ChatMessageFromIdentitySet, ChatMessageMentionedIdentitySet, ChatMessageReactionIdentitySet, CommunicationsIdentitySet, SharePointIdentitySet]] = Field(alias="invitedBy", default=None,discriminator="odata_type", )
+	redeemedBy: Optional[str] = Field(alias="redeemedBy", default=None,)
+	signInRequired: Optional[bool] = Field(alias="signInRequired", default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
 
-from .identity_set import IdentitySet
+from .chat_message_from_identity_set import ChatMessageFromIdentitySet
+from .chat_message_mentioned_identity_set import ChatMessageMentionedIdentitySet
+from .chat_message_reaction_identity_set import ChatMessageReactionIdentitySet
+from .communications_identity_set import CommunicationsIdentitySet
+from .share_point_identity_set import SharePointIdentitySet
 

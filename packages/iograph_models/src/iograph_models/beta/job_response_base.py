@@ -8,16 +8,16 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class JobResponseBase(BaseModel):
-	id: Optional[str] = Field(alias="id",default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
-	creationDateTime: Optional[datetime] = Field(alias="creationDateTime",default=None,)
-	endDateTime: Optional[datetime] = Field(alias="endDateTime",default=None,)
-	error: Optional[ClassificationError] = Field(alias="error",default=None,)
-	startDateTime: Optional[datetime] = Field(alias="startDateTime",default=None,)
-	status: Optional[str] = Field(alias="status",default=None,)
-	tenantId: Optional[str] = Field(alias="tenantId",default=None,)
-	type: Optional[str] = Field(alias="type",default=None,)
-	userId: Optional[str] = Field(alias="userId",default=None,)
+	id: Optional[str] = Field(alias="id", default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
+	creationDateTime: Optional[datetime] = Field(alias="creationDateTime", default=None,)
+	endDateTime: Optional[datetime] = Field(alias="endDateTime", default=None,)
+	error: Optional[ClassificationError] = Field(alias="error", default=None,)
+	startDateTime: Optional[datetime] = Field(alias="startDateTime", default=None,)
+	status: Optional[str] = Field(alias="status", default=None,)
+	tenantId: Optional[str] = Field(alias="tenantId", default=None,)
+	type: Optional[str] = Field(alias="type", default=None,)
+	userId: Optional[str] = Field(alias="userId", default=None,)
 
 	@model_validator(mode="wrap")
 	def convert_discriminator_class(cls, data: Any, handler: ModelWrapValidatorHandler[Self]) -> Self:

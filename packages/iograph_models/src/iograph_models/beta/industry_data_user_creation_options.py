@@ -4,8 +4,8 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class IndustryDataUserCreationOptions(BaseModel):
-	configurations: Optional[list[IndustryDataUserConfiguration]] = Field(alias="configurations",default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	configurations: Optional[list[IndustryDataUserConfiguration]] = Field(alias="configurations", default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
 
 from .industry_data_user_configuration import IndustryDataUserConfiguration
 

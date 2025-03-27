@@ -11,8 +11,8 @@ from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:
 	from .......request_adapter import HttpxRequestAdapter
-from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.beta.import_office365_device_configuration_policies_post_response import Import_office365_device_configuration_policiesPostResponse
+from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 
 
 class ImportOffice365DeviceConfigurationPoliciesRequest(BaseRequestBuilder):

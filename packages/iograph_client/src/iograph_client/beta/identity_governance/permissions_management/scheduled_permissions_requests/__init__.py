@@ -13,8 +13,8 @@ from typing import TYPE_CHECKING
 if TYPE_CHECKING:
 	from .filter_by_current_user_with_on import FilterByCurrentUserWithOnRequest
 	from .....request_adapter import HttpxRequestAdapter
-from iograph_models.beta.scheduled_permissions_request import ScheduledPermissionsRequest
 from iograph_models.beta.scheduled_permissions_request_collection_response import ScheduledPermissionsRequestCollectionResponse
+from iograph_models.beta.scheduled_permissions_request import ScheduledPermissionsRequest
 from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 
 

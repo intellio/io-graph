@@ -1,0 +1,29 @@
+{
+    "python.analysis.exclude": [
+        "**/node_modules",
+        "**/__pycache__",
+        ".git",
+        "**/build",
+        "env/**",
+        "**/packages",
+        "**/packages/**"
+    ],
+    "python.analysis.ignore": [
+        "**/node_modules/**",
+        "**/__pycache__/**",
+        ".git/**",
+        "**/build/**",
+        "env/**",
+        "**/packages",
+        "**/packages/**"
+    ],
+    "python.analysis.indexing": false,
+    "python.analysis.languageServerMode": "light",
+    "files.exclude": {
+        "**/.git": true,
+        "**/.svn": true,
+        "**/.hg": true,
+        "**/.DS_Store": true,
+        "**/Thumbs.db": true
+    }
+}

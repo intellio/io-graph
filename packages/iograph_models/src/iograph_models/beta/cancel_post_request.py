@@ -4,6 +4,6 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class CancelPostRequest(BaseModel):
-	Comment: Optional[str] = Field(alias="Comment",default=None,)
+	Comment: Optional[str] = Field(alias="Comment", default=None,)
 
 

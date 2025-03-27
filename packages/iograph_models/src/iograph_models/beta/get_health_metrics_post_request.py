@@ -4,6 +4,6 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class Get_health_metricsPostRequest(BaseModel):
-	metricNames: Optional[list[str]] = Field(alias="metricNames",default=None,)
+	metricNames: Optional[list[str]] = Field(alias="metricNames", default=None,)
 
 

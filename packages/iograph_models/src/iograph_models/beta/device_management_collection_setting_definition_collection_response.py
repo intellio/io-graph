@@ -4,9 +4,9 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class DeviceManagementCollectionSettingDefinitionCollectionResponse(BaseModel):
-	odata_count: Optional[int] = Field(alias="@odata.count",default=None,)
-	odata_nextLink: Optional[str] = Field(alias="@odata.nextLink",default=None,)
-	value: Optional[list[DeviceManagementCollectionSettingDefinition]] = Field(alias="value",default=None,)
+	odata_count: Optional[int] = Field(alias="@odata.count", default=None,)
+	odata_nextLink: Optional[str] = Field(alias="@odata.nextLink", default=None,)
+	value: Optional[list[DeviceManagementCollectionSettingDefinition]] = Field(alias="value", default=None,)
 
 from .device_management_collection_setting_definition import DeviceManagementCollectionSettingDefinition
 

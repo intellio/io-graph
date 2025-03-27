@@ -1,13 +1,15 @@
 from __future__ import annotations
 from typing import Optional
+from typing import Union
 from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class ManagedMobileApp(BaseModel):
-	id: Optional[str] = Field(alias="id",default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
-	mobileAppIdentifier: SerializeAsAny[Optional[MobileAppIdentifier]] = Field(alias="mobileAppIdentifier",default=None,)
-	version: Optional[str] = Field(alias="version",default=None,)
+	id: Optional[str] = Field(alias="id", default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
+	mobileAppIdentifier: Optional[Union[AndroidMobileAppIdentifier, IosMobileAppIdentifier]] = Field(alias="mobileAppIdentifier", default=None,discriminator="odata_type", )
+	version: Optional[str] = Field(alias="version", default=None,)
 
-from .mobile_app_identifier import MobileAppIdentifier
+from .android_mobile_app_identifier import AndroidMobileAppIdentifier
+from .ios_mobile_app_identifier import IosMobileAppIdentifier
 

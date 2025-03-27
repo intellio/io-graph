@@ -4,7 +4,7 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class Validate_compliance_scriptPostRequest(BaseModel):
-	deviceCompliancePolicyScript: Optional[DeviceCompliancePolicyScript] = Field(alias="deviceCompliancePolicyScript",default=None,)
+	deviceCompliancePolicyScript: Optional[DeviceCompliancePolicyScript] = Field(alias="deviceCompliancePolicyScript", default=None,)
 
 from .device_compliance_policy_script import DeviceCompliancePolicyScript
 

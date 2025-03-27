@@ -15,8 +15,8 @@ if TYPE_CHECKING:
 	from .by_device_log_collection_response_id import ByDeviceLogCollectionResponseIdRequest
 	from .......request_adapter import HttpxRequestAdapter
 from iograph_models.beta.device_log_collection_response import DeviceLogCollectionResponse
-from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.beta.device_log_collection_response_collection_response import DeviceLogCollectionResponseCollectionResponse
+from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 
 
 class LogCollectionRequestsRequest(BaseRequestBuilder):

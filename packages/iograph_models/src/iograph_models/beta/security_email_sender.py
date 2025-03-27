@@ -4,9 +4,9 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class SecurityEmailSender(BaseModel):
-	displayName: Optional[str] = Field(alias="displayName",default=None,)
-	domainName: Optional[str] = Field(alias="domainName",default=None,)
-	emailAddress: Optional[str] = Field(alias="emailAddress",default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	displayName: Optional[str] = Field(alias="displayName", default=None,)
+	domainName: Optional[str] = Field(alias="domainName", default=None,)
+	emailAddress: Optional[str] = Field(alias="emailAddress", default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
 
 

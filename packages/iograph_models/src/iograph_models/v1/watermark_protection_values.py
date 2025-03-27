@@ -4,8 +4,8 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class WatermarkProtectionValues(BaseModel):
-	isEnabledForContentSharing: Optional[bool] = Field(alias="isEnabledForContentSharing",default=None,)
-	isEnabledForVideo: Optional[bool] = Field(alias="isEnabledForVideo",default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	isEnabledForContentSharing: Optional[bool] = Field(alias="isEnabledForContentSharing", default=None,)
+	isEnabledForVideo: Optional[bool] = Field(alias="isEnabledForVideo", default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
 
 

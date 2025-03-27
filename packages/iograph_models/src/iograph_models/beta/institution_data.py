@@ -4,11 +4,11 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class InstitutionData(BaseModel):
-	description: Optional[str] = Field(alias="description",default=None,)
-	displayName: Optional[str] = Field(alias="displayName",default=None,)
-	location: Optional[PhysicalAddress] = Field(alias="location",default=None,)
-	webUrl: Optional[str] = Field(alias="webUrl",default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	description: Optional[str] = Field(alias="description", default=None,)
+	displayName: Optional[str] = Field(alias="displayName", default=None,)
+	location: Optional[PhysicalAddress] = Field(alias="location", default=None,)
+	webUrl: Optional[str] = Field(alias="webUrl", default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
 
 from .physical_address import PhysicalAddress
 

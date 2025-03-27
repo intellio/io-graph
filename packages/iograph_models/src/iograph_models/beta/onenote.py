@@ -4,14 +4,14 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class Onenote(BaseModel):
-	id: Optional[str] = Field(alias="id",default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
-	notebooks: Optional[list[Notebook]] = Field(alias="notebooks",default=None,)
-	operations: Optional[list[OnenoteOperation]] = Field(alias="operations",default=None,)
-	pages: Optional[list[OnenotePage]] = Field(alias="pages",default=None,)
-	resources: Optional[list[OnenoteResource]] = Field(alias="resources",default=None,)
-	sectionGroups: Optional[list[SectionGroup]] = Field(alias="sectionGroups",default=None,)
-	sections: Optional[list[OnenoteSection]] = Field(alias="sections",default=None,)
+	id: Optional[str] = Field(alias="id", default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
+	notebooks: Optional[list[Notebook]] = Field(alias="notebooks", default=None,)
+	operations: Optional[list[OnenoteOperation]] = Field(alias="operations", default=None,)
+	pages: Optional[list[OnenotePage]] = Field(alias="pages", default=None,)
+	resources: Optional[list[OnenoteResource]] = Field(alias="resources", default=None,)
+	sectionGroups: Optional[list[SectionGroup]] = Field(alias="sectionGroups", default=None,)
+	sections: Optional[list[OnenoteSection]] = Field(alias="sections", default=None,)
 
 from .notebook import Notebook
 from .onenote_operation import OnenoteOperation

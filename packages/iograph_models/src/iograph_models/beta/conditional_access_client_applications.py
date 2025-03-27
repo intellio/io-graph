@@ -4,10 +4,10 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class ConditionalAccessClientApplications(BaseModel):
-	excludeServicePrincipals: Optional[list[str]] = Field(alias="excludeServicePrincipals",default=None,)
-	includeServicePrincipals: Optional[list[str]] = Field(alias="includeServicePrincipals",default=None,)
-	servicePrincipalFilter: Optional[ConditionalAccessFilter] = Field(alias="servicePrincipalFilter",default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	excludeServicePrincipals: Optional[list[str]] = Field(alias="excludeServicePrincipals", default=None,)
+	includeServicePrincipals: Optional[list[str]] = Field(alias="includeServicePrincipals", default=None,)
+	servicePrincipalFilter: Optional[ConditionalAccessFilter] = Field(alias="servicePrincipalFilter", default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
 
 from .conditional_access_filter import ConditionalAccessFilter
 

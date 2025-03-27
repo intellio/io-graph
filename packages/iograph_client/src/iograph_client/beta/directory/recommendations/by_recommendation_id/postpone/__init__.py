@@ -12,8 +12,8 @@ from typing import TYPE_CHECKING
 if TYPE_CHECKING:
 	from ......request_adapter import HttpxRequestAdapter
 from iograph_models.beta.recommendation import Recommendation
-from iograph_models.beta.postpone_post_request import PostponePostRequest
 from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.beta.postpone_post_request import PostponePostRequest
 
 
 class PostponeRequest(BaseRequestBuilder):

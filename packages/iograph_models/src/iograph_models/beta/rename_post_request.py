@@ -4,6 +4,6 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class RenamePostRequest(BaseModel):
-	displayName: Optional[str] = Field(alias="displayName",default=None,)
+	displayName: Optional[str] = Field(alias="displayName", default=None,)
 
 

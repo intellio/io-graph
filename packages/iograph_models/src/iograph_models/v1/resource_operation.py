@@ -4,10 +4,10 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class ResourceOperation(BaseModel):
-	id: Optional[str] = Field(alias="id",default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
-	actionName: Optional[str] = Field(alias="actionName",default=None,)
-	description: Optional[str] = Field(alias="description",default=None,)
-	resourceName: Optional[str] = Field(alias="resourceName",default=None,)
+	id: Optional[str] = Field(alias="id", default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
+	actionName: Optional[str] = Field(alias="actionName", default=None,)
+	description: Optional[str] = Field(alias="description", default=None,)
+	resourceName: Optional[str] = Field(alias="resourceName", default=None,)
 
 

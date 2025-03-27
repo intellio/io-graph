@@ -4,6 +4,6 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class Mark_unreadPostResponse(BaseModel):
-	value: Optional[bool] = Field(alias="value",default=None,)
+	value: Optional[bool] = Field(alias="value", default=None,)
 
 

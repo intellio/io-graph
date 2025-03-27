@@ -4,8 +4,8 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class CloudPcCrossCloudGovernmentOrganizationMapping(BaseModel):
-	id: Optional[str] = Field(alias="id",default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
-	organizationIdsInUSGovCloud: Optional[list[str]] = Field(alias="organizationIdsInUSGovCloud",default=None,)
+	id: Optional[str] = Field(alias="id", default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
+	organizationIdsInUSGovCloud: Optional[list[str]] = Field(alias="organizationIdsInUSGovCloud", default=None,)
 
 

@@ -14,9 +14,9 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_pending_external_user_profile_id import ByPendingExternalUserProfileIdRequest
 	from ....request_adapter import HttpxRequestAdapter
-from iograph_models.beta.pending_external_user_profile import PendingExternalUserProfile
-from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.beta.pending_external_user_profile_collection_response import PendingExternalUserProfileCollectionResponse
+from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.beta.pending_external_user_profile import PendingExternalUserProfile
 
 
 class PendingExternalUserProfilesRequest(BaseRequestBuilder):

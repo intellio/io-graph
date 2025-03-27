@@ -4,6 +4,6 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class Cancel_my_requestPostRequest(BaseModel):
-	id: Optional[str] = Field(alias="id",default=None,)
+	id: Optional[str] = Field(alias="id", default=None,)
 
 

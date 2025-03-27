@@ -4,8 +4,8 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class CustomExtensionClientConfiguration(BaseModel):
-	maximumRetries: Optional[int] = Field(alias="maximumRetries",default=None,)
-	timeoutInMilliseconds: Optional[int] = Field(alias="timeoutInMilliseconds",default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	maximumRetries: Optional[int] = Field(alias="maximumRetries", default=None,)
+	timeoutInMilliseconds: Optional[int] = Field(alias="timeoutInMilliseconds", default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
 
 

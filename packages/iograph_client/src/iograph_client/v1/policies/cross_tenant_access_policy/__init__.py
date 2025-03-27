@@ -14,8 +14,8 @@ if TYPE_CHECKING:
 	from .partners import PartnersRequest
 	from .default import DefaultRequest
 	from ....request_adapter import HttpxRequestAdapter
-from iograph_models.v1.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.v1.cross_tenant_access_policy import CrossTenantAccessPolicy
+from iograph_models.v1.o_data_errors__o_data_error import ODataErrorsODataError
 
 
 class CrossTenantAccessPolicyRequest(BaseRequestBuilder):

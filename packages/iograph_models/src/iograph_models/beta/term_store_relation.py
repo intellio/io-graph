@@ -4,12 +4,12 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class TermStoreRelation(BaseModel):
-	id: Optional[str] = Field(alias="id",default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
-	relationship: Optional[TermStoreRelationType | str] = Field(alias="relationship",default=None,)
-	fromTerm: Optional[TermStoreTerm] = Field(alias="fromTerm",default=None,)
-	set: Optional[TermStoreSet] = Field(alias="set",default=None,)
-	toTerm: Optional[TermStoreTerm] = Field(alias="toTerm",default=None,)
+	id: Optional[str] = Field(alias="id", default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
+	relationship: Optional[TermStoreRelationType | str] = Field(alias="relationship", default=None,)
+	fromTerm: Optional[TermStoreTerm] = Field(alias="fromTerm", default=None,)
+	set: Optional[TermStoreSet] = Field(alias="set", default=None,)
+	toTerm: Optional[TermStoreTerm] = Field(alias="toTerm", default=None,)
 
 from .term_store_relation_type import TermStoreRelationType
 from .term_store_term import TermStoreTerm

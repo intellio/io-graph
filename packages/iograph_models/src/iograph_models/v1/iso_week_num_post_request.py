@@ -4,6 +4,6 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class Iso_week_numPostRequest(BaseModel):
-	date: Optional[str] = Field(alias="date",default=None,)
+	date: Optional[str] = Field(alias="date", default=None,)
 
 

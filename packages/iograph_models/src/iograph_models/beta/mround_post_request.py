@@ -4,7 +4,7 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class MroundPostRequest(BaseModel):
-	number: Optional[str] = Field(alias="number",default=None,)
-	multiple: Optional[str] = Field(alias="multiple",default=None,)
+	number: Optional[str] = Field(alias="number", default=None,)
+	multiple: Optional[str] = Field(alias="multiple", default=None,)
 
 

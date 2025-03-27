@@ -4,8 +4,8 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class ChallengingWord(BaseModel):
-	count: Optional[int] = Field(alias="count",default=None,)
-	word: Optional[str] = Field(alias="word",default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	count: Optional[int] = Field(alias="count", default=None,)
+	word: Optional[str] = Field(alias="word", default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
 
 

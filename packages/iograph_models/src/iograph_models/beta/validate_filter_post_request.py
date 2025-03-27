@@ -1,10 +1,11 @@
 from __future__ import annotations
 from typing import Optional
+from typing import Union
 from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class Validate_filterPostRequest(BaseModel):
-	deviceAndAppManagementAssignmentFilter: SerializeAsAny[Optional[DeviceAndAppManagementAssignmentFilter]] = Field(alias="deviceAndAppManagementAssignmentFilter",default=None,)
+	deviceAndAppManagementAssignmentFilter: Optional[Union[PayloadCompatibleAssignmentFilter]] = Field(alias="deviceAndAppManagementAssignmentFilter", default=None,discriminator="odata_type", )
 
-from .device_and_app_management_assignment_filter import DeviceAndAppManagementAssignmentFilter
+from .payload_compatible_assignment_filter import PayloadCompatibleAssignmentFilter
 

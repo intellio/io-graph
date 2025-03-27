@@ -14,9 +14,9 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_ndes_connector_id import ByNdesConnectorIdRequest
 	from ....request_adapter import HttpxRequestAdapter
-from iograph_models.beta.ndes_connector import NdesConnector
-from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.beta.ndes_connector_collection_response import NdesConnectorCollectionResponse
+from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.beta.ndes_connector import NdesConnector
 
 
 class NdesConnectorsRequest(BaseRequestBuilder):

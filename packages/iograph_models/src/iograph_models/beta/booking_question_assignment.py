@@ -4,8 +4,8 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class BookingQuestionAssignment(BaseModel):
-	isRequired: Optional[bool] = Field(alias="isRequired",default=None,)
-	questionId: Optional[str] = Field(alias="questionId",default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	isRequired: Optional[bool] = Field(alias="isRequired", default=None,)
+	questionId: Optional[str] = Field(alias="questionId", default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
 
 

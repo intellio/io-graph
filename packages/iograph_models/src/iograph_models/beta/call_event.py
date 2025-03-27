@@ -8,11 +8,11 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class CallEvent(BaseModel):
-	id: Optional[str] = Field(alias="id",default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
-	callEventType: Optional[CallEventType | str] = Field(alias="callEventType",default=None,)
-	eventDateTime: Optional[datetime] = Field(alias="eventDateTime",default=None,)
-	participants: Optional[list[Participant]] = Field(alias="participants",default=None,)
+	id: Optional[str] = Field(alias="id", default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
+	callEventType: Optional[CallEventType | str] = Field(alias="callEventType", default=None,)
+	eventDateTime: Optional[datetime] = Field(alias="eventDateTime", default=None,)
+	participants: Optional[list[Participant]] = Field(alias="participants", default=None,)
 
 	@model_validator(mode="wrap")
 	def convert_discriminator_class(cls, data: Any, handler: ModelWrapValidatorHandler[Self]) -> Self:

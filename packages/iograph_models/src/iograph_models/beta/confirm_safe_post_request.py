@@ -4,6 +4,6 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class Confirm_safePostRequest(BaseModel):
-	requestIds: Optional[list[str]] = Field(alias="requestIds",default=None,)
+	requestIds: Optional[list[str]] = Field(alias="requestIds", default=None,)
 
 

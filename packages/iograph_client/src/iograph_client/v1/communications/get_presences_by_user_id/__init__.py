@@ -11,9 +11,9 @@ from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:
 	from ....request_adapter import HttpxRequestAdapter
+from iograph_models.v1.get_presences_by_user_id_post_response import Get_presences_by_user_idPostResponse
 from iograph_models.v1.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.v1.get_presences_by_user_id_post_request import Get_presences_by_user_idPostRequest
-from iograph_models.v1.get_presences_by_user_id_post_response import Get_presences_by_user_idPostResponse
 
 
 class GetPresencesByUserIdRequest(BaseRequestBuilder):

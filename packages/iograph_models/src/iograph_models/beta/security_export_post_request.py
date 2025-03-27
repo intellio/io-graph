@@ -4,12 +4,12 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class Security_exportPostRequest(BaseModel):
-	outputName: Optional[str] = Field(alias="outputName",default=None,)
-	description: Optional[str] = Field(alias="description",default=None,)
-	azureBlobContainer: Optional[str] = Field(alias="azureBlobContainer",default=None,)
-	azureBlobToken: Optional[str] = Field(alias="azureBlobToken",default=None,)
-	exportOptions: Optional[SecurityExportOptions | str] = Field(alias="exportOptions",default=None,)
-	exportStructure: Optional[SecurityExportFileStructure | str] = Field(alias="exportStructure",default=None,)
+	outputName: Optional[str] = Field(alias="outputName", default=None,)
+	description: Optional[str] = Field(alias="description", default=None,)
+	azureBlobContainer: Optional[str] = Field(alias="azureBlobContainer", default=None,)
+	azureBlobToken: Optional[str] = Field(alias="azureBlobToken", default=None,)
+	exportOptions: Optional[SecurityExportOptions | str] = Field(alias="exportOptions", default=None,)
+	exportStructure: Optional[SecurityExportFileStructure | str] = Field(alias="exportStructure", default=None,)
 
 from .security_export_options import SecurityExportOptions
 from .security_export_file_structure import SecurityExportFileStructure

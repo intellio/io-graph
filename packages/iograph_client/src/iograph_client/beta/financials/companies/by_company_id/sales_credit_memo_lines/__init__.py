@@ -14,8 +14,8 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_sales_credit_memo_line_id import BySalesCreditMemoLineIdRequest
 	from ......request_adapter import HttpxRequestAdapter
-from iograph_models.beta.sales_credit_memo_line_collection_response import SalesCreditMemoLineCollectionResponse
 from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.beta.sales_credit_memo_line_collection_response import SalesCreditMemoLineCollectionResponse
 
 
 class SalesCreditMemoLinesRequest(BaseRequestBuilder):

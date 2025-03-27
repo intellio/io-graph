@@ -4,6 +4,6 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class Check_member_objectsPostRequest(BaseModel):
-	ids: Optional[list[str]] = Field(alias="ids",default=None,)
+	ids: Optional[list[str]] = Field(alias="ids", default=None,)
 
 

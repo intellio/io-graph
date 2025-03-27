@@ -4,9 +4,9 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class Update_definition_valuesPostRequest(BaseModel):
-	added: Optional[list[GroupPolicyDefinitionValue]] = Field(alias="added",default=None,)
-	updated: Optional[list[GroupPolicyDefinitionValue]] = Field(alias="updated",default=None,)
-	deletedIds: Optional[list[str]] = Field(alias="deletedIds",default=None,)
+	added: Optional[list[GroupPolicyDefinitionValue]] = Field(alias="added", default=None,)
+	updated: Optional[list[GroupPolicyDefinitionValue]] = Field(alias="updated", default=None,)
+	deletedIds: Optional[list[str]] = Field(alias="deletedIds", default=None,)
 
 from .group_policy_definition_value import GroupPolicyDefinitionValue
 from .group_policy_definition_value import GroupPolicyDefinitionValue

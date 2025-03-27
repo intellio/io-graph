@@ -15,8 +15,8 @@ if TYPE_CHECKING:
 	from .site_protection_units import SiteProtectionUnitsRequest
 	from .site_inclusion_rules import SiteInclusionRulesRequest
 	from ......request_adapter import HttpxRequestAdapter
-from iograph_models.beta.share_point_protection_policy import SharePointProtectionPolicy
 from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.beta.share_point_protection_policy import SharePointProtectionPolicy
 
 
 class BySharePointProtectionPolicyIdRequest(BaseRequestBuilder):

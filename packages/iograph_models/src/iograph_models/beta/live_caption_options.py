@@ -4,7 +4,7 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class LiveCaptionOptions(BaseModel):
-	streamUrl: Optional[str] = Field(alias="streamUrl",default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	streamUrl: Optional[str] = Field(alias="streamUrl", default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
 
 

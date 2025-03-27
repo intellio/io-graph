@@ -4,7 +4,7 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class Evaluate_dynamic_membershipPostRequest(BaseModel):
-	memberId: Optional[str] = Field(alias="memberId",default=None,)
-	membershipRule: Optional[str] = Field(alias="membershipRule",default=None,)
+	memberId: Optional[str] = Field(alias="memberId", default=None,)
+	membershipRule: Optional[str] = Field(alias="membershipRule", default=None,)
 
 

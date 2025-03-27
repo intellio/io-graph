@@ -14,9 +14,9 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_agreement_file_localization_id import ByAgreementFileLocalizationIdRequest
 	from .....request_adapter import HttpxRequestAdapter
+from iograph_models.beta.agreement_file_localization import AgreementFileLocalization
 from iograph_models.beta.agreement_file_localization_collection_response import AgreementFileLocalizationCollectionResponse
 from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
-from iograph_models.beta.agreement_file_localization import AgreementFileLocalization
 
 
 class FilesRequest(BaseRequestBuilder):

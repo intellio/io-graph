@@ -7,9 +7,9 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class GenericError(BaseModel):
-	code: Optional[str] = Field(alias="code",default=None,)
-	message: Optional[str] = Field(alias="message",default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	code: Optional[str] = Field(alias="code", default=None,)
+	message: Optional[str] = Field(alias="message", default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
 
 	@model_validator(mode="wrap")
 	def convert_discriminator_class(cls, data: Any, handler: ModelWrapValidatorHandler[Self]) -> Self:

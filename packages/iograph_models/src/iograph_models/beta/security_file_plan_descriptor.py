@@ -4,18 +4,18 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class SecurityFilePlanDescriptor(BaseModel):
-	id: Optional[str] = Field(alias="id",default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
-	authority: Optional[SecurityFilePlanAuthority] = Field(alias="authority",default=None,)
-	category: Optional[SecurityFilePlanAppliedCategory] = Field(alias="category",default=None,)
-	citation: Optional[SecurityFilePlanCitation] = Field(alias="citation",default=None,)
-	department: Optional[SecurityFilePlanDepartment] = Field(alias="department",default=None,)
-	filePlanReference: Optional[SecurityFilePlanReference] = Field(alias="filePlanReference",default=None,)
-	authorityTemplate: Optional[SecurityAuthorityTemplate] = Field(alias="authorityTemplate",default=None,)
-	categoryTemplate: Optional[SecurityCategoryTemplate] = Field(alias="categoryTemplate",default=None,)
-	citationTemplate: Optional[SecurityCitationTemplate] = Field(alias="citationTemplate",default=None,)
-	departmentTemplate: Optional[SecurityDepartmentTemplate] = Field(alias="departmentTemplate",default=None,)
-	filePlanReferenceTemplate: Optional[SecurityFilePlanReferenceTemplate] = Field(alias="filePlanReferenceTemplate",default=None,)
+	id: Optional[str] = Field(alias="id", default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
+	authority: Optional[SecurityFilePlanAuthority] = Field(alias="authority", default=None,)
+	category: Optional[SecurityFilePlanAppliedCategory] = Field(alias="category", default=None,)
+	citation: Optional[SecurityFilePlanCitation] = Field(alias="citation", default=None,)
+	department: Optional[SecurityFilePlanDepartment] = Field(alias="department", default=None,)
+	filePlanReference: Optional[SecurityFilePlanReference] = Field(alias="filePlanReference", default=None,)
+	authorityTemplate: Optional[SecurityAuthorityTemplate] = Field(alias="authorityTemplate", default=None,)
+	categoryTemplate: Optional[SecurityCategoryTemplate] = Field(alias="categoryTemplate", default=None,)
+	citationTemplate: Optional[SecurityCitationTemplate] = Field(alias="citationTemplate", default=None,)
+	departmentTemplate: Optional[SecurityDepartmentTemplate] = Field(alias="departmentTemplate", default=None,)
+	filePlanReferenceTemplate: Optional[SecurityFilePlanReferenceTemplate] = Field(alias="filePlanReferenceTemplate", default=None,)
 
 from .security_file_plan_authority import SecurityFilePlanAuthority
 from .security_file_plan_applied_category import SecurityFilePlanAppliedCategory

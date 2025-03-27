@@ -14,9 +14,9 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_onenote_resource_id import ByOnenoteResourceIdRequest
 	from ......request_adapter import HttpxRequestAdapter
+from iograph_models.v1.onenote_resource_collection_response import OnenoteResourceCollectionResponse
 from iograph_models.v1.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.v1.onenote_resource import OnenoteResource
-from iograph_models.v1.onenote_resource_collection_response import OnenoteResourceCollectionResponse
 
 
 class ResourcesRequest(BaseRequestBuilder):

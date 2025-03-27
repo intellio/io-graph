@@ -4,8 +4,8 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class RetentionSetting(BaseModel):
-	interval: Optional[str] = Field(alias="interval",default=None,)
-	period: Optional[str] = Field(alias="period",default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	interval: Optional[str] = Field(alias="interval", default=None,)
+	period: Optional[str] = Field(alias="period", default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
 
 

@@ -5,7 +5,7 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class Create_server_log_collection_requestPostRequest(BaseModel):
-	startDateTime: Optional[datetime] = Field(alias="startDateTime",default=None,)
-	endDateTime: Optional[datetime] = Field(alias="endDateTime",default=None,)
+	startDateTime: Optional[datetime] = Field(alias="startDateTime", default=None,)
+	endDateTime: Optional[datetime] = Field(alias="endDateTime", default=None,)
 
 

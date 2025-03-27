@@ -15,8 +15,8 @@ if TYPE_CHECKING:
 	from .unassign_user_from_device import UnassignUserFromDeviceRequest
 	from .assign_user_to_device import AssignUserToDeviceRequest
 	from .....request_adapter import HttpxRequestAdapter
-from iograph_models.v1.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.v1.windows_autopilot_device_identity import WindowsAutopilotDeviceIdentity
+from iograph_models.v1.o_data_errors__o_data_error import ODataErrorsODataError
 
 
 class ByWindowsAutopilotDeviceIdentityIdRequest(BaseRequestBuilder):

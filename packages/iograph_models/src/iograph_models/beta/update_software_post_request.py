@@ -4,8 +4,8 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class Update_softwarePostRequest(BaseModel):
-	softwareType: Optional[TeamworkSoftwareType | str] = Field(alias="softwareType",default=None,)
-	softwareVersion: Optional[str] = Field(alias="softwareVersion",default=None,)
+	softwareType: Optional[TeamworkSoftwareType | str] = Field(alias="softwareType", default=None,)
+	softwareVersion: Optional[str] = Field(alias="softwareVersion", default=None,)
 
 from .teamwork_software_type import TeamworkSoftwareType
 

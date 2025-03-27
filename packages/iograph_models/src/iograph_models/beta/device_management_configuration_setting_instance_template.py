@@ -7,10 +7,10 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class DeviceManagementConfigurationSettingInstanceTemplate(BaseModel):
-	isRequired: Optional[bool] = Field(alias="isRequired",default=None,)
-	settingDefinitionId: Optional[str] = Field(alias="settingDefinitionId",default=None,)
-	settingInstanceTemplateId: Optional[str] = Field(alias="settingInstanceTemplateId",default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	isRequired: Optional[bool] = Field(alias="isRequired", default=None,)
+	settingDefinitionId: Optional[str] = Field(alias="settingDefinitionId", default=None,)
+	settingInstanceTemplateId: Optional[str] = Field(alias="settingInstanceTemplateId", default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
 
 	@model_validator(mode="wrap")
 	def convert_discriminator_class(cls, data: Any, handler: ModelWrapValidatorHandler[Self]) -> Self:

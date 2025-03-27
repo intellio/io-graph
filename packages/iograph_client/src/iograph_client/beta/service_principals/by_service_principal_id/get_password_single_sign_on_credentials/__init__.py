@@ -11,9 +11,9 @@ from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:
 	from .....request_adapter import HttpxRequestAdapter
+from iograph_models.beta.get_password_single_sign_on_credentials_post_request import Get_password_single_sign_on_credentialsPostRequest
 from iograph_models.beta.password_single_sign_on_credential_set import PasswordSingleSignOnCredentialSet
 from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
-from iograph_models.beta.get_password_single_sign_on_credentials_post_request import Get_password_single_sign_on_credentialsPostRequest
 
 
 class GetPasswordSingleSignOnCredentialsRequest(BaseRequestBuilder):

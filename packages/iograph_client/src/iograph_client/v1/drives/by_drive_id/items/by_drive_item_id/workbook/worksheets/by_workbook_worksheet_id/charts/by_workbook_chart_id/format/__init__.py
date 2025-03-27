@@ -14,8 +14,8 @@ if TYPE_CHECKING:
 	from .font import FontRequest
 	from .fill import FillRequest
 	from ............request_adapter import HttpxRequestAdapter
-from iograph_models.v1.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.v1.workbook_chart_area_format import WorkbookChartAreaFormat
+from iograph_models.v1.o_data_errors__o_data_error import ODataErrorsODataError
 
 
 class FormatRequest(BaseRequestBuilder):

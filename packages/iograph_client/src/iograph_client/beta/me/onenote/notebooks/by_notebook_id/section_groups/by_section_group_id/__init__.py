@@ -16,8 +16,8 @@ if TYPE_CHECKING:
 	from .parent_section_group import ParentSectionGroupRequest
 	from .parent_notebook import ParentNotebookRequest
 	from ........request_adapter import HttpxRequestAdapter
-from iograph_models.beta.section_group import SectionGroup
 from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.beta.section_group import SectionGroup
 
 
 class BySectionGroupIdRequest(BaseRequestBuilder):

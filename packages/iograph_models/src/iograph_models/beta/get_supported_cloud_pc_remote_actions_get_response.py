@@ -4,9 +4,9 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class Get_supported_cloud_pc_remote_actionsGetResponse(BaseModel):
-	odata_count: Optional[int] = Field(alias="@odata.count",default=None,)
-	odata_nextLink: Optional[str] = Field(alias="@odata.nextLink",default=None,)
-	value: Optional[list[CloudPcRemoteActionCapability]] = Field(alias="value",default=None,)
+	odata_count: Optional[int] = Field(alias="@odata.count", default=None,)
+	odata_nextLink: Optional[str] = Field(alias="@odata.nextLink", default=None,)
+	value: Optional[list[CloudPcRemoteActionCapability]] = Field(alias="value", default=None,)
 
 from .cloud_pc_remote_action_capability import CloudPcRemoteActionCapability
 

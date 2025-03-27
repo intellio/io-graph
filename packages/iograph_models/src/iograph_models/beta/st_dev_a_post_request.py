@@ -4,6 +4,6 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class St_dev_aPostRequest(BaseModel):
-	values: Optional[str] = Field(alias="values",default=None,)
+	values: Optional[str] = Field(alias="values", default=None,)
 
 

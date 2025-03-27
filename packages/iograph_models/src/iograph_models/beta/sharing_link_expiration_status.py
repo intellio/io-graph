@@ -4,9 +4,9 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class SharingLinkExpirationStatus(BaseModel):
-	defaultExpirationInDays: Optional[int] = Field(alias="defaultExpirationInDays",default=None,)
-	disabledReason: Optional[str] = Field(alias="disabledReason",default=None,)
-	enabled: Optional[bool] = Field(alias="enabled",default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	defaultExpirationInDays: Optional[int] = Field(alias="defaultExpirationInDays", default=None,)
+	disabledReason: Optional[str] = Field(alias="disabledReason", default=None,)
+	enabled: Optional[bool] = Field(alias="enabled", default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
 
 

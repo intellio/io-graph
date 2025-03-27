@@ -1,5 +1,6 @@
 from __future__ import annotations
 from typing import Optional
+from typing import Union
 from pydantic import model_validator, ModelWrapValidatorHandler, ValidationError
 from typing_extensions import Self
 from typing import Any
@@ -7,12 +8,12 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class AuthorizationSystemResource(BaseModel):
-	id: Optional[str] = Field(alias="id",default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
-	displayName: Optional[str] = Field(alias="displayName",default=None,)
-	externalId: Optional[str] = Field(alias="externalId",default=None,)
-	resourceType: Optional[str] = Field(alias="resourceType",default=None,)
-	authorizationSystem: SerializeAsAny[Optional[AuthorizationSystem]] = Field(alias="authorizationSystem",default=None,)
+	id: Optional[str] = Field(alias="id", default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
+	displayName: Optional[str] = Field(alias="displayName", default=None,)
+	externalId: Optional[str] = Field(alias="externalId", default=None,)
+	resourceType: Optional[str] = Field(alias="resourceType", default=None,)
+	authorizationSystem: Optional[Union[AwsAuthorizationSystem, AzureAuthorizationSystem, GcpAuthorizationSystem]] = Field(alias="authorizationSystem", default=None,discriminator="odata_type", )
 
 	@model_validator(mode="wrap")
 	def convert_discriminator_class(cls, data: Any, handler: ModelWrapValidatorHandler[Self]) -> Self:
@@ -38,5 +39,7 @@ class AuthorizationSystemResource(BaseModel):
 		except Exception as e:
 			raise e
 
-from .authorization_system import AuthorizationSystem
+from .aws_authorization_system import AwsAuthorizationSystem
+from .azure_authorization_system import AzureAuthorizationSystem
+from .gcp_authorization_system import GcpAuthorizationSystem
 

@@ -4,6 +4,6 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class Get_policy_setsPostRequest(BaseModel):
-	policySetIds: Optional[list[str]] = Field(alias="policySetIds",default=None,)
+	policySetIds: Optional[list[str]] = Field(alias="policySetIds", default=None,)
 
 

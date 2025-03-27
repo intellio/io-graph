@@ -4,11 +4,11 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class WorkbookCommentReply(BaseModel):
-	id: Optional[str] = Field(alias="id",default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
-	content: Optional[str] = Field(alias="content",default=None,)
-	contentType: Optional[str] = Field(alias="contentType",default=None,)
-	task: Optional[WorkbookDocumentTask] = Field(alias="task",default=None,)
+	id: Optional[str] = Field(alias="id", default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
+	content: Optional[str] = Field(alias="content", default=None,)
+	contentType: Optional[str] = Field(alias="contentType", default=None,)
+	task: Optional[WorkbookDocumentTask] = Field(alias="task", default=None,)
 
 from .workbook_document_task import WorkbookDocumentTask
 

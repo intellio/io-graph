@@ -4,6 +4,6 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class Revoke_leaf_certificatePostRequest(BaseModel):
-	leafCertificateId: Optional[str] = Field(alias="leafCertificateId",default=None,)
+	leafCertificateId: Optional[str] = Field(alias="leafCertificateId", default=None,)
 
 

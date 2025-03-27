@@ -14,9 +14,9 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_column_definition_id import ByColumnDefinitionIdRequest
 	from .....request_adapter import HttpxRequestAdapter
-from iograph_models.beta.column_definition import ColumnDefinition
 from iograph_models.beta.column_definition_collection_response import ColumnDefinitionCollectionResponse
 from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.beta.column_definition import ColumnDefinition
 
 
 class ColumnsRequest(BaseRequestBuilder):

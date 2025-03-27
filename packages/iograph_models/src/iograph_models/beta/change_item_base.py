@@ -7,15 +7,15 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class ChangeItemBase(BaseModel):
-	id: Optional[str] = Field(alias="id",default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
-	changeItemService: Optional[str] = Field(alias="changeItemService",default=None,)
-	description: Optional[str] = Field(alias="description",default=None,)
-	documentationUrls: Optional[list[str]] = Field(alias="documentationUrls",default=None,)
-	shortDescription: Optional[str] = Field(alias="shortDescription",default=None,)
-	systemTags: Optional[list[str]] = Field(alias="systemTags",default=None,)
-	tags: Optional[list[str]] = Field(alias="tags",default=None,)
-	title: Optional[str] = Field(alias="title",default=None,)
+	id: Optional[str] = Field(alias="id", default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
+	changeItemService: Optional[str] = Field(alias="changeItemService", default=None,)
+	description: Optional[str] = Field(alias="description", default=None,)
+	documentationUrls: Optional[list[str]] = Field(alias="documentationUrls", default=None,)
+	shortDescription: Optional[str] = Field(alias="shortDescription", default=None,)
+	systemTags: Optional[list[str]] = Field(alias="systemTags", default=None,)
+	tags: Optional[list[str]] = Field(alias="tags", default=None,)
+	title: Optional[str] = Field(alias="title", default=None,)
 
 	@model_validator(mode="wrap")
 	def convert_discriminator_class(cls, data: Any, handler: ModelWrapValidatorHandler[Self]) -> Self:

@@ -7,9 +7,9 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class CrossTenantAccessPolicyB2BSetting(BaseModel):
-	applications: Optional[CrossTenantAccessPolicyTargetConfiguration] = Field(alias="applications",default=None,)
-	usersAndGroups: Optional[CrossTenantAccessPolicyTargetConfiguration] = Field(alias="usersAndGroups",default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	applications: Optional[CrossTenantAccessPolicyTargetConfiguration] = Field(alias="applications", default=None,)
+	usersAndGroups: Optional[CrossTenantAccessPolicyTargetConfiguration] = Field(alias="usersAndGroups", default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
 
 	@model_validator(mode="wrap")
 	def convert_discriminator_class(cls, data: Any, handler: ModelWrapValidatorHandler[Self]) -> Self:

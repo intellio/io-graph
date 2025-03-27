@@ -14,9 +14,9 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_person_annotation_id import ByPersonAnnotationIdRequest
 	from ......request_adapter import HttpxRequestAdapter
-from iograph_models.beta.person_annotation_collection_response import PersonAnnotationCollectionResponse
-from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.beta.person_annotation import PersonAnnotation
+from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.beta.person_annotation_collection_response import PersonAnnotationCollectionResponse
 
 
 class NotesRequest(BaseRequestBuilder):

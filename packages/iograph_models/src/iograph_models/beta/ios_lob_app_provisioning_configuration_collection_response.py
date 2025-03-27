@@ -4,9 +4,9 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class IosLobAppProvisioningConfigurationCollectionResponse(BaseModel):
-	odata_count: Optional[int] = Field(alias="@odata.count",default=None,)
-	odata_nextLink: Optional[str] = Field(alias="@odata.nextLink",default=None,)
-	value: Optional[list[IosLobAppProvisioningConfiguration]] = Field(alias="value",default=None,)
+	odata_count: Optional[int] = Field(alias="@odata.count", default=None,)
+	odata_nextLink: Optional[str] = Field(alias="@odata.nextLink", default=None,)
+	value: Optional[list[IosLobAppProvisioningConfiguration]] = Field(alias="value", default=None,)
 
 from .ios_lob_app_provisioning_configuration import IosLobAppProvisioningConfiguration
 

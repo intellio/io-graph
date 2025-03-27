@@ -4,7 +4,7 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class AgentReference(BaseModel):
-	path: Optional[str] = Field(alias="path",default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	path: Optional[str] = Field(alias="path", default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
 
 

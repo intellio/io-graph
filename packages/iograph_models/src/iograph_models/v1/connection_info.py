@@ -4,7 +4,7 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class ConnectionInfo(BaseModel):
-	url: Optional[str] = Field(alias="url",default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	url: Optional[str] = Field(alias="url", default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
 
 

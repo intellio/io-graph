@@ -4,6 +4,6 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class Mark_as_not_junkPostRequest(BaseModel):
-	MoveToInbox: Optional[bool] = Field(alias="MoveToInbox",default=None,)
+	MoveToInbox: Optional[bool] = Field(alias="MoveToInbox", default=None,)
 
 

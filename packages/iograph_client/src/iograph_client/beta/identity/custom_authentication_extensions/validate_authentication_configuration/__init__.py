@@ -12,8 +12,8 @@ from typing import TYPE_CHECKING
 if TYPE_CHECKING:
 	from .....request_adapter import HttpxRequestAdapter
 from iograph_models.beta.validate_authentication_configuration_post_request import Validate_authentication_configurationPostRequest
-from iograph_models.beta.authentication_configuration_validation import AuthenticationConfigurationValidation
 from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.beta.authentication_configuration_validation import AuthenticationConfigurationValidation
 
 
 class ValidateAuthenticationConfigurationRequest(BaseRequestBuilder):

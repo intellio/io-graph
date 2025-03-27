@@ -4,7 +4,7 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class Onenote_patch_contentPostRequest(BaseModel):
-	commands: Optional[list[OnenotePatchContentCommand]] = Field(alias="commands",default=None,)
+	commands: Optional[list[OnenotePatchContentCommand]] = Field(alias="commands", default=None,)
 
 from .onenote_patch_content_command import OnenotePatchContentCommand
 

@@ -15,9 +15,9 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_access_package_assignment_resource_role_id import ByAccessPackageAssignmentResourceRoleIdRequest
 	from .......request_adapter import HttpxRequestAdapter
-from iograph_models.beta.access_package_assignment_resource_role import AccessPackageAssignmentResourceRole
 from iograph_models.beta.access_package_assignment_resource_role_collection_response import AccessPackageAssignmentResourceRoleCollectionResponse
 from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.beta.access_package_assignment_resource_role import AccessPackageAssignmentResourceRole
 
 
 class AccessPackageAssignmentResourceRolesRequest(BaseRequestBuilder):

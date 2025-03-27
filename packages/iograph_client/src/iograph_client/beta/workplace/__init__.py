@@ -14,8 +14,8 @@ if TYPE_CHECKING:
 	from .sensor_devices_with_deviceid import SensorDevicesWithDeviceIdRequest
 	from .sensor_devices import SensorDevicesRequest
 	from ...request_adapter import HttpxRequestAdapter
-from iograph_models.beta.workplace import Workplace
 from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.beta.workplace import Workplace
 
 
 class WorkplaceRequest(BaseRequestBuilder):

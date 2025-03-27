@@ -4,8 +4,8 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class TimeRange(BaseModel):
-	endTime: Optional[str] = Field(alias="endTime",default=None,)
-	startTime: Optional[str] = Field(alias="startTime",default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	endTime: Optional[str] = Field(alias="endTime", default=None,)
+	startTime: Optional[str] = Field(alias="startTime", default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
 
 

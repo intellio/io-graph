@@ -4,6 +4,6 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class Sign_digestPostRequest(BaseModel):
-	digest: Optional[str] = Field(alias="digest",default=None,)
+	digest: Optional[str] = Field(alias="digest", default=None,)
 
 

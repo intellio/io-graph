@@ -14,9 +14,9 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_outlook_task_group_id import ByOutlookTaskGroupIdRequest
 	from ......request_adapter import HttpxRequestAdapter
+from iograph_models.beta.outlook_task_group import OutlookTaskGroup
 from iograph_models.beta.outlook_task_group_collection_response import OutlookTaskGroupCollectionResponse
 from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
-from iograph_models.beta.outlook_task_group import OutlookTaskGroup
 
 
 class TaskGroupsRequest(BaseRequestBuilder):

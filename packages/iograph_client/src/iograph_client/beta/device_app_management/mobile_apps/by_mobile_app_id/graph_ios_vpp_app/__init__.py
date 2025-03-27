@@ -16,8 +16,8 @@ if TYPE_CHECKING:
 	from .assignments import AssignmentsRequest
 	from .assigned_licenses import AssignedLicensesRequest
 	from ......request_adapter import HttpxRequestAdapter
-from iograph_models.beta.ios_vpp_app import IosVppApp
 from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.beta.ios_vpp_app import IosVppApp
 
 
 class GraphIosVppAppRequest(BaseRequestBuilder):

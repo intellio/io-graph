@@ -15,8 +15,8 @@ if TYPE_CHECKING:
 	from .by_meeting_registration_question_id import ByMeetingRegistrationQuestionIdRequest
 	from .......request_adapter import HttpxRequestAdapter
 from iograph_models.beta.meeting_registration_question import MeetingRegistrationQuestion
-from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.beta.meeting_registration_question_collection_response import MeetingRegistrationQuestionCollectionResponse
+from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 
 
 class CustomQuestionsRequest(BaseRequestBuilder):

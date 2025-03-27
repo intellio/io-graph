@@ -4,7 +4,7 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class Package(BaseModel):
-	type: Optional[str] = Field(alias="type",default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	type: Optional[str] = Field(alias="type", default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
 
 

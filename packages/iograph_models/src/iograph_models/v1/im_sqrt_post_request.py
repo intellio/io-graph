@@ -4,6 +4,6 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class Im_sqrtPostRequest(BaseModel):
-	inumber: Optional[str] = Field(alias="inumber",default=None,)
+	inumber: Optional[str] = Field(alias="inumber", default=None,)
 
 

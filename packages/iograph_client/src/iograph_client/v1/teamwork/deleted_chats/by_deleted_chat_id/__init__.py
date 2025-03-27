@@ -13,8 +13,8 @@ from typing import TYPE_CHECKING
 if TYPE_CHECKING:
 	from .undo_delete import UndoDeleteRequest
 	from .....request_adapter import HttpxRequestAdapter
-from iograph_models.v1.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.v1.deleted_chat import DeletedChat
+from iograph_models.v1.o_data_errors__o_data_error import ODataErrorsODataError
 
 
 class ByDeletedChatIdRequest(BaseRequestBuilder):

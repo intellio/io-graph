@@ -4,6 +4,6 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class Subscribe_to_tonePostRequest(BaseModel):
-	clientContext: Optional[str] = Field(alias="clientContext",default=None,)
+	clientContext: Optional[str] = Field(alias="clientContext", default=None,)
 
 

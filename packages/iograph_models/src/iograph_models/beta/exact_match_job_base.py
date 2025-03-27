@@ -8,13 +8,13 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class ExactMatchJobBase(BaseModel):
-	id: Optional[str] = Field(alias="id",default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
-	completionDateTime: Optional[datetime] = Field(alias="completionDateTime",default=None,)
-	creationDateTime: Optional[datetime] = Field(alias="creationDateTime",default=None,)
-	error: Optional[ClassificationError] = Field(alias="error",default=None,)
-	lastUpdatedDateTime: Optional[datetime] = Field(alias="lastUpdatedDateTime",default=None,)
-	startDateTime: Optional[datetime] = Field(alias="startDateTime",default=None,)
+	id: Optional[str] = Field(alias="id", default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
+	completionDateTime: Optional[datetime] = Field(alias="completionDateTime", default=None,)
+	creationDateTime: Optional[datetime] = Field(alias="creationDateTime", default=None,)
+	error: Optional[ClassificationError] = Field(alias="error", default=None,)
+	lastUpdatedDateTime: Optional[datetime] = Field(alias="lastUpdatedDateTime", default=None,)
+	startDateTime: Optional[datetime] = Field(alias="startDateTime", default=None,)
 
 	@model_validator(mode="wrap")
 	def convert_discriminator_class(cls, data: Any, handler: ModelWrapValidatorHandler[Self]) -> Self:

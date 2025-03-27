@@ -7,10 +7,10 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class VpnProxyServer(BaseModel):
-	address: Optional[str] = Field(alias="address",default=None,)
-	automaticConfigurationScriptUrl: Optional[str] = Field(alias="automaticConfigurationScriptUrl",default=None,)
-	port: Optional[int] = Field(alias="port",default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	address: Optional[str] = Field(alias="address", default=None,)
+	automaticConfigurationScriptUrl: Optional[str] = Field(alias="automaticConfigurationScriptUrl", default=None,)
+	port: Optional[int] = Field(alias="port", default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
 
 	@model_validator(mode="wrap")
 	def convert_discriminator_class(cls, data: Any, handler: ModelWrapValidatorHandler[Self]) -> Self:

@@ -6,10 +6,16 @@ from yamlcore import CoreLoader
 import toml
 from shutil import rmtree
 
+if __name__ == '__main__':
+    if len(sys.argv) != 3:
+        print("Usage: python update_version.py <new_version> <v1/beta>")
+        sys.exit(1)
+    new_version = sys.argv[1]
+    client_type = sys.argv[2]
 # Example usage
 base_dir = os.getcwd()
-openapi_file = os.path.join(base_dir, 'openapi.yaml')
-openapi__beta_file = os.path.join(base_dir, 'openapi-beta.yaml')
+openapi_v1_file = os.path.join(base_dir, 'openapi.yaml')
+openapi_beta_file = os.path.join(base_dir, 'openapi-beta.yaml')
 
 client_root_dir = os.path.join(base_dir, 'packages','iograph_client',)
 client_generated_dir = os.path.join(client_root_dir, 'src','iograph_client','v1')
@@ -19,16 +25,19 @@ models_root_dir = os.path.join(base_dir, 'packages','iograph_models',)
 models_dir = os.path.join(models_root_dir,'src','iograph_models','v1')
 models_beta_dir = os.path.join(models_root_dir,'src','iograph_models','beta')
 
-
-# client_generated_dir = client_generated_dir
-client_generated_dir = client_generated_beta_dir
-# models_dir = models_dir
-models_dir = models_beta_dir
-# openapi_file = openapi_file
-openapi_file = openapi__beta_file
-# beta = False
-beta = True
-
+if client_type == 'v1':
+    client_generated_dir = client_generated_dir
+    models_dir = models_dir
+    openapi_file = openapi_v1_file
+    beta = False
+elif client_type == 'beta':
+    client_generated_dir = client_generated_beta_dir
+    models_dir = models_beta_dir
+    openapi_file = openapi_beta_file
+    beta = True
+else:
+    print("Invalid client type. Use v1 or beta")
+    sys.exit(1)
 
 python_reserved_words = [
     "False",
@@ -178,11 +187,27 @@ def get_field_type(prop_schema):
         raise Exception('Object type in schema: ' + str(prop_schema))
         return 'Dict[str, Any]'
     
-def _pydantic_field_type_write(field_model_name:str, field_type:str, nullable:bool =True, as_any: bool = False,is_enum:bool = False, list_ref:bool = False):
+def _pydantic_field_type_write(
+        field_model_name:str,
+        field_type:str,
+        nullable:bool =True,
+        as_any: bool = False,
+        is_enum:bool = False,
+        list_ref:bool = False,
+        discriminator: tuple[str,dict] | None = None,
+    ):
     python_builtin_types = ['str', 'int', 'float', 'bool', 'datetime', 'UUID']
 
     if 'Optional[' in field_type:
             raise Exception(f'Optional[ in field_type not supported for type: {field_type} model_name: {field_model_name}')
+
+    if discriminator:
+        disc_values = discriminator[1].values()
+        disc_values = [module_class_name_from_name(x) for x in disc_values]
+        if list_ref:
+            field_type = f'Annotated[Union[{', '.join(disc_values)}]],Field(discriminator="{clean_field_name(discriminator[0])}")]'
+        else:
+            field_type = f'Union[{', '.join(disc_values)}]'
 
     if is_enum:
         field_type = ' | '.join([ field_type, 'str'])
@@ -196,7 +221,19 @@ def _pydantic_field_type_write(field_model_name:str, field_type:str, nullable:bo
     if as_any:
         field_type = f'SerializeAsAny[{field_type}]'
 
-    return f'{field_type} = Field(alias="{field_model_name}",{"default=None," if nullable else ""})'
+    # Field parameters
+    field_alias = f'alias="{field_model_name}", '
+    field_default = 'default=None,' if nullable else ''
+    if discriminator:
+        if list_ref:
+            field_discriminator = ''
+        else:
+            field_discriminator = f'discriminator="{clean_field_name(discriminator[0])}", '
+    else:
+        field_discriminator = ''
+
+    return field_type + ' = ' + 'Field(' + field_alias + field_default + field_discriminator + ')'
+    # return f'{field_type} = Field(alias="{field_model_name}",{"default=None," if nullable else ""}, {('discriminator='+'"'+clean_field_name(discriminator[0])+'", ') if discriminator else ''})'
 
 def get_model_discriminator(schema):
     discriminator_mapping = {}
@@ -253,7 +290,28 @@ def _check_field_type_is_enum(model_name, components):
         return True
     else:
         return False
-    
+
+def _handle_ref_type_write(prop_name:str, prop_schema:dict, model_name:str, components, dependencies:list, list_ref:bool = False):
+    discriminator = get_model_discriminator(components['schemas'][model_name])
+    if discriminator:
+        for dep in discriminator[1].values():
+            dependencies.append(dep)
+    else:
+        dependencies.append(model_name)
+
+    is_enum = _check_field_type_is_enum(model_name, components)
+    is_nullable = prop_schema.get('nullable', True)
+
+    write = _pydantic_field_type_write(
+                    field_model_name=prop_name,
+                    field_type=module_class_name_from_name(model_name),
+                    nullable= is_nullable,
+                    is_enum = is_enum,
+                    list_ref= list_ref,
+                    discriminator= discriminator
+                )
+    return write
+
 def get_schema_fields(name:str, schema, components,dependencies:list):
     fields = {}
 
@@ -265,7 +323,7 @@ def get_schema_fields(name:str, schema, components,dependencies:list):
                 try:
                     fields.update(get_schema_fields(model_name, resolved_schema, components, dependencies))
                 except Exception as e:
-                    raise Exception('Error in allOf schema for model name: ' + name)
+                    raise Exception('Error in allOf schema for model name: ' + name) from e
             else:
                 fields.update(get_schema_fields(name, item, components, dependencies))
 
@@ -274,36 +332,41 @@ def get_schema_fields(name:str, schema, components,dependencies:list):
 
         # extract fields from properties
         for prop_name, prop_schema in schema['properties'].items():
+            # handle special case for @odata.type
+            if prop_name == '@odata.type':
+                default_value = prop_schema.get('default')
+                if default_value:
+                    fields[clean_field_name(prop_name)] = f'Literal["{default_value}"] = Field(alias="@odata.type", default="{default_value}")'
+                else: 
+                    print('No default value for @odata.type' + name)
+                    fields[clean_field_name(prop_name)] = 'Optional[str] = Field(alias="@odata.type", default=None,)'
+                continue
 
             if '$ref' in prop_schema:
                 model_name = prop_schema['$ref'].split('/')[-1]
-                has_discriminator = _check_field_type_has_discriminator(model_name, components)
-                is_enum = _check_field_type_is_enum(model_name, components)
-                fields[clean_field_name(prop_name)] = _pydantic_field_type_write(
-                    field_model_name=prop_name,
-                    field_type=module_class_name_from_name(model_name),
-                    nullable= prop_schema.get('nullable', True),
-                    as_any = has_discriminator,
-                    is_enum = is_enum,
+                fields[clean_field_name(prop_name)] = _handle_ref_type_write(
+                    prop_name,
+                    prop_schema,
+                    model_name,
+                    components,
+                    dependencies
                 )
-                dependencies.append(model_name)
-            
+
             elif 'anyOf' in prop_schema:
-                # find the first schema that is a reference
+                # find the first schema that is a reference. This is a hacky way to handle anyOf
+                # in situations where other schemas are just empty objects(dicts)
                 model_name = None
                 for item in prop_schema['anyOf']:
                     if '$ref' in item:
                         model_name = item['$ref'].split('/')[-1]
-                        has_discriminator = _check_field_type_has_discriminator(model_name, components)
-                        is_enum = _check_field_type_is_enum(model_name, components)
-                        fields[clean_field_name(prop_name)] = _pydantic_field_type_write(
-                            field_model_name=prop_name,
-                            field_type=module_class_name_from_name(model_name),
-                            nullable= prop_schema.get('nullable', True),
-                            as_any = has_discriminator,
-                            is_enum = is_enum,
+
+                        fields[clean_field_name(prop_name)] = _handle_ref_type_write(
+                            prop_name,
+                            prop_schema,
+                            model_name,
+                            components,
+                            dependencies
                         )
-                        dependencies.append(model_name)
                         break
 
                 # check if this logic is comprehensive and without exc
@@ -316,11 +379,16 @@ def get_schema_fields(name:str, schema, components,dependencies:list):
                     if '$ref' in item:
                         model_name = item['$ref'].split('/')[-1]
                         has_discriminator = _check_field_type_has_discriminator(model_name, components)
+                        if has_discriminator:
+                            print(prop_name)
+                            print(model_name)
+                            raise Exception('oneOf with discriminator not supported yet')
                         field_types.append(module_class_name_from_name(model_name))
                         dependencies.append(model_name)
                     else:
                         field_types.append(get_field_type(item))
                 # Warning: this is not using the _pydantic_field_type_write function
+                # this is tricky because we're not checking for enums or discriminators this way
                 fields[clean_field_name(prop_name)] = ' | '.join(field_types)
 
             elif 'type' in prop_schema:
@@ -328,39 +396,37 @@ def get_schema_fields(name:str, schema, components,dependencies:list):
                 # Handle if the property is an array
                 if prop_schema['type'] == 'array' and '$ref' in prop_schema['items']:
                     model_name = prop_schema['items']['$ref'].split('/')[-1]
-                    has_discriminator = _check_field_type_has_discriminator(model_name, components)
-                    is_enum = _check_field_type_is_enum(model_name, components)
-                    fields[clean_field_name(prop_name)] = _pydantic_field_type_write(
-                        field_model_name=prop_name,
-                        field_type=module_class_name_from_name(model_name),
-                        nullable = True,
-                        as_any= has_discriminator,
-                        is_enum = is_enum,
-                        list_ref= True,
+
+                    fields[clean_field_name(prop_name)] = _handle_ref_type_write(
+                        prop_name,
+                        prop_schema,
+                        model_name,
+                        components,
+                        dependencies,
+                        list_ref= True
                     )
-                    dependencies.append(model_name)
 
                 elif prop_schema['type'] == 'array' and 'anyOf' in prop_schema['items']:
-                    # find the first schema that is a reference
+                    # find the first schema that is a reference. This is a hacky way to handle anyOf
+                    # in situations where other schemas are just empty objects(dicts)
                     model_name = None
                     for item in prop_schema['items']['anyOf']:
                         if '$ref' in item:
                             model_name = item['$ref'].split('/')[-1]
-                            dependencies.append(model_name)
                             break
 
                     # check if this logic is comprehensive and without exc
                     if model_name is None:
                         raise Exception('No reference found in anyOf schema under items for model name: ' + name)
                     else:
-                        has_discriminator = _check_field_type_has_discriminator(model_name, components)
-                        is_enum = _check_field_type_is_enum(model_name, components)
-                        fields[clean_field_name(prop_name)] = _pydantic_field_type_write(
-                            field_model_name=prop_name,
-                            field_type=module_class_name_from_name(model_name),
-                            nullable= True,
-                            as_any = has_discriminator,
-                            is_enum = is_enum,
+                        
+                        fields[clean_field_name(prop_name)] = _handle_ref_type_write(
+                            prop_name,
+                            prop_schema,
+                            model_name,
+                            components,
+                            dependencies,
+                            list_ref= True
                         )
                 else:
                     fields[clean_field_name(prop_name)] = _pydantic_field_type_write(
@@ -408,6 +474,12 @@ def create_pydantic_model(name:str, schema, components):
             model_file_obj.write(f'from uuid import UUID\n')
         if any('Optional' in x for x in fields.values() if isinstance(x,str)):
             model_file_obj.write(f'from typing import Optional\n')
+        if any('Union' in x for x in fields.values() if isinstance(x,str)):
+            model_file_obj.write(f'from typing import Union\n')
+        if any('Literal' in x for x in fields.values() if isinstance(x,str)):
+            model_file_obj.write(f'from typing import Literal\n')
+        if any('Annotated' in x for x in fields.values() if isinstance(x,str)):
+            model_file_obj.write(f'from typing import Annotated\n')
         # write discriminator related imports
 
         if discriminator:
@@ -419,8 +491,10 @@ def create_pydantic_model(name:str, schema, components):
             model_file_obj.write(f'from datetime import datetime\n')
 
         model_file_obj.write(f'from pydantic import BaseModel, Field, SerializeAsAny\n')
-        model_file_obj.write('\n')
-        model_file_obj.write('\n')
+        if any('SerializeAsAny' in x for x in fields.values() if isinstance(x,str)):
+            model_file_obj.write(f'from pydantic import SerializeAsAny\n')
+
+        model_file_obj.write('\n\n')
         
 
         model_file_obj.write(f'class {class_name}(BaseModel):\n')
@@ -1174,15 +1248,15 @@ def update_version_in_pyproject(version,pyproject_file):
 
 
 if __name__ == '__main__':
-    if len(sys.argv) != 2:
-        print("Usage: python update_version.py <new_version>")
+    if len(sys.argv) != 3:
+        print("Usage: python update_version.py <new_version> <v1/beta>")
         sys.exit(1)
     new_version = sys.argv[1]
 
     with open(openapi_file, 'r') as file:
         openapi_data = yaml.load(file,Loader=CoreLoader )
-
-    # create_models_from_openapi(openapi_data)
+    print('OpenAPI data loaded')
+    create_models_from_openapi(openapi_data)
     create_client_from_openapi(openapi_data)
 
     client_pyproject_file = os.path.join(client_root_dir, 'pyproject.toml')
@@ -1190,3 +1264,9 @@ if __name__ == '__main__':
 
     update_version_in_pyproject(new_version, client_pyproject_file)
     update_version_in_pyproject(new_version, models_pyproject_file)
+
+
+# Notes:
+# Might be worth adding _TypeAdapter as an internal field to models that have discrimination and use pydantic TypeAdapter
+# for example named_locations can have an internal field as below:
+# _TypeAdapter = TypeAdapter(Annotated[Union[CountryNamedLocation, IpNamedLocation], Field(discriminator='odata_type')])

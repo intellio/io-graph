@@ -4,7 +4,7 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class ActivatePostRequest(BaseModel):
-	verificationCode: Optional[str] = Field(alias="verificationCode",default=None,)
-	displayName: Optional[str] = Field(alias="displayName",default=None,)
+	verificationCode: Optional[str] = Field(alias="verificationCode", default=None,)
+	displayName: Optional[str] = Field(alias="displayName", default=None,)
 
 

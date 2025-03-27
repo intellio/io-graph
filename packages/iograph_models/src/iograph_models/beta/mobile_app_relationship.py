@@ -7,18 +7,18 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class MobileAppRelationship(BaseModel):
-	id: Optional[str] = Field(alias="id",default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
-	sourceDisplayName: Optional[str] = Field(alias="sourceDisplayName",default=None,)
-	sourceDisplayVersion: Optional[str] = Field(alias="sourceDisplayVersion",default=None,)
-	sourceId: Optional[str] = Field(alias="sourceId",default=None,)
-	sourcePublisherDisplayName: Optional[str] = Field(alias="sourcePublisherDisplayName",default=None,)
-	targetDisplayName: Optional[str] = Field(alias="targetDisplayName",default=None,)
-	targetDisplayVersion: Optional[str] = Field(alias="targetDisplayVersion",default=None,)
-	targetId: Optional[str] = Field(alias="targetId",default=None,)
-	targetPublisher: Optional[str] = Field(alias="targetPublisher",default=None,)
-	targetPublisherDisplayName: Optional[str] = Field(alias="targetPublisherDisplayName",default=None,)
-	targetType: Optional[MobileAppRelationshipType | str] = Field(alias="targetType",default=None,)
+	id: Optional[str] = Field(alias="id", default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
+	sourceDisplayName: Optional[str] = Field(alias="sourceDisplayName", default=None,)
+	sourceDisplayVersion: Optional[str] = Field(alias="sourceDisplayVersion", default=None,)
+	sourceId: Optional[str] = Field(alias="sourceId", default=None,)
+	sourcePublisherDisplayName: Optional[str] = Field(alias="sourcePublisherDisplayName", default=None,)
+	targetDisplayName: Optional[str] = Field(alias="targetDisplayName", default=None,)
+	targetDisplayVersion: Optional[str] = Field(alias="targetDisplayVersion", default=None,)
+	targetId: Optional[str] = Field(alias="targetId", default=None,)
+	targetPublisher: Optional[str] = Field(alias="targetPublisher", default=None,)
+	targetPublisherDisplayName: Optional[str] = Field(alias="targetPublisherDisplayName", default=None,)
+	targetType: Optional[MobileAppRelationshipType | str] = Field(alias="targetType", default=None,)
 
 	@model_validator(mode="wrap")
 	def convert_discriminator_class(cls, data: Any, handler: ModelWrapValidatorHandler[Self]) -> Self:

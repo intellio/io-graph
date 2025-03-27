@@ -4,6 +4,6 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class Set_device_namePostRequest(BaseModel):
-	deviceName: Optional[str] = Field(alias="deviceName",default=None,)
+	deviceName: Optional[str] = Field(alias="deviceName", default=None,)
 
 

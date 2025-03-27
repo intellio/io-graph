@@ -16,8 +16,8 @@ if TYPE_CHECKING:
 	from .by_access_review_stage_id import ByAccessReviewStageIdRequest
 	from .........request_adapter import HttpxRequestAdapter
 from iograph_models.v1.o_data_errors__o_data_error import ODataErrorsODataError
-from iograph_models.v1.access_review_stage import AccessReviewStage
 from iograph_models.v1.access_review_stage_collection_response import AccessReviewStageCollectionResponse
+from iograph_models.v1.access_review_stage import AccessReviewStage
 
 
 class StagesRequest(BaseRequestBuilder):

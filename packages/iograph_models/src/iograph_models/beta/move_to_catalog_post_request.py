@@ -4,6 +4,6 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class Move_to_catalogPostRequest(BaseModel):
-	catalogId: Optional[str] = Field(alias="catalogId",default=None,)
+	catalogId: Optional[str] = Field(alias="catalogId", default=None,)
 
 

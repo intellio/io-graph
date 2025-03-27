@@ -5,12 +5,12 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class ManagedTenantsCloudPcConnection(BaseModel):
-	id: Optional[str] = Field(alias="id",default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
-	displayName: Optional[str] = Field(alias="displayName",default=None,)
-	healthCheckStatus: Optional[str] = Field(alias="healthCheckStatus",default=None,)
-	lastRefreshedDateTime: Optional[datetime] = Field(alias="lastRefreshedDateTime",default=None,)
-	tenantDisplayName: Optional[str] = Field(alias="tenantDisplayName",default=None,)
-	tenantId: Optional[str] = Field(alias="tenantId",default=None,)
+	id: Optional[str] = Field(alias="id", default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
+	displayName: Optional[str] = Field(alias="displayName", default=None,)
+	healthCheckStatus: Optional[str] = Field(alias="healthCheckStatus", default=None,)
+	lastRefreshedDateTime: Optional[datetime] = Field(alias="lastRefreshedDateTime", default=None,)
+	tenantDisplayName: Optional[str] = Field(alias="tenantDisplayName", default=None,)
+	tenantId: Optional[str] = Field(alias="tenantId", default=None,)
 
 

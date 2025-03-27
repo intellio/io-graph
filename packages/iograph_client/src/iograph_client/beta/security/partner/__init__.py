@@ -13,8 +13,8 @@ if TYPE_CHECKING:
 	from .security_score import SecurityScoreRequest
 	from .security_alerts import SecurityAlertsRequest
 	from ....request_adapter import HttpxRequestAdapter
-from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.beta.partner_security_partner_security import PartnerSecurityPartnerSecurity
+from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 
 
 class PartnerRequest(BaseRequestBuilder):

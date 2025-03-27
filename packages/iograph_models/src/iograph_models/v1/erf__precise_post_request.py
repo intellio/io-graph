@@ -4,6 +4,6 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class Erf__precisePostRequest(BaseModel):
-	X: Optional[str] = Field(alias="X",default=None,)
+	X: Optional[str] = Field(alias="X", default=None,)
 
 

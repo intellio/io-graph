@@ -14,8 +14,8 @@ if TYPE_CHECKING:
 	from .azure import AzureRequest
 	from .aws import AwsRequest
 	from ....request_adapter import HttpxRequestAdapter
-from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.beta.permissions_analytics_aggregation import PermissionsAnalyticsAggregation
+from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 
 
 class PermissionsAnalyticsRequest(BaseRequestBuilder):

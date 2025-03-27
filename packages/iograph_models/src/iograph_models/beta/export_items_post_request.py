@@ -4,6 +4,6 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class Export_itemsPostRequest(BaseModel):
-	ItemIds: Optional[list[str]] = Field(alias="ItemIds",default=None,)
+	ItemIds: Optional[list[str]] = Field(alias="ItemIds", default=None,)
 
 

@@ -4,7 +4,7 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class ManagedTenantsAddLogRequest(BaseModel):
-	logInformation: Optional[str] = Field(alias="logInformation",default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	logInformation: Optional[str] = Field(alias="logInformation", default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
 
 

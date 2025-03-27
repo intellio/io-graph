@@ -4,7 +4,7 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class Set_cloud_pc_review_statusPostRequest(BaseModel):
-	reviewStatus: Optional[CloudPcReviewStatus] = Field(alias="reviewStatus",default=None,)
+	reviewStatus: Optional[CloudPcReviewStatus] = Field(alias="reviewStatus", default=None,)
 
 from .cloud_pc_review_status import CloudPcReviewStatus
 

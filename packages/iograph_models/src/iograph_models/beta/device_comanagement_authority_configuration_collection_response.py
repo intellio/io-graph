@@ -4,9 +4,9 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class DeviceComanagementAuthorityConfigurationCollectionResponse(BaseModel):
-	odata_count: Optional[int] = Field(alias="@odata.count",default=None,)
-	odata_nextLink: Optional[str] = Field(alias="@odata.nextLink",default=None,)
-	value: Optional[list[DeviceComanagementAuthorityConfiguration]] = Field(alias="value",default=None,)
+	odata_count: Optional[int] = Field(alias="@odata.count", default=None,)
+	odata_nextLink: Optional[str] = Field(alias="@odata.nextLink", default=None,)
+	value: Optional[list[DeviceComanagementAuthorityConfiguration]] = Field(alias="value", default=None,)
 
 from .device_comanagement_authority_configuration import DeviceComanagementAuthorityConfiguration
 

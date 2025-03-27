@@ -4,7 +4,7 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class TenantReference(BaseModel):
-	tenantId: Optional[str] = Field(alias="tenantId",default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	tenantId: Optional[str] = Field(alias="tenantId", default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
 
 

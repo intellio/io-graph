@@ -4,9 +4,9 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class UserExperienceAnalyticsDeviceWithoutCloudIdentity(BaseModel):
-	id: Optional[str] = Field(alias="id",default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
-	azureAdDeviceId: Optional[str] = Field(alias="azureAdDeviceId",default=None,)
-	deviceName: Optional[str] = Field(alias="deviceName",default=None,)
+	id: Optional[str] = Field(alias="id", default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
+	azureAdDeviceId: Optional[str] = Field(alias="azureAdDeviceId", default=None,)
+	deviceName: Optional[str] = Field(alias="deviceName", default=None,)
 
 

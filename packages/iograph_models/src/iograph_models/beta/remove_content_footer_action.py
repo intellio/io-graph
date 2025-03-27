@@ -1,10 +1,11 @@
 from __future__ import annotations
 from typing import Optional
+from typing import Literal
 from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class RemoveContentFooterAction(BaseModel):
-	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
-	uiElementNames: Optional[list[str]] = Field(alias="uiElementNames",default=None,)
+	odata_type: Literal["#microsoft.graph.removeContentFooterAction"] = Field(alias="@odata.type", default="#microsoft.graph.removeContentFooterAction")
+	uiElementNames: Optional[list[str]] = Field(alias="uiElementNames", default=None,)
 
 

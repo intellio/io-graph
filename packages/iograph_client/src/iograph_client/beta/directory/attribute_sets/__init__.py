@@ -15,8 +15,8 @@ if TYPE_CHECKING:
 	from .by_attribute_set_id import ByAttributeSetIdRequest
 	from ....request_adapter import HttpxRequestAdapter
 from iograph_models.beta.attribute_set_collection_response import AttributeSetCollectionResponse
-from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.beta.attribute_set import AttributeSet
+from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 
 
 class AttributeSetsRequest(BaseRequestBuilder):

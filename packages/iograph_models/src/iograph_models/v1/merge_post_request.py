@@ -4,6 +4,6 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class MergePostRequest(BaseModel):
-	across: Optional[bool] = Field(alias="across",default=None,)
+	across: Optional[bool] = Field(alias="across", default=None,)
 
 

@@ -4,7 +4,7 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class PlannerChecklistRequirement(BaseModel):
-	requiredChecklistItemIds: Optional[list[str]] = Field(alias="requiredChecklistItemIds",default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	requiredChecklistItemIds: Optional[list[str]] = Field(alias="requiredChecklistItemIds", default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
 
 

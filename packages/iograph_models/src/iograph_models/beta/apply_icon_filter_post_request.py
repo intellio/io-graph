@@ -4,7 +4,7 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class Apply_icon_filterPostRequest(BaseModel):
-	icon: Optional[WorkbookIcon] = Field(alias="icon",default=None,)
+	icon: Optional[WorkbookIcon] = Field(alias="icon", default=None,)
 
 from .workbook_icon import WorkbookIcon
 

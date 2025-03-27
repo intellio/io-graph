@@ -4,6 +4,6 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class Cancel_approvalPostResponse(BaseModel):
-	value: Optional[str] = Field(alias="value",default=None,)
+	value: Optional[str] = Field(alias="value", default=None,)
 
 

@@ -5,12 +5,12 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class AppLogCollectionRequest(BaseModel):
-	id: Optional[str] = Field(alias="id",default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
-	completedDateTime: Optional[datetime] = Field(alias="completedDateTime",default=None,)
-	customLogFolders: Optional[list[str]] = Field(alias="customLogFolders",default=None,)
-	errorMessage: Optional[str] = Field(alias="errorMessage",default=None,)
-	status: Optional[AppLogUploadState | str] = Field(alias="status",default=None,)
+	id: Optional[str] = Field(alias="id", default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
+	completedDateTime: Optional[datetime] = Field(alias="completedDateTime", default=None,)
+	customLogFolders: Optional[list[str]] = Field(alias="customLogFolders", default=None,)
+	errorMessage: Optional[str] = Field(alias="errorMessage", default=None,)
+	status: Optional[AppLogUploadState | str] = Field(alias="status", default=None,)
 
 from .app_log_upload_state import AppLogUploadState
 

@@ -14,8 +14,8 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_targeted_managed_app_configuration_id import ByTargetedManagedAppConfigurationIdRequest
 	from ....request_adapter import HttpxRequestAdapter
-from iograph_models.v1.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.v1.targeted_managed_app_configuration import TargetedManagedAppConfiguration
+from iograph_models.v1.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.v1.targeted_managed_app_configuration_collection_response import TargetedManagedAppConfigurationCollectionResponse
 
 

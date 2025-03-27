@@ -4,7 +4,7 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class SecretsPutResponse(BaseModel):
-	value: Optional[list[SynchronizationSecretKeyStringValuePair]] = Field(alias="value",default=None,)
+	value: Optional[list[SynchronizationSecretKeyStringValuePair]] = Field(alias="value", default=None,)
 
 from .synchronization_secret_key_string_value_pair import SynchronizationSecretKeyStringValuePair
 

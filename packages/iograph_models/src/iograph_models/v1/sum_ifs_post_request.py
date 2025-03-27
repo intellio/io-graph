@@ -4,7 +4,7 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class Sum_ifsPostRequest(BaseModel):
-	sumRange: Optional[str] = Field(alias="sumRange",default=None,)
-	values: Optional[str] = Field(alias="values",default=None,)
+	sumRange: Optional[str] = Field(alias="sumRange", default=None,)
+	values: Optional[str] = Field(alias="values", default=None,)
 
 

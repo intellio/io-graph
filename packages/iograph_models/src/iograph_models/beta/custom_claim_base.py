@@ -7,8 +7,8 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class CustomClaimBase(BaseModel):
-	configurations: Optional[list[CustomClaimConfiguration]] = Field(alias="configurations",default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	configurations: Optional[list[CustomClaimConfiguration]] = Field(alias="configurations", default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
 
 	@model_validator(mode="wrap")
 	def convert_discriminator_class(cls, data: Any, handler: ModelWrapValidatorHandler[Self]) -> Self:

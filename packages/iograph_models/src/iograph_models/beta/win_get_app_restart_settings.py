@@ -4,9 +4,9 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class WinGetAppRestartSettings(BaseModel):
-	countdownDisplayBeforeRestartInMinutes: Optional[int] = Field(alias="countdownDisplayBeforeRestartInMinutes",default=None,)
-	gracePeriodInMinutes: Optional[int] = Field(alias="gracePeriodInMinutes",default=None,)
-	restartNotificationSnoozeDurationInMinutes: Optional[int] = Field(alias="restartNotificationSnoozeDurationInMinutes",default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	countdownDisplayBeforeRestartInMinutes: Optional[int] = Field(alias="countdownDisplayBeforeRestartInMinutes", default=None,)
+	gracePeriodInMinutes: Optional[int] = Field(alias="gracePeriodInMinutes", default=None,)
+	restartNotificationSnoozeDurationInMinutes: Optional[int] = Field(alias="restartNotificationSnoozeDurationInMinutes", default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
 
 

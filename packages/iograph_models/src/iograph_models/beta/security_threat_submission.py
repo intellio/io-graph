@@ -8,18 +8,18 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class SecurityThreatSubmission(BaseModel):
-	id: Optional[str] = Field(alias="id",default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
-	adminReview: Optional[SecuritySubmissionAdminReview] = Field(alias="adminReview",default=None,)
-	category: Optional[SecuritySubmissionCategory | str] = Field(alias="category",default=None,)
-	clientSource: Optional[SecuritySubmissionClientSource | str] = Field(alias="clientSource",default=None,)
-	contentType: Optional[SecuritySubmissionContentType | str] = Field(alias="contentType",default=None,)
-	createdBy: Optional[SecuritySubmissionUserIdentity] = Field(alias="createdBy",default=None,)
-	createdDateTime: Optional[datetime] = Field(alias="createdDateTime",default=None,)
-	result: Optional[SecuritySubmissionResult] = Field(alias="result",default=None,)
-	source: Optional[SecuritySubmissionSource | str] = Field(alias="source",default=None,)
-	status: Optional[SecurityLongRunningOperationStatus | str] = Field(alias="status",default=None,)
-	tenantId: Optional[str] = Field(alias="tenantId",default=None,)
+	id: Optional[str] = Field(alias="id", default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
+	adminReview: Optional[SecuritySubmissionAdminReview] = Field(alias="adminReview", default=None,)
+	category: Optional[SecuritySubmissionCategory | str] = Field(alias="category", default=None,)
+	clientSource: Optional[SecuritySubmissionClientSource | str] = Field(alias="clientSource", default=None,)
+	contentType: Optional[SecuritySubmissionContentType | str] = Field(alias="contentType", default=None,)
+	createdBy: Optional[SecuritySubmissionUserIdentity] = Field(alias="createdBy", default=None,)
+	createdDateTime: Optional[datetime] = Field(alias="createdDateTime", default=None,)
+	result: Optional[SecuritySubmissionResult] = Field(alias="result", default=None,)
+	source: Optional[SecuritySubmissionSource | str] = Field(alias="source", default=None,)
+	status: Optional[SecurityLongRunningOperationStatus | str] = Field(alias="status", default=None,)
+	tenantId: Optional[str] = Field(alias="tenantId", default=None,)
 
 	@model_validator(mode="wrap")
 	def convert_discriminator_class(cls, data: Any, handler: ModelWrapValidatorHandler[Self]) -> Self:

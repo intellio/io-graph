@@ -4,8 +4,8 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class TimeZoneInformation(BaseModel):
-	alias: Optional[str] = Field(alias="alias",default=None,)
-	displayName: Optional[str] = Field(alias="displayName",default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	alias: Optional[str] = Field(alias="alias", default=None,)
+	displayName: Optional[str] = Field(alias="displayName", default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
 
 

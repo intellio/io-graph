@@ -4,7 +4,7 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class ChatRestrictions(BaseModel):
-	allowTextOnly: Optional[bool] = Field(alias="allowTextOnly",default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	allowTextOnly: Optional[bool] = Field(alias="allowTextOnly", default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
 
 

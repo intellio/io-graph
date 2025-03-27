@@ -4,8 +4,8 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class DeviceManagementScriptGroupAssignment(BaseModel):
-	id: Optional[str] = Field(alias="id",default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
-	targetGroupId: Optional[str] = Field(alias="targetGroupId",default=None,)
+	id: Optional[str] = Field(alias="id", default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
+	targetGroupId: Optional[str] = Field(alias="targetGroupId", default=None,)
 
 

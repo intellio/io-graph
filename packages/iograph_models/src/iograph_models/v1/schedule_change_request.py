@@ -1,5 +1,7 @@
 from __future__ import annotations
 from typing import Optional
+from typing import Union
+from typing import Literal
 from pydantic import model_validator, ModelWrapValidatorHandler, ValidationError
 from typing_extensions import Self
 from typing import Any
@@ -8,20 +10,20 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class ScheduleChangeRequest(BaseModel):
-	id: Optional[str] = Field(alias="id",default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
-	createdBy: SerializeAsAny[Optional[IdentitySet]] = Field(alias="createdBy",default=None,)
-	createdDateTime: Optional[datetime] = Field(alias="createdDateTime",default=None,)
-	lastModifiedBy: SerializeAsAny[Optional[IdentitySet]] = Field(alias="lastModifiedBy",default=None,)
-	lastModifiedDateTime: Optional[datetime] = Field(alias="lastModifiedDateTime",default=None,)
-	assignedTo: Optional[ScheduleChangeRequestActor | str] = Field(alias="assignedTo",default=None,)
-	managerActionDateTime: Optional[datetime] = Field(alias="managerActionDateTime",default=None,)
-	managerActionMessage: Optional[str] = Field(alias="managerActionMessage",default=None,)
-	managerUserId: Optional[str] = Field(alias="managerUserId",default=None,)
-	senderDateTime: Optional[datetime] = Field(alias="senderDateTime",default=None,)
-	senderMessage: Optional[str] = Field(alias="senderMessage",default=None,)
-	senderUserId: Optional[str] = Field(alias="senderUserId",default=None,)
-	state: Optional[ScheduleChangeState | str] = Field(alias="state",default=None,)
+	id: Optional[str] = Field(alias="id", default=None,)
+	odata_type: Literal["#microsoft.graph.scheduleChangeRequest"] = Field(alias="@odata.type", default="#microsoft.graph.scheduleChangeRequest")
+	createdBy: Optional[Union[ChatMessageFromIdentitySet, ChatMessageMentionedIdentitySet, ChatMessageReactionIdentitySet, CommunicationsIdentitySet, SharePointIdentitySet]] = Field(alias="createdBy", default=None,discriminator="odata_type", )
+	createdDateTime: Optional[datetime] = Field(alias="createdDateTime", default=None,)
+	lastModifiedBy: Optional[Union[ChatMessageFromIdentitySet, ChatMessageMentionedIdentitySet, ChatMessageReactionIdentitySet, CommunicationsIdentitySet, SharePointIdentitySet]] = Field(alias="lastModifiedBy", default=None,discriminator="odata_type", )
+	lastModifiedDateTime: Optional[datetime] = Field(alias="lastModifiedDateTime", default=None,)
+	assignedTo: Optional[ScheduleChangeRequestActor | str] = Field(alias="assignedTo", default=None,)
+	managerActionDateTime: Optional[datetime] = Field(alias="managerActionDateTime", default=None,)
+	managerActionMessage: Optional[str] = Field(alias="managerActionMessage", default=None,)
+	managerUserId: Optional[str] = Field(alias="managerUserId", default=None,)
+	senderDateTime: Optional[datetime] = Field(alias="senderDateTime", default=None,)
+	senderMessage: Optional[str] = Field(alias="senderMessage", default=None,)
+	senderUserId: Optional[str] = Field(alias="senderUserId", default=None,)
+	state: Optional[ScheduleChangeState | str] = Field(alias="state", default=None,)
 
 	@model_validator(mode="wrap")
 	def convert_discriminator_class(cls, data: Any, handler: ModelWrapValidatorHandler[Self]) -> Self:
@@ -50,8 +52,16 @@ class ScheduleChangeRequest(BaseModel):
 		except Exception as e:
 			raise e
 
-from .identity_set import IdentitySet
-from .identity_set import IdentitySet
+from .chat_message_from_identity_set import ChatMessageFromIdentitySet
+from .chat_message_mentioned_identity_set import ChatMessageMentionedIdentitySet
+from .chat_message_reaction_identity_set import ChatMessageReactionIdentitySet
+from .communications_identity_set import CommunicationsIdentitySet
+from .share_point_identity_set import SharePointIdentitySet
+from .chat_message_from_identity_set import ChatMessageFromIdentitySet
+from .chat_message_mentioned_identity_set import ChatMessageMentionedIdentitySet
+from .chat_message_reaction_identity_set import ChatMessageReactionIdentitySet
+from .communications_identity_set import CommunicationsIdentitySet
+from .share_point_identity_set import SharePointIdentitySet
 from .schedule_change_request_actor import ScheduleChangeRequestActor
 from .schedule_change_state import ScheduleChangeState
 

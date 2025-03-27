@@ -4,8 +4,8 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class TrustChainCertificate(BaseModel):
-	certificate: Optional[str] = Field(alias="certificate",default=None,)
-	displayName: Optional[str] = Field(alias="displayName",default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	certificate: Optional[str] = Field(alias="certificate", default=None,)
+	displayName: Optional[str] = Field(alias="displayName", default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
 
 

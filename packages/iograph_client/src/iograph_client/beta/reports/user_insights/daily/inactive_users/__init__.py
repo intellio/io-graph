@@ -14,8 +14,8 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_daily_inactive_users_metric_id import ByDailyInactiveUsersMetricIdRequest
 	from ......request_adapter import HttpxRequestAdapter
-from iograph_models.beta.daily_inactive_users_metric_collection_response import DailyInactiveUsersMetricCollectionResponse
 from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.beta.daily_inactive_users_metric_collection_response import DailyInactiveUsersMetricCollectionResponse
 
 
 class InactiveUsersRequest(BaseRequestBuilder):

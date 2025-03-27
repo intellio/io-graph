@@ -4,8 +4,8 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class DecisionItemPrincipalResourceMembership(BaseModel):
-	membershipType: Optional[DecisionItemPrincipalResourceMembershipType | str] = Field(alias="membershipType",default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	membershipType: Optional[DecisionItemPrincipalResourceMembershipType | str] = Field(alias="membershipType", default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
 
 from .decision_item_principal_resource_membership_type import DecisionItemPrincipalResourceMembershipType
 

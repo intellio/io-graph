@@ -4,9 +4,9 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class Get_staff_availabilityPostRequest(BaseModel):
-	staffIds: Optional[list[str]] = Field(alias="staffIds",default=None,)
-	startDateTime: Optional[DateTimeTimeZone] = Field(alias="startDateTime",default=None,)
-	endDateTime: Optional[DateTimeTimeZone] = Field(alias="endDateTime",default=None,)
+	staffIds: Optional[list[str]] = Field(alias="staffIds", default=None,)
+	startDateTime: Optional[DateTimeTimeZone] = Field(alias="startDateTime", default=None,)
+	endDateTime: Optional[DateTimeTimeZone] = Field(alias="endDateTime", default=None,)
 
 from .date_time_time_zone import DateTimeTimeZone
 from .date_time_time_zone import DateTimeTimeZone

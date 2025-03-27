@@ -1,5 +1,7 @@
 from __future__ import annotations
 from typing import Optional
+from typing import Union
+from typing import Annotated
 from pydantic import model_validator, ModelWrapValidatorHandler, ValidationError
 from typing_extensions import Self
 from typing import Any
@@ -7,11 +9,11 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class DeviceManagementSettingCategory(BaseModel):
-	id: Optional[str] = Field(alias="id",default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
-	displayName: Optional[str] = Field(alias="displayName",default=None,)
-	hasRequiredSetting: Optional[bool] = Field(alias="hasRequiredSetting",default=None,)
-	settingDefinitions: SerializeAsAny[Optional[list[DeviceManagementSettingDefinition]]] = Field(alias="settingDefinitions",default=None,)
+	id: Optional[str] = Field(alias="id", default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
+	displayName: Optional[str] = Field(alias="displayName", default=None,)
+	hasRequiredSetting: Optional[bool] = Field(alias="hasRequiredSetting", default=None,)
+	settingDefinitions: Optional[list[Annotated[Union[DeviceManagementAbstractComplexSettingDefinition, DeviceManagementCollectionSettingDefinition, DeviceManagementComplexSettingDefinition]],Field(discriminator="odata_type")]]] = Field(alias="settingDefinitions", default=None,)
 
 	@model_validator(mode="wrap")
 	def convert_discriminator_class(cls, data: Any, handler: ModelWrapValidatorHandler[Self]) -> Self:
@@ -34,5 +36,7 @@ class DeviceManagementSettingCategory(BaseModel):
 		except Exception as e:
 			raise e
 
-from .device_management_setting_definition import DeviceManagementSettingDefinition
+from .device_management_abstract_complex_setting_definition import DeviceManagementAbstractComplexSettingDefinition
+from .device_management_collection_setting_definition import DeviceManagementCollectionSettingDefinition
+from .device_management_complex_setting_definition import DeviceManagementComplexSettingDefinition
 

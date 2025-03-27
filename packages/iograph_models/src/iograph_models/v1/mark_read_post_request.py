@@ -4,6 +4,6 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class Mark_readPostRequest(BaseModel):
-	messageIds: Optional[list[str]] = Field(alias="messageIds",default=None,)
+	messageIds: Optional[list[str]] = Field(alias="messageIds", default=None,)
 
 

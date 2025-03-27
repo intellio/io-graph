@@ -4,7 +4,7 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class DeviceProperties(BaseModel):
-	deviceIdentifiers: Optional[list[str]] = Field(alias="deviceIdentifiers",default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	deviceIdentifiers: Optional[list[str]] = Field(alias="deviceIdentifiers", default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
 
 

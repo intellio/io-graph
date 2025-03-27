@@ -1,5 +1,6 @@
 from __future__ import annotations
 from typing import Optional
+from typing import Literal
 from pydantic import model_validator, ModelWrapValidatorHandler, ValidationError
 from typing_extensions import Self
 from typing import Any
@@ -8,29 +9,29 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class EasEmailProfileConfigurationBase(BaseModel):
-	id: Optional[str] = Field(alias="id",default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
-	createdDateTime: Optional[datetime] = Field(alias="createdDateTime",default=None,)
-	description: Optional[str] = Field(alias="description",default=None,)
-	deviceManagementApplicabilityRuleDeviceMode: Optional[DeviceManagementApplicabilityRuleDeviceMode] = Field(alias="deviceManagementApplicabilityRuleDeviceMode",default=None,)
-	deviceManagementApplicabilityRuleOsEdition: Optional[DeviceManagementApplicabilityRuleOsEdition] = Field(alias="deviceManagementApplicabilityRuleOsEdition",default=None,)
-	deviceManagementApplicabilityRuleOsVersion: Optional[DeviceManagementApplicabilityRuleOsVersion] = Field(alias="deviceManagementApplicabilityRuleOsVersion",default=None,)
-	displayName: Optional[str] = Field(alias="displayName",default=None,)
-	lastModifiedDateTime: Optional[datetime] = Field(alias="lastModifiedDateTime",default=None,)
-	roleScopeTagIds: Optional[list[str]] = Field(alias="roleScopeTagIds",default=None,)
-	supportsScopeTags: Optional[bool] = Field(alias="supportsScopeTags",default=None,)
-	version: Optional[int] = Field(alias="version",default=None,)
-	assignments: Optional[list[DeviceConfigurationAssignment]] = Field(alias="assignments",default=None,)
-	deviceSettingStateSummaries: Optional[list[SettingStateDeviceSummary]] = Field(alias="deviceSettingStateSummaries",default=None,)
-	deviceStatuses: Optional[list[DeviceConfigurationDeviceStatus]] = Field(alias="deviceStatuses",default=None,)
-	deviceStatusOverview: Optional[DeviceConfigurationDeviceOverview] = Field(alias="deviceStatusOverview",default=None,)
-	groupAssignments: Optional[list[DeviceConfigurationGroupAssignment]] = Field(alias="groupAssignments",default=None,)
-	userStatuses: Optional[list[DeviceConfigurationUserStatus]] = Field(alias="userStatuses",default=None,)
-	userStatusOverview: Optional[DeviceConfigurationUserOverview] = Field(alias="userStatusOverview",default=None,)
-	customDomainName: Optional[str] = Field(alias="customDomainName",default=None,)
-	userDomainNameSource: Optional[DomainNameSource | str] = Field(alias="userDomainNameSource",default=None,)
-	usernameAADSource: Optional[UsernameSource | str] = Field(alias="usernameAADSource",default=None,)
-	usernameSource: Optional[UserEmailSource | str] = Field(alias="usernameSource",default=None,)
+	id: Optional[str] = Field(alias="id", default=None,)
+	odata_type: Literal["#microsoft.graph.easEmailProfileConfigurationBase"] = Field(alias="@odata.type", default="#microsoft.graph.easEmailProfileConfigurationBase")
+	createdDateTime: Optional[datetime] = Field(alias="createdDateTime", default=None,)
+	description: Optional[str] = Field(alias="description", default=None,)
+	deviceManagementApplicabilityRuleDeviceMode: Optional[DeviceManagementApplicabilityRuleDeviceMode] = Field(alias="deviceManagementApplicabilityRuleDeviceMode", default=None,)
+	deviceManagementApplicabilityRuleOsEdition: Optional[DeviceManagementApplicabilityRuleOsEdition] = Field(alias="deviceManagementApplicabilityRuleOsEdition", default=None,)
+	deviceManagementApplicabilityRuleOsVersion: Optional[DeviceManagementApplicabilityRuleOsVersion] = Field(alias="deviceManagementApplicabilityRuleOsVersion", default=None,)
+	displayName: Optional[str] = Field(alias="displayName", default=None,)
+	lastModifiedDateTime: Optional[datetime] = Field(alias="lastModifiedDateTime", default=None,)
+	roleScopeTagIds: Optional[list[str]] = Field(alias="roleScopeTagIds", default=None,)
+	supportsScopeTags: Optional[bool] = Field(alias="supportsScopeTags", default=None,)
+	version: Optional[int] = Field(alias="version", default=None,)
+	assignments: Optional[list[DeviceConfigurationAssignment]] = Field(alias="assignments", default=None,)
+	deviceSettingStateSummaries: Optional[list[SettingStateDeviceSummary]] = Field(alias="deviceSettingStateSummaries", default=None,)
+	deviceStatuses: Optional[list[DeviceConfigurationDeviceStatus]] = Field(alias="deviceStatuses", default=None,)
+	deviceStatusOverview: Optional[DeviceConfigurationDeviceOverview] = Field(alias="deviceStatusOverview", default=None,)
+	groupAssignments: Optional[list[DeviceConfigurationGroupAssignment]] = Field(alias="groupAssignments", default=None,)
+	userStatuses: Optional[list[DeviceConfigurationUserStatus]] = Field(alias="userStatuses", default=None,)
+	userStatusOverview: Optional[DeviceConfigurationUserOverview] = Field(alias="userStatusOverview", default=None,)
+	customDomainName: Optional[str] = Field(alias="customDomainName", default=None,)
+	userDomainNameSource: Optional[DomainNameSource | str] = Field(alias="userDomainNameSource", default=None,)
+	usernameAADSource: Optional[UsernameSource | str] = Field(alias="usernameAADSource", default=None,)
+	usernameSource: Optional[UserEmailSource | str] = Field(alias="usernameSource", default=None,)
 
 	@model_validator(mode="wrap")
 	def convert_discriminator_class(cls, data: Any, handler: ModelWrapValidatorHandler[Self]) -> Self:

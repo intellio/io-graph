@@ -4,6 +4,6 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class Get_password_single_sign_on_credentialsPostRequest(BaseModel):
-	id: Optional[str] = Field(alias="id",default=None,)
+	id: Optional[str] = Field(alias="id", default=None,)
 
 

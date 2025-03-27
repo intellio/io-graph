@@ -4,8 +4,8 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class OnPremisesWritebackConfiguration(BaseModel):
-	unifiedGroupContainer: Optional[str] = Field(alias="unifiedGroupContainer",default=None,)
-	userContainer: Optional[str] = Field(alias="userContainer",default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	unifiedGroupContainer: Optional[str] = Field(alias="unifiedGroupContainer", default=None,)
+	userContainer: Optional[str] = Field(alias="userContainer", default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
 
 

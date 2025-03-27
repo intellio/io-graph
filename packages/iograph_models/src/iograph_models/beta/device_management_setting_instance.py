@@ -7,10 +7,10 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class DeviceManagementSettingInstance(BaseModel):
-	id: Optional[str] = Field(alias="id",default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
-	definitionId: Optional[str] = Field(alias="definitionId",default=None,)
-	valueJson: Optional[str] = Field(alias="valueJson",default=None,)
+	id: Optional[str] = Field(alias="id", default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
+	definitionId: Optional[str] = Field(alias="definitionId", default=None,)
+	valueJson: Optional[str] = Field(alias="valueJson", default=None,)
 
 	@model_validator(mode="wrap")
 	def convert_discriminator_class(cls, data: Any, handler: ModelWrapValidatorHandler[Self]) -> Self:

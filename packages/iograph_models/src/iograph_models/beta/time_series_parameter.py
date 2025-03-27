@@ -5,9 +5,9 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class TimeSeriesParameter(BaseModel):
-	endDateTime: Optional[datetime] = Field(alias="endDateTime",default=None,)
-	metricName: Optional[str] = Field(alias="metricName",default=None,)
-	startDateTime: Optional[datetime] = Field(alias="startDateTime",default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	endDateTime: Optional[datetime] = Field(alias="endDateTime", default=None,)
+	metricName: Optional[str] = Field(alias="metricName", default=None,)
+	startDateTime: Optional[datetime] = Field(alias="startDateTime", default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
 
 

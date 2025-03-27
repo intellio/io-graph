@@ -5,16 +5,16 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class ManagedDeviceMobileAppConfigurationDeviceSummary(BaseModel):
-	id: Optional[str] = Field(alias="id",default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
-	configurationVersion: Optional[int] = Field(alias="configurationVersion",default=None,)
-	conflictCount: Optional[int] = Field(alias="conflictCount",default=None,)
-	errorCount: Optional[int] = Field(alias="errorCount",default=None,)
-	failedCount: Optional[int] = Field(alias="failedCount",default=None,)
-	lastUpdateDateTime: Optional[datetime] = Field(alias="lastUpdateDateTime",default=None,)
-	notApplicableCount: Optional[int] = Field(alias="notApplicableCount",default=None,)
-	notApplicablePlatformCount: Optional[int] = Field(alias="notApplicablePlatformCount",default=None,)
-	pendingCount: Optional[int] = Field(alias="pendingCount",default=None,)
-	successCount: Optional[int] = Field(alias="successCount",default=None,)
+	id: Optional[str] = Field(alias="id", default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
+	configurationVersion: Optional[int] = Field(alias="configurationVersion", default=None,)
+	conflictCount: Optional[int] = Field(alias="conflictCount", default=None,)
+	errorCount: Optional[int] = Field(alias="errorCount", default=None,)
+	failedCount: Optional[int] = Field(alias="failedCount", default=None,)
+	lastUpdateDateTime: Optional[datetime] = Field(alias="lastUpdateDateTime", default=None,)
+	notApplicableCount: Optional[int] = Field(alias="notApplicableCount", default=None,)
+	notApplicablePlatformCount: Optional[int] = Field(alias="notApplicablePlatformCount", default=None,)
+	pendingCount: Optional[int] = Field(alias="pendingCount", default=None,)
+	successCount: Optional[int] = Field(alias="successCount", default=None,)
 
 

@@ -1,5 +1,6 @@
 from __future__ import annotations
 from typing import Optional
+from typing import Literal
 from pydantic import model_validator, ModelWrapValidatorHandler, ValidationError
 from typing_extensions import Self
 from typing import Any
@@ -8,10 +9,10 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class TrustedCertificateAuthorityAsEntityBase(BaseModel):
-	id: Optional[str] = Field(alias="id",default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
-	deletedDateTime: Optional[datetime] = Field(alias="deletedDateTime",default=None,)
-	trustedCertificateAuthorities: Optional[list[CertificateAuthorityAsEntity]] = Field(alias="trustedCertificateAuthorities",default=None,)
+	id: Optional[str] = Field(alias="id", default=None,)
+	odata_type: Literal["#microsoft.graph.trustedCertificateAuthorityAsEntityBase"] = Field(alias="@odata.type", default="#microsoft.graph.trustedCertificateAuthorityAsEntityBase")
+	deletedDateTime: Optional[datetime] = Field(alias="deletedDateTime", default=None,)
+	trustedCertificateAuthorities: Optional[list[CertificateAuthorityAsEntity]] = Field(alias="trustedCertificateAuthorities", default=None,)
 
 	@model_validator(mode="wrap")
 	def convert_discriminator_class(cls, data: Any, handler: ModelWrapValidatorHandler[Self]) -> Self:

@@ -4,6 +4,6 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class RestorePostRequest(BaseModel):
-	newUserPrincipalName: Optional[str] = Field(alias="newUserPrincipalName",default=None,)
+	newUserPrincipalName: Optional[str] = Field(alias="newUserPrincipalName", default=None,)
 
 

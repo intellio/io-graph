@@ -7,10 +7,10 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class AuthenticationListener(BaseModel):
-	id: Optional[str] = Field(alias="id",default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
-	priority: Optional[int] = Field(alias="priority",default=None,)
-	sourceFilter: Optional[AuthenticationSourceFilter] = Field(alias="sourceFilter",default=None,)
+	id: Optional[str] = Field(alias="id", default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
+	priority: Optional[int] = Field(alias="priority", default=None,)
+	sourceFilter: Optional[AuthenticationSourceFilter] = Field(alias="sourceFilter", default=None,)
 
 	@model_validator(mode="wrap")
 	def convert_discriminator_class(cls, data: Any, handler: ModelWrapValidatorHandler[Self]) -> Self:

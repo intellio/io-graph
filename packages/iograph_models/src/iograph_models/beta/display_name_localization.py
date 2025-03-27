@@ -4,8 +4,8 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class DisplayNameLocalization(BaseModel):
-	displayName: Optional[str] = Field(alias="displayName",default=None,)
-	languageTag: Optional[str] = Field(alias="languageTag",default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	displayName: Optional[str] = Field(alias="displayName", default=None,)
+	languageTag: Optional[str] = Field(alias="languageTag", default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
 
 

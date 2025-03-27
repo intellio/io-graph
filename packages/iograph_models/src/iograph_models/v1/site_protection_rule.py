@@ -1,23 +1,33 @@
 from __future__ import annotations
 from typing import Optional
+from typing import Union
+from typing import Literal
 from datetime import datetime
 from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class SiteProtectionRule(BaseModel):
-	id: Optional[str] = Field(alias="id",default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
-	createdBy: SerializeAsAny[Optional[IdentitySet]] = Field(alias="createdBy",default=None,)
-	createdDateTime: Optional[datetime] = Field(alias="createdDateTime",default=None,)
-	error: Optional[PublicError] = Field(alias="error",default=None,)
-	isAutoApplyEnabled: Optional[bool] = Field(alias="isAutoApplyEnabled",default=None,)
-	lastModifiedBy: SerializeAsAny[Optional[IdentitySet]] = Field(alias="lastModifiedBy",default=None,)
-	lastModifiedDateTime: Optional[datetime] = Field(alias="lastModifiedDateTime",default=None,)
-	status: Optional[ProtectionRuleStatus | str] = Field(alias="status",default=None,)
-	siteExpression: Optional[str] = Field(alias="siteExpression",default=None,)
+	id: Optional[str] = Field(alias="id", default=None,)
+	odata_type: Literal["#microsoft.graph.siteProtectionRule"] = Field(alias="@odata.type", default="#microsoft.graph.siteProtectionRule")
+	createdBy: Optional[Union[ChatMessageFromIdentitySet, ChatMessageMentionedIdentitySet, ChatMessageReactionIdentitySet, CommunicationsIdentitySet, SharePointIdentitySet]] = Field(alias="createdBy", default=None,discriminator="odata_type", )
+	createdDateTime: Optional[datetime] = Field(alias="createdDateTime", default=None,)
+	error: Optional[PublicError] = Field(alias="error", default=None,)
+	isAutoApplyEnabled: Optional[bool] = Field(alias="isAutoApplyEnabled", default=None,)
+	lastModifiedBy: Optional[Union[ChatMessageFromIdentitySet, ChatMessageMentionedIdentitySet, ChatMessageReactionIdentitySet, CommunicationsIdentitySet, SharePointIdentitySet]] = Field(alias="lastModifiedBy", default=None,discriminator="odata_type", )
+	lastModifiedDateTime: Optional[datetime] = Field(alias="lastModifiedDateTime", default=None,)
+	status: Optional[ProtectionRuleStatus | str] = Field(alias="status", default=None,)
+	siteExpression: Optional[str] = Field(alias="siteExpression", default=None,)
 
-from .identity_set import IdentitySet
+from .chat_message_from_identity_set import ChatMessageFromIdentitySet
+from .chat_message_mentioned_identity_set import ChatMessageMentionedIdentitySet
+from .chat_message_reaction_identity_set import ChatMessageReactionIdentitySet
+from .communications_identity_set import CommunicationsIdentitySet
+from .share_point_identity_set import SharePointIdentitySet
 from .public_error import PublicError
-from .identity_set import IdentitySet
+from .chat_message_from_identity_set import ChatMessageFromIdentitySet
+from .chat_message_mentioned_identity_set import ChatMessageMentionedIdentitySet
+from .chat_message_reaction_identity_set import ChatMessageReactionIdentitySet
+from .communications_identity_set import CommunicationsIdentitySet
+from .share_point_identity_set import SharePointIdentitySet
 from .protection_rule_status import ProtectionRuleStatus
 

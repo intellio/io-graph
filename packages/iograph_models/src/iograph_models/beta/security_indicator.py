@@ -1,5 +1,6 @@
 from __future__ import annotations
 from typing import Optional
+from typing import Union
 from pydantic import model_validator, ModelWrapValidatorHandler, ValidationError
 from typing_extensions import Self
 from typing import Any
@@ -7,10 +8,10 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class SecurityIndicator(BaseModel):
-	id: Optional[str] = Field(alias="id",default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
-	source: Optional[SecurityIndicatorSource | str] = Field(alias="source",default=None,)
-	artifact: SerializeAsAny[Optional[SecurityArtifact]] = Field(alias="artifact",default=None,)
+	id: Optional[str] = Field(alias="id", default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
+	source: Optional[SecurityIndicatorSource | str] = Field(alias="source", default=None,)
+	artifact: Optional[Union[SecurityHost, SecurityHostname, SecurityIpAddress, SecurityHostComponent, SecurityHostCookie, SecurityHostSslCertificate, SecurityHostTracker, SecurityPassiveDnsRecord, SecuritySslCertificate, SecurityUnclassifiedArtifact]] = Field(alias="artifact", default=None,discriminator="odata_type", )
 
 	@model_validator(mode="wrap")
 	def convert_discriminator_class(cls, data: Any, handler: ModelWrapValidatorHandler[Self]) -> Self:
@@ -34,5 +35,14 @@ class SecurityIndicator(BaseModel):
 			raise e
 
 from .security_indicator_source import SecurityIndicatorSource
-from .security_artifact import SecurityArtifact
+from .security_host import SecurityHost
+from .security_hostname import SecurityHostname
+from .security_ip_address import SecurityIpAddress
+from .security_host_component import SecurityHostComponent
+from .security_host_cookie import SecurityHostCookie
+from .security_host_ssl_certificate import SecurityHostSslCertificate
+from .security_host_tracker import SecurityHostTracker
+from .security_passive_dns_record import SecurityPassiveDnsRecord
+from .security_ssl_certificate import SecuritySslCertificate
+from .security_unclassified_artifact import SecurityUnclassifiedArtifact
 

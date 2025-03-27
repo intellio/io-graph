@@ -4,8 +4,8 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class RriPostRequest(BaseModel):
-	nper: Optional[str] = Field(alias="nper",default=None,)
-	pv: Optional[str] = Field(alias="pv",default=None,)
-	fv: Optional[str] = Field(alias="fv",default=None,)
+	nper: Optional[str] = Field(alias="nper", default=None,)
+	pv: Optional[str] = Field(alias="pv", default=None,)
+	fv: Optional[str] = Field(alias="fv", default=None,)
 
 

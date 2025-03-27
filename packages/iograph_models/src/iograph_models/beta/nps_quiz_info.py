@@ -5,7 +5,7 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 class NpsQuizInfo(BaseModel):
 	maxPoints: float | str | ReferenceNumeric
-	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
 
 from .reference_numeric import ReferenceNumeric
 

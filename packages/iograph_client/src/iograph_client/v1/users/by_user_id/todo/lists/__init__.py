@@ -16,8 +16,8 @@ if TYPE_CHECKING:
 	from .by_todo_task_list_id import ByTodoTaskListIdRequest
 	from ......request_adapter import HttpxRequestAdapter
 from iograph_models.v1.o_data_errors__o_data_error import ODataErrorsODataError
-from iograph_models.v1.todo_task_list import TodoTaskList
 from iograph_models.v1.todo_task_list_collection_response import TodoTaskListCollectionResponse
+from iograph_models.v1.todo_task_list import TodoTaskList
 
 
 class ListsRequest(BaseRequestBuilder):

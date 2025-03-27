@@ -5,17 +5,17 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class AndroidForWorkSettings(BaseModel):
-	id: Optional[str] = Field(alias="id",default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
-	bindStatus: Optional[AndroidForWorkBindStatus | str] = Field(alias="bindStatus",default=None,)
-	deviceOwnerManagementEnabled: Optional[bool] = Field(alias="deviceOwnerManagementEnabled",default=None,)
-	enrollmentTarget: Optional[AndroidForWorkEnrollmentTarget | str] = Field(alias="enrollmentTarget",default=None,)
-	lastAppSyncDateTime: Optional[datetime] = Field(alias="lastAppSyncDateTime",default=None,)
-	lastAppSyncStatus: Optional[AndroidForWorkSyncStatus | str] = Field(alias="lastAppSyncStatus",default=None,)
-	lastModifiedDateTime: Optional[datetime] = Field(alias="lastModifiedDateTime",default=None,)
-	ownerOrganizationName: Optional[str] = Field(alias="ownerOrganizationName",default=None,)
-	ownerUserPrincipalName: Optional[str] = Field(alias="ownerUserPrincipalName",default=None,)
-	targetGroupIds: Optional[list[str]] = Field(alias="targetGroupIds",default=None,)
+	id: Optional[str] = Field(alias="id", default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
+	bindStatus: Optional[AndroidForWorkBindStatus | str] = Field(alias="bindStatus", default=None,)
+	deviceOwnerManagementEnabled: Optional[bool] = Field(alias="deviceOwnerManagementEnabled", default=None,)
+	enrollmentTarget: Optional[AndroidForWorkEnrollmentTarget | str] = Field(alias="enrollmentTarget", default=None,)
+	lastAppSyncDateTime: Optional[datetime] = Field(alias="lastAppSyncDateTime", default=None,)
+	lastAppSyncStatus: Optional[AndroidForWorkSyncStatus | str] = Field(alias="lastAppSyncStatus", default=None,)
+	lastModifiedDateTime: Optional[datetime] = Field(alias="lastModifiedDateTime", default=None,)
+	ownerOrganizationName: Optional[str] = Field(alias="ownerOrganizationName", default=None,)
+	ownerUserPrincipalName: Optional[str] = Field(alias="ownerUserPrincipalName", default=None,)
+	targetGroupIds: Optional[list[str]] = Field(alias="targetGroupIds", default=None,)
 
 from .android_for_work_bind_status import AndroidForWorkBindStatus
 from .android_for_work_enrollment_target import AndroidForWorkEnrollmentTarget

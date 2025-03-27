@@ -4,7 +4,7 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class ResultTemplateOption(BaseModel):
-	enableResultTemplate: Optional[bool] = Field(alias="enableResultTemplate",default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	enableResultTemplate: Optional[bool] = Field(alias="enableResultTemplate", default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
 
 

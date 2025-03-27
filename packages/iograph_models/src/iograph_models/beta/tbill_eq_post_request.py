@@ -4,8 +4,8 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class Tbill_eqPostRequest(BaseModel):
-	settlement: Optional[str] = Field(alias="settlement",default=None,)
-	maturity: Optional[str] = Field(alias="maturity",default=None,)
-	discount: Optional[str] = Field(alias="discount",default=None,)
+	settlement: Optional[str] = Field(alias="settlement", default=None,)
+	maturity: Optional[str] = Field(alias="maturity", default=None,)
+	discount: Optional[str] = Field(alias="discount", default=None,)
 
 

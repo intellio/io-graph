@@ -4,8 +4,8 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class IndustryDataAdditionalUserOptions(BaseModel):
-	allowStudentContactAssociation: Optional[bool] = Field(alias="allowStudentContactAssociation",default=None,)
-	markAllStudentsAsMinors: Optional[bool] = Field(alias="markAllStudentsAsMinors",default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	allowStudentContactAssociation: Optional[bool] = Field(alias="allowStudentContactAssociation", default=None,)
+	markAllStudentsAsMinors: Optional[bool] = Field(alias="markAllStudentsAsMinors", default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
 
 

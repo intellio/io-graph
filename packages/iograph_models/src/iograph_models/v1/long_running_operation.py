@@ -8,13 +8,13 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class LongRunningOperation(BaseModel):
-	id: Optional[str] = Field(alias="id",default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
-	createdDateTime: Optional[datetime] = Field(alias="createdDateTime",default=None,)
-	lastActionDateTime: Optional[datetime] = Field(alias="lastActionDateTime",default=None,)
-	resourceLocation: Optional[str] = Field(alias="resourceLocation",default=None,)
-	status: Optional[LongRunningOperationStatus | str] = Field(alias="status",default=None,)
-	statusDetail: Optional[str] = Field(alias="statusDetail",default=None,)
+	id: Optional[str] = Field(alias="id", default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
+	createdDateTime: Optional[datetime] = Field(alias="createdDateTime", default=None,)
+	lastActionDateTime: Optional[datetime] = Field(alias="lastActionDateTime", default=None,)
+	resourceLocation: Optional[str] = Field(alias="resourceLocation", default=None,)
+	status: Optional[LongRunningOperationStatus | str] = Field(alias="status", default=None,)
+	statusDetail: Optional[str] = Field(alias="statusDetail", default=None,)
 
 	@model_validator(mode="wrap")
 	def convert_discriminator_class(cls, data: Any, handler: ModelWrapValidatorHandler[Self]) -> Self:

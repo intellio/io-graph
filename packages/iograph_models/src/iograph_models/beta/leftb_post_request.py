@@ -4,7 +4,7 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class LeftbPostRequest(BaseModel):
-	text: Optional[str] = Field(alias="text",default=None,)
-	numBytes: Optional[str] = Field(alias="numBytes",default=None,)
+	text: Optional[str] = Field(alias="text", default=None,)
+	numBytes: Optional[str] = Field(alias="numBytes", default=None,)
 
 

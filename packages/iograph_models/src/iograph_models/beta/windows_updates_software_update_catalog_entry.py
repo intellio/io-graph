@@ -1,5 +1,6 @@
 from __future__ import annotations
 from typing import Optional
+from typing import Literal
 from pydantic import model_validator, ModelWrapValidatorHandler, ValidationError
 from typing_extensions import Self
 from typing import Any
@@ -8,11 +9,11 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class WindowsUpdatesSoftwareUpdateCatalogEntry(BaseModel):
-	id: Optional[str] = Field(alias="id",default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
-	deployableUntilDateTime: Optional[datetime] = Field(alias="deployableUntilDateTime",default=None,)
-	displayName: Optional[str] = Field(alias="displayName",default=None,)
-	releaseDateTime: Optional[datetime] = Field(alias="releaseDateTime",default=None,)
+	id: Optional[str] = Field(alias="id", default=None,)
+	odata_type: Literal["#microsoft.graph.windowsUpdates.softwareUpdateCatalogEntry"] = Field(alias="@odata.type", default="#microsoft.graph.windowsUpdates.softwareUpdateCatalogEntry")
+	deployableUntilDateTime: Optional[datetime] = Field(alias="deployableUntilDateTime", default=None,)
+	displayName: Optional[str] = Field(alias="displayName", default=None,)
+	releaseDateTime: Optional[datetime] = Field(alias="releaseDateTime", default=None,)
 
 	@model_validator(mode="wrap")
 	def convert_discriminator_class(cls, data: Any, handler: ModelWrapValidatorHandler[Self]) -> Self:

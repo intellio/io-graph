@@ -4,17 +4,17 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class UserSettings(BaseModel):
-	id: Optional[str] = Field(alias="id",default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
-	contributionToContentDiscoveryAsOrganizationDisabled: Optional[bool] = Field(alias="contributionToContentDiscoveryAsOrganizationDisabled",default=None,)
-	contributionToContentDiscoveryDisabled: Optional[bool] = Field(alias="contributionToContentDiscoveryDisabled",default=None,)
-	contactMergeSuggestions: Optional[ContactMergeSuggestions] = Field(alias="contactMergeSuggestions",default=None,)
-	exchange: Optional[ExchangeSettings] = Field(alias="exchange",default=None,)
-	itemInsights: Optional[UserInsightsSettings] = Field(alias="itemInsights",default=None,)
-	regionalAndLanguageSettings: Optional[RegionalAndLanguageSettings] = Field(alias="regionalAndLanguageSettings",default=None,)
-	shiftPreferences: Optional[ShiftPreferences] = Field(alias="shiftPreferences",default=None,)
-	storage: Optional[UserStorage] = Field(alias="storage",default=None,)
-	windows: Optional[list[WindowsSetting]] = Field(alias="windows",default=None,)
+	id: Optional[str] = Field(alias="id", default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
+	contributionToContentDiscoveryAsOrganizationDisabled: Optional[bool] = Field(alias="contributionToContentDiscoveryAsOrganizationDisabled", default=None,)
+	contributionToContentDiscoveryDisabled: Optional[bool] = Field(alias="contributionToContentDiscoveryDisabled", default=None,)
+	contactMergeSuggestions: Optional[ContactMergeSuggestions] = Field(alias="contactMergeSuggestions", default=None,)
+	exchange: Optional[ExchangeSettings] = Field(alias="exchange", default=None,)
+	itemInsights: Optional[UserInsightsSettings] = Field(alias="itemInsights", default=None,)
+	regionalAndLanguageSettings: Optional[RegionalAndLanguageSettings] = Field(alias="regionalAndLanguageSettings", default=None,)
+	shiftPreferences: Optional[ShiftPreferences] = Field(alias="shiftPreferences", default=None,)
+	storage: Optional[UserStorage] = Field(alias="storage", default=None,)
+	windows: Optional[list[WindowsSetting]] = Field(alias="windows", default=None,)
 
 from .contact_merge_suggestions import ContactMergeSuggestions
 from .exchange_settings import ExchangeSettings

@@ -4,6 +4,6 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class Update_device_profile_assignmentPostRequest(BaseModel):
-	deviceIds: Optional[list[str]] = Field(alias="deviceIds",default=None,)
+	deviceIds: Optional[list[str]] = Field(alias="deviceIds", default=None,)
 
 

@@ -4,9 +4,9 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class TodoSettings(BaseModel):
-	isExternalJoinEnabled: Optional[bool] = Field(alias="isExternalJoinEnabled",default=None,)
-	isExternalShareEnabled: Optional[bool] = Field(alias="isExternalShareEnabled",default=None,)
-	isPushNotificationEnabled: Optional[bool] = Field(alias="isPushNotificationEnabled",default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	isExternalJoinEnabled: Optional[bool] = Field(alias="isExternalJoinEnabled", default=None,)
+	isExternalShareEnabled: Optional[bool] = Field(alias="isExternalShareEnabled", default=None,)
+	isPushNotificationEnabled: Optional[bool] = Field(alias="isPushNotificationEnabled", default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
 
 

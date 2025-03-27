@@ -1,12 +1,32 @@
 from __future__ import annotations
 from typing import Optional
+from typing import Union
+from typing import Annotated
 from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class IdentityFindingCollectionResponse(BaseModel):
-	odata_count: Optional[int] = Field(alias="@odata.count",default=None,)
-	odata_nextLink: Optional[str] = Field(alias="@odata.nextLink",default=None,)
-	value: SerializeAsAny[Optional[list[IdentityFinding]]] = Field(alias="value",default=None,)
+	odata_count: Optional[int] = Field(alias="@odata.count", default=None,)
+	odata_nextLink: Optional[str] = Field(alias="@odata.nextLink", default=None,)
+	value: Optional[list[Annotated[Union[InactiveAwsResourceFinding, InactiveAwsRoleFinding, InactiveAzureServicePrincipalFinding, InactiveGcpServiceAccountFinding, InactiveServerlessFunctionFinding, InactiveUserFinding, OverprovisionedAwsResourceFinding, OverprovisionedAwsRoleFinding, OverprovisionedAzureServicePrincipalFinding, OverprovisionedGcpServiceAccountFinding, OverprovisionedServerlessFunctionFinding, OverprovisionedUserFinding, SuperAwsResourceFinding, SuperAwsRoleFinding, SuperAzureServicePrincipalFinding, SuperGcpServiceAccountFinding, SuperServerlessFunctionFinding, SuperUserFinding, UnenforcedMfaAwsUserFinding]],Field(discriminator="odata_type")]]] = Field(alias="value", default=None,)
 
-from .identity_finding import IdentityFinding
+from .inactive_aws_resource_finding import InactiveAwsResourceFinding
+from .inactive_aws_role_finding import InactiveAwsRoleFinding
+from .inactive_azure_service_principal_finding import InactiveAzureServicePrincipalFinding
+from .inactive_gcp_service_account_finding import InactiveGcpServiceAccountFinding
+from .inactive_serverless_function_finding import InactiveServerlessFunctionFinding
+from .inactive_user_finding import InactiveUserFinding
+from .overprovisioned_aws_resource_finding import OverprovisionedAwsResourceFinding
+from .overprovisioned_aws_role_finding import OverprovisionedAwsRoleFinding
+from .overprovisioned_azure_service_principal_finding import OverprovisionedAzureServicePrincipalFinding
+from .overprovisioned_gcp_service_account_finding import OverprovisionedGcpServiceAccountFinding
+from .overprovisioned_serverless_function_finding import OverprovisionedServerlessFunctionFinding
+from .overprovisioned_user_finding import OverprovisionedUserFinding
+from .super_aws_resource_finding import SuperAwsResourceFinding
+from .super_aws_role_finding import SuperAwsRoleFinding
+from .super_azure_service_principal_finding import SuperAzureServicePrincipalFinding
+from .super_gcp_service_account_finding import SuperGcpServiceAccountFinding
+from .super_serverless_function_finding import SuperServerlessFunctionFinding
+from .super_user_finding import SuperUserFinding
+from .unenforced_mfa_aws_user_finding import UnenforcedMfaAwsUserFinding
 

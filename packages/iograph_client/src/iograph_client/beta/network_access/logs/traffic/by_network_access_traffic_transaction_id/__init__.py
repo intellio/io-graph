@@ -14,8 +14,8 @@ if TYPE_CHECKING:
 	from .user import UserRequest
 	from .device import DeviceRequest
 	from ......request_adapter import HttpxRequestAdapter
-from iograph_models.beta.networkaccess_network_access_traffic import NetworkaccessNetworkAccessTraffic
 from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.beta.networkaccess_network_access_traffic import NetworkaccessNetworkAccessTraffic
 
 
 class ByNetworkAccessTrafficTransactionIdRequest(BaseRequestBuilder):

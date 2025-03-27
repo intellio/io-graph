@@ -15,8 +15,8 @@ if TYPE_CHECKING:
 	from .by_external_group_id import ByExternalGroupIdRequest
 	from ......request_adapter import HttpxRequestAdapter
 from iograph_models.beta.external_connectors_external_group_collection_response import ExternalConnectorsExternalGroupCollectionResponse
-from iograph_models.beta.external_connectors_external_group import ExternalConnectorsExternalGroup
 from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.beta.external_connectors_external_group import ExternalConnectorsExternalGroup
 
 
 class GroupsRequest(BaseRequestBuilder):

@@ -4,7 +4,7 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class Deleted(BaseModel):
-	state: Optional[str] = Field(alias="state",default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	state: Optional[str] = Field(alias="state", default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
 
 

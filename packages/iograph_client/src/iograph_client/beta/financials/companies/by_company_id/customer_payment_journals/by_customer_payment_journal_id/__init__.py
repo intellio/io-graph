@@ -14,8 +14,8 @@ if TYPE_CHECKING:
 	from .customer_payments import CustomerPaymentsRequest
 	from .account import AccountRequest
 	from .......request_adapter import HttpxRequestAdapter
-from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.beta.customer_payment_journal import CustomerPaymentJournal
+from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 
 
 class ByCustomerPaymentJournalIdRequest(BaseRequestBuilder):

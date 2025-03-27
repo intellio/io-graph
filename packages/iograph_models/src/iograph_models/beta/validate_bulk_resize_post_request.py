@@ -4,7 +4,7 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class Validate_bulk_resizePostRequest(BaseModel):
-	cloudPcIds: Optional[list[str]] = Field(alias="cloudPcIds",default=None,)
-	targetServicePlanId: Optional[str] = Field(alias="targetServicePlanId",default=None,)
+	cloudPcIds: Optional[list[str]] = Field(alias="cloudPcIds", default=None,)
+	targetServicePlanId: Optional[str] = Field(alias="targetServicePlanId", default=None,)
 
 

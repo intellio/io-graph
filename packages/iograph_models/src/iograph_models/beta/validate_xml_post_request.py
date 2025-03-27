@@ -4,6 +4,6 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class Validate_xmlPostRequest(BaseModel):
-	officeConfigurationXml: Optional[str] = Field(alias="officeConfigurationXml",default=None,)
+	officeConfigurationXml: Optional[str] = Field(alias="officeConfigurationXml", default=None,)
 
 

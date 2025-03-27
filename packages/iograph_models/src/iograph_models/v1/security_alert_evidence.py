@@ -8,14 +8,14 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class SecurityAlertEvidence(BaseModel):
-	createdDateTime: Optional[datetime] = Field(alias="createdDateTime",default=None,)
-	detailedRoles: Optional[list[str]] = Field(alias="detailedRoles",default=None,)
-	remediationStatus: Optional[SecurityEvidenceRemediationStatus | str] = Field(alias="remediationStatus",default=None,)
-	remediationStatusDetails: Optional[str] = Field(alias="remediationStatusDetails",default=None,)
-	roles: Optional[list[SecurityEvidenceRole | str]] = Field(alias="roles",default=None,)
-	tags: Optional[list[str]] = Field(alias="tags",default=None,)
-	verdict: Optional[SecurityEvidenceVerdict | str] = Field(alias="verdict",default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	createdDateTime: Optional[datetime] = Field(alias="createdDateTime", default=None,)
+	detailedRoles: Optional[list[str]] = Field(alias="detailedRoles", default=None,)
+	remediationStatus: Optional[SecurityEvidenceRemediationStatus | str] = Field(alias="remediationStatus", default=None,)
+	remediationStatusDetails: Optional[str] = Field(alias="remediationStatusDetails", default=None,)
+	roles: Optional[list[SecurityEvidenceRole | str]] = Field(alias="roles", default=None,)
+	tags: Optional[list[str]] = Field(alias="tags", default=None,)
+	verdict: Optional[SecurityEvidenceVerdict | str] = Field(alias="verdict", default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
 
 	@model_validator(mode="wrap")
 	def convert_discriminator_class(cls, data: Any, handler: ModelWrapValidatorHandler[Self]) -> Self:

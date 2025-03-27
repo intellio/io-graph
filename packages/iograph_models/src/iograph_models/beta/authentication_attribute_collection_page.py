@@ -4,9 +4,9 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class AuthenticationAttributeCollectionPage(BaseModel):
-	customStringsFileId: Optional[str] = Field(alias="customStringsFileId",default=None,)
-	views: Optional[list[AuthenticationAttributeCollectionPageViewConfiguration]] = Field(alias="views",default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	customStringsFileId: Optional[str] = Field(alias="customStringsFileId", default=None,)
+	views: Optional[list[AuthenticationAttributeCollectionPageViewConfiguration]] = Field(alias="views", default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
 
 from .authentication_attribute_collection_page_view_configuration import AuthenticationAttributeCollectionPageViewConfiguration
 

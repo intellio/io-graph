@@ -4,7 +4,7 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class Submit_ti_indicatorsPostRequest(BaseModel):
-	value: Optional[list[TiIndicator]] = Field(alias="value",default=None,)
+	value: Optional[list[TiIndicator]] = Field(alias="value", default=None,)
 
 from .ti_indicator import TiIndicator
 

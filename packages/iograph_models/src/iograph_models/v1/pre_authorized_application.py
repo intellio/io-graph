@@ -4,8 +4,8 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class PreAuthorizedApplication(BaseModel):
-	appId: Optional[str] = Field(alias="appId",default=None,)
-	delegatedPermissionIds: Optional[list[str]] = Field(alias="delegatedPermissionIds",default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	appId: Optional[str] = Field(alias="appId", default=None,)
+	delegatedPermissionIds: Optional[list[str]] = Field(alias="delegatedPermissionIds", default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
 
 

@@ -4,6 +4,6 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class DismissPostRequest(BaseModel):
-	userIds: Optional[list[str]] = Field(alias="userIds",default=None,)
+	userIds: Optional[list[str]] = Field(alias="userIds", default=None,)
 
 

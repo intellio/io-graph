@@ -13,8 +13,8 @@ from typing import TYPE_CHECKING
 if TYPE_CHECKING:
 	from .managed_devices import ManagedDevicesRequest
 	from .....request_adapter import HttpxRequestAdapter
-from iograph_models.beta.detected_app import DetectedApp
 from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.beta.detected_app import DetectedApp
 
 
 class ByDetectedAppIdRequest(BaseRequestBuilder):

@@ -11,9 +11,9 @@ from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:
 	from ......request_adapter import HttpxRequestAdapter
-from iograph_models.beta.update_global_script_post_request import Update_global_scriptPostRequest
-from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.beta.update_global_script_post_response import Update_global_scriptPostResponse
+from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.beta.update_global_script_post_request import Update_global_scriptPostRequest
 
 
 class UpdateGlobalScriptRequest(BaseRequestBuilder):

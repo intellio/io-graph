@@ -15,9 +15,9 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_governance_resource_id import ByGovernanceResourceIdRequest
 	from .....request_adapter import HttpxRequestAdapter
+from iograph_models.beta.governance_resource import GovernanceResource
 from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.beta.governance_resource_collection_response import GovernanceResourceCollectionResponse
-from iograph_models.beta.governance_resource import GovernanceResource
 
 
 class ResourcesRequest(BaseRequestBuilder):

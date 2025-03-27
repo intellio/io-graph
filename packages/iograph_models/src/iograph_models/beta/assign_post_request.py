@@ -4,7 +4,7 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class AssignPostRequest(BaseModel):
-	enrollmentConfigurationAssignments: Optional[list[EnrollmentConfigurationAssignment]] = Field(alias="enrollmentConfigurationAssignments",default=None,)
+	enrollmentConfigurationAssignments: Optional[list[EnrollmentConfigurationAssignment]] = Field(alias="enrollmentConfigurationAssignments", default=None,)
 
 from .enrollment_configuration_assignment import EnrollmentConfigurationAssignment
 

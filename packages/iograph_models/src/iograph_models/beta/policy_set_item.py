@@ -8,16 +8,16 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class PolicySetItem(BaseModel):
-	id: Optional[str] = Field(alias="id",default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
-	createdDateTime: Optional[datetime] = Field(alias="createdDateTime",default=None,)
-	displayName: Optional[str] = Field(alias="displayName",default=None,)
-	errorCode: Optional[ErrorCode | str] = Field(alias="errorCode",default=None,)
-	guidedDeploymentTags: Optional[list[str]] = Field(alias="guidedDeploymentTags",default=None,)
-	itemType: Optional[str] = Field(alias="itemType",default=None,)
-	lastModifiedDateTime: Optional[datetime] = Field(alias="lastModifiedDateTime",default=None,)
-	payloadId: Optional[str] = Field(alias="payloadId",default=None,)
-	status: Optional[PolicySetStatus | str] = Field(alias="status",default=None,)
+	id: Optional[str] = Field(alias="id", default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
+	createdDateTime: Optional[datetime] = Field(alias="createdDateTime", default=None,)
+	displayName: Optional[str] = Field(alias="displayName", default=None,)
+	errorCode: Optional[ErrorCode | str] = Field(alias="errorCode", default=None,)
+	guidedDeploymentTags: Optional[list[str]] = Field(alias="guidedDeploymentTags", default=None,)
+	itemType: Optional[str] = Field(alias="itemType", default=None,)
+	lastModifiedDateTime: Optional[datetime] = Field(alias="lastModifiedDateTime", default=None,)
+	payloadId: Optional[str] = Field(alias="payloadId", default=None,)
+	status: Optional[PolicySetStatus | str] = Field(alias="status", default=None,)
 
 	@model_validator(mode="wrap")
 	def convert_discriminator_class(cls, data: Any, handler: ModelWrapValidatorHandler[Self]) -> Self:

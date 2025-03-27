@@ -4,11 +4,11 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class DelegatedPermissionClassification(BaseModel):
-	id: Optional[str] = Field(alias="id",default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
-	classification: Optional[PermissionClassificationType | str] = Field(alias="classification",default=None,)
-	permissionId: Optional[str] = Field(alias="permissionId",default=None,)
-	permissionName: Optional[str] = Field(alias="permissionName",default=None,)
+	id: Optional[str] = Field(alias="id", default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
+	classification: Optional[PermissionClassificationType | str] = Field(alias="classification", default=None,)
+	permissionId: Optional[str] = Field(alias="permissionId", default=None,)
+	permissionName: Optional[str] = Field(alias="permissionName", default=None,)
 
 from .permission_classification_type import PermissionClassificationType
 

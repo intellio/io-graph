@@ -15,8 +15,8 @@ if TYPE_CHECKING:
 	from .by_mobile_app_relationship_id import ByMobileAppRelationshipIdRequest
 	from ....request_adapter import HttpxRequestAdapter
 from iograph_models.beta.mobile_app_relationship_collection_response import MobileAppRelationshipCollectionResponse
-from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.beta.mobile_app_relationship import MobileAppRelationship
+from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 
 
 class MobileAppRelationshipsRequest(BaseRequestBuilder):

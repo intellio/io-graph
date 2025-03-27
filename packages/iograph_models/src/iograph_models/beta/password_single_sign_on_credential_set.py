@@ -4,9 +4,9 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class PasswordSingleSignOnCredentialSet(BaseModel):
-	credentials: Optional[list[Credential]] = Field(alias="credentials",default=None,)
-	id: Optional[str] = Field(alias="id",default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	credentials: Optional[list[Credential]] = Field(alias="credentials", default=None,)
+	id: Optional[str] = Field(alias="id", default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
 
 from .credential import Credential
 

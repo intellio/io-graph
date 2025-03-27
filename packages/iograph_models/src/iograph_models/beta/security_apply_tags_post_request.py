@@ -4,8 +4,8 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class Security_apply_tagsPostRequest(BaseModel):
-	tagsToAdd: Optional[list[SecurityEdiscoveryReviewTag]] = Field(alias="tagsToAdd",default=None,)
-	tagsToRemove: Optional[list[SecurityEdiscoveryReviewTag]] = Field(alias="tagsToRemove",default=None,)
+	tagsToAdd: Optional[list[SecurityEdiscoveryReviewTag]] = Field(alias="tagsToAdd", default=None,)
+	tagsToRemove: Optional[list[SecurityEdiscoveryReviewTag]] = Field(alias="tagsToRemove", default=None,)
 
 from .security_ediscovery_review_tag import SecurityEdiscoveryReviewTag
 from .security_ediscovery_review_tag import SecurityEdiscoveryReviewTag

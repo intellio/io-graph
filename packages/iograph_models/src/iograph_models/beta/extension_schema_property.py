@@ -4,8 +4,8 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class ExtensionSchemaProperty(BaseModel):
-	name: Optional[str] = Field(alias="name",default=None,)
-	type: Optional[str] = Field(alias="type",default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	name: Optional[str] = Field(alias="name", default=None,)
+	type: Optional[str] = Field(alias="type", default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
 
 

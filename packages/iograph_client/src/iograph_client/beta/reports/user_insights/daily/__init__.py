@@ -20,8 +20,8 @@ if TYPE_CHECKING:
 	from .authentications import AuthenticationsRequest
 	from .active_users import ActiveUsersRequest
 	from .....request_adapter import HttpxRequestAdapter
-from iograph_models.beta.daily_user_insight_metrics_root import DailyUserInsightMetricsRoot
 from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.beta.daily_user_insight_metrics_root import DailyUserInsightMetricsRoot
 
 
 class DailyRequest(BaseRequestBuilder):

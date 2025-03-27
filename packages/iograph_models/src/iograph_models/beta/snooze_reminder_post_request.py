@@ -4,7 +4,7 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class Snooze_reminderPostRequest(BaseModel):
-	NewReminderTime: Optional[DateTimeTimeZone] = Field(alias="NewReminderTime",default=None,)
+	NewReminderTime: Optional[DateTimeTimeZone] = Field(alias="NewReminderTime", default=None,)
 
 from .date_time_time_zone import DateTimeTimeZone
 

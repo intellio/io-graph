@@ -4,6 +4,6 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class Count_blankPostRequest(BaseModel):
-	range: Optional[str] = Field(alias="range",default=None,)
+	range: Optional[str] = Field(alias="range", default=None,)
 
 

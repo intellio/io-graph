@@ -1,5 +1,6 @@
 from __future__ import annotations
 from typing import Optional
+from typing import Literal
 from pydantic import model_validator, ModelWrapValidatorHandler, ValidationError
 from typing_extensions import Self
 from typing import Any
@@ -8,21 +9,21 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class ExactMatchSessionBase(BaseModel):
-	id: Optional[str] = Field(alias="id",default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
-	completionDateTime: Optional[datetime] = Field(alias="completionDateTime",default=None,)
-	creationDateTime: Optional[datetime] = Field(alias="creationDateTime",default=None,)
-	error: Optional[ClassificationError] = Field(alias="error",default=None,)
-	lastUpdatedDateTime: Optional[datetime] = Field(alias="lastUpdatedDateTime",default=None,)
-	startDateTime: Optional[datetime] = Field(alias="startDateTime",default=None,)
-	dataStoreId: Optional[str] = Field(alias="dataStoreId",default=None,)
-	processingCompletionDateTime: Optional[datetime] = Field(alias="processingCompletionDateTime",default=None,)
-	remainingBlockCount: Optional[int] = Field(alias="remainingBlockCount",default=None,)
-	remainingJobCount: Optional[int] = Field(alias="remainingJobCount",default=None,)
-	state: Optional[str] = Field(alias="state",default=None,)
-	totalBlockCount: Optional[int] = Field(alias="totalBlockCount",default=None,)
-	totalJobCount: Optional[int] = Field(alias="totalJobCount",default=None,)
-	uploadCompletionDateTime: Optional[datetime] = Field(alias="uploadCompletionDateTime",default=None,)
+	id: Optional[str] = Field(alias="id", default=None,)
+	odata_type: Literal["#microsoft.graph.exactMatchSessionBase"] = Field(alias="@odata.type", default="#microsoft.graph.exactMatchSessionBase")
+	completionDateTime: Optional[datetime] = Field(alias="completionDateTime", default=None,)
+	creationDateTime: Optional[datetime] = Field(alias="creationDateTime", default=None,)
+	error: Optional[ClassificationError] = Field(alias="error", default=None,)
+	lastUpdatedDateTime: Optional[datetime] = Field(alias="lastUpdatedDateTime", default=None,)
+	startDateTime: Optional[datetime] = Field(alias="startDateTime", default=None,)
+	dataStoreId: Optional[str] = Field(alias="dataStoreId", default=None,)
+	processingCompletionDateTime: Optional[datetime] = Field(alias="processingCompletionDateTime", default=None,)
+	remainingBlockCount: Optional[int] = Field(alias="remainingBlockCount", default=None,)
+	remainingJobCount: Optional[int] = Field(alias="remainingJobCount", default=None,)
+	state: Optional[str] = Field(alias="state", default=None,)
+	totalBlockCount: Optional[int] = Field(alias="totalBlockCount", default=None,)
+	totalJobCount: Optional[int] = Field(alias="totalJobCount", default=None,)
+	uploadCompletionDateTime: Optional[datetime] = Field(alias="uploadCompletionDateTime", default=None,)
 
 	@model_validator(mode="wrap")
 	def convert_discriminator_class(cls, data: Any, handler: ModelWrapValidatorHandler[Self]) -> Self:

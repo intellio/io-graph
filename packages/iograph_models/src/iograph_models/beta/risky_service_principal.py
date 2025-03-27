@@ -8,19 +8,19 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class RiskyServicePrincipal(BaseModel):
-	id: Optional[str] = Field(alias="id",default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
-	accountEnabled: Optional[bool] = Field(alias="accountEnabled",default=None,)
-	appId: Optional[str] = Field(alias="appId",default=None,)
-	displayName: Optional[str] = Field(alias="displayName",default=None,)
-	isEnabled: Optional[bool] = Field(alias="isEnabled",default=None,)
-	isProcessing: Optional[bool] = Field(alias="isProcessing",default=None,)
-	riskDetail: Optional[RiskDetail | str] = Field(alias="riskDetail",default=None,)
-	riskLastUpdatedDateTime: Optional[datetime] = Field(alias="riskLastUpdatedDateTime",default=None,)
-	riskLevel: Optional[RiskLevel | str] = Field(alias="riskLevel",default=None,)
-	riskState: Optional[RiskState | str] = Field(alias="riskState",default=None,)
-	servicePrincipalType: Optional[str] = Field(alias="servicePrincipalType",default=None,)
-	history: Optional[list[RiskyServicePrincipalHistoryItem]] = Field(alias="history",default=None,)
+	id: Optional[str] = Field(alias="id", default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
+	accountEnabled: Optional[bool] = Field(alias="accountEnabled", default=None,)
+	appId: Optional[str] = Field(alias="appId", default=None,)
+	displayName: Optional[str] = Field(alias="displayName", default=None,)
+	isEnabled: Optional[bool] = Field(alias="isEnabled", default=None,)
+	isProcessing: Optional[bool] = Field(alias="isProcessing", default=None,)
+	riskDetail: Optional[RiskDetail | str] = Field(alias="riskDetail", default=None,)
+	riskLastUpdatedDateTime: Optional[datetime] = Field(alias="riskLastUpdatedDateTime", default=None,)
+	riskLevel: Optional[RiskLevel | str] = Field(alias="riskLevel", default=None,)
+	riskState: Optional[RiskState | str] = Field(alias="riskState", default=None,)
+	servicePrincipalType: Optional[str] = Field(alias="servicePrincipalType", default=None,)
+	history: Optional[list[RiskyServicePrincipalHistoryItem]] = Field(alias="history", default=None,)
 
 	@model_validator(mode="wrap")
 	def convert_discriminator_class(cls, data: Any, handler: ModelWrapValidatorHandler[Self]) -> Self:

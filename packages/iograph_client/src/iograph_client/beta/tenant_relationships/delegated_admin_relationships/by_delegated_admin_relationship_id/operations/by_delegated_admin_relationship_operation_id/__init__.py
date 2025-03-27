@@ -11,8 +11,8 @@ from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:
 	from .......request_adapter import HttpxRequestAdapter
-from iograph_models.beta.delegated_admin_relationship_operation import DelegatedAdminRelationshipOperation
 from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.beta.delegated_admin_relationship_operation import DelegatedAdminRelationshipOperation
 
 
 class ByDelegatedAdminRelationshipOperationIdRequest(BaseRequestBuilder):

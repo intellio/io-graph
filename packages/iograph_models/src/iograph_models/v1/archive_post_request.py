@@ -4,6 +4,6 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class ArchivePostRequest(BaseModel):
-	shouldSetSpoSiteReadOnlyForMembers: Optional[bool] = Field(alias="shouldSetSpoSiteReadOnlyForMembers",default=None,)
+	shouldSetSpoSiteReadOnlyForMembers: Optional[bool] = Field(alias="shouldSetSpoSiteReadOnlyForMembers", default=None,)
 
 

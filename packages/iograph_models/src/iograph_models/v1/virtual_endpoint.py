@@ -4,15 +4,15 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class VirtualEndpoint(BaseModel):
-	id: Optional[str] = Field(alias="id",default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
-	auditEvents: Optional[list[CloudPcAuditEvent]] = Field(alias="auditEvents",default=None,)
-	cloudPCs: Optional[list[CloudPC]] = Field(alias="cloudPCs",default=None,)
-	deviceImages: Optional[list[CloudPcDeviceImage]] = Field(alias="deviceImages",default=None,)
-	galleryImages: Optional[list[CloudPcGalleryImage]] = Field(alias="galleryImages",default=None,)
-	onPremisesConnections: Optional[list[CloudPcOnPremisesConnection]] = Field(alias="onPremisesConnections",default=None,)
-	provisioningPolicies: Optional[list[CloudPcProvisioningPolicy]] = Field(alias="provisioningPolicies",default=None,)
-	userSettings: Optional[list[CloudPcUserSetting]] = Field(alias="userSettings",default=None,)
+	id: Optional[str] = Field(alias="id", default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
+	auditEvents: Optional[list[CloudPcAuditEvent]] = Field(alias="auditEvents", default=None,)
+	cloudPCs: Optional[list[CloudPC]] = Field(alias="cloudPCs", default=None,)
+	deviceImages: Optional[list[CloudPcDeviceImage]] = Field(alias="deviceImages", default=None,)
+	galleryImages: Optional[list[CloudPcGalleryImage]] = Field(alias="galleryImages", default=None,)
+	onPremisesConnections: Optional[list[CloudPcOnPremisesConnection]] = Field(alias="onPremisesConnections", default=None,)
+	provisioningPolicies: Optional[list[CloudPcProvisioningPolicy]] = Field(alias="provisioningPolicies", default=None,)
+	userSettings: Optional[list[CloudPcUserSetting]] = Field(alias="userSettings", default=None,)
 
 from .cloud_pc_audit_event import CloudPcAuditEvent
 from .cloud_p_c import CloudPC

@@ -24,8 +24,8 @@ if TYPE_CHECKING:
 	from .default_mac_os_enrollment_profile import DefaultMacOsEnrollmentProfileRequest
 	from .default_ios_enrollment_profile import DefaultIosEnrollmentProfileRequest
 	from .....request_adapter import HttpxRequestAdapter
-from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.beta.dep_onboarding_setting import DepOnboardingSetting
+from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 
 
 class ByDepOnboardingSettingIdRequest(BaseRequestBuilder):

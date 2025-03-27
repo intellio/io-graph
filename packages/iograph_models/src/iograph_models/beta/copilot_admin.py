@@ -4,9 +4,9 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class CopilotAdmin(BaseModel):
-	id: Optional[str] = Field(alias="id",default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
-	settings: Optional[CopilotAdminSetting] = Field(alias="settings",default=None,)
+	id: Optional[str] = Field(alias="id", default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
+	settings: Optional[CopilotAdminSetting] = Field(alias="settings", default=None,)
 
 from .copilot_admin_setting import CopilotAdminSetting
 

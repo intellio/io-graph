@@ -5,9 +5,9 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class WindowsUpdatesKnownIssueHistoryItem(BaseModel):
-	body: Optional[WindowsUpdatesItemBody] = Field(alias="body",default=None,)
-	createdDateTime: Optional[datetime] = Field(alias="createdDateTime",default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	body: Optional[WindowsUpdatesItemBody] = Field(alias="body", default=None,)
+	createdDateTime: Optional[datetime] = Field(alias="createdDateTime", default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
 
 from .windows_updates_item_body import WindowsUpdatesItemBody
 

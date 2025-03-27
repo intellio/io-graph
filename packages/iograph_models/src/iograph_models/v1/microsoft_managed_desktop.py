@@ -4,9 +4,9 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class MicrosoftManagedDesktop(BaseModel):
-	managedType: Optional[MicrosoftManagedDesktopType | str] = Field(alias="managedType",default=None,)
-	profile: Optional[str] = Field(alias="profile",default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	managedType: Optional[MicrosoftManagedDesktopType | str] = Field(alias="managedType", default=None,)
+	profile: Optional[str] = Field(alias="profile", default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
 
 from .microsoft_managed_desktop_type import MicrosoftManagedDesktopType
 

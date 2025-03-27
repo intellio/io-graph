@@ -4,8 +4,8 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class WorkbookSessionInfo(BaseModel):
-	id: Optional[str] = Field(alias="id",default=None,)
-	persistChanges: Optional[bool] = Field(alias="persistChanges",default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	id: Optional[str] = Field(alias="id", default=None,)
+	persistChanges: Optional[bool] = Field(alias="persistChanges", default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
 
 

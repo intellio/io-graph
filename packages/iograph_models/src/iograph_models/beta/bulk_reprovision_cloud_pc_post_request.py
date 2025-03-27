@@ -4,6 +4,6 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class Bulk_reprovision_cloud_pcPostRequest(BaseModel):
-	managedDeviceIds: Optional[list[str]] = Field(alias="managedDeviceIds",default=None,)
+	managedDeviceIds: Optional[list[str]] = Field(alias="managedDeviceIds", default=None,)
 
 

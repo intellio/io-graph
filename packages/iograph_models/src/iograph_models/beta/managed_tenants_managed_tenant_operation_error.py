@@ -7,9 +7,9 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class ManagedTenantsManagedTenantOperationError(BaseModel):
-	error: Optional[str] = Field(alias="error",default=None,)
-	tenantId: Optional[str] = Field(alias="tenantId",default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	error: Optional[str] = Field(alias="error", default=None,)
+	tenantId: Optional[str] = Field(alias="tenantId", default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
 
 	@model_validator(mode="wrap")
 	def convert_discriminator_class(cls, data: Any, handler: ModelWrapValidatorHandler[Self]) -> Self:

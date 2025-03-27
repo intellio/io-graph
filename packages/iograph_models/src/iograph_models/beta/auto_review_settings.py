@@ -4,7 +4,7 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class AutoReviewSettings(BaseModel):
-	notReviewedResult: Optional[str] = Field(alias="notReviewedResult",default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	notReviewedResult: Optional[str] = Field(alias="notReviewedResult", default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
 
 

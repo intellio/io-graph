@@ -4,6 +4,6 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class Force_deletePostRequest(BaseModel):
-	disableUserAccounts: Optional[bool] = Field(alias="disableUserAccounts",default=None,)
+	disableUserAccounts: Optional[bool] = Field(alias="disableUserAccounts", default=None,)
 
 

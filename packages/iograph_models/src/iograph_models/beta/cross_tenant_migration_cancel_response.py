@@ -4,8 +4,8 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class CrossTenantMigrationCancelResponse(BaseModel):
-	message: Optional[str] = Field(alias="message",default=None,)
-	status: Optional[str] = Field(alias="status",default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	message: Optional[str] = Field(alias="message", default=None,)
+	status: Optional[str] = Field(alias="status", default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
 
 

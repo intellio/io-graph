@@ -1,13 +1,18 @@
 from __future__ import annotations
 from typing import Optional
+from typing import Union
+from typing import Literal
 from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class IdentityGovernanceTriggerAndScopeBasedConditions(BaseModel):
-	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
-	scope: SerializeAsAny[Optional[SubjectSet]] = Field(alias="scope",default=None,)
-	trigger: SerializeAsAny[Optional[IdentityGovernanceWorkflowExecutionTrigger]] = Field(alias="trigger",default=None,)
+	odata_type: Literal["#microsoft.graph.identityGovernance.triggerAndScopeBasedConditions"] = Field(alias="@odata.type", default="#microsoft.graph.identityGovernance.triggerAndScopeBasedConditions")
+	scope: Optional[Union[IdentityGovernanceGroupBasedSubjectSet, IdentityGovernanceRuleBasedSubjectSet]] = Field(alias="scope", default=None,discriminator="odata_type", )
+	trigger: Optional[Union[IdentityGovernanceAttributeChangeTrigger, IdentityGovernanceMembershipChangeTrigger, IdentityGovernanceTimeBasedAttributeTrigger]] = Field(alias="trigger", default=None,discriminator="odata_type", )
 
-from .subject_set import SubjectSet
-from .identity_governance_workflow_execution_trigger import IdentityGovernanceWorkflowExecutionTrigger
+from .identity_governance_group_based_subject_set import IdentityGovernanceGroupBasedSubjectSet
+from .identity_governance_rule_based_subject_set import IdentityGovernanceRuleBasedSubjectSet
+from .identity_governance_attribute_change_trigger import IdentityGovernanceAttributeChangeTrigger
+from .identity_governance_membership_change_trigger import IdentityGovernanceMembershipChangeTrigger
+from .identity_governance_time_based_attribute_trigger import IdentityGovernanceTimeBasedAttributeTrigger
 

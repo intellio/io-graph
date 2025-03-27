@@ -5,8 +5,8 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class TimePeriod(BaseModel):
-	endDateTime: Optional[datetime] = Field(alias="endDateTime",default=None,)
-	startDateTime: Optional[datetime] = Field(alias="startDateTime",default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	endDateTime: Optional[datetime] = Field(alias="endDateTime", default=None,)
+	startDateTime: Optional[datetime] = Field(alias="startDateTime", default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
 
 

@@ -14,8 +14,8 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_device_custom_attribute_shell_script_id import ByDeviceCustomAttributeShellScriptIdRequest
 	from ....request_adapter import HttpxRequestAdapter
-from iograph_models.beta.device_custom_attribute_shell_script import DeviceCustomAttributeShellScript
 from iograph_models.beta.device_custom_attribute_shell_script_collection_response import DeviceCustomAttributeShellScriptCollectionResponse
+from iograph_models.beta.device_custom_attribute_shell_script import DeviceCustomAttributeShellScript
 from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 
 

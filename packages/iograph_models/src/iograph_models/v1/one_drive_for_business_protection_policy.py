@@ -1,24 +1,34 @@
 from __future__ import annotations
 from typing import Optional
+from typing import Union
+from typing import Literal
 from datetime import datetime
 from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class OneDriveForBusinessProtectionPolicy(BaseModel):
-	id: Optional[str] = Field(alias="id",default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
-	createdBy: SerializeAsAny[Optional[IdentitySet]] = Field(alias="createdBy",default=None,)
-	createdDateTime: Optional[datetime] = Field(alias="createdDateTime",default=None,)
-	displayName: Optional[str] = Field(alias="displayName",default=None,)
-	lastModifiedBy: SerializeAsAny[Optional[IdentitySet]] = Field(alias="lastModifiedBy",default=None,)
-	lastModifiedDateTime: Optional[datetime] = Field(alias="lastModifiedDateTime",default=None,)
-	retentionSettings: Optional[list[RetentionSetting]] = Field(alias="retentionSettings",default=None,)
-	status: Optional[ProtectionPolicyStatus | str] = Field(alias="status",default=None,)
-	driveInclusionRules: Optional[list[DriveProtectionRule]] = Field(alias="driveInclusionRules",default=None,)
-	driveProtectionUnits: Optional[list[DriveProtectionUnit]] = Field(alias="driveProtectionUnits",default=None,)
+	id: Optional[str] = Field(alias="id", default=None,)
+	odata_type: Literal["#microsoft.graph.oneDriveForBusinessProtectionPolicy"] = Field(alias="@odata.type", default="#microsoft.graph.oneDriveForBusinessProtectionPolicy")
+	createdBy: Optional[Union[ChatMessageFromIdentitySet, ChatMessageMentionedIdentitySet, ChatMessageReactionIdentitySet, CommunicationsIdentitySet, SharePointIdentitySet]] = Field(alias="createdBy", default=None,discriminator="odata_type", )
+	createdDateTime: Optional[datetime] = Field(alias="createdDateTime", default=None,)
+	displayName: Optional[str] = Field(alias="displayName", default=None,)
+	lastModifiedBy: Optional[Union[ChatMessageFromIdentitySet, ChatMessageMentionedIdentitySet, ChatMessageReactionIdentitySet, CommunicationsIdentitySet, SharePointIdentitySet]] = Field(alias="lastModifiedBy", default=None,discriminator="odata_type", )
+	lastModifiedDateTime: Optional[datetime] = Field(alias="lastModifiedDateTime", default=None,)
+	retentionSettings: Optional[list[RetentionSetting]] = Field(alias="retentionSettings", default=None,)
+	status: Optional[ProtectionPolicyStatus | str] = Field(alias="status", default=None,)
+	driveInclusionRules: Optional[list[DriveProtectionRule]] = Field(alias="driveInclusionRules", default=None,)
+	driveProtectionUnits: Optional[list[DriveProtectionUnit]] = Field(alias="driveProtectionUnits", default=None,)
 
-from .identity_set import IdentitySet
-from .identity_set import IdentitySet
+from .chat_message_from_identity_set import ChatMessageFromIdentitySet
+from .chat_message_mentioned_identity_set import ChatMessageMentionedIdentitySet
+from .chat_message_reaction_identity_set import ChatMessageReactionIdentitySet
+from .communications_identity_set import CommunicationsIdentitySet
+from .share_point_identity_set import SharePointIdentitySet
+from .chat_message_from_identity_set import ChatMessageFromIdentitySet
+from .chat_message_mentioned_identity_set import ChatMessageMentionedIdentitySet
+from .chat_message_reaction_identity_set import ChatMessageReactionIdentitySet
+from .communications_identity_set import CommunicationsIdentitySet
+from .share_point_identity_set import SharePointIdentitySet
 from .retention_setting import RetentionSetting
 from .protection_policy_status import ProtectionPolicyStatus
 from .drive_protection_rule import DriveProtectionRule

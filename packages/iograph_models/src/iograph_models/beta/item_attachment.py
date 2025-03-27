@@ -1,18 +1,30 @@
 from __future__ import annotations
 from typing import Optional
+from typing import Union
+from typing import Literal
 from datetime import datetime
 from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class ItemAttachment(BaseModel):
-	id: Optional[str] = Field(alias="id",default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
-	contentType: Optional[str] = Field(alias="contentType",default=None,)
-	isInline: Optional[bool] = Field(alias="isInline",default=None,)
-	lastModifiedDateTime: Optional[datetime] = Field(alias="lastModifiedDateTime",default=None,)
-	name: Optional[str] = Field(alias="name",default=None,)
-	size: Optional[int] = Field(alias="size",default=None,)
-	item: SerializeAsAny[Optional[OutlookItem]] = Field(alias="item",default=None,)
+	id: Optional[str] = Field(alias="id", default=None,)
+	odata_type: Literal["#microsoft.graph.itemAttachment"] = Field(alias="@odata.type", default="#microsoft.graph.itemAttachment")
+	contentType: Optional[str] = Field(alias="contentType", default=None,)
+	isInline: Optional[bool] = Field(alias="isInline", default=None,)
+	lastModifiedDateTime: Optional[datetime] = Field(alias="lastModifiedDateTime", default=None,)
+	name: Optional[str] = Field(alias="name", default=None,)
+	size: Optional[int] = Field(alias="size", default=None,)
+	item: Optional[Union[Contact, Event, MailboxItem, Message, CalendarSharingMessage, EventMessage, EventMessageRequest, EventMessageResponse, Note, OutlookTask, Post]] = Field(alias="item", default=None,discriminator="odata_type", )
 
-from .outlook_item import OutlookItem
+from .contact import Contact
+from .event import Event
+from .mailbox_item import MailboxItem
+from .message import Message
+from .calendar_sharing_message import CalendarSharingMessage
+from .event_message import EventMessage
+from .event_message_request import EventMessageRequest
+from .event_message_response import EventMessageResponse
+from .note import Note
+from .outlook_task import OutlookTask
+from .post import Post
 

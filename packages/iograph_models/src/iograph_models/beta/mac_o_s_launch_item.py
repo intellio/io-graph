@@ -4,8 +4,8 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class MacOSLaunchItem(BaseModel):
-	hide: Optional[bool] = Field(alias="hide",default=None,)
-	path: Optional[str] = Field(alias="path",default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	hide: Optional[bool] = Field(alias="hide", default=None,)
+	path: Optional[str] = Field(alias="path", default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
 
 

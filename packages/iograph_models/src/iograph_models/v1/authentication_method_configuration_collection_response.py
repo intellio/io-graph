@@ -1,12 +1,21 @@
 from __future__ import annotations
 from typing import Optional
+from typing import Union
+from typing import Annotated
 from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class AuthenticationMethodConfigurationCollectionResponse(BaseModel):
-	odata_count: Optional[int] = Field(alias="@odata.count",default=None,)
-	odata_nextLink: Optional[str] = Field(alias="@odata.nextLink",default=None,)
-	value: SerializeAsAny[Optional[list[AuthenticationMethodConfiguration]]] = Field(alias="value",default=None,)
+	odata_count: Optional[int] = Field(alias="@odata.count", default=None,)
+	odata_nextLink: Optional[str] = Field(alias="@odata.nextLink", default=None,)
+	value: Optional[list[Annotated[Union[EmailAuthenticationMethodConfiguration, Fido2AuthenticationMethodConfiguration, MicrosoftAuthenticatorAuthenticationMethodConfiguration, SmsAuthenticationMethodConfiguration, SoftwareOathAuthenticationMethodConfiguration, TemporaryAccessPassAuthenticationMethodConfiguration, VoiceAuthenticationMethodConfiguration, X509CertificateAuthenticationMethodConfiguration]],Field(discriminator="odata_type")]]] = Field(alias="value", default=None,)
 
-from .authentication_method_configuration import AuthenticationMethodConfiguration
+from .email_authentication_method_configuration import EmailAuthenticationMethodConfiguration
+from .fido2_authentication_method_configuration import Fido2AuthenticationMethodConfiguration
+from .microsoft_authenticator_authentication_method_configuration import MicrosoftAuthenticatorAuthenticationMethodConfiguration
+from .sms_authentication_method_configuration import SmsAuthenticationMethodConfiguration
+from .software_oath_authentication_method_configuration import SoftwareOathAuthenticationMethodConfiguration
+from .temporary_access_pass_authentication_method_configuration import TemporaryAccessPassAuthenticationMethodConfiguration
+from .voice_authentication_method_configuration import VoiceAuthenticationMethodConfiguration
+from .x509_certificate_authentication_method_configuration import X509CertificateAuthenticationMethodConfiguration
 

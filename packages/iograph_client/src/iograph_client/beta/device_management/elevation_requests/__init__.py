@@ -15,8 +15,8 @@ if TYPE_CHECKING:
 	from .by_privilege_management_elevation_request_id import ByPrivilegeManagementElevationRequestIdRequest
 	from ....request_adapter import HttpxRequestAdapter
 from iograph_models.beta.privilege_management_elevation_request_collection_response import PrivilegeManagementElevationRequestCollectionResponse
-from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.beta.privilege_management_elevation_request import PrivilegeManagementElevationRequest
+from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 
 
 class ElevationRequestsRequest(BaseRequestBuilder):

@@ -4,9 +4,9 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class Get_all_managed_device_windows_o_s_imagesGetResponse(BaseModel):
-	odata_count: Optional[int] = Field(alias="@odata.count",default=None,)
-	odata_nextLink: Optional[str] = Field(alias="@odata.nextLink",default=None,)
-	value: Optional[list[ManagedDeviceWindowsOperatingSystemImage]] = Field(alias="value",default=None,)
+	odata_count: Optional[int] = Field(alias="@odata.count", default=None,)
+	odata_nextLink: Optional[str] = Field(alias="@odata.nextLink", default=None,)
+	value: Optional[list[ManagedDeviceWindowsOperatingSystemImage]] = Field(alias="value", default=None,)
 
 from .managed_device_windows_operating_system_image import ManagedDeviceWindowsOperatingSystemImage
 

@@ -21,8 +21,8 @@ if TYPE_CHECKING:
 	from .security_activate import SecurityActivateRequest
 	from .last_index_operation import LastIndexOperationRequest
 	from ........request_adapter import HttpxRequestAdapter
-from iograph_models.v1.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.v1.security_ediscovery_custodian import SecurityEdiscoveryCustodian
+from iograph_models.v1.o_data_errors__o_data_error import ODataErrorsODataError
 
 
 class ByEdiscoveryCustodianIdRequest(BaseRequestBuilder):

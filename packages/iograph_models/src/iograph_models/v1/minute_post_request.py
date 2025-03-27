@@ -4,6 +4,6 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class MinutePostRequest(BaseModel):
-	serialNumber: Optional[str] = Field(alias="serialNumber",default=None,)
+	serialNumber: Optional[str] = Field(alias="serialNumber", default=None,)
 
 

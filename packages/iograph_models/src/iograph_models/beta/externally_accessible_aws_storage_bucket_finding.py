@@ -1,18 +1,22 @@
 from __future__ import annotations
 from typing import Optional
+from typing import Union
 from datetime import datetime
 from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class ExternallyAccessibleAwsStorageBucketFinding(BaseModel):
-	id: Optional[str] = Field(alias="id",default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
-	createdDateTime: Optional[datetime] = Field(alias="createdDateTime",default=None,)
-	accessibility: Optional[AwsAccessType | str] = Field(alias="accessibility",default=None,)
-	accountsWithAccess: SerializeAsAny[Optional[AccountsWithAccess]] = Field(alias="accountsWithAccess",default=None,)
-	storageBucket: SerializeAsAny[Optional[AuthorizationSystemResource]] = Field(alias="storageBucket",default=None,)
+	id: Optional[str] = Field(alias="id", default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
+	createdDateTime: Optional[datetime] = Field(alias="createdDateTime", default=None,)
+	accessibility: Optional[AwsAccessType | str] = Field(alias="accessibility", default=None,)
+	accountsWithAccess: Optional[Union[AllAccountsWithAccess, EnumeratedAccountsWithAccess]] = Field(alias="accountsWithAccess", default=None,discriminator="odata_type", )
+	storageBucket: Optional[Union[AwsAuthorizationSystemResource, AzureAuthorizationSystemResource, GcpAuthorizationSystemResource]] = Field(alias="storageBucket", default=None,discriminator="odata_type", )
 
 from .aws_access_type import AwsAccessType
-from .accounts_with_access import AccountsWithAccess
-from .authorization_system_resource import AuthorizationSystemResource
+from .all_accounts_with_access import AllAccountsWithAccess
+from .enumerated_accounts_with_access import EnumeratedAccountsWithAccess
+from .aws_authorization_system_resource import AwsAuthorizationSystemResource
+from .azure_authorization_system_resource import AzureAuthorizationSystemResource
+from .gcp_authorization_system_resource import GcpAuthorizationSystemResource
 

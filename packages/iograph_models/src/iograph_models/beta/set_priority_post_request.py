@@ -4,6 +4,6 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class Set_priorityPostRequest(BaseModel):
-	priority: Optional[int] = Field(alias="priority",default=None,)
+	priority: Optional[int] = Field(alias="priority", default=None,)
 
 

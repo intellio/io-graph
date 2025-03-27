@@ -5,23 +5,23 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class ManagedTenantsDeviceHealthStatus(BaseModel):
-	id: Optional[str] = Field(alias="id",default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
-	blueScreenCount: Optional[int] = Field(alias="blueScreenCount",default=None,)
+	id: Optional[str] = Field(alias="id", default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
+	blueScreenCount: Optional[int] = Field(alias="blueScreenCount", default=None,)
 	bootTotalDurationInSeconds: float | str | ReferenceNumeric
-	deviceId: Optional[str] = Field(alias="deviceId",default=None,)
-	deviceMake: Optional[str] = Field(alias="deviceMake",default=None,)
-	deviceModel: Optional[str] = Field(alias="deviceModel",default=None,)
-	deviceName: Optional[str] = Field(alias="deviceName",default=None,)
-	healthStatus: Optional[str] = Field(alias="healthStatus",default=None,)
-	lastUpdatedDateTime: Optional[datetime] = Field(alias="lastUpdatedDateTime",default=None,)
-	osVersion: Optional[str] = Field(alias="osVersion",default=None,)
-	primaryDiskType: Optional[str] = Field(alias="primaryDiskType",default=None,)
-	restartCount: Optional[int] = Field(alias="restartCount",default=None,)
+	deviceId: Optional[str] = Field(alias="deviceId", default=None,)
+	deviceMake: Optional[str] = Field(alias="deviceMake", default=None,)
+	deviceModel: Optional[str] = Field(alias="deviceModel", default=None,)
+	deviceName: Optional[str] = Field(alias="deviceName", default=None,)
+	healthStatus: Optional[str] = Field(alias="healthStatus", default=None,)
+	lastUpdatedDateTime: Optional[datetime] = Field(alias="lastUpdatedDateTime", default=None,)
+	osVersion: Optional[str] = Field(alias="osVersion", default=None,)
+	primaryDiskType: Optional[str] = Field(alias="primaryDiskType", default=None,)
+	restartCount: Optional[int] = Field(alias="restartCount", default=None,)
 	startupPerformanceScore: float | str | ReferenceNumeric
-	tenantDisplayName: Optional[str] = Field(alias="tenantDisplayName",default=None,)
-	tenantId: Optional[str] = Field(alias="tenantId",default=None,)
-	topProcesses: Optional[str] = Field(alias="topProcesses",default=None,)
+	tenantDisplayName: Optional[str] = Field(alias="tenantDisplayName", default=None,)
+	tenantId: Optional[str] = Field(alias="tenantId", default=None,)
+	topProcesses: Optional[str] = Field(alias="topProcesses", default=None,)
 
 from .reference_numeric import ReferenceNumeric
 from .reference_numeric import ReferenceNumeric

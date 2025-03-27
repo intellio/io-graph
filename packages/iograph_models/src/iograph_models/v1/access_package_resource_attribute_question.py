@@ -1,11 +1,14 @@
 from __future__ import annotations
 from typing import Optional
+from typing import Union
+from typing import Literal
 from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class AccessPackageResourceAttributeQuestion(BaseModel):
-	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
-	question: SerializeAsAny[Optional[AccessPackageQuestion]] = Field(alias="question",default=None,)
+	odata_type: Literal["#microsoft.graph.accessPackageResourceAttributeQuestion"] = Field(alias="@odata.type", default="#microsoft.graph.accessPackageResourceAttributeQuestion")
+	question: Optional[Union[AccessPackageMultipleChoiceQuestion, AccessPackageTextInputQuestion]] = Field(alias="question", default=None,discriminator="odata_type", )
 
-from .access_package_question import AccessPackageQuestion
+from .access_package_multiple_choice_question import AccessPackageMultipleChoiceQuestion
+from .access_package_text_input_question import AccessPackageTextInputQuestion
 

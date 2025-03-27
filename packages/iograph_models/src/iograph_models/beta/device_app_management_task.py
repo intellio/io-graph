@@ -8,18 +8,18 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class DeviceAppManagementTask(BaseModel):
-	id: Optional[str] = Field(alias="id",default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
-	assignedTo: Optional[str] = Field(alias="assignedTo",default=None,)
-	category: Optional[DeviceAppManagementTaskCategory | str] = Field(alias="category",default=None,)
-	createdDateTime: Optional[datetime] = Field(alias="createdDateTime",default=None,)
-	creator: Optional[str] = Field(alias="creator",default=None,)
-	creatorNotes: Optional[str] = Field(alias="creatorNotes",default=None,)
-	description: Optional[str] = Field(alias="description",default=None,)
-	displayName: Optional[str] = Field(alias="displayName",default=None,)
-	dueDateTime: Optional[datetime] = Field(alias="dueDateTime",default=None,)
-	priority: Optional[DeviceAppManagementTaskPriority | str] = Field(alias="priority",default=None,)
-	status: Optional[DeviceAppManagementTaskStatus | str] = Field(alias="status",default=None,)
+	id: Optional[str] = Field(alias="id", default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
+	assignedTo: Optional[str] = Field(alias="assignedTo", default=None,)
+	category: Optional[DeviceAppManagementTaskCategory | str] = Field(alias="category", default=None,)
+	createdDateTime: Optional[datetime] = Field(alias="createdDateTime", default=None,)
+	creator: Optional[str] = Field(alias="creator", default=None,)
+	creatorNotes: Optional[str] = Field(alias="creatorNotes", default=None,)
+	description: Optional[str] = Field(alias="description", default=None,)
+	displayName: Optional[str] = Field(alias="displayName", default=None,)
+	dueDateTime: Optional[datetime] = Field(alias="dueDateTime", default=None,)
+	priority: Optional[DeviceAppManagementTaskPriority | str] = Field(alias="priority", default=None,)
+	status: Optional[DeviceAppManagementTaskStatus | str] = Field(alias="status", default=None,)
 
 	@model_validator(mode="wrap")
 	def convert_discriminator_class(cls, data: Any, handler: ModelWrapValidatorHandler[Self]) -> Self:

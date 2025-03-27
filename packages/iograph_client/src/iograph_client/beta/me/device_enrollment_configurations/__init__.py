@@ -16,9 +16,9 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_device_enrollment_configuration_id import ByDeviceEnrollmentConfigurationIdRequest
 	from ....request_adapter import HttpxRequestAdapter
+from iograph_models.beta.device_enrollment_configuration_collection_response import DeviceEnrollmentConfigurationCollectionResponse
 from iograph_models.beta.device_enrollment_configuration import DeviceEnrollmentConfiguration
 from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
-from iograph_models.beta.device_enrollment_configuration_collection_response import DeviceEnrollmentConfigurationCollectionResponse
 
 
 class DeviceEnrollmentConfigurationsRequest(BaseRequestBuilder):

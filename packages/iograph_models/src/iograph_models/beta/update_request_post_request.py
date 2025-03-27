@@ -4,10 +4,10 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class Update_requestPostRequest(BaseModel):
-	decision: Optional[str] = Field(alias="decision",default=None,)
-	assignmentState: Optional[str] = Field(alias="assignmentState",default=None,)
-	schedule: Optional[GovernanceSchedule] = Field(alias="schedule",default=None,)
-	reason: Optional[str] = Field(alias="reason",default=None,)
+	decision: Optional[str] = Field(alias="decision", default=None,)
+	assignmentState: Optional[str] = Field(alias="assignmentState", default=None,)
+	schedule: Optional[GovernanceSchedule] = Field(alias="schedule", default=None,)
+	reason: Optional[str] = Field(alias="reason", default=None,)
 
 from .governance_schedule import GovernanceSchedule
 

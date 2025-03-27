@@ -4,7 +4,7 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class Migrate_to_templatePostRequest(BaseModel):
-	newTemplateId: Optional[str] = Field(alias="newTemplateId",default=None,)
-	preserveCustomValues: Optional[bool] = Field(alias="preserveCustomValues",default=None,)
+	newTemplateId: Optional[str] = Field(alias="newTemplateId", default=None,)
+	preserveCustomValues: Optional[bool] = Field(alias="preserveCustomValues", default=None,)
 
 

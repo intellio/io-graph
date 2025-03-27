@@ -4,8 +4,8 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class SecuritySigningResult(BaseModel):
-	signature: Optional[str] = Field(alias="signature",default=None,)
-	signingKeyId: Optional[str] = Field(alias="signingKeyId",default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	signature: Optional[str] = Field(alias="signature", default=None,)
+	signingKeyId: Optional[str] = Field(alias="signingKeyId", default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
 
 

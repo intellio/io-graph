@@ -11,9 +11,9 @@ from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:
 	from ......request_adapter import HttpxRequestAdapter
-from iograph_models.beta.start_recording_operation import StartRecordingOperation
-from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.beta.start_recording_post_request import Start_recordingPostRequest
+from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.beta.start_recording_operation import StartRecordingOperation
 
 
 class StartRecordingRequest(BaseRequestBuilder):

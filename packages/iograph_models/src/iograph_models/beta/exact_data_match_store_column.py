@@ -4,10 +4,10 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class ExactDataMatchStoreColumn(BaseModel):
-	ignoredDelimiters: Optional[list[str]] = Field(alias="ignoredDelimiters",default=None,)
-	isCaseInsensitive: Optional[bool] = Field(alias="isCaseInsensitive",default=None,)
-	isSearchable: Optional[bool] = Field(alias="isSearchable",default=None,)
-	name: Optional[str] = Field(alias="name",default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	ignoredDelimiters: Optional[list[str]] = Field(alias="ignoredDelimiters", default=None,)
+	isCaseInsensitive: Optional[bool] = Field(alias="isCaseInsensitive", default=None,)
+	isSearchable: Optional[bool] = Field(alias="isSearchable", default=None,)
+	name: Optional[str] = Field(alias="name", default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
 
 

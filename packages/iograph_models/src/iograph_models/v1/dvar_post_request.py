@@ -4,8 +4,8 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class DvarPostRequest(BaseModel):
-	database: Optional[str] = Field(alias="database",default=None,)
-	field: Optional[str] = Field(alias="field",default=None,)
-	criteria: Optional[str] = Field(alias="criteria",default=None,)
+	database: Optional[str] = Field(alias="database", default=None,)
+	field: Optional[str] = Field(alias="field", default=None,)
+	criteria: Optional[str] = Field(alias="criteria", default=None,)
 
 

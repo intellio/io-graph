@@ -4,8 +4,8 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class PrivacyProfile(BaseModel):
-	contactEmail: Optional[str] = Field(alias="contactEmail",default=None,)
-	statementUrl: Optional[str] = Field(alias="statementUrl",default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	contactEmail: Optional[str] = Field(alias="contactEmail", default=None,)
+	statementUrl: Optional[str] = Field(alias="statementUrl", default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
 
 

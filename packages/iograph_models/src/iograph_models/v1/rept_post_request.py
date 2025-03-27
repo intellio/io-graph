@@ -4,7 +4,7 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class ReptPostRequest(BaseModel):
-	text: Optional[str] = Field(alias="text",default=None,)
-	numberTimes: Optional[str] = Field(alias="numberTimes",default=None,)
+	text: Optional[str] = Field(alias="text", default=None,)
+	numberTimes: Optional[str] = Field(alias="numberTimes", default=None,)
 
 

@@ -8,11 +8,11 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class ExternalConnectorsExternalActivity(BaseModel):
-	id: Optional[str] = Field(alias="id",default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
-	startDateTime: Optional[datetime] = Field(alias="startDateTime",default=None,)
-	type: Optional[ExternalConnectorsExternalActivityType | str] = Field(alias="type",default=None,)
-	performedBy: Optional[ExternalConnectorsIdentity] = Field(alias="performedBy",default=None,)
+	id: Optional[str] = Field(alias="id", default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
+	startDateTime: Optional[datetime] = Field(alias="startDateTime", default=None,)
+	type: Optional[ExternalConnectorsExternalActivityType | str] = Field(alias="type", default=None,)
+	performedBy: Optional[ExternalConnectorsIdentity] = Field(alias="performedBy", default=None,)
 
 	@model_validator(mode="wrap")
 	def convert_discriminator_class(cls, data: Any, handler: ModelWrapValidatorHandler[Self]) -> Self:

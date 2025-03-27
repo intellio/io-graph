@@ -14,9 +14,9 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_skill_proficiency_id import BySkillProficiencyIdRequest
 	from .....request_adapter import HttpxRequestAdapter
-from iograph_models.beta.skill_proficiency_collection_response import SkillProficiencyCollectionResponse
 from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.beta.skill_proficiency import SkillProficiency
+from iograph_models.beta.skill_proficiency_collection_response import SkillProficiencyCollectionResponse
 
 
 class SkillsRequest(BaseRequestBuilder):

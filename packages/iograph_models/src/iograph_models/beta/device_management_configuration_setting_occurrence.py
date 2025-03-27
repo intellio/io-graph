@@ -4,8 +4,8 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class DeviceManagementConfigurationSettingOccurrence(BaseModel):
-	maxDeviceOccurrence: Optional[int] = Field(alias="maxDeviceOccurrence",default=None,)
-	minDeviceOccurrence: Optional[int] = Field(alias="minDeviceOccurrence",default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	maxDeviceOccurrence: Optional[int] = Field(alias="maxDeviceOccurrence", default=None,)
+	minDeviceOccurrence: Optional[int] = Field(alias="minDeviceOccurrence", default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
 
 

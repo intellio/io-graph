@@ -14,8 +14,8 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_general_ledger_entry_id import ByGeneralLedgerEntryIdRequest
 	from ......request_adapter import HttpxRequestAdapter
-from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.beta.general_ledger_entry_collection_response import GeneralLedgerEntryCollectionResponse
+from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 
 
 class GeneralLedgerEntriesRequest(BaseRequestBuilder):

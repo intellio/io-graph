@@ -4,7 +4,7 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class ModPostRequest(BaseModel):
-	number: Optional[str] = Field(alias="number",default=None,)
-	divisor: Optional[str] = Field(alias="divisor",default=None,)
+	number: Optional[str] = Field(alias="number", default=None,)
+	divisor: Optional[str] = Field(alias="divisor", default=None,)
 
 

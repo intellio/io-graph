@@ -4,6 +4,6 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class Pause_configuration_refreshPostRequest(BaseModel):
-	pauseTimePeriodInMinutes: Optional[int] = Field(alias="pauseTimePeriodInMinutes",default=None,)
+	pauseTimePeriodInMinutes: Optional[int] = Field(alias="pauseTimePeriodInMinutes", default=None,)
 
 

@@ -18,8 +18,8 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_contract_id import ByContractIdRequest
 	from ...request_adapter import HttpxRequestAdapter
-from iograph_models.beta.contract import Contract
 from iograph_models.beta.contract_collection_response import ContractCollectionResponse
+from iograph_models.beta.contract import Contract
 from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 
 

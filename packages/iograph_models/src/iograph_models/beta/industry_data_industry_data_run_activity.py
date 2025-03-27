@@ -1,5 +1,6 @@
 from __future__ import annotations
 from typing import Optional
+from typing import Union
 from pydantic import model_validator, ModelWrapValidatorHandler, ValidationError
 from typing_extensions import Self
 from typing import Any
@@ -7,12 +8,12 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class IndustryDataIndustryDataRunActivity(BaseModel):
-	id: Optional[str] = Field(alias="id",default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
-	blockingError: Optional[PublicError] = Field(alias="blockingError",default=None,)
-	displayName: Optional[str] = Field(alias="displayName",default=None,)
-	status: Optional[IndustryDataIndustryDataActivityStatus | str] = Field(alias="status",default=None,)
-	activity: SerializeAsAny[Optional[IndustryDataIndustryDataActivity]] = Field(alias="activity",default=None,)
+	id: Optional[str] = Field(alias="id", default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
+	blockingError: Optional[PublicError] = Field(alias="blockingError", default=None,)
+	displayName: Optional[str] = Field(alias="displayName", default=None,)
+	status: Optional[IndustryDataIndustryDataActivityStatus | str] = Field(alias="status", default=None,)
+	activity: Optional[Union[IndustryDataInboundFlow, IndustryDataInboundApiFlow, IndustryDataInboundFileFlow]] = Field(alias="activity", default=None,discriminator="odata_type", )
 
 	@model_validator(mode="wrap")
 	def convert_discriminator_class(cls, data: Any, handler: ModelWrapValidatorHandler[Self]) -> Self:
@@ -37,5 +38,7 @@ class IndustryDataIndustryDataRunActivity(BaseModel):
 
 from .public_error import PublicError
 from .industry_data_industry_data_activity_status import IndustryDataIndustryDataActivityStatus
-from .industry_data_industry_data_activity import IndustryDataIndustryDataActivity
+from .industry_data_inbound_flow import IndustryDataInboundFlow
+from .industry_data_inbound_api_flow import IndustryDataInboundApiFlow
+from .industry_data_inbound_file_flow import IndustryDataInboundFileFlow
 

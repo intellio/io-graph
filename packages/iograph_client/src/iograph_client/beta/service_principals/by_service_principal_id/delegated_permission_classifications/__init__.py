@@ -14,9 +14,9 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_delegated_permission_classification_id import ByDelegatedPermissionClassificationIdRequest
 	from .....request_adapter import HttpxRequestAdapter
+from iograph_models.beta.delegated_permission_classification import DelegatedPermissionClassification
 from iograph_models.beta.delegated_permission_classification_collection_response import DelegatedPermissionClassificationCollectionResponse
 from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
-from iograph_models.beta.delegated_permission_classification import DelegatedPermissionClassification
 
 
 class DelegatedPermissionClassificationsRequest(BaseRequestBuilder):

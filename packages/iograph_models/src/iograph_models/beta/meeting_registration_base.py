@@ -1,5 +1,7 @@
 from __future__ import annotations
 from typing import Optional
+from typing import Union
+from typing import Annotated
 from pydantic import model_validator, ModelWrapValidatorHandler, ValidationError
 from typing_extensions import Self
 from typing import Any
@@ -7,10 +9,10 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class MeetingRegistrationBase(BaseModel):
-	id: Optional[str] = Field(alias="id",default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
-	allowedRegistrant: Optional[MeetingAudience | str] = Field(alias="allowedRegistrant",default=None,)
-	registrants: SerializeAsAny[Optional[list[MeetingRegistrantBase]]] = Field(alias="registrants",default=None,)
+	id: Optional[str] = Field(alias="id", default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
+	allowedRegistrant: Optional[MeetingAudience | str] = Field(alias="allowedRegistrant", default=None,)
+	registrants: Optional[list[Annotated[Union[ExternalMeetingRegistrant, MeetingRegistrant]],Field(discriminator="odata_type")]]] = Field(alias="registrants", default=None,)
 
 	@model_validator(mode="wrap")
 	def convert_discriminator_class(cls, data: Any, handler: ModelWrapValidatorHandler[Self]) -> Self:
@@ -34,5 +36,6 @@ class MeetingRegistrationBase(BaseModel):
 			raise e
 
 from .meeting_audience import MeetingAudience
-from .meeting_registrant_base import MeetingRegistrantBase
+from .external_meeting_registrant import ExternalMeetingRegistrant
+from .meeting_registrant import MeetingRegistrant
 

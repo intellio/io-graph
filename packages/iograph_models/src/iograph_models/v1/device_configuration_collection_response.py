@@ -1,12 +1,39 @@
 from __future__ import annotations
 from typing import Optional
+from typing import Union
+from typing import Annotated
 from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class DeviceConfigurationCollectionResponse(BaseModel):
-	odata_count: Optional[int] = Field(alias="@odata.count",default=None,)
-	odata_nextLink: Optional[str] = Field(alias="@odata.nextLink",default=None,)
-	value: SerializeAsAny[Optional[list[DeviceConfiguration]]] = Field(alias="value",default=None,)
+	odata_count: Optional[int] = Field(alias="@odata.count", default=None,)
+	odata_nextLink: Optional[str] = Field(alias="@odata.nextLink", default=None,)
+	value: Optional[list[Annotated[Union[AndroidCustomConfiguration, AndroidGeneralDeviceConfiguration, AndroidWorkProfileCustomConfiguration, AndroidWorkProfileGeneralDeviceConfiguration, AppleDeviceFeaturesConfigurationBase, IosDeviceFeaturesConfiguration, MacOSDeviceFeaturesConfiguration, EditionUpgradeConfiguration, IosCertificateProfile, IosCustomConfiguration, IosGeneralDeviceConfiguration, IosUpdateConfiguration, MacOSCustomConfiguration, MacOSGeneralDeviceConfiguration, SharedPCConfiguration, Windows10CustomConfiguration, Windows10EndpointProtectionConfiguration, Windows10EnterpriseModernAppManagementConfiguration, Windows10GeneralConfiguration, Windows10SecureAssessmentConfiguration, Windows10TeamGeneralConfiguration, Windows81GeneralConfiguration, WindowsDefenderAdvancedThreatProtectionConfiguration, WindowsPhone81CustomConfiguration, WindowsPhone81GeneralConfiguration, WindowsUpdateForBusinessConfiguration]],Field(discriminator="odata_type")]]] = Field(alias="value", default=None,)
 
-from .device_configuration import DeviceConfiguration
+from .android_custom_configuration import AndroidCustomConfiguration
+from .android_general_device_configuration import AndroidGeneralDeviceConfiguration
+from .android_work_profile_custom_configuration import AndroidWorkProfileCustomConfiguration
+from .android_work_profile_general_device_configuration import AndroidWorkProfileGeneralDeviceConfiguration
+from .apple_device_features_configuration_base import AppleDeviceFeaturesConfigurationBase
+from .ios_device_features_configuration import IosDeviceFeaturesConfiguration
+from .mac_o_s_device_features_configuration import MacOSDeviceFeaturesConfiguration
+from .edition_upgrade_configuration import EditionUpgradeConfiguration
+from .ios_certificate_profile import IosCertificateProfile
+from .ios_custom_configuration import IosCustomConfiguration
+from .ios_general_device_configuration import IosGeneralDeviceConfiguration
+from .ios_update_configuration import IosUpdateConfiguration
+from .mac_o_s_custom_configuration import MacOSCustomConfiguration
+from .mac_o_s_general_device_configuration import MacOSGeneralDeviceConfiguration
+from .shared_p_c_configuration import SharedPCConfiguration
+from .windows10_custom_configuration import Windows10CustomConfiguration
+from .windows10_endpoint_protection_configuration import Windows10EndpointProtectionConfiguration
+from .windows10_enterprise_modern_app_management_configuration import Windows10EnterpriseModernAppManagementConfiguration
+from .windows10_general_configuration import Windows10GeneralConfiguration
+from .windows10_secure_assessment_configuration import Windows10SecureAssessmentConfiguration
+from .windows10_team_general_configuration import Windows10TeamGeneralConfiguration
+from .windows81_general_configuration import Windows81GeneralConfiguration
+from .windows_defender_advanced_threat_protection_configuration import WindowsDefenderAdvancedThreatProtectionConfiguration
+from .windows_phone81_custom_configuration import WindowsPhone81CustomConfiguration
+from .windows_phone81_general_configuration import WindowsPhone81GeneralConfiguration
+from .windows_update_for_business_configuration import WindowsUpdateForBusinessConfiguration
 

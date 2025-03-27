@@ -8,12 +8,12 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class DetectedSensitiveContentBase(BaseModel):
-	confidence: Optional[int] = Field(alias="confidence",default=None,)
-	displayName: Optional[str] = Field(alias="displayName",default=None,)
-	id: Optional[UUID] = Field(alias="id",default=None,)
-	recommendedConfidence: Optional[int] = Field(alias="recommendedConfidence",default=None,)
-	uniqueCount: Optional[int] = Field(alias="uniqueCount",default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	confidence: Optional[int] = Field(alias="confidence", default=None,)
+	displayName: Optional[str] = Field(alias="displayName", default=None,)
+	id: Optional[UUID] = Field(alias="id", default=None,)
+	recommendedConfidence: Optional[int] = Field(alias="recommendedConfidence", default=None,)
+	uniqueCount: Optional[int] = Field(alias="uniqueCount", default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
 
 	@model_validator(mode="wrap")
 	def convert_discriminator_class(cls, data: Any, handler: ModelWrapValidatorHandler[Self]) -> Self:

@@ -14,9 +14,9 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_role_group_id import ByRoleGroupIdRequest
 	from .....request_adapter import HttpxRequestAdapter
-from iograph_models.beta.industry_data_role_group import IndustryDataRoleGroup
-from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.beta.industry_data_role_group_collection_response import IndustryDataRoleGroupCollectionResponse
+from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.beta.industry_data_role_group import IndustryDataRoleGroup
 
 
 class RoleGroupsRequest(BaseRequestBuilder):

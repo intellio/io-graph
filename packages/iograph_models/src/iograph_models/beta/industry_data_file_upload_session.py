@@ -5,10 +5,10 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class IndustryDataFileUploadSession(BaseModel):
-	containerExpirationDateTime: Optional[datetime] = Field(alias="containerExpirationDateTime",default=None,)
-	containerId: Optional[str] = Field(alias="containerId",default=None,)
-	sessionExpirationDateTime: Optional[datetime] = Field(alias="sessionExpirationDateTime",default=None,)
-	sessionUrl: Optional[str] = Field(alias="sessionUrl",default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	containerExpirationDateTime: Optional[datetime] = Field(alias="containerExpirationDateTime", default=None,)
+	containerId: Optional[str] = Field(alias="containerId", default=None,)
+	sessionExpirationDateTime: Optional[datetime] = Field(alias="sessionExpirationDateTime", default=None,)
+	sessionUrl: Optional[str] = Field(alias="sessionUrl", default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
 
 

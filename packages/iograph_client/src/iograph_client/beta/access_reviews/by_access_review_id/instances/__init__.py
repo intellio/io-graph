@@ -14,8 +14,8 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_access_review_id1 import ByAccessReviewId1Request
 	from .....request_adapter import HttpxRequestAdapter
-from iograph_models.beta.access_review import AccessReview
 from iograph_models.beta.access_review_collection_response import AccessReviewCollectionResponse
+from iograph_models.beta.access_review import AccessReview
 from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 
 

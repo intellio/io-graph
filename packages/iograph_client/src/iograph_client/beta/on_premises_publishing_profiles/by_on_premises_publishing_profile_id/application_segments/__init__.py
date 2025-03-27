@@ -14,8 +14,8 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_ip_application_segment_id import ByIpApplicationSegmentIdRequest
 	from .....request_adapter import HttpxRequestAdapter
-from iograph_models.beta.ip_application_segment_collection_response import IpApplicationSegmentCollectionResponse
 from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.beta.ip_application_segment_collection_response import IpApplicationSegmentCollectionResponse
 
 
 class ApplicationSegmentsRequest(BaseRequestBuilder):

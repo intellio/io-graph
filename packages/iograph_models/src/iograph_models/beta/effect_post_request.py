@@ -4,7 +4,7 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class EffectPostRequest(BaseModel):
-	nominalRate: Optional[str] = Field(alias="nominalRate",default=None,)
-	npery: Optional[str] = Field(alias="npery",default=None,)
+	nominalRate: Optional[str] = Field(alias="nominalRate", default=None,)
+	npery: Optional[str] = Field(alias="npery", default=None,)
 
 

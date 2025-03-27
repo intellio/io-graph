@@ -13,8 +13,8 @@ if TYPE_CHECKING:
 	from .tenants import TenantsRequest
 	from .join_request import JoinRequestRequest
 	from ....request_adapter import HttpxRequestAdapter
-from iograph_models.v1.multi_tenant_organization import MultiTenantOrganization
 from iograph_models.v1.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.v1.multi_tenant_organization import MultiTenantOrganization
 
 
 class MultiTenantOrganizationRequest(BaseRequestBuilder):

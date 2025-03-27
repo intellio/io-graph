@@ -1,11 +1,15 @@
 from __future__ import annotations
 from typing import Optional
+from typing import Union
 from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class Send_mailPostRequest(BaseModel):
-	Message: SerializeAsAny[Optional[Message]] = Field(alias="Message",default=None,)
-	SaveToSentItems: Optional[bool] = Field(alias="SaveToSentItems",default=None,)
+	Message: Optional[Union[CalendarSharingMessage, EventMessage, EventMessageRequest, EventMessageResponse]] = Field(alias="Message", default=None,discriminator="odata_type", )
+	SaveToSentItems: Optional[bool] = Field(alias="SaveToSentItems", default=None,)
 
-from .message import Message
+from .calendar_sharing_message import CalendarSharingMessage
+from .event_message import EventMessage
+from .event_message_request import EventMessageRequest
+from .event_message_response import EventMessageResponse
 

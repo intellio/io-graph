@@ -4,13 +4,13 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class FileEncryptionInfo(BaseModel):
-	encryptionKey: Optional[str] = Field(alias="encryptionKey",default=None,)
-	fileDigest: Optional[str] = Field(alias="fileDigest",default=None,)
-	fileDigestAlgorithm: Optional[str] = Field(alias="fileDigestAlgorithm",default=None,)
-	initializationVector: Optional[str] = Field(alias="initializationVector",default=None,)
-	mac: Optional[str] = Field(alias="mac",default=None,)
-	macKey: Optional[str] = Field(alias="macKey",default=None,)
-	profileIdentifier: Optional[str] = Field(alias="profileIdentifier",default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	encryptionKey: Optional[str] = Field(alias="encryptionKey", default=None,)
+	fileDigest: Optional[str] = Field(alias="fileDigest", default=None,)
+	fileDigestAlgorithm: Optional[str] = Field(alias="fileDigestAlgorithm", default=None,)
+	initializationVector: Optional[str] = Field(alias="initializationVector", default=None,)
+	mac: Optional[str] = Field(alias="mac", default=None,)
+	macKey: Optional[str] = Field(alias="macKey", default=None,)
+	profileIdentifier: Optional[str] = Field(alias="profileIdentifier", default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
 
 

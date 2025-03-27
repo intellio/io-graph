@@ -1,12 +1,15 @@
 from __future__ import annotations
 from typing import Optional
+from typing import Union
 from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class AzureADJoinPolicy(BaseModel):
-	allowedToJoin: SerializeAsAny[Optional[DeviceRegistrationMembership]] = Field(alias="allowedToJoin",default=None,)
-	isAdminConfigurable: Optional[bool] = Field(alias="isAdminConfigurable",default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	allowedToJoin: Optional[Union[AllDeviceRegistrationMembership, EnumeratedDeviceRegistrationMembership, NoDeviceRegistrationMembership]] = Field(alias="allowedToJoin", default=None,discriminator="odata_type", )
+	isAdminConfigurable: Optional[bool] = Field(alias="isAdminConfigurable", default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
 
-from .device_registration_membership import DeviceRegistrationMembership
+from .all_device_registration_membership import AllDeviceRegistrationMembership
+from .enumerated_device_registration_membership import EnumeratedDeviceRegistrationMembership
+from .no_device_registration_membership import NoDeviceRegistrationMembership
 

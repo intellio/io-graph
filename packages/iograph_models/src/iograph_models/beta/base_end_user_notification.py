@@ -7,9 +7,9 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class BaseEndUserNotification(BaseModel):
-	defaultLanguage: Optional[str] = Field(alias="defaultLanguage",default=None,)
-	endUserNotification: Optional[EndUserNotification] = Field(alias="endUserNotification",default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	defaultLanguage: Optional[str] = Field(alias="defaultLanguage", default=None,)
+	endUserNotification: Optional[EndUserNotification] = Field(alias="endUserNotification", default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
 
 	@model_validator(mode="wrap")
 	def convert_discriminator_class(cls, data: Any, handler: ModelWrapValidatorHandler[Self]) -> Self:

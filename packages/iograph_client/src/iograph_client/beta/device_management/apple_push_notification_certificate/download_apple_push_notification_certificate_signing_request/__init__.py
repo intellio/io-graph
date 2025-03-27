@@ -11,8 +11,8 @@ from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:
 	from .....request_adapter import HttpxRequestAdapter
-from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.beta.download_apple_push_notification_certificate_signing_request_get_response import Download_apple_push_notification_certificate_signing_requestGetResponse
+from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 
 
 class DownloadApplePushNotificationCertificateSigningRequestRequest(BaseRequestBuilder):

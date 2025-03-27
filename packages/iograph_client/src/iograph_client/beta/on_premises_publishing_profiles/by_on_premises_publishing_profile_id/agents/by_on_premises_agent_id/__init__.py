@@ -13,8 +13,8 @@ from typing import TYPE_CHECKING
 if TYPE_CHECKING:
 	from .agent_groups import AgentGroupsRequest
 	from ......request_adapter import HttpxRequestAdapter
-from iograph_models.beta.on_premises_agent import OnPremisesAgent
 from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.beta.on_premises_agent import OnPremisesAgent
 
 
 class ByOnPremisesAgentIdRequest(BaseRequestBuilder):

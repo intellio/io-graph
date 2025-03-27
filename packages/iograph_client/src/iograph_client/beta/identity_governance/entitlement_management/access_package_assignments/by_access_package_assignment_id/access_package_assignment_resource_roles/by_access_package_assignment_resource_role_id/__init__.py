@@ -16,8 +16,8 @@ if TYPE_CHECKING:
 	from .access_package_resource_role import AccessPackageResourceRoleRequest
 	from .access_package_assignments import AccessPackageAssignmentsRequest
 	from ........request_adapter import HttpxRequestAdapter
-from iograph_models.beta.access_package_assignment_resource_role import AccessPackageAssignmentResourceRole
 from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.beta.access_package_assignment_resource_role import AccessPackageAssignmentResourceRole
 
 
 class ByAccessPackageAssignmentResourceRoleIdRequest(BaseRequestBuilder):

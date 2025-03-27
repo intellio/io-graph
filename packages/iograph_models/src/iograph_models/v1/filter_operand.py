@@ -4,7 +4,7 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class FilterOperand(BaseModel):
-	values: Optional[list[str]] = Field(alias="values",default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	values: Optional[list[str]] = Field(alias="values", default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
 
 

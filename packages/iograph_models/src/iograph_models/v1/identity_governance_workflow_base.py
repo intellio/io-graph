@@ -1,5 +1,6 @@
 from __future__ import annotations
 from typing import Optional
+from typing import Union
 from pydantic import model_validator, ModelWrapValidatorHandler, ValidationError
 from typing_extensions import Self
 from typing import Any
@@ -8,18 +9,18 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class IdentityGovernanceWorkflowBase(BaseModel):
-	category: Optional[IdentityGovernanceLifecycleWorkflowCategory | str] = Field(alias="category",default=None,)
-	createdDateTime: Optional[datetime] = Field(alias="createdDateTime",default=None,)
-	description: Optional[str] = Field(alias="description",default=None,)
-	displayName: Optional[str] = Field(alias="displayName",default=None,)
-	executionConditions: SerializeAsAny[Optional[IdentityGovernanceWorkflowExecutionConditions]] = Field(alias="executionConditions",default=None,)
-	isEnabled: Optional[bool] = Field(alias="isEnabled",default=None,)
-	isSchedulingEnabled: Optional[bool] = Field(alias="isSchedulingEnabled",default=None,)
-	lastModifiedDateTime: Optional[datetime] = Field(alias="lastModifiedDateTime",default=None,)
-	createdBy: Optional[User] = Field(alias="createdBy",default=None,)
-	lastModifiedBy: Optional[User] = Field(alias="lastModifiedBy",default=None,)
-	tasks: Optional[list[IdentityGovernanceTask]] = Field(alias="tasks",default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	category: Optional[IdentityGovernanceLifecycleWorkflowCategory | str] = Field(alias="category", default=None,)
+	createdDateTime: Optional[datetime] = Field(alias="createdDateTime", default=None,)
+	description: Optional[str] = Field(alias="description", default=None,)
+	displayName: Optional[str] = Field(alias="displayName", default=None,)
+	executionConditions: Optional[Union[IdentityGovernanceOnDemandExecutionOnly, IdentityGovernanceTriggerAndScopeBasedConditions]] = Field(alias="executionConditions", default=None,discriminator="odata_type", )
+	isEnabled: Optional[bool] = Field(alias="isEnabled", default=None,)
+	isSchedulingEnabled: Optional[bool] = Field(alias="isSchedulingEnabled", default=None,)
+	lastModifiedDateTime: Optional[datetime] = Field(alias="lastModifiedDateTime", default=None,)
+	createdBy: Optional[User] = Field(alias="createdBy", default=None,)
+	lastModifiedBy: Optional[User] = Field(alias="lastModifiedBy", default=None,)
+	tasks: Optional[list[IdentityGovernanceTask]] = Field(alias="tasks", default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
 
 	@model_validator(mode="wrap")
 	def convert_discriminator_class(cls, data: Any, handler: ModelWrapValidatorHandler[Self]) -> Self:
@@ -43,7 +44,8 @@ class IdentityGovernanceWorkflowBase(BaseModel):
 			raise e
 
 from .identity_governance_lifecycle_workflow_category import IdentityGovernanceLifecycleWorkflowCategory
-from .identity_governance_workflow_execution_conditions import IdentityGovernanceWorkflowExecutionConditions
+from .identity_governance_on_demand_execution_only import IdentityGovernanceOnDemandExecutionOnly
+from .identity_governance_trigger_and_scope_based_conditions import IdentityGovernanceTriggerAndScopeBasedConditions
 from .user import User
 from .user import User
 from .identity_governance_task import IdentityGovernanceTask

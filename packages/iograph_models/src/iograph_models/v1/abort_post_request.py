@@ -4,6 +4,6 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class AbortPostRequest(BaseModel):
-	reason: Optional[str] = Field(alias="reason",default=None,)
+	reason: Optional[str] = Field(alias="reason", default=None,)
 
 

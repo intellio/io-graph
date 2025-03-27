@@ -5,16 +5,16 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class HealthMonitoringAlert(BaseModel):
-	id: Optional[str] = Field(alias="id",default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
-	alertType: Optional[HealthMonitoringAlertType | str] = Field(alias="alertType",default=None,)
-	category: Optional[HealthMonitoringCategory | str] = Field(alias="category",default=None,)
-	createdDateTime: Optional[datetime] = Field(alias="createdDateTime",default=None,)
-	documentation: Optional[HealthMonitoringDocumentation] = Field(alias="documentation",default=None,)
-	enrichment: Optional[HealthMonitoringEnrichment] = Field(alias="enrichment",default=None,)
-	scenario: Optional[HealthMonitoringScenario | str] = Field(alias="scenario",default=None,)
-	signals: Optional[HealthMonitoringSignals] = Field(alias="signals",default=None,)
-	state: Optional[HealthMonitoringAlertState | str] = Field(alias="state",default=None,)
+	id: Optional[str] = Field(alias="id", default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
+	alertType: Optional[HealthMonitoringAlertType | str] = Field(alias="alertType", default=None,)
+	category: Optional[HealthMonitoringCategory | str] = Field(alias="category", default=None,)
+	createdDateTime: Optional[datetime] = Field(alias="createdDateTime", default=None,)
+	documentation: Optional[HealthMonitoringDocumentation] = Field(alias="documentation", default=None,)
+	enrichment: Optional[HealthMonitoringEnrichment] = Field(alias="enrichment", default=None,)
+	scenario: Optional[HealthMonitoringScenario | str] = Field(alias="scenario", default=None,)
+	signals: Optional[HealthMonitoringSignals] = Field(alias="signals", default=None,)
+	state: Optional[HealthMonitoringAlertState | str] = Field(alias="state", default=None,)
 
 from .health_monitoring_alert_type import HealthMonitoringAlertType
 from .health_monitoring_category import HealthMonitoringCategory

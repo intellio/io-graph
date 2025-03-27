@@ -4,9 +4,9 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class Record_all_decisionsPostRequest(BaseModel):
-	decision: Optional[str] = Field(alias="decision",default=None,)
-	justification: Optional[str] = Field(alias="justification",default=None,)
-	principalId: Optional[str] = Field(alias="principalId",default=None,)
-	resourceId: Optional[str] = Field(alias="resourceId",default=None,)
+	decision: Optional[str] = Field(alias="decision", default=None,)
+	justification: Optional[str] = Field(alias="justification", default=None,)
+	principalId: Optional[str] = Field(alias="principalId", default=None,)
+	resourceId: Optional[str] = Field(alias="resourceId", default=None,)
 
 

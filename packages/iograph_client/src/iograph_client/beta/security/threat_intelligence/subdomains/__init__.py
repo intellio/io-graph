@@ -15,8 +15,8 @@ if TYPE_CHECKING:
 	from .by_subdomain_id import BySubdomainIdRequest
 	from .....request_adapter import HttpxRequestAdapter
 from iograph_models.beta.security_subdomain_collection_response import SecuritySubdomainCollectionResponse
-from iograph_models.beta.security_subdomain import SecuritySubdomain
 from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.beta.security_subdomain import SecuritySubdomain
 
 
 class SubdomainsRequest(BaseRequestBuilder):

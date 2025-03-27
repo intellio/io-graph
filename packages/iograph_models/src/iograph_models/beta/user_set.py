@@ -7,8 +7,8 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class UserSet(BaseModel):
-	isBackup: Optional[bool] = Field(alias="isBackup",default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	isBackup: Optional[bool] = Field(alias="isBackup", default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
 
 	@model_validator(mode="wrap")
 	def convert_discriminator_class(cls, data: Any, handler: ModelWrapValidatorHandler[Self]) -> Self:

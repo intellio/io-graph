@@ -8,13 +8,13 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class PrivilegedAccessSchedule(BaseModel):
-	id: Optional[str] = Field(alias="id",default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
-	createdDateTime: Optional[datetime] = Field(alias="createdDateTime",default=None,)
-	createdUsing: Optional[str] = Field(alias="createdUsing",default=None,)
-	modifiedDateTime: Optional[datetime] = Field(alias="modifiedDateTime",default=None,)
-	scheduleInfo: Optional[RequestSchedule] = Field(alias="scheduleInfo",default=None,)
-	status: Optional[str] = Field(alias="status",default=None,)
+	id: Optional[str] = Field(alias="id", default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
+	createdDateTime: Optional[datetime] = Field(alias="createdDateTime", default=None,)
+	createdUsing: Optional[str] = Field(alias="createdUsing", default=None,)
+	modifiedDateTime: Optional[datetime] = Field(alias="modifiedDateTime", default=None,)
+	scheduleInfo: Optional[RequestSchedule] = Field(alias="scheduleInfo", default=None,)
+	status: Optional[str] = Field(alias="status", default=None,)
 
 	@model_validator(mode="wrap")
 	def convert_discriminator_class(cls, data: Any, handler: ModelWrapValidatorHandler[Self]) -> Self:

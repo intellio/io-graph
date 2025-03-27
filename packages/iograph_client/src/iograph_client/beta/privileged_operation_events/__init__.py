@@ -14,9 +14,9 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_privileged_operation_event_id import ByPrivilegedOperationEventIdRequest
 	from ...request_adapter import HttpxRequestAdapter
+from iograph_models.beta.privileged_operation_event import PrivilegedOperationEvent
 from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.beta.privileged_operation_event_collection_response import PrivilegedOperationEventCollectionResponse
-from iograph_models.beta.privileged_operation_event import PrivilegedOperationEvent
 
 
 class PrivilegedOperationEventsRequest(BaseRequestBuilder):

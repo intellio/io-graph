@@ -18,9 +18,9 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_directory_setting_template_id import ByDirectorySettingTemplateIdRequest
 	from ...request_adapter import HttpxRequestAdapter
-from iograph_models.beta.directory_setting_template_collection_response import DirectorySettingTemplateCollectionResponse
-from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.beta.directory_setting_template import DirectorySettingTemplate
+from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.beta.directory_setting_template_collection_response import DirectorySettingTemplateCollectionResponse
 
 
 class DirectorySettingTemplatesRequest(BaseRequestBuilder):

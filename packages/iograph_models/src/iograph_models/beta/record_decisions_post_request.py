@@ -4,7 +4,7 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class Record_decisionsPostRequest(BaseModel):
-	reviewResult: Optional[str] = Field(alias="reviewResult",default=None,)
-	justification: Optional[str] = Field(alias="justification",default=None,)
+	reviewResult: Optional[str] = Field(alias="reviewResult", default=None,)
+	justification: Optional[str] = Field(alias="justification", default=None,)
 
 

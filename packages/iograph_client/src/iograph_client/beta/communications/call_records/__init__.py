@@ -20,8 +20,8 @@ if TYPE_CHECKING:
 	from .by_call_record_id import ByCallRecordIdRequest
 	from ....request_adapter import HttpxRequestAdapter
 from iograph_models.beta.call_records_call_record import CallRecordsCallRecord
-from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.beta.call_records_call_record_collection_response import CallRecordsCallRecordCollectionResponse
+from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 
 
 class CallRecordsRequest(BaseRequestBuilder):

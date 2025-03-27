@@ -14,8 +14,8 @@ if TYPE_CHECKING:
 	from .scope import ScopeRequest
 	from .role import RoleRequest
 	from ......request_adapter import HttpxRequestAdapter
-from iograph_models.v1.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.v1.access_package_resource_role_scope import AccessPackageResourceRoleScope
+from iograph_models.v1.o_data_errors__o_data_error import ODataErrorsODataError
 
 
 class ByAccessPackageResourceRoleScopeIdRequest(BaseRequestBuilder):

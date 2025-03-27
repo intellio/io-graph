@@ -15,8 +15,8 @@ if TYPE_CHECKING:
 	from .by_calendar_permission_id import ByCalendarPermissionIdRequest
 	from .......request_adapter import HttpxRequestAdapter
 from iograph_models.beta.calendar_permission import CalendarPermission
-from iograph_models.beta.calendar_permission_collection_response import CalendarPermissionCollectionResponse
 from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.beta.calendar_permission_collection_response import CalendarPermissionCollectionResponse
 
 
 class CalendarPermissionsRequest(BaseRequestBuilder):

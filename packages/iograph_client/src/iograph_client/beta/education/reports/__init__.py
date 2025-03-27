@@ -13,8 +13,8 @@ if TYPE_CHECKING:
 	from .reflect_check_in_responses import ReflectCheckInResponsesRequest
 	from .reading_assignment_submissions import ReadingAssignmentSubmissionsRequest
 	from ....request_adapter import HttpxRequestAdapter
-from iograph_models.beta.reports_root import ReportsRoot
 from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.beta.reports_root import ReportsRoot
 
 
 class ReportsRequest(BaseRequestBuilder):

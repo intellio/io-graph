@@ -1,5 +1,6 @@
 from __future__ import annotations
 from typing import Optional
+from typing import Union
 from pydantic import model_validator, ModelWrapValidatorHandler, ValidationError
 from typing_extensions import Self
 from typing import Any
@@ -7,9 +8,9 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class AccessPackageAnswer(BaseModel):
-	displayValue: Optional[str] = Field(alias="displayValue",default=None,)
-	answeredQuestion: SerializeAsAny[Optional[AccessPackageQuestion]] = Field(alias="answeredQuestion",default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	displayValue: Optional[str] = Field(alias="displayValue", default=None,)
+	answeredQuestion: Optional[Union[AccessPackageMultipleChoiceQuestion, AccessPackageTextInputQuestion]] = Field(alias="answeredQuestion", default=None,discriminator="odata_type", )
+	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
 
 	@model_validator(mode="wrap")
 	def convert_discriminator_class(cls, data: Any, handler: ModelWrapValidatorHandler[Self]) -> Self:
@@ -29,5 +30,6 @@ class AccessPackageAnswer(BaseModel):
 		except Exception as e:
 			raise e
 
-from .access_package_question import AccessPackageQuestion
+from .access_package_multiple_choice_question import AccessPackageMultipleChoiceQuestion
+from .access_package_text_input_question import AccessPackageTextInputQuestion
 

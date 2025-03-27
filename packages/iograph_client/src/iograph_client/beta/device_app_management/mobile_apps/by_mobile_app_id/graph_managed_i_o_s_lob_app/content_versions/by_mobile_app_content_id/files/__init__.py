@@ -15,8 +15,8 @@ if TYPE_CHECKING:
 	from .by_mobile_app_content_file_id import ByMobileAppContentFileIdRequest
 	from .........request_adapter import HttpxRequestAdapter
 from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
-from iograph_models.beta.mobile_app_content_file import MobileAppContentFile
 from iograph_models.beta.mobile_app_content_file_collection_response import MobileAppContentFileCollectionResponse
+from iograph_models.beta.mobile_app_content_file import MobileAppContentFile
 
 
 class FilesRequest(BaseRequestBuilder):

@@ -4,8 +4,8 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class Verify_signaturePostRequest(BaseModel):
-	digest: Optional[str] = Field(alias="digest",default=None,)
-	signature: Optional[str] = Field(alias="signature",default=None,)
-	signingKeyId: Optional[str] = Field(alias="signingKeyId",default=None,)
+	digest: Optional[str] = Field(alias="digest", default=None,)
+	signature: Optional[str] = Field(alias="signature", default=None,)
+	signingKeyId: Optional[str] = Field(alias="signingKeyId", default=None,)
 
 

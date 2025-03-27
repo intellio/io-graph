@@ -4,10 +4,10 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class SubjectRightsRequestStageDetail(BaseModel):
-	error: Optional[PublicError] = Field(alias="error",default=None,)
-	stage: Optional[SubjectRightsRequestStage | str] = Field(alias="stage",default=None,)
-	status: Optional[SubjectRightsRequestStageStatus | str] = Field(alias="status",default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	error: Optional[PublicError] = Field(alias="error", default=None,)
+	stage: Optional[SubjectRightsRequestStage | str] = Field(alias="stage", default=None,)
+	status: Optional[SubjectRightsRequestStageStatus | str] = Field(alias="status", default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
 
 from .public_error import PublicError
 from .subject_rights_request_stage import SubjectRightsRequestStage

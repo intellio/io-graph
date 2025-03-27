@@ -5,19 +5,19 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class AccessPackageResourceEnvironment(BaseModel):
-	id: Optional[str] = Field(alias="id",default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
-	connectionInfo: Optional[ConnectionInfo] = Field(alias="connectionInfo",default=None,)
-	createdBy: Optional[str] = Field(alias="createdBy",default=None,)
-	createdDateTime: Optional[datetime] = Field(alias="createdDateTime",default=None,)
-	description: Optional[str] = Field(alias="description",default=None,)
-	displayName: Optional[str] = Field(alias="displayName",default=None,)
-	isDefaultEnvironment: Optional[bool] = Field(alias="isDefaultEnvironment",default=None,)
-	modifiedBy: Optional[str] = Field(alias="modifiedBy",default=None,)
-	modifiedDateTime: Optional[datetime] = Field(alias="modifiedDateTime",default=None,)
-	originId: Optional[str] = Field(alias="originId",default=None,)
-	originSystem: Optional[str] = Field(alias="originSystem",default=None,)
-	accessPackageResources: Optional[list[AccessPackageResource]] = Field(alias="accessPackageResources",default=None,)
+	id: Optional[str] = Field(alias="id", default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
+	connectionInfo: Optional[ConnectionInfo] = Field(alias="connectionInfo", default=None,)
+	createdBy: Optional[str] = Field(alias="createdBy", default=None,)
+	createdDateTime: Optional[datetime] = Field(alias="createdDateTime", default=None,)
+	description: Optional[str] = Field(alias="description", default=None,)
+	displayName: Optional[str] = Field(alias="displayName", default=None,)
+	isDefaultEnvironment: Optional[bool] = Field(alias="isDefaultEnvironment", default=None,)
+	modifiedBy: Optional[str] = Field(alias="modifiedBy", default=None,)
+	modifiedDateTime: Optional[datetime] = Field(alias="modifiedDateTime", default=None,)
+	originId: Optional[str] = Field(alias="originId", default=None,)
+	originSystem: Optional[str] = Field(alias="originSystem", default=None,)
+	accessPackageResources: Optional[list[AccessPackageResource]] = Field(alias="accessPackageResources", default=None,)
 
 from .connection_info import ConnectionInfo
 from .access_package_resource import AccessPackageResource

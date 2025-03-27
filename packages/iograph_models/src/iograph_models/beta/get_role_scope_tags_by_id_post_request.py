@@ -4,6 +4,6 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class Get_role_scope_tags_by_idPostRequest(BaseModel):
-	roleScopeTagIds: Optional[list[str]] = Field(alias="roleScopeTagIds",default=None,)
+	roleScopeTagIds: Optional[list[str]] = Field(alias="roleScopeTagIds", default=None,)
 
 

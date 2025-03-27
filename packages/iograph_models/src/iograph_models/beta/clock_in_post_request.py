@@ -4,10 +4,10 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class Clock_inPostRequest(BaseModel):
-	atApprovedLocation: Optional[bool] = Field(alias="atApprovedLocation",default=None,)
-	isAtApprovedLocation: Optional[bool] = Field(alias="isAtApprovedLocation",default=None,)
-	onBehalfOfUserId: Optional[str] = Field(alias="onBehalfOfUserId",default=None,)
-	notes: Optional[ItemBody] = Field(alias="notes",default=None,)
+	atApprovedLocation: Optional[bool] = Field(alias="atApprovedLocation", default=None,)
+	isAtApprovedLocation: Optional[bool] = Field(alias="isAtApprovedLocation", default=None,)
+	onBehalfOfUserId: Optional[str] = Field(alias="onBehalfOfUserId", default=None,)
+	notes: Optional[ItemBody] = Field(alias="notes", default=None,)
 
 from .item_body import ItemBody
 

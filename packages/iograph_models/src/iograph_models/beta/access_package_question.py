@@ -7,12 +7,12 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class AccessPackageQuestion(BaseModel):
-	id: Optional[str] = Field(alias="id",default=None,)
-	isAnswerEditable: Optional[bool] = Field(alias="isAnswerEditable",default=None,)
-	isRequired: Optional[bool] = Field(alias="isRequired",default=None,)
-	sequence: Optional[int] = Field(alias="sequence",default=None,)
-	text: Optional[AccessPackageLocalizedContent] = Field(alias="text",default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	id: Optional[str] = Field(alias="id", default=None,)
+	isAnswerEditable: Optional[bool] = Field(alias="isAnswerEditable", default=None,)
+	isRequired: Optional[bool] = Field(alias="isRequired", default=None,)
+	sequence: Optional[int] = Field(alias="sequence", default=None,)
+	text: Optional[AccessPackageLocalizedContent] = Field(alias="text", default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
 
 	@model_validator(mode="wrap")
 	def convert_discriminator_class(cls, data: Any, handler: ModelWrapValidatorHandler[Self]) -> Self:

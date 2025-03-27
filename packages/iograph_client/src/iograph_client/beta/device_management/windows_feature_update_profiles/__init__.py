@@ -15,8 +15,8 @@ if TYPE_CHECKING:
 	from .by_windows_feature_update_profile_id import ByWindowsFeatureUpdateProfileIdRequest
 	from ....request_adapter import HttpxRequestAdapter
 from iograph_models.beta.windows_feature_update_profile import WindowsFeatureUpdateProfile
-from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.beta.windows_feature_update_profile_collection_response import WindowsFeatureUpdateProfileCollectionResponse
+from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 
 
 class WindowsFeatureUpdateProfilesRequest(BaseRequestBuilder):

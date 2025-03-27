@@ -11,8 +11,8 @@ from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:
 	from ......request_adapter import HttpxRequestAdapter
-from iograph_models.beta.revoke_cloud_certification_authority_certificate_post_request import Revoke_cloud_certification_authority_certificatePostRequest
 from iograph_models.beta.cloud_certification_authority import CloudCertificationAuthority
+from iograph_models.beta.revoke_cloud_certification_authority_certificate_post_request import Revoke_cloud_certification_authority_certificatePostRequest
 from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 
 

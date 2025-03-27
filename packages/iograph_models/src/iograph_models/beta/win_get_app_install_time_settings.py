@@ -5,8 +5,8 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class WinGetAppInstallTimeSettings(BaseModel):
-	deadlineDateTime: Optional[datetime] = Field(alias="deadlineDateTime",default=None,)
-	useLocalTime: Optional[bool] = Field(alias="useLocalTime",default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	deadlineDateTime: Optional[datetime] = Field(alias="deadlineDateTime", default=None,)
+	useLocalTime: Optional[bool] = Field(alias="useLocalTime", default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
 
 

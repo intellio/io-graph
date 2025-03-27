@@ -4,9 +4,9 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class IosBookmark(BaseModel):
-	bookmarkFolder: Optional[str] = Field(alias="bookmarkFolder",default=None,)
-	displayName: Optional[str] = Field(alias="displayName",default=None,)
-	url: Optional[str] = Field(alias="url",default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	bookmarkFolder: Optional[str] = Field(alias="bookmarkFolder", default=None,)
+	displayName: Optional[str] = Field(alias="displayName", default=None,)
+	url: Optional[str] = Field(alias="url", default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
 
 

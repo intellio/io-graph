@@ -4,9 +4,9 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class AuditProperty(BaseModel):
-	displayName: Optional[str] = Field(alias="displayName",default=None,)
-	newValue: Optional[str] = Field(alias="newValue",default=None,)
-	oldValue: Optional[str] = Field(alias="oldValue",default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	displayName: Optional[str] = Field(alias="displayName", default=None,)
+	newValue: Optional[str] = Field(alias="newValue", default=None,)
+	oldValue: Optional[str] = Field(alias="oldValue", default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
 
 

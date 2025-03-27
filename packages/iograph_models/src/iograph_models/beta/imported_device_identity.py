@@ -8,16 +8,16 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class ImportedDeviceIdentity(BaseModel):
-	id: Optional[str] = Field(alias="id",default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
-	createdDateTime: Optional[datetime] = Field(alias="createdDateTime",default=None,)
-	description: Optional[str] = Field(alias="description",default=None,)
-	enrollmentState: Optional[EnrollmentState | str] = Field(alias="enrollmentState",default=None,)
-	importedDeviceIdentifier: Optional[str] = Field(alias="importedDeviceIdentifier",default=None,)
-	importedDeviceIdentityType: Optional[ImportedDeviceIdentityType | str] = Field(alias="importedDeviceIdentityType",default=None,)
-	lastContactedDateTime: Optional[datetime] = Field(alias="lastContactedDateTime",default=None,)
-	lastModifiedDateTime: Optional[datetime] = Field(alias="lastModifiedDateTime",default=None,)
-	platform: Optional[Platform | str] = Field(alias="platform",default=None,)
+	id: Optional[str] = Field(alias="id", default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
+	createdDateTime: Optional[datetime] = Field(alias="createdDateTime", default=None,)
+	description: Optional[str] = Field(alias="description", default=None,)
+	enrollmentState: Optional[EnrollmentState | str] = Field(alias="enrollmentState", default=None,)
+	importedDeviceIdentifier: Optional[str] = Field(alias="importedDeviceIdentifier", default=None,)
+	importedDeviceIdentityType: Optional[ImportedDeviceIdentityType | str] = Field(alias="importedDeviceIdentityType", default=None,)
+	lastContactedDateTime: Optional[datetime] = Field(alias="lastContactedDateTime", default=None,)
+	lastModifiedDateTime: Optional[datetime] = Field(alias="lastModifiedDateTime", default=None,)
+	platform: Optional[Platform | str] = Field(alias="platform", default=None,)
 
 	@model_validator(mode="wrap")
 	def convert_discriminator_class(cls, data: Any, handler: ModelWrapValidatorHandler[Self]) -> Self:

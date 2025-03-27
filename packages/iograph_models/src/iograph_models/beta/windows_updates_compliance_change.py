@@ -8,12 +8,12 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class WindowsUpdatesComplianceChange(BaseModel):
-	id: Optional[str] = Field(alias="id",default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
-	createdDateTime: Optional[datetime] = Field(alias="createdDateTime",default=None,)
-	isRevoked: Optional[bool] = Field(alias="isRevoked",default=None,)
-	revokedDateTime: Optional[datetime] = Field(alias="revokedDateTime",default=None,)
-	updatePolicy: Optional[WindowsUpdatesUpdatePolicy] = Field(alias="updatePolicy",default=None,)
+	id: Optional[str] = Field(alias="id", default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
+	createdDateTime: Optional[datetime] = Field(alias="createdDateTime", default=None,)
+	isRevoked: Optional[bool] = Field(alias="isRevoked", default=None,)
+	revokedDateTime: Optional[datetime] = Field(alias="revokedDateTime", default=None,)
+	updatePolicy: Optional[WindowsUpdatesUpdatePolicy] = Field(alias="updatePolicy", default=None,)
 
 	@model_validator(mode="wrap")
 	def convert_discriminator_class(cls, data: Any, handler: ModelWrapValidatorHandler[Self]) -> Self:

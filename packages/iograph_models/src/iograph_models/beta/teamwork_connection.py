@@ -5,9 +5,9 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class TeamworkConnection(BaseModel):
-	connectionStatus: Optional[TeamworkConnectionStatus | str] = Field(alias="connectionStatus",default=None,)
-	lastModifiedDateTime: Optional[datetime] = Field(alias="lastModifiedDateTime",default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	connectionStatus: Optional[TeamworkConnectionStatus | str] = Field(alias="connectionStatus", default=None,)
+	lastModifiedDateTime: Optional[datetime] = Field(alias="lastModifiedDateTime", default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
 
 from .teamwork_connection_status import TeamworkConnectionStatus
 

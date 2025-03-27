@@ -15,8 +15,8 @@ if TYPE_CHECKING:
 	from .by_drive_item_version_id import ByDriveItemVersionIdRequest
 	from .......request_adapter import HttpxRequestAdapter
 from iograph_models.v1.o_data_errors__o_data_error import ODataErrorsODataError
-from iograph_models.v1.drive_item_version_collection_response import DriveItemVersionCollectionResponse
 from iograph_models.v1.drive_item_version import DriveItemVersion
+from iograph_models.v1.drive_item_version_collection_response import DriveItemVersionCollectionResponse
 
 
 class VersionsRequest(BaseRequestBuilder):

@@ -4,8 +4,8 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class DeviceManagementConfigurationSettingValueTemplateReference(BaseModel):
-	settingValueTemplateId: Optional[str] = Field(alias="settingValueTemplateId",default=None,)
-	useTemplateDefault: Optional[bool] = Field(alias="useTemplateDefault",default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	settingValueTemplateId: Optional[str] = Field(alias="settingValueTemplateId", default=None,)
+	useTemplateDefault: Optional[bool] = Field(alias="useTemplateDefault", default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
 
 

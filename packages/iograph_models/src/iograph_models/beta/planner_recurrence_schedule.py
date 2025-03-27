@@ -5,10 +5,10 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class PlannerRecurrenceSchedule(BaseModel):
-	nextOccurrenceDateTime: Optional[datetime] = Field(alias="nextOccurrenceDateTime",default=None,)
-	pattern: Optional[RecurrencePattern] = Field(alias="pattern",default=None,)
-	patternStartDateTime: Optional[datetime] = Field(alias="patternStartDateTime",default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	nextOccurrenceDateTime: Optional[datetime] = Field(alias="nextOccurrenceDateTime", default=None,)
+	pattern: Optional[RecurrencePattern] = Field(alias="pattern", default=None,)
+	patternStartDateTime: Optional[datetime] = Field(alias="patternStartDateTime", default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
 
 from .recurrence_pattern import RecurrencePattern
 

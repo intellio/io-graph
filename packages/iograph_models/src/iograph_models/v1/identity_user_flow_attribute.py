@@ -7,12 +7,12 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class IdentityUserFlowAttribute(BaseModel):
-	id: Optional[str] = Field(alias="id",default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
-	dataType: Optional[IdentityUserFlowAttributeDataType | str] = Field(alias="dataType",default=None,)
-	description: Optional[str] = Field(alias="description",default=None,)
-	displayName: Optional[str] = Field(alias="displayName",default=None,)
-	userFlowAttributeType: Optional[IdentityUserFlowAttributeType | str] = Field(alias="userFlowAttributeType",default=None,)
+	id: Optional[str] = Field(alias="id", default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
+	dataType: Optional[IdentityUserFlowAttributeDataType | str] = Field(alias="dataType", default=None,)
+	description: Optional[str] = Field(alias="description", default=None,)
+	displayName: Optional[str] = Field(alias="displayName", default=None,)
+	userFlowAttributeType: Optional[IdentityUserFlowAttributeType | str] = Field(alias="userFlowAttributeType", default=None,)
 
 	@model_validator(mode="wrap")
 	def convert_discriminator_class(cls, data: Any, handler: ModelWrapValidatorHandler[Self]) -> Self:

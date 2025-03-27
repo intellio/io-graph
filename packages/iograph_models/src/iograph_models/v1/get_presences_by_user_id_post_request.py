@@ -4,6 +4,6 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class Get_presences_by_user_idPostRequest(BaseModel):
-	ids: Optional[list[str]] = Field(alias="ids",default=None,)
+	ids: Optional[list[str]] = Field(alias="ids", default=None,)
 
 

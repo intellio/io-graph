@@ -5,9 +5,9 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class ExactMatchUploadAgent(BaseModel):
-	id: Optional[str] = Field(alias="id",default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
-	creationDateTime: Optional[datetime] = Field(alias="creationDateTime",default=None,)
-	description: Optional[str] = Field(alias="description",default=None,)
+	id: Optional[str] = Field(alias="id", default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
+	creationDateTime: Optional[datetime] = Field(alias="creationDateTime", default=None,)
+	description: Optional[str] = Field(alias="description", default=None,)
 
 

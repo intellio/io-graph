@@ -7,8 +7,8 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class TeamsAppInstallationScopeInfo(BaseModel):
-	scope: Optional[TeamsAppInstallationScopes | str] = Field(alias="scope",default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	scope: Optional[TeamsAppInstallationScopes | str] = Field(alias="scope", default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
 
 	@model_validator(mode="wrap")
 	def convert_discriminator_class(cls, data: Any, handler: ModelWrapValidatorHandler[Self]) -> Self:

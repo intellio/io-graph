@@ -4,7 +4,7 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class Security_extract_content_labelPostRequest(BaseModel):
-	contentInfo: Optional[SecurityContentInfo] = Field(alias="contentInfo",default=None,)
+	contentInfo: Optional[SecurityContentInfo] = Field(alias="contentInfo", default=None,)
 
 from .security_content_info import SecurityContentInfo
 

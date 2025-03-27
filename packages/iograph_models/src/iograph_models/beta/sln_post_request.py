@@ -4,8 +4,8 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class SlnPostRequest(BaseModel):
-	cost: Optional[str] = Field(alias="cost",default=None,)
-	salvage: Optional[str] = Field(alias="salvage",default=None,)
-	life: Optional[str] = Field(alias="life",default=None,)
+	cost: Optional[str] = Field(alias="cost", default=None,)
+	salvage: Optional[str] = Field(alias="salvage", default=None,)
+	life: Optional[str] = Field(alias="life", default=None,)
 
 

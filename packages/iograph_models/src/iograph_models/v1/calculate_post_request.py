@@ -4,6 +4,6 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class CalculatePostRequest(BaseModel):
-	calculationType: Optional[str] = Field(alias="calculationType",default=None,)
+	calculationType: Optional[str] = Field(alias="calculationType", default=None,)
 
 

@@ -4,10 +4,10 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class MeetingNote(BaseModel):
-	subpoints: Optional[list[MeetingNoteSubpoint]] = Field(alias="subpoints",default=None,)
-	text: Optional[str] = Field(alias="text",default=None,)
-	title: Optional[str] = Field(alias="title",default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	subpoints: Optional[list[MeetingNoteSubpoint]] = Field(alias="subpoints", default=None,)
+	text: Optional[str] = Field(alias="text", default=None,)
+	title: Optional[str] = Field(alias="title", default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
 
 from .meeting_note_subpoint import MeetingNoteSubpoint
 

@@ -4,6 +4,6 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class PhiPostRequest(BaseModel):
-	x: Optional[str] = Field(alias="x",default=None,)
+	x: Optional[str] = Field(alias="x", default=None,)
 
 

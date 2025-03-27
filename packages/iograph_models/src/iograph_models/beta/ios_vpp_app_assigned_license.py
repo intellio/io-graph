@@ -7,12 +7,12 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class IosVppAppAssignedLicense(BaseModel):
-	id: Optional[str] = Field(alias="id",default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
-	userEmailAddress: Optional[str] = Field(alias="userEmailAddress",default=None,)
-	userId: Optional[str] = Field(alias="userId",default=None,)
-	userName: Optional[str] = Field(alias="userName",default=None,)
-	userPrincipalName: Optional[str] = Field(alias="userPrincipalName",default=None,)
+	id: Optional[str] = Field(alias="id", default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
+	userEmailAddress: Optional[str] = Field(alias="userEmailAddress", default=None,)
+	userId: Optional[str] = Field(alias="userId", default=None,)
+	userName: Optional[str] = Field(alias="userName", default=None,)
+	userPrincipalName: Optional[str] = Field(alias="userPrincipalName", default=None,)
 
 	@model_validator(mode="wrap")
 	def convert_discriminator_class(cls, data: Any, handler: ModelWrapValidatorHandler[Self]) -> Self:

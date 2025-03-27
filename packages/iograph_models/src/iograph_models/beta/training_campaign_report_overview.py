@@ -4,10 +4,10 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class TrainingCampaignReportOverview(BaseModel):
-	trainingModuleCompletion: Optional[TrainingEventsContent] = Field(alias="trainingModuleCompletion",default=None,)
-	trainingNotificationDeliveryStatus: Optional[TrainingNotificationDelivery] = Field(alias="trainingNotificationDeliveryStatus",default=None,)
-	userCompletionStatus: Optional[UserTrainingCompletionSummary] = Field(alias="userCompletionStatus",default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	trainingModuleCompletion: Optional[TrainingEventsContent] = Field(alias="trainingModuleCompletion", default=None,)
+	trainingNotificationDeliveryStatus: Optional[TrainingNotificationDelivery] = Field(alias="trainingNotificationDeliveryStatus", default=None,)
+	userCompletionStatus: Optional[UserTrainingCompletionSummary] = Field(alias="userCompletionStatus", default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
 
 from .training_events_content import TrainingEventsContent
 from .training_notification_delivery import TrainingNotificationDelivery

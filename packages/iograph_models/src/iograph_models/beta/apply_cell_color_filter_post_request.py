@@ -4,6 +4,6 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class Apply_cell_color_filterPostRequest(BaseModel):
-	color: Optional[str] = Field(alias="color",default=None,)
+	color: Optional[str] = Field(alias="color", default=None,)
 
 

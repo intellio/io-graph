@@ -4,6 +4,6 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class Initiate_on_demand_proactive_remediationPostRequest(BaseModel):
-	scriptPolicyId: Optional[str] = Field(alias="scriptPolicyId",default=None,)
+	scriptPolicyId: Optional[str] = Field(alias="scriptPolicyId", default=None,)
 
 

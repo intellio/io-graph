@@ -4,8 +4,8 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class ExternalConnectorsUrlMatchInfo(BaseModel):
-	baseUrls: Optional[list[str]] = Field(alias="baseUrls",default=None,)
-	urlPattern: Optional[str] = Field(alias="urlPattern",default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	baseUrls: Optional[list[str]] = Field(alias="baseUrls", default=None,)
+	urlPattern: Optional[str] = Field(alias="urlPattern", default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
 
 

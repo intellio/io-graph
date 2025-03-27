@@ -1,18 +1,21 @@
 from __future__ import annotations
 from typing import Optional
+from typing import Union
 from datetime import datetime
 from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class SecurityHostPair(BaseModel):
-	id: Optional[str] = Field(alias="id",default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
-	firstSeenDateTime: Optional[datetime] = Field(alias="firstSeenDateTime",default=None,)
-	lastSeenDateTime: Optional[datetime] = Field(alias="lastSeenDateTime",default=None,)
-	linkKind: Optional[str] = Field(alias="linkKind",default=None,)
-	childHost: SerializeAsAny[Optional[SecurityHost]] = Field(alias="childHost",default=None,)
-	parentHost: SerializeAsAny[Optional[SecurityHost]] = Field(alias="parentHost",default=None,)
+	id: Optional[str] = Field(alias="id", default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
+	firstSeenDateTime: Optional[datetime] = Field(alias="firstSeenDateTime", default=None,)
+	lastSeenDateTime: Optional[datetime] = Field(alias="lastSeenDateTime", default=None,)
+	linkKind: Optional[str] = Field(alias="linkKind", default=None,)
+	childHost: Optional[Union[SecurityHostname, SecurityIpAddress]] = Field(alias="childHost", default=None,discriminator="odata_type", )
+	parentHost: Optional[Union[SecurityHostname, SecurityIpAddress]] = Field(alias="parentHost", default=None,discriminator="odata_type", )
 
-from .security_host import SecurityHost
-from .security_host import SecurityHost
+from .security_hostname import SecurityHostname
+from .security_ip_address import SecurityIpAddress
+from .security_hostname import SecurityHostname
+from .security_ip_address import SecurityIpAddress
 

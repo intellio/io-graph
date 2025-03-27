@@ -4,8 +4,8 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class Security_evaluate_applicationPostRequest(BaseModel):
-	contentInfo: Optional[SecurityContentInfo] = Field(alias="contentInfo",default=None,)
-	labelingOptions: Optional[SecurityLabelingOptions] = Field(alias="labelingOptions",default=None,)
+	contentInfo: Optional[SecurityContentInfo] = Field(alias="contentInfo", default=None,)
+	labelingOptions: Optional[SecurityLabelingOptions] = Field(alias="labelingOptions", default=None,)
 
 from .security_content_info import SecurityContentInfo
 from .security_labeling_options import SecurityLabelingOptions

@@ -45,8 +45,8 @@ if TYPE_CHECKING:
 	from .analytics import AnalyticsRequest
 	from .activities import ActivitiesRequest
 	from ......request_adapter import HttpxRequestAdapter
-from iograph_models.beta.drive_item import DriveItem
 from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.beta.drive_item import DriveItem
 
 
 class ByDriveItemIdRequest(BaseRequestBuilder):

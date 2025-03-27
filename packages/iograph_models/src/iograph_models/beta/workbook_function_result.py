@@ -4,9 +4,9 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class WorkbookFunctionResult(BaseModel):
-	id: Optional[str] = Field(alias="id",default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
-	error: Optional[str] = Field(alias="error",default=None,)
-	value: Optional[str] = Field(alias="value",default=None,)
+	id: Optional[str] = Field(alias="id", default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
+	error: Optional[str] = Field(alias="error", default=None,)
+	value: Optional[str] = Field(alias="value", default=None,)
 
 

@@ -4,6 +4,6 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class Baht_textPostRequest(BaseModel):
-	number: Optional[str] = Field(alias="number",default=None,)
+	number: Optional[str] = Field(alias="number", default=None,)
 
 

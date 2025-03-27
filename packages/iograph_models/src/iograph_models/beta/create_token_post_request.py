@@ -4,6 +4,6 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class Create_tokenPostRequest(BaseModel):
-	tokenValidityInSeconds: Optional[int] = Field(alias="tokenValidityInSeconds",default=None,)
+	tokenValidityInSeconds: Optional[int] = Field(alias="tokenValidityInSeconds", default=None,)
 
 

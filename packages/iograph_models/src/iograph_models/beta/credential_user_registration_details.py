@@ -4,15 +4,15 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class CredentialUserRegistrationDetails(BaseModel):
-	id: Optional[str] = Field(alias="id",default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
-	authMethods: Optional[list[RegistrationAuthMethod | str]] = Field(alias="authMethods",default=None,)
-	isCapable: Optional[bool] = Field(alias="isCapable",default=None,)
-	isEnabled: Optional[bool] = Field(alias="isEnabled",default=None,)
-	isMfaRegistered: Optional[bool] = Field(alias="isMfaRegistered",default=None,)
-	isRegistered: Optional[bool] = Field(alias="isRegistered",default=None,)
-	userDisplayName: Optional[str] = Field(alias="userDisplayName",default=None,)
-	userPrincipalName: Optional[str] = Field(alias="userPrincipalName",default=None,)
+	id: Optional[str] = Field(alias="id", default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
+	authMethods: Optional[list[RegistrationAuthMethod | str]] = Field(alias="authMethods", default=None,)
+	isCapable: Optional[bool] = Field(alias="isCapable", default=None,)
+	isEnabled: Optional[bool] = Field(alias="isEnabled", default=None,)
+	isMfaRegistered: Optional[bool] = Field(alias="isMfaRegistered", default=None,)
+	isRegistered: Optional[bool] = Field(alias="isRegistered", default=None,)
+	userDisplayName: Optional[str] = Field(alias="userDisplayName", default=None,)
+	userPrincipalName: Optional[str] = Field(alias="userPrincipalName", default=None,)
 
 from .registration_auth_method import RegistrationAuthMethod
 

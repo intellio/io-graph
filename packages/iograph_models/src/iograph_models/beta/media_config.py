@@ -7,8 +7,8 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class MediaConfig(BaseModel):
-	removeFromDefaultAudioGroup: Optional[bool] = Field(alias="removeFromDefaultAudioGroup",default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	removeFromDefaultAudioGroup: Optional[bool] = Field(alias="removeFromDefaultAudioGroup", default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
 
 	@model_validator(mode="wrap")
 	def convert_discriminator_class(cls, data: Any, handler: ModelWrapValidatorHandler[Self]) -> Self:

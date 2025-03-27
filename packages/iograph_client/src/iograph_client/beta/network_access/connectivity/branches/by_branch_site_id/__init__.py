@@ -15,8 +15,8 @@ if TYPE_CHECKING:
 	from .device_links import DeviceLinksRequest
 	from .connectivity_configuration import ConnectivityConfigurationRequest
 	from ......request_adapter import HttpxRequestAdapter
-from iograph_models.beta.networkaccess_branch_site import NetworkaccessBranchSite
 from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.beta.networkaccess_branch_site import NetworkaccessBranchSite
 
 
 class ByBranchSiteIdRequest(BaseRequestBuilder):

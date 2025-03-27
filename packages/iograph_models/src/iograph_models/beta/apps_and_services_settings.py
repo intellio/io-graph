@@ -4,8 +4,8 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class AppsAndServicesSettings(BaseModel):
-	isAppAndServicesTrialEnabled: Optional[bool] = Field(alias="isAppAndServicesTrialEnabled",default=None,)
-	isOfficeStoreEnabled: Optional[bool] = Field(alias="isOfficeStoreEnabled",default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	isAppAndServicesTrialEnabled: Optional[bool] = Field(alias="isAppAndServicesTrialEnabled", default=None,)
+	isOfficeStoreEnabled: Optional[bool] = Field(alias="isOfficeStoreEnabled", default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
 
 

@@ -4,8 +4,8 @@ from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class Compliance(BaseModel):
-	ediscovery: Optional[EdiscoveryEdiscoveryroot] = Field(alias="ediscovery",default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type",default=None,)
+	ediscovery: Optional[EdiscoveryEdiscoveryroot] = Field(alias="ediscovery", default=None,)
+	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
 
 from .ediscovery_ediscoveryroot import EdiscoveryEdiscoveryroot
 

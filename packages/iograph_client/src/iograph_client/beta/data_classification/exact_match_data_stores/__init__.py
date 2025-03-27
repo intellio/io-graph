@@ -14,8 +14,8 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_exact_match_data_store_id import ByExactMatchDataStoreIdRequest
 	from ....request_adapter import HttpxRequestAdapter
-from iograph_models.beta.exact_match_data_store_collection_response import ExactMatchDataStoreCollectionResponse
 from iograph_models.beta.exact_match_data_store import ExactMatchDataStore
+from iograph_models.beta.exact_match_data_store_collection_response import ExactMatchDataStoreCollectionResponse
 from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 
 
