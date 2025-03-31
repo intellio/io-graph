@@ -14,9 +14,9 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_device_management_derived_credential_settings_id import ByDeviceManagementDerivedCredentialSettingsIdRequest
 	from ....request_adapter import HttpxRequestAdapter
-from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.beta.device_management_derived_credential_settings import DeviceManagementDerivedCredentialSettings
 from iograph_models.beta.device_management_derived_credential_settings_collection_response import DeviceManagementDerivedCredentialSettingsCollectionResponse
+from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 
 
 class DerivedCredentialsRequest(BaseRequestBuilder):

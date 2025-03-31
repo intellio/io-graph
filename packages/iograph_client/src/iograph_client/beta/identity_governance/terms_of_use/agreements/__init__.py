@@ -14,8 +14,8 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_agreement_id import ByAgreementIdRequest
 	from .....request_adapter import HttpxRequestAdapter
-from iograph_models.beta.agreement_collection_response import AgreementCollectionResponse
 from iograph_models.beta.agreement import Agreement
+from iograph_models.beta.agreement_collection_response import AgreementCollectionResponse
 from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 
 

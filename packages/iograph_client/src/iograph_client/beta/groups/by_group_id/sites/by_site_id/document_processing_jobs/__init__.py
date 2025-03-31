@@ -15,8 +15,8 @@ if TYPE_CHECKING:
 	from .by_document_processing_job_id import ByDocumentProcessingJobIdRequest
 	from .......request_adapter import HttpxRequestAdapter
 from iograph_models.beta.document_processing_job import DocumentProcessingJob
-from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.beta.document_processing_job_collection_response import DocumentProcessingJobCollectionResponse
+from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 
 
 class DocumentProcessingJobsRequest(BaseRequestBuilder):

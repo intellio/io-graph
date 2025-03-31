@@ -15,9 +15,9 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_contact_id import ByContactIdRequest
 	from .........request_adapter import HttpxRequestAdapter
+from iograph_models.beta.contact import Contact
 from iograph_models.beta.contact_collection_response import ContactCollectionResponse
 from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
-from iograph_models.beta.contact import Contact
 
 
 class ContactsRequest(BaseRequestBuilder):

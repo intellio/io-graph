@@ -15,8 +15,8 @@ if TYPE_CHECKING:
 	from .by_notification_id import ByNotificationIdRequest
 	from .....request_adapter import HttpxRequestAdapter
 from iograph_models.beta.notification_collection_response import NotificationCollectionResponse
-from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.beta.notification import Notification
+from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 
 
 class NotificationsRequest(BaseRequestBuilder):

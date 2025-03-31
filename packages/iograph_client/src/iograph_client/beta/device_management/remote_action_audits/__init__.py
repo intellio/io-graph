@@ -15,8 +15,8 @@ if TYPE_CHECKING:
 	from .by_remote_action_audit_id import ByRemoteActionAuditIdRequest
 	from ....request_adapter import HttpxRequestAdapter
 from iograph_models.beta.remote_action_audit import RemoteActionAudit
-from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.beta.remote_action_audit_collection_response import RemoteActionAuditCollectionResponse
+from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 
 
 class RemoteActionAuditsRequest(BaseRequestBuilder):

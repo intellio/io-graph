@@ -14,8 +14,8 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_remote_network_id import ByRemoteNetworkIdRequest
 	from .....request_adapter import HttpxRequestAdapter
-from iograph_models.beta.networkaccess_remote_network import NetworkaccessRemoteNetwork
 from iograph_models.beta.networkaccess_remote_network_collection_response import NetworkaccessRemoteNetworkCollectionResponse
+from iograph_models.beta.networkaccess_remote_network import NetworkaccessRemoteNetwork
 from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 
 

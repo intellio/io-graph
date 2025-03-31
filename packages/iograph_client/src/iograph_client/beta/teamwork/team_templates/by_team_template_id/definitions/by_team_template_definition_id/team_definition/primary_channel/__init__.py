@@ -24,8 +24,8 @@ if TYPE_CHECKING:
 	from .files_folder import FilesFolderRequest
 	from .all_members import AllMembersRequest
 	from .........request_adapter import HttpxRequestAdapter
-from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.beta.channel import Channel
+from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 
 
 class PrimaryChannelRequest(BaseRequestBuilder):

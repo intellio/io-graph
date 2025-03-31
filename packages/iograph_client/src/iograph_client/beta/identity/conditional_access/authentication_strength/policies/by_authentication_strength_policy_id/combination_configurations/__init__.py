@@ -14,8 +14,8 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_authentication_combination_configuration_id import ByAuthenticationCombinationConfigurationIdRequest
 	from ........request_adapter import HttpxRequestAdapter
-from iograph_models.beta.authentication_combination_configuration_collection_response import AuthenticationCombinationConfigurationCollectionResponse
 from iograph_models.beta.authentication_combination_configuration import AuthenticationCombinationConfiguration
+from iograph_models.beta.authentication_combination_configuration_collection_response import AuthenticationCombinationConfigurationCollectionResponse
 from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 
 

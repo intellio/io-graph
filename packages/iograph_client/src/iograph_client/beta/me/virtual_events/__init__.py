@@ -12,8 +12,8 @@ from typing import TYPE_CHECKING
 if TYPE_CHECKING:
 	from .webinars import WebinarsRequest
 	from ....request_adapter import HttpxRequestAdapter
-from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.beta.user_virtual_events_root import UserVirtualEventsRoot
+from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 
 
 class VirtualEventsRequest(BaseRequestBuilder):

@@ -14,8 +14,8 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_intune_branding_profile_assignment_id import ByIntuneBrandingProfileAssignmentIdRequest
 	from ......request_adapter import HttpxRequestAdapter
-from iograph_models.beta.intune_branding_profile_assignment_collection_response import IntuneBrandingProfileAssignmentCollectionResponse
 from iograph_models.beta.intune_branding_profile_assignment import IntuneBrandingProfileAssignment
+from iograph_models.beta.intune_branding_profile_assignment_collection_response import IntuneBrandingProfileAssignmentCollectionResponse
 from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 
 

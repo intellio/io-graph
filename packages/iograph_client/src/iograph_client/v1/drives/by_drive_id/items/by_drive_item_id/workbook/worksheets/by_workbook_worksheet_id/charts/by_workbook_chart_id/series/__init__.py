@@ -15,9 +15,9 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_workbook_chart_series_id import ByWorkbookChartSeriesIdRequest
 	from ............request_adapter import HttpxRequestAdapter
-from iograph_models.v1.o_data_errors__o_data_error import ODataErrorsODataError
-from iograph_models.v1.workbook_chart_series import WorkbookChartSeries
 from iograph_models.v1.workbook_chart_series_collection_response import WorkbookChartSeriesCollectionResponse
+from iograph_models.v1.workbook_chart_series import WorkbookChartSeries
+from iograph_models.v1.o_data_errors__o_data_error import ODataErrorsODataError
 
 
 class SeriesRequest(BaseRequestBuilder):

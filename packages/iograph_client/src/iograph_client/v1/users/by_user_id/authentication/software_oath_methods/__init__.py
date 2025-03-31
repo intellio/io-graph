@@ -14,8 +14,8 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_software_oath_authentication_method_id import BySoftwareOathAuthenticationMethodIdRequest
 	from ......request_adapter import HttpxRequestAdapter
-from iograph_models.v1.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.v1.software_oath_authentication_method_collection_response import SoftwareOathAuthenticationMethodCollectionResponse
+from iograph_models.v1.o_data_errors__o_data_error import ODataErrorsODataError
 
 
 class SoftwareOathMethodsRequest(BaseRequestBuilder):

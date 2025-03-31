@@ -12,8 +12,8 @@ from typing import TYPE_CHECKING
 if TYPE_CHECKING:
 	from ......request_adapter import HttpxRequestAdapter
 from iograph_models.beta.cancel_approval_post_response import Cancel_approvalPostResponse
-from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.beta.cancel_approval_post_request import Cancel_approvalPostRequest
+from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 
 
 class CancelApprovalRequest(BaseRequestBuilder):

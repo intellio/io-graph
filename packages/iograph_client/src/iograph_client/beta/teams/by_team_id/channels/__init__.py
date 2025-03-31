@@ -18,8 +18,8 @@ if TYPE_CHECKING:
 	from .by_channel_id import ByChannelIdRequest
 	from .....request_adapter import HttpxRequestAdapter
 from iograph_models.beta.channel_collection_response import ChannelCollectionResponse
-from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.beta.channel import Channel
+from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 
 
 class ChannelsRequest(BaseRequestBuilder):

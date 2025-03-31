@@ -16,8 +16,8 @@ if TYPE_CHECKING:
 	from .languages import LanguagesRequest
 	from .identity_providers import IdentityProvidersRequest
 	from .....request_adapter import HttpxRequestAdapter
-from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.beta.b2c_identity_user_flow import B2cIdentityUserFlow
+from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 
 
 class ByB2cIdentityUserFlowIdRequest(BaseRequestBuilder):

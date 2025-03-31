@@ -14,9 +14,9 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_change_item_base_id import ByChangeItemBaseIdRequest
 	from ....request_adapter import HttpxRequestAdapter
+from iograph_models.beta.change_item_base_collection_response import ChangeItemBaseCollectionResponse
 from iograph_models.beta.change_item_base import ChangeItemBase
 from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
-from iograph_models.beta.change_item_base_collection_response import ChangeItemBaseCollectionResponse
 
 
 class ProductChangesRequest(BaseRequestBuilder):

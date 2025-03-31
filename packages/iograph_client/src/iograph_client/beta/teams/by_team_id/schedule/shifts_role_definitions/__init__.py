@@ -15,8 +15,8 @@ if TYPE_CHECKING:
 	from .by_shifts_role_definition_id import ByShiftsRoleDefinitionIdRequest
 	from ......request_adapter import HttpxRequestAdapter
 from iograph_models.beta.shifts_role_definition_collection_response import ShiftsRoleDefinitionCollectionResponse
-from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.beta.shifts_role_definition import ShiftsRoleDefinition
+from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 
 
 class ShiftsRoleDefinitionsRequest(BaseRequestBuilder):

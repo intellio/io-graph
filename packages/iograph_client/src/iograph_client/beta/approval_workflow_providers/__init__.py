@@ -14,8 +14,8 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_approval_workflow_provider_id import ByApprovalWorkflowProviderIdRequest
 	from ...request_adapter import HttpxRequestAdapter
-from iograph_models.beta.approval_workflow_provider_collection_response import ApprovalWorkflowProviderCollectionResponse
 from iograph_models.beta.approval_workflow_provider import ApprovalWorkflowProvider
+from iograph_models.beta.approval_workflow_provider_collection_response import ApprovalWorkflowProviderCollectionResponse
 from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 
 

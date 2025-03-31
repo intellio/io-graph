@@ -15,9 +15,9 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_user_activity_id import ByUserActivityIdRequest
 	from .....request_adapter import HttpxRequestAdapter
+from iograph_models.beta.user_activity import UserActivity
 from iograph_models.beta.user_activity_collection_response import UserActivityCollectionResponse
 from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
-from iograph_models.beta.user_activity import UserActivity
 
 
 class ActivitiesRequest(BaseRequestBuilder):

@@ -12,7 +12,7 @@ class SynchronizationJob(BaseModel):
 	synchronizationJobSettings: Optional[list[KeyValuePair]] = Field(alias="synchronizationJobSettings", default=None,)
 	templateId: Optional[str] = Field(alias="templateId", default=None,)
 	bulkUpload: Optional[BulkUpload] = Field(alias="bulkUpload", default=None,)
-	schema: Optional[SynchronizationSchema] = Field(alias="schema", default=None,)
+	schema_: Optional[SynchronizationSchema] = Field(alias="schema", default=None,)
 
 from .synchronization_schedule import SynchronizationSchedule
 from .synchronization_status import SynchronizationStatus

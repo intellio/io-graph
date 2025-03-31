@@ -16,8 +16,8 @@ if TYPE_CHECKING:
 	from .plan_configuration import PlanConfigurationRequest
 	from .get_plan import GetPlanRequest
 	from ......request_adapter import HttpxRequestAdapter
-from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.beta.business_scenario_planner import BusinessScenarioPlanner
+from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 
 
 class PlannerRequest(BaseRequestBuilder):

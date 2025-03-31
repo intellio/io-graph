@@ -14,8 +14,8 @@ if TYPE_CHECKING:
 	from .resolving_knowledge_base_article import ResolvingKnowledgeBaseArticleRequest
 	from .originating_knowledge_base_article import OriginatingKnowledgeBaseArticleRequest
 	from .........request_adapter import HttpxRequestAdapter
-from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.beta.windows_updates_known_issue import WindowsUpdatesKnownIssue
+from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 
 
 class ByKnownIssueIdRequest(BaseRequestBuilder):

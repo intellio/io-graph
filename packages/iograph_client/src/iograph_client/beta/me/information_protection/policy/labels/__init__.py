@@ -18,8 +18,8 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_information_protection_label_id import ByInformationProtectionLabelIdRequest
 	from ......request_adapter import HttpxRequestAdapter
-from iograph_models.beta.information_protection_label import InformationProtectionLabel
 from iograph_models.beta.information_protection_label_collection_response import InformationProtectionLabelCollectionResponse
+from iograph_models.beta.information_protection_label import InformationProtectionLabel
 from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 
 

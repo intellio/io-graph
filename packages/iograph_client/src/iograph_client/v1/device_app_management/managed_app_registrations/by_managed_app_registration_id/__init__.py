@@ -15,8 +15,8 @@ if TYPE_CHECKING:
 	from .intended_policies import IntendedPoliciesRequest
 	from .applied_policies import AppliedPoliciesRequest
 	from .....request_adapter import HttpxRequestAdapter
-from iograph_models.v1.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.v1.managed_app_registration import ManagedAppRegistration
+from iograph_models.v1.o_data_errors__o_data_error import ODataErrorsODataError
 
 
 class ByManagedAppRegistrationIdRequest(BaseRequestBuilder):

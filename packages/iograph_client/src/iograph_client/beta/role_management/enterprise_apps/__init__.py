@@ -14,9 +14,9 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_rbac_application_id import ByRbacApplicationIdRequest
 	from ....request_adapter import HttpxRequestAdapter
+from iograph_models.beta.rbac_application_collection_response import RbacApplicationCollectionResponse
 from iograph_models.beta.rbac_application import RbacApplication
 from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
-from iograph_models.beta.rbac_application_collection_response import RbacApplicationCollectionResponse
 
 
 class EnterpriseAppsRequest(BaseRequestBuilder):

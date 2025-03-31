@@ -14,8 +14,8 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_review_set_id import ByReviewSetIdRequest
 	from .......request_adapter import HttpxRequestAdapter
-from iograph_models.beta.ediscovery_review_set import EdiscoveryReviewSet
 from iograph_models.beta.ediscovery_review_set_collection_response import EdiscoveryReviewSetCollectionResponse
+from iograph_models.beta.ediscovery_review_set import EdiscoveryReviewSet
 from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 
 

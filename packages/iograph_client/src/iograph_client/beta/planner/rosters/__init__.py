@@ -14,8 +14,8 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_planner_roster_id import ByPlannerRosterIdRequest
 	from ....request_adapter import HttpxRequestAdapter
-from iograph_models.beta.planner_roster import PlannerRoster
 from iograph_models.beta.planner_roster_collection_response import PlannerRosterCollectionResponse
+from iograph_models.beta.planner_roster import PlannerRoster
 from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 
 

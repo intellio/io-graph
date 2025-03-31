@@ -13,8 +13,8 @@ if TYPE_CHECKING:
 	from .agreements import AgreementsRequest
 	from .agreement_acceptances import AgreementAcceptancesRequest
 	from ....request_adapter import HttpxRequestAdapter
-from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.beta.terms_of_use_container import TermsOfUseContainer
+from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 
 
 class TermsOfUseRequest(BaseRequestBuilder):

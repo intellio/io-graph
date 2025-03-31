@@ -15,8 +15,8 @@ if TYPE_CHECKING:
 	from .by_web_account_id import ByWebAccountIdRequest
 	from ......request_adapter import HttpxRequestAdapter
 from iograph_models.beta.web_account import WebAccount
-from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.beta.web_account_collection_response import WebAccountCollectionResponse
+from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 
 
 class WebAccountsRequest(BaseRequestBuilder):

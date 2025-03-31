@@ -15,9 +15,9 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_managed_app_registration_id import ByManagedAppRegistrationIdRequest
 	from ....request_adapter import HttpxRequestAdapter
-from iograph_models.v1.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.v1.managed_app_registration import ManagedAppRegistration
 from iograph_models.v1.managed_app_registration_collection_response import ManagedAppRegistrationCollectionResponse
+from iograph_models.v1.o_data_errors__o_data_error import ODataErrorsODataError
 
 
 class ManagedAppRegistrationsRequest(BaseRequestBuilder):

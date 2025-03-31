@@ -14,8 +14,8 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_device_management_reusable_policy_setting_id import ByDeviceManagementReusablePolicySettingIdRequest
 	from ....request_adapter import HttpxRequestAdapter
-from iograph_models.beta.device_management_reusable_policy_setting import DeviceManagementReusablePolicySetting
 from iograph_models.beta.device_management_reusable_policy_setting_collection_response import DeviceManagementReusablePolicySettingCollectionResponse
+from iograph_models.beta.device_management_reusable_policy_setting import DeviceManagementReusablePolicySetting
 from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 
 

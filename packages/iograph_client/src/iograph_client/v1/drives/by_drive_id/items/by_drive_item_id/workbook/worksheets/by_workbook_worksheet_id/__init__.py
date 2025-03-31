@@ -22,8 +22,8 @@ if TYPE_CHECKING:
 	from .cell_with_row_column import CellWithRowColumnRequest
 	from .charts import ChartsRequest
 	from .........request_adapter import HttpxRequestAdapter
-from iograph_models.v1.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.v1.workbook_worksheet import WorkbookWorksheet
+from iograph_models.v1.o_data_errors__o_data_error import ODataErrorsODataError
 
 
 class ByWorkbookWorksheetIdRequest(BaseRequestBuilder):

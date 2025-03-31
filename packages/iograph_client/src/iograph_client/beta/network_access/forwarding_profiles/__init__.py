@@ -15,8 +15,8 @@ if TYPE_CHECKING:
 	from .by_forwarding_profile_id import ByForwardingProfileIdRequest
 	from ....request_adapter import HttpxRequestAdapter
 from iograph_models.beta.networkaccess_forwarding_profile_collection_response import NetworkaccessForwardingProfileCollectionResponse
-from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.beta.networkaccess_forwarding_profile import NetworkaccessForwardingProfile
+from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 
 
 class ForwardingProfilesRequest(BaseRequestBuilder):

@@ -11,9 +11,9 @@ from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:
 	from .....request_adapter import HttpxRequestAdapter
+from iograph_models.beta.create_migration_report_post_response import Create_migration_reportPostResponse
 from iograph_models.beta.create_migration_report_post_request import Create_migration_reportPostRequest
 from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
-from iograph_models.beta.create_migration_report_post_response import Create_migration_reportPostResponse
 
 
 class CreateMigrationReportRequest(BaseRequestBuilder):

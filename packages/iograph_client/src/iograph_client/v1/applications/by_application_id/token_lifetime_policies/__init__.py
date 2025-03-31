@@ -15,8 +15,8 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_token_lifetime_policy_id import ByTokenLifetimePolicyIdRequest
 	from .....request_adapter import HttpxRequestAdapter
-from iograph_models.v1.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.v1.token_lifetime_policy_collection_response import TokenLifetimePolicyCollectionResponse
+from iograph_models.v1.o_data_errors__o_data_error import ODataErrorsODataError
 
 
 class TokenLifetimePoliciesRequest(BaseRequestBuilder):

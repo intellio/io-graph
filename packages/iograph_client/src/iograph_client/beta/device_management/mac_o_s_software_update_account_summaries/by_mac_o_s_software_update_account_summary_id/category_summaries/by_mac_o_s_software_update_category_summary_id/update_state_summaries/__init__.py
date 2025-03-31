@@ -15,8 +15,8 @@ if TYPE_CHECKING:
 	from .by_mac_o_s_software_update_state_summary_id import ByMacOSSoftwareUpdateStateSummaryIdRequest
 	from ........request_adapter import HttpxRequestAdapter
 from iograph_models.beta.mac_o_s_software_update_state_summary_collection_response import MacOSSoftwareUpdateStateSummaryCollectionResponse
-from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.beta.mac_o_s_software_update_state_summary import MacOSSoftwareUpdateStateSummary
+from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 
 
 class UpdateStateSummariesRequest(BaseRequestBuilder):

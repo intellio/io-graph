@@ -14,9 +14,9 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_checklist_item_id import ByChecklistItemIdRequest
 	from ..........request_adapter import HttpxRequestAdapter
-from iograph_models.v1.o_data_errors__o_data_error import ODataErrorsODataError
-from iograph_models.v1.checklist_item_collection_response import ChecklistItemCollectionResponse
 from iograph_models.v1.checklist_item import ChecklistItem
+from iograph_models.v1.checklist_item_collection_response import ChecklistItemCollectionResponse
+from iograph_models.v1.o_data_errors__o_data_error import ODataErrorsODataError
 
 
 class ChecklistItemsRequest(BaseRequestBuilder):

@@ -15,8 +15,8 @@ if TYPE_CHECKING:
 	from .teams_app import TeamsAppRequest
 	from .chat import ChatRequest
 	from .......request_adapter import HttpxRequestAdapter
-from iograph_models.v1.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.v1.user_scope_teams_app_installation import UserScopeTeamsAppInstallation
+from iograph_models.v1.o_data_errors__o_data_error import ODataErrorsODataError
 
 
 class ByUserScopeTeamsAppInstallationIdRequest(BaseRequestBuilder):

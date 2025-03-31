@@ -15,8 +15,8 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_content_model_id import ByContentModelIdRequest
 	from .....request_adapter import HttpxRequestAdapter
-from iograph_models.beta.content_model import ContentModel
 from iograph_models.beta.content_model_collection_response import ContentModelCollectionResponse
+from iograph_models.beta.content_model import ContentModel
 from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 
 

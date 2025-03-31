@@ -14,9 +14,9 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_booking_business_id import ByBookingBusinessIdRequest
 	from ....request_adapter import HttpxRequestAdapter
-from iograph_models.v1.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.v1.booking_business import BookingBusiness
 from iograph_models.v1.booking_business_collection_response import BookingBusinessCollectionResponse
+from iograph_models.v1.o_data_errors__o_data_error import ODataErrorsODataError
 
 
 class BookingBusinessesRequest(BaseRequestBuilder):

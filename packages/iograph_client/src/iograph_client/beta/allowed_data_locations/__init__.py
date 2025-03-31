@@ -14,9 +14,9 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_allowed_data_location_id import ByAllowedDataLocationIdRequest
 	from ...request_adapter import HttpxRequestAdapter
-from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.beta.allowed_data_location import AllowedDataLocation
 from iograph_models.beta.allowed_data_location_collection_response import AllowedDataLocationCollectionResponse
+from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 
 
 class AllowedDataLocationsRequest(BaseRequestBuilder):

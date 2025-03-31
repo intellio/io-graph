@@ -14,8 +14,8 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_directory_audit_id import ByDirectoryAuditIdRequest
 	from ....request_adapter import HttpxRequestAdapter
-from iograph_models.beta.directory_audit_collection_response import DirectoryAuditCollectionResponse
 from iograph_models.beta.directory_audit import DirectoryAudit
+from iograph_models.beta.directory_audit_collection_response import DirectoryAuditCollectionResponse
 from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 
 

@@ -14,9 +14,9 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_host_port_id import ByHostPortIdRequest
 	from .....request_adapter import HttpxRequestAdapter
+from iograph_models.beta.security_host_port import SecurityHostPort
 from iograph_models.beta.security_host_port_collection_response import SecurityHostPortCollectionResponse
 from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
-from iograph_models.beta.security_host_port import SecurityHostPort
 
 
 class HostPortsRequest(BaseRequestBuilder):

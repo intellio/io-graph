@@ -12,8 +12,8 @@ from typing import TYPE_CHECKING
 if TYPE_CHECKING:
 	from ......request_adapter import HttpxRequestAdapter
 from iograph_models.beta.start_transcription_operation import StartTranscriptionOperation
-from iograph_models.beta.start_transcription_post_request import Start_transcriptionPostRequest
 from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.beta.start_transcription_post_request import Start_transcriptionPostRequest
 
 
 class StartTranscriptionRequest(BaseRequestBuilder):

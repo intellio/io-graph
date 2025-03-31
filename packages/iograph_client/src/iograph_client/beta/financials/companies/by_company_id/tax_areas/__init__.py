@@ -14,9 +14,9 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_tax_area_id import ByTaxAreaIdRequest
 	from ......request_adapter import HttpxRequestAdapter
+from iograph_models.beta.tax_area_collection_response import TaxAreaCollectionResponse
 from iograph_models.beta.tax_area import TaxArea
 from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
-from iograph_models.beta.tax_area_collection_response import TaxAreaCollectionResponse
 
 
 class TaxAreasRequest(BaseRequestBuilder):

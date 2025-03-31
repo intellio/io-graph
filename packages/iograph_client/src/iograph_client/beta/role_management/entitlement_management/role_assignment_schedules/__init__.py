@@ -15,8 +15,8 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_unified_role_assignment_schedule_id import ByUnifiedRoleAssignmentScheduleIdRequest
 	from .....request_adapter import HttpxRequestAdapter
-from iograph_models.beta.unified_role_assignment_schedule import UnifiedRoleAssignmentSchedule
 from iograph_models.beta.unified_role_assignment_schedule_collection_response import UnifiedRoleAssignmentScheduleCollectionResponse
+from iograph_models.beta.unified_role_assignment_schedule import UnifiedRoleAssignmentSchedule
 from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 
 

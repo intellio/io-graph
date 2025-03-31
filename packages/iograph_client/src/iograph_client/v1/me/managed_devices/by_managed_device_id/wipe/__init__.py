@@ -11,8 +11,8 @@ from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:
 	from ......request_adapter import HttpxRequestAdapter
-from iograph_models.v1.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.v1.wipe_post_request import WipePostRequest
+from iograph_models.v1.o_data_errors__o_data_error import ODataErrorsODataError
 
 
 class WipeRequest(BaseRequestBuilder):

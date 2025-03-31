@@ -19,8 +19,8 @@ if TYPE_CHECKING:
 	from .assignments import AssignmentsRequest
 	from .apps import AppsRequest
 	from .....request_adapter import HttpxRequestAdapter
-from iograph_models.beta.targeted_managed_app_configuration import TargetedManagedAppConfiguration
 from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.beta.targeted_managed_app_configuration import TargetedManagedAppConfiguration
 
 
 class ByTargetedManagedAppConfigurationIdRequest(BaseRequestBuilder):

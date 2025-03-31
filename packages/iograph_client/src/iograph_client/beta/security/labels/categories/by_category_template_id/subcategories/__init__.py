@@ -15,8 +15,8 @@ if TYPE_CHECKING:
 	from .by_subcategory_template_id import BySubcategoryTemplateIdRequest
 	from .......request_adapter import HttpxRequestAdapter
 from iograph_models.beta.security_subcategory_template import SecuritySubcategoryTemplate
-from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.beta.security_subcategory_template_collection_response import SecuritySubcategoryTemplateCollectionResponse
+from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 
 
 class SubcategoriesRequest(BaseRequestBuilder):

@@ -15,8 +15,8 @@ if TYPE_CHECKING:
 	from .by_exchange_restore_session_id import ByExchangeRestoreSessionIdRequest
 	from .....request_adapter import HttpxRequestAdapter
 from iograph_models.beta.exchange_restore_session import ExchangeRestoreSession
-from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.beta.exchange_restore_session_collection_response import ExchangeRestoreSessionCollectionResponse
+from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 
 
 class ExchangeRestoreSessionsRequest(BaseRequestBuilder):

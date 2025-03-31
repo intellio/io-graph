@@ -14,8 +14,8 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_management_intent_id import ByManagementIntentIdRequest
 	from .....request_adapter import HttpxRequestAdapter
-from iograph_models.beta.managed_tenants_management_intent_collection_response import ManagedTenantsManagementIntentCollectionResponse
 from iograph_models.beta.managed_tenants_management_intent import ManagedTenantsManagementIntent
+from iograph_models.beta.managed_tenants_management_intent_collection_response import ManagedTenantsManagementIntentCollectionResponse
 from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 
 

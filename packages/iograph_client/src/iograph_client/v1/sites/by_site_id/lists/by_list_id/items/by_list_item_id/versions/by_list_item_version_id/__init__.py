@@ -14,8 +14,8 @@ if TYPE_CHECKING:
 	from .restore_version import RestoreVersionRequest
 	from .fields import FieldsRequest
 	from ..........request_adapter import HttpxRequestAdapter
-from iograph_models.v1.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.v1.list_item_version import ListItemVersion
+from iograph_models.v1.o_data_errors__o_data_error import ODataErrorsODataError
 
 
 class ByListItemVersionIdRequest(BaseRequestBuilder):

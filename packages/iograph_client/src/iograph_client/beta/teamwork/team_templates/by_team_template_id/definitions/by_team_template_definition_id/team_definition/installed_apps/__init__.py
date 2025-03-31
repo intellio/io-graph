@@ -14,8 +14,8 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_teams_app_installation_id import ByTeamsAppInstallationIdRequest
 	from .........request_adapter import HttpxRequestAdapter
-from iograph_models.beta.teams_app_installation import TeamsAppInstallation
 from iograph_models.beta.teams_app_installation_collection_response import TeamsAppInstallationCollectionResponse
+from iograph_models.beta.teams_app_installation import TeamsAppInstallation
 from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 
 

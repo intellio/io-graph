@@ -11,8 +11,8 @@ from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:
 	from .......request_adapter import HttpxRequestAdapter
-from iograph_models.beta.import_apple_device_identity_list_post_request import Import_apple_device_identity_listPostRequest
 from iograph_models.beta.import_apple_device_identity_list_post_response import Import_apple_device_identity_listPostResponse
+from iograph_models.beta.import_apple_device_identity_list_post_request import Import_apple_device_identity_listPostRequest
 from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 
 

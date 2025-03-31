@@ -11,9 +11,9 @@ from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:
 	from .........request_adapter import HttpxRequestAdapter
-from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.beta.workbook_function_result import WorkbookFunctionResult
 from iograph_models.beta.percent_rank__exc_post_request import Percent_rank__excPostRequest
+from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 
 
 class PercentRank_ExcRequest(BaseRequestBuilder):

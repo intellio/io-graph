@@ -19,8 +19,8 @@ if TYPE_CHECKING:
 	from .battery_health_metrics import BatteryHealthMetricsRequest
 	from .app_health_metrics import AppHealthMetricsRequest
 	from .....request_adapter import HttpxRequestAdapter
-from iograph_models.v1.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.v1.user_experience_analytics_baseline import UserExperienceAnalyticsBaseline
+from iograph_models.v1.o_data_errors__o_data_error import ODataErrorsODataError
 
 
 class ByUserExperienceAnalyticsBaselineIdRequest(BaseRequestBuilder):

@@ -11,9 +11,9 @@ from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:
 	from ......request_adapter import HttpxRequestAdapter
-from iograph_models.v1.o_data_errors__o_data_error import ODataErrorsODataError
-from iograph_models.v1.mark_read_post_request import Mark_readPostRequest
 from iograph_models.v1.mark_read_post_response import Mark_readPostResponse
+from iograph_models.v1.mark_read_post_request import Mark_readPostRequest
+from iograph_models.v1.o_data_errors__o_data_error import ODataErrorsODataError
 
 
 class MarkReadRequest(BaseRequestBuilder):

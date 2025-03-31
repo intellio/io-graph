@@ -14,9 +14,9 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_inference_classification_override_id import ByInferenceClassificationOverrideIdRequest
 	from .....request_adapter import HttpxRequestAdapter
-from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.beta.inference_classification_override import InferenceClassificationOverride
 from iograph_models.beta.inference_classification_override_collection_response import InferenceClassificationOverrideCollectionResponse
+from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 
 
 class OverridesRequest(BaseRequestBuilder):

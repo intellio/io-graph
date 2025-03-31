@@ -15,8 +15,8 @@ if TYPE_CHECKING:
 	from .participants_v2 import Participants_v2Request
 	from .organizer_v2 import Organizer_v2Request
 	from .....request_adapter import HttpxRequestAdapter
-from iograph_models.v1.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.v1.call_records_call_record import CallRecordsCallRecord
+from iograph_models.v1.o_data_errors__o_data_error import ODataErrorsODataError
 
 
 class ByCallRecordIdRequest(BaseRequestBuilder):

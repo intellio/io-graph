@@ -14,9 +14,9 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_windows_driver_update_inventory_id import ByWindowsDriverUpdateInventoryIdRequest
 	from ......request_adapter import HttpxRequestAdapter
+from iograph_models.beta.windows_driver_update_inventory_collection_response import WindowsDriverUpdateInventoryCollectionResponse
 from iograph_models.beta.windows_driver_update_inventory import WindowsDriverUpdateInventory
 from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
-from iograph_models.beta.windows_driver_update_inventory_collection_response import WindowsDriverUpdateInventoryCollectionResponse
 
 
 class DriverInventoriesRequest(BaseRequestBuilder):

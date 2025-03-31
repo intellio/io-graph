@@ -15,8 +15,8 @@ if TYPE_CHECKING:
 	from .by_localized_notification_message_id import ByLocalizedNotificationMessageIdRequest
 	from ......request_adapter import HttpxRequestAdapter
 from iograph_models.beta.localized_notification_message import LocalizedNotificationMessage
-from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.beta.localized_notification_message_collection_response import LocalizedNotificationMessageCollectionResponse
+from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 
 
 class LocalizedNotificationMessagesRequest(BaseRequestBuilder):

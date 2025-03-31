@@ -15,8 +15,8 @@ if TYPE_CHECKING:
 	from .by_trust_framework_policy_id import ByTrustFrameworkPolicyIdRequest
 	from ....request_adapter import HttpxRequestAdapter
 from iograph_models.beta.trust_framework_policy import TrustFrameworkPolicy
-from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.beta.trust_framework_policy_collection_response import TrustFrameworkPolicyCollectionResponse
+from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 
 
 class PoliciesRequest(BaseRequestBuilder):

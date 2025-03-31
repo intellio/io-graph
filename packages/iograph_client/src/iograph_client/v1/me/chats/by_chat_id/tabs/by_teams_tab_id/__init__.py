@@ -13,8 +13,8 @@ from typing import TYPE_CHECKING
 if TYPE_CHECKING:
 	from .teams_app import TeamsAppRequest
 	from .......request_adapter import HttpxRequestAdapter
-from iograph_models.v1.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.v1.teams_tab import TeamsTab
+from iograph_models.v1.o_data_errors__o_data_error import ODataErrorsODataError
 
 
 class ByTeamsTabIdRequest(BaseRequestBuilder):

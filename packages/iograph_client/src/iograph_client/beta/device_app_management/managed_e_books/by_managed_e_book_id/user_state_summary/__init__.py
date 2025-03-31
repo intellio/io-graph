@@ -15,8 +15,8 @@ if TYPE_CHECKING:
 	from .by_user_install_state_summary_id import ByUserInstallStateSummaryIdRequest
 	from ......request_adapter import HttpxRequestAdapter
 from iograph_models.beta.user_install_state_summary_collection_response import UserInstallStateSummaryCollectionResponse
-from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.beta.user_install_state_summary import UserInstallStateSummary
+from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 
 
 class UserStateSummaryRequest(BaseRequestBuilder):

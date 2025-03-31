@@ -11,8 +11,8 @@ from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:
 	from .......request_adapter import HttpxRequestAdapter
-from iograph_models.beta.trigger_configuration_manager_action_post_request import Trigger_configuration_manager_actionPostRequest
 from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.beta.trigger_configuration_manager_action_post_request import Trigger_configuration_manager_actionPostRequest
 
 
 class TriggerConfigurationManagerActionRequest(BaseRequestBuilder):

@@ -17,8 +17,8 @@ if TYPE_CHECKING:
 	from .calendar_view import CalendarViewRequest
 	from .calendar_permissions import CalendarPermissionsRequest
 	from ........request_adapter import HttpxRequestAdapter
-from iograph_models.v1.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.v1.calendar import Calendar
+from iograph_models.v1.o_data_errors__o_data_error import ODataErrorsODataError
 
 
 class ByCalendarIdRequest(BaseRequestBuilder):

@@ -20,8 +20,8 @@ if TYPE_CHECKING:
 	from .content_types import ContentTypesRequest
 	from .columns import ColumnsRequest
 	from ........request_adapter import HttpxRequestAdapter
-from iograph_models.v1.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.v1.list import List
+from iograph_models.v1.o_data_errors__o_data_error import ODataErrorsODataError
 
 
 class ByListIdRequest(BaseRequestBuilder):

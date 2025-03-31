@@ -14,8 +14,8 @@ if TYPE_CHECKING:
 	from .graph_external_users_self_service_sign_up_events_flow import GraphExternalUsersSelfServiceSignUpEventsFlowRequest
 	from .conditions import ConditionsRequest
 	from .....request_adapter import HttpxRequestAdapter
-from iograph_models.v1.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.v1.authentication_events_flow import AuthenticationEventsFlow
+from iograph_models.v1.o_data_errors__o_data_error import ODataErrorsODataError
 
 
 class ByAuthenticationEventsFlowIdRequest(BaseRequestBuilder):

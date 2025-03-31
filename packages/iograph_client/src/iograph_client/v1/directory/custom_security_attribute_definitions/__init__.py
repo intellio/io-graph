@@ -14,9 +14,9 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_custom_security_attribute_definition_id import ByCustomSecurityAttributeDefinitionIdRequest
 	from ....request_adapter import HttpxRequestAdapter
-from iograph_models.v1.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.v1.custom_security_attribute_definition import CustomSecurityAttributeDefinition
 from iograph_models.v1.custom_security_attribute_definition_collection_response import CustomSecurityAttributeDefinitionCollectionResponse
+from iograph_models.v1.o_data_errors__o_data_error import ODataErrorsODataError
 
 
 class CustomSecurityAttributeDefinitionsRequest(BaseRequestBuilder):

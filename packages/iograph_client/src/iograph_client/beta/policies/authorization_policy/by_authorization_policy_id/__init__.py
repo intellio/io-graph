@@ -13,8 +13,8 @@ from typing import TYPE_CHECKING
 if TYPE_CHECKING:
 	from .default_user_role_overrides import DefaultUserRoleOverridesRequest
 	from .....request_adapter import HttpxRequestAdapter
-from iograph_models.beta.authorization_policy import AuthorizationPolicy
 from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.beta.authorization_policy import AuthorizationPolicy
 
 
 class ByAuthorizationPolicyIdRequest(BaseRequestBuilder):

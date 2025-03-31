@@ -15,8 +15,8 @@ if TYPE_CHECKING:
 	from .categories import CategoriesRequest
 	from .assignments import AssignmentsRequest
 	from ......request_adapter import HttpxRequestAdapter
-from iograph_models.v1.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.v1.mac_o_s_dmg_app import MacOSDmgApp
+from iograph_models.v1.o_data_errors__o_data_error import ODataErrorsODataError
 
 
 class GraphMacOSDmgAppRequest(BaseRequestBuilder):

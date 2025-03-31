@@ -21,7 +21,7 @@ class ExternalConnectorsExternalConnection(BaseModel):
 	items: Optional[list[ExternalConnectorsExternalItem]] = Field(alias="items", default=None,)
 	operations: Optional[list[ExternalConnectorsConnectionOperation]] = Field(alias="operations", default=None,)
 	quota: Optional[ExternalConnectorsConnectionQuota] = Field(alias="quota", default=None,)
-	schema: Optional[ExternalConnectorsSchema] = Field(alias="schema", default=None,)
+	schema_: Optional[ExternalConnectorsSchema] = Field(alias="schema", default=None,)
 
 from .external_connectors_activity_settings import ExternalConnectorsActivitySettings
 from .external_connectors_compliance_settings import ExternalConnectorsComplianceSettings

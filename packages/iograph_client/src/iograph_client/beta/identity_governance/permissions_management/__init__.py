@@ -14,8 +14,8 @@ if TYPE_CHECKING:
 	from .scheduled_permissions_approvals import ScheduledPermissionsApprovalsRequest
 	from .permissions_request_changes import PermissionsRequestChangesRequest
 	from ....request_adapter import HttpxRequestAdapter
-from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.beta.permissions_management import PermissionsManagement
+from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 
 
 class PermissionsManagementRequest(BaseRequestBuilder):

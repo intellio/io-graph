@@ -15,8 +15,8 @@ if TYPE_CHECKING:
 	from .by_windows_quality_update_profile_assignment_id import ByWindowsQualityUpdateProfileAssignmentIdRequest
 	from ......request_adapter import HttpxRequestAdapter
 from iograph_models.beta.windows_quality_update_profile_assignment_collection_response import WindowsQualityUpdateProfileAssignmentCollectionResponse
-from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.beta.windows_quality_update_profile_assignment import WindowsQualityUpdateProfileAssignment
+from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 
 
 class AssignmentsRequest(BaseRequestBuilder):

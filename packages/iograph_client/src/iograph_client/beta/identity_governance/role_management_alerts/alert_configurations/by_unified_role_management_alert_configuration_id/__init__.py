@@ -13,8 +13,8 @@ from typing import TYPE_CHECKING
 if TYPE_CHECKING:
 	from .alert_definition import AlertDefinitionRequest
 	from ......request_adapter import HttpxRequestAdapter
-from iograph_models.beta.unified_role_management_alert_configuration import UnifiedRoleManagementAlertConfiguration
 from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.beta.unified_role_management_alert_configuration import UnifiedRoleManagementAlertConfiguration
 
 
 class ByUnifiedRoleManagementAlertConfigurationIdRequest(BaseRequestBuilder):

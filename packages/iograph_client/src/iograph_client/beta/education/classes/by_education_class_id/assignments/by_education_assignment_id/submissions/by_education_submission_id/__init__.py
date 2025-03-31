@@ -21,8 +21,8 @@ if TYPE_CHECKING:
 	from .reassign import ReassignRequest
 	from .excuse import ExcuseRequest
 	from .........request_adapter import HttpxRequestAdapter
-from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.beta.education_submission import EducationSubmission
+from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 
 
 class ByEducationSubmissionIdRequest(BaseRequestBuilder):

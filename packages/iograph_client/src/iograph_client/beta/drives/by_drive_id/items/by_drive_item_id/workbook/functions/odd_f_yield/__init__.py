@@ -11,8 +11,8 @@ from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:
 	from .........request_adapter import HttpxRequestAdapter
-from iograph_models.beta.odd_f_yield_post_request import Odd_f_yieldPostRequest
 from iograph_models.beta.workbook_function_result import WorkbookFunctionResult
+from iograph_models.beta.odd_f_yield_post_request import Odd_f_yieldPostRequest
 from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 
 

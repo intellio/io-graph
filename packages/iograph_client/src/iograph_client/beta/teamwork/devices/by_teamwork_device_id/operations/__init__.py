@@ -15,8 +15,8 @@ if TYPE_CHECKING:
 	from .by_teamwork_device_operation_id import ByTeamworkDeviceOperationIdRequest
 	from ......request_adapter import HttpxRequestAdapter
 from iograph_models.beta.teamwork_device_operation_collection_response import TeamworkDeviceOperationCollectionResponse
-from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.beta.teamwork_device_operation import TeamworkDeviceOperation
+from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 
 
 class OperationsRequest(BaseRequestBuilder):

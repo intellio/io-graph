@@ -18,8 +18,8 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_site_id import BySiteIdRequest
 	from ...request_adapter import HttpxRequestAdapter
-from iograph_models.v1.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.v1.site_collection_response import SiteCollectionResponse
+from iograph_models.v1.o_data_errors__o_data_error import ODataErrorsODataError
 
 
 class SitesRequest(BaseRequestBuilder):

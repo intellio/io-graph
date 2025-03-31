@@ -15,8 +15,8 @@ if TYPE_CHECKING:
 	from .by_app_performance_id import ByAppPerformanceIdRequest
 	from .....request_adapter import HttpxRequestAdapter
 from iograph_models.beta.managed_tenants_app_performance import ManagedTenantsAppPerformance
-from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.beta.managed_tenants_app_performance_collection_response import ManagedTenantsAppPerformanceCollectionResponse
+from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 
 
 class AppPerformancesRequest(BaseRequestBuilder):

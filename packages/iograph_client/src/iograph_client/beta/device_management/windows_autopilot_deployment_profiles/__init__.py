@@ -15,8 +15,8 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_windows_autopilot_deployment_profile_id import ByWindowsAutopilotDeploymentProfileIdRequest
 	from ....request_adapter import HttpxRequestAdapter
-from iograph_models.beta.windows_autopilot_deployment_profile_collection_response import WindowsAutopilotDeploymentProfileCollectionResponse
 from iograph_models.beta.windows_autopilot_deployment_profile import WindowsAutopilotDeploymentProfile
+from iograph_models.beta.windows_autopilot_deployment_profile_collection_response import WindowsAutopilotDeploymentProfileCollectionResponse
 from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 
 

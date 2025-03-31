@@ -11,9 +11,9 @@ from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:
 	from ..........request_adapter import HttpxRequestAdapter
-from iograph_models.v1.o_data_errors__o_data_error import ODataErrorsODataError
-from iograph_models.v1.content_type import ContentType
 from iograph_models.v1.add_copy_from_content_type_hub_post_request import Add_copy_from_content_type_hubPostRequest
+from iograph_models.v1.content_type import ContentType
+from iograph_models.v1.o_data_errors__o_data_error import ODataErrorsODataError
 
 
 class AddCopyFromContentTypeHubRequest(BaseRequestBuilder):

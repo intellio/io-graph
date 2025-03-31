@@ -20,9 +20,9 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_service_update_message_id import ByServiceUpdateMessageIdRequest
 	from .....request_adapter import HttpxRequestAdapter
-from iograph_models.v1.o_data_errors__o_data_error import ODataErrorsODataError
-from iograph_models.v1.service_update_message import ServiceUpdateMessage
 from iograph_models.v1.service_update_message_collection_response import ServiceUpdateMessageCollectionResponse
+from iograph_models.v1.service_update_message import ServiceUpdateMessage
+from iograph_models.v1.o_data_errors__o_data_error import ODataErrorsODataError
 
 
 class MessagesRequest(BaseRequestBuilder):

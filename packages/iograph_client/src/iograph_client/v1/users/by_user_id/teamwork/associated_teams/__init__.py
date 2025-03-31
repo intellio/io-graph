@@ -14,9 +14,9 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_associated_team_info_id import ByAssociatedTeamInfoIdRequest
 	from ......request_adapter import HttpxRequestAdapter
-from iograph_models.v1.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.v1.associated_team_info import AssociatedTeamInfo
 from iograph_models.v1.associated_team_info_collection_response import AssociatedTeamInfoCollectionResponse
+from iograph_models.v1.o_data_errors__o_data_error import ODataErrorsODataError
 
 
 class AssociatedTeamsRequest(BaseRequestBuilder):

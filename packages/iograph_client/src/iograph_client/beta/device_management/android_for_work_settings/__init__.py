@@ -15,8 +15,8 @@ if TYPE_CHECKING:
 	from .request_signup_url import RequestSignupUrlRequest
 	from .complete_signup import CompleteSignupRequest
 	from ....request_adapter import HttpxRequestAdapter
-from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.beta.android_for_work_settings import AndroidForWorkSettings
+from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 
 
 class AndroidForWorkSettingsRequest(BaseRequestBuilder):

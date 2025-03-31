@@ -14,7 +14,7 @@ class SynchronizationTemplate(BaseModel):
 	discoverable: Optional[bool] = Field(alias="discoverable", default=None,)
 	factoryTag: Optional[str] = Field(alias="factoryTag", default=None,)
 	metadata: Optional[list[SynchronizationMetadataEntry]] = Field(alias="metadata", default=None,)
-	schema: Optional[SynchronizationSchema] = Field(alias="schema", default=None,)
+	schema_: Optional[SynchronizationSchema] = Field(alias="schema", default=None,)
 
 from .synchronization_metadata_entry import SynchronizationMetadataEntry
 from .synchronization_schema import SynchronizationSchema

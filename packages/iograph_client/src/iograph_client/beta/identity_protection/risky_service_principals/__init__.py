@@ -16,8 +16,8 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_risky_service_principal_id import ByRiskyServicePrincipalIdRequest
 	from ....request_adapter import HttpxRequestAdapter
-from iograph_models.beta.risky_service_principal import RiskyServicePrincipal
 from iograph_models.beta.risky_service_principal_collection_response import RiskyServicePrincipalCollectionResponse
+from iograph_models.beta.risky_service_principal import RiskyServicePrincipal
 from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 
 

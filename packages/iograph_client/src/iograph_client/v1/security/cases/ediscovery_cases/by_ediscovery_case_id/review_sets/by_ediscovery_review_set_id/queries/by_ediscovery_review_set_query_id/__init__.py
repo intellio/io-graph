@@ -14,8 +14,8 @@ if TYPE_CHECKING:
 	from .security_export import SecurityExportRequest
 	from .security_apply_tags import SecurityApplyTagsRequest
 	from ..........request_adapter import HttpxRequestAdapter
-from iograph_models.v1.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.v1.security_ediscovery_review_set_query import SecurityEdiscoveryReviewSetQuery
+from iograph_models.v1.o_data_errors__o_data_error import ODataErrorsODataError
 
 
 class ByEdiscoveryReviewSetQueryIdRequest(BaseRequestBuilder):

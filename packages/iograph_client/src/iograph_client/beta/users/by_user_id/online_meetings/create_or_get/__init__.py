@@ -11,8 +11,8 @@ from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:
 	from ......request_adapter import HttpxRequestAdapter
-from iograph_models.beta.online_meeting import OnlineMeeting
 from iograph_models.beta.create_or_get_post_request import Create_or_getPostRequest
+from iograph_models.beta.online_meeting import OnlineMeeting
 from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 
 

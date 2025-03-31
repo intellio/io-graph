@@ -14,9 +14,9 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_learning_course_activity_id import ByLearningCourseActivityIdRequest
 	from ......request_adapter import HttpxRequestAdapter
+from iograph_models.beta.learning_course_activity import LearningCourseActivity
 from iograph_models.beta.learning_course_activity_collection_response import LearningCourseActivityCollectionResponse
 from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
-from iograph_models.beta.learning_course_activity import LearningCourseActivity
 
 
 class LearningCourseActivitiesRequest(BaseRequestBuilder):

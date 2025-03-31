@@ -14,9 +14,9 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_printer_share_id import ByPrinterShareIdRequest
 	from ....request_adapter import HttpxRequestAdapter
-from iograph_models.v1.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.v1.printer_share_collection_response import PrinterShareCollectionResponse
 from iograph_models.v1.printer_share import PrinterShare
+from iograph_models.v1.o_data_errors__o_data_error import ODataErrorsODataError
 
 
 class SharesRequest(BaseRequestBuilder):

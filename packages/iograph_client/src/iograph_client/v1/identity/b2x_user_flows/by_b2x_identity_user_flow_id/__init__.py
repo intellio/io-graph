@@ -17,8 +17,8 @@ if TYPE_CHECKING:
 	from .identity_providers import IdentityProvidersRequest
 	from .api_connector_configuration import ApiConnectorConfigurationRequest
 	from .....request_adapter import HttpxRequestAdapter
-from iograph_models.v1.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.v1.b2x_identity_user_flow import B2xIdentityUserFlow
+from iograph_models.v1.o_data_errors__o_data_error import ODataErrorsODataError
 
 
 class ByB2xIdentityUserFlowIdRequest(BaseRequestBuilder):

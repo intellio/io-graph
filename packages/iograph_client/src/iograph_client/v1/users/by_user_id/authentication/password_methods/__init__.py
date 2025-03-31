@@ -14,9 +14,9 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_password_authentication_method_id import ByPasswordAuthenticationMethodIdRequest
 	from ......request_adapter import HttpxRequestAdapter
-from iograph_models.v1.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.v1.password_authentication_method import PasswordAuthenticationMethod
 from iograph_models.v1.password_authentication_method_collection_response import PasswordAuthenticationMethodCollectionResponse
+from iograph_models.v1.o_data_errors__o_data_error import ODataErrorsODataError
 
 
 class PasswordMethodsRequest(BaseRequestBuilder):

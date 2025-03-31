@@ -17,7 +17,7 @@ class ExternalConnectorsExternalConnection(BaseModel):
 	groups: Optional[list[ExternalConnectorsExternalGroup]] = Field(alias="groups", default=None,)
 	items: Optional[list[ExternalConnectorsExternalItem]] = Field(alias="items", default=None,)
 	operations: Optional[list[ExternalConnectorsConnectionOperation]] = Field(alias="operations", default=None,)
-	schema: Optional[ExternalConnectorsSchema] = Field(alias="schema", default=None,)
+	schema_: Optional[ExternalConnectorsSchema] = Field(alias="schema", default=None,)
 
 from .external_connectors_activity_settings import ExternalConnectorsActivitySettings
 from .external_connectors_configuration import ExternalConnectorsConfiguration

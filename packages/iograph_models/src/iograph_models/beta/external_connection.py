@@ -14,7 +14,7 @@ class ExternalConnection(BaseModel):
 	groups: Optional[list[ExternalGroup]] = Field(alias="groups", default=None,)
 	items: Optional[list[ExternalItem]] = Field(alias="items", default=None,)
 	operations: Optional[list[ConnectionOperation]] = Field(alias="operations", default=None,)
-	schema: Optional[Schema] = Field(alias="schema", default=None,)
+	schema_: Optional[Schema] = Field(alias="schema", default=None,)
 
 from .configuration import Configuration
 from .connection_state import ConnectionState

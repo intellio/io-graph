@@ -15,8 +15,8 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_o_auth2_permission_grant_id import ByOAuth2PermissionGrantIdRequest
 	from ...request_adapter import HttpxRequestAdapter
-from iograph_models.beta.o_auth2_permission_grant import OAuth2PermissionGrant
 from iograph_models.beta.o_auth2_permission_grant_collection_response import OAuth2PermissionGrantCollectionResponse
+from iograph_models.beta.o_auth2_permission_grant import OAuth2PermissionGrant
 from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 
 

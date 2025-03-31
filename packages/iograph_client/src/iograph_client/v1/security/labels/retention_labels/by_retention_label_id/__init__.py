@@ -15,8 +15,8 @@ if TYPE_CHECKING:
 	from .disposition_review_stages import DispositionReviewStagesRequest
 	from .descriptors import DescriptorsRequest
 	from ......request_adapter import HttpxRequestAdapter
-from iograph_models.v1.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.v1.security_retention_label import SecurityRetentionLabel
+from iograph_models.v1.o_data_errors__o_data_error import ODataErrorsODataError
 
 
 class ByRetentionLabelIdRequest(BaseRequestBuilder):

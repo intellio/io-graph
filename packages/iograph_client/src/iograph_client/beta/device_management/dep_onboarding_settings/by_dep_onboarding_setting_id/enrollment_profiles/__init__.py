@@ -14,8 +14,8 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_enrollment_profile_id import ByEnrollmentProfileIdRequest
 	from ......request_adapter import HttpxRequestAdapter
-from iograph_models.beta.enrollment_profile_collection_response import EnrollmentProfileCollectionResponse
 from iograph_models.beta.enrollment_profile import EnrollmentProfile
+from iograph_models.beta.enrollment_profile_collection_response import EnrollmentProfileCollectionResponse
 from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 
 

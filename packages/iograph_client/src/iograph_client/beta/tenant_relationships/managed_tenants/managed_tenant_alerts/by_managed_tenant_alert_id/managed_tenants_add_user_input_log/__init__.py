@@ -11,8 +11,8 @@ from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:
 	from .......request_adapter import HttpxRequestAdapter
-from iograph_models.beta.managed_tenants_managed_tenant_alert import ManagedTenantsManagedTenantAlert
 from iograph_models.beta.managed_tenants_add_user_input_log_post_request import Managed_tenants_add_user_input_logPostRequest
+from iograph_models.beta.managed_tenants_managed_tenant_alert import ManagedTenantsManagedTenantAlert
 from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 
 

@@ -11,8 +11,8 @@ from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:
 	from .....request_adapter import HttpxRequestAdapter
-from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.beta.call_records_get_pstn_blocked_users_log_with_fromdatetime_todatetime_get_response import Call_records_get_pstn_blocked_users_log_with_fromdatetime_todatetimeGetResponse
+from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 
 
 class CallRecordsGetPstnBlockedUsersLogWithFromDateTimeToDateTimeRequest(BaseRequestBuilder):

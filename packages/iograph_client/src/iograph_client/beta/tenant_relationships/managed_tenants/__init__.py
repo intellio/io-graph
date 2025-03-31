@@ -48,8 +48,8 @@ if TYPE_CHECKING:
 	from .app_performances import AppPerformancesRequest
 	from .aggregated_policy_compliances import AggregatedPolicyCompliancesRequest
 	from ....request_adapter import HttpxRequestAdapter
-from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.beta.managed_tenants_managed_tenant import ManagedTenantsManagedTenant
+from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 
 
 class ManagedTenantsRequest(BaseRequestBuilder):

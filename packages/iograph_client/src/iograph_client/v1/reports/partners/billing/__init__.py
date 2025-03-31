@@ -15,8 +15,8 @@ if TYPE_CHECKING:
 	from .operations import OperationsRequest
 	from .manifests import ManifestsRequest
 	from .....request_adapter import HttpxRequestAdapter
-from iograph_models.v1.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.v1.partners_billing_billing import PartnersBillingBilling
+from iograph_models.v1.o_data_errors__o_data_error import ODataErrorsODataError
 
 
 class BillingRequest(BaseRequestBuilder):

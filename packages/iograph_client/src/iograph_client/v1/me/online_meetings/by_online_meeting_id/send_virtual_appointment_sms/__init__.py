@@ -11,8 +11,8 @@ from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:
 	from ......request_adapter import HttpxRequestAdapter
-from iograph_models.v1.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.v1.send_virtual_appointment_sms_post_request import Send_virtual_appointment_smsPostRequest
+from iograph_models.v1.o_data_errors__o_data_error import ODataErrorsODataError
 
 
 class SendVirtualAppointmentSmsRequest(BaseRequestBuilder):

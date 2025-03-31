@@ -13,8 +13,8 @@ from typing import TYPE_CHECKING
 if TYPE_CHECKING:
 	from .identity_providers import IdentityProvidersRequest
 	from ........request_adapter import HttpxRequestAdapter
-from iograph_models.v1.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.v1.on_authentication_method_load_start_external_users_self_service_sign_up import OnAuthenticationMethodLoadStartExternalUsersSelfServiceSignUp
+from iograph_models.v1.o_data_errors__o_data_error import ODataErrorsODataError
 
 
 class GraphOnAuthenticationMethodLoadStartExternalUsersSelfServiceSignUpRequest(BaseRequestBuilder):

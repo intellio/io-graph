@@ -15,8 +15,8 @@ if TYPE_CHECKING:
 	from .by_mention_id import ByMentionIdRequest
 	from ......request_adapter import HttpxRequestAdapter
 from iograph_models.beta.mention_collection_response import MentionCollectionResponse
-from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.beta.mention import Mention
+from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 
 
 class MentionsRequest(BaseRequestBuilder):

@@ -15,8 +15,8 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_access_package_catalog_id import ByAccessPackageCatalogIdRequest
 	from .....request_adapter import HttpxRequestAdapter
-from iograph_models.beta.access_package_catalog import AccessPackageCatalog
 from iograph_models.beta.access_package_catalog_collection_response import AccessPackageCatalogCollectionResponse
+from iograph_models.beta.access_package_catalog import AccessPackageCatalog
 from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 
 

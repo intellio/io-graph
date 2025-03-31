@@ -142,7 +142,17 @@ def module_file_name_from_name(name: str):
     return name
 
 def clean_field_name(name):
-    return name.replace('@', '').replace('.', '_').replace('-', '_')
+    new_name =  name.replace('@', '').replace('.', '_').replace('-', '_')
+
+    # remove python reserved words
+    if new_name in python_reserved_words:
+        # print(f'Field name {name} is a reserved keyword in python, renaming to {new_name}_')
+        new_name = new_name + '_'
+    # handle special case for schema since it is a reserved keyword in pydantic
+    if new_name == 'schema':
+        new_name = 'schema_'
+    
+    return new_name
 
 def resolve_ref_in_components(ref, components):
     ref_path = ref.split('/')[1:]  # Split and remove the initial '#'

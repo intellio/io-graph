@@ -20,8 +20,8 @@ if TYPE_CHECKING:
 	from .federation_configuration import FederationConfigurationRequest
 	from .domain_name_references import DomainNameReferencesRequest
 	from ....request_adapter import HttpxRequestAdapter
-from iograph_models.v1.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.v1.domain import Domain
+from iograph_models.v1.o_data_errors__o_data_error import ODataErrorsODataError
 
 
 class ByDomainIdRequest(BaseRequestBuilder):

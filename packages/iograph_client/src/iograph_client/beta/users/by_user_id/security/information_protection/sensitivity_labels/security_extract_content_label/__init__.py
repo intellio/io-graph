@@ -11,9 +11,9 @@ from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:
 	from ........request_adapter import HttpxRequestAdapter
+from iograph_models.beta.security_extract_content_label_post_request import Security_extract_content_labelPostRequest
 from iograph_models.beta.security_content_label import SecurityContentLabel
 from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
-from iograph_models.beta.security_extract_content_label_post_request import Security_extract_content_labelPostRequest
 
 
 class SecurityExtractContentLabelRequest(BaseRequestBuilder):

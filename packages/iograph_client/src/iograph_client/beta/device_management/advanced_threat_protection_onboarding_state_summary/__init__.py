@@ -12,8 +12,8 @@ from typing import TYPE_CHECKING
 if TYPE_CHECKING:
 	from .advanced_threat_protection_onboarding_device_setting_states import AdvancedThreatProtectionOnboardingDeviceSettingStatesRequest
 	from ....request_adapter import HttpxRequestAdapter
-from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.beta.advanced_threat_protection_onboarding_state_summary import AdvancedThreatProtectionOnboardingStateSummary
+from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 
 
 class AdvancedThreatProtectionOnboardingStateSummaryRequest(BaseRequestBuilder):

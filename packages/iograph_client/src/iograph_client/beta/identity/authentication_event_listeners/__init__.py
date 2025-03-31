@@ -15,8 +15,8 @@ if TYPE_CHECKING:
 	from .by_authentication_event_listener_id import ByAuthenticationEventListenerIdRequest
 	from ....request_adapter import HttpxRequestAdapter
 from iograph_models.beta.authentication_event_listener_collection_response import AuthenticationEventListenerCollectionResponse
-from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.beta.authentication_event_listener import AuthenticationEventListener
+from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 
 
 class AuthenticationEventListenersRequest(BaseRequestBuilder):

@@ -14,8 +14,8 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_trust_framework_key_set_id import ByTrustFrameworkKeySetIdRequest
 	from ....request_adapter import HttpxRequestAdapter
-from iograph_models.beta.trust_framework_key_set import TrustFrameworkKeySet
 from iograph_models.beta.trust_framework_key_set_collection_response import TrustFrameworkKeySetCollectionResponse
+from iograph_models.beta.trust_framework_key_set import TrustFrameworkKeySet
 from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 
 

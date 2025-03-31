@@ -15,8 +15,8 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_workbook_document_task_id import ByWorkbookDocumentTaskIdRequest
 	from ..........request_adapter import HttpxRequestAdapter
-from iograph_models.beta.workbook_document_task import WorkbookDocumentTask
 from iograph_models.beta.workbook_document_task_collection_response import WorkbookDocumentTaskCollectionResponse
+from iograph_models.beta.workbook_document_task import WorkbookDocumentTask
 from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 
 

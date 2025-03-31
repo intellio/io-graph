@@ -24,8 +24,8 @@ if TYPE_CHECKING:
 	from .apply_bottom_items_filter import ApplyBottomItemsFilterRequest
 	from .apply import ApplyRequest
 	from ............request_adapter import HttpxRequestAdapter
-from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.beta.workbook_filter import WorkbookFilter
+from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 
 
 class FilterRequest(BaseRequestBuilder):

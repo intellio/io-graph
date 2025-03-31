@@ -17,8 +17,8 @@ if TYPE_CHECKING:
 	from .publish import PublishRequest
 	from .pin import PinRequest
 	from .......request_adapter import HttpxRequestAdapter
-from iograph_models.v1.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.v1.education_module import EducationModule
+from iograph_models.v1.o_data_errors__o_data_error import ODataErrorsODataError
 
 
 class ByEducationModuleIdRequest(BaseRequestBuilder):

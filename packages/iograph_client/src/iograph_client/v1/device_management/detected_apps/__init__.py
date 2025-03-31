@@ -14,9 +14,9 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_detected_app_id import ByDetectedAppIdRequest
 	from ....request_adapter import HttpxRequestAdapter
-from iograph_models.v1.o_data_errors__o_data_error import ODataErrorsODataError
-from iograph_models.v1.detected_app_collection_response import DetectedAppCollectionResponse
 from iograph_models.v1.detected_app import DetectedApp
+from iograph_models.v1.detected_app_collection_response import DetectedAppCollectionResponse
+from iograph_models.v1.o_data_errors__o_data_error import ODataErrorsODataError
 
 
 class DetectedAppsRequest(BaseRequestBuilder):

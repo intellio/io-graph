@@ -15,8 +15,8 @@ if TYPE_CHECKING:
 	from .complete import CompleteRequest
 	from .attachments import AttachmentsRequest
 	from ......request_adapter import HttpxRequestAdapter
-from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.beta.outlook_task import OutlookTask
+from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 
 
 class ByOutlookTaskIdRequest(BaseRequestBuilder):

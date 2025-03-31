@@ -378,8 +378,8 @@ if TYPE_CHECKING:
 	from .accr_int import AccrIntRequest
 	from .abs import AbsRequest
 	from ........request_adapter import HttpxRequestAdapter
-from iograph_models.v1.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.v1.workbook_functions import WorkbookFunctions
+from iograph_models.v1.o_data_errors__o_data_error import ODataErrorsODataError
 
 
 class FunctionsRequest(BaseRequestBuilder):

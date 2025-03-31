@@ -15,8 +15,8 @@ if TYPE_CHECKING:
 	from .update_allowed_combinations import UpdateAllowedCombinationsRequest
 	from .combination_configurations import CombinationConfigurationsRequest
 	from .......request_adapter import HttpxRequestAdapter
-from iograph_models.v1.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.v1.authentication_strength_policy import AuthenticationStrengthPolicy
+from iograph_models.v1.o_data_errors__o_data_error import ODataErrorsODataError
 
 
 class ByAuthenticationStrengthPolicyIdRequest(BaseRequestBuilder):

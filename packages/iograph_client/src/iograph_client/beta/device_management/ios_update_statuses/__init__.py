@@ -14,8 +14,8 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_ios_update_device_status_id import ByIosUpdateDeviceStatusIdRequest
 	from ....request_adapter import HttpxRequestAdapter
-from iograph_models.beta.ios_update_device_status import IosUpdateDeviceStatus
 from iograph_models.beta.ios_update_device_status_collection_response import IosUpdateDeviceStatusCollectionResponse
+from iograph_models.beta.ios_update_device_status import IosUpdateDeviceStatus
 from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 
 

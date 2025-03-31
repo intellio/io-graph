@@ -15,8 +15,8 @@ if TYPE_CHECKING:
 	from .risky_service_principals import RiskyServicePrincipalsRequest
 	from .risk_detections import RiskDetectionsRequest
 	from ...request_adapter import HttpxRequestAdapter
-from iograph_models.v1.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.v1.identity_protection_root import IdentityProtectionRoot
+from iograph_models.v1.o_data_errors__o_data_error import ODataErrorsODataError
 
 
 class IdentityProtectionRequest(BaseRequestBuilder):

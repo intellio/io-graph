@@ -13,8 +13,8 @@ from typing import TYPE_CHECKING
 if TYPE_CHECKING:
 	from .details import DetailsRequest
 	from ......request_adapter import HttpxRequestAdapter
-from iograph_models.v1.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.v1.landing_page import LandingPage
+from iograph_models.v1.o_data_errors__o_data_error import ODataErrorsODataError
 
 
 class ByLandingPageIdRequest(BaseRequestBuilder):

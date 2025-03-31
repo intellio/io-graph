@@ -35,8 +35,8 @@ if TYPE_CHECKING:
 	from .connector_group import ConnectorGroupRequest
 	from .app_management_policies import AppManagementPoliciesRequest
 	from ....request_adapter import HttpxRequestAdapter
-from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.beta.application import Application
+from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 
 
 class ByApplicationIdRequest(BaseRequestBuilder):

@@ -24,8 +24,8 @@ if TYPE_CHECKING:
 	from .comments import CommentsRequest
 	from .application import ApplicationRequest
 	from .......request_adapter import HttpxRequestAdapter
-from iograph_models.v1.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.v1.workbook import Workbook
+from iograph_models.v1.o_data_errors__o_data_error import ODataErrorsODataError
 
 
 class WorkbookRequest(BaseRequestBuilder):

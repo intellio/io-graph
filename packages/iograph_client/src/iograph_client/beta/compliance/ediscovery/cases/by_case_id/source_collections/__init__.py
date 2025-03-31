@@ -14,8 +14,8 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_source_collection_id import BySourceCollectionIdRequest
 	from .......request_adapter import HttpxRequestAdapter
-from iograph_models.beta.ediscovery_source_collection import EdiscoverySourceCollection
 from iograph_models.beta.ediscovery_source_collection_collection_response import EdiscoverySourceCollectionCollectionResponse
+from iograph_models.beta.ediscovery_source_collection import EdiscoverySourceCollection
 from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 
 

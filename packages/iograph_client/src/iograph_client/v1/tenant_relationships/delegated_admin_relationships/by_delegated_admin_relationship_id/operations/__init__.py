@@ -14,9 +14,9 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_delegated_admin_relationship_operation_id import ByDelegatedAdminRelationshipOperationIdRequest
 	from ......request_adapter import HttpxRequestAdapter
-from iograph_models.v1.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.v1.delegated_admin_relationship_operation import DelegatedAdminRelationshipOperation
 from iograph_models.v1.delegated_admin_relationship_operation_collection_response import DelegatedAdminRelationshipOperationCollectionResponse
+from iograph_models.v1.o_data_errors__o_data_error import ODataErrorsODataError
 
 
 class OperationsRequest(BaseRequestBuilder):

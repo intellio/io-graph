@@ -14,9 +14,9 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_update_policy_id import ByUpdatePolicyIdRequest
 	from ......request_adapter import HttpxRequestAdapter
-from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.beta.windows_updates_update_policy import WindowsUpdatesUpdatePolicy
 from iograph_models.beta.windows_updates_update_policy_collection_response import WindowsUpdatesUpdatePolicyCollectionResponse
+from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 
 
 class UpdatePoliciesRequest(BaseRequestBuilder):

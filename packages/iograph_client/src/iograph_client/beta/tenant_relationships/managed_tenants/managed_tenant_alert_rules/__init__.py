@@ -15,8 +15,8 @@ if TYPE_CHECKING:
 	from .by_managed_tenant_alert_rule_id import ByManagedTenantAlertRuleIdRequest
 	from .....request_adapter import HttpxRequestAdapter
 from iograph_models.beta.managed_tenants_managed_tenant_alert_rule_collection_response import ManagedTenantsManagedTenantAlertRuleCollectionResponse
-from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.beta.managed_tenants_managed_tenant_alert_rule import ManagedTenantsManagedTenantAlertRule
+from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 
 
 class ManagedTenantAlertRulesRequest(BaseRequestBuilder):

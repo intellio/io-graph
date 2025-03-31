@@ -13,8 +13,8 @@ from typing import TYPE_CHECKING
 if TYPE_CHECKING:
 	from .category_summaries import CategorySummariesRequest
 	from .....request_adapter import HttpxRequestAdapter
-from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.beta.mac_o_s_software_update_account_summary import MacOSSoftwareUpdateAccountSummary
+from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 
 
 class ByMacOSSoftwareUpdateAccountSummaryIdRequest(BaseRequestBuilder):

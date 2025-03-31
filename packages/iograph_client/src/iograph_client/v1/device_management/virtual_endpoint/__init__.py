@@ -18,8 +18,8 @@ if TYPE_CHECKING:
 	from .cloud_p_cs import CloudPCsRequest
 	from .audit_events import AuditEventsRequest
 	from ....request_adapter import HttpxRequestAdapter
-from iograph_models.v1.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.v1.virtual_endpoint import VirtualEndpoint
+from iograph_models.v1.o_data_errors__o_data_error import ODataErrorsODataError
 
 
 class VirtualEndpointRequest(BaseRequestBuilder):

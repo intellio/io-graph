@@ -14,8 +14,8 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_conversation_thread_id import ByConversationThreadIdRequest
 	from .......request_adapter import HttpxRequestAdapter
-from iograph_models.beta.conversation_thread_collection_response import ConversationThreadCollectionResponse
 from iograph_models.beta.conversation_thread import ConversationThread
+from iograph_models.beta.conversation_thread_collection_response import ConversationThreadCollectionResponse
 from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 
 

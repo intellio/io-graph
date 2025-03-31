@@ -14,9 +14,9 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_usage_right_id import ByUsageRightIdRequest
 	from ......request_adapter import HttpxRequestAdapter
+from iograph_models.beta.usage_right import UsageRight
 from iograph_models.beta.usage_right_collection_response import UsageRightCollectionResponse
 from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
-from iograph_models.beta.usage_right import UsageRight
 
 
 class UsageRightsRequest(BaseRequestBuilder):

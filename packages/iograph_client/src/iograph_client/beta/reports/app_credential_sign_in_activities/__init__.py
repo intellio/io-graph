@@ -14,8 +14,8 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_app_credential_sign_in_activity_id import ByAppCredentialSignInActivityIdRequest
 	from ....request_adapter import HttpxRequestAdapter
-from iograph_models.beta.app_credential_sign_in_activity import AppCredentialSignInActivity
 from iograph_models.beta.app_credential_sign_in_activity_collection_response import AppCredentialSignInActivityCollectionResponse
+from iograph_models.beta.app_credential_sign_in_activity import AppCredentialSignInActivity
 from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 
 

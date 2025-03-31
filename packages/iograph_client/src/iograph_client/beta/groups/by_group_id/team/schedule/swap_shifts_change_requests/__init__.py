@@ -15,8 +15,8 @@ if TYPE_CHECKING:
 	from .by_swap_shifts_change_request_id import BySwapShiftsChangeRequestIdRequest
 	from .......request_adapter import HttpxRequestAdapter
 from iograph_models.beta.swap_shifts_change_request import SwapShiftsChangeRequest
-from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.beta.swap_shifts_change_request_collection_response import SwapShiftsChangeRequestCollectionResponse
+from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 
 
 class SwapShiftsChangeRequestsRequest(BaseRequestBuilder):

@@ -14,8 +14,8 @@ if TYPE_CHECKING:
 	from .disconnect import DisconnectRequest
 	from .begin_onboarding import BeginOnboardingRequest
 	from .....request_adapter import HttpxRequestAdapter
-from iograph_models.v1.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.v1.remote_assistance_partner import RemoteAssistancePartner
+from iograph_models.v1.o_data_errors__o_data_error import ODataErrorsODataError
 
 
 class ByRemoteAssistancePartnerIdRequest(BaseRequestBuilder):

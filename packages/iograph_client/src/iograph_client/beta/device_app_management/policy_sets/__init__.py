@@ -15,8 +15,8 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_policy_set_id import ByPolicySetIdRequest
 	from ....request_adapter import HttpxRequestAdapter
-from iograph_models.beta.policy_set_collection_response import PolicySetCollectionResponse
 from iograph_models.beta.policy_set import PolicySet
+from iograph_models.beta.policy_set_collection_response import PolicySetCollectionResponse
 from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 
 

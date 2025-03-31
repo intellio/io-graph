@@ -18,8 +18,8 @@ if TYPE_CHECKING:
 	from .registration_configuration import RegistrationConfigurationRequest
 	from .presenters import PresentersRequest
 	from ......request_adapter import HttpxRequestAdapter
-from iograph_models.v1.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.v1.virtual_event_webinar import VirtualEventWebinar
+from iograph_models.v1.o_data_errors__o_data_error import ODataErrorsODataError
 
 
 class ByVirtualEventWebinarIdRequest(BaseRequestBuilder):

@@ -14,8 +14,8 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_presence_id import ByPresenceIdRequest
 	from ....request_adapter import HttpxRequestAdapter
-from iograph_models.beta.presence import Presence
 from iograph_models.beta.presence_collection_response import PresenceCollectionResponse
+from iograph_models.beta.presence import Presence
 from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 
 

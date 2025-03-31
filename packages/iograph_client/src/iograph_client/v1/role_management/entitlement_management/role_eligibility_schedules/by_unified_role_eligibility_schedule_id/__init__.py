@@ -16,8 +16,8 @@ if TYPE_CHECKING:
 	from .directory_scope import DirectoryScopeRequest
 	from .app_scope import AppScopeRequest
 	from ......request_adapter import HttpxRequestAdapter
-from iograph_models.v1.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.v1.unified_role_eligibility_schedule import UnifiedRoleEligibilitySchedule
+from iograph_models.v1.o_data_errors__o_data_error import ODataErrorsODataError
 
 
 class ByUnifiedRoleEligibilityScheduleIdRequest(BaseRequestBuilder):

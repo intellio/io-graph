@@ -14,8 +14,8 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_cloud_pc_external_partner_setting_id import ByCloudPcExternalPartnerSettingIdRequest
 	from .....request_adapter import HttpxRequestAdapter
-from iograph_models.beta.cloud_pc_external_partner_setting_collection_response import CloudPcExternalPartnerSettingCollectionResponse
 from iograph_models.beta.cloud_pc_external_partner_setting import CloudPcExternalPartnerSetting
+from iograph_models.beta.cloud_pc_external_partner_setting_collection_response import CloudPcExternalPartnerSettingCollectionResponse
 from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 
 

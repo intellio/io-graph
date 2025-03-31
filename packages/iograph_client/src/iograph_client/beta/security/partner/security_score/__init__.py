@@ -14,8 +14,8 @@ if TYPE_CHECKING:
 	from .history import HistoryRequest
 	from .customer_insights import CustomerInsightsRequest
 	from .....request_adapter import HttpxRequestAdapter
-from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.beta.partner_security_partner_security_score import PartnerSecurityPartnerSecurityScore
+from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 
 
 class SecurityScoreRequest(BaseRequestBuilder):

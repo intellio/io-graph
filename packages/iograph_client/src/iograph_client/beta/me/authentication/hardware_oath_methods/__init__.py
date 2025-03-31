@@ -16,9 +16,9 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_hardware_oath_authentication_method_id import ByHardwareOathAuthenticationMethodIdRequest
 	from .....request_adapter import HttpxRequestAdapter
+from iograph_models.beta.hardware_oath_authentication_method_collection_response import HardwareOathAuthenticationMethodCollectionResponse
 from iograph_models.beta.hardware_oath_authentication_method import HardwareOathAuthenticationMethod
 from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
-from iograph_models.beta.hardware_oath_authentication_method_collection_response import HardwareOathAuthenticationMethodCollectionResponse
 
 
 class HardwareOathMethodsRequest(BaseRequestBuilder):

@@ -14,8 +14,8 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_cloud_p_c_connectivity_issue_id import ByCloudPCConnectivityIssueIdRequest
 	from ....request_adapter import HttpxRequestAdapter
-from iograph_models.beta.cloud_p_c_connectivity_issue import CloudPCConnectivityIssue
 from iograph_models.beta.cloud_p_c_connectivity_issue_collection_response import CloudPCConnectivityIssueCollectionResponse
+from iograph_models.beta.cloud_p_c_connectivity_issue import CloudPCConnectivityIssue
 from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 
 

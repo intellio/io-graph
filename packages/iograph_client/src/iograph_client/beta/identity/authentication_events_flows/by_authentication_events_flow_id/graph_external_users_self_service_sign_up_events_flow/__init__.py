@@ -15,8 +15,8 @@ if TYPE_CHECKING:
 	from .on_attribute_collection import OnAttributeCollectionRequest
 	from .conditions import ConditionsRequest
 	from ......request_adapter import HttpxRequestAdapter
-from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.beta.external_users_self_service_sign_up_events_flow import ExternalUsersSelfServiceSignUpEventsFlow
+from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 
 
 class GraphExternalUsersSelfServiceSignUpEventsFlowRequest(BaseRequestBuilder):

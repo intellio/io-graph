@@ -14,9 +14,9 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_mobile_app_intent_and_state_id import ByMobileAppIntentAndStateIdRequest
 	from ....request_adapter import HttpxRequestAdapter
+from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.beta.mobile_app_intent_and_state import MobileAppIntentAndState
 from iograph_models.beta.mobile_app_intent_and_state_collection_response import MobileAppIntentAndStateCollectionResponse
-from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 
 
 class MobileAppIntentAndStatesRequest(BaseRequestBuilder):

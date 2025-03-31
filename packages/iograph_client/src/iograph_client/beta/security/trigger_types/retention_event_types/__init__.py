@@ -14,8 +14,8 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_retention_event_type_id import ByRetentionEventTypeIdRequest
 	from .....request_adapter import HttpxRequestAdapter
-from iograph_models.beta.security_retention_event_type_collection_response import SecurityRetentionEventTypeCollectionResponse
 from iograph_models.beta.security_retention_event_type import SecurityRetentionEventType
+from iograph_models.beta.security_retention_event_type_collection_response import SecurityRetentionEventTypeCollectionResponse
 from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 
 

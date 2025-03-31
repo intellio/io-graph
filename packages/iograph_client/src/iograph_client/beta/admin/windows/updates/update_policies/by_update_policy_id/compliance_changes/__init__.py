@@ -15,8 +15,8 @@ if TYPE_CHECKING:
 	from .by_compliance_change_id import ByComplianceChangeIdRequest
 	from ........request_adapter import HttpxRequestAdapter
 from iograph_models.beta.windows_updates_compliance_change import WindowsUpdatesComplianceChange
-from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.beta.windows_updates_compliance_change_collection_response import WindowsUpdatesComplianceChangeCollectionResponse
+from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 
 
 class ComplianceChangesRequest(BaseRequestBuilder):
