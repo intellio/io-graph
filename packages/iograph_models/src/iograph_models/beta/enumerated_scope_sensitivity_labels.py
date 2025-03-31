@@ -1,7 +1,7 @@
 from __future__ import annotations
 from typing import Optional
 from typing import Literal
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class EnumeratedScopeSensitivityLabels(BaseModel):
@@ -10,4 +10,3 @@ class EnumeratedScopeSensitivityLabels(BaseModel):
 	sensitivityLabels: Optional[list[str]] = Field(alias="sensitivityLabels", default=None,)
 
 from .label_kind import LabelKind
-

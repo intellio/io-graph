@@ -1,10 +1,10 @@
 from __future__ import annotations
 from typing import Optional
+from datetime import datetime
+from pydantic import BaseModel, Field
 from pydantic import model_validator, ModelWrapValidatorHandler, ValidationError
 from typing_extensions import Self
 from typing import Any
-from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class DeviceManagementResourceAccessProfileBase(BaseModel):
@@ -28,9 +28,6 @@ class DeviceManagementResourceAccessProfileBase(BaseModel):
 				return parent_validated_model
 			# get the discriminator value
 			mapping_key = data["@odata.type"]
-			if mapping_key == "#microsoft.graph.windows10XCertificateProfile":
-				from .windows10_x_certificate_profile import Windows10XCertificateProfile
-				return Windows10XCertificateProfile.model_validate(data)
 			if mapping_key == "#microsoft.graph.windows10XSCEPCertificateProfile":
 				from .windows10_x_s_c_e_p_certificate_profile import Windows10XSCEPCertificateProfile
 				return Windows10XSCEPCertificateProfile.model_validate(data)
@@ -49,4 +46,3 @@ class DeviceManagementResourceAccessProfileBase(BaseModel):
 			raise e
 
 from .device_management_resource_access_profile_assignment import DeviceManagementResourceAccessProfileAssignment
-

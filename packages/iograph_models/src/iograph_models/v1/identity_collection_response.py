@@ -2,7 +2,7 @@ from __future__ import annotations
 from typing import Optional
 from typing import Union
 from typing import Annotated
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class IdentityCollectionResponse(BaseModel):
@@ -30,4 +30,3 @@ from .teamwork_tag_identity import TeamworkTagIdentity
 from .teamwork_user_identity import TeamworkUserIdentity
 from .user_identity import UserIdentity
 from .call_records_user_identity import CallRecordsUserIdentity
-

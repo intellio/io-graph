@@ -1,19 +1,20 @@
 from __future__ import annotations
 from typing import Optional
 from typing import Union
+from typing import Literal
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class AccessReview(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
+	odata_type: Literal["#microsoft.graph.accessReview"] = Field(alias="@odata.type",)
 	businessFlowTemplateId: Optional[str] = Field(alias="businessFlowTemplateId", default=None,)
 	createdBy: Optional[Union[AuditUserIdentity]] = Field(alias="createdBy", default=None,discriminator="odata_type", )
 	description: Optional[str] = Field(alias="description", default=None,)
 	displayName: Optional[str] = Field(alias="displayName", default=None,)
 	endDateTime: Optional[datetime] = Field(alias="endDateTime", default=None,)
-	reviewedEntity: Optional[Union[AzureCommunicationServicesUserIdentity, CommunicationsApplicationIdentity, CommunicationsApplicationInstanceIdentity, CommunicationsEncryptedIdentity, CommunicationsGuestIdentity, CommunicationsPhoneIdentity, CommunicationsUserIdentity, EmailIdentity, Initiator, ProgramResource, ProvisionedIdentity, ProvisioningServicePrincipal, ProvisioningSystem, ServicePrincipalIdentity, SharePointIdentity, SourceProvisionedIdentity, TargetProvisionedIdentity, TeamworkApplicationIdentity, TeamworkConversationIdentity, TeamworkTagIdentity, TeamworkUserIdentity, UserIdentity, AuditUserIdentity, CallRecordsUserIdentity, SecuritySubmissionUserIdentity]] = Field(alias="reviewedEntity", default=None,discriminator="odata_type", )
+	reviewedEntity: Optional[Union[AzureCommunicationServicesUserIdentity, CommunicationsApplicationIdentity, CommunicationsApplicationInstanceIdentity, CommunicationsEncryptedIdentity, CommunicationsGuestIdentity, CommunicationsPhoneIdentity, CommunicationsUserIdentity, EmailIdentity, Initiator, ProgramResource, ProvisionedIdentity, ProvisioningServicePrincipal, ProvisioningSystem, ServicePrincipalIdentity, SharePointIdentity, SourceProvisionedIdentity, TargetProvisionedIdentity, TeamworkApplicationIdentity, TeamworkConversationIdentity, TeamworkTagIdentity, TeamworkUserIdentity, AuditUserIdentity, CallRecordsUserIdentity, SecuritySubmissionUserIdentity]] = Field(alias="reviewedEntity", default=None,discriminator="odata_type", )
 	reviewerType: Optional[str] = Field(alias="reviewerType", default=None,)
 	settings: Optional[Union[BusinessFlowSettings]] = Field(alias="settings", default=None,discriminator="odata_type", )
 	startDateTime: Optional[datetime] = Field(alias="startDateTime", default=None,)
@@ -45,12 +46,8 @@ from .teamwork_application_identity import TeamworkApplicationIdentity
 from .teamwork_conversation_identity import TeamworkConversationIdentity
 from .teamwork_tag_identity import TeamworkTagIdentity
 from .teamwork_user_identity import TeamworkUserIdentity
-from .user_identity import UserIdentity
-from .audit_user_identity import AuditUserIdentity
 from .call_records_user_identity import CallRecordsUserIdentity
 from .security_submission_user_identity import SecuritySubmissionUserIdentity
 from .business_flow_settings import BusinessFlowSettings
 from .access_review_decision import AccessReviewDecision
-from .access_review_decision import AccessReviewDecision
 from .access_review_reviewer import AccessReviewReviewer
-

@@ -1,11 +1,12 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from typing import Literal
+from pydantic import BaseModel, Field
 
 
 class PrivilegedAccessGroup(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
+	odata_type: Literal["#microsoft.graph.privilegedAccessGroup"] = Field(alias="@odata.type",)
 	assignmentApprovals: Optional[list[Approval]] = Field(alias="assignmentApprovals", default=None,)
 	assignmentScheduleInstances: Optional[list[PrivilegedAccessGroupAssignmentScheduleInstance]] = Field(alias="assignmentScheduleInstances", default=None,)
 	assignmentScheduleRequests: Optional[list[PrivilegedAccessGroupAssignmentScheduleRequest]] = Field(alias="assignmentScheduleRequests", default=None,)
@@ -21,4 +22,3 @@ from .privileged_access_group_assignment_schedule import PrivilegedAccessGroupAs
 from .privileged_access_group_eligibility_schedule_instance import PrivilegedAccessGroupEligibilityScheduleInstance
 from .privileged_access_group_eligibility_schedule_request import PrivilegedAccessGroupEligibilityScheduleRequest
 from .privileged_access_group_eligibility_schedule import PrivilegedAccessGroupEligibilitySchedule
-

@@ -1,7 +1,7 @@
 from __future__ import annotations
 from typing import Optional
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class WindowsKioskForceUpdateSchedule(BaseModel):
@@ -14,4 +14,3 @@ class WindowsKioskForceUpdateSchedule(BaseModel):
 
 from .day_of_week import DayOfWeek
 from .windows10_apps_update_recurrence import Windows10AppsUpdateRecurrence
-

@@ -1,9 +1,9 @@
 from __future__ import annotations
 from typing import Optional
+from pydantic import BaseModel, Field
 from pydantic import model_validator, ModelWrapValidatorHandler, ValidationError
 from typing_extensions import Self
 from typing import Any
-from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class DeviceAndAppManagementAssignmentTarget(BaseModel):
@@ -28,9 +28,6 @@ class DeviceAndAppManagementAssignmentTarget(BaseModel):
 			if mapping_key == "#microsoft.graph.configurationManagerCollectionAssignmentTarget":
 				from .configuration_manager_collection_assignment_target import ConfigurationManagerCollectionAssignmentTarget
 				return ConfigurationManagerCollectionAssignmentTarget.model_validate(data)
-			if mapping_key == "#microsoft.graph.groupAssignmentTarget":
-				from .group_assignment_target import GroupAssignmentTarget
-				return GroupAssignmentTarget.model_validate(data)
 			if mapping_key == "#microsoft.graph.exclusionGroupAssignmentTarget":
 				from .exclusion_group_assignment_target import ExclusionGroupAssignmentTarget
 				return ExclusionGroupAssignmentTarget.model_validate(data)
@@ -38,5 +35,4 @@ class DeviceAndAppManagementAssignmentTarget(BaseModel):
 
 		except Exception as e:
 			raise e
-
 

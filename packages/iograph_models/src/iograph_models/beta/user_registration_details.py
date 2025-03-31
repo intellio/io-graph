@@ -1,12 +1,13 @@
 from __future__ import annotations
 from typing import Optional
+from typing import Literal
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class UserRegistrationDetails(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
+	odata_type: Literal["#microsoft.graph.userRegistrationDetails"] = Field(alias="@odata.type",)
 	defaultMfaMethod: Optional[DefaultMfaMethodType | str] = Field(alias="defaultMfaMethod", default=None,)
 	isAdmin: Optional[bool] = Field(alias="isAdmin", default=None,)
 	isMfaCapable: Optional[bool] = Field(alias="isMfaCapable", default=None,)
@@ -27,4 +28,3 @@ class UserRegistrationDetails(BaseModel):
 from .default_mfa_method_type import DefaultMfaMethodType
 from .user_default_authentication_method import UserDefaultAuthenticationMethod
 from .sign_in_user_type import SignInUserType
-

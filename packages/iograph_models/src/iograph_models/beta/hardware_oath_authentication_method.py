@@ -2,7 +2,7 @@ from __future__ import annotations
 from typing import Optional
 from typing import Literal
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class HardwareOathAuthenticationMethod(BaseModel):
@@ -12,4 +12,3 @@ class HardwareOathAuthenticationMethod(BaseModel):
 	device: Optional[HardwareOathTokenAuthenticationMethodDevice] = Field(alias="device", default=None,)
 
 from .hardware_oath_token_authentication_method_device import HardwareOathTokenAuthenticationMethodDevice
-

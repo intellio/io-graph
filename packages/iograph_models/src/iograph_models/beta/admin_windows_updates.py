@@ -1,13 +1,14 @@
 from __future__ import annotations
 from typing import Optional
 from typing import Union
+from typing import Literal
 from typing import Annotated
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class AdminWindowsUpdates(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
+	odata_type: Literal["#microsoft.graph.adminWindowsUpdates"] = Field(alias="@odata.type",)
 	catalog: Optional[WindowsUpdatesCatalog] = Field(alias="catalog", default=None,)
 	deploymentAudiences: Optional[list[WindowsUpdatesDeploymentAudience]] = Field(alias="deploymentAudiences", default=None,)
 	deployments: Optional[list[WindowsUpdatesDeployment]] = Field(alias="deployments", default=None,)
@@ -24,4 +25,3 @@ from .windows_updates_operational_insights_connection import WindowsUpdatesOpera
 from .windows_updates_azure_a_d_device import WindowsUpdatesAzureADDevice
 from .windows_updates_updatable_asset_group import WindowsUpdatesUpdatableAssetGroup
 from .windows_updates_update_policy import WindowsUpdatesUpdatePolicy
-

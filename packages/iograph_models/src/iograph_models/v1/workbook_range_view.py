@@ -1,11 +1,12 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from typing import Literal
+from pydantic import BaseModel, Field
 
 
 class WorkbookRangeView(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
+	odata_type: Literal["#microsoft.graph.workbookRangeView"] = Field(alias="@odata.type",)
 	cellAddresses: Optional[str] = Field(alias="cellAddresses", default=None,)
 	columnCount: Optional[int] = Field(alias="columnCount", default=None,)
 	formulas: Optional[str] = Field(alias="formulas", default=None,)
@@ -18,5 +19,4 @@ class WorkbookRangeView(BaseModel):
 	values: Optional[str] = Field(alias="values", default=None,)
 	valueTypes: Optional[str] = Field(alias="valueTypes", default=None,)
 	rows: Optional[list[WorkbookRangeView]] = Field(alias="rows", default=None,)
-
 

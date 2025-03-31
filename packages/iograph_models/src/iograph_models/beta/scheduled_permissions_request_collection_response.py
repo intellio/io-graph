@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class ScheduledPermissionsRequestCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class ScheduledPermissionsRequestCollectionResponse(BaseModel):
 	value: Optional[list[ScheduledPermissionsRequest]] = Field(alias="value", default=None,)
 
 from .scheduled_permissions_request import ScheduledPermissionsRequest
-

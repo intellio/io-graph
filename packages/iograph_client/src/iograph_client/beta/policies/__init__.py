@@ -40,8 +40,8 @@ if TYPE_CHECKING:
 	from .activity_based_timeout_policies import ActivityBasedTimeoutPoliciesRequest
 	from .access_review_policy import AccessReviewPolicyRequest
 	from ...request_adapter import HttpxRequestAdapter
-from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.beta.policy_root import PolicyRoot
+from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 
 
 class PoliciesRequest(BaseRequestBuilder):

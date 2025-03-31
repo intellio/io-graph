@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class Windows10TeamGeneralConfigurationCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class Windows10TeamGeneralConfigurationCollectionResponse(BaseModel):
 	value: Optional[list[Windows10TeamGeneralConfiguration]] = Field(alias="value", default=None,)
 
 from .windows10_team_general_configuration import Windows10TeamGeneralConfiguration
-

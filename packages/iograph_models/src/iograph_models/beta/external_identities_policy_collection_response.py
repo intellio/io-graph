@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class ExternalIdentitiesPolicyCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class ExternalIdentitiesPolicyCollectionResponse(BaseModel):
 	value: Optional[list[ExternalIdentitiesPolicy]] = Field(alias="value", default=None,)
 
 from .external_identities_policy import ExternalIdentitiesPolicy
-

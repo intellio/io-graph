@@ -2,7 +2,7 @@ from __future__ import annotations
 from typing import Optional
 from typing import Union
 from typing import Annotated
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class AppleDeviceFeaturesConfigurationBaseCollectionResponse(BaseModel):
@@ -12,4 +12,3 @@ class AppleDeviceFeaturesConfigurationBaseCollectionResponse(BaseModel):
 
 from .ios_device_features_configuration import IosDeviceFeaturesConfiguration
 from .mac_o_s_device_features_configuration import MacOSDeviceFeaturesConfiguration
-

@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class AppleUserInitiatedEnrollmentProfileCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class AppleUserInitiatedEnrollmentProfileCollectionResponse(BaseModel):
 	value: Optional[list[AppleUserInitiatedEnrollmentProfile]] = Field(alias="value", default=None,)
 
 from .apple_user_initiated_enrollment_profile import AppleUserInitiatedEnrollmentProfile
-

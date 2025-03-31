@@ -1,7 +1,7 @@
 from __future__ import annotations
 from typing import Optional
 from typing import Literal
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class TeamworkUserIdentity(BaseModel):
@@ -11,4 +11,3 @@ class TeamworkUserIdentity(BaseModel):
 	userIdentityType: Optional[TeamworkUserIdentityType | str] = Field(alias="userIdentityType", default=None,)
 
 from .teamwork_user_identity_type import TeamworkUserIdentityType
-

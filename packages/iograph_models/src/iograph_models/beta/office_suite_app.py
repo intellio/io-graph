@@ -4,7 +4,7 @@ from typing import Union
 from typing import Literal
 from typing import Annotated
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class OfficeSuiteApp(BaseModel):
@@ -58,4 +58,3 @@ from .windows_architecture import WindowsArchitecture
 from .office_suite_default_file_format_type import OfficeSuiteDefaultFileFormatType
 from .office_product_id import OfficeProductId
 from .office_update_channel import OfficeUpdateChannel
-

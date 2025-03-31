@@ -1,11 +1,11 @@
 from __future__ import annotations
 from typing import Optional
 from typing import Literal
+from datetime import datetime
+from pydantic import BaseModel, Field
 from pydantic import model_validator, ModelWrapValidatorHandler, ValidationError
 from typing_extensions import Self
 from typing import Any
-from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class TargetedManagedAppProtection(BaseModel):
@@ -70,8 +70,6 @@ class TargetedManagedAppProtection(BaseModel):
 from .managed_app_data_storage_location import ManagedAppDataStorageLocation
 from .managed_app_data_transfer_level import ManagedAppDataTransferLevel
 from .managed_app_clipboard_sharing_level import ManagedAppClipboardSharingLevel
-from .managed_app_data_transfer_level import ManagedAppDataTransferLevel
 from .managed_browser_type import ManagedBrowserType
 from .managed_app_pin_character_set import ManagedAppPinCharacterSet
 from .targeted_managed_app_policy_assignment import TargetedManagedAppPolicyAssignment
-

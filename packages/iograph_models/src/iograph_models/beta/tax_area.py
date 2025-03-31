@@ -2,7 +2,7 @@ from __future__ import annotations
 from uuid import UUID
 from typing import Optional
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class TaxArea(BaseModel):
@@ -12,5 +12,4 @@ class TaxArea(BaseModel):
 	lastModifiedDateTime: Optional[datetime] = Field(alias="lastModifiedDateTime", default=None,)
 	taxType: Optional[str] = Field(alias="taxType", default=None,)
 	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
-
 

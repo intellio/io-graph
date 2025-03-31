@@ -2,7 +2,7 @@ from __future__ import annotations
 from typing import Optional
 from typing import Union
 from typing import Literal
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class TrainingNotificationSetting(BaseModel):
@@ -16,8 +16,5 @@ class TrainingNotificationSetting(BaseModel):
 from .end_user_notification_preference import EndUserNotificationPreference
 from .positive_reinforcement_notification import PositiveReinforcementNotification
 from .end_user_notification_setting_type import EndUserNotificationSettingType
-from .positive_reinforcement_notification import PositiveReinforcementNotification
 from .simulation_notification import SimulationNotification
 from .training_reminder_notification import TrainingReminderNotification
-from .training_reminder_notification import TrainingReminderNotification
-

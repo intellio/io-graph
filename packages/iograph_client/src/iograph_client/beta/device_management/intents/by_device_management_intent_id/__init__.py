@@ -26,8 +26,8 @@ if TYPE_CHECKING:
 	from .categories import CategoriesRequest
 	from .assignments import AssignmentsRequest
 	from .....request_adapter import HttpxRequestAdapter
-from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.beta.device_management_intent import DeviceManagementIntent
+from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 
 
 class ByDeviceManagementIntentIdRequest(BaseRequestBuilder):

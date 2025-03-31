@@ -1,11 +1,11 @@
 from __future__ import annotations
 from typing import Optional
 from typing import Literal
+from datetime import datetime
+from pydantic import BaseModel, Field
 from pydantic import model_validator, ModelWrapValidatorHandler, ValidationError
 from typing_extensions import Self
 from typing import Any
-from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class IosWiFiConfiguration(BaseModel):
@@ -70,4 +70,3 @@ from .device_configuration_user_status import DeviceConfigurationUserStatus
 from .device_configuration_user_overview import DeviceConfigurationUserOverview
 from .wi_fi_proxy_setting import WiFiProxySetting
 from .wi_fi_security_type import WiFiSecurityType
-

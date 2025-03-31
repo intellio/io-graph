@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class DeviceManagementTemplateSettingCategoryCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class DeviceManagementTemplateSettingCategoryCollectionResponse(BaseModel):
 	value: Optional[list[DeviceManagementTemplateSettingCategory]] = Field(alias="value", default=None,)
 
 from .device_management_template_setting_category import DeviceManagementTemplateSettingCategory
-

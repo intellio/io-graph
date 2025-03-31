@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class DeclinePostRequest(BaseModel):
@@ -9,4 +9,3 @@ class DeclinePostRequest(BaseModel):
 	Comment: Optional[str] = Field(alias="Comment", default=None,)
 
 from .time_slot import TimeSlot
-

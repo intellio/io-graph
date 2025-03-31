@@ -16,8 +16,8 @@ if TYPE_CHECKING:
 	from .by_user_consent_request_id import ByUserConsentRequestIdRequest
 	from .......request_adapter import HttpxRequestAdapter
 from iograph_models.v1.o_data_errors__o_data_error import ODataErrorsODataError
-from iograph_models.v1.user_consent_request_collection_response import UserConsentRequestCollectionResponse
 from iograph_models.v1.user_consent_request import UserConsentRequest
+from iograph_models.v1.user_consent_request_collection_response import UserConsentRequestCollectionResponse
 
 
 class UserConsentRequestsRequest(BaseRequestBuilder):

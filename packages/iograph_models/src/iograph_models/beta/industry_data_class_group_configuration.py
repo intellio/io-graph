@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class IndustryDataClassGroupConfiguration(BaseModel):
@@ -12,4 +12,3 @@ class IndustryDataClassGroupConfiguration(BaseModel):
 from .industry_data_additional_class_group_attributes import IndustryDataAdditionalClassGroupAttributes
 from .industry_data_additional_class_group_options import IndustryDataAdditionalClassGroupOptions
 from .industry_data_enrollment_mappings import IndustryDataEnrollmentMappings
-

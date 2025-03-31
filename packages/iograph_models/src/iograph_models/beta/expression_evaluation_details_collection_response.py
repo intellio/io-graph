@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class ExpressionEvaluationDetailsCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class ExpressionEvaluationDetailsCollectionResponse(BaseModel):
 	value: Optional[list[ExpressionEvaluationDetails]] = Field(alias="value", default=None,)
 
 from .expression_evaluation_details import ExpressionEvaluationDetails
-

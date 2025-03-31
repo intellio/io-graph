@@ -4,7 +4,7 @@ from typing import Union
 from typing import Literal
 from typing import Annotated
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class AndroidWorkProfileVpnConfiguration(BaseModel):
@@ -65,4 +65,3 @@ from .vpn_server import VpnServer
 from .apple_app_list_item import AppleAppListItem
 from .android_work_profile_pkcs_certificate_profile import AndroidWorkProfilePkcsCertificateProfile
 from .android_work_profile_scep_certificate_profile import AndroidWorkProfileScepCertificateProfile
-

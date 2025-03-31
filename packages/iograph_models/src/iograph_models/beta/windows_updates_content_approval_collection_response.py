@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class WindowsUpdatesContentApprovalCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class WindowsUpdatesContentApprovalCollectionResponse(BaseModel):
 	value: Optional[list[WindowsUpdatesContentApproval]] = Field(alias="value", default=None,)
 
 from .windows_updates_content_approval import WindowsUpdatesContentApproval
-

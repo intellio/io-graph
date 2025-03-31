@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class Update_softwarePostRequest(BaseModel):
@@ -8,4 +8,3 @@ class Update_softwarePostRequest(BaseModel):
 	softwareVersion: Optional[str] = Field(alias="softwareVersion", default=None,)
 
 from .teamwork_software_type import TeamworkSoftwareType
-

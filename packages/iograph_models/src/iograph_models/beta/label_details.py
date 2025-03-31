@@ -2,7 +2,7 @@ from __future__ import annotations
 from typing import Optional
 from typing import Union
 from typing import Literal
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class LabelDetails(BaseModel):
@@ -15,5 +15,4 @@ class LabelDetails(BaseModel):
 	sensitivity: Optional[int] = Field(alias="sensitivity", default=None,)
 	tooltip: Optional[str] = Field(alias="tooltip", default=None,)
 	odata_type: Literal["#microsoft.graph.labelDetails"] = Field(alias="@odata.type", default="#microsoft.graph.labelDetails")
-
 

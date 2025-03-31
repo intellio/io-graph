@@ -1,9 +1,9 @@
 from __future__ import annotations
 from typing import Optional
+from pydantic import BaseModel, Field
 from pydantic import model_validator, ModelWrapValidatorHandler, ValidationError
 from typing_extensions import Self
 from typing import Any
-from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class VirtualEvent(BaseModel):
@@ -46,8 +46,6 @@ from .item_body import ItemBody
 from .date_time_time_zone import DateTimeTimeZone
 from .virtual_event_external_information import VirtualEventExternalInformation
 from .virtual_event_settings import VirtualEventSettings
-from .date_time_time_zone import DateTimeTimeZone
 from .virtual_event_status import VirtualEventStatus
 from .virtual_event_presenter import VirtualEventPresenter
 from .virtual_event_session import VirtualEventSession
-

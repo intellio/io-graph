@@ -14,9 +14,9 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_product_revision_id import ByProductRevisionIdRequest
 	from ........request_adapter import HttpxRequestAdapter
-from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.beta.windows_updates_product_revision_collection_response import WindowsUpdatesProductRevisionCollectionResponse
 from iograph_models.beta.windows_updates_product_revision import WindowsUpdatesProductRevision
+from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 
 
 class RevisionsRequest(BaseRequestBuilder):

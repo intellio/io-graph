@@ -1,12 +1,13 @@
 from __future__ import annotations
 from typing import Optional
+from typing import Literal
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class DeviceManagementCachedReportConfiguration(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
+	odata_type: Literal["#microsoft.graph.deviceManagementCachedReportConfiguration"] = Field(alias="@odata.type",)
 	expirationDateTime: Optional[datetime] = Field(alias="expirationDateTime", default=None,)
 	filter: Optional[str] = Field(alias="filter", default=None,)
 	lastRefreshDateTime: Optional[datetime] = Field(alias="lastRefreshDateTime", default=None,)
@@ -17,4 +18,3 @@ class DeviceManagementCachedReportConfiguration(BaseModel):
 	status: Optional[DeviceManagementReportStatus | str] = Field(alias="status", default=None,)
 
 from .device_management_report_status import DeviceManagementReportStatus
-

@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class ManagedTenantsCredentialUserRegistrationsSummaryCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class ManagedTenantsCredentialUserRegistrationsSummaryCollectionResponse(BaseMod
 	value: Optional[list[ManagedTenantsCredentialUserRegistrationsSummary]] = Field(alias="value", default=None,)
 
 from .managed_tenants_credential_user_registrations_summary import ManagedTenantsCredentialUserRegistrationsSummary
-

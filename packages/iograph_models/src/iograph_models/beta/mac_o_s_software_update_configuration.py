@@ -2,7 +2,7 @@ from __future__ import annotations
 from typing import Optional
 from typing import Literal
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class MacOSSoftwareUpdateConfiguration(BaseModel):
@@ -46,10 +46,6 @@ from .device_configuration_group_assignment import DeviceConfigurationGroupAssig
 from .device_configuration_user_status import DeviceConfigurationUserStatus
 from .device_configuration_user_overview import DeviceConfigurationUserOverview
 from .mac_o_s_software_update_behavior import MacOSSoftwareUpdateBehavior
-from .mac_o_s_software_update_behavior import MacOSSoftwareUpdateBehavior
-from .mac_o_s_software_update_behavior import MacOSSoftwareUpdateBehavior
 from .custom_update_time_window import CustomUpdateTimeWindow
-from .mac_o_s_software_update_behavior import MacOSSoftwareUpdateBehavior
 from .mac_o_s_priority import MacOSPriority
 from .mac_o_s_software_update_schedule_type import MacOSSoftwareUpdateScheduleType
-

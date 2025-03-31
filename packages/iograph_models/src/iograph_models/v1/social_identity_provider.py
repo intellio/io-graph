@@ -1,7 +1,7 @@
 from __future__ import annotations
 from typing import Optional
 from typing import Literal
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class SocialIdentityProvider(BaseModel):
@@ -11,5 +11,4 @@ class SocialIdentityProvider(BaseModel):
 	clientId: Optional[str] = Field(alias="clientId", default=None,)
 	clientSecret: Optional[str] = Field(alias="clientSecret", default=None,)
 	identityProviderType: Optional[str] = Field(alias="identityProviderType", default=None,)
-
 

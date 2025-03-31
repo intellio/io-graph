@@ -1,12 +1,13 @@
 from __future__ import annotations
 from typing import Optional
+from typing import Literal
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class PartnerSecurityPartnerSecurityAlert(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
+	odata_type: Literal["#microsoft.graph.partner.security.partnerSecurityAlert"] = Field(alias="@odata.type",)
 	activityLogs: Optional[list[PartnerSecurityActivityLog]] = Field(alias="activityLogs", default=None,)
 	additionalDetails: Optional[PartnerSecurityAdditionalDataDictionary] = Field(alias="additionalDetails", default=None,)
 	affectedResources: Optional[list[PartnerSecurityAffectedResource]] = Field(alias="affectedResources", default=None,)
@@ -35,4 +36,3 @@ from .partner_security_security_alert_confidence import PartnerSecuritySecurityA
 from .partner_security_security_alert_resolved_reason import PartnerSecuritySecurityAlertResolvedReason
 from .partner_security_security_alert_severity import PartnerSecuritySecurityAlertSeverity
 from .partner_security_security_alert_status import PartnerSecuritySecurityAlertStatus
-

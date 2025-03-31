@@ -3,7 +3,7 @@ from typing import Optional
 from typing import Union
 from typing import Literal
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class WindowsDeliveryOptimizationConfiguration(BaseModel):
@@ -64,4 +64,3 @@ from .delivery_optimization_max_cache_size_absolute import DeliveryOptimizationM
 from .delivery_optimization_max_cache_size_percentage import DeliveryOptimizationMaxCacheSizePercentage
 from .delivery_optimization_restrict_peer_selection_by_options import DeliveryOptimizationRestrictPeerSelectionByOptions
 from .enablement import Enablement
-

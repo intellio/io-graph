@@ -1,9 +1,9 @@
 from __future__ import annotations
 from typing import Optional
+from pydantic import BaseModel, Field
 from pydantic import model_validator, ModelWrapValidatorHandler, ValidationError
 from typing_extensions import Self
 from typing import Any
-from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class NetworkaccessPolicyRule(BaseModel):
@@ -21,18 +21,12 @@ class NetworkaccessPolicyRule(BaseModel):
 				return parent_validated_model
 			# get the discriminator value
 			mapping_key = data["@odata.type"]
-			if mapping_key == "#microsoft.graph.networkaccess.filteringRule":
-				from .networkaccess_filtering_rule import NetworkaccessFilteringRule
-				return NetworkaccessFilteringRule.model_validate(data)
 			if mapping_key == "#microsoft.graph.networkaccess.fqdnFilteringRule":
 				from .networkaccess_fqdn_filtering_rule import NetworkaccessFqdnFilteringRule
 				return NetworkaccessFqdnFilteringRule.model_validate(data)
 			if mapping_key == "#microsoft.graph.networkaccess.webCategoryFilteringRule":
 				from .networkaccess_web_category_filtering_rule import NetworkaccessWebCategoryFilteringRule
 				return NetworkaccessWebCategoryFilteringRule.model_validate(data)
-			if mapping_key == "#microsoft.graph.networkaccess.forwardingRule":
-				from .networkaccess_forwarding_rule import NetworkaccessForwardingRule
-				return NetworkaccessForwardingRule.model_validate(data)
 			if mapping_key == "#microsoft.graph.networkaccess.internetAccessForwardingRule":
 				from .networkaccess_internet_access_forwarding_rule import NetworkaccessInternetAccessForwardingRule
 				return NetworkaccessInternetAccessForwardingRule.model_validate(data)
@@ -46,5 +40,4 @@ class NetworkaccessPolicyRule(BaseModel):
 
 		except Exception as e:
 			raise e
-
 

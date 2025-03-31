@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class WindowsDomainJoinConfigurationCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class WindowsDomainJoinConfigurationCollectionResponse(BaseModel):
 	value: Optional[list[WindowsDomainJoinConfiguration]] = Field(alias="value", default=None,)
 
 from .windows_domain_join_configuration import WindowsDomainJoinConfiguration
-

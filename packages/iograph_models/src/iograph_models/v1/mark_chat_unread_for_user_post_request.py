@@ -1,7 +1,7 @@
 from __future__ import annotations
 from typing import Optional
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class Mark_chat_unread_for_userPostRequest(BaseModel):
@@ -9,4 +9,3 @@ class Mark_chat_unread_for_userPostRequest(BaseModel):
 	lastMessageReadDateTime: Optional[datetime] = Field(alias="lastMessageReadDateTime", default=None,)
 
 from .teamwork_user_identity import TeamworkUserIdentity
-

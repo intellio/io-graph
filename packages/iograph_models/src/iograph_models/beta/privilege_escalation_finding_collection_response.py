@@ -2,7 +2,7 @@ from __future__ import annotations
 from typing import Optional
 from typing import Union
 from typing import Annotated
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class PrivilegeEscalationFindingCollectionResponse(BaseModel):
@@ -14,4 +14,3 @@ from .privilege_escalation_aws_resource_finding import PrivilegeEscalationAwsRes
 from .privilege_escalation_aws_role_finding import PrivilegeEscalationAwsRoleFinding
 from .privilege_escalation_gcp_service_account_finding import PrivilegeEscalationGcpServiceAccountFinding
 from .privilege_escalation_user_finding import PrivilegeEscalationUserFinding
-

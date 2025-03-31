@@ -1,7 +1,7 @@
 from __future__ import annotations
 from typing import Optional
 from typing import Literal
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class AwsAuthorizationSystem(BaseModel):
@@ -23,4 +23,3 @@ from .aws_authorization_system_type_action import AwsAuthorizationSystemTypeActi
 from .aws_policy import AwsPolicy
 from .aws_authorization_system_resource import AwsAuthorizationSystemResource
 from .authorization_system_type_service import AuthorizationSystemTypeService
-

@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class X509CertificateUserBindingCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class X509CertificateUserBindingCollectionResponse(BaseModel):
 	value: Optional[list[X509CertificateUserBinding]] = Field(alias="value", default=None,)
 
 from .x509_certificate_user_binding import X509CertificateUserBinding
-

@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class MediaInfoCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class MediaInfoCollectionResponse(BaseModel):
 	value: Optional[list[MediaInfo]] = Field(alias="value", default=None,)
 
 from .media_info import MediaInfo
-

@@ -3,7 +3,7 @@ from typing import Optional
 from typing import Union
 from typing import Literal
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class AospDeviceOwnerEnterpriseWiFiConfiguration(BaseModel):
@@ -66,4 +66,3 @@ from .non_eap_authentication_method_for_peap import NonEapAuthenticationMethodFo
 from .aosp_device_owner_pkcs_certificate_profile import AospDeviceOwnerPkcsCertificateProfile
 from .aosp_device_owner_scep_certificate_profile import AospDeviceOwnerScepCertificateProfile
 from .aosp_device_owner_trusted_root_certificate import AospDeviceOwnerTrustedRootCertificate
-

@@ -1,7 +1,7 @@
 from __future__ import annotations
 from typing import Optional
 from typing import Literal
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class OnPhoneMethodLoadStartExternalUsersAuthHandler(BaseModel):
@@ -10,5 +10,3 @@ class OnPhoneMethodLoadStartExternalUsersAuthHandler(BaseModel):
 	voiceOptions: Optional[PhoneOptions] = Field(alias="voiceOptions", default=None,)
 
 from .phone_options import PhoneOptions
-from .phone_options import PhoneOptions
-

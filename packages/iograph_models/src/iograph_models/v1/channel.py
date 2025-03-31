@@ -1,14 +1,15 @@
 from __future__ import annotations
 from typing import Optional
 from typing import Union
+from typing import Literal
 from typing import Annotated
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class Channel(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
+	odata_type: Literal["#microsoft.graph.channel"] = Field(alias="@odata.type",)
 	createdDateTime: Optional[datetime] = Field(alias="createdDateTime", default=None,)
 	description: Optional[str] = Field(alias="description", default=None,)
 	displayName: Optional[str] = Field(alias="displayName", default=None,)
@@ -35,13 +36,6 @@ from .microsoft_account_user_conversation_member import MicrosoftAccountUserConv
 from .skype_for_business_user_conversation_member import SkypeForBusinessUserConversationMember
 from .skype_user_conversation_member import SkypeUserConversationMember
 from .drive_item import DriveItem
-from .aad_user_conversation_member import AadUserConversationMember
-from .anonymous_guest_conversation_member import AnonymousGuestConversationMember
-from .azure_communication_services_user_conversation_member import AzureCommunicationServicesUserConversationMember
-from .microsoft_account_user_conversation_member import MicrosoftAccountUserConversationMember
-from .skype_for_business_user_conversation_member import SkypeForBusinessUserConversationMember
-from .skype_user_conversation_member import SkypeUserConversationMember
 from .chat_message import ChatMessage
 from .shared_with_channel_team_info import SharedWithChannelTeamInfo
 from .teams_tab import TeamsTab
-

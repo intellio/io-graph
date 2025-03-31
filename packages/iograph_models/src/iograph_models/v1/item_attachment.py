@@ -3,7 +3,7 @@ from typing import Optional
 from typing import Union
 from typing import Literal
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class ItemAttachment(BaseModel):
@@ -14,14 +14,11 @@ class ItemAttachment(BaseModel):
 	lastModifiedDateTime: Optional[datetime] = Field(alias="lastModifiedDateTime", default=None,)
 	name: Optional[str] = Field(alias="name", default=None,)
 	size: Optional[int] = Field(alias="size", default=None,)
-	item: Optional[Union[Contact, Event, Message, CalendarSharingMessage, EventMessage, EventMessageRequest, EventMessageResponse, Post]] = Field(alias="item", default=None,discriminator="odata_type", )
+	item: Optional[Union[Contact, Event, CalendarSharingMessage, EventMessageRequest, EventMessageResponse, Post]] = Field(alias="item", default=None,discriminator="odata_type", )
 
 from .contact import Contact
 from .event import Event
-from .message import Message
 from .calendar_sharing_message import CalendarSharingMessage
-from .event_message import EventMessage
 from .event_message_request import EventMessageRequest
 from .event_message_response import EventMessageResponse
 from .post import Post
-

@@ -1,12 +1,13 @@
 from __future__ import annotations
 from typing import Optional
+from typing import Literal
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class CustomSecurityAttributeAudit(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
+	odata_type: Literal["#microsoft.graph.customSecurityAttributeAudit"] = Field(alias="@odata.type",)
 	activityDateTime: Optional[datetime] = Field(alias="activityDateTime", default=None,)
 	activityDisplayName: Optional[str] = Field(alias="activityDisplayName", default=None,)
 	additionalDetails: Optional[list[KeyValue]] = Field(alias="additionalDetails", default=None,)
@@ -24,4 +25,3 @@ from .key_value import KeyValue
 from .audit_activity_initiator import AuditActivityInitiator
 from .operation_result import OperationResult
 from .target_resource import TargetResource
-

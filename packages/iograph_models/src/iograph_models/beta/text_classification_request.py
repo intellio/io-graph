@@ -1,11 +1,12 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from typing import Literal
+from pydantic import BaseModel, Field
 
 
 class TextClassificationRequest(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
+	odata_type: Literal["#microsoft.graph.textClassificationRequest"] = Field(alias="@odata.type",)
 	contentMetaData: Optional[ClassificationRequestContentMetaData] = Field(alias="contentMetaData", default=None,)
 	fileExtension: Optional[str] = Field(alias="fileExtension", default=None,)
 	matchTolerancesToInclude: Optional[MlClassificationMatchTolerance | str] = Field(alias="matchTolerancesToInclude", default=None,)
@@ -16,4 +17,3 @@ class TextClassificationRequest(BaseModel):
 from .classification_request_content_meta_data import ClassificationRequestContentMetaData
 from .ml_classification_match_tolerance import MlClassificationMatchTolerance
 from .sensitive_type_scope import SensitiveTypeScope
-

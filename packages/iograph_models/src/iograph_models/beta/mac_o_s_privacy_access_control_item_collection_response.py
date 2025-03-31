@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class MacOSPrivacyAccessControlItemCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class MacOSPrivacyAccessControlItemCollectionResponse(BaseModel):
 	value: Optional[list[MacOSPrivacyAccessControlItem]] = Field(alias="value", default=None,)
 
 from .mac_o_s_privacy_access_control_item import MacOSPrivacyAccessControlItem
-

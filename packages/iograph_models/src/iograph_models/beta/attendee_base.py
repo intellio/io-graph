@@ -2,10 +2,10 @@ from __future__ import annotations
 from typing import Optional
 from typing import Union
 from typing import Literal
+from pydantic import BaseModel, Field
 from pydantic import model_validator, ModelWrapValidatorHandler, ValidationError
 from typing_extensions import Self
 from typing import Any
-from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class AttendeeBase(BaseModel):
@@ -33,4 +33,3 @@ class AttendeeBase(BaseModel):
 
 from .typed_email_address import TypedEmailAddress
 from .attendee_type import AttendeeType
-

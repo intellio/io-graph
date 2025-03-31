@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class TimeCardBreakCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class TimeCardBreakCollectionResponse(BaseModel):
 	value: Optional[list[TimeCardBreak]] = Field(alias="value", default=None,)
 
 from .time_card_break import TimeCardBreak
-

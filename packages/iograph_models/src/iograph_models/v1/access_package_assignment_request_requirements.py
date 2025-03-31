@@ -2,7 +2,7 @@ from __future__ import annotations
 from typing import Optional
 from typing import Union
 from typing import Annotated
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class AccessPackageAssignmentRequestRequirements(BaseModel):
@@ -19,4 +19,3 @@ class AccessPackageAssignmentRequestRequirements(BaseModel):
 from .entitlement_management_schedule import EntitlementManagementSchedule
 from .access_package_multiple_choice_question import AccessPackageMultipleChoiceQuestion
 from .access_package_text_input_question import AccessPackageTextInputQuestion
-

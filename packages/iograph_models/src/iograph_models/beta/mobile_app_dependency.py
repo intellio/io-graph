@@ -1,7 +1,7 @@
 from __future__ import annotations
 from typing import Optional
 from typing import Literal
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class MobileAppDependency(BaseModel):
@@ -23,4 +23,3 @@ class MobileAppDependency(BaseModel):
 
 from .mobile_app_relationship_type import MobileAppRelationshipType
 from .mobile_app_dependency_type import MobileAppDependencyType
-

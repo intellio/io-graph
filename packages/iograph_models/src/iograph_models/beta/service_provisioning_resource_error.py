@@ -4,7 +4,7 @@ from typing import Union
 from typing import Literal
 from typing import Annotated
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class ServiceProvisioningResourceError(BaseModel):
@@ -15,4 +15,3 @@ class ServiceProvisioningResourceError(BaseModel):
 	errors: Optional[list[Annotated[Union[ServiceProvisioningLinkedResourceErrorDetail],Field(discriminator="odata_type")]]] = Field(alias="errors", default=None,)
 
 from .service_provisioning_linked_resource_error_detail import ServiceProvisioningLinkedResourceErrorDetail
-

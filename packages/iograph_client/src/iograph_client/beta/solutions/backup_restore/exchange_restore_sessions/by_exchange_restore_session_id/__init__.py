@@ -15,8 +15,8 @@ if TYPE_CHECKING:
 	from .mailbox_restore_artifacts import MailboxRestoreArtifactsRequest
 	from .granular_mailbox_restore_artifacts import GranularMailboxRestoreArtifactsRequest
 	from ......request_adapter import HttpxRequestAdapter
-from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.beta.exchange_restore_session import ExchangeRestoreSession
+from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 
 
 class ByExchangeRestoreSessionIdRequest(BaseRequestBuilder):

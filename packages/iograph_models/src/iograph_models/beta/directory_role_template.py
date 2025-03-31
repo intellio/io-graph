@@ -2,7 +2,7 @@ from __future__ import annotations
 from typing import Optional
 from typing import Literal
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class DirectoryRoleTemplate(BaseModel):
@@ -11,5 +11,4 @@ class DirectoryRoleTemplate(BaseModel):
 	deletedDateTime: Optional[datetime] = Field(alias="deletedDateTime", default=None,)
 	description: Optional[str] = Field(alias="description", default=None,)
 	displayName: Optional[str] = Field(alias="displayName", default=None,)
-
 

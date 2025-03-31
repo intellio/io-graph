@@ -13,8 +13,8 @@ from typing import TYPE_CHECKING
 if TYPE_CHECKING:
 	from .task_processing_results import TaskProcessingResultsRequest
 	from .........request_adapter import HttpxRequestAdapter
-from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.beta.identity_governance_task import IdentityGovernanceTask
+from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 
 
 class ByTaskIdRequest(BaseRequestBuilder):

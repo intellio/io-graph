@@ -14,8 +14,8 @@ if TYPE_CHECKING:
 	from .get_attack_simulation_simulation_user_coverage import GetAttackSimulationSimulationUserCoverageRequest
 	from .get_attack_simulation_repeat_offenders import GetAttackSimulationRepeatOffendersRequest
 	from ....request_adapter import HttpxRequestAdapter
-from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.beta.security_reports_root import SecurityReportsRoot
+from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 
 
 class SecurityRequest(BaseRequestBuilder):

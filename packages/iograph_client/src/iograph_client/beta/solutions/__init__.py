@@ -19,8 +19,8 @@ if TYPE_CHECKING:
 	from .backup_restore import BackupRestoreRequest
 	from .approval import ApprovalRequest
 	from ...request_adapter import HttpxRequestAdapter
-from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.beta.solutions_root import SolutionsRoot
+from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 
 
 class SolutionsRequest(BaseRequestBuilder):

@@ -1,7 +1,7 @@
 from __future__ import annotations
 from typing import Optional
 from typing import Literal
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class AccessReviewInstanceDecisionItemServicePrincipalTarget(BaseModel):
@@ -9,5 +9,4 @@ class AccessReviewInstanceDecisionItemServicePrincipalTarget(BaseModel):
 	appId: Optional[str] = Field(alias="appId", default=None,)
 	servicePrincipalDisplayName: Optional[str] = Field(alias="servicePrincipalDisplayName", default=None,)
 	servicePrincipalId: Optional[str] = Field(alias="servicePrincipalId", default=None,)
-
 

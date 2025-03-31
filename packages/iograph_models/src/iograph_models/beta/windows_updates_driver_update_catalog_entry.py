@@ -2,7 +2,7 @@ from __future__ import annotations
 from typing import Optional
 from typing import Literal
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class WindowsUpdatesDriverUpdateCatalogEntry(BaseModel):
@@ -18,5 +18,4 @@ class WindowsUpdatesDriverUpdateCatalogEntry(BaseModel):
 	setupInformationFile: Optional[str] = Field(alias="setupInformationFile", default=None,)
 	version: Optional[str] = Field(alias="version", default=None,)
 	versionDateTime: Optional[datetime] = Field(alias="versionDateTime", default=None,)
-
 

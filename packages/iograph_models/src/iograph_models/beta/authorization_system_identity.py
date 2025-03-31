@@ -1,10 +1,10 @@
 from __future__ import annotations
 from typing import Optional
 from typing import Union
+from pydantic import BaseModel, Field
 from pydantic import model_validator, ModelWrapValidatorHandler, ValidationError
 from typing_extensions import Self
 from typing import Any
-from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class AuthorizationSystemIdentity(BaseModel):
@@ -25,9 +25,6 @@ class AuthorizationSystemIdentity(BaseModel):
 				return parent_validated_model
 			# get the discriminator value
 			mapping_key = data["@odata.type"]
-			if mapping_key == "#microsoft.graph.awsIdentity":
-				from .aws_identity import AwsIdentity
-				return AwsIdentity.model_validate(data)
 			if mapping_key == "#microsoft.graph.awsAccessKey":
 				from .aws_access_key import AwsAccessKey
 				return AwsAccessKey.model_validate(data)
@@ -46,9 +43,6 @@ class AuthorizationSystemIdentity(BaseModel):
 			if mapping_key == "#microsoft.graph.awsUser":
 				from .aws_user import AwsUser
 				return AwsUser.model_validate(data)
-			if mapping_key == "#microsoft.graph.azureIdentity":
-				from .azure_identity import AzureIdentity
-				return AzureIdentity.model_validate(data)
 			if mapping_key == "#microsoft.graph.azureGroup":
 				from .azure_group import AzureGroup
 				return AzureGroup.model_validate(data)
@@ -64,9 +58,6 @@ class AuthorizationSystemIdentity(BaseModel):
 			if mapping_key == "#microsoft.graph.azureUser":
 				from .azure_user import AzureUser
 				return AzureUser.model_validate(data)
-			if mapping_key == "#microsoft.graph.gcpIdentity":
-				from .gcp_identity import GcpIdentity
-				return GcpIdentity.model_validate(data)
 			if mapping_key == "#microsoft.graph.gcpCloudFunction":
 				from .gcp_cloud_function import GcpCloudFunction
 				return GcpCloudFunction.model_validate(data)
@@ -92,4 +83,3 @@ from .unknown_source import UnknownSource
 from .aws_authorization_system import AwsAuthorizationSystem
 from .azure_authorization_system import AzureAuthorizationSystem
 from .gcp_authorization_system import GcpAuthorizationSystem
-

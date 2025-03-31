@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class My_requestsGetResponse(BaseModel):
@@ -9,4 +9,3 @@ class My_requestsGetResponse(BaseModel):
 	value: Optional[list[PrivilegedApproval]] = Field(alias="value", default=None,)
 
 from .privileged_approval import PrivilegedApproval
-

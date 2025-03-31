@@ -2,7 +2,7 @@ from __future__ import annotations
 from typing import Optional
 from typing import Union
 from typing import Annotated
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class NetworkaccessForwardingRuleCollectionResponse(BaseModel):
@@ -13,4 +13,3 @@ class NetworkaccessForwardingRuleCollectionResponse(BaseModel):
 from .networkaccess_internet_access_forwarding_rule import NetworkaccessInternetAccessForwardingRule
 from .networkaccess_m365_forwarding_rule import NetworkaccessM365ForwardingRule
 from .networkaccess_private_access_forwarding_rule import NetworkaccessPrivateAccessForwardingRule
-

@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class SignInCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class SignInCollectionResponse(BaseModel):
 	value: Optional[list[SignIn]] = Field(alias="value", default=None,)
 
 from .sign_in import SignIn
-

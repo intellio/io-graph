@@ -11,9 +11,9 @@ from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:
 	from ......request_adapter import HttpxRequestAdapter
-from iograph_models.beta.update_scope_tags_post_request import Update_scope_tagsPostRequest
-from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.beta.update_scope_tags_post_response import Update_scope_tagsPostResponse
+from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.beta.update_scope_tags_post_request import Update_scope_tagsPostRequest
 
 
 class UpdateScopeTagsRequest(BaseRequestBuilder):

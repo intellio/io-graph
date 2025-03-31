@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class PasswordAuthenticationMethodCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class PasswordAuthenticationMethodCollectionResponse(BaseModel):
 	value: Optional[list[PasswordAuthenticationMethod]] = Field(alias="value", default=None,)
 
 from .password_authentication_method import PasswordAuthenticationMethod
-

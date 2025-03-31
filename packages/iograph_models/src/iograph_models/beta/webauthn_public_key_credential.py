@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class WebauthnPublicKeyCredential(BaseModel):
@@ -11,4 +11,3 @@ class WebauthnPublicKeyCredential(BaseModel):
 
 from .webauthn_authentication_extensions_client_outputs import WebauthnAuthenticationExtensionsClientOutputs
 from .webauthn_authenticator_attestation_response import WebauthnAuthenticatorAttestationResponse
-

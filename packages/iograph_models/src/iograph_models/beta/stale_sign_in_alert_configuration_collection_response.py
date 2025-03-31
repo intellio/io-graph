@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class StaleSignInAlertConfigurationCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class StaleSignInAlertConfigurationCollectionResponse(BaseModel):
 	value: Optional[list[StaleSignInAlertConfiguration]] = Field(alias="value", default=None,)
 
 from .stale_sign_in_alert_configuration import StaleSignInAlertConfiguration
-

@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class CertificateAuthorityDetailCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class CertificateAuthorityDetailCollectionResponse(BaseModel):
 	value: Optional[list[CertificateAuthorityDetail]] = Field(alias="value", default=None,)
 
 from .certificate_authority_detail import CertificateAuthorityDetail
-

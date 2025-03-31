@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class AwsEc2InstanceCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class AwsEc2InstanceCollectionResponse(BaseModel):
 	value: Optional[list[AwsEc2Instance]] = Field(alias="value", default=None,)
 
 from .aws_ec2_instance import AwsEc2Instance
-

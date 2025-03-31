@@ -1,11 +1,11 @@
 from __future__ import annotations
 from typing import Optional
 from typing import Literal
+from datetime import datetime
+from pydantic import BaseModel, Field
 from pydantic import model_validator, ModelWrapValidatorHandler, ValidationError
 from typing_extensions import Self
 from typing import Any
-from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class PolicyBase(BaseModel):
@@ -40,9 +40,6 @@ class PolicyBase(BaseModel):
 			if mapping_key == "#microsoft.graph.permissionGrantPolicy":
 				from .permission_grant_policy import PermissionGrantPolicy
 				return PermissionGrantPolicy.model_validate(data)
-			if mapping_key == "#microsoft.graph.stsPolicy":
-				from .sts_policy import StsPolicy
-				return StsPolicy.model_validate(data)
 			if mapping_key == "#microsoft.graph.activityBasedTimeoutPolicy":
 				from .activity_based_timeout_policy import ActivityBasedTimeoutPolicy
 				return ActivityBasedTimeoutPolicy.model_validate(data)
@@ -65,5 +62,4 @@ class PolicyBase(BaseModel):
 
 		except Exception as e:
 			raise e
-
 

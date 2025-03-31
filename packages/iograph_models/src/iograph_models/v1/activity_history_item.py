@@ -1,12 +1,13 @@
 from __future__ import annotations
 from typing import Optional
+from typing import Literal
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class ActivityHistoryItem(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
+	odata_type: Literal["#microsoft.graph.activityHistoryItem"] = Field(alias="@odata.type",)
 	activeDurationSeconds: Optional[int] = Field(alias="activeDurationSeconds", default=None,)
 	createdDateTime: Optional[datetime] = Field(alias="createdDateTime", default=None,)
 	expirationDateTime: Optional[datetime] = Field(alias="expirationDateTime", default=None,)
@@ -19,4 +20,3 @@ class ActivityHistoryItem(BaseModel):
 
 from .status import Status
 from .user_activity import UserActivity
-

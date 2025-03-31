@@ -2,11 +2,11 @@ from __future__ import annotations
 from typing import Optional
 from typing import Union
 from typing import Annotated
+from datetime import datetime
+from pydantic import BaseModel, Field
 from pydantic import model_validator, ModelWrapValidatorHandler, ValidationError
 from typing_extensions import Self
 from typing import Any
-from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class MobileApp(BaseModel):
@@ -48,9 +48,6 @@ class MobileApp(BaseModel):
 			if mapping_key == "#microsoft.graph.androidForWorkApp":
 				from .android_for_work_app import AndroidForWorkApp
 				return AndroidForWorkApp.model_validate(data)
-			if mapping_key == "#microsoft.graph.androidManagedStoreApp":
-				from .android_managed_store_app import AndroidManagedStoreApp
-				return AndroidManagedStoreApp.model_validate(data)
 			if mapping_key == "#microsoft.graph.androidManagedStoreWebApp":
 				from .android_managed_store_web_app import AndroidManagedStoreWebApp
 				return AndroidManagedStoreWebApp.model_validate(data)
@@ -81,18 +78,12 @@ class MobileApp(BaseModel):
 			if mapping_key == "#microsoft.graph.macOSWebClip":
 				from .mac_o_s_web_clip import MacOSWebClip
 				return MacOSWebClip.model_validate(data)
-			if mapping_key == "#microsoft.graph.managedApp":
-				from .managed_app import ManagedApp
-				return ManagedApp.model_validate(data)
 			if mapping_key == "#microsoft.graph.managedAndroidStoreApp":
 				from .managed_android_store_app import ManagedAndroidStoreApp
 				return ManagedAndroidStoreApp.model_validate(data)
 			if mapping_key == "#microsoft.graph.managedIOSStoreApp":
 				from .managed_i_o_s_store_app import ManagedIOSStoreApp
 				return ManagedIOSStoreApp.model_validate(data)
-			if mapping_key == "#microsoft.graph.managedMobileLobApp":
-				from .managed_mobile_lob_app import ManagedMobileLobApp
-				return ManagedMobileLobApp.model_validate(data)
 			if mapping_key == "#microsoft.graph.managedAndroidLobApp":
 				from .managed_android_lob_app import ManagedAndroidLobApp
 				return ManagedAndroidLobApp.model_validate(data)
@@ -102,9 +93,6 @@ class MobileApp(BaseModel):
 			if mapping_key == "#microsoft.graph.microsoftStoreForBusinessApp":
 				from .microsoft_store_for_business_app import MicrosoftStoreForBusinessApp
 				return MicrosoftStoreForBusinessApp.model_validate(data)
-			if mapping_key == "#microsoft.graph.mobileLobApp":
-				from .mobile_lob_app import MobileLobApp
-				return MobileLobApp.model_validate(data)
 			if mapping_key == "#microsoft.graph.androidLobApp":
 				from .android_lob_app import AndroidLobApp
 				return AndroidLobApp.model_validate(data)
@@ -120,9 +108,6 @@ class MobileApp(BaseModel):
 			if mapping_key == "#microsoft.graph.macOSPkgApp":
 				from .mac_o_s_pkg_app import MacOSPkgApp
 				return MacOSPkgApp.model_validate(data)
-			if mapping_key == "#microsoft.graph.win32LobApp":
-				from .win32_lob_app import Win32LobApp
-				return Win32LobApp.model_validate(data)
 			if mapping_key == "#microsoft.graph.win32CatalogApp":
 				from .win32_catalog_app import Win32CatalogApp
 				return Win32CatalogApp.model_validate(data)
@@ -132,9 +117,6 @@ class MobileApp(BaseModel):
 			if mapping_key == "#microsoft.graph.windowsMobileMSI":
 				from .windows_mobile_m_s_i import WindowsMobileMSI
 				return WindowsMobileMSI.model_validate(data)
-			if mapping_key == "#microsoft.graph.windowsPhone81AppX":
-				from .windows_phone81_app_x import WindowsPhone81AppX
-				return WindowsPhone81AppX.model_validate(data)
 			if mapping_key == "#microsoft.graph.windowsPhone81AppXBundle":
 				from .windows_phone81_app_x_bundle import WindowsPhone81AppXBundle
 				return WindowsPhone81AppXBundle.model_validate(data)
@@ -176,4 +158,3 @@ from .mobile_app_assignment import MobileAppAssignment
 from .mobile_app_category import MobileAppCategory
 from .mobile_app_dependency import MobileAppDependency
 from .mobile_app_supersedence import MobileAppSupersedence
-

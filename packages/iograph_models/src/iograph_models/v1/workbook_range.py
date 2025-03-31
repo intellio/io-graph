@@ -1,11 +1,12 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from typing import Literal
+from pydantic import BaseModel, Field
 
 
 class WorkbookRange(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
+	odata_type: Literal["#microsoft.graph.workbookRange"] = Field(alias="@odata.type",)
 	address: Optional[str] = Field(alias="address", default=None,)
 	addressLocal: Optional[str] = Field(alias="addressLocal", default=None,)
 	cellCount: Optional[int] = Field(alias="cellCount", default=None,)
@@ -30,4 +31,3 @@ class WorkbookRange(BaseModel):
 from .workbook_range_format import WorkbookRangeFormat
 from .workbook_range_sort import WorkbookRangeSort
 from .workbook_worksheet import WorkbookWorksheet
-

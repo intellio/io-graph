@@ -11,8 +11,8 @@ from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:
 	from ....request_adapter import HttpxRequestAdapter
-from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.beta.user_experience_analytics_work_from_anywhere_hardware_readiness_metric import UserExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetric
+from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 
 
 class UserExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetricRequest(BaseRequestBuilder):

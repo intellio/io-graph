@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class SecurityFilePlanReferenceTemplateCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class SecurityFilePlanReferenceTemplateCollectionResponse(BaseModel):
 	value: Optional[list[SecurityFilePlanReferenceTemplate]] = Field(alias="value", default=None,)
 
 from .security_file_plan_reference_template import SecurityFilePlanReferenceTemplate
-

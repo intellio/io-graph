@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class AndroidDeviceOwnerDelegatedScopeAppSettingCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class AndroidDeviceOwnerDelegatedScopeAppSettingCollectionResponse(BaseModel):
 	value: Optional[list[AndroidDeviceOwnerDelegatedScopeAppSetting]] = Field(alias="value", default=None,)
 
 from .android_device_owner_delegated_scope_app_setting import AndroidDeviceOwnerDelegatedScopeAppSetting
-

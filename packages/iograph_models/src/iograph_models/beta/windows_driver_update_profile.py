@@ -1,12 +1,13 @@
 from __future__ import annotations
 from typing import Optional
+from typing import Literal
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class WindowsDriverUpdateProfile(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
+	odata_type: Literal["#microsoft.graph.windowsDriverUpdateProfile"] = Field(alias="@odata.type",)
 	approvalType: Optional[DriverUpdateProfileApprovalType | str] = Field(alias="approvalType", default=None,)
 	createdDateTime: Optional[datetime] = Field(alias="createdDateTime", default=None,)
 	deploymentDeferralInDays: Optional[int] = Field(alias="deploymentDeferralInDays", default=None,)
@@ -24,4 +25,3 @@ from .driver_update_profile_approval_type import DriverUpdateProfileApprovalType
 from .windows_driver_update_profile_inventory_sync_status import WindowsDriverUpdateProfileInventorySyncStatus
 from .windows_driver_update_profile_assignment import WindowsDriverUpdateProfileAssignment
 from .windows_driver_update_inventory import WindowsDriverUpdateInventory
-

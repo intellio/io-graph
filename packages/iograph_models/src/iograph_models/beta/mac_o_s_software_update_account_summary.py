@@ -1,12 +1,13 @@
 from __future__ import annotations
 from typing import Optional
+from typing import Literal
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class MacOSSoftwareUpdateAccountSummary(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
+	odata_type: Literal["#microsoft.graph.macOSSoftwareUpdateAccountSummary"] = Field(alias="@odata.type",)
 	deviceId: Optional[str] = Field(alias="deviceId", default=None,)
 	deviceName: Optional[str] = Field(alias="deviceName", default=None,)
 	displayName: Optional[str] = Field(alias="displayName", default=None,)
@@ -20,4 +21,3 @@ class MacOSSoftwareUpdateAccountSummary(BaseModel):
 	categorySummaries: Optional[list[MacOSSoftwareUpdateCategorySummary]] = Field(alias="categorySummaries", default=None,)
 
 from .mac_o_s_software_update_category_summary import MacOSSoftwareUpdateCategorySummary
-

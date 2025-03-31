@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class ProvisioningStep(BaseModel):
@@ -14,4 +14,3 @@ class ProvisioningStep(BaseModel):
 from .details_info import DetailsInfo
 from .provisioning_step_type import ProvisioningStepType
 from .provisioning_result import ProvisioningResult
-

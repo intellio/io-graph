@@ -3,7 +3,7 @@ from typing import Optional
 from typing import Union
 from typing import Literal
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class MobileAppPolicySetItem(BaseModel):
@@ -18,7 +18,7 @@ class MobileAppPolicySetItem(BaseModel):
 	payloadId: Optional[str] = Field(alias="payloadId", default=None,)
 	status: Optional[PolicySetStatus | str] = Field(alias="status", default=None,)
 	intent: Optional[InstallIntent | str] = Field(alias="intent", default=None,)
-	settings: Optional[Union[AndroidManagedStoreAppAssignmentSettings, IosLobAppAssignmentSettings, IosStoreAppAssignmentSettings, IosVppAppAssignmentSettings, MacOsLobAppAssignmentSettings, MacOsVppAppAssignmentSettings, MicrosoftStoreForBusinessAppAssignmentSettings, Win32LobAppAssignmentSettings, Win32CatalogAppAssignmentSettings, WindowsAppXAppAssignmentSettings, WindowsUniversalAppXAppAssignmentSettings, WinGetAppAssignmentSettings]] = Field(alias="settings", default=None,discriminator="odata_type", )
+	settings: Optional[Union[AndroidManagedStoreAppAssignmentSettings, IosLobAppAssignmentSettings, IosStoreAppAssignmentSettings, IosVppAppAssignmentSettings, MacOsLobAppAssignmentSettings, MacOsVppAppAssignmentSettings, MicrosoftStoreForBusinessAppAssignmentSettings, Win32CatalogAppAssignmentSettings, WindowsAppXAppAssignmentSettings, WindowsUniversalAppXAppAssignmentSettings, WinGetAppAssignmentSettings]] = Field(alias="settings", default=None,discriminator="odata_type", )
 
 from .error_code import ErrorCode
 from .policy_set_status import PolicySetStatus
@@ -30,9 +30,7 @@ from .ios_vpp_app_assignment_settings import IosVppAppAssignmentSettings
 from .mac_os_lob_app_assignment_settings import MacOsLobAppAssignmentSettings
 from .mac_os_vpp_app_assignment_settings import MacOsVppAppAssignmentSettings
 from .microsoft_store_for_business_app_assignment_settings import MicrosoftStoreForBusinessAppAssignmentSettings
-from .win32_lob_app_assignment_settings import Win32LobAppAssignmentSettings
 from .win32_catalog_app_assignment_settings import Win32CatalogAppAssignmentSettings
 from .windows_app_x_app_assignment_settings import WindowsAppXAppAssignmentSettings
 from .windows_universal_app_x_app_assignment_settings import WindowsUniversalAppXAppAssignmentSettings
 from .win_get_app_assignment_settings import WinGetAppAssignmentSettings
-

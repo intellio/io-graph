@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class ConditionalAccessGrantControls(BaseModel):
@@ -13,4 +13,3 @@ class ConditionalAccessGrantControls(BaseModel):
 
 from .conditional_access_grant_control import ConditionalAccessGrantControl
 from .authentication_strength_policy import AuthenticationStrengthPolicy
-

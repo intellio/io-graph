@@ -1,7 +1,7 @@
 from __future__ import annotations
 from typing import Optional
 from typing import Literal
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class UserLastSignInRecommendationInsightSetting(BaseModel):
@@ -10,4 +10,3 @@ class UserLastSignInRecommendationInsightSetting(BaseModel):
 	signInScope: Optional[UserSignInRecommendationScope | str] = Field(alias="signInScope", default=None,)
 
 from .user_sign_in_recommendation_scope import UserSignInRecommendationScope
-

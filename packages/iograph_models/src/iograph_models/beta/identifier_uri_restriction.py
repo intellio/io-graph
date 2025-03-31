@@ -1,7 +1,7 @@
 from __future__ import annotations
 from typing import Optional
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class IdentifierUriRestriction(BaseModel):
@@ -15,4 +15,3 @@ class IdentifierUriRestriction(BaseModel):
 
 from .app_management_policy_actor_exemptions import AppManagementPolicyActorExemptions
 from .app_management_restriction_state import AppManagementRestrictionState
-

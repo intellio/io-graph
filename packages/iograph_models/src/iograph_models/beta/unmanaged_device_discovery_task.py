@@ -2,7 +2,7 @@ from __future__ import annotations
 from typing import Optional
 from typing import Literal
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class UnmanagedDeviceDiscoveryTask(BaseModel):
@@ -24,4 +24,3 @@ from .device_app_management_task_category import DeviceAppManagementTaskCategory
 from .device_app_management_task_priority import DeviceAppManagementTaskPriority
 from .device_app_management_task_status import DeviceAppManagementTaskStatus
 from .unmanaged_device import UnmanagedDevice
-

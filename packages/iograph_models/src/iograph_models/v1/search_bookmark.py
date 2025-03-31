@@ -1,12 +1,13 @@
 from __future__ import annotations
 from typing import Optional
+from typing import Literal
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class SearchBookmark(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
+	odata_type: Literal["#microsoft.graph.search.bookmark"] = Field(alias="@odata.type",)
 	description: Optional[str] = Field(alias="description", default=None,)
 	displayName: Optional[str] = Field(alias="displayName", default=None,)
 	lastModifiedBy: Optional[SearchIdentitySet] = Field(alias="lastModifiedBy", default=None,)
@@ -29,4 +30,3 @@ from .search_answer_keyword import SearchAnswerKeyword
 from .device_platform_type import DevicePlatformType
 from .search_answer_state import SearchAnswerState
 from .search_answer_variant import SearchAnswerVariant
-

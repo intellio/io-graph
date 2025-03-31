@@ -2,7 +2,7 @@ from __future__ import annotations
 from typing import Optional
 from typing import Literal
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class GroupPolicyPresentationText(BaseModel):
@@ -13,4 +13,3 @@ class GroupPolicyPresentationText(BaseModel):
 	definition: Optional[GroupPolicyDefinition] = Field(alias="definition", default=None,)
 
 from .group_policy_definition import GroupPolicyDefinition
-

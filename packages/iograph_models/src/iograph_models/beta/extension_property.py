@@ -2,7 +2,7 @@ from __future__ import annotations
 from typing import Optional
 from typing import Literal
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class ExtensionProperty(BaseModel):
@@ -15,5 +15,4 @@ class ExtensionProperty(BaseModel):
 	isSyncedFromOnPremises: Optional[bool] = Field(alias="isSyncedFromOnPremises", default=None,)
 	name: Optional[str] = Field(alias="name", default=None,)
 	targetObjects: Optional[list[str]] = Field(alias="targetObjects", default=None,)
-
 

@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class Acl(BaseModel):
@@ -13,4 +13,3 @@ class Acl(BaseModel):
 from .access_type import AccessType
 from .identity_source_type import IdentitySourceType
 from .acl_type import AclType
-

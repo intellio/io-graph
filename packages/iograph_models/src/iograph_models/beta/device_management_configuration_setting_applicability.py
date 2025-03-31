@@ -1,9 +1,9 @@
 from __future__ import annotations
 from typing import Optional
+from pydantic import BaseModel, Field
 from pydantic import model_validator, ModelWrapValidatorHandler, ValidationError
 from typing_extensions import Self
 from typing import Any
-from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class DeviceManagementConfigurationSettingApplicability(BaseModel):
@@ -40,4 +40,3 @@ class DeviceManagementConfigurationSettingApplicability(BaseModel):
 from .device_management_configuration_device_mode import DeviceManagementConfigurationDeviceMode
 from .device_management_configuration_platforms import DeviceManagementConfigurationPlatforms
 from .device_management_configuration_technologies import DeviceManagementConfigurationTechnologies
-

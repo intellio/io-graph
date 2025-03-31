@@ -2,11 +2,11 @@ from __future__ import annotations
 from typing import Optional
 from typing import Union
 from typing import Annotated
+from datetime import datetime
+from pydantic import BaseModel, Field
 from pydantic import model_validator, ModelWrapValidatorHandler, ValidationError
 from typing_extensions import Self
 from typing import Any
-from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class NetworkaccessProfile(BaseModel):
@@ -43,4 +43,3 @@ class NetworkaccessProfile(BaseModel):
 from .networkaccess_status import NetworkaccessStatus
 from .networkaccess_filtering_policy_link import NetworkaccessFilteringPolicyLink
 from .networkaccess_forwarding_policy_link import NetworkaccessForwardingPolicyLink
-

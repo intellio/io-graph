@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class LoginPageTextVisibilitySettings(BaseModel):
@@ -11,5 +11,4 @@ class LoginPageTextVisibilitySettings(BaseModel):
 	hideResetItNow: Optional[bool] = Field(alias="hideResetItNow", default=None,)
 	hideTermsOfUse: Optional[bool] = Field(alias="hideTermsOfUse", default=None,)
 	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
-
 

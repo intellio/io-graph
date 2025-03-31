@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class AwsRoleCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class AwsRoleCollectionResponse(BaseModel):
 	value: Optional[list[AwsRole]] = Field(alias="value", default=None,)
 
 from .aws_role import AwsRole
-

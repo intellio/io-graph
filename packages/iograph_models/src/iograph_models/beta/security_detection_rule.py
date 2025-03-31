@@ -2,7 +2,7 @@ from __future__ import annotations
 from typing import Optional
 from typing import Literal
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class SecurityDetectionRule(BaseModel):
@@ -24,4 +24,3 @@ from .security_detection_action import SecurityDetectionAction
 from .security_run_details import SecurityRunDetails
 from .security_query_condition import SecurityQueryCondition
 from .security_rule_schedule import SecurityRuleSchedule
-

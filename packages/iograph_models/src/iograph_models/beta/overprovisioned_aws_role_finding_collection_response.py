@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class OverprovisionedAwsRoleFindingCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class OverprovisionedAwsRoleFindingCollectionResponse(BaseModel):
 	value: Optional[list[OverprovisionedAwsRoleFinding]] = Field(alias="value", default=None,)
 
 from .overprovisioned_aws_role_finding import OverprovisionedAwsRoleFinding
-

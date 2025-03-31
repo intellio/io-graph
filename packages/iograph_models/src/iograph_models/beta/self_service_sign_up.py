@@ -1,12 +1,13 @@
 from __future__ import annotations
 from typing import Optional
+from typing import Literal
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class SelfServiceSignUp(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
+	odata_type: Literal["#microsoft.graph.selfServiceSignUp"] = Field(alias="@odata.type",)
 	appDisplayName: Optional[str] = Field(alias="appDisplayName", default=None,)
 	appId: Optional[str] = Field(alias="appId", default=None,)
 	appliedEventListeners: Optional[list[AppliedAuthenticationEventListener]] = Field(alias="appliedEventListeners", default=None,)
@@ -23,4 +24,3 @@ from .sign_up_identity import SignUpIdentity
 from .sign_up_stage import SignUpStage
 from .sign_up_status import SignUpStatus
 from .ciam_user_snapshot import CiamUserSnapshot
-

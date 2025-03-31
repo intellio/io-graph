@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class ShiftAvailabilityCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class ShiftAvailabilityCollectionResponse(BaseModel):
 	value: Optional[list[ShiftAvailability]] = Field(alias="value", default=None,)
 
 from .shift_availability import ShiftAvailability
-

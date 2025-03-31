@@ -1,7 +1,7 @@
 from __future__ import annotations
 from typing import Optional
 from typing import Literal
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class IdentityGovernanceCustomTaskExtensionCalloutData(BaseModel):
@@ -15,4 +15,3 @@ from .user import User
 from .identity_governance_task import IdentityGovernanceTask
 from .identity_governance_task_processing_result import IdentityGovernanceTaskProcessingResult
 from .identity_governance_workflow import IdentityGovernanceWorkflow
-

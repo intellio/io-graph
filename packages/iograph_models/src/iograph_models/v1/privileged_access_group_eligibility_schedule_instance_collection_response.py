@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class PrivilegedAccessGroupEligibilityScheduleInstanceCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class PrivilegedAccessGroupEligibilityScheduleInstanceCollectionResponse(BaseMod
 	value: Optional[list[PrivilegedAccessGroupEligibilityScheduleInstance]] = Field(alias="value", default=None,)
 
 from .privileged_access_group_eligibility_schedule_instance import PrivilegedAccessGroupEligibilityScheduleInstance
-

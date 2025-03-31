@@ -3,7 +3,7 @@ from typing import Optional
 from typing import Union
 from typing import Literal
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class ExchangeProtectionPolicy(BaseModel):
@@ -24,13 +24,7 @@ from .chat_message_mentioned_identity_set import ChatMessageMentionedIdentitySet
 from .chat_message_reaction_identity_set import ChatMessageReactionIdentitySet
 from .communications_identity_set import CommunicationsIdentitySet
 from .share_point_identity_set import SharePointIdentitySet
-from .chat_message_from_identity_set import ChatMessageFromIdentitySet
-from .chat_message_mentioned_identity_set import ChatMessageMentionedIdentitySet
-from .chat_message_reaction_identity_set import ChatMessageReactionIdentitySet
-from .communications_identity_set import CommunicationsIdentitySet
-from .share_point_identity_set import SharePointIdentitySet
 from .retention_setting import RetentionSetting
 from .protection_policy_status import ProtectionPolicyStatus
 from .mailbox_protection_rule import MailboxProtectionRule
 from .mailbox_protection_unit import MailboxProtectionUnit
-

@@ -2,10 +2,10 @@ from __future__ import annotations
 from typing import Optional
 from typing import Union
 from typing import Annotated
+from pydantic import BaseModel, Field
 from pydantic import model_validator, ModelWrapValidatorHandler, ValidationError
 from typing_extensions import Self
 from typing import Any
-from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class DeviceManagementSettingCategory(BaseModel):
@@ -39,4 +39,3 @@ class DeviceManagementSettingCategory(BaseModel):
 from .device_management_abstract_complex_setting_definition import DeviceManagementAbstractComplexSettingDefinition
 from .device_management_collection_setting_definition import DeviceManagementCollectionSettingDefinition
 from .device_management_complex_setting_definition import DeviceManagementComplexSettingDefinition
-

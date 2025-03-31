@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class SimulationAutomationCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class SimulationAutomationCollectionResponse(BaseModel):
 	value: Optional[list[SimulationAutomation]] = Field(alias="value", default=None,)
 
 from .simulation_automation import SimulationAutomation
-

@@ -2,7 +2,7 @@ from __future__ import annotations
 from typing import Optional
 from typing import Literal
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class OnlineMeeting(BaseModel):
@@ -64,4 +64,3 @@ from .broadcast_meeting_settings import BroadcastMeetingSettings
 from .meeting_participants import MeetingParticipants
 from .call_recording import CallRecording
 from .call_transcript import CallTranscript
-

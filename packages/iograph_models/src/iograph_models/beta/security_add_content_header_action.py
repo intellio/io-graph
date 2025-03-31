@@ -1,7 +1,7 @@
 from __future__ import annotations
 from typing import Optional
 from typing import Literal
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class SecurityAddContentHeaderAction(BaseModel):
@@ -15,4 +15,3 @@ class SecurityAddContentHeaderAction(BaseModel):
 	uiElementName: Optional[str] = Field(alias="uiElementName", default=None,)
 
 from .security_content_alignment import SecurityContentAlignment
-

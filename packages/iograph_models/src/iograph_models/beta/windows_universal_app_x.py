@@ -4,7 +4,7 @@ from typing import Union
 from typing import Literal
 from typing import Annotated
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class WindowsUniversalAppX(BaseModel):
@@ -58,4 +58,3 @@ from .windows_device_type import WindowsDeviceType
 from .windows_minimum_operating_system import WindowsMinimumOperatingSystem
 from .microsoft_store_for_business_contained_app import MicrosoftStoreForBusinessContainedApp
 from .windows_universal_app_x_contained_app import WindowsUniversalAppXContainedApp
-

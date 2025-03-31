@@ -1,7 +1,7 @@
 from __future__ import annotations
 from uuid import UUID
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class AgedAccountsReceivable(BaseModel):
@@ -18,5 +18,4 @@ class AgedAccountsReceivable(BaseModel):
 	period3Amount: Optional[int] = Field(alias="period3Amount", default=None,)
 	periodLengthFilter: Optional[str] = Field(alias="periodLengthFilter", default=None,)
 	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
-
 

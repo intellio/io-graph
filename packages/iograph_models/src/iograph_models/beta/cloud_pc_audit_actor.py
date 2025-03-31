@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class CloudPcAuditActor(BaseModel):
@@ -19,4 +19,3 @@ class CloudPcAuditActor(BaseModel):
 
 from .cloud_pc_audit_actor_type import CloudPcAuditActorType
 from .cloud_pc_user_role_scope_tag_info import CloudPcUserRoleScopeTagInfo
-

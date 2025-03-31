@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class AiInteractionAttachmentCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class AiInteractionAttachmentCollectionResponse(BaseModel):
 	value: Optional[list[AiInteractionAttachment]] = Field(alias="value", default=None,)
 
 from .ai_interaction_attachment import AiInteractionAttachment
-

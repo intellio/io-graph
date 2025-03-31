@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class RolesAssignedOutsidePrivilegedIdentityManagementAlertIncidentCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class RolesAssignedOutsidePrivilegedIdentityManagementAlertIncidentCollectionRes
 	value: Optional[list[RolesAssignedOutsidePrivilegedIdentityManagementAlertIncident]] = Field(alias="value", default=None,)
 
 from .roles_assigned_outside_privileged_identity_management_alert_incident import RolesAssignedOutsidePrivilegedIdentityManagementAlertIncident
-

@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class CloudAppSecurityProfileCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class CloudAppSecurityProfileCollectionResponse(BaseModel):
 	value: Optional[list[CloudAppSecurityProfile]] = Field(alias="value", default=None,)
 
 from .cloud_app_security_profile import CloudAppSecurityProfile
-

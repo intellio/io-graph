@@ -2,7 +2,7 @@ from __future__ import annotations
 from typing import Optional
 from typing import Union
 from typing import Annotated
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class SecurityCaseOperationCollectionResponse(BaseModel):
@@ -18,4 +18,3 @@ from .security_ediscovery_index_operation import SecurityEdiscoveryIndexOperatio
 from .security_ediscovery_purge_data_operation import SecurityEdiscoveryPurgeDataOperation
 from .security_ediscovery_search_export_operation import SecurityEdiscoverySearchExportOperation
 from .security_ediscovery_tag_operation import SecurityEdiscoveryTagOperation
-

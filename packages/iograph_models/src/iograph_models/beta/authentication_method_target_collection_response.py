@@ -2,7 +2,7 @@ from __future__ import annotations
 from typing import Optional
 from typing import Union
 from typing import Annotated
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class AuthenticationMethodTargetCollectionResponse(BaseModel):
@@ -14,4 +14,3 @@ from .microsoft_authenticator_authentication_method_target import MicrosoftAuthe
 from .passkey_authentication_method_target import PasskeyAuthenticationMethodTarget
 from .sms_authentication_method_target import SmsAuthenticationMethodTarget
 from .voice_authentication_method_target import VoiceAuthenticationMethodTarget
-

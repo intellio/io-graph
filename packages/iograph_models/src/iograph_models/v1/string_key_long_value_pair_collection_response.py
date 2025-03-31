@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class StringKeyLongValuePairCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class StringKeyLongValuePairCollectionResponse(BaseModel):
 	value: Optional[list[StringKeyLongValuePair]] = Field(alias="value", default=None,)
 
 from .string_key_long_value_pair import StringKeyLongValuePair
-

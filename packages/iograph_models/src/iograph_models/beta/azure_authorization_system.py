@@ -1,7 +1,7 @@
 from __future__ import annotations
 from typing import Optional
 from typing import Literal
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class AzureAuthorizationSystem(BaseModel):
@@ -23,4 +23,3 @@ from .azure_authorization_system_type_action import AzureAuthorizationSystemType
 from .azure_authorization_system_resource import AzureAuthorizationSystemResource
 from .azure_role_definition import AzureRoleDefinition
 from .authorization_system_type_service import AuthorizationSystemTypeService
-

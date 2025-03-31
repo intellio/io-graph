@@ -1,10 +1,10 @@
 from __future__ import annotations
 from typing import Optional
+from datetime import datetime
+from pydantic import BaseModel, Field
 from pydantic import model_validator, ModelWrapValidatorHandler, ValidationError
 from typing_extensions import Self
 from typing import Any
-from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class RiskyServicePrincipal(BaseModel):
@@ -43,4 +43,3 @@ from .risk_detail import RiskDetail
 from .risk_level import RiskLevel
 from .risk_state import RiskState
 from .risky_service_principal_history_item import RiskyServicePrincipalHistoryItem
-

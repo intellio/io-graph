@@ -14,8 +14,8 @@ if TYPE_CHECKING:
 	from .role_info import RoleInfoRequest
 	from .request import RequestRequest
 	from ....request_adapter import HttpxRequestAdapter
-from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.beta.privileged_approval import PrivilegedApproval
+from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 
 
 class ByPrivilegedApprovalIdRequest(BaseRequestBuilder):

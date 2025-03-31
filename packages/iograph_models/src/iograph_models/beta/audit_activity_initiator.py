@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class AuditActivityInitiator(BaseModel):
@@ -10,4 +10,3 @@ class AuditActivityInitiator(BaseModel):
 
 from .app_identity import AppIdentity
 from .audit_user_identity import AuditUserIdentity
-

@@ -3,7 +3,7 @@ from typing import Optional
 from typing import Union
 from typing import Literal
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class WindowsUpdateForBusinessConfiguration(BaseModel):
@@ -83,5 +83,3 @@ from .prerelease_features import PrereleaseFeatures
 from .windows_update_notification_display_option import WindowsUpdateNotificationDisplayOption
 from .windows_update_for_business_update_weeks import WindowsUpdateForBusinessUpdateWeeks
 from .enablement import Enablement
-from .enablement import Enablement
-

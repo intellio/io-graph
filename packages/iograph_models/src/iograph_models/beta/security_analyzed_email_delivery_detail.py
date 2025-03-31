@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class SecurityAnalyzedEmailDeliveryDetail(BaseModel):
@@ -12,4 +12,3 @@ class SecurityAnalyzedEmailDeliveryDetail(BaseModel):
 
 from .security_delivery_action import SecurityDeliveryAction
 from .security_delivery_location import SecurityDeliveryLocation
-

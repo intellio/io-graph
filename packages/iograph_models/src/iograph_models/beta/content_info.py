@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class ContentInfo(BaseModel):
@@ -13,4 +13,3 @@ class ContentInfo(BaseModel):
 from .content_format import ContentFormat
 from .key_value_pair import KeyValuePair
 from .content_state import ContentState
-

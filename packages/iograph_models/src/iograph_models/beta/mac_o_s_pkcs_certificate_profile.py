@@ -2,7 +2,7 @@ from __future__ import annotations
 from typing import Optional
 from typing import Literal
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class MacOSPkcsCertificateProfile(BaseModel):
@@ -58,4 +58,3 @@ from .certificate_store import CertificateStore
 from .custom_subject_alternative_name import CustomSubjectAlternativeName
 from .apple_deployment_channel import AppleDeploymentChannel
 from .managed_device_certificate_state import ManagedDeviceCertificateState
-

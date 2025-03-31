@@ -4,7 +4,7 @@ from typing import Union
 from typing import Literal
 from typing import Annotated
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class IosStoreApp(BaseModel):
@@ -45,4 +45,3 @@ from .mobile_app_dependency import MobileAppDependency
 from .mobile_app_supersedence import MobileAppSupersedence
 from .ios_device_type import IosDeviceType
 from .ios_minimum_operating_system import IosMinimumOperatingSystem
-

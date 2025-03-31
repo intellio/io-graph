@@ -3,7 +3,7 @@ from typing import Optional
 from typing import Union
 from typing import Literal
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class CustomAccessPackageWorkflowExtension(BaseModel):
@@ -22,4 +22,3 @@ from .azure_ad_token_authentication import AzureAdTokenAuthentication
 from .custom_extension_client_configuration import CustomExtensionClientConfiguration
 from .http_request_endpoint import HttpRequestEndpoint
 from .logic_app_trigger_endpoint_configuration import LogicAppTriggerEndpointConfiguration
-

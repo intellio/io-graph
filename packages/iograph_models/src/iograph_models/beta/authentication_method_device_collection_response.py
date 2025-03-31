@@ -2,7 +2,7 @@ from __future__ import annotations
 from typing import Optional
 from typing import Union
 from typing import Annotated
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class AuthenticationMethodDeviceCollectionResponse(BaseModel):
@@ -11,4 +11,3 @@ class AuthenticationMethodDeviceCollectionResponse(BaseModel):
 	value: Optional[list[Annotated[Union[HardwareOathTokenAuthenticationMethodDevice],Field(discriminator="odata_type")]]] = Field(alias="value", default=None,)
 
 from .hardware_oath_token_authentication_method_device import HardwareOathTokenAuthenticationMethodDevice
-

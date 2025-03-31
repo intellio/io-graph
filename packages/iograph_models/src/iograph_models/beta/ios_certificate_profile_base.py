@@ -1,11 +1,11 @@
 from __future__ import annotations
 from typing import Optional
 from typing import Literal
+from datetime import datetime
+from pydantic import BaseModel, Field
 from pydantic import model_validator, ModelWrapValidatorHandler, ValidationError
 from typing_extensions import Self
 from typing import Any
-from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class IosCertificateProfileBase(BaseModel):
@@ -68,4 +68,3 @@ from .device_configuration_user_overview import DeviceConfigurationUserOverview
 from .certificate_validity_period_scale import CertificateValidityPeriodScale
 from .subject_alternative_name_type import SubjectAlternativeNameType
 from .apple_subject_name_format import AppleSubjectNameFormat
-

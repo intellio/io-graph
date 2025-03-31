@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class BusinessScenarioCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class BusinessScenarioCollectionResponse(BaseModel):
 	value: Optional[list[BusinessScenario]] = Field(alias="value", default=None,)
 
 from .business_scenario import BusinessScenario
-

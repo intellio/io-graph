@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class ManagedTenantsAuditEventCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class ManagedTenantsAuditEventCollectionResponse(BaseModel):
 	value: Optional[list[ManagedTenantsAuditEvent]] = Field(alias="value", default=None,)
 
 from .managed_tenants_audit_event import ManagedTenantsAuditEvent
-

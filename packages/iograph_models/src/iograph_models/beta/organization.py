@@ -4,7 +4,7 @@ from typing import Union
 from typing import Literal
 from typing import Annotated
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class Organization(BaseModel):
@@ -59,4 +59,3 @@ from .open_type_extension import OpenTypeExtension
 from .person_extension import PersonExtension
 from .partner_information import PartnerInformation
 from .organization_settings import OrganizationSettings
-

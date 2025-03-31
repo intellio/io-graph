@@ -1,7 +1,7 @@
 from __future__ import annotations
 from typing import Optional
 from typing import Literal
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class PrintUsageByPrinter(BaseModel):
@@ -20,5 +20,4 @@ class PrintUsageByPrinter(BaseModel):
 	usageDate: Optional[str] = Field(alias="usageDate", default=None,)
 	printerId: Optional[str] = Field(alias="printerId", default=None,)
 	printerName: Optional[str] = Field(alias="printerName", default=None,)
-
 

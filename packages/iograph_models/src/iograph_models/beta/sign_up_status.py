@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class SignUpStatus(BaseModel):
@@ -8,5 +8,4 @@ class SignUpStatus(BaseModel):
 	errorCode: Optional[int] = Field(alias="errorCode", default=None,)
 	failureReason: Optional[str] = Field(alias="failureReason", default=None,)
 	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
-
 

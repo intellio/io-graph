@@ -11,9 +11,9 @@ from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:
 	from ....request_adapter import HttpxRequestAdapter
+from iograph_models.beta.assignment_filter_status_details import AssignmentFilterStatusDetails
 from iograph_models.beta.get_assignment_filters_status_details_post_request import Get_assignment_filters_status_detailsPostRequest
 from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
-from iograph_models.beta.assignment_filter_status_details import AssignmentFilterStatusDetails
 
 
 class GetAssignmentFiltersStatusDetailsRequest(BaseRequestBuilder):

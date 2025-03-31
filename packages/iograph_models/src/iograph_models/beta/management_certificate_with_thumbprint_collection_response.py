@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class ManagementCertificateWithThumbprintCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class ManagementCertificateWithThumbprintCollectionResponse(BaseModel):
 	value: Optional[list[ManagementCertificateWithThumbprint]] = Field(alias="value", default=None,)
 
 from .management_certificate_with_thumbprint import ManagementCertificateWithThumbprint
-

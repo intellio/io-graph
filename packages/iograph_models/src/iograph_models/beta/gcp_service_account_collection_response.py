@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class GcpServiceAccountCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class GcpServiceAccountCollectionResponse(BaseModel):
 	value: Optional[list[GcpServiceAccount]] = Field(alias="value", default=None,)
 
 from .gcp_service_account import GcpServiceAccount
-

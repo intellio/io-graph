@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class OnPremisesCurrentExportData(BaseModel):
@@ -13,5 +13,4 @@ class OnPremisesCurrentExportData(BaseModel):
 	successfulObjectsProvisioningCount: Optional[int] = Field(alias="successfulObjectsProvisioningCount", default=None,)
 	totalConnectorSpaceObjects: Optional[int] = Field(alias="totalConnectorSpaceObjects", default=None,)
 	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
-
 

@@ -14,9 +14,9 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_authentication_method_device_id import ByAuthenticationMethodDeviceIdRequest
 	from ...request_adapter import HttpxRequestAdapter
-from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
-from iograph_models.beta.authentication_method_device import AuthenticationMethodDevice
 from iograph_models.beta.authentication_method_device_collection_response import AuthenticationMethodDeviceCollectionResponse
+from iograph_models.beta.authentication_method_device import AuthenticationMethodDevice
+from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 
 
 class AuthenticationMethodDevicesRequest(BaseRequestBuilder):

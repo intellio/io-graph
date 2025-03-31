@@ -1,7 +1,7 @@
 from __future__ import annotations
 from typing import Optional
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class WorkplaceSensorDeviceTelemetry(BaseModel):
@@ -17,4 +17,3 @@ class WorkplaceSensorDeviceTelemetry(BaseModel):
 
 from .workplace_sensor_event_value import WorkplaceSensorEventValue
 from .workplace_sensor_type import WorkplaceSensorType
-

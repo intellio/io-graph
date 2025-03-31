@@ -1,7 +1,7 @@
 from __future__ import annotations
 from uuid import UUID
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class DeviceKey(BaseModel):
@@ -9,5 +9,4 @@ class DeviceKey(BaseModel):
 	keyMaterial: Optional[str] = Field(alias="keyMaterial", default=None,)
 	keyType: Optional[str] = Field(alias="keyType", default=None,)
 	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
-
 

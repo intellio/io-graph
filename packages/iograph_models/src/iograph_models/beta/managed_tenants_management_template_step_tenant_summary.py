@@ -1,12 +1,13 @@
 from __future__ import annotations
 from typing import Optional
+from typing import Literal
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class ManagedTenantsManagementTemplateStepTenantSummary(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
+	odata_type: Literal["#microsoft.graph.managedTenants.managementTemplateStepTenantSummary"] = Field(alias="@odata.type",)
 	assignedTenantsCount: Optional[int] = Field(alias="assignedTenantsCount", default=None,)
 	compliantTenantsCount: Optional[int] = Field(alias="compliantTenantsCount", default=None,)
 	createdByUserId: Optional[str] = Field(alias="createdByUserId", default=None,)
@@ -22,5 +23,4 @@ class ManagedTenantsManagementTemplateStepTenantSummary(BaseModel):
 	managementTemplateStepDisplayName: Optional[str] = Field(alias="managementTemplateStepDisplayName", default=None,)
 	managementTemplateStepId: Optional[str] = Field(alias="managementTemplateStepId", default=None,)
 	notCompliantTenantsCount: Optional[int] = Field(alias="notCompliantTenantsCount", default=None,)
-
 

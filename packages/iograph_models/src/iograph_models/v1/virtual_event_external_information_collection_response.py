@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class VirtualEventExternalInformationCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class VirtualEventExternalInformationCollectionResponse(BaseModel):
 	value: Optional[list[VirtualEventExternalInformation]] = Field(alias="value", default=None,)
 
 from .virtual_event_external_information import VirtualEventExternalInformation
-

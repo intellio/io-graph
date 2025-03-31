@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class AzureServerlessFunctionCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class AzureServerlessFunctionCollectionResponse(BaseModel):
 	value: Optional[list[AzureServerlessFunction]] = Field(alias="value", default=None,)
 
 from .azure_serverless_function import AzureServerlessFunction
-

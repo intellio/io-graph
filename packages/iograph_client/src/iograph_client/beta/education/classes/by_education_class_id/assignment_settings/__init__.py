@@ -15,8 +15,8 @@ if TYPE_CHECKING:
 	from .grading_categories import GradingCategoriesRequest
 	from .default_grading_scheme import DefaultGradingSchemeRequest
 	from ......request_adapter import HttpxRequestAdapter
-from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.beta.education_assignment_settings import EducationAssignmentSettings
+from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 
 
 class AssignmentSettingsRequest(BaseRequestBuilder):

@@ -1,12 +1,13 @@
 from __future__ import annotations
 from typing import Optional
+from typing import Literal
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class SecurityAction(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
+	odata_type: Literal["#microsoft.graph.securityAction"] = Field(alias="@odata.type",)
 	actionReason: Optional[str] = Field(alias="actionReason", default=None,)
 	appId: Optional[str] = Field(alias="appId", default=None,)
 	azureTenantId: Optional[str] = Field(alias="azureTenantId", default=None,)
@@ -27,4 +28,3 @@ from .key_value_pair import KeyValuePair
 from .security_action_state import SecurityActionState
 from .operation_status import OperationStatus
 from .security_vendor_information import SecurityVendorInformation
-

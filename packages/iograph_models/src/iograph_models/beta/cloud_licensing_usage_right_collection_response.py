@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class CloudLicensingUsageRightCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class CloudLicensingUsageRightCollectionResponse(BaseModel):
 	value: Optional[list[CloudLicensingUsageRight]] = Field(alias="value", default=None,)
 
 from .cloud_licensing_usage_right import CloudLicensingUsageRight
-

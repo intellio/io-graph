@@ -2,10 +2,10 @@ from __future__ import annotations
 from typing import Optional
 from typing import Union
 from typing import Annotated
+from pydantic import BaseModel, Field
 from pydantic import model_validator, ModelWrapValidatorHandler, ValidationError
 from typing_extensions import Self
 from typing import Any
-from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class RoleDefinition(BaseModel):
@@ -39,6 +39,4 @@ class RoleDefinition(BaseModel):
 			raise e
 
 from .role_permission import RolePermission
-from .role_permission import RolePermission
 from .device_and_app_management_role_assignment import DeviceAndAppManagementRoleAssignment
-

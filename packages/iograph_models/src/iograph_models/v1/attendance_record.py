@@ -1,12 +1,13 @@
 from __future__ import annotations
 from typing import Optional
 from typing import Union
-from pydantic import BaseModel, Field, SerializeAsAny
+from typing import Literal
+from pydantic import BaseModel, Field
 
 
 class AttendanceRecord(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
+	odata_type: Literal["#microsoft.graph.attendanceRecord"] = Field(alias="@odata.type",)
 	attendanceIntervals: Optional[list[AttendanceInterval]] = Field(alias="attendanceIntervals", default=None,)
 	emailAddress: Optional[str] = Field(alias="emailAddress", default=None,)
 	identity: Optional[Union[AzureCommunicationServicesUserIdentity, CommunicationsApplicationIdentity, CommunicationsApplicationInstanceIdentity, CommunicationsEncryptedIdentity, CommunicationsGuestIdentity, CommunicationsPhoneIdentity, CommunicationsUserIdentity, EmailIdentity, Initiator, ProvisionedIdentity, ProvisioningServicePrincipal, ProvisioningSystem, ServicePrincipalIdentity, SharePointIdentity, TeamworkApplicationIdentity, TeamworkConversationIdentity, TeamworkTagIdentity, TeamworkUserIdentity, UserIdentity, CallRecordsUserIdentity]] = Field(alias="identity", default=None,discriminator="odata_type", )
@@ -34,4 +35,3 @@ from .teamwork_tag_identity import TeamworkTagIdentity
 from .teamwork_user_identity import TeamworkUserIdentity
 from .user_identity import UserIdentity
 from .call_records_user_identity import CallRecordsUserIdentity
-

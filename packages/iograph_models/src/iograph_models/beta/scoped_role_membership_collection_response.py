@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class ScopedRoleMembershipCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class ScopedRoleMembershipCollectionResponse(BaseModel):
 	value: Optional[list[ScopedRoleMembership]] = Field(alias="value", default=None,)
 
 from .scoped_role_membership import ScopedRoleMembership
-

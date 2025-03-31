@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class PermissionScopeCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class PermissionScopeCollectionResponse(BaseModel):
 	value: Optional[list[PermissionScope]] = Field(alias="value", default=None,)
 
 from .permission_scope import PermissionScope
-

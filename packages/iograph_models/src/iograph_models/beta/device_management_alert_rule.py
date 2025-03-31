@@ -1,11 +1,12 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from typing import Literal
+from pydantic import BaseModel, Field
 
 
 class DeviceManagementAlertRule(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
+	odata_type: Literal["#microsoft.graph.deviceManagement.alertRule"] = Field(alias="@odata.type",)
 	alertRuleTemplate: Optional[DeviceManagementAlertRuleTemplate | str] = Field(alias="alertRuleTemplate", default=None,)
 	conditions: Optional[list[DeviceManagementRuleCondition]] = Field(alias="conditions", default=None,)
 	description: Optional[str] = Field(alias="description", default=None,)
@@ -21,4 +22,3 @@ from .device_management_rule_condition import DeviceManagementRuleCondition
 from .device_management_notification_channel import DeviceManagementNotificationChannel
 from .device_management_rule_severity_type import DeviceManagementRuleSeverityType
 from .device_management_rule_threshold import DeviceManagementRuleThreshold
-

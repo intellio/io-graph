@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class DbPostRequest(BaseModel):
@@ -9,5 +9,4 @@ class DbPostRequest(BaseModel):
 	life: Optional[str] = Field(alias="life", default=None,)
 	period: Optional[str] = Field(alias="period", default=None,)
 	month: Optional[str] = Field(alias="month", default=None,)
-
 

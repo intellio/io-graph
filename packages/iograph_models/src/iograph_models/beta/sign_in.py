@@ -1,12 +1,13 @@
 from __future__ import annotations
 from typing import Optional
+from typing import Literal
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class SignIn(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
+	odata_type: Literal["#microsoft.graph.signIn"] = Field(alias="@odata.type",)
 	appDisplayName: Optional[str] = Field(alias="appDisplayName", default=None,)
 	appId: Optional[str] = Field(alias="appId", default=None,)
 	appliedConditionalAccessPolicies: Optional[list[AppliedConditionalAccessPolicy]] = Field(alias="appliedConditionalAccessPolicies", default=None,)
@@ -105,13 +106,10 @@ from .original_transfer_methods import OriginalTransferMethods
 from .private_link_details import PrivateLinkDetails
 from .risk_detail import RiskDetail
 from .risk_level import RiskLevel
-from .risk_level import RiskLevel
 from .risk_state import RiskState
 from .session_lifetime_policy import SessionLifetimePolicy
 from .sign_in_identifier_type import SignInIdentifierType
-from .token_protection_status import TokenProtectionStatus
 from .sign_in_status import SignInStatus
 from .token_issuer_type import TokenIssuerType
 from .token_protection_status_details import TokenProtectionStatusDetails
 from .sign_in_user_type import SignInUserType
-

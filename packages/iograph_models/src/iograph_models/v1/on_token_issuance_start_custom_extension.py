@@ -2,7 +2,7 @@ from __future__ import annotations
 from typing import Optional
 from typing import Union
 from typing import Literal
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class OnTokenIssuanceStartCustomExtension(BaseModel):
@@ -21,4 +21,3 @@ from .custom_extension_client_configuration import CustomExtensionClientConfigur
 from .http_request_endpoint import HttpRequestEndpoint
 from .logic_app_trigger_endpoint_configuration import LogicAppTriggerEndpointConfiguration
 from .on_token_issuance_start_return_claim import OnTokenIssuanceStartReturnClaim
-

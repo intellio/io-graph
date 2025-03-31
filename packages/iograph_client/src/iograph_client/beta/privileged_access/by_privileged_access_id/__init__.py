@@ -17,8 +17,8 @@ if TYPE_CHECKING:
 	from .role_assignment_requests import RoleAssignmentRequestsRequest
 	from .resources import ResourcesRequest
 	from ....request_adapter import HttpxRequestAdapter
-from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.beta.privileged_access import PrivilegedAccess
+from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 
 
 class ByPrivilegedAccessIdRequest(BaseRequestBuilder):

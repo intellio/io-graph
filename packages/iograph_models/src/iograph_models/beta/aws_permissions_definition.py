@@ -2,7 +2,7 @@ from __future__ import annotations
 from typing import Optional
 from typing import Union
 from typing import Literal
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class AwsPermissionsDefinition(BaseModel):
@@ -15,4 +15,3 @@ from .permissions_definition_authorization_system import PermissionsDefinitionAu
 from .permissions_definition_authorization_system_identity import PermissionsDefinitionAuthorizationSystemIdentity
 from .aws_actions_permissions_definition_action import AwsActionsPermissionsDefinitionAction
 from .aws_policy_permissions_definition_action import AwsPolicyPermissionsDefinitionAction
-

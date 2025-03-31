@@ -14,8 +14,8 @@ if TYPE_CHECKING:
 	from .role_definition import RoleDefinitionRequest
 	from .resource import ResourceRequest
 	from ........request_adapter import HttpxRequestAdapter
-from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.beta.governance_role_setting import GovernanceRoleSetting
+from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 
 
 class ByGovernanceRoleSettingIdRequest(BaseRequestBuilder):

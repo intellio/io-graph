@@ -14,9 +14,9 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_governance_role_assignment_request_id import ByGovernanceRoleAssignmentRequestIdRequest
 	from .......request_adapter import HttpxRequestAdapter
+from iograph_models.beta.governance_role_assignment_request import GovernanceRoleAssignmentRequest
 from iograph_models.beta.governance_role_assignment_request_collection_response import GovernanceRoleAssignmentRequestCollectionResponse
 from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
-from iograph_models.beta.governance_role_assignment_request import GovernanceRoleAssignmentRequest
 
 
 class RoleAssignmentRequestsRequest(BaseRequestBuilder):

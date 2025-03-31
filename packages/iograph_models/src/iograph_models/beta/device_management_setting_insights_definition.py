@@ -1,19 +1,16 @@
 from __future__ import annotations
 from typing import Optional
 from typing import Union
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class DeviceManagementSettingInsightsDefinition(BaseModel):
 	settingDefinitionId: Optional[str] = Field(alias="settingDefinitionId", default=None,)
-	settingInsight: Optional[Union[DeviceManagementConfigurationChoiceSettingValue, DeviceManagementConfigurationGroupSettingValue, DeviceManagementConfigurationSimpleSettingValue, DeviceManagementConfigurationIntegerSettingValue, DeviceManagementConfigurationSecretSettingValue, DeviceManagementConfigurationStringSettingValue, DeviceManagementConfigurationReferenceSettingValue]] = Field(alias="settingInsight", default=None,discriminator="odata_type", )
+	settingInsight: Optional[Union[DeviceManagementConfigurationChoiceSettingValue, DeviceManagementConfigurationGroupSettingValue, DeviceManagementConfigurationIntegerSettingValue, DeviceManagementConfigurationSecretSettingValue, DeviceManagementConfigurationReferenceSettingValue]] = Field(alias="settingInsight", default=None,discriminator="odata_type", )
 	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
 
 from .device_management_configuration_choice_setting_value import DeviceManagementConfigurationChoiceSettingValue
 from .device_management_configuration_group_setting_value import DeviceManagementConfigurationGroupSettingValue
-from .device_management_configuration_simple_setting_value import DeviceManagementConfigurationSimpleSettingValue
 from .device_management_configuration_integer_setting_value import DeviceManagementConfigurationIntegerSettingValue
 from .device_management_configuration_secret_setting_value import DeviceManagementConfigurationSecretSettingValue
-from .device_management_configuration_string_setting_value import DeviceManagementConfigurationStringSettingValue
 from .device_management_configuration_reference_setting_value import DeviceManagementConfigurationReferenceSettingValue
-

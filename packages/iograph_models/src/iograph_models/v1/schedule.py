@@ -1,13 +1,14 @@
 from __future__ import annotations
 from typing import Optional
 from typing import Union
+from typing import Literal
 from typing import Annotated
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class Schedule(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
+	odata_type: Literal["#microsoft.graph.schedule"] = Field(alias="@odata.type",)
 	enabled: Optional[bool] = Field(alias="enabled", default=None,)
 	isActivitiesIncludedWhenCopyingShiftsEnabled: Optional[bool] = Field(alias="isActivitiesIncludedWhenCopyingShiftsEnabled", default=None,)
 	offerShiftRequestsEnabled: Optional[bool] = Field(alias="offerShiftRequestsEnabled", default=None,)
@@ -42,9 +43,7 @@ from .open_shift_change_request import OpenShiftChangeRequest
 from .open_shift import OpenShift
 from .scheduling_group import SchedulingGroup
 from .shift import Shift
-from .swap_shifts_change_request import SwapShiftsChangeRequest
 from .time_card import TimeCard
 from .time_off_reason import TimeOffReason
 from .time_off_request import TimeOffRequest
 from .time_off import TimeOff
-

@@ -1,12 +1,13 @@
 from __future__ import annotations
 from typing import Optional
+from typing import Literal
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class DeviceHealthScriptRunSummary(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
+	odata_type: Literal["#microsoft.graph.deviceHealthScriptRunSummary"] = Field(alias="@odata.type",)
 	detectionScriptErrorDeviceCount: Optional[int] = Field(alias="detectionScriptErrorDeviceCount", default=None,)
 	detectionScriptNotApplicableDeviceCount: Optional[int] = Field(alias="detectionScriptNotApplicableDeviceCount", default=None,)
 	detectionScriptPendingDeviceCount: Optional[int] = Field(alias="detectionScriptPendingDeviceCount", default=None,)
@@ -18,5 +19,4 @@ class DeviceHealthScriptRunSummary(BaseModel):
 	noIssueDetectedDeviceCount: Optional[int] = Field(alias="noIssueDetectedDeviceCount", default=None,)
 	remediationScriptErrorDeviceCount: Optional[int] = Field(alias="remediationScriptErrorDeviceCount", default=None,)
 	remediationSkippedDeviceCount: Optional[int] = Field(alias="remediationSkippedDeviceCount", default=None,)
-
 

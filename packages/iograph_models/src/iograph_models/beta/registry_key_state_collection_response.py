@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class RegistryKeyStateCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class RegistryKeyStateCollectionResponse(BaseModel):
 	value: Optional[list[RegistryKeyState]] = Field(alias="value", default=None,)
 
 from .registry_key_state import RegistryKeyState
-

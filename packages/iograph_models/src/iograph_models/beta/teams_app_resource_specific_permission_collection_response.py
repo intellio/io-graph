@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class TeamsAppResourceSpecificPermissionCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class TeamsAppResourceSpecificPermissionCollectionResponse(BaseModel):
 	value: Optional[list[TeamsAppResourceSpecificPermission]] = Field(alias="value", default=None,)
 
 from .teams_app_resource_specific_permission import TeamsAppResourceSpecificPermission
-

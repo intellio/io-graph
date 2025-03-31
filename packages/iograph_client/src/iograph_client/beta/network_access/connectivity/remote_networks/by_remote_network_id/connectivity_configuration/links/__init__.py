@@ -14,9 +14,9 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_connectivity_configuration_link_id import ByConnectivityConfigurationLinkIdRequest
 	from ........request_adapter import HttpxRequestAdapter
-from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
-from iograph_models.beta.networkaccess_connectivity_configuration_link_collection_response import NetworkaccessConnectivityConfigurationLinkCollectionResponse
 from iograph_models.beta.networkaccess_connectivity_configuration_link import NetworkaccessConnectivityConfigurationLink
+from iograph_models.beta.networkaccess_connectivity_configuration_link_collection_response import NetworkaccessConnectivityConfigurationLinkCollectionResponse
+from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 
 
 class LinksRequest(BaseRequestBuilder):

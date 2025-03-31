@@ -2,7 +2,7 @@ from __future__ import annotations
 from uuid import UUID
 from typing import Optional
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class JournalLine(BaseModel):
@@ -22,4 +22,3 @@ class JournalLine(BaseModel):
 	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
 
 from .account import Account
-

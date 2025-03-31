@@ -1,7 +1,7 @@
 from __future__ import annotations
 from typing import Optional
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class CallTranscriptionInfo(BaseModel):
@@ -10,4 +10,3 @@ class CallTranscriptionInfo(BaseModel):
 	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
 
 from .call_transcription_state import CallTranscriptionState
-

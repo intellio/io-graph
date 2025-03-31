@@ -1,11 +1,12 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from typing import Literal
+from pydantic import BaseModel, Field
 
 
 class UserExperienceAnalyticsWorkFromAnywhereDevice(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
+	odata_type: Literal["#microsoft.graph.userExperienceAnalyticsWorkFromAnywhereDevice"] = Field(alias="@odata.type",)
 	autoPilotProfileAssigned: Optional[bool] = Field(alias="autoPilotProfileAssigned", default=None,)
 	autoPilotRegistered: Optional[bool] = Field(alias="autoPilotRegistered", default=None,)
 	azureAdDeviceId: Optional[str] = Field(alias="azureAdDeviceId", default=None,)
@@ -42,10 +43,5 @@ class UserExperienceAnalyticsWorkFromAnywhereDevice(BaseModel):
 	workFromAnywhereScore: float | str | ReferenceNumeric
 
 from .reference_numeric import ReferenceNumeric
-from .reference_numeric import ReferenceNumeric
-from .reference_numeric import ReferenceNumeric
 from .user_experience_analytics_health_state import UserExperienceAnalyticsHealthState
 from .operating_system_upgrade_eligibility import OperatingSystemUpgradeEligibility
-from .reference_numeric import ReferenceNumeric
-from .reference_numeric import ReferenceNumeric
-

@@ -14,9 +14,9 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_phone_authentication_method_id import ByPhoneAuthenticationMethodIdRequest
 	from ......request_adapter import HttpxRequestAdapter
-from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
-from iograph_models.beta.phone_authentication_method_collection_response import PhoneAuthenticationMethodCollectionResponse
 from iograph_models.beta.phone_authentication_method import PhoneAuthenticationMethod
+from iograph_models.beta.phone_authentication_method_collection_response import PhoneAuthenticationMethodCollectionResponse
+from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 
 
 class PhoneMethodsRequest(BaseRequestBuilder):

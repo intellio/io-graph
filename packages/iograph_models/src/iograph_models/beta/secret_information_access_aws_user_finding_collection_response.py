@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class SecretInformationAccessAwsUserFindingCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class SecretInformationAccessAwsUserFindingCollectionResponse(BaseModel):
 	value: Optional[list[SecretInformationAccessAwsUserFinding]] = Field(alias="value", default=None,)
 
 from .secret_information_access_aws_user_finding import SecretInformationAccessAwsUserFinding
-

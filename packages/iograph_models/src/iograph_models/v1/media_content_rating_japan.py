@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class MediaContentRatingJapan(BaseModel):
@@ -10,4 +10,3 @@ class MediaContentRatingJapan(BaseModel):
 
 from .rating_japan_movies_type import RatingJapanMoviesType
 from .rating_japan_television_type import RatingJapanTelevisionType
-

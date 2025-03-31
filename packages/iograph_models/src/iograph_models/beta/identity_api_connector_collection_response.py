@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class IdentityApiConnectorCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class IdentityApiConnectorCollectionResponse(BaseModel):
 	value: Optional[list[IdentityApiConnector]] = Field(alias="value", default=None,)
 
 from .identity_api_connector import IdentityApiConnector
-

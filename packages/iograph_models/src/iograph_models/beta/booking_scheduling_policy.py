@@ -1,7 +1,7 @@
 from __future__ import annotations
 from typing import Optional
 from typing import Union
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class BookingSchedulingPolicy(BaseModel):
@@ -16,5 +16,3 @@ class BookingSchedulingPolicy(BaseModel):
 	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
 
 from .bookings_availability_window import BookingsAvailabilityWindow
-from .bookings_availability_window import BookingsAvailabilityWindow
-

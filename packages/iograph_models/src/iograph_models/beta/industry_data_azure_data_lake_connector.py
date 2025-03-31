@@ -1,7 +1,7 @@
 from __future__ import annotations
 from typing import Optional
 from typing import Literal
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class IndustryDataAzureDataLakeConnector(BaseModel):
@@ -13,4 +13,3 @@ class IndustryDataAzureDataLakeConnector(BaseModel):
 
 from .industry_data_source_system_definition import IndustryDataSourceSystemDefinition
 from .industry_data_file_format_reference_value import IndustryDataFileFormatReferenceValue
-

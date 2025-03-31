@@ -2,7 +2,7 @@ from __future__ import annotations
 from typing import Optional
 from typing import Literal
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class BookingStaffMember(BaseModel):
@@ -23,4 +23,3 @@ class BookingStaffMember(BaseModel):
 from .booking_staff_membership_status import BookingStaffMembershipStatus
 from .booking_staff_role import BookingStaffRole
 from .booking_work_hours import BookingWorkHours
-

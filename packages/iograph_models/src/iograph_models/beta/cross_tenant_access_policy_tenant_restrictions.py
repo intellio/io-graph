@@ -1,7 +1,7 @@
 from __future__ import annotations
 from typing import Optional
 from typing import Literal
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class CrossTenantAccessPolicyTenantRestrictions(BaseModel):
@@ -11,6 +11,4 @@ class CrossTenantAccessPolicyTenantRestrictions(BaseModel):
 	devices: Optional[DevicesFilter] = Field(alias="devices", default=None,)
 
 from .cross_tenant_access_policy_target_configuration import CrossTenantAccessPolicyTargetConfiguration
-from .cross_tenant_access_policy_target_configuration import CrossTenantAccessPolicyTargetConfiguration
 from .devices_filter import DevicesFilter
-

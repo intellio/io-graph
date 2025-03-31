@@ -1,11 +1,12 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from typing import Literal
+from pydantic import BaseModel, Field
 
 
 class UserExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetric(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
+	odata_type: Literal["#microsoft.graph.userExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetric"] = Field(alias="@odata.type",)
 	osCheckFailedPercentage: float | str | ReferenceNumeric
 	processor64BitCheckFailedPercentage: float | str | ReferenceNumeric
 	processorCoreCountCheckFailedPercentage: float | str | ReferenceNumeric
@@ -19,12 +20,3 @@ class UserExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetric(BaseModel):
 	upgradeEligibleDeviceCount: Optional[int] = Field(alias="upgradeEligibleDeviceCount", default=None,)
 
 from .reference_numeric import ReferenceNumeric
-from .reference_numeric import ReferenceNumeric
-from .reference_numeric import ReferenceNumeric
-from .reference_numeric import ReferenceNumeric
-from .reference_numeric import ReferenceNumeric
-from .reference_numeric import ReferenceNumeric
-from .reference_numeric import ReferenceNumeric
-from .reference_numeric import ReferenceNumeric
-from .reference_numeric import ReferenceNumeric
-

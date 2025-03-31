@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class UserExperienceAnalyticsBatteryHealthOsPerformanceCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class UserExperienceAnalyticsBatteryHealthOsPerformanceCollectionResponse(BaseMo
 	value: Optional[list[UserExperienceAnalyticsBatteryHealthOsPerformance]] = Field(alias="value", default=None,)
 
 from .user_experience_analytics_battery_health_os_performance import UserExperienceAnalyticsBatteryHealthOsPerformance
-

@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class NetworkaccessWebCategoryFilteringRuleCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class NetworkaccessWebCategoryFilteringRuleCollectionResponse(BaseModel):
 	value: Optional[list[NetworkaccessWebCategoryFilteringRule]] = Field(alias="value", default=None,)
 
 from .networkaccess_web_category_filtering_rule import NetworkaccessWebCategoryFilteringRule
-

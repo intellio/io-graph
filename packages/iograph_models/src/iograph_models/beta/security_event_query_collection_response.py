@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class SecurityEventQueryCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class SecurityEventQueryCollectionResponse(BaseModel):
 	value: Optional[list[SecurityEventQuery]] = Field(alias="value", default=None,)
 
 from .security_event_query import SecurityEventQuery
-

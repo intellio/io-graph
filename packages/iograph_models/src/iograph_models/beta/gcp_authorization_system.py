@@ -1,7 +1,7 @@
 from __future__ import annotations
 from typing import Optional
 from typing import Literal
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class GcpAuthorizationSystem(BaseModel):
@@ -23,4 +23,3 @@ from .gcp_authorization_system_type_action import GcpAuthorizationSystemTypeActi
 from .gcp_authorization_system_resource import GcpAuthorizationSystemResource
 from .gcp_role import GcpRole
 from .authorization_system_type_service import AuthorizationSystemTypeService
-

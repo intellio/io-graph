@@ -1,11 +1,12 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from typing import Literal
+from pydantic import BaseModel, Field
 
 
 class InsightSummary(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
+	odata_type: Literal["#microsoft.graph.insightSummary"] = Field(alias="@odata.type",)
 	activeUsers: Optional[int] = Field(alias="activeUsers", default=None,)
 	appId: Optional[str] = Field(alias="appId", default=None,)
 	authenticationCompletions: Optional[int] = Field(alias="authenticationCompletions", default=None,)
@@ -16,5 +17,4 @@ class InsightSummary(BaseModel):
 	securityTextRequests: Optional[int] = Field(alias="securityTextRequests", default=None,)
 	securityVoiceCompletions: Optional[int] = Field(alias="securityVoiceCompletions", default=None,)
 	securityVoiceRequests: Optional[int] = Field(alias="securityVoiceRequests", default=None,)
-
 

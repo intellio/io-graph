@@ -1,7 +1,7 @@
 from __future__ import annotations
 from typing import Optional
 from typing import Literal
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class AuditUserIdentity(BaseModel):
@@ -12,5 +12,4 @@ class AuditUserIdentity(BaseModel):
 	userPrincipalName: Optional[str] = Field(alias="userPrincipalName", default=None,)
 	homeTenantId: Optional[str] = Field(alias="homeTenantId", default=None,)
 	homeTenantName: Optional[str] = Field(alias="homeTenantName", default=None,)
-
 

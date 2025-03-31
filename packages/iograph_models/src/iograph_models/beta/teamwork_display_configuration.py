@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class TeamworkDisplayConfiguration(BaseModel):
@@ -13,4 +13,3 @@ class TeamworkDisplayConfiguration(BaseModel):
 
 from .teamwork_configured_peripheral import TeamworkConfiguredPeripheral
 from .teamwork_display_screen_configuration import TeamworkDisplayScreenConfiguration
-

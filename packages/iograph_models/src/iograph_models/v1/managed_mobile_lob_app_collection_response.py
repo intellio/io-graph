@@ -2,7 +2,7 @@ from __future__ import annotations
 from typing import Optional
 from typing import Union
 from typing import Annotated
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class ManagedMobileLobAppCollectionResponse(BaseModel):
@@ -12,4 +12,3 @@ class ManagedMobileLobAppCollectionResponse(BaseModel):
 
 from .managed_android_lob_app import ManagedAndroidLobApp
 from .managed_i_o_s_lob_app import ManagedIOSLobApp
-

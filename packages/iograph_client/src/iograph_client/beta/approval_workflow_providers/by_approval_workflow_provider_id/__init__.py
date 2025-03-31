@@ -15,8 +15,8 @@ if TYPE_CHECKING:
 	from .business_flows_with_requests_awaiting_my_decision import BusinessFlowsWithRequestsAwaitingMyDecisionRequest
 	from .business_flows import BusinessFlowsRequest
 	from ....request_adapter import HttpxRequestAdapter
-from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.beta.approval_workflow_provider import ApprovalWorkflowProvider
+from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 
 
 class ByApprovalWorkflowProviderIdRequest(BaseRequestBuilder):

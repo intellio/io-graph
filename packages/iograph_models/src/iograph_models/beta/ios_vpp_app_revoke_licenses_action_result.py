@@ -1,7 +1,7 @@
 from __future__ import annotations
 from typing import Optional
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class IosVppAppRevokeLicensesActionResult(BaseModel):
@@ -18,4 +18,3 @@ class IosVppAppRevokeLicensesActionResult(BaseModel):
 
 from .vpp_token_action_failure_reason import VppTokenActionFailureReason
 from .action_state import ActionState
-

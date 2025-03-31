@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class TypedEmailAddressCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class TypedEmailAddressCollectionResponse(BaseModel):
 	value: Optional[list[TypedEmailAddress]] = Field(alias="value", default=None,)
 
 from .typed_email_address import TypedEmailAddress
-

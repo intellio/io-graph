@@ -1,12 +1,13 @@
 from __future__ import annotations
 from typing import Optional
+from typing import Literal
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class ExactMatchSession(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
+	odata_type: Literal["#microsoft.graph.exactMatchSession"] = Field(alias="@odata.type",)
 	completionDateTime: Optional[datetime] = Field(alias="completionDateTime", default=None,)
 	creationDateTime: Optional[datetime] = Field(alias="creationDateTime", default=None,)
 	error: Optional[ClassificationError] = Field(alias="error", default=None,)
@@ -31,4 +32,3 @@ class ExactMatchSession(BaseModel):
 
 from .classification_error import ClassificationError
 from .exact_match_upload_agent import ExactMatchUploadAgent
-

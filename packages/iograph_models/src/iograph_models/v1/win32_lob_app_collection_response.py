@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class Win32LobAppCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class Win32LobAppCollectionResponse(BaseModel):
 	value: Optional[list[Win32LobApp]] = Field(alias="value", default=None,)
 
 from .win32_lob_app import Win32LobApp
-

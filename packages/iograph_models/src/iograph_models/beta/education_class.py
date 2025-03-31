@@ -1,12 +1,13 @@
 from __future__ import annotations
 from typing import Optional
 from typing import Union
-from pydantic import BaseModel, Field, SerializeAsAny
+from typing import Literal
+from pydantic import BaseModel, Field
 
 
 class EducationClass(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
+	odata_type: Literal["#microsoft.graph.educationClass"] = Field(alias="@odata.type",)
 	classCode: Optional[str] = Field(alias="classCode", default=None,)
 	course: Optional[EducationCourse] = Field(alias="course", default=None,)
 	createdBy: Optional[Union[AiInteractionMentionedIdentitySet, ApprovalIdentitySet, ChatMessageFromIdentitySet, ChatMessageMentionedIdentitySet, ChatMessageReactionIdentitySet, CommunicationsIdentitySet, SharePointIdentitySet]] = Field(alias="createdBy", default=None,discriminator="odata_type", )
@@ -47,5 +48,3 @@ from .group import Group
 from .education_user import EducationUser
 from .education_module import EducationModule
 from .education_school import EducationSchool
-from .education_user import EducationUser
-

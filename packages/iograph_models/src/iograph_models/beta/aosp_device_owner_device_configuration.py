@@ -2,7 +2,7 @@ from __future__ import annotations
 from typing import Optional
 from typing import Literal
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class AospDeviceOwnerDeviceConfiguration(BaseModel):
@@ -51,4 +51,3 @@ from .device_configuration_group_assignment import DeviceConfigurationGroupAssig
 from .device_configuration_user_status import DeviceConfigurationUserStatus
 from .device_configuration_user_overview import DeviceConfigurationUserOverview
 from .android_device_owner_required_password_type import AndroidDeviceOwnerRequiredPasswordType
-

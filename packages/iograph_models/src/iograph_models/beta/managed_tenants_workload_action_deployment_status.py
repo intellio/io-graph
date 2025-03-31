@@ -2,7 +2,7 @@ from __future__ import annotations
 from typing import Optional
 from typing import Union
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class ManagedTenantsWorkloadActionDeploymentStatus(BaseModel):
@@ -18,4 +18,3 @@ class ManagedTenantsWorkloadActionDeploymentStatus(BaseModel):
 
 from .access_review_error import AccessReviewError
 from .managed_tenants_workload_action_status import ManagedTenantsWorkloadActionStatus
-

@@ -1,12 +1,13 @@
 from __future__ import annotations
 from typing import Optional
+from typing import Literal
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class EmbeddedSIMActivationCodePool(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
+	odata_type: Literal["#microsoft.graph.embeddedSIMActivationCodePool"] = Field(alias="@odata.type",)
 	activationCodeCount: Optional[int] = Field(alias="activationCodeCount", default=None,)
 	activationCodes: Optional[list[EmbeddedSIMActivationCode]] = Field(alias="activationCodes", default=None,)
 	createdDateTime: Optional[datetime] = Field(alias="createdDateTime", default=None,)
@@ -18,4 +19,3 @@ class EmbeddedSIMActivationCodePool(BaseModel):
 from .embedded_s_i_m_activation_code import EmbeddedSIMActivationCode
 from .embedded_s_i_m_activation_code_pool_assignment import EmbeddedSIMActivationCodePoolAssignment
 from .embedded_s_i_m_device_state import EmbeddedSIMDeviceState
-

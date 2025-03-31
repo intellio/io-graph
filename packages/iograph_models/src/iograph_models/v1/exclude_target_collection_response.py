@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class ExcludeTargetCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class ExcludeTargetCollectionResponse(BaseModel):
 	value: Optional[list[ExcludeTarget]] = Field(alias="value", default=None,)
 
 from .exclude_target import ExcludeTarget
-

@@ -2,7 +2,7 @@ from __future__ import annotations
 from typing import Optional
 from typing import Literal
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class IosMobileAppConfiguration(BaseModel):
@@ -28,4 +28,3 @@ from .managed_device_mobile_app_configuration_device_summary import ManagedDevic
 from .managed_device_mobile_app_configuration_user_status import ManagedDeviceMobileAppConfigurationUserStatus
 from .managed_device_mobile_app_configuration_user_summary import ManagedDeviceMobileAppConfigurationUserSummary
 from .app_configuration_setting_item import AppConfigurationSettingItem
-

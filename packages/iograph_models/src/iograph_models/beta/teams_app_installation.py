@@ -1,10 +1,10 @@
 from __future__ import annotations
 from typing import Optional
 from typing import Union
+from pydantic import BaseModel, Field
 from pydantic import model_validator, ModelWrapValidatorHandler, ValidationError
 from typing_extensions import Self
 from typing import Any
-from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class TeamsAppInstallation(BaseModel):
@@ -39,4 +39,3 @@ from .personal_teams_app_installation_scope_info import PersonalTeamsAppInstalla
 from .team_teams_app_installation_scope_info import TeamTeamsAppInstallationScopeInfo
 from .teams_app import TeamsApp
 from .teams_app_definition import TeamsAppDefinition
-

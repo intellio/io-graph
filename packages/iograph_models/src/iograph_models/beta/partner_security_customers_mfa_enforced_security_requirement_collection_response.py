@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class PartnerSecurityCustomersMfaEnforcedSecurityRequirementCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class PartnerSecurityCustomersMfaEnforcedSecurityRequirementCollectionResponse(B
 	value: Optional[list[PartnerSecurityCustomersMfaEnforcedSecurityRequirement]] = Field(alias="value", default=None,)
 
 from .partner_security_customers_mfa_enforced_security_requirement import PartnerSecurityCustomersMfaEnforcedSecurityRequirement
-

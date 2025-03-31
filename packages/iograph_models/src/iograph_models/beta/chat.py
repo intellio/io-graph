@@ -1,14 +1,15 @@
 from __future__ import annotations
 from typing import Optional
 from typing import Union
+from typing import Literal
 from typing import Annotated
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class Chat(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
+	odata_type: Literal["#microsoft.graph.chat"] = Field(alias="@odata.type",)
 	chatType: Optional[ChatType | str] = Field(alias="chatType", default=None,)
 	createdBy: Optional[Union[AiInteractionMentionedIdentitySet, ApprovalIdentitySet, ChatMessageFromIdentitySet, ChatMessageMentionedIdentitySet, ChatMessageReactionIdentitySet, CommunicationsIdentitySet, SharePointIdentitySet]] = Field(alias="createdBy", default=None,discriminator="odata_type", )
 	createdDateTime: Optional[datetime] = Field(alias="createdDateTime", default=None,)
@@ -51,4 +52,3 @@ from .teams_async_operation import TeamsAsyncOperation
 from .resource_specific_permission_grant import ResourceSpecificPermissionGrant
 from .pinned_chat_message_info import PinnedChatMessageInfo
 from .teams_tab import TeamsTab
-

@@ -17,8 +17,8 @@ if TYPE_CHECKING:
 	from .directory_audits import DirectoryAuditsRequest
 	from .custom_security_attribute_audits import CustomSecurityAttributeAuditsRequest
 	from ...request_adapter import HttpxRequestAdapter
-from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.beta.audit_log_root import AuditLogRoot
+from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 
 
 class AuditLogsRequest(BaseRequestBuilder):

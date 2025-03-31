@@ -2,7 +2,7 @@ from __future__ import annotations
 from typing import Optional
 from typing import Union
 from typing import Annotated
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class NamedLocationCollectionResponse(BaseModel):
@@ -13,4 +13,3 @@ class NamedLocationCollectionResponse(BaseModel):
 from .compliant_network_named_location import CompliantNetworkNamedLocation
 from .country_named_location import CountryNamedLocation
 from .ip_named_location import IpNamedLocation
-

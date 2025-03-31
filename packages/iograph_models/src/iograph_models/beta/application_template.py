@@ -1,11 +1,12 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from typing import Literal
+from pydantic import BaseModel, Field
 
 
 class ApplicationTemplate(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
+	odata_type: Literal["#microsoft.graph.applicationTemplate"] = Field(alias="@odata.type",)
 	categories: Optional[list[str]] = Field(alias="categories", default=None,)
 	configurationUris: Optional[list[ConfigurationUri]] = Field(alias="configurationUris", default=None,)
 	description: Optional[str] = Field(alias="description", default=None,)
@@ -21,4 +22,3 @@ class ApplicationTemplate(BaseModel):
 from .configuration_uri import ConfigurationUri
 from .informational_urls import InformationalUrls
 from .supported_claim_configuration import SupportedClaimConfiguration
-

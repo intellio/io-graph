@@ -1,11 +1,12 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from typing import Literal
+from pydantic import BaseModel, Field
 
 
 class ExternalConnectorsExternalConnection(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
+	odata_type: Literal["#microsoft.graph.externalConnectors.externalConnection"] = Field(alias="@odata.type",)
 	activitySettings: Optional[ExternalConnectorsActivitySettings] = Field(alias="activitySettings", default=None,)
 	complianceSettings: Optional[ExternalConnectorsComplianceSettings] = Field(alias="complianceSettings", default=None,)
 	configuration: Optional[ExternalConnectorsConfiguration] = Field(alias="configuration", default=None,)
@@ -33,4 +34,3 @@ from .external_connectors_external_item import ExternalConnectorsExternalItem
 from .external_connectors_connection_operation import ExternalConnectorsConnectionOperation
 from .external_connectors_connection_quota import ExternalConnectorsConnectionQuota
 from .external_connectors_schema import ExternalConnectorsSchema
-

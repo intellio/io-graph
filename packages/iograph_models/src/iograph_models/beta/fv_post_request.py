@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class FvPostRequest(BaseModel):
@@ -9,5 +9,4 @@ class FvPostRequest(BaseModel):
 	pmt: Optional[str] = Field(alias="pmt", default=None,)
 	pv: Optional[str] = Field(alias="pv", default=None,)
 	type: Optional[str] = Field(alias="type", default=None,)
-
 

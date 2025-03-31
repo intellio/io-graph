@@ -1,7 +1,7 @@
 from __future__ import annotations
 from typing import Optional
 from typing import Literal
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class GroupChatTeamsAppInstallationScopeInfo(BaseModel):
@@ -10,4 +10,3 @@ class GroupChatTeamsAppInstallationScopeInfo(BaseModel):
 	chatId: Optional[str] = Field(alias="chatId", default=None,)
 
 from .teams_app_installation_scopes import TeamsAppInstallationScopes
-

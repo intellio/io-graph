@@ -1,7 +1,7 @@
 from __future__ import annotations
 from typing import Optional
 from typing import Union
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class PermissionsDefinitionAuthorizationSystemIdentity(BaseModel):
@@ -15,4 +15,3 @@ from .aws_identity_source import AwsIdentitySource
 from .ed_identity_source import EdIdentitySource
 from .local_identity_source import LocalIdentitySource
 from .saml_identity_source import SamlIdentitySource
-

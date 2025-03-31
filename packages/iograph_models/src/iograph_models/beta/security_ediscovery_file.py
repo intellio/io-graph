@@ -1,12 +1,13 @@
 from __future__ import annotations
 from typing import Optional
+from typing import Literal
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class SecurityEdiscoveryFile(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
+	odata_type: Literal["#microsoft.graph.security.ediscoveryFile"] = Field(alias="@odata.type",)
 	content: Optional[str] = Field(alias="content", default=None,)
 	dateTime: Optional[datetime] = Field(alias="dateTime", default=None,)
 	extension: Optional[str] = Field(alias="extension", default=None,)
@@ -27,4 +28,3 @@ from .security_file_processing_status import SecurityFileProcessingStatus
 from .security_source_type import SecuritySourceType
 from .security_ediscovery_custodian import SecurityEdiscoveryCustodian
 from .security_ediscovery_review_tag import SecurityEdiscoveryReviewTag
-

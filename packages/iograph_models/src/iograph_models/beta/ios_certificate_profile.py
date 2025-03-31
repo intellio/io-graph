@@ -1,11 +1,11 @@
 from __future__ import annotations
 from typing import Optional
 from typing import Literal
+from datetime import datetime
+from pydantic import BaseModel, Field
 from pydantic import model_validator, ModelWrapValidatorHandler, ValidationError
 from typing_extensions import Self
 from typing import Any
-from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class IosCertificateProfile(BaseModel):
@@ -39,9 +39,6 @@ class IosCertificateProfile(BaseModel):
 				return parent_validated_model
 			# get the discriminator value
 			mapping_key = data["@odata.type"]
-			if mapping_key == "#microsoft.graph.iosCertificateProfileBase":
-				from .ios_certificate_profile_base import IosCertificateProfileBase
-				return IosCertificateProfileBase.model_validate(data)
 			if mapping_key == "#microsoft.graph.iosPkcsCertificateProfile":
 				from .ios_pkcs_certificate_profile import IosPkcsCertificateProfile
 				return IosPkcsCertificateProfile.model_validate(data)
@@ -66,4 +63,3 @@ from .device_configuration_device_overview import DeviceConfigurationDeviceOverv
 from .device_configuration_group_assignment import DeviceConfigurationGroupAssignment
 from .device_configuration_user_status import DeviceConfigurationUserStatus
 from .device_configuration_user_overview import DeviceConfigurationUserOverview
-

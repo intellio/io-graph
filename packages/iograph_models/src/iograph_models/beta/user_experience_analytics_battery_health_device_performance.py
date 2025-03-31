@@ -1,11 +1,12 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from typing import Literal
+from pydantic import BaseModel, Field
 
 
 class UserExperienceAnalyticsBatteryHealthDevicePerformance(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
+	odata_type: Literal["#microsoft.graph.userExperienceAnalyticsBatteryHealthDevicePerformance"] = Field(alias="@odata.type",)
 	batteryAgeInDays: Optional[int] = Field(alias="batteryAgeInDays", default=None,)
 	deviceBatteriesDetails: Optional[list[UserExperienceAnalyticsDeviceBatteryDetail]] = Field(alias="deviceBatteriesDetails", default=None,)
 	deviceBatteryCount: Optional[int] = Field(alias="deviceBatteryCount", default=None,)
@@ -24,4 +25,3 @@ class UserExperienceAnalyticsBatteryHealthDevicePerformance(BaseModel):
 
 from .user_experience_analytics_device_battery_detail import UserExperienceAnalyticsDeviceBatteryDetail
 from .user_experience_analytics_health_state import UserExperienceAnalyticsHealthState
-

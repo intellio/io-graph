@@ -2,7 +2,7 @@ from __future__ import annotations
 from typing import Optional
 from typing import Literal
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class MailboxItem(BaseModel):
@@ -19,4 +19,3 @@ class MailboxItem(BaseModel):
 
 from .multi_value_legacy_extended_property import MultiValueLegacyExtendedProperty
 from .single_value_legacy_extended_property import SingleValueLegacyExtendedProperty
-

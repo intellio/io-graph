@@ -1,7 +1,7 @@
 from __future__ import annotations
 from typing import Optional
 from typing import Literal
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class RegexReplaceTransformation(BaseModel):
@@ -13,4 +13,3 @@ class RegexReplaceTransformation(BaseModel):
 
 from .transformation_attribute import TransformationAttribute
 from .sourced_attribute import SourcedAttribute
-

@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class LicenseUnitsDetail(BaseModel):
@@ -9,5 +9,4 @@ class LicenseUnitsDetail(BaseModel):
 	suspended: Optional[int] = Field(alias="suspended", default=None,)
 	warning: Optional[int] = Field(alias="warning", default=None,)
 	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
-
 

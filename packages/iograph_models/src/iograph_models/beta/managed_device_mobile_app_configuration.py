@@ -1,10 +1,10 @@
 from __future__ import annotations
 from typing import Optional
+from datetime import datetime
+from pydantic import BaseModel, Field
 from pydantic import model_validator, ModelWrapValidatorHandler, ValidationError
 from typing_extensions import Self
 from typing import Any
-from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class ManagedDeviceMobileAppConfiguration(BaseModel):
@@ -52,4 +52,3 @@ from .managed_device_mobile_app_configuration_device_status import ManagedDevice
 from .managed_device_mobile_app_configuration_device_summary import ManagedDeviceMobileAppConfigurationDeviceSummary
 from .managed_device_mobile_app_configuration_user_status import ManagedDeviceMobileAppConfigurationUserStatus
 from .managed_device_mobile_app_configuration_user_summary import ManagedDeviceMobileAppConfigurationUserSummary
-

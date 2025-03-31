@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class SimulationReportOverview(BaseModel):
@@ -13,4 +13,3 @@ class SimulationReportOverview(BaseModel):
 from .recommended_action import RecommendedAction
 from .simulation_events_content import SimulationEventsContent
 from .training_events_content import TrainingEventsContent
-

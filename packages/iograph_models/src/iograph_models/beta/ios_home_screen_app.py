@@ -1,7 +1,7 @@
 from __future__ import annotations
 from typing import Optional
 from typing import Literal
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class IosHomeScreenApp(BaseModel):
@@ -9,5 +9,4 @@ class IosHomeScreenApp(BaseModel):
 	odata_type: Literal["#microsoft.graph.iosHomeScreenApp"] = Field(alias="@odata.type", default="#microsoft.graph.iosHomeScreenApp")
 	bundleID: Optional[str] = Field(alias="bundleID", default=None,)
 	isWebClip: Optional[bool] = Field(alias="isWebClip", default=None,)
-
 

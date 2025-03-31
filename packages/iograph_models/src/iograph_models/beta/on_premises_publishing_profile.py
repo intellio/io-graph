@@ -1,11 +1,12 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from typing import Literal
+from pydantic import BaseModel, Field
 
 
 class OnPremisesPublishingProfile(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
+	odata_type: Literal["#microsoft.graph.onPremisesPublishingProfile"] = Field(alias="@odata.type",)
 	hybridAgentUpdaterConfiguration: Optional[HybridAgentUpdaterConfiguration] = Field(alias="hybridAgentUpdaterConfiguration", default=None,)
 	isDefaultAccessEnabled: Optional[bool] = Field(alias="isDefaultAccessEnabled", default=None,)
 	isEnabled: Optional[bool] = Field(alias="isEnabled", default=None,)
@@ -23,4 +24,3 @@ from .ip_application_segment import IpApplicationSegment
 from .connector_group import ConnectorGroup
 from .connector import Connector
 from .published_resource import PublishedResource
-

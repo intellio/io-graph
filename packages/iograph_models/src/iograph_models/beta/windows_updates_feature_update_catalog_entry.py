@@ -2,7 +2,7 @@ from __future__ import annotations
 from typing import Optional
 from typing import Literal
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class WindowsUpdatesFeatureUpdateCatalogEntry(BaseModel):
@@ -13,5 +13,4 @@ class WindowsUpdatesFeatureUpdateCatalogEntry(BaseModel):
 	releaseDateTime: Optional[datetime] = Field(alias="releaseDateTime", default=None,)
 	buildNumber: Optional[str] = Field(alias="buildNumber", default=None,)
 	version: Optional[str] = Field(alias="version", default=None,)
-
 

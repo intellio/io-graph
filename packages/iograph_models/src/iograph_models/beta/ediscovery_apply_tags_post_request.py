@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class Ediscovery_apply_tagsPostRequest(BaseModel):
@@ -8,5 +8,3 @@ class Ediscovery_apply_tagsPostRequest(BaseModel):
 	tagsToRemove: Optional[list[EdiscoveryTag]] = Field(alias="tagsToRemove", default=None,)
 
 from .ediscovery_tag import EdiscoveryTag
-from .ediscovery_tag import EdiscoveryTag
-

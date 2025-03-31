@@ -1,10 +1,10 @@
 from __future__ import annotations
 from typing import Optional
 from typing import Union
+from pydantic import BaseModel, Field
 from pydantic import model_validator, ModelWrapValidatorHandler, ValidationError
 from typing_extensions import Self
 from typing import Any
-from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class NetworkaccessPolicyLink(BaseModel):
@@ -38,4 +38,3 @@ class NetworkaccessPolicyLink(BaseModel):
 from .networkaccess_status import NetworkaccessStatus
 from .networkaccess_filtering_policy import NetworkaccessFilteringPolicy
 from .networkaccess_forwarding_policy import NetworkaccessForwardingPolicy
-

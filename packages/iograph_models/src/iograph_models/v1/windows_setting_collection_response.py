@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class WindowsSettingCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class WindowsSettingCollectionResponse(BaseModel):
 	value: Optional[list[WindowsSetting]] = Field(alias="value", default=None,)
 
 from .windows_setting import WindowsSetting
-

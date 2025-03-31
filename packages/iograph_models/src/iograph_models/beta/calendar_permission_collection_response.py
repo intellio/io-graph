@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class CalendarPermissionCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class CalendarPermissionCollectionResponse(BaseModel):
 	value: Optional[list[CalendarPermission]] = Field(alias="value", default=None,)
 
 from .calendar_permission import CalendarPermission
-

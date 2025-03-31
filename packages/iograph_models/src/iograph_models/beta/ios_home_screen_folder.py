@@ -1,7 +1,7 @@
 from __future__ import annotations
 from typing import Optional
 from typing import Literal
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class IosHomeScreenFolder(BaseModel):
@@ -10,4 +10,3 @@ class IosHomeScreenFolder(BaseModel):
 	pages: Optional[list[IosHomeScreenFolderPage]] = Field(alias="pages", default=None,)
 
 from .ios_home_screen_folder_page import IosHomeScreenFolderPage
-

@@ -3,11 +3,11 @@ from typing import Optional
 from typing import Union
 from typing import Literal
 from typing import Annotated
+from datetime import datetime
+from pydantic import BaseModel, Field
 from pydantic import model_validator, ModelWrapValidatorHandler, ValidationError
 from typing_extensions import Self
 from typing import Any
-from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class IosVpnConfiguration(BaseModel):
@@ -102,4 +102,3 @@ from .apple_app_list_item import AppleAppListItem
 from .device_management_derived_credential_settings import DeviceManagementDerivedCredentialSettings
 from .ios_pkcs_certificate_profile import IosPkcsCertificateProfile
 from .ios_scep_certificate_profile import IosScepCertificateProfile
-

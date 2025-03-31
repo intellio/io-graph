@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class EngagementAsyncOperationCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class EngagementAsyncOperationCollectionResponse(BaseModel):
 	value: Optional[list[EngagementAsyncOperation]] = Field(alias="value", default=None,)
 
 from .engagement_async_operation import EngagementAsyncOperation
-

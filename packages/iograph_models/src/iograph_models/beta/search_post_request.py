@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class SearchPostRequest(BaseModel):
@@ -14,4 +14,3 @@ from .time_period import TimePeriod
 from .restore_point_preference import RestorePointPreference
 from .restore_point_tags import RestorePointTags
 from .artifact_query import ArtifactQuery
-

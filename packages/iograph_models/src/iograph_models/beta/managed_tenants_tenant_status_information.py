@@ -1,7 +1,7 @@
 from __future__ import annotations
 from typing import Optional
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class ManagedTenantsTenantStatusInformation(BaseModel):
@@ -20,4 +20,3 @@ from .managed_tenants_delegated_privilege_status import ManagedTenantsDelegatedP
 from .managed_tenants_tenant_onboarding_status import ManagedTenantsTenantOnboardingStatus
 from .managed_tenants_tenant_onboarding_eligibility_reason import ManagedTenantsTenantOnboardingEligibilityReason
 from .managed_tenants_workload_status import ManagedTenantsWorkloadStatus
-

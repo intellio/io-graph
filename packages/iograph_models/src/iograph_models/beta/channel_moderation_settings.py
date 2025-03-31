@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class ChannelModerationSettings(BaseModel):
@@ -12,4 +12,3 @@ class ChannelModerationSettings(BaseModel):
 
 from .reply_restriction import ReplyRestriction
 from .user_new_message_restriction import UserNewMessageRestriction
-

@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class MacOSImportedPFXCertificateProfileCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class MacOSImportedPFXCertificateProfileCollectionResponse(BaseModel):
 	value: Optional[list[MacOSImportedPFXCertificateProfile]] = Field(alias="value", default=None,)
 
 from .mac_o_s_imported_p_f_x_certificate_profile import MacOSImportedPFXCertificateProfile
-

@@ -1,12 +1,13 @@
 from __future__ import annotations
 from typing import Optional
+from typing import Literal
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class ManagedTenantsManagementTemplateStepDeployment(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
+	odata_type: Literal["#microsoft.graph.managedTenants.managementTemplateStepDeployment"] = Field(alias="@odata.type",)
 	createdByUserId: Optional[str] = Field(alias="createdByUserId", default=None,)
 	createdDateTime: Optional[datetime] = Field(alias="createdDateTime", default=None,)
 	error: Optional[ManagedTenantsGraphAPIErrorDetails] = Field(alias="error", default=None,)
@@ -19,4 +20,3 @@ class ManagedTenantsManagementTemplateStepDeployment(BaseModel):
 from .managed_tenants_graph_a_p_i_error_details import ManagedTenantsGraphAPIErrorDetails
 from .managed_tenants_management_template_deployment_status import ManagedTenantsManagementTemplateDeploymentStatus
 from .managed_tenants_management_template_step_version import ManagedTenantsManagementTemplateStepVersion
-

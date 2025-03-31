@@ -1,7 +1,7 @@
 from __future__ import annotations
 from typing import Optional
 from typing import Literal
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class SamlOrWsFedExternalDomainFederation(BaseModel):
@@ -17,4 +17,3 @@ class SamlOrWsFedExternalDomainFederation(BaseModel):
 
 from .authentication_protocol import AuthenticationProtocol
 from .external_domain_name import ExternalDomainName
-

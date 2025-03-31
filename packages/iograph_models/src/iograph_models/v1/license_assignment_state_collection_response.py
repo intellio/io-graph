@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class LicenseAssignmentStateCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class LicenseAssignmentStateCollectionResponse(BaseModel):
 	value: Optional[list[LicenseAssignmentState]] = Field(alias="value", default=None,)
 
 from .license_assignment_state import LicenseAssignmentState
-

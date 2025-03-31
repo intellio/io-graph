@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class PlannerProgressTaskBoardTaskFormatCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class PlannerProgressTaskBoardTaskFormatCollectionResponse(BaseModel):
 	value: Optional[list[PlannerProgressTaskBoardTaskFormat]] = Field(alias="value", default=None,)
 
 from .planner_progress_task_board_task_format import PlannerProgressTaskBoardTaskFormat
-

@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class LanguageProficiencyCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class LanguageProficiencyCollectionResponse(BaseModel):
 	value: Optional[list[LanguageProficiency]] = Field(alias="value", default=None,)
 
 from .language_proficiency import LanguageProficiency
-

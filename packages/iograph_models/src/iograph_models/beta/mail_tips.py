@@ -2,7 +2,7 @@ from __future__ import annotations
 from typing import Optional
 from typing import Union
 from typing import Annotated
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class MailTips(BaseModel):
@@ -16,7 +16,7 @@ class MailTips(BaseModel):
 	mailboxFull: Optional[bool] = Field(alias="mailboxFull", default=None,)
 	maxMessageSize: Optional[int] = Field(alias="maxMessageSize", default=None,)
 	recipientScope: Optional[RecipientScopeType | str] = Field(alias="recipientScope", default=None,)
-	recipientSuggestions: Optional[list[Annotated[Union[AttendeeBase, Attendee],Field(discriminator="odata_type")]]] = Field(alias="recipientSuggestions", default=None,)
+	recipientSuggestions: Optional[list[Annotated[Union[Attendee],Field(discriminator="odata_type")]]] = Field(alias="recipientSuggestions", default=None,)
 	totalMemberCount: Optional[int] = Field(alias="totalMemberCount", default=None,)
 	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
 
@@ -24,6 +24,4 @@ from .automatic_replies_mail_tips import AutomaticRepliesMailTips
 from .typed_email_address import TypedEmailAddress
 from .mail_tips_error import MailTipsError
 from .recipient_scope_type import RecipientScopeType
-from .attendee_base import AttendeeBase
 from .attendee import Attendee
-

@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class NetworkaccessPrivateAccessDetails(BaseModel):
@@ -17,4 +17,3 @@ class NetworkaccessPrivateAccessDetails(BaseModel):
 from .networkaccess_access_type import NetworkaccessAccessType
 from .networkaccess_connection_status import NetworkaccessConnectionStatus
 from .networkaccess_third_party_token_details import NetworkaccessThirdPartyTokenDetails
-

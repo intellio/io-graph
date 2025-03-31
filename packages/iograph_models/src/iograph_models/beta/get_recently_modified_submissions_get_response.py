@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class Get_recently_modified_submissionsGetResponse(BaseModel):
@@ -9,4 +9,3 @@ class Get_recently_modified_submissionsGetResponse(BaseModel):
 	value: Optional[list[EducationSubmission]] = Field(alias="value", default=None,)
 
 from .education_submission import EducationSubmission
-

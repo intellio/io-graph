@@ -14,9 +14,9 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_windows_driver_update_profile_id import ByWindowsDriverUpdateProfileIdRequest
 	from ....request_adapter import HttpxRequestAdapter
+from iograph_models.beta.windows_driver_update_profile_collection_response import WindowsDriverUpdateProfileCollectionResponse
 from iograph_models.beta.windows_driver_update_profile import WindowsDriverUpdateProfile
 from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
-from iograph_models.beta.windows_driver_update_profile_collection_response import WindowsDriverUpdateProfileCollectionResponse
 
 
 class WindowsDriverUpdateProfilesRequest(BaseRequestBuilder):

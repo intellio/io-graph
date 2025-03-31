@@ -1,12 +1,13 @@
 from __future__ import annotations
 from typing import Optional
+from typing import Literal
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDeviceId(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
+	odata_type: Literal["#microsoft.graph.userExperienceAnalyticsAppHealthAppPerformanceByAppVersionDeviceId"] = Field(alias="@odata.type",)
 	appCrashCount: Optional[int] = Field(alias="appCrashCount", default=None,)
 	appDisplayName: Optional[str] = Field(alias="appDisplayName", default=None,)
 	appName: Optional[str] = Field(alias="appName", default=None,)
@@ -15,5 +16,4 @@ class UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDeviceId(BaseMod
 	deviceDisplayName: Optional[str] = Field(alias="deviceDisplayName", default=None,)
 	deviceId: Optional[str] = Field(alias="deviceId", default=None,)
 	processedDateTime: Optional[datetime] = Field(alias="processedDateTime", default=None,)
-
 

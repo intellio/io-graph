@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class FilterOperatorSchemaCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class FilterOperatorSchemaCollectionResponse(BaseModel):
 	value: Optional[list[FilterOperatorSchema]] = Field(alias="value", default=None,)
 
 from .filter_operator_schema import FilterOperatorSchema
-

@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class RetrievalResponse(BaseModel):
@@ -12,4 +12,3 @@ class RetrievalResponse(BaseModel):
 
 from .search_resource_metadata_dictionary import SearchResourceMetadataDictionary
 from .grounding_entity_type import GroundingEntityType
-

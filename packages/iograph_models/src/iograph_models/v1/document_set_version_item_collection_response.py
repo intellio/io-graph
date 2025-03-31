@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class DocumentSetVersionItemCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class DocumentSetVersionItemCollectionResponse(BaseModel):
 	value: Optional[list[DocumentSetVersionItem]] = Field(alias="value", default=None,)
 
 from .document_set_version_item import DocumentSetVersionItem
-

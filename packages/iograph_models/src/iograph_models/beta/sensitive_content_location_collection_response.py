@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class SensitiveContentLocationCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class SensitiveContentLocationCollectionResponse(BaseModel):
 	value: Optional[list[SensitiveContentLocation]] = Field(alias="value", default=None,)
 
 from .sensitive_content_location import SensitiveContentLocation
-

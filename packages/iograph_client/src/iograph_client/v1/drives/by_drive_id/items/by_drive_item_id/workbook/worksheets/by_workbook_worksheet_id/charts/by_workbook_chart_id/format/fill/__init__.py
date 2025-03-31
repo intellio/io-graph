@@ -14,8 +14,8 @@ if TYPE_CHECKING:
 	from .set_solid_color import SetSolidColorRequest
 	from .clear import ClearRequest
 	from .............request_adapter import HttpxRequestAdapter
-from iograph_models.v1.workbook_chart_fill import WorkbookChartFill
 from iograph_models.v1.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.v1.workbook_chart_fill import WorkbookChartFill
 
 
 class FillRequest(BaseRequestBuilder):

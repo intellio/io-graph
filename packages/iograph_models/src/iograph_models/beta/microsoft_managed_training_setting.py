@@ -2,7 +2,7 @@ from __future__ import annotations
 from typing import Optional
 from typing import Literal
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class MicrosoftManagedTrainingSetting(BaseModel):
@@ -13,4 +13,3 @@ class MicrosoftManagedTrainingSetting(BaseModel):
 
 from .training_setting_type import TrainingSettingType
 from .training_completion_duration import TrainingCompletionDuration
-

@@ -14,9 +14,9 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_management_action_id import ByManagementActionIdRequest
 	from .....request_adapter import HttpxRequestAdapter
-from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
-from iograph_models.beta.managed_tenants_management_action_collection_response import ManagedTenantsManagementActionCollectionResponse
 from iograph_models.beta.managed_tenants_management_action import ManagedTenantsManagementAction
+from iograph_models.beta.managed_tenants_management_action_collection_response import ManagedTenantsManagementActionCollectionResponse
+from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 
 
 class ManagementActionsRequest(BaseRequestBuilder):

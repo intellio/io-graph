@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class UnifiedRbacResourceActionCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class UnifiedRbacResourceActionCollectionResponse(BaseModel):
 	value: Optional[list[UnifiedRbacResourceAction]] = Field(alias="value", default=None,)
 
 from .unified_rbac_resource_action import UnifiedRbacResourceAction
-

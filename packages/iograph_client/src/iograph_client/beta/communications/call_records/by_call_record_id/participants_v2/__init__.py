@@ -14,9 +14,9 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_participant_id import ByParticipantIdRequest
 	from ......request_adapter import HttpxRequestAdapter
+from iograph_models.beta.call_records_participant import CallRecordsParticipant
 from iograph_models.beta.call_records_participant_collection_response import CallRecordsParticipantCollectionResponse
 from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
-from iograph_models.beta.call_records_participant import CallRecordsParticipant
 
 
 class Participants_v2Request(BaseRequestBuilder):

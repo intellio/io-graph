@@ -1,10 +1,10 @@
 from __future__ import annotations
 from typing import Optional
 from typing import Union
+from pydantic import BaseModel, Field
 from pydantic import model_validator, ModelWrapValidatorHandler, ValidationError
 from typing_extensions import Self
 from typing import Any
-from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class CallRecordsEndpoint(BaseModel):
@@ -34,4 +34,3 @@ class CallRecordsEndpoint(BaseModel):
 
 from .call_records_client_user_agent import CallRecordsClientUserAgent
 from .call_records_service_user_agent import CallRecordsServiceUserAgent
-

@@ -14,8 +14,8 @@ if TYPE_CHECKING:
 	from .management_template_steps import ManagementTemplateStepsRequest
 	from .management_template_collections import ManagementTemplateCollectionsRequest
 	from ......request_adapter import HttpxRequestAdapter
-from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.beta.managed_tenants_management_template import ManagedTenantsManagementTemplate
+from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 
 
 class ByManagementTemplateIdRequest(BaseRequestBuilder):

@@ -1,12 +1,13 @@
 from __future__ import annotations
 from typing import Optional
+from typing import Literal
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class GranularMailboxRestoreArtifact(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
+	odata_type: Literal["#microsoft.graph.granularMailboxRestoreArtifact"] = Field(alias="@odata.type",)
 	completionDateTime: Optional[datetime] = Field(alias="completionDateTime", default=None,)
 	destinationType: Optional[DestinationType | str] = Field(alias="destinationType", default=None,)
 	error: Optional[PublicError] = Field(alias="error", default=None,)
@@ -23,4 +24,3 @@ from .destination_type import DestinationType
 from .public_error import PublicError
 from .artifact_restore_status import ArtifactRestoreStatus
 from .restore_point import RestorePoint
-

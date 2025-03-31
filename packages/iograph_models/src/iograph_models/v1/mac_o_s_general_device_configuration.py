@@ -2,7 +2,7 @@ from __future__ import annotations
 from typing import Optional
 from typing import Literal
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class MacOSGeneralDeviceConfiguration(BaseModel):
@@ -41,4 +41,3 @@ from .device_configuration_user_overview import DeviceConfigurationUserOverview
 from .app_list_type import AppListType
 from .app_list_item import AppListItem
 from .required_password_type import RequiredPasswordType
-

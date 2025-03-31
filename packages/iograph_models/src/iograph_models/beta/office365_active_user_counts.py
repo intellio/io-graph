@@ -1,11 +1,12 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from typing import Literal
+from pydantic import BaseModel, Field
 
 
 class Office365ActiveUserCounts(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
+	odata_type: Literal["#microsoft.graph.office365ActiveUserCounts"] = Field(alias="@odata.type",)
 	exchange: Optional[int] = Field(alias="exchange", default=None,)
 	office365: Optional[int] = Field(alias="office365", default=None,)
 	oneDrive: Optional[int] = Field(alias="oneDrive", default=None,)
@@ -16,5 +17,4 @@ class Office365ActiveUserCounts(BaseModel):
 	skypeForBusiness: Optional[int] = Field(alias="skypeForBusiness", default=None,)
 	teams: Optional[int] = Field(alias="teams", default=None,)
 	yammer: Optional[int] = Field(alias="yammer", default=None,)
-
 

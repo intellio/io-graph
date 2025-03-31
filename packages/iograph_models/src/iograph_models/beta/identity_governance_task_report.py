@@ -1,12 +1,13 @@
 from __future__ import annotations
 from typing import Optional
+from typing import Literal
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class IdentityGovernanceTaskReport(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
+	odata_type: Literal["#microsoft.graph.identityGovernance.taskReport"] = Field(alias="@odata.type",)
 	completedDateTime: Optional[datetime] = Field(alias="completedDateTime", default=None,)
 	failedUsersCount: Optional[int] = Field(alias="failedUsersCount", default=None,)
 	lastUpdatedDateTime: Optional[datetime] = Field(alias="lastUpdatedDateTime", default=None,)
@@ -24,4 +25,3 @@ from .identity_governance_lifecycle_workflow_processing_status import IdentityGo
 from .identity_governance_task import IdentityGovernanceTask
 from .identity_governance_task_definition import IdentityGovernanceTaskDefinition
 from .identity_governance_task_processing_result import IdentityGovernanceTaskProcessingResult
-

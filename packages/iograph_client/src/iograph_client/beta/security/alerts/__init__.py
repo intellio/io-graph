@@ -15,9 +15,9 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_alert_id import ByAlertIdRequest
 	from ....request_adapter import HttpxRequestAdapter
-from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.beta.alert_collection_response import AlertCollectionResponse
 from iograph_models.beta.alert import Alert
+from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 
 
 class AlertsRequest(BaseRequestBuilder):

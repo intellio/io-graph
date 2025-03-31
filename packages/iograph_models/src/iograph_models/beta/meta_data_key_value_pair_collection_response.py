@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class MetaDataKeyValuePairCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class MetaDataKeyValuePairCollectionResponse(BaseModel):
 	value: Optional[list[MetaDataKeyValuePair]] = Field(alias="value", default=None,)
 
 from .meta_data_key_value_pair import MetaDataKeyValuePair
-

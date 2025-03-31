@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class TermsAndConditionsAssignmentCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class TermsAndConditionsAssignmentCollectionResponse(BaseModel):
 	value: Optional[list[TermsAndConditionsAssignment]] = Field(alias="value", default=None,)
 
 from .terms_and_conditions_assignment import TermsAndConditionsAssignment
-

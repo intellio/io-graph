@@ -1,7 +1,7 @@
 from __future__ import annotations
 from typing import Optional
 from typing import Union
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class AnswerPostRequest(BaseModel):
@@ -15,4 +15,3 @@ from .app_hosted_media_config import AppHostedMediaConfig
 from .service_hosted_media_config import ServiceHostedMediaConfig
 from .modality import Modality
 from .incoming_call_options import IncomingCallOptions
-

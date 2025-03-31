@@ -12,8 +12,8 @@ from typing import TYPE_CHECKING
 if TYPE_CHECKING:
 	from .settings import SettingsRequest
 	from ....request_adapter import HttpxRequestAdapter
-from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.beta.copilot_admin import CopilotAdmin
+from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 
 
 class AdminRequest(BaseRequestBuilder):

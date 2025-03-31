@@ -14,8 +14,8 @@ if TYPE_CHECKING:
 	from .policies import PoliciesRequest
 	from .conditional_access_policies import ConditionalAccessPoliciesRequest
 	from .....request_adapter import HttpxRequestAdapter
-from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.beta.networkaccess_filtering_profile import NetworkaccessFilteringProfile
+from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 
 
 class ByFilteringProfileIdRequest(BaseRequestBuilder):

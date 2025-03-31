@@ -1,14 +1,15 @@
 from __future__ import annotations
 from typing import Optional
 from typing import Union
+from typing import Literal
 from typing import Annotated
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class ManagedDevice(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
+	odata_type: Literal["#microsoft.graph.managedDevice"] = Field(alias="@odata.type",)
 	activationLockBypassCode: Optional[str] = Field(alias="activationLockBypassCode", default=None,)
 	androidSecurityPatchLevel: Optional[str] = Field(alias="androidSecurityPatchLevel", default=None,)
 	azureADDeviceId: Optional[str] = Field(alias="azureADDeviceId", default=None,)
@@ -92,4 +93,3 @@ from .device_configuration_state import DeviceConfigurationState
 from .device_log_collection_response import DeviceLogCollectionResponse
 from .user import User
 from .windows_protection_state import WindowsProtectionState
-

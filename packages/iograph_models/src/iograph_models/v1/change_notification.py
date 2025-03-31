@@ -2,7 +2,7 @@ from __future__ import annotations
 from uuid import UUID
 from typing import Optional
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class ChangeNotification(BaseModel):
@@ -22,4 +22,3 @@ from .change_type import ChangeType
 from .change_notification_encrypted_content import ChangeNotificationEncryptedContent
 from .lifecycle_event_type import LifecycleEventType
 from .resource_data import ResourceData
-

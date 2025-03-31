@@ -2,7 +2,7 @@ from __future__ import annotations
 from typing import Optional
 from typing import Union
 from typing import Annotated
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class GovernanceInsightCollectionResponse(BaseModel):
@@ -12,4 +12,3 @@ class GovernanceInsightCollectionResponse(BaseModel):
 
 from .membership_outlier_insight import MembershipOutlierInsight
 from .user_sign_in_insight import UserSignInInsight
-

@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class TermsAndConditionsAcceptanceStatusCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class TermsAndConditionsAcceptanceStatusCollectionResponse(BaseModel):
 	value: Optional[list[TermsAndConditionsAcceptanceStatus]] = Field(alias="value", default=None,)
 
 from .terms_and_conditions_acceptance_status import TermsAndConditionsAcceptanceStatus
-

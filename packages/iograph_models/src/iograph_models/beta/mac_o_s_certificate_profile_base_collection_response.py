@@ -2,7 +2,7 @@ from __future__ import annotations
 from typing import Optional
 from typing import Union
 from typing import Annotated
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class MacOSCertificateProfileBaseCollectionResponse(BaseModel):
@@ -13,4 +13,3 @@ class MacOSCertificateProfileBaseCollectionResponse(BaseModel):
 from .mac_o_s_imported_p_f_x_certificate_profile import MacOSImportedPFXCertificateProfile
 from .mac_o_s_pkcs_certificate_profile import MacOSPkcsCertificateProfile
 from .mac_o_s_scep_certificate_profile import MacOSScepCertificateProfile
-

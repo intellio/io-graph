@@ -1,7 +1,7 @@
 from __future__ import annotations
 from typing import Optional
 from typing import Union
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class IndustryDataUserConfiguration(BaseModel):
@@ -12,4 +12,3 @@ class IndustryDataUserConfiguration(BaseModel):
 
 from .industry_data_simple_password_settings import IndustryDataSimplePasswordSettings
 from .industry_data_role_group import IndustryDataRoleGroup
-

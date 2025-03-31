@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class SecurityKeyValuePairCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class SecurityKeyValuePairCollectionResponse(BaseModel):
 	value: Optional[list[SecurityKeyValuePair]] = Field(alias="value", default=None,)
 
 from .security_key_value_pair import SecurityKeyValuePair
-

@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class ChatMessagePolicyViolation(BaseModel):
@@ -15,4 +15,3 @@ from .chat_message_policy_violation_dlp_action_types import ChatMessagePolicyVio
 from .chat_message_policy_violation_policy_tip import ChatMessagePolicyViolationPolicyTip
 from .chat_message_policy_violation_user_action_types import ChatMessagePolicyViolationUserActionTypes
 from .chat_message_policy_violation_verdict_details_types import ChatMessagePolicyViolationVerdictDetailsTypes
-

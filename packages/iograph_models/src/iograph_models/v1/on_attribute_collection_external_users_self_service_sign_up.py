@@ -3,7 +3,7 @@ from typing import Optional
 from typing import Union
 from typing import Literal
 from typing import Annotated
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class OnAttributeCollectionExternalUsersSelfServiceSignUp(BaseModel):
@@ -14,4 +14,3 @@ class OnAttributeCollectionExternalUsersSelfServiceSignUp(BaseModel):
 from .authentication_attribute_collection_page import AuthenticationAttributeCollectionPage
 from .identity_built_in_user_flow_attribute import IdentityBuiltInUserFlowAttribute
 from .identity_custom_user_flow_attribute import IdentityCustomUserFlowAttribute
-

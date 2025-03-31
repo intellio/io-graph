@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class MobileAppPolicySetItemCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class MobileAppPolicySetItemCollectionResponse(BaseModel):
 	value: Optional[list[MobileAppPolicySetItem]] = Field(alias="value", default=None,)
 
 from .mobile_app_policy_set_item import MobileAppPolicySetItem
-

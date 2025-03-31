@@ -1,12 +1,13 @@
 from __future__ import annotations
 from typing import Optional
+from typing import Literal
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class GovernanceRoleAssignmentRequest(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
+	odata_type: Literal["#microsoft.graph.governanceRoleAssignmentRequest"] = Field(alias="@odata.type",)
 	assignmentState: Optional[str] = Field(alias="assignmentState", default=None,)
 	linkedEligibleRoleAssignmentId: Optional[str] = Field(alias="linkedEligibleRoleAssignmentId", default=None,)
 	reason: Optional[str] = Field(alias="reason", default=None,)
@@ -26,4 +27,3 @@ from .governance_role_assignment_request_status import GovernanceRoleAssignmentR
 from .governance_resource import GovernanceResource
 from .governance_role_definition import GovernanceRoleDefinition
 from .governance_subject import GovernanceSubject
-

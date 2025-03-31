@@ -1,11 +1,11 @@
 from __future__ import annotations
 from typing import Optional
 from typing import Literal
+from datetime import datetime
+from pydantic import BaseModel, Field
 from pydantic import model_validator, ModelWrapValidatorHandler, ValidationError
 from typing_extensions import Self
 from typing import Any
-from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class MobileLobApp(BaseModel):
@@ -75,4 +75,3 @@ from .mobile_app_publishing_state import MobileAppPublishingState
 from .mobile_app_assignment import MobileAppAssignment
 from .mobile_app_category import MobileAppCategory
 from .mobile_app_content import MobileAppContent
-

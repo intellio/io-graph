@@ -14,9 +14,9 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_service_app_id import ByServiceAppIdRequest
 	from .....request_adapter import HttpxRequestAdapter
+from iograph_models.beta.service_app_collection_response import ServiceAppCollectionResponse
 from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.beta.service_app import ServiceApp
-from iograph_models.beta.service_app_collection_response import ServiceAppCollectionResponse
 
 
 class ServiceAppsRequest(BaseRequestBuilder):

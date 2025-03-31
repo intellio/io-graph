@@ -1,12 +1,13 @@
 from __future__ import annotations
 from typing import Optional
+from typing import Literal
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class ManagedTenantsDeviceHealthStatus(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
+	odata_type: Literal["#microsoft.graph.managedTenants.deviceHealthStatus"] = Field(alias="@odata.type",)
 	blueScreenCount: Optional[int] = Field(alias="blueScreenCount", default=None,)
 	bootTotalDurationInSeconds: float | str | ReferenceNumeric
 	deviceId: Optional[str] = Field(alias="deviceId", default=None,)
@@ -24,5 +25,3 @@ class ManagedTenantsDeviceHealthStatus(BaseModel):
 	topProcesses: Optional[str] = Field(alias="topProcesses", default=None,)
 
 from .reference_numeric import ReferenceNumeric
-from .reference_numeric import ReferenceNumeric
-

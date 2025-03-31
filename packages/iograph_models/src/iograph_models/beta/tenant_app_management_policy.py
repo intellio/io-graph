@@ -2,7 +2,7 @@ from __future__ import annotations
 from typing import Optional
 from typing import Literal
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class TenantAppManagementPolicy(BaseModel):
@@ -17,4 +17,3 @@ class TenantAppManagementPolicy(BaseModel):
 
 from .app_management_application_configuration import AppManagementApplicationConfiguration
 from .app_management_service_principal_configuration import AppManagementServicePrincipalConfiguration
-

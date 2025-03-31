@@ -1,7 +1,7 @@
 from __future__ import annotations
 from typing import Optional
 from typing import Literal
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class ConditionalAccessEnumeratedExternalTenants(BaseModel):
@@ -10,4 +10,3 @@ class ConditionalAccessEnumeratedExternalTenants(BaseModel):
 	members: Optional[list[str]] = Field(alias="members", default=None,)
 
 from .conditional_access_external_tenants_membership_kind import ConditionalAccessExternalTenantsMembershipKind
-

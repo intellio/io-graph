@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class UserRegistrationFeatureSummary(BaseModel):
@@ -13,4 +13,3 @@ class UserRegistrationFeatureSummary(BaseModel):
 from .user_registration_feature_count import UserRegistrationFeatureCount
 from .included_user_roles import IncludedUserRoles
 from .included_user_types import IncludedUserTypes
-

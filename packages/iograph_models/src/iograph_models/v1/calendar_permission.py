@@ -1,11 +1,12 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from typing import Literal
+from pydantic import BaseModel, Field
 
 
 class CalendarPermission(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
+	odata_type: Literal["#microsoft.graph.calendarPermission"] = Field(alias="@odata.type",)
 	allowedRoles: Optional[list[CalendarRoleType | str]] = Field(alias="allowedRoles", default=None,)
 	emailAddress: Optional[EmailAddress] = Field(alias="emailAddress", default=None,)
 	isInsideOrganization: Optional[bool] = Field(alias="isInsideOrganization", default=None,)
@@ -14,5 +15,3 @@ class CalendarPermission(BaseModel):
 
 from .calendar_role_type import CalendarRoleType
 from .email_address import EmailAddress
-from .calendar_role_type import CalendarRoleType
-

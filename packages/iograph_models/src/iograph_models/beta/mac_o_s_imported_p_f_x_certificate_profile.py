@@ -2,7 +2,7 @@ from __future__ import annotations
 from typing import Optional
 from typing import Literal
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class MacOSImportedPFXCertificateProfile(BaseModel):
@@ -50,4 +50,3 @@ from .apple_subject_name_format import AppleSubjectNameFormat
 from .apple_deployment_channel import AppleDeploymentChannel
 from .intended_purpose import IntendedPurpose
 from .managed_device_certificate_state import ManagedDeviceCertificateState
-

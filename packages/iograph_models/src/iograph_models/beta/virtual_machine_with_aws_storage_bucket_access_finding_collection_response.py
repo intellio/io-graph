@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class VirtualMachineWithAwsStorageBucketAccessFindingCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class VirtualMachineWithAwsStorageBucketAccessFindingCollectionResponse(BaseMode
 	value: Optional[list[VirtualMachineWithAwsStorageBucketAccessFinding]] = Field(alias="value", default=None,)
 
 from .virtual_machine_with_aws_storage_bucket_access_finding import VirtualMachineWithAwsStorageBucketAccessFinding
-

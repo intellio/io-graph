@@ -3,7 +3,7 @@ from typing import Optional
 from typing import Union
 from typing import Literal
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class TimeCard(BaseModel):
@@ -27,16 +27,9 @@ from .chat_message_mentioned_identity_set import ChatMessageMentionedIdentitySet
 from .chat_message_reaction_identity_set import ChatMessageReactionIdentitySet
 from .communications_identity_set import CommunicationsIdentitySet
 from .share_point_identity_set import SharePointIdentitySet
-from .chat_message_from_identity_set import ChatMessageFromIdentitySet
-from .chat_message_mentioned_identity_set import ChatMessageMentionedIdentitySet
-from .chat_message_reaction_identity_set import ChatMessageReactionIdentitySet
-from .communications_identity_set import CommunicationsIdentitySet
-from .share_point_identity_set import SharePointIdentitySet
 from .time_card_break import TimeCardBreak
-from .time_card_event import TimeCardEvent
 from .time_card_event import TimeCardEvent
 from .confirmed_by import ConfirmedBy
 from .item_body import ItemBody
 from .time_card_entry import TimeCardEntry
 from .time_card_state import TimeCardState
-

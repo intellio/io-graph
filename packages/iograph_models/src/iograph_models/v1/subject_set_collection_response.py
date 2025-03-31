@@ -2,7 +2,7 @@ from __future__ import annotations
 from typing import Optional
 from typing import Union
 from typing import Annotated
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class SubjectSetCollectionResponse(BaseModel):
@@ -23,4 +23,3 @@ from .target_manager import TargetManager
 from .target_user_sponsors import TargetUserSponsors
 from .identity_governance_group_based_subject_set import IdentityGovernanceGroupBasedSubjectSet
 from .identity_governance_rule_based_subject_set import IdentityGovernanceRuleBasedSubjectSet
-

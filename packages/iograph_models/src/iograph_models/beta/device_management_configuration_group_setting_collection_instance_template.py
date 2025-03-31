@@ -1,7 +1,7 @@
 from __future__ import annotations
 from typing import Optional
 from typing import Literal
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class DeviceManagementConfigurationGroupSettingCollectionInstanceTemplate(BaseModel):
@@ -13,4 +13,3 @@ class DeviceManagementConfigurationGroupSettingCollectionInstanceTemplate(BaseMo
 	groupSettingCollectionValueTemplate: Optional[list[DeviceManagementConfigurationGroupSettingValueTemplate]] = Field(alias="groupSettingCollectionValueTemplate", default=None,)
 
 from .device_management_configuration_group_setting_value_template import DeviceManagementConfigurationGroupSettingValueTemplate
-

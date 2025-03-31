@@ -2,7 +2,7 @@ from __future__ import annotations
 from typing import Optional
 from typing import Union
 from typing import Annotated
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class EdiscoveryCaseOperationCollectionResponse(BaseModel):
@@ -17,4 +17,3 @@ from .ediscovery_case_index_operation import EdiscoveryCaseIndexOperation
 from .ediscovery_estimate_statistics_operation import EdiscoveryEstimateStatisticsOperation
 from .ediscovery_purge_data_operation import EdiscoveryPurgeDataOperation
 from .ediscovery_tag_operation import EdiscoveryTagOperation
-

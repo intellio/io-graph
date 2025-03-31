@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class MdmWindowsInformationProtectionPolicyCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class MdmWindowsInformationProtectionPolicyCollectionResponse(BaseModel):
 	value: Optional[list[MdmWindowsInformationProtectionPolicy]] = Field(alias="value", default=None,)
 
 from .mdm_windows_information_protection_policy import MdmWindowsInformationProtectionPolicy
-

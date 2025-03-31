@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class UserExperienceAnalyticsMetricHistoryCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class UserExperienceAnalyticsMetricHistoryCollectionResponse(BaseModel):
 	value: Optional[list[UserExperienceAnalyticsMetricHistory]] = Field(alias="value", default=None,)
 
 from .user_experience_analytics_metric_history import UserExperienceAnalyticsMetricHistory
-

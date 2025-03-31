@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class FileHashCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class FileHashCollectionResponse(BaseModel):
 	value: Optional[list[FileHash]] = Field(alias="value", default=None,)
 
 from .file_hash import FileHash
-

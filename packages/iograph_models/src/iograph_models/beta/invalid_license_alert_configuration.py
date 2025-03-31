@@ -1,7 +1,7 @@
 from __future__ import annotations
 from typing import Optional
 from typing import Literal
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class InvalidLicenseAlertConfiguration(BaseModel):
@@ -14,4 +14,3 @@ class InvalidLicenseAlertConfiguration(BaseModel):
 	alertDefinition: Optional[UnifiedRoleManagementAlertDefinition] = Field(alias="alertDefinition", default=None,)
 
 from .unified_role_management_alert_definition import UnifiedRoleManagementAlertDefinition
-

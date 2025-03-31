@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class HardwarePasswordDetailCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class HardwarePasswordDetailCollectionResponse(BaseModel):
 	value: Optional[list[HardwarePasswordDetail]] = Field(alias="value", default=None,)
 
 from .hardware_password_detail import HardwarePasswordDetail
-

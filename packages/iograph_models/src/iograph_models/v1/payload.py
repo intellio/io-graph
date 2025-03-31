@@ -1,13 +1,14 @@
 from __future__ import annotations
 from typing import Optional
 from typing import Union
+from typing import Literal
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class Payload(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
+	odata_type: Literal["#microsoft.graph.payload"] = Field(alias="@odata.type",)
 	brand: Optional[PayloadBrand | str] = Field(alias="brand", default=None,)
 	complexity: Optional[PayloadComplexity | str] = Field(alias="complexity", default=None,)
 	createdBy: Optional[EmailIdentity] = Field(alias="createdBy", default=None,)
@@ -36,7 +37,6 @@ from .payload_complexity import PayloadComplexity
 from .email_identity import EmailIdentity
 from .email_payload_detail import EmailPayloadDetail
 from .payload_industry import PayloadIndustry
-from .email_identity import EmailIdentity
 from .payload_delivery_platform import PayloadDeliveryPlatform
 from .reference_numeric import ReferenceNumeric
 from .simulation_attack_type import SimulationAttackType
@@ -44,4 +44,3 @@ from .simulation_content_source import SimulationContentSource
 from .simulation_content_status import SimulationContentStatus
 from .simulation_attack_technique import SimulationAttackTechnique
 from .payload_theme import PayloadTheme
-

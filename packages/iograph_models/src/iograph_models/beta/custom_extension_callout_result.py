@@ -2,7 +2,7 @@ from __future__ import annotations
 from typing import Optional
 from typing import Literal
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class CustomExtensionCalloutResult(BaseModel):
@@ -12,5 +12,4 @@ class CustomExtensionCalloutResult(BaseModel):
 	errorCode: Optional[int] = Field(alias="errorCode", default=None,)
 	httpStatus: Optional[int] = Field(alias="httpStatus", default=None,)
 	numberOfAttempts: Optional[int] = Field(alias="numberOfAttempts", default=None,)
-
 

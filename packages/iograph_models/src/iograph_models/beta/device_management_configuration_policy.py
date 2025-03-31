@@ -1,12 +1,13 @@
 from __future__ import annotations
 from typing import Optional
+from typing import Literal
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class DeviceManagementConfigurationPolicy(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
+	odata_type: Literal["#microsoft.graph.deviceManagementConfigurationPolicy"] = Field(alias="@odata.type",)
 	createdDateTime: Optional[datetime] = Field(alias="createdDateTime", default=None,)
 	creationSource: Optional[str] = Field(alias="creationSource", default=None,)
 	description: Optional[str] = Field(alias="description", default=None,)
@@ -28,4 +29,3 @@ from .device_management_configuration_technologies import DeviceManagementConfig
 from .device_management_configuration_policy_template_reference import DeviceManagementConfigurationPolicyTemplateReference
 from .device_management_configuration_policy_assignment import DeviceManagementConfigurationPolicyAssignment
 from .device_management_configuration_setting import DeviceManagementConfigurationSetting
-

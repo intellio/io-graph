@@ -12,8 +12,8 @@ from typing import TYPE_CHECKING
 if TYPE_CHECKING:
 	from .sync import SyncRequest
 	from ....request_adapter import HttpxRequestAdapter
-from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.beta.windows_autopilot_settings import WindowsAutopilotSettings
+from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 
 
 class WindowsAutopilotSettingsRequest(BaseRequestBuilder):

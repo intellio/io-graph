@@ -14,8 +14,8 @@ if TYPE_CHECKING:
 	from .setting_definitions import SettingDefinitionsRequest
 	from .recommended_settings import RecommendedSettingsRequest
 	from .......request_adapter import HttpxRequestAdapter
-from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.beta.device_management_template_setting_category import DeviceManagementTemplateSettingCategory
+from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 
 
 class ByDeviceManagementTemplateSettingCategoryIdRequest(BaseRequestBuilder):

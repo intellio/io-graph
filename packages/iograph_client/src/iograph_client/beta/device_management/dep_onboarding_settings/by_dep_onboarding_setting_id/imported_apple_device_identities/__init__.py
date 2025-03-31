@@ -15,9 +15,9 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_imported_apple_device_identity_id import ByImportedAppleDeviceIdentityIdRequest
 	from ......request_adapter import HttpxRequestAdapter
-from iograph_models.beta.imported_apple_device_identity import ImportedAppleDeviceIdentity
 from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.beta.imported_apple_device_identity_collection_response import ImportedAppleDeviceIdentityCollectionResponse
+from iograph_models.beta.imported_apple_device_identity import ImportedAppleDeviceIdentity
 
 
 class ImportedAppleDeviceIdentitiesRequest(BaseRequestBuilder):

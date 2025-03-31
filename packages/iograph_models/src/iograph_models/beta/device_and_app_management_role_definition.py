@@ -3,7 +3,7 @@ from typing import Optional
 from typing import Union
 from typing import Literal
 from typing import Annotated
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class DeviceAndAppManagementRoleDefinition(BaseModel):
@@ -19,6 +19,4 @@ class DeviceAndAppManagementRoleDefinition(BaseModel):
 	roleAssignments: Optional[list[Annotated[Union[DeviceAndAppManagementRoleAssignment],Field(discriminator="odata_type")]]] = Field(alias="roleAssignments", default=None,)
 
 from .role_permission import RolePermission
-from .role_permission import RolePermission
 from .device_and_app_management_role_assignment import DeviceAndAppManagementRoleAssignment
-

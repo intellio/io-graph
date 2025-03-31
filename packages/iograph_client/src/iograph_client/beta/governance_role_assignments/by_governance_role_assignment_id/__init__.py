@@ -16,8 +16,8 @@ if TYPE_CHECKING:
 	from .resource import ResourceRequest
 	from .linked_eligible_role_assignment import LinkedEligibleRoleAssignmentRequest
 	from ....request_adapter import HttpxRequestAdapter
-from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.beta.governance_role_assignment import GovernanceRoleAssignment
+from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 
 
 class ByGovernanceRoleAssignmentIdRequest(BaseRequestBuilder):

@@ -14,9 +14,9 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_alert_configuration_id import ByAlertConfigurationIdRequest
 	from .....request_adapter import HttpxRequestAdapter
-from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.beta.health_monitoring_alert_configuration_collection_response import HealthMonitoringAlertConfigurationCollectionResponse
 from iograph_models.beta.health_monitoring_alert_configuration import HealthMonitoringAlertConfiguration
+from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 
 
 class AlertConfigurationsRequest(BaseRequestBuilder):

@@ -1,13 +1,14 @@
 from __future__ import annotations
 from typing import Optional
 from typing import Union
+from typing import Literal
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class ChatMessageInfo(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
+	odata_type: Literal["#microsoft.graph.chatMessageInfo"] = Field(alias="@odata.type",)
 	body: Optional[ItemBody] = Field(alias="body", default=None,)
 	createdDateTime: Optional[datetime] = Field(alias="createdDateTime", default=None,)
 	eventDetail: Optional[Union[CallEndedEventMessageDetail, CallRecordingEventMessageDetail, CallStartedEventMessageDetail, CallTranscriptEventMessageDetail, ChannelAddedEventMessageDetail, ChannelDeletedEventMessageDetail, ChannelDescriptionUpdatedEventMessageDetail, ChannelRenamedEventMessageDetail, ChannelSetAsFavoriteByDefaultEventMessageDetail, ChannelUnsetAsFavoriteByDefaultEventMessageDetail, ChatRenamedEventMessageDetail, ConversationMemberRoleUpdatedEventMessageDetail, MeetingPolicyUpdatedEventMessageDetail, MembersAddedEventMessageDetail, MembersDeletedEventMessageDetail, MembersJoinedEventMessageDetail, MembersLeftEventMessageDetail, MessagePinnedEventMessageDetail, MessageUnpinnedEventMessageDetail, TabUpdatedEventMessageDetail, TeamArchivedEventMessageDetail, TeamCreatedEventMessageDetail, TeamDescriptionUpdatedEventMessageDetail, TeamJoiningDisabledEventMessageDetail, TeamJoiningEnabledEventMessageDetail, TeamRenamedEventMessageDetail, TeamsAppInstalledEventMessageDetail, TeamsAppRemovedEventMessageDetail, TeamsAppUpgradedEventMessageDetail, TeamUnarchivedEventMessageDetail]] = Field(alias="eventDetail", default=None,discriminator="odata_type", )
@@ -48,4 +49,3 @@ from .teams_app_upgraded_event_message_detail import TeamsAppUpgradedEventMessag
 from .team_unarchived_event_message_detail import TeamUnarchivedEventMessageDetail
 from .chat_message_from_identity_set import ChatMessageFromIdentitySet
 from .chat_message_type import ChatMessageType
-

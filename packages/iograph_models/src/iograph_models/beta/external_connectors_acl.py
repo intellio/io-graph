@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class ExternalConnectorsAcl(BaseModel):
@@ -13,4 +13,3 @@ class ExternalConnectorsAcl(BaseModel):
 from .external_connectors_access_type import ExternalConnectorsAccessType
 from .external_connectors_identity_source_type import ExternalConnectorsIdentitySourceType
 from .external_connectors_acl_type import ExternalConnectorsAclType
-

@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class OnPremisesDirectorySynchronizationConfiguration(BaseModel):
@@ -17,4 +17,3 @@ class OnPremisesDirectorySynchronizationConfiguration(BaseModel):
 from .on_premises_accidental_deletion_prevention import OnPremisesAccidentalDeletionPrevention
 from .on_premises_current_export_data import OnPremisesCurrentExportData
 from .on_premises_writeback_configuration import OnPremisesWritebackConfiguration
-

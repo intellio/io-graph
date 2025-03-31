@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class RbacApplicationCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class RbacApplicationCollectionResponse(BaseModel):
 	value: Optional[list[RbacApplication]] = Field(alias="value", default=None,)
 
 from .rbac_application import RbacApplication
-

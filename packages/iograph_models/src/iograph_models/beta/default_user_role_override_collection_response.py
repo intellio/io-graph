@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class DefaultUserRoleOverrideCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class DefaultUserRoleOverrideCollectionResponse(BaseModel):
 	value: Optional[list[DefaultUserRoleOverride]] = Field(alias="value", default=None,)
 
 from .default_user_role_override import DefaultUserRoleOverride
-

@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class OpenTypeExtensionCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class OpenTypeExtensionCollectionResponse(BaseModel):
 	value: Optional[list[OpenTypeExtension]] = Field(alias="value", default=None,)
 
 from .open_type_extension import OpenTypeExtension
-

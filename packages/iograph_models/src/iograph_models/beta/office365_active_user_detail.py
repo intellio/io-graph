@@ -1,11 +1,12 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from typing import Literal
+from pydantic import BaseModel, Field
 
 
 class Office365ActiveUserDetail(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
+	odata_type: Literal["#microsoft.graph.office365ActiveUserDetail"] = Field(alias="@odata.type",)
 	assignedProducts: Optional[list[str]] = Field(alias="assignedProducts", default=None,)
 	deletedDate: Optional[str] = Field(alias="deletedDate", default=None,)
 	displayName: Optional[str] = Field(alias="displayName", default=None,)
@@ -30,5 +31,4 @@ class Office365ActiveUserDetail(BaseModel):
 	userPrincipalName: Optional[str] = Field(alias="userPrincipalName", default=None,)
 	yammerLastActivityDate: Optional[str] = Field(alias="yammerLastActivityDate", default=None,)
 	yammerLicenseAssignDate: Optional[str] = Field(alias="yammerLicenseAssignDate", default=None,)
-
 

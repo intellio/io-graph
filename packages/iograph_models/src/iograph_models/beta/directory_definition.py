@@ -1,12 +1,13 @@
 from __future__ import annotations
 from typing import Optional
+from typing import Literal
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class DirectoryDefinition(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
+	odata_type: Literal["#microsoft.graph.directoryDefinition"] = Field(alias="@odata.type",)
 	discoverabilities: Optional[DirectoryDefinitionDiscoverabilities | str] = Field(alias="discoverabilities", default=None,)
 	discoveryDateTime: Optional[datetime] = Field(alias="discoveryDateTime", default=None,)
 	name: Optional[str] = Field(alias="name", default=None,)
@@ -16,4 +17,3 @@ class DirectoryDefinition(BaseModel):
 
 from .directory_definition_discoverabilities import DirectoryDefinitionDiscoverabilities
 from .object_definition import ObjectDefinition
-

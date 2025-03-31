@@ -3,7 +3,7 @@ from typing import Optional
 from typing import Union
 from typing import Literal
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class AndroidForWorkNineWorkEasConfiguration(BaseModel):
@@ -53,4 +53,3 @@ from .user_email_source import UserEmailSource
 from .android_username_source import AndroidUsernameSource
 from .android_for_work_pkcs_certificate_profile import AndroidForWorkPkcsCertificateProfile
 from .android_for_work_scep_certificate_profile import AndroidForWorkScepCertificateProfile
-

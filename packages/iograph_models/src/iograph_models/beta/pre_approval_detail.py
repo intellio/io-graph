@@ -1,7 +1,7 @@
 from __future__ import annotations
 from typing import Optional
 from typing import Union
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class PreApprovalDetail(BaseModel):
@@ -16,4 +16,3 @@ from .enumerated_pre_approved_permissions import EnumeratedPreApprovedPermission
 from .resource_scope_type import ResourceScopeType
 from .all_scope_sensitivity_labels import AllScopeSensitivityLabels
 from .enumerated_scope_sensitivity_labels import EnumeratedScopeSensitivityLabels
-

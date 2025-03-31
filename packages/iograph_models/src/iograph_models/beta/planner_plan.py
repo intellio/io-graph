@@ -1,14 +1,15 @@
 from __future__ import annotations
 from typing import Optional
 from typing import Union
+from typing import Literal
 from typing import Annotated
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class PlannerPlan(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
+	odata_type: Literal["#microsoft.graph.plannerPlan"] = Field(alias="@odata.type",)
 	archivalInfo: Optional[PlannerArchivalInfo] = Field(alias="archivalInfo", default=None,)
 	container: Optional[Union[PlannerSharedWithContainer]] = Field(alias="container", default=None,discriminator="odata_type", )
 	contexts: Optional[PlannerPlanContextCollection] = Field(alias="contexts", default=None,)
@@ -34,8 +35,6 @@ from .chat_message_reaction_identity_set import ChatMessageReactionIdentitySet
 from .communications_identity_set import CommunicationsIdentitySet
 from .share_point_identity_set import SharePointIdentitySet
 from .planner_external_plan_source import PlannerExternalPlanSource
-from .planner_shared_with_container import PlannerSharedWithContainer
 from .planner_bucket import PlannerBucket
 from .planner_plan_details import PlannerPlanDetails
 from .business_scenario_task import BusinessScenarioTask
-

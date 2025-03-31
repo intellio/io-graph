@@ -1,12 +1,13 @@
 from __future__ import annotations
 from typing import Optional
+from typing import Literal
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class AwsIdentityAccessManagementKeyAgeFinding(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
+	odata_type: Literal["#microsoft.graph.awsIdentityAccessManagementKeyAgeFinding"] = Field(alias="@odata.type",)
 	createdDateTime: Optional[datetime] = Field(alias="createdDateTime", default=None,)
 	actionSummary: Optional[ActionSummary] = Field(alias="actionSummary", default=None,)
 	awsAccessKeyDetails: Optional[AwsAccessKeyDetails] = Field(alias="awsAccessKeyDetails", default=None,)
@@ -19,4 +20,3 @@ from .aws_access_key_details import AwsAccessKeyDetails
 from .permissions_creep_index import PermissionsCreepIndex
 from .iam_status import IamStatus
 from .aws_access_key import AwsAccessKey
-

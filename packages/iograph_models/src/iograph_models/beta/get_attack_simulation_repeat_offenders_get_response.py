@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class Get_attack_simulation_repeat_offendersGetResponse(BaseModel):
@@ -9,4 +9,3 @@ class Get_attack_simulation_repeat_offendersGetResponse(BaseModel):
 	value: Optional[list[AttackSimulationRepeatOffender]] = Field(alias="value", default=None,)
 
 from .attack_simulation_repeat_offender import AttackSimulationRepeatOffender
-

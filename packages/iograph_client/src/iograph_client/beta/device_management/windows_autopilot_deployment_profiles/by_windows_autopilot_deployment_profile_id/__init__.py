@@ -15,8 +15,8 @@ if TYPE_CHECKING:
 	from .assignments import AssignmentsRequest
 	from .assigned_devices import AssignedDevicesRequest
 	from .....request_adapter import HttpxRequestAdapter
-from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.beta.windows_autopilot_deployment_profile import WindowsAutopilotDeploymentProfile
+from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 
 
 class ByWindowsAutopilotDeploymentProfileIdRequest(BaseRequestBuilder):

@@ -1,12 +1,13 @@
 from __future__ import annotations
 from typing import Optional
 from typing import Union
-from pydantic import BaseModel, Field, SerializeAsAny
+from typing import Literal
+from pydantic import BaseModel, Field
 
 
 class DeviceManagementConfigurationRedirectSettingDefinition(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
+	odata_type: Literal["#microsoft.graph.deviceManagementConfigurationRedirectSettingDefinition"] = Field(alias="@odata.type",)
 	accessTypes: Optional[DeviceManagementConfigurationSettingAccessTypes | str] = Field(alias="accessTypes", default=None,)
 	applicability: Optional[Union[DeviceManagementConfigurationApplicationSettingApplicability, DeviceManagementConfigurationExchangeOnlineSettingApplicability, DeviceManagementConfigurationWindowsSettingApplicability]] = Field(alias="applicability", default=None,discriminator="odata_type", )
 	baseUri: Optional[str] = Field(alias="baseUri", default=None,)
@@ -40,4 +41,3 @@ from .device_management_configuration_setting_risk_level import DeviceManagement
 from .device_management_configuration_setting_usage import DeviceManagementConfigurationSettingUsage
 from .device_management_configuration_control_type import DeviceManagementConfigurationControlType
 from .device_management_configuration_setting_visibility import DeviceManagementConfigurationSettingVisibility
-

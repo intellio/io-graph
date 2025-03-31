@@ -14,8 +14,8 @@ if TYPE_CHECKING:
 	from .site_restore_artifacts_bulk_addition_requests import SiteRestoreArtifactsBulkAdditionRequestsRequest
 	from .site_restore_artifacts import SiteRestoreArtifactsRequest
 	from ......request_adapter import HttpxRequestAdapter
-from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.beta.share_point_restore_session import SharePointRestoreSession
+from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 
 
 class BySharePointRestoreSessionIdRequest(BaseRequestBuilder):

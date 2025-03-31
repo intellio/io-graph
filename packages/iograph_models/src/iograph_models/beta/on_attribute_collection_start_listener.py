@@ -2,7 +2,7 @@ from __future__ import annotations
 from typing import Optional
 from typing import Union
 from typing import Literal
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class OnAttributeCollectionStartListener(BaseModel):
@@ -15,4 +15,3 @@ class OnAttributeCollectionStartListener(BaseModel):
 
 from .authentication_conditions import AuthenticationConditions
 from .on_attribute_collection_start_custom_extension_handler import OnAttributeCollectionStartCustomExtensionHandler
-

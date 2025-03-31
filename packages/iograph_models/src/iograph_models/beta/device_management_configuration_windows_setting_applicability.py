@@ -1,7 +1,7 @@
 from __future__ import annotations
 from typing import Optional
 from typing import Literal
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class DeviceManagementConfigurationWindowsSettingApplicability(BaseModel):
@@ -22,4 +22,3 @@ from .device_management_configuration_platforms import DeviceManagementConfigura
 from .device_management_configuration_technologies import DeviceManagementConfigurationTechnologies
 from .device_management_configuration_azure_ad_trust_type import DeviceManagementConfigurationAzureAdTrustType
 from .device_management_configuration_windows_skus import DeviceManagementConfigurationWindowsSkus
-

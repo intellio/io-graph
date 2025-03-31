@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class TenantReferenceCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class TenantReferenceCollectionResponse(BaseModel):
 	value: Optional[list[TenantReference]] = Field(alias="value", default=None,)
 
 from .tenant_reference import TenantReference
-

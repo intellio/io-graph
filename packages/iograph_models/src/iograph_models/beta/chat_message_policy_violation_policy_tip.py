@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class ChatMessagePolicyViolationPolicyTip(BaseModel):
@@ -8,5 +8,4 @@ class ChatMessagePolicyViolationPolicyTip(BaseModel):
 	generalText: Optional[str] = Field(alias="generalText", default=None,)
 	matchedConditionDescriptions: Optional[list[str]] = Field(alias="matchedConditionDescriptions", default=None,)
 	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
-
 

@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class Shared_with_meGetResponse(BaseModel):
@@ -9,4 +9,3 @@ class Shared_with_meGetResponse(BaseModel):
 	value: Optional[list[DriveItem]] = Field(alias="value", default=None,)
 
 from .drive_item import DriveItem
-

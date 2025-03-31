@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class PolicySetCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class PolicySetCollectionResponse(BaseModel):
 	value: Optional[list[PolicySet]] = Field(alias="value", default=None,)
 
 from .policy_set import PolicySet
-

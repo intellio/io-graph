@@ -1,7 +1,7 @@
 from __future__ import annotations
 from typing import Optional
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class CertificateConnectorSetting(BaseModel):
@@ -12,5 +12,4 @@ class CertificateConnectorSetting(BaseModel):
 	lastUploadVersion: Optional[int] = Field(alias="lastUploadVersion", default=None,)
 	status: Optional[int] = Field(alias="status", default=None,)
 	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
-
 

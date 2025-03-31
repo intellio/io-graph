@@ -1,13 +1,14 @@
 from __future__ import annotations
 from uuid import UUID
 from typing import Optional
+from typing import Literal
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class GroupPolicyMigrationReport(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
+	odata_type: Literal["#microsoft.graph.groupPolicyMigrationReport"] = Field(alias="@odata.type",)
 	createdDateTime: Optional[datetime] = Field(alias="createdDateTime", default=None,)
 	displayName: Optional[str] = Field(alias="displayName", default=None,)
 	groupPolicyCreatedDateTime: Optional[datetime] = Field(alias="groupPolicyCreatedDateTime", default=None,)
@@ -27,4 +28,3 @@ class GroupPolicyMigrationReport(BaseModel):
 from .group_policy_migration_readiness import GroupPolicyMigrationReadiness
 from .group_policy_setting_mapping import GroupPolicySettingMapping
 from .unsupported_group_policy_extension import UnsupportedGroupPolicyExtension
-

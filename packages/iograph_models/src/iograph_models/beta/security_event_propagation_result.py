@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class SecurityEventPropagationResult(BaseModel):
@@ -11,4 +11,3 @@ class SecurityEventPropagationResult(BaseModel):
 	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
 
 from .security_event_propagation_status import SecurityEventPropagationStatus
-

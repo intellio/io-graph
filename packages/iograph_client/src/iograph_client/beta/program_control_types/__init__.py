@@ -14,9 +14,9 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_program_control_type_id import ByProgramControlTypeIdRequest
 	from ...request_adapter import HttpxRequestAdapter
-from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.beta.program_control_type_collection_response import ProgramControlTypeCollectionResponse
 from iograph_models.beta.program_control_type import ProgramControlType
+from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 
 
 class ProgramControlTypesRequest(BaseRequestBuilder):

@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class HealthMonitoringAlertCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class HealthMonitoringAlertCollectionResponse(BaseModel):
 	value: Optional[list[HealthMonitoringAlert]] = Field(alias="value", default=None,)
 
 from .health_monitoring_alert import HealthMonitoringAlert
-

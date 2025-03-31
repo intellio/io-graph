@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class GroupPolicyPresentationValueBooleanCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class GroupPolicyPresentationValueBooleanCollectionResponse(BaseModel):
 	value: Optional[list[GroupPolicyPresentationValueBoolean]] = Field(alias="value", default=None,)
 
 from .group_policy_presentation_value_boolean import GroupPolicyPresentationValueBoolean
-

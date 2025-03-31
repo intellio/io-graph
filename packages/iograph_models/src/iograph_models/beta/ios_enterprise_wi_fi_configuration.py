@@ -3,7 +3,7 @@ from typing import Optional
 from typing import Union
 from typing import Literal
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class IosEnterpriseWiFiConfiguration(BaseModel):
@@ -69,4 +69,3 @@ from .device_management_derived_credential_settings import DeviceManagementDeriv
 from .ios_pkcs_certificate_profile import IosPkcsCertificateProfile
 from .ios_scep_certificate_profile import IosScepCertificateProfile
 from .ios_trusted_root_certificate import IosTrustedRootCertificate
-

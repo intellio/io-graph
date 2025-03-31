@@ -1,11 +1,12 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from typing import Literal
+from pydantic import BaseModel, Field
 
 
 class AuthenticationsMetric(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
+	odata_type: Literal["#microsoft.graph.authenticationsMetric"] = Field(alias="@odata.type",)
 	appid: Optional[str] = Field(alias="appid", default=None,)
 	attemptsCount: Optional[int] = Field(alias="attemptsCount", default=None,)
 	authFlow: Optional[str] = Field(alias="authFlow", default=None,)
@@ -19,4 +20,3 @@ class AuthenticationsMetric(BaseModel):
 	failures: Optional[list[AuthenticationFailure]] = Field(alias="failures", default=None,)
 
 from .authentication_failure import AuthenticationFailure
-

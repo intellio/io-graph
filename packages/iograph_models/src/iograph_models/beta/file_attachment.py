@@ -2,7 +2,7 @@ from __future__ import annotations
 from typing import Optional
 from typing import Literal
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class FileAttachment(BaseModel):
@@ -16,5 +16,4 @@ class FileAttachment(BaseModel):
 	contentBytes: Optional[str] = Field(alias="contentBytes", default=None,)
 	contentId: Optional[str] = Field(alias="contentId", default=None,)
 	contentLocation: Optional[str] = Field(alias="contentLocation", default=None,)
-
 

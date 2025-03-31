@@ -2,7 +2,7 @@ from __future__ import annotations
 from typing import Optional
 from typing import Union
 from typing import Annotated
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class ServiceProvisioningResourceErrorDetailCollectionResponse(BaseModel):
@@ -11,4 +11,3 @@ class ServiceProvisioningResourceErrorDetailCollectionResponse(BaseModel):
 	value: Optional[list[Annotated[Union[ServiceProvisioningLinkedResourceErrorDetail],Field(discriminator="odata_type")]]] = Field(alias="value", default=None,)
 
 from .service_provisioning_linked_resource_error_detail import ServiceProvisioningLinkedResourceErrorDetail
-

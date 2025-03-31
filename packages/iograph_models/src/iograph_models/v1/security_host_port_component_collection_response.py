@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class SecurityHostPortComponentCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class SecurityHostPortComponentCollectionResponse(BaseModel):
 	value: Optional[list[SecurityHostPortComponent]] = Field(alias="value", default=None,)
 
 from .security_host_port_component import SecurityHostPortComponent
-

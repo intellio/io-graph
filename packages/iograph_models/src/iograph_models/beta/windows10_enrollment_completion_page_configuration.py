@@ -2,7 +2,7 @@ from __future__ import annotations
 from typing import Optional
 from typing import Literal
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class Windows10EnrollmentCompletionPageConfiguration(BaseModel):
@@ -32,4 +32,3 @@ class Windows10EnrollmentCompletionPageConfiguration(BaseModel):
 
 from .device_enrollment_configuration_type import DeviceEnrollmentConfigurationType
 from .enrollment_configuration_assignment import EnrollmentConfigurationAssignment
-

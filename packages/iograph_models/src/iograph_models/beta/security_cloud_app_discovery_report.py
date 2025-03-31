@@ -1,12 +1,13 @@
 from __future__ import annotations
 from typing import Optional
+from typing import Literal
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class SecurityCloudAppDiscoveryReport(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
+	odata_type: Literal["#microsoft.graph.security.cloudAppDiscoveryReport"] = Field(alias="@odata.type",)
 	anonymizeMachineData: Optional[bool] = Field(alias="anonymizeMachineData", default=None,)
 	anonymizeUserData: Optional[bool] = Field(alias="anonymizeUserData", default=None,)
 	createdDateTime: Optional[datetime] = Field(alias="createdDateTime", default=None,)
@@ -25,4 +26,3 @@ from .security_log_data_provider import SecurityLogDataProvider
 from .security_receiver_protocol import SecurityReceiverProtocol
 from .security_entity_type import SecurityEntityType
 from .security_traffic_type import SecurityTrafficType
-

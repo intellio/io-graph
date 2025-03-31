@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class EvaluateLabelJobResponseCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class EvaluateLabelJobResponseCollectionResponse(BaseModel):
 	value: Optional[list[EvaluateLabelJobResponse]] = Field(alias="value", default=None,)
 
 from .evaluate_label_job_response import EvaluateLabelJobResponse
-

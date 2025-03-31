@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class ManagedDeviceMobileAppConfigurationStateCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class ManagedDeviceMobileAppConfigurationStateCollectionResponse(BaseModel):
 	value: Optional[list[ManagedDeviceMobileAppConfigurationState]] = Field(alias="value", default=None,)
 
 from .managed_device_mobile_app_configuration_state import ManagedDeviceMobileAppConfigurationState
-

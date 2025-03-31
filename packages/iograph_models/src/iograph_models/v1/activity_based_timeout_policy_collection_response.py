@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class ActivityBasedTimeoutPolicyCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class ActivityBasedTimeoutPolicyCollectionResponse(BaseModel):
 	value: Optional[list[ActivityBasedTimeoutPolicy]] = Field(alias="value", default=None,)
 
 from .activity_based_timeout_policy import ActivityBasedTimeoutPolicy
-

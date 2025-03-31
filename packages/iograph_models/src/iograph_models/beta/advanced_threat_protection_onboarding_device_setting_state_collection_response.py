@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class AdvancedThreatProtectionOnboardingDeviceSettingStateCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class AdvancedThreatProtectionOnboardingDeviceSettingStateCollectionResponse(Bas
 	value: Optional[list[AdvancedThreatProtectionOnboardingDeviceSettingState]] = Field(alias="value", default=None,)
 
 from .advanced_threat_protection_onboarding_device_setting_state import AdvancedThreatProtectionOnboardingDeviceSettingState
-

@@ -1,7 +1,7 @@
 from __future__ import annotations
 from typing import Optional
 from typing import Literal
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class VirtualEventWebinar(BaseModel):
@@ -27,7 +27,6 @@ from .item_body import ItemBody
 from .date_time_time_zone import DateTimeTimeZone
 from .virtual_event_external_information import VirtualEventExternalInformation
 from .virtual_event_settings import VirtualEventSettings
-from .date_time_time_zone import DateTimeTimeZone
 from .virtual_event_status import VirtualEventStatus
 from .virtual_event_presenter import VirtualEventPresenter
 from .virtual_event_session import VirtualEventSession
@@ -35,4 +34,3 @@ from .meeting_audience import MeetingAudience
 from .communications_user_identity import CommunicationsUserIdentity
 from .virtual_event_webinar_registration_configuration import VirtualEventWebinarRegistrationConfiguration
 from .virtual_event_registration import VirtualEventRegistration
-

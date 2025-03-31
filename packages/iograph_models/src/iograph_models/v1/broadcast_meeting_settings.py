@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class BroadcastMeetingSettings(BaseModel):
@@ -14,4 +14,3 @@ class BroadcastMeetingSettings(BaseModel):
 
 from .broadcast_meeting_audience import BroadcastMeetingAudience
 from .broadcast_meeting_caption_settings import BroadcastMeetingCaptionSettings
-

@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class CalendarSharingMessageActionCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class CalendarSharingMessageActionCollectionResponse(BaseModel):
 	value: Optional[list[CalendarSharingMessageAction]] = Field(alias="value", default=None,)
 
 from .calendar_sharing_message_action import CalendarSharingMessageAction
-

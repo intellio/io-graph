@@ -1,7 +1,7 @@
 from __future__ import annotations
 from typing import Optional
 from typing import Union
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class LocalAdminSettings(BaseModel):
@@ -12,4 +12,3 @@ class LocalAdminSettings(BaseModel):
 from .all_device_registration_membership import AllDeviceRegistrationMembership
 from .enumerated_device_registration_membership import EnumeratedDeviceRegistrationMembership
 from .no_device_registration_membership import NoDeviceRegistrationMembership
-

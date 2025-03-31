@@ -1,7 +1,7 @@
 from __future__ import annotations
 from typing import Optional
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class SynchronizationQuarantine(BaseModel):
@@ -15,4 +15,3 @@ class SynchronizationQuarantine(BaseModel):
 
 from .synchronization_error import SynchronizationError
 from .quarantine_reason import QuarantineReason
-

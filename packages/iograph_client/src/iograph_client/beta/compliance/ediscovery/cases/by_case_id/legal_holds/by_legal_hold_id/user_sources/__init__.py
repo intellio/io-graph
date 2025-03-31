@@ -14,9 +14,9 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_user_source_id import ByUserSourceIdRequest
 	from .........request_adapter import HttpxRequestAdapter
-from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.beta.ediscovery_user_source_collection_response import EdiscoveryUserSourceCollectionResponse
 from iograph_models.beta.ediscovery_user_source import EdiscoveryUserSource
+from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 
 
 class UserSourcesRequest(BaseRequestBuilder):

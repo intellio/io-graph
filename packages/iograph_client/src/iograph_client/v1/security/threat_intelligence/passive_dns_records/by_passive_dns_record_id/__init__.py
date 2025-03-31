@@ -14,8 +14,8 @@ if TYPE_CHECKING:
 	from .parent_host import ParentHostRequest
 	from .artifact import ArtifactRequest
 	from ......request_adapter import HttpxRequestAdapter
-from iograph_models.v1.security_passive_dns_record import SecurityPassiveDnsRecord
 from iograph_models.v1.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.v1.security_passive_dns_record import SecurityPassiveDnsRecord
 
 
 class ByPassiveDnsRecordIdRequest(BaseRequestBuilder):

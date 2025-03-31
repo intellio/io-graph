@@ -1,7 +1,7 @@
 from __future__ import annotations
 from typing import Optional
 from typing import Literal
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class Initiator(BaseModel):
@@ -11,4 +11,3 @@ class Initiator(BaseModel):
 	initiatorType: Optional[InitiatorType | str] = Field(alias="initiatorType", default=None,)
 
 from .initiator_type import InitiatorType
-

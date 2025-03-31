@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class ApprovalStageCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class ApprovalStageCollectionResponse(BaseModel):
 	value: Optional[list[ApprovalStage]] = Field(alias="value", default=None,)
 
 from .approval_stage import ApprovalStage
-

@@ -4,7 +4,7 @@ from typing import Union
 from typing import Literal
 from typing import Annotated
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class WindowsPhone81GeneralConfiguration(BaseModel):
@@ -70,4 +70,3 @@ from .device_configuration_user_overview import DeviceConfigurationUserOverview
 from .app_list_type import AppListType
 from .apple_app_list_item import AppleAppListItem
 from .required_password_type import RequiredPasswordType
-

@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class TitleArea(BaseModel):
@@ -19,4 +19,3 @@ class TitleArea(BaseModel):
 from .title_area_layout_type import TitleAreaLayoutType
 from .server_processed_content import ServerProcessedContent
 from .title_area_text_alignment_type import TitleAreaTextAlignmentType
-

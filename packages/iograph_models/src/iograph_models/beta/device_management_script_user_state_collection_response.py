@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class DeviceManagementScriptUserStateCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class DeviceManagementScriptUserStateCollectionResponse(BaseModel):
 	value: Optional[list[DeviceManagementScriptUserState]] = Field(alias="value", default=None,)
 
 from .device_management_script_user_state import DeviceManagementScriptUserState
-

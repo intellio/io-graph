@@ -2,7 +2,7 @@ from __future__ import annotations
 from typing import Optional
 from typing import Union
 from typing import Literal
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class CallRecordsServiceEndpoint(BaseModel):
@@ -11,4 +11,3 @@ class CallRecordsServiceEndpoint(BaseModel):
 
 from .call_records_client_user_agent import CallRecordsClientUserAgent
 from .call_records_service_user_agent import CallRecordsServiceUserAgent
-

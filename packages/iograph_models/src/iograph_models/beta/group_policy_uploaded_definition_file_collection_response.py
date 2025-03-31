@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class GroupPolicyUploadedDefinitionFileCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class GroupPolicyUploadedDefinitionFileCollectionResponse(BaseModel):
 	value: Optional[list[GroupPolicyUploadedDefinitionFile]] = Field(alias="value", default=None,)
 
 from .group_policy_uploaded_definition_file import GroupPolicyUploadedDefinitionFile
-

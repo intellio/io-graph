@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class MacOSSoftwareUpdateCategorySummaryCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class MacOSSoftwareUpdateCategorySummaryCollectionResponse(BaseModel):
 	value: Optional[list[MacOSSoftwareUpdateCategorySummary]] = Field(alias="value", default=None,)
 
 from .mac_o_s_software_update_category_summary import MacOSSoftwareUpdateCategorySummary
-

@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class VerifiableCredentialTypeCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class VerifiableCredentialTypeCollectionResponse(BaseModel):
 	value: Optional[list[VerifiableCredentialType]] = Field(alias="value", default=None,)
 
 from .verifiable_credential_type import VerifiableCredentialType
-

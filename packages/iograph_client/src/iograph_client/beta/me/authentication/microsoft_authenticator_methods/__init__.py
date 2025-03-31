@@ -14,8 +14,8 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_microsoft_authenticator_authentication_method_id import ByMicrosoftAuthenticatorAuthenticationMethodIdRequest
 	from .....request_adapter import HttpxRequestAdapter
-from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.beta.microsoft_authenticator_authentication_method_collection_response import MicrosoftAuthenticatorAuthenticationMethodCollectionResponse
+from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 
 
 class MicrosoftAuthenticatorMethodsRequest(BaseRequestBuilder):

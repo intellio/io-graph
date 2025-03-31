@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class Accr_int_mPostRequest(BaseModel):
@@ -9,5 +9,4 @@ class Accr_int_mPostRequest(BaseModel):
 	rate: Optional[str] = Field(alias="rate", default=None,)
 	par: Optional[str] = Field(alias="par", default=None,)
 	basis: Optional[str] = Field(alias="basis", default=None,)
-
 

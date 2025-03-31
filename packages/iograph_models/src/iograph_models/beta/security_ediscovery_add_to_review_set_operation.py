@@ -1,13 +1,14 @@
 from __future__ import annotations
 from typing import Optional
 from typing import Union
+from typing import Literal
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class SecurityEdiscoveryAddToReviewSetOperation(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
+	odata_type: Literal["#microsoft.graph.security.ediscoveryAddToReviewSetOperation"] = Field(alias="@odata.type",)
 	action: Optional[SecurityCaseAction | str] = Field(alias="action", default=None,)
 	completedDateTime: Optional[datetime] = Field(alias="completedDateTime", default=None,)
 	createdBy: Optional[Union[AiInteractionMentionedIdentitySet, ApprovalIdentitySet, ChatMessageFromIdentitySet, ChatMessageMentionedIdentitySet, ChatMessageReactionIdentitySet, CommunicationsIdentitySet, SharePointIdentitySet]] = Field(alias="createdBy", default=None,discriminator="odata_type", )
@@ -38,4 +39,3 @@ from .security_document_version import SecurityDocumentVersion
 from .security_items_to_include import SecurityItemsToInclude
 from .security_ediscovery_review_set import SecurityEdiscoveryReviewSet
 from .security_ediscovery_search import SecurityEdiscoverySearch
-

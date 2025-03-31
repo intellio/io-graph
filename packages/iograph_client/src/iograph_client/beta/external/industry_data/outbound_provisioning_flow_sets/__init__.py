@@ -14,9 +14,9 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_outbound_provisioning_flow_set_id import ByOutboundProvisioningFlowSetIdRequest
 	from .....request_adapter import HttpxRequestAdapter
+from iograph_models.beta.industry_data_outbound_provisioning_flow_set import IndustryDataOutboundProvisioningFlowSet
 from iograph_models.beta.industry_data_outbound_provisioning_flow_set_collection_response import IndustryDataOutboundProvisioningFlowSetCollectionResponse
 from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
-from iograph_models.beta.industry_data_outbound_provisioning_flow_set import IndustryDataOutboundProvisioningFlowSet
 
 
 class OutboundProvisioningFlowSetsRequest(BaseRequestBuilder):

@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class Series_sumPostRequest(BaseModel):
@@ -8,5 +8,4 @@ class Series_sumPostRequest(BaseModel):
 	n: Optional[str] = Field(alias="n", default=None,)
 	m: Optional[str] = Field(alias="m", default=None,)
 	coefficients: Optional[str] = Field(alias="coefficients", default=None,)
-
 

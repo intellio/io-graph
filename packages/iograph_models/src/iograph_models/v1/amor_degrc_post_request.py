@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class Amor_degrcPostRequest(BaseModel):
@@ -11,5 +11,4 @@ class Amor_degrcPostRequest(BaseModel):
 	period: Optional[str] = Field(alias="period", default=None,)
 	rate: Optional[str] = Field(alias="rate", default=None,)
 	basis: Optional[str] = Field(alias="basis", default=None,)
-
 

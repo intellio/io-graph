@@ -1,7 +1,7 @@
 from __future__ import annotations
 from typing import Optional
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class ChatMessageHistoryItem(BaseModel):
@@ -12,4 +12,3 @@ class ChatMessageHistoryItem(BaseModel):
 
 from .chat_message_actions import ChatMessageActions
 from .chat_message_reaction import ChatMessageReaction
-

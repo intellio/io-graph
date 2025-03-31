@@ -1,14 +1,15 @@
 from __future__ import annotations
 from typing import Optional
 from typing import Union
+from typing import Literal
 from typing import Annotated
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class MobileAppTroubleshootingEvent(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
+	odata_type: Literal["#microsoft.graph.mobileAppTroubleshootingEvent"] = Field(alias="@odata.type",)
 	additionalInformation: Optional[list[KeyValuePair]] = Field(alias="additionalInformation", default=None,)
 	correlationId: Optional[str] = Field(alias="correlationId", default=None,)
 	eventDateTime: Optional[datetime] = Field(alias="eventDateTime", default=None,)
@@ -29,4 +30,3 @@ from .mobile_app_troubleshooting_app_target_history import MobileAppTroubleshoot
 from .mobile_app_troubleshooting_app_update_history import MobileAppTroubleshootingAppUpdateHistory
 from .mobile_app_troubleshooting_device_checkin_history import MobileAppTroubleshootingDeviceCheckinHistory
 from .app_log_collection_request import AppLogCollectionRequest
-

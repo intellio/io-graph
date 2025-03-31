@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class IosHomeScreenAppCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class IosHomeScreenAppCollectionResponse(BaseModel):
 	value: Optional[list[IosHomeScreenApp]] = Field(alias="value", default=None,)
 
 from .ios_home_screen_app import IosHomeScreenApp
-

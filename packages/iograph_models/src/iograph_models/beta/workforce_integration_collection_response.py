@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class WorkforceIntegrationCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class WorkforceIntegrationCollectionResponse(BaseModel):
 	value: Optional[list[WorkforceIntegration]] = Field(alias="value", default=None,)
 
 from .workforce_integration import WorkforceIntegration
-

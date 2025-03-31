@@ -1,7 +1,7 @@
 from __future__ import annotations
 from typing import Optional
 from typing import Literal
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class NetworkaccessRelatedDestination(BaseModel):
@@ -12,4 +12,3 @@ class NetworkaccessRelatedDestination(BaseModel):
 	port: Optional[int] = Field(alias="port", default=None,)
 
 from .networkaccess_networking_protocol import NetworkaccessNetworkingProtocol
-

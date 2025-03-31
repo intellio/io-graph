@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class ProxiedDomainCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class ProxiedDomainCollectionResponse(BaseModel):
 	value: Optional[list[ProxiedDomain]] = Field(alias="value", default=None,)
 
 from .proxied_domain import ProxiedDomain
-

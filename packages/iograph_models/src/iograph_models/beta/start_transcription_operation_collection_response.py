@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class StartTranscriptionOperationCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class StartTranscriptionOperationCollectionResponse(BaseModel):
 	value: Optional[list[StartTranscriptionOperation]] = Field(alias="value", default=None,)
 
 from .start_transcription_operation import StartTranscriptionOperation
-

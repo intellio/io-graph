@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class EdiscoveryTagOperationCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class EdiscoveryTagOperationCollectionResponse(BaseModel):
 	value: Optional[list[EdiscoveryTagOperation]] = Field(alias="value", default=None,)
 
 from .ediscovery_tag_operation import EdiscoveryTagOperation
-

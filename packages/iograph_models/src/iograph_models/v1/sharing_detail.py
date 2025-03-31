@@ -1,7 +1,7 @@
 from __future__ import annotations
 from typing import Optional
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class SharingDetail(BaseModel):
@@ -14,4 +14,3 @@ class SharingDetail(BaseModel):
 
 from .insight_identity import InsightIdentity
 from .resource_reference import ResourceReference
-

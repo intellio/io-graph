@@ -1,11 +1,11 @@
 from __future__ import annotations
 from typing import Optional
 from typing import Union
+from datetime import datetime
+from pydantic import BaseModel, Field
 from pydantic import model_validator, ModelWrapValidatorHandler, ValidationError
 from typing_extensions import Self
 from typing import Any
-from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class BaseItem(BaseModel):
@@ -33,9 +33,6 @@ class BaseItem(BaseModel):
 				return parent_validated_model
 			# get the discriminator value
 			mapping_key = data["@odata.type"]
-			if mapping_key == "#microsoft.graph.baseSitePage":
-				from .base_site_page import BaseSitePage
-				return BaseSitePage.model_validate(data)
 			if mapping_key == "#microsoft.graph.sitePage":
 				from .site_page import SitePage
 				return SitePage.model_validate(data)
@@ -73,12 +70,5 @@ from .chat_message_mentioned_identity_set import ChatMessageMentionedIdentitySet
 from .chat_message_reaction_identity_set import ChatMessageReactionIdentitySet
 from .communications_identity_set import CommunicationsIdentitySet
 from .share_point_identity_set import SharePointIdentitySet
-from .chat_message_from_identity_set import ChatMessageFromIdentitySet
-from .chat_message_mentioned_identity_set import ChatMessageMentionedIdentitySet
-from .chat_message_reaction_identity_set import ChatMessageReactionIdentitySet
-from .communications_identity_set import CommunicationsIdentitySet
-from .share_point_identity_set import SharePointIdentitySet
 from .item_reference import ItemReference
 from .user import User
-from .user import User
-

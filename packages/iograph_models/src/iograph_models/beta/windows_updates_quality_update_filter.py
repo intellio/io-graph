@@ -1,7 +1,7 @@
 from __future__ import annotations
 from typing import Optional
 from typing import Literal
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class WindowsUpdatesQualityUpdateFilter(BaseModel):
@@ -11,4 +11,3 @@ class WindowsUpdatesQualityUpdateFilter(BaseModel):
 
 from .windows_updates_quality_update_cadence import WindowsUpdatesQualityUpdateCadence
 from .windows_updates_quality_update_classification import WindowsUpdatesQualityUpdateClassification
-

@@ -14,8 +14,8 @@ if TYPE_CHECKING:
 	from .item import ItemRequest
 	from .account import AccountRequest
 	from .........request_adapter import HttpxRequestAdapter
-from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.beta.sales_credit_memo_line import SalesCreditMemoLine
+from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 
 
 class BySalesCreditMemoLineIdRequest(BaseRequestBuilder):

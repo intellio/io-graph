@@ -31,8 +31,8 @@ if TYPE_CHECKING:
 	from .addresses import AddressesRequest
 	from .account import AccountRequest
 	from .....request_adapter import HttpxRequestAdapter
-from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.beta.profile import Profile
+from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 
 
 class ProfileRequest(BaseRequestBuilder):

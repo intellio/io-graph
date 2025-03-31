@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class SecurityFileUrlThreatSubmissionCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class SecurityFileUrlThreatSubmissionCollectionResponse(BaseModel):
 	value: Optional[list[SecurityFileUrlThreatSubmission]] = Field(alias="value", default=None,)
 
 from .security_file_url_threat_submission import SecurityFileUrlThreatSubmission
-

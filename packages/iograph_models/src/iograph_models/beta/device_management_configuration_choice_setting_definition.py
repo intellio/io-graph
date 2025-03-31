@@ -1,10 +1,10 @@
 from __future__ import annotations
 from typing import Optional
 from typing import Union
+from pydantic import BaseModel, Field
 from pydantic import model_validator, ModelWrapValidatorHandler, ValidationError
 from typing_extensions import Self
 from typing import Any
-from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class DeviceManagementConfigurationChoiceSettingDefinition(BaseModel):
@@ -61,4 +61,3 @@ from .device_management_configuration_setting_usage import DeviceManagementConfi
 from .device_management_configuration_control_type import DeviceManagementConfigurationControlType
 from .device_management_configuration_setting_visibility import DeviceManagementConfigurationSettingVisibility
 from .device_management_configuration_option_definition import DeviceManagementConfigurationOptionDefinition
-

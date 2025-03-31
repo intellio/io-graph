@@ -1,12 +1,13 @@
 from __future__ import annotations
 from typing import Optional
+from typing import Literal
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class DeviceComplianceDeviceOverview(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
+	odata_type: Literal["#microsoft.graph.deviceComplianceDeviceOverview"] = Field(alias="@odata.type",)
 	configurationVersion: Optional[int] = Field(alias="configurationVersion", default=None,)
 	conflictCount: Optional[int] = Field(alias="conflictCount", default=None,)
 	errorCount: Optional[int] = Field(alias="errorCount", default=None,)
@@ -16,5 +17,4 @@ class DeviceComplianceDeviceOverview(BaseModel):
 	notApplicablePlatformCount: Optional[int] = Field(alias="notApplicablePlatformCount", default=None,)
 	pendingCount: Optional[int] = Field(alias="pendingCount", default=None,)
 	successCount: Optional[int] = Field(alias="successCount", default=None,)
-
 

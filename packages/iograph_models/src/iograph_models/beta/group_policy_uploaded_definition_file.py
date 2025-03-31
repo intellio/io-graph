@@ -2,7 +2,7 @@ from __future__ import annotations
 from typing import Optional
 from typing import Literal
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class GroupPolicyUploadedDefinitionFile(BaseModel):
@@ -30,4 +30,3 @@ from .group_policy_definition import GroupPolicyDefinition
 from .group_policy_uploaded_language_file import GroupPolicyUploadedLanguageFile
 from .group_policy_uploaded_definition_file_status import GroupPolicyUploadedDefinitionFileStatus
 from .group_policy_operation import GroupPolicyOperation
-

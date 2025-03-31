@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class QueryPostResponse(BaseModel):
@@ -9,4 +9,3 @@ class QueryPostResponse(BaseModel):
 	value: Optional[list[SearchResponse]] = Field(alias="value", default=None,)
 
 from .search_response import SearchResponse
-

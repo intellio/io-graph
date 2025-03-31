@@ -13,8 +13,8 @@ from typing import TYPE_CHECKING
 if TYPE_CHECKING:
 	from .authorization_system import AuthorizationSystemRequest
 	from .......request_adapter import HttpxRequestAdapter
-from iograph_models.beta.permissions_creep_index_distribution import PermissionsCreepIndexDistribution
 from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.beta.permissions_creep_index_distribution import PermissionsCreepIndexDistribution
 
 
 class ByPermissionsCreepIndexDistributionIdRequest(BaseRequestBuilder):

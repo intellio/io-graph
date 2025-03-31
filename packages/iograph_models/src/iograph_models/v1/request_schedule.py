@@ -1,7 +1,7 @@
 from __future__ import annotations
 from typing import Optional
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class RequestSchedule(BaseModel):
@@ -12,4 +12,3 @@ class RequestSchedule(BaseModel):
 
 from .expiration_pattern import ExpirationPattern
 from .patterned_recurrence import PatternedRecurrence
-

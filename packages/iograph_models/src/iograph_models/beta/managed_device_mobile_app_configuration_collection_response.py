@@ -2,7 +2,7 @@ from __future__ import annotations
 from typing import Optional
 from typing import Union
 from typing import Annotated
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class ManagedDeviceMobileAppConfigurationCollectionResponse(BaseModel):
@@ -13,4 +13,3 @@ class ManagedDeviceMobileAppConfigurationCollectionResponse(BaseModel):
 from .android_for_work_mobile_app_configuration import AndroidForWorkMobileAppConfiguration
 from .android_managed_store_app_configuration import AndroidManagedStoreAppConfiguration
 from .ios_mobile_app_configuration import IosMobileAppConfiguration
-

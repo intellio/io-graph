@@ -1,12 +1,13 @@
 from __future__ import annotations
 from typing import Optional
+from typing import Literal
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class UserPFXCertificate(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
+	odata_type: Literal["#microsoft.graph.userPFXCertificate"] = Field(alias="@odata.type",)
 	createdDateTime: Optional[datetime] = Field(alias="createdDateTime", default=None,)
 	encryptedPfxBlob: Optional[str] = Field(alias="encryptedPfxBlob", default=None,)
 	encryptedPfxPassword: Optional[str] = Field(alias="encryptedPfxPassword", default=None,)
@@ -22,4 +23,3 @@ class UserPFXCertificate(BaseModel):
 
 from .user_pfx_intended_purpose import UserPfxIntendedPurpose
 from .user_pfx_padding_scheme import UserPfxPaddingScheme
-

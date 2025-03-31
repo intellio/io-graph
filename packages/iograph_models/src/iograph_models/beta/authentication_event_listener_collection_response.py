@@ -2,7 +2,7 @@ from __future__ import annotations
 from typing import Optional
 from typing import Union
 from typing import Annotated
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class AuthenticationEventListenerCollectionResponse(BaseModel):
@@ -19,4 +19,3 @@ from .on_interactive_auth_flow_start_listener import OnInteractiveAuthFlowStartL
 from .on_phone_method_load_start_listener import OnPhoneMethodLoadStartListener
 from .on_token_issuance_start_listener import OnTokenIssuanceStartListener
 from .on_user_create_start_listener import OnUserCreateStartListener
-

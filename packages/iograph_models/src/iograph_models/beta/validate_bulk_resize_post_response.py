@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class Validate_bulk_resizePostResponse(BaseModel):
@@ -9,4 +9,3 @@ class Validate_bulk_resizePostResponse(BaseModel):
 	value: Optional[list[CloudPcResizeValidationResult]] = Field(alias="value", default=None,)
 
 from .cloud_pc_resize_validation_result import CloudPcResizeValidationResult
-

@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class UserConsentRequestCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class UserConsentRequestCollectionResponse(BaseModel):
 	value: Optional[list[UserConsentRequest]] = Field(alias="value", default=None,)
 
 from .user_consent_request import UserConsentRequest
-

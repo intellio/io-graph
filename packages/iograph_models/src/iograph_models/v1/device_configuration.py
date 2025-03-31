@@ -1,10 +1,10 @@
 from __future__ import annotations
 from typing import Optional
+from datetime import datetime
+from pydantic import BaseModel, Field
 from pydantic import model_validator, ModelWrapValidatorHandler, ValidationError
 from typing_extensions import Self
 from typing import Any
-from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class DeviceConfiguration(BaseModel):
@@ -44,9 +44,6 @@ class DeviceConfiguration(BaseModel):
 			if mapping_key == "#microsoft.graph.androidWorkProfileGeneralDeviceConfiguration":
 				from .android_work_profile_general_device_configuration import AndroidWorkProfileGeneralDeviceConfiguration
 				return AndroidWorkProfileGeneralDeviceConfiguration.model_validate(data)
-			if mapping_key == "#microsoft.graph.appleDeviceFeaturesConfigurationBase":
-				from .apple_device_features_configuration_base import AppleDeviceFeaturesConfigurationBase
-				return AppleDeviceFeaturesConfigurationBase.model_validate(data)
 			if mapping_key == "#microsoft.graph.iosDeviceFeaturesConfiguration":
 				from .ios_device_features_configuration import IosDeviceFeaturesConfiguration
 				return IosDeviceFeaturesConfiguration.model_validate(data)
@@ -121,4 +118,3 @@ from .device_configuration_device_status import DeviceConfigurationDeviceStatus
 from .device_configuration_device_overview import DeviceConfigurationDeviceOverview
 from .device_configuration_user_status import DeviceConfigurationUserStatus
 from .device_configuration_user_overview import DeviceConfigurationUserOverview
-

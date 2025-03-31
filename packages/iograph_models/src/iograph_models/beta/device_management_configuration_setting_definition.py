@@ -1,10 +1,10 @@
 from __future__ import annotations
 from typing import Optional
 from typing import Union
+from pydantic import BaseModel, Field
 from pydantic import model_validator, ModelWrapValidatorHandler, ValidationError
 from typing_extensions import Self
 from typing import Any
-from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class DeviceManagementConfigurationSettingDefinition(BaseModel):
@@ -40,24 +40,15 @@ class DeviceManagementConfigurationSettingDefinition(BaseModel):
 				return parent_validated_model
 			# get the discriminator value
 			mapping_key = data["@odata.type"]
-			if mapping_key == "#microsoft.graph.deviceManagementConfigurationChoiceSettingDefinition":
-				from .device_management_configuration_choice_setting_definition import DeviceManagementConfigurationChoiceSettingDefinition
-				return DeviceManagementConfigurationChoiceSettingDefinition.model_validate(data)
 			if mapping_key == "#microsoft.graph.deviceManagementConfigurationChoiceSettingCollectionDefinition":
 				from .device_management_configuration_choice_setting_collection_definition import DeviceManagementConfigurationChoiceSettingCollectionDefinition
 				return DeviceManagementConfigurationChoiceSettingCollectionDefinition.model_validate(data)
 			if mapping_key == "#microsoft.graph.deviceManagementConfigurationRedirectSettingDefinition":
 				from .device_management_configuration_redirect_setting_definition import DeviceManagementConfigurationRedirectSettingDefinition
 				return DeviceManagementConfigurationRedirectSettingDefinition.model_validate(data)
-			if mapping_key == "#microsoft.graph.deviceManagementConfigurationSettingGroupDefinition":
-				from .device_management_configuration_setting_group_definition import DeviceManagementConfigurationSettingGroupDefinition
-				return DeviceManagementConfigurationSettingGroupDefinition.model_validate(data)
 			if mapping_key == "#microsoft.graph.deviceManagementConfigurationSettingGroupCollectionDefinition":
 				from .device_management_configuration_setting_group_collection_definition import DeviceManagementConfigurationSettingGroupCollectionDefinition
 				return DeviceManagementConfigurationSettingGroupCollectionDefinition.model_validate(data)
-			if mapping_key == "#microsoft.graph.deviceManagementConfigurationSimpleSettingDefinition":
-				from .device_management_configuration_simple_setting_definition import DeviceManagementConfigurationSimpleSettingDefinition
-				return DeviceManagementConfigurationSimpleSettingDefinition.model_validate(data)
 			if mapping_key == "#microsoft.graph.deviceManagementConfigurationSimpleSettingCollectionDefinition":
 				from .device_management_configuration_simple_setting_collection_definition import DeviceManagementConfigurationSimpleSettingCollectionDefinition
 				return DeviceManagementConfigurationSimpleSettingCollectionDefinition.model_validate(data)
@@ -76,4 +67,3 @@ from .device_management_configuration_setting_risk_level import DeviceManagement
 from .device_management_configuration_setting_usage import DeviceManagementConfigurationSettingUsage
 from .device_management_configuration_control_type import DeviceManagementConfigurationControlType
 from .device_management_configuration_setting_visibility import DeviceManagementConfigurationSettingVisibility
-

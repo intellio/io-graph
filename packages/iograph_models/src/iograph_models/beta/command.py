@@ -1,11 +1,12 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from typing import Literal
+from pydantic import BaseModel, Field
 
 
 class Command(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
+	odata_type: Literal["#microsoft.graph.command"] = Field(alias="@odata.type",)
 	appServiceName: Optional[str] = Field(alias="appServiceName", default=None,)
 	error: Optional[str] = Field(alias="error", default=None,)
 	packageFamilyName: Optional[str] = Field(alias="packageFamilyName", default=None,)
@@ -18,4 +19,3 @@ class Command(BaseModel):
 
 from .payload_request import PayloadRequest
 from .payload_response import PayloadResponse
-

@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class SearchBucketCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class SearchBucketCollectionResponse(BaseModel):
 	value: Optional[list[SearchBucket]] = Field(alias="value", default=None,)
 
 from .search_bucket import SearchBucket
-

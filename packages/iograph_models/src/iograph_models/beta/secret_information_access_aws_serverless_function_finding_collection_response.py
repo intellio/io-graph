@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class SecretInformationAccessAwsServerlessFunctionFindingCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class SecretInformationAccessAwsServerlessFunctionFindingCollectionResponse(Base
 	value: Optional[list[SecretInformationAccessAwsServerlessFunctionFinding]] = Field(alias="value", default=None,)
 
 from .secret_information_access_aws_serverless_function_finding import SecretInformationAccessAwsServerlessFunctionFinding
-

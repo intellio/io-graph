@@ -2,7 +2,7 @@ from __future__ import annotations
 from typing import Optional
 from typing import Literal
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class AospDeviceOwnerPkcsCertificateProfile(BaseModel):
@@ -61,4 +61,3 @@ from .certificate_store import CertificateStore
 from .device_management_certification_authority import DeviceManagementCertificationAuthority
 from .custom_subject_alternative_name import CustomSubjectAlternativeName
 from .managed_device_certificate_state import ManagedDeviceCertificateState
-

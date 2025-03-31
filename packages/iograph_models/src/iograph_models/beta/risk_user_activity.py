@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class RiskUserActivity(BaseModel):
@@ -11,4 +11,3 @@ class RiskUserActivity(BaseModel):
 
 from .risk_detail import RiskDetail
 from .risk_event_type import RiskEventType
-

@@ -2,7 +2,7 @@ from __future__ import annotations
 from typing import Optional
 from typing import Union
 from typing import Literal
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class AwsRole(BaseModel):
@@ -25,4 +25,3 @@ from .azure_authorization_system import AzureAuthorizationSystem
 from .gcp_authorization_system import GcpAuthorizationSystem
 from .aws_role_type import AwsRoleType
 from .aws_role_trust_entity_type import AwsRoleTrustEntityType
-

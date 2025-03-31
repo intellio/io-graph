@@ -1,7 +1,7 @@
 from __future__ import annotations
 from typing import Optional
 from typing import Literal
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class MacOSKerberosSingleSignOnExtension(BaseModel):
@@ -36,5 +36,4 @@ class MacOSKerberosSingleSignOnExtension(BaseModel):
 	usernameLabelCustom: Optional[str] = Field(alias="usernameLabelCustom", default=None,)
 	userPrincipalName: Optional[str] = Field(alias="userPrincipalName", default=None,)
 	userSetupDelayed: Optional[bool] = Field(alias="userSetupDelayed", default=None,)
-
 

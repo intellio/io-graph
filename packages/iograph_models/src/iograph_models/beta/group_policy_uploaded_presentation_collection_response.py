@@ -2,7 +2,7 @@ from __future__ import annotations
 from typing import Optional
 from typing import Union
 from typing import Annotated
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class GroupPolicyUploadedPresentationCollectionResponse(BaseModel):
@@ -19,4 +19,3 @@ from .group_policy_presentation_long_decimal_text_box import GroupPolicyPresenta
 from .group_policy_presentation_multi_text_box import GroupPolicyPresentationMultiTextBox
 from .group_policy_presentation_text import GroupPolicyPresentationText
 from .group_policy_presentation_text_box import GroupPolicyPresentationTextBox
-

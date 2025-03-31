@@ -1,12 +1,13 @@
 from __future__ import annotations
 from typing import Optional
+from typing import Literal
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class LearningContent(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
+	odata_type: Literal["#microsoft.graph.learningContent"] = Field(alias="@odata.type",)
 	additionalTags: Optional[list[str]] = Field(alias="additionalTags", default=None,)
 	contentWebUrl: Optional[str] = Field(alias="contentWebUrl", default=None,)
 	contributors: Optional[list[str]] = Field(alias="contributors", default=None,)
@@ -28,4 +29,3 @@ class LearningContent(BaseModel):
 	title: Optional[str] = Field(alias="title", default=None,)
 
 from .level import Level
-

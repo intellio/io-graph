@@ -3,7 +3,7 @@ from uuid import UUID
 from typing import Optional
 from typing import Literal
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class SecurityTeamsMessageEvidence(BaseModel):
@@ -48,4 +48,3 @@ from .security_teams_delivery_location import SecurityTeamsDeliveryLocation
 from .security_file_evidence import SecurityFileEvidence
 from .security_antispam_teams_direction import SecurityAntispamTeamsDirection
 from .security_url_evidence import SecurityUrlEvidence
-

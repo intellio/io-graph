@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class Pkcs12CertificateInformationCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class Pkcs12CertificateInformationCollectionResponse(BaseModel):
 	value: Optional[list[Pkcs12CertificateInformation]] = Field(alias="value", default=None,)
 
 from .pkcs12_certificate_information import Pkcs12CertificateInformation
-

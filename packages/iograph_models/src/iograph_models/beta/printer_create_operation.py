@@ -2,7 +2,7 @@ from __future__ import annotations
 from typing import Optional
 from typing import Literal
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class PrinterCreateOperation(BaseModel):
@@ -15,4 +15,3 @@ class PrinterCreateOperation(BaseModel):
 
 from .print_operation_status import PrintOperationStatus
 from .printer import Printer
-

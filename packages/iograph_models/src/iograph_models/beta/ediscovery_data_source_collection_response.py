@@ -2,7 +2,7 @@ from __future__ import annotations
 from typing import Optional
 from typing import Union
 from typing import Annotated
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class EdiscoveryDataSourceCollectionResponse(BaseModel):
@@ -13,4 +13,3 @@ class EdiscoveryDataSourceCollectionResponse(BaseModel):
 from .ediscovery_site_source import EdiscoverySiteSource
 from .ediscovery_unified_group_source import EdiscoveryUnifiedGroupSource
 from .ediscovery_user_source import EdiscoveryUserSource
-

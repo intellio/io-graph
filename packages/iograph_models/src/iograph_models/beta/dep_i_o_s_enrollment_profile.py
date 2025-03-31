@@ -2,7 +2,7 @@ from __future__ import annotations
 from uuid import UUID
 from typing import Optional
 from typing import Literal
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class DepIOSEnrollmentProfile(BaseModel):
@@ -68,4 +68,3 @@ class DepIOSEnrollmentProfile(BaseModel):
 
 from .i_tunes_pairing_mode import ITunesPairingMode
 from .management_certificate_with_thumbprint import ManagementCertificateWithThumbprint
-

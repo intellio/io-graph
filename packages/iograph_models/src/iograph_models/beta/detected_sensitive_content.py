@@ -1,10 +1,10 @@
 from __future__ import annotations
 from uuid import UUID
 from typing import Optional
+from pydantic import BaseModel, Field
 from pydantic import model_validator, ModelWrapValidatorHandler, ValidationError
 from typing_extensions import Self
 from typing import Any
-from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class DetectedSensitiveContent(BaseModel):
@@ -43,4 +43,3 @@ from .classification_method import ClassificationMethod
 from .sensitive_content_location import SensitiveContentLocation
 from .sensitive_type_scope import SensitiveTypeScope
 from .sensitive_type_source import SensitiveTypeSource
-

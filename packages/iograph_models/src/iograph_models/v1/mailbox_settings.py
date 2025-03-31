@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class MailboxSettings(BaseModel):
@@ -20,4 +20,3 @@ from .delegate_meeting_message_delivery_options import DelegateMeetingMessageDel
 from .locale_info import LocaleInfo
 from .user_purpose import UserPurpose
 from .working_hours import WorkingHours
-

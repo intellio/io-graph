@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class OnPremisesApplicationSegmentCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class OnPremisesApplicationSegmentCollectionResponse(BaseModel):
 	value: Optional[list[OnPremisesApplicationSegment]] = Field(alias="value", default=None,)
 
 from .on_premises_application_segment import OnPremisesApplicationSegment
-

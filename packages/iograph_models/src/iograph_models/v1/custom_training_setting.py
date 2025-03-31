@@ -1,7 +1,7 @@
 from __future__ import annotations
 from typing import Optional
 from typing import Literal
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class CustomTrainingSetting(BaseModel):
@@ -15,4 +15,3 @@ class CustomTrainingSetting(BaseModel):
 
 from .training_setting_type import TrainingSettingType
 from .training_assigned_to import TrainingAssignedTo
-

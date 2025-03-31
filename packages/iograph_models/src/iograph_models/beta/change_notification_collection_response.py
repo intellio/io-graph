@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class ChangeNotificationCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class ChangeNotificationCollectionResponse(BaseModel):
 	value: Optional[list[ChangeNotification]] = Field(alias="value", default=None,)
 
 from .change_notification import ChangeNotification
-

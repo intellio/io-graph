@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class RankedEmailAddressCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class RankedEmailAddressCollectionResponse(BaseModel):
 	value: Optional[list[RankedEmailAddress]] = Field(alias="value", default=None,)
 
 from .ranked_email_address import RankedEmailAddress
-

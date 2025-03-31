@@ -1,13 +1,14 @@
 from __future__ import annotations
 from typing import Optional
 from typing import Union
+from typing import Literal
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class EducationUser(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
+	odata_type: Literal["#microsoft.graph.educationUser"] = Field(alias="@odata.type",)
 	accountEnabled: Optional[bool] = Field(alias="accountEnabled", default=None,)
 	assignedLicenses: Optional[list[AssignedLicense]] = Field(alias="assignedLicenses", default=None,)
 	assignedPlans: Optional[list[AssignedPlan]] = Field(alias="assignedPlans", default=None,)
@@ -61,13 +62,10 @@ from .password_profile import PasswordProfile
 from .education_user_role import EducationUserRole
 from .provisioned_plan import ProvisionedPlan
 from .related_contact import RelatedContact
-from .physical_address import PhysicalAddress
 from .education_student import EducationStudent
 from .education_teacher import EducationTeacher
 from .education_assignment import EducationAssignment
 from .education_class import EducationClass
 from .education_rubric import EducationRubric
 from .education_school import EducationSchool
-from .education_class import EducationClass
 from .user import User
-

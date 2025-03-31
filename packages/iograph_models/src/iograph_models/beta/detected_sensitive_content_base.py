@@ -1,10 +1,10 @@
 from __future__ import annotations
 from uuid import UUID
 from typing import Optional
+from pydantic import BaseModel, Field
 from pydantic import model_validator, ModelWrapValidatorHandler, ValidationError
 from typing_extensions import Self
 from typing import Any
-from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class DetectedSensitiveContentBase(BaseModel):
@@ -25,9 +25,6 @@ class DetectedSensitiveContentBase(BaseModel):
 				return parent_validated_model
 			# get the discriminator value
 			mapping_key = data["@odata.type"]
-			if mapping_key == "#microsoft.graph.detectedSensitiveContent":
-				from .detected_sensitive_content import DetectedSensitiveContent
-				return DetectedSensitiveContent.model_validate(data)
 			if mapping_key == "#microsoft.graph.machineLearningDetectedSensitiveContent":
 				from .machine_learning_detected_sensitive_content import MachineLearningDetectedSensitiveContent
 				return MachineLearningDetectedSensitiveContent.model_validate(data)
@@ -38,5 +35,4 @@ class DetectedSensitiveContentBase(BaseModel):
 
 		except Exception as e:
 			raise e
-
 

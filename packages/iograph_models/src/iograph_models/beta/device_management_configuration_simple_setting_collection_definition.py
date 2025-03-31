@@ -1,12 +1,13 @@
 from __future__ import annotations
 from typing import Optional
 from typing import Union
-from pydantic import BaseModel, Field, SerializeAsAny
+from typing import Literal
+from pydantic import BaseModel, Field
 
 
 class DeviceManagementConfigurationSimpleSettingCollectionDefinition(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
+	odata_type: Literal["#microsoft.graph.deviceManagementConfigurationSimpleSettingCollectionDefinition"] = Field(alias="@odata.type",)
 	accessTypes: Optional[DeviceManagementConfigurationSettingAccessTypes | str] = Field(alias="accessTypes", default=None,)
 	applicability: Optional[Union[DeviceManagementConfigurationApplicationSettingApplicability, DeviceManagementConfigurationExchangeOnlineSettingApplicability, DeviceManagementConfigurationWindowsSettingApplicability]] = Field(alias="applicability", default=None,discriminator="odata_type", )
 	baseUri: Optional[str] = Field(alias="baseUri", default=None,)
@@ -26,7 +27,7 @@ class DeviceManagementConfigurationSimpleSettingCollectionDefinition(BaseModel):
 	uxBehavior: Optional[DeviceManagementConfigurationControlType | str] = Field(alias="uxBehavior", default=None,)
 	version: Optional[str] = Field(alias="version", default=None,)
 	visibility: Optional[DeviceManagementConfigurationSettingVisibility | str] = Field(alias="visibility", default=None,)
-	defaultValue: Optional[Union[DeviceManagementConfigurationChoiceSettingValue, DeviceManagementConfigurationGroupSettingValue, DeviceManagementConfigurationSimpleSettingValue, DeviceManagementConfigurationIntegerSettingValue, DeviceManagementConfigurationSecretSettingValue, DeviceManagementConfigurationStringSettingValue, DeviceManagementConfigurationReferenceSettingValue]] = Field(alias="defaultValue", default=None,discriminator="odata_type", )
+	defaultValue: Optional[Union[DeviceManagementConfigurationChoiceSettingValue, DeviceManagementConfigurationGroupSettingValue, DeviceManagementConfigurationIntegerSettingValue, DeviceManagementConfigurationSecretSettingValue, DeviceManagementConfigurationReferenceSettingValue]] = Field(alias="defaultValue", default=None,discriminator="odata_type", )
 	dependedOnBy: Optional[list[DeviceManagementConfigurationSettingDependedOnBy]] = Field(alias="dependedOnBy", default=None,)
 	dependentOn: Optional[list[DeviceManagementConfigurationDependentOn]] = Field(alias="dependentOn", default=None,)
 	valueDefinition: Optional[Union[DeviceManagementConfigurationIntegerSettingValueDefinition, DeviceManagementConfigurationStringSettingValueDefinition]] = Field(alias="valueDefinition", default=None,discriminator="odata_type", )
@@ -45,13 +46,10 @@ from .device_management_configuration_control_type import DeviceManagementConfig
 from .device_management_configuration_setting_visibility import DeviceManagementConfigurationSettingVisibility
 from .device_management_configuration_choice_setting_value import DeviceManagementConfigurationChoiceSettingValue
 from .device_management_configuration_group_setting_value import DeviceManagementConfigurationGroupSettingValue
-from .device_management_configuration_simple_setting_value import DeviceManagementConfigurationSimpleSettingValue
 from .device_management_configuration_integer_setting_value import DeviceManagementConfigurationIntegerSettingValue
 from .device_management_configuration_secret_setting_value import DeviceManagementConfigurationSecretSettingValue
-from .device_management_configuration_string_setting_value import DeviceManagementConfigurationStringSettingValue
 from .device_management_configuration_reference_setting_value import DeviceManagementConfigurationReferenceSettingValue
 from .device_management_configuration_setting_depended_on_by import DeviceManagementConfigurationSettingDependedOnBy
 from .device_management_configuration_dependent_on import DeviceManagementConfigurationDependentOn
 from .device_management_configuration_integer_setting_value_definition import DeviceManagementConfigurationIntegerSettingValueDefinition
 from .device_management_configuration_string_setting_value_definition import DeviceManagementConfigurationStringSettingValueDefinition
-

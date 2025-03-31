@@ -2,7 +2,7 @@ from __future__ import annotations
 from typing import Optional
 from typing import Union
 from typing import Annotated
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class StsPolicyCollectionResponse(BaseModel):
@@ -15,4 +15,3 @@ from .claims_mapping_policy import ClaimsMappingPolicy
 from .home_realm_discovery_policy import HomeRealmDiscoveryPolicy
 from .token_issuance_policy import TokenIssuancePolicy
 from .token_lifetime_policy import TokenLifetimePolicy
-

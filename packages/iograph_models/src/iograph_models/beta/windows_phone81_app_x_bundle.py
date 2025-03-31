@@ -4,7 +4,7 @@ from typing import Union
 from typing import Literal
 from typing import Annotated
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class WindowsPhone81AppXBundle(BaseModel):
@@ -56,4 +56,3 @@ from .mobile_app_content import MobileAppContent
 from .windows_architecture import WindowsArchitecture
 from .windows_minimum_operating_system import WindowsMinimumOperatingSystem
 from .windows_package_information import WindowsPackageInformation
-

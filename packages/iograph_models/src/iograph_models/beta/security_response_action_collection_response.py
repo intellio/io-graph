@@ -2,7 +2,7 @@ from __future__ import annotations
 from typing import Optional
 from typing import Union
 from typing import Annotated
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class SecurityResponseActionCollectionResponse(BaseModel):
@@ -26,4 +26,3 @@ from .security_restrict_app_execution_response_action import SecurityRestrictApp
 from .security_run_antivirus_scan_response_action import SecurityRunAntivirusScanResponseAction
 from .security_soft_delete_response_action import SecuritySoftDeleteResponseAction
 from .security_stop_and_quarantine_file_response_action import SecurityStopAndQuarantineFileResponseAction
-

@@ -3,7 +3,7 @@ from typing import Optional
 from typing import Union
 from typing import Literal
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class UserAccountInformation(BaseModel):
@@ -32,14 +32,6 @@ from .chat_message_reaction_identity_set import ChatMessageReactionIdentitySet
 from .communications_identity_set import CommunicationsIdentitySet
 from .share_point_identity_set import SharePointIdentitySet
 from .inference_data import InferenceData
-from .ai_interaction_mentioned_identity_set import AiInteractionMentionedIdentitySet
-from .approval_identity_set import ApprovalIdentitySet
-from .chat_message_from_identity_set import ChatMessageFromIdentitySet
-from .chat_message_mentioned_identity_set import ChatMessageMentionedIdentitySet
-from .chat_message_reaction_identity_set import ChatMessageReactionIdentitySet
-from .communications_identity_set import CommunicationsIdentitySet
-from .share_point_identity_set import SharePointIdentitySet
 from .person_data_sources import PersonDataSources
 from .profile_source_annotation import ProfileSourceAnnotation
 from .locale_info import LocaleInfo
-

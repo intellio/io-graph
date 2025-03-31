@@ -2,7 +2,7 @@ from __future__ import annotations
 from typing import Optional
 from typing import Union
 from typing import Annotated
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class AppListItemCollectionResponse(BaseModel):
@@ -11,4 +11,3 @@ class AppListItemCollectionResponse(BaseModel):
 	value: Optional[list[Annotated[Union[AppleAppListItem],Field(discriminator="odata_type")]]] = Field(alias="value", default=None,)
 
 from .apple_app_list_item import AppleAppListItem
-

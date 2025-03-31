@@ -1,12 +1,13 @@
 from __future__ import annotations
 from typing import Optional
+from typing import Literal
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class DeviceConfigurationUserStatus(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
+	odata_type: Literal["#microsoft.graph.deviceConfigurationUserStatus"] = Field(alias="@odata.type",)
 	devicesCount: Optional[int] = Field(alias="devicesCount", default=None,)
 	lastReportedDateTime: Optional[datetime] = Field(alias="lastReportedDateTime", default=None,)
 	status: Optional[ComplianceStatus | str] = Field(alias="status", default=None,)
@@ -14,4 +15,3 @@ class DeviceConfigurationUserStatus(BaseModel):
 	userPrincipalName: Optional[str] = Field(alias="userPrincipalName", default=None,)
 
 from .compliance_status import ComplianceStatus
-

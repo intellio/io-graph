@@ -1,7 +1,7 @@
 from __future__ import annotations
 from typing import Optional
 from typing import Literal
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class SubstringTransformation(BaseModel):
@@ -11,4 +11,3 @@ class SubstringTransformation(BaseModel):
 	length: Optional[int] = Field(alias="length", default=None,)
 
 from .transformation_attribute import TransformationAttribute
-

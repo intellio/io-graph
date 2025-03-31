@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class ExternallyAccessibleAzureBlobContainerFindingCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class ExternallyAccessibleAzureBlobContainerFindingCollectionResponse(BaseModel)
 	value: Optional[list[ExternallyAccessibleAzureBlobContainerFinding]] = Field(alias="value", default=None,)
 
 from .externally_accessible_azure_blob_container_finding import ExternallyAccessibleAzureBlobContainerFinding
-

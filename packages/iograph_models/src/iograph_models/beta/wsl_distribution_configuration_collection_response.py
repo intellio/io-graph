@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class WslDistributionConfigurationCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class WslDistributionConfigurationCollectionResponse(BaseModel):
 	value: Optional[list[WslDistributionConfiguration]] = Field(alias="value", default=None,)
 
 from .wsl_distribution_configuration import WslDistributionConfiguration
-

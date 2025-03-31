@@ -3,7 +3,7 @@ from typing import Optional
 from typing import Union
 from typing import Literal
 from typing import Annotated
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class DeviceManagementCollectionSettingInstance(BaseModel):
@@ -18,4 +18,3 @@ from .device_management_boolean_setting_instance import DeviceManagementBooleanS
 from .device_management_complex_setting_instance import DeviceManagementComplexSettingInstance
 from .device_management_integer_setting_instance import DeviceManagementIntegerSettingInstance
 from .device_management_string_setting_instance import DeviceManagementStringSettingInstance
-

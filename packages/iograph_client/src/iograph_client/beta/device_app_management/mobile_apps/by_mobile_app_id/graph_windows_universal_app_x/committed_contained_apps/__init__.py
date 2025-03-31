@@ -14,9 +14,9 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_mobile_contained_app_id import ByMobileContainedAppIdRequest
 	from .......request_adapter import HttpxRequestAdapter
+from iograph_models.beta.mobile_contained_app import MobileContainedApp
 from iograph_models.beta.mobile_contained_app_collection_response import MobileContainedAppCollectionResponse
 from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
-from iograph_models.beta.mobile_contained_app import MobileContainedApp
 
 
 class CommittedContainedAppsRequest(BaseRequestBuilder):

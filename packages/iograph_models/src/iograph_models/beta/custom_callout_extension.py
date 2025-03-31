@@ -1,10 +1,10 @@
 from __future__ import annotations
 from typing import Optional
 from typing import Union
+from pydantic import BaseModel, Field
 from pydantic import model_validator, ModelWrapValidatorHandler, ValidationError
 from typing_extensions import Self
 from typing import Any
-from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class CustomCalloutExtension(BaseModel):
@@ -35,9 +35,6 @@ class CustomCalloutExtension(BaseModel):
 			if mapping_key == "#microsoft.graph.customAccessPackageWorkflowExtension":
 				from .custom_access_package_workflow_extension import CustomAccessPackageWorkflowExtension
 				return CustomAccessPackageWorkflowExtension.model_validate(data)
-			if mapping_key == "#microsoft.graph.customAuthenticationExtension":
-				from .custom_authentication_extension import CustomAuthenticationExtension
-				return CustomAuthenticationExtension.model_validate(data)
 			if mapping_key == "#microsoft.graph.onAttributeCollectionStartCustomExtension":
 				from .on_attribute_collection_start_custom_extension import OnAttributeCollectionStartCustomExtension
 				return OnAttributeCollectionStartCustomExtension.model_validate(data)
@@ -63,4 +60,3 @@ from .azure_ad_token_authentication import AzureAdTokenAuthentication
 from .custom_extension_client_configuration import CustomExtensionClientConfiguration
 from .http_request_endpoint import HttpRequestEndpoint
 from .logic_app_trigger_endpoint_configuration import LogicAppTriggerEndpointConfiguration
-

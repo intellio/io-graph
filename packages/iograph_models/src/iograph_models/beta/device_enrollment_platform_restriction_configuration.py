@@ -2,7 +2,7 @@ from __future__ import annotations
 from typing import Optional
 from typing import Literal
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class DeviceEnrollmentPlatformRestrictionConfiguration(BaseModel):
@@ -24,4 +24,3 @@ from .device_enrollment_configuration_type import DeviceEnrollmentConfigurationT
 from .enrollment_configuration_assignment import EnrollmentConfigurationAssignment
 from .device_enrollment_platform_restriction import DeviceEnrollmentPlatformRestriction
 from .enrollment_restriction_platform_type import EnrollmentRestrictionPlatformType
-

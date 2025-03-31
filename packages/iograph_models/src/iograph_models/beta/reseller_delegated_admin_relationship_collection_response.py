@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class ResellerDelegatedAdminRelationshipCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class ResellerDelegatedAdminRelationshipCollectionResponse(BaseModel):
 	value: Optional[list[ResellerDelegatedAdminRelationship]] = Field(alias="value", default=None,)
 
 from .reseller_delegated_admin_relationship import ResellerDelegatedAdminRelationship
-

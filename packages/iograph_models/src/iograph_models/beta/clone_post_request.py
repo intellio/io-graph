@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class ClonePostRequest(BaseModel):
@@ -13,4 +13,3 @@ class ClonePostRequest(BaseModel):
 
 from .team_visibility_type import TeamVisibilityType
 from .clonable_team_parts import ClonableTeamParts
-

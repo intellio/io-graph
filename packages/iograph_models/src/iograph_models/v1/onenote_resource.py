@@ -1,7 +1,7 @@
 from __future__ import annotations
 from typing import Optional
 from typing import Literal
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class OnenoteResource(BaseModel):
@@ -10,5 +10,4 @@ class OnenoteResource(BaseModel):
 	self: Optional[str] = Field(alias="self", default=None,)
 	content: Optional[str] = Field(alias="content", default=None,)
 	contentUrl: Optional[str] = Field(alias="contentUrl", default=None,)
-
 

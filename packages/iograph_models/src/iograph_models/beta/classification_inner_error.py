@@ -1,7 +1,7 @@
 from __future__ import annotations
 from typing import Optional
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class ClassificationInnerError(BaseModel):
@@ -10,5 +10,4 @@ class ClassificationInnerError(BaseModel):
 	code: Optional[str] = Field(alias="code", default=None,)
 	errorDateTime: Optional[datetime] = Field(alias="errorDateTime", default=None,)
 	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
-
 

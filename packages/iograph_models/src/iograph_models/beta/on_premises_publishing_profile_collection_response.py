@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class OnPremisesPublishingProfileCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class OnPremisesPublishingProfileCollectionResponse(BaseModel):
 	value: Optional[list[OnPremisesPublishingProfile]] = Field(alias="value", default=None,)
 
 from .on_premises_publishing_profile import OnPremisesPublishingProfile
-

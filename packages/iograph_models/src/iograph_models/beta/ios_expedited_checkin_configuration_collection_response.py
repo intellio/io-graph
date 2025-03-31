@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class IosExpeditedCheckinConfigurationCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class IosExpeditedCheckinConfigurationCollectionResponse(BaseModel):
 	value: Optional[list[IosExpeditedCheckinConfiguration]] = Field(alias="value", default=None,)
 
 from .ios_expedited_checkin_configuration import IosExpeditedCheckinConfiguration
-

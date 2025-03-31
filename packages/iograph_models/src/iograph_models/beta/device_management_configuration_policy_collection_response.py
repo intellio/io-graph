@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class DeviceManagementConfigurationPolicyCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class DeviceManagementConfigurationPolicyCollectionResponse(BaseModel):
 	value: Optional[list[DeviceManagementConfigurationPolicy]] = Field(alias="value", default=None,)
 
 from .device_management_configuration_policy import DeviceManagementConfigurationPolicy
-

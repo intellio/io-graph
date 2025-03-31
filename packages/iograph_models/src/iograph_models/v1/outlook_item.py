@@ -1,10 +1,10 @@
 from __future__ import annotations
 from typing import Optional
+from datetime import datetime
+from pydantic import BaseModel, Field
 from pydantic import model_validator, ModelWrapValidatorHandler, ValidationError
 from typing_extensions import Self
 from typing import Any
-from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class OutlookItem(BaseModel):
@@ -31,15 +31,9 @@ class OutlookItem(BaseModel):
 			if mapping_key == "#microsoft.graph.event":
 				from .event import Event
 				return Event.model_validate(data)
-			if mapping_key == "#microsoft.graph.message":
-				from .message import Message
-				return Message.model_validate(data)
 			if mapping_key == "#microsoft.graph.calendarSharingMessage":
 				from .calendar_sharing_message import CalendarSharingMessage
 				return CalendarSharingMessage.model_validate(data)
-			if mapping_key == "#microsoft.graph.eventMessage":
-				from .event_message import EventMessage
-				return EventMessage.model_validate(data)
 			if mapping_key == "#microsoft.graph.eventMessageRequest":
 				from .event_message_request import EventMessageRequest
 				return EventMessageRequest.model_validate(data)
@@ -53,5 +47,4 @@ class OutlookItem(BaseModel):
 
 		except Exception as e:
 			raise e
-
 

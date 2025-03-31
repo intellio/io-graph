@@ -2,7 +2,7 @@ from __future__ import annotations
 from typing import Optional
 from typing import Union
 from typing import Annotated
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class AuthenticationCombinationConfigurationCollectionResponse(BaseModel):
@@ -12,4 +12,3 @@ class AuthenticationCombinationConfigurationCollectionResponse(BaseModel):
 
 from .fido2_combination_configuration import Fido2CombinationConfiguration
 from .x509_certificate_combination_configuration import X509CertificateCombinationConfiguration
-

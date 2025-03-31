@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class DepTvOSEnrollmentProfileCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class DepTvOSEnrollmentProfileCollectionResponse(BaseModel):
 	value: Optional[list[DepTvOSEnrollmentProfile]] = Field(alias="value", default=None,)
 
 from .dep_tv_o_s_enrollment_profile import DepTvOSEnrollmentProfile
-

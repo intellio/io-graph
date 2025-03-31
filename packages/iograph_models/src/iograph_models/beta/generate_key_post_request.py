@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class Generate_keyPostRequest(BaseModel):
@@ -8,5 +8,4 @@ class Generate_keyPostRequest(BaseModel):
 	kty: Optional[str] = Field(alias="kty", default=None,)
 	nbf: Optional[int] = Field(alias="nbf", default=None,)
 	exp: Optional[int] = Field(alias="exp", default=None,)
-
 

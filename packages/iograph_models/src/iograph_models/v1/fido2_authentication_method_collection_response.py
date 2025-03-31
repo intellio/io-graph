@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class Fido2AuthenticationMethodCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class Fido2AuthenticationMethodCollectionResponse(BaseModel):
 	value: Optional[list[Fido2AuthenticationMethod]] = Field(alias="value", default=None,)
 
 from .fido2_authentication_method import Fido2AuthenticationMethod
-

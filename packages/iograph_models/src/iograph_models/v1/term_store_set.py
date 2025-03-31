@@ -1,12 +1,13 @@
 from __future__ import annotations
 from typing import Optional
+from typing import Literal
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class TermStoreSet(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
+	odata_type: Literal["#microsoft.graph.termStore.set"] = Field(alias="@odata.type",)
 	createdDateTime: Optional[datetime] = Field(alias="createdDateTime", default=None,)
 	description: Optional[str] = Field(alias="description", default=None,)
 	localizedNames: Optional[list[TermStoreLocalizedName]] = Field(alias="localizedNames", default=None,)
@@ -21,5 +22,3 @@ from .key_value import KeyValue
 from .term_store_term import TermStoreTerm
 from .term_store_group import TermStoreGroup
 from .term_store_relation import TermStoreRelation
-from .term_store_term import TermStoreTerm
-

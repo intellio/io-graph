@@ -3,7 +3,7 @@ from typing import Optional
 from typing import Union
 from typing import Literal
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class List(BaseModel):
@@ -36,13 +36,7 @@ from .chat_message_mentioned_identity_set import ChatMessageMentionedIdentitySet
 from .chat_message_reaction_identity_set import ChatMessageReactionIdentitySet
 from .communications_identity_set import CommunicationsIdentitySet
 from .share_point_identity_set import SharePointIdentitySet
-from .chat_message_from_identity_set import ChatMessageFromIdentitySet
-from .chat_message_mentioned_identity_set import ChatMessageMentionedIdentitySet
-from .chat_message_reaction_identity_set import ChatMessageReactionIdentitySet
-from .communications_identity_set import CommunicationsIdentitySet
-from .share_point_identity_set import SharePointIdentitySet
 from .item_reference import ItemReference
-from .user import User
 from .user import User
 from .list_info import ListInfo
 from .sharepoint_ids import SharepointIds
@@ -53,4 +47,3 @@ from .drive import Drive
 from .list_item import ListItem
 from .rich_long_running_operation import RichLongRunningOperation
 from .subscription import Subscription
-

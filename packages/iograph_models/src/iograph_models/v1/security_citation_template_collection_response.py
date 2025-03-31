@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class SecurityCitationTemplateCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class SecurityCitationTemplateCollectionResponse(BaseModel):
 	value: Optional[list[SecurityCitationTemplate]] = Field(alias="value", default=None,)
 
 from .security_citation_template import SecurityCitationTemplate
-

@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class PlannerPlanConfigurationBucketDefinitionCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class PlannerPlanConfigurationBucketDefinitionCollectionResponse(BaseModel):
 	value: Optional[list[PlannerPlanConfigurationBucketDefinition]] = Field(alias="value", default=None,)
 
 from .planner_plan_configuration_bucket_definition import PlannerPlanConfigurationBucketDefinition
-

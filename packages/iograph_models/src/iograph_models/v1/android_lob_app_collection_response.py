@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class AndroidLobAppCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class AndroidLobAppCollectionResponse(BaseModel):
 	value: Optional[list[AndroidLobApp]] = Field(alias="value", default=None,)
 
 from .android_lob_app import AndroidLobApp
-

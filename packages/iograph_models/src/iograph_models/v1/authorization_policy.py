@@ -3,7 +3,7 @@ from uuid import UUID
 from typing import Optional
 from typing import Literal
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class AuthorizationPolicy(BaseModel):
@@ -23,4 +23,3 @@ class AuthorizationPolicy(BaseModel):
 
 from .allow_invites_from import AllowInvitesFrom
 from .default_user_role_permissions import DefaultUserRolePermissions
-

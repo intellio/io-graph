@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class CloudCertificationAuthorityLeafCertificateCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class CloudCertificationAuthorityLeafCertificateCollectionResponse(BaseModel):
 	value: Optional[list[CloudCertificationAuthorityLeafCertificate]] = Field(alias="value", default=None,)
 
 from .cloud_certification_authority_leaf_certificate import CloudCertificationAuthorityLeafCertificate
-

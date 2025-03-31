@@ -1,11 +1,12 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from typing import Literal
+from pydantic import BaseModel, Field
 
 
 class UserExperienceAnalyticsResourcePerformance(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
+	odata_type: Literal["#microsoft.graph.userExperienceAnalyticsResourcePerformance"] = Field(alias="@odata.type",)
 	averageSpikeTimeScore: Optional[int] = Field(alias="averageSpikeTimeScore", default=None,)
 	cpuClockSpeedInMHz: float | str | ReferenceNumeric
 	cpuDisplayName: Optional[str] = Field(alias="cpuDisplayName", default=None,)
@@ -28,12 +29,6 @@ class UserExperienceAnalyticsResourcePerformance(BaseModel):
 	totalRamInMB: float | str | ReferenceNumeric
 
 from .reference_numeric import ReferenceNumeric
-from .reference_numeric import ReferenceNumeric
-from .reference_numeric import ReferenceNumeric
 from .disk_type import DiskType
 from .user_experience_analytics_health_state import UserExperienceAnalyticsHealthState
 from .user_experience_analytics_machine_type import UserExperienceAnalyticsMachineType
-from .reference_numeric import ReferenceNumeric
-from .reference_numeric import ReferenceNumeric
-from .reference_numeric import ReferenceNumeric
-

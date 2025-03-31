@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class NewsLinkPageCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class NewsLinkPageCollectionResponse(BaseModel):
 	value: Optional[list[NewsLinkPage]] = Field(alias="value", default=None,)
 
 from .news_link_page import NewsLinkPage
-

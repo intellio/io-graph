@@ -2,7 +2,7 @@ from __future__ import annotations
 from typing import Optional
 from typing import Literal
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class SecurityEdiscoveryCustodian(BaseModel):
@@ -27,4 +27,3 @@ from .security_ediscovery_index_operation import SecurityEdiscoveryIndexOperatio
 from .security_site_source import SecuritySiteSource
 from .security_unified_group_source import SecurityUnifiedGroupSource
 from .security_user_source import SecurityUserSource
-

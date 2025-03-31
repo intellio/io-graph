@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class AttributeDefinition(BaseModel):
@@ -23,4 +23,3 @@ from .attribute_definition_metadata_entry import AttributeDefinitionMetadataEntr
 from .mutability import Mutability
 from .referenced_object import ReferencedObject
 from .attribute_type import AttributeType
-

@@ -2,7 +2,7 @@ from __future__ import annotations
 from typing import Optional
 from typing import Literal
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class WindowsUpdatesQualityUpdateCatalogEntry(BaseModel):
@@ -23,4 +23,3 @@ from .windows_updates_quality_update_cve_severity_information import WindowsUpda
 from .windows_updates_quality_update_cadence import WindowsUpdatesQualityUpdateCadence
 from .windows_updates_quality_update_classification import WindowsUpdatesQualityUpdateClassification
 from .windows_updates_product_revision import WindowsUpdatesProductRevision
-

@@ -3,7 +3,7 @@ from typing import Optional
 from typing import Union
 from typing import Literal
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class FederatedTokenValidationPolicy(BaseModel):
@@ -14,4 +14,3 @@ class FederatedTokenValidationPolicy(BaseModel):
 
 from .all_domains import AllDomains
 from .enumerated_domains import EnumeratedDomains
-

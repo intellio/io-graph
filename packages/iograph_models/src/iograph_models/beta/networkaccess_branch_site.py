@@ -1,12 +1,13 @@
 from __future__ import annotations
 from typing import Optional
+from typing import Literal
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class NetworkaccessBranchSite(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
+	odata_type: Literal["#microsoft.graph.networkaccess.branchSite"] = Field(alias="@odata.type",)
 	bandwidthCapacity: Optional[int] = Field(alias="bandwidthCapacity", default=None,)
 	connectivityState: Optional[NetworkaccessConnectivityState | str] = Field(alias="connectivityState", default=None,)
 	country: Optional[str] = Field(alias="country", default=None,)
@@ -23,4 +24,3 @@ from .networkaccess_region import NetworkaccessRegion
 from .networkaccess_branch_connectivity_configuration import NetworkaccessBranchConnectivityConfiguration
 from .networkaccess_device_link import NetworkaccessDeviceLink
 from .networkaccess_forwarding_profile import NetworkaccessForwardingProfile
-

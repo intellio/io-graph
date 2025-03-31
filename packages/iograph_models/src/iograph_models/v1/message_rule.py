@@ -1,11 +1,12 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from typing import Literal
+from pydantic import BaseModel, Field
 
 
 class MessageRule(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
+	odata_type: Literal["#microsoft.graph.messageRule"] = Field(alias="@odata.type",)
 	actions: Optional[MessageRuleActions] = Field(alias="actions", default=None,)
 	conditions: Optional[MessageRulePredicates] = Field(alias="conditions", default=None,)
 	displayName: Optional[str] = Field(alias="displayName", default=None,)
@@ -17,5 +18,3 @@ class MessageRule(BaseModel):
 
 from .message_rule_actions import MessageRuleActions
 from .message_rule_predicates import MessageRulePredicates
-from .message_rule_predicates import MessageRulePredicates
-

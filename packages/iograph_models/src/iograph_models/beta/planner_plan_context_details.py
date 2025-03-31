@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class PlannerPlanContextDetails(BaseModel):
@@ -12,4 +12,3 @@ class PlannerPlanContextDetails(BaseModel):
 
 from .planner_plan_context_type import PlannerPlanContextType
 from .planner_context_state import PlannerContextState
-

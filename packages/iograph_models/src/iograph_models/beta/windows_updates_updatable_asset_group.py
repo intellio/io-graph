@@ -3,7 +3,7 @@ from typing import Optional
 from typing import Union
 from typing import Literal
 from typing import Annotated
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class WindowsUpdatesUpdatableAssetGroup(BaseModel):
@@ -12,4 +12,3 @@ class WindowsUpdatesUpdatableAssetGroup(BaseModel):
 	members: Optional[list[Annotated[Union[WindowsUpdatesAzureADDevice, WindowsUpdatesUpdatableAssetGroup],Field(discriminator="odata_type")]]] = Field(alias="members", default=None,)
 
 from .windows_updates_azure_a_d_device import WindowsUpdatesAzureADDevice
-

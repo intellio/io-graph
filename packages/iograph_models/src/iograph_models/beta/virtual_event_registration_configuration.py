@@ -2,10 +2,10 @@ from __future__ import annotations
 from typing import Optional
 from typing import Union
 from typing import Annotated
+from pydantic import BaseModel, Field
 from pydantic import model_validator, ModelWrapValidatorHandler, ValidationError
 from typing_extensions import Self
 from typing import Any
-from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class VirtualEventRegistrationConfiguration(BaseModel):
@@ -35,4 +35,3 @@ class VirtualEventRegistrationConfiguration(BaseModel):
 
 from .virtual_event_registration_custom_question import VirtualEventRegistrationCustomQuestion
 from .virtual_event_registration_predefined_question import VirtualEventRegistrationPredefinedQuestion
-

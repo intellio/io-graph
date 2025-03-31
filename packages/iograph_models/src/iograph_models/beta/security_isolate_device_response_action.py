@@ -1,7 +1,7 @@
 from __future__ import annotations
 from typing import Optional
 from typing import Literal
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class SecurityIsolateDeviceResponseAction(BaseModel):
@@ -11,4 +11,3 @@ class SecurityIsolateDeviceResponseAction(BaseModel):
 
 from .security_device_id_entity_identifier import SecurityDeviceIdEntityIdentifier
 from .security_isolation_type import SecurityIsolationType
-

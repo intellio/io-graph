@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class MfaUserCountMetricCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class MfaUserCountMetricCollectionResponse(BaseModel):
 	value: Optional[list[MfaUserCountMetric]] = Field(alias="value", default=None,)
 
 from .mfa_user_count_metric import MfaUserCountMetric
-

@@ -1,7 +1,7 @@
 from __future__ import annotations
 from typing import Optional
 from typing import Literal
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class EmailActivityStatistics(BaseModel):
@@ -17,4 +17,3 @@ class EmailActivityStatistics(BaseModel):
 	sentEmail: Optional[str] = Field(alias="sentEmail", default=None,)
 
 from .analytics_activity_type import AnalyticsActivityType
-

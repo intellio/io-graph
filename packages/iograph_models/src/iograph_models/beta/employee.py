@@ -2,7 +2,7 @@ from __future__ import annotations
 from uuid import UUID
 from typing import Optional
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class Employee(BaseModel):
@@ -29,4 +29,3 @@ class Employee(BaseModel):
 
 from .postal_address_type import PostalAddressType
 from .picture import Picture
-

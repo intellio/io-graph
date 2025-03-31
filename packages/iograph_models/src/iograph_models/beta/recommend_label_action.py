@@ -4,7 +4,7 @@ from typing import Optional
 from typing import Union
 from typing import Literal
 from typing import Annotated
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class RecommendLabelAction(BaseModel):
@@ -30,4 +30,3 @@ from .remove_protection_action import RemoveProtectionAction
 from .remove_watermark_action import RemoveWatermarkAction
 from .action_source import ActionSource
 from .label_details import LabelDetails
-

@@ -1,11 +1,11 @@
 from __future__ import annotations
 from typing import Optional
 from typing import Literal
+from datetime import datetime
+from pydantic import BaseModel, Field
 from pydantic import model_validator, ModelWrapValidatorHandler, ValidationError
 from typing_extensions import Self
 from typing import Any
-from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class SecurityFileThreatSubmission(BaseModel):
@@ -52,4 +52,3 @@ from .security_submission_user_identity import SecuritySubmissionUserIdentity
 from .security_submission_result import SecuritySubmissionResult
 from .security_submission_source import SecuritySubmissionSource
 from .security_long_running_operation_status import SecurityLongRunningOperationStatus
-

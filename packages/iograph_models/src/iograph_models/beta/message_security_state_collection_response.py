@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class MessageSecurityStateCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class MessageSecurityStateCollectionResponse(BaseModel):
 	value: Optional[list[MessageSecurityState]] = Field(alias="value", default=None,)
 
 from .message_security_state import MessageSecurityState
-

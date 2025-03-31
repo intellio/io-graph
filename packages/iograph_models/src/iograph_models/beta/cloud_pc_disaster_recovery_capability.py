@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class CloudPcDisasterRecoveryCapability(BaseModel):
@@ -12,4 +12,3 @@ class CloudPcDisasterRecoveryCapability(BaseModel):
 
 from .cloud_pc_disaster_recovery_capability_type import CloudPcDisasterRecoveryCapabilityType
 from .cloud_pc_disaster_recovery_license_type import CloudPcDisasterRecoveryLicenseType
-

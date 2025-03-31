@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class BookingWorkTimeSlotCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class BookingWorkTimeSlotCollectionResponse(BaseModel):
 	value: Optional[list[BookingWorkTimeSlot]] = Field(alias="value", default=None,)
 
 from .booking_work_time_slot import BookingWorkTimeSlot
-

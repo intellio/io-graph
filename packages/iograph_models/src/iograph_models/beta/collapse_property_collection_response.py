@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class CollapsePropertyCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class CollapsePropertyCollectionResponse(BaseModel):
 	value: Optional[list[CollapseProperty]] = Field(alias="value", default=None,)
 
 from .collapse_property import CollapseProperty
-

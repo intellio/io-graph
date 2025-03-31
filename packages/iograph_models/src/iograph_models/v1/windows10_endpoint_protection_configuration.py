@@ -2,7 +2,7 @@ from __future__ import annotations
 from typing import Optional
 from typing import Literal
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class Windows10EndpointProtectionConfiguration(BaseModel):
@@ -70,6 +70,3 @@ from .firewall_certificate_revocation_list_check_method_type import FirewallCert
 from .firewall_packet_queueing_method_type import FirewallPacketQueueingMethodType
 from .firewall_pre_shared_key_encoding_method_type import FirewallPreSharedKeyEncodingMethodType
 from .windows_firewall_network_profile import WindowsFirewallNetworkProfile
-from .windows_firewall_network_profile import WindowsFirewallNetworkProfile
-from .windows_firewall_network_profile import WindowsFirewallNetworkProfile
-

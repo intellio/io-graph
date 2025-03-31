@@ -1,7 +1,7 @@
 from __future__ import annotations
 from typing import Optional
 from typing import Literal
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class OmaSettingBase64(BaseModel):
@@ -13,5 +13,4 @@ class OmaSettingBase64(BaseModel):
 	odata_type: Literal["#microsoft.graph.omaSettingBase64"] = Field(alias="@odata.type", default="#microsoft.graph.omaSettingBase64")
 	fileName: Optional[str] = Field(alias="fileName", default=None,)
 	value: Optional[str] = Field(alias="value", default=None,)
-
 

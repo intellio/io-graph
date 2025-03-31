@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class Assign_sensitivity_labelPostRequest(BaseModel):
@@ -8,4 +8,3 @@ class Assign_sensitivity_labelPostRequest(BaseModel):
 	assignmentMethod: Optional[SensitivityLabelAssignmentMethod | str] = Field(alias="assignmentMethod", default=None,)
 
 from .sensitivity_label_assignment_method import SensitivityLabelAssignmentMethod
-

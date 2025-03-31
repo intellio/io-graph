@@ -2,7 +2,7 @@ from __future__ import annotations
 from typing import Optional
 from typing import Union
 from typing import Annotated
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class NetworkaccessRelatedResourceCollectionResponse(BaseModel):
@@ -23,4 +23,3 @@ from .networkaccess_related_transaction import NetworkaccessRelatedTransaction
 from .networkaccess_related_url import NetworkaccessRelatedUrl
 from .networkaccess_related_user import NetworkaccessRelatedUser
 from .networkaccess_related_web_category import NetworkaccessRelatedWebCategory
-

@@ -1,11 +1,12 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from typing import Literal
+from pydantic import BaseModel, Field
 
 
 class TenantSetupInfo(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
+	odata_type: Literal["#microsoft.graph.tenantSetupInfo"] = Field(alias="@odata.type",)
 	firstTimeSetup: Optional[bool] = Field(alias="firstTimeSetup", default=None,)
 	relevantRolesSettings: Optional[list[str]] = Field(alias="relevantRolesSettings", default=None,)
 	setupStatus: Optional[SetupStatus | str] = Field(alias="setupStatus", default=None,)
@@ -15,4 +16,3 @@ class TenantSetupInfo(BaseModel):
 
 from .setup_status import SetupStatus
 from .privileged_role_settings import PrivilegedRoleSettings
-

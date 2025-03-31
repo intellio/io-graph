@@ -1,7 +1,7 @@
 from __future__ import annotations
 from typing import Optional
 from typing import Literal
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class PlannerExternalPlanSource(BaseModel):
@@ -12,4 +12,3 @@ class PlannerExternalPlanSource(BaseModel):
 	externalObjectId: Optional[str] = Field(alias="externalObjectId", default=None,)
 
 from .planner_creation_source_kind import PlannerCreationSourceKind
-

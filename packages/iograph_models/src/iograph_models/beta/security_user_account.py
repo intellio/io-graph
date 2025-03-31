@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class SecurityUserAccount(BaseModel):
@@ -11,5 +11,4 @@ class SecurityUserAccount(BaseModel):
 	userPrincipalName: Optional[str] = Field(alias="userPrincipalName", default=None,)
 	userSid: Optional[str] = Field(alias="userSid", default=None,)
 	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
-
 

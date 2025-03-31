@@ -1,12 +1,13 @@
 from __future__ import annotations
 from typing import Optional
+from typing import Literal
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class EnrollmentTroubleshootingEvent(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
+	odata_type: Literal["#microsoft.graph.enrollmentTroubleshootingEvent"] = Field(alias="@odata.type",)
 	additionalInformation: Optional[list[KeyValuePair]] = Field(alias="additionalInformation", default=None,)
 	correlationId: Optional[str] = Field(alias="correlationId", default=None,)
 	eventDateTime: Optional[datetime] = Field(alias="eventDateTime", default=None,)
@@ -25,4 +26,3 @@ from .key_value_pair import KeyValuePair
 from .device_management_troubleshooting_error_details import DeviceManagementTroubleshootingErrorDetails
 from .device_enrollment_type import DeviceEnrollmentType
 from .device_enrollment_failure_reason import DeviceEnrollmentFailureReason
-

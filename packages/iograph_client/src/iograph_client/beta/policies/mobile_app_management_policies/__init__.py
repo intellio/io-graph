@@ -14,9 +14,9 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_mobility_management_policy_id import ByMobilityManagementPolicyIdRequest
 	from ....request_adapter import HttpxRequestAdapter
+from iograph_models.beta.mobility_management_policy import MobilityManagementPolicy
 from iograph_models.beta.mobility_management_policy_collection_response import MobilityManagementPolicyCollectionResponse
 from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
-from iograph_models.beta.mobility_management_policy import MobilityManagementPolicy
 
 
 class MobileAppManagementPoliciesRequest(BaseRequestBuilder):

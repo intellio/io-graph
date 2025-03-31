@@ -3,7 +3,7 @@ from typing import Optional
 from typing import Union
 from typing import Literal
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class WindowsPhone81VpnConfiguration(BaseModel):
@@ -56,4 +56,3 @@ from .windows_vpn_connection_type import WindowsVpnConnectionType
 from .windows81_vpn_proxy_server import Windows81VpnProxyServer
 from .vpn_authentication_method import VpnAuthenticationMethod
 from .windows_phone81_s_c_e_p_certificate_profile import WindowsPhone81SCEPCertificateProfile
-

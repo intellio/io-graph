@@ -1,11 +1,12 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from typing import Literal
+from pydantic import BaseModel, Field
 
 
 class SecurityBaselineSettingState(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
+	odata_type: Literal["#microsoft.graph.securityBaselineSettingState"] = Field(alias="@odata.type",)
 	contributingPolicies: Optional[list[SecurityBaselineContributingPolicy]] = Field(alias="contributingPolicies", default=None,)
 	errorCode: Optional[str] = Field(alias="errorCode", default=None,)
 	settingCategoryId: Optional[str] = Field(alias="settingCategoryId", default=None,)
@@ -18,4 +19,3 @@ class SecurityBaselineSettingState(BaseModel):
 from .security_baseline_contributing_policy import SecurityBaselineContributingPolicy
 from .setting_source import SettingSource
 from .security_baseline_compliance_state import SecurityBaselineComplianceState
-

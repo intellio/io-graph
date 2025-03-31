@@ -17,8 +17,8 @@ if TYPE_CHECKING:
 	from .attachment_sessions import AttachmentSessionsRequest
 	from .attachments import AttachmentsRequest
 	from .........request_adapter import HttpxRequestAdapter
-from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.beta.todo_task import TodoTask
+from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 
 
 class ByTodoTaskIdRequest(BaseRequestBuilder):

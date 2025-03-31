@@ -1,12 +1,13 @@
 from __future__ import annotations
 from typing import Optional
+from typing import Literal
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class AccessPackageAssignment(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
+	odata_type: Literal["#microsoft.graph.accessPackageAssignment"] = Field(alias="@odata.type",)
 	customExtensionCalloutInstances: Optional[list[CustomExtensionCalloutInstance]] = Field(alias="customExtensionCalloutInstances", default=None,)
 	expiredDateTime: Optional[datetime] = Field(alias="expiredDateTime", default=None,)
 	schedule: Optional[EntitlementManagementSchedule] = Field(alias="schedule", default=None,)
@@ -22,4 +23,3 @@ from .access_package_assignment_state import AccessPackageAssignmentState
 from .access_package import AccessPackage
 from .access_package_assignment_policy import AccessPackageAssignmentPolicy
 from .access_package_subject import AccessPackageSubject
-

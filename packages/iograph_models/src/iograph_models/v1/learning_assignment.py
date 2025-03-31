@@ -1,12 +1,13 @@
 from __future__ import annotations
 from typing import Optional
+from typing import Literal
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class LearningAssignment(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
+	odata_type: Literal["#microsoft.graph.learningAssignment"] = Field(alias="@odata.type",)
 	completedDateTime: Optional[datetime] = Field(alias="completedDateTime", default=None,)
 	completionPercentage: Optional[int] = Field(alias="completionPercentage", default=None,)
 	externalcourseActivityId: Optional[str] = Field(alias="externalcourseActivityId", default=None,)
@@ -24,4 +25,3 @@ from .course_status import CourseStatus
 from .assignment_type import AssignmentType
 from .date_time_time_zone import DateTimeTimeZone
 from .item_body import ItemBody
-

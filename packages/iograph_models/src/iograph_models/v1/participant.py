@@ -1,11 +1,12 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from typing import Literal
+from pydantic import BaseModel, Field
 
 
 class Participant(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
+	odata_type: Literal["#microsoft.graph.participant"] = Field(alias="@odata.type",)
 	info: Optional[ParticipantInfo] = Field(alias="info", default=None,)
 	isInLobby: Optional[bool] = Field(alias="isInLobby", default=None,)
 	isMuted: Optional[bool] = Field(alias="isMuted", default=None,)
@@ -21,4 +22,3 @@ from .media_stream import MediaStream
 from .recording_info import RecordingInfo
 from .removed_state import RemovedState
 from .online_meeting_restricted import OnlineMeetingRestricted
-

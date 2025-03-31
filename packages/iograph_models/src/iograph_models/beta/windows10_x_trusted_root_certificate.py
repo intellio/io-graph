@@ -2,7 +2,7 @@ from __future__ import annotations
 from typing import Optional
 from typing import Literal
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class Windows10XTrustedRootCertificate(BaseModel):
@@ -21,4 +21,3 @@ class Windows10XTrustedRootCertificate(BaseModel):
 
 from .device_management_resource_access_profile_assignment import DeviceManagementResourceAccessProfileAssignment
 from .certificate_destination_store import CertificateDestinationStore
-

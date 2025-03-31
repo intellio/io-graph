@@ -2,7 +2,7 @@ from __future__ import annotations
 from typing import Optional
 from typing import Union
 from typing import Annotated
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class AuthorizationSystemTypeActionCollectionResponse(BaseModel):
@@ -13,4 +13,3 @@ class AuthorizationSystemTypeActionCollectionResponse(BaseModel):
 from .aws_authorization_system_type_action import AwsAuthorizationSystemTypeAction
 from .azure_authorization_system_type_action import AzureAuthorizationSystemTypeAction
 from .gcp_authorization_system_type_action import GcpAuthorizationSystemTypeAction
-

@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class WindowsUpdatesDeploymentSettings(BaseModel):
@@ -16,4 +16,3 @@ from .windows_updates_expedite_settings import WindowsUpdatesExpediteSettings
 from .windows_updates_monitoring_settings import WindowsUpdatesMonitoringSettings
 from .windows_updates_schedule_settings import WindowsUpdatesScheduleSettings
 from .windows_updates_user_experience_settings import WindowsUpdatesUserExperienceSettings
-

@@ -2,7 +2,7 @@ from __future__ import annotations
 from typing import Optional
 from typing import Union
 from typing import Annotated
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class PartnerSecuritySecurityRequirementCollectionResponse(BaseModel):
@@ -14,4 +14,3 @@ from .partner_security_admins_mfa_enforced_security_requirement import PartnerSe
 from .partner_security_customers_mfa_enforced_security_requirement import PartnerSecurityCustomersMfaEnforcedSecurityRequirement
 from .partner_security_customers_spending_budget_security_requirement import PartnerSecurityCustomersSpendingBudgetSecurityRequirement
 from .partner_security_response_time_security_requirement import PartnerSecurityResponseTimeSecurityRequirement
-

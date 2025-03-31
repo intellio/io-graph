@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class SubscribeToToneOperationCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class SubscribeToToneOperationCollectionResponse(BaseModel):
 	value: Optional[list[SubscribeToToneOperation]] = Field(alias="value", default=None,)
 
 from .subscribe_to_tone_operation import SubscribeToToneOperation
-

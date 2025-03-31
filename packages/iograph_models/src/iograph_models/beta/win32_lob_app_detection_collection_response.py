@@ -2,7 +2,7 @@ from __future__ import annotations
 from typing import Optional
 from typing import Union
 from typing import Annotated
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class Win32LobAppDetectionCollectionResponse(BaseModel):
@@ -14,4 +14,3 @@ from .win32_lob_app_file_system_detection import Win32LobAppFileSystemDetection
 from .win32_lob_app_power_shell_script_detection import Win32LobAppPowerShellScriptDetection
 from .win32_lob_app_product_code_detection import Win32LobAppProductCodeDetection
 from .win32_lob_app_registry_detection import Win32LobAppRegistryDetection
-

@@ -1,7 +1,7 @@
 from __future__ import annotations
 from typing import Optional
 from typing import Literal
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class JoinTransformation(BaseModel):
@@ -11,5 +11,3 @@ class JoinTransformation(BaseModel):
 	separator: Optional[str] = Field(alias="separator", default=None,)
 
 from .transformation_attribute import TransformationAttribute
-from .transformation_attribute import TransformationAttribute
-

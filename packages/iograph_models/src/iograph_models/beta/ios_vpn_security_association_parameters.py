@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class IosVpnSecurityAssociationParameters(BaseModel):
@@ -12,4 +12,3 @@ class IosVpnSecurityAssociationParameters(BaseModel):
 
 from .vpn_encryption_algorithm_type import VpnEncryptionAlgorithmType
 from .vpn_integrity_algorithm_type import VpnIntegrityAlgorithmType
-

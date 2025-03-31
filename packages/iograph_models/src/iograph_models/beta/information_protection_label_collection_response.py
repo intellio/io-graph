@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class InformationProtectionLabelCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class InformationProtectionLabelCollectionResponse(BaseModel):
 	value: Optional[list[InformationProtectionLabel]] = Field(alias="value", default=None,)
 
 from .information_protection_label import InformationProtectionLabel
-

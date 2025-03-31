@@ -1,7 +1,7 @@
 from __future__ import annotations
 from typing import Optional
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class UserSimulationDetails(BaseModel):
@@ -20,4 +20,3 @@ class UserSimulationDetails(BaseModel):
 from .user_simulation_event_info import UserSimulationEventInfo
 from .attack_simulation_user import AttackSimulationUser
 from .user_training_event_info import UserTrainingEventInfo
-

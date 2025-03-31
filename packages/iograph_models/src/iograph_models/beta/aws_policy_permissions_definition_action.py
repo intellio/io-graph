@@ -1,7 +1,7 @@
 from __future__ import annotations
 from typing import Optional
 from typing import Literal
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class AwsPolicyPermissionsDefinitionAction(BaseModel):
@@ -10,4 +10,3 @@ class AwsPolicyPermissionsDefinitionAction(BaseModel):
 	policies: Optional[list[PermissionsDefinitionAwsPolicy]] = Field(alias="policies", default=None,)
 
 from .permissions_definition_aws_policy import PermissionsDefinitionAwsPolicy
-

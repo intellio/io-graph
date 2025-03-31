@@ -1,9 +1,9 @@
 from __future__ import annotations
 from typing import Optional
+from pydantic import BaseModel, Field
 from pydantic import model_validator, ModelWrapValidatorHandler, ValidationError
 from typing_extensions import Self
 from typing import Any
-from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class AuthorizationSystemTypeAction(BaseModel):
@@ -40,4 +40,3 @@ class AuthorizationSystemTypeAction(BaseModel):
 
 from .authorization_system_action_type import AuthorizationSystemActionType
 from .authorization_system_action_severity import AuthorizationSystemActionSeverity
-

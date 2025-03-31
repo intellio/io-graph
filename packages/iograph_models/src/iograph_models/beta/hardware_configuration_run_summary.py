@@ -1,12 +1,13 @@
 from __future__ import annotations
 from typing import Optional
+from typing import Literal
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class HardwareConfigurationRunSummary(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
+	odata_type: Literal["#microsoft.graph.hardwareConfigurationRunSummary"] = Field(alias="@odata.type",)
 	errorDeviceCount: Optional[int] = Field(alias="errorDeviceCount", default=None,)
 	errorUserCount: Optional[int] = Field(alias="errorUserCount", default=None,)
 	failedDeviceCount: Optional[int] = Field(alias="failedDeviceCount", default=None,)
@@ -20,5 +21,4 @@ class HardwareConfigurationRunSummary(BaseModel):
 	successfulUserCount: Optional[int] = Field(alias="successfulUserCount", default=None,)
 	unknownDeviceCount: Optional[int] = Field(alias="unknownDeviceCount", default=None,)
 	unknownUserCount: Optional[int] = Field(alias="unknownUserCount", default=None,)
-
 

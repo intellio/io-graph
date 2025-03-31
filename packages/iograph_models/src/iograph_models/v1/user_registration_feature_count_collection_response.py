@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class UserRegistrationFeatureCountCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class UserRegistrationFeatureCountCollectionResponse(BaseModel):
 	value: Optional[list[UserRegistrationFeatureCount]] = Field(alias="value", default=None,)
 
 from .user_registration_feature_count import UserRegistrationFeatureCount
-

@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class OnPremisesProvisioningErrorCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class OnPremisesProvisioningErrorCollectionResponse(BaseModel):
 	value: Optional[list[OnPremisesProvisioningError]] = Field(alias="value", default=None,)
 
 from .on_premises_provisioning_error import OnPremisesProvisioningError
-

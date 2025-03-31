@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class PlannerTaskCompletionRequirementDetails(BaseModel):
@@ -12,4 +12,3 @@ class PlannerTaskCompletionRequirementDetails(BaseModel):
 from .planner_approval_requirement import PlannerApprovalRequirement
 from .planner_checklist_requirement import PlannerChecklistRequirement
 from .planner_forms_requirement import PlannerFormsRequirement
-

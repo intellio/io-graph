@@ -11,8 +11,8 @@ from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:
 	from .......request_adapter import HttpxRequestAdapter
-from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.beta.get_applicable_content_types_for_list_with_listid_get_response import Get_applicable_content_types_for_list_with_listidGetResponse
+from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 
 
 class GetApplicableContentTypesForListWithListIdRequest(BaseRequestBuilder):

@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class WorkbookPivotTableCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class WorkbookPivotTableCollectionResponse(BaseModel):
 	value: Optional[list[WorkbookPivotTable]] = Field(alias="value", default=None,)
 
 from .workbook_pivot_table import WorkbookPivotTable
-

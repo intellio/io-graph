@@ -1,11 +1,12 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from typing import Literal
+from pydantic import BaseModel, Field
 
 
 class WorkbookTable(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
+	odata_type: Literal["#microsoft.graph.workbookTable"] = Field(alias="@odata.type",)
 	highlightFirstColumn: Optional[bool] = Field(alias="highlightFirstColumn", default=None,)
 	highlightLastColumn: Optional[bool] = Field(alias="highlightLastColumn", default=None,)
 	legacyId: Optional[str] = Field(alias="legacyId", default=None,)
@@ -25,4 +26,3 @@ from .workbook_table_column import WorkbookTableColumn
 from .workbook_table_row import WorkbookTableRow
 from .workbook_table_sort import WorkbookTableSort
 from .workbook_worksheet import WorkbookWorksheet
-

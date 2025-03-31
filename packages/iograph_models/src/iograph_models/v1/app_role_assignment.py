@@ -3,7 +3,7 @@ from uuid import UUID
 from typing import Optional
 from typing import Literal
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class AppRoleAssignment(BaseModel):
@@ -17,5 +17,4 @@ class AppRoleAssignment(BaseModel):
 	principalType: Optional[str] = Field(alias="principalType", default=None,)
 	resourceDisplayName: Optional[str] = Field(alias="resourceDisplayName", default=None,)
 	resourceId: Optional[UUID] = Field(alias="resourceId", default=None,)
-
 

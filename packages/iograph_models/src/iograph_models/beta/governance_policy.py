@@ -2,7 +2,7 @@ from __future__ import annotations
 from typing import Optional
 from typing import Union
 from typing import Annotated
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class GovernancePolicy(BaseModel):
@@ -14,4 +14,3 @@ from .group_membership_governance_criteria import GroupMembershipGovernanceCrite
 from .role_membership_governance_criteria import RoleMembershipGovernanceCriteria
 from .user_governance_criteria import UserGovernanceCriteria
 from .governance_notification_policy import GovernanceNotificationPolicy
-

@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class Get_group_policy_settings_device_settings_reportPostRequest(BaseModel):
@@ -14,5 +14,4 @@ class Get_group_policy_settings_device_settings_reportPostRequest(BaseModel):
 	sessionId: Optional[str] = Field(alias="sessionId", default=None,)
 	filter: Optional[str] = Field(alias="filter", default=None,)
 	skiptoken: Optional[str] = Field(alias="skiptoken", default=None,)
-
 

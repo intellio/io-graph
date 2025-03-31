@@ -2,7 +2,7 @@ from __future__ import annotations
 from typing import Optional
 from typing import Union
 from typing import Annotated
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class DeviceManagementSettingDefinitionCollectionResponse(BaseModel):
@@ -13,4 +13,3 @@ class DeviceManagementSettingDefinitionCollectionResponse(BaseModel):
 from .device_management_abstract_complex_setting_definition import DeviceManagementAbstractComplexSettingDefinition
 from .device_management_collection_setting_definition import DeviceManagementCollectionSettingDefinition
 from .device_management_complex_setting_definition import DeviceManagementComplexSettingDefinition
-

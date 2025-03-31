@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class DomainDnsUnavailableRecordCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class DomainDnsUnavailableRecordCollectionResponse(BaseModel):
 	value: Optional[list[DomainDnsUnavailableRecord]] = Field(alias="value", default=None,)
 
 from .domain_dns_unavailable_record import DomainDnsUnavailableRecord
-

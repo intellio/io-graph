@@ -1,12 +1,13 @@
 from __future__ import annotations
 from typing import Optional
+from typing import Literal
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class SecureScore(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
+	odata_type: Literal["#microsoft.graph.secureScore"] = Field(alias="@odata.type",)
 	activeUserCount: Optional[int] = Field(alias="activeUserCount", default=None,)
 	averageComparativeScores: Optional[list[AverageComparativeScore]] = Field(alias="averageComparativeScores", default=None,)
 	azureTenantId: Optional[str] = Field(alias="azureTenantId", default=None,)
@@ -21,6 +22,4 @@ class SecureScore(BaseModel):
 from .average_comparative_score import AverageComparativeScore
 from .control_score import ControlScore
 from .reference_numeric import ReferenceNumeric
-from .reference_numeric import ReferenceNumeric
 from .security_vendor_information import SecurityVendorInformation
-

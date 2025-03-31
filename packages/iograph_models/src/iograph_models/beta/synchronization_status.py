@@ -1,7 +1,7 @@
 from __future__ import annotations
 from typing import Optional
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class SynchronizationStatus(BaseModel):
@@ -21,9 +21,6 @@ class SynchronizationStatus(BaseModel):
 
 from .synchronization_status_code import SynchronizationStatusCode
 from .synchronization_task_execution import SynchronizationTaskExecution
-from .synchronization_task_execution import SynchronizationTaskExecution
-from .synchronization_task_execution import SynchronizationTaskExecution
 from .synchronization_progress import SynchronizationProgress
 from .synchronization_quarantine import SynchronizationQuarantine
 from .string_key_long_value_pair import StringKeyLongValuePair
-

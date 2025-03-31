@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class DeviceManagementIntentCustomizedSetting(BaseModel):
@@ -8,5 +8,4 @@ class DeviceManagementIntentCustomizedSetting(BaseModel):
 	defaultJson: Optional[str] = Field(alias="defaultJson", default=None,)
 	definitionId: Optional[str] = Field(alias="definitionId", default=None,)
 	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
-
 

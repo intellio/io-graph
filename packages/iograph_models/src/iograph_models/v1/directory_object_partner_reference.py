@@ -3,7 +3,7 @@ from uuid import UUID
 from typing import Optional
 from typing import Literal
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class DirectoryObjectPartnerReference(BaseModel):
@@ -14,5 +14,4 @@ class DirectoryObjectPartnerReference(BaseModel):
 	displayName: Optional[str] = Field(alias="displayName", default=None,)
 	externalPartnerTenantId: Optional[UUID] = Field(alias="externalPartnerTenantId", default=None,)
 	objectType: Optional[str] = Field(alias="objectType", default=None,)
-
 

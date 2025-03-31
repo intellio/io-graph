@@ -14,9 +14,9 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_data_sharing_consent_id import ByDataSharingConsentIdRequest
 	from ....request_adapter import HttpxRequestAdapter
+from iograph_models.beta.data_sharing_consent import DataSharingConsent
 from iograph_models.beta.data_sharing_consent_collection_response import DataSharingConsentCollectionResponse
 from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
-from iograph_models.beta.data_sharing_consent import DataSharingConsent
 
 
 class DataSharingConsentsRequest(BaseRequestBuilder):

@@ -1,12 +1,13 @@
 from __future__ import annotations
 from typing import Optional
+from typing import Literal
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class NetworkaccessRemoteNetwork(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
+	odata_type: Literal["#microsoft.graph.networkaccess.remoteNetwork"] = Field(alias="@odata.type",)
 	lastModifiedDateTime: Optional[datetime] = Field(alias="lastModifiedDateTime", default=None,)
 	name: Optional[str] = Field(alias="name", default=None,)
 	region: Optional[NetworkaccessRegion | str] = Field(alias="region", default=None,)
@@ -19,4 +20,3 @@ from .networkaccess_region import NetworkaccessRegion
 from .networkaccess_remote_network_connectivity_configuration import NetworkaccessRemoteNetworkConnectivityConfiguration
 from .networkaccess_device_link import NetworkaccessDeviceLink
 from .networkaccess_forwarding_profile import NetworkaccessForwardingProfile
-

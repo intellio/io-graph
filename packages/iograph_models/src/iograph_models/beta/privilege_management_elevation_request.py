@@ -1,12 +1,13 @@
 from __future__ import annotations
 from typing import Optional
+from typing import Literal
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class PrivilegeManagementElevationRequest(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
+	odata_type: Literal["#microsoft.graph.privilegeManagementElevationRequest"] = Field(alias="@odata.type",)
 	applicationDetail: Optional[ElevationRequestApplicationDetail] = Field(alias="applicationDetail", default=None,)
 	deviceName: Optional[str] = Field(alias="deviceName", default=None,)
 	requestCreatedDateTime: Optional[datetime] = Field(alias="requestCreatedDateTime", default=None,)
@@ -24,4 +25,3 @@ class PrivilegeManagementElevationRequest(BaseModel):
 
 from .elevation_request_application_detail import ElevationRequestApplicationDetail
 from .elevation_request_state import ElevationRequestState
-

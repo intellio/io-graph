@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class UnifiedRolePermissionCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class UnifiedRolePermissionCollectionResponse(BaseModel):
 	value: Optional[list[UnifiedRolePermission]] = Field(alias="value", default=None,)
 
 from .unified_role_permission import UnifiedRolePermission
-

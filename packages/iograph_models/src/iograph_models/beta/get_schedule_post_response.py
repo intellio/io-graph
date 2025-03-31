@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class Get_schedulePostResponse(BaseModel):
@@ -9,4 +9,3 @@ class Get_schedulePostResponse(BaseModel):
 	value: Optional[list[ScheduleInformation]] = Field(alias="value", default=None,)
 
 from .schedule_information import ScheduleInformation
-

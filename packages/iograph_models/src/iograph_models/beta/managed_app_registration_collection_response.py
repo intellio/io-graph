@@ -2,7 +2,7 @@ from __future__ import annotations
 from typing import Optional
 from typing import Union
 from typing import Annotated
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class ManagedAppRegistrationCollectionResponse(BaseModel):
@@ -13,4 +13,3 @@ class ManagedAppRegistrationCollectionResponse(BaseModel):
 from .android_managed_app_registration import AndroidManagedAppRegistration
 from .ios_managed_app_registration import IosManagedAppRegistration
 from .windows_managed_app_registration import WindowsManagedAppRegistration
-

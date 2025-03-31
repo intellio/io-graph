@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class Work_day__intlPostRequest(BaseModel):
@@ -8,5 +8,4 @@ class Work_day__intlPostRequest(BaseModel):
 	days: Optional[str] = Field(alias="days", default=None,)
 	weekend: Optional[str] = Field(alias="weekend", default=None,)
 	holidays: Optional[str] = Field(alias="holidays", default=None,)
-
 

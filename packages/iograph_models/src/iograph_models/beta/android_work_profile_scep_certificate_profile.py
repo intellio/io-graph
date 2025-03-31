@@ -2,7 +2,7 @@ from __future__ import annotations
 from typing import Optional
 from typing import Literal
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class AndroidWorkProfileScepCertificateProfile(BaseModel):
@@ -63,4 +63,3 @@ from .hash_algorithms import HashAlgorithms
 from .key_size import KeySize
 from .key_usages import KeyUsages
 from .managed_device_certificate_state import ManagedDeviceCertificateState
-

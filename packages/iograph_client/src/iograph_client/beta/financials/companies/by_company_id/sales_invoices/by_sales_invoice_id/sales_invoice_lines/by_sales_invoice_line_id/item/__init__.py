@@ -14,8 +14,8 @@ if TYPE_CHECKING:
 	from .picture import PictureRequest
 	from .item_category import ItemCategoryRequest
 	from ..........request_adapter import HttpxRequestAdapter
-from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.beta.item import Item
+from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 
 
 class ItemRequest(BaseRequestBuilder):

@@ -1,11 +1,12 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from typing import Literal
+from pydantic import BaseModel, Field
 
 
 class CloudPcOnPremisesConnection(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
+	odata_type: Literal["#microsoft.graph.cloudPcOnPremisesConnection"] = Field(alias="@odata.type",)
 	adDomainName: Optional[str] = Field(alias="adDomainName", default=None,)
 	adDomainPassword: Optional[str] = Field(alias="adDomainPassword", default=None,)
 	adDomainUsername: Optional[str] = Field(alias="adDomainUsername", default=None,)
@@ -26,4 +27,3 @@ class CloudPcOnPremisesConnection(BaseModel):
 from .cloud_pc_on_premises_connection_type import CloudPcOnPremisesConnectionType
 from .cloud_pc_on_premises_connection_status import CloudPcOnPremisesConnectionStatus
 from .cloud_pc_on_premises_connection_status_detail import CloudPcOnPremisesConnectionStatusDetail
-

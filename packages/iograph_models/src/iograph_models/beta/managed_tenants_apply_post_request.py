@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class Managed_tenants_applyPostRequest(BaseModel):
@@ -10,5 +10,4 @@ class Managed_tenants_applyPostRequest(BaseModel):
 	includeAllUsers: Optional[bool] = Field(alias="includeAllUsers", default=None,)
 	includeGroups: Optional[list[str]] = Field(alias="includeGroups", default=None,)
 	excludeGroups: Optional[list[str]] = Field(alias="excludeGroups", default=None,)
-
 

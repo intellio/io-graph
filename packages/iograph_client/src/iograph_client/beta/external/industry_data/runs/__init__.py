@@ -16,8 +16,8 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_industry_data_run_id import ByIndustryDataRunIdRequest
 	from .....request_adapter import HttpxRequestAdapter
-from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.beta.industry_data_industry_data_run_collection_response import IndustryDataIndustryDataRunCollectionResponse
+from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 
 
 class RunsRequest(BaseRequestBuilder):

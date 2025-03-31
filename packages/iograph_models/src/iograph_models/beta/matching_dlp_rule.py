@@ -2,7 +2,7 @@ from __future__ import annotations
 from typing import Optional
 from typing import Union
 from typing import Annotated
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class MatchingDlpRule(BaseModel):
@@ -19,4 +19,3 @@ class MatchingDlpRule(BaseModel):
 from .block_access_action import BlockAccessAction
 from .notify_user_action import NotifyUserAction
 from .rule_mode import RuleMode
-

@@ -1,9 +1,9 @@
 from __future__ import annotations
 from typing import Optional
+from pydantic import BaseModel, Field
 from pydantic import model_validator, ModelWrapValidatorHandler, ValidationError
 from typing_extensions import Self
 from typing import Any
-from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class MobileAppRelationship(BaseModel):
@@ -42,4 +42,3 @@ class MobileAppRelationship(BaseModel):
 			raise e
 
 from .mobile_app_relationship_type import MobileAppRelationshipType
-

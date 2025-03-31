@@ -11,8 +11,8 @@ from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:
 	from ......request_adapter import HttpxRequestAdapter
-from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.beta.additional_access_with_accesspackageid_incompatibleaccesspackageid_get_response import Additional_access_with_accesspackageid_incompatibleaccesspackageidGetResponse
+from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 
 
 class AdditionalAccessWithAccessPackageIdIncompatibleAccessPackageIdRequest(BaseRequestBuilder):

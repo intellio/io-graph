@@ -4,7 +4,7 @@ from typing import Union
 from typing import Literal
 from typing import Annotated
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class OutlookTask(BaseModel):
@@ -35,16 +35,12 @@ class OutlookTask(BaseModel):
 
 from .item_body import ItemBody
 from .date_time_time_zone import DateTimeTimeZone
-from .date_time_time_zone import DateTimeTimeZone
 from .importance import Importance
 from .patterned_recurrence import PatternedRecurrence
-from .date_time_time_zone import DateTimeTimeZone
 from .sensitivity import Sensitivity
-from .date_time_time_zone import DateTimeTimeZone
 from .task_status import TaskStatus
 from .file_attachment import FileAttachment
 from .item_attachment import ItemAttachment
 from .reference_attachment import ReferenceAttachment
 from .multi_value_legacy_extended_property import MultiValueLegacyExtendedProperty
 from .single_value_legacy_extended_property import SingleValueLegacyExtendedProperty
-

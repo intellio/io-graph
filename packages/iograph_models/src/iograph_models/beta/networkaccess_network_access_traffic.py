@@ -1,7 +1,7 @@
 from __future__ import annotations
 from typing import Optional
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class NetworkaccessNetworkAccessTraffic(BaseModel):
@@ -63,7 +63,5 @@ from .networkaccess_networking_protocol import NetworkaccessNetworkingProtocol
 from .networkaccess_network_traffic_operation_status import NetworkaccessNetworkTrafficOperationStatus
 from .networkaccess_private_access_details import NetworkaccessPrivateAccessDetails
 from .networkaccess_traffic_type import NetworkaccessTrafficType
-from .networkaccess_networking_protocol import NetworkaccessNetworkingProtocol
 from .device import Device
 from .user import User
-

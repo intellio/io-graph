@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class OpenShiftChangeRequestCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class OpenShiftChangeRequestCollectionResponse(BaseModel):
 	value: Optional[list[OpenShiftChangeRequest]] = Field(alias="value", default=None,)
 
 from .open_shift_change_request import OpenShiftChangeRequest
-

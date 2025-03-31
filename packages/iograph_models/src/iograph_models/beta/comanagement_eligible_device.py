@@ -1,11 +1,12 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from typing import Literal
+from pydantic import BaseModel, Field
 
 
 class ComanagementEligibleDevice(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
+	odata_type: Literal["#microsoft.graph.comanagementEligibleDevice"] = Field(alias="@odata.type",)
 	clientRegistrationStatus: Optional[DeviceRegistrationState | str] = Field(alias="clientRegistrationStatus", default=None,)
 	deviceName: Optional[str] = Field(alias="deviceName", default=None,)
 	deviceType: Optional[DeviceType | str] = Field(alias="deviceType", default=None,)
@@ -32,4 +33,3 @@ from .management_agent_type import ManagementAgentType
 from .management_state import ManagementState
 from .owner_type import OwnerType
 from .comanagement_eligible_type import ComanagementEligibleType
-

@@ -1,7 +1,7 @@
 from __future__ import annotations
 from typing import Optional
 from typing import Literal
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class WinGetAppAssignmentSettings(BaseModel):
@@ -13,4 +13,3 @@ class WinGetAppAssignmentSettings(BaseModel):
 from .win_get_app_install_time_settings import WinGetAppInstallTimeSettings
 from .win_get_app_notification import WinGetAppNotification
 from .win_get_app_restart_settings import WinGetAppRestartSettings
-

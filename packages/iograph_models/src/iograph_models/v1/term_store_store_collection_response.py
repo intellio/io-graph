@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class TermStoreStoreCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class TermStoreStoreCollectionResponse(BaseModel):
 	value: Optional[list[TermStoreStore]] = Field(alias="value", default=None,)
 
 from .term_store_store import TermStoreStore
-

@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class ConditionalAccessConditionSet(BaseModel):
@@ -29,7 +29,4 @@ from .conditional_access_insider_risk_levels import ConditionalAccessInsiderRisk
 from .conditional_access_locations import ConditionalAccessLocations
 from .conditional_access_platforms import ConditionalAccessPlatforms
 from .risk_level import RiskLevel
-from .risk_level import RiskLevel
-from .risk_level import RiskLevel
 from .conditional_access_users import ConditionalAccessUsers
-

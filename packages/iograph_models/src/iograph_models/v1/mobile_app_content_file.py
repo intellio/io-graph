@@ -1,12 +1,13 @@
 from __future__ import annotations
 from typing import Optional
+from typing import Literal
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class MobileAppContentFile(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
+	odata_type: Literal["#microsoft.graph.mobileAppContentFile"] = Field(alias="@odata.type",)
 	azureStorageUri: Optional[str] = Field(alias="azureStorageUri", default=None,)
 	azureStorageUriExpirationDateTime: Optional[datetime] = Field(alias="azureStorageUriExpirationDateTime", default=None,)
 	createdDateTime: Optional[datetime] = Field(alias="createdDateTime", default=None,)
@@ -19,4 +20,3 @@ class MobileAppContentFile(BaseModel):
 	uploadState: Optional[MobileAppContentFileUploadState | str] = Field(alias="uploadState", default=None,)
 
 from .mobile_app_content_file_upload_state import MobileAppContentFileUploadState
-

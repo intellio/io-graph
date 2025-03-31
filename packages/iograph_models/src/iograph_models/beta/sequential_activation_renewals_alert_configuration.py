@@ -1,7 +1,7 @@
 from __future__ import annotations
 from typing import Optional
 from typing import Literal
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class SequentialActivationRenewalsAlertConfiguration(BaseModel):
@@ -16,4 +16,3 @@ class SequentialActivationRenewalsAlertConfiguration(BaseModel):
 	timeIntervalBetweenActivations: Optional[str] = Field(alias="timeIntervalBetweenActivations", default=None,)
 
 from .unified_role_management_alert_definition import UnifiedRoleManagementAlertDefinition
-

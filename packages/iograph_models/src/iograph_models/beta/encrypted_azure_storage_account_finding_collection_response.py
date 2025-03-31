@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class EncryptedAzureStorageAccountFindingCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class EncryptedAzureStorageAccountFindingCollectionResponse(BaseModel):
 	value: Optional[list[EncryptedAzureStorageAccountFinding]] = Field(alias="value", default=None,)
 
 from .encrypted_azure_storage_account_finding import EncryptedAzureStorageAccountFinding
-

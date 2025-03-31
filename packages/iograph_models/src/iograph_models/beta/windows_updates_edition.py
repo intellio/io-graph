@@ -1,12 +1,13 @@
 from __future__ import annotations
 from typing import Optional
+from typing import Literal
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class WindowsUpdatesEdition(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
+	odata_type: Literal["#microsoft.graph.windowsUpdates.edition"] = Field(alias="@odata.type",)
 	deviceFamily: Optional[str] = Field(alias="deviceFamily", default=None,)
 	endOfServiceDateTime: Optional[datetime] = Field(alias="endOfServiceDateTime", default=None,)
 	generalAvailabilityDateTime: Optional[datetime] = Field(alias="generalAvailabilityDateTime", default=None,)
@@ -16,4 +17,3 @@ class WindowsUpdatesEdition(BaseModel):
 	servicingPeriods: Optional[list[WindowsUpdatesServicingPeriod]] = Field(alias="servicingPeriods", default=None,)
 
 from .windows_updates_servicing_period import WindowsUpdatesServicingPeriod
-

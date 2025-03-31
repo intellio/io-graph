@@ -1,12 +1,13 @@
 from __future__ import annotations
 from typing import Optional
+from typing import Literal
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class ConditionalAccessPolicy(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
+	odata_type: Literal["#microsoft.graph.conditionalAccessPolicy"] = Field(alias="@odata.type",)
 	conditions: Optional[ConditionalAccessConditionSet] = Field(alias="conditions", default=None,)
 	createdDateTime: Optional[datetime] = Field(alias="createdDateTime", default=None,)
 	description: Optional[str] = Field(alias="description", default=None,)
@@ -21,4 +22,3 @@ from .conditional_access_condition_set import ConditionalAccessConditionSet
 from .conditional_access_grant_controls import ConditionalAccessGrantControls
 from .conditional_access_session_controls import ConditionalAccessSessionControls
 from .conditional_access_policy_state import ConditionalAccessPolicyState
-

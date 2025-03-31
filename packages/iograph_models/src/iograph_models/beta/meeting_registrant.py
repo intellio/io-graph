@@ -2,7 +2,7 @@ from __future__ import annotations
 from typing import Optional
 from typing import Literal
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class MeetingRegistrant(BaseModel):
@@ -18,4 +18,3 @@ class MeetingRegistrant(BaseModel):
 
 from .custom_question_answer import CustomQuestionAnswer
 from .meeting_registrant_status import MeetingRegistrantStatus
-

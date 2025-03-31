@@ -1,10 +1,10 @@
 from __future__ import annotations
 from typing import Optional
+from datetime import datetime
+from pydantic import BaseModel, Field
 from pydantic import model_validator, ModelWrapValidatorHandler, ValidationError
 from typing_extensions import Self
 from typing import Any
-from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class LongRunningOperation(BaseModel):
@@ -38,9 +38,6 @@ class LongRunningOperation(BaseModel):
 			if mapping_key == "#microsoft.graph.richLongRunningOperation":
 				from .rich_long_running_operation import RichLongRunningOperation
 				return RichLongRunningOperation.model_validate(data)
-			if mapping_key == "#microsoft.graph.industryData.validateOperation":
-				from .industry_data_validate_operation import IndustryDataValidateOperation
-				return IndustryDataValidateOperation.model_validate(data)
 			if mapping_key == "#microsoft.graph.industryData.fileValidateOperation":
 				from .industry_data_file_validate_operation import IndustryDataFileValidateOperation
 				return IndustryDataFileValidateOperation.model_validate(data)
@@ -50,4 +47,3 @@ class LongRunningOperation(BaseModel):
 			raise e
 
 from .long_running_operation_status import LongRunningOperationStatus
-

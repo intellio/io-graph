@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class ManagedTenantsTemplateAction(BaseModel):
@@ -14,4 +14,3 @@ class ManagedTenantsTemplateAction(BaseModel):
 
 from .managed_tenants_setting import ManagedTenantsSetting
 from .license_details import LicenseDetails
-

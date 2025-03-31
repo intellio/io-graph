@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class MobileAppIntentAndStateDetail(BaseModel):
@@ -15,4 +15,3 @@ class MobileAppIntentAndStateDetail(BaseModel):
 from .resultant_app_state import ResultantAppState
 from .mobile_app_intent import MobileAppIntent
 from .mobile_app_supported_device_type import MobileAppSupportedDeviceType
-

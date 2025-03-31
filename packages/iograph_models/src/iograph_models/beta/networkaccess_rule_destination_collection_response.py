@@ -2,7 +2,7 @@ from __future__ import annotations
 from typing import Optional
 from typing import Union
 from typing import Annotated
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class NetworkaccessRuleDestinationCollectionResponse(BaseModel):
@@ -16,4 +16,3 @@ from .networkaccess_ip_range import NetworkaccessIpRange
 from .networkaccess_ip_subnet import NetworkaccessIpSubnet
 from .networkaccess_url import NetworkaccessUrl
 from .networkaccess_web_category import NetworkaccessWebCategory
-

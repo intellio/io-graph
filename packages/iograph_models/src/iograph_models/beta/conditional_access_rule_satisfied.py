@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class ConditionalAccessRuleSatisfied(BaseModel):
@@ -10,4 +10,3 @@ class ConditionalAccessRuleSatisfied(BaseModel):
 
 from .conditional_access_conditions import ConditionalAccessConditions
 from .conditional_access_rule import ConditionalAccessRule
-

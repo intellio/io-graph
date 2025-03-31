@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class PreAuthorizedApplicationCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class PreAuthorizedApplicationCollectionResponse(BaseModel):
 	value: Optional[list[PreAuthorizedApplication]] = Field(alias="value", default=None,)
 
 from .pre_authorized_application import PreAuthorizedApplication
-

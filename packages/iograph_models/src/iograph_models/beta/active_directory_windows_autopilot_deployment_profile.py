@@ -2,7 +2,7 @@ from __future__ import annotations
 from typing import Optional
 from typing import Literal
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class ActiveDirectoryWindowsAutopilotDeploymentProfile(BaseModel):
@@ -37,4 +37,3 @@ from .out_of_box_experience_settings import OutOfBoxExperienceSettings
 from .windows_autopilot_device_identity import WindowsAutopilotDeviceIdentity
 from .windows_autopilot_deployment_profile_assignment import WindowsAutopilotDeploymentProfileAssignment
 from .windows_domain_join_configuration import WindowsDomainJoinConfiguration
-

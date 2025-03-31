@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class ProvisioningStatusInfo(BaseModel):
@@ -10,4 +10,3 @@ class ProvisioningStatusInfo(BaseModel):
 
 from .provisioning_error_info import ProvisioningErrorInfo
 from .provisioning_result import ProvisioningResult
-

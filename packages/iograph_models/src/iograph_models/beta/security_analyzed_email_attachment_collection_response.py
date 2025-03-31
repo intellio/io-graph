@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class SecurityAnalyzedEmailAttachmentCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class SecurityAnalyzedEmailAttachmentCollectionResponse(BaseModel):
 	value: Optional[list[SecurityAnalyzedEmailAttachment]] = Field(alias="value", default=None,)
 
 from .security_analyzed_email_attachment import SecurityAnalyzedEmailAttachment
-

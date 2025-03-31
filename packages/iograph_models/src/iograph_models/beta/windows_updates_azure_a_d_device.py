@@ -3,7 +3,7 @@ from typing import Optional
 from typing import Union
 from typing import Literal
 from typing import Annotated
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class WindowsUpdatesAzureADDevice(BaseModel):
@@ -14,4 +14,3 @@ class WindowsUpdatesAzureADDevice(BaseModel):
 
 from .windows_updates_update_management_enrollment import WindowsUpdatesUpdateManagementEnrollment
 from .windows_updates_azure_a_d_device_registration_error import WindowsUpdatesAzureADDeviceRegistrationError
-

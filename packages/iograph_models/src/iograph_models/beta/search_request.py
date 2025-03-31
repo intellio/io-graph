@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class SearchRequest(BaseModel):
@@ -31,4 +31,3 @@ from .search_alteration_options import SearchAlterationOptions
 from .result_template_option import ResultTemplateOption
 from .share_point_one_drive_options import SharePointOneDriveOptions
 from .sort_property import SortProperty
-

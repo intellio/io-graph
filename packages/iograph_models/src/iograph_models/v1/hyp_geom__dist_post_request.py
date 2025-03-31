@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class Hyp_geom__distPostRequest(BaseModel):
@@ -9,5 +9,4 @@ class Hyp_geom__distPostRequest(BaseModel):
 	populationS: Optional[str] = Field(alias="populationS", default=None,)
 	numberPop: Optional[str] = Field(alias="numberPop", default=None,)
 	cumulative: Optional[str] = Field(alias="cumulative", default=None,)
-
 

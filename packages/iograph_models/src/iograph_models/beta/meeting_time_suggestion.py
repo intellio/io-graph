@@ -2,7 +2,7 @@ from __future__ import annotations
 from typing import Optional
 from typing import Union
 from typing import Annotated
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class MeetingTimeSuggestion(BaseModel):
@@ -20,4 +20,3 @@ from .reference_numeric import ReferenceNumeric
 from .location_constraint_item import LocationConstraintItem
 from .time_slot import TimeSlot
 from .free_busy_status import FreeBusyStatus
-

@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class ExternalItemCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class ExternalItemCollectionResponse(BaseModel):
 	value: Optional[list[ExternalItem]] = Field(alias="value", default=None,)
 
 from .external_item import ExternalItem
-

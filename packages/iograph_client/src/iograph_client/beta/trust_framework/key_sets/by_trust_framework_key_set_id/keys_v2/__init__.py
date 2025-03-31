@@ -14,8 +14,8 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_trust_framework_key_v2_kid import ByTrustFrameworkKey_v2KidRequest
 	from ......request_adapter import HttpxRequestAdapter
-from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.beta.trust_framework_key_v2_collection_response import TrustFrameworkKey_v2CollectionResponse
+from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 
 
 class Keys_v2Request(BaseRequestBuilder):

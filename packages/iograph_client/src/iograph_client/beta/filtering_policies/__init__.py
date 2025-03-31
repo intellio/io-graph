@@ -14,9 +14,9 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_filtering_policy_id import ByFilteringPolicyIdRequest
 	from ...request_adapter import HttpxRequestAdapter
-from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.beta.networkaccess_filtering_policy_collection_response import NetworkaccessFilteringPolicyCollectionResponse
 from iograph_models.beta.networkaccess_filtering_policy import NetworkaccessFilteringPolicy
+from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 
 
 class FilteringPoliciesRequest(BaseRequestBuilder):

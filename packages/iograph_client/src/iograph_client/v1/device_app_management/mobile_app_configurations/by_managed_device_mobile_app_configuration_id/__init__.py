@@ -18,8 +18,8 @@ if TYPE_CHECKING:
 	from .device_statuses import DeviceStatusesRequest
 	from .assignments import AssignmentsRequest
 	from .....request_adapter import HttpxRequestAdapter
-from iograph_models.v1.managed_device_mobile_app_configuration import ManagedDeviceMobileAppConfiguration
 from iograph_models.v1.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.v1.managed_device_mobile_app_configuration import ManagedDeviceMobileAppConfiguration
 
 
 class ByManagedDeviceMobileAppConfigurationIdRequest(BaseRequestBuilder):

@@ -1,7 +1,7 @@
 from __future__ import annotations
 from typing import Optional
 from typing import Literal
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class CallRecordsServiceUserAgent(BaseModel):
@@ -11,4 +11,3 @@ class CallRecordsServiceUserAgent(BaseModel):
 	role: Optional[CallRecordsServiceRole | str] = Field(alias="role", default=None,)
 
 from .call_records_service_role import CallRecordsServiceRole
-

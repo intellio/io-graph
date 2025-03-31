@@ -2,7 +2,7 @@ from __future__ import annotations
 from typing import Optional
 from typing import Union
 from typing import Annotated
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class IndustryDataIndustryDataRunStatistics(BaseModel):
@@ -15,4 +15,3 @@ class IndustryDataIndustryDataRunStatistics(BaseModel):
 from .industry_data_inbound_activity_results import IndustryDataInboundActivityResults
 from .industry_data_aggregated_inbound_statistics import IndustryDataAggregatedInboundStatistics
 from .industry_data_industry_data_run_status import IndustryDataIndustryDataRunStatus
-

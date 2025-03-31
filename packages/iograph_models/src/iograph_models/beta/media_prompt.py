@@ -1,7 +1,7 @@
 from __future__ import annotations
 from typing import Optional
 from typing import Literal
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class MediaPrompt(BaseModel):
@@ -10,4 +10,3 @@ class MediaPrompt(BaseModel):
 	mediaInfo: Optional[MediaInfo] = Field(alias="mediaInfo", default=None,)
 
 from .media_info import MediaInfo
-

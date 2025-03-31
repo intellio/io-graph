@@ -15,8 +15,8 @@ if TYPE_CHECKING:
 	from .get_applied_drives import GetAppliedDrivesRequest
 	from .add_to_drive import AddToDriveRequest
 	from ......request_adapter import HttpxRequestAdapter
-from iograph_models.beta.content_model import ContentModel
 from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.beta.content_model import ContentModel
 
 
 class ByContentModelIdRequest(BaseRequestBuilder):

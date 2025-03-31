@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class PlannerRosterCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class PlannerRosterCollectionResponse(BaseModel):
 	value: Optional[list[PlannerRoster]] = Field(alias="value", default=None,)
 
 from .planner_roster import PlannerRoster
-

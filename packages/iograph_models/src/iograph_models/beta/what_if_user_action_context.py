@@ -1,7 +1,7 @@
 from __future__ import annotations
 from typing import Optional
 from typing import Literal
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class WhatIfUserActionContext(BaseModel):
@@ -9,4 +9,3 @@ class WhatIfUserActionContext(BaseModel):
 	userAction: Optional[UserAction | str] = Field(alias="userAction", default=None,)
 
 from .user_action import UserAction
-

@@ -13,9 +13,9 @@ from typing import TYPE_CHECKING
 if TYPE_CHECKING:
 	from .by_risk_detection_id import ByRiskDetectionIdRequest
 	from ...request_adapter import HttpxRequestAdapter
-from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.beta.risk_detection import RiskDetection
 from iograph_models.beta.risk_detection_collection_response import RiskDetectionCollectionResponse
+from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 
 
 class RiskDetectionsRequest(BaseRequestBuilder):

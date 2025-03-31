@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class TrustFrameworkKeyCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class TrustFrameworkKeyCollectionResponse(BaseModel):
 	value: Optional[list[TrustFrameworkKey]] = Field(alias="value", default=None,)
 
 from .trust_framework_key import TrustFrameworkKey
-

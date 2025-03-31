@@ -1,11 +1,12 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from typing import Literal
+from pydantic import BaseModel, Field
 
 
 class WindowsSetting(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
+	odata_type: Literal["#microsoft.graph.windowsSetting"] = Field(alias="@odata.type",)
 	payloadType: Optional[str] = Field(alias="payloadType", default=None,)
 	settingType: Optional[WindowsSettingType | str] = Field(alias="settingType", default=None,)
 	windowsDeviceId: Optional[str] = Field(alias="windowsDeviceId", default=None,)
@@ -13,4 +14,3 @@ class WindowsSetting(BaseModel):
 
 from .windows_setting_type import WindowsSettingType
 from .windows_setting_instance import WindowsSettingInstance
-

@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class WindowsPhone81CustomConfigurationCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class WindowsPhone81CustomConfigurationCollectionResponse(BaseModel):
 	value: Optional[list[WindowsPhone81CustomConfiguration]] = Field(alias="value", default=None,)
 
 from .windows_phone81_custom_configuration import WindowsPhone81CustomConfiguration
-

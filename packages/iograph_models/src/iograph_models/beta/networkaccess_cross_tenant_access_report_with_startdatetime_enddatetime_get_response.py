@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class Networkaccess_cross_tenant_access_report_with_startdatetime_enddatetimeGetResponse(BaseModel):
@@ -9,4 +9,3 @@ class Networkaccess_cross_tenant_access_report_with_startdatetime_enddatetimeGet
 	value: Optional[list[NetworkaccessCrossTenantAccess]] = Field(alias="value", default=None,)
 
 from .networkaccess_cross_tenant_access import NetworkaccessCrossTenantAccess
-

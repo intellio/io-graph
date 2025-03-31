@@ -2,7 +2,7 @@ from __future__ import annotations
 from typing import Optional
 from typing import Union
 from typing import Annotated
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class IndustryDataProvisioningFlowCollectionResponse(BaseModel):
@@ -14,4 +14,3 @@ from .industry_data_administrative_unit_provisioning_flow import IndustryDataAdm
 from .industry_data_class_group_provisioning_flow import IndustryDataClassGroupProvisioningFlow
 from .industry_data_security_group_provisioning_flow import IndustryDataSecurityGroupProvisioningFlow
 from .industry_data_user_provisioning_flow import IndustryDataUserProvisioningFlow
-

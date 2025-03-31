@@ -1,9 +1,9 @@
 from __future__ import annotations
 from typing import Optional
+from pydantic import BaseModel, Field
 from pydantic import model_validator, ModelWrapValidatorHandler, ValidationError
 from typing_extensions import Self
 from typing import Any
-from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class HealthMonitoringResourceImpactSummary(BaseModel):
@@ -22,9 +22,6 @@ class HealthMonitoringResourceImpactSummary(BaseModel):
 				return parent_validated_model
 			# get the discriminator value
 			mapping_key = data["@odata.type"]
-			if mapping_key == "#microsoft.graph.healthMonitoring.directoryObjectImpactSummary":
-				from .health_monitoring_directory_object_impact_summary import HealthMonitoringDirectoryObjectImpactSummary
-				return HealthMonitoringDirectoryObjectImpactSummary.model_validate(data)
 			if mapping_key == "#microsoft.graph.healthMonitoring.applicationImpactSummary":
 				from .health_monitoring_application_impact_summary import HealthMonitoringApplicationImpactSummary
 				return HealthMonitoringApplicationImpactSummary.model_validate(data)
@@ -44,5 +41,4 @@ class HealthMonitoringResourceImpactSummary(BaseModel):
 
 		except Exception as e:
 			raise e
-
 

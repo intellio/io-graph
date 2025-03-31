@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class Evaluate_classification_resultsPostRequest(BaseModel):
@@ -9,4 +9,3 @@ class Evaluate_classification_resultsPostRequest(BaseModel):
 
 from .content_info import ContentInfo
 from .classification_result import ClassificationResult
-

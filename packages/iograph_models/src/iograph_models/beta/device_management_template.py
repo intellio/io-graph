@@ -2,11 +2,11 @@ from __future__ import annotations
 from typing import Optional
 from typing import Union
 from typing import Annotated
+from datetime import datetime
+from pydantic import BaseModel, Field
 from pydantic import model_validator, ModelWrapValidatorHandler, ValidationError
 from typing_extensions import Self
 from typing import Any
-from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class DeviceManagementTemplate(BaseModel):
@@ -54,4 +54,3 @@ from .device_management_collection_setting_instance import DeviceManagementColle
 from .device_management_complex_setting_instance import DeviceManagementComplexSettingInstance
 from .device_management_integer_setting_instance import DeviceManagementIntegerSettingInstance
 from .device_management_string_setting_instance import DeviceManagementStringSettingInstance
-

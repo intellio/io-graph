@@ -2,7 +2,7 @@ from __future__ import annotations
 from typing import Optional
 from typing import Union
 from typing import Annotated
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class OfferShiftRequestCollectionResponse(BaseModel):
@@ -11,4 +11,3 @@ class OfferShiftRequestCollectionResponse(BaseModel):
 	value: Optional[list[Annotated[Union[SwapShiftsChangeRequest],Field(discriminator="odata_type")]]] = Field(alias="value", default=None,)
 
 from .swap_shifts_change_request import SwapShiftsChangeRequest
-

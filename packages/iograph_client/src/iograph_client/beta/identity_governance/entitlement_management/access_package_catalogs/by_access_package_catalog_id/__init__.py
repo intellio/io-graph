@@ -19,8 +19,8 @@ if TYPE_CHECKING:
 	from .access_package_resource_roles import AccessPackageResourceRolesRequest
 	from .access_package_custom_workflow_extensions import AccessPackageCustomWorkflowExtensionsRequest
 	from ......request_adapter import HttpxRequestAdapter
-from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.beta.access_package_catalog import AccessPackageCatalog
+from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 
 
 class ByAccessPackageCatalogIdRequest(BaseRequestBuilder):

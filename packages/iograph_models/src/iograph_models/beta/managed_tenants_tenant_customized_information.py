@@ -1,12 +1,13 @@
 from __future__ import annotations
 from typing import Optional
+from typing import Literal
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class ManagedTenantsTenantCustomizedInformation(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
+	odata_type: Literal["#microsoft.graph.managedTenants.tenantCustomizedInformation"] = Field(alias="@odata.type",)
 	businessRelationship: Optional[str] = Field(alias="businessRelationship", default=None,)
 	complianceRequirements: Optional[list[str]] = Field(alias="complianceRequirements", default=None,)
 	contacts: Optional[list[ManagedTenantsTenantContactInformation]] = Field(alias="contacts", default=None,)
@@ -19,4 +20,3 @@ class ManagedTenantsTenantCustomizedInformation(BaseModel):
 	website: Optional[str] = Field(alias="website", default=None,)
 
 from .managed_tenants_tenant_contact_information import ManagedTenantsTenantContactInformation
-

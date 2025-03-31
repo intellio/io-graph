@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class CustomAccessPackageWorkflowExtensionCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class CustomAccessPackageWorkflowExtensionCollectionResponse(BaseModel):
 	value: Optional[list[CustomAccessPackageWorkflowExtension]] = Field(alias="value", default=None,)
 
 from .custom_access_package_workflow_extension import CustomAccessPackageWorkflowExtension
-

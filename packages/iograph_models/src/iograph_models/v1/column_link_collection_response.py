@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class ColumnLinkCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class ColumnLinkCollectionResponse(BaseModel):
 	value: Optional[list[ColumnLink]] = Field(alias="value", default=None,)
 
 from .column_link import ColumnLink
-

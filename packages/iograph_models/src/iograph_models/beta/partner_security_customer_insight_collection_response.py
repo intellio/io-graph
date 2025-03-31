@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class PartnerSecurityCustomerInsightCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class PartnerSecurityCustomerInsightCollectionResponse(BaseModel):
 	value: Optional[list[PartnerSecurityCustomerInsight]] = Field(alias="value", default=None,)
 
 from .partner_security_customer_insight import PartnerSecurityCustomerInsight
-

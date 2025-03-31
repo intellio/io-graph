@@ -2,7 +2,7 @@ from __future__ import annotations
 from typing import Optional
 from typing import Union
 from typing import Annotated
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class AddPostResponse(BaseModel):
@@ -11,4 +11,3 @@ class AddPostResponse(BaseModel):
 	value: Optional[list[Annotated[Union[AadUserConversationMemberResult],Field(discriminator="odata_type")]]] = Field(alias="value", default=None,)
 
 from .aad_user_conversation_member_result import AadUserConversationMemberResult
-

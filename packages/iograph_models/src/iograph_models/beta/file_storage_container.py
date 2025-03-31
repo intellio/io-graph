@@ -2,14 +2,15 @@ from __future__ import annotations
 from uuid import UUID
 from typing import Optional
 from typing import Union
+from typing import Literal
 from typing import Annotated
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class FileStorageContainer(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
+	odata_type: Literal["#microsoft.graph.fileStorageContainer"] = Field(alias="@odata.type",)
 	archivalDetails: Optional[SiteArchivalDetails] = Field(alias="archivalDetails", default=None,)
 	assignedSensitivityLabel: Optional[AssignedLabel] = Field(alias="assignedSensitivityLabel", default=None,)
 	containerTypeId: Optional[UUID] = Field(alias="containerTypeId", default=None,)
@@ -45,4 +46,3 @@ from .column_definition import ColumnDefinition
 from .drive import Drive
 from .permission import Permission
 from .recycle_bin import RecycleBin
-

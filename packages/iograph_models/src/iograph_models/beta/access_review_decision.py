@@ -1,13 +1,14 @@
 from __future__ import annotations
 from typing import Optional
 from typing import Union
+from typing import Literal
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class AccessReviewDecision(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
+	odata_type: Literal["#microsoft.graph.accessReviewDecision"] = Field(alias="@odata.type",)
 	accessRecommendation: Optional[str] = Field(alias="accessRecommendation", default=None,)
 	accessReviewId: Optional[str] = Field(alias="accessReviewId", default=None,)
 	appliedBy: Optional[Union[AuditUserIdentity]] = Field(alias="appliedBy", default=None,discriminator="odata_type", )
@@ -19,5 +20,3 @@ class AccessReviewDecision(BaseModel):
 	reviewResult: Optional[str] = Field(alias="reviewResult", default=None,)
 
 from .audit_user_identity import AuditUserIdentity
-from .audit_user_identity import AuditUserIdentity
-

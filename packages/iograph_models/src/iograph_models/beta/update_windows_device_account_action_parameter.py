@@ -1,7 +1,7 @@
 from __future__ import annotations
 from typing import Optional
 from typing import Union
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class UpdateWindowsDeviceAccountActionParameter(BaseModel):
@@ -15,4 +15,3 @@ class UpdateWindowsDeviceAccountActionParameter(BaseModel):
 
 from .windows_device_a_d_account import WindowsDeviceADAccount
 from .windows_device_azure_a_d_account import WindowsDeviceAzureADAccount
-

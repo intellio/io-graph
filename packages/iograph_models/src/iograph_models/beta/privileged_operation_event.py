@@ -1,12 +1,13 @@
 from __future__ import annotations
 from typing import Optional
+from typing import Literal
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class PrivilegedOperationEvent(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
+	odata_type: Literal["#microsoft.graph.privilegedOperationEvent"] = Field(alias="@odata.type",)
 	additionalInformation: Optional[str] = Field(alias="additionalInformation", default=None,)
 	creationDateTime: Optional[datetime] = Field(alias="creationDateTime", default=None,)
 	expirationDateTime: Optional[datetime] = Field(alias="expirationDateTime", default=None,)
@@ -21,5 +22,4 @@ class PrivilegedOperationEvent(BaseModel):
 	userId: Optional[str] = Field(alias="userId", default=None,)
 	userMail: Optional[str] = Field(alias="userMail", default=None,)
 	userName: Optional[str] = Field(alias="userName", default=None,)
-
 

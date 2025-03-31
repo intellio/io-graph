@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class CorsConfiguration_v2CollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class CorsConfiguration_v2CollectionResponse(BaseModel):
 	value: Optional[list[CorsConfiguration_v2]] = Field(alias="value", default=None,)
 
 from .cors_configuration_v2 import CorsConfiguration_v2
-

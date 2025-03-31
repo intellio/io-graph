@@ -2,7 +2,7 @@ from __future__ import annotations
 from typing import Optional
 from typing import Union
 from typing import Annotated
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class IosCertificateProfileBaseCollectionResponse(BaseModel):
@@ -12,4 +12,3 @@ class IosCertificateProfileBaseCollectionResponse(BaseModel):
 
 from .ios_pkcs_certificate_profile import IosPkcsCertificateProfile
 from .ios_scep_certificate_profile import IosScepCertificateProfile
-

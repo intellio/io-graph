@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class SecurityAnalyzedEmailAttachment(BaseModel):
@@ -17,4 +17,3 @@ class SecurityAnalyzedEmailAttachment(BaseModel):
 
 from .security_detonation_details import SecurityDetonationDetails
 from .security_threat_type import SecurityThreatType
-

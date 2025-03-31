@@ -14,9 +14,9 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_job_response_base_id import ByJobResponseBaseIdRequest
 	from ....request_adapter import HttpxRequestAdapter
-from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.beta.job_response_base import JobResponseBase
 from iograph_models.beta.job_response_base_collection_response import JobResponseBaseCollectionResponse
+from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 
 
 class EvaluateDlpPoliciesJobsRequest(BaseRequestBuilder):

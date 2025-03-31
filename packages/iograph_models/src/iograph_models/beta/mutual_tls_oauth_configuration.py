@@ -2,7 +2,7 @@ from __future__ import annotations
 from typing import Optional
 from typing import Literal
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class MutualTlsOauthConfiguration(BaseModel):
@@ -15,4 +15,3 @@ class MutualTlsOauthConfiguration(BaseModel):
 
 from .certificate_authority import CertificateAuthority
 from .tls_client_registration_metadata import TlsClientRegistrationMetadata
-

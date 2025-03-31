@@ -15,8 +15,8 @@ if TYPE_CHECKING:
 	from .by_incident_id import ByIncidentIdRequest
 	from ....request_adapter import HttpxRequestAdapter
 from iograph_models.v1.o_data_errors__o_data_error import ODataErrorsODataError
-from iograph_models.v1.security_incident import SecurityIncident
 from iograph_models.v1.security_incident_collection_response import SecurityIncidentCollectionResponse
+from iograph_models.v1.security_incident import SecurityIncident
 
 
 class IncidentsRequest(BaseRequestBuilder):

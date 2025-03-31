@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class SensitiveTypeCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class SensitiveTypeCollectionResponse(BaseModel):
 	value: Optional[list[SensitiveType]] = Field(alias="value", default=None,)
 
 from .sensitive_type import SensitiveType
-

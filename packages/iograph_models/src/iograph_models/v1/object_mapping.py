@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class ObjectMapping(BaseModel):
@@ -18,4 +18,3 @@ from .attribute_mapping import AttributeMapping
 from .object_flow_types import ObjectFlowTypes
 from .object_mapping_metadata_entry import ObjectMappingMetadataEntry
 from .filter import Filter
-

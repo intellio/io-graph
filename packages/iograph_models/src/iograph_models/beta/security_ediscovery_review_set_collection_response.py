@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class SecurityEdiscoveryReviewSetCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class SecurityEdiscoveryReviewSetCollectionResponse(BaseModel):
 	value: Optional[list[SecurityEdiscoveryReviewSet]] = Field(alias="value", default=None,)
 
 from .security_ediscovery_review_set import SecurityEdiscoveryReviewSet
-

@@ -2,7 +2,7 @@ from __future__ import annotations
 from typing import Optional
 from typing import Union
 from typing import Annotated
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class AuthenticationMethodCollectionResponse(BaseModel):
@@ -21,4 +21,3 @@ from .platform_credential_authentication_method import PlatformCredentialAuthent
 from .software_oath_authentication_method import SoftwareOathAuthenticationMethod
 from .temporary_access_pass_authentication_method import TemporaryAccessPassAuthenticationMethod
 from .windows_hello_for_business_authentication_method import WindowsHelloForBusinessAuthenticationMethod
-

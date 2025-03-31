@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class ScheduleInformation(BaseModel):
@@ -14,4 +14,3 @@ class ScheduleInformation(BaseModel):
 from .free_busy_error import FreeBusyError
 from .schedule_item import ScheduleItem
 from .working_hours import WorkingHours
-

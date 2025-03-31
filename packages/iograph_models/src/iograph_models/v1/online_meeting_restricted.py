@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class OnlineMeetingRestricted(BaseModel):
@@ -10,4 +10,3 @@ class OnlineMeetingRestricted(BaseModel):
 
 from .online_meeting_content_sharing_disabled_reason import OnlineMeetingContentSharingDisabledReason
 from .online_meeting_video_disabled_reason import OnlineMeetingVideoDisabledReason
-

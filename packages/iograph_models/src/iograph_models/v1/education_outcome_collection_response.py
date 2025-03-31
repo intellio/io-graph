@@ -2,7 +2,7 @@ from __future__ import annotations
 from typing import Optional
 from typing import Union
 from typing import Annotated
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class EducationOutcomeCollectionResponse(BaseModel):
@@ -14,4 +14,3 @@ from .education_feedback_outcome import EducationFeedbackOutcome
 from .education_feedback_resource_outcome import EducationFeedbackResourceOutcome
 from .education_points_outcome import EducationPointsOutcome
 from .education_rubric_outcome import EducationRubricOutcome
-

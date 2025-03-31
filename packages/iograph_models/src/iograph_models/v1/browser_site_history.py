@@ -2,7 +2,7 @@ from __future__ import annotations
 from typing import Optional
 from typing import Union
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class BrowserSiteHistory(BaseModel):
@@ -23,4 +23,3 @@ from .communications_identity_set import CommunicationsIdentitySet
 from .share_point_identity_set import SharePointIdentitySet
 from .browser_site_merge_type import BrowserSiteMergeType
 from .browser_site_target_environment import BrowserSiteTargetEnvironment
-

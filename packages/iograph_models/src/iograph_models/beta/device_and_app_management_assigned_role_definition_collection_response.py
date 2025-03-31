@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class DeviceAndAppManagementAssignedRoleDefinitionCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class DeviceAndAppManagementAssignedRoleDefinitionCollectionResponse(BaseModel):
 	value: Optional[list[DeviceAndAppManagementAssignedRoleDefinition]] = Field(alias="value", default=None,)
 
 from .device_and_app_management_assigned_role_definition import DeviceAndAppManagementAssignedRoleDefinition
-

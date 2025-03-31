@@ -2,7 +2,7 @@ from __future__ import annotations
 from typing import Optional
 from typing import Union
 from typing import Literal
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class GcpAuthorizationSystemResource(BaseModel):
@@ -18,4 +18,3 @@ from .aws_authorization_system import AwsAuthorizationSystem
 from .azure_authorization_system import AzureAuthorizationSystem
 from .gcp_authorization_system import GcpAuthorizationSystem
 from .authorization_system_type_service import AuthorizationSystemTypeService
-

@@ -1,7 +1,8 @@
 from __future__ import annotations
 from typing import Optional
+from typing import Literal
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class CallRecordsDirectRoutingLogRow(BaseModel):
@@ -11,7 +12,7 @@ class CallRecordsDirectRoutingLogRow(BaseModel):
 	userDisplayName: Optional[str] = Field(alias="userDisplayName", default=None,)
 	userId: Optional[str] = Field(alias="userId", default=None,)
 	userPrincipalName: Optional[str] = Field(alias="userPrincipalName", default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
+	odata_type: Literal["#microsoft.graph.callRecords.directRoutingLogRow"] = Field(alias="@odata.type",)
 	calleeNumber: Optional[str] = Field(alias="calleeNumber", default=None,)
 	callEndSubReason: Optional[int] = Field(alias="callEndSubReason", default=None,)
 	callerNumber: Optional[str] = Field(alias="callerNumber", default=None,)
@@ -33,4 +34,3 @@ class CallRecordsDirectRoutingLogRow(BaseModel):
 	userCountryCode: Optional[str] = Field(alias="userCountryCode", default=None,)
 
 from .call_records_administrative_unit_info import CallRecordsAdministrativeUnitInfo
-

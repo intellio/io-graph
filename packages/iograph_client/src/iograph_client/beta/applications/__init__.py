@@ -18,9 +18,9 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_application_id import ByApplicationIdRequest
 	from ...request_adapter import HttpxRequestAdapter
-from iograph_models.beta.application import Application
-from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.beta.application_collection_response import ApplicationCollectionResponse
+from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.beta.application import Application
 
 
 class ApplicationsRequest(BaseRequestBuilder):

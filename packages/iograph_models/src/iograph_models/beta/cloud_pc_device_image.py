@@ -1,12 +1,13 @@
 from __future__ import annotations
 from typing import Optional
+from typing import Literal
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class CloudPcDeviceImage(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
+	odata_type: Literal["#microsoft.graph.cloudPcDeviceImage"] = Field(alias="@odata.type",)
 	displayName: Optional[str] = Field(alias="displayName", default=None,)
 	errorCode: Optional[CloudPcDeviceImageErrorCode | str] = Field(alias="errorCode", default=None,)
 	expirationDate: Optional[str] = Field(alias="expirationDate", default=None,)
@@ -25,4 +26,3 @@ from .cloud_pc_device_image_error_code import CloudPcDeviceImageErrorCode
 from .cloud_pc_device_image_os_status import CloudPcDeviceImageOsStatus
 from .cloud_pc_device_image_status import CloudPcDeviceImageStatus
 from .cloud_pc_device_image_status_details import CloudPcDeviceImageStatusDetails
-

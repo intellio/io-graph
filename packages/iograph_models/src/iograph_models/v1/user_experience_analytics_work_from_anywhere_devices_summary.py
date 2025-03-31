@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class UserExperienceAnalyticsWorkFromAnywhereDevicesSummary(BaseModel):
@@ -24,4 +24,3 @@ from .user_experience_analytics_autopilot_devices_summary import UserExperienceA
 from .user_experience_analytics_cloud_identity_devices_summary import UserExperienceAnalyticsCloudIdentityDevicesSummary
 from .user_experience_analytics_cloud_management_devices_summary import UserExperienceAnalyticsCloudManagementDevicesSummary
 from .user_experience_analytics_windows10_devices_summary import UserExperienceAnalyticsWindows10DevicesSummary
-

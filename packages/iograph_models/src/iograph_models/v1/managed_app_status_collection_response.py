@@ -2,7 +2,7 @@ from __future__ import annotations
 from typing import Optional
 from typing import Union
 from typing import Annotated
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class ManagedAppStatusCollectionResponse(BaseModel):
@@ -11,4 +11,3 @@ class ManagedAppStatusCollectionResponse(BaseModel):
 	value: Optional[list[Annotated[Union[ManagedAppStatusRaw],Field(discriminator="odata_type")]]] = Field(alias="value", default=None,)
 
 from .managed_app_status_raw import ManagedAppStatusRaw
-

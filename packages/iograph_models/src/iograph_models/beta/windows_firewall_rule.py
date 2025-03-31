@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class WindowsFirewallRule(BaseModel):
@@ -23,8 +23,6 @@ class WindowsFirewallRule(BaseModel):
 	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
 
 from .state_management_setting import StateManagementSetting
-from .state_management_setting import StateManagementSetting
 from .windows_firewall_rule_interface_types import WindowsFirewallRuleInterfaceTypes
 from .windows_firewall_rule_network_profile_types import WindowsFirewallRuleNetworkProfileTypes
 from .windows_firewall_rule_traffic_direction_type import WindowsFirewallRuleTrafficDirectionType
-

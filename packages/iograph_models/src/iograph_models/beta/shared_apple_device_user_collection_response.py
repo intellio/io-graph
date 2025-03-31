@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class SharedAppleDeviceUserCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class SharedAppleDeviceUserCollectionResponse(BaseModel):
 	value: Optional[list[SharedAppleDeviceUser]] = Field(alias="value", default=None,)
 
 from .shared_apple_device_user import SharedAppleDeviceUser
-

@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class AssignmentFilterTypeAndEvaluationResultCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class AssignmentFilterTypeAndEvaluationResultCollectionResponse(BaseModel):
 	value: Optional[list[AssignmentFilterTypeAndEvaluationResult]] = Field(alias="value", default=None,)
 
 from .assignment_filter_type_and_evaluation_result import AssignmentFilterTypeAndEvaluationResult
-

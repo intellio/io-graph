@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class BucketAggregationDefinition(BaseModel):
@@ -13,4 +13,3 @@ class BucketAggregationDefinition(BaseModel):
 
 from .bucket_aggregation_range import BucketAggregationRange
 from .bucket_aggregation_sort_property import BucketAggregationSortProperty
-

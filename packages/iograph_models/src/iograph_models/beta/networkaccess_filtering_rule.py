@@ -3,10 +3,10 @@ from typing import Optional
 from typing import Union
 from typing import Literal
 from typing import Annotated
+from pydantic import BaseModel, Field
 from pydantic import model_validator, ModelWrapValidatorHandler, ValidationError
 from typing_extensions import Self
 from typing import Any
-from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class NetworkaccessFilteringRule(BaseModel):
@@ -44,4 +44,3 @@ from .networkaccess_ip_subnet import NetworkaccessIpSubnet
 from .networkaccess_url import NetworkaccessUrl
 from .networkaccess_web_category import NetworkaccessWebCategory
 from .networkaccess_network_destination_type import NetworkaccessNetworkDestinationType
-

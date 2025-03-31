@@ -2,7 +2,7 @@ from __future__ import annotations
 from typing import Optional
 from typing import Literal
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class SecuritySasTokenEvidence(BaseModel):
@@ -29,4 +29,3 @@ from .security_evidence_remediation_status import SecurityEvidenceRemediationSta
 from .security_evidence_role import SecurityEvidenceRole
 from .security_evidence_verdict import SecurityEvidenceVerdict
 from .security_azure_resource_evidence import SecurityAzureResourceEvidence
-

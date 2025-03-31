@@ -2,10 +2,10 @@ from __future__ import annotations
 from typing import Optional
 from typing import Union
 from typing import Literal
+from pydantic import BaseModel, Field
 from pydantic import model_validator, ModelWrapValidatorHandler, ValidationError
 from typing_extensions import Self
 from typing import Any
-from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class AwsIdentity(BaseModel):
@@ -57,4 +57,3 @@ from .unknown_source import UnknownSource
 from .aws_authorization_system import AwsAuthorizationSystem
 from .azure_authorization_system import AzureAuthorizationSystem
 from .gcp_authorization_system import GcpAuthorizationSystem
-

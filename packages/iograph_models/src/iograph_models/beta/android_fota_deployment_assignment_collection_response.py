@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class AndroidFotaDeploymentAssignmentCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class AndroidFotaDeploymentAssignmentCollectionResponse(BaseModel):
 	value: Optional[list[AndroidFotaDeploymentAssignment]] = Field(alias="value", default=None,)
 
 from .android_fota_deployment_assignment import AndroidFotaDeploymentAssignment
-

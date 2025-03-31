@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class DeviceManagementAlertRecordCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class DeviceManagementAlertRecordCollectionResponse(BaseModel):
 	value: Optional[list[DeviceManagementAlertRecord]] = Field(alias="value", default=None,)
 
 from .device_management_alert_record import DeviceManagementAlertRecord
-

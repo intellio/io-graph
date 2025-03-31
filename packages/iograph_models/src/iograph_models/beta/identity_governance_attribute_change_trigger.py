@@ -1,7 +1,7 @@
 from __future__ import annotations
 from typing import Optional
 from typing import Literal
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class IdentityGovernanceAttributeChangeTrigger(BaseModel):
@@ -9,4 +9,3 @@ class IdentityGovernanceAttributeChangeTrigger(BaseModel):
 	triggerAttributes: Optional[list[IdentityGovernanceTriggerAttribute]] = Field(alias="triggerAttributes", default=None,)
 
 from .identity_governance_trigger_attribute import IdentityGovernanceTriggerAttribute
-

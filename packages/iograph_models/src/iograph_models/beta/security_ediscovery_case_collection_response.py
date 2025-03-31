@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class SecurityEdiscoveryCaseCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class SecurityEdiscoveryCaseCollectionResponse(BaseModel):
 	value: Optional[list[SecurityEdiscoveryCase]] = Field(alias="value", default=None,)
 
 from .security_ediscovery_case import SecurityEdiscoveryCase
-

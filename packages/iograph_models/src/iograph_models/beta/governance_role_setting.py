@@ -1,12 +1,13 @@
 from __future__ import annotations
 from typing import Optional
+from typing import Literal
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class GovernanceRoleSetting(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
+	odata_type: Literal["#microsoft.graph.governanceRoleSetting"] = Field(alias="@odata.type",)
 	adminEligibleSettings: Optional[list[GovernanceRuleSetting]] = Field(alias="adminEligibleSettings", default=None,)
 	adminMemberSettings: Optional[list[GovernanceRuleSetting]] = Field(alias="adminMemberSettings", default=None,)
 	isDefault: Optional[bool] = Field(alias="isDefault", default=None,)
@@ -20,9 +21,5 @@ class GovernanceRoleSetting(BaseModel):
 	roleDefinition: Optional[GovernanceRoleDefinition] = Field(alias="roleDefinition", default=None,)
 
 from .governance_rule_setting import GovernanceRuleSetting
-from .governance_rule_setting import GovernanceRuleSetting
-from .governance_rule_setting import GovernanceRuleSetting
-from .governance_rule_setting import GovernanceRuleSetting
 from .governance_resource import GovernanceResource
 from .governance_role_definition import GovernanceRoleDefinition
-

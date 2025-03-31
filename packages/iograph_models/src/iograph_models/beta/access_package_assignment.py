@@ -1,12 +1,13 @@
 from __future__ import annotations
 from typing import Optional
+from typing import Literal
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class AccessPackageAssignment(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
+	odata_type: Literal["#microsoft.graph.accessPackageAssignment"] = Field(alias="@odata.type",)
 	accessPackageId: Optional[str] = Field(alias="accessPackageId", default=None,)
 	assignmentPolicyId: Optional[str] = Field(alias="assignmentPolicyId", default=None,)
 	assignmentState: Optional[str] = Field(alias="assignmentState", default=None,)
@@ -30,4 +31,3 @@ from .access_package_assignment_policy import AccessPackageAssignmentPolicy
 from .access_package_assignment_request import AccessPackageAssignmentRequest
 from .access_package_assignment_resource_role import AccessPackageAssignmentResourceRole
 from .access_package_subject import AccessPackageSubject
-

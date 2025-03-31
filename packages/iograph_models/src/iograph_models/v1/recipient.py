@@ -1,9 +1,9 @@
 from __future__ import annotations
 from typing import Optional
+from pydantic import BaseModel, Field
 from pydantic import model_validator, ModelWrapValidatorHandler, ValidationError
 from typing_extensions import Self
 from typing import Any
-from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class Recipient(BaseModel):
@@ -20,9 +20,6 @@ class Recipient(BaseModel):
 				return parent_validated_model
 			# get the discriminator value
 			mapping_key = data["@odata.type"]
-			if mapping_key == "#microsoft.graph.attendeeBase":
-				from .attendee_base import AttendeeBase
-				return AttendeeBase.model_validate(data)
 			if mapping_key == "#microsoft.graph.attendee":
 				from .attendee import Attendee
 				return Attendee.model_validate(data)
@@ -32,4 +29,3 @@ class Recipient(BaseModel):
 			raise e
 
 from .email_address import EmailAddress
-

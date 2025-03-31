@@ -1,7 +1,7 @@
 from __future__ import annotations
 from typing import Optional
 from typing import Literal
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class ExtractAlphaTransformation(BaseModel):
@@ -11,4 +11,3 @@ class ExtractAlphaTransformation(BaseModel):
 
 from .transformation_attribute import TransformationAttribute
 from .transformation_extract_type import TransformationExtractType
-

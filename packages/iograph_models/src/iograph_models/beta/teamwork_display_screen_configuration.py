@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class TeamworkDisplayScreenConfiguration(BaseModel):
@@ -10,5 +10,4 @@ class TeamworkDisplayScreenConfiguration(BaseModel):
 	isScreensaverEnabled: Optional[bool] = Field(alias="isScreensaverEnabled", default=None,)
 	screensaverTimeout: Optional[str] = Field(alias="screensaverTimeout", default=None,)
 	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
-
 

@@ -4,7 +4,7 @@ from typing import Union
 from typing import Literal
 from typing import Annotated
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class Event(BaseModel):
@@ -36,7 +36,7 @@ class Event(BaseModel):
 	onlineMeeting: Optional[OnlineMeetingInfo] = Field(alias="onlineMeeting", default=None,)
 	onlineMeetingProvider: Optional[OnlineMeetingProviderType | str] = Field(alias="onlineMeetingProvider", default=None,)
 	onlineMeetingUrl: Optional[str] = Field(alias="onlineMeetingUrl", default=None,)
-	organizer: Optional[Union[AttendeeBase, Attendee]] = Field(alias="organizer", default=None,discriminator="odata_type", )
+	organizer: Optional[Union[Attendee]] = Field(alias="organizer", default=None,discriminator="odata_type", )
 	originalEndTimeZone: Optional[str] = Field(alias="originalEndTimeZone", default=None,)
 	originalStart: Optional[datetime] = Field(alias="originalStart", default=None,)
 	originalStartTimeZone: Optional[str] = Field(alias="originalStartTimeZone", default=None,)
@@ -66,16 +66,12 @@ from .item_body import ItemBody
 from .date_time_time_zone import DateTimeTimeZone
 from .importance import Importance
 from .location_constraint_item import LocationConstraintItem
-from .location_constraint_item import LocationConstraintItem
 from .online_meeting_info import OnlineMeetingInfo
 from .online_meeting_provider_type import OnlineMeetingProviderType
-from .attendee_base import AttendeeBase
-from .attendee import Attendee
 from .patterned_recurrence import PatternedRecurrence
 from .response_status import ResponseStatus
 from .sensitivity import Sensitivity
 from .free_busy_status import FreeBusyStatus
-from .date_time_time_zone import DateTimeTimeZone
 from .event_type import EventType
 from .file_attachment import FileAttachment
 from .item_attachment import ItemAttachment
@@ -85,4 +81,3 @@ from .open_type_extension import OpenTypeExtension
 from .person_extension import PersonExtension
 from .multi_value_legacy_extended_property import MultiValueLegacyExtendedProperty
 from .single_value_legacy_extended_property import SingleValueLegacyExtendedProperty
-

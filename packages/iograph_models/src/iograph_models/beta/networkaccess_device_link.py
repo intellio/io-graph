@@ -1,13 +1,14 @@
 from __future__ import annotations
 from typing import Optional
 from typing import Union
+from typing import Literal
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class NetworkaccessDeviceLink(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
+	odata_type: Literal["#microsoft.graph.networkaccess.deviceLink"] = Field(alias="@odata.type",)
 	bandwidthCapacityInMbps: Optional[NetworkaccessBandwidthCapacityInMbps | str] = Field(alias="bandwidthCapacityInMbps", default=None,)
 	bgpConfiguration: Optional[NetworkaccessBgpConfiguration] = Field(alias="bgpConfiguration", default=None,)
 	deviceVendor: Optional[NetworkaccessDeviceVendor | str] = Field(alias="deviceVendor", default=None,)
@@ -23,4 +24,3 @@ from .networkaccess_device_vendor import NetworkaccessDeviceVendor
 from .networkaccess_redundancy_configuration import NetworkaccessRedundancyConfiguration
 from .networkaccess_tunnel_configuration_i_k_ev2_custom import NetworkaccessTunnelConfigurationIKEv2Custom
 from .networkaccess_tunnel_configuration_i_k_ev2_default import NetworkaccessTunnelConfigurationIKEv2Default
-

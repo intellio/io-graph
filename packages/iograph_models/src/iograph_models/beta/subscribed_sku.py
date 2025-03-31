@@ -1,12 +1,13 @@
 from __future__ import annotations
 from uuid import UUID
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from typing import Literal
+from pydantic import BaseModel, Field
 
 
 class SubscribedSku(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
+	odata_type: Literal["#microsoft.graph.subscribedSku"] = Field(alias="@odata.type",)
 	accountId: Optional[str] = Field(alias="accountId", default=None,)
 	accountName: Optional[str] = Field(alias="accountName", default=None,)
 	appliesTo: Optional[str] = Field(alias="appliesTo", default=None,)
@@ -20,4 +21,3 @@ class SubscribedSku(BaseModel):
 
 from .license_units_detail import LicenseUnitsDetail
 from .service_plan_info import ServicePlanInfo
-

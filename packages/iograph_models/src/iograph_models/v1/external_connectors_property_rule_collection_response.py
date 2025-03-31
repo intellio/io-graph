@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class ExternalConnectorsPropertyRuleCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class ExternalConnectorsPropertyRuleCollectionResponse(BaseModel):
 	value: Optional[list[ExternalConnectorsPropertyRule]] = Field(alias="value", default=None,)
 
 from .external_connectors_property_rule import ExternalConnectorsPropertyRule
-

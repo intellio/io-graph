@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class DepOnboardingSettingCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class DepOnboardingSettingCollectionResponse(BaseModel):
 	value: Optional[list[DepOnboardingSetting]] = Field(alias="value", default=None,)
 
 from .dep_onboarding_setting import DepOnboardingSetting
-

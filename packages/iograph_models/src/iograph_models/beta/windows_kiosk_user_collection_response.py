@@ -2,7 +2,7 @@ from __future__ import annotations
 from typing import Optional
 from typing import Union
 from typing import Annotated
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class WindowsKioskUserCollectionResponse(BaseModel):
@@ -17,4 +17,3 @@ from .windows_kiosk_azure_a_d_user import WindowsKioskAzureADUser
 from .windows_kiosk_local_group import WindowsKioskLocalGroup
 from .windows_kiosk_local_user import WindowsKioskLocalUser
 from .windows_kiosk_visitor import WindowsKioskVisitor
-

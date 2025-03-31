@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class CustomExtensionCalloutInstanceCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class CustomExtensionCalloutInstanceCollectionResponse(BaseModel):
 	value: Optional[list[CustomExtensionCalloutInstance]] = Field(alias="value", default=None,)
 
 from .custom_extension_callout_instance import CustomExtensionCalloutInstance
-

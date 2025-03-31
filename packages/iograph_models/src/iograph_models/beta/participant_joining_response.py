@@ -1,9 +1,9 @@
 from __future__ import annotations
 from typing import Optional
+from pydantic import BaseModel, Field
 from pydantic import model_validator, ModelWrapValidatorHandler, ValidationError
 from typing_extensions import Self
 from typing import Any
-from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class ParticipantJoiningResponse(BaseModel):
@@ -32,5 +32,4 @@ class ParticipantJoiningResponse(BaseModel):
 
 		except Exception as e:
 			raise e
-
 

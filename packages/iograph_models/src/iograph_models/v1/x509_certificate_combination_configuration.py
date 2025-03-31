@@ -1,7 +1,7 @@
 from __future__ import annotations
 from typing import Optional
 from typing import Literal
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class X509CertificateCombinationConfiguration(BaseModel):
@@ -12,4 +12,3 @@ class X509CertificateCombinationConfiguration(BaseModel):
 	allowedPolicyOIDs: Optional[list[str]] = Field(alias="allowedPolicyOIDs", default=None,)
 
 from .authentication_method_modes import AuthenticationMethodModes
-

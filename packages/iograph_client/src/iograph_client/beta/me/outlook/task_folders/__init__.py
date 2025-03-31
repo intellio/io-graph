@@ -15,8 +15,8 @@ if TYPE_CHECKING:
 	from .by_outlook_task_folder_id import ByOutlookTaskFolderIdRequest
 	from .....request_adapter import HttpxRequestAdapter
 from iograph_models.beta.outlook_task_folder_collection_response import OutlookTaskFolderCollectionResponse
-from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.beta.outlook_task_folder import OutlookTaskFolder
+from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 
 
 class TaskFoldersRequest(BaseRequestBuilder):

@@ -1,9 +1,9 @@
 from __future__ import annotations
 from typing import Optional
+from pydantic import BaseModel, Field
 from pydantic import model_validator, ModelWrapValidatorHandler, ValidationError
 from typing_extensions import Self
 from typing import Any
-from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class Entity(BaseModel):
@@ -98,9 +98,6 @@ class Entity(BaseModel):
 			if mapping_key == "#microsoft.graph.activityHistoryItem":
 				from .activity_history_item import ActivityHistoryItem
 				return ActivityHistoryItem.model_validate(data)
-			if mapping_key == "#microsoft.graph.activityStatistics":
-				from .activity_statistics import ActivityStatistics
-				return ActivityStatistics.model_validate(data)
 			if mapping_key == "#microsoft.graph.callActivityStatistics":
 				from .call_activity_statistics import CallActivityStatistics
 				return CallActivityStatistics.model_validate(data)
@@ -155,9 +152,6 @@ class Entity(BaseModel):
 			if mapping_key == "#microsoft.graph.agreementAcceptance":
 				from .agreement_acceptance import AgreementAcceptance
 				return AgreementAcceptance.model_validate(data)
-			if mapping_key == "#microsoft.graph.agreementFileProperties":
-				from .agreement_file_properties import AgreementFileProperties
-				return AgreementFileProperties.model_validate(data)
 			if mapping_key == "#microsoft.graph.agreementFile":
 				from .agreement_file import AgreementFile
 				return AgreementFile.model_validate(data)
@@ -185,9 +179,6 @@ class Entity(BaseModel):
 			if mapping_key == "#microsoft.graph.allowedValue":
 				from .allowed_value import AllowedValue
 				return AllowedValue.model_validate(data)
-			if mapping_key == "#microsoft.graph.androidDeviceComplianceLocalActionBase":
-				from .android_device_compliance_local_action_base import AndroidDeviceComplianceLocalActionBase
-				return AndroidDeviceComplianceLocalActionBase.model_validate(data)
 			if mapping_key == "#microsoft.graph.androidDeviceComplianceLocalActionLockDevice":
 				from .android_device_compliance_local_action_lock_device import AndroidDeviceComplianceLocalActionLockDevice
 				return AndroidDeviceComplianceLocalActionLockDevice.model_validate(data)
@@ -230,9 +221,6 @@ class Entity(BaseModel):
 			if mapping_key == "#microsoft.graph.appleUserInitiatedEnrollmentProfile":
 				from .apple_user_initiated_enrollment_profile import AppleUserInitiatedEnrollmentProfile
 				return AppleUserInitiatedEnrollmentProfile.model_validate(data)
-			if mapping_key == "#microsoft.graph.applicationSegment":
-				from .application_segment import ApplicationSegment
-				return ApplicationSegment.model_validate(data)
 			if mapping_key == "#microsoft.graph.ipApplicationSegment":
 				from .ip_application_segment import IpApplicationSegment
 				return IpApplicationSegment.model_validate(data)
@@ -275,9 +263,6 @@ class Entity(BaseModel):
 			if mapping_key == "#microsoft.graph.approvalWorkflowProvider":
 				from .approval_workflow_provider import ApprovalWorkflowProvider
 				return ApprovalWorkflowProvider.model_validate(data)
-			if mapping_key == "#microsoft.graph.appScope":
-				from .app_scope import AppScope
-				return AppScope.model_validate(data)
 			if mapping_key == "#microsoft.graph.customAppScope":
 				from .custom_app_scope import CustomAppScope
 				return CustomAppScope.model_validate(data)
@@ -293,9 +278,6 @@ class Entity(BaseModel):
 			if mapping_key == "#microsoft.graph.assignmentFilterEvaluationStatusDetails":
 				from .assignment_filter_evaluation_status_details import AssignmentFilterEvaluationStatusDetails
 				return AssignmentFilterEvaluationStatusDetails.model_validate(data)
-			if mapping_key == "#microsoft.graph.attachment":
-				from .attachment import Attachment
-				return Attachment.model_validate(data)
 			if mapping_key == "#microsoft.graph.fileAttachment":
 				from .file_attachment import FileAttachment
 				return FileAttachment.model_validate(data)
@@ -305,9 +287,6 @@ class Entity(BaseModel):
 			if mapping_key == "#microsoft.graph.referenceAttachment":
 				from .reference_attachment import ReferenceAttachment
 				return ReferenceAttachment.model_validate(data)
-			if mapping_key == "#microsoft.graph.attachmentBase":
-				from .attachment_base import AttachmentBase
-				return AttachmentBase.model_validate(data)
 			if mapping_key == "#microsoft.graph.taskFileAttachment":
 				from .task_file_attachment import TaskFileAttachment
 				return TaskFileAttachment.model_validate(data)
@@ -335,9 +314,6 @@ class Entity(BaseModel):
 			if mapping_key == "#microsoft.graph.authentication":
 				from .authentication import Authentication
 				return Authentication.model_validate(data)
-			if mapping_key == "#microsoft.graph.authenticationCombinationConfiguration":
-				from .authentication_combination_configuration import AuthenticationCombinationConfiguration
-				return AuthenticationCombinationConfiguration.model_validate(data)
 			if mapping_key == "#microsoft.graph.fido2CombinationConfiguration":
 				from .fido2_combination_configuration import Fido2CombinationConfiguration
 				return Fido2CombinationConfiguration.model_validate(data)
@@ -347,9 +323,6 @@ class Entity(BaseModel):
 			if mapping_key == "#microsoft.graph.authenticationContextClassReference":
 				from .authentication_context_class_reference import AuthenticationContextClassReference
 				return AuthenticationContextClassReference.model_validate(data)
-			if mapping_key == "#microsoft.graph.authenticationEventListener":
-				from .authentication_event_listener import AuthenticationEventListener
-				return AuthenticationEventListener.model_validate(data)
 			if mapping_key == "#microsoft.graph.onAttributeCollectionListener":
 				from .on_attribute_collection_listener import OnAttributeCollectionListener
 				return OnAttributeCollectionListener.model_validate(data)
@@ -377,9 +350,6 @@ class Entity(BaseModel):
 			if mapping_key == "#microsoft.graph.onUserCreateStartListener":
 				from .on_user_create_start_listener import OnUserCreateStartListener
 				return OnUserCreateStartListener.model_validate(data)
-			if mapping_key == "#microsoft.graph.authenticationEventsFlow":
-				from .authentication_events_flow import AuthenticationEventsFlow
-				return AuthenticationEventsFlow.model_validate(data)
 			if mapping_key == "#microsoft.graph.externalUsersSelfServiceSignUpEventsFlow":
 				from .external_users_self_service_sign_up_events_flow import ExternalUsersSelfServiceSignUpEventsFlow
 				return ExternalUsersSelfServiceSignUpEventsFlow.model_validate(data)
@@ -392,15 +362,9 @@ class Entity(BaseModel):
 			if mapping_key == "#microsoft.graph.authenticationFlowsPolicy":
 				from .authentication_flows_policy import AuthenticationFlowsPolicy
 				return AuthenticationFlowsPolicy.model_validate(data)
-			if mapping_key == "#microsoft.graph.authenticationListener":
-				from .authentication_listener import AuthenticationListener
-				return AuthenticationListener.model_validate(data)
 			if mapping_key == "#microsoft.graph.invokeUserFlowListener":
 				from .invoke_user_flow_listener import InvokeUserFlowListener
 				return InvokeUserFlowListener.model_validate(data)
-			if mapping_key == "#microsoft.graph.authenticationMethod":
-				from .authentication_method import AuthenticationMethod
-				return AuthenticationMethod.model_validate(data)
 			if mapping_key == "#microsoft.graph.emailAuthenticationMethod":
 				from .email_authentication_method import EmailAuthenticationMethod
 				return EmailAuthenticationMethod.model_validate(data)
@@ -434,9 +398,6 @@ class Entity(BaseModel):
 			if mapping_key == "#microsoft.graph.windowsHelloForBusinessAuthenticationMethod":
 				from .windows_hello_for_business_authentication_method import WindowsHelloForBusinessAuthenticationMethod
 				return WindowsHelloForBusinessAuthenticationMethod.model_validate(data)
-			if mapping_key == "#microsoft.graph.authenticationMethodConfiguration":
-				from .authentication_method_configuration import AuthenticationMethodConfiguration
-				return AuthenticationMethodConfiguration.model_validate(data)
 			if mapping_key == "#microsoft.graph.emailAuthenticationMethodConfiguration":
 				from .email_authentication_method_configuration import EmailAuthenticationMethodConfiguration
 				return EmailAuthenticationMethodConfiguration.model_validate(data)
@@ -467,9 +428,6 @@ class Entity(BaseModel):
 			if mapping_key == "#microsoft.graph.x509CertificateAuthenticationMethodConfiguration":
 				from .x509_certificate_authentication_method_configuration import X509CertificateAuthenticationMethodConfiguration
 				return X509CertificateAuthenticationMethodConfiguration.model_validate(data)
-			if mapping_key == "#microsoft.graph.authenticationMethodDevice":
-				from .authentication_method_device import AuthenticationMethodDevice
-				return AuthenticationMethodDevice.model_validate(data)
 			if mapping_key == "#microsoft.graph.hardwareOathTokenAuthenticationMethodDevice":
 				from .hardware_oath_token_authentication_method_device import HardwareOathTokenAuthenticationMethodDevice
 				return HardwareOathTokenAuthenticationMethodDevice.model_validate(data)
@@ -482,9 +440,6 @@ class Entity(BaseModel):
 			if mapping_key == "#microsoft.graph.authenticationMethodsRoot":
 				from .authentication_methods_root import AuthenticationMethodsRoot
 				return AuthenticationMethodsRoot.model_validate(data)
-			if mapping_key == "#microsoft.graph.authenticationMethodTarget":
-				from .authentication_method_target import AuthenticationMethodTarget
-				return AuthenticationMethodTarget.model_validate(data)
 			if mapping_key == "#microsoft.graph.microsoftAuthenticatorAuthenticationMethodTarget":
 				from .microsoft_authenticator_authentication_method_target import MicrosoftAuthenticatorAuthenticationMethodTarget
 				return MicrosoftAuthenticatorAuthenticationMethodTarget.model_validate(data)
@@ -509,9 +464,6 @@ class Entity(BaseModel):
 			if mapping_key == "#microsoft.graph.authoredNote":
 				from .authored_note import AuthoredNote
 				return AuthoredNote.model_validate(data)
-			if mapping_key == "#microsoft.graph.authorizationSystem":
-				from .authorization_system import AuthorizationSystem
-				return AuthorizationSystem.model_validate(data)
 			if mapping_key == "#microsoft.graph.awsAuthorizationSystem":
 				from .aws_authorization_system import AwsAuthorizationSystem
 				return AwsAuthorizationSystem.model_validate(data)
@@ -521,12 +473,6 @@ class Entity(BaseModel):
 			if mapping_key == "#microsoft.graph.gcpAuthorizationSystem":
 				from .gcp_authorization_system import GcpAuthorizationSystem
 				return GcpAuthorizationSystem.model_validate(data)
-			if mapping_key == "#microsoft.graph.authorizationSystemIdentity":
-				from .authorization_system_identity import AuthorizationSystemIdentity
-				return AuthorizationSystemIdentity.model_validate(data)
-			if mapping_key == "#microsoft.graph.awsIdentity":
-				from .aws_identity import AwsIdentity
-				return AwsIdentity.model_validate(data)
 			if mapping_key == "#microsoft.graph.awsAccessKey":
 				from .aws_access_key import AwsAccessKey
 				return AwsAccessKey.model_validate(data)
@@ -545,9 +491,6 @@ class Entity(BaseModel):
 			if mapping_key == "#microsoft.graph.awsUser":
 				from .aws_user import AwsUser
 				return AwsUser.model_validate(data)
-			if mapping_key == "#microsoft.graph.azureIdentity":
-				from .azure_identity import AzureIdentity
-				return AzureIdentity.model_validate(data)
 			if mapping_key == "#microsoft.graph.azureGroup":
 				from .azure_group import AzureGroup
 				return AzureGroup.model_validate(data)
@@ -563,9 +506,6 @@ class Entity(BaseModel):
 			if mapping_key == "#microsoft.graph.azureUser":
 				from .azure_user import AzureUser
 				return AzureUser.model_validate(data)
-			if mapping_key == "#microsoft.graph.gcpIdentity":
-				from .gcp_identity import GcpIdentity
-				return GcpIdentity.model_validate(data)
 			if mapping_key == "#microsoft.graph.gcpCloudFunction":
 				from .gcp_cloud_function import GcpCloudFunction
 				return GcpCloudFunction.model_validate(data)
@@ -578,9 +518,6 @@ class Entity(BaseModel):
 			if mapping_key == "#microsoft.graph.gcpUser":
 				from .gcp_user import GcpUser
 				return GcpUser.model_validate(data)
-			if mapping_key == "#microsoft.graph.authorizationSystemResource":
-				from .authorization_system_resource import AuthorizationSystemResource
-				return AuthorizationSystemResource.model_validate(data)
 			if mapping_key == "#microsoft.graph.awsAuthorizationSystemResource":
 				from .aws_authorization_system_resource import AwsAuthorizationSystemResource
 				return AwsAuthorizationSystemResource.model_validate(data)
@@ -590,9 +527,6 @@ class Entity(BaseModel):
 			if mapping_key == "#microsoft.graph.gcpAuthorizationSystemResource":
 				from .gcp_authorization_system_resource import GcpAuthorizationSystemResource
 				return GcpAuthorizationSystemResource.model_validate(data)
-			if mapping_key == "#microsoft.graph.authorizationSystemTypeAction":
-				from .authorization_system_type_action import AuthorizationSystemTypeAction
-				return AuthorizationSystemTypeAction.model_validate(data)
 			if mapping_key == "#microsoft.graph.awsAuthorizationSystemTypeAction":
 				from .aws_authorization_system_type_action import AwsAuthorizationSystemTypeAction
 				return AwsAuthorizationSystemTypeAction.model_validate(data)
@@ -620,12 +554,6 @@ class Entity(BaseModel):
 			if mapping_key == "#microsoft.graph.backupRestoreRoot":
 				from .backup_restore_root import BackupRestoreRoot
 				return BackupRestoreRoot.model_validate(data)
-			if mapping_key == "#microsoft.graph.baseItem":
-				from .base_item import BaseItem
-				return BaseItem.model_validate(data)
-			if mapping_key == "#microsoft.graph.baseSitePage":
-				from .base_site_page import BaseSitePage
-				return BaseSitePage.model_validate(data)
 			if mapping_key == "#microsoft.graph.newsLinkPage":
 				from .news_link_page import NewsLinkPage
 				return NewsLinkPage.model_validate(data)
@@ -662,15 +590,9 @@ class Entity(BaseModel):
 			if mapping_key == "#microsoft.graph.site":
 				from .site import Site
 				return Site.model_validate(data)
-			if mapping_key == "#microsoft.graph.baseItemVersion":
-				from .base_item_version import BaseItemVersion
-				return BaseItemVersion.model_validate(data)
 			if mapping_key == "#microsoft.graph.driveItemVersion":
 				from .drive_item_version import DriveItemVersion
 				return DriveItemVersion.model_validate(data)
-			if mapping_key == "#microsoft.graph.listItemVersion":
-				from .list_item_version import ListItemVersion
-				return ListItemVersion.model_validate(data)
 			if mapping_key == "#microsoft.graph.documentSetVersion":
 				from .document_set_version import DocumentSetVersion
 				return DocumentSetVersion.model_validate(data)
@@ -689,15 +611,9 @@ class Entity(BaseModel):
 			if mapping_key == "#microsoft.graph.bookingCustomQuestion":
 				from .booking_custom_question import BookingCustomQuestion
 				return BookingCustomQuestion.model_validate(data)
-			if mapping_key == "#microsoft.graph.bookingNamedEntity":
-				from .booking_named_entity import BookingNamedEntity
-				return BookingNamedEntity.model_validate(data)
 			if mapping_key == "#microsoft.graph.bookingBusiness":
 				from .booking_business import BookingBusiness
 				return BookingBusiness.model_validate(data)
-			if mapping_key == "#microsoft.graph.bookingPerson":
-				from .booking_person import BookingPerson
-				return BookingPerson.model_validate(data)
 			if mapping_key == "#microsoft.graph.bookingCustomer":
 				from .booking_customer import BookingCustomer
 				return BookingCustomer.model_validate(data)
@@ -749,9 +665,6 @@ class Entity(BaseModel):
 			if mapping_key == "#microsoft.graph.callAiInsight":
 				from .call_ai_insight import CallAiInsight
 				return CallAiInsight.model_validate(data)
-			if mapping_key == "#microsoft.graph.callEvent":
-				from .call_event import CallEvent
-				return CallEvent.model_validate(data)
 			if mapping_key == "#microsoft.graph.emergencyCallEvent":
 				from .emergency_call_event import EmergencyCallEvent
 				return EmergencyCallEvent.model_validate(data)
@@ -782,30 +695,18 @@ class Entity(BaseModel):
 			if mapping_key == "#microsoft.graph.certificateConnectorDetails":
 				from .certificate_connector_details import CertificateConnectorDetails
 				return CertificateConnectorDetails.model_validate(data)
-			if mapping_key == "#microsoft.graph.changeItemBase":
-				from .change_item_base import ChangeItemBase
-				return ChangeItemBase.model_validate(data)
 			if mapping_key == "#microsoft.graph.announcement":
 				from .announcement import Announcement
 				return Announcement.model_validate(data)
 			if mapping_key == "#microsoft.graph.roadmap":
 				from .roadmap import Roadmap
 				return Roadmap.model_validate(data)
-			if mapping_key == "#microsoft.graph.changeTrackedEntity":
-				from .change_tracked_entity import ChangeTrackedEntity
-				return ChangeTrackedEntity.model_validate(data)
 			if mapping_key == "#microsoft.graph.dayNote":
 				from .day_note import DayNote
 				return DayNote.model_validate(data)
 			if mapping_key == "#microsoft.graph.openShift":
 				from .open_shift import OpenShift
 				return OpenShift.model_validate(data)
-			if mapping_key == "#microsoft.graph.scheduleChangeRequest":
-				from .schedule_change_request import ScheduleChangeRequest
-				return ScheduleChangeRequest.model_validate(data)
-			if mapping_key == "#microsoft.graph.offerShiftRequest":
-				from .offer_shift_request import OfferShiftRequest
-				return OfferShiftRequest.model_validate(data)
 			if mapping_key == "#microsoft.graph.swapShiftsChangeRequest":
 				from .swap_shifts_change_request import SwapShiftsChangeRequest
 				return SwapShiftsChangeRequest.model_validate(data)
@@ -875,9 +776,6 @@ class Entity(BaseModel):
 			if mapping_key == "#microsoft.graph.cloudPcAuditEvent":
 				from .cloud_pc_audit_event import CloudPcAuditEvent
 				return CloudPcAuditEvent.model_validate(data)
-			if mapping_key == "#microsoft.graph.cloudPcBulkAction":
-				from .cloud_pc_bulk_action import CloudPcBulkAction
-				return CloudPcBulkAction.model_validate(data)
 			if mapping_key == "#microsoft.graph.cloudPcBulkCreateSnapshot":
 				from .cloud_pc_bulk_create_snapshot import CloudPcBulkCreateSnapshot
 				return CloudPcBulkCreateSnapshot.model_validate(data)
@@ -980,9 +878,6 @@ class Entity(BaseModel):
 			if mapping_key == "#microsoft.graph.command":
 				from .command import Command
 				return Command.model_validate(data)
-			if mapping_key == "#microsoft.graph.commsOperation":
-				from .comms_operation import CommsOperation
-				return CommsOperation.model_validate(data)
 			if mapping_key == "#microsoft.graph.addLargeGalleryViewOperation":
 				from .add_large_gallery_view_operation import AddLargeGalleryViewOperation
 				return AddLargeGalleryViewOperation.model_validate(data)
@@ -1043,9 +938,6 @@ class Entity(BaseModel):
 			if mapping_key == "#microsoft.graph.complianceManagementPartner":
 				from .compliance_management_partner import ComplianceManagementPartner
 				return ComplianceManagementPartner.model_validate(data)
-			if mapping_key == "#microsoft.graph.conditionalAccessPolicy":
-				from .conditional_access_policy import ConditionalAccessPolicy
-				return ConditionalAccessPolicy.model_validate(data)
 			if mapping_key == "#microsoft.graph.conditionalAccessWhatIfPolicy":
 				from .conditional_access_what_if_policy import ConditionalAccessWhatIfPolicy
 				return ConditionalAccessWhatIfPolicy.model_validate(data)
@@ -1091,9 +983,6 @@ class Entity(BaseModel):
 			if mapping_key == "#microsoft.graph.conversation":
 				from .conversation import Conversation
 				return Conversation.model_validate(data)
-			if mapping_key == "#microsoft.graph.conversationMember":
-				from .conversation_member import ConversationMember
-				return ConversationMember.model_validate(data)
 			if mapping_key == "#microsoft.graph.aadUserConversationMember":
 				from .aad_user_conversation_member import AadUserConversationMember
 				return AadUserConversationMember.model_validate(data)
@@ -1139,9 +1028,6 @@ class Entity(BaseModel):
 			if mapping_key == "#microsoft.graph.crossTenantAccessPolicyConfigurationDefault":
 				from .cross_tenant_access_policy_configuration_default import CrossTenantAccessPolicyConfigurationDefault
 				return CrossTenantAccessPolicyConfigurationDefault.model_validate(data)
-			if mapping_key == "#microsoft.graph.customCalloutExtension":
-				from .custom_callout_extension import CustomCalloutExtension
-				return CustomCalloutExtension.model_validate(data)
 			if mapping_key == "#microsoft.graph.accessPackageAssignmentRequestWorkflowExtension":
 				from .access_package_assignment_request_workflow_extension import AccessPackageAssignmentRequestWorkflowExtension
 				return AccessPackageAssignmentRequestWorkflowExtension.model_validate(data)
@@ -1151,9 +1037,6 @@ class Entity(BaseModel):
 			if mapping_key == "#microsoft.graph.customAccessPackageWorkflowExtension":
 				from .custom_access_package_workflow_extension import CustomAccessPackageWorkflowExtension
 				return CustomAccessPackageWorkflowExtension.model_validate(data)
-			if mapping_key == "#microsoft.graph.customAuthenticationExtension":
-				from .custom_authentication_extension import CustomAuthenticationExtension
-				return CustomAuthenticationExtension.model_validate(data)
 			if mapping_key == "#microsoft.graph.onAttributeCollectionStartCustomExtension":
 				from .on_attribute_collection_start_custom_extension import OnAttributeCollectionStartCustomExtension
 				return OnAttributeCollectionStartCustomExtension.model_validate(data)
@@ -1184,9 +1067,6 @@ class Entity(BaseModel):
 			if mapping_key == "#microsoft.graph.customSecurityAttributeDefinition":
 				from .custom_security_attribute_definition import CustomSecurityAttributeDefinition
 				return CustomSecurityAttributeDefinition.model_validate(data)
-			if mapping_key == "#microsoft.graph.customSecurityAttributeExemption":
-				from .custom_security_attribute_exemption import CustomSecurityAttributeExemption
-				return CustomSecurityAttributeExemption.model_validate(data)
 			if mapping_key == "#microsoft.graph.customSecurityAttributeStringValueExemption":
 				from .custom_security_attribute_string_value_exemption import CustomSecurityAttributeStringValueExemption
 				return CustomSecurityAttributeStringValueExemption.model_validate(data)
@@ -1217,9 +1097,6 @@ class Entity(BaseModel):
 			if mapping_key == "#microsoft.graph.delegatedAdminCustomer":
 				from .delegated_admin_customer import DelegatedAdminCustomer
 				return DelegatedAdminCustomer.model_validate(data)
-			if mapping_key == "#microsoft.graph.delegatedAdminRelationship":
-				from .delegated_admin_relationship import DelegatedAdminRelationship
-				return DelegatedAdminRelationship.model_validate(data)
 			if mapping_key == "#microsoft.graph.resellerDelegatedAdminRelationship":
 				from .reseller_delegated_admin_relationship import ResellerDelegatedAdminRelationship
 				return ResellerDelegatedAdminRelationship.model_validate(data)
@@ -1256,18 +1133,12 @@ class Entity(BaseModel):
 			if mapping_key == "#microsoft.graph.detectedApp":
 				from .detected_app import DetectedApp
 				return DetectedApp.model_validate(data)
-			if mapping_key == "#microsoft.graph.deviceAndAppManagementAssignmentFilter":
-				from .device_and_app_management_assignment_filter import DeviceAndAppManagementAssignmentFilter
-				return DeviceAndAppManagementAssignmentFilter.model_validate(data)
 			if mapping_key == "#microsoft.graph.payloadCompatibleAssignmentFilter":
 				from .payload_compatible_assignment_filter import PayloadCompatibleAssignmentFilter
 				return PayloadCompatibleAssignmentFilter.model_validate(data)
 			if mapping_key == "#microsoft.graph.deviceAppManagement":
 				from .device_app_management import DeviceAppManagement
 				return DeviceAppManagement.model_validate(data)
-			if mapping_key == "#microsoft.graph.deviceAppManagementTask":
-				from .device_app_management_task import DeviceAppManagementTask
-				return DeviceAppManagementTask.model_validate(data)
 			if mapping_key == "#microsoft.graph.appVulnerabilityTask":
 				from .app_vulnerability_task import AppVulnerabilityTask
 				return AppVulnerabilityTask.model_validate(data)
@@ -1289,9 +1160,6 @@ class Entity(BaseModel):
 			if mapping_key == "#microsoft.graph.deviceComplianceDeviceStatus":
 				from .device_compliance_device_status import DeviceComplianceDeviceStatus
 				return DeviceComplianceDeviceStatus.model_validate(data)
-			if mapping_key == "#microsoft.graph.deviceCompliancePolicy":
-				from .device_compliance_policy import DeviceCompliancePolicy
-				return DeviceCompliancePolicy.model_validate(data)
 			if mapping_key == "#microsoft.graph.androidCompliancePolicy":
 				from .android_compliance_policy import AndroidCompliancePolicy
 				return AndroidCompliancePolicy.model_validate(data)
@@ -1364,12 +1232,6 @@ class Entity(BaseModel):
 			if mapping_key == "#microsoft.graph.deviceComplianceUserStatus":
 				from .device_compliance_user_status import DeviceComplianceUserStatus
 				return DeviceComplianceUserStatus.model_validate(data)
-			if mapping_key == "#microsoft.graph.deviceConfiguration":
-				from .device_configuration import DeviceConfiguration
-				return DeviceConfiguration.model_validate(data)
-			if mapping_key == "#microsoft.graph.androidCertificateProfileBase":
-				from .android_certificate_profile_base import AndroidCertificateProfileBase
-				return AndroidCertificateProfileBase.model_validate(data)
 			if mapping_key == "#microsoft.graph.androidForWorkImportedPFXCertificateProfile":
 				from .android_for_work_imported_p_f_x_certificate_profile import AndroidForWorkImportedPFXCertificateProfile
 				return AndroidForWorkImportedPFXCertificateProfile.model_validate(data)
@@ -1385,9 +1247,6 @@ class Entity(BaseModel):
 			if mapping_key == "#microsoft.graph.androidCustomConfiguration":
 				from .android_custom_configuration import AndroidCustomConfiguration
 				return AndroidCustomConfiguration.model_validate(data)
-			if mapping_key == "#microsoft.graph.androidDeviceOwnerCertificateProfileBase":
-				from .android_device_owner_certificate_profile_base import AndroidDeviceOwnerCertificateProfileBase
-				return AndroidDeviceOwnerCertificateProfileBase.model_validate(data)
 			if mapping_key == "#microsoft.graph.androidDeviceOwnerImportedPFXCertificateProfile":
 				from .android_device_owner_imported_p_f_x_certificate_profile import AndroidDeviceOwnerImportedPFXCertificateProfile
 				return AndroidDeviceOwnerImportedPFXCertificateProfile.model_validate(data)
@@ -1406,18 +1265,12 @@ class Entity(BaseModel):
 			if mapping_key == "#microsoft.graph.androidDeviceOwnerTrustedRootCertificate":
 				from .android_device_owner_trusted_root_certificate import AndroidDeviceOwnerTrustedRootCertificate
 				return AndroidDeviceOwnerTrustedRootCertificate.model_validate(data)
-			if mapping_key == "#microsoft.graph.androidDeviceOwnerWiFiConfiguration":
-				from .android_device_owner_wi_fi_configuration import AndroidDeviceOwnerWiFiConfiguration
-				return AndroidDeviceOwnerWiFiConfiguration.model_validate(data)
 			if mapping_key == "#microsoft.graph.androidDeviceOwnerEnterpriseWiFiConfiguration":
 				from .android_device_owner_enterprise_wi_fi_configuration import AndroidDeviceOwnerEnterpriseWiFiConfiguration
 				return AndroidDeviceOwnerEnterpriseWiFiConfiguration.model_validate(data)
 			if mapping_key == "#microsoft.graph.androidEasEmailProfileConfiguration":
 				from .android_eas_email_profile_configuration import AndroidEasEmailProfileConfiguration
 				return AndroidEasEmailProfileConfiguration.model_validate(data)
-			if mapping_key == "#microsoft.graph.androidForWorkCertificateProfileBase":
-				from .android_for_work_certificate_profile_base import AndroidForWorkCertificateProfileBase
-				return AndroidForWorkCertificateProfileBase.model_validate(data)
 			if mapping_key == "#microsoft.graph.androidForWorkPkcsCertificateProfile":
 				from .android_for_work_pkcs_certificate_profile import AndroidForWorkPkcsCertificateProfile
 				return AndroidForWorkPkcsCertificateProfile.model_validate(data)
@@ -1427,9 +1280,6 @@ class Entity(BaseModel):
 			if mapping_key == "#microsoft.graph.androidForWorkCustomConfiguration":
 				from .android_for_work_custom_configuration import AndroidForWorkCustomConfiguration
 				return AndroidForWorkCustomConfiguration.model_validate(data)
-			if mapping_key == "#microsoft.graph.androidForWorkEasEmailProfileBase":
-				from .android_for_work_eas_email_profile_base import AndroidForWorkEasEmailProfileBase
-				return AndroidForWorkEasEmailProfileBase.model_validate(data)
 			if mapping_key == "#microsoft.graph.androidForWorkGmailEasConfiguration":
 				from .android_for_work_gmail_eas_configuration import AndroidForWorkGmailEasConfiguration
 				return AndroidForWorkGmailEasConfiguration.model_validate(data)
@@ -1445,9 +1295,6 @@ class Entity(BaseModel):
 			if mapping_key == "#microsoft.graph.androidForWorkVpnConfiguration":
 				from .android_for_work_vpn_configuration import AndroidForWorkVpnConfiguration
 				return AndroidForWorkVpnConfiguration.model_validate(data)
-			if mapping_key == "#microsoft.graph.androidForWorkWiFiConfiguration":
-				from .android_for_work_wi_fi_configuration import AndroidForWorkWiFiConfiguration
-				return AndroidForWorkWiFiConfiguration.model_validate(data)
 			if mapping_key == "#microsoft.graph.androidForWorkEnterpriseWiFiConfiguration":
 				from .android_for_work_enterprise_wi_fi_configuration import AndroidForWorkEnterpriseWiFiConfiguration
 				return AndroidForWorkEnterpriseWiFiConfiguration.model_validate(data)
@@ -1463,15 +1310,9 @@ class Entity(BaseModel):
 			if mapping_key == "#microsoft.graph.androidVpnConfiguration":
 				from .android_vpn_configuration import AndroidVpnConfiguration
 				return AndroidVpnConfiguration.model_validate(data)
-			if mapping_key == "#microsoft.graph.androidWiFiConfiguration":
-				from .android_wi_fi_configuration import AndroidWiFiConfiguration
-				return AndroidWiFiConfiguration.model_validate(data)
 			if mapping_key == "#microsoft.graph.androidEnterpriseWiFiConfiguration":
 				from .android_enterprise_wi_fi_configuration import AndroidEnterpriseWiFiConfiguration
 				return AndroidEnterpriseWiFiConfiguration.model_validate(data)
-			if mapping_key == "#microsoft.graph.androidWorkProfileCertificateProfileBase":
-				from .android_work_profile_certificate_profile_base import AndroidWorkProfileCertificateProfileBase
-				return AndroidWorkProfileCertificateProfileBase.model_validate(data)
 			if mapping_key == "#microsoft.graph.androidWorkProfilePkcsCertificateProfile":
 				from .android_work_profile_pkcs_certificate_profile import AndroidWorkProfilePkcsCertificateProfile
 				return AndroidWorkProfilePkcsCertificateProfile.model_validate(data)
@@ -1481,9 +1322,6 @@ class Entity(BaseModel):
 			if mapping_key == "#microsoft.graph.androidWorkProfileCustomConfiguration":
 				from .android_work_profile_custom_configuration import AndroidWorkProfileCustomConfiguration
 				return AndroidWorkProfileCustomConfiguration.model_validate(data)
-			if mapping_key == "#microsoft.graph.androidWorkProfileEasEmailProfileBase":
-				from .android_work_profile_eas_email_profile_base import AndroidWorkProfileEasEmailProfileBase
-				return AndroidWorkProfileEasEmailProfileBase.model_validate(data)
 			if mapping_key == "#microsoft.graph.androidWorkProfileGmailEasConfiguration":
 				from .android_work_profile_gmail_eas_configuration import AndroidWorkProfileGmailEasConfiguration
 				return AndroidWorkProfileGmailEasConfiguration.model_validate(data)
@@ -1499,15 +1337,9 @@ class Entity(BaseModel):
 			if mapping_key == "#microsoft.graph.androidWorkProfileVpnConfiguration":
 				from .android_work_profile_vpn_configuration import AndroidWorkProfileVpnConfiguration
 				return AndroidWorkProfileVpnConfiguration.model_validate(data)
-			if mapping_key == "#microsoft.graph.androidWorkProfileWiFiConfiguration":
-				from .android_work_profile_wi_fi_configuration import AndroidWorkProfileWiFiConfiguration
-				return AndroidWorkProfileWiFiConfiguration.model_validate(data)
 			if mapping_key == "#microsoft.graph.androidWorkProfileEnterpriseWiFiConfiguration":
 				from .android_work_profile_enterprise_wi_fi_configuration import AndroidWorkProfileEnterpriseWiFiConfiguration
 				return AndroidWorkProfileEnterpriseWiFiConfiguration.model_validate(data)
-			if mapping_key == "#microsoft.graph.aospDeviceOwnerCertificateProfileBase":
-				from .aosp_device_owner_certificate_profile_base import AospDeviceOwnerCertificateProfileBase
-				return AospDeviceOwnerCertificateProfileBase.model_validate(data)
 			if mapping_key == "#microsoft.graph.aospDeviceOwnerPkcsCertificateProfile":
 				from .aosp_device_owner_pkcs_certificate_profile import AospDeviceOwnerPkcsCertificateProfile
 				return AospDeviceOwnerPkcsCertificateProfile.model_validate(data)
@@ -1520,42 +1352,24 @@ class Entity(BaseModel):
 			if mapping_key == "#microsoft.graph.aospDeviceOwnerTrustedRootCertificate":
 				from .aosp_device_owner_trusted_root_certificate import AospDeviceOwnerTrustedRootCertificate
 				return AospDeviceOwnerTrustedRootCertificate.model_validate(data)
-			if mapping_key == "#microsoft.graph.aospDeviceOwnerWiFiConfiguration":
-				from .aosp_device_owner_wi_fi_configuration import AospDeviceOwnerWiFiConfiguration
-				return AospDeviceOwnerWiFiConfiguration.model_validate(data)
 			if mapping_key == "#microsoft.graph.aospDeviceOwnerEnterpriseWiFiConfiguration":
 				from .aosp_device_owner_enterprise_wi_fi_configuration import AospDeviceOwnerEnterpriseWiFiConfiguration
 				return AospDeviceOwnerEnterpriseWiFiConfiguration.model_validate(data)
-			if mapping_key == "#microsoft.graph.appleDeviceFeaturesConfigurationBase":
-				from .apple_device_features_configuration_base import AppleDeviceFeaturesConfigurationBase
-				return AppleDeviceFeaturesConfigurationBase.model_validate(data)
 			if mapping_key == "#microsoft.graph.iosDeviceFeaturesConfiguration":
 				from .ios_device_features_configuration import IosDeviceFeaturesConfiguration
 				return IosDeviceFeaturesConfiguration.model_validate(data)
 			if mapping_key == "#microsoft.graph.macOSDeviceFeaturesConfiguration":
 				from .mac_o_s_device_features_configuration import MacOSDeviceFeaturesConfiguration
 				return MacOSDeviceFeaturesConfiguration.model_validate(data)
-			if mapping_key == "#microsoft.graph.appleExpeditedCheckinConfigurationBase":
-				from .apple_expedited_checkin_configuration_base import AppleExpeditedCheckinConfigurationBase
-				return AppleExpeditedCheckinConfigurationBase.model_validate(data)
 			if mapping_key == "#microsoft.graph.iosExpeditedCheckinConfiguration":
 				from .ios_expedited_checkin_configuration import IosExpeditedCheckinConfiguration
 				return IosExpeditedCheckinConfiguration.model_validate(data)
-			if mapping_key == "#microsoft.graph.appleVpnConfiguration":
-				from .apple_vpn_configuration import AppleVpnConfiguration
-				return AppleVpnConfiguration.model_validate(data)
-			if mapping_key == "#microsoft.graph.iosVpnConfiguration":
-				from .ios_vpn_configuration import IosVpnConfiguration
-				return IosVpnConfiguration.model_validate(data)
 			if mapping_key == "#microsoft.graph.iosikEv2VpnConfiguration":
 				from .iosik_ev2_vpn_configuration import IosikEv2VpnConfiguration
 				return IosikEv2VpnConfiguration.model_validate(data)
 			if mapping_key == "#microsoft.graph.macOSVpnConfiguration":
 				from .mac_o_s_vpn_configuration import MacOSVpnConfiguration
 				return MacOSVpnConfiguration.model_validate(data)
-			if mapping_key == "#microsoft.graph.easEmailProfileConfigurationBase":
-				from .eas_email_profile_configuration_base import EasEmailProfileConfigurationBase
-				return EasEmailProfileConfigurationBase.model_validate(data)
 			if mapping_key == "#microsoft.graph.iosEasEmailProfileConfiguration":
 				from .ios_eas_email_profile_configuration import IosEasEmailProfileConfiguration
 				return IosEasEmailProfileConfiguration.model_validate(data)
@@ -1568,12 +1382,6 @@ class Entity(BaseModel):
 			if mapping_key == "#microsoft.graph.editionUpgradeConfiguration":
 				from .edition_upgrade_configuration import EditionUpgradeConfiguration
 				return EditionUpgradeConfiguration.model_validate(data)
-			if mapping_key == "#microsoft.graph.iosCertificateProfile":
-				from .ios_certificate_profile import IosCertificateProfile
-				return IosCertificateProfile.model_validate(data)
-			if mapping_key == "#microsoft.graph.iosCertificateProfileBase":
-				from .ios_certificate_profile_base import IosCertificateProfileBase
-				return IosCertificateProfileBase.model_validate(data)
 			if mapping_key == "#microsoft.graph.iosPkcsCertificateProfile":
 				from .ios_pkcs_certificate_profile import IosPkcsCertificateProfile
 				return IosPkcsCertificateProfile.model_validate(data)
@@ -1604,15 +1412,9 @@ class Entity(BaseModel):
 			if mapping_key == "#microsoft.graph.iosUpdateConfiguration":
 				from .ios_update_configuration import IosUpdateConfiguration
 				return IosUpdateConfiguration.model_validate(data)
-			if mapping_key == "#microsoft.graph.iosWiFiConfiguration":
-				from .ios_wi_fi_configuration import IosWiFiConfiguration
-				return IosWiFiConfiguration.model_validate(data)
 			if mapping_key == "#microsoft.graph.iosEnterpriseWiFiConfiguration":
 				from .ios_enterprise_wi_fi_configuration import IosEnterpriseWiFiConfiguration
 				return IosEnterpriseWiFiConfiguration.model_validate(data)
-			if mapping_key == "#microsoft.graph.macOSCertificateProfileBase":
-				from .mac_o_s_certificate_profile_base import MacOSCertificateProfileBase
-				return MacOSCertificateProfileBase.model_validate(data)
 			if mapping_key == "#microsoft.graph.macOSImportedPFXCertificateProfile":
 				from .mac_o_s_imported_p_f_x_certificate_profile import MacOSImportedPFXCertificateProfile
 				return MacOSImportedPFXCertificateProfile.model_validate(data)
@@ -1643,9 +1445,6 @@ class Entity(BaseModel):
 			if mapping_key == "#microsoft.graph.macOSTrustedRootCertificate":
 				from .mac_o_s_trusted_root_certificate import MacOSTrustedRootCertificate
 				return MacOSTrustedRootCertificate.model_validate(data)
-			if mapping_key == "#microsoft.graph.macOSWiFiConfiguration":
-				from .mac_o_s_wi_fi_configuration import MacOSWiFiConfiguration
-				return MacOSWiFiConfiguration.model_validate(data)
 			if mapping_key == "#microsoft.graph.macOSEnterpriseWiFiConfiguration":
 				from .mac_o_s_enterprise_wi_fi_configuration import MacOSEnterpriseWiFiConfiguration
 				return MacOSEnterpriseWiFiConfiguration.model_validate(data)
@@ -1658,9 +1457,6 @@ class Entity(BaseModel):
 			if mapping_key == "#microsoft.graph.unsupportedDeviceConfiguration":
 				from .unsupported_device_configuration import UnsupportedDeviceConfiguration
 				return UnsupportedDeviceConfiguration.model_validate(data)
-			if mapping_key == "#microsoft.graph.vpnConfiguration":
-				from .vpn_configuration import VpnConfiguration
-				return VpnConfiguration.model_validate(data)
 			if mapping_key == "#microsoft.graph.androidDeviceOwnerVpnConfiguration":
 				from .android_device_owner_vpn_configuration import AndroidDeviceOwnerVpnConfiguration
 				return AndroidDeviceOwnerVpnConfiguration.model_validate(data)
@@ -1700,21 +1496,12 @@ class Entity(BaseModel):
 			if mapping_key == "#microsoft.graph.windows81WifiImportConfiguration":
 				from .windows81_wifi_import_configuration import Windows81WifiImportConfiguration
 				return Windows81WifiImportConfiguration.model_validate(data)
-			if mapping_key == "#microsoft.graph.windowsCertificateProfileBase":
-				from .windows_certificate_profile_base import WindowsCertificateProfileBase
-				return WindowsCertificateProfileBase.model_validate(data)
-			if mapping_key == "#microsoft.graph.windows10CertificateProfileBase":
-				from .windows10_certificate_profile_base import Windows10CertificateProfileBase
-				return Windows10CertificateProfileBase.model_validate(data)
 			if mapping_key == "#microsoft.graph.windows10PkcsCertificateProfile":
 				from .windows10_pkcs_certificate_profile import Windows10PkcsCertificateProfile
 				return Windows10PkcsCertificateProfile.model_validate(data)
 			if mapping_key == "#microsoft.graph.windows10ImportedPFXCertificateProfile":
 				from .windows10_imported_p_f_x_certificate_profile import Windows10ImportedPFXCertificateProfile
 				return Windows10ImportedPFXCertificateProfile.model_validate(data)
-			if mapping_key == "#microsoft.graph.windows81CertificateProfileBase":
-				from .windows81_certificate_profile_base import Windows81CertificateProfileBase
-				return Windows81CertificateProfileBase.model_validate(data)
 			if mapping_key == "#microsoft.graph.windows81SCEPCertificateProfile":
 				from .windows81_s_c_e_p_certificate_profile import Windows81SCEPCertificateProfile
 				return Windows81SCEPCertificateProfile.model_validate(data)
@@ -1739,9 +1526,6 @@ class Entity(BaseModel):
 			if mapping_key == "#microsoft.graph.windowsKioskConfiguration":
 				from .windows_kiosk_configuration import WindowsKioskConfiguration
 				return WindowsKioskConfiguration.model_validate(data)
-			if mapping_key == "#microsoft.graph.windowsPhone81CertificateProfileBase":
-				from .windows_phone81_certificate_profile_base import WindowsPhone81CertificateProfileBase
-				return WindowsPhone81CertificateProfileBase.model_validate(data)
 			if mapping_key == "#microsoft.graph.windowsPhone81SCEPCertificateProfile":
 				from .windows_phone81_s_c_e_p_certificate_profile import WindowsPhone81SCEPCertificateProfile
 				return WindowsPhone81SCEPCertificateProfile.model_validate(data)
@@ -1757,21 +1541,12 @@ class Entity(BaseModel):
 			if mapping_key == "#microsoft.graph.windowsUpdateForBusinessConfiguration":
 				from .windows_update_for_business_configuration import WindowsUpdateForBusinessConfiguration
 				return WindowsUpdateForBusinessConfiguration.model_validate(data)
-			if mapping_key == "#microsoft.graph.windowsVpnConfiguration":
-				from .windows_vpn_configuration import WindowsVpnConfiguration
-				return WindowsVpnConfiguration.model_validate(data)
 			if mapping_key == "#microsoft.graph.windows10VpnConfiguration":
 				from .windows10_vpn_configuration import Windows10VpnConfiguration
 				return Windows10VpnConfiguration.model_validate(data)
-			if mapping_key == "#microsoft.graph.windows81VpnConfiguration":
-				from .windows81_vpn_configuration import Windows81VpnConfiguration
-				return Windows81VpnConfiguration.model_validate(data)
 			if mapping_key == "#microsoft.graph.windowsPhone81VpnConfiguration":
 				from .windows_phone81_vpn_configuration import WindowsPhone81VpnConfiguration
 				return WindowsPhone81VpnConfiguration.model_validate(data)
-			if mapping_key == "#microsoft.graph.windowsWifiConfiguration":
-				from .windows_wifi_configuration import WindowsWifiConfiguration
-				return WindowsWifiConfiguration.model_validate(data)
 			if mapping_key == "#microsoft.graph.windowsWifiEnterpriseEAPConfiguration":
 				from .windows_wifi_enterprise_e_a_p_configuration import WindowsWifiEnterpriseEAPConfiguration
 				return WindowsWifiEnterpriseEAPConfiguration.model_validate(data)
@@ -1811,9 +1586,6 @@ class Entity(BaseModel):
 			if mapping_key == "#microsoft.graph.deviceCustomAttributeShellScript":
 				from .device_custom_attribute_shell_script import DeviceCustomAttributeShellScript
 				return DeviceCustomAttributeShellScript.model_validate(data)
-			if mapping_key == "#microsoft.graph.deviceEnrollmentConfiguration":
-				from .device_enrollment_configuration import DeviceEnrollmentConfiguration
-				return DeviceEnrollmentConfiguration.model_validate(data)
 			if mapping_key == "#microsoft.graph.deviceComanagementAuthorityConfiguration":
 				from .device_comanagement_authority_configuration import DeviceComanagementAuthorityConfiguration
 				return DeviceComanagementAuthorityConfiguration.model_validate(data)
@@ -1892,27 +1664,15 @@ class Entity(BaseModel):
 			if mapping_key == "#microsoft.graph.deviceManagementConfigurationSetting":
 				from .device_management_configuration_setting import DeviceManagementConfigurationSetting
 				return DeviceManagementConfigurationSetting.model_validate(data)
-			if mapping_key == "#microsoft.graph.deviceManagementConfigurationSettingDefinition":
-				from .device_management_configuration_setting_definition import DeviceManagementConfigurationSettingDefinition
-				return DeviceManagementConfigurationSettingDefinition.model_validate(data)
-			if mapping_key == "#microsoft.graph.deviceManagementConfigurationChoiceSettingDefinition":
-				from .device_management_configuration_choice_setting_definition import DeviceManagementConfigurationChoiceSettingDefinition
-				return DeviceManagementConfigurationChoiceSettingDefinition.model_validate(data)
 			if mapping_key == "#microsoft.graph.deviceManagementConfigurationChoiceSettingCollectionDefinition":
 				from .device_management_configuration_choice_setting_collection_definition import DeviceManagementConfigurationChoiceSettingCollectionDefinition
 				return DeviceManagementConfigurationChoiceSettingCollectionDefinition.model_validate(data)
 			if mapping_key == "#microsoft.graph.deviceManagementConfigurationRedirectSettingDefinition":
 				from .device_management_configuration_redirect_setting_definition import DeviceManagementConfigurationRedirectSettingDefinition
 				return DeviceManagementConfigurationRedirectSettingDefinition.model_validate(data)
-			if mapping_key == "#microsoft.graph.deviceManagementConfigurationSettingGroupDefinition":
-				from .device_management_configuration_setting_group_definition import DeviceManagementConfigurationSettingGroupDefinition
-				return DeviceManagementConfigurationSettingGroupDefinition.model_validate(data)
 			if mapping_key == "#microsoft.graph.deviceManagementConfigurationSettingGroupCollectionDefinition":
 				from .device_management_configuration_setting_group_collection_definition import DeviceManagementConfigurationSettingGroupCollectionDefinition
 				return DeviceManagementConfigurationSettingGroupCollectionDefinition.model_validate(data)
-			if mapping_key == "#microsoft.graph.deviceManagementConfigurationSimpleSettingDefinition":
-				from .device_management_configuration_simple_setting_definition import DeviceManagementConfigurationSimpleSettingDefinition
-				return DeviceManagementConfigurationSimpleSettingDefinition.model_validate(data)
 			if mapping_key == "#microsoft.graph.deviceManagementConfigurationSimpleSettingCollectionDefinition":
 				from .device_management_configuration_simple_setting_collection_definition import DeviceManagementConfigurationSimpleSettingCollectionDefinition
 				return DeviceManagementConfigurationSimpleSettingCollectionDefinition.model_validate(data)
@@ -1964,12 +1724,6 @@ class Entity(BaseModel):
 			if mapping_key == "#microsoft.graph.deviceManagementResourceAccessProfileAssignment":
 				from .device_management_resource_access_profile_assignment import DeviceManagementResourceAccessProfileAssignment
 				return DeviceManagementResourceAccessProfileAssignment.model_validate(data)
-			if mapping_key == "#microsoft.graph.deviceManagementResourceAccessProfileBase":
-				from .device_management_resource_access_profile_base import DeviceManagementResourceAccessProfileBase
-				return DeviceManagementResourceAccessProfileBase.model_validate(data)
-			if mapping_key == "#microsoft.graph.windows10XCertificateProfile":
-				from .windows10_x_certificate_profile import Windows10XCertificateProfile
-				return Windows10XCertificateProfile.model_validate(data)
 			if mapping_key == "#microsoft.graph.windows10XSCEPCertificateProfile":
 				from .windows10_x_s_c_e_p_certificate_profile import Windows10XSCEPCertificateProfile
 				return Windows10XSCEPCertificateProfile.model_validate(data)
@@ -2003,18 +1757,12 @@ class Entity(BaseModel):
 			if mapping_key == "#microsoft.graph.deviceManagementScriptUserState":
 				from .device_management_script_user_state import DeviceManagementScriptUserState
 				return DeviceManagementScriptUserState.model_validate(data)
-			if mapping_key == "#microsoft.graph.deviceManagementSettingCategory":
-				from .device_management_setting_category import DeviceManagementSettingCategory
-				return DeviceManagementSettingCategory.model_validate(data)
 			if mapping_key == "#microsoft.graph.deviceManagementIntentSettingCategory":
 				from .device_management_intent_setting_category import DeviceManagementIntentSettingCategory
 				return DeviceManagementIntentSettingCategory.model_validate(data)
 			if mapping_key == "#microsoft.graph.deviceManagementTemplateSettingCategory":
 				from .device_management_template_setting_category import DeviceManagementTemplateSettingCategory
 				return DeviceManagementTemplateSettingCategory.model_validate(data)
-			if mapping_key == "#microsoft.graph.deviceManagementSettingDefinition":
-				from .device_management_setting_definition import DeviceManagementSettingDefinition
-				return DeviceManagementSettingDefinition.model_validate(data)
 			if mapping_key == "#microsoft.graph.deviceManagementAbstractComplexSettingDefinition":
 				from .device_management_abstract_complex_setting_definition import DeviceManagementAbstractComplexSettingDefinition
 				return DeviceManagementAbstractComplexSettingDefinition.model_validate(data)
@@ -2024,9 +1772,6 @@ class Entity(BaseModel):
 			if mapping_key == "#microsoft.graph.deviceManagementComplexSettingDefinition":
 				from .device_management_complex_setting_definition import DeviceManagementComplexSettingDefinition
 				return DeviceManagementComplexSettingDefinition.model_validate(data)
-			if mapping_key == "#microsoft.graph.deviceManagementSettingInstance":
-				from .device_management_setting_instance import DeviceManagementSettingInstance
-				return DeviceManagementSettingInstance.model_validate(data)
 			if mapping_key == "#microsoft.graph.deviceManagementAbstractComplexSettingInstance":
 				from .device_management_abstract_complex_setting_instance import DeviceManagementAbstractComplexSettingInstance
 				return DeviceManagementAbstractComplexSettingInstance.model_validate(data)
@@ -2045,18 +1790,12 @@ class Entity(BaseModel):
 			if mapping_key == "#microsoft.graph.deviceManagementStringSettingInstance":
 				from .device_management_string_setting_instance import DeviceManagementStringSettingInstance
 				return DeviceManagementStringSettingInstance.model_validate(data)
-			if mapping_key == "#microsoft.graph.deviceManagementTemplate":
-				from .device_management_template import DeviceManagementTemplate
-				return DeviceManagementTemplate.model_validate(data)
 			if mapping_key == "#microsoft.graph.securityBaselineTemplate":
 				from .security_baseline_template import SecurityBaselineTemplate
 				return SecurityBaselineTemplate.model_validate(data)
 			if mapping_key == "#microsoft.graph.deviceManagementTemplateInsightsDefinition":
 				from .device_management_template_insights_definition import DeviceManagementTemplateInsightsDefinition
 				return DeviceManagementTemplateInsightsDefinition.model_validate(data)
-			if mapping_key == "#microsoft.graph.deviceManagementTroubleshootingEvent":
-				from .device_management_troubleshooting_event import DeviceManagementTroubleshootingEvent
-				return DeviceManagementTroubleshootingEvent.model_validate(data)
 			if mapping_key == "#microsoft.graph.appleVppTokenTroubleshootingEvent":
 				from .apple_vpp_token_troubleshooting_event import AppleVppTokenTroubleshootingEvent
 				return AppleVppTokenTroubleshootingEvent.model_validate(data)
@@ -2084,9 +1823,6 @@ class Entity(BaseModel):
 			if mapping_key == "#microsoft.graph.directoryDefinition":
 				from .directory_definition import DirectoryDefinition
 				return DirectoryDefinition.model_validate(data)
-			if mapping_key == "#microsoft.graph.directoryObject":
-				from .directory_object import DirectoryObject
-				return DirectoryObject.model_validate(data)
 			if mapping_key == "#microsoft.graph.administrativeUnit":
 				from .administrative_unit import AdministrativeUnit
 				return AdministrativeUnit.model_validate(data)
@@ -2129,9 +1865,6 @@ class Entity(BaseModel):
 			if mapping_key == "#microsoft.graph.extensionProperty":
 				from .extension_property import ExtensionProperty
 				return ExtensionProperty.model_validate(data)
-			if mapping_key == "#microsoft.graph.externalProfile":
-				from .external_profile import ExternalProfile
-				return ExternalProfile.model_validate(data)
 			if mapping_key == "#microsoft.graph.externalUserProfile":
 				from .external_user_profile import ExternalUserProfile
 				return ExternalUserProfile.model_validate(data)
@@ -2159,9 +1892,6 @@ class Entity(BaseModel):
 			if mapping_key == "#microsoft.graph.permissionGrantPreApprovalPolicy":
 				from .permission_grant_pre_approval_policy import PermissionGrantPreApprovalPolicy
 				return PermissionGrantPreApprovalPolicy.model_validate(data)
-			if mapping_key == "#microsoft.graph.policyBase":
-				from .policy_base import PolicyBase
-				return PolicyBase.model_validate(data)
 			if mapping_key == "#microsoft.graph.appManagementPolicy":
 				from .app_management_policy import AppManagementPolicy
 				return AppManagementPolicy.model_validate(data)
@@ -2180,9 +1910,6 @@ class Entity(BaseModel):
 			if mapping_key == "#microsoft.graph.servicePrincipalCreationPolicy":
 				from .service_principal_creation_policy import ServicePrincipalCreationPolicy
 				return ServicePrincipalCreationPolicy.model_validate(data)
-			if mapping_key == "#microsoft.graph.stsPolicy":
-				from .sts_policy import StsPolicy
-				return StsPolicy.model_validate(data)
 			if mapping_key == "#microsoft.graph.activityBasedTimeoutPolicy":
 				from .activity_based_timeout_policy import ActivityBasedTimeoutPolicy
 				return ActivityBasedTimeoutPolicy.model_validate(data)
@@ -2201,9 +1928,6 @@ class Entity(BaseModel):
 			if mapping_key == "#microsoft.graph.tenantAppManagementPolicy":
 				from .tenant_app_management_policy import TenantAppManagementPolicy
 				return TenantAppManagementPolicy.model_validate(data)
-			if mapping_key == "#microsoft.graph.tenantRelationshipAccessPolicyBase":
-				from .tenant_relationship_access_policy_base import TenantRelationshipAccessPolicyBase
-				return TenantRelationshipAccessPolicyBase.model_validate(data)
 			if mapping_key == "#microsoft.graph.crossTenantAccessPolicy":
 				from .cross_tenant_access_policy import CrossTenantAccessPolicy
 				return CrossTenantAccessPolicy.model_validate(data)
@@ -2213,15 +1937,9 @@ class Entity(BaseModel):
 			if mapping_key == "#microsoft.graph.servicePrincipal":
 				from .service_principal import ServicePrincipal
 				return ServicePrincipal.model_validate(data)
-			if mapping_key == "#microsoft.graph.trustedCertificateAuthorityAsEntityBase":
-				from .trusted_certificate_authority_as_entity_base import TrustedCertificateAuthorityAsEntityBase
-				return TrustedCertificateAuthorityAsEntityBase.model_validate(data)
 			if mapping_key == "#microsoft.graph.certificateBasedApplicationConfiguration":
 				from .certificate_based_application_configuration import CertificateBasedApplicationConfiguration
 				return CertificateBasedApplicationConfiguration.model_validate(data)
-			if mapping_key == "#microsoft.graph.trustedCertificateAuthorityBase":
-				from .trusted_certificate_authority_base import TrustedCertificateAuthorityBase
-				return TrustedCertificateAuthorityBase.model_validate(data)
 			if mapping_key == "#microsoft.graph.mutualTlsOauthConfiguration":
 				from .mutual_tls_oauth_configuration import MutualTlsOauthConfiguration
 				return MutualTlsOauthConfiguration.model_validate(data)
@@ -2249,9 +1967,6 @@ class Entity(BaseModel):
 			if mapping_key == "#microsoft.graph.domain":
 				from .domain import Domain
 				return Domain.model_validate(data)
-			if mapping_key == "#microsoft.graph.domainDnsRecord":
-				from .domain_dns_record import DomainDnsRecord
-				return DomainDnsRecord.model_validate(data)
 			if mapping_key == "#microsoft.graph.domainDnsCnameRecord":
 				from .domain_dns_cname_record import DomainDnsCnameRecord
 				return DomainDnsCnameRecord.model_validate(data)
@@ -2306,15 +2021,9 @@ class Entity(BaseModel):
 			if mapping_key == "#microsoft.graph.educationModuleResource":
 				from .education_module_resource import EducationModuleResource
 				return EducationModuleResource.model_validate(data)
-			if mapping_key == "#microsoft.graph.educationOrganization":
-				from .education_organization import EducationOrganization
-				return EducationOrganization.model_validate(data)
 			if mapping_key == "#microsoft.graph.educationSchool":
 				from .education_school import EducationSchool
 				return EducationSchool.model_validate(data)
-			if mapping_key == "#microsoft.graph.educationOutcome":
-				from .education_outcome import EducationOutcome
-				return EducationOutcome.model_validate(data)
 			if mapping_key == "#microsoft.graph.educationFeedbackOutcome":
 				from .education_feedback_outcome import EducationFeedbackOutcome
 				return EducationFeedbackOutcome.model_validate(data)
@@ -2363,12 +2072,6 @@ class Entity(BaseModel):
 			if mapping_key == "#microsoft.graph.enrollmentConfigurationAssignment":
 				from .enrollment_configuration_assignment import EnrollmentConfigurationAssignment
 				return EnrollmentConfigurationAssignment.model_validate(data)
-			if mapping_key == "#microsoft.graph.enrollmentProfile":
-				from .enrollment_profile import EnrollmentProfile
-				return EnrollmentProfile.model_validate(data)
-			if mapping_key == "#microsoft.graph.depEnrollmentBaseProfile":
-				from .dep_enrollment_base_profile import DepEnrollmentBaseProfile
-				return DepEnrollmentBaseProfile.model_validate(data)
 			if mapping_key == "#microsoft.graph.depIOSEnrollmentProfile":
 				from .dep_i_o_s_enrollment_profile import DepIOSEnrollmentProfile
 				return DepIOSEnrollmentProfile.model_validate(data)
@@ -2396,21 +2099,12 @@ class Entity(BaseModel):
 			if mapping_key == "#microsoft.graph.entra":
 				from .entra import Entra
 				return Entra.model_validate(data)
-			if mapping_key == "#microsoft.graph.exactMatchDataStoreBase":
-				from .exact_match_data_store_base import ExactMatchDataStoreBase
-				return ExactMatchDataStoreBase.model_validate(data)
 			if mapping_key == "#microsoft.graph.exactMatchDataStore":
 				from .exact_match_data_store import ExactMatchDataStore
 				return ExactMatchDataStore.model_validate(data)
-			if mapping_key == "#microsoft.graph.exactMatchJobBase":
-				from .exact_match_job_base import ExactMatchJobBase
-				return ExactMatchJobBase.model_validate(data)
 			if mapping_key == "#microsoft.graph.exactMatchLookupJob":
 				from .exact_match_lookup_job import ExactMatchLookupJob
 				return ExactMatchLookupJob.model_validate(data)
-			if mapping_key == "#microsoft.graph.exactMatchSessionBase":
-				from .exact_match_session_base import ExactMatchSessionBase
-				return ExactMatchSessionBase.model_validate(data)
 			if mapping_key == "#microsoft.graph.exactMatchSession":
 				from .exact_match_session import ExactMatchSession
 				return ExactMatchSession.model_validate(data)
@@ -2423,9 +2117,6 @@ class Entity(BaseModel):
 			if mapping_key == "#microsoft.graph.exchangeSettings":
 				from .exchange_settings import ExchangeSettings
 				return ExchangeSettings.model_validate(data)
-			if mapping_key == "#microsoft.graph.extension":
-				from .extension import Extension
-				return Extension.model_validate(data)
 			if mapping_key == "#microsoft.graph.openTypeExtension":
 				from .open_type_extension import OpenTypeExtension
 				return OpenTypeExtension.model_validate(data)
@@ -2471,9 +2162,6 @@ class Entity(BaseModel):
 			if mapping_key == "#microsoft.graph.filterOperatorSchema":
 				from .filter_operator_schema import FilterOperatorSchema
 				return FilterOperatorSchema.model_validate(data)
-			if mapping_key == "#microsoft.graph.finding":
-				from .finding import Finding
-				return Finding.model_validate(data)
 			if mapping_key == "#microsoft.graph.awsExternalSystemAccessFinding":
 				from .aws_external_system_access_finding import AwsExternalSystemAccessFinding
 				return AwsExternalSystemAccessFinding.model_validate(data)
@@ -2486,9 +2174,6 @@ class Entity(BaseModel):
 			if mapping_key == "#microsoft.graph.awsIdentityAccessManagementKeyUsageFinding":
 				from .aws_identity_access_management_key_usage_finding import AwsIdentityAccessManagementKeyUsageFinding
 				return AwsIdentityAccessManagementKeyUsageFinding.model_validate(data)
-			if mapping_key == "#microsoft.graph.awsSecretInformationAccessFinding":
-				from .aws_secret_information_access_finding import AwsSecretInformationAccessFinding
-				return AwsSecretInformationAccessFinding.model_validate(data)
 			if mapping_key == "#microsoft.graph.secretInformationAccessAwsResourceFinding":
 				from .secret_information_access_aws_resource_finding import SecretInformationAccessAwsResourceFinding
 				return SecretInformationAccessAwsResourceFinding.model_validate(data)
@@ -2501,9 +2186,6 @@ class Entity(BaseModel):
 			if mapping_key == "#microsoft.graph.secretInformationAccessAwsUserFinding":
 				from .secret_information_access_aws_user_finding import SecretInformationAccessAwsUserFinding
 				return SecretInformationAccessAwsUserFinding.model_validate(data)
-			if mapping_key == "#microsoft.graph.awsSecurityToolAdministrationFinding":
-				from .aws_security_tool_administration_finding import AwsSecurityToolAdministrationFinding
-				return AwsSecurityToolAdministrationFinding.model_validate(data)
 			if mapping_key == "#microsoft.graph.securityToolAwsResourceAdministratorFinding":
 				from .security_tool_aws_resource_administrator_finding import SecurityToolAwsResourceAdministratorFinding
 				return SecurityToolAwsResourceAdministratorFinding.model_validate(data)
@@ -2534,9 +2216,6 @@ class Entity(BaseModel):
 			if mapping_key == "#microsoft.graph.externallyAccessibleGcpStorageBucketFinding":
 				from .externally_accessible_gcp_storage_bucket_finding import ExternallyAccessibleGcpStorageBucketFinding
 				return ExternallyAccessibleGcpStorageBucketFinding.model_validate(data)
-			if mapping_key == "#microsoft.graph.identityFinding":
-				from .identity_finding import IdentityFinding
-				return IdentityFinding.model_validate(data)
 			if mapping_key == "#microsoft.graph.inactiveAwsResourceFinding":
 				from .inactive_aws_resource_finding import InactiveAwsResourceFinding
 				return InactiveAwsResourceFinding.model_validate(data)
@@ -2603,9 +2282,6 @@ class Entity(BaseModel):
 			if mapping_key == "#microsoft.graph.openNetworkAzureSecurityGroupFinding":
 				from .open_network_azure_security_group_finding import OpenNetworkAzureSecurityGroupFinding
 				return OpenNetworkAzureSecurityGroupFinding.model_validate(data)
-			if mapping_key == "#microsoft.graph.privilegeEscalationFinding":
-				from .privilege_escalation_finding import PrivilegeEscalationFinding
-				return PrivilegeEscalationFinding.model_validate(data)
 			if mapping_key == "#microsoft.graph.privilegeEscalationAwsResourceFinding":
 				from .privilege_escalation_aws_resource_finding import PrivilegeEscalationAwsResourceFinding
 				return PrivilegeEscalationAwsResourceFinding.model_validate(data)
@@ -2627,9 +2303,6 @@ class Entity(BaseModel):
 			if mapping_key == "#microsoft.graph.goals":
 				from .goals import Goals
 				return Goals.model_validate(data)
-			if mapping_key == "#microsoft.graph.governanceInsight":
-				from .governance_insight import GovernanceInsight
-				return GovernanceInsight.model_validate(data)
 			if mapping_key == "#microsoft.graph.membershipOutlierInsight":
 				from .membership_outlier_insight import MembershipOutlierInsight
 				return MembershipOutlierInsight.model_validate(data)
@@ -2672,9 +2345,6 @@ class Entity(BaseModel):
 			if mapping_key == "#microsoft.graph.groupPolicyDefinition":
 				from .group_policy_definition import GroupPolicyDefinition
 				return GroupPolicyDefinition.model_validate(data)
-			if mapping_key == "#microsoft.graph.groupPolicyDefinitionFile":
-				from .group_policy_definition_file import GroupPolicyDefinitionFile
-				return GroupPolicyDefinitionFile.model_validate(data)
 			if mapping_key == "#microsoft.graph.groupPolicyUploadedDefinitionFile":
 				from .group_policy_uploaded_definition_file import GroupPolicyUploadedDefinitionFile
 				return GroupPolicyUploadedDefinitionFile.model_validate(data)
@@ -2690,12 +2360,6 @@ class Entity(BaseModel):
 			if mapping_key == "#microsoft.graph.groupPolicyOperation":
 				from .group_policy_operation import GroupPolicyOperation
 				return GroupPolicyOperation.model_validate(data)
-			if mapping_key == "#microsoft.graph.groupPolicyPresentation":
-				from .group_policy_presentation import GroupPolicyPresentation
-				return GroupPolicyPresentation.model_validate(data)
-			if mapping_key == "#microsoft.graph.groupPolicyUploadedPresentation":
-				from .group_policy_uploaded_presentation import GroupPolicyUploadedPresentation
-				return GroupPolicyUploadedPresentation.model_validate(data)
 			if mapping_key == "#microsoft.graph.groupPolicyPresentationCheckBox":
 				from .group_policy_presentation_check_box import GroupPolicyPresentationCheckBox
 				return GroupPolicyPresentationCheckBox.model_validate(data)
@@ -2723,9 +2387,6 @@ class Entity(BaseModel):
 			if mapping_key == "#microsoft.graph.groupPolicyPresentationTextBox":
 				from .group_policy_presentation_text_box import GroupPolicyPresentationTextBox
 				return GroupPolicyPresentationTextBox.model_validate(data)
-			if mapping_key == "#microsoft.graph.groupPolicyPresentationValue":
-				from .group_policy_presentation_value import GroupPolicyPresentationValue
-				return GroupPolicyPresentationValue.model_validate(data)
 			if mapping_key == "#microsoft.graph.groupPolicyPresentationValueBoolean":
 				from .group_policy_presentation_value_boolean import GroupPolicyPresentationValueBoolean
 				return GroupPolicyPresentationValueBoolean.model_validate(data)
@@ -2780,15 +2441,9 @@ class Entity(BaseModel):
 			if mapping_key == "#microsoft.graph.identityApiConnector":
 				from .identity_api_connector import IdentityApiConnector
 				return IdentityApiConnector.model_validate(data)
-			if mapping_key == "#microsoft.graph.identityProvider":
-				from .identity_provider import IdentityProvider
-				return IdentityProvider.model_validate(data)
 			if mapping_key == "#microsoft.graph.openIdConnectProvider":
 				from .open_id_connect_provider import OpenIdConnectProvider
 				return OpenIdConnectProvider.model_validate(data)
-			if mapping_key == "#microsoft.graph.identityProviderBase":
-				from .identity_provider_base import IdentityProviderBase
-				return IdentityProviderBase.model_validate(data)
 			if mapping_key == "#microsoft.graph.appleManagedIdentityProvider":
 				from .apple_managed_identity_provider import AppleManagedIdentityProvider
 				return AppleManagedIdentityProvider.model_validate(data)
@@ -2801,9 +2456,6 @@ class Entity(BaseModel):
 			if mapping_key == "#microsoft.graph.openIdConnectIdentityProvider":
 				from .open_id_connect_identity_provider import OpenIdConnectIdentityProvider
 				return OpenIdConnectIdentityProvider.model_validate(data)
-			if mapping_key == "#microsoft.graph.samlOrWsFedProvider":
-				from .saml_or_ws_fed_provider import SamlOrWsFedProvider
-				return SamlOrWsFedProvider.model_validate(data)
 			if mapping_key == "#microsoft.graph.internalDomainFederation":
 				from .internal_domain_federation import InternalDomainFederation
 				return InternalDomainFederation.model_validate(data)
@@ -2813,18 +2465,12 @@ class Entity(BaseModel):
 			if mapping_key == "#microsoft.graph.socialIdentityProvider":
 				from .social_identity_provider import SocialIdentityProvider
 				return SocialIdentityProvider.model_validate(data)
-			if mapping_key == "#microsoft.graph.identityUserFlow":
-				from .identity_user_flow import IdentityUserFlow
-				return IdentityUserFlow.model_validate(data)
 			if mapping_key == "#microsoft.graph.b2cIdentityUserFlow":
 				from .b2c_identity_user_flow import B2cIdentityUserFlow
 				return B2cIdentityUserFlow.model_validate(data)
 			if mapping_key == "#microsoft.graph.b2xIdentityUserFlow":
 				from .b2x_identity_user_flow import B2xIdentityUserFlow
 				return B2xIdentityUserFlow.model_validate(data)
-			if mapping_key == "#microsoft.graph.identityUserFlowAttribute":
-				from .identity_user_flow_attribute import IdentityUserFlowAttribute
-				return IdentityUserFlowAttribute.model_validate(data)
 			if mapping_key == "#microsoft.graph.identityBuiltInUserFlowAttribute":
 				from .identity_built_in_user_flow_attribute import IdentityBuiltInUserFlowAttribute
 				return IdentityBuiltInUserFlowAttribute.model_validate(data)
@@ -2837,15 +2483,9 @@ class Entity(BaseModel):
 			if mapping_key == "#microsoft.graph.impactedResource":
 				from .impacted_resource import ImpactedResource
 				return ImpactedResource.model_validate(data)
-			if mapping_key == "#microsoft.graph.importedAppleDeviceIdentity":
-				from .imported_apple_device_identity import ImportedAppleDeviceIdentity
-				return ImportedAppleDeviceIdentity.model_validate(data)
 			if mapping_key == "#microsoft.graph.importedAppleDeviceIdentityResult":
 				from .imported_apple_device_identity_result import ImportedAppleDeviceIdentityResult
 				return ImportedAppleDeviceIdentityResult.model_validate(data)
-			if mapping_key == "#microsoft.graph.importedDeviceIdentity":
-				from .imported_device_identity import ImportedDeviceIdentity
-				return ImportedDeviceIdentity.model_validate(data)
 			if mapping_key == "#microsoft.graph.importedDeviceIdentityResult":
 				from .imported_device_identity_result import ImportedDeviceIdentityResult
 				return ImportedDeviceIdentityResult.model_validate(data)
@@ -2855,18 +2495,12 @@ class Entity(BaseModel):
 			if mapping_key == "#microsoft.graph.importedWindowsAutopilotDeviceIdentityUpload":
 				from .imported_windows_autopilot_device_identity_upload import ImportedWindowsAutopilotDeviceIdentityUpload
 				return ImportedWindowsAutopilotDeviceIdentityUpload.model_validate(data)
-			if mapping_key == "#microsoft.graph.inactiveUsersByApplicationMetricBase":
-				from .inactive_users_by_application_metric_base import InactiveUsersByApplicationMetricBase
-				return InactiveUsersByApplicationMetricBase.model_validate(data)
 			if mapping_key == "#microsoft.graph.dailyInactiveUsersByApplicationMetric":
 				from .daily_inactive_users_by_application_metric import DailyInactiveUsersByApplicationMetric
 				return DailyInactiveUsersByApplicationMetric.model_validate(data)
 			if mapping_key == "#microsoft.graph.monthlyInactiveUsersByApplicationMetric":
 				from .monthly_inactive_users_by_application_metric import MonthlyInactiveUsersByApplicationMetric
 				return MonthlyInactiveUsersByApplicationMetric.model_validate(data)
-			if mapping_key == "#microsoft.graph.inactiveUsersMetricBase":
-				from .inactive_users_metric_base import InactiveUsersMetricBase
-				return InactiveUsersMetricBase.model_validate(data)
 			if mapping_key == "#microsoft.graph.dailyInactiveUsersMetric":
 				from .daily_inactive_users_metric import DailyInactiveUsersMetric
 				return DailyInactiveUsersMetric.model_validate(data)
@@ -2915,9 +2549,6 @@ class Entity(BaseModel):
 			if mapping_key == "#microsoft.graph.iosUpdateDeviceStatus":
 				from .ios_update_device_status import IosUpdateDeviceStatus
 				return IosUpdateDeviceStatus.model_validate(data)
-			if mapping_key == "#microsoft.graph.iosVppAppAssignedLicense":
-				from .ios_vpp_app_assigned_license import IosVppAppAssignedLicense
-				return IosVppAppAssignedLicense.model_validate(data)
 			if mapping_key == "#microsoft.graph.iosVppAppAssignedDeviceLicense":
 				from .ios_vpp_app_assigned_device_license import IosVppAppAssignedDeviceLicense
 				return IosVppAppAssignedDeviceLicense.model_validate(data)
@@ -2939,9 +2570,6 @@ class Entity(BaseModel):
 			if mapping_key == "#microsoft.graph.itemAnalytics":
 				from .item_analytics import ItemAnalytics
 				return ItemAnalytics.model_validate(data)
-			if mapping_key == "#microsoft.graph.itemFacet":
-				from .item_facet import ItemFacet
-				return ItemFacet.model_validate(data)
 			if mapping_key == "#microsoft.graph.educationalActivity":
 				from .educational_activity import EducationalActivity
 				return EducationalActivity.model_validate(data)
@@ -3005,9 +2633,6 @@ class Entity(BaseModel):
 			if mapping_key == "#microsoft.graph.itemRetentionLabel":
 				from .item_retention_label import ItemRetentionLabel
 				return ItemRetentionLabel.model_validate(data)
-			if mapping_key == "#microsoft.graph.jobResponseBase":
-				from .job_response_base import JobResponseBase
-				return JobResponseBase.model_validate(data)
 			if mapping_key == "#microsoft.graph.classificationJobResponse":
 				from .classification_job_response import ClassificationJobResponse
 				return ClassificationJobResponse.model_validate(data)
@@ -3026,9 +2651,6 @@ class Entity(BaseModel):
 			if mapping_key == "#microsoft.graph.learningContent":
 				from .learning_content import LearningContent
 				return LearningContent.model_validate(data)
-			if mapping_key == "#microsoft.graph.learningCourseActivity":
-				from .learning_course_activity import LearningCourseActivity
-				return LearningCourseActivity.model_validate(data)
 			if mapping_key == "#microsoft.graph.learningAssignment":
 				from .learning_assignment import LearningAssignment
 				return LearningAssignment.model_validate(data)
@@ -3050,9 +2672,6 @@ class Entity(BaseModel):
 			if mapping_key == "#microsoft.graph.loginPage":
 				from .login_page import LoginPage
 				return LoginPage.model_validate(data)
-			if mapping_key == "#microsoft.graph.longRunningOperation":
-				from .long_running_operation import LongRunningOperation
-				return LongRunningOperation.model_validate(data)
 			if mapping_key == "#microsoft.graph.attackSimulationOperation":
 				from .attack_simulation_operation import AttackSimulationOperation
 				return AttackSimulationOperation.model_validate(data)
@@ -3065,9 +2684,6 @@ class Entity(BaseModel):
 			if mapping_key == "#microsoft.graph.richLongRunningOperation":
 				from .rich_long_running_operation import RichLongRunningOperation
 				return RichLongRunningOperation.model_validate(data)
-			if mapping_key == "#microsoft.graph.industryData.validateOperation":
-				from .industry_data_validate_operation import IndustryDataValidateOperation
-				return IndustryDataValidateOperation.model_validate(data)
 			if mapping_key == "#microsoft.graph.industryData.fileValidateOperation":
 				from .industry_data_file_validate_operation import IndustryDataFileValidateOperation
 				return IndustryDataFileValidateOperation.model_validate(data)
@@ -3092,15 +2708,9 @@ class Entity(BaseModel):
 			if mapping_key == "#microsoft.graph.mailboxFolder":
 				from .mailbox_folder import MailboxFolder
 				return MailboxFolder.model_validate(data)
-			if mapping_key == "#microsoft.graph.mailFolder":
-				from .mail_folder import MailFolder
-				return MailFolder.model_validate(data)
 			if mapping_key == "#microsoft.graph.mailSearchFolder":
 				from .mail_search_folder import MailSearchFolder
 				return MailSearchFolder.model_validate(data)
-			if mapping_key == "#microsoft.graph.mailFolderOperation":
-				from .mail_folder_operation import MailFolderOperation
-				return MailFolderOperation.model_validate(data)
 			if mapping_key == "#microsoft.graph.updateAllMessagesReadStateOperation":
 				from .update_all_messages_read_state_operation import UpdateAllMessagesReadStateOperation
 				return UpdateAllMessagesReadStateOperation.model_validate(data)
@@ -3116,33 +2726,18 @@ class Entity(BaseModel):
 			if mapping_key == "#microsoft.graph.managedAppOperation":
 				from .managed_app_operation import ManagedAppOperation
 				return ManagedAppOperation.model_validate(data)
-			if mapping_key == "#microsoft.graph.managedAppPolicy":
-				from .managed_app_policy import ManagedAppPolicy
-				return ManagedAppPolicy.model_validate(data)
-			if mapping_key == "#microsoft.graph.managedAppConfiguration":
-				from .managed_app_configuration import ManagedAppConfiguration
-				return ManagedAppConfiguration.model_validate(data)
 			if mapping_key == "#microsoft.graph.targetedManagedAppConfiguration":
 				from .targeted_managed_app_configuration import TargetedManagedAppConfiguration
 				return TargetedManagedAppConfiguration.model_validate(data)
-			if mapping_key == "#microsoft.graph.managedAppProtection":
-				from .managed_app_protection import ManagedAppProtection
-				return ManagedAppProtection.model_validate(data)
 			if mapping_key == "#microsoft.graph.defaultManagedAppProtection":
 				from .default_managed_app_protection import DefaultManagedAppProtection
 				return DefaultManagedAppProtection.model_validate(data)
-			if mapping_key == "#microsoft.graph.targetedManagedAppProtection":
-				from .targeted_managed_app_protection import TargetedManagedAppProtection
-				return TargetedManagedAppProtection.model_validate(data)
 			if mapping_key == "#microsoft.graph.androidManagedAppProtection":
 				from .android_managed_app_protection import AndroidManagedAppProtection
 				return AndroidManagedAppProtection.model_validate(data)
 			if mapping_key == "#microsoft.graph.iosManagedAppProtection":
 				from .ios_managed_app_protection import IosManagedAppProtection
 				return IosManagedAppProtection.model_validate(data)
-			if mapping_key == "#microsoft.graph.windowsInformationProtection":
-				from .windows_information_protection import WindowsInformationProtection
-				return WindowsInformationProtection.model_validate(data)
 			if mapping_key == "#microsoft.graph.mdmWindowsInformationProtectionPolicy":
 				from .mdm_windows_information_protection_policy import MdmWindowsInformationProtectionPolicy
 				return MdmWindowsInformationProtectionPolicy.model_validate(data)
@@ -3155,9 +2750,6 @@ class Entity(BaseModel):
 			if mapping_key == "#microsoft.graph.managedAppPolicyDeploymentSummary":
 				from .managed_app_policy_deployment_summary import ManagedAppPolicyDeploymentSummary
 				return ManagedAppPolicyDeploymentSummary.model_validate(data)
-			if mapping_key == "#microsoft.graph.managedAppRegistration":
-				from .managed_app_registration import ManagedAppRegistration
-				return ManagedAppRegistration.model_validate(data)
 			if mapping_key == "#microsoft.graph.androidManagedAppRegistration":
 				from .android_managed_app_registration import AndroidManagedAppRegistration
 				return AndroidManagedAppRegistration.model_validate(data)
@@ -3167,15 +2759,9 @@ class Entity(BaseModel):
 			if mapping_key == "#microsoft.graph.windowsManagedAppRegistration":
 				from .windows_managed_app_registration import WindowsManagedAppRegistration
 				return WindowsManagedAppRegistration.model_validate(data)
-			if mapping_key == "#microsoft.graph.managedAppStatus":
-				from .managed_app_status import ManagedAppStatus
-				return ManagedAppStatus.model_validate(data)
 			if mapping_key == "#microsoft.graph.managedAppStatusRaw":
 				from .managed_app_status_raw import ManagedAppStatusRaw
 				return ManagedAppStatusRaw.model_validate(data)
-			if mapping_key == "#microsoft.graph.managedDevice":
-				from .managed_device import ManagedDevice
-				return ManagedDevice.model_validate(data)
 			if mapping_key == "#microsoft.graph.windowsManagedDevice":
 				from .windows_managed_device import WindowsManagedDevice
 				return WindowsManagedDevice.model_validate(data)
@@ -3188,9 +2774,6 @@ class Entity(BaseModel):
 			if mapping_key == "#microsoft.graph.managedDeviceEncryptionState":
 				from .managed_device_encryption_state import ManagedDeviceEncryptionState
 				return ManagedDeviceEncryptionState.model_validate(data)
-			if mapping_key == "#microsoft.graph.managedDeviceMobileAppConfiguration":
-				from .managed_device_mobile_app_configuration import ManagedDeviceMobileAppConfiguration
-				return ManagedDeviceMobileAppConfiguration.model_validate(data)
 			if mapping_key == "#microsoft.graph.androidForWorkMobileAppConfiguration":
 				from .android_for_work_mobile_app_configuration import AndroidForWorkMobileAppConfiguration
 				return AndroidForWorkMobileAppConfiguration.model_validate(data)
@@ -3224,15 +2807,9 @@ class Entity(BaseModel):
 			if mapping_key == "#microsoft.graph.managedDeviceWindowsOperatingSystemImage":
 				from .managed_device_windows_operating_system_image import ManagedDeviceWindowsOperatingSystemImage
 				return ManagedDeviceWindowsOperatingSystemImage.model_validate(data)
-			if mapping_key == "#microsoft.graph.managedEBook":
-				from .managed_e_book import ManagedEBook
-				return ManagedEBook.model_validate(data)
 			if mapping_key == "#microsoft.graph.iosVppEBook":
 				from .ios_vpp_e_book import IosVppEBook
 				return IosVppEBook.model_validate(data)
-			if mapping_key == "#microsoft.graph.managedEBookAssignment":
-				from .managed_e_book_assignment import ManagedEBookAssignment
-				return ManagedEBookAssignment.model_validate(data)
 			if mapping_key == "#microsoft.graph.iosVppEBookAssignment":
 				from .ios_vpp_e_book_assignment import IosVppEBookAssignment
 				return IosVppEBookAssignment.model_validate(data)
@@ -3245,18 +2822,12 @@ class Entity(BaseModel):
 			if mapping_key == "#microsoft.graph.meetingAttendanceReport":
 				from .meeting_attendance_report import MeetingAttendanceReport
 				return MeetingAttendanceReport.model_validate(data)
-			if mapping_key == "#microsoft.graph.meetingRegistrantBase":
-				from .meeting_registrant_base import MeetingRegistrantBase
-				return MeetingRegistrantBase.model_validate(data)
 			if mapping_key == "#microsoft.graph.externalMeetingRegistrant":
 				from .external_meeting_registrant import ExternalMeetingRegistrant
 				return ExternalMeetingRegistrant.model_validate(data)
 			if mapping_key == "#microsoft.graph.meetingRegistrant":
 				from .meeting_registrant import MeetingRegistrant
 				return MeetingRegistrant.model_validate(data)
-			if mapping_key == "#microsoft.graph.meetingRegistrationBase":
-				from .meeting_registration_base import MeetingRegistrationBase
-				return MeetingRegistrationBase.model_validate(data)
 			if mapping_key == "#microsoft.graph.externalMeetingRegistration":
 				from .external_meeting_registration import ExternalMeetingRegistration
 				return ExternalMeetingRegistration.model_validate(data)
@@ -3311,15 +2882,9 @@ class Entity(BaseModel):
 			if mapping_key == "#microsoft.graph.microsoftTunnelSite":
 				from .microsoft_tunnel_site import MicrosoftTunnelSite
 				return MicrosoftTunnelSite.model_validate(data)
-			if mapping_key == "#microsoft.graph.mobileApp":
-				from .mobile_app import MobileApp
-				return MobileApp.model_validate(data)
 			if mapping_key == "#microsoft.graph.androidForWorkApp":
 				from .android_for_work_app import AndroidForWorkApp
 				return AndroidForWorkApp.model_validate(data)
-			if mapping_key == "#microsoft.graph.androidManagedStoreApp":
-				from .android_managed_store_app import AndroidManagedStoreApp
-				return AndroidManagedStoreApp.model_validate(data)
 			if mapping_key == "#microsoft.graph.androidManagedStoreWebApp":
 				from .android_managed_store_web_app import AndroidManagedStoreWebApp
 				return AndroidManagedStoreWebApp.model_validate(data)
@@ -3350,18 +2915,12 @@ class Entity(BaseModel):
 			if mapping_key == "#microsoft.graph.macOSWebClip":
 				from .mac_o_s_web_clip import MacOSWebClip
 				return MacOSWebClip.model_validate(data)
-			if mapping_key == "#microsoft.graph.managedApp":
-				from .managed_app import ManagedApp
-				return ManagedApp.model_validate(data)
 			if mapping_key == "#microsoft.graph.managedAndroidStoreApp":
 				from .managed_android_store_app import ManagedAndroidStoreApp
 				return ManagedAndroidStoreApp.model_validate(data)
 			if mapping_key == "#microsoft.graph.managedIOSStoreApp":
 				from .managed_i_o_s_store_app import ManagedIOSStoreApp
 				return ManagedIOSStoreApp.model_validate(data)
-			if mapping_key == "#microsoft.graph.managedMobileLobApp":
-				from .managed_mobile_lob_app import ManagedMobileLobApp
-				return ManagedMobileLobApp.model_validate(data)
 			if mapping_key == "#microsoft.graph.managedAndroidLobApp":
 				from .managed_android_lob_app import ManagedAndroidLobApp
 				return ManagedAndroidLobApp.model_validate(data)
@@ -3371,9 +2930,6 @@ class Entity(BaseModel):
 			if mapping_key == "#microsoft.graph.microsoftStoreForBusinessApp":
 				from .microsoft_store_for_business_app import MicrosoftStoreForBusinessApp
 				return MicrosoftStoreForBusinessApp.model_validate(data)
-			if mapping_key == "#microsoft.graph.mobileLobApp":
-				from .mobile_lob_app import MobileLobApp
-				return MobileLobApp.model_validate(data)
 			if mapping_key == "#microsoft.graph.androidLobApp":
 				from .android_lob_app import AndroidLobApp
 				return AndroidLobApp.model_validate(data)
@@ -3389,9 +2945,6 @@ class Entity(BaseModel):
 			if mapping_key == "#microsoft.graph.macOSPkgApp":
 				from .mac_o_s_pkg_app import MacOSPkgApp
 				return MacOSPkgApp.model_validate(data)
-			if mapping_key == "#microsoft.graph.win32LobApp":
-				from .win32_lob_app import Win32LobApp
-				return Win32LobApp.model_validate(data)
 			if mapping_key == "#microsoft.graph.win32CatalogApp":
 				from .win32_catalog_app import Win32CatalogApp
 				return Win32CatalogApp.model_validate(data)
@@ -3401,9 +2954,6 @@ class Entity(BaseModel):
 			if mapping_key == "#microsoft.graph.windowsMobileMSI":
 				from .windows_mobile_m_s_i import WindowsMobileMSI
 				return WindowsMobileMSI.model_validate(data)
-			if mapping_key == "#microsoft.graph.windowsPhone81AppX":
-				from .windows_phone81_app_x import WindowsPhone81AppX
-				return WindowsPhone81AppX.model_validate(data)
 			if mapping_key == "#microsoft.graph.windowsPhone81AppXBundle":
 				from .windows_phone81_app_x_bundle import WindowsPhone81AppXBundle
 				return WindowsPhone81AppXBundle.model_validate(data)
@@ -3437,9 +2987,6 @@ class Entity(BaseModel):
 			if mapping_key == "#microsoft.graph.mobileAppAssignment":
 				from .mobile_app_assignment import MobileAppAssignment
 				return MobileAppAssignment.model_validate(data)
-			if mapping_key == "#microsoft.graph.mobileAppCatalogPackage":
-				from .mobile_app_catalog_package import MobileAppCatalogPackage
-				return MobileAppCatalogPackage.model_validate(data)
 			if mapping_key == "#microsoft.graph.win32MobileAppCatalogPackage":
 				from .win32_mobile_app_catalog_package import Win32MobileAppCatalogPackage
 				return Win32MobileAppCatalogPackage.model_validate(data)
@@ -3464,18 +3011,12 @@ class Entity(BaseModel):
 			if mapping_key == "#microsoft.graph.mobileAppProvisioningConfigGroupAssignment":
 				from .mobile_app_provisioning_config_group_assignment import MobileAppProvisioningConfigGroupAssignment
 				return MobileAppProvisioningConfigGroupAssignment.model_validate(data)
-			if mapping_key == "#microsoft.graph.mobileAppRelationship":
-				from .mobile_app_relationship import MobileAppRelationship
-				return MobileAppRelationship.model_validate(data)
 			if mapping_key == "#microsoft.graph.mobileAppDependency":
 				from .mobile_app_dependency import MobileAppDependency
 				return MobileAppDependency.model_validate(data)
 			if mapping_key == "#microsoft.graph.mobileAppSupersedence":
 				from .mobile_app_supersedence import MobileAppSupersedence
 				return MobileAppSupersedence.model_validate(data)
-			if mapping_key == "#microsoft.graph.mobileContainedApp":
-				from .mobile_contained_app import MobileContainedApp
-				return MobileContainedApp.model_validate(data)
 			if mapping_key == "#microsoft.graph.microsoftStoreForBusinessContainedApp":
 				from .microsoft_store_for_business_contained_app import MicrosoftStoreForBusinessContainedApp
 				return MicrosoftStoreForBusinessContainedApp.model_validate(data)
@@ -3506,9 +3047,6 @@ class Entity(BaseModel):
 			if mapping_key == "#microsoft.graph.multiValueLegacyExtendedProperty":
 				from .multi_value_legacy_extended_property import MultiValueLegacyExtendedProperty
 				return MultiValueLegacyExtendedProperty.model_validate(data)
-			if mapping_key == "#microsoft.graph.namedLocation":
-				from .named_location import NamedLocation
-				return NamedLocation.model_validate(data)
 			if mapping_key == "#microsoft.graph.compliantNetworkNamedLocation":
 				from .compliant_network_named_location import CompliantNetworkNamedLocation
 				return CompliantNetworkNamedLocation.model_validate(data)
@@ -3557,24 +3095,12 @@ class Entity(BaseModel):
 			if mapping_key == "#microsoft.graph.office365ServicesUserCounts":
 				from .office365_services_user_counts import Office365ServicesUserCounts
 				return Office365ServicesUserCounts.model_validate(data)
-			if mapping_key == "#microsoft.graph.officeGraphInsights":
-				from .office_graph_insights import OfficeGraphInsights
-				return OfficeGraphInsights.model_validate(data)
 			if mapping_key == "#microsoft.graph.itemInsights":
 				from .item_insights import ItemInsights
 				return ItemInsights.model_validate(data)
 			if mapping_key == "#microsoft.graph.onenote":
 				from .onenote import Onenote
 				return Onenote.model_validate(data)
-			if mapping_key == "#microsoft.graph.onenoteEntityBaseModel":
-				from .onenote_entity_base_model import OnenoteEntityBaseModel
-				return OnenoteEntityBaseModel.model_validate(data)
-			if mapping_key == "#microsoft.graph.onenoteEntitySchemaObjectModel":
-				from .onenote_entity_schema_object_model import OnenoteEntitySchemaObjectModel
-				return OnenoteEntitySchemaObjectModel.model_validate(data)
-			if mapping_key == "#microsoft.graph.onenoteEntityHierarchyModel":
-				from .onenote_entity_hierarchy_model import OnenoteEntityHierarchyModel
-				return OnenoteEntityHierarchyModel.model_validate(data)
 			if mapping_key == "#microsoft.graph.notebook":
 				from .notebook import Notebook
 				return Notebook.model_validate(data)
@@ -3590,9 +3116,6 @@ class Entity(BaseModel):
 			if mapping_key == "#microsoft.graph.onenoteResource":
 				from .onenote_resource import OnenoteResource
 				return OnenoteResource.model_validate(data)
-			if mapping_key == "#microsoft.graph.onlineMeetingBase":
-				from .online_meeting_base import OnlineMeetingBase
-				return OnlineMeetingBase.model_validate(data)
 			if mapping_key == "#microsoft.graph.onlineMeeting":
 				from .online_meeting import OnlineMeeting
 				return OnlineMeeting.model_validate(data)
@@ -3614,9 +3137,6 @@ class Entity(BaseModel):
 			if mapping_key == "#microsoft.graph.onPremisesPublishingProfile":
 				from .on_premises_publishing_profile import OnPremisesPublishingProfile
 				return OnPremisesPublishingProfile.model_validate(data)
-			if mapping_key == "#microsoft.graph.operation":
-				from .operation import Operation
-				return Operation.model_validate(data)
 			if mapping_key == "#microsoft.graph.onenoteOperation":
 				from .onenote_operation import OnenoteOperation
 				return OnenoteOperation.model_validate(data)
@@ -3626,9 +3146,6 @@ class Entity(BaseModel):
 			if mapping_key == "#microsoft.graph.operationApprovalRequest":
 				from .operation_approval_request import OperationApprovalRequest
 				return OperationApprovalRequest.model_validate(data)
-			if mapping_key == "#microsoft.graph.organizationalBrandingProperties":
-				from .organizational_branding_properties import OrganizationalBrandingProperties
-				return OrganizationalBrandingProperties.model_validate(data)
 			if mapping_key == "#microsoft.graph.organizationalBranding":
 				from .organizational_branding import OrganizationalBranding
 				return OrganizationalBranding.model_validate(data)
@@ -3641,9 +3158,6 @@ class Entity(BaseModel):
 			if mapping_key == "#microsoft.graph.outlookCategory":
 				from .outlook_category import OutlookCategory
 				return OutlookCategory.model_validate(data)
-			if mapping_key == "#microsoft.graph.outlookItem":
-				from .outlook_item import OutlookItem
-				return OutlookItem.model_validate(data)
 			if mapping_key == "#microsoft.graph.contact":
 				from .contact import Contact
 				return Contact.model_validate(data)
@@ -3653,15 +3167,9 @@ class Entity(BaseModel):
 			if mapping_key == "#microsoft.graph.mailboxItem":
 				from .mailbox_item import MailboxItem
 				return MailboxItem.model_validate(data)
-			if mapping_key == "#microsoft.graph.message":
-				from .message import Message
-				return Message.model_validate(data)
 			if mapping_key == "#microsoft.graph.calendarSharingMessage":
 				from .calendar_sharing_message import CalendarSharingMessage
 				return CalendarSharingMessage.model_validate(data)
-			if mapping_key == "#microsoft.graph.eventMessage":
-				from .event_message import EventMessage
-				return EventMessage.model_validate(data)
 			if mapping_key == "#microsoft.graph.eventMessageRequest":
 				from .event_message_request import EventMessageRequest
 				return EventMessageRequest.model_validate(data)
@@ -3743,9 +3251,6 @@ class Entity(BaseModel):
 			if mapping_key == "#microsoft.graph.pinnedChatMessageInfo":
 				from .pinned_chat_message_info import PinnedChatMessageInfo
 				return PinnedChatMessageInfo.model_validate(data)
-			if mapping_key == "#microsoft.graph.place":
-				from .place import Place
-				return Place.model_validate(data)
 			if mapping_key == "#microsoft.graph.room":
 				from .room import Room
 				return Room.model_validate(data)
@@ -3758,9 +3263,6 @@ class Entity(BaseModel):
 			if mapping_key == "#microsoft.graph.planner":
 				from .planner import Planner
 				return Planner.model_validate(data)
-			if mapping_key == "#microsoft.graph.plannerDelta":
-				from .planner_delta import PlannerDelta
-				return PlannerDelta.model_validate(data)
 			if mapping_key == "#microsoft.graph.plannerAssignedToTaskBoardTaskFormat":
 				from .planner_assigned_to_task_board_task_format import PlannerAssignedToTaskBoardTaskFormat
 				return PlannerAssignedToTaskBoardTaskFormat.model_validate(data)
@@ -3779,9 +3281,6 @@ class Entity(BaseModel):
 			if mapping_key == "#microsoft.graph.plannerProgressTaskBoardTaskFormat":
 				from .planner_progress_task_board_task_format import PlannerProgressTaskBoardTaskFormat
 				return PlannerProgressTaskBoardTaskFormat.model_validate(data)
-			if mapping_key == "#microsoft.graph.plannerTask":
-				from .planner_task import PlannerTask
-				return PlannerTask.model_validate(data)
 			if mapping_key == "#microsoft.graph.businessScenarioTask":
 				from .business_scenario_task import BusinessScenarioTask
 				return BusinessScenarioTask.model_validate(data)
@@ -3818,9 +3317,6 @@ class Entity(BaseModel):
 			if mapping_key == "#microsoft.graph.policySetAssignment":
 				from .policy_set_assignment import PolicySetAssignment
 				return PolicySetAssignment.model_validate(data)
-			if mapping_key == "#microsoft.graph.policySetItem":
-				from .policy_set_item import PolicySetItem
-				return PolicySetItem.model_validate(data)
 			if mapping_key == "#microsoft.graph.deviceCompliancePolicyPolicySetItem":
 				from .device_compliance_policy_policy_set_item import DeviceCompliancePolicyPolicySetItem
 				return DeviceCompliancePolicyPolicySetItem.model_validate(data)
@@ -3875,9 +3371,6 @@ class Entity(BaseModel):
 			if mapping_key == "#microsoft.graph.printDocument":
 				from .print_document import PrintDocument
 				return PrintDocument.model_validate(data)
-			if mapping_key == "#microsoft.graph.printerBase":
-				from .printer_base import PrinterBase
-				return PrinterBase.model_validate(data)
 			if mapping_key == "#microsoft.graph.printer":
 				from .printer import Printer
 				return Printer.model_validate(data)
@@ -3887,9 +3380,6 @@ class Entity(BaseModel):
 			if mapping_key == "#microsoft.graph.printJob":
 				from .print_job import PrintJob
 				return PrintJob.model_validate(data)
-			if mapping_key == "#microsoft.graph.printOperation":
-				from .print_operation import PrintOperation
-				return PrintOperation.model_validate(data)
 			if mapping_key == "#microsoft.graph.printerCreateOperation":
 				from .printer_create_operation import PrinterCreateOperation
 				return PrinterCreateOperation.model_validate(data)
@@ -3908,9 +3398,6 @@ class Entity(BaseModel):
 			if mapping_key == "#microsoft.graph.printTaskTrigger":
 				from .print_task_trigger import PrintTaskTrigger
 				return PrintTaskTrigger.model_validate(data)
-			if mapping_key == "#microsoft.graph.printUsage":
-				from .print_usage import PrintUsage
-				return PrintUsage.model_validate(data)
 			if mapping_key == "#microsoft.graph.printUsageByPrinter":
 				from .print_usage_by_printer import PrintUsageByPrinter
 				return PrintUsageByPrinter.model_validate(data)
@@ -3926,18 +3413,12 @@ class Entity(BaseModel):
 			if mapping_key == "#microsoft.graph.privilegedAccessRoot":
 				from .privileged_access_root import PrivilegedAccessRoot
 				return PrivilegedAccessRoot.model_validate(data)
-			if mapping_key == "#microsoft.graph.privilegedAccessSchedule":
-				from .privileged_access_schedule import PrivilegedAccessSchedule
-				return PrivilegedAccessSchedule.model_validate(data)
 			if mapping_key == "#microsoft.graph.privilegedAccessGroupAssignmentSchedule":
 				from .privileged_access_group_assignment_schedule import PrivilegedAccessGroupAssignmentSchedule
 				return PrivilegedAccessGroupAssignmentSchedule.model_validate(data)
 			if mapping_key == "#microsoft.graph.privilegedAccessGroupEligibilitySchedule":
 				from .privileged_access_group_eligibility_schedule import PrivilegedAccessGroupEligibilitySchedule
 				return PrivilegedAccessGroupEligibilitySchedule.model_validate(data)
-			if mapping_key == "#microsoft.graph.privilegedAccessScheduleInstance":
-				from .privileged_access_schedule_instance import PrivilegedAccessScheduleInstance
-				return PrivilegedAccessScheduleInstance.model_validate(data)
 			if mapping_key == "#microsoft.graph.privilegedAccessGroupAssignmentScheduleInstance":
 				from .privileged_access_group_assignment_schedule_instance import PrivilegedAccessGroupAssignmentScheduleInstance
 				return PrivilegedAccessGroupAssignmentScheduleInstance.model_validate(data)
@@ -4001,9 +3482,6 @@ class Entity(BaseModel):
 			if mapping_key == "#microsoft.graph.pronounsSettings":
 				from .pronouns_settings import PronounsSettings
 				return PronounsSettings.model_validate(data)
-			if mapping_key == "#microsoft.graph.protectionPolicyBase":
-				from .protection_policy_base import ProtectionPolicyBase
-				return ProtectionPolicyBase.model_validate(data)
 			if mapping_key == "#microsoft.graph.exchangeProtectionPolicy":
 				from .exchange_protection_policy import ExchangeProtectionPolicy
 				return ExchangeProtectionPolicy.model_validate(data)
@@ -4013,9 +3491,6 @@ class Entity(BaseModel):
 			if mapping_key == "#microsoft.graph.sharePointProtectionPolicy":
 				from .share_point_protection_policy import SharePointProtectionPolicy
 				return SharePointProtectionPolicy.model_validate(data)
-			if mapping_key == "#microsoft.graph.protectionRuleBase":
-				from .protection_rule_base import ProtectionRuleBase
-				return ProtectionRuleBase.model_validate(data)
 			if mapping_key == "#microsoft.graph.driveProtectionRule":
 				from .drive_protection_rule import DriveProtectionRule
 				return DriveProtectionRule.model_validate(data)
@@ -4025,9 +3500,6 @@ class Entity(BaseModel):
 			if mapping_key == "#microsoft.graph.siteProtectionRule":
 				from .site_protection_rule import SiteProtectionRule
 				return SiteProtectionRule.model_validate(data)
-			if mapping_key == "#microsoft.graph.protectionUnitBase":
-				from .protection_unit_base import ProtectionUnitBase
-				return ProtectionUnitBase.model_validate(data)
 			if mapping_key == "#microsoft.graph.driveProtectionUnit":
 				from .drive_protection_unit import DriveProtectionUnit
 				return DriveProtectionUnit.model_validate(data)
@@ -4037,9 +3509,6 @@ class Entity(BaseModel):
 			if mapping_key == "#microsoft.graph.siteProtectionUnit":
 				from .site_protection_unit import SiteProtectionUnit
 				return SiteProtectionUnit.model_validate(data)
-			if mapping_key == "#microsoft.graph.protectionUnitsBulkJobBase":
-				from .protection_units_bulk_job_base import ProtectionUnitsBulkJobBase
-				return ProtectionUnitsBulkJobBase.model_validate(data)
 			if mapping_key == "#microsoft.graph.driveProtectionUnitsBulkAdditionJob":
 				from .drive_protection_units_bulk_addition_job import DriveProtectionUnitsBulkAdditionJob
 				return DriveProtectionUnitsBulkAdditionJob.model_validate(data)
@@ -4073,9 +3542,6 @@ class Entity(BaseModel):
 			if mapping_key == "#microsoft.graph.readingAssignmentSubmission":
 				from .reading_assignment_submission import ReadingAssignmentSubmission
 				return ReadingAssignmentSubmission.model_validate(data)
-			if mapping_key == "#microsoft.graph.recommendationBase":
-				from .recommendation_base import RecommendationBase
-				return RecommendationBase.model_validate(data)
 			if mapping_key == "#microsoft.graph.recommendation":
 				from .recommendation import Recommendation
 				return Recommendation.model_validate(data)
@@ -4106,12 +3572,6 @@ class Entity(BaseModel):
 			if mapping_key == "#microsoft.graph.reportsRoot":
 				from .reports_root import ReportsRoot
 				return ReportsRoot.model_validate(data)
-			if mapping_key == "#microsoft.graph.request":
-				from .request import Request
-				return Request.model_validate(data)
-			if mapping_key == "#microsoft.graph.privilegedAccessScheduleRequest":
-				from .privileged_access_schedule_request import PrivilegedAccessScheduleRequest
-				return PrivilegedAccessScheduleRequest.model_validate(data)
 			if mapping_key == "#microsoft.graph.privilegedAccessGroupAssignmentScheduleRequest":
 				from .privileged_access_group_assignment_schedule_request import PrivilegedAccessGroupAssignmentScheduleRequest
 				return PrivilegedAccessGroupAssignmentScheduleRequest.model_validate(data)
@@ -4130,24 +3590,15 @@ class Entity(BaseModel):
 			if mapping_key == "#microsoft.graph.resourceOperation":
 				from .resource_operation import ResourceOperation
 				return ResourceOperation.model_validate(data)
-			if mapping_key == "#microsoft.graph.restoreArtifactBase":
-				from .restore_artifact_base import RestoreArtifactBase
-				return RestoreArtifactBase.model_validate(data)
 			if mapping_key == "#microsoft.graph.driveRestoreArtifact":
 				from .drive_restore_artifact import DriveRestoreArtifact
 				return DriveRestoreArtifact.model_validate(data)
-			if mapping_key == "#microsoft.graph.mailboxRestoreArtifact":
-				from .mailbox_restore_artifact import MailboxRestoreArtifact
-				return MailboxRestoreArtifact.model_validate(data)
 			if mapping_key == "#microsoft.graph.granularMailboxRestoreArtifact":
 				from .granular_mailbox_restore_artifact import GranularMailboxRestoreArtifact
 				return GranularMailboxRestoreArtifact.model_validate(data)
 			if mapping_key == "#microsoft.graph.siteRestoreArtifact":
 				from .site_restore_artifact import SiteRestoreArtifact
 				return SiteRestoreArtifact.model_validate(data)
-			if mapping_key == "#microsoft.graph.restoreArtifactsBulkRequestBase":
-				from .restore_artifacts_bulk_request_base import RestoreArtifactsBulkRequestBase
-				return RestoreArtifactsBulkRequestBase.model_validate(data)
 			if mapping_key == "#microsoft.graph.driveRestoreArtifactsBulkAdditionRequest":
 				from .drive_restore_artifacts_bulk_addition_request import DriveRestoreArtifactsBulkAdditionRequest
 				return DriveRestoreArtifactsBulkAdditionRequest.model_validate(data)
@@ -4160,9 +3611,6 @@ class Entity(BaseModel):
 			if mapping_key == "#microsoft.graph.restorePoint":
 				from .restore_point import RestorePoint
 				return RestorePoint.model_validate(data)
-			if mapping_key == "#microsoft.graph.restoreSessionBase":
-				from .restore_session_base import RestoreSessionBase
-				return RestoreSessionBase.model_validate(data)
 			if mapping_key == "#microsoft.graph.exchangeRestoreSession":
 				from .exchange_restore_session import ExchangeRestoreSession
 				return ExchangeRestoreSession.model_validate(data)
@@ -4178,27 +3626,15 @@ class Entity(BaseModel):
 			if mapping_key == "#microsoft.graph.riskDetection":
 				from .risk_detection import RiskDetection
 				return RiskDetection.model_validate(data)
-			if mapping_key == "#microsoft.graph.riskyServicePrincipal":
-				from .risky_service_principal import RiskyServicePrincipal
-				return RiskyServicePrincipal.model_validate(data)
 			if mapping_key == "#microsoft.graph.riskyServicePrincipalHistoryItem":
 				from .risky_service_principal_history_item import RiskyServicePrincipalHistoryItem
 				return RiskyServicePrincipalHistoryItem.model_validate(data)
-			if mapping_key == "#microsoft.graph.riskyUser":
-				from .risky_user import RiskyUser
-				return RiskyUser.model_validate(data)
 			if mapping_key == "#microsoft.graph.riskyUserHistoryItem":
 				from .risky_user_history_item import RiskyUserHistoryItem
 				return RiskyUserHistoryItem.model_validate(data)
-			if mapping_key == "#microsoft.graph.roleAssignment":
-				from .role_assignment import RoleAssignment
-				return RoleAssignment.model_validate(data)
 			if mapping_key == "#microsoft.graph.deviceAndAppManagementRoleAssignment":
 				from .device_and_app_management_role_assignment import DeviceAndAppManagementRoleAssignment
 				return DeviceAndAppManagementRoleAssignment.model_validate(data)
-			if mapping_key == "#microsoft.graph.roleDefinition":
-				from .role_definition import RoleDefinition
-				return RoleDefinition.model_validate(data)
 			if mapping_key == "#microsoft.graph.deviceAndAppManagementRoleDefinition":
 				from .device_and_app_management_role_definition import DeviceAndAppManagementRoleDefinition
 				return DeviceAndAppManagementRoleDefinition.model_validate(data)
@@ -4259,9 +3695,6 @@ class Entity(BaseModel):
 			if mapping_key == "#microsoft.graph.securityBaselineState":
 				from .security_baseline_state import SecurityBaselineState
 				return SecurityBaselineState.model_validate(data)
-			if mapping_key == "#microsoft.graph.securityBaselineStateSummary":
-				from .security_baseline_state_summary import SecurityBaselineStateSummary
-				return SecurityBaselineStateSummary.model_validate(data)
 			if mapping_key == "#microsoft.graph.securityBaselineCategoryStateSummary":
 				from .security_baseline_category_state_summary import SecurityBaselineCategoryStateSummary
 				return SecurityBaselineCategoryStateSummary.model_validate(data)
@@ -4289,9 +3722,6 @@ class Entity(BaseModel):
 			if mapping_key == "#microsoft.graph.serviceAnnouncementAttachment":
 				from .service_announcement_attachment import ServiceAnnouncementAttachment
 				return ServiceAnnouncementAttachment.model_validate(data)
-			if mapping_key == "#microsoft.graph.serviceAnnouncementBase":
-				from .service_announcement_base import ServiceAnnouncementBase
-				return ServiceAnnouncementBase.model_validate(data)
 			if mapping_key == "#microsoft.graph.serviceHealthIssue":
 				from .service_health_issue import ServiceHealthIssue
 				return ServiceHealthIssue.model_validate(data)
@@ -4358,9 +3788,6 @@ class Entity(BaseModel):
 			if mapping_key == "#microsoft.graph.softwareUpdateStatusSummary":
 				from .software_update_status_summary import SoftwareUpdateStatusSummary
 				return SoftwareUpdateStatusSummary.model_validate(data)
-			if mapping_key == "#microsoft.graph.storageQuotaBreakdown":
-				from .storage_quota_breakdown import StorageQuotaBreakdown
-				return StorageQuotaBreakdown.model_validate(data)
 			if mapping_key == "#microsoft.graph.serviceStorageQuotaBreakdown":
 				from .service_storage_quota_breakdown import ServiceStorageQuotaBreakdown
 				return ServiceStorageQuotaBreakdown.model_validate(data)
@@ -4409,9 +3836,6 @@ class Entity(BaseModel):
 			if mapping_key == "#microsoft.graph.team":
 				from .team import Team
 				return Team.model_validate(data)
-			if mapping_key == "#microsoft.graph.teamInfo":
-				from .team_info import TeamInfo
-				return TeamInfo.model_validate(data)
 			if mapping_key == "#microsoft.graph.associatedTeamInfo":
 				from .associated_team_info import AssociatedTeamInfo
 				return AssociatedTeamInfo.model_validate(data)
@@ -4430,9 +3854,6 @@ class Entity(BaseModel):
 			if mapping_key == "#microsoft.graph.teamsAppIcon":
 				from .teams_app_icon import TeamsAppIcon
 				return TeamsAppIcon.model_validate(data)
-			if mapping_key == "#microsoft.graph.teamsAppInstallation":
-				from .teams_app_installation import TeamsAppInstallation
-				return TeamsAppInstallation.model_validate(data)
 			if mapping_key == "#microsoft.graph.userScopeTeamsAppInstallation":
 				from .user_scope_teams_app_installation import UserScopeTeamsAppInstallation
 				return UserScopeTeamsAppInstallation.model_validate(data)
@@ -4478,9 +3899,6 @@ class Entity(BaseModel):
 			if mapping_key == "#microsoft.graph.teamworkDeviceOperation":
 				from .teamwork_device_operation import TeamworkDeviceOperation
 				return TeamworkDeviceOperation.model_validate(data)
-			if mapping_key == "#microsoft.graph.teamworkHostedContent":
-				from .teamwork_hosted_content import TeamworkHostedContent
-				return TeamworkHostedContent.model_validate(data)
 			if mapping_key == "#microsoft.graph.chatMessageHostedContent":
 				from .chat_message_hosted_content import ChatMessageHostedContent
 				return ChatMessageHostedContent.model_validate(data)
@@ -4523,9 +3941,6 @@ class Entity(BaseModel):
 			if mapping_key == "#microsoft.graph.textClassificationRequest":
 				from .text_classification_request import TextClassificationRequest
 				return TextClassificationRequest.model_validate(data)
-			if mapping_key == "#microsoft.graph.threatAssessmentRequest":
-				from .threat_assessment_request import ThreatAssessmentRequest
-				return ThreatAssessmentRequest.model_validate(data)
 			if mapping_key == "#microsoft.graph.emailFileAssessmentRequest":
 				from .email_file_assessment_request import EmailFileAssessmentRequest
 				return EmailFileAssessmentRequest.model_validate(data)
@@ -4598,9 +4013,6 @@ class Entity(BaseModel):
 			if mapping_key == "#microsoft.graph.unifiedRoleManagementAlert":
 				from .unified_role_management_alert import UnifiedRoleManagementAlert
 				return UnifiedRoleManagementAlert.model_validate(data)
-			if mapping_key == "#microsoft.graph.unifiedRoleManagementAlertConfiguration":
-				from .unified_role_management_alert_configuration import UnifiedRoleManagementAlertConfiguration
-				return UnifiedRoleManagementAlertConfiguration.model_validate(data)
 			if mapping_key == "#microsoft.graph.invalidLicenseAlertConfiguration":
 				from .invalid_license_alert_configuration import InvalidLicenseAlertConfiguration
 				return InvalidLicenseAlertConfiguration.model_validate(data)
@@ -4625,9 +4037,6 @@ class Entity(BaseModel):
 			if mapping_key == "#microsoft.graph.unifiedRoleManagementAlertDefinition":
 				from .unified_role_management_alert_definition import UnifiedRoleManagementAlertDefinition
 				return UnifiedRoleManagementAlertDefinition.model_validate(data)
-			if mapping_key == "#microsoft.graph.unifiedRoleManagementAlertIncident":
-				from .unified_role_management_alert_incident import UnifiedRoleManagementAlertIncident
-				return UnifiedRoleManagementAlertIncident.model_validate(data)
 			if mapping_key == "#microsoft.graph.invalidLicenseAlertIncident":
 				from .invalid_license_alert_incident import InvalidLicenseAlertIncident
 				return InvalidLicenseAlertIncident.model_validate(data)
@@ -4655,9 +4064,6 @@ class Entity(BaseModel):
 			if mapping_key == "#microsoft.graph.unifiedRoleManagementPolicyAssignment":
 				from .unified_role_management_policy_assignment import UnifiedRoleManagementPolicyAssignment
 				return UnifiedRoleManagementPolicyAssignment.model_validate(data)
-			if mapping_key == "#microsoft.graph.unifiedRoleManagementPolicyRule":
-				from .unified_role_management_policy_rule import UnifiedRoleManagementPolicyRule
-				return UnifiedRoleManagementPolicyRule.model_validate(data)
 			if mapping_key == "#microsoft.graph.unifiedRoleManagementPolicyApprovalRule":
 				from .unified_role_management_policy_approval_rule import UnifiedRoleManagementPolicyApprovalRule
 				return UnifiedRoleManagementPolicyApprovalRule.model_validate(data)
@@ -4673,18 +4079,12 @@ class Entity(BaseModel):
 			if mapping_key == "#microsoft.graph.unifiedRoleManagementPolicyNotificationRule":
 				from .unified_role_management_policy_notification_rule import UnifiedRoleManagementPolicyNotificationRule
 				return UnifiedRoleManagementPolicyNotificationRule.model_validate(data)
-			if mapping_key == "#microsoft.graph.unifiedRoleScheduleBase":
-				from .unified_role_schedule_base import UnifiedRoleScheduleBase
-				return UnifiedRoleScheduleBase.model_validate(data)
 			if mapping_key == "#microsoft.graph.unifiedRoleAssignmentSchedule":
 				from .unified_role_assignment_schedule import UnifiedRoleAssignmentSchedule
 				return UnifiedRoleAssignmentSchedule.model_validate(data)
 			if mapping_key == "#microsoft.graph.unifiedRoleEligibilitySchedule":
 				from .unified_role_eligibility_schedule import UnifiedRoleEligibilitySchedule
 				return UnifiedRoleEligibilitySchedule.model_validate(data)
-			if mapping_key == "#microsoft.graph.unifiedRoleScheduleInstanceBase":
-				from .unified_role_schedule_instance_base import UnifiedRoleScheduleInstanceBase
-				return UnifiedRoleScheduleInstanceBase.model_validate(data)
 			if mapping_key == "#microsoft.graph.unifiedRoleAssignmentScheduleInstance":
 				from .unified_role_assignment_schedule_instance import UnifiedRoleAssignmentScheduleInstance
 				return UnifiedRoleAssignmentScheduleInstance.model_validate(data)
@@ -4904,9 +4304,6 @@ class Entity(BaseModel):
 			if mapping_key == "#microsoft.graph.virtualEndpoint":
 				from .virtual_endpoint import VirtualEndpoint
 				return VirtualEndpoint.model_validate(data)
-			if mapping_key == "#microsoft.graph.virtualEvent":
-				from .virtual_event import VirtualEvent
-				return VirtualEvent.model_validate(data)
 			if mapping_key == "#microsoft.graph.virtualEventTownhall":
 				from .virtual_event_townhall import VirtualEventTownhall
 				return VirtualEventTownhall.model_validate(data)
@@ -4919,15 +4316,9 @@ class Entity(BaseModel):
 			if mapping_key == "#microsoft.graph.virtualEventRegistration":
 				from .virtual_event_registration import VirtualEventRegistration
 				return VirtualEventRegistration.model_validate(data)
-			if mapping_key == "#microsoft.graph.virtualEventRegistrationConfiguration":
-				from .virtual_event_registration_configuration import VirtualEventRegistrationConfiguration
-				return VirtualEventRegistrationConfiguration.model_validate(data)
 			if mapping_key == "#microsoft.graph.virtualEventWebinarRegistrationConfiguration":
 				from .virtual_event_webinar_registration_configuration import VirtualEventWebinarRegistrationConfiguration
 				return VirtualEventWebinarRegistrationConfiguration.model_validate(data)
-			if mapping_key == "#microsoft.graph.virtualEventRegistrationQuestionBase":
-				from .virtual_event_registration_question_base import VirtualEventRegistrationQuestionBase
-				return VirtualEventRegistrationQuestionBase.model_validate(data)
 			if mapping_key == "#microsoft.graph.virtualEventRegistrationCustomQuestion":
 				from .virtual_event_registration_custom_question import VirtualEventRegistrationCustomQuestion
 				return VirtualEventRegistrationCustomQuestion.model_validate(data)
@@ -4946,9 +4337,6 @@ class Entity(BaseModel):
 			if mapping_key == "#microsoft.graph.vulnerableManagedDevice":
 				from .vulnerable_managed_device import VulnerableManagedDevice
 				return VulnerableManagedDevice.model_validate(data)
-			if mapping_key == "#microsoft.graph.webPart":
-				from .web_part import WebPart
-				return WebPart.model_validate(data)
 			if mapping_key == "#microsoft.graph.standardWebPart":
 				from .standard_web_part import StandardWebPart
 				return StandardWebPart.model_validate(data)
@@ -4958,9 +4346,6 @@ class Entity(BaseModel):
 			if mapping_key == "#microsoft.graph.windowsAssignedAccessProfile":
 				from .windows_assigned_access_profile import WindowsAssignedAccessProfile
 				return WindowsAssignedAccessProfile.model_validate(data)
-			if mapping_key == "#microsoft.graph.windowsAutopilotDeploymentProfile":
-				from .windows_autopilot_deployment_profile import WindowsAutopilotDeploymentProfile
-				return WindowsAutopilotDeploymentProfile.model_validate(data)
 			if mapping_key == "#microsoft.graph.activeDirectoryWindowsAutopilotDeploymentProfile":
 				from .active_directory_windows_autopilot_deployment_profile import ActiveDirectoryWindowsAutopilotDeploymentProfile
 				return ActiveDirectoryWindowsAutopilotDeploymentProfile.model_validate(data)
@@ -5057,9 +4442,6 @@ class Entity(BaseModel):
 			if mapping_key == "#microsoft.graph.windowsSettingInstance":
 				from .windows_setting_instance import WindowsSettingInstance
 				return WindowsSettingInstance.model_validate(data)
-			if mapping_key == "#microsoft.graph.windowsUpdateCatalogItem":
-				from .windows_update_catalog_item import WindowsUpdateCatalogItem
-				return WindowsUpdateCatalogItem.model_validate(data)
 			if mapping_key == "#microsoft.graph.windowsFeatureUpdateCatalogItem":
 				from .windows_feature_update_catalog_item import WindowsFeatureUpdateCatalogItem
 				return WindowsFeatureUpdateCatalogItem.model_validate(data)
@@ -5231,9 +4613,6 @@ class Entity(BaseModel):
 			if mapping_key == "#microsoft.graph.callRecords.callRecord":
 				from .call_records_call_record import CallRecordsCallRecord
 				return CallRecordsCallRecord.model_validate(data)
-			if mapping_key == "#microsoft.graph.callRecords.participantBase":
-				from .call_records_participant_base import CallRecordsParticipantBase
-				return CallRecordsParticipantBase.model_validate(data)
 			if mapping_key == "#microsoft.graph.callRecords.organizer":
 				from .call_records_organizer import CallRecordsOrganizer
 				return CallRecordsOrganizer.model_validate(data)
@@ -5261,9 +4640,6 @@ class Entity(BaseModel):
 			if mapping_key == "#microsoft.graph.ediscovery.case":
 				from .ediscovery_case import EdiscoveryCase
 				return EdiscoveryCase.model_validate(data)
-			if mapping_key == "#microsoft.graph.ediscovery.caseOperation":
-				from .ediscovery_case_operation import EdiscoveryCaseOperation
-				return EdiscoveryCaseOperation.model_validate(data)
 			if mapping_key == "#microsoft.graph.ediscovery.addToReviewSetOperation":
 				from .ediscovery_add_to_review_set_operation import EdiscoveryAddToReviewSetOperation
 				return EdiscoveryAddToReviewSetOperation.model_validate(data)
@@ -5288,9 +4664,6 @@ class Entity(BaseModel):
 			if mapping_key == "#microsoft.graph.ediscovery.caseSettings":
 				from .ediscovery_case_settings import EdiscoveryCaseSettings
 				return EdiscoveryCaseSettings.model_validate(data)
-			if mapping_key == "#microsoft.graph.ediscovery.dataSource":
-				from .ediscovery_data_source import EdiscoveryDataSource
-				return EdiscoveryDataSource.model_validate(data)
 			if mapping_key == "#microsoft.graph.ediscovery.siteSource":
 				from .ediscovery_site_source import EdiscoverySiteSource
 				return EdiscoverySiteSource.model_validate(data)
@@ -5300,9 +4673,6 @@ class Entity(BaseModel):
 			if mapping_key == "#microsoft.graph.ediscovery.userSource":
 				from .ediscovery_user_source import EdiscoveryUserSource
 				return EdiscoveryUserSource.model_validate(data)
-			if mapping_key == "#microsoft.graph.ediscovery.dataSourceContainer":
-				from .ediscovery_data_source_container import EdiscoveryDataSourceContainer
-				return EdiscoveryDataSourceContainer.model_validate(data)
 			if mapping_key == "#microsoft.graph.ediscovery.custodian":
 				from .ediscovery_custodian import EdiscoveryCustodian
 				return EdiscoveryCustodian.model_validate(data)
@@ -5333,9 +4703,6 @@ class Entity(BaseModel):
 			if mapping_key == "#microsoft.graph.externalConnectors.connectionQuota":
 				from .external_connectors_connection_quota import ExternalConnectorsConnectionQuota
 				return ExternalConnectorsConnectionQuota.model_validate(data)
-			if mapping_key == "#microsoft.graph.externalConnectors.externalActivity":
-				from .external_connectors_external_activity import ExternalConnectorsExternalActivity
-				return ExternalConnectorsExternalActivity.model_validate(data)
 			if mapping_key == "#microsoft.graph.externalConnectors.externalActivityResult":
 				from .external_connectors_external_activity_result import ExternalConnectorsExternalActivityResult
 				return ExternalConnectorsExternalActivityResult.model_validate(data)
@@ -5393,30 +4760,15 @@ class Entity(BaseModel):
 			if mapping_key == "#microsoft.graph.identityGovernance.workflowTemplate":
 				from .identity_governance_workflow_template import IdentityGovernanceWorkflowTemplate
 				return IdentityGovernanceWorkflowTemplate.model_validate(data)
-			if mapping_key == "#microsoft.graph.industryData.industryDataActivity":
-				from .industry_data_industry_data_activity import IndustryDataIndustryDataActivity
-				return IndustryDataIndustryDataActivity.model_validate(data)
-			if mapping_key == "#microsoft.graph.industryData.inboundFlow":
-				from .industry_data_inbound_flow import IndustryDataInboundFlow
-				return IndustryDataInboundFlow.model_validate(data)
 			if mapping_key == "#microsoft.graph.industryData.inboundApiFlow":
 				from .industry_data_inbound_api_flow import IndustryDataInboundApiFlow
 				return IndustryDataInboundApiFlow.model_validate(data)
 			if mapping_key == "#microsoft.graph.industryData.inboundFileFlow":
 				from .industry_data_inbound_file_flow import IndustryDataInboundFileFlow
 				return IndustryDataInboundFileFlow.model_validate(data)
-			if mapping_key == "#microsoft.graph.industryData.industryDataConnector":
-				from .industry_data_industry_data_connector import IndustryDataIndustryDataConnector
-				return IndustryDataIndustryDataConnector.model_validate(data)
-			if mapping_key == "#microsoft.graph.industryData.apiDataConnector":
-				from .industry_data_api_data_connector import IndustryDataApiDataConnector
-				return IndustryDataApiDataConnector.model_validate(data)
 			if mapping_key == "#microsoft.graph.industryData.oneRosterApiDataConnector":
 				from .industry_data_one_roster_api_data_connector import IndustryDataOneRosterApiDataConnector
 				return IndustryDataOneRosterApiDataConnector.model_validate(data)
-			if mapping_key == "#microsoft.graph.industryData.fileDataConnector":
-				from .industry_data_file_data_connector import IndustryDataFileDataConnector
-				return IndustryDataFileDataConnector.model_validate(data)
 			if mapping_key == "#microsoft.graph.industryData.azureDataLakeConnector":
 				from .industry_data_azure_data_lake_connector import IndustryDataAzureDataLakeConnector
 				return IndustryDataAzureDataLakeConnector.model_validate(data)
@@ -5426,9 +4778,6 @@ class Entity(BaseModel):
 			if mapping_key == "#microsoft.graph.industryData.industryDataRun":
 				from .industry_data_industry_data_run import IndustryDataIndustryDataRun
 				return IndustryDataIndustryDataRun.model_validate(data)
-			if mapping_key == "#microsoft.graph.industryData.industryDataRunActivity":
-				from .industry_data_industry_data_run_activity import IndustryDataIndustryDataRunActivity
-				return IndustryDataIndustryDataRunActivity.model_validate(data)
 			if mapping_key == "#microsoft.graph.industryData.inboundFlowActivity":
 				from .industry_data_inbound_flow_activity import IndustryDataInboundFlowActivity
 				return IndustryDataInboundFlowActivity.model_validate(data)
@@ -5438,9 +4787,6 @@ class Entity(BaseModel):
 			if mapping_key == "#microsoft.graph.industryData.outboundProvisioningFlowSet":
 				from .industry_data_outbound_provisioning_flow_set import IndustryDataOutboundProvisioningFlowSet
 				return IndustryDataOutboundProvisioningFlowSet.model_validate(data)
-			if mapping_key == "#microsoft.graph.industryData.provisioningFlow":
-				from .industry_data_provisioning_flow import IndustryDataProvisioningFlow
-				return IndustryDataProvisioningFlow.model_validate(data)
 			if mapping_key == "#microsoft.graph.industryData.administrativeUnitProvisioningFlow":
 				from .industry_data_administrative_unit_provisioning_flow import IndustryDataAdministrativeUnitProvisioningFlow
 				return IndustryDataAdministrativeUnitProvisioningFlow.model_validate(data)
@@ -5615,39 +4961,24 @@ class Entity(BaseModel):
 			if mapping_key == "#microsoft.graph.networkaccess.networkAccessRoot":
 				from .networkaccess_network_access_root import NetworkaccessNetworkAccessRoot
 				return NetworkaccessNetworkAccessRoot.model_validate(data)
-			if mapping_key == "#microsoft.graph.networkaccess.policy":
-				from .networkaccess_policy import NetworkaccessPolicy
-				return NetworkaccessPolicy.model_validate(data)
 			if mapping_key == "#microsoft.graph.networkaccess.filteringPolicy":
 				from .networkaccess_filtering_policy import NetworkaccessFilteringPolicy
 				return NetworkaccessFilteringPolicy.model_validate(data)
 			if mapping_key == "#microsoft.graph.networkaccess.forwardingPolicy":
 				from .networkaccess_forwarding_policy import NetworkaccessForwardingPolicy
 				return NetworkaccessForwardingPolicy.model_validate(data)
-			if mapping_key == "#microsoft.graph.networkaccess.policyLink":
-				from .networkaccess_policy_link import NetworkaccessPolicyLink
-				return NetworkaccessPolicyLink.model_validate(data)
 			if mapping_key == "#microsoft.graph.networkaccess.filteringPolicyLink":
 				from .networkaccess_filtering_policy_link import NetworkaccessFilteringPolicyLink
 				return NetworkaccessFilteringPolicyLink.model_validate(data)
 			if mapping_key == "#microsoft.graph.networkaccess.forwardingPolicyLink":
 				from .networkaccess_forwarding_policy_link import NetworkaccessForwardingPolicyLink
 				return NetworkaccessForwardingPolicyLink.model_validate(data)
-			if mapping_key == "#microsoft.graph.networkaccess.policyRule":
-				from .networkaccess_policy_rule import NetworkaccessPolicyRule
-				return NetworkaccessPolicyRule.model_validate(data)
-			if mapping_key == "#microsoft.graph.networkaccess.filteringRule":
-				from .networkaccess_filtering_rule import NetworkaccessFilteringRule
-				return NetworkaccessFilteringRule.model_validate(data)
 			if mapping_key == "#microsoft.graph.networkaccess.fqdnFilteringRule":
 				from .networkaccess_fqdn_filtering_rule import NetworkaccessFqdnFilteringRule
 				return NetworkaccessFqdnFilteringRule.model_validate(data)
 			if mapping_key == "#microsoft.graph.networkaccess.webCategoryFilteringRule":
 				from .networkaccess_web_category_filtering_rule import NetworkaccessWebCategoryFilteringRule
 				return NetworkaccessWebCategoryFilteringRule.model_validate(data)
-			if mapping_key == "#microsoft.graph.networkaccess.forwardingRule":
-				from .networkaccess_forwarding_rule import NetworkaccessForwardingRule
-				return NetworkaccessForwardingRule.model_validate(data)
 			if mapping_key == "#microsoft.graph.networkaccess.internetAccessForwardingRule":
 				from .networkaccess_internet_access_forwarding_rule import NetworkaccessInternetAccessForwardingRule
 				return NetworkaccessInternetAccessForwardingRule.model_validate(data)
@@ -5657,9 +4988,6 @@ class Entity(BaseModel):
 			if mapping_key == "#microsoft.graph.networkaccess.privateAccessForwardingRule":
 				from .networkaccess_private_access_forwarding_rule import NetworkaccessPrivateAccessForwardingRule
 				return NetworkaccessPrivateAccessForwardingRule.model_validate(data)
-			if mapping_key == "#microsoft.graph.networkaccess.profile":
-				from .networkaccess_profile import NetworkaccessProfile
-				return NetworkaccessProfile.model_validate(data)
 			if mapping_key == "#microsoft.graph.networkaccess.filteringProfile":
 				from .networkaccess_filtering_profile import NetworkaccessFilteringProfile
 				return NetworkaccessFilteringProfile.model_validate(data)
@@ -5690,9 +5018,6 @@ class Entity(BaseModel):
 			if mapping_key == "#microsoft.graph.partner.security.partnerSecurityScore":
 				from .partner_security_partner_security_score import PartnerSecurityPartnerSecurityScore
 				return PartnerSecurityPartnerSecurityScore.model_validate(data)
-			if mapping_key == "#microsoft.graph.partner.security.securityRequirement":
-				from .partner_security_security_requirement import PartnerSecuritySecurityRequirement
-				return PartnerSecuritySecurityRequirement.model_validate(data)
 			if mapping_key == "#microsoft.graph.partner.security.adminsMfaEnforcedSecurityRequirement":
 				from .partner_security_admins_mfa_enforced_security_requirement import PartnerSecurityAdminsMfaEnforcedSecurityRequirement
 				return PartnerSecurityAdminsMfaEnforcedSecurityRequirement.model_validate(data)
@@ -5726,9 +5051,6 @@ class Entity(BaseModel):
 			if mapping_key == "#microsoft.graph.partners.billing.manifest":
 				from .partners_billing_manifest import PartnersBillingManifest
 				return PartnersBillingManifest.model_validate(data)
-			if mapping_key == "#microsoft.graph.partners.billing.operation":
-				from .partners_billing_operation import PartnersBillingOperation
-				return PartnersBillingOperation.model_validate(data)
 			if mapping_key == "#microsoft.graph.partners.billing.exportSuccessOperation":
 				from .partners_billing_export_success_operation import PartnersBillingExportSuccessOperation
 				return PartnersBillingExportSuccessOperation.model_validate(data)
@@ -5741,9 +5063,6 @@ class Entity(BaseModel):
 			if mapping_key == "#microsoft.graph.partners.billing.unbilledUsage":
 				from .partners_billing_unbilled_usage import PartnersBillingUnbilledUsage
 				return PartnersBillingUnbilledUsage.model_validate(data)
-			if mapping_key == "#microsoft.graph.search.searchAnswer":
-				from .search_search_answer import SearchSearchAnswer
-				return SearchSearchAnswer.model_validate(data)
 			if mapping_key == "#microsoft.graph.search.acronym":
 				from .search_acronym import SearchAcronym
 				return SearchAcronym.model_validate(data)
@@ -5762,12 +5081,6 @@ class Entity(BaseModel):
 			if mapping_key == "#microsoft.graph.security.article":
 				from .security_article import SecurityArticle
 				return SecurityArticle.model_validate(data)
-			if mapping_key == "#microsoft.graph.security.artifact":
-				from .security_artifact import SecurityArtifact
-				return SecurityArtifact.model_validate(data)
-			if mapping_key == "#microsoft.graph.security.host":
-				from .security_host import SecurityHost
-				return SecurityHost.model_validate(data)
 			if mapping_key == "#microsoft.graph.security.hostname":
 				from .security_hostname import SecurityHostname
 				return SecurityHostname.model_validate(data)
@@ -5804,15 +5117,9 @@ class Entity(BaseModel):
 			if mapping_key == "#microsoft.graph.security.auditLogRecord":
 				from .security_audit_log_record import SecurityAuditLogRecord
 				return SecurityAuditLogRecord.model_validate(data)
-			if mapping_key == "#microsoft.graph.security.case":
-				from .security_case import SecurityCase
-				return SecurityCase.model_validate(data)
 			if mapping_key == "#microsoft.graph.security.ediscoveryCase":
 				from .security_ediscovery_case import SecurityEdiscoveryCase
 				return SecurityEdiscoveryCase.model_validate(data)
-			if mapping_key == "#microsoft.graph.security.caseOperation":
-				from .security_case_operation import SecurityCaseOperation
-				return SecurityCaseOperation.model_validate(data)
 			if mapping_key == "#microsoft.graph.security.ediscoveryAddToReviewSetOperation":
 				from .security_ediscovery_add_to_review_set_operation import SecurityEdiscoveryAddToReviewSetOperation
 				return SecurityEdiscoveryAddToReviewSetOperation.model_validate(data)
@@ -5852,15 +5159,9 @@ class Entity(BaseModel):
 			if mapping_key == "#microsoft.graph.security.dataDiscoveryRoot":
 				from .security_data_discovery_root import SecurityDataDiscoveryRoot
 				return SecurityDataDiscoveryRoot.model_validate(data)
-			if mapping_key == "#microsoft.graph.security.dataSet":
-				from .security_data_set import SecurityDataSet
-				return SecurityDataSet.model_validate(data)
 			if mapping_key == "#microsoft.graph.security.ediscoveryReviewSet":
 				from .security_ediscovery_review_set import SecurityEdiscoveryReviewSet
 				return SecurityEdiscoveryReviewSet.model_validate(data)
-			if mapping_key == "#microsoft.graph.security.dataSource":
-				from .security_data_source import SecurityDataSource
-				return SecurityDataSource.model_validate(data)
 			if mapping_key == "#microsoft.graph.security.siteSource":
 				from .security_site_source import SecuritySiteSource
 				return SecuritySiteSource.model_validate(data)
@@ -5870,18 +5171,12 @@ class Entity(BaseModel):
 			if mapping_key == "#microsoft.graph.security.userSource":
 				from .security_user_source import SecurityUserSource
 				return SecurityUserSource.model_validate(data)
-			if mapping_key == "#microsoft.graph.security.dataSourceContainer":
-				from .security_data_source_container import SecurityDataSourceContainer
-				return SecurityDataSourceContainer.model_validate(data)
 			if mapping_key == "#microsoft.graph.security.ediscoveryCustodian":
 				from .security_ediscovery_custodian import SecurityEdiscoveryCustodian
 				return SecurityEdiscoveryCustodian.model_validate(data)
 			if mapping_key == "#microsoft.graph.security.ediscoveryNoncustodialDataSource":
 				from .security_ediscovery_noncustodial_data_source import SecurityEdiscoveryNoncustodialDataSource
 				return SecurityEdiscoveryNoncustodialDataSource.model_validate(data)
-			if mapping_key == "#microsoft.graph.security.discoveredCloudAppDetail":
-				from .security_discovered_cloud_app_detail import SecurityDiscoveredCloudAppDetail
-				return SecurityDiscoveredCloudAppDetail.model_validate(data)
 			if mapping_key == "#microsoft.graph.security.endpointDiscoveredCloudAppDetail":
 				from .security_endpoint_discovered_cloud_app_detail import SecurityEndpointDiscoveredCloudAppDetail
 				return SecurityEndpointDiscoveredCloudAppDetail.model_validate(data)
@@ -5900,18 +5195,12 @@ class Entity(BaseModel):
 			if mapping_key == "#microsoft.graph.security.emailThreatSubmissionPolicy":
 				from .security_email_threat_submission_policy import SecurityEmailThreatSubmissionPolicy
 				return SecurityEmailThreatSubmissionPolicy.model_validate(data)
-			if mapping_key == "#microsoft.graph.security.file":
-				from .security_file import SecurityFile
-				return SecurityFile.model_validate(data)
 			if mapping_key == "#microsoft.graph.security.ediscoveryFile":
 				from .security_ediscovery_file import SecurityEdiscoveryFile
 				return SecurityEdiscoveryFile.model_validate(data)
 			if mapping_key == "#microsoft.graph.security.filePlanDescriptor":
 				from .security_file_plan_descriptor import SecurityFilePlanDescriptor
 				return SecurityFilePlanDescriptor.model_validate(data)
-			if mapping_key == "#microsoft.graph.security.filePlanDescriptorTemplate":
-				from .security_file_plan_descriptor_template import SecurityFilePlanDescriptorTemplate
-				return SecurityFilePlanDescriptorTemplate.model_validate(data)
 			if mapping_key == "#microsoft.graph.security.authorityTemplate":
 				from .security_authority_template import SecurityAuthorityTemplate
 				return SecurityAuthorityTemplate.model_validate(data)
@@ -5948,9 +5237,6 @@ class Entity(BaseModel):
 			if mapping_key == "#microsoft.graph.security.incident":
 				from .security_incident import SecurityIncident
 				return SecurityIncident.model_validate(data)
-			if mapping_key == "#microsoft.graph.security.indicator":
-				from .security_indicator import SecurityIndicator
-				return SecurityIndicator.model_validate(data)
 			if mapping_key == "#microsoft.graph.security.articleIndicator":
 				from .security_article_indicator import SecurityArticleIndicator
 				return SecurityArticleIndicator.model_validate(data)
@@ -5972,15 +5258,9 @@ class Entity(BaseModel):
 			if mapping_key == "#microsoft.graph.security.networkAdapter":
 				from .security_network_adapter import SecurityNetworkAdapter
 				return SecurityNetworkAdapter.model_validate(data)
-			if mapping_key == "#microsoft.graph.security.policyBase":
-				from .security_policy_base import SecurityPolicyBase
-				return SecurityPolicyBase.model_validate(data)
 			if mapping_key == "#microsoft.graph.security.ediscoveryHoldPolicy":
 				from .security_ediscovery_hold_policy import SecurityEdiscoveryHoldPolicy
 				return SecurityEdiscoveryHoldPolicy.model_validate(data)
-			if mapping_key == "#microsoft.graph.security.protectionRule":
-				from .security_protection_rule import SecurityProtectionRule
-				return SecurityProtectionRule.model_validate(data)
 			if mapping_key == "#microsoft.graph.security.detectionRule":
 				from .security_detection_rule import SecurityDetectionRule
 				return SecurityDetectionRule.model_validate(data)
@@ -5996,9 +5276,6 @@ class Entity(BaseModel):
 			if mapping_key == "#microsoft.graph.security.rulesRoot":
 				from .security_rules_root import SecurityRulesRoot
 				return SecurityRulesRoot.model_validate(data)
-			if mapping_key == "#microsoft.graph.security.search":
-				from .security_search import SecuritySearch
-				return SecuritySearch.model_validate(data)
 			if mapping_key == "#microsoft.graph.security.ediscoveryReviewSetQuery":
 				from .security_ediscovery_review_set_query import SecurityEdiscoveryReviewSetQuery
 				return SecurityEdiscoveryReviewSetQuery.model_validate(data)
@@ -6017,30 +5294,18 @@ class Entity(BaseModel):
 			if mapping_key == "#microsoft.graph.security.subdomain":
 				from .security_subdomain import SecuritySubdomain
 				return SecuritySubdomain.model_validate(data)
-			if mapping_key == "#microsoft.graph.security.tag":
-				from .security_tag import SecurityTag
-				return SecurityTag.model_validate(data)
 			if mapping_key == "#microsoft.graph.security.ediscoveryReviewTag":
 				from .security_ediscovery_review_tag import SecurityEdiscoveryReviewTag
 				return SecurityEdiscoveryReviewTag.model_validate(data)
 			if mapping_key == "#microsoft.graph.security.threatIntelligence":
 				from .security_threat_intelligence import SecurityThreatIntelligence
 				return SecurityThreatIntelligence.model_validate(data)
-			if mapping_key == "#microsoft.graph.security.threatSubmission":
-				from .security_threat_submission import SecurityThreatSubmission
-				return SecurityThreatSubmission.model_validate(data)
-			if mapping_key == "#microsoft.graph.security.emailThreatSubmission":
-				from .security_email_threat_submission import SecurityEmailThreatSubmission
-				return SecurityEmailThreatSubmission.model_validate(data)
 			if mapping_key == "#microsoft.graph.security.emailContentThreatSubmission":
 				from .security_email_content_threat_submission import SecurityEmailContentThreatSubmission
 				return SecurityEmailContentThreatSubmission.model_validate(data)
 			if mapping_key == "#microsoft.graph.security.emailUrlThreatSubmission":
 				from .security_email_url_threat_submission import SecurityEmailUrlThreatSubmission
 				return SecurityEmailUrlThreatSubmission.model_validate(data)
-			if mapping_key == "#microsoft.graph.security.fileThreatSubmission":
-				from .security_file_threat_submission import SecurityFileThreatSubmission
-				return SecurityFileThreatSubmission.model_validate(data)
 			if mapping_key == "#microsoft.graph.security.fileContentThreatSubmission":
 				from .security_file_content_threat_submission import SecurityFileContentThreatSubmission
 				return SecurityFileContentThreatSubmission.model_validate(data)
@@ -6065,9 +5330,6 @@ class Entity(BaseModel):
 			if mapping_key == "#microsoft.graph.security.vulnerabilityComponent":
 				from .security_vulnerability_component import SecurityVulnerabilityComponent
 				return SecurityVulnerabilityComponent.model_validate(data)
-			if mapping_key == "#microsoft.graph.security.whoisBaseRecord":
-				from .security_whois_base_record import SecurityWhoisBaseRecord
-				return SecurityWhoisBaseRecord.model_validate(data)
 			if mapping_key == "#microsoft.graph.security.whoisHistoryRecord":
 				from .security_whois_history_record import SecurityWhoisHistoryRecord
 				return SecurityWhoisHistoryRecord.model_validate(data)
@@ -6098,12 +5360,6 @@ class Entity(BaseModel):
 			if mapping_key == "#microsoft.graph.windowsUpdates.catalog":
 				from .windows_updates_catalog import WindowsUpdatesCatalog
 				return WindowsUpdatesCatalog.model_validate(data)
-			if mapping_key == "#microsoft.graph.windowsUpdates.catalogEntry":
-				from .windows_updates_catalog_entry import WindowsUpdatesCatalogEntry
-				return WindowsUpdatesCatalogEntry.model_validate(data)
-			if mapping_key == "#microsoft.graph.windowsUpdates.softwareUpdateCatalogEntry":
-				from .windows_updates_software_update_catalog_entry import WindowsUpdatesSoftwareUpdateCatalogEntry
-				return WindowsUpdatesSoftwareUpdateCatalogEntry.model_validate(data)
 			if mapping_key == "#microsoft.graph.windowsUpdates.driverUpdateCatalogEntry":
 				from .windows_updates_driver_update_catalog_entry import WindowsUpdatesDriverUpdateCatalogEntry
 				return WindowsUpdatesDriverUpdateCatalogEntry.model_validate(data)
@@ -6113,9 +5369,6 @@ class Entity(BaseModel):
 			if mapping_key == "#microsoft.graph.windowsUpdates.qualityUpdateCatalogEntry":
 				from .windows_updates_quality_update_catalog_entry import WindowsUpdatesQualityUpdateCatalogEntry
 				return WindowsUpdatesQualityUpdateCatalogEntry.model_validate(data)
-			if mapping_key == "#microsoft.graph.windowsUpdates.complianceChange":
-				from .windows_updates_compliance_change import WindowsUpdatesComplianceChange
-				return WindowsUpdatesComplianceChange.model_validate(data)
 			if mapping_key == "#microsoft.graph.windowsUpdates.contentApproval":
 				from .windows_updates_content_approval import WindowsUpdatesContentApproval
 				return WindowsUpdatesContentApproval.model_validate(data)
@@ -6140,15 +5393,9 @@ class Entity(BaseModel):
 			if mapping_key == "#microsoft.graph.windowsUpdates.productRevision":
 				from .windows_updates_product_revision import WindowsUpdatesProductRevision
 				return WindowsUpdatesProductRevision.model_validate(data)
-			if mapping_key == "#microsoft.graph.windowsUpdates.resourceConnection":
-				from .windows_updates_resource_connection import WindowsUpdatesResourceConnection
-				return WindowsUpdatesResourceConnection.model_validate(data)
 			if mapping_key == "#microsoft.graph.windowsUpdates.operationalInsightsConnection":
 				from .windows_updates_operational_insights_connection import WindowsUpdatesOperationalInsightsConnection
 				return WindowsUpdatesOperationalInsightsConnection.model_validate(data)
-			if mapping_key == "#microsoft.graph.windowsUpdates.updatableAsset":
-				from .windows_updates_updatable_asset import WindowsUpdatesUpdatableAsset
-				return WindowsUpdatesUpdatableAsset.model_validate(data)
 			if mapping_key == "#microsoft.graph.windowsUpdates.azureADDevice":
 				from .windows_updates_azure_a_d_device import WindowsUpdatesAzureADDevice
 				return WindowsUpdatesAzureADDevice.model_validate(data)
@@ -6162,5 +5409,4 @@ class Entity(BaseModel):
 
 		except Exception as e:
 			raise e
-
 

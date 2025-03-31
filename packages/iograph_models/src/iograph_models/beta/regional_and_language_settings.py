@@ -1,11 +1,12 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from typing import Literal
+from pydantic import BaseModel, Field
 
 
 class RegionalAndLanguageSettings(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
+	odata_type: Literal["#microsoft.graph.regionalAndLanguageSettings"] = Field(alias="@odata.type",)
 	authoringLanguages: Optional[list[LocaleInfo]] = Field(alias="authoringLanguages", default=None,)
 	defaultDisplayLanguage: Optional[LocaleInfo] = Field(alias="defaultDisplayLanguage", default=None,)
 	defaultRegionalFormat: Optional[LocaleInfo] = Field(alias="defaultRegionalFormat", default=None,)
@@ -15,10 +16,5 @@ class RegionalAndLanguageSettings(BaseModel):
 	translationPreferences: Optional[TranslationPreferences] = Field(alias="translationPreferences", default=None,)
 
 from .locale_info import LocaleInfo
-from .locale_info import LocaleInfo
-from .locale_info import LocaleInfo
-from .locale_info import LocaleInfo
-from .locale_info import LocaleInfo
 from .regional_format_overrides import RegionalFormatOverrides
 from .translation_preferences import TranslationPreferences
-

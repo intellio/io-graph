@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class ChatMessageHistoryItemCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class ChatMessageHistoryItemCollectionResponse(BaseModel):
 	value: Optional[list[ChatMessageHistoryItem]] = Field(alias="value", default=None,)
 
 from .chat_message_history_item import ChatMessageHistoryItem
-

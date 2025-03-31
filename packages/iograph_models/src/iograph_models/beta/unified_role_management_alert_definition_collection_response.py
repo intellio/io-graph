@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class UnifiedRoleManagementAlertDefinitionCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class UnifiedRoleManagementAlertDefinitionCollectionResponse(BaseModel):
 	value: Optional[list[UnifiedRoleManagementAlertDefinition]] = Field(alias="value", default=None,)
 
 from .unified_role_management_alert_definition import UnifiedRoleManagementAlertDefinition
-

@@ -2,7 +2,7 @@ from __future__ import annotations
 from typing import Optional
 from typing import Union
 from typing import Annotated
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class IdentitySourceCollectionResponse(BaseModel):
@@ -15,4 +15,3 @@ from .cross_cloud_azure_active_directory_tenant import CrossCloudAzureActiveDire
 from .domain_identity_source import DomainIdentitySource
 from .external_domain_federation import ExternalDomainFederation
 from .social_identity_source import SocialIdentitySource
-

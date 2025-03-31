@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class FocusActivityStatisticsCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class FocusActivityStatisticsCollectionResponse(BaseModel):
 	value: Optional[list[FocusActivityStatistics]] = Field(alias="value", default=None,)
 
 from .focus_activity_statistics import FocusActivityStatistics
-

@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class ConnectionOperationCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class ConnectionOperationCollectionResponse(BaseModel):
 	value: Optional[list[ConnectionOperation]] = Field(alias="value", default=None,)
 
 from .connection_operation import ConnectionOperation
-

@@ -1,9 +1,9 @@
 from __future__ import annotations
 from typing import Optional
+from pydantic import BaseModel, Field
 from pydantic import model_validator, ModelWrapValidatorHandler, ValidationError
 from typing_extensions import Self
 from typing import Any
-from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class IndustryDataIndustryDataActivity(BaseModel):
@@ -22,9 +22,6 @@ class IndustryDataIndustryDataActivity(BaseModel):
 				return parent_validated_model
 			# get the discriminator value
 			mapping_key = data["@odata.type"]
-			if mapping_key == "#microsoft.graph.industryData.inboundFlow":
-				from .industry_data_inbound_flow import IndustryDataInboundFlow
-				return IndustryDataInboundFlow.model_validate(data)
 			if mapping_key == "#microsoft.graph.industryData.inboundApiFlow":
 				from .industry_data_inbound_api_flow import IndustryDataInboundApiFlow
 				return IndustryDataInboundApiFlow.model_validate(data)
@@ -37,4 +34,3 @@ class IndustryDataIndustryDataActivity(BaseModel):
 			raise e
 
 from .industry_data_readiness_status import IndustryDataReadinessStatus
-

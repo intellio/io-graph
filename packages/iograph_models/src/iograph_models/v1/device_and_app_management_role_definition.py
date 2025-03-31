@@ -3,7 +3,7 @@ from typing import Optional
 from typing import Union
 from typing import Literal
 from typing import Annotated
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class DeviceAndAppManagementRoleDefinition(BaseModel):
@@ -17,4 +17,3 @@ class DeviceAndAppManagementRoleDefinition(BaseModel):
 
 from .role_permission import RolePermission
 from .device_and_app_management_role_assignment import DeviceAndAppManagementRoleAssignment
-

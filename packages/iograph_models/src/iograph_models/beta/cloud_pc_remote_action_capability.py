@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class CloudPcRemoteActionCapability(BaseModel):
@@ -10,4 +10,3 @@ class CloudPcRemoteActionCapability(BaseModel):
 
 from .action_capability import ActionCapability
 from .cloud_pc_remote_action_name import CloudPcRemoteActionName
-

@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class DriveRestoreArtifactCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class DriveRestoreArtifactCollectionResponse(BaseModel):
 	value: Optional[list[DriveRestoreArtifact]] = Field(alias="value", default=None,)
 
 from .drive_restore_artifact import DriveRestoreArtifact
-

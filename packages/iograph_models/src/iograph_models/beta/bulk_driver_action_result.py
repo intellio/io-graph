@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class BulkDriverActionResult(BaseModel):
@@ -8,5 +8,4 @@ class BulkDriverActionResult(BaseModel):
 	notFoundDriverIds: Optional[list[str]] = Field(alias="notFoundDriverIds", default=None,)
 	successfulDriverIds: Optional[list[str]] = Field(alias="successfulDriverIds", default=None,)
 	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
-
 

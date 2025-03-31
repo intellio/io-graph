@@ -2,7 +2,7 @@ from __future__ import annotations
 from typing import Optional
 from typing import Literal
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class SecurityNetworkConnectionEvidence(BaseModel):
@@ -25,5 +25,3 @@ from .security_evidence_role import SecurityEvidenceRole
 from .security_evidence_verdict import SecurityEvidenceVerdict
 from .security_ip_evidence import SecurityIpEvidence
 from .security_protocol_type import SecurityProtocolType
-from .security_ip_evidence import SecurityIpEvidence
-

@@ -1,11 +1,12 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from typing import Literal
+from pydantic import BaseModel, Field
 
 
 class IdentityGovernanceTaskDefinition(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
+	odata_type: Literal["#microsoft.graph.identityGovernance.taskDefinition"] = Field(alias="@odata.type",)
 	category: Optional[IdentityGovernanceLifecycleTaskCategory | str] = Field(alias="category", default=None,)
 	continueOnError: Optional[bool] = Field(alias="continueOnError", default=None,)
 	description: Optional[str] = Field(alias="description", default=None,)
@@ -15,4 +16,3 @@ class IdentityGovernanceTaskDefinition(BaseModel):
 
 from .identity_governance_lifecycle_task_category import IdentityGovernanceLifecycleTaskCategory
 from .identity_governance_parameter import IdentityGovernanceParameter
-

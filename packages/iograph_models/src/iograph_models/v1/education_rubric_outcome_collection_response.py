@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class EducationRubricOutcomeCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class EducationRubricOutcomeCollectionResponse(BaseModel):
 	value: Optional[list[EducationRubricOutcome]] = Field(alias="value", default=None,)
 
 from .education_rubric_outcome import EducationRubricOutcome
-

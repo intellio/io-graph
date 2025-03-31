@@ -1,11 +1,12 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from typing import Literal
+from pydantic import BaseModel, Field
 
 
 class Security(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
+	odata_type: Literal["#microsoft.graph.security"] = Field(alias="@odata.type",)
 	alerts: Optional[list[Alert]] = Field(alias="alerts", default=None,)
 	alerts_v2: Optional[list[SecurityAlert]] = Field(alias="alerts_v2", default=None,)
 	attackSimulation: Optional[AttackSimulationRoot] = Field(alias="attackSimulation", default=None,)
@@ -33,4 +34,3 @@ from .subject_rights_request import SubjectRightsRequest
 from .security_threat_intelligence import SecurityThreatIntelligence
 from .security_triggers_root import SecurityTriggersRoot
 from .security_trigger_types_root import SecurityTriggerTypesRoot
-

@@ -2,7 +2,7 @@ from __future__ import annotations
 from typing import Optional
 from typing import Literal
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class SecurityIpAddress(BaseModel):
@@ -31,9 +31,6 @@ class SecurityIpAddress(BaseModel):
 from .security_host_pair import SecurityHostPair
 from .security_host_component import SecurityHostComponent
 from .security_host_cookie import SecurityHostCookie
-from .security_host_pair import SecurityHostPair
-from .security_host_pair import SecurityHostPair
-from .security_passive_dns_record import SecurityPassiveDnsRecord
 from .security_passive_dns_record import SecurityPassiveDnsRecord
 from .security_host_port import SecurityHostPort
 from .security_host_reputation import SecurityHostReputation
@@ -42,4 +39,3 @@ from .security_subdomain import SecuritySubdomain
 from .security_host_tracker import SecurityHostTracker
 from .security_whois_record import SecurityWhoisRecord
 from .security_autonomous_system import SecurityAutonomousSystem
-

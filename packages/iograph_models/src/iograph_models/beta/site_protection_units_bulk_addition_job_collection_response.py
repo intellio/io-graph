@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class SiteProtectionUnitsBulkAdditionJobCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class SiteProtectionUnitsBulkAdditionJobCollectionResponse(BaseModel):
 	value: Optional[list[SiteProtectionUnitsBulkAdditionJob]] = Field(alias="value", default=None,)
 
 from .site_protection_units_bulk_addition_job import SiteProtectionUnitsBulkAdditionJob
-

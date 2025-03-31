@@ -1,12 +1,13 @@
 from __future__ import annotations
 from typing import Optional
+from typing import Literal
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class DomainSecurityProfile(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
+	odata_type: Literal["#microsoft.graph.domainSecurityProfile"] = Field(alias="@odata.type",)
 	activityGroupNames: Optional[list[str]] = Field(alias="activityGroupNames", default=None,)
 	azureSubscriptionId: Optional[str] = Field(alias="azureSubscriptionId", default=None,)
 	azureTenantId: Optional[str] = Field(alias="azureTenantId", default=None,)
@@ -25,4 +26,3 @@ class DomainSecurityProfile(BaseModel):
 from .reputation_category import ReputationCategory
 from .domain_registrant import DomainRegistrant
 from .security_vendor_information import SecurityVendorInformation
-

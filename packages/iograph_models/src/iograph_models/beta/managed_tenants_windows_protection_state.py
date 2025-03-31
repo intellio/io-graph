@@ -1,12 +1,13 @@
 from __future__ import annotations
 from typing import Optional
+from typing import Literal
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class ManagedTenantsWindowsProtectionState(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
+	odata_type: Literal["#microsoft.graph.managedTenants.windowsProtectionState"] = Field(alias="@odata.type",)
 	antiMalwareVersion: Optional[str] = Field(alias="antiMalwareVersion", default=None,)
 	attentionRequired: Optional[bool] = Field(alias="attentionRequired", default=None,)
 	deviceDeleted: Optional[bool] = Field(alias="deviceDeleted", default=None,)
@@ -32,5 +33,4 @@ class ManagedTenantsWindowsProtectionState(BaseModel):
 	signatureVersion: Optional[str] = Field(alias="signatureVersion", default=None,)
 	tenantDisplayName: Optional[str] = Field(alias="tenantDisplayName", default=None,)
 	tenantId: Optional[str] = Field(alias="tenantId", default=None,)
-
 

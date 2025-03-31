@@ -1,9 +1,9 @@
 from __future__ import annotations
 from typing import Optional
+from pydantic import BaseModel, Field
 from pydantic import model_validator, ModelWrapValidatorHandler, ValidationError
 from typing_extensions import Self
 from typing import Any
-from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class TeleconferenceDeviceMediaQuality(BaseModel):
@@ -43,9 +43,6 @@ class TeleconferenceDeviceMediaQuality(BaseModel):
 			if mapping_key == "#microsoft.graph.teleconferenceDeviceAudioQuality":
 				from .teleconference_device_audio_quality import TeleconferenceDeviceAudioQuality
 				return TeleconferenceDeviceAudioQuality.model_validate(data)
-			if mapping_key == "#microsoft.graph.teleconferenceDeviceVideoQuality":
-				from .teleconference_device_video_quality import TeleconferenceDeviceVideoQuality
-				return TeleconferenceDeviceVideoQuality.model_validate(data)
 			if mapping_key == "#microsoft.graph.teleconferenceDeviceScreenSharingQuality":
 				from .teleconference_device_screen_sharing_quality import TeleconferenceDeviceScreenSharingQuality
 				return TeleconferenceDeviceScreenSharingQuality.model_validate(data)
@@ -55,7 +52,3 @@ class TeleconferenceDeviceMediaQuality(BaseModel):
 			raise e
 
 from .reference_numeric import ReferenceNumeric
-from .reference_numeric import ReferenceNumeric
-from .reference_numeric import ReferenceNumeric
-from .reference_numeric import ReferenceNumeric
-

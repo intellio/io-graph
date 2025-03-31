@@ -1,12 +1,13 @@
 from __future__ import annotations
 from typing import Optional
+from typing import Literal
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class Training(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
+	odata_type: Literal["#microsoft.graph.training"] = Field(alias="@odata.type",)
 	availabilityStatus: Optional[TrainingAvailabilityStatus | str] = Field(alias="availabilityStatus", default=None,)
 	createdBy: Optional[EmailIdentity] = Field(alias="createdBy", default=None,)
 	createdDateTime: Optional[datetime] = Field(alias="createdDateTime", default=None,)
@@ -24,8 +25,6 @@ class Training(BaseModel):
 
 from .training_availability_status import TrainingAvailabilityStatus
 from .email_identity import EmailIdentity
-from .email_identity import EmailIdentity
 from .simulation_content_source import SimulationContentSource
 from .training_type import TrainingType
 from .training_language_detail import TrainingLanguageDetail
-

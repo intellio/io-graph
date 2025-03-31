@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class ThreatAssessmentResultCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class ThreatAssessmentResultCollectionResponse(BaseModel):
 	value: Optional[list[ThreatAssessmentResult]] = Field(alias="value", default=None,)
 
 from .threat_assessment_result import ThreatAssessmentResult
-

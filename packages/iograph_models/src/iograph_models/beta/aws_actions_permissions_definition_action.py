@@ -1,7 +1,7 @@
 from __future__ import annotations
 from typing import Optional
 from typing import Literal
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class AwsActionsPermissionsDefinitionAction(BaseModel):
@@ -10,4 +10,3 @@ class AwsActionsPermissionsDefinitionAction(BaseModel):
 	statements: Optional[list[AwsStatement]] = Field(alias="statements", default=None,)
 
 from .aws_statement import AwsStatement
-

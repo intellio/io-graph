@@ -2,7 +2,7 @@ from __future__ import annotations
 from typing import Optional
 from typing import Union
 from typing import Annotated
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class VirtualEventRegistrationQuestionBaseCollectionResponse(BaseModel):
@@ -12,4 +12,3 @@ class VirtualEventRegistrationQuestionBaseCollectionResponse(BaseModel):
 
 from .virtual_event_registration_custom_question import VirtualEventRegistrationCustomQuestion
 from .virtual_event_registration_predefined_question import VirtualEventRegistrationPredefinedQuestion
-

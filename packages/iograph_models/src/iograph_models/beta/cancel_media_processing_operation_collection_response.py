@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class CancelMediaProcessingOperationCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class CancelMediaProcessingOperationCollectionResponse(BaseModel):
 	value: Optional[list[CancelMediaProcessingOperation]] = Field(alias="value", default=None,)
 
 from .cancel_media_processing_operation import CancelMediaProcessingOperation
-

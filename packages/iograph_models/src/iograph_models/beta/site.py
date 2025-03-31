@@ -4,7 +4,7 @@ from typing import Union
 from typing import Literal
 from typing import Annotated
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class Site(BaseModel):
@@ -37,7 +37,7 @@ class Site(BaseModel):
 	drives: Optional[list[Drive]] = Field(alias="drives", default=None,)
 	externalColumns: Optional[list[ColumnDefinition]] = Field(alias="externalColumns", default=None,)
 	informationProtection: Optional[InformationProtection] = Field(alias="informationProtection", default=None,)
-	items: Optional[list[Annotated[Union[BaseSitePage, NewsLinkPage, PageTemplate, SitePage, VideoNewsLinkPage, Drive, DriveItem, List, ListItem, RecycleBin, RecycleBinItem, SharedDriveItem, Site],Field(discriminator="odata_type")]]] = Field(alias="items", default=None,)
+	items: Optional[list[Annotated[Union[NewsLinkPage, PageTemplate, SitePage, VideoNewsLinkPage, Drive, DriveItem, List, ListItem, RecycleBin, RecycleBinItem, SharedDriveItem, Site],Field(discriminator="odata_type")]]] = Field(alias="items", default=None,)
 	lists: Optional[list[List]] = Field(alias="lists", default=None,)
 	onenote: Optional[Onenote] = Field(alias="onenote", default=None,)
 	operations: Optional[list[RichLongRunningOperation]] = Field(alias="operations", default=None,)
@@ -55,15 +55,7 @@ from .chat_message_mentioned_identity_set import ChatMessageMentionedIdentitySet
 from .chat_message_reaction_identity_set import ChatMessageReactionIdentitySet
 from .communications_identity_set import CommunicationsIdentitySet
 from .share_point_identity_set import SharePointIdentitySet
-from .ai_interaction_mentioned_identity_set import AiInteractionMentionedIdentitySet
-from .approval_identity_set import ApprovalIdentitySet
-from .chat_message_from_identity_set import ChatMessageFromIdentitySet
-from .chat_message_mentioned_identity_set import ChatMessageMentionedIdentitySet
-from .chat_message_reaction_identity_set import ChatMessageReactionIdentitySet
-from .communications_identity_set import CommunicationsIdentitySet
-from .share_point_identity_set import SharePointIdentitySet
 from .item_reference import ItemReference
-from .user import User
 from .user import User
 from .deleted import Deleted
 from .root import Root
@@ -76,30 +68,18 @@ from .content_model import ContentModel
 from .content_type import ContentType
 from .document_processing_job import DocumentProcessingJob
 from .drive import Drive
-from .drive import Drive
-from .column_definition import ColumnDefinition
 from .information_protection import InformationProtection
-from .base_site_page import BaseSitePage
 from .news_link_page import NewsLinkPage
 from .page_template import PageTemplate
 from .site_page import SitePage
 from .video_news_link_page import VideoNewsLinkPage
-from .drive import Drive
 from .drive_item import DriveItem
 from .list import List
 from .list_item import ListItem
 from .recycle_bin import RecycleBin
 from .recycle_bin_item import RecycleBinItem
 from .shared_drive_item import SharedDriveItem
-from .list import List
 from .onenote import Onenote
 from .rich_long_running_operation import RichLongRunningOperation
-from .news_link_page import NewsLinkPage
-from .page_template import PageTemplate
-from .site_page import SitePage
-from .video_news_link_page import VideoNewsLinkPage
-from .page_template import PageTemplate
 from .permission import Permission
-from .recycle_bin import RecycleBin
 from .term_store_store import TermStoreStore
-

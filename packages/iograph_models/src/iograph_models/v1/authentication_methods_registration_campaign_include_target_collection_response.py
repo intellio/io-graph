@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class AuthenticationMethodsRegistrationCampaignIncludeTargetCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class AuthenticationMethodsRegistrationCampaignIncludeTargetCollectionResponse(B
 	value: Optional[list[AuthenticationMethodsRegistrationCampaignIncludeTarget]] = Field(alias="value", default=None,)
 
 from .authentication_methods_registration_campaign_include_target import AuthenticationMethodsRegistrationCampaignIncludeTarget
-

@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class Import_device_identity_listPostResponse(BaseModel):
@@ -9,4 +9,3 @@ class Import_device_identity_listPostResponse(BaseModel):
 	value: Optional[list[ImportedDeviceIdentityResult]] = Field(alias="value", default=None,)
 
 from .imported_device_identity_result import ImportedDeviceIdentityResult
-

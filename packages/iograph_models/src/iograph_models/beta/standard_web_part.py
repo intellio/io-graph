@@ -1,7 +1,7 @@
 from __future__ import annotations
 from typing import Optional
 from typing import Literal
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class StandardWebPart(BaseModel):
@@ -12,4 +12,3 @@ class StandardWebPart(BaseModel):
 	webPartType: Optional[str] = Field(alias="webPartType", default=None,)
 
 from .web_part_data import WebPartData
-

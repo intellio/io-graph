@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class AuditLogRoot(BaseModel):
@@ -15,7 +15,5 @@ class AuditLogRoot(BaseModel):
 from .custom_security_attribute_audit import CustomSecurityAttributeAudit
 from .directory_audit import DirectoryAudit
 from .provisioning_object_summary import ProvisioningObjectSummary
-from .provisioning_object_summary import ProvisioningObjectSummary
 from .sign_in import SignIn
 from .self_service_sign_up import SelfServiceSignUp
-

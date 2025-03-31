@@ -15,9 +15,9 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_planner_delta_id import ByPlannerDeltaIdRequest
 	from .....request_adapter import HttpxRequestAdapter
+from iograph_models.beta.planner_delta import PlannerDelta
 from iograph_models.beta.planner_delta_collection_response import PlannerDeltaCollectionResponse
 from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
-from iograph_models.beta.planner_delta import PlannerDelta
 
 
 class AllRequest(BaseRequestBuilder):

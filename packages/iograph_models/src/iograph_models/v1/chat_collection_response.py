@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class ChatCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class ChatCollectionResponse(BaseModel):
 	value: Optional[list[Chat]] = Field(alias="value", default=None,)
 
 from .chat import Chat
-

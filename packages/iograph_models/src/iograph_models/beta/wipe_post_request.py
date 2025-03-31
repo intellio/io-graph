@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class WipePostRequest(BaseModel):
@@ -12,4 +12,3 @@ class WipePostRequest(BaseModel):
 	useProtectedWipe: Optional[bool] = Field(alias="useProtectedWipe", default=None,)
 
 from .obliteration_behavior import ObliterationBehavior
-

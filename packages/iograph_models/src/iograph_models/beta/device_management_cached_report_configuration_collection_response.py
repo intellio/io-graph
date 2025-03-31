@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class DeviceManagementCachedReportConfigurationCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class DeviceManagementCachedReportConfigurationCollectionResponse(BaseModel):
 	value: Optional[list[DeviceManagementCachedReportConfiguration]] = Field(alias="value", default=None,)
 
 from .device_management_cached_report_configuration import DeviceManagementCachedReportConfiguration
-

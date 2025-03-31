@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class SortPropertyCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class SortPropertyCollectionResponse(BaseModel):
 	value: Optional[list[SortProperty]] = Field(alias="value", default=None,)
 
 from .sort_property import SortProperty
-

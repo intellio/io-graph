@@ -1,10 +1,10 @@
 from __future__ import annotations
 from typing import Optional
+from datetime import datetime
+from pydantic import BaseModel, Field
 from pydantic import model_validator, ModelWrapValidatorHandler, ValidationError
 from typing_extensions import Self
 from typing import Any
-from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class ExactMatchJobBase(BaseModel):
@@ -29,9 +29,6 @@ class ExactMatchJobBase(BaseModel):
 			if mapping_key == "#microsoft.graph.exactMatchLookupJob":
 				from .exact_match_lookup_job import ExactMatchLookupJob
 				return ExactMatchLookupJob.model_validate(data)
-			if mapping_key == "#microsoft.graph.exactMatchSessionBase":
-				from .exact_match_session_base import ExactMatchSessionBase
-				return ExactMatchSessionBase.model_validate(data)
 			if mapping_key == "#microsoft.graph.exactMatchSession":
 				from .exact_match_session import ExactMatchSession
 				return ExactMatchSession.model_validate(data)
@@ -41,4 +38,3 @@ class ExactMatchJobBase(BaseModel):
 			raise e
 
 from .classification_error import ClassificationError
-

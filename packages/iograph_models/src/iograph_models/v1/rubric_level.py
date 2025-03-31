@@ -1,7 +1,7 @@
 from __future__ import annotations
 from typing import Optional
 from typing import Union
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class RubricLevel(BaseModel):
@@ -13,4 +13,3 @@ class RubricLevel(BaseModel):
 
 from .education_item_body import EducationItemBody
 from .education_assignment_points_grade_type import EducationAssignmentPointsGradeType
-

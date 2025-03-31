@@ -1,7 +1,7 @@
 from __future__ import annotations
 from typing import Optional
 from typing import Literal
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class DaylightTimeZoneOffset(BaseModel):
@@ -14,4 +14,3 @@ class DaylightTimeZoneOffset(BaseModel):
 	daylightBias: Optional[int] = Field(alias="daylightBias", default=None,)
 
 from .day_of_week import DayOfWeek
-

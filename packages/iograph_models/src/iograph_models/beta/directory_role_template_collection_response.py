@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class DirectoryRoleTemplateCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class DirectoryRoleTemplateCollectionResponse(BaseModel):
 	value: Optional[list[DirectoryRoleTemplate]] = Field(alias="value", default=None,)
 
 from .directory_role_template import DirectoryRoleTemplate
-

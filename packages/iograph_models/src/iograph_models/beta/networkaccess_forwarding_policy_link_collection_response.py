@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class NetworkaccessForwardingPolicyLinkCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class NetworkaccessForwardingPolicyLinkCollectionResponse(BaseModel):
 	value: Optional[list[NetworkaccessForwardingPolicyLink]] = Field(alias="value", default=None,)
 
 from .networkaccess_forwarding_policy_link import NetworkaccessForwardingPolicyLink
-

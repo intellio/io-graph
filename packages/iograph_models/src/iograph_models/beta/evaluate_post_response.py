@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class EvaluatePostResponse(BaseModel):
@@ -9,4 +9,3 @@ class EvaluatePostResponse(BaseModel):
 	value: Optional[list[ConditionalAccessWhatIfPolicy]] = Field(alias="value", default=None,)
 
 from .conditional_access_what_if_policy import ConditionalAccessWhatIfPolicy
-

@@ -15,8 +15,8 @@ if TYPE_CHECKING:
 	from .by_ediscovery_search_id import ByEdiscoverySearchIdRequest
 	from .......request_adapter import HttpxRequestAdapter
 from iograph_models.v1.o_data_errors__o_data_error import ODataErrorsODataError
-from iograph_models.v1.security_ediscovery_search import SecurityEdiscoverySearch
 from iograph_models.v1.security_ediscovery_search_collection_response import SecurityEdiscoverySearchCollectionResponse
+from iograph_models.v1.security_ediscovery_search import SecurityEdiscoverySearch
 
 
 class SearchesRequest(BaseRequestBuilder):

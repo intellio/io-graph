@@ -13,8 +13,8 @@ from typing import TYPE_CHECKING
 if TYPE_CHECKING:
 	from .instances import InstancesRequest
 	from ......request_adapter import HttpxRequestAdapter
-from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.beta.windows_setting import WindowsSetting
+from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 
 
 class ByWindowsSettingIdRequest(BaseRequestBuilder):

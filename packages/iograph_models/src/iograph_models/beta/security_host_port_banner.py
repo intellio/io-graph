@@ -1,7 +1,7 @@
 from __future__ import annotations
 from typing import Optional
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class SecurityHostPortBanner(BaseModel):
@@ -11,5 +11,4 @@ class SecurityHostPortBanner(BaseModel):
 	scanProtocol: Optional[str] = Field(alias="scanProtocol", default=None,)
 	timesObserved: Optional[int] = Field(alias="timesObserved", default=None,)
 	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
-
 

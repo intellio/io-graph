@@ -1,12 +1,13 @@
 from __future__ import annotations
 from typing import Optional
+from typing import Literal
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class SecurityIncident(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
+	odata_type: Literal["#microsoft.graph.security.incident"] = Field(alias="@odata.type",)
 	assignedTo: Optional[str] = Field(alias="assignedTo", default=None,)
 	classification: Optional[SecurityAlertClassification | str] = Field(alias="classification", default=None,)
 	comments: Optional[list[SecurityAlertComment]] = Field(alias="comments", default=None,)
@@ -33,4 +34,3 @@ from .security_alert_determination import SecurityAlertDetermination
 from .security_alert_severity import SecurityAlertSeverity
 from .security_incident_status import SecurityIncidentStatus
 from .security_alert import SecurityAlert
-

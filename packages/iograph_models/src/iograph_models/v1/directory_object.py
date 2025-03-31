@@ -1,10 +1,10 @@
 from __future__ import annotations
 from typing import Optional
+from datetime import datetime
+from pydantic import BaseModel, Field
 from pydantic import model_validator, ModelWrapValidatorHandler, ValidationError
 from typing_extensions import Self
 from typing import Any
-from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class DirectoryObject(BaseModel):
@@ -67,9 +67,6 @@ class DirectoryObject(BaseModel):
 			if mapping_key == "#microsoft.graph.orgContact":
 				from .org_contact import OrgContact
 				return OrgContact.model_validate(data)
-			if mapping_key == "#microsoft.graph.policyBase":
-				from .policy_base import PolicyBase
-				return PolicyBase.model_validate(data)
 			if mapping_key == "#microsoft.graph.appManagementPolicy":
 				from .app_management_policy import AppManagementPolicy
 				return AppManagementPolicy.model_validate(data)
@@ -85,9 +82,6 @@ class DirectoryObject(BaseModel):
 			if mapping_key == "#microsoft.graph.permissionGrantPolicy":
 				from .permission_grant_policy import PermissionGrantPolicy
 				return PermissionGrantPolicy.model_validate(data)
-			if mapping_key == "#microsoft.graph.stsPolicy":
-				from .sts_policy import StsPolicy
-				return StsPolicy.model_validate(data)
 			if mapping_key == "#microsoft.graph.activityBasedTimeoutPolicy":
 				from .activity_based_timeout_policy import ActivityBasedTimeoutPolicy
 				return ActivityBasedTimeoutPolicy.model_validate(data)
@@ -119,5 +113,4 @@ class DirectoryObject(BaseModel):
 
 		except Exception as e:
 			raise e
-
 

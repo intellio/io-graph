@@ -2,7 +2,7 @@ from __future__ import annotations
 from typing import Optional
 from typing import Literal
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class SecurityConfigurationTask(BaseModel):
@@ -34,4 +34,3 @@ from .endpoint_security_configuration_type import EndpointSecurityConfigurationT
 from .endpoint_security_configuration_profile_type import EndpointSecurityConfigurationProfileType
 from .key_value_pair import KeyValuePair
 from .vulnerable_managed_device import VulnerableManagedDevice
-

@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class CustomSubjectAlternativeNameCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class CustomSubjectAlternativeNameCollectionResponse(BaseModel):
 	value: Optional[list[CustomSubjectAlternativeName]] = Field(alias="value", default=None,)
 
 from .custom_subject_alternative_name import CustomSubjectAlternativeName
-

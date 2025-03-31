@@ -3,7 +3,7 @@ from typing import Optional
 from typing import Union
 from typing import Literal
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class EducationRubricOutcome(BaseModel):
@@ -25,6 +25,3 @@ from .communications_identity_set import CommunicationsIdentitySet
 from .share_point_identity_set import SharePointIdentitySet
 from .rubric_quality_feedback_model import RubricQualityFeedbackModel
 from .rubric_quality_selected_column_model import RubricQualitySelectedColumnModel
-from .rubric_quality_feedback_model import RubricQualityFeedbackModel
-from .rubric_quality_selected_column_model import RubricQualitySelectedColumnModel
-

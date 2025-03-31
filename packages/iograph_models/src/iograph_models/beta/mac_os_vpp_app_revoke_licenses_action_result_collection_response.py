@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class MacOsVppAppRevokeLicensesActionResultCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class MacOsVppAppRevokeLicensesActionResultCollectionResponse(BaseModel):
 	value: Optional[list[MacOsVppAppRevokeLicensesActionResult]] = Field(alias="value", default=None,)
 
 from .mac_os_vpp_app_revoke_licenses_action_result import MacOsVppAppRevokeLicensesActionResult
-

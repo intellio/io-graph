@@ -3,7 +3,7 @@ from typing import Optional
 from typing import Union
 from typing import Literal
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class AndroidForWorkEnterpriseWiFiConfiguration(BaseModel):
@@ -58,4 +58,3 @@ from .non_eap_authentication_method_for_peap import NonEapAuthenticationMethodFo
 from .android_for_work_pkcs_certificate_profile import AndroidForWorkPkcsCertificateProfile
 from .android_for_work_scep_certificate_profile import AndroidForWorkScepCertificateProfile
 from .android_for_work_trusted_root_certificate import AndroidForWorkTrustedRootCertificate
-

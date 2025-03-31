@@ -1,12 +1,13 @@
 from __future__ import annotations
 from typing import Optional
+from typing import Literal
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class SecurityDiscoveredCloudAppInfo(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
+	odata_type: Literal["#microsoft.graph.security.discoveredCloudAppInfo"] = Field(alias="@odata.type",)
 	csaStarLevel: Optional[SecurityAppInfoCsaStarLevel | str] = Field(alias="csaStarLevel", default=None,)
 	dataAtRestEncryptionMethod: Optional[SecurityAppInfoDataAtRestEncryptionMethod | str] = Field(alias="dataAtRestEncryptionMethod", default=None,)
 	dataCenter: Optional[str] = Field(alias="dataCenter", default=None,)
@@ -99,70 +100,4 @@ from .security_app_info_encryption_protocol import SecurityAppInfoEncryptionProt
 from .security_app_info_fed_ramp_level import SecurityAppInfoFedRampLevel
 from .security_app_info_holding import SecurityAppInfoHolding
 from .security_cloud_app_info_state import SecurityCloudAppInfoState
-from .security_cloud_app_info_state import SecurityCloudAppInfoState
-from .security_cloud_app_info_state import SecurityCloudAppInfoState
-from .security_cloud_app_info_state import SecurityCloudAppInfoState
-from .security_cloud_app_info_state import SecurityCloudAppInfoState
-from .security_cloud_app_info_state import SecurityCloudAppInfoState
-from .security_cloud_app_info_state import SecurityCloudAppInfoState
-from .security_cloud_app_info_state import SecurityCloudAppInfoState
-from .security_cloud_app_info_state import SecurityCloudAppInfoState
-from .security_cloud_app_info_state import SecurityCloudAppInfoState
-from .security_cloud_app_info_state import SecurityCloudAppInfoState
-from .security_cloud_app_info_state import SecurityCloudAppInfoState
-from .security_cloud_app_info_state import SecurityCloudAppInfoState
-from .security_cloud_app_info_state import SecurityCloudAppInfoState
-from .security_cloud_app_info_state import SecurityCloudAppInfoState
-from .security_cloud_app_info_state import SecurityCloudAppInfoState
-from .security_cloud_app_info_state import SecurityCloudAppInfoState
-from .security_cloud_app_info_state import SecurityCloudAppInfoState
-from .security_cloud_app_info_state import SecurityCloudAppInfoState
-from .security_cloud_app_info_state import SecurityCloudAppInfoState
-from .security_cloud_app_info_state import SecurityCloudAppInfoState
-from .security_cloud_app_info_state import SecurityCloudAppInfoState
-from .security_cloud_app_info_state import SecurityCloudAppInfoState
-from .security_cloud_app_info_state import SecurityCloudAppInfoState
-from .security_cloud_app_info_state import SecurityCloudAppInfoState
-from .security_cloud_app_info_state import SecurityCloudAppInfoState
-from .security_cloud_app_info_state import SecurityCloudAppInfoState
-from .security_cloud_app_info_state import SecurityCloudAppInfoState
-from .security_cloud_app_info_state import SecurityCloudAppInfoState
-from .security_cloud_app_info_state import SecurityCloudAppInfoState
-from .security_cloud_app_info_state import SecurityCloudAppInfoState
-from .security_cloud_app_info_state import SecurityCloudAppInfoState
-from .security_cloud_app_info_state import SecurityCloudAppInfoState
-from .security_cloud_app_info_state import SecurityCloudAppInfoState
-from .security_cloud_app_info_state import SecurityCloudAppInfoState
-from .security_cloud_app_info_state import SecurityCloudAppInfoState
-from .security_cloud_app_info_state import SecurityCloudAppInfoState
-from .security_cloud_app_info_state import SecurityCloudAppInfoState
-from .security_cloud_app_info_state import SecurityCloudAppInfoState
-from .security_cloud_app_info_state import SecurityCloudAppInfoState
-from .security_cloud_app_info_state import SecurityCloudAppInfoState
-from .security_cloud_app_info_state import SecurityCloudAppInfoState
-from .security_cloud_app_info_state import SecurityCloudAppInfoState
-from .security_cloud_app_info_state import SecurityCloudAppInfoState
-from .security_cloud_app_info_state import SecurityCloudAppInfoState
-from .security_cloud_app_info_state import SecurityCloudAppInfoState
-from .security_cloud_app_info_state import SecurityCloudAppInfoState
-from .security_cloud_app_info_state import SecurityCloudAppInfoState
-from .security_cloud_app_info_state import SecurityCloudAppInfoState
-from .security_cloud_app_info_state import SecurityCloudAppInfoState
-from .security_cloud_app_info_state import SecurityCloudAppInfoState
-from .security_cloud_app_info_state import SecurityCloudAppInfoState
-from .security_cloud_app_info_state import SecurityCloudAppInfoState
-from .security_cloud_app_info_state import SecurityCloudAppInfoState
-from .security_cloud_app_info_state import SecurityCloudAppInfoState
-from .security_cloud_app_info_state import SecurityCloudAppInfoState
-from .security_cloud_app_info_state import SecurityCloudAppInfoState
-from .security_cloud_app_info_state import SecurityCloudAppInfoState
-from .security_cloud_app_info_state import SecurityCloudAppInfoState
-from .security_cloud_app_info_state import SecurityCloudAppInfoState
-from .security_cloud_app_info_state import SecurityCloudAppInfoState
-from .security_cloud_app_info_state import SecurityCloudAppInfoState
-from .security_cloud_app_info_state import SecurityCloudAppInfoState
-from .security_cloud_app_info_state import SecurityCloudAppInfoState
-from .security_cloud_app_info_state import SecurityCloudAppInfoState
-from .security_cloud_app_info_state import SecurityCloudAppInfoState
 from .security_app_info_pci_dss_version import SecurityAppInfoPciDssVersion
-

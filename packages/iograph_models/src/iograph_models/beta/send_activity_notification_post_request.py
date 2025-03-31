@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class Send_activity_notificationPostRequest(BaseModel):
@@ -14,4 +14,3 @@ class Send_activity_notificationPostRequest(BaseModel):
 from .teamwork_activity_topic import TeamworkActivityTopic
 from .item_body import ItemBody
 from .key_value_pair import KeyValuePair
-

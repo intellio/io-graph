@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class AppleOwnerTypeEnrollmentType(BaseModel):
@@ -10,4 +10,3 @@ class AppleOwnerTypeEnrollmentType(BaseModel):
 
 from .apple_user_initiated_enrollment_type import AppleUserInitiatedEnrollmentType
 from .managed_device_owner_type import ManagedDeviceOwnerType
-

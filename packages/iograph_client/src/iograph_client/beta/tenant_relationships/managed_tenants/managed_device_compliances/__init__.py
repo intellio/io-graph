@@ -14,9 +14,9 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_managed_device_compliance_id import ByManagedDeviceComplianceIdRequest
 	from .....request_adapter import HttpxRequestAdapter
+from iograph_models.beta.managed_tenants_managed_device_compliance import ManagedTenantsManagedDeviceCompliance
 from iograph_models.beta.managed_tenants_managed_device_compliance_collection_response import ManagedTenantsManagedDeviceComplianceCollectionResponse
 from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
-from iograph_models.beta.managed_tenants_managed_device_compliance import ManagedTenantsManagedDeviceCompliance
 
 
 class ManagedDeviceCompliancesRequest(BaseRequestBuilder):

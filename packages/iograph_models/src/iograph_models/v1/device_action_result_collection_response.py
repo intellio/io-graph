@@ -2,7 +2,7 @@ from __future__ import annotations
 from typing import Optional
 from typing import Union
 from typing import Annotated
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class DeviceActionResultCollectionResponse(BaseModel):
@@ -16,4 +16,3 @@ from .remote_lock_action_result import RemoteLockActionResult
 from .reset_passcode_action_result import ResetPasscodeActionResult
 from .rotate_bit_locker_keys_device_action_result import RotateBitLockerKeysDeviceActionResult
 from .windows_defender_scan_action_result import WindowsDefenderScanActionResult
-

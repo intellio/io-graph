@@ -1,11 +1,12 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from typing import Literal
+from pydantic import BaseModel, Field
 
 
 class UnifiedRoleManagementAlertDefinition(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
+	odata_type: Literal["#microsoft.graph.unifiedRoleManagementAlertDefinition"] = Field(alias="@odata.type",)
 	description: Optional[str] = Field(alias="description", default=None,)
 	displayName: Optional[str] = Field(alias="displayName", default=None,)
 	howToPrevent: Optional[str] = Field(alias="howToPrevent", default=None,)
@@ -18,4 +19,3 @@ class UnifiedRoleManagementAlertDefinition(BaseModel):
 	severityLevel: Optional[AlertSeverity | str] = Field(alias="severityLevel", default=None,)
 
 from .alert_severity import AlertSeverity
-

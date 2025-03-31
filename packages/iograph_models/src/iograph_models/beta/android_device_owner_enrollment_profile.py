@@ -1,12 +1,13 @@
 from __future__ import annotations
 from typing import Optional
+from typing import Literal
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class AndroidDeviceOwnerEnrollmentProfile(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
+	odata_type: Literal["#microsoft.graph.androidDeviceOwnerEnrollmentProfile"] = Field(alias="@odata.type",)
 	accountId: Optional[str] = Field(alias="accountId", default=None,)
 	configureWifi: Optional[bool] = Field(alias="configureWifi", default=None,)
 	createdDateTime: Optional[datetime] = Field(alias="createdDateTime", default=None,)
@@ -33,4 +34,3 @@ from .android_device_owner_enrollment_mode import AndroidDeviceOwnerEnrollmentMo
 from .android_device_owner_enrollment_token_type import AndroidDeviceOwnerEnrollmentTokenType
 from .mime_content import MimeContent
 from .aosp_wifi_security_type import AospWifiSecurityType
-

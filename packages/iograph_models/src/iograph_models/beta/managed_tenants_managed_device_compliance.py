@@ -1,12 +1,13 @@
 from __future__ import annotations
 from typing import Optional
+from typing import Literal
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class ManagedTenantsManagedDeviceCompliance(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
+	odata_type: Literal["#microsoft.graph.managedTenants.managedDeviceCompliance"] = Field(alias="@odata.type",)
 	complianceStatus: Optional[str] = Field(alias="complianceStatus", default=None,)
 	deviceType: Optional[str] = Field(alias="deviceType", default=None,)
 	inGracePeriodUntilDateTime: Optional[datetime] = Field(alias="inGracePeriodUntilDateTime", default=None,)
@@ -21,5 +22,4 @@ class ManagedTenantsManagedDeviceCompliance(BaseModel):
 	ownerType: Optional[str] = Field(alias="ownerType", default=None,)
 	tenantDisplayName: Optional[str] = Field(alias="tenantDisplayName", default=None,)
 	tenantId: Optional[str] = Field(alias="tenantId", default=None,)
-
 

@@ -1,7 +1,7 @@
 from __future__ import annotations
 from typing import Optional
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class CloudPcOnPremisesConnectionStatusDetails(BaseModel):
@@ -11,4 +11,3 @@ class CloudPcOnPremisesConnectionStatusDetails(BaseModel):
 	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
 
 from .cloud_pc_on_premises_connection_health_check import CloudPcOnPremisesConnectionHealthCheck
-

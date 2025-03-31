@@ -15,8 +15,8 @@ if TYPE_CHECKING:
 	from .exempt_app_locker_files import ExemptAppLockerFilesRequest
 	from .assignments import AssignmentsRequest
 	from .....request_adapter import HttpxRequestAdapter
-from iograph_models.v1.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.v1.mdm_windows_information_protection_policy import MdmWindowsInformationProtectionPolicy
+from iograph_models.v1.o_data_errors__o_data_error import ODataErrorsODataError
 
 
 class ByMdmWindowsInformationProtectionPolicyIdRequest(BaseRequestBuilder):

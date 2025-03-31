@@ -2,7 +2,7 @@ from __future__ import annotations
 from typing import Optional
 from typing import Union
 from typing import Annotated
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class AndroidDeviceOwnerKioskModeManagedFolder(BaseModel):
@@ -13,4 +13,3 @@ class AndroidDeviceOwnerKioskModeManagedFolder(BaseModel):
 
 from .android_device_owner_kiosk_mode_app import AndroidDeviceOwnerKioskModeApp
 from .android_device_owner_kiosk_mode_weblink import AndroidDeviceOwnerKioskModeWeblink
-

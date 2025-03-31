@@ -1,13 +1,14 @@
 from __future__ import annotations
 from typing import Optional
 from typing import Union
+from typing import Literal
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class TeamsAppDefinition(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
+	odata_type: Literal["#microsoft.graph.teamsAppDefinition"] = Field(alias="@odata.type",)
 	allowedInstallationScopes: Optional[TeamsAppInstallationScopes | str] = Field(alias="allowedInstallationScopes", default=None,)
 	authorization: Optional[TeamsAppAuthorization] = Field(alias="authorization", default=None,)
 	azureADAppId: Optional[str] = Field(alias="azureADAppId", default=None,)
@@ -37,5 +38,3 @@ from .teams_app_publishing_state import TeamsAppPublishingState
 from .teamwork_bot import TeamworkBot
 from .teams_app_icon import TeamsAppIcon
 from .teams_app_dashboard_card_definition import TeamsAppDashboardCardDefinition
-from .teams_app_icon import TeamsAppIcon
-

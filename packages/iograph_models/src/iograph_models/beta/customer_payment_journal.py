@@ -2,7 +2,7 @@ from __future__ import annotations
 from uuid import UUID
 from typing import Optional
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class CustomerPaymentJournal(BaseModel):
@@ -18,4 +18,3 @@ class CustomerPaymentJournal(BaseModel):
 
 from .account import Account
 from .customer_payment import CustomerPayment
-

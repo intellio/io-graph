@@ -3,7 +3,7 @@ from typing import Optional
 from typing import Union
 from typing import Literal
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class IdentityGovernanceCustomTaskExtension(BaseModel):
@@ -27,5 +27,3 @@ from .http_request_endpoint import HttpRequestEndpoint
 from .logic_app_trigger_endpoint_configuration import LogicAppTriggerEndpointConfiguration
 from .identity_governance_custom_task_extension_callback_configuration import IdentityGovernanceCustomTaskExtensionCallbackConfiguration
 from .user import User
-from .user import User
-

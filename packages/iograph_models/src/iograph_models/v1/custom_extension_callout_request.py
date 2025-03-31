@@ -1,7 +1,7 @@
 from __future__ import annotations
 from typing import Optional
 from typing import Union
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class CustomExtensionCalloutRequest(BaseModel):
@@ -13,4 +13,3 @@ class CustomExtensionCalloutRequest(BaseModel):
 from .access_package_assignment_request_callback_data import AccessPackageAssignmentRequestCallbackData
 from .identity_governance_custom_task_extension_callback_data import IdentityGovernanceCustomTaskExtensionCallbackData
 from .identity_governance_custom_task_extension_callout_data import IdentityGovernanceCustomTaskExtensionCalloutData
-

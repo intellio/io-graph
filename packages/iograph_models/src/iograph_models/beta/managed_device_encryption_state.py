@@ -1,11 +1,12 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from typing import Literal
+from pydantic import BaseModel, Field
 
 
 class ManagedDeviceEncryptionState(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
+	odata_type: Literal["#microsoft.graph.managedDeviceEncryptionState"] = Field(alias="@odata.type",)
 	advancedBitLockerStates: Optional[AdvancedBitLockerState | str] = Field(alias="advancedBitLockerStates", default=None,)
 	deviceName: Optional[str] = Field(alias="deviceName", default=None,)
 	deviceType: Optional[DeviceTypes | str] = Field(alias="deviceType", default=None,)
@@ -25,4 +26,3 @@ from .encryption_readiness_state import EncryptionReadinessState
 from .encryption_state import EncryptionState
 from .file_vault_state import FileVaultState
 from .encryption_report_policy_details import EncryptionReportPolicyDetails
-

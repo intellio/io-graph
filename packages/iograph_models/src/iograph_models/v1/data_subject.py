@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class DataSubject(BaseModel):
@@ -9,5 +9,4 @@ class DataSubject(BaseModel):
 	lastName: Optional[str] = Field(alias="lastName", default=None,)
 	residency: Optional[str] = Field(alias="residency", default=None,)
 	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
-
 

@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class PublicError(BaseModel):
@@ -13,4 +13,3 @@ class PublicError(BaseModel):
 
 from .public_error_detail import PublicErrorDetail
 from .public_inner_error import PublicInnerError
-

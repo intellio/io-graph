@@ -1,7 +1,7 @@
 from __future__ import annotations
 from typing import Optional
 from typing import Literal
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class AadUserConversationMemberResult(BaseModel):
@@ -10,4 +10,3 @@ class AadUserConversationMemberResult(BaseModel):
 	userId: Optional[str] = Field(alias="userId", default=None,)
 
 from .public_error import PublicError
-

@@ -1,11 +1,11 @@
 from __future__ import annotations
 from typing import Optional
 from typing import Literal
+from datetime import datetime
+from pydantic import BaseModel, Field
 from pydantic import model_validator, ModelWrapValidatorHandler, ValidationError
 from typing_extensions import Self
 from typing import Any
-from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class Windows81VpnConfiguration(BaseModel):
@@ -68,4 +68,3 @@ from .device_configuration_user_overview import DeviceConfigurationUserOverview
 from .vpn_server import VpnServer
 from .windows_vpn_connection_type import WindowsVpnConnectionType
 from .windows81_vpn_proxy_server import Windows81VpnProxyServer
-

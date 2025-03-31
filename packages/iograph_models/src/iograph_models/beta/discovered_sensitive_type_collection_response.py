@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class DiscoveredSensitiveTypeCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class DiscoveredSensitiveTypeCollectionResponse(BaseModel):
 	value: Optional[list[DiscoveredSensitiveType]] = Field(alias="value", default=None,)
 
 from .discovered_sensitive_type import DiscoveredSensitiveType
-

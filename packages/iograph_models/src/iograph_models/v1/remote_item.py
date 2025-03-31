@@ -2,7 +2,7 @@ from __future__ import annotations
 from typing import Optional
 from typing import Union
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class RemoteItem(BaseModel):
@@ -36,15 +36,9 @@ from .file import File
 from .file_system_info import FileSystemInfo
 from .folder import Folder
 from .image import Image
-from .chat_message_from_identity_set import ChatMessageFromIdentitySet
-from .chat_message_mentioned_identity_set import ChatMessageMentionedIdentitySet
-from .chat_message_reaction_identity_set import ChatMessageReactionIdentitySet
-from .communications_identity_set import CommunicationsIdentitySet
-from .share_point_identity_set import SharePointIdentitySet
 from .package import Package
 from .item_reference import ItemReference
 from .shared import Shared
 from .sharepoint_ids import SharepointIds
 from .special_folder import SpecialFolder
 from .video import Video
-

@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class SettingTemplateValueCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class SettingTemplateValueCollectionResponse(BaseModel):
 	value: Optional[list[SettingTemplateValue]] = Field(alias="value", default=None,)
 
 from .setting_template_value import SettingTemplateValue
-

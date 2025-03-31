@@ -1,9 +1,9 @@
 from __future__ import annotations
 from typing import Optional
+from pydantic import BaseModel, Field
 from pydantic import model_validator, ModelWrapValidatorHandler, ValidationError
 from typing_extensions import Self
 from typing import Any
-from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class DeviceHealthScriptRunSchedule(BaseModel):
@@ -23,9 +23,6 @@ class DeviceHealthScriptRunSchedule(BaseModel):
 			if mapping_key == "#microsoft.graph.deviceHealthScriptHourlySchedule":
 				from .device_health_script_hourly_schedule import DeviceHealthScriptHourlySchedule
 				return DeviceHealthScriptHourlySchedule.model_validate(data)
-			if mapping_key == "#microsoft.graph.deviceHealthScriptTimeSchedule":
-				from .device_health_script_time_schedule import DeviceHealthScriptTimeSchedule
-				return DeviceHealthScriptTimeSchedule.model_validate(data)
 			if mapping_key == "#microsoft.graph.deviceHealthScriptDailySchedule":
 				from .device_health_script_daily_schedule import DeviceHealthScriptDailySchedule
 				return DeviceHealthScriptDailySchedule.model_validate(data)
@@ -36,5 +33,4 @@ class DeviceHealthScriptRunSchedule(BaseModel):
 
 		except Exception as e:
 			raise e
-
 

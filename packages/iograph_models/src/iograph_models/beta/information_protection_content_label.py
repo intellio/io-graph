@@ -1,7 +1,7 @@
 from __future__ import annotations
 from typing import Optional
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class InformationProtectionContentLabel(BaseModel):
@@ -12,4 +12,3 @@ class InformationProtectionContentLabel(BaseModel):
 
 from .assignment_method import AssignmentMethod
 from .label_details import LabelDetails
-

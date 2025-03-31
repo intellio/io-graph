@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class DeviceManagementAutopilotEventCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class DeviceManagementAutopilotEventCollectionResponse(BaseModel):
 	value: Optional[list[DeviceManagementAutopilotEvent]] = Field(alias="value", default=None,)
 
 from .device_management_autopilot_event import DeviceManagementAutopilotEvent
-

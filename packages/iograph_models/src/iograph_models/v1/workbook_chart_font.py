@@ -1,11 +1,12 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from typing import Literal
+from pydantic import BaseModel, Field
 
 
 class WorkbookChartFont(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
+	odata_type: Literal["#microsoft.graph.workbookChartFont"] = Field(alias="@odata.type",)
 	bold: Optional[bool] = Field(alias="bold", default=None,)
 	color: Optional[str] = Field(alias="color", default=None,)
 	italic: Optional[bool] = Field(alias="italic", default=None,)
@@ -14,4 +15,3 @@ class WorkbookChartFont(BaseModel):
 	underline: Optional[str] = Field(alias="underline", default=None,)
 
 from .reference_numeric import ReferenceNumeric
-

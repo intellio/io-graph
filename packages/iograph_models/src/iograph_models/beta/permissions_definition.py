@@ -1,9 +1,9 @@
 from __future__ import annotations
 from typing import Optional
+from pydantic import BaseModel, Field
 from pydantic import model_validator, ModelWrapValidatorHandler, ValidationError
 from typing_extensions import Self
 from typing import Any
-from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class PermissionsDefinition(BaseModel):
@@ -37,4 +37,3 @@ class PermissionsDefinition(BaseModel):
 
 from .permissions_definition_authorization_system import PermissionsDefinitionAuthorizationSystem
 from .permissions_definition_authorization_system_identity import PermissionsDefinitionAuthorizationSystemIdentity
-

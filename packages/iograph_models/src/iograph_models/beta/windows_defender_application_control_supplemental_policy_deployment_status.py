@@ -1,12 +1,13 @@
 from __future__ import annotations
 from typing import Optional
+from typing import Literal
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatus(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
+	odata_type: Literal["#microsoft.graph.windowsDefenderApplicationControlSupplementalPolicyDeploymentStatus"] = Field(alias="@odata.type",)
 	deploymentStatus: Optional[WindowsDefenderApplicationControlSupplementalPolicyStatuses | str] = Field(alias="deploymentStatus", default=None,)
 	deviceId: Optional[str] = Field(alias="deviceId", default=None,)
 	deviceName: Optional[str] = Field(alias="deviceName", default=None,)
@@ -20,4 +21,3 @@ class WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatus(BaseMo
 
 from .windows_defender_application_control_supplemental_policy_statuses import WindowsDefenderApplicationControlSupplementalPolicyStatuses
 from .windows_defender_application_control_supplemental_policy import WindowsDefenderApplicationControlSupplementalPolicy
-

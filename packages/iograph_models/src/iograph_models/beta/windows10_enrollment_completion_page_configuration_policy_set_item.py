@@ -2,7 +2,7 @@ from __future__ import annotations
 from typing import Optional
 from typing import Literal
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class Windows10EnrollmentCompletionPageConfigurationPolicySetItem(BaseModel):
@@ -20,4 +20,3 @@ class Windows10EnrollmentCompletionPageConfigurationPolicySetItem(BaseModel):
 
 from .error_code import ErrorCode
 from .policy_set_status import PolicySetStatus
-

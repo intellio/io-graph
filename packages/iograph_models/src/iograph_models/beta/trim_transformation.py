@@ -1,7 +1,7 @@
 from __future__ import annotations
 from typing import Optional
 from typing import Literal
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class TrimTransformation(BaseModel):
@@ -12,4 +12,3 @@ class TrimTransformation(BaseModel):
 
 from .transformation_attribute import TransformationAttribute
 from .transformation_trim_type import TransformationTrimType
-

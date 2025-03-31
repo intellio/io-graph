@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class Get_device_management_intent_per_setting_contributing_profilesPostRequest(BaseModel):
@@ -13,5 +13,4 @@ class Get_device_management_intent_per_setting_contributing_profilesPostRequest(
 	top: Optional[int] = Field(alias="top", default=None,)
 	sessionId: Optional[str] = Field(alias="sessionId", default=None,)
 	filter: Optional[str] = Field(alias="filter", default=None,)
-
 

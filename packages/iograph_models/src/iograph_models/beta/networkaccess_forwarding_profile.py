@@ -4,7 +4,7 @@ from typing import Union
 from typing import Literal
 from typing import Annotated
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class NetworkaccessForwardingProfile(BaseModel):
@@ -27,4 +27,3 @@ from .networkaccess_forwarding_policy_link import NetworkaccessForwardingPolicyL
 from .networkaccess_associated_branch import NetworkaccessAssociatedBranch
 from .networkaccess_traffic_forwarding_type import NetworkaccessTrafficForwardingType
 from .service_principal import ServicePrincipal
-

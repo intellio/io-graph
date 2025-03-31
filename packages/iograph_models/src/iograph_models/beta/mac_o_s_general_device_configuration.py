@@ -4,7 +4,7 @@ from typing import Union
 from typing import Literal
 from typing import Annotated
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class MacOSGeneralDeviceConfiguration(BaseModel):
@@ -103,4 +103,3 @@ from .apple_app_list_item import AppleAppListItem
 from .required_password_type import RequiredPasswordType
 from .mac_o_s_privacy_access_control_item import MacOSPrivacyAccessControlItem
 from .mac_o_s_software_update_delay_policy import MacOSSoftwareUpdateDelayPolicy
-

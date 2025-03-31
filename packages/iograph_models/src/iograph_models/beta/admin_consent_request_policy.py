@@ -1,11 +1,12 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from typing import Literal
+from pydantic import BaseModel, Field
 
 
 class AdminConsentRequestPolicy(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
+	odata_type: Literal["#microsoft.graph.adminConsentRequestPolicy"] = Field(alias="@odata.type",)
 	isEnabled: Optional[bool] = Field(alias="isEnabled", default=None,)
 	notifyReviewers: Optional[bool] = Field(alias="notifyReviewers", default=None,)
 	remindersEnabled: Optional[bool] = Field(alias="remindersEnabled", default=None,)
@@ -14,4 +15,3 @@ class AdminConsentRequestPolicy(BaseModel):
 	version: Optional[int] = Field(alias="version", default=None,)
 
 from .access_review_reviewer_scope import AccessReviewReviewerScope
-

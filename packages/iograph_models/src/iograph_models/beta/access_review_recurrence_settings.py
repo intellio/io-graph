@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class AccessReviewRecurrenceSettings(BaseModel):
@@ -9,5 +9,4 @@ class AccessReviewRecurrenceSettings(BaseModel):
 	recurrenceEndType: Optional[str] = Field(alias="recurrenceEndType", default=None,)
 	recurrenceType: Optional[str] = Field(alias="recurrenceType", default=None,)
 	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
-
 

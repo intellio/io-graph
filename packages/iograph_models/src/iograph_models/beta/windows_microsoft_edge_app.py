@@ -4,7 +4,7 @@ from typing import Union
 from typing import Literal
 from typing import Annotated
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class WindowsMicrosoftEdgeApp(BaseModel):
@@ -42,4 +42,3 @@ from .mobile_app_category import MobileAppCategory
 from .mobile_app_dependency import MobileAppDependency
 from .mobile_app_supersedence import MobileAppSupersedence
 from .microsoft_edge_channel import MicrosoftEdgeChannel
-

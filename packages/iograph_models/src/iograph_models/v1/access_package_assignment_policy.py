@@ -1,14 +1,15 @@
 from __future__ import annotations
 from typing import Optional
 from typing import Union
+from typing import Literal
 from typing import Annotated
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class AccessPackageAssignmentPolicy(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
+	odata_type: Literal["#microsoft.graph.accessPackageAssignmentPolicy"] = Field(alias="@odata.type",)
 	allowedTargetScope: Optional[AllowedTargetScope | str] = Field(alias="allowedTargetScope", default=None,)
 	automaticRequestSettings: Optional[AccessPackageAutomaticRequestSettings] = Field(alias="automaticRequestSettings", default=None,)
 	createdDateTime: Optional[datetime] = Field(alias="createdDateTime", default=None,)
@@ -49,4 +50,3 @@ from .access_package_catalog import AccessPackageCatalog
 from .custom_extension_stage_setting import CustomExtensionStageSetting
 from .access_package_multiple_choice_question import AccessPackageMultipleChoiceQuestion
 from .access_package_text_input_question import AccessPackageTextInputQuestion
-

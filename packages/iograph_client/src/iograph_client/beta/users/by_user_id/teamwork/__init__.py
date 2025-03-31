@@ -15,8 +15,8 @@ if TYPE_CHECKING:
 	from .installed_apps import InstalledAppsRequest
 	from .associated_teams import AssociatedTeamsRequest
 	from .....request_adapter import HttpxRequestAdapter
-from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.beta.user_teamwork import UserTeamwork
+from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 
 
 class TeamworkRequest(BaseRequestBuilder):

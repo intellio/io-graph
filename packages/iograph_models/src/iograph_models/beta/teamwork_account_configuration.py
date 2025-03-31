@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class TeamworkAccountConfiguration(BaseModel):
@@ -10,4 +10,3 @@ class TeamworkAccountConfiguration(BaseModel):
 
 from .teamwork_on_premises_calendar_sync_configuration import TeamworkOnPremisesCalendarSyncConfiguration
 from .teamwork_supported_client import TeamworkSupportedClient
-

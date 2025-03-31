@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class OperationApprovalPolicySet(BaseModel):
@@ -10,4 +10,3 @@ class OperationApprovalPolicySet(BaseModel):
 
 from .operation_approval_policy_platform import OperationApprovalPolicyPlatform
 from .operation_approval_policy_type import OperationApprovalPolicyType
-

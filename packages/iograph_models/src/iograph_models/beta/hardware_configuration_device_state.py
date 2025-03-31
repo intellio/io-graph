@@ -1,12 +1,13 @@
 from __future__ import annotations
 from typing import Optional
+from typing import Literal
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class HardwareConfigurationDeviceState(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
+	odata_type: Literal["#microsoft.graph.hardwareConfigurationDeviceState"] = Field(alias="@odata.type",)
 	assignmentFilterIds: Optional[str] = Field(alias="assignmentFilterIds", default=None,)
 	configurationError: Optional[str] = Field(alias="configurationError", default=None,)
 	configurationOutput: Optional[str] = Field(alias="configurationOutput", default=None,)
@@ -19,4 +20,3 @@ class HardwareConfigurationDeviceState(BaseModel):
 	userId: Optional[str] = Field(alias="userId", default=None,)
 
 from .run_state import RunState
-

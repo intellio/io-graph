@@ -1,11 +1,12 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from typing import Literal
+from pydantic import BaseModel, Field
 
 
 class Office365GroupsActivityDetail(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
+	odata_type: Literal["#microsoft.graph.office365GroupsActivityDetail"] = Field(alias="@odata.type",)
 	exchangeMailboxStorageUsedInBytes: Optional[int] = Field(alias="exchangeMailboxStorageUsedInBytes", default=None,)
 	exchangeMailboxTotalItemCount: Optional[int] = Field(alias="exchangeMailboxTotalItemCount", default=None,)
 	exchangeReceivedEmailCount: Optional[int] = Field(alias="exchangeReceivedEmailCount", default=None,)
@@ -27,5 +28,4 @@ class Office365GroupsActivityDetail(BaseModel):
 	yammerLikedMessageCount: Optional[int] = Field(alias="yammerLikedMessageCount", default=None,)
 	yammerPostedMessageCount: Optional[int] = Field(alias="yammerPostedMessageCount", default=None,)
 	yammerReadMessageCount: Optional[int] = Field(alias="yammerReadMessageCount", default=None,)
-
 

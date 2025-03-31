@@ -2,7 +2,7 @@ from __future__ import annotations
 from typing import Optional
 from typing import Union
 from typing import Annotated
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class Import_device_identity_listPostRequest(BaseModel):
@@ -10,4 +10,3 @@ class Import_device_identity_listPostRequest(BaseModel):
 	overwriteImportedDeviceIdentities: Optional[bool] = Field(alias="overwriteImportedDeviceIdentities", default=None,)
 
 from .imported_device_identity_result import ImportedDeviceIdentityResult
-

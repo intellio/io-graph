@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class Supported_languagesGetResponse(BaseModel):
@@ -9,4 +9,3 @@ class Supported_languagesGetResponse(BaseModel):
 	value: Optional[list[LocaleInfo]] = Field(alias="value", default=None,)
 
 from .locale_info import LocaleInfo
-

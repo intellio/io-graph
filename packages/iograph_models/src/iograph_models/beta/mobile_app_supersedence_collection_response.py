@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class MobileAppSupersedenceCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class MobileAppSupersedenceCollectionResponse(BaseModel):
 	value: Optional[list[MobileAppSupersedence]] = Field(alias="value", default=None,)
 
 from .mobile_app_supersedence import MobileAppSupersedence
-

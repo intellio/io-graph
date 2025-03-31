@@ -2,7 +2,7 @@ from __future__ import annotations
 from uuid import UUID
 from typing import Optional
 from typing import Literal
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class DepMacOSEnrollmentProfile(BaseModel):
@@ -57,5 +57,4 @@ class DepMacOSEnrollmentProfile(BaseModel):
 	setPrimarySetupAccountAsRegularUser: Optional[bool] = Field(alias="setPrimarySetupAccountAsRegularUser", default=None,)
 	skipPrimarySetupAccountCreation: Optional[bool] = Field(alias="skipPrimarySetupAccountCreation", default=None,)
 	zoomDisabled: Optional[bool] = Field(alias="zoomDisabled", default=None,)
-
 

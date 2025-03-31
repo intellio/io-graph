@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class UnitOfMeasureCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class UnitOfMeasureCollectionResponse(BaseModel):
 	value: Optional[list[UnitOfMeasure]] = Field(alias="value", default=None,)
 
 from .unit_of_measure import UnitOfMeasure
-

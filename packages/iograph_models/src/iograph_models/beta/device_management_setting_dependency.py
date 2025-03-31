@@ -2,7 +2,7 @@ from __future__ import annotations
 from typing import Optional
 from typing import Union
 from typing import Annotated
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class DeviceManagementSettingDependency(BaseModel):
@@ -25,4 +25,3 @@ from .device_management_setting_required_constraint import DeviceManagementSetti
 from .device_management_setting_sddl_constraint import DeviceManagementSettingSddlConstraint
 from .device_management_setting_string_length_constraint import DeviceManagementSettingStringLengthConstraint
 from .device_management_setting_xml_constraint import DeviceManagementSettingXmlConstraint
-

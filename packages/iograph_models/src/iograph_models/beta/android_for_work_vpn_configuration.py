@@ -3,7 +3,7 @@ from typing import Optional
 from typing import Union
 from typing import Literal
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class AndroidForWorkVpnConfiguration(BaseModel):
@@ -54,4 +54,3 @@ from .key_value_pair import KeyValuePair
 from .vpn_server import VpnServer
 from .android_for_work_pkcs_certificate_profile import AndroidForWorkPkcsCertificateProfile
 from .android_for_work_scep_certificate_profile import AndroidForWorkScepCertificateProfile
-

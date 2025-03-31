@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class Get_customized_settingsGetResponse(BaseModel):
@@ -9,4 +9,3 @@ class Get_customized_settingsGetResponse(BaseModel):
 	value: Optional[list[DeviceManagementIntentCustomizedSetting]] = Field(alias="value", default=None,)
 
 from .device_management_intent_customized_setting import DeviceManagementIntentCustomizedSetting
-

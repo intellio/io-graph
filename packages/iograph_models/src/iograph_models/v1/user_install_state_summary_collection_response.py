@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class UserInstallStateSummaryCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class UserInstallStateSummaryCollectionResponse(BaseModel):
 	value: Optional[list[UserInstallStateSummary]] = Field(alias="value", default=None,)
 
 from .user_install_state_summary import UserInstallStateSummary
-

@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class Security_purge_dataPostRequest(BaseModel):
@@ -9,4 +9,3 @@ class Security_purge_dataPostRequest(BaseModel):
 
 from .security_purge_type import SecurityPurgeType
 from .security_purge_areas import SecurityPurgeAreas
-

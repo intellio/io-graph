@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class IndustryDataAggregatedInboundStatistics(BaseModel):
@@ -15,5 +15,3 @@ class IndustryDataAggregatedInboundStatistics(BaseModel):
 	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
 
 from .industry_data_industry_data_run_role_count_metric import IndustryDataIndustryDataRunRoleCountMetric
-from .industry_data_industry_data_run_role_count_metric import IndustryDataIndustryDataRunRoleCountMetric
-

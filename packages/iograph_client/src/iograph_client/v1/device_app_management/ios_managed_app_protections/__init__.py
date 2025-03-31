@@ -15,8 +15,8 @@ if TYPE_CHECKING:
 	from .by_ios_managed_app_protection_id import ByIosManagedAppProtectionIdRequest
 	from ....request_adapter import HttpxRequestAdapter
 from iograph_models.v1.o_data_errors__o_data_error import ODataErrorsODataError
-from iograph_models.v1.ios_managed_app_protection import IosManagedAppProtection
 from iograph_models.v1.ios_managed_app_protection_collection_response import IosManagedAppProtectionCollectionResponse
+from iograph_models.v1.ios_managed_app_protection import IosManagedAppProtection
 
 
 class IosManagedAppProtectionsRequest(BaseRequestBuilder):

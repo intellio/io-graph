@@ -3,7 +3,7 @@ from uuid import UUID
 from typing import Optional
 from typing import Literal
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class Windows10XSCEPCertificateProfile(BaseModel):
@@ -39,4 +39,3 @@ from .key_size import KeySize
 from .key_storage_provider_option import KeyStorageProviderOption
 from .key_usages import KeyUsages
 from .windows10_x_custom_subject_alternative_name import Windows10XCustomSubjectAlternativeName
-

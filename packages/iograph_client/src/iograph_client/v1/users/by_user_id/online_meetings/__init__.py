@@ -16,8 +16,8 @@ if TYPE_CHECKING:
 	from .by_online_meeting_id import ByOnlineMeetingIdRequest
 	from .....request_adapter import HttpxRequestAdapter
 from iograph_models.v1.o_data_errors__o_data_error import ODataErrorsODataError
-from iograph_models.v1.online_meeting import OnlineMeeting
 from iograph_models.v1.online_meeting_collection_response import OnlineMeetingCollectionResponse
+from iograph_models.v1.online_meeting import OnlineMeeting
 
 
 class OnlineMeetingsRequest(BaseRequestBuilder):

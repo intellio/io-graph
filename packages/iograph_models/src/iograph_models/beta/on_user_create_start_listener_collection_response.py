@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class OnUserCreateStartListenerCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class OnUserCreateStartListenerCollectionResponse(BaseModel):
 	value: Optional[list[OnUserCreateStartListener]] = Field(alias="value", default=None,)
 
 from .on_user_create_start_listener import OnUserCreateStartListener
-

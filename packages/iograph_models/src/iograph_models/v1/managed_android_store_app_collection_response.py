@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class ManagedAndroidStoreAppCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class ManagedAndroidStoreAppCollectionResponse(BaseModel):
 	value: Optional[list[ManagedAndroidStoreApp]] = Field(alias="value", default=None,)
 
 from .managed_android_store_app import ManagedAndroidStoreApp
-

@@ -1,14 +1,15 @@
 from __future__ import annotations
 from typing import Optional
 from typing import Union
+from typing import Literal
 from typing import Annotated
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class DeviceManagementIntent(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
+	odata_type: Literal["#microsoft.graph.deviceManagementIntent"] = Field(alias="@odata.type",)
 	description: Optional[str] = Field(alias="description", default=None,)
 	displayName: Optional[str] = Field(alias="displayName", default=None,)
 	isAssigned: Optional[bool] = Field(alias="isAssigned", default=None,)
@@ -38,4 +39,3 @@ from .device_management_integer_setting_instance import DeviceManagementIntegerS
 from .device_management_string_setting_instance import DeviceManagementStringSettingInstance
 from .device_management_intent_user_state import DeviceManagementIntentUserState
 from .device_management_intent_user_state_summary import DeviceManagementIntentUserStateSummary
-

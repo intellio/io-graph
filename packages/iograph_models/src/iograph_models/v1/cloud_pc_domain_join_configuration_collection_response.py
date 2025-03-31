@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class CloudPcDomainJoinConfigurationCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class CloudPcDomainJoinConfigurationCollectionResponse(BaseModel):
 	value: Optional[list[CloudPcDomainJoinConfiguration]] = Field(alias="value", default=None,)
 
 from .cloud_pc_domain_join_configuration import CloudPcDomainJoinConfiguration
-

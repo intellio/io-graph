@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class Price_matPostRequest(BaseModel):
@@ -10,5 +10,4 @@ class Price_matPostRequest(BaseModel):
 	rate: Optional[str] = Field(alias="rate", default=None,)
 	yld: Optional[str] = Field(alias="yld", default=None,)
 	basis: Optional[str] = Field(alias="basis", default=None,)
-
 

@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class AndroidWorkProfileEnterpriseWiFiConfigurationCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class AndroidWorkProfileEnterpriseWiFiConfigurationCollectionResponse(BaseModel)
 	value: Optional[list[AndroidWorkProfileEnterpriseWiFiConfiguration]] = Field(alias="value", default=None,)
 
 from .android_work_profile_enterprise_wi_fi_configuration import AndroidWorkProfileEnterpriseWiFiConfiguration
-

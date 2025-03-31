@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class WindowsInformationProtectionAppLearningSummaryCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class WindowsInformationProtectionAppLearningSummaryCollectionResponse(BaseModel
 	value: Optional[list[WindowsInformationProtectionAppLearningSummary]] = Field(alias="value", default=None,)
 
 from .windows_information_protection_app_learning_summary import WindowsInformationProtectionAppLearningSummary
-

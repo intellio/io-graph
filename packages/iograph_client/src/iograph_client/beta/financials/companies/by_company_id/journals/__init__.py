@@ -14,9 +14,9 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_journal_id import ByJournalIdRequest
 	from ......request_adapter import HttpxRequestAdapter
+from iograph_models.beta.journal import Journal
 from iograph_models.beta.journal_collection_response import JournalCollectionResponse
 from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
-from iograph_models.beta.journal import Journal
 
 
 class JournalsRequest(BaseRequestBuilder):

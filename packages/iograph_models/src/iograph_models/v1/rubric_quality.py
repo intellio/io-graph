@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class RubricQuality(BaseModel):
@@ -14,4 +14,3 @@ class RubricQuality(BaseModel):
 from .rubric_criterion import RubricCriterion
 from .education_item_body import EducationItemBody
 from .reference_numeric import ReferenceNumeric
-

@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class OnenotePatchContentCommand(BaseModel):
@@ -12,4 +12,3 @@ class OnenotePatchContentCommand(BaseModel):
 
 from .onenote_patch_action_type import OnenotePatchActionType
 from .onenote_patch_insert_position import OnenotePatchInsertPosition
-

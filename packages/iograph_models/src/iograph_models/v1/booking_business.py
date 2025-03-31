@@ -1,14 +1,15 @@
 from __future__ import annotations
 from typing import Optional
 from typing import Union
+from typing import Literal
 from typing import Annotated
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class BookingBusiness(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
+	odata_type: Literal["#microsoft.graph.bookingBusiness"] = Field(alias="@odata.type",)
 	address: Optional[PhysicalAddress] = Field(alias="address", default=None,)
 	bookingPageSettings: Optional[BookingPageSettings] = Field(alias="bookingPageSettings", default=None,)
 	businessHours: Optional[list[BookingWorkHours]] = Field(alias="businessHours", default=None,)
@@ -36,9 +37,7 @@ from .booking_page_settings import BookingPageSettings
 from .booking_work_hours import BookingWorkHours
 from .booking_scheduling_policy import BookingSchedulingPolicy
 from .booking_appointment import BookingAppointment
-from .booking_appointment import BookingAppointment
 from .booking_customer import BookingCustomer
 from .booking_custom_question import BookingCustomQuestion
 from .booking_service import BookingService
 from .booking_staff_member import BookingStaffMember
-

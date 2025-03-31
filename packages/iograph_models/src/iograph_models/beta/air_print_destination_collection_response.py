@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class AirPrintDestinationCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class AirPrintDestinationCollectionResponse(BaseModel):
 	value: Optional[list[AirPrintDestination]] = Field(alias="value", default=None,)
 
 from .air_print_destination import AirPrintDestination
-

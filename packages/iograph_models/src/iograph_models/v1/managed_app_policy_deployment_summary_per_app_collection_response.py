@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class ManagedAppPolicyDeploymentSummaryPerAppCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class ManagedAppPolicyDeploymentSummaryPerAppCollectionResponse(BaseModel):
 	value: Optional[list[ManagedAppPolicyDeploymentSummaryPerApp]] = Field(alias="value", default=None,)
 
 from .managed_app_policy_deployment_summary_per_app import ManagedAppPolicyDeploymentSummaryPerApp
-

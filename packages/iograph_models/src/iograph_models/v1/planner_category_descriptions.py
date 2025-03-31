@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class PlannerCategoryDescriptions(BaseModel):
@@ -30,5 +30,4 @@ class PlannerCategoryDescriptions(BaseModel):
 	category8: Optional[str] = Field(alias="category8", default=None,)
 	category9: Optional[str] = Field(alias="category9", default=None,)
 	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
-
 

@@ -11,9 +11,9 @@ from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:
 	from ....request_adapter import HttpxRequestAdapter
-from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.beta.get_user_owned_objects_post_request import Get_user_owned_objectsPostRequest
 from iograph_models.beta.directory_object import DirectoryObject
+from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 
 
 class GetUserOwnedObjectsRequest(BaseRequestBuilder):

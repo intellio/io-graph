@@ -1,11 +1,11 @@
 from __future__ import annotations
 from typing import Optional
 from typing import Union
+from datetime import datetime
+from pydantic import BaseModel, Field
 from pydantic import model_validator, ModelWrapValidatorHandler, ValidationError
 from typing_extensions import Self
 from typing import Any
-from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class ThreatAssessmentRequest(BaseModel):
@@ -58,4 +58,3 @@ from .threat_expected_assessment import ThreatExpectedAssessment
 from .threat_assessment_request_source import ThreatAssessmentRequestSource
 from .threat_assessment_status import ThreatAssessmentStatus
 from .threat_assessment_result import ThreatAssessmentResult
-

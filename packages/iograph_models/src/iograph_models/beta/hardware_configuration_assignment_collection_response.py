@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class HardwareConfigurationAssignmentCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class HardwareConfigurationAssignmentCollectionResponse(BaseModel):
 	value: Optional[list[HardwareConfigurationAssignment]] = Field(alias="value", default=None,)
 
 from .hardware_configuration_assignment import HardwareConfigurationAssignment
-

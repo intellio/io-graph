@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class MfaTelecomFraudMetricCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class MfaTelecomFraudMetricCollectionResponse(BaseModel):
 	value: Optional[list[MfaTelecomFraudMetric]] = Field(alias="value", default=None,)
 
 from .mfa_telecom_fraud_metric import MfaTelecomFraudMetric
-

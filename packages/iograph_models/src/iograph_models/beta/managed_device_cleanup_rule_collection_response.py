@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class ManagedDeviceCleanupRuleCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class ManagedDeviceCleanupRuleCollectionResponse(BaseModel):
 	value: Optional[list[ManagedDeviceCleanupRule]] = Field(alias="value", default=None,)
 
 from .managed_device_cleanup_rule import ManagedDeviceCleanupRule
-

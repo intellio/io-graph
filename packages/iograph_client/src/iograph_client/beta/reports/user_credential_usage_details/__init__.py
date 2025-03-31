@@ -14,9 +14,9 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_user_credential_usage_details_id import ByUserCredentialUsageDetailsIdRequest
 	from ....request_adapter import HttpxRequestAdapter
-from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
-from iograph_models.beta.user_credential_usage_details import UserCredentialUsageDetails
 from iograph_models.beta.user_credential_usage_details_collection_response import UserCredentialUsageDetailsCollectionResponse
+from iograph_models.beta.user_credential_usage_details import UserCredentialUsageDetails
+from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 
 
 class UserCredentialUsageDetailsRequest(BaseRequestBuilder):

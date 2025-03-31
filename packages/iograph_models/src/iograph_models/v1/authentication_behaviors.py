@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class AuthenticationBehaviors(BaseModel):
@@ -8,5 +8,4 @@ class AuthenticationBehaviors(BaseModel):
 	removeUnverifiedEmailClaim: Optional[bool] = Field(alias="removeUnverifiedEmailClaim", default=None,)
 	requireClientServicePrincipal: Optional[bool] = Field(alias="requireClientServicePrincipal", default=None,)
 	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
-
 

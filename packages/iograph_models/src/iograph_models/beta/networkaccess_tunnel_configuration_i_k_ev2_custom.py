@@ -1,7 +1,7 @@
 from __future__ import annotations
 from typing import Optional
 from typing import Literal
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class NetworkaccessTunnelConfigurationIKEv2Custom(BaseModel):
@@ -22,4 +22,3 @@ from .networkaccess_ike_integrity import NetworkaccessIkeIntegrity
 from .networkaccess_ip_sec_encryption import NetworkaccessIpSecEncryption
 from .networkaccess_ip_sec_integrity import NetworkaccessIpSecIntegrity
 from .networkaccess_pfs_group import NetworkaccessPfsGroup
-

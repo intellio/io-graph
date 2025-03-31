@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class HorizontalSectionColumnCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class HorizontalSectionColumnCollectionResponse(BaseModel):
 	value: Optional[list[HorizontalSectionColumn]] = Field(alias="value", default=None,)
 
 from .horizontal_section_column import HorizontalSectionColumn
-

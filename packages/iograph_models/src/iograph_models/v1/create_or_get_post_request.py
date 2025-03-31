@@ -1,7 +1,7 @@
 from __future__ import annotations
 from typing import Optional
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class Create_or_getPostRequest(BaseModel):
@@ -14,4 +14,3 @@ class Create_or_getPostRequest(BaseModel):
 
 from .chat_info import ChatInfo
 from .meeting_participants import MeetingParticipants
-

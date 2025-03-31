@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class AndroidDeviceOwnerSystemUpdateFreezePeriod(BaseModel):
@@ -9,5 +9,4 @@ class AndroidDeviceOwnerSystemUpdateFreezePeriod(BaseModel):
 	startDay: Optional[int] = Field(alias="startDay", default=None,)
 	startMonth: Optional[int] = Field(alias="startMonth", default=None,)
 	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
-
 

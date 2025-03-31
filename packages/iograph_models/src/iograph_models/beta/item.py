@@ -2,7 +2,7 @@ from __future__ import annotations
 from uuid import UUID
 from typing import Optional
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class Item(BaseModel):
@@ -28,4 +28,3 @@ class Item(BaseModel):
 
 from .item_category import ItemCategory
 from .picture import Picture
-

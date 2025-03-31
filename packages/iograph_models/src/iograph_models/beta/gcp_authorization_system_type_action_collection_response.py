@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class GcpAuthorizationSystemTypeActionCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class GcpAuthorizationSystemTypeActionCollectionResponse(BaseModel):
 	value: Optional[list[GcpAuthorizationSystemTypeAction]] = Field(alias="value", default=None,)
 
 from .gcp_authorization_system_type_action import GcpAuthorizationSystemTypeAction
-

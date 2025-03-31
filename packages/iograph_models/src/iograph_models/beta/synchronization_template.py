@@ -1,12 +1,13 @@
 from __future__ import annotations
 from uuid import UUID
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from typing import Literal
+from pydantic import BaseModel, Field
 
 
 class SynchronizationTemplate(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
+	odata_type: Literal["#microsoft.graph.synchronizationTemplate"] = Field(alias="@odata.type",)
 	applicationId: Optional[UUID] = Field(alias="applicationId", default=None,)
 	default: Optional[bool] = Field(alias="default", default=None,)
 	description: Optional[str] = Field(alias="description", default=None,)
@@ -17,4 +18,3 @@ class SynchronizationTemplate(BaseModel):
 
 from .synchronization_metadata_entry import SynchronizationMetadataEntry
 from .synchronization_schema import SynchronizationSchema
-

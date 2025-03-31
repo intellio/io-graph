@@ -2,7 +2,7 @@ from __future__ import annotations
 from typing import Optional
 from typing import Literal
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class SecurityIoTDeviceEvidence(BaseModel):
@@ -49,4 +49,3 @@ from .security_azure_resource_evidence import SecurityAzureResourceEvidence
 from .security_ip_evidence import SecurityIpEvidence
 from .security_nic_evidence import SecurityNicEvidence
 from .security_url_evidence import SecurityUrlEvidence
-

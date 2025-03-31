@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class EnrollmentTimeDeviceMembershipTargetStatusCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class EnrollmentTimeDeviceMembershipTargetStatusCollectionResponse(BaseModel):
 	value: Optional[list[EnrollmentTimeDeviceMembershipTargetStatus]] = Field(alias="value", default=None,)
 
 from .enrollment_time_device_membership_target_status import EnrollmentTimeDeviceMembershipTargetStatus
-

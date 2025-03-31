@@ -1,7 +1,7 @@
 from __future__ import annotations
 from typing import Optional
 from typing import Literal
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class Win32LobAppPowerShellScriptRule(BaseModel):
@@ -20,4 +20,3 @@ from .win32_lob_app_rule_type import Win32LobAppRuleType
 from .win32_lob_app_power_shell_script_rule_operation_type import Win32LobAppPowerShellScriptRuleOperationType
 from .win32_lob_app_rule_operator import Win32LobAppRuleOperator
 from .run_as_account_type import RunAsAccountType
-

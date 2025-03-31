@@ -2,7 +2,7 @@ from __future__ import annotations
 from typing import Optional
 from typing import Union
 from typing import Annotated
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class SecurityAlertTemplate(BaseModel):
@@ -19,4 +19,3 @@ from .security_impacted_device_asset import SecurityImpactedDeviceAsset
 from .security_impacted_mailbox_asset import SecurityImpactedMailboxAsset
 from .security_impacted_user_asset import SecurityImpactedUserAsset
 from .security_alert_severity import SecurityAlertSeverity
-

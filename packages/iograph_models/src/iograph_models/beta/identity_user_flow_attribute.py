@@ -1,9 +1,9 @@
 from __future__ import annotations
 from typing import Optional
+from pydantic import BaseModel, Field
 from pydantic import model_validator, ModelWrapValidatorHandler, ValidationError
 from typing_extensions import Self
 from typing import Any
-from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class IdentityUserFlowAttribute(BaseModel):
@@ -37,4 +37,3 @@ class IdentityUserFlowAttribute(BaseModel):
 
 from .identity_user_flow_attribute_data_type import IdentityUserFlowAttributeDataType
 from .identity_user_flow_attribute_type import IdentityUserFlowAttributeType
-

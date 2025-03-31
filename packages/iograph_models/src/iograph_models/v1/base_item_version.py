@@ -1,11 +1,11 @@
 from __future__ import annotations
 from typing import Optional
 from typing import Union
+from datetime import datetime
+from pydantic import BaseModel, Field
 from pydantic import model_validator, ModelWrapValidatorHandler, ValidationError
 from typing_extensions import Self
 from typing import Any
-from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class BaseItemVersion(BaseModel):
@@ -28,9 +28,6 @@ class BaseItemVersion(BaseModel):
 			if mapping_key == "#microsoft.graph.driveItemVersion":
 				from .drive_item_version import DriveItemVersion
 				return DriveItemVersion.model_validate(data)
-			if mapping_key == "#microsoft.graph.listItemVersion":
-				from .list_item_version import ListItemVersion
-				return ListItemVersion.model_validate(data)
 			if mapping_key == "#microsoft.graph.documentSetVersion":
 				from .document_set_version import DocumentSetVersion
 				return DocumentSetVersion.model_validate(data)
@@ -45,4 +42,3 @@ from .chat_message_reaction_identity_set import ChatMessageReactionIdentitySet
 from .communications_identity_set import CommunicationsIdentitySet
 from .share_point_identity_set import SharePointIdentitySet
 from .publication_facet import PublicationFacet
-

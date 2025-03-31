@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class MfaFailureCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class MfaFailureCollectionResponse(BaseModel):
 	value: Optional[list[MfaFailure]] = Field(alias="value", default=None,)
 
 from .mfa_failure import MfaFailure
-

@@ -2,7 +2,7 @@ from __future__ import annotations
 from typing import Optional
 from typing import Union
 from typing import Annotated
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class DeviceCompliancePolicyCollectionResponse(BaseModel):
@@ -22,4 +22,3 @@ from .windows10_compliance_policy import Windows10CompliancePolicy
 from .windows10_mobile_compliance_policy import Windows10MobileCompliancePolicy
 from .windows81_compliance_policy import Windows81CompliancePolicy
 from .windows_phone81_compliance_policy import WindowsPhone81CompliancePolicy
-

@@ -1,13 +1,14 @@
 from __future__ import annotations
 from typing import Optional
 from typing import Union
+from typing import Literal
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class SecurityEdiscoveryExportOperation(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
+	odata_type: Literal["#microsoft.graph.security.ediscoveryExportOperation"] = Field(alias="@odata.type",)
 	action: Optional[SecurityCaseAction | str] = Field(alias="action", default=None,)
 	completedDateTime: Optional[datetime] = Field(alias="completedDateTime", default=None,)
 	createdBy: Optional[Union[AiInteractionMentionedIdentitySet, ApprovalIdentitySet, ChatMessageFromIdentitySet, ChatMessageMentionedIdentitySet, ChatMessageReactionIdentitySet, CommunicationsIdentitySet, SharePointIdentitySet]] = Field(alias="createdBy", default=None,discriminator="odata_type", )
@@ -41,4 +42,3 @@ from .security_export_options import SecurityExportOptions
 from .security_export_file_structure import SecurityExportFileStructure
 from .security_ediscovery_review_set import SecurityEdiscoveryReviewSet
 from .security_ediscovery_review_set_query import SecurityEdiscoveryReviewSetQuery
-

@@ -2,7 +2,7 @@ from __future__ import annotations
 from typing import Optional
 from typing import Literal
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class AndroidForWorkMobileAppConfiguration(BaseModel):
@@ -33,4 +33,3 @@ from .managed_device_mobile_app_configuration_user_status import ManagedDeviceMo
 from .managed_device_mobile_app_configuration_user_summary import ManagedDeviceMobileAppConfigurationUserSummary
 from .android_permission_action import AndroidPermissionAction
 from .android_profile_applicability import AndroidProfileApplicability
-

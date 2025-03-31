@@ -1,7 +1,7 @@
 from __future__ import annotations
 from typing import Optional
 from typing import Literal
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class VirtualEventSession(BaseModel):
@@ -51,5 +51,3 @@ from .meeting_chat_history_default_mode import MeetingChatHistoryDefaultMode
 from .watermark_protection_values import WatermarkProtectionValues
 from .meeting_attendance_report import MeetingAttendanceReport
 from .date_time_time_zone import DateTimeTimeZone
-from .date_time_time_zone import DateTimeTimeZone
-

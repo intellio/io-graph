@@ -2,7 +2,7 @@ from __future__ import annotations
 from typing import Optional
 from typing import Literal
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class Windows81WifiImportConfiguration(BaseModel):
@@ -39,4 +39,3 @@ from .device_configuration_device_overview import DeviceConfigurationDeviceOverv
 from .device_configuration_group_assignment import DeviceConfigurationGroupAssignment
 from .device_configuration_user_status import DeviceConfigurationUserStatus
 from .device_configuration_user_overview import DeviceConfigurationUserOverview
-

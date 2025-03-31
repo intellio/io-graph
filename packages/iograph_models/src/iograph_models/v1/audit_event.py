@@ -1,13 +1,14 @@
 from __future__ import annotations
 from uuid import UUID
 from typing import Optional
+from typing import Literal
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class AuditEvent(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
+	odata_type: Literal["#microsoft.graph.auditEvent"] = Field(alias="@odata.type",)
 	activity: Optional[str] = Field(alias="activity", default=None,)
 	activityDateTime: Optional[datetime] = Field(alias="activityDateTime", default=None,)
 	activityOperationType: Optional[str] = Field(alias="activityOperationType", default=None,)
@@ -22,4 +23,3 @@ class AuditEvent(BaseModel):
 
 from .audit_actor import AuditActor
 from .audit_resource import AuditResource
-

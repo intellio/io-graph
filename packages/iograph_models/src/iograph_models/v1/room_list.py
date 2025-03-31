@@ -1,7 +1,7 @@
 from __future__ import annotations
 from typing import Optional
 from typing import Literal
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class RoomList(BaseModel):
@@ -17,4 +17,3 @@ class RoomList(BaseModel):
 from .physical_address import PhysicalAddress
 from .outlook_geo_coordinates import OutlookGeoCoordinates
 from .room import Room
-

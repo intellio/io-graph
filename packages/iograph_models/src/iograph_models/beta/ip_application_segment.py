@@ -1,7 +1,7 @@
 from __future__ import annotations
 from typing import Optional
 from typing import Literal
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class IpApplicationSegment(BaseModel):
@@ -17,4 +17,3 @@ class IpApplicationSegment(BaseModel):
 from .private_network_destination_type import PrivateNetworkDestinationType
 from .private_network_protocol import PrivateNetworkProtocol
 from .application import Application
-

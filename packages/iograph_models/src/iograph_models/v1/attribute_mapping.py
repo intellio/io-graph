@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class AttributeMapping(BaseModel):
@@ -16,4 +16,3 @@ class AttributeMapping(BaseModel):
 from .attribute_flow_behavior import AttributeFlowBehavior
 from .attribute_flow_type import AttributeFlowType
 from .attribute_mapping_source import AttributeMappingSource
-

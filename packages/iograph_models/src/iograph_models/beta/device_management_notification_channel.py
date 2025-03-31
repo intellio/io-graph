@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class DeviceManagementNotificationChannel(BaseModel):
@@ -10,4 +10,3 @@ class DeviceManagementNotificationChannel(BaseModel):
 
 from .device_management_notification_channel_type import DeviceManagementNotificationChannelType
 from .device_management_notification_receiver import DeviceManagementNotificationReceiver
-

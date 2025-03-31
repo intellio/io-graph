@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class AiInteractionMentionCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class AiInteractionMentionCollectionResponse(BaseModel):
 	value: Optional[list[AiInteractionMention]] = Field(alias="value", default=None,)
 
 from .ai_interaction_mention import AiInteractionMention
-

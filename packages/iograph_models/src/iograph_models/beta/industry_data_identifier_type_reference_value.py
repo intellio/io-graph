@@ -1,7 +1,7 @@
 from __future__ import annotations
 from typing import Optional
 from typing import Literal
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class IndustryDataIdentifierTypeReferenceValue(BaseModel):
@@ -10,4 +10,3 @@ class IndustryDataIdentifierTypeReferenceValue(BaseModel):
 	odata_type: Literal["#microsoft.graph.industryData.identifierTypeReferenceValue"] = Field(alias="@odata.type", default="#microsoft.graph.industryData.identifierTypeReferenceValue")
 
 from .industry_data_reference_definition import IndustryDataReferenceDefinition
-

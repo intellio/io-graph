@@ -1,12 +1,13 @@
 from __future__ import annotations
 from typing import Optional
+from typing import Literal
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class DeviceManagementAutopilotEvent(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
+	odata_type: Literal["#microsoft.graph.deviceManagementAutopilotEvent"] = Field(alias="@odata.type",)
 	accountSetupDuration: Optional[str] = Field(alias="accountSetupDuration", default=None,)
 	accountSetupStatus: Optional[WindowsAutopilotDeploymentState | str] = Field(alias="accountSetupStatus", default=None,)
 	deploymentDuration: Optional[str] = Field(alias="deploymentDuration", default=None,)
@@ -33,8 +34,5 @@ class DeviceManagementAutopilotEvent(BaseModel):
 	windowsAutopilotDeploymentProfileDisplayName: Optional[str] = Field(alias="windowsAutopilotDeploymentProfileDisplayName", default=None,)
 
 from .windows_autopilot_deployment_state import WindowsAutopilotDeploymentState
-from .windows_autopilot_deployment_state import WindowsAutopilotDeploymentState
-from .windows_autopilot_deployment_state import WindowsAutopilotDeploymentState
 from .enrollment_state import EnrollmentState
 from .windows_autopilot_enrollment_type import WindowsAutopilotEnrollmentType
-

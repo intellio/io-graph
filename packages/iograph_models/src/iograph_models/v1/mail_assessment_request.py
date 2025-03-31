@@ -3,7 +3,7 @@ from typing import Optional
 from typing import Union
 from typing import Literal
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class MailAssessmentRequest(BaseModel):
@@ -33,4 +33,3 @@ from .threat_assessment_request_source import ThreatAssessmentRequestSource
 from .threat_assessment_status import ThreatAssessmentStatus
 from .threat_assessment_result import ThreatAssessmentResult
 from .mail_destination_routing_reason import MailDestinationRoutingReason
-

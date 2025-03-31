@@ -1,12 +1,13 @@
 from __future__ import annotations
 from typing import Optional
 from typing import Union
-from pydantic import BaseModel, Field, SerializeAsAny
+from typing import Literal
+from pydantic import BaseModel, Field
 
 
 class DeviceCompliancePolicyGroupAssignment(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
+	odata_type: Literal["#microsoft.graph.deviceCompliancePolicyGroupAssignment"] = Field(alias="@odata.type",)
 	excludeGroup: Optional[bool] = Field(alias="excludeGroup", default=None,)
 	targetGroupId: Optional[str] = Field(alias="targetGroupId", default=None,)
 	deviceCompliancePolicy: Optional[Union[AndroidCompliancePolicy, AndroidDeviceOwnerCompliancePolicy, AndroidForWorkCompliancePolicy, AndroidWorkProfileCompliancePolicy, AospDeviceOwnerCompliancePolicy, DefaultDeviceCompliancePolicy, IosCompliancePolicy, MacOSCompliancePolicy, Windows10CompliancePolicy, Windows10MobileCompliancePolicy, Windows81CompliancePolicy, WindowsPhone81CompliancePolicy]] = Field(alias="deviceCompliancePolicy", default=None,discriminator="odata_type", )
@@ -23,4 +24,3 @@ from .windows10_compliance_policy import Windows10CompliancePolicy
 from .windows10_mobile_compliance_policy import Windows10MobileCompliancePolicy
 from .windows81_compliance_policy import Windows81CompliancePolicy
 from .windows_phone81_compliance_policy import WindowsPhone81CompliancePolicy
-

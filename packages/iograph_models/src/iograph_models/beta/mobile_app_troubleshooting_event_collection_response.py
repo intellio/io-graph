@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class MobileAppTroubleshootingEventCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class MobileAppTroubleshootingEventCollectionResponse(BaseModel):
 	value: Optional[list[MobileAppTroubleshootingEvent]] = Field(alias="value", default=None,)
 
 from .mobile_app_troubleshooting_event import MobileAppTroubleshootingEvent
-

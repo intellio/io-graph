@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class NetworkaccessWebCategoriesSummary(BaseModel):
@@ -13,4 +13,3 @@ class NetworkaccessWebCategoriesSummary(BaseModel):
 
 from .networkaccess_filtering_policy_action import NetworkaccessFilteringPolicyAction
 from .networkaccess_web_category import NetworkaccessWebCategory
-

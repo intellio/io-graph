@@ -1,12 +1,13 @@
 from __future__ import annotations
 from typing import Optional
+from typing import Literal
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class SecuritySensor(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
+	odata_type: Literal["#microsoft.graph.security.sensor"] = Field(alias="@odata.type",)
 	createdDateTime: Optional[datetime] = Field(alias="createdDateTime", default=None,)
 	deploymentStatus: Optional[SecurityDeploymentStatus | str] = Field(alias="deploymentStatus", default=None,)
 	displayName: Optional[str] = Field(alias="displayName", default=None,)
@@ -23,4 +24,3 @@ from .security_sensor_health_status import SecuritySensorHealthStatus
 from .security_sensor_type import SecuritySensorType
 from .security_sensor_settings import SecuritySensorSettings
 from .security_health_issue import SecurityHealthIssue
-

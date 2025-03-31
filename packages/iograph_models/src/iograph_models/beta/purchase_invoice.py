@@ -2,7 +2,7 @@ from __future__ import annotations
 from uuid import UUID
 from typing import Optional
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class PurchaseInvoice(BaseModel):
@@ -39,9 +39,6 @@ class PurchaseInvoice(BaseModel):
 	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
 
 from .postal_address_type import PostalAddressType
-from .postal_address_type import PostalAddressType
-from .postal_address_type import PostalAddressType
 from .currency import Currency
 from .purchase_invoice_line import PurchaseInvoiceLine
 from .vendor import Vendor
-

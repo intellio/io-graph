@@ -1,7 +1,7 @@
 from __future__ import annotations
 from typing import Optional
 from typing import Literal
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class Win32MobileAppCatalogPackage(BaseModel):
@@ -17,4 +17,3 @@ class Win32MobileAppCatalogPackage(BaseModel):
 	packageAutoUpdateCapable: Optional[bool] = Field(alias="packageAutoUpdateCapable", default=None,)
 
 from .windows_architecture import WindowsArchitecture
-

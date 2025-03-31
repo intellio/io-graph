@@ -15,8 +15,8 @@ if TYPE_CHECKING:
 	from .by_catalog_entry_id import ByCatalogEntryIdRequest
 	from .......request_adapter import HttpxRequestAdapter
 from iograph_models.beta.windows_updates_catalog_entry_collection_response import WindowsUpdatesCatalogEntryCollectionResponse
-from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.beta.windows_updates_catalog_entry import WindowsUpdatesCatalogEntry
+from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 
 
 class EntriesRequest(BaseRequestBuilder):

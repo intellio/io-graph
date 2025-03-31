@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class AuditResourceCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class AuditResourceCollectionResponse(BaseModel):
 	value: Optional[list[AuditResource]] = Field(alias="value", default=None,)
 
 from .audit_resource import AuditResource
-

@@ -1,10 +1,10 @@
 from __future__ import annotations
 from typing import Optional
+from datetime import datetime
+from pydantic import BaseModel, Field
 from pydantic import model_validator, ModelWrapValidatorHandler, ValidationError
 from typing_extensions import Self
 from typing import Any
-from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class MobileApp(BaseModel):
@@ -57,18 +57,12 @@ class MobileApp(BaseModel):
 			if mapping_key == "#microsoft.graph.macOSOfficeSuiteApp":
 				from .mac_o_s_office_suite_app import MacOSOfficeSuiteApp
 				return MacOSOfficeSuiteApp.model_validate(data)
-			if mapping_key == "#microsoft.graph.managedApp":
-				from .managed_app import ManagedApp
-				return ManagedApp.model_validate(data)
 			if mapping_key == "#microsoft.graph.managedAndroidStoreApp":
 				from .managed_android_store_app import ManagedAndroidStoreApp
 				return ManagedAndroidStoreApp.model_validate(data)
 			if mapping_key == "#microsoft.graph.managedIOSStoreApp":
 				from .managed_i_o_s_store_app import ManagedIOSStoreApp
 				return ManagedIOSStoreApp.model_validate(data)
-			if mapping_key == "#microsoft.graph.managedMobileLobApp":
-				from .managed_mobile_lob_app import ManagedMobileLobApp
-				return ManagedMobileLobApp.model_validate(data)
 			if mapping_key == "#microsoft.graph.managedAndroidLobApp":
 				from .managed_android_lob_app import ManagedAndroidLobApp
 				return ManagedAndroidLobApp.model_validate(data)
@@ -78,9 +72,6 @@ class MobileApp(BaseModel):
 			if mapping_key == "#microsoft.graph.microsoftStoreForBusinessApp":
 				from .microsoft_store_for_business_app import MicrosoftStoreForBusinessApp
 				return MicrosoftStoreForBusinessApp.model_validate(data)
-			if mapping_key == "#microsoft.graph.mobileLobApp":
-				from .mobile_lob_app import MobileLobApp
-				return MobileLobApp.model_validate(data)
 			if mapping_key == "#microsoft.graph.androidLobApp":
 				from .android_lob_app import AndroidLobApp
 				return AndroidLobApp.model_validate(data)
@@ -123,4 +114,3 @@ from .mime_content import MimeContent
 from .mobile_app_publishing_state import MobileAppPublishingState
 from .mobile_app_assignment import MobileAppAssignment
 from .mobile_app_category import MobileAppCategory
-

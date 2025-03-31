@@ -15,8 +15,8 @@ if TYPE_CHECKING:
 	from .by_cloud_pc_gallery_image_id import ByCloudPcGalleryImageIdRequest
 	from .....request_adapter import HttpxRequestAdapter
 from iograph_models.beta.cloud_pc_gallery_image_collection_response import CloudPcGalleryImageCollectionResponse
-from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.beta.cloud_pc_gallery_image import CloudPcGalleryImage
+from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 
 
 class GalleryImagesRequest(BaseRequestBuilder):

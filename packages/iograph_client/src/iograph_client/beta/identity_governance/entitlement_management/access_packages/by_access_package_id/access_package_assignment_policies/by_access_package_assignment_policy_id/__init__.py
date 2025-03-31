@@ -16,8 +16,8 @@ if TYPE_CHECKING:
 	from .access_package_catalog import AccessPackageCatalogRequest
 	from .access_package import AccessPackageRequest
 	from ........request_adapter import HttpxRequestAdapter
-from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.beta.access_package_assignment_policy import AccessPackageAssignmentPolicy
+from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 
 
 class ByAccessPackageAssignmentPolicyIdRequest(BaseRequestBuilder):

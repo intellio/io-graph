@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class CallRecordsTraceRouteHopCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class CallRecordsTraceRouteHopCollectionResponse(BaseModel):
 	value: Optional[list[CallRecordsTraceRouteHop]] = Field(alias="value", default=None,)
 
 from .call_records_trace_route_hop import CallRecordsTraceRouteHop
-

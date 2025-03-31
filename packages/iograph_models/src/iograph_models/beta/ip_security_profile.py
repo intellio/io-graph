@@ -1,12 +1,13 @@
 from __future__ import annotations
 from typing import Optional
+from typing import Literal
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class IpSecurityProfile(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
+	odata_type: Literal["#microsoft.graph.ipSecurityProfile"] = Field(alias="@odata.type",)
 	activityGroupNames: Optional[list[str]] = Field(alias="activityGroupNames", default=None,)
 	address: Optional[str] = Field(alias="address", default=None,)
 	azureSubscriptionId: Optional[str] = Field(alias="azureSubscriptionId", default=None,)
@@ -24,4 +25,3 @@ class IpSecurityProfile(BaseModel):
 from .ip_category import IpCategory
 from .ip_reference_data import IpReferenceData
 from .security_vendor_information import SecurityVendorInformation
-

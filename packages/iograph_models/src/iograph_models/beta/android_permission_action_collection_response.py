@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class AndroidPermissionActionCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class AndroidPermissionActionCollectionResponse(BaseModel):
 	value: Optional[list[AndroidPermissionAction]] = Field(alias="value", default=None,)
 
 from .android_permission_action import AndroidPermissionAction
-

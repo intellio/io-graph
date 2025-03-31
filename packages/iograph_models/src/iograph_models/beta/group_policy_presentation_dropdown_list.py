@@ -2,7 +2,7 @@ from __future__ import annotations
 from typing import Optional
 from typing import Literal
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class GroupPolicyPresentationDropdownList(BaseModel):
@@ -17,5 +17,3 @@ class GroupPolicyPresentationDropdownList(BaseModel):
 
 from .group_policy_definition import GroupPolicyDefinition
 from .group_policy_presentation_dropdown_list_item import GroupPolicyPresentationDropdownListItem
-from .group_policy_presentation_dropdown_list_item import GroupPolicyPresentationDropdownListItem
-

@@ -2,7 +2,7 @@ from __future__ import annotations
 from typing import Optional
 from typing import Union
 from typing import Annotated
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class Play_promptPostRequest(BaseModel):
@@ -10,4 +10,3 @@ class Play_promptPostRequest(BaseModel):
 	clientContext: Optional[str] = Field(alias="clientContext", default=None,)
 
 from .media_prompt import MediaPrompt
-

@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class TeamworkPeripheralHealthCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class TeamworkPeripheralHealthCollectionResponse(BaseModel):
 	value: Optional[list[TeamworkPeripheralHealth]] = Field(alias="value", default=None,)
 
 from .teamwork_peripheral_health import TeamworkPeripheralHealth
-

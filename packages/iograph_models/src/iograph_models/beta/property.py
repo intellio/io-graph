@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class Property(BaseModel):
@@ -16,4 +16,3 @@ class Property(BaseModel):
 
 from .label import Label
 from .property_type import PropertyType
-

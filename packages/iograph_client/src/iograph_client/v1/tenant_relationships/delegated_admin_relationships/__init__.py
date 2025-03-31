@@ -15,8 +15,8 @@ if TYPE_CHECKING:
 	from .by_delegated_admin_relationship_id import ByDelegatedAdminRelationshipIdRequest
 	from ....request_adapter import HttpxRequestAdapter
 from iograph_models.v1.o_data_errors__o_data_error import ODataErrorsODataError
-from iograph_models.v1.delegated_admin_relationship import DelegatedAdminRelationship
 from iograph_models.v1.delegated_admin_relationship_collection_response import DelegatedAdminRelationshipCollectionResponse
+from iograph_models.v1.delegated_admin_relationship import DelegatedAdminRelationship
 
 
 class DelegatedAdminRelationshipsRequest(BaseRequestBuilder):

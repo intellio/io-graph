@@ -1,7 +1,8 @@
 from __future__ import annotations
 from typing import Optional
+from typing import Literal
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class CallRecordsPstnCallLogRow(BaseModel):
@@ -11,7 +12,7 @@ class CallRecordsPstnCallLogRow(BaseModel):
 	userDisplayName: Optional[str] = Field(alias="userDisplayName", default=None,)
 	userId: Optional[str] = Field(alias="userId", default=None,)
 	userPrincipalName: Optional[str] = Field(alias="userPrincipalName", default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
+	odata_type: Literal["#microsoft.graph.callRecords.pstnCallLogRow"] = Field(alias="@odata.type",)
 	callDurationSource: Optional[CallRecordsPstnCallDurationSource | str] = Field(alias="callDurationSource", default=None,)
 	calleeNumber: Optional[str] = Field(alias="calleeNumber", default=None,)
 	callerNumber: Optional[str] = Field(alias="callerNumber", default=None,)
@@ -38,4 +39,3 @@ class CallRecordsPstnCallLogRow(BaseModel):
 
 from .call_records_administrative_unit_info import CallRecordsAdministrativeUnitInfo
 from .call_records_pstn_call_duration_source import CallRecordsPstnCallDurationSource
-

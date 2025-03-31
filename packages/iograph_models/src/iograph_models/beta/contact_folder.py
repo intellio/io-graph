@@ -1,11 +1,12 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from typing import Literal
+from pydantic import BaseModel, Field
 
 
 class ContactFolder(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
+	odata_type: Literal["#microsoft.graph.contactFolder"] = Field(alias="@odata.type",)
 	displayName: Optional[str] = Field(alias="displayName", default=None,)
 	parentFolderId: Optional[str] = Field(alias="parentFolderId", default=None,)
 	wellKnownName: Optional[str] = Field(alias="wellKnownName", default=None,)
@@ -17,4 +18,3 @@ class ContactFolder(BaseModel):
 from .contact import Contact
 from .multi_value_legacy_extended_property import MultiValueLegacyExtendedProperty
 from .single_value_legacy_extended_property import SingleValueLegacyExtendedProperty
-

@@ -2,7 +2,7 @@ from __future__ import annotations
 from typing import Optional
 from typing import Union
 from typing import Annotated
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class RequestorSettings(BaseModel):
@@ -18,4 +18,3 @@ from .internal_sponsors import InternalSponsors
 from .requestor_manager import RequestorManager
 from .single_user import SingleUser
 from .target_user_sponsors import TargetUserSponsors
-

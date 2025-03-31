@@ -1,12 +1,13 @@
 from __future__ import annotations
 from typing import Optional
+from typing import Literal
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class HostSecurityProfile(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
+	odata_type: Literal["#microsoft.graph.hostSecurityProfile"] = Field(alias="@odata.type",)
 	azureSubscriptionId: Optional[str] = Field(alias="azureSubscriptionId", default=None,)
 	azureTenantId: Optional[str] = Field(alias="azureTenantId", default=None,)
 	firstSeenDateTime: Optional[datetime] = Field(alias="firstSeenDateTime", default=None,)
@@ -29,4 +30,3 @@ class HostSecurityProfile(BaseModel):
 from .logon_user import LogonUser
 from .network_interface import NetworkInterface
 from .security_vendor_information import SecurityVendorInformation
-

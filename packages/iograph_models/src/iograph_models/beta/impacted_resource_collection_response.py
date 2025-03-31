@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class ImpactedResourceCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class ImpactedResourceCollectionResponse(BaseModel):
 	value: Optional[list[ImpactedResource]] = Field(alias="value", default=None,)
 
 from .impacted_resource import ImpactedResource
-

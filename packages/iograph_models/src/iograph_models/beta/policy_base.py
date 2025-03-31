@@ -1,11 +1,11 @@
 from __future__ import annotations
 from typing import Optional
 from typing import Literal
+from datetime import datetime
+from pydantic import BaseModel, Field
 from pydantic import model_validator, ModelWrapValidatorHandler, ValidationError
 from typing_extensions import Self
 from typing import Any
-from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class PolicyBase(BaseModel):
@@ -43,9 +43,6 @@ class PolicyBase(BaseModel):
 			if mapping_key == "#microsoft.graph.servicePrincipalCreationPolicy":
 				from .service_principal_creation_policy import ServicePrincipalCreationPolicy
 				return ServicePrincipalCreationPolicy.model_validate(data)
-			if mapping_key == "#microsoft.graph.stsPolicy":
-				from .sts_policy import StsPolicy
-				return StsPolicy.model_validate(data)
 			if mapping_key == "#microsoft.graph.activityBasedTimeoutPolicy":
 				from .activity_based_timeout_policy import ActivityBasedTimeoutPolicy
 				return ActivityBasedTimeoutPolicy.model_validate(data)
@@ -64,9 +61,6 @@ class PolicyBase(BaseModel):
 			if mapping_key == "#microsoft.graph.tenantAppManagementPolicy":
 				from .tenant_app_management_policy import TenantAppManagementPolicy
 				return TenantAppManagementPolicy.model_validate(data)
-			if mapping_key == "#microsoft.graph.tenantRelationshipAccessPolicyBase":
-				from .tenant_relationship_access_policy_base import TenantRelationshipAccessPolicyBase
-				return TenantRelationshipAccessPolicyBase.model_validate(data)
 			if mapping_key == "#microsoft.graph.crossTenantAccessPolicy":
 				from .cross_tenant_access_policy import CrossTenantAccessPolicy
 				return CrossTenantAccessPolicy.model_validate(data)
@@ -74,5 +68,4 @@ class PolicyBase(BaseModel):
 
 		except Exception as e:
 			raise e
-
 

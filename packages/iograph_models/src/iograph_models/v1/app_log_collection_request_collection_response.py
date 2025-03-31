@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class AppLogCollectionRequestCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class AppLogCollectionRequestCollectionResponse(BaseModel):
 	value: Optional[list[AppLogCollectionRequest]] = Field(alias="value", default=None,)
 
 from .app_log_collection_request import AppLogCollectionRequest
-

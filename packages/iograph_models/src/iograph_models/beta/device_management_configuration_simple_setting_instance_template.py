@@ -2,7 +2,7 @@ from __future__ import annotations
 from typing import Optional
 from typing import Union
 from typing import Literal
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class DeviceManagementConfigurationSimpleSettingInstanceTemplate(BaseModel):
@@ -14,4 +14,3 @@ class DeviceManagementConfigurationSimpleSettingInstanceTemplate(BaseModel):
 
 from .device_management_configuration_integer_setting_value_template import DeviceManagementConfigurationIntegerSettingValueTemplate
 from .device_management_configuration_string_setting_value_template import DeviceManagementConfigurationStringSettingValueTemplate
-

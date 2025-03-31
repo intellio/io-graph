@@ -2,7 +2,7 @@ from __future__ import annotations
 from typing import Optional
 from typing import Literal
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class AndroidForWorkPkcsCertificateProfile(BaseModel):
@@ -54,4 +54,3 @@ from .subject_alternative_name_type import SubjectAlternativeNameType
 from .subject_name_format import SubjectNameFormat
 from .android_for_work_trusted_root_certificate import AndroidForWorkTrustedRootCertificate
 from .managed_device_certificate_state import ManagedDeviceCertificateState
-

@@ -2,7 +2,7 @@ from __future__ import annotations
 from typing import Optional
 from typing import Literal
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class WindowsAppX(BaseModel):
@@ -42,4 +42,3 @@ from .mobile_app_category import MobileAppCategory
 from .mobile_app_content import MobileAppContent
 from .windows_architecture import WindowsArchitecture
 from .windows_minimum_operating_system import WindowsMinimumOperatingSystem
-

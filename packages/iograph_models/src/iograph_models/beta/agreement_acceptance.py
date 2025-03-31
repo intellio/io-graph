@@ -1,12 +1,13 @@
 from __future__ import annotations
 from typing import Optional
+from typing import Literal
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class AgreementAcceptance(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
+	odata_type: Literal["#microsoft.graph.agreementAcceptance"] = Field(alias="@odata.type",)
 	agreementFileId: Optional[str] = Field(alias="agreementFileId", default=None,)
 	agreementId: Optional[str] = Field(alias="agreementId", default=None,)
 	deviceDisplayName: Optional[str] = Field(alias="deviceDisplayName", default=None,)
@@ -22,4 +23,3 @@ class AgreementAcceptance(BaseModel):
 	userPrincipalName: Optional[str] = Field(alias="userPrincipalName", default=None,)
 
 from .agreement_acceptance_state import AgreementAcceptanceState
-

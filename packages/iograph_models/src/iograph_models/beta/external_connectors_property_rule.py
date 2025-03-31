@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class ExternalConnectorsPropertyRule(BaseModel):
@@ -12,4 +12,3 @@ class ExternalConnectorsPropertyRule(BaseModel):
 
 from .external_connectors_rule_operation import ExternalConnectorsRuleOperation
 from .binary_operator import BinaryOperator
-

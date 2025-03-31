@@ -2,7 +2,7 @@ from __future__ import annotations
 from typing import Optional
 from typing import Union
 from typing import Annotated
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class EasEmailProfileConfigurationBaseCollectionResponse(BaseModel):
@@ -13,4 +13,3 @@ class EasEmailProfileConfigurationBaseCollectionResponse(BaseModel):
 from .ios_eas_email_profile_configuration import IosEasEmailProfileConfiguration
 from .windows10_eas_email_profile_configuration import Windows10EasEmailProfileConfiguration
 from .windows_phone_e_a_s_email_profile_configuration import WindowsPhoneEASEmailProfileConfiguration
-

@@ -13,8 +13,8 @@ if TYPE_CHECKING:
 	from .traffic import TrafficRequest
 	from .remote_networks import RemoteNetworksRequest
 	from ....request_adapter import HttpxRequestAdapter
-from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.beta.networkaccess_logs import NetworkaccessLogs
+from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 
 
 class LogsRequest(BaseRequestBuilder):

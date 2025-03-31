@@ -19,8 +19,8 @@ if TYPE_CHECKING:
 	from .by_contract_id import ByContractIdRequest
 	from ...request_adapter import HttpxRequestAdapter
 from iograph_models.v1.o_data_errors__o_data_error import ODataErrorsODataError
-from iograph_models.v1.contract import Contract
 from iograph_models.v1.contract_collection_response import ContractCollectionResponse
+from iograph_models.v1.contract import Contract
 
 
 class ContractsRequest(BaseRequestBuilder):

@@ -3,7 +3,7 @@ from typing import Optional
 from typing import Union
 from typing import Literal
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class SecurityKubernetesClusterEvidence(BaseModel):
@@ -69,4 +69,3 @@ from .security_submission_mail_evidence import SecuritySubmissionMailEvidence
 from .security_url_evidence import SecurityUrlEvidence
 from .security_user_evidence import SecurityUserEvidence
 from .security_kubernetes_platform import SecurityKubernetesPlatform
-

@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class Windows10SecureAssessmentConfigurationCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class Windows10SecureAssessmentConfigurationCollectionResponse(BaseModel):
 	value: Optional[list[Windows10SecureAssessmentConfiguration]] = Field(alias="value", default=None,)
 
 from .windows10_secure_assessment_configuration import Windows10SecureAssessmentConfiguration
-

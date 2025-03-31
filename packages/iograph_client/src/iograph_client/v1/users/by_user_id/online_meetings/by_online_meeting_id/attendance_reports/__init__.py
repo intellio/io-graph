@@ -14,9 +14,9 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_meeting_attendance_report_id import ByMeetingAttendanceReportIdRequest
 	from .......request_adapter import HttpxRequestAdapter
-from iograph_models.v1.meeting_attendance_report import MeetingAttendanceReport
 from iograph_models.v1.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.v1.meeting_attendance_report_collection_response import MeetingAttendanceReportCollectionResponse
+from iograph_models.v1.meeting_attendance_report import MeetingAttendanceReport
 
 
 class AttendanceReportsRequest(BaseRequestBuilder):

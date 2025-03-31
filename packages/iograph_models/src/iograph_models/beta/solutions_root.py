@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class SolutionsRoot(BaseModel):
@@ -18,4 +18,3 @@ from .booking_business import BookingBusiness
 from .booking_currency import BookingCurrency
 from .business_scenario import BusinessScenario
 from .virtual_events_root import VirtualEventsRoot
-

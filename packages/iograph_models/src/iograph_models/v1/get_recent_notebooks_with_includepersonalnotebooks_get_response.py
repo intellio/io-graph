@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class Get_recent_notebooks_with_includepersonalnotebooksGetResponse(BaseModel):
@@ -9,4 +9,3 @@ class Get_recent_notebooks_with_includepersonalnotebooksGetResponse(BaseModel):
 	value: Optional[list[RecentNotebook]] = Field(alias="value", default=None,)
 
 from .recent_notebook import RecentNotebook
-

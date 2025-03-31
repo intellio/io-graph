@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class RestorePointCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class RestorePointCollectionResponse(BaseModel):
 	value: Optional[list[RestorePoint]] = Field(alias="value", default=None,)
 
 from .restore_point import RestorePoint
-

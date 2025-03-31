@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class EvaluateLabelJobResult(BaseModel):
@@ -12,4 +12,3 @@ class EvaluateLabelJobResult(BaseModel):
 from .responsible_policy import ResponsiblePolicy
 from .responsible_sensitive_type import ResponsibleSensitiveType
 from .matching_label import MatchingLabel
-

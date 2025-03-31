@@ -1,10 +1,10 @@
 from __future__ import annotations
 from typing import Optional
+from datetime import datetime
+from pydantic import BaseModel, Field
 from pydantic import model_validator, ModelWrapValidatorHandler, ValidationError
 from typing_extensions import Self
 from typing import Any
-from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class WindowsUpdatesCatalogEntry(BaseModel):
@@ -24,9 +24,6 @@ class WindowsUpdatesCatalogEntry(BaseModel):
 				return parent_validated_model
 			# get the discriminator value
 			mapping_key = data["@odata.type"]
-			if mapping_key == "#microsoft.graph.windowsUpdates.softwareUpdateCatalogEntry":
-				from .windows_updates_software_update_catalog_entry import WindowsUpdatesSoftwareUpdateCatalogEntry
-				return WindowsUpdatesSoftwareUpdateCatalogEntry.model_validate(data)
 			if mapping_key == "#microsoft.graph.windowsUpdates.driverUpdateCatalogEntry":
 				from .windows_updates_driver_update_catalog_entry import WindowsUpdatesDriverUpdateCatalogEntry
 				return WindowsUpdatesDriverUpdateCatalogEntry.model_validate(data)
@@ -40,5 +37,4 @@ class WindowsUpdatesCatalogEntry(BaseModel):
 
 		except Exception as e:
 			raise e
-
 

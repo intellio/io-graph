@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class IndustryDataReferenceDefinitionCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class IndustryDataReferenceDefinitionCollectionResponse(BaseModel):
 	value: Optional[list[IndustryDataReferenceDefinition]] = Field(alias="value", default=None,)
 
 from .industry_data_reference_definition import IndustryDataReferenceDefinition
-

@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class StopHoldMusicOperationCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class StopHoldMusicOperationCollectionResponse(BaseModel):
 	value: Optional[list[StopHoldMusicOperation]] = Field(alias="value", default=None,)
 
 from .stop_hold_music_operation import StopHoldMusicOperation
-

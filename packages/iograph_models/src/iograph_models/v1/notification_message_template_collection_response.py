@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class NotificationMessageTemplateCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class NotificationMessageTemplateCollectionResponse(BaseModel):
 	value: Optional[list[NotificationMessageTemplate]] = Field(alias="value", default=None,)
 
 from .notification_message_template import NotificationMessageTemplate
-

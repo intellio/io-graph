@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class IndustryDataIndustryDataRunCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class IndustryDataIndustryDataRunCollectionResponse(BaseModel):
 	value: Optional[list[IndustryDataIndustryDataRun]] = Field(alias="value", default=None,)
 
 from .industry_data_industry_data_run import IndustryDataIndustryDataRun
-

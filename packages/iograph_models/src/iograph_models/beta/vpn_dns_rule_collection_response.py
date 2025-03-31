@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class VpnDnsRuleCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class VpnDnsRuleCollectionResponse(BaseModel):
 	value: Optional[list[VpnDnsRule]] = Field(alias="value", default=None,)
 
 from .vpn_dns_rule import VpnDnsRule
-

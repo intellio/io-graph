@@ -1,12 +1,13 @@
 from __future__ import annotations
 from typing import Optional
+from typing import Literal
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class CloudCertificationAuthorityLeafCertificate(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
+	odata_type: Literal["#microsoft.graph.cloudCertificationAuthorityLeafCertificate"] = Field(alias="@odata.type",)
 	certificateStatus: Optional[CloudCertificationAuthorityLeafCertificateStatus | str] = Field(alias="certificateStatus", default=None,)
 	certificationAuthorityIssuerUri: Optional[str] = Field(alias="certificationAuthorityIssuerUri", default=None,)
 	crlDistributionPointUrl: Optional[str] = Field(alias="crlDistributionPointUrl", default=None,)
@@ -28,4 +29,3 @@ class CloudCertificationAuthorityLeafCertificate(BaseModel):
 	validityStartDateTime: Optional[datetime] = Field(alias="validityStartDateTime", default=None,)
 
 from .cloud_certification_authority_leaf_certificate_status import CloudCertificationAuthorityLeafCertificateStatus
-

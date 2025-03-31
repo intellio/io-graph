@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class AssignmentFilterStatusDetails(BaseModel):
@@ -13,4 +13,3 @@ class AssignmentFilterStatusDetails(BaseModel):
 
 from .key_value_pair import KeyValuePair
 from .assignment_filter_evaluation_summary import AssignmentFilterEvaluationSummary
-

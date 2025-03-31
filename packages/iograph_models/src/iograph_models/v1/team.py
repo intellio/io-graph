@@ -1,14 +1,15 @@
 from __future__ import annotations
 from typing import Optional
 from typing import Union
+from typing import Literal
 from typing import Annotated
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class Team(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
+	odata_type: Literal["#microsoft.graph.team"] = Field(alias="@odata.type",)
 	classification: Optional[str] = Field(alias="classification", default=None,)
 	createdDateTime: Optional[datetime] = Field(alias="createdDateTime", default=None,)
 	description: Optional[str] = Field(alias="description", default=None,)
@@ -46,9 +47,7 @@ from .team_specialization import TeamSpecialization
 from .team_summary import TeamSummary
 from .team_visibility_type import TeamVisibilityType
 from .channel import Channel
-from .channel import Channel
 from .group import Group
-from .channel import Channel
 from .user_scope_teams_app_installation import UserScopeTeamsAppInstallation
 from .aad_user_conversation_member import AadUserConversationMember
 from .anonymous_guest_conversation_member import AnonymousGuestConversationMember
@@ -59,8 +58,6 @@ from .skype_user_conversation_member import SkypeUserConversationMember
 from .teams_async_operation import TeamsAsyncOperation
 from .resource_specific_permission_grant import ResourceSpecificPermissionGrant
 from .profile_photo import ProfilePhoto
-from .channel import Channel
 from .schedule import Schedule
 from .teamwork_tag import TeamworkTag
 from .teams_template import TeamsTemplate
-

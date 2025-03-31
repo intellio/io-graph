@@ -2,7 +2,7 @@ from __future__ import annotations
 from typing import Optional
 from typing import Union
 from typing import Annotated
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class DeviceManagementTroubleshootingEventCollectionResponse(BaseModel):
@@ -11,4 +11,3 @@ class DeviceManagementTroubleshootingEventCollectionResponse(BaseModel):
 	value: Optional[list[Annotated[Union[EnrollmentTroubleshootingEvent],Field(discriminator="odata_type")]]] = Field(alias="value", default=None,)
 
 from .enrollment_troubleshooting_event import EnrollmentTroubleshootingEvent
-

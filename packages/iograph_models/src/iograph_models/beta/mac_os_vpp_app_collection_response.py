@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class MacOsVppAppCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class MacOsVppAppCollectionResponse(BaseModel):
 	value: Optional[list[MacOsVppApp]] = Field(alias="value", default=None,)
 
 from .mac_os_vpp_app import MacOsVppApp
-

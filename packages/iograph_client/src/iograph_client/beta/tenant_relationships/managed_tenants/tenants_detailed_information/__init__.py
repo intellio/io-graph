@@ -14,9 +14,9 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_tenant_detailed_information_id import ByTenantDetailedInformationIdRequest
 	from .....request_adapter import HttpxRequestAdapter
-from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.beta.managed_tenants_tenant_detailed_information_collection_response import ManagedTenantsTenantDetailedInformationCollectionResponse
 from iograph_models.beta.managed_tenants_tenant_detailed_information import ManagedTenantsTenantDetailedInformation
+from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 
 
 class TenantsDetailedInformationRequest(BaseRequestBuilder):

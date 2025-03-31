@@ -1,7 +1,7 @@
 from __future__ import annotations
 from typing import Optional
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class ZebraFotaDeploymentStatus(BaseModel):
@@ -24,4 +24,3 @@ class ZebraFotaDeploymentStatus(BaseModel):
 
 from .zebra_fota_error_code import ZebraFotaErrorCode
 from .zebra_fota_deployment_state import ZebraFotaDeploymentState
-

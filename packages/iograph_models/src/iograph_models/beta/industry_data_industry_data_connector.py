@@ -1,9 +1,9 @@
 from __future__ import annotations
 from typing import Optional
+from pydantic import BaseModel, Field
 from pydantic import model_validator, ModelWrapValidatorHandler, ValidationError
 from typing_extensions import Self
 from typing import Any
-from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class IndustryDataIndustryDataConnector(BaseModel):
@@ -22,15 +22,9 @@ class IndustryDataIndustryDataConnector(BaseModel):
 				return parent_validated_model
 			# get the discriminator value
 			mapping_key = data["@odata.type"]
-			if mapping_key == "#microsoft.graph.industryData.apiDataConnector":
-				from .industry_data_api_data_connector import IndustryDataApiDataConnector
-				return IndustryDataApiDataConnector.model_validate(data)
 			if mapping_key == "#microsoft.graph.industryData.oneRosterApiDataConnector":
 				from .industry_data_one_roster_api_data_connector import IndustryDataOneRosterApiDataConnector
 				return IndustryDataOneRosterApiDataConnector.model_validate(data)
-			if mapping_key == "#microsoft.graph.industryData.fileDataConnector":
-				from .industry_data_file_data_connector import IndustryDataFileDataConnector
-				return IndustryDataFileDataConnector.model_validate(data)
 			if mapping_key == "#microsoft.graph.industryData.azureDataLakeConnector":
 				from .industry_data_azure_data_lake_connector import IndustryDataAzureDataLakeConnector
 				return IndustryDataAzureDataLakeConnector.model_validate(data)
@@ -40,4 +34,3 @@ class IndustryDataIndustryDataConnector(BaseModel):
 			raise e
 
 from .industry_data_source_system_definition import IndustryDataSourceSystemDefinition
-

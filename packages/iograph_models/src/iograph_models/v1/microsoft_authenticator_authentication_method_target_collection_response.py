@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class MicrosoftAuthenticatorAuthenticationMethodTargetCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class MicrosoftAuthenticatorAuthenticationMethodTargetCollectionResponse(BaseMod
 	value: Optional[list[MicrosoftAuthenticatorAuthenticationMethodTarget]] = Field(alias="value", default=None,)
 
 from .microsoft_authenticator_authentication_method_target import MicrosoftAuthenticatorAuthenticationMethodTarget
-

@@ -1,15 +1,16 @@
 from __future__ import annotations
 from typing import Optional
 from typing import Union
-from pydantic import BaseModel, Field, SerializeAsAny
+from typing import Literal
+from pydantic import BaseModel, Field
 
 
 class MobileAppAssignment(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
+	odata_type: Literal["#microsoft.graph.mobileAppAssignment"] = Field(alias="@odata.type",)
 	intent: Optional[InstallIntent | str] = Field(alias="intent", default=None,)
 	settings: Optional[Union[IosLobAppAssignmentSettings, IosStoreAppAssignmentSettings, IosVppAppAssignmentSettings, MacOsLobAppAssignmentSettings, MicrosoftStoreForBusinessAppAssignmentSettings, Win32LobAppAssignmentSettings, WindowsAppXAppAssignmentSettings, WindowsUniversalAppXAppAssignmentSettings]] = Field(alias="settings", default=None,discriminator="odata_type", )
-	target: Optional[Union[AllDevicesAssignmentTarget, AllLicensedUsersAssignmentTarget, ConfigurationManagerCollectionAssignmentTarget, GroupAssignmentTarget, ExclusionGroupAssignmentTarget]] = Field(alias="target", default=None,discriminator="odata_type", )
+	target: Optional[Union[AllDevicesAssignmentTarget, AllLicensedUsersAssignmentTarget, ConfigurationManagerCollectionAssignmentTarget, ExclusionGroupAssignmentTarget]] = Field(alias="target", default=None,discriminator="odata_type", )
 
 from .install_intent import InstallIntent
 from .ios_lob_app_assignment_settings import IosLobAppAssignmentSettings
@@ -23,6 +24,4 @@ from .windows_universal_app_x_app_assignment_settings import WindowsUniversalApp
 from .all_devices_assignment_target import AllDevicesAssignmentTarget
 from .all_licensed_users_assignment_target import AllLicensedUsersAssignmentTarget
 from .configuration_manager_collection_assignment_target import ConfigurationManagerCollectionAssignmentTarget
-from .group_assignment_target import GroupAssignmentTarget
 from .exclusion_group_assignment_target import ExclusionGroupAssignmentTarget
-

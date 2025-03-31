@@ -1,7 +1,8 @@
 from __future__ import annotations
 from typing import Optional
+from typing import Literal
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class CallRecordsSmsLogRow(BaseModel):
@@ -11,7 +12,7 @@ class CallRecordsSmsLogRow(BaseModel):
 	userDisplayName: Optional[str] = Field(alias="userDisplayName", default=None,)
 	userId: Optional[str] = Field(alias="userId", default=None,)
 	userPrincipalName: Optional[str] = Field(alias="userPrincipalName", default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
+	odata_type: Literal["#microsoft.graph.callRecords.smsLogRow"] = Field(alias="@odata.type",)
 	callCharge: Optional[int] = Field(alias="callCharge", default=None,)
 	currency: Optional[str] = Field(alias="currency", default=None,)
 	destinationContext: Optional[str] = Field(alias="destinationContext", default=None,)
@@ -27,4 +28,3 @@ class CallRecordsSmsLogRow(BaseModel):
 	userCountryCode: Optional[str] = Field(alias="userCountryCode", default=None,)
 
 from .call_records_administrative_unit_info import CallRecordsAdministrativeUnitInfo
-

@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class UserFlowLanguageConfigurationCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class UserFlowLanguageConfigurationCollectionResponse(BaseModel):
 	value: Optional[list[UserFlowLanguageConfiguration]] = Field(alias="value", default=None,)
 
 from .user_flow_language_configuration import UserFlowLanguageConfiguration
-

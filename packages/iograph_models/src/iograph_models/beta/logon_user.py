@@ -1,7 +1,7 @@
 from __future__ import annotations
 from typing import Optional
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class LogonUser(BaseModel):
@@ -16,4 +16,3 @@ class LogonUser(BaseModel):
 
 from .user_account_security_type import UserAccountSecurityType
 from .logon_type import LogonType
-

@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class Windows10EndpointProtectionConfigurationCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class Windows10EndpointProtectionConfigurationCollectionResponse(BaseModel):
 	value: Optional[list[Windows10EndpointProtectionConfiguration]] = Field(alias="value", default=None,)
 
 from .windows10_endpoint_protection_configuration import Windows10EndpointProtectionConfiguration
-

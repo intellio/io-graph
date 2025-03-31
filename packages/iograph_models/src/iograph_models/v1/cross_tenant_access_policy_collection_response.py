@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class CrossTenantAccessPolicyCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class CrossTenantAccessPolicyCollectionResponse(BaseModel):
 	value: Optional[list[CrossTenantAccessPolicy]] = Field(alias="value", default=None,)
 
 from .cross_tenant_access_policy import CrossTenantAccessPolicy
-

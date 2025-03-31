@@ -2,7 +2,7 @@ from __future__ import annotations
 from typing import Optional
 from typing import Union
 from typing import Annotated
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class AccessReviewStageSettings(BaseModel):
@@ -19,5 +19,3 @@ class AccessReviewStageSettings(BaseModel):
 from .access_review_reviewer_scope import AccessReviewReviewerScope
 from .group_peer_outlier_recommendation_insight_settings import GroupPeerOutlierRecommendationInsightSettings
 from .user_last_sign_in_recommendation_insight_setting import UserLastSignInRecommendationInsightSetting
-from .access_review_reviewer_scope import AccessReviewReviewerScope
-

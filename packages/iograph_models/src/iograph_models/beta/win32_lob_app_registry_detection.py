@@ -1,7 +1,7 @@
 from __future__ import annotations
 from typing import Optional
 from typing import Literal
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class Win32LobAppRegistryDetection(BaseModel):
@@ -15,4 +15,3 @@ class Win32LobAppRegistryDetection(BaseModel):
 
 from .win32_lob_app_registry_detection_type import Win32LobAppRegistryDetectionType
 from .win32_lob_app_detection_operator import Win32LobAppDetectionOperator
-

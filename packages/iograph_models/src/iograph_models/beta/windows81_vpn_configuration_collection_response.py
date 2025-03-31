@@ -2,7 +2,7 @@ from __future__ import annotations
 from typing import Optional
 from typing import Union
 from typing import Annotated
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class Windows81VpnConfigurationCollectionResponse(BaseModel):
@@ -11,4 +11,3 @@ class Windows81VpnConfigurationCollectionResponse(BaseModel):
 	value: Optional[list[Annotated[Union[WindowsPhone81VpnConfiguration],Field(discriminator="odata_type")]]] = Field(alias="value", default=None,)
 
 from .windows_phone81_vpn_configuration import WindowsPhone81VpnConfiguration
-

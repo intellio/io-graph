@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class AndroidDeviceOwnerGeneralDeviceConfigurationCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class AndroidDeviceOwnerGeneralDeviceConfigurationCollectionResponse(BaseModel):
 	value: Optional[list[AndroidDeviceOwnerGeneralDeviceConfiguration]] = Field(alias="value", default=None,)
 
 from .android_device_owner_general_device_configuration import AndroidDeviceOwnerGeneralDeviceConfiguration
-

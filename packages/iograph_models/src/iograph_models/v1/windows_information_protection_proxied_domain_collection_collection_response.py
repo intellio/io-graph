@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class WindowsInformationProtectionProxiedDomainCollectionCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class WindowsInformationProtectionProxiedDomainCollectionCollectionResponse(Base
 	value: Optional[list[WindowsInformationProtectionProxiedDomainCollection]] = Field(alias="value", default=None,)
 
 from .windows_information_protection_proxied_domain_collection import WindowsInformationProtectionProxiedDomainCollection
-

@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class SharingDetailCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class SharingDetailCollectionResponse(BaseModel):
 	value: Optional[list[SharingDetail]] = Field(alias="value", default=None,)
 
 from .sharing_detail import SharingDetail
-

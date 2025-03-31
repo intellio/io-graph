@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class SchemaExtensionCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class SchemaExtensionCollectionResponse(BaseModel):
 	value: Optional[list[SchemaExtension]] = Field(alias="value", default=None,)
 
 from .schema_extension import SchemaExtension
-

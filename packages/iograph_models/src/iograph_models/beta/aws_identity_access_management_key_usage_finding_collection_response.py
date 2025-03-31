@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class AwsIdentityAccessManagementKeyUsageFindingCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class AwsIdentityAccessManagementKeyUsageFindingCollectionResponse(BaseModel):
 	value: Optional[list[AwsIdentityAccessManagementKeyUsageFinding]] = Field(alias="value", default=None,)
 
 from .aws_identity_access_management_key_usage_finding import AwsIdentityAccessManagementKeyUsageFinding
-

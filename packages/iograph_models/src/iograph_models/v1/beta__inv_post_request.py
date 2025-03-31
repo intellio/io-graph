@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class Beta__invPostRequest(BaseModel):
@@ -9,5 +9,4 @@ class Beta__invPostRequest(BaseModel):
 	beta: Optional[str] = Field(alias="beta", default=None,)
 	A: Optional[str] = Field(alias="A", default=None,)
 	B: Optional[str] = Field(alias="B", default=None,)
-
 

@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class ParseExpressionResponse(BaseModel):
@@ -13,4 +13,3 @@ class ParseExpressionResponse(BaseModel):
 
 from .public_error import PublicError
 from .attribute_mapping_source import AttributeMappingSource
-

@@ -1,12 +1,13 @@
 from __future__ import annotations
 from typing import Optional
+from typing import Literal
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class ManagedTenantsDeviceAppPerformance(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
+	odata_type: Literal["#microsoft.graph.managedTenants.deviceAppPerformance"] = Field(alias="@odata.type",)
 	appFriendlyName: Optional[str] = Field(alias="appFriendlyName", default=None,)
 	appName: Optional[str] = Field(alias="appName", default=None,)
 	appPublisher: Optional[str] = Field(alias="appPublisher", default=None,)
@@ -23,5 +24,4 @@ class ManagedTenantsDeviceAppPerformance(BaseModel):
 	tenantId: Optional[str] = Field(alias="tenantId", default=None,)
 	totalAppCrashCount: Optional[int] = Field(alias="totalAppCrashCount", default=None,)
 	totalAppFreezeCount: Optional[int] = Field(alias="totalAppFreezeCount", default=None,)
-
 

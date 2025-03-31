@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class ManagedTenantsDeviceHealthStatusCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class ManagedTenantsDeviceHealthStatusCollectionResponse(BaseModel):
 	value: Optional[list[ManagedTenantsDeviceHealthStatus]] = Field(alias="value", default=None,)
 
 from .managed_tenants_device_health_status import ManagedTenantsDeviceHealthStatus
-

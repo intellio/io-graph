@@ -2,7 +2,7 @@ from __future__ import annotations
 from typing import Optional
 from typing import Union
 from typing import Annotated
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class DeviceManagementTroubleshootingEventCollectionResponse(BaseModel):
@@ -13,4 +13,3 @@ class DeviceManagementTroubleshootingEventCollectionResponse(BaseModel):
 from .apple_vpp_token_troubleshooting_event import AppleVppTokenTroubleshootingEvent
 from .enrollment_troubleshooting_event import EnrollmentTroubleshootingEvent
 from .mobile_app_troubleshooting_event import MobileAppTroubleshootingEvent
-

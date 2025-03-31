@@ -2,7 +2,7 @@ from __future__ import annotations
 from typing import Optional
 from typing import Union
 from typing import Annotated
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class NetworkaccessFilteringRuleCollectionResponse(BaseModel):
@@ -12,4 +12,3 @@ class NetworkaccessFilteringRuleCollectionResponse(BaseModel):
 
 from .networkaccess_fqdn_filtering_rule import NetworkaccessFqdnFilteringRule
 from .networkaccess_web_category_filtering_rule import NetworkaccessWebCategoryFilteringRule
-

@@ -1,7 +1,7 @@
 from __future__ import annotations
 from typing import Optional
 from typing import Literal
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class PositiveReinforcementNotification(BaseModel):
@@ -12,4 +12,3 @@ class PositiveReinforcementNotification(BaseModel):
 
 from .end_user_notification import EndUserNotification
 from .notification_delivery_preference import NotificationDeliveryPreference
-

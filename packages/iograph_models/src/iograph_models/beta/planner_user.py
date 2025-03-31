@@ -1,16 +1,17 @@
 from __future__ import annotations
 from typing import Optional
 from typing import Union
+from typing import Literal
 from typing import Annotated
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class PlannerUser(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
+	odata_type: Literal["#microsoft.graph.plannerUser"] = Field(alias="@odata.type",)
 	favoritePlanReferences: Optional[PlannerFavoritePlanReferenceCollection] = Field(alias="favoritePlanReferences", default=None,)
 	recentPlanReferences: Optional[PlannerRecentPlanReferenceCollection] = Field(alias="recentPlanReferences", default=None,)
-	all: Optional[list[Annotated[Union[PlannerAssignedToTaskBoardTaskFormat, PlannerBucket, PlannerBucketTaskBoardTaskFormat, PlannerPlan, PlannerPlanDetails, PlannerProgressTaskBoardTaskFormat, PlannerTask, BusinessScenarioTask, PlannerTaskDetails, PlannerUser],Field(discriminator="odata_type")]]] = Field(alias="all", default=None,)
+	all: Optional[list[Annotated[Union[PlannerAssignedToTaskBoardTaskFormat, PlannerBucket, PlannerBucketTaskBoardTaskFormat, PlannerPlan, PlannerPlanDetails, PlannerProgressTaskBoardTaskFormat, BusinessScenarioTask, PlannerTaskDetails, PlannerUser],Field(discriminator="odata_type")]]] = Field(alias="all", default=None,)
 	favoritePlans: Optional[list[PlannerPlan]] = Field(alias="favoritePlans", default=None,)
 	myDayTasks: Optional[list[Annotated[Union[BusinessScenarioTask],Field(discriminator="odata_type")]]] = Field(alias="myDayTasks", default=None,)
 	plans: Optional[list[PlannerPlan]] = Field(alias="plans", default=None,)
@@ -26,13 +27,5 @@ from .planner_bucket_task_board_task_format import PlannerBucketTaskBoardTaskFor
 from .planner_plan import PlannerPlan
 from .planner_plan_details import PlannerPlanDetails
 from .planner_progress_task_board_task_format import PlannerProgressTaskBoardTaskFormat
-from .planner_task import PlannerTask
 from .business_scenario_task import BusinessScenarioTask
 from .planner_task_details import PlannerTaskDetails
-from .planner_plan import PlannerPlan
-from .business_scenario_task import BusinessScenarioTask
-from .planner_plan import PlannerPlan
-from .planner_plan import PlannerPlan
-from .planner_plan import PlannerPlan
-from .business_scenario_task import BusinessScenarioTask
-

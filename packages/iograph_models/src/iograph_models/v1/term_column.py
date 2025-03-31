@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class TermColumn(BaseModel):
@@ -12,4 +12,3 @@ class TermColumn(BaseModel):
 
 from .term_store_term import TermStoreTerm
 from .term_store_set import TermStoreSet
-

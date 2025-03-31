@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class SecurityToolAwsUserAdministratorFindingCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class SecurityToolAwsUserAdministratorFindingCollectionResponse(BaseModel):
 	value: Optional[list[SecurityToolAwsUserAdministratorFinding]] = Field(alias="value", default=None,)
 
 from .security_tool_aws_user_administrator_finding import SecurityToolAwsUserAdministratorFinding
-

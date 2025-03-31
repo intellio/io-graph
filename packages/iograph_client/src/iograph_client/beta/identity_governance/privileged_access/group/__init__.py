@@ -18,8 +18,8 @@ if TYPE_CHECKING:
 	from .assignment_schedule_instances import AssignmentScheduleInstancesRequest
 	from .assignment_approvals import AssignmentApprovalsRequest
 	from .....request_adapter import HttpxRequestAdapter
-from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.beta.privileged_access_group import PrivilegedAccessGroup
+from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 
 
 class GroupRequest(BaseRequestBuilder):

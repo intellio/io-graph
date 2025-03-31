@@ -1,7 +1,7 @@
 from __future__ import annotations
 from uuid import UUID
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class AppRole(BaseModel):
@@ -13,5 +13,4 @@ class AppRole(BaseModel):
 	origin: Optional[str] = Field(alias="origin", default=None,)
 	value: Optional[str] = Field(alias="value", default=None,)
 	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
-
 

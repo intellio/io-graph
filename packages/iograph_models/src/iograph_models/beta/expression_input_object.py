@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class ExpressionInputObject(BaseModel):
@@ -10,4 +10,3 @@ class ExpressionInputObject(BaseModel):
 
 from .object_definition import ObjectDefinition
 from .string_key_object_value_pair import StringKeyObjectValuePair
-

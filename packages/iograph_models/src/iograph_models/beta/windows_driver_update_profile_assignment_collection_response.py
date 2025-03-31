@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class WindowsDriverUpdateProfileAssignmentCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class WindowsDriverUpdateProfileAssignmentCollectionResponse(BaseModel):
 	value: Optional[list[WindowsDriverUpdateProfileAssignment]] = Field(alias="value", default=None,)
 
 from .windows_driver_update_profile_assignment import WindowsDriverUpdateProfileAssignment
-

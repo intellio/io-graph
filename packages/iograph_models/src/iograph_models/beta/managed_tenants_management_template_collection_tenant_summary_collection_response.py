@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class ManagedTenantsManagementTemplateCollectionTenantSummaryCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class ManagedTenantsManagementTemplateCollectionTenantSummaryCollectionResponse(
 	value: Optional[list[ManagedTenantsManagementTemplateCollectionTenantSummary]] = Field(alias="value", default=None,)
 
 from .managed_tenants_management_template_collection_tenant_summary import ManagedTenantsManagementTemplateCollectionTenantSummary
-

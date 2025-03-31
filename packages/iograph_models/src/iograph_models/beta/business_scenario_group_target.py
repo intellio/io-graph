@@ -1,7 +1,7 @@
 from __future__ import annotations
 from typing import Optional
 from typing import Literal
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class BusinessScenarioGroupTarget(BaseModel):
@@ -10,4 +10,3 @@ class BusinessScenarioGroupTarget(BaseModel):
 	groupId: Optional[str] = Field(alias="groupId", default=None,)
 
 from .planner_task_target_kind import PlannerTaskTargetKind
-

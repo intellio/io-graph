@@ -1,7 +1,7 @@
 from __future__ import annotations
 from typing import Optional
 from typing import Literal
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class VirtualEventRegistrationPredefinedQuestion(BaseModel):
@@ -12,4 +12,3 @@ class VirtualEventRegistrationPredefinedQuestion(BaseModel):
 	label: Optional[VirtualEventRegistrationPredefinedQuestionLabel | str] = Field(alias="label", default=None,)
 
 from .virtual_event_registration_predefined_question_label import VirtualEventRegistrationPredefinedQuestionLabel
-

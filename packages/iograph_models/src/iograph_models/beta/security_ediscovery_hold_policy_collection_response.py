@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class SecurityEdiscoveryHoldPolicyCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class SecurityEdiscoveryHoldPolicyCollectionResponse(BaseModel):
 	value: Optional[list[SecurityEdiscoveryHoldPolicy]] = Field(alias="value", default=None,)
 
 from .security_ediscovery_hold_policy import SecurityEdiscoveryHoldPolicy
-

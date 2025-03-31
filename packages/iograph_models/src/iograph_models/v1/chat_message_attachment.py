@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class ChatMessageAttachment(BaseModel):
@@ -12,5 +12,4 @@ class ChatMessageAttachment(BaseModel):
 	teamsAppId: Optional[str] = Field(alias="teamsAppId", default=None,)
 	thumbnailUrl: Optional[str] = Field(alias="thumbnailUrl", default=None,)
 	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
-
 

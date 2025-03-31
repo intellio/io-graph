@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class SuperServerlessFunctionFindingCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class SuperServerlessFunctionFindingCollectionResponse(BaseModel):
 	value: Optional[list[SuperServerlessFunctionFinding]] = Field(alias="value", default=None,)
 
 from .super_serverless_function_finding import SuperServerlessFunctionFinding
-

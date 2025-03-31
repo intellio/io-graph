@@ -2,7 +2,7 @@ from __future__ import annotations
 from typing import Optional
 from typing import Union
 from typing import Annotated
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class BaseSitePageCollectionResponse(BaseModel):
@@ -14,4 +14,3 @@ from .news_link_page import NewsLinkPage
 from .page_template import PageTemplate
 from .site_page import SitePage
 from .video_news_link_page import VideoNewsLinkPage
-

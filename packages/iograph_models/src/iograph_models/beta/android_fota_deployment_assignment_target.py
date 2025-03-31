@@ -1,7 +1,7 @@
 from __future__ import annotations
 from typing import Optional
 from typing import Literal
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class AndroidFotaDeploymentAssignmentTarget(BaseModel):
@@ -11,4 +11,3 @@ class AndroidFotaDeploymentAssignmentTarget(BaseModel):
 	groupId: Optional[str] = Field(alias="groupId", default=None,)
 
 from .device_and_app_management_assignment_filter_type import DeviceAndAppManagementAssignmentFilterType
-

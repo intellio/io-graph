@@ -1,11 +1,12 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from typing import Literal
+from pydantic import BaseModel, Field
 
 
 class GroupPolicySettingMapping(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
+	odata_type: Literal["#microsoft.graph.groupPolicySettingMapping"] = Field(alias="@odata.type",)
 	admxSettingDefinitionId: Optional[str] = Field(alias="admxSettingDefinitionId", default=None,)
 	childIdList: Optional[list[str]] = Field(alias="childIdList", default=None,)
 	intuneSettingDefinitionId: Optional[str] = Field(alias="intuneSettingDefinitionId", default=None,)
@@ -30,4 +31,3 @@ class GroupPolicySettingMapping(BaseModel):
 from .mdm_supported_state import MdmSupportedState
 from .group_policy_setting_scope import GroupPolicySettingScope
 from .group_policy_setting_type import GroupPolicySettingType
-

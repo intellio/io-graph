@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class Windows10EnrollmentCompletionPageConfigurationCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class Windows10EnrollmentCompletionPageConfigurationCollectionResponse(BaseModel
 	value: Optional[list[Windows10EnrollmentCompletionPageConfiguration]] = Field(alias="value", default=None,)
 
 from .windows10_enrollment_completion_page_configuration import Windows10EnrollmentCompletionPageConfiguration
-

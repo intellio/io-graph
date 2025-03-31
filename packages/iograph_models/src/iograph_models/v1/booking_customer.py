@@ -2,7 +2,7 @@ from __future__ import annotations
 from typing import Optional
 from typing import Literal
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class BookingCustomer(BaseModel):
@@ -17,4 +17,3 @@ class BookingCustomer(BaseModel):
 
 from .physical_address import PhysicalAddress
 from .phone import Phone
-

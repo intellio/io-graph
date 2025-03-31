@@ -14,8 +14,8 @@ if TYPE_CHECKING:
 	from .presentation_values import PresentationValuesRequest
 	from .definition import DefinitionRequest
 	from .......request_adapter import HttpxRequestAdapter
-from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.beta.group_policy_definition_value import GroupPolicyDefinitionValue
+from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 
 
 class ByGroupPolicyDefinitionValueIdRequest(BaseRequestBuilder):

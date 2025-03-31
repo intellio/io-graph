@@ -3,7 +3,7 @@ from typing import Optional
 from typing import Union
 from typing import Literal
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class NetworkaccessFilteringPolicyLink(BaseModel):
@@ -20,5 +20,3 @@ class NetworkaccessFilteringPolicyLink(BaseModel):
 from .networkaccess_status import NetworkaccessStatus
 from .networkaccess_filtering_policy import NetworkaccessFilteringPolicy
 from .networkaccess_forwarding_policy import NetworkaccessForwardingPolicy
-from .networkaccess_status import NetworkaccessStatus
-

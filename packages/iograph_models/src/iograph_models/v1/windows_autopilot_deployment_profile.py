@@ -1,12 +1,13 @@
 from __future__ import annotations
 from typing import Optional
+from typing import Literal
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class WindowsAutopilotDeploymentProfile(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
+	odata_type: Literal["#microsoft.graph.windowsAutopilotDeploymentProfile"] = Field(alias="@odata.type",)
 	createdDateTime: Optional[datetime] = Field(alias="createdDateTime", default=None,)
 	description: Optional[str] = Field(alias="description", default=None,)
 	deviceNameTemplate: Optional[str] = Field(alias="deviceNameTemplate", default=None,)
@@ -24,4 +25,3 @@ class WindowsAutopilotDeploymentProfile(BaseModel):
 from .windows_autopilot_device_type import WindowsAutopilotDeviceType
 from .out_of_box_experience_setting import OutOfBoxExperienceSetting
 from .windows_autopilot_device_identity import WindowsAutopilotDeviceIdentity
-

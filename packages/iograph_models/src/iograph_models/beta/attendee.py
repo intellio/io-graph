@@ -2,7 +2,7 @@ from __future__ import annotations
 from typing import Optional
 from typing import Union
 from typing import Literal
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class Attendee(BaseModel):
@@ -16,4 +16,3 @@ from .typed_email_address import TypedEmailAddress
 from .attendee_type import AttendeeType
 from .time_slot import TimeSlot
 from .response_status import ResponseStatus
-

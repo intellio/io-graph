@@ -1,12 +1,13 @@
 from __future__ import annotations
 from typing import Optional
+from typing import Literal
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class ResellerDelegatedAdminRelationship(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
+	odata_type: Literal["#microsoft.graph.resellerDelegatedAdminRelationship"] = Field(alias="@odata.type",)
 	accessDetails: Optional[DelegatedAdminAccessDetails] = Field(alias="accessDetails", default=None,)
 	activatedDateTime: Optional[datetime] = Field(alias="activatedDateTime", default=None,)
 	autoExtendDuration: Optional[str] = Field(alias="autoExtendDuration", default=None,)
@@ -29,4 +30,3 @@ from .delegated_admin_relationship_status import DelegatedAdminRelationshipStatu
 from .delegated_admin_access_assignment import DelegatedAdminAccessAssignment
 from .delegated_admin_relationship_operation import DelegatedAdminRelationshipOperation
 from .delegated_admin_relationship_request import DelegatedAdminRelationshipRequest
-

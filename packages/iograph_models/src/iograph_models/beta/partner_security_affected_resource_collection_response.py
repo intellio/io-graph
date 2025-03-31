@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class PartnerSecurityAffectedResourceCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class PartnerSecurityAffectedResourceCollectionResponse(BaseModel):
 	value: Optional[list[PartnerSecurityAffectedResource]] = Field(alias="value", default=None,)
 
 from .partner_security_affected_resource import PartnerSecurityAffectedResource
-

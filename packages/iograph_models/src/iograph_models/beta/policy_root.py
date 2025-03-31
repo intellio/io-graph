@@ -1,13 +1,14 @@
 from __future__ import annotations
 from typing import Optional
 from typing import Union
+from typing import Literal
 from typing import Annotated
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class PolicyRoot(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
+	odata_type: Literal["#microsoft.graph.policyRoot"] = Field(alias="@odata.type",)
 	accessReviewPolicy: Optional[AccessReviewPolicy] = Field(alias="accessReviewPolicy", default=None,)
 	activityBasedTimeoutPolicies: Optional[list[ActivityBasedTimeoutPolicy]] = Field(alias="activityBasedTimeoutPolicies", default=None,)
 	adminConsentRequestPolicy: Optional[AdminConsentRequestPolicy] = Field(alias="adminConsentRequestPolicy", default=None,)
@@ -59,7 +60,6 @@ from .federated_token_validation_policy import FederatedTokenValidationPolicy
 from .home_realm_discovery_policy import HomeRealmDiscoveryPolicy
 from .identity_security_defaults_enforcement_policy import IdentitySecurityDefaultsEnforcementPolicy
 from .mobility_management_policy import MobilityManagementPolicy
-from .mobility_management_policy import MobilityManagementPolicy
 from .permission_grant_policy import PermissionGrantPolicy
 from .permission_grant_pre_approval_policy import PermissionGrantPreApprovalPolicy
 from .unified_role_management_policy import UnifiedRoleManagementPolicy
@@ -67,4 +67,3 @@ from .unified_role_management_policy_assignment import UnifiedRoleManagementPoli
 from .service_principal_creation_policy import ServicePrincipalCreationPolicy
 from .token_issuance_policy import TokenIssuancePolicy
 from .token_lifetime_policy import TokenLifetimePolicy
-

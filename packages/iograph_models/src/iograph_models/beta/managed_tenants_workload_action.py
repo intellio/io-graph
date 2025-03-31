@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class ManagedTenantsWorkloadAction(BaseModel):
@@ -15,4 +15,3 @@ class ManagedTenantsWorkloadAction(BaseModel):
 
 from .managed_tenants_workload_action_category import ManagedTenantsWorkloadActionCategory
 from .managed_tenants_setting import ManagedTenantsSetting
-

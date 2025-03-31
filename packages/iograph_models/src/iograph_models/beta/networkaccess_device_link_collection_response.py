@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class NetworkaccessDeviceLinkCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class NetworkaccessDeviceLinkCollectionResponse(BaseModel):
 	value: Optional[list[NetworkaccessDeviceLink]] = Field(alias="value", default=None,)
 
 from .networkaccess_device_link import NetworkaccessDeviceLink
-

@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class StopRecordingOperationCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class StopRecordingOperationCollectionResponse(BaseModel):
 	value: Optional[list[StopRecordingOperation]] = Field(alias="value", default=None,)
 
 from .stop_recording_operation import StopRecordingOperation
-

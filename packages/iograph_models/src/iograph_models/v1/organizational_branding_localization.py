@@ -1,7 +1,7 @@
 from __future__ import annotations
 from typing import Optional
 from typing import Literal
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class OrganizationalBrandingLocalization(BaseModel):
@@ -42,4 +42,3 @@ class OrganizationalBrandingLocalization(BaseModel):
 from .content_customization import ContentCustomization
 from .login_page_layout_configuration import LoginPageLayoutConfiguration
 from .login_page_text_visibility_settings import LoginPageTextVisibilitySettings
-

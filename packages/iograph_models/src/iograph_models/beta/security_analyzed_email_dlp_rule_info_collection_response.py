@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class SecurityAnalyzedEmailDlpRuleInfoCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class SecurityAnalyzedEmailDlpRuleInfoCollectionResponse(BaseModel):
 	value: Optional[list[SecurityAnalyzedEmailDlpRuleInfo]] = Field(alias="value", default=None,)
 
 from .security_analyzed_email_dlp_rule_info import SecurityAnalyzedEmailDlpRuleInfo
-

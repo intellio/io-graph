@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class RemoteActionAuditCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class RemoteActionAuditCollectionResponse(BaseModel):
 	value: Optional[list[RemoteActionAudit]] = Field(alias="value", default=None,)
 
 from .remote_action_audit import RemoteActionAudit
-

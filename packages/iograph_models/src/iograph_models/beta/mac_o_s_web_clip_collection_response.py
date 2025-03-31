@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class MacOSWebClipCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class MacOSWebClipCollectionResponse(BaseModel):
 	value: Optional[list[MacOSWebClip]] = Field(alias="value", default=None,)
 
 from .mac_o_s_web_clip import MacOSWebClip
-

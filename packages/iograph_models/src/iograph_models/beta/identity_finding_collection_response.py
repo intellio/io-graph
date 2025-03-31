@@ -2,7 +2,7 @@ from __future__ import annotations
 from typing import Optional
 from typing import Union
 from typing import Annotated
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class IdentityFindingCollectionResponse(BaseModel):
@@ -29,4 +29,3 @@ from .super_gcp_service_account_finding import SuperGcpServiceAccountFinding
 from .super_serverless_function_finding import SuperServerlessFunctionFinding
 from .super_user_finding import SuperUserFinding
 from .unenforced_mfa_aws_user_finding import UnenforcedMfaAwsUserFinding
-

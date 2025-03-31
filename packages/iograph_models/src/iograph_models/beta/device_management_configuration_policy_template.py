@@ -1,11 +1,12 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from typing import Literal
+from pydantic import BaseModel, Field
 
 
 class DeviceManagementConfigurationPolicyTemplate(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
+	odata_type: Literal["#microsoft.graph.deviceManagementConfigurationPolicyTemplate"] = Field(alias="@odata.type",)
 	allowUnmanagedSettings: Optional[bool] = Field(alias="allowUnmanagedSettings", default=None,)
 	baseId: Optional[str] = Field(alias="baseId", default=None,)
 	description: Optional[str] = Field(alias="description", default=None,)
@@ -24,4 +25,3 @@ from .device_management_configuration_platforms import DeviceManagementConfigura
 from .device_management_configuration_technologies import DeviceManagementConfigurationTechnologies
 from .device_management_configuration_template_family import DeviceManagementConfigurationTemplateFamily
 from .device_management_configuration_setting_template import DeviceManagementConfigurationSettingTemplate
-

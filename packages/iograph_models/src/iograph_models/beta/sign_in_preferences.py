@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class SignInPreferences(BaseModel):
@@ -9,4 +9,3 @@ class SignInPreferences(BaseModel):
 	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
 
 from .user_default_authentication_method_type import UserDefaultAuthenticationMethodType
-

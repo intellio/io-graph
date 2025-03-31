@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class UserExperienceAnalyticsWorkFromAnywhereMetricCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class UserExperienceAnalyticsWorkFromAnywhereMetricCollectionResponse(BaseModel)
 	value: Optional[list[UserExperienceAnalyticsWorkFromAnywhereMetric]] = Field(alias="value", default=None,)
 
 from .user_experience_analytics_work_from_anywhere_metric import UserExperienceAnalyticsWorkFromAnywhereMetric
-

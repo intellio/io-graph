@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class SecurityWhoisRecordCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class SecurityWhoisRecordCollectionResponse(BaseModel):
 	value: Optional[list[SecurityWhoisRecord]] = Field(alias="value", default=None,)
 
 from .security_whois_record import SecurityWhoisRecord
-

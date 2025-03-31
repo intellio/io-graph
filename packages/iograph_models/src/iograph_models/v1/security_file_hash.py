@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class SecurityFileHash(BaseModel):
@@ -9,4 +9,3 @@ class SecurityFileHash(BaseModel):
 	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
 
 from .security_file_hash_algorithm import SecurityFileHashAlgorithm
-

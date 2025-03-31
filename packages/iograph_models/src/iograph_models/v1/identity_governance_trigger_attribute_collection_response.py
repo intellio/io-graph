@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class IdentityGovernanceTriggerAttributeCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class IdentityGovernanceTriggerAttributeCollectionResponse(BaseModel):
 	value: Optional[list[IdentityGovernanceTriggerAttribute]] = Field(alias="value", default=None,)
 
 from .identity_governance_trigger_attribute import IdentityGovernanceTriggerAttribute
-

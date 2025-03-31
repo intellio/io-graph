@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class DeviceManagementExchangeAccessRule(BaseModel):
@@ -10,4 +10,3 @@ class DeviceManagementExchangeAccessRule(BaseModel):
 
 from .device_management_exchange_access_level import DeviceManagementExchangeAccessLevel
 from .device_management_exchange_device_class import DeviceManagementExchangeDeviceClass
-

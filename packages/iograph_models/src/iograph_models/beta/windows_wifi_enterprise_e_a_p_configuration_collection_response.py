@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class WindowsWifiEnterpriseEAPConfigurationCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class WindowsWifiEnterpriseEAPConfigurationCollectionResponse(BaseModel):
 	value: Optional[list[WindowsWifiEnterpriseEAPConfiguration]] = Field(alias="value", default=None,)
 
 from .windows_wifi_enterprise_e_a_p_configuration import WindowsWifiEnterpriseEAPConfiguration
-

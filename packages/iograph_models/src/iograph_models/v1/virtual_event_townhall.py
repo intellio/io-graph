@@ -3,7 +3,7 @@ from typing import Optional
 from typing import Union
 from typing import Literal
 from typing import Annotated
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class VirtualEventTownhall(BaseModel):
@@ -29,7 +29,6 @@ from .item_body import ItemBody
 from .date_time_time_zone import DateTimeTimeZone
 from .virtual_event_external_information import VirtualEventExternalInformation
 from .virtual_event_settings import VirtualEventSettings
-from .date_time_time_zone import DateTimeTimeZone
 from .virtual_event_status import VirtualEventStatus
 from .virtual_event_presenter import VirtualEventPresenter
 from .virtual_event_session import VirtualEventSession
@@ -41,7 +40,6 @@ from .communications_application_instance_identity import CommunicationsApplicat
 from .communications_encrypted_identity import CommunicationsEncryptedIdentity
 from .communications_guest_identity import CommunicationsGuestIdentity
 from .communications_phone_identity import CommunicationsPhoneIdentity
-from .communications_user_identity import CommunicationsUserIdentity
 from .email_identity import EmailIdentity
 from .initiator import Initiator
 from .provisioned_identity import ProvisionedIdentity
@@ -55,4 +53,3 @@ from .teamwork_tag_identity import TeamworkTagIdentity
 from .teamwork_user_identity import TeamworkUserIdentity
 from .user_identity import UserIdentity
 from .call_records_user_identity import CallRecordsUserIdentity
-

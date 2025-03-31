@@ -1,12 +1,13 @@
 from __future__ import annotations
 from typing import Optional
+from typing import Literal
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class AccessPackageResource(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
+	odata_type: Literal["#microsoft.graph.accessPackageResource"] = Field(alias="@odata.type",)
 	attributes: Optional[list[AccessPackageResourceAttribute]] = Field(alias="attributes", default=None,)
 	createdDateTime: Optional[datetime] = Field(alias="createdDateTime", default=None,)
 	description: Optional[str] = Field(alias="description", default=None,)
@@ -22,4 +23,3 @@ from .access_package_resource_attribute import AccessPackageResourceAttribute
 from .access_package_resource_environment import AccessPackageResourceEnvironment
 from .access_package_resource_role import AccessPackageResourceRole
 from .access_package_resource_scope import AccessPackageResourceScope
-

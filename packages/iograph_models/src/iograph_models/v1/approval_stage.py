@@ -1,13 +1,14 @@
 from __future__ import annotations
 from typing import Optional
 from typing import Union
+from typing import Literal
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class ApprovalStage(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
+	odata_type: Literal["#microsoft.graph.approvalStage"] = Field(alias="@odata.type",)
 	assignedToMe: Optional[bool] = Field(alias="assignedToMe", default=None,)
 	displayName: Optional[str] = Field(alias="displayName", default=None,)
 	justification: Optional[str] = Field(alias="justification", default=None,)
@@ -36,4 +37,3 @@ from .teamwork_tag_identity import TeamworkTagIdentity
 from .teamwork_user_identity import TeamworkUserIdentity
 from .user_identity import UserIdentity
 from .call_records_user_identity import CallRecordsUserIdentity
-

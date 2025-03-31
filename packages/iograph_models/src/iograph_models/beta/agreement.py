@@ -1,11 +1,12 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from typing import Literal
+from pydantic import BaseModel, Field
 
 
 class Agreement(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
+	odata_type: Literal["#microsoft.graph.agreement"] = Field(alias="@odata.type",)
 	displayName: Optional[str] = Field(alias="displayName", default=None,)
 	isPerDeviceAcceptanceRequired: Optional[bool] = Field(alias="isPerDeviceAcceptanceRequired", default=None,)
 	isViewingBeforeAcceptanceRequired: Optional[bool] = Field(alias="isViewingBeforeAcceptanceRequired", default=None,)
@@ -19,4 +20,3 @@ from .terms_expiration import TermsExpiration
 from .agreement_acceptance import AgreementAcceptance
 from .agreement_file import AgreementFile
 from .agreement_file_localization import AgreementFileLocalization
-

@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class Windows10XTrustedRootCertificateCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class Windows10XTrustedRootCertificateCollectionResponse(BaseModel):
 	value: Optional[list[Windows10XTrustedRootCertificate]] = Field(alias="value", default=None,)
 
 from .windows10_x_trusted_root_certificate import Windows10XTrustedRootCertificate
-

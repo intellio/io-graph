@@ -2,7 +2,7 @@ from __future__ import annotations
 from typing import Optional
 from typing import Union
 from typing import Annotated
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class ThreatAssessmentRequestCollectionResponse(BaseModel):
@@ -14,4 +14,3 @@ from .email_file_assessment_request import EmailFileAssessmentRequest
 from .file_assessment_request import FileAssessmentRequest
 from .mail_assessment_request import MailAssessmentRequest
 from .url_assessment_request import UrlAssessmentRequest
-

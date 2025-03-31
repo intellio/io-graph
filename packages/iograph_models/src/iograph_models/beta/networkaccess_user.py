@@ -1,7 +1,7 @@
 from __future__ import annotations
 from typing import Optional
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class NetworkaccessUser(BaseModel):
@@ -19,4 +19,3 @@ class NetworkaccessUser(BaseModel):
 
 from .networkaccess_traffic_type import NetworkaccessTrafficType
 from .networkaccess_user_type import NetworkaccessUserType
-

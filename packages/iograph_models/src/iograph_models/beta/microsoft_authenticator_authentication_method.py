@@ -2,7 +2,7 @@ from __future__ import annotations
 from typing import Optional
 from typing import Literal
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class MicrosoftAuthenticatorAuthenticationMethod(BaseModel):
@@ -17,4 +17,3 @@ class MicrosoftAuthenticatorAuthenticationMethod(BaseModel):
 
 from .microsoft_authenticator_authentication_method_client_app_name import MicrosoftAuthenticatorAuthenticationMethodClientAppName
 from .device import Device
-

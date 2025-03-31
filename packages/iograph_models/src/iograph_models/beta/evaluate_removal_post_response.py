@@ -2,7 +2,7 @@ from __future__ import annotations
 from typing import Optional
 from typing import Union
 from typing import Annotated
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class Evaluate_removalPostResponse(BaseModel):
@@ -25,4 +25,3 @@ from .remove_content_footer_action import RemoveContentFooterAction
 from .remove_content_header_action import RemoveContentHeaderAction
 from .remove_protection_action import RemoveProtectionAction
 from .remove_watermark_action import RemoveWatermarkAction
-

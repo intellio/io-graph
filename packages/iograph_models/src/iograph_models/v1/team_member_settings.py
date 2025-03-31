@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class TeamMemberSettings(BaseModel):
@@ -11,5 +11,4 @@ class TeamMemberSettings(BaseModel):
 	allowCreateUpdateRemoveTabs: Optional[bool] = Field(alias="allowCreateUpdateRemoveTabs", default=None,)
 	allowDeleteChannels: Optional[bool] = Field(alias="allowDeleteChannels", default=None,)
 	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
-
 

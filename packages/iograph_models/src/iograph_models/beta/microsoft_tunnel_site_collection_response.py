@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class MicrosoftTunnelSiteCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class MicrosoftTunnelSiteCollectionResponse(BaseModel):
 	value: Optional[list[MicrosoftTunnelSite]] = Field(alias="value", default=None,)
 
 from .microsoft_tunnel_site import MicrosoftTunnelSite
-

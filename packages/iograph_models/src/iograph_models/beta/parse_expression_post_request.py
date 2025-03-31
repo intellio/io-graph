@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class Parse_expressionPostRequest(BaseModel):
@@ -10,4 +10,3 @@ class Parse_expressionPostRequest(BaseModel):
 
 from .expression_input_object import ExpressionInputObject
 from .attribute_definition import AttributeDefinition
-

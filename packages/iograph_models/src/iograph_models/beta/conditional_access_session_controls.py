@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class ConditionalAccessSessionControls(BaseModel):
@@ -19,4 +19,3 @@ from .continuous_access_evaluation_session_control import ContinuousAccessEvalua
 from .persistent_browser_session_control import PersistentBrowserSessionControl
 from .secure_sign_in_session_control import SecureSignInSessionControl
 from .sign_in_frequency_session_control import SignInFrequencySessionControl
-

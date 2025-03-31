@@ -1,7 +1,7 @@
 from __future__ import annotations
 from typing import Optional
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class AlertHistoryState(BaseModel):
@@ -16,4 +16,3 @@ class AlertHistoryState(BaseModel):
 
 from .alert_feedback import AlertFeedback
 from .alert_status import AlertStatus
-

@@ -1,12 +1,13 @@
 from __future__ import annotations
 from typing import Optional
+from typing import Literal
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class CloudPcAuditEvent(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
+	odata_type: Literal["#microsoft.graph.cloudPcAuditEvent"] = Field(alias="@odata.type",)
 	activity: Optional[str] = Field(alias="activity", default=None,)
 	activityDateTime: Optional[datetime] = Field(alias="activityDateTime", default=None,)
 	activityOperationType: Optional[CloudPcAuditActivityOperationType | str] = Field(alias="activityOperationType", default=None,)
@@ -24,4 +25,3 @@ from .cloud_pc_audit_activity_result import CloudPcAuditActivityResult
 from .cloud_pc_audit_actor import CloudPcAuditActor
 from .cloud_pc_audit_category import CloudPcAuditCategory
 from .cloud_pc_audit_resource import CloudPcAuditResource
-

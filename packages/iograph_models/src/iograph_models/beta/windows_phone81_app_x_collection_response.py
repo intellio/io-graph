@@ -2,7 +2,7 @@ from __future__ import annotations
 from typing import Optional
 from typing import Union
 from typing import Annotated
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class WindowsPhone81AppXCollectionResponse(BaseModel):
@@ -11,4 +11,3 @@ class WindowsPhone81AppXCollectionResponse(BaseModel):
 	value: Optional[list[Annotated[Union[WindowsPhone81AppXBundle],Field(discriminator="odata_type")]]] = Field(alias="value", default=None,)
 
 from .windows_phone81_app_x_bundle import WindowsPhone81AppXBundle
-

@@ -1,7 +1,7 @@
 from __future__ import annotations
 from typing import Optional
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class ZebraFotaDeploymentSettings(BaseModel):
@@ -26,4 +26,3 @@ class ZebraFotaDeploymentSettings(BaseModel):
 from .zebra_fota_network_type import ZebraFotaNetworkType
 from .zebra_fota_schedule_mode import ZebraFotaScheduleMode
 from .zebra_fota_update_type import ZebraFotaUpdateType
-

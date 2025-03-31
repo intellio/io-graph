@@ -2,7 +2,7 @@ from __future__ import annotations
 from typing import Optional
 from typing import Union
 from typing import Annotated
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class CommsOperationCollectionResponse(BaseModel):
@@ -27,4 +27,3 @@ from .stop_transcription_operation import StopTranscriptionOperation
 from .subscribe_to_tone_operation import SubscribeToToneOperation
 from .unmute_participant_operation import UnmuteParticipantOperation
 from .update_recording_status_operation import UpdateRecordingStatusOperation
-

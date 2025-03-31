@@ -1,7 +1,7 @@
 from __future__ import annotations
 from typing import Optional
 from typing import Literal
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class ExtractTransformation(BaseModel):
@@ -12,4 +12,3 @@ class ExtractTransformation(BaseModel):
 	value2: Optional[str] = Field(alias="value2", default=None,)
 
 from .transformation_attribute import TransformationAttribute
-

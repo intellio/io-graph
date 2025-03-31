@@ -2,7 +2,7 @@ from __future__ import annotations
 from typing import Optional
 from typing import Literal
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class OpenShiftItem(BaseModel):
@@ -17,4 +17,3 @@ class OpenShiftItem(BaseModel):
 
 from .schedule_entity_theme import ScheduleEntityTheme
 from .shift_activity import ShiftActivity
-

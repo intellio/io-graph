@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class DeviceManagementRuleThreshold(BaseModel):
@@ -11,4 +11,3 @@ class DeviceManagementRuleThreshold(BaseModel):
 
 from .device_management_aggregation_type import DeviceManagementAggregationType
 from .device_management_operator_type import DeviceManagementOperatorType
-

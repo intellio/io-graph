@@ -4,7 +4,7 @@ from typing import Union
 from typing import Literal
 from typing import Annotated
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class SecurityBaselineTemplate(BaseModel):
@@ -38,5 +38,3 @@ from .device_management_integer_setting_instance import DeviceManagementIntegerS
 from .device_management_string_setting_instance import DeviceManagementStringSettingInstance
 from .security_baseline_category_state_summary import SecurityBaselineCategoryStateSummary
 from .security_baseline_device_state import SecurityBaselineDeviceState
-from .security_baseline_category_state_summary import SecurityBaselineCategoryStateSummary
-

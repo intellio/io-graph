@@ -1,10 +1,10 @@
 from __future__ import annotations
 from typing import Optional
+from datetime import datetime
+from pydantic import BaseModel, Field
 from pydantic import model_validator, ModelWrapValidatorHandler, ValidationError
 from typing_extensions import Self
 from typing import Any
-from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class ConditionalAccessPolicy(BaseModel):
@@ -41,4 +41,3 @@ from .conditional_access_condition_set import ConditionalAccessConditionSet
 from .conditional_access_grant_controls import ConditionalAccessGrantControls
 from .conditional_access_session_controls import ConditionalAccessSessionControls
 from .conditional_access_policy_state import ConditionalAccessPolicyState
-

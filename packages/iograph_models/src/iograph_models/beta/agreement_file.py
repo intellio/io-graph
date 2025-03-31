@@ -1,12 +1,13 @@
 from __future__ import annotations
 from typing import Optional
+from typing import Literal
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class AgreementFile(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
+	odata_type: Literal["#microsoft.graph.agreementFile"] = Field(alias="@odata.type",)
 	createdDateTime: Optional[datetime] = Field(alias="createdDateTime", default=None,)
 	displayName: Optional[str] = Field(alias="displayName", default=None,)
 	fileData: Optional[AgreementFileData] = Field(alias="fileData", default=None,)
@@ -18,4 +19,3 @@ class AgreementFile(BaseModel):
 
 from .agreement_file_data import AgreementFileData
 from .agreement_file_localization import AgreementFileLocalization
-

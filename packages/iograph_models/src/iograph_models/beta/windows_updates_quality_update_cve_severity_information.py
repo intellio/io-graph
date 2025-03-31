@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class WindowsUpdatesQualityUpdateCveSeverityInformation(BaseModel):
@@ -12,4 +12,3 @@ class WindowsUpdatesQualityUpdateCveSeverityInformation(BaseModel):
 from .reference_numeric import ReferenceNumeric
 from .windows_updates_cve_severity_level import WindowsUpdatesCveSeverityLevel
 from .windows_updates_cve_information import WindowsUpdatesCveInformation
-

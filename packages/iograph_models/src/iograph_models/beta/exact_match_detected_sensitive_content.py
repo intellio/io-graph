@@ -1,7 +1,8 @@
 from __future__ import annotations
 from uuid import UUID
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from typing import Literal
+from pydantic import BaseModel, Field
 
 
 class ExactMatchDetectedSensitiveContent(BaseModel):
@@ -10,8 +11,7 @@ class ExactMatchDetectedSensitiveContent(BaseModel):
 	id: Optional[UUID] = Field(alias="id", default=None,)
 	recommendedConfidence: Optional[int] = Field(alias="recommendedConfidence", default=None,)
 	uniqueCount: Optional[int] = Field(alias="uniqueCount", default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
+	odata_type: Literal["#microsoft.graph.exactMatchDetectedSensitiveContent"] = Field(alias="@odata.type",)
 	matches: Optional[list[SensitiveContentLocation]] = Field(alias="matches", default=None,)
 
 from .sensitive_content_location import SensitiveContentLocation
-

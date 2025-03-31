@@ -14,9 +14,9 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_security_requirement_id import BySecurityRequirementIdRequest
 	from ......request_adapter import HttpxRequestAdapter
-from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.beta.partner_security_security_requirement_collection_response import PartnerSecuritySecurityRequirementCollectionResponse
 from iograph_models.beta.partner_security_security_requirement import PartnerSecuritySecurityRequirement
+from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 
 
 class RequirementsRequest(BaseRequestBuilder):

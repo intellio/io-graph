@@ -2,7 +2,7 @@ from __future__ import annotations
 from uuid import UUID
 from typing import Optional
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class Account(BaseModel):
@@ -14,5 +14,4 @@ class Account(BaseModel):
 	number: Optional[str] = Field(alias="number", default=None,)
 	subCategory: Optional[str] = Field(alias="subCategory", default=None,)
 	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
-
 

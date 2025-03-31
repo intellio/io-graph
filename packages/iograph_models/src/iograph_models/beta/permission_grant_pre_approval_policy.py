@@ -2,7 +2,7 @@ from __future__ import annotations
 from typing import Optional
 from typing import Literal
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class PermissionGrantPreApprovalPolicy(BaseModel):
@@ -12,4 +12,3 @@ class PermissionGrantPreApprovalPolicy(BaseModel):
 	conditions: Optional[list[PreApprovalDetail]] = Field(alias="conditions", default=None,)
 
 from .pre_approval_detail import PreApprovalDetail
-

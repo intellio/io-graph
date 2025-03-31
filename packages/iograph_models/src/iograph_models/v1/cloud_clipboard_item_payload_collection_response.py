@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class CloudClipboardItemPayloadCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class CloudClipboardItemPayloadCollectionResponse(BaseModel):
 	value: Optional[list[CloudClipboardItemPayload]] = Field(alias="value", default=None,)
 
 from .cloud_clipboard_item_payload import CloudClipboardItemPayload
-

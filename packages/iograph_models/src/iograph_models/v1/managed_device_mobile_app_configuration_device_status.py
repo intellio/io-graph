@@ -1,12 +1,13 @@
 from __future__ import annotations
 from typing import Optional
+from typing import Literal
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class ManagedDeviceMobileAppConfigurationDeviceStatus(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
+	odata_type: Literal["#microsoft.graph.managedDeviceMobileAppConfigurationDeviceStatus"] = Field(alias="@odata.type",)
 	complianceGracePeriodExpirationDateTime: Optional[datetime] = Field(alias="complianceGracePeriodExpirationDateTime", default=None,)
 	deviceDisplayName: Optional[str] = Field(alias="deviceDisplayName", default=None,)
 	deviceModel: Optional[str] = Field(alias="deviceModel", default=None,)
@@ -16,4 +17,3 @@ class ManagedDeviceMobileAppConfigurationDeviceStatus(BaseModel):
 	userPrincipalName: Optional[str] = Field(alias="userPrincipalName", default=None,)
 
 from .compliance_status import ComplianceStatus
-

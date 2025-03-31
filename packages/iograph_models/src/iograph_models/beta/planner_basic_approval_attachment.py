@@ -1,7 +1,7 @@
 from __future__ import annotations
 from typing import Optional
 from typing import Literal
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class PlannerBasicApprovalAttachment(BaseModel):
@@ -10,4 +10,3 @@ class PlannerBasicApprovalAttachment(BaseModel):
 	approvalId: Optional[str] = Field(alias="approvalId", default=None,)
 
 from .planner_approval_status import PlannerApprovalStatus
-

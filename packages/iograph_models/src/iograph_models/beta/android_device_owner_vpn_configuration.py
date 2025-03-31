@@ -4,7 +4,7 @@ from typing import Union
 from typing import Literal
 from typing import Annotated
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class AndroidDeviceOwnerVpnConfiguration(BaseModel):
@@ -67,4 +67,3 @@ from .device_management_derived_credential_settings import DeviceManagementDeriv
 from .android_device_owner_imported_p_f_x_certificate_profile import AndroidDeviceOwnerImportedPFXCertificateProfile
 from .android_device_owner_pkcs_certificate_profile import AndroidDeviceOwnerPkcsCertificateProfile
 from .android_device_owner_scep_certificate_profile import AndroidDeviceOwnerScepCertificateProfile
-

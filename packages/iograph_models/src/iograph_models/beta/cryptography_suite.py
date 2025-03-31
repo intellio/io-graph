@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class CryptographySuite(BaseModel):
@@ -15,7 +15,5 @@ class CryptographySuite(BaseModel):
 from .authentication_transform_constant import AuthenticationTransformConstant
 from .vpn_encryption_algorithm_type import VpnEncryptionAlgorithmType
 from .diffie_hellman_group import DiffieHellmanGroup
-from .vpn_encryption_algorithm_type import VpnEncryptionAlgorithmType
 from .vpn_integrity_algorithm_type import VpnIntegrityAlgorithmType
 from .perfect_forward_secrecy_group import PerfectForwardSecrecyGroup
-

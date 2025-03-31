@@ -1,7 +1,7 @@
 from __future__ import annotations
 from typing import Optional
 from typing import Literal
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class CustomAppScope(BaseModel):
@@ -12,4 +12,3 @@ class CustomAppScope(BaseModel):
 	customAttributes: Optional[CustomAppScopeAttributesDictionary] = Field(alias="customAttributes", default=None,)
 
 from .custom_app_scope_attributes_dictionary import CustomAppScopeAttributesDictionary
-

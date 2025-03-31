@@ -14,8 +14,8 @@ if TYPE_CHECKING:
 	from .role_scope_tags import RoleScopeTagsRequest
 	from .role_definition import RoleDefinitionRequest
 	from .....request_adapter import HttpxRequestAdapter
-from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.beta.device_and_app_management_role_assignment import DeviceAndAppManagementRoleAssignment
+from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 
 
 class ByDeviceAndAppManagementRoleAssignmentIdRequest(BaseRequestBuilder):

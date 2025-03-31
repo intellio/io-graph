@@ -3,7 +3,7 @@ from uuid import UUID
 from typing import Optional
 from typing import Literal
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class SecurityMailboxConfigurationEvidence(BaseModel):
@@ -26,4 +26,3 @@ from .security_evidence_remediation_status import SecurityEvidenceRemediationSta
 from .security_evidence_role import SecurityEvidenceRole
 from .security_evidence_verdict import SecurityEvidenceVerdict
 from .security_mailbox_configuration_type import SecurityMailboxConfigurationType
-

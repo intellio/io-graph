@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class MembershipOutlierInsightCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class MembershipOutlierInsightCollectionResponse(BaseModel):
 	value: Optional[list[MembershipOutlierInsight]] = Field(alias="value", default=None,)
 
 from .membership_outlier_insight import MembershipOutlierInsight
-

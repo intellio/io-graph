@@ -2,7 +2,7 @@ from __future__ import annotations
 from typing import Optional
 from typing import Literal
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class ResourceSpecificPermissionGrant(BaseModel):
@@ -14,5 +14,4 @@ class ResourceSpecificPermissionGrant(BaseModel):
 	permission: Optional[str] = Field(alias="permission", default=None,)
 	permissionType: Optional[str] = Field(alias="permissionType", default=None,)
 	resourceAppId: Optional[str] = Field(alias="resourceAppId", default=None,)
-
 

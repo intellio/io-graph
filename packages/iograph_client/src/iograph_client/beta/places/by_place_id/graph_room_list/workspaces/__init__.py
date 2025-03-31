@@ -14,9 +14,9 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_workspace_id import ByWorkspaceIdRequest
 	from ......request_adapter import HttpxRequestAdapter
+from iograph_models.beta.workspace_collection_response import WorkspaceCollectionResponse
 from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.beta.workspace import Workspace
-from iograph_models.beta.workspace_collection_response import WorkspaceCollectionResponse
 
 
 class WorkspacesRequest(BaseRequestBuilder):

@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class Windows10XSCEPCertificateProfileCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class Windows10XSCEPCertificateProfileCollectionResponse(BaseModel):
 	value: Optional[list[Windows10XSCEPCertificateProfile]] = Field(alias="value", default=None,)
 
 from .windows10_x_s_c_e_p_certificate_profile import Windows10XSCEPCertificateProfile
-

@@ -1,21 +1,22 @@
 from __future__ import annotations
 from typing import Optional
 from typing import Union
+from typing import Literal
 from typing import Annotated
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class AccessReviewInstanceDecisionItem(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
+	odata_type: Literal["#microsoft.graph.accessReviewInstanceDecisionItem"] = Field(alias="@odata.type",)
 	accessReviewId: Optional[str] = Field(alias="accessReviewId", default=None,)
 	appliedBy: Optional[Union[AuditUserIdentity]] = Field(alias="appliedBy", default=None,discriminator="odata_type", )
 	appliedDateTime: Optional[datetime] = Field(alias="appliedDateTime", default=None,)
 	applyResult: Optional[str] = Field(alias="applyResult", default=None,)
 	decision: Optional[str] = Field(alias="decision", default=None,)
 	justification: Optional[str] = Field(alias="justification", default=None,)
-	principal: Optional[Union[AzureCommunicationServicesUserIdentity, CommunicationsApplicationIdentity, CommunicationsApplicationInstanceIdentity, CommunicationsEncryptedIdentity, CommunicationsGuestIdentity, CommunicationsPhoneIdentity, CommunicationsUserIdentity, EmailIdentity, Initiator, ProgramResource, ProvisionedIdentity, ProvisioningServicePrincipal, ProvisioningSystem, ServicePrincipalIdentity, SharePointIdentity, SourceProvisionedIdentity, TargetProvisionedIdentity, TeamworkApplicationIdentity, TeamworkConversationIdentity, TeamworkTagIdentity, TeamworkUserIdentity, UserIdentity, AuditUserIdentity, CallRecordsUserIdentity, SecuritySubmissionUserIdentity]] = Field(alias="principal", default=None,discriminator="odata_type", )
+	principal: Optional[Union[AzureCommunicationServicesUserIdentity, CommunicationsApplicationIdentity, CommunicationsApplicationInstanceIdentity, CommunicationsEncryptedIdentity, CommunicationsGuestIdentity, CommunicationsPhoneIdentity, CommunicationsUserIdentity, EmailIdentity, Initiator, ProgramResource, ProvisionedIdentity, ProvisioningServicePrincipal, ProvisioningSystem, ServicePrincipalIdentity, SharePointIdentity, SourceProvisionedIdentity, TargetProvisionedIdentity, TeamworkApplicationIdentity, TeamworkConversationIdentity, TeamworkTagIdentity, TeamworkUserIdentity, AuditUserIdentity, CallRecordsUserIdentity, SecuritySubmissionUserIdentity]] = Field(alias="principal", default=None,discriminator="odata_type", )
 	principalLink: Optional[str] = Field(alias="principalLink", default=None,)
 	principalResourceMembership: Optional[DecisionItemPrincipalResourceMembership] = Field(alias="principalResourceMembership", default=None,)
 	recommendation: Optional[str] = Field(alias="recommendation", default=None,)
@@ -49,18 +50,14 @@ from .teamwork_application_identity import TeamworkApplicationIdentity
 from .teamwork_conversation_identity import TeamworkConversationIdentity
 from .teamwork_tag_identity import TeamworkTagIdentity
 from .teamwork_user_identity import TeamworkUserIdentity
-from .user_identity import UserIdentity
-from .audit_user_identity import AuditUserIdentity
 from .call_records_user_identity import CallRecordsUserIdentity
 from .security_submission_user_identity import SecuritySubmissionUserIdentity
 from .decision_item_principal_resource_membership import DecisionItemPrincipalResourceMembership
 from .access_review_instance_decision_item_access_package_assignment_policy_resource import AccessReviewInstanceDecisionItemAccessPackageAssignmentPolicyResource
 from .access_review_instance_decision_item_azure_role_resource import AccessReviewInstanceDecisionItemAzureRoleResource
 from .access_review_instance_decision_item_service_principal_resource import AccessReviewInstanceDecisionItemServicePrincipalResource
-from .audit_user_identity import AuditUserIdentity
 from .access_review_instance_decision_item_service_principal_target import AccessReviewInstanceDecisionItemServicePrincipalTarget
 from .access_review_instance_decision_item_user_target import AccessReviewInstanceDecisionItemUserTarget
 from .membership_outlier_insight import MembershipOutlierInsight
 from .user_sign_in_insight import UserSignInInsight
 from .access_review_instance import AccessReviewInstance
-

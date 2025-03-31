@@ -1,12 +1,13 @@
 from __future__ import annotations
 from typing import Optional
+from typing import Literal
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class CloudCertificationAuthority(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
+	odata_type: Literal["#microsoft.graph.cloudCertificationAuthority"] = Field(alias="@odata.type",)
 	certificateDownloadUrl: Optional[str] = Field(alias="certificateDownloadUrl", default=None,)
 	certificateKeySize: Optional[CloudCertificationAuthorityCertificateKeySize | str] = Field(alias="certificateKeySize", default=None,)
 	certificateRevocationListUrl: Optional[str] = Field(alias="certificateRevocationListUrl", default=None,)
@@ -50,4 +51,3 @@ from .cloud_certification_authority_type import CloudCertificationAuthorityType
 from .extended_key_usage import ExtendedKeyUsage
 from .cloud_certification_authority_key_platform_type import CloudCertificationAuthorityKeyPlatformType
 from .cloud_certification_authority_leaf_certificate import CloudCertificationAuthorityLeafCertificate
-

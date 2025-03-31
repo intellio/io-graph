@@ -14,9 +14,9 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_certificate_based_auth_pki_id import ByCertificateBasedAuthPkiIdRequest
 	from .....request_adapter import HttpxRequestAdapter
+from iograph_models.beta.certificate_based_auth_pki_collection_response import CertificateBasedAuthPkiCollectionResponse
 from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.beta.certificate_based_auth_pki import CertificateBasedAuthPki
-from iograph_models.beta.certificate_based_auth_pki_collection_response import CertificateBasedAuthPkiCollectionResponse
 
 
 class CertificateBasedAuthConfigurationsRequest(BaseRequestBuilder):

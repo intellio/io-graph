@@ -1,12 +1,13 @@
 from __future__ import annotations
 from typing import Optional
+from typing import Literal
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class ServicePrincipalRiskDetection(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
+	odata_type: Literal["#microsoft.graph.servicePrincipalRiskDetection"] = Field(alias="@odata.type",)
 	activity: Optional[ActivityType | str] = Field(alias="activity", default=None,)
 	activityDateTime: Optional[datetime] = Field(alias="activityDateTime", default=None,)
 	additionalInfo: Optional[str] = Field(alias="additionalInfo", default=None,)
@@ -35,4 +36,3 @@ from .risk_detail import RiskDetail
 from .risk_level import RiskLevel
 from .risk_state import RiskState
 from .token_issuer_type import TokenIssuerType
-

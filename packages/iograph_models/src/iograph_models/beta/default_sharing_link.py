@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class DefaultSharingLink(BaseModel):
@@ -11,4 +11,3 @@ class DefaultSharingLink(BaseModel):
 
 from .sharing_role import SharingRole
 from .sharing_scope import SharingScope
-

@@ -1,7 +1,7 @@
 from __future__ import annotations
 from typing import Optional
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class DeviceAssignmentItem(BaseModel):
@@ -20,4 +20,3 @@ class DeviceAssignmentItem(BaseModel):
 from .device_assignment_item_intent import DeviceAssignmentItemIntent
 from .device_assignment_item_status import DeviceAssignmentItemStatus
 from .device_assignment_item_type import DeviceAssignmentItemType
-

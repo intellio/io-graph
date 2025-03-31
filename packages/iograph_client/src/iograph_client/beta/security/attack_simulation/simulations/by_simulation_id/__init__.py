@@ -15,8 +15,8 @@ if TYPE_CHECKING:
 	from .login_page import LoginPageRequest
 	from .landing_page import LandingPageRequest
 	from ......request_adapter import HttpxRequestAdapter
-from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.beta.simulation import Simulation
+from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 
 
 class BySimulationIdRequest(BaseRequestBuilder):

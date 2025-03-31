@@ -1,7 +1,7 @@
 from __future__ import annotations
 from typing import Optional
 from typing import Literal
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class Win32LobAppPowerShellScriptDetection(BaseModel):
@@ -9,5 +9,4 @@ class Win32LobAppPowerShellScriptDetection(BaseModel):
 	enforceSignatureCheck: Optional[bool] = Field(alias="enforceSignatureCheck", default=None,)
 	runAs32Bit: Optional[bool] = Field(alias="runAs32Bit", default=None,)
 	scriptContent: Optional[str] = Field(alias="scriptContent", default=None,)
-
 

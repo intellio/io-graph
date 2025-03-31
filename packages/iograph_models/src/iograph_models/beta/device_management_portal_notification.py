@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class DeviceManagementPortalNotification(BaseModel):
@@ -17,4 +17,3 @@ class DeviceManagementPortalNotification(BaseModel):
 from .device_management_alert_impact import DeviceManagementAlertImpact
 from .device_management_alert_rule_template import DeviceManagementAlertRuleTemplate
 from .device_management_rule_severity_type import DeviceManagementRuleSeverityType
-

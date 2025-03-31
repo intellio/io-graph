@@ -1,12 +1,13 @@
 from __future__ import annotations
 from typing import Optional
+from typing import Literal
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class CloudPC(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
+	odata_type: Literal["#microsoft.graph.cloudPC"] = Field(alias="@odata.type",)
 	aadDeviceId: Optional[str] = Field(alias="aadDeviceId", default=None,)
 	displayName: Optional[str] = Field(alias="displayName", default=None,)
 	gracePeriodEndDateTime: Optional[datetime] = Field(alias="gracePeriodEndDateTime", default=None,)
@@ -23,4 +24,3 @@ class CloudPC(BaseModel):
 	userPrincipalName: Optional[str] = Field(alias="userPrincipalName", default=None,)
 
 from .cloud_pc_provisioning_type import CloudPcProvisioningType
-

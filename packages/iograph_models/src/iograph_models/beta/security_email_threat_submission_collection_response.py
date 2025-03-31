@@ -2,7 +2,7 @@ from __future__ import annotations
 from typing import Optional
 from typing import Union
 from typing import Annotated
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class SecurityEmailThreatSubmissionCollectionResponse(BaseModel):
@@ -12,4 +12,3 @@ class SecurityEmailThreatSubmissionCollectionResponse(BaseModel):
 
 from .security_email_content_threat_submission import SecurityEmailContentThreatSubmission
 from .security_email_url_threat_submission import SecurityEmailUrlThreatSubmission
-

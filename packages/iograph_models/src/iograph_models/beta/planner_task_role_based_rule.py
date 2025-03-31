@@ -1,7 +1,7 @@
 from __future__ import annotations
 from typing import Optional
 from typing import Union
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class PlannerTaskRoleBasedRule(BaseModel):
@@ -12,4 +12,3 @@ class PlannerTaskRoleBasedRule(BaseModel):
 
 from .planner_task_property_rule import PlannerTaskPropertyRule
 from .planner_relationship_based_user_type import PlannerRelationshipBasedUserType
-

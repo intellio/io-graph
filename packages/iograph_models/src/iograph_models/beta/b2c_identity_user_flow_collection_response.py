@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class B2cIdentityUserFlowCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class B2cIdentityUserFlowCollectionResponse(BaseModel):
 	value: Optional[list[B2cIdentityUserFlow]] = Field(alias="value", default=None,)
 
 from .b2c_identity_user_flow import B2cIdentityUserFlow
-

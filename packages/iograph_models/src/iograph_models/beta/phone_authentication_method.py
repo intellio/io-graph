@@ -2,7 +2,7 @@ from __future__ import annotations
 from typing import Optional
 from typing import Literal
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class PhoneAuthenticationMethod(BaseModel):
@@ -15,4 +15,3 @@ class PhoneAuthenticationMethod(BaseModel):
 
 from .authentication_phone_type import AuthenticationPhoneType
 from .authentication_method_sign_in_state import AuthenticationMethodSignInState
-

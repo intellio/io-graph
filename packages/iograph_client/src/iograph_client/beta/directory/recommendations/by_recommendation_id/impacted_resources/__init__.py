@@ -14,9 +14,9 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_impacted_resource_id import ByImpactedResourceIdRequest
 	from ......request_adapter import HttpxRequestAdapter
+from iograph_models.beta.impacted_resource_collection_response import ImpactedResourceCollectionResponse
 from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.beta.impacted_resource import ImpactedResource
-from iograph_models.beta.impacted_resource_collection_response import ImpactedResourceCollectionResponse
 
 
 class ImpactedResourcesRequest(BaseRequestBuilder):

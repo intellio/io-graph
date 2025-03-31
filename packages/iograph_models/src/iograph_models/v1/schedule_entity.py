@@ -1,10 +1,10 @@
 from __future__ import annotations
 from typing import Optional
+from datetime import datetime
+from pydantic import BaseModel, Field
 from pydantic import model_validator, ModelWrapValidatorHandler, ValidationError
 from typing_extensions import Self
 from typing import Any
-from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class ScheduleEntity(BaseModel):
@@ -23,9 +23,6 @@ class ScheduleEntity(BaseModel):
 				return parent_validated_model
 			# get the discriminator value
 			mapping_key = data["@odata.type"]
-			if mapping_key == "#microsoft.graph.shiftItem":
-				from .shift_item import ShiftItem
-				return ShiftItem.model_validate(data)
 			if mapping_key == "#microsoft.graph.openShiftItem":
 				from .open_shift_item import OpenShiftItem
 				return OpenShiftItem.model_validate(data)
@@ -38,4 +35,3 @@ class ScheduleEntity(BaseModel):
 			raise e
 
 from .schedule_entity_theme import ScheduleEntityTheme
-

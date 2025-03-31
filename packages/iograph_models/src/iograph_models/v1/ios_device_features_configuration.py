@@ -4,7 +4,7 @@ from typing import Union
 from typing import Literal
 from typing import Annotated
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class IosDeviceFeaturesConfiguration(BaseModel):
@@ -37,4 +37,3 @@ from .ios_home_screen_app import IosHomeScreenApp
 from .ios_home_screen_folder import IosHomeScreenFolder
 from .ios_home_screen_page import IosHomeScreenPage
 from .ios_notification_settings import IosNotificationSettings
-

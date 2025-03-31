@@ -1,11 +1,12 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from typing import Literal
+from pydantic import BaseModel, Field
 
 
 class CloudPcProvisioningPolicy(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
+	odata_type: Literal["#microsoft.graph.cloudPcProvisioningPolicy"] = Field(alias="@odata.type",)
 	alternateResourceUrl: Optional[str] = Field(alias="alternateResourceUrl", default=None,)
 	autopatch: Optional[CloudPcProvisioningPolicyAutopatch] = Field(alias="autopatch", default=None,)
 	autopilotConfiguration: Optional[CloudPcAutopilotConfiguration] = Field(alias="autopilotConfiguration", default=None,)
@@ -38,4 +39,3 @@ from .cloud_pc_provisioning_type import CloudPcProvisioningType
 from .cloud_pc_windows_setting import CloudPcWindowsSetting
 from .cloud_pc_windows_settings import CloudPcWindowsSettings
 from .cloud_pc_provisioning_policy_assignment import CloudPcProvisioningPolicyAssignment
-

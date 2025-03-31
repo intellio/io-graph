@@ -1,7 +1,7 @@
 from __future__ import annotations
 from typing import Optional
 from typing import Literal
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class DlpEvaluationWindowsDevicesInput(BaseModel):
@@ -14,4 +14,3 @@ class DlpEvaluationWindowsDevicesInput(BaseModel):
 from .current_label import CurrentLabel
 from .discovered_sensitive_type import DiscoveredSensitiveType
 from .content_properties import ContentProperties
-

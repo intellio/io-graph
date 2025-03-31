@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class PersonWebsiteCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class PersonWebsiteCollectionResponse(BaseModel):
 	value: Optional[list[PersonWebsite]] = Field(alias="value", default=None,)
 
 from .person_website import PersonWebsite
-

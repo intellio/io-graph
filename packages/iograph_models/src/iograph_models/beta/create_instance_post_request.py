@@ -2,7 +2,7 @@ from __future__ import annotations
 from typing import Optional
 from typing import Union
 from typing import Annotated
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class Create_instancePostRequest(BaseModel):
@@ -17,4 +17,3 @@ from .device_management_collection_setting_instance import DeviceManagementColle
 from .device_management_complex_setting_instance import DeviceManagementComplexSettingInstance
 from .device_management_integer_setting_instance import DeviceManagementIntegerSettingInstance
 from .device_management_string_setting_instance import DeviceManagementStringSettingInstance
-

@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class IosEduDeviceConfigurationCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class IosEduDeviceConfigurationCollectionResponse(BaseModel):
 	value: Optional[list[IosEduDeviceConfiguration]] = Field(alias="value", default=None,)
 
 from .ios_edu_device_configuration import IosEduDeviceConfiguration
-

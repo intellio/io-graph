@@ -2,7 +2,7 @@ from __future__ import annotations
 from typing import Optional
 from typing import Union
 from typing import Annotated
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class UnifiedRoleManagementAlertIncidentCollectionResponse(BaseModel):
@@ -17,4 +17,3 @@ from .roles_assigned_outside_privileged_identity_management_alert_incident impor
 from .sequential_activation_renewals_alert_incident import SequentialActivationRenewalsAlertIncident
 from .stale_sign_in_alert_incident import StaleSignInAlertIncident
 from .too_many_global_admins_assigned_to_tenant_alert_incident import TooManyGlobalAdminsAssignedToTenantAlertIncident
-

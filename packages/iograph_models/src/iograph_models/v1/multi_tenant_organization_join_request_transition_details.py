@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class MultiTenantOrganizationJoinRequestTransitionDetails(BaseModel):
@@ -11,4 +11,3 @@ class MultiTenantOrganizationJoinRequestTransitionDetails(BaseModel):
 
 from .multi_tenant_organization_member_state import MultiTenantOrganizationMemberState
 from .multi_tenant_organization_member_processing_status import MultiTenantOrganizationMemberProcessingStatus
-

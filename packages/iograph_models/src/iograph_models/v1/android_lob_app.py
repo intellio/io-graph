@@ -2,7 +2,7 @@ from __future__ import annotations
 from typing import Optional
 from typing import Literal
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class AndroidLobApp(BaseModel):
@@ -38,4 +38,3 @@ from .mobile_app_assignment import MobileAppAssignment
 from .mobile_app_category import MobileAppCategory
 from .mobile_app_content import MobileAppContent
 from .android_minimum_operating_system import AndroidMinimumOperatingSystem
-

@@ -1,14 +1,15 @@
 from __future__ import annotations
 from typing import Optional
 from typing import Union
+from typing import Literal
 from typing import Annotated
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class AccessReviewInstanceDecisionItem(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
+	odata_type: Literal["#microsoft.graph.accessReviewInstanceDecisionItem"] = Field(alias="@odata.type",)
 	accessReviewId: Optional[str] = Field(alias="accessReviewId", default=None,)
 	appliedBy: Optional[UserIdentity] = Field(alias="appliedBy", default=None,)
 	appliedDateTime: Optional[datetime] = Field(alias="appliedDateTime", default=None,)
@@ -43,12 +44,9 @@ from .teamwork_application_identity import TeamworkApplicationIdentity
 from .teamwork_conversation_identity import TeamworkConversationIdentity
 from .teamwork_tag_identity import TeamworkTagIdentity
 from .teamwork_user_identity import TeamworkUserIdentity
-from .user_identity import UserIdentity
 from .call_records_user_identity import CallRecordsUserIdentity
 from .access_review_instance_decision_item_access_package_assignment_policy_resource import AccessReviewInstanceDecisionItemAccessPackageAssignmentPolicyResource
 from .access_review_instance_decision_item_azure_role_resource import AccessReviewInstanceDecisionItemAzureRoleResource
 from .access_review_instance_decision_item_service_principal_resource import AccessReviewInstanceDecisionItemServicePrincipalResource
-from .user_identity import UserIdentity
 from .membership_outlier_insight import MembershipOutlierInsight
 from .user_sign_in_insight import UserSignInInsight
-

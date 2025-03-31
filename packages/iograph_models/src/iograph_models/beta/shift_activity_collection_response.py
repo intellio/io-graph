@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class ShiftActivityCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class ShiftActivityCollectionResponse(BaseModel):
 	value: Optional[list[ShiftActivity]] = Field(alias="value", default=None,)
 
 from .shift_activity import ShiftActivity
-

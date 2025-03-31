@@ -1,7 +1,7 @@
 from __future__ import annotations
 from typing import Optional
 from typing import Literal
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class OmaSettingInteger(BaseModel):
@@ -13,5 +13,4 @@ class OmaSettingInteger(BaseModel):
 	odata_type: Literal["#microsoft.graph.omaSettingInteger"] = Field(alias="@odata.type", default="#microsoft.graph.omaSettingInteger")
 	isReadOnly: Optional[bool] = Field(alias="isReadOnly", default=None,)
 	value: Optional[int] = Field(alias="value", default=None,)
-
 

@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class SecurityCompromiseIndicatorCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class SecurityCompromiseIndicatorCollectionResponse(BaseModel):
 	value: Optional[list[SecurityCompromiseIndicator]] = Field(alias="value", default=None,)
 
 from .security_compromise_indicator import SecurityCompromiseIndicator
-

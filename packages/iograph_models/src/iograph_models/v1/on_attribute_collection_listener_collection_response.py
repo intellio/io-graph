@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class OnAttributeCollectionListenerCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class OnAttributeCollectionListenerCollectionResponse(BaseModel):
 	value: Optional[list[OnAttributeCollectionListener]] = Field(alias="value", default=None,)
 
 from .on_attribute_collection_listener import OnAttributeCollectionListener
-

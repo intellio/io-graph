@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class ExternallyAccessibleGcpStorageBucketFindingCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class ExternallyAccessibleGcpStorageBucketFindingCollectionResponse(BaseModel):
 	value: Optional[list[ExternallyAccessibleGcpStorageBucketFinding]] = Field(alias="value", default=None,)
 
 from .externally_accessible_gcp_storage_bucket_finding import ExternallyAccessibleGcpStorageBucketFinding
-

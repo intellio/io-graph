@@ -1,9 +1,9 @@
 from __future__ import annotations
 from typing import Literal
+from pydantic import BaseModel, Field
 from pydantic import model_validator, ModelWrapValidatorHandler, ValidationError
 from typing_extensions import Self
 from typing import Any
-from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class WindowsUpdatesSoftwareUpdateFilter(BaseModel):
@@ -19,9 +19,6 @@ class WindowsUpdatesSoftwareUpdateFilter(BaseModel):
 				return parent_validated_model
 			# get the discriminator value
 			mapping_key = data["@odata.type"]
-			if mapping_key == "#microsoft.graph.windowsUpdates.windowsUpdateFilter":
-				from .windows_updates_windows_update_filter import WindowsUpdatesWindowsUpdateFilter
-				return WindowsUpdatesWindowsUpdateFilter.model_validate(data)
 			if mapping_key == "#microsoft.graph.windowsUpdates.driverUpdateFilter":
 				from .windows_updates_driver_update_filter import WindowsUpdatesDriverUpdateFilter
 				return WindowsUpdatesDriverUpdateFilter.model_validate(data)
@@ -32,5 +29,4 @@ class WindowsUpdatesSoftwareUpdateFilter(BaseModel):
 
 		except Exception as e:
 			raise e
-
 

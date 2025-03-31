@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class FederatedIdentityCredentialCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class FederatedIdentityCredentialCollectionResponse(BaseModel):
 	value: Optional[list[FederatedIdentityCredential]] = Field(alias="value", default=None,)
 
 from .federated_identity_credential import FederatedIdentityCredential
-

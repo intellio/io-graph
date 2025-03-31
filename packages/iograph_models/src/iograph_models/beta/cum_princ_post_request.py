@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class Cum_princPostRequest(BaseModel):
@@ -10,5 +10,4 @@ class Cum_princPostRequest(BaseModel):
 	startPeriod: Optional[str] = Field(alias="startPeriod", default=None,)
 	endPeriod: Optional[str] = Field(alias="endPeriod", default=None,)
 	type: Optional[str] = Field(alias="type", default=None,)
-
 

@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class ExactMatchClassificationResult(BaseModel):
@@ -10,4 +10,3 @@ class ExactMatchClassificationResult(BaseModel):
 
 from .exact_match_detected_sensitive_content import ExactMatchDetectedSensitiveContent
 from .classification_error import ClassificationError
-

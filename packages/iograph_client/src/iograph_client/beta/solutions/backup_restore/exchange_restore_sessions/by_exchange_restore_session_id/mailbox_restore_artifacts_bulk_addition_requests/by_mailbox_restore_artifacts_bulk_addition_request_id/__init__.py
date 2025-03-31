@@ -11,8 +11,8 @@ from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:
 	from ........request_adapter import HttpxRequestAdapter
-from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.beta.mailbox_restore_artifacts_bulk_addition_request import MailboxRestoreArtifactsBulkAdditionRequest
+from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 
 
 class ByMailboxRestoreArtifactsBulkAdditionRequestIdRequest(BaseRequestBuilder):

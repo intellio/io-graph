@@ -14,9 +14,9 @@ if TYPE_CHECKING:
 	from .invited_user import InvitedUserRequest
 	from .count import CountRequest
 	from ...request_adapter import HttpxRequestAdapter
-from iograph_models.v1.o_data_errors__o_data_error import ODataErrorsODataError
-from iograph_models.v1.invitation import Invitation
 from iograph_models.v1.invitation_collection_response import InvitationCollectionResponse
+from iograph_models.v1.invitation import Invitation
+from iograph_models.v1.o_data_errors__o_data_error import ODataErrorsODataError
 
 
 class InvitationsRequest(BaseRequestBuilder):

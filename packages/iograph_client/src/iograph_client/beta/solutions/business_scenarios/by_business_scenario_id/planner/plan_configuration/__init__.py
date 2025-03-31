@@ -13,8 +13,8 @@ from typing import TYPE_CHECKING
 if TYPE_CHECKING:
 	from .localizations import LocalizationsRequest
 	from .......request_adapter import HttpxRequestAdapter
-from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.beta.planner_plan_configuration import PlannerPlanConfiguration
+from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 
 
 class PlanConfigurationRequest(BaseRequestBuilder):

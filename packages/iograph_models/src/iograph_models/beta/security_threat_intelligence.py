@@ -1,13 +1,14 @@
 from __future__ import annotations
 from typing import Optional
 from typing import Union
+from typing import Literal
 from typing import Annotated
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class SecurityThreatIntelligence(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
+	odata_type: Literal["#microsoft.graph.security.threatIntelligence"] = Field(alias="@odata.type",)
 	articleIndicators: Optional[list[SecurityArticleIndicator]] = Field(alias="articleIndicators", default=None,)
 	articles: Optional[list[SecurityArticle]] = Field(alias="articles", default=None,)
 	hostComponents: Optional[list[SecurityHostComponent]] = Field(alias="hostComponents", default=None,)
@@ -44,4 +45,3 @@ from .security_subdomain import SecuritySubdomain
 from .security_vulnerability import SecurityVulnerability
 from .security_whois_history_record import SecurityWhoisHistoryRecord
 from .security_whois_record import SecurityWhoisRecord
-

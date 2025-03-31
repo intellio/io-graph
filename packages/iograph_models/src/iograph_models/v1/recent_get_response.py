@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class RecentGetResponse(BaseModel):
@@ -9,4 +9,3 @@ class RecentGetResponse(BaseModel):
 	value: Optional[list[UserActivity]] = Field(alias="value", default=None,)
 
 from .user_activity import UserActivity
-

@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class SchedulingGroupCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class SchedulingGroupCollectionResponse(BaseModel):
 	value: Optional[list[SchedulingGroup]] = Field(alias="value", default=None,)
 
 from .scheduling_group import SchedulingGroup
-

@@ -2,7 +2,7 @@ from __future__ import annotations
 from typing import Optional
 from typing import Union
 from typing import Annotated
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class AzureIdentityCollectionResponse(BaseModel):
@@ -15,4 +15,3 @@ from .azure_managed_identity import AzureManagedIdentity
 from .azure_serverless_function import AzureServerlessFunction
 from .azure_service_principal import AzureServicePrincipal
 from .azure_user import AzureUser
-

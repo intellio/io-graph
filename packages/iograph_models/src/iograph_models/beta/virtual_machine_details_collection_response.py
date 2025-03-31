@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class VirtualMachineDetailsCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class VirtualMachineDetailsCollectionResponse(BaseModel):
 	value: Optional[list[VirtualMachineDetails]] = Field(alias="value", default=None,)
 
 from .virtual_machine_details import VirtualMachineDetails
-

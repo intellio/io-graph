@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class IosEasEmailProfileConfigurationCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class IosEasEmailProfileConfigurationCollectionResponse(BaseModel):
 	value: Optional[list[IosEasEmailProfileConfiguration]] = Field(alias="value", default=None,)
 
 from .ios_eas_email_profile_configuration import IosEasEmailProfileConfiguration
-

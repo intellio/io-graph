@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class AttackSimulationTrainingUserCoverage(BaseModel):
@@ -10,4 +10,3 @@ class AttackSimulationTrainingUserCoverage(BaseModel):
 
 from .attack_simulation_user import AttackSimulationUser
 from .user_training_status_info import UserTrainingStatusInfo
-

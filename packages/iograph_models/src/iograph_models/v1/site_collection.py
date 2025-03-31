@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class SiteCollection(BaseModel):
@@ -12,4 +12,3 @@ class SiteCollection(BaseModel):
 
 from .site_archival_details import SiteArchivalDetails
 from .root import Root
-

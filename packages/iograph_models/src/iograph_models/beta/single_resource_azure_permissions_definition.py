@@ -2,7 +2,7 @@ from __future__ import annotations
 from typing import Optional
 from typing import Union
 from typing import Literal
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class SingleResourceAzurePermissionsDefinition(BaseModel):
@@ -16,4 +16,3 @@ from .permissions_definition_authorization_system import PermissionsDefinitionAu
 from .permissions_definition_authorization_system_identity import PermissionsDefinitionAuthorizationSystemIdentity
 from .azure_action_permissions_definition_action import AzureActionPermissionsDefinitionAction
 from .azure_role_permissions_definition_action import AzureRolePermissionsDefinitionAction
-

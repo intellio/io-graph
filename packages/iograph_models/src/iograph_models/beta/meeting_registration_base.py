@@ -2,10 +2,10 @@ from __future__ import annotations
 from typing import Optional
 from typing import Union
 from typing import Annotated
+from pydantic import BaseModel, Field
 from pydantic import model_validator, ModelWrapValidatorHandler, ValidationError
 from typing_extensions import Self
 from typing import Any
-from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class MeetingRegistrationBase(BaseModel):
@@ -38,4 +38,3 @@ class MeetingRegistrationBase(BaseModel):
 from .meeting_audience import MeetingAudience
 from .external_meeting_registrant import ExternalMeetingRegistrant
 from .meeting_registrant import MeetingRegistrant
-

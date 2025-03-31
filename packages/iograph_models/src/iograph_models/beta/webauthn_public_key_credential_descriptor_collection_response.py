@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class WebauthnPublicKeyCredentialDescriptorCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class WebauthnPublicKeyCredentialDescriptorCollectionResponse(BaseModel):
 	value: Optional[list[WebauthnPublicKeyCredentialDescriptor]] = Field(alias="value", default=None,)
 
 from .webauthn_public_key_credential_descriptor import WebauthnPublicKeyCredentialDescriptor
-

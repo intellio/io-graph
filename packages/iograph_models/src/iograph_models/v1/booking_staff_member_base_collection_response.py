@@ -2,7 +2,7 @@ from __future__ import annotations
 from typing import Optional
 from typing import Union
 from typing import Annotated
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class BookingStaffMemberBaseCollectionResponse(BaseModel):
@@ -11,4 +11,3 @@ class BookingStaffMemberBaseCollectionResponse(BaseModel):
 	value: Optional[list[Annotated[Union[BookingStaffMember],Field(discriminator="odata_type")]]] = Field(alias="value", default=None,)
 
 from .booking_staff_member import BookingStaffMember
-

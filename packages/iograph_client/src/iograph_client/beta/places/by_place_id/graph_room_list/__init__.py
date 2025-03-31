@@ -16,8 +16,8 @@ if TYPE_CHECKING:
 	from .rooms_with_placeid import RoomsWithPlaceIdRequest
 	from .rooms import RoomsRequest
 	from .....request_adapter import HttpxRequestAdapter
-from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.beta.room_list import RoomList
+from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 
 
 class GraphRoomListRequest(BaseRequestBuilder):

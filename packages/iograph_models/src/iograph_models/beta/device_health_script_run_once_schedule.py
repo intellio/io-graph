@@ -1,7 +1,7 @@
 from __future__ import annotations
 from typing import Optional
 from typing import Literal
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class DeviceHealthScriptRunOnceSchedule(BaseModel):
@@ -10,5 +10,4 @@ class DeviceHealthScriptRunOnceSchedule(BaseModel):
 	time: Optional[str] = Field(alias="time", default=None,)
 	useUtc: Optional[bool] = Field(alias="useUtc", default=None,)
 	date: Optional[str] = Field(alias="date", default=None,)
-
 

@@ -4,7 +4,7 @@ from typing import Union
 from typing import Literal
 from typing import Annotated
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class SecuritySslCertificate(BaseModel):
@@ -22,7 +22,5 @@ class SecuritySslCertificate(BaseModel):
 	relatedHosts: Optional[list[Annotated[Union[SecurityHostname, SecurityIpAddress],Field(discriminator="odata_type")]]] = Field(alias="relatedHosts", default=None,)
 
 from .security_ssl_certificate_entity import SecuritySslCertificateEntity
-from .security_ssl_certificate_entity import SecuritySslCertificateEntity
 from .security_hostname import SecurityHostname
 from .security_ip_address import SecurityIpAddress
-

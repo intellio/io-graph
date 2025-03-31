@@ -1,9 +1,9 @@
 from __future__ import annotations
 from typing import Optional
+from pydantic import BaseModel, Field
 from pydantic import model_validator, ModelWrapValidatorHandler, ValidationError
 from typing_extensions import Self
 from typing import Any
-from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class AccessReviewScope(BaseModel):
@@ -19,9 +19,6 @@ class AccessReviewScope(BaseModel):
 				return parent_validated_model
 			# get the discriminator value
 			mapping_key = data["@odata.type"]
-			if mapping_key == "#microsoft.graph.accessReviewQueryScope":
-				from .access_review_query_scope import AccessReviewQueryScope
-				return AccessReviewQueryScope.model_validate(data)
 			if mapping_key == "#microsoft.graph.accessReviewInactiveUsersQueryScope":
 				from .access_review_inactive_users_query_scope import AccessReviewInactiveUsersQueryScope
 				return AccessReviewInactiveUsersQueryScope.model_validate(data)
@@ -32,5 +29,4 @@ class AccessReviewScope(BaseModel):
 
 		except Exception as e:
 			raise e
-
 

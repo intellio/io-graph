@@ -1,7 +1,7 @@
 from __future__ import annotations
 from typing import Optional
 from typing import Union
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class TransformationAttribute(BaseModel):
@@ -11,4 +11,3 @@ class TransformationAttribute(BaseModel):
 
 from .sourced_attribute import SourcedAttribute
 from .value_based_attribute import ValueBasedAttribute
-

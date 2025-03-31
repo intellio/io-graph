@@ -59,8 +59,8 @@ if TYPE_CHECKING:
 	from .app_role_assignments import AppRoleAssignmentsRequest
 	from .accepted_senders import AcceptedSendersRequest
 	from ....request_adapter import HttpxRequestAdapter
-from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.beta.group import Group
+from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 
 
 class ByGroupIdRequest(BaseRequestBuilder):

@@ -2,7 +2,7 @@ from __future__ import annotations
 from typing import Optional
 from typing import Literal
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class IndustryDataUserProvisioningFlow(BaseModel):
@@ -18,4 +18,3 @@ class IndustryDataUserProvisioningFlow(BaseModel):
 from .industry_data_readiness_status import IndustryDataReadinessStatus
 from .industry_data_user_creation_options import IndustryDataUserCreationOptions
 from .industry_data_user_management_options import IndustryDataUserManagementOptions
-

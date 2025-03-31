@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class NetworkaccessHeaders(BaseModel):
@@ -8,5 +8,4 @@ class NetworkaccessHeaders(BaseModel):
 	referrer: Optional[str] = Field(alias="referrer", default=None,)
 	xForwardedFor: Optional[str] = Field(alias="xForwardedFor", default=None,)
 	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
-
 

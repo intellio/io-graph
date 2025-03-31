@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class SharingViewpoint(BaseModel):
@@ -10,4 +10,3 @@ class SharingViewpoint(BaseModel):
 
 from .default_sharing_link import DefaultSharingLink
 from .share_point_sharing_abilities import SharePointSharingAbilities
-

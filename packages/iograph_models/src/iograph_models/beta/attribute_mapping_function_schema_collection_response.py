@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class AttributeMappingFunctionSchemaCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class AttributeMappingFunctionSchemaCollectionResponse(BaseModel):
 	value: Optional[list[AttributeMappingFunctionSchema]] = Field(alias="value", default=None,)
 
 from .attribute_mapping_function_schema import AttributeMappingFunctionSchema
-

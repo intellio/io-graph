@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class Target_appsPostRequest(BaseModel):
@@ -9,4 +9,3 @@ class Target_appsPostRequest(BaseModel):
 
 from .managed_mobile_app import ManagedMobileApp
 from .targeted_managed_app_group_type import TargetedManagedAppGroupType
-

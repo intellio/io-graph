@@ -2,7 +2,7 @@ from __future__ import annotations
 from typing import Optional
 from typing import Literal
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class GroupPolicyPresentationCheckBox(BaseModel):
@@ -14,4 +14,3 @@ class GroupPolicyPresentationCheckBox(BaseModel):
 	defaultChecked: Optional[bool] = Field(alias="defaultChecked", default=None,)
 
 from .group_policy_definition import GroupPolicyDefinition
-

@@ -11,9 +11,9 @@ from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:
 	from .....request_adapter import HttpxRequestAdapter
+from iograph_models.beta.delete_ti_indicators_by_external_id_post_response import Delete_ti_indicators_by_external_idPostResponse
 from iograph_models.beta.delete_ti_indicators_by_external_id_post_request import Delete_ti_indicators_by_external_idPostRequest
 from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
-from iograph_models.beta.delete_ti_indicators_by_external_id_post_response import Delete_ti_indicators_by_external_idPostResponse
 
 
 class DeleteTiIndicatorsByExternalIdRequest(BaseRequestBuilder):

@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class DriveProtectionUnitCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class DriveProtectionUnitCollectionResponse(BaseModel):
 	value: Optional[list[DriveProtectionUnit]] = Field(alias="value", default=None,)
 
 from .drive_protection_unit import DriveProtectionUnit
-

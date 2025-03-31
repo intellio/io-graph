@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class MicrosoftTunnelConfigurationCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class MicrosoftTunnelConfigurationCollectionResponse(BaseModel):
 	value: Optional[list[MicrosoftTunnelConfiguration]] = Field(alias="value", default=None,)
 
 from .microsoft_tunnel_configuration import MicrosoftTunnelConfiguration
-

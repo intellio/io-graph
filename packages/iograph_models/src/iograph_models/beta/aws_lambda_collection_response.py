@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class AwsLambdaCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class AwsLambdaCollectionResponse(BaseModel):
 	value: Optional[list[AwsLambda]] = Field(alias="value", default=None,)
 
 from .aws_lambda import AwsLambda
-

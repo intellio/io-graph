@@ -3,7 +3,7 @@ from typing import Optional
 from typing import Union
 from typing import Literal
 from typing import Annotated
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class SecurityRecommendLabelAction(BaseModel):
@@ -28,4 +28,3 @@ from .security_remove_content_header_action import SecurityRemoveContentHeaderAc
 from .security_remove_protection_action import SecurityRemoveProtectionAction
 from .security_remove_watermark_action import SecurityRemoveWatermarkAction
 from .security_action_source import SecurityActionSource
-

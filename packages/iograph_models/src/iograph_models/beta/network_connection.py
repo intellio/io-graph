@@ -1,7 +1,7 @@
 from __future__ import annotations
 from typing import Optional
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class NetworkConnection(BaseModel):
@@ -30,4 +30,3 @@ class NetworkConnection(BaseModel):
 from .connection_direction import ConnectionDirection
 from .security_network_protocol import SecurityNetworkProtocol
 from .connection_status import ConnectionStatus
-

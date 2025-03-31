@@ -1,7 +1,7 @@
 from __future__ import annotations
 from typing import Optional
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class DeviceHealthScriptPolicyState(BaseModel):
@@ -27,4 +27,3 @@ class DeviceHealthScriptPolicyState(BaseModel):
 
 from .run_state import RunState
 from .remediation_state import RemediationState
-

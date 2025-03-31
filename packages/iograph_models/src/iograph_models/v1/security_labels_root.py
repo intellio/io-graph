@@ -1,11 +1,12 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from typing import Literal
+from pydantic import BaseModel, Field
 
 
 class SecurityLabelsRoot(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
+	odata_type: Literal["#microsoft.graph.security.labelsRoot"] = Field(alias="@odata.type",)
 	authorities: Optional[list[SecurityAuthorityTemplate]] = Field(alias="authorities", default=None,)
 	categories: Optional[list[SecurityCategoryTemplate]] = Field(alias="categories", default=None,)
 	citations: Optional[list[SecurityCitationTemplate]] = Field(alias="citations", default=None,)
@@ -19,4 +20,3 @@ from .security_citation_template import SecurityCitationTemplate
 from .security_department_template import SecurityDepartmentTemplate
 from .security_file_plan_reference_template import SecurityFilePlanReferenceTemplate
 from .security_retention_label import SecurityRetentionLabel
-

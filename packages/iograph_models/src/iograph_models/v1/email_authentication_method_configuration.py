@@ -3,7 +3,7 @@ from typing import Optional
 from typing import Union
 from typing import Literal
 from typing import Annotated
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class EmailAuthenticationMethodConfiguration(BaseModel):
@@ -19,4 +19,3 @@ from .authentication_method_state import AuthenticationMethodState
 from .external_email_otp_state import ExternalEmailOtpState
 from .microsoft_authenticator_authentication_method_target import MicrosoftAuthenticatorAuthenticationMethodTarget
 from .sms_authentication_method_target import SmsAuthenticationMethodTarget
-

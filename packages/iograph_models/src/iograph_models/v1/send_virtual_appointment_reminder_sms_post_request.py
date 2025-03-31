@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class Send_virtual_appointment_reminder_smsPostRequest(BaseModel):
@@ -9,4 +9,3 @@ class Send_virtual_appointment_reminder_smsPostRequest(BaseModel):
 
 from .remind_before_time_in_minutes_type import RemindBeforeTimeInMinutesType
 from .attendee_notification_info import AttendeeNotificationInfo
-

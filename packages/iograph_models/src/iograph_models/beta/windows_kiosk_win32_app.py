@@ -1,7 +1,7 @@
 from __future__ import annotations
 from typing import Optional
 from typing import Literal
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class WindowsKioskWin32App(BaseModel):
@@ -19,4 +19,3 @@ class WindowsKioskWin32App(BaseModel):
 from .windows_kiosk_app_type import WindowsKioskAppType
 from .windows_app_start_layout_tile_size import WindowsAppStartLayoutTileSize
 from .windows_edge_kiosk_type import WindowsEdgeKioskType
-

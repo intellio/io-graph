@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class DeviceHealthScriptRemediationHistoryData(BaseModel):
@@ -9,5 +9,4 @@ class DeviceHealthScriptRemediationHistoryData(BaseModel):
 	noIssueDeviceCount: Optional[int] = Field(alias="noIssueDeviceCount", default=None,)
 	remediatedDeviceCount: Optional[int] = Field(alias="remediatedDeviceCount", default=None,)
 	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
-
 

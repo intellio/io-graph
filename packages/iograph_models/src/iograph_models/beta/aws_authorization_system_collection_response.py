@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class AwsAuthorizationSystemCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class AwsAuthorizationSystemCollectionResponse(BaseModel):
 	value: Optional[list[AwsAuthorizationSystem]] = Field(alias="value", default=None,)
 
 from .aws_authorization_system import AwsAuthorizationSystem
-

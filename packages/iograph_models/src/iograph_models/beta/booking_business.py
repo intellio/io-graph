@@ -2,7 +2,7 @@ from __future__ import annotations
 from typing import Optional
 from typing import Literal
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class BookingBusiness(BaseModel):
@@ -35,9 +35,7 @@ from .booking_page_settings import BookingPageSettings
 from .booking_work_hours import BookingWorkHours
 from .booking_scheduling_policy import BookingSchedulingPolicy
 from .booking_appointment import BookingAppointment
-from .booking_appointment import BookingAppointment
 from .booking_customer import BookingCustomer
 from .booking_custom_question import BookingCustomQuestion
 from .booking_service import BookingService
 from .booking_staff_member import BookingStaffMember
-

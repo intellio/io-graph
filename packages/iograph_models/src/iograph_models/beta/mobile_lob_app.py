@@ -3,11 +3,11 @@ from typing import Optional
 from typing import Union
 from typing import Literal
 from typing import Annotated
+from datetime import datetime
+from pydantic import BaseModel, Field
 from pydantic import model_validator, ModelWrapValidatorHandler, ValidationError
 from typing_extensions import Self
 from typing import Any
-from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class MobileLobApp(BaseModel):
@@ -65,9 +65,6 @@ class MobileLobApp(BaseModel):
 			if mapping_key == "#microsoft.graph.macOSPkgApp":
 				from .mac_o_s_pkg_app import MacOSPkgApp
 				return MacOSPkgApp.model_validate(data)
-			if mapping_key == "#microsoft.graph.win32LobApp":
-				from .win32_lob_app import Win32LobApp
-				return Win32LobApp.model_validate(data)
 			if mapping_key == "#microsoft.graph.win32CatalogApp":
 				from .win32_catalog_app import Win32CatalogApp
 				return Win32CatalogApp.model_validate(data)
@@ -77,9 +74,6 @@ class MobileLobApp(BaseModel):
 			if mapping_key == "#microsoft.graph.windowsMobileMSI":
 				from .windows_mobile_m_s_i import WindowsMobileMSI
 				return WindowsMobileMSI.model_validate(data)
-			if mapping_key == "#microsoft.graph.windowsPhone81AppX":
-				from .windows_phone81_app_x import WindowsPhone81AppX
-				return WindowsPhone81AppX.model_validate(data)
 			if mapping_key == "#microsoft.graph.windowsPhone81AppXBundle":
 				from .windows_phone81_app_x_bundle import WindowsPhone81AppXBundle
 				return WindowsPhone81AppXBundle.model_validate(data)
@@ -101,4 +95,3 @@ from .mobile_app_category import MobileAppCategory
 from .mobile_app_dependency import MobileAppDependency
 from .mobile_app_supersedence import MobileAppSupersedence
 from .mobile_app_content import MobileAppContent
-

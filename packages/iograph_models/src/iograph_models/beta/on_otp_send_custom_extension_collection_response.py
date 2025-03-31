@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class OnOtpSendCustomExtensionCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class OnOtpSendCustomExtensionCollectionResponse(BaseModel):
 	value: Optional[list[OnOtpSendCustomExtension]] = Field(alias="value", default=None,)
 
 from .on_otp_send_custom_extension import OnOtpSendCustomExtension
-

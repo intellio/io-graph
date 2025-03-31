@@ -1,11 +1,12 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from typing import Literal
+from pydantic import BaseModel, Field
 
 
 class DeviceRegistrationPolicy(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
+	odata_type: Literal["#microsoft.graph.deviceRegistrationPolicy"] = Field(alias="@odata.type",)
 	azureADJoin: Optional[AzureADJoinPolicy] = Field(alias="azureADJoin", default=None,)
 	azureADRegistration: Optional[AzureADRegistrationPolicy] = Field(alias="azureADRegistration", default=None,)
 	description: Optional[str] = Field(alias="description", default=None,)
@@ -18,4 +19,3 @@ from .azure_a_d_join_policy import AzureADJoinPolicy
 from .azure_a_d_registration_policy import AzureADRegistrationPolicy
 from .local_admin_password_settings import LocalAdminPasswordSettings
 from .multi_factor_auth_configuration import MultiFactorAuthConfiguration
-

@@ -2,7 +2,7 @@ from __future__ import annotations
 from typing import Optional
 from typing import Union
 from typing import Annotated
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class AttachmentCollectionResponse(BaseModel):
@@ -13,4 +13,3 @@ class AttachmentCollectionResponse(BaseModel):
 from .file_attachment import FileAttachment
 from .item_attachment import ItemAttachment
 from .reference_attachment import ReferenceAttachment
-

@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class TimeSlotCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class TimeSlotCollectionResponse(BaseModel):
 	value: Optional[list[TimeSlot]] = Field(alias="value", default=None,)
 
 from .time_slot import TimeSlot
-

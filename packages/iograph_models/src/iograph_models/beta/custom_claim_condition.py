@@ -1,7 +1,7 @@
 from __future__ import annotations
 from typing import Optional
 from typing import Literal
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class CustomClaimCondition(BaseModel):
@@ -10,4 +10,3 @@ class CustomClaimCondition(BaseModel):
 	userType: Optional[ClaimConditionUserType | str] = Field(alias="userType", default=None,)
 
 from .claim_condition_user_type import ClaimConditionUserType
-

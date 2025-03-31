@@ -1,11 +1,11 @@
 from __future__ import annotations
 from typing import Optional
 from typing import Literal
+from datetime import datetime
+from pydantic import BaseModel, Field
 from pydantic import model_validator, ModelWrapValidatorHandler, ValidationError
 from typing_extensions import Self
 from typing import Any
-from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class ManagedApp(BaseModel):
@@ -45,9 +45,6 @@ class ManagedApp(BaseModel):
 			if mapping_key == "#microsoft.graph.managedIOSStoreApp":
 				from .managed_i_o_s_store_app import ManagedIOSStoreApp
 				return ManagedIOSStoreApp.model_validate(data)
-			if mapping_key == "#microsoft.graph.managedMobileLobApp":
-				from .managed_mobile_lob_app import ManagedMobileLobApp
-				return ManagedMobileLobApp.model_validate(data)
 			if mapping_key == "#microsoft.graph.managedAndroidLobApp":
 				from .managed_android_lob_app import ManagedAndroidLobApp
 				return ManagedAndroidLobApp.model_validate(data)
@@ -64,4 +61,3 @@ from .mobile_app_publishing_state import MobileAppPublishingState
 from .mobile_app_assignment import MobileAppAssignment
 from .mobile_app_category import MobileAppCategory
 from .managed_app_availability import ManagedAppAvailability
-

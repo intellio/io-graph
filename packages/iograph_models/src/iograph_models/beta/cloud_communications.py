@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class CloudCommunications(BaseModel):
@@ -14,4 +14,3 @@ from .call_records_call_record import CallRecordsCallRecord
 from .call import Call
 from .online_meeting import OnlineMeeting
 from .presence import Presence
-

@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class UserExperienceAnalyticsImpactingProcessCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class UserExperienceAnalyticsImpactingProcessCollectionResponse(BaseModel):
 	value: Optional[list[UserExperienceAnalyticsImpactingProcess]] = Field(alias="value", default=None,)
 
 from .user_experience_analytics_impacting_process import UserExperienceAnalyticsImpactingProcess
-

@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class DeviceScopeActionResult(BaseModel):
@@ -12,4 +12,3 @@ class DeviceScopeActionResult(BaseModel):
 
 from .device_scope_action import DeviceScopeAction
 from .device_scope_action_status import DeviceScopeActionStatus
-

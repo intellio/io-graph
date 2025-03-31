@@ -2,7 +2,7 @@ from __future__ import annotations
 from typing import Optional
 from typing import Union
 from typing import Annotated
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class ProtectionPolicyBaseCollectionResponse(BaseModel):
@@ -13,4 +13,3 @@ class ProtectionPolicyBaseCollectionResponse(BaseModel):
 from .exchange_protection_policy import ExchangeProtectionPolicy
 from .one_drive_for_business_protection_policy import OneDriveForBusinessProtectionPolicy
 from .share_point_protection_policy import SharePointProtectionPolicy
-

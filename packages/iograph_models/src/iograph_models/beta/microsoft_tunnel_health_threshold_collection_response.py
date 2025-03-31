@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class MicrosoftTunnelHealthThresholdCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class MicrosoftTunnelHealthThresholdCollectionResponse(BaseModel):
 	value: Optional[list[MicrosoftTunnelHealthThreshold]] = Field(alias="value", default=None,)
 
 from .microsoft_tunnel_health_threshold import MicrosoftTunnelHealthThreshold
-

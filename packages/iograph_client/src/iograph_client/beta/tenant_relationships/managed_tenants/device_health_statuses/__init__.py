@@ -14,9 +14,9 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_device_health_status_id import ByDeviceHealthStatusIdRequest
 	from .....request_adapter import HttpxRequestAdapter
-from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.beta.managed_tenants_device_health_status import ManagedTenantsDeviceHealthStatus
 from iograph_models.beta.managed_tenants_device_health_status_collection_response import ManagedTenantsDeviceHealthStatusCollectionResponse
+from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 
 
 class DeviceHealthStatusesRequest(BaseRequestBuilder):

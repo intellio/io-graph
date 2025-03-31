@@ -1,7 +1,7 @@
 from __future__ import annotations
 from typing import Optional
 from typing import Literal
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class SecurityBlockFileResponseAction(BaseModel):
@@ -10,4 +10,3 @@ class SecurityBlockFileResponseAction(BaseModel):
 	identifier: Optional[SecurityFileEntityIdentifier | str] = Field(alias="identifier", default=None,)
 
 from .security_file_entity_identifier import SecurityFileEntityIdentifier
-

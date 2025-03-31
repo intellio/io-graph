@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class SecurityIpAddressCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class SecurityIpAddressCollectionResponse(BaseModel):
 	value: Optional[list[SecurityIpAddress]] = Field(alias="value", default=None,)
 
 from .security_ip_address import SecurityIpAddress
-

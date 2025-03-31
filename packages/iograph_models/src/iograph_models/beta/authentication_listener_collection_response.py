@@ -2,7 +2,7 @@ from __future__ import annotations
 from typing import Optional
 from typing import Union
 from typing import Annotated
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class AuthenticationListenerCollectionResponse(BaseModel):
@@ -11,4 +11,3 @@ class AuthenticationListenerCollectionResponse(BaseModel):
 	value: Optional[list[Annotated[Union[InvokeUserFlowListener],Field(discriminator="odata_type")]]] = Field(alias="value", default=None,)
 
 from .invoke_user_flow_listener import InvokeUserFlowListener
-

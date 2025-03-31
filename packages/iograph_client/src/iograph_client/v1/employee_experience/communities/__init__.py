@@ -15,8 +15,8 @@ if TYPE_CHECKING:
 	from .by_community_id import ByCommunityIdRequest
 	from ....request_adapter import HttpxRequestAdapter
 from iograph_models.v1.o_data_errors__o_data_error import ODataErrorsODataError
-from iograph_models.v1.community_collection_response import CommunityCollectionResponse
 from iograph_models.v1.community import Community
+from iograph_models.v1.community_collection_response import CommunityCollectionResponse
 
 
 class CommunitiesRequest(BaseRequestBuilder):

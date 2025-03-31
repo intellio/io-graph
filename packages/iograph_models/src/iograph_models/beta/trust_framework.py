@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class TrustFramework(BaseModel):
@@ -10,4 +10,3 @@ class TrustFramework(BaseModel):
 
 from .trust_framework_key_set import TrustFrameworkKeySet
 from .trust_framework_policy import TrustFrameworkPolicy
-

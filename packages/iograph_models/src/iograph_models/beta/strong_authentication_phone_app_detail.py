@@ -1,13 +1,14 @@
 from __future__ import annotations
 from uuid import UUID
 from typing import Optional
+from typing import Literal
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class StrongAuthenticationPhoneAppDetail(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
+	odata_type: Literal["#microsoft.graph.strongAuthenticationPhoneAppDetail"] = Field(alias="@odata.type",)
 	authenticationType: Optional[str] = Field(alias="authenticationType", default=None,)
 	authenticatorFlavor: Optional[str] = Field(alias="authenticatorFlavor", default=None,)
 	deviceId: Optional[UUID] = Field(alias="deviceId", default=None,)
@@ -25,4 +26,3 @@ class StrongAuthenticationPhoneAppDetail(BaseModel):
 	tokenGenerationIntervalInSeconds: Optional[int] = Field(alias="tokenGenerationIntervalInSeconds", default=None,)
 
 from .oath_token_metadata import OathTokenMetadata
-

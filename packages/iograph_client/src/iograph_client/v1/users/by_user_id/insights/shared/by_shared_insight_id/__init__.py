@@ -14,8 +14,8 @@ if TYPE_CHECKING:
 	from .resource import ResourceRequest
 	from .last_shared_method import LastSharedMethodRequest
 	from .......request_adapter import HttpxRequestAdapter
-from iograph_models.v1.shared_insight import SharedInsight
 from iograph_models.v1.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.v1.shared_insight import SharedInsight
 
 
 class BySharedInsightIdRequest(BaseRequestBuilder):

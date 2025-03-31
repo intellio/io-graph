@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class PlannerSharedWithContainerCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class PlannerSharedWithContainerCollectionResponse(BaseModel):
 	value: Optional[list[PlannerSharedWithContainer]] = Field(alias="value", default=None,)
 
 from .planner_shared_with_container import PlannerSharedWithContainer
-

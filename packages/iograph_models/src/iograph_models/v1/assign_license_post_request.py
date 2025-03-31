@@ -1,7 +1,7 @@
 from __future__ import annotations
 from uuid import UUID
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class Assign_licensePostRequest(BaseModel):
@@ -9,4 +9,3 @@ class Assign_licensePostRequest(BaseModel):
 	removeLicenses: Optional[list[UUID]] = Field(alias="removeLicenses", default=None,)
 
 from .assigned_license import AssignedLicense
-

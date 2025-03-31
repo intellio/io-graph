@@ -1,13 +1,14 @@
 from __future__ import annotations
 from typing import Optional
 from typing import Union
+from typing import Literal
 from typing import Annotated
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class DataClassificationService(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
+	odata_type: Literal["#microsoft.graph.dataClassificationService"] = Field(alias="@odata.type",)
 	classifyFileJobs: Optional[list[Annotated[Union[ClassificationJobResponse, DlpEvaluatePoliciesJobResponse, EvaluateLabelJobResponse],Field(discriminator="odata_type")]]] = Field(alias="classifyFileJobs", default=None,)
 	classifyTextJobs: Optional[list[Annotated[Union[ClassificationJobResponse, DlpEvaluatePoliciesJobResponse, EvaluateLabelJobResponse],Field(discriminator="odata_type")]]] = Field(alias="classifyTextJobs", default=None,)
 	evaluateDlpPoliciesJobs: Optional[list[Annotated[Union[ClassificationJobResponse, DlpEvaluatePoliciesJobResponse, EvaluateLabelJobResponse],Field(discriminator="odata_type")]]] = Field(alias="evaluateDlpPoliciesJobs", default=None,)
@@ -21,20 +22,7 @@ class DataClassificationService(BaseModel):
 from .classification_job_response import ClassificationJobResponse
 from .dlp_evaluate_policies_job_response import DlpEvaluatePoliciesJobResponse
 from .evaluate_label_job_response import EvaluateLabelJobResponse
-from .classification_job_response import ClassificationJobResponse
-from .dlp_evaluate_policies_job_response import DlpEvaluatePoliciesJobResponse
-from .evaluate_label_job_response import EvaluateLabelJobResponse
-from .classification_job_response import ClassificationJobResponse
-from .dlp_evaluate_policies_job_response import DlpEvaluatePoliciesJobResponse
-from .evaluate_label_job_response import EvaluateLabelJobResponse
-from .classification_job_response import ClassificationJobResponse
-from .dlp_evaluate_policies_job_response import DlpEvaluatePoliciesJobResponse
-from .evaluate_label_job_response import EvaluateLabelJobResponse
 from .exact_match_data_store import ExactMatchDataStore
 from .exact_match_upload_agent import ExactMatchUploadAgent
-from .classification_job_response import ClassificationJobResponse
-from .dlp_evaluate_policies_job_response import DlpEvaluatePoliciesJobResponse
-from .evaluate_label_job_response import EvaluateLabelJobResponse
 from .sensitive_type import SensitiveType
 from .sensitivity_label import SensitivityLabel
-

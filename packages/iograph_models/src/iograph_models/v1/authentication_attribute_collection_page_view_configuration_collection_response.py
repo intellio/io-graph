@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class AuthenticationAttributeCollectionPageViewConfigurationCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class AuthenticationAttributeCollectionPageViewConfigurationCollectionResponse(B
 	value: Optional[list[AuthenticationAttributeCollectionPageViewConfiguration]] = Field(alias="value", default=None,)
 
 from .authentication_attribute_collection_page_view_configuration import AuthenticationAttributeCollectionPageViewConfiguration
-

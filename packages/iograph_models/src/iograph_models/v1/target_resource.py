@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class TargetResource(BaseModel):
@@ -14,4 +14,3 @@ class TargetResource(BaseModel):
 
 from .group_type import GroupType
 from .modified_property import ModifiedProperty
-

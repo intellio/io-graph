@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class Security_remediatePostRequest(BaseModel):
@@ -14,4 +14,3 @@ class Security_remediatePostRequest(BaseModel):
 from .security_remediation_severity import SecurityRemediationSeverity
 from .security_remediation_action import SecurityRemediationAction
 from .security_analyzed_email import SecurityAnalyzedEmail
-

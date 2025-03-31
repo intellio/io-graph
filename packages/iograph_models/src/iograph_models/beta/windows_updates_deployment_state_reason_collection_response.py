@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class WindowsUpdatesDeploymentStateReasonCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class WindowsUpdatesDeploymentStateReasonCollectionResponse(BaseModel):
 	value: Optional[list[WindowsUpdatesDeploymentStateReason]] = Field(alias="value", default=None,)
 
 from .windows_updates_deployment_state_reason import WindowsUpdatesDeploymentStateReason
-

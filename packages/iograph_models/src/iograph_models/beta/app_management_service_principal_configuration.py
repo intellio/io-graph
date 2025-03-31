@@ -1,7 +1,7 @@
 from __future__ import annotations
 from typing import Optional
 from typing import Literal
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class AppManagementServicePrincipalConfiguration(BaseModel):
@@ -11,4 +11,3 @@ class AppManagementServicePrincipalConfiguration(BaseModel):
 
 from .key_credential_configuration import KeyCredentialConfiguration
 from .password_credential_configuration import PasswordCredentialConfiguration
-

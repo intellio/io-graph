@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class UpdateAllMessagesReadStateOperationCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class UpdateAllMessagesReadStateOperationCollectionResponse(BaseModel):
 	value: Optional[list[UpdateAllMessagesReadStateOperation]] = Field(alias="value", default=None,)
 
 from .update_all_messages_read_state_operation import UpdateAllMessagesReadStateOperation
-

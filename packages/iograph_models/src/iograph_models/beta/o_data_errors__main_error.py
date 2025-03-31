@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class ODataErrorsMainError(BaseModel):
@@ -12,4 +12,3 @@ class ODataErrorsMainError(BaseModel):
 
 from .o_data_errors__error_details import ODataErrorsErrorDetails
 from .o_data_errors__inner_error import ODataErrorsInnerError
-

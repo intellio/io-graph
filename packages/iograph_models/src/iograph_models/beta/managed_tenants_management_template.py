@@ -1,12 +1,13 @@
 from __future__ import annotations
 from typing import Optional
+from typing import Literal
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class ManagedTenantsManagementTemplate(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
+	odata_type: Literal["#microsoft.graph.managedTenants.managementTemplate"] = Field(alias="@odata.type",)
 	category: Optional[ManagedTenantsManagementCategory | str] = Field(alias="category", default=None,)
 	createdByUserId: Optional[str] = Field(alias="createdByUserId", default=None,)
 	createdDateTime: Optional[datetime] = Field(alias="createdDateTime", default=None,)
@@ -31,4 +32,3 @@ from .managed_tenants_management_provider import ManagedTenantsManagementProvide
 from .managed_tenants_workload_action import ManagedTenantsWorkloadAction
 from .managed_tenants_management_template_collection import ManagedTenantsManagementTemplateCollection
 from .managed_tenants_management_template_step import ManagedTenantsManagementTemplateStep
-

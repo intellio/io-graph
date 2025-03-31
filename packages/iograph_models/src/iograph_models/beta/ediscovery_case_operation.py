@@ -1,11 +1,11 @@
 from __future__ import annotations
 from typing import Optional
 from typing import Union
+from datetime import datetime
+from pydantic import BaseModel, Field
 from pydantic import model_validator, ModelWrapValidatorHandler, ValidationError
 from typing_extensions import Self
 from typing import Any
-from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class EdiscoveryCaseOperation(BaseModel):
@@ -65,4 +65,3 @@ from .communications_identity_set import CommunicationsIdentitySet
 from .share_point_identity_set import SharePointIdentitySet
 from .result_info import ResultInfo
 from .ediscovery_case_operation_status import EdiscoveryCaseOperationStatus
-

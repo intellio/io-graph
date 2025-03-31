@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class TeamsAppDashboardCardContentSource(BaseModel):
@@ -10,4 +10,3 @@ class TeamsAppDashboardCardContentSource(BaseModel):
 
 from .teams_app_dashboard_card_bot_configuration import TeamsAppDashboardCardBotConfiguration
 from .teams_app_dashboard_card_source_type import TeamsAppDashboardCardSourceType
-

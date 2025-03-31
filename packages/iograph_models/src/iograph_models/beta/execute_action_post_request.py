@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class Execute_actionPostRequest(BaseModel):
@@ -17,4 +17,3 @@ class Execute_actionPostRequest(BaseModel):
 	organizationalUnitPath: Optional[str] = Field(alias="organizationalUnitPath", default=None,)
 
 from .managed_device_remote_action import ManagedDeviceRemoteAction
-

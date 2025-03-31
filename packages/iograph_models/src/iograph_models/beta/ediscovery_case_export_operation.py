@@ -1,13 +1,14 @@
 from __future__ import annotations
 from typing import Optional
 from typing import Union
+from typing import Literal
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class EdiscoveryCaseExportOperation(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
+	odata_type: Literal["#microsoft.graph.ediscovery.caseExportOperation"] = Field(alias="@odata.type",)
 	action: Optional[EdiscoveryCaseAction | str] = Field(alias="action", default=None,)
 	completedDateTime: Optional[datetime] = Field(alias="completedDateTime", default=None,)
 	createdBy: Optional[Union[AiInteractionMentionedIdentitySet, ApprovalIdentitySet, ChatMessageFromIdentitySet, ChatMessageMentionedIdentitySet, ChatMessageReactionIdentitySet, CommunicationsIdentitySet, SharePointIdentitySet]] = Field(alias="createdBy", default=None,discriminator="odata_type", )
@@ -37,4 +38,3 @@ from .ediscovery_case_operation_status import EdiscoveryCaseOperationStatus
 from .ediscovery_export_options import EdiscoveryExportOptions
 from .ediscovery_export_file_structure import EdiscoveryExportFileStructure
 from .ediscovery_review_set import EdiscoveryReviewSet
-

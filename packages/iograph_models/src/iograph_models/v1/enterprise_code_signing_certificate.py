@@ -1,12 +1,13 @@
 from __future__ import annotations
 from typing import Optional
+from typing import Literal
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class EnterpriseCodeSigningCertificate(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
+	odata_type: Literal["#microsoft.graph.enterpriseCodeSigningCertificate"] = Field(alias="@odata.type",)
 	content: Optional[str] = Field(alias="content", default=None,)
 	expirationDateTime: Optional[datetime] = Field(alias="expirationDateTime", default=None,)
 	issuer: Optional[str] = Field(alias="issuer", default=None,)
@@ -17,4 +18,3 @@ class EnterpriseCodeSigningCertificate(BaseModel):
 	uploadDateTime: Optional[datetime] = Field(alias="uploadDateTime", default=None,)
 
 from .certificate_status import CertificateStatus
-

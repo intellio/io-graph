@@ -1,9 +1,9 @@
 from __future__ import annotations
 from typing import Optional
+from pydantic import BaseModel, Field
 from pydantic import model_validator, ModelWrapValidatorHandler, ValidationError
 from typing_extensions import Self
 from typing import Any
-from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class AndroidDeviceOwnerKioskModeHomeScreenItem(BaseModel):
@@ -19,9 +19,6 @@ class AndroidDeviceOwnerKioskModeHomeScreenItem(BaseModel):
 				return parent_validated_model
 			# get the discriminator value
 			mapping_key = data["@odata.type"]
-			if mapping_key == "#microsoft.graph.androidDeviceOwnerKioskModeFolderItem":
-				from .android_device_owner_kiosk_mode_folder_item import AndroidDeviceOwnerKioskModeFolderItem
-				return AndroidDeviceOwnerKioskModeFolderItem.model_validate(data)
 			if mapping_key == "#microsoft.graph.androidDeviceOwnerKioskModeApp":
 				from .android_device_owner_kiosk_mode_app import AndroidDeviceOwnerKioskModeApp
 				return AndroidDeviceOwnerKioskModeApp.model_validate(data)
@@ -35,5 +32,4 @@ class AndroidDeviceOwnerKioskModeHomeScreenItem(BaseModel):
 
 		except Exception as e:
 			raise e
-
 

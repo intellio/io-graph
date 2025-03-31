@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class AospDeviceOwnerEnterpriseWiFiConfigurationCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class AospDeviceOwnerEnterpriseWiFiConfigurationCollectionResponse(BaseModel):
 	value: Optional[list[AospDeviceOwnerEnterpriseWiFiConfiguration]] = Field(alias="value", default=None,)
 
 from .aosp_device_owner_enterprise_wi_fi_configuration import AospDeviceOwnerEnterpriseWiFiConfiguration
-

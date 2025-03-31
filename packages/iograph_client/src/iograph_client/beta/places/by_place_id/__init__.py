@@ -14,8 +14,8 @@ if TYPE_CHECKING:
 	from .graph_room_list import GraphRoomListRequest
 	from .graph_room import GraphRoomRequest
 	from ....request_adapter import HttpxRequestAdapter
-from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.beta.place import Place
+from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 
 
 class ByPlaceIdRequest(BaseRequestBuilder):

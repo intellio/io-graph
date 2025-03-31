@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class OidcInboundClaimMappingOverride(BaseModel):
@@ -16,4 +16,3 @@ class OidcInboundClaimMappingOverride(BaseModel):
 	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
 
 from .oidc_address_inbound_claims import OidcAddressInboundClaims
-

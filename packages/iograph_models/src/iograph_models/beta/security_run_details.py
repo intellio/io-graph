@@ -1,7 +1,7 @@
 from __future__ import annotations
 from typing import Optional
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class SecurityRunDetails(BaseModel):
@@ -13,4 +13,3 @@ class SecurityRunDetails(BaseModel):
 
 from .security_hunting_rule_error_code import SecurityHuntingRuleErrorCode
 from .security_hunting_rule_run_status import SecurityHuntingRuleRunStatus
-

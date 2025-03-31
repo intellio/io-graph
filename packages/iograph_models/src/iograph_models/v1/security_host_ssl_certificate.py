@@ -3,7 +3,7 @@ from typing import Optional
 from typing import Union
 from typing import Literal
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class SecurityHostSslCertificate(BaseModel):
@@ -19,4 +19,3 @@ from .security_host_ssl_certificate_port import SecurityHostSslCertificatePort
 from .security_hostname import SecurityHostname
 from .security_ip_address import SecurityIpAddress
 from .security_ssl_certificate import SecuritySslCertificate
-

@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class NetworkaccessNetworkAccessTrafficCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class NetworkaccessNetworkAccessTrafficCollectionResponse(BaseModel):
 	value: Optional[list[NetworkaccessNetworkAccessTraffic]] = Field(alias="value", default=None,)
 
 from .networkaccess_network_access_traffic import NetworkaccessNetworkAccessTraffic
-

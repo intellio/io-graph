@@ -2,7 +2,7 @@ from __future__ import annotations
 from uuid import UUID
 from typing import Optional
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class LicenseAssignmentState(BaseModel):
@@ -13,5 +13,4 @@ class LicenseAssignmentState(BaseModel):
 	skuId: Optional[UUID] = Field(alias="skuId", default=None,)
 	state: Optional[str] = Field(alias="state", default=None,)
 	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
-
 

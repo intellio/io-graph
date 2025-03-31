@@ -1,7 +1,7 @@
 from __future__ import annotations
 from typing import Optional
 from typing import Union
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class AzureADJoinPolicy(BaseModel):
@@ -14,4 +14,3 @@ from .all_device_registration_membership import AllDeviceRegistrationMembership
 from .enumerated_device_registration_membership import EnumeratedDeviceRegistrationMembership
 from .no_device_registration_membership import NoDeviceRegistrationMembership
 from .local_admin_settings import LocalAdminSettings
-

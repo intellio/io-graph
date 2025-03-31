@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class Windows_updates_enroll_assets_by_idPostRequest(BaseModel):
@@ -9,4 +9,3 @@ class Windows_updates_enroll_assets_by_idPostRequest(BaseModel):
 	ids: Optional[list[str]] = Field(alias="ids", default=None,)
 
 from .windows_updates_update_category import WindowsUpdatesUpdateCategory
-

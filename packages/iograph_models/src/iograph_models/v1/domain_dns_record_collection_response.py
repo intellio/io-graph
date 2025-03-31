@@ -2,7 +2,7 @@ from __future__ import annotations
 from typing import Optional
 from typing import Union
 from typing import Annotated
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class DomainDnsRecordCollectionResponse(BaseModel):
@@ -15,4 +15,3 @@ from .domain_dns_mx_record import DomainDnsMxRecord
 from .domain_dns_srv_record import DomainDnsSrvRecord
 from .domain_dns_txt_record import DomainDnsTxtRecord
 from .domain_dns_unavailable_record import DomainDnsUnavailableRecord
-

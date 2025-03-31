@@ -2,7 +2,7 @@ from __future__ import annotations
 from typing import Optional
 from typing import Literal
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class AndroidDeviceOwnerScepCertificateProfile(BaseModel):
@@ -67,4 +67,3 @@ from .key_size import KeySize
 from .key_usages import KeyUsages
 from .android_device_owner_silent_certificate_access import AndroidDeviceOwnerSilentCertificateAccess
 from .managed_device_certificate_state import ManagedDeviceCertificateState
-

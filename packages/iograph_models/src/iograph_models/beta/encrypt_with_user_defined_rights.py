@@ -1,7 +1,7 @@
 from __future__ import annotations
 from typing import Optional
 from typing import Literal
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class EncryptWithUserDefinedRights(BaseModel):
@@ -13,4 +13,3 @@ class EncryptWithUserDefinedRights(BaseModel):
 	decryptionRightsManagementTemplateId: Optional[str] = Field(alias="decryptionRightsManagementTemplateId", default=None,)
 
 from .encrypt_with import EncryptWith
-

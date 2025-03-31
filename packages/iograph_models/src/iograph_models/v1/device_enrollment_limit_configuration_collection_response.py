@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class DeviceEnrollmentLimitConfigurationCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class DeviceEnrollmentLimitConfigurationCollectionResponse(BaseModel):
 	value: Optional[list[DeviceEnrollmentLimitConfiguration]] = Field(alias="value", default=None,)
 
 from .device_enrollment_limit_configuration import DeviceEnrollmentLimitConfiguration
-

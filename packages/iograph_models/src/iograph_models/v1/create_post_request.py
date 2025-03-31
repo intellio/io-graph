@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class CreatePostRequest(BaseModel):
@@ -13,4 +13,3 @@ class CreatePostRequest(BaseModel):
 	connectorId: Optional[str] = Field(alias="connectorId", default=None,)
 
 from .print_certificate_signing_request import PrintCertificateSigningRequest
-

@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class EnterpriseCodeSigningCertificateCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class EnterpriseCodeSigningCertificateCollectionResponse(BaseModel):
 	value: Optional[list[EnterpriseCodeSigningCertificate]] = Field(alias="value", default=None,)
 
 from .enterprise_code_signing_certificate import EnterpriseCodeSigningCertificate
-

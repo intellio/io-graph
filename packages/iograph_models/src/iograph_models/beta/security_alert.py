@@ -1,14 +1,15 @@
 from __future__ import annotations
 from typing import Optional
 from typing import Union
+from typing import Literal
 from typing import Annotated
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class SecurityAlert(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
+	odata_type: Literal["#microsoft.graph.security.alert"] = Field(alias="@odata.type",)
 	actorDisplayName: Optional[str] = Field(alias="actorDisplayName", default=None,)
 	additionalData: Optional[SecurityDictionary] = Field(alias="additionalData", default=None,)
 	alertPolicyId: Optional[str] = Field(alias="alertPolicyId", default=None,)
@@ -96,4 +97,3 @@ from .security_user_evidence import SecurityUserEvidence
 from .security_service_source import SecurityServiceSource
 from .security_alert_severity import SecurityAlertSeverity
 from .security_alert_status import SecurityAlertStatus
-

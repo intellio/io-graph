@@ -1,7 +1,7 @@
 from __future__ import annotations
 from typing import Optional
 from typing import Literal
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class TooManyGlobalAdminsAssignedToTenantAlertIncident(BaseModel):
@@ -10,5 +10,4 @@ class TooManyGlobalAdminsAssignedToTenantAlertIncident(BaseModel):
 	assigneeDisplayName: Optional[str] = Field(alias="assigneeDisplayName", default=None,)
 	assigneeId: Optional[str] = Field(alias="assigneeId", default=None,)
 	assigneeUserPrincipalName: Optional[str] = Field(alias="assigneeUserPrincipalName", default=None,)
-
 

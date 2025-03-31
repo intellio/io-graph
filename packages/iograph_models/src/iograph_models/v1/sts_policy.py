@@ -3,11 +3,11 @@ from typing import Optional
 from typing import Union
 from typing import Literal
 from typing import Annotated
+from datetime import datetime
+from pydantic import BaseModel, Field
 from pydantic import model_validator, ModelWrapValidatorHandler, ValidationError
 from typing_extensions import Self
 from typing import Any
-from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class StsPolicy(BaseModel):
@@ -18,7 +18,7 @@ class StsPolicy(BaseModel):
 	displayName: Optional[str] = Field(alias="displayName", default=None,)
 	definition: Optional[list[str]] = Field(alias="definition", default=None,)
 	isOrganizationDefault: Optional[bool] = Field(alias="isOrganizationDefault", default=None,)
-	appliesTo: Optional[list[Annotated[Union[AdministrativeUnit, Application, AppRoleAssignment, Contract, Device, DirectoryObjectPartnerReference, DirectoryRole, DirectoryRoleTemplate, Endpoint, ExtensionProperty, Group, GroupSettingTemplate, MultiTenantOrganizationMember, Organization, OrgContact, PolicyBase, AppManagementPolicy, AuthorizationPolicy, CrossTenantAccessPolicy, IdentitySecurityDefaultsEnforcementPolicy, PermissionGrantPolicy, StsPolicy, ActivityBasedTimeoutPolicy, ClaimsMappingPolicy, HomeRealmDiscoveryPolicy, TokenIssuancePolicy, TokenLifetimePolicy, TenantAppManagementPolicy, ResourceSpecificPermissionGrant, ServicePrincipal, User],Field(discriminator="odata_type")]]] = Field(alias="appliesTo", default=None,)
+	appliesTo: Optional[list[Annotated[Union[AdministrativeUnit, Application, AppRoleAssignment, Contract, Device, DirectoryObjectPartnerReference, DirectoryRole, DirectoryRoleTemplate, Endpoint, ExtensionProperty, Group, GroupSettingTemplate, MultiTenantOrganizationMember, Organization, OrgContact, AppManagementPolicy, AuthorizationPolicy, CrossTenantAccessPolicy, IdentitySecurityDefaultsEnforcementPolicy, PermissionGrantPolicy, ActivityBasedTimeoutPolicy, ClaimsMappingPolicy, HomeRealmDiscoveryPolicy, TokenIssuancePolicy, TokenLifetimePolicy, TenantAppManagementPolicy, ResourceSpecificPermissionGrant, ServicePrincipal, User],Field(discriminator="odata_type")]]] = Field(alias="appliesTo", default=None,)
 
 	@model_validator(mode="wrap")
 	def convert_discriminator_class(cls, data: Any, handler: ModelWrapValidatorHandler[Self]) -> Self:
@@ -65,7 +65,6 @@ from .group_setting_template import GroupSettingTemplate
 from .multi_tenant_organization_member import MultiTenantOrganizationMember
 from .organization import Organization
 from .org_contact import OrgContact
-from .policy_base import PolicyBase
 from .app_management_policy import AppManagementPolicy
 from .authorization_policy import AuthorizationPolicy
 from .cross_tenant_access_policy import CrossTenantAccessPolicy
@@ -80,4 +79,3 @@ from .tenant_app_management_policy import TenantAppManagementPolicy
 from .resource_specific_permission_grant import ResourceSpecificPermissionGrant
 from .service_principal import ServicePrincipal
 from .user import User
-

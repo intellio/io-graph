@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class Update_device_propertiesPostRequest(BaseModel):
@@ -11,5 +11,4 @@ class Update_device_propertiesPostRequest(BaseModel):
 	deviceAccountUpn: Optional[str] = Field(alias="deviceAccountUpn", default=None,)
 	deviceAccountPassword: Optional[str] = Field(alias="deviceAccountPassword", default=None,)
 	deviceFriendlyName: Optional[str] = Field(alias="deviceFriendlyName", default=None,)
-
 

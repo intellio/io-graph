@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class TeamsTabCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class TeamsTabCollectionResponse(BaseModel):
 	value: Optional[list[TeamsTab]] = Field(alias="value", default=None,)
 
 from .teams_tab import TeamsTab
-

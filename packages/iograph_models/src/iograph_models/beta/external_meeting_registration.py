@@ -3,7 +3,7 @@ from typing import Optional
 from typing import Union
 from typing import Literal
 from typing import Annotated
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class ExternalMeetingRegistration(BaseModel):
@@ -15,4 +15,3 @@ class ExternalMeetingRegistration(BaseModel):
 from .meeting_audience import MeetingAudience
 from .external_meeting_registrant import ExternalMeetingRegistrant
 from .meeting_registrant import MeetingRegistrant
-

@@ -3,7 +3,7 @@ from typing import Optional
 from typing import Union
 from typing import Literal
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class SecurityHostTracker(BaseModel):
@@ -17,4 +17,3 @@ class SecurityHostTracker(BaseModel):
 
 from .security_hostname import SecurityHostname
 from .security_ip_address import SecurityIpAddress
-

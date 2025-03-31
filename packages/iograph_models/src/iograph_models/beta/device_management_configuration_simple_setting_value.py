@@ -1,10 +1,10 @@
 from __future__ import annotations
 from typing import Optional
 from typing import Literal
+from pydantic import BaseModel, Field
 from pydantic import model_validator, ModelWrapValidatorHandler, ValidationError
 from typing_extensions import Self
 from typing import Any
-from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class DeviceManagementConfigurationSimpleSettingValue(BaseModel):
@@ -27,9 +27,6 @@ class DeviceManagementConfigurationSimpleSettingValue(BaseModel):
 			if mapping_key == "#microsoft.graph.deviceManagementConfigurationSecretSettingValue":
 				from .device_management_configuration_secret_setting_value import DeviceManagementConfigurationSecretSettingValue
 				return DeviceManagementConfigurationSecretSettingValue.model_validate(data)
-			if mapping_key == "#microsoft.graph.deviceManagementConfigurationStringSettingValue":
-				from .device_management_configuration_string_setting_value import DeviceManagementConfigurationStringSettingValue
-				return DeviceManagementConfigurationStringSettingValue.model_validate(data)
 			if mapping_key == "#microsoft.graph.deviceManagementConfigurationReferenceSettingValue":
 				from .device_management_configuration_reference_setting_value import DeviceManagementConfigurationReferenceSettingValue
 				return DeviceManagementConfigurationReferenceSettingValue.model_validate(data)
@@ -39,4 +36,3 @@ class DeviceManagementConfigurationSimpleSettingValue(BaseModel):
 			raise e
 
 from .device_management_configuration_setting_value_template_reference import DeviceManagementConfigurationSettingValueTemplateReference
-

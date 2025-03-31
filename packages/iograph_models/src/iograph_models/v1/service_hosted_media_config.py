@@ -1,7 +1,7 @@
 from __future__ import annotations
 from typing import Optional
 from typing import Literal
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class ServiceHostedMediaConfig(BaseModel):
@@ -9,4 +9,3 @@ class ServiceHostedMediaConfig(BaseModel):
 	preFetchMedia: Optional[list[MediaInfo]] = Field(alias="preFetchMedia", default=None,)
 
 from .media_info import MediaInfo
-

@@ -2,7 +2,7 @@ from __future__ import annotations
 from typing import Optional
 from typing import Union
 from typing import Literal
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class AccessPackageResourceAttributeQuestion(BaseModel):
@@ -11,4 +11,3 @@ class AccessPackageResourceAttributeQuestion(BaseModel):
 
 from .access_package_multiple_choice_question import AccessPackageMultipleChoiceQuestion
 from .access_package_text_input_question import AccessPackageTextInputQuestion
-

@@ -2,7 +2,7 @@ from __future__ import annotations
 from typing import Optional
 from typing import Union
 from typing import Annotated
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class GroupPolicyDefinitionFileCollectionResponse(BaseModel):
@@ -11,4 +11,3 @@ class GroupPolicyDefinitionFileCollectionResponse(BaseModel):
 	value: Optional[list[Annotated[Union[GroupPolicyUploadedDefinitionFile],Field(discriminator="odata_type")]]] = Field(alias="value", default=None,)
 
 from .group_policy_uploaded_definition_file import GroupPolicyUploadedDefinitionFile
-

@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class EnrollmentTroubleshootingEventCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class EnrollmentTroubleshootingEventCollectionResponse(BaseModel):
 	value: Optional[list[EnrollmentTroubleshootingEvent]] = Field(alias="value", default=None,)
 
 from .enrollment_troubleshooting_event import EnrollmentTroubleshootingEvent
-

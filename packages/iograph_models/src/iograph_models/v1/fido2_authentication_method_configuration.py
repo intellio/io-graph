@@ -3,7 +3,7 @@ from typing import Optional
 from typing import Union
 from typing import Literal
 from typing import Annotated
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class Fido2AuthenticationMethodConfiguration(BaseModel):
@@ -21,4 +21,3 @@ from .authentication_method_state import AuthenticationMethodState
 from .fido2_key_restrictions import Fido2KeyRestrictions
 from .microsoft_authenticator_authentication_method_target import MicrosoftAuthenticatorAuthenticationMethodTarget
 from .sms_authentication_method_target import SmsAuthenticationMethodTarget
-

@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class SecurityHostSslCertificatePortCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class SecurityHostSslCertificatePortCollectionResponse(BaseModel):
 	value: Optional[list[SecurityHostSslCertificatePort]] = Field(alias="value", default=None,)
 
 from .security_host_ssl_certificate_port import SecurityHostSslCertificatePort
-

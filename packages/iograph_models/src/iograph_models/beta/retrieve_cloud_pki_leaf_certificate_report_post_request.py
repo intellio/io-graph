@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class Retrieve_cloud_pki_leaf_certificate_reportPostRequest(BaseModel):
@@ -11,5 +11,4 @@ class Retrieve_cloud_pki_leaf_certificate_reportPostRequest(BaseModel):
 	filter: Optional[str] = Field(alias="filter", default=None,)
 	search: Optional[str] = Field(alias="search", default=None,)
 	orderBy: Optional[list[str]] = Field(alias="orderBy", default=None,)
-
 

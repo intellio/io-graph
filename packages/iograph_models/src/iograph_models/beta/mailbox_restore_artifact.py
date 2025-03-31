@@ -1,10 +1,10 @@
 from __future__ import annotations
 from typing import Optional
+from datetime import datetime
+from pydantic import BaseModel, Field
 from pydantic import model_validator, ModelWrapValidatorHandler, ValidationError
 from typing_extensions import Self
 from typing import Any
-from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class MailboxRestoreArtifact(BaseModel):
@@ -42,4 +42,3 @@ from .destination_type import DestinationType
 from .public_error import PublicError
 from .artifact_restore_status import ArtifactRestoreStatus
 from .restore_point import RestorePoint
-

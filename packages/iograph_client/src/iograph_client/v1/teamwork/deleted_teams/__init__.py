@@ -16,8 +16,8 @@ if TYPE_CHECKING:
 	from .by_deleted_team_id import ByDeletedTeamIdRequest
 	from ....request_adapter import HttpxRequestAdapter
 from iograph_models.v1.o_data_errors__o_data_error import ODataErrorsODataError
-from iograph_models.v1.deleted_team_collection_response import DeletedTeamCollectionResponse
 from iograph_models.v1.deleted_team import DeletedTeam
+from iograph_models.v1.deleted_team_collection_response import DeletedTeamCollectionResponse
 
 
 class DeletedTeamsRequest(BaseRequestBuilder):

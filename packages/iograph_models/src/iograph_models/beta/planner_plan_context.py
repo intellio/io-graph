@@ -1,7 +1,7 @@
 from __future__ import annotations
 from typing import Optional
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class PlannerPlanContext(BaseModel):
@@ -11,5 +11,4 @@ class PlannerPlanContext(BaseModel):
 	isCreationContext: Optional[bool] = Field(alias="isCreationContext", default=None,)
 	ownerAppId: Optional[str] = Field(alias="ownerAppId", default=None,)
 	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
-
 

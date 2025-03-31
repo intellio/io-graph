@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class Get_devices_scheduled_to_retireGetResponse(BaseModel):
@@ -9,4 +9,3 @@ class Get_devices_scheduled_to_retireGetResponse(BaseModel):
 	value: Optional[list[RetireScheduledManagedDevice]] = Field(alias="value", default=None,)
 
 from .retire_scheduled_managed_device import RetireScheduledManagedDevice
-

@@ -1,11 +1,11 @@
 from __future__ import annotations
 from typing import Optional
 from typing import Literal
+from datetime import datetime
+from pydantic import BaseModel, Field
 from pydantic import model_validator, ModelWrapValidatorHandler, ValidationError
 from typing_extensions import Self
 from typing import Any
-from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class WindowsCertificateProfileBase(BaseModel):
@@ -45,18 +45,12 @@ class WindowsCertificateProfileBase(BaseModel):
 				return parent_validated_model
 			# get the discriminator value
 			mapping_key = data["@odata.type"]
-			if mapping_key == "#microsoft.graph.windows10CertificateProfileBase":
-				from .windows10_certificate_profile_base import Windows10CertificateProfileBase
-				return Windows10CertificateProfileBase.model_validate(data)
 			if mapping_key == "#microsoft.graph.windows10PkcsCertificateProfile":
 				from .windows10_pkcs_certificate_profile import Windows10PkcsCertificateProfile
 				return Windows10PkcsCertificateProfile.model_validate(data)
 			if mapping_key == "#microsoft.graph.windows10ImportedPFXCertificateProfile":
 				from .windows10_imported_p_f_x_certificate_profile import Windows10ImportedPFXCertificateProfile
 				return Windows10ImportedPFXCertificateProfile.model_validate(data)
-			if mapping_key == "#microsoft.graph.windows81CertificateProfileBase":
-				from .windows81_certificate_profile_base import Windows81CertificateProfileBase
-				return Windows81CertificateProfileBase.model_validate(data)
 			if mapping_key == "#microsoft.graph.windows81SCEPCertificateProfile":
 				from .windows81_s_c_e_p_certificate_profile import Windows81SCEPCertificateProfile
 				return Windows81SCEPCertificateProfile.model_validate(data)
@@ -82,4 +76,3 @@ from .certificate_validity_period_scale import CertificateValidityPeriodScale
 from .key_storage_provider_option import KeyStorageProviderOption
 from .subject_alternative_name_type import SubjectAlternativeNameType
 from .subject_name_format import SubjectNameFormat
-

@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class Call_records_get_pstn_calls_with_fromdatetime_todatetimeGetResponse(BaseModel):
@@ -9,4 +9,3 @@ class Call_records_get_pstn_calls_with_fromdatetime_todatetimeGetResponse(BaseMo
 	value: Optional[list[CallRecordsPstnCallLogRow]] = Field(alias="value", default=None,)
 
 from .call_records_pstn_call_log_row import CallRecordsPstnCallLogRow
-

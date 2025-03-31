@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class WindowsPackageInformation(BaseModel):
@@ -15,4 +15,3 @@ class WindowsPackageInformation(BaseModel):
 
 from .windows_architecture import WindowsArchitecture
 from .windows_minimum_operating_system import WindowsMinimumOperatingSystem
-

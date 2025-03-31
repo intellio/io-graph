@@ -1,7 +1,7 @@
 from __future__ import annotations
 from typing import Optional
 from typing import Union
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class AccessPackageResourceAttribute(BaseModel):
@@ -15,4 +15,3 @@ class AccessPackageResourceAttribute(BaseModel):
 
 from .access_package_user_directory_attribute_store import AccessPackageUserDirectoryAttributeStore
 from .access_package_resource_attribute_question import AccessPackageResourceAttributeQuestion
-

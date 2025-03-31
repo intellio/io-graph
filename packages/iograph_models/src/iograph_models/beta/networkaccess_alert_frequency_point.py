@@ -1,7 +1,7 @@
 from __future__ import annotations
 from typing import Optional
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class NetworkaccessAlertFrequencyPoint(BaseModel):
@@ -11,5 +11,4 @@ class NetworkaccessAlertFrequencyPoint(BaseModel):
 	mediumSeverityCount: Optional[int] = Field(alias="mediumSeverityCount", default=None,)
 	timeStampDateTime: Optional[datetime] = Field(alias="timeStampDateTime", default=None,)
 	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
-
 

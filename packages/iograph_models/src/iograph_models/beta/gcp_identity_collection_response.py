@@ -2,7 +2,7 @@ from __future__ import annotations
 from typing import Optional
 from typing import Union
 from typing import Annotated
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class GcpIdentityCollectionResponse(BaseModel):
@@ -14,4 +14,3 @@ from .gcp_cloud_function import GcpCloudFunction
 from .gcp_group import GcpGroup
 from .gcp_service_account import GcpServiceAccount
 from .gcp_user import GcpUser
-

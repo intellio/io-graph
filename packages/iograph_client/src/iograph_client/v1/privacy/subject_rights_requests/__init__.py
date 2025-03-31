@@ -14,8 +14,8 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_subject_rights_request_id import BySubjectRightsRequestIdRequest
 	from ....request_adapter import HttpxRequestAdapter
-from iograph_models.v1.subject_rights_request import SubjectRightsRequest
 from iograph_models.v1.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.v1.subject_rights_request import SubjectRightsRequest
 from iograph_models.v1.subject_rights_request_collection_response import SubjectRightsRequestCollectionResponse
 
 

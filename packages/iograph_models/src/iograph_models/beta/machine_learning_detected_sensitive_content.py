@@ -1,7 +1,8 @@
 from __future__ import annotations
 from uuid import UUID
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from typing import Literal
+from pydantic import BaseModel, Field
 
 
 class MachineLearningDetectedSensitiveContent(BaseModel):
@@ -10,7 +11,7 @@ class MachineLearningDetectedSensitiveContent(BaseModel):
 	id: Optional[UUID] = Field(alias="id", default=None,)
 	recommendedConfidence: Optional[int] = Field(alias="recommendedConfidence", default=None,)
 	uniqueCount: Optional[int] = Field(alias="uniqueCount", default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
+	odata_type: Literal["#microsoft.graph.machineLearningDetectedSensitiveContent"] = Field(alias="@odata.type",)
 	classificationAttributes: Optional[list[ClassificationAttribute]] = Field(alias="classificationAttributes", default=None,)
 	classificationMethod: Optional[ClassificationMethod | str] = Field(alias="classificationMethod", default=None,)
 	matches: Optional[list[SensitiveContentLocation]] = Field(alias="matches", default=None,)
@@ -25,4 +26,3 @@ from .sensitive_content_location import SensitiveContentLocation
 from .sensitive_type_scope import SensitiveTypeScope
 from .sensitive_type_source import SensitiveTypeSource
 from .ml_classification_match_tolerance import MlClassificationMatchTolerance
-

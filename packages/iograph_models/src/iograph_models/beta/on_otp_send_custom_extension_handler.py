@@ -1,7 +1,7 @@
 from __future__ import annotations
 from typing import Optional
 from typing import Literal
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class OnOtpSendCustomExtensionHandler(BaseModel):
@@ -11,4 +11,3 @@ class OnOtpSendCustomExtensionHandler(BaseModel):
 
 from .custom_extension_overwrite_configuration import CustomExtensionOverwriteConfiguration
 from .on_otp_send_custom_extension import OnOtpSendCustomExtension
-

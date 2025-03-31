@@ -2,7 +2,7 @@ from __future__ import annotations
 from typing import Optional
 from typing import Literal
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class IosUpdateConfiguration(BaseModel):
@@ -48,4 +48,3 @@ from .device_configuration_user_overview import DeviceConfigurationUserOverview
 from .custom_update_time_window import CustomUpdateTimeWindow
 from .day_of_week import DayOfWeek
 from .ios_software_update_schedule_type import IosSoftwareUpdateScheduleType
-

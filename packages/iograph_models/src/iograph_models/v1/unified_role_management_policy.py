@@ -1,14 +1,15 @@
 from __future__ import annotations
 from typing import Optional
 from typing import Union
+from typing import Literal
 from typing import Annotated
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class UnifiedRoleManagementPolicy(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
+	odata_type: Literal["#microsoft.graph.unifiedRoleManagementPolicy"] = Field(alias="@odata.type",)
 	description: Optional[str] = Field(alias="description", default=None,)
 	displayName: Optional[str] = Field(alias="displayName", default=None,)
 	isOrganizationDefault: Optional[bool] = Field(alias="isOrganizationDefault", default=None,)
@@ -44,9 +45,3 @@ from .unified_role_management_policy_authentication_context_rule import UnifiedR
 from .unified_role_management_policy_enablement_rule import UnifiedRoleManagementPolicyEnablementRule
 from .unified_role_management_policy_expiration_rule import UnifiedRoleManagementPolicyExpirationRule
 from .unified_role_management_policy_notification_rule import UnifiedRoleManagementPolicyNotificationRule
-from .unified_role_management_policy_approval_rule import UnifiedRoleManagementPolicyApprovalRule
-from .unified_role_management_policy_authentication_context_rule import UnifiedRoleManagementPolicyAuthenticationContextRule
-from .unified_role_management_policy_enablement_rule import UnifiedRoleManagementPolicyEnablementRule
-from .unified_role_management_policy_expiration_rule import UnifiedRoleManagementPolicyExpirationRule
-from .unified_role_management_policy_notification_rule import UnifiedRoleManagementPolicyNotificationRule
-

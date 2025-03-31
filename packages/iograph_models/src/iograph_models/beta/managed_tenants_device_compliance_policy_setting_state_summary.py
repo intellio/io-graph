@@ -1,12 +1,13 @@
 from __future__ import annotations
 from typing import Optional
+from typing import Literal
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class ManagedTenantsDeviceCompliancePolicySettingStateSummary(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
+	odata_type: Literal["#microsoft.graph.managedTenants.deviceCompliancePolicySettingStateSummary"] = Field(alias="@odata.type",)
 	conflictDeviceCount: Optional[int] = Field(alias="conflictDeviceCount", default=None,)
 	errorDeviceCount: Optional[int] = Field(alias="errorDeviceCount", default=None,)
 	failedDeviceCount: Optional[int] = Field(alias="failedDeviceCount", default=None,)
@@ -20,5 +21,4 @@ class ManagedTenantsDeviceCompliancePolicySettingStateSummary(BaseModel):
 	succeededDeviceCount: Optional[int] = Field(alias="succeededDeviceCount", default=None,)
 	tenantDisplayName: Optional[str] = Field(alias="tenantDisplayName", default=None,)
 	tenantId: Optional[str] = Field(alias="tenantId", default=None,)
-
 

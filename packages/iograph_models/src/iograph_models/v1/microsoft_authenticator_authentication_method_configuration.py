@@ -1,7 +1,7 @@
 from __future__ import annotations
 from typing import Optional
 from typing import Literal
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class MicrosoftAuthenticatorAuthenticationMethodConfiguration(BaseModel):
@@ -17,4 +17,3 @@ from .exclude_target import ExcludeTarget
 from .authentication_method_state import AuthenticationMethodState
 from .microsoft_authenticator_feature_settings import MicrosoftAuthenticatorFeatureSettings
 from .microsoft_authenticator_authentication_method_target import MicrosoftAuthenticatorAuthenticationMethodTarget
-

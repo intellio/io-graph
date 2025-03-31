@@ -41,8 +41,8 @@ if TYPE_CHECKING:
 	from .alerts_v2 import Alerts_v2Request
 	from .alerts import AlertsRequest
 	from ...request_adapter import HttpxRequestAdapter
-from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.beta.security import Security
+from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 
 
 class SecurityRequest(BaseRequestBuilder):

@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class NetworkaccessRemoteNetworkHealthEventCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class NetworkaccessRemoteNetworkHealthEventCollectionResponse(BaseModel):
 	value: Optional[list[NetworkaccessRemoteNetworkHealthEvent]] = Field(alias="value", default=None,)
 
 from .networkaccess_remote_network_health_event import NetworkaccessRemoteNetworkHealthEvent
-

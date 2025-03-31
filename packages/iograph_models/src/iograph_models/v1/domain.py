@@ -1,13 +1,14 @@
 from __future__ import annotations
 from typing import Optional
 from typing import Union
+from typing import Literal
 from typing import Annotated
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class Domain(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
+	odata_type: Literal["#microsoft.graph.domain"] = Field(alias="@odata.type",)
 	authenticationType: Optional[str] = Field(alias="authenticationType", default=None,)
 	availabilityStatus: Optional[str] = Field(alias="availabilityStatus", default=None,)
 	isAdminManaged: Optional[bool] = Field(alias="isAdminManaged", default=None,)
@@ -21,7 +22,7 @@ class Domain(BaseModel):
 	passwordValidityPeriodInDays: Optional[int] = Field(alias="passwordValidityPeriodInDays", default=None,)
 	state: Optional[DomainState] = Field(alias="state", default=None,)
 	supportedServices: Optional[list[str]] = Field(alias="supportedServices", default=None,)
-	domainNameReferences: Optional[list[Annotated[Union[AdministrativeUnit, Application, AppRoleAssignment, Contract, Device, DirectoryObjectPartnerReference, DirectoryRole, DirectoryRoleTemplate, Endpoint, ExtensionProperty, Group, GroupSettingTemplate, MultiTenantOrganizationMember, Organization, OrgContact, PolicyBase, AppManagementPolicy, AuthorizationPolicy, CrossTenantAccessPolicy, IdentitySecurityDefaultsEnforcementPolicy, PermissionGrantPolicy, StsPolicy, ActivityBasedTimeoutPolicy, ClaimsMappingPolicy, HomeRealmDiscoveryPolicy, TokenIssuancePolicy, TokenLifetimePolicy, TenantAppManagementPolicy, ResourceSpecificPermissionGrant, ServicePrincipal, User],Field(discriminator="odata_type")]]] = Field(alias="domainNameReferences", default=None,)
+	domainNameReferences: Optional[list[Annotated[Union[AdministrativeUnit, Application, AppRoleAssignment, Contract, Device, DirectoryObjectPartnerReference, DirectoryRole, DirectoryRoleTemplate, Endpoint, ExtensionProperty, Group, GroupSettingTemplate, MultiTenantOrganizationMember, Organization, OrgContact, AppManagementPolicy, AuthorizationPolicy, CrossTenantAccessPolicy, IdentitySecurityDefaultsEnforcementPolicy, PermissionGrantPolicy, ActivityBasedTimeoutPolicy, ClaimsMappingPolicy, HomeRealmDiscoveryPolicy, TokenIssuancePolicy, TokenLifetimePolicy, TenantAppManagementPolicy, ResourceSpecificPermissionGrant, ServicePrincipal, User],Field(discriminator="odata_type")]]] = Field(alias="domainNameReferences", default=None,)
 	federationConfiguration: Optional[list[InternalDomainFederation]] = Field(alias="federationConfiguration", default=None,)
 	rootDomain: Optional[Domain] = Field(alias="rootDomain", default=None,)
 	serviceConfigurationRecords: Optional[list[Annotated[Union[DomainDnsCnameRecord, DomainDnsMxRecord, DomainDnsSrvRecord, DomainDnsTxtRecord, DomainDnsUnavailableRecord],Field(discriminator="odata_type")]]] = Field(alias="serviceConfigurationRecords", default=None,)
@@ -43,13 +44,11 @@ from .group_setting_template import GroupSettingTemplate
 from .multi_tenant_organization_member import MultiTenantOrganizationMember
 from .organization import Organization
 from .org_contact import OrgContact
-from .policy_base import PolicyBase
 from .app_management_policy import AppManagementPolicy
 from .authorization_policy import AuthorizationPolicy
 from .cross_tenant_access_policy import CrossTenantAccessPolicy
 from .identity_security_defaults_enforcement_policy import IdentitySecurityDefaultsEnforcementPolicy
 from .permission_grant_policy import PermissionGrantPolicy
-from .sts_policy import StsPolicy
 from .activity_based_timeout_policy import ActivityBasedTimeoutPolicy
 from .claims_mapping_policy import ClaimsMappingPolicy
 from .home_realm_discovery_policy import HomeRealmDiscoveryPolicy
@@ -65,9 +64,3 @@ from .domain_dns_mx_record import DomainDnsMxRecord
 from .domain_dns_srv_record import DomainDnsSrvRecord
 from .domain_dns_txt_record import DomainDnsTxtRecord
 from .domain_dns_unavailable_record import DomainDnsUnavailableRecord
-from .domain_dns_cname_record import DomainDnsCnameRecord
-from .domain_dns_mx_record import DomainDnsMxRecord
-from .domain_dns_srv_record import DomainDnsSrvRecord
-from .domain_dns_txt_record import DomainDnsTxtRecord
-from .domain_dns_unavailable_record import DomainDnsUnavailableRecord
-

@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class CallRecordsUserFeedback(BaseModel):
@@ -11,4 +11,3 @@ class CallRecordsUserFeedback(BaseModel):
 
 from .call_records_user_feedback_rating import CallRecordsUserFeedbackRating
 from .call_records_feedback_token_set import CallRecordsFeedbackTokenSet
-

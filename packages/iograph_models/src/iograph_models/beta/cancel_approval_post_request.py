@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class Cancel_approvalPostRequest(BaseModel):
@@ -8,4 +8,3 @@ class Cancel_approvalPostRequest(BaseModel):
 	approvalSource: Optional[OperationApprovalSource | str] = Field(alias="approvalSource", default=None,)
 
 from .operation_approval_source import OperationApprovalSource
-

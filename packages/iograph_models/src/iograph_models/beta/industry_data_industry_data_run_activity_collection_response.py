@@ -2,7 +2,7 @@ from __future__ import annotations
 from typing import Optional
 from typing import Union
 from typing import Annotated
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class IndustryDataIndustryDataRunActivityCollectionResponse(BaseModel):
@@ -12,4 +12,3 @@ class IndustryDataIndustryDataRunActivityCollectionResponse(BaseModel):
 
 from .industry_data_inbound_flow_activity import IndustryDataInboundFlowActivity
 from .industry_data_outbound_flow_activity import IndustryDataOutboundFlowActivity
-

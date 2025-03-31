@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class GroupPolicyPresentationValueDecimalCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class GroupPolicyPresentationValueDecimalCollectionResponse(BaseModel):
 	value: Optional[list[GroupPolicyPresentationValueDecimal]] = Field(alias="value", default=None,)
 
 from .group_policy_presentation_value_decimal import GroupPolicyPresentationValueDecimal
-

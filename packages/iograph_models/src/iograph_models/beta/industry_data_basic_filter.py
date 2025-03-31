@@ -1,7 +1,7 @@
 from __future__ import annotations
 from typing import Optional
 from typing import Literal
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class IndustryDataBasicFilter(BaseModel):
@@ -10,4 +10,3 @@ class IndustryDataBasicFilter(BaseModel):
 	in_: Optional[list[str]] = Field(alias="in", default=None,)
 
 from .industry_data_filter_options import IndustryDataFilterOptions
-

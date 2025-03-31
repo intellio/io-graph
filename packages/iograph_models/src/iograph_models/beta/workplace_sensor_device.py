@@ -1,11 +1,12 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from typing import Literal
+from pydantic import BaseModel, Field
 
 
 class WorkplaceSensorDevice(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
+	odata_type: Literal["#microsoft.graph.workplaceSensorDevice"] = Field(alias="@odata.type",)
 	description: Optional[str] = Field(alias="description", default=None,)
 	deviceId: Optional[str] = Field(alias="deviceId", default=None,)
 	displayName: Optional[str] = Field(alias="displayName", default=None,)
@@ -18,4 +19,3 @@ class WorkplaceSensorDevice(BaseModel):
 	tags: Optional[list[str]] = Field(alias="tags", default=None,)
 
 from .workplace_sensor import WorkplaceSensor
-

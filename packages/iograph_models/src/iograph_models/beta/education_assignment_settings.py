@@ -1,11 +1,12 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from typing import Literal
+from pydantic import BaseModel, Field
 
 
 class EducationAssignmentSettings(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
+	odata_type: Literal["#microsoft.graph.educationAssignmentSettings"] = Field(alias="@odata.type",)
 	submissionAnimationDisabled: Optional[bool] = Field(alias="submissionAnimationDisabled", default=None,)
 	defaultGradingScheme: Optional[EducationGradingScheme] = Field(alias="defaultGradingScheme", default=None,)
 	gradingCategories: Optional[list[EducationGradingCategory]] = Field(alias="gradingCategories", default=None,)
@@ -13,5 +14,3 @@ class EducationAssignmentSettings(BaseModel):
 
 from .education_grading_scheme import EducationGradingScheme
 from .education_grading_category import EducationGradingCategory
-from .education_grading_scheme import EducationGradingScheme
-

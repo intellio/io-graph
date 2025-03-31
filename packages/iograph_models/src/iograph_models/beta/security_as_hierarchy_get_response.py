@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class Security_as_hierarchyGetResponse(BaseModel):
@@ -9,4 +9,3 @@ class Security_as_hierarchyGetResponse(BaseModel):
 	value: Optional[list[SecurityEdiscoveryReviewTag]] = Field(alias="value", default=None,)
 
 from .security_ediscovery_review_tag import SecurityEdiscoveryReviewTag
-

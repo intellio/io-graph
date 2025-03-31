@@ -4,7 +4,7 @@ from typing import Union
 from typing import Literal
 from typing import Annotated
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class Site(BaseModel):
@@ -33,7 +33,7 @@ class Site(BaseModel):
 	drive: Optional[Drive] = Field(alias="drive", default=None,)
 	drives: Optional[list[Drive]] = Field(alias="drives", default=None,)
 	externalColumns: Optional[list[ColumnDefinition]] = Field(alias="externalColumns", default=None,)
-	items: Optional[list[Annotated[Union[BaseSitePage, SitePage, Drive, DriveItem, List, ListItem, RecycleBin, RecycleBinItem, SharedDriveItem, Site],Field(discriminator="odata_type")]]] = Field(alias="items", default=None,)
+	items: Optional[list[Annotated[Union[SitePage, Drive, DriveItem, List, ListItem, RecycleBin, RecycleBinItem, SharedDriveItem, Site],Field(discriminator="odata_type")]]] = Field(alias="items", default=None,)
 	lists: Optional[list[List]] = Field(alias="lists", default=None,)
 	onenote: Optional[Onenote] = Field(alias="onenote", default=None,)
 	operations: Optional[list[RichLongRunningOperation]] = Field(alias="operations", default=None,)
@@ -48,13 +48,7 @@ from .chat_message_mentioned_identity_set import ChatMessageMentionedIdentitySet
 from .chat_message_reaction_identity_set import ChatMessageReactionIdentitySet
 from .communications_identity_set import CommunicationsIdentitySet
 from .share_point_identity_set import SharePointIdentitySet
-from .chat_message_from_identity_set import ChatMessageFromIdentitySet
-from .chat_message_mentioned_identity_set import ChatMessageMentionedIdentitySet
-from .chat_message_reaction_identity_set import ChatMessageReactionIdentitySet
-from .communications_identity_set import CommunicationsIdentitySet
-from .share_point_identity_set import SharePointIdentitySet
 from .item_reference import ItemReference
-from .user import User
 from .user import User
 from .public_error import PublicError
 from .root import Root
@@ -64,22 +58,14 @@ from .item_analytics import ItemAnalytics
 from .column_definition import ColumnDefinition
 from .content_type import ContentType
 from .drive import Drive
-from .drive import Drive
-from .column_definition import ColumnDefinition
-from .base_site_page import BaseSitePage
 from .site_page import SitePage
-from .drive import Drive
 from .drive_item import DriveItem
 from .list import List
 from .list_item import ListItem
 from .recycle_bin import RecycleBin
 from .recycle_bin_item import RecycleBinItem
 from .shared_drive_item import SharedDriveItem
-from .list import List
 from .onenote import Onenote
 from .rich_long_running_operation import RichLongRunningOperation
-from .site_page import SitePage
 from .permission import Permission
 from .term_store_store import TermStoreStore
-from .term_store_store import TermStoreStore
-

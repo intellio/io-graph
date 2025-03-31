@@ -2,7 +2,7 @@ from __future__ import annotations
 from typing import Optional
 from typing import Union
 from typing import Annotated
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class DepEnrollmentBaseProfileCollectionResponse(BaseModel):
@@ -12,4 +12,3 @@ class DepEnrollmentBaseProfileCollectionResponse(BaseModel):
 
 from .dep_i_o_s_enrollment_profile import DepIOSEnrollmentProfile
 from .dep_mac_o_s_enrollment_profile import DepMacOSEnrollmentProfile
-

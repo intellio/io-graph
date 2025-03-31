@@ -14,9 +14,9 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_mac_o_s_software_update_category_summary_id import ByMacOSSoftwareUpdateCategorySummaryIdRequest
 	from ......request_adapter import HttpxRequestAdapter
-from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
-from iograph_models.beta.mac_o_s_software_update_category_summary import MacOSSoftwareUpdateCategorySummary
 from iograph_models.beta.mac_o_s_software_update_category_summary_collection_response import MacOSSoftwareUpdateCategorySummaryCollectionResponse
+from iograph_models.beta.mac_o_s_software_update_category_summary import MacOSSoftwareUpdateCategorySummary
+from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 
 
 class CategorySummariesRequest(BaseRequestBuilder):

@@ -1,7 +1,7 @@
 from __future__ import annotations
 from typing import Optional
 from typing import Literal
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class Win32LobAppRegistryRule(BaseModel):
@@ -17,4 +17,3 @@ class Win32LobAppRegistryRule(BaseModel):
 from .win32_lob_app_rule_type import Win32LobAppRuleType
 from .win32_lob_app_registry_rule_operation_type import Win32LobAppRegistryRuleOperationType
 from .win32_lob_app_rule_operator import Win32LobAppRuleOperator
-

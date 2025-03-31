@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class VpnDnsRule(BaseModel):
@@ -10,5 +10,4 @@ class VpnDnsRule(BaseModel):
 	proxyServerUri: Optional[str] = Field(alias="proxyServerUri", default=None,)
 	servers: Optional[list[str]] = Field(alias="servers", default=None,)
 	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
-
 

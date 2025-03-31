@@ -1,7 +1,7 @@
 from __future__ import annotations
 from typing import Optional
 from typing import Union
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class CrossTenantAccessPolicyConfigurationPartner(BaseModel):
@@ -20,10 +20,5 @@ class CrossTenantAccessPolicyConfigurationPartner(BaseModel):
 
 from .inbound_outbound_policy_configuration import InboundOutboundPolicyConfiguration
 from .cross_tenant_access_policy_tenant_restrictions import CrossTenantAccessPolicyTenantRestrictions
-from .cross_tenant_access_policy_tenant_restrictions import CrossTenantAccessPolicyTenantRestrictions
-from .cross_tenant_access_policy_tenant_restrictions import CrossTenantAccessPolicyTenantRestrictions
-from .cross_tenant_access_policy_tenant_restrictions import CrossTenantAccessPolicyTenantRestrictions
 from .cross_tenant_access_policy_inbound_trust import CrossTenantAccessPolicyInboundTrust
-from .cross_tenant_access_policy_tenant_restrictions import CrossTenantAccessPolicyTenantRestrictions
 from .cross_tenant_identity_sync_policy_partner import CrossTenantIdentitySyncPolicyPartner
-

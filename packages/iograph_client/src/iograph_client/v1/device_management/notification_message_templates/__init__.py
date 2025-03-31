@@ -15,8 +15,8 @@ if TYPE_CHECKING:
 	from .by_notification_message_template_id import ByNotificationMessageTemplateIdRequest
 	from ....request_adapter import HttpxRequestAdapter
 from iograph_models.v1.o_data_errors__o_data_error import ODataErrorsODataError
-from iograph_models.v1.notification_message_template_collection_response import NotificationMessageTemplateCollectionResponse
 from iograph_models.v1.notification_message_template import NotificationMessageTemplate
+from iograph_models.v1.notification_message_template_collection_response import NotificationMessageTemplateCollectionResponse
 
 
 class NotificationMessageTemplatesRequest(BaseRequestBuilder):

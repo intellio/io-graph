@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class PostCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class PostCollectionResponse(BaseModel):
 	value: Optional[list[Post]] = Field(alias="value", default=None,)
 
 from .post import Post
-

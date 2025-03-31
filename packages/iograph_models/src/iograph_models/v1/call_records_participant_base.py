@@ -1,9 +1,9 @@
 from __future__ import annotations
 from typing import Optional
+from pydantic import BaseModel, Field
 from pydantic import model_validator, ModelWrapValidatorHandler, ValidationError
 from typing_extensions import Self
 from typing import Any
-from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class CallRecordsParticipantBase(BaseModel):
@@ -35,4 +35,3 @@ class CallRecordsParticipantBase(BaseModel):
 
 from .call_records_administrative_unit_info import CallRecordsAdministrativeUnitInfo
 from .communications_identity_set import CommunicationsIdentitySet
-

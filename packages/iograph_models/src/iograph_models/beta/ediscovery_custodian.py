@@ -2,7 +2,7 @@ from __future__ import annotations
 from typing import Optional
 from typing import Literal
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class EdiscoveryCustodian(BaseModel):
@@ -28,4 +28,3 @@ from .ediscovery_case_index_operation import EdiscoveryCaseIndexOperation
 from .ediscovery_site_source import EdiscoverySiteSource
 from .ediscovery_unified_group_source import EdiscoveryUnifiedGroupSource
 from .ediscovery_user_source import EdiscoveryUserSource
-

@@ -4,7 +4,7 @@ from typing import Union
 from typing import Literal
 from typing import Annotated
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class Post(BaseModel):
@@ -17,11 +17,11 @@ class Post(BaseModel):
 	body: Optional[ItemBody] = Field(alias="body", default=None,)
 	conversationId: Optional[str] = Field(alias="conversationId", default=None,)
 	conversationThreadId: Optional[str] = Field(alias="conversationThreadId", default=None,)
-	from_: Optional[Union[AttendeeBase, Attendee]] = Field(alias="from", default=None,discriminator="odata_type", )
+	from_: Optional[Union[Attendee]] = Field(alias="from", default=None,discriminator="odata_type", )
 	hasAttachments: Optional[bool] = Field(alias="hasAttachments", default=None,)
-	newParticipants: Optional[list[Annotated[Union[AttendeeBase, Attendee],Field(discriminator="odata_type")]]] = Field(alias="newParticipants", default=None,)
+	newParticipants: Optional[list[Annotated[Union[Attendee],Field(discriminator="odata_type")]]] = Field(alias="newParticipants", default=None,)
 	receivedDateTime: Optional[datetime] = Field(alias="receivedDateTime", default=None,)
-	sender: Optional[Union[AttendeeBase, Attendee]] = Field(alias="sender", default=None,discriminator="odata_type", )
+	sender: Optional[Union[Attendee]] = Field(alias="sender", default=None,discriminator="odata_type", )
 	attachments: Optional[list[Annotated[Union[FileAttachment, ItemAttachment, ReferenceAttachment],Field(discriminator="odata_type")]]] = Field(alias="attachments", default=None,)
 	extensions: Optional[list[Annotated[Union[OpenTypeExtension],Field(discriminator="odata_type")]]] = Field(alias="extensions", default=None,)
 	inReplyTo: Optional[Post] = Field(alias="inReplyTo", default=None,)
@@ -29,11 +29,6 @@ class Post(BaseModel):
 	singleValueExtendedProperties: Optional[list[SingleValueLegacyExtendedProperty]] = Field(alias="singleValueExtendedProperties", default=None,)
 
 from .item_body import ItemBody
-from .attendee_base import AttendeeBase
-from .attendee import Attendee
-from .attendee_base import AttendeeBase
-from .attendee import Attendee
-from .attendee_base import AttendeeBase
 from .attendee import Attendee
 from .file_attachment import FileAttachment
 from .item_attachment import ItemAttachment
@@ -41,4 +36,3 @@ from .reference_attachment import ReferenceAttachment
 from .open_type_extension import OpenTypeExtension
 from .multi_value_legacy_extended_property import MultiValueLegacyExtendedProperty
 from .single_value_legacy_extended_property import SingleValueLegacyExtendedProperty
-

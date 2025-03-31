@@ -4,7 +4,7 @@ from typing import Union
 from typing import Literal
 from typing import Annotated
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class IosikEv2VpnConfiguration(BaseModel):
@@ -109,6 +109,4 @@ from .ios_vpn_security_association_parameters import IosVpnSecurityAssociationPa
 from .vpn_client_authentication_type import VpnClientAuthenticationType
 from .vpn_dead_peer_detection_rate import VpnDeadPeerDetectionRate
 from .vpn_local_identifier import VpnLocalIdentifier
-from .ios_vpn_security_association_parameters import IosVpnSecurityAssociationParameters
 from .vpn_server_certificate_type import VpnServerCertificateType
-

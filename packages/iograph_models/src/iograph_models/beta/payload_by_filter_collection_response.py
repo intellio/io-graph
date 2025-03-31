@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class PayloadByFilterCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class PayloadByFilterCollectionResponse(BaseModel):
 	value: Optional[list[PayloadByFilter]] = Field(alias="value", default=None,)
 
 from .payload_by_filter import PayloadByFilter
-

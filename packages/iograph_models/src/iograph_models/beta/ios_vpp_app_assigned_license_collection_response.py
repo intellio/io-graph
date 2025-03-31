@@ -2,7 +2,7 @@ from __future__ import annotations
 from typing import Optional
 from typing import Union
 from typing import Annotated
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class IosVppAppAssignedLicenseCollectionResponse(BaseModel):
@@ -12,4 +12,3 @@ class IosVppAppAssignedLicenseCollectionResponse(BaseModel):
 
 from .ios_vpp_app_assigned_device_license import IosVppAppAssignedDeviceLicense
 from .ios_vpp_app_assigned_user_license import IosVppAppAssignedUserLicense
-

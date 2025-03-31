@@ -14,9 +14,9 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_educational_activity_id import ByEducationalActivityIdRequest
 	from ......request_adapter import HttpxRequestAdapter
+from iograph_models.beta.educational_activity_collection_response import EducationalActivityCollectionResponse
 from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.beta.educational_activity import EducationalActivity
-from iograph_models.beta.educational_activity_collection_response import EducationalActivityCollectionResponse
 
 
 class EducationalActivitiesRequest(BaseRequestBuilder):

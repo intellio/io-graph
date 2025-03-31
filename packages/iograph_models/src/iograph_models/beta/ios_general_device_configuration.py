@@ -4,7 +4,7 @@ from typing import Union
 from typing import Literal
 from typing import Annotated
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class IosGeneralDeviceConfiguration(BaseModel):
@@ -226,10 +226,7 @@ from .device_configuration_group_assignment import DeviceConfigurationGroupAssig
 from .device_configuration_user_status import DeviceConfigurationUserStatus
 from .device_configuration_user_overview import DeviceConfigurationUserOverview
 from .apple_app_list_item import AppleAppListItem
-from .apple_app_list_item import AppleAppListItem
 from .app_list_type import AppListType
-from .app_list_type import AppListType
-from .apple_app_list_item import AppleAppListItem
 from .ios_kiosk_mode_app_type import IosKioskModeAppType
 from .rating_apps_type import RatingAppsType
 from .media_content_rating_australia import MediaContentRatingAustralia
@@ -244,4 +241,3 @@ from .media_content_rating_united_states import MediaContentRatingUnitedStates
 from .ios_network_usage_rule import IosNetworkUsageRule
 from .required_password_type import RequiredPasswordType
 from .web_browser_cookie_settings import WebBrowserCookieSettings
-

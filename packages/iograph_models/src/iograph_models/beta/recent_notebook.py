@@ -1,7 +1,7 @@
 from __future__ import annotations
 from typing import Optional
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class RecentNotebook(BaseModel):
@@ -13,4 +13,3 @@ class RecentNotebook(BaseModel):
 
 from .recent_notebook_links import RecentNotebookLinks
 from .onenote_source_service import OnenoteSourceService
-

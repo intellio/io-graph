@@ -2,7 +2,7 @@ from __future__ import annotations
 from typing import Optional
 from typing import Union
 from typing import Annotated
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class DeviceManagementConfigurationChoiceSettingDefinitionCollectionResponse(BaseModel):
@@ -11,4 +11,3 @@ class DeviceManagementConfigurationChoiceSettingDefinitionCollectionResponse(Bas
 	value: Optional[list[Annotated[Union[DeviceManagementConfigurationChoiceSettingCollectionDefinition],Field(discriminator="odata_type")]]] = Field(alias="value", default=None,)
 
 from .device_management_configuration_choice_setting_collection_definition import DeviceManagementConfigurationChoiceSettingCollectionDefinition
-

@@ -2,7 +2,7 @@ from __future__ import annotations
 from typing import Optional
 from typing import Literal
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class CrossTenantAccessPolicy(BaseModel):
@@ -20,4 +20,3 @@ class CrossTenantAccessPolicy(BaseModel):
 from .cross_tenant_access_policy_configuration_default import CrossTenantAccessPolicyConfigurationDefault
 from .cross_tenant_access_policy_configuration_partner import CrossTenantAccessPolicyConfigurationPartner
 from .policy_template import PolicyTemplate
-

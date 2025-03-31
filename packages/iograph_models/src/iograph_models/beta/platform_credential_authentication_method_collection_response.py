@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class PlatformCredentialAuthenticationMethodCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class PlatformCredentialAuthenticationMethodCollectionResponse(BaseModel):
 	value: Optional[list[PlatformCredentialAuthenticationMethod]] = Field(alias="value", default=None,)
 
 from .platform_credential_authentication_method import PlatformCredentialAuthenticationMethod
-

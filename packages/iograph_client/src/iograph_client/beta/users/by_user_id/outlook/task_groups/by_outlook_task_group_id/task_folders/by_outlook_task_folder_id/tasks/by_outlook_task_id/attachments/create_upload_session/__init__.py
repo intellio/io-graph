@@ -11,9 +11,9 @@ from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:
 	from .............request_adapter import HttpxRequestAdapter
+from iograph_models.beta.upload_session import UploadSession
 from iograph_models.beta.create_upload_session_post_request import Create_upload_sessionPostRequest
 from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
-from iograph_models.beta.upload_session import UploadSession
 
 
 class CreateUploadSessionRequest(BaseRequestBuilder):

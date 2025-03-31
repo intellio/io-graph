@@ -1,11 +1,12 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from typing import Literal
+from pydantic import BaseModel, Field
 
 
 class RelyingPartyDetailedSummary(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
+	odata_type: Literal["#microsoft.graph.relyingPartyDetailedSummary"] = Field(alias="@odata.type",)
 	failedSignInCount: Optional[int] = Field(alias="failedSignInCount", default=None,)
 	migrationStatus: Optional[MigrationStatus | str] = Field(alias="migrationStatus", default=None,)
 	migrationValidationDetails: Optional[list[KeyValuePair]] = Field(alias="migrationValidationDetails", default=None,)
@@ -21,4 +22,3 @@ class RelyingPartyDetailedSummary(BaseModel):
 from .migration_status import MigrationStatus
 from .key_value_pair import KeyValuePair
 from .reference_numeric import ReferenceNumeric
-

@@ -2,7 +2,7 @@ from __future__ import annotations
 from typing import Optional
 from typing import Literal
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class WindowsHealthMonitoringConfiguration(BaseModel):
@@ -41,4 +41,3 @@ from .device_configuration_user_status import DeviceConfigurationUserStatus
 from .device_configuration_user_overview import DeviceConfigurationUserOverview
 from .enablement import Enablement
 from .windows_health_monitoring_scope import WindowsHealthMonitoringScope
-

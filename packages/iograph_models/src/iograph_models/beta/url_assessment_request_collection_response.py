@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class UrlAssessmentRequestCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class UrlAssessmentRequestCollectionResponse(BaseModel):
 	value: Optional[list[UrlAssessmentRequest]] = Field(alias="value", default=None,)
 
 from .url_assessment_request import UrlAssessmentRequest
-

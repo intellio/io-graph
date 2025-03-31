@@ -1,7 +1,7 @@
 from __future__ import annotations
 from typing import Optional
 from typing import Literal
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class TypedEmailAddress(BaseModel):
@@ -12,4 +12,3 @@ class TypedEmailAddress(BaseModel):
 	type: Optional[EmailType | str] = Field(alias="type", default=None,)
 
 from .email_type import EmailType
-

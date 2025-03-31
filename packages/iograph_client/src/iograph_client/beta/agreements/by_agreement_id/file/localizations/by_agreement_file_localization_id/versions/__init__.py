@@ -14,9 +14,9 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_agreement_file_version_id import ByAgreementFileVersionIdRequest
 	from ........request_adapter import HttpxRequestAdapter
-from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
-from iograph_models.beta.agreement_file_version import AgreementFileVersion
 from iograph_models.beta.agreement_file_version_collection_response import AgreementFileVersionCollectionResponse
+from iograph_models.beta.agreement_file_version import AgreementFileVersion
+from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 
 
 class VersionsRequest(BaseRequestBuilder):

@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class AndroidTrustedRootCertificateCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class AndroidTrustedRootCertificateCollectionResponse(BaseModel):
 	value: Optional[list[AndroidTrustedRootCertificate]] = Field(alias="value", default=None,)
 
 from .android_trusted_root_certificate import AndroidTrustedRootCertificate
-

@@ -1,7 +1,7 @@
 from __future__ import annotations
 from typing import Optional
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class RetireScheduledManagedDevice(BaseModel):
@@ -22,4 +22,3 @@ from .compliance_status import ComplianceStatus
 from .device_type import DeviceType
 from .management_agent_type import ManagementAgentType
 from .managed_device_owner_type import ManagedDeviceOwnerType
-

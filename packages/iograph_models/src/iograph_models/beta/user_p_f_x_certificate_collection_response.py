@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class UserPFXCertificateCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class UserPFXCertificateCollectionResponse(BaseModel):
 	value: Optional[list[UserPFXCertificate]] = Field(alias="value", default=None,)
 
 from .user_p_f_x_certificate import UserPFXCertificate
-

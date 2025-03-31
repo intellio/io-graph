@@ -1,12 +1,13 @@
 from __future__ import annotations
 from typing import Optional
+from typing import Literal
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class MobileThreatDefenseConnector(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
+	odata_type: Literal["#microsoft.graph.mobileThreatDefenseConnector"] = Field(alias="@odata.type",)
 	allowPartnerToCollectIOSApplicationMetadata: Optional[bool] = Field(alias="allowPartnerToCollectIOSApplicationMetadata", default=None,)
 	allowPartnerToCollectIOSPersonalApplicationMetadata: Optional[bool] = Field(alias="allowPartnerToCollectIOSPersonalApplicationMetadata", default=None,)
 	androidDeviceBlockedOnMissingPartnerData: Optional[bool] = Field(alias="androidDeviceBlockedOnMissingPartnerData", default=None,)
@@ -27,4 +28,3 @@ class MobileThreatDefenseConnector(BaseModel):
 	windowsMobileApplicationManagementEnabled: Optional[bool] = Field(alias="windowsMobileApplicationManagementEnabled", default=None,)
 
 from .mobile_threat_partner_tenant_state import MobileThreatPartnerTenantState
-

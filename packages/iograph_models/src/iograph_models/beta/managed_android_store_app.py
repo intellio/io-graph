@@ -4,7 +4,7 @@ from typing import Union
 from typing import Literal
 from typing import Annotated
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class ManagedAndroidStoreApp(BaseModel):
@@ -46,4 +46,3 @@ from .mobile_app_dependency import MobileAppDependency
 from .mobile_app_supersedence import MobileAppSupersedence
 from .managed_app_availability import ManagedAppAvailability
 from .android_minimum_operating_system import AndroidMinimumOperatingSystem
-

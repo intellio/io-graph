@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class MacOSMinimumOperatingSystem(BaseModel):
@@ -17,5 +17,4 @@ class MacOSMinimumOperatingSystem(BaseModel):
 	v12_0: Optional[bool] = Field(alias="v12_0", default=None,)
 	v13_0: Optional[bool] = Field(alias="v13_0", default=None,)
 	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
-
 

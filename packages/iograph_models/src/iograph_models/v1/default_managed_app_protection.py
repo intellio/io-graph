@@ -2,7 +2,7 @@ from __future__ import annotations
 from typing import Optional
 from typing import Literal
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class DefaultManagedAppProtection(BaseModel):
@@ -56,11 +56,9 @@ class DefaultManagedAppProtection(BaseModel):
 from .managed_app_data_storage_location import ManagedAppDataStorageLocation
 from .managed_app_data_transfer_level import ManagedAppDataTransferLevel
 from .managed_app_clipboard_sharing_level import ManagedAppClipboardSharingLevel
-from .managed_app_data_transfer_level import ManagedAppDataTransferLevel
 from .managed_browser_type import ManagedBrowserType
 from .managed_app_pin_character_set import ManagedAppPinCharacterSet
 from .managed_app_data_encryption_type import ManagedAppDataEncryptionType
 from .key_value_pair import KeyValuePair
 from .managed_mobile_app import ManagedMobileApp
 from .managed_app_policy_deployment_summary import ManagedAppPolicyDeploymentSummary
-

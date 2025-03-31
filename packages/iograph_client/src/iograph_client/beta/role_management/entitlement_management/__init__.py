@@ -22,8 +22,8 @@ if TYPE_CHECKING:
 	from .role_assignment_approvals import RoleAssignmentApprovalsRequest
 	from .resource_namespaces import ResourceNamespacesRequest
 	from ....request_adapter import HttpxRequestAdapter
-from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.beta.rbac_application import RbacApplication
+from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 
 
 class EntitlementManagementRequest(BaseRequestBuilder):

@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class TeamworkConfiguredPeripheralCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class TeamworkConfiguredPeripheralCollectionResponse(BaseModel):
 	value: Optional[list[TeamworkConfiguredPeripheral]] = Field(alias="value", default=None,)
 
 from .teamwork_configured_peripheral import TeamworkConfiguredPeripheral
-

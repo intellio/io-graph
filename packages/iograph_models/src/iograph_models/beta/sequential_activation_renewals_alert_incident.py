@@ -2,7 +2,7 @@ from __future__ import annotations
 from typing import Optional
 from typing import Literal
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class SequentialActivationRenewalsAlertIncident(BaseModel):
@@ -17,5 +17,4 @@ class SequentialActivationRenewalsAlertIncident(BaseModel):
 	roleTemplateId: Optional[str] = Field(alias="roleTemplateId", default=None,)
 	sequenceEndDateTime: Optional[datetime] = Field(alias="sequenceEndDateTime", default=None,)
 	sequenceStartDateTime: Optional[datetime] = Field(alias="sequenceStartDateTime", default=None,)
-
 

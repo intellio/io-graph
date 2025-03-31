@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class MailboxSettings(BaseModel):
@@ -22,4 +22,3 @@ from .locale_info import LocaleInfo
 from .user_purpose import UserPurpose
 from .mailbox_recipient_type import MailboxRecipientType
 from .working_hours import WorkingHours
-

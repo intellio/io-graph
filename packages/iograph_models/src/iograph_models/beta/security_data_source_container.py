@@ -1,10 +1,10 @@
 from __future__ import annotations
 from typing import Optional
+from datetime import datetime
+from pydantic import BaseModel, Field
 from pydantic import model_validator, ModelWrapValidatorHandler, ValidationError
 from typing_extensions import Self
 from typing import Any
-from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class SecurityDataSourceContainer(BaseModel):
@@ -40,4 +40,3 @@ class SecurityDataSourceContainer(BaseModel):
 
 from .security_data_source_hold_status import SecurityDataSourceHoldStatus
 from .security_data_source_container_status import SecurityDataSourceContainerStatus
-

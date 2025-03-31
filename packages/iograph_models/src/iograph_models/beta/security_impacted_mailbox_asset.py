@@ -1,7 +1,7 @@
 from __future__ import annotations
 from typing import Optional
 from typing import Literal
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class SecurityImpactedMailboxAsset(BaseModel):
@@ -9,4 +9,3 @@ class SecurityImpactedMailboxAsset(BaseModel):
 	identifier: Optional[SecurityMailboxAssetIdentifier | str] = Field(alias="identifier", default=None,)
 
 from .security_mailbox_asset_identifier import SecurityMailboxAssetIdentifier
-

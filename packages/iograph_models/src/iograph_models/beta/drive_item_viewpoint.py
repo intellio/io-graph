@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class DriveItemViewpoint(BaseModel):
@@ -10,4 +10,3 @@ class DriveItemViewpoint(BaseModel):
 
 from .drive_item_access_operations_viewpoint import DriveItemAccessOperationsViewpoint
 from .sharing_viewpoint import SharingViewpoint
-

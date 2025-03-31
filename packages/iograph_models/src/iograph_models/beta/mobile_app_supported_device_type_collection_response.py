@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class MobileAppSupportedDeviceTypeCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class MobileAppSupportedDeviceTypeCollectionResponse(BaseModel):
 	value: Optional[list[MobileAppSupportedDeviceType]] = Field(alias="value", default=None,)
 
 from .mobile_app_supported_device_type import MobileAppSupportedDeviceType
-

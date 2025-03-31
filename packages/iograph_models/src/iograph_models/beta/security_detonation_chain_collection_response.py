@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class SecurityDetonationChainCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class SecurityDetonationChainCollectionResponse(BaseModel):
 	value: Optional[list[SecurityDetonationChain]] = Field(alias="value", default=None,)
 
 from .security_detonation_chain import SecurityDetonationChain
-

@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class ShiftsRolePermissionCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class ShiftsRolePermissionCollectionResponse(BaseModel):
 	value: Optional[list[ShiftsRolePermission]] = Field(alias="value", default=None,)
 
 from .shifts_role_permission import ShiftsRolePermission
-

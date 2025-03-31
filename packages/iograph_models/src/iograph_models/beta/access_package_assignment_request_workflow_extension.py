@@ -3,7 +3,7 @@ from typing import Optional
 from typing import Union
 from typing import Literal
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class AccessPackageAssignmentRequestWorkflowExtension(BaseModel):
@@ -26,4 +26,3 @@ from .custom_extension_client_configuration import CustomExtensionClientConfigur
 from .http_request_endpoint import HttpRequestEndpoint
 from .logic_app_trigger_endpoint_configuration import LogicAppTriggerEndpointConfiguration
 from .identity_governance_custom_task_extension_callback_configuration import IdentityGovernanceCustomTaskExtensionCallbackConfiguration
-

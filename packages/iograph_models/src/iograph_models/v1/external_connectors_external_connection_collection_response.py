@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class ExternalConnectorsExternalConnectionCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class ExternalConnectorsExternalConnectionCollectionResponse(BaseModel):
 	value: Optional[list[ExternalConnectorsExternalConnection]] = Field(alias="value", default=None,)
 
 from .external_connectors_external_connection import ExternalConnectorsExternalConnection
-

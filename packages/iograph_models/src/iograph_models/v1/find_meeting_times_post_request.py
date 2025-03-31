@@ -2,7 +2,7 @@ from __future__ import annotations
 from typing import Optional
 from typing import Union
 from typing import Annotated
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class Find_meeting_timesPostRequest(BaseModel):
@@ -19,4 +19,3 @@ from .attendee import Attendee
 from .location_constraint import LocationConstraint
 from .time_constraint import TimeConstraint
 from .reference_numeric import ReferenceNumeric
-

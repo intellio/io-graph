@@ -1,11 +1,12 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from typing import Literal
+from pydantic import BaseModel, Field
 
 
 class NetworkaccessNetworkAccessRoot(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
+	odata_type: Literal["#microsoft.graph.networkaccess.networkAccessRoot"] = Field(alias="@odata.type",)
 	alerts: Optional[list[NetworkaccessAlert]] = Field(alias="alerts", default=None,)
 	connectivity: Optional[NetworkaccessConnectivity] = Field(alias="connectivity", default=None,)
 	filteringPolicies: Optional[list[NetworkaccessFilteringPolicy]] = Field(alias="filteringPolicies", default=None,)
@@ -27,4 +28,3 @@ from .networkaccess_logs import NetworkaccessLogs
 from .networkaccess_reports import NetworkaccessReports
 from .networkaccess_settings import NetworkaccessSettings
 from .networkaccess_tenant_status import NetworkaccessTenantStatus
-

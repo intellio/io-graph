@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class OnPremisesSipInfo(BaseModel):
@@ -8,5 +8,4 @@ class OnPremisesSipInfo(BaseModel):
 	sipDeploymentLocation: Optional[str] = Field(alias="sipDeploymentLocation", default=None,)
 	sipPrimaryAddress: Optional[str] = Field(alias="sipPrimaryAddress", default=None,)
 	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
-
 

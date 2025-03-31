@@ -1,7 +1,7 @@
 from __future__ import annotations
 from typing import Optional
 from typing import Literal
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class DeviceHealthScriptBooleanParameter(BaseModel):
@@ -11,5 +11,4 @@ class DeviceHealthScriptBooleanParameter(BaseModel):
 	name: Optional[str] = Field(alias="name", default=None,)
 	odata_type: Literal["#microsoft.graph.deviceHealthScriptBooleanParameter"] = Field(alias="@odata.type", default="#microsoft.graph.deviceHealthScriptBooleanParameter")
 	defaultValue: Optional[bool] = Field(alias="defaultValue", default=None,)
-
 

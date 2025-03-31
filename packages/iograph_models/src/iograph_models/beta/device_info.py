@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class DeviceInfo(BaseModel):
@@ -34,5 +34,4 @@ class DeviceInfo(BaseModel):
 	systemLabels: Optional[list[str]] = Field(alias="systemLabels", default=None,)
 	trustType: Optional[str] = Field(alias="trustType", default=None,)
 	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
-
 

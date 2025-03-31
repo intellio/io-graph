@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class Get_staff_availabilityPostResponse(BaseModel):
@@ -9,4 +9,3 @@ class Get_staff_availabilityPostResponse(BaseModel):
 	value: Optional[list[StaffAvailabilityItem]] = Field(alias="value", default=None,)
 
 from .staff_availability_item import StaffAvailabilityItem
-

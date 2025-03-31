@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class MultiValueLegacyExtendedPropertyCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class MultiValueLegacyExtendedPropertyCollectionResponse(BaseModel):
 	value: Optional[list[MultiValueLegacyExtendedProperty]] = Field(alias="value", default=None,)
 
 from .multi_value_legacy_extended_property import MultiValueLegacyExtendedProperty
-

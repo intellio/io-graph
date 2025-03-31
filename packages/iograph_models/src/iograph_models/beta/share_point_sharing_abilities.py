@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class SharePointSharingAbilities(BaseModel):
@@ -12,6 +12,3 @@ class SharePointSharingAbilities(BaseModel):
 
 from .link_scope_abilities import LinkScopeAbilities
 from .direct_sharing_abilities import DirectSharingAbilities
-from .link_scope_abilities import LinkScopeAbilities
-from .link_scope_abilities import LinkScopeAbilities
-

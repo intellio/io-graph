@@ -1,11 +1,12 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from typing import Literal
+from pydantic import BaseModel, Field
 
 
 class EntitlementManagement(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
+	odata_type: Literal["#microsoft.graph.entitlementManagement"] = Field(alias="@odata.type",)
 	accessPackageAssignmentApprovals: Optional[list[Approval]] = Field(alias="accessPackageAssignmentApprovals", default=None,)
 	accessPackageAssignmentPolicies: Optional[list[AccessPackageAssignmentPolicy]] = Field(alias="accessPackageAssignmentPolicies", default=None,)
 	accessPackageAssignmentRequests: Optional[list[AccessPackageAssignmentRequest]] = Field(alias="accessPackageAssignmentRequests", default=None,)
@@ -33,8 +34,6 @@ from .access_package_resource_request import AccessPackageResourceRequest
 from .access_package_resource_role_scope import AccessPackageResourceRoleScope
 from .access_package_resource import AccessPackageResource
 from .access_package import AccessPackage
-from .access_package_assignment_request import AccessPackageAssignmentRequest
 from .connected_organization import ConnectedOrganization
 from .entitlement_management_settings import EntitlementManagementSettings
 from .access_package_subject import AccessPackageSubject
-

@@ -2,7 +2,7 @@ from __future__ import annotations
 from typing import Optional
 from typing import Literal
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class SecurityDeviceEvidence(BaseModel):
@@ -45,4 +45,3 @@ from .security_logged_on_user import SecurityLoggedOnUser
 from .security_onboarding_status import SecurityOnboardingStatus
 from .security_device_risk_score import SecurityDeviceRiskScore
 from .security_vm_metadata import SecurityVmMetadata
-

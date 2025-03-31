@@ -1,7 +1,7 @@
 from __future__ import annotations
 from typing import Optional
 from typing import Union
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class DeviceManagementConfigurationChoiceSettingValueTemplate(BaseModel):
@@ -13,5 +13,3 @@ class DeviceManagementConfigurationChoiceSettingValueTemplate(BaseModel):
 
 from .device_management_configuration_choice_setting_value_constant_default_template import DeviceManagementConfigurationChoiceSettingValueConstantDefaultTemplate
 from .device_management_configuration_choice_setting_value_definition_template import DeviceManagementConfigurationChoiceSettingValueDefinitionTemplate
-from .device_management_configuration_choice_setting_value_definition_template import DeviceManagementConfigurationChoiceSettingValueDefinitionTemplate
-

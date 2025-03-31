@@ -3,7 +3,7 @@ from uuid import UUID
 from typing import Optional
 from typing import Literal
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class DeviceEnrollmentNotificationConfiguration(BaseModel):
@@ -30,4 +30,3 @@ from .enrollment_configuration_assignment import EnrollmentConfigurationAssignme
 from .enrollment_notification_branding_options import EnrollmentNotificationBrandingOptions
 from .enrollment_restriction_platform_type import EnrollmentRestrictionPlatformType
 from .enrollment_notification_template_type import EnrollmentNotificationTemplateType
-

@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class ScoredEmailAddress(BaseModel):
@@ -12,4 +12,3 @@ class ScoredEmailAddress(BaseModel):
 
 from .reference_numeric import ReferenceNumeric
 from .selection_likelihood_info import SelectionLikelihoodInfo
-

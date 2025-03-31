@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class ManagedTenantsManagedTenantApiNotificationCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class ManagedTenantsManagedTenantApiNotificationCollectionResponse(BaseModel):
 	value: Optional[list[ManagedTenantsManagedTenantApiNotification]] = Field(alias="value", default=None,)
 
 from .managed_tenants_managed_tenant_api_notification import ManagedTenantsManagedTenantApiNotification
-

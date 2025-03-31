@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class AssignedComputeInstanceDetailsCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class AssignedComputeInstanceDetailsCollectionResponse(BaseModel):
 	value: Optional[list[AssignedComputeInstanceDetails]] = Field(alias="value", default=None,)
 
 from .assigned_compute_instance_details import AssignedComputeInstanceDetails
-

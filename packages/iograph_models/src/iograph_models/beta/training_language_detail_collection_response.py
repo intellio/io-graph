@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class TrainingLanguageDetailCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class TrainingLanguageDetailCollectionResponse(BaseModel):
 	value: Optional[list[TrainingLanguageDetail]] = Field(alias="value", default=None,)
 
 from .training_language_detail import TrainingLanguageDetail
-

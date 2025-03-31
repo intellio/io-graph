@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class VpnTrafficRule(BaseModel):
@@ -20,8 +20,5 @@ class VpnTrafficRule(BaseModel):
 from .vpn_traffic_rule_app_type import VpnTrafficRuleAppType
 from .i_pv4_range import IPv4Range
 from .number_range import NumberRange
-from .i_pv4_range import IPv4Range
-from .number_range import NumberRange
 from .vpn_traffic_rule_routing_policy_type import VpnTrafficRuleRoutingPolicyType
 from .vpn_traffic_direction import VpnTrafficDirection
-

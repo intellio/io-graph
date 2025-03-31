@@ -1,11 +1,12 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from typing import Literal
+from pydantic import BaseModel, Field
 
 
 class FederatedIdentityCredential(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
+	odata_type: Literal["#microsoft.graph.federatedIdentityCredential"] = Field(alias="@odata.type",)
 	audiences: Optional[list[str]] = Field(alias="audiences", default=None,)
 	claimsMatchingExpression: Optional[FederatedIdentityExpression] = Field(alias="claimsMatchingExpression", default=None,)
 	description: Optional[str] = Field(alias="description", default=None,)
@@ -14,4 +15,3 @@ class FederatedIdentityCredential(BaseModel):
 	subject: Optional[str] = Field(alias="subject", default=None,)
 
 from .federated_identity_expression import FederatedIdentityExpression
-

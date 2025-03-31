@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class Get_effective_permissions_with_scopeGetResponse(BaseModel):
@@ -9,4 +9,3 @@ class Get_effective_permissions_with_scopeGetResponse(BaseModel):
 	value: Optional[list[RolePermission]] = Field(alias="value", default=None,)
 
 from .role_permission import RolePermission
-

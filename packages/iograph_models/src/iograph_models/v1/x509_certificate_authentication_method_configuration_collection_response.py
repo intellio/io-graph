@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class X509CertificateAuthenticationMethodConfigurationCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class X509CertificateAuthenticationMethodConfigurationCollectionResponse(BaseMod
 	value: Optional[list[X509CertificateAuthenticationMethodConfiguration]] = Field(alias="value", default=None,)
 
 from .x509_certificate_authentication_method_configuration import X509CertificateAuthenticationMethodConfiguration
-

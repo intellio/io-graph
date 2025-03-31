@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class WindowsManagementAppHealthStateCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class WindowsManagementAppHealthStateCollectionResponse(BaseModel):
 	value: Optional[list[WindowsManagementAppHealthState]] = Field(alias="value", default=None,)
 
 from .windows_management_app_health_state import WindowsManagementAppHealthState
-

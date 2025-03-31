@@ -1,7 +1,7 @@
 from __future__ import annotations
 from typing import Optional
 from typing import Literal
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class BookingsAvailabilityWindow(BaseModel):
@@ -13,4 +13,3 @@ class BookingsAvailabilityWindow(BaseModel):
 
 from .bookings_service_availability_type import BookingsServiceAvailabilityType
 from .booking_work_hours import BookingWorkHours
-

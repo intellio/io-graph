@@ -1,11 +1,12 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from typing import Literal
+from pydantic import BaseModel, Field
 
 
 class AttackSimulationRoot(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
+	odata_type: Literal["#microsoft.graph.attackSimulationRoot"] = Field(alias="@odata.type",)
 	endUserNotifications: Optional[list[EndUserNotification]] = Field(alias="endUserNotifications", default=None,)
 	landingPages: Optional[list[LandingPage]] = Field(alias="landingPages", default=None,)
 	loginPages: Optional[list[LoginPage]] = Field(alias="loginPages", default=None,)
@@ -25,4 +26,3 @@ from .simulation_automation import SimulationAutomation
 from .simulation import Simulation
 from .training_campaign import TrainingCampaign
 from .training import Training
-

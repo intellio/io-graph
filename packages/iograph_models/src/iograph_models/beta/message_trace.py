@@ -1,12 +1,13 @@
 from __future__ import annotations
 from typing import Optional
+from typing import Literal
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class MessageTrace(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
+	odata_type: Literal["#microsoft.graph.messageTrace"] = Field(alias="@odata.type",)
 	destinationIPAddress: Optional[str] = Field(alias="destinationIPAddress", default=None,)
 	messageId: Optional[str] = Field(alias="messageId", default=None,)
 	receivedDateTime: Optional[datetime] = Field(alias="receivedDateTime", default=None,)
@@ -17,4 +18,3 @@ class MessageTrace(BaseModel):
 	recipients: Optional[list[MessageRecipient]] = Field(alias="recipients", default=None,)
 
 from .message_recipient import MessageRecipient
-

@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class VpnOnDemandRule(BaseModel):
@@ -18,4 +18,3 @@ class VpnOnDemandRule(BaseModel):
 from .vpn_on_demand_rule_connection_action import VpnOnDemandRuleConnectionAction
 from .vpn_on_demand_rule_connection_domain_action import VpnOnDemandRuleConnectionDomainAction
 from .vpn_on_demand_rule_interface_type_match import VpnOnDemandRuleInterfaceTypeMatch
-

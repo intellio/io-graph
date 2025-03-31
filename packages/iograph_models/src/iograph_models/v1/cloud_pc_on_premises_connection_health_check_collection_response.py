@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class CloudPcOnPremisesConnectionHealthCheckCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class CloudPcOnPremisesConnectionHealthCheckCollectionResponse(BaseModel):
 	value: Optional[list[CloudPcOnPremisesConnectionHealthCheck]] = Field(alias="value", default=None,)
 
 from .cloud_pc_on_premises_connection_health_check import CloudPcOnPremisesConnectionHealthCheck
-

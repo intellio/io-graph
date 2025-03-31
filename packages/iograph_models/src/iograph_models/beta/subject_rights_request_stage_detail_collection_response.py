@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class SubjectRightsRequestStageDetailCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class SubjectRightsRequestStageDetailCollectionResponse(BaseModel):
 	value: Optional[list[SubjectRightsRequestStageDetail]] = Field(alias="value", default=None,)
 
 from .subject_rights_request_stage_detail import SubjectRightsRequestStageDetail
-

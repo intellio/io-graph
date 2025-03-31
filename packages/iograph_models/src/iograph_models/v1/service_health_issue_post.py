@@ -1,7 +1,7 @@
 from __future__ import annotations
 from typing import Optional
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class ServiceHealthIssuePost(BaseModel):
@@ -12,4 +12,3 @@ class ServiceHealthIssuePost(BaseModel):
 
 from .item_body import ItemBody
 from .post_type import PostType
-

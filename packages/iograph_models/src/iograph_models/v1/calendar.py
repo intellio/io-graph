@@ -1,11 +1,12 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from typing import Literal
+from pydantic import BaseModel, Field
 
 
 class Calendar(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
+	odata_type: Literal["#microsoft.graph.calendar"] = Field(alias="@odata.type",)
 	allowedOnlineMeetingProviders: Optional[list[OnlineMeetingProviderType | str]] = Field(alias="allowedOnlineMeetingProviders", default=None,)
 	canEdit: Optional[bool] = Field(alias="canEdit", default=None,)
 	canShare: Optional[bool] = Field(alias="canShare", default=None,)
@@ -27,11 +28,8 @@ class Calendar(BaseModel):
 
 from .online_meeting_provider_type import OnlineMeetingProviderType
 from .calendar_color import CalendarColor
-from .online_meeting_provider_type import OnlineMeetingProviderType
 from .email_address import EmailAddress
 from .calendar_permission import CalendarPermission
 from .event import Event
-from .event import Event
 from .multi_value_legacy_extended_property import MultiValueLegacyExtendedProperty
 from .single_value_legacy_extended_property import SingleValueLegacyExtendedProperty
-

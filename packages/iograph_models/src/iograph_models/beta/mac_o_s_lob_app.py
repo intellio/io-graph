@@ -4,7 +4,7 @@ from typing import Union
 from typing import Literal
 from typing import Annotated
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class MacOSLobApp(BaseModel):
@@ -55,4 +55,3 @@ from .mobile_app_supersedence import MobileAppSupersedence
 from .mobile_app_content import MobileAppContent
 from .mac_o_s_lob_child_app import MacOSLobChildApp
 from .mac_o_s_minimum_operating_system import MacOSMinimumOperatingSystem
-

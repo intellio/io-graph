@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class SuperAzureServicePrincipalFindingCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class SuperAzureServicePrincipalFindingCollectionResponse(BaseModel):
 	value: Optional[list[SuperAzureServicePrincipalFinding]] = Field(alias="value", default=None,)
 
 from .super_azure_service_principal_finding import SuperAzureServicePrincipalFinding
-

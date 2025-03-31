@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class SecuritySubdomainCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class SecuritySubdomainCollectionResponse(BaseModel):
 	value: Optional[list[SecuritySubdomain]] = Field(alias="value", default=None,)
 
 from .security_subdomain import SecuritySubdomain
-

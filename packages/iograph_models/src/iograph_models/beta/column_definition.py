@@ -1,11 +1,12 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from typing import Literal
+from pydantic import BaseModel, Field
 
 
 class ColumnDefinition(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
+	odata_type: Literal["#microsoft.graph.columnDefinition"] = Field(alias="@odata.type",)
 	boolean: Optional[BooleanColumn] = Field(alias="boolean", default=None,)
 	calculated: Optional[CalculatedColumn] = Field(alias="calculated", default=None,)
 	choice: Optional[ChoiceColumn] = Field(alias="choice", default=None,)
@@ -57,4 +58,3 @@ from .text_column import TextColumn
 from .thumbnail_column import ThumbnailColumn
 from .column_types import ColumnTypes
 from .column_validation import ColumnValidation
-

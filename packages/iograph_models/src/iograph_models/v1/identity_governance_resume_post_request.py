@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class Identity_governance_resumePostRequest(BaseModel):
@@ -9,4 +9,3 @@ class Identity_governance_resumePostRequest(BaseModel):
 	data: Optional[IdentityGovernanceCustomTaskExtensionCallbackData] = Field(alias="data", default=None,)
 
 from .identity_governance_custom_task_extension_callback_data import IdentityGovernanceCustomTaskExtensionCallbackData
-

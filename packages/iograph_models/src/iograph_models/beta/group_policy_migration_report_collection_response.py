@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class GroupPolicyMigrationReportCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class GroupPolicyMigrationReportCollectionResponse(BaseModel):
 	value: Optional[list[GroupPolicyMigrationReport]] = Field(alias="value", default=None,)
 
 from .group_policy_migration_report import GroupPolicyMigrationReport
-

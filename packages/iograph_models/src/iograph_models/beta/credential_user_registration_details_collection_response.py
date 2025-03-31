@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class CredentialUserRegistrationDetailsCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class CredentialUserRegistrationDetailsCollectionResponse(BaseModel):
 	value: Optional[list[CredentialUserRegistrationDetails]] = Field(alias="value", default=None,)
 
 from .credential_user_registration_details import CredentialUserRegistrationDetails
-

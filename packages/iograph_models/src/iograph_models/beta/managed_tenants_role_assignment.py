@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class ManagedTenantsRoleAssignment(BaseModel):
@@ -10,4 +10,3 @@ class ManagedTenantsRoleAssignment(BaseModel):
 
 from .managed_tenants_delegated_privilege_status import ManagedTenantsDelegatedPrivilegeStatus
 from .managed_tenants_role_definition import ManagedTenantsRoleDefinition
-

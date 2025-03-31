@@ -1,9 +1,9 @@
 from __future__ import annotations
 from typing import Optional
+from pydantic import BaseModel, Field
 from pydantic import model_validator, ModelWrapValidatorHandler, ValidationError
 from typing_extensions import Self
 from typing import Any
-from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class OnlineMeetingBase(BaseModel):
@@ -71,4 +71,3 @@ from .lobby_bypass_settings import LobbyBypassSettings
 from .meeting_chat_history_default_mode import MeetingChatHistoryDefaultMode
 from .watermark_protection_values import WatermarkProtectionValues
 from .meeting_attendance_report import MeetingAttendanceReport
-

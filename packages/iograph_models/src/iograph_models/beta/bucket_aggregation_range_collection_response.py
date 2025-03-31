@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class BucketAggregationRangeCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class BucketAggregationRangeCollectionResponse(BaseModel):
 	value: Optional[list[BucketAggregationRange]] = Field(alias="value", default=None,)
 
 from .bucket_aggregation_range import BucketAggregationRange
-

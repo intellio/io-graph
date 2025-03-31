@@ -1,7 +1,7 @@
 from __future__ import annotations
 from typing import Optional
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class DeviceHealthAttestationState(BaseModel):
@@ -47,8 +47,4 @@ class DeviceHealthAttestationState(BaseModel):
 
 from .firmware_protection_type import FirmwareProtectionType
 from .azure_attestation_setting_status import AzureAttestationSettingStatus
-from .azure_attestation_setting_status import AzureAttestationSettingStatus
-from .azure_attestation_setting_status import AzureAttestationSettingStatus
 from .system_management_mode_level import SystemManagementModeLevel
-from .azure_attestation_setting_status import AzureAttestationSettingStatus
-

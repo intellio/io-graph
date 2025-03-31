@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class ActiveUsersMetricCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class ActiveUsersMetricCollectionResponse(BaseModel):
 	value: Optional[list[ActiveUsersMetric]] = Field(alias="value", default=None,)
 
 from .active_users_metric import ActiveUsersMetric
-

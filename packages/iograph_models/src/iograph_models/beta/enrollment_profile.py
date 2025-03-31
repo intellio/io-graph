@@ -1,9 +1,9 @@
 from __future__ import annotations
 from typing import Optional
+from pydantic import BaseModel, Field
 from pydantic import model_validator, ModelWrapValidatorHandler, ValidationError
 from typing_extensions import Self
 from typing import Any
-from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class EnrollmentProfile(BaseModel):
@@ -26,9 +26,6 @@ class EnrollmentProfile(BaseModel):
 				return parent_validated_model
 			# get the discriminator value
 			mapping_key = data["@odata.type"]
-			if mapping_key == "#microsoft.graph.depEnrollmentBaseProfile":
-				from .dep_enrollment_base_profile import DepEnrollmentBaseProfile
-				return DepEnrollmentBaseProfile.model_validate(data)
 			if mapping_key == "#microsoft.graph.depIOSEnrollmentProfile":
 				from .dep_i_o_s_enrollment_profile import DepIOSEnrollmentProfile
 				return DepIOSEnrollmentProfile.model_validate(data)
@@ -48,5 +45,4 @@ class EnrollmentProfile(BaseModel):
 
 		except Exception as e:
 			raise e
-
 

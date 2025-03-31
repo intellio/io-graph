@@ -1,12 +1,13 @@
 from __future__ import annotations
 from typing import Optional
+from typing import Literal
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class ManagedAllDeviceCertificateState(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
+	odata_type: Literal["#microsoft.graph.managedAllDeviceCertificateState"] = Field(alias="@odata.type",)
 	certificateExpirationDateTime: Optional[datetime] = Field(alias="certificateExpirationDateTime", default=None,)
 	certificateExtendedKeyUsages: Optional[str] = Field(alias="certificateExtendedKeyUsages", default=None,)
 	certificateIssuanceDateTime: Optional[datetime] = Field(alias="certificateIssuanceDateTime", default=None,)
@@ -21,4 +22,3 @@ class ManagedAllDeviceCertificateState(BaseModel):
 	userPrincipalName: Optional[str] = Field(alias="userPrincipalName", default=None,)
 
 from .certificate_revocation_status import CertificateRevocationStatus
-

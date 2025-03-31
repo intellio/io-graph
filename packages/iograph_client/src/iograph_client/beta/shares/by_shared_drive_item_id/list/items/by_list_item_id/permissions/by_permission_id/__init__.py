@@ -14,8 +14,8 @@ if TYPE_CHECKING:
 	from .revoke_grants import RevokeGrantsRequest
 	from .grant import GrantRequest
 	from .........request_adapter import HttpxRequestAdapter
-from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.beta.permission import Permission
+from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 
 
 class ByPermissionIdRequest(BaseRequestBuilder):

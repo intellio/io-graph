@@ -1,7 +1,7 @@
 from __future__ import annotations
 from typing import Optional
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class SynchronizationTaskExecution(BaseModel):
@@ -23,4 +23,3 @@ class SynchronizationTaskExecution(BaseModel):
 
 from .synchronization_error import SynchronizationError
 from .synchronization_task_execution_result import SynchronizationTaskExecutionResult
-

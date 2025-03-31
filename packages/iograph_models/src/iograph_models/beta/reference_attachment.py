@@ -2,7 +2,7 @@ from __future__ import annotations
 from typing import Optional
 from typing import Literal
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class ReferenceAttachment(BaseModel):
@@ -22,4 +22,3 @@ class ReferenceAttachment(BaseModel):
 
 from .reference_attachment_permission import ReferenceAttachmentPermission
 from .reference_attachment_provider import ReferenceAttachmentProvider
-

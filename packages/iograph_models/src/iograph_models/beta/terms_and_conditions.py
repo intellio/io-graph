@@ -1,12 +1,13 @@
 from __future__ import annotations
 from typing import Optional
+from typing import Literal
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class TermsAndConditions(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
+	odata_type: Literal["#microsoft.graph.termsAndConditions"] = Field(alias="@odata.type",)
 	acceptanceStatement: Optional[str] = Field(alias="acceptanceStatement", default=None,)
 	bodyText: Optional[str] = Field(alias="bodyText", default=None,)
 	createdDateTime: Optional[datetime] = Field(alias="createdDateTime", default=None,)
@@ -24,4 +25,3 @@ class TermsAndConditions(BaseModel):
 from .terms_and_conditions_acceptance_status import TermsAndConditionsAcceptanceStatus
 from .terms_and_conditions_assignment import TermsAndConditionsAssignment
 from .terms_and_conditions_group_assignment import TermsAndConditionsGroupAssignment
-

@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class DomainDnsCnameRecordCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class DomainDnsCnameRecordCollectionResponse(BaseModel):
 	value: Optional[list[DomainDnsCnameRecord]] = Field(alias="value", default=None,)
 
 from .domain_dns_cname_record import DomainDnsCnameRecord
-

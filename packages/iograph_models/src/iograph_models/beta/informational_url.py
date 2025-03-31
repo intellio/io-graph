@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class InformationalUrl(BaseModel):
@@ -10,5 +10,4 @@ class InformationalUrl(BaseModel):
 	supportUrl: Optional[str] = Field(alias="supportUrl", default=None,)
 	termsOfServiceUrl: Optional[str] = Field(alias="termsOfServiceUrl", default=None,)
 	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
-
 

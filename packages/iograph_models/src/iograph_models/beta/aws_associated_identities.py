@@ -2,7 +2,7 @@ from __future__ import annotations
 from typing import Optional
 from typing import Union
 from typing import Annotated
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class AwsAssociatedIdentities(BaseModel):
@@ -17,6 +17,3 @@ from .aws_group import AwsGroup
 from .aws_lambda import AwsLambda
 from .aws_role import AwsRole
 from .aws_user import AwsUser
-from .aws_role import AwsRole
-from .aws_user import AwsUser
-

@@ -1,7 +1,7 @@
 from __future__ import annotations
 from typing import Optional
 from typing import Union
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class AppliedAuthenticationEventListener(BaseModel):
@@ -12,4 +12,3 @@ class AppliedAuthenticationEventListener(BaseModel):
 
 from .authentication_event_type import AuthenticationEventType
 from .custom_extension_callout_result import CustomExtensionCalloutResult
-

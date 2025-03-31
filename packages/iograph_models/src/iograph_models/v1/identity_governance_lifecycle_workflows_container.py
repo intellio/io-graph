@@ -1,11 +1,12 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from typing import Literal
+from pydantic import BaseModel, Field
 
 
 class IdentityGovernanceLifecycleWorkflowsContainer(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
+	odata_type: Literal["#microsoft.graph.identityGovernance.lifecycleWorkflowsContainer"] = Field(alias="@odata.type",)
 	customTaskExtensions: Optional[list[IdentityGovernanceCustomTaskExtension]] = Field(alias="customTaskExtensions", default=None,)
 	deletedItems: Optional[DeletedItemContainer] = Field(alias="deletedItems", default=None,)
 	insights: Optional[IdentityGovernanceInsights] = Field(alias="insights", default=None,)
@@ -21,4 +22,3 @@ from .identity_governance_lifecycle_management_settings import IdentityGovernanc
 from .identity_governance_task_definition import IdentityGovernanceTaskDefinition
 from .identity_governance_workflow import IdentityGovernanceWorkflow
 from .identity_governance_workflow_template import IdentityGovernanceWorkflowTemplate
-

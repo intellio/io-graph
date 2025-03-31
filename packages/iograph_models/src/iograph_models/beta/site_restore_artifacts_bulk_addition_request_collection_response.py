@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class SiteRestoreArtifactsBulkAdditionRequestCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class SiteRestoreArtifactsBulkAdditionRequestCollectionResponse(BaseModel):
 	value: Optional[list[SiteRestoreArtifactsBulkAdditionRequest]] = Field(alias="value", default=None,)
 
 from .site_restore_artifacts_bulk_addition_request import SiteRestoreArtifactsBulkAdditionRequest
-

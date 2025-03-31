@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class X509CertificateCRLValidationConfiguration(BaseModel):
@@ -9,4 +9,3 @@ class X509CertificateCRLValidationConfiguration(BaseModel):
 	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
 
 from .x509_certificate_c_r_l_validation_configuration_state import X509CertificateCRLValidationConfigurationState
-

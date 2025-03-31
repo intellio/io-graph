@@ -1,10 +1,10 @@
 from __future__ import annotations
 from typing import Optional
+from datetime import datetime
+from pydantic import BaseModel, Field
 from pydantic import model_validator, ModelWrapValidatorHandler, ValidationError
 from typing_extensions import Self
 from typing import Any
-from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class GroupPolicyPresentation(BaseModel):
@@ -24,9 +24,6 @@ class GroupPolicyPresentation(BaseModel):
 				return parent_validated_model
 			# get the discriminator value
 			mapping_key = data["@odata.type"]
-			if mapping_key == "#microsoft.graph.groupPolicyUploadedPresentation":
-				from .group_policy_uploaded_presentation import GroupPolicyUploadedPresentation
-				return GroupPolicyUploadedPresentation.model_validate(data)
 			if mapping_key == "#microsoft.graph.groupPolicyPresentationCheckBox":
 				from .group_policy_presentation_check_box import GroupPolicyPresentationCheckBox
 				return GroupPolicyPresentationCheckBox.model_validate(data)
@@ -60,4 +57,3 @@ class GroupPolicyPresentation(BaseModel):
 			raise e
 
 from .group_policy_definition import GroupPolicyDefinition
-

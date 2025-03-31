@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class DriveItemAccessOperationsViewpoint(BaseModel):
@@ -12,5 +12,4 @@ class DriveItemAccessOperationsViewpoint(BaseModel):
 	canRead: Optional[bool] = Field(alias="canRead", default=None,)
 	canUpdate: Optional[bool] = Field(alias="canUpdate", default=None,)
 	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
-
 

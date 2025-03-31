@@ -15,8 +15,8 @@ if TYPE_CHECKING:
 	from .by_training_id import ByTrainingIdRequest
 	from .....request_adapter import HttpxRequestAdapter
 from iograph_models.v1.o_data_errors__o_data_error import ODataErrorsODataError
-from iograph_models.v1.training_collection_response import TrainingCollectionResponse
 from iograph_models.v1.training import Training
+from iograph_models.v1.training_collection_response import TrainingCollectionResponse
 
 
 class TrainingsRequest(BaseRequestBuilder):

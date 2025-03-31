@@ -1,13 +1,14 @@
 from __future__ import annotations
 from typing import Optional
 from typing import Union
+from typing import Literal
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class EducationAssignment(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
+	odata_type: Literal["#microsoft.graph.educationAssignment"] = Field(alias="@odata.type",)
 	addedStudentAction: Optional[EducationAddedStudentAction | str] = Field(alias="addedStudentAction", default=None,)
 	addToCalendarAction: Optional[EducationAddToCalendarOptions | str] = Field(alias="addToCalendarAction", default=None,)
 	allowLateSubmissions: Optional[bool] = Field(alias="allowLateSubmissions", default=None,)
@@ -49,15 +50,9 @@ from .communications_identity_set import CommunicationsIdentitySet
 from .share_point_identity_set import SharePointIdentitySet
 from .education_assignment_points_grade_type import EducationAssignmentPointsGradeType
 from .education_item_body import EducationItemBody
-from .chat_message_from_identity_set import ChatMessageFromIdentitySet
-from .chat_message_mentioned_identity_set import ChatMessageMentionedIdentitySet
-from .chat_message_reaction_identity_set import ChatMessageReactionIdentitySet
-from .communications_identity_set import CommunicationsIdentitySet
-from .share_point_identity_set import SharePointIdentitySet
 from .education_assignment_status import EducationAssignmentStatus
 from .education_category import EducationCategory
 from .education_grading_category import EducationGradingCategory
 from .education_assignment_resource import EducationAssignmentResource
 from .education_rubric import EducationRubric
 from .education_submission import EducationSubmission
-

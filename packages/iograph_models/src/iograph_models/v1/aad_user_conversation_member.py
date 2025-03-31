@@ -2,7 +2,7 @@ from __future__ import annotations
 from typing import Optional
 from typing import Literal
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class AadUserConversationMember(BaseModel):
@@ -17,4 +17,3 @@ class AadUserConversationMember(BaseModel):
 	user: Optional[User] = Field(alias="user", default=None,)
 
 from .user import User
-

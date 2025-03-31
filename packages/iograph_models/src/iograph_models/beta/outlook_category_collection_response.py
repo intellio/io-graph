@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class OutlookCategoryCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class OutlookCategoryCollectionResponse(BaseModel):
 	value: Optional[list[OutlookCategory]] = Field(alias="value", default=None,)
 
 from .outlook_category import OutlookCategory
-

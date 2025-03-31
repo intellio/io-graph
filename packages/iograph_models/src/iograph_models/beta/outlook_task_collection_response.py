@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class OutlookTaskCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class OutlookTaskCollectionResponse(BaseModel):
 	value: Optional[list[OutlookTask]] = Field(alias="value", default=None,)
 
 from .outlook_task import OutlookTask
-

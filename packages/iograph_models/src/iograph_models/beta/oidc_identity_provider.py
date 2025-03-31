@@ -2,7 +2,7 @@ from __future__ import annotations
 from typing import Optional
 from typing import Union
 from typing import Literal
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class OidcIdentityProvider(BaseModel):
@@ -21,4 +21,3 @@ from .oidc_client_secret_authentication import OidcClientSecretAuthentication
 from .oidc_private_jwt_key_client_authentication import OidcPrivateJwtKeyClientAuthentication
 from .oidc_inbound_claim_mapping_override import OidcInboundClaimMappingOverride
 from .oidc_response_type import OidcResponseType
-

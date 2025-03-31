@@ -14,8 +14,8 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_managed_e_book_category_id import ByManagedEBookCategoryIdRequest
 	from ......request_adapter import HttpxRequestAdapter
-from iograph_models.beta.managed_e_book_category_collection_response import ManagedEBookCategoryCollectionResponse
 from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.beta.managed_e_book_category_collection_response import ManagedEBookCategoryCollectionResponse
 
 
 class CategoriesRequest(BaseRequestBuilder):

@@ -1,12 +1,13 @@
 from __future__ import annotations
 from typing import Optional
+from typing import Literal
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class SecurityHealthIssue(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
+	odata_type: Literal["#microsoft.graph.security.healthIssue"] = Field(alias="@odata.type",)
 	additionalInformation: Optional[list[str]] = Field(alias="additionalInformation", default=None,)
 	createdDateTime: Optional[datetime] = Field(alias="createdDateTime", default=None,)
 	description: Optional[str] = Field(alias="description", default=None,)
@@ -24,4 +25,3 @@ class SecurityHealthIssue(BaseModel):
 from .security_health_issue_type import SecurityHealthIssueType
 from .security_health_issue_severity import SecurityHealthIssueSeverity
 from .security_health_issue_status import SecurityHealthIssueStatus
-

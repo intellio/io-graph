@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class ConditionalAccessRuleSatisfiedCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class ConditionalAccessRuleSatisfiedCollectionResponse(BaseModel):
 	value: Optional[list[ConditionalAccessRuleSatisfied]] = Field(alias="value", default=None,)
 
 from .conditional_access_rule_satisfied import ConditionalAccessRuleSatisfied
-

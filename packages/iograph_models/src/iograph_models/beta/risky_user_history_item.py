@@ -1,12 +1,13 @@
 from __future__ import annotations
 from typing import Optional
+from typing import Literal
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class RiskyUserHistoryItem(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
+	odata_type: Literal["#microsoft.graph.riskyUserHistoryItem"] = Field(alias="@odata.type",)
 	isDeleted: Optional[bool] = Field(alias="isDeleted", default=None,)
 	isProcessing: Optional[bool] = Field(alias="isProcessing", default=None,)
 	riskDetail: Optional[RiskDetail | str] = Field(alias="riskDetail", default=None,)
@@ -24,4 +25,3 @@ from .risk_detail import RiskDetail
 from .risk_level import RiskLevel
 from .risk_state import RiskState
 from .risk_user_activity import RiskUserActivity
-

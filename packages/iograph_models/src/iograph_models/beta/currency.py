@@ -2,7 +2,7 @@ from __future__ import annotations
 from uuid import UUID
 from typing import Optional
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class Currency(BaseModel):
@@ -14,5 +14,4 @@ class Currency(BaseModel):
 	lastModifiedDateTime: Optional[datetime] = Field(alias="lastModifiedDateTime", default=None,)
 	symbol: Optional[str] = Field(alias="symbol", default=None,)
 	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
-
 

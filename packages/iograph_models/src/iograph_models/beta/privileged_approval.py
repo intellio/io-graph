@@ -1,12 +1,13 @@
 from __future__ import annotations
 from typing import Optional
+from typing import Literal
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class PrivilegedApproval(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
+	odata_type: Literal["#microsoft.graph.privilegedApproval"] = Field(alias="@odata.type",)
 	approvalDuration: Optional[str] = Field(alias="approvalDuration", default=None,)
 	approvalState: Optional[ApprovalState | str] = Field(alias="approvalState", default=None,)
 	approvalType: Optional[str] = Field(alias="approvalType", default=None,)
@@ -22,4 +23,3 @@ class PrivilegedApproval(BaseModel):
 from .approval_state import ApprovalState
 from .privileged_role_assignment_request import PrivilegedRoleAssignmentRequest
 from .privileged_role import PrivilegedRole
-

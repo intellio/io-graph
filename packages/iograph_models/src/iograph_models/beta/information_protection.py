@@ -1,13 +1,14 @@
 from __future__ import annotations
 from typing import Optional
 from typing import Union
+from typing import Literal
 from typing import Annotated
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class InformationProtection(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
+	odata_type: Literal["#microsoft.graph.informationProtection"] = Field(alias="@odata.type",)
 	bitlocker: Optional[Bitlocker] = Field(alias="bitlocker", default=None,)
 	dataLossPreventionPolicies: Optional[list[DataLossPreventionPolicy]] = Field(alias="dataLossPreventionPolicies", default=None,)
 	policy: Optional[InformationProtectionPolicy] = Field(alias="policy", default=None,)
@@ -24,4 +25,3 @@ from .email_file_assessment_request import EmailFileAssessmentRequest
 from .file_assessment_request import FileAssessmentRequest
 from .mail_assessment_request import MailAssessmentRequest
 from .url_assessment_request import UrlAssessmentRequest
-

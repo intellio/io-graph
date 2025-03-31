@@ -1,9 +1,9 @@
 from __future__ import annotations
 from typing import Optional
+from pydantic import BaseModel, Field
 from pydantic import model_validator, ModelWrapValidatorHandler, ValidationError
 from typing_extensions import Self
 from typing import Any
-from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class MobileAppAssignmentSettings(BaseModel):
@@ -40,9 +40,6 @@ class MobileAppAssignmentSettings(BaseModel):
 			if mapping_key == "#microsoft.graph.microsoftStoreForBusinessAppAssignmentSettings":
 				from .microsoft_store_for_business_app_assignment_settings import MicrosoftStoreForBusinessAppAssignmentSettings
 				return MicrosoftStoreForBusinessAppAssignmentSettings.model_validate(data)
-			if mapping_key == "#microsoft.graph.win32LobAppAssignmentSettings":
-				from .win32_lob_app_assignment_settings import Win32LobAppAssignmentSettings
-				return Win32LobAppAssignmentSettings.model_validate(data)
 			if mapping_key == "#microsoft.graph.win32CatalogAppAssignmentSettings":
 				from .win32_catalog_app_assignment_settings import Win32CatalogAppAssignmentSettings
 				return Win32CatalogAppAssignmentSettings.model_validate(data)
@@ -59,5 +56,4 @@ class MobileAppAssignmentSettings(BaseModel):
 
 		except Exception as e:
 			raise e
-
 

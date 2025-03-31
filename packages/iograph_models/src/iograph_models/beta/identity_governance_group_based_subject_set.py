@@ -1,7 +1,7 @@
 from __future__ import annotations
 from typing import Optional
 from typing import Literal
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class IdentityGovernanceGroupBasedSubjectSet(BaseModel):
@@ -9,4 +9,3 @@ class IdentityGovernanceGroupBasedSubjectSet(BaseModel):
 	groups: Optional[list[Group]] = Field(alias="groups", default=None,)
 
 from .group import Group
-

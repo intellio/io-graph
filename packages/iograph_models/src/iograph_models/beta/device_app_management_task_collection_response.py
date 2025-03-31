@@ -2,7 +2,7 @@ from __future__ import annotations
 from typing import Optional
 from typing import Union
 from typing import Annotated
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class DeviceAppManagementTaskCollectionResponse(BaseModel):
@@ -13,4 +13,3 @@ class DeviceAppManagementTaskCollectionResponse(BaseModel):
 from .app_vulnerability_task import AppVulnerabilityTask
 from .security_configuration_task import SecurityConfigurationTask
 from .unmanaged_device_discovery_task import UnmanagedDeviceDiscoveryTask
-

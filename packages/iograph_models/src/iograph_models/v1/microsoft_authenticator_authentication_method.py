@@ -2,7 +2,7 @@ from __future__ import annotations
 from typing import Optional
 from typing import Literal
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class MicrosoftAuthenticatorAuthenticationMethod(BaseModel):
@@ -15,4 +15,3 @@ class MicrosoftAuthenticatorAuthenticationMethod(BaseModel):
 	device: Optional[Device] = Field(alias="device", default=None,)
 
 from .device import Device
-

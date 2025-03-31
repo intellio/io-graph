@@ -2,7 +2,7 @@ from __future__ import annotations
 from typing import Optional
 from typing import Union
 from typing import Annotated
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class SecurityDataSourceCollectionResponse(BaseModel):
@@ -13,4 +13,3 @@ class SecurityDataSourceCollectionResponse(BaseModel):
 from .security_site_source import SecuritySiteSource
 from .security_unified_group_source import SecurityUnifiedGroupSource
 from .security_user_source import SecurityUserSource
-

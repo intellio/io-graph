@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class Win32MobileAppCatalogPackageCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class Win32MobileAppCatalogPackageCollectionResponse(BaseModel):
 	value: Optional[list[Win32MobileAppCatalogPackage]] = Field(alias="value", default=None,)
 
 from .win32_mobile_app_catalog_package import Win32MobileAppCatalogPackage
-

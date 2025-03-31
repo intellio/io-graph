@@ -1,7 +1,7 @@
 from __future__ import annotations
 from typing import Optional
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class AssignmentFilterEvaluationSummary(BaseModel):
@@ -19,4 +19,3 @@ from .device_platform_type import DevicePlatformType
 from .device_and_app_management_assignment_filter_type import DeviceAndAppManagementAssignmentFilterType
 from .assignment_filter_type_and_evaluation_result import AssignmentFilterTypeAndEvaluationResult
 from .assignment_filter_evaluation_result import AssignmentFilterEvaluationResult
-

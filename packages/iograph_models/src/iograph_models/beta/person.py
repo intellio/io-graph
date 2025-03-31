@@ -1,13 +1,14 @@
 from __future__ import annotations
 from typing import Optional
 from typing import Union
+from typing import Literal
 from typing import Annotated
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class Person(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
+	odata_type: Literal["#microsoft.graph.person"] = Field(alias="@odata.type",)
 	birthday: Optional[str] = Field(alias="birthday", default=None,)
 	companyName: Optional[str] = Field(alias="companyName", default=None,)
 	department: Optional[str] = Field(alias="department", default=None,)
@@ -34,4 +35,3 @@ from .phone import Phone
 from .location_constraint_item import LocationConstraintItem
 from .person_data_source import PersonDataSource
 from .website import Website
-

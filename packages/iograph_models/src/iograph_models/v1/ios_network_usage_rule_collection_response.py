@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class IosNetworkUsageRuleCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class IosNetworkUsageRuleCollectionResponse(BaseModel):
 	value: Optional[list[IosNetworkUsageRule]] = Field(alias="value", default=None,)
 
 from .ios_network_usage_rule import IosNetworkUsageRule
-

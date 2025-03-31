@@ -1,13 +1,14 @@
 from __future__ import annotations
 from typing import Optional
 from typing import Union
+from typing import Literal
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class AiInteraction(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
+	odata_type: Literal["#microsoft.graph.aiInteraction"] = Field(alias="@odata.type",)
 	appClass: Optional[str] = Field(alias="appClass", default=None,)
 	attachments: Optional[list[AiInteractionAttachment]] = Field(alias="attachments", default=None,)
 	body: Optional[ItemBody] = Field(alias="body", default=None,)
@@ -36,4 +37,3 @@ from .share_point_identity_set import SharePointIdentitySet
 from .ai_interaction_type import AiInteractionType
 from .ai_interaction_link import AiInteractionLink
 from .ai_interaction_mention import AiInteractionMention
-

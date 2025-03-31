@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class DomainSecurityProfileCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class DomainSecurityProfileCollectionResponse(BaseModel):
 	value: Optional[list[DomainSecurityProfile]] = Field(alias="value", default=None,)
 
 from .domain_security_profile import DomainSecurityProfile
-

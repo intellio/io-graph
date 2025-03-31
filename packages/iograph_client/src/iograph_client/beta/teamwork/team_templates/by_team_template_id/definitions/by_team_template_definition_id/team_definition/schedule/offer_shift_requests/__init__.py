@@ -15,8 +15,8 @@ if TYPE_CHECKING:
 	from .by_offer_shift_request_id import ByOfferShiftRequestIdRequest
 	from ..........request_adapter import HttpxRequestAdapter
 from iograph_models.beta.offer_shift_request_collection_response import OfferShiftRequestCollectionResponse
-from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.beta.offer_shift_request import OfferShiftRequest
+from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 
 
 class OfferShiftRequestsRequest(BaseRequestBuilder):

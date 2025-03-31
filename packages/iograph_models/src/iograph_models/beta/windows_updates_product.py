@@ -1,11 +1,12 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from typing import Literal
+from pydantic import BaseModel, Field
 
 
 class WindowsUpdatesProduct(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
+	odata_type: Literal["#microsoft.graph.windowsUpdates.product"] = Field(alias="@odata.type",)
 	friendlyNames: Optional[list[str]] = Field(alias="friendlyNames", default=None,)
 	groupName: Optional[str] = Field(alias="groupName", default=None,)
 	name: Optional[str] = Field(alias="name", default=None,)
@@ -16,4 +17,3 @@ class WindowsUpdatesProduct(BaseModel):
 from .windows_updates_edition import WindowsUpdatesEdition
 from .windows_updates_known_issue import WindowsUpdatesKnownIssue
 from .windows_updates_product_revision import WindowsUpdatesProductRevision
-

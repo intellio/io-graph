@@ -2,7 +2,7 @@ from __future__ import annotations
 from typing import Optional
 from typing import Literal
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class DeviceEnrollmentLimitConfiguration(BaseModel):
@@ -18,4 +18,3 @@ class DeviceEnrollmentLimitConfiguration(BaseModel):
 	limit: Optional[int] = Field(alias="limit", default=None,)
 
 from .enrollment_configuration_assignment import EnrollmentConfigurationAssignment
-

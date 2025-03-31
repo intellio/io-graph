@@ -1,10 +1,10 @@
 from __future__ import annotations
 from typing import Optional
+from datetime import datetime
+from pydantic import BaseModel, Field
 from pydantic import model_validator, ModelWrapValidatorHandler, ValidationError
 from typing_extensions import Self
 from typing import Any
-from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class DeviceActionResult(BaseModel):
@@ -48,4 +48,3 @@ class DeviceActionResult(BaseModel):
 			raise e
 
 from .action_state import ActionState
-

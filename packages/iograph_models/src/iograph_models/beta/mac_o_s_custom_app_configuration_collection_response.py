@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class MacOSCustomAppConfigurationCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class MacOSCustomAppConfigurationCollectionResponse(BaseModel):
 	value: Optional[list[MacOSCustomAppConfiguration]] = Field(alias="value", default=None,)
 
 from .mac_o_s_custom_app_configuration import MacOSCustomAppConfiguration
-

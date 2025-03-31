@@ -2,7 +2,7 @@ from __future__ import annotations
 from typing import Optional
 from typing import Union
 from typing import Annotated
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class CustomClaimTransformationCollectionResponse(BaseModel):
@@ -25,4 +25,3 @@ from .substring_transformation import SubstringTransformation
 from .to_lowercase_transformation import ToLowercaseTransformation
 from .to_uppercase_transformation import ToUppercaseTransformation
 from .trim_transformation import TrimTransformation
-

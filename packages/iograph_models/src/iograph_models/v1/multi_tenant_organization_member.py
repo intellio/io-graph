@@ -3,7 +3,7 @@ from uuid import UUID
 from typing import Optional
 from typing import Literal
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class MultiTenantOrganizationMember(BaseModel):
@@ -22,4 +22,3 @@ class MultiTenantOrganizationMember(BaseModel):
 from .multi_tenant_organization_member_role import MultiTenantOrganizationMemberRole
 from .multi_tenant_organization_member_state import MultiTenantOrganizationMemberState
 from .multi_tenant_organization_member_transition_details import MultiTenantOrganizationMemberTransitionDetails
-

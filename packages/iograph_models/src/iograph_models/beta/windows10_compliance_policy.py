@@ -2,7 +2,7 @@ from __future__ import annotations
 from typing import Optional
 from typing import Literal
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class Windows10CompliancePolicy(BaseModel):
@@ -71,4 +71,3 @@ from .device_threat_protection_level import DeviceThreatProtectionLevel
 from .required_password_type import RequiredPasswordType
 from .operating_system_version_range import OperatingSystemVersionRange
 from .wsl_distribution_configuration import WslDistributionConfiguration
-

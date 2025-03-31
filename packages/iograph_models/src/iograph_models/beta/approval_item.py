@@ -1,12 +1,13 @@
 from __future__ import annotations
 from typing import Optional
+from typing import Literal
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class ApprovalItem(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
+	odata_type: Literal["#microsoft.graph.approvalItem"] = Field(alias="@odata.type",)
 	allowCancel: Optional[bool] = Field(alias="allowCancel", default=None,)
 	allowEmailNotification: Optional[bool] = Field(alias="allowEmailNotification", default=None,)
 	approvalType: Optional[ApprovalItemType | str] = Field(alias="approvalType", default=None,)
@@ -25,9 +26,7 @@ class ApprovalItem(BaseModel):
 
 from .approval_item_type import ApprovalItemType
 from .approval_identity_set import ApprovalIdentitySet
-from .approval_identity_set import ApprovalIdentitySet
 from .approval_item_state import ApprovalItemState
 from .approval_item_view_point import ApprovalItemViewPoint
 from .approval_item_request import ApprovalItemRequest
 from .approval_item_response import ApprovalItemResponse
-

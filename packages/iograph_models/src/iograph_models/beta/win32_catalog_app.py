@@ -4,7 +4,7 @@ from typing import Union
 from typing import Literal
 from typing import Annotated
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class Win32CatalogApp(BaseModel):
@@ -82,5 +82,3 @@ from .win32_lob_app_power_shell_script_rule import Win32LobAppPowerShellScriptRu
 from .win32_lob_app_product_code_rule import Win32LobAppProductCodeRule
 from .win32_lob_app_registry_rule import Win32LobAppRegistryRule
 from .win32_mobile_app_catalog_package import Win32MobileAppCatalogPackage
-from .win32_mobile_app_catalog_package import Win32MobileAppCatalogPackage
-

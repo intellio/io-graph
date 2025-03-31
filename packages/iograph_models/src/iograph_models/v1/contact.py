@@ -4,7 +4,7 @@ from typing import Union
 from typing import Literal
 from typing import Annotated
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class Contact(BaseModel):
@@ -54,10 +54,7 @@ class Contact(BaseModel):
 
 from .physical_address import PhysicalAddress
 from .email_address import EmailAddress
-from .physical_address import PhysicalAddress
-from .physical_address import PhysicalAddress
 from .open_type_extension import OpenTypeExtension
 from .multi_value_legacy_extended_property import MultiValueLegacyExtendedProperty
 from .profile_photo import ProfilePhoto
 from .single_value_legacy_extended_property import SingleValueLegacyExtendedProperty
-

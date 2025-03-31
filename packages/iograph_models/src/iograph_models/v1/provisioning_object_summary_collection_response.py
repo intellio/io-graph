@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class ProvisioningObjectSummaryCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class ProvisioningObjectSummaryCollectionResponse(BaseModel):
 	value: Optional[list[ProvisioningObjectSummary]] = Field(alias="value", default=None,)
 
 from .provisioning_object_summary import ProvisioningObjectSummary
-

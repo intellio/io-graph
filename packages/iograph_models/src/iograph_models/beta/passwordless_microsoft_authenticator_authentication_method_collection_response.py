@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class PasswordlessMicrosoftAuthenticatorAuthenticationMethodCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class PasswordlessMicrosoftAuthenticatorAuthenticationMethodCollectionResponse(B
 	value: Optional[list[PasswordlessMicrosoftAuthenticatorAuthenticationMethod]] = Field(alias="value", default=None,)
 
 from .passwordless_microsoft_authenticator_authentication_method import PasswordlessMicrosoftAuthenticatorAuthenticationMethod
-

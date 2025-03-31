@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class SynchronizationJobSubjectCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class SynchronizationJobSubjectCollectionResponse(BaseModel):
 	value: Optional[list[SynchronizationJobSubject]] = Field(alias="value", default=None,)
 
 from .synchronization_job_subject import SynchronizationJobSubject
-

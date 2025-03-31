@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class DeviceManagementUserRightsSetting(BaseModel):
@@ -10,4 +10,3 @@ class DeviceManagementUserRightsSetting(BaseModel):
 
 from .device_management_user_rights_local_user_or_group import DeviceManagementUserRightsLocalUserOrGroup
 from .state_management_setting import StateManagementSetting
-

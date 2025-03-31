@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class RestrictedAppsViolationCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class RestrictedAppsViolationCollectionResponse(BaseModel):
 	value: Optional[list[RestrictedAppsViolation]] = Field(alias="value", default=None,)
 
 from .restricted_apps_violation import RestrictedAppsViolation
-

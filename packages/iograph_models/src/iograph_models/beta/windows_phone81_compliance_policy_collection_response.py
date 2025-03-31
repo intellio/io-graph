@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class WindowsPhone81CompliancePolicyCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class WindowsPhone81CompliancePolicyCollectionResponse(BaseModel):
 	value: Optional[list[WindowsPhone81CompliancePolicy]] = Field(alias="value", default=None,)
 
 from .windows_phone81_compliance_policy import WindowsPhone81CompliancePolicy
-

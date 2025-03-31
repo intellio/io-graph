@@ -2,7 +2,7 @@ from __future__ import annotations
 from typing import Optional
 from typing import Literal
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class Printer(BaseModel):
@@ -35,6 +35,4 @@ from .printer_status import PrinterStatus
 from .print_job import PrintJob
 from .print_connector import PrintConnector
 from .printer_share import PrinterShare
-from .printer_share import PrinterShare
 from .print_task_trigger import PrintTaskTrigger
-

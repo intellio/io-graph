@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class CloudPcAuditEventCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class CloudPcAuditEventCollectionResponse(BaseModel):
 	value: Optional[list[CloudPcAuditEvent]] = Field(alias="value", default=None,)
 
 from .cloud_pc_audit_event import CloudPcAuditEvent
-

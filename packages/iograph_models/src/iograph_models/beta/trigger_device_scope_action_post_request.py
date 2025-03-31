@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class Trigger_device_scope_actionPostRequest(BaseModel):
@@ -8,4 +8,3 @@ class Trigger_device_scope_actionPostRequest(BaseModel):
 	deviceScopeId: Optional[str] = Field(alias="deviceScopeId", default=None,)
 
 from .device_scope_action import DeviceScopeAction
-

@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class OnTokenIssuanceStartReturnClaimCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class OnTokenIssuanceStartReturnClaimCollectionResponse(BaseModel):
 	value: Optional[list[OnTokenIssuanceStartReturnClaim]] = Field(alias="value", default=None,)
 
 from .on_token_issuance_start_return_claim import OnTokenIssuanceStartReturnClaim
-

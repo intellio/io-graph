@@ -1,12 +1,13 @@
 from __future__ import annotations
 from typing import Optional
+from typing import Literal
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class SecureScoreControlProfile(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
+	odata_type: Literal["#microsoft.graph.secureScoreControlProfile"] = Field(alias="@odata.type",)
 	actionType: Optional[str] = Field(alias="actionType", default=None,)
 	actionUrl: Optional[str] = Field(alias="actionUrl", default=None,)
 	azureTenantId: Optional[str] = Field(alias="azureTenantId", default=None,)
@@ -31,4 +32,3 @@ from .compliance_information import ComplianceInformation
 from .secure_score_control_state_update import SecureScoreControlStateUpdate
 from .reference_numeric import ReferenceNumeric
 from .security_vendor_information import SecurityVendorInformation
-

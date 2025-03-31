@@ -3,7 +3,7 @@ from typing import Optional
 from typing import Union
 from typing import Literal
 from typing import Annotated
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class X509CertificateAuthenticationMethodConfiguration(BaseModel):
@@ -23,4 +23,3 @@ from .x509_certificate_user_binding import X509CertificateUserBinding
 from .x509_certificate_c_r_l_validation_configuration import X509CertificateCRLValidationConfiguration
 from .microsoft_authenticator_authentication_method_target import MicrosoftAuthenticatorAuthenticationMethodTarget
 from .sms_authentication_method_target import SmsAuthenticationMethodTarget
-

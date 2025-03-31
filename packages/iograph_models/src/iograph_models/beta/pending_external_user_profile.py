@@ -2,7 +2,7 @@ from __future__ import annotations
 from typing import Optional
 from typing import Literal
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class PendingExternalUserProfile(BaseModel):
@@ -22,4 +22,3 @@ class PendingExternalUserProfile(BaseModel):
 	supervisorId: Optional[str] = Field(alias="supervisorId", default=None,)
 
 from .physical_office_address import PhysicalOfficeAddress
-

@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class VppTokenLicenseSummary(BaseModel):
@@ -10,5 +10,4 @@ class VppTokenLicenseSummary(BaseModel):
 	usedLicenseCount: Optional[int] = Field(alias="usedLicenseCount", default=None,)
 	vppTokenId: Optional[str] = Field(alias="vppTokenId", default=None,)
 	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
-
 

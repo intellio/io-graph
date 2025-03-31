@@ -1,7 +1,7 @@
 from __future__ import annotations
 from typing import Optional
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class SecurityAnalyzedEmailSenderDetail(BaseModel):
@@ -15,5 +15,4 @@ class SecurityAnalyzedEmailSenderDetail(BaseModel):
 	mailFromAddress: Optional[str] = Field(alias="mailFromAddress", default=None,)
 	mailFromDomainName: Optional[str] = Field(alias="mailFromDomainName", default=None,)
 	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
-
 

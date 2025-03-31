@@ -1,7 +1,7 @@
 from __future__ import annotations
 from typing import Optional
 from typing import Literal
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class OutgoingCallOptions(BaseModel):
@@ -9,5 +9,4 @@ class OutgoingCallOptions(BaseModel):
 	isContentSharingNotificationEnabled: Optional[bool] = Field(alias="isContentSharingNotificationEnabled", default=None,)
 	isDeltaRosterEnabled: Optional[bool] = Field(alias="isDeltaRosterEnabled", default=None,)
 	odata_type: Literal["#microsoft.graph.outgoingCallOptions"] = Field(alias="@odata.type", default="#microsoft.graph.outgoingCallOptions")
-
 

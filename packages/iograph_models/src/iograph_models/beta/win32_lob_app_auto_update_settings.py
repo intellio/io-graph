@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class Win32LobAppAutoUpdateSettings(BaseModel):
@@ -8,4 +8,3 @@ class Win32LobAppAutoUpdateSettings(BaseModel):
 	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
 
 from .win32_lob_auto_update_superseded_apps_state import Win32LobAutoUpdateSupersededAppsState
-

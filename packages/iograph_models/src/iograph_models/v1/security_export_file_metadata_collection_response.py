@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class SecurityExportFileMetadataCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class SecurityExportFileMetadataCollectionResponse(BaseModel):
 	value: Optional[list[SecurityExportFileMetadata]] = Field(alias="value", default=None,)
 
 from .security_export_file_metadata import SecurityExportFileMetadata
-

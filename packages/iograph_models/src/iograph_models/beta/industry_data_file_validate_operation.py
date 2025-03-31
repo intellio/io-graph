@@ -2,7 +2,7 @@ from __future__ import annotations
 from typing import Optional
 from typing import Literal
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class IndustryDataFileValidateOperation(BaseModel):
@@ -19,5 +19,3 @@ class IndustryDataFileValidateOperation(BaseModel):
 
 from .long_running_operation_status import LongRunningOperationStatus
 from .public_error import PublicError
-from .public_error import PublicError
-

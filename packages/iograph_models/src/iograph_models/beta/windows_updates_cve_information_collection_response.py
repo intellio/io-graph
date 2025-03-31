@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class WindowsUpdatesCveInformationCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class WindowsUpdatesCveInformationCollectionResponse(BaseModel):
 	value: Optional[list[WindowsUpdatesCveInformation]] = Field(alias="value", default=None,)
 
 from .windows_updates_cve_information import WindowsUpdatesCveInformation
-

@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class CustomExtensionHandlerInstance(BaseModel):
@@ -12,4 +12,3 @@ class CustomExtensionHandlerInstance(BaseModel):
 
 from .access_package_custom_extension_stage import AccessPackageCustomExtensionStage
 from .access_package_custom_extension_handler_status import AccessPackageCustomExtensionHandlerStatus
-

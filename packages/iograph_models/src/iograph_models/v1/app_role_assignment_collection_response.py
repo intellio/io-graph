@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class AppRoleAssignmentCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class AppRoleAssignmentCollectionResponse(BaseModel):
 	value: Optional[list[AppRoleAssignment]] = Field(alias="value", default=None,)
 
 from .app_role_assignment import AppRoleAssignment
-

@@ -2,7 +2,7 @@ from __future__ import annotations
 from typing import Optional
 from typing import Union
 from typing import Annotated
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class IdentityProviderCollectionResponse(BaseModel):
@@ -11,4 +11,3 @@ class IdentityProviderCollectionResponse(BaseModel):
 	value: Optional[list[Annotated[Union[OpenIdConnectProvider],Field(discriminator="odata_type")]]] = Field(alias="value", default=None,)
 
 from .open_id_connect_provider import OpenIdConnectProvider
-

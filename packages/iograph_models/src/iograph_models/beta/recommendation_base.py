@@ -1,10 +1,10 @@
 from __future__ import annotations
 from typing import Optional
+from datetime import datetime
+from pydantic import BaseModel, Field
 from pydantic import model_validator, ModelWrapValidatorHandler, ValidationError
 from typing_extensions import Self
 from typing import Any
-from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class RecommendationBase(BaseModel):
@@ -55,10 +55,8 @@ from .action_step import ActionStep
 from .recommendation_category import RecommendationCategory
 from .reference_numeric import ReferenceNumeric
 from .recommendation_feature_areas import RecommendationFeatureAreas
-from .reference_numeric import ReferenceNumeric
 from .recommendation_priority import RecommendationPriority
 from .recommendation_type import RecommendationType
 from .required_licenses import RequiredLicenses
 from .recommendation_status import RecommendationStatus
 from .impacted_resource import ImpactedResource
-

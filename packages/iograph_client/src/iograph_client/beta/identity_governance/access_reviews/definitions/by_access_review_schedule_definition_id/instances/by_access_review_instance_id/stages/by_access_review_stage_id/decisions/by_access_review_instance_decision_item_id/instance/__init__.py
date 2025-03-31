@@ -22,8 +22,8 @@ if TYPE_CHECKING:
 	from .decisions import DecisionsRequest
 	from .contacted_reviewers import ContactedReviewersRequest
 	from .............request_adapter import HttpxRequestAdapter
-from iograph_models.beta.access_review_instance import AccessReviewInstance
 from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.beta.access_review_instance import AccessReviewInstance
 
 
 class InstanceRequest(BaseRequestBuilder):

@@ -2,7 +2,7 @@ from __future__ import annotations
 from typing import Optional
 from typing import Union
 from typing import Annotated
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class IosHomeScreenItemCollectionResponse(BaseModel):
@@ -12,4 +12,3 @@ class IosHomeScreenItemCollectionResponse(BaseModel):
 
 from .ios_home_screen_app import IosHomeScreenApp
 from .ios_home_screen_folder import IosHomeScreenFolder
-

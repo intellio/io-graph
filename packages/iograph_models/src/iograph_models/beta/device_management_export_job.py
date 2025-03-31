@@ -1,12 +1,13 @@
 from __future__ import annotations
 from typing import Optional
+from typing import Literal
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class DeviceManagementExportJob(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
+	odata_type: Literal["#microsoft.graph.deviceManagementExportJob"] = Field(alias="@odata.type",)
 	expirationDateTime: Optional[datetime] = Field(alias="expirationDateTime", default=None,)
 	filter: Optional[str] = Field(alias="filter", default=None,)
 	format: Optional[DeviceManagementReportFileFormat | str] = Field(alias="format", default=None,)
@@ -22,4 +23,3 @@ class DeviceManagementExportJob(BaseModel):
 from .device_management_report_file_format import DeviceManagementReportFileFormat
 from .device_management_export_job_localization_type import DeviceManagementExportJobLocalizationType
 from .device_management_report_status import DeviceManagementReportStatus
-

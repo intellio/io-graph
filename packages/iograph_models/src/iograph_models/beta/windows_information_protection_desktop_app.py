@@ -1,7 +1,7 @@
 from __future__ import annotations
 from typing import Optional
 from typing import Literal
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class WindowsInformationProtectionDesktopApp(BaseModel):
@@ -14,5 +14,4 @@ class WindowsInformationProtectionDesktopApp(BaseModel):
 	binaryName: Optional[str] = Field(alias="binaryName", default=None,)
 	binaryVersionHigh: Optional[str] = Field(alias="binaryVersionHigh", default=None,)
 	binaryVersionLow: Optional[str] = Field(alias="binaryVersionLow", default=None,)
-
 

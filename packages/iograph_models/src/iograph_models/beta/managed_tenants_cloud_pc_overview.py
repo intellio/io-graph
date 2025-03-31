@@ -1,12 +1,13 @@
 from __future__ import annotations
 from typing import Optional
+from typing import Literal
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class ManagedTenantsCloudPcOverview(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
+	odata_type: Literal["#microsoft.graph.managedTenants.cloudPcOverview"] = Field(alias="@odata.type",)
 	frontlineLicensesCount: Optional[int] = Field(alias="frontlineLicensesCount", default=None,)
 	lastRefreshedDateTime: Optional[datetime] = Field(alias="lastRefreshedDateTime", default=None,)
 	numberOfCloudPcConnectionStatusFailed: Optional[int] = Field(alias="numberOfCloudPcConnectionStatusFailed", default=None,)
@@ -28,5 +29,4 @@ class ManagedTenantsCloudPcOverview(BaseModel):
 	totalCloudPcConnectionStatus: Optional[int] = Field(alias="totalCloudPcConnectionStatus", default=None,)
 	totalCloudPcStatus: Optional[int] = Field(alias="totalCloudPcStatus", default=None,)
 	totalEnterpriseLicenses: Optional[int] = Field(alias="totalEnterpriseLicenses", default=None,)
-
 

@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class Networkaccess_web_category_report_with_startdatetime_enddatetimeGetResponse(BaseModel):
@@ -9,4 +9,3 @@ class Networkaccess_web_category_report_with_startdatetime_enddatetimeGetRespons
 	value: Optional[list[NetworkaccessWebCategoriesSummary]] = Field(alias="value", default=None,)
 
 from .networkaccess_web_categories_summary import NetworkaccessWebCategoriesSummary
-

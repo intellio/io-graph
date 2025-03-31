@@ -2,7 +2,7 @@ from __future__ import annotations
 from typing import Optional
 from typing import Literal
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class WindowsHelloForBusinessAuthenticationMethod(BaseModel):
@@ -15,4 +15,3 @@ class WindowsHelloForBusinessAuthenticationMethod(BaseModel):
 
 from .authentication_method_key_strength import AuthenticationMethodKeyStrength
 from .device import Device
-

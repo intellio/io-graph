@@ -16,8 +16,8 @@ if TYPE_CHECKING:
 	from .item_insights import ItemInsightsRequest
 	from .contact_insights import ContactInsightsRequest
 	from .....request_adapter import HttpxRequestAdapter
-from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.beta.organization_settings import OrganizationSettings
+from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 
 
 class SettingsRequest(BaseRequestBuilder):

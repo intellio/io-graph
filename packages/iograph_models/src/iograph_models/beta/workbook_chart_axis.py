@@ -1,11 +1,12 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from typing import Literal
+from pydantic import BaseModel, Field
 
 
 class WorkbookChartAxis(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
+	odata_type: Literal["#microsoft.graph.workbookChartAxis"] = Field(alias="@odata.type",)
 	majorUnit: Optional[str] = Field(alias="majorUnit", default=None,)
 	maximum: Optional[str] = Field(alias="maximum", default=None,)
 	minimum: Optional[str] = Field(alias="minimum", default=None,)
@@ -17,6 +18,4 @@ class WorkbookChartAxis(BaseModel):
 
 from .workbook_chart_axis_format import WorkbookChartAxisFormat
 from .workbook_chart_gridlines import WorkbookChartGridlines
-from .workbook_chart_gridlines import WorkbookChartGridlines
 from .workbook_chart_axis_title import WorkbookChartAxisTitle
-

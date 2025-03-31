@@ -15,8 +15,8 @@ if TYPE_CHECKING:
 	from .set import SetRequest
 	from .from_term import FromTermRequest
 	from ..................request_adapter import HttpxRequestAdapter
-from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.beta.term_store_relation import TermStoreRelation
+from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 
 
 class ByRelationIdRequest(BaseRequestBuilder):

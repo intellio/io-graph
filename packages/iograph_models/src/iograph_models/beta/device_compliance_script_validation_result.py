@@ -2,7 +2,7 @@ from __future__ import annotations
 from typing import Optional
 from typing import Union
 from typing import Annotated
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class DeviceComplianceScriptValidationResult(BaseModel):
@@ -13,5 +13,3 @@ class DeviceComplianceScriptValidationResult(BaseModel):
 
 from .device_compliance_script_rule_error import DeviceComplianceScriptRuleError
 from .device_compliance_script_rule import DeviceComplianceScriptRule
-from .device_compliance_script_rule_error import DeviceComplianceScriptRuleError
-

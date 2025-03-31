@@ -1,12 +1,13 @@
 from __future__ import annotations
 from typing import Optional
+from typing import Literal
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class SecurityAuditLogQuery(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
+	odata_type: Literal["#microsoft.graph.security.auditLogQuery"] = Field(alias="@odata.type",)
 	administrativeUnitIdFilters: Optional[list[str]] = Field(alias="administrativeUnitIdFilters", default=None,)
 	displayName: Optional[str] = Field(alias="displayName", default=None,)
 	filterEndDateTime: Optional[datetime] = Field(alias="filterEndDateTime", default=None,)
@@ -24,4 +25,3 @@ class SecurityAuditLogQuery(BaseModel):
 from .security_audit_log_record_type import SecurityAuditLogRecordType
 from .security_audit_log_query_status import SecurityAuditLogQueryStatus
 from .security_audit_log_record import SecurityAuditLogRecord
-

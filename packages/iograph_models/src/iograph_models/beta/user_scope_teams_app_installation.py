@@ -2,7 +2,7 @@ from __future__ import annotations
 from typing import Optional
 from typing import Union
 from typing import Literal
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class UserScopeTeamsAppInstallation(BaseModel):
@@ -21,4 +21,3 @@ from .team_teams_app_installation_scope_info import TeamTeamsAppInstallationScop
 from .teams_app import TeamsApp
 from .teams_app_definition import TeamsAppDefinition
 from .chat import Chat
-

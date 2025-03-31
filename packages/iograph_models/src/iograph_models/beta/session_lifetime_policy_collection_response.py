@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class SessionLifetimePolicyCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class SessionLifetimePolicyCollectionResponse(BaseModel):
 	value: Optional[list[SessionLifetimePolicy]] = Field(alias="value", default=None,)
 
 from .session_lifetime_policy import SessionLifetimePolicy
-

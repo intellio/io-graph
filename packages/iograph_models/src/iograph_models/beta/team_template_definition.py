@@ -1,13 +1,14 @@
 from __future__ import annotations
 from typing import Optional
 from typing import Union
+from typing import Literal
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class TeamTemplateDefinition(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
+	odata_type: Literal["#microsoft.graph.teamTemplateDefinition"] = Field(alias="@odata.type",)
 	audience: Optional[TeamTemplateAudience | str] = Field(alias="audience", default=None,)
 	categories: Optional[list[str]] = Field(alias="categories", default=None,)
 	description: Optional[str] = Field(alias="description", default=None,)
@@ -30,4 +31,3 @@ from .chat_message_reaction_identity_set import ChatMessageReactionIdentitySet
 from .communications_identity_set import CommunicationsIdentitySet
 from .share_point_identity_set import SharePointIdentitySet
 from .team import Team
-

@@ -3,11 +3,11 @@ from typing import Optional
 from typing import Union
 from typing import Literal
 from typing import Annotated
+from datetime import datetime
+from pydantic import BaseModel, Field
 from pydantic import model_validator, ModelWrapValidatorHandler, ValidationError
 from typing_extensions import Self
 from typing import Any
-from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class Win32LobApp(BaseModel):
@@ -99,4 +99,3 @@ from .win32_lob_app_file_system_rule import Win32LobAppFileSystemRule
 from .win32_lob_app_power_shell_script_rule import Win32LobAppPowerShellScriptRule
 from .win32_lob_app_product_code_rule import Win32LobAppProductCodeRule
 from .win32_lob_app_registry_rule import Win32LobAppRegistryRule
-

@@ -1,11 +1,12 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from typing import Literal
+from pydantic import BaseModel, Field
 
 
 class AdvancedThreatProtectionOnboardingStateSummary(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
+	odata_type: Literal["#microsoft.graph.advancedThreatProtectionOnboardingStateSummary"] = Field(alias="@odata.type",)
 	compliantDeviceCount: Optional[int] = Field(alias="compliantDeviceCount", default=None,)
 	conflictDeviceCount: Optional[int] = Field(alias="conflictDeviceCount", default=None,)
 	errorDeviceCount: Optional[int] = Field(alias="errorDeviceCount", default=None,)
@@ -17,4 +18,3 @@ class AdvancedThreatProtectionOnboardingStateSummary(BaseModel):
 	advancedThreatProtectionOnboardingDeviceSettingStates: Optional[list[AdvancedThreatProtectionOnboardingDeviceSettingState]] = Field(alias="advancedThreatProtectionOnboardingDeviceSettingStates", default=None,)
 
 from .advanced_threat_protection_onboarding_device_setting_state import AdvancedThreatProtectionOnboardingDeviceSettingState
-

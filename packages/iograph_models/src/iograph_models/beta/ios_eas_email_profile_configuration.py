@@ -3,7 +3,7 @@ from typing import Optional
 from typing import Union
 from typing import Literal
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class IosEasEmailProfileConfiguration(BaseModel):
@@ -55,8 +55,8 @@ class IosEasEmailProfileConfiguration(BaseModel):
 	useOAuth: Optional[bool] = Field(alias="useOAuth", default=None,)
 	derivedCredentialSettings: Optional[DeviceManagementDerivedCredentialSettings] = Field(alias="derivedCredentialSettings", default=None,)
 	identityCertificate: Optional[Union[IosPkcsCertificateProfile, IosScepCertificateProfile]] = Field(alias="identityCertificate", default=None,discriminator="odata_type", )
-	smimeEncryptionCertificate: Optional[Union[IosCertificateProfileBase, IosPkcsCertificateProfile, IosScepCertificateProfile, IosImportedPFXCertificateProfile]] = Field(alias="smimeEncryptionCertificate", default=None,discriminator="odata_type", )
-	smimeSigningCertificate: Optional[Union[IosCertificateProfileBase, IosPkcsCertificateProfile, IosScepCertificateProfile, IosImportedPFXCertificateProfile]] = Field(alias="smimeSigningCertificate", default=None,discriminator="odata_type", )
+	smimeEncryptionCertificate: Optional[Union[IosPkcsCertificateProfile, IosScepCertificateProfile, IosImportedPFXCertificateProfile]] = Field(alias="smimeEncryptionCertificate", default=None,discriminator="odata_type", )
+	smimeSigningCertificate: Optional[Union[IosPkcsCertificateProfile, IosScepCertificateProfile, IosImportedPFXCertificateProfile]] = Field(alias="smimeSigningCertificate", default=None,discriminator="odata_type", )
 
 from .device_management_applicability_rule_device_mode import DeviceManagementApplicabilityRuleDeviceMode
 from .device_management_applicability_rule_os_edition import DeviceManagementApplicabilityRuleOsEdition
@@ -74,18 +74,8 @@ from .user_email_source import UserEmailSource
 from .eas_authentication_method import EasAuthenticationMethod
 from .email_sync_duration import EmailSyncDuration
 from .eas_services import EasServices
-from .user_email_source import UserEmailSource
-from .email_certificate_type import EmailCertificateType
 from .email_certificate_type import EmailCertificateType
 from .device_management_derived_credential_settings import DeviceManagementDerivedCredentialSettings
 from .ios_pkcs_certificate_profile import IosPkcsCertificateProfile
 from .ios_scep_certificate_profile import IosScepCertificateProfile
-from .ios_certificate_profile_base import IosCertificateProfileBase
-from .ios_pkcs_certificate_profile import IosPkcsCertificateProfile
-from .ios_scep_certificate_profile import IosScepCertificateProfile
 from .ios_imported_p_f_x_certificate_profile import IosImportedPFXCertificateProfile
-from .ios_certificate_profile_base import IosCertificateProfileBase
-from .ios_pkcs_certificate_profile import IosPkcsCertificateProfile
-from .ios_scep_certificate_profile import IosScepCertificateProfile
-from .ios_imported_p_f_x_certificate_profile import IosImportedPFXCertificateProfile
-

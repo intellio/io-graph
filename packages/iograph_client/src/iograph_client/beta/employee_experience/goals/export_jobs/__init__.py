@@ -15,8 +15,8 @@ if TYPE_CHECKING:
 	from .by_goals_export_job_id import ByGoalsExportJobIdRequest
 	from .....request_adapter import HttpxRequestAdapter
 from iograph_models.beta.goals_export_job_collection_response import GoalsExportJobCollectionResponse
-from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.beta.goals_export_job import GoalsExportJob
+from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 
 
 class ExportJobsRequest(BaseRequestBuilder):

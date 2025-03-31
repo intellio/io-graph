@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class AuthenticationAttributeCollectionInputConfiguration(BaseModel):
@@ -18,4 +18,3 @@ class AuthenticationAttributeCollectionInputConfiguration(BaseModel):
 
 from .authentication_attribute_collection_input_type import AuthenticationAttributeCollectionInputType
 from .authentication_attribute_collection_option_configuration import AuthenticationAttributeCollectionOptionConfiguration
-

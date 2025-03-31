@@ -2,7 +2,7 @@ from __future__ import annotations
 from typing import Optional
 from typing import Literal
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class AndroidDeviceOwnerDerivedCredentialAuthenticationConfiguration(BaseModel):
@@ -42,4 +42,3 @@ from .device_configuration_user_overview import DeviceConfigurationUserOverview
 from .android_device_owner_certificate_access_type import AndroidDeviceOwnerCertificateAccessType
 from .android_device_owner_silent_certificate_access import AndroidDeviceOwnerSilentCertificateAccess
 from .device_management_derived_credential_settings import DeviceManagementDerivedCredentialSettings
-

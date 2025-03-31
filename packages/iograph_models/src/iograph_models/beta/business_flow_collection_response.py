@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class BusinessFlowCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class BusinessFlowCollectionResponse(BaseModel):
 	value: Optional[list[BusinessFlow]] = Field(alias="value", default=None,)
 
 from .business_flow import BusinessFlow
-

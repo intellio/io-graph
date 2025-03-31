@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class DeviceManagementComplianceScheduledActionForRuleCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class DeviceManagementComplianceScheduledActionForRuleCollectionResponse(BaseMod
 	value: Optional[list[DeviceManagementComplianceScheduledActionForRule]] = Field(alias="value", default=None,)
 
 from .device_management_compliance_scheduled_action_for_rule import DeviceManagementComplianceScheduledActionForRule
-

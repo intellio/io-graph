@@ -2,7 +2,7 @@ from __future__ import annotations
 from typing import Optional
 from typing import Union
 from typing import Annotated
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class AndroidWiFiConfigurationCollectionResponse(BaseModel):
@@ -11,4 +11,3 @@ class AndroidWiFiConfigurationCollectionResponse(BaseModel):
 	value: Optional[list[Annotated[Union[AndroidEnterpriseWiFiConfiguration],Field(discriminator="odata_type")]]] = Field(alias="value", default=None,)
 
 from .android_enterprise_wi_fi_configuration import AndroidEnterpriseWiFiConfiguration
-

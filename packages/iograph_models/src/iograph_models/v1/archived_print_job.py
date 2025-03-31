@@ -1,7 +1,7 @@
 from __future__ import annotations
 from typing import Optional
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class ArchivedPrintJob(BaseModel):
@@ -19,4 +19,3 @@ class ArchivedPrintJob(BaseModel):
 
 from .user_identity import UserIdentity
 from .print_job_processing_state import PrintJobProcessingState
-

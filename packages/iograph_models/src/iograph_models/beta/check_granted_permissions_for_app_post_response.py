@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class Check_granted_permissions_for_appPostResponse(BaseModel):
@@ -9,4 +9,3 @@ class Check_granted_permissions_for_appPostResponse(BaseModel):
 	value: Optional[list[ResourceSpecificPermissionGrant]] = Field(alias="value", default=None,)
 
 from .resource_specific_permission_grant import ResourceSpecificPermissionGrant
-

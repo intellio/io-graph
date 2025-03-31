@@ -1,11 +1,12 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from typing import Literal
+from pydantic import BaseModel, Field
 
 
 class PolicyRoot(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
+	odata_type: Literal["#microsoft.graph.policyRoot"] = Field(alias="@odata.type",)
 	activityBasedTimeoutPolicies: Optional[list[ActivityBasedTimeoutPolicy]] = Field(alias="activityBasedTimeoutPolicies", default=None,)
 	adminConsentRequestPolicy: Optional[AdminConsentRequestPolicy] = Field(alias="adminConsentRequestPolicy", default=None,)
 	appManagementPolicies: Optional[list[AppManagementPolicy]] = Field(alias="appManagementPolicies", default=None,)
@@ -47,4 +48,3 @@ from .unified_role_management_policy import UnifiedRoleManagementPolicy
 from .unified_role_management_policy_assignment import UnifiedRoleManagementPolicyAssignment
 from .token_issuance_policy import TokenIssuancePolicy
 from .token_lifetime_policy import TokenLifetimePolicy
-

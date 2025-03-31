@@ -1,7 +1,7 @@
 from __future__ import annotations
 from typing import Optional
 from typing import Literal
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class AllPreApprovedPermissionsOnResourceApp(BaseModel):
@@ -12,4 +12,3 @@ class AllPreApprovedPermissionsOnResourceApp(BaseModel):
 
 from .permission_kind import PermissionKind
 from .permission_type import PermissionType
-

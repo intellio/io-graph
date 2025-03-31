@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class SuperAwsResourceFindingCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class SuperAwsResourceFindingCollectionResponse(BaseModel):
 	value: Optional[list[SuperAwsResourceFinding]] = Field(alias="value", default=None,)
 
 from .super_aws_resource_finding import SuperAwsResourceFinding
-

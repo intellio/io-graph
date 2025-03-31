@@ -14,8 +14,8 @@ if TYPE_CHECKING:
 	from .resource_actions import ResourceActionsRequest
 	from .import_resource_actions import ImportResourceActionsRequest
 	from ......request_adapter import HttpxRequestAdapter
-from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.beta.unified_rbac_resource_namespace import UnifiedRbacResourceNamespace
+from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 
 
 class ByUnifiedRbacResourceNamespaceIdRequest(BaseRequestBuilder):

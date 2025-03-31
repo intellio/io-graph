@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class OidcIdentityProviderCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class OidcIdentityProviderCollectionResponse(BaseModel):
 	value: Optional[list[OidcIdentityProvider]] = Field(alias="value", default=None,)
 
 from .oidc_identity_provider import OidcIdentityProvider
-

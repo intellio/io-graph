@@ -1,13 +1,14 @@
 from __future__ import annotations
 from typing import Optional
 from typing import Union
+from typing import Literal
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class SecurityHostPort(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
+	odata_type: Literal["#microsoft.graph.security.hostPort"] = Field(alias="@odata.type",)
 	banners: Optional[list[SecurityHostPortBanner]] = Field(alias="banners", default=None,)
 	firstSeenDateTime: Optional[datetime] = Field(alias="firstSeenDateTime", default=None,)
 	lastScanDateTime: Optional[datetime] = Field(alias="lastScanDateTime", default=None,)
@@ -27,4 +28,3 @@ from .security_host_port_status import SecurityHostPortStatus
 from .security_hostname import SecurityHostname
 from .security_ip_address import SecurityIpAddress
 from .security_ssl_certificate import SecuritySslCertificate
-

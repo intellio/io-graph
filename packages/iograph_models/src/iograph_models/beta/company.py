@@ -1,7 +1,7 @@
 from __future__ import annotations
 from uuid import UUID
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class Company(BaseModel):
@@ -82,4 +82,3 @@ from .tax_area import TaxArea
 from .tax_group import TaxGroup
 from .unit_of_measure import UnitOfMeasure
 from .vendor import Vendor
-

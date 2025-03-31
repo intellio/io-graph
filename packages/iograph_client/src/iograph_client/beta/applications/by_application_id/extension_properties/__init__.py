@@ -15,8 +15,8 @@ if TYPE_CHECKING:
 	from .by_extension_property_id import ByExtensionPropertyIdRequest
 	from .....request_adapter import HttpxRequestAdapter
 from iograph_models.beta.extension_property_collection_response import ExtensionPropertyCollectionResponse
-from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.beta.extension_property import ExtensionProperty
+from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 
 
 class ExtensionPropertiesRequest(BaseRequestBuilder):

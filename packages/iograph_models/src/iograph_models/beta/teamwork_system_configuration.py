@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class TeamworkSystemConfiguration(BaseModel):
@@ -20,4 +20,3 @@ class TeamworkSystemConfiguration(BaseModel):
 
 from .teamwork_date_time_configuration import TeamworkDateTimeConfiguration
 from .teamwork_network_configuration import TeamworkNetworkConfiguration
-

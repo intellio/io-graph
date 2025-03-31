@@ -2,7 +2,7 @@ from __future__ import annotations
 from typing import Optional
 from typing import Union
 from typing import Annotated
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class SecurityAlertEvidenceCollectionResponse(BaseModel):
@@ -55,4 +55,3 @@ from .security_service_principal_evidence import SecurityServicePrincipalEvidenc
 from .security_submission_mail_evidence import SecuritySubmissionMailEvidence
 from .security_url_evidence import SecurityUrlEvidence
 from .security_user_evidence import SecurityUserEvidence
-

@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class CustomExtensionHandlerCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class CustomExtensionHandlerCollectionResponse(BaseModel):
 	value: Optional[list[CustomExtensionHandler]] = Field(alias="value", default=None,)
 
 from .custom_extension_handler import CustomExtensionHandler
-

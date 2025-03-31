@@ -13,8 +13,8 @@ from typing import TYPE_CHECKING
 if TYPE_CHECKING:
 	from .update_status import UpdateStatusRequest
 	from .....request_adapter import HttpxRequestAdapter
-from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.beta.device_app_management_task import DeviceAppManagementTask
+from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 
 
 class ByDeviceAppManagementTaskIdRequest(BaseRequestBuilder):

@@ -1,7 +1,7 @@
 from __future__ import annotations
 from uuid import UUID
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class ApiApplication(BaseModel):
@@ -14,4 +14,3 @@ class ApiApplication(BaseModel):
 
 from .permission_scope import PermissionScope
 from .pre_authorized_application import PreAuthorizedApplication
-

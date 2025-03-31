@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class ActivityHistoryItemCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class ActivityHistoryItemCollectionResponse(BaseModel):
 	value: Optional[list[ActivityHistoryItem]] = Field(alias="value", default=None,)
 
 from .activity_history_item import ActivityHistoryItem
-

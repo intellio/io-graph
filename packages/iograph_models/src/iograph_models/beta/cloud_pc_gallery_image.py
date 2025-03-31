@@ -1,11 +1,12 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from typing import Literal
+from pydantic import BaseModel, Field
 
 
 class CloudPcGalleryImage(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
+	odata_type: Literal["#microsoft.graph.cloudPcGalleryImage"] = Field(alias="@odata.type",)
 	displayName: Optional[str] = Field(alias="displayName", default=None,)
 	endDate: Optional[str] = Field(alias="endDate", default=None,)
 	expirationDate: Optional[str] = Field(alias="expirationDate", default=None,)
@@ -24,4 +25,3 @@ class CloudPcGalleryImage(BaseModel):
 	status: Optional[CloudPcGalleryImageStatus | str] = Field(alias="status", default=None,)
 
 from .cloud_pc_gallery_image_status import CloudPcGalleryImageStatus
-

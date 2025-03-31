@@ -2,7 +2,7 @@ from __future__ import annotations
 from typing import Optional
 from typing import Literal
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class Announcement(BaseModel):
@@ -22,4 +22,3 @@ class Announcement(BaseModel):
 	targetDateTime: Optional[datetime] = Field(alias="targetDateTime", default=None,)
 
 from .change_announcement_change_type import ChangeAnnouncementChangeType
-

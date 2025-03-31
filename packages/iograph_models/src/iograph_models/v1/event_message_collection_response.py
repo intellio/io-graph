@@ -2,7 +2,7 @@ from __future__ import annotations
 from typing import Optional
 from typing import Union
 from typing import Annotated
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class EventMessageCollectionResponse(BaseModel):
@@ -12,4 +12,3 @@ class EventMessageCollectionResponse(BaseModel):
 
 from .event_message_request import EventMessageRequest
 from .event_message_response import EventMessageResponse
-

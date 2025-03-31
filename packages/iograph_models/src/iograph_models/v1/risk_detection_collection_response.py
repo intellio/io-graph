@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class RiskDetectionCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class RiskDetectionCollectionResponse(BaseModel):
 	value: Optional[list[RiskDetection]] = Field(alias="value", default=None,)
 
 from .risk_detection import RiskDetection
-

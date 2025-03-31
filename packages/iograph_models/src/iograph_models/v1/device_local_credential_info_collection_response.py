@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class DeviceLocalCredentialInfoCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class DeviceLocalCredentialInfoCollectionResponse(BaseModel):
 	value: Optional[list[DeviceLocalCredentialInfo]] = Field(alias="value", default=None,)
 
 from .device_local_credential_info import DeviceLocalCredentialInfo
-

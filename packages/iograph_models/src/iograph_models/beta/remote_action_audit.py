@@ -1,12 +1,13 @@
 from __future__ import annotations
 from typing import Optional
+from typing import Literal
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class RemoteActionAudit(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
+	odata_type: Literal["#microsoft.graph.remoteActionAudit"] = Field(alias="@odata.type",)
 	action: Optional[RemoteAction | str] = Field(alias="action", default=None,)
 	actionState: Optional[ActionState | str] = Field(alias="actionState", default=None,)
 	bulkDeviceActionId: Optional[str] = Field(alias="bulkDeviceActionId", default=None,)
@@ -22,4 +23,3 @@ class RemoteActionAudit(BaseModel):
 from .remote_action import RemoteAction
 from .action_state import ActionState
 from .device_action_category import DeviceActionCategory
-

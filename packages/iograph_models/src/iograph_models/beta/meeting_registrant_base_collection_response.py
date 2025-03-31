@@ -2,7 +2,7 @@ from __future__ import annotations
 from typing import Optional
 from typing import Union
 from typing import Annotated
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class MeetingRegistrantBaseCollectionResponse(BaseModel):
@@ -12,4 +12,3 @@ class MeetingRegistrantBaseCollectionResponse(BaseModel):
 
 from .external_meeting_registrant import ExternalMeetingRegistrant
 from .meeting_registrant import MeetingRegistrant
-

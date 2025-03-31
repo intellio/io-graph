@@ -1,13 +1,14 @@
 from __future__ import annotations
 from typing import Optional
 from typing import Union
+from typing import Literal
 from typing import Annotated
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class DeviceManagementComplexSettingDefinition(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
+	odata_type: Literal["#microsoft.graph.deviceManagementComplexSettingDefinition"] = Field(alias="@odata.type",)
 	constraints: Optional[list[Annotated[Union[DeviceManagementEnumConstraint, DeviceManagementIntentSettingSecretConstraint, DeviceManagementSettingAbstractImplementationConstraint, DeviceManagementSettingAppConstraint, DeviceManagementSettingBooleanConstraint, DeviceManagementSettingCollectionConstraint, DeviceManagementSettingEnrollmentTypeConstraint, DeviceManagementSettingFileConstraint, DeviceManagementSettingIntegerConstraint, DeviceManagementSettingProfileConstraint, DeviceManagementSettingRegexConstraint, DeviceManagementSettingRequiredConstraint, DeviceManagementSettingSddlConstraint, DeviceManagementSettingStringLengthConstraint, DeviceManagementSettingXmlConstraint],Field(discriminator="odata_type")]]] = Field(alias="constraints", default=None,)
 	dependencies: Optional[list[DeviceManagementSettingDependency]] = Field(alias="dependencies", default=None,)
 	description: Optional[str] = Field(alias="description", default=None,)
@@ -38,4 +39,3 @@ from .device_management_setting_string_length_constraint import DeviceManagement
 from .device_management_setting_xml_constraint import DeviceManagementSettingXmlConstraint
 from .device_management_setting_dependency import DeviceManagementSettingDependency
 from .device_manangement_intent_value_type import DeviceManangementIntentValueType
-

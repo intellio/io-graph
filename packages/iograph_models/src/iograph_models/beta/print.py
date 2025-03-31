@@ -2,7 +2,7 @@ from __future__ import annotations
 from typing import Optional
 from typing import Union
 from typing import Annotated
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class Print(BaseModel):
@@ -22,6 +22,4 @@ from .printer_create_operation import PrinterCreateOperation
 from .printer import Printer
 from .printer_share import PrinterShare
 from .print_service import PrintService
-from .printer_share import PrinterShare
 from .print_task_definition import PrintTaskDefinition
-

@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class BitlockerRecoveryKeyCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class BitlockerRecoveryKeyCollectionResponse(BaseModel):
 	value: Optional[list[BitlockerRecoveryKey]] = Field(alias="value", default=None,)
 
 from .bitlocker_recovery_key import BitlockerRecoveryKey
-

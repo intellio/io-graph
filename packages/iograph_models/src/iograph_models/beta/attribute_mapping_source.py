@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class AttributeMappingSource(BaseModel):
@@ -12,4 +12,3 @@ class AttributeMappingSource(BaseModel):
 
 from .string_key_attribute_mapping_source_value_pair import StringKeyAttributeMappingSourceValuePair
 from .attribute_mapping_source_type import AttributeMappingSourceType
-

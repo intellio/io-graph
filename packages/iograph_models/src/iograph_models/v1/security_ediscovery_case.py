@@ -4,7 +4,7 @@ from typing import Union
 from typing import Literal
 from typing import Annotated
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class SecurityEdiscoveryCase(BaseModel):
@@ -33,11 +33,6 @@ from .chat_message_reaction_identity_set import ChatMessageReactionIdentitySet
 from .communications_identity_set import CommunicationsIdentitySet
 from .share_point_identity_set import SharePointIdentitySet
 from .security_case_status import SecurityCaseStatus
-from .chat_message_from_identity_set import ChatMessageFromIdentitySet
-from .chat_message_mentioned_identity_set import ChatMessageMentionedIdentitySet
-from .chat_message_reaction_identity_set import ChatMessageReactionIdentitySet
-from .communications_identity_set import CommunicationsIdentitySet
-from .share_point_identity_set import SharePointIdentitySet
 from .security_ediscovery_custodian import SecurityEdiscoveryCustodian
 from .security_ediscovery_noncustodial_data_source import SecurityEdiscoveryNoncustodialDataSource
 from .security_ediscovery_add_to_review_set_operation import SecurityEdiscoveryAddToReviewSetOperation
@@ -52,4 +47,3 @@ from .security_ediscovery_review_set import SecurityEdiscoveryReviewSet
 from .security_ediscovery_search import SecurityEdiscoverySearch
 from .security_ediscovery_case_settings import SecurityEdiscoveryCaseSettings
 from .security_ediscovery_review_tag import SecurityEdiscoveryReviewTag
-

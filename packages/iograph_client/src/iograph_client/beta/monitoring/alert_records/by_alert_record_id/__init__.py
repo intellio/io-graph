@@ -13,8 +13,8 @@ from typing import TYPE_CHECKING
 if TYPE_CHECKING:
 	from .device_management_set_portal_notification_as_sent import DeviceManagementSetPortalNotificationAsSentRequest
 	from .....request_adapter import HttpxRequestAdapter
-from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.beta.device_management_alert_record import DeviceManagementAlertRecord
+from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 
 
 class ByAlertRecordIdRequest(BaseRequestBuilder):

@@ -2,7 +2,7 @@ from __future__ import annotations
 from typing import Optional
 from typing import Union
 from typing import Annotated
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class WindowsInformationProtectionCollectionResponse(BaseModel):
@@ -12,4 +12,3 @@ class WindowsInformationProtectionCollectionResponse(BaseModel):
 
 from .mdm_windows_information_protection_policy import MdmWindowsInformationProtectionPolicy
 from .windows_information_protection_policy import WindowsInformationProtectionPolicy
-

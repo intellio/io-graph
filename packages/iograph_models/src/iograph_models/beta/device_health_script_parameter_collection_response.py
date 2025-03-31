@@ -2,7 +2,7 @@ from __future__ import annotations
 from typing import Optional
 from typing import Union
 from typing import Annotated
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class DeviceHealthScriptParameterCollectionResponse(BaseModel):
@@ -13,4 +13,3 @@ class DeviceHealthScriptParameterCollectionResponse(BaseModel):
 from .device_health_script_boolean_parameter import DeviceHealthScriptBooleanParameter
 from .device_health_script_integer_parameter import DeviceHealthScriptIntegerParameter
 from .device_health_script_string_parameter import DeviceHealthScriptStringParameter
-

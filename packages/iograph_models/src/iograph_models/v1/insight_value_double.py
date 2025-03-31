@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Literal
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class InsightValueDouble(BaseModel):
@@ -8,4 +8,3 @@ class InsightValueDouble(BaseModel):
 	value: float | str | ReferenceNumeric
 
 from .reference_numeric import ReferenceNumeric
-

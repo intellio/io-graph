@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class UserTrainingEventInfo(BaseModel):
@@ -13,6 +13,3 @@ class UserTrainingEventInfo(BaseModel):
 
 from .training_status import TrainingStatus
 from .user_training_content_event_info import UserTrainingContentEventInfo
-from .user_training_content_event_info import UserTrainingContentEventInfo
-from .user_training_content_event_info import UserTrainingContentEventInfo
-

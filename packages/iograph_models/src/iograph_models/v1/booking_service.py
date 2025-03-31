@@ -1,13 +1,14 @@
 from __future__ import annotations
 from typing import Optional
 from typing import Union
+from typing import Literal
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class BookingService(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
+	odata_type: Literal["#microsoft.graph.bookingService"] = Field(alias="@odata.type",)
 	additionalInformation: Optional[str] = Field(alias="additionalInformation", default=None,)
 	createdDateTime: Optional[datetime] = Field(alias="createdDateTime", default=None,)
 	customQuestions: Optional[list[BookingQuestionAssignment]] = Field(alias="customQuestions", default=None,)
@@ -39,4 +40,3 @@ from .reference_numeric import ReferenceNumeric
 from .booking_price_type import BookingPriceType
 from .booking_reminder import BookingReminder
 from .booking_scheduling_policy import BookingSchedulingPolicy
-

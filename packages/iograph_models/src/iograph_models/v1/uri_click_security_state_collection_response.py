@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class UriClickSecurityStateCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class UriClickSecurityStateCollectionResponse(BaseModel):
 	value: Optional[list[UriClickSecurityState]] = Field(alias="value", default=None,)
 
 from .uri_click_security_state import UriClickSecurityState
-

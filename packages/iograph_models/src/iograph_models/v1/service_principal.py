@@ -5,7 +5,7 @@ from typing import Union
 from typing import Literal
 from typing import Annotated
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class ServicePrincipal(BaseModel):
@@ -50,20 +50,20 @@ class ServicePrincipal(BaseModel):
 	appRoleAssignedTo: Optional[list[AppRoleAssignment]] = Field(alias="appRoleAssignedTo", default=None,)
 	appRoleAssignments: Optional[list[AppRoleAssignment]] = Field(alias="appRoleAssignments", default=None,)
 	claimsMappingPolicies: Optional[list[ClaimsMappingPolicy]] = Field(alias="claimsMappingPolicies", default=None,)
-	createdObjects: Optional[list[Annotated[Union[AdministrativeUnit, Application, AppRoleAssignment, Contract, Device, DirectoryObjectPartnerReference, DirectoryRole, DirectoryRoleTemplate, Endpoint, ExtensionProperty, Group, GroupSettingTemplate, MultiTenantOrganizationMember, Organization, OrgContact, PolicyBase, AppManagementPolicy, AuthorizationPolicy, CrossTenantAccessPolicy, IdentitySecurityDefaultsEnforcementPolicy, PermissionGrantPolicy, StsPolicy, ActivityBasedTimeoutPolicy, ClaimsMappingPolicy, HomeRealmDiscoveryPolicy, TokenIssuancePolicy, TokenLifetimePolicy, TenantAppManagementPolicy, ResourceSpecificPermissionGrant, ServicePrincipal, User],Field(discriminator="odata_type")]]] = Field(alias="createdObjects", default=None,)
+	createdObjects: Optional[list[Annotated[Union[AdministrativeUnit, Application, AppRoleAssignment, Contract, Device, DirectoryObjectPartnerReference, DirectoryRole, DirectoryRoleTemplate, Endpoint, ExtensionProperty, Group, GroupSettingTemplate, MultiTenantOrganizationMember, Organization, OrgContact, AppManagementPolicy, AuthorizationPolicy, CrossTenantAccessPolicy, IdentitySecurityDefaultsEnforcementPolicy, PermissionGrantPolicy, ActivityBasedTimeoutPolicy, ClaimsMappingPolicy, HomeRealmDiscoveryPolicy, TokenIssuancePolicy, TokenLifetimePolicy, TenantAppManagementPolicy, ResourceSpecificPermissionGrant, ServicePrincipal, User],Field(discriminator="odata_type")]]] = Field(alias="createdObjects", default=None,)
 	delegatedPermissionClassifications: Optional[list[DelegatedPermissionClassification]] = Field(alias="delegatedPermissionClassifications", default=None,)
 	endpoints: Optional[list[Endpoint]] = Field(alias="endpoints", default=None,)
 	federatedIdentityCredentials: Optional[list[FederatedIdentityCredential]] = Field(alias="federatedIdentityCredentials", default=None,)
 	homeRealmDiscoveryPolicies: Optional[list[HomeRealmDiscoveryPolicy]] = Field(alias="homeRealmDiscoveryPolicies", default=None,)
-	memberOf: Optional[list[Annotated[Union[AdministrativeUnit, Application, AppRoleAssignment, Contract, Device, DirectoryObjectPartnerReference, DirectoryRole, DirectoryRoleTemplate, Endpoint, ExtensionProperty, Group, GroupSettingTemplate, MultiTenantOrganizationMember, Organization, OrgContact, PolicyBase, AppManagementPolicy, AuthorizationPolicy, CrossTenantAccessPolicy, IdentitySecurityDefaultsEnforcementPolicy, PermissionGrantPolicy, StsPolicy, ActivityBasedTimeoutPolicy, ClaimsMappingPolicy, HomeRealmDiscoveryPolicy, TokenIssuancePolicy, TokenLifetimePolicy, TenantAppManagementPolicy, ResourceSpecificPermissionGrant, ServicePrincipal, User],Field(discriminator="odata_type")]]] = Field(alias="memberOf", default=None,)
+	memberOf: Optional[list[Annotated[Union[AdministrativeUnit, Application, AppRoleAssignment, Contract, Device, DirectoryObjectPartnerReference, DirectoryRole, DirectoryRoleTemplate, Endpoint, ExtensionProperty, Group, GroupSettingTemplate, MultiTenantOrganizationMember, Organization, OrgContact, AppManagementPolicy, AuthorizationPolicy, CrossTenantAccessPolicy, IdentitySecurityDefaultsEnforcementPolicy, PermissionGrantPolicy, ActivityBasedTimeoutPolicy, ClaimsMappingPolicy, HomeRealmDiscoveryPolicy, TokenIssuancePolicy, TokenLifetimePolicy, TenantAppManagementPolicy, ResourceSpecificPermissionGrant, ServicePrincipal, User],Field(discriminator="odata_type")]]] = Field(alias="memberOf", default=None,)
 	oauth2PermissionGrants: Optional[list[OAuth2PermissionGrant]] = Field(alias="oauth2PermissionGrants", default=None,)
-	ownedObjects: Optional[list[Annotated[Union[AdministrativeUnit, Application, AppRoleAssignment, Contract, Device, DirectoryObjectPartnerReference, DirectoryRole, DirectoryRoleTemplate, Endpoint, ExtensionProperty, Group, GroupSettingTemplate, MultiTenantOrganizationMember, Organization, OrgContact, PolicyBase, AppManagementPolicy, AuthorizationPolicy, CrossTenantAccessPolicy, IdentitySecurityDefaultsEnforcementPolicy, PermissionGrantPolicy, StsPolicy, ActivityBasedTimeoutPolicy, ClaimsMappingPolicy, HomeRealmDiscoveryPolicy, TokenIssuancePolicy, TokenLifetimePolicy, TenantAppManagementPolicy, ResourceSpecificPermissionGrant, ServicePrincipal, User],Field(discriminator="odata_type")]]] = Field(alias="ownedObjects", default=None,)
-	owners: Optional[list[Annotated[Union[AdministrativeUnit, Application, AppRoleAssignment, Contract, Device, DirectoryObjectPartnerReference, DirectoryRole, DirectoryRoleTemplate, Endpoint, ExtensionProperty, Group, GroupSettingTemplate, MultiTenantOrganizationMember, Organization, OrgContact, PolicyBase, AppManagementPolicy, AuthorizationPolicy, CrossTenantAccessPolicy, IdentitySecurityDefaultsEnforcementPolicy, PermissionGrantPolicy, StsPolicy, ActivityBasedTimeoutPolicy, ClaimsMappingPolicy, HomeRealmDiscoveryPolicy, TokenIssuancePolicy, TokenLifetimePolicy, TenantAppManagementPolicy, ResourceSpecificPermissionGrant, ServicePrincipal, User],Field(discriminator="odata_type")]]] = Field(alias="owners", default=None,)
+	ownedObjects: Optional[list[Annotated[Union[AdministrativeUnit, Application, AppRoleAssignment, Contract, Device, DirectoryObjectPartnerReference, DirectoryRole, DirectoryRoleTemplate, Endpoint, ExtensionProperty, Group, GroupSettingTemplate, MultiTenantOrganizationMember, Organization, OrgContact, AppManagementPolicy, AuthorizationPolicy, CrossTenantAccessPolicy, IdentitySecurityDefaultsEnforcementPolicy, PermissionGrantPolicy, ActivityBasedTimeoutPolicy, ClaimsMappingPolicy, HomeRealmDiscoveryPolicy, TokenIssuancePolicy, TokenLifetimePolicy, TenantAppManagementPolicy, ResourceSpecificPermissionGrant, ServicePrincipal, User],Field(discriminator="odata_type")]]] = Field(alias="ownedObjects", default=None,)
+	owners: Optional[list[Annotated[Union[AdministrativeUnit, Application, AppRoleAssignment, Contract, Device, DirectoryObjectPartnerReference, DirectoryRole, DirectoryRoleTemplate, Endpoint, ExtensionProperty, Group, GroupSettingTemplate, MultiTenantOrganizationMember, Organization, OrgContact, AppManagementPolicy, AuthorizationPolicy, CrossTenantAccessPolicy, IdentitySecurityDefaultsEnforcementPolicy, PermissionGrantPolicy, ActivityBasedTimeoutPolicy, ClaimsMappingPolicy, HomeRealmDiscoveryPolicy, TokenIssuancePolicy, TokenLifetimePolicy, TenantAppManagementPolicy, ResourceSpecificPermissionGrant, ServicePrincipal, User],Field(discriminator="odata_type")]]] = Field(alias="owners", default=None,)
 	remoteDesktopSecurityConfiguration: Optional[RemoteDesktopSecurityConfiguration] = Field(alias="remoteDesktopSecurityConfiguration", default=None,)
 	synchronization: Optional[Synchronization] = Field(alias="synchronization", default=None,)
 	tokenIssuancePolicies: Optional[list[TokenIssuancePolicy]] = Field(alias="tokenIssuancePolicies", default=None,)
 	tokenLifetimePolicies: Optional[list[TokenLifetimePolicy]] = Field(alias="tokenLifetimePolicies", default=None,)
-	transitiveMemberOf: Optional[list[Annotated[Union[AdministrativeUnit, Application, AppRoleAssignment, Contract, Device, DirectoryObjectPartnerReference, DirectoryRole, DirectoryRoleTemplate, Endpoint, ExtensionProperty, Group, GroupSettingTemplate, MultiTenantOrganizationMember, Organization, OrgContact, PolicyBase, AppManagementPolicy, AuthorizationPolicy, CrossTenantAccessPolicy, IdentitySecurityDefaultsEnforcementPolicy, PermissionGrantPolicy, StsPolicy, ActivityBasedTimeoutPolicy, ClaimsMappingPolicy, HomeRealmDiscoveryPolicy, TokenIssuancePolicy, TokenLifetimePolicy, TenantAppManagementPolicy, ResourceSpecificPermissionGrant, ServicePrincipal, User],Field(discriminator="odata_type")]]] = Field(alias="transitiveMemberOf", default=None,)
+	transitiveMemberOf: Optional[list[Annotated[Union[AdministrativeUnit, Application, AppRoleAssignment, Contract, Device, DirectoryObjectPartnerReference, DirectoryRole, DirectoryRoleTemplate, Endpoint, ExtensionProperty, Group, GroupSettingTemplate, MultiTenantOrganizationMember, Organization, OrgContact, AppManagementPolicy, AuthorizationPolicy, CrossTenantAccessPolicy, IdentitySecurityDefaultsEnforcementPolicy, PermissionGrantPolicy, ActivityBasedTimeoutPolicy, ClaimsMappingPolicy, HomeRealmDiscoveryPolicy, TokenIssuancePolicy, TokenLifetimePolicy, TenantAppManagementPolicy, ResourceSpecificPermissionGrant, ServicePrincipal, User],Field(discriminator="odata_type")]]] = Field(alias="transitiveMemberOf", default=None,)
 
 from .add_in import AddIn
 from .app_role import AppRole
@@ -77,11 +77,9 @@ from .saml_single_sign_on_settings import SamlSingleSignOnSettings
 from .verified_publisher import VerifiedPublisher
 from .app_management_policy import AppManagementPolicy
 from .app_role_assignment import AppRoleAssignment
-from .app_role_assignment import AppRoleAssignment
 from .claims_mapping_policy import ClaimsMappingPolicy
 from .administrative_unit import AdministrativeUnit
 from .application import Application
-from .app_role_assignment import AppRoleAssignment
 from .contract import Contract
 from .device import Device
 from .directory_object_partner_reference import DirectoryObjectPartnerReference
@@ -94,15 +92,11 @@ from .group_setting_template import GroupSettingTemplate
 from .multi_tenant_organization_member import MultiTenantOrganizationMember
 from .organization import Organization
 from .org_contact import OrgContact
-from .policy_base import PolicyBase
-from .app_management_policy import AppManagementPolicy
 from .authorization_policy import AuthorizationPolicy
 from .cross_tenant_access_policy import CrossTenantAccessPolicy
 from .identity_security_defaults_enforcement_policy import IdentitySecurityDefaultsEnforcementPolicy
 from .permission_grant_policy import PermissionGrantPolicy
-from .sts_policy import StsPolicy
 from .activity_based_timeout_policy import ActivityBasedTimeoutPolicy
-from .claims_mapping_policy import ClaimsMappingPolicy
 from .home_realm_discovery_policy import HomeRealmDiscoveryPolicy
 from .token_issuance_policy import TokenIssuancePolicy
 from .token_lifetime_policy import TokenLifetimePolicy
@@ -110,132 +104,7 @@ from .tenant_app_management_policy import TenantAppManagementPolicy
 from .resource_specific_permission_grant import ResourceSpecificPermissionGrant
 from .user import User
 from .delegated_permission_classification import DelegatedPermissionClassification
-from .endpoint import Endpoint
 from .federated_identity_credential import FederatedIdentityCredential
-from .home_realm_discovery_policy import HomeRealmDiscoveryPolicy
-from .administrative_unit import AdministrativeUnit
-from .application import Application
-from .app_role_assignment import AppRoleAssignment
-from .contract import Contract
-from .device import Device
-from .directory_object_partner_reference import DirectoryObjectPartnerReference
-from .directory_role import DirectoryRole
-from .directory_role_template import DirectoryRoleTemplate
-from .endpoint import Endpoint
-from .extension_property import ExtensionProperty
-from .group import Group
-from .group_setting_template import GroupSettingTemplate
-from .multi_tenant_organization_member import MultiTenantOrganizationMember
-from .organization import Organization
-from .org_contact import OrgContact
-from .policy_base import PolicyBase
-from .app_management_policy import AppManagementPolicy
-from .authorization_policy import AuthorizationPolicy
-from .cross_tenant_access_policy import CrossTenantAccessPolicy
-from .identity_security_defaults_enforcement_policy import IdentitySecurityDefaultsEnforcementPolicy
-from .permission_grant_policy import PermissionGrantPolicy
-from .sts_policy import StsPolicy
-from .activity_based_timeout_policy import ActivityBasedTimeoutPolicy
-from .claims_mapping_policy import ClaimsMappingPolicy
-from .home_realm_discovery_policy import HomeRealmDiscoveryPolicy
-from .token_issuance_policy import TokenIssuancePolicy
-from .token_lifetime_policy import TokenLifetimePolicy
-from .tenant_app_management_policy import TenantAppManagementPolicy
-from .resource_specific_permission_grant import ResourceSpecificPermissionGrant
-from .user import User
 from .o_auth2_permission_grant import OAuth2PermissionGrant
-from .administrative_unit import AdministrativeUnit
-from .application import Application
-from .app_role_assignment import AppRoleAssignment
-from .contract import Contract
-from .device import Device
-from .directory_object_partner_reference import DirectoryObjectPartnerReference
-from .directory_role import DirectoryRole
-from .directory_role_template import DirectoryRoleTemplate
-from .endpoint import Endpoint
-from .extension_property import ExtensionProperty
-from .group import Group
-from .group_setting_template import GroupSettingTemplate
-from .multi_tenant_organization_member import MultiTenantOrganizationMember
-from .organization import Organization
-from .org_contact import OrgContact
-from .policy_base import PolicyBase
-from .app_management_policy import AppManagementPolicy
-from .authorization_policy import AuthorizationPolicy
-from .cross_tenant_access_policy import CrossTenantAccessPolicy
-from .identity_security_defaults_enforcement_policy import IdentitySecurityDefaultsEnforcementPolicy
-from .permission_grant_policy import PermissionGrantPolicy
-from .sts_policy import StsPolicy
-from .activity_based_timeout_policy import ActivityBasedTimeoutPolicy
-from .claims_mapping_policy import ClaimsMappingPolicy
-from .home_realm_discovery_policy import HomeRealmDiscoveryPolicy
-from .token_issuance_policy import TokenIssuancePolicy
-from .token_lifetime_policy import TokenLifetimePolicy
-from .tenant_app_management_policy import TenantAppManagementPolicy
-from .resource_specific_permission_grant import ResourceSpecificPermissionGrant
-from .user import User
-from .administrative_unit import AdministrativeUnit
-from .application import Application
-from .app_role_assignment import AppRoleAssignment
-from .contract import Contract
-from .device import Device
-from .directory_object_partner_reference import DirectoryObjectPartnerReference
-from .directory_role import DirectoryRole
-from .directory_role_template import DirectoryRoleTemplate
-from .endpoint import Endpoint
-from .extension_property import ExtensionProperty
-from .group import Group
-from .group_setting_template import GroupSettingTemplate
-from .multi_tenant_organization_member import MultiTenantOrganizationMember
-from .organization import Organization
-from .org_contact import OrgContact
-from .policy_base import PolicyBase
-from .app_management_policy import AppManagementPolicy
-from .authorization_policy import AuthorizationPolicy
-from .cross_tenant_access_policy import CrossTenantAccessPolicy
-from .identity_security_defaults_enforcement_policy import IdentitySecurityDefaultsEnforcementPolicy
-from .permission_grant_policy import PermissionGrantPolicy
-from .sts_policy import StsPolicy
-from .activity_based_timeout_policy import ActivityBasedTimeoutPolicy
-from .claims_mapping_policy import ClaimsMappingPolicy
-from .home_realm_discovery_policy import HomeRealmDiscoveryPolicy
-from .token_issuance_policy import TokenIssuancePolicy
-from .token_lifetime_policy import TokenLifetimePolicy
-from .tenant_app_management_policy import TenantAppManagementPolicy
-from .resource_specific_permission_grant import ResourceSpecificPermissionGrant
-from .user import User
 from .remote_desktop_security_configuration import RemoteDesktopSecurityConfiguration
 from .synchronization import Synchronization
-from .token_issuance_policy import TokenIssuancePolicy
-from .token_lifetime_policy import TokenLifetimePolicy
-from .administrative_unit import AdministrativeUnit
-from .application import Application
-from .app_role_assignment import AppRoleAssignment
-from .contract import Contract
-from .device import Device
-from .directory_object_partner_reference import DirectoryObjectPartnerReference
-from .directory_role import DirectoryRole
-from .directory_role_template import DirectoryRoleTemplate
-from .endpoint import Endpoint
-from .extension_property import ExtensionProperty
-from .group import Group
-from .group_setting_template import GroupSettingTemplate
-from .multi_tenant_organization_member import MultiTenantOrganizationMember
-from .organization import Organization
-from .org_contact import OrgContact
-from .policy_base import PolicyBase
-from .app_management_policy import AppManagementPolicy
-from .authorization_policy import AuthorizationPolicy
-from .cross_tenant_access_policy import CrossTenantAccessPolicy
-from .identity_security_defaults_enforcement_policy import IdentitySecurityDefaultsEnforcementPolicy
-from .permission_grant_policy import PermissionGrantPolicy
-from .sts_policy import StsPolicy
-from .activity_based_timeout_policy import ActivityBasedTimeoutPolicy
-from .claims_mapping_policy import ClaimsMappingPolicy
-from .home_realm_discovery_policy import HomeRealmDiscoveryPolicy
-from .token_issuance_policy import TokenIssuancePolicy
-from .token_lifetime_policy import TokenLifetimePolicy
-from .tenant_app_management_policy import TenantAppManagementPolicy
-from .resource_specific_permission_grant import ResourceSpecificPermissionGrant
-from .user import User
-

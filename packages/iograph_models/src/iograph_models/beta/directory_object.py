@@ -1,10 +1,10 @@
 from __future__ import annotations
 from typing import Optional
+from datetime import datetime
+from pydantic import BaseModel, Field
 from pydantic import model_validator, ModelWrapValidatorHandler, ValidationError
 from typing_extensions import Self
 from typing import Any
-from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class DirectoryObject(BaseModel):
@@ -64,9 +64,6 @@ class DirectoryObject(BaseModel):
 			if mapping_key == "#microsoft.graph.extensionProperty":
 				from .extension_property import ExtensionProperty
 				return ExtensionProperty.model_validate(data)
-			if mapping_key == "#microsoft.graph.externalProfile":
-				from .external_profile import ExternalProfile
-				return ExternalProfile.model_validate(data)
 			if mapping_key == "#microsoft.graph.externalUserProfile":
 				from .external_user_profile import ExternalUserProfile
 				return ExternalUserProfile.model_validate(data)
@@ -94,9 +91,6 @@ class DirectoryObject(BaseModel):
 			if mapping_key == "#microsoft.graph.permissionGrantPreApprovalPolicy":
 				from .permission_grant_pre_approval_policy import PermissionGrantPreApprovalPolicy
 				return PermissionGrantPreApprovalPolicy.model_validate(data)
-			if mapping_key == "#microsoft.graph.policyBase":
-				from .policy_base import PolicyBase
-				return PolicyBase.model_validate(data)
 			if mapping_key == "#microsoft.graph.appManagementPolicy":
 				from .app_management_policy import AppManagementPolicy
 				return AppManagementPolicy.model_validate(data)
@@ -115,9 +109,6 @@ class DirectoryObject(BaseModel):
 			if mapping_key == "#microsoft.graph.servicePrincipalCreationPolicy":
 				from .service_principal_creation_policy import ServicePrincipalCreationPolicy
 				return ServicePrincipalCreationPolicy.model_validate(data)
-			if mapping_key == "#microsoft.graph.stsPolicy":
-				from .sts_policy import StsPolicy
-				return StsPolicy.model_validate(data)
 			if mapping_key == "#microsoft.graph.activityBasedTimeoutPolicy":
 				from .activity_based_timeout_policy import ActivityBasedTimeoutPolicy
 				return ActivityBasedTimeoutPolicy.model_validate(data)
@@ -136,9 +127,6 @@ class DirectoryObject(BaseModel):
 			if mapping_key == "#microsoft.graph.tenantAppManagementPolicy":
 				from .tenant_app_management_policy import TenantAppManagementPolicy
 				return TenantAppManagementPolicy.model_validate(data)
-			if mapping_key == "#microsoft.graph.tenantRelationshipAccessPolicyBase":
-				from .tenant_relationship_access_policy_base import TenantRelationshipAccessPolicyBase
-				return TenantRelationshipAccessPolicyBase.model_validate(data)
 			if mapping_key == "#microsoft.graph.crossTenantAccessPolicy":
 				from .cross_tenant_access_policy import CrossTenantAccessPolicy
 				return CrossTenantAccessPolicy.model_validate(data)
@@ -148,15 +136,9 @@ class DirectoryObject(BaseModel):
 			if mapping_key == "#microsoft.graph.servicePrincipal":
 				from .service_principal import ServicePrincipal
 				return ServicePrincipal.model_validate(data)
-			if mapping_key == "#microsoft.graph.trustedCertificateAuthorityAsEntityBase":
-				from .trusted_certificate_authority_as_entity_base import TrustedCertificateAuthorityAsEntityBase
-				return TrustedCertificateAuthorityAsEntityBase.model_validate(data)
 			if mapping_key == "#microsoft.graph.certificateBasedApplicationConfiguration":
 				from .certificate_based_application_configuration import CertificateBasedApplicationConfiguration
 				return CertificateBasedApplicationConfiguration.model_validate(data)
-			if mapping_key == "#microsoft.graph.trustedCertificateAuthorityBase":
-				from .trusted_certificate_authority_base import TrustedCertificateAuthorityBase
-				return TrustedCertificateAuthorityBase.model_validate(data)
 			if mapping_key == "#microsoft.graph.mutualTlsOauthConfiguration":
 				from .mutual_tls_oauth_configuration import MutualTlsOauthConfiguration
 				return MutualTlsOauthConfiguration.model_validate(data)
@@ -167,5 +149,4 @@ class DirectoryObject(BaseModel):
 
 		except Exception as e:
 			raise e
-
 

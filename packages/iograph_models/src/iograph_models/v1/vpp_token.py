@@ -1,12 +1,13 @@
 from __future__ import annotations
 from typing import Optional
+from typing import Literal
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class VppToken(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
+	odata_type: Literal["#microsoft.graph.vppToken"] = Field(alias="@odata.type",)
 	appleId: Optional[str] = Field(alias="appleId", default=None,)
 	automaticallyUpdateApps: Optional[bool] = Field(alias="automaticallyUpdateApps", default=None,)
 	countryOrRegion: Optional[str] = Field(alias="countryOrRegion", default=None,)
@@ -22,4 +23,3 @@ class VppToken(BaseModel):
 from .vpp_token_sync_status import VppTokenSyncStatus
 from .vpp_token_state import VppTokenState
 from .vpp_token_account_type import VppTokenAccountType
-

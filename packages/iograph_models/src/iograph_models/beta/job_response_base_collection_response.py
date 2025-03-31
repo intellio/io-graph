@@ -2,7 +2,7 @@ from __future__ import annotations
 from typing import Optional
 from typing import Union
 from typing import Annotated
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class JobResponseBaseCollectionResponse(BaseModel):
@@ -13,4 +13,3 @@ class JobResponseBaseCollectionResponse(BaseModel):
 from .classification_job_response import ClassificationJobResponse
 from .dlp_evaluate_policies_job_response import DlpEvaluatePoliciesJobResponse
 from .evaluate_label_job_response import EvaluateLabelJobResponse
-

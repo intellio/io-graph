@@ -1,10 +1,10 @@
 from __future__ import annotations
 from typing import Optional
+from datetime import datetime
+from pydantic import BaseModel, Field
 from pydantic import model_validator, ModelWrapValidatorHandler, ValidationError
 from typing_extensions import Self
 from typing import Any
-from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class RestoreArtifactBase(BaseModel):
@@ -30,9 +30,6 @@ class RestoreArtifactBase(BaseModel):
 			if mapping_key == "#microsoft.graph.driveRestoreArtifact":
 				from .drive_restore_artifact import DriveRestoreArtifact
 				return DriveRestoreArtifact.model_validate(data)
-			if mapping_key == "#microsoft.graph.mailboxRestoreArtifact":
-				from .mailbox_restore_artifact import MailboxRestoreArtifact
-				return MailboxRestoreArtifact.model_validate(data)
 			if mapping_key == "#microsoft.graph.granularMailboxRestoreArtifact":
 				from .granular_mailbox_restore_artifact import GranularMailboxRestoreArtifact
 				return GranularMailboxRestoreArtifact.model_validate(data)
@@ -48,4 +45,3 @@ from .destination_type import DestinationType
 from .public_error import PublicError
 from .artifact_restore_status import ArtifactRestoreStatus
 from .restore_point import RestorePoint
-

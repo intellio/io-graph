@@ -1,7 +1,7 @@
 from __future__ import annotations
 from typing import Optional
 from typing import Literal
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class CallRecordsParticipant(BaseModel):
@@ -12,4 +12,3 @@ class CallRecordsParticipant(BaseModel):
 
 from .call_records_administrative_unit_info import CallRecordsAdministrativeUnitInfo
 from .communications_identity_set import CommunicationsIdentitySet
-

@@ -3,7 +3,7 @@ from typing import Optional
 from typing import Union
 from typing import Literal
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class WindowsUpdatesContentApproval(BaseModel):
@@ -21,4 +21,3 @@ from .windows_updates_update_policy import WindowsUpdatesUpdatePolicy
 from .windows_updates_catalog_content import WindowsUpdatesCatalogContent
 from .windows_updates_deployment_settings import WindowsUpdatesDeploymentSettings
 from .windows_updates_deployment import WindowsUpdatesDeployment
-

@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class UnenforcedMfaAwsUserFindingCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class UnenforcedMfaAwsUserFindingCollectionResponse(BaseModel):
 	value: Optional[list[UnenforcedMfaAwsUserFinding]] = Field(alias="value", default=None,)
 
 from .unenforced_mfa_aws_user_finding import UnenforcedMfaAwsUserFinding
-

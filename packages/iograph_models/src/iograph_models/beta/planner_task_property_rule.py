@@ -1,7 +1,7 @@
 from __future__ import annotations
 from typing import Optional
 from typing import Literal
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class PlannerTaskPropertyRule(BaseModel):
@@ -27,9 +27,3 @@ class PlannerTaskPropertyRule(BaseModel):
 
 from .planner_rule_kind import PlannerRuleKind
 from .planner_field_rules import PlannerFieldRules
-from .planner_field_rules import PlannerFieldRules
-from .planner_field_rules import PlannerFieldRules
-from .planner_field_rules import PlannerFieldRules
-from .planner_field_rules import PlannerFieldRules
-from .planner_field_rules import PlannerFieldRules
-

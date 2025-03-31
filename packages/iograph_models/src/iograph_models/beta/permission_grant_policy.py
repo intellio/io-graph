@@ -2,7 +2,7 @@ from __future__ import annotations
 from typing import Optional
 from typing import Literal
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class PermissionGrantPolicy(BaseModel):
@@ -18,5 +18,3 @@ class PermissionGrantPolicy(BaseModel):
 
 from .resource_scope_type import ResourceScopeType
 from .permission_grant_condition_set import PermissionGrantConditionSet
-from .permission_grant_condition_set import PermissionGrantConditionSet
-

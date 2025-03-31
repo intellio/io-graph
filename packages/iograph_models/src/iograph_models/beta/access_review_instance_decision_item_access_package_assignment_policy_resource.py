@@ -1,7 +1,7 @@
 from __future__ import annotations
 from typing import Optional
 from typing import Literal
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class AccessReviewInstanceDecisionItemAccessPackageAssignmentPolicyResource(BaseModel):
@@ -11,5 +11,4 @@ class AccessReviewInstanceDecisionItemAccessPackageAssignmentPolicyResource(Base
 	odata_type: Literal["#microsoft.graph.accessReviewInstanceDecisionItemAccessPackageAssignmentPolicyResource"] = Field(alias="@odata.type", default="#microsoft.graph.accessReviewInstanceDecisionItemAccessPackageAssignmentPolicyResource")
 	accessPackageDisplayName: Optional[str] = Field(alias="accessPackageDisplayName", default=None,)
 	accessPackageId: Optional[str] = Field(alias="accessPackageId", default=None,)
-
 

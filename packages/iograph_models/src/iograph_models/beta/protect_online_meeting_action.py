@@ -1,7 +1,7 @@
 from __future__ import annotations
 from typing import Optional
 from typing import Literal
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class ProtectOnlineMeetingAction(BaseModel):
@@ -16,4 +16,3 @@ class ProtectOnlineMeetingAction(BaseModel):
 from .online_meeting_forwarders import OnlineMeetingForwarders
 from .online_meeting_presenters import OnlineMeetingPresenters
 from .lobby_bypass_settings import LobbyBypassSettings
-

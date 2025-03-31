@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class TargetResourceCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class TargetResourceCollectionResponse(BaseModel):
 	value: Optional[list[TargetResource]] = Field(alias="value", default=None,)
 
 from .target_resource import TargetResource
-

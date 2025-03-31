@@ -14,8 +14,8 @@ if TYPE_CHECKING:
 	from .evaluate_dynamic_membership import EvaluateDynamicMembershipRequest
 	from .delta import DeltaRequest
 	from .....request_adapter import HttpxRequestAdapter
-from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.beta.group_collection_response import GroupCollectionResponse
+from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 
 
 class JoinedGroupsRequest(BaseRequestBuilder):

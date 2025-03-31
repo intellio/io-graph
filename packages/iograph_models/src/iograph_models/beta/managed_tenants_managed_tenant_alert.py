@@ -1,12 +1,13 @@
 from __future__ import annotations
 from typing import Optional
+from typing import Literal
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class ManagedTenantsManagedTenantAlert(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
+	odata_type: Literal["#microsoft.graph.managedTenants.managedTenantAlert"] = Field(alias="@odata.type",)
 	alertData: Optional[ManagedTenantsAlertData] = Field(alias="alertData", default=None,)
 	alertDataReferenceStrings: Optional[list[ManagedTenantsAlertDataReferenceString]] = Field(alias="alertDataReferenceStrings", default=None,)
 	alertRuleDisplayName: Optional[str] = Field(alias="alertRuleDisplayName", default=None,)
@@ -35,4 +36,3 @@ from .managed_tenants_managed_tenant_alert_log import ManagedTenantsManagedTenan
 from .managed_tenants_managed_tenant_alert_rule import ManagedTenantsManagedTenantAlertRule
 from .managed_tenants_managed_tenant_api_notification import ManagedTenantsManagedTenantApiNotification
 from .managed_tenants_managed_tenant_email_notification import ManagedTenantsManagedTenantEmailNotification
-

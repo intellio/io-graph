@@ -2,7 +2,7 @@ from __future__ import annotations
 from typing import Optional
 from typing import Literal
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class SecurityKubernetesPodEvidence(BaseModel):
@@ -29,10 +29,7 @@ from .security_evidence_role import SecurityEvidenceRole
 from .security_evidence_verdict import SecurityEvidenceVerdict
 from .security_container_evidence import SecurityContainerEvidence
 from .security_kubernetes_controller_evidence import SecurityKubernetesControllerEvidence
-from .security_container_evidence import SecurityContainerEvidence
-from .security_container_evidence import SecurityContainerEvidence
 from .security_dictionary import SecurityDictionary
 from .security_kubernetes_namespace_evidence import SecurityKubernetesNamespaceEvidence
 from .security_ip_evidence import SecurityIpEvidence
 from .security_kubernetes_service_account_evidence import SecurityKubernetesServiceAccountEvidence
-

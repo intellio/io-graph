@@ -2,11 +2,11 @@ from __future__ import annotations
 from typing import Optional
 from typing import Union
 from typing import Literal
+from datetime import datetime
+from pydantic import BaseModel, Field
 from pydantic import model_validator, ModelWrapValidatorHandler, ValidationError
 from typing_extensions import Self
 from typing import Any
-from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class AppleVpnConfiguration(BaseModel):
@@ -62,9 +62,6 @@ class AppleVpnConfiguration(BaseModel):
 				return parent_validated_model
 			# get the discriminator value
 			mapping_key = data["@odata.type"]
-			if mapping_key == "#microsoft.graph.iosVpnConfiguration":
-				from .ios_vpn_configuration import IosVpnConfiguration
-				return IosVpnConfiguration.model_validate(data)
 			if mapping_key == "#microsoft.graph.iosikEv2VpnConfiguration":
 				from .iosik_ev2_vpn_configuration import IosikEv2VpnConfiguration
 				return IosikEv2VpnConfiguration.model_validate(data)
@@ -95,4 +92,3 @@ from .vpn_provider_type import VpnProviderType
 from .windows10_vpn_proxy_server import Windows10VpnProxyServer
 from .windows81_vpn_proxy_server import Windows81VpnProxyServer
 from .vpn_server import VpnServer
-

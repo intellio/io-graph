@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class AccessPackageAssignmentRequestWorkflowExtensionCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class AccessPackageAssignmentRequestWorkflowExtensionCollectionResponse(BaseMode
 	value: Optional[list[AccessPackageAssignmentRequestWorkflowExtension]] = Field(alias="value", default=None,)
 
 from .access_package_assignment_request_workflow_extension import AccessPackageAssignmentRequestWorkflowExtension
-

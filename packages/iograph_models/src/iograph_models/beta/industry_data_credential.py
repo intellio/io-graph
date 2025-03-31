@@ -1,10 +1,10 @@
 from __future__ import annotations
 from typing import Optional
+from datetime import datetime
+from pydantic import BaseModel, Field
 from pydantic import model_validator, ModelWrapValidatorHandler, ValidationError
 from typing_extensions import Self
 from typing import Any
-from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class IndustryDataCredential(BaseModel):
@@ -23,9 +23,6 @@ class IndustryDataCredential(BaseModel):
 				return parent_validated_model
 			# get the discriminator value
 			mapping_key = data["@odata.type"]
-			if mapping_key == "#microsoft.graph.industryData.oAuthClientCredential":
-				from .industry_data_o_auth_client_credential import IndustryDataOAuthClientCredential
-				return IndustryDataOAuthClientCredential.model_validate(data)
 			if mapping_key == "#microsoft.graph.industryData.oAuth1ClientCredential":
 				from .industry_data_o_auth1_client_credential import IndustryDataOAuth1ClientCredential
 				return IndustryDataOAuth1ClientCredential.model_validate(data)
@@ -36,5 +33,4 @@ class IndustryDataCredential(BaseModel):
 
 		except Exception as e:
 			raise e
-
 

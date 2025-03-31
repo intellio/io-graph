@@ -19,8 +19,8 @@ if TYPE_CHECKING:
 	from .supported_languages import SupportedLanguagesRequest
 	from .master_categories import MasterCategoriesRequest
 	from .....request_adapter import HttpxRequestAdapter
-from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.beta.outlook_user import OutlookUser
+from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 
 
 class OutlookRequest(BaseRequestBuilder):

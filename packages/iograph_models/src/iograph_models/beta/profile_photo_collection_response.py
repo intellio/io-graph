@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class ProfilePhotoCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class ProfilePhotoCollectionResponse(BaseModel):
 	value: Optional[list[ProfilePhoto]] = Field(alias="value", default=None,)
 
 from .profile_photo import ProfilePhoto
-

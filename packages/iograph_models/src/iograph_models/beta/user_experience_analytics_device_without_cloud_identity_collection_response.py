@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class UserExperienceAnalyticsDeviceWithoutCloudIdentityCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class UserExperienceAnalyticsDeviceWithoutCloudIdentityCollectionResponse(BaseMo
 	value: Optional[list[UserExperienceAnalyticsDeviceWithoutCloudIdentity]] = Field(alias="value", default=None,)
 
 from .user_experience_analytics_device_without_cloud_identity import UserExperienceAnalyticsDeviceWithoutCloudIdentity
-

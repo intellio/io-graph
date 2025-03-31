@@ -2,7 +2,7 @@ from __future__ import annotations
 from typing import Optional
 from typing import Union
 from typing import Annotated
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class AndroidWorkProfileCertificateProfileBaseCollectionResponse(BaseModel):
@@ -12,4 +12,3 @@ class AndroidWorkProfileCertificateProfileBaseCollectionResponse(BaseModel):
 
 from .android_work_profile_pkcs_certificate_profile import AndroidWorkProfilePkcsCertificateProfile
 from .android_work_profile_scep_certificate_profile import AndroidWorkProfileScepCertificateProfile
-

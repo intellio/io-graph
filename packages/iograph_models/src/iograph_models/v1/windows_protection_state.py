@@ -1,12 +1,13 @@
 from __future__ import annotations
 from typing import Optional
+from typing import Literal
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class WindowsProtectionState(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
+	odata_type: Literal["#microsoft.graph.windowsProtectionState"] = Field(alias="@odata.type",)
 	antiMalwareVersion: Optional[str] = Field(alias="antiMalwareVersion", default=None,)
 	deviceState: Optional[WindowsDeviceHealthState | str] = Field(alias="deviceState", default=None,)
 	engineVersion: Optional[str] = Field(alias="engineVersion", default=None,)
@@ -32,4 +33,3 @@ class WindowsProtectionState(BaseModel):
 from .windows_device_health_state import WindowsDeviceHealthState
 from .windows_defender_product_status import WindowsDefenderProductStatus
 from .windows_device_malware_state import WindowsDeviceMalwareState
-

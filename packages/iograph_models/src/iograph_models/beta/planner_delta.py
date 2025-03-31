@@ -1,9 +1,9 @@
 from __future__ import annotations
 from typing import Optional
+from pydantic import BaseModel, Field
 from pydantic import model_validator, ModelWrapValidatorHandler, ValidationError
 from typing_extensions import Self
 from typing import Any
-from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class PlannerDelta(BaseModel):
@@ -38,9 +38,6 @@ class PlannerDelta(BaseModel):
 			if mapping_key == "#microsoft.graph.plannerProgressTaskBoardTaskFormat":
 				from .planner_progress_task_board_task_format import PlannerProgressTaskBoardTaskFormat
 				return PlannerProgressTaskBoardTaskFormat.model_validate(data)
-			if mapping_key == "#microsoft.graph.plannerTask":
-				from .planner_task import PlannerTask
-				return PlannerTask.model_validate(data)
 			if mapping_key == "#microsoft.graph.businessScenarioTask":
 				from .business_scenario_task import BusinessScenarioTask
 				return BusinessScenarioTask.model_validate(data)
@@ -54,5 +51,4 @@ class PlannerDelta(BaseModel):
 
 		except Exception as e:
 			raise e
-
 

@@ -1,9 +1,9 @@
 from __future__ import annotations
 from typing import Optional
+from pydantic import BaseModel, Field
 from pydantic import model_validator, ModelWrapValidatorHandler, ValidationError
 from typing_extensions import Self
 from typing import Any
-from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class LabelActionBase(BaseModel):
@@ -20,18 +20,12 @@ class LabelActionBase(BaseModel):
 				return parent_validated_model
 			# get the discriminator value
 			mapping_key = data["@odata.type"]
-			if mapping_key == "#microsoft.graph.encryptContent":
-				from .encrypt_content import EncryptContent
-				return EncryptContent.model_validate(data)
 			if mapping_key == "#microsoft.graph.encryptWithTemplate":
 				from .encrypt_with_template import EncryptWithTemplate
 				return EncryptWithTemplate.model_validate(data)
 			if mapping_key == "#microsoft.graph.encryptWithUserDefinedRights":
 				from .encrypt_with_user_defined_rights import EncryptWithUserDefinedRights
 				return EncryptWithUserDefinedRights.model_validate(data)
-			if mapping_key == "#microsoft.graph.markContent":
-				from .mark_content import MarkContent
-				return MarkContent.model_validate(data)
 			if mapping_key == "#microsoft.graph.addFooter":
 				from .add_footer import AddFooter
 				return AddFooter.model_validate(data)
@@ -54,5 +48,4 @@ class LabelActionBase(BaseModel):
 
 		except Exception as e:
 			raise e
-
 

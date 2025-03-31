@@ -1,13 +1,14 @@
 from __future__ import annotations
 from typing import Optional
 from typing import Union
+from typing import Literal
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class ProgramControl(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
+	odata_type: Literal["#microsoft.graph.programControl"] = Field(alias="@odata.type",)
 	controlId: Optional[str] = Field(alias="controlId", default=None,)
 	controlTypeId: Optional[str] = Field(alias="controlTypeId", default=None,)
 	createdDateTime: Optional[datetime] = Field(alias="createdDateTime", default=None,)
@@ -21,4 +22,3 @@ class ProgramControl(BaseModel):
 from .audit_user_identity import AuditUserIdentity
 from .program_resource import ProgramResource
 from .program import Program
-

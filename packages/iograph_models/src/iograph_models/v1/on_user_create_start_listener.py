@@ -2,7 +2,7 @@ from __future__ import annotations
 from typing import Optional
 from typing import Union
 from typing import Literal
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class OnUserCreateStartListener(BaseModel):
@@ -14,4 +14,3 @@ class OnUserCreateStartListener(BaseModel):
 
 from .authentication_conditions import AuthenticationConditions
 from .on_user_create_start_external_users_self_service_sign_up import OnUserCreateStartExternalUsersSelfServiceSignUp
-

@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class AndroidManagedAppProtectionCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class AndroidManagedAppProtectionCollectionResponse(BaseModel):
 	value: Optional[list[AndroidManagedAppProtection]] = Field(alias="value", default=None,)
 
 from .android_managed_app_protection import AndroidManagedAppProtection
-

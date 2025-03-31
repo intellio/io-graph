@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class EvaluateSensitivityLabelsRequest(BaseModel):
@@ -10,4 +10,3 @@ class EvaluateSensitivityLabelsRequest(BaseModel):
 
 from .current_label import CurrentLabel
 from .discovered_sensitive_type import DiscoveredSensitiveType
-

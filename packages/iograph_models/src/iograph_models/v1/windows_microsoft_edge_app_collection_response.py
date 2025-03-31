@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class WindowsMicrosoftEdgeAppCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class WindowsMicrosoftEdgeAppCollectionResponse(BaseModel):
 	value: Optional[list[WindowsMicrosoftEdgeApp]] = Field(alias="value", default=None,)
 
 from .windows_microsoft_edge_app import WindowsMicrosoftEdgeApp
-

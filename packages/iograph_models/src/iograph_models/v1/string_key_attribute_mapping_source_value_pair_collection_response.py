@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class StringKeyAttributeMappingSourceValuePairCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class StringKeyAttributeMappingSourceValuePairCollectionResponse(BaseModel):
 	value: Optional[list[StringKeyAttributeMappingSourceValuePair]] = Field(alias="value", default=None,)
 
 from .string_key_attribute_mapping_source_value_pair import StringKeyAttributeMappingSourceValuePair
-

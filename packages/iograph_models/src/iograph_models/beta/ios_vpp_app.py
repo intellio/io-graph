@@ -4,7 +4,7 @@ from typing import Union
 from typing import Literal
 from typing import Annotated
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class IosVppApp(BaseModel):
@@ -59,4 +59,3 @@ from .ios_vpp_app_revoke_licenses_action_result import IosVppAppRevokeLicensesAc
 from .vpp_token_account_type import VppTokenAccountType
 from .ios_vpp_app_assigned_device_license import IosVppAppAssignedDeviceLicense
 from .ios_vpp_app_assigned_user_license import IosVppAppAssignedUserLicense
-

@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class OutOfBoxExperienceSetting(BaseModel):
@@ -14,4 +14,3 @@ class OutOfBoxExperienceSetting(BaseModel):
 
 from .windows_device_usage_type import WindowsDeviceUsageType
 from .windows_user_type import WindowsUserType
-

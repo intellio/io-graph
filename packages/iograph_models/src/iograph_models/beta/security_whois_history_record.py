@@ -3,7 +3,7 @@ from typing import Optional
 from typing import Union
 from typing import Literal
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class SecurityWhoisHistoryRecord(BaseModel):
@@ -29,14 +29,6 @@ class SecurityWhoisHistoryRecord(BaseModel):
 	host: Optional[Union[SecurityHostname, SecurityIpAddress]] = Field(alias="host", default=None,discriminator="odata_type", )
 
 from .security_whois_contact import SecurityWhoisContact
-from .security_whois_contact import SecurityWhoisContact
-from .security_whois_contact import SecurityWhoisContact
 from .security_whois_nameserver import SecurityWhoisNameserver
-from .security_whois_contact import SecurityWhoisContact
-from .security_whois_contact import SecurityWhoisContact
-from .security_whois_contact import SecurityWhoisContact
-from .security_whois_contact import SecurityWhoisContact
-from .security_whois_contact import SecurityWhoisContact
 from .security_hostname import SecurityHostname
 from .security_ip_address import SecurityIpAddress
-

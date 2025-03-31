@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class VirtualEventWebinarCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class VirtualEventWebinarCollectionResponse(BaseModel):
 	value: Optional[list[VirtualEventWebinar]] = Field(alias="value", default=None,)
 
 from .virtual_event_webinar import VirtualEventWebinar
-

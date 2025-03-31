@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class Security(BaseModel):
@@ -64,4 +64,3 @@ from .ti_indicator import TiIndicator
 from .security_triggers_root import SecurityTriggersRoot
 from .security_trigger_types_root import SecurityTriggerTypesRoot
 from .user_security_profile import UserSecurityProfile
-

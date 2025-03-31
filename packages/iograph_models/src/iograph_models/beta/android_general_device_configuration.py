@@ -4,7 +4,7 @@ from typing import Union
 from typing import Literal
 from typing import Annotated
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class AndroidGeneralDeviceConfiguration(BaseModel):
@@ -89,12 +89,7 @@ from .device_configuration_group_assignment import DeviceConfigurationGroupAssig
 from .device_configuration_user_status import DeviceConfigurationUserStatus
 from .device_configuration_user_overview import DeviceConfigurationUserOverview
 from .apple_app_list_item import AppleAppListItem
-from .apple_app_list_item import AppleAppListItem
-from .apple_app_list_item import AppleAppListItem
 from .app_list_type import AppListType
-from .apple_app_list_item import AppleAppListItem
-from .apple_app_list_item import AppleAppListItem
 from .android_required_password_type import AndroidRequiredPasswordType
 from .android_required_password_complexity import AndroidRequiredPasswordComplexity
 from .web_browser_cookie_settings import WebBrowserCookieSettings
-

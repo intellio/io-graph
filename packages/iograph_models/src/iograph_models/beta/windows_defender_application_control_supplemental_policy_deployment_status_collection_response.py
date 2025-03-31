@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatusCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatusCollect
 	value: Optional[list[WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatus]] = Field(alias="value", default=None,)
 
 from .windows_defender_application_control_supplemental_policy_deployment_status import WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatus
-

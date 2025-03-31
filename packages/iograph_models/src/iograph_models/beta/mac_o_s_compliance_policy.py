@@ -2,7 +2,7 @@ from __future__ import annotations
 from typing import Optional
 from typing import Literal
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class MacOSCompliancePolicy(BaseModel):
@@ -51,7 +51,5 @@ from .device_compliance_scheduled_action_for_rule import DeviceComplianceSchedul
 from .device_compliance_user_status import DeviceComplianceUserStatus
 from .device_compliance_user_overview import DeviceComplianceUserOverview
 from .device_threat_protection_level import DeviceThreatProtectionLevel
-from .device_threat_protection_level import DeviceThreatProtectionLevel
 from .mac_o_s_gatekeeper_app_sources import MacOSGatekeeperAppSources
 from .required_password_type import RequiredPasswordType
-

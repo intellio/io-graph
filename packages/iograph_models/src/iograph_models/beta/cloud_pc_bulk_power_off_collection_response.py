@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class CloudPcBulkPowerOffCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class CloudPcBulkPowerOffCollectionResponse(BaseModel):
 	value: Optional[list[CloudPcBulkPowerOff]] = Field(alias="value", default=None,)
 
 from .cloud_pc_bulk_power_off import CloudPcBulkPowerOff
-

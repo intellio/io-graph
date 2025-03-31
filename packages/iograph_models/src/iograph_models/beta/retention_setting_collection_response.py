@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class RetentionSettingCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class RetentionSettingCollectionResponse(BaseModel):
 	value: Optional[list[RetentionSetting]] = Field(alias="value", default=None,)
 
 from .retention_setting import RetentionSetting
-

@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class ManagedDeviceWindowsOperatingSystemEditionCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class ManagedDeviceWindowsOperatingSystemEditionCollectionResponse(BaseModel):
 	value: Optional[list[ManagedDeviceWindowsOperatingSystemEdition]] = Field(alias="value", default=None,)
 
 from .managed_device_windows_operating_system_edition import ManagedDeviceWindowsOperatingSystemEdition
-

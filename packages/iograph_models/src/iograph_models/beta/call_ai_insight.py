@@ -1,12 +1,13 @@
 from __future__ import annotations
 from typing import Optional
+from typing import Literal
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class CallAiInsight(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
+	odata_type: Literal["#microsoft.graph.callAiInsight"] = Field(alias="@odata.type",)
 	actionItems: Optional[list[ActionItem]] = Field(alias="actionItems", default=None,)
 	callId: Optional[str] = Field(alias="callId", default=None,)
 	contentCorrelationId: Optional[str] = Field(alias="contentCorrelationId", default=None,)
@@ -18,4 +19,3 @@ class CallAiInsight(BaseModel):
 from .action_item import ActionItem
 from .meeting_note import MeetingNote
 from .call_ai_insight_view_point import CallAiInsightViewPoint
-

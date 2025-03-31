@@ -14,9 +14,9 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_terms_and_conditions_id import ByTermsAndConditionsIdRequest
 	from ....request_adapter import HttpxRequestAdapter
-from iograph_models.beta.terms_and_conditions import TermsAndConditions
-from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.beta.terms_and_conditions_collection_response import TermsAndConditionsCollectionResponse
+from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.beta.terms_and_conditions import TermsAndConditions
 
 
 class TermsAndConditionsRequest(BaseRequestBuilder):

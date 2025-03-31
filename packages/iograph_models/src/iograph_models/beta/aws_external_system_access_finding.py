@@ -1,13 +1,14 @@
 from __future__ import annotations
 from typing import Optional
 from typing import Union
+from typing import Literal
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class AwsExternalSystemAccessFinding(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
+	odata_type: Literal["#microsoft.graph.awsExternalSystemAccessFinding"] = Field(alias="@odata.type",)
 	createdDateTime: Optional[datetime] = Field(alias="createdDateTime", default=None,)
 	accessMethods: Optional[ExternalSystemAccessMethods | str] = Field(alias="accessMethods", default=None,)
 	systemWithAccess: Optional[AuthorizationSystemInfo] = Field(alias="systemWithAccess", default=None,)
@@ -20,4 +21,3 @@ from .authorization_system_info import AuthorizationSystemInfo
 from .aws_authorization_system import AwsAuthorizationSystem
 from .azure_authorization_system import AzureAuthorizationSystem
 from .gcp_authorization_system import GcpAuthorizationSystem
-

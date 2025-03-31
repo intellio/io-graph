@@ -1,7 +1,7 @@
 from __future__ import annotations
 from typing import Optional
 from typing import Literal
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class DeviceManagementConfigurationApplicationSettingApplicability(BaseModel):
@@ -14,4 +14,3 @@ class DeviceManagementConfigurationApplicationSettingApplicability(BaseModel):
 from .device_management_configuration_device_mode import DeviceManagementConfigurationDeviceMode
 from .device_management_configuration_platforms import DeviceManagementConfigurationPlatforms
 from .device_management_configuration_technologies import DeviceManagementConfigurationTechnologies
-

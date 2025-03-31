@@ -2,7 +2,7 @@ from __future__ import annotations
 from typing import Optional
 from typing import Literal
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class MacOSExtensionsConfiguration(BaseModel):
@@ -46,4 +46,3 @@ from .device_configuration_user_overview import DeviceConfigurationUserOverview
 from .mac_o_s_kernel_extension import MacOSKernelExtension
 from .mac_o_s_system_extension import MacOSSystemExtension
 from .mac_o_s_system_extension_type_mapping import MacOSSystemExtensionTypeMapping
-

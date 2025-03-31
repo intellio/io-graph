@@ -1,7 +1,7 @@
 from __future__ import annotations
 from typing import Optional
 from typing import Literal
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class WebSegmentConfiguration(BaseModel):
@@ -9,4 +9,3 @@ class WebSegmentConfiguration(BaseModel):
 	applicationSegments: Optional[list[WebApplicationSegment]] = Field(alias="applicationSegments", default=None,)
 
 from .web_application_segment import WebApplicationSegment
-

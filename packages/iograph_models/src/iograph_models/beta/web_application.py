@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class WebApplication(BaseModel):
@@ -14,4 +14,3 @@ class WebApplication(BaseModel):
 
 from .implicit_grant_settings import ImplicitGrantSettings
 from .redirect_uri_settings import RedirectUriSettings
-

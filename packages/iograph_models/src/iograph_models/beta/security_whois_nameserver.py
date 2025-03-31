@@ -2,7 +2,7 @@ from __future__ import annotations
 from typing import Optional
 from typing import Union
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class SecurityWhoisNameserver(BaseModel):
@@ -13,4 +13,3 @@ class SecurityWhoisNameserver(BaseModel):
 
 from .security_hostname import SecurityHostname
 from .security_ip_address import SecurityIpAddress
-

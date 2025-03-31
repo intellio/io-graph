@@ -2,7 +2,7 @@ from __future__ import annotations
 from typing import Optional
 from typing import Literal
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class CertificateAuthorityDetail(BaseModel):
@@ -22,4 +22,3 @@ class CertificateAuthorityDetail(BaseModel):
 	thumbprint: Optional[str] = Field(alias="thumbprint", default=None,)
 
 from .certificate_authority_type import CertificateAuthorityType
-

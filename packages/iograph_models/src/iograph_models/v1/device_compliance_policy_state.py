@@ -1,11 +1,12 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from typing import Literal
+from pydantic import BaseModel, Field
 
 
 class DeviceCompliancePolicyState(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
+	odata_type: Literal["#microsoft.graph.deviceCompliancePolicyState"] = Field(alias="@odata.type",)
 	displayName: Optional[str] = Field(alias="displayName", default=None,)
 	platformType: Optional[PolicyPlatformType | str] = Field(alias="platformType", default=None,)
 	settingCount: Optional[int] = Field(alias="settingCount", default=None,)
@@ -16,4 +17,3 @@ class DeviceCompliancePolicyState(BaseModel):
 from .policy_platform_type import PolicyPlatformType
 from .device_compliance_policy_setting_state import DeviceCompliancePolicySettingState
 from .compliance_status import ComplianceStatus
-

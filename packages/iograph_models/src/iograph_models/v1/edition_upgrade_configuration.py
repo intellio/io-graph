@@ -2,7 +2,7 @@ from __future__ import annotations
 from typing import Optional
 from typing import Literal
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class EditionUpgradeConfiguration(BaseModel):
@@ -32,4 +32,3 @@ from .device_configuration_user_status import DeviceConfigurationUserStatus
 from .device_configuration_user_overview import DeviceConfigurationUserOverview
 from .edition_upgrade_license_type import EditionUpgradeLicenseType
 from .windows10_edition_type import Windows10EditionType
-

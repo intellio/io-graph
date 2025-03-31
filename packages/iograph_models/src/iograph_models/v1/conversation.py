@@ -1,12 +1,13 @@
 from __future__ import annotations
 from typing import Optional
+from typing import Literal
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class Conversation(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
+	odata_type: Literal["#microsoft.graph.conversation"] = Field(alias="@odata.type",)
 	hasAttachments: Optional[bool] = Field(alias="hasAttachments", default=None,)
 	lastDeliveredDateTime: Optional[datetime] = Field(alias="lastDeliveredDateTime", default=None,)
 	preview: Optional[str] = Field(alias="preview", default=None,)
@@ -15,4 +16,3 @@ class Conversation(BaseModel):
 	threads: Optional[list[ConversationThread]] = Field(alias="threads", default=None,)
 
 from .conversation_thread import ConversationThread
-

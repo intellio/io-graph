@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class Storage(BaseModel):
@@ -10,4 +10,3 @@ class Storage(BaseModel):
 
 from .file_storage import FileStorage
 from .storage_settings import StorageSettings
-

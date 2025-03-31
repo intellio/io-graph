@@ -2,7 +2,7 @@ from __future__ import annotations
 from typing import Optional
 from typing import Literal
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class IndustryDataAdministrativeUnitProvisioningFlow(BaseModel):
@@ -15,4 +15,3 @@ class IndustryDataAdministrativeUnitProvisioningFlow(BaseModel):
 
 from .industry_data_readiness_status import IndustryDataReadinessStatus
 from .industry_data_admin_unit_creation_options import IndustryDataAdminUnitCreationOptions
-

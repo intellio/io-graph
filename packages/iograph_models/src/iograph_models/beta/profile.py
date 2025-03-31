@@ -1,11 +1,12 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from typing import Literal
+from pydantic import BaseModel, Field
 
 
 class Profile(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
+	odata_type: Literal["#microsoft.graph.profile"] = Field(alias="@odata.type",)
 	account: Optional[list[UserAccountInformation]] = Field(alias="account", default=None,)
 	addresses: Optional[list[ItemAddress]] = Field(alias="addresses", default=None,)
 	anniversaries: Optional[list[PersonAnnualEvent]] = Field(alias="anniversaries", default=None,)
@@ -45,4 +46,3 @@ from .item_publication import ItemPublication
 from .skill_proficiency import SkillProficiency
 from .web_account import WebAccount
 from .person_website import PersonWebsite
-

@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class PermissionsDefinitionAwsPolicyCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class PermissionsDefinitionAwsPolicyCollectionResponse(BaseModel):
 	value: Optional[list[PermissionsDefinitionAwsPolicy]] = Field(alias="value", default=None,)
 
 from .permissions_definition_aws_policy import PermissionsDefinitionAwsPolicy
-

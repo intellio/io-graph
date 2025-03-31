@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class Fido2KeyRestrictions(BaseModel):
@@ -10,4 +10,3 @@ class Fido2KeyRestrictions(BaseModel):
 	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
 
 from .fido2_restriction_enforcement_type import Fido2RestrictionEnforcementType
-

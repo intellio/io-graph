@@ -2,7 +2,7 @@ from __future__ import annotations
 from typing import Optional
 from typing import Literal
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class GroupPolicyPresentationListBox(BaseModel):
@@ -15,4 +15,3 @@ class GroupPolicyPresentationListBox(BaseModel):
 	valuePrefix: Optional[str] = Field(alias="valuePrefix", default=None,)
 
 from .group_policy_definition import GroupPolicyDefinition
-

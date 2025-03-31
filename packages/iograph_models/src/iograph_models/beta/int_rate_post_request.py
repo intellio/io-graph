@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class Int_ratePostRequest(BaseModel):
@@ -9,5 +9,4 @@ class Int_ratePostRequest(BaseModel):
 	investment: Optional[str] = Field(alias="investment", default=None,)
 	redemption: Optional[str] = Field(alias="redemption", default=None,)
 	basis: Optional[str] = Field(alias="basis", default=None,)
-
 

@@ -1,13 +1,14 @@
 from __future__ import annotations
 from typing import Optional
 from typing import Union
+from typing import Literal
 from typing import Annotated
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class ReportRoot(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
+	odata_type: Literal["#microsoft.graph.reportRoot"] = Field(alias="@odata.type",)
 	appCredentialSignInActivities: Optional[list[AppCredentialSignInActivity]] = Field(alias="appCredentialSignInActivities", default=None,)
 	applicationSignInDetailedSummary: Optional[list[ApplicationSignInDetailedSummary]] = Field(alias="applicationSignInDetailedSummary", default=None,)
 	authenticationMethods: Optional[AuthenticationMethodsRoot] = Field(alias="authenticationMethods", default=None,)
@@ -36,15 +37,7 @@ from .authentication_methods_root import AuthenticationMethodsRoot
 from .credential_user_registration_details import CredentialUserRegistrationDetails
 from .print_usage_by_printer import PrintUsageByPrinter
 from .print_usage_by_user import PrintUsageByUser
-from .print_usage_by_printer import PrintUsageByPrinter
-from .print_usage_by_user import PrintUsageByUser
-from .print_usage_by_printer import PrintUsageByPrinter
-from .print_usage_by_user import PrintUsageByUser
 from .health_monitoring_health_monitoring_root import HealthMonitoringHealthMonitoringRoot
-from .print_usage_by_printer import PrintUsageByPrinter
-from .print_usage_by_user import PrintUsageByUser
-from .print_usage_by_printer import PrintUsageByPrinter
-from .print_usage_by_user import PrintUsageByUser
 from .partners import Partners
 from .security_reports_root import SecurityReportsRoot
 from .service_activity import ServiceActivity
@@ -52,4 +45,3 @@ from .service_principal_sign_in_activity import ServicePrincipalSignInActivity
 from .service_level_agreement_root import ServiceLevelAgreementRoot
 from .user_credential_usage_details import UserCredentialUsageDetails
 from .user_insights_root import UserInsightsRoot
-

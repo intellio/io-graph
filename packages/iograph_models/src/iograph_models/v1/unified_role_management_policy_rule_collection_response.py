@@ -2,7 +2,7 @@ from __future__ import annotations
 from typing import Optional
 from typing import Union
 from typing import Annotated
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class UnifiedRoleManagementPolicyRuleCollectionResponse(BaseModel):
@@ -15,4 +15,3 @@ from .unified_role_management_policy_authentication_context_rule import UnifiedR
 from .unified_role_management_policy_enablement_rule import UnifiedRoleManagementPolicyEnablementRule
 from .unified_role_management_policy_expiration_rule import UnifiedRoleManagementPolicyExpirationRule
 from .unified_role_management_policy_notification_rule import UnifiedRoleManagementPolicyNotificationRule
-

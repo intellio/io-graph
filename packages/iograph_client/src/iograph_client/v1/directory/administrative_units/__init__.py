@@ -16,8 +16,8 @@ if TYPE_CHECKING:
 	from .by_administrative_unit_id import ByAdministrativeUnitIdRequest
 	from ....request_adapter import HttpxRequestAdapter
 from iograph_models.v1.o_data_errors__o_data_error import ODataErrorsODataError
-from iograph_models.v1.administrative_unit import AdministrativeUnit
 from iograph_models.v1.administrative_unit_collection_response import AdministrativeUnitCollectionResponse
+from iograph_models.v1.administrative_unit import AdministrativeUnit
 
 
 class AdministrativeUnitsRequest(BaseRequestBuilder):

@@ -2,7 +2,7 @@ from __future__ import annotations
 from typing import Optional
 from typing import Union
 from typing import Literal
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class CustomTimeZone(BaseModel):
@@ -13,5 +13,3 @@ class CustomTimeZone(BaseModel):
 	standardOffset: Optional[Union[DaylightTimeZoneOffset]] = Field(alias="standardOffset", default=None,discriminator="odata_type", )
 
 from .daylight_time_zone_offset import DaylightTimeZoneOffset
-from .daylight_time_zone_offset import DaylightTimeZoneOffset
-

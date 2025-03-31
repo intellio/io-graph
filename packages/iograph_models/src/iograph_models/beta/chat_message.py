@@ -1,13 +1,14 @@
 from __future__ import annotations
 from typing import Optional
 from typing import Union
+from typing import Literal
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class ChatMessage(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
+	odata_type: Literal["#microsoft.graph.chatMessage"] = Field(alias="@odata.type",)
 	attachments: Optional[list[ChatMessageAttachment]] = Field(alias="attachments", default=None,)
 	body: Optional[ItemBody] = Field(alias="body", default=None,)
 	channelIdentity: Optional[ChannelIdentity] = Field(alias="channelIdentity", default=None,)
@@ -73,8 +74,6 @@ from .chat_message_importance import ChatMessageImportance
 from .chat_message_mention import ChatMessageMention
 from .chat_message_history_item import ChatMessageHistoryItem
 from .chat_message_type import ChatMessageType
-from .chat_message_from_identity_set import ChatMessageFromIdentitySet
 from .chat_message_policy_violation import ChatMessagePolicyViolation
 from .chat_message_reaction import ChatMessageReaction
 from .chat_message_hosted_content import ChatMessageHostedContent
-

@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class CompanyPortalBlockedAction(BaseModel):
@@ -12,4 +12,3 @@ class CompanyPortalBlockedAction(BaseModel):
 from .company_portal_action import CompanyPortalAction
 from .owner_type import OwnerType
 from .device_platform_type import DevicePlatformType
-

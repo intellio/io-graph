@@ -4,7 +4,7 @@ from typing import Union
 from typing import Literal
 from typing import Annotated
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class ListItem(BaseModel):
@@ -39,15 +39,7 @@ from .chat_message_mentioned_identity_set import ChatMessageMentionedIdentitySet
 from .chat_message_reaction_identity_set import ChatMessageReactionIdentitySet
 from .communications_identity_set import CommunicationsIdentitySet
 from .share_point_identity_set import SharePointIdentitySet
-from .ai_interaction_mentioned_identity_set import AiInteractionMentionedIdentitySet
-from .approval_identity_set import ApprovalIdentitySet
-from .chat_message_from_identity_set import ChatMessageFromIdentitySet
-from .chat_message_mentioned_identity_set import ChatMessageMentionedIdentitySet
-from .chat_message_reaction_identity_set import ChatMessageReactionIdentitySet
-from .communications_identity_set import CommunicationsIdentitySet
-from .share_point_identity_set import SharePointIdentitySet
 from .item_reference import ItemReference
-from .user import User
 from .user import User
 from .content_type_info import ContentTypeInfo
 from .deleted import Deleted
@@ -58,5 +50,3 @@ from .document_set_version import DocumentSetVersion
 from .drive_item import DriveItem
 from .field_value_set import FieldValueSet
 from .permission import Permission
-from .document_set_version import DocumentSetVersion
-

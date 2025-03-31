@@ -1,10 +1,10 @@
 from __future__ import annotations
 from typing import Optional
+from datetime import datetime
+from pydantic import BaseModel, Field
 from pydantic import model_validator, ModelWrapValidatorHandler, ValidationError
 from typing_extensions import Self
 from typing import Any
-from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class DeviceEnrollmentConfiguration(BaseModel):
@@ -46,4 +46,3 @@ class DeviceEnrollmentConfiguration(BaseModel):
 			raise e
 
 from .enrollment_configuration_assignment import EnrollmentConfigurationAssignment
-

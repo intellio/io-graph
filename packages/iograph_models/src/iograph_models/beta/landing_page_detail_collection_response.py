@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class LandingPageDetailCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class LandingPageDetailCollectionResponse(BaseModel):
 	value: Optional[list[LandingPageDetail]] = Field(alias="value", default=None,)
 
 from .landing_page_detail import LandingPageDetail
-

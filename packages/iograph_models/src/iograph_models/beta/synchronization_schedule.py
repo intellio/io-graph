@@ -1,7 +1,7 @@
 from __future__ import annotations
 from typing import Optional
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class SynchronizationSchedule(BaseModel):
@@ -11,4 +11,3 @@ class SynchronizationSchedule(BaseModel):
 	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
 
 from .synchronization_schedule_state import SynchronizationScheduleState
-

@@ -2,7 +2,7 @@ from __future__ import annotations
 from typing import Optional
 from typing import Literal
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class ServiceUpdateMessage(BaseModel):
@@ -31,4 +31,3 @@ from .service_update_category import ServiceUpdateCategory
 from .service_update_severity import ServiceUpdateSeverity
 from .service_update_message_viewpoint import ServiceUpdateMessageViewpoint
 from .service_announcement_attachment import ServiceAnnouncementAttachment
-

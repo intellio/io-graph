@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class EvaluatePostRequest(BaseModel):
@@ -9,4 +9,3 @@ class EvaluatePostRequest(BaseModel):
 
 from .discovered_sensitive_type import DiscoveredSensitiveType
 from .current_label import CurrentLabel
-

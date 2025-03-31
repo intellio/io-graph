@@ -2,7 +2,7 @@ from __future__ import annotations
 from typing import Optional
 from typing import Union
 from typing import Annotated
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class AuthenticationMethodConfigurationCollectionResponse(BaseModel):
@@ -18,4 +18,3 @@ from .software_oath_authentication_method_configuration import SoftwareOathAuthe
 from .temporary_access_pass_authentication_method_configuration import TemporaryAccessPassAuthenticationMethodConfiguration
 from .voice_authentication_method_configuration import VoiceAuthenticationMethodConfiguration
 from .x509_certificate_authentication_method_configuration import X509CertificateAuthenticationMethodConfiguration
-

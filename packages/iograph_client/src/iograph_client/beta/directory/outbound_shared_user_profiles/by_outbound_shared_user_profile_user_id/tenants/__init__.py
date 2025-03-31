@@ -14,9 +14,9 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_tenant_reference_tenant_id import ByTenantReferenceTenantIdRequest
 	from ......request_adapter import HttpxRequestAdapter
+from iograph_models.beta.tenant_reference_collection_response import TenantReferenceCollectionResponse
 from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.beta.tenant_reference import TenantReference
-from iograph_models.beta.tenant_reference_collection_response import TenantReferenceCollectionResponse
 
 
 class TenantsRequest(BaseRequestBuilder):

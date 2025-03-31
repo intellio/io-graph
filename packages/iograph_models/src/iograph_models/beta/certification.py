@@ -1,7 +1,7 @@
 from __future__ import annotations
 from typing import Optional
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class Certification(BaseModel):
@@ -11,5 +11,4 @@ class Certification(BaseModel):
 	isPublisherAttested: Optional[bool] = Field(alias="isPublisherAttested", default=None,)
 	lastCertificationDateTime: Optional[datetime] = Field(alias="lastCertificationDateTime", default=None,)
 	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
-
 

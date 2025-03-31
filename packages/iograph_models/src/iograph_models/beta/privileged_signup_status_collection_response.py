@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class PrivilegedSignupStatusCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class PrivilegedSignupStatusCollectionResponse(BaseModel):
 	value: Optional[list[PrivilegedSignupStatus]] = Field(alias="value", default=None,)
 
 from .privileged_signup_status import PrivilegedSignupStatus
-

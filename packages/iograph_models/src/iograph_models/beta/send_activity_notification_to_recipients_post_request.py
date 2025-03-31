@@ -2,7 +2,7 @@ from __future__ import annotations
 from typing import Optional
 from typing import Union
 from typing import Annotated
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class Send_activity_notification_to_recipientsPostRequest(BaseModel):
@@ -21,4 +21,3 @@ from .aad_user_notification_recipient import AadUserNotificationRecipient
 from .channel_members_notification_recipient import ChannelMembersNotificationRecipient
 from .chat_members_notification_recipient import ChatMembersNotificationRecipient
 from .team_members_notification_recipient import TeamMembersNotificationRecipient
-

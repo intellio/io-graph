@@ -1,11 +1,12 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from typing import Literal
+from pydantic import BaseModel, Field
 
 
 class WorkbookWorksheet(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
+	odata_type: Literal["#microsoft.graph.workbookWorksheet"] = Field(alias="@odata.type",)
 	name: Optional[str] = Field(alias="name", default=None,)
 	position: Optional[int] = Field(alias="position", default=None,)
 	visibility: Optional[str] = Field(alias="visibility", default=None,)
@@ -22,4 +23,3 @@ from .workbook_pivot_table import WorkbookPivotTable
 from .workbook_worksheet_protection import WorkbookWorksheetProtection
 from .workbook_table import WorkbookTable
 from .workbook_document_task import WorkbookDocumentTask
-

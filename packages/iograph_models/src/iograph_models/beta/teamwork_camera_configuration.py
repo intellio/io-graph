@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class TeamworkCameraConfiguration(BaseModel):
@@ -11,5 +11,3 @@ class TeamworkCameraConfiguration(BaseModel):
 
 from .teamwork_content_camera_configuration import TeamworkContentCameraConfiguration
 from .teamwork_peripheral import TeamworkPeripheral
-from .teamwork_peripheral import TeamworkPeripheral
-

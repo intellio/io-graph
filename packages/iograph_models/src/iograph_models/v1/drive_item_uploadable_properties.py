@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class DriveItemUploadableProperties(BaseModel):
@@ -15,4 +15,3 @@ class DriveItemUploadableProperties(BaseModel):
 from .drive_item_source import DriveItemSource
 from .file_system_info import FileSystemInfo
 from .media_source import MediaSource
-

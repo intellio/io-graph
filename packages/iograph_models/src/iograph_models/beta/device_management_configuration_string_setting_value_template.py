@@ -2,7 +2,7 @@ from __future__ import annotations
 from typing import Optional
 from typing import Union
 from typing import Literal
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class DeviceManagementConfigurationStringSettingValueTemplate(BaseModel):
@@ -11,4 +11,3 @@ class DeviceManagementConfigurationStringSettingValueTemplate(BaseModel):
 	defaultValue: Optional[Union[DeviceManagementConfigurationStringSettingValueConstantDefaultTemplate]] = Field(alias="defaultValue", default=None,discriminator="odata_type", )
 
 from .device_management_configuration_string_setting_value_constant_default_template import DeviceManagementConfigurationStringSettingValueConstantDefaultTemplate
-

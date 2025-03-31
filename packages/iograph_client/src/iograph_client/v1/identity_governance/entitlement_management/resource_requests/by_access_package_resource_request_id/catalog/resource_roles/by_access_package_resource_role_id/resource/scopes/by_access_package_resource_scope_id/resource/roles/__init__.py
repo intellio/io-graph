@@ -15,8 +15,8 @@ if TYPE_CHECKING:
 	from .by_access_package_resource_role_id1 import ByAccessPackageResourceRoleId1Request
 	from ..............request_adapter import HttpxRequestAdapter
 from iograph_models.v1.o_data_errors__o_data_error import ODataErrorsODataError
-from iograph_models.v1.access_package_resource_role_collection_response import AccessPackageResourceRoleCollectionResponse
 from iograph_models.v1.access_package_resource_role import AccessPackageResourceRole
+from iograph_models.v1.access_package_resource_role_collection_response import AccessPackageResourceRoleCollectionResponse
 
 
 class RolesRequest(BaseRequestBuilder):

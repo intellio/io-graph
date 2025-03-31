@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class Create_snapshotPostRequest(BaseModel):
@@ -8,4 +8,3 @@ class Create_snapshotPostRequest(BaseModel):
 	accessTier: Optional[CloudPcBlobAccessTier | str] = Field(alias="accessTier", default=None,)
 
 from .cloud_pc_blob_access_tier import CloudPcBlobAccessTier
-

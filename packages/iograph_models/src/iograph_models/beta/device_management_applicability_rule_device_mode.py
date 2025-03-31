@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class DeviceManagementApplicabilityRuleDeviceMode(BaseModel):
@@ -11,4 +11,3 @@ class DeviceManagementApplicabilityRuleDeviceMode(BaseModel):
 
 from .windows10_device_mode_type import Windows10DeviceModeType
 from .device_management_applicability_rule_type import DeviceManagementApplicabilityRuleType
-

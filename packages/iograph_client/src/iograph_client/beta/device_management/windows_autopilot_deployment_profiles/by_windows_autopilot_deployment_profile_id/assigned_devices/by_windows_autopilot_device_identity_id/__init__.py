@@ -20,8 +20,8 @@ if TYPE_CHECKING:
 	from .intended_deployment_profile import IntendedDeploymentProfileRequest
 	from .deployment_profile import DeploymentProfileRequest
 	from .......request_adapter import HttpxRequestAdapter
-from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.beta.windows_autopilot_device_identity import WindowsAutopilotDeviceIdentity
+from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 
 
 class ByWindowsAutopilotDeviceIdentityIdRequest(BaseRequestBuilder):

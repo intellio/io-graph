@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class AuthenticationMethodsRegistrationCampaign(BaseModel):
@@ -14,4 +14,3 @@ class AuthenticationMethodsRegistrationCampaign(BaseModel):
 from .exclude_target import ExcludeTarget
 from .authentication_methods_registration_campaign_include_target import AuthenticationMethodsRegistrationCampaignIncludeTarget
 from .advanced_config_state import AdvancedConfigState
-

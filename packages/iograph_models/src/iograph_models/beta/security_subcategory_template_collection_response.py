@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class SecuritySubcategoryTemplateCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class SecuritySubcategoryTemplateCollectionResponse(BaseModel):
 	value: Optional[list[SecuritySubcategoryTemplate]] = Field(alias="value", default=None,)
 
 from .security_subcategory_template import SecuritySubcategoryTemplate
-

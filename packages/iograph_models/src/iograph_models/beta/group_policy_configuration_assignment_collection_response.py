@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class GroupPolicyConfigurationAssignmentCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class GroupPolicyConfigurationAssignmentCollectionResponse(BaseModel):
 	value: Optional[list[GroupPolicyConfigurationAssignment]] = Field(alias="value", default=None,)
 
 from .group_policy_configuration_assignment import GroupPolicyConfigurationAssignment
-

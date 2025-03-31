@@ -2,7 +2,7 @@ from __future__ import annotations
 from typing import Optional
 from typing import Literal
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class IosVppApp(BaseModel):
@@ -41,4 +41,3 @@ from .mobile_app_category import MobileAppCategory
 from .ios_device_type import IosDeviceType
 from .vpp_licensing_type import VppLicensingType
 from .vpp_token_account_type import VppTokenAccountType
-

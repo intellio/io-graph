@@ -1,13 +1,14 @@
 from __future__ import annotations
 from typing import Optional
 from typing import Union
+from typing import Literal
 from typing import Annotated
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class Call(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
+	odata_type: Literal["#microsoft.graph.call"] = Field(alias="@odata.type",)
 	activeModalities: Optional[list[Modality | str]] = Field(alias="activeModalities", default=None,)
 	answeredBy: Optional[ParticipantInfo] = Field(alias="answeredBy", default=None,)
 	callbackUri: Optional[str] = Field(alias="callbackUri", default=None,)
@@ -54,10 +55,8 @@ from .meeting_capability import MeetingCapability
 from .join_meeting_id_meeting_info import JoinMeetingIdMeetingInfo
 from .organizer_meeting_info import OrganizerMeetingInfo
 from .token_meeting_info import TokenMeetingInfo
-from .modality import Modality
 from .result_info import ResultInfo
 from .routing_policy import RoutingPolicy
-from .participant_info import ParticipantInfo
 from .call_state import CallState
 from .invitation_participant_info import InvitationParticipantInfo
 from .tone_info import ToneInfo
@@ -82,4 +81,3 @@ from .subscribe_to_tone_operation import SubscribeToToneOperation
 from .unmute_participant_operation import UnmuteParticipantOperation
 from .update_recording_status_operation import UpdateRecordingStatusOperation
 from .participant import Participant
-

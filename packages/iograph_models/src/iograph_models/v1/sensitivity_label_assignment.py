@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class SensitivityLabelAssignment(BaseModel):
@@ -10,4 +10,3 @@ class SensitivityLabelAssignment(BaseModel):
 	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
 
 from .sensitivity_label_assignment_method import SensitivityLabelAssignmentMethod
-

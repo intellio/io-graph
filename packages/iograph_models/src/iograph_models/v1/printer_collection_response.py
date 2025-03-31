@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class PrinterCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class PrinterCollectionResponse(BaseModel):
 	value: Optional[list[Printer]] = Field(alias="value", default=None,)
 
 from .printer import Printer
-

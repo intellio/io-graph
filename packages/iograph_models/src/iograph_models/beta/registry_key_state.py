@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class RegistryKeyState(BaseModel):
@@ -19,4 +19,3 @@ class RegistryKeyState(BaseModel):
 from .registry_hive import RegistryHive
 from .registry_operation import RegistryOperation
 from .registry_value_type import RegistryValueType
-

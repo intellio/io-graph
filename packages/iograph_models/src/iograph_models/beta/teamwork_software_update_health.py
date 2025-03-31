@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class TeamworkSoftwareUpdateHealth(BaseModel):
@@ -13,9 +13,3 @@ class TeamworkSoftwareUpdateHealth(BaseModel):
 	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
 
 from .teamwork_software_update_status import TeamworkSoftwareUpdateStatus
-from .teamwork_software_update_status import TeamworkSoftwareUpdateStatus
-from .teamwork_software_update_status import TeamworkSoftwareUpdateStatus
-from .teamwork_software_update_status import TeamworkSoftwareUpdateStatus
-from .teamwork_software_update_status import TeamworkSoftwareUpdateStatus
-from .teamwork_software_update_status import TeamworkSoftwareUpdateStatus
-

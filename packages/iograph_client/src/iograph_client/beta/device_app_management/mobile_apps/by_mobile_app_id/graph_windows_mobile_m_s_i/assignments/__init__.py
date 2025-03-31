@@ -15,8 +15,8 @@ if TYPE_CHECKING:
 	from .by_mobile_app_assignment_id import ByMobileAppAssignmentIdRequest
 	from .......request_adapter import HttpxRequestAdapter
 from iograph_models.beta.mobile_app_assignment import MobileAppAssignment
-from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.beta.mobile_app_assignment_collection_response import MobileAppAssignmentCollectionResponse
+from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 
 
 class AssignmentsRequest(BaseRequestBuilder):

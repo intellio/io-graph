@@ -5,7 +5,7 @@ from typing import Union
 from typing import Literal
 from typing import Annotated
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class IosVppEBook(BaseModel):
@@ -38,4 +38,3 @@ from .ios_vpp_e_book_assignment import IosVppEBookAssignment
 from .device_install_state import DeviceInstallState
 from .e_book_install_summary import EBookInstallSummary
 from .user_install_state_summary import UserInstallStateSummary
-

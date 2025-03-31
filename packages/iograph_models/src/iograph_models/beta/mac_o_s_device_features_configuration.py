@@ -4,7 +4,7 @@ from typing import Union
 from typing import Literal
 from typing import Annotated
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class MacOSDeviceFeaturesConfiguration(BaseModel):
@@ -67,7 +67,7 @@ class MacOSDeviceFeaturesConfiguration(BaseModel):
 	screenLockDisableImmediate: Optional[bool] = Field(alias="screenLockDisableImmediate", default=None,)
 	shutDownDisabled: Optional[bool] = Field(alias="shutDownDisabled", default=None,)
 	shutDownDisabledWhileLoggedIn: Optional[bool] = Field(alias="shutDownDisabledWhileLoggedIn", default=None,)
-	singleSignOnExtension: Optional[Union[CredentialSingleSignOnExtension, IosSingleSignOnExtension, IosAzureAdSingleSignOnExtension, IosCredentialSingleSignOnExtension, IosKerberosSingleSignOnExtension, IosRedirectSingleSignOnExtension, KerberosSingleSignOnExtension, MacOSSingleSignOnExtension, MacOSAzureAdSingleSignOnExtension, MacOSCredentialSingleSignOnExtension, MacOSKerberosSingleSignOnExtension, MacOSRedirectSingleSignOnExtension, RedirectSingleSignOnExtension]] = Field(alias="singleSignOnExtension", default=None,discriminator="odata_type", )
+	singleSignOnExtension: Optional[Union[CredentialSingleSignOnExtension, IosAzureAdSingleSignOnExtension, IosCredentialSingleSignOnExtension, IosKerberosSingleSignOnExtension, IosRedirectSingleSignOnExtension, KerberosSingleSignOnExtension, MacOSAzureAdSingleSignOnExtension, MacOSCredentialSingleSignOnExtension, MacOSKerberosSingleSignOnExtension, MacOSRedirectSingleSignOnExtension, RedirectSingleSignOnExtension]] = Field(alias="singleSignOnExtension", default=None,discriminator="odata_type", )
 	sleepDisabled: Optional[bool] = Field(alias="sleepDisabled", default=None,)
 	singleSignOnExtensionPkinitCertificate: Optional[Union[MacOSImportedPFXCertificateProfile, MacOSPkcsCertificateProfile, MacOSScepCertificateProfile]] = Field(alias="singleSignOnExtensionPkinitCertificate", default=None,discriminator="odata_type", )
 
@@ -91,38 +91,19 @@ from .i_pv6_cidr_range import IPv6CidrRange
 from .i_pv6_range import IPv6Range
 from .mac_o_s_content_caching_client_policy import MacOSContentCachingClientPolicy
 from .mac_o_s_content_caching_parent_selection_policy import MacOSContentCachingParentSelectionPolicy
-from .i_pv4_cidr_range import IPv4CidrRange
-from .i_pv4_range import IPv4Range
-from .i_pv6_cidr_range import IPv6CidrRange
-from .i_pv6_range import IPv6Range
-from .i_pv4_cidr_range import IPv4CidrRange
-from .i_pv4_range import IPv4Range
-from .i_pv6_cidr_range import IPv6CidrRange
-from .i_pv6_range import IPv6Range
 from .mac_o_s_content_caching_peer_policy import MacOSContentCachingPeerPolicy
-from .i_pv4_cidr_range import IPv4CidrRange
-from .i_pv4_range import IPv4Range
-from .i_pv6_cidr_range import IPv6CidrRange
-from .i_pv6_range import IPv6Range
 from .mac_o_s_content_caching_type import MacOSContentCachingType
 from .mac_o_s_azure_ad_single_sign_on_extension import MacOSAzureAdSingleSignOnExtension
 from .mac_o_s_credential_single_sign_on_extension import MacOSCredentialSingleSignOnExtension
 from .mac_o_s_kerberos_single_sign_on_extension import MacOSKerberosSingleSignOnExtension
 from .mac_o_s_redirect_single_sign_on_extension import MacOSRedirectSingleSignOnExtension
 from .credential_single_sign_on_extension import CredentialSingleSignOnExtension
-from .ios_single_sign_on_extension import IosSingleSignOnExtension
 from .ios_azure_ad_single_sign_on_extension import IosAzureAdSingleSignOnExtension
 from .ios_credential_single_sign_on_extension import IosCredentialSingleSignOnExtension
 from .ios_kerberos_single_sign_on_extension import IosKerberosSingleSignOnExtension
 from .ios_redirect_single_sign_on_extension import IosRedirectSingleSignOnExtension
 from .kerberos_single_sign_on_extension import KerberosSingleSignOnExtension
-from .mac_o_s_single_sign_on_extension import MacOSSingleSignOnExtension
-from .mac_o_s_azure_ad_single_sign_on_extension import MacOSAzureAdSingleSignOnExtension
-from .mac_o_s_credential_single_sign_on_extension import MacOSCredentialSingleSignOnExtension
-from .mac_o_s_kerberos_single_sign_on_extension import MacOSKerberosSingleSignOnExtension
-from .mac_o_s_redirect_single_sign_on_extension import MacOSRedirectSingleSignOnExtension
 from .redirect_single_sign_on_extension import RedirectSingleSignOnExtension
 from .mac_o_s_imported_p_f_x_certificate_profile import MacOSImportedPFXCertificateProfile
 from .mac_o_s_pkcs_certificate_profile import MacOSPkcsCertificateProfile
 from .mac_o_s_scep_certificate_profile import MacOSScepCertificateProfile
-

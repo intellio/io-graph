@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class AndroidCustomConfigurationCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class AndroidCustomConfigurationCollectionResponse(BaseModel):
 	value: Optional[list[AndroidCustomConfiguration]] = Field(alias="value", default=None,)
 
 from .android_custom_configuration import AndroidCustomConfiguration
-

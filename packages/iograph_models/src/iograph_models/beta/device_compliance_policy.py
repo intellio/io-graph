@@ -1,10 +1,10 @@
 from __future__ import annotations
 from typing import Optional
+from datetime import datetime
+from pydantic import BaseModel, Field
 from pydantic import model_validator, ModelWrapValidatorHandler, ValidationError
 from typing_extensions import Self
 from typing import Any
-from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class DeviceCompliancePolicy(BaseModel):
@@ -82,4 +82,3 @@ from .device_compliance_device_overview import DeviceComplianceDeviceOverview
 from .device_compliance_scheduled_action_for_rule import DeviceComplianceScheduledActionForRule
 from .device_compliance_user_status import DeviceComplianceUserStatus
 from .device_compliance_user_overview import DeviceComplianceUserOverview
-

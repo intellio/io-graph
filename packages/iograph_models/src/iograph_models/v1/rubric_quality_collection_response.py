@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class RubricQualityCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class RubricQualityCollectionResponse(BaseModel):
 	value: Optional[list[RubricQuality]] = Field(alias="value", default=None,)
 
 from .rubric_quality import RubricQuality
-

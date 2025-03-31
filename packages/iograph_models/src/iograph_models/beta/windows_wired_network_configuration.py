@@ -3,7 +3,7 @@ from typing import Optional
 from typing import Union
 from typing import Literal
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class WindowsWiredNetworkConfiguration(BaseModel):
@@ -45,10 +45,10 @@ class WindowsWiredNetworkConfiguration(BaseModel):
 	requireCryptographicBinding: Optional[bool] = Field(alias="requireCryptographicBinding", default=None,)
 	secondaryAuthenticationMethod: Optional[WiredNetworkAuthenticationMethod | str] = Field(alias="secondaryAuthenticationMethod", default=None,)
 	trustedServerCertificateNames: Optional[list[str]] = Field(alias="trustedServerCertificateNames", default=None,)
-	identityCertificateForClientAuthentication: Optional[Union[Windows10CertificateProfileBase, Windows10PkcsCertificateProfile, Windows10ImportedPFXCertificateProfile, Windows81CertificateProfileBase, Windows81SCEPCertificateProfile, WindowsPhone81ImportedPFXCertificateProfile]] = Field(alias="identityCertificateForClientAuthentication", default=None,discriminator="odata_type", )
+	identityCertificateForClientAuthentication: Optional[Union[Windows10PkcsCertificateProfile, Windows10ImportedPFXCertificateProfile, Windows81SCEPCertificateProfile, WindowsPhone81ImportedPFXCertificateProfile]] = Field(alias="identityCertificateForClientAuthentication", default=None,discriminator="odata_type", )
 	rootCertificateForClientValidation: Optional[Windows81TrustedRootCertificate] = Field(alias="rootCertificateForClientValidation", default=None,)
 	rootCertificatesForServerValidation: Optional[list[Windows81TrustedRootCertificate]] = Field(alias="rootCertificatesForServerValidation", default=None,)
-	secondaryIdentityCertificateForClientAuthentication: Optional[Union[Windows10CertificateProfileBase, Windows10PkcsCertificateProfile, Windows10ImportedPFXCertificateProfile, Windows81CertificateProfileBase, Windows81SCEPCertificateProfile, WindowsPhone81ImportedPFXCertificateProfile]] = Field(alias="secondaryIdentityCertificateForClientAuthentication", default=None,discriminator="odata_type", )
+	secondaryIdentityCertificateForClientAuthentication: Optional[Union[Windows10PkcsCertificateProfile, Windows10ImportedPFXCertificateProfile, Windows81SCEPCertificateProfile, WindowsPhone81ImportedPFXCertificateProfile]] = Field(alias="secondaryIdentityCertificateForClientAuthentication", default=None,discriminator="odata_type", )
 	secondaryRootCertificateForClientValidation: Optional[Windows81TrustedRootCertificate] = Field(alias="secondaryRootCertificateForClientValidation", default=None,)
 
 from .device_management_applicability_rule_device_mode import DeviceManagementApplicabilityRuleDeviceMode
@@ -65,20 +65,8 @@ from .wired_network_authentication_method import WiredNetworkAuthenticationMetho
 from .wired_network_authentication_type import WiredNetworkAuthenticationType
 from .eap_type import EapType
 from .non_eap_authentication_method_for_eap_ttls_type import NonEapAuthenticationMethodForEapTtlsType
-from .wired_network_authentication_method import WiredNetworkAuthenticationMethod
-from .windows10_certificate_profile_base import Windows10CertificateProfileBase
 from .windows10_pkcs_certificate_profile import Windows10PkcsCertificateProfile
 from .windows10_imported_p_f_x_certificate_profile import Windows10ImportedPFXCertificateProfile
-from .windows81_certificate_profile_base import Windows81CertificateProfileBase
 from .windows81_s_c_e_p_certificate_profile import Windows81SCEPCertificateProfile
 from .windows_phone81_imported_p_f_x_certificate_profile import WindowsPhone81ImportedPFXCertificateProfile
 from .windows81_trusted_root_certificate import Windows81TrustedRootCertificate
-from .windows81_trusted_root_certificate import Windows81TrustedRootCertificate
-from .windows10_certificate_profile_base import Windows10CertificateProfileBase
-from .windows10_pkcs_certificate_profile import Windows10PkcsCertificateProfile
-from .windows10_imported_p_f_x_certificate_profile import Windows10ImportedPFXCertificateProfile
-from .windows81_certificate_profile_base import Windows81CertificateProfileBase
-from .windows81_s_c_e_p_certificate_profile import Windows81SCEPCertificateProfile
-from .windows_phone81_imported_p_f_x_certificate_profile import WindowsPhone81ImportedPFXCertificateProfile
-from .windows81_trusted_root_certificate import Windows81TrustedRootCertificate
-

@@ -1,10 +1,10 @@
 from __future__ import annotations
 from typing import Optional
+from datetime import datetime
+from pydantic import BaseModel, Field
 from pydantic import model_validator, ModelWrapValidatorHandler, ValidationError
 from typing_extensions import Self
 from typing import Any
-from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class SecurityDiscoveredCloudAppDetail(BaseModel):
@@ -49,4 +49,3 @@ from .security_app_category import SecurityAppCategory
 from .security_discovered_cloud_app_info import SecurityDiscoveredCloudAppInfo
 from .security_discovered_cloud_app_i_p_address import SecurityDiscoveredCloudAppIPAddress
 from .security_discovered_cloud_app_user import SecurityDiscoveredCloudAppUser
-

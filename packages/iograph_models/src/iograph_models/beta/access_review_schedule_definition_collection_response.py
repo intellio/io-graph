@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class AccessReviewScheduleDefinitionCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class AccessReviewScheduleDefinitionCollectionResponse(BaseModel):
 	value: Optional[list[AccessReviewScheduleDefinition]] = Field(alias="value", default=None,)
 
 from .access_review_schedule_definition import AccessReviewScheduleDefinition
-

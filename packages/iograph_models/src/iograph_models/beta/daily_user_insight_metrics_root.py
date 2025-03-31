@@ -1,11 +1,12 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from typing import Literal
+from pydantic import BaseModel, Field
 
 
 class DailyUserInsightMetricsRoot(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
+	odata_type: Literal["#microsoft.graph.dailyUserInsightMetricsRoot"] = Field(alias="@odata.type",)
 	activeUsers: Optional[list[ActiveUsersMetric]] = Field(alias="activeUsers", default=None,)
 	authentications: Optional[list[AuthenticationsMetric]] = Field(alias="authentications", default=None,)
 	inactiveUsers: Optional[list[DailyInactiveUsersMetric]] = Field(alias="inactiveUsers", default=None,)
@@ -25,4 +26,3 @@ from .mfa_telecom_fraud_metric import MfaTelecomFraudMetric
 from .user_sign_up_metric import UserSignUpMetric
 from .insight_summary import InsightSummary
 from .user_count_metric import UserCountMetric
-

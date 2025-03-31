@@ -1,12 +1,13 @@
 from __future__ import annotations
 from typing import Optional
+from typing import Literal
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class WindowsAutopilotDeviceIdentity(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
+	odata_type: Literal["#microsoft.graph.windowsAutopilotDeviceIdentity"] = Field(alias="@odata.type",)
 	addressableUserName: Optional[str] = Field(alias="addressableUserName", default=None,)
 	azureActiveDirectoryDeviceId: Optional[str] = Field(alias="azureActiveDirectoryDeviceId", default=None,)
 	displayName: Optional[str] = Field(alias="displayName", default=None,)
@@ -25,4 +26,3 @@ class WindowsAutopilotDeviceIdentity(BaseModel):
 	userPrincipalName: Optional[str] = Field(alias="userPrincipalName", default=None,)
 
 from .enrollment_state import EnrollmentState
-

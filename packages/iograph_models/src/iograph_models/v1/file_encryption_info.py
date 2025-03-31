@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class FileEncryptionInfo(BaseModel):
@@ -12,5 +12,4 @@ class FileEncryptionInfo(BaseModel):
 	macKey: Optional[str] = Field(alias="macKey", default=None,)
 	profileIdentifier: Optional[str] = Field(alias="profileIdentifier", default=None,)
 	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
-
 

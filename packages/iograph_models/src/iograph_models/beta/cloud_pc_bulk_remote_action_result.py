@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class CloudPcBulkRemoteActionResult(BaseModel):
@@ -9,5 +9,4 @@ class CloudPcBulkRemoteActionResult(BaseModel):
 	notSupportedDeviceIds: Optional[list[str]] = Field(alias="notSupportedDeviceIds", default=None,)
 	successfulDeviceIds: Optional[list[str]] = Field(alias="successfulDeviceIds", default=None,)
 	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
-
 

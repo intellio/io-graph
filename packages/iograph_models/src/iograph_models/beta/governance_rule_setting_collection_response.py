@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class GovernanceRuleSettingCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class GovernanceRuleSettingCollectionResponse(BaseModel):
 	value: Optional[list[GovernanceRuleSetting]] = Field(alias="value", default=None,)
 
 from .governance_rule_setting import GovernanceRuleSetting
-

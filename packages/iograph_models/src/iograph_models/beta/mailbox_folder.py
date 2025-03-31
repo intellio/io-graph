@@ -1,11 +1,12 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from typing import Literal
+from pydantic import BaseModel, Field
 
 
 class MailboxFolder(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
+	odata_type: Literal["#microsoft.graph.mailboxFolder"] = Field(alias="@odata.type",)
 	childFolderCount: Optional[int] = Field(alias="childFolderCount", default=None,)
 	displayName: Optional[str] = Field(alias="displayName", default=None,)
 	parentFolderId: Optional[str] = Field(alias="parentFolderId", default=None,)
@@ -20,4 +21,3 @@ class MailboxFolder(BaseModel):
 from .mailbox_item import MailboxItem
 from .multi_value_legacy_extended_property import MultiValueLegacyExtendedProperty
 from .single_value_legacy_extended_property import SingleValueLegacyExtendedProperty
-

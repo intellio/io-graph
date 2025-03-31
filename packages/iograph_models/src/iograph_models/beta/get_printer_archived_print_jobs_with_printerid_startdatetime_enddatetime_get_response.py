@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class Get_printer_archived_print_jobs_with_printerid_startdatetime_enddatetimeGetResponse(BaseModel):
@@ -9,4 +9,3 @@ class Get_printer_archived_print_jobs_with_printerid_startdatetime_enddatetimeGe
 	value: Optional[list[ArchivedPrintJob]] = Field(alias="value", default=None,)
 
 from .archived_print_job import ArchivedPrintJob
-

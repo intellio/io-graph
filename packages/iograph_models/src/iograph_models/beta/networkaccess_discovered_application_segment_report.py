@@ -1,7 +1,7 @@
 from __future__ import annotations
 from typing import Optional
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class NetworkaccessDiscoveredApplicationSegmentReport(BaseModel):
@@ -22,4 +22,3 @@ class NetworkaccessDiscoveredApplicationSegmentReport(BaseModel):
 
 from .networkaccess_access_type import NetworkaccessAccessType
 from .networkaccess_networking_protocol import NetworkaccessNetworkingProtocol
-

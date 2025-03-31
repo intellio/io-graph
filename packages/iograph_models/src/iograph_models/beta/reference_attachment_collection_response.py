@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class ReferenceAttachmentCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class ReferenceAttachmentCollectionResponse(BaseModel):
 	value: Optional[list[ReferenceAttachment]] = Field(alias="value", default=None,)
 
 from .reference_attachment import ReferenceAttachment
-

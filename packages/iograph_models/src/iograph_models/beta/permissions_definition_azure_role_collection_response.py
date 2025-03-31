@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class PermissionsDefinitionAzureRoleCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class PermissionsDefinitionAzureRoleCollectionResponse(BaseModel):
 	value: Optional[list[PermissionsDefinitionAzureRole]] = Field(alias="value", default=None,)
 
 from .permissions_definition_azure_role import PermissionsDefinitionAzureRole
-

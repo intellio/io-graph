@@ -2,7 +2,7 @@ from __future__ import annotations
 from typing import Optional
 from typing import Union
 from typing import Annotated
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class KeyTypedValuePairCollectionResponse(BaseModel):
@@ -14,4 +14,3 @@ from .key_boolean_value_pair import KeyBooleanValuePair
 from .key_integer_value_pair import KeyIntegerValuePair
 from .key_real_value_pair import KeyRealValuePair
 from .key_string_value_pair import KeyStringValuePair
-

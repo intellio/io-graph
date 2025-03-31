@@ -2,7 +2,7 @@ from __future__ import annotations
 from typing import Optional
 from typing import Union
 from typing import Annotated
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class DelegatedAdminRelationshipCollectionResponse(BaseModel):
@@ -11,4 +11,3 @@ class DelegatedAdminRelationshipCollectionResponse(BaseModel):
 	value: Optional[list[Annotated[Union[ResellerDelegatedAdminRelationship],Field(discriminator="odata_type")]]] = Field(alias="value", default=None,)
 
 from .reseller_delegated_admin_relationship import ResellerDelegatedAdminRelationship
-

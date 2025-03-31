@@ -1,12 +1,13 @@
 from __future__ import annotations
 from typing import Optional
+from typing import Literal
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class UserExperienceAnalyticsAnomaly(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
+	odata_type: Literal["#microsoft.graph.userExperienceAnalyticsAnomaly"] = Field(alias="@odata.type",)
 	anomalyFirstOccurrenceDateTime: Optional[datetime] = Field(alias="anomalyFirstOccurrenceDateTime", default=None,)
 	anomalyId: Optional[str] = Field(alias="anomalyId", default=None,)
 	anomalyLatestOccurrenceDateTime: Optional[datetime] = Field(alias="anomalyLatestOccurrenceDateTime", default=None,)
@@ -24,4 +25,3 @@ class UserExperienceAnalyticsAnomaly(BaseModel):
 from .user_experience_analytics_anomaly_type import UserExperienceAnalyticsAnomalyType
 from .user_experience_analytics_anomaly_severity import UserExperienceAnalyticsAnomalySeverity
 from .user_experience_analytics_anomaly_state import UserExperienceAnalyticsAnomalyState
-

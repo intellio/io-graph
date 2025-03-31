@@ -14,9 +14,9 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_directory_definition_id import ByDirectoryDefinitionIdRequest
 	from .........request_adapter import HttpxRequestAdapter
-from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.beta.directory_definition_collection_response import DirectoryDefinitionCollectionResponse
 from iograph_models.beta.directory_definition import DirectoryDefinition
+from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 
 
 class DirectoriesRequest(BaseRequestBuilder):

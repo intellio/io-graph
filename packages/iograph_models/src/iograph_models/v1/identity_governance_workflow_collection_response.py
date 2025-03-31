@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class IdentityGovernanceWorkflowCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class IdentityGovernanceWorkflowCollectionResponse(BaseModel):
 	value: Optional[list[IdentityGovernanceWorkflow]] = Field(alias="value", default=None,)
 
 from .identity_governance_workflow import IdentityGovernanceWorkflow
-

@@ -15,8 +15,8 @@ if TYPE_CHECKING:
 	from .by_project_participation_id import ByProjectParticipationIdRequest
 	from ......request_adapter import HttpxRequestAdapter
 from iograph_models.beta.project_participation import ProjectParticipation
-from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.beta.project_participation_collection_response import ProjectParticipationCollectionResponse
+from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 
 
 class ProjectsRequest(BaseRequestBuilder):

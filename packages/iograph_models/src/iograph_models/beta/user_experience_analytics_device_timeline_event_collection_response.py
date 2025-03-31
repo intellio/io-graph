@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class UserExperienceAnalyticsDeviceTimelineEventCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class UserExperienceAnalyticsDeviceTimelineEventCollectionResponse(BaseModel):
 	value: Optional[list[UserExperienceAnalyticsDeviceTimelineEvent]] = Field(alias="value", default=None,)
 
 from .user_experience_analytics_device_timeline_event import UserExperienceAnalyticsDeviceTimelineEvent
-

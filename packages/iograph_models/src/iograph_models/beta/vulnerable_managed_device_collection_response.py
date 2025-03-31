@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class VulnerableManagedDeviceCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class VulnerableManagedDeviceCollectionResponse(BaseModel):
 	value: Optional[list[VulnerableManagedDevice]] = Field(alias="value", default=None,)
 
 from .vulnerable_managed_device import VulnerableManagedDevice
-

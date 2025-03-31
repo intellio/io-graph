@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class ComanagedDevicesSummary(BaseModel):
@@ -14,5 +14,4 @@ class ComanagedDevicesSummary(BaseModel):
 	totalComanagedCount: Optional[int] = Field(alias="totalComanagedCount", default=None,)
 	windowsUpdateForBusinessCount: Optional[int] = Field(alias="windowsUpdateForBusinessCount", default=None,)
 	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
-
 

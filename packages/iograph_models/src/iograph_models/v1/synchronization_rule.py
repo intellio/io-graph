@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class SynchronizationRule(BaseModel):
@@ -20,4 +20,3 @@ from .container_filter import ContainerFilter
 from .group_filter import GroupFilter
 from .string_key_string_value_pair import StringKeyStringValuePair
 from .object_mapping import ObjectMapping
-

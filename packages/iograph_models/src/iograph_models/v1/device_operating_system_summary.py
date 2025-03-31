@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class DeviceOperatingSystemSummary(BaseModel):
@@ -17,5 +17,4 @@ class DeviceOperatingSystemSummary(BaseModel):
 	windowsCount: Optional[int] = Field(alias="windowsCount", default=None,)
 	windowsMobileCount: Optional[int] = Field(alias="windowsMobileCount", default=None,)
 	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
-
 

@@ -2,7 +2,7 @@ from __future__ import annotations
 from typing import Optional
 from typing import Literal
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class ExternalIdentitiesPolicy(BaseModel):
@@ -13,5 +13,4 @@ class ExternalIdentitiesPolicy(BaseModel):
 	displayName: Optional[str] = Field(alias="displayName", default=None,)
 	allowDeletedIdentitiesDataRemoval: Optional[bool] = Field(alias="allowDeletedIdentitiesDataRemoval", default=None,)
 	allowExternalIdentitiesToLeave: Optional[bool] = Field(alias="allowExternalIdentitiesToLeave", default=None,)
-
 

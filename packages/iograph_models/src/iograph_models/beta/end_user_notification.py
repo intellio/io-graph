@@ -1,12 +1,13 @@
 from __future__ import annotations
 from typing import Optional
+from typing import Literal
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class EndUserNotification(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
+	odata_type: Literal["#microsoft.graph.endUserNotification"] = Field(alias="@odata.type",)
 	createdBy: Optional[EmailIdentity] = Field(alias="createdBy", default=None,)
 	createdDateTime: Optional[datetime] = Field(alias="createdDateTime", default=None,)
 	description: Optional[str] = Field(alias="description", default=None,)
@@ -20,9 +21,7 @@ class EndUserNotification(BaseModel):
 	details: Optional[list[EndUserNotificationDetail]] = Field(alias="details", default=None,)
 
 from .email_identity import EmailIdentity
-from .email_identity import EmailIdentity
 from .end_user_notification_type import EndUserNotificationType
 from .simulation_content_source import SimulationContentSource
 from .simulation_content_status import SimulationContentStatus
 from .end_user_notification_detail import EndUserNotificationDetail
-

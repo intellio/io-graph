@@ -1,6 +1,7 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from typing import Literal
+from pydantic import BaseModel, Field
 
 
 class TeleconferenceDeviceScreenSharingQuality(BaseModel):
@@ -25,18 +26,10 @@ class TeleconferenceDeviceScreenSharingQuality(BaseModel):
 	outboundPackets: Optional[int] = Field(alias="outboundPackets", default=None,)
 	remoteIPAddress: Optional[str] = Field(alias="remoteIPAddress", default=None,)
 	remotePort: Optional[int] = Field(alias="remotePort", default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
+	odata_type: Literal["#microsoft.graph.teleconferenceDeviceScreenSharingQuality"] = Field(alias="@odata.type",)
 	averageInboundBitRate: float | str | ReferenceNumeric
 	averageInboundFrameRate: float | str | ReferenceNumeric
 	averageOutboundBitRate: float | str | ReferenceNumeric
 	averageOutboundFrameRate: float | str | ReferenceNumeric
 
 from .reference_numeric import ReferenceNumeric
-from .reference_numeric import ReferenceNumeric
-from .reference_numeric import ReferenceNumeric
-from .reference_numeric import ReferenceNumeric
-from .reference_numeric import ReferenceNumeric
-from .reference_numeric import ReferenceNumeric
-from .reference_numeric import ReferenceNumeric
-from .reference_numeric import ReferenceNumeric
-

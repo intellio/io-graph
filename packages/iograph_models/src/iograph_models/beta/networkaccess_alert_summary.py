@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class NetworkaccessAlertSummary(BaseModel):
@@ -11,4 +11,3 @@ class NetworkaccessAlertSummary(BaseModel):
 
 from .networkaccess_alert_type import NetworkaccessAlertType
 from .networkaccess_alert_severity import NetworkaccessAlertSeverity
-

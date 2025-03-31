@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class BrowserSharedCookieHistoryCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class BrowserSharedCookieHistoryCollectionResponse(BaseModel):
 	value: Optional[list[BrowserSharedCookieHistory]] = Field(alias="value", default=None,)
 
 from .browser_shared_cookie_history import BrowserSharedCookieHistory
-

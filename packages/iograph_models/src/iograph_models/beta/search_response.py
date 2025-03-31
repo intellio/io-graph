@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class SearchResponse(BaseModel):
@@ -13,4 +13,3 @@ class SearchResponse(BaseModel):
 from .search_hits_container import SearchHitsContainer
 from .alteration_response import AlterationResponse
 from .result_template_dictionary import ResultTemplateDictionary
-

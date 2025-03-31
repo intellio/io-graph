@@ -1,13 +1,14 @@
 from __future__ import annotations
 from typing import Optional
 from typing import Union
+from typing import Literal
 from typing import Annotated
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class BackupRestoreRoot(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
+	odata_type: Literal["#microsoft.graph.backupRestoreRoot"] = Field(alias="@odata.type",)
 	serviceStatus: Optional[ServiceStatus] = Field(alias="serviceStatus", default=None,)
 	driveInclusionRules: Optional[list[DriveProtectionRule]] = Field(alias="driveInclusionRules", default=None,)
 	driveProtectionUnits: Optional[list[DriveProtectionUnit]] = Field(alias="driveProtectionUnits", default=None,)
@@ -36,19 +37,9 @@ from .mailbox_protection_rule import MailboxProtectionRule
 from .mailbox_protection_unit import MailboxProtectionUnit
 from .one_drive_for_business_protection_policy import OneDriveForBusinessProtectionPolicy
 from .one_drive_for_business_restore_session import OneDriveForBusinessRestoreSession
-from .exchange_protection_policy import ExchangeProtectionPolicy
-from .one_drive_for_business_protection_policy import OneDriveForBusinessProtectionPolicy
 from .share_point_protection_policy import SharePointProtectionPolicy
-from .drive_protection_unit import DriveProtectionUnit
-from .mailbox_protection_unit import MailboxProtectionUnit
 from .site_protection_unit import SiteProtectionUnit
 from .restore_point import RestorePoint
-from .exchange_restore_session import ExchangeRestoreSession
-from .one_drive_for_business_restore_session import OneDriveForBusinessRestoreSession
 from .share_point_restore_session import SharePointRestoreSession
 from .service_app import ServiceApp
-from .share_point_protection_policy import SharePointProtectionPolicy
-from .share_point_restore_session import SharePointRestoreSession
 from .site_protection_rule import SiteProtectionRule
-from .site_protection_unit import SiteProtectionUnit
-

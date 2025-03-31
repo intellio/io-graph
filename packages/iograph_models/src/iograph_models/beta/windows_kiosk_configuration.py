@@ -2,7 +2,7 @@ from __future__ import annotations
 from typing import Optional
 from typing import Literal
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class WindowsKioskConfiguration(BaseModel):
@@ -48,4 +48,3 @@ from .device_configuration_user_status import DeviceConfigurationUserStatus
 from .device_configuration_user_overview import DeviceConfigurationUserOverview
 from .windows_kiosk_profile import WindowsKioskProfile
 from .windows_kiosk_force_update_schedule import WindowsKioskForceUpdateSchedule
-

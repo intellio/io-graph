@@ -2,7 +2,7 @@ from __future__ import annotations
 from typing import Optional
 from typing import Union
 from typing import Annotated
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class WindowsKioskAppBaseCollectionResponse(BaseModel):
@@ -13,4 +13,3 @@ class WindowsKioskAppBaseCollectionResponse(BaseModel):
 from .windows_kiosk_desktop_app import WindowsKioskDesktopApp
 from .windows_kiosk_u_w_p_app import WindowsKioskUWPApp
 from .windows_kiosk_win32_app import WindowsKioskWin32App
-

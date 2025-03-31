@@ -1,10 +1,10 @@
 from __future__ import annotations
 from typing import Optional
 from typing import Literal
+from pydantic import BaseModel, Field
 from pydantic import model_validator, ModelWrapValidatorHandler, ValidationError
 from typing_extensions import Self
 from typing import Any
-from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class IndustryDataFileDataConnector(BaseModel):
@@ -32,4 +32,3 @@ class IndustryDataFileDataConnector(BaseModel):
 			raise e
 
 from .industry_data_source_system_definition import IndustryDataSourceSystemDefinition
-

@@ -2,7 +2,7 @@ from __future__ import annotations
 from typing import Optional
 from typing import Union
 from typing import Annotated
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class WindowsUpdatesSoftwareUpdateCatalogEntryCollectionResponse(BaseModel):
@@ -13,4 +13,3 @@ class WindowsUpdatesSoftwareUpdateCatalogEntryCollectionResponse(BaseModel):
 from .windows_updates_driver_update_catalog_entry import WindowsUpdatesDriverUpdateCatalogEntry
 from .windows_updates_feature_update_catalog_entry import WindowsUpdatesFeatureUpdateCatalogEntry
 from .windows_updates_quality_update_catalog_entry import WindowsUpdatesQualityUpdateCatalogEntry
-

@@ -1,7 +1,7 @@
 from __future__ import annotations
 from typing import Optional
 from typing import Literal
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class CustomSecurityAttributeStringValueExemption(BaseModel):
@@ -11,4 +11,3 @@ class CustomSecurityAttributeStringValueExemption(BaseModel):
 	value: Optional[str] = Field(alias="value", default=None,)
 
 from .custom_security_attribute_comparison_operator import CustomSecurityAttributeComparisonOperator
-

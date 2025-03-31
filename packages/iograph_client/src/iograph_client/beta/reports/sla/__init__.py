@@ -12,8 +12,8 @@ from typing import TYPE_CHECKING
 if TYPE_CHECKING:
 	from .azure_a_d_authentication import AzureADAuthenticationRequest
 	from ....request_adapter import HttpxRequestAdapter
-from iograph_models.beta.service_level_agreement_root import ServiceLevelAgreementRoot
 from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.beta.service_level_agreement_root import ServiceLevelAgreementRoot
 
 
 class SlaRequest(BaseRequestBuilder):

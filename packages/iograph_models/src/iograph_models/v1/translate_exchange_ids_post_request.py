@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class Translate_exchange_idsPostRequest(BaseModel):
@@ -9,5 +9,3 @@ class Translate_exchange_idsPostRequest(BaseModel):
 	SourceIdType: Optional[ExchangeIdFormat | str] = Field(alias="SourceIdType", default=None,)
 
 from .exchange_id_format import ExchangeIdFormat
-from .exchange_id_format import ExchangeIdFormat
-

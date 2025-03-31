@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class DomainCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class DomainCollectionResponse(BaseModel):
 	value: Optional[list[Domain]] = Field(alias="value", default=None,)
 
 from .domain import Domain
-

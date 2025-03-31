@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class CloudPcSourceDeviceImage(BaseModel):
@@ -10,5 +10,4 @@ class CloudPcSourceDeviceImage(BaseModel):
 	subscriptionDisplayName: Optional[str] = Field(alias="subscriptionDisplayName", default=None,)
 	subscriptionId: Optional[str] = Field(alias="subscriptionId", default=None,)
 	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
-
 

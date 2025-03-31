@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class GroupLifecyclePolicyCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class GroupLifecyclePolicyCollectionResponse(BaseModel):
 	value: Optional[list[GroupLifecyclePolicy]] = Field(alias="value", default=None,)
 
 from .group_lifecycle_policy import GroupLifecyclePolicy
-

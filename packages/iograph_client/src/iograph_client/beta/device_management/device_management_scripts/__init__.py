@@ -16,8 +16,8 @@ if TYPE_CHECKING:
 	from .by_device_management_script_id import ByDeviceManagementScriptIdRequest
 	from ....request_adapter import HttpxRequestAdapter
 from iograph_models.beta.device_management_script_collection_response import DeviceManagementScriptCollectionResponse
-from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.beta.device_management_script import DeviceManagementScript
+from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 
 
 class DeviceManagementScriptsRequest(BaseRequestBuilder):

@@ -1,7 +1,7 @@
 from __future__ import annotations
 from typing import Optional
 from typing import Literal
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class AccessPackageTextInputQuestion(BaseModel):
@@ -15,4 +15,3 @@ class AccessPackageTextInputQuestion(BaseModel):
 	regexPattern: Optional[str] = Field(alias="regexPattern", default=None,)
 
 from .access_package_localized_content import AccessPackageLocalizedContent
-

@@ -5,7 +5,7 @@ from typing import Union
 from typing import Literal
 from typing import Annotated
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class ServicePrincipal(BaseModel):
@@ -55,22 +55,22 @@ class ServicePrincipal(BaseModel):
 	appRoleAssignments: Optional[list[AppRoleAssignment]] = Field(alias="appRoleAssignments", default=None,)
 	claimsMappingPolicies: Optional[list[ClaimsMappingPolicy]] = Field(alias="claimsMappingPolicies", default=None,)
 	claimsPolicy: Optional[CustomClaimsPolicy] = Field(alias="claimsPolicy", default=None,)
-	createdObjects: Optional[list[Annotated[Union[AdministrativeUnit, Application, AppRoleAssignment, CertificateAuthorityDetail, CertificateBasedAuthPki, Contract, Device, DeviceTemplate, DirectoryObjectPartnerReference, DirectoryRole, DirectoryRoleTemplate, DirectorySettingTemplate, Endpoint, ExtensionProperty, ExternalProfile, ExternalUserProfile, PendingExternalUserProfile, FederatedTokenValidationPolicy, Group, Mailbox, MultiTenantOrganizationMember, Organization, OrgContact, PermissionGrantPreApprovalPolicy, PolicyBase, AppManagementPolicy, AuthorizationPolicy, ExternalIdentitiesPolicy, IdentitySecurityDefaultsEnforcementPolicy, PermissionGrantPolicy, ServicePrincipalCreationPolicy, StsPolicy, ActivityBasedTimeoutPolicy, ClaimsMappingPolicy, HomeRealmDiscoveryPolicy, TokenIssuancePolicy, TokenLifetimePolicy, TenantAppManagementPolicy, TenantRelationshipAccessPolicyBase, CrossTenantAccessPolicy, ResourceSpecificPermissionGrant, ServicePrincipal, TrustedCertificateAuthorityAsEntityBase, CertificateBasedApplicationConfiguration, TrustedCertificateAuthorityBase, MutualTlsOauthConfiguration, User],Field(discriminator="odata_type")]]] = Field(alias="createdObjects", default=None,)
+	createdObjects: Optional[list[Annotated[Union[AdministrativeUnit, Application, AppRoleAssignment, CertificateAuthorityDetail, CertificateBasedAuthPki, Contract, Device, DeviceTemplate, DirectoryObjectPartnerReference, DirectoryRole, DirectoryRoleTemplate, DirectorySettingTemplate, Endpoint, ExtensionProperty, ExternalUserProfile, PendingExternalUserProfile, FederatedTokenValidationPolicy, Group, Mailbox, MultiTenantOrganizationMember, Organization, OrgContact, PermissionGrantPreApprovalPolicy, AppManagementPolicy, AuthorizationPolicy, ExternalIdentitiesPolicy, IdentitySecurityDefaultsEnforcementPolicy, PermissionGrantPolicy, ServicePrincipalCreationPolicy, ActivityBasedTimeoutPolicy, ClaimsMappingPolicy, HomeRealmDiscoveryPolicy, TokenIssuancePolicy, TokenLifetimePolicy, TenantAppManagementPolicy, CrossTenantAccessPolicy, ResourceSpecificPermissionGrant, ServicePrincipal, CertificateBasedApplicationConfiguration, MutualTlsOauthConfiguration, User],Field(discriminator="odata_type")]]] = Field(alias="createdObjects", default=None,)
 	delegatedPermissionClassifications: Optional[list[DelegatedPermissionClassification]] = Field(alias="delegatedPermissionClassifications", default=None,)
 	endpoints: Optional[list[Endpoint]] = Field(alias="endpoints", default=None,)
 	federatedIdentityCredentials: Optional[list[FederatedIdentityCredential]] = Field(alias="federatedIdentityCredentials", default=None,)
 	homeRealmDiscoveryPolicies: Optional[list[HomeRealmDiscoveryPolicy]] = Field(alias="homeRealmDiscoveryPolicies", default=None,)
 	licenseDetails: Optional[list[LicenseDetails]] = Field(alias="licenseDetails", default=None,)
-	memberOf: Optional[list[Annotated[Union[AdministrativeUnit, Application, AppRoleAssignment, CertificateAuthorityDetail, CertificateBasedAuthPki, Contract, Device, DeviceTemplate, DirectoryObjectPartnerReference, DirectoryRole, DirectoryRoleTemplate, DirectorySettingTemplate, Endpoint, ExtensionProperty, ExternalProfile, ExternalUserProfile, PendingExternalUserProfile, FederatedTokenValidationPolicy, Group, Mailbox, MultiTenantOrganizationMember, Organization, OrgContact, PermissionGrantPreApprovalPolicy, PolicyBase, AppManagementPolicy, AuthorizationPolicy, ExternalIdentitiesPolicy, IdentitySecurityDefaultsEnforcementPolicy, PermissionGrantPolicy, ServicePrincipalCreationPolicy, StsPolicy, ActivityBasedTimeoutPolicy, ClaimsMappingPolicy, HomeRealmDiscoveryPolicy, TokenIssuancePolicy, TokenLifetimePolicy, TenantAppManagementPolicy, TenantRelationshipAccessPolicyBase, CrossTenantAccessPolicy, ResourceSpecificPermissionGrant, ServicePrincipal, TrustedCertificateAuthorityAsEntityBase, CertificateBasedApplicationConfiguration, TrustedCertificateAuthorityBase, MutualTlsOauthConfiguration, User],Field(discriminator="odata_type")]]] = Field(alias="memberOf", default=None,)
+	memberOf: Optional[list[Annotated[Union[AdministrativeUnit, Application, AppRoleAssignment, CertificateAuthorityDetail, CertificateBasedAuthPki, Contract, Device, DeviceTemplate, DirectoryObjectPartnerReference, DirectoryRole, DirectoryRoleTemplate, DirectorySettingTemplate, Endpoint, ExtensionProperty, ExternalUserProfile, PendingExternalUserProfile, FederatedTokenValidationPolicy, Group, Mailbox, MultiTenantOrganizationMember, Organization, OrgContact, PermissionGrantPreApprovalPolicy, AppManagementPolicy, AuthorizationPolicy, ExternalIdentitiesPolicy, IdentitySecurityDefaultsEnforcementPolicy, PermissionGrantPolicy, ServicePrincipalCreationPolicy, ActivityBasedTimeoutPolicy, ClaimsMappingPolicy, HomeRealmDiscoveryPolicy, TokenIssuancePolicy, TokenLifetimePolicy, TenantAppManagementPolicy, CrossTenantAccessPolicy, ResourceSpecificPermissionGrant, ServicePrincipal, CertificateBasedApplicationConfiguration, MutualTlsOauthConfiguration, User],Field(discriminator="odata_type")]]] = Field(alias="memberOf", default=None,)
 	oauth2PermissionGrants: Optional[list[OAuth2PermissionGrant]] = Field(alias="oauth2PermissionGrants", default=None,)
-	ownedObjects: Optional[list[Annotated[Union[AdministrativeUnit, Application, AppRoleAssignment, CertificateAuthorityDetail, CertificateBasedAuthPki, Contract, Device, DeviceTemplate, DirectoryObjectPartnerReference, DirectoryRole, DirectoryRoleTemplate, DirectorySettingTemplate, Endpoint, ExtensionProperty, ExternalProfile, ExternalUserProfile, PendingExternalUserProfile, FederatedTokenValidationPolicy, Group, Mailbox, MultiTenantOrganizationMember, Organization, OrgContact, PermissionGrantPreApprovalPolicy, PolicyBase, AppManagementPolicy, AuthorizationPolicy, ExternalIdentitiesPolicy, IdentitySecurityDefaultsEnforcementPolicy, PermissionGrantPolicy, ServicePrincipalCreationPolicy, StsPolicy, ActivityBasedTimeoutPolicy, ClaimsMappingPolicy, HomeRealmDiscoveryPolicy, TokenIssuancePolicy, TokenLifetimePolicy, TenantAppManagementPolicy, TenantRelationshipAccessPolicyBase, CrossTenantAccessPolicy, ResourceSpecificPermissionGrant, ServicePrincipal, TrustedCertificateAuthorityAsEntityBase, CertificateBasedApplicationConfiguration, TrustedCertificateAuthorityBase, MutualTlsOauthConfiguration, User],Field(discriminator="odata_type")]]] = Field(alias="ownedObjects", default=None,)
-	owners: Optional[list[Annotated[Union[AdministrativeUnit, Application, AppRoleAssignment, CertificateAuthorityDetail, CertificateBasedAuthPki, Contract, Device, DeviceTemplate, DirectoryObjectPartnerReference, DirectoryRole, DirectoryRoleTemplate, DirectorySettingTemplate, Endpoint, ExtensionProperty, ExternalProfile, ExternalUserProfile, PendingExternalUserProfile, FederatedTokenValidationPolicy, Group, Mailbox, MultiTenantOrganizationMember, Organization, OrgContact, PermissionGrantPreApprovalPolicy, PolicyBase, AppManagementPolicy, AuthorizationPolicy, ExternalIdentitiesPolicy, IdentitySecurityDefaultsEnforcementPolicy, PermissionGrantPolicy, ServicePrincipalCreationPolicy, StsPolicy, ActivityBasedTimeoutPolicy, ClaimsMappingPolicy, HomeRealmDiscoveryPolicy, TokenIssuancePolicy, TokenLifetimePolicy, TenantAppManagementPolicy, TenantRelationshipAccessPolicyBase, CrossTenantAccessPolicy, ResourceSpecificPermissionGrant, ServicePrincipal, TrustedCertificateAuthorityAsEntityBase, CertificateBasedApplicationConfiguration, TrustedCertificateAuthorityBase, MutualTlsOauthConfiguration, User],Field(discriminator="odata_type")]]] = Field(alias="owners", default=None,)
+	ownedObjects: Optional[list[Annotated[Union[AdministrativeUnit, Application, AppRoleAssignment, CertificateAuthorityDetail, CertificateBasedAuthPki, Contract, Device, DeviceTemplate, DirectoryObjectPartnerReference, DirectoryRole, DirectoryRoleTemplate, DirectorySettingTemplate, Endpoint, ExtensionProperty, ExternalUserProfile, PendingExternalUserProfile, FederatedTokenValidationPolicy, Group, Mailbox, MultiTenantOrganizationMember, Organization, OrgContact, PermissionGrantPreApprovalPolicy, AppManagementPolicy, AuthorizationPolicy, ExternalIdentitiesPolicy, IdentitySecurityDefaultsEnforcementPolicy, PermissionGrantPolicy, ServicePrincipalCreationPolicy, ActivityBasedTimeoutPolicy, ClaimsMappingPolicy, HomeRealmDiscoveryPolicy, TokenIssuancePolicy, TokenLifetimePolicy, TenantAppManagementPolicy, CrossTenantAccessPolicy, ResourceSpecificPermissionGrant, ServicePrincipal, CertificateBasedApplicationConfiguration, MutualTlsOauthConfiguration, User],Field(discriminator="odata_type")]]] = Field(alias="ownedObjects", default=None,)
+	owners: Optional[list[Annotated[Union[AdministrativeUnit, Application, AppRoleAssignment, CertificateAuthorityDetail, CertificateBasedAuthPki, Contract, Device, DeviceTemplate, DirectoryObjectPartnerReference, DirectoryRole, DirectoryRoleTemplate, DirectorySettingTemplate, Endpoint, ExtensionProperty, ExternalUserProfile, PendingExternalUserProfile, FederatedTokenValidationPolicy, Group, Mailbox, MultiTenantOrganizationMember, Organization, OrgContact, PermissionGrantPreApprovalPolicy, AppManagementPolicy, AuthorizationPolicy, ExternalIdentitiesPolicy, IdentitySecurityDefaultsEnforcementPolicy, PermissionGrantPolicy, ServicePrincipalCreationPolicy, ActivityBasedTimeoutPolicy, ClaimsMappingPolicy, HomeRealmDiscoveryPolicy, TokenIssuancePolicy, TokenLifetimePolicy, TenantAppManagementPolicy, CrossTenantAccessPolicy, ResourceSpecificPermissionGrant, ServicePrincipal, CertificateBasedApplicationConfiguration, MutualTlsOauthConfiguration, User],Field(discriminator="odata_type")]]] = Field(alias="owners", default=None,)
 	permissionGrantPreApprovalPolicies: Optional[list[PermissionGrantPreApprovalPolicy]] = Field(alias="permissionGrantPreApprovalPolicies", default=None,)
 	remoteDesktopSecurityConfiguration: Optional[RemoteDesktopSecurityConfiguration] = Field(alias="remoteDesktopSecurityConfiguration", default=None,)
 	synchronization: Optional[Synchronization] = Field(alias="synchronization", default=None,)
 	tokenIssuancePolicies: Optional[list[TokenIssuancePolicy]] = Field(alias="tokenIssuancePolicies", default=None,)
 	tokenLifetimePolicies: Optional[list[TokenLifetimePolicy]] = Field(alias="tokenLifetimePolicies", default=None,)
-	transitiveMemberOf: Optional[list[Annotated[Union[AdministrativeUnit, Application, AppRoleAssignment, CertificateAuthorityDetail, CertificateBasedAuthPki, Contract, Device, DeviceTemplate, DirectoryObjectPartnerReference, DirectoryRole, DirectoryRoleTemplate, DirectorySettingTemplate, Endpoint, ExtensionProperty, ExternalProfile, ExternalUserProfile, PendingExternalUserProfile, FederatedTokenValidationPolicy, Group, Mailbox, MultiTenantOrganizationMember, Organization, OrgContact, PermissionGrantPreApprovalPolicy, PolicyBase, AppManagementPolicy, AuthorizationPolicy, ExternalIdentitiesPolicy, IdentitySecurityDefaultsEnforcementPolicy, PermissionGrantPolicy, ServicePrincipalCreationPolicy, StsPolicy, ActivityBasedTimeoutPolicy, ClaimsMappingPolicy, HomeRealmDiscoveryPolicy, TokenIssuancePolicy, TokenLifetimePolicy, TenantAppManagementPolicy, TenantRelationshipAccessPolicyBase, CrossTenantAccessPolicy, ResourceSpecificPermissionGrant, ServicePrincipal, TrustedCertificateAuthorityAsEntityBase, CertificateBasedApplicationConfiguration, TrustedCertificateAuthorityBase, MutualTlsOauthConfiguration, User],Field(discriminator="odata_type")]]] = Field(alias="transitiveMemberOf", default=None,)
+	transitiveMemberOf: Optional[list[Annotated[Union[AdministrativeUnit, Application, AppRoleAssignment, CertificateAuthorityDetail, CertificateBasedAuthPki, Contract, Device, DeviceTemplate, DirectoryObjectPartnerReference, DirectoryRole, DirectoryRoleTemplate, DirectorySettingTemplate, Endpoint, ExtensionProperty, ExternalUserProfile, PendingExternalUserProfile, FederatedTokenValidationPolicy, Group, Mailbox, MultiTenantOrganizationMember, Organization, OrgContact, PermissionGrantPreApprovalPolicy, AppManagementPolicy, AuthorizationPolicy, ExternalIdentitiesPolicy, IdentitySecurityDefaultsEnforcementPolicy, PermissionGrantPolicy, ServicePrincipalCreationPolicy, ActivityBasedTimeoutPolicy, ClaimsMappingPolicy, HomeRealmDiscoveryPolicy, TokenIssuancePolicy, TokenLifetimePolicy, TenantAppManagementPolicy, CrossTenantAccessPolicy, ResourceSpecificPermissionGrant, ServicePrincipal, CertificateBasedApplicationConfiguration, MutualTlsOauthConfiguration, User],Field(discriminator="odata_type")]]] = Field(alias="transitiveMemberOf", default=None,)
 
 from .add_in import AddIn
 from .app_role import AppRole
@@ -84,12 +84,10 @@ from .saml_single_sign_on_settings import SamlSingleSignOnSettings
 from .verified_publisher import VerifiedPublisher
 from .app_management_policy import AppManagementPolicy
 from .app_role_assignment import AppRoleAssignment
-from .app_role_assignment import AppRoleAssignment
 from .claims_mapping_policy import ClaimsMappingPolicy
 from .custom_claims_policy import CustomClaimsPolicy
 from .administrative_unit import AdministrativeUnit
 from .application import Application
-from .app_role_assignment import AppRoleAssignment
 from .certificate_authority_detail import CertificateAuthorityDetail
 from .certificate_based_auth_pki import CertificateBasedAuthPki
 from .contract import Contract
@@ -101,7 +99,6 @@ from .directory_role_template import DirectoryRoleTemplate
 from .directory_setting_template import DirectorySettingTemplate
 from .endpoint import Endpoint
 from .extension_property import ExtensionProperty
-from .external_profile import ExternalProfile
 from .external_user_profile import ExternalUserProfile
 from .pending_external_user_profile import PendingExternalUserProfile
 from .federated_token_validation_policy import FederatedTokenValidationPolicy
@@ -111,221 +108,24 @@ from .multi_tenant_organization_member import MultiTenantOrganizationMember
 from .organization import Organization
 from .org_contact import OrgContact
 from .permission_grant_pre_approval_policy import PermissionGrantPreApprovalPolicy
-from .policy_base import PolicyBase
-from .app_management_policy import AppManagementPolicy
 from .authorization_policy import AuthorizationPolicy
 from .external_identities_policy import ExternalIdentitiesPolicy
 from .identity_security_defaults_enforcement_policy import IdentitySecurityDefaultsEnforcementPolicy
 from .permission_grant_policy import PermissionGrantPolicy
 from .service_principal_creation_policy import ServicePrincipalCreationPolicy
-from .sts_policy import StsPolicy
 from .activity_based_timeout_policy import ActivityBasedTimeoutPolicy
-from .claims_mapping_policy import ClaimsMappingPolicy
 from .home_realm_discovery_policy import HomeRealmDiscoveryPolicy
 from .token_issuance_policy import TokenIssuancePolicy
 from .token_lifetime_policy import TokenLifetimePolicy
 from .tenant_app_management_policy import TenantAppManagementPolicy
-from .tenant_relationship_access_policy_base import TenantRelationshipAccessPolicyBase
 from .cross_tenant_access_policy import CrossTenantAccessPolicy
 from .resource_specific_permission_grant import ResourceSpecificPermissionGrant
-from .trusted_certificate_authority_as_entity_base import TrustedCertificateAuthorityAsEntityBase
 from .certificate_based_application_configuration import CertificateBasedApplicationConfiguration
-from .trusted_certificate_authority_base import TrustedCertificateAuthorityBase
 from .mutual_tls_oauth_configuration import MutualTlsOauthConfiguration
 from .user import User
 from .delegated_permission_classification import DelegatedPermissionClassification
-from .endpoint import Endpoint
 from .federated_identity_credential import FederatedIdentityCredential
-from .home_realm_discovery_policy import HomeRealmDiscoveryPolicy
 from .license_details import LicenseDetails
-from .administrative_unit import AdministrativeUnit
-from .application import Application
-from .app_role_assignment import AppRoleAssignment
-from .certificate_authority_detail import CertificateAuthorityDetail
-from .certificate_based_auth_pki import CertificateBasedAuthPki
-from .contract import Contract
-from .device import Device
-from .device_template import DeviceTemplate
-from .directory_object_partner_reference import DirectoryObjectPartnerReference
-from .directory_role import DirectoryRole
-from .directory_role_template import DirectoryRoleTemplate
-from .directory_setting_template import DirectorySettingTemplate
-from .endpoint import Endpoint
-from .extension_property import ExtensionProperty
-from .external_profile import ExternalProfile
-from .external_user_profile import ExternalUserProfile
-from .pending_external_user_profile import PendingExternalUserProfile
-from .federated_token_validation_policy import FederatedTokenValidationPolicy
-from .group import Group
-from .mailbox import Mailbox
-from .multi_tenant_organization_member import MultiTenantOrganizationMember
-from .organization import Organization
-from .org_contact import OrgContact
-from .permission_grant_pre_approval_policy import PermissionGrantPreApprovalPolicy
-from .policy_base import PolicyBase
-from .app_management_policy import AppManagementPolicy
-from .authorization_policy import AuthorizationPolicy
-from .external_identities_policy import ExternalIdentitiesPolicy
-from .identity_security_defaults_enforcement_policy import IdentitySecurityDefaultsEnforcementPolicy
-from .permission_grant_policy import PermissionGrantPolicy
-from .service_principal_creation_policy import ServicePrincipalCreationPolicy
-from .sts_policy import StsPolicy
-from .activity_based_timeout_policy import ActivityBasedTimeoutPolicy
-from .claims_mapping_policy import ClaimsMappingPolicy
-from .home_realm_discovery_policy import HomeRealmDiscoveryPolicy
-from .token_issuance_policy import TokenIssuancePolicy
-from .token_lifetime_policy import TokenLifetimePolicy
-from .tenant_app_management_policy import TenantAppManagementPolicy
-from .tenant_relationship_access_policy_base import TenantRelationshipAccessPolicyBase
-from .cross_tenant_access_policy import CrossTenantAccessPolicy
-from .resource_specific_permission_grant import ResourceSpecificPermissionGrant
-from .trusted_certificate_authority_as_entity_base import TrustedCertificateAuthorityAsEntityBase
-from .certificate_based_application_configuration import CertificateBasedApplicationConfiguration
-from .trusted_certificate_authority_base import TrustedCertificateAuthorityBase
-from .mutual_tls_oauth_configuration import MutualTlsOauthConfiguration
-from .user import User
 from .o_auth2_permission_grant import OAuth2PermissionGrant
-from .administrative_unit import AdministrativeUnit
-from .application import Application
-from .app_role_assignment import AppRoleAssignment
-from .certificate_authority_detail import CertificateAuthorityDetail
-from .certificate_based_auth_pki import CertificateBasedAuthPki
-from .contract import Contract
-from .device import Device
-from .device_template import DeviceTemplate
-from .directory_object_partner_reference import DirectoryObjectPartnerReference
-from .directory_role import DirectoryRole
-from .directory_role_template import DirectoryRoleTemplate
-from .directory_setting_template import DirectorySettingTemplate
-from .endpoint import Endpoint
-from .extension_property import ExtensionProperty
-from .external_profile import ExternalProfile
-from .external_user_profile import ExternalUserProfile
-from .pending_external_user_profile import PendingExternalUserProfile
-from .federated_token_validation_policy import FederatedTokenValidationPolicy
-from .group import Group
-from .mailbox import Mailbox
-from .multi_tenant_organization_member import MultiTenantOrganizationMember
-from .organization import Organization
-from .org_contact import OrgContact
-from .permission_grant_pre_approval_policy import PermissionGrantPreApprovalPolicy
-from .policy_base import PolicyBase
-from .app_management_policy import AppManagementPolicy
-from .authorization_policy import AuthorizationPolicy
-from .external_identities_policy import ExternalIdentitiesPolicy
-from .identity_security_defaults_enforcement_policy import IdentitySecurityDefaultsEnforcementPolicy
-from .permission_grant_policy import PermissionGrantPolicy
-from .service_principal_creation_policy import ServicePrincipalCreationPolicy
-from .sts_policy import StsPolicy
-from .activity_based_timeout_policy import ActivityBasedTimeoutPolicy
-from .claims_mapping_policy import ClaimsMappingPolicy
-from .home_realm_discovery_policy import HomeRealmDiscoveryPolicy
-from .token_issuance_policy import TokenIssuancePolicy
-from .token_lifetime_policy import TokenLifetimePolicy
-from .tenant_app_management_policy import TenantAppManagementPolicy
-from .tenant_relationship_access_policy_base import TenantRelationshipAccessPolicyBase
-from .cross_tenant_access_policy import CrossTenantAccessPolicy
-from .resource_specific_permission_grant import ResourceSpecificPermissionGrant
-from .trusted_certificate_authority_as_entity_base import TrustedCertificateAuthorityAsEntityBase
-from .certificate_based_application_configuration import CertificateBasedApplicationConfiguration
-from .trusted_certificate_authority_base import TrustedCertificateAuthorityBase
-from .mutual_tls_oauth_configuration import MutualTlsOauthConfiguration
-from .user import User
-from .administrative_unit import AdministrativeUnit
-from .application import Application
-from .app_role_assignment import AppRoleAssignment
-from .certificate_authority_detail import CertificateAuthorityDetail
-from .certificate_based_auth_pki import CertificateBasedAuthPki
-from .contract import Contract
-from .device import Device
-from .device_template import DeviceTemplate
-from .directory_object_partner_reference import DirectoryObjectPartnerReference
-from .directory_role import DirectoryRole
-from .directory_role_template import DirectoryRoleTemplate
-from .directory_setting_template import DirectorySettingTemplate
-from .endpoint import Endpoint
-from .extension_property import ExtensionProperty
-from .external_profile import ExternalProfile
-from .external_user_profile import ExternalUserProfile
-from .pending_external_user_profile import PendingExternalUserProfile
-from .federated_token_validation_policy import FederatedTokenValidationPolicy
-from .group import Group
-from .mailbox import Mailbox
-from .multi_tenant_organization_member import MultiTenantOrganizationMember
-from .organization import Organization
-from .org_contact import OrgContact
-from .permission_grant_pre_approval_policy import PermissionGrantPreApprovalPolicy
-from .policy_base import PolicyBase
-from .app_management_policy import AppManagementPolicy
-from .authorization_policy import AuthorizationPolicy
-from .external_identities_policy import ExternalIdentitiesPolicy
-from .identity_security_defaults_enforcement_policy import IdentitySecurityDefaultsEnforcementPolicy
-from .permission_grant_policy import PermissionGrantPolicy
-from .service_principal_creation_policy import ServicePrincipalCreationPolicy
-from .sts_policy import StsPolicy
-from .activity_based_timeout_policy import ActivityBasedTimeoutPolicy
-from .claims_mapping_policy import ClaimsMappingPolicy
-from .home_realm_discovery_policy import HomeRealmDiscoveryPolicy
-from .token_issuance_policy import TokenIssuancePolicy
-from .token_lifetime_policy import TokenLifetimePolicy
-from .tenant_app_management_policy import TenantAppManagementPolicy
-from .tenant_relationship_access_policy_base import TenantRelationshipAccessPolicyBase
-from .cross_tenant_access_policy import CrossTenantAccessPolicy
-from .resource_specific_permission_grant import ResourceSpecificPermissionGrant
-from .trusted_certificate_authority_as_entity_base import TrustedCertificateAuthorityAsEntityBase
-from .certificate_based_application_configuration import CertificateBasedApplicationConfiguration
-from .trusted_certificate_authority_base import TrustedCertificateAuthorityBase
-from .mutual_tls_oauth_configuration import MutualTlsOauthConfiguration
-from .user import User
-from .permission_grant_pre_approval_policy import PermissionGrantPreApprovalPolicy
 from .remote_desktop_security_configuration import RemoteDesktopSecurityConfiguration
 from .synchronization import Synchronization
-from .token_issuance_policy import TokenIssuancePolicy
-from .token_lifetime_policy import TokenLifetimePolicy
-from .administrative_unit import AdministrativeUnit
-from .application import Application
-from .app_role_assignment import AppRoleAssignment
-from .certificate_authority_detail import CertificateAuthorityDetail
-from .certificate_based_auth_pki import CertificateBasedAuthPki
-from .contract import Contract
-from .device import Device
-from .device_template import DeviceTemplate
-from .directory_object_partner_reference import DirectoryObjectPartnerReference
-from .directory_role import DirectoryRole
-from .directory_role_template import DirectoryRoleTemplate
-from .directory_setting_template import DirectorySettingTemplate
-from .endpoint import Endpoint
-from .extension_property import ExtensionProperty
-from .external_profile import ExternalProfile
-from .external_user_profile import ExternalUserProfile
-from .pending_external_user_profile import PendingExternalUserProfile
-from .federated_token_validation_policy import FederatedTokenValidationPolicy
-from .group import Group
-from .mailbox import Mailbox
-from .multi_tenant_organization_member import MultiTenantOrganizationMember
-from .organization import Organization
-from .org_contact import OrgContact
-from .permission_grant_pre_approval_policy import PermissionGrantPreApprovalPolicy
-from .policy_base import PolicyBase
-from .app_management_policy import AppManagementPolicy
-from .authorization_policy import AuthorizationPolicy
-from .external_identities_policy import ExternalIdentitiesPolicy
-from .identity_security_defaults_enforcement_policy import IdentitySecurityDefaultsEnforcementPolicy
-from .permission_grant_policy import PermissionGrantPolicy
-from .service_principal_creation_policy import ServicePrincipalCreationPolicy
-from .sts_policy import StsPolicy
-from .activity_based_timeout_policy import ActivityBasedTimeoutPolicy
-from .claims_mapping_policy import ClaimsMappingPolicy
-from .home_realm_discovery_policy import HomeRealmDiscoveryPolicy
-from .token_issuance_policy import TokenIssuancePolicy
-from .token_lifetime_policy import TokenLifetimePolicy
-from .tenant_app_management_policy import TenantAppManagementPolicy
-from .tenant_relationship_access_policy_base import TenantRelationshipAccessPolicyBase
-from .cross_tenant_access_policy import CrossTenantAccessPolicy
-from .resource_specific_permission_grant import ResourceSpecificPermissionGrant
-from .trusted_certificate_authority_as_entity_base import TrustedCertificateAuthorityAsEntityBase
-from .certificate_based_application_configuration import CertificateBasedApplicationConfiguration
-from .trusted_certificate_authority_base import TrustedCertificateAuthorityBase
-from .mutual_tls_oauth_configuration import MutualTlsOauthConfiguration
-from .user import User
-

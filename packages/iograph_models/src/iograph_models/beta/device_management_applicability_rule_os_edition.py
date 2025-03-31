@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class DeviceManagementApplicabilityRuleOsEdition(BaseModel):
@@ -11,4 +11,3 @@ class DeviceManagementApplicabilityRuleOsEdition(BaseModel):
 
 from .windows10_edition_type import Windows10EditionType
 from .device_management_applicability_rule_type import DeviceManagementApplicabilityRuleType
-

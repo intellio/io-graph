@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class WorkbookCommentCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class WorkbookCommentCollectionResponse(BaseModel):
 	value: Optional[list[WorkbookComment]] = Field(alias="value", default=None,)
 
 from .workbook_comment import WorkbookComment
-

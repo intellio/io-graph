@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class Windows10XVpnConfigurationCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class Windows10XVpnConfigurationCollectionResponse(BaseModel):
 	value: Optional[list[Windows10XVpnConfiguration]] = Field(alias="value", default=None,)
 
 from .windows10_x_vpn_configuration import Windows10XVpnConfiguration
-

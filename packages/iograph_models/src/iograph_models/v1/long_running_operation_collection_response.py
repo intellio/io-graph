@@ -2,7 +2,7 @@ from __future__ import annotations
 from typing import Optional
 from typing import Union
 from typing import Annotated
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class LongRunningOperationCollectionResponse(BaseModel):
@@ -13,4 +13,3 @@ class LongRunningOperationCollectionResponse(BaseModel):
 from .attack_simulation_operation import AttackSimulationOperation
 from .engagement_async_operation import EngagementAsyncOperation
 from .rich_long_running_operation import RichLongRunningOperation
-

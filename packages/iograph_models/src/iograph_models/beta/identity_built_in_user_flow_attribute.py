@@ -1,7 +1,7 @@
 from __future__ import annotations
 from typing import Optional
 from typing import Literal
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class IdentityBuiltInUserFlowAttribute(BaseModel):
@@ -14,4 +14,3 @@ class IdentityBuiltInUserFlowAttribute(BaseModel):
 
 from .identity_user_flow_attribute_data_type import IdentityUserFlowAttributeDataType
 from .identity_user_flow_attribute_type import IdentityUserFlowAttributeType
-

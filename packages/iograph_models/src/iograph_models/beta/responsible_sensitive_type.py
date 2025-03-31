@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class ResponsibleSensitiveType(BaseModel):
@@ -11,5 +11,4 @@ class ResponsibleSensitiveType(BaseModel):
 	rulePackageId: Optional[str] = Field(alias="rulePackageId", default=None,)
 	rulePackageType: Optional[str] = Field(alias="rulePackageType", default=None,)
 	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
-
 

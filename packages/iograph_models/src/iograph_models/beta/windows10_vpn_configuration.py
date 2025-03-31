@@ -3,7 +3,7 @@ from typing import Optional
 from typing import Union
 from typing import Literal
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class Windows10VpnConfiguration(BaseModel):
@@ -53,7 +53,7 @@ class Windows10VpnConfiguration(BaseModel):
 	trafficRules: Optional[list[VpnTrafficRule]] = Field(alias="trafficRules", default=None,)
 	trustedNetworkDomains: Optional[list[str]] = Field(alias="trustedNetworkDomains", default=None,)
 	windowsInformationProtectionDomain: Optional[str] = Field(alias="windowsInformationProtectionDomain", default=None,)
-	identityCertificate: Optional[Union[Windows10CertificateProfileBase, Windows10PkcsCertificateProfile, Windows10ImportedPFXCertificateProfile, Windows81CertificateProfileBase, Windows81SCEPCertificateProfile, WindowsPhone81ImportedPFXCertificateProfile]] = Field(alias="identityCertificate", default=None,discriminator="odata_type", )
+	identityCertificate: Optional[Union[Windows10PkcsCertificateProfile, Windows10ImportedPFXCertificateProfile, Windows81SCEPCertificateProfile, WindowsPhone81ImportedPFXCertificateProfile]] = Field(alias="identityCertificate", default=None,discriminator="odata_type", )
 
 from .device_management_applicability_rule_device_mode import DeviceManagementApplicabilityRuleDeviceMode
 from .device_management_applicability_rule_os_edition import DeviceManagementApplicabilityRuleOsEdition
@@ -76,10 +76,7 @@ from .windows10_vpn_proxy_server import Windows10VpnProxyServer
 from .vpn_route import VpnRoute
 from .extended_key_usage import ExtendedKeyUsage
 from .vpn_traffic_rule import VpnTrafficRule
-from .windows10_certificate_profile_base import Windows10CertificateProfileBase
 from .windows10_pkcs_certificate_profile import Windows10PkcsCertificateProfile
 from .windows10_imported_p_f_x_certificate_profile import Windows10ImportedPFXCertificateProfile
-from .windows81_certificate_profile_base import Windows81CertificateProfileBase
 from .windows81_s_c_e_p_certificate_profile import Windows81SCEPCertificateProfile
 from .windows_phone81_imported_p_f_x_certificate_profile import WindowsPhone81ImportedPFXCertificateProfile
-

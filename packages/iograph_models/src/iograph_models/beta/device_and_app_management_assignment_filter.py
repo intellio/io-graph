@@ -1,10 +1,10 @@
 from __future__ import annotations
 from typing import Optional
+from datetime import datetime
+from pydantic import BaseModel, Field
 from pydantic import model_validator, ModelWrapValidatorHandler, ValidationError
 from typing_extensions import Self
 from typing import Any
-from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class DeviceAndAppManagementAssignmentFilter(BaseModel):
@@ -41,4 +41,3 @@ class DeviceAndAppManagementAssignmentFilter(BaseModel):
 from .assignment_filter_management_type import AssignmentFilterManagementType
 from .payload_by_filter import PayloadByFilter
 from .device_platform_type import DevicePlatformType
-

@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class PrivilegedRoleAssignmentRequestCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class PrivilegedRoleAssignmentRequestCollectionResponse(BaseModel):
 	value: Optional[list[PrivilegedRoleAssignmentRequest]] = Field(alias="value", default=None,)
 
 from .privileged_role_assignment_request import PrivilegedRoleAssignmentRequest
-

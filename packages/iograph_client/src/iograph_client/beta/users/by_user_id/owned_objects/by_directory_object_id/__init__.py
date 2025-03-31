@@ -15,8 +15,8 @@ if TYPE_CHECKING:
 	from .graph_group import GraphGroupRequest
 	from .graph_application import GraphApplicationRequest
 	from ......request_adapter import HttpxRequestAdapter
-from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.beta.directory_object import DirectoryObject
+from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 
 
 class ByDirectoryObjectIdRequest(BaseRequestBuilder):

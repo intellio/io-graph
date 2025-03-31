@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class MacOSTrustedRootCertificateCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class MacOSTrustedRootCertificateCollectionResponse(BaseModel):
 	value: Optional[list[MacOSTrustedRootCertificate]] = Field(alias="value", default=None,)
 
 from .mac_o_s_trusted_root_certificate import MacOSTrustedRootCertificate
-

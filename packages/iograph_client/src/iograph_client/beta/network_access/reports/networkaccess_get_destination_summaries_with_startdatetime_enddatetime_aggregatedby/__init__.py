@@ -11,8 +11,8 @@ from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:
 	from .....request_adapter import HttpxRequestAdapter
-from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.beta.networkaccess_get_destination_summaries_with_startdatetime_enddatetime_aggregatedby_get_response import Networkaccess_get_destination_summaries_with_startdatetime_enddatetime_aggregatedbyGetResponse
+from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 
 
 class NetworkaccessGetDestinationSummariesWithStartDateTimeEndDateTimeAggregatedByRequest(BaseRequestBuilder):

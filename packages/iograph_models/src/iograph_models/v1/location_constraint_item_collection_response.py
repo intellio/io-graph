@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class LocationConstraintItemCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class LocationConstraintItemCollectionResponse(BaseModel):
 	value: Optional[list[LocationConstraintItem]] = Field(alias="value", default=None,)
 
 from .location_constraint_item import LocationConstraintItem
-

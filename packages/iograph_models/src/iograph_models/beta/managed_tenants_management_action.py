@@ -1,11 +1,12 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from typing import Literal
+from pydantic import BaseModel, Field
 
 
 class ManagedTenantsManagementAction(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
+	odata_type: Literal["#microsoft.graph.managedTenants.managementAction"] = Field(alias="@odata.type",)
 	category: Optional[ManagedTenantsManagementCategory | str] = Field(alias="category", default=None,)
 	description: Optional[str] = Field(alias="description", default=None,)
 	displayName: Optional[str] = Field(alias="displayName", default=None,)
@@ -15,4 +16,3 @@ class ManagedTenantsManagementAction(BaseModel):
 
 from .managed_tenants_management_category import ManagedTenantsManagementCategory
 from .managed_tenants_workload_action import ManagedTenantsWorkloadAction
-

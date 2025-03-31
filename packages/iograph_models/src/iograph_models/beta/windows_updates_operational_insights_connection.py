@@ -1,7 +1,7 @@
 from __future__ import annotations
 from typing import Optional
 from typing import Literal
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class WindowsUpdatesOperationalInsightsConnection(BaseModel):
@@ -13,4 +13,3 @@ class WindowsUpdatesOperationalInsightsConnection(BaseModel):
 	workspaceName: Optional[str] = Field(alias="workspaceName", default=None,)
 
 from .windows_updates_resource_connection_state import WindowsUpdatesResourceConnectionState
-

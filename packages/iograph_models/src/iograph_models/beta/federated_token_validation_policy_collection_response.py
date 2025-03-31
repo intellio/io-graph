@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class FederatedTokenValidationPolicyCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class FederatedTokenValidationPolicyCollectionResponse(BaseModel):
 	value: Optional[list[FederatedTokenValidationPolicy]] = Field(alias="value", default=None,)
 
 from .federated_token_validation_policy import FederatedTokenValidationPolicy
-

@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class WorkPositionCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class WorkPositionCollectionResponse(BaseModel):
 	value: Optional[list[WorkPosition]] = Field(alias="value", default=None,)
 
 from .work_position import WorkPosition
-

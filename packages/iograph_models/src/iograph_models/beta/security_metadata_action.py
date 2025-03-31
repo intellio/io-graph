@@ -1,7 +1,7 @@
 from __future__ import annotations
 from typing import Optional
 from typing import Literal
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class SecurityMetadataAction(BaseModel):
@@ -10,4 +10,3 @@ class SecurityMetadataAction(BaseModel):
 	metadataToRemove: Optional[list[str]] = Field(alias="metadataToRemove", default=None,)
 
 from .security_key_value_pair import SecurityKeyValuePair
-

@@ -1,11 +1,12 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from typing import Literal
+from pydantic import BaseModel, Field
 
 
 class PrintUsageByUser(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
+	odata_type: Literal["#microsoft.graph.printUsageByUser"] = Field(alias="@odata.type",)
 	blackAndWhitePageCount: Optional[int] = Field(alias="blackAndWhitePageCount", default=None,)
 	colorPageCount: Optional[int] = Field(alias="colorPageCount", default=None,)
 	completedBlackAndWhiteJobCount: Optional[int] = Field(alias="completedBlackAndWhiteJobCount", default=None,)
@@ -18,5 +19,4 @@ class PrintUsageByUser(BaseModel):
 	singleSidedSheetCount: Optional[int] = Field(alias="singleSidedSheetCount", default=None,)
 	usageDate: Optional[str] = Field(alias="usageDate", default=None,)
 	userPrincipalName: Optional[str] = Field(alias="userPrincipalName", default=None,)
-
 

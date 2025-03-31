@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class TodoTaskListCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class TodoTaskListCollectionResponse(BaseModel):
 	value: Optional[list[TodoTaskList]] = Field(alias="value", default=None,)
 
 from .todo_task_list import TodoTaskList
-

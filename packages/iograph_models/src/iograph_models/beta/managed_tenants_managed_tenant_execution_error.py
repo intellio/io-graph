@@ -1,7 +1,7 @@
 from __future__ import annotations
 from typing import Optional
 from typing import Literal
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class ManagedTenantsManagedTenantExecutionError(BaseModel):
@@ -12,5 +12,4 @@ class ManagedTenantsManagedTenantExecutionError(BaseModel):
 	nodeId: Optional[int] = Field(alias="nodeId", default=None,)
 	rawToken: Optional[str] = Field(alias="rawToken", default=None,)
 	statementIndex: Optional[int] = Field(alias="statementIndex", default=None,)
-
 

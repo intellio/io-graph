@@ -4,7 +4,7 @@ from typing import Union
 from typing import Literal
 from typing import Annotated
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class MeetingRegistration(BaseModel):
@@ -26,4 +26,3 @@ from .external_meeting_registrant import ExternalMeetingRegistrant
 from .meeting_registrant import MeetingRegistrant
 from .meeting_speaker import MeetingSpeaker
 from .meeting_registration_question import MeetingRegistrationQuestion
-

@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class ExternalGroupCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class ExternalGroupCollectionResponse(BaseModel):
 	value: Optional[list[ExternalGroup]] = Field(alias="value", default=None,)
 
 from .external_group import ExternalGroup
-

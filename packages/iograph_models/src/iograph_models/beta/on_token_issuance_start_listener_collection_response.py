@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class OnTokenIssuanceStartListenerCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class OnTokenIssuanceStartListenerCollectionResponse(BaseModel):
 	value: Optional[list[OnTokenIssuanceStartListener]] = Field(alias="value", default=None,)
 
 from .on_token_issuance_start_listener import OnTokenIssuanceStartListener
-

@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class IncludeTargetCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class IncludeTargetCollectionResponse(BaseModel):
 	value: Optional[list[IncludeTarget]] = Field(alias="value", default=None,)
 
 from .include_target import IncludeTarget
-

@@ -2,7 +2,7 @@ from __future__ import annotations
 from typing import Optional
 from typing import Literal
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class AndroidWorkProfileCompliancePolicy(BaseModel):
@@ -51,4 +51,3 @@ from .device_compliance_user_status import DeviceComplianceUserStatus
 from .device_compliance_user_overview import DeviceComplianceUserOverview
 from .device_threat_protection_level import DeviceThreatProtectionLevel
 from .android_required_password_type import AndroidRequiredPasswordType
-

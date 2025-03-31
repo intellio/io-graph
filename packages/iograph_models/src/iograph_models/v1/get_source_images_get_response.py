@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class Get_source_imagesGetResponse(BaseModel):
@@ -9,4 +9,3 @@ class Get_source_imagesGetResponse(BaseModel):
 	value: Optional[list[CloudPcSourceDeviceImage]] = Field(alias="value", default=None,)
 
 from .cloud_pc_source_device_image import CloudPcSourceDeviceImage
-

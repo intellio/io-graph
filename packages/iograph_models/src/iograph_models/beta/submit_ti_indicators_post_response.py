@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class Submit_ti_indicatorsPostResponse(BaseModel):
@@ -9,4 +9,3 @@ class Submit_ti_indicatorsPostResponse(BaseModel):
 	value: Optional[list[TiIndicator]] = Field(alias="value", default=None,)
 
 from .ti_indicator import TiIndicator
-

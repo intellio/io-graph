@@ -15,8 +15,8 @@ if TYPE_CHECKING:
 	from .by_partner_security_alert_id import ByPartnerSecurityAlertIdRequest
 	from .....request_adapter import HttpxRequestAdapter
 from iograph_models.beta.partner_security_partner_security_alert_collection_response import PartnerSecurityPartnerSecurityAlertCollectionResponse
-from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.beta.partner_security_partner_security_alert import PartnerSecurityPartnerSecurityAlert
+from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 
 
 class SecurityAlertsRequest(BaseRequestBuilder):

@@ -1,7 +1,7 @@
 from __future__ import annotations
 from typing import Optional
 from typing import Literal
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class BuiltInIdentityProvider(BaseModel):
@@ -12,4 +12,3 @@ class BuiltInIdentityProvider(BaseModel):
 	state: Optional[IdentityProviderState | str] = Field(alias="state", default=None,)
 
 from .identity_provider_state import IdentityProviderState
-

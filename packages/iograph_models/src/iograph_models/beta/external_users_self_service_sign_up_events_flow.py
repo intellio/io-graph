@@ -2,7 +2,7 @@ from __future__ import annotations
 from typing import Optional
 from typing import Union
 from typing import Literal
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class ExternalUsersSelfServiceSignUpEventsFlow(BaseModel):
@@ -26,4 +26,3 @@ from .on_attribute_collection_submit_custom_extension_handler import OnAttribute
 from .on_authentication_method_load_start_external_users_self_service_sign_up import OnAuthenticationMethodLoadStartExternalUsersSelfServiceSignUp
 from .on_interactive_auth_flow_start_external_users_self_service_sign_up import OnInteractiveAuthFlowStartExternalUsersSelfServiceSignUp
 from .on_user_create_start_external_users_self_service_sign_up import OnUserCreateStartExternalUsersSelfServiceSignUp
-

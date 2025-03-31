@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class Summarize_device_performance_devices_with_summarizebyGetResponse(BaseModel):
@@ -9,4 +9,3 @@ class Summarize_device_performance_devices_with_summarizebyGetResponse(BaseModel
 	value: Optional[list[UserExperienceAnalyticsDevicePerformance]] = Field(alias="value", default=None,)
 
 from .user_experience_analytics_device_performance import UserExperienceAnalyticsDevicePerformance
-

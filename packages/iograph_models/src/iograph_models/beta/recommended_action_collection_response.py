@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class RecommendedActionCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class RecommendedActionCollectionResponse(BaseModel):
 	value: Optional[list[RecommendedAction]] = Field(alias="value", default=None,)
 
 from .recommended_action import RecommendedAction
-

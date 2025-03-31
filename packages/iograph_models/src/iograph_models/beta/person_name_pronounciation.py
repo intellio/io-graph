@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class PersonNamePronounciation(BaseModel):
@@ -10,5 +10,4 @@ class PersonNamePronounciation(BaseModel):
 	maiden: Optional[str] = Field(alias="maiden", default=None,)
 	middle: Optional[str] = Field(alias="middle", default=None,)
 	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
-
 

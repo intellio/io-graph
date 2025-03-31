@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class AutomaticRepliesSetting(BaseModel):
@@ -14,6 +14,4 @@ class AutomaticRepliesSetting(BaseModel):
 
 from .external_audience_scope import ExternalAudienceScope
 from .date_time_time_zone import DateTimeTimeZone
-from .date_time_time_zone import DateTimeTimeZone
 from .automatic_replies_status import AutomaticRepliesStatus
-

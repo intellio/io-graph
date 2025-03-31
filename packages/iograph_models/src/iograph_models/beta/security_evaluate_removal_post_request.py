@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class Security_evaluate_removalPostRequest(BaseModel):
@@ -9,4 +9,3 @@ class Security_evaluate_removalPostRequest(BaseModel):
 
 from .security_content_info import SecurityContentInfo
 from .security_downgrade_justification import SecurityDowngradeJustification
-

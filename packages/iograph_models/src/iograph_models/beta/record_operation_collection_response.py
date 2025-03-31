@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class RecordOperationCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class RecordOperationCollectionResponse(BaseModel):
 	value: Optional[list[RecordOperation]] = Field(alias="value", default=None,)
 
 from .record_operation import RecordOperation
-

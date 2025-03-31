@@ -14,9 +14,9 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_managed_app_log_collection_request_id import ByManagedAppLogCollectionRequestIdRequest
 	from ....request_adapter import HttpxRequestAdapter
-from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
-from iograph_models.beta.managed_app_log_collection_request_collection_response import ManagedAppLogCollectionRequestCollectionResponse
 from iograph_models.beta.managed_app_log_collection_request import ManagedAppLogCollectionRequest
+from iograph_models.beta.managed_app_log_collection_request_collection_response import ManagedAppLogCollectionRequestCollectionResponse
+from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 
 
 class ManagedAppLogCollectionRequestsRequest(BaseRequestBuilder):

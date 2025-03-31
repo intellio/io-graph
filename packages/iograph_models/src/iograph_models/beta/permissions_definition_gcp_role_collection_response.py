@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class PermissionsDefinitionGcpRoleCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class PermissionsDefinitionGcpRoleCollectionResponse(BaseModel):
 	value: Optional[list[PermissionsDefinitionGcpRole]] = Field(alias="value", default=None,)
 
 from .permissions_definition_gcp_role import PermissionsDefinitionGcpRole
-

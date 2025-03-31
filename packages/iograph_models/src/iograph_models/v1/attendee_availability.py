@@ -1,7 +1,7 @@
 from __future__ import annotations
 from typing import Optional
 from typing import Union
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class AttendeeAvailability(BaseModel):
@@ -11,4 +11,3 @@ class AttendeeAvailability(BaseModel):
 
 from .attendee import Attendee
 from .free_busy_status import FreeBusyStatus
-

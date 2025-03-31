@@ -1,11 +1,11 @@
 from __future__ import annotations
 from typing import Optional
 from typing import Literal
+from datetime import datetime
+from pydantic import BaseModel, Field
 from pydantic import model_validator, ModelWrapValidatorHandler, ValidationError
 from typing_extensions import Self
 from typing import Any
-from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class OnenoteEntitySchemaObjectModel(BaseModel):
@@ -24,9 +24,6 @@ class OnenoteEntitySchemaObjectModel(BaseModel):
 				return parent_validated_model
 			# get the discriminator value
 			mapping_key = data["@odata.type"]
-			if mapping_key == "#microsoft.graph.onenoteEntityHierarchyModel":
-				from .onenote_entity_hierarchy_model import OnenoteEntityHierarchyModel
-				return OnenoteEntityHierarchyModel.model_validate(data)
 			if mapping_key == "#microsoft.graph.notebook":
 				from .notebook import Notebook
 				return Notebook.model_validate(data)
@@ -43,5 +40,4 @@ class OnenoteEntitySchemaObjectModel(BaseModel):
 
 		except Exception as e:
 			raise e
-
 

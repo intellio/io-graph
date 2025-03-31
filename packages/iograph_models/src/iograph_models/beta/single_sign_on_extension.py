@@ -1,9 +1,9 @@
 from __future__ import annotations
 from typing import Optional
+from pydantic import BaseModel, Field
 from pydantic import model_validator, ModelWrapValidatorHandler, ValidationError
 from typing_extensions import Self
 from typing import Any
-from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class SingleSignOnExtension(BaseModel):
@@ -22,9 +22,6 @@ class SingleSignOnExtension(BaseModel):
 			if mapping_key == "#microsoft.graph.credentialSingleSignOnExtension":
 				from .credential_single_sign_on_extension import CredentialSingleSignOnExtension
 				return CredentialSingleSignOnExtension.model_validate(data)
-			if mapping_key == "#microsoft.graph.iosSingleSignOnExtension":
-				from .ios_single_sign_on_extension import IosSingleSignOnExtension
-				return IosSingleSignOnExtension.model_validate(data)
 			if mapping_key == "#microsoft.graph.iosAzureAdSingleSignOnExtension":
 				from .ios_azure_ad_single_sign_on_extension import IosAzureAdSingleSignOnExtension
 				return IosAzureAdSingleSignOnExtension.model_validate(data)
@@ -40,9 +37,6 @@ class SingleSignOnExtension(BaseModel):
 			if mapping_key == "#microsoft.graph.kerberosSingleSignOnExtension":
 				from .kerberos_single_sign_on_extension import KerberosSingleSignOnExtension
 				return KerberosSingleSignOnExtension.model_validate(data)
-			if mapping_key == "#microsoft.graph.macOSSingleSignOnExtension":
-				from .mac_o_s_single_sign_on_extension import MacOSSingleSignOnExtension
-				return MacOSSingleSignOnExtension.model_validate(data)
 			if mapping_key == "#microsoft.graph.macOSAzureAdSingleSignOnExtension":
 				from .mac_o_s_azure_ad_single_sign_on_extension import MacOSAzureAdSingleSignOnExtension
 				return MacOSAzureAdSingleSignOnExtension.model_validate(data)
@@ -62,5 +56,4 @@ class SingleSignOnExtension(BaseModel):
 
 		except Exception as e:
 			raise e
-
 

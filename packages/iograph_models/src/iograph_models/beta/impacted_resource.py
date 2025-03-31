@@ -1,12 +1,13 @@
 from __future__ import annotations
 from typing import Optional
+from typing import Literal
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class ImpactedResource(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
+	odata_type: Literal["#microsoft.graph.impactedResource"] = Field(alias="@odata.type",)
 	addedDateTime: Optional[datetime] = Field(alias="addedDateTime", default=None,)
 	additionalDetails: Optional[list[KeyValue]] = Field(alias="additionalDetails", default=None,)
 	apiUrl: Optional[str] = Field(alias="apiUrl", default=None,)
@@ -24,4 +25,3 @@ class ImpactedResource(BaseModel):
 
 from .key_value import KeyValue
 from .recommendation_status import RecommendationStatus
-

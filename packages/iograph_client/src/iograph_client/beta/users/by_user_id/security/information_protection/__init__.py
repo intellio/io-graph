@@ -14,8 +14,8 @@ if TYPE_CHECKING:
 	from .sensitivity_labels import SensitivityLabelsRequest
 	from .label_policy_settings import LabelPolicySettingsRequest
 	from ......request_adapter import HttpxRequestAdapter
-from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.beta.security_information_protection import SecurityInformationProtection
+from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 
 
 class InformationProtectionRequest(BaseRequestBuilder):

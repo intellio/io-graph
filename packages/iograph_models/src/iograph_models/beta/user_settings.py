@@ -1,11 +1,12 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from typing import Literal
+from pydantic import BaseModel, Field
 
 
 class UserSettings(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
+	odata_type: Literal["#microsoft.graph.userSettings"] = Field(alias="@odata.type",)
 	contributionToContentDiscoveryAsOrganizationDisabled: Optional[bool] = Field(alias="contributionToContentDiscoveryAsOrganizationDisabled", default=None,)
 	contributionToContentDiscoveryDisabled: Optional[bool] = Field(alias="contributionToContentDiscoveryDisabled", default=None,)
 	contactMergeSuggestions: Optional[ContactMergeSuggestions] = Field(alias="contactMergeSuggestions", default=None,)
@@ -23,4 +24,3 @@ from .regional_and_language_settings import RegionalAndLanguageSettings
 from .shift_preferences import ShiftPreferences
 from .user_storage import UserStorage
 from .windows_setting import WindowsSetting
-

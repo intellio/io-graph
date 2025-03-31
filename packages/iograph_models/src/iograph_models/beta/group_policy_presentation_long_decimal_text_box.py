@@ -2,7 +2,7 @@ from __future__ import annotations
 from typing import Optional
 from typing import Literal
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class GroupPolicyPresentationLongDecimalTextBox(BaseModel):
@@ -19,4 +19,3 @@ class GroupPolicyPresentationLongDecimalTextBox(BaseModel):
 	spinStep: Optional[int] = Field(alias="spinStep", default=None,)
 
 from .group_policy_definition import GroupPolicyDefinition
-

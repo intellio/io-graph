@@ -1,11 +1,11 @@
 from __future__ import annotations
 from typing import Optional
 from typing import Literal
+from datetime import datetime
+from pydantic import BaseModel, Field
 from pydantic import model_validator, ModelWrapValidatorHandler, ValidationError
 from typing_extensions import Self
 from typing import Any
-from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class WindowsVpnConfiguration(BaseModel):
@@ -45,9 +45,6 @@ class WindowsVpnConfiguration(BaseModel):
 			if mapping_key == "#microsoft.graph.windows10VpnConfiguration":
 				from .windows10_vpn_configuration import Windows10VpnConfiguration
 				return Windows10VpnConfiguration.model_validate(data)
-			if mapping_key == "#microsoft.graph.windows81VpnConfiguration":
-				from .windows81_vpn_configuration import Windows81VpnConfiguration
-				return Windows81VpnConfiguration.model_validate(data)
 			if mapping_key == "#microsoft.graph.windowsPhone81VpnConfiguration":
 				from .windows_phone81_vpn_configuration import WindowsPhone81VpnConfiguration
 				return WindowsPhone81VpnConfiguration.model_validate(data)
@@ -67,4 +64,3 @@ from .device_configuration_group_assignment import DeviceConfigurationGroupAssig
 from .device_configuration_user_status import DeviceConfigurationUserStatus
 from .device_configuration_user_overview import DeviceConfigurationUserOverview
 from .vpn_server import VpnServer
-

@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class RedirectPostRequest(BaseModel):
@@ -8,4 +8,3 @@ class RedirectPostRequest(BaseModel):
 	configuration: Optional[PrintJobConfiguration] = Field(alias="configuration", default=None,)
 
 from .print_job_configuration import PrintJobConfiguration
-

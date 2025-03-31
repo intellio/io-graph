@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class Windows10DeviceFirmwareConfigurationInterfaceCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class Windows10DeviceFirmwareConfigurationInterfaceCollectionResponse(BaseModel)
 	value: Optional[list[Windows10DeviceFirmwareConfigurationInterface]] = Field(alias="value", default=None,)
 
 from .windows10_device_firmware_configuration_interface import Windows10DeviceFirmwareConfigurationInterface
-

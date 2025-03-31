@@ -15,8 +15,8 @@ if TYPE_CHECKING:
 	from .teams_app import TeamsAppRequest
 	from .upgrade import UpgradeRequest
 	from ..........request_adapter import HttpxRequestAdapter
-from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.beta.teams_app_installation import TeamsAppInstallation
+from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 
 
 class ByTeamsAppInstallationIdRequest(BaseRequestBuilder):

@@ -1,12 +1,13 @@
 from __future__ import annotations
 from typing import Optional
+from typing import Literal
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class DeviceComplianceScript(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
+	odata_type: Literal["#microsoft.graph.deviceComplianceScript"] = Field(alias="@odata.type",)
 	createdDateTime: Optional[datetime] = Field(alias="createdDateTime", default=None,)
 	description: Optional[str] = Field(alias="description", default=None,)
 	detectionScriptContent: Optional[str] = Field(alias="detectionScriptContent", default=None,)
@@ -26,4 +27,3 @@ from .run_as_account_type import RunAsAccountType
 from .device_health_script_assignment import DeviceHealthScriptAssignment
 from .device_compliance_script_device_state import DeviceComplianceScriptDeviceState
 from .device_compliance_script_run_summary import DeviceComplianceScriptRunSummary
-

@@ -1,7 +1,7 @@
 from __future__ import annotations
 from typing import Optional
 from typing import Literal
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class SecurityBaselineCategoryStateSummary(BaseModel):
@@ -14,5 +14,4 @@ class SecurityBaselineCategoryStateSummary(BaseModel):
 	secureCount: Optional[int] = Field(alias="secureCount", default=None,)
 	unknownCount: Optional[int] = Field(alias="unknownCount", default=None,)
 	displayName: Optional[str] = Field(alias="displayName", default=None,)
-
 

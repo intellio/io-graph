@@ -1,13 +1,14 @@
 from __future__ import annotations
 from typing import Optional
 from typing import Union
+from typing import Literal
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class PlannerTask(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
+	odata_type: Literal["#microsoft.graph.plannerTask"] = Field(alias="@odata.type",)
 	activeChecklistItemCount: Optional[int] = Field(alias="activeChecklistItemCount", default=None,)
 	appliedCategories: Optional[PlannerAppliedCategories] = Field(alias="appliedCategories", default=None,)
 	assigneePriority: Optional[str] = Field(alias="assigneePriority", default=None,)
@@ -41,14 +42,8 @@ from .chat_message_mentioned_identity_set import ChatMessageMentionedIdentitySet
 from .chat_message_reaction_identity_set import ChatMessageReactionIdentitySet
 from .communications_identity_set import CommunicationsIdentitySet
 from .share_point_identity_set import SharePointIdentitySet
-from .chat_message_from_identity_set import ChatMessageFromIdentitySet
-from .chat_message_mentioned_identity_set import ChatMessageMentionedIdentitySet
-from .chat_message_reaction_identity_set import ChatMessageReactionIdentitySet
-from .communications_identity_set import CommunicationsIdentitySet
-from .share_point_identity_set import SharePointIdentitySet
 from .planner_preview_type import PlannerPreviewType
 from .planner_assigned_to_task_board_task_format import PlannerAssignedToTaskBoardTaskFormat
 from .planner_bucket_task_board_task_format import PlannerBucketTaskBoardTaskFormat
 from .planner_task_details import PlannerTaskDetails
 from .planner_progress_task_board_task_format import PlannerProgressTaskBoardTaskFormat
-

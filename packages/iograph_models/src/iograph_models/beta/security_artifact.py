@@ -1,9 +1,9 @@
 from __future__ import annotations
 from typing import Optional
+from pydantic import BaseModel, Field
 from pydantic import model_validator, ModelWrapValidatorHandler, ValidationError
 from typing_extensions import Self
 from typing import Any
-from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class SecurityArtifact(BaseModel):
@@ -20,9 +20,6 @@ class SecurityArtifact(BaseModel):
 				return parent_validated_model
 			# get the discriminator value
 			mapping_key = data["@odata.type"]
-			if mapping_key == "#microsoft.graph.security.host":
-				from .security_host import SecurityHost
-				return SecurityHost.model_validate(data)
 			if mapping_key == "#microsoft.graph.security.hostname":
 				from .security_hostname import SecurityHostname
 				return SecurityHostname.model_validate(data)
@@ -54,5 +51,4 @@ class SecurityArtifact(BaseModel):
 
 		except Exception as e:
 			raise e
-
 

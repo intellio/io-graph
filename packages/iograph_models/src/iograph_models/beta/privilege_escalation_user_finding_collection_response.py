@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class PrivilegeEscalationUserFindingCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class PrivilegeEscalationUserFindingCollectionResponse(BaseModel):
 	value: Optional[list[PrivilegeEscalationUserFinding]] = Field(alias="value", default=None,)
 
 from .privilege_escalation_user_finding import PrivilegeEscalationUserFinding
-

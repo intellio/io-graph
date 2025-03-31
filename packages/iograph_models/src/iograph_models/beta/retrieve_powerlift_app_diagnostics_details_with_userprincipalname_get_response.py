@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class Retrieve_powerlift_app_diagnostics_details_with_userprincipalnameGetResponse(BaseModel):
@@ -9,4 +9,3 @@ class Retrieve_powerlift_app_diagnostics_details_with_userprincipalnameGetRespon
 	value: Optional[list[PowerliftIncidentDetail]] = Field(alias="value", default=None,)
 
 from .powerlift_incident_detail import PowerliftIncidentDetail
-

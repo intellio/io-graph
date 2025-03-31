@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class OnPremisesAgentGroupCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class OnPremisesAgentGroupCollectionResponse(BaseModel):
 	value: Optional[list[OnPremisesAgentGroup]] = Field(alias="value", default=None,)
 
 from .on_premises_agent_group import OnPremisesAgentGroup
-

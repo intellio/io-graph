@@ -2,7 +2,7 @@ from __future__ import annotations
 from typing import Optional
 from typing import Union
 from typing import Literal
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class EducationSchool(BaseModel):
@@ -39,4 +39,3 @@ from .share_point_identity_set import SharePointIdentitySet
 from .administrative_unit import AdministrativeUnit
 from .education_class import EducationClass
 from .education_user import EducationUser
-

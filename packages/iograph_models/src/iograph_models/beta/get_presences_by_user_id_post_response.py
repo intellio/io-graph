@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class Get_presences_by_user_idPostResponse(BaseModel):
@@ -9,4 +9,3 @@ class Get_presences_by_user_idPostResponse(BaseModel):
 	value: Optional[list[Presence]] = Field(alias="value", default=None,)
 
 from .presence import Presence
-

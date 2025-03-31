@@ -15,9 +15,9 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_planner_plan_id import ByPlannerPlanIdRequest
 	from ....request_adapter import HttpxRequestAdapter
+from iograph_models.beta.planner_plan import PlannerPlan
 from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.beta.planner_plan_collection_response import PlannerPlanCollectionResponse
-from iograph_models.beta.planner_plan import PlannerPlan
 
 
 class PlansRequest(BaseRequestBuilder):

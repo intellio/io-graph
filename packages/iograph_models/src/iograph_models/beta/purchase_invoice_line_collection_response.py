@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class PurchaseInvoiceLineCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class PurchaseInvoiceLineCollectionResponse(BaseModel):
 	value: Optional[list[PurchaseInvoiceLine]] = Field(alias="value", default=None,)
 
 from .purchase_invoice_line import PurchaseInvoiceLine
-

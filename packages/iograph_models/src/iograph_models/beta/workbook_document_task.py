@@ -1,12 +1,13 @@
 from __future__ import annotations
 from typing import Optional
+from typing import Literal
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class WorkbookDocumentTask(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
+	odata_type: Literal["#microsoft.graph.workbookDocumentTask"] = Field(alias="@odata.type",)
 	assignees: Optional[list[WorkbookEmailIdentity]] = Field(alias="assignees", default=None,)
 	completedBy: Optional[WorkbookEmailIdentity] = Field(alias="completedBy", default=None,)
 	completedDateTime: Optional[datetime] = Field(alias="completedDateTime", default=None,)
@@ -20,9 +21,6 @@ class WorkbookDocumentTask(BaseModel):
 	comment: Optional[WorkbookComment] = Field(alias="comment", default=None,)
 
 from .workbook_email_identity import WorkbookEmailIdentity
-from .workbook_email_identity import WorkbookEmailIdentity
-from .workbook_email_identity import WorkbookEmailIdentity
 from .workbook_document_task_schedule import WorkbookDocumentTaskSchedule
 from .workbook_document_task_change import WorkbookDocumentTaskChange
 from .workbook_comment import WorkbookComment
-

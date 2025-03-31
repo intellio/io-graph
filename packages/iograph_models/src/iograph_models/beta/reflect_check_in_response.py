@@ -1,12 +1,13 @@
 from __future__ import annotations
 from typing import Optional
+from typing import Literal
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class ReflectCheckInResponse(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
+	odata_type: Literal["#microsoft.graph.reflectCheckInResponse"] = Field(alias="@odata.type",)
 	checkInId: Optional[str] = Field(alias="checkInId", default=None,)
 	checkInTitle: Optional[str] = Field(alias="checkInTitle", default=None,)
 	classId: Optional[str] = Field(alias="classId", default=None,)
@@ -20,4 +21,3 @@ class ReflectCheckInResponse(BaseModel):
 
 from .response_emotion_type import ResponseEmotionType
 from .response_feedback_type import ResponseFeedbackType
-

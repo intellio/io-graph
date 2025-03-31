@@ -2,7 +2,7 @@ from __future__ import annotations
 from typing import Optional
 from typing import Union
 from typing import Annotated
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class AndroidForWorkEasEmailProfileBaseCollectionResponse(BaseModel):
@@ -12,4 +12,3 @@ class AndroidForWorkEasEmailProfileBaseCollectionResponse(BaseModel):
 
 from .android_for_work_gmail_eas_configuration import AndroidForWorkGmailEasConfiguration
 from .android_for_work_nine_work_eas_configuration import AndroidForWorkNineWorkEasConfiguration
-

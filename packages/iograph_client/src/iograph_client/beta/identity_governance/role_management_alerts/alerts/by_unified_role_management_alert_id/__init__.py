@@ -16,8 +16,8 @@ if TYPE_CHECKING:
 	from .alert_definition import AlertDefinitionRequest
 	from .alert_configuration import AlertConfigurationRequest
 	from ......request_adapter import HttpxRequestAdapter
-from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.beta.unified_role_management_alert import UnifiedRoleManagementAlert
+from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 
 
 class ByUnifiedRoleManagementAlertIdRequest(BaseRequestBuilder):

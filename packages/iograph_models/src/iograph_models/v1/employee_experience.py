@@ -2,7 +2,7 @@ from __future__ import annotations
 from typing import Optional
 from typing import Union
 from typing import Annotated
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class EmployeeExperience(BaseModel):
@@ -17,4 +17,3 @@ from .engagement_async_operation import EngagementAsyncOperation
 from .learning_assignment import LearningAssignment
 from .learning_self_initiated_course import LearningSelfInitiatedCourse
 from .learning_provider import LearningProvider
-

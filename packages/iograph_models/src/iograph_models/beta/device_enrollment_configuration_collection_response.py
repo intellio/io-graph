@@ -2,7 +2,7 @@ from __future__ import annotations
 from typing import Optional
 from typing import Union
 from typing import Annotated
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class DeviceEnrollmentConfigurationCollectionResponse(BaseModel):
@@ -17,4 +17,3 @@ from .device_enrollment_platform_restriction_configuration import DeviceEnrollme
 from .device_enrollment_platform_restrictions_configuration import DeviceEnrollmentPlatformRestrictionsConfiguration
 from .device_enrollment_windows_hello_for_business_configuration import DeviceEnrollmentWindowsHelloForBusinessConfiguration
 from .windows10_enrollment_completion_page_configuration import Windows10EnrollmentCompletionPageConfiguration
-

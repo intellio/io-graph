@@ -2,7 +2,7 @@ from __future__ import annotations
 from typing import Optional
 from typing import Literal
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class Fido2AuthenticationMethod(BaseModel):
@@ -16,4 +16,3 @@ class Fido2AuthenticationMethod(BaseModel):
 	model: Optional[str] = Field(alias="model", default=None,)
 
 from .attestation_level import AttestationLevel
-

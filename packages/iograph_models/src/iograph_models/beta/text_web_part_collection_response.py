@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class TextWebPartCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class TextWebPartCollectionResponse(BaseModel):
 	value: Optional[list[TextWebPart]] = Field(alias="value", default=None,)
 
 from .text_web_part import TextWebPart
-

@@ -11,9 +11,9 @@ from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:
 	from ....request_adapter import HttpxRequestAdapter
-from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.beta.classify_exact_matches_post_request import Classify_exact_matchesPostRequest
 from iograph_models.beta.exact_match_classification_result import ExactMatchClassificationResult
+from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 
 
 class ClassifyExactMatchesRequest(BaseRequestBuilder):

@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class WebApplicationSegmentCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class WebApplicationSegmentCollectionResponse(BaseModel):
 	value: Optional[list[WebApplicationSegment]] = Field(alias="value", default=None,)
 
 from .web_application_segment import WebApplicationSegment
-

@@ -1,13 +1,14 @@
 from __future__ import annotations
 from typing import Optional
 from typing import Union
+from typing import Literal
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class PrintJob(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
+	odata_type: Literal["#microsoft.graph.printJob"] = Field(alias="@odata.type",)
 	acknowledgedDateTime: Optional[datetime] = Field(alias="acknowledgedDateTime", default=None,)
 	completedDateTime: Optional[datetime] = Field(alias="completedDateTime", default=None,)
 	configuration: Optional[PrintJobConfiguration] = Field(alias="configuration", default=None,)
@@ -27,4 +28,3 @@ from .audit_user_identity import AuditUserIdentity
 from .print_job_status import PrintJobStatus
 from .print_document import PrintDocument
 from .print_task import PrintTask
-

@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class OnPremisesDirectorySynchronizationFeature(BaseModel):
@@ -24,5 +24,4 @@ class OnPremisesDirectorySynchronizationFeature(BaseModel):
 	userForcePasswordChangeOnLogonEnabled: Optional[bool] = Field(alias="userForcePasswordChangeOnLogonEnabled", default=None,)
 	userWritebackEnabled: Optional[bool] = Field(alias="userWritebackEnabled", default=None,)
 	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
-
 

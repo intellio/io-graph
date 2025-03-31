@@ -1,7 +1,7 @@
 from __future__ import annotations
 from typing import Optional
 from typing import Literal
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class EmailPayloadDetail(BaseModel):
@@ -15,4 +15,3 @@ class EmailPayloadDetail(BaseModel):
 	subject: Optional[str] = Field(alias="subject", default=None,)
 
 from .payload_coachmark import PayloadCoachmark
-

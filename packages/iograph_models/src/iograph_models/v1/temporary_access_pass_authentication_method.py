@@ -2,7 +2,7 @@ from __future__ import annotations
 from typing import Optional
 from typing import Literal
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class TemporaryAccessPassAuthenticationMethod(BaseModel):
@@ -15,5 +15,4 @@ class TemporaryAccessPassAuthenticationMethod(BaseModel):
 	methodUsabilityReason: Optional[str] = Field(alias="methodUsabilityReason", default=None,)
 	startDateTime: Optional[datetime] = Field(alias="startDateTime", default=None,)
 	temporaryAccessPass: Optional[str] = Field(alias="temporaryAccessPass", default=None,)
-
 

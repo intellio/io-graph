@@ -1,12 +1,13 @@
 from __future__ import annotations
 from typing import Optional
 from typing import Union
-from pydantic import BaseModel, Field, SerializeAsAny
+from typing import Literal
+from pydantic import BaseModel, Field
 
 
 class PermissionGrantConditionSet(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
+	odata_type: Literal["#microsoft.graph.permissionGrantConditionSet"] = Field(alias="@odata.type",)
 	certifiedClientApplicationsOnly: Optional[bool] = Field(alias="certifiedClientApplicationsOnly", default=None,)
 	clientApplicationIds: Optional[list[str]] = Field(alias="clientApplicationIds", default=None,)
 	clientApplicationPublisherIds: Optional[list[str]] = Field(alias="clientApplicationPublisherIds", default=None,)
@@ -21,4 +22,3 @@ class PermissionGrantConditionSet(BaseModel):
 from .permission_type import PermissionType
 from .all_scope_sensitivity_labels import AllScopeSensitivityLabels
 from .enumerated_scope_sensitivity_labels import EnumeratedScopeSensitivityLabels
-

@@ -2,7 +2,7 @@ from __future__ import annotations
 from typing import Optional
 from typing import Union
 from typing import Annotated
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class DeviceManagementSettingCategoryCollectionResponse(BaseModel):
@@ -12,4 +12,3 @@ class DeviceManagementSettingCategoryCollectionResponse(BaseModel):
 
 from .device_management_intent_setting_category import DeviceManagementIntentSettingCategory
 from .device_management_template_setting_category import DeviceManagementTemplateSettingCategory
-

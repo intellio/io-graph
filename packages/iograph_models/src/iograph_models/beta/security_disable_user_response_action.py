@@ -1,7 +1,7 @@
 from __future__ import annotations
 from typing import Optional
 from typing import Literal
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class SecurityDisableUserResponseAction(BaseModel):
@@ -9,4 +9,3 @@ class SecurityDisableUserResponseAction(BaseModel):
 	identifier: Optional[SecurityDisableUserEntityIdentifier | str] = Field(alias="identifier", default=None,)
 
 from .security_disable_user_entity_identifier import SecurityDisableUserEntityIdentifier
-

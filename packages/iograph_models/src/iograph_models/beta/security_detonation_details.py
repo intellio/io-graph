@@ -1,7 +1,7 @@
 from __future__ import annotations
 from typing import Optional
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class SecurityDetonationDetails(BaseModel):
@@ -19,4 +19,3 @@ from .security_compromise_indicator import SecurityCompromiseIndicator
 from .security_detonation_behaviour_details import SecurityDetonationBehaviourDetails
 from .security_detonation_chain import SecurityDetonationChain
 from .security_detonation_observables import SecurityDetonationObservables
-

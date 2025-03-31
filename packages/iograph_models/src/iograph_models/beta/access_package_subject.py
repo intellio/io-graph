@@ -1,12 +1,13 @@
 from __future__ import annotations
 from typing import Optional
+from typing import Literal
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class AccessPackageSubject(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
+	odata_type: Literal["#microsoft.graph.accessPackageSubject"] = Field(alias="@odata.type",)
 	altSecId: Optional[str] = Field(alias="altSecId", default=None,)
 	cleanupScheduledDateTime: Optional[datetime] = Field(alias="cleanupScheduledDateTime", default=None,)
 	connectedOrganizationId: Optional[str] = Field(alias="connectedOrganizationId", default=None,)
@@ -21,4 +22,3 @@ class AccessPackageSubject(BaseModel):
 
 from .access_package_subject_lifecycle import AccessPackageSubjectLifecycle
 from .connected_organization import ConnectedOrganization
-

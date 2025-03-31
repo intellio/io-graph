@@ -1,7 +1,7 @@
 from __future__ import annotations
 from typing import Optional
 from typing import Literal
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class PlannerRelationshipBasedUserType(BaseModel):
@@ -11,4 +11,3 @@ class PlannerRelationshipBasedUserType(BaseModel):
 
 from .planner_user_role_kind import PlannerUserRoleKind
 from .planner_relationship_user_roles import PlannerRelationshipUserRoles
-

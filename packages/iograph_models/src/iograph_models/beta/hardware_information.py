@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class HardwareInformation(BaseModel):
@@ -52,4 +52,3 @@ from .device_guard_virtualization_based_security_hardware_requirement_state impo
 from .device_guard_virtualization_based_security_state import DeviceGuardVirtualizationBasedSecurityState
 from .device_licensing_status import DeviceLicensingStatus
 from .shared_apple_device_user import SharedAppleDeviceUser
-

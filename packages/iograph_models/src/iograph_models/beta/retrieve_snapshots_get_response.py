@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class Retrieve_snapshotsGetResponse(BaseModel):
@@ -9,4 +9,3 @@ class Retrieve_snapshotsGetResponse(BaseModel):
 	value: Optional[list[CloudPcSnapshot]] = Field(alias="value", default=None,)
 
 from .cloud_pc_snapshot import CloudPcSnapshot
-

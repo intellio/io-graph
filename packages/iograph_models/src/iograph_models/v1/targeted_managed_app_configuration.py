@@ -2,7 +2,7 @@ from __future__ import annotations
 from typing import Optional
 from typing import Literal
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class TargetedManagedAppConfiguration(BaseModel):
@@ -24,4 +24,3 @@ from .key_value_pair import KeyValuePair
 from .managed_mobile_app import ManagedMobileApp
 from .targeted_managed_app_policy_assignment import TargetedManagedAppPolicyAssignment
 from .managed_app_policy_deployment_summary import ManagedAppPolicyDeploymentSummary
-

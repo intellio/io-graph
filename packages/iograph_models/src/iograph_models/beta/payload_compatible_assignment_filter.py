@@ -2,7 +2,7 @@ from __future__ import annotations
 from typing import Optional
 from typing import Literal
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class PayloadCompatibleAssignmentFilter(BaseModel):
@@ -23,4 +23,3 @@ from .assignment_filter_management_type import AssignmentFilterManagementType
 from .payload_by_filter import PayloadByFilter
 from .device_platform_type import DevicePlatformType
 from .assignment_filter_payload_type import AssignmentFilterPayloadType
-

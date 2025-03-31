@@ -1,7 +1,7 @@
 from __future__ import annotations
 from typing import Optional
 from typing import Literal
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class PersistentBrowserSessionControl(BaseModel):
@@ -10,4 +10,3 @@ class PersistentBrowserSessionControl(BaseModel):
 	mode: Optional[PersistentBrowserSessionMode | str] = Field(alias="mode", default=None,)
 
 from .persistent_browser_session_mode import PersistentBrowserSessionMode
-

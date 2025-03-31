@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class AospDeviceOwnerPkcsCertificateProfileCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class AospDeviceOwnerPkcsCertificateProfileCollectionResponse(BaseModel):
 	value: Optional[list[AospDeviceOwnerPkcsCertificateProfile]] = Field(alias="value", default=None,)
 
 from .aosp_device_owner_pkcs_certificate_profile import AospDeviceOwnerPkcsCertificateProfile
-

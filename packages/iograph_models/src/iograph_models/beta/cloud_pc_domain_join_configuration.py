@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class CloudPcDomainJoinConfiguration(BaseModel):
@@ -13,5 +13,3 @@ class CloudPcDomainJoinConfiguration(BaseModel):
 
 from .cloud_pc_domain_join_type import CloudPcDomainJoinType
 from .cloud_pc_region_group import CloudPcRegionGroup
-from .cloud_pc_domain_join_type import CloudPcDomainJoinType
-

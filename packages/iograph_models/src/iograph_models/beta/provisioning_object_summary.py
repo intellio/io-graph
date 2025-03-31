@@ -1,13 +1,14 @@
 from __future__ import annotations
 from typing import Optional
 from typing import Union
+from typing import Literal
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class ProvisioningObjectSummary(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
+	odata_type: Literal["#microsoft.graph.provisioningObjectSummary"] = Field(alias="@odata.type",)
 	action: Optional[str] = Field(alias="action", default=None,)
 	activityDateTime: Optional[datetime] = Field(alias="activityDateTime", default=None,)
 	changeId: Optional[str] = Field(alias="changeId", default=None,)
@@ -36,6 +37,3 @@ from .provisioning_service_principal import ProvisioningServicePrincipal
 from .provisioned_identity import ProvisionedIdentity
 from .provisioning_system import ProvisioningSystem
 from .status_details import StatusDetails
-from .provisioned_identity import ProvisionedIdentity
-from .provisioning_system import ProvisioningSystem
-

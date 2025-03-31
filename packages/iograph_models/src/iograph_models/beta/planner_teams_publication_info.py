@@ -2,7 +2,7 @@ from __future__ import annotations
 from typing import Optional
 from typing import Literal
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class PlannerTeamsPublicationInfo(BaseModel):
@@ -16,4 +16,3 @@ class PlannerTeamsPublicationInfo(BaseModel):
 	publishingTeamName: Optional[str] = Field(alias="publishingTeamName", default=None,)
 
 from .planner_creation_source_kind import PlannerCreationSourceKind
-

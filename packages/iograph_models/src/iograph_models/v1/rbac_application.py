@@ -1,11 +1,12 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from typing import Literal
+from pydantic import BaseModel, Field
 
 
 class RbacApplication(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
+	odata_type: Literal["#microsoft.graph.rbacApplication"] = Field(alias="@odata.type",)
 	resourceNamespaces: Optional[list[UnifiedRbacResourceNamespace]] = Field(alias="resourceNamespaces", default=None,)
 	roleAssignments: Optional[list[UnifiedRoleAssignment]] = Field(alias="roleAssignments", default=None,)
 	roleAssignmentScheduleInstances: Optional[list[UnifiedRoleAssignmentScheduleInstance]] = Field(alias="roleAssignmentScheduleInstances", default=None,)
@@ -25,4 +26,3 @@ from .unified_role_definition import UnifiedRoleDefinition
 from .unified_role_eligibility_schedule_instance import UnifiedRoleEligibilityScheduleInstance
 from .unified_role_eligibility_schedule_request import UnifiedRoleEligibilityScheduleRequest
 from .unified_role_eligibility_schedule import UnifiedRoleEligibilitySchedule
-

@@ -2,7 +2,7 @@ from __future__ import annotations
 from typing import Optional
 from typing import Union
 from typing import Literal
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class VirtualEventPresenterInfo(BaseModel):
@@ -21,4 +21,3 @@ from .communications_identity_set import CommunicationsIdentitySet
 from .share_point_identity_set import SharePointIdentitySet
 from .online_meeting_role import OnlineMeetingRole
 from .virtual_event_presenter_details import VirtualEventPresenterDetails
-

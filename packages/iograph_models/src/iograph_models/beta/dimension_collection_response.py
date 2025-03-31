@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class DimensionCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class DimensionCollectionResponse(BaseModel):
 	value: Optional[list[Dimension]] = Field(alias="value", default=None,)
 
 from .dimension import Dimension
-

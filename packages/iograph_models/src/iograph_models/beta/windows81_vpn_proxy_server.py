@@ -1,7 +1,7 @@
 from __future__ import annotations
 from typing import Optional
 from typing import Literal
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class Windows81VpnProxyServer(BaseModel):
@@ -11,5 +11,4 @@ class Windows81VpnProxyServer(BaseModel):
 	odata_type: Literal["#microsoft.graph.windows81VpnProxyServer"] = Field(alias="@odata.type", default="#microsoft.graph.windows81VpnProxyServer")
 	automaticallyDetectProxySettings: Optional[bool] = Field(alias="automaticallyDetectProxySettings", default=None,)
 	bypassProxyServerForLocalAddress: Optional[bool] = Field(alias="bypassProxyServerForLocalAddress", default=None,)
-
 

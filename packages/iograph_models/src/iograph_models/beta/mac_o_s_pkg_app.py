@@ -4,7 +4,7 @@ from typing import Union
 from typing import Literal
 from typing import Annotated
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class MacOSPkgApp(BaseModel):
@@ -54,5 +54,3 @@ from .mobile_app_content import MobileAppContent
 from .mac_o_s_included_app import MacOSIncludedApp
 from .mac_o_s_minimum_operating_system import MacOSMinimumOperatingSystem
 from .mac_o_s_app_script import MacOSAppScript
-from .mac_o_s_app_script import MacOSAppScript
-

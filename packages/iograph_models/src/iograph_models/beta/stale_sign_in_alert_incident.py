@@ -2,7 +2,7 @@ from __future__ import annotations
 from typing import Optional
 from typing import Literal
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class StaleSignInAlertIncident(BaseModel):
@@ -16,5 +16,4 @@ class StaleSignInAlertIncident(BaseModel):
 	roleDefinitionId: Optional[str] = Field(alias="roleDefinitionId", default=None,)
 	roleDisplayName: Optional[str] = Field(alias="roleDisplayName", default=None,)
 	roleTemplateId: Optional[str] = Field(alias="roleTemplateId", default=None,)
-
 

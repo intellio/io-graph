@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class AppleVppTokenTroubleshootingEventCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class AppleVppTokenTroubleshootingEventCollectionResponse(BaseModel):
 	value: Optional[list[AppleVppTokenTroubleshootingEvent]] = Field(alias="value", default=None,)
 
 from .apple_vpp_token_troubleshooting_event import AppleVppTokenTroubleshootingEvent
-

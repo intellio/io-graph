@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class AccessPackageTextInputQuestionCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class AccessPackageTextInputQuestionCollectionResponse(BaseModel):
 	value: Optional[list[AccessPackageTextInputQuestion]] = Field(alias="value", default=None,)
 
 from .access_package_text_input_question import AccessPackageTextInputQuestion
-

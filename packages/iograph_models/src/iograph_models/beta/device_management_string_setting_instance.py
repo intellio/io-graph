@@ -1,7 +1,7 @@
 from __future__ import annotations
 from typing import Optional
 from typing import Literal
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class DeviceManagementStringSettingInstance(BaseModel):
@@ -10,5 +10,4 @@ class DeviceManagementStringSettingInstance(BaseModel):
 	definitionId: Optional[str] = Field(alias="definitionId", default=None,)
 	valueJson: Optional[str] = Field(alias="valueJson", default=None,)
 	value: Optional[str] = Field(alias="value", default=None,)
-
 

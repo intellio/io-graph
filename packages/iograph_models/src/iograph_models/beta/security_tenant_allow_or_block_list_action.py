@@ -1,7 +1,7 @@
 from __future__ import annotations
 from typing import Optional
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class SecurityTenantAllowOrBlockListAction(BaseModel):
@@ -13,4 +13,3 @@ class SecurityTenantAllowOrBlockListAction(BaseModel):
 
 from .security_tenant_allow_block_list_action import SecurityTenantAllowBlockListAction
 from .security_tenant_allow_block_list_entry_result import SecurityTenantAllowBlockListEntryResult
-

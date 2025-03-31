@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class PrintJobStatus(BaseModel):
@@ -15,5 +15,3 @@ class PrintJobStatus(BaseModel):
 
 from .print_job_state_detail import PrintJobStateDetail
 from .print_job_processing_state import PrintJobProcessingState
-from .print_job_processing_state import PrintJobProcessingState
-

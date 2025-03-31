@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class PrivilegedOperationEventCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class PrivilegedOperationEventCollectionResponse(BaseModel):
 	value: Optional[list[PrivilegedOperationEvent]] = Field(alias="value", default=None,)
 
 from .privileged_operation_event import PrivilegedOperationEvent
-

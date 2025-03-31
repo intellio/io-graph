@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class AccessReviewDecisionCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class AccessReviewDecisionCollectionResponse(BaseModel):
 	value: Optional[list[AccessReviewDecision]] = Field(alias="value", default=None,)
 
 from .access_review_decision import AccessReviewDecision
-

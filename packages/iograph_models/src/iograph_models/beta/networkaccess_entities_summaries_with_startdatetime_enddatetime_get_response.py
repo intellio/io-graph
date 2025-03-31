@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class Networkaccess_entities_summaries_with_startdatetime_enddatetimeGetResponse(BaseModel):
@@ -9,4 +9,3 @@ class Networkaccess_entities_summaries_with_startdatetime_enddatetimeGetResponse
 	value: Optional[list[NetworkaccessEntitiesSummary]] = Field(alias="value", default=None,)
 
 from .networkaccess_entities_summary import NetworkaccessEntitiesSummary
-

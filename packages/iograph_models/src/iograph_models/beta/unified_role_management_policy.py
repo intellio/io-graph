@@ -1,18 +1,19 @@
 from __future__ import annotations
 from typing import Optional
 from typing import Union
+from typing import Literal
 from typing import Annotated
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class UnifiedRoleManagementPolicy(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
+	odata_type: Literal["#microsoft.graph.unifiedRoleManagementPolicy"] = Field(alias="@odata.type",)
 	description: Optional[str] = Field(alias="description", default=None,)
 	displayName: Optional[str] = Field(alias="displayName", default=None,)
 	isOrganizationDefault: Optional[bool] = Field(alias="isOrganizationDefault", default=None,)
-	lastModifiedBy: Optional[Union[AzureCommunicationServicesUserIdentity, CommunicationsApplicationIdentity, CommunicationsApplicationInstanceIdentity, CommunicationsEncryptedIdentity, CommunicationsGuestIdentity, CommunicationsPhoneIdentity, CommunicationsUserIdentity, EmailIdentity, Initiator, ProgramResource, ProvisionedIdentity, ProvisioningServicePrincipal, ProvisioningSystem, ServicePrincipalIdentity, SharePointIdentity, SourceProvisionedIdentity, TargetProvisionedIdentity, TeamworkApplicationIdentity, TeamworkConversationIdentity, TeamworkTagIdentity, TeamworkUserIdentity, UserIdentity, AuditUserIdentity, CallRecordsUserIdentity, SecuritySubmissionUserIdentity]] = Field(alias="lastModifiedBy", default=None,discriminator="odata_type", )
+	lastModifiedBy: Optional[Union[AzureCommunicationServicesUserIdentity, CommunicationsApplicationIdentity, CommunicationsApplicationInstanceIdentity, CommunicationsEncryptedIdentity, CommunicationsGuestIdentity, CommunicationsPhoneIdentity, CommunicationsUserIdentity, EmailIdentity, Initiator, ProgramResource, ProvisionedIdentity, ProvisioningServicePrincipal, ProvisioningSystem, ServicePrincipalIdentity, SharePointIdentity, SourceProvisionedIdentity, TargetProvisionedIdentity, TeamworkApplicationIdentity, TeamworkConversationIdentity, TeamworkTagIdentity, TeamworkUserIdentity, AuditUserIdentity, CallRecordsUserIdentity, SecuritySubmissionUserIdentity]] = Field(alias="lastModifiedBy", default=None,discriminator="odata_type", )
 	lastModifiedDateTime: Optional[datetime] = Field(alias="lastModifiedDateTime", default=None,)
 	scopeId: Optional[str] = Field(alias="scopeId", default=None,)
 	scopeType: Optional[str] = Field(alias="scopeType", default=None,)
@@ -40,7 +41,6 @@ from .teamwork_application_identity import TeamworkApplicationIdentity
 from .teamwork_conversation_identity import TeamworkConversationIdentity
 from .teamwork_tag_identity import TeamworkTagIdentity
 from .teamwork_user_identity import TeamworkUserIdentity
-from .user_identity import UserIdentity
 from .audit_user_identity import AuditUserIdentity
 from .call_records_user_identity import CallRecordsUserIdentity
 from .security_submission_user_identity import SecuritySubmissionUserIdentity
@@ -49,9 +49,3 @@ from .unified_role_management_policy_authentication_context_rule import UnifiedR
 from .unified_role_management_policy_enablement_rule import UnifiedRoleManagementPolicyEnablementRule
 from .unified_role_management_policy_expiration_rule import UnifiedRoleManagementPolicyExpirationRule
 from .unified_role_management_policy_notification_rule import UnifiedRoleManagementPolicyNotificationRule
-from .unified_role_management_policy_approval_rule import UnifiedRoleManagementPolicyApprovalRule
-from .unified_role_management_policy_authentication_context_rule import UnifiedRoleManagementPolicyAuthenticationContextRule
-from .unified_role_management_policy_enablement_rule import UnifiedRoleManagementPolicyEnablementRule
-from .unified_role_management_policy_expiration_rule import UnifiedRoleManagementPolicyExpirationRule
-from .unified_role_management_policy_notification_rule import UnifiedRoleManagementPolicyNotificationRule
-

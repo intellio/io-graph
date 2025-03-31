@@ -2,7 +2,7 @@ from __future__ import annotations
 from typing import Optional
 from typing import Union
 from typing import Annotated
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class AccessPackageAssignmentRequestRequirements(BaseModel):
@@ -26,4 +26,3 @@ from .request_schedule import RequestSchedule
 from .verifiable_credential_required import VerifiableCredentialRequired
 from .verifiable_credential_retrieved import VerifiableCredentialRetrieved
 from .verifiable_credential_verified import VerifiableCredentialVerified
-

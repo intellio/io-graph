@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class BitLockerFixedDrivePolicy(BaseModel):
@@ -11,4 +11,3 @@ class BitLockerFixedDrivePolicy(BaseModel):
 
 from .bit_locker_encryption_method import BitLockerEncryptionMethod
 from .bit_locker_recovery_options import BitLockerRecoveryOptions
-

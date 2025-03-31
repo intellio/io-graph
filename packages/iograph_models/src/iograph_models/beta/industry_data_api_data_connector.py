@@ -2,10 +2,10 @@ from __future__ import annotations
 from typing import Optional
 from typing import Union
 from typing import Literal
+from pydantic import BaseModel, Field
 from pydantic import model_validator, ModelWrapValidatorHandler, ValidationError
 from typing_extensions import Self
 from typing import Any
-from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class IndustryDataApiDataConnector(BaseModel):
@@ -15,7 +15,7 @@ class IndustryDataApiDataConnector(BaseModel):
 	sourceSystem: Optional[IndustryDataSourceSystemDefinition] = Field(alias="sourceSystem", default=None,)
 	apiFormat: Optional[IndustryDataApiFormat | str] = Field(alias="apiFormat", default=None,)
 	baseUrl: Optional[str] = Field(alias="baseUrl", default=None,)
-	credential: Optional[Union[IndustryDataOAuthClientCredential, IndustryDataOAuth1ClientCredential, IndustryDataOAuth2ClientCredential]] = Field(alias="credential", default=None,discriminator="odata_type", )
+	credential: Optional[Union[IndustryDataOAuth1ClientCredential, IndustryDataOAuth2ClientCredential]] = Field(alias="credential", default=None,discriminator="odata_type", )
 
 	@model_validator(mode="wrap")
 	def convert_discriminator_class(cls, data: Any, handler: ModelWrapValidatorHandler[Self]) -> Self:
@@ -37,7 +37,5 @@ class IndustryDataApiDataConnector(BaseModel):
 
 from .industry_data_source_system_definition import IndustryDataSourceSystemDefinition
 from .industry_data_api_format import IndustryDataApiFormat
-from .industry_data_o_auth_client_credential import IndustryDataOAuthClientCredential
 from .industry_data_o_auth1_client_credential import IndustryDataOAuth1ClientCredential
 from .industry_data_o_auth2_client_credential import IndustryDataOAuth2ClientCredential
-

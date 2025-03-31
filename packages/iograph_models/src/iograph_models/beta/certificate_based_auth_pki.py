@@ -2,7 +2,7 @@ from __future__ import annotations
 from typing import Optional
 from typing import Literal
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class CertificateBasedAuthPki(BaseModel):
@@ -16,4 +16,3 @@ class CertificateBasedAuthPki(BaseModel):
 	certificateAuthorities: Optional[list[CertificateAuthorityDetail]] = Field(alias="certificateAuthorities", default=None,)
 
 from .certificate_authority_detail import CertificateAuthorityDetail
-

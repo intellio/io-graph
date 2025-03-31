@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class Get_available_extension_propertiesPostResponse(BaseModel):
@@ -9,4 +9,3 @@ class Get_available_extension_propertiesPostResponse(BaseModel):
 	value: Optional[list[ExtensionProperty]] = Field(alias="value", default=None,)
 
 from .extension_property import ExtensionProperty
-

@@ -3,7 +3,7 @@ from typing import Optional
 from typing import Union
 from typing import Literal
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class EducationFeedbackResourceOutcome(BaseModel):
@@ -32,4 +32,3 @@ from .education_power_point_resource import EducationPowerPointResource
 from .education_teams_app_resource import EducationTeamsAppResource
 from .education_word_resource import EducationWordResource
 from .education_feedback_resource_outcome_status import EducationFeedbackResourceOutcomeStatus
-

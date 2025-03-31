@@ -15,8 +15,8 @@ if TYPE_CHECKING:
 	from .by_whois_history_record_id import ByWhoisHistoryRecordIdRequest
 	from .....request_adapter import HttpxRequestAdapter
 from iograph_models.beta.security_whois_history_record_collection_response import SecurityWhoisHistoryRecordCollectionResponse
-from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.beta.security_whois_history_record import SecurityWhoisHistoryRecord
+from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 
 
 class WhoisHistoryRecordsRequest(BaseRequestBuilder):

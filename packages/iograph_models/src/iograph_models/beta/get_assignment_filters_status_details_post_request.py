@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class Get_assignment_filters_status_detailsPostRequest(BaseModel):
@@ -10,5 +10,4 @@ class Get_assignment_filters_status_detailsPostRequest(BaseModel):
 	assignmentFilterIds: Optional[list[str]] = Field(alias="assignmentFilterIds", default=None,)
 	top: Optional[int] = Field(alias="top", default=None,)
 	skip: Optional[int] = Field(alias="skip", default=None,)
-
 

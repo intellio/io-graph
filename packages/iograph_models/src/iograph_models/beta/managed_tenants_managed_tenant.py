@@ -1,11 +1,12 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from typing import Literal
+from pydantic import BaseModel, Field
 
 
 class ManagedTenantsManagedTenant(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
+	odata_type: Literal["#microsoft.graph.managedTenants.managedTenant"] = Field(alias="@odata.type",)
 	aggregatedPolicyCompliances: Optional[list[ManagedTenantsAggregatedPolicyCompliance]] = Field(alias="aggregatedPolicyCompliances", default=None,)
 	appPerformances: Optional[list[ManagedTenantsAppPerformance]] = Field(alias="appPerformances", default=None,)
 	auditEvents: Optional[list[ManagedTenantsAuditEvent]] = Field(alias="auditEvents", default=None,)
@@ -81,4 +82,3 @@ from .managed_tenants_tenant_detailed_information import ManagedTenantsTenantDet
 from .managed_tenants_tenant_tag import ManagedTenantsTenantTag
 from .managed_tenants_windows_device_malware_state import ManagedTenantsWindowsDeviceMalwareState
 from .managed_tenants_windows_protection_state import ManagedTenantsWindowsProtectionState
-

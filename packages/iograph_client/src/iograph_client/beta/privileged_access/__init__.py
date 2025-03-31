@@ -14,9 +14,9 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_privileged_access_id import ByPrivilegedAccessIdRequest
 	from ...request_adapter import HttpxRequestAdapter
-from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.beta.privileged_access_collection_response import PrivilegedAccessCollectionResponse
 from iograph_models.beta.privileged_access import PrivilegedAccess
+from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 
 
 class PrivilegedAccessRequest(BaseRequestBuilder):

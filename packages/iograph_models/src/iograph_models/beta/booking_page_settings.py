@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class BookingPageSettings(BaseModel):
@@ -18,4 +18,3 @@ class BookingPageSettings(BaseModel):
 	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
 
 from .booking_page_access_control import BookingPageAccessControl
-

@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class PrivilegeEscalationGcpServiceAccountFindingCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class PrivilegeEscalationGcpServiceAccountFindingCollectionResponse(BaseModel):
 	value: Optional[list[PrivilegeEscalationGcpServiceAccountFinding]] = Field(alias="value", default=None,)
 
 from .privilege_escalation_gcp_service_account_finding import PrivilegeEscalationGcpServiceAccountFinding
-

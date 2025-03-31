@@ -1,13 +1,14 @@
 from __future__ import annotations
 from typing import Optional
 from typing import Union
+from typing import Literal
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class BrowserSharedCookie(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
+	odata_type: Literal["#microsoft.graph.browserSharedCookie"] = Field(alias="@odata.type",)
 	comment: Optional[str] = Field(alias="comment", default=None,)
 	createdDateTime: Optional[datetime] = Field(alias="createdDateTime", default=None,)
 	deletedDateTime: Optional[datetime] = Field(alias="deletedDateTime", default=None,)
@@ -31,4 +32,3 @@ from .communications_identity_set import CommunicationsIdentitySet
 from .share_point_identity_set import SharePointIdentitySet
 from .browser_shared_cookie_source_environment import BrowserSharedCookieSourceEnvironment
 from .browser_shared_cookie_status import BrowserSharedCookieStatus
-

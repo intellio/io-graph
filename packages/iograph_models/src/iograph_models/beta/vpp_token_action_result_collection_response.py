@@ -2,7 +2,7 @@ from __future__ import annotations
 from typing import Optional
 from typing import Union
 from typing import Annotated
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class VppTokenActionResultCollectionResponse(BaseModel):
@@ -11,4 +11,3 @@ class VppTokenActionResultCollectionResponse(BaseModel):
 	value: Optional[list[Annotated[Union[VppTokenRevokeLicensesActionResult],Field(discriminator="odata_type")]]] = Field(alias="value", default=None,)
 
 from .vpp_token_revoke_licenses_action_result import VppTokenRevokeLicensesActionResult
-

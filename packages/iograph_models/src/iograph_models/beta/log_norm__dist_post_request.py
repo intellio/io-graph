@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class Log_norm__distPostRequest(BaseModel):
@@ -8,5 +8,4 @@ class Log_norm__distPostRequest(BaseModel):
 	mean: Optional[str] = Field(alias="mean", default=None,)
 	standardDev: Optional[str] = Field(alias="standardDev", default=None,)
 	cumulative: Optional[str] = Field(alias="cumulative", default=None,)
-
 

@@ -14,8 +14,8 @@ if TYPE_CHECKING:
 	from .restore_version import RestoreVersionRequest
 	from .content import ContentRequest
 	from ........request_adapter import HttpxRequestAdapter
-from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.beta.drive_item_version import DriveItemVersion
+from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 
 
 class ByDriveItemVersionIdRequest(BaseRequestBuilder):

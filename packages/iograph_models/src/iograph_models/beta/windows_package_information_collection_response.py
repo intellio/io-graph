@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class WindowsPackageInformationCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class WindowsPackageInformationCollectionResponse(BaseModel):
 	value: Optional[list[WindowsPackageInformation]] = Field(alias="value", default=None,)
 
 from .windows_package_information import WindowsPackageInformation
-

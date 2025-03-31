@@ -2,7 +2,7 @@ from __future__ import annotations
 from typing import Optional
 from typing import Union
 from typing import Annotated
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class ServiceProvisioningErrorCollectionResponse(BaseModel):
@@ -12,4 +12,3 @@ class ServiceProvisioningErrorCollectionResponse(BaseModel):
 
 from .service_provisioning_resource_error import ServiceProvisioningResourceError
 from .service_provisioning_xml_error import ServiceProvisioningXmlError
-

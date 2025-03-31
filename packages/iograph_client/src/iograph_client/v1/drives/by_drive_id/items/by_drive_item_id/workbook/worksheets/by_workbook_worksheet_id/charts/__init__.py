@@ -17,8 +17,8 @@ if TYPE_CHECKING:
 	from .add import AddRequest
 	from .by_workbook_chart_id import ByWorkbookChartIdRequest
 	from ..........request_adapter import HttpxRequestAdapter
-from iograph_models.v1.workbook_chart_collection_response import WorkbookChartCollectionResponse
 from iograph_models.v1.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.v1.workbook_chart_collection_response import WorkbookChartCollectionResponse
 from iograph_models.v1.workbook_chart import WorkbookChart
 
 

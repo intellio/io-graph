@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class IndustryDataOneRosterApiDataConnectorCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class IndustryDataOneRosterApiDataConnectorCollectionResponse(BaseModel):
 	value: Optional[list[IndustryDataOneRosterApiDataConnector]] = Field(alias="value", default=None,)
 
 from .industry_data_one_roster_api_data_connector import IndustryDataOneRosterApiDataConnector
-

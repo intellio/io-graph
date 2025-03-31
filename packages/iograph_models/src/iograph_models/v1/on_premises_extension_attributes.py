@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class OnPremisesExtensionAttributes(BaseModel):
@@ -20,5 +20,4 @@ class OnPremisesExtensionAttributes(BaseModel):
 	extensionAttribute8: Optional[str] = Field(alias="extensionAttribute8", default=None,)
 	extensionAttribute9: Optional[str] = Field(alias="extensionAttribute9", default=None,)
 	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
-
 

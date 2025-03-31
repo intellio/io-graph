@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class HostSecurityProfileCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class HostSecurityProfileCollectionResponse(BaseModel):
 	value: Optional[list[HostSecurityProfile]] = Field(alias="value", default=None,)
 
 from .host_security_profile import HostSecurityProfile
-

@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class DataSharingConsentCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class DataSharingConsentCollectionResponse(BaseModel):
 	value: Optional[list[DataSharingConsent]] = Field(alias="value", default=None,)
 
 from .data_sharing_consent import DataSharingConsent
-

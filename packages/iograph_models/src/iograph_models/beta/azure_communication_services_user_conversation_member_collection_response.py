@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class AzureCommunicationServicesUserConversationMemberCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class AzureCommunicationServicesUserConversationMemberCollectionResponse(BaseMod
 	value: Optional[list[AzureCommunicationServicesUserConversationMember]] = Field(alias="value", default=None,)
 
 from .azure_communication_services_user_conversation_member import AzureCommunicationServicesUserConversationMember
-

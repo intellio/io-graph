@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class X509CertificateRule(BaseModel):
@@ -15,4 +15,3 @@ class X509CertificateRule(BaseModel):
 from .x509_certificate_authentication_mode import X509CertificateAuthenticationMode
 from .x509_certificate_affinity_level import X509CertificateAffinityLevel
 from .x509_certificate_rule_type import X509CertificateRuleType
-

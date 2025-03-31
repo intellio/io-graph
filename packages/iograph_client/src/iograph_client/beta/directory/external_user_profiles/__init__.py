@@ -15,8 +15,8 @@ if TYPE_CHECKING:
 	from .by_external_user_profile_id import ByExternalUserProfileIdRequest
 	from ....request_adapter import HttpxRequestAdapter
 from iograph_models.beta.external_user_profile_collection_response import ExternalUserProfileCollectionResponse
-from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.beta.external_user_profile import ExternalUserProfile
+from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 
 
 class ExternalUserProfilesRequest(BaseRequestBuilder):

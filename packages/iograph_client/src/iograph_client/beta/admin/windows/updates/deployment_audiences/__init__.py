@@ -14,9 +14,9 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_deployment_audience_id import ByDeploymentAudienceIdRequest
 	from ......request_adapter import HttpxRequestAdapter
+from iograph_models.beta.windows_updates_deployment_audience_collection_response import WindowsUpdatesDeploymentAudienceCollectionResponse
 from iograph_models.beta.windows_updates_deployment_audience import WindowsUpdatesDeploymentAudience
 from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
-from iograph_models.beta.windows_updates_deployment_audience_collection_response import WindowsUpdatesDeploymentAudienceCollectionResponse
 
 
 class DeploymentAudiencesRequest(BaseRequestBuilder):

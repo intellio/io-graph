@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class DeviceComplianceScriptRule(BaseModel):
@@ -16,4 +16,3 @@ from .data_type import DataType
 from .device_compliance_script_rule_data_type import DeviceComplianceScriptRuleDataType
 from .device_compliance_script_rul_operator import DeviceComplianceScriptRulOperator
 from .operator import Operator
-

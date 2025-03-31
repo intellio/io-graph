@@ -1,7 +1,7 @@
 from __future__ import annotations
 from typing import Optional
 from typing import Literal
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class PrintUsageByUser(BaseModel):
@@ -19,5 +19,4 @@ class PrintUsageByUser(BaseModel):
 	singleSidedSheetCount: Optional[int] = Field(alias="singleSidedSheetCount", default=None,)
 	usageDate: Optional[str] = Field(alias="usageDate", default=None,)
 	userPrincipalName: Optional[str] = Field(alias="userPrincipalName", default=None,)
-
 

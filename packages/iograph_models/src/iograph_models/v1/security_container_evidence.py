@@ -2,7 +2,7 @@ from __future__ import annotations
 from typing import Optional
 from typing import Literal
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class SecurityContainerEvidence(BaseModel):
@@ -27,4 +27,3 @@ from .security_evidence_role import SecurityEvidenceRole
 from .security_evidence_verdict import SecurityEvidenceVerdict
 from .security_container_image_evidence import SecurityContainerImageEvidence
 from .security_kubernetes_pod_evidence import SecurityKubernetesPodEvidence
-

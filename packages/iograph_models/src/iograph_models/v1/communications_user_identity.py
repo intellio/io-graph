@@ -1,7 +1,7 @@
 from __future__ import annotations
 from typing import Optional
 from typing import Literal
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class CommunicationsUserIdentity(BaseModel):
@@ -9,5 +9,4 @@ class CommunicationsUserIdentity(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
 	odata_type: Literal["#microsoft.graph.communicationsUserIdentity"] = Field(alias="@odata.type", default="#microsoft.graph.communicationsUserIdentity")
 	tenantId: Optional[str] = Field(alias="tenantId", default=None,)
-
 

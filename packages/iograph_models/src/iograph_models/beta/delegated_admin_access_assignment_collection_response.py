@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class DelegatedAdminAccessAssignmentCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class DelegatedAdminAccessAssignmentCollectionResponse(BaseModel):
 	value: Optional[list[DelegatedAdminAccessAssignment]] = Field(alias="value", default=None,)
 
 from .delegated_admin_access_assignment import DelegatedAdminAccessAssignment
-

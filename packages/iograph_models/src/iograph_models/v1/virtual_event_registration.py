@@ -1,12 +1,13 @@
 from __future__ import annotations
 from typing import Optional
+from typing import Literal
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class VirtualEventRegistration(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
+	odata_type: Literal["#microsoft.graph.virtualEventRegistration"] = Field(alias="@odata.type",)
 	cancelationDateTime: Optional[datetime] = Field(alias="cancelationDateTime", default=None,)
 	email: Optional[str] = Field(alias="email", default=None,)
 	externalRegistrationInformation: Optional[VirtualEventExternalRegistrationInformation] = Field(alias="externalRegistrationInformation", default=None,)
@@ -24,4 +25,3 @@ from .virtual_event_external_registration_information import VirtualEventExterna
 from .virtual_event_registration_question_answer import VirtualEventRegistrationQuestionAnswer
 from .virtual_event_attendee_registration_status import VirtualEventAttendeeRegistrationStatus
 from .virtual_event_session import VirtualEventSession
-

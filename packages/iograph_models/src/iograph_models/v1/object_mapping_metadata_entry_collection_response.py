@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class ObjectMappingMetadataEntryCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class ObjectMappingMetadataEntryCollectionResponse(BaseModel):
 	value: Optional[list[ObjectMappingMetadataEntry]] = Field(alias="value", default=None,)
 
 from .object_mapping_metadata_entry import ObjectMappingMetadataEntry
-

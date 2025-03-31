@@ -1,7 +1,7 @@
 from __future__ import annotations
 from typing import Optional
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class Windows10AppsForceUpdateSchedule(BaseModel):
@@ -11,4 +11,3 @@ class Windows10AppsForceUpdateSchedule(BaseModel):
 	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
 
 from .windows10_apps_update_recurrence import Windows10AppsUpdateRecurrence
-

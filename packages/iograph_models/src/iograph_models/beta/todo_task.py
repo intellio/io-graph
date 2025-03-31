@@ -1,14 +1,15 @@
 from __future__ import annotations
 from typing import Optional
 from typing import Union
+from typing import Literal
 from typing import Annotated
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class TodoTask(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
+	odata_type: Literal["#microsoft.graph.todoTask"] = Field(alias="@odata.type",)
 	body: Optional[ItemBody] = Field(alias="body", default=None,)
 	bodyLastModifiedDateTime: Optional[datetime] = Field(alias="bodyLastModifiedDateTime", default=None,)
 	categories: Optional[list[str]] = Field(alias="categories", default=None,)
@@ -32,11 +33,8 @@ class TodoTask(BaseModel):
 
 from .item_body import ItemBody
 from .date_time_time_zone import DateTimeTimeZone
-from .date_time_time_zone import DateTimeTimeZone
 from .importance import Importance
 from .patterned_recurrence import PatternedRecurrence
-from .date_time_time_zone import DateTimeTimeZone
-from .date_time_time_zone import DateTimeTimeZone
 from .task_status import TaskStatus
 from .task_file_attachment import TaskFileAttachment
 from .attachment_session import AttachmentSession
@@ -44,4 +42,3 @@ from .checklist_item import ChecklistItem
 from .open_type_extension import OpenTypeExtension
 from .person_extension import PersonExtension
 from .linked_resource import LinkedResource
-

@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class AudioConferencing(BaseModel):
@@ -11,5 +11,4 @@ class AudioConferencing(BaseModel):
 	tollNumber: Optional[str] = Field(alias="tollNumber", default=None,)
 	tollNumbers: Optional[list[str]] = Field(alias="tollNumbers", default=None,)
 	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
-
 

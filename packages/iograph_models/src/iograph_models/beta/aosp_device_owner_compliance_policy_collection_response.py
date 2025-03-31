@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class AospDeviceOwnerCompliancePolicyCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class AospDeviceOwnerCompliancePolicyCollectionResponse(BaseModel):
 	value: Optional[list[AospDeviceOwnerCompliancePolicy]] = Field(alias="value", default=None,)
 
 from .aosp_device_owner_compliance_policy import AospDeviceOwnerCompliancePolicy
-

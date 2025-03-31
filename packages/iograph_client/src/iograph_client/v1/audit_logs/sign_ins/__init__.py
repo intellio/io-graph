@@ -15,8 +15,8 @@ if TYPE_CHECKING:
 	from .by_sign_in_id import BySignInIdRequest
 	from ....request_adapter import HttpxRequestAdapter
 from iograph_models.v1.o_data_errors__o_data_error import ODataErrorsODataError
-from iograph_models.v1.sign_in import SignIn
 from iograph_models.v1.sign_in_collection_response import SignInCollectionResponse
+from iograph_models.v1.sign_in import SignIn
 
 
 class SignInsRequest(BaseRequestBuilder):

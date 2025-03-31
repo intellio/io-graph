@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class SecuritySubmissionResult(BaseModel):
@@ -15,4 +15,3 @@ from .security_submission_result_category import SecuritySubmissionResultCategor
 from .security_submission_result_detail import SecuritySubmissionResultDetail
 from .security_submission_detected_file import SecuritySubmissionDetectedFile
 from .security_user_mailbox_setting import SecurityUserMailboxSetting
-

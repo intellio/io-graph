@@ -1,7 +1,7 @@
 from __future__ import annotations
 from typing import Optional
 from typing import Union
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class WorkingHours(BaseModel):
@@ -13,4 +13,3 @@ class WorkingHours(BaseModel):
 
 from .day_of_week import DayOfWeek
 from .custom_time_zone import CustomTimeZone
-

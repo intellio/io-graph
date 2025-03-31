@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class TeamworkFeaturesConfiguration(BaseModel):
@@ -10,5 +10,4 @@ class TeamworkFeaturesConfiguration(BaseModel):
 	isHideMeetingNamesEnabled: Optional[bool] = Field(alias="isHideMeetingNamesEnabled", default=None,)
 	isSendLogsAndFeedbackEnabled: Optional[bool] = Field(alias="isSendLogsAndFeedbackEnabled", default=None,)
 	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
-
 

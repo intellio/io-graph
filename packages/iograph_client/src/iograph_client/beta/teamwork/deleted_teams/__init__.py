@@ -15,9 +15,9 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_deleted_team_id import ByDeletedTeamIdRequest
 	from ....request_adapter import HttpxRequestAdapter
-from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.beta.deleted_team_collection_response import DeletedTeamCollectionResponse
 from iograph_models.beta.deleted_team import DeletedTeam
+from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 
 
 class DeletedTeamsRequest(BaseRequestBuilder):

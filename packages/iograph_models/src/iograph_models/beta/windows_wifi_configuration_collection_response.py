@@ -2,7 +2,7 @@ from __future__ import annotations
 from typing import Optional
 from typing import Union
 from typing import Annotated
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class WindowsWifiConfigurationCollectionResponse(BaseModel):
@@ -11,4 +11,3 @@ class WindowsWifiConfigurationCollectionResponse(BaseModel):
 	value: Optional[list[Annotated[Union[WindowsWifiEnterpriseEAPConfiguration],Field(discriminator="odata_type")]]] = Field(alias="value", default=None,)
 
 from .windows_wifi_enterprise_e_a_p_configuration import WindowsWifiEnterpriseEAPConfiguration
-

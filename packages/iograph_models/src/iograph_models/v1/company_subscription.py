@@ -1,12 +1,13 @@
 from __future__ import annotations
 from typing import Optional
+from typing import Literal
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class CompanySubscription(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
+	odata_type: Literal["#microsoft.graph.companySubscription"] = Field(alias="@odata.type",)
 	commerceSubscriptionId: Optional[str] = Field(alias="commerceSubscriptionId", default=None,)
 	createdDateTime: Optional[datetime] = Field(alias="createdDateTime", default=None,)
 	isTrial: Optional[bool] = Field(alias="isTrial", default=None,)
@@ -21,4 +22,3 @@ class CompanySubscription(BaseModel):
 	totalLicenses: Optional[int] = Field(alias="totalLicenses", default=None,)
 
 from .service_plan_info import ServicePlanInfo
-

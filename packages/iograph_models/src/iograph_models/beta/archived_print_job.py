@@ -2,7 +2,7 @@ from __future__ import annotations
 from typing import Optional
 from typing import Union
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class ArchivedPrintJob(BaseModel):
@@ -25,4 +25,3 @@ class ArchivedPrintJob(BaseModel):
 
 from .audit_user_identity import AuditUserIdentity
 from .print_job_processing_state import PrintJobProcessingState
-

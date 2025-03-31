@@ -3,7 +3,7 @@ from typing import Optional
 from typing import Union
 from typing import Literal
 from typing import Annotated
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class NetworkaccessInternetAccessForwardingRule(BaseModel):
@@ -25,4 +25,3 @@ from .networkaccess_url import NetworkaccessUrl
 from .networkaccess_web_category import NetworkaccessWebCategory
 from .networkaccess_network_destination_type import NetworkaccessNetworkDestinationType
 from .networkaccess_networking_protocol import NetworkaccessNetworkingProtocol
-

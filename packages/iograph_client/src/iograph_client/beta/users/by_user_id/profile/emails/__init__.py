@@ -15,8 +15,8 @@ if TYPE_CHECKING:
 	from .by_item_email_id import ByItemEmailIdRequest
 	from ......request_adapter import HttpxRequestAdapter
 from iograph_models.beta.item_email_collection_response import ItemEmailCollectionResponse
-from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.beta.item_email import ItemEmail
+from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 
 
 class EmailsRequest(BaseRequestBuilder):

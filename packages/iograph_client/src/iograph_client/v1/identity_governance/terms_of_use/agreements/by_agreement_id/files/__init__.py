@@ -15,8 +15,8 @@ if TYPE_CHECKING:
 	from .by_agreement_file_localization_id import ByAgreementFileLocalizationIdRequest
 	from .......request_adapter import HttpxRequestAdapter
 from iograph_models.v1.o_data_errors__o_data_error import ODataErrorsODataError
-from iograph_models.v1.agreement_file_localization_collection_response import AgreementFileLocalizationCollectionResponse
 from iograph_models.v1.agreement_file_localization import AgreementFileLocalization
+from iograph_models.v1.agreement_file_localization_collection_response import AgreementFileLocalizationCollectionResponse
 
 
 class FilesRequest(BaseRequestBuilder):

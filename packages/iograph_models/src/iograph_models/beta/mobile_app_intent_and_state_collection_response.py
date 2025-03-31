@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class MobileAppIntentAndStateCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class MobileAppIntentAndStateCollectionResponse(BaseModel):
 	value: Optional[list[MobileAppIntentAndState]] = Field(alias="value", default=None,)
 
 from .mobile_app_intent_and_state import MobileAppIntentAndState
-

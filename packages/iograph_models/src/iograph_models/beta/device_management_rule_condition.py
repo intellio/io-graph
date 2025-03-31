@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class DeviceManagementRuleCondition(BaseModel):
@@ -15,4 +15,3 @@ from .device_management_aggregation_type import DeviceManagementAggregationType
 from .device_management_condition_category import DeviceManagementConditionCategory
 from .device_management_operator_type import DeviceManagementOperatorType
 from .device_management_relationship_type import DeviceManagementRelationshipType
-

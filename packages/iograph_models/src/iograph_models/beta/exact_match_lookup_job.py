@@ -2,7 +2,7 @@ from __future__ import annotations
 from typing import Optional
 from typing import Literal
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class ExactMatchLookupJob(BaseModel):
@@ -18,4 +18,3 @@ class ExactMatchLookupJob(BaseModel):
 
 from .classification_error import ClassificationError
 from .lookup_result_row import LookupResultRow
-

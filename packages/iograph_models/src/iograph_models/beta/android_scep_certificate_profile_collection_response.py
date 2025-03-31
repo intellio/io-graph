@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class AndroidScepCertificateProfileCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class AndroidScepCertificateProfileCollectionResponse(BaseModel):
 	value: Optional[list[AndroidScepCertificateProfile]] = Field(alias="value", default=None,)
 
 from .android_scep_certificate_profile import AndroidScepCertificateProfile
-

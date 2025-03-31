@@ -1,12 +1,13 @@
 from __future__ import annotations
 from typing import Optional
+from typing import Literal
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class CloudPcExportJob(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
+	odata_type: Literal["#microsoft.graph.cloudPcExportJob"] = Field(alias="@odata.type",)
 	expirationDateTime: Optional[datetime] = Field(alias="expirationDateTime", default=None,)
 	exportJobStatus: Optional[CloudPcExportJobStatus | str] = Field(alias="exportJobStatus", default=None,)
 	exportUrl: Optional[str] = Field(alias="exportUrl", default=None,)
@@ -18,4 +19,3 @@ class CloudPcExportJob(BaseModel):
 
 from .cloud_pc_export_job_status import CloudPcExportJobStatus
 from .cloud_pc_report_name import CloudPcReportName
-

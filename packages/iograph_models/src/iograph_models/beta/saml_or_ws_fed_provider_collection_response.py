@@ -2,7 +2,7 @@ from __future__ import annotations
 from typing import Optional
 from typing import Union
 from typing import Annotated
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class SamlOrWsFedProviderCollectionResponse(BaseModel):
@@ -12,4 +12,3 @@ class SamlOrWsFedProviderCollectionResponse(BaseModel):
 
 from .internal_domain_federation import InternalDomainFederation
 from .saml_or_ws_fed_external_domain_federation import SamlOrWsFedExternalDomainFederation
-

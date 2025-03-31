@@ -15,9 +15,9 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_unified_role_management_alert_id import ByUnifiedRoleManagementAlertIdRequest
 	from .....request_adapter import HttpxRequestAdapter
-from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
-from iograph_models.beta.unified_role_management_alert_collection_response import UnifiedRoleManagementAlertCollectionResponse
 from iograph_models.beta.unified_role_management_alert import UnifiedRoleManagementAlert
+from iograph_models.beta.unified_role_management_alert_collection_response import UnifiedRoleManagementAlertCollectionResponse
+from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 
 
 class AlertsRequest(BaseRequestBuilder):

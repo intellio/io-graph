@@ -1,7 +1,7 @@
 from __future__ import annotations
 from typing import Optional
 from typing import Literal
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class InternalDomainFederation(BaseModel):
@@ -26,4 +26,3 @@ from .authentication_protocol import AuthenticationProtocol
 from .federated_idp_mfa_behavior import FederatedIdpMfaBehavior
 from .prompt_login_behavior import PromptLoginBehavior
 from .signing_certificate_update_status import SigningCertificateUpdateStatus
-

@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class PublishPostRequest(BaseModel):
@@ -10,4 +10,3 @@ class PublishPostRequest(BaseModel):
 
 from .browser_site import BrowserSite
 from .browser_shared_cookie import BrowserSharedCookie
-

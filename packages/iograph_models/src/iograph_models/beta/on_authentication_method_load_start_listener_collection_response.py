@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class OnAuthenticationMethodLoadStartListenerCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class OnAuthenticationMethodLoadStartListenerCollectionResponse(BaseModel):
 	value: Optional[list[OnAuthenticationMethodLoadStartListener]] = Field(alias="value", default=None,)
 
 from .on_authentication_method_load_start_listener import OnAuthenticationMethodLoadStartListener
-

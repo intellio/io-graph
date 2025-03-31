@@ -1,11 +1,11 @@
 from __future__ import annotations
 from typing import Optional
 from typing import Literal
+from datetime import datetime
+from pydantic import BaseModel, Field
 from pydantic import model_validator, ModelWrapValidatorHandler, ValidationError
 from typing_extensions import Self
 from typing import Any
-from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class SecurityEmailThreatSubmission(BaseModel):
@@ -61,6 +61,4 @@ from .security_submission_result import SecuritySubmissionResult
 from .security_submission_source import SecuritySubmissionSource
 from .security_long_running_operation_status import SecurityLongRunningOperationStatus
 from .security_attack_simulation_info import SecurityAttackSimulationInfo
-from .security_submission_category import SecuritySubmissionCategory
 from .security_tenant_allow_or_block_list_action import SecurityTenantAllowOrBlockListAction
-

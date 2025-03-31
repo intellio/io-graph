@@ -1,14 +1,15 @@
 from __future__ import annotations
 from typing import Optional
 from typing import Union
+from typing import Literal
 from typing import Annotated
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class NetworkaccessAlert(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
+	odata_type: Literal["#microsoft.graph.networkaccess.alert"] = Field(alias="@odata.type",)
 	actions: Optional[list[NetworkaccessAlertAction]] = Field(alias="actions", default=None,)
 	alertType: Optional[NetworkaccessAlertType | str] = Field(alias="alertType", default=None,)
 	creationDateTime: Optional[datetime] = Field(alias="creationDateTime", default=None,)
@@ -37,4 +38,3 @@ from .networkaccess_related_user import NetworkaccessRelatedUser
 from .networkaccess_related_web_category import NetworkaccessRelatedWebCategory
 from .networkaccess_alert_severity import NetworkaccessAlertSeverity
 from .networkaccess_filtering_policy import NetworkaccessFilteringPolicy
-

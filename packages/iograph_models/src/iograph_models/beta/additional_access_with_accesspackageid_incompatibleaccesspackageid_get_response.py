@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class Additional_access_with_accesspackageid_incompatibleaccesspackageidGetResponse(BaseModel):
@@ -9,4 +9,3 @@ class Additional_access_with_accesspackageid_incompatibleaccesspackageidGetRespo
 	value: Optional[list[AccessPackageAssignment]] = Field(alias="value", default=None,)
 
 from .access_package_assignment import AccessPackageAssignment
-

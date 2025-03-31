@@ -1,9 +1,9 @@
 from __future__ import annotations
 from typing import Optional
+from pydantic import BaseModel, Field
 from pydantic import model_validator, ModelWrapValidatorHandler, ValidationError
 from typing_extensions import Self
 from typing import Any
-from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class PermissionsDefinitionAction(BaseModel):
@@ -19,27 +19,18 @@ class PermissionsDefinitionAction(BaseModel):
 				return parent_validated_model
 			# get the discriminator value
 			mapping_key = data["@odata.type"]
-			if mapping_key == "#microsoft.graph.awsPermissionsDefinitionAction":
-				from .aws_permissions_definition_action import AwsPermissionsDefinitionAction
-				return AwsPermissionsDefinitionAction.model_validate(data)
 			if mapping_key == "#microsoft.graph.awsActionsPermissionsDefinitionAction":
 				from .aws_actions_permissions_definition_action import AwsActionsPermissionsDefinitionAction
 				return AwsActionsPermissionsDefinitionAction.model_validate(data)
 			if mapping_key == "#microsoft.graph.awsPolicyPermissionsDefinitionAction":
 				from .aws_policy_permissions_definition_action import AwsPolicyPermissionsDefinitionAction
 				return AwsPolicyPermissionsDefinitionAction.model_validate(data)
-			if mapping_key == "#microsoft.graph.azurePermissionsDefinitionAction":
-				from .azure_permissions_definition_action import AzurePermissionsDefinitionAction
-				return AzurePermissionsDefinitionAction.model_validate(data)
 			if mapping_key == "#microsoft.graph.azureActionPermissionsDefinitionAction":
 				from .azure_action_permissions_definition_action import AzureActionPermissionsDefinitionAction
 				return AzureActionPermissionsDefinitionAction.model_validate(data)
 			if mapping_key == "#microsoft.graph.azureRolePermissionsDefinitionAction":
 				from .azure_role_permissions_definition_action import AzureRolePermissionsDefinitionAction
 				return AzureRolePermissionsDefinitionAction.model_validate(data)
-			if mapping_key == "#microsoft.graph.gcpPermissionsDefinitionAction":
-				from .gcp_permissions_definition_action import GcpPermissionsDefinitionAction
-				return GcpPermissionsDefinitionAction.model_validate(data)
 			if mapping_key == "#microsoft.graph.gcpActionPermissionsDefinitionAction":
 				from .gcp_action_permissions_definition_action import GcpActionPermissionsDefinitionAction
 				return GcpActionPermissionsDefinitionAction.model_validate(data)
@@ -50,5 +41,4 @@ class PermissionsDefinitionAction(BaseModel):
 
 		except Exception as e:
 			raise e
-
 

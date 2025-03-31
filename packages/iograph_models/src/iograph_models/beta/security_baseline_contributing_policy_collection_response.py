@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class SecurityBaselineContributingPolicyCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class SecurityBaselineContributingPolicyCollectionResponse(BaseModel):
 	value: Optional[list[SecurityBaselineContributingPolicy]] = Field(alias="value", default=None,)
 
 from .security_baseline_contributing_policy import SecurityBaselineContributingPolicy
-

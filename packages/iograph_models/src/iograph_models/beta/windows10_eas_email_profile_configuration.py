@@ -2,7 +2,7 @@ from __future__ import annotations
 from typing import Optional
 from typing import Literal
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class Windows10EasEmailProfileConfiguration(BaseModel):
@@ -53,6 +53,4 @@ from .domain_name_source import DomainNameSource
 from .username_source import UsernameSource
 from .user_email_source import UserEmailSource
 from .email_sync_duration import EmailSyncDuration
-from .user_email_source import UserEmailSource
 from .email_sync_schedule import EmailSyncSchedule
-

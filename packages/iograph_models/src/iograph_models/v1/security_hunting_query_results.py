@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class SecurityHuntingQueryResults(BaseModel):
@@ -10,4 +10,3 @@ class SecurityHuntingQueryResults(BaseModel):
 
 from .security_hunting_row_result import SecurityHuntingRowResult
 from .security_single_property_schema import SecuritySinglePropertySchema
-

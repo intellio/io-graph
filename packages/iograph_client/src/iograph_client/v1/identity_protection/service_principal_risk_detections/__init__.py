@@ -15,8 +15,8 @@ if TYPE_CHECKING:
 	from .by_service_principal_risk_detection_id import ByServicePrincipalRiskDetectionIdRequest
 	from ....request_adapter import HttpxRequestAdapter
 from iograph_models.v1.o_data_errors__o_data_error import ODataErrorsODataError
-from iograph_models.v1.service_principal_risk_detection_collection_response import ServicePrincipalRiskDetectionCollectionResponse
 from iograph_models.v1.service_principal_risk_detection import ServicePrincipalRiskDetection
+from iograph_models.v1.service_principal_risk_detection_collection_response import ServicePrincipalRiskDetectionCollectionResponse
 
 
 class ServicePrincipalRiskDetectionsRequest(BaseRequestBuilder):

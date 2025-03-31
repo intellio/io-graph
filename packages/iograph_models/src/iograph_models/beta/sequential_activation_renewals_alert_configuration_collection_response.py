@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class SequentialActivationRenewalsAlertConfigurationCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class SequentialActivationRenewalsAlertConfigurationCollectionResponse(BaseModel
 	value: Optional[list[SequentialActivationRenewalsAlertConfiguration]] = Field(alias="value", default=None,)
 
 from .sequential_activation_renewals_alert_configuration import SequentialActivationRenewalsAlertConfiguration
-

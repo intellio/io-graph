@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class SecurityEdiscoveryIndexOperationCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class SecurityEdiscoveryIndexOperationCollectionResponse(BaseModel):
 	value: Optional[list[SecurityEdiscoveryIndexOperation]] = Field(alias="value", default=None,)
 
 from .security_ediscovery_index_operation import SecurityEdiscoveryIndexOperation
-

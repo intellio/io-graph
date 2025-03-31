@@ -1,13 +1,14 @@
 from __future__ import annotations
 from typing import Optional
 from typing import Union
+from typing import Literal
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class BusinessScenarioTask(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
+	odata_type: Literal["#microsoft.graph.businessScenarioTask"] = Field(alias="@odata.type",)
 	activeChecklistItemCount: Optional[int] = Field(alias="activeChecklistItemCount", default=None,)
 	appliedCategories: Optional[PlannerAppliedCategories] = Field(alias="appliedCategories", default=None,)
 	archivalInfo: Optional[PlannerArchivalInfo] = Field(alias="archivalInfo", default=None,)
@@ -55,22 +56,8 @@ from .chat_message_mentioned_identity_set import ChatMessageMentionedIdentitySet
 from .chat_message_reaction_identity_set import ChatMessageReactionIdentitySet
 from .communications_identity_set import CommunicationsIdentitySet
 from .share_point_identity_set import SharePointIdentitySet
-from .ai_interaction_mentioned_identity_set import AiInteractionMentionedIdentitySet
-from .approval_identity_set import ApprovalIdentitySet
-from .chat_message_from_identity_set import ChatMessageFromIdentitySet
-from .chat_message_mentioned_identity_set import ChatMessageMentionedIdentitySet
-from .chat_message_reaction_identity_set import ChatMessageReactionIdentitySet
-from .communications_identity_set import CommunicationsIdentitySet
-from .share_point_identity_set import SharePointIdentitySet
 from .planner_external_task_source import PlannerExternalTaskSource
 from .planner_teams_publication_info import PlannerTeamsPublicationInfo
-from .ai_interaction_mentioned_identity_set import AiInteractionMentionedIdentitySet
-from .approval_identity_set import ApprovalIdentitySet
-from .chat_message_from_identity_set import ChatMessageFromIdentitySet
-from .chat_message_mentioned_identity_set import ChatMessageMentionedIdentitySet
-from .chat_message_reaction_identity_set import ChatMessageReactionIdentitySet
-from .communications_identity_set import CommunicationsIdentitySet
-from .share_point_identity_set import SharePointIdentitySet
 from .planner_preview_type import PlannerPreviewType
 from .planner_task_recurrence import PlannerTaskRecurrence
 from .planner_task_completion_requirements import PlannerTaskCompletionRequirements
@@ -80,4 +67,3 @@ from .planner_task_details import PlannerTaskDetails
 from .planner_progress_task_board_task_format import PlannerProgressTaskBoardTaskFormat
 from .business_scenario_properties import BusinessScenarioProperties
 from .business_scenario_group_target import BusinessScenarioGroupTarget
-

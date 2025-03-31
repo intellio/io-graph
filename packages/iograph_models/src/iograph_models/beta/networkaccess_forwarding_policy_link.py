@@ -2,7 +2,7 @@ from __future__ import annotations
 from typing import Optional
 from typing import Union
 from typing import Literal
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class NetworkaccessForwardingPolicyLink(BaseModel):
@@ -15,4 +15,3 @@ class NetworkaccessForwardingPolicyLink(BaseModel):
 from .networkaccess_status import NetworkaccessStatus
 from .networkaccess_filtering_policy import NetworkaccessFilteringPolicy
 from .networkaccess_forwarding_policy import NetworkaccessForwardingPolicy
-

@@ -1,7 +1,7 @@
 from __future__ import annotations
 from typing import Optional
 from typing import Literal
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class SmsAuthenticationMethodConfiguration(BaseModel):
@@ -14,4 +14,3 @@ class SmsAuthenticationMethodConfiguration(BaseModel):
 from .exclude_target import ExcludeTarget
 from .authentication_method_state import AuthenticationMethodState
 from .sms_authentication_method_target import SmsAuthenticationMethodTarget
-

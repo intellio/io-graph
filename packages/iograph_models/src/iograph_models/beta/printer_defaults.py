@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class PrinterDefaults(BaseModel):
@@ -38,6 +38,4 @@ from .print_orientation import PrintOrientation
 from .print_presentation_direction import PrintPresentationDirection
 from .print_color_configuration import PrintColorConfiguration
 from .print_quality import PrintQuality
-from .print_quality import PrintQuality
 from .print_scaling import PrintScaling
-

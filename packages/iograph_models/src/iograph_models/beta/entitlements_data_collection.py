@@ -2,7 +2,7 @@ from __future__ import annotations
 from typing import Optional
 from typing import Literal
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class EntitlementsDataCollection(BaseModel):
@@ -13,4 +13,3 @@ class EntitlementsDataCollection(BaseModel):
 
 from .permissions_modification_capability import PermissionsModificationCapability
 from .data_collection_status import DataCollectionStatus
-

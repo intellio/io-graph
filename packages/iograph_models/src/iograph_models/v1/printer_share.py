@@ -2,7 +2,7 @@ from __future__ import annotations
 from typing import Optional
 from typing import Literal
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class PrinterShare(BaseModel):
@@ -33,4 +33,3 @@ from .printer_share_viewpoint import PrinterShareViewpoint
 from .group import Group
 from .user import User
 from .printer import Printer
-

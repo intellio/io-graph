@@ -1,14 +1,15 @@
 from __future__ import annotations
 from typing import Optional
 from typing import Union
+from typing import Literal
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class SubjectRightsRequest(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
-	assignedTo: Optional[Union[AzureCommunicationServicesUserIdentity, CommunicationsApplicationIdentity, CommunicationsApplicationInstanceIdentity, CommunicationsEncryptedIdentity, CommunicationsGuestIdentity, CommunicationsPhoneIdentity, CommunicationsUserIdentity, EmailIdentity, Initiator, ProgramResource, ProvisionedIdentity, ProvisioningServicePrincipal, ProvisioningSystem, ServicePrincipalIdentity, SharePointIdentity, SourceProvisionedIdentity, TargetProvisionedIdentity, TeamworkApplicationIdentity, TeamworkConversationIdentity, TeamworkTagIdentity, TeamworkUserIdentity, UserIdentity, AuditUserIdentity, CallRecordsUserIdentity, SecuritySubmissionUserIdentity]] = Field(alias="assignedTo", default=None,discriminator="odata_type", )
+	odata_type: Literal["#microsoft.graph.subjectRightsRequest"] = Field(alias="@odata.type",)
+	assignedTo: Optional[Union[AzureCommunicationServicesUserIdentity, CommunicationsApplicationIdentity, CommunicationsApplicationInstanceIdentity, CommunicationsEncryptedIdentity, CommunicationsGuestIdentity, CommunicationsPhoneIdentity, CommunicationsUserIdentity, EmailIdentity, Initiator, ProgramResource, ProvisionedIdentity, ProvisioningServicePrincipal, ProvisioningSystem, ServicePrincipalIdentity, SharePointIdentity, SourceProvisionedIdentity, TargetProvisionedIdentity, TeamworkApplicationIdentity, TeamworkConversationIdentity, TeamworkTagIdentity, TeamworkUserIdentity, AuditUserIdentity, CallRecordsUserIdentity, SecuritySubmissionUserIdentity]] = Field(alias="assignedTo", default=None,discriminator="odata_type", )
 	closedDateTime: Optional[datetime] = Field(alias="closedDateTime", default=None,)
 	contentQuery: Optional[str] = Field(alias="contentQuery", default=None,)
 	createdBy: Optional[Union[AiInteractionMentionedIdentitySet, ApprovalIdentitySet, ChatMessageFromIdentitySet, ChatMessageMentionedIdentitySet, ChatMessageReactionIdentitySet, CommunicationsIdentitySet, SharePointIdentitySet]] = Field(alias="createdBy", default=None,discriminator="odata_type", )
@@ -58,7 +59,6 @@ from .teamwork_application_identity import TeamworkApplicationIdentity
 from .teamwork_conversation_identity import TeamworkConversationIdentity
 from .teamwork_tag_identity import TeamworkTagIdentity
 from .teamwork_user_identity import TeamworkUserIdentity
-from .user_identity import UserIdentity
 from .audit_user_identity import AuditUserIdentity
 from .call_records_user_identity import CallRecordsUserIdentity
 from .security_submission_user_identity import SecuritySubmissionUserIdentity
@@ -73,13 +73,6 @@ from .data_subject import DataSubject
 from .data_subject_type import DataSubjectType
 from .subject_rights_request_history import SubjectRightsRequestHistory
 from .subject_rights_request_detail import SubjectRightsRequestDetail
-from .ai_interaction_mentioned_identity_set import AiInteractionMentionedIdentitySet
-from .approval_identity_set import ApprovalIdentitySet
-from .chat_message_from_identity_set import ChatMessageFromIdentitySet
-from .chat_message_mentioned_identity_set import ChatMessageMentionedIdentitySet
-from .chat_message_reaction_identity_set import ChatMessageReactionIdentitySet
-from .communications_identity_set import CommunicationsIdentitySet
-from .share_point_identity_set import SharePointIdentitySet
 from .subject_rights_request_all_mailbox_location import SubjectRightsRequestAllMailboxLocation
 from .subject_rights_request_enumerated_mailbox_location import SubjectRightsRequestEnumeratedMailboxLocation
 from .subject_rights_request_all_site_location import SubjectRightsRequestAllSiteLocation
@@ -88,7 +81,5 @@ from .subject_rights_request_stage_detail import SubjectRightsRequestStageDetail
 from .subject_rights_request_status import SubjectRightsRequestStatus
 from .subject_rights_request_type import SubjectRightsRequestType
 from .user import User
-from .user import User
 from .authored_note import AuthoredNote
 from .team import Team
-

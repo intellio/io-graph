@@ -2,7 +2,7 @@ from __future__ import annotations
 from typing import Optional
 from typing import Union
 from typing import Annotated
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class OmaSettingCollectionResponse(BaseModel):
@@ -17,4 +17,3 @@ from .oma_setting_floating_point import OmaSettingFloatingPoint
 from .oma_setting_integer import OmaSettingInteger
 from .oma_setting_string import OmaSettingString
 from .oma_setting_string_xml import OmaSettingStringXml
-

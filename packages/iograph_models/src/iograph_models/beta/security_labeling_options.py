@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class SecurityLabelingOptions(BaseModel):
@@ -13,4 +13,3 @@ class SecurityLabelingOptions(BaseModel):
 from .security_assignment_method import SecurityAssignmentMethod
 from .security_downgrade_justification import SecurityDowngradeJustification
 from .security_key_value_pair import SecurityKeyValuePair
-

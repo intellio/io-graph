@@ -1,7 +1,7 @@
 from __future__ import annotations
 from typing import Optional
 from typing import Literal
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class SecurityMarkUserAsCompromisedResponseAction(BaseModel):
@@ -9,4 +9,3 @@ class SecurityMarkUserAsCompromisedResponseAction(BaseModel):
 	identifier: Optional[SecurityMarkUserAsCompromisedEntityIdentifier | str] = Field(alias="identifier", default=None,)
 
 from .security_mark_user_as_compromised_entity_identifier import SecurityMarkUserAsCompromisedEntityIdentifier
-

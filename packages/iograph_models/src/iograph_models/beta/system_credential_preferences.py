@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class SystemCredentialPreferences(BaseModel):
@@ -12,4 +12,3 @@ class SystemCredentialPreferences(BaseModel):
 from .exclude_target import ExcludeTarget
 from .include_target import IncludeTarget
 from .advanced_config_state import AdvancedConfigState
-

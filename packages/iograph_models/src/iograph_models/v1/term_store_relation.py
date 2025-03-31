@@ -1,11 +1,12 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from typing import Literal
+from pydantic import BaseModel, Field
 
 
 class TermStoreRelation(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
+	odata_type: Literal["#microsoft.graph.termStore.relation"] = Field(alias="@odata.type",)
 	relationship: Optional[TermStoreRelationType | str] = Field(alias="relationship", default=None,)
 	fromTerm: Optional[TermStoreTerm] = Field(alias="fromTerm", default=None,)
 	set: Optional[TermStoreSet] = Field(alias="set", default=None,)
@@ -14,5 +15,3 @@ class TermStoreRelation(BaseModel):
 from .term_store_relation_type import TermStoreRelationType
 from .term_store_term import TermStoreTerm
 from .term_store_set import TermStoreSet
-from .term_store_term import TermStoreTerm
-

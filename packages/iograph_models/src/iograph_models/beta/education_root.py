@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class EducationRoot(BaseModel):
@@ -15,5 +15,3 @@ from .education_class import EducationClass
 from .education_user import EducationUser
 from .reports_root import ReportsRoot
 from .education_school import EducationSchool
-from .education_user import EducationUser
-

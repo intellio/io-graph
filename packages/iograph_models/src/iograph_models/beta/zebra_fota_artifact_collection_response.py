@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class ZebraFotaArtifactCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class ZebraFotaArtifactCollectionResponse(BaseModel):
 	value: Optional[list[ZebraFotaArtifact]] = Field(alias="value", default=None,)
 
 from .zebra_fota_artifact import ZebraFotaArtifact
-

@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class IpReferenceData(BaseModel):
@@ -11,5 +11,4 @@ class IpReferenceData(BaseModel):
 	state: Optional[str] = Field(alias="state", default=None,)
 	vendor: Optional[str] = Field(alias="vendor", default=None,)
 	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
-
 

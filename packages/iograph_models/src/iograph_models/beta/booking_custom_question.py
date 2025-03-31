@@ -1,12 +1,13 @@
 from __future__ import annotations
 from typing import Optional
+from typing import Literal
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class BookingCustomQuestion(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
+	odata_type: Literal["#microsoft.graph.bookingCustomQuestion"] = Field(alias="@odata.type",)
 	answerInputType: Optional[AnswerInputType | str] = Field(alias="answerInputType", default=None,)
 	answerOptions: Optional[list[str]] = Field(alias="answerOptions", default=None,)
 	createdDateTime: Optional[datetime] = Field(alias="createdDateTime", default=None,)
@@ -14,4 +15,3 @@ class BookingCustomQuestion(BaseModel):
 	lastUpdatedDateTime: Optional[datetime] = Field(alias="lastUpdatedDateTime", default=None,)
 
 from .answer_input_type import AnswerInputType
-

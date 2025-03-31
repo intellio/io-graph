@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class Upload_secretPostRequest(BaseModel):
@@ -8,5 +8,4 @@ class Upload_secretPostRequest(BaseModel):
 	k: Optional[str] = Field(alias="k", default=None,)
 	nbf: Optional[int] = Field(alias="nbf", default=None,)
 	exp: Optional[int] = Field(alias="exp", default=None,)
-
 

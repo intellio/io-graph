@@ -2,7 +2,7 @@ from __future__ import annotations
 from uuid import UUID
 from typing import Optional
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class SalesCreditMemo(BaseModel):
@@ -42,9 +42,7 @@ class SalesCreditMemo(BaseModel):
 	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
 
 from .postal_address_type import PostalAddressType
-from .postal_address_type import PostalAddressType
 from .currency import Currency
 from .customer import Customer
 from .payment_term import PaymentTerm
 from .sales_credit_memo_line import SalesCreditMemoLine
-

@@ -14,9 +14,9 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_telecom_expense_management_partner_id import ByTelecomExpenseManagementPartnerIdRequest
 	from ....request_adapter import HttpxRequestAdapter
-from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.beta.telecom_expense_management_partner import TelecomExpenseManagementPartner
 from iograph_models.beta.telecom_expense_management_partner_collection_response import TelecomExpenseManagementPartnerCollectionResponse
+from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 
 
 class TelecomExpenseManagementPartnersRequest(BaseRequestBuilder):

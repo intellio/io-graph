@@ -15,8 +15,8 @@ if TYPE_CHECKING:
 	from .by_horizontal_section_id import ByHorizontalSectionIdRequest
 	from ...........request_adapter import HttpxRequestAdapter
 from iograph_models.v1.o_data_errors__o_data_error import ODataErrorsODataError
-from iograph_models.v1.horizontal_section import HorizontalSection
 from iograph_models.v1.horizontal_section_collection_response import HorizontalSectionCollectionResponse
+from iograph_models.v1.horizontal_section import HorizontalSection
 
 
 class HorizontalSectionsRequest(BaseRequestBuilder):

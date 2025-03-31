@@ -1,7 +1,7 @@
 from __future__ import annotations
 from typing import Optional
 from typing import Literal
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class AllDevicesAssignmentTarget(BaseModel):
@@ -10,4 +10,3 @@ class AllDevicesAssignmentTarget(BaseModel):
 	odata_type: Literal["#microsoft.graph.allDevicesAssignmentTarget"] = Field(alias="@odata.type", default="#microsoft.graph.allDevicesAssignmentTarget")
 
 from .device_and_app_management_assignment_filter_type import DeviceAndAppManagementAssignmentFilterType
-

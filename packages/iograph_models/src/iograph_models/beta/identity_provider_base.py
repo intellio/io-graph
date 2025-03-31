@@ -1,9 +1,9 @@
 from __future__ import annotations
 from typing import Optional
+from pydantic import BaseModel, Field
 from pydantic import model_validator, ModelWrapValidatorHandler, ValidationError
 from typing_extensions import Self
 from typing import Any
-from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class IdentityProviderBase(BaseModel):
@@ -33,9 +33,6 @@ class IdentityProviderBase(BaseModel):
 			if mapping_key == "#microsoft.graph.openIdConnectIdentityProvider":
 				from .open_id_connect_identity_provider import OpenIdConnectIdentityProvider
 				return OpenIdConnectIdentityProvider.model_validate(data)
-			if mapping_key == "#microsoft.graph.samlOrWsFedProvider":
-				from .saml_or_ws_fed_provider import SamlOrWsFedProvider
-				return SamlOrWsFedProvider.model_validate(data)
 			if mapping_key == "#microsoft.graph.internalDomainFederation":
 				from .internal_domain_federation import InternalDomainFederation
 				return InternalDomainFederation.model_validate(data)
@@ -49,5 +46,4 @@ class IdentityProviderBase(BaseModel):
 
 		except Exception as e:
 			raise e
-
 

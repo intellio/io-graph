@@ -1,11 +1,12 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from typing import Literal
+from pydantic import BaseModel, Field
 
 
 class ContentType(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
+	odata_type: Literal["#microsoft.graph.contentType"] = Field(alias="@odata.type",)
 	associatedHubsUrls: Optional[list[str]] = Field(alias="associatedHubsUrls", default=None,)
 	description: Optional[str] = Field(alias="description", default=None,)
 	documentSet: Optional[DocumentSet] = Field(alias="documentSet", default=None,)
@@ -32,5 +33,3 @@ from .item_reference import ItemReference
 from .content_type_order import ContentTypeOrder
 from .column_link import ColumnLink
 from .column_definition import ColumnDefinition
-from .column_definition import ColumnDefinition
-

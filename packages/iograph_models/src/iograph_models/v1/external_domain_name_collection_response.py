@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class ExternalDomainNameCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class ExternalDomainNameCollectionResponse(BaseModel):
 	value: Optional[list[ExternalDomainName]] = Field(alias="value", default=None,)
 
 from .external_domain_name import ExternalDomainName
-

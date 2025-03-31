@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class AndroidForWorkAppConfigurationSchemaItem(BaseModel):
@@ -17,4 +17,3 @@ class AndroidForWorkAppConfigurationSchemaItem(BaseModel):
 
 from .android_for_work_app_configuration_schema_item_data_type import AndroidForWorkAppConfigurationSchemaItemDataType
 from .key_value_pair import KeyValuePair
-

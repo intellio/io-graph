@@ -1,7 +1,7 @@
 from __future__ import annotations
 from typing import Optional
 from typing import Literal
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class SamlNameIdClaim(BaseModel):
@@ -12,4 +12,3 @@ class SamlNameIdClaim(BaseModel):
 
 from .custom_claim_configuration import CustomClaimConfiguration
 from .saml_name_i_d_format import SamlNameIDFormat
-

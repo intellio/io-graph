@@ -12,8 +12,8 @@ from typing import TYPE_CHECKING
 if TYPE_CHECKING:
 	from .hardware_oath_devices import HardwareOathDevicesRequest
 	from ....request_adapter import HttpxRequestAdapter
-from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.beta.authentication_method_device import AuthenticationMethodDevice
+from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 
 
 class AuthenticationMethodDevicesRequest(BaseRequestBuilder):

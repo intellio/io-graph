@@ -2,11 +2,11 @@ from __future__ import annotations
 from typing import Optional
 from typing import Union
 from typing import Literal
+from datetime import datetime
+from pydantic import BaseModel, Field
 from pydantic import model_validator, ModelWrapValidatorHandler, ValidationError
 from typing_extensions import Self
 from typing import Any
-from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class ScheduleChangeRequest(BaseModel):
@@ -35,9 +35,6 @@ class ScheduleChangeRequest(BaseModel):
 				return parent_validated_model
 			# get the discriminator value
 			mapping_key = data["@odata.type"]
-			if mapping_key == "#microsoft.graph.offerShiftRequest":
-				from .offer_shift_request import OfferShiftRequest
-				return OfferShiftRequest.model_validate(data)
 			if mapping_key == "#microsoft.graph.swapShiftsChangeRequest":
 				from .swap_shifts_change_request import SwapShiftsChangeRequest
 				return SwapShiftsChangeRequest.model_validate(data)
@@ -59,13 +56,5 @@ from .chat_message_mentioned_identity_set import ChatMessageMentionedIdentitySet
 from .chat_message_reaction_identity_set import ChatMessageReactionIdentitySet
 from .communications_identity_set import CommunicationsIdentitySet
 from .share_point_identity_set import SharePointIdentitySet
-from .ai_interaction_mentioned_identity_set import AiInteractionMentionedIdentitySet
-from .approval_identity_set import ApprovalIdentitySet
-from .chat_message_from_identity_set import ChatMessageFromIdentitySet
-from .chat_message_mentioned_identity_set import ChatMessageMentionedIdentitySet
-from .chat_message_reaction_identity_set import ChatMessageReactionIdentitySet
-from .communications_identity_set import CommunicationsIdentitySet
-from .share_point_identity_set import SharePointIdentitySet
 from .schedule_change_request_actor import ScheduleChangeRequestActor
 from .schedule_change_state import ScheduleChangeState
-

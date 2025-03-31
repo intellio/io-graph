@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class AccessPackageResourceEnvironmentCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class AccessPackageResourceEnvironmentCollectionResponse(BaseModel):
 	value: Optional[list[AccessPackageResourceEnvironment]] = Field(alias="value", default=None,)
 
 from .access_package_resource_environment import AccessPackageResourceEnvironment
-

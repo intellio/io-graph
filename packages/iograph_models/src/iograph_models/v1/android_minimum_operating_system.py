@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class AndroidMinimumOperatingSystem(BaseModel):
@@ -21,5 +21,4 @@ class AndroidMinimumOperatingSystem(BaseModel):
 	v8_1: Optional[bool] = Field(alias="v8_1", default=None,)
 	v9_0: Optional[bool] = Field(alias="v9_0", default=None,)
 	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
-
 

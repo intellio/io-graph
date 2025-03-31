@@ -2,7 +2,7 @@ from __future__ import annotations
 from typing import Optional
 from typing import Literal
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class IosiPadOSWebClip(BaseModel):
@@ -30,4 +30,3 @@ from .mime_content import MimeContent
 from .mobile_app_publishing_state import MobileAppPublishingState
 from .mobile_app_assignment import MobileAppAssignment
 from .mobile_app_category import MobileAppCategory
-

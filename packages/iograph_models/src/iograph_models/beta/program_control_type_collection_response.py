@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class ProgramControlTypeCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class ProgramControlTypeCollectionResponse(BaseModel):
 	value: Optional[list[ProgramControlType]] = Field(alias="value", default=None,)
 
 from .program_control_type import ProgramControlType
-

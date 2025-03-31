@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class IosLobAppProvisioningConfigurationAssignmentCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class IosLobAppProvisioningConfigurationAssignmentCollectionResponse(BaseModel):
 	value: Optional[list[IosLobAppProvisioningConfigurationAssignment]] = Field(alias="value", default=None,)
 
 from .ios_lob_app_provisioning_configuration_assignment import IosLobAppProvisioningConfigurationAssignment
-

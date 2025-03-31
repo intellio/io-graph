@@ -1,13 +1,14 @@
 from __future__ import annotations
 from typing import Optional
 from typing import Union
+from typing import Literal
 from typing import Annotated
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class VirtualEndpoint(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
+	odata_type: Literal["#microsoft.graph.virtualEndpoint"] = Field(alias="@odata.type",)
 	auditEvents: Optional[list[CloudPcAuditEvent]] = Field(alias="auditEvents", default=None,)
 	bulkActions: Optional[list[Annotated[Union[CloudPcBulkCreateSnapshot, CloudPcBulkDisasterRecoveryFailback, CloudPcBulkDisasterRecoveryFailover, CloudPcBulkModifyDiskEncryptionType, CloudPcBulkMove, CloudPcBulkPowerOff, CloudPcBulkPowerOn, CloudPcBulkReprovision, CloudPcBulkResize, CloudPcBulkRestart, CloudPcBulkRestore, CloudPcBulkSetReviewStatus, CloudPcBulkTroubleshoot],Field(discriminator="odata_type")]]] = Field(alias="bulkActions", default=None,)
 	cloudPCs: Optional[list[CloudPC]] = Field(alias="cloudPCs", default=None,)
@@ -53,4 +54,3 @@ from .cloud_pc_service_plan import CloudPcServicePlan
 from .cloud_pc_snapshot import CloudPcSnapshot
 from .cloud_pc_supported_region import CloudPcSupportedRegion
 from .cloud_pc_user_setting import CloudPcUserSetting
-

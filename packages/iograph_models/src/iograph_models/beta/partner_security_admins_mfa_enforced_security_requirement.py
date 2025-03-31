@@ -1,12 +1,13 @@
 from __future__ import annotations
 from typing import Optional
+from typing import Literal
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class PartnerSecurityAdminsMfaEnforcedSecurityRequirement(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
+	odata_type: Literal["#microsoft.graph.partner.security.adminsMfaEnforcedSecurityRequirement"] = Field(alias="@odata.type",)
 	actionUrl: Optional[str] = Field(alias="actionUrl", default=None,)
 	complianceStatus: Optional[PartnerSecurityComplianceStatus | str] = Field(alias="complianceStatus", default=None,)
 	helpUrl: Optional[str] = Field(alias="helpUrl", default=None,)
@@ -29,6 +30,3 @@ from .partner_security_compliance_status import PartnerSecurityComplianceStatus
 from .partner_security_security_requirement_type import PartnerSecuritySecurityRequirementType
 from .partner_security_security_requirement_state import PartnerSecuritySecurityRequirementState
 from .partner_security_policy_status import PartnerSecurityPolicyStatus
-from .partner_security_policy_status import PartnerSecurityPolicyStatus
-from .partner_security_policy_status import PartnerSecurityPolicyStatus
-

@@ -17,8 +17,8 @@ if TYPE_CHECKING:
 	from .data_body_range import DataBodyRangeRequest
 	from .filter import FilterRequest
 	from .............request_adapter import HttpxRequestAdapter
-from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.beta.workbook_table_column import WorkbookTableColumn
+from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 
 
 class ItemAtWithIndexRequest(BaseRequestBuilder):

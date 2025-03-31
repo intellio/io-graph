@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class LabelingOptions(BaseModel):
@@ -13,4 +13,3 @@ class LabelingOptions(BaseModel):
 from .assignment_method import AssignmentMethod
 from .downgrade_justification import DowngradeJustification
 from .key_value_pair import KeyValuePair
-

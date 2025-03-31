@@ -1,7 +1,7 @@
 from __future__ import annotations
 from typing import Optional
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class CallRecordsDirectRoutingLogRow(BaseModel):
@@ -27,5 +27,4 @@ class CallRecordsDirectRoutingLogRow(BaseModel):
 	userId: Optional[str] = Field(alias="userId", default=None,)
 	userPrincipalName: Optional[str] = Field(alias="userPrincipalName", default=None,)
 	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
-
 

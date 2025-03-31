@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class SwapShiftsChangeRequestCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class SwapShiftsChangeRequestCollectionResponse(BaseModel):
 	value: Optional[list[SwapShiftsChangeRequest]] = Field(alias="value", default=None,)
 
 from .swap_shifts_change_request import SwapShiftsChangeRequest
-

@@ -1,13 +1,14 @@
 from __future__ import annotations
 from typing import Optional
 from typing import Union
+from typing import Literal
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class BrowserSite(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
+	odata_type: Literal["#microsoft.graph.browserSite"] = Field(alias="@odata.type",)
 	allowRedirect: Optional[bool] = Field(alias="allowRedirect", default=None,)
 	comment: Optional[str] = Field(alias="comment", default=None,)
 	compatibilityMode: Optional[BrowserSiteCompatibilityMode | str] = Field(alias="compatibilityMode", default=None,)
@@ -31,4 +32,3 @@ from .share_point_identity_set import SharePointIdentitySet
 from .browser_site_merge_type import BrowserSiteMergeType
 from .browser_site_status import BrowserSiteStatus
 from .browser_site_target_environment import BrowserSiteTargetEnvironment
-

@@ -2,7 +2,7 @@ from __future__ import annotations
 from typing import Optional
 from typing import Literal
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class IosLobApp(BaseModel):
@@ -41,4 +41,3 @@ from .mobile_app_category import MobileAppCategory
 from .mobile_app_content import MobileAppContent
 from .ios_device_type import IosDeviceType
 from .ios_minimum_operating_system import IosMinimumOperatingSystem
-

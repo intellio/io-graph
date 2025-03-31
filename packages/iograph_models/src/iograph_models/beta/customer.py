@@ -2,7 +2,7 @@ from __future__ import annotations
 from uuid import UUID
 from typing import Optional
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class Customer(BaseModel):
@@ -38,4 +38,3 @@ from .payment_method import PaymentMethod
 from .payment_term import PaymentTerm
 from .picture import Picture
 from .shipment_method import ShipmentMethod
-

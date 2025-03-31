@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class Classify_exact_matchesPostRequest(BaseModel):
@@ -10,4 +10,3 @@ class Classify_exact_matchesPostRequest(BaseModel):
 	contentClassifications: Optional[list[ContentClassification]] = Field(alias="contentClassifications", default=None,)
 
 from .content_classification import ContentClassification
-

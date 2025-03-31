@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class RecurrencePattern(BaseModel):
@@ -14,7 +14,5 @@ class RecurrencePattern(BaseModel):
 	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
 
 from .day_of_week import DayOfWeek
-from .day_of_week import DayOfWeek
 from .week_index import WeekIndex
 from .recurrence_pattern_type import RecurrencePatternType
-

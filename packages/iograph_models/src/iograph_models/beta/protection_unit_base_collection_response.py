@@ -2,7 +2,7 @@ from __future__ import annotations
 from typing import Optional
 from typing import Union
 from typing import Annotated
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class ProtectionUnitBaseCollectionResponse(BaseModel):
@@ -13,4 +13,3 @@ class ProtectionUnitBaseCollectionResponse(BaseModel):
 from .drive_protection_unit import DriveProtectionUnit
 from .mailbox_protection_unit import MailboxProtectionUnit
 from .site_protection_unit import SiteProtectionUnit
-

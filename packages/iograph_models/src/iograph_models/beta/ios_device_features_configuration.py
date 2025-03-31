@@ -4,7 +4,7 @@ from typing import Union
 from typing import Literal
 from typing import Annotated
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class IosDeviceFeaturesConfiguration(BaseModel):
@@ -37,7 +37,7 @@ class IosDeviceFeaturesConfiguration(BaseModel):
 	iosSingleSignOnExtension: Optional[Union[IosAzureAdSingleSignOnExtension, IosCredentialSingleSignOnExtension, IosKerberosSingleSignOnExtension, IosRedirectSingleSignOnExtension]] = Field(alias="iosSingleSignOnExtension", default=None,discriminator="odata_type", )
 	lockScreenFootnote: Optional[str] = Field(alias="lockScreenFootnote", default=None,)
 	notificationSettings: Optional[list[IosNotificationSettings]] = Field(alias="notificationSettings", default=None,)
-	singleSignOnExtension: Optional[Union[CredentialSingleSignOnExtension, IosSingleSignOnExtension, IosAzureAdSingleSignOnExtension, IosCredentialSingleSignOnExtension, IosKerberosSingleSignOnExtension, IosRedirectSingleSignOnExtension, KerberosSingleSignOnExtension, MacOSSingleSignOnExtension, MacOSAzureAdSingleSignOnExtension, MacOSCredentialSingleSignOnExtension, MacOSKerberosSingleSignOnExtension, MacOSRedirectSingleSignOnExtension, RedirectSingleSignOnExtension]] = Field(alias="singleSignOnExtension", default=None,discriminator="odata_type", )
+	singleSignOnExtension: Optional[Union[CredentialSingleSignOnExtension, IosAzureAdSingleSignOnExtension, IosCredentialSingleSignOnExtension, IosKerberosSingleSignOnExtension, IosRedirectSingleSignOnExtension, KerberosSingleSignOnExtension, MacOSAzureAdSingleSignOnExtension, MacOSCredentialSingleSignOnExtension, MacOSKerberosSingleSignOnExtension, MacOSRedirectSingleSignOnExtension, RedirectSingleSignOnExtension]] = Field(alias="singleSignOnExtension", default=None,discriminator="odata_type", )
 	singleSignOnSettings: Optional[IosSingleSignOnSettings] = Field(alias="singleSignOnSettings", default=None,)
 	wallpaperDisplayLocation: Optional[IosWallpaperDisplayLocation | str] = Field(alias="wallpaperDisplayLocation", default=None,)
 	wallpaperImage: Optional[MimeContent] = Field(alias="wallpaperImage", default=None,)
@@ -66,13 +66,7 @@ from .ios_kerberos_single_sign_on_extension import IosKerberosSingleSignOnExtens
 from .ios_redirect_single_sign_on_extension import IosRedirectSingleSignOnExtension
 from .ios_notification_settings import IosNotificationSettings
 from .credential_single_sign_on_extension import CredentialSingleSignOnExtension
-from .ios_single_sign_on_extension import IosSingleSignOnExtension
-from .ios_azure_ad_single_sign_on_extension import IosAzureAdSingleSignOnExtension
-from .ios_credential_single_sign_on_extension import IosCredentialSingleSignOnExtension
-from .ios_kerberos_single_sign_on_extension import IosKerberosSingleSignOnExtension
-from .ios_redirect_single_sign_on_extension import IosRedirectSingleSignOnExtension
 from .kerberos_single_sign_on_extension import KerberosSingleSignOnExtension
-from .mac_o_s_single_sign_on_extension import MacOSSingleSignOnExtension
 from .mac_o_s_azure_ad_single_sign_on_extension import MacOSAzureAdSingleSignOnExtension
 from .mac_o_s_credential_single_sign_on_extension import MacOSCredentialSingleSignOnExtension
 from .mac_o_s_kerberos_single_sign_on_extension import MacOSKerberosSingleSignOnExtension
@@ -83,6 +77,3 @@ from .ios_wallpaper_display_location import IosWallpaperDisplayLocation
 from .mime_content import MimeContent
 from .ios_pkcs_certificate_profile import IosPkcsCertificateProfile
 from .ios_scep_certificate_profile import IosScepCertificateProfile
-from .ios_pkcs_certificate_profile import IosPkcsCertificateProfile
-from .ios_scep_certificate_profile import IosScepCertificateProfile
-

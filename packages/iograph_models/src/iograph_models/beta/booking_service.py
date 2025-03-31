@@ -3,7 +3,7 @@ from typing import Optional
 from typing import Union
 from typing import Literal
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class BookingService(BaseModel):
@@ -40,4 +40,3 @@ from .reference_numeric import ReferenceNumeric
 from .booking_price_type import BookingPriceType
 from .booking_reminder import BookingReminder
 from .booking_scheduling_policy import BookingSchedulingPolicy
-

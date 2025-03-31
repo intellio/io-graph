@@ -1,12 +1,13 @@
 from __future__ import annotations
 from typing import Optional
+from typing import Literal
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class AccessReviewHistoryInstance(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
+	odata_type: Literal["#microsoft.graph.accessReviewHistoryInstance"] = Field(alias="@odata.type",)
 	downloadUri: Optional[str] = Field(alias="downloadUri", default=None,)
 	expirationDateTime: Optional[datetime] = Field(alias="expirationDateTime", default=None,)
 	fulfilledDateTime: Optional[datetime] = Field(alias="fulfilledDateTime", default=None,)
@@ -16,4 +17,3 @@ class AccessReviewHistoryInstance(BaseModel):
 	status: Optional[AccessReviewHistoryStatus | str] = Field(alias="status", default=None,)
 
 from .access_review_history_status import AccessReviewHistoryStatus
-

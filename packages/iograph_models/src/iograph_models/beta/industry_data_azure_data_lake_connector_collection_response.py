@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class IndustryDataAzureDataLakeConnectorCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class IndustryDataAzureDataLakeConnectorCollectionResponse(BaseModel):
 	value: Optional[list[IndustryDataAzureDataLakeConnector]] = Field(alias="value", default=None,)
 
 from .industry_data_azure_data_lake_connector import IndustryDataAzureDataLakeConnector
-

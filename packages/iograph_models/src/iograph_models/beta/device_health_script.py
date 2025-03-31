@@ -1,14 +1,15 @@
 from __future__ import annotations
 from typing import Optional
 from typing import Union
+from typing import Literal
 from typing import Annotated
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class DeviceHealthScript(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
+	odata_type: Literal["#microsoft.graph.deviceHealthScript"] = Field(alias="@odata.type",)
 	createdDateTime: Optional[datetime] = Field(alias="createdDateTime", default=None,)
 	description: Optional[str] = Field(alias="description", default=None,)
 	detectionScriptContent: Optional[str] = Field(alias="detectionScriptContent", default=None,)
@@ -34,11 +35,7 @@ from .device_health_script_boolean_parameter import DeviceHealthScriptBooleanPar
 from .device_health_script_integer_parameter import DeviceHealthScriptIntegerParameter
 from .device_health_script_string_parameter import DeviceHealthScriptStringParameter
 from .device_health_script_type import DeviceHealthScriptType
-from .device_health_script_boolean_parameter import DeviceHealthScriptBooleanParameter
-from .device_health_script_integer_parameter import DeviceHealthScriptIntegerParameter
-from .device_health_script_string_parameter import DeviceHealthScriptStringParameter
 from .run_as_account_type import RunAsAccountType
 from .device_health_script_assignment import DeviceHealthScriptAssignment
 from .device_health_script_device_state import DeviceHealthScriptDeviceState
 from .device_health_script_run_summary import DeviceHealthScriptRunSummary
-

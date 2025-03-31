@@ -1,7 +1,7 @@
 from __future__ import annotations
 from typing import Optional
 from typing import Union
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class ManagedAppPolicyDeploymentSummaryPerApp(BaseModel):
@@ -11,4 +11,3 @@ class ManagedAppPolicyDeploymentSummaryPerApp(BaseModel):
 
 from .android_mobile_app_identifier import AndroidMobileAppIdentifier
 from .ios_mobile_app_identifier import IosMobileAppIdentifier
-

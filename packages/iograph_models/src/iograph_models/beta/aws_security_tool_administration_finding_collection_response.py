@@ -2,7 +2,7 @@ from __future__ import annotations
 from typing import Optional
 from typing import Union
 from typing import Annotated
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class AwsSecurityToolAdministrationFindingCollectionResponse(BaseModel):
@@ -14,4 +14,3 @@ from .security_tool_aws_resource_administrator_finding import SecurityToolAwsRes
 from .security_tool_aws_role_administrator_finding import SecurityToolAwsRoleAdministratorFinding
 from .security_tool_aws_serverless_function_administrator_finding import SecurityToolAwsServerlessFunctionAdministratorFinding
 from .security_tool_aws_user_administrator_finding import SecurityToolAwsUserAdministratorFinding
-

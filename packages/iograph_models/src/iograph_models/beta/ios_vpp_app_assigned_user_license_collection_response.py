@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class IosVppAppAssignedUserLicenseCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class IosVppAppAssignedUserLicenseCollectionResponse(BaseModel):
 	value: Optional[list[IosVppAppAssignedUserLicense]] = Field(alias="value", default=None,)
 
 from .ios_vpp_app_assigned_user_license import IosVppAppAssignedUserLicense
-

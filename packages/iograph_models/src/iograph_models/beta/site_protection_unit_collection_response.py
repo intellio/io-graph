@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class SiteProtectionUnitCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class SiteProtectionUnitCollectionResponse(BaseModel):
 	value: Optional[list[SiteProtectionUnit]] = Field(alias="value", default=None,)
 
 from .site_protection_unit import SiteProtectionUnit
-

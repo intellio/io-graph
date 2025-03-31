@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class DocumentSet(BaseModel):
@@ -16,5 +16,3 @@ class DocumentSet(BaseModel):
 from .content_type_info import ContentTypeInfo
 from .document_set_content import DocumentSetContent
 from .column_definition import ColumnDefinition
-from .column_definition import ColumnDefinition
-

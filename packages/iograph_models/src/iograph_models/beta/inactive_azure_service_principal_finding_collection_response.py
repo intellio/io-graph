@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class InactiveAzureServicePrincipalFindingCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class InactiveAzureServicePrincipalFindingCollectionResponse(BaseModel):
 	value: Optional[list[InactiveAzureServicePrincipalFinding]] = Field(alias="value", default=None,)
 
 from .inactive_azure_service_principal_finding import InactiveAzureServicePrincipalFinding
-

@@ -1,7 +1,7 @@
 from __future__ import annotations
 from typing import Optional
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class CloudPcOnPremisesConnectionHealthCheck(BaseModel):
@@ -18,4 +18,3 @@ class CloudPcOnPremisesConnectionHealthCheck(BaseModel):
 
 from .cloud_pc_on_premises_connection_health_check_error_type import CloudPcOnPremisesConnectionHealthCheckErrorType
 from .cloud_pc_on_premises_connection_status import CloudPcOnPremisesConnectionStatus
-

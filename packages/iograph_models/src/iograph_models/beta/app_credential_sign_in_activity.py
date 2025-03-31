@@ -1,12 +1,13 @@
 from __future__ import annotations
 from typing import Optional
+from typing import Literal
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class AppCredentialSignInActivity(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
+	odata_type: Literal["#microsoft.graph.appCredentialSignInActivity"] = Field(alias="@odata.type",)
 	appId: Optional[str] = Field(alias="appId", default=None,)
 	appObjectId: Optional[str] = Field(alias="appObjectId", default=None,)
 	createdDateTime: Optional[datetime] = Field(alias="createdDateTime", default=None,)
@@ -23,4 +24,3 @@ from .application_key_origin import ApplicationKeyOrigin
 from .application_key_type import ApplicationKeyType
 from .application_key_usage import ApplicationKeyUsage
 from .sign_in_activity import SignInActivity
-

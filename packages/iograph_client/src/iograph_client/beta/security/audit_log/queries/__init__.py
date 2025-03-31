@@ -14,9 +14,9 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_audit_log_query_id import ByAuditLogQueryIdRequest
 	from .....request_adapter import HttpxRequestAdapter
-from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
-from iograph_models.beta.security_audit_log_query_collection_response import SecurityAuditLogQueryCollectionResponse
 from iograph_models.beta.security_audit_log_query import SecurityAuditLogQuery
+from iograph_models.beta.security_audit_log_query_collection_response import SecurityAuditLogQueryCollectionResponse
+from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 
 
 class QueriesRequest(BaseRequestBuilder):

@@ -2,11 +2,11 @@ from __future__ import annotations
 from typing import Optional
 from typing import Union
 from typing import Annotated
+from datetime import datetime
+from pydantic import BaseModel, Field
 from pydantic import model_validator, ModelWrapValidatorHandler, ValidationError
 from typing_extensions import Self
 from typing import Any
-from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class ManagedDevice(BaseModel):
@@ -170,4 +170,3 @@ from .managed_device_mobile_app_configuration_state import ManagedDeviceMobileAp
 from .security_baseline_state import SecurityBaselineState
 from .user import User
 from .windows_protection_state import WindowsProtectionState
-

@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class AdminConsent(BaseModel):
@@ -9,5 +9,3 @@ class AdminConsent(BaseModel):
 	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
 
 from .admin_consent_state import AdminConsentState
-from .admin_consent_state import AdminConsentState
-

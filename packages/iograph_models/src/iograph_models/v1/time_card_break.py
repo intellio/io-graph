@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class TimeCardBreak(BaseModel):
@@ -12,5 +12,3 @@ class TimeCardBreak(BaseModel):
 
 from .time_card_event import TimeCardEvent
 from .item_body import ItemBody
-from .time_card_event import TimeCardEvent
-

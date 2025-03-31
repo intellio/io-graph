@@ -1,11 +1,11 @@
 from __future__ import annotations
 from typing import Optional
 from typing import Union
+from datetime import datetime
+from pydantic import BaseModel, Field
 from pydantic import model_validator, ModelWrapValidatorHandler, ValidationError
 from typing_extensions import Self
 from typing import Any
-from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class GroupPolicyPresentationValue(BaseModel):
@@ -14,7 +14,7 @@ class GroupPolicyPresentationValue(BaseModel):
 	createdDateTime: Optional[datetime] = Field(alias="createdDateTime", default=None,)
 	lastModifiedDateTime: Optional[datetime] = Field(alias="lastModifiedDateTime", default=None,)
 	definitionValue: Optional[GroupPolicyDefinitionValue] = Field(alias="definitionValue", default=None,)
-	presentation: Optional[Union[GroupPolicyUploadedPresentation, GroupPolicyPresentationCheckBox, GroupPolicyPresentationComboBox, GroupPolicyPresentationDecimalTextBox, GroupPolicyPresentationDropdownList, GroupPolicyPresentationListBox, GroupPolicyPresentationLongDecimalTextBox, GroupPolicyPresentationMultiTextBox, GroupPolicyPresentationText, GroupPolicyPresentationTextBox]] = Field(alias="presentation", default=None,discriminator="odata_type", )
+	presentation: Optional[Union[GroupPolicyPresentationCheckBox, GroupPolicyPresentationComboBox, GroupPolicyPresentationDecimalTextBox, GroupPolicyPresentationDropdownList, GroupPolicyPresentationListBox, GroupPolicyPresentationLongDecimalTextBox, GroupPolicyPresentationMultiTextBox, GroupPolicyPresentationText, GroupPolicyPresentationTextBox]] = Field(alias="presentation", default=None,discriminator="odata_type", )
 
 	@model_validator(mode="wrap")
 	def convert_discriminator_class(cls, data: Any, handler: ModelWrapValidatorHandler[Self]) -> Self:
@@ -50,7 +50,6 @@ class GroupPolicyPresentationValue(BaseModel):
 			raise e
 
 from .group_policy_definition_value import GroupPolicyDefinitionValue
-from .group_policy_uploaded_presentation import GroupPolicyUploadedPresentation
 from .group_policy_presentation_check_box import GroupPolicyPresentationCheckBox
 from .group_policy_presentation_combo_box import GroupPolicyPresentationComboBox
 from .group_policy_presentation_decimal_text_box import GroupPolicyPresentationDecimalTextBox
@@ -60,4 +59,3 @@ from .group_policy_presentation_long_decimal_text_box import GroupPolicyPresenta
 from .group_policy_presentation_multi_text_box import GroupPolicyPresentationMultiTextBox
 from .group_policy_presentation_text import GroupPolicyPresentationText
 from .group_policy_presentation_text_box import GroupPolicyPresentationTextBox
-

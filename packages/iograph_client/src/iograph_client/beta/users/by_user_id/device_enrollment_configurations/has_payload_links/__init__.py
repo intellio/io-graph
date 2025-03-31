@@ -11,9 +11,9 @@ from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:
 	from ......request_adapter import HttpxRequestAdapter
-from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.beta.has_payload_links_post_response import Has_payload_linksPostResponse
 from iograph_models.beta.has_payload_links_post_request import Has_payload_linksPostRequest
+from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 
 
 class HasPayloadLinksRequest(BaseRequestBuilder):

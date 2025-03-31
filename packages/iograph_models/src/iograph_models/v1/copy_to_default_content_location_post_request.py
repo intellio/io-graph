@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class Copy_to_default_content_locationPostRequest(BaseModel):
@@ -8,4 +8,3 @@ class Copy_to_default_content_locationPostRequest(BaseModel):
 	destinationFileName: Optional[str] = Field(alias="destinationFileName", default=None,)
 
 from .item_reference import ItemReference
-

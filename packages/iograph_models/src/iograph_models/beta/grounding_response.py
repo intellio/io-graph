@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class GroundingResponse(BaseModel):
@@ -14,4 +14,3 @@ class GroundingResponse(BaseModel):
 from .search_resource_metadata_dictionary import SearchResourceMetadataDictionary
 from .grounding_entity_type import GroundingEntityType
 from .search_sensitivity_label_info import SearchSensitivityLabelInfo
-

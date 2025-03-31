@@ -15,8 +15,8 @@ if TYPE_CHECKING:
 	from .by_session_id import BySessionIdRequest
 	from ......request_adapter import HttpxRequestAdapter
 from iograph_models.v1.call_records_session_collection_response import CallRecordsSessionCollectionResponse
-from iograph_models.v1.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.v1.call_records_session import CallRecordsSession
+from iograph_models.v1.o_data_errors__o_data_error import ODataErrorsODataError
 
 
 class SessionsRequest(BaseRequestBuilder):

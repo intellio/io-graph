@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class Get_office365_groups_activity_detail_with_dateGetResponse(BaseModel):
@@ -9,4 +9,3 @@ class Get_office365_groups_activity_detail_with_dateGetResponse(BaseModel):
 	value: Optional[list[Office365GroupsActivityDetail]] = Field(alias="value", default=None,)
 
 from .office365_groups_activity_detail import Office365GroupsActivityDetail
-

@@ -1,11 +1,11 @@
 from __future__ import annotations
 from typing import Optional
 from typing import Literal
+from datetime import datetime
+from pydantic import BaseModel, Field
 from pydantic import model_validator, ModelWrapValidatorHandler, ValidationError
 from typing_extensions import Self
 from typing import Any
-from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class ManagedAppProtection(BaseModel):
@@ -78,9 +78,6 @@ class ManagedAppProtection(BaseModel):
 			if mapping_key == "#microsoft.graph.defaultManagedAppProtection":
 				from .default_managed_app_protection import DefaultManagedAppProtection
 				return DefaultManagedAppProtection.model_validate(data)
-			if mapping_key == "#microsoft.graph.targetedManagedAppProtection":
-				from .targeted_managed_app_protection import TargetedManagedAppProtection
-				return TargetedManagedAppProtection.model_validate(data)
 			if mapping_key == "#microsoft.graph.androidManagedAppProtection":
 				from .android_managed_app_protection import AndroidManagedAppProtection
 				return AndroidManagedAppProtection.model_validate(data)
@@ -96,16 +93,11 @@ from .managed_app_data_ingestion_location import ManagedAppDataIngestionLocation
 from .managed_app_data_storage_location import ManagedAppDataStorageLocation
 from .managed_app_data_transfer_level import ManagedAppDataTransferLevel
 from .managed_app_clipboard_sharing_level import ManagedAppClipboardSharingLevel
-from .managed_app_data_transfer_level import ManagedAppDataTransferLevel
-from .managed_app_remediation_action import ManagedAppRemediationAction
-from .managed_app_remediation_action import ManagedAppRemediationAction
 from .managed_app_remediation_action import ManagedAppRemediationAction
 from .managed_app_phone_number_redirect_level import ManagedAppPhoneNumberRedirectLevel
 from .managed_browser_type import ManagedBrowserType
 from .managed_app_device_threat_level import ManagedAppDeviceThreatLevel
 from .mobile_threat_defense_partner_priority import MobileThreatDefensePartnerPriority
-from .managed_app_remediation_action import ManagedAppRemediationAction
 from .managed_app_notification_restriction import ManagedAppNotificationRestriction
 from .managed_app_pin_character_set import ManagedAppPinCharacterSet
 from .messaging_redirect_app_type import MessagingRedirectAppType
-

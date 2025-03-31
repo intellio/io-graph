@@ -2,7 +2,7 @@ from __future__ import annotations
 from typing import Optional
 from typing import Union
 from typing import Annotated
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class IpRangeCollectionResponse(BaseModel):
@@ -14,4 +14,3 @@ from .i_pv4_cidr_range import IPv4CidrRange
 from .i_pv4_range import IPv4Range
 from .i_pv6_cidr_range import IPv6CidrRange
 from .i_pv6_range import IPv6Range
-

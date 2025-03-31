@@ -16,8 +16,8 @@ if TYPE_CHECKING:
 	from .by_user_activity_id import ByUserActivityIdRequest
 	from ....request_adapter import HttpxRequestAdapter
 from iograph_models.v1.o_data_errors__o_data_error import ODataErrorsODataError
-from iograph_models.v1.user_activity import UserActivity
 from iograph_models.v1.user_activity_collection_response import UserActivityCollectionResponse
+from iograph_models.v1.user_activity import UserActivity
 
 
 class ActivitiesRequest(BaseRequestBuilder):

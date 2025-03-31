@@ -2,7 +2,7 @@ from __future__ import annotations
 from typing import Optional
 from typing import Union
 from typing import Annotated
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class MailFolderOperationCollectionResponse(BaseModel):
@@ -11,4 +11,3 @@ class MailFolderOperationCollectionResponse(BaseModel):
 	value: Optional[list[Annotated[Union[UpdateAllMessagesReadStateOperation],Field(discriminator="odata_type")]]] = Field(alias="value", default=None,)
 
 from .update_all_messages_read_state_operation import UpdateAllMessagesReadStateOperation
-

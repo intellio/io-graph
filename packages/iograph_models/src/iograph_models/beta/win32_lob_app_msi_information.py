@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class Win32LobAppMsiInformation(BaseModel):
@@ -14,4 +14,3 @@ class Win32LobAppMsiInformation(BaseModel):
 	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
 
 from .win32_lob_app_msi_package_type import Win32LobAppMsiPackageType
-

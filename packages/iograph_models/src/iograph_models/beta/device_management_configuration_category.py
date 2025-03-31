@@ -1,11 +1,12 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from typing import Literal
+from pydantic import BaseModel, Field
 
 
 class DeviceManagementConfigurationCategory(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
+	odata_type: Literal["#microsoft.graph.deviceManagementConfigurationCategory"] = Field(alias="@odata.type",)
 	categoryDescription: Optional[str] = Field(alias="categoryDescription", default=None,)
 	childCategoryIds: Optional[list[str]] = Field(alias="childCategoryIds", default=None,)
 	description: Optional[str] = Field(alias="description", default=None,)
@@ -21,4 +22,3 @@ class DeviceManagementConfigurationCategory(BaseModel):
 from .device_management_configuration_platforms import DeviceManagementConfigurationPlatforms
 from .device_management_configuration_setting_usage import DeviceManagementConfigurationSettingUsage
 from .device_management_configuration_technologies import DeviceManagementConfigurationTechnologies
-

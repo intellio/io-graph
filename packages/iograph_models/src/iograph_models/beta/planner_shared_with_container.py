@@ -1,7 +1,7 @@
 from __future__ import annotations
 from typing import Optional
 from typing import Literal
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class PlannerSharedWithContainer(BaseModel):
@@ -13,4 +13,3 @@ class PlannerSharedWithContainer(BaseModel):
 
 from .planner_container_type import PlannerContainerType
 from .planner_plan_access_level import PlannerPlanAccessLevel
-

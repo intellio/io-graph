@@ -1,4 +1,5 @@
 import os
+from pyexpat import model
 import sys
 import re
 import yaml
@@ -235,7 +236,25 @@ def _pydantic_field_type_write(
     return field_type + ' = ' + 'Field(' + field_alias + field_default + field_discriminator + ')'
     # return f'{field_type} = Field(alias="{field_model_name}",{"default=None," if nullable else ""}, {('discriminator='+'"'+clean_field_name(discriminator[0])+'", ') if discriminator else ''})'
 
-def get_model_discriminator(schema):
+def _has_x_ms_discriminator_value(model_name:str, components) -> bool:
+    # for given discriminator model check that x-ms-discriminator-value exists in its model, if so add it as a discriminator
+    # to the field. basically if a model doesn't have an identifier, it should not be a discriminated value
+    
+
+    if model_name in components['schemas']:
+        model_schema = components['schemas'][model_name]
+
+        # check if the model schema has x-ms-discriminator-value
+        if 'x-ms-discriminator-value' in model_schema:
+            return True
+
+        else:
+            return False
+
+    else:
+        raise Exception('Model schema not found for model name: ' + model_name + ' in is_nested_discriminator function')
+
+def get_model_discriminator(schema, components):
     discriminator_mapping = {}
 
     # we only check for discriminator in schema defined for model and not from references
@@ -244,12 +263,14 @@ def get_model_discriminator(schema):
             if '$ref' in item:
                 continue
             else:
-                return get_model_discriminator(item)
+                return get_model_discriminator(item, components)
     
     if 'discriminator' in schema:
         for key, value in schema['discriminator']['mapping'].items():
             model_name = value.split('/')[-1]
-            discriminator_mapping[key] = model_name
+            # check if the model has x-ms-discriminator-value
+            if _has_x_ms_discriminator_value(model_name, components):
+                discriminator_mapping[key] = model_name
             
         discriminator_field = schema['discriminator']['propertyName']
         return discriminator_field, discriminator_mapping
@@ -292,7 +313,7 @@ def _check_field_type_is_enum(model_name, components):
         return False
 
 def _handle_ref_type_write(prop_name:str, prop_schema:dict, model_name:str, components, dependencies:list, list_ref:bool = False):
-    discriminator = get_model_discriminator(components['schemas'][model_name])
+    discriminator = get_model_discriminator(components['schemas'][model_name], components)
     if discriminator:
         for dep in discriminator[1].values():
             dependencies.append(dep)
@@ -312,7 +333,8 @@ def _handle_ref_type_write(prop_name:str, prop_schema:dict, model_name:str, comp
                 )
     return write
 
-def get_schema_fields(name:str, schema, components,dependencies:list):
+
+def get_schema_fields(name:str, schema, components,dependencies:list, x_ms_discriminator_value:str):
     fields = {}
 
     if 'allOf' in schema:
@@ -321,25 +343,50 @@ def get_schema_fields(name:str, schema, components,dependencies:list):
                 model_name = item['$ref'].split('/')[-1]
                 resolved_schema = resolve_ref_in_components(item['$ref'], components)
                 try:
-                    fields.update(get_schema_fields(model_name, resolved_schema, components, dependencies))
+                    # We would want fields that are directly defined in a model have priority over
+                    # fields defined in refs in allOf. Its basically honoring class inheritance
+                    ref_fields = get_schema_fields(model_name, resolved_schema, components, dependencies, x_ms_discriminator_value)
+                    # update fields with the fields from the ref only if the field is not already defined
+                    fields.update({field_name: field_type for field_name, field_type in ref_fields.items() if field_name not in fields})
                 except Exception as e:
                     raise Exception('Error in allOf schema for model name: ' + name) from e
             else:
-                fields.update(get_schema_fields(name, item, components, dependencies))
+                fields.update(get_schema_fields(name, item, components, dependencies, x_ms_discriminator_value))
 
     # Extract fields from properties
     if 'properties'  in schema:
 
         # extract fields from properties
         for prop_name, prop_schema in schema['properties'].items():
+
             # handle special case for @odata.type
+            # NOTE: this will override the odata_type field if there are muliple models in allOf
+            # this is basically writing the discriminator value to the fielf for the latest model 
+            # sees in the allOf. 
             if prop_name == '@odata.type':
+
                 default_value = prop_schema.get('default')
                 if default_value:
                     fields[clean_field_name(prop_name)] = f'Literal["{default_value}"] = Field(alias="@odata.type", default="{default_value}")'
-                else: 
+                    continue
+                elif x_ms_discriminator_value:
+                    fields[clean_field_name(prop_name)] = f'Literal["{x_ms_discriminator_value}"] = Field(alias="@odata.type",)'
+                    continue
+                
+                # handle the case were @odata.type neither has a default value nor x-ms-discriminator-value.
+                # These cases usually have a discriminator mapping and they themselves turn into another
+                # model. Otherwise known as a nested model (baseModel > subModel > actualModel) we need to check
+                # elif 'discriminator' in schema:
+                #     discriminator_mappings = schema['discriminator']['mapping']
+                #     discriminators = get_nested_discriminator(discriminator_mappings, components)
+                #     if discriminators:
+                #         fields[clean_field_name(prop_name)] = f'Literal["{",".join(discriminators)}"] = Field(alias="@odata.type",)'
+                #         continue
+                #     else:
+                #         fields[clean_field_name(prop_name)] = 'Optional[str] = Field(alias="@odata.type", default=None,)'
+                else:
                     fields[clean_field_name(prop_name)] = 'Optional[str] = Field(alias="@odata.type", default=None,)'
-                continue
+                    continue
 
             if '$ref' in prop_schema:
                 model_name = prop_schema['$ref'].split('/')[-1]
@@ -451,88 +498,105 @@ def _clean_pydantic_field_name(name):
         return name
     return name
 
-def create_pydantic_model(name:str, schema, components):
+def create_pydantic_model(name:str, schema:dict, components, dry_run:bool = False):
     fields = {}
     deps = []
 
     if any(x in schema for x in ['anyOf', 'oneOf']):
         raise Exception('anyOf and oneOf in model definition not supported yet')
 
-    # if 'properties' in schema:
-    fields.update(get_schema_fields(name, schema, components, deps))
+
+    # get x_ms_discriminator_value value 
+    x_ms_discriminator_value = schema.get('x-ms-discriminator-value', None)
+    # resolve fields
+    fields.update(get_schema_fields(name, schema, components, deps, x_ms_discriminator_value))
 
     # get discriminator mapping
-    discriminator = get_model_discriminator(schema)
+    discriminator = get_model_discriminator(schema, components)
 
-    # write to file
-    model_file = os.path.join(models_dir, f'{module_file_name_from_name(name)}.py')
-    with open(model_file, 'w') as model_file_obj:
-        class_name = module_class_name_from_name(name)
-        model_file_obj.write(f'from __future__ import annotations\n')
-        if any('UUID' in x for x in fields.values() if isinstance(x,str)):
-            model_file_obj.write(f'from uuid import UUID\n')
-        if any('Optional' in x for x in fields.values() if isinstance(x,str)):
-            model_file_obj.write(f'from typing import Optional\n')
-        if any('Union' in x for x in fields.values() if isinstance(x,str)):
-            model_file_obj.write(f'from typing import Union\n')
-        if any('Literal' in x for x in fields.values() if isinstance(x,str)):
-            model_file_obj.write(f'from typing import Literal\n')
-        if any('Annotated' in x for x in fields.values() if isinstance(x,str)):
-            model_file_obj.write(f'from typing import Annotated\n')
-        # write discriminator related imports
+    # class name
+    class_name = module_class_name_from_name(name)
 
-        if discriminator:
-            model_file_obj.write(f'from pydantic import model_validator, ModelWrapValidatorHandler, ValidationError\n')
-            model_file_obj.write(f'from typing_extensions import Self\n')
-            model_file_obj.write(f'from typing import Any\n')
+    # writes
+    writes = []
 
-        if any('datetime' in x for x in fields.values() if isinstance(x,str)):
-            model_file_obj.write(f'from datetime import datetime\n')
+    # write imports
+    writes.append('from __future__ import annotations')
+    if any('UUID' in x for x in fields.values() if isinstance(x,str)):
+            writes.append('from uuid import UUID')
+    if any('Optional' in x for x in fields.values() if isinstance(x,str)):
+        writes.append('from typing import Optional')
+    if any('Union' in x for x in fields.values() if isinstance(x,str)):
+        writes.append('from typing import Union')
+    if any('Literal' in x for x in fields.values() if isinstance(x,str)):
+        writes.append('from typing import Literal')
+    if any('Annotated' in x for x in fields.values() if isinstance(x,str)):
+        writes.append('from typing import Annotated')
+    if any('datetime' in x for x in fields.values() if isinstance(x,str)):
+        writes.append('from datetime import datetime')
+    writes.append('from pydantic import BaseModel, Field')
+    if any('SerializeAsAny' in x for x in fields.values() if isinstance(x,str)):
+        writes.append('from pydantic import SerializeAsAny')
+    # write discriminator related imports
+    if discriminator:
+        writes.append('from pydantic import model_validator, ModelWrapValidatorHandler, ValidationError')
+        writes.append('from typing_extensions import Self')
+        writes.append('from typing import Any')
+    writes.append('\n')
 
-        model_file_obj.write(f'from pydantic import BaseModel, Field, SerializeAsAny\n')
-        if any('SerializeAsAny' in x for x in fields.values() if isinstance(x,str)):
-            model_file_obj.write(f'from pydantic import SerializeAsAny\n')
+    # write the class
+    writes.append(f'class {class_name}(BaseModel):')
+    for field_name, field_type in fields.items():
+            writes.append(f'\t{_clean_pydantic_field_name(field_name)}: {field_type}')
+    writes.append('')
 
-        model_file_obj.write('\n\n')
-        
+     # write discriminator mapping
+    if discriminator:
+        discriminator_field, discriminator_mapping = discriminator
+        writes.append('\t@model_validator(mode="wrap")')
+        writes.append('\tdef convert_discriminator_class(cls, data: Any, handler: ModelWrapValidatorHandler[Self]) -> Self:')
+        writes.append('\t\ttry:')
+        writes.append('\t\t\t# check with parent model to catch any errors')
+        writes.append('\t\t\tparent_validated_model = handler(data)')
+        writes.append('\t\t\t# check if the discriminator field is present')
+        writes.append(f'\t\t\tif "{discriminator_field}" not in data:')
+        writes.append(f'\t\t\t\treturn parent_validated_model')
+        writes.append('\t\t\t# get the discriminator value')
+        writes.append(f'\t\t\tmapping_key = data["{discriminator_field}"]')            
+        for mapping_key, mapping_value in discriminator_mapping.items():
+            writes.append(f'\t\t\tif mapping_key == "{mapping_key}":')
+            writes.append(f'\t\t\t\tfrom .{module_file_name_from_name(mapping_value)} import {module_class_name_from_name(mapping_value)}')
+            writes.append(f'\t\t\t\treturn {module_class_name_from_name(mapping_value)}.model_validate(data)')
+        writes.append('\t\t\traise ValidationError(f"Invalid discriminator value: {mapping_key}")')
+        writes.append('')
+        writes.append('\t\texcept Exception as e:')
+        writes.append('\t\t\traise e')
+        writes.append('')
 
-        model_file_obj.write(f'class {class_name}(BaseModel):\n')
-        for field_name, field_type in fields.items():
-            model_file_obj.write(f'\t{_clean_pydantic_field_name(field_name)}: {field_type}\n')
-        model_file_obj.write(f'\n')
+    # write dependency imports
+    for dep in deps:
+        dep_write = f'from .{module_file_name_from_name(dep)} import {module_class_name_from_name(dep)}'
+        # Ignore self-referencing dependencies
+        if module_class_name_from_name(dep) == class_name:
+            continue
+        # Ignore already imported dependencies
+        if dep_write in writes:
+            continue
+        writes.append(dep_write)
 
-        # write discriminator mapping
-        
-        if discriminator:
-            discriminator_field, discriminator_mapping = discriminator
-            model_file_obj.write('\t@model_validator(mode="wrap")\n')
-            model_file_obj.write('\tdef convert_discriminator_class(cls, data: Any, handler: ModelWrapValidatorHandler[Self]) -> Self:\n')
-            model_file_obj.write('\t\ttry:\n')
-            model_file_obj.write('\t\t\t# check with parent model to catch any errors\n')
-            model_file_obj.write('\t\t\tparent_validated_model = handler(data)\n')
-            model_file_obj.write('\t\t\t# check if the discriminator field is present\n')
-            model_file_obj.write(f'\t\t\tif "{discriminator_field}" not in data:\n')
-            model_file_obj.write(f'\t\t\t\treturn parent_validated_model\n')
-            model_file_obj.write('\t\t\t# get the discriminator value\n')
-            model_file_obj.write(f'\t\t\tmapping_key = data["{discriminator_field}"]\n')            
-            for mapping_key, mapping_value in discriminator_mapping.items():
-                model_file_obj.write(f'\t\t\tif mapping_key == "{mapping_key}":\n')
-                model_file_obj.write(f'\t\t\t\tfrom .{module_file_name_from_name(mapping_value)} import {module_class_name_from_name(mapping_value)}\n')
-                model_file_obj.write(f'\t\t\t\treturn {module_class_name_from_name(mapping_value)}.model_validate(data)\n')
-            model_file_obj.write('\t\t\traise ValidationError(f"Invalid discriminator value: {mapping_key}")\n')
-            model_file_obj.write(f'\n')
-            model_file_obj.write('\t\texcept Exception as e:\n')
-            model_file_obj.write('\t\t\traise e\n')
-            model_file_obj.write('\n')
-        
-        # write dependency imports
-        for dep in deps:
-            # Ignore self-referencing dependencies
-            if module_class_name_from_name(dep) == class_name:
-                continue
-            model_file_obj.write(f'from .{module_file_name_from_name(dep)} import {module_class_name_from_name(dep)}\n')
-        
-        model_file_obj.write(f'\n')
+
+    # dry run
+    if dry_run:
+        print(f'###### Creating model: {class_name}')
+        for write in writes:
+            print(write)
+
+    else:
+        # write to file
+        model_file = os.path.join(models_dir, f'{module_file_name_from_name(name)}.py')
+        with open(model_file, 'w') as model_file_obj:
+            for write in writes:
+                model_file_obj.write(write + '\n')
 
 
 
@@ -571,9 +635,9 @@ def create_root_model(name: str, schema, components):
         model_file_obj.write(f'\n\n')
         model_file_obj.write(f'{class_name} = RootModel[{field_type}]\n')
                                       
-def create_model(name: str, schema, components):
+def create_model(name: str, schema, components, dry_run:bool = False):
     if 'type' in schema and schema['type'] == 'object':
-        create_pydantic_model(name, schema, components)
+        create_pydantic_model(name, schema, components, dry_run=dry_run)
 
     elif 'type' in schema and schema['type'] in ['integer', 'number', 'boolean','string']:
 
@@ -588,7 +652,7 @@ def create_model(name: str, schema, components):
             create_root_model(name, schema, components)
 
     elif 'allOf' in schema:
-        create_pydantic_model(name, schema, components)
+        create_pydantic_model(name, schema, components, dry_run=dry_run)
 
     else:
         print(name)
@@ -1264,6 +1328,23 @@ if __name__ == '__main__':
     update_version_in_pyproject(new_version, client_pyproject_file)
     update_version_in_pyproject(new_version, models_pyproject_file)
 
+
+# # Use below code to dry run generating a single model
+# if __name__ == '__main__':
+#     if len(sys.argv) != 3:
+#         print("Usage: python update_version.py <new_version> <v1/beta>")
+#         sys.exit(1)
+#     new_version = sys.argv[1]
+
+#     with open(openapi_file, 'r') as file:
+#         openapi_data = yaml.load(file,Loader=CoreLoader )
+#     print('OpenAPI data loaded')
+
+#     components = openapi_data.get('components', {})
+#     schemas = components.get('schemas', {})
+#     test_model = 'microsoft.graph.attachmentBase'
+#     test_schema = schemas.get(test_model, {})
+#     create_model(test_model, test_schema, components, dry_run=True)
 
 # Notes:
 # Might be worth adding _TypeAdapter as an internal field to models that have discrimination and use pydantic TypeAdapter

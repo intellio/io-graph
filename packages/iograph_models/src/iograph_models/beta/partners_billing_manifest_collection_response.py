@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class PartnersBillingManifestCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class PartnersBillingManifestCollectionResponse(BaseModel):
 	value: Optional[list[PartnersBillingManifest]] = Field(alias="value", default=None,)
 
 from .partners_billing_manifest import PartnersBillingManifest
-

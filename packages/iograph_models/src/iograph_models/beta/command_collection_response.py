@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class CommandCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class CommandCollectionResponse(BaseModel):
 	value: Optional[list[Command]] = Field(alias="value", default=None,)
 
 from .command import Command
-

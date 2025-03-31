@@ -14,9 +14,9 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_manifest_id import ByManifestIdRequest
 	from ......request_adapter import HttpxRequestAdapter
+from iograph_models.beta.partners_billing_manifest_collection_response import PartnersBillingManifestCollectionResponse
 from iograph_models.beta.partners_billing_manifest import PartnersBillingManifest
 from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
-from iograph_models.beta.partners_billing_manifest_collection_response import PartnersBillingManifestCollectionResponse
 
 
 class ManifestsRequest(BaseRequestBuilder):

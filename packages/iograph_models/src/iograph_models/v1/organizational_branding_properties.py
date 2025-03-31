@@ -1,9 +1,9 @@
 from __future__ import annotations
 from typing import Optional
+from pydantic import BaseModel, Field
 from pydantic import model_validator, ModelWrapValidatorHandler, ValidationError
 from typing_extensions import Self
 from typing import Any
-from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class OrganizationalBrandingProperties(BaseModel):
@@ -65,4 +65,3 @@ class OrganizationalBrandingProperties(BaseModel):
 from .content_customization import ContentCustomization
 from .login_page_layout_configuration import LoginPageLayoutConfiguration
 from .login_page_text_visibility_settings import LoginPageTextVisibilitySettings
-

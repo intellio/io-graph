@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class WorkbookChartPointCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class WorkbookChartPointCollectionResponse(BaseModel):
 	value: Optional[list[WorkbookChartPoint]] = Field(alias="value", default=None,)
 
 from .workbook_chart_point import WorkbookChartPoint
-

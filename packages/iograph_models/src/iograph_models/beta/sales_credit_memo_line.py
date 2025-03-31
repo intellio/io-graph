@@ -1,12 +1,13 @@
 from __future__ import annotations
 from uuid import UUID
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from typing import Literal
+from pydantic import BaseModel, Field
 
 
 class SalesCreditMemoLine(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
+	odata_type: Literal["#microsoft.graph.salesCreditMemoLine"] = Field(alias="@odata.type",)
 	accountId: Optional[UUID] = Field(alias="accountId", default=None,)
 	amountExcludingTax: Optional[int] = Field(alias="amountExcludingTax", default=None,)
 	amountIncludingTax: Optional[int] = Field(alias="amountIncludingTax", default=None,)
@@ -34,4 +35,3 @@ class SalesCreditMemoLine(BaseModel):
 
 from .account import Account
 from .item import Item
-

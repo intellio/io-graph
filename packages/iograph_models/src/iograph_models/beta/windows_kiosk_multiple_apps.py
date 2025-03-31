@@ -3,7 +3,7 @@ from typing import Optional
 from typing import Union
 from typing import Literal
 from typing import Annotated
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class WindowsKioskMultipleApps(BaseModel):
@@ -17,4 +17,3 @@ class WindowsKioskMultipleApps(BaseModel):
 from .windows_kiosk_desktop_app import WindowsKioskDesktopApp
 from .windows_kiosk_u_w_p_app import WindowsKioskUWPApp
 from .windows_kiosk_win32_app import WindowsKioskWin32App
-

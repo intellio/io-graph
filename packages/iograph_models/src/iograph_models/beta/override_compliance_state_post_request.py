@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class Override_compliance_statePostRequest(BaseModel):
@@ -8,4 +8,3 @@ class Override_compliance_statePostRequest(BaseModel):
 	remediationUrl: Optional[str] = Field(alias="remediationUrl", default=None,)
 
 from .administrator_configured_device_compliance_state import AdministratorConfiguredDeviceComplianceState
-

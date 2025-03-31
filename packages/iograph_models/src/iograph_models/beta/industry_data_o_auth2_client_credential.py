@@ -2,7 +2,7 @@ from __future__ import annotations
 from typing import Optional
 from typing import Literal
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class IndustryDataOAuth2ClientCredential(BaseModel):
@@ -14,5 +14,4 @@ class IndustryDataOAuth2ClientCredential(BaseModel):
 	clientSecret: Optional[str] = Field(alias="clientSecret", default=None,)
 	scope: Optional[str] = Field(alias="scope", default=None,)
 	tokenUrl: Optional[str] = Field(alias="tokenUrl", default=None,)
-
 

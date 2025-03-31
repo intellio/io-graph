@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class WindowsInformationProtectionIPRangeCollectionCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class WindowsInformationProtectionIPRangeCollectionCollectionResponse(BaseModel)
 	value: Optional[list[WindowsInformationProtectionIPRangeCollection]] = Field(alias="value", default=None,)
 
 from .windows_information_protection_i_p_range_collection import WindowsInformationProtectionIPRangeCollection
-

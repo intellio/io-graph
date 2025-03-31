@@ -2,7 +2,7 @@ from __future__ import annotations
 from typing import Optional
 from typing import Union
 from typing import Annotated
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class AccessReviewApplyActionCollectionResponse(BaseModel):
@@ -12,4 +12,3 @@ class AccessReviewApplyActionCollectionResponse(BaseModel):
 
 from .disable_and_delete_user_apply_action import DisableAndDeleteUserApplyAction
 from .remove_access_apply_action import RemoveAccessApplyAction
-

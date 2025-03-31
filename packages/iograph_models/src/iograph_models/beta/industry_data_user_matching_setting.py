@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class IndustryDataUserMatchingSetting(BaseModel):
@@ -13,4 +13,3 @@ class IndustryDataUserMatchingSetting(BaseModel):
 from .industry_data_user_match_target_reference_value import IndustryDataUserMatchTargetReferenceValue
 from .industry_data_identifier_type_reference_value import IndustryDataIdentifierTypeReferenceValue
 from .industry_data_role_group import IndustryDataRoleGroup
-

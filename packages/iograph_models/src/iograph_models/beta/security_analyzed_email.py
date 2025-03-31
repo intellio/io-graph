@@ -1,12 +1,13 @@
 from __future__ import annotations
 from typing import Optional
+from typing import Literal
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class SecurityAnalyzedEmail(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
+	odata_type: Literal["#microsoft.graph.security.analyzedEmail"] = Field(alias="@odata.type",)
 	alertIds: Optional[list[str]] = Field(alias="alertIds", default=None,)
 	attachments: Optional[list[SecurityAnalyzedEmailAttachment]] = Field(alias="attachments", default=None,)
 	authenticationDetails: Optional[SecurityAnalyzedEmailAuthenticationDetail] = Field(alias="authenticationDetails", default=None,)
@@ -51,11 +52,9 @@ from .security_antispam_directionality import SecurityAntispamDirectionality
 from .security_analyzed_email_dlp_rule_info import SecurityAnalyzedEmailDlpRuleInfo
 from .security_analyzed_email_exchange_transport_rule_info import SecurityAnalyzedEmailExchangeTransportRuleInfo
 from .security_analyzed_email_delivery_detail import SecurityAnalyzedEmailDeliveryDetail
-from .security_analyzed_email_delivery_detail import SecurityAnalyzedEmailDeliveryDetail
 from .security_analyzed_email_recipient_detail import SecurityAnalyzedEmailRecipientDetail
 from .security_analyzed_email_sender_detail import SecurityAnalyzedEmailSenderDetail
 from .security_threat_detection_detail import SecurityThreatDetectionDetail
 from .security_threat_type import SecurityThreatType
 from .security_timeline_event import SecurityTimelineEvent
 from .security_analyzed_email_url import SecurityAnalyzedEmailUrl
-

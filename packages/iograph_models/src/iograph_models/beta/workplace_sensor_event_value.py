@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class WorkplaceSensorEventValue(BaseModel):
@@ -10,4 +10,3 @@ class WorkplaceSensorEventValue(BaseModel):
 
 from .workplace_sensor_event_type import WorkplaceSensorEventType
 from .email_identity import EmailIdentity
-

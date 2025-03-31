@@ -2,7 +2,7 @@ from __future__ import annotations
 from typing import Optional
 from typing import Union
 from typing import Annotated
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class UserExperienceAnalyticsInsight(BaseModel):
@@ -15,4 +15,3 @@ class UserExperienceAnalyticsInsight(BaseModel):
 from .user_experience_analytics_insight_severity import UserExperienceAnalyticsInsightSeverity
 from .insight_value_double import InsightValueDouble
 from .insight_value_int import InsightValueInt
-

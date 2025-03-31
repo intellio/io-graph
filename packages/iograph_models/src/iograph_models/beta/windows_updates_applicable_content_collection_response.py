@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class WindowsUpdatesApplicableContentCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class WindowsUpdatesApplicableContentCollectionResponse(BaseModel):
 	value: Optional[list[WindowsUpdatesApplicableContent]] = Field(alias="value", default=None,)
 
 from .windows_updates_applicable_content import WindowsUpdatesApplicableContent
-

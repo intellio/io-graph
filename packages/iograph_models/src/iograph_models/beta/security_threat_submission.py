@@ -1,10 +1,10 @@
 from __future__ import annotations
 from typing import Optional
+from datetime import datetime
+from pydantic import BaseModel, Field
 from pydantic import model_validator, ModelWrapValidatorHandler, ValidationError
 from typing_extensions import Self
 from typing import Any
-from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class SecurityThreatSubmission(BaseModel):
@@ -31,18 +31,12 @@ class SecurityThreatSubmission(BaseModel):
 				return parent_validated_model
 			# get the discriminator value
 			mapping_key = data["@odata.type"]
-			if mapping_key == "#microsoft.graph.security.emailThreatSubmission":
-				from .security_email_threat_submission import SecurityEmailThreatSubmission
-				return SecurityEmailThreatSubmission.model_validate(data)
 			if mapping_key == "#microsoft.graph.security.emailContentThreatSubmission":
 				from .security_email_content_threat_submission import SecurityEmailContentThreatSubmission
 				return SecurityEmailContentThreatSubmission.model_validate(data)
 			if mapping_key == "#microsoft.graph.security.emailUrlThreatSubmission":
 				from .security_email_url_threat_submission import SecurityEmailUrlThreatSubmission
 				return SecurityEmailUrlThreatSubmission.model_validate(data)
-			if mapping_key == "#microsoft.graph.security.fileThreatSubmission":
-				from .security_file_threat_submission import SecurityFileThreatSubmission
-				return SecurityFileThreatSubmission.model_validate(data)
 			if mapping_key == "#microsoft.graph.security.fileContentThreatSubmission":
 				from .security_file_content_threat_submission import SecurityFileContentThreatSubmission
 				return SecurityFileContentThreatSubmission.model_validate(data)
@@ -65,4 +59,3 @@ from .security_submission_user_identity import SecuritySubmissionUserIdentity
 from .security_submission_result import SecuritySubmissionResult
 from .security_submission_source import SecuritySubmissionSource
 from .security_long_running_operation_status import SecurityLongRunningOperationStatus
-

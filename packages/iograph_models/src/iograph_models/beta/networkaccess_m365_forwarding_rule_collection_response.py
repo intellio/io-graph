@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class NetworkaccessM365ForwardingRuleCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class NetworkaccessM365ForwardingRuleCollectionResponse(BaseModel):
 	value: Optional[list[NetworkaccessM365ForwardingRule]] = Field(alias="value", default=None,)
 
 from .networkaccess_m365_forwarding_rule import NetworkaccessM365ForwardingRule
-

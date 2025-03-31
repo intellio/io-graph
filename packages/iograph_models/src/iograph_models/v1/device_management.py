@@ -2,13 +2,14 @@ from __future__ import annotations
 from uuid import UUID
 from typing import Optional
 from typing import Union
+from typing import Literal
 from typing import Annotated
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class DeviceManagement(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
+	odata_type: Literal["#microsoft.graph.deviceManagement"] = Field(alias="@odata.type",)
 	deviceProtectionOverview: Optional[DeviceProtectionOverview] = Field(alias="deviceProtectionOverview", default=None,)
 	intuneAccountId: Optional[UUID] = Field(alias="intuneAccountId", default=None,)
 	intuneBrand: Optional[IntuneBrand] = Field(alias="intuneBrand", default=None,)
@@ -26,7 +27,7 @@ class DeviceManagement(BaseModel):
 	deviceCompliancePolicyDeviceStateSummary: Optional[DeviceCompliancePolicyDeviceStateSummary] = Field(alias="deviceCompliancePolicyDeviceStateSummary", default=None,)
 	deviceCompliancePolicySettingStateSummaries: Optional[list[DeviceCompliancePolicySettingStateSummary]] = Field(alias="deviceCompliancePolicySettingStateSummaries", default=None,)
 	deviceConfigurationDeviceStateSummaries: Optional[DeviceConfigurationDeviceStateSummary] = Field(alias="deviceConfigurationDeviceStateSummaries", default=None,)
-	deviceConfigurations: Optional[list[Annotated[Union[AndroidCustomConfiguration, AndroidGeneralDeviceConfiguration, AndroidWorkProfileCustomConfiguration, AndroidWorkProfileGeneralDeviceConfiguration, AppleDeviceFeaturesConfigurationBase, IosDeviceFeaturesConfiguration, MacOSDeviceFeaturesConfiguration, EditionUpgradeConfiguration, IosCertificateProfile, IosCustomConfiguration, IosGeneralDeviceConfiguration, IosUpdateConfiguration, MacOSCustomConfiguration, MacOSGeneralDeviceConfiguration, SharedPCConfiguration, Windows10CustomConfiguration, Windows10EndpointProtectionConfiguration, Windows10EnterpriseModernAppManagementConfiguration, Windows10GeneralConfiguration, Windows10SecureAssessmentConfiguration, Windows10TeamGeneralConfiguration, Windows81GeneralConfiguration, WindowsDefenderAdvancedThreatProtectionConfiguration, WindowsPhone81CustomConfiguration, WindowsPhone81GeneralConfiguration, WindowsUpdateForBusinessConfiguration],Field(discriminator="odata_type")]]] = Field(alias="deviceConfigurations", default=None,)
+	deviceConfigurations: Optional[list[Annotated[Union[AndroidCustomConfiguration, AndroidGeneralDeviceConfiguration, AndroidWorkProfileCustomConfiguration, AndroidWorkProfileGeneralDeviceConfiguration, IosDeviceFeaturesConfiguration, MacOSDeviceFeaturesConfiguration, EditionUpgradeConfiguration, IosCertificateProfile, IosCustomConfiguration, IosGeneralDeviceConfiguration, IosUpdateConfiguration, MacOSCustomConfiguration, MacOSGeneralDeviceConfiguration, SharedPCConfiguration, Windows10CustomConfiguration, Windows10EndpointProtectionConfiguration, Windows10EnterpriseModernAppManagementConfiguration, Windows10GeneralConfiguration, Windows10SecureAssessmentConfiguration, Windows10TeamGeneralConfiguration, Windows81GeneralConfiguration, WindowsDefenderAdvancedThreatProtectionConfiguration, WindowsPhone81CustomConfiguration, WindowsPhone81GeneralConfiguration, WindowsUpdateForBusinessConfiguration],Field(discriminator="odata_type")]]] = Field(alias="deviceConfigurations", default=None,)
 	deviceEnrollmentConfigurations: Optional[list[Annotated[Union[DeviceEnrollmentLimitConfiguration, DeviceEnrollmentPlatformRestrictionsConfiguration, DeviceEnrollmentWindowsHelloForBusinessConfiguration, Windows10EnrollmentCompletionPageConfiguration],Field(discriminator="odata_type")]]] = Field(alias="deviceEnrollmentConfigurations", default=None,)
 	deviceManagementPartners: Optional[list[DeviceManagementPartner]] = Field(alias="deviceManagementPartners", default=None,)
 	exchangeConnectors: Optional[list[DeviceManagementExchangeConnector]] = Field(alias="exchangeConnectors", default=None,)
@@ -102,7 +103,6 @@ from .android_custom_configuration import AndroidCustomConfiguration
 from .android_general_device_configuration import AndroidGeneralDeviceConfiguration
 from .android_work_profile_custom_configuration import AndroidWorkProfileCustomConfiguration
 from .android_work_profile_general_device_configuration import AndroidWorkProfileGeneralDeviceConfiguration
-from .apple_device_features_configuration_base import AppleDeviceFeaturesConfigurationBase
 from .ios_device_features_configuration import IosDeviceFeaturesConfiguration
 from .mac_o_s_device_features_configuration import MacOSDeviceFeaturesConfiguration
 from .edition_upgrade_configuration import EditionUpgradeConfiguration
@@ -156,7 +156,6 @@ from .user_experience_analytics_app_health_device_performance_details import Use
 from .user_experience_analytics_app_health_o_s_version_performance import UserExperienceAnalyticsAppHealthOSVersionPerformance
 from .user_experience_analytics_category import UserExperienceAnalyticsCategory
 from .user_experience_analytics_baseline import UserExperienceAnalyticsBaseline
-from .user_experience_analytics_category import UserExperienceAnalyticsCategory
 from .user_experience_analytics_device_performance import UserExperienceAnalyticsDevicePerformance
 from .user_experience_analytics_device_scores import UserExperienceAnalyticsDeviceScores
 from .user_experience_analytics_device_startup_history import UserExperienceAnalyticsDeviceStartupHistory
@@ -174,4 +173,3 @@ from .windows_autopilot_device_identity import WindowsAutopilotDeviceIdentity
 from .windows_information_protection_app_learning_summary import WindowsInformationProtectionAppLearningSummary
 from .windows_information_protection_network_learning_summary import WindowsInformationProtectionNetworkLearningSummary
 from .windows_malware_information import WindowsMalwareInformation
-

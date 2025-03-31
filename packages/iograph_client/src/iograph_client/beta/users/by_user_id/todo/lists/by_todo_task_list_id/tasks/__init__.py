@@ -15,9 +15,9 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_todo_task_id import ByTodoTaskIdRequest
 	from ........request_adapter import HttpxRequestAdapter
+from iograph_models.beta.todo_task import TodoTask
 from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.beta.todo_task_collection_response import TodoTaskCollectionResponse
-from iograph_models.beta.todo_task import TodoTask
 
 
 class TasksRequest(BaseRequestBuilder):

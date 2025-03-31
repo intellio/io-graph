@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class ControlScoreCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class ControlScoreCollectionResponse(BaseModel):
 	value: Optional[list[ControlScore]] = Field(alias="value", default=None,)
 
 from .control_score import ControlScore
-

@@ -14,9 +14,9 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_delegated_admin_service_management_detail_id import ByDelegatedAdminServiceManagementDetailIdRequest
 	from ......request_adapter import HttpxRequestAdapter
+from iograph_models.beta.delegated_admin_service_management_detail import DelegatedAdminServiceManagementDetail
 from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.beta.delegated_admin_service_management_detail_collection_response import DelegatedAdminServiceManagementDetailCollectionResponse
-from iograph_models.beta.delegated_admin_service_management_detail import DelegatedAdminServiceManagementDetail
 
 
 class ServiceManagementDetailsRequest(BaseRequestBuilder):

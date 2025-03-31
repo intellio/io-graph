@@ -16,8 +16,8 @@ if TYPE_CHECKING:
 	from .definition_file import DefinitionFileRequest
 	from .children import ChildrenRequest
 	from .....request_adapter import HttpxRequestAdapter
-from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.beta.group_policy_category import GroupPolicyCategory
+from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 
 
 class ByGroupPolicyCategoryIdRequest(BaseRequestBuilder):

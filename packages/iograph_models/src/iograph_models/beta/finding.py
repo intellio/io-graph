@@ -1,10 +1,10 @@
 from __future__ import annotations
 from typing import Optional
+from datetime import datetime
+from pydantic import BaseModel, Field
 from pydantic import model_validator, ModelWrapValidatorHandler, ValidationError
 from typing_extensions import Self
 from typing import Any
-from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class Finding(BaseModel):
@@ -34,9 +34,6 @@ class Finding(BaseModel):
 			if mapping_key == "#microsoft.graph.awsIdentityAccessManagementKeyUsageFinding":
 				from .aws_identity_access_management_key_usage_finding import AwsIdentityAccessManagementKeyUsageFinding
 				return AwsIdentityAccessManagementKeyUsageFinding.model_validate(data)
-			if mapping_key == "#microsoft.graph.awsSecretInformationAccessFinding":
-				from .aws_secret_information_access_finding import AwsSecretInformationAccessFinding
-				return AwsSecretInformationAccessFinding.model_validate(data)
 			if mapping_key == "#microsoft.graph.secretInformationAccessAwsResourceFinding":
 				from .secret_information_access_aws_resource_finding import SecretInformationAccessAwsResourceFinding
 				return SecretInformationAccessAwsResourceFinding.model_validate(data)
@@ -49,9 +46,6 @@ class Finding(BaseModel):
 			if mapping_key == "#microsoft.graph.secretInformationAccessAwsUserFinding":
 				from .secret_information_access_aws_user_finding import SecretInformationAccessAwsUserFinding
 				return SecretInformationAccessAwsUserFinding.model_validate(data)
-			if mapping_key == "#microsoft.graph.awsSecurityToolAdministrationFinding":
-				from .aws_security_tool_administration_finding import AwsSecurityToolAdministrationFinding
-				return AwsSecurityToolAdministrationFinding.model_validate(data)
 			if mapping_key == "#microsoft.graph.securityToolAwsResourceAdministratorFinding":
 				from .security_tool_aws_resource_administrator_finding import SecurityToolAwsResourceAdministratorFinding
 				return SecurityToolAwsResourceAdministratorFinding.model_validate(data)
@@ -82,9 +76,6 @@ class Finding(BaseModel):
 			if mapping_key == "#microsoft.graph.externallyAccessibleGcpStorageBucketFinding":
 				from .externally_accessible_gcp_storage_bucket_finding import ExternallyAccessibleGcpStorageBucketFinding
 				return ExternallyAccessibleGcpStorageBucketFinding.model_validate(data)
-			if mapping_key == "#microsoft.graph.identityFinding":
-				from .identity_finding import IdentityFinding
-				return IdentityFinding.model_validate(data)
 			if mapping_key == "#microsoft.graph.inactiveAwsResourceFinding":
 				from .inactive_aws_resource_finding import InactiveAwsResourceFinding
 				return InactiveAwsResourceFinding.model_validate(data)
@@ -151,9 +142,6 @@ class Finding(BaseModel):
 			if mapping_key == "#microsoft.graph.openNetworkAzureSecurityGroupFinding":
 				from .open_network_azure_security_group_finding import OpenNetworkAzureSecurityGroupFinding
 				return OpenNetworkAzureSecurityGroupFinding.model_validate(data)
-			if mapping_key == "#microsoft.graph.privilegeEscalationFinding":
-				from .privilege_escalation_finding import PrivilegeEscalationFinding
-				return PrivilegeEscalationFinding.model_validate(data)
 			if mapping_key == "#microsoft.graph.privilegeEscalationAwsResourceFinding":
 				from .privilege_escalation_aws_resource_finding import PrivilegeEscalationAwsResourceFinding
 				return PrivilegeEscalationAwsResourceFinding.model_validate(data)
@@ -173,5 +161,4 @@ class Finding(BaseModel):
 
 		except Exception as e:
 			raise e
-
 

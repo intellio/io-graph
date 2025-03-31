@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class Fido2CombinationConfigurationCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class Fido2CombinationConfigurationCollectionResponse(BaseModel):
 	value: Optional[list[Fido2CombinationConfiguration]] = Field(alias="value", default=None,)
 
 from .fido2_combination_configuration import Fido2CombinationConfiguration
-

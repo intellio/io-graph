@@ -2,7 +2,7 @@ from __future__ import annotations
 from typing import Optional
 from typing import Union
 from typing import Annotated
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class ActivityStatisticsCollectionResponse(BaseModel):
@@ -15,4 +15,3 @@ from .chat_activity_statistics import ChatActivityStatistics
 from .email_activity_statistics import EmailActivityStatistics
 from .focus_activity_statistics import FocusActivityStatistics
 from .meeting_activity_statistics import MeetingActivityStatistics
-

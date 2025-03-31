@@ -1,9 +1,9 @@
 from __future__ import annotations
 from typing import Optional
+from pydantic import BaseModel, Field
 from pydantic import model_validator, ModelWrapValidatorHandler, ValidationError
 from typing_extensions import Self
 from typing import Any
-from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class Identity(BaseModel):
@@ -84,9 +84,6 @@ class Identity(BaseModel):
 			if mapping_key == "#microsoft.graph.teamworkUserIdentity":
 				from .teamwork_user_identity import TeamworkUserIdentity
 				return TeamworkUserIdentity.model_validate(data)
-			if mapping_key == "#microsoft.graph.userIdentity":
-				from .user_identity import UserIdentity
-				return UserIdentity.model_validate(data)
 			if mapping_key == "#microsoft.graph.auditUserIdentity":
 				from .audit_user_identity import AuditUserIdentity
 				return AuditUserIdentity.model_validate(data)
@@ -100,5 +97,4 @@ class Identity(BaseModel):
 
 		except Exception as e:
 			raise e
-
 

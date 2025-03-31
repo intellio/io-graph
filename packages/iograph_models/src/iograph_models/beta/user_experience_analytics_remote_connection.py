@@ -1,11 +1,12 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from typing import Literal
+from pydantic import BaseModel, Field
 
 
 class UserExperienceAnalyticsRemoteConnection(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
+	odata_type: Literal["#microsoft.graph.userExperienceAnalyticsRemoteConnection"] = Field(alias="@odata.type",)
 	cloudPcFailurePercentage: float | str | ReferenceNumeric
 	cloudPcRoundTripTime: float | str | ReferenceNumeric
 	cloudPcSignInTime: float | str | ReferenceNumeric
@@ -21,9 +22,3 @@ class UserExperienceAnalyticsRemoteConnection(BaseModel):
 	virtualNetwork: Optional[str] = Field(alias="virtualNetwork", default=None,)
 
 from .reference_numeric import ReferenceNumeric
-from .reference_numeric import ReferenceNumeric
-from .reference_numeric import ReferenceNumeric
-from .reference_numeric import ReferenceNumeric
-from .reference_numeric import ReferenceNumeric
-from .reference_numeric import ReferenceNumeric
-

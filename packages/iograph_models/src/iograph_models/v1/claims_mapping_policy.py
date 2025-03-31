@@ -4,7 +4,7 @@ from typing import Union
 from typing import Literal
 from typing import Annotated
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class ClaimsMappingPolicy(BaseModel):
@@ -15,7 +15,7 @@ class ClaimsMappingPolicy(BaseModel):
 	displayName: Optional[str] = Field(alias="displayName", default=None,)
 	definition: Optional[list[str]] = Field(alias="definition", default=None,)
 	isOrganizationDefault: Optional[bool] = Field(alias="isOrganizationDefault", default=None,)
-	appliesTo: Optional[list[Annotated[Union[AdministrativeUnit, Application, AppRoleAssignment, Contract, Device, DirectoryObjectPartnerReference, DirectoryRole, DirectoryRoleTemplate, Endpoint, ExtensionProperty, Group, GroupSettingTemplate, MultiTenantOrganizationMember, Organization, OrgContact, PolicyBase, AppManagementPolicy, AuthorizationPolicy, CrossTenantAccessPolicy, IdentitySecurityDefaultsEnforcementPolicy, PermissionGrantPolicy, StsPolicy, ActivityBasedTimeoutPolicy, ClaimsMappingPolicy, HomeRealmDiscoveryPolicy, TokenIssuancePolicy, TokenLifetimePolicy, TenantAppManagementPolicy, ResourceSpecificPermissionGrant, ServicePrincipal, User],Field(discriminator="odata_type")]]] = Field(alias="appliesTo", default=None,)
+	appliesTo: Optional[list[Annotated[Union[AdministrativeUnit, Application, AppRoleAssignment, Contract, Device, DirectoryObjectPartnerReference, DirectoryRole, DirectoryRoleTemplate, Endpoint, ExtensionProperty, Group, GroupSettingTemplate, MultiTenantOrganizationMember, Organization, OrgContact, AppManagementPolicy, AuthorizationPolicy, CrossTenantAccessPolicy, IdentitySecurityDefaultsEnforcementPolicy, PermissionGrantPolicy, ActivityBasedTimeoutPolicy, ClaimsMappingPolicy, HomeRealmDiscoveryPolicy, TokenIssuancePolicy, TokenLifetimePolicy, TenantAppManagementPolicy, ResourceSpecificPermissionGrant, ServicePrincipal, User],Field(discriminator="odata_type")]]] = Field(alias="appliesTo", default=None,)
 
 from .administrative_unit import AdministrativeUnit
 from .application import Application
@@ -32,13 +32,11 @@ from .group_setting_template import GroupSettingTemplate
 from .multi_tenant_organization_member import MultiTenantOrganizationMember
 from .organization import Organization
 from .org_contact import OrgContact
-from .policy_base import PolicyBase
 from .app_management_policy import AppManagementPolicy
 from .authorization_policy import AuthorizationPolicy
 from .cross_tenant_access_policy import CrossTenantAccessPolicy
 from .identity_security_defaults_enforcement_policy import IdentitySecurityDefaultsEnforcementPolicy
 from .permission_grant_policy import PermissionGrantPolicy
-from .sts_policy import StsPolicy
 from .activity_based_timeout_policy import ActivityBasedTimeoutPolicy
 from .home_realm_discovery_policy import HomeRealmDiscoveryPolicy
 from .token_issuance_policy import TokenIssuancePolicy
@@ -47,4 +45,3 @@ from .tenant_app_management_policy import TenantAppManagementPolicy
 from .resource_specific_permission_grant import ResourceSpecificPermissionGrant
 from .service_principal import ServicePrincipal
 from .user import User
-

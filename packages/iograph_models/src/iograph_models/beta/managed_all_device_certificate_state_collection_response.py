@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class ManagedAllDeviceCertificateStateCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class ManagedAllDeviceCertificateStateCollectionResponse(BaseModel):
 	value: Optional[list[ManagedAllDeviceCertificateState]] = Field(alias="value", default=None,)
 
 from .managed_all_device_certificate_state import ManagedAllDeviceCertificateState
-

@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class AppleVpnAlwaysOnConfiguration(BaseModel):
@@ -18,7 +18,4 @@ class AppleVpnAlwaysOnConfiguration(BaseModel):
 
 from .vpn_service_exception_action import VpnServiceExceptionAction
 from .specified_captive_network_plugins import SpecifiedCaptiveNetworkPlugins
-from .vpn_service_exception_action import VpnServiceExceptionAction
 from .vpn_tunnel_configuration_type import VpnTunnelConfigurationType
-from .vpn_service_exception_action import VpnServiceExceptionAction
-

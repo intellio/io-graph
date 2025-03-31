@@ -1,12 +1,13 @@
 from __future__ import annotations
 from typing import Optional
+from typing import Literal
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class MicrosoftTunnelServerLogCollectionResponse(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
+	odata_type: Literal["#microsoft.graph.microsoftTunnelServerLogCollectionResponse"] = Field(alias="@odata.type",)
 	endDateTime: Optional[datetime] = Field(alias="endDateTime", default=None,)
 	expiryDateTime: Optional[datetime] = Field(alias="expiryDateTime", default=None,)
 	requestDateTime: Optional[datetime] = Field(alias="requestDateTime", default=None,)
@@ -16,4 +17,3 @@ class MicrosoftTunnelServerLogCollectionResponse(BaseModel):
 	status: Optional[MicrosoftTunnelLogCollectionStatus | str] = Field(alias="status", default=None,)
 
 from .microsoft_tunnel_log_collection_status import MicrosoftTunnelLogCollectionStatus
-

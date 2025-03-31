@@ -1,7 +1,7 @@
 from __future__ import annotations
 from typing import Optional
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class SecurityTimelineEvent(BaseModel):
@@ -15,4 +15,3 @@ class SecurityTimelineEvent(BaseModel):
 
 from .security_event_source import SecurityEventSource
 from .security_timeline_event_type import SecurityTimelineEventType
-

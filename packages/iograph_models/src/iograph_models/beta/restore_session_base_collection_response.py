@@ -2,7 +2,7 @@ from __future__ import annotations
 from typing import Optional
 from typing import Union
 from typing import Annotated
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class RestoreSessionBaseCollectionResponse(BaseModel):
@@ -13,4 +13,3 @@ class RestoreSessionBaseCollectionResponse(BaseModel):
 from .exchange_restore_session import ExchangeRestoreSession
 from .one_drive_for_business_restore_session import OneDriveForBusinessRestoreSession
 from .share_point_restore_session import SharePointRestoreSession
-

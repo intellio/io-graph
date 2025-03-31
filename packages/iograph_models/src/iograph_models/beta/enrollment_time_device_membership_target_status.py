@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class EnrollmentTimeDeviceMembershipTargetStatus(BaseModel):
@@ -9,4 +9,3 @@ class EnrollmentTimeDeviceMembershipTargetStatus(BaseModel):
 	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
 
 from .enrollment_time_device_membership_target_validation_error_code import EnrollmentTimeDeviceMembershipTargetValidationErrorCode
-

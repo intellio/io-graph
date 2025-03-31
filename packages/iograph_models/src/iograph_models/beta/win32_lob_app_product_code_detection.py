@@ -1,7 +1,7 @@
 from __future__ import annotations
 from typing import Optional
 from typing import Literal
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class Win32LobAppProductCodeDetection(BaseModel):
@@ -11,4 +11,3 @@ class Win32LobAppProductCodeDetection(BaseModel):
 	productVersionOperator: Optional[Win32LobAppDetectionOperator | str] = Field(alias="productVersionOperator", default=None,)
 
 from .win32_lob_app_detection_operator import Win32LobAppDetectionOperator
-

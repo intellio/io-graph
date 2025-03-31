@@ -2,7 +2,7 @@ from __future__ import annotations
 from typing import Optional
 from typing import Literal
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class CertificateBasedApplicationConfiguration(BaseModel):
@@ -14,4 +14,3 @@ class CertificateBasedApplicationConfiguration(BaseModel):
 	displayName: Optional[str] = Field(alias="displayName", default=None,)
 
 from .certificate_authority_as_entity import CertificateAuthorityAsEntity
-

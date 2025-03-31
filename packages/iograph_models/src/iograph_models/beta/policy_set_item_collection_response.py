@@ -2,7 +2,7 @@ from __future__ import annotations
 from typing import Optional
 from typing import Union
 from typing import Annotated
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class PolicySetItemCollectionResponse(BaseModel):
@@ -23,4 +23,3 @@ from .mobile_app_policy_set_item import MobileAppPolicySetItem
 from .targeted_managed_app_configuration_policy_set_item import TargetedManagedAppConfigurationPolicySetItem
 from .windows10_enrollment_completion_page_configuration_policy_set_item import Windows10EnrollmentCompletionPageConfigurationPolicySetItem
 from .windows_autopilot_deployment_profile_policy_set_item import WindowsAutopilotDeploymentProfilePolicySetItem
-

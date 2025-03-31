@@ -2,7 +2,7 @@ from __future__ import annotations
 from typing import Optional
 from typing import Literal
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class Roadmap(BaseModel):
@@ -23,4 +23,3 @@ class Roadmap(BaseModel):
 
 from .change_item_state import ChangeItemState
 from .roadmap_item_delivery_stage import RoadmapItemDeliveryStage
-

@@ -2,7 +2,7 @@ from __future__ import annotations
 from typing import Optional
 from typing import Literal
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class ServiceHealthIssue(BaseModel):
@@ -28,4 +28,3 @@ from .service_health_classification_type import ServiceHealthClassificationType
 from .service_health_origin import ServiceHealthOrigin
 from .service_health_issue_post import ServiceHealthIssuePost
 from .service_health_status import ServiceHealthStatus
-

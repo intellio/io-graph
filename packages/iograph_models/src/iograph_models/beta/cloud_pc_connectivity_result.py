@@ -1,7 +1,7 @@
 from __future__ import annotations
 from typing import Optional
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class CloudPcConnectivityResult(BaseModel):
@@ -13,4 +13,3 @@ class CloudPcConnectivityResult(BaseModel):
 
 from .cloud_pc_health_check_item import CloudPcHealthCheckItem
 from .cloud_pc_connectivity_status import CloudPcConnectivityStatus
-

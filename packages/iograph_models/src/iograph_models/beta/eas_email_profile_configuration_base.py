@@ -1,11 +1,11 @@
 from __future__ import annotations
 from typing import Optional
 from typing import Literal
+from datetime import datetime
+from pydantic import BaseModel, Field
 from pydantic import model_validator, ModelWrapValidatorHandler, ValidationError
 from typing_extensions import Self
 from typing import Any
-from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
 
 
 class EasEmailProfileConfigurationBase(BaseModel):
@@ -70,4 +70,3 @@ from .device_configuration_user_overview import DeviceConfigurationUserOverview
 from .domain_name_source import DomainNameSource
 from .username_source import UsernameSource
 from .user_email_source import UserEmailSource
-

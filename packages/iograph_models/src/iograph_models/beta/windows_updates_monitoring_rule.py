@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class WindowsUpdatesMonitoringRule(BaseModel):
@@ -11,4 +11,3 @@ class WindowsUpdatesMonitoringRule(BaseModel):
 
 from .windows_updates_monitoring_action import WindowsUpdatesMonitoringAction
 from .windows_updates_monitoring_signal import WindowsUpdatesMonitoringSignal
-

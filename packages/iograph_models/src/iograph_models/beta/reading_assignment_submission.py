@@ -1,12 +1,13 @@
 from __future__ import annotations
 from typing import Optional
+from typing import Literal
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class ReadingAssignmentSubmission(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
+	odata_type: Literal["#microsoft.graph.readingAssignmentSubmission"] = Field(alias="@odata.type",)
 	accuracyScore: float | str | ReferenceNumeric
 	action: Optional[str] = Field(alias="action", default=None,)
 	assignmentId: Optional[str] = Field(alias="assignmentId", default=None,)
@@ -31,6 +32,3 @@ class ReadingAssignmentSubmission(BaseModel):
 
 from .reference_numeric import ReferenceNumeric
 from .challenging_word import ChallengingWord
-from .reference_numeric import ReferenceNumeric
-from .reference_numeric import ReferenceNumeric
-

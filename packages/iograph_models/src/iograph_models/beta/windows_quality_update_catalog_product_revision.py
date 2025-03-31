@@ -1,7 +1,7 @@
 from __future__ import annotations
 from typing import Optional
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class WindowsQualityUpdateCatalogProductRevision(BaseModel):
@@ -15,4 +15,3 @@ class WindowsQualityUpdateCatalogProductRevision(BaseModel):
 
 from .windows_quality_update_product_knowledge_base_article import WindowsQualityUpdateProductKnowledgeBaseArticle
 from .windows_quality_update_product_build_version_detail import WindowsQualityUpdateProductBuildVersionDetail
-

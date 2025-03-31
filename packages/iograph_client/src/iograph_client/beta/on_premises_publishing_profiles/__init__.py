@@ -14,9 +14,9 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_on_premises_publishing_profile_id import ByOnPremisesPublishingProfileIdRequest
 	from ...request_adapter import HttpxRequestAdapter
+from iograph_models.beta.on_premises_publishing_profile_collection_response import OnPremisesPublishingProfileCollectionResponse
 from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.beta.on_premises_publishing_profile import OnPremisesPublishingProfile
-from iograph_models.beta.on_premises_publishing_profile_collection_response import OnPremisesPublishingProfileCollectionResponse
 
 
 class OnPremisesPublishingProfilesRequest(BaseRequestBuilder):

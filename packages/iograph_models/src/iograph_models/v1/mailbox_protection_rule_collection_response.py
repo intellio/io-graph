@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class MailboxProtectionRuleCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class MailboxProtectionRuleCollectionResponse(BaseModel):
 	value: Optional[list[MailboxProtectionRule]] = Field(alias="value", default=None,)
 
 from .mailbox_protection_rule import MailboxProtectionRule
-

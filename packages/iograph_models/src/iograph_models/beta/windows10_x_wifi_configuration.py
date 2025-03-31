@@ -3,7 +3,7 @@ from uuid import UUID
 from typing import Optional
 from typing import Literal
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class Windows10XWifiConfiguration(BaseModel):
@@ -21,4 +21,3 @@ class Windows10XWifiConfiguration(BaseModel):
 	customXmlFileName: Optional[str] = Field(alias="customXmlFileName", default=None,)
 
 from .device_management_resource_access_profile_assignment import DeviceManagementResourceAccessProfileAssignment
-

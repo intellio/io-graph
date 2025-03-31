@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class AuthenticationContextClassReferenceCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class AuthenticationContextClassReferenceCollectionResponse(BaseModel):
 	value: Optional[list[AuthenticationContextClassReference]] = Field(alias="value", default=None,)
 
 from .authentication_context_class_reference import AuthenticationContextClassReference
-

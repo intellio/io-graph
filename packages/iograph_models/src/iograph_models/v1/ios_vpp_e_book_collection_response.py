@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class IosVppEBookCollectionResponse(BaseModel):
@@ -9,4 +9,3 @@ class IosVppEBookCollectionResponse(BaseModel):
 	value: Optional[list[IosVppEBook]] = Field(alias="value", default=None,)
 
 from .ios_vpp_e_book import IosVppEBook
-

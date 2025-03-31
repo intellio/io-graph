@@ -1,12 +1,13 @@
 from __future__ import annotations
 from uuid import UUID
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from typing import Literal
+from pydantic import BaseModel, Field
 
 
 class SharepointSettings(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Optional[str] = Field(alias="@odata.type", default=None,)
+	odata_type: Literal["#microsoft.graph.sharepointSettings"] = Field(alias="@odata.type",)
 	allowedDomainGuidsForSyncApp: Optional[list[UUID]] = Field(alias="allowedDomainGuidsForSyncApp", default=None,)
 	availableManagedPathsForSiteCreation: Optional[list[str]] = Field(alias="availableManagedPathsForSiteCreation", default=None,)
 	deletedUserPersonalSiteRetentionPeriodInDays: Optional[int] = Field(alias="deletedUserPersonalSiteRetentionPeriodInDays", default=None,)
@@ -41,4 +42,3 @@ from .idle_session_sign_out import IdleSessionSignOut
 from .image_tagging_choice import ImageTaggingChoice
 from .sharing_capabilities import SharingCapabilities
 from .sharing_domain_restriction_mode import SharingDomainRestrictionMode
-

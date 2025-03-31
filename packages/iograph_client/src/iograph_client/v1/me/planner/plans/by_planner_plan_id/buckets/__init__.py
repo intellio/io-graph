@@ -15,8 +15,8 @@ if TYPE_CHECKING:
 	from .by_planner_bucket_id import ByPlannerBucketIdRequest
 	from .......request_adapter import HttpxRequestAdapter
 from iograph_models.v1.planner_bucket_collection_response import PlannerBucketCollectionResponse
-from iograph_models.v1.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.v1.planner_bucket import PlannerBucket
+from iograph_models.v1.o_data_errors__o_data_error import ODataErrorsODataError
 
 
 class BucketsRequest(BaseRequestBuilder):

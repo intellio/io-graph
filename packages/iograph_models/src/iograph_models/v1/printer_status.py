@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Optional
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class PrinterStatus(BaseModel):
@@ -11,4 +11,3 @@ class PrinterStatus(BaseModel):
 
 from .printer_processing_state_detail import PrinterProcessingStateDetail
 from .printer_processing_state import PrinterProcessingState
-

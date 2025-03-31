@@ -3,7 +3,7 @@ from typing import Optional
 from typing import Union
 from typing import Literal
 from datetime import datetime
-from pydantic import BaseModel, Field, SerializeAsAny
+from pydantic import BaseModel, Field
 
 
 class MacOSEnterpriseWiFiConfiguration(BaseModel):
@@ -68,5 +68,3 @@ from .mac_o_s_imported_p_f_x_certificate_profile import MacOSImportedPFXCertific
 from .mac_o_s_pkcs_certificate_profile import MacOSPkcsCertificateProfile
 from .mac_o_s_scep_certificate_profile import MacOSScepCertificateProfile
 from .mac_o_s_trusted_root_certificate import MacOSTrustedRootCertificate
-from .mac_o_s_trusted_root_certificate import MacOSTrustedRootCertificate
-
