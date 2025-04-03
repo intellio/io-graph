@@ -15,8 +15,8 @@ if TYPE_CHECKING:
 	from .by_authentication_strength_policy_id import ByAuthenticationStrengthPolicyIdRequest
 	from ....request_adapter import HttpxRequestAdapter
 from iograph_models.beta.authentication_strength_policy import AuthenticationStrengthPolicy
-from iograph_models.beta.authentication_strength_policy_collection_response import AuthenticationStrengthPolicyCollectionResponse
 from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.beta.authentication_strength_policy_collection_response import AuthenticationStrengthPolicyCollectionResponse
 
 
 class AuthenticationStrengthPoliciesRequest(BaseRequestBuilder):

@@ -7,7 +7,7 @@ from pydantic import BaseModel, Field
 
 class SharepointSettings(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.sharepointSettings"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.sharepointSettings"] = Field(alias="@odata.type", default="#microsoft.graph.sharepointSettings")
 	allowedDomainGuidsForSyncApp: Optional[list[UUID]] = Field(alias="allowedDomainGuidsForSyncApp", default=None,)
 	availableManagedPathsForSiteCreation: Optional[list[str]] = Field(alias="availableManagedPathsForSiteCreation", default=None,)
 	deletedUserPersonalSiteRetentionPeriodInDays: Optional[int] = Field(alias="deletedUserPersonalSiteRetentionPeriodInDays", default=None,)

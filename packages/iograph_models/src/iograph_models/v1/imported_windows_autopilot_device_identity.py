@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field
 
 class ImportedWindowsAutopilotDeviceIdentity(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.importedWindowsAutopilotDeviceIdentity"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.importedWindowsAutopilotDeviceIdentity"] = Field(alias="@odata.type", default="#microsoft.graph.importedWindowsAutopilotDeviceIdentity")
 	assignedUserPrincipalName: Optional[str] = Field(alias="assignedUserPrincipalName", default=None,)
 	groupTag: Optional[str] = Field(alias="groupTag", default=None,)
 	hardwareIdentifier: Optional[str] = Field(alias="hardwareIdentifier", default=None,)

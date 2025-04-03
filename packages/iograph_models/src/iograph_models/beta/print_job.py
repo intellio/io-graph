@@ -8,7 +8,7 @@ from pydantic import BaseModel, Field
 
 class PrintJob(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.printJob"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.printJob"] = Field(alias="@odata.type", default="#microsoft.graph.printJob")
 	acknowledgedDateTime: Optional[datetime] = Field(alias="acknowledgedDateTime", default=None,)
 	completedDateTime: Optional[datetime] = Field(alias="completedDateTime", default=None,)
 	configuration: Optional[PrintJobConfiguration] = Field(alias="configuration", default=None,)

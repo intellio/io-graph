@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field
 
 class AttributeSet(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.attributeSet"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.attributeSet"] = Field(alias="@odata.type", default="#microsoft.graph.attributeSet")
 	description: Optional[str] = Field(alias="description", default=None,)
 	maxAttributesPerSet: Optional[int] = Field(alias="maxAttributesPerSet", default=None,)
 

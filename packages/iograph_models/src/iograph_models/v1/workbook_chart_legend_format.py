@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field
 
 class WorkbookChartLegendFormat(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.workbookChartLegendFormat"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.workbookChartLegendFormat"] = Field(alias="@odata.type", default="#microsoft.graph.workbookChartLegendFormat")
 	fill: Optional[WorkbookChartFill] = Field(alias="fill", default=None,)
 	font: Optional[WorkbookChartFont] = Field(alias="font", default=None,)
 

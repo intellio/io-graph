@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field
 
 class PrintServiceEndpoint(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.printServiceEndpoint"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.printServiceEndpoint"] = Field(alias="@odata.type", default="#microsoft.graph.printServiceEndpoint")
 	displayName: Optional[str] = Field(alias="displayName", default=None,)
 	uri: Optional[str] = Field(alias="uri", default=None,)
 

@@ -14,9 +14,9 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_branch_site_id import ByBranchSiteIdRequest
 	from .....request_adapter import HttpxRequestAdapter
-from iograph_models.beta.networkaccess_branch_site_collection_response import NetworkaccessBranchSiteCollectionResponse
-from iograph_models.beta.networkaccess_branch_site import NetworkaccessBranchSite
 from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.beta.networkaccess_branch_site import NetworkaccessBranchSite
+from iograph_models.beta.networkaccess_branch_site_collection_response import NetworkaccessBranchSiteCollectionResponse
 
 
 class BranchesRequest(BaseRequestBuilder):

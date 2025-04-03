@@ -7,7 +7,7 @@ from pydantic import BaseModel, Field
 
 class MessageTrace(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.messageTrace"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.messageTrace"] = Field(alias="@odata.type", default="#microsoft.graph.messageTrace")
 	destinationIPAddress: Optional[str] = Field(alias="destinationIPAddress", default=None,)
 	messageId: Optional[str] = Field(alias="messageId", default=None,)
 	receivedDateTime: Optional[datetime] = Field(alias="receivedDateTime", default=None,)

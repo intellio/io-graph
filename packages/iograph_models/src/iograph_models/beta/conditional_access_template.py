@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field
 
 class ConditionalAccessTemplate(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.conditionalAccessTemplate"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.conditionalAccessTemplate"] = Field(alias="@odata.type", default="#microsoft.graph.conditionalAccessTemplate")
 	description: Optional[str] = Field(alias="description", default=None,)
 	details: Optional[ConditionalAccessPolicyDetail] = Field(alias="details", default=None,)
 	name: Optional[str] = Field(alias="name", default=None,)

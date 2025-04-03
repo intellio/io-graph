@@ -8,7 +8,7 @@ from pydantic import BaseModel, Field
 
 class EdiscoveryTag(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.ediscovery.tag"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.ediscovery.tag"] = Field(alias="@odata.type", default="#microsoft.graph.ediscovery.tag")
 	childSelectability: Optional[EdiscoveryChildSelectability | str] = Field(alias="childSelectability", default=None,)
 	createdBy: Optional[Union[AiInteractionMentionedIdentitySet, ApprovalIdentitySet, ChatMessageFromIdentitySet, ChatMessageMentionedIdentitySet, ChatMessageReactionIdentitySet, CommunicationsIdentitySet, SharePointIdentitySet]] = Field(alias="createdBy", default=None,discriminator="odata_type", )
 	description: Optional[str] = Field(alias="description", default=None,)

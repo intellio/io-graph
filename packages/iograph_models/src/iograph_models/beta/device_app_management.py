@@ -9,7 +9,7 @@ from pydantic import BaseModel, Field
 
 class DeviceAppManagement(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.deviceAppManagement"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.deviceAppManagement"] = Field(alias="@odata.type", default="#microsoft.graph.deviceAppManagement")
 	isEnabledForMicrosoftStoreForBusiness: Optional[bool] = Field(alias="isEnabledForMicrosoftStoreForBusiness", default=None,)
 	microsoftStoreForBusinessLanguage: Optional[str] = Field(alias="microsoftStoreForBusinessLanguage", default=None,)
 	microsoftStoreForBusinessLastCompletedApplicationSyncTime: Optional[datetime] = Field(alias="microsoftStoreForBusinessLastCompletedApplicationSyncTime", default=None,)

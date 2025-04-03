@@ -8,7 +8,7 @@ from pydantic import BaseModel, Field
 
 class EmployeeExperienceUser(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.employeeExperienceUser"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.employeeExperienceUser"] = Field(alias="@odata.type", default="#microsoft.graph.employeeExperienceUser")
 	learningCourseActivities: Optional[list[Annotated[Union[LearningAssignment, LearningSelfInitiatedCourse],Field(discriminator="odata_type")]]] = Field(alias="learningCourseActivities", default=None,)
 
 from .learning_assignment import LearningAssignment

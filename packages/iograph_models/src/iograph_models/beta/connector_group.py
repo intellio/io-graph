@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field
 
 class ConnectorGroup(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.connectorGroup"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.connectorGroup"] = Field(alias="@odata.type", default="#microsoft.graph.connectorGroup")
 	connectorGroupType: Optional[ConnectorGroupType | str] = Field(alias="connectorGroupType", default=None,)
 	isDefault: Optional[bool] = Field(alias="isDefault", default=None,)
 	name: Optional[str] = Field(alias="name", default=None,)

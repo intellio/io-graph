@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field
 
 class ContentType(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.contentType"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.contentType"] = Field(alias="@odata.type", default="#microsoft.graph.contentType")
 	associatedHubsUrls: Optional[list[str]] = Field(alias="associatedHubsUrls", default=None,)
 	description: Optional[str] = Field(alias="description", default=None,)
 	documentSet: Optional[DocumentSet] = Field(alias="documentSet", default=None,)

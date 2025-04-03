@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field
 
 class AdminConsentRequestPolicy(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.adminConsentRequestPolicy"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.adminConsentRequestPolicy"] = Field(alias="@odata.type", default="#microsoft.graph.adminConsentRequestPolicy")
 	isEnabled: Optional[bool] = Field(alias="isEnabled", default=None,)
 	notifyReviewers: Optional[bool] = Field(alias="notifyReviewers", default=None,)
 	remindersEnabled: Optional[bool] = Field(alias="remindersEnabled", default=None,)

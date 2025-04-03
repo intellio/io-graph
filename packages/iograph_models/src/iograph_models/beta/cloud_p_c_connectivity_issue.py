@@ -7,7 +7,7 @@ from pydantic import BaseModel, Field
 
 class CloudPCConnectivityIssue(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.cloudPCConnectivityIssue"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.cloudPCConnectivityIssue"] = Field(alias="@odata.type", default="#microsoft.graph.cloudPCConnectivityIssue")
 	deviceId: Optional[str] = Field(alias="deviceId", default=None,)
 	errorCode: Optional[str] = Field(alias="errorCode", default=None,)
 	errorDateTime: Optional[datetime] = Field(alias="errorDateTime", default=None,)

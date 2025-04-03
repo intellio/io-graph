@@ -8,7 +8,7 @@ from pydantic import BaseModel, Field
 
 class NetworkaccessDeviceLink(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.networkaccess.deviceLink"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.networkaccess.deviceLink"] = Field(alias="@odata.type", default="#microsoft.graph.networkaccess.deviceLink")
 	bandwidthCapacityInMbps: Optional[NetworkaccessBandwidthCapacityInMbps | str] = Field(alias="bandwidthCapacityInMbps", default=None,)
 	bgpConfiguration: Optional[NetworkaccessBgpConfiguration] = Field(alias="bgpConfiguration", default=None,)
 	deviceVendor: Optional[NetworkaccessDeviceVendor | str] = Field(alias="deviceVendor", default=None,)

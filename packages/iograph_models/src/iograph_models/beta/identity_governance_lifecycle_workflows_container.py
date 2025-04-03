@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field
 
 class IdentityGovernanceLifecycleWorkflowsContainer(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.identityGovernance.lifecycleWorkflowsContainer"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.identityGovernance.lifecycleWorkflowsContainer"] = Field(alias="@odata.type", default="#microsoft.graph.identityGovernance.lifecycleWorkflowsContainer")
 	customTaskExtensions: Optional[list[IdentityGovernanceCustomTaskExtension]] = Field(alias="customTaskExtensions", default=None,)
 	deletedItems: Optional[DeletedItemContainer] = Field(alias="deletedItems", default=None,)
 	insights: Optional[IdentityGovernanceInsights] = Field(alias="insights", default=None,)

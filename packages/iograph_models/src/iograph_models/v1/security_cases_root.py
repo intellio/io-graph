@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field
 
 class SecurityCasesRoot(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.security.casesRoot"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.security.casesRoot"] = Field(alias="@odata.type", default="#microsoft.graph.security.casesRoot")
 	ediscoveryCases: Optional[list[SecurityEdiscoveryCase]] = Field(alias="ediscoveryCases", default=None,)
 
 from .security_ediscovery_case import SecurityEdiscoveryCase

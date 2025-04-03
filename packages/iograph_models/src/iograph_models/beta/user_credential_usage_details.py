@@ -7,7 +7,7 @@ from pydantic import BaseModel, Field
 
 class UserCredentialUsageDetails(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.userCredentialUsageDetails"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.userCredentialUsageDetails"] = Field(alias="@odata.type", default="#microsoft.graph.userCredentialUsageDetails")
 	authMethod: Optional[UsageAuthMethod | str] = Field(alias="authMethod", default=None,)
 	eventDateTime: Optional[datetime] = Field(alias="eventDateTime", default=None,)
 	failureReason: Optional[str] = Field(alias="failureReason", default=None,)

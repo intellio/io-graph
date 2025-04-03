@@ -7,7 +7,7 @@ from pydantic import BaseModel, Field
 
 class EmbeddedSIMActivationCodePoolAssignment(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.embeddedSIMActivationCodePoolAssignment"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.embeddedSIMActivationCodePoolAssignment"] = Field(alias="@odata.type", default="#microsoft.graph.embeddedSIMActivationCodePoolAssignment")
 	target: Optional[Union[AllDevicesAssignmentTarget, AllLicensedUsersAssignmentTarget, AndroidFotaDeploymentAssignmentTarget, ConfigurationManagerCollectionAssignmentTarget, ExclusionGroupAssignmentTarget]] = Field(alias="target", default=None,discriminator="odata_type", )
 
 from .all_devices_assignment_target import AllDevicesAssignmentTarget

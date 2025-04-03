@@ -7,7 +7,7 @@ from pydantic import BaseModel, Field
 
 class CertificateConnectorDetails(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.certificateConnectorDetails"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.certificateConnectorDetails"] = Field(alias="@odata.type", default="#microsoft.graph.certificateConnectorDetails")
 	connectorName: Optional[str] = Field(alias="connectorName", default=None,)
 	connectorVersion: Optional[str] = Field(alias="connectorVersion", default=None,)
 	enrollmentDateTime: Optional[datetime] = Field(alias="enrollmentDateTime", default=None,)

@@ -8,7 +8,7 @@ from pydantic import BaseModel, Field
 
 class PartnersBillingBilling(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.partners.billing.billing"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.partners.billing.billing"] = Field(alias="@odata.type", default="#microsoft.graph.partners.billing.billing")
 	manifests: Optional[list[PartnersBillingManifest]] = Field(alias="manifests", default=None,)
 	operations: Optional[list[Annotated[Union[PartnersBillingExportSuccessOperation, PartnersBillingFailedOperation, PartnersBillingRunningOperation],Field(discriminator="odata_type")]]] = Field(alias="operations", default=None,)
 	reconciliation: Optional[PartnersBillingBillingReconciliation] = Field(alias="reconciliation", default=None,)

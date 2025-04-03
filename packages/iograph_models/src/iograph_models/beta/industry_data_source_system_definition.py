@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field
 
 class IndustryDataSourceSystemDefinition(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.industryData.sourceSystemDefinition"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.industryData.sourceSystemDefinition"] = Field(alias="@odata.type", default="#microsoft.graph.industryData.sourceSystemDefinition")
 	displayName: Optional[str] = Field(alias="displayName", default=None,)
 	userMatchingSettings: Optional[list[IndustryDataUserMatchingSetting]] = Field(alias="userMatchingSettings", default=None,)
 	vendor: Optional[str] = Field(alias="vendor", default=None,)

@@ -15,8 +15,8 @@ if TYPE_CHECKING:
 	from .file import FileRequest
 	from .acceptances import AcceptancesRequest
 	from ......request_adapter import HttpxRequestAdapter
-from iograph_models.beta.agreement import Agreement
 from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.beta.agreement import Agreement
 
 
 class ByAgreementIdRequest(BaseRequestBuilder):

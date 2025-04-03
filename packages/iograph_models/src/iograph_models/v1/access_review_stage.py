@@ -7,7 +7,7 @@ from pydantic import BaseModel, Field
 
 class AccessReviewStage(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.accessReviewStage"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.accessReviewStage"] = Field(alias="@odata.type", default="#microsoft.graph.accessReviewStage")
 	endDateTime: Optional[datetime] = Field(alias="endDateTime", default=None,)
 	fallbackReviewers: Optional[list[AccessReviewReviewerScope]] = Field(alias="fallbackReviewers", default=None,)
 	reviewers: Optional[list[AccessReviewReviewerScope]] = Field(alias="reviewers", default=None,)

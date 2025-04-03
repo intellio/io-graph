@@ -7,7 +7,7 @@ from pydantic import BaseModel, Field
 
 class MicrosoftTunnelServer(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.microsoftTunnelServer"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.microsoftTunnelServer"] = Field(alias="@odata.type", default="#microsoft.graph.microsoftTunnelServer")
 	agentImageDigest: Optional[str] = Field(alias="agentImageDigest", default=None,)
 	deploymentMode: Optional[MicrosoftTunnelDeploymentMode | str] = Field(alias="deploymentMode", default=None,)
 	displayName: Optional[str] = Field(alias="displayName", default=None,)

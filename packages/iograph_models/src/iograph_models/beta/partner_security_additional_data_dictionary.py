@@ -4,5 +4,5 @@ from pydantic import BaseModel, Field
 
 
 class PartnerSecurityAdditionalDataDictionary(BaseModel):
-	odata_type: Literal["#microsoft.graph.partner.security.additionalDataDictionary"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.partner.security.additionalDataDictionary"] = Field(alias="@odata.type", default="#microsoft.graph.partner.security.additionalDataDictionary")
 

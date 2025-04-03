@@ -7,7 +7,7 @@ from pydantic import BaseModel, Field
 
 class ClassificationJobResponse(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.classificationJobResponse"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.classificationJobResponse"] = Field(alias="@odata.type", default="#microsoft.graph.classificationJobResponse")
 	creationDateTime: Optional[datetime] = Field(alias="creationDateTime", default=None,)
 	endDateTime: Optional[datetime] = Field(alias="endDateTime", default=None,)
 	error: Optional[ClassificationError] = Field(alias="error", default=None,)

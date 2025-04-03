@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field
 
 class AudioRoutingGroup(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.audioRoutingGroup"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.audioRoutingGroup"] = Field(alias="@odata.type", default="#microsoft.graph.audioRoutingGroup")
 	receivers: Optional[list[str]] = Field(alias="receivers", default=None,)
 	routingMode: Optional[RoutingMode | str] = Field(alias="routingMode", default=None,)
 	sources: Optional[list[str]] = Field(alias="sources", default=None,)

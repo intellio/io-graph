@@ -15,9 +15,9 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_group_policy_migration_report_id import ByGroupPolicyMigrationReportIdRequest
 	from ....request_adapter import HttpxRequestAdapter
-from iograph_models.beta.group_policy_migration_report_collection_response import GroupPolicyMigrationReportCollectionResponse
-from iograph_models.beta.group_policy_migration_report import GroupPolicyMigrationReport
 from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.beta.group_policy_migration_report import GroupPolicyMigrationReport
+from iograph_models.beta.group_policy_migration_report_collection_response import GroupPolicyMigrationReportCollectionResponse
 
 
 class GroupPolicyMigrationReportsRequest(BaseRequestBuilder):

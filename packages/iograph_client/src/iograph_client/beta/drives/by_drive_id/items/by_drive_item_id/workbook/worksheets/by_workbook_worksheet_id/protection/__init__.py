@@ -14,8 +14,8 @@ if TYPE_CHECKING:
 	from .unprotect import UnprotectRequest
 	from .protect import ProtectRequest
 	from ..........request_adapter import HttpxRequestAdapter
-from iograph_models.beta.workbook_worksheet_protection import WorkbookWorksheetProtection
 from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.beta.workbook_worksheet_protection import WorkbookWorksheetProtection
 
 
 class ProtectionRequest(BaseRequestBuilder):

@@ -8,7 +8,7 @@ from pydantic import BaseModel, Field
 
 class TrainingCampaign(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.trainingCampaign"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.trainingCampaign"] = Field(alias="@odata.type", default="#microsoft.graph.trainingCampaign")
 	campaignSchedule: Optional[CampaignSchedule] = Field(alias="campaignSchedule", default=None,)
 	createdBy: Optional[EmailIdentity] = Field(alias="createdBy", default=None,)
 	createdDateTime: Optional[datetime] = Field(alias="createdDateTime", default=None,)

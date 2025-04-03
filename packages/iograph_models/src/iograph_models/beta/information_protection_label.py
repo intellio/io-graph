@@ -7,7 +7,7 @@ from pydantic import BaseModel, Field
 
 class InformationProtectionLabel(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.informationProtectionLabel"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.informationProtectionLabel"] = Field(alias="@odata.type", default="#microsoft.graph.informationProtectionLabel")
 	color: Optional[str] = Field(alias="color", default=None,)
 	description: Optional[str] = Field(alias="description", default=None,)
 	isActive: Optional[bool] = Field(alias="isActive", default=None,)

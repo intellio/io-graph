@@ -12,8 +12,8 @@ from typing import TYPE_CHECKING
 if TYPE_CHECKING:
 	from .......request_adapter import HttpxRequestAdapter
 from iograph_models.beta.preview_post_request import PreviewPostRequest
-from iograph_models.beta.item_preview_info import ItemPreviewInfo
 from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.beta.item_preview_info import ItemPreviewInfo
 
 
 class PreviewRequest(BaseRequestBuilder):

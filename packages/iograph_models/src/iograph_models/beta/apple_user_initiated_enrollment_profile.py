@@ -7,7 +7,7 @@ from pydantic import BaseModel, Field
 
 class AppleUserInitiatedEnrollmentProfile(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.appleUserInitiatedEnrollmentProfile"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.appleUserInitiatedEnrollmentProfile"] = Field(alias="@odata.type", default="#microsoft.graph.appleUserInitiatedEnrollmentProfile")
 	availableEnrollmentTypeOptions: Optional[list[AppleOwnerTypeEnrollmentType]] = Field(alias="availableEnrollmentTypeOptions", default=None,)
 	createdDateTime: Optional[datetime] = Field(alias="createdDateTime", default=None,)
 	defaultEnrollmentType: Optional[AppleUserInitiatedEnrollmentType | str] = Field(alias="defaultEnrollmentType", default=None,)

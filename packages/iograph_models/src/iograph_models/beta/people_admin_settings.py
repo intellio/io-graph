@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field
 
 class PeopleAdminSettings(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.peopleAdminSettings"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.peopleAdminSettings"] = Field(alias="@odata.type", default="#microsoft.graph.peopleAdminSettings")
 	itemInsights: Optional[InsightsSettings] = Field(alias="itemInsights", default=None,)
 	namePronunciation: Optional[NamePronunciationSettings] = Field(alias="namePronunciation", default=None,)
 	profileCardProperties: Optional[list[ProfileCardProperty]] = Field(alias="profileCardProperties", default=None,)

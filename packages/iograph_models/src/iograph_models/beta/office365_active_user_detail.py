@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field
 
 class Office365ActiveUserDetail(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.office365ActiveUserDetail"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.office365ActiveUserDetail"] = Field(alias="@odata.type", default="#microsoft.graph.office365ActiveUserDetail")
 	assignedProducts: Optional[list[str]] = Field(alias="assignedProducts", default=None,)
 	deletedDate: Optional[str] = Field(alias="deletedDate", default=None,)
 	displayName: Optional[str] = Field(alias="displayName", default=None,)

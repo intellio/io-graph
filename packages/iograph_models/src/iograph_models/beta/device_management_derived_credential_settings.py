@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field
 
 class DeviceManagementDerivedCredentialSettings(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.deviceManagementDerivedCredentialSettings"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.deviceManagementDerivedCredentialSettings"] = Field(alias="@odata.type", default="#microsoft.graph.deviceManagementDerivedCredentialSettings")
 	displayName: Optional[str] = Field(alias="displayName", default=None,)
 	helpUrl: Optional[str] = Field(alias="helpUrl", default=None,)
 	issuer: Optional[DeviceManagementDerivedCredentialIssuer | str] = Field(alias="issuer", default=None,)

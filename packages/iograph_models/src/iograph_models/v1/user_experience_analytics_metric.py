@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field
 
 class UserExperienceAnalyticsMetric(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.userExperienceAnalyticsMetric"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.userExperienceAnalyticsMetric"] = Field(alias="@odata.type", default="#microsoft.graph.userExperienceAnalyticsMetric")
 	unit: Optional[str] = Field(alias="unit", default=None,)
 	value: float | str | ReferenceNumeric
 

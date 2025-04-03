@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field
 
 class StrongAuthenticationDetail(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.strongAuthenticationDetail"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.strongAuthenticationDetail"] = Field(alias="@odata.type", default="#microsoft.graph.strongAuthenticationDetail")
 	encryptedPinHashHistory: Optional[str] = Field(alias="encryptedPinHashHistory", default=None,)
 	proofupTime: Optional[int] = Field(alias="proofupTime", default=None,)
 

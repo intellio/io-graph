@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field
 
 class TeamsApp(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.teamsApp"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.teamsApp"] = Field(alias="@odata.type", default="#microsoft.graph.teamsApp")
 	displayName: Optional[str] = Field(alias="displayName", default=None,)
 	distributionMethod: Optional[TeamsAppDistributionMethod | str] = Field(alias="distributionMethod", default=None,)
 	externalId: Optional[str] = Field(alias="externalId", default=None,)

@@ -14,9 +14,9 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_user_experience_analytics_category_id import ByUserExperienceAnalyticsCategoryIdRequest
 	from ....request_adapter import HttpxRequestAdapter
+from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.beta.user_experience_analytics_category import UserExperienceAnalyticsCategory
 from iograph_models.beta.user_experience_analytics_category_collection_response import UserExperienceAnalyticsCategoryCollectionResponse
-from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 
 
 class UserExperienceAnalyticsCategoriesRequest(BaseRequestBuilder):

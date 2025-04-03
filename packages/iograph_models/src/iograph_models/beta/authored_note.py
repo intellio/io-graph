@@ -8,7 +8,7 @@ from pydantic import BaseModel, Field
 
 class AuthoredNote(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.authoredNote"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.authoredNote"] = Field(alias="@odata.type", default="#microsoft.graph.authoredNote")
 	author: Optional[Union[AzureCommunicationServicesUserIdentity, CommunicationsApplicationIdentity, CommunicationsApplicationInstanceIdentity, CommunicationsEncryptedIdentity, CommunicationsGuestIdentity, CommunicationsPhoneIdentity, CommunicationsUserIdentity, EmailIdentity, Initiator, ProgramResource, ProvisionedIdentity, ProvisioningServicePrincipal, ProvisioningSystem, ServicePrincipalIdentity, SharePointIdentity, SourceProvisionedIdentity, TargetProvisionedIdentity, TeamworkApplicationIdentity, TeamworkConversationIdentity, TeamworkTagIdentity, TeamworkUserIdentity, AuditUserIdentity, CallRecordsUserIdentity, SecuritySubmissionUserIdentity]] = Field(alias="author", default=None,discriminator="odata_type", )
 	content: Optional[ItemBody] = Field(alias="content", default=None,)
 	createdDateTime: Optional[datetime] = Field(alias="createdDateTime", default=None,)

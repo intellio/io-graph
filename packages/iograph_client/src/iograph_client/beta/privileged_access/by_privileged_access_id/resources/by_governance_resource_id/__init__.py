@@ -17,8 +17,8 @@ if TYPE_CHECKING:
 	from .role_assignment_requests import RoleAssignmentRequestsRequest
 	from .parent import ParentRequest
 	from ......request_adapter import HttpxRequestAdapter
-from iograph_models.beta.governance_resource import GovernanceResource
 from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.beta.governance_resource import GovernanceResource
 
 
 class ByGovernanceResourceIdRequest(BaseRequestBuilder):

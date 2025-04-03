@@ -8,7 +8,7 @@ from pydantic import BaseModel, Field
 
 class MobileAppContent(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.mobileAppContent"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.mobileAppContent"] = Field(alias="@odata.type", default="#microsoft.graph.mobileAppContent")
 	containedApps: Optional[list[Annotated[Union[MicrosoftStoreForBusinessContainedApp, WindowsUniversalAppXContainedApp],Field(discriminator="odata_type")]]] = Field(alias="containedApps", default=None,)
 	files: Optional[list[MobileAppContentFile]] = Field(alias="files", default=None,)
 

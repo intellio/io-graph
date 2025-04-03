@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field
 
 class UserSolutionRoot(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.userSolutionRoot"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.userSolutionRoot"] = Field(alias="@odata.type", default="#microsoft.graph.userSolutionRoot")
 	workingTimeSchedule: Optional[WorkingTimeSchedule] = Field(alias="workingTimeSchedule", default=None,)
 
 from .working_time_schedule import WorkingTimeSchedule

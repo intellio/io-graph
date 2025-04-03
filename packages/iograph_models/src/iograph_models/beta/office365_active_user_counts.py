@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field
 
 class Office365ActiveUserCounts(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.office365ActiveUserCounts"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.office365ActiveUserCounts"] = Field(alias="@odata.type", default="#microsoft.graph.office365ActiveUserCounts")
 	exchange: Optional[int] = Field(alias="exchange", default=None,)
 	office365: Optional[int] = Field(alias="office365", default=None,)
 	oneDrive: Optional[int] = Field(alias="oneDrive", default=None,)

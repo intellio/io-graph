@@ -8,7 +8,7 @@ from pydantic import BaseModel, Field
 
 class WindowsUpdatesCatalog(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.windowsUpdates.catalog"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.windowsUpdates.catalog"] = Field(alias="@odata.type", default="#microsoft.graph.windowsUpdates.catalog")
 	entries: Optional[list[Annotated[Union[WindowsUpdatesDriverUpdateCatalogEntry, WindowsUpdatesFeatureUpdateCatalogEntry, WindowsUpdatesQualityUpdateCatalogEntry],Field(discriminator="odata_type")]]] = Field(alias="entries", default=None,)
 
 from .windows_updates_driver_update_catalog_entry import WindowsUpdatesDriverUpdateCatalogEntry

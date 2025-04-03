@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field
 
 class CloudPcServicePlan(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.cloudPcServicePlan"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.cloudPcServicePlan"] = Field(alias="@odata.type", default="#microsoft.graph.cloudPcServicePlan")
 	displayName: Optional[str] = Field(alias="displayName", default=None,)
 	provisioningType: Optional[CloudPcProvisioningType | str] = Field(alias="provisioningType", default=None,)
 	ramInGB: Optional[int] = Field(alias="ramInGB", default=None,)

@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field
 
 class GovernanceRoleDefinition(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.governanceRoleDefinition"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.governanceRoleDefinition"] = Field(alias="@odata.type", default="#microsoft.graph.governanceRoleDefinition")
 	displayName: Optional[str] = Field(alias="displayName", default=None,)
 	externalId: Optional[str] = Field(alias="externalId", default=None,)
 	resourceId: Optional[str] = Field(alias="resourceId", default=None,)

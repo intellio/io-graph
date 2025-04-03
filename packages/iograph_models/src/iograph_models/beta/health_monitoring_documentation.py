@@ -4,5 +4,5 @@ from pydantic import BaseModel, Field
 
 
 class HealthMonitoringDocumentation(BaseModel):
-	odata_type: Literal["#microsoft.graph.healthMonitoring.documentation"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.healthMonitoring.documentation"] = Field(alias="@odata.type", default="#microsoft.graph.healthMonitoring.documentation")
 

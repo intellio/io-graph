@@ -8,7 +8,7 @@ from pydantic import BaseModel, Field
 
 class InactiveServerlessFunctionFinding(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.inactiveServerlessFunctionFinding"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.inactiveServerlessFunctionFinding"] = Field(alias="@odata.type", default="#microsoft.graph.inactiveServerlessFunctionFinding")
 	createdDateTime: Optional[datetime] = Field(alias="createdDateTime", default=None,)
 	actionSummary: Optional[ActionSummary] = Field(alias="actionSummary", default=None,)
 	identityDetails: Optional[IdentityDetails] = Field(alias="identityDetails", default=None,)

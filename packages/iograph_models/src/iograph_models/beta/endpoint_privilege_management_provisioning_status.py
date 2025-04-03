@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field
 
 class EndpointPrivilegeManagementProvisioningStatus(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.endpointPrivilegeManagementProvisioningStatus"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.endpointPrivilegeManagementProvisioningStatus"] = Field(alias="@odata.type", default="#microsoft.graph.endpointPrivilegeManagementProvisioningStatus")
 	licenseType: Optional[LicenseType | str] = Field(alias="licenseType", default=None,)
 	onboardedToMicrosoftManagedPlatform: Optional[bool] = Field(alias="onboardedToMicrosoftManagedPlatform", default=None,)
 

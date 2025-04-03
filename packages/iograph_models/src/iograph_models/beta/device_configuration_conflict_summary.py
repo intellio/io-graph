@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field
 
 class DeviceConfigurationConflictSummary(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.deviceConfigurationConflictSummary"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.deviceConfigurationConflictSummary"] = Field(alias="@odata.type", default="#microsoft.graph.deviceConfigurationConflictSummary")
 	conflictingDeviceConfigurations: Optional[list[SettingSource]] = Field(alias="conflictingDeviceConfigurations", default=None,)
 	contributingSettings: Optional[list[str]] = Field(alias="contributingSettings", default=None,)
 	deviceCheckinsImpacted: Optional[int] = Field(alias="deviceCheckinsImpacted", default=None,)

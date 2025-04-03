@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field
 
 class ApprovalSolution(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.approvalSolution"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.approvalSolution"] = Field(alias="@odata.type", default="#microsoft.graph.approvalSolution")
 	provisioningStatus: Optional[ProvisionState | str] = Field(alias="provisioningStatus", default=None,)
 	approvalItems: Optional[list[ApprovalItem]] = Field(alias="approvalItems", default=None,)
 	operations: Optional[list[ApprovalOperation]] = Field(alias="operations", default=None,)

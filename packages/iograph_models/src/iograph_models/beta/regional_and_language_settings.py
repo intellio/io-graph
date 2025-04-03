@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field
 
 class RegionalAndLanguageSettings(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.regionalAndLanguageSettings"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.regionalAndLanguageSettings"] = Field(alias="@odata.type", default="#microsoft.graph.regionalAndLanguageSettings")
 	authoringLanguages: Optional[list[LocaleInfo]] = Field(alias="authoringLanguages", default=None,)
 	defaultDisplayLanguage: Optional[LocaleInfo] = Field(alias="defaultDisplayLanguage", default=None,)
 	defaultRegionalFormat: Optional[LocaleInfo] = Field(alias="defaultRegionalFormat", default=None,)

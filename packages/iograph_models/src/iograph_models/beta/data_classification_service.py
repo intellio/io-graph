@@ -8,7 +8,7 @@ from pydantic import BaseModel, Field
 
 class DataClassificationService(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.dataClassificationService"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.dataClassificationService"] = Field(alias="@odata.type", default="#microsoft.graph.dataClassificationService")
 	classifyFileJobs: Optional[list[Annotated[Union[ClassificationJobResponse, DlpEvaluatePoliciesJobResponse, EvaluateLabelJobResponse],Field(discriminator="odata_type")]]] = Field(alias="classifyFileJobs", default=None,)
 	classifyTextJobs: Optional[list[Annotated[Union[ClassificationJobResponse, DlpEvaluatePoliciesJobResponse, EvaluateLabelJobResponse],Field(discriminator="odata_type")]]] = Field(alias="classifyTextJobs", default=None,)
 	evaluateDlpPoliciesJobs: Optional[list[Annotated[Union[ClassificationJobResponse, DlpEvaluatePoliciesJobResponse, EvaluateLabelJobResponse],Field(discriminator="odata_type")]]] = Field(alias="evaluateDlpPoliciesJobs", default=None,)

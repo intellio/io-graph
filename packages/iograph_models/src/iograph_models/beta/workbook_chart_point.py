@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field
 
 class WorkbookChartPoint(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.workbookChartPoint"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.workbookChartPoint"] = Field(alias="@odata.type", default="#microsoft.graph.workbookChartPoint")
 	value: Optional[str] = Field(alias="value", default=None,)
 	format: Optional[WorkbookChartPointFormat] = Field(alias="format", default=None,)
 

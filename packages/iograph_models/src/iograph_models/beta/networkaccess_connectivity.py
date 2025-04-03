@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field
 
 class NetworkaccessConnectivity(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.networkaccess.connectivity"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.networkaccess.connectivity"] = Field(alias="@odata.type", default="#microsoft.graph.networkaccess.connectivity")
 	webCategories: Optional[list[NetworkaccessWebCategory]] = Field(alias="webCategories", default=None,)
 	branches: Optional[list[NetworkaccessBranchSite]] = Field(alias="branches", default=None,)
 	remoteNetworks: Optional[list[NetworkaccessRemoteNetwork]] = Field(alias="remoteNetworks", default=None,)

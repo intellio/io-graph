@@ -7,7 +7,7 @@ from pydantic import BaseModel, Field
 
 class AccessPackageAssignment(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.accessPackageAssignment"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.accessPackageAssignment"] = Field(alias="@odata.type", default="#microsoft.graph.accessPackageAssignment")
 	customExtensionCalloutInstances: Optional[list[CustomExtensionCalloutInstance]] = Field(alias="customExtensionCalloutInstances", default=None,)
 	expiredDateTime: Optional[datetime] = Field(alias="expiredDateTime", default=None,)
 	schedule: Optional[EntitlementManagementSchedule] = Field(alias="schedule", default=None,)

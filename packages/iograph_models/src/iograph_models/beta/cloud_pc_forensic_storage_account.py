@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field
 
 class CloudPcForensicStorageAccount(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.cloudPcForensicStorageAccount"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.cloudPcForensicStorageAccount"] = Field(alias="@odata.type", default="#microsoft.graph.cloudPcForensicStorageAccount")
 	accessTier: Optional[CloudPcStorageAccountAccessTier | str] = Field(alias="accessTier", default=None,)
 	immutableStorage: Optional[bool] = Field(alias="immutableStorage", default=None,)
 	storageAccountId: Optional[str] = Field(alias="storageAccountId", default=None,)

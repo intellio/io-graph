@@ -10,7 +10,7 @@ from pydantic import BaseModel, Field
 
 class GroupPolicyDefinition(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.groupPolicyDefinition"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.groupPolicyDefinition"] = Field(alias="@odata.type", default="#microsoft.graph.groupPolicyDefinition")
 	categoryPath: Optional[str] = Field(alias="categoryPath", default=None,)
 	classType: Optional[GroupPolicyDefinitionClassType | str] = Field(alias="classType", default=None,)
 	displayName: Optional[str] = Field(alias="displayName", default=None,)

@@ -14,8 +14,8 @@ if TYPE_CHECKING:
 	from .registrants import RegistrantsRequest
 	from .custom_questions import CustomQuestionsRequest
 	from .......request_adapter import HttpxRequestAdapter
-from iograph_models.beta.meeting_registration import MeetingRegistration
 from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.beta.meeting_registration import MeetingRegistration
 
 
 class RegistrationRequest(BaseRequestBuilder):

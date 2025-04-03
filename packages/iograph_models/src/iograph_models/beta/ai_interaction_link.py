@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field
 
 class AiInteractionLink(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.aiInteractionLink"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.aiInteractionLink"] = Field(alias="@odata.type", default="#microsoft.graph.aiInteractionLink")
 	displayName: Optional[str] = Field(alias="displayName", default=None,)
 	linkType: Optional[str] = Field(alias="linkType", default=None,)
 	linkUrl: Optional[str] = Field(alias="linkUrl", default=None,)

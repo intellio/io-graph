@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field
 
 class UpdateAllMessagesReadStateOperation(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.updateAllMessagesReadStateOperation"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.updateAllMessagesReadStateOperation"] = Field(alias="@odata.type", default="#microsoft.graph.updateAllMessagesReadStateOperation")
 	resourceLocation: Optional[str] = Field(alias="resourceLocation", default=None,)
 	status: Optional[MailFolderOperationStatus | str] = Field(alias="status", default=None,)
 

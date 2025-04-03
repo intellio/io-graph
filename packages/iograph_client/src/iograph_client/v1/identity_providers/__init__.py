@@ -15,8 +15,8 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_identity_provider_id import ByIdentityProviderIdRequest
 	from ...request_adapter import HttpxRequestAdapter
-from iograph_models.v1.identity_provider_collection_response import IdentityProviderCollectionResponse
 from iograph_models.v1.identity_provider import IdentityProvider
+from iograph_models.v1.identity_provider_collection_response import IdentityProviderCollectionResponse
 from iograph_models.v1.o_data_errors__o_data_error import ODataErrorsODataError
 
 

@@ -9,6 +9,6 @@ class EngagementUploadSession(BaseModel):
 	expirationDateTime: Optional[datetime] = Field(alias="expirationDateTime", default=None,)
 	nextExpectedRanges: Optional[list[str]] = Field(alias="nextExpectedRanges", default=None,)
 	uploadUrl: Optional[str] = Field(alias="uploadUrl", default=None,)
-	odata_type: Literal["#microsoft.graph.engagementUploadSession"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.engagementUploadSession"] = Field(alias="@odata.type", default="#microsoft.graph.engagementUploadSession")
 	id: Optional[str] = Field(alias="id", default=None,)
 

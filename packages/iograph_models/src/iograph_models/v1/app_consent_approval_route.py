@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field
 
 class AppConsentApprovalRoute(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.appConsentApprovalRoute"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.appConsentApprovalRoute"] = Field(alias="@odata.type", default="#microsoft.graph.appConsentApprovalRoute")
 	appConsentRequests: Optional[list[AppConsentRequest]] = Field(alias="appConsentRequests", default=None,)
 
 from .app_consent_request import AppConsentRequest

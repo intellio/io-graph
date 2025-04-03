@@ -8,7 +8,7 @@ from pydantic import BaseModel, Field
 
 class Directory(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.directory"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.directory"] = Field(alias="@odata.type", default="#microsoft.graph.directory")
 	administrativeUnits: Optional[list[AdministrativeUnit]] = Field(alias="administrativeUnits", default=None,)
 	attributeSets: Optional[list[AttributeSet]] = Field(alias="attributeSets", default=None,)
 	customSecurityAttributeDefinitions: Optional[list[CustomSecurityAttributeDefinition]] = Field(alias="customSecurityAttributeDefinitions", default=None,)

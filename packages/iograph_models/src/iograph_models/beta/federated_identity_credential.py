@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field
 
 class FederatedIdentityCredential(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.federatedIdentityCredential"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.federatedIdentityCredential"] = Field(alias="@odata.type", default="#microsoft.graph.federatedIdentityCredential")
 	audiences: Optional[list[str]] = Field(alias="audiences", default=None,)
 	claimsMatchingExpression: Optional[FederatedIdentityExpression] = Field(alias="claimsMatchingExpression", default=None,)
 	description: Optional[str] = Field(alias="description", default=None,)

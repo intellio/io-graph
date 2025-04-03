@@ -9,7 +9,7 @@ from pydantic import BaseModel, Field
 
 class UnifiedRoleManagementAlert(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.unifiedRoleManagementAlert"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.unifiedRoleManagementAlert"] = Field(alias="@odata.type", default="#microsoft.graph.unifiedRoleManagementAlert")
 	alertDefinitionId: Optional[str] = Field(alias="alertDefinitionId", default=None,)
 	incidentCount: Optional[int] = Field(alias="incidentCount", default=None,)
 	isActive: Optional[bool] = Field(alias="isActive", default=None,)

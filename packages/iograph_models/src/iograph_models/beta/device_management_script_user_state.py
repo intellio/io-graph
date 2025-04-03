@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field
 
 class DeviceManagementScriptUserState(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.deviceManagementScriptUserState"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.deviceManagementScriptUserState"] = Field(alias="@odata.type", default="#microsoft.graph.deviceManagementScriptUserState")
 	errorDeviceCount: Optional[int] = Field(alias="errorDeviceCount", default=None,)
 	successDeviceCount: Optional[int] = Field(alias="successDeviceCount", default=None,)
 	userPrincipalName: Optional[str] = Field(alias="userPrincipalName", default=None,)

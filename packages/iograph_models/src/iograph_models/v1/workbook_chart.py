@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field
 
 class WorkbookChart(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.workbookChart"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.workbookChart"] = Field(alias="@odata.type", default="#microsoft.graph.workbookChart")
 	height: float | str | ReferenceNumeric
 	left: float | str | ReferenceNumeric
 	name: Optional[str] = Field(alias="name", default=None,)

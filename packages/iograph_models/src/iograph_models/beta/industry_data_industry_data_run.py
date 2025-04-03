@@ -9,7 +9,7 @@ from pydantic import BaseModel, Field
 
 class IndustryDataIndustryDataRun(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.industryData.industryDataRun"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.industryData.industryDataRun"] = Field(alias="@odata.type", default="#microsoft.graph.industryData.industryDataRun")
 	blockingError: Optional[PublicError] = Field(alias="blockingError", default=None,)
 	displayName: Optional[str] = Field(alias="displayName", default=None,)
 	endDateTime: Optional[datetime] = Field(alias="endDateTime", default=None,)

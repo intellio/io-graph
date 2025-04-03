@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field
 
 class Office365GroupsActivityDetail(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.office365GroupsActivityDetail"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.office365GroupsActivityDetail"] = Field(alias="@odata.type", default="#microsoft.graph.office365GroupsActivityDetail")
 	exchangeMailboxStorageUsedInBytes: Optional[int] = Field(alias="exchangeMailboxStorageUsedInBytes", default=None,)
 	exchangeMailboxTotalItemCount: Optional[int] = Field(alias="exchangeMailboxTotalItemCount", default=None,)
 	exchangeReceivedEmailCount: Optional[int] = Field(alias="exchangeReceivedEmailCount", default=None,)

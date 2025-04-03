@@ -7,7 +7,7 @@ from pydantic import BaseModel, Field
 
 class AccessPackageAssignment(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.accessPackageAssignment"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.accessPackageAssignment"] = Field(alias="@odata.type", default="#microsoft.graph.accessPackageAssignment")
 	accessPackageId: Optional[str] = Field(alias="accessPackageId", default=None,)
 	assignmentPolicyId: Optional[str] = Field(alias="assignmentPolicyId", default=None,)
 	assignmentState: Optional[str] = Field(alias="assignmentState", default=None,)

@@ -8,7 +8,7 @@ from pydantic import BaseModel, Field
 
 class EducationUser(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.educationUser"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.educationUser"] = Field(alias="@odata.type", default="#microsoft.graph.educationUser")
 	accountEnabled: Optional[bool] = Field(alias="accountEnabled", default=None,)
 	assignedLicenses: Optional[list[AssignedLicense]] = Field(alias="assignedLicenses", default=None,)
 	assignedPlans: Optional[list[AssignedPlan]] = Field(alias="assignedPlans", default=None,)

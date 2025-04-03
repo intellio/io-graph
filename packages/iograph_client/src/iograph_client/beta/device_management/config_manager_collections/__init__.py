@@ -15,9 +15,9 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_config_manager_collection_id import ByConfigManagerCollectionIdRequest
 	from ....request_adapter import HttpxRequestAdapter
-from iograph_models.beta.config_manager_collection_collection_response import ConfigManagerCollectionCollectionResponse
 from iograph_models.beta.config_manager_collection import ConfigManagerCollection
 from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.beta.config_manager_collection_collection_response import ConfigManagerCollectionCollectionResponse
 
 
 class ConfigManagerCollectionsRequest(BaseRequestBuilder):

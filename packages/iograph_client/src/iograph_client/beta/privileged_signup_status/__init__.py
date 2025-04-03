@@ -18,9 +18,9 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_privileged_signup_status_id import ByPrivilegedSignupStatusIdRequest
 	from ...request_adapter import HttpxRequestAdapter
+from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.beta.privileged_signup_status_collection_response import PrivilegedSignupStatusCollectionResponse
 from iograph_models.beta.privileged_signup_status import PrivilegedSignupStatus
-from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 
 
 class PrivilegedSignupStatusRequest(BaseRequestBuilder):

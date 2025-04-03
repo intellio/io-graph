@@ -7,7 +7,7 @@ from pydantic import BaseModel, Field
 
 class DeviceComplianceUserStatus(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.deviceComplianceUserStatus"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.deviceComplianceUserStatus"] = Field(alias="@odata.type", default="#microsoft.graph.deviceComplianceUserStatus")
 	devicesCount: Optional[int] = Field(alias="devicesCount", default=None,)
 	lastReportedDateTime: Optional[datetime] = Field(alias="lastReportedDateTime", default=None,)
 	status: Optional[ComplianceStatus | str] = Field(alias="status", default=None,)

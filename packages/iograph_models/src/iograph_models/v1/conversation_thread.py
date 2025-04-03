@@ -9,7 +9,7 @@ from pydantic import BaseModel, Field
 
 class ConversationThread(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.conversationThread"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.conversationThread"] = Field(alias="@odata.type", default="#microsoft.graph.conversationThread")
 	ccRecipients: Optional[list[Annotated[Union[Attendee],Field(discriminator="odata_type")]]] = Field(alias="ccRecipients", default=None,)
 	hasAttachments: Optional[bool] = Field(alias="hasAttachments", default=None,)
 	isLocked: Optional[bool] = Field(alias="isLocked", default=None,)

@@ -7,7 +7,7 @@ from pydantic import BaseModel, Field
 
 class MacOSSoftwareUpdateAccountSummary(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.macOSSoftwareUpdateAccountSummary"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.macOSSoftwareUpdateAccountSummary"] = Field(alias="@odata.type", default="#microsoft.graph.macOSSoftwareUpdateAccountSummary")
 	deviceId: Optional[str] = Field(alias="deviceId", default=None,)
 	deviceName: Optional[str] = Field(alias="deviceName", default=None,)
 	displayName: Optional[str] = Field(alias="displayName", default=None,)

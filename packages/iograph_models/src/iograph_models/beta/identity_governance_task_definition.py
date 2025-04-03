@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field
 
 class IdentityGovernanceTaskDefinition(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.identityGovernance.taskDefinition"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.identityGovernance.taskDefinition"] = Field(alias="@odata.type", default="#microsoft.graph.identityGovernance.taskDefinition")
 	category: Optional[IdentityGovernanceLifecycleTaskCategory | str] = Field(alias="category", default=None,)
 	continueOnError: Optional[bool] = Field(alias="continueOnError", default=None,)
 	description: Optional[str] = Field(alias="description", default=None,)

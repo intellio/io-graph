@@ -7,7 +7,7 @@ from pydantic import BaseModel, Field
 
 class DeviceManagementIntentDeviceState(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.deviceManagementIntentDeviceState"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.deviceManagementIntentDeviceState"] = Field(alias="@odata.type", default="#microsoft.graph.deviceManagementIntentDeviceState")
 	deviceDisplayName: Optional[str] = Field(alias="deviceDisplayName", default=None,)
 	deviceId: Optional[str] = Field(alias="deviceId", default=None,)
 	lastReportedDateTime: Optional[datetime] = Field(alias="lastReportedDateTime", default=None,)

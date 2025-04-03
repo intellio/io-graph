@@ -7,7 +7,7 @@ from pydantic import BaseModel, Field
 
 class TeamsAsyncOperation(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.teamsAsyncOperation"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.teamsAsyncOperation"] = Field(alias="@odata.type", default="#microsoft.graph.teamsAsyncOperation")
 	attemptsCount: Optional[int] = Field(alias="attemptsCount", default=None,)
 	createdDateTime: Optional[datetime] = Field(alias="createdDateTime", default=None,)
 	error: Optional[OperationError] = Field(alias="error", default=None,)

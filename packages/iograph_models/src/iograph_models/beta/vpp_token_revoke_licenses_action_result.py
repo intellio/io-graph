@@ -10,7 +10,7 @@ class VppTokenRevokeLicensesActionResult(BaseModel):
 	actionState: Optional[ActionState | str] = Field(alias="actionState", default=None,)
 	lastUpdatedDateTime: Optional[datetime] = Field(alias="lastUpdatedDateTime", default=None,)
 	startDateTime: Optional[datetime] = Field(alias="startDateTime", default=None,)
-	odata_type: Literal["#microsoft.graph.vppTokenRevokeLicensesActionResult"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.vppTokenRevokeLicensesActionResult"] = Field(alias="@odata.type", default="#microsoft.graph.vppTokenRevokeLicensesActionResult")
 	actionFailureReason: Optional[VppTokenActionFailureReason | str] = Field(alias="actionFailureReason", default=None,)
 	failedLicensesCount: Optional[int] = Field(alias="failedLicensesCount", default=None,)
 	totalLicensesCount: Optional[int] = Field(alias="totalLicensesCount", default=None,)

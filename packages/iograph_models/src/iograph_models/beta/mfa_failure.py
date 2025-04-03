@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field
 
 class MfaFailure(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.mfaFailure"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.mfaFailure"] = Field(alias="@odata.type", default="#microsoft.graph.mfaFailure")
 	count: Optional[int] = Field(alias="count", default=None,)
 	reason: Optional[str] = Field(alias="reason", default=None,)
 	reasonCode: Optional[MfaFailureReasonCode | str] = Field(alias="reasonCode", default=None,)

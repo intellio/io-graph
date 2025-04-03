@@ -7,7 +7,7 @@ from pydantic import BaseModel, Field
 
 class DocumentProcessingJob(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.documentProcessingJob"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.documentProcessingJob"] = Field(alias="@odata.type", default="#microsoft.graph.documentProcessingJob")
 	createdDateTime: Optional[datetime] = Field(alias="createdDateTime", default=None,)
 	jobType: Optional[DocumentProcessingJobType | str] = Field(alias="jobType", default=None,)
 	listItemUniqueId: Optional[str] = Field(alias="listItemUniqueId", default=None,)

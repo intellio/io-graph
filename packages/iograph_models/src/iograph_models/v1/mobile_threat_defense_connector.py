@@ -7,7 +7,7 @@ from pydantic import BaseModel, Field
 
 class MobileThreatDefenseConnector(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.mobileThreatDefenseConnector"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.mobileThreatDefenseConnector"] = Field(alias="@odata.type", default="#microsoft.graph.mobileThreatDefenseConnector")
 	allowPartnerToCollectIOSApplicationMetadata: Optional[bool] = Field(alias="allowPartnerToCollectIOSApplicationMetadata", default=None,)
 	allowPartnerToCollectIOSPersonalApplicationMetadata: Optional[bool] = Field(alias="allowPartnerToCollectIOSPersonalApplicationMetadata", default=None,)
 	androidDeviceBlockedOnMissingPartnerData: Optional[bool] = Field(alias="androidDeviceBlockedOnMissingPartnerData", default=None,)

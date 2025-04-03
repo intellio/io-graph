@@ -14,8 +14,8 @@ if TYPE_CHECKING:
 	from .stop import StopRequest
 	from .instances import InstancesRequest
 	from ......request_adapter import HttpxRequestAdapter
-from iograph_models.beta.access_review_schedule_definition import AccessReviewScheduleDefinition
 from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.beta.access_review_schedule_definition import AccessReviewScheduleDefinition
 
 
 class ByAccessReviewScheduleDefinitionIdRequest(BaseRequestBuilder):

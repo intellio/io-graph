@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field
 
 class CloudPcReports(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.cloudPcReports"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.cloudPcReports"] = Field(alias="@odata.type", default="#microsoft.graph.cloudPcReports")
 	exportJobs: Optional[list[CloudPcExportJob]] = Field(alias="exportJobs", default=None,)
 
 from .cloud_pc_export_job import CloudPcExportJob

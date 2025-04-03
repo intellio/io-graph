@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field
 
 class EndUserNotificationDetail(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.endUserNotificationDetail"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.endUserNotificationDetail"] = Field(alias="@odata.type", default="#microsoft.graph.endUserNotificationDetail")
 	emailContent: Optional[str] = Field(alias="emailContent", default=None,)
 	isDefaultLangauge: Optional[bool] = Field(alias="isDefaultLangauge", default=None,)
 	language: Optional[str] = Field(alias="language", default=None,)

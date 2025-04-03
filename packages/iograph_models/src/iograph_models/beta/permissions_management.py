@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field
 
 class PermissionsManagement(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.permissionsManagement"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.permissionsManagement"] = Field(alias="@odata.type", default="#microsoft.graph.permissionsManagement")
 	permissionsRequestChanges: Optional[list[PermissionsRequestChange]] = Field(alias="permissionsRequestChanges", default=None,)
 	scheduledPermissionsApprovals: Optional[list[Approval]] = Field(alias="scheduledPermissionsApprovals", default=None,)
 	scheduledPermissionsRequests: Optional[list[ScheduledPermissionsRequest]] = Field(alias="scheduledPermissionsRequests", default=None,)

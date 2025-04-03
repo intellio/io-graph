@@ -7,7 +7,7 @@ from pydantic import BaseModel, Field
 
 class SecurityAction(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.securityAction"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.securityAction"] = Field(alias="@odata.type", default="#microsoft.graph.securityAction")
 	actionReason: Optional[str] = Field(alias="actionReason", default=None,)
 	appId: Optional[str] = Field(alias="appId", default=None,)
 	azureTenantId: Optional[str] = Field(alias="azureTenantId", default=None,)

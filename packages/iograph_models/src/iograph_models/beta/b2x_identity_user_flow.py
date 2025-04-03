@@ -8,7 +8,7 @@ from pydantic import BaseModel, Field
 
 class B2xIdentityUserFlow(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.b2xIdentityUserFlow"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.b2xIdentityUserFlow"] = Field(alias="@odata.type", default="#microsoft.graph.b2xIdentityUserFlow")
 	userFlowType: Optional[UserFlowType | str] = Field(alias="userFlowType", default=None,)
 	userFlowTypeVersion: float | str | ReferenceNumeric
 	apiConnectorConfiguration: Optional[UserFlowApiConnectorConfiguration] = Field(alias="apiConnectorConfiguration", default=None,)

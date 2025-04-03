@@ -22,8 +22,8 @@ if TYPE_CHECKING:
 	from .classify_text_jobs import ClassifyTextJobsRequest
 	from .classify_file_jobs import ClassifyFileJobsRequest
 	from ...request_adapter import HttpxRequestAdapter
-from iograph_models.beta.data_classification_service import DataClassificationService
 from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.beta.data_classification_service import DataClassificationService
 
 
 class DataClassificationRequest(BaseRequestBuilder):

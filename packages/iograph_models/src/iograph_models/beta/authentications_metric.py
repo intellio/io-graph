@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field
 
 class AuthenticationsMetric(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.authenticationsMetric"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.authenticationsMetric"] = Field(alias="@odata.type", default="#microsoft.graph.authenticationsMetric")
 	appid: Optional[str] = Field(alias="appid", default=None,)
 	attemptsCount: Optional[int] = Field(alias="attemptsCount", default=None,)
 	authFlow: Optional[str] = Field(alias="authFlow", default=None,)

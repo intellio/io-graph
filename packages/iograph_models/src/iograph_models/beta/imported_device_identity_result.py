@@ -7,7 +7,7 @@ from pydantic import BaseModel, Field
 
 class ImportedDeviceIdentityResult(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.importedDeviceIdentityResult"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.importedDeviceIdentityResult"] = Field(alias="@odata.type", default="#microsoft.graph.importedDeviceIdentityResult")
 	createdDateTime: Optional[datetime] = Field(alias="createdDateTime", default=None,)
 	description: Optional[str] = Field(alias="description", default=None,)
 	enrollmentState: Optional[EnrollmentState | str] = Field(alias="enrollmentState", default=None,)

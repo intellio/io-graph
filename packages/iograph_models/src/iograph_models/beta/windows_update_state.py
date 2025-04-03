@@ -7,7 +7,7 @@ from pydantic import BaseModel, Field
 
 class WindowsUpdateState(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.windowsUpdateState"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.windowsUpdateState"] = Field(alias="@odata.type", default="#microsoft.graph.windowsUpdateState")
 	deviceDisplayName: Optional[str] = Field(alias="deviceDisplayName", default=None,)
 	deviceId: Optional[str] = Field(alias="deviceId", default=None,)
 	featureUpdateVersion: Optional[str] = Field(alias="featureUpdateVersion", default=None,)

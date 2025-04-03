@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field
 
 class Planner(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.planner"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.planner"] = Field(alias="@odata.type", default="#microsoft.graph.planner")
 	buckets: Optional[list[PlannerBucket]] = Field(alias="buckets", default=None,)
 	plans: Optional[list[PlannerPlan]] = Field(alias="plans", default=None,)
 	tasks: Optional[list[PlannerTask]] = Field(alias="tasks", default=None,)

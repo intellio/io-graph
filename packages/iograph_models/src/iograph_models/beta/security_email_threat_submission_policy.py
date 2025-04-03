@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field
 
 class SecurityEmailThreatSubmissionPolicy(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.security.emailThreatSubmissionPolicy"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.security.emailThreatSubmissionPolicy"] = Field(alias="@odata.type", default="#microsoft.graph.security.emailThreatSubmissionPolicy")
 	customizedNotificationSenderEmailAddress: Optional[str] = Field(alias="customizedNotificationSenderEmailAddress", default=None,)
 	customizedReportRecipientEmailAddress: Optional[str] = Field(alias="customizedReportRecipientEmailAddress", default=None,)
 	isAlwaysReportEnabledForUsers: Optional[bool] = Field(alias="isAlwaysReportEnabledForUsers", default=None,)

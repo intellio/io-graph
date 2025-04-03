@@ -9,7 +9,7 @@ from pydantic import BaseModel, Field
 
 class PlannerPlan(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.plannerPlan"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.plannerPlan"] = Field(alias="@odata.type", default="#microsoft.graph.plannerPlan")
 	archivalInfo: Optional[PlannerArchivalInfo] = Field(alias="archivalInfo", default=None,)
 	container: Optional[Union[PlannerSharedWithContainer]] = Field(alias="container", default=None,discriminator="odata_type", )
 	contexts: Optional[PlannerPlanContextCollection] = Field(alias="contexts", default=None,)

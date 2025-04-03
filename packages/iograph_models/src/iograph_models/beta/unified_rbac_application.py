@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field
 
 class UnifiedRbacApplication(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.unifiedRbacApplication"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.unifiedRbacApplication"] = Field(alias="@odata.type", default="#microsoft.graph.unifiedRbacApplication")
 	customAppScopes: Optional[list[CustomAppScope]] = Field(alias="customAppScopes", default=None,)
 	resourceNamespaces: Optional[list[UnifiedRbacResourceNamespace]] = Field(alias="resourceNamespaces", default=None,)
 	roleAssignments: Optional[list[UnifiedRoleAssignment]] = Field(alias="roleAssignments", default=None,)

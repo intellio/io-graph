@@ -16,8 +16,8 @@ if TYPE_CHECKING:
 	from .post import PostRequest
 	from .currency import CurrencyRequest
 	from .......request_adapter import HttpxRequestAdapter
-from iograph_models.beta.purchase_invoice import PurchaseInvoice
 from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.beta.purchase_invoice import PurchaseInvoice
 
 
 class ByPurchaseInvoiceIdRequest(BaseRequestBuilder):

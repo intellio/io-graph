@@ -14,8 +14,8 @@ if TYPE_CHECKING:
 	from .hardware_oath_devices import HardwareOathDevicesRequest
 	from .assign_to import AssignToRequest
 	from ........request_adapter import HttpxRequestAdapter
-from iograph_models.beta.hardware_oath_token_authentication_method_device import HardwareOathTokenAuthenticationMethodDevice
 from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.beta.hardware_oath_token_authentication_method_device import HardwareOathTokenAuthenticationMethodDevice
 
 
 class DeviceRequest(BaseRequestBuilder):

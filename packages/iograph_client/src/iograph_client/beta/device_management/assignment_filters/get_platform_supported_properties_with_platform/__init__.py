@@ -11,8 +11,8 @@ from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:
 	from .....request_adapter import HttpxRequestAdapter
-from iograph_models.beta.get_platform_supported_properties_with_platform_get_response import Get_platform_supported_properties_with_platformGetResponse
 from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.beta.get_platform_supported_properties_with_platform_get_response import Get_platform_supported_properties_with_platformGetResponse
 
 
 class GetPlatformSupportedPropertiesWithPlatformRequest(BaseRequestBuilder):

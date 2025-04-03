@@ -7,7 +7,7 @@ from pydantic import BaseModel, Field
 
 class DeviceManagementResourceAccessProfileAssignment(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.deviceManagementResourceAccessProfileAssignment"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.deviceManagementResourceAccessProfileAssignment"] = Field(alias="@odata.type", default="#microsoft.graph.deviceManagementResourceAccessProfileAssignment")
 	intent: Optional[DeviceManagementResourceAccessProfileIntent | str] = Field(alias="intent", default=None,)
 	sourceId: Optional[str] = Field(alias="sourceId", default=None,)
 	target: Optional[Union[AllDevicesAssignmentTarget, AllLicensedUsersAssignmentTarget, AndroidFotaDeploymentAssignmentTarget, ConfigurationManagerCollectionAssignmentTarget, ExclusionGroupAssignmentTarget]] = Field(alias="target", default=None,discriminator="odata_type", )

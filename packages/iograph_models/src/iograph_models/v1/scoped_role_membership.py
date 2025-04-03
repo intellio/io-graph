@@ -7,7 +7,7 @@ from pydantic import BaseModel, Field
 
 class ScopedRoleMembership(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.scopedRoleMembership"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.scopedRoleMembership"] = Field(alias="@odata.type", default="#microsoft.graph.scopedRoleMembership")
 	administrativeUnitId: Optional[str] = Field(alias="administrativeUnitId", default=None,)
 	roleId: Optional[str] = Field(alias="roleId", default=None,)
 	roleMemberInfo: Optional[Union[AzureCommunicationServicesUserIdentity, CommunicationsApplicationIdentity, CommunicationsApplicationInstanceIdentity, CommunicationsEncryptedIdentity, CommunicationsGuestIdentity, CommunicationsPhoneIdentity, CommunicationsUserIdentity, EmailIdentity, Initiator, ProvisionedIdentity, ProvisioningServicePrincipal, ProvisioningSystem, ServicePrincipalIdentity, SharePointIdentity, TeamworkApplicationIdentity, TeamworkConversationIdentity, TeamworkTagIdentity, TeamworkUserIdentity, UserIdentity, CallRecordsUserIdentity]] = Field(alias="roleMemberInfo", default=None,discriminator="odata_type", )

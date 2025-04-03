@@ -9,7 +9,7 @@ from pydantic import BaseModel, Field
 
 class PageTemplate(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.pageTemplate"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.pageTemplate"] = Field(alias="@odata.type", default="#microsoft.graph.pageTemplate")
 	createdBy: Optional[Union[AiInteractionMentionedIdentitySet, ApprovalIdentitySet, ChatMessageFromIdentitySet, ChatMessageMentionedIdentitySet, ChatMessageReactionIdentitySet, CommunicationsIdentitySet, SharePointIdentitySet]] = Field(alias="createdBy", default=None,discriminator="odata_type", )
 	createdDateTime: Optional[datetime] = Field(alias="createdDateTime", default=None,)
 	description: Optional[str] = Field(alias="description", default=None,)

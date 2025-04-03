@@ -21,8 +21,8 @@ if TYPE_CHECKING:
 	from .networkaccess_destination_report_with_startdatetime_enddatetime import NetworkaccessDestinationReportWithStartDateTimeEndDateTimeRequest
 	from .networkaccess_cross_tenant_access_report_with_startdatetime_enddatetime import NetworkaccessCrossTenantAccessReportWithStartDateTimeEndDateTimeRequest
 	from ....request_adapter import HttpxRequestAdapter
-from iograph_models.beta.networkaccess_reports import NetworkaccessReports
 from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.beta.networkaccess_reports import NetworkaccessReports
 
 
 class ReportsRequest(BaseRequestBuilder):

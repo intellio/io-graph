@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field
 
 class ServiceStorageQuotaBreakdown(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.serviceStorageQuotaBreakdown"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.serviceStorageQuotaBreakdown"] = Field(alias="@odata.type", default="#microsoft.graph.serviceStorageQuotaBreakdown")
 	displayName: Optional[str] = Field(alias="displayName", default=None,)
 	manageWebUrl: Optional[str] = Field(alias="manageWebUrl", default=None,)
 	used: Optional[int] = Field(alias="used", default=None,)

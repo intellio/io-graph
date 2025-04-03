@@ -7,7 +7,7 @@ from pydantic import BaseModel, Field
 
 class SecureScore(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.secureScore"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.secureScore"] = Field(alias="@odata.type", default="#microsoft.graph.secureScore")
 	activeUserCount: Optional[int] = Field(alias="activeUserCount", default=None,)
 	averageComparativeScores: Optional[list[AverageComparativeScore]] = Field(alias="averageComparativeScores", default=None,)
 	azureTenantId: Optional[str] = Field(alias="azureTenantId", default=None,)

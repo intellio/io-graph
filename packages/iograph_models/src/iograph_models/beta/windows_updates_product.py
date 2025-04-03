@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field
 
 class WindowsUpdatesProduct(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.windowsUpdates.product"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.windowsUpdates.product"] = Field(alias="@odata.type", default="#microsoft.graph.windowsUpdates.product")
 	friendlyNames: Optional[list[str]] = Field(alias="friendlyNames", default=None,)
 	groupName: Optional[str] = Field(alias="groupName", default=None,)
 	name: Optional[str] = Field(alias="name", default=None,)

@@ -7,7 +7,7 @@ from pydantic import BaseModel, Field
 
 class ManagedAppLogCollectionRequest(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.managedAppLogCollectionRequest"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.managedAppLogCollectionRequest"] = Field(alias="@odata.type", default="#microsoft.graph.managedAppLogCollectionRequest")
 	completedDateTime: Optional[datetime] = Field(alias="completedDateTime", default=None,)
 	managedAppRegistrationId: Optional[str] = Field(alias="managedAppRegistrationId", default=None,)
 	requestedBy: Optional[str] = Field(alias="requestedBy", default=None,)

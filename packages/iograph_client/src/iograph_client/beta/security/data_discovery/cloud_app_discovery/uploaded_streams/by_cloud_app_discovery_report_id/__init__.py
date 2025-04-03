@@ -13,8 +13,8 @@ from typing import TYPE_CHECKING
 if TYPE_CHECKING:
 	from .security_aggregated_apps_details_with_period import SecurityAggregatedAppsDetailsWithPeriodRequest
 	from .......request_adapter import HttpxRequestAdapter
-from iograph_models.beta.security_cloud_app_discovery_report import SecurityCloudAppDiscoveryReport
 from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.beta.security_cloud_app_discovery_report import SecurityCloudAppDiscoveryReport
 
 
 class ByCloudAppDiscoveryReportIdRequest(BaseRequestBuilder):

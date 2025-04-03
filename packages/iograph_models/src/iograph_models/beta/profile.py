@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field
 
 class Profile(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.profile"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.profile"] = Field(alias="@odata.type", default="#microsoft.graph.profile")
 	account: Optional[list[UserAccountInformation]] = Field(alias="account", default=None,)
 	addresses: Optional[list[ItemAddress]] = Field(alias="addresses", default=None,)
 	anniversaries: Optional[list[PersonAnnualEvent]] = Field(alias="anniversaries", default=None,)

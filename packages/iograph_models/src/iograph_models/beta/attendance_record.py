@@ -7,7 +7,7 @@ from pydantic import BaseModel, Field
 
 class AttendanceRecord(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.attendanceRecord"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.attendanceRecord"] = Field(alias="@odata.type", default="#microsoft.graph.attendanceRecord")
 	attendanceIntervals: Optional[list[AttendanceInterval]] = Field(alias="attendanceIntervals", default=None,)
 	emailAddress: Optional[str] = Field(alias="emailAddress", default=None,)
 	externalRegistrationInformation: Optional[VirtualEventExternalRegistrationInformation] = Field(alias="externalRegistrationInformation", default=None,)

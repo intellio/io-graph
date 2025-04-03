@@ -7,7 +7,7 @@ from pydantic import BaseModel, Field
 
 class ManagedTenantsManagedTenantAlertRuleDefinition(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.managedTenants.managedTenantAlertRuleDefinition"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.managedTenants.managedTenantAlertRuleDefinition"] = Field(alias="@odata.type", default="#microsoft.graph.managedTenants.managedTenantAlertRuleDefinition")
 	createdByUserId: Optional[str] = Field(alias="createdByUserId", default=None,)
 	createdDateTime: Optional[datetime] = Field(alias="createdDateTime", default=None,)
 	definitionTemplate: Optional[ManagedTenantsAlertRuleDefinitionTemplate] = Field(alias="definitionTemplate", default=None,)

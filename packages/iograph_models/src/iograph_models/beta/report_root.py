@@ -8,7 +8,7 @@ from pydantic import BaseModel, Field
 
 class ReportRoot(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.reportRoot"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.reportRoot"] = Field(alias="@odata.type", default="#microsoft.graph.reportRoot")
 	appCredentialSignInActivities: Optional[list[AppCredentialSignInActivity]] = Field(alias="appCredentialSignInActivities", default=None,)
 	applicationSignInDetailedSummary: Optional[list[ApplicationSignInDetailedSummary]] = Field(alias="applicationSignInDetailedSummary", default=None,)
 	authenticationMethods: Optional[AuthenticationMethodsRoot] = Field(alias="authenticationMethods", default=None,)

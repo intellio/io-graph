@@ -11,7 +11,7 @@ class ClassificationError(BaseModel):
 	innerError: Optional[ClassificationInnerError] = Field(alias="innerError", default=None,)
 	message: Optional[str] = Field(alias="message", default=None,)
 	target: Optional[str] = Field(alias="target", default=None,)
-	odata_type: Literal["#microsoft.graph.classificationError"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.classificationError"] = Field(alias="@odata.type", default="#microsoft.graph.classificationError")
 	details: Optional[list[Annotated[Union[ClassificationError],Field(discriminator="odata_type")]]] = Field(alias="details", default=None,)
 
 from .classification_inner_error import ClassificationInnerError

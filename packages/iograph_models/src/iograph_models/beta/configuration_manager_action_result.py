@@ -10,7 +10,7 @@ class ConfigurationManagerActionResult(BaseModel):
 	actionState: Optional[ActionState | str] = Field(alias="actionState", default=None,)
 	lastUpdatedDateTime: Optional[datetime] = Field(alias="lastUpdatedDateTime", default=None,)
 	startDateTime: Optional[datetime] = Field(alias="startDateTime", default=None,)
-	odata_type: Literal["#microsoft.graph.configurationManagerActionResult"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.configurationManagerActionResult"] = Field(alias="@odata.type", default="#microsoft.graph.configurationManagerActionResult")
 	actionDeliveryStatus: Optional[ConfigurationManagerActionDeliveryStatus | str] = Field(alias="actionDeliveryStatus", default=None,)
 	errorCode: Optional[int] = Field(alias="errorCode", default=None,)
 

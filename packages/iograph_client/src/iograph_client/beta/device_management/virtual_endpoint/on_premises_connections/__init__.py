@@ -14,9 +14,9 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_cloud_pc_on_premises_connection_id import ByCloudPcOnPremisesConnectionIdRequest
 	from .....request_adapter import HttpxRequestAdapter
-from iograph_models.beta.cloud_pc_on_premises_connection import CloudPcOnPremisesConnection
-from iograph_models.beta.cloud_pc_on_premises_connection_collection_response import CloudPcOnPremisesConnectionCollectionResponse
 from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.beta.cloud_pc_on_premises_connection_collection_response import CloudPcOnPremisesConnectionCollectionResponse
+from iograph_models.beta.cloud_pc_on_premises_connection import CloudPcOnPremisesConnection
 
 
 class OnPremisesConnectionsRequest(BaseRequestBuilder):

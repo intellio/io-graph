@@ -8,7 +8,7 @@ from pydantic import BaseModel, Field
 
 class WindowsUpdatesDeployment(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.windowsUpdates.deployment"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.windowsUpdates.deployment"] = Field(alias="@odata.type", default="#microsoft.graph.windowsUpdates.deployment")
 	content: Optional[Union[WindowsUpdatesCatalogContent]] = Field(alias="content", default=None,discriminator="odata_type", )
 	createdDateTime: Optional[datetime] = Field(alias="createdDateTime", default=None,)
 	lastModifiedDateTime: Optional[datetime] = Field(alias="lastModifiedDateTime", default=None,)

@@ -7,7 +7,7 @@ from pydantic import BaseModel, Field
 
 class TeamsAppIcon(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.teamsAppIcon"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.teamsAppIcon"] = Field(alias="@odata.type", default="#microsoft.graph.teamsAppIcon")
 	webUrl: Optional[str] = Field(alias="webUrl", default=None,)
 	hostedContent: Optional[Union[ChatMessageHostedContent]] = Field(alias="hostedContent", default=None,discriminator="odata_type", )
 

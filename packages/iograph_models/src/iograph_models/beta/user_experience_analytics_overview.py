@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field
 
 class UserExperienceAnalyticsOverview(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.userExperienceAnalyticsOverview"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.userExperienceAnalyticsOverview"] = Field(alias="@odata.type", default="#microsoft.graph.userExperienceAnalyticsOverview")
 	insights: Optional[list[UserExperienceAnalyticsInsight]] = Field(alias="insights", default=None,)
 
 from .user_experience_analytics_insight import UserExperienceAnalyticsInsight

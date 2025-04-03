@@ -7,7 +7,7 @@ from pydantic import BaseModel, Field
 
 class ResellerDelegatedAdminRelationship(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.resellerDelegatedAdminRelationship"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.resellerDelegatedAdminRelationship"] = Field(alias="@odata.type", default="#microsoft.graph.resellerDelegatedAdminRelationship")
 	accessDetails: Optional[DelegatedAdminAccessDetails] = Field(alias="accessDetails", default=None,)
 	activatedDateTime: Optional[datetime] = Field(alias="activatedDateTime", default=None,)
 	autoExtendDuration: Optional[str] = Field(alias="autoExtendDuration", default=None,)

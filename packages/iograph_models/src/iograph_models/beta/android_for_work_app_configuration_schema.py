@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field
 
 class AndroidForWorkAppConfigurationSchema(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.androidForWorkAppConfigurationSchema"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.androidForWorkAppConfigurationSchema"] = Field(alias="@odata.type", default="#microsoft.graph.androidForWorkAppConfigurationSchema")
 	exampleJson: Optional[str] = Field(alias="exampleJson", default=None,)
 	schemaItems: Optional[list[AndroidForWorkAppConfigurationSchemaItem]] = Field(alias="schemaItems", default=None,)
 

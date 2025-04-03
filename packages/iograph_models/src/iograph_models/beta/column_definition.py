@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field
 
 class ColumnDefinition(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.columnDefinition"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.columnDefinition"] = Field(alias="@odata.type", default="#microsoft.graph.columnDefinition")
 	boolean: Optional[BooleanColumn] = Field(alias="boolean", default=None,)
 	calculated: Optional[CalculatedColumn] = Field(alias="calculated", default=None,)
 	choice: Optional[ChoiceColumn] = Field(alias="choice", default=None,)

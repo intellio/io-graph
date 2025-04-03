@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field
 
 class InsightsSettings(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.insightsSettings"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.insightsSettings"] = Field(alias="@odata.type", default="#microsoft.graph.insightsSettings")
 	disabledForGroup: Optional[str] = Field(alias="disabledForGroup", default=None,)
 	isEnabledInOrganization: Optional[bool] = Field(alias="isEnabledInOrganization", default=None,)
 

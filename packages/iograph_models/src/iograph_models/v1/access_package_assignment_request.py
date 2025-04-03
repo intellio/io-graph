@@ -9,7 +9,7 @@ from pydantic import BaseModel, Field
 
 class AccessPackageAssignmentRequest(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.accessPackageAssignmentRequest"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.accessPackageAssignmentRequest"] = Field(alias="@odata.type", default="#microsoft.graph.accessPackageAssignmentRequest")
 	answers: Optional[list[Annotated[Union[AccessPackageAnswerString],Field(discriminator="odata_type")]]] = Field(alias="answers", default=None,)
 	completedDateTime: Optional[datetime] = Field(alias="completedDateTime", default=None,)
 	createdDateTime: Optional[datetime] = Field(alias="createdDateTime", default=None,)

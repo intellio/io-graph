@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field
 
 class ProfileSource(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.profileSource"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.profileSource"] = Field(alias="@odata.type", default="#microsoft.graph.profileSource")
 	displayName: Optional[str] = Field(alias="displayName", default=None,)
 	webUrl: Optional[str] = Field(alias="webUrl", default=None,)
 

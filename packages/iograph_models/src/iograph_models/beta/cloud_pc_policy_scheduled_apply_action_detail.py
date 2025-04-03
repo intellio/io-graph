@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field
 
 class CloudPcPolicyScheduledApplyActionDetail(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.cloudPcPolicyScheduledApplyActionDetail"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.cloudPcPolicyScheduledApplyActionDetail"] = Field(alias="@odata.type", default="#microsoft.graph.cloudPcPolicyScheduledApplyActionDetail")
 	cronScheduleExpression: Optional[str] = Field(alias="cronScheduleExpression", default=None,)
 	reservePercentage: Optional[int] = Field(alias="reservePercentage", default=None,)
 

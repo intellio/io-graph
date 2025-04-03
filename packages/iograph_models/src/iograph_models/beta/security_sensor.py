@@ -7,7 +7,7 @@ from pydantic import BaseModel, Field
 
 class SecuritySensor(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.security.sensor"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.security.sensor"] = Field(alias="@odata.type", default="#microsoft.graph.security.sensor")
 	createdDateTime: Optional[datetime] = Field(alias="createdDateTime", default=None,)
 	deploymentStatus: Optional[SecurityDeploymentStatus | str] = Field(alias="deploymentStatus", default=None,)
 	displayName: Optional[str] = Field(alias="displayName", default=None,)

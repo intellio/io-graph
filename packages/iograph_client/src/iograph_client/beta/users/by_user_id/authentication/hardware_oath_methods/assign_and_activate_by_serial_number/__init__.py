@@ -11,8 +11,8 @@ from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:
 	from .......request_adapter import HttpxRequestAdapter
-from iograph_models.beta.assign_and_activate_by_serial_number_post_request import Assign_and_activate_by_serial_numberPostRequest
 from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.beta.assign_and_activate_by_serial_number_post_request import Assign_and_activate_by_serial_numberPostRequest
 
 
 class AssignAndActivateBySerialNumberRequest(BaseRequestBuilder):

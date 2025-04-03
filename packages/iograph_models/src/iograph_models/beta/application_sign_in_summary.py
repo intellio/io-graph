@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field
 
 class ApplicationSignInSummary(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.applicationSignInSummary"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.applicationSignInSummary"] = Field(alias="@odata.type", default="#microsoft.graph.applicationSignInSummary")
 	appDisplayName: Optional[str] = Field(alias="appDisplayName", default=None,)
 	failedSignInCount: Optional[int] = Field(alias="failedSignInCount", default=None,)
 	successfulSignInCount: Optional[int] = Field(alias="successfulSignInCount", default=None,)

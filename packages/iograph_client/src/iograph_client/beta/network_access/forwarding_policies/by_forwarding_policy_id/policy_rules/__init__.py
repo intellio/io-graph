@@ -15,8 +15,8 @@ if TYPE_CHECKING:
 	from .by_policy_rule_id import ByPolicyRuleIdRequest
 	from ......request_adapter import HttpxRequestAdapter
 from iograph_models.beta.networkaccess_policy_rule import NetworkaccessPolicyRule
-from iograph_models.beta.networkaccess_policy_rule_collection_response import NetworkaccessPolicyRuleCollectionResponse
 from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.beta.networkaccess_policy_rule_collection_response import NetworkaccessPolicyRuleCollectionResponse
 
 
 class PolicyRulesRequest(BaseRequestBuilder):

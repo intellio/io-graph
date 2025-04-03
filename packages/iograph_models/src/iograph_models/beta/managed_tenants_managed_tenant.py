@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field
 
 class ManagedTenantsManagedTenant(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.managedTenants.managedTenant"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.managedTenants.managedTenant"] = Field(alias="@odata.type", default="#microsoft.graph.managedTenants.managedTenant")
 	aggregatedPolicyCompliances: Optional[list[ManagedTenantsAggregatedPolicyCompliance]] = Field(alias="aggregatedPolicyCompliances", default=None,)
 	appPerformances: Optional[list[ManagedTenantsAppPerformance]] = Field(alias="appPerformances", default=None,)
 	auditEvents: Optional[list[ManagedTenantsAuditEvent]] = Field(alias="auditEvents", default=None,)

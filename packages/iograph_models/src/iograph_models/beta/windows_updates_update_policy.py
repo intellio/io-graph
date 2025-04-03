@@ -9,7 +9,7 @@ from pydantic import BaseModel, Field
 
 class WindowsUpdatesUpdatePolicy(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.windowsUpdates.updatePolicy"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.windowsUpdates.updatePolicy"] = Field(alias="@odata.type", default="#microsoft.graph.windowsUpdates.updatePolicy")
 	complianceChangeRules: Optional[list[Annotated[Union[WindowsUpdatesContentApprovalRule],Field(discriminator="odata_type")]]] = Field(alias="complianceChangeRules", default=None,)
 	createdDateTime: Optional[datetime] = Field(alias="createdDateTime", default=None,)
 	deploymentSettings: Optional[WindowsUpdatesDeploymentSettings] = Field(alias="deploymentSettings", default=None,)

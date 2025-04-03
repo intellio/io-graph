@@ -7,7 +7,7 @@ from pydantic import BaseModel, Field
 
 class SecurityAnalyzedEmail(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.security.analyzedEmail"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.security.analyzedEmail"] = Field(alias="@odata.type", default="#microsoft.graph.security.analyzedEmail")
 	alertIds: Optional[list[str]] = Field(alias="alertIds", default=None,)
 	attachments: Optional[list[SecurityAnalyzedEmailAttachment]] = Field(alias="attachments", default=None,)
 	authenticationDetails: Optional[SecurityAnalyzedEmailAuthenticationDetail] = Field(alias="authenticationDetails", default=None,)

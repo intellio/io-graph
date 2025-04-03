@@ -9,7 +9,7 @@ from pydantic import BaseModel, Field
 
 class IpNamedLocation(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.ipNamedLocation"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.ipNamedLocation"] = Field(alias="@odata.type", default="#microsoft.graph.ipNamedLocation")
 	createdDateTime: Optional[datetime] = Field(alias="createdDateTime", default=None,)
 	displayName: Optional[str] = Field(alias="displayName", default=None,)
 	modifiedDateTime: Optional[datetime] = Field(alias="modifiedDateTime", default=None,)

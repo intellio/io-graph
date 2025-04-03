@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field
 
 class UserExperienceAnalyticsAnomalyCorrelationGroupOverview(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.userExperienceAnalyticsAnomalyCorrelationGroupOverview"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.userExperienceAnalyticsAnomalyCorrelationGroupOverview"] = Field(alias="@odata.type", default="#microsoft.graph.userExperienceAnalyticsAnomalyCorrelationGroupOverview")
 	anomalyCorrelationGroupCount: Optional[int] = Field(alias="anomalyCorrelationGroupCount", default=None,)
 	anomalyId: Optional[str] = Field(alias="anomalyId", default=None,)
 	correlationGroupAnomalousDeviceCount: Optional[int] = Field(alias="correlationGroupAnomalousDeviceCount", default=None,)

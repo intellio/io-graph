@@ -7,7 +7,7 @@ from pydantic import BaseModel, Field
 
 class ManagedTenantsManagementTemplateStepVersion(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.managedTenants.managementTemplateStepVersion"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.managedTenants.managementTemplateStepVersion"] = Field(alias="@odata.type", default="#microsoft.graph.managedTenants.managementTemplateStepVersion")
 	contentMarkdown: Optional[str] = Field(alias="contentMarkdown", default=None,)
 	createdByUserId: Optional[str] = Field(alias="createdByUserId", default=None,)
 	createdDateTime: Optional[datetime] = Field(alias="createdDateTime", default=None,)

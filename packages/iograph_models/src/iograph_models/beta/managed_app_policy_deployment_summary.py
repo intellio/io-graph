@@ -7,7 +7,7 @@ from pydantic import BaseModel, Field
 
 class ManagedAppPolicyDeploymentSummary(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.managedAppPolicyDeploymentSummary"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.managedAppPolicyDeploymentSummary"] = Field(alias="@odata.type", default="#microsoft.graph.managedAppPolicyDeploymentSummary")
 	configurationDeployedUserCount: Optional[int] = Field(alias="configurationDeployedUserCount", default=None,)
 	configurationDeploymentSummaryPerApp: Optional[list[ManagedAppPolicyDeploymentSummaryPerApp]] = Field(alias="configurationDeploymentSummaryPerApp", default=None,)
 	displayName: Optional[str] = Field(alias="displayName", default=None,)

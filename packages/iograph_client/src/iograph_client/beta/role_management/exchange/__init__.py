@@ -16,8 +16,8 @@ if TYPE_CHECKING:
 	from .resource_namespaces import ResourceNamespacesRequest
 	from .custom_app_scopes import CustomAppScopesRequest
 	from ....request_adapter import HttpxRequestAdapter
-from iograph_models.beta.unified_rbac_application import UnifiedRbacApplication
 from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.beta.unified_rbac_application import UnifiedRbacApplication
 
 
 class ExchangeRequest(BaseRequestBuilder):

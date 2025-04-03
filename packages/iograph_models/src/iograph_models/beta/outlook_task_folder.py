@@ -7,7 +7,7 @@ from pydantic import BaseModel, Field
 
 class OutlookTaskFolder(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.outlookTaskFolder"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.outlookTaskFolder"] = Field(alias="@odata.type", default="#microsoft.graph.outlookTaskFolder")
 	changeKey: Optional[str] = Field(alias="changeKey", default=None,)
 	isDefaultFolder: Optional[bool] = Field(alias="isDefaultFolder", default=None,)
 	name: Optional[str] = Field(alias="name", default=None,)

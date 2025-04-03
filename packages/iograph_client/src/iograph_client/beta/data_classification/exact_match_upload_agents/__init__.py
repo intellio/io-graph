@@ -15,8 +15,8 @@ if TYPE_CHECKING:
 	from .by_exact_match_upload_agent_id import ByExactMatchUploadAgentIdRequest
 	from ....request_adapter import HttpxRequestAdapter
 from iograph_models.beta.exact_match_upload_agent_collection_response import ExactMatchUploadAgentCollectionResponse
-from iograph_models.beta.exact_match_upload_agent import ExactMatchUploadAgent
 from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.beta.exact_match_upload_agent import ExactMatchUploadAgent
 
 
 class ExactMatchUploadAgentsRequest(BaseRequestBuilder):

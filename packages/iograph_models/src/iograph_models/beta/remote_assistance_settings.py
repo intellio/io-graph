@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field
 
 class RemoteAssistanceSettings(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.remoteAssistanceSettings"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.remoteAssistanceSettings"] = Field(alias="@odata.type", default="#microsoft.graph.remoteAssistanceSettings")
 	allowSessionsToUnenrolledDevices: Optional[bool] = Field(alias="allowSessionsToUnenrolledDevices", default=None,)
 	blockChat: Optional[bool] = Field(alias="blockChat", default=None,)
 	remoteAssistanceState: Optional[RemoteAssistanceState | str] = Field(alias="remoteAssistanceState", default=None,)

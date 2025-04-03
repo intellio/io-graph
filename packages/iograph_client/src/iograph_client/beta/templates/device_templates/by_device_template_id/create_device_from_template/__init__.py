@@ -11,9 +11,9 @@ from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:
 	from ......request_adapter import HttpxRequestAdapter
-from iograph_models.beta.device import Device
-from iograph_models.beta.create_device_from_template_post_request import Create_device_from_templatePostRequest
 from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.beta.create_device_from_template_post_request import Create_device_from_templatePostRequest
+from iograph_models.beta.device import Device
 
 
 class CreateDeviceFromTemplateRequest(BaseRequestBuilder):

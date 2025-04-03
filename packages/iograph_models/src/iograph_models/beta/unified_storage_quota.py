@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field
 
 class UnifiedStorageQuota(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.unifiedStorageQuota"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.unifiedStorageQuota"] = Field(alias="@odata.type", default="#microsoft.graph.unifiedStorageQuota")
 	deleted: Optional[int] = Field(alias="deleted", default=None,)
 	manageWebUrl: Optional[str] = Field(alias="manageWebUrl", default=None,)
 	remaining: Optional[int] = Field(alias="remaining", default=None,)

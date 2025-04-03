@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field
 
 class DomainDnsMxRecord(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.domainDnsMxRecord"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.domainDnsMxRecord"] = Field(alias="@odata.type", default="#microsoft.graph.domainDnsMxRecord")
 	isOptional: Optional[bool] = Field(alias="isOptional", default=None,)
 	label: Optional[str] = Field(alias="label", default=None,)
 	recordType: Optional[str] = Field(alias="recordType", default=None,)

@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field
 
 class IndustryDataRoleGroup(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.industryData.roleGroup"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.industryData.roleGroup"] = Field(alias="@odata.type", default="#microsoft.graph.industryData.roleGroup")
 	displayName: Optional[str] = Field(alias="displayName", default=None,)
 	roles: Optional[list[IndustryDataRoleReferenceValue]] = Field(alias="roles", default=None,)
 

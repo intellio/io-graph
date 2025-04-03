@@ -8,7 +8,7 @@ from pydantic import BaseModel, Field
 
 class TeamsAppDefinition(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.teamsAppDefinition"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.teamsAppDefinition"] = Field(alias="@odata.type", default="#microsoft.graph.teamsAppDefinition")
 	authorization: Optional[TeamsAppAuthorization] = Field(alias="authorization", default=None,)
 	createdBy: Optional[Union[ChatMessageFromIdentitySet, ChatMessageMentionedIdentitySet, ChatMessageReactionIdentitySet, CommunicationsIdentitySet, SharePointIdentitySet]] = Field(alias="createdBy", default=None,discriminator="odata_type", )
 	description: Optional[str] = Field(alias="description", default=None,)

@@ -8,7 +8,7 @@ from pydantic import BaseModel, Field
 
 class VirtualEndpoint(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.virtualEndpoint"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.virtualEndpoint"] = Field(alias="@odata.type", default="#microsoft.graph.virtualEndpoint")
 	auditEvents: Optional[list[CloudPcAuditEvent]] = Field(alias="auditEvents", default=None,)
 	bulkActions: Optional[list[Annotated[Union[CloudPcBulkCreateSnapshot, CloudPcBulkDisasterRecoveryFailback, CloudPcBulkDisasterRecoveryFailover, CloudPcBulkModifyDiskEncryptionType, CloudPcBulkMove, CloudPcBulkPowerOff, CloudPcBulkPowerOn, CloudPcBulkReprovision, CloudPcBulkResize, CloudPcBulkRestart, CloudPcBulkRestore, CloudPcBulkSetReviewStatus, CloudPcBulkTroubleshoot],Field(discriminator="odata_type")]]] = Field(alias="bulkActions", default=None,)
 	cloudPCs: Optional[list[CloudPC]] = Field(alias="cloudPCs", default=None,)

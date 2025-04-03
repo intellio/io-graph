@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field
 
 class SecurityLabelsRoot(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.security.labelsRoot"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.security.labelsRoot"] = Field(alias="@odata.type", default="#microsoft.graph.security.labelsRoot")
 	authorities: Optional[list[SecurityAuthorityTemplate]] = Field(alias="authorities", default=None,)
 	categories: Optional[list[SecurityCategoryTemplate]] = Field(alias="categories", default=None,)
 	citations: Optional[list[SecurityCitationTemplate]] = Field(alias="citations", default=None,)

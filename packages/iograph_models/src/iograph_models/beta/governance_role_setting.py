@@ -7,7 +7,7 @@ from pydantic import BaseModel, Field
 
 class GovernanceRoleSetting(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.governanceRoleSetting"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.governanceRoleSetting"] = Field(alias="@odata.type", default="#microsoft.graph.governanceRoleSetting")
 	adminEligibleSettings: Optional[list[GovernanceRuleSetting]] = Field(alias="adminEligibleSettings", default=None,)
 	adminMemberSettings: Optional[list[GovernanceRuleSetting]] = Field(alias="adminMemberSettings", default=None,)
 	isDefault: Optional[bool] = Field(alias="isDefault", default=None,)

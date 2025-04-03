@@ -15,8 +15,8 @@ if TYPE_CHECKING:
 	from .by_learning_content_id import ByLearningContentIdRequest
 	from ......request_adapter import HttpxRequestAdapter
 from iograph_models.v1.learning_content_collection_response import LearningContentCollectionResponse
-from iograph_models.v1.learning_content import LearningContent
 from iograph_models.v1.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.v1.learning_content import LearningContent
 
 
 class LearningContentsRequest(BaseRequestBuilder):

@@ -15,8 +15,8 @@ if TYPE_CHECKING:
 	from .by_education_outcome_id import ByEducationOutcomeIdRequest
 	from .........request_adapter import HttpxRequestAdapter
 from iograph_models.beta.education_outcome import EducationOutcome
-from iograph_models.beta.education_outcome_collection_response import EducationOutcomeCollectionResponse
 from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.beta.education_outcome_collection_response import EducationOutcomeCollectionResponse
 
 
 class OutcomesRequest(BaseRequestBuilder):

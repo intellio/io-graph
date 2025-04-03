@@ -8,7 +8,7 @@ from pydantic import BaseModel, Field
 
 class ConditionalAccessRoot(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.conditionalAccessRoot"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.conditionalAccessRoot"] = Field(alias="@odata.type", default="#microsoft.graph.conditionalAccessRoot")
 	authenticationContextClassReferences: Optional[list[AuthenticationContextClassReference]] = Field(alias="authenticationContextClassReferences", default=None,)
 	authenticationStrength: Optional[AuthenticationStrengthRoot] = Field(alias="authenticationStrength", default=None,)
 	authenticationStrengths: Optional[AuthenticationStrengthRoot] = Field(alias="authenticationStrengths", default=None,)

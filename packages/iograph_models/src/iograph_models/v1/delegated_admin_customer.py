@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field
 
 class DelegatedAdminCustomer(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.delegatedAdminCustomer"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.delegatedAdminCustomer"] = Field(alias="@odata.type", default="#microsoft.graph.delegatedAdminCustomer")
 	displayName: Optional[str] = Field(alias="displayName", default=None,)
 	tenantId: Optional[str] = Field(alias="tenantId", default=None,)
 	serviceManagementDetails: Optional[list[DelegatedAdminServiceManagementDetail]] = Field(alias="serviceManagementDetails", default=None,)

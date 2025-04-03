@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field
 
 class SecurityInformationProtectionPolicySetting(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.security.informationProtectionPolicySetting"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.security.informationProtectionPolicySetting"] = Field(alias="@odata.type", default="#microsoft.graph.security.informationProtectionPolicySetting")
 	defaultLabelId: Optional[str] = Field(alias="defaultLabelId", default=None,)
 	isDowngradeJustificationRequired: Optional[bool] = Field(alias="isDowngradeJustificationRequired", default=None,)
 	isMandatory: Optional[bool] = Field(alias="isMandatory", default=None,)

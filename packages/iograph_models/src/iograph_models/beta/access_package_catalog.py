@@ -9,7 +9,7 @@ from pydantic import BaseModel, Field
 
 class AccessPackageCatalog(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.accessPackageCatalog"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.accessPackageCatalog"] = Field(alias="@odata.type", default="#microsoft.graph.accessPackageCatalog")
 	catalogStatus: Optional[str] = Field(alias="catalogStatus", default=None,)
 	catalogType: Optional[str] = Field(alias="catalogType", default=None,)
 	createdBy: Optional[str] = Field(alias="createdBy", default=None,)

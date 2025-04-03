@@ -14,9 +14,9 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_managed_app_policy_id import ByManagedAppPolicyIdRequest
 	from ....request_adapter import HttpxRequestAdapter
-from iograph_models.v1.managed_app_policy_collection_response import ManagedAppPolicyCollectionResponse
-from iograph_models.v1.managed_app_policy import ManagedAppPolicy
 from iograph_models.v1.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.v1.managed_app_policy import ManagedAppPolicy
+from iograph_models.v1.managed_app_policy_collection_response import ManagedAppPolicyCollectionResponse
 
 
 class ManagedAppPoliciesRequest(BaseRequestBuilder):

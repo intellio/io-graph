@@ -15,8 +15,8 @@ if TYPE_CHECKING:
 	from .by_end_user_notification_detail_id import ByEndUserNotificationDetailIdRequest
 	from .......request_adapter import HttpxRequestAdapter
 from iograph_models.v1.end_user_notification_detail_collection_response import EndUserNotificationDetailCollectionResponse
-from iograph_models.v1.end_user_notification_detail import EndUserNotificationDetail
 from iograph_models.v1.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.v1.end_user_notification_detail import EndUserNotificationDetail
 
 
 class DetailsRequest(BaseRequestBuilder):

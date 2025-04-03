@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field
 
 class RestrictedAppsViolation(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.restrictedAppsViolation"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.restrictedAppsViolation"] = Field(alias="@odata.type", default="#microsoft.graph.restrictedAppsViolation")
 	deviceConfigurationId: Optional[str] = Field(alias="deviceConfigurationId", default=None,)
 	deviceConfigurationName: Optional[str] = Field(alias="deviceConfigurationName", default=None,)
 	deviceName: Optional[str] = Field(alias="deviceName", default=None,)

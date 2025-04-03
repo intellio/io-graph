@@ -6,6 +6,6 @@ from pydantic import BaseModel, Field
 
 class BusinessScenarioPlanReference(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.businessScenarioPlanReference"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.businessScenarioPlanReference"] = Field(alias="@odata.type", default="#microsoft.graph.businessScenarioPlanReference")
 	title: Optional[str] = Field(alias="title", default=None,)
 

@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field
 
 class TeamsAppDashboardCardDefinition(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.teamsAppDashboardCardDefinition"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.teamsAppDashboardCardDefinition"] = Field(alias="@odata.type", default="#microsoft.graph.teamsAppDashboardCardDefinition")
 	contentSource: Optional[TeamsAppDashboardCardContentSource] = Field(alias="contentSource", default=None,)
 	defaultSize: Optional[TeamsAppDashboardCardSize | str] = Field(alias="defaultSize", default=None,)
 	description: Optional[str] = Field(alias="description", default=None,)

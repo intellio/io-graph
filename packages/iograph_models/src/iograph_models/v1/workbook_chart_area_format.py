@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field
 
 class WorkbookChartAreaFormat(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.workbookChartAreaFormat"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.workbookChartAreaFormat"] = Field(alias="@odata.type", default="#microsoft.graph.workbookChartAreaFormat")
 	fill: Optional[WorkbookChartFill] = Field(alias="fill", default=None,)
 	font: Optional[WorkbookChartFont] = Field(alias="font", default=None,)
 

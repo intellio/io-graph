@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field
 
 class ManagedTenantsTenantDetailedInformation(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.managedTenants.tenantDetailedInformation"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.managedTenants.tenantDetailedInformation"] = Field(alias="@odata.type", default="#microsoft.graph.managedTenants.tenantDetailedInformation")
 	city: Optional[str] = Field(alias="city", default=None,)
 	countryCode: Optional[str] = Field(alias="countryCode", default=None,)
 	countryName: Optional[str] = Field(alias="countryName", default=None,)

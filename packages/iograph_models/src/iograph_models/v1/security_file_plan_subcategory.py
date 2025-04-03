@@ -6,5 +6,5 @@ from pydantic import BaseModel, Field
 
 class SecurityFilePlanSubcategory(BaseModel):
 	displayName: Optional[str] = Field(alias="displayName", default=None,)
-	odata_type: Literal["#microsoft.graph.security.filePlanSubcategory"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.security.filePlanSubcategory"] = Field(alias="@odata.type", default="#microsoft.graph.security.filePlanSubcategory")
 

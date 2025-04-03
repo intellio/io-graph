@@ -12,7 +12,7 @@ class CallRecordsDirectRoutingLogRow(BaseModel):
 	userDisplayName: Optional[str] = Field(alias="userDisplayName", default=None,)
 	userId: Optional[str] = Field(alias="userId", default=None,)
 	userPrincipalName: Optional[str] = Field(alias="userPrincipalName", default=None,)
-	odata_type: Literal["#microsoft.graph.callRecords.directRoutingLogRow"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.callRecords.directRoutingLogRow"] = Field(alias="@odata.type", default="#microsoft.graph.callRecords.directRoutingLogRow")
 	calleeNumber: Optional[str] = Field(alias="calleeNumber", default=None,)
 	callEndSubReason: Optional[int] = Field(alias="callEndSubReason", default=None,)
 	callerNumber: Optional[str] = Field(alias="callerNumber", default=None,)

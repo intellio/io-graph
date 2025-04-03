@@ -7,7 +7,7 @@ from pydantic import BaseModel, Field
 
 class AttackSimulationOperation(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.attackSimulationOperation"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.attackSimulationOperation"] = Field(alias="@odata.type", default="#microsoft.graph.attackSimulationOperation")
 	createdDateTime: Optional[datetime] = Field(alias="createdDateTime", default=None,)
 	lastActionDateTime: Optional[datetime] = Field(alias="lastActionDateTime", default=None,)
 	resourceLocation: Optional[str] = Field(alias="resourceLocation", default=None,)

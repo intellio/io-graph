@@ -14,8 +14,8 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_workflow_version_version_number import ByWorkflowVersionVersionNumberRequest
 	from ........request_adapter import HttpxRequestAdapter
-from iograph_models.v1.identity_governance_workflow_version_collection_response import IdentityGovernanceWorkflowVersionCollectionResponse
 from iograph_models.v1.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.v1.identity_governance_workflow_version_collection_response import IdentityGovernanceWorkflowVersionCollectionResponse
 
 
 class VersionsRequest(BaseRequestBuilder):

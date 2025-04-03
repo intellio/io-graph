@@ -7,7 +7,7 @@ from pydantic import BaseModel, Field
 
 class IdentityGovernanceWorkflowTemplate(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.identityGovernance.workflowTemplate"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.identityGovernance.workflowTemplate"] = Field(alias="@odata.type", default="#microsoft.graph.identityGovernance.workflowTemplate")
 	category: Optional[IdentityGovernanceLifecycleWorkflowCategory | str] = Field(alias="category", default=None,)
 	description: Optional[str] = Field(alias="description", default=None,)
 	displayName: Optional[str] = Field(alias="displayName", default=None,)

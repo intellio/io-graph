@@ -7,7 +7,7 @@ from pydantic import BaseModel, Field
 
 class CallAiInsight(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.callAiInsight"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.callAiInsight"] = Field(alias="@odata.type", default="#microsoft.graph.callAiInsight")
 	actionItems: Optional[list[ActionItem]] = Field(alias="actionItems", default=None,)
 	callId: Optional[str] = Field(alias="callId", default=None,)
 	contentCorrelationId: Optional[str] = Field(alias="contentCorrelationId", default=None,)

@@ -8,7 +8,7 @@ from pydantic import BaseModel, Field
 
 class EducationAssignment(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.educationAssignment"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.educationAssignment"] = Field(alias="@odata.type", default="#microsoft.graph.educationAssignment")
 	addedStudentAction: Optional[EducationAddedStudentAction | str] = Field(alias="addedStudentAction", default=None,)
 	addToCalendarAction: Optional[EducationAddToCalendarOptions | str] = Field(alias="addToCalendarAction", default=None,)
 	allowLateSubmissions: Optional[bool] = Field(alias="allowLateSubmissions", default=None,)

@@ -9,7 +9,7 @@ from pydantic import BaseModel, Field
 
 class DepOnboardingSetting(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.depOnboardingSetting"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.depOnboardingSetting"] = Field(alias="@odata.type", default="#microsoft.graph.depOnboardingSetting")
 	appleIdentifier: Optional[str] = Field(alias="appleIdentifier", default=None,)
 	dataSharingConsentGranted: Optional[bool] = Field(alias="dataSharingConsentGranted", default=None,)
 	lastModifiedDateTime: Optional[datetime] = Field(alias="lastModifiedDateTime", default=None,)

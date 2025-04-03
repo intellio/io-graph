@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field
 
 class PlannerRoster(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.plannerRoster"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.plannerRoster"] = Field(alias="@odata.type", default="#microsoft.graph.plannerRoster")
 	assignedSensitivityLabel: Optional[SensitivityLabelAssignment] = Field(alias="assignedSensitivityLabel", default=None,)
 	members: Optional[list[PlannerRosterMember]] = Field(alias="members", default=None,)
 	plans: Optional[list[PlannerPlan]] = Field(alias="plans", default=None,)

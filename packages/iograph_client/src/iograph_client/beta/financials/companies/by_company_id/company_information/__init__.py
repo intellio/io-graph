@@ -14,8 +14,8 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_company_information_id import ByCompanyInformationIdRequest
 	from ......request_adapter import HttpxRequestAdapter
-from iograph_models.beta.company_information_collection_response import CompanyInformationCollectionResponse
 from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.beta.company_information_collection_response import CompanyInformationCollectionResponse
 
 
 class CompanyInformationRequest(BaseRequestBuilder):

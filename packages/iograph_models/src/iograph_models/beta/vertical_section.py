@@ -8,7 +8,7 @@ from pydantic import BaseModel, Field
 
 class VerticalSection(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.verticalSection"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.verticalSection"] = Field(alias="@odata.type", default="#microsoft.graph.verticalSection")
 	emphasis: Optional[SectionEmphasisType | str] = Field(alias="emphasis", default=None,)
 	webparts: Optional[list[Annotated[Union[StandardWebPart, TextWebPart],Field(discriminator="odata_type")]]] = Field(alias="webparts", default=None,)
 

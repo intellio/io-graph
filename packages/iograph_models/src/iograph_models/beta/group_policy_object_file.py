@@ -8,7 +8,7 @@ from pydantic import BaseModel, Field
 
 class GroupPolicyObjectFile(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.groupPolicyObjectFile"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.groupPolicyObjectFile"] = Field(alias="@odata.type", default="#microsoft.graph.groupPolicyObjectFile")
 	content: Optional[str] = Field(alias="content", default=None,)
 	createdDateTime: Optional[datetime] = Field(alias="createdDateTime", default=None,)
 	groupPolicyObjectId: Optional[UUID] = Field(alias="groupPolicyObjectId", default=None,)

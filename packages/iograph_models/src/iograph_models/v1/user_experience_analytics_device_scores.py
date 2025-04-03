@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field
 
 class UserExperienceAnalyticsDeviceScores(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.userExperienceAnalyticsDeviceScores"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.userExperienceAnalyticsDeviceScores"] = Field(alias="@odata.type", default="#microsoft.graph.userExperienceAnalyticsDeviceScores")
 	appReliabilityScore: float | str | ReferenceNumeric
 	batteryHealthScore: float | str | ReferenceNumeric
 	deviceName: Optional[str] = Field(alias="deviceName", default=None,)

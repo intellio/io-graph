@@ -15,8 +15,8 @@ if TYPE_CHECKING:
 	from .by_app_scope_id import ByAppScopeIdRequest
 	from .......request_adapter import HttpxRequestAdapter
 from iograph_models.beta.app_scope_collection_response import AppScopeCollectionResponse
-from iograph_models.beta.app_scope import AppScope
 from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.beta.app_scope import AppScope
 
 
 class AppScopesRequest(BaseRequestBuilder):

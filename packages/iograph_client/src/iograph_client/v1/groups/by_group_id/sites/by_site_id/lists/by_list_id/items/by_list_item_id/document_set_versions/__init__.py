@@ -15,8 +15,8 @@ if TYPE_CHECKING:
 	from .by_document_set_version_id import ByDocumentSetVersionIdRequest
 	from ...........request_adapter import HttpxRequestAdapter
 from iograph_models.v1.document_set_version_collection_response import DocumentSetVersionCollectionResponse
-from iograph_models.v1.document_set_version import DocumentSetVersion
 from iograph_models.v1.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.v1.document_set_version import DocumentSetVersion
 
 
 class DocumentSetVersionsRequest(BaseRequestBuilder):

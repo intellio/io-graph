@@ -14,8 +14,8 @@ if TYPE_CHECKING:
 	from .user_processing_results import UserProcessingResultsRequest
 	from .task_processing_results import TaskProcessingResultsRequest
 	from ........request_adapter import HttpxRequestAdapter
-from iograph_models.beta.identity_governance_run import IdentityGovernanceRun
 from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.beta.identity_governance_run import IdentityGovernanceRun
 
 
 class ByRunIdRequest(BaseRequestBuilder):

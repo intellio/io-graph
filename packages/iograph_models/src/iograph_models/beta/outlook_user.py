@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field
 
 class OutlookUser(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.outlookUser"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.outlookUser"] = Field(alias="@odata.type", default="#microsoft.graph.outlookUser")
 	masterCategories: Optional[list[OutlookCategory]] = Field(alias="masterCategories", default=None,)
 	taskFolders: Optional[list[OutlookTaskFolder]] = Field(alias="taskFolders", default=None,)
 	taskGroups: Optional[list[OutlookTaskGroup]] = Field(alias="taskGroups", default=None,)

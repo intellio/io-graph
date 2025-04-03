@@ -8,7 +8,7 @@ from pydantic import BaseModel, Field
 
 class AiInteraction(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.aiInteraction"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.aiInteraction"] = Field(alias="@odata.type", default="#microsoft.graph.aiInteraction")
 	appClass: Optional[str] = Field(alias="appClass", default=None,)
 	attachments: Optional[list[AiInteractionAttachment]] = Field(alias="attachments", default=None,)
 	body: Optional[ItemBody] = Field(alias="body", default=None,)

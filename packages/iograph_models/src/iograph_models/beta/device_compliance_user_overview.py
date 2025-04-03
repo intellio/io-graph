@@ -7,7 +7,7 @@ from pydantic import BaseModel, Field
 
 class DeviceComplianceUserOverview(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.deviceComplianceUserOverview"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.deviceComplianceUserOverview"] = Field(alias="@odata.type", default="#microsoft.graph.deviceComplianceUserOverview")
 	configurationVersion: Optional[int] = Field(alias="configurationVersion", default=None,)
 	conflictCount: Optional[int] = Field(alias="conflictCount", default=None,)
 	errorCount: Optional[int] = Field(alias="errorCount", default=None,)

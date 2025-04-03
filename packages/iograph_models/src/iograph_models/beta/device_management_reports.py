@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field
 
 class DeviceManagementReports(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.deviceManagementReports"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.deviceManagementReports"] = Field(alias="@odata.type", default="#microsoft.graph.deviceManagementReports")
 	cachedReportConfigurations: Optional[list[DeviceManagementCachedReportConfiguration]] = Field(alias="cachedReportConfigurations", default=None,)
 	exportJobs: Optional[list[DeviceManagementExportJob]] = Field(alias="exportJobs", default=None,)
 

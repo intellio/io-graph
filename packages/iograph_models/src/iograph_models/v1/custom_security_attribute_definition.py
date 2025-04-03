@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field
 
 class CustomSecurityAttributeDefinition(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.customSecurityAttributeDefinition"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.customSecurityAttributeDefinition"] = Field(alias="@odata.type", default="#microsoft.graph.customSecurityAttributeDefinition")
 	attributeSet: Optional[str] = Field(alias="attributeSet", default=None,)
 	description: Optional[str] = Field(alias="description", default=None,)
 	isCollection: Optional[bool] = Field(alias="isCollection", default=None,)

@@ -7,7 +7,7 @@ from pydantic import BaseModel, Field
 
 class NetworkaccessRemoteNetworkHealthEvent(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.networkaccess.remoteNetworkHealthEvent"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.networkaccess.remoteNetworkHealthEvent"] = Field(alias="@odata.type", default="#microsoft.graph.networkaccess.remoteNetworkHealthEvent")
 	bgpRoutesAdvertisedCount: Optional[int] = Field(alias="bgpRoutesAdvertisedCount", default=None,)
 	createdDateTime: Optional[datetime] = Field(alias="createdDateTime", default=None,)
 	description: Optional[str] = Field(alias="description", default=None,)

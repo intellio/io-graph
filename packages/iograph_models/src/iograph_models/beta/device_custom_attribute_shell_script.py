@@ -7,7 +7,7 @@ from pydantic import BaseModel, Field
 
 class DeviceCustomAttributeShellScript(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.deviceCustomAttributeShellScript"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.deviceCustomAttributeShellScript"] = Field(alias="@odata.type", default="#microsoft.graph.deviceCustomAttributeShellScript")
 	createdDateTime: Optional[datetime] = Field(alias="createdDateTime", default=None,)
 	customAttributeName: Optional[str] = Field(alias="customAttributeName", default=None,)
 	customAttributeType: Optional[DeviceCustomAttributeValueType | str] = Field(alias="customAttributeType", default=None,)

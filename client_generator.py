@@ -380,7 +380,7 @@ def get_schema_fields(name:str, schema, components,dependencies:list, x_ms_discr
                     fields[clean_field_name(prop_name)] = f'Literal["{default_value}"] = Field(alias="@odata.type", default="{default_value}")'
                     continue
                 elif x_ms_discriminator_value:
-                    fields[clean_field_name(prop_name)] = f'Literal["{x_ms_discriminator_value}"] = Field(alias="@odata.type",)'
+                    fields[clean_field_name(prop_name)] = f'Literal["{x_ms_discriminator_value}"] = Field(alias="@odata.type", default="{x_ms_discriminator_value}")'
                     continue
                 
                 # handle the case were @odata.type neither has a default value nor x-ms-discriminator-value.

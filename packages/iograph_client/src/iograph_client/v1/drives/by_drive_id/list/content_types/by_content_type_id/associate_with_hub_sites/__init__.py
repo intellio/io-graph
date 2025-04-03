@@ -11,8 +11,8 @@ from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:
 	from ........request_adapter import HttpxRequestAdapter
-from iograph_models.v1.associate_with_hub_sites_post_request import Associate_with_hub_sitesPostRequest
 from iograph_models.v1.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.v1.associate_with_hub_sites_post_request import Associate_with_hub_sitesPostRequest
 
 
 class AssociateWithHubSitesRequest(BaseRequestBuilder):

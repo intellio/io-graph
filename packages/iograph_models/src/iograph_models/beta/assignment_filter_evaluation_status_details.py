@@ -6,6 +6,6 @@ from pydantic import BaseModel, Field
 
 class AssignmentFilterEvaluationStatusDetails(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.assignmentFilterEvaluationStatusDetails"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.assignmentFilterEvaluationStatusDetails"] = Field(alias="@odata.type", default="#microsoft.graph.assignmentFilterEvaluationStatusDetails")
 	payloadId: Optional[str] = Field(alias="payloadId", default=None,)
 

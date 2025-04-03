@@ -15,8 +15,8 @@ if TYPE_CHECKING:
 	from .by_command_id import ByCommandIdRequest
 	from .....request_adapter import HttpxRequestAdapter
 from iograph_models.beta.command_collection_response import CommandCollectionResponse
-from iograph_models.beta.command import Command
 from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.beta.command import Command
 
 
 class CommandsRequest(BaseRequestBuilder):

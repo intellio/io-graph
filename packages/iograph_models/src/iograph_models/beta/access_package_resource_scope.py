@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field
 
 class AccessPackageResourceScope(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.accessPackageResourceScope"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.accessPackageResourceScope"] = Field(alias="@odata.type", default="#microsoft.graph.accessPackageResourceScope")
 	description: Optional[str] = Field(alias="description", default=None,)
 	displayName: Optional[str] = Field(alias="displayName", default=None,)
 	isRootScope: Optional[bool] = Field(alias="isRootScope", default=None,)

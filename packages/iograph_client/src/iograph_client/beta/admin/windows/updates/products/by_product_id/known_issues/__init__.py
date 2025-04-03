@@ -15,8 +15,8 @@ if TYPE_CHECKING:
 	from .by_known_issue_id import ByKnownIssueIdRequest
 	from ........request_adapter import HttpxRequestAdapter
 from iograph_models.beta.windows_updates_known_issue import WindowsUpdatesKnownIssue
-from iograph_models.beta.windows_updates_known_issue_collection_response import WindowsUpdatesKnownIssueCollectionResponse
 from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.beta.windows_updates_known_issue_collection_response import WindowsUpdatesKnownIssueCollectionResponse
 
 
 class KnownIssuesRequest(BaseRequestBuilder):

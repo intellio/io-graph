@@ -9,7 +9,7 @@ from pydantic import BaseModel, Field
 
 class Chat(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.chat"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.chat"] = Field(alias="@odata.type", default="#microsoft.graph.chat")
 	chatType: Optional[ChatType | str] = Field(alias="chatType", default=None,)
 	createdDateTime: Optional[datetime] = Field(alias="createdDateTime", default=None,)
 	isHiddenForAllMembers: Optional[bool] = Field(alias="isHiddenForAllMembers", default=None,)

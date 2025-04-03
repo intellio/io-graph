@@ -7,7 +7,7 @@ from pydantic import BaseModel, Field
 
 class ActivityHistoryItem(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.activityHistoryItem"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.activityHistoryItem"] = Field(alias="@odata.type", default="#microsoft.graph.activityHistoryItem")
 	activeDurationSeconds: Optional[int] = Field(alias="activeDurationSeconds", default=None,)
 	createdDateTime: Optional[datetime] = Field(alias="createdDateTime", default=None,)
 	expirationDateTime: Optional[datetime] = Field(alias="expirationDateTime", default=None,)

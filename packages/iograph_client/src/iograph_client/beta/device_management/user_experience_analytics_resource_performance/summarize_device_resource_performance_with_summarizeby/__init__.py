@@ -11,8 +11,8 @@ from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:
 	from .....request_adapter import HttpxRequestAdapter
-from iograph_models.beta.summarize_device_resource_performance_with_summarizeby_get_response import Summarize_device_resource_performance_with_summarizebyGetResponse
 from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.beta.summarize_device_resource_performance_with_summarizeby_get_response import Summarize_device_resource_performance_with_summarizebyGetResponse
 
 
 class SummarizeDeviceResourcePerformanceWithSummarizeByRequest(BaseRequestBuilder):

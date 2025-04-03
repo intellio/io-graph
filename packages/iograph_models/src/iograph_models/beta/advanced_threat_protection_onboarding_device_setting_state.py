@@ -7,7 +7,7 @@ from pydantic import BaseModel, Field
 
 class AdvancedThreatProtectionOnboardingDeviceSettingState(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.advancedThreatProtectionOnboardingDeviceSettingState"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.advancedThreatProtectionOnboardingDeviceSettingState"] = Field(alias="@odata.type", default="#microsoft.graph.advancedThreatProtectionOnboardingDeviceSettingState")
 	complianceGracePeriodExpirationDateTime: Optional[datetime] = Field(alias="complianceGracePeriodExpirationDateTime", default=None,)
 	deviceId: Optional[str] = Field(alias="deviceId", default=None,)
 	deviceModel: Optional[str] = Field(alias="deviceModel", default=None,)

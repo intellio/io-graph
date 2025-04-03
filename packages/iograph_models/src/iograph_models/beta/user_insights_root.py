@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field
 
 class UserInsightsRoot(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.userInsightsRoot"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.userInsightsRoot"] = Field(alias="@odata.type", default="#microsoft.graph.userInsightsRoot")
 	daily: Optional[DailyUserInsightMetricsRoot] = Field(alias="daily", default=None,)
 	monthly: Optional[MonthlyUserInsightMetricsRoot] = Field(alias="monthly", default=None,)
 

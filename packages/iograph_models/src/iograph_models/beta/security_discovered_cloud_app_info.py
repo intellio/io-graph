@@ -7,7 +7,7 @@ from pydantic import BaseModel, Field
 
 class SecurityDiscoveredCloudAppInfo(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.security.discoveredCloudAppInfo"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.security.discoveredCloudAppInfo"] = Field(alias="@odata.type", default="#microsoft.graph.security.discoveredCloudAppInfo")
 	csaStarLevel: Optional[SecurityAppInfoCsaStarLevel | str] = Field(alias="csaStarLevel", default=None,)
 	dataAtRestEncryptionMethod: Optional[SecurityAppInfoDataAtRestEncryptionMethod | str] = Field(alias="dataAtRestEncryptionMethod", default=None,)
 	dataCenter: Optional[str] = Field(alias="dataCenter", default=None,)

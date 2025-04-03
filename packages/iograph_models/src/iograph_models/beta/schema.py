@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field
 
 class Schema(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.schema"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.schema"] = Field(alias="@odata.type", default="#microsoft.graph.schema")
 	baseType: Optional[str] = Field(alias="baseType", default=None,)
 	properties: Optional[list[Property]] = Field(alias="properties", default=None,)
 

@@ -9,7 +9,7 @@ from pydantic import BaseModel, Field
 
 class AccessPackageAssignmentPolicy(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.accessPackageAssignmentPolicy"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.accessPackageAssignmentPolicy"] = Field(alias="@odata.type", default="#microsoft.graph.accessPackageAssignmentPolicy")
 	accessPackageId: Optional[str] = Field(alias="accessPackageId", default=None,)
 	accessPackageNotificationSettings: Optional[AccessPackageNotificationSettings] = Field(alias="accessPackageNotificationSettings", default=None,)
 	accessReviewSettings: Optional[AssignmentReviewSettings] = Field(alias="accessReviewSettings", default=None,)

@@ -7,7 +7,7 @@ from pydantic import BaseModel, Field
 
 class AwsIdentityAccessManagementKeyAgeFinding(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.awsIdentityAccessManagementKeyAgeFinding"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.awsIdentityAccessManagementKeyAgeFinding"] = Field(alias="@odata.type", default="#microsoft.graph.awsIdentityAccessManagementKeyAgeFinding")
 	createdDateTime: Optional[datetime] = Field(alias="createdDateTime", default=None,)
 	actionSummary: Optional[ActionSummary] = Field(alias="actionSummary", default=None,)
 	awsAccessKeyDetails: Optional[AwsAccessKeyDetails] = Field(alias="awsAccessKeyDetails", default=None,)

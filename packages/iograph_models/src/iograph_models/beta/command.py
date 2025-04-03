@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field
 
 class Command(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.command"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.command"] = Field(alias="@odata.type", default="#microsoft.graph.command")
 	appServiceName: Optional[str] = Field(alias="appServiceName", default=None,)
 	error: Optional[str] = Field(alias="error", default=None,)
 	packageFamilyName: Optional[str] = Field(alias="packageFamilyName", default=None,)

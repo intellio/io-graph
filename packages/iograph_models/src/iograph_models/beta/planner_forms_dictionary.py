@@ -4,5 +4,5 @@ from pydantic import BaseModel, Field
 
 
 class PlannerFormsDictionary(BaseModel):
-	odata_type: Literal["#microsoft.graph.plannerFormsDictionary"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.plannerFormsDictionary"] = Field(alias="@odata.type", default="#microsoft.graph.plannerFormsDictionary")
 

@@ -8,6 +8,6 @@ from pydantic import BaseModel, Field
 class MobileAppTroubleshootingAppUpdateHistory(BaseModel):
 	occurrenceDateTime: Optional[datetime] = Field(alias="occurrenceDateTime", default=None,)
 	troubleshootingErrorDetails: Optional[DeviceManagementTroubleshootingErrorDetails] = Field(alias="troubleshootingErrorDetails", default=None,)
-	odata_type: Literal["#microsoft.graph.mobileAppTroubleshootingAppUpdateHistory"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.mobileAppTroubleshootingAppUpdateHistory"] = Field(alias="@odata.type", default="#microsoft.graph.mobileAppTroubleshootingAppUpdateHistory")
 
 from .device_management_troubleshooting_error_details import DeviceManagementTroubleshootingErrorDetails

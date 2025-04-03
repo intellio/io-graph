@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field
 
 class TeamworkTag(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.teamworkTag"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.teamworkTag"] = Field(alias="@odata.type", default="#microsoft.graph.teamworkTag")
 	description: Optional[str] = Field(alias="description", default=None,)
 	displayName: Optional[str] = Field(alias="displayName", default=None,)
 	memberCount: Optional[int] = Field(alias="memberCount", default=None,)

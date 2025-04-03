@@ -7,7 +7,7 @@ from pydantic import BaseModel, Field
 
 class DelegatedAdminRelationshipOperation(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.delegatedAdminRelationshipOperation"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.delegatedAdminRelationshipOperation"] = Field(alias="@odata.type", default="#microsoft.graph.delegatedAdminRelationshipOperation")
 	createdDateTime: Optional[datetime] = Field(alias="createdDateTime", default=None,)
 	data: Optional[str] = Field(alias="data", default=None,)
 	lastModifiedDateTime: Optional[datetime] = Field(alias="lastModifiedDateTime", default=None,)

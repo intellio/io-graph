@@ -7,7 +7,7 @@ from pydantic import BaseModel, Field
 
 class TiIndicator(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.tiIndicator"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.tiIndicator"] = Field(alias="@odata.type", default="#microsoft.graph.tiIndicator")
 	action: Optional[TiAction | str] = Field(alias="action", default=None,)
 	activityGroupNames: Optional[list[str]] = Field(alias="activityGroupNames", default=None,)
 	additionalInformation: Optional[str] = Field(alias="additionalInformation", default=None,)

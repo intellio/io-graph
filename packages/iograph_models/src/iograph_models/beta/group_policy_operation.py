@@ -7,7 +7,7 @@ from pydantic import BaseModel, Field
 
 class GroupPolicyOperation(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.groupPolicyOperation"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.groupPolicyOperation"] = Field(alias="@odata.type", default="#microsoft.graph.groupPolicyOperation")
 	lastModifiedDateTime: Optional[datetime] = Field(alias="lastModifiedDateTime", default=None,)
 	operationStatus: Optional[GroupPolicyOperationStatus | str] = Field(alias="operationStatus", default=None,)
 	operationType: Optional[GroupPolicyOperationType | str] = Field(alias="operationType", default=None,)

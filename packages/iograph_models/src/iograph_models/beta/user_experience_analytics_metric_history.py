@@ -7,7 +7,7 @@ from pydantic import BaseModel, Field
 
 class UserExperienceAnalyticsMetricHistory(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.userExperienceAnalyticsMetricHistory"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.userExperienceAnalyticsMetricHistory"] = Field(alias="@odata.type", default="#microsoft.graph.userExperienceAnalyticsMetricHistory")
 	deviceId: Optional[str] = Field(alias="deviceId", default=None,)
 	metricDateTime: Optional[datetime] = Field(alias="metricDateTime", default=None,)
 	metricType: Optional[str] = Field(alias="metricType", default=None,)

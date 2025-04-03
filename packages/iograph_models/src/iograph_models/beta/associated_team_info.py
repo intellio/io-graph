@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field
 
 class AssociatedTeamInfo(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.associatedTeamInfo"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.associatedTeamInfo"] = Field(alias="@odata.type", default="#microsoft.graph.associatedTeamInfo")
 	displayName: Optional[str] = Field(alias="displayName", default=None,)
 	tenantId: Optional[str] = Field(alias="tenantId", default=None,)
 	team: Optional[Team] = Field(alias="team", default=None,)

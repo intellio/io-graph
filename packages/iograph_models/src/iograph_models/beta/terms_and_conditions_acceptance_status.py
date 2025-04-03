@@ -7,7 +7,7 @@ from pydantic import BaseModel, Field
 
 class TermsAndConditionsAcceptanceStatus(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.termsAndConditionsAcceptanceStatus"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.termsAndConditionsAcceptanceStatus"] = Field(alias="@odata.type", default="#microsoft.graph.termsAndConditionsAcceptanceStatus")
 	acceptedDateTime: Optional[datetime] = Field(alias="acceptedDateTime", default=None,)
 	acceptedVersion: Optional[int] = Field(alias="acceptedVersion", default=None,)
 	userDisplayName: Optional[str] = Field(alias="userDisplayName", default=None,)

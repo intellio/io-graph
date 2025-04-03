@@ -6,6 +6,6 @@ from pydantic import BaseModel, Field
 
 class SingleValueLegacyExtendedProperty(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.singleValueLegacyExtendedProperty"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.singleValueLegacyExtendedProperty"] = Field(alias="@odata.type", default="#microsoft.graph.singleValueLegacyExtendedProperty")
 	value: Optional[str] = Field(alias="value", default=None,)
 

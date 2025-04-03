@@ -7,7 +7,7 @@ from pydantic import BaseModel, Field
 
 class ManagedTenantsCloudPcDevice(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.managedTenants.cloudPcDevice"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.managedTenants.cloudPcDevice"] = Field(alias="@odata.type", default="#microsoft.graph.managedTenants.cloudPcDevice")
 	cloudPcStatus: Optional[str] = Field(alias="cloudPcStatus", default=None,)
 	deviceSpecification: Optional[str] = Field(alias="deviceSpecification", default=None,)
 	displayName: Optional[str] = Field(alias="displayName", default=None,)

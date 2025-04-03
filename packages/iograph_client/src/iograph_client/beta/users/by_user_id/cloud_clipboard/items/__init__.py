@@ -15,8 +15,8 @@ if TYPE_CHECKING:
 	from .by_cloud_clipboard_item_id import ByCloudClipboardItemIdRequest
 	from ......request_adapter import HttpxRequestAdapter
 from iograph_models.beta.cloud_clipboard_item_collection_response import CloudClipboardItemCollectionResponse
-from iograph_models.beta.cloud_clipboard_item import CloudClipboardItem
 from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.beta.cloud_clipboard_item import CloudClipboardItem
 
 
 class ItemsRequest(BaseRequestBuilder):

@@ -7,7 +7,7 @@ from pydantic import BaseModel, Field
 
 class DomainSecurityProfile(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.domainSecurityProfile"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.domainSecurityProfile"] = Field(alias="@odata.type", default="#microsoft.graph.domainSecurityProfile")
 	activityGroupNames: Optional[list[str]] = Field(alias="activityGroupNames", default=None,)
 	azureSubscriptionId: Optional[str] = Field(alias="azureSubscriptionId", default=None,)
 	azureTenantId: Optional[str] = Field(alias="azureTenantId", default=None,)

@@ -4,5 +4,5 @@ from pydantic import BaseModel, Field
 
 
 class CustomMetadataDictionary(BaseModel):
-	odata_type: Literal["#microsoft.graph.customMetadataDictionary"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.customMetadataDictionary"] = Field(alias="@odata.type", default="#microsoft.graph.customMetadataDictionary")
 

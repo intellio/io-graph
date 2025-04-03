@@ -6,6 +6,6 @@ from pydantic import BaseModel, Field
 
 class TargetDeviceGroup(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.targetDeviceGroup"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.targetDeviceGroup"] = Field(alias="@odata.type", default="#microsoft.graph.targetDeviceGroup")
 	displayName: Optional[str] = Field(alias="displayName", default=None,)
 

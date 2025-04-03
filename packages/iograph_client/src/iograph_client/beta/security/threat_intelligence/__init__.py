@@ -28,8 +28,8 @@ if TYPE_CHECKING:
 	from .articles import ArticlesRequest
 	from .article_indicators import ArticleIndicatorsRequest
 	from ....request_adapter import HttpxRequestAdapter
-from iograph_models.beta.security_threat_intelligence import SecurityThreatIntelligence
 from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.beta.security_threat_intelligence import SecurityThreatIntelligence
 
 
 class ThreatIntelligenceRequest(BaseRequestBuilder):

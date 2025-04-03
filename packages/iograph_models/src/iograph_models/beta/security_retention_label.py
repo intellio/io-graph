@@ -8,7 +8,7 @@ from pydantic import BaseModel, Field
 
 class SecurityRetentionLabel(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.security.retentionLabel"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.security.retentionLabel"] = Field(alias="@odata.type", default="#microsoft.graph.security.retentionLabel")
 	actionAfterRetentionPeriod: Optional[SecurityActionAfterRetentionPeriod | str] = Field(alias="actionAfterRetentionPeriod", default=None,)
 	behaviorDuringRetentionPeriod: Optional[SecurityBehaviorDuringRetentionPeriod | str] = Field(alias="behaviorDuringRetentionPeriod", default=None,)
 	createdBy: Optional[Union[AiInteractionMentionedIdentitySet, ApprovalIdentitySet, ChatMessageFromIdentitySet, ChatMessageMentionedIdentitySet, ChatMessageReactionIdentitySet, CommunicationsIdentitySet, SharePointIdentitySet]] = Field(alias="createdBy", default=None,discriminator="odata_type", )

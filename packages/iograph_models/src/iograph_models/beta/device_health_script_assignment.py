@@ -7,7 +7,7 @@ from pydantic import BaseModel, Field
 
 class DeviceHealthScriptAssignment(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.deviceHealthScriptAssignment"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.deviceHealthScriptAssignment"] = Field(alias="@odata.type", default="#microsoft.graph.deviceHealthScriptAssignment")
 	runRemediationScript: Optional[bool] = Field(alias="runRemediationScript", default=None,)
 	runSchedule: Optional[Union[DeviceHealthScriptHourlySchedule, DeviceHealthScriptDailySchedule, DeviceHealthScriptRunOnceSchedule]] = Field(alias="runSchedule", default=None,discriminator="odata_type", )
 	target: Optional[Union[AllDevicesAssignmentTarget, AllLicensedUsersAssignmentTarget, AndroidFotaDeploymentAssignmentTarget, ConfigurationManagerCollectionAssignmentTarget, ExclusionGroupAssignmentTarget]] = Field(alias="target", default=None,discriminator="odata_type", )

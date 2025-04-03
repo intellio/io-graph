@@ -7,7 +7,7 @@ from pydantic import BaseModel, Field
 
 class SubscribedSku(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.subscribedSku"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.subscribedSku"] = Field(alias="@odata.type", default="#microsoft.graph.subscribedSku")
 	accountId: Optional[str] = Field(alias="accountId", default=None,)
 	accountName: Optional[str] = Field(alias="accountName", default=None,)
 	appliesTo: Optional[str] = Field(alias="appliesTo", default=None,)

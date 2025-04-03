@@ -4,5 +4,5 @@ from pydantic import BaseModel, Field
 
 
 class WafAllowedHeadersDictionary(BaseModel):
-	odata_type: Literal["#microsoft.graph.wafAllowedHeadersDictionary"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.wafAllowedHeadersDictionary"] = Field(alias="@odata.type", default="#microsoft.graph.wafAllowedHeadersDictionary")
 

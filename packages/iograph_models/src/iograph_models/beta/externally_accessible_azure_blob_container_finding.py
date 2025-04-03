@@ -8,7 +8,7 @@ from pydantic import BaseModel, Field
 
 class ExternallyAccessibleAzureBlobContainerFinding(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.externallyAccessibleAzureBlobContainerFinding"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.externallyAccessibleAzureBlobContainerFinding"] = Field(alias="@odata.type", default="#microsoft.graph.externallyAccessibleAzureBlobContainerFinding")
 	createdDateTime: Optional[datetime] = Field(alias="createdDateTime", default=None,)
 	accessibility: Optional[AzureAccessType | str] = Field(alias="accessibility", default=None,)
 	encryptionManagedBy: Optional[AzureEncryption | str] = Field(alias="encryptionManagedBy", default=None,)

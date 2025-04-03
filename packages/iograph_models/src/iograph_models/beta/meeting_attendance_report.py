@@ -7,7 +7,7 @@ from pydantic import BaseModel, Field
 
 class MeetingAttendanceReport(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.meetingAttendanceReport"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.meetingAttendanceReport"] = Field(alias="@odata.type", default="#microsoft.graph.meetingAttendanceReport")
 	externalEventInformation: Optional[list[VirtualEventExternalInformation]] = Field(alias="externalEventInformation", default=None,)
 	meetingEndDateTime: Optional[datetime] = Field(alias="meetingEndDateTime", default=None,)
 	meetingStartDateTime: Optional[datetime] = Field(alias="meetingStartDateTime", default=None,)

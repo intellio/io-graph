@@ -7,7 +7,7 @@ from pydantic import BaseModel, Field
 
 class AccessPackageResourceRequest(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.accessPackageResourceRequest"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.accessPackageResourceRequest"] = Field(alias="@odata.type", default="#microsoft.graph.accessPackageResourceRequest")
 	catalogId: Optional[str] = Field(alias="catalogId", default=None,)
 	executeImmediately: Optional[bool] = Field(alias="executeImmediately", default=None,)
 	expirationDateTime: Optional[datetime] = Field(alias="expirationDateTime", default=None,)

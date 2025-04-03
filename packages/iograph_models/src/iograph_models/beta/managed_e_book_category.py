@@ -7,7 +7,7 @@ from pydantic import BaseModel, Field
 
 class ManagedEBookCategory(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.managedEBookCategory"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.managedEBookCategory"] = Field(alias="@odata.type", default="#microsoft.graph.managedEBookCategory")
 	displayName: Optional[str] = Field(alias="displayName", default=None,)
 	lastModifiedDateTime: Optional[datetime] = Field(alias="lastModifiedDateTime", default=None,)
 

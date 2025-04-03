@@ -8,7 +8,7 @@ from pydantic import BaseModel, Field
 class MobileAppTroubleshootingAppTargetHistory(BaseModel):
 	occurrenceDateTime: Optional[datetime] = Field(alias="occurrenceDateTime", default=None,)
 	troubleshootingErrorDetails: Optional[DeviceManagementTroubleshootingErrorDetails] = Field(alias="troubleshootingErrorDetails", default=None,)
-	odata_type: Literal["#microsoft.graph.mobileAppTroubleshootingAppTargetHistory"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.mobileAppTroubleshootingAppTargetHistory"] = Field(alias="@odata.type", default="#microsoft.graph.mobileAppTroubleshootingAppTargetHistory")
 	errorCode: Optional[str] = Field(alias="errorCode", default=None,)
 	runState: Optional[RunState | str] = Field(alias="runState", default=None,)
 	securityGroupId: Optional[str] = Field(alias="securityGroupId", default=None,)

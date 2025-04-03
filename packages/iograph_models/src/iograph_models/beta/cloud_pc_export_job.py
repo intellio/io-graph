@@ -7,7 +7,7 @@ from pydantic import BaseModel, Field
 
 class CloudPcExportJob(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.cloudPcExportJob"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.cloudPcExportJob"] = Field(alias="@odata.type", default="#microsoft.graph.cloudPcExportJob")
 	expirationDateTime: Optional[datetime] = Field(alias="expirationDateTime", default=None,)
 	exportJobStatus: Optional[CloudPcExportJobStatus | str] = Field(alias="exportJobStatus", default=None,)
 	exportUrl: Optional[str] = Field(alias="exportUrl", default=None,)

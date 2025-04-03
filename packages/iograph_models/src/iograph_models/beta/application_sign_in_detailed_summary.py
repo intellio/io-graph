@@ -7,7 +7,7 @@ from pydantic import BaseModel, Field
 
 class ApplicationSignInDetailedSummary(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.applicationSignInDetailedSummary"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.applicationSignInDetailedSummary"] = Field(alias="@odata.type", default="#microsoft.graph.applicationSignInDetailedSummary")
 	aggregatedEventDateTime: Optional[datetime] = Field(alias="aggregatedEventDateTime", default=None,)
 	appDisplayName: Optional[str] = Field(alias="appDisplayName", default=None,)
 	appId: Optional[str] = Field(alias="appId", default=None,)

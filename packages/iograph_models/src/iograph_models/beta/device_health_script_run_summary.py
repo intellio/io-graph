@@ -7,7 +7,7 @@ from pydantic import BaseModel, Field
 
 class DeviceHealthScriptRunSummary(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.deviceHealthScriptRunSummary"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.deviceHealthScriptRunSummary"] = Field(alias="@odata.type", default="#microsoft.graph.deviceHealthScriptRunSummary")
 	detectionScriptErrorDeviceCount: Optional[int] = Field(alias="detectionScriptErrorDeviceCount", default=None,)
 	detectionScriptNotApplicableDeviceCount: Optional[int] = Field(alias="detectionScriptNotApplicableDeviceCount", default=None,)
 	detectionScriptPendingDeviceCount: Optional[int] = Field(alias="detectionScriptPendingDeviceCount", default=None,)

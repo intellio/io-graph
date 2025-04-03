@@ -8,7 +8,7 @@ from pydantic import BaseModel, Field
 
 class AdminWindowsUpdates(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.adminWindowsUpdates"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.adminWindowsUpdates"] = Field(alias="@odata.type", default="#microsoft.graph.adminWindowsUpdates")
 	catalog: Optional[WindowsUpdatesCatalog] = Field(alias="catalog", default=None,)
 	deploymentAudiences: Optional[list[WindowsUpdatesDeploymentAudience]] = Field(alias="deploymentAudiences", default=None,)
 	deployments: Optional[list[WindowsUpdatesDeployment]] = Field(alias="deployments", default=None,)

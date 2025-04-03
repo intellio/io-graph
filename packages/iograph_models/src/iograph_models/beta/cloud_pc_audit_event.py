@@ -7,7 +7,7 @@ from pydantic import BaseModel, Field
 
 class CloudPcAuditEvent(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.cloudPcAuditEvent"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.cloudPcAuditEvent"] = Field(alias="@odata.type", default="#microsoft.graph.cloudPcAuditEvent")
 	activity: Optional[str] = Field(alias="activity", default=None,)
 	activityDateTime: Optional[datetime] = Field(alias="activityDateTime", default=None,)
 	activityOperationType: Optional[CloudPcAuditActivityOperationType | str] = Field(alias="activityOperationType", default=None,)

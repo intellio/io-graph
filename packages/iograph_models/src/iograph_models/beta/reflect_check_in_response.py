@@ -7,7 +7,7 @@ from pydantic import BaseModel, Field
 
 class ReflectCheckInResponse(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.reflectCheckInResponse"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.reflectCheckInResponse"] = Field(alias="@odata.type", default="#microsoft.graph.reflectCheckInResponse")
 	checkInId: Optional[str] = Field(alias="checkInId", default=None,)
 	checkInTitle: Optional[str] = Field(alias="checkInTitle", default=None,)
 	classId: Optional[str] = Field(alias="classId", default=None,)

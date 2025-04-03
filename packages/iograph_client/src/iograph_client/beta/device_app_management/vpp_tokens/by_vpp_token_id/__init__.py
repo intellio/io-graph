@@ -14,8 +14,8 @@ if TYPE_CHECKING:
 	from .sync_licenses import SyncLicensesRequest
 	from .revoke_licenses import RevokeLicensesRequest
 	from .....request_adapter import HttpxRequestAdapter
-from iograph_models.beta.vpp_token import VppToken
 from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.beta.vpp_token import VppToken
 
 
 class ByVppTokenIdRequest(BaseRequestBuilder):

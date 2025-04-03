@@ -7,7 +7,7 @@ from pydantic import BaseModel, Field
 
 class AgreementFile(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.agreementFile"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.agreementFile"] = Field(alias="@odata.type", default="#microsoft.graph.agreementFile")
 	createdDateTime: Optional[datetime] = Field(alias="createdDateTime", default=None,)
 	displayName: Optional[str] = Field(alias="displayName", default=None,)
 	fileData: Optional[AgreementFileData] = Field(alias="fileData", default=None,)

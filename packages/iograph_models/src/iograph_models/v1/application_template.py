@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field
 
 class ApplicationTemplate(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.applicationTemplate"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.applicationTemplate"] = Field(alias="@odata.type", default="#microsoft.graph.applicationTemplate")
 	categories: Optional[list[str]] = Field(alias="categories", default=None,)
 	description: Optional[str] = Field(alias="description", default=None,)
 	displayName: Optional[str] = Field(alias="displayName", default=None,)

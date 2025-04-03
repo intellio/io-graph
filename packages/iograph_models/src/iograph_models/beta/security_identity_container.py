@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field
 
 class SecurityIdentityContainer(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.security.identityContainer"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.security.identityContainer"] = Field(alias="@odata.type", default="#microsoft.graph.security.identityContainer")
 	healthIssues: Optional[list[SecurityHealthIssue]] = Field(alias="healthIssues", default=None,)
 	sensors: Optional[list[SecuritySensor]] = Field(alias="sensors", default=None,)
 

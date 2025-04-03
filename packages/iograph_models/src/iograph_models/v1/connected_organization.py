@@ -9,7 +9,7 @@ from pydantic import BaseModel, Field
 
 class ConnectedOrganization(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.connectedOrganization"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.connectedOrganization"] = Field(alias="@odata.type", default="#microsoft.graph.connectedOrganization")
 	createdDateTime: Optional[datetime] = Field(alias="createdDateTime", default=None,)
 	description: Optional[str] = Field(alias="description", default=None,)
 	displayName: Optional[str] = Field(alias="displayName", default=None,)

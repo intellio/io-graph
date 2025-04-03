@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field
 
 class UserExperienceAnalyticsResourcePerformance(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.userExperienceAnalyticsResourcePerformance"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.userExperienceAnalyticsResourcePerformance"] = Field(alias="@odata.type", default="#microsoft.graph.userExperienceAnalyticsResourcePerformance")
 	averageSpikeTimeScore: Optional[int] = Field(alias="averageSpikeTimeScore", default=None,)
 	cpuClockSpeedInMHz: float | str | ReferenceNumeric
 	cpuDisplayName: Optional[str] = Field(alias="cpuDisplayName", default=None,)

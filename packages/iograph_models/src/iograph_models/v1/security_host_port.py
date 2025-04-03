@@ -8,7 +8,7 @@ from pydantic import BaseModel, Field
 
 class SecurityHostPort(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.security.hostPort"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.security.hostPort"] = Field(alias="@odata.type", default="#microsoft.graph.security.hostPort")
 	banners: Optional[list[SecurityHostPortBanner]] = Field(alias="banners", default=None,)
 	firstSeenDateTime: Optional[datetime] = Field(alias="firstSeenDateTime", default=None,)
 	lastScanDateTime: Optional[datetime] = Field(alias="lastScanDateTime", default=None,)

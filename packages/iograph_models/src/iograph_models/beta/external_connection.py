@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field
 
 class ExternalConnection(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.externalConnection"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.externalConnection"] = Field(alias="@odata.type", default="#microsoft.graph.externalConnection")
 	configuration: Optional[Configuration] = Field(alias="configuration", default=None,)
 	description: Optional[str] = Field(alias="description", default=None,)
 	name: Optional[str] = Field(alias="name", default=None,)

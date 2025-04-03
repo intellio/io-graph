@@ -17,8 +17,8 @@ if TYPE_CHECKING:
 	from .copy_to_section_group import CopyToSectionGroupRequest
 	from .copy_to_notebook import CopyToNotebookRequest
 	from .............request_adapter import HttpxRequestAdapter
-from iograph_models.v1.onenote_section import OnenoteSection
 from iograph_models.v1.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.v1.onenote_section import OnenoteSection
 
 
 class ByOnenoteSectionIdRequest(BaseRequestBuilder):

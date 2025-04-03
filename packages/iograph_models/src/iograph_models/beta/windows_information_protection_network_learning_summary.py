@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field
 
 class WindowsInformationProtectionNetworkLearningSummary(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.windowsInformationProtectionNetworkLearningSummary"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.windowsInformationProtectionNetworkLearningSummary"] = Field(alias="@odata.type", default="#microsoft.graph.windowsInformationProtectionNetworkLearningSummary")
 	deviceCount: Optional[int] = Field(alias="deviceCount", default=None,)
 	url: Optional[str] = Field(alias="url", default=None,)
 

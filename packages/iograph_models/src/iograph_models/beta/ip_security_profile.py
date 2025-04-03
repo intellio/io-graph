@@ -7,7 +7,7 @@ from pydantic import BaseModel, Field
 
 class IpSecurityProfile(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.ipSecurityProfile"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.ipSecurityProfile"] = Field(alias="@odata.type", default="#microsoft.graph.ipSecurityProfile")
 	activityGroupNames: Optional[list[str]] = Field(alias="activityGroupNames", default=None,)
 	address: Optional[str] = Field(alias="address", default=None,)
 	azureSubscriptionId: Optional[str] = Field(alias="azureSubscriptionId", default=None,)

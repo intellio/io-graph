@@ -8,7 +8,7 @@ from pydantic import BaseModel, Field
 
 class ExternalConnectorsExternalItem(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.externalConnectors.externalItem"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.externalConnectors.externalItem"] = Field(alias="@odata.type", default="#microsoft.graph.externalConnectors.externalItem")
 	acl: Optional[list[ExternalConnectorsAcl]] = Field(alias="acl", default=None,)
 	content: Optional[ExternalConnectorsExternalItemContent] = Field(alias="content", default=None,)
 	properties: Optional[ExternalConnectorsProperties] = Field(alias="properties", default=None,)

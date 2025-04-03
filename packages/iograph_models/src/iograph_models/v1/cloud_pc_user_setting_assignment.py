@@ -8,7 +8,7 @@ from pydantic import BaseModel, Field
 
 class CloudPcUserSettingAssignment(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.cloudPcUserSettingAssignment"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.cloudPcUserSettingAssignment"] = Field(alias="@odata.type", default="#microsoft.graph.cloudPcUserSettingAssignment")
 	createdDateTime: Optional[datetime] = Field(alias="createdDateTime", default=None,)
 	target: Optional[Union[CloudPcManagementGroupAssignmentTarget]] = Field(alias="target", default=None,discriminator="odata_type", )
 

@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field
 
 class Presence(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.presence"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.presence"] = Field(alias="@odata.type", default="#microsoft.graph.presence")
 	activity: Optional[str] = Field(alias="activity", default=None,)
 	availability: Optional[str] = Field(alias="availability", default=None,)
 	statusMessage: Optional[PresenceStatusMessage] = Field(alias="statusMessage", default=None,)

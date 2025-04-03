@@ -16,8 +16,8 @@ if TYPE_CHECKING:
 	from .by_synchronization_job_id import BySynchronizationJobIdRequest
 	from ......request_adapter import HttpxRequestAdapter
 from iograph_models.beta.synchronization_job import SynchronizationJob
-from iograph_models.beta.synchronization_job_collection_response import SynchronizationJobCollectionResponse
 from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.beta.synchronization_job_collection_response import SynchronizationJobCollectionResponse
 
 
 class JobsRequest(BaseRequestBuilder):

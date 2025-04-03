@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field
 
 class ComanagementEligibleDevice(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.comanagementEligibleDevice"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.comanagementEligibleDevice"] = Field(alias="@odata.type", default="#microsoft.graph.comanagementEligibleDevice")
 	clientRegistrationStatus: Optional[DeviceRegistrationState | str] = Field(alias="clientRegistrationStatus", default=None,)
 	deviceName: Optional[str] = Field(alias="deviceName", default=None,)
 	deviceType: Optional[DeviceType | str] = Field(alias="deviceType", default=None,)

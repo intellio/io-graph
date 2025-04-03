@@ -8,7 +8,7 @@ from pydantic import BaseModel, Field
 
 class RestorePoint(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.restorePoint"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.restorePoint"] = Field(alias="@odata.type", default="#microsoft.graph.restorePoint")
 	expirationDateTime: Optional[datetime] = Field(alias="expirationDateTime", default=None,)
 	protectionDateTime: Optional[datetime] = Field(alias="protectionDateTime", default=None,)
 	tags: Optional[RestorePointTags | str] = Field(alias="tags", default=None,)

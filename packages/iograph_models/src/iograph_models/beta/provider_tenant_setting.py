@@ -7,7 +7,7 @@ from pydantic import BaseModel, Field
 
 class ProviderTenantSetting(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.providerTenantSetting"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.providerTenantSetting"] = Field(alias="@odata.type", default="#microsoft.graph.providerTenantSetting")
 	azureTenantId: Optional[str] = Field(alias="azureTenantId", default=None,)
 	enabled: Optional[bool] = Field(alias="enabled", default=None,)
 	lastModifiedDateTime: Optional[datetime] = Field(alias="lastModifiedDateTime", default=None,)

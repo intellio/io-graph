@@ -7,7 +7,7 @@ from pydantic import BaseModel, Field
 
 class DeviceManagementAutopilotPolicyStatusDetail(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.deviceManagementAutopilotPolicyStatusDetail"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.deviceManagementAutopilotPolicyStatusDetail"] = Field(alias="@odata.type", default="#microsoft.graph.deviceManagementAutopilotPolicyStatusDetail")
 	complianceStatus: Optional[DeviceManagementAutopilotPolicyComplianceStatus | str] = Field(alias="complianceStatus", default=None,)
 	displayName: Optional[str] = Field(alias="displayName", default=None,)
 	errorCode: Optional[int] = Field(alias="errorCode", default=None,)

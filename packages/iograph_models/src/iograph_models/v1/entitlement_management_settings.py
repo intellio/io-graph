@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field
 
 class EntitlementManagementSettings(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.entitlementManagementSettings"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.entitlementManagementSettings"] = Field(alias="@odata.type", default="#microsoft.graph.entitlementManagementSettings")
 	durationUntilExternalUserDeletedAfterBlocked: Optional[str] = Field(alias="durationUntilExternalUserDeletedAfterBlocked", default=None,)
 	externalUserLifecycleAction: Optional[AccessPackageExternalUserLifecycleAction | str] = Field(alias="externalUserLifecycleAction", default=None,)
 

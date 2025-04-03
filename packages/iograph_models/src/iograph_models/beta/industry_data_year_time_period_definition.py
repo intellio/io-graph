@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field
 
 class IndustryDataYearTimePeriodDefinition(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.industryData.yearTimePeriodDefinition"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.industryData.yearTimePeriodDefinition"] = Field(alias="@odata.type", default="#microsoft.graph.industryData.yearTimePeriodDefinition")
 	displayName: Optional[str] = Field(alias="displayName", default=None,)
 	endDate: Optional[str] = Field(alias="endDate", default=None,)
 	startDate: Optional[str] = Field(alias="startDate", default=None,)

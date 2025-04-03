@@ -4,5 +4,5 @@ from pydantic import BaseModel, Field
 
 
 class BlockAccessAction(BaseModel):
-	odata_type: Literal["#microsoft.graph.blockAccessAction"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.blockAccessAction"] = Field(alias="@odata.type", default="#microsoft.graph.blockAccessAction")
 

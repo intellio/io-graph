@@ -7,7 +7,7 @@ from pydantic import BaseModel, Field
 
 class SecurityBaselineDeviceState(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.securityBaselineDeviceState"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.securityBaselineDeviceState"] = Field(alias="@odata.type", default="#microsoft.graph.securityBaselineDeviceState")
 	deviceDisplayName: Optional[str] = Field(alias="deviceDisplayName", default=None,)
 	lastReportedDateTime: Optional[datetime] = Field(alias="lastReportedDateTime", default=None,)
 	managedDeviceId: Optional[str] = Field(alias="managedDeviceId", default=None,)

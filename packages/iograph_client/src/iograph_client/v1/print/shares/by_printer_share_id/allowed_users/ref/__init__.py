@@ -11,9 +11,9 @@ from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:
 	from .......request_adapter import HttpxRequestAdapter
-from iograph_models.v1.string_collection_response import StringCollectionResponse
 from iograph_models.v1.reference_create import ReferenceCreate
 from iograph_models.v1.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.v1.string_collection_response import StringCollectionResponse
 
 
 class RefRequest(BaseRequestBuilder):

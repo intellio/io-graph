@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field
 
 class SensitivityPolicySettings(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.sensitivityPolicySettings"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.sensitivityPolicySettings"] = Field(alias="@odata.type", default="#microsoft.graph.sensitivityPolicySettings")
 	applicableTo: Optional[SensitivityLabelTarget | str] = Field(alias="applicableTo", default=None,)
 	downgradeSensitivityRequiresJustification: Optional[bool] = Field(alias="downgradeSensitivityRequiresJustification", default=None,)
 	helpWebUrl: Optional[str] = Field(alias="helpWebUrl", default=None,)

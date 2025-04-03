@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field
 
 class Participant(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.participant"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.participant"] = Field(alias="@odata.type", default="#microsoft.graph.participant")
 	info: Optional[ParticipantInfo] = Field(alias="info", default=None,)
 	isInLobby: Optional[bool] = Field(alias="isInLobby", default=None,)
 	isMuted: Optional[bool] = Field(alias="isMuted", default=None,)

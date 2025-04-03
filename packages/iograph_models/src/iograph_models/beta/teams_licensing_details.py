@@ -6,6 +6,6 @@ from pydantic import BaseModel, Field
 
 class TeamsLicensingDetails(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.teamsLicensingDetails"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.teamsLicensingDetails"] = Field(alias="@odata.type", default="#microsoft.graph.teamsLicensingDetails")
 	hasTeamsLicense: Optional[bool] = Field(alias="hasTeamsLicense", default=None,)
 

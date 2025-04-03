@@ -7,7 +7,7 @@ from pydantic import BaseModel, Field
 
 class Calendar(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.calendar"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.calendar"] = Field(alias="@odata.type", default="#microsoft.graph.calendar")
 	allowedOnlineMeetingProviders: Optional[list[OnlineMeetingProviderType | str]] = Field(alias="allowedOnlineMeetingProviders", default=None,)
 	calendarGroupId: Optional[str] = Field(alias="calendarGroupId", default=None,)
 	canEdit: Optional[bool] = Field(alias="canEdit", default=None,)

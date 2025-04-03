@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field
 
 class UserExperienceAnalyticsWorkFromAnywhereModelPerformance(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.userExperienceAnalyticsWorkFromAnywhereModelPerformance"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.userExperienceAnalyticsWorkFromAnywhereModelPerformance"] = Field(alias="@odata.type", default="#microsoft.graph.userExperienceAnalyticsWorkFromAnywhereModelPerformance")
 	cloudIdentityScore: float | str | ReferenceNumeric
 	cloudManagementScore: float | str | ReferenceNumeric
 	cloudProvisioningScore: float | str | ReferenceNumeric

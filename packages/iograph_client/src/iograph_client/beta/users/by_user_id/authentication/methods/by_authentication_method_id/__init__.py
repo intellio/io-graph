@@ -15,8 +15,8 @@ if TYPE_CHECKING:
 	from .enable_sms_sign_in import EnableSmsSignInRequest
 	from .disable_sms_sign_in import DisableSmsSignInRequest
 	from .......request_adapter import HttpxRequestAdapter
-from iograph_models.beta.authentication_method import AuthenticationMethod
 from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.beta.authentication_method import AuthenticationMethod
 
 
 class ByAuthenticationMethodIdRequest(BaseRequestBuilder):

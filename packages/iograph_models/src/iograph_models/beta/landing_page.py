@@ -7,7 +7,7 @@ from pydantic import BaseModel, Field
 
 class LandingPage(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.landingPage"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.landingPage"] = Field(alias="@odata.type", default="#microsoft.graph.landingPage")
 	createdBy: Optional[EmailIdentity] = Field(alias="createdBy", default=None,)
 	createdDateTime: Optional[datetime] = Field(alias="createdDateTime", default=None,)
 	description: Optional[str] = Field(alias="description", default=None,)

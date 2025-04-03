@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field
 
 class CloudClipboardRoot(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.cloudClipboardRoot"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.cloudClipboardRoot"] = Field(alias="@odata.type", default="#microsoft.graph.cloudClipboardRoot")
 	items: Optional[list[CloudClipboardItem]] = Field(alias="items", default=None,)
 
 from .cloud_clipboard_item import CloudClipboardItem

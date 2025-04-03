@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field
 
 class AccessPackageAssignmentResourceRole(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.accessPackageAssignmentResourceRole"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.accessPackageAssignmentResourceRole"] = Field(alias="@odata.type", default="#microsoft.graph.accessPackageAssignmentResourceRole")
 	originId: Optional[str] = Field(alias="originId", default=None,)
 	originSystem: Optional[str] = Field(alias="originSystem", default=None,)
 	status: Optional[str] = Field(alias="status", default=None,)

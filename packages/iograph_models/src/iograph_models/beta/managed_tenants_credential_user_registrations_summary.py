@@ -7,7 +7,7 @@ from pydantic import BaseModel, Field
 
 class ManagedTenantsCredentialUserRegistrationsSummary(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.managedTenants.credentialUserRegistrationsSummary"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.managedTenants.credentialUserRegistrationsSummary"] = Field(alias="@odata.type", default="#microsoft.graph.managedTenants.credentialUserRegistrationsSummary")
 	lastRefreshedDateTime: Optional[datetime] = Field(alias="lastRefreshedDateTime", default=None,)
 	mfaAndSsprCapableUserCount: Optional[int] = Field(alias="mfaAndSsprCapableUserCount", default=None,)
 	mfaConditionalAccessPolicyState: Optional[str] = Field(alias="mfaConditionalAccessPolicyState", default=None,)

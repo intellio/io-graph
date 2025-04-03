@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field
 
 class NetworkaccessForwardingOptions(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.networkaccess.forwardingOptions"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.networkaccess.forwardingOptions"] = Field(alias="@odata.type", default="#microsoft.graph.networkaccess.forwardingOptions")
 	skipDnsLookupState: Optional[NetworkaccessStatus | str] = Field(alias="skipDnsLookupState", default=None,)
 
 from .networkaccess_status import NetworkaccessStatus

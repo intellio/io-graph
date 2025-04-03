@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field
 
 class IdentityGovernanceLifecycleManagementSettings(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.identityGovernance.lifecycleManagementSettings"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.identityGovernance.lifecycleManagementSettings"] = Field(alias="@odata.type", default="#microsoft.graph.identityGovernance.lifecycleManagementSettings")
 	emailSettings: Optional[EmailSettings] = Field(alias="emailSettings", default=None,)
 	workflowScheduleIntervalInHours: Optional[int] = Field(alias="workflowScheduleIntervalInHours", default=None,)
 

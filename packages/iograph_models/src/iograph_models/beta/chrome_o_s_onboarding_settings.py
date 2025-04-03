@@ -7,7 +7,7 @@ from pydantic import BaseModel, Field
 
 class ChromeOSOnboardingSettings(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.chromeOSOnboardingSettings"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.chromeOSOnboardingSettings"] = Field(alias="@odata.type", default="#microsoft.graph.chromeOSOnboardingSettings")
 	lastDirectorySyncDateTime: Optional[datetime] = Field(alias="lastDirectorySyncDateTime", default=None,)
 	lastModifiedDateTime: Optional[datetime] = Field(alias="lastModifiedDateTime", default=None,)
 	onboardingStatus: Optional[OnboardingStatus | str] = Field(alias="onboardingStatus", default=None,)

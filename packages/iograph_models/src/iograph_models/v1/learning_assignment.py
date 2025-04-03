@@ -7,7 +7,7 @@ from pydantic import BaseModel, Field
 
 class LearningAssignment(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.learningAssignment"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.learningAssignment"] = Field(alias="@odata.type", default="#microsoft.graph.learningAssignment")
 	completedDateTime: Optional[datetime] = Field(alias="completedDateTime", default=None,)
 	completionPercentage: Optional[int] = Field(alias="completionPercentage", default=None,)
 	externalcourseActivityId: Optional[str] = Field(alias="externalcourseActivityId", default=None,)

@@ -7,7 +7,7 @@ from pydantic import BaseModel, Field
 
 class WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatus(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.windowsDefenderApplicationControlSupplementalPolicyDeploymentStatus"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.windowsDefenderApplicationControlSupplementalPolicyDeploymentStatus"] = Field(alias="@odata.type", default="#microsoft.graph.windowsDefenderApplicationControlSupplementalPolicyDeploymentStatus")
 	deploymentStatus: Optional[WindowsDefenderApplicationControlSupplementalPolicyStatuses | str] = Field(alias="deploymentStatus", default=None,)
 	deviceId: Optional[str] = Field(alias="deviceId", default=None,)
 	deviceName: Optional[str] = Field(alias="deviceName", default=None,)

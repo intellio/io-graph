@@ -8,7 +8,7 @@ from pydantic import BaseModel, Field
 
 class Authentication(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.authentication"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.authentication"] = Field(alias="@odata.type", default="#microsoft.graph.authentication")
 	requirements: Optional[StrongAuthenticationRequirements] = Field(alias="requirements", default=None,)
 	signInPreferences: Optional[SignInPreferences] = Field(alias="signInPreferences", default=None,)
 	emailMethods: Optional[list[EmailAuthenticationMethod]] = Field(alias="emailMethods", default=None,)

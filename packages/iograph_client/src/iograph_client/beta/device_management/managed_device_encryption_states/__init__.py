@@ -15,8 +15,8 @@ if TYPE_CHECKING:
 	from .by_managed_device_encryption_state_id import ByManagedDeviceEncryptionStateIdRequest
 	from ....request_adapter import HttpxRequestAdapter
 from iograph_models.beta.managed_device_encryption_state import ManagedDeviceEncryptionState
-from iograph_models.beta.managed_device_encryption_state_collection_response import ManagedDeviceEncryptionStateCollectionResponse
 from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.beta.managed_device_encryption_state_collection_response import ManagedDeviceEncryptionStateCollectionResponse
 
 
 class ManagedDeviceEncryptionStatesRequest(BaseRequestBuilder):

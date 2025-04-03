@@ -7,7 +7,7 @@ from pydantic import BaseModel, Field
 
 class ManagedDeviceMobileAppConfigurationUserSummary(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.managedDeviceMobileAppConfigurationUserSummary"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.managedDeviceMobileAppConfigurationUserSummary"] = Field(alias="@odata.type", default="#microsoft.graph.managedDeviceMobileAppConfigurationUserSummary")
 	configurationVersion: Optional[int] = Field(alias="configurationVersion", default=None,)
 	errorCount: Optional[int] = Field(alias="errorCount", default=None,)
 	failedCount: Optional[int] = Field(alias="failedCount", default=None,)

@@ -4,5 +4,5 @@ from pydantic import BaseModel, Field
 
 
 class NetworkaccessExtendedProperties(BaseModel):
-	odata_type: Literal["#microsoft.graph.networkaccess.extendedProperties"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.networkaccess.extendedProperties"] = Field(alias="@odata.type", default="#microsoft.graph.networkaccess.extendedProperties")
 

@@ -13,8 +13,8 @@ from typing import TYPE_CHECKING
 if TYPE_CHECKING:
 	from .information_protection import InformationProtectionRequest
 	from .....request_adapter import HttpxRequestAdapter
-from iograph_models.beta.security_security import SecuritySecurity
 from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.beta.security_security import SecuritySecurity
 
 
 class SecurityRequest(BaseRequestBuilder):

@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field
 
 class DeviceManagementConfigurationPolicyTemplate(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.deviceManagementConfigurationPolicyTemplate"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.deviceManagementConfigurationPolicyTemplate"] = Field(alias="@odata.type", default="#microsoft.graph.deviceManagementConfigurationPolicyTemplate")
 	allowUnmanagedSettings: Optional[bool] = Field(alias="allowUnmanagedSettings", default=None,)
 	baseId: Optional[str] = Field(alias="baseId", default=None,)
 	description: Optional[str] = Field(alias="description", default=None,)

@@ -7,7 +7,7 @@ from pydantic import BaseModel, Field
 
 class IdentityApiConnector(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.identityApiConnector"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.identityApiConnector"] = Field(alias="@odata.type", default="#microsoft.graph.identityApiConnector")
 	authenticationConfiguration: Optional[Union[BasicAuthentication, ClientCertificateAuthentication, Pkcs12Certificate]] = Field(alias="authenticationConfiguration", default=None,discriminator="odata_type", )
 	displayName: Optional[str] = Field(alias="displayName", default=None,)
 	targetUrl: Optional[str] = Field(alias="targetUrl", default=None,)

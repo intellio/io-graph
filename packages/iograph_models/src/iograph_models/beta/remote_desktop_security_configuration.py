@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field
 
 class RemoteDesktopSecurityConfiguration(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.remoteDesktopSecurityConfiguration"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.remoteDesktopSecurityConfiguration"] = Field(alias="@odata.type", default="#microsoft.graph.remoteDesktopSecurityConfiguration")
 	isRemoteDesktopProtocolEnabled: Optional[bool] = Field(alias="isRemoteDesktopProtocolEnabled", default=None,)
 	targetDeviceGroups: Optional[list[TargetDeviceGroup]] = Field(alias="targetDeviceGroups", default=None,)
 

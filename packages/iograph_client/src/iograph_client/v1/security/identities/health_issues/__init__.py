@@ -14,9 +14,9 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_health_issue_id import ByHealthIssueIdRequest
 	from .....request_adapter import HttpxRequestAdapter
-from iograph_models.v1.security_health_issue import SecurityHealthIssue
 from iograph_models.v1.security_health_issue_collection_response import SecurityHealthIssueCollectionResponse
 from iograph_models.v1.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.v1.security_health_issue import SecurityHealthIssue
 
 
 class HealthIssuesRequest(BaseRequestBuilder):

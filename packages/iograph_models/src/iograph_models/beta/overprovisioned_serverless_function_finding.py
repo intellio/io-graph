@@ -8,7 +8,7 @@ from pydantic import BaseModel, Field
 
 class OverprovisionedServerlessFunctionFinding(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.overprovisionedServerlessFunctionFinding"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.overprovisionedServerlessFunctionFinding"] = Field(alias="@odata.type", default="#microsoft.graph.overprovisionedServerlessFunctionFinding")
 	createdDateTime: Optional[datetime] = Field(alias="createdDateTime", default=None,)
 	actionSummary: Optional[ActionSummary] = Field(alias="actionSummary", default=None,)
 	identityDetails: Optional[IdentityDetails] = Field(alias="identityDetails", default=None,)

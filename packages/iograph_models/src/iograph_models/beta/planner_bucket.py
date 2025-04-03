@@ -8,7 +8,7 @@ from pydantic import BaseModel, Field
 
 class PlannerBucket(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.plannerBucket"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.plannerBucket"] = Field(alias="@odata.type", default="#microsoft.graph.plannerBucket")
 	archivalInfo: Optional[PlannerArchivalInfo] = Field(alias="archivalInfo", default=None,)
 	creationSource: Optional[Union[PlannerExternalBucketSource]] = Field(alias="creationSource", default=None,discriminator="odata_type", )
 	isArchived: Optional[bool] = Field(alias="isArchived", default=None,)

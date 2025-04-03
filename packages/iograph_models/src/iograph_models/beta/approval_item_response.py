@@ -7,7 +7,7 @@ from pydantic import BaseModel, Field
 
 class ApprovalItemResponse(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.approvalItemResponse"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.approvalItemResponse"] = Field(alias="@odata.type", default="#microsoft.graph.approvalItemResponse")
 	comments: Optional[str] = Field(alias="comments", default=None,)
 	createdBy: Optional[ApprovalIdentitySet] = Field(alias="createdBy", default=None,)
 	createdDateTime: Optional[datetime] = Field(alias="createdDateTime", default=None,)

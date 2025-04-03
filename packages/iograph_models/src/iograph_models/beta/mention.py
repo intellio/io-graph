@@ -8,7 +8,7 @@ from pydantic import BaseModel, Field
 
 class Mention(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.mention"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.mention"] = Field(alias="@odata.type", default="#microsoft.graph.mention")
 	application: Optional[str] = Field(alias="application", default=None,)
 	clientReference: Optional[str] = Field(alias="clientReference", default=None,)
 	createdBy: Optional[Union[TypedEmailAddress]] = Field(alias="createdBy", default=None,discriminator="odata_type", )

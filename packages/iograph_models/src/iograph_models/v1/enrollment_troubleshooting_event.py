@@ -7,7 +7,7 @@ from pydantic import BaseModel, Field
 
 class EnrollmentTroubleshootingEvent(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.enrollmentTroubleshootingEvent"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.enrollmentTroubleshootingEvent"] = Field(alias="@odata.type", default="#microsoft.graph.enrollmentTroubleshootingEvent")
 	correlationId: Optional[str] = Field(alias="correlationId", default=None,)
 	eventDateTime: Optional[datetime] = Field(alias="eventDateTime", default=None,)
 	deviceId: Optional[str] = Field(alias="deviceId", default=None,)

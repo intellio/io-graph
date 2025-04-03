@@ -22,8 +22,8 @@ if TYPE_CHECKING:
 	from .data_loss_prevention_policies import DataLossPreventionPoliciesRequest
 	from .bitlocker import BitlockerRequest
 	from .....request_adapter import HttpxRequestAdapter
-from iograph_models.beta.information_protection import InformationProtection
 from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.beta.information_protection import InformationProtection
 
 
 class InformationProtectionRequest(BaseRequestBuilder):

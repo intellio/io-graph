@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field
 
 class RbacApplicationMultiple(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.rbacApplicationMultiple"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.rbacApplicationMultiple"] = Field(alias="@odata.type", default="#microsoft.graph.rbacApplicationMultiple")
 	resourceNamespaces: Optional[list[UnifiedRbacResourceNamespace]] = Field(alias="resourceNamespaces", default=None,)
 	roleAssignments: Optional[list[UnifiedRoleAssignmentMultiple]] = Field(alias="roleAssignments", default=None,)
 	roleDefinitions: Optional[list[UnifiedRoleDefinition]] = Field(alias="roleDefinitions", default=None,)

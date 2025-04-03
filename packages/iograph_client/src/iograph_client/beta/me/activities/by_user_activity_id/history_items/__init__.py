@@ -14,9 +14,9 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_activity_history_item_id import ByActivityHistoryItemIdRequest
 	from ......request_adapter import HttpxRequestAdapter
-from iograph_models.beta.activity_history_item import ActivityHistoryItem
-from iograph_models.beta.activity_history_item_collection_response import ActivityHistoryItemCollectionResponse
 from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.beta.activity_history_item_collection_response import ActivityHistoryItemCollectionResponse
+from iograph_models.beta.activity_history_item import ActivityHistoryItem
 
 
 class HistoryItemsRequest(BaseRequestBuilder):

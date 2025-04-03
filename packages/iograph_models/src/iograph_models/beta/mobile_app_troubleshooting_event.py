@@ -9,7 +9,7 @@ from pydantic import BaseModel, Field
 
 class MobileAppTroubleshootingEvent(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.mobileAppTroubleshootingEvent"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.mobileAppTroubleshootingEvent"] = Field(alias="@odata.type", default="#microsoft.graph.mobileAppTroubleshootingEvent")
 	additionalInformation: Optional[list[KeyValuePair]] = Field(alias="additionalInformation", default=None,)
 	correlationId: Optional[str] = Field(alias="correlationId", default=None,)
 	eventDateTime: Optional[datetime] = Field(alias="eventDateTime", default=None,)

@@ -8,7 +8,7 @@ from pydantic import BaseModel, Field
 
 class AccessReviewScheduleDefinition(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.accessReviewScheduleDefinition"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.accessReviewScheduleDefinition"] = Field(alias="@odata.type", default="#microsoft.graph.accessReviewScheduleDefinition")
 	additionalNotificationRecipients: Optional[list[AccessReviewNotificationRecipientItem]] = Field(alias="additionalNotificationRecipients", default=None,)
 	backupReviewers: Optional[list[AccessReviewReviewerScope]] = Field(alias="backupReviewers", default=None,)
 	createdBy: Optional[Union[AuditUserIdentity]] = Field(alias="createdBy", default=None,discriminator="odata_type", )

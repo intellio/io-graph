@@ -15,8 +15,8 @@ if TYPE_CHECKING:
 	from .by_governance_insight_id import ByGovernanceInsightIdRequest
 	from ...........request_adapter import HttpxRequestAdapter
 from iograph_models.v1.governance_insight_collection_response import GovernanceInsightCollectionResponse
-from iograph_models.v1.governance_insight import GovernanceInsight
 from iograph_models.v1.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.v1.governance_insight import GovernanceInsight
 
 
 class InsightsRequest(BaseRequestBuilder):

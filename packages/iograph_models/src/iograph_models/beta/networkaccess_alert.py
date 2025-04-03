@@ -9,7 +9,7 @@ from pydantic import BaseModel, Field
 
 class NetworkaccessAlert(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.networkaccess.alert"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.networkaccess.alert"] = Field(alias="@odata.type", default="#microsoft.graph.networkaccess.alert")
 	actions: Optional[list[NetworkaccessAlertAction]] = Field(alias="actions", default=None,)
 	alertType: Optional[NetworkaccessAlertType | str] = Field(alias="alertType", default=None,)
 	creationDateTime: Optional[datetime] = Field(alias="creationDateTime", default=None,)

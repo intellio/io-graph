@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field
 
 class UserExperienceAnalyticsNotAutopilotReadyDevice(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.userExperienceAnalyticsNotAutopilotReadyDevice"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.userExperienceAnalyticsNotAutopilotReadyDevice"] = Field(alias="@odata.type", default="#microsoft.graph.userExperienceAnalyticsNotAutopilotReadyDevice")
 	autoPilotProfileAssigned: Optional[bool] = Field(alias="autoPilotProfileAssigned", default=None,)
 	autoPilotRegistered: Optional[bool] = Field(alias="autoPilotRegistered", default=None,)
 	azureAdJoinType: Optional[str] = Field(alias="azureAdJoinType", default=None,)

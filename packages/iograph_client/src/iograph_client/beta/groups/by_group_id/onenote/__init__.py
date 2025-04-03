@@ -18,8 +18,8 @@ if TYPE_CHECKING:
 	from .operations import OperationsRequest
 	from .notebooks import NotebooksRequest
 	from .....request_adapter import HttpxRequestAdapter
-from iograph_models.beta.onenote import Onenote
 from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.beta.onenote import Onenote
 
 
 class OnenoteRequest(BaseRequestBuilder):

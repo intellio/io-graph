@@ -12,8 +12,8 @@ from typing import TYPE_CHECKING
 if TYPE_CHECKING:
 	from .reset_to_default_settings import ResetToDefaultSettingsRequest
 	from ......request_adapter import HttpxRequestAdapter
-from iograph_models.beta.multi_tenant_organization_identity_sync_policy_template import MultiTenantOrganizationIdentitySyncPolicyTemplate
 from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.beta.multi_tenant_organization_identity_sync_policy_template import MultiTenantOrganizationIdentitySyncPolicyTemplate
 
 
 class MultiTenantOrganizationIdentitySynchronizationRequest(BaseRequestBuilder):

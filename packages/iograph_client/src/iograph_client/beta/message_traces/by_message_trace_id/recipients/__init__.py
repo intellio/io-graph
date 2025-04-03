@@ -14,9 +14,9 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_message_recipient_id import ByMessageRecipientIdRequest
 	from .....request_adapter import HttpxRequestAdapter
+from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.beta.message_recipient import MessageRecipient
 from iograph_models.beta.message_recipient_collection_response import MessageRecipientCollectionResponse
-from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 
 
 class RecipientsRequest(BaseRequestBuilder):

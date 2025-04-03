@@ -7,7 +7,7 @@ from pydantic import BaseModel, Field
 
 class MultiTenantOrganizationPartnerConfigurationTemplate(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.multiTenantOrganizationPartnerConfigurationTemplate"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.multiTenantOrganizationPartnerConfigurationTemplate"] = Field(alias="@odata.type", default="#microsoft.graph.multiTenantOrganizationPartnerConfigurationTemplate")
 	automaticUserConsentSettings: Optional[InboundOutboundPolicyConfiguration] = Field(alias="automaticUserConsentSettings", default=None,)
 	b2bCollaborationInbound: Optional[Union[CrossTenantAccessPolicyTenantRestrictions]] = Field(alias="b2bCollaborationInbound", default=None,discriminator="odata_type", )
 	b2bCollaborationOutbound: Optional[Union[CrossTenantAccessPolicyTenantRestrictions]] = Field(alias="b2bCollaborationOutbound", default=None,discriminator="odata_type", )

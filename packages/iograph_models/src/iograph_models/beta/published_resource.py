@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field
 
 class PublishedResource(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.publishedResource"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.publishedResource"] = Field(alias="@odata.type", default="#microsoft.graph.publishedResource")
 	displayName: Optional[str] = Field(alias="displayName", default=None,)
 	publishingType: Optional[OnPremisesPublishingType | str] = Field(alias="publishingType", default=None,)
 	resourceName: Optional[str] = Field(alias="resourceName", default=None,)

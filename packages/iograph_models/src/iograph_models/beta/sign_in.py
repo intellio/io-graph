@@ -7,7 +7,7 @@ from pydantic import BaseModel, Field
 
 class SignIn(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.signIn"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.signIn"] = Field(alias="@odata.type", default="#microsoft.graph.signIn")
 	appDisplayName: Optional[str] = Field(alias="appDisplayName", default=None,)
 	appId: Optional[str] = Field(alias="appId", default=None,)
 	appliedConditionalAccessPolicies: Optional[list[AppliedConditionalAccessPolicy]] = Field(alias="appliedConditionalAccessPolicies", default=None,)

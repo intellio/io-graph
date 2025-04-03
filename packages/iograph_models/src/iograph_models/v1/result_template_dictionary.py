@@ -4,5 +4,5 @@ from pydantic import BaseModel, Field
 
 
 class ResultTemplateDictionary(BaseModel):
-	odata_type: Literal["#microsoft.graph.resultTemplateDictionary"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.resultTemplateDictionary"] = Field(alias="@odata.type", default="#microsoft.graph.resultTemplateDictionary")
 

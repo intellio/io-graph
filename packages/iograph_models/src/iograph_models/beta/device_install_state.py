@@ -7,7 +7,7 @@ from pydantic import BaseModel, Field
 
 class DeviceInstallState(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.deviceInstallState"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.deviceInstallState"] = Field(alias="@odata.type", default="#microsoft.graph.deviceInstallState")
 	deviceId: Optional[str] = Field(alias="deviceId", default=None,)
 	deviceName: Optional[str] = Field(alias="deviceName", default=None,)
 	errorCode: Optional[str] = Field(alias="errorCode", default=None,)

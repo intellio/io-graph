@@ -19,8 +19,8 @@ if TYPE_CHECKING:
 	from .configuration import ConfigurationRequest
 	from .activity import ActivityRequest
 	from .....request_adapter import HttpxRequestAdapter
-from iograph_models.beta.teamwork_device import TeamworkDevice
 from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.beta.teamwork_device import TeamworkDevice
 
 
 class ByTeamworkDeviceIdRequest(BaseRequestBuilder):

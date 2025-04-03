@@ -6,5 +6,5 @@ from pydantic import BaseModel, Field
 
 class IdentityGovernanceInsights(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.identityGovernance.insights"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.identityGovernance.insights"] = Field(alias="@odata.type", default="#microsoft.graph.identityGovernance.insights")
 

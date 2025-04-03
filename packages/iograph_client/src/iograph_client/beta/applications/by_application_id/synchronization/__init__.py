@@ -17,8 +17,8 @@ if TYPE_CHECKING:
 	from .acquire_access_token import AcquireAccessTokenRequest
 	from .jobs import JobsRequest
 	from .....request_adapter import HttpxRequestAdapter
-from iograph_models.beta.synchronization import Synchronization
 from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.beta.synchronization import Synchronization
 
 
 class SynchronizationRequest(BaseRequestBuilder):

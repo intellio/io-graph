@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field
 
 class NetworkaccessEnrichedAuditLogs(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.networkaccess.enrichedAuditLogs"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.networkaccess.enrichedAuditLogs"] = Field(alias="@odata.type", default="#microsoft.graph.networkaccess.enrichedAuditLogs")
 	exchange: Optional[NetworkaccessEnrichedAuditLogsSettings] = Field(alias="exchange", default=None,)
 	sharepoint: Optional[NetworkaccessEnrichedAuditLogsSettings] = Field(alias="sharepoint", default=None,)
 	teams: Optional[NetworkaccessEnrichedAuditLogsSettings] = Field(alias="teams", default=None,)

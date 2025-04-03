@@ -6,6 +6,6 @@ from pydantic import BaseModel, Field
 
 class WorkbookRangeFill(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.workbookRangeFill"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.workbookRangeFill"] = Field(alias="@odata.type", default="#microsoft.graph.workbookRangeFill")
 	color: Optional[str] = Field(alias="color", default=None,)
 

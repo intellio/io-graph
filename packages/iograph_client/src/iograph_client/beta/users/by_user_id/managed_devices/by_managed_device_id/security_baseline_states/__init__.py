@@ -14,9 +14,9 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_security_baseline_state_id import BySecurityBaselineStateIdRequest
 	from .......request_adapter import HttpxRequestAdapter
-from iograph_models.beta.security_baseline_state import SecurityBaselineState
 from iograph_models.beta.security_baseline_state_collection_response import SecurityBaselineStateCollectionResponse
 from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.beta.security_baseline_state import SecurityBaselineState
 
 
 class SecurityBaselineStatesRequest(BaseRequestBuilder):

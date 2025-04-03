@@ -7,7 +7,7 @@ from pydantic import BaseModel, Field
 
 class IosUpdateDeviceStatus(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.iosUpdateDeviceStatus"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.iosUpdateDeviceStatus"] = Field(alias="@odata.type", default="#microsoft.graph.iosUpdateDeviceStatus")
 	complianceGracePeriodExpirationDateTime: Optional[datetime] = Field(alias="complianceGracePeriodExpirationDateTime", default=None,)
 	deviceDisplayName: Optional[str] = Field(alias="deviceDisplayName", default=None,)
 	deviceId: Optional[str] = Field(alias="deviceId", default=None,)

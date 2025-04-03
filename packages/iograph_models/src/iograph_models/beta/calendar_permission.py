@@ -7,7 +7,7 @@ from pydantic import BaseModel, Field
 
 class CalendarPermission(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.calendarPermission"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.calendarPermission"] = Field(alias="@odata.type", default="#microsoft.graph.calendarPermission")
 	allowedRoles: Optional[list[CalendarRoleType | str]] = Field(alias="allowedRoles", default=None,)
 	emailAddress: Optional[Union[TypedEmailAddress]] = Field(alias="emailAddress", default=None,discriminator="odata_type", )
 	isInsideOrganization: Optional[bool] = Field(alias="isInsideOrganization", default=None,)

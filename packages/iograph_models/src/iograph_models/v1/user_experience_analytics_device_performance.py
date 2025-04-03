@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field
 
 class UserExperienceAnalyticsDevicePerformance(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.userExperienceAnalyticsDevicePerformance"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.userExperienceAnalyticsDevicePerformance"] = Field(alias="@odata.type", default="#microsoft.graph.userExperienceAnalyticsDevicePerformance")
 	averageBlueScreens: float | str | ReferenceNumeric
 	averageRestarts: float | str | ReferenceNumeric
 	blueScreenCount: Optional[int] = Field(alias="blueScreenCount", default=None,)

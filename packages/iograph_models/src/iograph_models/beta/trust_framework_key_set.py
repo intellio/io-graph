@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field
 
 class TrustFrameworkKeySet(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.trustFrameworkKeySet"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.trustFrameworkKeySet"] = Field(alias="@odata.type", default="#microsoft.graph.trustFrameworkKeySet")
 	keys: Optional[list[TrustFrameworkKey]] = Field(alias="keys", default=None,)
 	keys_v2: Optional[list[TrustFrameworkKey_v2]] = Field(alias="keys_v2", default=None,)
 

@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field
 
 class ActiveUsersMetric(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.activeUsersMetric"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.activeUsersMetric"] = Field(alias="@odata.type", default="#microsoft.graph.activeUsersMetric")
 	appId: Optional[str] = Field(alias="appId", default=None,)
 	appName: Optional[str] = Field(alias="appName", default=None,)
 	count: Optional[int] = Field(alias="count", default=None,)

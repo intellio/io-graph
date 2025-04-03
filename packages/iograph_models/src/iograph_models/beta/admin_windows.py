@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field
 
 class AdminWindows(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.adminWindows"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.adminWindows"] = Field(alias="@odata.type", default="#microsoft.graph.adminWindows")
 	updates: Optional[AdminWindowsUpdates] = Field(alias="updates", default=None,)
 
 from .admin_windows_updates import AdminWindowsUpdates

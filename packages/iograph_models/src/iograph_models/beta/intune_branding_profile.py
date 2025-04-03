@@ -7,7 +7,7 @@ from pydantic import BaseModel, Field
 
 class IntuneBrandingProfile(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.intuneBrandingProfile"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.intuneBrandingProfile"] = Field(alias="@odata.type", default="#microsoft.graph.intuneBrandingProfile")
 	companyPortalBlockedActions: Optional[list[CompanyPortalBlockedAction]] = Field(alias="companyPortalBlockedActions", default=None,)
 	contactITEmailAddress: Optional[str] = Field(alias="contactITEmailAddress", default=None,)
 	contactITName: Optional[str] = Field(alias="contactITName", default=None,)

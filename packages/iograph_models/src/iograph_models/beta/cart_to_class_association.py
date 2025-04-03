@@ -7,7 +7,7 @@ from pydantic import BaseModel, Field
 
 class CartToClassAssociation(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.cartToClassAssociation"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.cartToClassAssociation"] = Field(alias="@odata.type", default="#microsoft.graph.cartToClassAssociation")
 	classroomIds: Optional[list[str]] = Field(alias="classroomIds", default=None,)
 	createdDateTime: Optional[datetime] = Field(alias="createdDateTime", default=None,)
 	description: Optional[str] = Field(alias="description", default=None,)

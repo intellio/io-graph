@@ -7,7 +7,7 @@ from pydantic import BaseModel, Field
 
 class UserPFXCertificate(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.userPFXCertificate"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.userPFXCertificate"] = Field(alias="@odata.type", default="#microsoft.graph.userPFXCertificate")
 	createdDateTime: Optional[datetime] = Field(alias="createdDateTime", default=None,)
 	encryptedPfxBlob: Optional[str] = Field(alias="encryptedPfxBlob", default=None,)
 	encryptedPfxPassword: Optional[str] = Field(alias="encryptedPfxPassword", default=None,)

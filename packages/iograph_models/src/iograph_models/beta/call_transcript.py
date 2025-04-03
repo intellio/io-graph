@@ -8,7 +8,7 @@ from pydantic import BaseModel, Field
 
 class CallTranscript(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.callTranscript"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.callTranscript"] = Field(alias="@odata.type", default="#microsoft.graph.callTranscript")
 	callId: Optional[str] = Field(alias="callId", default=None,)
 	content: Optional[str] = Field(alias="content", default=None,)
 	contentCorrelationId: Optional[str] = Field(alias="contentCorrelationId", default=None,)

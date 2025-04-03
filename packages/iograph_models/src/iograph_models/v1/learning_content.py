@@ -7,7 +7,7 @@ from pydantic import BaseModel, Field
 
 class LearningContent(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.learningContent"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.learningContent"] = Field(alias="@odata.type", default="#microsoft.graph.learningContent")
 	additionalTags: Optional[list[str]] = Field(alias="additionalTags", default=None,)
 	contentWebUrl: Optional[str] = Field(alias="contentWebUrl", default=None,)
 	contributors: Optional[list[str]] = Field(alias="contributors", default=None,)

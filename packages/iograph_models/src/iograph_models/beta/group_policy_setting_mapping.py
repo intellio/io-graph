@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field
 
 class GroupPolicySettingMapping(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.groupPolicySettingMapping"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.groupPolicySettingMapping"] = Field(alias="@odata.type", default="#microsoft.graph.groupPolicySettingMapping")
 	admxSettingDefinitionId: Optional[str] = Field(alias="admxSettingDefinitionId", default=None,)
 	childIdList: Optional[list[str]] = Field(alias="childIdList", default=None,)
 	intuneSettingDefinitionId: Optional[str] = Field(alias="intuneSettingDefinitionId", default=None,)

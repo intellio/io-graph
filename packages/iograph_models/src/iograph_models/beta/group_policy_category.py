@@ -8,7 +8,7 @@ from pydantic import BaseModel, Field
 
 class GroupPolicyCategory(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.groupPolicyCategory"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.groupPolicyCategory"] = Field(alias="@odata.type", default="#microsoft.graph.groupPolicyCategory")
 	displayName: Optional[str] = Field(alias="displayName", default=None,)
 	ingestionSource: Optional[IngestionSource | str] = Field(alias="ingestionSource", default=None,)
 	isRoot: Optional[bool] = Field(alias="isRoot", default=None,)

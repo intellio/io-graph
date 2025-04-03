@@ -15,8 +15,8 @@ if TYPE_CHECKING:
 	from .by_service_health_id import ByServiceHealthIdRequest
 	from .....request_adapter import HttpxRequestAdapter
 from iograph_models.v1.service_health_collection_response import ServiceHealthCollectionResponse
-from iograph_models.v1.service_health import ServiceHealth
 from iograph_models.v1.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.v1.service_health import ServiceHealth
 
 
 class HealthOverviewsRequest(BaseRequestBuilder):

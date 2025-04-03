@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field
 
 class PrintTask(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.printTask"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.printTask"] = Field(alias="@odata.type", default="#microsoft.graph.printTask")
 	parentUrl: Optional[str] = Field(alias="parentUrl", default=None,)
 	status: Optional[PrintTaskStatus] = Field(alias="status", default=None,)
 	definition: Optional[PrintTaskDefinition] = Field(alias="definition", default=None,)

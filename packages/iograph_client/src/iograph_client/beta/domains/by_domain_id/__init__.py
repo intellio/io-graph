@@ -22,8 +22,8 @@ if TYPE_CHECKING:
 	from .federation_configuration import FederationConfigurationRequest
 	from .domain_name_references import DomainNameReferencesRequest
 	from ....request_adapter import HttpxRequestAdapter
-from iograph_models.beta.domain import Domain
 from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.beta.domain import Domain
 
 
 class ByDomainIdRequest(BaseRequestBuilder):

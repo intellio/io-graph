@@ -14,9 +14,9 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_service_now_connection_id import ByServiceNowConnectionIdRequest
 	from ....request_adapter import HttpxRequestAdapter
+from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.beta.service_now_connection_collection_response import ServiceNowConnectionCollectionResponse
 from iograph_models.beta.service_now_connection import ServiceNowConnection
-from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 
 
 class ServiceNowConnectionsRequest(BaseRequestBuilder):

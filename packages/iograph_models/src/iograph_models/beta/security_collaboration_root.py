@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field
 
 class SecurityCollaborationRoot(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.security.collaborationRoot"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.security.collaborationRoot"] = Field(alias="@odata.type", default="#microsoft.graph.security.collaborationRoot")
 	analyzedEmails: Optional[list[SecurityAnalyzedEmail]] = Field(alias="analyzedEmails", default=None,)
 
 from .security_analyzed_email import SecurityAnalyzedEmail

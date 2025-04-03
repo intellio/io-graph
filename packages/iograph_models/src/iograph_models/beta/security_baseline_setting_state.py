@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field
 
 class SecurityBaselineSettingState(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.securityBaselineSettingState"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.securityBaselineSettingState"] = Field(alias="@odata.type", default="#microsoft.graph.securityBaselineSettingState")
 	contributingPolicies: Optional[list[SecurityBaselineContributingPolicy]] = Field(alias="contributingPolicies", default=None,)
 	errorCode: Optional[str] = Field(alias="errorCode", default=None,)
 	settingCategoryId: Optional[str] = Field(alias="settingCategoryId", default=None,)

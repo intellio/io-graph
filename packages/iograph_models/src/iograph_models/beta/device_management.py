@@ -10,7 +10,7 @@ from pydantic import BaseModel, Field
 
 class DeviceManagement(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.deviceManagement"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.deviceManagement"] = Field(alias="@odata.type", default="#microsoft.graph.deviceManagement")
 	accountMoveCompletionDateTime: Optional[datetime] = Field(alias="accountMoveCompletionDateTime", default=None,)
 	adminConsent: Optional[AdminConsent] = Field(alias="adminConsent", default=None,)
 	connectorStatus: Optional[list[ConnectorStatusDetails]] = Field(alias="connectorStatus", default=None,)

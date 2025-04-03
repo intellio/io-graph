@@ -14,9 +14,9 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_provider_tenant_setting_id import ByProviderTenantSettingIdRequest
 	from ....request_adapter import HttpxRequestAdapter
+from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.beta.provider_tenant_setting_collection_response import ProviderTenantSettingCollectionResponse
 from iograph_models.beta.provider_tenant_setting import ProviderTenantSetting
-from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 
 
 class ProviderTenantSettingsRequest(BaseRequestBuilder):

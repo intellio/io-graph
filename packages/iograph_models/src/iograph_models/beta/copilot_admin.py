@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field
 
 class CopilotAdmin(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.copilotAdmin"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.copilotAdmin"] = Field(alias="@odata.type", default="#microsoft.graph.copilotAdmin")
 	settings: Optional[CopilotAdminSetting] = Field(alias="settings", default=None,)
 
 from .copilot_admin_setting import CopilotAdminSetting

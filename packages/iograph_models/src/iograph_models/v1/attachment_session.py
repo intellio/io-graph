@@ -7,7 +7,7 @@ from pydantic import BaseModel, Field
 
 class AttachmentSession(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.attachmentSession"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.attachmentSession"] = Field(alias="@odata.type", default="#microsoft.graph.attachmentSession")
 	content: Optional[str] = Field(alias="content", default=None,)
 	expirationDateTime: Optional[datetime] = Field(alias="expirationDateTime", default=None,)
 	nextExpectedRanges: Optional[list[str]] = Field(alias="nextExpectedRanges", default=None,)

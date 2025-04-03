@@ -7,7 +7,7 @@ from pydantic import BaseModel, Field
 
 class AndroidDeviceOwnerEnrollmentProfile(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.androidDeviceOwnerEnrollmentProfile"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.androidDeviceOwnerEnrollmentProfile"] = Field(alias="@odata.type", default="#microsoft.graph.androidDeviceOwnerEnrollmentProfile")
 	accountId: Optional[str] = Field(alias="accountId", default=None,)
 	configureWifi: Optional[bool] = Field(alias="configureWifi", default=None,)
 	createdDateTime: Optional[datetime] = Field(alias="createdDateTime", default=None,)

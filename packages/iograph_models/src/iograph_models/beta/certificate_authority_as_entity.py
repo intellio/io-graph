@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field
 
 class CertificateAuthorityAsEntity(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.certificateAuthorityAsEntity"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.certificateAuthorityAsEntity"] = Field(alias="@odata.type", default="#microsoft.graph.certificateAuthorityAsEntity")
 	certificate: Optional[str] = Field(alias="certificate", default=None,)
 	isRootAuthority: Optional[bool] = Field(alias="isRootAuthority", default=None,)
 	issuer: Optional[str] = Field(alias="issuer", default=None,)

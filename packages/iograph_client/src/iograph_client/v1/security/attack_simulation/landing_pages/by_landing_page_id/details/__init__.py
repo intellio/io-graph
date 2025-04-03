@@ -14,8 +14,8 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_landing_page_detail_id import ByLandingPageDetailIdRequest
 	from .......request_adapter import HttpxRequestAdapter
-from iograph_models.v1.landing_page_detail import LandingPageDetail
 from iograph_models.v1.landing_page_detail_collection_response import LandingPageDetailCollectionResponse
+from iograph_models.v1.landing_page_detail import LandingPageDetail
 from iograph_models.v1.o_data_errors__o_data_error import ODataErrorsODataError
 
 

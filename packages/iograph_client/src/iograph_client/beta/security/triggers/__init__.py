@@ -12,8 +12,8 @@ from typing import TYPE_CHECKING
 if TYPE_CHECKING:
 	from .retention_events import RetentionEventsRequest
 	from ....request_adapter import HttpxRequestAdapter
-from iograph_models.beta.security_triggers_root import SecurityTriggersRoot
 from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.beta.security_triggers_root import SecurityTriggersRoot
 
 
 class TriggersRequest(BaseRequestBuilder):

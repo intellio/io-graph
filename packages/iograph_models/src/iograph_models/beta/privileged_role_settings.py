@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field
 
 class PrivilegedRoleSettings(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.privilegedRoleSettings"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.privilegedRoleSettings"] = Field(alias="@odata.type", default="#microsoft.graph.privilegedRoleSettings")
 	approvalOnElevation: Optional[bool] = Field(alias="approvalOnElevation", default=None,)
 	approverIds: Optional[list[str]] = Field(alias="approverIds", default=None,)
 	elevationDuration: Optional[str] = Field(alias="elevationDuration", default=None,)

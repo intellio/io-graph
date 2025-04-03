@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field
 
 class NetworkaccessCrossTenantAccessSettings(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.networkaccess.crossTenantAccessSettings"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.networkaccess.crossTenantAccessSettings"] = Field(alias="@odata.type", default="#microsoft.graph.networkaccess.crossTenantAccessSettings")
 	networkPacketTaggingStatus: Optional[NetworkaccessStatus | str] = Field(alias="networkPacketTaggingStatus", default=None,)
 
 from .networkaccess_status import NetworkaccessStatus

@@ -7,7 +7,7 @@ from pydantic import BaseModel, Field
 
 class EnrollmentConfigurationAssignment(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.enrollmentConfigurationAssignment"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.enrollmentConfigurationAssignment"] = Field(alias="@odata.type", default="#microsoft.graph.enrollmentConfigurationAssignment")
 	target: Optional[Union[AllDevicesAssignmentTarget, AllLicensedUsersAssignmentTarget, ConfigurationManagerCollectionAssignmentTarget, ExclusionGroupAssignmentTarget]] = Field(alias="target", default=None,discriminator="odata_type", )
 
 from .all_devices_assignment_target import AllDevicesAssignmentTarget

@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field
 
 class CloudPcSupportedRegion(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.cloudPcSupportedRegion"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.cloudPcSupportedRegion"] = Field(alias="@odata.type", default="#microsoft.graph.cloudPcSupportedRegion")
 	displayName: Optional[str] = Field(alias="displayName", default=None,)
 	regionGroup: Optional[CloudPcRegionGroup | str] = Field(alias="regionGroup", default=None,)
 	regionStatus: Optional[CloudPcSupportedRegionStatus | str] = Field(alias="regionStatus", default=None,)

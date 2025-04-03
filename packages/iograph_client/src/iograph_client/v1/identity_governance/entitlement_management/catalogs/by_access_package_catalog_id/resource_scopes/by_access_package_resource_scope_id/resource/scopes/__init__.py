@@ -14,9 +14,9 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_access_package_resource_scope_id1 import ByAccessPackageResourceScopeId1Request
 	from ..........request_adapter import HttpxRequestAdapter
-from iograph_models.v1.access_package_resource_scope import AccessPackageResourceScope
 from iograph_models.v1.access_package_resource_scope_collection_response import AccessPackageResourceScopeCollectionResponse
 from iograph_models.v1.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.v1.access_package_resource_scope import AccessPackageResourceScope
 
 
 class ScopesRequest(BaseRequestBuilder):

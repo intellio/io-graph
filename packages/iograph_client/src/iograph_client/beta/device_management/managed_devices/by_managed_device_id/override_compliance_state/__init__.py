@@ -11,8 +11,8 @@ from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:
 	from ......request_adapter import HttpxRequestAdapter
-from iograph_models.beta.override_compliance_state_post_request import Override_compliance_statePostRequest
 from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.beta.override_compliance_state_post_request import Override_compliance_statePostRequest
 
 
 class OverrideComplianceStateRequest(BaseRequestBuilder):

@@ -12,8 +12,8 @@ from typing import TYPE_CHECKING
 if TYPE_CHECKING:
 	from .....request_adapter import HttpxRequestAdapter
 from iograph_models.beta.buffer_decryption_result import BufferDecryptionResult
-from iograph_models.beta.decrypt_buffer_post_request import Decrypt_bufferPostRequest
 from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.beta.decrypt_buffer_post_request import Decrypt_bufferPostRequest
 
 
 class DecryptBufferRequest(BaseRequestBuilder):

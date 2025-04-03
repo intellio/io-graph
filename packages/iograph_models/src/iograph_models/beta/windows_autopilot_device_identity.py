@@ -8,7 +8,7 @@ from pydantic import BaseModel, Field
 
 class WindowsAutopilotDeviceIdentity(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.windowsAutopilotDeviceIdentity"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.windowsAutopilotDeviceIdentity"] = Field(alias="@odata.type", default="#microsoft.graph.windowsAutopilotDeviceIdentity")
 	addressableUserName: Optional[str] = Field(alias="addressableUserName", default=None,)
 	azureActiveDirectoryDeviceId: Optional[str] = Field(alias="azureActiveDirectoryDeviceId", default=None,)
 	azureAdDeviceId: Optional[str] = Field(alias="azureAdDeviceId", default=None,)

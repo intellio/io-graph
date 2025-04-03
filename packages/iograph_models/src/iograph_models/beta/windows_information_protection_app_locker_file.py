@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field
 
 class WindowsInformationProtectionAppLockerFile(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.windowsInformationProtectionAppLockerFile"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.windowsInformationProtectionAppLockerFile"] = Field(alias="@odata.type", default="#microsoft.graph.windowsInformationProtectionAppLockerFile")
 	displayName: Optional[str] = Field(alias="displayName", default=None,)
 	file: Optional[str] = Field(alias="file", default=None,)
 	fileHash: Optional[str] = Field(alias="fileHash", default=None,)

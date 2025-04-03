@@ -13,8 +13,8 @@ from typing import TYPE_CHECKING
 if TYPE_CHECKING:
 	from .update_policy import UpdatePolicyRequest
 	from .........request_adapter import HttpxRequestAdapter
-from iograph_models.beta.windows_updates_compliance_change import WindowsUpdatesComplianceChange
 from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.beta.windows_updates_compliance_change import WindowsUpdatesComplianceChange
 
 
 class ByComplianceChangeIdRequest(BaseRequestBuilder):

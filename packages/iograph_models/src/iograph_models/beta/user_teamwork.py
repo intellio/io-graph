@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field
 
 class UserTeamwork(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.userTeamwork"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.userTeamwork"] = Field(alias="@odata.type", default="#microsoft.graph.userTeamwork")
 	locale: Optional[str] = Field(alias="locale", default=None,)
 	region: Optional[str] = Field(alias="region", default=None,)
 	associatedTeams: Optional[list[AssociatedTeamInfo]] = Field(alias="associatedTeams", default=None,)

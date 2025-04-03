@@ -17,9 +17,9 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_access_package_assignment_id import ByAccessPackageAssignmentIdRequest
 	from .....request_adapter import HttpxRequestAdapter
-from iograph_models.v1.access_package_assignment import AccessPackageAssignment
-from iograph_models.v1.access_package_assignment_collection_response import AccessPackageAssignmentCollectionResponse
 from iograph_models.v1.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.v1.access_package_assignment_collection_response import AccessPackageAssignmentCollectionResponse
+from iograph_models.v1.access_package_assignment import AccessPackageAssignment
 
 
 class AssignmentsRequest(BaseRequestBuilder):

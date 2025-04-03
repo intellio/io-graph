@@ -7,7 +7,7 @@ from pydantic import BaseModel, Field
 
 class SimulationAutomationRun(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.simulationAutomationRun"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.simulationAutomationRun"] = Field(alias="@odata.type", default="#microsoft.graph.simulationAutomationRun")
 	endDateTime: Optional[datetime] = Field(alias="endDateTime", default=None,)
 	simulationId: Optional[str] = Field(alias="simulationId", default=None,)
 	startDateTime: Optional[datetime] = Field(alias="startDateTime", default=None,)

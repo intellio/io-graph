@@ -7,7 +7,7 @@ from pydantic import BaseModel, Field
 
 class ProvisioningObjectSummary(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.provisioningObjectSummary"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.provisioningObjectSummary"] = Field(alias="@odata.type", default="#microsoft.graph.provisioningObjectSummary")
 	activityDateTime: Optional[datetime] = Field(alias="activityDateTime", default=None,)
 	changeId: Optional[str] = Field(alias="changeId", default=None,)
 	cycleId: Optional[str] = Field(alias="cycleId", default=None,)

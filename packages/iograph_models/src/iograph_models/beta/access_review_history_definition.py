@@ -9,7 +9,7 @@ from pydantic import BaseModel, Field
 
 class AccessReviewHistoryDefinition(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.accessReviewHistoryDefinition"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.accessReviewHistoryDefinition"] = Field(alias="@odata.type", default="#microsoft.graph.accessReviewHistoryDefinition")
 	createdBy: Optional[Union[AuditUserIdentity]] = Field(alias="createdBy", default=None,discriminator="odata_type", )
 	createdDateTime: Optional[datetime] = Field(alias="createdDateTime", default=None,)
 	decisions: Optional[list[AccessReviewHistoryDecisionFilter | str]] = Field(alias="decisions", default=None,)

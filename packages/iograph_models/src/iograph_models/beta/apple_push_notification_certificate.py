@@ -7,7 +7,7 @@ from pydantic import BaseModel, Field
 
 class ApplePushNotificationCertificate(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.applePushNotificationCertificate"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.applePushNotificationCertificate"] = Field(alias="@odata.type", default="#microsoft.graph.applePushNotificationCertificate")
 	appleIdentifier: Optional[str] = Field(alias="appleIdentifier", default=None,)
 	certificate: Optional[str] = Field(alias="certificate", default=None,)
 	certificateSerialNumber: Optional[str] = Field(alias="certificateSerialNumber", default=None,)

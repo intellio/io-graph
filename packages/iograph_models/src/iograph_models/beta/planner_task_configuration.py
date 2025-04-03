@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field
 
 class PlannerTaskConfiguration(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.plannerTaskConfiguration"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.plannerTaskConfiguration"] = Field(alias="@odata.type", default="#microsoft.graph.plannerTaskConfiguration")
 	editPolicy: Optional[PlannerTaskPolicy] = Field(alias="editPolicy", default=None,)
 
 from .planner_task_policy import PlannerTaskPolicy

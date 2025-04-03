@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field
 
 class MicrosoftTunnelHealthThreshold(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.microsoftTunnelHealthThreshold"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.microsoftTunnelHealthThreshold"] = Field(alias="@odata.type", default="#microsoft.graph.microsoftTunnelHealthThreshold")
 	defaultHealthyThreshold: Optional[int] = Field(alias="defaultHealthyThreshold", default=None,)
 	defaultUnhealthyThreshold: Optional[int] = Field(alias="defaultUnhealthyThreshold", default=None,)
 	healthyThreshold: Optional[int] = Field(alias="healthyThreshold", default=None,)

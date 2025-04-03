@@ -14,9 +14,9 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_android_for_work_app_configuration_schema_id import ByAndroidForWorkAppConfigurationSchemaIdRequest
 	from ....request_adapter import HttpxRequestAdapter
+from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.beta.android_for_work_app_configuration_schema_collection_response import AndroidForWorkAppConfigurationSchemaCollectionResponse
 from iograph_models.beta.android_for_work_app_configuration_schema import AndroidForWorkAppConfigurationSchema
-from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 
 
 class AndroidForWorkAppConfigurationSchemasRequest(BaseRequestBuilder):

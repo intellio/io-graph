@@ -8,7 +8,7 @@ from pydantic import BaseModel, Field
 
 class Invitation(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.invitation"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.invitation"] = Field(alias="@odata.type", default="#microsoft.graph.invitation")
 	invitedUserDisplayName: Optional[str] = Field(alias="invitedUserDisplayName", default=None,)
 	invitedUserEmailAddress: Optional[str] = Field(alias="invitedUserEmailAddress", default=None,)
 	invitedUserMessageInfo: Optional[InvitedUserMessageInfo] = Field(alias="invitedUserMessageInfo", default=None,)

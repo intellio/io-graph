@@ -15,8 +15,8 @@ if TYPE_CHECKING:
 	from .by_android_managed_app_protection_id import ByAndroidManagedAppProtectionIdRequest
 	from ....request_adapter import HttpxRequestAdapter
 from iograph_models.v1.android_managed_app_protection_collection_response import AndroidManagedAppProtectionCollectionResponse
-from iograph_models.v1.android_managed_app_protection import AndroidManagedAppProtection
 from iograph_models.v1.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.v1.android_managed_app_protection import AndroidManagedAppProtection
 
 
 class AndroidManagedAppProtectionsRequest(BaseRequestBuilder):

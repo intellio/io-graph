@@ -7,7 +7,7 @@ from pydantic import BaseModel, Field
 
 class ZebraFotaConnector(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.zebraFotaConnector"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.zebraFotaConnector"] = Field(alias="@odata.type", default="#microsoft.graph.zebraFotaConnector")
 	enrollmentAuthorizationUrl: Optional[str] = Field(alias="enrollmentAuthorizationUrl", default=None,)
 	enrollmentToken: Optional[str] = Field(alias="enrollmentToken", default=None,)
 	fotaAppsApproved: Optional[bool] = Field(alias="fotaAppsApproved", default=None,)

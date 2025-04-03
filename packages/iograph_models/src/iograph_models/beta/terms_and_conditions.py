@@ -7,7 +7,7 @@ from pydantic import BaseModel, Field
 
 class TermsAndConditions(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.termsAndConditions"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.termsAndConditions"] = Field(alias="@odata.type", default="#microsoft.graph.termsAndConditions")
 	acceptanceStatement: Optional[str] = Field(alias="acceptanceStatement", default=None,)
 	bodyText: Optional[str] = Field(alias="bodyText", default=None,)
 	createdDateTime: Optional[datetime] = Field(alias="createdDateTime", default=None,)

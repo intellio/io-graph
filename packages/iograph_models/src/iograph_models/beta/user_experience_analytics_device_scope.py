@@ -7,7 +7,7 @@ from pydantic import BaseModel, Field
 
 class UserExperienceAnalyticsDeviceScope(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.userExperienceAnalyticsDeviceScope"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.userExperienceAnalyticsDeviceScope"] = Field(alias="@odata.type", default="#microsoft.graph.userExperienceAnalyticsDeviceScope")
 	createdDateTime: Optional[datetime] = Field(alias="createdDateTime", default=None,)
 	deviceScopeName: Optional[str] = Field(alias="deviceScopeName", default=None,)
 	enabled: Optional[bool] = Field(alias="enabled", default=None,)

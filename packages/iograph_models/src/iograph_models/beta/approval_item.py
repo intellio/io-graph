@@ -7,7 +7,7 @@ from pydantic import BaseModel, Field
 
 class ApprovalItem(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.approvalItem"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.approvalItem"] = Field(alias="@odata.type", default="#microsoft.graph.approvalItem")
 	allowCancel: Optional[bool] = Field(alias="allowCancel", default=None,)
 	allowEmailNotification: Optional[bool] = Field(alias="allowEmailNotification", default=None,)
 	approvalType: Optional[ApprovalItemType | str] = Field(alias="approvalType", default=None,)

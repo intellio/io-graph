@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field
 
 class SensitiveType(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.sensitiveType"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.sensitiveType"] = Field(alias="@odata.type", default="#microsoft.graph.sensitiveType")
 	classificationMethod: Optional[ClassificationMethod | str] = Field(alias="classificationMethod", default=None,)
 	description: Optional[str] = Field(alias="description", default=None,)
 	name: Optional[str] = Field(alias="name", default=None,)

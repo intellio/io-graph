@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field
 
 class WindowsManagementApp(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.windowsManagementApp"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.windowsManagementApp"] = Field(alias="@odata.type", default="#microsoft.graph.windowsManagementApp")
 	availableVersion: Optional[str] = Field(alias="availableVersion", default=None,)
 	managedInstaller: Optional[ManagedInstallerStatus | str] = Field(alias="managedInstaller", default=None,)
 	managedInstallerConfiguredDateTime: Optional[str] = Field(alias="managedInstallerConfiguredDateTime", default=None,)

@@ -8,7 +8,7 @@ from pydantic import BaseModel, Field
 
 class StrongAuthenticationPhoneAppDetail(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.strongAuthenticationPhoneAppDetail"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.strongAuthenticationPhoneAppDetail"] = Field(alias="@odata.type", default="#microsoft.graph.strongAuthenticationPhoneAppDetail")
 	authenticationType: Optional[str] = Field(alias="authenticationType", default=None,)
 	authenticatorFlavor: Optional[str] = Field(alias="authenticatorFlavor", default=None,)
 	deviceId: Optional[UUID] = Field(alias="deviceId", default=None,)

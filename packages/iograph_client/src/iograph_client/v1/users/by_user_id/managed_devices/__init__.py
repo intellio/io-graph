@@ -15,8 +15,8 @@ if TYPE_CHECKING:
 	from .by_managed_device_id import ByManagedDeviceIdRequest
 	from .....request_adapter import HttpxRequestAdapter
 from iograph_models.v1.managed_device import ManagedDevice
-from iograph_models.v1.managed_device_collection_response import ManagedDeviceCollectionResponse
 from iograph_models.v1.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.v1.managed_device_collection_response import ManagedDeviceCollectionResponse
 
 
 class ManagedDevicesRequest(BaseRequestBuilder):

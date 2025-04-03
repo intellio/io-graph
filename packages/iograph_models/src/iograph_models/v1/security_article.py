@@ -7,7 +7,7 @@ from pydantic import BaseModel, Field
 
 class SecurityArticle(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.security.article"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.security.article"] = Field(alias="@odata.type", default="#microsoft.graph.security.article")
 	body: Optional[SecurityFormattedContent] = Field(alias="body", default=None,)
 	createdDateTime: Optional[datetime] = Field(alias="createdDateTime", default=None,)
 	imageUrl: Optional[str] = Field(alias="imageUrl", default=None,)

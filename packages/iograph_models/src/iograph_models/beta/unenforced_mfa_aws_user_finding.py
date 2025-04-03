@@ -8,7 +8,7 @@ from pydantic import BaseModel, Field
 
 class UnenforcedMfaAwsUserFinding(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.unenforcedMfaAwsUserFinding"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.unenforcedMfaAwsUserFinding"] = Field(alias="@odata.type", default="#microsoft.graph.unenforcedMfaAwsUserFinding")
 	createdDateTime: Optional[datetime] = Field(alias="createdDateTime", default=None,)
 	actionSummary: Optional[ActionSummary] = Field(alias="actionSummary", default=None,)
 	identityDetails: Optional[IdentityDetails] = Field(alias="identityDetails", default=None,)

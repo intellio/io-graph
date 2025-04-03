@@ -7,7 +7,7 @@ from pydantic import BaseModel, Field
 
 class DeviceManagementExportJob(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.deviceManagementExportJob"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.deviceManagementExportJob"] = Field(alias="@odata.type", default="#microsoft.graph.deviceManagementExportJob")
 	expirationDateTime: Optional[datetime] = Field(alias="expirationDateTime", default=None,)
 	filter: Optional[str] = Field(alias="filter", default=None,)
 	format: Optional[DeviceManagementReportFileFormat | str] = Field(alias="format", default=None,)

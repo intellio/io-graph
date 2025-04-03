@@ -8,7 +8,7 @@ from pydantic import BaseModel, Field
 
 class DeviceHealthScriptDeviceState(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.deviceHealthScriptDeviceState"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.deviceHealthScriptDeviceState"] = Field(alias="@odata.type", default="#microsoft.graph.deviceHealthScriptDeviceState")
 	assignmentFilterIds: Optional[list[str]] = Field(alias="assignmentFilterIds", default=None,)
 	detectionState: Optional[RunState | str] = Field(alias="detectionState", default=None,)
 	expectedStateUpdateDateTime: Optional[datetime] = Field(alias="expectedStateUpdateDateTime", default=None,)

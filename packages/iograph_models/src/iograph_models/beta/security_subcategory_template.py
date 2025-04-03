@@ -8,7 +8,7 @@ from pydantic import BaseModel, Field
 
 class SecuritySubcategoryTemplate(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.security.subcategoryTemplate"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.security.subcategoryTemplate"] = Field(alias="@odata.type", default="#microsoft.graph.security.subcategoryTemplate")
 	createdBy: Optional[Union[AiInteractionMentionedIdentitySet, ApprovalIdentitySet, ChatMessageFromIdentitySet, ChatMessageMentionedIdentitySet, ChatMessageReactionIdentitySet, CommunicationsIdentitySet, SharePointIdentitySet]] = Field(alias="createdBy", default=None,discriminator="odata_type", )
 	createdDateTime: Optional[datetime] = Field(alias="createdDateTime", default=None,)
 	displayName: Optional[str] = Field(alias="displayName", default=None,)

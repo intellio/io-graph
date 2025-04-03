@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field
 
 class MultiTenantOrganizationIdentitySyncPolicyTemplate(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.multiTenantOrganizationIdentitySyncPolicyTemplate"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.multiTenantOrganizationIdentitySyncPolicyTemplate"] = Field(alias="@odata.type", default="#microsoft.graph.multiTenantOrganizationIdentitySyncPolicyTemplate")
 	templateApplicationLevel: Optional[TemplateApplicationLevel | str] = Field(alias="templateApplicationLevel", default=None,)
 	userSyncInbound: Optional[CrossTenantUserSyncInbound] = Field(alias="userSyncInbound", default=None,)
 

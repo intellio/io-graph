@@ -21,8 +21,8 @@ if TYPE_CHECKING:
 	from .drive_item import DriveItemRequest
 	from .created_by_user import CreatedByUserRequest
 	from ....request_adapter import HttpxRequestAdapter
-from iograph_models.beta.shared_drive_item import SharedDriveItem
 from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.beta.shared_drive_item import SharedDriveItem
 
 
 class BySharedDriveItemIdRequest(BaseRequestBuilder):

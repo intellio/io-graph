@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field
 
 class UserCountMetric(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.userCountMetric"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.userCountMetric"] = Field(alias="@odata.type", default="#microsoft.graph.userCountMetric")
 	count: Optional[int] = Field(alias="count", default=None,)
 	factDate: Optional[str] = Field(alias="factDate", default=None,)
 	language: Optional[str] = Field(alias="language", default=None,)

@@ -7,7 +7,7 @@ from pydantic import BaseModel, Field
 
 class MobileAppContentFile(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.mobileAppContentFile"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.mobileAppContentFile"] = Field(alias="@odata.type", default="#microsoft.graph.mobileAppContentFile")
 	azureStorageUri: Optional[str] = Field(alias="azureStorageUri", default=None,)
 	azureStorageUriExpirationDateTime: Optional[datetime] = Field(alias="azureStorageUriExpirationDateTime", default=None,)
 	createdDateTime: Optional[datetime] = Field(alias="createdDateTime", default=None,)

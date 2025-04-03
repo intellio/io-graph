@@ -8,7 +8,7 @@ from pydantic import BaseModel, Field
 
 class CallRecordsSegment(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.callRecords.segment"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.callRecords.segment"] = Field(alias="@odata.type", default="#microsoft.graph.callRecords.segment")
 	callee: Optional[Union[CallRecordsParticipantEndpoint, CallRecordsServiceEndpoint]] = Field(alias="callee", default=None,discriminator="odata_type", )
 	caller: Optional[Union[CallRecordsParticipantEndpoint, CallRecordsServiceEndpoint]] = Field(alias="caller", default=None,discriminator="odata_type", )
 	endDateTime: Optional[datetime] = Field(alias="endDateTime", default=None,)

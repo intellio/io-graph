@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field
 
 class DailyUserInsightMetricsRoot(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.dailyUserInsightMetricsRoot"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.dailyUserInsightMetricsRoot"] = Field(alias="@odata.type", default="#microsoft.graph.dailyUserInsightMetricsRoot")
 	activeUsers: Optional[list[ActiveUsersMetric]] = Field(alias="activeUsers", default=None,)
 	authentications: Optional[list[AuthenticationsMetric]] = Field(alias="authentications", default=None,)
 	inactiveUsers: Optional[list[DailyInactiveUsersMetric]] = Field(alias="inactiveUsers", default=None,)

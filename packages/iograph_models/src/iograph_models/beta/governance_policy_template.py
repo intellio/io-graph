@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field
 
 class GovernancePolicyTemplate(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.governancePolicyTemplate"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.governancePolicyTemplate"] = Field(alias="@odata.type", default="#microsoft.graph.governancePolicyTemplate")
 	displayName: Optional[str] = Field(alias="displayName", default=None,)
 	policy: Optional[GovernancePolicy] = Field(alias="policy", default=None,)
 	settings: Optional[BusinessFlowSettings] = Field(alias="settings", default=None,)

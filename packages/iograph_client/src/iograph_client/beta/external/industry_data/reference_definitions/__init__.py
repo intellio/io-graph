@@ -14,9 +14,9 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_reference_definition_id import ByReferenceDefinitionIdRequest
 	from .....request_adapter import HttpxRequestAdapter
-from iograph_models.beta.industry_data_reference_definition import IndustryDataReferenceDefinition
 from iograph_models.beta.industry_data_reference_definition_collection_response import IndustryDataReferenceDefinitionCollectionResponse
 from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.beta.industry_data_reference_definition import IndustryDataReferenceDefinition
 
 
 class ReferenceDefinitionsRequest(BaseRequestBuilder):

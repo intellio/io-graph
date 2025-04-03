@@ -7,7 +7,7 @@ from pydantic import BaseModel, Field
 
 class NetworkaccessBranchSite(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.networkaccess.branchSite"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.networkaccess.branchSite"] = Field(alias="@odata.type", default="#microsoft.graph.networkaccess.branchSite")
 	bandwidthCapacity: Optional[int] = Field(alias="bandwidthCapacity", default=None,)
 	connectivityState: Optional[NetworkaccessConnectivityState | str] = Field(alias="connectivityState", default=None,)
 	country: Optional[str] = Field(alias="country", default=None,)

@@ -14,9 +14,9 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_work_position_id import ByWorkPositionIdRequest
 	from ......request_adapter import HttpxRequestAdapter
-from iograph_models.beta.work_position import WorkPosition
-from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.beta.work_position_collection_response import WorkPositionCollectionResponse
+from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.beta.work_position import WorkPosition
 
 
 class PositionsRequest(BaseRequestBuilder):

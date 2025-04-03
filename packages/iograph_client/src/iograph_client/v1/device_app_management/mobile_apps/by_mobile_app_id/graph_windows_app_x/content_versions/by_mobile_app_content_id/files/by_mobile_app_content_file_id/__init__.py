@@ -14,8 +14,8 @@ if TYPE_CHECKING:
 	from .renew_upload import RenewUploadRequest
 	from .commit import CommitRequest
 	from ..........request_adapter import HttpxRequestAdapter
-from iograph_models.v1.mobile_app_content_file import MobileAppContentFile
 from iograph_models.v1.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.v1.mobile_app_content_file import MobileAppContentFile
 
 
 class ByMobileAppContentFileIdRequest(BaseRequestBuilder):

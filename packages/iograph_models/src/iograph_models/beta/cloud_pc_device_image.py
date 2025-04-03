@@ -7,7 +7,7 @@ from pydantic import BaseModel, Field
 
 class CloudPcDeviceImage(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.cloudPcDeviceImage"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.cloudPcDeviceImage"] = Field(alias="@odata.type", default="#microsoft.graph.cloudPcDeviceImage")
 	displayName: Optional[str] = Field(alias="displayName", default=None,)
 	errorCode: Optional[CloudPcDeviceImageErrorCode | str] = Field(alias="errorCode", default=None,)
 	expirationDate: Optional[str] = Field(alias="expirationDate", default=None,)

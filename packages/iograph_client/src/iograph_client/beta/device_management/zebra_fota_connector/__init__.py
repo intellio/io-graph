@@ -15,8 +15,8 @@ if TYPE_CHECKING:
 	from .connect import ConnectRequest
 	from .approve_fota_apps import ApproveFotaAppsRequest
 	from ....request_adapter import HttpxRequestAdapter
-from iograph_models.beta.zebra_fota_connector import ZebraFotaConnector
 from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.beta.zebra_fota_connector import ZebraFotaConnector
 
 
 class ZebraFotaConnectorRequest(BaseRequestBuilder):

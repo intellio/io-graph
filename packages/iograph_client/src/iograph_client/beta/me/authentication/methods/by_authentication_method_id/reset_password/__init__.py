@@ -12,8 +12,8 @@ from typing import TYPE_CHECKING
 if TYPE_CHECKING:
 	from .......request_adapter import HttpxRequestAdapter
 from iograph_models.beta.password_reset_response import PasswordResetResponse
-from iograph_models.beta.reset_password_post_request import Reset_passwordPostRequest
 from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.beta.reset_password_post_request import Reset_passwordPostRequest
 
 
 class ResetPasswordRequest(BaseRequestBuilder):

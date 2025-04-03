@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field
 
 class SearchEntity(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.searchEntity"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.searchEntity"] = Field(alias="@odata.type", default="#microsoft.graph.searchEntity")
 	acronyms: Optional[list[SearchAcronym]] = Field(alias="acronyms", default=None,)
 	bookmarks: Optional[list[SearchBookmark]] = Field(alias="bookmarks", default=None,)
 	qnas: Optional[list[SearchQna]] = Field(alias="qnas", default=None,)

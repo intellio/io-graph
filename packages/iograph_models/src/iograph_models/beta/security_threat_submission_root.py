@@ -8,7 +8,7 @@ from pydantic import BaseModel, Field
 
 class SecurityThreatSubmissionRoot(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.security.threatSubmissionRoot"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.security.threatSubmissionRoot"] = Field(alias="@odata.type", default="#microsoft.graph.security.threatSubmissionRoot")
 	emailThreats: Optional[list[Annotated[Union[SecurityEmailContentThreatSubmission, SecurityEmailUrlThreatSubmission],Field(discriminator="odata_type")]]] = Field(alias="emailThreats", default=None,)
 	emailThreatSubmissionPolicies: Optional[list[SecurityEmailThreatSubmissionPolicy]] = Field(alias="emailThreatSubmissionPolicies", default=None,)
 	fileThreats: Optional[list[Annotated[Union[SecurityFileContentThreatSubmission, SecurityFileUrlThreatSubmission],Field(discriminator="odata_type")]]] = Field(alias="fileThreats", default=None,)

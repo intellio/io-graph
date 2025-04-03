@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field
 
 class NetworkaccessTenantStatus(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.networkaccess.tenantStatus"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.networkaccess.tenantStatus"] = Field(alias="@odata.type", default="#microsoft.graph.networkaccess.tenantStatus")
 	onboardingErrorMessage: Optional[str] = Field(alias="onboardingErrorMessage", default=None,)
 	onboardingStatus: Optional[NetworkaccessOnboardingStatus | str] = Field(alias="onboardingStatus", default=None,)
 

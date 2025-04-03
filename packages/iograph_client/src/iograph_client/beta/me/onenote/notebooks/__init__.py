@@ -16,9 +16,9 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_notebook_id import ByNotebookIdRequest
 	from .....request_adapter import HttpxRequestAdapter
-from iograph_models.beta.notebook_collection_response import NotebookCollectionResponse
 from iograph_models.beta.notebook import Notebook
 from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.beta.notebook_collection_response import NotebookCollectionResponse
 
 
 class NotebooksRequest(BaseRequestBuilder):

@@ -9,7 +9,7 @@ from pydantic import BaseModel, Field
 
 class BookingAppointment(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.bookingAppointment"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.bookingAppointment"] = Field(alias="@odata.type", default="#microsoft.graph.bookingAppointment")
 	additionalInformation: Optional[str] = Field(alias="additionalInformation", default=None,)
 	anonymousJoinWebUrl: Optional[str] = Field(alias="anonymousJoinWebUrl", default=None,)
 	appointmentLabel: Optional[str] = Field(alias="appointmentLabel", default=None,)

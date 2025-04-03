@@ -7,7 +7,7 @@ from pydantic import BaseModel, Field
 
 class GoalsExportJob(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.goalsExportJob"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.goalsExportJob"] = Field(alias="@odata.type", default="#microsoft.graph.goalsExportJob")
 	createdDateTime: Optional[datetime] = Field(alias="createdDateTime", default=None,)
 	lastActionDateTime: Optional[datetime] = Field(alias="lastActionDateTime", default=None,)
 	resourceLocation: Optional[str] = Field(alias="resourceLocation", default=None,)

@@ -14,9 +14,9 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_team_template_definition_id import ByTeamTemplateDefinitionIdRequest
 	from ...request_adapter import HttpxRequestAdapter
-from iograph_models.beta.team_template_definition_collection_response import TeamTemplateDefinitionCollectionResponse
 from iograph_models.beta.team_template_definition import TeamTemplateDefinition
 from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.beta.team_template_definition_collection_response import TeamTemplateDefinitionCollectionResponse
 
 
 class TeamTemplateDefinitionRequest(BaseRequestBuilder):

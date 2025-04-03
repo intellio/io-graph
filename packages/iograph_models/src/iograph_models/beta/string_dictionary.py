@@ -4,5 +4,5 @@ from pydantic import BaseModel, Field
 
 
 class StringDictionary(BaseModel):
-	odata_type: Literal["#microsoft.graph.stringDictionary"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.stringDictionary"] = Field(alias="@odata.type", default="#microsoft.graph.stringDictionary")
 

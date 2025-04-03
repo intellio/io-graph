@@ -14,9 +14,9 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_reading_assignment_submission_id import ByReadingAssignmentSubmissionIdRequest
 	from .....request_adapter import HttpxRequestAdapter
+from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.beta.reading_assignment_submission import ReadingAssignmentSubmission
 from iograph_models.beta.reading_assignment_submission_collection_response import ReadingAssignmentSubmissionCollectionResponse
-from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 
 
 class ReadingAssignmentSubmissionsRequest(BaseRequestBuilder):

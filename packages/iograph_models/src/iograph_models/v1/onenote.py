@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field
 
 class Onenote(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.onenote"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.onenote"] = Field(alias="@odata.type", default="#microsoft.graph.onenote")
 	notebooks: Optional[list[Notebook]] = Field(alias="notebooks", default=None,)
 	operations: Optional[list[OnenoteOperation]] = Field(alias="operations", default=None,)
 	pages: Optional[list[OnenotePage]] = Field(alias="pages", default=None,)

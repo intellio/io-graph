@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field
 
 class WorkbookChartAxis(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.workbookChartAxis"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.workbookChartAxis"] = Field(alias="@odata.type", default="#microsoft.graph.workbookChartAxis")
 	majorUnit: Optional[str] = Field(alias="majorUnit", default=None,)
 	maximum: Optional[str] = Field(alias="maximum", default=None,)
 	minimum: Optional[str] = Field(alias="minimum", default=None,)

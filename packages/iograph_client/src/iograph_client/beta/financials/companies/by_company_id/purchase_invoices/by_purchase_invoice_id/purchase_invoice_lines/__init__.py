@@ -14,8 +14,8 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_purchase_invoice_line_id import ByPurchaseInvoiceLineIdRequest
 	from ........request_adapter import HttpxRequestAdapter
-from iograph_models.beta.purchase_invoice_line_collection_response import PurchaseInvoiceLineCollectionResponse
 from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.beta.purchase_invoice_line_collection_response import PurchaseInvoiceLineCollectionResponse
 
 
 class PurchaseInvoiceLinesRequest(BaseRequestBuilder):

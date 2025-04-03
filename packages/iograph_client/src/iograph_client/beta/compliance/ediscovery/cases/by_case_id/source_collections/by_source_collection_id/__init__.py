@@ -19,8 +19,8 @@ if TYPE_CHECKING:
 	from .add_to_review_set_operation import AddToReviewSetOperationRequest
 	from .additional_sources import AdditionalSourcesRequest
 	from ........request_adapter import HttpxRequestAdapter
-from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.beta.ediscovery_source_collection import EdiscoverySourceCollection
+from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 
 
 class BySourceCollectionIdRequest(BaseRequestBuilder):

@@ -14,8 +14,8 @@ if TYPE_CHECKING:
 	from .posts import PostsRequest
 	from .reply import ReplyRequest
 	from ........request_adapter import HttpxRequestAdapter
-from iograph_models.v1.conversation_thread import ConversationThread
 from iograph_models.v1.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.v1.conversation_thread import ConversationThread
 
 
 class ByConversationThreadIdRequest(BaseRequestBuilder):

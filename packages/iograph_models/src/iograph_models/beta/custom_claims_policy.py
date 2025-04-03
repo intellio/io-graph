@@ -8,7 +8,7 @@ from pydantic import BaseModel, Field
 
 class CustomClaimsPolicy(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.customClaimsPolicy"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.customClaimsPolicy"] = Field(alias="@odata.type", default="#microsoft.graph.customClaimsPolicy")
 	audienceOverride: Optional[str] = Field(alias="audienceOverride", default=None,)
 	claims: Optional[list[Annotated[Union[CustomClaim, SamlNameIdClaim],Field(discriminator="odata_type")]]] = Field(alias="claims", default=None,)
 	includeApplicationIdInIssuer: Optional[bool] = Field(alias="includeApplicationIdInIssuer", default=None,)

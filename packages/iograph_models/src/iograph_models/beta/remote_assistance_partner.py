@@ -7,7 +7,7 @@ from pydantic import BaseModel, Field
 
 class RemoteAssistancePartner(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.remoteAssistancePartner"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.remoteAssistancePartner"] = Field(alias="@odata.type", default="#microsoft.graph.remoteAssistancePartner")
 	displayName: Optional[str] = Field(alias="displayName", default=None,)
 	lastConnectionDateTime: Optional[datetime] = Field(alias="lastConnectionDateTime", default=None,)
 	onboardingRequestExpiryDateTime: Optional[datetime] = Field(alias="onboardingRequestExpiryDateTime", default=None,)

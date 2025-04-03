@@ -14,9 +14,9 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_booking_currency_id import ByBookingCurrencyIdRequest
 	from ....request_adapter import HttpxRequestAdapter
-from iograph_models.beta.booking_currency import BookingCurrency
-from iograph_models.beta.booking_currency_collection_response import BookingCurrencyCollectionResponse
 from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.beta.booking_currency_collection_response import BookingCurrencyCollectionResponse
+from iograph_models.beta.booking_currency import BookingCurrency
 
 
 class BookingCurrenciesRequest(BaseRequestBuilder):

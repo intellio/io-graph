@@ -6,6 +6,6 @@ from pydantic import BaseModel, Field
 
 class DeviceManagementScriptGroupAssignment(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.deviceManagementScriptGroupAssignment"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.deviceManagementScriptGroupAssignment"] = Field(alias="@odata.type", default="#microsoft.graph.deviceManagementScriptGroupAssignment")
 	targetGroupId: Optional[str] = Field(alias="targetGroupId", default=None,)
 

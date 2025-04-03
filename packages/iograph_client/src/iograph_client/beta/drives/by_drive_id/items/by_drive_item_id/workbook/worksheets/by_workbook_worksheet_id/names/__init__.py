@@ -17,8 +17,8 @@ if TYPE_CHECKING:
 	from .by_workbook_named_item_id import ByWorkbookNamedItemIdRequest
 	from ..........request_adapter import HttpxRequestAdapter
 from iograph_models.beta.workbook_named_item_collection_response import WorkbookNamedItemCollectionResponse
-from iograph_models.beta.workbook_named_item import WorkbookNamedItem
 from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.beta.workbook_named_item import WorkbookNamedItem
 
 
 class NamesRequest(BaseRequestBuilder):

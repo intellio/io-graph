@@ -8,7 +8,7 @@ from pydantic import BaseModel, Field
 
 class ProgramControl(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.programControl"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.programControl"] = Field(alias="@odata.type", default="#microsoft.graph.programControl")
 	controlId: Optional[str] = Field(alias="controlId", default=None,)
 	controlTypeId: Optional[str] = Field(alias="controlTypeId", default=None,)
 	createdDateTime: Optional[datetime] = Field(alias="createdDateTime", default=None,)

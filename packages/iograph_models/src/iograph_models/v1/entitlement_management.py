@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field
 
 class EntitlementManagement(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.entitlementManagement"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.entitlementManagement"] = Field(alias="@odata.type", default="#microsoft.graph.entitlementManagement")
 	accessPackageAssignmentApprovals: Optional[list[Approval]] = Field(alias="accessPackageAssignmentApprovals", default=None,)
 	accessPackages: Optional[list[AccessPackage]] = Field(alias="accessPackages", default=None,)
 	assignmentPolicies: Optional[list[AccessPackageAssignmentPolicy]] = Field(alias="assignmentPolicies", default=None,)

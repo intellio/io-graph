@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field
 
 class TeamsAdministrationTeamsAdminRoot(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.teamsAdministration.teamsAdminRoot"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.teamsAdministration.teamsAdminRoot"] = Field(alias="@odata.type", default="#microsoft.graph.teamsAdministration.teamsAdminRoot")
 	policy: Optional[TeamsAdministrationTeamsPolicyAssignment] = Field(alias="policy", default=None,)
 
 from .teams_administration_teams_policy_assignment import TeamsAdministrationTeamsPolicyAssignment

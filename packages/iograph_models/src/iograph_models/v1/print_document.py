@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field
 
 class PrintDocument(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.printDocument"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.printDocument"] = Field(alias="@odata.type", default="#microsoft.graph.printDocument")
 	contentType: Optional[str] = Field(alias="contentType", default=None,)
 	displayName: Optional[str] = Field(alias="displayName", default=None,)
 	size: Optional[int] = Field(alias="size", default=None,)

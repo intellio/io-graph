@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field
 
 class MailboxFolder(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.mailboxFolder"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.mailboxFolder"] = Field(alias="@odata.type", default="#microsoft.graph.mailboxFolder")
 	childFolderCount: Optional[int] = Field(alias="childFolderCount", default=None,)
 	displayName: Optional[str] = Field(alias="displayName", default=None,)
 	parentFolderId: Optional[str] = Field(alias="parentFolderId", default=None,)

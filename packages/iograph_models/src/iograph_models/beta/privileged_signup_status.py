@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field
 
 class PrivilegedSignupStatus(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.privilegedSignupStatus"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.privilegedSignupStatus"] = Field(alias="@odata.type", default="#microsoft.graph.privilegedSignupStatus")
 	isRegistered: Optional[bool] = Field(alias="isRegistered", default=None,)
 	status: Optional[SetupStatus | str] = Field(alias="status", default=None,)
 

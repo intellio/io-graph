@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field
 
 class DefaultUserRoleOverride(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.defaultUserRoleOverride"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.defaultUserRoleOverride"] = Field(alias="@odata.type", default="#microsoft.graph.defaultUserRoleOverride")
 	isDefault: Optional[bool] = Field(alias="isDefault", default=None,)
 	rolePermissions: Optional[list[UnifiedRolePermission]] = Field(alias="rolePermissions", default=None,)
 

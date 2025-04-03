@@ -8,7 +8,7 @@ from pydantic import BaseModel, Field
 
 class InactiveGroupFinding(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.inactiveGroupFinding"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.inactiveGroupFinding"] = Field(alias="@odata.type", default="#microsoft.graph.inactiveGroupFinding")
 	createdDateTime: Optional[datetime] = Field(alias="createdDateTime", default=None,)
 	actionSummary: Optional[ActionSummary] = Field(alias="actionSummary", default=None,)
 	permissionsCreepIndex: Optional[PermissionsCreepIndex] = Field(alias="permissionsCreepIndex", default=None,)

@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field
 
 class DeviceManagementAlertRule(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.deviceManagement.alertRule"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.deviceManagement.alertRule"] = Field(alias="@odata.type", default="#microsoft.graph.deviceManagement.alertRule")
 	alertRuleTemplate: Optional[DeviceManagementAlertRuleTemplate | str] = Field(alias="alertRuleTemplate", default=None,)
 	conditions: Optional[list[DeviceManagementRuleCondition]] = Field(alias="conditions", default=None,)
 	description: Optional[str] = Field(alias="description", default=None,)

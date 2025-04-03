@@ -7,7 +7,7 @@ from pydantic import BaseModel, Field
 
 class AccessPackageResource(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.accessPackageResource"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.accessPackageResource"] = Field(alias="@odata.type", default="#microsoft.graph.accessPackageResource")
 	attributes: Optional[list[AccessPackageResourceAttribute]] = Field(alias="attributes", default=None,)
 	createdDateTime: Optional[datetime] = Field(alias="createdDateTime", default=None,)
 	description: Optional[str] = Field(alias="description", default=None,)

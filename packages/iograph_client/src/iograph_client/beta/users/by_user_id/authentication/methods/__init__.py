@@ -15,8 +15,8 @@ if TYPE_CHECKING:
 	from .by_authentication_method_id import ByAuthenticationMethodIdRequest
 	from ......request_adapter import HttpxRequestAdapter
 from iograph_models.beta.authentication_method import AuthenticationMethod
-from iograph_models.beta.authentication_method_collection_response import AuthenticationMethodCollectionResponse
 from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.beta.authentication_method_collection_response import AuthenticationMethodCollectionResponse
 
 
 class MethodsRequest(BaseRequestBuilder):

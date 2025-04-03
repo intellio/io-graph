@@ -8,7 +8,7 @@ from pydantic import BaseModel, Field
 
 class UnifiedRoleAssignmentScheduleRequest(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.unifiedRoleAssignmentScheduleRequest"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.unifiedRoleAssignmentScheduleRequest"] = Field(alias="@odata.type", default="#microsoft.graph.unifiedRoleAssignmentScheduleRequest")
 	approvalId: Optional[str] = Field(alias="approvalId", default=None,)
 	completedDateTime: Optional[datetime] = Field(alias="completedDateTime", default=None,)
 	createdBy: Optional[Union[ChatMessageFromIdentitySet, ChatMessageMentionedIdentitySet, ChatMessageReactionIdentitySet, CommunicationsIdentitySet, SharePointIdentitySet]] = Field(alias="createdBy", default=None,discriminator="odata_type", )

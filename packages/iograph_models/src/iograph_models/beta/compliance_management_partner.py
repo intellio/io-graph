@@ -7,7 +7,7 @@ from pydantic import BaseModel, Field
 
 class ComplianceManagementPartner(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.complianceManagementPartner"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.complianceManagementPartner"] = Field(alias="@odata.type", default="#microsoft.graph.complianceManagementPartner")
 	androidEnrollmentAssignments: Optional[list[ComplianceManagementPartnerAssignment]] = Field(alias="androidEnrollmentAssignments", default=None,)
 	androidOnboarded: Optional[bool] = Field(alias="androidOnboarded", default=None,)
 	displayName: Optional[str] = Field(alias="displayName", default=None,)

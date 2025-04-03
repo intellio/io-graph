@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field
 
 class Todo(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.todo"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.todo"] = Field(alias="@odata.type", default="#microsoft.graph.todo")
 	lists: Optional[list[TodoTaskList]] = Field(alias="lists", default=None,)
 
 from .todo_task_list import TodoTaskList

@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field
 
 class DeviceManagementExchangeOnPremisesPolicy(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.deviceManagementExchangeOnPremisesPolicy"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.deviceManagementExchangeOnPremisesPolicy"] = Field(alias="@odata.type", default="#microsoft.graph.deviceManagementExchangeOnPremisesPolicy")
 	accessRules: Optional[list[DeviceManagementExchangeAccessRule]] = Field(alias="accessRules", default=None,)
 	defaultAccessLevel: Optional[DeviceManagementExchangeAccessLevel | str] = Field(alias="defaultAccessLevel", default=None,)
 	knownDeviceClasses: Optional[list[DeviceManagementExchangeDeviceClass]] = Field(alias="knownDeviceClasses", default=None,)

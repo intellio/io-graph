@@ -14,8 +14,8 @@ if TYPE_CHECKING:
 	from .managed_tenants_unassign_tag import ManagedTenantsUnassignTagRequest
 	from .managed_tenants_assign_tag import ManagedTenantsAssignTagRequest
 	from ......request_adapter import HttpxRequestAdapter
-from iograph_models.beta.managed_tenants_tenant_tag import ManagedTenantsTenantTag
 from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.beta.managed_tenants_tenant_tag import ManagedTenantsTenantTag
 
 
 class ByTenantTagIdRequest(BaseRequestBuilder):

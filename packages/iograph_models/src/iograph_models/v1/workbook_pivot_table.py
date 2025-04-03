@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field
 
 class WorkbookPivotTable(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.workbookPivotTable"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.workbookPivotTable"] = Field(alias="@odata.type", default="#microsoft.graph.workbookPivotTable")
 	name: Optional[str] = Field(alias="name", default=None,)
 	worksheet: Optional[WorkbookWorksheet] = Field(alias="worksheet", default=None,)
 

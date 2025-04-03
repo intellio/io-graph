@@ -7,7 +7,7 @@ from pydantic import BaseModel, Field
 
 class PartnerSecurityAdminsMfaEnforcedSecurityRequirement(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.partner.security.adminsMfaEnforcedSecurityRequirement"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.partner.security.adminsMfaEnforcedSecurityRequirement"] = Field(alias="@odata.type", default="#microsoft.graph.partner.security.adminsMfaEnforcedSecurityRequirement")
 	actionUrl: Optional[str] = Field(alias="actionUrl", default=None,)
 	complianceStatus: Optional[PartnerSecurityComplianceStatus | str] = Field(alias="complianceStatus", default=None,)
 	helpUrl: Optional[str] = Field(alias="helpUrl", default=None,)

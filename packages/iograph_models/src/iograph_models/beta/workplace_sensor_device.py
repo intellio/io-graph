@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field
 
 class WorkplaceSensorDevice(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.workplaceSensorDevice"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.workplaceSensorDevice"] = Field(alias="@odata.type", default="#microsoft.graph.workplaceSensorDevice")
 	description: Optional[str] = Field(alias="description", default=None,)
 	deviceId: Optional[str] = Field(alias="deviceId", default=None,)
 	displayName: Optional[str] = Field(alias="displayName", default=None,)

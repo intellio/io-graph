@@ -8,7 +8,7 @@ from pydantic import BaseModel, Field
 
 class InformationProtection(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.informationProtection"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.informationProtection"] = Field(alias="@odata.type", default="#microsoft.graph.informationProtection")
 	bitlocker: Optional[Bitlocker] = Field(alias="bitlocker", default=None,)
 	dataLossPreventionPolicies: Optional[list[DataLossPreventionPolicy]] = Field(alias="dataLossPreventionPolicies", default=None,)
 	policy: Optional[InformationProtectionPolicy] = Field(alias="policy", default=None,)

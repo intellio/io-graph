@@ -8,7 +8,7 @@ from pydantic import BaseModel, Field
 
 class UnifiedRoleAssignmentSchedule(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.unifiedRoleAssignmentSchedule"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.unifiedRoleAssignmentSchedule"] = Field(alias="@odata.type", default="#microsoft.graph.unifiedRoleAssignmentSchedule")
 	appScopeId: Optional[str] = Field(alias="appScopeId", default=None,)
 	createdDateTime: Optional[datetime] = Field(alias="createdDateTime", default=None,)
 	createdUsing: Optional[str] = Field(alias="createdUsing", default=None,)

@@ -7,7 +7,7 @@ from pydantic import BaseModel, Field
 
 class DeviceLocalCredentialInfo(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.deviceLocalCredentialInfo"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.deviceLocalCredentialInfo"] = Field(alias="@odata.type", default="#microsoft.graph.deviceLocalCredentialInfo")
 	credentials: Optional[list[DeviceLocalCredential]] = Field(alias="credentials", default=None,)
 	deviceName: Optional[str] = Field(alias="deviceName", default=None,)
 	lastBackupDateTime: Optional[datetime] = Field(alias="lastBackupDateTime", default=None,)

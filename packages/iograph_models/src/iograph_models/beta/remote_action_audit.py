@@ -7,7 +7,7 @@ from pydantic import BaseModel, Field
 
 class RemoteActionAudit(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.remoteActionAudit"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.remoteActionAudit"] = Field(alias="@odata.type", default="#microsoft.graph.remoteActionAudit")
 	action: Optional[RemoteAction | str] = Field(alias="action", default=None,)
 	actionState: Optional[ActionState | str] = Field(alias="actionState", default=None,)
 	bulkDeviceActionId: Optional[str] = Field(alias="bulkDeviceActionId", default=None,)

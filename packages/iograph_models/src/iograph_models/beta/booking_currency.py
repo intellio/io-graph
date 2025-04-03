@@ -6,6 +6,6 @@ from pydantic import BaseModel, Field
 
 class BookingCurrency(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.bookingCurrency"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.bookingCurrency"] = Field(alias="@odata.type", default="#microsoft.graph.bookingCurrency")
 	symbol: Optional[str] = Field(alias="symbol", default=None,)
 

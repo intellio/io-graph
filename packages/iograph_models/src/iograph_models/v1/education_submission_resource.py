@@ -7,7 +7,7 @@ from pydantic import BaseModel, Field
 
 class EducationSubmissionResource(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.educationSubmissionResource"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.educationSubmissionResource"] = Field(alias="@odata.type", default="#microsoft.graph.educationSubmissionResource")
 	assignmentResourceUrl: Optional[str] = Field(alias="assignmentResourceUrl", default=None,)
 	resource: Optional[Union[EducationChannelResource, EducationExcelResource, EducationExternalResource, EducationFileResource, EducationLinkedAssignmentResource, EducationLinkResource, EducationMediaResource, EducationPowerPointResource, EducationTeamsAppResource, EducationWordResource]] = Field(alias="resource", default=None,discriminator="odata_type", )
 

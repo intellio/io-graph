@@ -8,7 +8,7 @@ from pydantic import BaseModel, Field
 
 class SecurityToolAwsRoleAdministratorFinding(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.securityToolAwsRoleAdministratorFinding"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.securityToolAwsRoleAdministratorFinding"] = Field(alias="@odata.type", default="#microsoft.graph.securityToolAwsRoleAdministratorFinding")
 	createdDateTime: Optional[datetime] = Field(alias="createdDateTime", default=None,)
 	identityDetails: Optional[IdentityDetails] = Field(alias="identityDetails", default=None,)
 	permissionsCreepIndex: Optional[PermissionsCreepIndex] = Field(alias="permissionsCreepIndex", default=None,)

@@ -7,7 +7,7 @@ from pydantic import BaseModel, Field
 
 class PrivilegeManagementElevation(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.privilegeManagementElevation"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.privilegeManagementElevation"] = Field(alias="@odata.type", default="#microsoft.graph.privilegeManagementElevation")
 	certificatePayload: Optional[str] = Field(alias="certificatePayload", default=None,)
 	companyName: Optional[str] = Field(alias="companyName", default=None,)
 	deviceId: Optional[str] = Field(alias="deviceId", default=None,)

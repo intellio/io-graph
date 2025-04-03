@@ -18,8 +18,8 @@ if TYPE_CHECKING:
 	from .agents import AgentsRequest
 	from .agent_groups import AgentGroupsRequest
 	from ....request_adapter import HttpxRequestAdapter
-from iograph_models.beta.on_premises_publishing_profile import OnPremisesPublishingProfile
 from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.beta.on_premises_publishing_profile import OnPremisesPublishingProfile
 
 
 class ByOnPremisesPublishingProfileIdRequest(BaseRequestBuilder):

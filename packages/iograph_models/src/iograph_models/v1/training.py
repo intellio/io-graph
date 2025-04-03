@@ -7,7 +7,7 @@ from pydantic import BaseModel, Field
 
 class Training(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.training"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.training"] = Field(alias="@odata.type", default="#microsoft.graph.training")
 	availabilityStatus: Optional[TrainingAvailabilityStatus | str] = Field(alias="availabilityStatus", default=None,)
 	createdBy: Optional[EmailIdentity] = Field(alias="createdBy", default=None,)
 	createdDateTime: Optional[datetime] = Field(alias="createdDateTime", default=None,)

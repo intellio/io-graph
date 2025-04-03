@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field
 
 class MobileAppTroubleshootingEvent(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.mobileAppTroubleshootingEvent"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.mobileAppTroubleshootingEvent"] = Field(alias="@odata.type", default="#microsoft.graph.mobileAppTroubleshootingEvent")
 	appLogCollectionRequests: Optional[list[AppLogCollectionRequest]] = Field(alias="appLogCollectionRequests", default=None,)
 
 from .app_log_collection_request import AppLogCollectionRequest

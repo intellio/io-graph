@@ -7,7 +7,7 @@ from pydantic import BaseModel, Field
 
 class AttendanceRecord(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.attendanceRecord"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.attendanceRecord"] = Field(alias="@odata.type", default="#microsoft.graph.attendanceRecord")
 	attendanceIntervals: Optional[list[AttendanceInterval]] = Field(alias="attendanceIntervals", default=None,)
 	emailAddress: Optional[str] = Field(alias="emailAddress", default=None,)
 	identity: Optional[Union[AzureCommunicationServicesUserIdentity, CommunicationsApplicationIdentity, CommunicationsApplicationInstanceIdentity, CommunicationsEncryptedIdentity, CommunicationsGuestIdentity, CommunicationsPhoneIdentity, CommunicationsUserIdentity, EmailIdentity, Initiator, ProvisionedIdentity, ProvisioningServicePrincipal, ProvisioningSystem, ServicePrincipalIdentity, SharePointIdentity, TeamworkApplicationIdentity, TeamworkConversationIdentity, TeamworkTagIdentity, TeamworkUserIdentity, UserIdentity, CallRecordsUserIdentity]] = Field(alias="identity", default=None,discriminator="odata_type", )

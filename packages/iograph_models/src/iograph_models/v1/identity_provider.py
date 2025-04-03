@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field
 
 class IdentityProvider(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.identityProvider"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.identityProvider"] = Field(alias="@odata.type", default="#microsoft.graph.identityProvider")
 	clientId: Optional[str] = Field(alias="clientId", default=None,)
 	clientSecret: Optional[str] = Field(alias="clientSecret", default=None,)
 	name: Optional[str] = Field(alias="name", default=None,)

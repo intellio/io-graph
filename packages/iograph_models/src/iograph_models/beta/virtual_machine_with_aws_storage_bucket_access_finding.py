@@ -8,7 +8,7 @@ from pydantic import BaseModel, Field
 
 class VirtualMachineWithAwsStorageBucketAccessFinding(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.virtualMachineWithAwsStorageBucketAccessFinding"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.virtualMachineWithAwsStorageBucketAccessFinding"] = Field(alias="@odata.type", default="#microsoft.graph.virtualMachineWithAwsStorageBucketAccessFinding")
 	createdDateTime: Optional[datetime] = Field(alias="createdDateTime", default=None,)
 	accessibleCount: Optional[int] = Field(alias="accessibleCount", default=None,)
 	bucketCount: Optional[int] = Field(alias="bucketCount", default=None,)

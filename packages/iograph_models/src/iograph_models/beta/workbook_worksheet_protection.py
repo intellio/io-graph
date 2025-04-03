@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field
 
 class WorkbookWorksheetProtection(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.workbookWorksheetProtection"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.workbookWorksheetProtection"] = Field(alias="@odata.type", default="#microsoft.graph.workbookWorksheetProtection")
 	options: Optional[WorkbookWorksheetProtectionOptions] = Field(alias="options", default=None,)
 	protected: Optional[bool] = Field(alias="protected", default=None,)
 

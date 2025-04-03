@@ -8,7 +8,7 @@ from pydantic import BaseModel, Field
 
 class IdentityContainer(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.identityContainer"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.identityContainer"] = Field(alias="@odata.type", default="#microsoft.graph.identityContainer")
 	apiConnectors: Optional[list[IdentityApiConnector]] = Field(alias="apiConnectors", default=None,)
 	authenticationEventListeners: Optional[list[Annotated[Union[OnAttributeCollectionListener, OnAuthenticationMethodLoadStartListener, OnInteractiveAuthFlowStartListener, OnTokenIssuanceStartListener, OnUserCreateStartListener],Field(discriminator="odata_type")]]] = Field(alias="authenticationEventListeners", default=None,)
 	authenticationEventsFlows: Optional[list[Annotated[Union[ExternalUsersSelfServiceSignUpEventsFlow],Field(discriminator="odata_type")]]] = Field(alias="authenticationEventsFlows", default=None,)

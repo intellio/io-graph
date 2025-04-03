@@ -17,8 +17,8 @@ if TYPE_CHECKING:
 	from .delta import DeltaRequest
 	from .by_resource_specific_permission_grant_id import ByResourceSpecificPermissionGrantIdRequest
 	from ...request_adapter import HttpxRequestAdapter
-from iograph_models.beta.resource_specific_permission_grant_collection_response import ResourceSpecificPermissionGrantCollectionResponse
 from iograph_models.beta.resource_specific_permission_grant import ResourceSpecificPermissionGrant
+from iograph_models.beta.resource_specific_permission_grant_collection_response import ResourceSpecificPermissionGrantCollectionResponse
 from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 
 

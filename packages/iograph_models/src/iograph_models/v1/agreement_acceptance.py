@@ -7,7 +7,7 @@ from pydantic import BaseModel, Field
 
 class AgreementAcceptance(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.agreementAcceptance"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.agreementAcceptance"] = Field(alias="@odata.type", default="#microsoft.graph.agreementAcceptance")
 	agreementFileId: Optional[str] = Field(alias="agreementFileId", default=None,)
 	agreementId: Optional[str] = Field(alias="agreementId", default=None,)
 	deviceDisplayName: Optional[str] = Field(alias="deviceDisplayName", default=None,)

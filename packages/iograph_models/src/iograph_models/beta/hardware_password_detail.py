@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field
 
 class HardwarePasswordDetail(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.hardwarePasswordDetail"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.hardwarePasswordDetail"] = Field(alias="@odata.type", default="#microsoft.graph.hardwarePasswordDetail")
 	currentPassword: Optional[str] = Field(alias="currentPassword", default=None,)
 	previousPasswords: Optional[list[str]] = Field(alias="previousPasswords", default=None,)
 	serialNumber: Optional[str] = Field(alias="serialNumber", default=None,)

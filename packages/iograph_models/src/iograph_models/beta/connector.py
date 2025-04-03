@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field
 
 class Connector(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.connector"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.connector"] = Field(alias="@odata.type", default="#microsoft.graph.connector")
 	externalIp: Optional[str] = Field(alias="externalIp", default=None,)
 	machineName: Optional[str] = Field(alias="machineName", default=None,)
 	status: Optional[ConnectorStatus | str] = Field(alias="status", default=None,)

@@ -15,8 +15,8 @@ if TYPE_CHECKING:
 	from .by_filtering_profile_id import ByFilteringProfileIdRequest
 	from ....request_adapter import HttpxRequestAdapter
 from iograph_models.beta.networkaccess_filtering_profile_collection_response import NetworkaccessFilteringProfileCollectionResponse
-from iograph_models.beta.networkaccess_filtering_profile import NetworkaccessFilteringProfile
 from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.beta.networkaccess_filtering_profile import NetworkaccessFilteringProfile
 
 
 class FilteringProfilesRequest(BaseRequestBuilder):

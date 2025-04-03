@@ -8,7 +8,7 @@ from pydantic import BaseModel, Field
 
 class DeviceLogCollectionResponse(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.deviceLogCollectionResponse"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.deviceLogCollectionResponse"] = Field(alias="@odata.type", default="#microsoft.graph.deviceLogCollectionResponse")
 	enrolledByUser: Optional[str] = Field(alias="enrolledByUser", default=None,)
 	errorCode: Optional[int] = Field(alias="errorCode", default=None,)
 	expirationDateTimeUTC: Optional[datetime] = Field(alias="expirationDateTimeUTC", default=None,)

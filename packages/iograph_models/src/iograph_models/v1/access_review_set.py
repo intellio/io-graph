@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field
 
 class AccessReviewSet(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.accessReviewSet"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.accessReviewSet"] = Field(alias="@odata.type", default="#microsoft.graph.accessReviewSet")
 	definitions: Optional[list[AccessReviewScheduleDefinition]] = Field(alias="definitions", default=None,)
 	historyDefinitions: Optional[list[AccessReviewHistoryDefinition]] = Field(alias="historyDefinitions", default=None,)
 

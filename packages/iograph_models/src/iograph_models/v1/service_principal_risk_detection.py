@@ -7,7 +7,7 @@ from pydantic import BaseModel, Field
 
 class ServicePrincipalRiskDetection(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.servicePrincipalRiskDetection"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.servicePrincipalRiskDetection"] = Field(alias="@odata.type", default="#microsoft.graph.servicePrincipalRiskDetection")
 	activity: Optional[ActivityType | str] = Field(alias="activity", default=None,)
 	activityDateTime: Optional[datetime] = Field(alias="activityDateTime", default=None,)
 	additionalInfo: Optional[str] = Field(alias="additionalInfo", default=None,)

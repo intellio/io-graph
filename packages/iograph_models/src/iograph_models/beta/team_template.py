@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field
 
 class TeamTemplate(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.teamTemplate"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.teamTemplate"] = Field(alias="@odata.type", default="#microsoft.graph.teamTemplate")
 	definitions: Optional[list[TeamTemplateDefinition]] = Field(alias="definitions", default=None,)
 
 from .team_template_definition import TeamTemplateDefinition

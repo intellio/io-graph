@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field
 
 class WorkbookChartLegend(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.workbookChartLegend"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.workbookChartLegend"] = Field(alias="@odata.type", default="#microsoft.graph.workbookChartLegend")
 	overlay: Optional[bool] = Field(alias="overlay", default=None,)
 	position: Optional[str] = Field(alias="position", default=None,)
 	visible: Optional[bool] = Field(alias="visible", default=None,)

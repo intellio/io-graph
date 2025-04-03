@@ -7,7 +7,7 @@ from pydantic import BaseModel, Field
 
 class ItemActivityStat(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.itemActivityStat"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.itemActivityStat"] = Field(alias="@odata.type", default="#microsoft.graph.itemActivityStat")
 	access: Optional[ItemActionStat] = Field(alias="access", default=None,)
 	create: Optional[ItemActionStat] = Field(alias="create", default=None,)
 	delete: Optional[ItemActionStat] = Field(alias="delete", default=None,)

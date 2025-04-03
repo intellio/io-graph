@@ -8,7 +8,7 @@ from pydantic import BaseModel, Field
 
 class DeviceManagementConfigurationSetting(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.deviceManagementConfigurationSetting"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.deviceManagementConfigurationSetting"] = Field(alias="@odata.type", default="#microsoft.graph.deviceManagementConfigurationSetting")
 	settingInstance: Optional[Union[DeviceManagementConfigurationChoiceSettingCollectionInstance, DeviceManagementConfigurationChoiceSettingInstance, DeviceManagementConfigurationGroupSettingCollectionInstance, DeviceManagementConfigurationGroupSettingInstance, DeviceManagementConfigurationSettingGroupCollectionInstance, DeviceManagementConfigurationSettingGroupInstance, DeviceManagementConfigurationSimpleSettingCollectionInstance, DeviceManagementConfigurationSimpleSettingInstance]] = Field(alias="settingInstance", default=None,discriminator="odata_type", )
 	settingDefinitions: Optional[list[Annotated[Union[DeviceManagementConfigurationChoiceSettingCollectionDefinition, DeviceManagementConfigurationRedirectSettingDefinition, DeviceManagementConfigurationSettingGroupCollectionDefinition, DeviceManagementConfigurationSimpleSettingCollectionDefinition],Field(discriminator="odata_type")]]] = Field(alias="settingDefinitions", default=None,)
 

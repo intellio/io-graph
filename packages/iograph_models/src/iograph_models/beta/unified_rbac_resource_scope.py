@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field
 
 class UnifiedRbacResourceScope(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.unifiedRbacResourceScope"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.unifiedRbacResourceScope"] = Field(alias="@odata.type", default="#microsoft.graph.unifiedRbacResourceScope")
 	displayName: Optional[str] = Field(alias="displayName", default=None,)
 	scope: Optional[str] = Field(alias="scope", default=None,)
 	type: Optional[str] = Field(alias="type", default=None,)

@@ -7,7 +7,7 @@ from pydantic import BaseModel, Field
 
 class IdentityGovernanceUserProcessingResult(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.identityGovernance.userProcessingResult"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.identityGovernance.userProcessingResult"] = Field(alias="@odata.type", default="#microsoft.graph.identityGovernance.userProcessingResult")
 	completedDateTime: Optional[datetime] = Field(alias="completedDateTime", default=None,)
 	failedTasksCount: Optional[int] = Field(alias="failedTasksCount", default=None,)
 	processingStatus: Optional[IdentityGovernanceLifecycleWorkflowProcessingStatus | str] = Field(alias="processingStatus", default=None,)

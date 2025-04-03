@@ -8,7 +8,7 @@ from pydantic import BaseModel, Field
 
 class OverprovisionedAzureServicePrincipalFinding(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.overprovisionedAzureServicePrincipalFinding"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.overprovisionedAzureServicePrincipalFinding"] = Field(alias="@odata.type", default="#microsoft.graph.overprovisionedAzureServicePrincipalFinding")
 	createdDateTime: Optional[datetime] = Field(alias="createdDateTime", default=None,)
 	actionSummary: Optional[ActionSummary] = Field(alias="actionSummary", default=None,)
 	identityDetails: Optional[IdentityDetails] = Field(alias="identityDetails", default=None,)

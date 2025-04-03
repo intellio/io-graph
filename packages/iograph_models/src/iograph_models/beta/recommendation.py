@@ -7,7 +7,7 @@ from pydantic import BaseModel, Field
 
 class Recommendation(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.recommendation"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.recommendation"] = Field(alias="@odata.type", default="#microsoft.graph.recommendation")
 	actionSteps: Optional[list[ActionStep]] = Field(alias="actionSteps", default=None,)
 	benefits: Optional[str] = Field(alias="benefits", default=None,)
 	category: Optional[RecommendationCategory | str] = Field(alias="category", default=None,)

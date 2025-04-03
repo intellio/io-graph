@@ -8,7 +8,7 @@ from pydantic import BaseModel, Field
 
 class BackupRestoreRoot(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.backupRestoreRoot"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.backupRestoreRoot"] = Field(alias="@odata.type", default="#microsoft.graph.backupRestoreRoot")
 	serviceStatus: Optional[ServiceStatus] = Field(alias="serviceStatus", default=None,)
 	driveInclusionRules: Optional[list[DriveProtectionRule]] = Field(alias="driveInclusionRules", default=None,)
 	driveProtectionUnits: Optional[list[DriveProtectionUnit]] = Field(alias="driveProtectionUnits", default=None,)

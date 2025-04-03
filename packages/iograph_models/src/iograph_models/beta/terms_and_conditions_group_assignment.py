@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field
 
 class TermsAndConditionsGroupAssignment(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.termsAndConditionsGroupAssignment"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.termsAndConditionsGroupAssignment"] = Field(alias="@odata.type", default="#microsoft.graph.termsAndConditionsGroupAssignment")
 	targetGroupId: Optional[str] = Field(alias="targetGroupId", default=None,)
 	termsAndConditions: Optional[TermsAndConditions] = Field(alias="termsAndConditions", default=None,)
 

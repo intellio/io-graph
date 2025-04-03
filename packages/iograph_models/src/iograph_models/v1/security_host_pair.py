@@ -8,7 +8,7 @@ from pydantic import BaseModel, Field
 
 class SecurityHostPair(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.security.hostPair"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.security.hostPair"] = Field(alias="@odata.type", default="#microsoft.graph.security.hostPair")
 	firstSeenDateTime: Optional[datetime] = Field(alias="firstSeenDateTime", default=None,)
 	lastSeenDateTime: Optional[datetime] = Field(alias="lastSeenDateTime", default=None,)
 	linkKind: Optional[str] = Field(alias="linkKind", default=None,)

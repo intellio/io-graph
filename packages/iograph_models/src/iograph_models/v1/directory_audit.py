@@ -7,7 +7,7 @@ from pydantic import BaseModel, Field
 
 class DirectoryAudit(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.directoryAudit"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.directoryAudit"] = Field(alias="@odata.type", default="#microsoft.graph.directoryAudit")
 	activityDateTime: Optional[datetime] = Field(alias="activityDateTime", default=None,)
 	activityDisplayName: Optional[str] = Field(alias="activityDisplayName", default=None,)
 	additionalDetails: Optional[list[KeyValue]] = Field(alias="additionalDetails", default=None,)

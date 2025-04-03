@@ -7,7 +7,7 @@ from pydantic import BaseModel, Field
 
 class MobileAppAssignment(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.mobileAppAssignment"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.mobileAppAssignment"] = Field(alias="@odata.type", default="#microsoft.graph.mobileAppAssignment")
 	intent: Optional[InstallIntent | str] = Field(alias="intent", default=None,)
 	settings: Optional[Union[AndroidManagedStoreAppAssignmentSettings, IosLobAppAssignmentSettings, IosStoreAppAssignmentSettings, IosVppAppAssignmentSettings, MacOsLobAppAssignmentSettings, MacOsVppAppAssignmentSettings, MicrosoftStoreForBusinessAppAssignmentSettings, Win32CatalogAppAssignmentSettings, WindowsAppXAppAssignmentSettings, WindowsUniversalAppXAppAssignmentSettings, WinGetAppAssignmentSettings]] = Field(alias="settings", default=None,discriminator="odata_type", )
 	source: Optional[DeviceAndAppManagementAssignmentSource | str] = Field(alias="source", default=None,)

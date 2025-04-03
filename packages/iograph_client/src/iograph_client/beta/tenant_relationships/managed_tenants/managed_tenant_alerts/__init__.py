@@ -14,9 +14,9 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_managed_tenant_alert_id import ByManagedTenantAlertIdRequest
 	from .....request_adapter import HttpxRequestAdapter
-from iograph_models.beta.managed_tenants_managed_tenant_alert import ManagedTenantsManagedTenantAlert
-from iograph_models.beta.managed_tenants_managed_tenant_alert_collection_response import ManagedTenantsManagedTenantAlertCollectionResponse
 from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.beta.managed_tenants_managed_tenant_alert_collection_response import ManagedTenantsManagedTenantAlertCollectionResponse
+from iograph_models.beta.managed_tenants_managed_tenant_alert import ManagedTenantsManagedTenantAlert
 
 
 class ManagedTenantAlertsRequest(BaseRequestBuilder):

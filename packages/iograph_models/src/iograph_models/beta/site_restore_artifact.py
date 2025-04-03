@@ -7,7 +7,7 @@ from pydantic import BaseModel, Field
 
 class SiteRestoreArtifact(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.siteRestoreArtifact"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.siteRestoreArtifact"] = Field(alias="@odata.type", default="#microsoft.graph.siteRestoreArtifact")
 	completionDateTime: Optional[datetime] = Field(alias="completionDateTime", default=None,)
 	destinationType: Optional[DestinationType | str] = Field(alias="destinationType", default=None,)
 	error: Optional[PublicError] = Field(alias="error", default=None,)

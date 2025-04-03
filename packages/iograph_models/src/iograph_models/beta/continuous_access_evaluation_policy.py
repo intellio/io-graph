@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field
 
 class ContinuousAccessEvaluationPolicy(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.continuousAccessEvaluationPolicy"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.continuousAccessEvaluationPolicy"] = Field(alias="@odata.type", default="#microsoft.graph.continuousAccessEvaluationPolicy")
 	description: Optional[str] = Field(alias="description", default=None,)
 	displayName: Optional[str] = Field(alias="displayName", default=None,)
 	groups: Optional[list[str]] = Field(alias="groups", default=None,)

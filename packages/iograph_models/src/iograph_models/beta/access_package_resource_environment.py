@@ -7,7 +7,7 @@ from pydantic import BaseModel, Field
 
 class AccessPackageResourceEnvironment(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.accessPackageResourceEnvironment"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.accessPackageResourceEnvironment"] = Field(alias="@odata.type", default="#microsoft.graph.accessPackageResourceEnvironment")
 	connectionInfo: Optional[ConnectionInfo] = Field(alias="connectionInfo", default=None,)
 	createdBy: Optional[str] = Field(alias="createdBy", default=None,)
 	createdDateTime: Optional[datetime] = Field(alias="createdDateTime", default=None,)

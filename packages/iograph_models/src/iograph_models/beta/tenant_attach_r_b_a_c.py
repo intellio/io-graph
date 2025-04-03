@@ -6,5 +6,5 @@ from pydantic import BaseModel, Field
 
 class TenantAttachRBAC(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.tenantAttachRBAC"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.tenantAttachRBAC"] = Field(alias="@odata.type", default="#microsoft.graph.tenantAttachRBAC")
 

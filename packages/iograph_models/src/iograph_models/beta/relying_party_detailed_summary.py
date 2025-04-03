@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field
 
 class RelyingPartyDetailedSummary(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.relyingPartyDetailedSummary"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.relyingPartyDetailedSummary"] = Field(alias="@odata.type", default="#microsoft.graph.relyingPartyDetailedSummary")
 	failedSignInCount: Optional[int] = Field(alias="failedSignInCount", default=None,)
 	migrationStatus: Optional[MigrationStatus | str] = Field(alias="migrationStatus", default=None,)
 	migrationValidationDetails: Optional[list[KeyValuePair]] = Field(alias="migrationValidationDetails", default=None,)

@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field
 
 class ManagedDeviceEncryptionState(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.managedDeviceEncryptionState"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.managedDeviceEncryptionState"] = Field(alias="@odata.type", default="#microsoft.graph.managedDeviceEncryptionState")
 	advancedBitLockerStates: Optional[AdvancedBitLockerState | str] = Field(alias="advancedBitLockerStates", default=None,)
 	deviceName: Optional[str] = Field(alias="deviceName", default=None,)
 	deviceType: Optional[DeviceTypes | str] = Field(alias="deviceType", default=None,)

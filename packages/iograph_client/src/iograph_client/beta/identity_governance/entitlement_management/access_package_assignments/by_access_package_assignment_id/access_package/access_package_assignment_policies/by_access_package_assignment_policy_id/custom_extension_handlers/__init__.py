@@ -15,8 +15,8 @@ if TYPE_CHECKING:
 	from .by_custom_extension_handler_id import ByCustomExtensionHandlerIdRequest
 	from ..........request_adapter import HttpxRequestAdapter
 from iograph_models.beta.custom_extension_handler_collection_response import CustomExtensionHandlerCollectionResponse
-from iograph_models.beta.custom_extension_handler import CustomExtensionHandler
 from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.beta.custom_extension_handler import CustomExtensionHandler
 
 
 class CustomExtensionHandlersRequest(BaseRequestBuilder):

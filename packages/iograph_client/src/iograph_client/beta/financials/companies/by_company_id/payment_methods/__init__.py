@@ -15,8 +15,8 @@ if TYPE_CHECKING:
 	from .by_payment_method_id import ByPaymentMethodIdRequest
 	from ......request_adapter import HttpxRequestAdapter
 from iograph_models.beta.payment_method_collection_response import PaymentMethodCollectionResponse
-from iograph_models.beta.payment_method import PaymentMethod
 from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.beta.payment_method import PaymentMethod
 
 
 class PaymentMethodsRequest(BaseRequestBuilder):

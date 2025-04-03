@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field
 
 class AwsPolicy(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.awsPolicy"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.awsPolicy"] = Field(alias="@odata.type", default="#microsoft.graph.awsPolicy")
 	awsPolicyType: Optional[AwsPolicyType | str] = Field(alias="awsPolicyType", default=None,)
 	displayName: Optional[str] = Field(alias="displayName", default=None,)
 	externalId: Optional[str] = Field(alias="externalId", default=None,)

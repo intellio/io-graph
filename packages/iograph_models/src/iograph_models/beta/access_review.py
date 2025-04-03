@@ -8,7 +8,7 @@ from pydantic import BaseModel, Field
 
 class AccessReview(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.accessReview"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.accessReview"] = Field(alias="@odata.type", default="#microsoft.graph.accessReview")
 	businessFlowTemplateId: Optional[str] = Field(alias="businessFlowTemplateId", default=None,)
 	createdBy: Optional[Union[AuditUserIdentity]] = Field(alias="createdBy", default=None,discriminator="odata_type", )
 	description: Optional[str] = Field(alias="description", default=None,)

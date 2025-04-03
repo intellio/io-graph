@@ -20,8 +20,8 @@ if TYPE_CHECKING:
 	from .jobs import JobsRequest
 	from .connectors import ConnectorsRequest
 	from .....request_adapter import HttpxRequestAdapter
-from iograph_models.beta.printer import Printer
 from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.beta.printer import Printer
 
 
 class ByPrinterIdRequest(BaseRequestBuilder):

@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field
 
 class ServiceHealth(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.serviceHealth"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.serviceHealth"] = Field(alias="@odata.type", default="#microsoft.graph.serviceHealth")
 	service: Optional[str] = Field(alias="service", default=None,)
 	status: Optional[ServiceHealthStatus | str] = Field(alias="status", default=None,)
 	issues: Optional[list[ServiceHealthIssue]] = Field(alias="issues", default=None,)

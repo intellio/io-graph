@@ -7,7 +7,7 @@ from pydantic import BaseModel, Field
 
 class MicrosoftTunnelServerLogCollectionResponse(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.microsoftTunnelServerLogCollectionResponse"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.microsoftTunnelServerLogCollectionResponse"] = Field(alias="@odata.type", default="#microsoft.graph.microsoftTunnelServerLogCollectionResponse")
 	endDateTime: Optional[datetime] = Field(alias="endDateTime", default=None,)
 	expiryDateTime: Optional[datetime] = Field(alias="expiryDateTime", default=None,)
 	requestDateTime: Optional[datetime] = Field(alias="requestDateTime", default=None,)

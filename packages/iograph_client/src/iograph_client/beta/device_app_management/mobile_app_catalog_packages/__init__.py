@@ -14,9 +14,9 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_mobile_app_catalog_package_id import ByMobileAppCatalogPackageIdRequest
 	from ....request_adapter import HttpxRequestAdapter
+from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.beta.mobile_app_catalog_package_collection_response import MobileAppCatalogPackageCollectionResponse
 from iograph_models.beta.mobile_app_catalog_package import MobileAppCatalogPackage
-from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 
 
 class MobileAppCatalogPackagesRequest(BaseRequestBuilder):

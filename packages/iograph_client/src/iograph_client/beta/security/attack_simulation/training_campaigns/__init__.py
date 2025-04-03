@@ -15,8 +15,8 @@ if TYPE_CHECKING:
 	from .by_training_campaign_id import ByTrainingCampaignIdRequest
 	from .....request_adapter import HttpxRequestAdapter
 from iograph_models.beta.training_campaign import TrainingCampaign
-from iograph_models.beta.training_campaign_collection_response import TrainingCampaignCollectionResponse
 from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.beta.training_campaign_collection_response import TrainingCampaignCollectionResponse
 
 
 class TrainingCampaignsRequest(BaseRequestBuilder):

@@ -8,7 +8,7 @@ from pydantic import BaseModel, Field
 
 class Trending(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.trending"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.trending"] = Field(alias="@odata.type", default="#microsoft.graph.trending")
 	lastModifiedDateTime: Optional[datetime] = Field(alias="lastModifiedDateTime", default=None,)
 	resourceReference: Optional[ResourceReference] = Field(alias="resourceReference", default=None,)
 	resourceVisualization: Optional[ResourceVisualization] = Field(alias="resourceVisualization", default=None,)

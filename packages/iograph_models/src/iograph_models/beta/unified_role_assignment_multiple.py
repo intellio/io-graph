@@ -8,7 +8,7 @@ from pydantic import BaseModel, Field
 
 class UnifiedRoleAssignmentMultiple(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.unifiedRoleAssignmentMultiple"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.unifiedRoleAssignmentMultiple"] = Field(alias="@odata.type", default="#microsoft.graph.unifiedRoleAssignmentMultiple")
 	appScopeIds: Optional[list[str]] = Field(alias="appScopeIds", default=None,)
 	condition: Optional[str] = Field(alias="condition", default=None,)
 	description: Optional[str] = Field(alias="description", default=None,)

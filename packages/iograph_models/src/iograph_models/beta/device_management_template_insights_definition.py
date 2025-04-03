@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field
 
 class DeviceManagementTemplateInsightsDefinition(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.deviceManagementTemplateInsightsDefinition"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.deviceManagementTemplateInsightsDefinition"] = Field(alias="@odata.type", default="#microsoft.graph.deviceManagementTemplateInsightsDefinition")
 	settingInsights: Optional[list[DeviceManagementSettingInsightsDefinition]] = Field(alias="settingInsights", default=None,)
 
 from .device_management_setting_insights_definition import DeviceManagementSettingInsightsDefinition

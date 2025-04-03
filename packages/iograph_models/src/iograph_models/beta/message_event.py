@@ -7,7 +7,7 @@ from pydantic import BaseModel, Field
 
 class MessageEvent(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.messageEvent"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.messageEvent"] = Field(alias="@odata.type", default="#microsoft.graph.messageEvent")
 	dateTime: Optional[datetime] = Field(alias="dateTime", default=None,)
 	description: Optional[str] = Field(alias="description", default=None,)
 	eventType: Optional[MessageEventType | str] = Field(alias="eventType", default=None,)

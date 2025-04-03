@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field
 
 class SubscribeToToneOperation(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.subscribeToToneOperation"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.subscribeToToneOperation"] = Field(alias="@odata.type", default="#microsoft.graph.subscribeToToneOperation")
 	clientContext: Optional[str] = Field(alias="clientContext", default=None,)
 	resultInfo: Optional[ResultInfo] = Field(alias="resultInfo", default=None,)
 	status: Optional[OperationStatus | str] = Field(alias="status", default=None,)

@@ -12,7 +12,7 @@ class CallRecordsSmsLogRow(BaseModel):
 	userDisplayName: Optional[str] = Field(alias="userDisplayName", default=None,)
 	userId: Optional[str] = Field(alias="userId", default=None,)
 	userPrincipalName: Optional[str] = Field(alias="userPrincipalName", default=None,)
-	odata_type: Literal["#microsoft.graph.callRecords.smsLogRow"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.callRecords.smsLogRow"] = Field(alias="@odata.type", default="#microsoft.graph.callRecords.smsLogRow")
 	callCharge: Optional[int] = Field(alias="callCharge", default=None,)
 	currency: Optional[str] = Field(alias="currency", default=None,)
 	destinationContext: Optional[str] = Field(alias="destinationContext", default=None,)

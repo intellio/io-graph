@@ -15,8 +15,8 @@ if TYPE_CHECKING:
 	from .by_threat_assessment_result_id import ByThreatAssessmentResultIdRequest
 	from ......request_adapter import HttpxRequestAdapter
 from iograph_models.beta.threat_assessment_result_collection_response import ThreatAssessmentResultCollectionResponse
-from iograph_models.beta.threat_assessment_result import ThreatAssessmentResult
 from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.beta.threat_assessment_result import ThreatAssessmentResult
 
 
 class ResultsRequest(BaseRequestBuilder):

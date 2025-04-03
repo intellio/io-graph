@@ -15,8 +15,8 @@ if TYPE_CHECKING:
 	from .by_ai_user_id import ByAiUserIdRequest
 	from ....request_adapter import HttpxRequestAdapter
 from iograph_models.beta.ai_user import AiUser
-from iograph_models.beta.ai_user_collection_response import AiUserCollectionResponse
 from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.beta.ai_user_collection_response import AiUserCollectionResponse
 
 
 class UsersRequest(BaseRequestBuilder):

@@ -7,7 +7,7 @@ from pydantic import BaseModel, Field
 
 class TelecomExpenseManagementPartner(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.telecomExpenseManagementPartner"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.telecomExpenseManagementPartner"] = Field(alias="@odata.type", default="#microsoft.graph.telecomExpenseManagementPartner")
 	appAuthorized: Optional[bool] = Field(alias="appAuthorized", default=None,)
 	displayName: Optional[str] = Field(alias="displayName", default=None,)
 	enabled: Optional[bool] = Field(alias="enabled", default=None,)

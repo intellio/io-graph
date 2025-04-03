@@ -8,7 +8,7 @@ from pydantic import BaseModel, Field
 
 class RoleManagementAlert(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.roleManagementAlert"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.roleManagementAlert"] = Field(alias="@odata.type", default="#microsoft.graph.roleManagementAlert")
 	alertConfigurations: Optional[list[Annotated[Union[InvalidLicenseAlertConfiguration, NoMfaOnRoleActivationAlertConfiguration, RedundantAssignmentAlertConfiguration, RolesAssignedOutsidePrivilegedIdentityManagementAlertConfiguration, SequentialActivationRenewalsAlertConfiguration, StaleSignInAlertConfiguration, TooManyGlobalAdminsAssignedToTenantAlertConfiguration],Field(discriminator="odata_type")]]] = Field(alias="alertConfigurations", default=None,)
 	alertDefinitions: Optional[list[UnifiedRoleManagementAlertDefinition]] = Field(alias="alertDefinitions", default=None,)
 	alerts: Optional[list[UnifiedRoleManagementAlert]] = Field(alias="alerts", default=None,)

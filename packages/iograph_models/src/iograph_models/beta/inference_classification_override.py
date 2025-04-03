@@ -7,7 +7,7 @@ from pydantic import BaseModel, Field
 
 class InferenceClassificationOverride(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.inferenceClassificationOverride"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.inferenceClassificationOverride"] = Field(alias="@odata.type", default="#microsoft.graph.inferenceClassificationOverride")
 	classifyAs: Optional[InferenceClassificationType | str] = Field(alias="classifyAs", default=None,)
 	senderEmailAddress: Optional[Union[TypedEmailAddress]] = Field(alias="senderEmailAddress", default=None,discriminator="odata_type", )
 

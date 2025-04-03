@@ -7,7 +7,7 @@ from pydantic import BaseModel, Field
 
 class TermStoreTerm(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.termStore.term"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.termStore.term"] = Field(alias="@odata.type", default="#microsoft.graph.termStore.term")
 	createdDateTime: Optional[datetime] = Field(alias="createdDateTime", default=None,)
 	descriptions: Optional[list[TermStoreLocalizedDescription]] = Field(alias="descriptions", default=None,)
 	labels: Optional[list[TermStoreLocalizedLabel]] = Field(alias="labels", default=None,)

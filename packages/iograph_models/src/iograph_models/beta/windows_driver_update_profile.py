@@ -7,7 +7,7 @@ from pydantic import BaseModel, Field
 
 class WindowsDriverUpdateProfile(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.windowsDriverUpdateProfile"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.windowsDriverUpdateProfile"] = Field(alias="@odata.type", default="#microsoft.graph.windowsDriverUpdateProfile")
 	approvalType: Optional[DriverUpdateProfileApprovalType | str] = Field(alias="approvalType", default=None,)
 	createdDateTime: Optional[datetime] = Field(alias="createdDateTime", default=None,)
 	deploymentDeferralInDays: Optional[int] = Field(alias="deploymentDeferralInDays", default=None,)

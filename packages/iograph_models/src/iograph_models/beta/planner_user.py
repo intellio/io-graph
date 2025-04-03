@@ -8,7 +8,7 @@ from pydantic import BaseModel, Field
 
 class PlannerUser(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.plannerUser"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.plannerUser"] = Field(alias="@odata.type", default="#microsoft.graph.plannerUser")
 	favoritePlanReferences: Optional[PlannerFavoritePlanReferenceCollection] = Field(alias="favoritePlanReferences", default=None,)
 	recentPlanReferences: Optional[PlannerRecentPlanReferenceCollection] = Field(alias="recentPlanReferences", default=None,)
 	all: Optional[list[Annotated[Union[PlannerAssignedToTaskBoardTaskFormat, PlannerBucket, PlannerBucketTaskBoardTaskFormat, PlannerPlan, PlannerPlanDetails, PlannerProgressTaskBoardTaskFormat, BusinessScenarioTask, PlannerTaskDetails, PlannerUser],Field(discriminator="odata_type")]]] = Field(alias="all", default=None,)

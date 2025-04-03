@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field
 
 class PasskeyAuthenticationMethodTarget(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.passkeyAuthenticationMethodTarget"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.passkeyAuthenticationMethodTarget"] = Field(alias="@odata.type", default="#microsoft.graph.passkeyAuthenticationMethodTarget")
 	isRegistrationRequired: Optional[bool] = Field(alias="isRegistrationRequired", default=None,)
 	targetType: Optional[AuthenticationMethodTargetType | str] = Field(alias="targetType", default=None,)
 

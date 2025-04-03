@@ -8,7 +8,7 @@ from pydantic import BaseModel, Field
 
 class ExternallyAccessibleAwsStorageBucketFinding(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.externallyAccessibleAwsStorageBucketFinding"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.externallyAccessibleAwsStorageBucketFinding"] = Field(alias="@odata.type", default="#microsoft.graph.externallyAccessibleAwsStorageBucketFinding")
 	createdDateTime: Optional[datetime] = Field(alias="createdDateTime", default=None,)
 	accessibility: Optional[AwsAccessType | str] = Field(alias="accessibility", default=None,)
 	accountsWithAccess: Optional[Union[AllAccountsWithAccess, EnumeratedAccountsWithAccess]] = Field(alias="accountsWithAccess", default=None,discriminator="odata_type", )

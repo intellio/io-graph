@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field
 
 class SecurityAuditCoreRoot(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.security.auditCoreRoot"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.security.auditCoreRoot"] = Field(alias="@odata.type", default="#microsoft.graph.security.auditCoreRoot")
 	queries: Optional[list[SecurityAuditLogQuery]] = Field(alias="queries", default=None,)
 
 from .security_audit_log_query import SecurityAuditLogQuery

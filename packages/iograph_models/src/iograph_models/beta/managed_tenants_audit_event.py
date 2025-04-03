@@ -7,7 +7,7 @@ from pydantic import BaseModel, Field
 
 class ManagedTenantsAuditEvent(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.managedTenants.auditEvent"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.managedTenants.auditEvent"] = Field(alias="@odata.type", default="#microsoft.graph.managedTenants.auditEvent")
 	activity: Optional[str] = Field(alias="activity", default=None,)
 	activityDateTime: Optional[datetime] = Field(alias="activityDateTime", default=None,)
 	activityId: Optional[str] = Field(alias="activityId", default=None,)

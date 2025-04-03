@@ -14,9 +14,9 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_person_award_id import ByPersonAwardIdRequest
 	from ......request_adapter import HttpxRequestAdapter
+from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.beta.person_award import PersonAward
 from iograph_models.beta.person_award_collection_response import PersonAwardCollectionResponse
-from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 
 
 class AwardsRequest(BaseRequestBuilder):

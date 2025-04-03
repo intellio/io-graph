@@ -14,8 +14,8 @@ if TYPE_CHECKING:
 	from .provision import ProvisionRequest
 	from .approval_items import ApprovalItemsRequest
 	from ....request_adapter import HttpxRequestAdapter
-from iograph_models.beta.approval_solution import ApprovalSolution
 from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.beta.approval_solution import ApprovalSolution
 
 
 class ApprovalRequest(BaseRequestBuilder):

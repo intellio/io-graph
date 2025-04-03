@@ -7,7 +7,7 @@ from pydantic import BaseModel, Field
 
 class ManagedMobileApp(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.managedMobileApp"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.managedMobileApp"] = Field(alias="@odata.type", default="#microsoft.graph.managedMobileApp")
 	mobileAppIdentifier: Optional[Union[AndroidMobileAppIdentifier, IosMobileAppIdentifier, MacAppIdentifier, WindowsAppIdentifier]] = Field(alias="mobileAppIdentifier", default=None,discriminator="odata_type", )
 	version: Optional[str] = Field(alias="version", default=None,)
 

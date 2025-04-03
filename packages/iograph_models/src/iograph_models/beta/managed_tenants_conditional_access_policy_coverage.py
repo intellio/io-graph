@@ -7,7 +7,7 @@ from pydantic import BaseModel, Field
 
 class ManagedTenantsConditionalAccessPolicyCoverage(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.managedTenants.conditionalAccessPolicyCoverage"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.managedTenants.conditionalAccessPolicyCoverage"] = Field(alias="@odata.type", default="#microsoft.graph.managedTenants.conditionalAccessPolicyCoverage")
 	conditionalAccessPolicyState: Optional[str] = Field(alias="conditionalAccessPolicyState", default=None,)
 	latestPolicyModifiedDateTime: Optional[datetime] = Field(alias="latestPolicyModifiedDateTime", default=None,)
 	requiresDeviceCompliance: Optional[bool] = Field(alias="requiresDeviceCompliance", default=None,)

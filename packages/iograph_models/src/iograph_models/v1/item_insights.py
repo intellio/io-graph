@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field
 
 class ItemInsights(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.itemInsights"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.itemInsights"] = Field(alias="@odata.type", default="#microsoft.graph.itemInsights")
 	shared: Optional[list[SharedInsight]] = Field(alias="shared", default=None,)
 	trending: Optional[list[Trending]] = Field(alias="trending", default=None,)
 	used: Optional[list[UsedInsight]] = Field(alias="used", default=None,)

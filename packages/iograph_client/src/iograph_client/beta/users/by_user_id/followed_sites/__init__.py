@@ -16,8 +16,8 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_site_id import BySiteIdRequest
 	from .....request_adapter import HttpxRequestAdapter
-from iograph_models.beta.site_collection_response import SiteCollectionResponse
 from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.beta.site_collection_response import SiteCollectionResponse
 
 
 class FollowedSitesRequest(BaseRequestBuilder):

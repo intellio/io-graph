@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field
 
 class EdiscoveryCaseSettings(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.ediscovery.caseSettings"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.ediscovery.caseSettings"] = Field(alias="@odata.type", default="#microsoft.graph.ediscovery.caseSettings")
 	ocr: Optional[EdiscoveryOcrSettings] = Field(alias="ocr", default=None,)
 	redundancyDetection: Optional[EdiscoveryRedundancyDetectionSettings] = Field(alias="redundancyDetection", default=None,)
 	topicModeling: Optional[EdiscoveryTopicModelingSettings] = Field(alias="topicModeling", default=None,)

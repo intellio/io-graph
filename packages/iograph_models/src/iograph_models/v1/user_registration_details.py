@@ -7,7 +7,7 @@ from pydantic import BaseModel, Field
 
 class UserRegistrationDetails(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.userRegistrationDetails"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.userRegistrationDetails"] = Field(alias="@odata.type", default="#microsoft.graph.userRegistrationDetails")
 	isAdmin: Optional[bool] = Field(alias="isAdmin", default=None,)
 	isMfaCapable: Optional[bool] = Field(alias="isMfaCapable", default=None,)
 	isMfaRegistered: Optional[bool] = Field(alias="isMfaRegistered", default=None,)

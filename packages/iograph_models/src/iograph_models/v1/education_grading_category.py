@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field
 
 class EducationGradingCategory(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.educationGradingCategory"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.educationGradingCategory"] = Field(alias="@odata.type", default="#microsoft.graph.educationGradingCategory")
 	displayName: Optional[str] = Field(alias="displayName", default=None,)
 	percentageWeight: Optional[int] = Field(alias="percentageWeight", default=None,)
 

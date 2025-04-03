@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field
 
 class ServicePrincipalSignInActivity(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.servicePrincipalSignInActivity"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.servicePrincipalSignInActivity"] = Field(alias="@odata.type", default="#microsoft.graph.servicePrincipalSignInActivity")
 	appId: Optional[str] = Field(alias="appId", default=None,)
 	applicationAuthenticationClientSignInActivity: Optional[SignInActivity] = Field(alias="applicationAuthenticationClientSignInActivity", default=None,)
 	applicationAuthenticationResourceSignInActivity: Optional[SignInActivity] = Field(alias="applicationAuthenticationResourceSignInActivity", default=None,)

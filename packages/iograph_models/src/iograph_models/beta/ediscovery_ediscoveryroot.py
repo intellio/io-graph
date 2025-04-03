@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field
 
 class EdiscoveryEdiscoveryroot(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.ediscovery.ediscoveryroot"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.ediscovery.ediscoveryroot"] = Field(alias="@odata.type", default="#microsoft.graph.ediscovery.ediscoveryroot")
 	cases: Optional[list[EdiscoveryCase]] = Field(alias="cases", default=None,)
 
 from .ediscovery_case import EdiscoveryCase

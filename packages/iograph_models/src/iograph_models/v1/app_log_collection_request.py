@@ -7,7 +7,7 @@ from pydantic import BaseModel, Field
 
 class AppLogCollectionRequest(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.appLogCollectionRequest"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.appLogCollectionRequest"] = Field(alias="@odata.type", default="#microsoft.graph.appLogCollectionRequest")
 	completedDateTime: Optional[datetime] = Field(alias="completedDateTime", default=None,)
 	customLogFolders: Optional[list[str]] = Field(alias="customLogFolders", default=None,)
 	errorMessage: Optional[str] = Field(alias="errorMessage", default=None,)

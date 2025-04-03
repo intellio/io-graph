@@ -7,7 +7,7 @@ from pydantic import BaseModel, Field
 
 class ImportedWindowsAutopilotDeviceIdentityUpload(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.importedWindowsAutopilotDeviceIdentityUpload"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.importedWindowsAutopilotDeviceIdentityUpload"] = Field(alias="@odata.type", default="#microsoft.graph.importedWindowsAutopilotDeviceIdentityUpload")
 	createdDateTimeUtc: Optional[datetime] = Field(alias="createdDateTimeUtc", default=None,)
 	status: Optional[ImportedWindowsAutopilotDeviceIdentityUploadStatus | str] = Field(alias="status", default=None,)
 	deviceIdentities: Optional[list[ImportedWindowsAutopilotDeviceIdentity]] = Field(alias="deviceIdentities", default=None,)

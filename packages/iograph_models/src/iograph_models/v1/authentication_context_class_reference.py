@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field
 
 class AuthenticationContextClassReference(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.authenticationContextClassReference"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.authenticationContextClassReference"] = Field(alias="@odata.type", default="#microsoft.graph.authenticationContextClassReference")
 	description: Optional[str] = Field(alias="description", default=None,)
 	displayName: Optional[str] = Field(alias="displayName", default=None,)
 	isAvailable: Optional[bool] = Field(alias="isAvailable", default=None,)

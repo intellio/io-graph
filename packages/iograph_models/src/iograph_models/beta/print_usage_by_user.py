@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field
 
 class PrintUsageByUser(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.printUsageByUser"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.printUsageByUser"] = Field(alias="@odata.type", default="#microsoft.graph.printUsageByUser")
 	blackAndWhitePageCount: Optional[int] = Field(alias="blackAndWhitePageCount", default=None,)
 	colorPageCount: Optional[int] = Field(alias="colorPageCount", default=None,)
 	completedBlackAndWhiteJobCount: Optional[int] = Field(alias="completedBlackAndWhiteJobCount", default=None,)

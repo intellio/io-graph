@@ -14,9 +14,9 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_item_patent_id import ByItemPatentIdRequest
 	from ......request_adapter import HttpxRequestAdapter
-from iograph_models.beta.item_patent_collection_response import ItemPatentCollectionResponse
 from iograph_models.beta.item_patent import ItemPatent
 from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.beta.item_patent_collection_response import ItemPatentCollectionResponse
 
 
 class PatentsRequest(BaseRequestBuilder):

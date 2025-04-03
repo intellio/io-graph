@@ -7,7 +7,7 @@ from pydantic import BaseModel, Field
 
 class ManagedTenantsManagedTenantApiNotification(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.managedTenants.managedTenantApiNotification"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.managedTenants.managedTenantApiNotification"] = Field(alias="@odata.type", default="#microsoft.graph.managedTenants.managedTenantApiNotification")
 	createdByUserId: Optional[str] = Field(alias="createdByUserId", default=None,)
 	createdDateTime: Optional[datetime] = Field(alias="createdDateTime", default=None,)
 	isAcknowledged: Optional[bool] = Field(alias="isAcknowledged", default=None,)

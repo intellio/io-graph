@@ -7,7 +7,7 @@ from pydantic import BaseModel, Field
 
 class OnPremisesConditionalAccessSettings(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.onPremisesConditionalAccessSettings"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.onPremisesConditionalAccessSettings"] = Field(alias="@odata.type", default="#microsoft.graph.onPremisesConditionalAccessSettings")
 	enabled: Optional[bool] = Field(alias="enabled", default=None,)
 	excludedGroups: Optional[list[UUID]] = Field(alias="excludedGroups", default=None,)
 	includedGroups: Optional[list[UUID]] = Field(alias="includedGroups", default=None,)

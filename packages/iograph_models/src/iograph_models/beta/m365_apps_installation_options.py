@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field
 
 class M365AppsInstallationOptions(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.m365AppsInstallationOptions"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.m365AppsInstallationOptions"] = Field(alias="@odata.type", default="#microsoft.graph.m365AppsInstallationOptions")
 	appsForMac: Optional[AppsInstallationOptionsForMac] = Field(alias="appsForMac", default=None,)
 	appsForWindows: Optional[AppsInstallationOptionsForWindows] = Field(alias="appsForWindows", default=None,)
 	updateChannel: Optional[AppsUpdateChannelType | str] = Field(alias="updateChannel", default=None,)

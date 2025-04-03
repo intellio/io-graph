@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field
 
 class AppConsentRequest(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.appConsentRequest"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.appConsentRequest"] = Field(alias="@odata.type", default="#microsoft.graph.appConsentRequest")
 	appDisplayName: Optional[str] = Field(alias="appDisplayName", default=None,)
 	appId: Optional[str] = Field(alias="appId", default=None,)
 	pendingScopes: Optional[list[AppConsentRequestScope]] = Field(alias="pendingScopes", default=None,)

@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field
 
 class SecurityTriggerTypesRoot(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.security.triggerTypesRoot"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.security.triggerTypesRoot"] = Field(alias="@odata.type", default="#microsoft.graph.security.triggerTypesRoot")
 	retentionEventTypes: Optional[list[SecurityRetentionEventType]] = Field(alias="retentionEventTypes", default=None,)
 
 from .security_retention_event_type import SecurityRetentionEventType

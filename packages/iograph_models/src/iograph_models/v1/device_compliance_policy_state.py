@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field
 
 class DeviceCompliancePolicyState(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.deviceCompliancePolicyState"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.deviceCompliancePolicyState"] = Field(alias="@odata.type", default="#microsoft.graph.deviceCompliancePolicyState")
 	displayName: Optional[str] = Field(alias="displayName", default=None,)
 	platformType: Optional[PolicyPlatformType | str] = Field(alias="platformType", default=None,)
 	settingCount: Optional[int] = Field(alias="settingCount", default=None,)

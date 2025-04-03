@@ -14,8 +14,8 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_platform_credential_authentication_method_id import ByPlatformCredentialAuthenticationMethodIdRequest
 	from ......request_adapter import HttpxRequestAdapter
-from iograph_models.beta.platform_credential_authentication_method_collection_response import PlatformCredentialAuthenticationMethodCollectionResponse
 from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.beta.platform_credential_authentication_method_collection_response import PlatformCredentialAuthenticationMethodCollectionResponse
 
 
 class PlatformCredentialMethodsRequest(BaseRequestBuilder):

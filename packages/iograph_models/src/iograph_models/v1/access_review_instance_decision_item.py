@@ -9,7 +9,7 @@ from pydantic import BaseModel, Field
 
 class AccessReviewInstanceDecisionItem(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.accessReviewInstanceDecisionItem"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.accessReviewInstanceDecisionItem"] = Field(alias="@odata.type", default="#microsoft.graph.accessReviewInstanceDecisionItem")
 	accessReviewId: Optional[str] = Field(alias="accessReviewId", default=None,)
 	appliedBy: Optional[UserIdentity] = Field(alias="appliedBy", default=None,)
 	appliedDateTime: Optional[datetime] = Field(alias="appliedDateTime", default=None,)

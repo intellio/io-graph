@@ -7,7 +7,7 @@ from pydantic import BaseModel, Field
 
 class Subscription(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.subscription"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.subscription"] = Field(alias="@odata.type", default="#microsoft.graph.subscription")
 	applicationId: Optional[str] = Field(alias="applicationId", default=None,)
 	changeType: Optional[str] = Field(alias="changeType", default=None,)
 	clientState: Optional[str] = Field(alias="clientState", default=None,)

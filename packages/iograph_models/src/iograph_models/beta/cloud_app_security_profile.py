@@ -7,7 +7,7 @@ from pydantic import BaseModel, Field
 
 class CloudAppSecurityProfile(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.cloudAppSecurityProfile"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.cloudAppSecurityProfile"] = Field(alias="@odata.type", default="#microsoft.graph.cloudAppSecurityProfile")
 	azureSubscriptionId: Optional[str] = Field(alias="azureSubscriptionId", default=None,)
 	azureTenantId: Optional[str] = Field(alias="azureTenantId", default=None,)
 	createdDateTime: Optional[datetime] = Field(alias="createdDateTime", default=None,)

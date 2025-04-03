@@ -14,9 +14,9 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_teamwork_device_id import ByTeamworkDeviceIdRequest
 	from ....request_adapter import HttpxRequestAdapter
+from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.beta.teamwork_device import TeamworkDevice
 from iograph_models.beta.teamwork_device_collection_response import TeamworkDeviceCollectionResponse
-from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 
 
 class DevicesRequest(BaseRequestBuilder):

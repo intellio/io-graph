@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field
 
 class InsightSummary(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.insightSummary"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.insightSummary"] = Field(alias="@odata.type", default="#microsoft.graph.insightSummary")
 	activeUsers: Optional[int] = Field(alias="activeUsers", default=None,)
 	appId: Optional[str] = Field(alias="appId", default=None,)
 	authenticationCompletions: Optional[int] = Field(alias="authenticationCompletions", default=None,)

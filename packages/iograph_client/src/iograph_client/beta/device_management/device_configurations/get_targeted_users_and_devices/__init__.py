@@ -11,9 +11,9 @@ from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:
 	from .....request_adapter import HttpxRequestAdapter
-from iograph_models.beta.get_targeted_users_and_devices_post_request import Get_targeted_users_and_devicesPostRequest
 from iograph_models.beta.get_targeted_users_and_devices_post_response import Get_targeted_users_and_devicesPostResponse
 from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.beta.get_targeted_users_and_devices_post_request import Get_targeted_users_and_devicesPostRequest
 
 
 class GetTargetedUsersAndDevicesRequest(BaseRequestBuilder):

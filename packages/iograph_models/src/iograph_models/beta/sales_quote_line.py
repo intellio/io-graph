@@ -7,7 +7,7 @@ from pydantic import BaseModel, Field
 
 class SalesQuoteLine(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.salesQuoteLine"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.salesQuoteLine"] = Field(alias="@odata.type", default="#microsoft.graph.salesQuoteLine")
 	accountId: Optional[UUID] = Field(alias="accountId", default=None,)
 	amountExcludingTax: Optional[int] = Field(alias="amountExcludingTax", default=None,)
 	amountIncludingTax: Optional[int] = Field(alias="amountIncludingTax", default=None,)

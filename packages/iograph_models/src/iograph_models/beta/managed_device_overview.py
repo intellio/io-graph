@@ -7,7 +7,7 @@ from pydantic import BaseModel, Field
 
 class ManagedDeviceOverview(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.managedDeviceOverview"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.managedDeviceOverview"] = Field(alias="@odata.type", default="#microsoft.graph.managedDeviceOverview")
 	deviceExchangeAccessStateSummary: Optional[DeviceExchangeAccessStateSummary] = Field(alias="deviceExchangeAccessStateSummary", default=None,)
 	deviceOperatingSystemSummary: Optional[DeviceOperatingSystemSummary] = Field(alias="deviceOperatingSystemSummary", default=None,)
 	dualEnrolledDeviceCount: Optional[int] = Field(alias="dualEnrolledDeviceCount", default=None,)

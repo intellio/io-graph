@@ -7,7 +7,7 @@ from pydantic import BaseModel, Field
 
 class DeviceManagementPartner(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.deviceManagementPartner"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.deviceManagementPartner"] = Field(alias="@odata.type", default="#microsoft.graph.deviceManagementPartner")
 	displayName: Optional[str] = Field(alias="displayName", default=None,)
 	groupsRequiringPartnerEnrollment: Optional[list[DeviceManagementPartnerAssignment]] = Field(alias="groupsRequiringPartnerEnrollment", default=None,)
 	isConfigured: Optional[bool] = Field(alias="isConfigured", default=None,)

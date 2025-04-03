@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field
 
 class ManagedTenantsManagementIntent(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.managedTenants.managementIntent"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.managedTenants.managementIntent"] = Field(alias="@odata.type", default="#microsoft.graph.managedTenants.managementIntent")
 	displayName: Optional[str] = Field(alias="displayName", default=None,)
 	isGlobal: Optional[bool] = Field(alias="isGlobal", default=None,)
 	managementTemplates: Optional[list[ManagedTenantsManagementTemplateDetailedInfo]] = Field(alias="managementTemplates", default=None,)

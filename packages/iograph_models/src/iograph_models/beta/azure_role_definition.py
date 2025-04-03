@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field
 
 class AzureRoleDefinition(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.azureRoleDefinition"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.azureRoleDefinition"] = Field(alias="@odata.type", default="#microsoft.graph.azureRoleDefinition")
 	assignableScopes: Optional[list[str]] = Field(alias="assignableScopes", default=None,)
 	azureRoleDefinitionType: Optional[AzureRoleDefinitionType | str] = Field(alias="azureRoleDefinitionType", default=None,)
 	displayName: Optional[str] = Field(alias="displayName", default=None,)

@@ -8,7 +8,7 @@ from pydantic import BaseModel, Field
 
 class TeamworkDevice(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.teamworkDevice"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.teamworkDevice"] = Field(alias="@odata.type", default="#microsoft.graph.teamworkDevice")
 	activityState: Optional[TeamworkDeviceActivityState | str] = Field(alias="activityState", default=None,)
 	companyAssetTag: Optional[str] = Field(alias="companyAssetTag", default=None,)
 	createdBy: Optional[Union[AiInteractionMentionedIdentitySet, ApprovalIdentitySet, ChatMessageFromIdentitySet, ChatMessageMentionedIdentitySet, ChatMessageReactionIdentitySet, CommunicationsIdentitySet, SharePointIdentitySet]] = Field(alias="createdBy", default=None,discriminator="odata_type", )

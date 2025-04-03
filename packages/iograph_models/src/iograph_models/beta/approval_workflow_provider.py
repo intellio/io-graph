@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field
 
 class ApprovalWorkflowProvider(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.approvalWorkflowProvider"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.approvalWorkflowProvider"] = Field(alias="@odata.type", default="#microsoft.graph.approvalWorkflowProvider")
 	displayName: Optional[str] = Field(alias="displayName", default=None,)
 	businessFlows: Optional[list[BusinessFlow]] = Field(alias="businessFlows", default=None,)
 	businessFlowsWithRequestsAwaitingMyDecision: Optional[list[BusinessFlow]] = Field(alias="businessFlowsWithRequestsAwaitingMyDecision", default=None,)

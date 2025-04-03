@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field
 
 class TermsOfUseContainer(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.termsOfUseContainer"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.termsOfUseContainer"] = Field(alias="@odata.type", default="#microsoft.graph.termsOfUseContainer")
 	agreementAcceptances: Optional[list[AgreementAcceptance]] = Field(alias="agreementAcceptances", default=None,)
 	agreements: Optional[list[Agreement]] = Field(alias="agreements", default=None,)
 

@@ -8,7 +8,7 @@ from pydantic import BaseModel, Field
 
 class PermissionsCreepIndexDistribution(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.permissionsCreepIndexDistribution"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.permissionsCreepIndexDistribution"] = Field(alias="@odata.type", default="#microsoft.graph.permissionsCreepIndexDistribution")
 	createdDateTime: Optional[datetime] = Field(alias="createdDateTime", default=None,)
 	highRiskProfile: Optional[RiskProfile] = Field(alias="highRiskProfile", default=None,)
 	lowRiskProfile: Optional[RiskProfile] = Field(alias="lowRiskProfile", default=None,)

@@ -7,7 +7,7 @@ from pydantic import BaseModel, Field
 
 class ManagedTenantsTenantTag(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.managedTenants.tenantTag"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.managedTenants.tenantTag"] = Field(alias="@odata.type", default="#microsoft.graph.managedTenants.tenantTag")
 	createdByUserId: Optional[str] = Field(alias="createdByUserId", default=None,)
 	createdDateTime: Optional[datetime] = Field(alias="createdDateTime", default=None,)
 	deletedDateTime: Optional[datetime] = Field(alias="deletedDateTime", default=None,)

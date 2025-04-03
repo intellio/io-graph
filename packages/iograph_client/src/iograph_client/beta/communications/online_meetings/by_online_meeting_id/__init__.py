@@ -25,8 +25,8 @@ if TYPE_CHECKING:
 	from .alternative_recording import AlternativeRecordingRequest
 	from .ai_insights import AiInsightsRequest
 	from .....request_adapter import HttpxRequestAdapter
-from iograph_models.beta.online_meeting import OnlineMeeting
 from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.beta.online_meeting import OnlineMeeting
 
 
 class ByOnlineMeetingIdRequest(BaseRequestBuilder):

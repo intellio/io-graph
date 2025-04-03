@@ -15,8 +15,8 @@ if TYPE_CHECKING:
 	from .by_ios_vpp_app_assigned_license_id import ByIosVppAppAssignedLicenseIdRequest
 	from .......request_adapter import HttpxRequestAdapter
 from iograph_models.beta.ios_vpp_app_assigned_license import IosVppAppAssignedLicense
-from iograph_models.beta.ios_vpp_app_assigned_license_collection_response import IosVppAppAssignedLicenseCollectionResponse
 from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.beta.ios_vpp_app_assigned_license_collection_response import IosVppAppAssignedLicenseCollectionResponse
 
 
 class AssignedLicensesRequest(BaseRequestBuilder):

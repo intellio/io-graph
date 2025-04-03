@@ -7,7 +7,7 @@ from pydantic import BaseModel, Field
 
 class DirectoryDefinition(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.directoryDefinition"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.directoryDefinition"] = Field(alias="@odata.type", default="#microsoft.graph.directoryDefinition")
 	discoverabilities: Optional[DirectoryDefinitionDiscoverabilities | str] = Field(alias="discoverabilities", default=None,)
 	discoveryDateTime: Optional[datetime] = Field(alias="discoveryDateTime", default=None,)
 	name: Optional[str] = Field(alias="name", default=None,)

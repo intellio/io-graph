@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field
 
 class TeamsAppSettings(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.teamsAppSettings"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.teamsAppSettings"] = Field(alias="@odata.type", default="#microsoft.graph.teamsAppSettings")
 	allowUserRequestsForAppAccess: Optional[bool] = Field(alias="allowUserRequestsForAppAccess", default=None,)
 	customAppSettings: Optional[CustomAppSettings] = Field(alias="customAppSettings", default=None,)
 	isChatResourceSpecificConsentEnabled: Optional[bool] = Field(alias="isChatResourceSpecificConsentEnabled", default=None,)

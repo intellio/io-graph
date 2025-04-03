@@ -15,8 +15,8 @@ if TYPE_CHECKING:
 	from .by_data_source_id import ByDataSourceIdRequest
 	from .........request_adapter import HttpxRequestAdapter
 from iograph_models.v1.security_data_source_collection_response import SecurityDataSourceCollectionResponse
-from iograph_models.v1.security_data_source import SecurityDataSource
 from iograph_models.v1.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.v1.security_data_source import SecurityDataSource
 
 
 class AdditionalSourcesRequest(BaseRequestBuilder):

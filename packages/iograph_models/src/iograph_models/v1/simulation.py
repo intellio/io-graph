@@ -8,7 +8,7 @@ from pydantic import BaseModel, Field
 
 class Simulation(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.simulation"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.simulation"] = Field(alias="@odata.type", default="#microsoft.graph.simulation")
 	attackTechnique: Optional[SimulationAttackTechnique | str] = Field(alias="attackTechnique", default=None,)
 	attackType: Optional[SimulationAttackType | str] = Field(alias="attackType", default=None,)
 	automationId: Optional[str] = Field(alias="automationId", default=None,)

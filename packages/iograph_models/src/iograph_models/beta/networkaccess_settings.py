@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field
 
 class NetworkaccessSettings(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.networkaccess.settings"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.networkaccess.settings"] = Field(alias="@odata.type", default="#microsoft.graph.networkaccess.settings")
 	conditionalAccess: Optional[NetworkaccessConditionalAccessSettings] = Field(alias="conditionalAccess", default=None,)
 	crossTenantAccess: Optional[NetworkaccessCrossTenantAccessSettings] = Field(alias="crossTenantAccess", default=None,)
 	enrichedAuditLogs: Optional[NetworkaccessEnrichedAuditLogs] = Field(alias="enrichedAuditLogs", default=None,)

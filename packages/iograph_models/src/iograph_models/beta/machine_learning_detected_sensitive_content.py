@@ -11,7 +11,7 @@ class MachineLearningDetectedSensitiveContent(BaseModel):
 	id: Optional[UUID] = Field(alias="id", default=None,)
 	recommendedConfidence: Optional[int] = Field(alias="recommendedConfidence", default=None,)
 	uniqueCount: Optional[int] = Field(alias="uniqueCount", default=None,)
-	odata_type: Literal["#microsoft.graph.machineLearningDetectedSensitiveContent"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.machineLearningDetectedSensitiveContent"] = Field(alias="@odata.type", default="#microsoft.graph.machineLearningDetectedSensitiveContent")
 	classificationAttributes: Optional[list[ClassificationAttribute]] = Field(alias="classificationAttributes", default=None,)
 	classificationMethod: Optional[ClassificationMethod | str] = Field(alias="classificationMethod", default=None,)
 	matches: Optional[list[SensitiveContentLocation]] = Field(alias="matches", default=None,)

@@ -8,7 +8,7 @@ from pydantic import BaseModel, Field
 
 class TeamTemplateDefinition(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.teamTemplateDefinition"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.teamTemplateDefinition"] = Field(alias="@odata.type", default="#microsoft.graph.teamTemplateDefinition")
 	audience: Optional[TeamTemplateAudience | str] = Field(alias="audience", default=None,)
 	categories: Optional[list[str]] = Field(alias="categories", default=None,)
 	description: Optional[str] = Field(alias="description", default=None,)

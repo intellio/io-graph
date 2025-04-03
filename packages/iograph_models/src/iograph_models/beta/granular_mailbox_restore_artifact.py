@@ -7,7 +7,7 @@ from pydantic import BaseModel, Field
 
 class GranularMailboxRestoreArtifact(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.granularMailboxRestoreArtifact"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.granularMailboxRestoreArtifact"] = Field(alias="@odata.type", default="#microsoft.graph.granularMailboxRestoreArtifact")
 	completionDateTime: Optional[datetime] = Field(alias="completionDateTime", default=None,)
 	destinationType: Optional[DestinationType | str] = Field(alias="destinationType", default=None,)
 	error: Optional[PublicError] = Field(alias="error", default=None,)

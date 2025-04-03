@@ -11,8 +11,8 @@ from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:
 	from ......request_adapter import HttpxRequestAdapter
-from iograph_models.beta.networkaccess_update_policy_rules_post_request import Networkaccess_update_policy_rulesPostRequest
 from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.beta.networkaccess_update_policy_rules_post_request import Networkaccess_update_policy_rulesPostRequest
 
 
 class NetworkaccessUpdatePolicyRulesRequest(BaseRequestBuilder):

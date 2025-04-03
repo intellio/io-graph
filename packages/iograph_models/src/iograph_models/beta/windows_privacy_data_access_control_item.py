@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field
 
 class WindowsPrivacyDataAccessControlItem(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.windowsPrivacyDataAccessControlItem"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.windowsPrivacyDataAccessControlItem"] = Field(alias="@odata.type", default="#microsoft.graph.windowsPrivacyDataAccessControlItem")
 	accessLevel: Optional[WindowsPrivacyDataAccessLevel | str] = Field(alias="accessLevel", default=None,)
 	appDisplayName: Optional[str] = Field(alias="appDisplayName", default=None,)
 	appPackageFamilyName: Optional[str] = Field(alias="appPackageFamilyName", default=None,)

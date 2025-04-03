@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field
 
 class CredentialUsageSummary(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.credentialUsageSummary"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.credentialUsageSummary"] = Field(alias="@odata.type", default="#microsoft.graph.credentialUsageSummary")
 	authMethod: Optional[UsageAuthMethod | str] = Field(alias="authMethod", default=None,)
 	failureActivityCount: Optional[int] = Field(alias="failureActivityCount", default=None,)
 	feature: Optional[FeatureType | str] = Field(alias="feature", default=None,)

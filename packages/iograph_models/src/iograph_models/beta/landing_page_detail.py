@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field
 
 class LandingPageDetail(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.landingPageDetail"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.landingPageDetail"] = Field(alias="@odata.type", default="#microsoft.graph.landingPageDetail")
 	content: Optional[str] = Field(alias="content", default=None,)
 	isDefaultLangauge: Optional[bool] = Field(alias="isDefaultLangauge", default=None,)
 	language: Optional[str] = Field(alias="language", default=None,)

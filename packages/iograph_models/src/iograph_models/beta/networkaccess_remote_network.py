@@ -7,7 +7,7 @@ from pydantic import BaseModel, Field
 
 class NetworkaccessRemoteNetwork(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.networkaccess.remoteNetwork"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.networkaccess.remoteNetwork"] = Field(alias="@odata.type", default="#microsoft.graph.networkaccess.remoteNetwork")
 	lastModifiedDateTime: Optional[datetime] = Field(alias="lastModifiedDateTime", default=None,)
 	name: Optional[str] = Field(alias="name", default=None,)
 	region: Optional[NetworkaccessRegion | str] = Field(alias="region", default=None,)

@@ -9,7 +9,7 @@ from pydantic import BaseModel, Field
 
 class CallRecordsCallRecord(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.callRecords.callRecord"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.callRecords.callRecord"] = Field(alias="@odata.type", default="#microsoft.graph.callRecords.callRecord")
 	endDateTime: Optional[datetime] = Field(alias="endDateTime", default=None,)
 	joinWebUrl: Optional[str] = Field(alias="joinWebUrl", default=None,)
 	lastModifiedDateTime: Optional[datetime] = Field(alias="lastModifiedDateTime", default=None,)

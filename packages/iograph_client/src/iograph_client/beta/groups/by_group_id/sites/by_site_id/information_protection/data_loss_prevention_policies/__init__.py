@@ -16,8 +16,8 @@ if TYPE_CHECKING:
 	from .by_data_loss_prevention_policy_id import ByDataLossPreventionPolicyIdRequest
 	from ........request_adapter import HttpxRequestAdapter
 from iograph_models.beta.data_loss_prevention_policy_collection_response import DataLossPreventionPolicyCollectionResponse
-from iograph_models.beta.data_loss_prevention_policy import DataLossPreventionPolicy
 from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.beta.data_loss_prevention_policy import DataLossPreventionPolicy
 
 
 class DataLossPreventionPoliciesRequest(BaseRequestBuilder):

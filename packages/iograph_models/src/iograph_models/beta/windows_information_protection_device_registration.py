@@ -7,7 +7,7 @@ from pydantic import BaseModel, Field
 
 class WindowsInformationProtectionDeviceRegistration(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.windowsInformationProtectionDeviceRegistration"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.windowsInformationProtectionDeviceRegistration"] = Field(alias="@odata.type", default="#microsoft.graph.windowsInformationProtectionDeviceRegistration")
 	deviceMacAddress: Optional[str] = Field(alias="deviceMacAddress", default=None,)
 	deviceName: Optional[str] = Field(alias="deviceName", default=None,)
 	deviceRegistrationId: Optional[str] = Field(alias="deviceRegistrationId", default=None,)

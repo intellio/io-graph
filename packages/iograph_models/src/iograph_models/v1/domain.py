@@ -8,7 +8,7 @@ from pydantic import BaseModel, Field
 
 class Domain(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.domain"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.domain"] = Field(alias="@odata.type", default="#microsoft.graph.domain")
 	authenticationType: Optional[str] = Field(alias="authenticationType", default=None,)
 	availabilityStatus: Optional[str] = Field(alias="availabilityStatus", default=None,)
 	isAdminManaged: Optional[bool] = Field(alias="isAdminManaged", default=None,)

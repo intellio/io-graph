@@ -7,7 +7,7 @@ from pydantic import BaseModel, Field
 
 class UserExperienceAnalyticsDeviceStartupHistory(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.userExperienceAnalyticsDeviceStartupHistory"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.userExperienceAnalyticsDeviceStartupHistory"] = Field(alias="@odata.type", default="#microsoft.graph.userExperienceAnalyticsDeviceStartupHistory")
 	coreBootTimeInMs: Optional[int] = Field(alias="coreBootTimeInMs", default=None,)
 	coreLoginTimeInMs: Optional[int] = Field(alias="coreLoginTimeInMs", default=None,)
 	deviceId: Optional[str] = Field(alias="deviceId", default=None,)

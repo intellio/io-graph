@@ -7,7 +7,7 @@ from pydantic import BaseModel, Field
 
 class CompanySubscription(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.companySubscription"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.companySubscription"] = Field(alias="@odata.type", default="#microsoft.graph.companySubscription")
 	commerceSubscriptionId: Optional[str] = Field(alias="commerceSubscriptionId", default=None,)
 	createdDateTime: Optional[datetime] = Field(alias="createdDateTime", default=None,)
 	isTrial: Optional[bool] = Field(alias="isTrial", default=None,)

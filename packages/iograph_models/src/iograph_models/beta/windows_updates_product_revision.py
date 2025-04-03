@@ -8,7 +8,7 @@ from pydantic import BaseModel, Field
 
 class WindowsUpdatesProductRevision(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.windowsUpdates.productRevision"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.windowsUpdates.productRevision"] = Field(alias="@odata.type", default="#microsoft.graph.windowsUpdates.productRevision")
 	displayName: Optional[str] = Field(alias="displayName", default=None,)
 	isHotpatchUpdate: Optional[bool] = Field(alias="isHotpatchUpdate", default=None,)
 	osBuild: Optional[WindowsUpdatesBuildVersionDetails] = Field(alias="osBuild", default=None,)

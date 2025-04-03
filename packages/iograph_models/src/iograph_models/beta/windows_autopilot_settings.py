@@ -7,7 +7,7 @@ from pydantic import BaseModel, Field
 
 class WindowsAutopilotSettings(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.windowsAutopilotSettings"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.windowsAutopilotSettings"] = Field(alias="@odata.type", default="#microsoft.graph.windowsAutopilotSettings")
 	lastManualSyncTriggerDateTime: Optional[datetime] = Field(alias="lastManualSyncTriggerDateTime", default=None,)
 	lastSyncDateTime: Optional[datetime] = Field(alias="lastSyncDateTime", default=None,)
 	syncStatus: Optional[WindowsAutopilotSyncStatus | str] = Field(alias="syncStatus", default=None,)

@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field
 
 class MeetingRegistrationQuestion(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.meetingRegistrationQuestion"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.meetingRegistrationQuestion"] = Field(alias="@odata.type", default="#microsoft.graph.meetingRegistrationQuestion")
 	answerInputType: Optional[AnswerInputType | str] = Field(alias="answerInputType", default=None,)
 	answerOptions: Optional[list[str]] = Field(alias="answerOptions", default=None,)
 	displayName: Optional[str] = Field(alias="displayName", default=None,)

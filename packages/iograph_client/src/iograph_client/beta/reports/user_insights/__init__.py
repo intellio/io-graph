@@ -13,8 +13,8 @@ if TYPE_CHECKING:
 	from .monthly import MonthlyRequest
 	from .daily import DailyRequest
 	from ....request_adapter import HttpxRequestAdapter
-from iograph_models.beta.user_insights_root import UserInsightsRoot
 from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.beta.user_insights_root import UserInsightsRoot
 
 
 class UserInsightsRequest(BaseRequestBuilder):

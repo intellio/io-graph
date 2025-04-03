@@ -8,7 +8,7 @@ from pydantic import BaseModel, Field
 
 class PlannerTask(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.plannerTask"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.plannerTask"] = Field(alias="@odata.type", default="#microsoft.graph.plannerTask")
 	activeChecklistItemCount: Optional[int] = Field(alias="activeChecklistItemCount", default=None,)
 	appliedCategories: Optional[PlannerAppliedCategories] = Field(alias="appliedCategories", default=None,)
 	assigneePriority: Optional[str] = Field(alias="assigneePriority", default=None,)

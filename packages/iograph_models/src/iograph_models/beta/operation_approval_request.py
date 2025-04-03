@@ -8,7 +8,7 @@ from pydantic import BaseModel, Field
 
 class OperationApprovalRequest(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.operationApprovalRequest"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.operationApprovalRequest"] = Field(alias="@odata.type", default="#microsoft.graph.operationApprovalRequest")
 	approvalJustification: Optional[str] = Field(alias="approvalJustification", default=None,)
 	approver: Optional[Union[AiInteractionMentionedIdentitySet, ApprovalIdentitySet, ChatMessageFromIdentitySet, ChatMessageMentionedIdentitySet, ChatMessageReactionIdentitySet, CommunicationsIdentitySet, SharePointIdentitySet]] = Field(alias="approver", default=None,discriminator="odata_type", )
 	expirationDateTime: Optional[datetime] = Field(alias="expirationDateTime", default=None,)

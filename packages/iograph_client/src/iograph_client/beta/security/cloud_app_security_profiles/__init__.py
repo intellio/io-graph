@@ -14,9 +14,9 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_cloud_app_security_profile_id import ByCloudAppSecurityProfileIdRequest
 	from ....request_adapter import HttpxRequestAdapter
-from iograph_models.beta.cloud_app_security_profile import CloudAppSecurityProfile
 from iograph_models.beta.cloud_app_security_profile_collection_response import CloudAppSecurityProfileCollectionResponse
 from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.beta.cloud_app_security_profile import CloudAppSecurityProfile
 
 
 class CloudAppSecurityProfilesRequest(BaseRequestBuilder):

@@ -11,8 +11,8 @@ from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:
 	from ........request_adapter import HttpxRequestAdapter
-from iograph_models.v1.abort_post_request import AbortPostRequest
 from iograph_models.v1.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.v1.abort_post_request import AbortPostRequest
 
 
 class AbortRequest(BaseRequestBuilder):

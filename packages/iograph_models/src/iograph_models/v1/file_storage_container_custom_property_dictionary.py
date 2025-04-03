@@ -4,5 +4,5 @@ from pydantic import BaseModel, Field
 
 
 class FileStorageContainerCustomPropertyDictionary(BaseModel):
-	odata_type: Literal["#microsoft.graph.fileStorageContainerCustomPropertyDictionary"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.fileStorageContainerCustomPropertyDictionary"] = Field(alias="@odata.type", default="#microsoft.graph.fileStorageContainerCustomPropertyDictionary")
 

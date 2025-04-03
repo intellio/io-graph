@@ -7,7 +7,7 @@ from pydantic import BaseModel, Field
 
 class ApprovalOperation(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.approvalOperation"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.approvalOperation"] = Field(alias="@odata.type", default="#microsoft.graph.approvalOperation")
 	createdDateTime: Optional[datetime] = Field(alias="createdDateTime", default=None,)
 	error: Optional[PublicError] = Field(alias="error", default=None,)
 	lastActionDateTime: Optional[datetime] = Field(alias="lastActionDateTime", default=None,)

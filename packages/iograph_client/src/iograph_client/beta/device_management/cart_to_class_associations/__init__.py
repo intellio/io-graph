@@ -14,8 +14,8 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_cart_to_class_association_id import ByCartToClassAssociationIdRequest
 	from ....request_adapter import HttpxRequestAdapter
-from iograph_models.beta.cart_to_class_association import CartToClassAssociation
 from iograph_models.beta.cart_to_class_association_collection_response import CartToClassAssociationCollectionResponse
+from iograph_models.beta.cart_to_class_association import CartToClassAssociation
 from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 
 

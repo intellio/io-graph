@@ -14,8 +14,8 @@ if TYPE_CHECKING:
 	from .move_to_catalog import MoveToCatalogRequest
 	from .get_applicable_policy_requirements import GetApplicablePolicyRequirementsRequest
 	from .....request_adapter import HttpxRequestAdapter
-from iograph_models.beta.access_package import AccessPackage
 from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.beta.access_package import AccessPackage
 
 
 class AccessPackagesWithUniqueNameRequest(BaseRequestBuilder):

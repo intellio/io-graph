@@ -12,8 +12,8 @@ from typing import TYPE_CHECKING
 if TYPE_CHECKING:
 	from .........request_adapter import HttpxRequestAdapter
 from iograph_models.beta.radians_post_request import RadiansPostRequest
-from iograph_models.beta.workbook_function_result import WorkbookFunctionResult
 from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.beta.workbook_function_result import WorkbookFunctionResult
 
 
 class RadiansRequest(BaseRequestBuilder):

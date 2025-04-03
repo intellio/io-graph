@@ -7,7 +7,7 @@ from pydantic import BaseModel, Field
 
 class SecurityEdiscoveryFile(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.security.ediscoveryFile"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.security.ediscoveryFile"] = Field(alias="@odata.type", default="#microsoft.graph.security.ediscoveryFile")
 	content: Optional[str] = Field(alias="content", default=None,)
 	dateTime: Optional[datetime] = Field(alias="dateTime", default=None,)
 	extension: Optional[str] = Field(alias="extension", default=None,)

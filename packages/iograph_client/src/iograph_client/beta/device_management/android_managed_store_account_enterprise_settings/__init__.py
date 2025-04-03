@@ -19,8 +19,8 @@ if TYPE_CHECKING:
 	from .approve_apps import ApproveAppsRequest
 	from .add_apps import AddAppsRequest
 	from ....request_adapter import HttpxRequestAdapter
-from iograph_models.beta.android_managed_store_account_enterprise_settings import AndroidManagedStoreAccountEnterpriseSettings
 from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.beta.android_managed_store_account_enterprise_settings import AndroidManagedStoreAccountEnterpriseSettings
 
 
 class AndroidManagedStoreAccountEnterpriseSettingsRequest(BaseRequestBuilder):

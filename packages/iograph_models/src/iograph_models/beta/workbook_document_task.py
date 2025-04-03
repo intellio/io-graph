@@ -7,7 +7,7 @@ from pydantic import BaseModel, Field
 
 class WorkbookDocumentTask(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.workbookDocumentTask"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.workbookDocumentTask"] = Field(alias="@odata.type", default="#microsoft.graph.workbookDocumentTask")
 	assignees: Optional[list[WorkbookEmailIdentity]] = Field(alias="assignees", default=None,)
 	completedBy: Optional[WorkbookEmailIdentity] = Field(alias="completedBy", default=None,)
 	completedDateTime: Optional[datetime] = Field(alias="completedDateTime", default=None,)

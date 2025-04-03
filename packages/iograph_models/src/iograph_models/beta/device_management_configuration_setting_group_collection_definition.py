@@ -7,7 +7,7 @@ from pydantic import BaseModel, Field
 
 class DeviceManagementConfigurationSettingGroupCollectionDefinition(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.deviceManagementConfigurationSettingGroupCollectionDefinition"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.deviceManagementConfigurationSettingGroupCollectionDefinition"] = Field(alias="@odata.type", default="#microsoft.graph.deviceManagementConfigurationSettingGroupCollectionDefinition")
 	accessTypes: Optional[DeviceManagementConfigurationSettingAccessTypes | str] = Field(alias="accessTypes", default=None,)
 	applicability: Optional[Union[DeviceManagementConfigurationApplicationSettingApplicability, DeviceManagementConfigurationExchangeOnlineSettingApplicability, DeviceManagementConfigurationWindowsSettingApplicability]] = Field(alias="applicability", default=None,discriminator="odata_type", )
 	baseUri: Optional[str] = Field(alias="baseUri", default=None,)

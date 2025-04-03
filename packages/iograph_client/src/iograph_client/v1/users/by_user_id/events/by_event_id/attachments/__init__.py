@@ -15,9 +15,9 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_attachment_id import ByAttachmentIdRequest
 	from .......request_adapter import HttpxRequestAdapter
-from iograph_models.v1.attachment import Attachment
 from iograph_models.v1.attachment_collection_response import AttachmentCollectionResponse
 from iograph_models.v1.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.v1.attachment import Attachment
 
 
 class AttachmentsRequest(BaseRequestBuilder):

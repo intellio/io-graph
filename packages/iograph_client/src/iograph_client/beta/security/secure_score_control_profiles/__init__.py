@@ -15,8 +15,8 @@ if TYPE_CHECKING:
 	from .by_secure_score_control_profile_id import BySecureScoreControlProfileIdRequest
 	from ....request_adapter import HttpxRequestAdapter
 from iograph_models.beta.secure_score_control_profile import SecureScoreControlProfile
-from iograph_models.beta.secure_score_control_profile_collection_response import SecureScoreControlProfileCollectionResponse
 from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.beta.secure_score_control_profile_collection_response import SecureScoreControlProfileCollectionResponse
 
 
 class SecureScoreControlProfilesRequest(BaseRequestBuilder):

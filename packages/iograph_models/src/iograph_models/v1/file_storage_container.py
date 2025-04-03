@@ -8,7 +8,7 @@ from pydantic import BaseModel, Field
 
 class FileStorageContainer(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.fileStorageContainer"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.fileStorageContainer"] = Field(alias="@odata.type", default="#microsoft.graph.fileStorageContainer")
 	containerTypeId: Optional[UUID] = Field(alias="containerTypeId", default=None,)
 	createdDateTime: Optional[datetime] = Field(alias="createdDateTime", default=None,)
 	customProperties: Optional[FileStorageContainerCustomPropertyDictionary] = Field(alias="customProperties", default=None,)

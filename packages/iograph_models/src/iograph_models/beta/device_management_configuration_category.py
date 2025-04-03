@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field
 
 class DeviceManagementConfigurationCategory(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.deviceManagementConfigurationCategory"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.deviceManagementConfigurationCategory"] = Field(alias="@odata.type", default="#microsoft.graph.deviceManagementConfigurationCategory")
 	categoryDescription: Optional[str] = Field(alias="categoryDescription", default=None,)
 	childCategoryIds: Optional[list[str]] = Field(alias="childCategoryIds", default=None,)
 	description: Optional[str] = Field(alias="description", default=None,)

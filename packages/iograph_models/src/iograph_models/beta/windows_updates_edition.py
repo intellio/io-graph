@@ -7,7 +7,7 @@ from pydantic import BaseModel, Field
 
 class WindowsUpdatesEdition(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.windowsUpdates.edition"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.windowsUpdates.edition"] = Field(alias="@odata.type", default="#microsoft.graph.windowsUpdates.edition")
 	deviceFamily: Optional[str] = Field(alias="deviceFamily", default=None,)
 	endOfServiceDateTime: Optional[datetime] = Field(alias="endOfServiceDateTime", default=None,)
 	generalAvailabilityDateTime: Optional[datetime] = Field(alias="generalAvailabilityDateTime", default=None,)

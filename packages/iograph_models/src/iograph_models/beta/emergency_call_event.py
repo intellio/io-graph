@@ -7,7 +7,7 @@ from pydantic import BaseModel, Field
 
 class EmergencyCallEvent(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.emergencyCallEvent"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.emergencyCallEvent"] = Field(alias="@odata.type", default="#microsoft.graph.emergencyCallEvent")
 	callEventType: Optional[CallEventType | str] = Field(alias="callEventType", default=None,)
 	eventDateTime: Optional[datetime] = Field(alias="eventDateTime", default=None,)
 	participants: Optional[list[Participant]] = Field(alias="participants", default=None,)

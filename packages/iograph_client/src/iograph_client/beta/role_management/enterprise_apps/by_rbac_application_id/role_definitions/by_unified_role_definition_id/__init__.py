@@ -13,8 +13,8 @@ from typing import TYPE_CHECKING
 if TYPE_CHECKING:
 	from .inherits_permissions_from import InheritsPermissionsFromRequest
 	from .......request_adapter import HttpxRequestAdapter
-from iograph_models.beta.unified_role_definition import UnifiedRoleDefinition
 from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.beta.unified_role_definition import UnifiedRoleDefinition
 
 
 class ByUnifiedRoleDefinitionIdRequest(BaseRequestBuilder):

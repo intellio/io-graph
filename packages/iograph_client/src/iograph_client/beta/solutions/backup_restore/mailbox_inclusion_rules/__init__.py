@@ -15,8 +15,8 @@ if TYPE_CHECKING:
 	from .by_mailbox_protection_rule_id import ByMailboxProtectionRuleIdRequest
 	from .....request_adapter import HttpxRequestAdapter
 from iograph_models.beta.mailbox_protection_rule_collection_response import MailboxProtectionRuleCollectionResponse
-from iograph_models.beta.mailbox_protection_rule import MailboxProtectionRule
 from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.beta.mailbox_protection_rule import MailboxProtectionRule
 
 
 class MailboxInclusionRulesRequest(BaseRequestBuilder):

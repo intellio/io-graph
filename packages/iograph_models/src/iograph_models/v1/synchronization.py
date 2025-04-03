@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field
 
 class Synchronization(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.synchronization"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.synchronization"] = Field(alias="@odata.type", default="#microsoft.graph.synchronization")
 	secrets: Optional[list[SynchronizationSecretKeyStringValuePair]] = Field(alias="secrets", default=None,)
 	jobs: Optional[list[SynchronizationJob]] = Field(alias="jobs", default=None,)
 	templates: Optional[list[SynchronizationTemplate]] = Field(alias="templates", default=None,)

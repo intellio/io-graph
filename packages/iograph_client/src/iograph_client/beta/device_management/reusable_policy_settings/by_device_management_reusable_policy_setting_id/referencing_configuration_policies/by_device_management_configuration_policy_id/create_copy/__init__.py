@@ -12,8 +12,8 @@ from typing import TYPE_CHECKING
 if TYPE_CHECKING:
 	from ........request_adapter import HttpxRequestAdapter
 from iograph_models.beta.create_copy_post_request import Create_copyPostRequest
-from iograph_models.beta.device_management_configuration_policy import DeviceManagementConfigurationPolicy
 from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.beta.device_management_configuration_policy import DeviceManagementConfigurationPolicy
 
 
 class CreateCopyRequest(BaseRequestBuilder):

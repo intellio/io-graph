@@ -7,7 +7,7 @@ from pydantic import BaseModel, Field
 
 class AndroidForWorkSettings(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.androidForWorkSettings"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.androidForWorkSettings"] = Field(alias="@odata.type", default="#microsoft.graph.androidForWorkSettings")
 	bindStatus: Optional[AndroidForWorkBindStatus | str] = Field(alias="bindStatus", default=None,)
 	deviceOwnerManagementEnabled: Optional[bool] = Field(alias="deviceOwnerManagementEnabled", default=None,)
 	enrollmentTarget: Optional[AndroidForWorkEnrollmentTarget | str] = Field(alias="enrollmentTarget", default=None,)

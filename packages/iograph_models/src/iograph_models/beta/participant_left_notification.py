@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field
 
 class ParticipantLeftNotification(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.participantLeftNotification"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.participantLeftNotification"] = Field(alias="@odata.type", default="#microsoft.graph.participantLeftNotification")
 	participantId: Optional[str] = Field(alias="participantId", default=None,)
 	call: Optional[Call] = Field(alias="call", default=None,)
 

@@ -15,8 +15,8 @@ if TYPE_CHECKING:
 	from .by_trending_id import ByTrendingIdRequest
 	from .....request_adapter import HttpxRequestAdapter
 from iograph_models.beta.trending_collection_response import TrendingCollectionResponse
-from iograph_models.beta.trending import Trending
 from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.beta.trending import Trending
 
 
 class TrendingRequest(BaseRequestBuilder):

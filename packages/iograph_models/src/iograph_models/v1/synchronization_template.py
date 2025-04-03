@@ -7,7 +7,7 @@ from pydantic import BaseModel, Field
 
 class SynchronizationTemplate(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.synchronizationTemplate"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.synchronizationTemplate"] = Field(alias="@odata.type", default="#microsoft.graph.synchronizationTemplate")
 	applicationId: Optional[UUID] = Field(alias="applicationId", default=None,)
 	default: Optional[bool] = Field(alias="default", default=None,)
 	description: Optional[str] = Field(alias="description", default=None,)

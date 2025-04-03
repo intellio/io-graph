@@ -9,7 +9,7 @@ from pydantic import BaseModel, Field
 
 class TodoTask(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.todoTask"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.todoTask"] = Field(alias="@odata.type", default="#microsoft.graph.todoTask")
 	body: Optional[ItemBody] = Field(alias="body", default=None,)
 	bodyLastModifiedDateTime: Optional[datetime] = Field(alias="bodyLastModifiedDateTime", default=None,)
 	categories: Optional[list[str]] = Field(alias="categories", default=None,)

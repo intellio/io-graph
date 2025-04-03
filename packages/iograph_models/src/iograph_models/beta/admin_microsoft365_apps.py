@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field
 
 class AdminMicrosoft365Apps(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.adminMicrosoft365Apps"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.adminMicrosoft365Apps"] = Field(alias="@odata.type", default="#microsoft.graph.adminMicrosoft365Apps")
 	installationOptions: Optional[M365AppsInstallationOptions] = Field(alias="installationOptions", default=None,)
 
 from .m365_apps_installation_options import M365AppsInstallationOptions

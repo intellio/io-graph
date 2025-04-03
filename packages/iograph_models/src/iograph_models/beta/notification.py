@@ -7,7 +7,7 @@ from pydantic import BaseModel, Field
 
 class Notification(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.notification"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.notification"] = Field(alias="@odata.type", default="#microsoft.graph.notification")
 	displayTimeToLive: Optional[int] = Field(alias="displayTimeToLive", default=None,)
 	expirationDateTime: Optional[datetime] = Field(alias="expirationDateTime", default=None,)
 	groupName: Optional[str] = Field(alias="groupName", default=None,)

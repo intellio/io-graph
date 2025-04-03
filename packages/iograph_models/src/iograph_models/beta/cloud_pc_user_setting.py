@@ -7,7 +7,7 @@ from pydantic import BaseModel, Field
 
 class CloudPcUserSetting(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.cloudPcUserSetting"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.cloudPcUserSetting"] = Field(alias="@odata.type", default="#microsoft.graph.cloudPcUserSetting")
 	createdDateTime: Optional[datetime] = Field(alias="createdDateTime", default=None,)
 	crossRegionDisasterRecoverySetting: Optional[CloudPcCrossRegionDisasterRecoverySetting] = Field(alias="crossRegionDisasterRecoverySetting", default=None,)
 	displayName: Optional[str] = Field(alias="displayName", default=None,)

@@ -14,9 +14,9 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_vendor_id import ByVendorIdRequest
 	from ......request_adapter import HttpxRequestAdapter
+from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.beta.vendor_collection_response import VendorCollectionResponse
 from iograph_models.beta.vendor import Vendor
-from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 
 
 class VendorsRequest(BaseRequestBuilder):

@@ -15,8 +15,8 @@ if TYPE_CHECKING:
 	from .by_restricted_apps_violation_id import ByRestrictedAppsViolationIdRequest
 	from ....request_adapter import HttpxRequestAdapter
 from iograph_models.beta.restricted_apps_violation_collection_response import RestrictedAppsViolationCollectionResponse
-from iograph_models.beta.restricted_apps_violation import RestrictedAppsViolation
 from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.beta.restricted_apps_violation import RestrictedAppsViolation
 
 
 class DeviceConfigurationRestrictedAppsViolationsRequest(BaseRequestBuilder):

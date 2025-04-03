@@ -15,8 +15,8 @@ if TYPE_CHECKING:
 	from .by_unit_of_measure_id import ByUnitOfMeasureIdRequest
 	from ......request_adapter import HttpxRequestAdapter
 from iograph_models.beta.unit_of_measure_collection_response import UnitOfMeasureCollectionResponse
-from iograph_models.beta.unit_of_measure import UnitOfMeasure
 from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.beta.unit_of_measure import UnitOfMeasure
 
 
 class UnitsOfMeasureRequest(BaseRequestBuilder):

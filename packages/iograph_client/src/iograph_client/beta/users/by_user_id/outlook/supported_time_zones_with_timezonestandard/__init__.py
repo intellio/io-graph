@@ -11,8 +11,8 @@ from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:
 	from ......request_adapter import HttpxRequestAdapter
-from iograph_models.beta.supported_time_zones_with_timezonestandard_get_response import Supported_time_zones_with_timezonestandardGetResponse
 from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.beta.supported_time_zones_with_timezonestandard_get_response import Supported_time_zones_with_timezonestandardGetResponse
 
 
 class SupportedTimeZonesWithTimeZoneStandardRequest(BaseRequestBuilder):

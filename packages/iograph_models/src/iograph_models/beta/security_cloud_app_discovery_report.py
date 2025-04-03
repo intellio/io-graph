@@ -7,7 +7,7 @@ from pydantic import BaseModel, Field
 
 class SecurityCloudAppDiscoveryReport(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.security.cloudAppDiscoveryReport"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.security.cloudAppDiscoveryReport"] = Field(alias="@odata.type", default="#microsoft.graph.security.cloudAppDiscoveryReport")
 	anonymizeMachineData: Optional[bool] = Field(alias="anonymizeMachineData", default=None,)
 	anonymizeUserData: Optional[bool] = Field(alias="anonymizeUserData", default=None,)
 	createdDateTime: Optional[datetime] = Field(alias="createdDateTime", default=None,)

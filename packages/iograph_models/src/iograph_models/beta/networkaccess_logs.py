@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field
 
 class NetworkaccessLogs(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.networkaccess.logs"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.networkaccess.logs"] = Field(alias="@odata.type", default="#microsoft.graph.networkaccess.logs")
 	remoteNetworks: Optional[list[NetworkaccessRemoteNetworkHealthEvent]] = Field(alias="remoteNetworks", default=None,)
 	traffic: Optional[list[NetworkaccessNetworkAccessTraffic]] = Field(alias="traffic", default=None,)
 

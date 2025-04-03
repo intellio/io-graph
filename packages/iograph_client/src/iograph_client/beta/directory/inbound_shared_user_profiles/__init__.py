@@ -14,9 +14,9 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_inbound_shared_user_profile_user_id import ByInboundSharedUserProfileUserIdRequest
 	from ....request_adapter import HttpxRequestAdapter
-from iograph_models.beta.inbound_shared_user_profile_collection_response import InboundSharedUserProfileCollectionResponse
-from iograph_models.beta.inbound_shared_user_profile import InboundSharedUserProfile
 from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.beta.inbound_shared_user_profile import InboundSharedUserProfile
+from iograph_models.beta.inbound_shared_user_profile_collection_response import InboundSharedUserProfileCollectionResponse
 
 
 class InboundSharedUserProfilesRequest(BaseRequestBuilder):

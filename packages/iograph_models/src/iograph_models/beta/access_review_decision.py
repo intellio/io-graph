@@ -8,7 +8,7 @@ from pydantic import BaseModel, Field
 
 class AccessReviewDecision(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.accessReviewDecision"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.accessReviewDecision"] = Field(alias="@odata.type", default="#microsoft.graph.accessReviewDecision")
 	accessRecommendation: Optional[str] = Field(alias="accessRecommendation", default=None,)
 	accessReviewId: Optional[str] = Field(alias="accessReviewId", default=None,)
 	appliedBy: Optional[Union[AuditUserIdentity]] = Field(alias="appliedBy", default=None,discriminator="odata_type", )

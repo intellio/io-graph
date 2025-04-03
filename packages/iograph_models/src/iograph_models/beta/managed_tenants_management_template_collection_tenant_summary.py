@@ -7,7 +7,7 @@ from pydantic import BaseModel, Field
 
 class ManagedTenantsManagementTemplateCollectionTenantSummary(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.managedTenants.managementTemplateCollectionTenantSummary"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.managedTenants.managementTemplateCollectionTenantSummary"] = Field(alias="@odata.type", default="#microsoft.graph.managedTenants.managementTemplateCollectionTenantSummary")
 	completeStepsCount: Optional[int] = Field(alias="completeStepsCount", default=None,)
 	completeUsersCount: Optional[int] = Field(alias="completeUsersCount", default=None,)
 	createdByUserId: Optional[str] = Field(alias="createdByUserId", default=None,)

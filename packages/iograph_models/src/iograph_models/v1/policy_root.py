@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field
 
 class PolicyRoot(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.policyRoot"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.policyRoot"] = Field(alias="@odata.type", default="#microsoft.graph.policyRoot")
 	activityBasedTimeoutPolicies: Optional[list[ActivityBasedTimeoutPolicy]] = Field(alias="activityBasedTimeoutPolicies", default=None,)
 	adminConsentRequestPolicy: Optional[AdminConsentRequestPolicy] = Field(alias="adminConsentRequestPolicy", default=None,)
 	appManagementPolicies: Optional[list[AppManagementPolicy]] = Field(alias="appManagementPolicies", default=None,)

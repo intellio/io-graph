@@ -8,7 +8,7 @@ from pydantic import BaseModel, Field
 
 class AwsExternalSystemAccessFinding(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.awsExternalSystemAccessFinding"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.awsExternalSystemAccessFinding"] = Field(alias="@odata.type", default="#microsoft.graph.awsExternalSystemAccessFinding")
 	createdDateTime: Optional[datetime] = Field(alias="createdDateTime", default=None,)
 	accessMethods: Optional[ExternalSystemAccessMethods | str] = Field(alias="accessMethods", default=None,)
 	systemWithAccess: Optional[AuthorizationSystemInfo] = Field(alias="systemWithAccess", default=None,)

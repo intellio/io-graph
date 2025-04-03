@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field
 
 class AndroidManagedStoreAppConfigurationSchema(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.androidManagedStoreAppConfigurationSchema"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.androidManagedStoreAppConfigurationSchema"] = Field(alias="@odata.type", default="#microsoft.graph.androidManagedStoreAppConfigurationSchema")
 	exampleJson: Optional[str] = Field(alias="exampleJson", default=None,)
 	nestedSchemaItems: Optional[list[AndroidManagedStoreAppConfigurationSchemaItem]] = Field(alias="nestedSchemaItems", default=None,)
 	schemaItems: Optional[list[AndroidManagedStoreAppConfigurationSchemaItem]] = Field(alias="schemaItems", default=None,)

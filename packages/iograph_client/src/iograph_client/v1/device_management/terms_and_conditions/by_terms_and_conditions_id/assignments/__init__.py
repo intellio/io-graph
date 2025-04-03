@@ -14,9 +14,9 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_terms_and_conditions_assignment_id import ByTermsAndConditionsAssignmentIdRequest
 	from ......request_adapter import HttpxRequestAdapter
-from iograph_models.v1.terms_and_conditions_assignment import TermsAndConditionsAssignment
 from iograph_models.v1.terms_and_conditions_assignment_collection_response import TermsAndConditionsAssignmentCollectionResponse
 from iograph_models.v1.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.v1.terms_and_conditions_assignment import TermsAndConditionsAssignment
 
 
 class AssignmentsRequest(BaseRequestBuilder):

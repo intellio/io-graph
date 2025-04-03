@@ -14,8 +14,8 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_permission_grant_condition_set_id import ByPermissionGrantConditionSetIdRequest
 	from ......request_adapter import HttpxRequestAdapter
-from iograph_models.v1.permission_grant_condition_set import PermissionGrantConditionSet
 from iograph_models.v1.permission_grant_condition_set_collection_response import PermissionGrantConditionSetCollectionResponse
+from iograph_models.v1.permission_grant_condition_set import PermissionGrantConditionSet
 from iograph_models.v1.o_data_errors__o_data_error import ODataErrorsODataError
 
 

@@ -7,7 +7,7 @@ from pydantic import BaseModel, Field
 
 class ManagedAppOperation(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.managedAppOperation"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.managedAppOperation"] = Field(alias="@odata.type", default="#microsoft.graph.managedAppOperation")
 	displayName: Optional[str] = Field(alias="displayName", default=None,)
 	lastModifiedDateTime: Optional[datetime] = Field(alias="lastModifiedDateTime", default=None,)
 	state: Optional[str] = Field(alias="state", default=None,)

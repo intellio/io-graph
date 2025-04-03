@@ -7,7 +7,7 @@ from pydantic import BaseModel, Field
 
 class WindowsUpdatesKnownIssue(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.windowsUpdates.knownIssue"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.windowsUpdates.knownIssue"] = Field(alias="@odata.type", default="#microsoft.graph.windowsUpdates.knownIssue")
 	description: Optional[str] = Field(alias="description", default=None,)
 	knownIssueHistories: Optional[list[WindowsUpdatesKnownIssueHistoryItem]] = Field(alias="knownIssueHistories", default=None,)
 	lastUpdatedDateTime: Optional[datetime] = Field(alias="lastUpdatedDateTime", default=None,)

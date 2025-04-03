@@ -7,7 +7,7 @@ from pydantic import BaseModel, Field
 
 class UserExperienceAnalyticsAppHealthDevicePerformance(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.userExperienceAnalyticsAppHealthDevicePerformance"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.userExperienceAnalyticsAppHealthDevicePerformance"] = Field(alias="@odata.type", default="#microsoft.graph.userExperienceAnalyticsAppHealthDevicePerformance")
 	appCrashCount: Optional[int] = Field(alias="appCrashCount", default=None,)
 	appHangCount: Optional[int] = Field(alias="appHangCount", default=None,)
 	crashedAppCount: Optional[int] = Field(alias="crashedAppCount", default=None,)

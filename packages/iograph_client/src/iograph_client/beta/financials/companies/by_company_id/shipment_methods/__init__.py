@@ -14,9 +14,9 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_shipment_method_id import ByShipmentMethodIdRequest
 	from ......request_adapter import HttpxRequestAdapter
-from iograph_models.beta.shipment_method import ShipmentMethod
 from iograph_models.beta.shipment_method_collection_response import ShipmentMethodCollectionResponse
 from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.beta.shipment_method import ShipmentMethod
 
 
 class ShipmentMethodsRequest(BaseRequestBuilder):

@@ -13,8 +13,8 @@ from typing import TYPE_CHECKING
 if TYPE_CHECKING:
 	from .alert_rules import AlertRulesRequest
 	from ......request_adapter import HttpxRequestAdapter
-from iograph_models.beta.managed_tenants_managed_tenant_alert_rule_definition import ManagedTenantsManagedTenantAlertRuleDefinition
 from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.beta.managed_tenants_managed_tenant_alert_rule_definition import ManagedTenantsManagedTenantAlertRuleDefinition
 
 
 class ByManagedTenantAlertRuleDefinitionIdRequest(BaseRequestBuilder):

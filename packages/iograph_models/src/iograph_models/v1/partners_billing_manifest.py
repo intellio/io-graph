@@ -7,7 +7,7 @@ from pydantic import BaseModel, Field
 
 class PartnersBillingManifest(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.partners.billing.manifest"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.partners.billing.manifest"] = Field(alias="@odata.type", default="#microsoft.graph.partners.billing.manifest")
 	blobCount: Optional[int] = Field(alias="blobCount", default=None,)
 	blobs: Optional[list[PartnersBillingBlob]] = Field(alias="blobs", default=None,)
 	createdDateTime: Optional[datetime] = Field(alias="createdDateTime", default=None,)

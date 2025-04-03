@@ -9,7 +9,7 @@ from pydantic import BaseModel, Field
 
 class SecurityAlert(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.security.alert"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.security.alert"] = Field(alias="@odata.type", default="#microsoft.graph.security.alert")
 	actorDisplayName: Optional[str] = Field(alias="actorDisplayName", default=None,)
 	additionalData: Optional[SecurityDictionary] = Field(alias="additionalData", default=None,)
 	alertPolicyId: Optional[str] = Field(alias="alertPolicyId", default=None,)

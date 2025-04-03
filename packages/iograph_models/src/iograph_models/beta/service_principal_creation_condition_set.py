@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field
 
 class ServicePrincipalCreationConditionSet(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.servicePrincipalCreationConditionSet"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.servicePrincipalCreationConditionSet"] = Field(alias="@odata.type", default="#microsoft.graph.servicePrincipalCreationConditionSet")
 	applicationIds: Optional[list[str]] = Field(alias="applicationIds", default=None,)
 	applicationPublisherIds: Optional[list[str]] = Field(alias="applicationPublisherIds", default=None,)
 	applicationsFromVerifiedPublisherOnly: Optional[bool] = Field(alias="applicationsFromVerifiedPublisherOnly", default=None,)

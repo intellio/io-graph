@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field
 
 class AdvancedThreatProtectionOnboardingStateSummary(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.advancedThreatProtectionOnboardingStateSummary"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.advancedThreatProtectionOnboardingStateSummary"] = Field(alias="@odata.type", default="#microsoft.graph.advancedThreatProtectionOnboardingStateSummary")
 	compliantDeviceCount: Optional[int] = Field(alias="compliantDeviceCount", default=None,)
 	conflictDeviceCount: Optional[int] = Field(alias="conflictDeviceCount", default=None,)
 	errorDeviceCount: Optional[int] = Field(alias="errorDeviceCount", default=None,)

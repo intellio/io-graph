@@ -7,7 +7,7 @@ from pydantic import BaseModel, Field
 
 class Alert(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.alert"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.alert"] = Field(alias="@odata.type", default="#microsoft.graph.alert")
 	activityGroupName: Optional[str] = Field(alias="activityGroupName", default=None,)
 	alertDetections: Optional[list[AlertDetection]] = Field(alias="alertDetections", default=None,)
 	assignedTo: Optional[str] = Field(alias="assignedTo", default=None,)

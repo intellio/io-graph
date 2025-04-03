@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field
 
 class UserExperienceAnalyticsImpactingProcess(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.userExperienceAnalyticsImpactingProcess"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.userExperienceAnalyticsImpactingProcess"] = Field(alias="@odata.type", default="#microsoft.graph.userExperienceAnalyticsImpactingProcess")
 	category: Optional[str] = Field(alias="category", default=None,)
 	description: Optional[str] = Field(alias="description", default=None,)
 	deviceId: Optional[str] = Field(alias="deviceId", default=None,)

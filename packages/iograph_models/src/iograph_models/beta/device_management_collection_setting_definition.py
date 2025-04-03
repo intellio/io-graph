@@ -8,7 +8,7 @@ from pydantic import BaseModel, Field
 
 class DeviceManagementCollectionSettingDefinition(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.deviceManagementCollectionSettingDefinition"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.deviceManagementCollectionSettingDefinition"] = Field(alias="@odata.type", default="#microsoft.graph.deviceManagementCollectionSettingDefinition")
 	constraints: Optional[list[Annotated[Union[DeviceManagementEnumConstraint, DeviceManagementIntentSettingSecretConstraint, DeviceManagementSettingAbstractImplementationConstraint, DeviceManagementSettingAppConstraint, DeviceManagementSettingBooleanConstraint, DeviceManagementSettingCollectionConstraint, DeviceManagementSettingEnrollmentTypeConstraint, DeviceManagementSettingFileConstraint, DeviceManagementSettingIntegerConstraint, DeviceManagementSettingProfileConstraint, DeviceManagementSettingRegexConstraint, DeviceManagementSettingRequiredConstraint, DeviceManagementSettingSddlConstraint, DeviceManagementSettingStringLengthConstraint, DeviceManagementSettingXmlConstraint],Field(discriminator="odata_type")]]] = Field(alias="constraints", default=None,)
 	dependencies: Optional[list[DeviceManagementSettingDependency]] = Field(alias="dependencies", default=None,)
 	description: Optional[str] = Field(alias="description", default=None,)

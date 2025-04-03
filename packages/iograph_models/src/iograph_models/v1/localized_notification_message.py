@@ -7,7 +7,7 @@ from pydantic import BaseModel, Field
 
 class LocalizedNotificationMessage(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.localizedNotificationMessage"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.localizedNotificationMessage"] = Field(alias="@odata.type", default="#microsoft.graph.localizedNotificationMessage")
 	isDefault: Optional[bool] = Field(alias="isDefault", default=None,)
 	lastModifiedDateTime: Optional[datetime] = Field(alias="lastModifiedDateTime", default=None,)
 	locale: Optional[str] = Field(alias="locale", default=None,)

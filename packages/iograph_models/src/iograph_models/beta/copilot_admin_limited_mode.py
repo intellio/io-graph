@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field
 
 class CopilotAdminLimitedMode(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.copilotAdminLimitedMode"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.copilotAdminLimitedMode"] = Field(alias="@odata.type", default="#microsoft.graph.copilotAdminLimitedMode")
 	groupId: Optional[str] = Field(alias="groupId", default=None,)
 	isEnabledForGroup: Optional[bool] = Field(alias="isEnabledForGroup", default=None,)
 

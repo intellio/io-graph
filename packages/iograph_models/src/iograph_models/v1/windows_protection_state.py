@@ -7,7 +7,7 @@ from pydantic import BaseModel, Field
 
 class WindowsProtectionState(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.windowsProtectionState"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.windowsProtectionState"] = Field(alias="@odata.type", default="#microsoft.graph.windowsProtectionState")
 	antiMalwareVersion: Optional[str] = Field(alias="antiMalwareVersion", default=None,)
 	deviceState: Optional[WindowsDeviceHealthState | str] = Field(alias="deviceState", default=None,)
 	engineVersion: Optional[str] = Field(alias="engineVersion", default=None,)

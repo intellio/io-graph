@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field
 
 class DetectedApp(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.detectedApp"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.detectedApp"] = Field(alias="@odata.type", default="#microsoft.graph.detectedApp")
 	deviceCount: Optional[int] = Field(alias="deviceCount", default=None,)
 	displayName: Optional[str] = Field(alias="displayName", default=None,)
 	platform: Optional[DetectedAppPlatformType | str] = Field(alias="platform", default=None,)

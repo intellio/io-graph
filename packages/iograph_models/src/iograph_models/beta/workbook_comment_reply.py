@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field
 
 class WorkbookCommentReply(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.workbookCommentReply"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.workbookCommentReply"] = Field(alias="@odata.type", default="#microsoft.graph.workbookCommentReply")
 	content: Optional[str] = Field(alias="content", default=None,)
 	contentType: Optional[str] = Field(alias="contentType", default=None,)
 	task: Optional[WorkbookDocumentTask] = Field(alias="task", default=None,)

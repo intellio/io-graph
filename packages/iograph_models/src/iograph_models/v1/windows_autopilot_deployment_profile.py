@@ -7,7 +7,7 @@ from pydantic import BaseModel, Field
 
 class WindowsAutopilotDeploymentProfile(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.windowsAutopilotDeploymentProfile"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.windowsAutopilotDeploymentProfile"] = Field(alias="@odata.type", default="#microsoft.graph.windowsAutopilotDeploymentProfile")
 	createdDateTime: Optional[datetime] = Field(alias="createdDateTime", default=None,)
 	description: Optional[str] = Field(alias="description", default=None,)
 	deviceNameTemplate: Optional[str] = Field(alias="deviceNameTemplate", default=None,)

@@ -7,7 +7,7 @@ from pydantic import BaseModel, Field
 
 class RiskyServicePrincipalHistoryItem(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.riskyServicePrincipalHistoryItem"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.riskyServicePrincipalHistoryItem"] = Field(alias="@odata.type", default="#microsoft.graph.riskyServicePrincipalHistoryItem")
 	accountEnabled: Optional[bool] = Field(alias="accountEnabled", default=None,)
 	appId: Optional[str] = Field(alias="appId", default=None,)
 	displayName: Optional[str] = Field(alias="displayName", default=None,)

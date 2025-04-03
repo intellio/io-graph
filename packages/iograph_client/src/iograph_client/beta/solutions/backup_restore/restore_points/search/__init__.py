@@ -12,8 +12,8 @@ from typing import TYPE_CHECKING
 if TYPE_CHECKING:
 	from ......request_adapter import HttpxRequestAdapter
 from iograph_models.beta.search_post_request import SearchPostRequest
-from iograph_models.beta.restore_point_search_response import RestorePointSearchResponse
 from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.beta.restore_point_search_response import RestorePointSearchResponse
 
 
 class SearchRequest(BaseRequestBuilder):

@@ -16,9 +16,9 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_operation_approval_policy_id import ByOperationApprovalPolicyIdRequest
 	from ....request_adapter import HttpxRequestAdapter
-from iograph_models.beta.operation_approval_policy import OperationApprovalPolicy
 from iograph_models.beta.operation_approval_policy_collection_response import OperationApprovalPolicyCollectionResponse
 from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.beta.operation_approval_policy import OperationApprovalPolicy
 
 
 class OperationApprovalPoliciesRequest(BaseRequestBuilder):

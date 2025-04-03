@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field
 
 class GcpRole(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.gcpRole"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.gcpRole"] = Field(alias="@odata.type", default="#microsoft.graph.gcpRole")
 	displayName: Optional[str] = Field(alias="displayName", default=None,)
 	externalId: Optional[str] = Field(alias="externalId", default=None,)
 	gcpRoleType: Optional[GcpRoleType | str] = Field(alias="gcpRoleType", default=None,)

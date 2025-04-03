@@ -14,8 +14,8 @@ if TYPE_CHECKING:
 	from .managed_tenants_reset_tenant_onboarding_status import ManagedTenantsResetTenantOnboardingStatusRequest
 	from .managed_tenants_offboard_tenant import ManagedTenantsOffboardTenantRequest
 	from ......request_adapter import HttpxRequestAdapter
-from iograph_models.beta.managed_tenants_tenant import ManagedTenantsTenant
 from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.beta.managed_tenants_tenant import ManagedTenantsTenant
 
 
 class ByTenantIdRequest(BaseRequestBuilder):

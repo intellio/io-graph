@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field
 
 class WorkbookWorksheet(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.workbookWorksheet"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.workbookWorksheet"] = Field(alias="@odata.type", default="#microsoft.graph.workbookWorksheet")
 	name: Optional[str] = Field(alias="name", default=None,)
 	position: Optional[int] = Field(alias="position", default=None,)
 	visibility: Optional[str] = Field(alias="visibility", default=None,)

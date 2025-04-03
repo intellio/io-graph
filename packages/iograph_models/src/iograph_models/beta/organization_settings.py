@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field
 
 class OrganizationSettings(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.organizationSettings"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.organizationSettings"] = Field(alias="@odata.type", default="#microsoft.graph.organizationSettings")
 	contactInsights: Optional[InsightsSettings] = Field(alias="contactInsights", default=None,)
 	itemInsights: Optional[InsightsSettings] = Field(alias="itemInsights", default=None,)
 	microsoftApplicationDataAccess: Optional[MicrosoftApplicationDataAccessSettings] = Field(alias="microsoftApplicationDataAccess", default=None,)

@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field
 
 class Entra(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.entra"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.entra"] = Field(alias="@odata.type", default="#microsoft.graph.entra")
 	uxSetting: Optional[UxSetting] = Field(alias="uxSetting", default=None,)
 
 from .ux_setting import UxSetting

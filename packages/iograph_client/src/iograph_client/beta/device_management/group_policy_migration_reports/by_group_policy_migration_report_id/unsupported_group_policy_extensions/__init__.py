@@ -15,8 +15,8 @@ if TYPE_CHECKING:
 	from .by_unsupported_group_policy_extension_id import ByUnsupportedGroupPolicyExtensionIdRequest
 	from ......request_adapter import HttpxRequestAdapter
 from iograph_models.beta.unsupported_group_policy_extension_collection_response import UnsupportedGroupPolicyExtensionCollectionResponse
-from iograph_models.beta.unsupported_group_policy_extension import UnsupportedGroupPolicyExtension
 from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.beta.unsupported_group_policy_extension import UnsupportedGroupPolicyExtension
 
 
 class UnsupportedGroupPolicyExtensionsRequest(BaseRequestBuilder):

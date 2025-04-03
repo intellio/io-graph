@@ -9,7 +9,7 @@ from pydantic import BaseModel, Field
 
 class EducationSubmission(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.educationSubmission"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.educationSubmission"] = Field(alias="@odata.type", default="#microsoft.graph.educationSubmission")
 	excusedBy: Optional[Union[ChatMessageFromIdentitySet, ChatMessageMentionedIdentitySet, ChatMessageReactionIdentitySet, CommunicationsIdentitySet, SharePointIdentitySet]] = Field(alias="excusedBy", default=None,discriminator="odata_type", )
 	excusedDateTime: Optional[datetime] = Field(alias="excusedDateTime", default=None,)
 	reassignedBy: Optional[Union[ChatMessageFromIdentitySet, ChatMessageMentionedIdentitySet, ChatMessageReactionIdentitySet, CommunicationsIdentitySet, SharePointIdentitySet]] = Field(alias="reassignedBy", default=None,discriminator="odata_type", )

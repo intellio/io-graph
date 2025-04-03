@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field
 
 class WorkbookRange(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.workbookRange"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.workbookRange"] = Field(alias="@odata.type", default="#microsoft.graph.workbookRange")
 	address: Optional[str] = Field(alias="address", default=None,)
 	addressLocal: Optional[str] = Field(alias="addressLocal", default=None,)
 	cellCount: Optional[int] = Field(alias="cellCount", default=None,)

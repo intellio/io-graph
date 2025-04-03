@@ -15,8 +15,8 @@ if TYPE_CHECKING:
 	from .by_mobile_app_category_id import ByMobileAppCategoryIdRequest
 	from ....request_adapter import HttpxRequestAdapter
 from iograph_models.v1.mobile_app_category_collection_response import MobileAppCategoryCollectionResponse
-from iograph_models.v1.mobile_app_category import MobileAppCategory
 from iograph_models.v1.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.v1.mobile_app_category import MobileAppCategory
 
 
 class MobileAppCategoriesRequest(BaseRequestBuilder):

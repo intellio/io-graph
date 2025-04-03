@@ -8,7 +8,7 @@ from pydantic import BaseModel, Field
 
 class ExternallyAccessibleGcpStorageBucketFinding(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.externallyAccessibleGcpStorageBucketFinding"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.externallyAccessibleGcpStorageBucketFinding"] = Field(alias="@odata.type", default="#microsoft.graph.externallyAccessibleGcpStorageBucketFinding")
 	createdDateTime: Optional[datetime] = Field(alias="createdDateTime", default=None,)
 	accessibility: Optional[GcpAccessType | str] = Field(alias="accessibility", default=None,)
 	encryptionManagedBy: Optional[GcpEncryption | str] = Field(alias="encryptionManagedBy", default=None,)

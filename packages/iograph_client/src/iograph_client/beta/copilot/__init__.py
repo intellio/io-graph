@@ -14,8 +14,8 @@ if TYPE_CHECKING:
 	from .interaction_history import InteractionHistoryRequest
 	from .admin import AdminRequest
 	from ...request_adapter import HttpxRequestAdapter
-from iograph_models.beta.copilot_root import CopilotRoot
 from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.beta.copilot_root import CopilotRoot
 
 
 class CopilotRequest(BaseRequestBuilder):

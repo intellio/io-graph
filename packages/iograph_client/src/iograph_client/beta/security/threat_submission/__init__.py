@@ -15,8 +15,8 @@ if TYPE_CHECKING:
 	from .email_threat_submission_policies import EmailThreatSubmissionPoliciesRequest
 	from .email_threats import EmailThreatsRequest
 	from ....request_adapter import HttpxRequestAdapter
-from iograph_models.beta.security_threat_submission_root import SecurityThreatSubmissionRoot
 from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.beta.security_threat_submission_root import SecurityThreatSubmissionRoot
 
 
 class ThreatSubmissionRequest(BaseRequestBuilder):

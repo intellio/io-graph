@@ -8,7 +8,7 @@ from pydantic import BaseModel, Field
 
 class Payload(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.payload"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.payload"] = Field(alias="@odata.type", default="#microsoft.graph.payload")
 	brand: Optional[PayloadBrand | str] = Field(alias="brand", default=None,)
 	complexity: Optional[PayloadComplexity | str] = Field(alias="complexity", default=None,)
 	createdBy: Optional[EmailIdentity] = Field(alias="createdBy", default=None,)

@@ -9,7 +9,7 @@ from pydantic import BaseModel, Field
 
 class Permission(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.permission"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.permission"] = Field(alias="@odata.type", default="#microsoft.graph.permission")
 	expirationDateTime: Optional[datetime] = Field(alias="expirationDateTime", default=None,)
 	grantedTo: Optional[Union[ChatMessageFromIdentitySet, ChatMessageMentionedIdentitySet, ChatMessageReactionIdentitySet, CommunicationsIdentitySet, SharePointIdentitySet]] = Field(alias="grantedTo", default=None,discriminator="odata_type", )
 	grantedToIdentities: Optional[list[Annotated[Union[ChatMessageFromIdentitySet, ChatMessageMentionedIdentitySet, ChatMessageReactionIdentitySet, CommunicationsIdentitySet, SharePointIdentitySet],Field(discriminator="odata_type")]]] = Field(alias="grantedToIdentities", default=None,)

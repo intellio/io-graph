@@ -6,6 +6,6 @@ from pydantic import BaseModel, Field
 
 class CloudPcCrossCloudGovernmentOrganizationMapping(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.cloudPcCrossCloudGovernmentOrganizationMapping"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.cloudPcCrossCloudGovernmentOrganizationMapping"] = Field(alias="@odata.type", default="#microsoft.graph.cloudPcCrossCloudGovernmentOrganizationMapping")
 	organizationIdsInUSGovCloud: Optional[list[str]] = Field(alias="organizationIdsInUSGovCloud", default=None,)
 

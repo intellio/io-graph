@@ -7,7 +7,7 @@ from pydantic import BaseModel, Field
 
 class ManagedTenantsManagedDeviceCompliance(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.managedTenants.managedDeviceCompliance"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.managedTenants.managedDeviceCompliance"] = Field(alias="@odata.type", default="#microsoft.graph.managedTenants.managedDeviceCompliance")
 	complianceStatus: Optional[str] = Field(alias="complianceStatus", default=None,)
 	deviceType: Optional[str] = Field(alias="deviceType", default=None,)
 	inGracePeriodUntilDateTime: Optional[datetime] = Field(alias="inGracePeriodUntilDateTime", default=None,)

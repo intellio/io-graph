@@ -8,7 +8,7 @@ from pydantic import BaseModel, Field
 
 class Call(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.call"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.call"] = Field(alias="@odata.type", default="#microsoft.graph.call")
 	callbackUri: Optional[str] = Field(alias="callbackUri", default=None,)
 	callChainId: Optional[str] = Field(alias="callChainId", default=None,)
 	callOptions: Optional[Union[IncomingCallOptions, OutgoingCallOptions]] = Field(alias="callOptions", default=None,discriminator="odata_type", )

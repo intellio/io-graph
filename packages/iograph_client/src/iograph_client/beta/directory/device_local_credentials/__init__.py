@@ -15,8 +15,8 @@ if TYPE_CHECKING:
 	from .by_device_local_credential_info_id import ByDeviceLocalCredentialInfoIdRequest
 	from ....request_adapter import HttpxRequestAdapter
 from iograph_models.beta.device_local_credential_info import DeviceLocalCredentialInfo
-from iograph_models.beta.device_local_credential_info_collection_response import DeviceLocalCredentialInfoCollectionResponse
 from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.beta.device_local_credential_info_collection_response import DeviceLocalCredentialInfoCollectionResponse
 
 
 class DeviceLocalCredentialsRequest(BaseRequestBuilder):

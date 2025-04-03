@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field
 
 class EBookInstallSummary(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.eBookInstallSummary"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.eBookInstallSummary"] = Field(alias="@odata.type", default="#microsoft.graph.eBookInstallSummary")
 	failedDeviceCount: Optional[int] = Field(alias="failedDeviceCount", default=None,)
 	failedUserCount: Optional[int] = Field(alias="failedUserCount", default=None,)
 	installedDeviceCount: Optional[int] = Field(alias="installedDeviceCount", default=None,)

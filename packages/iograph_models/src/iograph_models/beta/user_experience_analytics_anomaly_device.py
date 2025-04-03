@@ -7,7 +7,7 @@ from pydantic import BaseModel, Field
 
 class UserExperienceAnalyticsAnomalyDevice(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.userExperienceAnalyticsAnomalyDevice"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.userExperienceAnalyticsAnomalyDevice"] = Field(alias="@odata.type", default="#microsoft.graph.userExperienceAnalyticsAnomalyDevice")
 	anomalyId: Optional[str] = Field(alias="anomalyId", default=None,)
 	anomalyOnDeviceFirstOccurrenceDateTime: Optional[datetime] = Field(alias="anomalyOnDeviceFirstOccurrenceDateTime", default=None,)
 	anomalyOnDeviceLatestOccurrenceDateTime: Optional[datetime] = Field(alias="anomalyOnDeviceLatestOccurrenceDateTime", default=None,)

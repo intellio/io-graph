@@ -14,9 +14,9 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_item_address_id import ByItemAddressIdRequest
 	from .....request_adapter import HttpxRequestAdapter
-from iograph_models.beta.item_address import ItemAddress
 from iograph_models.beta.item_address_collection_response import ItemAddressCollectionResponse
 from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.beta.item_address import ItemAddress
 
 
 class AddressesRequest(BaseRequestBuilder):

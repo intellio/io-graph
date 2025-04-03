@@ -7,7 +7,7 @@ from pydantic import BaseModel, Field
 
 class UserExperienceAnalyticsBatteryHealthCapacityDetails(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.userExperienceAnalyticsBatteryHealthCapacityDetails"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.userExperienceAnalyticsBatteryHealthCapacityDetails"] = Field(alias="@odata.type", default="#microsoft.graph.userExperienceAnalyticsBatteryHealthCapacityDetails")
 	activeDevices: Optional[int] = Field(alias="activeDevices", default=None,)
 	batteryCapacityFair: Optional[int] = Field(alias="batteryCapacityFair", default=None,)
 	batteryCapacityGood: Optional[int] = Field(alias="batteryCapacityGood", default=None,)

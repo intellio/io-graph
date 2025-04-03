@@ -7,7 +7,7 @@ from pydantic import BaseModel, Field
 
 class PermissionGrantConditionSet(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.permissionGrantConditionSet"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.permissionGrantConditionSet"] = Field(alias="@odata.type", default="#microsoft.graph.permissionGrantConditionSet")
 	certifiedClientApplicationsOnly: Optional[bool] = Field(alias="certifiedClientApplicationsOnly", default=None,)
 	clientApplicationIds: Optional[list[str]] = Field(alias="clientApplicationIds", default=None,)
 	clientApplicationPublisherIds: Optional[list[str]] = Field(alias="clientApplicationPublisherIds", default=None,)

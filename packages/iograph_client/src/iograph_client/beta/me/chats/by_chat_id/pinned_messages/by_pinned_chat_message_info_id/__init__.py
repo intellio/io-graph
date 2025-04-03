@@ -13,8 +13,8 @@ from typing import TYPE_CHECKING
 if TYPE_CHECKING:
 	from .message import MessageRequest
 	from .......request_adapter import HttpxRequestAdapter
-from iograph_models.beta.pinned_chat_message_info import PinnedChatMessageInfo
 from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.beta.pinned_chat_message_info import PinnedChatMessageInfo
 
 
 class ByPinnedChatMessageInfoIdRequest(BaseRequestBuilder):

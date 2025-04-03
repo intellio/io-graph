@@ -7,7 +7,7 @@ from pydantic import BaseModel, Field
 
 class DeviceManagementScript(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.deviceManagementScript"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.deviceManagementScript"] = Field(alias="@odata.type", default="#microsoft.graph.deviceManagementScript")
 	createdDateTime: Optional[datetime] = Field(alias="createdDateTime", default=None,)
 	description: Optional[str] = Field(alias="description", default=None,)
 	displayName: Optional[str] = Field(alias="displayName", default=None,)

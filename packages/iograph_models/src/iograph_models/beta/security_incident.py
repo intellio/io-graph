@@ -7,7 +7,7 @@ from pydantic import BaseModel, Field
 
 class SecurityIncident(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.security.incident"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.security.incident"] = Field(alias="@odata.type", default="#microsoft.graph.security.incident")
 	assignedTo: Optional[str] = Field(alias="assignedTo", default=None,)
 	classification: Optional[SecurityAlertClassification | str] = Field(alias="classification", default=None,)
 	comments: Optional[list[SecurityAlertComment]] = Field(alias="comments", default=None,)

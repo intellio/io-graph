@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field
 
 class DocumentComment(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.documentComment"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.documentComment"] = Field(alias="@odata.type", default="#microsoft.graph.documentComment")
 	content: Optional[str] = Field(alias="content", default=None,)
 	replies: Optional[list[DocumentCommentReply]] = Field(alias="replies", default=None,)
 

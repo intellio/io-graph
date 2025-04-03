@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field
 
 class UserExperienceAnalyticsDeviceWithoutCloudIdentity(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.userExperienceAnalyticsDeviceWithoutCloudIdentity"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.userExperienceAnalyticsDeviceWithoutCloudIdentity"] = Field(alias="@odata.type", default="#microsoft.graph.userExperienceAnalyticsDeviceWithoutCloudIdentity")
 	azureAdDeviceId: Optional[str] = Field(alias="azureAdDeviceId", default=None,)
 	deviceName: Optional[str] = Field(alias="deviceName", default=None,)
 

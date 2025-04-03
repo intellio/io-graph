@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field
 
 class DeltaParticipants(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.deltaParticipants"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.deltaParticipants"] = Field(alias="@odata.type", default="#microsoft.graph.deltaParticipants")
 	sequenceNumber: Optional[int] = Field(alias="sequenceNumber", default=None,)
 	participants: Optional[list[Participant]] = Field(alias="participants", default=None,)
 

@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field
 
 class ExternalItem(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.externalItem"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.externalItem"] = Field(alias="@odata.type", default="#microsoft.graph.externalItem")
 	acl: Optional[list[Acl]] = Field(alias="acl", default=None,)
 	content: Optional[ExternalItemContent] = Field(alias="content", default=None,)
 	properties: Optional[Properties] = Field(alias="properties", default=None,)

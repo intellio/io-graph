@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field
 
 class DelegatedAdminServiceManagementDetail(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.delegatedAdminServiceManagementDetail"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.delegatedAdminServiceManagementDetail"] = Field(alias="@odata.type", default="#microsoft.graph.delegatedAdminServiceManagementDetail")
 	serviceManagementUrl: Optional[str] = Field(alias="serviceManagementUrl", default=None,)
 	serviceName: Optional[str] = Field(alias="serviceName", default=None,)
 

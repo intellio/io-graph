@@ -7,7 +7,7 @@ from pydantic import BaseModel, Field
 
 class DeviceManagementAutopilotEvent(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.deviceManagementAutopilotEvent"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.deviceManagementAutopilotEvent"] = Field(alias="@odata.type", default="#microsoft.graph.deviceManagementAutopilotEvent")
 	accountSetupDuration: Optional[str] = Field(alias="accountSetupDuration", default=None,)
 	accountSetupStatus: Optional[WindowsAutopilotDeploymentState | str] = Field(alias="accountSetupStatus", default=None,)
 	deploymentDuration: Optional[str] = Field(alias="deploymentDuration", default=None,)

@@ -13,9 +13,9 @@ from typing import TYPE_CHECKING
 if TYPE_CHECKING:
 	from .by_subscription_id import BySubscriptionIdRequest
 	from ...request_adapter import HttpxRequestAdapter
+from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.beta.subscription_collection_response import SubscriptionCollectionResponse
 from iograph_models.beta.subscription import Subscription
-from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 
 
 class SubscriptionsRequest(BaseRequestBuilder):

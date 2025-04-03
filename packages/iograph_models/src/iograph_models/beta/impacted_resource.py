@@ -7,7 +7,7 @@ from pydantic import BaseModel, Field
 
 class ImpactedResource(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.impactedResource"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.impactedResource"] = Field(alias="@odata.type", default="#microsoft.graph.impactedResource")
 	addedDateTime: Optional[datetime] = Field(alias="addedDateTime", default=None,)
 	additionalDetails: Optional[list[KeyValue]] = Field(alias="additionalDetails", default=None,)
 	apiUrl: Optional[str] = Field(alias="apiUrl", default=None,)

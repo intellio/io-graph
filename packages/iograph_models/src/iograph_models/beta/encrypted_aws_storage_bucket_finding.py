@@ -8,7 +8,7 @@ from pydantic import BaseModel, Field
 
 class EncryptedAwsStorageBucketFinding(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.encryptedAwsStorageBucketFinding"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.encryptedAwsStorageBucketFinding"] = Field(alias="@odata.type", default="#microsoft.graph.encryptedAwsStorageBucketFinding")
 	createdDateTime: Optional[datetime] = Field(alias="createdDateTime", default=None,)
 	accessibility: Optional[AwsAccessType | str] = Field(alias="accessibility", default=None,)
 	storageBucket: Optional[Union[AwsAuthorizationSystemResource, AzureAuthorizationSystemResource, GcpAuthorizationSystemResource]] = Field(alias="storageBucket", default=None,discriminator="odata_type", )

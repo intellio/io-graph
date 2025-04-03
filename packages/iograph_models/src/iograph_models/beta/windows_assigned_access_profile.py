@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field
 
 class WindowsAssignedAccessProfile(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.windowsAssignedAccessProfile"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.windowsAssignedAccessProfile"] = Field(alias="@odata.type", default="#microsoft.graph.windowsAssignedAccessProfile")
 	appUserModelIds: Optional[list[str]] = Field(alias="appUserModelIds", default=None,)
 	desktopAppPaths: Optional[list[str]] = Field(alias="desktopAppPaths", default=None,)
 	profileName: Optional[str] = Field(alias="profileName", default=None,)

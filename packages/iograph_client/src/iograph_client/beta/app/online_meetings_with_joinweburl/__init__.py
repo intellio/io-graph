@@ -15,8 +15,8 @@ if TYPE_CHECKING:
 	from .send_virtual_appointment_reminder_sms import SendVirtualAppointmentReminderSmsRequest
 	from .get_virtual_appointment_join_web_url import GetVirtualAppointmentJoinWebUrlRequest
 	from ....request_adapter import HttpxRequestAdapter
-from iograph_models.beta.online_meeting import OnlineMeeting
 from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.beta.online_meeting import OnlineMeeting
 
 
 class OnlineMeetingsWithJoinWebUrlRequest(BaseRequestBuilder):

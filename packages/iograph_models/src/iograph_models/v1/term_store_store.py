@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field
 
 class TermStoreStore(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.termStore.store"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.termStore.store"] = Field(alias="@odata.type", default="#microsoft.graph.termStore.store")
 	defaultLanguageTag: Optional[str] = Field(alias="defaultLanguageTag", default=None,)
 	languageTags: Optional[list[str]] = Field(alias="languageTags", default=None,)
 	groups: Optional[list[TermStoreGroup]] = Field(alias="groups", default=None,)

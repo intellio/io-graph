@@ -13,8 +13,8 @@ from typing import TYPE_CHECKING
 if TYPE_CHECKING:
 	from .members import MembersRequest
 	from ......request_adapter import HttpxRequestAdapter
-from iograph_models.beta.external_connectors_external_group import ExternalConnectorsExternalGroup
 from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.beta.external_connectors_external_group import ExternalConnectorsExternalGroup
 
 
 class ByExternalGroupIdRequest(BaseRequestBuilder):

@@ -8,7 +8,7 @@ from pydantic import BaseModel, Field
 
 class ChatMessage(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.chatMessage"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.chatMessage"] = Field(alias="@odata.type", default="#microsoft.graph.chatMessage")
 	attachments: Optional[list[ChatMessageAttachment]] = Field(alias="attachments", default=None,)
 	body: Optional[ItemBody] = Field(alias="body", default=None,)
 	channelIdentity: Optional[ChannelIdentity] = Field(alias="channelIdentity", default=None,)

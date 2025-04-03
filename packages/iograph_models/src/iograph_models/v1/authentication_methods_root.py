@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field
 
 class AuthenticationMethodsRoot(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.authenticationMethodsRoot"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.authenticationMethodsRoot"] = Field(alias="@odata.type", default="#microsoft.graph.authenticationMethodsRoot")
 	userRegistrationDetails: Optional[list[UserRegistrationDetails]] = Field(alias="userRegistrationDetails", default=None,)
 
 from .user_registration_details import UserRegistrationDetails

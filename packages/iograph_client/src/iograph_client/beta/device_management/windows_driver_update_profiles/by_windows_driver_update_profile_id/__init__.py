@@ -17,8 +17,8 @@ if TYPE_CHECKING:
 	from .driver_inventories import DriverInventoriesRequest
 	from .assignments import AssignmentsRequest
 	from .....request_adapter import HttpxRequestAdapter
-from iograph_models.beta.windows_driver_update_profile import WindowsDriverUpdateProfile
 from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.beta.windows_driver_update_profile import WindowsDriverUpdateProfile
 
 
 class ByWindowsDriverUpdateProfileIdRequest(BaseRequestBuilder):

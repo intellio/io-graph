@@ -7,7 +7,7 @@ from pydantic import BaseModel, Field
 
 class OAuth2PermissionGrant(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.oAuth2PermissionGrant"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.oAuth2PermissionGrant"] = Field(alias="@odata.type", default="#microsoft.graph.oAuth2PermissionGrant")
 	clientId: Optional[str] = Field(alias="clientId", default=None,)
 	consentType: Optional[str] = Field(alias="consentType", default=None,)
 	expiryTime: Optional[datetime] = Field(alias="expiryTime", default=None,)

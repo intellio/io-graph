@@ -15,9 +15,9 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_device_management_template_id import ByDeviceManagementTemplateIdRequest
 	from ....request_adapter import HttpxRequestAdapter
-from iograph_models.beta.device_management_template import DeviceManagementTemplate
-from iograph_models.beta.device_management_template_collection_response import DeviceManagementTemplateCollectionResponse
 from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.beta.device_management_template_collection_response import DeviceManagementTemplateCollectionResponse
+from iograph_models.beta.device_management_template import DeviceManagementTemplate
 
 
 class TemplatesRequest(BaseRequestBuilder):

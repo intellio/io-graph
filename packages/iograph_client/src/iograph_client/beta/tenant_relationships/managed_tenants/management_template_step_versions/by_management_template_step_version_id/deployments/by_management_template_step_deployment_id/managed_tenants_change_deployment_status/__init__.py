@@ -11,9 +11,9 @@ from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:
 	from .........request_adapter import HttpxRequestAdapter
+from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.beta.managed_tenants_change_deployment_status_post_request import Managed_tenants_change_deployment_statusPostRequest
 from iograph_models.beta.managed_tenants_management_template_step_deployment import ManagedTenantsManagementTemplateStepDeployment
-from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 
 
 class ManagedTenantsChangeDeploymentStatusRequest(BaseRequestBuilder):

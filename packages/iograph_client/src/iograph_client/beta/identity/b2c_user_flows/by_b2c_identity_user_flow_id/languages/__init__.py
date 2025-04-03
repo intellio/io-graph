@@ -14,9 +14,9 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_user_flow_language_configuration_id import ByUserFlowLanguageConfigurationIdRequest
 	from ......request_adapter import HttpxRequestAdapter
-from iograph_models.beta.user_flow_language_configuration import UserFlowLanguageConfiguration
-from iograph_models.beta.user_flow_language_configuration_collection_response import UserFlowLanguageConfigurationCollectionResponse
 from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.beta.user_flow_language_configuration_collection_response import UserFlowLanguageConfigurationCollectionResponse
+from iograph_models.beta.user_flow_language_configuration import UserFlowLanguageConfiguration
 
 
 class LanguagesRequest(BaseRequestBuilder):

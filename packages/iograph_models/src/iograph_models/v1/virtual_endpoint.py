@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field
 
 class VirtualEndpoint(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.virtualEndpoint"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.virtualEndpoint"] = Field(alias="@odata.type", default="#microsoft.graph.virtualEndpoint")
 	auditEvents: Optional[list[CloudPcAuditEvent]] = Field(alias="auditEvents", default=None,)
 	cloudPCs: Optional[list[CloudPC]] = Field(alias="cloudPCs", default=None,)
 	deviceImages: Optional[list[CloudPcDeviceImage]] = Field(alias="deviceImages", default=None,)

@@ -7,7 +7,7 @@ from pydantic import BaseModel, Field
 
 class AccessReviewHistoryInstance(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.accessReviewHistoryInstance"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.accessReviewHistoryInstance"] = Field(alias="@odata.type", default="#microsoft.graph.accessReviewHistoryInstance")
 	downloadUri: Optional[str] = Field(alias="downloadUri", default=None,)
 	expirationDateTime: Optional[datetime] = Field(alias="expirationDateTime", default=None,)
 	fulfilledDateTime: Optional[datetime] = Field(alias="fulfilledDateTime", default=None,)

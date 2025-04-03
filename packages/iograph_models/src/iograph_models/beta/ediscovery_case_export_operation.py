@@ -8,7 +8,7 @@ from pydantic import BaseModel, Field
 
 class EdiscoveryCaseExportOperation(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.ediscovery.caseExportOperation"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.ediscovery.caseExportOperation"] = Field(alias="@odata.type", default="#microsoft.graph.ediscovery.caseExportOperation")
 	action: Optional[EdiscoveryCaseAction | str] = Field(alias="action", default=None,)
 	completedDateTime: Optional[datetime] = Field(alias="completedDateTime", default=None,)
 	createdBy: Optional[Union[AiInteractionMentionedIdentitySet, ApprovalIdentitySet, ChatMessageFromIdentitySet, ChatMessageMentionedIdentitySet, ChatMessageReactionIdentitySet, CommunicationsIdentitySet, SharePointIdentitySet]] = Field(alias="createdBy", default=None,discriminator="odata_type", )

@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field
 
 class DeviceComplianceActionItem(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.deviceComplianceActionItem"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.deviceComplianceActionItem"] = Field(alias="@odata.type", default="#microsoft.graph.deviceComplianceActionItem")
 	actionType: Optional[DeviceComplianceActionType | str] = Field(alias="actionType", default=None,)
 	gracePeriodHours: Optional[int] = Field(alias="gracePeriodHours", default=None,)
 	notificationMessageCCList: Optional[list[str]] = Field(alias="notificationMessageCCList", default=None,)

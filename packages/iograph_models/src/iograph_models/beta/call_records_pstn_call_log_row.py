@@ -12,7 +12,7 @@ class CallRecordsPstnCallLogRow(BaseModel):
 	userDisplayName: Optional[str] = Field(alias="userDisplayName", default=None,)
 	userId: Optional[str] = Field(alias="userId", default=None,)
 	userPrincipalName: Optional[str] = Field(alias="userPrincipalName", default=None,)
-	odata_type: Literal["#microsoft.graph.callRecords.pstnCallLogRow"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.callRecords.pstnCallLogRow"] = Field(alias="@odata.type", default="#microsoft.graph.callRecords.pstnCallLogRow")
 	callDurationSource: Optional[CallRecordsPstnCallDurationSource | str] = Field(alias="callDurationSource", default=None,)
 	calleeNumber: Optional[str] = Field(alias="calleeNumber", default=None,)
 	callerNumber: Optional[str] = Field(alias="callerNumber", default=None,)

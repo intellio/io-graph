@@ -7,7 +7,7 @@ from pydantic import BaseModel, Field
 
 class DeviceCompliancePolicyGroupAssignment(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.deviceCompliancePolicyGroupAssignment"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.deviceCompliancePolicyGroupAssignment"] = Field(alias="@odata.type", default="#microsoft.graph.deviceCompliancePolicyGroupAssignment")
 	excludeGroup: Optional[bool] = Field(alias="excludeGroup", default=None,)
 	targetGroupId: Optional[str] = Field(alias="targetGroupId", default=None,)
 	deviceCompliancePolicy: Optional[Union[AndroidCompliancePolicy, AndroidDeviceOwnerCompliancePolicy, AndroidForWorkCompliancePolicy, AndroidWorkProfileCompliancePolicy, AospDeviceOwnerCompliancePolicy, DefaultDeviceCompliancePolicy, IosCompliancePolicy, MacOSCompliancePolicy, Windows10CompliancePolicy, Windows10MobileCompliancePolicy, Windows81CompliancePolicy, WindowsPhone81CompliancePolicy]] = Field(alias="deviceCompliancePolicy", default=None,discriminator="odata_type", )

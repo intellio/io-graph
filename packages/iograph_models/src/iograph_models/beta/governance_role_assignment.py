@@ -7,7 +7,7 @@ from pydantic import BaseModel, Field
 
 class GovernanceRoleAssignment(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.governanceRoleAssignment"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.governanceRoleAssignment"] = Field(alias="@odata.type", default="#microsoft.graph.governanceRoleAssignment")
 	assignmentState: Optional[str] = Field(alias="assignmentState", default=None,)
 	endDateTime: Optional[datetime] = Field(alias="endDateTime", default=None,)
 	externalId: Optional[str] = Field(alias="externalId", default=None,)

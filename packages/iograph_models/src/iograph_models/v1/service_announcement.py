@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field
 
 class ServiceAnnouncement(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.serviceAnnouncement"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.serviceAnnouncement"] = Field(alias="@odata.type", default="#microsoft.graph.serviceAnnouncement")
 	healthOverviews: Optional[list[ServiceHealth]] = Field(alias="healthOverviews", default=None,)
 	issues: Optional[list[ServiceHealthIssue]] = Field(alias="issues", default=None,)
 	messages: Optional[list[ServiceUpdateMessage]] = Field(alias="messages", default=None,)

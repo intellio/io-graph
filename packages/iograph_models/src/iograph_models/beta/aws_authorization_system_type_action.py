@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field
 
 class AwsAuthorizationSystemTypeAction(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.awsAuthorizationSystemTypeAction"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.awsAuthorizationSystemTypeAction"] = Field(alias="@odata.type", default="#microsoft.graph.awsAuthorizationSystemTypeAction")
 	actionType: Optional[AuthorizationSystemActionType | str] = Field(alias="actionType", default=None,)
 	externalId: Optional[str] = Field(alias="externalId", default=None,)
 	resourceTypes: Optional[list[str]] = Field(alias="resourceTypes", default=None,)

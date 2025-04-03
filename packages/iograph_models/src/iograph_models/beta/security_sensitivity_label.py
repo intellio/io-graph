@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field
 
 class SecuritySensitivityLabel(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.security.sensitivityLabel"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.security.sensitivityLabel"] = Field(alias="@odata.type", default="#microsoft.graph.security.sensitivityLabel")
 	color: Optional[str] = Field(alias="color", default=None,)
 	contentFormats: Optional[list[str]] = Field(alias="contentFormats", default=None,)
 	description: Optional[str] = Field(alias="description", default=None,)

@@ -7,7 +7,7 @@ from pydantic import BaseModel, Field
 
 class PermissionsRequestChange(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.permissionsRequestChange"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.permissionsRequestChange"] = Field(alias="@odata.type", default="#microsoft.graph.permissionsRequestChange")
 	activeOccurrenceStatus: Optional[PermissionsRequestOccurrenceStatus | str] = Field(alias="activeOccurrenceStatus", default=None,)
 	modificationDateTime: Optional[datetime] = Field(alias="modificationDateTime", default=None,)
 	permissionsRequestId: Optional[str] = Field(alias="permissionsRequestId", default=None,)

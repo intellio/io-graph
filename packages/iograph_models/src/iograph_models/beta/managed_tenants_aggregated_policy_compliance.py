@@ -7,7 +7,7 @@ from pydantic import BaseModel, Field
 
 class ManagedTenantsAggregatedPolicyCompliance(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.managedTenants.aggregatedPolicyCompliance"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.managedTenants.aggregatedPolicyCompliance"] = Field(alias="@odata.type", default="#microsoft.graph.managedTenants.aggregatedPolicyCompliance")
 	compliancePolicyId: Optional[str] = Field(alias="compliancePolicyId", default=None,)
 	compliancePolicyName: Optional[str] = Field(alias="compliancePolicyName", default=None,)
 	compliancePolicyPlatform: Optional[str] = Field(alias="compliancePolicyPlatform", default=None,)

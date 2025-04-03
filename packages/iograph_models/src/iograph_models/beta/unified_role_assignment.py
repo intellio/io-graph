@@ -7,7 +7,7 @@ from pydantic import BaseModel, Field
 
 class UnifiedRoleAssignment(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.unifiedRoleAssignment"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.unifiedRoleAssignment"] = Field(alias="@odata.type", default="#microsoft.graph.unifiedRoleAssignment")
 	appScopeId: Optional[str] = Field(alias="appScopeId", default=None,)
 	condition: Optional[str] = Field(alias="condition", default=None,)
 	directoryScopeId: Optional[str] = Field(alias="directoryScopeId", default=None,)

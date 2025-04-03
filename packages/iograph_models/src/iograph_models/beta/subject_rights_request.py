@@ -8,7 +8,7 @@ from pydantic import BaseModel, Field
 
 class SubjectRightsRequest(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.subjectRightsRequest"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.subjectRightsRequest"] = Field(alias="@odata.type", default="#microsoft.graph.subjectRightsRequest")
 	assignedTo: Optional[Union[AzureCommunicationServicesUserIdentity, CommunicationsApplicationIdentity, CommunicationsApplicationInstanceIdentity, CommunicationsEncryptedIdentity, CommunicationsGuestIdentity, CommunicationsPhoneIdentity, CommunicationsUserIdentity, EmailIdentity, Initiator, ProgramResource, ProvisionedIdentity, ProvisioningServicePrincipal, ProvisioningSystem, ServicePrincipalIdentity, SharePointIdentity, SourceProvisionedIdentity, TargetProvisionedIdentity, TeamworkApplicationIdentity, TeamworkConversationIdentity, TeamworkTagIdentity, TeamworkUserIdentity, AuditUserIdentity, CallRecordsUserIdentity, SecuritySubmissionUserIdentity]] = Field(alias="assignedTo", default=None,discriminator="odata_type", )
 	closedDateTime: Optional[datetime] = Field(alias="closedDateTime", default=None,)
 	contentQuery: Optional[str] = Field(alias="contentQuery", default=None,)

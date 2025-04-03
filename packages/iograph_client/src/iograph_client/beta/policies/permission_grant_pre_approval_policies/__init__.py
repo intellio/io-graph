@@ -15,8 +15,8 @@ if TYPE_CHECKING:
 	from .by_permission_grant_pre_approval_policy_id import ByPermissionGrantPreApprovalPolicyIdRequest
 	from ....request_adapter import HttpxRequestAdapter
 from iograph_models.beta.permission_grant_pre_approval_policy_collection_response import PermissionGrantPreApprovalPolicyCollectionResponse
-from iograph_models.beta.permission_grant_pre_approval_policy import PermissionGrantPreApprovalPolicy
 from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.beta.permission_grant_pre_approval_policy import PermissionGrantPreApprovalPolicy
 
 
 class PermissionGrantPreApprovalPoliciesRequest(BaseRequestBuilder):

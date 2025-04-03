@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field
 
 class AllowedDataLocation(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.allowedDataLocation"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.allowedDataLocation"] = Field(alias="@odata.type", default="#microsoft.graph.allowedDataLocation")
 	appId: Optional[str] = Field(alias="appId", default=None,)
 	domain: Optional[str] = Field(alias="domain", default=None,)
 	isDefault: Optional[bool] = Field(alias="isDefault", default=None,)

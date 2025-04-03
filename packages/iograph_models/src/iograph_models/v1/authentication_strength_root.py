@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field
 
 class AuthenticationStrengthRoot(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.authenticationStrengthRoot"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.authenticationStrengthRoot"] = Field(alias="@odata.type", default="#microsoft.graph.authenticationStrengthRoot")
 	combinations: Optional[list[AuthenticationMethodModes | str]] = Field(alias="combinations", default=None,)
 	authenticationMethodModes: Optional[list[AuthenticationMethodModeDetail]] = Field(alias="authenticationMethodModes", default=None,)
 	policies: Optional[list[AuthenticationStrengthPolicy]] = Field(alias="policies", default=None,)

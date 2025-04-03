@@ -7,7 +7,7 @@ from pydantic import BaseModel, Field
 
 class VirtualEventPresenter(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.virtualEventPresenter"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.virtualEventPresenter"] = Field(alias="@odata.type", default="#microsoft.graph.virtualEventPresenter")
 	email: Optional[str] = Field(alias="email", default=None,)
 	identity: Optional[Union[AzureCommunicationServicesUserIdentity, CommunicationsApplicationIdentity, CommunicationsApplicationInstanceIdentity, CommunicationsEncryptedIdentity, CommunicationsGuestIdentity, CommunicationsPhoneIdentity, CommunicationsUserIdentity, EmailIdentity, Initiator, ProgramResource, ProvisionedIdentity, ProvisioningServicePrincipal, ProvisioningSystem, ServicePrincipalIdentity, SharePointIdentity, SourceProvisionedIdentity, TargetProvisionedIdentity, TeamworkApplicationIdentity, TeamworkConversationIdentity, TeamworkTagIdentity, TeamworkUserIdentity, AuditUserIdentity, CallRecordsUserIdentity, SecuritySubmissionUserIdentity]] = Field(alias="identity", default=None,discriminator="odata_type", )
 	presenterDetails: Optional[VirtualEventPresenterDetails] = Field(alias="presenterDetails", default=None,)

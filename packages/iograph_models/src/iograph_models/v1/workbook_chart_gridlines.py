@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field
 
 class WorkbookChartGridlines(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.workbookChartGridlines"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.workbookChartGridlines"] = Field(alias="@odata.type", default="#microsoft.graph.workbookChartGridlines")
 	visible: Optional[bool] = Field(alias="visible", default=None,)
 	format: Optional[WorkbookChartGridlinesFormat] = Field(alias="format", default=None,)
 

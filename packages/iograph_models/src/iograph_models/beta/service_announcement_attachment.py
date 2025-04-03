@@ -7,7 +7,7 @@ from pydantic import BaseModel, Field
 
 class ServiceAnnouncementAttachment(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.serviceAnnouncementAttachment"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.serviceAnnouncementAttachment"] = Field(alias="@odata.type", default="#microsoft.graph.serviceAnnouncementAttachment")
 	content: Optional[str] = Field(alias="content", default=None,)
 	contentType: Optional[str] = Field(alias="contentType", default=None,)
 	lastModifiedDateTime: Optional[datetime] = Field(alias="lastModifiedDateTime", default=None,)

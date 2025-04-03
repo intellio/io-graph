@@ -14,9 +14,9 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_device_management_intent_setting_category_id import ByDeviceManagementIntentSettingCategoryIdRequest
 	from ......request_adapter import HttpxRequestAdapter
+from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.beta.device_management_intent_setting_category import DeviceManagementIntentSettingCategory
 from iograph_models.beta.device_management_intent_setting_category_collection_response import DeviceManagementIntentSettingCategoryCollectionResponse
-from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 
 
 class CategoriesRequest(BaseRequestBuilder):

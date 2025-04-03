@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field
 
 class ExchangeSettings(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.exchangeSettings"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.exchangeSettings"] = Field(alias="@odata.type", default="#microsoft.graph.exchangeSettings")
 	inPlaceArchiveMailboxId: Optional[str] = Field(alias="inPlaceArchiveMailboxId", default=None,)
 	primaryMailboxId: Optional[str] = Field(alias="primaryMailboxId", default=None,)
 

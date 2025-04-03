@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field
 
 class AdminDynamics(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.adminDynamics"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.adminDynamics"] = Field(alias="@odata.type", default="#microsoft.graph.adminDynamics")
 	customerVoice: Optional[CustomerVoiceSettings] = Field(alias="customerVoice", default=None,)
 
 from .customer_voice_settings import CustomerVoiceSettings

@@ -7,7 +7,7 @@ from pydantic import BaseModel, Field
 
 class EducationClass(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.educationClass"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.educationClass"] = Field(alias="@odata.type", default="#microsoft.graph.educationClass")
 	classCode: Optional[str] = Field(alias="classCode", default=None,)
 	course: Optional[EducationCourse] = Field(alias="course", default=None,)
 	createdBy: Optional[Union[AiInteractionMentionedIdentitySet, ApprovalIdentitySet, ChatMessageFromIdentitySet, ChatMessageMentionedIdentitySet, ChatMessageReactionIdentitySet, CommunicationsIdentitySet, SharePointIdentitySet]] = Field(alias="createdBy", default=None,discriminator="odata_type", )

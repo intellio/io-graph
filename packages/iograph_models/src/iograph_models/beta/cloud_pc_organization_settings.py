@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field
 
 class CloudPcOrganizationSettings(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.cloudPcOrganizationSettings"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.cloudPcOrganizationSettings"] = Field(alias="@odata.type", default="#microsoft.graph.cloudPcOrganizationSettings")
 	enableMEMAutoEnroll: Optional[bool] = Field(alias="enableMEMAutoEnroll", default=None,)
 	enableSingleSignOn: Optional[bool] = Field(alias="enableSingleSignOn", default=None,)
 	osVersion: Optional[CloudPcOperatingSystem | str] = Field(alias="osVersion", default=None,)

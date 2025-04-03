@@ -8,7 +8,7 @@ from pydantic import BaseModel, Field
 
 class Schedule(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.schedule"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.schedule"] = Field(alias="@odata.type", default="#microsoft.graph.schedule")
 	activitiesIncludedWhenCopyingShiftsEnabled: Optional[bool] = Field(alias="activitiesIncludedWhenCopyingShiftsEnabled", default=None,)
 	enabled: Optional[bool] = Field(alias="enabled", default=None,)
 	isActivitiesIncludedWhenCopyingShiftsEnabled: Optional[bool] = Field(alias="isActivitiesIncludedWhenCopyingShiftsEnabled", default=None,)

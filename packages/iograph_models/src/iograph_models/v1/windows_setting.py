@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field
 
 class WindowsSetting(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.windowsSetting"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.windowsSetting"] = Field(alias="@odata.type", default="#microsoft.graph.windowsSetting")
 	payloadType: Optional[str] = Field(alias="payloadType", default=None,)
 	settingType: Optional[WindowsSettingType | str] = Field(alias="settingType", default=None,)
 	windowsDeviceId: Optional[str] = Field(alias="windowsDeviceId", default=None,)

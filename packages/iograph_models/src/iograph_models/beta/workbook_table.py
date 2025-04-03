@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field
 
 class WorkbookTable(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.workbookTable"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.workbookTable"] = Field(alias="@odata.type", default="#microsoft.graph.workbookTable")
 	highlightFirstColumn: Optional[bool] = Field(alias="highlightFirstColumn", default=None,)
 	highlightLastColumn: Optional[bool] = Field(alias="highlightLastColumn", default=None,)
 	legacyId: Optional[str] = Field(alias="legacyId", default=None,)

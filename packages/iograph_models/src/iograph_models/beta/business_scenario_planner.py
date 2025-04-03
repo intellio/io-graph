@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field
 
 class BusinessScenarioPlanner(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.businessScenarioPlanner"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.businessScenarioPlanner"] = Field(alias="@odata.type", default="#microsoft.graph.businessScenarioPlanner")
 	planConfiguration: Optional[PlannerPlanConfiguration] = Field(alias="planConfiguration", default=None,)
 	taskConfiguration: Optional[PlannerTaskConfiguration] = Field(alias="taskConfiguration", default=None,)
 	tasks: Optional[list[BusinessScenarioTask]] = Field(alias="tasks", default=None,)

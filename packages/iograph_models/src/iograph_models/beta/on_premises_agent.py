@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field
 
 class OnPremisesAgent(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.onPremisesAgent"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.onPremisesAgent"] = Field(alias="@odata.type", default="#microsoft.graph.onPremisesAgent")
 	externalIp: Optional[str] = Field(alias="externalIp", default=None,)
 	machineName: Optional[str] = Field(alias="machineName", default=None,)
 	status: Optional[AgentStatus | str] = Field(alias="status", default=None,)

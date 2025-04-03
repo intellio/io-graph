@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field
 
 class PrivilegedAccessGroup(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.privilegedAccessGroup"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.privilegedAccessGroup"] = Field(alias="@odata.type", default="#microsoft.graph.privilegedAccessGroup")
 	assignmentApprovals: Optional[list[Approval]] = Field(alias="assignmentApprovals", default=None,)
 	assignmentScheduleInstances: Optional[list[PrivilegedAccessGroupAssignmentScheduleInstance]] = Field(alias="assignmentScheduleInstances", default=None,)
 	assignmentScheduleRequests: Optional[list[PrivilegedAccessGroupAssignmentScheduleRequest]] = Field(alias="assignmentScheduleRequests", default=None,)

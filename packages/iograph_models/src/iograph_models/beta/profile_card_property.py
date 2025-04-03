@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field
 
 class ProfileCardProperty(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.profileCardProperty"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.profileCardProperty"] = Field(alias="@odata.type", default="#microsoft.graph.profileCardProperty")
 	annotations: Optional[list[ProfileCardAnnotation]] = Field(alias="annotations", default=None,)
 	directoryPropertyName: Optional[str] = Field(alias="directoryPropertyName", default=None,)
 

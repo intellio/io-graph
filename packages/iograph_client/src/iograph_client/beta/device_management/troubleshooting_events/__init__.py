@@ -14,9 +14,9 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_device_management_troubleshooting_event_id import ByDeviceManagementTroubleshootingEventIdRequest
 	from ....request_adapter import HttpxRequestAdapter
+from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.beta.device_management_troubleshooting_event_collection_response import DeviceManagementTroubleshootingEventCollectionResponse
 from iograph_models.beta.device_management_troubleshooting_event import DeviceManagementTroubleshootingEvent
-from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 
 
 class TroubleshootingEventsRequest(BaseRequestBuilder):

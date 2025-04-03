@@ -15,8 +15,8 @@ if TYPE_CHECKING:
 	from .by_host_cookie_id import ByHostCookieIdRequest
 	from .....request_adapter import HttpxRequestAdapter
 from iograph_models.beta.security_host_cookie import SecurityHostCookie
-from iograph_models.beta.security_host_cookie_collection_response import SecurityHostCookieCollectionResponse
 from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.beta.security_host_cookie_collection_response import SecurityHostCookieCollectionResponse
 
 
 class HostCookiesRequest(BaseRequestBuilder):

@@ -6,6 +6,6 @@ from pydantic import BaseModel, Field
 
 class NamePronunciationSettings(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.namePronunciationSettings"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.namePronunciationSettings"] = Field(alias="@odata.type", default="#microsoft.graph.namePronunciationSettings")
 	isEnabledInOrganization: Optional[bool] = Field(alias="isEnabledInOrganization", default=None,)
 

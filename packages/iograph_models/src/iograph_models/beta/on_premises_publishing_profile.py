@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field
 
 class OnPremisesPublishingProfile(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.onPremisesPublishingProfile"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.onPremisesPublishingProfile"] = Field(alias="@odata.type", default="#microsoft.graph.onPremisesPublishingProfile")
 	hybridAgentUpdaterConfiguration: Optional[HybridAgentUpdaterConfiguration] = Field(alias="hybridAgentUpdaterConfiguration", default=None,)
 	isDefaultAccessEnabled: Optional[bool] = Field(alias="isDefaultAccessEnabled", default=None,)
 	isEnabled: Optional[bool] = Field(alias="isEnabled", default=None,)

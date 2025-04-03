@@ -8,7 +8,7 @@ from pydantic import BaseModel, Field
 
 class UserAnalytics(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.userAnalytics"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.userAnalytics"] = Field(alias="@odata.type", default="#microsoft.graph.userAnalytics")
 	settings: Optional[Settings] = Field(alias="settings", default=None,)
 	activityStatistics: Optional[list[Annotated[Union[CallActivityStatistics, ChatActivityStatistics, EmailActivityStatistics, FocusActivityStatistics, MeetingActivityStatistics],Field(discriminator="odata_type")]]] = Field(alias="activityStatistics", default=None,)
 

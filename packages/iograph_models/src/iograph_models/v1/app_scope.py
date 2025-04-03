@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field
 
 class AppScope(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.appScope"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.appScope"] = Field(alias="@odata.type", default="#microsoft.graph.appScope")
 	displayName: Optional[str] = Field(alias="displayName", default=None,)
 	type: Optional[str] = Field(alias="type", default=None,)
 

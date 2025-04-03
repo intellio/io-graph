@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field
 
 class ZebraFotaDeployment(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.zebraFotaDeployment"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.zebraFotaDeployment"] = Field(alias="@odata.type", default="#microsoft.graph.zebraFotaDeployment")
 	deploymentAssignments: Optional[list[AndroidFotaDeploymentAssignment]] = Field(alias="deploymentAssignments", default=None,)
 	deploymentSettings: Optional[ZebraFotaDeploymentSettings] = Field(alias="deploymentSettings", default=None,)
 	deploymentStatus: Optional[ZebraFotaDeploymentStatus] = Field(alias="deploymentStatus", default=None,)

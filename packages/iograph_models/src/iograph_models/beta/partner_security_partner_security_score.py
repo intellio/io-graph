@@ -9,7 +9,7 @@ from pydantic import BaseModel, Field
 
 class PartnerSecurityPartnerSecurityScore(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.partner.security.partnerSecurityScore"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.partner.security.partnerSecurityScore"] = Field(alias="@odata.type", default="#microsoft.graph.partner.security.partnerSecurityScore")
 	currentScore: float | str | ReferenceNumeric
 	lastRefreshDateTime: Optional[datetime] = Field(alias="lastRefreshDateTime", default=None,)
 	maxScore: float | str | ReferenceNumeric

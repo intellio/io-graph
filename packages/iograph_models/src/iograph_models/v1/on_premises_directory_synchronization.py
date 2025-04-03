@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field
 
 class OnPremisesDirectorySynchronization(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.onPremisesDirectorySynchronization"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.onPremisesDirectorySynchronization"] = Field(alias="@odata.type", default="#microsoft.graph.onPremisesDirectorySynchronization")
 	configuration: Optional[OnPremisesDirectorySynchronizationConfiguration] = Field(alias="configuration", default=None,)
 	features: Optional[OnPremisesDirectorySynchronizationFeature] = Field(alias="features", default=None,)
 

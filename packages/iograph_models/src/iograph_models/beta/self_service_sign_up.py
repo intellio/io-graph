@@ -7,7 +7,7 @@ from pydantic import BaseModel, Field
 
 class SelfServiceSignUp(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.selfServiceSignUp"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.selfServiceSignUp"] = Field(alias="@odata.type", default="#microsoft.graph.selfServiceSignUp")
 	appDisplayName: Optional[str] = Field(alias="appDisplayName", default=None,)
 	appId: Optional[str] = Field(alias="appId", default=None,)
 	appliedEventListeners: Optional[list[AppliedAuthenticationEventListener]] = Field(alias="appliedEventListeners", default=None,)

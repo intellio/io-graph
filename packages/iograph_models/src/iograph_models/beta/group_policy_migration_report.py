@@ -8,7 +8,7 @@ from pydantic import BaseModel, Field
 
 class GroupPolicyMigrationReport(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.groupPolicyMigrationReport"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.groupPolicyMigrationReport"] = Field(alias="@odata.type", default="#microsoft.graph.groupPolicyMigrationReport")
 	createdDateTime: Optional[datetime] = Field(alias="createdDateTime", default=None,)
 	displayName: Optional[str] = Field(alias="displayName", default=None,)
 	groupPolicyCreatedDateTime: Optional[datetime] = Field(alias="groupPolicyCreatedDateTime", default=None,)

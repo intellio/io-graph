@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field
 
 class ManagedTenantsManagedDeviceComplianceTrend(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.managedTenants.managedDeviceComplianceTrend"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.managedTenants.managedDeviceComplianceTrend"] = Field(alias="@odata.type", default="#microsoft.graph.managedTenants.managedDeviceComplianceTrend")
 	compliantDeviceCount: Optional[int] = Field(alias="compliantDeviceCount", default=None,)
 	configManagerDeviceCount: Optional[int] = Field(alias="configManagerDeviceCount", default=None,)
 	countDateTime: Optional[str] = Field(alias="countDateTime", default=None,)

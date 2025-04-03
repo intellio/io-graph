@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field
 
 class WorkbookChartAxisTitle(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.workbookChartAxisTitle"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.workbookChartAxisTitle"] = Field(alias="@odata.type", default="#microsoft.graph.workbookChartAxisTitle")
 	text: Optional[str] = Field(alias="text", default=None,)
 	visible: Optional[bool] = Field(alias="visible", default=None,)
 	format: Optional[WorkbookChartAxisTitleFormat] = Field(alias="format", default=None,)

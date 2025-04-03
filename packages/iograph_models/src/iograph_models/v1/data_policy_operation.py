@@ -7,7 +7,7 @@ from pydantic import BaseModel, Field
 
 class DataPolicyOperation(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.dataPolicyOperation"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.dataPolicyOperation"] = Field(alias="@odata.type", default="#microsoft.graph.dataPolicyOperation")
 	completedDateTime: Optional[datetime] = Field(alias="completedDateTime", default=None,)
 	progress: float | str | ReferenceNumeric
 	status: Optional[DataPolicyOperationStatus | str] = Field(alias="status", default=None,)

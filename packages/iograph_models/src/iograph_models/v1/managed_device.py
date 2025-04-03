@@ -9,7 +9,7 @@ from pydantic import BaseModel, Field
 
 class ManagedDevice(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.managedDevice"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.managedDevice"] = Field(alias="@odata.type", default="#microsoft.graph.managedDevice")
 	activationLockBypassCode: Optional[str] = Field(alias="activationLockBypassCode", default=None,)
 	androidSecurityPatchLevel: Optional[str] = Field(alias="androidSecurityPatchLevel", default=None,)
 	azureADDeviceId: Optional[str] = Field(alias="azureADDeviceId", default=None,)

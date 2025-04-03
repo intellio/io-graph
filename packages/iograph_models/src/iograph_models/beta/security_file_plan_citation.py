@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field
 
 class SecurityFilePlanCitation(BaseModel):
 	displayName: Optional[str] = Field(alias="displayName", default=None,)
-	odata_type: Literal["#microsoft.graph.security.filePlanCitation"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.security.filePlanCitation"] = Field(alias="@odata.type", default="#microsoft.graph.security.filePlanCitation")
 	citationJurisdiction: Optional[str] = Field(alias="citationJurisdiction", default=None,)
 	citationUrl: Optional[str] = Field(alias="citationUrl", default=None,)
 

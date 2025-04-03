@@ -7,7 +7,7 @@ from pydantic import BaseModel, Field
 
 class PrivilegedApproval(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.privilegedApproval"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.privilegedApproval"] = Field(alias="@odata.type", default="#microsoft.graph.privilegedApproval")
 	approvalDuration: Optional[str] = Field(alias="approvalDuration", default=None,)
 	approvalState: Optional[ApprovalState | str] = Field(alias="approvalState", default=None,)
 	approvalType: Optional[str] = Field(alias="approvalType", default=None,)

@@ -7,7 +7,7 @@ from pydantic import BaseModel, Field
 
 class NotificationMessageTemplate(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.notificationMessageTemplate"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.notificationMessageTemplate"] = Field(alias="@odata.type", default="#microsoft.graph.notificationMessageTemplate")
 	brandingOptions: Optional[NotificationTemplateBrandingOptions | str] = Field(alias="brandingOptions", default=None,)
 	defaultLocale: Optional[str] = Field(alias="defaultLocale", default=None,)
 	displayName: Optional[str] = Field(alias="displayName", default=None,)

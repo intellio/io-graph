@@ -11,8 +11,8 @@ from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:
 	from .......request_adapter import HttpxRequestAdapter
-from iograph_models.beta.initiate_on_demand_proactive_remediation_post_request import Initiate_on_demand_proactive_remediationPostRequest
 from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.beta.initiate_on_demand_proactive_remediation_post_request import Initiate_on_demand_proactive_remediationPostRequest
 
 
 class InitiateOnDemandProactiveRemediationRequest(BaseRequestBuilder):

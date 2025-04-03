@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field
 
 class Security(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.security"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.security"] = Field(alias="@odata.type", default="#microsoft.graph.security")
 	alerts: Optional[list[Alert]] = Field(alias="alerts", default=None,)
 	alerts_v2: Optional[list[SecurityAlert]] = Field(alias="alerts_v2", default=None,)
 	attackSimulation: Optional[AttackSimulationRoot] = Field(alias="attackSimulation", default=None,)

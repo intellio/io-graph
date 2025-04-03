@@ -8,7 +8,7 @@ from pydantic import BaseModel, Field
 
 class BrowserSiteList(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.browserSiteList"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.browserSiteList"] = Field(alias="@odata.type", default="#microsoft.graph.browserSiteList")
 	description: Optional[str] = Field(alias="description", default=None,)
 	displayName: Optional[str] = Field(alias="displayName", default=None,)
 	lastModifiedBy: Optional[Union[AiInteractionMentionedIdentitySet, ApprovalIdentitySet, ChatMessageFromIdentitySet, ChatMessageMentionedIdentitySet, ChatMessageReactionIdentitySet, CommunicationsIdentitySet, SharePointIdentitySet]] = Field(alias="lastModifiedBy", default=None,discriminator="odata_type", )

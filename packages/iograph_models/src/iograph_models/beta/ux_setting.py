@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field
 
 class UxSetting(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.uxSetting"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.uxSetting"] = Field(alias="@odata.type", default="#microsoft.graph.uxSetting")
 	restrictNonAdminAccess: Optional[NonAdminSetting | str] = Field(alias="restrictNonAdminAccess", default=None,)
 
 from .non_admin_setting import NonAdminSetting

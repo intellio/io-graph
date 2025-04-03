@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field
 
 class Sharepoint(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.sharepoint"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.sharepoint"] = Field(alias="@odata.type", default="#microsoft.graph.sharepoint")
 	settings: Optional[SharepointSettings] = Field(alias="settings", default=None,)
 
 from .sharepoint_settings import SharepointSettings

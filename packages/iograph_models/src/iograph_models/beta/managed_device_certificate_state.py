@@ -7,7 +7,7 @@ from pydantic import BaseModel, Field
 
 class ManagedDeviceCertificateState(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.managedDeviceCertificateState"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.managedDeviceCertificateState"] = Field(alias="@odata.type", default="#microsoft.graph.managedDeviceCertificateState")
 	certificateEnhancedKeyUsage: Optional[str] = Field(alias="certificateEnhancedKeyUsage", default=None,)
 	certificateErrorCode: Optional[int] = Field(alias="certificateErrorCode", default=None,)
 	certificateExpirationDateTime: Optional[datetime] = Field(alias="certificateExpirationDateTime", default=None,)

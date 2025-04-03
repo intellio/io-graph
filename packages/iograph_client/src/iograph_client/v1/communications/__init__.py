@@ -16,8 +16,8 @@ if TYPE_CHECKING:
 	from .calls import CallsRequest
 	from .call_records import CallRecordsRequest
 	from ...request_adapter import HttpxRequestAdapter
-from iograph_models.v1.cloud_communications import CloudCommunications
 from iograph_models.v1.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.v1.cloud_communications import CloudCommunications
 
 
 class CommunicationsRequest(BaseRequestBuilder):

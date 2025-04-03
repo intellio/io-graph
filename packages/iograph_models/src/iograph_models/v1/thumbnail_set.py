@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field
 
 class ThumbnailSet(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.thumbnailSet"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.thumbnailSet"] = Field(alias="@odata.type", default="#microsoft.graph.thumbnailSet")
 	large: Optional[Thumbnail] = Field(alias="large", default=None,)
 	medium: Optional[Thumbnail] = Field(alias="medium", default=None,)
 	small: Optional[Thumbnail] = Field(alias="small", default=None,)

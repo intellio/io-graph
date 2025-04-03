@@ -15,8 +15,8 @@ if TYPE_CHECKING:
 	from .by_list_item_version_id import ByListItemVersionIdRequest
 	from .........request_adapter import HttpxRequestAdapter
 from iograph_models.v1.list_item_version_collection_response import ListItemVersionCollectionResponse
-from iograph_models.v1.list_item_version import ListItemVersion
 from iograph_models.v1.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.v1.list_item_version import ListItemVersion
 
 
 class VersionsRequest(BaseRequestBuilder):

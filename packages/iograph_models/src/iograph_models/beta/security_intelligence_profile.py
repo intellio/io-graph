@@ -7,7 +7,7 @@ from pydantic import BaseModel, Field
 
 class SecurityIntelligenceProfile(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.security.intelligenceProfile"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.security.intelligenceProfile"] = Field(alias="@odata.type", default="#microsoft.graph.security.intelligenceProfile")
 	aliases: Optional[list[str]] = Field(alias="aliases", default=None,)
 	countriesOrRegionsOfOrigin: Optional[list[SecurityIntelligenceProfileCountryOrRegionOfOrigin]] = Field(alias="countriesOrRegionsOfOrigin", default=None,)
 	description: Optional[SecurityFormattedContent] = Field(alias="description", default=None,)

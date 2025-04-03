@@ -8,7 +8,7 @@ from pydantic import BaseModel, Field
 
 class GroupPolicyPresentationValueLongDecimal(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.groupPolicyPresentationValueLongDecimal"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.groupPolicyPresentationValueLongDecimal"] = Field(alias="@odata.type", default="#microsoft.graph.groupPolicyPresentationValueLongDecimal")
 	createdDateTime: Optional[datetime] = Field(alias="createdDateTime", default=None,)
 	lastModifiedDateTime: Optional[datetime] = Field(alias="lastModifiedDateTime", default=None,)
 	definitionValue: Optional[GroupPolicyDefinitionValue] = Field(alias="definitionValue", default=None,)

@@ -14,8 +14,8 @@ if TYPE_CHECKING:
 	from .industry_data_get_statistics import IndustryDataGetStatisticsRequest
 	from .activities import ActivitiesRequest
 	from ......request_adapter import HttpxRequestAdapter
-from iograph_models.beta.industry_data_industry_data_run import IndustryDataIndustryDataRun
 from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.beta.industry_data_industry_data_run import IndustryDataIndustryDataRun
 
 
 class ByIndustryDataRunIdRequest(BaseRequestBuilder):

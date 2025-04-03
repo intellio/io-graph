@@ -9,7 +9,7 @@ from pydantic import BaseModel, Field
 
 class DeviceManagement(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.deviceManagement"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.deviceManagement"] = Field(alias="@odata.type", default="#microsoft.graph.deviceManagement")
 	deviceProtectionOverview: Optional[DeviceProtectionOverview] = Field(alias="deviceProtectionOverview", default=None,)
 	intuneAccountId: Optional[UUID] = Field(alias="intuneAccountId", default=None,)
 	intuneBrand: Optional[IntuneBrand] = Field(alias="intuneBrand", default=None,)

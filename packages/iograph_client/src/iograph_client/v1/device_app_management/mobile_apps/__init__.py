@@ -30,9 +30,9 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_mobile_app_id import ByMobileAppIdRequest
 	from ....request_adapter import HttpxRequestAdapter
-from iograph_models.v1.mobile_app import MobileApp
 from iograph_models.v1.mobile_app_collection_response import MobileAppCollectionResponse
 from iograph_models.v1.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.v1.mobile_app import MobileApp
 
 
 class MobileAppsRequest(BaseRequestBuilder):

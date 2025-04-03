@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field
 
 class DeviceRegistrationPolicy(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.deviceRegistrationPolicy"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.deviceRegistrationPolicy"] = Field(alias="@odata.type", default="#microsoft.graph.deviceRegistrationPolicy")
 	azureADJoin: Optional[AzureADJoinPolicy] = Field(alias="azureADJoin", default=None,)
 	azureADRegistration: Optional[AzureADRegistrationPolicy] = Field(alias="azureADRegistration", default=None,)
 	description: Optional[str] = Field(alias="description", default=None,)

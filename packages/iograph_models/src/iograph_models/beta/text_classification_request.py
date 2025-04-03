@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field
 
 class TextClassificationRequest(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.textClassificationRequest"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.textClassificationRequest"] = Field(alias="@odata.type", default="#microsoft.graph.textClassificationRequest")
 	contentMetaData: Optional[ClassificationRequestContentMetaData] = Field(alias="contentMetaData", default=None,)
 	fileExtension: Optional[str] = Field(alias="fileExtension", default=None,)
 	matchTolerancesToInclude: Optional[MlClassificationMatchTolerance | str] = Field(alias="matchTolerancesToInclude", default=None,)

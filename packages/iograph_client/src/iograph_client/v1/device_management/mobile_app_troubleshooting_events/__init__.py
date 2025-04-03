@@ -15,8 +15,8 @@ if TYPE_CHECKING:
 	from .by_mobile_app_troubleshooting_event_id import ByMobileAppTroubleshootingEventIdRequest
 	from ....request_adapter import HttpxRequestAdapter
 from iograph_models.v1.mobile_app_troubleshooting_event_collection_response import MobileAppTroubleshootingEventCollectionResponse
-from iograph_models.v1.mobile_app_troubleshooting_event import MobileAppTroubleshootingEvent
 from iograph_models.v1.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.v1.mobile_app_troubleshooting_event import MobileAppTroubleshootingEvent
 
 
 class MobileAppTroubleshootingEventsRequest(BaseRequestBuilder):

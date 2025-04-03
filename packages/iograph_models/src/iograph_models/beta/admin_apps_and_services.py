@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field
 
 class AdminAppsAndServices(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.adminAppsAndServices"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.adminAppsAndServices"] = Field(alias="@odata.type", default="#microsoft.graph.adminAppsAndServices")
 	settings: Optional[AppsAndServicesSettings] = Field(alias="settings", default=None,)
 
 from .apps_and_services_settings import AppsAndServicesSettings

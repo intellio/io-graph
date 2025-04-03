@@ -7,7 +7,7 @@ from pydantic import BaseModel, Field
 
 class CustomExtensionStageSetting(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.customExtensionStageSetting"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.customExtensionStageSetting"] = Field(alias="@odata.type", default="#microsoft.graph.customExtensionStageSetting")
 	stage: Optional[AccessPackageCustomExtensionStage | str] = Field(alias="stage", default=None,)
 	customExtension: Optional[Union[AccessPackageAssignmentRequestWorkflowExtension, AccessPackageAssignmentWorkflowExtension, CustomAccessPackageWorkflowExtension, OnAttributeCollectionStartCustomExtension, OnAttributeCollectionSubmitCustomExtension, OnOtpSendCustomExtension, OnTokenIssuanceStartCustomExtension, IdentityGovernanceCustomTaskExtension]] = Field(alias="customExtension", default=None,discriminator="odata_type", )
 

@@ -16,8 +16,8 @@ if TYPE_CHECKING:
 	from .categories import CategoriesRequest
 	from .assignments import AssignmentsRequest
 	from ......request_adapter import HttpxRequestAdapter
-from iograph_models.beta.mac_o_s_lob_app import MacOSLobApp
 from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.beta.mac_o_s_lob_app import MacOSLobApp
 
 
 class GraphMacOSLobAppRequest(BaseRequestBuilder):

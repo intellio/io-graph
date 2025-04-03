@@ -15,8 +15,8 @@ if TYPE_CHECKING:
 	from .by_content_sharing_session_id import ByContentSharingSessionIdRequest
 	from ......request_adapter import HttpxRequestAdapter
 from iograph_models.beta.content_sharing_session_collection_response import ContentSharingSessionCollectionResponse
-from iograph_models.beta.content_sharing_session import ContentSharingSession
 from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.beta.content_sharing_session import ContentSharingSession
 
 
 class ContentSharingSessionsRequest(BaseRequestBuilder):

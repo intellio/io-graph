@@ -7,7 +7,7 @@ from pydantic import BaseModel, Field
 
 class VirtualEventRegistration(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.virtualEventRegistration"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.virtualEventRegistration"] = Field(alias="@odata.type", default="#microsoft.graph.virtualEventRegistration")
 	cancelationDateTime: Optional[datetime] = Field(alias="cancelationDateTime", default=None,)
 	email: Optional[str] = Field(alias="email", default=None,)
 	externalRegistrationInformation: Optional[VirtualEventExternalRegistrationInformation] = Field(alias="externalRegistrationInformation", default=None,)

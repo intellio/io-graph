@@ -6,5 +6,5 @@ from pydantic import BaseModel, Field
 
 class UserFlowLanguagePage(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.userFlowLanguagePage"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.userFlowLanguagePage"] = Field(alias="@odata.type", default="#microsoft.graph.userFlowLanguagePage")
 

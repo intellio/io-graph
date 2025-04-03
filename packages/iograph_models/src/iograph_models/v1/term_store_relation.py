@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field
 
 class TermStoreRelation(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.termStore.relation"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.termStore.relation"] = Field(alias="@odata.type", default="#microsoft.graph.termStore.relation")
 	relationship: Optional[TermStoreRelationType | str] = Field(alias="relationship", default=None,)
 	fromTerm: Optional[TermStoreTerm] = Field(alias="fromTerm", default=None,)
 	set: Optional[TermStoreSet] = Field(alias="set", default=None,)

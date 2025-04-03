@@ -6,5 +6,5 @@ from pydantic import BaseModel, Field
 
 class DeletedChat(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.deletedChat"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.deletedChat"] = Field(alias="@odata.type", default="#microsoft.graph.deletedChat")
 

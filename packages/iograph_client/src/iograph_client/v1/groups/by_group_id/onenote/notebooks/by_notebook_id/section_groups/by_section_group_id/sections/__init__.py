@@ -14,9 +14,9 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_onenote_section_id import ByOnenoteSectionIdRequest
 	from ..........request_adapter import HttpxRequestAdapter
-from iograph_models.v1.onenote_section import OnenoteSection
 from iograph_models.v1.onenote_section_collection_response import OnenoteSectionCollectionResponse
 from iograph_models.v1.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.v1.onenote_section import OnenoteSection
 
 
 class SectionsRequest(BaseRequestBuilder):

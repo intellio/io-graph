@@ -7,7 +7,7 @@ from pydantic import BaseModel, Field
 
 class HostSecurityProfile(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.hostSecurityProfile"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.hostSecurityProfile"] = Field(alias="@odata.type", default="#microsoft.graph.hostSecurityProfile")
 	azureSubscriptionId: Optional[str] = Field(alias="azureSubscriptionId", default=None,)
 	azureTenantId: Optional[str] = Field(alias="azureTenantId", default=None,)
 	firstSeenDateTime: Optional[datetime] = Field(alias="firstSeenDateTime", default=None,)

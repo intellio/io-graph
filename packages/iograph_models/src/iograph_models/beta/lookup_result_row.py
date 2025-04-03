@@ -6,6 +6,6 @@ from pydantic import BaseModel, Field
 
 class LookupResultRow(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.lookupResultRow"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.lookupResultRow"] = Field(alias="@odata.type", default="#microsoft.graph.lookupResultRow")
 	row: Optional[str] = Field(alias="row", default=None,)
 

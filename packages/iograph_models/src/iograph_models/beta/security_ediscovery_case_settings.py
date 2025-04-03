@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field
 
 class SecurityEdiscoveryCaseSettings(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.security.ediscoveryCaseSettings"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.security.ediscoveryCaseSettings"] = Field(alias="@odata.type", default="#microsoft.graph.security.ediscoveryCaseSettings")
 	ocr: Optional[SecurityOcrSettings] = Field(alias="ocr", default=None,)
 	redundancyDetection: Optional[SecurityRedundancyDetectionSettings] = Field(alias="redundancyDetection", default=None,)
 	topicModeling: Optional[SecurityTopicModelingSettings] = Field(alias="topicModeling", default=None,)

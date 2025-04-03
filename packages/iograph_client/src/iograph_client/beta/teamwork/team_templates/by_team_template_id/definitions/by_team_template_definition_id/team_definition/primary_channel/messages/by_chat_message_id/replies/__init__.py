@@ -15,9 +15,9 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_chat_message_id1 import ByChatMessageId1Request
 	from ............request_adapter import HttpxRequestAdapter
-from iograph_models.beta.chat_message_collection_response import ChatMessageCollectionResponse
 from iograph_models.beta.chat_message import ChatMessage
 from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.beta.chat_message_collection_response import ChatMessageCollectionResponse
 
 
 class RepliesRequest(BaseRequestBuilder):

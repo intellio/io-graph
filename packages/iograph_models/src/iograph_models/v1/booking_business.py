@@ -9,7 +9,7 @@ from pydantic import BaseModel, Field
 
 class BookingBusiness(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.bookingBusiness"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.bookingBusiness"] = Field(alias="@odata.type", default="#microsoft.graph.bookingBusiness")
 	address: Optional[PhysicalAddress] = Field(alias="address", default=None,)
 	bookingPageSettings: Optional[BookingPageSettings] = Field(alias="bookingPageSettings", default=None,)
 	businessHours: Optional[list[BookingWorkHours]] = Field(alias="businessHours", default=None,)

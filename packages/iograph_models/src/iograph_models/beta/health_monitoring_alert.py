@@ -7,7 +7,7 @@ from pydantic import BaseModel, Field
 
 class HealthMonitoringAlert(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.healthMonitoring.alert"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.healthMonitoring.alert"] = Field(alias="@odata.type", default="#microsoft.graph.healthMonitoring.alert")
 	alertType: Optional[HealthMonitoringAlertType | str] = Field(alias="alertType", default=None,)
 	category: Optional[HealthMonitoringCategory | str] = Field(alias="category", default=None,)
 	createdDateTime: Optional[datetime] = Field(alias="createdDateTime", default=None,)

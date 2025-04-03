@@ -8,7 +8,7 @@ from pydantic import BaseModel, Field
 
 class GroupPolicyConfigurationAssignment(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.groupPolicyConfigurationAssignment"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.groupPolicyConfigurationAssignment"] = Field(alias="@odata.type", default="#microsoft.graph.groupPolicyConfigurationAssignment")
 	lastModifiedDateTime: Optional[datetime] = Field(alias="lastModifiedDateTime", default=None,)
 	target: Optional[Union[AllDevicesAssignmentTarget, AllLicensedUsersAssignmentTarget, AndroidFotaDeploymentAssignmentTarget, ConfigurationManagerCollectionAssignmentTarget, ExclusionGroupAssignmentTarget]] = Field(alias="target", default=None,discriminator="odata_type", )
 

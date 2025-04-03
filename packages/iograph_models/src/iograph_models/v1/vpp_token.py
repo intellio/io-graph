@@ -7,7 +7,7 @@ from pydantic import BaseModel, Field
 
 class VppToken(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.vppToken"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.vppToken"] = Field(alias="@odata.type", default="#microsoft.graph.vppToken")
 	appleId: Optional[str] = Field(alias="appleId", default=None,)
 	automaticallyUpdateApps: Optional[bool] = Field(alias="automaticallyUpdateApps", default=None,)
 	countryOrRegion: Optional[str] = Field(alias="countryOrRegion", default=None,)

@@ -9,7 +9,7 @@ from pydantic import BaseModel, Field
 
 class IndustryDataOutboundProvisioningFlowSet(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.industryData.outboundProvisioningFlowSet"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.industryData.outboundProvisioningFlowSet"] = Field(alias="@odata.type", default="#microsoft.graph.industryData.outboundProvisioningFlowSet")
 	createdDateTime: Optional[datetime] = Field(alias="createdDateTime", default=None,)
 	displayName: Optional[str] = Field(alias="displayName", default=None,)
 	filter: Optional[Union[IndustryDataBasicFilter]] = Field(alias="filter", default=None,discriminator="odata_type", )

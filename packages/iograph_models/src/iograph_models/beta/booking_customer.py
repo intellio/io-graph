@@ -7,7 +7,7 @@ from pydantic import BaseModel, Field
 
 class BookingCustomer(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.bookingCustomer"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.bookingCustomer"] = Field(alias="@odata.type", default="#microsoft.graph.bookingCustomer")
 	displayName: Optional[str] = Field(alias="displayName", default=None,)
 	emailAddress: Optional[str] = Field(alias="emailAddress", default=None,)
 	addresses: Optional[list[PhysicalAddress]] = Field(alias="addresses", default=None,)

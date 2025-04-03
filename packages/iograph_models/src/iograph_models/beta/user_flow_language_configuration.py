@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field
 
 class UserFlowLanguageConfiguration(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.userFlowLanguageConfiguration"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.userFlowLanguageConfiguration"] = Field(alias="@odata.type", default="#microsoft.graph.userFlowLanguageConfiguration")
 	displayName: Optional[str] = Field(alias="displayName", default=None,)
 	isEnabled: Optional[bool] = Field(alias="isEnabled", default=None,)
 	defaultPages: Optional[list[UserFlowLanguagePage]] = Field(alias="defaultPages", default=None,)

@@ -8,7 +8,7 @@ from pydantic import BaseModel, Field
 
 class ItemActivity(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.itemActivity"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.itemActivity"] = Field(alias="@odata.type", default="#microsoft.graph.itemActivity")
 	access: Optional[AccessAction] = Field(alias="access", default=None,)
 	activityDateTime: Optional[datetime] = Field(alias="activityDateTime", default=None,)
 	actor: Optional[Union[AiInteractionMentionedIdentitySet, ApprovalIdentitySet, ChatMessageFromIdentitySet, ChatMessageMentionedIdentitySet, ChatMessageReactionIdentitySet, CommunicationsIdentitySet, SharePointIdentitySet]] = Field(alias="actor", default=None,discriminator="odata_type", )

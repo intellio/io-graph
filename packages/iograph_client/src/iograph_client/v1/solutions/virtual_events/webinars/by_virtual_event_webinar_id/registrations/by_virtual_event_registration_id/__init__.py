@@ -14,8 +14,8 @@ if TYPE_CHECKING:
 	from .sessions import SessionsRequest
 	from .cancel import CancelRequest
 	from ........request_adapter import HttpxRequestAdapter
-from iograph_models.v1.virtual_event_registration import VirtualEventRegistration
 from iograph_models.v1.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.v1.virtual_event_registration import VirtualEventRegistration
 
 
 class ByVirtualEventRegistrationIdRequest(BaseRequestBuilder):

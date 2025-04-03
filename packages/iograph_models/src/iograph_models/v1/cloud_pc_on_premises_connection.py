@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field
 
 class CloudPcOnPremisesConnection(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.cloudPcOnPremisesConnection"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.cloudPcOnPremisesConnection"] = Field(alias="@odata.type", default="#microsoft.graph.cloudPcOnPremisesConnection")
 	adDomainName: Optional[str] = Field(alias="adDomainName", default=None,)
 	adDomainPassword: Optional[str] = Field(alias="adDomainPassword", default=None,)
 	adDomainUsername: Optional[str] = Field(alias="adDomainUsername", default=None,)

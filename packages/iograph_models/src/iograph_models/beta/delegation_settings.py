@@ -7,7 +7,7 @@ from pydantic import BaseModel, Field
 
 class DelegationSettings(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.delegationSettings"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.delegationSettings"] = Field(alias="@odata.type", default="#microsoft.graph.delegationSettings")
 	allowedActions: Optional[DelegateAllowedActions] = Field(alias="allowedActions", default=None,)
 	createdDateTime: Optional[datetime] = Field(alias="createdDateTime", default=None,)
 	isActive: Optional[bool] = Field(alias="isActive", default=None,)

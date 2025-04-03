@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field
 
 class WorkbookFilter(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.workbookFilter"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.workbookFilter"] = Field(alias="@odata.type", default="#microsoft.graph.workbookFilter")
 	criteria: Optional[WorkbookFilterCriteria] = Field(alias="criteria", default=None,)
 
 from .workbook_filter_criteria import WorkbookFilterCriteria

@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field
 
 class PlannerPlanDetails(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.plannerPlanDetails"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.plannerPlanDetails"] = Field(alias="@odata.type", default="#microsoft.graph.plannerPlanDetails")
 	categoryDescriptions: Optional[PlannerCategoryDescriptions] = Field(alias="categoryDescriptions", default=None,)
 	contextDetails: Optional[PlannerPlanContextDetailsCollection] = Field(alias="contextDetails", default=None,)
 	sharedWith: Optional[PlannerUserIds] = Field(alias="sharedWith", default=None,)

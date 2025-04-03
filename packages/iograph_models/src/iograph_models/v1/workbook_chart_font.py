@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field
 
 class WorkbookChartFont(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.workbookChartFont"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.workbookChartFont"] = Field(alias="@odata.type", default="#microsoft.graph.workbookChartFont")
 	bold: Optional[bool] = Field(alias="bold", default=None,)
 	color: Optional[str] = Field(alias="color", default=None,)
 	italic: Optional[bool] = Field(alias="italic", default=None,)

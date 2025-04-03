@@ -15,8 +15,8 @@ if TYPE_CHECKING:
 	from .by_teamwork_tag_member_id import ByTeamworkTagMemberIdRequest
 	from ...........request_adapter import HttpxRequestAdapter
 from iograph_models.beta.teamwork_tag_member_collection_response import TeamworkTagMemberCollectionResponse
-from iograph_models.beta.teamwork_tag_member import TeamworkTagMember
 from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.beta.teamwork_tag_member import TeamworkTagMember
 
 
 class MembersRequest(BaseRequestBuilder):

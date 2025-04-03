@@ -20,8 +20,8 @@ if TYPE_CHECKING:
 	from .inbound_flows import InboundFlowsRequest
 	from .data_connectors import DataConnectorsRequest
 	from ....request_adapter import HttpxRequestAdapter
-from iograph_models.beta.industry_data_industry_data_root import IndustryDataIndustryDataRoot
 from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.beta.industry_data_industry_data_root import IndustryDataIndustryDataRoot
 
 
 class IndustryDataRequest(BaseRequestBuilder):

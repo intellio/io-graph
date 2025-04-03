@@ -14,9 +14,9 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_mfa_telecom_fraud_metric_id import ByMfaTelecomFraudMetricIdRequest
 	from ......request_adapter import HttpxRequestAdapter
-from iograph_models.beta.mfa_telecom_fraud_metric import MfaTelecomFraudMetric
 from iograph_models.beta.mfa_telecom_fraud_metric_collection_response import MfaTelecomFraudMetricCollectionResponse
 from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.beta.mfa_telecom_fraud_metric import MfaTelecomFraudMetric
 
 
 class MfaTelecomFraudRequest(BaseRequestBuilder):

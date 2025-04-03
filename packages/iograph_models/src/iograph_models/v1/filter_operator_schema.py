@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field
 
 class FilterOperatorSchema(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.filterOperatorSchema"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.filterOperatorSchema"] = Field(alias="@odata.type", default="#microsoft.graph.filterOperatorSchema")
 	arity: Optional[ScopeOperatorType | str] = Field(alias="arity", default=None,)
 	multivaluedComparisonType: Optional[ScopeOperatorMultiValuedComparisonType | str] = Field(alias="multivaluedComparisonType", default=None,)
 	supportedAttributeTypes: Optional[list[AttributeType | str]] = Field(alias="supportedAttributeTypes", default=None,)

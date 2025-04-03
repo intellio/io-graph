@@ -7,7 +7,7 @@ from pydantic import BaseModel, Field
 
 class BookingStaffMember(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.bookingStaffMember"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.bookingStaffMember"] = Field(alias="@odata.type", default="#microsoft.graph.bookingStaffMember")
 	displayName: Optional[str] = Field(alias="displayName", default=None,)
 	emailAddress: Optional[str] = Field(alias="emailAddress", default=None,)
 	availabilityIsAffectedByPersonalCalendar: Optional[bool] = Field(alias="availabilityIsAffectedByPersonalCalendar", default=None,)

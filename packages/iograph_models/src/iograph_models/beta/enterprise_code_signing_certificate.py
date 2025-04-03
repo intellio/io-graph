@@ -7,7 +7,7 @@ from pydantic import BaseModel, Field
 
 class EnterpriseCodeSigningCertificate(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.enterpriseCodeSigningCertificate"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.enterpriseCodeSigningCertificate"] = Field(alias="@odata.type", default="#microsoft.graph.enterpriseCodeSigningCertificate")
 	content: Optional[str] = Field(alias="content", default=None,)
 	expirationDateTime: Optional[datetime] = Field(alias="expirationDateTime", default=None,)
 	issuer: Optional[str] = Field(alias="issuer", default=None,)

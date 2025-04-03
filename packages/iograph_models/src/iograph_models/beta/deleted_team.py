@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field
 
 class DeletedTeam(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.deletedTeam"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.deletedTeam"] = Field(alias="@odata.type", default="#microsoft.graph.deletedTeam")
 	channels: Optional[list[Channel]] = Field(alias="channels", default=None,)
 
 from .channel import Channel

@@ -8,7 +8,7 @@ from pydantic import BaseModel, Field
 
 class ItemRetentionLabel(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.itemRetentionLabel"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.itemRetentionLabel"] = Field(alias="@odata.type", default="#microsoft.graph.itemRetentionLabel")
 	isLabelAppliedExplicitly: Optional[bool] = Field(alias="isLabelAppliedExplicitly", default=None,)
 	labelAppliedBy: Optional[Union[ChatMessageFromIdentitySet, ChatMessageMentionedIdentitySet, ChatMessageReactionIdentitySet, CommunicationsIdentitySet, SharePointIdentitySet]] = Field(alias="labelAppliedBy", default=None,discriminator="odata_type", )
 	labelAppliedDateTime: Optional[datetime] = Field(alias="labelAppliedDateTime", default=None,)

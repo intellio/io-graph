@@ -7,7 +7,7 @@ from pydantic import BaseModel, Field
 
 class AppCredentialSignInActivity(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.appCredentialSignInActivity"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.appCredentialSignInActivity"] = Field(alias="@odata.type", default="#microsoft.graph.appCredentialSignInActivity")
 	appId: Optional[str] = Field(alias="appId", default=None,)
 	appObjectId: Optional[str] = Field(alias="appObjectId", default=None,)
 	createdDateTime: Optional[datetime] = Field(alias="createdDateTime", default=None,)

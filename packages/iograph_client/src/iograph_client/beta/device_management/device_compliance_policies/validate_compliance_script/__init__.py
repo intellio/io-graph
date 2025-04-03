@@ -12,8 +12,8 @@ from typing import TYPE_CHECKING
 if TYPE_CHECKING:
 	from .....request_adapter import HttpxRequestAdapter
 from iograph_models.beta.validate_compliance_script_post_request import Validate_compliance_scriptPostRequest
-from iograph_models.beta.device_compliance_script_validation_result import DeviceComplianceScriptValidationResult
 from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.beta.device_compliance_script_validation_result import DeviceComplianceScriptValidationResult
 
 
 class ValidateComplianceScriptRequest(BaseRequestBuilder):

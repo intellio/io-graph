@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field
 
 class SynchronizationJob(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.synchronizationJob"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.synchronizationJob"] = Field(alias="@odata.type", default="#microsoft.graph.synchronizationJob")
 	schedule: Optional[SynchronizationSchedule] = Field(alias="schedule", default=None,)
 	status: Optional[SynchronizationStatus] = Field(alias="status", default=None,)
 	synchronizationJobSettings: Optional[list[KeyValuePair]] = Field(alias="synchronizationJobSettings", default=None,)

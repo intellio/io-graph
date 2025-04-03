@@ -7,7 +7,7 @@ from pydantic import BaseModel, Field
 
 class UserActivity(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.userActivity"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.userActivity"] = Field(alias="@odata.type", default="#microsoft.graph.userActivity")
 	activationUrl: Optional[str] = Field(alias="activationUrl", default=None,)
 	activitySourceHost: Optional[str] = Field(alias="activitySourceHost", default=None,)
 	appActivityId: Optional[str] = Field(alias="appActivityId", default=None,)

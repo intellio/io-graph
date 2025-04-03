@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field
 
 class Teamwork(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.teamwork"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.teamwork"] = Field(alias="@odata.type", default="#microsoft.graph.teamwork")
 	isTeamsEnabled: Optional[bool] = Field(alias="isTeamsEnabled", default=None,)
 	region: Optional[str] = Field(alias="region", default=None,)
 	deletedChats: Optional[list[DeletedChat]] = Field(alias="deletedChats", default=None,)

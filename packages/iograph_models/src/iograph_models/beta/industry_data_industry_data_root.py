@@ -8,7 +8,7 @@ from pydantic import BaseModel, Field
 
 class IndustryDataIndustryDataRoot(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.industryData.industryDataRoot"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.industryData.industryDataRoot"] = Field(alias="@odata.type", default="#microsoft.graph.industryData.industryDataRoot")
 	dataConnectors: Optional[list[Annotated[Union[IndustryDataOneRosterApiDataConnector, IndustryDataAzureDataLakeConnector],Field(discriminator="odata_type")]]] = Field(alias="dataConnectors", default=None,)
 	inboundFlows: Optional[list[Annotated[Union[IndustryDataInboundApiFlow, IndustryDataInboundFileFlow],Field(discriminator="odata_type")]]] = Field(alias="inboundFlows", default=None,)
 	operations: Optional[list[Annotated[Union[AttackSimulationOperation, EngagementAsyncOperation, GoalsExportJob, RichLongRunningOperation, IndustryDataFileValidateOperation],Field(discriminator="odata_type")]]] = Field(alias="operations", default=None,)

@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field
 
 class SecurityFilePlanDescriptor(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.security.filePlanDescriptor"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.security.filePlanDescriptor"] = Field(alias="@odata.type", default="#microsoft.graph.security.filePlanDescriptor")
 	authority: Optional[SecurityFilePlanAuthority] = Field(alias="authority", default=None,)
 	category: Optional[SecurityFilePlanAppliedCategory] = Field(alias="category", default=None,)
 	citation: Optional[SecurityFilePlanCitation] = Field(alias="citation", default=None,)

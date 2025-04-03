@@ -15,8 +15,8 @@ if TYPE_CHECKING:
 	from .by_hardware_password_detail_id import ByHardwarePasswordDetailIdRequest
 	from ....request_adapter import HttpxRequestAdapter
 from iograph_models.beta.hardware_password_detail_collection_response import HardwarePasswordDetailCollectionResponse
-from iograph_models.beta.hardware_password_detail import HardwarePasswordDetail
 from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.beta.hardware_password_detail import HardwarePasswordDetail
 
 
 class HardwarePasswordDetailsRequest(BaseRequestBuilder):

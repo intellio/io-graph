@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field
 
 class MultiTenantOrganizationJoinRequestRecord(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.multiTenantOrganizationJoinRequestRecord"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.multiTenantOrganizationJoinRequestRecord"] = Field(alias="@odata.type", default="#microsoft.graph.multiTenantOrganizationJoinRequestRecord")
 	addedByTenantId: Optional[str] = Field(alias="addedByTenantId", default=None,)
 	memberState: Optional[MultiTenantOrganizationMemberState | str] = Field(alias="memberState", default=None,)
 	role: Optional[MultiTenantOrganizationMemberRole | str] = Field(alias="role", default=None,)

@@ -14,8 +14,8 @@ if TYPE_CHECKING:
 	from .sets import SetsRequest
 	from .groups import GroupsRequest
 	from .....request_adapter import HttpxRequestAdapter
-from iograph_models.beta.term_store_store import TermStoreStore
 from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.beta.term_store_store import TermStoreStore
 
 
 class TermStoreRequest(BaseRequestBuilder):

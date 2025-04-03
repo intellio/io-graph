@@ -7,7 +7,7 @@ from pydantic import BaseModel, Field
 
 class ManagedTenantsAppPerformance(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.managedTenants.appPerformance"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.managedTenants.appPerformance"] = Field(alias="@odata.type", default="#microsoft.graph.managedTenants.appPerformance")
 	appFriendlyName: Optional[str] = Field(alias="appFriendlyName", default=None,)
 	appName: Optional[str] = Field(alias="appName", default=None,)
 	appPublisher: Optional[str] = Field(alias="appPublisher", default=None,)

@@ -14,9 +14,9 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_education_assignment_resource_id import ByEducationAssignmentResourceIdRequest
 	from .......request_adapter import HttpxRequestAdapter
-from iograph_models.beta.education_assignment_resource import EducationAssignmentResource
-from iograph_models.beta.education_assignment_resource_collection_response import EducationAssignmentResourceCollectionResponse
 from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.beta.education_assignment_resource_collection_response import EducationAssignmentResourceCollectionResponse
+from iograph_models.beta.education_assignment_resource import EducationAssignmentResource
 
 
 class ResourcesRequest(BaseRequestBuilder):

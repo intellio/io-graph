@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field
 
 class PrivilegedAccess(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.privilegedAccess"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.privilegedAccess"] = Field(alias="@odata.type", default="#microsoft.graph.privilegedAccess")
 	displayName: Optional[str] = Field(alias="displayName", default=None,)
 	resources: Optional[list[GovernanceResource]] = Field(alias="resources", default=None,)
 	roleAssignmentRequests: Optional[list[GovernanceRoleAssignmentRequest]] = Field(alias="roleAssignmentRequests", default=None,)

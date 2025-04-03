@@ -7,7 +7,7 @@ from pydantic import BaseModel, Field
 
 class CloudPcSnapshot(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.cloudPcSnapshot"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.cloudPcSnapshot"] = Field(alias="@odata.type", default="#microsoft.graph.cloudPcSnapshot")
 	cloudPcId: Optional[str] = Field(alias="cloudPcId", default=None,)
 	createdDateTime: Optional[datetime] = Field(alias="createdDateTime", default=None,)
 	expirationDateTime: Optional[datetime] = Field(alias="expirationDateTime", default=None,)

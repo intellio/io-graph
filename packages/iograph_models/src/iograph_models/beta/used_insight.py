@@ -7,7 +7,7 @@ from pydantic import BaseModel, Field
 
 class UsedInsight(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.usedInsight"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.usedInsight"] = Field(alias="@odata.type", default="#microsoft.graph.usedInsight")
 	lastUsed: Optional[UsageDetails] = Field(alias="lastUsed", default=None,)
 	resourceReference: Optional[ResourceReference] = Field(alias="resourceReference", default=None,)
 	resourceVisualization: Optional[ResourceVisualization] = Field(alias="resourceVisualization", default=None,)

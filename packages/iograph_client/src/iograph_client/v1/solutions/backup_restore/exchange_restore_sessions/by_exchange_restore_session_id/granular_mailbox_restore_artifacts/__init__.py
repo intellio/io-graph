@@ -14,9 +14,9 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_granular_mailbox_restore_artifact_id import ByGranularMailboxRestoreArtifactIdRequest
 	from .......request_adapter import HttpxRequestAdapter
+from iograph_models.v1.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.v1.granular_mailbox_restore_artifact import GranularMailboxRestoreArtifact
 from iograph_models.v1.granular_mailbox_restore_artifact_collection_response import GranularMailboxRestoreArtifactCollectionResponse
-from iograph_models.v1.o_data_errors__o_data_error import ODataErrorsODataError
 
 
 class GranularMailboxRestoreArtifactsRequest(BaseRequestBuilder):

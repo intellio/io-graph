@@ -7,7 +7,7 @@ from pydantic import BaseModel, Field
 
 class UserAppInstallStatus(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.userAppInstallStatus"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.userAppInstallStatus"] = Field(alias="@odata.type", default="#microsoft.graph.userAppInstallStatus")
 	failedDeviceCount: Optional[int] = Field(alias="failedDeviceCount", default=None,)
 	installedDeviceCount: Optional[int] = Field(alias="installedDeviceCount", default=None,)
 	notInstalledDeviceCount: Optional[int] = Field(alias="notInstalledDeviceCount", default=None,)

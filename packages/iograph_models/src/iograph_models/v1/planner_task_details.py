@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field
 
 class PlannerTaskDetails(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.plannerTaskDetails"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.plannerTaskDetails"] = Field(alias="@odata.type", default="#microsoft.graph.plannerTaskDetails")
 	checklist: Optional[PlannerChecklistItems] = Field(alias="checklist", default=None,)
 	description: Optional[str] = Field(alias="description", default=None,)
 	previewType: Optional[PlannerPreviewType | str] = Field(alias="previewType", default=None,)

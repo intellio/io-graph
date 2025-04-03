@@ -7,7 +7,7 @@ from pydantic import BaseModel, Field
 
 class HardwareConfigurationUserState(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.hardwareConfigurationUserState"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.hardwareConfigurationUserState"] = Field(alias="@odata.type", default="#microsoft.graph.hardwareConfigurationUserState")
 	errorDeviceCount: Optional[int] = Field(alias="errorDeviceCount", default=None,)
 	failedDeviceCount: Optional[int] = Field(alias="failedDeviceCount", default=None,)
 	lastStateUpdateDateTime: Optional[datetime] = Field(alias="lastStateUpdateDateTime", default=None,)

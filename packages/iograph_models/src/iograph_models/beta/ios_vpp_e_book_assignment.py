@@ -7,7 +7,7 @@ from pydantic import BaseModel, Field
 
 class IosVppEBookAssignment(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.iosVppEBookAssignment"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.iosVppEBookAssignment"] = Field(alias="@odata.type", default="#microsoft.graph.iosVppEBookAssignment")
 	installIntent: Optional[InstallIntent | str] = Field(alias="installIntent", default=None,)
 	target: Optional[Union[AllDevicesAssignmentTarget, AllLicensedUsersAssignmentTarget, AndroidFotaDeploymentAssignmentTarget, ConfigurationManagerCollectionAssignmentTarget, ExclusionGroupAssignmentTarget]] = Field(alias="target", default=None,discriminator="odata_type", )
 

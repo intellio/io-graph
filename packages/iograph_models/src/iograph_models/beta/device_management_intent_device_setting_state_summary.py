@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field
 
 class DeviceManagementIntentDeviceSettingStateSummary(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.deviceManagementIntentDeviceSettingStateSummary"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.deviceManagementIntentDeviceSettingStateSummary"] = Field(alias="@odata.type", default="#microsoft.graph.deviceManagementIntentDeviceSettingStateSummary")
 	compliantCount: Optional[int] = Field(alias="compliantCount", default=None,)
 	conflictCount: Optional[int] = Field(alias="conflictCount", default=None,)
 	errorCount: Optional[int] = Field(alias="errorCount", default=None,)

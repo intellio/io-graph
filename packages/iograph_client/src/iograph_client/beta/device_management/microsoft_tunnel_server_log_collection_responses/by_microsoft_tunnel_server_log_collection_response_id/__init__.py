@@ -14,8 +14,8 @@ if TYPE_CHECKING:
 	from .generate_download_url import GenerateDownloadUrlRequest
 	from .create_download_url import CreateDownloadUrlRequest
 	from .....request_adapter import HttpxRequestAdapter
-from iograph_models.beta.microsoft_tunnel_server_log_collection_response import MicrosoftTunnelServerLogCollectionResponse
 from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.beta.microsoft_tunnel_server_log_collection_response import MicrosoftTunnelServerLogCollectionResponse
 
 
 class ByMicrosoftTunnelServerLogCollectionResponseIdRequest(BaseRequestBuilder):

@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field
 
 class WorkbookRangeFormat(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.workbookRangeFormat"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.workbookRangeFormat"] = Field(alias="@odata.type", default="#microsoft.graph.workbookRangeFormat")
 	columnWidth: float | str | ReferenceNumeric
 	horizontalAlignment: Optional[str] = Field(alias="horizontalAlignment", default=None,)
 	rowHeight: float | str | ReferenceNumeric

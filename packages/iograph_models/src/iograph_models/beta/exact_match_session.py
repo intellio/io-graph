@@ -7,7 +7,7 @@ from pydantic import BaseModel, Field
 
 class ExactMatchSession(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.exactMatchSession"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.exactMatchSession"] = Field(alias="@odata.type", default="#microsoft.graph.exactMatchSession")
 	completionDateTime: Optional[datetime] = Field(alias="completionDateTime", default=None,)
 	creationDateTime: Optional[datetime] = Field(alias="creationDateTime", default=None,)
 	error: Optional[ClassificationError] = Field(alias="error", default=None,)

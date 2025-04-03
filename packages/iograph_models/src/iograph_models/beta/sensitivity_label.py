@@ -8,7 +8,7 @@ from pydantic import BaseModel, Field
 
 class SensitivityLabel(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.sensitivityLabel"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.sensitivityLabel"] = Field(alias="@odata.type", default="#microsoft.graph.sensitivityLabel")
 	applicableTo: Optional[SensitivityLabelTarget | str] = Field(alias="applicableTo", default=None,)
 	applicationMode: Optional[ApplicationMode | str] = Field(alias="applicationMode", default=None,)
 	assignedPolicies: Optional[list[LabelPolicy]] = Field(alias="assignedPolicies", default=None,)

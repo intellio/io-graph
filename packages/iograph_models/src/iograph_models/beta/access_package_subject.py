@@ -7,7 +7,7 @@ from pydantic import BaseModel, Field
 
 class AccessPackageSubject(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.accessPackageSubject"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.accessPackageSubject"] = Field(alias="@odata.type", default="#microsoft.graph.accessPackageSubject")
 	altSecId: Optional[str] = Field(alias="altSecId", default=None,)
 	cleanupScheduledDateTime: Optional[datetime] = Field(alias="cleanupScheduledDateTime", default=None,)
 	connectedOrganizationId: Optional[str] = Field(alias="connectedOrganizationId", default=None,)

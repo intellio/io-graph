@@ -7,7 +7,7 @@ from pydantic import BaseModel, Field
 
 class ManagedTenantsDeviceHealthStatus(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.managedTenants.deviceHealthStatus"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.managedTenants.deviceHealthStatus"] = Field(alias="@odata.type", default="#microsoft.graph.managedTenants.deviceHealthStatus")
 	blueScreenCount: Optional[int] = Field(alias="blueScreenCount", default=None,)
 	bootTotalDurationInSeconds: float | str | ReferenceNumeric
 	deviceId: Optional[str] = Field(alias="deviceId", default=None,)

@@ -14,8 +14,8 @@ if TYPE_CHECKING:
 	from .includes import IncludesRequest
 	from .excludes import ExcludesRequest
 	from .....request_adapter import HttpxRequestAdapter
-from iograph_models.v1.permission_grant_policy import PermissionGrantPolicy
 from iograph_models.v1.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.v1.permission_grant_policy import PermissionGrantPolicy
 
 
 class ByPermissionGrantPolicyIdRequest(BaseRequestBuilder):

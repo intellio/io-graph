@@ -7,7 +7,7 @@ from pydantic import BaseModel, Field
 
 class AccessPackageResourceRoleScope(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.accessPackageResourceRoleScope"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.accessPackageResourceRoleScope"] = Field(alias="@odata.type", default="#microsoft.graph.accessPackageResourceRoleScope")
 	createdDateTime: Optional[datetime] = Field(alias="createdDateTime", default=None,)
 	role: Optional[AccessPackageResourceRole] = Field(alias="role", default=None,)
 	scope: Optional[AccessPackageResourceScope] = Field(alias="scope", default=None,)

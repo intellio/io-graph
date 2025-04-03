@@ -7,7 +7,7 @@ from pydantic import BaseModel, Field
 
 class RiskyUserHistoryItem(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.riskyUserHistoryItem"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.riskyUserHistoryItem"] = Field(alias="@odata.type", default="#microsoft.graph.riskyUserHistoryItem")
 	isDeleted: Optional[bool] = Field(alias="isDeleted", default=None,)
 	isProcessing: Optional[bool] = Field(alias="isProcessing", default=None,)
 	riskDetail: Optional[RiskDetail | str] = Field(alias="riskDetail", default=None,)

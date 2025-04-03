@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field
 
 class DailyInactiveUsersMetric(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.dailyInactiveUsersMetric"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.dailyInactiveUsersMetric"] = Field(alias="@odata.type", default="#microsoft.graph.dailyInactiveUsersMetric")
 	appId: Optional[str] = Field(alias="appId", default=None,)
 	factDate: Optional[str] = Field(alias="factDate", default=None,)
 	inactive30DayCount: Optional[int] = Field(alias="inactive30DayCount", default=None,)

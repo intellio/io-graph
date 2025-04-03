@@ -7,7 +7,7 @@ from pydantic import BaseModel, Field
 
 class ManagedTenantsManagedTenantAlertLog(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.managedTenants.managedTenantAlertLog"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.managedTenants.managedTenantAlertLog"] = Field(alias="@odata.type", default="#microsoft.graph.managedTenants.managedTenantAlertLog")
 	content: Optional[ManagedTenantsAlertLogContent] = Field(alias="content", default=None,)
 	createdByUserId: Optional[str] = Field(alias="createdByUserId", default=None,)
 	createdDateTime: Optional[datetime] = Field(alias="createdDateTime", default=None,)

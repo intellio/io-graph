@@ -9,7 +9,7 @@ from pydantic import BaseModel, Field
 
 class EdiscoveryCase(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.ediscovery.case"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.ediscovery.case"] = Field(alias="@odata.type", default="#microsoft.graph.ediscovery.case")
 	closedBy: Optional[Union[AiInteractionMentionedIdentitySet, ApprovalIdentitySet, ChatMessageFromIdentitySet, ChatMessageMentionedIdentitySet, ChatMessageReactionIdentitySet, CommunicationsIdentitySet, SharePointIdentitySet]] = Field(alias="closedBy", default=None,discriminator="odata_type", )
 	closedDateTime: Optional[datetime] = Field(alias="closedDateTime", default=None,)
 	createdDateTime: Optional[datetime] = Field(alias="createdDateTime", default=None,)

@@ -8,7 +8,7 @@ from pydantic import BaseModel, Field
 
 class SuperAwsRoleFinding(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.superAwsRoleFinding"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.superAwsRoleFinding"] = Field(alias="@odata.type", default="#microsoft.graph.superAwsRoleFinding")
 	createdDateTime: Optional[datetime] = Field(alias="createdDateTime", default=None,)
 	actionSummary: Optional[ActionSummary] = Field(alias="actionSummary", default=None,)
 	identityDetails: Optional[IdentityDetails] = Field(alias="identityDetails", default=None,)

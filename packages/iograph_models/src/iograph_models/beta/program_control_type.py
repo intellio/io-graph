@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field
 
 class ProgramControlType(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.programControlType"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.programControlType"] = Field(alias="@odata.type", default="#microsoft.graph.programControlType")
 	controlTypeGroupId: Optional[str] = Field(alias="controlTypeGroupId", default=None,)
 	displayName: Optional[str] = Field(alias="displayName", default=None,)
 

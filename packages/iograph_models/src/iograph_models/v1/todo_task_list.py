@@ -8,7 +8,7 @@ from pydantic import BaseModel, Field
 
 class TodoTaskList(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.todoTaskList"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.todoTaskList"] = Field(alias="@odata.type", default="#microsoft.graph.todoTaskList")
 	displayName: Optional[str] = Field(alias="displayName", default=None,)
 	isOwner: Optional[bool] = Field(alias="isOwner", default=None,)
 	isShared: Optional[bool] = Field(alias="isShared", default=None,)

@@ -14,9 +14,9 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_user_account_information_id import ByUserAccountInformationIdRequest
 	from .....request_adapter import HttpxRequestAdapter
+from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.beta.user_account_information_collection_response import UserAccountInformationCollectionResponse
 from iograph_models.beta.user_account_information import UserAccountInformation
-from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 
 
 class AccountRequest(BaseRequestBuilder):

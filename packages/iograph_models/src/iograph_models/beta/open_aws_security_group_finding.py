@@ -8,7 +8,7 @@ from pydantic import BaseModel, Field
 
 class OpenAwsSecurityGroupFinding(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.openAwsSecurityGroupFinding"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.openAwsSecurityGroupFinding"] = Field(alias="@odata.type", default="#microsoft.graph.openAwsSecurityGroupFinding")
 	createdDateTime: Optional[datetime] = Field(alias="createdDateTime", default=None,)
 	inboundPorts: Optional[Union[AllInboundPorts, EnumeratedInboundPorts]] = Field(alias="inboundPorts", default=None,discriminator="odata_type", )
 	totalStorageBucketCount: Optional[int] = Field(alias="totalStorageBucketCount", default=None,)

@@ -7,7 +7,7 @@ from pydantic import BaseModel, Field
 
 class CloudCertificationAuthority(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.cloudCertificationAuthority"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.cloudCertificationAuthority"] = Field(alias="@odata.type", default="#microsoft.graph.cloudCertificationAuthority")
 	certificateDownloadUrl: Optional[str] = Field(alias="certificateDownloadUrl", default=None,)
 	certificateKeySize: Optional[CloudCertificationAuthorityCertificateKeySize | str] = Field(alias="certificateKeySize", default=None,)
 	certificateRevocationListUrl: Optional[str] = Field(alias="certificateRevocationListUrl", default=None,)

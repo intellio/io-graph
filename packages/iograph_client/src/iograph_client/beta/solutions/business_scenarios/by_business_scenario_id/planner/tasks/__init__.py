@@ -14,9 +14,9 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_business_scenario_task_id import ByBusinessScenarioTaskIdRequest
 	from .......request_adapter import HttpxRequestAdapter
-from iograph_models.beta.business_scenario_task_collection_response import BusinessScenarioTaskCollectionResponse
-from iograph_models.beta.business_scenario_task import BusinessScenarioTask
 from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.beta.business_scenario_task import BusinessScenarioTask
+from iograph_models.beta.business_scenario_task_collection_response import BusinessScenarioTaskCollectionResponse
 
 
 class TasksRequest(BaseRequestBuilder):

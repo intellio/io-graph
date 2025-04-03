@@ -7,7 +7,7 @@ from pydantic import BaseModel, Field
 
 class WindowsDriverUpdateInventory(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.windowsDriverUpdateInventory"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.windowsDriverUpdateInventory"] = Field(alias="@odata.type", default="#microsoft.graph.windowsDriverUpdateInventory")
 	applicableDeviceCount: Optional[int] = Field(alias="applicableDeviceCount", default=None,)
 	approvalStatus: Optional[DriverApprovalStatus | str] = Field(alias="approvalStatus", default=None,)
 	category: Optional[DriverCategory | str] = Field(alias="category", default=None,)

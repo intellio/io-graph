@@ -7,7 +7,7 @@ from pydantic import BaseModel, Field
 
 class PartnerSecurityPartnerSecurityAlert(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.partner.security.partnerSecurityAlert"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.partner.security.partnerSecurityAlert"] = Field(alias="@odata.type", default="#microsoft.graph.partner.security.partnerSecurityAlert")
 	activityLogs: Optional[list[PartnerSecurityActivityLog]] = Field(alias="activityLogs", default=None,)
 	additionalDetails: Optional[PartnerSecurityAdditionalDataDictionary] = Field(alias="additionalDetails", default=None,)
 	affectedResources: Optional[list[PartnerSecurityAffectedResource]] = Field(alias="affectedResources", default=None,)

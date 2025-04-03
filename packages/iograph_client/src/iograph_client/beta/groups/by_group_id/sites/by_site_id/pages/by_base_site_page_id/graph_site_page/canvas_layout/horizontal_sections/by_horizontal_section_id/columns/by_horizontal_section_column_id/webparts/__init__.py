@@ -14,9 +14,9 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_web_part_id import ByWebPartIdRequest
 	from ...............request_adapter import HttpxRequestAdapter
-from iograph_models.beta.web_part_collection_response import WebPartCollectionResponse
-from iograph_models.beta.web_part import WebPart
 from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.beta.web_part import WebPart
+from iograph_models.beta.web_part_collection_response import WebPartCollectionResponse
 
 
 class WebpartsRequest(BaseRequestBuilder):

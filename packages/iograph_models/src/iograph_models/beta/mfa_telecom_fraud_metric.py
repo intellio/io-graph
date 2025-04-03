@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field
 
 class MfaTelecomFraudMetric(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.mfaTelecomFraudMetric"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.mfaTelecomFraudMetric"] = Field(alias="@odata.type", default="#microsoft.graph.mfaTelecomFraudMetric")
 	captchaFailureCount: Optional[int] = Field(alias="captchaFailureCount", default=None,)
 	captchaNotTriggeredUserCount: Optional[int] = Field(alias="captchaNotTriggeredUserCount", default=None,)
 	captchaShownUserCount: Optional[int] = Field(alias="captchaShownUserCount", default=None,)

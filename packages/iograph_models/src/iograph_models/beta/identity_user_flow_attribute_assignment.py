@@ -7,7 +7,7 @@ from pydantic import BaseModel, Field
 
 class IdentityUserFlowAttributeAssignment(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.identityUserFlowAttributeAssignment"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.identityUserFlowAttributeAssignment"] = Field(alias="@odata.type", default="#microsoft.graph.identityUserFlowAttributeAssignment")
 	displayName: Optional[str] = Field(alias="displayName", default=None,)
 	isOptional: Optional[bool] = Field(alias="isOptional", default=None,)
 	requiresVerification: Optional[bool] = Field(alias="requiresVerification", default=None,)

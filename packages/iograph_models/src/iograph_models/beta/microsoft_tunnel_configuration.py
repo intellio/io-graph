@@ -7,7 +7,7 @@ from pydantic import BaseModel, Field
 
 class MicrosoftTunnelConfiguration(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.microsoftTunnelConfiguration"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.microsoftTunnelConfiguration"] = Field(alias="@odata.type", default="#microsoft.graph.microsoftTunnelConfiguration")
 	advancedSettings: Optional[list[KeyValuePair]] = Field(alias="advancedSettings", default=None,)
 	defaultDomainSuffix: Optional[str] = Field(alias="defaultDomainSuffix", default=None,)
 	description: Optional[str] = Field(alias="description", default=None,)

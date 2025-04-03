@@ -7,7 +7,7 @@ from pydantic import BaseModel, Field
 
 class SecurityEndpointDiscoveredCloudAppDetail(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.security.endpointDiscoveredCloudAppDetail"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.security.endpointDiscoveredCloudAppDetail"] = Field(alias="@odata.type", default="#microsoft.graph.security.endpointDiscoveredCloudAppDetail")
 	category: Optional[SecurityAppCategory | str] = Field(alias="category", default=None,)
 	description: Optional[str] = Field(alias="description", default=None,)
 	displayName: Optional[str] = Field(alias="displayName", default=None,)

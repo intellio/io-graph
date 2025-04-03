@@ -11,9 +11,9 @@ from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:
 	from .........request_adapter import HttpxRequestAdapter
-from iograph_models.beta.workbook_function_result import WorkbookFunctionResult
 from iograph_models.beta.cum_i_pmt_post_request import Cum_i_pmtPostRequest
 from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.beta.workbook_function_result import WorkbookFunctionResult
 
 
 class CumIPmtRequest(BaseRequestBuilder):

@@ -15,8 +15,8 @@ if TYPE_CHECKING:
 	from .deployments import DeploymentsRequest
 	from .accepted_for import AcceptedForRequest
 	from ......request_adapter import HttpxRequestAdapter
-from iograph_models.beta.managed_tenants_management_template_step_version import ManagedTenantsManagementTemplateStepVersion
 from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.beta.managed_tenants_management_template_step_version import ManagedTenantsManagementTemplateStepVersion
 
 
 class ByManagementTemplateStepVersionIdRequest(BaseRequestBuilder):

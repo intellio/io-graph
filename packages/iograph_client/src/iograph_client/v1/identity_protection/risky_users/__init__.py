@@ -16,8 +16,8 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_risky_user_id import ByRiskyUserIdRequest
 	from ....request_adapter import HttpxRequestAdapter
-from iograph_models.v1.risky_user_collection_response import RiskyUserCollectionResponse
 from iograph_models.v1.risky_user import RiskyUser
+from iograph_models.v1.risky_user_collection_response import RiskyUserCollectionResponse
 from iograph_models.v1.o_data_errors__o_data_error import ODataErrorsODataError
 
 

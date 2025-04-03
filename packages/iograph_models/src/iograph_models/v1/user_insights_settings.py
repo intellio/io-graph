@@ -6,6 +6,6 @@ from pydantic import BaseModel, Field
 
 class UserInsightsSettings(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.userInsightsSettings"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.userInsightsSettings"] = Field(alias="@odata.type", default="#microsoft.graph.userInsightsSettings")
 	isEnabled: Optional[bool] = Field(alias="isEnabled", default=None,)
 

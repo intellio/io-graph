@@ -8,7 +8,7 @@ from pydantic import BaseModel, Field
 
 class BusinessScenarioTask(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.businessScenarioTask"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.businessScenarioTask"] = Field(alias="@odata.type", default="#microsoft.graph.businessScenarioTask")
 	activeChecklistItemCount: Optional[int] = Field(alias="activeChecklistItemCount", default=None,)
 	appliedCategories: Optional[PlannerAppliedCategories] = Field(alias="appliedCategories", default=None,)
 	archivalInfo: Optional[PlannerArchivalInfo] = Field(alias="archivalInfo", default=None,)

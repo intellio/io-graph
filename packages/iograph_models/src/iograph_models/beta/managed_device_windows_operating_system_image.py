@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field
 
 class ManagedDeviceWindowsOperatingSystemImage(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.managedDeviceWindowsOperatingSystemImage"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.managedDeviceWindowsOperatingSystemImage"] = Field(alias="@odata.type", default="#microsoft.graph.managedDeviceWindowsOperatingSystemImage")
 	availableUpdates: Optional[list[ManagedDeviceWindowsOperatingSystemUpdate]] = Field(alias="availableUpdates", default=None,)
 	supportedArchitectures: Optional[list[ManagedDeviceArchitecture | str]] = Field(alias="supportedArchitectures", default=None,)
 	supportedEditions: Optional[list[ManagedDeviceWindowsOperatingSystemEdition]] = Field(alias="supportedEditions", default=None,)

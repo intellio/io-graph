@@ -8,7 +8,7 @@ from pydantic import BaseModel, Field
 
 class SecurityThreatIntelligence(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.security.threatIntelligence"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.security.threatIntelligence"] = Field(alias="@odata.type", default="#microsoft.graph.security.threatIntelligence")
 	articleIndicators: Optional[list[SecurityArticleIndicator]] = Field(alias="articleIndicators", default=None,)
 	articles: Optional[list[SecurityArticle]] = Field(alias="articles", default=None,)
 	hostComponents: Optional[list[SecurityHostComponent]] = Field(alias="hostComponents", default=None,)

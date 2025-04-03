@@ -8,7 +8,7 @@ from pydantic import BaseModel, Field
 
 class LearningProvider(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.learningProvider"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.learningProvider"] = Field(alias="@odata.type", default="#microsoft.graph.learningProvider")
 	displayName: Optional[str] = Field(alias="displayName", default=None,)
 	isCourseActivitySyncEnabled: Optional[bool] = Field(alias="isCourseActivitySyncEnabled", default=None,)
 	loginWebUrl: Optional[str] = Field(alias="loginWebUrl", default=None,)

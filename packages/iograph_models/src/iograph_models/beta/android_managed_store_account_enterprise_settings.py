@@ -7,7 +7,7 @@ from pydantic import BaseModel, Field
 
 class AndroidManagedStoreAccountEnterpriseSettings(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.androidManagedStoreAccountEnterpriseSettings"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.androidManagedStoreAccountEnterpriseSettings"] = Field(alias="@odata.type", default="#microsoft.graph.androidManagedStoreAccountEnterpriseSettings")
 	androidDeviceOwnerFullyManagedEnrollmentEnabled: Optional[bool] = Field(alias="androidDeviceOwnerFullyManagedEnrollmentEnabled", default=None,)
 	bindStatus: Optional[AndroidManagedStoreAccountBindStatus | str] = Field(alias="bindStatus", default=None,)
 	companyCodes: Optional[list[AndroidEnrollmentCompanyCode]] = Field(alias="companyCodes", default=None,)

@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field
 
 class UserSettings(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.userSettings"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.userSettings"] = Field(alias="@odata.type", default="#microsoft.graph.userSettings")
 	contributionToContentDiscoveryAsOrganizationDisabled: Optional[bool] = Field(alias="contributionToContentDiscoveryAsOrganizationDisabled", default=None,)
 	contributionToContentDiscoveryDisabled: Optional[bool] = Field(alias="contributionToContentDiscoveryDisabled", default=None,)
 	contactMergeSuggestions: Optional[ContactMergeSuggestions] = Field(alias="contactMergeSuggestions", default=None,)

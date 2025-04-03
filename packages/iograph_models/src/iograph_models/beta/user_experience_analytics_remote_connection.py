@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field
 
 class UserExperienceAnalyticsRemoteConnection(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.userExperienceAnalyticsRemoteConnection"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.userExperienceAnalyticsRemoteConnection"] = Field(alias="@odata.type", default="#microsoft.graph.userExperienceAnalyticsRemoteConnection")
 	cloudPcFailurePercentage: float | str | ReferenceNumeric
 	cloudPcRoundTripTime: float | str | ReferenceNumeric
 	cloudPcSignInTime: float | str | ReferenceNumeric

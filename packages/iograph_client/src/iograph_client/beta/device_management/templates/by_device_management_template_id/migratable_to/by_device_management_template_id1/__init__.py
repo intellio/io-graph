@@ -16,8 +16,8 @@ if TYPE_CHECKING:
 	from .compare_with_templateid import CompareWithTemplateIdRequest
 	from .categories import CategoriesRequest
 	from .......request_adapter import HttpxRequestAdapter
-from iograph_models.beta.device_management_template import DeviceManagementTemplate
 from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.beta.device_management_template import DeviceManagementTemplate
 
 
 class ByDeviceManagementTemplateId1Request(BaseRequestBuilder):

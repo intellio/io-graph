@@ -7,7 +7,7 @@ from pydantic import BaseModel, Field
 
 class EmbeddedSIMDeviceState(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.embeddedSIMDeviceState"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.embeddedSIMDeviceState"] = Field(alias="@odata.type", default="#microsoft.graph.embeddedSIMDeviceState")
 	createdDateTime: Optional[datetime] = Field(alias="createdDateTime", default=None,)
 	deviceName: Optional[str] = Field(alias="deviceName", default=None,)
 	lastSyncDateTime: Optional[datetime] = Field(alias="lastSyncDateTime", default=None,)

@@ -7,7 +7,7 @@ from pydantic import BaseModel, Field
 
 class ReadingAssignmentSubmission(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.readingAssignmentSubmission"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.readingAssignmentSubmission"] = Field(alias="@odata.type", default="#microsoft.graph.readingAssignmentSubmission")
 	accuracyScore: float | str | ReferenceNumeric
 	action: Optional[str] = Field(alias="action", default=None,)
 	assignmentId: Optional[str] = Field(alias="assignmentId", default=None,)

@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field
 
 class WorkbookOperation(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.workbookOperation"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.workbookOperation"] = Field(alias="@odata.type", default="#microsoft.graph.workbookOperation")
 	error: Optional[WorkbookOperationError] = Field(alias="error", default=None,)
 	resourceLocation: Optional[str] = Field(alias="resourceLocation", default=None,)
 	status: Optional[WorkbookOperationStatus | str] = Field(alias="status", default=None,)

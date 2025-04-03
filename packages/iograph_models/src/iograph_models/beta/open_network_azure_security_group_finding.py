@@ -8,7 +8,7 @@ from pydantic import BaseModel, Field
 
 class OpenNetworkAzureSecurityGroupFinding(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.openNetworkAzureSecurityGroupFinding"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.openNetworkAzureSecurityGroupFinding"] = Field(alias="@odata.type", default="#microsoft.graph.openNetworkAzureSecurityGroupFinding")
 	createdDateTime: Optional[datetime] = Field(alias="createdDateTime", default=None,)
 	inboundPorts: Optional[Union[AllInboundPorts, EnumeratedInboundPorts]] = Field(alias="inboundPorts", default=None,discriminator="odata_type", )
 	securityGroup: Optional[Union[AwsAuthorizationSystemResource, AzureAuthorizationSystemResource, GcpAuthorizationSystemResource]] = Field(alias="securityGroup", default=None,discriminator="odata_type", )

@@ -8,7 +8,7 @@ from pydantic import BaseModel, Field
 
 class DriveRestoreArtifactsBulkAdditionRequest(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.driveRestoreArtifactsBulkAdditionRequest"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.driveRestoreArtifactsBulkAdditionRequest"] = Field(alias="@odata.type", default="#microsoft.graph.driveRestoreArtifactsBulkAdditionRequest")
 	createdBy: Optional[Union[AiInteractionMentionedIdentitySet, ApprovalIdentitySet, ChatMessageFromIdentitySet, ChatMessageMentionedIdentitySet, ChatMessageReactionIdentitySet, CommunicationsIdentitySet, SharePointIdentitySet]] = Field(alias="createdBy", default=None,discriminator="odata_type", )
 	createdDateTime: Optional[datetime] = Field(alias="createdDateTime", default=None,)
 	destinationType: Optional[DestinationType | str] = Field(alias="destinationType", default=None,)

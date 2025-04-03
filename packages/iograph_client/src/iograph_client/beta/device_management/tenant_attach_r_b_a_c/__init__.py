@@ -13,8 +13,8 @@ if TYPE_CHECKING:
 	from .get_state import GetStateRequest
 	from .enable import EnableRequest
 	from ....request_adapter import HttpxRequestAdapter
-from iograph_models.beta.tenant_attach_r_b_a_c import TenantAttachRBAC
 from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.beta.tenant_attach_r_b_a_c import TenantAttachRBAC
 
 
 class TenantAttachRBACRequest(BaseRequestBuilder):

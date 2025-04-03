@@ -7,7 +7,7 @@ from pydantic import BaseModel, Field
 
 class ManagedTenantsCloudPcOverview(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.managedTenants.cloudPcOverview"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.managedTenants.cloudPcOverview"] = Field(alias="@odata.type", default="#microsoft.graph.managedTenants.cloudPcOverview")
 	frontlineLicensesCount: Optional[int] = Field(alias="frontlineLicensesCount", default=None,)
 	lastRefreshedDateTime: Optional[datetime] = Field(alias="lastRefreshedDateTime", default=None,)
 	numberOfCloudPcConnectionStatusFailed: Optional[int] = Field(alias="numberOfCloudPcConnectionStatusFailed", default=None,)

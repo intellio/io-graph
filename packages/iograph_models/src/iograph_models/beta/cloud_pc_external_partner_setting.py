@@ -7,7 +7,7 @@ from pydantic import BaseModel, Field
 
 class CloudPcExternalPartnerSetting(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.cloudPcExternalPartnerSetting"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.cloudPcExternalPartnerSetting"] = Field(alias="@odata.type", default="#microsoft.graph.cloudPcExternalPartnerSetting")
 	enableConnection: Optional[bool] = Field(alias="enableConnection", default=None,)
 	lastSyncDateTime: Optional[datetime] = Field(alias="lastSyncDateTime", default=None,)
 	partnerId: Optional[str] = Field(alias="partnerId", default=None,)

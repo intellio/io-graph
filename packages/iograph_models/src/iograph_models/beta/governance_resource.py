@@ -7,7 +7,7 @@ from pydantic import BaseModel, Field
 
 class GovernanceResource(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.governanceResource"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.governanceResource"] = Field(alias="@odata.type", default="#microsoft.graph.governanceResource")
 	displayName: Optional[str] = Field(alias="displayName", default=None,)
 	externalId: Optional[str] = Field(alias="externalId", default=None,)
 	registeredDateTime: Optional[datetime] = Field(alias="registeredDateTime", default=None,)

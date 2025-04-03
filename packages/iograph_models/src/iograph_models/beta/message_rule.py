@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field
 
 class MessageRule(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.messageRule"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.messageRule"] = Field(alias="@odata.type", default="#microsoft.graph.messageRule")
 	actions: Optional[MessageRuleActions] = Field(alias="actions", default=None,)
 	conditions: Optional[MessageRulePredicates] = Field(alias="conditions", default=None,)
 	displayName: Optional[str] = Field(alias="displayName", default=None,)

@@ -8,7 +8,7 @@ from pydantic import BaseModel, Field
 
 class BrowserSharedCookie(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.browserSharedCookie"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.browserSharedCookie"] = Field(alias="@odata.type", default="#microsoft.graph.browserSharedCookie")
 	comment: Optional[str] = Field(alias="comment", default=None,)
 	createdDateTime: Optional[datetime] = Field(alias="createdDateTime", default=None,)
 	deletedDateTime: Optional[datetime] = Field(alias="deletedDateTime", default=None,)

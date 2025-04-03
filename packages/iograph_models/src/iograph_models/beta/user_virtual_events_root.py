@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field
 
 class UserVirtualEventsRoot(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.userVirtualEventsRoot"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.userVirtualEventsRoot"] = Field(alias="@odata.type", default="#microsoft.graph.userVirtualEventsRoot")
 	webinars: Optional[list[VirtualEventWebinar]] = Field(alias="webinars", default=None,)
 
 from .virtual_event_webinar import VirtualEventWebinar

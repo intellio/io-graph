@@ -12,8 +12,8 @@ from typing import TYPE_CHECKING
 if TYPE_CHECKING:
 	from .....request_adapter import HttpxRequestAdapter
 from iograph_models.beta.get_policy_sets_post_request import Get_policy_setsPostRequest
-from iograph_models.beta.get_policy_sets_post_response import Get_policy_setsPostResponse
 from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.beta.get_policy_sets_post_response import Get_policy_setsPostResponse
 
 
 class GetPolicySetsRequest(BaseRequestBuilder):

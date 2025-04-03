@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field
 
 class PlannerRosterMember(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.plannerRosterMember"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.plannerRosterMember"] = Field(alias="@odata.type", default="#microsoft.graph.plannerRosterMember")
 	roles: Optional[list[str]] = Field(alias="roles", default=None,)
 	tenantId: Optional[str] = Field(alias="tenantId", default=None,)
 	userId: Optional[str] = Field(alias="userId", default=None,)

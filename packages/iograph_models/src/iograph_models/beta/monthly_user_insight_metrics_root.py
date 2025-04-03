@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field
 
 class MonthlyUserInsightMetricsRoot(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.monthlyUserInsightMetricsRoot"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.monthlyUserInsightMetricsRoot"] = Field(alias="@odata.type", default="#microsoft.graph.monthlyUserInsightMetricsRoot")
 	activeUsers: Optional[list[ActiveUsersMetric]] = Field(alias="activeUsers", default=None,)
 	authentications: Optional[list[AuthenticationsMetric]] = Field(alias="authentications", default=None,)
 	inactiveUsers: Optional[list[MonthlyInactiveUsersMetric]] = Field(alias="inactiveUsers", default=None,)

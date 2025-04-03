@@ -7,7 +7,7 @@ from pydantic import BaseModel, Field
 
 class WindowsDefenderApplicationControlSupplementalPolicy(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.windowsDefenderApplicationControlSupplementalPolicy"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.windowsDefenderApplicationControlSupplementalPolicy"] = Field(alias="@odata.type", default="#microsoft.graph.windowsDefenderApplicationControlSupplementalPolicy")
 	content: Optional[str] = Field(alias="content", default=None,)
 	contentFileName: Optional[str] = Field(alias="contentFileName", default=None,)
 	creationDateTime: Optional[datetime] = Field(alias="creationDateTime", default=None,)

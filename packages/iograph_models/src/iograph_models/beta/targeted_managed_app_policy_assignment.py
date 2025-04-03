@@ -7,7 +7,7 @@ from pydantic import BaseModel, Field
 
 class TargetedManagedAppPolicyAssignment(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.targetedManagedAppPolicyAssignment"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.targetedManagedAppPolicyAssignment"] = Field(alias="@odata.type", default="#microsoft.graph.targetedManagedAppPolicyAssignment")
 	source: Optional[DeviceAndAppManagementAssignmentSource | str] = Field(alias="source", default=None,)
 	sourceId: Optional[str] = Field(alias="sourceId", default=None,)
 	target: Optional[Union[AllDevicesAssignmentTarget, AllLicensedUsersAssignmentTarget, AndroidFotaDeploymentAssignmentTarget, ConfigurationManagerCollectionAssignmentTarget, ExclusionGroupAssignmentTarget]] = Field(alias="target", default=None,discriminator="odata_type", )

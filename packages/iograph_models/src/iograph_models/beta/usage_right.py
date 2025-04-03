@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field
 
 class UsageRight(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.usageRight"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.usageRight"] = Field(alias="@odata.type", default="#microsoft.graph.usageRight")
 	catalogId: Optional[str] = Field(alias="catalogId", default=None,)
 	serviceIdentifier: Optional[str] = Field(alias="serviceIdentifier", default=None,)
 	state: Optional[UsageRightState | str] = Field(alias="state", default=None,)

@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field
 
 class SecurityDataDiscoveryReport(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.security.dataDiscoveryReport"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.security.dataDiscoveryReport"] = Field(alias="@odata.type", default="#microsoft.graph.security.dataDiscoveryReport")
 	uploadedStreams: Optional[list[SecurityCloudAppDiscoveryReport]] = Field(alias="uploadedStreams", default=None,)
 
 from .security_cloud_app_discovery_report import SecurityCloudAppDiscoveryReport

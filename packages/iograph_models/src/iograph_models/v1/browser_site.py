@@ -8,7 +8,7 @@ from pydantic import BaseModel, Field
 
 class BrowserSite(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.browserSite"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.browserSite"] = Field(alias="@odata.type", default="#microsoft.graph.browserSite")
 	allowRedirect: Optional[bool] = Field(alias="allowRedirect", default=None,)
 	comment: Optional[str] = Field(alias="comment", default=None,)
 	compatibilityMode: Optional[BrowserSiteCompatibilityMode | str] = Field(alias="compatibilityMode", default=None,)

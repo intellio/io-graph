@@ -8,7 +8,7 @@ from pydantic import BaseModel, Field
 
 class TeamsAppDefinition(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.teamsAppDefinition"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.teamsAppDefinition"] = Field(alias="@odata.type", default="#microsoft.graph.teamsAppDefinition")
 	allowedInstallationScopes: Optional[TeamsAppInstallationScopes | str] = Field(alias="allowedInstallationScopes", default=None,)
 	authorization: Optional[TeamsAppAuthorization] = Field(alias="authorization", default=None,)
 	azureADAppId: Optional[str] = Field(alias="azureADAppId", default=None,)

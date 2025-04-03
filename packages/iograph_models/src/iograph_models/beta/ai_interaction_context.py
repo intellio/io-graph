@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field
 
 class AiInteractionContext(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.aiInteractionContext"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.aiInteractionContext"] = Field(alias="@odata.type", default="#microsoft.graph.aiInteractionContext")
 	contextReference: Optional[str] = Field(alias="contextReference", default=None,)
 	contextType: Optional[str] = Field(alias="contextType", default=None,)
 	displayName: Optional[str] = Field(alias="displayName", default=None,)

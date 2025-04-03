@@ -14,9 +14,9 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_group_id1 import ByGroupId1Request
 	from .........request_adapter import HttpxRequestAdapter
-from iograph_models.v1.term_store_group import TermStoreGroup
-from iograph_models.v1.term_store_group_collection_response import TermStoreGroupCollectionResponse
 from iograph_models.v1.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.v1.term_store_group_collection_response import TermStoreGroupCollectionResponse
+from iograph_models.v1.term_store_group import TermStoreGroup
 
 
 class GroupsRequest(BaseRequestBuilder):

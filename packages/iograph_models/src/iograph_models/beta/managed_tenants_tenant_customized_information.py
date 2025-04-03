@@ -7,7 +7,7 @@ from pydantic import BaseModel, Field
 
 class ManagedTenantsTenantCustomizedInformation(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.managedTenants.tenantCustomizedInformation"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.managedTenants.tenantCustomizedInformation"] = Field(alias="@odata.type", default="#microsoft.graph.managedTenants.tenantCustomizedInformation")
 	businessRelationship: Optional[str] = Field(alias="businessRelationship", default=None,)
 	complianceRequirements: Optional[list[str]] = Field(alias="complianceRequirements", default=None,)
 	contacts: Optional[list[ManagedTenantsTenantContactInformation]] = Field(alias="contacts", default=None,)

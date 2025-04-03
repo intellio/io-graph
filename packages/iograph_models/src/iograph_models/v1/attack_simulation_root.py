@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field
 
 class AttackSimulationRoot(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.attackSimulationRoot"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.attackSimulationRoot"] = Field(alias="@odata.type", default="#microsoft.graph.attackSimulationRoot")
 	endUserNotifications: Optional[list[EndUserNotification]] = Field(alias="endUserNotifications", default=None,)
 	landingPages: Optional[list[LandingPage]] = Field(alias="landingPages", default=None,)
 	loginPages: Optional[list[LoginPage]] = Field(alias="loginPages", default=None,)

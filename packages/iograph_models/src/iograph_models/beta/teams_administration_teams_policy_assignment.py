@@ -6,5 +6,5 @@ from pydantic import BaseModel, Field
 
 class TeamsAdministrationTeamsPolicyAssignment(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.teamsAdministration.teamsPolicyAssignment"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.teamsAdministration.teamsPolicyAssignment"] = Field(alias="@odata.type", default="#microsoft.graph.teamsAdministration.teamsPolicyAssignment")
 

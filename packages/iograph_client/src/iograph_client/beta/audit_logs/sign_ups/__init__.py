@@ -14,9 +14,9 @@ if TYPE_CHECKING:
 	from .count import CountRequest
 	from .by_self_service_sign_up_id import BySelfServiceSignUpIdRequest
 	from ....request_adapter import HttpxRequestAdapter
+from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 from iograph_models.beta.self_service_sign_up_collection_response import SelfServiceSignUpCollectionResponse
 from iograph_models.beta.self_service_sign_up import SelfServiceSignUp
-from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
 
 
 class SignUpsRequest(BaseRequestBuilder):

@@ -7,7 +7,7 @@ from pydantic import BaseModel, Field
 
 class ManagedTenantsManagementTemplateStepDeployment(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.managedTenants.managementTemplateStepDeployment"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.managedTenants.managementTemplateStepDeployment"] = Field(alias="@odata.type", default="#microsoft.graph.managedTenants.managementTemplateStepDeployment")
 	createdByUserId: Optional[str] = Field(alias="createdByUserId", default=None,)
 	createdDateTime: Optional[datetime] = Field(alias="createdDateTime", default=None,)
 	error: Optional[ManagedTenantsGraphAPIErrorDetails] = Field(alias="error", default=None,)

@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field
 
 class FileStorage(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.fileStorage"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.fileStorage"] = Field(alias="@odata.type", default="#microsoft.graph.fileStorage")
 	containers: Optional[list[FileStorageContainer]] = Field(alias="containers", default=None,)
 	deletedContainers: Optional[list[FileStorageContainer]] = Field(alias="deletedContainers", default=None,)
 

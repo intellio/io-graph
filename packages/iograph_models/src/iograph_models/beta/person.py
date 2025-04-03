@@ -8,7 +8,7 @@ from pydantic import BaseModel, Field
 
 class Person(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.person"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.person"] = Field(alias="@odata.type", default="#microsoft.graph.person")
 	birthday: Optional[str] = Field(alias="birthday", default=None,)
 	companyName: Optional[str] = Field(alias="companyName", default=None,)
 	department: Optional[str] = Field(alias="department", default=None,)

@@ -7,7 +7,7 @@ from pydantic import BaseModel, Field
 
 class EmbeddedSIMActivationCodePool(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.embeddedSIMActivationCodePool"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.embeddedSIMActivationCodePool"] = Field(alias="@odata.type", default="#microsoft.graph.embeddedSIMActivationCodePool")
 	activationCodeCount: Optional[int] = Field(alias="activationCodeCount", default=None,)
 	activationCodes: Optional[list[EmbeddedSIMActivationCode]] = Field(alias="activationCodes", default=None,)
 	createdDateTime: Optional[datetime] = Field(alias="createdDateTime", default=None,)

@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field
 
 class CustomExtensionHandler(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.customExtensionHandler"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.customExtensionHandler"] = Field(alias="@odata.type", default="#microsoft.graph.customExtensionHandler")
 	stage: Optional[AccessPackageCustomExtensionStage | str] = Field(alias="stage", default=None,)
 	customExtension: Optional[CustomAccessPackageWorkflowExtension] = Field(alias="customExtension", default=None,)
 

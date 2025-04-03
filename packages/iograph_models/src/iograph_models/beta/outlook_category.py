@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field
 
 class OutlookCategory(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.outlookCategory"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.outlookCategory"] = Field(alias="@odata.type", default="#microsoft.graph.outlookCategory")
 	color: Optional[CategoryColor | str] = Field(alias="color", default=None,)
 	displayName: Optional[str] = Field(alias="displayName", default=None,)
 

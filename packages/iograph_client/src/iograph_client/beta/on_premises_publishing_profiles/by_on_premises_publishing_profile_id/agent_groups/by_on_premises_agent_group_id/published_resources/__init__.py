@@ -15,8 +15,8 @@ if TYPE_CHECKING:
 	from .by_published_resource_id import ByPublishedResourceIdRequest
 	from .......request_adapter import HttpxRequestAdapter
 from iograph_models.beta.published_resource import PublishedResource
-from iograph_models.beta.published_resource_collection_response import PublishedResourceCollectionResponse
 from iograph_models.beta.o_data_errors__o_data_error import ODataErrorsODataError
+from iograph_models.beta.published_resource_collection_response import PublishedResourceCollectionResponse
 
 
 class PublishedResourcesRequest(BaseRequestBuilder):

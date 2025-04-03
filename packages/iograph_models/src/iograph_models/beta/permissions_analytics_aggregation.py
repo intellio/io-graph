@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field
 
 class PermissionsAnalyticsAggregation(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.permissionsAnalyticsAggregation"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.permissionsAnalyticsAggregation"] = Field(alias="@odata.type", default="#microsoft.graph.permissionsAnalyticsAggregation")
 	aws: Optional[PermissionsAnalytics] = Field(alias="aws", default=None,)
 	azure: Optional[PermissionsAnalytics] = Field(alias="azure", default=None,)
 	gcp: Optional[PermissionsAnalytics] = Field(alias="gcp", default=None,)

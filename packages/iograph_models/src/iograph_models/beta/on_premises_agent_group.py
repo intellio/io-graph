@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field
 
 class OnPremisesAgentGroup(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.onPremisesAgentGroup"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.onPremisesAgentGroup"] = Field(alias="@odata.type", default="#microsoft.graph.onPremisesAgentGroup")
 	displayName: Optional[str] = Field(alias="displayName", default=None,)
 	isDefault: Optional[bool] = Field(alias="isDefault", default=None,)
 	publishingType: Optional[OnPremisesPublishingType | str] = Field(alias="publishingType", default=None,)

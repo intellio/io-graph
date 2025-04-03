@@ -8,7 +8,7 @@ from pydantic import BaseModel, Field
 
 class MobileAppInstallStatus(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.mobileAppInstallStatus"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.mobileAppInstallStatus"] = Field(alias="@odata.type", default="#microsoft.graph.mobileAppInstallStatus")
 	deviceId: Optional[str] = Field(alias="deviceId", default=None,)
 	deviceName: Optional[str] = Field(alias="deviceName", default=None,)
 	displayVersion: Optional[str] = Field(alias="displayVersion", default=None,)

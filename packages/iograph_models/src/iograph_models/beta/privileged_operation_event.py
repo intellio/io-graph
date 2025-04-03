@@ -7,7 +7,7 @@ from pydantic import BaseModel, Field
 
 class PrivilegedOperationEvent(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.privilegedOperationEvent"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.privilegedOperationEvent"] = Field(alias="@odata.type", default="#microsoft.graph.privilegedOperationEvent")
 	additionalInformation: Optional[str] = Field(alias="additionalInformation", default=None,)
 	creationDateTime: Optional[datetime] = Field(alias="creationDateTime", default=None,)
 	expirationDateTime: Optional[datetime] = Field(alias="expirationDateTime", default=None,)

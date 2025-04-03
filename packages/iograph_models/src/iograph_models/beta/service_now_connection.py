@@ -8,7 +8,7 @@ from pydantic import BaseModel, Field
 
 class ServiceNowConnection(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.serviceNowConnection"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.serviceNowConnection"] = Field(alias="@odata.type", default="#microsoft.graph.serviceNowConnection")
 	authenticationMethod: Optional[Union[ServiceNowOauthSecretAuthentication]] = Field(alias="authenticationMethod", default=None,discriminator="odata_type", )
 	createdDateTime: Optional[datetime] = Field(alias="createdDateTime", default=None,)
 	incidentApiUrl: Optional[str] = Field(alias="incidentApiUrl", default=None,)

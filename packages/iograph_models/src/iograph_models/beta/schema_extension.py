@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field
 
 class SchemaExtension(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.schemaExtension"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.schemaExtension"] = Field(alias="@odata.type", default="#microsoft.graph.schemaExtension")
 	description: Optional[str] = Field(alias="description", default=None,)
 	owner: Optional[str] = Field(alias="owner", default=None,)
 	properties: Optional[list[ExtensionSchemaProperty]] = Field(alias="properties", default=None,)

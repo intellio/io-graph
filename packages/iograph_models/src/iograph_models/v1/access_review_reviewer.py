@@ -7,7 +7,7 @@ from pydantic import BaseModel, Field
 
 class AccessReviewReviewer(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.accessReviewReviewer"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.accessReviewReviewer"] = Field(alias="@odata.type", default="#microsoft.graph.accessReviewReviewer")
 	createdDateTime: Optional[datetime] = Field(alias="createdDateTime", default=None,)
 	displayName: Optional[str] = Field(alias="displayName", default=None,)
 	userPrincipalName: Optional[str] = Field(alias="userPrincipalName", default=None,)

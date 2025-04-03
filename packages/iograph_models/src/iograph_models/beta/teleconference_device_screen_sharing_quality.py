@@ -26,7 +26,7 @@ class TeleconferenceDeviceScreenSharingQuality(BaseModel):
 	outboundPackets: Optional[int] = Field(alias="outboundPackets", default=None,)
 	remoteIPAddress: Optional[str] = Field(alias="remoteIPAddress", default=None,)
 	remotePort: Optional[int] = Field(alias="remotePort", default=None,)
-	odata_type: Literal["#microsoft.graph.teleconferenceDeviceScreenSharingQuality"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.teleconferenceDeviceScreenSharingQuality"] = Field(alias="@odata.type", default="#microsoft.graph.teleconferenceDeviceScreenSharingQuality")
 	averageInboundBitRate: float | str | ReferenceNumeric
 	averageInboundFrameRate: float | str | ReferenceNumeric
 	averageOutboundBitRate: float | str | ReferenceNumeric

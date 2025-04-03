@@ -7,7 +7,7 @@ from pydantic import BaseModel, Field
 
 class ExactMatchDataStore(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.exactMatchDataStore"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.exactMatchDataStore"] = Field(alias="@odata.type", default="#microsoft.graph.exactMatchDataStore")
 	columns: Optional[list[ExactDataMatchStoreColumn]] = Field(alias="columns", default=None,)
 	dataLastUpdatedDateTime: Optional[datetime] = Field(alias="dataLastUpdatedDateTime", default=None,)
 	description: Optional[str] = Field(alias="description", default=None,)

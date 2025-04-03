@@ -8,7 +8,7 @@ from pydantic import BaseModel, Field
 
 class BookingService(BaseModel):
 	id: Optional[str] = Field(alias="id", default=None,)
-	odata_type: Literal["#microsoft.graph.bookingService"] = Field(alias="@odata.type",)
+	odata_type: Literal["#microsoft.graph.bookingService"] = Field(alias="@odata.type", default="#microsoft.graph.bookingService")
 	additionalInformation: Optional[str] = Field(alias="additionalInformation", default=None,)
 	createdDateTime: Optional[datetime] = Field(alias="createdDateTime", default=None,)
 	customQuestions: Optional[list[BookingQuestionAssignment]] = Field(alias="customQuestions", default=None,)
