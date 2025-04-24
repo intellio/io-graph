@@ -78,8 +78,9 @@ class HttpxRequestAdapter:
     async def send_async(
         self,
         request_info: RequestInformation,
-        return_model: ModelType,
+        return_model: ModelType | None,
         error_map: Optional[dict[str, type[BaseModel]]],
+
     ) -> Optional[ModelType]:
         """Excutes the HTTP request specified by the given RequestInformation and returns the
         deserialized response model.
@@ -103,7 +104,11 @@ class HttpxRequestAdapter:
             
             if self._should_return_none(response):
                 return None
-            value = return_model.model_validate_json(response.text)
+            
+            if return_model is None:
+                value = response.text
+            else:
+                value = return_model.model_validate_json(response.text)
 
 
             return value  # type: ignore

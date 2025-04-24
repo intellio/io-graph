@@ -5,8 +5,8 @@ from typing import TypeVar, Callable
 from kiota_abstractions.base_request_builder import BaseRequestBuilder
 from .v1._generated_base_service_client import GraphServiceClientBase as V1GraphServiceClientBase
 from .beta._generated_base_service_client import GraphServiceClientBase as BetaGraphServiceClientBase
-from .request_adapter import HttpxRequestAdapter
-
+from .request_adapter import HttpxRequestAdapter, ModelType
+from .raw_request import RawRequest
 
 T = TypeVar("T")
 
@@ -50,6 +50,15 @@ class GraphServiceClientMixins:
         """
         ...
 
+    def raw_request(self, endpoint_str: str, return_model: ModelType | None,) -> RawRequest:
+        """
+        Returns a RawRequest object to enable raw requests.
+        Args:
+            endpoint_str (str): The endpoint to call. This is a string that starts with '/'.
+            return_model (ModelType | None): The model to be used for the request.
+        """
+        return RawRequest(self.request_adapter, self.path_parameters, endpoint_str, return_model)
+
 
 class GraphServiceClient(BaseRequestBuilder, V1GraphServiceClientBase, GraphServiceClientMixins):
 
@@ -59,7 +68,7 @@ class GraphServiceClient(BaseRequestBuilder, V1GraphServiceClientBase, GraphServ
         if not self.request_adapter.base_url:
             raise ValueError("base_url is required in request_adapter")
         self.path_parameters["base_url"] = self.request_adapter.base_url
-    
+
 class GraphBetaServiceClient(BaseRequestBuilder, BetaGraphServiceClientBase, GraphServiceClientMixins):
 
     def __init__(self, request_adapter: HttpxRequestAdapter) -> None:
